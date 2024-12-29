@@ -51,6 +51,7 @@ namespace xtd {
       
       /// @{
       /// @brief Applies an accumulator function over a sequence.
+      /// @tparam source_t The type of the elements of source.
       /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
       /// @param func An accumulator function to be invoked on each element.
       /// @return The final accumulator value.
@@ -67,6 +68,7 @@ namespace xtd {
         return aggregated;
       }
       /// @brief Applies an accumulator function over a sequence.
+      /// @tparam source_t The type of the elements of source.
       /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
       /// @param func An accumulator function to be invoked on each element.
       /// @return The final accumulator value.
@@ -83,6 +85,8 @@ namespace xtd {
         return aggregated;
       }
       /// @brief Applies an accumulator function over a sequence.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam collection_t The type of the source.
       /// @param source A collection_t collection to aggregate over.
       /// @param func An accumulator function to be invoked on each element.
       /// @return The final accumulator value.
@@ -99,6 +103,8 @@ namespace xtd {
         return aggregated;
       }
       /// @brief Applies an accumulator function over a sequence.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @param func An accumulator function to be invoked on each element.
@@ -117,6 +123,8 @@ namespace xtd {
       }
       
       /// @brief Applies an accumulator function over a sequence.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam func_t The type of the function as std::function<source_t(const source_t&, const source_t&)>.
       /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
       /// @param func An accumulator function to be invoked on each element.
       /// @return The final accumulator value.
@@ -128,6 +136,8 @@ namespace xtd {
         return aggregate(source, std::function<source_t(const source_t&, const source_t&)> {func});
       }
       /// @brief Applies an accumulator function over a sequence.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam func_t The type of the function as std::function<source_t(const source_t&, const source_t&)>.
       /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
       /// @param func An accumulator function to be invoked on each element.
       /// @return The final accumulator value.
@@ -139,6 +149,8 @@ namespace xtd {
         return aggregate(source, std::function<source_t(const source_t&, const source_t&)> {func});
       }
       /// @brief Applies an accumulator function over a sequence.
+      /// @tparam collection_t The type of the source.
+      /// @tparam func_t The type of the function as std::function<source_t(const source_t&, const source_t&)>.
       /// @param source A collection_t collection to aggregate over.
       /// @param func An accumulator function to be invoked on each element.
       /// @return The final accumulator value.
@@ -151,6 +163,8 @@ namespace xtd {
         return aggregate(source, std::function<source_t(const source_t&, const source_t&)> {func});
       }
       /// @brief Applies an accumulator function over a sequence.
+      /// @tparam input_iterator_t The type of the source iterators.
+      /// @tparam func_t The type of the function as std::function<source_t(const source_t&, const source_t&)>.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @param func An accumulator function to be invoked on each element.
@@ -165,6 +179,8 @@ namespace xtd {
       }
       
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam source_t The type of the elements of source.
       /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
       /// @param seed The initial accumulator value.
       /// @param func An accumulator function to be invoked on each element.
@@ -172,7 +188,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate2.cpp
-      template<typename source_t, typename accumulate_t>
+      template<typename accumulate_t, typename source_t>
       static accumulate_t aggregate(const xtd::collections::generic::ienumerable<source_t>& source, const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func) {
         auto aggregated = seed;
         for (const auto& item : source)
@@ -180,6 +196,8 @@ namespace xtd {
         return aggregated;
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam source_t The type of the elements of source.
       /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
       /// @param seed The initial accumulator value.
       /// @param func An accumulator function to be invoked on each element.
@@ -187,7 +205,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate2.cpp
-      template<typename source_t, typename accumulate_t>
+      template<typename accumulate_t, typename source_t>
       static accumulate_t aggregate(std::initializer_list<source_t> source, const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func) {
         auto aggregated = seed;
         for (const auto& item : source)
@@ -195,6 +213,9 @@ namespace xtd {
         return aggregated;
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam collection_t The type of the source.
       /// @param source A collection_t collection to aggregate over.
       /// @param seed The initial accumulator value.
       /// @param func An accumulator function to be invoked on each element.
@@ -202,7 +223,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate2.cpp
-      template<typename source_t, typename accumulate_t, typename collection_t>
+      template<typename accumulate_t, typename source_t, typename collection_t>
       static accumulate_t aggregate(const collection_t& source, const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func) {
         auto aggregated = seed;
         for (const auto& item : source)
@@ -210,6 +231,9 @@ namespace xtd {
         return aggregated;
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
       /// @param seed The initial accumulator value.
       /// @param func An accumulator function to be invoked on each element.
@@ -217,7 +241,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate5.cpp
-      template<typename source_t, typename accumulate_t, typename input_iterator_t>
+      template<typename accumulate_t, typename source_t, typename input_iterator_t>
       static accumulate_t aggregate(input_iterator_t first, input_iterator_t last, const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func) {
         auto aggregated = seed;
         for (auto iterator = first; iterator != last; ++iterator)
@@ -226,6 +250,9 @@ namespace xtd {
       }
       
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam func_t The type of the function as std::function<accumulate_t(const source_t&, const accumulate_t&)>.
       /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
       /// @param seed The initial accumulator value.
       /// @param func An accumulator function to be invoked on each element.
@@ -233,11 +260,14 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate2.cpp
-      template<typename source_t, typename accumulate_t, typename func_t>
+      template<typename accumulate_t, typename source_t, typename func_t>
       static accumulate_t aggregate(const xtd::collections::generic::ienumerable<source_t>& source, const accumulate_t& seed, const func_t& func) {
         return aggregate(source, seed, std::function<accumulate_t(const source_t&, const accumulate_t&)> {func});
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam func_t The type of the function as std::function<accumulate_t(const source_t&, const accumulate_t&)>.
       /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
       /// @param seed The initial accumulator value.
       /// @param func An accumulator function to be invoked on each element.
@@ -245,11 +275,14 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate2.cpp
-      template<typename source_t, typename accumulate_t, typename func_t>
+      template<typename accumulate_t, typename source_t, typename func_t>
       static accumulate_t aggregate(std::initializer_list<source_t> source, const accumulate_t& seed, const func_t& func) {
         return aggregate(source, seed, std::function<accumulate_t(const source_t&, const accumulate_t&)> {func});
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam collection_t The type of the source.
+      /// @tparam func_t The type of the function as std::function<accumulate_t(const source_t&, const accumulate_t&)>.
       /// @param source A collection_t collection to aggregate over.
       /// @param seed The initial accumulator value.
       /// @param func An accumulator function to be invoked on each element.
@@ -263,6 +296,9 @@ namespace xtd {
         return aggregate(source, seed, std::function<accumulate_t(const source_t&, const accumulate_t&)> {func});
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam input_iterator_t The type of the source iterators.
+      /// @tparam func_t The type of the function as std::function<accumulate_t(const source_t&, const accumulate_t&)>.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @param seed The initial accumulator value.
@@ -278,6 +314,9 @@ namespace xtd {
       }
       
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam source_t The type of the elements of source.
       /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
       /// @param seed The initial accumulator value.
       /// @param func An accumulator function to be invoked on each element.
@@ -286,7 +325,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate3.cpp
-      template<typename source_t, typename accumulate_t, typename result_t>
+      template<typename result_t, typename accumulate_t, typename source_t>
       static result_t aggregate(const xtd::collections::generic::ienumerable<source_t>& source, const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func, const std::function<result_t(const accumulate_t&)>& result_selector) {
         auto aggregated = seed;
         for (const auto& item : source)
@@ -294,6 +333,9 @@ namespace xtd {
         return result_selector(aggregated);
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam source_t The type of the elements of source.
       /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
       /// @param seed The initial accumulator value.
       /// @param func An accumulator function to be invoked on each element.
@@ -302,7 +344,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate3.cpp
-      template<typename source_t, typename accumulate_t, typename result_t>
+      template<typename result_t, typename accumulate_t, typename source_t>
       static result_t aggregate(std::initializer_list<source_t> source, const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func, const std::function<result_t(const accumulate_t&)>& result_selector) {
         auto aggregated = seed;
         for (const auto& item : source)
@@ -310,6 +352,10 @@ namespace xtd {
         return result_selector(aggregated);
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam collection_t The type of the source.
       /// @param source A collection_t collection to aggregate over.
       /// @param seed The initial accumulator value.
       /// @param func An accumulator function to be invoked on each element.
@@ -318,7 +364,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate3.cpp
-      template<typename source_t, typename accumulate_t, typename result_t, typename collection_t>
+      template<typename result_t, typename accumulate_t, typename source_t, typename collection_t>
       static result_t aggregate(const collection_t& source, const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func, const std::function<result_t(const accumulate_t&)>& result_selector) {
         auto aggregated = seed;
         for (const auto& item : source)
@@ -326,6 +372,10 @@ namespace xtd {
         return result_selector(aggregated);
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @param seed The initial accumulator value.
@@ -335,7 +385,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate5.cpp
-      template<typename source_t, typename accumulate_t, typename result_t, typename input_iterator_t>
+      template<typename result_t, typename accumulate_t, typename source_t, typename input_iterator_t>
       static result_t aggregate(input_iterator_t first, input_iterator_t last, const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func, const std::function<result_t(const accumulate_t&)>& result_selector) {
         auto aggregated = seed;
         for (auto iterator = first; iterator != last; ++iterator)
@@ -344,6 +394,11 @@ namespace xtd {
       }
             
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam result_selector_t The type of the result selector function as std::function<result_t(const accumulate_t&)>.
+      /// @tparam func_t The type of the function as std::function<accumulate_t(const source_t&, const accumulate_t&)>.
       /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
       /// @param seed The initial accumulator value.
       /// @param func An accumulator function to be invoked on each element.
@@ -352,11 +407,16 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate3.cpp
-      template<typename source_t, typename accumulate_t, typename result_t, typename func_t, typename result_selector_t>
+      template<typename result_t, typename accumulate_t, typename source_t, typename func_t, typename result_selector_t>
       static result_t aggregate(const xtd::collections::generic::ienumerable<source_t>& source, const accumulate_t& seed, const func_t& func, const result_selector_t& result_selector) {
         return aggregate(source, seed, std::function<accumulate_t(const source_t&, const accumulate_t&)> {func}, std::function<result_t(const accumulate_t&)> {result_selector});
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam func_t The type of the function as std::function<accumulate_t(const source_t&, const accumulate_t&)>.
+      /// @tparam result_selector_t The type of the result selector function as std::function<result_t(const accumulate_t&)>.
       /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
       /// @param seed The initial accumulator value.
       /// @param func An accumulator function to be invoked on each element.
@@ -365,11 +425,16 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate3.cpp
-      template<typename source_t, typename accumulate_t, typename result_t, typename func_t, typename result_selector_t>
+      template<typename result_t, typename accumulate_t, typename source_t, typename func_t, typename result_selector_t>
       static result_t aggregate(std::initializer_list<source_t> source, const accumulate_t& seed, const func_t& func, const result_selector_t& result_selector) {
         return aggregate(source, seed, std::function<accumulate_t(const source_t&, const accumulate_t&)> {func}, std::function<result_t(const accumulate_t&)> {result_selector});
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam collection_t The type of the source.
+      /// @tparam func_t The type of the function as std::function<accumulate_t(const source_t&, const accumulate_t&)>.
+      /// @tparam result_selector_t The type of the result selector function as std::function<result_t(const accumulate_t&)>.
       /// @param source A collection_t collection to aggregate over.
       /// @param seed The initial accumulator value.
       /// @param func An accumulator function to be invoked on each element.
@@ -378,12 +443,17 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate6.cpp
-      template<typename accumulate_t, typename result_t, typename collection_t, typename func_t, typename result_selector_t>
+      template<typename result_t, typename accumulate_t, typename collection_t, typename func_t, typename result_selector_t>
       static result_t aggregate(const collection_t& collection, const accumulate_t& seed, const func_t& func, const result_selector_t& result_selector) {
         using source_t = typename collection_t::value_type;
         return aggregate(collection, seed, std::function<accumulate_t(const source_t&, const accumulate_t&)> {func}, std::function<result_t(const accumulate_t&)> {result_selector});
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam input_iterator_t The type of the source iterators.
+      /// @tparam func_t The type of the function as std::function<accumulate_t(const source_t&, const accumulate_t&)>.
+      /// @tparam result_selector_t The type of the result selector function as std::function<result_t(const accumulate_t&)>.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @param seed The initial accumulator value.
@@ -393,13 +463,17 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate6.cpp
-      template<typename accumulate_t, typename result_t, typename input_iterator_t, typename func_t, typename result_selector_t>
+      template<typename result_t, typename accumulate_t, typename input_iterator_t, typename func_t, typename result_selector_t>
       static result_t aggregate(input_iterator_t first, input_iterator_t last, const accumulate_t& seed, const func_t& func, const result_selector_t& result_selector) {
         using source_t = typename std::decay<decltype(*first)>::type;
         return aggregate(first, last, seed, std::function<accumulate_t(const source_t&, const accumulate_t&)> {func}, std::function<result_t(const accumulate_t&)> {result_selector});
       }
       
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam func_t The type of the function as std::function<accumulate_t(const source_t&, const accumulate_t&)>.
+      /// @tparam result_selector_t The type of the result selector function as std::function<result_t(const accumulate_t&)>.
       /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
       /// @param seed The initial accumulator value.
       /// @param func An accumulator function to be invoked on each element.
@@ -408,11 +482,15 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate3.cpp
-      template<typename source_t, typename accumulate_t, typename func_t, typename result_selector_t>
+      template<typename accumulate_t, typename source_t, typename func_t, typename result_selector_t>
       static accumulate_t aggregate(const xtd::collections::generic::ienumerable<source_t>& source, const accumulate_t& seed, const func_t& func, const result_selector_t& result_selector) {
         return aggregate(source, seed, std::function<accumulate_t(const source_t&, const accumulate_t&)> {func}, std::function<accumulate_t(const accumulate_t&)> {result_selector});
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam func_t The type of the function as std::function<accumulate_t(const source_t&, const accumulate_t&)>.
+      /// @tparam result_selector_t The type of the result selector function as std::function<result_t(const accumulate_t&)>.
       /// @param source An xtd::collections::generic::ienumerable <type_t> to aggregate over.
       /// @param seed The initial accumulator value.
       /// @param func An accumulator function to be invoked on each element.
@@ -421,11 +499,15 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
       /// @include enumerable_aggregate3.cpp
-      template<typename source_t, typename accumulate_t, typename func_t, typename result_selector_t>
+      template<typename accumulate_t, typename source_t, typename func_t, typename result_selector_t>
       static accumulate_t aggregate(std::initializer_list<source_t> source, const accumulate_t& seed, const func_t& func, const result_selector_t& result_selector) {
         return aggregate(source, seed, std::function<accumulate_t(const source_t&, const accumulate_t&)> {func}, std::function<accumulate_t(const accumulate_t&)> {result_selector});
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam collection_t The type of the source.
+      /// @tparam func_t The type of the function as std::function<accumulate_t(const source_t&, const accumulate_t&)>.
+      /// @tparam result_selector_t The type of the result selector function as std::function<result_t(const accumulate_t&)>.
       /// @param source A collection_t collection to aggregate over.
       /// @param seed The initial accumulator value.
       /// @param func An accumulator function to be invoked on each element.
@@ -440,6 +522,10 @@ namespace xtd {
         return aggregate(collection, seed, std::function<accumulate_t(const source_t&, const accumulate_t&)> {func}, std::function<accumulate_t(const accumulate_t&)> {result_selector});
       }
       /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
+      /// @tparam accumulate_t The type of the accumulator value.
+      /// @tparam input_iterator_t The type of the source iterators.
+      /// @tparam func_t The type of the function as std::function<accumulate_t(const source_t&, const accumulate_t&)>.
+      /// @tparam result_selector_t The type of the result selector function as std::function<result_t(const accumulate_t&)>.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @param seed The initial accumulator value.
@@ -456,6 +542,7 @@ namespace xtd {
       }
 
       /// @brief Determines whether all elements of a sequence satisfy a condition.
+      /// @tparam source_t The type of the elements of source.
       /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
       /// @param predicate A function to test each element for a condition.
       /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
@@ -469,6 +556,7 @@ namespace xtd {
         return true;
       }
       /// @brief Determines whether all elements of a sequence satisfy a condition.
+      /// @tparam source_t The type of the elements of source.
       /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
       /// @param predicate A function to test each element for a condition.
       /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
@@ -482,6 +570,8 @@ namespace xtd {
         return true;
       }
       /// @brief Determines whether all elements of a sequence satisfy a condition.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam collection_t The type of the source.
       /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
       /// @param predicate A function to test each element for a condition.
       /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
@@ -495,6 +585,8 @@ namespace xtd {
         return true;
       }
       /// @brief Determines whether all elements of a sequence satisfy a condition.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @param predicate A function to test each element for a condition.
@@ -510,6 +602,7 @@ namespace xtd {
       }
       
       /// @brief Determines whether all elements of a sequence satisfy a condition.
+      /// @tparam source_t The type of the elements of source.
       /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
       /// @param predicate A function to test each element for a condition.
       /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
@@ -521,6 +614,7 @@ namespace xtd {
         return all(source, std::function<bool(const source_t&)> {predicate});
       }
       /// @brief Determines whether all elements of a sequence satisfy a condition.
+      /// @tparam collection_t The type of the source.
       /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
       /// @param predicate A function to test each element for a condition.
       /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
@@ -533,6 +627,7 @@ namespace xtd {
         return all(source, std::function<bool(const source_t&)> {predicate});
       }
       /// @brief Determines whether all elements of a sequence satisfy a condition.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @param predicate A function to test each element for a condition.
@@ -547,6 +642,7 @@ namespace xtd {
       }
       
       /// @brief Determines whether a sequence contains any elements.
+      /// @tparam source_t The type of the elements of source.
       /// @param source The xtd::collections::generic::ienumerable <type_t> to check for emptiness.
       /// @param last The last iterator.
       /// @return true if the source sequence contains any elements; otherwise, false.
@@ -558,6 +654,7 @@ namespace xtd {
         return source.begin() != source.end();
       }
       /// @brief Determines whether a sequence contains any elements.
+      /// @tparam source_t The type of the elements of source.
       /// @param source The xtd::collections::generic::ienumerable <type_t> to check for emptiness.
       /// @param last The last iterator.
       /// @return true if the source sequence contains any elements; otherwise, false.
@@ -569,6 +666,7 @@ namespace xtd {
         return source.begin() != source.end();
       }
       /// @brief Determines whether a sequence contains any elements.
+      /// @tparam collection_t The type of the source.
       /// @param source The collection_t to check for emptiness.
       /// @return true if the source sequence contains any elements; otherwise, false.
       /// @par Examples
@@ -579,6 +677,7 @@ namespace xtd {
         return source.begin() != source.end();
       }
       /// @brief Determines whether a sequence contains any elements.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @return true if the source sequence contains any elements; otherwise, false.
@@ -591,6 +690,7 @@ namespace xtd {
       }
 
       /// @brief Determines whether any element of a sequence satisfies a condition.
+      /// @tparam source_t The type of the elements of source.
       /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
       /// @param predicate A function to test each element for a condition.
       /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
@@ -604,6 +704,7 @@ namespace xtd {
         return false;
       }
       /// @brief Determines whether any element of a sequence satisfies a condition.
+      /// @tparam source_t The type of the elements of source.
       /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
       /// @param predicate A function to test each element for a condition.
       /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
@@ -617,6 +718,8 @@ namespace xtd {
         return false;
       }
       /// @brief Determines whether any element of a sequence satisfies a condition.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam collection_t The type of the source.
       /// @param source A collection_t that contains the elements to apply the predicate to.
       /// @param predicate A function to test each element for a condition.
       /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
@@ -630,6 +733,8 @@ namespace xtd {
         return false;
       }
       /// @brief Determines whether any elements of a sequence satisfy a condition.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @param predicate A function to test each element for a condition.
@@ -645,6 +750,7 @@ namespace xtd {
       }
 
       /// @brief Determines whether any elements of a sequence satisfy a condition.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A collection_t that contains the elements to apply the predicate to.
       /// @param predicate A function to test each element for a condition.
       /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
@@ -656,6 +762,7 @@ namespace xtd {
         return any(source, std::function<bool(const source_t&)> {predicate});
       }
       /// @brief Determines whether any elements of a sequence satisfy a condition.
+      /// @tparam collection_t The type of the source.
       /// @param source A collection_t that contains the elements to apply the predicate to.
       /// @param predicate A function to test each element for a condition.
       /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
@@ -668,6 +775,7 @@ namespace xtd {
         return any(source, std::function<bool(const source_t&)> {predicate});
       }
       /// @brief Determines whether any elements of a sequence satisfy a condition.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param source An xtd::collections::generic::ienumerable <type_t> that contains the elements to apply the predicate to.
       /// @param predicate A function to test each element for a condition.
       /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
@@ -681,6 +789,7 @@ namespace xtd {
       }
       
       /// @brief Appends a value to the end of the sequence.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values.
       /// @param element The value to append to source.
       /// @return A new sequence that ends with element.
@@ -697,6 +806,7 @@ namespace xtd {
         return result;
       }
       /// @brief Appends a value to the end of the sequence.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values.
       /// @param element The value to append to source.
       /// @return A new sequence that ends with element.
@@ -713,6 +823,8 @@ namespace xtd {
         return result;
       }
       /// @brief Appends a value to the end of the sequence.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam collection_t The type of the source.
       /// @param source A sequence of values.
       /// @param element The value to append to source.
       /// @return A new sequence that ends with element.
@@ -729,6 +841,8 @@ namespace xtd {
         return result;
       }
       /// @brief Appends a value to the end of the sequence.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @param element The value to append to source.
@@ -747,6 +861,7 @@ namespace xtd {
       }
 
       /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values.
       /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
       /// @par Example
@@ -757,6 +872,7 @@ namespace xtd {
         return source;
       }
       /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values.
       /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
       /// @par Example
@@ -771,6 +887,7 @@ namespace xtd {
         return result;
       }
       /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @tparam collection_t The type of the source.
       /// @param source A sequence of values.
       /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
       /// @par Example
@@ -786,6 +903,7 @@ namespace xtd {
         return static_cast<const xtd::collections::generic::ienumerable<source_t>&>(result);
       }
       /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
@@ -848,8 +966,46 @@ namespace xtd {
       /// @param source A sequence of optional xtd::int64 values to calculate the average of.
       /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
       static xtd::optional<double> average(const xtd::collections::generic::ienumerable<xtd::optional<xtd::int64>>& source) noexcept;
-      
+
+      /// @brief Casts the elements of an xtd::collection::generic::ienumerable to the specified type.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam source_t The type of the elements of source.
+      /// @param source The xtd::collection::generic::ienumerable that contains the elements to be cast to type `result_t`.
+      /// @return An xtd::collection::generic::ienumerable <type_t> that contains each element of the source sequence cast to the specified type.
+      /// @exception xtd::invalid_cast_exception An element in the sequence cannot be cast to type `result_t`.
+      /// @remarks The xtd::as include file `#include <xtd/as>` is needeed to use this method.
+      template <typename result_t, typename source_t>
+      static const xtd::collections::generic::ienumerable<result_t>& cast(const xtd::collections::generic::ienumerable<source_t>& source) noexcept;
+      /// @brief Casts the elements of an xtd::collection::generic::ienumerable to the specified type.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam source_t The type of the elements of source.
+      /// @param source The xtd::collection::generic::ienumerable that contains the elements to be cast to type `result_t`.
+      /// @return An xtd::collection::generic::ienumerable <type_t> that contains each element of the source sequence cast to the specified type.
+      /// @exception xtd::invalid_cast_exception An element in the sequence cannot be cast to type `result_t`.
+      /// @remarks The xtd::as include file `#include <xtd/as>` is needeed to use this method.
+      template <typename result_t, typename source_t>
+      static const xtd::collections::generic::ienumerable<result_t>& cast(const std::initializer_list<source_t>& source) noexcept;
+      /// @brief Casts the elements of an xtd::collection::generic::ienumerable to the specified type.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam collection_t The type of the source.
+      /// @param source The xtd::collection::generic::ienumerable that contains the elements to be cast to type `result_t`.
+      /// @return An xtd::collection::generic::ienumerable <type_t> that contains each element of the source sequence cast to the specified type.
+      /// @exception xtd::invalid_cast_exception An element in the sequence cannot be cast to type `result_t`.
+      /// @remarks The xtd::as include file `#include <xtd/as>` is needeed to use this method.
+      template <typename result_t, typename collection_t>
+      static const xtd::collections::generic::ienumerable<result_t>& cast(const collection_t& source) noexcept;
+      /// @brief Casts the elements of an xtd::collection::generic::ienumerable to the specified type.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam collection_t The type of the source.
+      /// @param source The xtd::collection::generic::ienumerable that contains the elements to be cast to type `result_t`.
+      /// @return An xtd::collection::generic::ienumerable <type_t> that contains each element of the source sequence cast to the specified type.
+      /// @exception xtd::invalid_cast_exception An element in the sequence cannot be cast to type `result_t`.
+      /// @remarks The xtd::as include file `#include <xtd/as>` is needeed to use this method.
+      template <typename result_t, typename input_iterator_t>
+      static const xtd::collections::generic::ienumerable<result_t>& cast(input_iterator_t first, input_iterator_t last) noexcept;
+
       /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.
       /// @param predicate A function to test each element for a condition.
       /// @param default_value The default value to return if the sequence is empty.
@@ -860,6 +1016,7 @@ namespace xtd {
         return any(result) ? *result.begin() : default_value;
       }
       /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.
       /// @param predicate A function to test each element for a condition.
       /// @param default_value The default value to return if the sequence is empty.
@@ -870,6 +1027,8 @@ namespace xtd {
         return any(result) ? *result.begin() : default_value;
       }
       /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam collection_t The type of the source.
       /// @param source A sequence of values to return an element from.
       /// @param predicate A function to test each element for a condition.
       /// @param default_value The default value to return if the sequence is empty.
@@ -880,6 +1039,8 @@ namespace xtd {
         return any(result) ? *result.begin() : default_value;
       }
       /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @param predicate A function to test each element for a condition.
@@ -892,6 +1053,7 @@ namespace xtd {
       }
       
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.
       /// @param predicate A function to test each element for a condition.
       /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
@@ -900,6 +1062,7 @@ namespace xtd {
         return first_or_default(source, predicate, source_t {});
       }
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.
       /// @param predicate A function to test each element for a condition.
       /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
@@ -908,6 +1071,8 @@ namespace xtd {
         return first_or_default(source, predicate, source_t {});
       }
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam collection_t The type of the source.
       /// @param source A sequence of values to return an element from.
       /// @param predicate A function to test each element for a condition.
       /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
@@ -916,6 +1081,8 @@ namespace xtd {
         return first_or_default(source, predicate, source_t {});
       }
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @param predicate A function to test each element for a condition.
@@ -926,6 +1093,7 @@ namespace xtd {
       }
 
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.
       /// @param default_value The default value to return if the sequence is empty.
       /// @return `default_value` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
@@ -934,6 +1102,7 @@ namespace xtd {
         return any(source) ? *source.begin() : default_value;
       }
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.
       /// @param default_value The default value to return if the sequence is empty.
       /// @return `default_value` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
@@ -942,6 +1111,8 @@ namespace xtd {
         return any(source) ? *source.begin() : default_value;
       }
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam collection_t The type of the source.
       /// @param source A sequence of values to return an element from.
       /// @param default_value The default value to return if the sequence is empty.
       /// @return `default_value` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
@@ -950,6 +1121,8 @@ namespace xtd {
         return any(source) ? *source.begin() : default_value;
       }
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @param default_value The default value to return if the sequence is empty.
@@ -960,6 +1133,7 @@ namespace xtd {
       }
 
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.
       /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
       template <typename source_t>
@@ -967,6 +1141,7 @@ namespace xtd {
         return first_or_default(source, source_t {});
       }
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.
       /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
       template <typename source_t>
@@ -974,6 +1149,7 @@ namespace xtd {
         return first_or_default(source, source_t {});
       }
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+      /// @tparam collection_t The type of the source.
       /// @param source A sequence of values to return an element from.
       /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
       template <typename collection_t>
@@ -982,6 +1158,7 @@ namespace xtd {
         return first_or_default(source, source_t {});
       }
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
@@ -1002,13 +1179,15 @@ namespace xtd {
       static const xtd::collections::generic::ienumerable<xtd::int32>& range(xtd::int32 start, xtd::int32 count);
       
       /// @brief Projects each element of a sequence into a new form.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to invoke a transform function on.
       /// @param selector A transform function to apply to each element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
       /// @include enumerable_range.cpp.cpp
-      template<typename source_t, typename result_t>
+      template<typename result_t, typename source_t>
       static const xtd::collections::generic::ienumerable<result_t>& select(const xtd::collections::generic::ienumerable<source_t>& source, const std::function<result_t(const source_t&)>& selector) {
         static thread_local auto result = enumerable_collection<result_t> {};
         result = enumerable_collection<result_t> {};
@@ -1017,13 +1196,15 @@ namespace xtd {
         return result;
       }
       /// @brief Projects each element of a sequence into a new form.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to invoke a transform function on.
       /// @param selector A transform function to apply to each element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
       /// @include enumerable_range.cpp.cpp
-      template<typename source_t, typename result_t>
+      template<typename result_t, typename source_t>
       static const xtd::collections::generic::ienumerable<result_t>& select(std::initializer_list<source_t> source, const std::function<result_t(const source_t&)>& selector) {
         static thread_local auto result = enumerable_collection<result_t> {};
         result = enumerable_collection<result_t> {};
@@ -1032,13 +1213,16 @@ namespace xtd {
         return result;
       }
       /// @brief Projects each element of a sequence into a new form.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam collection_t The type of the source.
       /// @param source A sequence of values to invoke a transform function on.
       /// @param selector A transform function to apply to each element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
       /// @include enumerable_range.cpp.cpp
-      template<typename source_t, typename result_t, typename collection_t>
+      template<typename result_t, typename source_t, typename collection_t>
       static const xtd::collections::generic::ienumerable<result_t>& select(const collection_t& source, const std::function<result_t(const source_t&)>& selector) {
         static thread_local auto result = enumerable_collection<result_t> {};
         result = enumerable_collection<result_t> {};
@@ -1047,13 +1231,16 @@ namespace xtd {
         return result;
       }
       /// @brief Projects each element of a sequence into a new form.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param source A sequence of values to invoke a transform function on.
       /// @param selector A transform function to apply to each element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&)>&) to project over a sequence of values.
       /// @include enumerable_range.cpp.cpp
-      template<typename source_t, typename result_t, typename input_iterator_t>
+      template<typename result_t, typename source_t, typename input_iterator_t>
       static const xtd::collections::generic::ienumerable<result_t>& select(input_iterator_t first, input_iterator_t last, const std::function<result_t(const source_t&)>& selector) {
         static thread_local auto result = enumerable_collection<result_t> {};
         result = enumerable_collection<result_t> {};
@@ -1063,6 +1250,7 @@ namespace xtd {
       }
       
       /// @brief Projects each element of a sequence into a new form.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to invoke a transform function on.
       /// @param selector A transform function to apply to each element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
@@ -1078,6 +1266,7 @@ namespace xtd {
         return result;
       }
       /// @brief Projects each element of a sequence into a new form.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to invoke a transform function on.
       /// @param selector A transform function to apply to each element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
@@ -1093,6 +1282,8 @@ namespace xtd {
         return result;
       }
       /// @brief Projects each element of a sequence into a new form.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam collection_t The type of the source.
       /// @param source A sequence of values to invoke a transform function on.
       /// @param selector A transform function to apply to each element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
@@ -1108,6 +1299,8 @@ namespace xtd {
         return result;
       }
       /// @brief Projects each element of a sequence into a new form.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param source A sequence of values to invoke a transform function on.
       /// @param selector A transform function to apply to each element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
@@ -1124,13 +1317,15 @@ namespace xtd {
       }
       
       /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to invoke a transform function on.
       /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&, size_t)>&) to project over a sequence of values and use the index of each element.
       /// @include enumerable_select.cpp
-      template<typename source_t, typename result_t>
+      template<typename result_t, typename source_t>
       static const xtd::collections::generic::ienumerable<result_t>& select(const xtd::collections::generic::ienumerable<source_t>& source, const std::function<result_t(const source_t&, size_t)>& selector) {
         static thread_local auto result = enumerable_collection<result_t> {};
         result = enumerable_collection<result_t> {};
@@ -1140,13 +1335,15 @@ namespace xtd {
         return result;
       }
       /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to invoke a transform function on.
       /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&, size_t)>&) to project over a sequence of values and use the index of each element.
       /// @include enumerable_select.cpp
-      template<typename source_t, typename result_t>
+      template<typename result_t, typename source_t>
       static const xtd::collections::generic::ienumerable<result_t>& select(std::initializer_list<source_t> source, const std::function<result_t(const source_t&, size_t)>& selector) {
         static thread_local auto result = enumerable_collection<result_t> {};
         result = enumerable_collection<result_t> {};
@@ -1156,13 +1353,16 @@ namespace xtd {
         return result;
       }
       /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam collection_t The type of the source.
       /// @param source A sequence of values to invoke a transform function on.
       /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&, size_t)>&) to project over a sequence of values and use the index of each element.
       /// @include enumerable_select.cpp
-      template<typename source_t, typename result_t, typename collection_t>
+      template<typename result_t, typename source_t, typename collection_t>
       static const xtd::collections::generic::ienumerable<result_t>& select(const collection_t& source, const std::function<result_t(const source_t&, size_t)>& selector) {
         static thread_local auto result = enumerable_collection<result_t> {};
         result = enumerable_collection<result_t> {};
@@ -1172,13 +1372,16 @@ namespace xtd {
         return result;
       }
       /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+      /// @tparam result_t The type of the resulting value.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param source A sequence of values to invoke a transform function on.
       /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function <result_t(const source_t&, size_t)>&) to project over a sequence of values and use the index of each element.
       /// @include enumerable_select.cpp
-      template<typename source_t, typename result_t, typename input_iterator_t>
+      template<typename result_t, typename source_t, typename input_iterator_t>
       static const xtd::collections::generic::ienumerable<result_t>& select(input_iterator_t first, input_iterator_t last, const std::function<result_t(const source_t&, size_t)>& selector) {
         static thread_local auto result = enumerable_collection<result_t> {};
         result = enumerable_collection<result_t> {};
@@ -1189,6 +1392,7 @@ namespace xtd {
       }
       
       /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to invoke a transform function on.
       /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
@@ -1205,6 +1409,7 @@ namespace xtd {
         return result;
       }
       /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to invoke a transform function on.
       /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
@@ -1221,6 +1426,8 @@ namespace xtd {
         return result;
       }
       /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam collection_t The type of the source.
       /// @param source A sequence of values to invoke a transform function on.
       /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
@@ -1237,6 +1444,8 @@ namespace xtd {
         return result;
       }
       /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param source A sequence of values to invoke a transform function on.
       /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
@@ -1254,24 +1463,30 @@ namespace xtd {
       }
 
       /// @brief Creates a xtd::collections::generic::list <type_t> from an xtd::collections::generic::ienumerable <type_t>.
+      /// @tparam source_t The type of the elements of source.
       /// @param source The xtd::collections::generic::ienumerable <type_t> to create a xtd::collections::generic::list <type_t> from.
       /// @return A xtd::collections::generic::list <type_t> that contains elements from the input sequence.
+      /// @remarks The xtd::collections::generic::list include file `#include <xtd/collections/generic/lists>` is needeed to use this method.
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::to_list to force immediate query evaluation and return a xtd::collection::generic::list <type_t> that contains the query results.
       /// @include enumerable_to_list.cpp
       template<typename source_t>
       static const xtd::collections::generic::list<source_t>& to_list(const xtd::collections::generic::ienumerable<source_t>& source) noexcept;
       /// @brief Creates a xtd::collections::generic::list <type_t> from an std::initializer_list <type_t>.
+      /// @tparam source_t The type of the elements of source.
       /// @param source The std::initializer_list <type_t> to create a xtd::collections::generic::list <type_t> from.
       /// @return A xtd::collections::generic::list <type_t> that contains elements from the input sequence.
+      /// @remarks The xtd::collections::generic::list include file `#include <xtd/collections/generic/lists>` is needeed to use this method.
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::to_list to force immediate query evaluation and return a xtd::collection::generic::list <type_t> that contains the query results.
       /// @include enumerable_to_list.cpp
       template<typename source_t>
       static const xtd::collections::generic::list<source_t>& to_list(std::initializer_list<source_t> source) noexcept;
       /// @brief Creates a xtd::collections::generic::list <type_t> from an collection_t.
+      /// @tparam collection_t The type of the source.
       /// @param source The collection_t to create a xtd::collections::generic::list <type_t> from.
       /// @return A xtd::collections::generic::list <type_t> that contains elements from the input sequence.
+      /// @remarks The xtd::collections::generic::list include file `#include <xtd/collections/generic/lists>` is needeed to use this method.
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::to_list to force immediate query evaluation and return a xtd::collection::generic::list <type_t> that contains the query results.
       /// @include enumerable_to_list.cpp
@@ -1281,9 +1496,11 @@ namespace xtd {
         return collection_to_list<source_t, collection_t>(source);
       }
       /// @brief Creates a xtd::collections::generic::list <type_t> from iterators.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @return A xtd::collections::generic::list <type_t> that contains elements from the input sequence.
+      /// @remarks The xtd::collections::generic::list include file `#include <xtd/collections/generic/lists>` is needeed to use this method.
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::to_list to force immediate query evaluation and return a xtd::collection::generic::list <type_t> that contains the query results.
       /// @include enumerable_to_list.cpp
@@ -1294,6 +1511,7 @@ namespace xtd {
       }
       
       /// @brief Filters a sequence of values based on a predicate.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to filter.
       /// @param predicate A function to test each element for a condition.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
@@ -1309,6 +1527,7 @@ namespace xtd {
         return result;
       }
       /// @brief Filters a sequence of values based on a predicate.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to filter.
       /// @param predicate A function to test each element for a condition.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
@@ -1324,6 +1543,8 @@ namespace xtd {
         return result;
       }
       /// @brief Filters a sequence of values based on a predicate.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam collection_t The type of the source.
       /// @param source A sequence of values to filter.
       /// @param predicate A function to test each element for a condition.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
@@ -1339,6 +1560,8 @@ namespace xtd {
         return result;
       }
       /// @brief Filters a sequence of values based on a predicate.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @param predicate A function to test each element for a condition.
@@ -1356,6 +1579,7 @@ namespace xtd {
       }
 
       /// @brief Filters a sequence of values based on a predicate. Each element's index is used in the logic of the predicate function.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to filter.
       /// @param predicate A function to test each source element for a condition; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
@@ -1372,6 +1596,7 @@ namespace xtd {
         return result;
       }
       /// @brief Filters a sequence of values based on a predicate. Each element's index is used in the logic of the predicate function.
+      /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to filter.
       /// @param predicate A function to test each source element for a condition; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
@@ -1388,6 +1613,8 @@ namespace xtd {
         return result;
       }
       /// @brief Filters a sequence of values based on a predicate. Each element's index is used in the logic of the predicate function.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam collection_t The type of the source.
       /// @param source A sequence of values to filter.
       /// @param predicate A function to test each source element for a condition; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
@@ -1404,6 +1631,8 @@ namespace xtd {
         return result;
       }
       /// @brief Filters a sequence of values based on a predicate. Each element's index is used in the logic of the predicate function.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam input_iterator_t The type of the source iterators.
       /// @param first The first iterator.
       /// @param last The last iterator.
       /// @param predicate A function to test each source element for a condition; the second parameter of the function represents the index of the source element.

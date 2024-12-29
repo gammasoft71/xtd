@@ -43,6 +43,7 @@ namespace xtd {
             return xtd::linq::enumerable::aggregate(base(), func);
           }
           /// @brief Applies an accumulator function over a sequence.
+          /// @tparam func_t The type of the function as std::function<source_t(const source_t&, const source_t&)>.
           /// @param func An accumulator function to be invoked on each element.
           /// @return The final accumulator value.
           /// @par Examples
@@ -53,6 +54,7 @@ namespace xtd {
             return xtd::linq::enumerable::aggregate(base(), func);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
+          /// @tparam accumulate_t The type of the accumulator value.
           /// @param seed The initial accumulator value.
           /// @param func An accumulator function to be invoked on each element.
           /// @return The final accumulator value.
@@ -64,6 +66,8 @@ namespace xtd {
             return xtd::linq::enumerable::aggregate(base(), seed, func);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
+          /// @tparam accumulate_t The type of the accumulator value.
+          /// @tparam func_t The type of the function as std::function<source_t(const source_t&, const source_t&)>.
           /// @param seed The initial accumulator value.
           /// @param func An accumulator function to be invoked on each element.
           /// @return The final accumulator value.
@@ -75,6 +79,8 @@ namespace xtd {
             return xtd::linq::enumerable::aggregate(base(), seed, func);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
+          /// @tparam result_t The type of the resulting value.
+          /// @tparam accumulate_t The type of the accumulator value.
           /// @param seed The initial accumulator value.
           /// @param func An accumulator function to be invoked on each element.
           /// @param result_Selector A function to transform the final accumulator value into the result value.
@@ -82,11 +88,15 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
           /// @include enumerable_aggregate3.cpp
-          template<typename accumulate_t, typename result_t>
+          template<typename result_t, typename accumulate_t>
           result_t aggregate(const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func, const std::function<result_t(const accumulate_t&)>& result_selector) const {
             return xtd::linq::enumerable::aggregate(base(), seed, func, result_selector);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
+          /// @tparam result_t The type of the resulting value.
+          /// @tparam accumulate_t The type of the accumulator value.
+          /// @tparam func_t The type of the function as std::function<source_t(const source_t&, const source_t&)>.
+          /// @tparam result_selector_t The type of the result selector function as std::function<result_t(const accumulate_t&)>.
           /// @param seed The initial accumulator value.
           /// @param func An accumulator function to be invoked on each element.
           /// @param result_selector A function to transform the final accumulator value into the result value.
@@ -94,11 +104,14 @@ namespace xtd {
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
           /// @include enumerable_aggregate3.cpp
-          template<typename accumulate_t, typename result_t, typename func_t, typename result_selector_t>
+          template<typename result_t, typename accumulate_t, typename func_t, typename result_selector_t>
           result_t aggregate(const accumulate_t& seed, const func_t& func, const result_selector_t& result_selector) const {
             return xtd::linq::enumerable::aggregate(base(), seed, func, result_selector);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
+          /// @tparam accumulate_t The type of the accumulator value.
+          /// @tparam func_t The type of the function as std::function<source_t(const source_t&, const source_t&)>.
+          /// @tparam result_selector_t The type of the result selector function as std::function<result_t(const accumulate_t&)>.
           /// @param seed The initial accumulator value.
           /// @param func An accumulator function to be invoked on each element.
           /// @param result_Selector A function to transform the final accumulator value into the result value.
@@ -165,6 +178,15 @@ namespace xtd {
             return xtd::linq::enumerable::average(base());
           }
           
+          /// @brief Casts the elements of an xtd::collection::generic::ienumerable to the specified type.
+          /// @tparam result_t The type of the resulting value.
+          /// @return An xtd::collection::generic::ienumerable <type_t> that contains each element of the source sequence cast to the specified type.
+          /// @exception xtd::invalid_cast_exception An element in the sequence cannot be cast to type `result_t`.
+          template <typename result_t>
+          const xtd::collections::generic::ienumerable<result_t>& cast() const noexcept {
+            return xtd::linq::enumerable::cast<result_t>(base());
+          }
+
           /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
           /// @param predicate A function to test each element for a condition.
           /// @param default_value The default value to return if the sequence is empty.
@@ -193,6 +215,7 @@ namespace xtd {
           }
 
           /// @brief Projects each element of a sequence into a new form.
+          /// @tparam result_t The type of the resulting value.
           /// @param source A sequence of values to invoke a transform function on.
           /// @param selector A transform function to apply to each element.
           /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
@@ -214,6 +237,7 @@ namespace xtd {
             return xtd::linq::enumerable::select(base(), selector);
           }
           /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
+          /// @tparam result_t The type of the resulting value.
           /// @param source A sequence of values to invoke a transform function on.
           /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
           /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
