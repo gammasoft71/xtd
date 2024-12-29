@@ -165,6 +165,20 @@ namespace xtd {
             return xtd::linq::enumerable::average(base());
           }
           
+          /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
+          /// @param predicate A function to test each element for a condition.
+          /// @param default_value The default value to return if the sequence is empty.
+          /// @return `default_value` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+          source_t first_or_default(const std::function<bool(const source_t&)>& predicate, const source_t& default_value) const noexcept {
+            return xtd::linq::enumerable::first_or_default(base(), predicate, default_value);
+          }
+          /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+          /// @param predicate A function to test each element for a condition.
+          /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+          source_t first_or_default(const std::function<bool(const source_t&)>& predicate) const noexcept {
+            return xtd::linq::enumerable::first_or_default(base(), predicate);
+          }
+
           /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
           /// @param default_value The default value to return if the sequence is empty.
           /// @return `default_value`  if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.

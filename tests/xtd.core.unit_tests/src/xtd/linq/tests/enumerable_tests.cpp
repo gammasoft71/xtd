@@ -9,6 +9,7 @@
 #include <xtd/tunit/test_method_attribute>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::linq;
 using namespace xtd::tunit;
 
@@ -219,6 +220,90 @@ namespace xtd::linq::tests {
       assert::are_equal(nullopt, enumerable::average(array<optional<int64>> {}));
     }
     
+    void test_method_(first_or_default_with_enumerable_predicate_and_default_value) {
+      assert::are_equal(3, enumerable::first_or_default<int>(array {3, 4, 5}, [](int value) {return value <= 3;}, 2));
+      assert::are_equal(2, enumerable::first_or_default<int>(array {3, 4, 5}, [](int value) {return value < 3;}, 2));
+    }
+    
+    void test_method_(first_or_default_with_initializer_list_predicate_and_default_value) {
+      assert::are_equal(3, enumerable::first_or_default<int>({3, 4, 5}, [](int value) {return value <= 3;}, 2));
+      assert::are_equal(2, enumerable::first_or_default<int>({3, 4, 5}, [](int value) {return value < 3;}, 2));
+    }
+    
+    void test_method_(first_or_default_with_collection_predicate_and_default_value) {
+      assert::are_equal(3, enumerable::first_or_default<int>(std::vector {3, 4, 5}, [](int value) {return value <= 3;}, 2));
+      assert::are_equal(2, enumerable::first_or_default<int>(std::vector {3, 4, 5}, [](int value) {return value < 3;}, 2));
+    }
+    
+    void test_method_(first_or_default_with_iterators_predicate_and_default_value) {
+      auto s = array {3, 4, 5};
+      assert::are_equal(3, enumerable::first_or_default<int>(s.begin(), s.end(), [](int value) {return value <= 3;}, 2));
+      assert::are_equal(2, enumerable::first_or_default<int>(s.begin(), s.end(), [](int value) {return value < 3;}, 2));
+    }
+
+    void test_method_(first_or_default_with_enumerable_and_predicate) {
+      assert::are_equal(3, enumerable::first_or_default<int>(array {3, 4, 5}, [](int value) {return value <= 3;}));
+      assert::are_equal(0, enumerable::first_or_default<int>(array {3, 4, 5}, [](int value) {return value < 3;}));
+    }
+    
+    void test_method_(first_or_default_with_initializer_list_and_predicate) {
+      assert::are_equal(3, enumerable::first_or_default<int>({3, 4, 5}, [](int value) {return value <= 3;}));
+      assert::are_equal(0, enumerable::first_or_default<int>({3, 4, 5}, [](int value) {return value < 3;}));
+    }
+    
+    void test_method_(first_or_default_with_collection_list_and_predicate) {
+      assert::are_equal(3, enumerable::first_or_default<int>(std::vector {3, 4, 5}, [](int value) {return value <= 3;}));
+      assert::are_equal(0, enumerable::first_or_default<int>(std::vector {3, 4, 5}, [](int value) {return value < 3;}));
+    }
+    
+    void test_method_(first_or_default_with_iterators_and_predicate) {
+      auto s = array {3, 4, 5};
+      assert::are_equal(3, enumerable::first_or_default<int>(s.begin(), s.end(), [](int value) {return value <= 3;}));
+      assert::are_equal(0, enumerable::first_or_default<int>(s.begin(), s.end(), [](int value) {return value < 3;}));
+    }
+
+    void test_method_(first_or_default_with_enumerable_and_default_value) {
+      assert::are_equal(3, enumerable::first_or_default(array {3, 4, 5}, 2));
+      assert::are_equal(2, enumerable::first_or_default(array<int> {}, 2));
+    }
+
+    void test_method_(first_or_default_with_initalizer_list_and_default_value) {
+      assert::are_equal(3, enumerable::first_or_default({3, 4, 5}, 2));
+      assert::are_equal(2, enumerable::first_or_default(std::initializer_list<int> {}, 2));
+    }
+
+    void test_method_(first_or_default_with_collection_and_default_value) {
+      assert::are_equal(3, enumerable::first_or_default(std::vector {3, 4, 5}, 2));
+      assert::are_equal(2, enumerable::first_or_default(std::vector<int> {}, 2));
+    }
+    
+    void test_method_(first_or_default_with_iterators_and_default_value) {
+      auto s = array {3, 4, 5};
+      assert::are_equal(3, enumerable::first_or_default(s.begin(), s.end(), 2));
+      assert::are_equal(2, enumerable::first_or_default(s.begin(), s.begin(), 2));
+    }
+    
+    void test_method_(first_or_default_with_enumerable) {
+      assert::are_equal(3, enumerable::first_or_default(array {3, 4, 5}));
+      assert::are_equal(0, enumerable::first_or_default(array<int> {}));
+    }
+    
+    void test_method_(first_or_default_with_initializer_list) {
+      assert::are_equal(3, enumerable::first_or_default({3, 4, 5}));
+      assert::are_equal(0, enumerable::first_or_default(std::initializer_list<int> {}));
+    }
+    
+    void test_method_(first_or_default_with_collection) {
+      assert::are_equal(3, enumerable::first_or_default(std::vector {3, 4, 5}));
+      assert::are_equal(0, enumerable::first_or_default(std::vector<int> {}));
+    }
+    
+    void test_method_(first_or_default_with_iterators) {
+      auto s = array {3, 4, 5};
+      assert::are_equal(3, enumerable::first_or_default(s.begin(), s.end()));
+      assert::are_equal(0, enumerable::first_or_default(s.begin(), s.begin()));
+    }
+
     void test_method_(range_with_start_and_count) {
       collection_assert::are_equal({1, 2, 3, 4, 5}, enumerable::range(1, 5));
       collection_assert::are_equal({11, 12, 13, 14, 15}, enumerable::range(11, 5));
@@ -228,7 +313,7 @@ namespace xtd::linq::tests {
     }
     
     void test_method_(to_list_with_enumerable) {
-      assert::is_instance_of<xtd::collections::generic::list<int>>(enumerable::to_list(array {1, 2, 3}));
+      assert::is_instance_of<list<int>>(enumerable::to_list(array {1, 2, 3}));
       collection_assert::are_equal({1, 2, 3}, enumerable::to_list(array {1, 2, 3}));
     }
     

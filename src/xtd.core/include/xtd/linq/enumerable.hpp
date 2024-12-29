@@ -849,6 +849,82 @@ namespace xtd {
       /// @return The average of the sequence of values, or xtd::nullopt if the source sequence is empty or contains only values that are xtd::nullopt.
       static xtd::optional<double> average(const xtd::collections::generic::ienumerable<xtd::optional<xtd::int64>>& source) noexcept;
       
+      /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
+      /// @param source A sequence of values to return an element from.
+      /// @param predicate A function to test each element for a condition.
+      /// @param default_value The default value to return if the sequence is empty.
+      /// @return `default_value` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+      template <typename source_t>
+      static source_t first_or_default(const xtd::collections::generic::ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate, const source_t& default_value) noexcept {
+        const auto& result = where(source, predicate);
+        return any(result) ? *result.begin() : default_value;
+      }
+      /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
+      /// @param source A sequence of values to return an element from.
+      /// @param predicate A function to test each element for a condition.
+      /// @param default_value The default value to return if the sequence is empty.
+      /// @return `default_value` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+      template <typename source_t>
+      static source_t first_or_default(std::initializer_list<source_t> source, const std::function<bool(const source_t&)>& predicate, const source_t& default_value) noexcept {
+        const auto& result = where(source, predicate);
+        return any(result) ? *result.begin() : default_value;
+      }
+      /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
+      /// @param source A sequence of values to return an element from.
+      /// @param predicate A function to test each element for a condition.
+      /// @param default_value The default value to return if the sequence is empty.
+      /// @return `default_value` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+      template <typename source_t, typename collection_t>
+      static auto first_or_default(const collection_t& source, const std::function<bool(const source_t&)>& predicate, const source_t& default_value) noexcept {
+        const auto& result = where(source, predicate);
+        return any(result) ? *result.begin() : default_value;
+      }
+      /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
+      /// @param first The first iterator.
+      /// @param last The last iterator.
+      /// @param predicate A function to test each element for a condition.
+      /// @param default_value The default value to return if the sequence is empty.
+      /// @return `default_value` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+      template <typename source_t, typename input_iterator_t>
+      static auto first_or_default(input_iterator_t first, input_iterator_t last, const std::function<bool(const source_t&)>& predicate, const source_t& default_value) noexcept {
+        const auto& result = where(first, last, predicate);
+        return any(result) ? *result.begin() : default_value;
+      }
+      
+      /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+      /// @param source A sequence of values to return an element from.
+      /// @param predicate A function to test each element for a condition.
+      /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+      template <typename source_t>
+      static source_t first_or_default(const xtd::collections::generic::ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate) noexcept {
+        return first_or_default(source, predicate, source_t {});
+      }
+      /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+      /// @param source A sequence of values to return an element from.
+      /// @param predicate A function to test each element for a condition.
+      /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+      template <typename source_t>
+      static source_t first_or_default(std::initializer_list<source_t> source, const std::function<bool(const source_t&)>& predicate) noexcept {
+        return first_or_default(source, predicate, source_t {});
+      }
+      /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+      /// @param source A sequence of values to return an element from.
+      /// @param predicate A function to test each element for a condition.
+      /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+      template <typename source_t, typename collection_t>
+      static auto first_or_default(const collection_t& source, const std::function<bool(const source_t&)>& predicate) noexcept {
+        return first_or_default(source, predicate, source_t {});
+      }
+      /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
+      /// @param first The first iterator.
+      /// @param last The last iterator.
+      /// @param predicate A function to test each element for a condition.
+      /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
+      template <typename source_t, typename input_iterator_t>
+      static auto first_or_default(input_iterator_t first, input_iterator_t last, const std::function<bool(const source_t&)>& predicate) noexcept {
+        return first_or_default(first, last, predicate, source_t {});
+      }
+
       /// @brief Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.
       /// @param source A sequence of values to return an element from.
       /// @param default_value The default value to return if the sequence is empty.
@@ -914,7 +990,7 @@ namespace xtd {
         using source_t = typename std::decay<decltype(*first)>::type;
         return first_or_default(first, last, source_t {});
       }
-
+      
       /// @brief Generates a sequence of integral numbers within a specified range.
       /// @param start The value of the first integer in the sequence.
       /// @param count The number of sequential integers to generate.
@@ -1255,7 +1331,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const xtd::collections::generic::ienumerable <source_t>&, const std::function<bool (const source_t&)>&) to filter a sequence.
       /// @include enumerable_where.cpp
       template<typename source_t, typename collection_t>
-      static const xtd::collections::generic::ienumerable<source_t>& where(const collection_t& source, const std::function<bool(const source_t&)>& selector) {
+      static const xtd::collections::generic::ienumerable<source_t>& where(const collection_t& source, const std::function<bool(const source_t&)>& predicate) {
         static thread_local auto result = enumerable_collection<source_t> {};
         result = enumerable_collection<source_t> {};
         for (const auto& item : source)
