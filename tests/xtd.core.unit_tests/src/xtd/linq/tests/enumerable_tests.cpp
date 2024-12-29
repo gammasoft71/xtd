@@ -1,6 +1,7 @@
 #include <xtd/linq/enumerable>
 #include <xtd/collections/generic/list>
 #include <xtd/argument_out_of_range_exception>
+#include <xtd/as>
 #include <xtd/icomparable>
 #include <xtd/invalid_operation_exception>
 #include <xtd/tunit/collection_assert>
@@ -220,6 +221,27 @@ namespace xtd::linq::tests {
       assert::are_equal(nullopt, enumerable::average(array<optional<int64>> {}));
     }
     
+    void test_method_(cast_with_enumerable) {
+      collection_assert::are_equal({1.0, 2.0, 3.0, 4.0, 5.0}, enumerable::cast<double>(array {1, 2, 3, 4, 5}));
+      assert::is_instance_of<ienumerable<double>>(enumerable::cast<double>(array {1, 2, 3, 4, 5}));
+    }
+    
+    void test_method_(cast_with_intializer_list) {
+      collection_assert::are_equal({1.0, 2.0, 3.0, 4.0, 5.0}, enumerable::cast<double>({1, 2, 3, 4, 5}));
+      assert::is_instance_of<ienumerable<double>>(enumerable::cast<double>({1, 2, 3, 4, 5}));
+    }
+    
+    void test_method_(cast_with_collection) {
+      collection_assert::are_equal({1.0, 2.0, 3.0, 4.0, 5.0}, enumerable::cast<double>(std::vector {1, 2, 3, 4, 5}));
+      assert::is_instance_of<ienumerable<double>>(enumerable::cast<double>(std::vector {1, 2, 3, 4, 5}));
+    }
+    
+    void test_method_(cast_with_iterators) {
+      auto s = array {1, 2, 3, 4, 5};
+      collection_assert::are_equal({1.0, 2.0, 3.0, 4.0, 5.0}, enumerable::cast<double>(s.begin(), s.end()));
+      assert::is_instance_of<ienumerable<double>>(enumerable::cast<double>(s.begin(), s.end()));
+    }
+
     void test_method_(first_or_default_with_enumerable_predicate_and_default_value) {
       assert::are_equal(3, enumerable::first_or_default<int>(array {3, 4, 5}, [](int value) {return value <= 3;}, 2));
       assert::are_equal(2, enumerable::first_or_default<int>(array {3, 4, 5}, [](int value) {return value < 3;}, 2));
