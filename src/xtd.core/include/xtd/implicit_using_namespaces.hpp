@@ -18,13 +18,13 @@ __using_namespace__(xtd::threading);
 __using_namespace__(xtd::threading::tasks);
 #endif
 
-#if __XTD_CURRENT_TARGET_ID__ == __CMAKE_TARGET_ID_TEST_APPLICATION__
-__using_namespace__(xtd::tunit);
-#endif
-
 #if __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_GUI_APPLICATION__ || __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_UNKNOWN__
 __using_namespace__(xtd::drawing);
 __using_namespace__(xtd::forms);
+#endif
+
+#if __XTD_CURRENT_TARGET_ID__ == __CMAKE_TARGET_ID_TEST_APPLICATION__
+__using_namespace__(xtd::tunit);
 #endif
 
 #undef __using_namespace__
