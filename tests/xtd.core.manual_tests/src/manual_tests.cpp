@@ -1,8 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd;
-using namespace xtd::linq;
-
 auto main() -> int {
   const auto& squares = enumerable::range(1, 10).select([](auto x) {return x * x;});
   
