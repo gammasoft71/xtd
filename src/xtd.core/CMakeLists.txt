@@ -233,6 +233,8 @@ add_sources(
   include/xtd/iequatable
   include/xtd/iformatable.hpp
   include/xtd/iformatable
+  include/xtd/implicit_using_namespaces.hpp
+  include/xtd/implicit_using_namespaces
   include/xtd/index_out_of_range_exception.hpp
   include/xtd/index_out_of_range_exception
   include/xtd/int16.hpp
@@ -419,6 +421,8 @@ add_sources(
   include/xtd/system_exception
   include/xtd/target_id.hpp
   include/xtd/target_id
+  include/xtd/target_id_definitions.hpp
+  include/xtd/target_id_definitions
   include/xtd/target_type.hpp
   include/xtd/target_type
   include/xtd/tick.hpp

@@ -248,10 +248,6 @@ uint32_t environment::get_processor_count() {
   return std::thread::hardware_concurrency();
 }
 
-#if !defined(__XTD_CURRENT_TARGET_ID__)
-#define __XTD_CURRENT_TARGET_ID__ __XTD_TARGET_ID_UNKNOWN__
-#endif
-
 std::string environment::get_resources_path(bool gui_app) {
   auto app_path = get_command_line_args()[0];
   auto pos = app_path.rfind('/');
