@@ -9,7 +9,7 @@
 /// @endcond
 
 #include "../exception.hpp"
-#include "../target_id.hpp"
+#include "../target_id_definitions.hpp"
 #include "../string.hpp"
 #if __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_GUI_APPLICATION__ || __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_UNKNOWN__
 #include "xtd/forms/application.hpp"

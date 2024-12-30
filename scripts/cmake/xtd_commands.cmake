@@ -13,6 +13,7 @@ include(ProcessorCount)
 option(XTD_DOWNLOAD_ASTYLE "Download and build astyle from Github" OFF)
 option(XTD_DOWNLOAD_CPPCHECK "Download and build cppcheck from Github" OFF)
 option(XTD_DOWNLOAD_DOXYGEN "Download and build doxygen from Github" OFF)
+option(XTD_ENABLE_IMPLICIT_USING_NAMESPACES "Enable implicit using namespaces." ON)
 option(XTD_ENABLE_RUN_ASTYLE "Enable run astyle (format) command" OFF)
 option(XTD_ENABLE_RUN_CPPCHECK "Enable run cppcheck command" OFF)
 option(XTD_ENABLE_RUN_REFERENCE_GUIDE "Add run Reference Guide generator command" OFF)
@@ -2219,6 +2220,10 @@ endif ()
 # brief The following option activate the enum introspection.
 if (NOT XTD_USE_ENUMERATION_INTROSPECTION)
   add_definitions(-D__XTD_DO_NOT_USE_ENUMERATION_INTROSPECTION__)
+endif ()
+
+if (XTD_ENABLE_IMPLICIT_USING_NAMESPACES)
+  add_definitions(-D__XTD_ENABLE_IMPLICIT_USING_NAMESPACES__)
 endif ()
 
 # standard C

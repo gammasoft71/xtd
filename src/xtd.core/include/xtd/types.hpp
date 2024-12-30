@@ -14,6 +14,7 @@
 #include "delete_sptr.hpp"
 #include "delete_uptr.hpp"
 #include "double.hpp"
+#include "implicit_using_namespaces.hpp"
 #include "int16.hpp"
 #include "int32.hpp"
 #include "int64.hpp"
