@@ -5,7 +5,6 @@
 #include "../../../include/xtd/literals.hpp"
 
 using namespace xtd;
-using namespace xtd::collections::generic;
 using namespace xtd::linq;
 
 decimal enumerable::average(const ienumerable<decimal>& source) {
@@ -123,7 +122,7 @@ optional<double> enumerable::average(const ienumerable<optional<int64>>& source)
   return average / count;
 }
 
-const ienumerable<int32>& enumerable::range(int32 start, int32 count) {
+const enumerable::ienumerable<int32>& enumerable::range(int32 start, int32 count) {
   if (count < 0) throw argument_out_of_range_exception {};
   static thread_local auto result = enumerable_collection<int32> {};
   result = enumerable_collection<int32> {};
