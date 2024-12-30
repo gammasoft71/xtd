@@ -224,7 +224,7 @@ namespace xtd {
           /// @include enumerable_range.cpp.cpp
           template<typename result_t>
           const xtd::collections::generic::ienumerable<result_t>& select(const std::function<result_t(const source_t&)>& selector) const {
-            return xtd::linq::enumerable::select<source_t, result_t>(base(), selector);
+            return xtd::linq::enumerable::select<result_t, source_t>(base(), selector);
           }
           /// @brief Projects each element of a sequence into a new form.
           /// @param source A sequence of values to invoke a transform function on.
@@ -246,7 +246,7 @@ namespace xtd {
           /// @include enumerable_select.cpp
           template<typename result_t>
           const xtd::collections::generic::ienumerable<result_t>& select(const std::function<result_t(const source_t&, size_t index)>& selector) const {
-            return xtd::linq::enumerable::select<source_t, result_t>(base(), selector);
+            return xtd::linq::enumerable::select<result_t, source_t>(base(), selector);
           }
           /// @brief Projects each element of a sequence into a new form by incorporating the element's index.
           /// @param source A sequence of values to invoke a transform function on.
