@@ -1,3 +1,4 @@
+#undef __XTD_ENABLE_IMPLICIT_USING_NAMESPACES__
 #include <xtd/io/path>
 #include <xtd/console>
 #include <xtd/environment>
