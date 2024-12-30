@@ -3,9 +3,9 @@
 using namespace xtd;
 
 auto main() -> int {
-  auto fruits = array {"apple"_s, "banana"_s, "mango"_s, "orange"_s, "passionfruit"_s, "grape"_s};
+  auto fruits = array<string> {"apple", "banana", "mango", "orange", "passionfruit", "grape"};
   
-  const auto& query = fruits.select([](const string& fruit, size_t index) {
+  const auto& query = fruits.select<std::tuple<size_t, string>>([](const string& fruit, size_t index) {
     return std::make_tuple(index, fruit.substring(0, index));
   });
   
