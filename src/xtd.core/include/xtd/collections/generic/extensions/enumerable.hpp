@@ -208,6 +208,13 @@ namespace xtd {
             return xtd::linq::enumerable::chunk(base(), size);
           }
 
+          /// @brief Concatenates two sequences.
+          /// @param second The sequence to concatenate to the current sequence.
+          /// @return An xtd::collection::generic::ienumerable <type_t> that contains the concatenated elements of the two input sequences.
+          const ienumerable<source_t>& concat(const ienumerable<source_t>& second) const noexcept {
+            return xtd::linq::enumerable::concat(base(), second);
+          }
+
           /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
           /// @param predicate A function to test each element for a condition.
           /// @param default_value The default value to return if the sequence is empty.

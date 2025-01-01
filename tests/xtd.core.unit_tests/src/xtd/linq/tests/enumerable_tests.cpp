@@ -139,6 +139,12 @@ namespace xtd::linq::tests {
 
       assert::throws<xtd::argument_out_of_range_exception>([&] {enumerable::chunk(s, 0);});
     }
+    
+    void test_method_(concat_with_enumerable_and_enumerable) {
+      collection_assert::are_equal({1, 2, 3, 4, 5, 6}, enumerable::concat(array {1, 2, 3}, array {4, 5, 6}));
+      collection_assert::are_equal({1, 2, 3}, enumerable::concat(array {1, 2, 3}, array<int> {}));
+      collection_assert::are_equal({4, 5, 6}, enumerable::concat(array<int> {}, array {4, 5, 6}));
+    }
 
     void test_method_(first_or_default_with_enumerable_predicate_and_default_value) {
       assert::are_equal(3, enumerable::first_or_default<int>(array {3, 4, 5}, [](int value) {return value <= 3;}, 2));

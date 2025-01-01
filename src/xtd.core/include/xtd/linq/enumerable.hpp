@@ -304,7 +304,23 @@ namespace xtd {
       /// @zxception xtd::argument_out_of_range_exception `size` is equal to 0.
       template <typename source_t>
       static const ienumerable<xtd::array<source_t>>& chunk(const ienumerable<source_t>& source, size_t size);
-      
+
+      /// @brief Concatenates two sequences.
+      /// @tparam source_t The type of the elements of source.
+      /// @param first The first sequence to concatenate.
+      /// @param second The sequence to concatenate to the first sequence.
+      /// @return An xtd::collection::generic::ienumerable <type_t> that contains the concatenated elements of the two input sequences.
+      template <typename source_t>
+      static const ienumerable<source_t>& concat(const ienumerable<source_t>& first, const ienumerable<source_t>& second) noexcept {
+        static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
+        for (const auto& item : first)
+          result.items.push_back(item);
+        for (const auto& item : second)
+          result.items.push_back(item);
+        return static_cast<const ienumerable<source_t>&>(result);
+      }
+
       /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.
