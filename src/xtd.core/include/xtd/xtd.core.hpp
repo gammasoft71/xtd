@@ -18,6 +18,7 @@
 #include "collections/generic/dictionary.hpp"
 #include "collections/generic/empty_comparer.hpp"
 #include "collections/generic/enumerator.hpp"
+#include "collections/generic/equality_comparer.hpp"
 #include "collections/generic/hash_set.hpp"
 #include "collections/generic/icollection.hpp"
 #include "collections/generic/icomparer.hpp"
