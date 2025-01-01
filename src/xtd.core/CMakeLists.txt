@@ -559,6 +559,8 @@ add_sources(
   include/xtd/collections/generic/empty_comparer
   include/xtd/collections/generic/enumerator.hpp
   include/xtd/collections/generic/enumerator
+  include/xtd/collections/generic/equality_comparer.hpp
+  include/xtd/collections/generic/equality_comparer
   include/xtd/collections/generic/hash_set.hpp
   include/xtd/collections/generic/hash_set
   include/xtd/collections/generic/icollection.hpp
