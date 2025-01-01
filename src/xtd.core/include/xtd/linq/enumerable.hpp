@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
 #pragma once
 #include "../collections/generic/helpers/allocator.hpp"
+#include "../collections/generic/iequality_comparer.hpp"
 #define __XTD_CORE_INTERNAL__
 #include "../internal/__array_definition.hpp"
 #undef __XTD_CORE_INTERNAL__
@@ -320,7 +321,32 @@ namespace xtd {
           result.items.push_back(item);
         return static_cast<const ienumerable<source_t>&>(result);
       }
-
+      
+      /// @brief Determines whether a sequence contains a specified element by using the default equality comparer.
+      /// @tparam source_t The type of the elements of source.
+      /// @param source A sequence in which to locate a value.
+      /// @param value The value to locate in the sequence.
+      /// @return true if the source sequence contains an element that has the specified value; otherwise, false.
+      template <typename source_t>
+      static bool contains(const ienumerable<source_t>& source, const source_t& value) noexcept {
+        for (const auto& item : source)
+          if (item == value) return true;
+        return false;
+      }
+      
+      /// @brief Determines whether a sequence contains a specified element by using a specified equality comparer.
+      /// @tparam source_t The type of the elements of source.
+      /// @param source A sequence in which to locate a value.
+      /// @param value The value to locate in the sequence.
+      /// @param comparer An equality comparer to compare values.
+      /// @return true if the source sequence contains an element that has the specified value; otherwise, false.
+      template <typename source_t>
+      static bool contains(const ienumerable<source_t>& source, const source_t& value, const xtd::collections::generic::iequality_comparer<source_t>& comparer) noexcept {
+        for (const auto& item : source)
+          if (comparer.equals(item, value)) return true;
+        return false;
+      }
+      
       /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.

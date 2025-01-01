@@ -215,6 +215,21 @@ namespace xtd {
             return xtd::linq::enumerable::concat(base(), second);
           }
 
+          /// @brief Determines whether a sequence contains a specified element by using the default equality comparer.
+          /// @param value The value to locate in the sequence.
+          /// @return true if the source sequence contains an element that has the specified value; otherwise, false.
+          bool contains(const source_t& value) const noexcept {
+            return xtd::linq::enumerable::contains(base(), value);
+          }
+          
+          /// @brief Determines whether a sequence contains a specified element by using a specified equality comparer.
+          /// @param value The value to locate in the sequence.
+          /// @param comparer An equality comparer to compare values.
+          /// @return true if the source sequence contains an element that has the specified value; otherwise, false.
+          bool contains(const source_t& value, const xtd::collections::generic::iequality_comparer<source_t>& comparer) const noexcept {
+            return xtd::linq::enumerable::contains(base(), value, comparer);
+          }
+
           /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
           /// @param predicate A function to test each element for a condition.
           /// @param default_value The default value to return if the sequence is empty.
