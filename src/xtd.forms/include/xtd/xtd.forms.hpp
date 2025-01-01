@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains  xtd.forms library headers.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/xtd.drawing>
 #include <xtd/forms/window_messages>

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::configuration::file_settings class
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../core_export.hpp"
 #include "../collections/generic/sorted_dictionary.hpp"
@@ -193,7 +193,7 @@ namespace xtd {
       /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::top_file_comment property, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save_as methods.
       /// ```cpp
       /// auto file = file_settings {};
-      /// file.top_file_comment("Contains settings for my_app application.\nCopyright, (c) 2024 MyCompany. All rights reserved.");
+      /// file.top_file_comment("Contains settings for my_app application.\nCopyright, (c) 2025 MyCompany. All rights reserved.");
       /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
       /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
       /// file.save_as("my_app.ini");
@@ -201,7 +201,7 @@ namespace xtd {
       /// my_app.ini:
       /// ```ini
       /// # Contains settings for my_app application.
-      /// # Copyright, (c) 2024 MyCompany. All rights reserved.
+      /// # Copyright, (c) 2025 MyCompany. All rights reserved.
       ///
       /// [pictures "Menu"]
       /// file_open = resources/symbolic_open.png
@@ -216,7 +216,7 @@ namespace xtd {
       /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::top_file_comment property, xtd::configuration::file_settings::write and xtd::configuration::file_settings::save_as methods.
       /// ```cpp
       /// auto file = file_settings {};
-      /// file.top_file_comment("Contains settings for my_app application.\nCopyright, (c) 2024 MyCompany. All rights reserved.");
+      /// file.top_file_comment("Contains settings for my_app application.\nCopyright, (c) 2025 MyCompany. All rights reserved.");
       /// file.write("pictures \"Menu\"", "file_open", "resources/symbolic_open.png");
       /// file.write("pictures \"Menu\"", "file_save", "resources/symbolic_save.png");
       /// file.save_as("my_app.ini");
@@ -224,7 +224,7 @@ namespace xtd {
       /// my_app.ini:
       /// ```ini
       /// # Contains settings for my_app application.
-      /// # Copyright, (c) 2024 MyCompany. All rights reserved.
+      /// # Copyright, (c) 2025 MyCompany. All rights reserved.
       ///
       /// [pictures "Menu"]
       /// file_open = resources/symbolic_open.png

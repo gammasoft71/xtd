@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::ienumerator alias.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "generic/icollection.hpp"
 #include "ienumerable.hpp"

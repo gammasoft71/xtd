@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::renderer class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "visual_styles/check_box_state.hpp"
 #include "visual_styles/push_button_state.hpp"

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::generic::comparer <type_t> interface.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "icomparer.hpp"
 //#include "../../comparison.hpp"

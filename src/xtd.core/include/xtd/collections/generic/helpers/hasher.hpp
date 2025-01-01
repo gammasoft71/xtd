@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::generic::helpers::hasher struct.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #define __XTD_CORE_INTERNAL__
 #include "../../../internal/__hasher.hpp"

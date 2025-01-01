@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::form container.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "const_form_ref.hpp"
 #include "form_border_style.hpp"

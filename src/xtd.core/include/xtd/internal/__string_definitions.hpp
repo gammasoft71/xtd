@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains string definitions.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
 #if !defined(__XTD_CORE_INTERNAL__)

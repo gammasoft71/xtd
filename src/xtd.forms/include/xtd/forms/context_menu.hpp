@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::context_menu menu.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "menu.hpp"
 #include "message.hpp"

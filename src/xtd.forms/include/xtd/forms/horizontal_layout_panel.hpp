@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::horizontal_layout_panel container.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "horizontal_control_layout_style_collection.hpp"
 #include "panel.hpp"

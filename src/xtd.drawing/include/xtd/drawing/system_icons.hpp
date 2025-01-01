@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::drawing::system_icons factory.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "icon.hpp"
 #include "size.hpp"

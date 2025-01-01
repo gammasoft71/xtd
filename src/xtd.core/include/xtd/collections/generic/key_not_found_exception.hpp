@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::generic::key_not_found_exception exception.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../../system_exception.hpp"
 

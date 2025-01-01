@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::enum_collection.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "collections/generic/key_value_pair.hpp"
 #include "string.hpp"

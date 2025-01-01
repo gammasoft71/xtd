@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::split_container container.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "orientation.hpp"
 #include "scrollable_control.hpp"

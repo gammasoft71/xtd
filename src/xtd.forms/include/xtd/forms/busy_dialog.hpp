@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::busy_dialog dialog.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "component.hpp"
 #include "dialog_appearance.hpp"

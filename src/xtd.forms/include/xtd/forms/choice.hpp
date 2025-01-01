@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::choice control.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "layout/arranged_element_collection.hpp"
 #include "list_control.hpp"

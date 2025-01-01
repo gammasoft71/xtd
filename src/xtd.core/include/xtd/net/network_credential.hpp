@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::net::network_credential class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../security/secure_string.hpp"
 #include "../core_export.hpp"

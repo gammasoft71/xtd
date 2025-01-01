@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::generic::enumerator <type_t> interface.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "ienumerator.hpp"
 #include "../../ptr.hpp"

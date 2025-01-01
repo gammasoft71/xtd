@@ -34,4 +34,4 @@ This structural code demonstrates the Strategy pattern which encapsulates functi
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.

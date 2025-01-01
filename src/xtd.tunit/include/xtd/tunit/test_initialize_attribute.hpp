@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::test_initialize_attribute class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/diagnostics/stack_frame>
 #include <xtd/string>

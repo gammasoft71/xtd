@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::null_opt alias.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "optional.hpp"
 

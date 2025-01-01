@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::file_assume class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "assume.hpp"
 #include "file_assert.hpp"

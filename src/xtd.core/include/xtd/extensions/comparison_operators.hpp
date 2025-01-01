@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::extensions::comparison_operators class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #define __XTD_STD_INTERNAL__
 #include "../internal/__xtd_std_version.hpp"

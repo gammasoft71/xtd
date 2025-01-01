@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::box class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "collections/generic/helpers/comparer.hpp"
 #include "collections/generic/helpers/equator.hpp"

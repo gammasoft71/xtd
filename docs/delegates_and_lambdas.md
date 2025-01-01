@@ -170,4 +170,4 @@ But instead of making it a separate definition, we introduced it ad hoc in the c
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.

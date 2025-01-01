@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::iformatable interface.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #define __XTD_CORE_INTERNAL__
 #include "internal/__string_definitions.hpp"

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::slong type.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 /// @cond
 #define __XTD_VALUE_TYPE_NATIVE__

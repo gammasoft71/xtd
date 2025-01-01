@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::iclonable interface.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "interface.hpp"
 #include "object.hpp"

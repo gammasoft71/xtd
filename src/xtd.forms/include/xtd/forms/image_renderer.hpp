@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::image_renderer static class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../forms_export.hpp"
 #include "style_sheets/iimage_model.hpp"

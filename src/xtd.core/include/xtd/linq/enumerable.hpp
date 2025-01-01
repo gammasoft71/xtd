@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::linq::enumerable <type_t> class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../collections/generic/helpers/allocator.hpp"
 #include "../collections/generic/iequality_comparer.hpp"

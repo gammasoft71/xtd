@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::hash_code class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "collections/generic/helpers/hasher.hpp"
 #include "object.hpp"

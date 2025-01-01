@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::boxing methods.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "box.hpp"
 #include "byte_object.hpp"

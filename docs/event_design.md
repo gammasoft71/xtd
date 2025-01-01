@@ -54,4 +54,4 @@ An event handler can invoke multiple event handling methods, possibly on multipl
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.

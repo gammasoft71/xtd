@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::threading::wait_or_timer_callback exception.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../delegate.hpp"
 #include <any>

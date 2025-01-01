@@ -20,4 +20,4 @@ Anyone can inherit from a class and access the protected members.
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.

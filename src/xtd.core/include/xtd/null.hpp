@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::null pointer valiue.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "null_ptr.hpp"
 #include "core_export.hpp"

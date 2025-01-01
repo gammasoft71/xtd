@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::timers::elapsed_event_handler event handler.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "elapsed_event_args.hpp"
 #include "../event_handler.hpp"

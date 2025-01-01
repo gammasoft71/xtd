@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::environment class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "collections/specialized/string_collection.hpp"
 #include "diagnostics/stack_trace.hpp"

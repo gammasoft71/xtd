@@ -71,6 +71,6 @@ Learn `xtd` easily with our step-by-step tutorials.
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.
 
 [//]: # (https://dotnet.microsoft.com/en-us/learn/dotnet/what-is-dotnet)

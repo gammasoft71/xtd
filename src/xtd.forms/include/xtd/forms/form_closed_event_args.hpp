@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::form_closed_event_args event args.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "close_reason.hpp"
 #include <xtd/event_args>

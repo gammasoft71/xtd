@@ -34,4 +34,4 @@ This structural code demonstrates the Proxy pattern which provides a representat
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.

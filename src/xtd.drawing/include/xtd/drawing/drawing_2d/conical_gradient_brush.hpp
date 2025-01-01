@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::drawing::drawing_2d::conical_gradient_brush class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../../drawing_export.hpp"
 #include "../brush.hpp"

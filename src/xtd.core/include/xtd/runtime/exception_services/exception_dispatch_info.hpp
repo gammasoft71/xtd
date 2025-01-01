@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::runtime::exception_services::exception_dispatch_info class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../../exception.hpp"
 #include "../../ptr.hpp"

@@ -60,4 +60,4 @@ It is almost impossible to write code that remains consistent in the presence of
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.

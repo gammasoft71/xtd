@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::ostream_event_listener class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "ostream_event_listener.hpp"
 #include "unit_test.hpp"

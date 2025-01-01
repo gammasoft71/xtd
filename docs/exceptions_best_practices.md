@@ -11,6 +11,6 @@ Coming soon...
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/standard/exceptions/best-practices-for-exceptions)

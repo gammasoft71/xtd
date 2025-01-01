@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains #typeof_ keyword.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "string.hpp"
 #include "type_object.hpp"

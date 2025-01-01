@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::light_button control.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "visual_styles/check_box_state.hpp"
 #include "appearance.hpp"

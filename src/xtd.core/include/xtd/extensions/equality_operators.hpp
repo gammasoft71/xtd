@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::extensions::equality_operators class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
