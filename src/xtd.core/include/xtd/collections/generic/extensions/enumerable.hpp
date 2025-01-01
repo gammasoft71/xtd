@@ -204,7 +204,7 @@ namespace xtd {
           /// @param source A sequence of values to chunk.
           /// @param size The maximum size of each chunk.
           /// @return A sequence of chunks of size at most size.
-          const ienumerable<xtd::array<source_t>>& chunk(size_t size) const noexcept {
+          const ienumerable<xtd::array<source_t>>& chunk(size_t size) const {
             return xtd::linq::enumerable::chunk(base(), size);
           }
 
