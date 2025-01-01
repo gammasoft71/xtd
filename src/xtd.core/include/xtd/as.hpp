@@ -61,31 +61,4 @@ inline const xtd::collections::generic::ienumerable<result_t>& xtd::linq::enumer
     result.items.push_back(xtd::as<result_t>(item));
   return static_cast<const xtd::collections::generic::ienumerable<result_t>&>(result);
 }
-
-template <typename result_t, typename source_t>
-inline const xtd::collections::generic::ienumerable<result_t>& xtd::linq::enumerable::cast(const std::initializer_list<source_t>& source) noexcept {
-  static thread_local auto result = xtd::linq::enumerable_collection<result_t> {};
-  result = xtd::linq::enumerable_collection<result_t> {};
-  for (const auto& item : source)
-    result.items.push_back(xtd::as<result_t>(item));
-  return static_cast<const xtd::collections::generic::ienumerable<result_t>&>(result);
-}
-
-template <typename result_t, typename collection_t>
-inline const xtd::collections::generic::ienumerable<result_t>& xtd::linq::enumerable::cast(const collection_t& source) noexcept {
-  static thread_local auto result = xtd::linq::enumerable_collection<result_t> {};
-  result = xtd::linq::enumerable_collection<result_t> {};
-  for (const auto& item : source)
-    result.items.push_back(xtd::as<result_t>(item));
-  return static_cast<const xtd::collections::generic::ienumerable<result_t>&>(result);
-}
-
-template <typename result_t, typename input_iterator_t>
-inline const xtd::collections::generic::ienumerable<result_t>& xtd::linq::enumerable::cast(input_iterator_t first, input_iterator_t last) noexcept {
-  static thread_local auto result = xtd::linq::enumerable_collection<result_t> {};
-  result = xtd::linq::enumerable_collection<result_t> {};
-  for (auto iterator = first; iterator != last; ++iterator)
-    result.items.push_back(xtd::as<result_t>(*iterator));
-  return static_cast<const xtd::collections::generic::ienumerable<result_t>&>(result);
-}
 /// @endcond

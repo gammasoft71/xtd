@@ -30,7 +30,7 @@ namespace xtd {
         template <typename enumerable_t, typename source_t>
         class enumerable {
         public:
-          /// @name Public Alias
+          /// @name Public Aliases
           
           /// @{
           /// @brief Represents the ienumerable value type.
@@ -197,6 +197,15 @@ namespace xtd {
           template <typename result_t>
           const ienumerable<result_t>& cast() const noexcept {
             return xtd::linq::enumerable::cast<result_t>(base());
+          }
+
+          /// @brief Splits the elements of a sequence into chunks of size at most size.
+          /// @tparam source_t The type of the elements of source.
+          /// @param source A sequence of values to chunk.
+          /// @param size The maximum size of each chunk.
+          /// @return A sequence of chunks of size at most size.
+          const ienumerable<xtd::array<source_t>>& chunk(size_t size) const noexcept {
+            return xtd::linq::enumerable::chunk(base(), size);
           }
 
           /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.

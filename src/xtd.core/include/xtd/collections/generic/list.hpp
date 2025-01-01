@@ -1021,27 +1021,6 @@ namespace xtd::linq {
     result = xtd::collections::generic::list<source_t> {source};
     return result;
   }
-
-  template<typename source_t>
-  inline const xtd::collections::generic::list<source_t>& enumerable::to_list(std::initializer_list<source_t> source) noexcept {
-    static thread_local auto result = xtd::collections::generic::list<source_t> {};
-    result = xtd::collections::generic::list<source_t> {source};
-    return result;
-  }
-  
-  template<typename source_t, typename collection_t>
-  inline const xtd::collections::generic::list<source_t>& enumerable::collection_to_list(const collection_t& source) noexcept {
-    static thread_local auto result = xtd::collections::generic::list<source_t> {};
-    result = xtd::collections::generic::list<source_t> {source.begin(), source.end()};
-    return result;
-  }
-  
-  template<typename source_t, typename input_iterator_t>
-  inline const xtd::collections::generic::list<source_t>& enumerable::input_iterator_to_list(input_iterator_t first, input_iterator_t last) noexcept {
-    static thread_local auto result = xtd::collections::generic::list<source_t> {};
-    result = xtd::collections::generic::list<source_t> {first, last};
-    return result;
-  }
 }
 /// @endcond
 
