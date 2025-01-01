@@ -125,18 +125,19 @@ namespace xtd::linq::tests {
     
     void test_method_(chunk_with_enumerable) {
       auto s = array {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
-      const auto& chunks = enumerable::chunk(s, 3);
+      const auto& chunks = enumerable::chunk(s, 4);
       auto enumerator = chunks.get_enumerator();
       assert::is_true(enumerator.move_next());
-      collection_assert::are_equal({1, 2, 3}, enumerator.current());
+      collection_assert::are_equal({1, 2, 3, 4}, enumerator.current());
       assert::is_true(enumerator.move_next());
-      collection_assert::are_equal({4, 5, 6}, enumerator.current());
+      collection_assert::are_equal({5, 6, 7, 8}, enumerator.current());
       assert::is_true(enumerator.move_next());
-      collection_assert::are_equal({7, 8, 9}, enumerator.current());
-      assert::is_true(enumerator.move_next());
-      collection_assert::are_equal({10, 11, 12}, enumerator.current());
+      collection_assert::are_equal({9, 10, 11, 12}, enumerator.current());
       assert::is_true(enumerator.move_next());
       collection_assert::are_equal({13, 14}, enumerator.current());
+      assert::is_false(enumerator.move_next());
+
+      assert::throws<xtd::argument_out_of_range_exception>([&] {enumerable::chunk(s, 0);});
     }
 
     void test_method_(first_or_default_with_enumerable_predicate_and_default_value) {

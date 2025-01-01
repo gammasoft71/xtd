@@ -301,8 +301,9 @@ namespace xtd {
       /// @param source A sequence of values to chunk.
       /// @param size The maximum size of each chunk.
       /// @return A sequence of chunks of size at most size.
+      /// @zxception xtd::argument_out_of_range_exception `size` is equal to 0.
       template <typename source_t>
-      static const ienumerable<xtd::array<source_t>>& chunk(const ienumerable<source_t>& source, size_t size) noexcept;
+      static const ienumerable<xtd::array<source_t>>& chunk(const ienumerable<source_t>& source, size_t size);
       
       /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
       /// @tparam source_t The type of the elements of source.

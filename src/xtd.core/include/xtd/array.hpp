@@ -107,16 +107,20 @@ namespace xtd {
 #include "array_static.hpp"
 #include "array_.hpp"
 #undef __XTD_ARRAY_INTERNAL__
+#define __XTD_CORE_INTERNAL__
+#include "internal/__external_exceptions.hpp"
+#undef __XTD_CORE_INTERNAL__
 
 /// @cond
 template <typename source_t>
-const xtd::linq::enumerable::ienumerable<xtd::array<source_t>>& xtd::linq::enumerable::chunk(const ienumerable<source_t>& source, size_t size) noexcept {
+const xtd::linq::enumerable::ienumerable<xtd::array<source_t>>& xtd::linq::enumerable::chunk(const ienumerable<source_t>& source, size_t size) {
+  if (size == 0) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
   static thread_local auto chunks = enumerable_collection<xtd::array<source_t>> {};
   chunks = enumerable_collection<xtd::array<source_t>> {};
   auto chunk = std::vector<source_t> {};
-  for (auto index = 0; const auto& item : source) {
+  for (auto index = size_t {0}; const auto& item : source) {
     chunk.push_back(item);
-    if (++index % 3 == 0) {
+    if (++index % size == 0) {
       chunks.items.push_back(chunk);
       chunk = std::vector<source_t> {};
     }
