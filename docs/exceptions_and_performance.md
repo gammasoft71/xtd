@@ -64,4 +64,4 @@ When using this pattern, it is important to define the try functionality in stri
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.

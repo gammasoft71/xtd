@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::drawing::graphics class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../drawing_export.hpp"
 #include "drawing_2d/compositing_mode.hpp"

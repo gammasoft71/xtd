@@ -23,4 +23,4 @@ There are many ways to allow extensibility in frameworks. They range from less p
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.

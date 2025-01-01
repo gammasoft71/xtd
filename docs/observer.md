@@ -34,4 +34,4 @@ This structural code demonstrates the Observer pattern in which registered objec
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.

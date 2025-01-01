@@ -114,4 +114,4 @@ xtd browses the whole folder and reads all files with the .css extension.
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.

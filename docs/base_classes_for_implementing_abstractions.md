@@ -24,4 +24,4 @@ As previously discussed, base classes can provide invaluable help for users who 
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.

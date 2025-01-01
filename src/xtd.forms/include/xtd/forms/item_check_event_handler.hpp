@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::item_check_event_handler event handler.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "item_check_event_args.hpp"
 #include <xtd/event_handler>

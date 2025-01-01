@@ -11,7 +11,7 @@ if [ -z ${xtd_version+x} ]; then
   exit 1
 fi
 
-echo "Install xtd libraries version $xtd_version, copyright © 2024 Gammasoft"
+echo "Install xtd libraries version $xtd_version, copyright © 2025 Gammasoft"
 echo ""
 
 #_______________________________________________________________________________

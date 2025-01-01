@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::threading::event_wait_handle exception.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "event_reset_mode.hpp"
 #include "wait_handle.hpp"

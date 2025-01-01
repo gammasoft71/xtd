@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::translator class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "collections/specialized/string_dictionary.hpp"
 #include "static.hpp"

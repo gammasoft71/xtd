@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::h_result class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "int32.hpp"
 #include "static.hpp"

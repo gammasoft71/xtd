@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::iequality_comparer alias.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "generic/iequality_comparer.hpp"
 #include "../as.hpp"

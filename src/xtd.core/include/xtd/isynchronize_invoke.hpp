@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::isynchronize_invoke interface.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "delegate.hpp"
 #include "async_result.hpp"

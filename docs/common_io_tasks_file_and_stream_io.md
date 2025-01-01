@@ -49,7 +49,7 @@ Not yet implemented...
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.
 
 <!--
 https://docs.microsoft.com/en-us/dotnet/standard/io/

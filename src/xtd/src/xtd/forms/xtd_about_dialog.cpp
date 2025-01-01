@@ -25,14 +25,14 @@ xtd_about_dialog::xtd_about_dialog() : data_(xtd::new_sptr<data>()) {
   data_->dialog.description("xtd is a framework to create console, GUI and unit tests.");
   data_->dialog.website("https://gammasoft71.github.io/xtd/");
   data_->dialog.website_label("xtd website");
-  data_->dialog.copyright("Copyright (c) 2024 Gammasoft.\nAll rights reserved.");
+  data_->dialog.copyright("Copyright (c) 2025 Gammasoft.\nAll rights reserved.");
   data_->dialog.authors({"Gammasoft", "Arsero", "Bader", "bigplayszn", "emmanuel-ferdman", "Fireblaze-A47", "deltoro05", "GermanAizek", "jimorc", "jopadan", "MCCLXXXVII", "niansa", "qingyiwebt", "yfiumefreddo"});
   data_->dialog.documenters({"Gammasoft", "Arsero"});
   data_->dialog.translators({"Gammasoft", "Bader", "qingyiwebt"});
   data_->dialog.artists({"Gammasoft"});
   data_->dialog.license("MIT License\n"
                         "\n"
-                        "Copyright (c) 2024 Gammasoft.\n"
+                        "Copyright (c) 2025 Gammasoft.\n"
                         "\n"
                         "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n"
                         "\n"

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::specialized::string_key_value_pair typedef.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include <utility>
 #include "../generic/key_value_pair.hpp"

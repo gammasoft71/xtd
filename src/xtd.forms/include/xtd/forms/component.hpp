@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::component class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../forms_export.hpp"
 #include "../forms_namespace_aliases.hpp"

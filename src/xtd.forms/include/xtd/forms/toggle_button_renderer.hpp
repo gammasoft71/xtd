@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::toggle_button_renderer static class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "visual_styles/toggle_button_state.hpp"
 #include "border_sides.hpp"

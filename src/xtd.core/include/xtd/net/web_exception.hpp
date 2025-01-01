@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::net::web_exception exception.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../invalid_operation_exception.hpp"
 #include "../literals.hpp"

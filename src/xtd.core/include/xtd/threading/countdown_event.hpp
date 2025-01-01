@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::threading::countdown_event exception.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "cancellation_token.hpp"
 #include "wait_handle.hpp"

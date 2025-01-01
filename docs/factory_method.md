@@ -34,4 +34,4 @@ This structural code demonstrates the Factory method offering great flexibility 
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.

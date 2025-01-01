@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::guid class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "core_export.hpp"
 #include "icomparable.hpp"

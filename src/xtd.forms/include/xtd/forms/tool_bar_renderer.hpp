@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::tool_bar_renderer static class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "visual_styles/form_state.hpp"
 #include "border_sides.hpp"

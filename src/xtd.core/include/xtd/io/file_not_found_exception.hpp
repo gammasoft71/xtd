@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::io::file_not_found_exception exception.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "io_exception.hpp"
 #include "../literals.hpp"

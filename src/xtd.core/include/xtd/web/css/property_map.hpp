@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::web::css::property_map typedef.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "property.hpp"
 #include <map>

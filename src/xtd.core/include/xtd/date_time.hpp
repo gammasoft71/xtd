@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::date_time class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "chrono.hpp"
 #include "date_time_kind.hpp"

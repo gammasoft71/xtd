@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::diagnostics::source_switch class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../string.hpp"
 #include "source_levels.hpp"

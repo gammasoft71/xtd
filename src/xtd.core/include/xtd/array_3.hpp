@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::array <type_t, 3> class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 
 #if !defined(__XTD_ARRAY_INTERNAL__)
 #error "Do not include this file: Internal use only. Include <xtd/array> or <xtd/array.h> instead."

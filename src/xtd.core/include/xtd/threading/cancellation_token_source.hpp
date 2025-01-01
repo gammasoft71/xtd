@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::threading::cancellation_token_source class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "cancellation_token.hpp"
 #include "../core_export.hpp"

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::threading::registered_wait_handle exception.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "wait_handle.hpp"
 #include "../object.hpp"

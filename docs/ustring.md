@@ -353,4 +353,4 @@ See [lietarl operators](literal_operators.md) for more information.
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.

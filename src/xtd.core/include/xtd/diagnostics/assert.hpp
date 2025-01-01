@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::diagnostics::assert_ keyword.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "debug.hpp"
 #include "debug_break.hpp"

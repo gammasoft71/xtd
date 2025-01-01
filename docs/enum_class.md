@@ -709,6 +709,6 @@ auto main() -> int {
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.
 
 [//]: # (https://learn.microsoft.com/en-us/dotnet/standard/base-types/custom-timespan-format-strings)

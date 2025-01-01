@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::char32_object alias.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "box_char.hpp"
 #include "char32.hpp"

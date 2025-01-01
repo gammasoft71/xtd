@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::reset_color class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "console.hpp"
 #include "object.hpp"

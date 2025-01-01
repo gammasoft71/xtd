@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::switch_button control.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #include "button_base.hpp"
 #include <xtd/optional>
 

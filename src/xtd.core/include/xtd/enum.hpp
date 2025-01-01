@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains enum_ and enum_ut_ keywords.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "enum_attribute.hpp"
 #include "enum_collection.hpp"

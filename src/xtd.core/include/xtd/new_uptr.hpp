@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::new_uptr method.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "uptr.hpp"
 #include <utility>

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::threading::thread_local_object exception.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "mutex.hpp"
 #include "thread.hpp"

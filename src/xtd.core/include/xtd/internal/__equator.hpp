@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains __object_equator__ and __polymorphic_equator__ structs.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 
 #pragma once
 /// @cond

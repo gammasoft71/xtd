@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd.tunit library headers.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/xtd.core>
 #include "tunit/abort_error.hpp"

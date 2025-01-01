@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::drawing::bitmap class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../drawing_export.hpp"
 #include "imaging/bitmap_data.hpp"

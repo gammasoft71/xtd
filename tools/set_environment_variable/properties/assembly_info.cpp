@@ -15,7 +15,7 @@ assembly_description_("set_path is a registry Windows path updater line tool.");
 assembly_configuration_("Debug");
 assembly_company_("Gammasoft");
 assembly_product_("set_path");
-assembly_copyright_("Copyright © Gammasoft 2024");
+assembly_copyright_("Copyright © Gammasoft 2025");
 assembly_trademark_("");
 assembly_culture_("en_US.UTF-8");
 

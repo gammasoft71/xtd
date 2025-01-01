@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::domain_up_down control.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 
 #include "up_down_base.hpp"

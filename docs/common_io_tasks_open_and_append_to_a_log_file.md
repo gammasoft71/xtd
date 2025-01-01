@@ -77,7 +77,7 @@ startup_(program::main);
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.
 
 <!---
 https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-open-and-append-to-a-log-file

@@ -35,5 +35,5 @@ You can see the original source : [Framework Design Guidelines](https://docs.mic
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.
 

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::font_picker control.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "control.hpp"
 #include "font_picker_event_handler.hpp"

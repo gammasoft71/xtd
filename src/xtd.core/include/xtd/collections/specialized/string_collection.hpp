@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::collections::specialized::string_collection typedef.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../generic/list.hpp"
 #include "../../string.hpp"

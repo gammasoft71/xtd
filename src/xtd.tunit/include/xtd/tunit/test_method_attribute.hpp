@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::tunit::test_method_attribute class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "test_state.hpp"
 #include <xtd/diagnostics/stack_frame>

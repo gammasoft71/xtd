@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::target_type class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "object.hpp"
 #include "target_id.hpp"

@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::const_tab_page_ref_less struct.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "const_tab_page_ref.hpp"
 #include <xtd/object>

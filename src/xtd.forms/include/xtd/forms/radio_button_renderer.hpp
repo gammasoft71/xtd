@@ -1,6 +1,6 @@
 /// @file
 /// @brief Contains xtd::forms::radio_button_renderer class.
-/// @copyright Copyright (c) 2024 Gammasoft. All rights reserved.
+/// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "visual_styles/radio_button_state.hpp"
 #include "../forms_export.hpp"
