@@ -733,6 +733,8 @@ add_sources(
   include/xtd/internal/__hasher.hpp
   include/xtd/internal/__hexfloat_formatter.hpp
   include/xtd/internal/__iformatable_formatter.hpp
+  include/xtd/internal/__key_value_pair_definition.hpp
+  include/xtd/internal/__list_definition.hpp
   include/xtd/internal/__natural_formatter.hpp
   include/xtd/internal/__numeric_formatter.hpp
   include/xtd/internal/__parse.hpp

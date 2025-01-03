@@ -7,6 +7,9 @@
 #include "../../object.hpp"
 #include "../../iequatable.hpp"
 #include "../../static.hpp"
+#define __XTD_CORE_INTERNAL__
+#include "../../internal/__key_value_pair_definition.hpp"
+#undef  __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -14,11 +17,6 @@ namespace xtd {
   namespace collections {
     /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
     namespace generic {
-      /// @cond
-      template <typename key_t = std::nullptr_t, typename value_t = std::nullptr_t>
-      class key_value_pair;
-      /// @endcond
-      
       /// @brief Defines a key/value pair that can be set or retrieved.
       /// ```cpp
       /// template<typename key_t, typename value_t>
