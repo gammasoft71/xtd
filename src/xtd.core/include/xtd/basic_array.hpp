@@ -237,7 +237,7 @@ namespace xtd {
     /// @param value The object to be added to the end of the array.
     constexpr bool contains(const type_t& value) const noexcept override {
       for (const auto& item : data_->items)
-        if (reinterpret_cast<const type_t&>(item) == value) return true;
+        if (xtd::collections::generic::helpers::equator<type_t> {}(reinterpret_cast<const type_t&>(item), value)) return true;
       return false;
     }
     
@@ -258,7 +258,12 @@ namespace xtd {
     void copy_to(xtd::array<type_t>& array, xtd::int64 index) const {copy_to(array, static_cast<xtd::size>(index));}
 
     bool equals(const object& obj) const noexcept override {return dynamic_cast<const basic_array<value_type>*>(&obj) && equals(static_cast<const basic_array<value_type>&>(obj));}
-    bool equals(const basic_array& rhs) const noexcept override {return data_->items == rhs.data_->items && data_->version == rhs.data_->version && data_->lower_bound == rhs.data_->lower_bound && data_->upper_bound == rhs.data_->upper_bound;}
+    bool equals(const basic_array& rhs) const noexcept override {
+      if (count() != rhs.count()) return false;
+      for (size_type i = 0; i < count(); i++)
+        if (!xtd::collections::generic::helpers::equator<type_t> {}(data_->items.at(i), rhs.data_->items.at(i))) return false;
+      return data_->version == rhs.data_->version && data_->lower_bound == rhs.data_->lower_bound && data_->upper_bound == rhs.data_->upper_bound;
+    }
     
     /// @brief Assigns the value to all elements in the container.
     /// @param value The value to assign to the elements.
@@ -420,7 +425,7 @@ namespace xtd {
       
       if (array.size() == 0) return npos;
       for (auto increment = size_type {0}; increment < count; ++increment) {
-        if (array[index + increment] == value)
+        if (xtd::collections::generic::helpers::equator<type_t> {}(array[index + increment], value))
           return index + increment;
       }
       return npos;

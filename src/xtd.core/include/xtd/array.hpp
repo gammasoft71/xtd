@@ -6,6 +6,7 @@
 #include "internal/__array_definition.hpp"
 #include "internal/__external_exceptions.hpp"
 #undef __XTD_CORE_INTERNAL__
+#include "collections/generic/helpers/equator.hpp"
 #include "collections/generic/enumerator.hpp"
 #include "collections/generic/icomparer.hpp"
 #include "collections/generic/ilist.hpp"
