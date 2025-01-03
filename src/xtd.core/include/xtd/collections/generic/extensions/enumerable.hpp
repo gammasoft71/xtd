@@ -230,6 +230,19 @@ namespace xtd {
             return xtd::linq::enumerable::contains(base(), value, comparer);
           }
 
+          /// @brief Returns the number of elements in current sequence.
+          /// @return The number of elements in the input sequence.
+          size_t count() const noexcept {
+            return xtd::linq::enumerable::count(base());
+          }
+          
+          /// @brief Returns a number that represents how many elements in the specified sequence satisfy a condition.
+          /// @param predicate A function to test each element for a condition.
+          /// @return A number that represents how many elements in the sequence satisfy the condition in the predicate function.
+          size_t count(const std::function<bool(const source_t&)>& predicate) const noexcept {
+            return xtd::linq::enumerable::count(base(), predicate);
+          }
+          
           /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
           /// @param predicate A function to test each element for a condition.
           /// @param default_value The default value to return if the sequence is empty.

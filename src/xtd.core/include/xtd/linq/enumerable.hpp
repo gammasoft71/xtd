@@ -347,6 +347,32 @@ namespace xtd {
         return false;
       }
       
+      /// @brief Returns the number of elements in a sequence.
+      /// @tparam source_t The type of the elements of source.
+      /// @param source A sequence that contains elements to be counted.
+      /// @return The number of elements in the input sequence.
+      template <typename source_t>
+      static size_t count(const ienumerable<source_t>& source) noexcept {
+        auto count = size_t {0};
+        auto enumerator = source.get_enumerator();
+        while (enumerator.move_next()) ++count;
+        return count;
+      }
+
+      /// @brief Returns a number that represents how many elements in the specified sequence satisfy a condition.
+      /// @tparam source_t The type of the elements of source.
+      /// @param source A sequence that contains elements to be tested and counted.
+      /// @param predicate A function to test each element for a condition.
+      /// @return A number that represents how many elements in the sequence satisfy the condition in the predicate function.
+      template <typename source_t>
+      static size_t count(const ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate) noexcept {
+        auto count = size_t {0};
+        auto enumerator = source.get_enumerator();
+        while (enumerator.move_next())
+          if (predicate(enumerator.current())) ++count;
+        return count;
+      }
+      
       /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.
