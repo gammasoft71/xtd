@@ -147,7 +147,7 @@ namespace xtd::linq::tests {
       collection_assert::are_equal({4, 5, 6}, enumerable::concat(array<int> {}, array {4, 5, 6}));
     }
     
-    void test_method_(contins_with_enumerable_and_value) {
+    void test_method_(contains_with_enumerable_and_value) {
       assert::is_true(enumerable::contains(array {1, 2, 3, 4, 5}, 3));
       assert::is_false(enumerable::contains(array {1, 2, 3, 4, 5}, 6));
     }
@@ -155,6 +155,16 @@ namespace xtd::linq::tests {
     void test_method_(contains_with_enumerable_and_iequality_comparer) {
       assert::is_true(enumerable::contains(array {1, 2, 3, 4, 5}, 3, equality_comparer<int>::default_equality_comparer()));
       assert::is_false(enumerable::contains(array {1, 2, 3, 4, 5}, 6, equality_comparer<int>::default_equality_comparer()));
+    }
+    
+    void test_method_(count_with_enumerable) {
+      assert::are_equal(5u, enumerable::count(array {1, 2, 3, 4, 5}));
+      assert::are_equal(0u, enumerable::count(array<int> {}));
+    }
+    
+    void test_method_(count_with_enumerable_and_predicate) {
+      assert::are_equal(3u, enumerable::count<int>(array {1, 2, 3, 4, 5}, [](int value) {return value <= 3;}));
+      assert::are_equal(0u, enumerable::count<int>(array {1, 2, 3, 4, 5}, [](int value) {return value < 0;}));
     }
 
     void test_method_(first_or_default_with_enumerable_predicate_and_default_value) {
