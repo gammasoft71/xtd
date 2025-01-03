@@ -308,14 +308,14 @@ namespace xtd {
     /// @name Public Static Methods
     
     /// @{
-    /// @brief Retrieves an array of the xtd::collections::generic::key_value_pair<enum_t, xtd::string> of the constants in a specified enumeration.
+    /// @brief Retrieves an array of the xtd::enum_collection<enum_t> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
     template<typename enum_t>
     static const xtd::enum_collection<enum_t>& get_entries() noexcept {
       return enum_object<enum_t>().entries();
     }
     
-    /// @brief Retrieves an array of the xtd::collections::generic::key_value_pair<xtd::byte, xtd::string> of the constants in a specified enumeration.
+    /// @brief Retrieves an array of the xtd::enum_collection<xtd::byte> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
     template<typename enum_t>
     static xtd::enum_collection<xtd::byte> get_entries_as_byte() noexcept {
@@ -324,7 +324,7 @@ namespace xtd {
       return entries;
     }
     
-    /// @brief Retrieves an array of the xtd::collections::generic::key_value_pair<int16, xtd::string> of the constants in a specified enumeration.
+    /// @brief Retrieves an array of the xtd::enum_collection<int16> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
     template<typename enum_t>
     static xtd::enum_collection<int16> get_entries_as_int16() noexcept {
@@ -333,7 +333,7 @@ namespace xtd {
       return entries;
     }
     
-    /// @brief Retrieves an array of the xtd::collections::generic::key_value_pair<int32, xtd::string> of the constants in a specified enumeration.
+    /// @brief Retrieves an array of the xtd::enum_collection<int32> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
     template<typename enum_t>
     static xtd::enum_collection<int32> get_entries_as_int32() noexcept {
@@ -342,7 +342,7 @@ namespace xtd {
       return entries;
     }
     
-    /// @brief Retrieves an array of the xtd::collections::generic::key_value_pair<int64, xtd::string> of the constants in a specified enumeration.
+    /// @brief Retrieves an array of the xtd::enum_collection<int64> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
     template<typename enum_t>
     static xtd::enum_collection<int64> get_entries_as_int64() noexcept {
@@ -351,7 +351,7 @@ namespace xtd {
       return entries;
     }
     
-    /// @brief Retrieves an array of the xtd::collections::generic::key_value_pair<sbyte, xtd::string> of the constants in a specified enumeration.
+    /// @brief Retrieves an array of the xtd::enum_collection<sbyte> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
     template<typename enum_t>
     static xtd::enum_collection<sbyte> get_entries_as_sbyte() noexcept {
@@ -360,7 +360,7 @@ namespace xtd {
       return entries;
     }
     
-    /// @brief Retrieves an array of the xtd::collections::generic::key_value_pair<uint16, xtd::string> of the constants in a specified enumeration.
+    /// @brief Retrieves an array of the xtd::enum_collection<uint16> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
     template<typename enum_t>
     static xtd::enum_collection<uint16> get_entries_as_uint16() noexcept {
@@ -369,7 +369,7 @@ namespace xtd {
       return entries;
     }
     
-    /// @brief Retrieves an array of the xtd::collections::generic::key_value_pair<uint32, xtd::string> of the constants in a specified enumeration.
+    /// @brief Retrieves an array of the xtd::enum_collection<uint32> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
     template<typename enum_t>
     static xtd::enum_collection<uint32> get_entries_as_uint32() noexcept {
@@ -378,7 +378,7 @@ namespace xtd {
       return entries;
     }
     
-    /// @brief Retrieves an array of the xtd::collections::generic::key_value_pair<uint64, xtd::string> of the constants in a specified enumeration.
+    /// @brief Retrieves an array of the xtd::enum_collection<uint64> of the constants in a specified enumeration.
     /// @return A xtd::string array of the values and names of the constants in enumType.
     template<typename enum_t>
     static xtd::enum_collection<uint64> get_entries_as_uint64() noexcept {

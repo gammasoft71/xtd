@@ -19,5 +19,5 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @remarks For more information about enumeration, see [enum class](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/enum_class) guide.
   template<typename enum_t>
-  using enum_collection = std::vector<xtd::collections::generic::key_value_pair<enum_t, xtd::string>>;
+  using enum_collection = std::vector<std::pair<enum_t, xtd::string>>;
 }
