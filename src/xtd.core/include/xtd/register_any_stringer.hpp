@@ -8,7 +8,7 @@
 extern std::unordered_map<std::type_index, std::function<std::string(std::any const&)>> __any_stringer__;
 
 template<class type_t, class function_t>
-inline xtd::collections::generic::key_value_pair<const std::type_index, std::function<std::string(std::any const&)>> __to_any_stringer__(function_t const& func) {
+inline std::pair<const std::type_index, std::function<std::string(std::any const&)>> __to_any_stringer__(function_t const& func) {
   return {
     std::type_index(typeid(type_t)),
     [f = func](std::any const & value)->std::string {

@@ -10,7 +10,7 @@
 namespace xtd {
   /// @brief The xtd::collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
   namespace collections {
-    /// @brief Implements a std::pair with the key and the value strongly typed to be std::any.
+    /// @brief Implements a xtd::collections::generic::key_value_pair with the key and the value strongly typed to be std::any.
     /// ```cpp
     /// using any_pair = xtd::collections::generic::key_value_pair<std::any, std::any>
     /// ```

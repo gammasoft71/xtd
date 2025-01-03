@@ -132,7 +132,7 @@ namespace xtd {
       class critical_section;
       struct item;
       using item_collection = std::unordered_map<intptr, item>;
-      using object_ptr = xtd::collections::generic::key_value_pair<intptr, bool>;
+      using object_ptr = std::pair<intptr, bool>;
       struct static_data;
       
     public:
