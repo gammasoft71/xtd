@@ -3,7 +3,11 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "helpers/allocator.hpp"
+#include "helpers/equator.hpp"
 #include "ilist.hpp"
+#define __XTD_CORE_INTERNAL__
+#include "../../internal/__list_definition.hpp"
+#undef  __XTD_CORE_INTERNAL__
 #include "../object_model/read_only_collection.hpp"
 #include "../../argument_exception.hpp"
 #include "../../argument_out_of_range_exception.hpp"
@@ -465,7 +469,7 @@ namespace xtd {
         
         bool contains(const type_t& value) const noexcept override {
           for (const auto& item : data_->items)
-            if (reinterpret_cast<const type_t&>(item) == value) return true;
+            if (helpers::equator<type_t> {}(reinterpret_cast<const type_t&>(item), value)) return true;
           return false;
         }
         
@@ -533,7 +537,12 @@ namespace xtd {
         }
         
         bool equals(const object& obj) const noexcept override {return is<list<value_type>>(obj) && equals(static_cast<const list<value_type>&>(obj));}
-        bool equals(const list& rhs) const noexcept override {return data_->items == rhs.data_->items && data_->version == rhs.data_->version;}
+        bool equals(const list& rhs) const noexcept override {
+          if (count() != rhs.count()) return false;
+          for (size_type i = 0; i < count(); i++)
+            if (!helpers::equator<type_t> {}(at(i), rhs.at(i))) return false;
+          return data_->version == rhs.data_->version;;
+        }
         
         /// @brief Erases the specified elements from the container.
         /// @param pos The iterator to the element to remove.
@@ -643,7 +652,7 @@ namespace xtd {
           if (index + count > this->count()) throw xtd::argument_out_of_range_exception {};
           
           for (auto i = index; i < index + count; ++i)
-            if (at(i) == value) return i;
+            if (helpers::equator<type_t> {}(at(i), value)) return i;
           return npos;
         }
         
@@ -791,7 +800,7 @@ namespace xtd {
         bool remove(const type_t& item) override {
           if (count() == 0)  return false;
           for (auto index = size_type {0}; index < count(); ++index) {
-            if (at(index) != item) continue;
+            if (!helpers::equator<type_t> {}(at(index), item)) continue;
             remove_at(index);
             return true;
           }
