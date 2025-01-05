@@ -356,6 +356,9 @@ namespace xtd {
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence that contains elements to be counted.
       /// @return The number of elements in the input sequence.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::count <source_t>(const ienumerable <source_t>&) to count the elements in a sequence.
+      /// @include enumerable_count.cpp
       template <typename source_t>
       static xtd::size count(const ienumerable<source_t>& source) noexcept {
         auto count = xtd::size {0};
@@ -369,6 +372,9 @@ namespace xtd {
       /// @param source A sequence that contains elements to be tested and counted.
       /// @param predicate A function to test each element for a condition.
       /// @return A number that represents how many elements in the sequence satisfy the condition in the predicate function.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::count <source_t>(const ienumerable <source_t>&, const std::function <bool(const source_t&)>&) to count the elements in a sequence that satisfy a condition.
+      /// @include enumerable_count2.cpp
       template <typename source_t>
       static xtd::size count(const ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate) noexcept {
         auto count = xtd::size {0};
