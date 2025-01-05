@@ -232,6 +232,9 @@ namespace xtd {
 
           /// @brief Returns the number of elements in current sequence.
           /// @return The number of elements in the input sequence.
+          /// @par Examples
+          /// The following code example demonstrates how to use xtd::linq::enumerable::count <source_t>(const ienumerable <source_t>&) to count the elements in a sequence.
+          /// @include enumerable_count.cpp
           size_t count() const noexcept {
             return xtd::linq::enumerable::count(base());
           }
@@ -239,6 +242,9 @@ namespace xtd {
           /// @brief Returns a number that represents how many elements in the specified sequence satisfy a condition.
           /// @param predicate A function to test each element for a condition.
           /// @return A number that represents how many elements in the sequence satisfy the condition in the predicate function.
+          /// @par Examples
+          /// The following code example demonstrates how to use xtd::linq::enumerable::count <source_t>(const ienumerable <source_t>&, const std::function <bool(const source_t&)>&) to count the elements in a sequence that satisfy a condition.
+          /// @include enumerable_count2.cpp
           size_t count(const std::function<bool(const source_t&)>& predicate) const noexcept {
             return xtd::linq::enumerable::count(base(), predicate);
           }
