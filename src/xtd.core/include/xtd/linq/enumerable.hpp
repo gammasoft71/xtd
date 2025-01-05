@@ -6,12 +6,15 @@
 #include "../collections/generic/iequality_comparer.hpp"
 #define __XTD_CORE_INTERNAL__
 #include "../internal/__array_definition.hpp"
-#undef __XTD_CORE_INTERNAL__
+#include "../internal/__key_value_pair_definition.hpp"
+#include "../internal/__list_definition.hpp"
+#undef  __XTD_CORE_INTERNAL__
 #include "../decimal.hpp"
 #include "../iequatable.hpp"
 #include "../int32.hpp"
 #include "../int64.hpp"
 #include "../optional.hpp"
+#include "../size.hpp"
 #include "../static.hpp"
 #include <algorithm>
 #include <functional>
@@ -20,8 +23,6 @@
 namespace xtd {
   /// @cond
   namespace collections::generic {
-    template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
-    class list;
     template<typename type_t>
     class ienumerable;
   }
@@ -61,6 +62,10 @@ namespace xtd {
       /// @brief Represents the list value type.
       template <typename type_t>
       using list = typename xtd::collections::generic::list<type_t>;
+      
+      /// @brief Represents the key value pair value type.
+      template <typename key_t, typename value_t>
+      using key_value_pair = xtd::collections::generic::key_value_pair<key_t, value_t>;
       /// @}
       
       /// @name Public Static Methods
@@ -304,7 +309,7 @@ namespace xtd {
       /// @return A sequence of chunks of size at most size.
       /// @zxception xtd::argument_out_of_range_exception `size` is equal to 0.
       template <typename source_t>
-      static const ienumerable<xtd::array<source_t>>& chunk(const ienumerable<source_t>& source, size_t size);
+      static const ienumerable<xtd::array<source_t>>& chunk(const ienumerable<source_t>& source, xtd::size size);
 
       /// @brief Concatenates two sequences.
       /// @tparam source_t The type of the elements of source.
@@ -352,8 +357,8 @@ namespace xtd {
       /// @param source A sequence that contains elements to be counted.
       /// @return The number of elements in the input sequence.
       template <typename source_t>
-      static size_t count(const ienumerable<source_t>& source) noexcept {
-        auto count = size_t {0};
+      static xtd::size count(const ienumerable<source_t>& source) noexcept {
+        auto count = xtd::size {0};
         auto enumerator = source.get_enumerator();
         while (enumerator.move_next()) ++count;
         return count;
@@ -365,12 +370,39 @@ namespace xtd {
       /// @param predicate A function to test each element for a condition.
       /// @return A number that represents how many elements in the sequence satisfy the condition in the predicate function.
       template <typename source_t>
-      static size_t count(const ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate) noexcept {
-        auto count = size_t {0};
+      static xtd::size count(const ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate) noexcept {
+        auto count = xtd::size {0};
         auto enumerator = source.get_enumerator();
         while (enumerator.move_next())
           if (predicate(enumerator.current())) ++count;
         return count;
+      }
+      
+      /// @brief Returns the count of elements in the source sequence grouped by key.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam key_t The type of the key returned by `key_selector`.
+      /// @param source A sequence that contains elements to be counted.
+      /// @param key_selector A function to extract the key for each element.
+      /// @return An enumerable containing the frequencies of each key occurrence in `source`.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <source_t>(const ienumerable <source_t>&, const std::function <key_t(const source_t&)>&) to count the number of elements in a sequence grouped by key.
+      /// @include enumerable_count_by.cpp
+      template <typename key_t, typename source_t>
+      static const ienumerable<key_value_pair<key_t, xtd::size>>& count_by(const ienumerable<source_t>& source, const std::function<key_t(const source_t&)>& key_selector) noexcept {
+        static thread_local auto result = enumerable_collection<key_value_pair<key_t, xtd::size>> {};
+        result = enumerable_collection<key_value_pair<key_t, xtd::size>> {};
+        auto keys = list<key_t> {};
+        auto enumerator = source.get_enumerator();
+        while (enumerator.move_next()) {
+          auto key = key_selector(enumerator.current());
+          auto index = keys.index_of(key);
+          if (index != keys.npos) result.items[index] = {key, result.items[index].value() + 1};
+          else {
+            keys.push_back(key);
+            result.items.push_back({key, 1});
+          }
+        }
+        return static_cast<const ienumerable<key_value_pair<key_t, xtd::size>>&>(result);
       }
       
       /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
@@ -461,13 +493,13 @@ namespace xtd {
       /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
       /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, size_t)>&) to project over a sequence of values and use the index of each element.
+      /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, xtd::size)>&) to project over a sequence of values and use the index of each element.
       /// @include enumerable_select.cpp
       template<typename result_t, typename source_t>
-      static const ienumerable<result_t>& select(const ienumerable<source_t>& source, const std::function<result_t(const source_t&, size_t)>& selector) {
+      static const ienumerable<result_t>& select(const ienumerable<source_t>& source, const std::function<result_t(const source_t&, xtd::size)>& selector) {
         static thread_local auto result = enumerable_collection<result_t> {};
         result = enumerable_collection<result_t> {};
-        auto index = size_t {0};
+        auto index = xtd::size {0};
         for (const auto& item : source)
           result.items.push_back(selector(item, index++));
         return result;
@@ -478,13 +510,13 @@ namespace xtd {
       /// @param selector A transform function to apply to each source element; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> whose elements are the result of invoking the transform function on each element of source.
       /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, size_t)>&) to project over a sequence of values and use the index of each element.
+      /// The following code example demonstrates how to use xtd::linq::enumerable::select <source_t, result_t>(const ienumerable <source_t>&, const std::function <result_t(const source_t&, xtd::size)>&) to project over a sequence of values and use the index of each element.
       /// @include enumerable_select.cpp
       template<typename source_t>
-      static const ienumerable<source_t>& select(const ienumerable<source_t>& source, const std::function<source_t(const source_t&, size_t)>& selector) {
+      static const ienumerable<source_t>& select(const ienumerable<source_t>& source, const std::function<source_t(const source_t&, xtd::size)>& selector) {
         static thread_local auto result = enumerable_collection<source_t> {};
         result = enumerable_collection<source_t> {};
-        auto index = size_t {0};
+        auto index = xtd::size {0};
         for (const auto& item : source)
           result.items.push_back(selector(item, index++));
         return result;
@@ -523,13 +555,13 @@ namespace xtd {
       /// @param predicate A function to test each source element for a condition; the second parameter of the function represents the index of the source element.
       /// @return An xtd::collections::generic::ienumerable <type_t> that contains elements from the input sequence that satisfy the condition.
       /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const ienumerable <source_t>&, const std::function<bool (const source_t&, size_t)>&) to filter a sequence based on a predicate that involves the index of each element.
+      /// The following code example demonstrates how to use xtd::linq::enumerable::where <source_t>(const ienumerable <source_t>&, const std::function<bool (const source_t&, xtd::size)>&) to filter a sequence based on a predicate that involves the index of each element.
       /// @include enumerable_where2.cpp
       template<typename source_t>
-      static const ienumerable<source_t>& where(const ienumerable<source_t>& source, const std::function<bool(const source_t&, size_t)>& predicate) {
+      static const ienumerable<source_t>& where(const ienumerable<source_t>& source, const std::function<bool(const source_t&, xtd::size)>& predicate) {
         static thread_local auto result = enumerable_collection<source_t> {};
         result = enumerable_collection<source_t> {};
-        auto index = size_t {0};
+        auto index = xtd::size {0};
         for (const auto& item : source)
           if (predicate(item, index++)) result.items.push_back(item);
         return result;

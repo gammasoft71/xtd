@@ -166,6 +166,18 @@ namespace xtd::linq::tests {
       assert::are_equal(3u, enumerable::count<int>(array {1, 2, 3, 4, 5}, [](int value) {return value <= 3;}));
       assert::are_equal(0u, enumerable::count<int>(array {1, 2, 3, 4, 5}, [](int value) {return value < 0;}));
     }
+    
+    void test_method_(count_by_with_enumerable_and_key_selector) {
+      const auto& result = enumerable::count_by<bool, int>(array {1, 2, 3, 4, 5, 6, 7, 9}, [](int value) {return value % 2 == 0;});
+      auto enumerator = result.get_enumerator();
+      assert::is_true(enumerator.move_next());
+      assert::are_equal(false, enumerator.current().key());
+      assert::are_equal(5u, enumerator.current().value());
+      assert::is_true(enumerator.move_next());
+      assert::are_equal(true, enumerator.current().key());
+      assert::are_equal(3u, enumerator.current().value());
+      assert::is_false(enumerator.move_next());
+    }
 
     void test_method_(first_or_default_with_enumerable_predicate_and_default_value) {
       assert::are_equal(3, enumerable::first_or_default<int>(array {3, 4, 5}, [](int value) {return value <= 3;}, 2));
