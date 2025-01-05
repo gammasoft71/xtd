@@ -18,6 +18,9 @@ add_projects(
   enumerable_any4
   enumerable_append
   enumerable_append2
+  enumerable_count
+  enumerable_count2
+  enumerable_count_by
   enumerable_range
   enumerable_select
   enumerable_select2
