@@ -178,6 +178,16 @@ namespace xtd::linq::tests {
       assert::are_equal(3u, enumerator.current().value());
       assert::is_false(enumerator.move_next());
     }
+    
+    void test_method_(default_if_empty_with_enumerable) {
+      collection_assert::are_equal({1, 2, 3}, enumerable::default_if_empty(array {1, 2, 3}));
+      collection_assert::are_equal({0}, enumerable::default_if_empty(array<int> {}));
+    }
+    
+    void test_method_(default_if_empty_with_enumerable_and_default_value) {
+      collection_assert::are_equal({1, 2, 3}, enumerable::default_if_empty(array {1, 2, 3}, 5));
+      collection_assert::are_equal({5}, enumerable::default_if_empty(array<int> {}, 5));
+    }
 
     void test_method_(first_or_default_with_enumerable_predicate_and_default_value) {
       assert::are_equal(3, enumerable::first_or_default<int>(array {3, 4, 5}, [](int value) {return value <= 3;}, 2));

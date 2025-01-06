@@ -273,6 +273,19 @@ namespace xtd {
           const ienumerable<key_value_pair<key_t, xtd::size>>& count_by(const std::function<key_t(const source_t&)>& key_selector, const iequality_comparer<key_t>& key_comparer) const noexcept {
             return xtd::linq::enumerable::count_by<key_t, source_t>(base(), key_selector, key_comparer);
           }
+          
+          /// @brief Returns the elements of the specified sequence or the type parameter's default value in a singleton collection if the current sequence is empty.
+          /// @return An xtd::collection::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
+          const ienumerable<source_t>& default_if_empty() const noexcept {
+            return xtd::linq::enumerable::default_if_empty(base());
+          }
+          
+          /// @brief Returns the elements of the specified sequence or the specified value in a singleton collection if the current sequence is empty.
+          /// @param default_value The value to return if the sequence is empty.
+          /// @return An xtd::collection::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
+          const ienumerable<source_t>& default_if_empty(const source_t& default_value) const noexcept {
+            return xtd::linq::enumerable::default_if_empty(base(), default_value);
+          }
 
           /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
           /// @param predicate A function to test each element for a condition.

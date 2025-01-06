@@ -432,6 +432,30 @@ namespace xtd {
         }
         return static_cast<const ienumerable<key_value_pair<key_t, xtd::size>>&>(result);
       }
+      
+      /// @brief Returns the elements of the specified sequence or the type parameter's default value in a singleton collection if the sequence is empty.
+      /// @tparam source_t The type of the elements of source.
+      /// @param source The sequence to return a default value for if it is empty.
+      /// @return An xtd::collection::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
+      template <typename source_t>
+      static const ienumerable<source_t>& default_if_empty(const ienumerable<source_t>& source) noexcept {
+        return default_if_empty(source, source_t {});
+      }
+
+      /// @brief Returns the elements of the specified sequence or the specified value in a singleton collection if the sequence is empty.
+      /// @tparam source_t The type of the elements of source.
+      /// @param source The sequence to return a default value for if it is empty.
+      /// @param default_value The value to return if the sequence is empty.
+      /// @return An xtd::collection::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
+      template <typename source_t>
+      static const ienumerable<source_t>& default_if_empty(const ienumerable<source_t>& source, const source_t& default_value) noexcept {
+        static thread_local auto result = enumerable_collection<source_t> {};
+        result = enumerable_collection<source_t> {};
+        if (!any(source)) result.items.push_back(default_value);
+        else for (const auto& item : source)
+          result.items.push_back(item);
+        return result;
+      }
 
       /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
       /// @tparam source_t The type of the elements of source.
