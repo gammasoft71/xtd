@@ -3,7 +3,8 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../collections/generic/helpers/allocator.hpp"
-#include "../collections/generic/iequality_comparer.hpp"
+//#include "../collections/generic/iequality_comparer.hpp"
+#include "../collections/generic/equality_comparer.hpp"
 #define __XTD_CORE_INTERNAL__
 #include "../internal/__array_definition.hpp"
 #include "../internal/__key_value_pair_definition.hpp"
@@ -57,8 +58,12 @@ namespace xtd {
       /// @{
       /// @brief Represents the ienumerable value type.
       template <typename type_t>
+      using iequality_comparer = typename xtd::collections::generic::iequality_comparer<type_t>;
+      
+      /// @brief Represents the ienumerable value type.
+      template <typename type_t>
       using ienumerable = typename xtd::collections::generic::ienumerable<type_t>;
-
+      
       /// @brief Represents the list value type.
       template <typename type_t>
       using list = typename xtd::collections::generic::list<type_t>;
@@ -395,14 +400,31 @@ namespace xtd {
       /// @include enumerable_count_by.cpp
       template <typename key_t, typename source_t>
       static const ienumerable<key_value_pair<key_t, xtd::size>>& count_by(const ienumerable<source_t>& source, const std::function<key_t(const source_t&)>& key_selector) noexcept {
+        return count_by(source, key_selector, xtd::collections::generic::equality_comparer<key_t>::default_equality_comparer());
+      }
+      
+      /// @brief Returns the count of elements in the source sequence grouped by key.
+      /// @tparam source_t The type of the elements of source.
+      /// @tparam key_t The type of the key returned by `key_selector`.
+      /// @param source A sequence that contains elements to be counted.
+      /// @param key_selector A function to extract the key for each element.
+      /// @param key_comparer An equality comparer to compare keys.
+      /// @return An enumerable containing the frequencies of each key occurrence in `source`.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <source_t>(const ienumerable <source_t>&, const std::function <key_t(const source_t&)>&) to count the number of elements in a sequence grouped by key.
+      /// @include enumerable_count_by.cpp
+      template <typename key_t, typename source_t>
+      static const ienumerable<key_value_pair<key_t, xtd::size>>& count_by(const ienumerable<source_t>& source, const std::function<key_t(const source_t&)>& key_selector, const iequality_comparer<key_t>& key_comparer) noexcept {
         static thread_local auto result = enumerable_collection<key_value_pair<key_t, xtd::size>> {};
         result = enumerable_collection<key_value_pair<key_t, xtd::size>> {};
         auto keys = list<key_t> {};
         auto enumerator = source.get_enumerator();
         while (enumerator.move_next()) {
           auto key = key_selector(enumerator.current());
-          auto index = keys.index_of(key);
-          if (index != keys.npos) result.items[index] = {key, result.items[index].value() + 1};
+          auto index = size_t {0};
+          for (; index < keys.size(); ++index)
+            if (key_comparer.equals(keys[index], key)) break;
+          if (index < keys.size()) result.items[index] = {key, result.items[index].value() + 1};
           else {
             keys.push_back(key);
             result.items.push_back({key, 1});
@@ -410,7 +432,7 @@ namespace xtd {
         }
         return static_cast<const ienumerable<key_value_pair<key_t, xtd::size>>&>(result);
       }
-      
+
       /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.

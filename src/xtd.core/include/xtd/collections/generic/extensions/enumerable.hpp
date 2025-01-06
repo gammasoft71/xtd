@@ -260,6 +260,19 @@ namespace xtd {
           const ienumerable<key_value_pair<key_t, xtd::size>>& count_by(const std::function<key_t(const source_t&)>& key_selector) const noexcept {
             return xtd::linq::enumerable::count_by<key_t, source_t>(base(), key_selector);
           }
+          
+          /// @brief Returns the count of elements in the current sequence grouped by key.
+          /// @tparam key_t The type of the key returned by `key_selector`.
+          /// @param key_selector A function to extract the key for each element.
+          /// @param key_comparer An equality comparer to compare keys.
+          /// @return An enumerable containing the frequencies of each key occurrence in current sequence.
+          /// @par Examples
+          /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <source_t>(const ienumerable <source_t>&, const std::function <key_t(const source_t&)>&) to count the number of elements in a sequence grouped by key.
+          /// @include enumerable_count_by.cpp
+          template <typename key_t>
+          const ienumerable<key_value_pair<key_t, xtd::size>>& count_by(const std::function<key_t(const source_t&)>& key_selector, const iequality_comparer<key_t>& key_comparer) const noexcept {
+            return xtd::linq::enumerable::count_by<key_t, source_t>(base(), key_selector, key_comparer);
+          }
 
           /// @brief Returns the first element of the sequence that satisfies a condition, or a specified default value if no such element is found.
           /// @param predicate A function to test each element for a condition.
