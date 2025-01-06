@@ -1,6 +1,6 @@
 # enumerable_to_list
 
-Shows how to use [xtd::linq::enumerable::to_list](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#ae4632879fe4e92c640c0382e32de2967) method.
+Shows how to use [xtd::linq::enumerable::to_list](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#af77e79912b5e22a2e85f501db226b888) method.
 
 ## Sources
 

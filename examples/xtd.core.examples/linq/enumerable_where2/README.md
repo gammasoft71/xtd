@@ -1,6 +1,6 @@
 # enumerable_where2
 
-Shows how to use [xtd::linq::enumerable::where](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#ade645587ccb269b8b05c4325989639be) method.
+Shows how to use [xtd::linq::enumerable::where](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#ae5d12b23ed80fa3fcdebc02513458d72) method.
 
 ## Sources
 

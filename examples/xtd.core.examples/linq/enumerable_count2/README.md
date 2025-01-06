@@ -1,6 +1,6 @@
 # enumerable_count2
 
-Shows how to use [xtd::linq::enumerable::count_by](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a3aeb62875d4858df7f852a61ccbb9053) method.
+Shows how to use [xtd::linq::enumerable::count](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#ad9b2c99b2315f698741d2f45b0d4db92) method.
 
 ## Sources
 
