@@ -25,6 +25,12 @@
 * [enumerable_to_list](enumerable_to_list/README.md) shows how to use [xtd::linq::enumerable::to_list](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#af77e79912b5e22a2e85f501db226b888) method.
 * [enumerable_where](enumerable_where/README.md) shows how to use [xtd::linq::enumerable::where](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a3223a01902cf99aae7fc1b8cde4dc01a) method.
 * [enumerable_where2](enumerable_where2/README.md) shows how to use [xtd::linq::enumerable::where](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#ae5d12b23ed80fa3fcdebc02513458d72) method.
+* [linq_from](linq_from/README.md) shows how to use [xtd::linq::from](https://gammasoft71.github.io/xtd/reference_guides/latest/group__linq.html#gaeb366860f8ddb0acedfa5f56c630aa78) method.
+* [linq_from2](linq_from2/README.md) shows how to use [xtd::linq::from](https://gammasoft71.github.io/xtd/reference_guides/latest/group__linq.html#ga385b5097670e7157927e6506b0f904f5) method.
+* [linq_from3](linq_from3/README.md) shows how to use [xtd::linq::from](https://gammasoft71.github.io/xtd/reference_guides/latest/group__linq.html#gaad6a2f7dc2ae211f9e3f4b28ebbf3c41) method.
+* [linq_from4](linq_from4/README.md) shows how to use [xtd::linq::from](https://gammasoft71.github.io/xtd/reference_guides/latest/group__linq.html#ga4f77c7ad6f2b2bb5c560d46f822b85df) method.
+* [linq_from5](linq_from5/README.md) shows how to use [xtd::linq::from](https://gammasoft71.github.io/xtd/reference_guides/latest/group__linq.html#ga931eb7a5d6bd7a6d49966372f27f9784) method.
+* [linq_from6](linq_from6/README.md) shows how to use [xtd::linq::from](https://gammasoft71.github.io/xtd/reference_guides/latest/group__linq.html#ga267c953a403e0c43848091ac5a55f7e7) method.
 
 ## Build and run any project
 
