@@ -6,10 +6,10 @@ using namespace xtd;
 using namespace xtd::linq;
 
 auto main() -> int {
-  auto ints = array {4, 8, 8, 3, 9, 0, 7, 8, 2};
+  auto ints = array {4, 8, 8, 3, 9, 0, 7, 8, 2}.items();
   
   // Count the even numbers in the array, using a seed value of 0.
-  auto num_even = enumerable::aggregate(ints.begin(), ints.end(), 0, [](int total, int next) {
+  auto num_even = from(ints).aggregate(0, [](int total, int next) {
     return next % 2 == 0 ? total + 1 : total;
   });
   
