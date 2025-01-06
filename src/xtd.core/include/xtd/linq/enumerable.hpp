@@ -494,6 +494,9 @@ namespace xtd {
       /// @tparam source_t The type of the elements of source.
       /// @param source The sequence to return a default value for if it is empty.
       /// @return An xtd::collection::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::default_if_empty <source_t>(const ienumerable <source_t>&) to return a default value if a sequence is empty.
+      /// @include enumerable_default_if_empty.cpp
       template <typename source_t>
       static const ienumerable<source_t>& default_if_empty(const ienumerable<source_t>& source) noexcept {
         return default_if_empty(source, source_t {});
@@ -504,6 +507,9 @@ namespace xtd {
       /// @param source The sequence to return a default value for if it is empty.
       /// @param default_value The value to return if the sequence is empty.
       /// @return An xtd::collection::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::default_if_empty <source_t>(const ienumerable <source_t>&, const source_t&) to return a default value if a sequence is empty.
+      /// @include enumerable_default_if_empty2.cpp
       template <typename source_t>
       static const ienumerable<source_t>& default_if_empty(const ienumerable<source_t>& source, const source_t& default_value) noexcept {
         static thread_local auto result = enumerable_collection<source_t> {};
