@@ -10,8 +10,8 @@ namespace unit_tests {
     
     int value() const noexcept {return value_;}
     
-    bool operator==(const class_without_insert_stream_operator& c) const noexcept {return value_ == c.value_;}
-    bool operator!=(const class_without_insert_stream_operator& c) const noexcept {return !operator==(c);}
+    bool operator ==(const class_without_insert_stream_operator& c) const noexcept {return value_ == c.value_;}
+    bool operator !=(const class_without_insert_stream_operator& c) const noexcept {return !operator ==(c);}
     
   private:
     int value_ = 0;

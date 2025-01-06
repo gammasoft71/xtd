@@ -6,16 +6,16 @@ struct pet {
   string name;
   int age = 0;
   
-  friend bool operator==(const pet& lhs, const pet& rhs) noexcept {
+  friend bool operator ==(const pet& lhs, const pet& rhs) noexcept {
     return lhs.name == rhs.name && lhs.age == rhs.age;
   }
 };
 
 auto main() -> int {
   auto pets1 = array<pet> {
-    {.name = "Barley", .age = 8},
-    {.name = "Boots", .age = 4},
-    {.name = "Whiskers", .age = 1}
+    {.name="Barley", .age=8},
+    {.name="Boots", .age=4},
+    {.name="Whiskers", .age=1}
   };
   for (const auto& [name, age] : pets1.default_if_empty())
     console::write_line("pet {{name={}, age={}}}", name, age);

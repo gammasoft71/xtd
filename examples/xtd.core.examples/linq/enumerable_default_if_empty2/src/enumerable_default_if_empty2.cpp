@@ -8,7 +8,7 @@ struct pet {
   
   static pet default_pet;
   
-  friend bool operator==(const pet& lhs, const pet& rhs) noexcept {
+  friend bool operator ==(const pet& lhs, const pet& rhs) noexcept {
     return lhs.name == rhs.name && lhs.age == rhs.age;
   }
 };
@@ -17,9 +17,9 @@ pet pet::default_pet {.name = "Default pet", .age = 0};
 
 auto main() -> int {
   auto pets1 = array<pet> {
-    {.name = "Barley", .age = 8},
-    {.name = "Boots", .age = 4},
-    {.name = "Whiskers", .age = 1}
+    {.name="Barley", .age=8},
+    {.name="Boots", .age=4},
+    {.name="Whiskers", .age=1}
   };
   for (const auto& [name, age] : pets1.default_if_empty(pet::default_pet))
     console::write_line("pet {{name={}, age={}}}", name, age);

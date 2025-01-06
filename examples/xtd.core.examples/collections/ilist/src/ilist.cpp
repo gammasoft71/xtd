@@ -122,10 +122,10 @@ public:
       }
     }
     
-    const any_object& operator[] (size index) const override {
+    const any_object& operator [] (size index) const override {
       return contents_[index];
     }
-    any_object& operator[] (size index) override {
+    any_object& operator [] (size index) override {
       return contents_[index];
     }
     
