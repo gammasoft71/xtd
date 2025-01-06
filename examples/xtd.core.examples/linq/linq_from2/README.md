@@ -1,6 +1,6 @@
 # linq_from2
 
-Shows how to use [xtd::linq::from](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1linq_1_1enumerable.html#a65cb8dbb360aba65ed73cc16bb8bbe9a) method.
+Shows how to use [xtd::linq::from](https://gammasoft71.github.io/xtd/reference_guides/latest/group__linq.html#ga385b5097670e7157927e6506b0f904f5) method.
 
 ## Sources
 
