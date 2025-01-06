@@ -4,7 +4,7 @@ var searchData=
   ['icollection_1',['icollection',['../group__interfaces.html#gabb263b8f51a5edf07ad33b3355ae5eb2',1,'xtd::collections']]],
   ['ienumerable_2',['ienumerable',['../classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aec4cd2ae6b5b4fde97fef8e2f160336f',1,'xtd::collections::generic::extensions::enumerable::ienumerable'],['../classxtd_1_1linq_1_1enumerable.html#a2bd1889dc1967c50ef692411dc2c4b92',1,'xtd::linq::enumerable::ienumerable'],['../group__interfaces.html#gad6394329e5e329f3fda6d45017ee1a7c',1,'xtd::collections::ienumerable']]],
   ['ienumerator_3',['ienumerator',['../group__interfaces.html#ga1871d17c4798e1f712e5c7f09ff36506',1,'xtd::collections']]],
-  ['iequality_5fcomparer_4',['iequality_comparer',['../group__interfaces.html#ga1aae82a450c8deb3f3220a385b52ecf5',1,'xtd::collections']]],
+  ['iequality_5fcomparer_4',['iequality_comparer',['../classxtd_1_1linq_1_1enumerable.html#a49bbe9fcf3dfc4dae1ad074550a1e37a',1,'xtd::linq::enumerable::iequality_comparer'],['../group__interfaces.html#ga1aae82a450c8deb3f3220a385b52ecf5',1,'xtd::collections::iequality_comparer']]],
   ['ifstream_5fref_5',['ifstream_ref',['../classxtd_1_1net_1_1sockets_1_1send__packets__element.html#a946a0bbf547eb1c2f97cc7e4000b15e1',1,'xtd::net::sockets::send_packets_element']]],
   ['ilist_6',['ilist',['../group__interfaces.html#gaf2cca35e1002dd44cdfa244b0654d6b4',1,'xtd::collections']]],
   ['image_5fcollection_7',['image_collection',['../classxtd_1_1forms_1_1image__list.html#ab2980da466b87684eb01dc92804c1d73',1,'xtd::forms::image_list']]],
