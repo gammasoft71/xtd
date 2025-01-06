@@ -54,16 +54,15 @@ namespace xtd {
           source_t aggregate(const std::function<source_t(const source_t&, const source_t&)>& func) const {
             return xtd::linq::enumerable::aggregate(base(), func);
           }
-          /// @brief Applies an accumulator function over a sequence.
-          /// @tparam func_t The type of the function as std::function<source_t(const source_t&, const source_t&)>.
+          /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
+          /// @param seed The initial accumulator value.
           /// @param func An accumulator function to be invoked on each element.
           /// @return The final accumulator value.
           /// @par Examples
-          /// The following code example demonstrates how to reverse the order of words in a string by using xtd::linq::enumerable::aggregate.
-          /// @include enumerable_aggregate.cpp
-          template<typename func_t>
-          source_t aggregate(const func_t& func) const {
-            return xtd::linq::enumerable::aggregate(base(), func);
+          /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
+          /// @include enumerable_aggregate2.cpp
+          source_t aggregate(const source_t& seed, const std::function<source_t(const source_t&, const source_t&)>& func) const {
+            return xtd::linq::enumerable::aggregate(base(), seed, func);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
           /// @tparam accumulate_t The type of the accumulator value.
@@ -77,18 +76,16 @@ namespace xtd {
           accumulate_t aggregate(const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func) const {
             return xtd::linq::enumerable::aggregate(base(), seed, func);
           }
-          /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.
-          /// @tparam accumulate_t The type of the accumulator value.
-          /// @tparam func_t The type of the function as std::function<source_t(const source_t&, const source_t&)>.
+          /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
           /// @param seed The initial accumulator value.
           /// @param func An accumulator function to be invoked on each element.
-          /// @return The final accumulator value.
+          /// @param result_Selector A function to transform the final accumulator value into the result value.
+          /// @return The transformed final accumulator value.
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
-          /// @include enumerable_aggregate2.cpp
-          template<typename accumulate_t, typename func_t>
-          accumulate_t aggregate(const accumulate_t& seed, const func_t& func) const {
-            return xtd::linq::enumerable::aggregate(base(), seed, func);
+          /// @include enumerable_aggregate3.cpp
+          source_t aggregate(const source_t& seed, const std::function<source_t(const source_t&, const source_t&)>& func, const std::function<source_t(const source_t&)>& result_selector) const {
+            return xtd::linq::enumerable::aggregate(base(), seed, func, result_selector);
           }
           /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
           /// @tparam result_t The type of the resulting value.
@@ -104,38 +101,7 @@ namespace xtd {
           result_t aggregate(const accumulate_t& seed, const std::function<accumulate_t(const source_t&, const accumulate_t&)>& func, const std::function<result_t(const accumulate_t&)>& result_selector) const {
             return xtd::linq::enumerable::aggregate(base(), seed, func, result_selector);
           }
-          /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
-          /// @tparam result_t The type of the resulting value.
-          /// @tparam accumulate_t The type of the accumulator value.
-          /// @tparam func_t The type of the function as std::function<source_t(const source_t&, const source_t&)>.
-          /// @tparam result_selector_t The type of the result selector function as std::function<result_t(const accumulate_t&)>.
-          /// @param seed The initial accumulator value.
-          /// @param func An accumulator function to be invoked on each element.
-          /// @param result_selector A function to transform the final accumulator value into the result value.
-          /// @return The transformed final accumulator value.
-          /// @par Examples
-          /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
-          /// @include enumerable_aggregate3.cpp
-          template<typename result_t, typename accumulate_t, typename func_t, typename result_selector_t>
-          result_t aggregate(const accumulate_t& seed, const func_t& func, const result_selector_t& result_selector) const {
-            return xtd::linq::enumerable::aggregate(base(), seed, func, result_selector);
-          }
-          /// @brief Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.
-          /// @tparam accumulate_t The type of the accumulator value.
-          /// @tparam func_t The type of the function as std::function<source_t(const source_t&, const source_t&)>.
-          /// @tparam result_selector_t The type of the result selector function as std::function<result_t(const accumulate_t&)>.
-          /// @param seed The initial accumulator value.
-          /// @param func An accumulator function to be invoked on each element.
-          /// @param result_Selector A function to transform the final accumulator value into the result value.
-          /// @return The transformed final accumulator value.
-          /// @par Examples
-          /// The following code example demonstrates how to use xtd::linq::enumerable::aggregate to apply an accumulator function and use a seed value.
-          /// @include enumerable_aggregate3.cpp
-          template<typename accumulate_t, typename func_t, typename result_selector_t>
-          accumulate_t aggregate(const accumulate_t& seed, const func_t& func, const result_selector_t& result_selector) const {
-            return xtd::linq::enumerable::aggregate(base(), seed, func, result_selector);
-          }
-          
+
           /// @brief Determines whether all elements of a sequence satisfy a condition.
           /// @param predicate A function to test each element for a condition.
           /// @return true if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
