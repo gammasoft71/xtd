@@ -27,4 +27,10 @@ add_projects(
   enumerable_to_list
   enumerable_where
   enumerable_where2
+  linq_from
+  linq_from2
+  linq_from3
+  linq_from4
+  linq_from5
+  linq_from6
 )
