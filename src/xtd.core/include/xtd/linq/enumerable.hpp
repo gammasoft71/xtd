@@ -282,6 +282,30 @@ namespace xtd {
           result.items.push_back(*iterator);
         return static_cast<const ienumerable<source_t>&>(result);
       }
+      /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @tparam input_iterator_t The type of the source iterators.
+      /// @param iterator The iterator.
+      /// @param legnth The le,gth to iterate.
+      /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @par Example
+      /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
+      /// @include enumerable_as_enumerable2.cpp
+      template<typename input_iterator_t>
+      static const auto& as_enumerable(input_iterator_t iterator, size_t length) noexcept {
+        return as_enumerable(iterator, iterator + length);
+      }
+      /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @tparam source_t The type of the source array.
+      /// @param array The native array.
+      /// @param legnth The length of the array.
+      /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @par Example
+      /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
+      /// @include enumerable_as_enumerable.cpp
+      template<typename source_t, size_t length>
+      static const auto& as_enumerable(const source_t (&array)[length]) noexcept {
+        return as_enumerable(array, array + length);
+      }
 
       /// @brief Computes the average of a sequence of xtd::decimal values.
       /// @param source A sequence of xtd::decimal values to calculate the average of.
@@ -538,6 +562,66 @@ namespace xtd {
       /// @include enumerable_range.cpp
       static const ienumerable<xtd::int32>& range(xtd::int32 start, xtd::int32 count);
       
+      /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @tparam source_t The type of the elements of source.
+      /// @param source A sequence of values.
+      /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @remarks Same as as_enemerable(const ienumerable<source_t>& source).
+      template<typename source_t>
+      static const ienumerable<source_t>& from(const ienumerable<source_t>& source) noexcept {
+        return as_enumerable(source);
+      }
+      /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @tparam source_t The type of the elements of source.
+      /// @param source A sequence of values.
+      /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @remarks Same as as_enemerable(std::initializer_list<source_t> source).
+      template<typename source_t>
+      static const ienumerable<source_t>& from(std::initializer_list<source_t> source) noexcept {
+        return as_enumerable(source);
+      }
+      /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @tparam collection_t The type of the source.
+      /// @param source A sequence of values.
+      /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @remarks Same as as_enemerable(const collection_t& source).
+      template <typename collection_t>
+      static const auto& from(const collection_t& source) noexcept {
+        return as_enumerable(source);
+      }
+      /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @tparam input_iterator_t The type of the source iterators.
+      /// @param first The first iterator.
+      /// @param last The last iterator.
+      /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @par Example
+      /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
+      /// @remarks Same as as_enemerable(input_iterator_t first, input_iterator_t last).
+      template<typename input_iterator_t>
+      static const auto& from(input_iterator_t first, input_iterator_t last) noexcept {
+        return as_enumerable(first, last);
+      }
+      /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @tparam input_iterator_t The type of the source iterators.
+      /// @param iterator The iterator.
+      /// @param legnth The le,gth to iterate.
+      /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @remarks Same as as_enemerable(input_iterator_t iterator, size_t length).
+      template<typename input_iterator_t>
+      static const auto& from(input_iterator_t iterator, size_t length) noexcept {
+        return as_enumerable(iterator, iterator + length);
+      }
+      /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @tparam source_t The type of the source array.
+      /// @param array The native array.
+      /// @param legnth The length of the array.
+      /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
+      /// @remarks Same as as_enemerable(const source_t (&array)[length]).
+      template<typename source_t, size_t length>
+      static const auto& from(const source_t (&array)[length]) noexcept {
+        return as_enumerable(array, array + length);
+      }
+
       /// @brief Projects each element of a sequence into a new form.
       /// @tparam result_t The type of the resulting value.
       /// @tparam source_t The type of the elements of source.

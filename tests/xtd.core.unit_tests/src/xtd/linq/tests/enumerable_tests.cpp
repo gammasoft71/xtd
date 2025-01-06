@@ -69,6 +69,18 @@ namespace xtd::linq::tests {
       collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(s.begin(), s.end()));
     }
     
+    void test_method_(as_enumerable_with_iterator_and_length) {
+      auto s = array {1, 2, 3};
+      assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::as_enumerable(s.data(), s.size()));
+      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(s.data(), s.size()));
+    }
+
+    void test_method_(as_enumerable_with_native_array) {
+      int s[] = {1, 2, 3};
+      assert::is_instance_of<xtd::collections::generic::ienumerable<int>>(enumerable::as_enumerable(s));
+      collection_assert::are_equal({1, 2, 3}, enumerable::as_enumerable(s));
+    }
+
     void test_method_(average_with_enumerable_decimal) {
       assert::are_equal(.3l, enumerable::average(array {.1l, .2l, .3l, .4l, .5l}));
       assert::throws<invalid_operation_exception>([]{enumerable::average(array<decimal> {});});
