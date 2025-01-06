@@ -110,7 +110,7 @@ $(function() {
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>      <span class="keyword">class </span>critical_section;</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>      <span class="keyword">struct </span>item;</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      <span class="keyword">using </span>item_collection = std::unordered_map&lt;intptr, item&gt;;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      <span class="keyword">using </span>object_ptr = <a class="code hl_typedef" href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair&lt;intptr, bool&gt;</a>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      <span class="keyword">using </span>object_ptr = std::pair&lt;intptr, bool&gt;;</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>      <span class="keyword">struct </span>static_data;</div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      </div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keyword">public</span>:</div>
@@ -294,7 +294,6 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1threading_1_1monitor_html_afbb3e78c724e33a7573d95e7c262961e"><div class="ttname"><a href="classxtd_1_1threading_1_1monitor.html#afbb3e78c724e33a7573d95e7c262961e">xtd::threading::monitor::try_enter</a></div><div class="ttdeci">static bool try_enter(const object_t &amp;obj, bool &amp;lock_taken) noexcept</div><div class="ttdoc">Attempts to acquire an exclusive lock on the specified object.</div><div class="ttdef"><b>Definition</b> monitor.hpp:261</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1monitor_html_afd6f9c0d2fb7cd11d4fad2c1750a1bb7"><div class="ttname"><a href="classxtd_1_1threading_1_1monitor.html#afd6f9c0d2fb7cd11d4fad2c1750a1bb7">xtd::threading::monitor::try_enter</a></div><div class="ttdeci">static bool try_enter(const object_t &amp;obj, int64 milliseconds_timeout) noexcept</div><div class="ttdoc">Attempts, for the specified number of milliseconds, to acquire an exclusive lock on the specified obj...</div><div class="ttdef"><b>Definition</b> monitor.hpp:309</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1timeout_html"><div class="ttname"><a href="classxtd_1_1threading_1_1timeout.html">xtd::threading::timeout</a></div><div class="ttdoc">Contains a constant used to specify an infinite amount of time. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> timeout.hpp:33</div></div>
-<div class="ttc" id="agroup__generic__collections_html_ga0a14f2191cc30337c28e0a3b490fdd6a"><div class="ttname"><a href="group__generic__collections.html#ga0a14f2191cc30337c28e0a3b490fdd6a">xtd::collections::generic::key_value_pair</a></div><div class="ttdeci">std::pair&lt; key_t, value_t &gt; key_value_pair</div><div class="ttdoc">Defines a key/value pair that can be set or retrieved.</div><div class="ttdef"><b>Definition</b> key_value_pair.hpp:29</div></div>
 <div class="ttc" id="agroup__keywords_html_ga28796443ec37b938df7072c79595e3f6"><div class="ttname"><a href="group__keywords.html#ga28796443ec37b938df7072c79595e3f6">static_</a></div><div class="ttdeci">#define static_</div><div class="ttdoc">This keyword is use to represent a static object. A static object can't be instantiated (constructors...</div><div class="ttdef"><b>Definition</b> static.hpp:37</div></div>
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.hpp:13</div></div>
 <div class="ttc" id="agroup__types_html_ga205462e259a4eca1545511085c2c350e"><div class="ttname"><a href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a></div><div class="ttdeci">int32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> int32.hpp:23</div></div>
@@ -308,7 +307,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 30 2024 11:17:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 6 2025 14:24:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

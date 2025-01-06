@@ -183,7 +183,7 @@ Subsequent versions of an assembly that differ only by build or revision numbers
 <div class="line"><span class="keyword">enum class</span> version_time {earlier = -1, same = 0, later = 1 };</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1enum__register.html">xtd::enum_register</a>&lt;version_time&gt; {</div>
-<div class="line">  <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core.html#gae83ccb7f8916e8a1b712dd897db78889">xtd::enum_collection&lt;version_time&gt;</a> {{version_time::earlier, <span class="stringliteral">&quot;earlier&quot;</span>}, {version_time::same, <span class="stringliteral">&quot;same&quot;</span>}, {version_time::later, <span class="stringliteral">&quot;later&quot;</span>}};}</div>
+<div class="line">  <span class="keyword">explicit</span> <span class="keyword">operator</span> <span class="keyword">auto</span>() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> <a class="code hl_typedef" href="group__xtd__core.html#ga2be4d2f270243268ff197700fa3ae42f">xtd::enum_collection&lt;version_time&gt;</a> {{version_time::earlier, <span class="stringliteral">&quot;earlier&quot;</span>}, {version_time::same, <span class="stringliteral">&quot;same&quot;</span>}, {version_time::later, <span class="stringliteral">&quot;later&quot;</span>}};}</div>
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">class </span>example {</div>
@@ -207,7 +207,7 @@ Subsequent versions of an assembly that differ only by build or revision numbers
 <div class="line"><span class="comment">//       Relationship of 1.1 to 1.1.0: earlier</span></div>
 <div class="line"><span class="comment">//       Relationship of 1.1.0.0 to 1.1.0: later</span></div>
 <div class="ttc" id="aclassxtd_1_1version_html_ab77b49d5430810732b4dd085272b5735"><div class="ttname"><a href="classxtd_1_1version.html#ab77b49d5430810732b4dd085272b5735">xtd::version::compare_to</a></div><div class="ttdeci">int32 compare_to(const version &amp;version) const noexcept override</div><div class="ttdoc">Compares the current xtd::version object to a specified object and returns an indication of their rel...</div></div>
-<div class="ttc" id="agroup__xtd__core_html_gae83ccb7f8916e8a1b712dd897db78889"><div class="ttname"><a href="group__xtd__core.html#gae83ccb7f8916e8a1b712dd897db78889">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; xtd::collections::generic::key_value_pair&lt; enum_t, xtd::string &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.hpp:22</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ga2be4d2f270243268ff197700fa3ae42f"><div class="ttname"><a href="group__xtd__core.html#ga2be4d2f270243268ff197700fa3ae42f">xtd::enum_collection</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; enum_t, xtd::string &gt; &gt; enum_collection</div><div class="ttdoc">Represents a pair of an enum_t value and a string of an enum of type enum_t.</div><div class="ttdef"><b>Definition</b> enum_collection.hpp:22</div></div>
 <div class="ttc" id="astructxtd_1_1enum__register_html"><div class="ttname"><a href="structxtd_1_1enum__register.html">xtd::enum_register</a></div><div class="ttdoc">Provides the registration struct for enumerations.</div><div class="ttdef"><b>Definition</b> enum_register.hpp:38</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="application_with_cmake_assembly_info_8cpp-example.html#_a1">application_with_cmake_assembly_info.cpp</a>, <a class="el" href="application_with_manual_assembly_info_8cpp-example.html#_a1">application_with_manual_assembly_info.cpp</a>, <a class="el" href="boxing_8cpp-example.html#_a4">boxing.cpp</a>, and <a class="el" href="version_8cpp-example.html#_a0">version.cpp</a>.</dd>
@@ -1211,7 +1211,7 @@ template&lt;typename object_a_t , typename object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Dec 30 2024 11:17:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 6 2025 14:24:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
