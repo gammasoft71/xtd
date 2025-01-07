@@ -82,7 +82,7 @@ namespace xtd {
         /// @brief Represents the list allocator type.
         using allocator_type = typename xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, value_type>::value, xtd::byte, value_type>::type>;
         /// @brief Represents the list base type.
-        using base_type = typename std::vector<typename std::conditional<std::is_same<bool, value_type>::value, xtd::byte, value_type>::type, allocator_type>;
+        using base_type = std::vector<typename std::conditional<std::is_same<bool, value_type>::value, xtd::byte, value_type>::type, allocator_type>;
         /// @brief Represents the list size type (usually xtd::size).
         using size_type = xtd::size;
         /// @brief Represents the list difference type (usually xtd::ptrdiff).
@@ -104,7 +104,7 @@ namespace xtd {
         /// @brief Represents the const reverse iterator of list value type.
         using const_reverse_iterator = typename base_type::const_reverse_iterator;
         /// @brief Represents the read only collection of of list.
-        using read_only_collection = typename xtd::collections::object_model::read_only_collection<value_type>;
+        using read_only_collection = xtd::collections::object_model::read_only_collection<value_type>;
         /// @}
         
         /// @name Public Fields
