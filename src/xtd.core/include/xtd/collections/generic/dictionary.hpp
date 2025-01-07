@@ -35,8 +35,8 @@ namespace xtd {
       /// @par Examples
       /// The following shows how to use xtd::collections::generic::dictionary.
       /// @include dictionary.cpp
-      template<typename key_t, typename value_t, typename hasher_t = helpers::hasher<key_t>, typename equator_t = helpers::equator<key_t>, typename allocator_t = helpers::allocator<std::pair<const key_t, value_t>>>
-      class dictionary : public idictionary<key_t, value_t> {
+      template<typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher<key_t>, typename equator_t = xtd::collections::generic::helpers::equator<key_t>, typename allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
+      class dictionary : public xtd::collections::generic::idictionary<key_t, value_t> {
       public:
         /// @name Public Aliases
         
@@ -47,10 +47,6 @@ namespace xtd {
         using mapped_type = value_t;
         /// @brief Represents the dictionary value type.
         using value_type = xtd::collections::generic::key_value_pair<key_t, value_t>;
-        /// @brief Represents the dictionary base value type.
-        using base_value_type = std::pair<key_t, value_t>;
-        /// @brief Represents the dictionary base type.
-        using base_type = std::unordered_map<key_type, mapped_type, hasher_t, equator_t, allocator_t>;
         /// @brief Represents the dictionary size type.
         using size_type = xtd::size;
         /// @brief Represents the dictionary difference type.
@@ -63,6 +59,10 @@ namespace xtd {
         using key_equal = equator_t;
         /// @brief Represents the dictionary allocator type.
         using allocator_type = allocator_t;
+        /// @brief Represents the dictionary base value type.
+        using base_value_type = std::pair<const key_t, value_t>;
+        /// @brief Represents the dictionary base type.
+        using base_type = std::unordered_map<key_type, mapped_type, hasher, key_equal, allocator_type>;
         /// @brief Represents the dictionary reference type.
         using reference = value_type&;
         /// @brief Represents the dictionary const reference type.
@@ -72,9 +72,9 @@ namespace xtd {
         /// @brief Represents the dictionary const pointer type.
         using const_pointer = std::allocator_traits<allocator_t>::const_pointer;
         /// @brief Represents the iterator of dictionary value type.
-        using iterator = typename xtd::collections::generic::ilist<value_type>::iterator;
+        using iterator = typename xtd::collections::generic::icollection<value_type>::iterator;
         /// @brief Represents the const iterator of dictionary value type.
-        using const_iterator = typename xtd::collections::generic::ilist<value_type>::const_iterator;
+        using const_iterator = typename xtd::collections::generic::icollection<value_type>::const_iterator;
         /// @brief Represents the local iterator of dictionary value type.
         using local_iterator = typename base_type::local_iterator;
         /// @brief Represents the const local iterator of dictionary value type.
