@@ -35,7 +35,7 @@ namespace xtd {
       
       /// @{
       /// @brief Represents a xtd::collections::generic::sorted_dictionary with the key and the value strongly typed to be strings.
-      using string_dictionary = xtd::collections::generic::sorted_dictionary<xtd::string, xtd::string>;
+      using string_dictionary = std::map<xtd::string, xtd::string>;
 
       /// @brief Represents a collection of strings.
       using string_collection = xtd::collections::specialized::string_collection;

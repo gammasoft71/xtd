@@ -44,6 +44,8 @@ namespace xtd {
     /// @par Exemples
     /// The following example shows how to create, initialize and perform various functions to a xtd::collections::hashtable and how to print out its keys and values.
     /// @include hashtable.cpp
-    using hashtable = generic::dictionary<xtd::any_object, xtd::any_object>;
+    /// @todo Use xtd::collections::generic::dictionary <xtd::any_object, xtd::any_object> when done.
+    //using hashtable = xtd::collections::generic::dictionary<xtd::any_object, xtd::any_object>;
+    using hashtable = std::unordered_map<xtd::any_object, xtd::any_object, xtd::collections::generic::helpers::hasher<xtd::any_object>, xtd::collections::generic::helpers::equator<xtd::any_object>, xtd::collections::generic::helpers::allocator<std::pair<const xtd::any_object, xtd::any_object>>>;
   }
 }
