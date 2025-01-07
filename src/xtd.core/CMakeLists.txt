@@ -567,6 +567,8 @@ add_sources(
   include/xtd/collections/generic/icollection
   include/xtd/collections/generic/icomparer.hpp
   include/xtd/collections/generic/icomparer
+  include/xtd/collections/generic/idictionary.hpp
+  include/xtd/collections/generic/idictionary
   include/xtd/collections/generic/ienumerable.hpp
   include/xtd/collections/generic/ienumerable
   include/xtd/collections/generic/ienumerator.hpp
