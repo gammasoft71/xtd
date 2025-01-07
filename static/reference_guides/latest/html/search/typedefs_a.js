@@ -12,5 +12,6 @@ var searchData=
   ['link_5flabels_5ft_9',['link_labels_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a85e8986defa85032d79151580f46504d',1,'xtd::forms::style_sheets::style_sheet']]],
   ['list_10',['list',['../classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a417e4adb1792949e9a54516bee2ca3d2',1,'xtd::collections::generic::extensions::enumerable::list'],['../classxtd_1_1linq_1_1enumerable.html#a4ff59be55b7be66d275f28741e2f1f0a',1,'xtd::linq::enumerable::list']]],
   ['listener_5fcollection_11',['listener_collection',['../classxtd_1_1diagnostics_1_1debug.html#a5f2023248b2a37b78e2b4f364c29909a',1,'xtd::diagnostics::debug::listener_collection'],['../classxtd_1_1diagnostics_1_1trace.html#a951774bf53b93b1c0a428bb3773953e2',1,'xtd::diagnostics::trace::listener_collection']]],
-  ['lock_12',['lock',['../group__threading.html#ga90b16e4ed2e4bde4276f0c807e5a7112',1,'xtd']]]
+  ['local_5fiterator_12',['local_iterator',['../classxtd_1_1collections_1_1generic_1_1dictionary.html#adc966a9b4269ce145604c61eace7f57c',1,'xtd::collections::generic::dictionary']]],
+  ['lock_13',['lock',['../group__threading.html#ga90b16e4ed2e4bde4276f0c807e5a7112',1,'xtd']]]
 ];

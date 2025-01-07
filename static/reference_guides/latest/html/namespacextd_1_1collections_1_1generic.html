@@ -107,6 +107,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a base class for implementations of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; generic interface.  <a href="classxtd_1_1collections_1_1generic_1_1comparer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of keys and values.  <a href="classxtd_1_1collections_1_1generic_1_1dictionary.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1empty__comparer.html">empty_comparer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an empty comparer class.  <a href="classxtd_1_1collections_1_1generic_1_1empty__comparer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -121,6 +124,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">icomparer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposes a method that compares two objects.  <a href="classxtd_1_1collections_1_1generic_1_1icomparer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">idictionary</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a generic collection of key/value pairs.  <a href="classxtd_1_1collections_1_1generic_1_1idictionary.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">ienumerable</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exposes the enumerator, which supports a simple iteration over a collection of a specified type.  <a href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#details">More...</a><br /></td></tr>
@@ -149,10 +155,6 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Alias</h2></td></tr>
-<tr class="memitem:gabc6e9eab3efe7d40c7dd9c3287b36960"><td class="memTemplParams" colspan="2">template&lt;typename key_t , typename value_t &gt; </td></tr>
-<tr class="memitem:gabc6e9eab3efe7d40c7dd9c3287b36960"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#gabc6e9eab3efe7d40c7dd9c3287b36960">dictionary</a> = std::unordered_map&lt; key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html">helpers::hasher</a>&lt; key_t &gt;, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">helpers::equator</a>&lt; key_t &gt;, <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator</a>&lt; std::pair&lt; const key_t, value_t &gt; &gt; &gt;</td></tr>
-<tr class="memdesc:gabc6e9eab3efe7d40c7dd9c3287b36960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of keys and values.  <br /></td></tr>
-<tr class="separator:gabc6e9eab3efe7d40c7dd9c3287b36960"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga64eee1442dc5ab233c858fb9210538f0"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
 <tr class="memitem:ga64eee1442dc5ab233c858fb9210538f0"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga64eee1442dc5ab233c858fb9210538f0">hash_set</a> = std::unordered_set&lt; type_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html">helpers::hasher</a>&lt; type_t &gt;, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">helpers::equator</a>&lt; type_t &gt;, <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator</a>&lt; type_t &gt; &gt;</td></tr>
 <tr class="memdesc:ga64eee1442dc5ab233c858fb9210538f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a set of values.  <br /></td></tr>
@@ -170,7 +172,7 @@ Alias</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 6 2025 18:27:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 7 2025 16:33:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
