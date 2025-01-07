@@ -2144,7 +2144,6 @@ template&lt;typename source_t &gt; </div>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#ae8deab4a1605619cb40cd56504a5b54c" title="Returns the number of elements in a sequence.">xtd::linq::enumerable::count</a> &lt;source_t&gt;(const ienumerable &lt;source_t&gt;&amp;) to count the elements in a sequence. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="keyword">auto</span> fruits = <a class="code hl_class" href="classxtd_1_1array.html">array</a> {<span class="stringliteral">&quot;apple&quot;</span>, <span class="stringliteral">&quot;banana&quot;</span>, <span class="stringliteral">&quot;mango&quot;</span>, <span class="stringliteral">&quot;orange&quot;</span>, <span class="stringliteral">&quot;passionfruit&quot;</span>, <span class="stringliteral">&quot;grape&quot;</span>};</div>
@@ -2219,7 +2218,7 @@ template&lt;typename source_t &gt; </div>
 <div class="line">  <span class="keywordtype">string</span> name;</div>
 <div class="line">  <span class="keywordtype">bool</span> vaccinated = <span class="keyword">false</span>;</div>
 <div class="line">  </div>
-<div class="line">  <span class="keyword">friend</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> pet&amp; lhs, <span class="keyword">const</span> pet&amp; rhs) <span class="keyword">noexcept</span> {</div>
+<div class="line">  <span class="keyword">friend</span> <span class="keywordtype">bool</span> operator ==(<span class="keyword">const</span> pet&amp; lhs, <span class="keyword">const</span> pet&amp; rhs) <span class="keyword">noexcept</span> {</div>
 <div class="line">    <span class="keywordflow">return</span> lhs.name == rhs.name &amp;&amp; lhs.vaccinated == rhs.vaccinated;</div>
 <div class="line">  }</div>
 <div class="line">};</div>
@@ -2477,6 +2476,45 @@ template&lt;typename source_t &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An xtd::collection::generic::ienumerable &lt;type_t&gt; that contains default_value if source is empty; otherwise, source. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a89cb4c7f69e1af47e2d24c5e4e963925" title="Returns the elements of the specified sequence or the type parameter&#39;s default value in a singleton c...">xtd::linq::enumerable::default_if_empty</a> &lt;source_t&gt;(const ienumerable &lt;source_t&gt;&amp;) to return a default value if a sequence is empty. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>pet {</div>
+<div class="line">  <span class="keywordtype">string</span> name;</div>
+<div class="line">  <span class="keywordtype">int</span> age = 0;</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">friend</span> <span class="keywordtype">bool</span> operator ==(<span class="keyword">const</span> pet&amp; lhs, <span class="keyword">const</span> pet&amp; rhs) <span class="keyword">noexcept</span> {</div>
+<div class="line">    <span class="keywordflow">return</span> lhs.name == rhs.name &amp;&amp; lhs.age == rhs.age;</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> pets1 = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;pet&gt;</a> {</div>
+<div class="line">    {.name=<span class="stringliteral">&quot;Barley&quot;</span>, .age=8},</div>
+<div class="line">    {.name=<span class="stringliteral">&quot;Boots&quot;</span>, .age=4},</div>
+<div class="line">    {.name=<span class="stringliteral">&quot;Whiskers&quot;</span>, .age=1}</div>
+<div class="line">  };</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [name, age] : pets1.<a class="code hl_function" href="classxtd_1_1linq_1_1enumerable.html#a89cb4c7f69e1af47e2d24c5e4e963925">default_if_empty</a>())</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(<span class="stringliteral">&quot;pet {{name={}, age={}}}&quot;</span>, name, age);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> pets2 = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;pet&gt;</a> {};</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [name, age] : pets2.<a class="code hl_function" href="classxtd_1_1linq_1_1enumerable.html#a89cb4c7f69e1af47e2d24c5e4e963925">default_if_empty</a>())</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(<span class="stringliteral">&quot;pet {{name={}, age={}}}&quot;</span>, name, age);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// pet {name=Barley, age=8}</span></div>
+<div class="line"><span class="comment">// pet {name=Boots, age=4}</span></div>
+<div class="line"><span class="comment">// pet {name=Whiskers, age=1}</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// pet {name=, age=0}</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="ttc" id="aclassxtd_1_1linq_1_1enumerable_html_a89cb4c7f69e1af47e2d24c5e4e963925"><div class="ttname"><a href="classxtd_1_1linq_1_1enumerable.html#a89cb4c7f69e1af47e2d24c5e4e963925">xtd::linq::enumerable::default_if_empty</a></div><div class="ttdeci">static const ienumerable&lt; source_t &gt; &amp; default_if_empty(const ienumerable&lt; source_t &gt; &amp;source) noexcept</div><div class="ttdoc">Returns the elements of the specified sequence or the type parameter's default value in a singleton c...</div><div class="ttdef"><b>Definition</b> enumerable.hpp:501</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -2531,6 +2569,48 @@ template&lt;typename source_t &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An xtd::collection::generic::ienumerable &lt;type_t&gt; that contains default_value if source is empty; otherwise, source. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates how to use <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a89cb4c7f69e1af47e2d24c5e4e963925" title="Returns the elements of the specified sequence or the type parameter&#39;s default value in a singleton c...">xtd::linq::enumerable::default_if_empty</a> &lt;source_t&gt;(const ienumerable &lt;source_t&gt;&amp;, const source_t&amp;) to return a default value if a sequence is empty. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>pet {</div>
+<div class="line">  <span class="keywordtype">string</span> name;</div>
+<div class="line">  <span class="keywordtype">int</span> age = 0;</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">static</span> pet default_pet;</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">friend</span> <span class="keywordtype">bool</span> operator ==(<span class="keyword">const</span> pet&amp; lhs, <span class="keyword">const</span> pet&amp; rhs) <span class="keyword">noexcept</span> {</div>
+<div class="line">    <span class="keywordflow">return</span> lhs.name == rhs.name &amp;&amp; lhs.age == rhs.age;</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">pet pet::default_pet {.name = <span class="stringliteral">&quot;Default pet&quot;</span>, .age = 0};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> pets1 = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;pet&gt;</a> {</div>
+<div class="line">    {.name=<span class="stringliteral">&quot;Barley&quot;</span>, .age=8},</div>
+<div class="line">    {.name=<span class="stringliteral">&quot;Boots&quot;</span>, .age=4},</div>
+<div class="line">    {.name=<span class="stringliteral">&quot;Whiskers&quot;</span>, .age=1}</div>
+<div class="line">  };</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [name, age] : pets1.<a class="code hl_function" href="classxtd_1_1linq_1_1enumerable.html#a89cb4c7f69e1af47e2d24c5e4e963925">default_if_empty</a>(pet::default_pet))</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(<span class="stringliteral">&quot;pet {{name={}, age={}}}&quot;</span>, name, age);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">  </div>
+<div class="line">  <span class="keyword">auto</span> pets2 = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;pet&gt;</a> {};</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; [name, age] : pets2.<a class="code hl_function" href="classxtd_1_1linq_1_1enumerable.html#a89cb4c7f69e1af47e2d24c5e4e963925">default_if_empty</a>(pet::default_pet))</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(<span class="stringliteral">&quot;pet {{name={}, age={}}}&quot;</span>, name, age);</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>();</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// pet {name=Barley, age=8}</span></div>
+<div class="line"><span class="comment">// pet {name=Boots, age=4}</span></div>
+<div class="line"><span class="comment">// pet {name=Whiskers, age=1}</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// pet {name=Default pet, age=0}</span></div>
+<div class="line"><span class="comment">//</span></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -3667,7 +3747,7 @@ template&lt;typename source_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 6 2025 18:28:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 7 2025 16:33:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

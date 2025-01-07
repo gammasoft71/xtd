@@ -84,21 +84,30 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle"><div class="title">dictionary.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="allocator_8hpp_source.html">helpers/allocator.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="equator_8hpp_source.html">helpers/equator.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="hasher_8hpp_source.html">helpers/hasher.hpp</a>&quot;</code><br />
-<code>#include &lt;unordered_set&gt;</code><br />
+<code>#include &quot;<a class="el" href="idictionary_8hpp_source.html">idictionary.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="new__ptr_8hpp_source.html">../../new_ptr.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ptr_8hpp_source.html">../../ptr.hpp</a>&quot;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
 </div><a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>Contains <a class="el" href="group__generic__collections.html#gabc6e9eab3efe7d40c7dd9c3287b36960" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> struct. </p>
+<div class="textblock"><p>Contains <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> struct. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 Gammasoft. All rights reserved. </dd></dl>
 </div>
 <p><a href="dictionary_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of keys and values.  <a href="classxtd_1_1collections_1_1generic_1_1dictionary.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacextd"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacextd.html">xtd</a></td></tr>
@@ -110,19 +119,12 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacextd_1_1collections_1_1generic"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></td></tr>
 <tr class="memdesc:namespacextd_1_1collections_1_1generic"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:gabc6e9eab3efe7d40c7dd9c3287b36960"><td class="memTemplParams" colspan="2">template&lt;typename key_t , typename value_t &gt; </td></tr>
-<tr class="memitem:gabc6e9eab3efe7d40c7dd9c3287b36960"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#gabc6e9eab3efe7d40c7dd9c3287b36960">xtd::collections::generic::dictionary</a> = std::unordered_map&lt; key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html">helpers::hasher</a>&lt; key_t &gt;, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">helpers::equator</a>&lt; key_t &gt;, <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator</a>&lt; std::pair&lt; const key_t, value_t &gt; &gt; &gt;</td></tr>
-<tr class="memdesc:gabc6e9eab3efe7d40c7dd9c3287b36960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of keys and values.  <br /></td></tr>
-<tr class="separator:gabc6e9eab3efe7d40c7dd9c3287b36960"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 6 2025 18:27:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 7 2025 16:33:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
