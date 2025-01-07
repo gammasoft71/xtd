@@ -33,10 +33,12 @@ namespace xtd::collections::generic::tests {
 
     void test_method_(size_type) {
       assert::are_equal(typeof_<xtd::size>(), typeof_<list<int>::size_type>());
+      assert::are_equal(typeof_<list<bool>::base_type::size_type>(), typeof_<list<int>::size_type>());
     }
     
     void test_method_(difference_type) {
       assert::are_equal(typeof_<xtd::ptrdiff>(), typeof_<list<int>::difference_type>());
+      assert::are_equal(typeof_<list<bool>::base_type::difference_type>(), typeof_<list<int>::difference_type>());
     }
     
     void test_method_(reference) {
