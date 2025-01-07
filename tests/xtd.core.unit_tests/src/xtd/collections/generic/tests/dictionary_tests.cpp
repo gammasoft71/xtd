@@ -106,9 +106,8 @@ namespace xtd::collections::generic::tests {
 
     void test_method_(default_constructor) {
       auto items = dictionary<int, string> {};
-      //assert::is_zero(items.capacity());
-      //assert::is_zero(items.count());
-      //collection_assert::is_empty(items);
+      assert::is_zero(items.capacity());
+      assert::is_zero(items.count());
     }
-   };
+  };
 }
