@@ -38,18 +38,7 @@ public:
     box_collection(const std::initializer_list<program::box>& boxes) : boxes_(boxes) {}
     
     enumerator<program::box> get_enumerator() const override {
-      class box_enumerator : public ienumerator<program::box> {
-      public:
-        explicit box_enumerator(const list<program::box>& items) : items_(items) {}
-        const program::box& current() const override {return items_[index_];}
-        bool move_next() override {return ++index_ < items_.count();}
-        void reset() override {index_ = box_integer<size>::max_value;}
-        
-      protected:
-        const list<program::box>& items_;
-        size index_ = box_integer<size>::max_value;
-      };
-      return {new_ptr<box_enumerator>(boxes_)};
+      return enumerator<>::create(boxes_);
     }
     
   private:
