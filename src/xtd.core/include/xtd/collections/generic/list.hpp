@@ -581,13 +581,15 @@ namespace xtd {
         virtual const base_type& get_base_type() const noexcept {return data_->items;}
 
         enumerator<value_type> get_enumerator() const noexcept override {
-          class list_enumerator : public ienumerator<value_type> {
+          class internal_enumerator : public ienumerator<value_type> {
           public:
-            explicit list_enumerator(const list& items, size_type version) : items_(items), version_(version) {}
+            explicit internal_enumerator(const list& items, size_type version) : items_(items), version_(version) {}
             
             const value_type& current() const override {
               if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute."};
-              return items_.at(index_);
+              if (index_ < items_.count()) return items_[index_];
+              static thread_local auto default_value = value_type {};
+              return default_value;
             }
             
             bool move_next() override {
@@ -605,7 +607,7 @@ namespace xtd {
             size_type index_ = list::npos;
             size_type version_ = 0;
           };
-          return {new_ptr<list_enumerator>(*this, data_->version)};
+          return {new_ptr<internal_enumerator>(*this, data_->version)};
         }
         
         /// @brief Creates a shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.

@@ -164,7 +164,7 @@ namespace xtd::collections::generic::tests {
 
     void test_method_(cend) {
       auto items = list {84, 42, 21};
-      assert::throws<index_out_of_range_exception>([&] {*items.cend();});
+      assert::are_equal(0, *items.cend());
     }
     
     void test_method_(count) {
@@ -229,7 +229,7 @@ namespace xtd::collections::generic::tests {
     
     void test_method_(end) {
       auto items = list {84, 42, 21};
-      assert::throws<index_out_of_range_exception>([&] {*items.end();});
+      assert::are_equal(0, *items.end());
     }
     
     void test_method_(front_const) {
