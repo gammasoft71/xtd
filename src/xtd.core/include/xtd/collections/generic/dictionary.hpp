@@ -137,6 +137,18 @@ namespace xtd {
         dictionary(const dictionary& other, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(other.data_->items, other.data_->version, alloc)) {}
         dictionary(const std::unordered_map<key_t, value_t>& other) noexcept : data_(xtd::new_ptr<data>(other.begin(), other.end(), 0, hasher {}, equator {}, allocator_type {})) {}
         dictionary(const std::unordered_map<key_t, value_t>& other, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(other.begin(), other.end(), 0, hasher {}, equator {}, alloc)) {}
+        dictionary(dictionary&& other) noexcept = default;
+        dictionary(dictionary&& other, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(std::move(other.data_->items), other.data_->version, alloc)) {}
+        template <typename init_key_t, typename init_value_t>
+        dictionary(std::initializer_list<key_value_pair<init_key_t, init_value_t>> init, size_type bucket_count = 0, const hasher& hash = hasher {}, const equator& equal = equator {}, const allocator_type& alloc = allocator_type {}) noexcept : data_(xtd::new_ptr<data>(bucket_count, hash, equal, alloc)) {
+          for (const auto& [key, value] : init)
+            data_->items.insert({key, value});
+        }
+        template <typename init_key_t, typename init_value_t>
+        dictionary(std::initializer_list<std::pair<init_key_t, init_value_t>> init, size_type bucket_count = 0, const hasher& hash = hasher {}, const equator& equal = equator {}, const allocator_type& alloc = allocator_type {}) noexcept : data_(xtd::new_ptr<data>(bucket_count, hash, equal, alloc)) {
+          for (const auto& [key, value] : init)
+            data_->items.insert({key, value});
+        }
         /// @}
         
         /// @name Public Properties
@@ -236,7 +248,7 @@ namespace xtd {
           protected:
             bool reset_ = true;
             const dictionary& items_;
-            dictionary::base_type::const_iterator iterator_ = items_.items().cend();
+            typename dictionary::base_type::const_iterator iterator_ = items_.items().cend();
             size_type version_ = 0;
           };
           return {new_ptr<internal_enumerator>(*this, data_->version)};
@@ -263,6 +275,7 @@ namespace xtd {
           template <typename input_iterator_t>
           data(input_iterator_t first, input_iterator_t last, size_type bucket_count, const hasher& hash, const equator& equal, const allocator_type& alloc) noexcept : items(first, last, bucket_count, hash, equal, alloc) {}
           data(const base_type& items, size_type version, const allocator_type& alloc) noexcept : items {items, alloc}, version {version} {}
+          data(base_type&& items, size_type version, const allocator_type& alloc) noexcept : items {items, alloc}, version {version} {}
 
           base_type items;
           size_type version = 0;
