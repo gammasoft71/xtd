@@ -104,12 +104,12 @@ namespace xtd {
             /// @cond
             iterator(const iterator& value) noexcept : enumerable_(value.enumerable_), enumerator_(value.enumerable_->get_enumerator()), pos_ {value.pos_} {reset();}
             iterator(iterator&& value) = default;
-            iterator& operator =(const iterator& value) noexcept {
+            iterator& operator =(const iterator& value) const noexcept {
               enumerable_ = value.enumerable_;
               enumerator_ = value.enumerable_->get_enumerator();
               pos_ = value.pos_;
               reset();
-              return *this;
+              return const_cast<iterator&>(*this);
             }
             /// @endcond
             
@@ -131,13 +131,13 @@ namespace xtd {
             
             /// @brief Pre increments the underlying iterator.
             /// @return The underlying iterator.
-            iterator& operator ++() noexcept {
+            iterator& operator ++() const noexcept {
               if (pos_ != std::numeric_limits<xtd::size>::max()) pos_ = enumerator_.move_next() ? pos_ + 1 : std::numeric_limits<xtd::size>::max();
-              return *this;
+              return const_cast<iterator&>(*this);
             }
             /// @brief Post increments the underlying iterator.
             /// @return The underlying iterator.
-            iterator operator ++(int) noexcept {
+            iterator operator ++(int) const noexcept {
               auto current = *this;
               operator ++();
               return current;
@@ -169,7 +169,7 @@ namespace xtd {
             template<typename value_t>
             iterator(const iterator& base, value_t value) noexcept : enumerable_(base.enumerable_),  enumerator_(base.enumerable_->get_enumerator()), pos_ {base.pos_ + value} {reset();}
             
-            void reset() {
+            void reset() const {
               enumerator_.reset();
               if (pos_ == std::numeric_limits<xtd::size>::max()) return;
               for (auto index = xtd::size {}; index <= pos_; ++index)
@@ -179,9 +179,9 @@ namespace xtd {
                 }
             }
             
-            const enumerable_t* enumerable_ = nullptr;
-            enumerator<type_t> enumerator_;
-            xtd::size pos_ = 0;
+            mutable const enumerable_t* enumerable_ = nullptr;
+            mutable enumerator<type_t> enumerator_;
+            mutable xtd::size pos_ = 0;
           };
           /// @}
           
