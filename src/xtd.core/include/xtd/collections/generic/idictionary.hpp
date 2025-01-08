@@ -32,7 +32,7 @@ namespace xtd {
       /// @remarks Each pair must have a unique key. Implementations can vary in whether they allow key to be empty. The value can be empty and does not have to be unique. The idictionary <key_t, value_t> interface allows the contained keys and values to be enumerated, but it does not imply any particular sort order.
       /// @remarks The foreach statement of the C# language (For Each in Visual Basic, for each in C++) returns an object of the type of the elements in the collection. Since each element of the IDictionary<TKey,TValue> is a key/value pair, the element type is not the type of the key or the type of the value. Instead, the element type is KeyValuePair<TKey,TValue>. For example:
       template<typename key_t, typename value_t>
-      class idictionary interface_ /* : public xtd::collections::generic::icollection<xtd::collections::generic::key_value_pair<key_t, value_t>> */ {
+      class idictionary : public xtd::collections::generic::ienumerable<xtd::collections::generic::key_value_pair<key_t, value_t>> /* xtd::collections::generic::icollection<xtd::collections::generic::key_value_pair<key_t, value_t>> */ {
       public:
         /// @name Public Aliases
         
