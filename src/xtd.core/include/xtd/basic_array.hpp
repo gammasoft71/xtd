@@ -277,7 +277,9 @@ namespace xtd {
         
         const value_type& current() const override {
           if (version_ != items_.data_->version) __throw_invalid_operation_exception("Collection was modified; enumeration operation may not execute.", __FILE__, __LINE__, __func__);
-          return items_.at(index_);
+          if (index_ < items_.count()) return items_[index_];
+          static thread_local auto default_value = value_type {};
+          return default_value;
         }
         
         bool move_next() override {
