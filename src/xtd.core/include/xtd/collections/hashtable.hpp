@@ -41,7 +41,7 @@ namespace xtd {
     /// @remarks The foreach statement is a wrapper around the enumerator, which only allows reading from, not writing to, the collection.
     /// @remarks Because serializing and deserializing an enumerator for a xtd::collections::hashtable can cause the elements to become reordered, it is not possible to continue enumeration without calling the Reset method.
     /// @note Because keys can be inherited and their behavior changed, their absolute uniqueness cannot be guaranteed by comparisons using the Equals method.
-    /// @par Exemples
+    /// @par Examples
     /// The following example shows how to create, initialize and perform various functions to a xtd::collections::hashtable and how to print out its keys and values.
     /// @include hashtable.cpp
     /// @todo Use xtd::collections::generic::dictionary <xtd::any_object, xtd::any_object> when done.
