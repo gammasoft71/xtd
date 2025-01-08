@@ -127,10 +127,25 @@ namespace xtd {
         /// @name Public Properties
         
         /// @{
+        /// @brief Returns an iterator to the first element of the enumarable.
+        /// @return Iterator to the first element.
+        const_iterator begin() const noexcept override {return ienumerable<value_type>::begin();}
+        /// @brief Returns an iterator to the first element of the enumarable.
+        /// @return Iterator to the first element.
+        iterator begin() noexcept override {return ienumerable<value_type>::begin();}
+
         /// @brief Gets the total numbers of elements the internal data structure can hold without resizing.
         /// @return The total numbers of elements the internal data structure can hold without resizing.
         xtd::size capacity() const noexcept {return data_->items.size();}
         
+        /// @brief Returns an iterator to the first element of the enumarable.
+        /// @return Iterator to the first element.
+        const_iterator cbegin() const noexcept override {return ienumerable<value_type>::cbegin();}
+        
+        /// @brief Returns an iterator to the element following the last element of the enumarable.
+        /// @return Iterator to the element following the last element.
+        const_iterator cend() const noexcept override {return ienumerable<value_type>::cend();}
+
         /// @brief Gets the number of key/value pairs contained in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @return the number of key/value pairs contained in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @remarks The capacity of a xtd::collections::generic::dictionary <key_t, value_t> is the number of elements that the xtd::collections::generic::dictionary <key_t, value_t> can store. The xtd::collections::generic::dictionary::count property is the number of elements that are actually in the xtd::collections::generic::dictionary <key_t, value_t>.
@@ -171,6 +186,47 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+
+        enumerator<value_type> get_enumerator() const noexcept override {
+          class internal_enumerator : public ienumerator<value_type> {
+          public:
+            explicit internal_enumerator(const dictionary& items, size_type version) : items_(items), version_(version) {}
+            
+            const value_type& current() const override {
+              if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute."};
+              if (iterator_ != items_.items().cend()) {
+                //return *iterator_;
+                static thread_local auto value = value_type {};
+                value = value_type {*iterator_};
+                return value;
+              }
+              static auto default_value_type = value_type {};
+              return default_value_type;
+            }
+            
+            bool move_next() override {
+              if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute."};
+              if (!reset_) return ++iterator_ != items_.items().cend();
+              reset_ = false;
+              iterator_ = items_.items().cbegin();
+              return iterator_ != items_.items().cend();
+            }
+            
+            void reset() override {
+              reset_ = true;
+              version_ = items_.data_->version;
+              iterator_ = items_.items().cend();
+            }
+            
+          protected:
+            bool reset_ = true;
+            const dictionary& items_;
+            dictionary::base_type::const_iterator iterator_ = items_.items().cend();
+            size_type version_ = 0;
+          };
+          return {new_ptr<internal_enumerator>(*this, data_->version)};
+        }
+
         /// @}
         
         /// @name Public Operators
