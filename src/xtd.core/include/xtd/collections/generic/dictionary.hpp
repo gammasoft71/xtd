@@ -122,6 +122,21 @@ namespace xtd {
         /// }
         /// ```
         dictionary() noexcept = default;
+        
+        explicit dictionary(size_type bucket_count, const hasher& hash = hasher {}, const equator& equal = equator {}, const allocator_type& alloc = allocator_type {}) noexcept : data_(xtd::new_ptr<data>(bucket_count, hash, equal, alloc)) {}
+        dictionary(size_type bucket_count, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(bucket_count, hasher {}, equator {}, alloc)) {}
+        dictionary(size_type bucket_count, const hasher& hash, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(bucket_count, hash, equator {}, alloc)) {}
+        explicit dictionary(const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(alloc)) {}
+        template <typename input_iterator_t>
+        explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count = 0, const hasher& hash = hasher {}, const equator& equal = equator {}, const allocator_type& alloc = allocator_type {}) noexcept : data_(xtd::new_ptr<data>(first, last, bucket_count, hash, equal, alloc)) {}
+        template <typename input_iterator_t>
+        explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(first, last, bucket_count, hasher {}, equator {}, alloc)) {}
+        template <typename input_iterator_t>
+        explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count, const hasher& hash, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(first, last, bucket_count, hash, equator {}, alloc)) {}
+        dictionary(const dictionary& other) noexcept : data_(xtd::new_ptr<data>(other.data_->items, other.data_->version, allocator_type {})) {}
+        dictionary(const dictionary& other, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(other.data_->items, other.data_->version, alloc)) {}
+        dictionary(const std::unordered_map<key_t, value_t>& other) noexcept : data_(xtd::new_ptr<data>(other.begin(), other.end(), 0, hasher {}, equator {}, allocator_type {})) {}
+        dictionary(const std::unordered_map<key_t, value_t>& other, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(other.begin(), other.end(), 0, hasher {}, equator {}, alloc)) {}
         /// @}
         
         /// @name Public Properties
@@ -242,6 +257,13 @@ namespace xtd {
 
       private:
         struct data {
+          data() = default;
+          data(size_type bucket_count, const hasher& hash, const equator& equal, const allocator_type& alloc) noexcept : items(bucket_count, hash, equal, alloc) {}
+          explicit data(const allocator_type& alloc) noexcept : items(alloc) {}
+          template <typename input_iterator_t>
+          data(input_iterator_t first, input_iterator_t last, size_type bucket_count, const hasher& hash, const equator& equal, const allocator_type& alloc) noexcept : items(first, last, bucket_count, hash, equal, alloc) {}
+          data(const base_type& items, size_type version, const allocator_type& alloc) noexcept : items {items, alloc}, version {version} {}
+
           base_type items;
           size_type version = 0;
           xtd::object sync_root;
