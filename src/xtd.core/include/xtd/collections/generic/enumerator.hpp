@@ -112,7 +112,7 @@ namespace xtd {
         /// @param current_version A pointer on the collection current version.
         /// @return The enumerator created.
         /// @par Examples
-        /// The following code shows how to use xtd::collections::generic::enumerable::create method to create a simple enumerator on any std or xtd collections.
+        /// The following code shows how to use enumerator<>::create method to create a simple enumerator on any std or xtd collections.
         /// @include generic_ienumerable3.cpp
         template <typename collection_t, typename vertion_t = std::nullptr_t>
         static auto create(const collection_t& items, const vertion_t* current_version = nullptr) noexcept {
