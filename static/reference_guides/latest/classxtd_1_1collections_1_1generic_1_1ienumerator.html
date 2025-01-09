@@ -95,7 +95,7 @@ Inheritance diagram for xtd::collections::generic::ienumerator&lt; type_t &gt;:<
   <img src="classxtd_1_1collections_1_1generic_1_1ienumerator.png" usemap="#xtd::collections::generic::ienumerator_3C_20type_5Ft_20_3E_map" alt=""/>
   <map id="xtd::collections::generic::ienumerator_3C_20type_5Ft_20_3E_map" name="xtd::collections::generic::ienumerator_3C_20type_5Ft_20_3E_map">
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="0,0,274,24"/>
-<area href="classxtd_1_1collections_1_1generic_1_1enumerator.html" title="Supports a simple iteration over a generic collection." alt="xtd::collections::generic::enumerator&lt; type_t &gt;" shape="rect" coords="0,112,274,136"/>
+<area href="structxtd_1_1collections_1_1generic_1_1enumerator.html" title="Supports a simple iteration over a generic collection." alt="xtd::collections::generic::enumerator&lt; type_t &gt;" shape="rect" coords="0,112,274,136"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -231,7 +231,7 @@ template&lt;typename type_t &gt; </div>
 <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html#a95c392a5abc71c0367d1459690ac240e" title="Gets the element in the collection at the current position of the enumerator.">xtd::collections::generic::ienumerator::current</a> returns the same object until <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html#a20a9b9fd4890940d35e4339ec8da88cc" title="Advances the enumerator to the next element of the collection.">xtd::collections::generic::ienumerator::move_next</a> is called. <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html#a20a9b9fd4890940d35e4339ec8da88cc" title="Advances the enumerator to the next element of the collection.">xtd::collections::generic::ienumerator::move_next</a> sets <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html#a95c392a5abc71c0367d1459690ac240e" title="Gets the element in the collection at the current position of the enumerator.">xtd::collections::generic::ienumerator::current</a> to the next element. </dd></dl>
 <dl class="section user"><dt>Notes to Implementers</dt><dd>Implementing this interface requires implementing the nongeneric IEnumerator interface. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html#a95c392a5abc71c0367d1459690ac240e" title="Gets the element in the collection at the current position of the enumerator.">xtd::collections::generic::ienumerator::current</a> property appears on both interfaces, and has different return types. Implement the nongeneric <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html#a95c392a5abc71c0367d1459690ac240e" title="Gets the element in the collection at the current position of the enumerator.">xtd::collections::generic::ienumerator::current</a> property as an explicit interface implementation. This allows any consumer of the nongeneric interface to consume the generic interface. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">xtd::collections::generic::enumerator&lt; type_t &gt;</a>.</p>
+<p>Implemented in <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#a56ef2e4d105ed3260d33bd1989b43f3b">xtd::collections::generic::enumerator&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -302,7 +302,7 @@ If <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html#a2
 <dd>
 If changes are made to the collection, such as adding, modifying, or deleting elements, the behavior of <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html#a20a9b9fd4890940d35e4339ec8da88cc" title="Advances the enumerator to the next element of the collection.">xtd::collections::generic::ienumerator::move_next</a> is undefined. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">xtd::collections::generic::enumerator&lt; type_t &gt;</a>.</p>
+<p>Implemented in <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#ad461ec52e959712ab699f6ca3aa5ec3d">xtd::collections::generic::enumerator&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -372,7 +372,7 @@ template&lt;typename type_t &gt; </div>
 The <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html#aa18403f8baa0ef33d084df71012af9d4" title="Sets the enumerator to its initial position, which is before the first element in the collection.">xtd::collections::generic::ienumerator::reset</a> method is provided for COM interoperability. It does not necessarily need to be implemented; instead, the implementer can simply throw a NotSupportedException. </dd></dl>
 <dl class="section user"><dt>Notes to Implementers</dt><dd>All calls to <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html#aa18403f8baa0ef33d084df71012af9d4" title="Sets the enumerator to its initial position, which is before the first element in the collection.">xtd::collections::generic::ienumerator::reset()</a> must result in the same state for the enumerator. The preferred implementation is to move the enumerator to the beginning of the collection, before the first element. This invalidates the enumerator if the collection has been modified since the enumerator was created, which is consistent with <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html#a20a9b9fd4890940d35e4339ec8da88cc" title="Advances the enumerator to the next element of the collection.">xtd::collections::generic::ienumerator::move_next()</a> and <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html#a95c392a5abc71c0367d1459690ac240e" title="Gets the element in the collection at the current position of the enumerator.">xtd::collections::generic::ienumerator::current</a>. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerator.html#af1a22fc81f786bded348a111b4ea5ba9">xtd::collections::generic::enumerator&lt; type_t &gt;</a>.</p>
+<p>Implemented in <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html#af1a22fc81f786bded348a111b4ea5ba9">xtd::collections::generic::enumerator&lt; type_t &gt;</a>.</p>
 
 </div>
 </div>
@@ -383,7 +383,7 @@ The <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerator.html#a
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 8 2025 11:12:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 9 2025 22:53:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

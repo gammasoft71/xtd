@@ -27,7 +27,7 @@ var searchData=
   ['sea_5fgreen_24',['sea_green',['../classxtd_1_1drawing_1_1color.html#a2e89f9e182fb98fb36c797a137e76333',1,'xtd::drawing::color']]],
   ['sea_5fshell_25',['sea_shell',['../classxtd_1_1drawing_1_1color.html#a05bb9450c0704a2ee11bd6b376e8cbdc',1,'xtd::drawing::color']]],
   ['seat_26',['seat',['../classxtd_1_1forms_1_1emoticons.html#af95970fcfa70686f67ff995f278cf7c6',1,'xtd::forms::emoticons']]],
-  ['second_27',['second',['../classxtd_1_1collections_1_1generic_1_1key__value__pair.html#a50c87e4afe8f7b10474242861496177f',1,'xtd::collections::generic::key_value_pair']]],
+  ['second_27',['second',['../structxtd_1_1collections_1_1generic_1_1key__value__pair.html#a50c87e4afe8f7b10474242861496177f',1,'xtd::collections::generic::key_value_pair']]],
   ['second_5fplace_5fmedal_28',['second_place_medal',['../classxtd_1_1forms_1_1emoticons.html#a137c02df917014ad02448471fec45c6f',1,'xtd::forms::emoticons']]],
   ['see_5fno_5fevil_5fmonkey_29',['see_no_evil_monkey',['../classxtd_1_1forms_1_1emoticons.html#a59d150fc2e7915102d08fc366d8eccf8',1,'xtd::forms::emoticons']]],
   ['seedling_30',['seedling',['../classxtd_1_1forms_1_1emoticons.html#ae5b153762a01b9c03a7b3ffa9984fb77',1,'xtd::forms::emoticons']]],

@@ -2,7 +2,7 @@ var searchData=
 [
   ['sbyte_0',['sbyte',['../group__types.html#ga37e983ceedf5a7f73bc4568eaeae0aa2',1,'xtd']]],
   ['sbyte_5fobject_1',['sbyte_object',['../group__types.html#ga9378017a0327f88fd3ddd2209a206c16',1,'xtd']]],
-  ['second_5ftype_2',['second_type',['../classxtd_1_1collections_1_1generic_1_1key__value__pair.html#ad6ec8ac13c3abb6ca687d4a34a130af4',1,'xtd::collections::generic::key_value_pair']]],
+  ['second_5ftype_2',['second_type',['../structxtd_1_1collections_1_1generic_1_1key__value__pair.html#ad6ec8ac13c3abb6ca687d4a34a130af4',1,'xtd::collections::generic::key_value_pair']]],
   ['selected_5findex_5fcollection_3',['selected_index_collection',['../classxtd_1_1forms_1_1list__box.html#add82c0c2ec2007878ae2d558b0e5cee8',1,'xtd::forms::list_box']]],
   ['selected_5fobject_5fcollection_4',['selected_object_collection',['../classxtd_1_1forms_1_1checked__list__box.html#adb462aa24a2b62f24bb3e1fd6cb73bc0',1,'xtd::forms::checked_list_box::selected_object_collection'],['../classxtd_1_1forms_1_1list__box.html#a7336fa5b882e8397ed99c4e8e40c4d73',1,'xtd::forms::list_box::selected_object_collection']]],
   ['selector_5fmap_5',['selector_map',['../selector__map_8hpp.html#a0c2b331b8b4c08aef1da20f10384fba2',1,'xtd::web::css']]],
