@@ -14,7 +14,7 @@ namespace xtd {
       namespace helpers {
         /// @brief Implements a function object for compare data.
         /// ```cpp
-        /// class comparer
+        /// struct comparer;
         /// ```
         /// @par Header
         /// ```cpp
