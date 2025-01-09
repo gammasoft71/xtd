@@ -106,9 +106,11 @@ Inheritance diagram for xtd::collections::generic::dictionary&lt; key_t, value_t
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt;<br />
 class xtd::collections::generic::dictionary&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;</div><p>Represents a collection of keys and values. </p>
-<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> key_t, <span class="keyword">typename</span> value_t&gt;</div>
-<div class="line"><span class="keyword">using </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a> = std::unordered_map&lt;key_t, value_t, helpers::hasher&lt;key_t&gt;, <a class="code hl_struct" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">helpers::equator&lt;key_t&gt;</a>, <a class="code hl_typedef" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;</a>&gt;&gt;;</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1dictionary_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a></div><div class="ttdoc">Represents a collection of keys and values.</div><div class="ttdef"><b>Definition</b> dictionary.hpp:39</div></div>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> key_t, <span class="keyword">typename</span> value_t, <span class="keyword">typename</span> hasher_t = xtd::collections::<span class="keyword">generic</span>::helpers::hasher&lt;key_t&gt;, <span class="keyword">typename</span> equator_t = <a class="code hl_struct" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">xtd::collections::generic::helpers::equator&lt;key_t&gt;</a>, <span class="keyword">typename</span> allocator_t = <a class="code hl_typedef" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;</a>&gt;&gt;</div>
+<div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt;key_t, value_t&gt;;</div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1dictionary_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a></div><div class="ttdoc">Represents a collection of keys and values.</div><div class="ttdef"><b>Definition</b> dictionary.hpp:52</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1idictionary_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a></div><div class="ttdoc">Represents a generic collection of key/value pairs.</div><div class="ttdef"><b>Definition</b> idictionary.hpp:35</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:42</div></div>
 <div class="ttc" id="agroup__helpers__generic__collections_html_gac7dc24539787a344466014161f2d39af"><div class="ttname"><a href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">xtd::collections::generic::helpers::allocator</a></div><div class="ttdeci">std::allocator&lt; type_t &gt; allocator</div><div class="ttdoc">Represent an allocator alias.</div><div class="ttdef"><b>Definition</b> allocator.hpp:35</div></div>
 <div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1helpers_1_1equator_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">xtd::collections::generic::helpers::equator</a></div><div class="ttdoc">Implements a function object for performing comparisons. Unless specialised, invokes operator== on ty...</div><div class="ttdef"><b>Definition</b> equator.hpp:37</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -118,6 +120,22 @@ class xtd::collections::generic::dictionary&lt; key_t, value_t, hasher_t, equato
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/unordered_map">std::unordered_map</a>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following shows how to use <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a>. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; generic class provides a mapping from a set of keys to a set of values. Each addition to the dictionary consists of a value and its associated key. Retrieving a value by using its key is very fast, close to O(1), because the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class is implemented as a hash table. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The speed of retrieval depends on the quality of the hashing algorithm of the type specified for <code>key_t</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>As long as an object is used as a key in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;, it must not change in any way that affects its hash value. Every key in a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; must be unique according to the dictionary's equality comparer. </dd>
+<dd>
+<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; requires an equality implementation to determine whether keys are equal. You can specify an implementation of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; generic interface by using a constructor that accepts a comparer parameter; if you do not specify an implementation, the default generic equality comparer <a class="el" href="classxtd_1_1collections_1_1generic_1_1equality__comparer.html#a5587032e4b47a24f81e3ed4cb23f813c" title="Gets the default equality comparer for the type specified by the generic argument.">xtd::collections::generic::equality_comparer&lt;type_t&gt;::default_equality_comparer</a> is used. If type <code>key_t</code> implements the <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> &lt;type_t&gt; generic interface, the default equality comparer uses that implementation. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>For example, you can use the case-insensitive string comparers provided by the xtd::string_comparer class to create dictionaries with case-insensitive string keys. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; is the number of elements the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; can hold. As elements are added to a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;, the capacity is automatically increased as required by reallocating the internal array. </dd>
+<dd>
+For purposes of enumeration, each item in the dictionary is treated as a <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html" title="Defines a key/value pair that can be set or retrieved.">xtd::collections::generic::key_value_pair</a> &lt;key_t, value_t&gt; structure representing a value and its key. The order in which the items are returned is undefined. </dd>
+<dd>
+The for each statement returns an object of the type of the elements in the collection. Since the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; is a collection of keys and values, the element type is not the type of the key or the type of the value. Instead, the element type is a <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html" title="Defines a key/value pair that can be set or retrieved.">xtd::collections::generic::key_value_pair</a> &lt;key_t, value_t&gt; of the key type and the value type. For example: <div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair&lt;string, string&gt;</a>&amp; kvp : my_dictionary) {</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;key = {}, value = {}&quot;</span>, kvp.key(), kvp.value());</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1key__value__pair_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a></div><div class="ttdoc">Defines a key/value pair that can be set or retrieved.</div><div class="ttdef"><b>Definition</b> key_value_pair.hpp:36</div></div>
+<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
+</div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
 <tr class="memitem:ac46665df3307e2ef72937349cbe9a043"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ac46665df3307e2ef72937349cbe9a043">key_type</a> = typename <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt; key_t, value_t &gt;::key_type</td></tr>
@@ -194,6 +212,69 @@ class xtd::collections::generic::dictionary&lt; key_t, value_t, hasher_t, equato
 <tr class="memitem:a50b15016f1b91a266a8beec12ab89584"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a50b15016f1b91a266a8beec12ab89584">dictionary</a> () noexcept=default</td></tr>
 <tr class="memdesc:a50b15016f1b91a266a8beec12ab89584"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class that is empty, has the default initial capacity, and uses the default equality comparer for the key type.  <br /></td></tr>
 <tr class="separator:a50b15016f1b91a266a8beec12ab89584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0560bd5c164940e101c379af9ef8f65"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad0560bd5c164940e101c379af9ef8f65">dictionary</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> bucket_count, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> &amp;hash=<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> {}, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8">equator</a> &amp;equal=<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8">equator</a> {}, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc=<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> {}) noexcept</td></tr>
+<tr class="memdesc:ad0560bd5c164940e101c379af9ef8f65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:ad0560bd5c164940e101c379af9ef8f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a05a50c5843077f4e3fa29a3119790c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a4a05a50c5843077f4e3fa29a3119790c">dictionary</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> bucket_count, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
+<tr class="memdesc:a4a05a50c5843077f4e3fa29a3119790c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a4a05a50c5843077f4e3fa29a3119790c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32e9590be6d1f2dee9cf2ee5e1981f34"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a32e9590be6d1f2dee9cf2ee5e1981f34">dictionary</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> bucket_count, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> &amp;hash, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
+<tr class="memdesc:a32e9590be6d1f2dee9cf2ee5e1981f34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a32e9590be6d1f2dee9cf2ee5e1981f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a32c1d1e03ae4b0d6e504a78ea55e56"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3a32c1d1e03ae4b0d6e504a78ea55e56">dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
+<tr class="memdesc:a3a32c1d1e03ae4b0d6e504a78ea55e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a3a32c1d1e03ae4b0d6e504a78ea55e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a39e00fab008316a1539307ef953668"><td class="memTemplParams" colspan="2">template&lt;typename input_iterator_t &gt; </td></tr>
+<tr class="memitem:a5a39e00fab008316a1539307ef953668"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a5a39e00fab008316a1539307ef953668">dictionary</a> (input_iterator_t first, input_iterator_t last, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> bucket_count=0, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> &amp;hash=<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> {}, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8">equator</a> &amp;equal=<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8">equator</a> {}, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc=<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> {}) noexcept</td></tr>
+<tr class="memdesc:a5a39e00fab008316a1539307ef953668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a5a39e00fab008316a1539307ef953668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca2ecbbabe9824db7185cf18c1e81a14"><td class="memTemplParams" colspan="2">template&lt;typename input_iterator_t &gt; </td></tr>
+<tr class="memitem:aca2ecbbabe9824db7185cf18c1e81a14"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aca2ecbbabe9824db7185cf18c1e81a14">dictionary</a> (input_iterator_t first, input_iterator_t last, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> bucket_count, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
+<tr class="memdesc:aca2ecbbabe9824db7185cf18c1e81a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:aca2ecbbabe9824db7185cf18c1e81a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d462bfcece7a5829901f48a313ac035"><td class="memTemplParams" colspan="2">template&lt;typename input_iterator_t &gt; </td></tr>
+<tr class="memitem:a5d462bfcece7a5829901f48a313ac035"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a5d462bfcece7a5829901f48a313ac035">dictionary</a> (input_iterator_t first, input_iterator_t last, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> bucket_count, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> &amp;hash, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
+<tr class="memdesc:a5d462bfcece7a5829901f48a313ac035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a5d462bfcece7a5829901f48a313ac035"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa953d39916161c5551072ee7685d48dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aa953d39916161c5551072ee7685d48dc">dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept</td></tr>
+<tr class="memdesc:aa953d39916161c5551072ee7685d48dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:aa953d39916161c5551072ee7685d48dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cdced64621e8ed1a148df1709ce185e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a5cdced64621e8ed1a148df1709ce185e">dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
+<tr class="memdesc:a5cdced64621e8ed1a148df1709ce185e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a5cdced64621e8ed1a148df1709ce185e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9956d405104fcc34db6c56f3103c52f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aa9956d405104fcc34db6c56f3103c52f">dictionary</a> (const std::unordered_map&lt; key_t, value_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept</td></tr>
+<tr class="memdesc:aa9956d405104fcc34db6c56f3103c52f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:aa9956d405104fcc34db6c56f3103c52f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a557c19d6693d48bfd48f2c757210ba60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a557c19d6693d48bfd48f2c757210ba60">dictionary</a> (const std::unordered_map&lt; key_t, value_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
+<tr class="memdesc:a557c19d6693d48bfd48f2c757210ba60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a557c19d6693d48bfd48f2c757210ba60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07b758a73f04808f26eee3fa8ce363ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a07b758a73f04808f26eee3fa8ce363ef">dictionary</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a> &amp;&amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept=default</td></tr>
+<tr class="memdesc:a07b758a73f04808f26eee3fa8ce363ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a07b758a73f04808f26eee3fa8ce363ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1c24d7c8b5165f2e3814e21c8ad0231"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ab1c24d7c8b5165f2e3814e21c8ad0231">dictionary</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a> &amp;&amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
+<tr class="memdesc:ab1c24d7c8b5165f2e3814e21c8ad0231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:ab1c24d7c8b5165f2e3814e21c8ad0231"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d8b5f76142ef2683e057df84acc6bae"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a8d8b5f76142ef2683e057df84acc6bae">dictionary</a> (std::initializer_list&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a6a69009b6f6be690dbfa2591d29b28c4">base_value_type</a> &gt; init, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> bucket_count=0, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> &amp;hash=<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> {}, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8">equator</a> &amp;equal=<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8">equator</a> {}, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc=<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> {}) noexcept</td></tr>
+<tr class="memdesc:a8d8b5f76142ef2683e057df84acc6bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a8d8b5f76142ef2683e057df84acc6bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8e7e825e27f96c3ab67e9cec8307fb2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ab8e7e825e27f96c3ab67e9cec8307fb2">dictionary</a> (std::initializer_list&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a6a69009b6f6be690dbfa2591d29b28c4">base_value_type</a> &gt; init, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> bucket_count, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
+<tr class="memdesc:ab8e7e825e27f96c3ab67e9cec8307fb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:ab8e7e825e27f96c3ab67e9cec8307fb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0437ef2f75e99d1392ce07f5040f7237"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a0437ef2f75e99d1392ce07f5040f7237">dictionary</a> (std::initializer_list&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a6a69009b6f6be690dbfa2591d29b28c4">base_value_type</a> &gt; init, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> bucket_count, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> &amp;hash, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
+<tr class="memdesc:a0437ef2f75e99d1392ce07f5040f7237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a0437ef2f75e99d1392ce07f5040f7237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad473b24b10aa58ee530a8b05f7a5c5f3"><td class="memTemplParams" colspan="2">template&lt;typename init_key_t , typename init_value_t &gt; </td></tr>
+<tr class="memitem:ad473b24b10aa58ee530a8b05f7a5c5f3"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad473b24b10aa58ee530a8b05f7a5c5f3">dictionary</a> (std::initializer_list&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; init_key_t, init_value_t &gt; &gt; init, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> bucket_count=0, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> &amp;hash=<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> {}, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8">equator</a> &amp;equal=<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8">equator</a> {}, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc=<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> {}) noexcept</td></tr>
+<tr class="memdesc:ad473b24b10aa58ee530a8b05f7a5c5f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:ad473b24b10aa58ee530a8b05f7a5c5f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06c49471f1c92111a1ca69f43688f7c6"><td class="memTemplParams" colspan="2">template&lt;typename init_key_t , typename init_value_t &gt; </td></tr>
+<tr class="memitem:a06c49471f1c92111a1ca69f43688f7c6"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a06c49471f1c92111a1ca69f43688f7c6">dictionary</a> (std::initializer_list&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; init_key_t, init_value_t &gt; &gt; init, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> bucket_count, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
+<tr class="memdesc:a06c49471f1c92111a1ca69f43688f7c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a06c49471f1c92111a1ca69f43688f7c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a192707c30d6e95a8fef6806cd4bf9ce0"><td class="memTemplParams" colspan="2">template&lt;typename init_key_t , typename init_value_t &gt; </td></tr>
+<tr class="memitem:a192707c30d6e95a8fef6806cd4bf9ce0"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a192707c30d6e95a8fef6806cd4bf9ce0">dictionary</a> (std::initializer_list&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; init_key_t, init_value_t &gt; &gt; init, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> bucket_count, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> &amp;hash, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
+<tr class="memdesc:a192707c30d6e95a8fef6806cd4bf9ce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a192707c30d6e95a8fef6806cd4bf9ce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:a5fb05a4d36ada3a05639760bbef1866f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a7cadb73d74ba5ee36bafe1bc66810cb0">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a5fb05a4d36ada3a05639760bbef1866f">begin</a> () const noexcept override</td></tr>
@@ -847,7 +928,7 @@ template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collec
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a50b15016f1b91a266a8beec12ab89584" name="a50b15016f1b91a266a8beec12ab89584"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50b15016f1b91a266a8beec12ab89584">&#9670;&#160;</a></span>dictionary()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a50b15016f1b91a266a8beec12ab89584">&#9670;&#160;</a></span>dictionary() <span class="overload">[1/20]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -876,7 +957,9 @@ template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collec
 <dd>
 <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, equality_comparer::default. If type <code>key_t</code> implements the xtd::equatable &lt;type_t&gt; generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">iequality_comparer</a> &lt;typer_t&gt; generic interface by using a constructor that accepts a comparer parameter. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>If you can estimate the size of the collection, using a constructor that specifies the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This constructor is an O(1) operation. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Constructs empty container. Sets xtd::collections::generic::dictionary::max_load_factor() to 1.0. For the default constructor, the number of buckets is implementation-defined. </dd>
+<dd>
+This constructor is an O(1) operation. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example creates an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; of strings with string keys and uses the Add method to add some elements. The example demonstrates that the dictionary::add method throws an <a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a> when attempting to add a duplicate key.</dd></dl>
 <p>This code example is part of a larger example provided for the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class. </p><div class="fragment"><div class="line"><span class="comment">// Create a new dictionary of strings, with string keys.</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -897,8 +980,1059 @@ template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collec
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;An element with Key = \&quot;txt\&quot; already exists.&quot;</span>);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1argument__exception_html"><div class="ttname"><a href="classxtd_1_1argument__exception.html">xtd::argument_exception</a></div><div class="ttdoc">The exception that is thrown when one of the arguments provided to a method is not valid.</div><div class="ttdef"><b>Definition</b> argument_exception.hpp:24</div></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 </div><!-- fragment --> 
+</div>
+</div>
+<a id="ad0560bd5c164940e101c379af9ef8f65" name="ad0560bd5c164940e101c379af9ef8f65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0560bd5c164940e101c379af9ef8f65">&#9670;&#160;</a></span>dictionary() <span class="overload">[2/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a>&#160;</td>
+          <td class="paramname"><em>bucket_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> &amp;&#160;</td>
+          <td class="paramname"><em>hash</em> = <code><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a>&#160;{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8">equator</a> &amp;&#160;</td>
+          <td class="paramname"><em>equal</em> = <code><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8">equator</a>&#160;{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em> = <code><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a>&#160;{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bucket_count</td><td>Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used. </td></tr>
+    <tr><td class="paramname">hash</td><td>Hash function to use. </td></tr>
+    <tr><td class="paramname">equal</td><td>Comparison function to use for all key comparisons of this container. </td></tr>
+    <tr><td class="paramname">alloc</td><td>Allocator to use for all memory allocations of this container. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Constructs empty container. Sets xtd::collections::generic::dictionary::max_load_factor() to 1.0. For the default constructor, the number of buckets is implementation-defined. </dd></dl>
+
+</div>
+</div>
+<a id="a4a05a50c5843077f4e3fa29a3119790c" name="a4a05a50c5843077f4e3fa29a3119790c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a05a50c5843077f4e3fa29a3119790c">&#9670;&#160;</a></span>dictionary() <span class="overload">[3/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a>&#160;</td>
+          <td class="paramname"><em>bucket_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bucket_count</td><td>Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used. </td></tr>
+    <tr><td class="paramname">alloc</td><td>Allocator to use for all memory allocations of this container. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Constructs empty container. Sets xtd::collections::generic::dictionary::max_load_factor() to 1.0. For the default constructor, the number of buckets is implementation-defined. </dd></dl>
+
+</div>
+</div>
+<a id="a32e9590be6d1f2dee9cf2ee5e1981f34" name="a32e9590be6d1f2dee9cf2ee5e1981f34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32e9590be6d1f2dee9cf2ee5e1981f34">&#9670;&#160;</a></span>dictionary() <span class="overload">[4/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a>&#160;</td>
+          <td class="paramname"><em>bucket_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> &amp;&#160;</td>
+          <td class="paramname"><em>hash</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bucket_count</td><td>Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used. </td></tr>
+    <tr><td class="paramname">hash</td><td>Hash function to use. </td></tr>
+    <tr><td class="paramname">alloc</td><td>Allocator to use for all memory allocations of this container. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Constructs empty container. Sets xtd::collections::generic::dictionary::max_load_factor() to 1.0. For the default constructor, the number of buckets is implementation-defined. </dd></dl>
+
+</div>
+</div>
+<a id="a3a32c1d1e03ae4b0d6e504a78ea55e56" name="a3a32c1d1e03ae4b0d6e504a78ea55e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a32c1d1e03ae4b0d6e504a78ea55e56">&#9670;&#160;</a></span>dictionary() <span class="overload">[5/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alloc</td><td>Allocator to use for all memory allocations of this container. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Constructs empty container. Sets xtd::collections::generic::dictionary::max_load_factor() to <code>1.0</code>. For the default constructor, the number of buckets is implementation-defined. </dd></dl>
+
+</div>
+</div>
+<a id="a5a39e00fab008316a1539307ef953668" name="a5a39e00fab008316a1539307ef953668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a39e00fab008316a1539307ef953668">&#9670;&#160;</a></span>dictionary() <span class="overload">[6/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename input_iterator_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype">input_iterator_t&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">input_iterator_t&#160;</td>
+          <td class="paramname"><em>last</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a>&#160;</td>
+          <td class="paramname"><em>bucket_count</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> &amp;&#160;</td>
+          <td class="paramname"><em>hash</em> = <code><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a>&#160;{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8">equator</a> &amp;&#160;</td>
+          <td class="paramname"><em>equal</em> = <code><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8">equator</a>&#160;{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em> = <code><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a>&#160;{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>The fist iterator of the range [first, last) to copy the elements from. </td></tr>
+    <tr><td class="paramname">last</td><td>Thaae last itezrator of the range [first, last) to copy the elements from. </td></tr>
+    <tr><td class="paramname">bucket_count</td><td>Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used. </td></tr>
+    <tr><td class="paramname">hash</td><td>Hash function to use. </td></tr>
+    <tr><td class="paramname">equal</td><td>Comparison function to use for all key comparisons of this container. </td></tr>
+    <tr><td class="paramname">alloc</td><td>Allocator to use for all memory allocations of this container. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to <code>1.0</code>. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending <a href="https://cplusplus.github.io/LWG/issue2844">LWG2844</a>. </dd></dl>
+
+</div>
+</div>
+<a id="aca2ecbbabe9824db7185cf18c1e81a14" name="aca2ecbbabe9824db7185cf18c1e81a14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca2ecbbabe9824db7185cf18c1e81a14">&#9670;&#160;</a></span>dictionary() <span class="overload">[7/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename input_iterator_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype">input_iterator_t&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">input_iterator_t&#160;</td>
+          <td class="paramname"><em>last</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a>&#160;</td>
+          <td class="paramname"><em>bucket_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>The fist iterator of the range [first, last) to copy the elements from. </td></tr>
+    <tr><td class="paramname">last</td><td>Thaae last itezrator of the range [first, last) to copy the elements from. </td></tr>
+    <tr><td class="paramname">bucket_count</td><td>Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used. </td></tr>
+    <tr><td class="paramname">alloc</td><td>Allocator to use for all memory allocations of this container. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to <code>1.0</code>. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending <a href="https://cplusplus.github.io/LWG/issue2844">LWG2844</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a5d462bfcece7a5829901f48a313ac035" name="a5d462bfcece7a5829901f48a313ac035"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d462bfcece7a5829901f48a313ac035">&#9670;&#160;</a></span>dictionary() <span class="overload">[8/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename input_iterator_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype">input_iterator_t&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">input_iterator_t&#160;</td>
+          <td class="paramname"><em>last</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a>&#160;</td>
+          <td class="paramname"><em>bucket_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> &amp;&#160;</td>
+          <td class="paramname"><em>hash</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first</td><td>The fist iterator of the range [first, last) to copy the elements from. </td></tr>
+    <tr><td class="paramname">last</td><td>Thaae last itezrator of the range [first, last) to copy the elements from. </td></tr>
+    <tr><td class="paramname">bucket_count</td><td>Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used. </td></tr>
+    <tr><td class="paramname">hash</td><td>Hash function to use. </td></tr>
+    <tr><td class="paramname">alloc</td><td>Allocator to use for all memory allocations of this container. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to <code>1.0</code>. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending <a href="https://cplusplus.github.io/LWG/issue2844">LWG2844</a>. </dd></dl>
+
+</div>
+</div>
+<a id="aa953d39916161c5551072ee7685d48dc" name="aa953d39916161c5551072ee7685d48dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa953d39916161c5551072ee7685d48dc">&#9670;&#160;</a></span>dictionary() <span class="overload">[9/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another container to be used as source to initialize the elements of the container with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Copy constructor. Constructs the container with the copy of the contents of <code>other</code>, copies the load factor, the predicate, and the hash function as well. If <code>alloc</code> is not provided, allocator is obtained by calling <div class="fragment"><div class="line">std::allocator_traits&lt;allocator_type&gt;::select_on_container_copy_construction(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.get_allocator())</div>
+<div class="ttc" id="agroup__xtd__core_html_ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf"><div class="ttname"><a href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">xtd::platform_id::other</a></div><div class="ttdeci">@ other</div><div class="ttdoc">The operating system is other.</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a5cdced64621e8ed1a148df1709ce185e" name="a5cdced64621e8ed1a148df1709ce185e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cdced64621e8ed1a148df1709ce185e">&#9670;&#160;</a></span>dictionary() <span class="overload">[10/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another container to be used as source to initialize the elements of the container with. </td></tr>
+    <tr><td class="paramname">alloc</td><td>Allocator to use for all memory allocations of this container. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Copy constructor. Constructs the container with the copy of the contents of <code>other</code>, copies the load factor, the predicate, and the hash function as well. If <code>alloc</code> is not provided, allocator is obtained by calling <div class="fragment"><div class="line">std::allocator_traits&lt;allocator_type&gt;::select_on_container_copy_construction(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.get_allocator())</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="aa9956d405104fcc34db6c56f3103c52f" name="aa9956d405104fcc34db6c56f3103c52f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9956d405104fcc34db6c56f3103c52f">&#9670;&#160;</a></span>dictionary() <span class="overload">[11/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype">const std::unordered_map&lt; key_t, value_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another container to be used as source to initialize the elements of the container with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Copy constructor. Constructs the container with the copy of the contents of <code>other</code>, copies the load factor, the predicate, and the hash function as well. If <code>alloc</code> is not provided, allocator is obtained by calling <div class="fragment"><div class="line">std::allocator_traits&lt;allocator_type&gt;::select_on_container_copy_construction(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.get_allocator())</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a557c19d6693d48bfd48f2c757210ba60" name="a557c19d6693d48bfd48f2c757210ba60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a557c19d6693d48bfd48f2c757210ba60">&#9670;&#160;</a></span>dictionary() <span class="overload">[12/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype">const std::unordered_map&lt; key_t, value_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>other</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>Another container to be used as source to initialize the elements of the container with. </td></tr>
+    <tr><td class="paramname">alloc</td><td>Allocator to use for all memory allocations of this container. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Copy constructor. Constructs the container with the copy of the contents of <code>other</code>, copies the load factor, the predicate, and the hash function as well. If <code>alloc</code> is not provided, allocator is obtained by calling <div class="fragment"><div class="line">std::allocator_traits&lt;allocator_type&gt;::select_on_container_copy_construction(<a class="code hl_enumvalue" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>.get_allocator())</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a07b758a73f04808f26eee3fa8ce363ef" name="a07b758a73f04808f26eee3fa8ce363ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07b758a73f04808f26eee3fa8ce363ef">&#9670;&#160;</a></span>dictionary() <span class="overload">[13/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="section remark"><dt>Remarks</dt><dd><a href="https://en.cppreference.com/w/cpp/language/move_constructor">Move constructor</a>. Constructs the container with the contents of <code>other</code> using move semantics. If <code>alloc</code> is not provided, allocator is obtained by move-construction from the allocator belonging to other. </dd></dl>
+
+</div>
+</div>
+<a id="ab1c24d7c8b5165f2e3814e21c8ad0231" name="ab1c24d7c8b5165f2e3814e21c8ad0231"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1c24d7c8b5165f2e3814e21c8ad0231">&#9670;&#160;</a></span>dictionary() <span class="overload">[14/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">alloc</td><td>Allocator to use for all memory allocations of this container. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a href="https://en.cppreference.com/w/cpp/language/move_constructor">Move constructor</a>. Constructs the container with the contents of <code>other</code> using move semantics. If <code>alloc</code> is not provided, allocator is obtained by move-construction from the allocator belonging to other. </dd></dl>
+
+</div>
+</div>
+<a id="a8d8b5f76142ef2683e057df84acc6bae" name="a8d8b5f76142ef2683e057df84acc6bae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d8b5f76142ef2683e057df84acc6bae">&#9670;&#160;</a></span>dictionary() <span class="overload">[15/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a6a69009b6f6be690dbfa2591d29b28c4">base_value_type</a> &gt;&#160;</td>
+          <td class="paramname"><em>init</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a>&#160;</td>
+          <td class="paramname"><em>bucket_count</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> &amp;&#160;</td>
+          <td class="paramname"><em>hash</em> = <code><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a>&#160;{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8">equator</a> &amp;&#160;</td>
+          <td class="paramname"><em>equal</em> = <code><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8">equator</a>&#160;{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em> = <code><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a>&#160;{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">init</td><td>Initializer list to initialize the elements of the container with. </td></tr>
+    <tr><td class="paramname">hash</td><td>Hash function to use. </td></tr>
+    <tr><td class="paramname">equal</td><td>Comparison function to use for all key comparisons of this container. </td></tr>
+    <tr><td class="paramname">alloc</td><td>Allocator to use for all memory allocations of this container. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a href="https://en.cppreference.com/w/cpp/language/list_initialization">Initializer-list</a> constructor. Constructs the container with the contents of the initializer list init, same as <div class="fragment"><div class="line"><a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a50b15016f1b91a266a8beec12ab89584">dictionary</a>(init.begin(), init.end())</div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1dictionary_html_a50b15016f1b91a266a8beec12ab89584"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a50b15016f1b91a266a8beec12ab89584">xtd::collections::generic::dictionary::dictionary</a></div><div class="ttdeci">dictionary() noexcept=default</div><div class="ttdoc">Initializes a new instance of the xtd::collections::generic::dictionary &lt;key_t, value_t&gt; class that i...</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ab8e7e825e27f96c3ab67e9cec8307fb2" name="ab8e7e825e27f96c3ab67e9cec8307fb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8e7e825e27f96c3ab67e9cec8307fb2">&#9670;&#160;</a></span>dictionary() <span class="overload">[16/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a6a69009b6f6be690dbfa2591d29b28c4">base_value_type</a> &gt;&#160;</td>
+          <td class="paramname"><em>init</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a>&#160;</td>
+          <td class="paramname"><em>bucket_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">init</td><td>Initializer list to initialize the elements of the container with. </td></tr>
+    <tr><td class="paramname">bucket_count</td><td>Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used. </td></tr>
+    <tr><td class="paramname">alloc</td><td>Allocator to use for all memory allocations of this container. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a href="https://en.cppreference.com/w/cpp/language/list_initialization">Initializer-list</a> constructor. Constructs the container with the contents of the initializer list init, same as <div class="fragment"><div class="line"><a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a50b15016f1b91a266a8beec12ab89584">dictionary</a>(init.begin(), init.end())</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a0437ef2f75e99d1392ce07f5040f7237" name="a0437ef2f75e99d1392ce07f5040f7237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0437ef2f75e99d1392ce07f5040f7237">&#9670;&#160;</a></span>dictionary() <span class="overload">[17/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a6a69009b6f6be690dbfa2591d29b28c4">base_value_type</a> &gt;&#160;</td>
+          <td class="paramname"><em>init</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a>&#160;</td>
+          <td class="paramname"><em>bucket_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> &amp;&#160;</td>
+          <td class="paramname"><em>hash</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">init</td><td>Initializer list to initialize the elements of the container with. </td></tr>
+    <tr><td class="paramname">bucket_count</td><td>Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used. </td></tr>
+    <tr><td class="paramname">hash</td><td>Hash function to use. </td></tr>
+    <tr><td class="paramname">alloc</td><td>Allocator to use for all memory allocations of this container. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a href="https://en.cppreference.com/w/cpp/language/list_initialization">Initializer-list</a> constructor. Constructs the container with the contents of the initializer list init, same as <div class="fragment"><div class="line"><a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a50b15016f1b91a266a8beec12ab89584">dictionary</a>(init.begin(), init.end())</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ad473b24b10aa58ee530a8b05f7a5c5f3" name="ad473b24b10aa58ee530a8b05f7a5c5f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad473b24b10aa58ee530a8b05f7a5c5f3">&#9670;&#160;</a></span>dictionary() <span class="overload">[18/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename init_key_t , typename init_value_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; init_key_t, init_value_t &gt; &gt;&#160;</td>
+          <td class="paramname"><em>init</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a>&#160;</td>
+          <td class="paramname"><em>bucket_count</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> &amp;&#160;</td>
+          <td class="paramname"><em>hash</em> = <code><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a>&#160;{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8">equator</a> &amp;&#160;</td>
+          <td class="paramname"><em>equal</em> = <code><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a3117536e7eb45cdf75f69073e37126b8">equator</a>&#160;{}</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em> = <code><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a>&#160;{}</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">init</td><td>Initializer list to initialize the elements of the container with. </td></tr>
+    <tr><td class="paramname">bucket_count</td><td>Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used. </td></tr>
+    <tr><td class="paramname">hash</td><td>Hash function to use. </td></tr>
+    <tr><td class="paramname">equal</td><td>Comparison function to use for all key comparisons of this container. </td></tr>
+    <tr><td class="paramname">alloc</td><td>Allocator to use for all memory allocations of this container. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a href="https://en.cppreference.com/w/cpp/language/list_initialization">Initializer-list</a> constructor. Constructs the container with the contents of the initializer list init, same as <div class="fragment"><div class="line"><a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a50b15016f1b91a266a8beec12ab89584">dictionary</a>(init.begin(), init.end())</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a06c49471f1c92111a1ca69f43688f7c6" name="a06c49471f1c92111a1ca69f43688f7c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06c49471f1c92111a1ca69f43688f7c6">&#9670;&#160;</a></span>dictionary() <span class="overload">[19/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename init_key_t , typename init_value_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; init_key_t, init_value_t &gt; &gt;&#160;</td>
+          <td class="paramname"><em>init</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a>&#160;</td>
+          <td class="paramname"><em>bucket_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">init</td><td>Initializer list to initialize the elements of the container with. </td></tr>
+    <tr><td class="paramname">bucket_count</td><td>Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used. </td></tr>
+    <tr><td class="paramname">alloc</td><td>Allocator to use for all memory allocations of this container. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a href="https://en.cppreference.com/w/cpp/language/list_initialization">Initializer-list</a> constructor. Constructs the container with the contents of the initializer list init, same as <div class="fragment"><div class="line"><a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a50b15016f1b91a266a8beec12ab89584">dictionary</a>(init.begin(), init.end())</div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a192707c30d6e95a8fef6806cd4bf9ce0" name="a192707c30d6e95a8fef6806cd4bf9ce0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a192707c30d6e95a8fef6806cd4bf9ce0">&#9670;&#160;</a></span>dictionary() <span class="overload">[20/20]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collections::generic::helpers::hasher&lt;key_t&gt;, typename equator_t  = xtd::collections::generic::helpers::equator&lt;key_t&gt;, typename allocator_t  = xtd::collections::generic::helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;typename init_key_t , typename init_value_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a>&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::dictionary </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; init_key_t, init_value_t &gt; &gt;&#160;</td>
+          <td class="paramname"><em>init</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a>&#160;</td>
+          <td class="paramname"><em>bucket_count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a55a23e2ca9e1ae6169e1e66a617bafad">hasher</a> &amp;&#160;</td>
+          <td class="paramname"><em>hash</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>alloc</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">init</td><td>Initializer list to initialize the elements of the container with. </td></tr>
+    <tr><td class="paramname">bucket_count</td><td>Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used. </td></tr>
+    <tr><td class="paramname">hash</td><td>Hash function to use. </td></tr>
+    <tr><td class="paramname">alloc</td><td>Allocator to use for all memory allocations of this container. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd><a href="https://en.cppreference.com/w/cpp/language/list_initialization">Initializer-list</a> constructor. Constructs the container with the contents of the initializer list init, same as <div class="fragment"><div class="line"><a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a50b15016f1b91a266a8beec12ab89584">dictionary</a>(init.begin(), init.end())</div>
+</div><!-- fragment --> </dd></dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -1324,7 +2458,7 @@ template&lt;typename key_t , typename value_t , typename hasher_t  = xtd::collec
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 8 2025 11:12:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 9 2025 15:14:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
