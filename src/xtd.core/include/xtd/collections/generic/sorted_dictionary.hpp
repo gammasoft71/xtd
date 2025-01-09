@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::generic::sorted_dictionary struct.
+/// @brief Contains xtd::collections::generic::sorted_dictionary <key_t, value_t> class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "helpers/allocator.hpp"
