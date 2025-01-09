@@ -116,8 +116,8 @@ namespace xtd {
 template <typename source_t>
 const xtd::linq::enumerable::ienumerable<xtd::array<source_t>>& xtd::linq::enumerable::chunk(const ienumerable<source_t>& source, size_t size) {
   if (size == 0) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
-  static thread_local auto chunks = enumerable_collection<xtd::array<source_t>> {};
-  chunks = enumerable_collection<xtd::array<source_t>> {};
+  static thread_local auto chunks = __opaque_xtd_linq_enumerable_collection__<xtd::array<source_t>> {};
+  chunks = __opaque_xtd_linq_enumerable_collection__<xtd::array<source_t>> {};
   auto chunk = std::vector<source_t> {};
   for (auto index = size_t {0}; const auto& item : source) {
     chunk.push_back(item);
