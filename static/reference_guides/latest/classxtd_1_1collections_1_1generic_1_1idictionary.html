@@ -115,7 +115,7 @@ class xtd::collections::generic::idictionary&lt; key_t, value_t &gt;</div><p>Rep
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The idictionary &lt;key_t, value_t&gt; interface is the base interface for generic collections of key/value pairs. </dd>
 <dd>
-Each element is a key/value pair stored in a <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html" title="Defines a key/value pair that can be set or retrieved.">key_value_pair</a> &lt;key_t, value_t&gt; object. </dd>
+Each element is a key/value pair stored in a <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html" title="Defines a key/value pair that can be set or retrieved.">key_value_pair</a> &lt;key_t, value_t&gt; object. </dd>
 <dd>
 Each pair must have a unique key. Implementations can vary in whether they allow key to be empty. The value can be empty and does not have to be unique. The idictionary &lt;key_t, value_t&gt; interface allows the contained keys and values to be enumerated, but it does not imply any particular sort order. </dd>
 <dd>
@@ -128,7 +128,7 @@ The foreach statement of the C# language (For Each in Visual Basic, for each in 
 <tr class="memitem:ab9d8c36814a04e88a2c3765254402fea"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#ab9d8c36814a04e88a2c3765254402fea">mapped_type</a> = value_t</td></tr>
 <tr class="memdesc:ab9d8c36814a04e88a2c3765254402fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary mapped type.  <br /></td></tr>
 <tr class="separator:ab9d8c36814a04e88a2c3765254402fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a331886116daca4bb8ff6a2ce211b3f9e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a331886116daca4bb8ff6a2ce211b3f9e">value_type</a> = <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a7d3fdc16ef498f8c7a4bc8e625ef8d92">key_type</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#ab9d8c36814a04e88a2c3765254402fea">mapped_type</a> &gt;</td></tr>
+<tr class="memitem:a331886116daca4bb8ff6a2ce211b3f9e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a331886116daca4bb8ff6a2ce211b3f9e">value_type</a> = <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a7d3fdc16ef498f8c7a4bc8e625ef8d92">key_type</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#ab9d8c36814a04e88a2c3765254402fea">mapped_type</a> &gt;</td></tr>
 <tr class="memdesc:a331886116daca4bb8ff6a2ce211b3f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the dictionary value type.  <br /></td></tr>
 <tr class="separator:a331886116daca4bb8ff6a2ce211b3f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a966d5c58830c823e37b4d2e227d989af"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a966d5c58830c823e37b4d2e227d989af">iterator</a> = typename <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html">xtd::collections::generic::icollection</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a331886116daca4bb8ff6a2ce211b3f9e">value_type</a> &gt;::iterator</td></tr>
@@ -152,13 +152,26 @@ The foreach statement of the C# language (For Each in Visual Basic, for each in 
 <tr class="memdesc:ab9b17f2c004a86dc970ccb5a95e60151"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; containing the values of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
 <tr class="separator:ab9b17f2c004a86dc970ccb5a95e60151"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
+<tr class="memitem:ae5306bbad7df56d8b4ce4089b78befdc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#ae5306bbad7df56d8b4ce4089b78befdc">add</a> (const key_t &amp;key, const value_t value)=0</td></tr>
+<tr class="memdesc:ae5306bbad7df56d8b4ce4089b78befdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an element with the provided key and value to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;.  <br /></td></tr>
+<tr class="separator:ae5306bbad7df56d8b4ce4089b78befdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
+<tr class="memitem:abbd9d09bab50fce4e72deaa00985e3b2"><td class="memItemLeft" align="right" valign="top">virtual const value_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#abbd9d09bab50fce4e72deaa00985e3b2">operator[]</a> (const key_t &amp;key) const =0</td></tr>
+<tr class="memdesc:abbd9d09bab50fce4e72deaa00985e3b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the element with the specified key.  <br /></td></tr>
+<tr class="separator:abbd9d09bab50fce4e72deaa00985e3b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1428322c2f912bd597f667bd1aec0bdc"><td class="memItemLeft" align="right" valign="top">virtual value_t &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a1428322c2f912bd597f667bd1aec0bdc">operator[]</a> (const key_t &amp;key)=0</td></tr>
+<tr class="memdesc:a1428322c2f912bd597f667bd1aec0bdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the element with the specified key.  <br /></td></tr>
+<tr class="separator:a1428322c2f912bd597f667bd1aec0bdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_classxtd_1_1collections_1_1generic_1_1ienumerable"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classxtd_1_1collections_1_1generic_1_1ienumerable')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable&lt; xtd::collections::generic::key_value_pair&lt; key_t, value_t &gt; &gt;</a></td></tr>
-<tr class="memitem:a287e9c3dff72a406f2cf715de19afb11 inherit pub_types_classxtd_1_1collections_1_1generic_1_1ienumerable"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#a287e9c3dff72a406f2cf715de19afb11">iterator</a> = typename <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, value_t &gt;, <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, value_t &gt; &gt; &gt;::iterator</td></tr>
+<tr class="memitem:a287e9c3dff72a406f2cf715de19afb11 inherit pub_types_classxtd_1_1collections_1_1generic_1_1ienumerable"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#a287e9c3dff72a406f2cf715de19afb11">iterator</a> = typename <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, value_t &gt;, <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, value_t &gt; &gt; &gt;::iterator</td></tr>
 <tr class="memdesc:a287e9c3dff72a406f2cf715de19afb11 inherit pub_types_classxtd_1_1collections_1_1generic_1_1ienumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the iterator of <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> value type.  <br /></td></tr>
 <tr class="separator:a287e9c3dff72a406f2cf715de19afb11 inherit pub_types_classxtd_1_1collections_1_1generic_1_1ienumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4a5659ab1d2d261e2a5d390685f6765 inherit pub_types_classxtd_1_1collections_1_1generic_1_1ienumerable"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#ac4a5659ab1d2d261e2a5d390685f6765">const_iterator</a> = typename <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, value_t &gt;, <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, value_t &gt; &gt; &gt;::const_iterator</td></tr>
+<tr class="memitem:ac4a5659ab1d2d261e2a5d390685f6765 inherit pub_types_classxtd_1_1collections_1_1generic_1_1ienumerable"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#ac4a5659ab1d2d261e2a5d390685f6765">const_iterator</a> = typename <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, value_t &gt;, <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable</a>&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, value_t &gt; &gt; &gt;::const_iterator</td></tr>
 <tr class="memdesc:ac4a5659ab1d2d261e2a5d390685f6765 inherit pub_types_classxtd_1_1collections_1_1generic_1_1ienumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the const iterator of <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> value type.  <br /></td></tr>
 <tr class="separator:ac4a5659ab1d2d261e2a5d390685f6765 inherit pub_types_classxtd_1_1collections_1_1generic_1_1ienumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators&lt; type_t, enumerable_t &gt;</a></td></tr>
@@ -175,7 +188,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a417e4adb1792949e9a54516bee2ca3d2 inherit pub_types_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the list value type.  <br /></td></tr>
 <tr class="separator:a417e4adb1792949e9a54516bee2ca3d2 inherit pub_types_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1collections_1_1generic_1_1ienumerable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1collections_1_1generic_1_1ienumerable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable&lt; xtd::collections::generic::key_value_pair&lt; key_t, value_t &gt; &gt;</a></td></tr>
-<tr class="memitem:aaa7f31bc15aecee93e381b36c71c3058 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1ienumerable"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, value_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#aaa7f31bc15aecee93e381b36c71c3058">get_enumerator</a> () const=0</td></tr>
+<tr class="memitem:aaa7f31bc15aecee93e381b36c71c3058 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1ienumerable"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, value_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html#aaa7f31bc15aecee93e381b36c71c3058">get_enumerator</a> () const=0</td></tr>
 <tr class="memdesc:aaa7f31bc15aecee93e381b36c71c3058 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1ienumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through a collection.  <br /></td></tr>
 <tr class="separator:aaa7f31bc15aecee93e381b36c71c3058 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1ienumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators&lt; type_t, enumerable_t &gt;</a></td></tr>
@@ -256,11 +269,11 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:aeef0abd344f629aef3c96e49d272b50c inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a number that represents how many elements in the specified sequence satisfy a condition.  <br /></td></tr>
 <tr class="separator:aeef0abd344f629aef3c96e49d272b50c inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0dba2660f845875cd5908be53e52bbc7 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memTemplParams" colspan="2">template&lt;typename key_t &gt; </td></tr>
-<tr class="memitem:a0dba2660f845875cd5908be53e52bbc7 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aec4cd2ae6b5b4fde97fef8e2f160336f">ienumerable</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; key_t, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> &gt; &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a0dba2660f845875cd5908be53e52bbc7">count_by</a> (const std::function&lt; key_t(const source_t &amp;)&gt; &amp;key_selector) const noexcept</td></tr>
+<tr class="memitem:a0dba2660f845875cd5908be53e52bbc7 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aec4cd2ae6b5b4fde97fef8e2f160336f">ienumerable</a>&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; key_t, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> &gt; &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a0dba2660f845875cd5908be53e52bbc7">count_by</a> (const std::function&lt; key_t(const source_t &amp;)&gt; &amp;key_selector) const noexcept</td></tr>
 <tr class="memdesc:a0dba2660f845875cd5908be53e52bbc7 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of elements in the current sequence grouped by key.  <br /></td></tr>
 <tr class="separator:a0dba2660f845875cd5908be53e52bbc7 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd274fa4579c9e02119888c7135d6c8e inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memTemplParams" colspan="2">template&lt;typename key_t &gt; </td></tr>
-<tr class="memitem:acd274fa4579c9e02119888c7135d6c8e inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aec4cd2ae6b5b4fde97fef8e2f160336f">ienumerable</a>&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; key_t, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> &gt; &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#acd274fa4579c9e02119888c7135d6c8e">count_by</a> (const std::function&lt; key_t(const source_t &amp;)&gt; &amp;key_selector, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">iequality_comparer</a>&lt; key_t &gt; &amp;key_comparer) const noexcept</td></tr>
+<tr class="memitem:acd274fa4579c9e02119888c7135d6c8e inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aec4cd2ae6b5b4fde97fef8e2f160336f">ienumerable</a>&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; key_t, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> &gt; &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#acd274fa4579c9e02119888c7135d6c8e">count_by</a> (const std::function&lt; key_t(const source_t &amp;)&gt; &amp;key_selector, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">iequality_comparer</a>&lt; key_t &gt; &amp;key_comparer) const noexcept</td></tr>
 <tr class="memdesc:acd274fa4579c9e02119888c7135d6c8e inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of elements in the current sequence grouped by key.  <br /></td></tr>
 <tr class="separator:acd274fa4579c9e02119888c7135d6c8e inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fb41413e817b71a549e3f99aaf743e1 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aec4cd2ae6b5b4fde97fef8e2f160336f">ienumerable</a>&lt; source_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a3fb41413e817b71a549e3f99aaf743e1">default_if_empty</a> () const noexcept</td></tr>
@@ -351,7 +364,7 @@ template&lt;typename key_t , typename value_t &gt; </div>
 template&lt;typename key_t , typename value_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt; key_t, value_t &gt;::value_type =  <a class="el" href="classxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt;<a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a7d3fdc16ef498f8c7a4bc8e625ef8d92">key_type</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#ab9d8c36814a04e88a2c3765254402fea">mapped_type</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt; key_t, value_t &gt;::value_type =  <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt;<a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#a7d3fdc16ef498f8c7a4bc8e625ef8d92">key_type</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#ab9d8c36814a04e88a2c3765254402fea">mapped_type</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -499,6 +512,167 @@ template&lt;typename key_t , typename value_t &gt; </div>
 
 </div>
 </div>
+<a id="ae5306bbad7df56d8b4ce4089b78befdc" name="ae5306bbad7df56d8b4ce4089b78befdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5306bbad7df56d8b4ce4089b78befdc">&#9670;&#160;</a></span>add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt; key_t, value_t &gt;::add </td>
+          <td>(</td>
+          <td class="paramtype">const key_t &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const value_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds an element with the provided key and value to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The object to use as the key of the element to add. </td></tr>
+    <tr><td class="paramname">value</td><td>The object to use as the value of the element to add. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>An element with the same key already exists in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt;. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt; is read-only. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>You can also use the <code>operator []</code> to add new elements by setting the value of a key that does not exist in the dictionary; for example, <code>my_collection["my_nonexistent_key"] = my_value</code>. However, if the specified key already exists in the dictionary, setting the <code>operator []</code> overwrites the old value. In contrast, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#ae5306bbad7df56d8b4ce4089b78befdc" title="Adds an element with the provided key and value to the xtd::collections::generic::idictionary &lt;key_t,...">xtd::collections::generic::idictionary::add</a> method does not modify existing elements. </dd>
+<dd>
+Implementations can vary in how they determine equality of objects; for example, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; class uses <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a>, whereas the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t,value_t&gt; class allows the user to specify the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; implementation to use for comparing keys. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a8e4b572d70b69d4b688a2835a3258522">xtd::collections::generic::dictionary&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
+
+</div>
+</div>
+<a id="abbd9d09bab50fce4e72deaa00985e3b2" name="abbd9d09bab50fce4e72deaa00985e3b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbd9d09bab50fce4e72deaa00985e3b2">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const value_t &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt; key_t, value_t &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const key_t &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the element with the specified key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key of the element to get. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The element with the specified key. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1key__not__found__exception.html" title="The exception that is thrown when the key specified for accessing an element in a collection does not...">xtd::collections::generic::key_not_found_exception</a></td><td>The property is retrieved and key is not found. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The property is set and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt; is read-only. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This property provides the ability to access a specific element in the collection by using the following syntax: <code>my_collection[key]</code>. </dd>
+<dd>
+You can also use the <code>operator []</code> to add new elements by setting the value of a key that does not exist in the dictionary; for example, <code>my_collection["my_nonexistent_key"] = my_value</code>. However, if the specified key already exists in the dictionary, setting the <code>o</code>perator []` overwrites the old value. In contrast, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#ae5306bbad7df56d8b4ce4089b78befdc" title="Adds an element with the provided key and value to the xtd::collections::generic::idictionary &lt;key_t,...">xtd::collections::generic::idictionary::add</a> method does not modify existing elements. </dd>
+<dd>
+Implementations can vary in how they determine equality of objects; for example, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; class uses <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a>, whereas the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t,value_t&gt; class allows the user to specify the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; implementation to use for comparing keys. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a0e8d5edb392d4da50dfa18ff778b9aec">xtd::collections::generic::dictionary&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a1428322c2f912bd597f667bd1aec0bdc" name="a1428322c2f912bd597f667bd1aec0bdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1428322c2f912bd597f667bd1aec0bdc">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename key_t , typename value_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual value_t &amp; <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt; key_t, value_t &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const key_t &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the element with the specified key. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>The key of the element to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The element with the specified key. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1key__not__found__exception.html" title="The exception that is thrown when the key specified for accessing an element in a collection does not...">xtd::collections::generic::key_not_found_exception</a></td><td>The property is retrieved and key is not found. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The property is set and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs.">xtd::collections::generic::idictionary</a> &lt;key_t, value_t&gt; is read-only. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This property provides the ability to access a specific element in the collection by using the following syntax: <code>my_collection[key]</code>. </dd>
+<dd>
+You can also use the <code>operator []</code> to add new elements by setting the value of a key that does not exist in the dictionary; for example, <code>my_collection["my_nonexistent_key"] = my_value</code>. However, if the specified key already exists in the dictionary, setting the <code>operator []</code> overwrites the old value. In contrast, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1idictionary.html#ae5306bbad7df56d8b4ce4089b78befdc" title="Adds an element with the provided key and value to the xtd::collections::generic::idictionary &lt;key_t,...">xtd::collections::generic::idictionary::add</a> method does not modify existing elements. </dd>
+<dd>
+Implementations can vary in how they determine equality of objects; for example, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; class uses <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a>, whereas the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t,value_t&gt; class allows the user to specify the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; implementation to use for comparing keys. </dd></dl>
+
+<p>Implemented in <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a03bf80a6988e9d62a6e57df4f12e00c2">xtd::collections::generic::dictionary&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core/include/xtd/collections/generic/<a class="el" href="idictionary_8hpp_source.html">idictionary.hpp</a></li>
 </ul>
@@ -506,7 +680,7 @@ template&lt;typename key_t , typename value_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 8 2025 11:12:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 9 2025 22:53:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

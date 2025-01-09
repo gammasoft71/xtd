@@ -54,7 +54,7 @@ var searchData=
   ['firecracker_51',['firecracker',['../classxtd_1_1forms_1_1emoticons.html#a33cd9ec8aa925bbe8021d9ad3666710d',1,'xtd::forms::emoticons']]],
   ['firework_5fsparkler_52',['firework_sparkler',['../classxtd_1_1forms_1_1emoticons.html#a0c9cb7638e377660bf262d7c2eebd81c',1,'xtd::forms::emoticons']]],
   ['fireworks_53',['fireworks',['../classxtd_1_1forms_1_1emoticons.html#aeb3c9567d683f260c7a96b19b55338bc',1,'xtd::forms::emoticons']]],
-  ['first_54',['first',['../classxtd_1_1collections_1_1generic_1_1key__value__pair.html#aa7f25a9f7a500da601619ea9bfa488b6',1,'xtd::collections::generic::key_value_pair']]],
+  ['first_54',['first',['../structxtd_1_1collections_1_1generic_1_1key__value__pair.html#aa7f25a9f7a500da601619ea9bfa488b6',1,'xtd::collections::generic::key_value_pair']]],
   ['first_5fplace_5fmedal_55',['first_place_medal',['../classxtd_1_1forms_1_1emoticons.html#a93aab5ac0813598a3d1cb15415535f51',1,'xtd::forms::emoticons']]],
   ['first_5fquarter_5fmoon_5fsymbol_56',['first_quarter_moon_symbol',['../classxtd_1_1forms_1_1emoticons.html#a71ece44e0fe30d78503d0cdb71f268c1',1,'xtd::forms::emoticons']]],
   ['first_5fquarter_5fmoon_5fwith_5fface_57',['first_quarter_moon_with_face',['../classxtd_1_1forms_1_1emoticons.html#ae1e2fd2883a0ddbb657645a23e809bf8',1,'xtd::forms::emoticons']]],

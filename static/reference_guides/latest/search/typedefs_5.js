@@ -1,7 +1,7 @@
 var searchData=
 [
   ['find_5fevent_5fhandler_0',['find_event_handler',['../group__events.html#gafec7411003e74728e67ea10b3ca273c0',1,'xtd::forms']]],
-  ['first_5ftype_1',['first_type',['../classxtd_1_1collections_1_1generic_1_1key__value__pair.html#ac0833b931a1fc155a5ca8feff46668a5',1,'xtd::collections::generic::key_value_pair']]],
+  ['first_5ftype_1',['first_type',['../structxtd_1_1collections_1_1generic_1_1key__value__pair.html#ac0833b931a1fc155a5ca8feff46668a5',1,'xtd::collections::generic::key_value_pair']]],
   ['font_5fpicker_5fevent_5fhandler_2',['font_picker_event_handler',['../group__events.html#ga30d37f7bc127c2d80f99cb7fa4102785',1,'xtd::forms']]],
   ['form_3',['form',['../group__style__sheets.html#ga305ec1c107ffe3a4a89f839499c2ae7c',1,'xtd::forms::style_sheets']]],
   ['form_5fclosed_5fevent_5fhandler_4',['form_closed_event_handler',['../group__events.html#ga5e6d47f861996c6b2f7fc0860a499825',1,'xtd::forms']]],
