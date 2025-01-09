@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::key_value_pair alias.
+/// @brief Contains xtd::collections::key_value_pair <key_t, value_t> struct.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include <utility>
@@ -33,7 +33,7 @@ namespace xtd {
       /// @ingroup xtd_core generic_collections
       /// @remarks xtd::collections::generic::key_value_pair is same as [std::pair](https://en.cppreference.com/w/cpp/utility/pair).
       template <typename key_t, typename value_t>
-      class key_value_pair : public xtd::object, public xtd::iequatable<key_value_pair<key_t, value_t>> {
+      struct key_value_pair : public xtd::object, public xtd::iequatable<key_value_pair<key_t, value_t>> {
       public:
         /// @name Public Aliases
         
@@ -129,7 +129,7 @@ namespace xtd {
       /// @ingroup xtd_core generic_collections
       /// @remarks xtd::collections::generic::key_value_pair is same as [std::pair](https://en.cppreference.com/w/cpp/utility/pair).
       template <>
-      class key_value_pair<> static_ {
+      struct key_value_pair<> static_ {
       public:
         /// @name Public Static Methods
         
