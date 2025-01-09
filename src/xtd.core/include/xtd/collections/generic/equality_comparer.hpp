@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::generic::iequality_comparer <type_t> interface.
+/// @brief Contains xtd::collections::generic::equality_comparer <type_t> class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "iequality_comparer.hpp"
