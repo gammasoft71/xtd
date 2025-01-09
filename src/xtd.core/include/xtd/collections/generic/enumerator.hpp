@@ -137,7 +137,7 @@ namespace xtd {
             
             void reset() override {
               reset_ = true;
-              version_ = current_version_ ? *current_version_ : 0;
+              version_ = current_version_ ? *current_version_ : vertion_t {};
               iterator_ = items_.cend();
             }
             
@@ -145,7 +145,7 @@ namespace xtd {
             bool reset_ = true;
             const collection_t& items_;
             const_iterator iterator_ = items_.cend();
-            vertion_t version_ = 0;
+            vertion_t version_ = vertion_t {};
             const vertion_t* current_version_ = nullptr;
           };
           return enumerator<value_type> {new_ptr<internal_enumerator>(items, current_version)};
