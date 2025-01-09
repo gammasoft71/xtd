@@ -20,6 +20,11 @@
 #include <algorithm>
 #include <functional>
 
+/// @cond
+template<typename type_t>
+struct __opaque_xtd_linq_enumerable_collection__;
+/// @endcond
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
@@ -31,10 +36,6 @@ namespace xtd {
   
   /// @brief Provides classes and interfaces that support queries that use Language-Integrated Query (LINQ).
   namespace linq {
-    /// @cond
-    template<typename type_t>
-    struct enumerable_collection;
-    /// @endcond
 
     /// @brief Provides a set of static methods for querying objects that implement ienumerable <type_t>.
     /// @par Definition
@@ -215,8 +216,8 @@ namespace xtd {
       /// @include enumerable_append.cpp
       template<typename source_t>
       static const ienumerable<source_t>& append(const ienumerable<source_t>& source, const source_t& element) noexcept {
-        static thread_local auto result = enumerable_collection<source_t> {};
-        result = enumerable_collection<source_t> {};
+        static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
         result.items.push_back(element);
@@ -243,8 +244,8 @@ namespace xtd {
       /// @include enumerable_as_enumerable.cpp
       template<typename source_t>
       static const ienumerable<source_t>& as_enumerable(std::initializer_list<source_t> source) noexcept {
-        static thread_local auto result = enumerable_collection<source_t> {};
-        result = enumerable_collection<source_t> {};
+        static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
         return result;
@@ -259,8 +260,8 @@ namespace xtd {
       template <typename collection_t>
       static const auto& as_enumerable(const collection_t& source) noexcept {
         using source_t = typename collection_t::value_type;
-        static thread_local auto result = enumerable_collection<source_t> {};
-        result = enumerable_collection<source_t> {};
+        static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         for (const auto& item : source)
           result.items.push_back(item);
         return static_cast<const ienumerable<source_t>&>(result);
@@ -276,8 +277,8 @@ namespace xtd {
       template<typename input_iterator_t>
       static const auto& as_enumerable(input_iterator_t first, input_iterator_t last) noexcept {
         using source_t = typename std::decay<decltype(*first)>::type;
-        static thread_local auto result = enumerable_collection<source_t> {};
-        result = enumerable_collection<source_t> {};
+        static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         for (auto iterator = first; iterator != last; ++iterator)
           result.items.push_back(*iterator);
         return static_cast<const ienumerable<source_t>&>(result);
@@ -380,8 +381,8 @@ namespace xtd {
       /// @return An xtd::collection::generic::ienumerable <type_t> that contains the concatenated elements of the two input sequences.
       template <typename source_t>
       static const ienumerable<source_t>& concat(const ienumerable<source_t>& first, const ienumerable<source_t>& second) noexcept {
-        static thread_local auto result = enumerable_collection<source_t> {};
-        result = enumerable_collection<source_t> {};
+        static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         for (const auto& item : first)
           result.items.push_back(item);
         for (const auto& item : second)
@@ -472,8 +473,8 @@ namespace xtd {
       /// @include enumerable_count_by.cpp
       template <typename key_t, typename source_t>
       static const ienumerable<key_value_pair<key_t, xtd::size>>& count_by(const ienumerable<source_t>& source, const std::function<key_t(const source_t&)>& key_selector, const iequality_comparer<key_t>& key_comparer) noexcept {
-        static thread_local auto result = enumerable_collection<key_value_pair<key_t, xtd::size>> {};
-        result = enumerable_collection<key_value_pair<key_t, xtd::size>> {};
+        static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<key_value_pair<key_t, xtd::size>> {};
+        result = __opaque_xtd_linq_enumerable_collection__<key_value_pair<key_t, xtd::size>> {};
         auto keys = list<key_t> {};
         auto enumerator = source.get_enumerator();
         while (enumerator.move_next()) {
@@ -512,8 +513,8 @@ namespace xtd {
       /// @include enumerable_default_if_empty2.cpp
       template <typename source_t>
       static const ienumerable<source_t>& default_if_empty(const ienumerable<source_t>& source, const source_t& default_value) noexcept {
-        static thread_local auto result = enumerable_collection<source_t> {};
-        result = enumerable_collection<source_t> {};
+        static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         if (!any(source)) result.items.push_back(default_value);
         else for (const auto& item : source)
           result.items.push_back(item);
@@ -639,8 +640,8 @@ namespace xtd {
       /// @include enumerable_range.cpp
       template<typename result_t, typename source_t>
       static const ienumerable<result_t>& select(const ienumerable<source_t>& source, const std::function<result_t(const source_t&)>& selector) {
-        static thread_local auto result = enumerable_collection<result_t> {};
-        result = enumerable_collection<result_t> {};
+        static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<result_t> {};
+        result = __opaque_xtd_linq_enumerable_collection__<result_t> {};
         for (const auto& item : source)
           result.items.push_back(selector(item));
         return result;
@@ -655,8 +656,8 @@ namespace xtd {
       /// @include enumerable_range.cpp
       template<typename source_t>
       static const ienumerable<source_t>& select(const ienumerable<source_t>& source, const std::function<source_t(const source_t&)>& selector) {
-        static thread_local auto result = enumerable_collection<source_t> {};
-        result = enumerable_collection<source_t> {};
+        static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         for (const auto& item : source)
           result.items.push_back(selector(item));
         return result;
@@ -672,8 +673,8 @@ namespace xtd {
       /// @include enumerable_select.cpp
       template<typename result_t, typename source_t>
       static const ienumerable<result_t>& select(const ienumerable<source_t>& source, const std::function<result_t(const source_t&, xtd::size)>& selector) {
-        static thread_local auto result = enumerable_collection<result_t> {};
-        result = enumerable_collection<result_t> {};
+        static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<result_t> {};
+        result = __opaque_xtd_linq_enumerable_collection__<result_t> {};
         auto index = xtd::size {0};
         for (const auto& item : source)
           result.items.push_back(selector(item, index++));
@@ -689,8 +690,8 @@ namespace xtd {
       /// @include enumerable_select.cpp
       template<typename source_t>
       static const ienumerable<source_t>& select(const ienumerable<source_t>& source, const std::function<source_t(const source_t&, xtd::size)>& selector) {
-        static thread_local auto result = enumerable_collection<source_t> {};
-        result = enumerable_collection<source_t> {};
+        static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         auto index = xtd::size {0};
         for (const auto& item : source)
           result.items.push_back(selector(item, index++));
@@ -718,8 +719,8 @@ namespace xtd {
       /// @include enumerable_where.cpp
       template<typename source_t>
       static const ienumerable<source_t>& where(const ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate) {
-        static thread_local auto result = enumerable_collection<source_t> {};
-        result = enumerable_collection<source_t> {};
+        static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         for (const auto& item : source)
           if (predicate(item)) result.items.push_back(item);
         return result;
@@ -734,8 +735,8 @@ namespace xtd {
       /// @include enumerable_where2.cpp
       template<typename source_t>
       static const ienumerable<source_t>& where(const ienumerable<source_t>& source, const std::function<bool(const source_t&, xtd::size)>& predicate) {
-        static thread_local auto result = enumerable_collection<source_t> {};
-        result = enumerable_collection<source_t> {};
+        static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         auto index = xtd::size {0};
         for (const auto& item : source)
           if (predicate(item, index++)) result.items.push_back(item);
