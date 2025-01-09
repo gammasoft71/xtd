@@ -271,7 +271,7 @@ namespace xtd {
     virtual void fill(const value_type& value) noexcept {std::fill(begin(), end(), value);}
     
     xtd::collections::generic::enumerator<value_type> get_enumerator() const noexcept override {
-      class basic_array_enumerator : public xtd::collections::generic::ienumerator<value_type> {
+      struct basic_array_enumerator : public xtd::collections::generic::ienumerator<value_type> {
       public:
         explicit basic_array_enumerator(const basic_array& items, size_type version) : items_(items), version_(version) {}
         

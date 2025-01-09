@@ -472,8 +472,10 @@ namespace xtd {
         /// @return The associated allocator.
         allocator_type get_allocator() const noexcept {return data_->items.get_allocator();}
         
+        /// @brief Returns an enumerator that iterates through the xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @return A xtd::collections::enumerator structure for the xtd::collections::generic::dictionary <key_t, value_t>.
         enumerator<value_type> get_enumerator() const noexcept override {
-          class internal_enumerator : public ienumerator<value_type> {
+          struct internal_enumerator : public ienumerator<value_type> {
           public:
             explicit internal_enumerator(const dictionary& items, size_type version) : items_(items), version_(version) {}
             

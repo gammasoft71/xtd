@@ -581,7 +581,7 @@ namespace xtd {
         virtual const base_type& get_base_type() const noexcept {return data_->items;}
 
         enumerator<value_type> get_enumerator() const noexcept override {
-          class internal_enumerator : public ienumerator<value_type> {
+          struct internal_enumerator : public ienumerator<value_type> {
           public:
             explicit internal_enumerator(const list& items, size_type version) : items_(items), version_(version) {}
             

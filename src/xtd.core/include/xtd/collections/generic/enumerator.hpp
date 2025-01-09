@@ -17,14 +17,14 @@ namespace xtd {
     namespace generic {
       /// @cond
       template <typename type_t = std::nullptr_t>
-      class enumerator;
+      struct enumerator;
       /// @endcond
       
       /// @brief Supports a simple iteration over a generic collection.
       /// @par Definition
       /// ```cpp
       /// template<typename type_t>
-      /// class enumerator interface_
+      /// struct enumerator : ienumerator<type_t>;
       /// ```
       /// @par Header
       /// ```cpp
@@ -37,8 +37,7 @@ namespace xtd {
       /// @ingroup xtd_core generic_collections
       /// @remarks The xtd::collections::generic::enumerator <type_t> class is used to encapsulate an xtd::collections::generic::ienumerator <type_t>.
       template<typename type_t>
-      class enumerator : public ienumerator<type_t> {
-      public:
+      struct enumerator : ienumerator<type_t> {
         /// @name Public Constructors
         
         /// @{
@@ -100,8 +99,7 @@ namespace xtd {
       /// @ingroup xtd_core generic_collections
       /// @remarks The xtd::collections::generic::enumerator <type_t> class is used to encapsulate an xtd::collections::generic::ienumerator <type_t>.
       template <>
-      class enumerator<> static_ {
-      public:
+      struct enumerator<> static_ {
         /// @name Public Static Methods
         
         /// @{
@@ -118,7 +116,7 @@ namespace xtd {
         static auto create(const collection_t& items, const vertion_t* current_version = nullptr) noexcept {
           using value_type = typename collection_t::value_type;
           using const_iterator = typename collection_t::const_iterator;
-          class internal_enumerator : public ienumerator<value_type> {
+          struct internal_enumerator : public ienumerator<value_type> {
           public:
             explicit internal_enumerator(const collection_t& items, const vertion_t* current_version) : items_(items), version_(current_version ? *current_version : 0), current_version_(current_version) {}
             
