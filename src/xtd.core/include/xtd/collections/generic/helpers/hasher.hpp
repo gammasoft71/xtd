@@ -16,7 +16,7 @@ namespace xtd {
       namespace helpers {
         /// @brief Implements a function object for hashing data.
         /// ```cpp
-        /// class hasher
+        /// struct hasher
         /// ```
         /// @par Header
         /// ```cpp
