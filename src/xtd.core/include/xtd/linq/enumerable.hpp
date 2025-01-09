@@ -32,8 +32,8 @@ namespace xtd {
   /// @brief Provides classes and interfaces that support queries that use Language-Integrated Query (LINQ).
   namespace linq {
     /// @cond
-    template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
-    class enumerable_collection;
+    template<typename type_t>
+    struct enumerable_collection;
     /// @endcond
 
     /// @brief Provides a set of static methods for querying objects that implement ienumerable <type_t>.

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::linq::enumerable_collection <type_t> class.
+/// @brief Contains xtd::linq::enumerable_collection <type_t> struct.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../collections/generic/helpers/allocator.hpp"
@@ -28,7 +28,7 @@ namespace xtd {
     /// @par Definition
     /// ```cpp
     /// template<typename type_t>
-    /// class enumerable_collection : public xtd::collections::generic::ienumerable<type_t>
+    /// struct enumerable_collection : xtd::collections::generic::ienumerable<type_t>;
     /// ```
     /// @par Header
     /// ```cpp
@@ -39,9 +39,8 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core linq
-    template<typename type_t, typename allocator_t>
-    class enumerable_collection : public xtd::collections::generic::ienumerable<type_t> {
-    public:
+    template<typename type_t>
+    struct enumerable_collection : xtd::collections::generic::ienumerable<type_t> {
       xtd::collections::generic::enumerator<type_t> get_enumerator() const override {
         return xtd::collections::generic::enumerator<>::create(items);
       }
@@ -49,7 +48,7 @@ namespace xtd {
     private:
       friend class xtd::linq::enumerable;
       enumerable_collection() = default;
-      std::vector<type_t, allocator_t> items;
+      std::vector<type_t> items;
     };
   }
 }
