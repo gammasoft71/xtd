@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::generic::icomparer <type_t> interface.
+/// @brief Contains xtd::collections::generic::idictionary <key_t, value_t> interface.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "icollection.hpp"
@@ -70,11 +70,37 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        /// @brief Adds an element with the provided key and value to the xtd::collections::generic::idictionary <key_t, value_t>.
+        /// @param key The object to use as the key of the element to add.
+        /// @param value The object to use as the value of the element to add.
+        /// @exception xtd::argument_exception An element with the same key already exists in the xtd::collections::generic::idictionary <key_t, value_t>.
+        /// @exception xtd::not_supported_exception The xtd::collections::generic::idictionary <key_t, value_t> is read-only.
+        /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::idictionary::add method does not modify existing elements.
+        /// @remarks Implementations can vary in how they determine equality of objects; for example, the xtd::collections::generic::list <type_t> class uses xtd::collections::generic::comparer::default_comparer, whereas the xtd::collections::generic::dictionary <key_t,value_t> class allows the user to specify the xtd::collections::generic::icomparer <type_t> implementation to use for comparing keys.
+        virtual void add(const key_t& key, const value_t value) = 0;
         /// @}
 
         /// @name Public Operators
         
         /// @{
+        /// @brief Gets the element with the specified key.
+        /// @param key The key of the element to get.
+        /// @return The element with the specified key.
+        /// @exception xtd::collections::generic::key_not_found_exception The property is retrieved and key is not found.
+        /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::idictionary <key_t, value_t> is read-only.
+        /// @remarks This property provides the ability to access a specific element in the collection by using the following syntax: `my_collection[key]`.
+        /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value. However, if the specified key already exists in the dictionary, setting the òperator []` overwrites the old value. In contrast, the xtd::collections::generic::idictionary::add method does not modify existing elements.
+        /// @remarks Implementations can vary in how they determine equality of objects; for example, the xtd::collections::generic::list <type_t> class uses xtd::collections::generic::comparer::default_comparer, whereas the xtd::collections::generic::dictionary <key_t,value_t> class allows the user to specify the xtd::collections::generic::icomparer <type_t> implementation to use for comparing keys.
+        virtual const value_t& operator [](const key_t& key) const = 0;
+        /// @brief Sets the element with the specified key.
+        /// @param key The key of the element to set.
+        /// @return The element with the specified key.
+        /// @exception xtd::collections::generic::key_not_found_exception The property is retrieved and key is not found.
+        /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::idictionary <key_t, value_t> is read-only.
+        /// @remarks This property provides the ability to access a specific element in the collection by using the following syntax: `my_collection[key]`.
+        /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value. However, if the specified key already exists in the dictionary, setting the òperator []` overwrites the old value. In contrast, the xtd::collections::generic::idictionary::add method does not modify existing elements.
+        /// @remarks Implementations can vary in how they determine equality of objects; for example, the xtd::collections::generic::list <type_t> class uses xtd::collections::generic::comparer::default_comparer, whereas the xtd::collections::generic::dictionary <key_t,value_t> class allows the user to specify the xtd::collections::generic::icomparer <type_t> implementation to use for comparing keys.
+        virtual value_t& operator [](const key_t& key) = 0;
         /// @}
       };
     }
