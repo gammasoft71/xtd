@@ -19,8 +19,8 @@ namespace xtd {
       /// @brief Represents a collection of keys and values.
       /// @par Definition
       /// ```cpp
-      /// template<typename key_t, typename value_t>
-      /// using dictionary = std::unordered_map<key_t, value_t, helpers::hasher<key_t>, helpers::equator<key_t>, helpers::allocator<std::pair<const key_t, value_t>>>;
+      /// template<typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher<key_t>, typename equator_t = xtd::collections::generic::helpers::equator<key_t>, typename allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
+      /// class dictionary : public xtd::object, public xtd::collections::generic::idictionary<key_t, value_t>;
       /// ```
       /// @par Header
       /// ```cpp
@@ -35,6 +35,19 @@ namespace xtd {
       /// @par Examples
       /// The following shows how to use xtd::collections::generic::dictionary.
       /// @include dictionary.cpp
+      /// @remarks The xtd::collections::generic::dictionary <key_t, value_t> generic class provides a mapping from a set of keys to a set of values. Each addition to the dictionary consists of a value and its associated key. Retrieving a value by using its key is very fast, close to O(1), because the xtd::collections::generic::dictionary <key_t, value_t> class is implemented as a hash table.
+      /// @note The speed of retrieval depends on the quality of the hashing algorithm of the type specified for `key_t`.
+      /// @remarks As long as an object is used as a key in the xtd::collections::generic::dictionary <key_t, value_t>, it must not change in any way that affects its hash value. Every key in a xtd::collections::generic::dictionary <key_t, value_t> must be unique according to the dictionary's equality comparer.
+      /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. You can specify an implementation of the xtd::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter; if you do not specify an implementation, the default generic equality comparer xtd::collections::generic::equality_comparer<type_t>::default_equality_comparer is used. If type `key_t` implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
+      /// @note For example, you can use the case-insensitive string comparers provided by the xtd::string_comparer class to create dictionaries with case-insensitive string keys.
+      /// @remarks The capacity of a xtd::collections::generic::dictionary <key_t, value_t> is the number of elements the xtd::collections::generic::dictionary <key_t, value_t> can hold. As elements are added to a xtd::collections::generic::dictionary <key_t, value_t>, the capacity is automatically increased as required by reallocating the internal array.
+      /// @remarks For purposes of enumeration, each item in the dictionary is treated as a xtd::collections::generic::key_value_pair <key_t, value_t> structure representing a value and its key. The order in which the items are returned is undefined.
+      /// @remarks The for each statement returns an object of the type of the elements in the collection. Since the xtd::collections::generic::dictionary <key_t, value_t> is a collection of keys and values, the element type is not the type of the key or the type of the value. Instead, the element type is a xtd::collections::generic::key_value_pair <key_t, value_t> of the key type and the value type. For example:
+      /// ```cpp
+      /// for (const key_value_pair<string, string>& kvp : my_dictionary) {
+      ///   console::write_line("key = {}, value = {}", kvp.key(), kvp.value());
+      /// }
+      /// ```
       template<typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher<key_t>, typename equator_t = xtd::collections::generic::helpers::equator<key_t>, typename allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
       class dictionary : public xtd::object, public xtd::collections::generic::idictionary<key_t, value_t> {
       public:
@@ -96,12 +109,13 @@ namespace xtd {
         /// @remarks Every key in a xtd::collections::generic::dictionary <key_t, value_t> must be unique according to the default equality comparer.
         /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, equality_comparer::default. If type `key_t` implements the xtd::equatable <type_t> generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the iequality_comparer <typer_t> generic interface by using a constructor that accepts a comparer parameter.
         /// @note If you can estimate the size of the collection, using a constructor that specifies the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @remarks Constructs empty container. Sets xtd::collections::generic::dictionary::max_load_factor() to 1.0. For the default constructor, the number of buckets is implementation-defined.
         /// @remarks This constructor is an O(1) operation.
         /// @par Examples
         /// The following code example creates an empty xtd::collections::generic::dictionary <key_t, value_t> of strings with string keys and uses the Add method to add some elements. The example demonstrates that the dictionary::add method throws an xtd::argument_exception when attempting to add a duplicate key.
         ///
         /// This code example is part of a larger example provided for the xtd::collections::generic::dictionary <key_t, value_t> class.
-        /// ```
+        /// ```cpp
         /// // Create a new dictionary of strings, with string keys.
         /// //
         /// auto open_with = dictionary<string, string> {};
@@ -123,29 +137,160 @@ namespace xtd {
         /// ```
         dictionary() noexcept = default;
         
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
+        /// @param hash Hash function to use.
+        /// @param equal Comparison function to use for all key comparisons of this container.
+        /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @remarks Constructs empty container. Sets xtd::collections::generic::dictionary::max_load_factor() to 1.0. For the default constructor, the number of buckets is implementation-defined.
         explicit dictionary(size_type bucket_count, const hasher& hash = hasher {}, const equator& equal = equator {}, const allocator_type& alloc = allocator_type {}) noexcept : data_(xtd::new_ptr<data>(bucket_count, hash, equal, alloc)) {}
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
+        /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @remarks Constructs empty container. Sets xtd::collections::generic::dictionary::max_load_factor() to 1.0. For the default constructor, the number of buckets is implementation-defined.
         dictionary(size_type bucket_count, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(bucket_count, hasher {}, equator {}, alloc)) {}
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
+        /// @param hash Hash function to use.
+        /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @remarks Constructs empty container. Sets xtd::collections::generic::dictionary::max_load_factor() to 1.0. For the default constructor, the number of buckets is implementation-defined.
         dictionary(size_type bucket_count, const hasher& hash, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(bucket_count, hash, equator {}, alloc)) {}
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @remarks Constructs empty container. Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. For the default constructor, the number of buckets is implementation-defined.
         explicit dictionary(const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(alloc)) {}
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param first The fist iterator of the range [first, last) to copy the elements from.
+        /// @param last  Thaae last itezrator of the range [first, last) to copy the elements from.
+        /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
+        /// @param hash Hash function to use.
+        /// @param equal Comparison function to use for all key comparisons of this container.
+        /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @remarks Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844).
         template <typename input_iterator_t>
         explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count = 0, const hasher& hash = hasher {}, const equator& equal = equator {}, const allocator_type& alloc = allocator_type {}) noexcept : data_(xtd::new_ptr<data>(first, last, bucket_count, hash, equal, alloc)) {}
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param first The fist iterator of the range [first, last) to copy the elements from.
+        /// @param last  Thaae last itezrator of the range [first, last) to copy the elements from.
+        /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
+        /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @remarks Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844).
         template <typename input_iterator_t>
         explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(first, last, bucket_count, hasher {}, equator {}, alloc)) {}
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param first The fist iterator of the range [first, last) to copy the elements from.
+        /// @param last  Thaae last itezrator of the range [first, last) to copy the elements from.
+        /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
+        /// @param hash Hash function to use.
+        /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @remarks Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844).
         template <typename input_iterator_t>
         explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count, const hasher& hash, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(first, last, bucket_count, hash, equator {}, alloc)) {}
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param other Another container to be used as source to initialize the elements of the container with.
+        /// @remarks Copy constructor. Constructs the container with the copy of the contents of `other`, copies the load factor, the predicate, and the hash function as well. If `alloc` is not provided, allocator is obtained by calling
+        /// ```cpp
+        /// std::allocator_traits<allocator_type>::select_on_container_copy_construction(other.get_allocator())
+        /// ```
         dictionary(const dictionary& other) noexcept : data_(xtd::new_ptr<data>(other.data_->items, other.data_->version, allocator_type {})) {}
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param other Another container to be used as source to initialize the elements of the container with.
+        /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @remarks Copy constructor. Constructs the container with the copy of the contents of `other`, copies the load factor, the predicate, and the hash function as well. If `alloc` is not provided, allocator is obtained by calling
+        /// ```cpp
+        /// std::allocator_traits<allocator_type>::select_on_container_copy_construction(other.get_allocator())
+        /// ```
         dictionary(const dictionary& other, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(other.data_->items, other.data_->version, alloc)) {}
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param other Another container to be used as source to initialize the elements of the container with.
+        /// @remarks Copy constructor. Constructs the container with the copy of the contents of `other`, copies the load factor, the predicate, and the hash function as well. If `alloc` is not provided, allocator is obtained by calling
+        /// ```cpp
+        /// std::allocator_traits<allocator_type>::select_on_container_copy_construction(other.get_allocator())
+        /// ```
         dictionary(const std::unordered_map<key_t, value_t>& other) noexcept : data_(xtd::new_ptr<data>(other.begin(), other.end(), 0, hasher {}, equator {}, allocator_type {})) {}
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param other Another container to be used as source to initialize the elements of the container with.
+        /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @remarks Copy constructor. Constructs the container with the copy of the contents of `other`, copies the load factor, the predicate, and the hash function as well. If `alloc` is not provided, allocator is obtained by calling
+        /// ```cpp
+        /// std::allocator_traits<allocator_type>::select_on_container_copy_construction(other.get_allocator())
+        /// ```
         dictionary(const std::unordered_map<key_t, value_t>& other, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(other.begin(), other.end(), 0, hasher {}, equator {}, alloc)) {}
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @remarks [Move constructor](https://en.cppreference.com/w/cpp/language/move_constructor). Constructs the container with the contents of `other` using move semantics. If `alloc` is not provided, allocator is obtained by move-construction from the allocator belonging to other.
         dictionary(dictionary&& other) noexcept = default;
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @remarks [Move constructor](https://en.cppreference.com/w/cpp/language/move_constructor). Constructs the container with the contents of `other` using move semantics. If `alloc` is not provided, allocator is obtained by move-construction from the allocator belonging to other.
         dictionary(dictionary&& other, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(std::move(other.data_->items), other.data_->version, alloc)) {}
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param init Initializer list to initialize the elements of the container with.
+        /// @param hash Hash function to use.
+        /// @param equal Comparison function to use for all key comparisons of this container.
+        /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @remarks [Initializer-list](https://en.cppreference.com/w/cpp/language/list_initialization) constructor. Constructs the container with the contents of the initializer list init, same as
+        /// ```cpp
+        /// dictionary(init.begin(), init.end())
+        /// ```
+        explicit dictionary(std::initializer_list<base_value_type> init, size_type bucket_count = 0, const hasher& hash = hasher {}, const equator& equal = equator {}, const allocator_type& alloc = allocator_type {}) noexcept : data_(xtd::new_ptr<data>(init, bucket_count, hash, equal, alloc)) {}
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param init Initializer list to initialize the elements of the container with.
+        /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
+        /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @remarks [Initializer-list](https://en.cppreference.com/w/cpp/language/list_initialization) constructor. Constructs the container with the contents of the initializer list init, same as
+        /// ```cpp
+        /// dictionary(init.begin(), init.end())
+        /// ```
+        dictionary(std::initializer_list<base_value_type> init, size_type bucket_count, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(init, bucket_count, hasher {}, equator {}, alloc)) {}
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param init Initializer list to initialize the elements of the container with.
+        /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
+        /// @param hash Hash function to use.
+        /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @remarks [Initializer-list](https://en.cppreference.com/w/cpp/language/list_initialization) constructor. Constructs the container with the contents of the initializer list init, same as
+        /// ```cpp
+        /// dictionary(init.begin(), init.end())
+        /// ```
+        dictionary(std::initializer_list<base_value_type> init, size_type bucket_count, const hasher& hash, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(init, bucket_count, hash, equator {}, alloc)) {}
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param init Initializer list to initialize the elements of the container with.
+        /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
+        /// @param hash Hash function to use.
+        /// @param equal Comparison function to use for all key comparisons of this container.
+        /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @remarks [Initializer-list](https://en.cppreference.com/w/cpp/language/list_initialization) constructor. Constructs the container with the contents of the initializer list init, same as
+        /// ```cpp
+        /// dictionary(init.begin(), init.end())
+        /// ```
         template <typename init_key_t, typename init_value_t>
-        dictionary(std::initializer_list<key_value_pair<init_key_t, init_value_t>> init, size_type bucket_count = 0, const hasher& hash = hasher {}, const equator& equal = equator {}, const allocator_type& alloc = allocator_type {}) noexcept : data_(xtd::new_ptr<data>(bucket_count, hash, equal, alloc)) {
+        explicit dictionary(std::initializer_list<key_value_pair<init_key_t, init_value_t>> init, size_type bucket_count = 0, const hasher& hash = hasher {}, const equator& equal = equator {}, const allocator_type& alloc = allocator_type {}) noexcept : data_(xtd::new_ptr<data>(bucket_count, hash, equal, alloc)) {
           for (const auto& [key, value] : init)
             data_->items.insert({key, value});
         }
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param init Initializer list to initialize the elements of the container with.
+        /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
+        /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @remarks [Initializer-list](https://en.cppreference.com/w/cpp/language/list_initialization) constructor. Constructs the container with the contents of the initializer list init, same as
+        /// ```cpp
+        /// dictionary(init.begin(), init.end())
+        /// ```
         template <typename init_key_t, typename init_value_t>
-        dictionary(std::initializer_list<std::pair<init_key_t, init_value_t>> init, size_type bucket_count = 0, const hasher& hash = hasher {}, const equator& equal = equator {}, const allocator_type& alloc = allocator_type {}) noexcept : data_(xtd::new_ptr<data>(bucket_count, hash, equal, alloc)) {
+        dictionary(std::initializer_list<key_value_pair<init_key_t, init_value_t>> init, size_type bucket_count, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(bucket_count, hasher {}, equator {}, alloc)) {
+          for (const auto& [key, value] : init)
+            data_->items.insert({key, value});
+        }
+        /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
+        /// @param init Initializer list to initialize the elements of the container with.
+        /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
+        /// @param hash Hash function to use.
+        /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @remarks [Initializer-list](https://en.cppreference.com/w/cpp/language/list_initialization) constructor. Constructs the container with the contents of the initializer list init, same as
+        /// ```cpp
+        /// dictionary(init.begin(), init.end())
+        /// ```
+        template <typename init_key_t, typename init_value_t>
+        dictionary(std::initializer_list<key_value_pair<init_key_t, init_value_t>> init, size_type bucket_count, const hasher& hash, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(bucket_count, hash, equator {}, alloc)) {
           for (const auto& [key, value] : init)
             data_->items.insert({key, value});
         }
@@ -276,6 +421,7 @@ namespace xtd {
           data(input_iterator_t first, input_iterator_t last, size_type bucket_count, const hasher& hash, const equator& equal, const allocator_type& alloc) noexcept : items(first, last, bucket_count, hash, equal, alloc) {}
           data(const base_type& items, size_type version, const allocator_type& alloc) noexcept : items {items, alloc}, version {version} {}
           data(base_type&& items, size_type version, const allocator_type& alloc) noexcept : items {items, alloc}, version {version} {}
+          data(std::initializer_list<base_value_type> init, size_type bucket_count, const hasher& hash, const equator& equal, const allocator_type& alloc) noexcept : items(init, bucket_count, hash, equal, alloc) {}
 
           base_type items;
           size_type version = 0;
