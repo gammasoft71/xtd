@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::generic::comparer <type_t> interface.
+/// @brief Contains xtd::collections::generic::comparer <type_t> class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "icomparer.hpp"
