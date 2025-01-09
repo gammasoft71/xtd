@@ -121,7 +121,7 @@ namespace colors_example {
       auto index = selected_index();
       selected_index(npos);
       colors_.clear();
-      auto colors = std::any_cast<const xtd::collections::generic::list<xtd::drawing::color>&(*)() noexcept>(colors_choice_.selected_item().tag());
+      auto colors = std::any_cast<const std::vector<xtd::drawing::color>&(*)() noexcept>(colors_choice_.selected_item().tag());
       for (auto iterator = colors().rbegin(); iterator != colors().rend(); ++iterator)
         add_color_panel(*iterator);
       if (index == npos || colors_.size() == 0) return;
