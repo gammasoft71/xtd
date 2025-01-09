@@ -123,7 +123,7 @@ namespace colors_example {
       color_box_panel_.paint += [&](xtd::object& sender, xtd::forms::paint_event_args& e) {
         e.graphics().fill_rectangle(xtd::drawing::drawing_2d::hatch_brush(xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)), e.clip_rectangle());
         if (color_ != xtd::drawing::color::empty) e.graphics().fill_rectangle(xtd::drawing::solid_brush(color_), e.clip_rectangle());
-        xtd::forms::control_paint::draw_border(color_box_panel_, e.graphics(), color_box_panel_.border_style(), color_box_panel_.border_sides(), xtd::forms::application::style_sheet().system_colors().control_text(), e.clip_rectangle());
+        xtd::forms::control_paint::draw_border(color_box_panel_, e.graphics(), color_box_panel_.border_style(), color_box_panel_.border_sides(), xtd::forms::application::style_sheet().system_colors().control_text(), xtd::drawing::rectangle::add(e.clip_rectangle(), -1, -1));
       };
       
       hex_label_.parent(*this);
