@@ -26,7 +26,7 @@ intmax_t thread::create(std::function<void(intmax_t)> start, intmax_t obj, int32
     start_obj->first(start_obj->second);
     delete start_obj;
     return 0;
-  }, reinterpret_cast<void*>(new std::pair<std::function<void(intmax_t)>, intmax_t>{ start, obj }), flags/* | STACK_SIZE_PARAM_IS_A_RESERVATION*/, &thread_id);
+  }, reinterpret_cast<void*>(new auto(std::make_pair(start, obj))), flags/* | STACK_SIZE_PARAM_IS_A_RESERVATION*/, &thread_id);
   id = static_cast<intmax_t>(thread_id);
   return reinterpret_cast<intmax_t>(thread);
 }
