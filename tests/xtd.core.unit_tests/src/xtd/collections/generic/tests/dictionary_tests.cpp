@@ -239,8 +239,80 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(5_z, items.count());
     }
 
+    void test_method_(constructor_with_value_type_initializer_list_and_bucket_count) {
+      auto items = dictionary<int, string> {{key_value_pair<>::create(1, "one"), key_value_pair<>::create(2, "two"), key_value_pair<>::create(3, "three"), key_value_pair<>::create(4, "four"), key_value_pair<>::create(5, "five")}, 42};
+      assert::are_equal(5_z, items.capacity());
+      assert::are_equal(5_z, items.count());
+    }
+
+    void test_method_(constructor_with_value_type_initializer_list_bucket_count_and_hasher) {
+      auto items = dictionary<int, string> {{key_value_pair<>::create(1, "one"), key_value_pair<>::create(2, "two"), key_value_pair<>::create(3, "three"), key_value_pair<>::create(4, "four"), key_value_pair<>::create(5, "five")}, 42, helpers::hasher<int> {}};
+      assert::are_equal(5_z, items.capacity());
+      assert::are_equal(5_z, items.count());
+    }
+
+    void test_method_(constructor_with_value_type_initializer_list_bucket_count_hasher_and_equator) {
+      auto items = dictionary<int, string> {{key_value_pair<>::create(1, "one"), key_value_pair<>::create(2, "two"), key_value_pair<>::create(3, "three"), key_value_pair<>::create(4, "four"), key_value_pair<>::create(5, "five")}, 42, helpers::hasher<int> {}, helpers::equator<int> {}};
+      assert::are_equal(5_z, items.capacity());
+      assert::are_equal(5_z, items.count());
+    }
+
+    void test_method_(constructor_with_value_type_initializer_list_bucket_count_hasher_equator_and_allocator) {
+      auto items = dictionary<int, string> {{key_value_pair<>::create(1, "one"), key_value_pair<>::create(2, "two"), key_value_pair<>::create(3, "three"), key_value_pair<>::create(4, "four"), key_value_pair<>::create(5, "five")}, 42, helpers::hasher<int> {}, helpers::equator<int> {}, helpers::allocator<std::pair<int, string>> {}};
+      assert::are_equal(5_z, items.capacity());
+      assert::are_equal(5_z, items.count());
+    }
+
+    void test_method_(constructor_with_value_type_initializer_list_bucket_count_and_allocator) {
+      auto items = dictionary<int, string> {{key_value_pair<>::create(1, "one"), key_value_pair<>::create(2, "two"), key_value_pair<>::create(3, "three"), key_value_pair<>::create(4, "four"), key_value_pair<>::create(5, "five")}, 42, helpers::allocator<std::pair<int, string>> {}};
+      assert::are_equal(5_z, items.capacity());
+      assert::are_equal(5_z, items.count());
+    }
+
+    void test_method_(constructor_with_value_type_initializer_list_bucket_count_hasher_and_allocator) {
+      auto items = dictionary<int, string> {{key_value_pair<>::create(1, "one"), key_value_pair<>::create(2, "two"), key_value_pair<>::create(3, "three"), key_value_pair<>::create(4, "four"), key_value_pair<>::create(5, "five")}, 42, helpers::hasher<int> {}, helpers::allocator<std::pair<int, string>> {}};
+      assert::are_equal(5_z, items.capacity());
+      assert::are_equal(5_z, items.count());
+    }
+
     void test_method_(constructor_with_base_value_type_initializer_list) {
-      auto items = dictionary<int, string> {{std::make_pair(1, "one"), std::make_pair(2, "two"), std::make_pair(3, "three"), std::make_pair(4, "four"), std::make_pair(5, "five")}};
+      auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
+      assert::are_equal(5_z, items.capacity());
+      assert::are_equal(5_z, items.count());
+    }
+
+    void test_method_(constructor_with_base_value_type_initializer_list_and_bucket_count) {
+      auto items = dictionary<int, string> {{{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}, 42};
+      assert::are_equal(5_z, items.capacity());
+      assert::are_equal(5_z, items.count());
+    }
+
+    void test_method_(constructor_with_base_value_type_initializer_list_bucket_count_and_hasher) {
+      auto items = dictionary<int, string> {{{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}, 42, helpers::hasher<int> {}};
+      assert::are_equal(5_z, items.capacity());
+      assert::are_equal(5_z, items.count());
+    }
+
+    void test_method_(constructor_with_base_value_type_initializer_list_bucket_count_hasher_and_equator) {
+      auto items = dictionary<int, string> {{{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}, 42, helpers::hasher<int> {}, helpers::equator<int> {}};
+      assert::are_equal(5_z, items.capacity());
+      assert::are_equal(5_z, items.count());
+    }
+
+    void test_method_(constructor_with_base_value_type_initializer_list_bucket_count_hasher_equator_and_allocator) {
+      auto items = dictionary<int, string> {{{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}, 42, helpers::hasher<int> {}, helpers::equator<int> {}, helpers::allocator<std::pair<int, string>> {}};
+      assert::are_equal(5_z, items.capacity());
+      assert::are_equal(5_z, items.count());
+    }
+
+    void test_method_(constructor_with_base_value_type_initializer_list_bucket_count_and_allocator) {
+      auto items = dictionary<int, string> {{{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}, 42, helpers::allocator<std::pair<int, string>> {}};
+      assert::are_equal(5_z, items.capacity());
+      assert::are_equal(5_z, items.count());
+    }
+
+    void test_method_(constructor_with_base_value_type_initializer_list_bucket_count_hasher_and_allocator) {
+      auto items = dictionary<int, string> {{{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}, 42, helpers::hasher<int> {}, helpers::allocator<std::pair<int, string>> {}};
       assert::are_equal(5_z, items.capacity());
       assert::are_equal(5_z, items.count());
     }
