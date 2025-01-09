@@ -20,7 +20,7 @@ namespace xtd {
       /// @brief Defines a key/value pair that can be set or retrieved.
       /// ```cpp
       /// template<typename key_t, typename value_t>
-      /// class key_value_pair : public xtd::object, public xtd::iequatable<key_value_pair<key_t, value_t>>;
+      /// struct key_value_pair : xtd::object, xtd::iequatable<key_value_pair<key_t, value_t>>;
       /// ```
       /// @par Header
       /// ```cpp
@@ -33,8 +33,7 @@ namespace xtd {
       /// @ingroup xtd_core generic_collections
       /// @remarks xtd::collections::generic::key_value_pair is same as [std::pair](https://en.cppreference.com/w/cpp/utility/pair).
       template <typename key_t, typename value_t>
-      struct key_value_pair : public xtd::object, public xtd::iequatable<key_value_pair<key_t, value_t>> {
-      public:
+      struct key_value_pair : xtd::object, xtd::iequatable<key_value_pair<key_t, value_t>> {
         /// @name Public Aliases
         
         /// @{
@@ -130,7 +129,6 @@ namespace xtd {
       /// @remarks xtd::collections::generic::key_value_pair is same as [std::pair](https://en.cppreference.com/w/cpp/utility/pair).
       template <>
       struct key_value_pair<> static_ {
-      public:
         /// @name Public Static Methods
         
         /// @{
