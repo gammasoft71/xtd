@@ -43,25 +43,13 @@ namespace xtd {
     class enumerable_collection : public xtd::collections::generic::ienumerable<type_t> {
     public:
       xtd::collections::generic::enumerator<type_t> get_enumerator() const override {
-        struct box_enumerator : xtd::collections::generic::ienumerator<type_t> {
-          explicit box_enumerator(const collection_type& items) : items {items} {}
-          const type_t& current() const override {return items[index];}
-          bool move_next() override {return ++index < items.size();}
-          void reset() override {index = npos;}
-          
-        private:
-          const collection_type& items;
-          size_t index = npos;
-        };
-        return {new_ptr<box_enumerator>(items)};
+        return xtd::collections::generic::enumerator<>::create(items);
       }
 
     private:
       friend class xtd::linq::enumerable;
       enumerable_collection() = default;
-      using collection_type = std::vector<type_t, allocator_t>;
-      static constexpr size_t npos = std::numeric_limits<size_t>::max();
-      collection_type items;
+      std::vector<type_t, allocator_t> items;
     };
   }
 }
