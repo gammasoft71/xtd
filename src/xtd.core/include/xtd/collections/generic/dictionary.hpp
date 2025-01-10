@@ -1016,6 +1016,13 @@ namespace xtd {
           data_->items.rehash(count);
         }
         
+        /// @brief Reserves space for at least the specified number of elements and regenerates the hash table.
+        /// @param count The new capacity of the container.
+        /// @remarks Sets the number of buckets to the number needed to accommodate at least `count` elements without exceeding maximum load factor and rehashes the container, i.e. puts the elements into appropriate buckets considering that total number of buckets has changed. Effectively calls `rehash(std::ceil(count / max_load_factor()))`.
+        void reserve(size_type count) {
+          data_->items.reserve(count);
+        }
+        
         /// @brief Swaps the contents.
         /// @param The container to exchange the contents with.
         /// @remarks Exchanges the contents of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
