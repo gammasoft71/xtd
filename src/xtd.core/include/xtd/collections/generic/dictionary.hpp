@@ -1008,6 +1008,14 @@ namespace xtd {
           ++data_->version;
         }
 
+        /// @brief Reserves at least the specified number of buckets and regenerates the hash table.
+        /// @param count The lower bound for the new number of buckets.
+        /// @remarks Changes the number of buckets to a value n that is not less than `count` and satisfies `n >= size() / max_load_factor()`, then rehashes the container, i.e. puts the elements into appropriate buckets considering that total number of buckets has changed.
+        /// @note `rehash(0)` may be used to force an unconditional rehash, such as after suspension of automatic rehashing by temporarily increasing `max_load_factor()`.
+        void rehash(size_type count) {
+          data_->items.rehash(count);
+        }
+        
         /// @brief Swaps the contents.
         /// @param The container to exchange the contents with.
         /// @remarks Exchanges the contents of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
