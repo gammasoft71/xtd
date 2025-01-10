@@ -89,7 +89,7 @@ When all subscribers have unsubscribed from an event, the event instance in the 
 The following procedure demonstrates how to add events that follow the standard xtd pattern to your classes and structs. All events in the xtd framework are based on the [xtd::event_handler](../src/xtd.core/include/xtd/event_handler.h) delegate, which is defined as follows:
 
 ```cpp
-template<typename event_args_t = const xtd::event_args&>
+template<class event_args_t = const xtd::event_args&>
 using generic_event_handler = xtd::delegate<void(xtd::object& sender, event_args_t e)>;
 ```
 

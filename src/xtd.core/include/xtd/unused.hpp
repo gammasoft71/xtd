@@ -14,7 +14,7 @@ namespace xtd {
   /// @par Examples
   /// This example sho how to use Unused():
   /// @include unused.cpp
-  template <typename ...args_t>
+  template<typename ...args_t>
   void unused(args_t&& ... args) {}
   
   /// @brief It may be used to suppress the "unused variable" or "unused local typedefs" compiler warnings when the variable or typedef can't be removed or commented out, e.g. when some blocks of the code are conditionally activated.

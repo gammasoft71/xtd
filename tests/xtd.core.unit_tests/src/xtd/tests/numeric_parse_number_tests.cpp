@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
-  template <typename value_t>
+  template<typename value_t>
   class numeric_parse_string_number_tests;
   
   test_class_attribute<numeric_parse_string_number_tests<char>> numeric_parse_string_number_tests_class_char_attr {"numeric_parse_string_number_tests<char>"};
@@ -34,7 +34,7 @@ namespace xtd::tests {
   test_class_attribute<numeric_parse_string_number_tests<uint64>> numeric_parse_string_number_tests_class_uint64_attr {"numeric_parse_string_number_tests<uint64>"};
   test_class_attribute<numeric_parse_string_number_tests<uintptr>> numeric_parse_string_number_tests_class_uintptr_attr {"numeric_parse_string_number_tests<uintptr>"};
   
-  template <typename value_t>
+  template<typename value_t>
   class numeric_parse_string_number_tests : public test_class {
     inline static std::locale previous_locale;
     static void class_initialize_(class_initialize) {

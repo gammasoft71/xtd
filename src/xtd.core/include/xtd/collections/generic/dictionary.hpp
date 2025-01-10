@@ -11,6 +11,28 @@
 #include "../../ptr.hpp"
 #include <unordered_map>
 
+/// @todo Move to iterator.hpp file
+/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
+namespace xtd {
+  /// @brief The xtd::collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
+  namespace collections {
+    /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
+    namespace generic {
+      /// @brief Represents the value iterator type.
+      template <class input_iterator_t>
+      using iterator_value_t = typename std::iterator_traits<input_iterator_t>::value_type;
+      
+      /// @brief Represents the key iterator type.
+      template <class input_iterator_t>
+      using iterator_key_t = std::remove_const_t<std::tuple_element_t<0, iterator_value_t<input_iterator_t>>>;
+      
+      /// @brief Represents the mapped iterator type.
+      template <class input_iterator_t>
+      using iteraotor_mapped_t = std::tuple_element_t<1, iterator_value_t<input_iterator_t>>;
+    }
+  }
+}
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
@@ -20,7 +42,7 @@ namespace xtd {
       /// @brief Represents a collection of keys and values.
       /// @par Definition
       /// ```cpp
-      /// template<typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher<key_t>, typename equator_t = xtd::collections::generic::helpers::equator<key_t>, typename allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
+      /// template<class key_t, typename value_t, class hasher_t = xtd::collections::generic::helpers::hasher<key_t>, class equator_t = xtd::collections::generic::helpers::equator<key_t>, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
       /// class dictionary : public xtd::object, public xtd::collections::generic::idictionary<key_t, value_t>;
       /// ```
       /// @par Header
@@ -53,7 +75,7 @@ namespace xtd {
       /// for (const auto& [key, value] : my_dictionary)
       ///   console::write_line("key = {}, value = {}", key, value);
       /// ```
-      template<typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher<key_t>, typename equator_t = xtd::collections::generic::helpers::equator<key_t>, typename allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
+      template<class key_t, class value_t, class hasher_t = xtd::collections::generic::helpers::hasher<key_t>, class equator_t = xtd::collections::generic::helpers::equator<key_t>, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
       class dictionary : public xtd::object, public xtd::collections::generic::idictionary<key_t, value_t> {
       public:
         /// @name Public Aliases
@@ -172,7 +194,7 @@ namespace xtd {
         /// @param equal Comparison function to use for all key comparisons of this container.
         /// @param alloc Allocator to use for all memory allocations of this container.
         /// @remarks Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844).
-        template <typename input_iterator_t>
+        template <class input_iterator_t>
         explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count = 0, const hasher& hash = hasher {}, const equator& equal = equator {}, const allocator_type& alloc = allocator_type {}) noexcept : data_(xtd::new_ptr<data>(bucket_count, hash, equal, alloc)) {
           for (auto iterator = first; iterator != last; ++iterator) {
             const auto& [key, value] = *iterator;
@@ -185,7 +207,7 @@ namespace xtd {
         /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
         /// @param alloc Allocator to use for all memory allocations of this container.
         /// @remarks Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844).
-        template <typename input_iterator_t>
+        template <class input_iterator_t>
         explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(bucket_count, hasher {}, equator {}, alloc)) {
           for (auto iterator = first; iterator != last; ++iterator) {
             const auto& [key, value] = *iterator;
@@ -199,7 +221,7 @@ namespace xtd {
         /// @param hash Hash function to use.
         /// @param alloc Allocator to use for all memory allocations of this container.
         /// @remarks Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844).
-        template <typename input_iterator_t>
+        template <class input_iterator_t>
         explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count, const hasher& hash, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(bucket_count, hash, equator {}, alloc)) {
           for (auto iterator = first; iterator != last; ++iterator) {
             const auto& [key, value] = *iterator;
@@ -312,7 +334,7 @@ namespace xtd {
         /// ```cpp
         /// dictionary(init.begin(), init.end())
         /// ```
-        template <typename init_key_t, typename init_value_t>
+        template <class init_key_t, class init_value_t>
         explicit dictionary(std::initializer_list<key_value_pair<init_key_t, init_value_t>> init, size_type bucket_count = 0, const hasher& hash = hasher {}, const equator& equal = equator {}, const allocator_type& alloc = allocator_type {}) : data_(xtd::new_ptr<data>(bucket_count, hash, equal, alloc)) {
           for (const auto& [key, value] : init)
             add(key, value);
@@ -325,7 +347,7 @@ namespace xtd {
         /// ```cpp
         /// dictionary(init.begin(), init.end())
         /// ```
-        template <typename init_key_t, typename init_value_t>
+        template <class init_key_t, class init_value_t>
         dictionary(std::initializer_list<key_value_pair<init_key_t, init_value_t>> init, size_type bucket_count, const allocator_type& alloc) : data_(xtd::new_ptr<data>(bucket_count, hasher {}, equator {}, alloc)) {
           for (const auto& [key, value] : init)
             add(key, value);
@@ -339,7 +361,7 @@ namespace xtd {
         /// ```cpp
         /// dictionary(init.begin(), init.end())
         /// ```
-        template <typename init_key_t, typename init_value_t>
+        template <class init_key_t, class init_value_t>
         dictionary(std::initializer_list<key_value_pair<init_key_t, init_value_t>> init, size_type bucket_count, const hasher& hash, const allocator_type& alloc) : data_(xtd::new_ptr<data>(bucket_count, hash, equator {}, alloc)) {
           for (const auto& [key, value] : init)
             add(key, value);
@@ -542,7 +564,7 @@ namespace xtd {
         
         /// @brief Checks if the container contains element with specific key.
         /// @remarks Checks if there is an element with key that compares equivalent to the value `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such `hasher_t` is callable with both `contains_key_t` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `key_t`.
-        template <typename contains_key_t>
+        template <class contains_key_t>
         bool contains(const contains_key_t& x) const {
           return data_->items.find(x) != data_->items.end();
         }
@@ -555,7 +577,7 @@ namespace xtd {
         /// @remarks Careful use of emplace allows the new element to be constructed while avoiding unnecessary copy or move operations.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
-        template <typename ...args_t>
+        template <class ...args_t>
         key_value_pair<iterator, bool> emplace(args_t&& ...args) {
           const auto& [iterator, succeeded] = data_->items.emplace(std::forward<args_t>(args)...);
           if (succeeded) ++data_->version;
@@ -570,7 +592,7 @@ namespace xtd {
         /// @remarks The constructor of the element type (value_type, that is, `std::pair<const key_t, value_t>`) is called with exactly the same arguments as supplied to the function, forwarded with `std::forward<args_t>(args)...`.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
-        template <typename ...args_t>
+        template <class ...args_t>
         iterator emplace_hint(iterator hint, args_t&& ...args) {
           ++data_->version;
           return to_iterator(data_->items.emplace_hint(to_base_type_iterator(hint), std::forward<args_t>(args)...));
@@ -605,7 +627,7 @@ namespace xtd {
         /// @param key The key value to compare the elements to.
         /// @return xtd::collections::generic::key_value_pair containing a pair of iterators defining the wanted range. If there are no such elements, past-the-end (see xtd::collections::generic::dictionary::end) iterators are returned as both elements of the pair.
         /// @remarks Returns a range containing all elements with key `key` in the container. The range is defined by two iterators, the first pointing to the first element of the wanted range and the second pointing past the last element of the range.
-        template <typename equal_range_key_t>
+        template <class equal_range_key_t>
         key_value_pair<const_iterator, const_iterator> equal_range(const equal_range_key_t& key) const {
           const auto& [first, last] = data_->items.equal_range(key);
           return {to_iterator(first), to_iterator(last)};
@@ -615,7 +637,7 @@ namespace xtd {
         /// @param x A value of any type that can be transparently compared with a key.
         /// @return xtd::collections::generic::key_value_pair containing a pair of iterators defining the wanted range. If there are no such elements, past-the-end (see xtd::collections::generic::dictionary::end) iterators are returned as both elements of the pair.
         /// @remarks Returns a range containing all elements in the container with key equivalent to `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such Hash is callable with both `equal_range_key_t` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `Key`.
-        template <typename equal_range_key_t>
+        template <class equal_range_key_t>
         key_value_pair<iterator, iterator> equal_range(const equal_range_key_t& x) {
           const auto& [first, last] = data_->items.equal_range(x);
           return {to_iterator(first), to_iterator(last)};
@@ -707,7 +729,7 @@ namespace xtd {
         /// @param x A value of any type that can be transparently compared with a key.
         /// @return An iterator to the requested element. If no such element is found, past-the-end (see xtd::collections::generic::dictionary::end) iterator is returned.
         /// @remarks Finds an element with key that compares equivalent to the value `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such `hasher_t` is callable with both `find_key_t` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `key_t`.
-        template <typename find_key_t>
+        template <class find_key_t>
         const_iterator find(const find_key_t& x) const {
           return to_iterator(data_->items.find(x));
         }
@@ -715,7 +737,7 @@ namespace xtd {
         /// @brief Finds element with specific key.
         /// @param x A value of any type that can be transparently compared with a key.
         /// @remarks Finds an element with key that compares equivalent to the value `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such `hasher_t` is callable with both `find_key_t` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `key_t`.
-        template <typename find_key_t>
+        template <class find_key_t>
         iterator find(const find_key_t& x) {
           return to_iterator(data_->items.find(x));
         }
@@ -801,7 +823,7 @@ namespace xtd {
         /// @remarks Is equivalent to `emplace(std::forward<P>(value))` and only participates in overload resolution if `std::is_constructible<value_type, P&&>::value == true`.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
-        template <typename type_t>
+        template <class type_t>
         key_value_pair<iterator, bool> insert(type_t&& value) {
           const auto& [iterator, succeeded] = data_->items.insert(value);
           if (succeeded) ++data_->version;
@@ -837,7 +859,7 @@ namespace xtd {
         /// @remarks Is equivalent to `emplace_hint(hint, std::forward<P>(value))` and only participates in overload resolution if `std::is_constructible<value_type, P&&>::value == true`.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
-        template <typename type_t>
+        template <class type_t>
         iterator insert(const_iterator hint, type_t&& value) {
           ++data_->version;
           return to_iterator(data_->items.insert(to_base_type_iterator(hint), value));
@@ -849,7 +871,7 @@ namespace xtd {
         /// @remarks If [`first`, `last`) is not a valid range, or `first` and/or `last` are iterators into `*this`, the behavior is undefined.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
-        template <typename input_iterator_t>
+        template <class input_iterator_t>
         void insert(input_iterator_t first, input_iterator_t last) {
           for (auto iterator = first; iterator != last; ++iterator) {
             const auto& [key, value] = *iterator;
@@ -870,7 +892,7 @@ namespace xtd {
         /// @remarks Inserts elements from initializer list ilist. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844)).
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
-        template <typename init_key_t, typename init_value_t>
+        template <class init_key_t, class init_value_t>
         void insert(std::initializer_list<key_value_pair<init_key_t, init_value_t>> ilist) {
           for (const auto& [key, value] : ilist)
             add(std::forward<value_type>({key, value}));
@@ -908,7 +930,7 @@ namespace xtd {
         /// @remarks If a key equivalent to `k` already exists in the container, assigns `std::forward<type_t>(obj)` to the xtd::collections::generic::dictionary::mapped_type corresponding to the key `k`. If the key does not exist, inserts the new value as if by xtd::collections::generic::dictionary::insert, constructing it from `value_type(k, std::forward<type_t>(obj))`.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
-        template <typename type_t>
+        template <class type_t>
         key_value_pair<iterator, bool> insert_or_assign(const key_t& k, type_t&& obj) {
           const auto& [iterator, succeeded] = data_->items.insert_or_assign(k, obj);
           if (succeeded) ++data_->version;
@@ -921,7 +943,7 @@ namespace xtd {
         /// @remarks If a key equivalent to `k` already exists in the container, assigns `std::forward<type_t>(obj)` to the xtd::collections::generic::dictionary::mapped_type corresponding to the key `k`. If the key does not exist, inserts the new value as if by xtd::collections::generic::dictionary::insert, constructing it from `value_type(k, std::forward<type_t>(obj))`.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
-        template <typename type_t>
+        template <class type_t>
         key_value_pair<iterator, bool> insert_or_assign(key_t&& k, type_t&& obj) {
           const auto& [iterator, succeeded] = data_->items.insert_or_assign(std::move(k), obj);
           if (succeeded) ++data_->version;
@@ -935,7 +957,7 @@ namespace xtd {
         /// @remarks If a key equivalent to `k` already exists in the container, assigns `std::forward<type_t>(obj)` to the xtd::collections::generic::dictionary::mapped_type corresponding to the key `k`. If the key does not exist, inserts the new value as if by xtd::collections::generic::dictionary::insert, constructing it from `value_type(k, std::forward<type_t>(obj))`.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
-        template <typename type_t>
+        template <class type_t>
         iterator insert_or_assign(const_iterator hint, const key_t& k, type_t&& obj) {
           ++data_->version;
           return to_iterator(data_->items.insert_or_assign(to_base_type_iterator(hint), k, obj));
@@ -948,7 +970,7 @@ namespace xtd {
         /// @remarks If a key equivalent to `k` already exists in the container, assigns `std::forward<type_t>(obj)` to the xtd::collections::generic::dictionary::mapped_type corresponding to the key `k`. If the key does not exist, inserts the new value as if by xtd::collections::generic::dictionary::insert, constructing it from `value_type(k, std::forward<type_t>(obj))`.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
-        template <typename type_t>
+        template <class type_t>
         iterator insert_or_assign(const_iterator hint, key_t&& k, type_t&& obj) {
           ++data_->version;
           return to_iterator(data_->items.insert_or_assign(to_base_type_iterator(hint), std::move(k), obj));
@@ -965,7 +987,7 @@ namespace xtd {
         /// @param source A compatible container to transfer the nodes from.
         /// @remarks Attempts to extract ("splice") each element in `source` and insert it into `*this` using the hash function and key equality predicate of `*this`. If there is an element in `*this` with key equivalent to the key of an element from `source`, then that element is not extracted from `source`. No elements are copied or moved, only the internal pointers of the container nodes are repointed. All pointers and references to the transferred elements remain valid, but now refer into `*this`, not into `source`. Iterators referring to the transferred elements and all iterators referring to `*this` are invalidated. Iterators to elements remaining in `source` remain valid.
         /// @remarks The behavior is undefined if `get_allocator() != source.get_allocator()`.
-        template <typename source_hasher_t, typename source_equator_t>
+        template <class source_hasher_t, class source_equator_t>
         void merge(dictionary<key_t, value_t, source_hasher_t,source_equator_t, allocator_t>& source) {
           data_->items.merge(source.items);
           ++data_->version;
@@ -975,7 +997,7 @@ namespace xtd {
         /// @param source A compatible container to transfer the nodes from.
         /// @remarks Attempts to extract ("splice") each element in `source` and insert it into `*this` using the hash function and key equality predicate of `*this`. If there is an element in `*this` with key equivalent to the key of an element from `source`, then that element is not extracted from `source`. No elements are copied or moved, only the internal pointers of the container nodes are repointed. All pointers and references to the transferred elements remain valid, but now refer into `*this`, not into `source`. Iterators referring to the transferred elements and all iterators referring to `*this` are invalidated. Iterators to elements remaining in `source` remain valid.
         /// @remarks The behavior is undefined if `get_allocator() != source.get_allocator()`.
-        template <typename source_hasher_t, typename source_equator_t>
+        template <class source_hasher_t, class source_equator_t>
         void merge(dictionary<key_t, value_t, source_hasher_t,source_equator_t, allocator_t>&& source) {
           data_->items.merge(std::move(source.items));
           ++data_->version;
@@ -985,7 +1007,7 @@ namespace xtd {
         /// @param source A compatible container to transfer the nodes from.
         /// @remarks Attempts to extract ("splice") each element in `source` and insert it into `*this` using the hash function and key equality predicate of `*this`. If there is an element in `*this` with key equivalent to the key of an element from `source`, then that element is not extracted from `source`. No elements are copied or moved, only the internal pointers of the container nodes are repointed. All pointers and references to the transferred elements remain valid, but now refer into `*this`, not into `source`. Iterators referring to the transferred elements and all iterators referring to `*this` are invalidated. Iterators to elements remaining in `source` remain valid.
         /// @remarks The behavior is undefined if `get_allocator() != source.get_allocator()`.
-        template <typename source_hasher_t, typename source_equator_t>
+        template <class source_hasher_t, class source_equator_t>
         void merge(std::unordered_map<key_t, value_t, source_hasher_t,source_equator_t, allocator_t>& source) {
           data_->items.merge(source);
           ++data_->version;
@@ -995,7 +1017,7 @@ namespace xtd {
         /// @param source A compatible container to transfer the nodes from.
         /// @remarks Attempts to extract ("splice") each element in `source` and insert it into `*this` using the hash function and key equality predicate of `*this`. If there is an element in `*this` with key equivalent to the key of an element from `source`, then that element is not extracted from `source`. No elements are copied or moved, only the internal pointers of the container nodes are repointed. All pointers and references to the transferred elements remain valid, but now refer into `*this`, not into `source`. Iterators referring to the transferred elements and all iterators referring to `*this` are invalidated. Iterators to elements remaining in `source` remain valid.
         /// @remarks The behavior is undefined if `get_allocator() != source.get_allocator()`.
-        template <typename source_hasher_t, typename source_equator_t>
+        template <class source_hasher_t, class source_equator_t>
         void merge(std::unordered_map<key_t, value_t, source_hasher_t,source_equator_t, allocator_t>&& source) {
           data_->items.merge(std::move(source));
           ++data_->version;
@@ -1005,7 +1027,7 @@ namespace xtd {
         /// @param source A compatible container to transfer the nodes from.
         /// @remarks Attempts to extract ("splice") each element in `source` and insert it into `*this` using the hash function and key equality predicate of `*this`. If there is an element in `*this` with key equivalent to the key of an element from `source`, then that element is not extracted from `source`. No elements are copied or moved, only the internal pointers of the container nodes are repointed. All pointers and references to the transferred elements remain valid, but now refer into `*this`, not into `source`. Iterators referring to the transferred elements and all iterators referring to `*this` are invalidated. Iterators to elements remaining in `source` remain valid.
         /// @remarks The behavior is undefined if `get_allocator() != source.get_allocator()`.
-        template <typename source_hasher_t, typename source_equator_t>
+        template <class source_hasher_t, class source_equator_t>
         void merge(std::unordered_multimap<key_t, value_t, source_hasher_t,source_equator_t, allocator_t>& source) {
           data_->items.merge(source);
           ++data_->version;
@@ -1015,7 +1037,7 @@ namespace xtd {
         /// @param source A compatible container to transfer the nodes from.
         /// @remarks Attempts to extract ("splice") each element in `source` and insert it into `*this` using the hash function and key equality predicate of `*this`. If there is an element in `*this` with key equivalent to the key of an element from `source`, then that element is not extracted from `source`. No elements are copied or moved, only the internal pointers of the container nodes are repointed. All pointers and references to the transferred elements remain valid, but now refer into `*this`, not into `source`. Iterators referring to the transferred elements and all iterators referring to `*this` are invalidated. Iterators to elements remaining in `source` remain valid.
         /// @remarks The behavior is undefined if `get_allocator() != source.get_allocator()`.
-        template <typename source_hasher_t, typename source_equator_t>
+        template <class source_hasher_t, class source_equator_t>
         void merge(std::unordered_multimap<key_t, value_t, source_hasher_t,source_equator_t, allocator_t>&& source) {
           data_->items.merge(std::move(source));
           ++data_->version;
@@ -1052,7 +1074,7 @@ namespace xtd {
         /// @remarks If value_type is not [EmplaceConstructible](https://en.cppreference.com/w/cpp/named_req/EmplaceConstructible) into unordered_map from the corresponding expression, the behavior is undefined.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
-        template <typename ...args_t>
+        template <class ...args_t>
         key_value_pair<iterator, bool> try_emplace(const key_t& k, args_t&&... args) {
           const auto& [iterator, succeeded] = to_iterator(data_->items.try_emplace(k, std::forward<args_t>(args)...));
           if (succeeded) ++data_->version;
@@ -1065,7 +1087,7 @@ namespace xtd {
         /// @remarks If value_type is not [EmplaceConstructible](https://en.cppreference.com/w/cpp/named_req/EmplaceConstructible) into unordered_map from the corresponding expression, the behavior is undefined.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
-        template <typename ...args_t>
+        template <class ...args_t>
         key_value_pair<iterator, bool> try_emplace(key_t&& k, args_t&&... args) {
           const auto& [iterator, succeeded] = to_iterator(data_->items.try_emplace(std::move(k), std::forward<args_t>(args)...));
           if (succeeded) ++data_->version;
@@ -1079,7 +1101,7 @@ namespace xtd {
         /// @remarks If value_type is not [EmplaceConstructible](https://en.cppreference.com/w/cpp/named_req/EmplaceConstructible) into unordered_map from the corresponding expression, the behavior is undefined.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
-        template <typename ...args_t>
+        template <class ...args_t>
         iterator try_emplace(const_iterator hint, const key_t& k, args_t&&... args) {
           ++data_->version;
           return to_iterator(data_->items.try_emplace(to_base_type_iterator(hint), k, std::forward<args_t>(args)...));
@@ -1092,7 +1114,7 @@ namespace xtd {
         /// @remarks If value_type is not [EmplaceConstructible](https://en.cppreference.com/w/cpp/named_req/EmplaceConstructible) into unordered_map from the corresponding expression, the behavior is undefined.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
-        template <typename ...args_t>
+        template <class ...args_t>
         iterator try_emplace(const_iterator hint, key_t&& k, args_t&&... args) {
           ++data_->version;
           return to_iterator(data_->items.try_emplace(to_base_type_iterator(hint), std::move(k), std::forward<args_t>(args)...));
@@ -1141,7 +1163,7 @@ namespace xtd {
         /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `other`.
         /// @param ilist The initializer list to use as data source.
         /// @return This current instance.
-        template <typename init_key_t, typename init_value_t>
+        template <class init_key_t, class init_value_t>
         dictionary& operator =(std::initializer_list<key_value_pair<init_key_t, init_value_t>> ilist) {
           data_->items.clear();
           for (const auto& [key, value] : ilist)
@@ -1199,6 +1221,16 @@ namespace xtd {
         };
         xtd::ptr<data> data_ = xtd::new_ptr<data>();
       };
+      
+      /// @cond
+      // C++17 deduction guides for xtd::collections::generic::dictionary
+      // {
+      
+      template <class input_iterator_t, class hasher_t = xtd::collections::generic::helpers::hasher<iterator_key_t<input_iterator_t>>, class equator_t = xtd::collections::generic::helpers::equator<iterator_key_t<input_iterator_t>>, class allocator_t = xtd::collections::generic::helpers::allocator<input_iterator_t>>
+      dictionary(input_iterator_t first, input_iterator_t last, xtd::size bucket_count = 0, const hasher_t& hash = hasher_t {}, const equator_t& equal = equator_t {}, const allocator_t& alloc = allocator_t {}) -> dictionary<iterator_key_t<input_iterator_t>, iterator_value_t<input_iterator_t>, hasher_t, equator_t, allocator_t>;
+
+      // }
+      /// @endcode
     }
   }
 }

@@ -47,7 +47,7 @@ The following example show how to register a generic test class without helper:
 using namespace xtd::tunit;
 
 namespace unit_tests {
-  template<typename T>
+  template<class T>
   class test;
 
   // Register generic test class with 'std:string' as generic parameter.
@@ -57,7 +57,7 @@ namespace unit_tests {
   test_class_attribute<test<int>> test_class_int_attr {"test<int>"};
 
   // Create new test fixture inherited test_class.
-  template<typename T>
+  template<class T>
   class test : public test_class {
   public:
     void test_method_(test_case1) {

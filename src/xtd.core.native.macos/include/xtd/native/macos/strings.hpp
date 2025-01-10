@@ -26,10 +26,10 @@ namespace xtd::native::macos {
       return str.rfind(value) + value.size() == str.size();
     }
     
-    template<typename separator_t, typename collection_t>
+    template<class separator_t, class collection_t>
     static std::string join(const separator_t& separator, const collection_t& values) noexcept {return join(separator, values, 0, values.size());}
     
-    template<typename separator_t, typename collection_t>
+    template<class separator_t, class collection_t>
     static std::string join(const separator_t& separator, const collection_t& values, size_t index, size_t count) noexcept {
       auto i = size_t {};
       auto ss = std::stringstream {};

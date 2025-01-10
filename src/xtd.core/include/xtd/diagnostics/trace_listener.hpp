@@ -258,7 +258,7 @@ namespace xtd {
       
       /// @brief Writes the value of the object's ToString method to the listener you create when you implement the TraceListener class.
       /// @param o An Object whose fully qualified class name you want to write.
-      template <typename object>
+      template <class object>
       void write(const object& o) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write(xtd::string::format("{}", o));
@@ -268,7 +268,7 @@ namespace xtd {
       /// @brief Writes a category name and the value of the object's ToString method to the listener you create when you implement the TraceListener class.
       /// @param o An Object whose fully qualified class name you want to write.
       /// @param category A category name used to organize the output.
-      template <typename object>
+      template <class object>
       void write(const object& o, const xtd::string& category) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write(xtd::string::format("{} : {}", o, category));
@@ -281,7 +281,7 @@ namespace xtd {
       
       /// @brief Writes the value of the object's ToString method to the listener you create when you implement the TraceListener class.
       /// @param o An Object whose fully qualified class name you want to write.
-      template <typename object>
+      template <class object>
       void write_line(const object& o) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::string::format("{}", o));
@@ -291,7 +291,7 @@ namespace xtd {
       /// @brief Writes a category name and the value of the object's ToString method to the listener you create when you implement the TraceListener class.
       /// @param o An Object whose fully qualified class name you want to write.
       /// @param category A category name used to organize the output.
-      template <typename object>
+      template <class object>
       void write_line(const object& o, const xtd::string& category) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::string::format("{} : {}", o, category));
@@ -304,7 +304,7 @@ namespace xtd {
       /// @}
       
       /// @cond
-      template<typename object>
+      template <class object>
       trace_listener& operator <<(object&& message) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(message);

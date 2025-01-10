@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
-  template <typename value_t>
+  template<typename value_t>
   class format_string_fixed_point_tests;
   
   test_class_attribute<format_string_fixed_point_tests<float>> format_string_fixed_point_tests_class_float_attr {"format_string_fixed_point_tests<float>"};

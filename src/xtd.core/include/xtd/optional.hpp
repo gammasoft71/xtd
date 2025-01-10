@@ -20,7 +20,7 @@ namespace std {
   };
    */
   
-  template <typename value_t>
+  template<typename value_t>
   class optional {
   private:
     alignas(value_t) unsigned char data_[sizeof(value_t)];

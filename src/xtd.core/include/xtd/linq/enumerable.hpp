@@ -58,19 +58,19 @@ namespace xtd {
       
       /// @{
       /// @brief Represents the ienumerable value type.
-      template <typename type_t>
+      template<typename type_t>
       using iequality_comparer = typename xtd::collections::generic::iequality_comparer<type_t>;
       
       /// @brief Represents the ienumerable value type.
-      template <typename type_t>
+      template<typename type_t>
       using ienumerable = typename xtd::collections::generic::ienumerable<type_t>;
       
       /// @brief Represents the list value type.
-      template <typename type_t>
+      template<typename type_t>
       using list = typename xtd::collections::generic::list<type_t>;
       
       /// @brief Represents the key value pair value type.
-      template <typename key_t, typename value_t>
+      template<typename key_t, typename value_t>
       using key_value_pair = xtd::collections::generic::key_value_pair<key_t, value_t>;
       /// @}
       
@@ -257,7 +257,7 @@ namespace xtd {
       /// @par Example
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable.cpp
-      template <typename collection_t>
+      template<typename collection_t>
       static const auto& as_enumerable(const collection_t& source) noexcept {
         using source_t = typename collection_t::value_type;
         static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
@@ -362,7 +362,7 @@ namespace xtd {
       /// @return An xtd::collection::generic::ienumerable <type_t> that contains each element of the source sequence cast to the specified type.
       /// @exception xtd::invalid_cast_exception An element in the sequence cannot be cast to type `result_t`.
       /// @remarks The xtd::as include file `#include <xtd/as>` is needeed to use this method.
-      template <typename result_t, typename source_t>
+      template<typename result_t, typename source_t>
       static const ienumerable<result_t>& cast(const ienumerable<source_t>& source) noexcept;
       
       /// @brief Splits the elements of a sequence into chunks of size at most size.
@@ -371,7 +371,7 @@ namespace xtd {
       /// @param size The maximum size of each chunk.
       /// @return A sequence of chunks of size at most size.
       /// @zxception xtd::argument_out_of_range_exception `size` is equal to 0.
-      template <typename source_t>
+      template<typename source_t>
       static const ienumerable<xtd::array<source_t>>& chunk(const ienumerable<source_t>& source, xtd::size size);
 
       /// @brief Concatenates two sequences.
@@ -379,7 +379,7 @@ namespace xtd {
       /// @param first The first sequence to concatenate.
       /// @param second The sequence to concatenate to the first sequence.
       /// @return An xtd::collection::generic::ienumerable <type_t> that contains the concatenated elements of the two input sequences.
-      template <typename source_t>
+      template<typename source_t>
       static const ienumerable<source_t>& concat(const ienumerable<source_t>& first, const ienumerable<source_t>& second) noexcept {
         static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
@@ -395,7 +395,7 @@ namespace xtd {
       /// @param source A sequence in which to locate a value.
       /// @param value The value to locate in the sequence.
       /// @return true if the source sequence contains an element that has the specified value; otherwise, false.
-      template <typename source_t>
+      template<typename source_t>
       static bool contains(const ienumerable<source_t>& source, const source_t& value) noexcept {
         for (const auto& item : source)
           if (item == value) return true;
@@ -408,7 +408,7 @@ namespace xtd {
       /// @param value The value to locate in the sequence.
       /// @param comparer An equality comparer to compare values.
       /// @return true if the source sequence contains an element that has the specified value; otherwise, false.
-      template <typename source_t>
+      template<typename source_t>
       static bool contains(const ienumerable<source_t>& source, const source_t& value, const xtd::collections::generic::iequality_comparer<source_t>& comparer) noexcept {
         for (const auto& item : source)
           if (comparer.equals(item, value)) return true;
@@ -422,7 +422,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::count <source_t>(const ienumerable <source_t>&) to count the elements in a sequence.
       /// @include enumerable_count.cpp
-      template <typename source_t>
+      template<typename source_t>
       static xtd::size count(const ienumerable<source_t>& source) noexcept {
         auto count = xtd::size {0};
         auto enumerator = source.get_enumerator();
@@ -438,7 +438,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::count <source_t>(const ienumerable <source_t>&, const std::function <bool(const source_t&)>&) to count the elements in a sequence that satisfy a condition.
       /// @include enumerable_count2.cpp
-      template <typename source_t>
+      template<typename source_t>
       static xtd::size count(const ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate) noexcept {
         auto count = xtd::size {0};
         auto enumerator = source.get_enumerator();
@@ -456,7 +456,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <source_t>(const ienumerable <source_t>&, const std::function <key_t(const source_t&)>&) to count the number of elements in a sequence grouped by key.
       /// @include enumerable_count_by.cpp
-      template <typename key_t, typename source_t>
+      template<typename key_t, typename source_t>
       static const ienumerable<key_value_pair<key_t, xtd::size>>& count_by(const ienumerable<source_t>& source, const std::function<key_t(const source_t&)>& key_selector) noexcept {
         return count_by(source, key_selector, xtd::collections::generic::equality_comparer<key_t>::default_equality_comparer());
       }
@@ -471,7 +471,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::count_by <source_t>(const ienumerable <source_t>&, const std::function <key_t(const source_t&)>&) to count the number of elements in a sequence grouped by key.
       /// @include enumerable_count_by.cpp
-      template <typename key_t, typename source_t>
+      template<typename key_t, typename source_t>
       static const ienumerable<key_value_pair<key_t, xtd::size>>& count_by(const ienumerable<source_t>& source, const std::function<key_t(const source_t&)>& key_selector, const iequality_comparer<key_t>& key_comparer) noexcept {
         static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<key_value_pair<key_t, xtd::size>> {};
         result = __opaque_xtd_linq_enumerable_collection__<key_value_pair<key_t, xtd::size>> {};
@@ -498,7 +498,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::default_if_empty <source_t>(const ienumerable <source_t>&) to return a default value if a sequence is empty.
       /// @include enumerable_default_if_empty.cpp
-      template <typename source_t>
+      template<typename source_t>
       static const ienumerable<source_t>& default_if_empty(const ienumerable<source_t>& source) noexcept {
         return default_if_empty(source, source_t {});
       }
@@ -511,7 +511,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates how to use xtd::linq::enumerable::default_if_empty <source_t>(const ienumerable <source_t>&, const source_t&) to return a default value if a sequence is empty.
       /// @include enumerable_default_if_empty2.cpp
-      template <typename source_t>
+      template<typename source_t>
       static const ienumerable<source_t>& default_if_empty(const ienumerable<source_t>& source, const source_t& default_value) noexcept {
         static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
         result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
@@ -527,7 +527,7 @@ namespace xtd {
       /// @param predicate A function to test each element for a condition.
       /// @param default_value The default value to return if the sequence is empty.
       /// @return `default_value` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
-      template <typename source_t>
+      template<typename source_t>
       static source_t first_or_default(const ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate, const source_t& default_value) noexcept {
         const auto& result = where(source, predicate);
         return any(result) ? *result.begin() : default_value;
@@ -537,7 +537,7 @@ namespace xtd {
       /// @param source A sequence of values to return an element from.
       /// @param predicate A function to test each element for a condition.
       /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
-      template <typename source_t>
+      template<typename source_t>
       static source_t first_or_default(const ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate) noexcept {
         return first_or_default(source, predicate, source_t {});
       }
@@ -546,7 +546,7 @@ namespace xtd {
       /// @param source A sequence of values to return an element from.
       /// @param default_value The default value to return if the sequence is empty.
       /// @return `default_value` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
-      template <typename source_t>
+      template<typename source_t>
       static source_t first_or_default(const ienumerable<source_t>& source, const source_t& default_value) noexcept {
         return any(source) ? *source.begin() : default_value;
       }
@@ -554,7 +554,7 @@ namespace xtd {
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values to return an element from.
       /// @return default `source_t {}` if source is empty or if no element passes the test specified by predicate; otherwise, the first element in source that passes the test specified by predicate.
-      template <typename source_t>
+      template<typename source_t>
       static source_t first_or_default(const ienumerable<source_t>& source) noexcept {
         return first_or_default(source, source_t {});
       }
@@ -592,7 +592,7 @@ namespace xtd {
       /// @param source A sequence of values.
       /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
       /// @remarks Same as as_enemerable(const collection_t& source).
-      template <typename collection_t>
+      template<typename collection_t>
       static const auto& from(const collection_t& source) noexcept {
         return as_enumerable(source);
       }

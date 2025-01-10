@@ -14,7 +14,7 @@ namespace xtd {
       /// @brief Supports a simple iteration over a generic collection.
       /// @par Definition
       /// ```cpp
-      /// template<typename type_t>
+      /// template<class type_t>
       /// class ienumerator interface_
       /// ```
       /// @par Header
@@ -54,7 +54,7 @@ namespace xtd {
       /// @remarks If changes are made to the collection, such as adding, modifying, or deleting elements, the behavior of the enumerator is undefined.
       /// @remarks The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread-safe procedure. To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration. To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
       /// @remarks Default implementations of collections in the xtd::collections::generic namespace are not synchronized.
-      template<typename type_t>
+      template<class type_t>
       class ienumerator interface_ {
       public:
         /// @name Public Properties

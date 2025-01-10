@@ -137,12 +137,12 @@ namespace xtd {
       /// @brief Convert specified value to xtd::string.
       /// @param value The value to convert to xtd::string.
       /// @return The xtd::string that contains the value.
-      template <typename value_t>
+      template<typename value_t>
       static xtd::string to_string(const value_t& value) {return __tunit_to_string(value);}
       /// @brief Convert specified value to xtd::string.
       /// @param value The value to convert to xtd::string.
       /// @return The xtd::string that contains the value.
-      template <typename value_t>
+      template<typename value_t>
       static xtd::string to_string(const value_t* value) {return __tunit_to_string(value);}
       
       /// @brief Join specified collection into xtd::string.

@@ -28,7 +28,7 @@
 extern std::unordered_map<std::type_index, std::function<std::string(std::any const&)>> __any_stringer__;
 
 /*
-template <typename char_t, typename char_traits_t, typename type_t>
+template<typename char_t, typename char_traits_t, typename type_t>
 std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const type_t& value) {
   size_t size = sizeof(value) > 32 ? 32 : sizeof(value);
   os << sizeof(value) << std::basic_string<char_t> {'-', 'b', 'y', 't', 'e', ' ', 'o', 'b', 'j', 'e', 'c', 't', '<'};
@@ -38,18 +38,18 @@ std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t
   return os;
 }*/
 
-template <typename char_t, typename char_traits_t>
+template<typename char_t, typename char_traits_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::exception& value) {
   return os << "exception: " << value.what();
 }
 
-template <typename char_t, typename char_traits_t, typename value_t>
+template<typename char_t, typename char_traits_t, typename value_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::optional<value_t>& value) {
   if (!value.has_value()) return os << "(null)";
   return os << '(' << value.value() << ')';
 }
 
-template <typename char_t, typename char_traits_t, typename type1_t, typename type2_t>
+template<typename char_t, typename char_traits_t, typename type1_t, typename type2_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::pair<type1_t, type2_t>& value) {
   return os << '(' << value.first << ',' << ' ' << value.second << ')';
 }
@@ -69,7 +69,7 @@ struct __xtd_console_tuple_printer<char_t, char_traits_t, type_t, n_t, n_t> {
   }
 };
 
-template <typename char_t, typename char_traits_t, typename ... types_t>
+template<typename char_t, typename char_traits_t, typename ... types_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::tuple<types_t ...>& value) {
   os << '(';
   __xtd_console_tuple_printer < char_t, char_traits_t, std::tuple<types_t ...>, 0, sizeof...(types_t) - 1 >::print(os, value);
@@ -77,7 +77,7 @@ inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream
 }
 
 /*
-template <typename char_t, typename char_traits_t, typename ... args_t>
+template<typename char_t, typename char_traits_t, typename ... args_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::variant<args_t ...>& value) {
   std::visit([&](auto && t){
     os << t;
@@ -85,7 +85,7 @@ inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream
   return os;
 }*/
 
-template <typename char_t, typename char_traits_t, typename iterator_t>
+template<typename char_t, typename char_traits_t, typename iterator_t>
 inline std::basic_ostream<char_t, char_traits_t>& __xtd_console_print_sequence_container(std::basic_ostream<char_t, char_traits_t>& os, const iterator_t& begin, const iterator_t& end) {
   os << '[';
   bool first = true;
@@ -97,42 +97,42 @@ inline std::basic_ostream<char_t, char_traits_t>& __xtd_console_print_sequence_c
   return os << ']';
 }
 
-template <typename char_t, typename char_traits_t, typename type_t, size_t size_t>
+template<typename char_t, typename char_traits_t, typename type_t, size_t size_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::array<type_t, size_t>& values) {
   return __xtd_console_print_sequence_container(os, values.begin(), values.end());
 }
 
-template <typename char_t, typename char_traits_t, typename type_t, class allocator_t = std::allocator<type_t>>
+template<typename char_t, typename char_traits_t, typename type_t, class allocator_t = std::allocator<type_t>>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::deque<type_t, allocator_t>& values) {
   return __xtd_console_print_sequence_container(os, values.begin(), values.end());
 }
 
-template <typename char_t, typename char_traits_t, typename type_t, class allocator_t = std::allocator<type_t>>
+template<typename char_t, typename char_traits_t, typename type_t, class allocator_t = std::allocator<type_t>>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::forward_list<type_t, allocator_t>& values) {
   return __xtd_console_print_sequence_container(os, values.begin(), values.end());
 }
 
-template <typename char_t, typename char_traits_t, typename type_t>
+template<typename char_t, typename char_traits_t, typename type_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::initializer_list<type_t>& values) {
   return __xtd_console_print_sequence_container(os, values.begin(), values.end());
 }
 
-template <typename char_t, typename char_traits_t, typename type_t, class allocator_t = std::allocator<type_t>>
+template<typename char_t, typename char_traits_t, typename type_t, class allocator_t = std::allocator<type_t>>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::list<type_t, allocator_t>& values) {
   return __xtd_console_print_sequence_container(os, values.begin(), values.end());
 }
 
-template <typename char_t, typename char_traits_t, typename type_t>
+template<typename char_t, typename char_traits_t, typename type_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::valarray<type_t>& values) {
   return __xtd_console_print_sequence_container(os, std::begin(values), std::end(values));
 }
 
-template <typename char_t, typename char_traits_t, typename type_t, class allocator_t = std::allocator<type_t>>
+template<typename char_t, typename char_traits_t, typename type_t, class allocator_t = std::allocator<type_t>>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::vector<type_t, allocator_t>& values) {
   return __xtd_console_print_sequence_container(os, values.begin(), values.end());
 }
 
-template <typename char_t, typename char_traits_t, typename iterator_t>
+template<typename char_t, typename char_traits_t, typename iterator_t>
 inline std::basic_ostream<char_t, char_traits_t>& __xtd_console_print_associative_container(std::basic_ostream<char_t, char_traits_t>& os, const iterator_t& begin, const iterator_t& end) {
   os << "{";
   bool first = true;
@@ -144,57 +144,57 @@ inline std::basic_ostream<char_t, char_traits_t>& __xtd_console_print_associativ
   return os << "}";
 }
 
-template <typename char_t, typename char_traits_t, typename key_t, typename value_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
+template<typename char_t, typename char_traits_t, typename key_t, typename value_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::map<key_t, value_t, compare_t, allocator_t>& values) {
   return __xtd_console_print_associative_container(os, values.begin(), values.end());
 }
 
-template <typename char_t, typename char_traits_t, typename key_t, typename value_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
+template<typename char_t, typename char_traits_t, typename key_t, typename value_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::multimap<key_t, value_t, compare_t, allocator_t>& values) {
   return __xtd_console_print_associative_container(os, values.begin(), values.end());
 }
 
-template <typename char_t, typename char_traits_t, typename key_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
+template<typename char_t, typename char_traits_t, typename key_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::multiset<key_t, compare_t, allocator_t>& values) {
   return __xtd_console_print_associative_container(os, values.begin(), values.end());
 }
 
-template <typename char_t, typename char_traits_t, typename key_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
+template<typename char_t, typename char_traits_t, typename key_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::set<key_t, compare_t, allocator_t>& values) {
   return __xtd_console_print_associative_container(os, values.begin(), values.end());
 }
 
-template <typename char_t, typename char_traits_t, typename key_t, typename value_t, typename pred_t = std::equal_to<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
+template<typename char_t, typename char_traits_t, typename key_t, typename value_t, typename pred_t = std::equal_to<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::unordered_map<key_t, value_t, pred_t, allocator_t>& values) {
   return __xtd_console_print_associative_container(os, values.begin(), values.end());
 }
 
-template <typename char_t, typename char_traits_t, typename key_t, typename value_t, typename pred_t = std::equal_to<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
+template<typename char_t, typename char_traits_t, typename key_t, typename value_t, typename pred_t = std::equal_to<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::unordered_multimap<key_t, value_t, pred_t, allocator_t>& values) {
   return __xtd_console_print_associative_container(os, values.begin(), values.end());
 }
 
-template <typename char_t, typename char_traits_t, typename key_t, typename pred_t = std::equal_to<key_t>, typename allocator_t = std::allocator<key_t>>
+template<typename char_t, typename char_traits_t, typename key_t, typename pred_t = std::equal_to<key_t>, typename allocator_t = std::allocator<key_t>>
 std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::unordered_multiset<key_t, pred_t, allocator_t>& values) {
   return __xtd_console_print_associative_container(os, values.begin(), values.end());
 }
 
-template <typename char_t, typename char_traits_t, typename key_t, typename pred_t = std::equal_to<key_t>, typename allocator_t = std::allocator<key_t>>
+template<typename char_t, typename char_traits_t, typename key_t, typename pred_t = std::equal_to<key_t>, typename allocator_t = std::allocator<key_t>>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::unordered_set<key_t, pred_t, allocator_t>& values) {
   return __xtd_console_print_associative_container(os, values.begin(), values.end());
 }
 
-template <typename char_t, typename char_traits_t>
+template<typename char_t, typename char_traits_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::error_category& value) {
   return os << "(" << value.name() << ")";
 }
     
-template <typename char_t, typename char_traits_t>
+template<typename char_t, typename char_traits_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const std::error_code& value) {
   return os << "(value = " << value.value() << "category= " << value.category().name() << ")";
 }
 
-template <typename char_t, typename char_traits_t>
+template<typename char_t, typename char_traits_t>
 inline std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, std::any value) {
   auto it = __any_stringer__.find(std::type_index(value.type()));
   if (it == __any_stringer__.cend()) return os << "(unregistered)";

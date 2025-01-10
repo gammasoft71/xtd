@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
-  template <typename value_t>
+  template<typename value_t>
   class format_wstring_numeric_tests;
   
   test_class_attribute<format_wstring_numeric_tests<unsigned char>> format_wstring_numeric_tests_class_unsigned_char_attr {"format_wstring_numeric_tests<unsigned_char>"};

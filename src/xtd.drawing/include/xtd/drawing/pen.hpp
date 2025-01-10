@@ -43,7 +43,7 @@ namespace xtd {
       /// @param brush A xtd::drawing::brush that determines the fill properties of this xtd::drawing::pen.
       /// @remarks The brush property determines how the xtd::drawing::pen draws lines. Lines are drawn as if they are filled rectangles, with the characteristics of the specified brush.
       /// @remarks The width property of the new xtd::drawing::pen  is set to 1 (the default).
-      template <typename brush_t>
+      template<typename brush_t>
       explicit pen(const brush_t& brush) {
         create_data();
         this->brush(brush);

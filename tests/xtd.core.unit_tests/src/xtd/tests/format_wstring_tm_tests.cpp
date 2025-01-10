@@ -80,7 +80,7 @@ namespace {
 }
 
 namespace xtd::tests {
-  template <typename value_t>
+  template<typename value_t>
   class format_wstring_tm_tests;
   
   test_class_attribute<format_wstring_tm_tests<std::tm>> format_wstring_tm_tests_class_std_tm_attr {"format_wstring_tm_tests<std::tm>"};
