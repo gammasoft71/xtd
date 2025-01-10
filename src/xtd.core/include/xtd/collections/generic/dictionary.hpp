@@ -460,6 +460,7 @@ namespace xtd {
         void add(const key_t& key, const value_t value) override {
           const auto& [iterator, succeeded] = data_->items.insert(std::forward<base_value_type>({key, value}));
           if (!succeeded) throw xtd::argument_exception {};
+          ++data_->version;
         }
 
         /// @brief Gets the element with the specified key.
@@ -495,7 +496,10 @@ namespace xtd {
 
         /// @brief Erases all elements from the container. After this call, xtd::collections::generic::dictionary::size returns zero.
         /// @remarks Invalidates any references, pointers, and iterators referring to contained elements. May also invalidate past-the-end iterators.
-        void clear() noexcept {data_->items.clear();}
+        void clear() noexcept {
+          data_->items.clear();
+          ++data_->version;
+        }
         
         /// @brief Constructs element in-place.
         /// @param args The arguments to forward to the constructor of the element.
@@ -508,6 +512,7 @@ namespace xtd {
         template <typename ...args_t>
         key_value_pair<iterator, bool> emplace(args_t&& ...args) {
           const auto& [iterator, succeeded] = data_->items.emplace(std::forward<args_t>(args)...);
+          if (succeeded) ++data_->version;
           return {to_iterator(iterator), succeeded};
         }
 
@@ -521,6 +526,7 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         template <typename ...args_t>
         iterator emplace_hint(iterator hint, args_t&& ...args) {
+          ++data_->version;
           return to_iterator(data_->items.emplace_hint(to_base_type_iterator(hint), std::forward<args_t>(args)...));
         }
         
@@ -532,6 +538,7 @@ namespace xtd {
         /// @remarks References and iterators to the erased elements are invalidated. Other iterators and references are not invalidated.
         /// @remarks The iterator `pos` must be valid and dereferenceable. Thus the xtd::collections::generic::dictionary::end() iterator (which is valid, but is not dereferenceable) cannot be used as a value for `pos`.
         iterator erase(const_iterator pos) {
+          ++data_->version;
           return to_iterator(data_->items.erase(to_base_type_iterator(pos)));
         }
         /// @brief Erases elements.
@@ -543,6 +550,7 @@ namespace xtd {
         /// @remarks References and iterators to the erased elements are invalidated. Other iterators and references are not invalidated.
         /// @remarks The iterator `pos` must be valid and dereferenceable. Thus the xtd::collections::generic::dictionary::end() iterator (which is valid, but is not dereferenceable) cannot be used as a value for `pos`.
         iterator erase(const_iterator first, const_iterator last) {
+          ++data_->version;
           return to_iterator(data_->items.erase(to_base_type_iterator(first), to_base_type_iterator(last)));
         }
         /// @brief Erases elements.
@@ -553,7 +561,9 @@ namespace xtd {
         /// @remarks References and iterators to the erased elements are invalidated. Other iterators and references are not invalidated.
         /// @remarks The iterator `pos` must be valid and dereferenceable. Thus the xtd::collections::generic::dictionary::end() iterator (which is valid, but is not dereferenceable) cannot be used as a value for `pos`.
         size_type erase(const key_t& key) {
-          return data_->items.erase(key);
+          auto removed_count = data_->items.erase(key);
+          if (removed_count) ++data_->version;
+          return removed_count;
         }
 
         /// @brief Extracts nodes from the container.
@@ -563,6 +573,7 @@ namespace xtd {
         /// @remarks In either case, no elements are copied or moved, only the internal pointers of the container nodes are repointed.
         /// @remarks Extracting a node invalidates only the iterators to the extracted element, and preserves the relative order of the elements that are not erased. Pointers and references to the extracted element remain valid, but cannot be used while element is owned by a node handle: they become usable if the element is inserted into a container.
         node_type extract(const_iterator position) noexcept {
+          ++data_->version;
           return data_->items.extract(to_base_type_iterator(position));
         }
         /// @brief Extracts nodes from the container.
@@ -572,6 +583,7 @@ namespace xtd {
         /// @remarks In either case, no elements are copied or moved, only the internal pointers of the container nodes are repointed.
         /// @remarks Extracting a node invalidates only the iterators to the extracted element, and preserves the relative order of the elements that are not erased. Pointers and references to the extracted element remain valid, but cannot be used while element is owned by a node handle: they become usable if the element is inserted into a container.
         node_type extract(const key_t k) {
+          ++data_->version;
           return data_->items.extract(k);
         }
         
@@ -629,6 +641,7 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         key_value_pair<iterator, bool> insert(const value_type& value) {
           const auto& [iterator, succeeded] = data_->items.insert(value);
+          if (succeeded) ++data_->version;
           return {to_iterator(iterator), succeeded};
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
@@ -639,6 +652,7 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         key_value_pair<iterator, bool> insert(value_type&& value) {
           const auto& [iterator, succeeded] = data_->items.insert(value);
+          if (succeeded) ++data_->version;
           return {to_iterator(iterator), succeeded};
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
@@ -651,6 +665,7 @@ namespace xtd {
         template <typename type_t>
         key_value_pair<iterator, bool> insert(type_t&& value) {
           const auto& [iterator, succeeded] = data_->items.insert(value);
+          if (succeeded) ++data_->version;
           return {to_iterator(iterator), succeeded};
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
@@ -661,6 +676,7 @@ namespace xtd {
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         iterator insert(const_iterator hint, const value_type& value) {
+          ++data_->version;
           return to_iterator(data_->items.insert(to_base_type_iterator(hint), value));
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
@@ -671,6 +687,7 @@ namespace xtd {
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         iterator insert(const_iterator hint, value_type&& value) {
+          ++data_->version;
           return to_iterator(data_->items.insert(to_base_type_iterator(hint), value));
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
@@ -683,6 +700,7 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         template <typename type_t>
         iterator insert(const_iterator hint, type_t&& value) {
+          ++data_->version;
           return to_iterator(data_->items.insert(to_base_type_iterator(hint), value));
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
@@ -728,6 +746,7 @@ namespace xtd {
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         insert_return_type insert(node_type&& nh) {
+          ++data_->version;
           return data_->items.inser(nh);
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
@@ -739,6 +758,7 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
         iterator insert(const_iterator hint, node_type&& nh) {
+          ++data_->version;
           return to_iterator(data_->items.inser(to_base_type_iterator(hint), nh));
         }
         
@@ -752,6 +772,7 @@ namespace xtd {
         template <typename type_t>
         key_value_pair<iterator, bool> insert_or_assign(const key_t& k, type_t&& obj) {
           const auto& [iterator, succeeded] = data_->items.insert_or_assign(k, obj);
+          if (succeeded) ++data_->version;
           return {to_iterator(iterator), succeeded};
         }
         /// @brief Inserts an element or assigns to the current element if the key already exists.
@@ -764,6 +785,7 @@ namespace xtd {
         template <typename type_t>
         key_value_pair<iterator, bool> insert_or_assign(key_t&& k, type_t&& obj) {
           const auto& [iterator, succeeded] = data_->items.insert_or_assign(std::move(k), obj);
+          if (succeeded) ++data_->version;
           return {to_iterator(iterator), succeeded};
         }
         /// @brief Inserts an element or assigns to the current element if the key already exists.
@@ -776,6 +798,7 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
         template <typename type_t>
         iterator insert_or_assign(const_iterator hint, const key_t& k, type_t&& obj) {
+          ++data_->version;
           return to_iterator(data_->items.insert_or_assign(to_base_type_iterator(hint), k, obj));
         }
         /// @brief Inserts an element or assigns to the current element if the key already exists.
@@ -788,9 +811,70 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
         template <typename type_t>
         iterator insert_or_assign(const_iterator hint, key_t&& k, type_t&& obj) {
+          ++data_->version;
           return to_iterator(data_->items.insert_or_assign(to_base_type_iterator(hint), std::move(k), obj));
         }
         
+        /// @brief Splices nodes from another container.
+        /// @param source A compatible container to transfer the nodes from.
+        /// @remarks Attempts to extract ("splice") each element in `source` and insert it into `*this` using the hash function and key equality predicate of `*this`. If there is an element in `*this` with key equivalent to the key of an element from `source`, then that element is not extracted from `source`. No elements are copied or moved, only the internal pointers of the container nodes are repointed. All pointers and references to the transferred elements remain valid, but now refer into `*this`, not into `source`. Iterators referring to the transferred elements and all iterators referring to `*this` are invalidated. Iterators to elements remaining in `source` remain valid.
+        /// @remarks The behavior is undefined if `get_allocator() != source.get_allocator()`.
+        template <typename source_hasher_t, typename source_equator_t>
+        void merge(dictionary<key_t, value_t, source_hasher_t,source_equator_t, allocator_t>& source) {
+          data_->items.merge(source.items);
+          ++data_->version;
+        }
+        
+        /// @brief Splices nodes from another container.
+        /// @param source A compatible container to transfer the nodes from.
+        /// @remarks Attempts to extract ("splice") each element in `source` and insert it into `*this` using the hash function and key equality predicate of `*this`. If there is an element in `*this` with key equivalent to the key of an element from `source`, then that element is not extracted from `source`. No elements are copied or moved, only the internal pointers of the container nodes are repointed. All pointers and references to the transferred elements remain valid, but now refer into `*this`, not into `source`. Iterators referring to the transferred elements and all iterators referring to `*this` are invalidated. Iterators to elements remaining in `source` remain valid.
+        /// @remarks The behavior is undefined if `get_allocator() != source.get_allocator()`.
+        template <typename source_hasher_t, typename source_equator_t>
+        void merge(dictionary<key_t, value_t, source_hasher_t,source_equator_t, allocator_t>&& source) {
+          data_->items.merge(std::move(source.items));
+          ++data_->version;
+        }
+        
+        /// @brief Splices nodes from another container.
+        /// @param source A compatible container to transfer the nodes from.
+        /// @remarks Attempts to extract ("splice") each element in `source` and insert it into `*this` using the hash function and key equality predicate of `*this`. If there is an element in `*this` with key equivalent to the key of an element from `source`, then that element is not extracted from `source`. No elements are copied or moved, only the internal pointers of the container nodes are repointed. All pointers and references to the transferred elements remain valid, but now refer into `*this`, not into `source`. Iterators referring to the transferred elements and all iterators referring to `*this` are invalidated. Iterators to elements remaining in `source` remain valid.
+        /// @remarks The behavior is undefined if `get_allocator() != source.get_allocator()`.
+        template <typename source_hasher_t, typename source_equator_t>
+        void merge(std::unordered_map<key_t, value_t, source_hasher_t,source_equator_t, allocator_t>& source) {
+          data_->items.merge(source);
+          ++data_->version;
+        }
+        
+        /// @brief Splices nodes from another container.
+        /// @param source A compatible container to transfer the nodes from.
+        /// @remarks Attempts to extract ("splice") each element in `source` and insert it into `*this` using the hash function and key equality predicate of `*this`. If there is an element in `*this` with key equivalent to the key of an element from `source`, then that element is not extracted from `source`. No elements are copied or moved, only the internal pointers of the container nodes are repointed. All pointers and references to the transferred elements remain valid, but now refer into `*this`, not into `source`. Iterators referring to the transferred elements and all iterators referring to `*this` are invalidated. Iterators to elements remaining in `source` remain valid.
+        /// @remarks The behavior is undefined if `get_allocator() != source.get_allocator()`.
+        template <typename source_hasher_t, typename source_equator_t>
+        void merge(std::unordered_map<key_t, value_t, source_hasher_t,source_equator_t, allocator_t>&& source) {
+          data_->items.merge(std::move(source));
+          ++data_->version;
+        }
+        
+        /// @brief Splices nodes from another container.
+        /// @param source A compatible container to transfer the nodes from.
+        /// @remarks Attempts to extract ("splice") each element in `source` and insert it into `*this` using the hash function and key equality predicate of `*this`. If there is an element in `*this` with key equivalent to the key of an element from `source`, then that element is not extracted from `source`. No elements are copied or moved, only the internal pointers of the container nodes are repointed. All pointers and references to the transferred elements remain valid, but now refer into `*this`, not into `source`. Iterators referring to the transferred elements and all iterators referring to `*this` are invalidated. Iterators to elements remaining in `source` remain valid.
+        /// @remarks The behavior is undefined if `get_allocator() != source.get_allocator()`.
+        template <typename source_hasher_t, typename source_equator_t>
+        void merge(std::unordered_multimap<key_t, value_t, source_hasher_t,source_equator_t, allocator_t>& source) {
+          data_->items.merge(source);
+          ++data_->version;
+        }
+        
+        /// @brief Splices nodes from another container.
+        /// @param source A compatible container to transfer the nodes from.
+        /// @remarks Attempts to extract ("splice") each element in `source` and insert it into `*this` using the hash function and key equality predicate of `*this`. If there is an element in `*this` with key equivalent to the key of an element from `source`, then that element is not extracted from `source`. No elements are copied or moved, only the internal pointers of the container nodes are repointed. All pointers and references to the transferred elements remain valid, but now refer into `*this`, not into `source`. Iterators referring to the transferred elements and all iterators referring to `*this` are invalidated. Iterators to elements remaining in `source` remain valid.
+        /// @remarks The behavior is undefined if `get_allocator() != source.get_allocator()`.
+        template <typename source_hasher_t, typename source_equator_t>
+        void merge(std::unordered_multimap<key_t, value_t, source_hasher_t,source_equator_t, allocator_t>&& source) {
+          data_->items.merge(std::move(source));
+          ++data_->version;
+        }
+
         /// @brief Swaps the contents.
         /// @param The container to exchange the contents with.
         /// @remarks Exchanges the contents of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
@@ -810,6 +894,7 @@ namespace xtd {
         template <typename ...args_t>
         key_value_pair<iterator, bool> try_emplace(const key_t& k, args_t&&... args) {
           const auto& [iterator, succeeded] = to_iterator(data_->items.try_emplace(k, std::forward<args_t>(args)...));
+          if (succeeded) ++data_->version;
           return {to_iterator(iterator), succeeded};
         }
         /// @brief Inserts in-place if the key does not exist, does nothing if the key exists.
@@ -822,6 +907,7 @@ namespace xtd {
         template <typename ...args_t>
         key_value_pair<iterator, bool> try_emplace(key_t&& k, args_t&&... args) {
           const auto& [iterator, succeeded] = to_iterator(data_->items.try_emplace(std::move(k), std::forward<args_t>(args)...));
+          if (succeeded) ++data_->version;
           return {to_iterator(iterator), succeeded};
         }
         /// @brief Inserts in-place if the key does not exist, does nothing if the key exists.
@@ -834,6 +920,7 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
         template <typename ...args_t>
         iterator try_emplace(const_iterator hint, const key_t& k, args_t&&... args) {
+          ++data_->version;
           return to_iterator(data_->items.try_emplace(to_base_type_iterator(hint), k, std::forward<args_t>(args)...));
         }
         /// @brief Inserts in-place if the key does not exist, does nothing if the key exists.
@@ -846,6 +933,7 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
         template <typename ...args_t>
         iterator try_emplace(const_iterator hint, key_t&& k, args_t&&... args) {
+          ++data_->version;
           return to_iterator(data_->items.try_emplace(to_base_type_iterator(hint), std::move(k), std::forward<args_t>(args)...));
         }
         /// @}
@@ -866,7 +954,7 @@ namespace xtd {
         /// @return This current instance.
         dictionary& operator =(std::unordered_map<key_t, value_t>&& other) noexcept {
           data_->items = std::move(other);
-          data_->version = 0;
+          ++data_->version;
           return *this;
         }
         /// @brief Copy assignment operator. Replaces the contents with a copy of the contents of `other`.
