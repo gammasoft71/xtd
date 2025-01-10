@@ -17,7 +17,7 @@ namespace xtd {
   /// @par Examples
   /// The following example cshow hot to use event.
   /// @include event.cpp
-  template<typename object_t, typename handler_t>
+  template<class object_t, class handler_t>
   class event : protected handler_t {
     friend object_t;
   public:

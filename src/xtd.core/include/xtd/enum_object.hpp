@@ -38,7 +38,7 @@ namespace xtd {
   /// @include enum_class.cpp
   /// The following code show how to use xtd::enum_object class for an enum flags.
   /// @include enum_class_flags.cpp
-  template<typename enum_t = std::nullptr_t>
+  template<class enum_t = std::nullptr_t>
   class enum_object : public xtd::object, public xtd::icomparable<enum_object<enum_t>>, public xtd::iequatable<enum_object<enum_t>>, public xtd::iformatable {
   public:
     /// @name Public Aliases
@@ -185,7 +185,7 @@ namespace xtd {
     using object::equals;
     bool equals(const enum_object& value) const noexcept override {return value_ == value.value_;}
     bool equals(enum_type value) const noexcept {return value_ == value;}
-    template<typename attribute_t>
+    template<class attribute_t>
     bool equals(attribute_t value) const noexcept {return false;}
     
     static enum_type parse(const xtd::string& str) {return parse(str, false);}
@@ -266,7 +266,7 @@ namespace xtd {
       return str;
     }
     
-    template<typename attribute_t>
+    template<class attribute_t>
     static enum_type to_enum(attribute_t value) noexcept {return static_cast<enum_type>(value);}
     static int64 to_int(enum_type value) noexcept {return static_cast<int64>(value);}
     

@@ -104,7 +104,7 @@ namespace xtd {
       /// @brief Starts execution of a background operation.
       /// @param argument A parameter for use by the background operation to be executed in the xtd::forms::background_worker::do_work event handler.
       /// @exception xtd::invalid_operaton_exception xtd::background_worker::is_busy is true;
-      template<typename argument_t>
+      template<class argument_t>
       void run_worker_async(argument_t argument) {
         argument_(std::any(argument));
         run_worker_async();

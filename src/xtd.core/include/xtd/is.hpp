@@ -396,7 +396,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename type_t, typename param_t>
+  template<class type_t, class param_t>
   bool is(const param_t* value) {
     try {
       if (value == nullptr) return false;
@@ -416,7 +416,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename type_t, typename param_t>
+  template<class type_t, class param_t>
   bool is(const param_t& value) {
     return is<type_t>(&value);
   }
@@ -431,7 +431,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename type_t, typename param_t>
+  template<class type_t, class param_t>
   bool is(param_t* value) {
     try {
       if (value == nullptr) return false;
@@ -451,7 +451,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename type_t, typename param_t>
+  template<class type_t, class param_t>
   bool is(param_t& value) {
     return is<type_t>(&value);
   }

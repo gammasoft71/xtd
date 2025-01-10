@@ -208,7 +208,7 @@ namespace xtd {
         /// @par Examples
         /// The folowing example demonstartes the use of xtd::forms::control::control_collection::emplace, xtd::forms::control::control_collection::emplace_at and xtd::forms::control::control_collection::emplace_back methods.
         /// @include emplace.cpp
-        template<typename control_t, typename ... args_t>
+        template<class control_t, class ...args_t>
         control_t& emplace(const_iterator pos, args_t&& ...args) {
           auto control_ptr = xtd::new_uptr<control_t>(control_t::create(std::forward<args_t>(args)...));
           auto& control_ref = *control_ptr;
@@ -226,7 +226,7 @@ namespace xtd {
         /// @par Examples
         /// The folowing example demonstartes the use of xtd::forms::control::control_collection::emplace, xtd::forms::control::control_collection::emplace_at and xtd::forms::control::control_collection::emplace_back methods.
         /// @include emplace.cpp
-        template<typename control_t, typename ... args_t>
+        template<class control_t, class ...args_t>
         control_t& emplace_at(size_t index, args_t&& ...args) {
           auto control_ptr = xtd::new_uptr<control_t>(control_t::create(std::forward<args_t>(args)...));
           auto& control_ref = *control_ptr;
@@ -243,7 +243,7 @@ namespace xtd {
         /// @par Examples
         /// The folowing example demonstartes the use of xtd::forms::control::control_collection::emplace, xtd::forms::control::control_collection::emplace_at and xtd::forms::control::control_collection::emplace_back methods.
         /// @include emplace.cpp
-        template<typename control_t, typename ... args_t>
+        template<class control_t, class ...args_t>
         control_t& emplace_back(args_t&& ...args) {
           auto control_ptr = xtd::new_uptr<control_t>(control_t::create(std::forward<args_t>(args)...));
           auto& control_ref = *control_ptr;

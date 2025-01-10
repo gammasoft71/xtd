@@ -20,7 +20,7 @@ namespace xtd {
     /// @brief Returns a pointer to an overloaded method. The template parameter is the list of the argument types of the method.
     /// @param method is the pointer to the (member) method
     /// @return Pointer to an overloaded method.
-    template<typename result_t, typename type_t>
+    template<class result_t, class type_t>
     constexpr auto operator()(result_t (type_t::*method)(args_t...)) const noexcept -> decltype(method) {return method;}
     /// @}
     
@@ -30,7 +30,7 @@ namespace xtd {
     /// @brief Returns a pointer to an overloaded method. The template parameter is the list of the argument types of the method.
     /// @param method is the pointer to the (member) method
     /// @return Pointer to an overloaded method.
-    template<typename result_t, typename type_t>
+    template<class result_t, class type_t>
     static constexpr auto of(result_t (type_t::*method)(args_t...)) noexcept -> decltype(method) {return method;}
     /// @}
   };
@@ -47,7 +47,7 @@ namespace xtd {
     /// @brief Returns a pointer to an overloaded method. The template parameter is the list of the argument types of the method.
     /// @param method is the pointer to the (member) method
     /// @return Pointer to an overloaded method.
-    template<typename result_t, typename type_t>
+    template<class result_t, class type_t>
     constexpr auto operator()(result_t (type_t::*method)(args_t...) const) const noexcept -> decltype(method) {return method;}
     /// @}
     
@@ -57,7 +57,7 @@ namespace xtd {
     /// @brief Returns a pointer to an overloaded method. The template parameter is the list of the argument types of the method.
     /// @param method is the pointer to the (member) method
     /// @return Pointer to an overloaded method.
-    template<typename result_t, typename type_t>
+    template<class result_t, class type_t>
     static constexpr auto of(result_t (type_t::*method)(args_t...) const) noexcept -> decltype(method) {return method;}
     /// @}
   };

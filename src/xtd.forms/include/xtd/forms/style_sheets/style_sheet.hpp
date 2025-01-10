@@ -449,7 +449,7 @@ namespace xtd {
         xtd::uri uri_from_css(const xtd::string& css_text, const xtd::uri& default_value) const noexcept;
         xtd::forms::style_sheets::white_space white_space_from_css(const xtd::string& css_text, const xtd::forms::style_sheets::white_space& default_value) const noexcept;
         
-        template<typename type_t, typename collection_t>
+        template<class type_t, class collection_t>
         type_t get_state_control(const collection_t& collection, pseudo_state state) const noexcept {
           auto result = type_t();
           auto it = collection.find(pseudo_state::standard);

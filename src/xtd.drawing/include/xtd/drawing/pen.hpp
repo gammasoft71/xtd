@@ -43,7 +43,7 @@ namespace xtd {
       /// @param brush A xtd::drawing::brush that determines the fill properties of this xtd::drawing::pen.
       /// @remarks The brush property determines how the xtd::drawing::pen draws lines. Lines are drawn as if they are filled rectangles, with the characteristics of the specified brush.
       /// @remarks The width property of the new xtd::drawing::pen  is set to 1 (the default).
-      template<typename brush_t>
+      template<class brush_t>
       explicit pen(const brush_t& brush) {
         create_data();
         this->brush(brush);
@@ -54,7 +54,7 @@ namespace xtd {
       /// @param width A single number that represent the pen width.
       /// @remarks The brush property determines how the xtd::drawing::pen draws lines. Lines are drawn as if they are filled rectangles, with the characteristics of the specified brush.
       /// @remarks The width property of the new xtd::drawing::pen  is set to 1 (the default).
-      template<typename brush_t>
+      template<class brush_t>
       pen(const brush_t& brush, float width) {
         create_data();
         this->width(width);
@@ -99,7 +99,7 @@ namespace xtd {
       /// @brief Sets the xtd::drawing::brush that determines attributes of this xtd::drawing::pen.
       /// @param value A xtd::drawing::brush that determines attributes of this xtd::drawing::pen.
       /// @remarks Assigning this property causes the pen to draw filled lines and curves. It overrides thextd::drawing::pen::color property of the xtd::drawing::pen.
-      template<typename brush_t>
+      template<class brush_t>
       xtd::drawing::pen& brush(const brush_t& value) {
         brush_(value.template memberwise_clone<brush_t>());
         color_(xtd::drawing::color::empty);

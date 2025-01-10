@@ -120,7 +120,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example compares different objects.
     /// @include object_equals2.cpp
-    template<typename object_a_t, typename object_b_t>
+    template<class object_a_t, class object_b_t>
     static bool equals(const object_a_t& object_a, const object_b_t& object_b) noexcept {
       static_assert(std::is_base_of<xtd::object, object_a_t>::value, "object_a does not inherit from xtd::object");
       static_assert(std::is_base_of<xtd::object, object_b_t>::value, "object_b does not inherit from xtd::object");
@@ -134,7 +134,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example uses xtd::object::reference_equals to determine if two objects are the same instance.
     /// @include object_reference_equals.cpp
-    template<typename object_a_t, typename object_b_t>
+    template<class object_a_t, class object_b_t>
     static bool reference_equals(const object_a_t& object_a, const object_b_t& object_b) noexcept {
       static_assert(std::is_base_of<xtd::object, object_a_t>::value, "object_a does not inherit from xtd::object");
       static_assert(std::is_base_of<xtd::object, object_b_t>::value, "object_b does not inherit from xtd::object");
@@ -159,7 +159,7 @@ std::ostream& operator <<(std::ostream& os, const xtd::object& obj) noexcept;
 #if defined(__xtd__cpp_lib_format)
 template <>
 struct std::formatter<xtd::object> : std::formatter<std::string> {
-  template<typename object_t, typename format_context_t>
+  template<class object_t, class format_context_t>
   auto format(const object_t& obj, format_context_t& ctx) const {return std::format_to(ctx.out(), "{}", std::string {obj.to_string()});}
 };
 #endif
