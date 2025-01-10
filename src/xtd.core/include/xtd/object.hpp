@@ -95,7 +95,7 @@ namespace xtd {
     /// * Call the xtd::object::memberwise_clone method to create a shallow copy of an object, and then assign new objects whose values are the same as the original object to any properties or fields whose values are reference types. The `deep_copy` method in the example illustrates this approach.
     /// * Serialize the object to be deep copied, and then restore the serialized data to a different object variable.
     /// * Use reflection with recursion to perform the deep copy operation.
-    template<typename object_t>
+    template<class object_t>
     xtd::uptr<object_t> memberwise_clone() const {
       auto object_ptr = dynamic_cast<const object_t*>(this);
       if (object_ptr == nullptr) __throw_invalid_cast_exception(__FILE__, __LINE__, __func__);

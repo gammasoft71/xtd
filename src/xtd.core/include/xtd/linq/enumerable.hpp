@@ -70,7 +70,7 @@ namespace xtd {
       using list = typename xtd::collections::generic::list<type_t>;
       
       /// @brief Represents the key value pair value type.
-      template<typename key_t, typename value_t>
+      template<class key_t, class value_t>
       using key_value_pair = xtd::collections::generic::key_value_pair<key_t, value_t>;
       /// @}
       

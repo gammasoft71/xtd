@@ -761,7 +761,7 @@ namespace xtd {
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
       /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
-      template<typename object_t>
+      template<class object_t>
       basic_string_builder& append(object_t value) {return append_format("{}", value);}
       /// @brief Appends additional characters to the string.
       /// @param count The number of characters to append.
@@ -1597,7 +1597,7 @@ namespace xtd {
       /// @remarks This instance of xtd::text::basic_string_builder is not changed if `value` is `empty` (its `length` is zero).
       /// @par Notes to Callers
       /// Calls to this method threw an xtd::argument_out_of_range_exception if inserting value would cause the object's total length to exceed xtd::text::basic_string_builder::max_capacity.
-      template<typename object_t>
+      template<class object_t>
       basic_string_builder& insert(size_type index, object_t value) {return insert(index, xtd::basic_string<char_t>::format("{}", value));}
       /// @brief Inserts characters into the string.
       /// @param index The position at which the content will be inserted.

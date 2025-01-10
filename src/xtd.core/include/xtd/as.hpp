@@ -50,7 +50,7 @@
 #undef __XTD_CORE_INTERNAL__
 
 /// @cond
-template<typename new_type_t, typename current_type_t>
+template<class new_type_t, class current_type_t>
 new_type_t* __convert_value__(current_type_t* value) {
   return xtd::as<new_type_t>(value);
 }
