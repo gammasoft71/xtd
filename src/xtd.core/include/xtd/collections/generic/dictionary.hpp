@@ -518,6 +518,14 @@ namespace xtd {
         const_local_iterator cbegin(size_type n) const {
           return data_->items.begin(n);
         }
+        
+        /// @brief Returns an iterator to the end of the specified bucket.
+        /// @param n The index of the bucket to access.
+        /// @return Iterator to the element following the last element.
+        /// @remarks Returns an iterator to the element following the last element of the bucket with index `n`. This element acts as a placeholder, attempting to access it results in undefined behavior.
+        const_local_iterator cend(size_type n) const {
+          return data_->items.end(n);
+        }
 
         /// @brief Erases all elements from the container. After this call, xtd::collections::generic::dictionary::size returns zero.
         /// @remarks Invalidates any references, pointers, and iterators referring to contained elements. May also invalidate past-the-end iterators.
@@ -568,6 +576,22 @@ namespace xtd {
           return to_iterator(data_->items.emplace_hint(to_base_type_iterator(hint), std::forward<args_t>(args)...));
         }
         
+        /// @brief Returns an iterator to the end of the specified bucket.
+        /// @param n The index of the bucket to access.
+        /// @return Iterator to the element following the last element.
+        /// @remarks Returns an iterator to the element following the last element of the bucket with index `n`. This element acts as a placeholder, attempting to access it results in undefined behavior.
+        local_iterator end(size_type n) {
+          return data_->items.end(n);
+        }
+        
+        /// @brief Returns an iterator to the end of the specified bucket.
+        /// @param n The index of the bucket to access.
+        /// @return Iterator to the element following the last element.
+        /// @remarks Returns an iterator to the element following the last element of the bucket with index `n`. This element acts as a placeholder, attempting to access it results in undefined behavior.
+        const_local_iterator end(size_type n) const {
+          return data_->items.end(n);
+        }
+
         /// @brief Returns range of elements matching a specific key.
         /// @param key The key value to compare the elements to.
         /// @return xtd::collections::generic::key_value_pair containing a pair of iterators defining the wanted range. If there are no such elements, past-the-end (see xtd::collections::generic::dictionary::end) iterators are returned as both elements of the pair.
