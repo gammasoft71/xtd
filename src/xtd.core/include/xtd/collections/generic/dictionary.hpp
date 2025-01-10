@@ -458,7 +458,7 @@ namespace xtd {
         /// @exception xtd::not_supported_exception The xtd::collections::generic::dictionary <key_t, value_t> is read-only.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::dictionary::add method does not modify existing elements.
         void add(const key_t& key, const value_t value) override {
-          const auto& [iterator, succeeded] = data_->items.insert({key, value});
+          const auto& [iterator, succeeded] = data_->items.insert(std::forward<base_value_type>({key, value}));
           if (!succeeded) throw xtd::argument_exception {};
         }
 
@@ -625,7 +625,7 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         void insert(std::initializer_list<base_value_type> ilist) {
           for (const auto& [key, value] : ilist)
-            add({key, value});
+            add(std::forward<value_type>({key, value}));
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param ilist The initializer list to insert the values from.
@@ -635,7 +635,7 @@ namespace xtd {
         template <typename init_key_t, typename init_value_t>
         void insert(std::initializer_list<key_value_pair<init_key_t, init_value_t>> ilist) {
           for (const auto& [key, value] : ilist)
-            add({key, value});
+            add(std::forward<value_type>({key, value}));
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param nh A compatible [node handle](https://en.cppreference.com/w/cpp/container/node_handle).
