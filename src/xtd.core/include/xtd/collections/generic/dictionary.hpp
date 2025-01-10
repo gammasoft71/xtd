@@ -552,7 +552,6 @@ namespace xtd {
         key_value_pair<iterator, bool> insert(const value_type& value) {
           return data_->items.insert(value);
         }
-        
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param value The element value to insert.
         /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place.
@@ -562,7 +561,6 @@ namespace xtd {
         key_value_pair<iterator, bool> insert(value_type&& value) {
           return data_->items.insert(value);
         }
-        
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param value The element value to insert.
         /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place.
@@ -574,7 +572,6 @@ namespace xtd {
         key_value_pair<iterator, bool> insert(type_t&& value) {
           return data_->items.insert(value);
         }
-        
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param hint The iterator, used as a suggestion as to where to insert the content.
         /// @param value The element value to insert.
@@ -585,7 +582,6 @@ namespace xtd {
         iterator insert(const_iterator hint, const value_type& value) {
           return to_iterator(data_->items.insert(to_base_type_iterator(hint), value));
         }
-        
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param hint The iterator, used as a suggestion as to where to insert the content.
         /// @param value The element value to insert.
@@ -596,7 +592,6 @@ namespace xtd {
         iterator insert(const_iterator hint, value_type&& value) {
           return to_iterator(data_->items.insert(to_base_type_iterator(hint), value));
         }
-        
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param hint The iterator, used as a suggestion as to where to insert the content.
         /// @param value The element value to insert.
@@ -609,7 +604,6 @@ namespace xtd {
         iterator insert(const_iterator hint, type_t&& value) {
           return to_iterator(data_->items.insert(to_base_type_iterator(hint), value));
         }
-                
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param first The first iterator of the range of elements to insert.
         /// @param last The last iterator of the range of elements to insert.
@@ -624,7 +618,6 @@ namespace xtd {
             add(key, value);
           }
         }
-
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param ilist The initializer list to insert the values from.
         /// @remarks Inserts elements from initializer list ilist. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844)).
@@ -634,7 +627,6 @@ namespace xtd {
           for (const auto& [key, value] : ilist)
             add({key, value});
         }
-
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param ilist The initializer list to insert the values from.
         /// @remarks Inserts elements from initializer list ilist. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844)).
@@ -645,7 +637,6 @@ namespace xtd {
           for (const auto& [key, value] : ilist)
             add({key, value});
         }
-        
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param nh A compatible [node handle](https://en.cppreference.com/w/cpp/container/node_handle).
         /// @return An object of xtd::collections::generic::dictionary::insert_return_type with the members initialized as follows:
@@ -658,7 +649,6 @@ namespace xtd {
         insert_return_type insert(node_type&& nh) {
           return data_->items.inser(nh);
         }
-        
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param hint The iterator, used as a suggestion as to where to insert the content.
         /// @param nh A compatible [node handle](https://en.cppreference.com/w/cpp/container/node_handle).
@@ -666,10 +656,53 @@ namespace xtd {
         /// @remarks If `nh` is an empty [node handle](https://en.cppreference.com/w/cpp/container/node_handle), does nothing and returns the end iterator. Otherwise, inserts the element owned by nh into the container, if the container doesn't already contain an element with a key equivalent to `nh.key()`, and returns the iterator pointing to the element with key equivalent to `nh.key()`(regardless of whether the insert succeeded or failed). If the insertion succeeds, `nh` is moved from, otherwise it retains ownership of the element. `hint` is used as a non-binding suggestion to where the search should start. The behavior is undefined if `nh` is not empty and `get_allocator() != nh.get_allocator()`.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
         iterator insert(const_iterator hint, node_type&& nh) {
-          return data_->items.inser(to_base_type_iterator(hint), nh);
+          return to_iterator(data_->items.inser(to_base_type_iterator(hint), nh));
         }
         
+        /// @brief Inserts an element or assigns to the current element if the key already exists.
+        /// @param k The key used both to look up and to insert if not found.
+        /// @param obj The value to insert or assign.
+        /// @remarks If a key equivalent to `k` already exists in the container, assigns `std::forward<type_t>(obj)` to the xtd::collections::generic::dictionary::mapped_type corresponding to the key `k`. If the key does not exist, inserts the new value as if by xtd::collections::generic::dictionary::insert, constructing it from `value_type(k, std::forward<type_t>(obj))`.
+        /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
+        template <typename type_t>
+        key_value_pair<iterator, bool> insert_or_assign(const key_t& k, type_t&& obj) {
+          return data_->items.insert_or_assign(k, obj);
+        }
+        /// @brief Inserts an element or assigns to the current element if the key already exists.
+        /// @param k The key used both to look up and to insert if not found.
+        /// @param obj The value to insert or assign.
+        /// @remarks If a key equivalent to `k` already exists in the container, assigns `std::forward<type_t>(obj)` to the xtd::collections::generic::dictionary::mapped_type corresponding to the key `k`. If the key does not exist, inserts the new value as if by xtd::collections::generic::dictionary::insert, constructing it from `value_type(k, std::forward<type_t>(obj))`.
+        /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
+        template <typename type_t>
+        key_value_pair<iterator, bool> insert_or_assign(key_t&& k, type_t&& obj) {
+          return data_->items.insert_or_assign(std::move(k), obj);
+        }
+        /// @brief Inserts an element or assigns to the current element if the key already exists.
+        /// @param hint The iterator to the position before which the new element will be inserted.
+        /// @param k The key used both to look up and to insert if not found.
+        /// @param obj The value to insert or assign.
+        /// @remarks If a key equivalent to `k` already exists in the container, assigns `std::forward<type_t>(obj)` to the xtd::collections::generic::dictionary::mapped_type corresponding to the key `k`. If the key does not exist, inserts the new value as if by xtd::collections::generic::dictionary::insert, constructing it from `value_type(k, std::forward<type_t>(obj))`.
+        /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
+        template <typename type_t>
+        iterator insert_or_assign(const_iterator hint, const key_t& k, type_t&& obj) {
+          return to_iterator(data_->items.insert_or_assign(to_base_type_iterator(hint), k, obj));
+        }
+        /// @brief Inserts an element or assigns to the current element if the key already exists.
+        /// @param hint The iterator to the position before which the new element will be inserted.
+        /// @param k The key used both to look up and to insert if not found.
+        /// @param obj The value to insert or assign.
+        /// @remarks If a key equivalent to `k` already exists in the container, assigns `std::forward<type_t>(obj)` to the xtd::collections::generic::dictionary::mapped_type corresponding to the key `k`. If the key does not exist, inserts the new value as if by xtd::collections::generic::dictionary::insert, constructing it from `value_type(k, std::forward<type_t>(obj))`.
+        /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
+        template <typename type_t>
+        iterator insert_or_assign(const_iterator hint, key_t&& k, type_t&& obj) {
+          return to_iterator(data_->items.insert_or_assign(to_base_type_iterator(hint), std::move(k), obj));
+        }
       /// @}
         
         /// @name Public Operators
