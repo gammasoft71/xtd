@@ -497,9 +497,10 @@ namespace xtd {
         /// @remarks Invalidates any references, pointers, and iterators referring to contained elements. May also invalidate past-the-end iterators.
         void clear() noexcept {data_->items.clear();}
         
-        /// @brief Inserts a new element into the container constructed in-place with the given args, if there is no element with the key in the container.
+        /// @brief Constructs element in-place.
         /// @param args The arguments to forward to the constructor of the element.
         /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to `true` if and only if the insertion took place.
+        /// @remarks Inserts a new element into the container constructed in-place with the given args, if there is no element with the key in the container.
         /// @remarks The constructor of the new element (i.e. `std::pair<const key_t, value_t>)` is called with exactly the same arguments as supplied to emplace, forwarded via `std::forward<args_t>(args)....` The element may be constructed even if there already is an element with the key in the container, in which case the newly constructed element will be destroyed immediately (see xtd::collections::generic::dictionary::try_emplace if this behavior is undesirable).
         /// @remarks Careful use of emplace allows the new element to be constructed while avoiding unnecessary copy or move operations.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
@@ -508,6 +509,18 @@ namespace xtd {
         key_value_pair<iterator, bool> emplace(args_t&& ...args) {
           const auto& [iterator, succeeded] = data_->items.emplace(std::forward<args_t>(args)...);
           return {to_iterator(iterator, succeeded)};
+        }
+
+        /// @brief constructs elements in-place using a hint
+        /// @param hint The iterator, used as a suggestion as to where to insert the new element.
+        /// @param args The arguments to forward to the constructor of the element.
+        /// @remarks Inserts a new element into the container, using `hint` as a suggestion where the element should go.
+        /// @remarks The constructor of the element type (value_type, that is, `std::pair<const key_t, value_t>`) is called with exactly the same arguments as supplied to the function, forwarded with `std::forward<args_t>(args)...`.
+        /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
+        template <typename ...args_t>
+        iterator emplace_hint(iterator hint, args_t&& ...args) {
+          return to_iterator(data_->items.emplace_hint(to_base_type_iterator(hint), std::forward<args_t>(args)...));
         }
         
         /// @brief Returns the allocator associated with the container.
