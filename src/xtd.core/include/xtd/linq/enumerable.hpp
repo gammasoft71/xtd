@@ -274,7 +274,7 @@ namespace xtd {
       /// @par Example
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable2.cpp
-      template<typename input_iterator_t>
+      template<class input_iterator_t>
       static const auto& as_enumerable(input_iterator_t first, input_iterator_t last) noexcept {
         using source_t = typename std::decay<decltype(*first)>::type;
         static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
@@ -291,7 +291,7 @@ namespace xtd {
       /// @par Example
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @include enumerable_as_enumerable2.cpp
-      template<typename input_iterator_t>
+      template<class input_iterator_t>
       static const auto& as_enumerable(input_iterator_t iterator, size_t length) noexcept {
         return as_enumerable(iterator, iterator + length);
       }
@@ -604,7 +604,7 @@ namespace xtd {
       /// @par Example
       /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
       /// @remarks Same as as_enemerable(input_iterator_t first, input_iterator_t last).
-      template<typename input_iterator_t>
+      template<class input_iterator_t>
       static const auto& from(input_iterator_t first, input_iterator_t last) noexcept {
         return as_enumerable(first, last);
       }
@@ -614,7 +614,7 @@ namespace xtd {
       /// @param legnth The le,gth to iterate.
       /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
       /// @remarks Same as as_enemerable(input_iterator_t iterator, size_t length).
-      template<typename input_iterator_t>
+      template<class input_iterator_t>
       static const auto& from(input_iterator_t iterator, size_t length) noexcept {
         return as_enumerable(iterator, iterator + length);
       }

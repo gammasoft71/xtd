@@ -13,33 +13,33 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @cond
-  template<typename value_t>
+  template<class value_t>
   inline bool is(bool value) {return false;}
-  template<typename value_t>
+  template<class value_t>
   inline bool is(decimal value) {return false;}
-  template<typename value_t>
+  template<class value_t>
   inline bool is(double value) {return false;}
-  template<typename value_t>
+  template<class value_t>
   inline bool is(float value) {return false;}
-  template<typename value_t>
+  template<class value_t>
   inline bool is(sbyte value) {return false;}
-  template<typename value_t>
+  template<class value_t>
   inline bool is(int16 value) {return false;}
-  template<typename value_t>
+  template<class value_t>
   inline bool is(int32 value) {return false;}
-  template<typename value_t>
+  template<class value_t>
   inline bool is(int64 value) {return false;}
-  template<typename value_t>
+  template<class value_t>
   inline bool is(slong value) {return false;}
-  template<typename value_t>
+  template<class value_t>
   inline bool is(xtd::byte value) {return false;}
-  template<typename value_t>
+  template<class value_t>
   inline bool is(uint16 value) {return false;}
-  template<typename value_t>
+  template<class value_t>
   inline bool is(uint32 value) {return false;}
-  template<typename value_t>
+  template<class value_t>
   inline bool is(uint64 value) {return false;}
-  template<typename value_t>
+  template<class value_t>
   inline bool is(xtd::ulong value) {return false;}
   /// @endcond
   

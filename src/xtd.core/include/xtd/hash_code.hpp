@@ -61,7 +61,7 @@ namespace xtd {
     /// @brief Combines values into a hash code.
     /// @param values The values to combine into the hash code.
     /// @return The hash code that represents the values.
-    template<typename ...args_t>
+    template<class ...args_t>
     static xtd::size combine(args_t... values) noexcept {return combine_iterator(generate_uniqueness_seed(), values...);}
     /// @}
 

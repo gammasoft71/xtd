@@ -717,21 +717,21 @@ inline xtd::string __tunit_to_string(const wchar_t* value) {
   return __tunit_to_string(std::wstring(value));
 }
 
-template<typename value_t>
+template<class value_t>
 inline xtd::string __tunit_to_string(const value_t& value) {
   std::stringstream ss;
   ss << value;
   return ss.str();
 }
 
-template<typename value_t>
+template<class value_t>
 inline xtd::string __tunit_to_string(const value_t* value) {
   std::stringstream ss;
   ss << reinterpret_cast<xtd::intptr>(value);
   return ss.str();
 }
 
-template<typename value_t>
+template<class value_t>
 inline xtd::string __tunit_to_string(value_t* value) {
   std::stringstream ss;
   ss << reinterpret_cast<xtd::intptr>(value);

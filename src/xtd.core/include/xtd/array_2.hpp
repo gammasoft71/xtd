@@ -36,7 +36,7 @@ namespace xtd {
   /// @par Examples
   /// The following code example creates and initializes an Array and displays its properties and its elements.
   /// @include array2.cpp
-  template<typename type_t, typename allocator_t>
+  template<class type_t, class allocator_t>
   class array<type_t, 2, allocator_t> : public xtd::basic_array<type_t, allocator_t> {
   public:
     /// @name Public Aliases

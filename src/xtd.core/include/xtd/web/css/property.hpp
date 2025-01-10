@@ -29,7 +29,7 @@ namespace xtd {
         
         /// @{
         const xtd::string& value() const noexcept {return value_;}
-        template<typename value_t>
+        template<class value_t>
         uintptr value() const noexcept {return xtd::parse<value_t>(value_);}
         /// @}
         
@@ -50,7 +50,7 @@ namespace xtd {
         uint32 to_uint32() const {return xtd::parse<uint32>(value_);}
         uint64 to_uint64() const {return xtd::parse<uint64>(value_);}
         uintptr to_uintptr() const {return xtd::parse<uintptr>(value_);}
-        template<typename value_t>
+        template<class value_t>
         uintptr to() const {return xtd::parse<value_t>(value_);}
         /// @}
         
@@ -69,7 +69,7 @@ namespace xtd {
         static property from(uint16 value) {return property(string::format("{}", value));}
         static property from(uint32 value) {return property(string::format("{}", value));}
         static property from(uint64 value) {return property(string::format("{}", value));}
-        template<typename value_t>
+        template<class value_t>
         static property from(value_t value) {return property(string::format("{}", value));}
         /// @}
 

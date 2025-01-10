@@ -36,7 +36,7 @@
 #include <string>
 
 /// @cond
-template<typename ...args_t>
+template<class ...args_t>
 void __basic_string_extract_format_arg(xtd::basic_string<char>& fmt, xtd::array<__format_information<char>>& formats, args_t&&... args);
 template<typename target_t, typename source_t>
 std::basic_string<target_t> __xtd_convert_to_string(std::basic_string<source_t>&& str) noexcept;
@@ -768,13 +768,13 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified first and last iterators of substring.
     /// @param first The first iterator of substring.
     /// @param last The first iterator of substring.
-    template<typename input_iterator_t>
+    template<class input_iterator_t>
     basic_string(input_iterator_t first, input_iterator_t last) : chars_(first, last) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified first and last iterators of substring and allocator.
     /// @param first The first iterator of substring.
     /// @param last The first iterator of substring.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    template<typename input_iterator_t>
+    template<class input_iterator_t>
     basic_string(input_iterator_t first, input_iterator_t last, const allocator_type& allocator) : chars_(first, last, allocator) {}
 
     /// @brief Initializes a new instance of xtd::basic_string with specified string view of substring and allocator.
@@ -2191,7 +2191,7 @@ namespace xtd {
     /// @brief Creates the basic_string representation of a specified object.
     /// @param value The object to represent.
     /// @return The basic_string representation of the value of arg.
-    template<typename value_t>
+    template<class value_t>
     static basic_string concat(value_t value) noexcept {
       return format("{}", value);
     }
@@ -2257,7 +2257,7 @@ namespace xtd {
     /// @return string formatted.
     /// @ingroup format_parse
     /// @remarks for more information about format see @ref FormatPage "Format".
-    template<typename ...args_t>
+    template<class ...args_t>
     static basic_string format(const basic_string<char>& fmt, args_t&& ... args);
 
     /// @brief Gets the fully qualified class name of the objec_t, including the namespace of the objec_t.
@@ -2334,18 +2334,18 @@ namespace xtd {
       return result;
     }
     /// @cond
-    template<typename value_t>
+    template<class value_t>
     static basic_string join(const basic_string& separator, const std::initializer_list<value_t>& values) noexcept;
-    template<typename value_t>
+    template<class value_t>
     static basic_string join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index);
-    template<typename value_t>
+    template<class value_t>
     static basic_string join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index, xtd::size count);
     /// @endcond
     
     /// @brief Converts a basic_string into a value_t type.
     /// @param str Ax xtd::basic_string to convert to value_t
     /// @return The value_t object parsed.
-    template<typename value_t>
+    template<class value_t>
     static value_t parse(const basic_string& str) {
       if constexpr (std::is_same_v<char, char_t>) return xtd::parse<value_t>(str.chars());
       else return xtd::parse<value_t>(__xtd_convert_to_string<char>(str.chars()));
@@ -2410,14 +2410,14 @@ namespace xtd {
     /// | L      |               |                        | long double     |       |          |       |                 |
     /// @remarks Note regarding the c specifier: it takes an int (or wint_t) as argument, but performs the proper conversion to a char8 value (or a wchar) before formatting it for output.
     /// @remarks you can use std::basic_string or std::wstring with format param %%s.
-    template<typename ... args_t>
+    template<class ...args_t>
     static basic_string sprintf(const basic_string& fmt, args_t&& ... args) noexcept {return __sprintf(fmt.c_str(), convert_param(std::forward<args_t>(args)) ...);}
     
     /// @brief Try to convert a basic_string into a value_t type.
     /// @param str An xtd::basic_string to convert to value_t
     /// @param value The value that will contain the parsed xtd::basic_string.
     /// @return true if xtd::basic_string:=:try_parse succed; otherwise, false.
-    template<typename value_t>
+    template<class value_t>
     static bool try_parse(const basic_string& str, value_t& value) noexcept {
       try {
         value = parse<value_t>(str);

@@ -561,7 +561,7 @@ namespace xtd {
       /// xtd::tunit::collection_valid:is_empty(v1); // test ok.
       /// xtd::tunit::collection_valid:is_empty(v2); // test fails
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_empty(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_empty(value, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that collection contains an item.
       /// @param value The value to check is empty.
@@ -574,7 +574,7 @@ namespace xtd {
       /// xtd::tunit::collection_valid:is_empty(v1, "User message..."); // test ok.
       /// xtd::tunit::collection_valid:is_empty(v2, "User message..."); // test fails
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_empty(const value_t& value, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::is_empty(value, message, stack_frame);
@@ -584,9 +584,9 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename value_t>
+      template<class value_t>
       static void is_empty(const std::initializer_list<value_t>& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_empty(value, xtd::string::empty_string, stack_frame);}
-      template<typename value_t>
+      template<class value_t>
       static void is_empty(const std::initializer_list<value_t>& value, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::is_empty(value, message, stack_frame);
@@ -606,7 +606,7 @@ namespace xtd {
       /// xtd::tunit::collection_valid:is_not_empty(v1); // test ok.
       /// xtd::tunit::collection_valid:is_not_empty(v2); // test fails
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_not_empty(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_empty(value, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that collection or traits does not contain any item.
       /// @param value The value to check is empty.
@@ -619,7 +619,7 @@ namespace xtd {
       /// xtd::tunit::collection_valid:is_not_empty(v1, "User message..."); // test ok.
       /// xtd::tunit::collection_valid:is_not_empty(v2, "User message..."); // test fails
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_not_empty(const value_t& value, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::is_not_empty(value, message, stack_frame);
@@ -629,9 +629,9 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename value_t>
+      template<class value_t>
       static void is_not_empty(const std::initializer_list<value_t>& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_empty(value, xtd::string::empty_string, stack_frame);}
-      template<typename value_t>
+      template<class value_t>
       static void is_not_empty(const std::initializer_list<value_t>& value, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::is_not_empty(value, message, stack_frame);
@@ -651,7 +651,7 @@ namespace xtd {
       /// xtd::tunit::collection_valid:is_ordered(v1); // test ok.
       /// xtd::tunit::collection_valid:is_ordered(v2); // test fails
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_ordered(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_ordered(value, xtd::string::empty_string, stack_frame);}
       /// @brief Validates that collection is ordered.
       /// @param value The value to check is empty.
@@ -664,7 +664,7 @@ namespace xtd {
       /// xtd::tunit::collection_valid:is_ordered(v1, "User message..."); // test ok.
       /// xtd::tunit::collection_valid:is_ordered(v2, "User message..."); // test fails
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_ordered(const value_t& value, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::is_ordered(value, message, stack_frame);
@@ -674,9 +674,9 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename value_t>
+      template<class value_t>
       static void is_ordered(const std::initializer_list<value_t>& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_ordered(value, xtd::string::empty_string, stack_frame);}
-      template<typename value_t>
+      template<class value_t>
       static void is_ordered(const std::initializer_list<value_t>& value, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::is_ordered(value, message, stack_frame);

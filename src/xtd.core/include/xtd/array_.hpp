@@ -44,17 +44,17 @@ namespace xtd {
   // }
 }
 
-template<typename type_t, typename allocator_t>
+template<class type_t, class allocator_t>
 inline const type_t& xtd::basic_array<type_t, allocator_t>::get_value(const xtd::array<xtd::size>& indexes) const {
   return operator()(indexes);
 }
 
-template<typename type_t, typename allocator_t>
+template<class type_t, class allocator_t>
 inline xtd::string xtd::basic_array<type_t, allocator_t>::to_string() const noexcept {
   return xtd::string::format("[{}]", xtd::string::join(", ", *this));
 }
 
-template<typename type_t, typename allocator_t>
+template<class type_t, class allocator_t>
 inline type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array<xtd::size>& indexes) {
   auto position = xtd::size {0};
   for (auto index1 = xtd::size {0}; index1 < indexes.size(); ++index1) {
@@ -68,7 +68,7 @@ inline type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::arra
   return data_->items[position];
 }
 
-template<typename type_t, typename allocator_t>
+template<class type_t, class allocator_t>
 inline const type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd::array<xtd::size>& indexes) const {
   auto position = xtd::size {0};
   for (auto index1 = xtd::size {0}; index1 < indexes.size(); ++index1) {
@@ -82,7 +82,7 @@ inline const type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd
   return data_->items[position];
 }
 
-template<typename type_t, typename allocator_t>
+template<class type_t, class allocator_t>
 inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type, 1>& lengths) {
   data_->items = base_type(std::accumulate(lengths.begin(), lengths.end(), size_type {0}));
   data_->lower_bound.clear();
@@ -94,7 +94,7 @@ inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type,
 }
 
 //template<>
-template<typename type_t, typename allocator_t>
+template<class type_t, class allocator_t>
 inline xtd::collections::object_model::read_only_collection<type_t> xtd::array<>::as_read_only(const xtd::array<type_t, 1, allocator_t>& array) {
   return xtd::collections::object_model::read_only_collection<type_t> {new_ptr<class xtd::array<type_t>>(array)};
 }

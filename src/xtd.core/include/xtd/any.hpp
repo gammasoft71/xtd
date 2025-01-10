@@ -14,13 +14,13 @@
 
 namespace std {
   class any;
-  template<typename value_t>
+  template<class value_t>
   value_t any_cast(const any& any);
   
-  template<typename value_t>
+  template<class value_t>
   value_t* any_cast(any* any) noexcept;
   
-  template<typename value_t>
+  template<class value_t>
   const value_t* any_cast(const any* any) noexcept;
   
   class bad_any_cast : public std::bad_cast {
@@ -32,9 +32,9 @@ namespace std {
   public:
     any() noexcept = default;
     any(const any& other) : content(other.content ? other.content->clone() : nullptr) {}
-    template<typename value_t>
+    template<class value_t>
     any(const value_t& value) : content(new derived<value_t>(value)) {}
-    template<typename value_t>
+    template<class value_t>
     any(value_t&& value) : content(new derived<value_t>(std::move(value))) {}
     
     ~any() {reset();}
@@ -53,7 +53,7 @@ namespace std {
       return *this;
     }
     
-    template<typename value_t>
+    template<class value_t>
     any& operator=(const value_t& value) {
       reset();
       content = new derived<value_t>(value);
@@ -67,21 +67,21 @@ namespace std {
     void reset() noexcept {delete content;}
     
   private:
-    template<typename value_t>
+    template<class value_t>
     friend value_t any_cast(const any& any);
     
-    template<typename value_t>
+    template<class value_t>
     friend value_t* any_cast(any* any) noexcept;
     
-    template<typename value_t>
+    template<class value_t>
     friend const value_t* any_cast(const any* any) noexcept;
     
-    template<typename value_t>
+    template<class value_t>
     value_t& value() {
       return static_cast<derived<value_t>*>(content)->data;
     }
     
-    template<typename value_t>
+    template<class value_t>
     const value_t& value() const {
       return static_cast<derived<value_t>*>(content)->data;
     }
@@ -94,7 +94,7 @@ namespace std {
       const type_info& type;
     };
     
-    template<typename value_t>
+    template<class value_t>
     struct derived : public base {
       derived(const value_t& value) : base(typeid(value)), data(value) {}
       value_t data;
@@ -109,25 +109,25 @@ namespace std {
     base* content = nullptr;
   };
   
-  template<typename value_t>
+  template<class value_t>
   value_t any_cast(const any& any) {
     if (!any.has_value() || typeid(value_t) != any.type()) throw bad_any_cast();
     return any.value<value_t>();
   }
   
-  template<typename value_t>
+  template<class value_t>
   value_t* any_cast(any* any) noexcept {
     if (any == nullptr || !any->has_value() || typeid(value_t) != any->type()) return nullptr;
     return any->value<value_t>();
   }
   
-  template<typename value_t>
+  template<class value_t>
   const value_t* any_cast(const any* any) noexcept {
     if (any == nullptr || !any->has_value() || typeid(value_t) != any->type()) return nullptr;
     return any->value<value_t>();
   }
   
-  template<typename value_t>
+  template<class value_t>
   any make_any(value_t&& value) {
     return any(std::forward<value_t>(value));
   }

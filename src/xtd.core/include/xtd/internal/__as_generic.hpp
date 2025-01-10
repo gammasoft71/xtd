@@ -32,7 +32,7 @@ namespace xtd {
   /// std::any value = 42;
   /// int result = as<int>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(std::any value) {
     try {
       return std::any_cast<new_type_t>(value);
@@ -58,7 +58,7 @@ namespace xtd {
   /// bool value = true;
   /// int result = as<int>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(bool value) {
     return static_cast<new_type_t>(value);
   }
@@ -80,7 +80,7 @@ namespace xtd {
   /// xtd::byte value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(xtd::byte value) {
     return static_cast<new_type_t>(value);
   }
@@ -102,7 +102,7 @@ namespace xtd {
   /// char value = 'a';
   /// int result = as<int>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(char value) {
     return static_cast<new_type_t>(value);
   }
@@ -125,7 +125,7 @@ namespace xtd {
   /// char8 value = u8'a';
   /// int result = as<int>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(char8 value) {
     return static_cast<new_type_t>(value);
   }
@@ -148,7 +148,7 @@ namespace xtd {
   /// char8 value = u'a';
   /// int result = as<int>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(char16 value) {
     return static_cast<new_type_t>(value);
   }
@@ -170,7 +170,7 @@ namespace xtd {
   /// char8 value = U'a';
   /// int result = as<int>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(char32 value) {
     return static_cast<new_type_t>(value);
   }
@@ -192,7 +192,7 @@ namespace xtd {
   /// char8 value = L'a';
   /// int result = as<int>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(wchar value) {
     return static_cast<new_type_t>(value);
   }
@@ -214,7 +214,7 @@ namespace xtd {
   /// decimal value = 42.0l;
   /// int result = as<int>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(decimal value) {
     return static_cast<new_type_t>(value);
   }
@@ -236,7 +236,7 @@ namespace xtd {
   /// double value = 42.0;
   /// int result = as<int>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(double value) {
     return static_cast<new_type_t>(value);
   }
@@ -258,7 +258,7 @@ namespace xtd {
   /// float value = 42.0f;
   /// int result = as<int>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(float value) {
     return static_cast<new_type_t>(value);
   }
@@ -280,7 +280,7 @@ namespace xtd {
   /// int16 value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(int16 value) {
     return static_cast<new_type_t>(value);
   }
@@ -302,7 +302,7 @@ namespace xtd {
   /// int32 value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(int32 value) {
     return static_cast<new_type_t>(value);
   }
@@ -324,7 +324,7 @@ namespace xtd {
   /// int64 value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(int64 value) {
     return static_cast<new_type_t>(value);
   }
@@ -346,7 +346,7 @@ namespace xtd {
   /// slong value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(slong value) {
     return static_cast<new_type_t>(value);
   }
@@ -368,7 +368,7 @@ namespace xtd {
   /// sbyte value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(sbyte value) {
     return static_cast<new_type_t>(value);
   }
@@ -390,7 +390,7 @@ namespace xtd {
   /// uint16 value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(uint16 value) {
     return static_cast<new_type_t>(value);
   }
@@ -412,7 +412,7 @@ namespace xtd {
   /// uint32 value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(uint32 value) {
     return static_cast<new_type_t>(value);
   }
@@ -434,7 +434,7 @@ namespace xtd {
   /// uint64 value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(uint64 value) {
     return static_cast<new_type_t>(value);
   }
@@ -456,7 +456,7 @@ namespace xtd {
   /// xtd::ulong value = 42;
   /// float result = as<float>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(xtd::ulong value) {
     return static_cast<new_type_t>(value);
   }
@@ -479,7 +479,7 @@ namespace xtd {
   /// string value = "Gammasoft";
   /// object result = as<object>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(const xtd::string& value) {
     try {
       return dynamic_cast<const new_type_t&>(value);
@@ -507,7 +507,7 @@ namespace xtd {
   /// string value = "Gammasoft";
   /// object result = as<object>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(xtd::string& value) {
     try {
       return dynamic_cast<new_type_t&>(value);
@@ -518,47 +518,47 @@ namespace xtd {
   }
   
   /// @cond
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(const xtd::string& value, xtd::byte from_base) {
     throw invalid_cast_exception {};
   }
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(xtd::byte value, xtd::byte from_base) {
     throw invalid_cast_exception {};
   }
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(int16 value, xtd::byte from_base) {
     throw invalid_cast_exception {};
   }
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(int32 value, xtd::byte from_base) {
     throw invalid_cast_exception {};
   }
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(int64 value, xtd::byte from_base) {
     throw invalid_cast_exception {};
   }
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(slong value, xtd::byte from_base) {
     throw invalid_cast_exception {};
   }
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(sbyte value, xtd::byte from_base) {
     throw invalid_cast_exception {};
   }
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(uint16 value, xtd::byte from_base) {
     throw invalid_cast_exception {};
   }
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(uint32 value, xtd::byte from_base) {
     throw invalid_cast_exception {};
   }
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(uint64 value, xtd::byte from_base) {
     throw invalid_cast_exception {};
   }
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(xtd::ulong value, xtd::byte from_base) {
     throw invalid_cast_exception {};
   }
@@ -577,7 +577,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(const std::string& value) {
     try {
       return dynamic_cast<const new_type_t&>(value);
@@ -600,7 +600,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(std::string& value) {
     try {
       return dynamic_cast<new_type_t&>(value);
@@ -624,7 +624,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(const std::u8string& value) {
     try {
       return dynamic_cast<const new_type_t&>(value);
@@ -647,7 +647,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(std::u8string& value) {
     try {
       return dynamic_cast<new_type_t&>(value);
@@ -671,7 +671,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(const std::u16string& value) {
     try {
       return dynamic_cast<const new_type_t&>(value);
@@ -694,7 +694,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(std::u16string& value) {
     try {
       return dynamic_cast<new_type_t&>(value);
@@ -717,7 +717,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(const std::u32string& value) {
     try {
       return dynamic_cast<const new_type_t&>(value);
@@ -740,7 +740,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(std::u32string& value) {
     try {
       return dynamic_cast<new_type_t&>(value);
@@ -763,7 +763,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(const std::wstring& value) {
     try {
       return dynamic_cast<const new_type_t&>(value);
@@ -786,7 +786,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(std::wstring& value) {
     try {
       return dynamic_cast<new_type_t&>(value);
@@ -813,7 +813,7 @@ namespace xtd {
   /// const char* value = "Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(const char* value) {
     return reinterpret_cast<new_type_t>(value);
   }
@@ -835,7 +835,7 @@ namespace xtd {
   /// char* value = "Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(char* value) {
     return reinterpret_cast<new_type_t>(value);
   }
@@ -858,7 +858,7 @@ namespace xtd {
   /// const char8* value = u8"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(const char8* value) {
     return reinterpret_cast<new_type_t>(value);
   }
@@ -880,7 +880,7 @@ namespace xtd {
   /// char8* value = u8"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(char8* value) {
     return reinterpret_cast<new_type_t>(value);
   }
@@ -903,7 +903,7 @@ namespace xtd {
   /// const char16* value = u"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(const char16* value) {
     return reinterpret_cast<new_type_t>(value);
   }
@@ -925,7 +925,7 @@ namespace xtd {
   /// char16* value = u"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(char16* value) {
     return reinterpret_cast<new_type_t>(value);
   }
@@ -947,7 +947,7 @@ namespace xtd {
   /// const char32* value = U"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(const char32* value) {
     return reinterpret_cast<new_type_t>(value);
   }
@@ -969,7 +969,7 @@ namespace xtd {
   /// char32* value = U"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(char32* value) {
     return reinterpret_cast<new_type_t>(value);
   }
@@ -991,7 +991,7 @@ namespace xtd {
   /// const wchar* value = L"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(const wchar* value) {
     return reinterpret_cast<new_type_t>(value);
   }
@@ -1013,7 +1013,7 @@ namespace xtd {
   /// wchar* value = L"Gammasoft";
   /// intptr result = as<intptr>(value);
   /// ```
-  template<typename new_type_t>
+  template<class new_type_t>
   new_type_t as(wchar* value) {
     return reinterpret_cast<new_type_t>(value);
   }

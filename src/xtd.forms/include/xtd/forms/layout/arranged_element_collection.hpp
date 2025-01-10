@@ -40,7 +40,7 @@ namespace xtd {
           value_type() = default;
           value_type(const value_type&) = default;
           value_type(value_type&&) = default;
-          template<typename ...args_t>
+          template<class ...args_t>
           value_type(args_t&& ...args) : type_t(args...) {}
           value_type& operator =(const value_type& value) {
             if (value.owner) owner = value.owner;
@@ -291,7 +291,7 @@ namespace xtd {
         /// @brief Inserts specified element at specified position.
         /// @param pos The iterator before which the content will be inserted. pos may be the arranged_element_collection::end iterator.
         /// @param args The arguments to forward to the constructor of the element
-        template<typename ...args_t>
+        template<class ...args_t>
         void emplace(const_iterator pos, args_t&& ... args) {
           size_t index = pos - begin();
           inserting_ = true;
@@ -306,7 +306,7 @@ namespace xtd {
         
         /// @brief Adds an element to the end.
         /// @param args The arguments to forward to the constructor of the element
-        template<typename ...args_t>
+        template<class ...args_t>
         void emplace_back(args_t&& ... args) {
           collection_.push_back(args...);
           size_t index = collection_.size() - 1;

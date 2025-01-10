@@ -65,7 +65,7 @@ namespace xtd {
     /// @par Examples
     /// The following example wraps an array in a read-only ReadOnlyCollection<type_t>.
     /// @include ArrayAsReadOnly.cpp
-    template<typename type_t, typename allocator_t>
+    template<class type_t, class allocator_t>
     static xtd::collections::object_model::read_only_collection<type_t> as_read_only(const xtd::array<type_t, 1, allocator_t>& array);
 
     /// @brief Searches a range of elements in a one-dimensional sorted array for a value, using the IComparable interface implemented by each element of the array and by the specified value.
@@ -86,7 +86,7 @@ namespace xtd {
     /// @remarks null can always be compared with any other reference type; therefore, comparisons with null do not generate an exception.
     /// @note For every element tested, value is passed to the appropriate IComparable implementation, even if value is null. That is, the IComparable implementation determines how a given element compares to null.
     /// @remarks This method is an O(log n) operation, where n is length.
-    //template<typename type_t, typename allocator_t>
+    //template<class type_t, class allocator_t>
     //static int32 binary_search(const array<type_t, 1, allocator_t>& array, int32 index, int32 length, const type_t& value) {return binary_search(array, index, length, value, xtd::collections::generic::comparer<type_t>::default_comparer);}
     
     /// @brief Searches a range of elements in a one-dimensional sorted array for a value, using the specified IComparer interface.
@@ -111,7 +111,7 @@ namespace xtd {
     /// @note For every element tested, value is passed to the appropriate IComparable implementation, even if value is null. That is, the IComparable implementation determines how a given element compares to null.
     /// @remarks This method is an O(log n) operation, where n is length.
     /*
-    template<typename type_t, typename allocator_t>
+    template<class type_t, class allocator_t>
     static xtd::size binary_search(const array<type_t, 1, allocator_t>& array, xtd::size index, xtd::size count, const type_t& value, const xtd::collections::generic::icomparer<type_t>& comparer) {
       if (index + count > array->Length) throw ArgumentException(caller_);
       
@@ -141,7 +141,7 @@ namespace xtd {
     /// @remarks null can always be compared with any other reference type; therefore, comparisons with null do not generate an exception.
     /// @note For every element tested, value is passed to the appropriate IComparable implementation, even if value is null. That is, the IComparable implementation determines how a given element compares to null.
     /// @remarks This method is an O(log n) operation, where n is the Length of array.
-    //template<typename type_t, typename allocator_t>
+    //template<class type_t, class allocator_t>
     //static xtd::size binary_search(const array<type_t, 1, allocator_t>& array, const type_t& value) {return binary_search(array, 0, array.Length, value, xtd::collections::generic::comparer<type_t>::default_comparer.release());}
     
     /// @brief Searches a range of elements in a one-dimensional sorted array for a value, using the specified IComparer interface.
@@ -163,7 +163,7 @@ namespace xtd {
     /// @remarks null can always be compared with any other reference type; therefore, comparisons with null do not generate an exception when using IComparable.
     /// @note For every element tested, value is passed to the appropriate IComparable implementation, even if value is null. That is, the IComparable implementation determines how a given element compares to null.
     /// @remarks This method is an O(log n) operation, where n is length.
-    //template<typename type_t, typename allocator_t>
+    //template<class type_t, class allocator_t>
     //static xtd::size binary_search(const array<type_t, 1, allocator_t>& array, const type_t& value, const xtd::collections::generic::icomparer<type_t>& comparer) {return binary_search(array, 0, array.Length, value, comparer);}
     /// @}
   };

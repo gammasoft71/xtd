@@ -9,14 +9,14 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
 #if defined(__xtd__cpp_lib_char8_t)
-  template<typename value_t>
+  template<class value_t>
   class format_u8string_fixed_point_tests;
   
   test_class_attribute<format_u8string_fixed_point_tests<float>> format_u8string_fixed_point_tests_class_float_attr {"format_u8string_fixed_point_tests<float>"};
   test_class_attribute<format_u8string_fixed_point_tests<double>> format_u8string_fixed_point_tests_class_double_attr {"format_u8string_fixed_point_tests<double>"};
   test_class_attribute<format_u8string_fixed_point_tests<long double>> format_u8string_fixed_point_tests_class_long_double_attr {"format_u8string_fixed_point_tests<long_double>"};
   
-  template<typename value_t>
+  template<class value_t>
   class format_u8string_fixed_point_tests : public test_class {
     inline static std::locale previous_locale;
     static void class_initialize_(class_initialize) {

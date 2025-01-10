@@ -21,7 +21,7 @@ using namespace xtd::collections::generic;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
-  template<typename value_t>
+  template<class value_t>
   class basic_string_tests;
 
   test_class_attribute<basic_string_tests<char>> basic_string_tests_class_char_attr {"basic_string_tests<char>"};
