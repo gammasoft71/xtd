@@ -30,7 +30,7 @@ namespace xtd {
       /// xtd.forms
       /// @ingroup xtd_forms collections
       /// @remarks The xtd::forms::layout::arranged_element_collection class represents a collection of objects arranged on a design surface or inside a parent xtd.forms::container_control.
-      template<typename type_t, typename sorter_t = sorter_none>
+      template<class type_t, class sorter_t = sorter_none>
       class arranged_element_collection : public object {
       public:
         /// @brief Represents the value type of the collection.
@@ -414,7 +414,7 @@ namespace xtd {
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        template<typename iterator_t>
+        template<class iterator_t>
         void push_back_range(iterator_t begin, iterator_t end) {
           for (auto it = begin; it != end; ++it)
             push_back(value_type(*it));

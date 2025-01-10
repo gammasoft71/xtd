@@ -31,7 +31,7 @@ namespace xtd {
         
         wxDC& hdc() {return *hdc_;}
         
-        template<typename hdc_t, typename ...args_type>
+        template<class hdc_t, class ...args_type>
         void create(args_type&& ...args) {
           auto handle = xtd::new_uptr<hdc_t>(args...);
           graphics_.reset();
@@ -59,7 +59,7 @@ namespace xtd {
         }
         
       private:
-        template<typename hdc_t>
+        template<class hdc_t>
         xtd::uptr<wxGraphicsContext> create_graphics(const hdc_t& hdc) {return xtd::uptr<wxGraphicsContext>(wxGraphicsContext::Create(hdc));}
         xtd::uptr<wxGraphicsContext> create_graphics(const wxScreenDC& hdc) {return xtd::uptr<wxGraphicsContext>(wxGraphicsContext::Create());}
         xtd::uptr<wxBitmap> bitmap_;

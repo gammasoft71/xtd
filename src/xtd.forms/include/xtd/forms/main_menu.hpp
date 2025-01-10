@@ -263,13 +263,13 @@ namespace xtd {
       /// @}
       
       /// @cond
-      template<typename on_click_type>
+      template<class on_click_type>
       static xtd::forms::main_menu create_standard_items(on_click_type on_click) {return create_standard_items(xtd::event_handler(on_click));}
-      template<typename on_click_type>
+      template<class on_click_type>
       static xtd::forms::main_menu create_standard_items(const xtd::drawing::size& size, on_click_type on_click) {return create_standard_items(size, xtd::event_handler(on_click));}
-      template<typename on_click_type>
+      template<class on_click_type>
       static xtd::forms::main_menu create_standard_items(const xtd::string& theme, on_click_type on_click) {return create_standard_items(theme, xtd::event_handler(on_click));}
-      template<typename on_click_type>
+      template<class on_click_type>
       static xtd::forms::main_menu create_standard_items(const xtd::string& theme, const xtd::drawing::size& size, on_click_type on_click) {return create_standard_items(theme, size, xtd::event_handler(on_click));}
       /// @endcond
       

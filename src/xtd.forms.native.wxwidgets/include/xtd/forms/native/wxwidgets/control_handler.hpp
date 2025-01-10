@@ -14,7 +14,7 @@ namespace xtd {
       public:
         control_handler() = default;
         
-        template<typename control_type, typename ...args_type>
+        template<class control_type, class ...args_type>
         void create(args_type&& ...args) {
           control_ = new control_wrapper<control_type>(this, args...);
           control_->SetClientData(this);
