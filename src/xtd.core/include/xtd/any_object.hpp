@@ -108,7 +108,7 @@ namespace xtd {
   private:
     template<class type_t>
     inline ptr<object> boxing_ptr(const type_t& value) noexcept {return new_ptr<typename __box_enum_or_object__<type_t, typename std::is_enum<type_t>::type>::type>(value);}
-    template<typename type_t, typename ...args_t>
+    template<class type_t, class ...args_t>
     inline ptr<object> boxing_ptr(args_t&& ...args) noexcept {return new box<type_t>(args...);}
     //inline ptr<object> boxing_ptr(const object& value) noexcept {return new value;}
     inline ptr<object> boxing_ptr(const char* value) noexcept {return new_ptr<string>(value);}

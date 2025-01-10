@@ -20,12 +20,12 @@ namespace xtd {
   };
   
   /// @cond
-  template<typename function_t>
+  template<class function_t>
   struct __xtd_call_once_object__ {
     __xtd_call_once_object__(function_t function) { function(); }
   };
   
-  template<typename function_t>
+  template<class function_t>
   auto operator +(call_once, function_t&& function) {
     return __xtd_call_once_object__<function_t>{std::forward<function_t>(function)};
   }

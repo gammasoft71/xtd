@@ -6,7 +6,7 @@
 
 /// @cond
 namespace xtd::collections::generic {
-  template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   class list;
 }
 /// @endcond

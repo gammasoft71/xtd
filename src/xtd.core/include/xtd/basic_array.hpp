@@ -11,7 +11,7 @@ namespace xtd {
   /// @brief Base object that represent array.
   /// @par Definition
   /// ```cpp
-  /// template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  /// template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   /// class basic_array : public xtd::array_object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<basic_array<type_t, allocator_t>>;
   /// ```
   /// @par Header
@@ -23,7 +23,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   class basic_array : public xtd::array_abstract_object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<basic_array<type_t, allocator_t>> {
     class comparer {
     public:
@@ -514,7 +514,7 @@ namespace xtd {
     /// @}
     
   private:
-    template<typename type_array_t, size_type rank_array_t, typename allocator_array_t>
+    template<class type_array_t, size_type rank_array_t, class allocator_array_t>
     friend class array;
     
     basic_array() = default;
@@ -567,8 +567,8 @@ namespace xtd {
       data_->upper_bound.push_back((*(*il.begin()).begin()).size() - 1);
     }
     
-    template<typename iterator_t>
-    basic_array(iterator_t first, iterator_t last) {
+    template<class input_iterator_t>
+    basic_array(input_iterator_t first, input_iterator_t last) {
       data_->items.assign(first, last);
       data_->lower_bound.push_back(0);
       data_->upper_bound.push_back(data_->items.size() - 1);

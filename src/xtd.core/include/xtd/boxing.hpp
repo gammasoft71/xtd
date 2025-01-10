@@ -61,7 +61,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types).
-  template<typename type_t, typename ...args_t>
+  template<class type_t, class ...args_t>
   inline box<type_t> boxing(args_t&& ...args) noexcept {return box<type_t>(args...);}
 
   /// @cond

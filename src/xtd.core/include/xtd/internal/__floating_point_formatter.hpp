@@ -19,7 +19,7 @@
 #include <vector>
 
 /// @cond
-template<typename char_t, typename floating_point_t>
+template<class char_t, class floating_point_t>
 inline std::basic_string<char_t> __floating_point_to_binary(floating_point_t value, int precision) {
   union {
     double input;

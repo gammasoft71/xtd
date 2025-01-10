@@ -30,7 +30,7 @@ namespace xtd {
   /// @brief Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays.
   /// @par Definition
   /// ```cpp
-  /// template<typename type_t, xtd::size rank_, typename allocator_t>
+  /// template<class type_t, xtd::size rank_, class allocator_t>
   /// class array : public xtd::basic_array<type_t, allocator_t>;
   /// ```
   /// @par Header
@@ -55,7 +55,7 @@ namespace xtd {
   /// @par Examples
   /// The following code example creates and initializes an Array and displays its properties and its elements.
   /// @include array2.cpp
-  template<typename type_t, xtd::size rank_, typename allocator_t>
+  template<class type_t, xtd::size rank_, class allocator_t>
   class array : public basic_array<type_t, allocator_t> {
   public:
     /// @name Public Constructors
@@ -113,7 +113,7 @@ namespace xtd {
 #undef __XTD_CORE_INTERNAL__
 
 /// @cond
-template<typename source_t>
+template<class source_t>
 const xtd::linq::enumerable::ienumerable<xtd::array<source_t>>& xtd::linq::enumerable::chunk(const ienumerable<source_t>& source, size_t size) {
   if (size == 0) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
   static thread_local auto chunks = __opaque_xtd_linq_enumerable_collection__<xtd::array<source_t>> {};

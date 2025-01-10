@@ -20,7 +20,7 @@ namespace xtd {
   /// @brief Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays.
   /// @par Definition
   /// ```cpp
-  /// template<typename type_t, xtd::size rank_, typename allocator_t>
+  /// template<class type_t, xtd::size rank_, class allocator_t>
   /// class array : public xtd::basic_array<type_t, allocator_t>;
   /// ```
   /// @par Header

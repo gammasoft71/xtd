@@ -15,7 +15,7 @@
 #include <sstream>
 
 /// @cond
-template<typename char_t>
+template<class char_t>
 inline std::basic_string<char_t> __currency_formatter(long double value, const std::locale& loc) {
   std::basic_stringstream<char_t> ss;
   ss.imbue(loc);

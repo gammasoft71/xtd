@@ -407,7 +407,7 @@ namespace xtd {
         }
         /// @brief Adds elements to the end.
         /// @param collection The elements to add.
-        template<typename collection_t>
+        template<class collection_t>
         void push_back_range(collection_t&& collection) {
           for (auto& item : collection)
             push_back(value_type(item));

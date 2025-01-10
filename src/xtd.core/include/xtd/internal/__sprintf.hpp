@@ -12,7 +12,7 @@
 #include <string>
 
 /// @cond
-template<typename char_t>
+template<class char_t>
 inline std::basic_string<char_t> __sprintf(const char_t* fmt, ...) {return std::basic_string<char_t>();}
 
 template <>

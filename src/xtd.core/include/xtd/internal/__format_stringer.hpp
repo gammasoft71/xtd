@@ -80,7 +80,7 @@ namespace xtd {
   inline std::string to_string(const std::chrono::system_clock::time_point& value, const std::string& fmt, const std::locale& loc);
   template<>
   inline std::string to_string(const std::tm& value, const std::string& fmt, const std::locale& loc);
-  template<typename type_t, typename period_t = std::ratio<1>>
+  template<class type_t, class period_t = std::ratio<1>>
   inline std::string to_string(const std::chrono::duration<type_t, period_t>& value, const std::string& fmt, const std::locale& loc);
 #if defined(__xtd__cpp_lib_char8_t)
   template<>
@@ -110,43 +110,43 @@ namespace xtd {
   inline std::string to_string(const std::unique_ptr<type_t>& value, const std::string& fmt, const std::locale& loc);
   template<>
   inline std::string to_string(const std::any& value, const std::string& fmt, const std::locale& loc);
-  template<typename types_t>
-  inline std::string to_string(const std::optional<types_t>& value, const std::string& fmt, const std::locale& loc);
+  template<class type_t>
+  inline std::string to_string(const std::optional<type_t>& value, const std::string& fmt, const std::locale& loc);
   template<>
   inline std::string to_string(const std::nullopt_t& value, const std::string& fmt, const std::locale& loc);
-  template<typename type1_t, typename type2_t>
+  template<class type1_t, class type2_t>
   inline std::string to_string(const std::pair<type1_t, type2_t>& value, const std::string& fmt, const std::locale& loc);
-  template<typename ... types_t>
+  template<class ...types_t>
   inline std::string to_string(const std::tuple<types_t ...>& value, const std::string& fmt, const std::locale& loc);
-  template<typename type_t, size_t size>
+  template<class type_t, size_t size>
   inline std::string to_string(const std::array<type_t, size>& values, const std::string& fmt, const std::locale& loc);
-  template<typename type_t, typename allocator_t = std::allocator<type_t>>
+  template<class type_t, class allocator_t = std::allocator<type_t>>
   inline std::string to_string(const std::deque<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
-  template<typename type_t, typename allocator_t = std::allocator<type_t>>
+  template<class type_t, class allocator_t = std::allocator<type_t>>
   inline std::string to_string(const std::forward_list<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
   template<class type_t>
   inline std::string to_string(const std::initializer_list<type_t>& values, const std::string& fmt, const std::locale& loc);
-  template<typename type_t, typename allocator_t = std::allocator<type_t>>
+  template<class type_t, class allocator_t = std::allocator<type_t>>
   inline std::string to_string(const std::list<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
   template<class type_t>
   inline std::string to_string(const std::valarray<type_t>& values, const std::string& fmt, const std::locale& loc);
-  template<typename type_t, typename allocator_t = std::allocator<type_t>>
+  template<class type_t, class allocator_t = std::allocator<type_t>>
   inline std::string to_string(const std::vector<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
-  template<typename key_t, typename value_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
+  template<class key_t, class value_t, class compare_t = std::less<key_t>, class allocator_t = std::allocator<std::pair<const key_t, value_t>>>
   inline std::string to_string(const std::map<key_t, value_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
-  template<typename key_t, typename value_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
+  template<class key_t, class value_t, class compare_t = std::less<key_t>, class allocator_t = std::allocator<std::pair<const key_t, value_t>>>
   inline std::string to_string(const std::multimap<key_t, value_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
-  template<typename key_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
+  template<class key_t, class compare_t = std::less<key_t>, class allocator_t = std::allocator<key_t>>
   inline std::string to_string(const std::multiset<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
-  template<typename key_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
+  template<class key_t, class compare_t = std::less<key_t>, class allocator_t = std::allocator<key_t>>
   inline std::string to_string(const std::set<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
-  template<typename key_t, typename value_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
+  template<class key_t, class value_t, class compare_t = std::less<key_t>, class allocator_t = std::allocator<std::pair<const key_t, value_t>>>
   inline std::string to_string(const std::unordered_map<key_t, value_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
-  template<typename key_t, typename value_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<std::pair<const key_t, value_t>>>
+  template<class key_t, class value_t, class compare_t = std::less<key_t>, class allocator_t = std::allocator<std::pair<const key_t, value_t>>>
   inline std::string to_string(const std::unordered_multimap<key_t, value_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
-  template<typename key_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
+  template<class key_t, class compare_t = std::less<key_t>, class allocator_t = std::allocator<key_t>>
   inline std::string to_string(const std::unordered_multiset<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
-  template<typename key_t, typename compare_t = std::less<key_t>, typename allocator_t = std::allocator<key_t>>
+  template<class key_t, class compare_t = std::less<key_t>, class allocator_t = std::allocator<key_t>>
   inline std::string to_string(const std::unordered_set<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc);
   template<class type_t>
   inline std::string to_string(const xtd::collections::generic::ienumerable<type_t>& values, const std::string& fmt, const std::locale& loc);
@@ -188,7 +188,7 @@ namespace xtd {
   template<>
   inline std::wstring to_string(const std::tm& value, const std::wstring& fmt, const std::locale& loc);
   
-  template<typename type_t, typename period_t = std::ratio<1>>
+  template<class type_t, class period_t = std::ratio<1>>
   inline std::wstring to_string(const std::chrono::duration<type_t, period_t>& value, const std::wstring& fmt, const std::locale& loc);
 #if defined(__xtd__cpp_lib_char8_t)
   template<>
@@ -201,7 +201,7 @@ namespace xtd {
   template<>
   inline std::wstring to_string(const xtd::wchar& value, const std::wstring& fmt, const std::locale& loc);
   
-  template<typename type_t, typename string_t>
+  template<class type_t, class string_t>
   inline string_t to_string(type_t value, const std::map<type_t, string_t, std::greater<type_t>>& values) {
     auto it = values.find(value);
     if (it != values.end()) return it->second;
@@ -218,7 +218,7 @@ namespace xtd {
     return to_string(static_cast<long long>(value), string_t {'G'}, std::locale());
   }
   
-  template<typename type_t, typename string_t>
+  template<class type_t, class string_t>
   inline string_t to_string(type_t value, const std::map<type_t, string_t>& values) {
     std::map<type_t, string_t, std::greater<type_t>> descending_values;
     for (auto item : values) descending_values[item.first] = item.second;
@@ -240,7 +240,7 @@ namespace xtd {
   }
 }
 
-template<typename char_t>
+template<class char_t>
 inline std::basic_string<char_t> __codepoint_to_string(xtd::char32 codepoint) {
   std::basic_string<char_t> result;
   if (codepoint < 0x80)
@@ -261,41 +261,41 @@ inline std::basic_string<char_t> __codepoint_to_string(xtd::char32 codepoint) {
   return result;
 }
 
-template<typename char_t>
+template<class char_t>
 inline std::basic_string<char_t> __to_string(char codepoint) {
   return __codepoint_to_string<char_t>(codepoint);
 }
 
-template<typename char_t>
+template<class char_t>
 inline std::basic_string<char_t> __to_string(xtd::char32 codepoint) {
   return __codepoint_to_string<char_t>(codepoint);
 }
 
-template<typename char_t>
+template<class char_t>
 inline std::basic_string<char_t> __to_string(xtd::char16 codepoint) {
   return __codepoint_to_string<char_t>(codepoint);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-template<typename char_t>
+template<class char_t>
 inline std::basic_string<char_t> __to_string(xtd::char8 codepoint) {
   return __codepoint_to_string<char_t>(codepoint);
 }
 #endif
 
-template<typename char_t>
+template<class char_t>
 inline std::basic_string<char_t> __to_string(xtd::wchar codepoint) {
   return __codepoint_to_string<char_t>(codepoint);
 }
 
-template<typename char_t>
+template<class char_t>
 inline std::basic_string<char_t> __to_string(const std::basic_string<char_t>& str) {
   std::basic_string<char_t> result;
   std::for_each(str.begin(), str.end(), [&](auto codepoint) {result += __to_string<char_t>(codepoint);});
   return result;
 }
 
-template<typename char_t, typename arg_t>
+template<class char_t, class arg_t>
 inline std::basic_string<char_t> __to_string(const std::basic_string<arg_t>& str) {
   std::basic_string<char_t> result;
   for (auto codepoint : str)
@@ -303,7 +303,7 @@ inline std::basic_string<char_t> __to_string(const std::basic_string<arg_t>& str
   return result;
 }
 
-template<typename char_t, typename arg_t>
+template<class char_t, class arg_t>
 inline std::basic_string<char_t> __to_string(const arg_t* str) {
   std::basic_string<char_t> result;
   for (auto codepoint : std::basic_string<arg_t>(str))
@@ -311,7 +311,7 @@ inline std::basic_string<char_t> __to_string(const arg_t* str) {
   return result;
 }
 
-template<typename char_t, typename type_t, typename period_t = std::ratio<1>>
+template<class char_t, class type_t, class period_t = std::ratio<1>>
 std::basic_ostream<char_t>& operator <<(std::basic_ostream<char_t>& os, const std::chrono::duration<type_t, period_t>& value) {
   return os << xtd::to_string(value, std::basic_string<char_t> {'G'}, std::locale());
 }
@@ -323,22 +323,22 @@ std::ostream& operator <<(std::ostream& os, const xtd::char16* str);
 std::ostream& operator <<(std::ostream& os, const xtd::char32* str);
 std::ostream& operator <<(std::ostream& os, const xtd::wchar* str);
 
-template<typename enum_t>
+template<class enum_t>
 std::string __enum_to_string(enum_t value) noexcept;
 std::string __iformatable_to_string(const xtd::iformatable& value) noexcept;
 std::string __object_to_string(const xtd::object& value) noexcept;
 
-template<typename char_t, typename type_t, typename bool_t>
+template<class char_t, class type_t, class bool_t>
 struct __enum_ostream__ {};
 
-template<typename char_t, typename type_t>
+template<class char_t, class type_t>
 struct __enum_ostream__<char_t, type_t, std::true_type> {
   std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
     return os << __enum_to_string(value);
   }
 };
 
-template<typename char_t, typename type_t>
+template<class char_t, class type_t>
 struct __enum_ostream__<char_t, type_t, std::false_type> {
   std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
     //return os << value;
@@ -346,10 +346,10 @@ struct __enum_ostream__<char_t, type_t, std::false_type> {
   }
 };
 
-template<typename char_t, typename type_t, typename bool_t>
+template<class char_t, class type_t, class bool_t>
 struct __enum_or_polymorphic_ostream__ {};
 
-template<typename char_t, typename type_t>
+template<class char_t, class type_t>
 struct __enum_or_polymorphic_ostream__<char_t, type_t, std::true_type> {
   std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
     if (dynamic_cast<const xtd::iformatable*>(&value)) return os << __iformatable_to_string(dynamic_cast<const xtd::iformatable&>(value));
@@ -358,7 +358,7 @@ struct __enum_or_polymorphic_ostream__<char_t, type_t, std::true_type> {
   }
 };
 
-template<typename char_t, typename type_t>
+template<class char_t, class type_t>
 struct __enum_or_polymorphic_ostream__<char_t, type_t, std::false_type> {
   std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
     __enum_ostream__<char, type_t, typename std::is_enum<type_t>::type>().to_stream(os, value);
@@ -411,14 +411,14 @@ inline std::basic_string<char_t> __format_stringer(const bool& value) {
   return ss.str();
 }
 
-template<typename char_t, typename value_t, xtd::int32 len>
+template<class char_t, class value_t, xtd::int32 len>
 inline std::basic_string<char_t> __format_stringer(const char*& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);
   return ss.str();
 }
 
-template<typename char_t, typename value_t, xtd::int32 len>
+template<class char_t, class value_t, xtd::int32 len>
 inline std::basic_string<char_t> __format_stringer(const char* const& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);

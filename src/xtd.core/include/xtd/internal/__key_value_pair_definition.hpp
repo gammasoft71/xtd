@@ -6,7 +6,7 @@
 
 /// @cond
 namespace xtd::collections::generic {
-  template<typename key_t = std::nullptr_t, typename value_t = std::nullptr_t>
+  template<class key_t = std::nullptr_t, class value_t = std::nullptr_t>
   struct key_value_pair;
   
 }

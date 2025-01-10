@@ -23,7 +23,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
     /// @include linq_from.cpp
-    template<typename source_t>
+    template<class source_t>
     const xtd::collections::generic::ienumerable<source_t>& from(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
       return enumerable::as_enumerable(source);
     }
@@ -42,7 +42,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
     /// @include linq_from2.cpp
-    template<typename source_t>
+    template<class source_t>
     const xtd::collections::generic::ienumerable<source_t>& from(const std::initializer_list<source_t>& source) noexcept{
       return enumerable::as_enumerable(source);
     }
@@ -61,7 +61,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
     /// @include linq_from3.cpp
-    template<typename collection_t>
+    template<class collection_t>
     const auto& from(const collection_t& source) noexcept {
       return enumerable::as_enumerable(source);
     }
@@ -123,7 +123,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates how to use xtd::linq::from to create a sequence of values.
     /// @include linq_from6.cpp
-    template<typename source_t, size_t length>
+    template<class source_t, size_t length>
     const auto& from(const source_t (&array)[length]) noexcept {
       return enumerable::as_enumerable(array, array + length);
     }

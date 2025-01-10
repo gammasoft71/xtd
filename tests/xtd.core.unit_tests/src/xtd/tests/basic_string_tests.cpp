@@ -32,7 +32,7 @@ namespace xtd::tests {
 #endif
   test_class_attribute<basic_string_tests<wchar>> basic_string_tests_class_wchar_attr {"basic_string_tests<wchar>"};
 
-  template<typename char_t>
+  template<class char_t>
   class basic_string_tests : public test_class {
   public:
     // ______________________________________________________________________________________________________________________________________________

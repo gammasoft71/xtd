@@ -13,7 +13,7 @@
 #include "../ticks.hpp"
 
 /// @cond
-template<typename char_t, typename type_t, typename period_t = std::ratio<1>>
+template<class char_t, class type_t, class period_t = std::ratio<1>>
 inline std::basic_string<char_t> __make_string_from_duration(std::chrono::duration<type_t, period_t> value, bool constant = true) {
   std::basic_string<char_t> result;
   
@@ -29,7 +29,7 @@ inline std::basic_string<char_t> __make_string_from_duration(std::chrono::durati
   return result;
 }
 
-template<typename char_t, typename type_t, typename period_t = std::ratio<1>>
+template<class char_t, class type_t, class period_t = std::ratio<1>>
 inline std::basic_string<char_t> __duration_formatter(std::basic_string<char_t> fmt, const std::chrono::duration<type_t, period_t>& value, const std::locale& loc) {
   if (fmt.empty()) fmt = std::basic_string<char_t> {'G'};
   if (fmt.size() > 1) __format_exception("Invalid format");

@@ -31,7 +31,7 @@ namespace xtd {
     /// | xtd::text::u32string_builder | xtd::text::basic_string_builder <xtd::char32> |
     /// | xtd::text::u8string_builder  | xtd::text::basic_string_builder <xtd::char8>  |
     /// | xtd::text::wstring_builder   | xtd::text::basic_string_builder <xtd::wchar>  |
-    template<typename char_t, typename traits_t = std::char_traits<char_t>, typename allocator_t = xtd::collections::generic::helpers::allocator<char_t>>
+    template<class char_t, class traits_t = std::char_traits<char_t>, class allocator_t = xtd::collections::generic::helpers::allocator<char_t>>
     class basic_string_builder final : public object, public xtd::iequatable<basic_string_builder<char_t, traits_t, allocator_t>> {
     public:
       /// @name Public Aliases
@@ -885,7 +885,7 @@ namespace xtd {
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
       /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
-      template<typename collection_t >
+      template<class collection_t>
       basic_string_builder& append_join(const xtd::basic_string<char_t>& separator, const collection_t &values) {return append(xtd::basic_string<char_t>::join(separator, values));}
       /// @brief Concatenates and appends the members of a collection, using the specified xtd::basic_string_builder::value_type separator between each member.
       /// @param separator The xtd::basic_string_builder::value_type to use as a separator. `separator` is included in the concatenated and appended strings only if `values` has more than one element.
@@ -895,7 +895,7 @@ namespace xtd {
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers
       /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
-      template<typename collection_t >
+      template<class collection_t>
       basic_string_builder& append_join(value_type separator, const collection_t &values) {return append(xtd::basic_string<char_t>::join(xtd::basic_string<char_t>(1, separator), values));}
 
       /// @cond

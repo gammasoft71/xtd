@@ -93,7 +93,7 @@ namespace xtd {
       /// @}
 
       /// @cond
-      template<typename char_t>
+      template<class char_t>
       explicit mutex(const char_t* name) : mutex(string(name)) {}
       ~mutex();
       /// @endcond

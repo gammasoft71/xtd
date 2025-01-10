@@ -235,7 +235,7 @@ inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t
 }
 
 template<class char_t, class traits_t, class allocator_t>
-template<typename other_char_t>
+template<class other_char_t>
 inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::concat(const xtd::array<const other_char_t*>& values) noexcept {
   auto result = basic_string::empty_string;
   std::for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
@@ -356,7 +356,7 @@ inline const xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t
 template<class char_t, class traits_t, class allocator_t>
 inline const xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>::value_type> xtd::basic_string<char_t, traits_t, allocator_t>::default_trim_chars = {9, 10, 11, 12, 13, 32};
 
-template<typename arg_t>
+template<class arg_t>
 void __basic_string_extract_format_arg(std::basic_string<char>& fmt, xtd::size& index, std::vector<__format_information<char>>& formats, arg_t&& arg) {
   auto offset = xtd::size {0};
   for (auto& format : formats) {
@@ -388,7 +388,7 @@ void __basic_string_extract_format_arg(xtd::basic_string<char>& fmt, std::vector
   unused_(index); // workaround to mute gcc warning: unused-but-set-variable
 }
 
-template<typename target_t, typename source_t>
+template<class target_t, class source_t>
 inline std::basic_string<target_t> __xtd_convert_to_string(std::basic_string<source_t>&& str) noexcept {
   auto out = std::basic_string<target_t> {};
   auto codepoint = 0u;
@@ -632,7 +632,7 @@ inline std::basic_string<xtd::wchar> __xtd_convert_to_string<xtd::wchar, xtd::ch
   return __xtd_convert_to_string<xtd::wchar>(__xtd_convert_to_string<char>(std::move(str)));
 }
 
-template<typename target_t, typename source_t>
+template<class target_t, class source_t>
 inline std::basic_string<target_t> __xtd_convert_to_string(const std::basic_string<source_t>& str) noexcept {
   auto out = std::basic_string<target_t> {};
   auto codepoint = 0u;

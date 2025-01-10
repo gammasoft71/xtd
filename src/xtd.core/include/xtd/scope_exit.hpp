@@ -46,13 +46,13 @@ namespace xtd {
   };
   
   /// @cond
-  template<typename function_t>
+  template<class function_t>
   struct __xtd_scope_exit_object__ {
     ~__xtd_scope_exit_object__() { function(); }
     function_t function;
   };
   
-  template<typename function_t>
+  template<class function_t>
   auto operator +(scope_exit, function_t&& function) {
     return __xtd_scope_exit_object__<function_t>{std::forward<function_t>(function)};
   }

@@ -18,7 +18,7 @@ namespace xtd {
   template<class result_t>
   class delegate;
   
-  template<typename result_t, typename... arguments_t>
+  template<class result_t, class ...arguments_t>
   class delegate<result_t(arguments_t...)>;
   /// @endcond
 
@@ -366,7 +366,7 @@ namespace xtd {
   /// @par Examples
   /// The following example shows how to define a delegate named my Method delegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
   /// @include delegate.cpp
-  template<typename result_t, typename... arguments_t>
+  template<class result_t, class ...arguments_t>
   class delegate<result_t(arguments_t...)> : public object, public xtd::iequatable<delegate<result_t(arguments_t...)>> {
     struct data {
       std::vector<std::function <result_t()>> no_arguments_functions;

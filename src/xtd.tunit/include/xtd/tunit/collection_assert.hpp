@@ -90,7 +90,7 @@ namespace xtd {
       /// std::vector<int*> a2 = {&i1, &i2, nullptr};
       /// xtd::tunit::collection_assert::all_items_are_not_null(a2); // test throws an assert_error exception.
       /// ```
-      template<typename collection_t>
+      template<class collection_t>
       static void all_items_are_not_null(const collection_t& collection, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {all_items_are_not_null(collection, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that all collection items are not null.
       /// @param value The object to verify
@@ -105,7 +105,7 @@ namespace xtd {
       /// std::vector<int*> a2 = {&i1, &i2, nullptr};
       /// xtd::tunit::collection_assert::all_items_are_not_null(a2, "User message..."); // test throws an assert_error exception.
       /// ```
-      template<typename collection_t>
+      template<class collection_t>
       static void all_items_are_not_null(const collection_t& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         for (auto item : collection)
           if (item == nullptr) {
@@ -116,9 +116,9 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename item_t>
+      template<class item_t>
       static void all_items_are_not_null(const std::initializer_list<item_t>& collection, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {all_items_are_not_null(collection, xtd::string::empty_string, stack_frame);}
-      template<typename item_t>
+      template<class item_t>
       static void all_items_are_not_null(const std::initializer_list<item_t>& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         for (auto item : collection)
           if (item == nullptr) {
@@ -141,7 +141,7 @@ namespace xtd {
       /// std::vector<int> a2 = {1, 2, 3, 4, 1};
       /// xtd::tunit::collection_assert::all_items_are_unique(a2); // test throws an assert_error exception.
       /// ```
-      template<typename collection_t>
+      template<class collection_t>
       static void all_items_are_unique(const collection_t& collection, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {all_items_are_unique(collection, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that all collection items are unique.
       /// @param value The object to verify
@@ -155,7 +155,7 @@ namespace xtd {
       /// std::vector<int> a2 = {1, 2, 3, 4, 1};
       /// xtd::tunit::collection_assert::all_items_are_unique(a2, "User message..."); // test throws an assert_error exception.
       /// ```
-      template<typename collection_t>
+      template<class collection_t>
       static void all_items_are_unique(const collection_t& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         auto value = *collection.cbegin();
         std::map<decltype(value), int32> counts;
@@ -168,9 +168,9 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename item_t>
+      template<class item_t>
       static void all_items_are_unique(const std::initializer_list<item_t>& collection, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {all_items_are_unique(collection, xtd::string::empty_string, stack_frame);}
-      template<typename item_t>
+      template<class item_t>
       static void all_items_are_unique(const std::initializer_list<item_t>& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         std::map<item_t, int32> counts;
         for (auto item : collection) {
@@ -215,9 +215,9 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename item_t>
+      template<class item_t>
       static void are_equal(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_equal(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename item_t>
+      template<class item_t>
       static void are_equal(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == false)
           fail(join_items(expected), join_items(actual), message, stack_frame);
@@ -339,9 +339,9 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename item_t>
+      template<class item_t>
       static void are_not_equal(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_not_equal(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename item_t>
+      template<class item_t>
       static void are_not_equal(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (std::equal(actual.begin(), actual.end(), expected.begin(), expected.end()) == true)
           fail("not " + join_items(expected), join_items(actual), message, stack_frame);
@@ -466,9 +466,9 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename item_t>
+      template<class item_t>
       static void contains(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {contains(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename item_t>
+      template<class item_t>
       static void contains(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         for (const auto& item : expected) {
           if (std::find_if(std::begin(actual), std::end(actual), [&](const item_t& value) {return value == item;}) == std::end(actual)) {
@@ -540,9 +540,9 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename item_t>
+      template<class item_t>
       static void does_not_contain(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_contain(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename item_t>
+      template<class item_t>
       static void does_not_contain(const std::initializer_list<item_t>& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         for (const auto& item : expected) {
           if (std::find_if(std::begin(actual), std::end(actual), [&](const item_t& value) {return value == item;}) == std::end(actual)) {

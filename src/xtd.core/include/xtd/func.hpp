@@ -12,6 +12,6 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename result_t, typename... arguments_t>
+  template<class result_t, class ...arguments_t>
   using func = delegate<result_t(arguments_t...)>;
 }

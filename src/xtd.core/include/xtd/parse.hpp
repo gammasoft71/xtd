@@ -569,7 +569,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t, typename char_t>
+  template<class value_t, class char_t>
   inline bool try_parse(const char_t* str, value_t& value) noexcept {
     return try_parse(std::basic_string<char_t>(str), value);
   }
@@ -580,7 +580,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t, typename char_t>
+  template<class value_t, class char_t>
   inline bool try_parse(const char_t* str, value_t& value, const std::locale& locale) noexcept {
     return try_parse(std::basic_string<char_t>(str), value, locale);
   }
@@ -747,7 +747,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t, typename char_t>
+  template<class value_t, class char_t>
   inline bool try_parse(const char_t* str, value_t& value, number_styles style) noexcept {
     return try_parse(std::basic_string<char_t>(str), value, style);
   }
@@ -758,7 +758,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t, typename char_t>
+  template<class value_t, class char_t>
   inline bool try_parse(const char_t* str, value_t& value, number_styles style, const std::locale& locale) noexcept {
     return try_parse(std::basic_string<char_t>(str), value, style, locale);
   }

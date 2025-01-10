@@ -11,7 +11,7 @@
 #include "__format_exception.hpp"
 
 /// @cond
-template<typename enum_t>
+template<class enum_t>
 std::string __enum_to_string(enum_t value) noexcept;
 
 template<class char_t, class value_t>
