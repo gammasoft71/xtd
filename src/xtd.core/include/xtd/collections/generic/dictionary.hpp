@@ -772,6 +772,15 @@ namespace xtd {
           return to_iterator(data_->items.insert_or_assign(to_base_type_iterator(hint), std::move(k), obj));
         }
         
+        /// @brief Swaps the contents.
+        /// @param The container to exchange the contents with.
+        /// @remarks Exchanges the contents of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
+        /// @remarks All iterators and references remain valid. The xtd::collections::generic::dictionary::end() iterator is invalidated. The `hasher_t` and `equator_t` objects must be [Swappable](https://en.cppreference.com/w/cpp/named_req/Swappable), and they are exchanged using unqualified calls to non-member swap.
+        void swap(dictionary& other) noexcept {
+          data_->items.swap(other.data_->items);
+          std::swap(data_->version, other.data_->version);
+        }
+        
         /// @brief Inserts in-place if the key does not exist, does nothing if the key exists.
         /// @param k The key used both to look up and to insert if not found.
         /// @param args The arguments to forward to the constructor of the element.
