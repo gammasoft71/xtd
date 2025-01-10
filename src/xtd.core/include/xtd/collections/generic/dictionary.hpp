@@ -734,7 +734,6 @@ namespace xtd {
             const value_type& current() const override {
               if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute."};
               if (iterator_ != items_.items().cend()) {
-                //return *iterator_;
                 static thread_local auto value = value_type {};
                 value = value_type {*iterator_};
                 return value;
@@ -764,6 +763,13 @@ namespace xtd {
             size_type version_ = 0;
           };
           return {new_ptr<internal_enumerator>(*this, data_->version)};
+        }
+
+        /// @brief Returns function used to hash the keys.
+        /// @return The hash function.
+        /// @remarks Returns the function that hashes the keys.
+        hasher hash_function() const {
+          return data_->items.hash_function();
         }
         
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
