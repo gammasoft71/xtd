@@ -9,12 +9,12 @@
 namespace xtd {
   /// @cond
   namespace __s__ {
-    template<typename type_t>
+    template<class type_t>
     xtd::type_object __typeof_() noexcept {
       return xtd::type_object(typeid(type_t));
     }
     
-    template<typename type_t>
+    template<class type_t>
     xtd::type_object __typeof_(const type_t& value) noexcept {
       return xtd::type_object(typeid(value));
     }

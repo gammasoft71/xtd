@@ -396,13 +396,13 @@ namespace xtd {
     return __numeric_formatter(fmt, reinterpret_cast<intptr>(value), loc);
   }
   
-  template<typename type_t>
+  template<class type_t>
   inline std::string to_string(const std::shared_ptr<type_t>& value, const std::string& fmt, const std::locale& loc) {
     if (!value) return "(null)";
     return __numeric_formatter(fmt, reinterpret_cast<intptr>(value.get()), loc);
   }
   
-  template<typename type_t>
+  template<class type_t>
   inline std::string to_string(const std::unique_ptr<type_t>& value, const std::string& fmt, const std::locale& loc) {
     if (!value) return "(null)";
     return __numeric_formatter(fmt, reinterpret_cast<intptr>(value.get()), loc);
@@ -414,7 +414,7 @@ namespace xtd {
     return iterator != __any_stringer__.cend() ? xtd::to_string(iterator->second(value), fmt, loc) : "(unregistered)";
   }
   
-  template<typename type_t>
+  template<class type_t>
   inline std::string to_string(const std::optional<type_t>& value, const std::string& fmt, const std::locale& loc) {return !value.has_value() ? "(null)" : std::string {"("} + to_string(value.value(), fmt, loc) + std::string {")"};}
 
   template<>
@@ -460,13 +460,13 @@ namespace xtd {
   template<typename type_t, typename allocator_t>
   inline std::string to_string(const std::forward_list<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
 
-  template<typename type_t>
+  template<class type_t>
   inline std::string to_string(const std::initializer_list<type_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
 
   template<typename type_t, typename allocator_t>
   inline std::string to_string(const std::list<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
 
-  template<typename type_t>
+  template<class type_t>
   inline std::string to_string(const std::valarray<type_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(std::begin(values), std::end(values), fmt, loc);}
 
   template<typename type_t, typename allocator_t>
@@ -499,7 +499,7 @@ namespace xtd {
   template<typename key_t, typename compare_t, typename allocator_t>
   inline std::string to_string(const std::unordered_set<key_t, compare_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_associative_container_to_string(values.begin(), values.end(), fmt, loc);}
 
-  template<typename type_t>
+  template<class type_t>
   inline std::string to_string(const xtd::collections::generic::ienumerable<type_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
   /// @endcond
 

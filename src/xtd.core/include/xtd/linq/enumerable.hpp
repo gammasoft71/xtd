@@ -21,7 +21,7 @@
 #include <functional>
 
 /// @cond
-template<typename type_t>
+template<class type_t>
 struct __opaque_xtd_linq_enumerable_collection__;
 /// @endcond
 
@@ -29,7 +29,7 @@ struct __opaque_xtd_linq_enumerable_collection__;
 namespace xtd {
   /// @cond
   namespace collections::generic {
-    template<typename type_t>
+    template<class type_t>
     class ienumerable;
   }
   /// @endcond
@@ -40,7 +40,7 @@ namespace xtd {
     /// @brief Provides a set of static methods for querying objects that implement ienumerable <type_t>.
     /// @par Definition
     /// ```cpp
-    /// template<typename type_t>
+    /// template<class type_t>
     /// class enumerable : public xtd::static_object;
     /// ```
     /// @par Header
@@ -58,15 +58,15 @@ namespace xtd {
       
       /// @{
       /// @brief Represents the ienumerable value type.
-      template<typename type_t>
+      template<class type_t>
       using iequality_comparer = typename xtd::collections::generic::iequality_comparer<type_t>;
       
       /// @brief Represents the ienumerable value type.
-      template<typename type_t>
+      template<class type_t>
       using ienumerable = typename xtd::collections::generic::ienumerable<type_t>;
       
       /// @brief Represents the list value type.
-      template<typename type_t>
+      template<class type_t>
       using list = typename xtd::collections::generic::list<type_t>;
       
       /// @brief Represents the key value pair value type.

@@ -78,7 +78,7 @@ namespace __enumeration_introspection {
     constexpr enumeration_maker(base_t) : enumeration_maker() {} // Can't be explicit by design.
     enumeration_maker& operator =(enumeration_maker const&) = default;
     
-    template<typename type_t>
+    template<class type_t>
     constexpr enumeration_maker& operator =(type_t const& v) {
       value = base_t(v);
       is_set = true;
@@ -86,7 +86,7 @@ namespace __enumeration_introspection {
     }
     
     constexpr operator base_t() const {return value;}
-    template<typename type_t>
+    template<class type_t>
     constexpr explicit operator type_t() const {return type_t(value);}
   };
   
@@ -156,7 +156,7 @@ namespace __enumeration_introspection {
     }
   };
   
-  template<typename type_t>
+  template<class type_t>
   constexpr std::string_view name_of_type = typeof_<type_t>().name();
   
   template<typename enum_t>

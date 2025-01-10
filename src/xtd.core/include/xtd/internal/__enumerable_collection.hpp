@@ -16,7 +16,7 @@ namespace xtd::linq {
   class enumerable;
 };
 
-template<typename type_t>
+template<class type_t>
 struct __opaque_xtd_linq_enumerable_collection__ : xtd::collections::generic::ienumerable<type_t> {
   xtd::collections::generic::enumerator<type_t> get_enumerator() const override {
     return xtd::collections::generic::enumerator<>::create(items);

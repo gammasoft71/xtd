@@ -256,7 +256,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// any result = convert::to_any(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static std::any to_any(type_t value) {
       try {
         return std::any(value);
@@ -495,7 +495,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// bool result = convert::to_boolean(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static bool to_boolean(type_t value) noexcept {
       return static_cast<bool>(value);
     }
@@ -750,7 +750,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// xtd::byte result = convert::to_byte(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static xtd::byte to_byte(type_t value) noexcept {
       return static_cast<xtd::byte>(value);
     }
@@ -993,7 +993,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// char result = convert::to_char(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static char to_char(type_t value) noexcept {
       return static_cast<char>(value);
     }
@@ -1231,7 +1231,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// char8 result = convert::to_char8(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static char8 to_char8(type_t value) noexcept {
       return static_cast<char8>(value);
     }
@@ -1472,7 +1472,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// char16 result = convert::to_char16(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static char16 to_char16(type_t value) noexcept {
       return static_cast<char16>(value);
     }
@@ -1710,7 +1710,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// char32 result = convert::to_char32(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static char32 to_char32(type_t value) noexcept {
       return static_cast<char32>(value);
     }
@@ -1950,7 +1950,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// wchar result = convert::to_wchar(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static wchar to_wchar(type_t value) noexcept {
       return static_cast<wchar>(value);
     }
@@ -2179,7 +2179,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// decimal result = convert::to_decimal(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static decimal to_decimal(type_t value) noexcept {
       return static_cast<decimal>(value);
     }
@@ -2408,7 +2408,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// double result = convert::to_double(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static double to_double(type_t value) noexcept {
       return static_cast<double>(value);
     }
@@ -2637,7 +2637,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// float result = convert::to_single(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static float to_single(type_t value) noexcept {
       return static_cast<float>(value);
     }
@@ -2888,7 +2888,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// int16 result = convert::to_int16(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static int16 to_int16(type_t value) noexcept {
       return static_cast<int16>(value);
     }
@@ -3135,7 +3135,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// int32 result = convert::to_int32(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static int32 to_int32(type_t value) noexcept {
       return static_cast<int32>(value);
     }
@@ -3377,7 +3377,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// int64 result = convert::to_int64(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static int64 to_int64(type_t value) noexcept {
       return static_cast<int64>(value);
     }
@@ -3619,7 +3619,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// slong result = convert::to_llong(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static slong to_llong(type_t value) noexcept {
       return static_cast<slong>(value);
     }
@@ -3874,7 +3874,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// sbyte result = convert::to_sbyte(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static sbyte to_sbyte(type_t value) noexcept {
       return static_cast<sbyte>(value);
     }
@@ -4126,7 +4126,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// uint16 result = convert::to_uint16(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static uint16 to_uint16(type_t value) noexcept {
       return static_cast<uint16>(value);
     }
@@ -4376,7 +4376,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// uint32 result = convert::to_uint32(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static uint32 to_uint32(type_t value) noexcept {
       return static_cast<uint32>(value);
     }
@@ -4624,7 +4624,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// uint64 result = convert::to_uint64(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static uint64 to_uint64(type_t value) noexcept {
       return static_cast<uint64>(value);
     }
@@ -4872,7 +4872,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// xtd::ulong result = convert::to_ullong(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static xtd::ulong to_ullong(type_t value) noexcept {
       return static_cast<xtd::ulong>(value);
     }
@@ -5219,7 +5219,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// string result = convert::to_string(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static string to_string(type_t value) noexcept {
       return string::format("{}", value);
     }
@@ -5566,7 +5566,7 @@ namespace xtd {
     /// address_family value = address_family::inter_network;
     /// string result = convert::to_ustring(value);
     /// ```
-    template<typename type_t>
+    template<class type_t>
     static string to_ustring(type_t value) noexcept {
       return string::format("{}", value);
     }

@@ -39,7 +39,7 @@ namespace xtd {
     /// @tparam type_t The type of the value to add to the hash code.
     /// @param value The value to add to the hash code.
     /// @return The current instance.
-    template<typename type_t>
+    template<class type_t>
     hash_code& add(const type_t value) noexcept {
       hash_code_ = hash_combine(hash_code_, xtd::collections::generic::helpers::hasher<type_t> {}(value));
       return *this;

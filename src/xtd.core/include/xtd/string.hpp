@@ -60,7 +60,7 @@ namespace xtd {
   /// @brief Converts a type_t to xtd::string.
   /// @param val A type_t value to convert.
   /// @return A string holding the converted value.
-  template<typename type_t>
+  template<class type_t>
   string to_ustring(type_t val) {
     return string::format("{}", val);
   }

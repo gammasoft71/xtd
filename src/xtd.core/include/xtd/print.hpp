@@ -13,7 +13,7 @@ namespace xtd {
   void print(arg_t&& value) {xtd::console::write(xtd::string::format("{}",  value));}
   
   /// @cond
-  template<typename type_t>
+  template<class type_t>
   void print(std::initializer_list<type_t>&& il) {xtd::console::write(xtd::string::format("{}", il));}
   /// @endcond
   

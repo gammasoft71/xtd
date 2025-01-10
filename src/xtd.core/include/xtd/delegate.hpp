@@ -728,7 +728,7 @@ namespace xtd {
     /// @}
     
     /// @cond
-    template<typename type_t>
+    template<class type_t>
     delegate& operator =(const type_t& function) noexcept {
       data_->no_arguments_functions.clear();
       data_->functions.clear();

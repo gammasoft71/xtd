@@ -12,7 +12,7 @@
 namespace xtd {
   /// @cond
   namespace collections::object_model {
-    template<typename type_t>
+    template<class type_t>
     class read_only_collection;
   }
   /// @endcond

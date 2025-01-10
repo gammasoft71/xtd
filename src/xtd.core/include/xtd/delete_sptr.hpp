@@ -21,6 +21,6 @@ namespace xtd {
   /// @endcode
   /// @remarks This operator does not have to be called because when an xtd::sptr object leaves the scope, its value is automatically reset.
   /// @remarks Use it when you want to reset the xtd::sptr object at a specific time.
-  template<typename type_t>
+  template<class type_t>
   void delete_sptr(sptr<type_t>& ptr) {ptr = null;}
 }

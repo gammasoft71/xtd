@@ -361,7 +361,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename type_t>
+  template<class type_t>
   bool is(std::any value) {
     try {
       std::any_cast<type_t>(value);

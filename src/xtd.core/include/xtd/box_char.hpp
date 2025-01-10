@@ -34,7 +34,7 @@ namespace xtd {
   /// auto result = stringer(boxed_object);
   /// console::write_line("result = {}", result); // Display: result = a;
   /// ```
-  template<typename type_t>
+  template<class type_t>
   class box_char : public xtd::box_integer<type_t> {
   public:
     /// @cond

@@ -171,6 +171,6 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  template<typename type_t>
+  template<class type_t>
   using optional = std::optional<type_t>;
 }

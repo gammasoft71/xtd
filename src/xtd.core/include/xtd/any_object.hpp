@@ -34,13 +34,13 @@ namespace xtd {
     any_object() noexcept = default;
     /// @brief Initializes a new instance of the xtd::any_object class with specified value.
     /// @param value The value to initialize the contained value with.
-    template<typename type_t> // Can't be explicit by design.
+    template<class type_t> // Can't be explicit by design.
     any_object(type_t&& value) noexcept : value_(boxing_ptr(value)) {}
     /// @brief Initializes a new instance of the xtd::any_object class with specified value.
     /// @param value The value to initialize the contained value with.
-    template<typename type_t> // Can't be explicit by design.
+    template<class type_t> // Can't be explicit by design.
     any_object(type_t& value) noexcept : value_(boxing_ptr(value)) {}
-    template<typename type_t> // Can't be explicit by design.
+    template<class type_t> // Can't be explicit by design.
     any_object(const type_t& value) noexcept : value_(boxing_ptr(value)) {}
     /// @}
 
@@ -106,7 +106,7 @@ namespace xtd {
     /// @}
     
   private:
-    template<typename type_t>
+    template<class type_t>
     inline ptr<object> boxing_ptr(const type_t& value) noexcept {return new_ptr<typename __box_enum_or_object__<type_t, typename std::is_enum<type_t>::type>::type>(value);}
     template<typename type_t, typename ...args_t>
     inline ptr<object> boxing_ptr(args_t&& ...args) noexcept {return new box<type_t>(args...);}
@@ -167,12 +167,12 @@ namespace xtd {
   template<typename type_t, typename bool_t>
   struct __is_enum_any_object__ {};
   
-  template<typename type_t>
+  template<class type_t>
   struct __is_enum_any_object__<type_t, std::true_type> {
     bool operator()(const any_object& o) const {return is<enum_object<type_t>>(o.value());}
   };
   
-  template<typename type_t>
+  template<class type_t>
   struct __is_enum_any_object__<type_t, std::false_type> {
     bool operator()(const any_object& o) const {return false;}
   };
@@ -180,35 +180,35 @@ namespace xtd {
   template<typename type_t, typename bool_t>
   struct __is_polymorphic_any_object__ {};
   
-  template<typename type_t>
+  template<class type_t>
   struct __is_polymorphic_any_object__<type_t, std::true_type> {
     bool operator()(const any_object& o) const {return is<type_t>(o.value());}
   };
   
-  template<typename type_t>
+  template<class type_t>
   struct __is_polymorphic_any_object__<type_t, std::false_type> {
     bool operator()(const any_object& o) const {return __is_enum_any_object__<type_t, typename std::is_enum<type_t>::type> {}(o);}
   };
   
-  template<typename type_t>
+  template<class type_t>
   bool is(any_object& o) {
     if (is<box<type_t>>(o.value())) return true;
     return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
   }
   
-  template<typename type_t>
+  template<class type_t>
   bool is(const any_object& o) {
     if (is<box<type_t>>(o.value())) return true;
     return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
   }
   
-  template<typename type_t>
+  template<class type_t>
   bool is(any_object* o) {
     if (is<box<type_t>>(o->value())) return true;
     return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(*o);
   }
   
-  template<typename type_t>
+  template<class type_t>
   bool is(const any_object* o) {
     if (is<box<type_t>>(o->value())) return true;
     return __is_polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(*o);

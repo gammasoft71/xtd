@@ -8,7 +8,7 @@ using namespace xtd::drawing;
 using namespace xtd::drawing::imaging;
 
 namespace {
-  template<typename type_t>
+  template<class type_t>
   void add_bytes(std::vector<xtd::byte>& bytes, type_t value) {
     auto value_bytes = bit_converter::get_bytes(value);
     bytes.insert(bytes.end(), value_bytes.begin(), value_bytes.end());

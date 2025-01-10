@@ -19,7 +19,7 @@ namespace xtd {
     namespace generic {
       /// @brief Defines a key/value pair that can be set or retrieved.
       /// ```cpp
-      /// template<typename key_t, typename value_t>
+      /// template<class key_t, class value_t>
       /// struct key_value_pair : xtd::object, xtd::iequatable<key_value_pair<key_t, value_t>>;
       /// ```
       /// @par Header
@@ -138,7 +138,7 @@ namespace xtd {
         /// @param key The key of the key_value_pair.
         /// @param value The value of the key_value_pair.
         /// @return The key_value_pair value type.
-        template<typename key_t, typename value_t>
+        template<class key_t, class value_t>
         static key_value_pair<key_t, value_t> create(key_t key, value_t value) {return key_value_pair<key_t, value_t>(key, value);}
         /// @}
       };

@@ -49,7 +49,7 @@ namespace xtd {
   /// auto result = stringer(boxed_object);
   /// console::write_line("result = {}", result); // Display: result = true;
   /// ```
-  template<typename type_t>
+  template<class type_t>
   class box : public xtd::object, public xtd::icomparable<box<type_t>>, public xtd::iequatable<box<type_t>>, public xtd::iformatable {
   public:
     using underlying_type = type_t;
