@@ -89,7 +89,7 @@ namespace xtd {
       /// @brief Gets the lparam value and converts the value to an object.
       /// @tparam type The type to use to create an instance. This type must be declared as a structure type.
       /// @return An object that represents an instance of the class specified by the template parameter, with the data from the lparam field of the message.
-      template<typename type_t>
+      template<class type_t>
       type_t get_lparam() const noexcept { return reinterpret_cast<type_t>(lparam_); }
       
       /// @brief Returns a string that represents the msg property.

@@ -12,12 +12,12 @@ namespace xtd {
   template<typename type_t, typename bool_t>
   struct __enum_any_object__ {};
   
-  template<typename type_t>
+  template<class type_t>
   struct __enum_any_object__<type_t, std::true_type> {
     type_t operator()(const any_object& o) const {return as<enum_object<type_t>>(o.value());}
   };
   
-  template<typename type_t>
+  template<class type_t>
   struct __enum_any_object__<type_t, std::false_type> {
     type_t operator()(const any_object& o) const {throw invalid_cast_exception {};}
   };
@@ -25,12 +25,12 @@ namespace xtd {
   template<typename type_t, typename bool_t>
   struct __polymorphic_any_object__ {};
   
-  template<typename type_t>
+  template<class type_t>
   struct __polymorphic_any_object__<type_t, std::true_type> {
     type_t operator()(const any_object& o) const {return as<type_t>(o.value());}
   };
   
-  template<typename type_t>
+  template<class type_t>
   struct __polymorphic_any_object__<type_t, std::false_type> {
     type_t operator()(const any_object& o) const {return __enum_any_object__<type_t, typename std::is_enum<type_t>::type> {}(o);}
   };
@@ -53,13 +53,13 @@ namespace xtd {
   /// std::any value = true;
   /// bool result = as<bool>(value);
   /// ```
-  template<typename type_t>
+  template<class type_t>
   type_t as(any_object& o) {
     if (is<box<type_t>>(o.value())) return as<box<type_t>>(o.value()).value();
     return __polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
   }
   
-  template<typename type_t>
+  template<class type_t>
   type_t as(const any_object& o) {
     if (is<box<type_t>>(o.value())) return as<box<type_t>>(o.value()).value();
     return __polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);

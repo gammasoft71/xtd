@@ -44,22 +44,22 @@ xtd::uint32 MAKELONG(type1_t a, type2_t b) {
   return static_cast<xtd::uint32>((static_cast<xtd::uint16>((static_cast<xtd::uint32>(a)) & 0xffff)) | (static_cast<xtd::uint32>(static_cast<xtd::uint16>((static_cast<xtd::uint32>(b)) & 0xffff))) << 16);
 }
 
-template<typename type_t>
+template<class type_t>
 inline xtd::uint16 LOWORD(type_t value) {
   return static_cast<xtd::uint16>(static_cast<xtd::uint32>(value) & 0xFFFF);
 }
 
-template<typename type_t>
+template<class type_t>
 inline xtd::uint16 HIWORD(type_t value) {
   return static_cast<xtd::uint16>((static_cast<xtd::uint32>(value) >> 16) & 0xFFFF);
 }
 
-template<typename type_t>
+template<class type_t>
 inline xtd::uint16 LOBYTE(type_t value) {
   return static_cast<xtd::byte>(static_cast<xtd::uint32>(value) & 0xFF);
 }
 
-template<typename type_t>
+template<class type_t>
 inline xtd::byte HIBYTE(type_t value) {
   return static_cast<xtd::byte>((static_cast<xtd::uint32>(value) >> 8) & 0xFF);
 }

@@ -20,10 +20,10 @@ namespace xtd {
   any_object make_any_object(args_t&& ... args) {return any_object {type_t(args...)};}
   
   /// @cond
-  template<typename type_t>
+  template<class type_t>
   any_object make_any_object(const type_t& arg) {return any_object {arg};}
   
-  template<typename type_t>
+  template<class type_t>
   any_object make_any_object() {return any_object {type_t()};}
   /// @endcond
 }

@@ -32,7 +32,7 @@ namespace xtd {
     namespace generic {
       /// @brief Represents a strongly typed list of objects that can be accessed by index. Provides methods to search, sort, and manipulate lists.
       /// ```cpp
-      /// template<typename type_t>
+      /// template<class type_t>
       /// class list : public xtd::object, xtd::collections::generic::ilist<type_t>, public xtd::iequatable<xtd::collections::generic::list<type_t>>
       /// ```
       /// @par Header

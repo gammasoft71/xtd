@@ -45,7 +45,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types).
-  template<typename type_t>
+  template<class type_t>
   inline auto boxing(const type_t& value) noexcept {return typename __box_enum_or_object__<type_t, typename std::is_enum<type_t>::type>::type(value);}
   /// @brief Allows to box an object
   /// @param ...args  Params used to initialize object.

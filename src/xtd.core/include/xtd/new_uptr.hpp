@@ -24,10 +24,10 @@ namespace xtd {
   uptr<type_t> new_uptr(args_t&& ... args) {return uptr<type_t> {new type_t(std::forward<args_t>(args)...)};}
   
   /// @cond
-  template<typename type_t>
+  template<class type_t>
   uptr<type_t> new_uptr(const type_t& arg) {return uptr<type_t> {new type_t(arg)};}
   
-  template<typename type_t>
+  template<class type_t>
   uptr<type_t> new_uptr() {return uptr<type_t>(new type_t);}
   /// @endcond
 }

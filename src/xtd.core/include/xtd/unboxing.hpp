@@ -41,17 +41,17 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types).
-  template<typename type_t>
+  template<class type_t>
   inline type_t unboxing(const xtd::box<type_t>& value) noexcept {return value.value();}
   
   /// @cond
-  template<typename type_t>
+  template<class type_t>
   inline type_t unboxing(xtd::box<type_t>& value) noexcept {return value.value();}
   
-  template<typename type_t>
+  template<class type_t>
   inline type_t unboxing(const xtd::enum_object<type_t>& value) noexcept {return value.value();}
   
-  template<typename type_t>
+  template<class type_t>
   inline type_t unboxing(xtd::enum_object<type_t>& value) noexcept {return value.value();}
   
   inline const object& unboxing(const object& value) noexcept {return value;}
@@ -125,7 +125,7 @@ namespace xtd {
   }
   
   /*
-  template<typename type_t>
+  template<class type_t>
   inline const type_t& unboxing(const type_t& value) noexcept {
     if (dynamic_cast<const xtd::enum_object<type_t>*>(&value) != nullptr) {
       thread_local static type_t result = dynamic_cast<const xtd::enum_object<type_t>*>(&value)->value();
@@ -136,7 +136,7 @@ namespace xtd {
     return value;
   }
   
-  template<typename type_t>
+  template<class type_t>
   inline type_t& unboxing(type_t& value) noexcept {
     if (dynamic_cast<xtd::enum_object<type_t>*>(&value) != nullptr) {
       thread_local static type_t result = dynamic_cast<xtd::enum_object<type_t>*>(&value)->value();

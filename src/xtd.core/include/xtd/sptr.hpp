@@ -21,7 +21,7 @@ namespace xtd {
   /// console::write_line("version = {}", version->to_string());
   /// delete_ptr(version); // Not mandatory.
   /// @endcode
-  template<typename type_t>
+  template<class type_t>
   using sptr = std::shared_ptr<type_t>;
   /// @}
 }

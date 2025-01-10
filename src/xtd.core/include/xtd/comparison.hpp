@@ -20,6 +20,6 @@ namespace xtd {
   /// | less than 0    | x is less than y.    |
   /// | 0              | x equals y.          |
   /// | Greater than 0 | x is greater than y. |
-  template<typename type_t>
+  template<class type_t>
   using comparison = delegate<int32, type_t, type_t>;
 }

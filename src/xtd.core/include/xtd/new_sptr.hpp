@@ -24,10 +24,10 @@ namespace xtd {
   sptr<type_t> new_sptr(args_t&& ... args) {return sptr<type_t> {new type_t(std::forward<args_t>(args)...)};}
 
   /// @cond
-  template<typename type_t>
+  template<class type_t>
   sptr<type_t> new_sptr(const type_t& arg) {return sptr<type_t> {new type_t(arg)};}
   
-  template<typename type_t>
+  template<class type_t>
   sptr<type_t> new_sptr() {return sptr<type_t>(new type_t);}
   /// @endcond
 }

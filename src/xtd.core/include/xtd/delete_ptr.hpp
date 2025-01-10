@@ -23,7 +23,7 @@ namespace xtd {
   /// @endcode
   /// @remarks This operator does not have to be called because when an xtd::sptr object leaves the scope, its value is automatically reset.
   /// @remarks Use it when you want to reset the xtd::sptr object at a specific time.
-  template<typename type_t>
+  template<class type_t>
   void delete_ptr(sptr<type_t>& ptr) {ptr = null;}
   
   /// @brief xtd::delete_ptr operator delete a xtd::uptr object.
@@ -40,6 +40,6 @@ namespace xtd {
   /// @endcode
   /// @remarks This operator does not have to be called because when an xtd::uptr object leaves the scope, its value is automatically reset.
   /// @remarks Use it when you want to reset the xtd::ptr object at a specific time.
-  template<typename type_t>
+  template<class type_t>
   void delete_ptr(uptr<type_t>& ptr) {ptr = null;}
 }

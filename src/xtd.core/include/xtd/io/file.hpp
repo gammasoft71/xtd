@@ -48,7 +48,7 @@ namespace xtd {
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       /// @remarks If the target file already exists, it is overwritten.
-      template<typename type_t>
+      template<class type_t>
       static void append_all_lines(const xtd::string& path, type_t contents) {
         xtd::io::stream_writer sw(path, true);
         for (const auto& line : contents)
@@ -62,7 +62,7 @@ namespace xtd {
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       /// @remarks If the target file already exists, it is overwritten.
-      template<typename type_t>
+      template<class type_t>
       static void append_all_lines(const xtd::string& path, const std::initializer_list<type_t>& contents) {
         xtd::io::stream_writer sw(path, true);
         for (const auto& line : contents)
@@ -75,7 +75,7 @@ namespace xtd {
       /// @return true if the text appended; otherwise, false.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
-      template<typename type_t>
+      template<class type_t>
       static void append_all_text(const xtd::string& path, type_t text) {
         xtd::io::stream_writer sw(path, true);
         sw.write(text);
@@ -328,7 +328,7 @@ namespace xtd {
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       /// @remarks If the target file already exists, it is overwritten.
-      template<typename type_t>
+      template<class type_t>
       static void write_all_lines(const xtd::string& path, type_t contents) {
         xtd::io::stream_writer sw(path);
         for (const auto& line : contents)
@@ -342,7 +342,7 @@ namespace xtd {
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       /// @remarks If the target file already exists, it is overwritten.
-      template<typename type_t>
+      template<class type_t>
       static void write_all_lines(const xtd::string& path, const std::initializer_list<type_t>& contents) {
         xtd::io::stream_writer sw(path);
         for (const auto& line : contents)
@@ -355,7 +355,7 @@ namespace xtd {
       /// @return true if the text written; otherwise, false.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
-      template<typename type_t>
+      template<class type_t>
       static void write_all_text(const xtd::string& path, type_t text) {
         xtd::io::stream_writer sw(path);
         sw.write(text);

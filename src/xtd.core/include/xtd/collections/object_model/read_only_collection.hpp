@@ -17,7 +17,7 @@ namespace xtd {
     namespace object_model {
       /// @brief Provides the base class for a generic read-only collection.
       /// ```cpp
-      /// template<typename type_t>
+      /// template<class type_t>
       /// class read_only_collection : public xtd::object, public xtd::collections::generic::ilist<type_t>
       /// ```
       /// @par Header
@@ -36,7 +36,7 @@ namespace xtd {
       ///
       /// Finally, the code example creates an array larger than the collection and uses the xtd::collections::object_model::read_only_collection::copy_to method to insert the elements of the collection into the middle of the array.
       /// @include read_only_collection.cpp
-      template<typename type_t>
+      template<class type_t>
       class read_only_collection : public xtd::object, public xtd::collections::generic::ilist<type_t> {
         template<typename list_type_t>
         class empty_list : public generic::ilist<list_type_t> {

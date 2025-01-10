@@ -149,7 +149,7 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename type_t>
+      template<class type_t>
       static void enter(const type_t* str) {enter(string(str));}
       /// @endcond
 
@@ -164,7 +164,7 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename type_t>
+      template<class type_t>
       static void enter(const type_t* str, bool& lock_taken) {enter(string(str), lock_taken);}
       /// @endcond
 
@@ -178,7 +178,7 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename type_t>
+      template<class type_t>
       static void exit(const type_t* str) {exit(string(str));}
       /// @endcond
 
@@ -193,7 +193,7 @@ namespace xtd {
       }
 
       /// @cond
-      template<typename type_t>
+      template<class type_t>
       static bool is_entered(const type_t* str) {return is_entered(string(str));}
       /// @endcond
 
@@ -212,7 +212,7 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename type_t>
+      template<class type_t>
       static void pulse(const type_t* str) {pulse(string(str));}
       /// @endcond
 
@@ -230,7 +230,7 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename type_t>
+      template<class type_t>
       static void pulse_all(const type_t* str) {pulse_all(string(str));}
       /// @endcond
 
@@ -246,7 +246,7 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename type_t>
+      template<class type_t>
       static bool try_enter(const type_t* str) {return try_enter(string(str));}
       /// @endcond
 
@@ -263,7 +263,7 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename type_t>
+      template<class type_t>
       static bool try_enter(const type_t* str, bool& lock_taken) {return try_enter(string(str), lock_taken);}
       /// @endcond
 
@@ -279,7 +279,7 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename type_t>
+      template<class type_t>
       static bool try_enter(const type_t* str, int32 milliseconds_timeout) {return try_enter(string(str), milliseconds_timeout);}
       /// @endcond
 
@@ -296,7 +296,7 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename type_t>
+      template<class type_t>
       static bool try_enter(const type_t* str, int32 milliseconds_timeout, bool& lock_taken) {return try_enter(string(str), milliseconds_timeout, lock_taken);}
       /// @endcond
 
@@ -312,7 +312,7 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename type_t>
+      template<class type_t>
       static bool try_enter(const type_t* str, int64 milliseconds_timeout) {return try_enter(string(str), milliseconds_timeout);}
       /// @endcond
 
@@ -329,7 +329,7 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename type_t>
+      template<class type_t>
       static bool try_enter(const type_t* str, int64 milliseconds_timeout, bool& lock_taken) {return try_enter(string(str), milliseconds_timeout, lock_taken);}
       /// @endcond
 
@@ -345,7 +345,7 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename type_t>
+      template<class type_t>
       static bool try_enter(const type_t* str, const time_span& timeout) {return try_enter(string(str), timeout);}
       /// @endcond
 
@@ -419,7 +419,7 @@ namespace xtd {
       /// @}
 
       /// @cond
-      template<typename type_t>
+      template<class type_t>
       static bool try_enter(const type_t* str, const time_span& timeout, bool& lock_taken) {return try_enter(string(str), timeout, lock_taken);}
       /// @endcond
       
@@ -435,7 +435,7 @@ namespace xtd {
         return std::make_pair(is_string ? get_ustring_ptr(*(new string(as<string>(obj)))) : reinterpret_cast<intptr>(&obj), is_string);
       }
       
-      template<typename type_t>
+      template<class type_t>
       static object_ptr get_ptr(const type_t* str) {return get_ptr(string(str));}
 
       static void enter_ptr(object_ptr obj);

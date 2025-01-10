@@ -12,6 +12,6 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename type_t>
+  template<class type_t>
   using predicate = xtd::func<bool, type_t>;
 }

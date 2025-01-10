@@ -462,7 +462,7 @@ namespace xtd {
     static void write(arg_t&& value) {write_(xtd::string::format("{}",  value));}
     
     /// @cond
-    template<typename type_t>
+    template<class type_t>
     static void write(std::initializer_list<type_t>&& il) {write_(xtd::string::format("{}", il));}
     /// @endcond
 
@@ -483,7 +483,7 @@ namespace xtd {
     static void write_line(arg_t&& value) {write_line_(xtd::string::format("{}", value));}
     
     /// @cond
-    template<typename type_t>
+    template<class type_t>
     static void write_line(const std::initializer_list<type_t>& il) {write_line_(xtd::string::format("{}", il));}
     /// @endcond
 

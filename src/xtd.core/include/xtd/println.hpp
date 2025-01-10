@@ -16,7 +16,7 @@ namespace xtd {
   void println(arg_t&& value) {xtd::console::write_line(xtd::string::format("{}", value));}
   
   /// @cond
-  template<typename type_t>
+  template<class type_t>
   void println(const std::initializer_list<type_t>& il) {xtd::console::write_line(xtd::string::format("{}", il));}
   /// @endcond
 

@@ -85,7 +85,7 @@ namespace xtd {
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
-      template<typename type_t>
+      template<class type_t>
       static type_t compare_exchange(object& location, const object& value, const object& comparand) noexcept {
         type_t retValue = location;
         lock_(location) {
@@ -98,7 +98,7 @@ namespace xtd {
       /// @param value The value that replaces the destination value if the comparison results in equality.
       /// @param comparand The value that is compared to the value at location.
       /// @return The original value in location.
-      template<typename type_t>
+      template<class type_t>
       static type_t compare_exchange(type_t& location, type_t value, type_t comparand) noexcept {
         type_t retValue = location;
         lock_(location) {
@@ -129,7 +129,7 @@ namespace xtd {
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
-      template<typename type_t>
+      template<class type_t>
       static type_t exchange(type_t& location, type_t value) {
         type_t original = location;
         lock_(location)
@@ -166,7 +166,7 @@ namespace xtd {
       /// @param location The variable to set to the specified value.
       /// @param value The value to which the location parameter is set.
       /// @return The original value of location.
-      template<typename type_t>
+      template<class type_t>
       static type_t exchange(object& location, const object& value) noexcept {
         type_t original = location;
         lock_(location)

@@ -210,7 +210,7 @@ namespace xtd {
       /// @param key The key used to read a value.
       /// @param default_value A string used if value not found.
       /// @return A type_t that represent the value associate to the key.
-      template<typename type_t>
+      template<class type_t>
       type_t read(const xtd::string& key, const type_t& default_value) {
         return xtd::parse<type_t>(read_string(key, xtd::string::format("{}", default_value)));
       }
@@ -234,7 +234,7 @@ namespace xtd {
       /// @param key The key used to write a value.
       /// @param value A type_t to write.
       /// @remarks To write permanently use the xtd::configuration::settings::save method.
-      template<typename type_t>
+      template<class type_t>
       void write(const xtd::string& key, type_t&& value) {
         write_string(key, xtd::string::format("{}", value));
       }
