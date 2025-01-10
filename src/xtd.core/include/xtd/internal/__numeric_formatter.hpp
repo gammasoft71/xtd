@@ -14,7 +14,7 @@
 #include <algorithm>
 
 /// @cond
-template<typename char_t, typename value_t>
+template<class char_t, class value_t>
 inline std::basic_string<char_t> __numeric_formatter(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
   auto format = fmt;
   if (format.empty()) format = {'G'};

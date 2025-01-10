@@ -258,7 +258,7 @@ namespace xtd {
         
         void push_back(const value_type& value) override;
         
-        template<typename control_t>
+        template<class control_t>
         iterator insert(const_iterator pos, control_t& value) {
           for (auto it = begin(); it != end(); ++it)
             if (it->get() == value) return it;
@@ -269,7 +269,7 @@ namespace xtd {
           return base::insert(pos, control_ref);
         }
         
-        template<typename control_t>
+        template<class control_t>
         void insert_at(size_t index, control_t& value) {
           for (auto it = begin(); it != end(); ++it)
             if (it->get() == value) return;
@@ -282,7 +282,7 @@ namespace xtd {
           }
         }
         
-        template<typename control_t>
+        template<class control_t>
         void push_back(control_t& value) {
           for (auto it = begin(); it != end(); ++it)
             if (it->get() == value) return;
@@ -1228,7 +1228,7 @@ namespace xtd {
       static control create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create a specified control.
       /// @return New control created.
-      template<typename control_t>
+      template<class control_t>
       static control_t create() {
         auto result = control_t {};
         return result;
@@ -1236,7 +1236,7 @@ namespace xtd {
       /// @brief A factory to create a specified control with specified location.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @return New control created.
-      template<typename control_t>
+      template<class control_t>
       static control_t create(const drawing::point& location) {
         auto result = control_t {};
         result.location(location);
@@ -1246,7 +1246,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
-      template<typename control_t>
+      template<class control_t>
       static control_t create(const drawing::point& location, const drawing::size& size) {
         auto result = control_t {};
         result.location(location);
@@ -1258,7 +1258,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @param name The name of the control.
       /// @return New control created.
-      template<typename control_t>
+      template<class control_t>
       static control_t create(const drawing::point& location, const drawing::size& size, const xtd::string& name) {
         auto result = control_t {};
         result.location(location);
@@ -1269,7 +1269,7 @@ namespace xtd {
       /// @brief A factory to create a specified control with specified parent.
       /// @param parent The parent that contains the new created control.
       /// @return New control created.
-      template<typename control_t>
+      template<class control_t>
       static control_t create(const control& parent) {
         auto result = control_t {};
         result.parent(parent);
@@ -1279,7 +1279,7 @@ namespace xtd {
       /// @param parent The parent that contains the new created control.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @return New control created.
-      template<typename control_t>
+      template<class control_t>
       static control_t create(const control& parent, const drawing::point& location) {
         auto result = control_t {};
         result.parent(parent);
@@ -1291,7 +1291,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
-      template<typename control_t>
+      template<class control_t>
       static control_t create(const control& parent, const drawing::point& location, const drawing::size& size) {
         auto result = control_t {};
         result.parent(parent);
@@ -1305,7 +1305,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @param name The name of the control.
       /// @return New control created.
-      template<typename control_t>
+      template<class control_t>
       static control_t create(const control& parent, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
         auto result = control_t {};
         result.parent(parent);
@@ -1317,7 +1317,7 @@ namespace xtd {
       /// @brief A factory to create a specified control with specified text.
       /// @param text A string that represent text of the control.
       /// @return New control created.
-      template<typename control_t>
+      template<class control_t>
       static control_t create(const xtd::string& text) {
         auto result = control_t {};
         result.text(text);
@@ -1327,7 +1327,7 @@ namespace xtd {
       /// @param text A string that represent text of the control.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @return New control created.
-      template<typename control_t>
+      template<class control_t>
       static control_t create(const xtd::string& text, const drawing::point& location) {
         auto result = control_t {};
         result.text(text);
@@ -1339,7 +1339,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
-      template<typename control_t>
+      template<class control_t>
       static control_t create(const xtd::string& text, const drawing::point& location, const drawing::size& size) {
         auto result = control_t {};
         result.text(text);
@@ -1353,7 +1353,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @param name The name of the control.
       /// @return New control created.
-      template<typename control_t>
+      template<class control_t>
       static control_t create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
         auto result = control_t {};
         result.text(text);
@@ -1366,7 +1366,7 @@ namespace xtd {
       /// @param parent The parent that contains the new created control.
       /// @param text A string that represent text of the control.
       /// @return New control created.
-      template<typename control_t>
+      template<class control_t>
       static control_t create(const control& parent, const xtd::string& text) {
         auto result = control_t {};
         result.parent(parent);
@@ -1378,7 +1378,7 @@ namespace xtd {
       /// @param text A string that represent text of the control.
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @return New control created.
-      template<typename control_t>
+      template<class control_t>
       static control_t create(const control& parent, const xtd::string& text, const drawing::point& location) {
         auto result = control_t {};
         result.parent(parent);
@@ -1392,7 +1392,7 @@ namespace xtd {
       /// @param location A xtd::drawing::point that represent location of the control.
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @return New control created.
-      template<typename control_t>
+      template<class control_t>
       static control_t create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size) {
         auto result = control_t {};
         result.parent(parent);
@@ -1408,7 +1408,7 @@ namespace xtd {
       /// @param size A xtd::drawing::size that represent size of the control.
       /// @param name The name of the control.
       /// @return New control created.
-      template<typename control_t>
+      template<class control_t>
       static control_t create(const control& parent, const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name) {
         auto result = control_t {};
         result.parent(parent);

@@ -39,7 +39,7 @@ namespace xtd {
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-      template<typename exception_t>
+      template<class exception_t>
       protocol_violation_exception(const std::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : xtd::invalid_operation_exception(message, inner_exception, stack_frame) {}
       
       /// @brief Create a new instance of class protocol_violation_exception

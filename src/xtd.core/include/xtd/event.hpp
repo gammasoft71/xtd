@@ -51,7 +51,7 @@ namespace xtd {
     /// @brief Adds a function to the event.
     /// @param function Function to add.
     /// @return The current event instance.
-    template<typename fn_t>
+    template<class fn_t>
     handler_t& operator +=(fn_t function) noexcept {
       return handler_t::operator +=(function);
     }
@@ -73,7 +73,7 @@ namespace xtd {
     /// @brief Removes a function to the event.
     /// @param function Function to remove.
     /// @return The current event instance.
-    template<typename fn_t>
+    template<class fn_t>
     handler_t& operator -=(fn_t function) noexcept {
       return handler_t::operator -=(function);
     }

@@ -397,14 +397,14 @@ std::string __format_stringer_to_std_string(const std::u16string& str);
 std::string __format_stringer_to_std_string(const std::u32string& str);
 std::string __format_stringer_to_std_string(const std::wstring& str);
 
-template<typename char_t, typename value_t>
+template<class char_t, class value_t>
 inline std::basic_string<char_t> __format_stringer(value_t value) {
   std::basic_stringstream<char_t> ss;
   ss << __format_stringer_to_std_string(value).c_str(); // Using "c_str()" is not the best method, but it is the only possibility if "char_t" is of another type than "char".
   return ss.str();
 }
 
-template<typename char_t, typename value_t>
+template<class char_t, class value_t>
 inline std::basic_string<char_t> __format_stringer(const bool& value) {
   std::basic_stringstream<char_t> ss;
   ss << std::boolalpha << value;
@@ -426,7 +426,7 @@ inline std::basic_string<char_t> __format_stringer(const char* const& value) {
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-template<typename char_t, typename value_t>
+template<class char_t, class value_t>
 inline std::basic_string<char_t> __format_stringer(const xtd::char8*& value) {
   auto s = std::u8string(value);
   std::basic_stringstream<char_t> ss;
@@ -434,7 +434,7 @@ inline std::basic_string<char_t> __format_stringer(const xtd::char8*& value) {
   return ss.str();
 }
 
-template<typename char_t, typename value_t>
+template<class char_t, class value_t>
 inline std::basic_string<char_t> __format_stringer(const xtd::char8* const& value) {
   auto s = std::u8string(value);
   std::basic_stringstream<char_t> ss;
@@ -443,42 +443,42 @@ inline std::basic_string<char_t> __format_stringer(const xtd::char8* const& valu
 }
 #endif
 
-template<typename char_t, typename value_t>
+template<class char_t, class value_t>
 inline std::basic_string<char_t> __format_stringer(const xtd::char16*& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);
   return ss.str();
 }
 
-template<typename char_t, typename value_t>
+template<class char_t, class value_t>
 inline std::basic_string<char_t> __format_stringer(const xtd::char16* const& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);
   return ss.str();
 }
 
-template<typename char_t, typename value_t>
+template<class char_t, class value_t>
 inline std::basic_string<char_t> __format_stringer(const xtd::char32*& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);
   return ss.str();
 }
 
-template<typename char_t, typename value_t>
+template<class char_t, class value_t>
 inline std::basic_string<char_t> __format_stringer(const xtd::char32* const& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);
   return ss.str();
 }
 
-template<typename char_t, typename value_t>
+template<class char_t, class value_t>
 inline std::basic_string<char_t> __format_stringer(const xtd::wchar*& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);
   return ss.str();
 }
 
-template<typename char_t, typename value_t>
+template<class char_t, class value_t>
 inline std::basic_string<char_t> __format_stringer(const xtd::wchar* const& value) {
   std::basic_stringstream<char_t> ss;
   ss << __to_string<char_t>(value);

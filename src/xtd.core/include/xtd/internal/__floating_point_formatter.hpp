@@ -89,7 +89,7 @@ inline std::basic_string<wchar_t> __floating_point_to_binary<wchar_t, float>(flo
   return __binary_formatter<wchar_t>(data.output, precision);
 }
 
-template<typename char_t, typename value_t>
+template<class char_t, class value_t>
 inline std::basic_string<char_t> __floating_point_formatter(const std::basic_string<char_t>& format, value_t value, const std::locale& loc) {
   auto fmt = format;
   if (fmt.empty()) fmt = {'G'};

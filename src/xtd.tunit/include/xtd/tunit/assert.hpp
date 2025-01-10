@@ -1331,7 +1331,7 @@ namespace xtd {
       /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(5);}); // test ok.
       /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(2);}); // test throws an assert_error exception.
       /// ```
-      template<typename exception_t>
+      template<class exception_t>
       static void throws(const std::function<void()>& statement, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {throws<exception_t>(statement, xtd::string::empty_string, stack_frame);}
       /// @brief Asserts that the statement throws a particular exception when called.
       /// @tparam exception_t The exception type that must be throw.
@@ -1345,7 +1345,7 @@ namespace xtd {
       /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(5);}, "User message..."); // test ok.
       /// xtd::tunit::assert::throws<std::out_of_range>([&] {v1.at(2);}, "User message..."); // test throws an assert_error exception.
       /// ```
-      template<typename exception_t>
+      template<class exception_t>
       static void throws(const std::function<void()>& statement, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           statement();

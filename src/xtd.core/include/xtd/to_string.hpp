@@ -751,7 +751,7 @@ namespace xtd {
   inline std::wstring to_string(const std::chrono::duration<type_t, Period>& value, const std::wstring& fmt, const std::locale& loc) {return __duration_formatter(fmt, value, loc);}
  
   /// @cond
-  template<typename char_t, typename value_t>
+  template<class char_t, class value_t>
   inline std::basic_string<char_t> __string_formatter(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
     return __format_stringer<char_t>(value);
   }

@@ -9,7 +9,7 @@
 /// @endcond
 
 /// @cond
-template<typename type_t, typename bool_t>
+template<class type_t, class bool_t>
 struct __box_enum_or_object__;
 
 template<class type_t>

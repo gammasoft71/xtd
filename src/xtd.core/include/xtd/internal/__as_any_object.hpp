@@ -9,7 +9,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  template<typename type_t, typename bool_t>
+  template<class type_t, class bool_t>
   struct __enum_any_object__ {};
   
   template<class type_t>
@@ -22,7 +22,7 @@ namespace xtd {
     type_t operator()(const any_object& o) const {throw invalid_cast_exception {};}
   };
   
-  template<typename type_t, typename bool_t>
+  template<class type_t, class bool_t>
   struct __polymorphic_any_object__ {};
   
   template<class type_t>

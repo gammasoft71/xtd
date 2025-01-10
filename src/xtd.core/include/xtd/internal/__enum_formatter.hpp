@@ -14,7 +14,7 @@
 template<typename enum_t>
 std::string __enum_to_string(enum_t value) noexcept;
 
-template<typename char_t, typename value_t>
+template<class char_t, class value_t>
 inline std::basic_string<char_t> __enum_formatter(const std::basic_string<char_t>& format, value_t value, const std::locale& loc) {
   auto fmt = format;
   if (fmt.empty()) fmt = {'G'};

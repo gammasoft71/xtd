@@ -67,7 +67,7 @@ namespace xtd {
     namespace native {
       class control_handler;
       
-      template<typename control_t>
+      template<class control_t>
       class control_wrapper : public control_t, public iwx_evt {
         friend control_handler;
       protected:

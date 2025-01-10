@@ -83,7 +83,7 @@ namespace xtd {
         /// @brief Adds a function to the event.
         /// @param function Function to add.
         /// @return The current event instance.
-        template<typename fn_t>
+        template<class fn_t>
         xtd::diagnostics::data_received_event_handler& operator +=(fn_t function) noexcept {
           error_data_received_callback() += (function);
           return xtd::diagnostics::data_received_event_handler::operator +=(function);
@@ -102,7 +102,7 @@ namespace xtd {
         /// @brief Removes a function to the event.
         /// @param function Function to remove.
         /// @return The current event instance.
-        template<typename fn_t>
+        template<class fn_t>
         xtd::diagnostics::data_received_event_handler& operator -=(fn_t function) noexcept {
           error_data_received_callback() -= (function);
           return data_received_event_handler::operator -=(function);
@@ -147,7 +147,7 @@ namespace xtd {
         /// @brief Adds a function to the event.
         /// @param function Function to add.
         /// @return The current event instance.
-        template<typename fn_t>
+        template<class fn_t>
         xtd::event_handler& operator +=(fn_t function) noexcept {
           exit_callback() += (function);
           return xtd::event_handler::operator +=(function);
@@ -166,7 +166,7 @@ namespace xtd {
         /// @brief Removes a function to the event.
         /// @param function Function to remove.
         /// @return The current event instance.
-        template<typename fn_t>
+        template<class fn_t>
         xtd::event_handler& operator -=(fn_t function) noexcept {
           exit_callback() -= (function);
           return xtd::event_handler::operator -=(function);
@@ -211,7 +211,7 @@ namespace xtd {
         /// @brief Adds a function to the event.
         /// @param function Function to add.
         /// @return The current event instance.
-        template<typename fn_t>
+        template<class fn_t>
         xtd::diagnostics::data_received_event_handler& operator +=(fn_t function) noexcept {
           output_data_received_callback() += (function);
           return xtd::diagnostics::data_received_event_handler::operator +=(function);
@@ -230,7 +230,7 @@ namespace xtd {
         /// @brief Removes a function to the event.
         /// @param function Function to remove.
         /// @return The current event instance.
-        template<typename fn_t>
+        template<class fn_t>
         xtd::diagnostics::data_received_event_handler& operator -=(fn_t function) noexcept {
           output_data_received_callback() -= (function);
           return xtd::diagnostics::data_received_event_handler::operator -=(function);

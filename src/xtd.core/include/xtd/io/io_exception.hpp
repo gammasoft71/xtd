@@ -43,7 +43,7 @@ namespace xtd {
       /// @param message Message string associate to the exception.
       /// @param inner_exception The exception that is the cause of the current exception.
       /// @param stack_frame (optional) Contains current stack frame about member name, file path and  line number in the file where the exception is occurred. Typically  xtd::diagnostics::stack_frame::current().
-      template<typename exception_t>
+      template<class exception_t>
       io_exception(const xtd::optional<xtd::string>& message, const exception_t& inner_exception, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : system_exception(message, inner_exception, stack_frame) {error_code(h_result::make_error_code(h_result::COR_E_IO));}
 
       /// @brief Create a new instance of class xtd::io::io_exception
