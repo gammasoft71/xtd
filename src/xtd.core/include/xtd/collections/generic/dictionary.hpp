@@ -508,7 +508,7 @@ namespace xtd {
         }
         
         /// @brief Checks if the container contains element with specific key.
-        /// @remarks Checks if there is an element with key that compares equivalent to the value `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such `hasher_t` is callable with both `K` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `key_t`.
+        /// @remarks Checks if there is an element with key that compares equivalent to the value `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such `hasher_t` is callable with both `contains_key_t` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `key_t`.
         template <typename contains_key_t>
         bool contains(const contains_key_t& x) const {
           return data_->items.find(x) != data_->items.end();
@@ -543,6 +543,44 @@ namespace xtd {
           return to_iterator(data_->items.emplace_hint(to_base_type_iterator(hint), std::forward<args_t>(args)...));
         }
         
+        /// @brief Returns range of elements matching a specific key.
+        /// @param key The key value to compare the elements to.
+        /// @return xtd::collections::generic::key_value_pair containing a pair of iterators defining the wanted range. If there are no such elements, past-the-end (see xtd::collections::generic::dictionary::end) iterators are returned as both elements of the pair.
+        /// @remarks Returns a range containing all elements with key `key` in the container. The range is defined by two iterators, the first pointing to the first element of the wanted range and the second pointing past the last element of the range.
+        key_value_pair<iterator, iterator> equal_range(const key_t& key) {
+          const auto& [first, last] = data_->items.equal_range(key);
+          return {to_iterator(first), to_iterator(last)};
+        }
+        
+        /// @brief Returns range of elements matching a specific key.
+        /// @param key The key value to compare the elements to.
+        /// @return xtd::collections::generic::key_value_pair containing a pair of iterators defining the wanted range. If there are no such elements, past-the-end (see xtd::collections::generic::dictionary::end) iterators are returned as both elements of the pair.
+        /// @remarks Returns a range containing all elements with key `key` in the container. The range is defined by two iterators, the first pointing to the first element of the wanted range and the second pointing past the last element of the range.
+        template <typename equal_range_key_t>
+        key_value_pair<const_iterator, const_iterator> equal_range(const equal_range_key_t& key) const {
+          const auto& [first, last] = data_->items.equal_range(key);
+          return {to_iterator(first), to_iterator(last)};
+        }
+        
+        /// @brief Returns range of elements matching a specific key.
+        /// @param x A value of any type that can be transparently compared with a key.
+        /// @return xtd::collections::generic::key_value_pair containing a pair of iterators defining the wanted range. If there are no such elements, past-the-end (see xtd::collections::generic::dictionary::end) iterators are returned as both elements of the pair.
+        /// @remarks Returns a range containing all elements in the container with key equivalent to `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such Hash is callable with both `equal_range_key_t` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `Key`.
+        template <typename equal_range_key_t>
+        key_value_pair<iterator, iterator> equal_range(const equal_range_key_t& x) {
+          const auto& [first, last] = data_->items.equal_range(x);
+          return {to_iterator(first), to_iterator(last)};
+        }
+        
+        /// @brief Returns range of elements matching a specific key.
+        /// @param x A value of any type that can be transparently compared with a key.
+        /// @return xtd::collections::generic::key_value_pair containing a pair of iterators defining the wanted range. If there are no such elements, past-the-end (see xtd::collections::generic::dictionary::end) iterators are returned as both elements of the pair.
+        /// @remarks Returns a range containing all elements in the container with key equivalent to `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such Hash is callable with both `equal_range_key_t` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `Key`.
+        key_value_pair<const_iterator, const_iterator> equal_range(const key_t& x) const {
+          const auto& [first, last] = data_->items.equal_range(x);
+          return {to_iterator(first), to_iterator(last)};
+        }
+
         /// @brief Erases elements.
         /// @param pos The iterator to the element to remove.
         /// @return The iterator following the last removed element.
