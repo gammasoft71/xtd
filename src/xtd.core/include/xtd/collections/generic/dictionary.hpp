@@ -173,7 +173,12 @@ namespace xtd {
         /// @param alloc Allocator to use for all memory allocations of this container.
         /// @remarks Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844).
         template <typename input_iterator_t>
-        explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count = 0, const hasher& hash = hasher {}, const equator& equal = equator {}, const allocator_type& alloc = allocator_type {}) noexcept : data_(xtd::new_ptr<data>(first, last, bucket_count, hash, equal, alloc)) {}
+        explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count = 0, const hasher& hash = hasher {}, const equator& equal = equator {}, const allocator_type& alloc = allocator_type {}) noexcept : data_(xtd::new_ptr<data>(bucket_count, hash, equal, alloc)) {
+          for (auto iterator = first; iterator != last; ++iterator) {
+            const auto& [key, value] = *iterator;
+            add(key, value);
+          }
+        }
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param first The fist iterator of the range [first, last) to copy the elements from.
         /// @param last  Thaae last itezrator of the range [first, last) to copy the elements from.
@@ -181,7 +186,12 @@ namespace xtd {
         /// @param alloc Allocator to use for all memory allocations of this container.
         /// @remarks Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844).
         template <typename input_iterator_t>
-        explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(first, last, bucket_count, hasher {}, equator {}, alloc)) {}
+        explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(bucket_count, hasher {}, equator {}, alloc)) {
+          for (auto iterator = first; iterator != last; ++iterator) {
+            const auto& [key, value] = *iterator;
+            add(key, value);
+          }
+        }
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param first The fist iterator of the range [first, last) to copy the elements from.
         /// @param last  Thaae last itezrator of the range [first, last) to copy the elements from.
@@ -190,7 +200,12 @@ namespace xtd {
         /// @param alloc Allocator to use for all memory allocations of this container.
         /// @remarks Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844).
         template <typename input_iterator_t>
-        explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count, const hasher& hash, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(first, last, bucket_count, hash, equator {}, alloc)) {}
+        explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count, const hasher& hash, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(bucket_count, hash, equator {}, alloc)) {
+          for (auto iterator = first; iterator != last; ++iterator) {
+            const auto& [key, value] = *iterator;
+            add(key, value);
+          }
+        }
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param other Another container to be used as source to initialize the elements of the container with.
         /// @remarks Copy constructor. Constructs the container with the copy of the contents of `other`, copies the load factor, the predicate, and the hash function as well. If `alloc` is not provided, allocator is obtained by calling
@@ -212,7 +227,12 @@ namespace xtd {
         /// ```cpp
         /// std::allocator_traits<allocator_type>::select_on_container_copy_construction(other.get_allocator())
         /// ```
-        dictionary(const std::unordered_map<key_t, value_t>& other) noexcept : data_(xtd::new_ptr<data>(other.begin(), other.end(), 0, hasher {}, equator {}, allocator_type {})) {}
+        dictionary(const std::unordered_map<key_t, value_t>& other) noexcept : data_(xtd::new_ptr<data>(0, hasher {}, equator {}, allocator_type {})) {
+          for (auto iterator = other.begin(); iterator != other.end(); ++iterator) {
+            const auto& [key, value] = *iterator;
+            add(key, value);
+          }
+        }
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param other Another container to be used as source to initialize the elements of the container with.
         /// @param alloc Allocator to use for all memory allocations of this container.
@@ -220,7 +240,12 @@ namespace xtd {
         /// ```cpp
         /// std::allocator_traits<allocator_type>::select_on_container_copy_construction(other.get_allocator())
         /// ```
-        dictionary(const std::unordered_map<key_t, value_t>& other, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(other.begin(), other.end(), 0, hasher {}, equator {}, alloc)) {}
+        dictionary(const std::unordered_map<key_t, value_t>& other, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(0, hasher {}, equator {}, alloc)) {
+          for (auto iterator = other.begin(); iterator != other.end(); ++iterator) {
+            const auto& [key, value] = *iterator;
+            add(key, value);
+          }
+        }
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param other Another container to be used as source to initialize the elements of the container with.
         /// @remarks [Move constructor](https://en.cppreference.com/w/cpp/language/move_constructor). Constructs the container with the contents of `other` using move semantics. If `alloc` is not provided, allocator is obtained by move-construction from the allocator belonging to other.
@@ -517,8 +542,135 @@ namespace xtd {
           };
           return {new_ptr<internal_enumerator>(*this, data_->version)};
         }
+        
+        /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
+        /// @param value The element value to insert.
+        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place.
+        /// @remarks Inserts `value`.
+        /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
+        key_value_pair<iterator, bool> insert(const value_type& value) {
+          return data_->items.insert(value);
+        }
+        
+        /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
+        /// @param value The element value to insert.
+        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place.
+        /// @remarks Inserts `value`.
+        /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
+        key_value_pair<iterator, bool> insert(value_type&& value) {
+          return data_->items.insert(value);
+        }
+        
+        /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
+        /// @param value The element value to insert.
+        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place.
+        /// @remarks Inserts `value`.
+        /// @remarks Is equivalent to `emplace(std::forward<P>(value))` and only participates in overload resolution if `std::is_constructible<value_type, P&&>::value == true`.
+        /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
+        template <typename type_t>
+        key_value_pair<iterator, bool> insert(type_t&& value) {
+          return data_->items.insert(value);
+        }
+        
+        /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
+        /// @param hint The iterator, used as a suggestion as to where to insert the content.
+        /// @param value The element value to insert.
+        /// @return An iterator to the inserted element, or to the element that prevented the insertion.
+        /// @remarks Inserts `value`, using `hint` as a non-binding suggestion to where the search should start.
+        /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
+        iterator insert(const_iterator hint, const value_type& value) {
+          return data_->items.insert(hint, value);
+        }
+        
+        /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
+        /// @param hint The iterator, used as a suggestion as to where to insert the content.
+        /// @param value The element value to insert.
+        /// @return An iterator to the inserted element, or to the element that prevented the insertion.
+        /// @remarks Inserts `value`, using `hint` as a non-binding suggestion to where the search should start.
+        /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
+        iterator insert(const_iterator hint, value_type&& value) {
+          return data_->items.insert(hint, value);
+        }
+        
+        /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
+        /// @param hint The iterator, used as a suggestion as to where to insert the content.
+        /// @param value The element value to insert.
+        /// @return An iterator to the inserted element, or to the element that prevented the insertion.
+        /// @remarks Inserts `value`, using `hint` as a non-binding suggestion to where the search should start.
+        /// @remarks Is equivalent to `emplace_hint(hint, std::forward<P>(value))` and only participates in overload resolution if `std::is_constructible<value_type, P&&>::value == true`.
+        /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
+        template <typename type_t>
+        iterator insert(const_iterator hint, type_t&& value) {
+          return data_->items.insert(hint, value);
+        }
+                
+        /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
+        /// @param first The first iterator of the range of elements to insert.
+        /// @param last The last iterator of the range of elements to insert.
+        /// @remarks Inserts elements from range [`first`, `last`). If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844)).
+        /// @remarks If [`first`, `last`) is not a valid range, or `first` and/or `last` are iterators into `*this`, the behavior is undefined.
+        /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
+        template <typename input_iterator_t>
+        void insert(input_iterator_t first, input_iterator_t last) {
+          for (auto iterator = first; iterator != last; ++iterator) {
+            const auto& [key, value] = *iterator;
+            add(key, value);
+          }
+        }
 
-        /// @}
+        /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
+        /// @param ilist The initializer list to insert the values from.
+        /// @remarks Inserts elements from initializer list ilist. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844)).
+        /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
+        void insert(std::initializer_list<base_value_type> ilist) {
+          for (const auto& [key, value] : ilist)
+            add({key, value});
+        }
+
+        /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
+        /// @param ilist The initializer list to insert the values from.
+        /// @remarks Inserts elements from initializer list ilist. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844)).
+        /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
+        template <typename init_key_t, typename init_value_t>
+        void insert(std::initializer_list<key_value_pair<init_key_t, init_value_t>> ilist) {
+          for (const auto& [key, value] : ilist)
+            add({key, value});
+        }
+        
+        /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
+        /// @param nh A compatible [node handle](https://en.cppreference.com/w/cpp/container/node_handle).
+        /// @return An object of xtd::collections::generic::dictionary::insert_return_type with the members initialized as follows:
+        ///  * If `nh` is empty, inserted is `false`, position is xtd::collections::generic::dictionary::end(), and node is empty.
+        ///  * Otherwise if the insertion took place, inserted is `true`, position points to the inserted element, and node is empty.
+        ///  * If the insertion failed, inserted is `false`, node has the previous value of `nh`, and position points to an element with a key equivalent to `nh.key()`.
+        /// @remarks If `nh` is an empty [node handle](https://en.cppreference.com/w/cpp/container/node_handle), does nothing. Otherwise, inserts the element owned by nh into the container , if the container doesn't already contain an element with a key equivalent to `nh.key()`. The behavior is undefined if `nh` is not empty and `get_allocator() != nh.get_allocator()`.
+        /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
+        insert_return_type insert(node_type&& nh) {
+          return data_->items.inser(nh);
+        }
+        
+        /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
+        /// @param hint The iterator, used as a suggestion as to where to insert the content.
+        /// @param nh A compatible [node handle](https://en.cppreference.com/w/cpp/container/node_handle).
+        /// @return End iterator if `nh` was empty, iterator pointing to the inserted element if insertion took place, and iterator pointing to an element with a key equivalent to `nh.key()` if it failed.
+        /// @remarks If `nh` is an empty [node handle](https://en.cppreference.com/w/cpp/container/node_handle), does nothing and returns the end iterator. Otherwise, inserts the element owned by nh into the container, if the container doesn't already contain an element with a key equivalent to `nh.key()`, and returns the iterator pointing to the element with key equivalent to `nh.key()`(regardless of whether the insert succeeded or failed). If the insertion succeeds, `nh` is moved from, otherwise it retains ownership of the element. `hint` is used as a non-binding suggestion to where the search should start. The behavior is undefined if `nh` is not empty and `get_allocator() != nh.get_allocator()`.
+        /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
+        iterator insert(const_iterator hint, node_type&& nh) {
+          return data_->items.inser(hint, nh);
+        }
+        
+      /// @}
         
         /// @name Public Operators
         
@@ -598,11 +750,8 @@ namespace xtd {
           data() = default;
           data(size_type bucket_count, const hasher& hash, const equator& equal, const allocator_type& alloc) noexcept : items(bucket_count, hash, equal, alloc) {}
           explicit data(const allocator_type& alloc) noexcept : items(alloc) {}
-          template <typename input_iterator_t>
-          data(input_iterator_t first, input_iterator_t last, size_type bucket_count, const hasher& hash, const equator& equal, const allocator_type& alloc) noexcept : items(first, last, bucket_count, hash, equal, alloc) {}
           data(const base_type& items, size_type version, const allocator_type& alloc) noexcept : items {items, alloc}, version {version} {}
           data(base_type&& items, size_type version, const allocator_type& alloc) noexcept : items {items, alloc}, version {version} {}
-          data(std::initializer_list<base_value_type> init, size_type bucket_count, const hasher& hash, const equator& equal, const allocator_type& alloc) noexcept : items(init, bucket_count, hash, equal, alloc) {}
 
           base_type items;
           size_type version = 0;
