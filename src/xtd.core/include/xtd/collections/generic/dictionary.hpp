@@ -536,7 +536,7 @@ namespace xtd {
         /// @remarks Removes specified elements from the container. The order of the remaining elements is preserved. (This makes it possible to erase individual elements while iterating through the container.)
         /// @remarks Removes the element at `pos`.
         /// @remarks References and iterators to the erased elements are invalidated. Other iterators and references are not invalidated.
-        /// @remarks The iterator `pos` must be valid and dereferenceable. Thus the xtd::collections::generic::dictionary::end() iterator (which is valid, but is not dereferenceable) cannot be used as a value for `pos`.
+        /// @remarks The iterator `pos` must be valid and dereferenceable. Thus the xtd::collections::generic::dictionary::end iterator (which is valid, but is not dereferenceable) cannot be used as a value for `pos`.
         iterator erase(const_iterator pos) {
           ++data_->version;
           return to_iterator(data_->items.erase(to_base_type_iterator(pos)));
@@ -587,6 +587,39 @@ namespace xtd {
           return data_->items.extract(k);
         }
         
+        /// @brief Finds element with specific key.
+        /// @param key The key value of the element to search for.
+        /// @return An iterator to the requested element. If no such element is found, past-the-end (see xtd::collections::generic::dictionary::end) iterator is returned.
+        /// @remarks Finds an element with key equivalent to `key`.
+        const_iterator find(const key_t& key) const {
+          return to_iterator(data_->items.find(key));
+        }
+        
+        /// @brief Finds element with specific key.
+        /// @param key The key value of the element to search for.
+        /// @return An iterator to the requested element. If no such element is found, past-the-end (see xtd::collections::generic::dictionary::end) iterator is returned.
+        /// @remarks Finds an element with key equivalent to `key`.
+        iterator find(const key_t& key) {
+          return to_iterator(data_->items.find(key));
+        }
+        
+        /// @brief Finds element with specific key.
+        /// @param x A value of any type that can be transparently compared with a key.
+        /// @return An iterator to the requested element. If no such element is found, past-the-end (see xtd::collections::generic::dictionary::end) iterator is returned.
+        /// @remarks Finds an element with key that compares equivalent to the value `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such `hasher_t` is callable with both `find_key_t` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `key_t`.
+        template <typename find_key_t>
+        const_iterator find(const find_key_t& x) const {
+          return to_iterator(data_->items.find(x));
+        }
+        
+        /// @brief Finds element with specific key.
+        /// @param x A value of any type that can be transparently compared with a key.
+        /// @remarks Finds an element with key that compares equivalent to the value `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such `hasher_t` is callable with both `find_key_t` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `key_t`.
+        template <typename find_key_t>
+        iterator find(const find_key_t& x) {
+          return to_iterator(data_->items.find(x));
+        }
+
         /// @brief Returns the allocator associated with the container.
         /// @return The associated allocator.
         allocator_type get_allocator() const noexcept {return data_->items.get_allocator();}
@@ -739,7 +772,7 @@ namespace xtd {
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param nh A compatible [node handle](https://en.cppreference.com/w/cpp/container/node_handle).
         /// @return An object of xtd::collections::generic::dictionary::insert_return_type with the members initialized as follows:
-        ///  * If `nh` is empty, inserted is `false`, position is xtd::collections::generic::dictionary::end(), and node is empty.
+        ///  * If `nh` is empty, inserted is `false`, position is xtd::collections::generic::dictionary::end, and node is empty.
         ///  * Otherwise if the insertion took place, inserted is `true`, position points to the inserted element, and node is empty.
         ///  * If the insertion failed, inserted is `false`, node has the previous value of `nh`, and position points to an element with a key equivalent to `nh.key()`.
         /// @remarks If `nh` is an empty [node handle](https://en.cppreference.com/w/cpp/container/node_handle), does nothing. Otherwise, inserts the element owned by nh into the container , if the container doesn't already contain an element with a key equivalent to `nh.key()`. The behavior is undefined if `nh` is not empty and `get_allocator() != nh.get_allocator()`.
@@ -878,7 +911,7 @@ namespace xtd {
         /// @brief Swaps the contents.
         /// @param The container to exchange the contents with.
         /// @remarks Exchanges the contents of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
-        /// @remarks All iterators and references remain valid. The xtd::collections::generic::dictionary::end() iterator is invalidated. The `hasher_t` and `equator_t` objects must be [Swappable](https://en.cppreference.com/w/cpp/named_req/Swappable), and they are exchanged using unqualified calls to non-member swap.
+        /// @remarks All iterators and references remain valid. The xtd::collections::generic::dictionary::end iterator is invalidated. The `hasher_t` and `equator_t` objects must be [Swappable](https://en.cppreference.com/w/cpp/named_req/Swappable), and they are exchanged using unqualified calls to non-member swap.
         void swap(dictionary& other) noexcept {
           data_->items.swap(other.data_->items);
           std::swap(data_->version, other.data_->version);
