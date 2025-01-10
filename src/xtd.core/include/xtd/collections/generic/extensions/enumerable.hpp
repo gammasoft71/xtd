@@ -360,5 +360,7 @@ namespace xtd {
   }
 }
 
-#include "../../../linq/enumerable_collection.hpp"
+#define __XTD_CORE_INTERNAL__
+#include "../../../internal/__enumerable_collection.hpp"
+#undef __XTD_CORE_INTERNAL__
 #include "../ienumerable.hpp"

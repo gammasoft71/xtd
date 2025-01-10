@@ -726,6 +726,7 @@ add_sources(
   include/xtd/internal/__enum_formatter.hpp
   include/xtd/internal/__enum_definition_to_enum_collection.hpp
   include/xtd/internal/__enum_introspection.hpp
+  include/xtd/internal/__enumerable_collection.hpp
   include/xtd/internal/__equator.hpp
   include/xtd/internal/__external_exceptions.hpp
   include/xtd/internal/__floating_point_formatter.hpp
@@ -802,8 +803,6 @@ add_sources(
   include/xtd/io/text_writer
   include/xtd/linq/enumerable.hpp
   include/xtd/linq/enumerable
-  include/xtd/linq/enumerable_collection.hpp
-  include/xtd/linq/enumerable_collection
   include/xtd/linq/from.hpp
   include/xtd/linq/from
   include/xtd/media/system_sound.hpp
