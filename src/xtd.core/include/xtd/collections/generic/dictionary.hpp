@@ -42,7 +42,7 @@ namespace xtd {
       /// @brief Represents a collection of keys and values.
       /// @par Definition
       /// ```cpp
-      /// template<class key_t, typename value_t, class hasher_t = xtd::collections::generic::helpers::hasher<key_t>, class equator_t = xtd::collections::generic::helpers::equator<key_t>, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
+      /// template<class key_t, class value_t, class hasher_t = xtd::collections::generic::helpers::hasher<key_t>, class equator_t = xtd::collections::generic::helpers::equator<key_t>, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
       /// class dictionary : public xtd::object, public xtd::collections::generic::idictionary<key_t, value_t>;
       /// ```
       /// @par Header
