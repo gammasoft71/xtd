@@ -954,6 +954,13 @@ namespace xtd {
           return to_iterator(data_->items.insert_or_assign(to_base_type_iterator(hint), std::move(k), obj));
         }
         
+        /// @brief Returns the function used to compare keys for equality.
+        /// @return The key comparison function.
+        /// @remarks Returns the function that compares keys for equality.
+        key_equal key_eq() const {
+          return data_->items.key_eq();
+        }
+        
         /// @brief Splices nodes from another container.
         /// @param source A compatible container to transfer the nodes from.
         /// @remarks Attempts to extract ("splice") each element in `source` and insert it into `*this` using the hash function and key equality predicate of `*this`. If there is an element in `*this` with key equivalent to the key of an element from `source`, then that element is not extracted from `source`. No elements are copied or moved, only the internal pointers of the container nodes are repointed. All pointers and references to the transferred elements remain valid, but now refer into `*this`, not into `source`. Iterators referring to the transferred elements and all iterators referring to `*this` are invalidated. Iterators to elements remaining in `source` remain valid.
