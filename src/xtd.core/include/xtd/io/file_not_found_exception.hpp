@@ -116,7 +116,7 @@ namespace xtd {
       /// @cond
       file_not_found_exception(const file_not_found_exception&) = default;
       file_not_found_exception& operator =(const file_not_found_exception&) = default;
-      template<typename char_t>
+      template<class char_t>
       file_not_found_exception(const xtd::optional<xtd::string>& message, const char_t* file_name, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : file_not_found_exception {message, xtd::optional<xtd::string> {file_name}, stack_frame}  {}
       file_not_found_exception(const xtd::optional<xtd::string>& message, xtd::null_opt file_name, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) : file_not_found_exception {message, xtd::optional<xtd::string> {file_name}, stack_frame}  {}
       /// @endcond

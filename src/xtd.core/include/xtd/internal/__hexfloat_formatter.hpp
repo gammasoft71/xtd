@@ -13,7 +13,7 @@
 #include <sstream>
 
 /// @cond
-template<typename char_t>
+template<class char_t>
 inline std::basic_string<char_t> __hexfloat_formatter(long double value, int precision, const std::locale& loc) {
   std::basic_stringstream<char_t> ss;
   ss.imbue(loc);

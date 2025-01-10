@@ -38,9 +38,9 @@
 /// @cond
 template<class ...args_t>
 void __basic_string_extract_format_arg(xtd::basic_string<char>& fmt, xtd::array<__format_information<char>>& formats, args_t&&... args);
-template<typename target_t, typename source_t>
+template<class target_t, class source_t>
 std::basic_string<target_t> __xtd_convert_to_string(std::basic_string<source_t>&& str) noexcept;
-template<typename target_t, typename source_t>
+template<class target_t, class source_t>
 std::basic_string<target_t> __xtd_convert_to_string(const std::basic_string<source_t>& str) noexcept;
 std::basic_string<char> __xtd_demangle(const std::basic_string<char>& value) noexcept;
 std::basic_string<char> __xtd_get_class_name(const std::type_info& value) noexcept;
@@ -780,26 +780,26 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified string view of substring and allocator.
     /// @param string_view The basic_string view.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    template<typename string_view_like_t>
+    template<class string_view_like_t>
     explicit constexpr basic_string(const string_view_like_t& string_view) : chars_(string_view) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified string view of substring and allocator.
     /// @param string_view The basic_string view.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    template<typename string_view_like_t>
+    template<class string_view_like_t>
     explicit constexpr basic_string(const string_view_like_t& string_view, const allocator_type& allocator) : chars_(string_view, allocator) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified string view of substring and allocator.
     /// @param string_view The basic_string view.
     /// @param index The index of the first substring character where start copy.
     /// @param count The number of substring characters to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    template<typename string_view_like_t>
+    template<class string_view_like_t>
     constexpr basic_string(const string_view_like_t& string_view, size_type index, size_type count) : chars_(string_view, index, count) {}
     /// @brief Initializes a new instance of xtd::basic_string with specified string view of substring and allocator.
     /// @param string_view The basic_string view.
     /// @param index The index of the first substring character where start copy.
     /// @param count The number of substring characters to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
-    template<typename string_view_like_t>
+    template<class string_view_like_t>
     constexpr basic_string(const string_view_like_t& string_view, size_type index, size_type count, const allocator_type& allocator) : chars_(string_view, index, count, allocator) {}
 
     /// @brief Initializes a new instance of xtd::basic_string with specified initializer list.
@@ -2123,7 +2123,7 @@ namespace xtd {
     /// @param obj_c The third object to concatenate.
     /// @param obj_d The fourth object to concatenate.
     /// @return The concatenation of obj_a, obj_b, obj_c and obj_d.
-    template<typename object_a_t, typename object_b_t, typename object_c_t, typename object_d_t>
+    template<class object_a_t, class object_b_t, class object_c_t, class object_d_t>
     static basic_string concat(object_a_t obj_a, object_b_t obj_b, object_c_t obj_c, object_d_t obj_d) noexcept {return format("{}{}{}{}", obj_a, obj_b, obj_c, obj_d);}
     /// @brief Concatenates three specified instances of basic_string.
     /// @param str_a The first basic_string to concatenate.
@@ -2136,7 +2136,7 @@ namespace xtd {
     /// @param obj_b The second object to concatenate.
     /// @param obj_c The third object to concatenate.
     /// @return The concatenation of obj_a, obj_b and obj_c.
-    template<typename object_a_t, typename object_b_t, typename object_c_t>
+    template<class object_a_t, class object_b_t, class object_c_t>
     static basic_string concat(object_a_t obj_a, object_b_t obj_b, object_c_t obj_c) noexcept {return format("{}{}{}", obj_a, obj_b, obj_c);}
     /// @brief Concatenates two specified instances of basic_string.
     /// @param str_a The first basic_string to concatenate.
@@ -2147,7 +2147,7 @@ namespace xtd {
     /// @param obj_a The first object to concatenate.
     /// @param obj_b The second object to concatenate.
     /// @return The concatenation of obj_a and obj_b.
-    template<typename object_a_t, typename object_b_t>
+    template<class object_a_t, class object_b_t>
     static basic_string concat(object_a_t obj_a, object_b_t obj_b) noexcept {return format("{}{}", obj_a, obj_b);}
     /// @brief Concatenates the elements of a specified basic_string array.
     /// @param values An array of basic_string instances.
@@ -2155,7 +2155,7 @@ namespace xtd {
     static basic_string concat(const xtd::array<basic_string>& values) noexcept;
     /// @cond
     static basic_string concat(const xtd::array<const_pointer>& values) noexcept;
-    template<typename other_char_t>
+    template<class other_char_t>
     static basic_string concat(const xtd::array<const other_char_t*>& values) noexcept;
     static basic_string concat(const std::initializer_list<basic_string>& values) noexcept {
       auto result = basic_string::empty_string;
@@ -2167,7 +2167,7 @@ namespace xtd {
       std::for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
       return result;
     }
-    template<typename other_char_t>
+    template<class other_char_t>
     static basic_string concat(const std::initializer_list<const other_char_t*>& values) noexcept {
       auto result = basic_string::empty_string;
       std::for_each(values.begin(), values.end(), [&](const auto & item) {result += item;});
@@ -2232,7 +2232,7 @@ namespace xtd {
     /// @param b The second basic_string to compare.
     /// @return `true` if the value of `a` is the same as the value of `b`; otherwise, `false`.
     /// @remarks This method performs an ordinal (case-sensitive) comparison.
-    template<typename char_a_t, typename char_b_t>
+    template<class char_a_t, class char_b_t>
     static bool equals(const char_a_t* a, const char_b_t* b) noexcept{return basic_string {a}.equals(basic_string {b});}
 
     /// @brief Determines whether two specified xtd::basic_string objects have the same value, ignoring or honoring their case.
@@ -2248,7 +2248,7 @@ namespace xtd {
     /// @param ignore_case true to ignore case when comparing this instance and value; otherwise, false
     /// @return `true` if the value of `a` is the same as the value of `b`; otherwise, `false`.
     /// @remarks This method performs an ordinal comparison.
-    template<typename char_a_t, typename char_b_t>
+    template<class char_a_t, class char_b_t>
     static bool equals(const char_a_t* a, const char_b_t* b, bool ignore_case) noexcept{return basic_string {a}.equals(basic_string {b}, ignore_case);}
 
     /// @brief Writes the text representation of the specified arguments list, to string using the specified format information.
@@ -2292,7 +2292,7 @@ namespace xtd {
     /// @return A basic_string consisting of the elements of value interspersed with the separator basic_string.
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
-    template<typename collection_t>
+    template<class collection_t>
     static basic_string join(const basic_string separator, const collection_t& values) noexcept {
       xtd::size i = 0;
       basic_string result;
@@ -2309,7 +2309,7 @@ namespace xtd {
     /// @return A basic_string consisting of the elements of value interspersed with the separator basic_string.
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
-    template<typename collection_t>
+    template<class collection_t>
     static basic_string join(const basic_string& separator, const collection_t& values, xtd::size index) {return join(separator, values, index, values.size() - index);}
     /// @brief Concatenates a specified separator basic_string between each element of a specified Object array, yielding a single concatenated basic_string.
     /// @param separator A basic_string separator.
@@ -2319,7 +2319,7 @@ namespace xtd {
     /// @return A basic_string consisting of the elements of value interspersed with the separator basic_string.
     /// @remarks For example if separator is ", " and the elements of value are "red", "blue", "green", and "yellow", Join(separator, value) returns "red, blue, green, yellow".
     /// @remarks stream << operator is called on each object to generate the content.
-    template<typename collection_t>
+    template<class collection_t>
     static basic_string join(const basic_string& separator, const collection_t& values, xtd::size index, xtd::size count) {
       if (index > values.size() || index + count > values.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
       xtd::size i = 0;
@@ -3689,7 +3689,7 @@ namespace xtd {
     static const xtd::array<value_type> default_split_separators;
     static const xtd::array<value_type> default_trim_chars;
 
-    template<typename arg_t>
+    template<class arg_t>
     static auto convert_param(arg_t&& arg) noexcept {
       if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::string>::value) return std::forward<arg_t>(arg).c_str();
       else if constexpr(std::is_same<std::remove_cv_t<std::remove_reference_t<arg_t>>, std::u16string>::value) return std::forward<arg_t>(arg).c_str();

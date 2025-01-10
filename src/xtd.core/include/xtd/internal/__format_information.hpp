@@ -11,7 +11,7 @@
 #include <limits>
 
 /// @cond
-template<typename char_t>
+template<class char_t>
 struct __format_information {
   size_t index = std::numeric_limits<size_t>::max();
   size_t location = 0;

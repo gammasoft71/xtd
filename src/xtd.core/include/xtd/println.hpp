@@ -12,7 +12,7 @@ namespace xtd {
   /// @brief Writes the text representation of the specified value, followed by the current line terminator, to the standard output stream.
   /// @tparam arg_t The type of the value to write.
   /// @param value The value to write,
-  template<typename arg_t>
+  template<class arg_t>
   void println(arg_t&& value) {xtd::console::write_line(xtd::string::format("{}", value));}
   
   /// @cond

@@ -577,7 +577,7 @@ namespace xtd {
         /// @remarks To cancel a pending call to the xtd::net::sockets::socket::begin_connect method, close the xtd::net::sockets::socket::socket. When the xtd::net::sockets::socket::socket::close method is called while an asynchronous operation is in progress, the callback provided to the xtd::net::sockets::socket::begin_connect method is called. A subsequent call to the xtd::net::sockets::socket::end_connect method will throw an xtd::object_closed_exception to indicate that the operation has been cancelled.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         /// @note If this socket has previously been disconnected, then xtd::net::sockets::socket::begin_connect must be called on a thread that will not exit until the operation is complete. This is a limitation of the underlying provider.
-        template<typename end_point_t>
+        template<class end_point_t>
         xtd::sptr<xtd::iasync_result> begin_connect(const end_point_t& remote_end_point, xtd::async_callback callback, const std::any& state) {
           return begin_connect_(xtd::new_sptr<end_point_t>(remote_end_point), callback, state);
         }
@@ -794,7 +794,7 @@ namespace xtd {
         /// @note If you intend to receive multicast datagrams, you must call the xtd::net::sockets::socket::bind method with a multicast port number.
         /// @note You must call the xtd::net::sockets::socket::bind method if you intend to receive connectionless datagrams using the xtd::net::sockets::socket::receive_from method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        template<typename end_point_t>
+        template<class end_point_t>
         void bind(const end_point_t& local_end_point) {
           bind_(xtd::new_sptr<end_point_t>(local_end_point));
         }
@@ -815,7 +815,7 @@ namespace xtd {
         /// @remarks The xtd::net::sockets::socket::connect method will block, unless you specifically set the xtd::net::sockets::socket::blocking property to false prior to calling xtd::net::sockets::socket::connect. If you are using a connection-oriented protocol like TCP and you do disable blocking, xtd::net::sockets::socket::connect will throw a xtd::net::sockets::socket_exception because it needs time to make the connection. Connectionless protocols will not throw an exception because they simply establish a default remote host. You can use xtd::net::sockets::socket_exception::error_code to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error. If the error returned WSAEWOULDBLOCK, the remote host connection has been initiated by a connection-oriented xtd::net::sockets::socket, but has not yet completed successfully. Use the Poll method to determine when the xtd::net::sockets::socket is finished connecting.
         /// @note If you are using a connection-oriented protocol and did not call xtd::net::sockets::socket::bind before calling xtd::net::sockets::socket::connect, the underlying service provider will assign the local network address and port number. If you are using a connectionless protocol, the service provider will not assign a local network address and port number until you complete a send or receive operation. If you want to change the default remote host, call xtd::net::sockets::socket::connect again with the desired endpoint.
         /// @note If the socket has been previously disconnected, then you cannot use this method to restore the connection. Use one of the asynchronous xtd::net::sockets::socket::begin_connect methods to reconnect. This is a limitation of the underlying provider.
-        template<typename end_point_t>
+        template<class end_point_t>
         void connect(const end_point_t& remote_end_point) {
           connect_(xtd::new_sptr<end_point_t>(remote_end_point));
         }

@@ -15,31 +15,31 @@
 namespace xtd {
   // C++17 deduction guides for xtd::array
   // {
-  template<typename type_t, xtd::size rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   array(type_t, type_t, allocator_t = allocator_t()) -> array<type_t, rank, allocator_t>;
   
-  template<typename type_t, xtd::size rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   array(std::initializer_list<type_t>) -> array<type_t, rank, allocator_t>;
   
-  template<typename type_t, xtd::size length, xtd::size rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  template<class type_t, xtd::size length, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   array(const type_t(&a)[length]) -> array<type_t, rank, allocator_t>;
   
-  template<typename type_t, xtd::size rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   array(const xtd::collections::generic::ienumerable<type_t>&) -> array<type_t, rank, allocator_t>;
   
-  template<typename type_t, xtd::size rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   array(const xtd::collections::generic::ilist<type_t>&) -> array<type_t, rank, allocator_t>;
   
-  template<typename type_t, xtd::size rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   array(const std::vector<type_t>&) -> array<type_t, rank, allocator_t>;
   
-  template<typename type_t, xtd::size rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   array(const array<type_t, rank, allocator_t>&) -> array<type_t, rank, allocator_t>;
   
-  template<typename type_t, xtd::size rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   array(std::vector<type_t>&&) -> array<type_t, rank, allocator_t>;
   
-  template<typename type_t, xtd::size rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  template<class type_t, xtd::size rank = 1, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   array(array<type_t, rank, allocator_t>&&) -> array<type_t, rank, allocator_t>;
   // }
 }

@@ -148,7 +148,7 @@ namespace xtd {
       /// @brief Join specified collection into xtd::string.
       /// @param collection The collection to join into xtd::string.
       /// @return The xtd::string that contains the joined collection.
-      template<typename collection_t>
+      template<class collection_t>
       static xtd::string join_items(const collection_t& collection) {return __tunit_join__items(collection);}
       /// @brief Join specified string into xtd::string.
       /// @param str The joined to join into xtd::string.

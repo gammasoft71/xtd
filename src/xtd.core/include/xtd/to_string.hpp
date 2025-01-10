@@ -423,7 +423,7 @@ namespace xtd {
   template<>
   inline std::string to_string(const std::nullptr_t&, const std::string& fmt, const std::locale& loc) {return "null";}
 
-  template<typename type1_t, typename type2_t>
+  template<class type1_t, class type2_t>
   inline std::string to_string(const std::pair<type1_t, type2_t>& value, const std::string& fmt, const std::locale& loc) {
     return std::string {"("} + to_string(value.first, fmt, loc) + std::string {", "} + to_string(value.second, fmt, loc) + std::string {")"};
   }
@@ -438,7 +438,7 @@ namespace xtd {
     static std::string to_string(const std::string& str, const type_t& value, const std::string& fmt, const std::locale& loc) {return str + xtd::to_string(std::get<n_t>(value), fmt, loc);}
   };
 
-  template<typename ... types_t>
+  template<class ...types_t>
   inline std::string to_string(const std::tuple<types_t ...>& value, const std::string& fmt, const std::locale& loc) {return __xtd_tuple_stringer<std::tuple<types_t ...>, 0, sizeof...(types_t) - 1 >::to_string(std::string {"("}, value, fmt, loc) + ")";}
 
   template<typename iterator_t>
@@ -451,7 +451,7 @@ namespace xtd {
   template<typename iterator_t>
   inline std::string __xtd_sequence_container_to_string(const iterator_t& begin, const iterator_t& end, const std::string& fmt, const std::locale& loc) {return __xtd_iterator_to_string("[", begin, begin, end, fmt, loc) + "]";}
   
-  template<typename type_t, size_t size>
+  template<class type_t, size_t size>
   inline std::string to_string(const std::array<type_t, size>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
 
   template<class type_t, class allocator_t>

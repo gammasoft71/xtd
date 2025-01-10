@@ -60,9 +60,9 @@ namespace xtd {
   inline const char* unboxing(const string& value) noexcept {return value.c_str();}
   inline const char* unboxing(string& value) noexcept {return value.c_str();}
   
-  template<typename char_t>
+  template<class char_t>
   inline const char_t* unboxing(const string& value) {throw invalid_cast_exception("Invalid character type");}
-  template<typename char_t>
+  template<class char_t>
   inline const char_t* unboxing(string& value) {throw invalid_cast_exception("Invalid character type");}
   
   template<>

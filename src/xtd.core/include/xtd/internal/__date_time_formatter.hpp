@@ -23,7 +23,7 @@ inline struct tm* __localtime_s(const time_t* timer, struct tm* buf) noexcept {
 }
 #endif
 
-template<typename char_t>
+template<class char_t>
 inline std::basic_string<char_t> __to_string(const char_t* fmt, const std::tm& value, const std::locale& loc) {
   std::basic_stringstream<char_t> result;
   result.imbue(loc);

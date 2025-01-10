@@ -13,7 +13,7 @@
 #include <string>
 
 /// @cond
-template<typename collection_t>
+template<class collection_t>
 std::string __tunit_join__items(const collection_t& collection) {
   std::stringstream ss;
   ss << "< ";

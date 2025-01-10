@@ -13,7 +13,7 @@
 namespace xtd {
   /// @brief Provides the registration struct for enumerations.
   /// ```cpp
-  /// template<typename enum_t>
+  /// template<class enum_t>
   /// struct enum_register
   /// ```
   /// @par Header
@@ -34,7 +34,7 @@ namespace xtd {
   /// @include enum_class_without_helper.cpp
   /// The following code show how to use xtd::enum_register operator for an enum flags.
   /// @include enum_class_flags_without_helpers.cpp
-  template<typename enum_t>
+  template<class enum_t>
   struct enum_register {
     /// Allows to register an enumeration that can be used by xtd::enum_object.
     /// @return An xtd::enum_collection collection that represent enumeration.

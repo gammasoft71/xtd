@@ -3,7 +3,7 @@
 using namespace xtd;
 
 namespace {
-  template<typename target_t, typename source_t>
+  template<class target_t, class source_t>
   std::basic_string<target_t> convert_to_string(const std::basic_string<source_t>& str) noexcept {
     auto out = std::basic_string<target_t> {};
     auto codepoint = 0u;

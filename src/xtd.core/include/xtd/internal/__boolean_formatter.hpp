@@ -12,7 +12,7 @@
 
 
 /// @cond
-template<typename char_t>
+template<class char_t>
 inline std::basic_string<char_t> __boolean_formatter(const std::basic_string<char_t>& fmt, bool value, const std::locale& loc) {
   if (fmt.empty()) return value ? std::basic_string<char_t> {'t', 'r', 'u', 'e'} : std::basic_string<char_t> {'f', 'a', 'l', 's', 'e'};
   

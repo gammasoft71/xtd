@@ -34,12 +34,12 @@ struct HELPINFO {
   POINT MousePos;
 };
 
-template<typename type1_t, typename type2_t>
+template<class type1_t, class type2_t>
 xtd::uint16 MAKEWORD(type1_t a, type2_t b) {
   return static_cast<xtd::uint16>((static_cast<xtd::uint16>((static_cast<xtd::uint32>(a)) & 0xff)) | (static_cast<xtd::uint16>(static_cast<xtd::uint16>((static_cast<xtd::uint32>(b)) & 0xff))) << 8);
 }
 
-template<typename type1_t, typename type2_t>
+template<class type1_t, class type2_t>
 xtd::uint32 MAKELONG(type1_t a, type2_t b) {
   return static_cast<xtd::uint32>((static_cast<xtd::uint16>((static_cast<xtd::uint32>(a)) & 0xffff)) | (static_cast<xtd::uint32>(static_cast<xtd::uint16>((static_cast<xtd::uint32>(b)) & 0xffff))) << 16);
 }

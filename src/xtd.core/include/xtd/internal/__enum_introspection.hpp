@@ -69,7 +69,7 @@ namespace __enumeration_introspection {
   template <size_t count>
   constexpr auto get_top_name(char const(&str)[count]) {return get_top_name(std::string_view(str, count - 1));}
   
-  template<typename base_t>
+  template<class base_t>
   struct enumeration_maker {
     base_t value {};
     bool is_set = false;
@@ -90,7 +90,7 @@ namespace __enumeration_introspection {
     constexpr explicit operator type_t() const {return type_t(value);}
   };
   
-  template<typename base_t>
+  template<class base_t>
   struct value_assigner {
     base_t value {};
     
@@ -137,10 +137,10 @@ namespace __enumeration_introspection {
     string_block() = default;
     string_block(string_block const&) = default;
     
-    template<typename function_t>
+    template<class function_t>
     explicit constexpr string_block(function_t&& func) : string_block() {func(*this);}
     
-    template<typename function_t>
+    template<class function_t>
     constexpr string_block(string_block const& source, function_t&& func) : string_block() {func(source, *this);}
     
     using iterator = string_block_iterator;
@@ -159,7 +159,7 @@ namespace __enumeration_introspection {
   template<class type_t>
   constexpr std::string_view name_of_type = typeof_<type_t>().name();
   
-  template<typename enum_t>
+  template<class enum_t>
   struct enum_type_info_base {
     constexpr static std::string_view qualified_type_name {name_of_type<enum_t>};
     constexpr static std::string_view type_name {get_top_name(name_of_type<enum_t>)};
@@ -167,10 +167,10 @@ namespace __enumeration_introspection {
     constexpr static size_t size() noexcept {return 0;}
   };
   
-  template<typename enum_t>
+  template<class enum_t>
   struct enum_value_list_base : enum_type_info_base<enum_t> {};
   
-  template<typename enum_t>
+  template<class enum_t>
   struct enum_name_list_base : enum_type_info_base<enum_t> {
     using enum_type_info_base<enum_t>::num_states;
     constexpr static size_t name_block_size = 0;
@@ -178,7 +178,7 @@ namespace __enumeration_introspection {
     block_type name_block;
   };
   
-  template<typename enum_t>
+  template<class enum_t>
   struct enum_type_info : public enum_type_info_base<enum_t> {
   private:
     using super = enum_type_info_base<enum_t>;
@@ -190,7 +190,7 @@ namespace __enumeration_introspection {
     using super::type_name;
   };
   
-  template<typename enum_t>
+  template<class enum_t>
   struct enum_value_list : enum_type_info<enum_t> {
   private:
     constexpr static enum_value_list_base<enum_t> values {};
@@ -204,7 +204,7 @@ namespace __enumeration_introspection {
     constexpr enum_t const& operator [](size_t i) const noexcept {return values.__enumeration_internal_values__[i];}
   };
   
-  template<typename enum_t>
+  template<class enum_t>
   struct enum_name_list : enum_type_info<enum_t> {
   private:
     constexpr static enum_name_list_base<enum_t> name_info {};
@@ -220,13 +220,13 @@ namespace __enumeration_introspection {
     constexpr std::string_view operator [](size_t i) const noexcept {return name_info.name_block[i];}
   };
   
-  template<typename enum_t>
+  template<class enum_t>
   constexpr size_t num_states = enum_type_info<enum_t>::num_states;
   
-  template<typename enum_t>
+  template<class enum_t>
   constexpr enum_value_list<enum_t> enum_values {};
   
-  template<typename enum_t>
+  template<class enum_t>
   constexpr enum_name_list<enum_t> enum_names {};
 }
 
