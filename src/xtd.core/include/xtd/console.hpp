@@ -470,7 +470,7 @@ namespace xtd {
     /// @tparam ...args_t Types of the values to write.
     /// @param fmt A composite format string.
     /// @param values Values to write,
-    template<typename ... args_t>
+    template<class ...args_t>
     static void write(const xtd::string& fmt, args_t&& ... values) {write_(xtd::string::format(fmt, std::forward<args_t>(values)...));}
     
     /// @brief Writes the current line terminator to the standard output stream using the specified format information.
@@ -491,7 +491,7 @@ namespace xtd {
     /// @tparam ...args_t Types of the values to write.
     /// @param fmt A composite format string.
     /// @param values Values to write,
-    template<typename ... args_t>
+    template<class ...args_t>
     static void write_line(const xtd::string& fmt, args_t&& ... values) {write_line_(xtd::string::format(fmt, std::forward<args_t>(values)...));}
     /// @}
     

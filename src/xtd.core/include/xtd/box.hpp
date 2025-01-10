@@ -63,7 +63,7 @@ namespace xtd {
     box(const type_t& value) : value_(value) {}
     /// @brief Initialize a new xtd::box object with specified value.
     /// @param ...args_t Params used to initialize object.
-    template<typename ...args_t>
+    template<class ...args_t>
     box(args_t&& ...args) : value_(args...) {}
     /// @}
     

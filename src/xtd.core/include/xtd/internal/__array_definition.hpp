@@ -59,7 +59,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  template<typename type_t, typename allocator_t>
+  template<class type_t, class allocator_t>
   class basic_array;
   
   /// @brief Abstract object that represent array.

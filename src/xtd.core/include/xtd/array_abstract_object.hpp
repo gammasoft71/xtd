@@ -23,7 +23,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   class array_abstract_object abstract_ {
-    template<typename type_t, typename allocator_t>
+    template<class type_t, class allocator_t>
     friend class basic_array;
     
   private:

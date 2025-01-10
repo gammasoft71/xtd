@@ -652,7 +652,7 @@ inline std::string __enum_to_string(enum_t value) noexcept {
   return xtd::enum_object<>::get_name(value);
 }
 
-template<typename value_t>
+template<class value_t>
 value_t __parse_enum(const std::string& str) {
   return xtd::enum_object<>::parse<value_t>(str);
 }

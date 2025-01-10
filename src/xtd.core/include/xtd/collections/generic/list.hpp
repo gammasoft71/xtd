@@ -71,7 +71,7 @@ namespace xtd {
       ///
       /// Finally, the xtd::collections::generic::list::clear method is used to remove all items from the list, and the xtd::collections::generic::list::capacity and xtd::collections::generic::list::count properties are displayed.
       /// @include generic_list2.cpp
-      template<typename type_t, typename allocator_t>
+      template<class type_t, class allocator_t>
       class list : public xtd::object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<xtd::collections::generic::list<type_t, allocator_t>> {
       public:
         /// @name Public Aliases
@@ -144,7 +144,7 @@ namespace xtd {
         /// @param first The first iterator the range to copy the elements from.
         /// @param last The last iterator the range to copy the elements from.
         /// @param alloc The allocator to use for all memory allocations of this container.
-        template<typename input_iterator_t>
+        template<class input_iterator_t>
         list(input_iterator_t first, input_iterator_t last, const allocator_type& alloc = allocator_type()) : data_(xtd::new_ptr<list_data>(first, last, alloc)) {}
         /// @brief Initializes a new instance of the xtd::collections::generic::list <type_t> class that contains elements copied from the specified collection and has sufficient capacity to accommodate the number of elements copied.
         /// @param collection The collection whose elements are copied to the new list.
@@ -409,7 +409,7 @@ namespace xtd {
         void add_range(std::initializer_list<type_t> il) {insert_range(count(), il);}
 
         /// @cond
-        template<typename enumerable_t>
+        template<class enumerable_t>
         void add_range(const enumerable_t& enumerable) {insert_range(count(), enumerable);}
         /// @endcond
 
@@ -425,7 +425,7 @@ namespace xtd {
         /// @param first The first iterator the range to copy the elements from.
         /// @param last The last iterator the range to copy the elements from.
         /// @warning The behavior is undefined if either argument is an iterator this current instance.
-        template<typename input_iterator_t>
+        template<class input_iterator_t>
         void assign(input_iterator_t first, input_iterator_t last) {
           ++data_->version;
           data_->items.assign(first, last);
@@ -520,7 +520,7 @@ namespace xtd {
         /// @remarks The element is constructed through [std::allocator_traits::construct](https://en.cppreference.com/w/cpp/memory/allocator_traits/construct), which typically uses placement-new to construct the element in-place at a location provided by the container. However, if the required location has been occupied by an existing element, the inserted element is constructed at another location at first, and then move assigned into the required location.
         /// @remarks The arguments `args...` are forwarded to the constructor as `std::forward<args_t>(args)....` `args...` may directly or indirectly refer to a value in the container.
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
-        template<typename... args_t>
+        template<class ...args_t>
         iterator emplace(const_iterator pos, args_t&&... args) {
           ++data_->version;
           return data_->items.eplace(std::forward<args_t>(args)...);
@@ -530,7 +530,7 @@ namespace xtd {
         /// @param args The arguments to forward to the constructor of the element.
         /// @return A reference to the inserted element.
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise only the xtd::collections::generic::list::end() iterator is invalidated.
-        template<typename... args_t>
+        template<class ...args_t>
         reference emplace_back(args_t&&... args) {
           ++data_->version;
           return data_->items.emplace_back(std::forward<args_t>(args)...);
@@ -696,7 +696,7 @@ namespace xtd {
         /// @remarks Inserts elements from range [`first`, `last`) before `pos`.
         /// @remarks If `first` and `last` are iterators into `*this`, the behavior is undefined.
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
-        template<typename input_iterator_t>
+        template<class input_iterator_t>
         iterator insert(const_iterator pos, input_iterator_t first, input_iterator_t last) {
           ++data_->version;
           return to_iterator(data_->items.insert(to_base_type_iterator(pos), first, last));
@@ -964,7 +964,7 @@ namespace xtd {
           explicit list_data(const allocator_type& alloc) noexcept : items(alloc) {}
           list_data(size_type count, const type_t& value, const allocator_type& alloc = allocator_type()) : items(count, value, alloc) {}
           explicit list_data(size_type count, const allocator_type& alloc = allocator_type()) : items(count, alloc) {}
-          template<typename input_iterator_t>
+          template<class input_iterator_t>
           list_data(input_iterator_t first, input_iterator_t last, const allocator_type& alloc = allocator_type()) : items(first, last, alloc) {}
           list_data(const xtd::collections::generic::ienumerable<type_t>& collection, const allocator_type& alloc = allocator_type()) : items(collection.begin(), collection.end(), alloc) {}
           list_data(const list& list) : items(list.data_->items), version(list.data_->version) {}

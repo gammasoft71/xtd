@@ -34,18 +34,18 @@ inline std::basic_string<char_t> __enum_formatter(const std::basic_string<char_t
   }
 }
 
-template<typename value_t>
+template<class value_t>
 static std::string __to_string_enum(const value_t& value, const std::string& fmt, const std::locale& loc, std::true_type) {return __enum_formatter(fmt, value, loc);}
 
-template<typename value_t>
+template<class value_t>
 static std::string __to_string_enum(const value_t& value, const std::string& fmt, const std::locale& loc, std::false_type) {
   __format_exception(typeid(value)); return {};
 }
 
-template<typename value_t>
+template<class value_t>
 static std::wstring __to_string_enum(const value_t& value, const std::wstring& fmt, const std::locale& loc, std::true_type) {return __enum_formatter(fmt, value, loc);}
 
-template<typename value_t>
+template<class value_t>
 static std::wstring __to_string_enum(const value_t& value, const std::wstring& fmt, const std::locale& loc, std::false_type) {
   __format_exception(typeid(value)); return {};
 }

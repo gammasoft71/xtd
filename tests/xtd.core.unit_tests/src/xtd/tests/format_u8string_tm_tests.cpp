@@ -81,13 +81,13 @@ namespace {
 
 namespace xtd::tests {
 #if defined(__xtd__cpp_lib_char8_t)
-  template<typename value_t>
+  template<class value_t>
   class format_u8string_tm_tests;
   
   test_class_attribute<format_u8string_tm_tests<std::tm>> format_u8string_tm_tests_class_std_tm_attr {"format_u8string_tm_tests<std::tm>"};
   test_class_attribute<format_u8string_tm_tests<std::chrono::system_clock::time_point>> format_u8string_tm_tests_class_std_chrono_system_clock_time_point_attr {"format_u8string_tm_tests<std::chrono::system_clock::time_point>"};
   
-  template<typename value_t>
+  template<class value_t>
   class format_u8string_tm_tests : public test_class {
     inline static std::locale previous_locale;
     static void class_initialize_(class_initialize) {

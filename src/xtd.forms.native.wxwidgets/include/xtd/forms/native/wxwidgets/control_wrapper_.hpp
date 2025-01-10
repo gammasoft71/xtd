@@ -14,7 +14,7 @@
 
 namespace xtd::forms::native {
   template<typename control_t>
-  template<typename ...args_t>
+  template<class ...args_t>
   inline control_wrapper<control_t>::control_wrapper(control_handler* event_handler, args_t&& ...args) : control_t(args...), event_handler_(event_handler) {
   }
   

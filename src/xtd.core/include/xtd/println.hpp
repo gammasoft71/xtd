@@ -24,38 +24,38 @@ namespace xtd {
   /// @tparam ...args_t Types of the values to write.
   /// @param fmt A composite format string.
   /// @param values Values to write,
-  template<typename ... args_t>
+  template<class ...args_t>
   void println(const xtd::string& fmt, args_t&& ... values) {xtd::console::write_line(xtd::string::format(fmt, std::forward<args_t>(values)...));}
   /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param fmt A composite format string.
   /// @param values Values to write,
-  template<typename ... args_t>
+  template<class ...args_t>
   void println(const char* fmt, args_t&& ... values) {xtd::console::write_line(xtd::string::format(xtd::string {fmt}, std::forward<args_t>(values)...));}
 #if defined(__xtd__cpp_lib_char8_t)
   /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param fmt A composite format string.
   /// @param values Values to write,
-  template<typename ... args_t>
+  template<class ...args_t>
   void println(const char8_t* fmt, args_t&& ... values) {xtd::console::write_line(xtd::string::format(xtd::string {fmt}, std::forward<args_t>(values)...));}
 #endif
   /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param fmt A composite format string.
   /// @param values Values to write,
-  template<typename ... args_t>
+  template<class ...args_t>
   void println(const char16_t* fmt, args_t&& ... values) {xtd::console::write_line(xtd::string::format(xtd::string {fmt}, std::forward<args_t>(values)...));}
   /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param fmt A composite format string.
   /// @param values Values to write,
-  template<typename ... args_t>
+  template<class ...args_t>
   void println(const char32_t* fmt, args_t&& ... values) {xtd::console::write_line(xtd::string::format(xtd::string {fmt}, std::forward<args_t>(values)...));}
   /// @brief Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
   /// @param fmt A composite format string.
   /// @param values Values to write,
-  template<typename ... args_t>
+  template<class ...args_t>
   void println(const wchar_t* fmt, args_t&& ... values) {xtd::console::write_line(xtd::string::format(xtd::string {fmt}, std::forward<args_t>(values)...));}
 }

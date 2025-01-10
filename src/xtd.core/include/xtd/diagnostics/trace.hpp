@@ -175,14 +175,14 @@ namespace xtd {
       /// @param format A composite format string that contains text intermixed with zero or more format items, which correspond to objects in the args array.
       /// @param ...args An object array containing zero or more objects to format.
       /// @exception xtd::format_exception format is invalid.<br>-or-<br>The number that indicates an argument to format is less than zero, or greater than or equal to the number of specified objects to format.
-      template<typename ...args_t>
+      template<class ...args_t>
       static void print(const xtd::string& format, args_t&& ... args) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line_(xtd::string::format(format, args...));
         #endif
       }
       /// @cond
-      template<typename ...args_t>
+      template<class ...args_t>
       static void print(const char* format, args_t&& ... args) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line_(xtd::string::format(format, args...));
@@ -287,14 +287,14 @@ namespace xtd {
       /// @param ...args An object array containing zero or more objects to format.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
-      template<typename ...args_t>
+      template<class ...args_t>
       static void write(const xtd::string& format, args_t&& ... args) {
         #if defined(TRACE)
         write_(string::format(format, args...));
         #endif
       }
       /// @cond
-      template<typename ...args_t>
+      template<class ...args_t>
       static void write(const char* format, args_t&& ... args) {
         #if defined(TRACE)
         write_(string::format(format, args...));
@@ -380,14 +380,14 @@ namespace xtd {
       /// @param format A composite format string that contains text intermixed with zero or more format items, which correspond to objects in the args array.
       /// @param ...args An object array containing zero or more objects to format.
       /// @exception xtd::format_exception format is invalid.<br>-or-<br>The number that indicates an argument to format is less than zero, or greater than or equal to the number of specified objects to format.
-      template<typename ...args_t>
+      template<class ...args_t>
       static void write_line(const xtd::string& format, args_t&& ... args) {
         #if defined(TRACE)
         write_line_(xtd::string::format(format, args...));
         #endif
       }
       /// @cond
-      template<typename ...args_t>
+      template<class ...args_t>
       static void write_line(const char* format, args_t&& ... args) {
         #if defined(TRACE)
         write_line_(xtd::string::format(format, args...));

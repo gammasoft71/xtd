@@ -362,7 +362,7 @@ namespace xtd {
       /// xtd::tunit::assume::is_empty(v1); // test ok.
       /// xtd::tunit::assume::is_empty(v2); // test throws an abort_error exception.
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_empty(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_empty(value, xtd::string::empty_string, stack_frame);}
       /// @brief Assumes that collection contains an item.
       /// @param value The value to check is empty.
@@ -376,7 +376,7 @@ namespace xtd {
       /// xtd::tunit::assume::is_empty(v1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_empty(v2, "User message..."); // test throws an abort_error exception.
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_empty(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_empty(value, message, stack_frame);
@@ -386,9 +386,9 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename value_t>
+      template<class value_t>
       static void is_empty(const std::initializer_list<value_t>& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_empty(value, xtd::string::empty_string, stack_frame);}
-      template<typename value_t>
+      template<class value_t>
       static void is_empty(const std::initializer_list<value_t>& values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_empty(values, message, stack_frame);
@@ -722,7 +722,7 @@ namespace xtd {
       /// xtd::tunit::assume::is_negative(i1); // test ok.
       /// xtd::tunit::assume::is_negative(i2); // test throws an abort_error exception.
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_negative(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_negative(value, xtd::string::empty_string, stack_frame);}
       /// @brief Assumes that ta condition is negative.
       /// @param value The value to check is negative.
@@ -736,7 +736,7 @@ namespace xtd {
       /// xtd::tunit::assume::is_negative(i1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_negative(i2, "User message..."); // test throws an abort_error exception.
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_negative(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_negative(value, message, stack_frame);
@@ -756,7 +756,7 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_empty(v1); // test ok.
       /// xtd::tunit::assume::is_not_empty(v2); // test throws an abort_error exception.
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_not_empty(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_empty(value, xtd::string::empty_string, stack_frame);}
       /// @brief Assumes that collection does not contain any item.
       /// @param value The value to check is empty.
@@ -770,7 +770,7 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_empty(v1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_not_empty(v2, "User message..."); // test throws an abort_error exception.
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_not_empty(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_not_empty(value, message, stack_frame);
@@ -780,9 +780,9 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename value_t>
+      template<class value_t>
       static void is_not_empty(const std::initializer_list<value_t>& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_empty(value, xtd::string::empty_string, stack_frame);}
-      template<typename value_t>
+      template<class value_t>
       static void is_not_empty(const std::initializer_list<value_t>& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_not_empty(value, message, stack_frame);
@@ -1033,7 +1033,7 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_zero(i1); // test ok.
       /// xtd::tunit::assume::is_not_zero(i2); // test throws an abort_error exception.
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_not_zero(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_zero(value, xtd::string::empty_string, stack_frame);}
       /// @brief Assumes that ta condition is not zero.
       /// @param value The value to check is not zero.
@@ -1047,7 +1047,7 @@ namespace xtd {
       /// xtd::tunit::assume::is_not_zero(i1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_not_zero(i2, "User message..."); // test throws an abort_error exception.
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_not_zero(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_not_zero(value, message, stack_frame);
@@ -1260,7 +1260,7 @@ namespace xtd {
       /// xtd::tunit::assume::is_positive(i1); // test ok.
       /// xtd::tunit::assume::is_positive(i2); // test throws an abort_error exception.
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_positive(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_positive(value, xtd::string::empty_string, stack_frame);}
       /// @brief Assumes that ta condition is positive.
       /// @param value The value to check is positive.
@@ -1274,7 +1274,7 @@ namespace xtd {
       /// xtd::tunit::assume::is_positive(i1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_positive(i2, "User message..."); // test throws an abort_error exception.
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_positive(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_positive(value, message, stack_frame);
@@ -1320,7 +1320,7 @@ namespace xtd {
       /// xtd::tunit::assume::is_zero(i1); // test ok.
       /// xtd::tunit::assume::is_zero(i2); // test throws an abort_error exception.
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_zero(const value_t& value, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_zero(value, xtd::string::empty_string, stack_frame);}
       /// @brief Assumes that ta condition is zero.
       /// @param value The value to check is zero.
@@ -1334,7 +1334,7 @@ namespace xtd {
       /// xtd::tunit::assume::is_zero(i1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_zero(i2, "User message..."); // test throws an abort_error exception.
       /// ```
-      template<typename value_t>
+      template<class value_t>
       static void is_zero(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           assert::is_zero(value, message, stack_frame);

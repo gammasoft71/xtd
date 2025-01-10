@@ -77,7 +77,7 @@ namespace xtd {
     
     /// @brief Returns a nonnegative random number.
     /// @return A value_t greater than or equal to zero and less than std::numeric_limits<value_t>::max()
-    template<typename value_t>
+    template<class value_t>
     value_t next() const {
       return next(xtd::box_integer<value_t>::max_value);
     }
@@ -94,7 +94,7 @@ namespace xtd {
     /// @return A value_t greater than or equal to zero and less than max_value
     /// @exception argument_out_of_range_exception max_value is less than zero.
     /// @remarks The next(value_t) overload returns random integers that range from 0 to max_value – 1. However, if max_value is 0, the method returns 0.
-    template<typename value_t>
+    template<class value_t>
     value_t next(value_t max_value) const {
       return static_cast<value_t>(next(value_t {}, max_value));
     }
@@ -115,7 +115,7 @@ namespace xtd {
     /// @exception argument_out_of_range_exception min_value is greater than max_value.
     /// @remarks The next(value_t, value_t) overload returns random integers that range from min_value to max_value – 1. However, if max_value equals min_value, the method returns min_value.
     /// @remarks Unlike the other overloads of the next method, which return only non-negative values, this method can return a negative random integer.
-    template<typename value_t>
+    template<class value_t>
     value_t next(value_t min_value, value_t max_value) const {
       if (min_value > max_value) throw argument_out_of_range_exception {};
       if (min_value == max_value) return min_value;
@@ -145,7 +145,7 @@ namespace xtd {
     /// @brief Fills the elements of a specified array of bytes with random numbers.
     /// @param buffer An array of bytes to contain random numbers.
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<value_t>::max().
-    template<typename value_t>
+    template<class value_t>
     void next_values(std::vector<value_t>& buffer) const {
       next_values(buffer.data(), buffer.size());
     }
@@ -154,7 +154,7 @@ namespace xtd {
     /// @param buffer An array of value_t to contain random numbers.
     /// @exception argument_null_exception buffer is null.
     /// @remarks Each element of the array of values is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<value_t>::max().
-    template<typename value_t>
+    template<class value_t>
     void next_values(value_t* buffer, size_t buffer_size) const {
       if (buffer == nullptr) throw argument_null_exception {};
       for (size_t index = 0; index < buffer_size; index++)

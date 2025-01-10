@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
-  template<typename value_t>
+  template<class value_t>
   class format_wstring_numeric_tests;
   
   test_class_attribute<format_wstring_numeric_tests<unsigned char>> format_wstring_numeric_tests_class_unsigned_char_attr {"format_wstring_numeric_tests<unsigned_char>"};
@@ -33,7 +33,7 @@ namespace xtd::tests {
   test_class_attribute<format_wstring_numeric_tests<uint64>> format_wstring_numeric_tests_class_uint64_attr {"format_wstring_numeric_tests<uint64>"};
   test_class_attribute<format_wstring_numeric_tests<uintptr>> format_wstring_numeric_tests_class_uintptr_attr {"format_wstring_numeric_tests<uintptr>"};
   
-  template<typename value_t>
+  template<class value_t>
   class format_wstring_numeric_tests : public test_class {
     inline static std::locale previous_locale;
     static void class_initialize_(class_initialize) {

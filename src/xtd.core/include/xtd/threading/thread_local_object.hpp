@@ -16,7 +16,7 @@ namespace xtd {
   namespace threading {
     /// @brief Provides thread-local storage of data.
     /// ```cpp
-    /// template<typename value_t>
+    /// template<class value_t>
     /// class thread_local_object : public xtd::object
     /// ```
     /// @par Header
@@ -36,7 +36,7 @@ namespace xtd {
     /// * It is possible to declare a member variable of a thread local class with the thread_local_object class, whereas this is not possible with the thread_local keyword.
     /// * With the thread_local_object class, you can consult the various values stored by all threads.
     /// @warning Each thread that has ever accessed the instance will contribute to the values stored in the instance. This includes threads that have since left the instance
-    template<typename value_t>
+    template<class value_t>
     class thread_local_object : public object {
       struct data : public object {
         threading::mutex mutex;

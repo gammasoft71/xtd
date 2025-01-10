@@ -30,7 +30,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline value_t parse(const std::string& str) {
     if (std::is_enum<value_t>::value) return __parse_enum<value_t>(str);
     __throw_parse_format_exception("Parse specialisation not found", __FILE__, __LINE__, __func__);
@@ -43,7 +43,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline value_t parse(const std::string& str, const std::locale& locale) {__throw_parse_format_exception("Parse specialisation not found", __FILE__, __LINE__, __func__); return {};}
   
   /// @brief Convert a string into a type.
@@ -52,7 +52,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline value_t parse(const std::string& str, const std::string& fmt) {__throw_parse_format_exception("Parse specialisation not found", __FILE__, __LINE__, __func__); return {};}
   
   /// @brief Convert a string into a type.
@@ -70,7 +70,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline value_t parse(const std::string& str, number_styles) {__throw_parse_format_exception("Parse specialisation not found", __FILE__, __LINE__, __func__); return {};}
   
   /// @brief Convert a string into a type.
@@ -79,7 +79,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline value_t parse(const std::string& str, number_styles, const std::locale& locale) {__throw_parse_format_exception("Parse specialisation not found", __FILE__, __LINE__, __func__); return {};}
   
   /// @brief Convert a string into a type.
@@ -386,7 +386,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline value_t parse(const std::wstring& str) {__throw_parse_format_exception("Parse specialisation not found", __FILE__, __LINE__, __func__); return {};}
   
   /// @brief Convert a string into a type.
@@ -395,7 +395,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline value_t parse(const std::u16string& str) {__throw_parse_format_exception("Parse specialisation not found", __FILE__, __LINE__, __func__); return {};}
   
   /// @brief Convert a string into a type.
@@ -404,7 +404,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline value_t parse(const std::u32string& str) {__throw_parse_format_exception("Parse specialisation not found", __FILE__, __LINE__, __func__); return {};}
   
   /// @brief Convert a string into a type.
@@ -413,7 +413,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<char>& str, value_t& value) noexcept {
     try {
       value = parse<value_t>(str);
@@ -428,7 +428,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<xtd::char16>& str, value_t& value) noexcept {
     try {
       value = parse<value_t>(str);
@@ -443,7 +443,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<xtd::char32>& str, value_t& value) noexcept {
     try {
       value = parse<value_t>(str);
@@ -459,7 +459,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<xtd::char8>& str, value_t& value) noexcept {
     try {
       value = parse<value_t>(str);
@@ -475,7 +475,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<xtd::wchar>& str, value_t& value) noexcept {
     try {
       value = parse<value_t>(str);
@@ -491,7 +491,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<char>& str, value_t& value, const std::locale& locale) noexcept {
     try {
       value = parse<value_t>(str, locale);
@@ -506,7 +506,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<xtd::char16>& str, value_t& value, const std::locale& locale) noexcept {
     try {
       value = parse<value_t>(str, locale);
@@ -521,7 +521,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<xtd::char32>& str, value_t& value, const std::locale& locale) noexcept {
     try {
       value = parse<value_t>(str, locale);
@@ -537,7 +537,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<xtd::char8>& str, value_t& value, const std::locale& locale) noexcept {
     try {
       value = parse<value_t>(str, locale);
@@ -553,7 +553,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<xtd::wchar>& str, value_t& value, const std::locale& locale) noexcept {
     try {
       value = parse<value_t>(str, locale);
@@ -591,7 +591,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<char>& str, value_t& value, number_styles style) noexcept {
     try {
       value = parse<value_t>(str, style);
@@ -606,7 +606,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<xtd::char16>& str, value_t& value, number_styles style) noexcept {
     try {
       value = parse<value_t>(str, style);
@@ -621,7 +621,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<xtd::char32>& str, value_t& value, number_styles style) noexcept {
     try {
       value = parse<value_t>(str, style);
@@ -637,7 +637,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<xtd::char8>& str, value_t& value, number_styles style) noexcept {
     try {
       value = parse<value_t>(str, style);
@@ -653,7 +653,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<xtd::wchar>& str, value_t& value, number_styles style) noexcept {
     try {
       value = parse<value_t>(str, style);
@@ -669,7 +669,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<char>& str, value_t& value, number_styles style, const std::locale& locale) noexcept {
     try {
       value = parse<value_t>(str, style, locale);
@@ -684,7 +684,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<xtd::char16>& str, value_t& value, number_styles style, const std::locale& locale) noexcept {
     try {
       value = parse<value_t>(str, style, locale);
@@ -699,7 +699,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<xtd::char32>& str, value_t& value, number_styles style, const std::locale& locale) noexcept {
     try {
       value = parse<value_t>(str, style, locale);
@@ -715,7 +715,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<xtd::char8>& str, value_t& value, number_styles style, const std::locale& locale) noexcept {
     try {
       value = parse<value_t>(str, style, locale);
@@ -731,7 +731,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename value_t>
+  template<class value_t>
   inline bool try_parse(const std::basic_string<xtd::wchar>& str, value_t& value, number_styles style, const std::locale& locale) noexcept {
     try {
       value = parse<value_t>(str, style, locale);

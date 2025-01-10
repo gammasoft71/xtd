@@ -12,7 +12,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename... args_t>
+  template<class ...args_t>
   struct non_const_overload {
     /// @name Operators
     
@@ -39,7 +39,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename... args_t>
+  template<class ...args_t>
   struct const_overload {
     /// @name Operators
     
@@ -66,7 +66,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename... args_t>
+  template<class ...args_t>
   struct overload : const_overload<args_t...>, non_const_overload<args_t...> {
     /// @cond
     using const_overload<args_t...>::of;
@@ -97,13 +97,13 @@ namespace xtd {
   };
   
   /// @cond
-  template<typename... args_t>
+  template<class ...args_t>
   inline const overload<args_t...> overload_;
   
-  template<typename... args_t>
+  template<class ...args_t>
   inline const const_overload<args_t...> const_overload_;
   
-  template<typename... args_t>
+  template<class ...args_t>
   inline const non_const_overload<args_t...> non_const_overload_;
   /// @endcond
 }

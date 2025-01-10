@@ -44,7 +44,7 @@ namespace xtd {
   class iformatable;
   class object;
   
-  template<typename value_t>
+  template<class value_t>
   inline std::string to_string(const value_t& value, const std::string& fmt, const std::locale& loc);
   template<>
   inline std::string to_string(const bool& value, const std::string& fmt, const std::locale& loc);
@@ -100,9 +100,9 @@ namespace xtd {
   template<>
   inline std::string to_string(const std::weak_ordering& value, const std::string& fmt, const std::locale& loc);
 #endif
-  template<typename value_t>
+  template<class value_t>
   inline std::string to_string(const value_t* value, const std::string& fmt, const std::locale& loc);
-  template<typename value_t>
+  template<class value_t>
   inline std::string to_string(value_t* const value, const std::string& fmt, const std::locale& loc);
   template<class type_t>
   inline std::string to_string(const std::shared_ptr<type_t>& value, const std::string& fmt, const std::locale& loc);
@@ -151,7 +151,7 @@ namespace xtd {
   template<class type_t>
   inline std::string to_string(const xtd::collections::generic::ienumerable<type_t>& values, const std::string& fmt, const std::locale& loc);
 
-  template<typename value_t>
+  template<class value_t>
   inline std::wstring to_string(const value_t& value, const std::wstring& fmt, const std::locale& loc);
   template<>
   inline std::wstring to_string(const bool& value, const std::wstring& fmt, const std::locale& loc);
@@ -366,7 +366,7 @@ struct __enum_or_polymorphic_ostream__<char_t, type_t, std::false_type> {
   }
 };
 
-template<typename value_t>
+template<class value_t>
 std::string __format_stringer_to_std_string(const value_t& value) {
   std::basic_stringstream<char> ss;
   //ss << value;

@@ -37,7 +37,7 @@ namespace xtd {
   /// @param fmt A composite format string.
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
-  template<typename value_t>
+  template<class value_t>
   inline std::string to_string(const value_t& value, const std::string& fmt, const std::locale& loc) {return __to_string_polymorphic(value, fmt, loc, std::is_polymorphic<value_t>());}
 
   /// @brief Convert a specified value into a string with specified format and locale.
@@ -355,7 +355,7 @@ namespace xtd {
   /// @param value Value to convert.
   /// @param fmt A composite format string.
   /// @remarks for more information about format see @ref FormatPage "Format".
-  template<typename value_t>
+  template<class value_t>
   inline std::string to_string(const value_t& value, const std::string& fmt) {return to_string(value, fmt, std::locale());}
   
   /// @cond
@@ -384,13 +384,13 @@ namespace xtd {
   }
 #endif
 
-  template<typename value_t>
+  template<class value_t>
   inline std::string to_string(const value_t* value, const std::string& fmt, const std::locale& loc) {
     if (!value) return "(null)";
     return __numeric_formatter(fmt, reinterpret_cast<intptr>(value), loc);
   }
   
-  template<typename value_t>
+  template<class value_t>
   inline std::string to_string(value_t* const value, const std::string& fmt, const std::locale& loc) {
     if (!value) return "(null)";
     return __numeric_formatter(fmt, reinterpret_cast<intptr>(value), loc);
@@ -454,22 +454,22 @@ namespace xtd {
   template<typename type_t, size_t size>
   inline std::string to_string(const std::array<type_t, size>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
 
-  template<typename type_t, typename allocator_t>
+  template<class type_t, class allocator_t>
   inline std::string to_string(const std::deque<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
 
-  template<typename type_t, typename allocator_t>
+  template<class type_t, class allocator_t>
   inline std::string to_string(const std::forward_list<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
 
   template<class type_t>
   inline std::string to_string(const std::initializer_list<type_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
 
-  template<typename type_t, typename allocator_t>
+  template<class type_t, class allocator_t>
   inline std::string to_string(const std::list<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
 
   template<class type_t>
   inline std::string to_string(const std::valarray<type_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(std::begin(values), std::end(values), fmt, loc);}
 
-  template<typename type_t, typename allocator_t>
+  template<class type_t, class allocator_t>
   inline std::string to_string(const std::vector<type_t, allocator_t>& values, const std::string& fmt, const std::locale& loc) {return __xtd_sequence_container_to_string(values.begin(), values.end(), fmt, loc);}
 
   template<typename iterator_t>
@@ -513,7 +513,7 @@ namespace xtd {
   /// @param fmt A composite format string.
   /// @param loc An object of class std::locale is an immutable indexed set of immutable facets.
   /// @remarks for more information about format see @ref FormatPage "Format".
-  template<typename value_t>
+  template<class value_t>
   inline std::wstring to_string(const value_t& value, const std::wstring& fmt, const std::locale& loc) {return __to_string_polymorphic(value, fmt, loc, std::is_polymorphic<value_t>());}
   
   /// @brief Convert a specified value into a string with specified format and locale.
@@ -837,7 +837,7 @@ namespace xtd {
   /// @param value Value to convert.
   /// @param fmt A composite format string.
   /// @remarks for more information about format see @ref FormatPage "Format".
-  template<typename value_t>
+  template<class value_t>
   inline std::wstring to_string(const value_t& value, const std::wstring& fmt) {return to_string(value, fmt, std::locale());}
   
   /// @cond

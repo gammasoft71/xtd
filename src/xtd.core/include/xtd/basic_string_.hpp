@@ -253,7 +253,7 @@ inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-template<typename ...args_t>
+template<class ...args_t>
 inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::format(const basic_string<char>& fmt, args_t&& ... args) {
   auto result = basic_string<char> {};
   auto index = xtd::size {0};
@@ -330,19 +330,19 @@ inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-template<typename value_t>
+template<class value_t>
 inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::join(const basic_string& separator, const std::initializer_list<value_t>& values) noexcept {
   return join(separator, xtd::array<value_t>(values));
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-template<typename value_t>
+template<class value_t>
 inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index) {
   return join(separator, xtd::array<value_t>(values), index);
 }
 
 template<typename char_t, typename traits_t, typename allocator_t>
-template<typename value_t>
+template<class value_t>
 inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t, traits_t, allocator_t>::join(const basic_string& separator, const std::initializer_list<value_t>& values, xtd::size index, xtd::size count) {
   return join(separator, xtd::array<value_t>(values), index, count);
 }
@@ -381,7 +381,7 @@ void __basic_string_extract_format_arg(std::basic_string<char>& fmt, xtd::size& 
   ++index;
 }
 
-template<typename ...args_t>
+template<class ...args_t>
 void __basic_string_extract_format_arg(xtd::basic_string<char>& fmt, std::vector<__format_information<char>>& formats, args_t&&... args) {
   auto index = xtd::size {0};
   (__basic_string_extract_format_arg(const_cast<std::basic_string<char>&>(fmt.chars()), index, formats, args), ...);

@@ -71,7 +71,7 @@ namespace xtd {
       class control_wrapper : public control_t, public iwx_evt {
         friend control_handler;
       protected:
-        template<typename ...args_t>
+        template<class ...args_t>
         control_wrapper(control_handler* event_handler, args_t&& ...args);
         
         ~control_wrapper();
