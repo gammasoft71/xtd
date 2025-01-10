@@ -107,7 +107,7 @@ namespace xtd::diagnostics::tests {
     void test_method_(trace_data_with_string_aarray) {
       unit_test_trace_listener trace_listener;
       trace_listener.trace_data(xtd::diagnostics::trace_event_cache(), "source", xtd::diagnostics::trace_event_type::error, 1, std::vector<xtd::string> {"one", "two"});
-      assert::are_equal("source error: 1 : one, two\n", trace_listener.result());
+      assert::are_equal("source error: 1 : [one, two]\n", trace_listener.result());
     }
     
     void test_method_(trace_data_with_string_args) {
