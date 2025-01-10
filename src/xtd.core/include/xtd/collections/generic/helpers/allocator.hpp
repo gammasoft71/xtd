@@ -31,7 +31,7 @@ namespace xtd {
         /// auto values = std::vector<date_time, xtd::collections::generic::helpers::allocator<date_time>> {};
         /// values.emplace_back(1971, 1, 5);
         /// ```
-        template<typename type_t>
+        template<class type_t>
         using allocator = std::allocator<type_t>;
       }
     }

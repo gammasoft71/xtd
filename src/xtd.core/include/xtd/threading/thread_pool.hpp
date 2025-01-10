@@ -162,9 +162,9 @@ namespace xtd {
       static bool queue_user_work_item(const wait_callback& callback, std::any state);
 
       /// @cond
-      template <typename callback_t>
+      template<typename callback_t>
       static bool queue_user_work_item(callback_t callback) {return queue_user_work_item(wait_callback {callback});}
-      template <typename callback_t>
+      template<typename callback_t>
       static bool queue_user_work_item(callback_t callback, std::any state) {return queue_user_work_item(wait_callback {callback}, state);}
       /// @endcond
 
@@ -206,13 +206,13 @@ namespace xtd {
       static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, std::any state, uint32 milliseconds_timeout_interval, bool execute_only_once);
 
       /// @cond
-      template <typename callback_t>
+      template<typename callback_t>
       static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, std::any state, int32 milliseconds_timeout_interval, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, milliseconds_timeout_interval, execute_only_once);}
-      template <typename callback_t>
+      template<typename callback_t>
       static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, std::any state, int64 milliseconds_timeout_interval, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, milliseconds_timeout_interval, execute_only_once);}
-      template <typename callback_t>
+      template<typename callback_t>
       static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, std::any state, const time_span& timeout, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, timeout, execute_only_once);}
-      template <typename callback_t>
+      template<typename callback_t>
       static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, std::any state, uint32 milliseconds_timeout_interval, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, milliseconds_timeout_interval, execute_only_once);}
       /// @endcond
       

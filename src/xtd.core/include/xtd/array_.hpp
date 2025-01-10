@@ -13,7 +13,7 @@
 
 /// @cond
 namespace xtd {
-  // C++17 deduction
+  // C++17 deduction guides for xtd::array
   // {
   template<typename type_t, xtd::size rank = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   array(type_t, type_t, allocator_t = allocator_t()) -> array<type_t, rank, allocator_t>;

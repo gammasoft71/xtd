@@ -14,7 +14,7 @@ namespace xtd {
   /// @brief The tunit namespace contains a unit test library.
   namespace tunit {
     /// @cond
-    template <typename test_class_t>
+    template<typename test_class_t>
     class test_class_attribute;
     /// @endcond
     
@@ -144,7 +144,7 @@ namespace xtd {
       /// @}
       
     private:
-      template <typename test_class_t>
+      template<typename test_class_t>
       friend class xtd::tunit::test_class_attribute;
       friend class xtd::tunit::test_class;
       friend class xtd::tunit::test;

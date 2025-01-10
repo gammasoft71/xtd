@@ -32,7 +32,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core generic_collections
       /// @remarks xtd::collections::generic::key_value_pair is same as [std::pair](https://en.cppreference.com/w/cpp/utility/pair).
-      template <typename key_t, typename value_t>
+      template <class key_t, class value_t>
       struct key_value_pair : xtd::object, xtd::iequatable<key_value_pair<key_t, value_t>> {
         /// @name Public Aliases
         

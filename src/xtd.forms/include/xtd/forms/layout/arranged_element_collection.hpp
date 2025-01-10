@@ -40,7 +40,7 @@ namespace xtd {
           value_type() = default;
           value_type(const value_type&) = default;
           value_type(value_type&&) = default;
-          template <typename ...args_t>
+          template<typename ...args_t>
           value_type(args_t&& ...args) : type_t(args...) {}
           value_type& operator =(const value_type& value) {
             if (value.owner) owner = value.owner;

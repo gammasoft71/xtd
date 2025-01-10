@@ -17,7 +17,7 @@ namespace xtd {
   /// @par Examples
   /// The following example shows how to use xtd::icomparable interface.
   /// @include icomparable.cpp
-  template <typename type_t>
+  template<typename type_t>
   class icomparable : public interface, public extensions::comparison_operators<type_t, icomparable<type_t>> {
   public:
     /// @name Public Methods

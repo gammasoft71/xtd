@@ -16,7 +16,7 @@ namespace xtd {
       /// @brief Represents a set of values.
       /// @par Definition
       /// ```cpp
-      /// template<typename type_t>
+      /// template<class type_t>
       /// using hash_set = std::unordered_set<type_t, helpers::hasher<type_t>, helpers::equator<type_t>, helpers::allocator<type_t>>;
       /// ```
       /// @par Header
@@ -29,7 +29,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core generic_collections
       /// @remarks The xtd::collections::generic::hash_set class is same as [std::unordered_set](https://en.cppreference.com/w/cpp/container/unordered_set).
-      template<typename type_t>
+      template<class type_t>
       using hash_set = std::unordered_set<type_t, helpers::hasher<type_t>, helpers::equator<type_t>, helpers::allocator<type_t>>;
     }
   }

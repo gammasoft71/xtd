@@ -9,7 +9,7 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
 #if defined(__xtd__cpp_lib_char8_t)
-  template <typename value_t>
+  template<typename value_t>
   class format_u8string_numeric_tests;
   
   test_class_attribute<format_u8string_numeric_tests<unsigned char>> format_u8string_numeric_tests_class_unsigned_char_attr {"format_u8string_numeric_tests<unsigned_char>"};

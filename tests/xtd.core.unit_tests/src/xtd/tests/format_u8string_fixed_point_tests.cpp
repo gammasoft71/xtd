@@ -9,7 +9,7 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
 #if defined(__xtd__cpp_lib_char8_t)
-  template <typename value_t>
+  template<typename value_t>
   class format_u8string_fixed_point_tests;
   
   test_class_attribute<format_u8string_fixed_point_tests<float>> format_u8string_fixed_point_tests_class_float_attr {"format_u8string_fixed_point_tests<float>"};

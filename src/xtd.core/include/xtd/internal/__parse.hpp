@@ -18,7 +18,7 @@
 void __throw_parse_format_exception(const std::string& message, const char* file, xtd::uint32 line, const char* func);
 void __throw_parse_overflow_exception(const char* file, xtd::uint32 line, const char* func);
 
-template <typename char_t>
+template<typename char_t>
 inline std::basic_string<char_t> __parse_remove_decorations(const std::basic_string<char_t>& s, xtd::number_styles styles) {
   std::basic_string<char_t> str(s);
   if ((styles & xtd::number_styles::allow_leading_white) == xtd::number_styles::allow_leading_white) {
@@ -37,7 +37,7 @@ inline std::basic_string<char_t> __parse_remove_decorations(const std::basic_str
   return str;
 }
 
-template <typename char_t>
+template<typename char_t>
 inline int __parse_remove_signs(std::basic_string<char_t>& str, xtd::number_styles styles) {
   int sign = 0;
   
@@ -73,7 +73,7 @@ inline int __parse_remove_signs(std::basic_string<char_t>& str, xtd::number_styl
   return sign;
 }
 
-template <typename char_t>
+template<typename char_t>
 inline void __parse_check_valid_characters(const std::basic_string<char_t>& str, xtd::number_styles styles) {
   std::basic_string<char_t> valid_characters = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
   if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier) valid_characters.erase(2);
@@ -111,7 +111,7 @@ inline void __parse_check_valid_characters(const std::basic_string<char_t>& str,
   }
 }
 
-template <typename value_t, typename char_t>
+template<typename value_t, typename char_t>
 inline value_t __parse_floating_point(const std::basic_string<char_t>& str, int sign, xtd::number_styles styles) {
   long double result;
   if ((styles & xtd::number_styles::allow_thousands) != xtd::number_styles::allow_thousands)
@@ -127,7 +127,7 @@ inline value_t __parse_floating_point(const std::basic_string<char_t>& str, int 
   return static_cast<value_t>(result);
 }
 
-template <typename value_t, typename char_t>
+template<typename value_t, typename char_t>
 inline value_t __parse_signed(const std::basic_string<char_t>& str, int base, int sign, xtd::number_styles styles) {
   long long result;
   if ((styles & xtd::number_styles::allow_thousands) != xtd::number_styles::allow_thousands)
@@ -143,7 +143,7 @@ inline value_t __parse_signed(const std::basic_string<char_t>& str, int base, in
   return static_cast<value_t>(result);
 }
 
-template <typename value_t, typename char_t>
+template<typename value_t, typename char_t>
 inline value_t __parse_unsigned(const std::basic_string<char_t>& str, int base, xtd::number_styles styles) {
   unsigned long long result = 0;
   if ((styles & xtd::number_styles::allow_thousands) != xtd::number_styles::allow_thousands)
@@ -158,7 +158,7 @@ inline value_t __parse_unsigned(const std::basic_string<char_t>& str, int base, 
   return static_cast<value_t>(result);
 }
 
-template <typename value_t, typename char_t>
+template<typename value_t, typename char_t>
 inline value_t __parse_floating_point_number(const std::basic_string<char_t>& s, xtd::number_styles styles, const std::locale& locale) {
   if ((styles & xtd::number_styles::binary_number) == xtd::number_styles::binary_number) __throw_parse_format_exception("xtd::number_styles::binary_number not supported by floating point", __FILE__, __LINE__, __func__);
   if ((styles & xtd::number_styles::octal_number) == xtd::number_styles::octal_number) __throw_parse_format_exception("xtd::number_styles::octal_number not supported by floating point", __FILE__, __LINE__, __func__);
@@ -190,7 +190,7 @@ inline value_t __parse_floating_point_number(const std::basic_string<char_t>& s,
   return static_cast<value_t>(result);
 }
 
-template <typename value_t, typename char_t>
+template<typename value_t, typename char_t>
 inline value_t __parse_number(const std::basic_string<char_t>& s, xtd::number_styles styles) {
   if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier && (styles - xtd::number_styles::binary_number) != xtd::number_styles::none) __throw_parse_format_exception("Invalid xtd::number_styles flags", __FILE__, __LINE__, __func__);
   if ((styles & xtd::number_styles::allow_octal_specifier) == xtd::number_styles::allow_octal_specifier && (styles - xtd::number_styles::octal_number) != xtd::number_styles::none) __throw_parse_format_exception("Invalid xtd::number_styles flags", __FILE__, __LINE__, __func__);
@@ -210,7 +210,7 @@ inline value_t __parse_number(const std::basic_string<char_t>& s, xtd::number_st
   return __parse_signed<value_t>(str, base, sign, styles);
 }
 
-template <typename value_t, typename char_t>
+template<typename value_t, typename char_t>
 inline value_t __parse_unsigned_number(const std::basic_string<char_t>& s, xtd::number_styles styles) {
   if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier && (styles - xtd::number_styles::binary_number) != xtd::number_styles::none) __throw_parse_format_exception("Invalid xtd::number_styles flags", __FILE__, __LINE__, __func__);
   if ((styles & xtd::number_styles::allow_octal_specifier) == xtd::number_styles::allow_octal_specifier && (styles - xtd::number_styles::octal_number) != xtd::number_styles::none) __throw_parse_format_exception("Invalid xtd::number_styles flags", __FILE__, __LINE__, __func__);

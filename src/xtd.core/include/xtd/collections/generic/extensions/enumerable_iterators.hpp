@@ -18,7 +18,7 @@ namespace xtd {
         /// @brief Internal enumarable iterators definition.
         /// @par Definition
         /// ```cpp
-        /// template<typename type_t, typename enumerable_t>
+        /// template<class type_t, class enumerable_t>
         /// class enumerable_iterators
         /// ```
         /// @par Header
@@ -42,7 +42,7 @@ namespace xtd {
         ///   console::write_line(part);
         /// ```
         /// @warning Internal use only for xtd::collections::generic::ienumerable interfece.
-        template<typename type_t, typename enumerable_t>
+        template<class type_t, class enumerable_t>
         class enumerable_iterators {
         public:
           /// @name Public Aliases
@@ -146,7 +146,7 @@ namespace xtd {
             /// @brief Add operator with specified value.
             /// @param value The number to add to the underlying iterator.
             /// @return The underlying iterator.
-            template<typename value_t>
+            template<class value_t>
             iterator operator +(value_t value) const noexcept {return iterator {*this, value};}
             
             /// @brief Subtract The specified iterator from the current iterator.
@@ -166,7 +166,7 @@ namespace xtd {
             /// @}
             
           private:
-            template<typename value_t>
+            template<class value_t>
             iterator(const iterator& base, value_t value) noexcept : enumerable_(base.enumerable_),  enumerator_(base.enumerable_->get_enumerator()), pos_ {base.pos_ + value} {reset();}
             
             void reset() const {

@@ -150,7 +150,7 @@ Multicast delegates are used extensively in event handling. [xtd::event](../src/
 Comparing delegates of two different types assigned at compile-time will result in a compilation error. If the delegate instances are statically of the type [xtd::delegate](../src/xtd.core/include/xtd/delegate.h), then the comparison is allowed, but will return false at run time. For example:
 
 ```cpp
-template<typename result_t, typename... arguments_t>
+template<class result_t, class... arguments_t>
 void method(delegate1 d, delegate2 e, xtd::delegate<result_t(arguments_t...)> f) {
   // Compile-time error.
   //console::write_line(d == e);

@@ -60,7 +60,7 @@ namespace xtd {
   /// @brief Converts a type_t to xtd::string.
   /// @param val A type_t value to convert.
   /// @return A string holding the converted value.
-  template <typename type_t>
+  template<typename type_t>
   string to_ustring(type_t val) {
     return string::format("{}", val);
   }
@@ -72,7 +72,7 @@ namespace xtd {
 #if defined(__xtd__cpp_lib_format)
 template <>
 struct std::formatter<xtd::string> : std::formatter<std::string> {
-  template <typename object_t, typename format_context_t>
+  template<typename object_t, typename format_context_t>
   auto format(const object_t& obj, format_context_t& ctx) const {return std::format_to(ctx.out(), "{}", std::string {obj.to_string()});}
 };
 #endif
@@ -84,6 +84,6 @@ template<>
 inline std::string xtd::to_string(const xtd::string& value, const std::string& fmt, const std::locale& loc) {return value.to_string();}
 
 /// @cond
-template <typename key_t, typename value_t>
+template<typename key_t, typename value_t>
 xtd::string xtd::collections::generic::key_value_pair<key_t, value_t>::to_string() const noexcept {return xtd::string::format("[{0}, {1}]", first, second);}
 /// @endcond

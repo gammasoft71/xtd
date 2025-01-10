@@ -328,17 +328,17 @@ std::string __enum_to_string(enum_t value) noexcept;
 std::string __iformatable_to_string(const xtd::iformatable& value) noexcept;
 std::string __object_to_string(const xtd::object& value) noexcept;
 
-template <typename char_t, typename type_t, typename bool_t>
+template<typename char_t, typename type_t, typename bool_t>
 struct __enum_ostream__ {};
 
-template <typename char_t, typename type_t>
+template<typename char_t, typename type_t>
 struct __enum_ostream__<char_t, type_t, std::true_type> {
   std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
     return os << __enum_to_string(value);
   }
 };
 
-template <typename char_t, typename type_t>
+template<typename char_t, typename type_t>
 struct __enum_ostream__<char_t, type_t, std::false_type> {
   std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
     //return os << value;
@@ -346,10 +346,10 @@ struct __enum_ostream__<char_t, type_t, std::false_type> {
   }
 };
 
-template <typename char_t, typename type_t, typename bool_t>
+template<typename char_t, typename type_t, typename bool_t>
 struct __enum_or_polymorphic_ostream__ {};
 
-template <typename char_t, typename type_t>
+template<typename char_t, typename type_t>
 struct __enum_or_polymorphic_ostream__<char_t, type_t, std::true_type> {
   std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
     if (dynamic_cast<const xtd::iformatable*>(&value)) return os << __iformatable_to_string(dynamic_cast<const xtd::iformatable&>(value));
@@ -358,7 +358,7 @@ struct __enum_or_polymorphic_ostream__<char_t, type_t, std::true_type> {
   }
 };
 
-template <typename char_t, typename type_t>
+template<typename char_t, typename type_t>
 struct __enum_or_polymorphic_ostream__<char_t, type_t, std::false_type> {
   std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
     __enum_ostream__<char, type_t, typename std::is_enum<type_t>::type>().to_stream(os, value);

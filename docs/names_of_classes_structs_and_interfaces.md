@@ -33,14 +33,14 @@ Generics (template) has identifier called type parameter.
 **✔️ CONSIDER** using type_t as the type parameter name for types with generic type parameter.
 
 ```cpp
-template<typename type_t>
+template<class type_t>
 class predicate : public deletegate<bool(type_t)> {
   ...
 };
 ```
 
 ```cpp
-template<typename type_t = object>
+template<class type_t = object>
 struct nullable : public type_t {
   ...
 };
@@ -49,7 +49,7 @@ struct nullable : public type_t {
 **✔️ DO** postfix descriptive type parameter names with _t.
 
 ```cpp
-template<typename session_t = isession>
+template<class session_t = isession>
 class isession_channel interface_ {
   virtual session_t get_session() = 0;
 };

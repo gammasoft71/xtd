@@ -81,7 +81,7 @@ namespace {
 
 namespace xtd::tests {
 #if defined(__xtd__cpp_lib_char8_t)
-  template <typename value_t>
+  template<typename value_t>
   class format_u8string_tm_tests;
   
   test_class_attribute<format_u8string_tm_tests<std::tm>> format_u8string_tm_tests_class_std_tm_attr {"format_u8string_tm_tests<std::tm>"};

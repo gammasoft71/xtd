@@ -1146,7 +1146,7 @@ struct std::formatter<xtd::date_time> : std::formatter<std::string> {
     return iterator;
   }
   
-  template <typename object_t, typename format_context_t>
+  template<typename object_t, typename format_context_t>
   auto format(const object_t& obj, format_context_t& ctx) const {return std::format_to(ctx.out(), "{}", std::string {obj.to_string(format_value)});}
   
 private:

@@ -21,7 +21,7 @@ using namespace xtd::collections::generic;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
-  template <typename value_t>
+  template<typename value_t>
   class basic_string_builder_tests;
 
   test_class_attribute<basic_string_builder_tests<char>> basic_string_builder_tests_class_char_attr {"basic_string_builder_tests<char>"};
@@ -32,7 +32,7 @@ namespace xtd::tests {
 #endif
   test_class_attribute<basic_string_builder_tests<wchar>> basic_string_builder_tests_class_wchar_attr {"basic_string_builder_tests<wchar>"};
 
-  template <typename char_t>
+  template<typename char_t>
   class basic_string_builder_tests : public test_class {
   public:
     // ______________________________________________________________________________________________________________________________________________

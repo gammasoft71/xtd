@@ -715,7 +715,7 @@ namespace xtd {
       /// @}
       
     private:
-      template <typename expected_t, typename actual_t>
+      template<typename expected_t, typename actual_t>
       static bool __are_equivalent(const expected_t expected, const actual_t& actual) {
         if (std::distance(expected.begin(), expected.end()) != std::distance(actual.begin(), actual.end())) return false;
         for (auto iterator = expected.begin(); iterator != expected.end(); ++iterator)

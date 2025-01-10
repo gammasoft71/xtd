@@ -55,7 +55,7 @@ new_type_t* __convert_value__(current_type_t* value) {
   return xtd::as<new_type_t>(value);
 }
 
-template <typename result_t, typename source_t>
+template<typename result_t, typename source_t>
 inline const xtd::collections::generic::ienumerable<result_t>& xtd::linq::enumerable::cast(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
   static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<result_t> {};
   result = __opaque_xtd_linq_enumerable_collection__<result_t> {};

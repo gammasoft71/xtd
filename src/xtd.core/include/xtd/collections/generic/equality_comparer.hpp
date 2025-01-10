@@ -15,7 +15,7 @@ namespace xtd {
       /// @brief Provides a base class for implementations of the xtd::collections::generic::iequality_comparer <type_t> generic interface.
       /// @par Definition
       /// ```cpp
-      /// template<typename type_t>
+      /// template<class type_t>
       /// class equality_comparer : public xtd::collections::generic::iequality_comparer<type_t>
       /// ```
       /// @par Header
@@ -31,7 +31,7 @@ namespace xtd {
       /// @remarks A default implementation of this interface is provided by the xtd::collections::generic::equality_comparer::default_equality_comparer property of the xtd::collections::generic::equality_comparer <type_t> generic class. The xtd::string_comparer class implements xtd::collections::generic::iequality_comparer <type_t> of type xtd::string.
       /// @remarks This interface supports only equality comparisons. Customization of comparisons for sorting and ordering is provided by the xtd::collections::generic::icomparer <type_t> generic interface.
       /// @remarks We recommend that you derive from the xtd::collections::generic::equality_comparer <type_t> class instead of implementing the xtd::collections::generic::iequality_comparer <type_t> interface, because the xtd::collections::generic::equality_comparer <type_t> class tests for equality using the xtd::iequatable::equals method instead of the xtd::object::equals method. This is consistent with the `contains`, `index_of`, `last_index_of`, and `remove` methods of the xtd::collections::generic::dictionary <key_t, value_t> class and other generic collections.
-      template<typename type_t>
+      template<class type_t>
       class equality_comparer : public iequality_comparer<type_t> {
       public:
         /// @name Public Static Properties

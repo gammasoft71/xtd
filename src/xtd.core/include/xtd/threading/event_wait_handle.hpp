@@ -102,7 +102,7 @@ namespace xtd {
       /// @}
 
       /// @cond
-      template <typename char_t>
+      template<typename char_t>
       explicit event_wait_handle(const char_t* name) : event_wait_handle(string(name)) {}
       ~event_wait_handle();
       /// @endcond
