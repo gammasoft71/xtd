@@ -501,6 +501,19 @@ namespace xtd {
           ++data_->version;
         }
         
+        /// @brief Checks if the container contains element with specific key.
+        /// @remarks Checks if there is an element with `key` equivalent to key in the container.
+        bool contains(const key_t& key) const {
+          return data_->items.find(key) != data_->items.end();
+        }
+        
+        /// @brief Checks if the container contains element with specific key.
+        /// @remarks Checks if there is an element with key that compares equivalent to the value `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such `hasher_t` is callable with both `K` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `key_t`.
+        template <typename contains_key_t>
+        bool contains(const contains_key_t& x) const {
+          return data_->items.find(x) != data_->items.end();
+        }
+
         /// @brief Constructs element in-place.
         /// @param args The arguments to forward to the constructor of the element.
         /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to `true` if and only if the insertion took place.
