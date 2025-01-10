@@ -583,7 +583,7 @@ namespace xtd {
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         iterator insert(const_iterator hint, const value_type& value) {
-          return data_->items.insert(hint, value);
+          return to_iterator(data_->items.insert(to_base_type_iterator(hint), value));
         }
         
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
@@ -594,7 +594,7 @@ namespace xtd {
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         iterator insert(const_iterator hint, value_type&& value) {
-          return data_->items.insert(hint, value);
+          return to_iterator(data_->items.insert(to_base_type_iterator(hint), value));
         }
         
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
@@ -607,7 +607,7 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         template <typename type_t>
         iterator insert(const_iterator hint, type_t&& value) {
-          return data_->items.insert(hint, value);
+          return to_iterator(data_->items.insert(to_base_type_iterator(hint), value));
         }
                 
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
@@ -667,7 +667,7 @@ namespace xtd {
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         iterator insert(const_iterator hint, node_type&& nh) {
-          return data_->items.inser(hint, nh);
+          return data_->items.inser(to_base_type_iterator(hint), nh);
         }
         
       /// @}
@@ -746,6 +746,19 @@ namespace xtd {
         /// @}
 
       private:
+        typename base_type::iterator to_base_type_iterator(iterator value) noexcept {
+          if (value == begin()) return data_->items.begin();
+          if (value == end()) return data_->items.end();
+          return data_->items.begin() + std::distance(begin(), value);
+        }
+        
+        iterator to_iterator(typename base_type::iterator value) noexcept {
+          if (value == data_->items.begin()) return begin();
+          if (value == data_->items.end()) return end();
+          return begin() + std::distance(data_->items.begin(), value);
+        }
+        
+
         struct data {
           data() = default;
           data(size_type bucket_count, const hasher& hash, const equator& equal, const allocator_type& alloc) noexcept : items(bucket_count, hash, equal, alloc) {}
