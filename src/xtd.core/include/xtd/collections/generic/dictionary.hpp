@@ -497,6 +497,19 @@ namespace xtd {
         /// @remarks Invalidates any references, pointers, and iterators referring to contained elements. May also invalidate past-the-end iterators.
         void clear() noexcept {data_->items.clear();}
         
+        /// @brief Inserts a new element into the container constructed in-place with the given args, if there is no element with the key in the container.
+        /// @param args The arguments to forward to the constructor of the element.
+        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to `true` if and only if the insertion took place.
+        /// @remarks The constructor of the new element (i.e. `std::pair<const key_t, value_t>)` is called with exactly the same arguments as supplied to emplace, forwarded via `std::forward<args_t>(args)....` The element may be constructed even if there already is an element with the key in the container, in which case the newly constructed element will be destroyed immediately (see xtd::collections::generic::dictionary::try_emplace if this behavior is undesirable).
+        /// @remarks Careful use of emplace allows the new element to be constructed while avoiding unnecessary copy or move operations.
+        /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
+        /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
+        template <typename ...args_t>
+        key_value_pair<iterator, bool> emplace(args_t&& ...args) {
+          const auto& [iterator, succeeded] = data_->items.emplace(std::forward<args_t>(args)...);
+          return {to_iterator(iterator, succeeded)};
+        }
+        
         /// @brief Returns the allocator associated with the container.
         /// @return The associated allocator.
         allocator_type get_allocator() const noexcept {return data_->items.get_allocator();}
@@ -550,7 +563,8 @@ namespace xtd {
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         key_value_pair<iterator, bool> insert(const value_type& value) {
-          return data_->items.insert(value);
+          const auto& [iterator, succeeded] = data_->items.insert(value);
+          return {to_iterator(iterator, succeeded)};
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param value The element value to insert.
@@ -559,7 +573,8 @@ namespace xtd {
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         key_value_pair<iterator, bool> insert(value_type&& value) {
-          return data_->items.insert(value);
+          const auto& [iterator, succeeded] = data_->items.insert(value);
+          return {to_iterator(iterator, succeeded)};
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param value The element value to insert.
@@ -570,7 +585,8 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         template <typename type_t>
         key_value_pair<iterator, bool> insert(type_t&& value) {
-          return data_->items.insert(value);
+          const auto& [iterator, succeeded] = data_->items.insert(value);
+          return {to_iterator(iterator, succeeded)};
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param hint The iterator, used as a suggestion as to where to insert the content.
@@ -669,7 +685,8 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
         template <typename type_t>
         key_value_pair<iterator, bool> insert_or_assign(const key_t& k, type_t&& obj) {
-          return data_->items.insert_or_assign(k, obj);
+          const auto& [iterator, succeeded] = data_->items.insert_or_assign(k, obj);
+          return {to_iterator(iterator, succeeded)};
         }
         /// @brief Inserts an element or assigns to the current element if the key already exists.
         /// @param k The key used both to look up and to insert if not found.
@@ -679,7 +696,8 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
         template <typename type_t>
         key_value_pair<iterator, bool> insert_or_assign(key_t&& k, type_t&& obj) {
-          return data_->items.insert_or_assign(std::move(k), obj);
+          const auto& [iterator, succeeded] = data_->items.insert_or_assign(std::move(k), obj);
+          return {to_iterator(iterator, succeeded)};
         }
         /// @brief Inserts an element or assigns to the current element if the key already exists.
         /// @param hint The iterator to the position before which the new element will be inserted.
@@ -703,7 +721,8 @@ namespace xtd {
         iterator insert_or_assign(const_iterator hint, key_t&& k, type_t&& obj) {
           return to_iterator(data_->items.insert_or_assign(to_base_type_iterator(hint), std::move(k), obj));
         }
-      /// @}
+        
+        /// @}
         
         /// @name Public Operators
         
