@@ -45,9 +45,13 @@ namespace xtd {
       /// @remarks For purposes of enumeration, each item in the dictionary is treated as a xtd::collections::generic::key_value_pair <key_t, value_t> structure representing a value and its key. The order in which the items are returned is undefined.
       /// @remarks The for each statement returns an object of the type of the elements in the collection. Since the xtd::collections::generic::dictionary <key_t, value_t> is a collection of keys and values, the element type is not the type of the key or the type of the value. Instead, the element type is a xtd::collections::generic::key_value_pair <key_t, value_t> of the key type and the value type. For example:
       /// ```cpp
-      /// for (const key_value_pair<string, string>& kvp : my_dictionary) {
+      /// for (const key_value_pair<string, string>& kvp : my_dictionary)
       ///   console::write_line("key = {}, value = {}", kvp.key(), kvp.value());
-      /// }
+      /// ```
+      /// @remarks Or with `auto` key type and the value type. For example:
+      /// ```cpp
+      /// for (const auto& [key, value] : my_dictionary)
+      ///   console::write_line("key = {}, value = {}", key, value);
       /// ```
       template<typename key_t, typename value_t, typename hasher_t = xtd::collections::generic::helpers::hasher<key_t>, typename equator_t = xtd::collections::generic::helpers::equator<key_t>, typename allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
       class dictionary : public xtd::object, public xtd::collections::generic::idictionary<key_t, value_t> {
@@ -571,14 +575,14 @@ namespace xtd {
         /// @exception xtd::collections::generic::key_not_found_exception The property is retrieved and key is not found.
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::dictionary <key_t, value_t> is read-only.
         /// @remarks This property provides the ability to access a specific element in the collection by using the following syntax: `my_collection[key]`.
-        /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value. However, if the specified key already exists in the dictionary, setting the òperator []` overwrites the old value. In contrast, the xtd::collections::generic::dictionary::add method does not modify existing elements.
+        /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::dictionary::add method does not modify existing elements.
         const value_t& operator [](const key_t& key) const override {return at(key);}
         /// @brief Sets the element with the specified key.
         /// @param key The key of the element to set.
         /// @return The element with the specified key.
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::dictionary <key_t, value_t> is read-only.
         /// @remarks This property provides the ability to access a specific element in the collection by using the following syntax: `my_collection[key]`.
-        /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value. However, if the specified key already exists in the dictionary, setting the òperator []` overwrites the old value. In contrast, the xtd::collections::generic::dictionary::add method does not modify existing elements.
+        /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::dictionary::add method does not modify existing elements.
         value_t& operator [](const key_t& key) override {return data_->items[key];}
 
         /// @brief Returns a reference to the underlying base type.

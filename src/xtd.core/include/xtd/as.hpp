@@ -45,7 +45,9 @@
 #include "internal/__as_any_object.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include "linq/enumerable.hpp"
-#include "linq/enumerable_collection.hpp"
+#define __XTD_CORE_INTERNAL__
+#include "internal/__enumerable_collection.hpp"
+#undef __XTD_CORE_INTERNAL__
 
 /// @cond
 template<typename new_type_t, typename current_type_t>

@@ -104,7 +104,6 @@
 #include "io/text_reader.hpp"
 #include "io/text_writer.hpp"
 #include "linq/enumerable.hpp"
-#include "linq/enumerable_collection.hpp"
 #include "media/system_sound.hpp"
 #include "media/system_sounds.hpp"
 #include "net/cookie_exception.hpp"
