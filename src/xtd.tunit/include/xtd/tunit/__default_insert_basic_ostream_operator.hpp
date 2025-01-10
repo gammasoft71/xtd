@@ -403,7 +403,7 @@ struct __tunit_value_printer<char_t, char_traits_t, wchar_t> {
   }
 };
 
-template<typename char_t, typename char_traits_t, typename type1_t, typename type2_t>
+template<class char_t, class char_traits_t, class type1_t, class type2_t>
 struct __tunit_value_printer<char_t, char_traits_t, std::pair<type1_t, type2_t>> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::pair<type1_t, type2_t>& value) {
     os << "(";
@@ -414,7 +414,7 @@ struct __tunit_value_printer<char_t, char_traits_t, std::pair<type1_t, type2_t>>
   }
 };
 
-template<typename char_t, typename char_traits_t, typename type_t, unsigned N, unsigned Last>
+template<class char_t, class char_traits_t, class type_t, unsigned N, unsigned Last>
 struct __tuple_printer {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const type_t& value) {
     __tunit_value_printer<char_t, char_traits_t, typename std::tuple_element<N, type_t>::type>::print(os, std::get<N>(value));
@@ -423,18 +423,18 @@ struct __tuple_printer {
   }
 };
 
-template<typename char_t, typename char_traits_t, typename type_t, unsigned N>
+template<class char_t, class char_traits_t, class type_t, unsigned N>
 struct __tuple_printer<char_t, char_traits_t, type_t, N, N> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const type_t& value) {
     __tunit_value_printer<char_t, char_traits_t, typename std::tuple_element<N, type_t>::type>::print(os, std::get<N>(value));
   }
 };
 
-template<typename char_t, typename char_traits_t, typename ... Types>
-struct __tunit_value_printer<char_t, char_traits_t, std::tuple<Types ...>> {
-  static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::tuple<Types ...>& value) {
+template<class char_t, class char_traits_t, class ...types_t>
+struct __tunit_value_printer<char_t, char_traits_t, std::tuple<types_t ...>> {
+  static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::tuple<types_t ...>& value) {
     os << "(";
-    __tuple_printer < char_t, char_traits_t, std::tuple<Types ...>, 0, sizeof...(Types) - 1 >::print(os, value);
+    __tuple_printer < char_t, char_traits_t, std::tuple<types_t ...>, 0, sizeof...(types_t) - 1 >::print(os, value);
     os << ")";
   }
 };
@@ -446,19 +446,19 @@ struct __tunit_value_printer<char_t, char_traits_t, std::tuple<>> {
   }
 };
 
-template<typename char_t, typename char_traits_t, typename Iterator>
-std::basic_ostream<char_t, char_traits_t>& __print_sequence_container(std::basic_ostream<char_t, char_traits_t>& os, const Iterator& begin, const Iterator& end) {
+template<class char_t, class char_traits_t, class iterator_t>
+std::basic_ostream<char_t, char_traits_t>& __print_sequence_container(std::basic_ostream<char_t, char_traits_t>& os, const iterator_t& begin, const iterator_t& end) {
   os << "[";
   bool first = true;
-  for (Iterator it = begin; it != end; ++it) {
+  for (iterator_t it = begin; it != end; ++it) {
     if (!first) os << ", ";
-    __tunit_value_printer<char_t, char_traits_t, typename std::iterator_traits<Iterator>::value_type>::print(os, *it);
+    __tunit_value_printer<char_t, char_traits_t, typename std::iterator_traits<iterator_t>::value_type>::print(os, *it);
     first = false;
   }
   return os << "]";
 }
 
-template<typename char_t, typename char_traits_t, typename value_t, size_t Size>
+template<class char_t, class char_traits_t, class value_t, size_t Size>
 struct __tunit_value_printer<char_t, char_traits_t, std::array<value_t, Size>> {
   static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::array<value_t, Size>& values) {
     __print_sequence_container(os, values.begin(), values.end());
@@ -500,28 +500,28 @@ struct __tunit_value_printer<char_t, char_traits_t, std::vector<value_t>> {
   }
 };
 
-template<typename char_t, typename char_traits_t, typename Iterator>
-std::basic_ostream<char_t, char_traits_t>& __print_associative_container(std::basic_ostream<char_t, char_traits_t>& os, const Iterator& begin, const Iterator& end) {
+template<class char_t, class char_traits_t, class iterator_t>
+std::basic_ostream<char_t, char_traits_t>& __print_associative_container(std::basic_ostream<char_t, char_traits_t>& os, const iterator_t& begin, const iterator_t& end) {
   os << "{";
   bool first = true;
-  for (Iterator it = begin; it != end; ++it) {
+  for (iterator_t it = begin; it != end; ++it) {
     if (!first) os << ", ";
-    __tunit_value_printer<char_t, char_traits_t, typename std::iterator_traits<Iterator>::value_type>::print(os, *it);
+    __tunit_value_printer<char_t, char_traits_t, typename std::iterator_traits<iterator_t>::value_type>::print(os, *it);
     first = false;
   }
   return os << "}";
 }
 
-template<typename char_t, typename char_traits_t, typename Key, typename value_t>
-struct __tunit_value_printer<char_t, char_traits_t, std::map<Key, value_t>> {
-  static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::map<Key, value_t>& values) {
+template<class char_t, class char_traits_t, class key_t, class value_t>
+struct __tunit_value_printer<char_t, char_traits_t, std::map<key_t, value_t>> {
+  static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::map<key_t, value_t>& values) {
     __print_associative_container(os, values.begin(), values.end());
   }
 };
 
-template<typename char_t, typename char_traits_t, typename Key, typename value_t>
-struct __tunit_value_printer<char_t, char_traits_t, std::multimap<Key, value_t>> {
-  static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::multimap<Key, value_t>& values) {
+template<class char_t, class char_traits_t, class key_t, class value_t>
+struct __tunit_value_printer<char_t, char_traits_t, std::multimap<key_t, value_t>> {
+  static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::multimap<key_t, value_t>& values) {
     __print_associative_container(os, values.begin(), values.end());
   }
 };
@@ -540,16 +540,16 @@ struct __tunit_value_printer<char_t, char_traits_t, std::set<value_t>> {
   }
 };
 
-template<typename char_t, typename char_traits_t, typename Key, typename value_t>
-struct __tunit_value_printer<char_t, char_traits_t, std::unordered_map<Key, value_t>> {
-  static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::unordered_map<Key, value_t>& values) {
+template<class char_t, class char_traits_t, class key_t, class value_t>
+struct __tunit_value_printer<char_t, char_traits_t, std::unordered_map<key_t, value_t>> {
+  static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::unordered_map<key_t, value_t>& values) {
     __print_associative_container(os, values.begin(), values.end());
   }
 };
 
-template<typename char_t, typename char_traits_t, typename Key, typename value_t>
-struct __tunit_value_printer<char_t, char_traits_t, std::unordered_multimap<Key, value_t>> {
-  static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::unordered_multimap<Key, value_t>& values) {
+template<class char_t, class char_traits_t, class key_t, class value_t>
+struct __tunit_value_printer<char_t, char_traits_t, std::unordered_multimap<key_t, value_t>> {
+  static void print(std::basic_ostream<char_t, char_traits_t>& os, const std::unordered_multimap<key_t, value_t>& values) {
     __print_associative_container(os, values.begin(), values.end());
   }
 };
@@ -569,19 +569,19 @@ struct __tunit_value_printer<char_t, char_traits_t, std::unordered_set<value_t>>
 };
 
 #if __XTD_CURRENT_TARGET_ID__ == __XTD_TARGET_ID_TEST_APPLICATION__
-template<typename char_t, typename char_traits_t, typename type_t>
+template<class char_t, class char_traits_t, class type_t>
 std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const type_t& value) {
   __tunit_value_printer<char_t, char_traits_t, type_t>::print(os, value);
   return os;
 }
 
-template<typename char_t, typename char_traits_t, typename type_t>
+template<class char_t, class char_traits_t, class type_t>
 std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, const type_t* value) {
   __tunit_value_printer<char_t, char_traits_t, type_t>::print(os, value);
   return os;
 }
 
-template<typename char_t, typename char_traits_t, typename type_t>
+template<class char_t, class char_traits_t, class type_t>
 std::basic_ostream<char_t, char_traits_t>& operator <<(std::basic_ostream<char_t, char_traits_t>& os, type_t* value) {
   __tunit_value_printer<char_t, char_traits_t, type_t>::print(os, value);
   return os;

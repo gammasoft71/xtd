@@ -39,7 +39,7 @@ namespace xtd {
       /// xtd::tunit::collection_assume::all_items_are_instances_of<std::ios_base*>(a); // test ok.
       /// xtd::tunit::collection_assume::all_items_are_instances_of<std::basic_ostream<char>*>(a);// test throws an abort_error exception..
       /// ```
-      template<typename expected_t, typename collection_t>
+      template<class expected_t, class collection_t>
       static void all_items_are_instances_of(const collection_t& collection, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {all_items_are_instances_of<expected_t>(collection, xtd::string::empty_string, stack_frame);}
       /// @brief Assumes that all collection items are of the type supplied or a derived type.
       /// @param value The object to verify
@@ -52,7 +52,7 @@ namespace xtd {
       /// xtd::tunit::collection_assume::all_items_are_instances_of<std::ios_base*>(a, "User message..."); // test ok.
       /// xtd::tunit::collection_assume::all_items_are_instances_of<std::basic_ostream<char>*>(a, "User message...");// test throws an abort_error exception..
       /// ```
-      template<typename expected_t, typename collection_t>
+      template<class expected_t, class collection_t>
       static void all_items_are_instances_of(const collection_t& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::all_items_are_instances_of<expected_t>(collection, message, stack_frame);
@@ -62,9 +62,9 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename expected_t, typename item_t>
+      template<class expected_t, class item_t>
       static void all_items_are_instances_of(const std::initializer_list<item_t>& collection, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {all_items_are_instances_of<expected_t>(collection, xtd::string::empty_string, stack_frame);}
-      template<typename expected_t, typename item_t>
+      template<class expected_t, class item_t>
       static void all_items_are_instances_of(const std::initializer_list<item_t>& collection, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::all_items_are_instances_of<expected_t>(collection, message, stack_frame);
@@ -183,7 +183,7 @@ namespace xtd {
       /// xtd::tunit::collection_assume::are_equal({1, 2, 3, 4}, a); // test ok.
       /// xtd::tunit::collection_assume::are_equal({4, 3, 2, 1}, a);// test throws an abort_error exception..
       /// ```
-      template<typename expected_t, typename actual_t>
+      template<class expected_t, class actual_t>
       static void are_equal(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_equal(expected, actual, xtd::string::empty_string, stack_frame);}
       /// @brief Assumes that all collection items are equal.
       /// @param value The object to verify
@@ -196,7 +196,7 @@ namespace xtd {
       /// xtd::tunit::collection_assume::are_equal({1, 2, 3, 4}, a, "User message..."); // test ok.
       /// xtd::tunit::collection_assume::are_equal({4, 3, 2, 1}, a, "User message...");// test throws an abort_error exception..
       /// ```
-      template<typename expected_t, typename actual_t>
+      template<class expected_t, class actual_t>
       static void are_equal(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::are_equal(expected, actual, message, stack_frame);
@@ -216,9 +216,9 @@ namespace xtd {
           assert::abort();
         }
       }
-      template<typename collection_t, typename item_t>
+      template<class collection_t, class item_t>
       static void are_equal(const collection_t& expected, const std::initializer_list<item_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_equal(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename collection_t, typename item_t>
+      template<class collection_t, class item_t>
       static void are_equal(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::are_equal(expected, actual, message, stack_frame);
@@ -226,9 +226,9 @@ namespace xtd {
           assert::abort();
         }
       }
-      template<typename item_t, typename collection_t>
+      template<class item_t, class collection_t>
       static void are_equal(const std::initializer_list<item_t>& expected, const collection_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_equal(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename item_t, typename collection_t>
+      template<class item_t, class collection_t>
       static void are_equal(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::are_equal(expected, actual, message, stack_frame);
@@ -249,7 +249,7 @@ namespace xtd {
       /// xtd::tunit::collection_assume::are_equivalent({4, 3, 2, 1}, a); // test ok.
       /// xtd::tunit::collection_assume::are_equivalent({1, 2, 3, 5}, a);// test throws an abort_error exception..
       /// ```
-      template<typename expected_t, typename actual_t>
+      template<class expected_t, class actual_t>
       static void are_equivalent(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_equivalent(expected, actual, xtd::string::empty_string, stack_frame);}
       /// @brief Assumes that all collection items are equivalent.
       /// @param value The object to verify
@@ -262,7 +262,7 @@ namespace xtd {
       /// xtd::tunit::collection_assume::are_equivalent({4, 3, 2, 1}, a, "User message..."); // test ok.
       /// xtd::tunit::collection_assume::are_equivalent({1, 2, 3, 5}, a, "User message...");// test throws an abort_error exception..
       /// ```
-      template<typename expected_t, typename actual_t>
+      template<class expected_t, class actual_t>
       static void are_equivalent(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::are_equivalent(expected, actual, message, stack_frame);
@@ -272,9 +272,9 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename expected_t, typename actual_t>
+      template<class expected_t, class actual_t>
       static void are_equivalent(const std::initializer_list<expected_t>& expected, const std::initializer_list<actual_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_equivalent(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename expected_t, typename actual_t>
+      template<class expected_t, class actual_t>
       static void are_equivalent(const std::initializer_list<expected_t>& expected, const std::initializer_list<actual_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::are_equivalent(expected, actual, message, stack_frame);
@@ -282,9 +282,9 @@ namespace xtd {
           assert::abort();
         }
       }
-      template<typename collection_t, typename item_t>
+      template<class collection_t, class item_t>
       static void are_equivalent(const collection_t& expected, const std::initializer_list<item_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_equivalent(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename collection_t, typename item_t>
+      template<class collection_t, class item_t>
       static void are_equivalent(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::are_equivalent(expected, actual, message, stack_frame);
@@ -292,9 +292,9 @@ namespace xtd {
           assert::abort();
         }
       }
-      template<typename item_t, typename collection_t>
+      template<class item_t, class collection_t>
       static void are_equivalent(const std::initializer_list<item_t>& expected, const collection_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_equivalent(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename item_t, typename collection_t>
+      template<class item_t, class collection_t>
       static void are_equivalent(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::are_equivalent(expected, actual, message, stack_frame);
@@ -315,7 +315,7 @@ namespace xtd {
       /// xtd::tunit::collection_assume::are_not_equal({4, 3, 2, 1}, a); // test ok.
       /// xtd::tunit::collection_assume::are_not_equal({1, 2, 3, 4}, a);// test throws an abort_error exception..
       /// ```
-      template<typename expected_t, typename actual_t>
+      template<class expected_t, class actual_t>
       static void are_not_equal(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_not_equal(expected, actual, xtd::string::empty_string, stack_frame);}
       /// @brief Assumes that all collection items arenot  equal.
       /// @param value The object to verify
@@ -328,7 +328,7 @@ namespace xtd {
       /// xtd::tunit::collection_assume::are_not_equal({4, 3, 2, 1}, a, "User message..."); // test ok.
       /// xtd::tunit::collection_assume::are_not_equal({1, 2, 3, 4}, a, "User message...");// test throws an abort_error exception..
       /// ```
-      template<typename expected_t, typename actual_t>
+      template<class expected_t, class actual_t>
       static void are_not_equal(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::are_not_equal(expected, actual, message, stack_frame);
@@ -348,9 +348,9 @@ namespace xtd {
           assert::abort();
         }
       }
-      template<typename collection_t, typename item_t>
+      template<class collection_t, class item_t>
       static void are_not_equal(const collection_t& expected, const std::initializer_list<item_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_not_equal(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename collection_t, typename item_t>
+      template<class collection_t, class item_t>
       static void are_not_equal(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::are_not_equal(expected, actual, message, stack_frame);
@@ -358,9 +358,9 @@ namespace xtd {
           assert::abort();
         }
       }
-      template<typename item_t, typename collection_t>
+      template<class item_t, class collection_t>
       static void are_not_equal(const std::initializer_list<item_t>& expected, const collection_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_not_equal(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename item_t, typename collection_t>
+      template<class item_t, class collection_t>
       static void are_not_equal(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::are_not_equal(expected, actual, message, stack_frame);
@@ -381,7 +381,7 @@ namespace xtd {
       /// xtd::tunit::collection_assume::are_not_equivalent({1, 2, 3, 5}, a); // test ok.
       /// xtd::tunit::collection_assume::are_not_equivalent({4, 3, 2, 1}, a);// test throws an abort_error exception..
       /// ```
-      template<typename expected_t, typename actual_t>
+      template<class expected_t, class actual_t>
       static void are_not_equivalent(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_not_equivalent(expected, actual, xtd::string::empty_string, stack_frame);}
       /// @brief Assumes that all collection items are not equivalent.
       /// @param value The object to verify
@@ -394,7 +394,7 @@ namespace xtd {
       /// xtd::tunit::collection_assume::are_not_equivalent({1, 2, 3, 5}, a, "User message..."); // test ok.
       /// xtd::tunit::collection_assume::are_not_equivalent({4, 3, 2, 1}, a, "User message...");// test throws an abort_error exception..
       /// ```
-      template<typename expected_t, typename actual_t>
+      template<class expected_t, class actual_t>
       static void are_not_equivalent(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::are_not_equivalent(expected, actual, message, stack_frame);
@@ -404,9 +404,9 @@ namespace xtd {
       }
       
       /// @cond
-      template<typename expected_t, typename actual_t>
+      template<class expected_t, class actual_t>
       static void are_not_equivalent(const std::initializer_list<expected_t>& expected, const std::initializer_list<actual_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_not_equivalent(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename expected_t, typename actual_t>
+      template<class expected_t, class actual_t>
       static void are_not_equivalent(const std::initializer_list<expected_t>& expected, const std::initializer_list<actual_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::are_not_equivalent(expected, actual, message, stack_frame);
@@ -414,9 +414,9 @@ namespace xtd {
           assert::abort();
         }
       }
-      template<typename collection_t, typename item_t>
+      template<class collection_t, class item_t>
       static void are_not_equivalent(const collection_t& expected, const std::initializer_list<item_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_not_equivalent(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename collection_t, typename item_t>
+      template<class collection_t, class item_t>
       static void are_not_equivalent(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::are_not_equivalent(expected, actual, message, stack_frame);
@@ -424,9 +424,9 @@ namespace xtd {
           assert::abort();
         }
       }
-      template<typename item_t, typename collection_t>
+      template<class item_t, class collection_t>
       static void are_not_equivalent(const std::initializer_list<item_t>& expected, const collection_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {are_not_equivalent(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename item_t, typename collection_t>
+      template<class item_t, class collection_t>
       static void are_not_equivalent(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::are_not_equivalent(expected, actual, message, stack_frame);
@@ -447,7 +447,7 @@ namespace xtd {
       /// xtd::tunit::collection_assume::contains({1, 2}, a); // test ok.
       /// xtd::tunit::collection_assume::contains({1, 2, 6}, a);// test throws an abort_error exception..
       /// ```
-      template<typename expected_t, typename actual_t>
+      template<class expected_t, class actual_t>
       static void contains(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {contains(expected, actual, xtd::string::empty_string, stack_frame);}
       /// @brief Assumes that collection contains all items.
       /// @param value The object to verify
@@ -460,7 +460,7 @@ namespace xtd {
       /// xtd::tunit::collection_assume::contains({1, 2}, a, "User message..."); // test ok.
       /// xtd::tunit::collection_assume::contains({1, 2, 6}, a, "User message...");// test throws an abort_error exception..
       /// ```
-      template<typename expected_t, typename actual_t>
+      template<class expected_t, class actual_t>
       static void contains(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::contains(expected, actual, message, stack_frame);
@@ -480,9 +480,9 @@ namespace xtd {
           assert::abort();
         }
       }
-      template<typename collection_t, typename item_t>
+      template<class collection_t, class item_t>
       static void contains(const collection_t& expected, const std::initializer_list<item_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {contains(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename collection_t, typename item_t>
+      template<class collection_t, class item_t>
       static void contains(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::contains(expected, actual, message, stack_frame);
@@ -490,9 +490,9 @@ namespace xtd {
           assert::abort();
         }
       }
-      template<typename item_t, typename collection_t>
+      template<class item_t, class collection_t>
       static void contains(const std::initializer_list<item_t>& expected, const collection_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {contains(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename item_t, typename collection_t>
+      template<class item_t, class collection_t>
       static void contains(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::contains(expected, actual, message, stack_frame);
@@ -513,7 +513,7 @@ namespace xtd {
       /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a); // test ok.
       /// xtd::tunit::collection_assume::does_not_contain({1, 2}, a);// test throws an abort_error exception..
       /// ```
-      template<typename expected_t, typename actual_t>
+      template<class expected_t, class actual_t>
       static void does_not_contain(const expected_t& expected, const actual_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_contain(expected, actual, xtd::string::empty_string, stack_frame);}
       /// @brief Assumes that collection contains all items.
       /// @param value The object to verify
@@ -526,7 +526,7 @@ namespace xtd {
       /// xtd::tunit::collection_assume::does_not_contain({1, 2, 6}, a, "User message..."); // test ok.
       /// xtd::tunit::collection_assume::does_not_contain({1, 2}, a, "User message...");// test throws an abort_error exception..
       /// ```
-      template<typename expected_t, typename actual_t>
+      template<class expected_t, class actual_t>
       static void does_not_contain(const expected_t& expected, const actual_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::does_not_contain(expected, actual, message, stack_frame);
@@ -546,9 +546,9 @@ namespace xtd {
           assert::abort();
         }
       }
-      template<typename collection_t, typename item_t>
+      template<class collection_t, class item_t>
       static void does_not_contain(const collection_t& expected, const std::initializer_list<item_t>& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_contain(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename collection_t, typename item_t>
+      template<class collection_t, class item_t>
       static void does_not_contain(const collection_t& expected, const std::initializer_list<item_t>& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::does_not_contain(expected, actual, message, stack_frame);
@@ -556,9 +556,9 @@ namespace xtd {
           assert::abort();
         }
       }
-      template<typename item_t, typename collection_t>
+      template<class item_t, class collection_t>
       static void does_not_contain(const std::initializer_list<item_t>& expected, const collection_t& actual, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {does_not_contain(expected, actual, xtd::string::empty_string, stack_frame);}
-      template<typename item_t, typename collection_t>
+      template<class item_t, class collection_t>
       static void does_not_contain(const std::initializer_list<item_t>& expected, const collection_t& actual, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         try {
           collection_assert::does_not_contain(expected, actual, message, stack_frame);

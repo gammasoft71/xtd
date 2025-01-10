@@ -20,7 +20,7 @@ namespace xtd {
     /// @par Examples
     /// The following example shows how to use xtd::tunit::test_class_attribute class.
     /// @include test_class_without_helpers.cpp
-    template<typename test_class_t>
+    template<class test_class_t>
     class test_class_attribute final {
     public:
       /// @name Public Constructors

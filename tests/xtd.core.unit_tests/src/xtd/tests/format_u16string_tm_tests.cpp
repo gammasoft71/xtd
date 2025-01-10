@@ -54,7 +54,7 @@ namespace {
   
   std::tm make_time(int year, int month, int day, bool utc = false) {return make_time(year, month, day, 0, 0, 0, utc);}
   
-  template<typename time_t>
+  template<class time_t>
   time_t make_time(int year, int month, int day, int hour, int minute, int second, bool utc = false);
   
   template<>
@@ -66,7 +66,7 @@ namespace {
     return std::chrono::system_clock::from_time_t(mktime(&time));
   }
   
-  template<typename time_t>
+  template<class time_t>
   time_t make_time(int year, int month, int day, bool utc = false);
   
   template<>

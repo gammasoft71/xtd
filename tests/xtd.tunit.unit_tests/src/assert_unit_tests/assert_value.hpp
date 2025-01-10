@@ -8,7 +8,7 @@
 #include <string>
 
 namespace assert_unit_tests {
-  template<typename expected_t, typename actual_t>
+  template<class expected_t, class actual_t>
   void assert_value(const std::string& name, const expected_t& expected, const actual_t& actual, const xtd::source_location& location = xtd::source_location::current()) {
     if (actual == expected)
       std::cout << xtd::foreground_color(xtd::console_color::dark_green) << "  SUCCEED " << xtd::reset_color() << name << std::endl;
