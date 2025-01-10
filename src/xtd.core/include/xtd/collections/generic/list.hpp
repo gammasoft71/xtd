@@ -950,13 +950,13 @@ namespace xtd {
         typename base_type::iterator to_base_type_iterator(iterator value) noexcept {
           if (value == begin()) return data_->items.begin();
           if (value == end()) return data_->items.end();
-          return data_->items.begin() + (value - begin());
+          return data_->items.begin() + std::distance(begin(), value);
         }
         
         iterator to_iterator(typename base_type::iterator value) noexcept {
           if (value == data_->items.begin()) return begin();
           if (value == data_->items.end()) return end();
-          return begin() + (value - data_->items.begin());
+          return begin() + std::distance(data_->items.begin(), value);
         }
 
         struct list_data {
