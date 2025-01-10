@@ -27,7 +27,7 @@ namespace xtd {
         assert::is_true(condition, string::format(message, args...));
       }
       
-      template<typename actual_t>
+      template<class actual_t>
       void that(actual_t condition) {
       
       }
