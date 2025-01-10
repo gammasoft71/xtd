@@ -484,6 +484,23 @@ namespace xtd {
           if (iterator == data_->items.end()) throw key_not_found_exception {};
           return iterator->second;
         }
+        
+        /// @brief Returns an iterator to the beginning of the specified bucket.
+        /// @param n The index of the bucket to access.
+        /// @return Iterator to the first element.
+        /// @remarks Returns an iterator to the first element of the bucket with index `n`.
+        local_iterator begin(size_type n) {
+          return data_->items.begin(n);
+        }
+        
+        /// @brief Returns an iterator to the beginning of the specified bucket.
+        /// @param n The index of the bucket to access.
+        /// @return Iterator to the first element.
+        /// @remarks Returns an iterator to the first element of the bucket with index `n`.
+        const_local_iterator begin(size_type n) const {
+          return data_->items.begin(n);
+        }
+        
         /// @brief Returns the index of the bucket for key key. Elements (if any) with keys equivalent to key are always found in this bucket.
         /// @param key The value of the key to examine.
         /// @return Bucket index for the requested key.
@@ -493,6 +510,14 @@ namespace xtd {
         /// @param n The index of the bucket to examine.
         /// @return The number of elements in the bucket `n`.
         size_type bucket_size(size_type n) const noexcept {return data_->items.bucket_size(n);}
+
+        /// @brief Returns an iterator to the beginning of the specified bucket.
+        /// @param n The index of the bucket to access.
+        /// @return Iterator to the first element.
+        /// @remarks Returns an iterator to the first element of the bucket with index `n`.
+        const_local_iterator cbegin(size_type n) const {
+          return data_->items.begin(n);
+        }
 
         /// @brief Erases all elements from the container. After this call, xtd::collections::generic::dictionary::size returns zero.
         /// @remarks Invalidates any references, pointers, and iterators referring to contained elements. May also invalidate past-the-end iterators.
