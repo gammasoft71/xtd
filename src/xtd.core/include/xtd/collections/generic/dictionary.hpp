@@ -556,6 +556,25 @@ namespace xtd {
           return data_->items.erase(key);
         }
 
+        /// @brief Extracts nodes from the container.
+        /// @param position A valid iterator into this container.
+        /// @return A [node handle](https://en.cppreference.com/w/cpp/container/node_handle) that owns the extracted element, or empty node handle in case the element is not found in.
+        /// @remarks Unlinks the node that contains the element pointed to by position and returns a [node handle](https://en.cppreference.com/w/cpp/container/node_handle) that owns it.
+        /// @remarks In either case, no elements are copied or moved, only the internal pointers of the container nodes are repointed.
+        /// @remarks Extracting a node invalidates only the iterators to the extracted element, and preserves the relative order of the elements that are not erased. Pointers and references to the extracted element remain valid, but cannot be used while element is owned by a node handle: they become usable if the element is inserted into a container.
+        node_type extract(const_iterator position) noexcept {
+          return data_->items.extract(to_base_type_iterator(position));
+        }
+        /// @brief Extracts nodes from the container.
+        /// @param k A key to identify the node to be extracted.
+        /// @return A [node handle](https://en.cppreference.com/w/cpp/container/node_handle) that owns the extracted element, or empty node handle in case the element is not found in.
+        /// @remarks If the container has an element with key equivalent to k, unlinks the node that contains that element from the container and returns a [node handle](https://en.cppreference.com/w/cpp/container/node_handle) that owns it. Otherwise, returns an empty node handle.
+        /// @remarks In either case, no elements are copied or moved, only the internal pointers of the container nodes are repointed.
+        /// @remarks Extracting a node invalidates only the iterators to the extracted element, and preserves the relative order of the elements that are not erased. Pointers and references to the extracted element remain valid, but cannot be used while element is owned by a node handle: they become usable if the element is inserted into a container.
+        node_type extract(const key_t k) {
+          return data_->items.extract(k);
+        }
+        
         /// @brief Returns the allocator associated with the container.
         /// @return The associated allocator.
         allocator_type get_allocator() const noexcept {return data_->items.get_allocator();}
