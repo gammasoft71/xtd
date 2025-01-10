@@ -524,6 +524,38 @@ namespace xtd {
           return to_iterator(data_->items.emplace_hint(to_base_type_iterator(hint), std::forward<args_t>(args)...));
         }
         
+        /// @brief Erases elements.
+        /// @param pos The iterator to the element to remove.
+        /// @return The iterator following the last removed element.
+        /// @remarks Removes specified elements from the container. The order of the remaining elements is preserved. (This makes it possible to erase individual elements while iterating through the container.)
+        /// @remarks Removes the element at `pos`.
+        /// @remarks References and iterators to the erased elements are invalidated. Other iterators and references are not invalidated.
+        /// @remarks The iterator `pos` must be valid and dereferenceable. Thus the xtd::collections::generic::dictionary::end() iterator (which is valid, but is not dereferenceable) cannot be used as a value for `pos`.
+        iterator erase(const_iterator pos) {
+          return to_iterator(data_->items.erase(to_base_type_iterator(pos)));
+        }
+        /// @brief Erases elements.
+        /// @param first The first iterator of the range of elements to remove.
+        /// @param last The last iterator of the range of elements to remove.
+        /// @return The iterator following the last removed element.
+        /// @remarks Removes specified elements from the container. The order of the remaining elements is preserved. (This makes it possible to erase individual elements while iterating through the container.)
+        /// @remarks Removes the elements in the range [`first`, `last`), which must be a valid range in `*this`.
+        /// @remarks References and iterators to the erased elements are invalidated. Other iterators and references are not invalidated.
+        /// @remarks The iterator `pos` must be valid and dereferenceable. Thus the xtd::collections::generic::dictionary::end() iterator (which is valid, but is not dereferenceable) cannot be used as a value for `pos`.
+        iterator erase(const_iterator first, const_iterator last) {
+          return to_iterator(data_->items.erase(to_base_type_iterator(first), to_base_type_iterator(last)));
+        }
+        /// @brief Erases elements.
+        /// @param key The key value of the elements to remove.
+        /// @return The number of elements removed (0 or 1).
+        /// @remarks Removes specified elements from the container. The order of the remaining elements is preserved. (This makes it possible to erase individual elements while iterating through the container.)
+        /// @remarks Removes the element (if one exists) with the key equivalent to `key`.
+        /// @remarks References and iterators to the erased elements are invalidated. Other iterators and references are not invalidated.
+        /// @remarks The iterator `pos` must be valid and dereferenceable. Thus the xtd::collections::generic::dictionary::end() iterator (which is valid, but is not dereferenceable) cannot be used as a value for `pos`.
+        size_type erase(const key_t& key) {
+          return data_->items.erase(key);
+        }
+
         /// @brief Returns the allocator associated with the container.
         /// @return The associated allocator.
         allocator_type get_allocator() const noexcept {return data_->items.get_allocator();}
