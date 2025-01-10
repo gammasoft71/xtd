@@ -98,7 +98,7 @@ namespace xtd {
       /// @param data The trace data.
       /// @remarks The trace_data method, like the trace_event method, is intended for automated tools, but it also allows the attaching of an additional object, such as an exception instance, to the trace.
       /// @remarks The trace_data method calls the source_switch::should_trace method of the source_switch object returned by the source_switch property. If should_trace returns true, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods.
-      template<typename object_t>
+      template<class object_t>
       void trace_data(const xtd::diagnostics::trace_event_type& event_type, int32 id, const object_t& data) {
         #if defined(TRACE)
         if (source_switch_.should_trace(event_type))
@@ -113,7 +113,7 @@ namespace xtd {
       /// @param data The trace data.
       /// @remarks The trace_data method, like the trace_event method, is intended for automated tools, but it also allows the attaching of an additional object, such as an exception instance, to the trace.
       /// @remarks The trace_data method calls the source_switch::should_trace method of the source_switch object returned by the source_switch property. If should_trace returns true, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods.
-      template<typename object_t>
+      template<class object_t>
       void trace_data(const xtd::diagnostics::trace_event_type& event_type, int32 id, const std::vector<object_t>& data) {
         #if defined(TRACE)
         if (source_switch_.should_trace(event_type))
@@ -151,7 +151,7 @@ namespace xtd {
       /// @param id A numeric identifier for the event.
       /// @param format A composite format string that contains text intermixed with zero or more format items, which correspond to objects in the args array.
       /// @param args... An object array containing zero or more objects to format.
-      template<typename ...objects>
+      template<class ...objects>
       void trace_event(const xtd::diagnostics::trace_event_type& event_type, int32 id, const xtd::string& format, const objects& ... args) {
         #if defined(TRACE)
         if (source_switch_.should_trace(event_type))
@@ -171,7 +171,7 @@ namespace xtd {
       /// @param args... An array containing zero or more objects to format.
       /// @remarks The trace_information method provides an informational message intended to be read by users and not by tools.
       /// @remarks trace_information(const std::string&, const Objects_t) calls the trace_event(const trace_eventType&, Int32_t, const xtd::string&, ...objects_t) method, setting event_type to trace_event_type.Information and passing the message content as an object array with formatting information. The trace_event(const trace_event_type, Int32_t, xtd::string&, ...objects_t) method in turn calls the trace_event(const trace_event_cache&, const xtd::string&, trace_event_type, Int32_t, const xtd::string&, ...objects_t) method of each trace listener.
-      template<typename ...objects_t>
+      template<class ...objects_t>
       void trace_information(const xtd::string& format, const objects_t& ... args) {trace_event(trace_event_type::information, 0, format, args...);}
       
       /// @brief Writes a trace transfer message to the trace listeners in the listeners collection using the specified numeric identifier, message, and related activity identifier.

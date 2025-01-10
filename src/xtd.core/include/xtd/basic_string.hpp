@@ -75,7 +75,7 @@ namespace xtd {
   /// | xtd::u32string | xtd::basic_string <xtd::char32> |
   /// | xtd::u8string  | xtd::basic_string <xtd::char8>  |
   /// | xtd::wstring   | xtd::basic_string <xtd::wchar>  |
-  template<typename char_t, typename traits_t, typename allocator_t>
+  template<class char_t, class traits_t, class allocator_t>
   class basic_string : public object, public xtd::icomparable<basic_string<char_t, traits_t, allocator_t>>, public xtd::iequatable<basic_string<char_t, traits_t, allocator_t>>, public xtd::collections::generic::ienumerable<char_t> {
   public:
     /// @name Public Aliases
@@ -2019,14 +2019,14 @@ namespace xtd {
     /// @return The class name of the object_t.
     /// @remarks For example, the name of the basic_string type is basic_string.
     /// @deprecated Replaced by typeof_<object_t>().name() - Will be removed in version 0.4.0.
-    template<typename object_t>
+    template<class object_t>
     [[deprecated("Replaced by typeof_<object_t>().name() - Will be removed in version 0.4.0.")]]
     static basic_string class_name() {return get_class_name(full_class_name<object_t>());}
     /// @brief Gets the class name of the specified object.
     /// @return The class name of the specified object.
     /// @remarks For example, the name of the basic_string type is basic_string.
     /// @deprecated Replaced by typeof_(object).name() - Will be removed in version 0.4.0.
-    template<typename object_t>
+    template<class object_t>
     [[deprecated("Replaced by typeof_(object).name() - Will be removed in version 0.4.0.")]]
     static basic_string class_name(const object_t& object) {return get_class_name(full_class_name(object));}
     /// @brief Gets the class name of the specified object.
@@ -2177,10 +2177,10 @@ namespace xtd {
     /// @brief Concatenates the basic_string representations of the elements in a specified object array.
     /// @param args An object array that contains the elements to concatenate.
     /// @return The concatenated basic_string representations of the values of the elements in args.
-    template<typename object_t>
+    template<class object_t>
     static basic_string concat(const xtd::array<object_t>& args) noexcept;
     /// @cond
-    template<typename object_t>
+    template<class object_t>
     static basic_string concat(const std::initializer_list<object_t>& args) noexcept {
       basic_string result;
       for (const auto& arg : args)
@@ -2264,14 +2264,14 @@ namespace xtd {
     /// @return The fully qualified class name of the objec_t, including the namespace of the objec_t.
     /// @remarks For example, the fully qualified name of the basic_string type is xtd::basic_string.
     /// @deprecated Replaced by typeof_<object_t>().full_name() - Will be removed in version 0.4.0.
-    template<typename object_t>
+    template<class object_t>
     [[deprecated("Replaced by typeof_<object_t>().full_name() - Will be removed in version 0.4.0.")]]
     static basic_string full_class_name() {return demangle(typeid(object_t).name());}
     /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.
     /// @return The fully qualified class name of the objec_t, including the namespace of the specified object.
     /// @remarks For example, the fully qualified name of the basic_string type is xtd::basic_string.
     /// @deprecated Replaced by typeof_(object).full_name() - Will be removed in version 0.4.0.
-    template<typename object_t>
+    template<class object_t>
     [[deprecated("Replaced by typeof_(object).full_name() - Will be removed in version 0.4.0.")]]
     static basic_string full_class_name(const object_t& object) {return demangle(typeid(object).name());}
     /// @brief Gets the fully qualified class name of the specified object, including the namespace of the specified object.

@@ -466,7 +466,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  template<typename new_type_t, typename current_type_t>
+  template<class new_type_t, class current_type_t>
   bool is(xtd::sptr<current_type_t>& value) {
     auto result = std::dynamic_pointer_cast<new_type_t>(value);
     if (result) return true;

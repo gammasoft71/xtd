@@ -10,7 +10,7 @@
 #include "unused.hpp"
 
 /// @cond
-template<typename new_type_t, typename current_type_t>
+template<class new_type_t, class current_type_t>
 new_type_t* __convert_value__(current_type_t* value);
 /// @endcond
 
@@ -42,7 +42,7 @@ namespace xtd {
     /// const button* value = new xtd::forms::button();
     /// const control* result = convert::to_ptr<xtd::forms::control>(value);
     /// ```
-    template<typename new_type_t, typename current_type_t>
+    template<class new_type_t, class current_type_t>
     static const new_type_t* to_ptr(const current_type_t* value) {
       if (value == nullptr) return nullptr;
       return &to_ref<new_type_t>(*value);
@@ -59,7 +59,7 @@ namespace xtd {
     /// button* value = new xtd::forms::button();
     /// control* result = convert::to_ptr<xtd::forms::control>(value);
     /// ```
-    template<typename new_type_t, typename current_type_t>
+    template<class new_type_t, class current_type_t>
     static new_type_t* to_ptr(current_type_t* value) {
       if (value == nullptr) return nullptr;
       return &to_ref<new_type_t>(*value);
@@ -76,7 +76,7 @@ namespace xtd {
     /// const button* value = new xtd::forms::button();
     /// const control* result = convert::to_ptr<xtd::forms::control>(value);
     /// ```
-    template<typename new_type_t, typename current_type_t>
+    template<class new_type_t, class current_type_t>
     static const new_type_t* to_ptr(const current_type_t& value) {
       return &to_ref<new_type_t>(value);
     }
@@ -92,7 +92,7 @@ namespace xtd {
     /// button* value = new xtd::forms::button();
     /// control* result = convert::to_ptr<xtd::forms::control>(value);
     /// ```
-    template<typename new_type_t, typename current_type_t>
+    template<class new_type_t, class current_type_t>
     static new_type_t* to_ptr(current_type_t& value) {
       return &to_ref<new_type_t>(value);
     }
@@ -109,7 +109,7 @@ namespace xtd {
     /// const control& result = convert::to_ref<xtd::forms::control>(*value);
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
-    template<typename new_type_t, typename current_type_t>
+    template<class new_type_t, class current_type_t>
     static const new_type_t& to_ref(const current_type_t& value) {
       try {
         return dynamic_cast<const new_type_t&>(value);
@@ -131,7 +131,7 @@ namespace xtd {
     /// control& result = convert::to_ref<xtd::forms::control>(*value);
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
-    template<typename new_type_t, typename current_type_t>
+    template<class new_type_t, class current_type_t>
     static new_type_t& to_ref(current_type_t& value) {
       try {
         return dynamic_cast<new_type_t&>(value);
@@ -153,7 +153,7 @@ namespace xtd {
     /// const control& result = convert::to_ref<xtd::forms::control>(value);
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
-    template<typename new_type_t, typename current_type_t>
+    template<class new_type_t, class current_type_t>
     static const new_type_t& to_ref(const current_type_t* value) {
       if (value == nullptr) throw argument_null_exception {};
       try {
@@ -176,7 +176,7 @@ namespace xtd {
     /// control& result = convert::to_ref<xtd::forms::control>(value);
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
-    template<typename new_type_t, typename current_type_t>
+    template<class new_type_t, class current_type_t>
     static new_type_t& to_ref(current_type_t* value) {
       if (value == nullptr) throw argument_null_exception {};
       try {
@@ -199,7 +199,7 @@ namespace xtd {
     /// xtd::uptr<control> result = as<xtd::forms::control>(value);
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
-    template<typename new_type_t, typename current_type_t>
+    template<class new_type_t, class current_type_t>
     static xtd::uptr<new_type_t> to_unique_ptr(xtd::uptr<current_type_t>& value) {
       auto ptr = value.release();
       try {
@@ -222,7 +222,7 @@ namespace xtd {
     /// xtd::uptr<control> result = as<xtd::forms::control>(xtd::new_uptr<xtd::forms::button>());
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
-    template<typename new_type_t, typename current_type_t>
+    template<class new_type_t, class current_type_t>
     static xtd::uptr<new_type_t> to_unique_ptr(xtd::uptr<current_type_t>&& value) {
       auto ptr = value.release();
       try {
@@ -246,7 +246,7 @@ namespace xtd {
     /// const xtd::sptr<control> result = as<xtd::forms::control>(value);
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
-    template<typename new_type_t, typename current_type_t>
+    template<class new_type_t, class current_type_t>
     static xtd::sptr<new_type_t> to_shared_ptr(const xtd::sptr<current_type_t>& value) {
       try {
         unused_(dynamic_cast<new_type_t&>(*value.get()));
@@ -267,7 +267,7 @@ namespace xtd {
     /// xtd::sptr<control> result = as<xtd::forms::control>(xtd::new_sptr<xtd::forms::button>());
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
-    template<typename new_type_t, typename current_type_t>
+    template<class new_type_t, class current_type_t>
     static xtd::sptr<new_type_t> to_shared_ptr(xtd::sptr<current_type_t>& value) {
       try {
         unused_(dynamic_cast<new_type_t&>(*value.get()));
@@ -289,7 +289,7 @@ namespace xtd {
     /// const xtd::sptr<control> result = as<xtd::forms::control>(value);
     /// ```
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
-    template<typename new_type_t, typename current_type_t>
+    template<class new_type_t, class current_type_t>
     static xtd::sptr<new_type_t> to_shared_ptr(xtd::sptr<current_type_t>&& value) {
       try {
         unused_(dynamic_cast<new_type_t&>(*value.get()));

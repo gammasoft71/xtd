@@ -759,7 +759,7 @@ namespace xtd {
         }
 
         /// @cond
-        template<typename ienumerable_t>
+        template<class ienumerable_t>
         void insert_range(size_type index, const ienumerable_t& enumerable) {
           if (index > count()) throw xtd::argument_out_of_range_exception {};
           
@@ -991,25 +991,25 @@ namespace xtd {
       /// @cond
       // C++17 deduction guides for xtd::collections::generic::list
       // {
-      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+      template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
       list(std::initializer_list<type_t>) -> list<type_t, allocator_t>;
       
-      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+      template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
       list(const xtd::collections::generic::ienumerable<type_t>&) -> list<type_t, allocator_t>;
       
-      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+      template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
       list(const xtd::collections::generic::ilist<type_t>&) -> list<type_t, allocator_t>;
       
-      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+      template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
       list(const std::vector<type_t>&) -> list<type_t, allocator_t>;
       
-      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+      template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
       list(const list<type_t, allocator_t>&) -> list<type_t, allocator_t>;
       
-      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+      template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
       list(std::vector<type_t>&&) -> list<type_t, allocator_t>;
       
-      template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+      template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
       list(list<type_t, allocator_t>&&) -> list<type_t, allocator_t>;
       // }
       /// @endcond

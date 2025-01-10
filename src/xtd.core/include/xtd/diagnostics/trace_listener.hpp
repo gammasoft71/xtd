@@ -185,7 +185,7 @@ namespace xtd {
       /// @param data An array of objects to emit as data.
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The default implementation writes the event_cache, source, eventType and id parameters in the header and footer of the trace. The data parameter is written as the body of the trace message. The ToString method of the data object is used to convert the object to a String.
-      template<typename ...objects>
+      template<class ...objects>
       void trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::string& source, const xtd::diagnostics::trace_event_type& event_type, int32 id, const objects& ... data) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::string::format("{} {}: {} : {}", source, event_type, id, xtd::string::join(", ", {data...})));
@@ -231,7 +231,7 @@ namespace xtd {
       /// @param args An object array containing zero or more objects to format.
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The default implementation writes the values of the source, eventType and id parameters as a header. The args object array is converted to a string using the Format method, passing the format string and args array to format the string as the message portion of the trace. The event_cache data is written as a footer, the nature of the output data being dependent on the value of the TraceOutputOptions property.
-      template<typename ...objects>
+      template<class ...objects>
       void trace_event(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::string& source, const xtd::diagnostics::trace_event_type& event_type, int32 id, const xtd::string& format, const objects& ... args) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::string::format("{} {}: {} : {}", source, event_type, id, xtd::string::format(format, args...)));
