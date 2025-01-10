@@ -13,7 +13,7 @@ namespace xtd {
     /// @brief Internal comparable operators definition.
     /// @par Definition
     /// ```cpp
-    /// template<typename type_t, typename comparable_t>
+    /// template<class type_t, class comparable_t>
     /// class comparison_operators
     /// ```
     /// @par Header
@@ -26,7 +26,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core extensions
     /// @warning Internal use only for xtd::icomparable interfece.
-    template<typename type_t, typename comparable_t>
+    template<class type_t, class comparable_t>
     class comparison_operators {
     public:
       /// @name Public Operators

@@ -10,7 +10,7 @@
 #include "../convert_pointer.hpp"
 
 /// @cond
-template<typename new_type_t, typename current_type_t, typename bool_t>
+template<class new_type_t, class current_type_t, class bool_t>
 struct __as_enum__ {};
 
 template<class new_type_t, class current_type_t>

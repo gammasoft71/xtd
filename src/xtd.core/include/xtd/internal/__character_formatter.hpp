@@ -11,7 +11,7 @@
 #include <locale>
 
 /// @cond
-template<typename char_t, typename value_t>
+template<class char_t, class value_t>
 inline std::basic_string<char_t> __character_formatter(const std::basic_string<char_t>& fmt, value_t value, const std::locale& loc) {
   std::basic_string<char_t> result;
   xtd::char32 codepoint = value;

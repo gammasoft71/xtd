@@ -180,7 +180,7 @@ namespace xtd {
       /// @param related_activity_id A structure that identifies the related activity.
       /// @remarks The trace_transfer method calls the trace_transfer method of each trace listener in the listeners property to write the trace information. The default trace_transfer method in the base trace_listener class calls the trace_listener::trace_event(const trace_event_cache&, const xtd::string&, trace_event_type, Int32_t, const xtd::string&) method to process the call, setting event_type to trace_event_type::transfer and appending a string representation of the related_activity_id GUID to message.
       /// @remarks trace_transfer is intended to be used with the logical operations of a correlation_manager. The related_activity_id parameter relates to the activity_id property of a correlation_manager object. If a logical operation begins in one activity and transfers to another, the second activity logs the transfer by calling the trace_transfer method. The trace_transfer call relates the new activity identity to the previous identity. The most likely consumer of this functionality is a trace viewer that can report logical operations that span multiple activities.
-      template<typename guid_t>
+      template<class guid_t>
       void trace_transfer(int32 id, const xtd::string& message, const  guid_t& related_activity_id) {
         #if defined(TRACE)
         for (auto listener : listeners_)

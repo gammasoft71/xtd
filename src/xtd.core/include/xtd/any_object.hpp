@@ -164,7 +164,7 @@ namespace xtd {
   };
 
   /// @cond
-  template<typename type_t, typename bool_t>
+  template<class type_t, class bool_t>
   struct __is_enum_any_object__ {};
   
   template<class type_t>
@@ -177,7 +177,7 @@ namespace xtd {
     bool operator()(const any_object& o) const {return false;}
   };
   
-  template<typename type_t, typename bool_t>
+  template<class type_t, class bool_t>
   struct __is_polymorphic_any_object__ {};
   
   template<class type_t>

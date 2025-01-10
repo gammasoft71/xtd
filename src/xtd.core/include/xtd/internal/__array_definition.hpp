@@ -16,7 +16,7 @@ namespace xtd {
   /// @brief Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays.
   /// @par Definition
   /// ```cpp
-  /// template<typename type_t, xtd::size rank_, typename allocator_t>
+  /// template<class type_t, xtd::size rank_, class allocator_t>
   /// class array : public xtd::basic_array<type_t, allocator_t>;
   /// ```
   /// @par Header
@@ -41,13 +41,13 @@ namespace xtd {
   /// @par Examples
   /// The following code example creates and initializes an Array and displays its properties and its elements.
   /// @include array2.cpp
-  template<typename type_t = std::nullptr_t, xtd::size rank_size = 1, typename allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
+  template<class type_t = std::nullptr_t, xtd::size rank_size = 1, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
   class array;
   
   /// @brief Base object that represent array.
   /// @par Definition
   /// ```cpp
-  /// template<typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  /// template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
   /// class basic_array : public xtd::array_object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<basic_array<type_t, allocator_t>>;
   /// ```
   /// @par Header

@@ -10,7 +10,7 @@ namespace xtd {
     /// @brief Internal comparable operators definition.
     /// @par Definition
     /// ```cpp
-    /// template<typename type_t, typename equatable_t>
+    /// template<class type_t, class equatable_t>
     /// class equality_operators
     /// ```
     /// @par Header
@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core extensions
     /// @warning Internal use only for xtd::iequatable interfece.
-    template<typename type_t, typename equatable_t>
+    template<class type_t, class equatable_t>
     class equality_operators {
     public:
       /// @name Public Operators

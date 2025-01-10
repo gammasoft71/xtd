@@ -280,7 +280,7 @@ namespace xtd {
       return result;
     }
     
-    template<typename fn_t>
+    template<class fn_t>
     delegate operator +(fn_t function) noexcept {
       delegate result = *this;
       result += function;
@@ -297,7 +297,7 @@ namespace xtd {
       return *this;
     }
     
-    template<typename fn_t>
+    template<class fn_t>
     delegate& operator +=(fn_t function) noexcept {
       *this = delegate::combine(*this, delegate(function));
       return *this;
@@ -315,7 +315,7 @@ namespace xtd {
       return result;
     }
     
-    template<typename fn_t>
+    template<class fn_t>
     delegate operator -(fn_t function) noexcept {
       delegate result = *this;
       result -= function;
@@ -332,7 +332,7 @@ namespace xtd {
       return *this;
     }
     
-    template<typename fn_t>
+    template<class fn_t>
     delegate& operator -=(fn_t function) noexcept {
       *this = delegate::remove(*this, delegate(function));
       return *this;
@@ -768,7 +768,7 @@ namespace xtd {
       return result;
     }
     
-    template<typename fn_t>
+    template<class fn_t>
     delegate operator +(fn_t function) noexcept {
       delegate result = *this;
       result += function;
@@ -790,7 +790,7 @@ namespace xtd {
       return *this;
     }
     
-    template<typename fn_t>
+    template<class fn_t>
     delegate& operator +=(fn_t function) noexcept {
       *this = delegate::combine(*this, delegate(function));
       return *this;
@@ -814,7 +814,7 @@ namespace xtd {
       return result;
     }
     
-    template<typename fn_t>
+    template<class fn_t>
     delegate operator -(fn_t function) noexcept {
       delegate result = *this;
       result -= function;
@@ -836,7 +836,7 @@ namespace xtd {
       return *this;
     }
     
-    template<typename fn_t>
+    template<class fn_t>
     delegate& operator -=(fn_t function) noexcept {
       *this = delegate::remove(*this, delegate(function));
       return *this;

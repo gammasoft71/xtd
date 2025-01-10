@@ -12,7 +12,7 @@ namespace xtd {
   namespace forms {
     namespace native {
       class control;
-      template<typename control_t>
+      template<class control_t>
       class control_wrapper;
       class user_window;
       class wx_button;
@@ -27,7 +27,7 @@ namespace xtd {
         wx_user_window() = default;
       private:
         friend xtd::forms::native::control;
-        template<typename control_t>
+        template<class control_t>
         friend class control_wrapper;
         friend xtd::forms::native::user_window;
         friend xtd::forms::native::wx_button;
@@ -55,7 +55,7 @@ namespace xtd {
         wx_user_panel() = default;
       private:
         friend xtd::forms::native::control;
-        template<typename control_t>
+        template<class control_t>
         friend class control_wrapper;
         friend xtd::forms::native::user_window;
         friend xtd::forms::native::wx_button;

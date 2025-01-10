@@ -38,7 +38,7 @@ namespace xtd {
       /// @include read_only_collection.cpp
       template<class type_t>
       class read_only_collection : public xtd::object, public xtd::collections::generic::ilist<type_t> {
-        template<typename list_type_t>
+        template<class list_type_t>
         class empty_list : public generic::ilist<list_type_t> {
         public:
           using iterator = typename generic::ilist<list_type_t>::iterator;
