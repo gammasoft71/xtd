@@ -89,7 +89,7 @@ $(function() {
 <a href="event_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> <span class="keywordtype">object</span>_t, <span class="keyword">typename</span> handler_t&gt;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">object</span>_t, <span class="keyword">class</span> handler_t&gt;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classxtd_1_1event.html">   21</a></span>  <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1event.html">event</a> : <span class="keyword">protected</span> handler_t {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">friend</span> object_t;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keyword">public</span>:</div>
@@ -107,7 +107,7 @@ $(function() {
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      <span class="keywordflow">return</span> handler_t::operator +=(function);</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> fn_t&gt;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> fn_t&gt;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classxtd_1_1event.html#af46b219cae603496b81ddcb65d676700">   55</a></span>    handler_t&amp; <a class="code hl_function" href="classxtd_1_1event.html#a87ea207897e355c72adcec96651e9710">operator +=</a>(fn_t function) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      <span class="keywordflow">return</span> handler_t::operator +=(function);</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
@@ -120,7 +120,7 @@ $(function() {
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      <span class="keywordflow">return</span> handler_t::operator -=(function);</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> fn_t&gt;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> fn_t&gt;</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classxtd_1_1event.html#a35b602b438ea7c8881ca1296bc142560">   77</a></span>    handler_t&amp; <a class="code hl_function" href="classxtd_1_1event.html#aa43b48693762923b3d46009599f60ff4">operator -=</a>(fn_t function) <span class="keyword">noexcept</span> {</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      <span class="keywordflow">return</span> handler_t::operator -=(function);</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
@@ -140,7 +140,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 9 2025 22:53:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 11 2025 22:29:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

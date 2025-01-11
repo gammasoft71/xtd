@@ -93,7 +93,7 @@ $(function() {
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {  </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  template&lt;typename type_t, typename allocator_t = xtd::collections::generic::helpers::allocator&lt;typename std::conditional&lt;std::is_same&lt;bool, type_t&gt;::value, char, type_t&gt;<a class="code hl_typedef" href="group__types.html#gafa42bcceb7fb5768ea8cc4588e67dc15">::type</a>&gt;&gt;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  template&lt;class type_t, class allocator_t = xtd::collections::generic::helpers::allocator&lt;typename std::conditional&lt;std::is_same&lt;bool, type_t&gt;::value, char, type_t&gt;<a class="code hl_typedef" href="group__types.html#gafa42bcceb7fb5768ea8cc4588e67dc15">::type</a>&gt;&gt;</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classxtd_1_1basic__array.html">   27</a></span>  <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1basic__array.html">basic_array</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1array__abstract__object.html">xtd::array_abstract_object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ilist.html">xtd::collections::generic::ilist</a>&lt;type_t&gt;, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;basic_array&lt;type_t, allocator_t&gt;&gt; {</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">class </span>comparer {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">public</span>:</div>
@@ -335,7 +335,7 @@ $(function() {
 <div class="line"><a id="l00513" name="l00513"></a><span class="lineno"><a class="line" href="classxtd_1_1basic__array.html#ab39c6f97b33ca7b85614188ce9443f72">  513</a></span>    <span class="keyword">const</span> type_t&amp; <a class="code hl_function" href="classxtd_1_1basic__array.html#ab39c6f97b33ca7b85614188ce9443f72">operator()</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;size_type&gt;</a>&amp; indexes) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>    </div>
 <div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>  <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_array_t, <span class="keywordtype">size_t</span>ype rank_array_t, <span class="keyword">typename</span> allocator_array_t&gt;</div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_array_t, <span class="keywordtype">size_t</span>ype rank_array_t, <span class="keyword">class</span> allocator_array_t&gt;</div>
 <div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1array.html">array</a>;</div>
 <div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>    </div>
 <div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>    <a class="code hl_class" href="classxtd_1_1basic__array.html">basic_array</a>() = <span class="keywordflow">default</span>;</div>
@@ -388,8 +388,8 @@ $(function() {
 <div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>      data_-&gt;upper_bound.push_back((*(*il.begin()).begin()).size() - 1);</div>
 <div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>    }</div>
 <div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>    </div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> iterator_t&gt;</div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    basic_array(iterator_t first, iterator_t last) {</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> input_iterator_t&gt;</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    basic_array(input_iterator_t first, input_iterator_t last) {</div>
 <div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>      data_-&gt;items.assign(first, last);</div>
 <div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>      data_-&gt;lower_bound.push_back(0);</div>
 <div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>      data_-&gt;upper_bound.push_back(data_-&gt;items.size() - 1);</div>
@@ -535,7 +535,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 9 2025 22:53:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 11 2025 22:29:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

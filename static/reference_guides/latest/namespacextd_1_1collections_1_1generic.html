@@ -158,24 +158,91 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Alias</h2></td></tr>
-<tr class="memitem:ga64eee1442dc5ab233c858fb9210538f0"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:a3317a689856a14f15f6632c2a0ab81cb"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t &gt; </td></tr>
+<tr class="memitem:a3317a689856a14f15f6632c2a0ab81cb"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd_1_1collections_1_1generic.html#a3317a689856a14f15f6632c2a0ab81cb">iterator_value_t</a> = typename std::iterator_traits&lt; input_iterator_t &gt;::value_type</td></tr>
+<tr class="memdesc:a3317a689856a14f15f6632c2a0ab81cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the value iterator type.  <br /></td></tr>
+<tr class="separator:a3317a689856a14f15f6632c2a0ab81cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f2afbee5ea73f8213243d8b6e4225e0"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t &gt; </td></tr>
+<tr class="memitem:a3f2afbee5ea73f8213243d8b6e4225e0"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd_1_1collections_1_1generic.html#a3f2afbee5ea73f8213243d8b6e4225e0">iterator_key_t</a> = std::remove_const_t&lt; std::tuple_element_t&lt; 0, <a class="el" href="namespacextd_1_1collections_1_1generic.html#a3317a689856a14f15f6632c2a0ab81cb">iterator_value_t</a>&lt; input_iterator_t &gt; &gt; &gt;</td></tr>
+<tr class="memdesc:a3f2afbee5ea73f8213243d8b6e4225e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the key iterator type.  <br /></td></tr>
+<tr class="separator:a3f2afbee5ea73f8213243d8b6e4225e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3339b752fef335a05620f4ecc85ef7db"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t &gt; </td></tr>
+<tr class="memitem:a3339b752fef335a05620f4ecc85ef7db"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd_1_1collections_1_1generic.html#a3339b752fef335a05620f4ecc85ef7db">iteraotor_mapped_t</a> = std::tuple_element_t&lt; 1, <a class="el" href="namespacextd_1_1collections_1_1generic.html#a3317a689856a14f15f6632c2a0ab81cb">iterator_value_t</a>&lt; input_iterator_t &gt; &gt;</td></tr>
+<tr class="memdesc:a3339b752fef335a05620f4ecc85ef7db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the mapped iterator type.  <br /></td></tr>
+<tr class="separator:a3339b752fef335a05620f4ecc85ef7db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga64eee1442dc5ab233c858fb9210538f0"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga64eee1442dc5ab233c858fb9210538f0"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga64eee1442dc5ab233c858fb9210538f0">hash_set</a> = std::unordered_set&lt; type_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html">helpers::hasher</a>&lt; type_t &gt;, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">helpers::equator</a>&lt; type_t &gt;, <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator</a>&lt; type_t &gt; &gt;</td></tr>
 <tr class="memdesc:ga64eee1442dc5ab233c858fb9210538f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a set of values.  <br /></td></tr>
 <tr class="separator:ga64eee1442dc5ab233c858fb9210538f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga00feb24bdefb37f4fdf3a1fda87520ad"><td class="memTemplParams" colspan="2">template&lt;typename key_t , typename value_t &gt; </td></tr>
+<tr class="memitem:ga00feb24bdefb37f4fdf3a1fda87520ad"><td class="memTemplParams" colspan="2">template&lt;class key_t , class value_t &gt; </td></tr>
 <tr class="memitem:ga00feb24bdefb37f4fdf3a1fda87520ad"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga00feb24bdefb37f4fdf3a1fda87520ad">sorted_dictionary</a> = std::map&lt; key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html">helpers::comparer</a>&lt; key_t &gt;, <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator</a>&lt; std::pair&lt; const key_t, value_t &gt; &gt; &gt;</td></tr>
 <tr class="memdesc:ga00feb24bdefb37f4fdf3a1fda87520ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of key/value pairs that are sorted on the key.  <br /></td></tr>
 <tr class="separator:ga00feb24bdefb37f4fdf3a1fda87520ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1b6a1fb3e965aaf21f075a1f3b99ec90"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga1b6a1fb3e965aaf21f075a1f3b99ec90"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga1b6a1fb3e965aaf21f075a1f3b99ec90"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga1b6a1fb3e965aaf21f075a1f3b99ec90">sorted_set</a> = std::set&lt; type_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html">helpers::comparer</a>&lt; type_t &gt;, <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator</a>&lt; type_t &gt; &gt;</td></tr>
 <tr class="memdesc:ga1b6a1fb3e965aaf21f075a1f3b99ec90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that is maintained in sorted order.  <br /></td></tr>
 <tr class="separator:ga1b6a1fb3e965aaf21f075a1f3b99ec90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a3317a689856a14f15f6632c2a0ab81cb" name="a3317a689856a14f15f6632c2a0ab81cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3317a689856a14f15f6632c2a0ab81cb">&#9670;&#160;</a></span>iterator_value_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class input_iterator_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacextd_1_1collections_1_1generic.html#a3317a689856a14f15f6632c2a0ab81cb">xtd::collections::generic::iterator_value_t</a> = typedef typename std::iterator_traits&lt;input_iterator_t&gt;::value_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Represents the value iterator type. </p>
+
+</div>
+</div>
+<a id="a3f2afbee5ea73f8213243d8b6e4225e0" name="a3f2afbee5ea73f8213243d8b6e4225e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f2afbee5ea73f8213243d8b6e4225e0">&#9670;&#160;</a></span>iterator_key_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class input_iterator_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacextd_1_1collections_1_1generic.html#a3f2afbee5ea73f8213243d8b6e4225e0">xtd::collections::generic::iterator_key_t</a> = typedef std::remove_const_t&lt;std::tuple_element_t&lt;0, <a class="el" href="namespacextd_1_1collections_1_1generic.html#a3317a689856a14f15f6632c2a0ab81cb">iterator_value_t</a>&lt;input_iterator_t&gt; &gt;&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Represents the key iterator type. </p>
+
+</div>
+</div>
+<a id="a3339b752fef335a05620f4ecc85ef7db" name="a3339b752fef335a05620f4ecc85ef7db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3339b752fef335a05620f4ecc85ef7db">&#9670;&#160;</a></span>iteraotor_mapped_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class input_iterator_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacextd_1_1collections_1_1generic.html#a3339b752fef335a05620f4ecc85ef7db">xtd::collections::generic::iteraotor_mapped_t</a> = typedef std::tuple_element_t&lt;1, <a class="el" href="namespacextd_1_1collections_1_1generic.html#a3317a689856a14f15f6632c2a0ab81cb">iterator_value_t</a>&lt;input_iterator_t&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Represents the mapped iterator type. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 9 2025 22:53:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 11 2025 22:29:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

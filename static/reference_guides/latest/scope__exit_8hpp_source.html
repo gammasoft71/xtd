@@ -94,13 +94,13 @@ $(function() {
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structxtd_1_1scope__exit.html">   45</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1scope__exit.html">scope_exit</a> {</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  };</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> function_t&gt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> function_t&gt;</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">struct </span>__xtd_scope_exit_object__ {</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    ~__xtd_scope_exit_object__() { function(); }</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    function_t function;</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  };</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> function_t&gt;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> function_t&gt;</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">auto</span> operator +(scope_exit, function_t&amp;&amp; function) {</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">return</span> __xtd_scope_exit_object__&lt;function_t&gt;{std::forward&lt;function_t&gt;(function)};</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  }</div>
@@ -116,7 +116,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 9 2025 22:53:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 11 2025 22:29:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
