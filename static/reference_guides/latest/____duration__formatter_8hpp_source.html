@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;../chrono.hpp&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;../ticks.hpp&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> <span class="keywordtype">char</span>_t, <span class="keyword">typename</span> type_t, <span class="keyword">typename</span> period_t = std::ratio&lt;1&gt;&gt;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">char</span>_t, <span class="keyword">class</span> type_t, <span class="keyword">class</span> period_t = std::ratio&lt;1&gt;&gt;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">inline</span> std::basic_string&lt;char_t&gt; __make_string_from_duration(std::chrono::duration&lt;type_t, period_t&gt; value, <span class="keywordtype">bool</span> constant = <span class="keyword">true</span>) {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  std::basic_string&lt;char_t&gt; result;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  </div>
@@ -113,7 +113,7 @@ $(function() {
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> <span class="keywordtype">char</span>_t, <span class="keyword">typename</span> type_t, <span class="keyword">typename</span> period_t = std::ratio&lt;1&gt;&gt;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">char</span>_t, <span class="keyword">class</span> type_t, <span class="keyword">class</span> period_t = std::ratio&lt;1&gt;&gt;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">inline</span> std::basic_string&lt;char_t&gt; __duration_formatter(std::basic_string&lt;char_t&gt; fmt, <span class="keyword">const</span> std::chrono::duration&lt;type_t, period_t&gt;&amp; value, <span class="keyword">const</span> std::locale&amp; loc) {</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordflow">if</span> (fmt.empty()) fmt = std::basic_string&lt;char_t&gt; {<span class="charliteral">&#39;G&#39;</span>};</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordflow">if</span> (fmt.size() &gt; 1) __format_exception(<span class="stringliteral">&quot;Invalid format&quot;</span>);</div>
@@ -149,7 +149,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 9 2025 22:53:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 11 2025 22:29:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

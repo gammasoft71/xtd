@@ -95,10 +95,10 @@ $(function() {
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="____numeric__formatter_8hpp.html">__numeric_formatter.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="____format__exception_8hpp.html">__format_exception.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> enum_t&gt;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> enum_t&gt;</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>std::string __enum_to_string(enum_t value) <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> <span class="keywordtype">char</span>_t, <span class="keyword">typename</span> value_t&gt;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">char</span>_t, <span class="keyword">class</span> value_t&gt;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">inline</span> std::basic_string&lt;char_t&gt; __enum_formatter(<span class="keyword">const</span> std::basic_string&lt;char_t&gt;&amp; format, value_t value, <span class="keyword">const</span> std::locale&amp; loc) {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  <span class="keyword">auto</span> fmt = <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  <span class="keywordflow">if</span> (fmt.empty()) fmt = {<span class="charliteral">&#39;G&#39;</span>};</div>
@@ -118,18 +118,18 @@ $(function() {
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  }</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">static</span> std::string __to_string_enum(<span class="keyword">const</span> value_t&amp; value, <span class="keyword">const</span> std::string&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc, std::true_type) {<span class="keywordflow">return</span> __enum_formatter(fmt, value, loc);}</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">static</span> std::string __to_string_enum(<span class="keyword">const</span> value_t&amp; value, <span class="keyword">const</span> std::string&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc, std::false_type) {</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  __format_exception(<span class="keyword">typeid</span>(value)); <span class="keywordflow">return</span> {};</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">static</span> std::wstring __to_string_enum(<span class="keyword">const</span> value_t&amp; value, <span class="keyword">const</span> std::wstring&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc, std::true_type) {<span class="keywordflow">return</span> __enum_formatter(fmt, value, loc);}</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">static</span> std::wstring __to_string_enum(<span class="keyword">const</span> value_t&amp; value, <span class="keyword">const</span> std::wstring&amp; fmt, <span class="keyword">const</span> std::locale&amp; loc, std::false_type) {</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  __format_exception(<span class="keyword">typeid</span>(value)); <span class="keywordflow">return</span> {};</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
@@ -140,7 +140,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 9 2025 22:53:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 11 2025 22:29:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

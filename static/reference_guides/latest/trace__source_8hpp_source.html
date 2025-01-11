@@ -119,7 +119,7 @@ $(function() {
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      </div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1trace__source.html#ab4dd869493e09ea6ffe54ba2cc64eecd">   93</a></span>      <span class="keywordtype">void</span> flush();</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      template&lt;typename object_t&gt;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      template&lt;class object_t&gt;</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1trace__source.html#a12c20b84b950faaa2cf7ce0c5124c16f">  102</a></span>      <span class="keywordtype">void</span> trace_data(const <a class="code hl_namespace" href="namespacextd.html">xtd</a>::diagnostics::<a class="code hl_enumeration" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">trace_event_type</a>&amp; event_type, <a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <span class="keywordtype">id</span>, const object_t&amp; data) {</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">        #if defined(TRACE)</span></div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">if</span> (source_switch_.should_trace(event_type))</div>
@@ -128,7 +128,7 @@ $(function() {
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      }</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> <span class="keywordtype">object</span>_t&gt;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">object</span>_t&gt;</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1trace__source.html#ad1c2c8ac7c01d8114747f08a25b187b4">  117</a></span>      <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace__source.html#ad1c2c8ac7c01d8114747f08a25b187b4">trace_data</a>(<span class="keyword">const</span> <a class="code hl_enumeration" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a>&amp; event_type, <a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <span class="keywordtype">id</span>, <span class="keyword">const</span> std::vector&lt;object_t&gt;&amp; data) {</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">        #if defined(TRACE)</span></div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <span class="keywordflow">if</span> (source_switch_.should_trace(event_type))</div>
@@ -153,7 +153,7 @@ $(function() {
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>      }</div>
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>      </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> ...objects&gt;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>      <span class="keyword">template</span>&lt;<span class="keyword">class </span>...objects&gt;</div>
 <div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1trace__source.html#a39377a652d12853d94cb894aa9b20fb8">  155</a></span>      <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace__source.html#a39377a652d12853d94cb894aa9b20fb8">trace_event</a>(<span class="keyword">const</span> <a class="code hl_enumeration" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a>&amp; event_type, <a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <span class="keywordtype">id</span>, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1basic__string.html">xtd::string</a>&amp; format, <span class="keyword">const</span> objects&amp; ... args) {</div>
 <div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="preprocessor">        #if defined(TRACE)</span></div>
 <div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">if</span> (source_switch_.should_trace(event_type))</div>
@@ -164,10 +164,10 @@ $(function() {
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>      </div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1trace__source.html#ad3fe28b5b1366fb2df197b1157f5e25f">  167</a></span>      <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace__source.html#ad3fe28b5b1366fb2df197b1157f5e25f">trace_information</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1basic__string.html">xtd::string</a>&amp; message);</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>      </div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> ...objects_t&gt;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>      <span class="keyword">template</span>&lt;<span class="keyword">class </span>...objects_t&gt;</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1trace__source.html#a4b25d545fbb3c9993d755ae64b4d019a">  175</a></span>      <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace__source.html#a4b25d545fbb3c9993d755ae64b4d019a">trace_information</a>(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1basic__string.html">xtd::string</a>&amp; format, <span class="keyword">const</span> objects_t&amp; ... args) {trace_event(trace_event_type::information, 0, <a class="code hl_function" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, args...);}</div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>      </div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> gu<span class="keywordtype">id</span>_t&gt;</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> gu<span class="keywordtype">id</span>_t&gt;</div>
 <div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="classxtd_1_1diagnostics_1_1trace__source.html#a89a202cb844339ad9047d2adbe25da2f">  184</a></span>      <span class="keywordtype">void</span> <a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace__source.html#a89a202cb844339ad9047d2adbe25da2f">trace_transfer</a>(<a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <span class="keywordtype">id</span>, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1basic__string.html">xtd::string</a>&amp; message, <span class="keyword">const</span>  guid_t&amp; related_activity_id) {</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="preprocessor">        #if defined(TRACE)</span></div>
 <div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> listener : listeners_)</div>
@@ -217,7 +217,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 9 2025 22:53:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 11 2025 22:29:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

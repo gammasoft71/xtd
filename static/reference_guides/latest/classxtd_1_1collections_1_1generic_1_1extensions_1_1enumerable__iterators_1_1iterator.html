@@ -90,7 +90,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename type_t, typename enumerable_t&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;class type_t, class enumerable_t&gt;<br />
 class xtd::collections::generic::extensions::enumerable_iterators&lt; type_t, enumerable_t &gt;::iterator</div><p>Represents the iterator of enumarable value type. </p>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -149,7 +149,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab4431c9c5916d26d22b10d5acffdf6f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators_1_1iterator.html#ab4431c9c5916d26d22b10d5acffdf6f7">operator++</a> (int) const noexcept</td></tr>
 <tr class="memdesc:ab4431c9c5916d26d22b10d5acffdf6f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Post increments the underlying iterator.  <br /></td></tr>
 <tr class="separator:ab4431c9c5916d26d22b10d5acffdf6f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ef0b5fae59936b2ceb1a7e72cd63a0e"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:a3ef0b5fae59936b2ceb1a7e72cd63a0e"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:a3ef0b5fae59936b2ceb1a7e72cd63a0e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators_1_1iterator.html">iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators_1_1iterator.html#a3ef0b5fae59936b2ceb1a7e72cd63a0e">operator+</a> (value_t value) const noexcept</td></tr>
 <tr class="memdesc:a3ef0b5fae59936b2ceb1a7e72cd63a0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add operator with specified value.  <br /></td></tr>
 <tr class="separator:a3ef0b5fae59936b2ceb1a7e72cd63a0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,7 +164,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t &gt;::iterator::iterator_category =  std::forward_iterator_tag</td>
@@ -182,7 +182,7 @@ template&lt;typename type_t , typename enumerable_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t &gt;::iterator::value_type =  type_t</td>
@@ -200,7 +200,7 @@ template&lt;typename type_t , typename enumerable_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t &gt;::iterator::difference_type =  <a class="el" href="group__types.html#gac047942a62f03ba75e1b4f0bde7401ca">xtd::ptrdiff</a></td>
@@ -218,7 +218,7 @@ template&lt;typename type_t , typename enumerable_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t &gt;::iterator::pointer =  <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators_1_1iterator.html#af922d36f9ae76c8cf4ea84ba4e8c925a">value_type</a>*</td>
@@ -236,7 +236,7 @@ template&lt;typename type_t , typename enumerable_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t &gt;::iterator::const_pointer =  const <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators_1_1iterator.html#af922d36f9ae76c8cf4ea84ba4e8c925a">value_type</a>*</td>
@@ -254,7 +254,7 @@ template&lt;typename type_t , typename enumerable_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t &gt;::iterator::reference =  <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators_1_1iterator.html#af922d36f9ae76c8cf4ea84ba4e8c925a">value_type</a>&amp;</td>
@@ -272,7 +272,7 @@ template&lt;typename type_t , typename enumerable_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t &gt;::iterator::const_reference =  const <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators_1_1iterator.html#af922d36f9ae76c8cf4ea84ba4e8c925a">value_type</a>&amp;</td>
@@ -291,7 +291,7 @@ template&lt;typename type_t , typename enumerable_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -321,7 +321,7 @@ template&lt;typename type_t , typename enumerable_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -358,7 +358,7 @@ template&lt;typename type_t , typename enumerable_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -395,7 +395,7 @@ template&lt;typename type_t , typename enumerable_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -425,7 +425,7 @@ template&lt;typename type_t , typename enumerable_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -455,7 +455,7 @@ template&lt;typename type_t , typename enumerable_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -485,7 +485,7 @@ template&lt;typename type_t , typename enumerable_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -515,7 +515,7 @@ template&lt;typename type_t , typename enumerable_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -545,7 +545,7 @@ template&lt;typename type_t , typename enumerable_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -576,9 +576,9 @@ template&lt;typename type_t , typename enumerable_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
 <div class="memtemplate">
-template&lt;typename value_t &gt; </div>
+template&lt;class value_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -615,7 +615,7 @@ template&lt;typename value_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename type_t , typename enumerable_t &gt; </div>
+template&lt;class type_t , class enumerable_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -653,7 +653,7 @@ template&lt;typename type_t , typename enumerable_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 9 2025 22:53:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 11 2025 22:29:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

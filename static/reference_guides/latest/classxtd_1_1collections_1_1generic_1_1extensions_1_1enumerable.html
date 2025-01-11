@@ -104,9 +104,9 @@ Inheritance diagram for xtd::collections::generic::extensions::enumerable&lt; en
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename enumerable_t, typename source_t&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;class enumerable_t, class source_t&gt;<br />
 class xtd::collections::generic::extensions::enumerable&lt; enumerable_t, source_t &gt;</div><p>Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;. </p>
-<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">enumerable</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1static__object.html">xtd::static_object</a>;</div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a></div><div class="ttdoc">Provides a set of static methods for querying objects that implement ienumerable &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> enumerable.hpp:31</div></div>
 <div class="ttc" id="aclassxtd_1_1static__object_html"><div class="ttname"><a href="classxtd_1_1static__object.html">xtd::static_object</a></div><div class="ttdoc">Represent a static object. A static class can't be instantiated (constructors are deleted).</div><div class="ttdef"><b>Definition</b> static.hpp:20</div></div>
@@ -117,11 +117,11 @@ class xtd::collections::generic::extensions::enumerable&lt; enumerable_t, source
 <dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
-<tr class="memitem:aec4cd2ae6b5b4fde97fef8e2f160336f"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:aec4cd2ae6b5b4fde97fef8e2f160336f"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:aec4cd2ae6b5b4fde97fef8e2f160336f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aec4cd2ae6b5b4fde97fef8e2f160336f">ienumerable</a> = typename <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a2bd1889dc1967c50ef692411dc2c4b92">xtd::linq::enumerable::ienumerable</a>&lt; type_t &gt;</td></tr>
 <tr class="memdesc:aec4cd2ae6b5b4fde97fef8e2f160336f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the ienumerable value type.  <br /></td></tr>
 <tr class="separator:aec4cd2ae6b5b4fde97fef8e2f160336f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a417e4adb1792949e9a54516bee2ca3d2"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:a417e4adb1792949e9a54516bee2ca3d2"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:a417e4adb1792949e9a54516bee2ca3d2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a417e4adb1792949e9a54516bee2ca3d2">list</a> = typename <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a4ff59be55b7be66d275f28741e2f1f0a">xtd::linq::enumerable::list</a>&lt; type_t &gt;</td></tr>
 <tr class="memdesc:a417e4adb1792949e9a54516bee2ca3d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the list value type.  <br /></td></tr>
 <tr class="separator:a417e4adb1792949e9a54516bee2ca3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,14 +133,14 @@ class xtd::collections::generic::extensions::enumerable&lt; enumerable_t, source
 <tr class="memitem:af8bbfa7cff2e26dcf33e973a97d42316"><td class="memItemLeft" align="right" valign="top">source_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#af8bbfa7cff2e26dcf33e973a97d42316">aggregate</a> (const source_t &amp;seed, const std::function&lt; source_t(const source_t &amp;, const source_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9">func</a>) const</td></tr>
 <tr class="memdesc:af8bbfa7cff2e26dcf33e973a97d42316"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.  <br /></td></tr>
 <tr class="separator:af8bbfa7cff2e26dcf33e973a97d42316"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2705732af439af4da98a7a28f0a02f5a"><td class="memTemplParams" colspan="2">template&lt;typename accumulate_t &gt; </td></tr>
+<tr class="memitem:a2705732af439af4da98a7a28f0a02f5a"><td class="memTemplParams" colspan="2">template&lt;class accumulate_t &gt; </td></tr>
 <tr class="memitem:a2705732af439af4da98a7a28f0a02f5a"><td class="memTemplItemLeft" align="right" valign="top">accumulate_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a2705732af439af4da98a7a28f0a02f5a">aggregate</a> (const accumulate_t &amp;seed, const std::function&lt; accumulate_t(const source_t &amp;, const accumulate_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9">func</a>) const</td></tr>
 <tr class="memdesc:a2705732af439af4da98a7a28f0a02f5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.  <br /></td></tr>
 <tr class="separator:a2705732af439af4da98a7a28f0a02f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a487db86dcfc03a261804db9288b917df"><td class="memItemLeft" align="right" valign="top">source_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a487db86dcfc03a261804db9288b917df">aggregate</a> (const source_t &amp;seed, const std::function&lt; source_t(const source_t &amp;, const source_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9">func</a>, const std::function&lt; source_t(const source_t &amp;)&gt; &amp;result_selector) const</td></tr>
 <tr class="memdesc:a487db86dcfc03a261804db9288b917df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.  <br /></td></tr>
 <tr class="separator:a487db86dcfc03a261804db9288b917df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b91578ce3ebc8da03751dfca700bf7d"><td class="memTemplParams" colspan="2">template&lt;typename result_t , typename accumulate_t &gt; </td></tr>
+<tr class="memitem:a0b91578ce3ebc8da03751dfca700bf7d"><td class="memTemplParams" colspan="2">template&lt;class result_t , class accumulate_t &gt; </td></tr>
 <tr class="memitem:a0b91578ce3ebc8da03751dfca700bf7d"><td class="memTemplItemLeft" align="right" valign="top">result_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a0b91578ce3ebc8da03751dfca700bf7d">aggregate</a> (const accumulate_t &amp;seed, const std::function&lt; accumulate_t(const source_t &amp;, const accumulate_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9">func</a>, const std::function&lt; result_t(const accumulate_t &amp;)&gt; &amp;result_selector) const</td></tr>
 <tr class="memdesc:a0b91578ce3ebc8da03751dfca700bf7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.  <br /></td></tr>
 <tr class="separator:a0b91578ce3ebc8da03751dfca700bf7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,7 +162,7 @@ class xtd::collections::generic::extensions::enumerable&lt; enumerable_t, source
 <tr class="memitem:a5669f1a9bf9da6303aa9ff29197b4799"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a5669f1a9bf9da6303aa9ff29197b4799">average</a> () const noexcept</td></tr>
 <tr class="memdesc:a5669f1a9bf9da6303aa9ff29197b4799"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the average of a sequence of source_t values.  <br /></td></tr>
 <tr class="separator:a5669f1a9bf9da6303aa9ff29197b4799"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8353f4d5daa13e1810b8aad661eb938"><td class="memTemplParams" colspan="2">template&lt;typename result_t &gt; </td></tr>
+<tr class="memitem:ac8353f4d5daa13e1810b8aad661eb938"><td class="memTemplParams" colspan="2">template&lt;class result_t &gt; </td></tr>
 <tr class="memitem:ac8353f4d5daa13e1810b8aad661eb938"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aec4cd2ae6b5b4fde97fef8e2f160336f">ienumerable</a>&lt; result_t &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#ac8353f4d5daa13e1810b8aad661eb938">cast</a> () const noexcept</td></tr>
 <tr class="memdesc:ac8353f4d5daa13e1810b8aad661eb938"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts the elements of an xtd::collection::generic::ienumerable to the specified type.  <br /></td></tr>
 <tr class="separator:ac8353f4d5daa13e1810b8aad661eb938"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,11 +184,11 @@ class xtd::collections::generic::extensions::enumerable&lt; enumerable_t, source
 <tr class="memitem:aeef0abd344f629aef3c96e49d272b50c"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aeef0abd344f629aef3c96e49d272b50c">count</a> (const std::function&lt; bool(const source_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga535b9ce590888fa8d367c010a725fe20">predicate</a>) const noexcept</td></tr>
 <tr class="memdesc:aeef0abd344f629aef3c96e49d272b50c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a number that represents how many elements in the specified sequence satisfy a condition.  <br /></td></tr>
 <tr class="separator:aeef0abd344f629aef3c96e49d272b50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dba2660f845875cd5908be53e52bbc7"><td class="memTemplParams" colspan="2">template&lt;typename key_t &gt; </td></tr>
+<tr class="memitem:a0dba2660f845875cd5908be53e52bbc7"><td class="memTemplParams" colspan="2">template&lt;class key_t &gt; </td></tr>
 <tr class="memitem:a0dba2660f845875cd5908be53e52bbc7"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aec4cd2ae6b5b4fde97fef8e2f160336f">ienumerable</a>&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; key_t, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> &gt; &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a0dba2660f845875cd5908be53e52bbc7">count_by</a> (const std::function&lt; key_t(const source_t &amp;)&gt; &amp;key_selector) const noexcept</td></tr>
 <tr class="memdesc:a0dba2660f845875cd5908be53e52bbc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of elements in the current sequence grouped by key.  <br /></td></tr>
 <tr class="separator:a0dba2660f845875cd5908be53e52bbc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd274fa4579c9e02119888c7135d6c8e"><td class="memTemplParams" colspan="2">template&lt;typename key_t &gt; </td></tr>
+<tr class="memitem:acd274fa4579c9e02119888c7135d6c8e"><td class="memTemplParams" colspan="2">template&lt;class key_t &gt; </td></tr>
 <tr class="memitem:acd274fa4579c9e02119888c7135d6c8e"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aec4cd2ae6b5b4fde97fef8e2f160336f">ienumerable</a>&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; key_t, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> &gt; &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#acd274fa4579c9e02119888c7135d6c8e">count_by</a> (const std::function&lt; key_t(const source_t &amp;)&gt; &amp;key_selector, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">iequality_comparer</a>&lt; key_t &gt; &amp;key_comparer) const noexcept</td></tr>
 <tr class="memdesc:acd274fa4579c9e02119888c7135d6c8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the count of elements in the current sequence grouped by key.  <br /></td></tr>
 <tr class="separator:acd274fa4579c9e02119888c7135d6c8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,14 +210,14 @@ class xtd::collections::generic::extensions::enumerable&lt; enumerable_t, source
 <tr class="memitem:a964948d137047014d18a7cc5db15f46f"><td class="memItemLeft" align="right" valign="top">source_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a964948d137047014d18a7cc5db15f46f">first_or_default</a> () const noexcept</td></tr>
 <tr class="memdesc:a964948d137047014d18a7cc5db15f46f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the first element of the sequence that satisfies a condition or a default value if no such element is found.  <br /></td></tr>
 <tr class="separator:a964948d137047014d18a7cc5db15f46f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69ca739f420b3ddd4df01845ce9bd979"><td class="memTemplParams" colspan="2">template&lt;typename result_t &gt; </td></tr>
+<tr class="memitem:a69ca739f420b3ddd4df01845ce9bd979"><td class="memTemplParams" colspan="2">template&lt;class result_t &gt; </td></tr>
 <tr class="memitem:a69ca739f420b3ddd4df01845ce9bd979"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aec4cd2ae6b5b4fde97fef8e2f160336f">ienumerable</a>&lt; result_t &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a69ca739f420b3ddd4df01845ce9bd979">select</a> (const std::function&lt; result_t(const source_t &amp;)&gt; &amp;selector) const</td></tr>
 <tr class="memdesc:a69ca739f420b3ddd4df01845ce9bd979"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form.  <br /></td></tr>
 <tr class="separator:a69ca739f420b3ddd4df01845ce9bd979"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58637f7cae0e9518f0b728d47f2dc8f9"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aec4cd2ae6b5b4fde97fef8e2f160336f">ienumerable</a>&lt; source_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a58637f7cae0e9518f0b728d47f2dc8f9">select</a> (const std::function&lt; source_t(const source_t &amp;)&gt; &amp;selector) const</td></tr>
 <tr class="memdesc:a58637f7cae0e9518f0b728d47f2dc8f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form.  <br /></td></tr>
 <tr class="separator:a58637f7cae0e9518f0b728d47f2dc8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74a6585ba5b3ff487437db47ade70486"><td class="memTemplParams" colspan="2">template&lt;typename result_t &gt; </td></tr>
+<tr class="memitem:a74a6585ba5b3ff487437db47ade70486"><td class="memTemplParams" colspan="2">template&lt;class result_t &gt; </td></tr>
 <tr class="memitem:a74a6585ba5b3ff487437db47ade70486"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#aec4cd2ae6b5b4fde97fef8e2f160336f">ienumerable</a>&lt; result_t &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a74a6585ba5b3ff487437db47ade70486">select</a> (const std::function&lt; result_t(const source_t &amp;, size_t index)&gt; &amp;selector) const</td></tr>
 <tr class="memdesc:a74a6585ba5b3ff487437db47ade70486"><td class="mdescLeft">&#160;</td><td class="mdescRight">Projects each element of a sequence into a new form by incorporating the element's index.  <br /></td></tr>
 <tr class="separator:a74a6585ba5b3ff487437db47ade70486"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -241,9 +241,9 @@ class xtd::collections::generic::extensions::enumerable&lt; enumerable_t, source
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <div class="memtemplate">
-template&lt;typename type_t &gt; </div>
+template&lt;class type_t &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::ienumerable =  typename <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a2bd1889dc1967c50ef692411dc2c4b92">xtd::linq::enumerable::ienumerable</a>&lt;type_t&gt;</td>
@@ -261,9 +261,9 @@ template&lt;typename type_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <div class="memtemplate">
-template&lt;typename type_t &gt; </div>
+template&lt;class type_t &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable</a>&lt; enumerable_t, source_t &gt;::list =  typename <a class="el" href="classxtd_1_1linq_1_1enumerable.html#a4ff59be55b7be66d275f28741e2f1f0a">xtd::linq::enumerable::list</a>&lt;type_t&gt;</td>
@@ -282,7 +282,7 @@ template&lt;typename type_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -344,7 +344,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -414,9 +414,9 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <div class="memtemplate">
-template&lt;typename accumulate_t &gt; </div>
+template&lt;class accumulate_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -490,7 +490,7 @@ template&lt;typename accumulate_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -568,9 +568,9 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <div class="memtemplate">
-template&lt;typename result_t , typename accumulate_t &gt; </div>
+template&lt;class result_t , class accumulate_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -653,7 +653,7 @@ template&lt;typename result_t , typename accumulate_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -725,7 +725,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -774,7 +774,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -828,7 +828,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -898,7 +898,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -929,7 +929,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -965,9 +965,9 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <div class="memtemplate">
-template&lt;typename result_t &gt; </div>
+template&lt;class result_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1009,7 +1009,7 @@ template&lt;typename result_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1053,7 +1053,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1090,7 +1090,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1127,7 +1127,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1175,7 +1175,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1220,7 +1220,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1286,9 +1286,9 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <div class="memtemplate">
-template&lt;typename key_t &gt; </div>
+template&lt;class key_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1372,9 +1372,9 @@ template&lt;typename key_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <div class="memtemplate">
-template&lt;typename key_t &gt; </div>
+template&lt;class key_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1464,7 +1464,7 @@ template&lt;typename key_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1494,7 +1494,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1531,7 +1531,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1579,7 +1579,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1616,7 +1616,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1653,7 +1653,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1683,9 +1683,9 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <div class="memtemplate">
-template&lt;typename result_t &gt; </div>
+template&lt;class result_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1730,7 +1730,7 @@ template&lt;typename result_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1769,9 +1769,9 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <div class="memtemplate">
-template&lt;typename result_t &gt; </div>
+template&lt;class result_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1839,7 +1839,7 @@ template&lt;typename result_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1901,7 +1901,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1960,7 +1960,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2019,7 +2019,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename enumerable_t , typename source_t &gt; </div>
+template&lt;class enumerable_t , class source_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -2081,7 +2081,7 @@ template&lt;typename enumerable_t , typename source_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 9 2025 22:53:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 11 2025 22:29:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

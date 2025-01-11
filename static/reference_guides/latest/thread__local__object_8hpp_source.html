@@ -98,7 +98,7 @@ $(function() {
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  <span class="keyword">namespace </span>threading {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> value_t&gt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t&gt;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classxtd_1_1threading_1_1thread__local__object.html">   40</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1threading_1_1thread__local__object.html">thread_local_object</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a> {</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <span class="keyword">struct </span>data : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a> {</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <a class="code hl_class" href="classxtd_1_1threading_1_1mutex.html">threading::mutex</a> <a class="code hl_class" href="classxtd_1_1threading_1_1mutex.html">mutex</a>;</div>
@@ -124,9 +124,9 @@ $(function() {
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        data_-&gt;track_all_values = track_all_values;</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      }</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> func_t&gt;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> func_t&gt;</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      <span class="keyword">explicit</span> <a class="code hl_function" href="classxtd_1_1threading_1_1thread__local__object.html#a7efc7742733966ead53e4c827ee962a7">thread_local_object</a>(func_t value_factory) : <a class="code hl_class" href="classxtd_1_1threading_1_1thread__local__object.html">thread_local_object</a>(<a class="code hl_class" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html">func</a>&lt;value_t&gt; {value_factory}) {}</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      <span class="keyword">template</span>&lt;<span class="keyword">typename</span> func_t&gt;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> func_t&gt;</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      <span class="keyword">explicit</span> <a class="code hl_function" href="classxtd_1_1threading_1_1thread__local__object.html#a7efc7742733966ead53e4c827ee962a7">thread_local_object</a>(func_t value_factory, <span class="keywordtype">bool</span> track_all_values) : <a class="code hl_function" href="classxtd_1_1threading_1_1thread__local__object.html#a7efc7742733966ead53e4c827ee962a7">thread_local_object</a>(<a class="code hl_typedef" href="group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9">func</a>&lt;value_t&gt; {value_factory}, track_all_values) {}</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      <a class="code hl_function" href="classxtd_1_1threading_1_1thread__local__object.html#a7efc7742733966ead53e4c827ee962a7">thread_local_object</a>(<a class="code hl_function" href="classxtd_1_1threading_1_1thread__local__object.html#a7efc7742733966ead53e4c827ee962a7">thread_local_object</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      <a class="code hl_function" href="classxtd_1_1threading_1_1thread__local__object.html#a7efc7742733966ead53e4c827ee962a7">thread_local_object</a>(<span class="keyword">const</span> <a class="code hl_function" href="classxtd_1_1threading_1_1thread__local__object.html#a7efc7742733966ead53e4c827ee962a7">thread_local_object</a>&amp;) = <span class="keywordflow">default</span>;</div>
@@ -196,7 +196,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 9 2025 22:53:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 11 2025 22:29:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

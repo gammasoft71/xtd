@@ -91,9 +91,10 @@ $(function() {
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000032">Todo:</a></b></dt><dd>to remove </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000034">Todo:</a></b></dt><dd>to remove </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000012">Todo:</a></b></dt><dd>Move to iterator.hpp file </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000033">Todo:</a></b></dt><dd>to remove </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000035">Todo:</a></b></dt><dd>to remove </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000036">Todo:</a></b></dt><dd>to remove </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -523,7 +524,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Alias</h2></td></tr>
-<tr class="memitem:ga53c721aac682a7ccf19ee17d92280e31"><td class="memTemplParams" colspan="2">template&lt;typename... arguments_t&gt; </td></tr>
+<tr class="memitem:ga53c721aac682a7ccf19ee17d92280e31"><td class="memTemplParams" colspan="2">template&lt;class ... arguments_t&gt; </td></tr>
 <tr class="memitem:ga53c721aac682a7ccf19ee17d92280e31"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31">action</a> = delegate&lt; void(arguments_t...)&gt;</td></tr>
 <tr class="memdesc:ga53c721aac682a7ccf19ee17d92280e31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a xtd::delegate that has variable parameters and does not return a value.  <br /></td></tr>
 <tr class="separator:ga53c721aac682a7ccf19ee17d92280e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -536,7 +537,7 @@ Alias</h2></td></tr>
 <tr class="memitem:ga020fbeceaf011505de3ac30168375664"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga020fbeceaf011505de3ac30168375664">boolean_object</a> = <a class="el" href="classxtd_1_1box.html">box</a>&lt; bool &gt;</td></tr>
 <tr class="memdesc:ga020fbeceaf011505de3ac30168375664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent a boxed bool.  <br /></td></tr>
 <tr class="separator:ga020fbeceaf011505de3ac30168375664"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga96dde0e13d4e8026ac2d45cc19a0a401"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga96dde0e13d4e8026ac2d45cc19a0a401"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga96dde0e13d4e8026ac2d45cc19a0a401"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga96dde0e13d4e8026ac2d45cc19a0a401">comparison</a> = delegate&lt; <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, type_t, type_t &gt;</td></tr>
 <tr class="memdesc:ga96dde0e13d4e8026ac2d45cc19a0a401"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the method that compares two objects of the same type.  <br /></td></tr>
 <tr class="separator:ga96dde0e13d4e8026ac2d45cc19a0a401"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -549,18 +550,18 @@ Alias</h2></td></tr>
 <tr class="memitem:ga2c9b01f90017e6d921f8642ab99f0fcc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga2c9b01f90017e6d921f8642ab99f0fcc">async_callback</a> = delegate&lt; void(<a class="el" href="group__xtd__core.html#ga1bc34012935a93e10b5dba765c8d0d5a">async_result</a> ar)&gt;</td></tr>
 <tr class="memdesc:ga2c9b01f90017e6d921f8642ab99f0fcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">References a method to be called when a corresponding asynchronous operation completes.  <br /></td></tr>
 <tr class="separator:ga2c9b01f90017e6d921f8642ab99f0fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2be4d2f270243268ff197700fa3ae42f"><td class="memTemplParams" colspan="2">template&lt;typename enum_t &gt; </td></tr>
+<tr class="memitem:ga2be4d2f270243268ff197700fa3ae42f"><td class="memTemplParams" colspan="2">template&lt;class enum_t &gt; </td></tr>
 <tr class="memitem:ga2be4d2f270243268ff197700fa3ae42f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga2be4d2f270243268ff197700fa3ae42f">enum_collection</a> = std::vector&lt; std::pair&lt; enum_t, <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &gt; &gt;</td></tr>
 <tr class="memdesc:ga2be4d2f270243268ff197700fa3ae42f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a pair of an enum_t value and a string of an enum of type enum_t.  <br /></td></tr>
 <tr class="separator:ga2be4d2f270243268ff197700fa3ae42f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga531b610b74cb14c6047fb0843ab686b4"><td class="memTemplParams" colspan="2">template&lt;typename event_args_t  = const xtd::event_args&amp;&gt; </td></tr>
+<tr class="memitem:ga531b610b74cb14c6047fb0843ab686b4"><td class="memTemplParams" colspan="2">template&lt;class event_args_t  = const xtd::event_args&amp;&gt; </td></tr>
 <tr class="memitem:ga531b610b74cb14c6047fb0843ab686b4"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__events.html#ga531b610b74cb14c6047fb0843ab686b4">generic_event_handler</a> = xtd::delegate&lt; void(<a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;sender, event_args_t <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>)&gt;</td></tr>
 <tr class="memdesc:ga531b610b74cb14c6047fb0843ab686b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the method that will handle an event when the event provides data.  <br /></td></tr>
 <tr class="separator:ga531b610b74cb14c6047fb0843ab686b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0b1801aa17fa22ddacfdcccd7b25316b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__events.html#ga0b1801aa17fa22ddacfdcccd7b25316b">event_handler</a> = <a class="el" href="group__events.html#ga531b610b74cb14c6047fb0843ab686b4">generic_event_handler</a>&lt;&gt;</td></tr>
 <tr class="memdesc:ga0b1801aa17fa22ddacfdcccd7b25316b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the method that will handle an event that has no event data.  <br /></td></tr>
 <tr class="separator:ga0b1801aa17fa22ddacfdcccd7b25316b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga655ac2d710f5daaa327ac82c8c235de9"><td class="memTemplParams" colspan="2">template&lt;typename result_t , typename... arguments_t&gt; </td></tr>
+<tr class="memitem:ga655ac2d710f5daaa327ac82c8c235de9"><td class="memTemplParams" colspan="2">template&lt;class result_t , class ... arguments_t&gt; </td></tr>
 <tr class="memitem:ga655ac2d710f5daaa327ac82c8c235de9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9">func</a> = delegate&lt; result_t(arguments_t...)&gt;</td></tr>
 <tr class="memdesc:ga655ac2d710f5daaa327ac82c8c235de9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a delegate that has variables parameters and returns a value of the type specified by the result_t type.  <br /></td></tr>
 <tr class="separator:ga655ac2d710f5daaa327ac82c8c235de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -591,11 +592,11 @@ Alias</h2></td></tr>
 <tr class="memitem:gafaea93fb18a5eba4adfd23c9bd264e73"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gafaea93fb18a5eba4adfd23c9bd264e73">object_ref</a> = std::reference_wrapper&lt; <a class="el" href="classxtd_1_1object.html">object</a> &gt;</td></tr>
 <tr class="memdesc:gafaea93fb18a5eba4adfd23c9bd264e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an object reference.  <br /></td></tr>
 <tr class="separator:gafaea93fb18a5eba4adfd23c9bd264e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga17559da5e7e089b9cfa775bf7bb40263"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga17559da5e7e089b9cfa775bf7bb40263"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga17559da5e7e089b9cfa775bf7bb40263"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#ga17559da5e7e089b9cfa775bf7bb40263">optional</a> = std::optional&lt; type_t &gt;</td></tr>
 <tr class="memdesc:ga17559da5e7e089b9cfa775bf7bb40263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the null_opt alias on <a href="https://en.cppreference.com/w/cpp/utility/optional/nullopt_t">std::nullopt_t</a>.  <br /></td></tr>
 <tr class="separator:ga17559da5e7e089b9cfa775bf7bb40263"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga535b9ce590888fa8d367c010a725fe20"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga535b9ce590888fa8d367c010a725fe20"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga535b9ce590888fa8d367c010a725fe20"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga535b9ce590888fa8d367c010a725fe20">predicate</a> = <a class="el" href="group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9">xtd::func</a>&lt; bool, type_t &gt;</td></tr>
 <tr class="memdesc:ga535b9ce590888fa8d367c010a725fe20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a delegate that defines a set of criteria and determines whether the specified object meets those criteria.  <br /></td></tr>
 <tr class="separator:ga535b9ce590888fa8d367c010a725fe20"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1342,11 +1343,11 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga7352fcff0da12feb0aff421fc8c41d15"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga7352fcff0da12feb0aff421fc8c41d15"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga7352fcff0da12feb0aff421fc8c41d15"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#ga7352fcff0da12feb0aff421fc8c41d15">boxing</a> (const type_t &amp;value) noexcept</td></tr>
 <tr class="memdesc:ga7352fcff0da12feb0aff421fc8c41d15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to box an object.  <br /></td></tr>
 <tr class="separator:ga7352fcff0da12feb0aff421fc8c41d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab155c2e1615c761866911598011c74b3"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename ... args_t&gt; </td></tr>
+<tr class="memitem:gab155c2e1615c761866911598011c74b3"><td class="memTemplParams" colspan="2">template&lt;class type_t , class ... args_t&gt; </td></tr>
 <tr class="memitem:gab155c2e1615c761866911598011c74b3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1box.html">box</a>&lt; type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#gab155c2e1615c761866911598011c74b3">boxing</a> (args_t &amp;&amp;...args) noexcept</td></tr>
 <tr class="memdesc:gab155c2e1615c761866911598011c74b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to box an object.  <br /></td></tr>
 <tr class="separator:gab155c2e1615c761866911598011c74b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1356,51 +1357,51 @@ Functions</h2></td></tr>
 <tr class="memitem:ga20a8c5c8813e84b0831d7b236d1f1459"><td class="memItemLeft" align="right" valign="top">std::ostream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__debug.html#ga20a8c5c8813e84b0831d7b236d1f1459">ctrace</a> (nullptr)</td></tr>
 <tr class="memdesc:ga20a8c5c8813e84b0831d7b236d1f1459"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an std::ostream for <a class="el" href="classxtd_1_1diagnostics_1_1trace.html" title="Provides a set of methods and properties that help you debug the execution of your code....">xtd::diagnostics::trace</a>.  <br /></td></tr>
 <tr class="separator:ga20a8c5c8813e84b0831d7b236d1f1459"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4a8d88c02f04ecf312a36f95ab137d15"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga4a8d88c02f04ecf312a36f95ab137d15"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga4a8d88c02f04ecf312a36f95ab137d15"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">delete_ptr</a> (<a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">sptr</a>&lt; type_t &gt; &amp;<a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>)</td></tr>
 <tr class="memdesc:ga4a8d88c02f04ecf312a36f95ab137d15"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15" title="xtd::delete_ptr operator delete a xtd::sptr or xtd::ptr object.">xtd::delete_ptr</a> operator delete a <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> or <a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object.  <br /></td></tr>
 <tr class="separator:ga4a8d88c02f04ecf312a36f95ab137d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga485087288ed3d32c97b73af209aea50c"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga485087288ed3d32c97b73af209aea50c"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga485087288ed3d32c97b73af209aea50c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga485087288ed3d32c97b73af209aea50c">delete_ptr</a> (<a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a>&lt; type_t &gt; &amp;<a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>)</td></tr>
 <tr class="memdesc:ga485087288ed3d32c97b73af209aea50c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15" title="xtd::delete_ptr operator delete a xtd::sptr or xtd::ptr object.">xtd::delete_ptr</a> operator delete a <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object.  <br /></td></tr>
 <tr class="separator:ga485087288ed3d32c97b73af209aea50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga99eb39a1b7705408679d5d327d969292"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga99eb39a1b7705408679d5d327d969292"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga99eb39a1b7705408679d5d327d969292"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga99eb39a1b7705408679d5d327d969292">delete_sptr</a> (<a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">sptr</a>&lt; type_t &gt; &amp;<a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>)</td></tr>
 <tr class="memdesc:ga99eb39a1b7705408679d5d327d969292"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__xtd__core.html#ga99eb39a1b7705408679d5d327d969292" title="xtd::delete_sptr operator delete a xtd::sptr or xtd::ptr object.">xtd::delete_sptr</a> operator delete a <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> or <a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object.  <br /></td></tr>
 <tr class="separator:ga99eb39a1b7705408679d5d327d969292"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf4f835bee450ded314cab5cda37a2643"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:gaf4f835bee450ded314cab5cda37a2643"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:gaf4f835bee450ded314cab5cda37a2643"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaf4f835bee450ded314cab5cda37a2643">delete_uptr</a> (<a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a>&lt; type_t &gt; &amp;<a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>)</td></tr>
 <tr class="memdesc:gaf4f835bee450ded314cab5cda37a2643"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__xtd__core.html#gaf4f835bee450ded314cab5cda37a2643" title="xtd::delete_uptr operator delete a xtd::uptr object.">xtd::delete_uptr</a> operator delete a <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object.  <br /></td></tr>
 <tr class="separator:gaf4f835bee450ded314cab5cda37a2643"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga73705cb16c7db5a2b7567456ff4e7e14"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:ga73705cb16c7db5a2b7567456ff4e7e14"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:ga73705cb16c7db5a2b7567456ff4e7e14"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;fmt, args_t &amp;&amp;... args)</td></tr>
 <tr class="memdesc:ga73705cb16c7db5a2b7567456ff4e7e14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified arguments list, to string using the specified format information.  <br /></td></tr>
 <tr class="separator:ga73705cb16c7db5a2b7567456ff4e7e14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae19295d7166eb64721a5d9304d277137"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:gae19295d7166eb64721a5d9304d277137"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:gae19295d7166eb64721a5d9304d277137"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga10e56556495f88e0d68bde21820cdddf">xtd::u8string</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__format__parse.html#gae19295d7166eb64721a5d9304d277137">format</a> (const <a class="el" href="group__strings.html#ga10e56556495f88e0d68bde21820cdddf">xtd::u8string</a> &amp;fmt, args_t &amp;&amp;... args)</td></tr>
 <tr class="memdesc:gae19295d7166eb64721a5d9304d277137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified arguments list, to string using the specified format information.  <br /></td></tr>
 <tr class="separator:gae19295d7166eb64721a5d9304d277137"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae19295d7166eb64721a5d9304d277137"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:gae19295d7166eb64721a5d9304d277137"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:gae19295d7166eb64721a5d9304d277137"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga87efea41d4bd7beb815934226919d4cf">xtd::u16string</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#gae19295d7166eb64721a5d9304d277137">format</a> (const <a class="el" href="group__strings.html#ga87efea41d4bd7beb815934226919d4cf">xtd::u16string</a> &amp;fmt, args_t &amp;&amp;... args)</td></tr>
 <tr class="memdesc:gae19295d7166eb64721a5d9304d277137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified arguments list, to string using the specified format information.  <br /></td></tr>
 <tr class="separator:gae19295d7166eb64721a5d9304d277137"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae19295d7166eb64721a5d9304d277137"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:gae19295d7166eb64721a5d9304d277137"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:gae19295d7166eb64721a5d9304d277137"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga8e905e9638523f5b5d380d8bcbcc834e">xtd::u32string</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#gae19295d7166eb64721a5d9304d277137">format</a> (const <a class="el" href="group__strings.html#ga8e905e9638523f5b5d380d8bcbcc834e">xtd::u32string</a> &amp;fmt, args_t &amp;&amp;... args)</td></tr>
 <tr class="memdesc:gae19295d7166eb64721a5d9304d277137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified arguments list, to string using the specified format information.  <br /></td></tr>
 <tr class="separator:gae19295d7166eb64721a5d9304d277137"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae19295d7166eb64721a5d9304d277137"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:gae19295d7166eb64721a5d9304d277137"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:gae19295d7166eb64721a5d9304d277137"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga0852e1ddc5f45ee30560e3f95d6915b0">xtd::wstring</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#gae19295d7166eb64721a5d9304d277137">format</a> (const <a class="el" href="group__strings.html#ga0852e1ddc5f45ee30560e3f95d6915b0">xtd::wstring</a> &amp;fmt, args_t &amp;&amp;... args)</td></tr>
 <tr class="memdesc:gae19295d7166eb64721a5d9304d277137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified arguments list, to string using the specified format information.  <br /></td></tr>
 <tr class="separator:gae19295d7166eb64721a5d9304d277137"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabdfb4794a3a452a732efef515728583a"><td class="memItemLeft" align="right" valign="top">const std::error_category &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__exceptions.html#gabdfb4794a3a452a732efef515728583a">h_result_category</a> () noexcept</td></tr>
 <tr class="memdesc:gabdfb4794a3a452a732efef515728583a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains a reference to the static error category object for <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a> errors. The object is required to override the virtual function error_category::name() to return a pointer to the string "h_result_category". It is used to identify error conditions that correspond to the <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">xtd::h_result</a> error codes.  <br /></td></tr>
 <tr class="separator:gabdfb4794a3a452a732efef515728583a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7950c22da6547a30812729fb21dcbea7"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga7950c22da6547a30812729fb21dcbea7"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga7950c22da6547a30812729fb21dcbea7"><td class="memTemplItemLeft" align="right" valign="top">type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga7950c22da6547a30812729fb21dcbea7">as</a> (<a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>)</td></tr>
 <tr class="memdesc:ga7950c22da6547a30812729fb21dcbea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga7950c22da6547a30812729fb21dcbea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac02ea0ea616a7081c2b533e9e4c1a87"><td class="memTemplParams" colspan="2"><a id="aac02ea0ea616a7081c2b533e9e4c1a87" name="aac02ea0ea616a7081c2b533e9e4c1a87"></a>
-template&lt;typename type_t &gt; </td></tr>
+template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:aac02ea0ea616a7081c2b533e9e4c1a87"><td class="memTemplItemLeft" align="right" valign="top">type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><b>as</b> (const <a class="el" href="classxtd_1_1any__object.html">any_object</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ad95679752134a2d9eb61dbd7b91c4bcc">o</a>)</td></tr>
 <tr class="separator:aac02ea0ea616a7081c2b533e9e4c1a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafda97c601b28e11274488e2ea8a793ba"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
@@ -2919,171 +2920,171 @@ template&lt;typename type_t &gt; </td></tr>
 <tr class="memitem:ga183b064a28df397aa3ce84ced5e063f7"><td class="memTemplItemLeft" align="right" valign="top">float&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga183b064a28df397aa3ce84ced5e063f7">as&lt; float &gt;</a> (<a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">wchar</a> *value)</td></tr>
 <tr class="memdesc:ga183b064a28df397aa3ce84ced5e063f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga183b064a28df397aa3ce84ced5e063f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga19379a1158ccd320e208b362f11295b7"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga19379a1158ccd320e208b362f11295b7"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga19379a1158ccd320e208b362f11295b7"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga19379a1158ccd320e208b362f11295b7">as</a> (std::any value)</td></tr>
 <tr class="memdesc:ga19379a1158ccd320e208b362f11295b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga19379a1158ccd320e208b362f11295b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga09e01287b655c20807cdb73d993ba13d"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga09e01287b655c20807cdb73d993ba13d"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga09e01287b655c20807cdb73d993ba13d"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga09e01287b655c20807cdb73d993ba13d">as</a> (bool value)</td></tr>
 <tr class="memdesc:ga09e01287b655c20807cdb73d993ba13d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga09e01287b655c20807cdb73d993ba13d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0f4d4c149a3f3b7e6f2f0ae32ca49f82"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga0f4d4c149a3f3b7e6f2f0ae32ca49f82"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga0f4d4c149a3f3b7e6f2f0ae32ca49f82"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga0f4d4c149a3f3b7e6f2f0ae32ca49f82">as</a> (<a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> value)</td></tr>
 <tr class="memdesc:ga0f4d4c149a3f3b7e6f2f0ae32ca49f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga0f4d4c149a3f3b7e6f2f0ae32ca49f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga01d39a15bfa1f54189eda7330a6704fe"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga01d39a15bfa1f54189eda7330a6704fe"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga01d39a15bfa1f54189eda7330a6704fe"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga01d39a15bfa1f54189eda7330a6704fe">as</a> (char value)</td></tr>
 <tr class="memdesc:ga01d39a15bfa1f54189eda7330a6704fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga01d39a15bfa1f54189eda7330a6704fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa04bbeacd8966bb17b40b1e33cb7268b"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:gaa04bbeacd8966bb17b40b1e33cb7268b"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:gaa04bbeacd8966bb17b40b1e33cb7268b"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaa04bbeacd8966bb17b40b1e33cb7268b">as</a> (<a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> value)</td></tr>
 <tr class="memdesc:gaa04bbeacd8966bb17b40b1e33cb7268b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:gaa04bbeacd8966bb17b40b1e33cb7268b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1225d25e1ab70a44c38714216f60fee1"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga1225d25e1ab70a44c38714216f60fee1"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga1225d25e1ab70a44c38714216f60fee1"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga1225d25e1ab70a44c38714216f60fee1">as</a> (<a class="el" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">char16</a> value)</td></tr>
 <tr class="memdesc:ga1225d25e1ab70a44c38714216f60fee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga1225d25e1ab70a44c38714216f60fee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga73b0238a680a1d645de64d73659a39ed"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga73b0238a680a1d645de64d73659a39ed"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga73b0238a680a1d645de64d73659a39ed"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga73b0238a680a1d645de64d73659a39ed">as</a> (<a class="el" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">char32</a> value)</td></tr>
 <tr class="memdesc:ga73b0238a680a1d645de64d73659a39ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga73b0238a680a1d645de64d73659a39ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacf5d30fe5a1030fada37179515793548"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:gacf5d30fe5a1030fada37179515793548"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:gacf5d30fe5a1030fada37179515793548"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gacf5d30fe5a1030fada37179515793548">as</a> (<a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">wchar</a> value)</td></tr>
 <tr class="memdesc:gacf5d30fe5a1030fada37179515793548"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:gacf5d30fe5a1030fada37179515793548"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3b67a3251a3f60eba0a5f79b8e705b2b"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga3b67a3251a3f60eba0a5f79b8e705b2b"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga3b67a3251a3f60eba0a5f79b8e705b2b"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga3b67a3251a3f60eba0a5f79b8e705b2b">as</a> (<a class="el" href="group__types.html#ga255b88769d29fe91661cacc7720f265a">decimal</a> value)</td></tr>
 <tr class="memdesc:ga3b67a3251a3f60eba0a5f79b8e705b2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga3b67a3251a3f60eba0a5f79b8e705b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga59bab626b7f08f8d680b2e8c23464fe6"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga59bab626b7f08f8d680b2e8c23464fe6"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga59bab626b7f08f8d680b2e8c23464fe6"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga59bab626b7f08f8d680b2e8c23464fe6">as</a> (double value)</td></tr>
 <tr class="memdesc:ga59bab626b7f08f8d680b2e8c23464fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga59bab626b7f08f8d680b2e8c23464fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7acc5197698a707ad525d2098226662a"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga7acc5197698a707ad525d2098226662a"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga7acc5197698a707ad525d2098226662a"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga7acc5197698a707ad525d2098226662a">as</a> (float value)</td></tr>
 <tr class="memdesc:ga7acc5197698a707ad525d2098226662a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga7acc5197698a707ad525d2098226662a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad6d1ba63d852a177fb655e354bab4582"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:gad6d1ba63d852a177fb655e354bab4582"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:gad6d1ba63d852a177fb655e354bab4582"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gad6d1ba63d852a177fb655e354bab4582">as</a> (<a class="el" href="group__types.html#ga09d26135a9af4f7a5f4cae382627d6d1">int16</a> value)</td></tr>
 <tr class="memdesc:gad6d1ba63d852a177fb655e354bab4582"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:gad6d1ba63d852a177fb655e354bab4582"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3e62d9f8eb41d27cd77e24b68fe06b9d"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga3e62d9f8eb41d27cd77e24b68fe06b9d"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga3e62d9f8eb41d27cd77e24b68fe06b9d"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga3e62d9f8eb41d27cd77e24b68fe06b9d">as</a> (<a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> value)</td></tr>
 <tr class="memdesc:ga3e62d9f8eb41d27cd77e24b68fe06b9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga3e62d9f8eb41d27cd77e24b68fe06b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab96b93448dc3a0e2370985c581cb4121"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:gab96b93448dc3a0e2370985c581cb4121"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:gab96b93448dc3a0e2370985c581cb4121"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gab96b93448dc3a0e2370985c581cb4121">as</a> (<a class="el" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> value)</td></tr>
 <tr class="memdesc:gab96b93448dc3a0e2370985c581cb4121"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:gab96b93448dc3a0e2370985c581cb4121"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7e8ba8397536049fe140dfcba961fae1"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga7e8ba8397536049fe140dfcba961fae1"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga7e8ba8397536049fe140dfcba961fae1"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga7e8ba8397536049fe140dfcba961fae1">as</a> (<a class="el" href="group__types.html#gaf4ae7b4402a8b6bb42003cc42fa6d17b">slong</a> value)</td></tr>
 <tr class="memdesc:ga7e8ba8397536049fe140dfcba961fae1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga7e8ba8397536049fe140dfcba961fae1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3522580ca14a1aa5f596dc2e2380edf1"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga3522580ca14a1aa5f596dc2e2380edf1"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga3522580ca14a1aa5f596dc2e2380edf1"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga3522580ca14a1aa5f596dc2e2380edf1">as</a> (<a class="el" href="group__types.html#ga37e983ceedf5a7f73bc4568eaeae0aa2">sbyte</a> value)</td></tr>
 <tr class="memdesc:ga3522580ca14a1aa5f596dc2e2380edf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga3522580ca14a1aa5f596dc2e2380edf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab8e44ee9759ad5c920e7b98093b7e0f7"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:gab8e44ee9759ad5c920e7b98093b7e0f7"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:gab8e44ee9759ad5c920e7b98093b7e0f7"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gab8e44ee9759ad5c920e7b98093b7e0f7">as</a> (<a class="el" href="group__types.html#gad8523b51611f0fac793f78f16b155b21">uint16</a> value)</td></tr>
 <tr class="memdesc:gab8e44ee9759ad5c920e7b98093b7e0f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:gab8e44ee9759ad5c920e7b98093b7e0f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga028da63da04535e5e1acdeba4e2cd1b9"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga028da63da04535e5e1acdeba4e2cd1b9"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga028da63da04535e5e1acdeba4e2cd1b9"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga028da63da04535e5e1acdeba4e2cd1b9">as</a> (<a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> value)</td></tr>
 <tr class="memdesc:ga028da63da04535e5e1acdeba4e2cd1b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga028da63da04535e5e1acdeba4e2cd1b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadaa2587462e9695e43082175fd6d5a9d"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:gadaa2587462e9695e43082175fd6d5a9d"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:gadaa2587462e9695e43082175fd6d5a9d"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gadaa2587462e9695e43082175fd6d5a9d">as</a> (<a class="el" href="group__types.html#gab5833228ed21371660af349c9b1fe797">uint64</a> value)</td></tr>
 <tr class="memdesc:gadaa2587462e9695e43082175fd6d5a9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:gadaa2587462e9695e43082175fd6d5a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6aa64e93856c066e0fff91d9113a6de8"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga6aa64e93856c066e0fff91d9113a6de8"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga6aa64e93856c066e0fff91d9113a6de8"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga6aa64e93856c066e0fff91d9113a6de8">as</a> (<a class="el" href="group__types.html#ga313036ce703450f07d94c71ed78f2b21">xtd::ulong</a> value)</td></tr>
 <tr class="memdesc:ga6aa64e93856c066e0fff91d9113a6de8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga6aa64e93856c066e0fff91d9113a6de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4f82631262f0c59c2e7dfbace1cb7ee8"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga4f82631262f0c59c2e7dfbace1cb7ee8"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga4f82631262f0c59c2e7dfbace1cb7ee8"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga4f82631262f0c59c2e7dfbace1cb7ee8">as</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;value)</td></tr>
 <tr class="memdesc:ga4f82631262f0c59c2e7dfbace1cb7ee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga4f82631262f0c59c2e7dfbace1cb7ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad2e3c26894cb6c7695bd1eb6df582df2"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:gad2e3c26894cb6c7695bd1eb6df582df2"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:gad2e3c26894cb6c7695bd1eb6df582df2"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gad2e3c26894cb6c7695bd1eb6df582df2">as</a> (<a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;value)</td></tr>
 <tr class="memdesc:gad2e3c26894cb6c7695bd1eb6df582df2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:gad2e3c26894cb6c7695bd1eb6df582df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga08a770dea01753c1c09658407f1a6e15"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga08a770dea01753c1c09658407f1a6e15"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga08a770dea01753c1c09658407f1a6e15"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga08a770dea01753c1c09658407f1a6e15">as</a> (const std::string &amp;value)</td></tr>
 <tr class="memdesc:ga08a770dea01753c1c09658407f1a6e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga08a770dea01753c1c09658407f1a6e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3048b276128e5a49f49afa6a55274593"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga3048b276128e5a49f49afa6a55274593"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga3048b276128e5a49f49afa6a55274593"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga3048b276128e5a49f49afa6a55274593">as</a> (std::string &amp;value)</td></tr>
 <tr class="memdesc:ga3048b276128e5a49f49afa6a55274593"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga3048b276128e5a49f49afa6a55274593"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafd9a0fc4a47d4e8fd104888f7e10d0ce"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:gafd9a0fc4a47d4e8fd104888f7e10d0ce"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:gafd9a0fc4a47d4e8fd104888f7e10d0ce"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gafd9a0fc4a47d4e8fd104888f7e10d0ce">as</a> (const std::u8string &amp;value)</td></tr>
 <tr class="memdesc:gafd9a0fc4a47d4e8fd104888f7e10d0ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:gafd9a0fc4a47d4e8fd104888f7e10d0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf8021657a21dbb00bb6ea53aa3a76164"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:gaf8021657a21dbb00bb6ea53aa3a76164"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:gaf8021657a21dbb00bb6ea53aa3a76164"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaf8021657a21dbb00bb6ea53aa3a76164">as</a> (std::u8string &amp;value)</td></tr>
 <tr class="memdesc:gaf8021657a21dbb00bb6ea53aa3a76164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:gaf8021657a21dbb00bb6ea53aa3a76164"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga87ac746f812dca4ac2b415e084454671"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga87ac746f812dca4ac2b415e084454671"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga87ac746f812dca4ac2b415e084454671"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga87ac746f812dca4ac2b415e084454671">as</a> (const std::u16string &amp;value)</td></tr>
 <tr class="memdesc:ga87ac746f812dca4ac2b415e084454671"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga87ac746f812dca4ac2b415e084454671"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga24e3439a7e34c3ccf8d2bdd267af3c80"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga24e3439a7e34c3ccf8d2bdd267af3c80"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga24e3439a7e34c3ccf8d2bdd267af3c80"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga24e3439a7e34c3ccf8d2bdd267af3c80">as</a> (std::u16string &amp;value)</td></tr>
 <tr class="memdesc:ga24e3439a7e34c3ccf8d2bdd267af3c80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga24e3439a7e34c3ccf8d2bdd267af3c80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga07aee7a8badfe62b08f9a85f2b662146"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga07aee7a8badfe62b08f9a85f2b662146"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga07aee7a8badfe62b08f9a85f2b662146"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga07aee7a8badfe62b08f9a85f2b662146">as</a> (const std::u32string &amp;value)</td></tr>
 <tr class="memdesc:ga07aee7a8badfe62b08f9a85f2b662146"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga07aee7a8badfe62b08f9a85f2b662146"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga87c048af6b25eb3e8ece7f94f832dcdc"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga87c048af6b25eb3e8ece7f94f832dcdc"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga87c048af6b25eb3e8ece7f94f832dcdc"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga87c048af6b25eb3e8ece7f94f832dcdc">as</a> (std::u32string &amp;value)</td></tr>
 <tr class="memdesc:ga87c048af6b25eb3e8ece7f94f832dcdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga87c048af6b25eb3e8ece7f94f832dcdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5cf3371917d016300fc280e80193ed41"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga5cf3371917d016300fc280e80193ed41"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga5cf3371917d016300fc280e80193ed41"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga5cf3371917d016300fc280e80193ed41">as</a> (const std::wstring &amp;value)</td></tr>
 <tr class="memdesc:ga5cf3371917d016300fc280e80193ed41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga5cf3371917d016300fc280e80193ed41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7e670c9a6158d0f06ab243514a2c0d92"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga7e670c9a6158d0f06ab243514a2c0d92"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga7e670c9a6158d0f06ab243514a2c0d92"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga7e670c9a6158d0f06ab243514a2c0d92">as</a> (std::wstring &amp;value)</td></tr>
 <tr class="memdesc:ga7e670c9a6158d0f06ab243514a2c0d92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga7e670c9a6158d0f06ab243514a2c0d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9887d6f56e1114cf5355e1ef3694b827"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga9887d6f56e1114cf5355e1ef3694b827"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga9887d6f56e1114cf5355e1ef3694b827"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga9887d6f56e1114cf5355e1ef3694b827">as</a> (const char *value)</td></tr>
 <tr class="memdesc:ga9887d6f56e1114cf5355e1ef3694b827"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga9887d6f56e1114cf5355e1ef3694b827"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6c2176002fea27c5e74ce3fef26badad"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga6c2176002fea27c5e74ce3fef26badad"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga6c2176002fea27c5e74ce3fef26badad"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga6c2176002fea27c5e74ce3fef26badad">as</a> (char *value)</td></tr>
 <tr class="memdesc:ga6c2176002fea27c5e74ce3fef26badad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga6c2176002fea27c5e74ce3fef26badad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga40c8fac7096b135dbd36103b0e05ab47"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga40c8fac7096b135dbd36103b0e05ab47"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga40c8fac7096b135dbd36103b0e05ab47"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga40c8fac7096b135dbd36103b0e05ab47">as</a> (const <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> *value)</td></tr>
 <tr class="memdesc:ga40c8fac7096b135dbd36103b0e05ab47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga40c8fac7096b135dbd36103b0e05ab47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2e9a33f51f32f6ddf505880d6cf57817"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga2e9a33f51f32f6ddf505880d6cf57817"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga2e9a33f51f32f6ddf505880d6cf57817"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga2e9a33f51f32f6ddf505880d6cf57817">as</a> (<a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> *value)</td></tr>
 <tr class="memdesc:ga2e9a33f51f32f6ddf505880d6cf57817"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga2e9a33f51f32f6ddf505880d6cf57817"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadd6a5e4158b7dda0dbc82a1b4b746813"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:gadd6a5e4158b7dda0dbc82a1b4b746813"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:gadd6a5e4158b7dda0dbc82a1b4b746813"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gadd6a5e4158b7dda0dbc82a1b4b746813">as</a> (const <a class="el" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">char16</a> *value)</td></tr>
 <tr class="memdesc:gadd6a5e4158b7dda0dbc82a1b4b746813"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:gadd6a5e4158b7dda0dbc82a1b4b746813"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0691ee17bb3124f63df2278cc70fe32a"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga0691ee17bb3124f63df2278cc70fe32a"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga0691ee17bb3124f63df2278cc70fe32a"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga0691ee17bb3124f63df2278cc70fe32a">as</a> (<a class="el" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">char16</a> *value)</td></tr>
 <tr class="memdesc:ga0691ee17bb3124f63df2278cc70fe32a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga0691ee17bb3124f63df2278cc70fe32a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacfe160726a54ed0fc3a772598a5551c8"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:gacfe160726a54ed0fc3a772598a5551c8"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:gacfe160726a54ed0fc3a772598a5551c8"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gacfe160726a54ed0fc3a772598a5551c8">as</a> (const <a class="el" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">char32</a> *value)</td></tr>
 <tr class="memdesc:gacfe160726a54ed0fc3a772598a5551c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:gacfe160726a54ed0fc3a772598a5551c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga40749673546d45e3474d2e2b2b1b762d"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga40749673546d45e3474d2e2b2b1b762d"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga40749673546d45e3474d2e2b2b1b762d"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga40749673546d45e3474d2e2b2b1b762d">as</a> (<a class="el" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">char32</a> *value)</td></tr>
 <tr class="memdesc:ga40749673546d45e3474d2e2b2b1b762d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga40749673546d45e3474d2e2b2b1b762d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga164caf14abb3ff1ab8ff49b595961819"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga164caf14abb3ff1ab8ff49b595961819"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga164caf14abb3ff1ab8ff49b595961819"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga164caf14abb3ff1ab8ff49b595961819">as</a> (const <a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">wchar</a> *value)</td></tr>
 <tr class="memdesc:ga164caf14abb3ff1ab8ff49b595961819"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga164caf14abb3ff1ab8ff49b595961819"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga511b302cffed383581d3a43ad328a28f"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t &gt; </td></tr>
+<tr class="memitem:ga511b302cffed383581d3a43ad328a28f"><td class="memTemplParams" colspan="2">template&lt;class new_type_t &gt; </td></tr>
 <tr class="memitem:ga511b302cffed383581d3a43ad328a28f"><td class="memTemplItemLeft" align="right" valign="top">new_type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga511b302cffed383581d3a43ad328a28f">as</a> (<a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">wchar</a> *value)</td></tr>
 <tr class="memdesc:ga511b302cffed383581d3a43ad328a28f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga511b302cffed383581d3a43ad328a28f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3603,39 +3604,39 @@ template&lt;typename type_t &gt; </td></tr>
 <tr class="memitem:ga3826a9bf7463e5c5147c0bfce6e649ec"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga3826a9bf7463e5c5147c0bfce6e649ec">as&lt; int64 &gt;</a> (<a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">wchar</a> *value)</td></tr>
 <tr class="memdesc:ga3826a9bf7463e5c5147c0bfce6e649ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga3826a9bf7463e5c5147c0bfce6e649ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9b52c9f607207f23a4f4d2e4bd94eb29"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:ga9b52c9f607207f23a4f4d2e4bd94eb29"><td class="memTemplParams" colspan="2">template&lt;class new_type_t , class current_type_t &gt; </td></tr>
 <tr class="memitem:ga9b52c9f607207f23a4f4d2e4bd94eb29"><td class="memTemplItemLeft" align="right" valign="top">const new_type_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga9b52c9f607207f23a4f4d2e4bd94eb29">as</a> (const current_type_t &amp;value)</td></tr>
 <tr class="memdesc:ga9b52c9f607207f23a4f4d2e4bd94eb29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga9b52c9f607207f23a4f4d2e4bd94eb29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaba521bfb78ab0360fdb542e82e4af434"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:gaba521bfb78ab0360fdb542e82e4af434"><td class="memTemplParams" colspan="2">template&lt;class new_type_t , class current_type_t &gt; </td></tr>
 <tr class="memitem:gaba521bfb78ab0360fdb542e82e4af434"><td class="memTemplItemLeft" align="right" valign="top">new_type_t &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaba521bfb78ab0360fdb542e82e4af434">as</a> (current_type_t &amp;value)</td></tr>
 <tr class="memdesc:gaba521bfb78ab0360fdb542e82e4af434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:gaba521bfb78ab0360fdb542e82e4af434"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga83d9ee2904cca824c3628b76e6c08c74"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:ga83d9ee2904cca824c3628b76e6c08c74"><td class="memTemplParams" colspan="2">template&lt;class new_type_t , class current_type_t &gt; </td></tr>
 <tr class="memitem:ga83d9ee2904cca824c3628b76e6c08c74"><td class="memTemplItemLeft" align="right" valign="top">const new_type_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga83d9ee2904cca824c3628b76e6c08c74">as</a> (const current_type_t *value)</td></tr>
 <tr class="memdesc:ga83d9ee2904cca824c3628b76e6c08c74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga83d9ee2904cca824c3628b76e6c08c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga058cc938c3ebca5caed2870970d5a6ba"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:ga058cc938c3ebca5caed2870970d5a6ba"><td class="memTemplParams" colspan="2">template&lt;class new_type_t , class current_type_t &gt; </td></tr>
 <tr class="memitem:ga058cc938c3ebca5caed2870970d5a6ba"><td class="memTemplItemLeft" align="right" valign="top">new_type_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga058cc938c3ebca5caed2870970d5a6ba">as</a> (current_type_t *value)</td></tr>
 <tr class="memdesc:ga058cc938c3ebca5caed2870970d5a6ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga058cc938c3ebca5caed2870970d5a6ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad9f94f9bcb81c27601253e3958b8a271"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:gad9f94f9bcb81c27601253e3958b8a271"><td class="memTemplParams" colspan="2">template&lt;class new_type_t , class current_type_t &gt; </td></tr>
 <tr class="memitem:gad9f94f9bcb81c27601253e3958b8a271"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gad9f94f9bcb81c27601253e3958b8a271">as</a> (<a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; current_type_t &gt; &amp;value)</td></tr>
 <tr class="memdesc:gad9f94f9bcb81c27601253e3958b8a271"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:gad9f94f9bcb81c27601253e3958b8a271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8e0cd9031b4b13c267574740e6e25b0c"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:ga8e0cd9031b4b13c267574740e6e25b0c"><td class="memTemplParams" colspan="2">template&lt;class new_type_t , class current_type_t &gt; </td></tr>
 <tr class="memitem:ga8e0cd9031b4b13c267574740e6e25b0c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga8e0cd9031b4b13c267574740e6e25b0c">as</a> (<a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; current_type_t &gt; &amp;&amp;value)</td></tr>
 <tr class="memdesc:ga8e0cd9031b4b13c267574740e6e25b0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga8e0cd9031b4b13c267574740e6e25b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa4421fd9fdc93a75de07753ddb4d3c00"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:gaa4421fd9fdc93a75de07753ddb4d3c00"><td class="memTemplParams" colspan="2">template&lt;class new_type_t , class current_type_t &gt; </td></tr>
 <tr class="memitem:gaa4421fd9fdc93a75de07753ddb4d3c00"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaa4421fd9fdc93a75de07753ddb4d3c00">as</a> (const <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;value)</td></tr>
 <tr class="memdesc:gaa4421fd9fdc93a75de07753ddb4d3c00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:gaa4421fd9fdc93a75de07753ddb4d3c00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa32e24433fc5ff09bbe62d38cf9e74f4"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:gaa32e24433fc5ff09bbe62d38cf9e74f4"><td class="memTemplParams" colspan="2">template&lt;class new_type_t , class current_type_t &gt; </td></tr>
 <tr class="memitem:gaa32e24433fc5ff09bbe62d38cf9e74f4"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaa32e24433fc5ff09bbe62d38cf9e74f4">as</a> (<a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;value)</td></tr>
 <tr class="memdesc:gaa32e24433fc5ff09bbe62d38cf9e74f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:gaa32e24433fc5ff09bbe62d38cf9e74f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga76d1e4c11965d16c16a3ba475f7a6cfb"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:ga76d1e4c11965d16c16a3ba475f7a6cfb"><td class="memTemplParams" colspan="2">template&lt;class new_type_t , class current_type_t &gt; </td></tr>
 <tr class="memitem:ga76d1e4c11965d16c16a3ba475f7a6cfb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; new_type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga76d1e4c11965d16c16a3ba475f7a6cfb">as</a> (<a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;&amp;value)</td></tr>
 <tr class="memdesc:ga76d1e4c11965d16c16a3ba475f7a6cfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Casts a type into another type.  <br /></td></tr>
 <tr class="separator:ga76d1e4c11965d16c16a3ba475f7a6cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -5019,7 +5020,7 @@ template&lt;typename type_t &gt; </td></tr>
 <tr class="memitem:ga1d399dff49889aa81935e74143eca22f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga1d399dff49889aa81935e74143eca22f">is&lt; xtd::ulong &gt;</a> (<a class="el" href="group__types.html#ga313036ce703450f07d94c71ed78f2b21">xtd::ulong</a> value)</td></tr>
 <tr class="memdesc:ga1d399dff49889aa81935e74143eca22f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the result of an expression is compatible with a given type.  <br /></td></tr>
 <tr class="separator:ga1d399dff49889aa81935e74143eca22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga52ae9030016acf7d943cd428e943dc02"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga52ae9030016acf7d943cd428e943dc02"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga52ae9030016acf7d943cd428e943dc02"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga52ae9030016acf7d943cd428e943dc02">is</a> (std::any value)</td></tr>
 <tr class="memdesc:ga52ae9030016acf7d943cd428e943dc02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the result of an expression is compatible with a given type.  <br /></td></tr>
 <tr class="separator:ga52ae9030016acf7d943cd428e943dc02"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -5027,23 +5028,23 @@ template&lt;typename type_t &gt; </td></tr>
 <tr class="memitem:gad8ac7cb66ce34ffc9d0e25d0339caa9b"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gad8ac7cb66ce34ffc9d0e25d0339caa9b">is&lt; std::any &gt;</a> (std::any value)</td></tr>
 <tr class="memdesc:gad8ac7cb66ce34ffc9d0e25d0339caa9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the result of an expression is compatible with a given type.  <br /></td></tr>
 <tr class="separator:gad8ac7cb66ce34ffc9d0e25d0339caa9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0fce835e30d618280ff3efd754ac3041"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename param_t &gt; </td></tr>
+<tr class="memitem:ga0fce835e30d618280ff3efd754ac3041"><td class="memTemplParams" colspan="2">template&lt;class type_t , class param_t &gt; </td></tr>
 <tr class="memitem:ga0fce835e30d618280ff3efd754ac3041"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga0fce835e30d618280ff3efd754ac3041">is</a> (const param_t *value)</td></tr>
 <tr class="memdesc:ga0fce835e30d618280ff3efd754ac3041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the result of an expression is compatible with a given type.  <br /></td></tr>
 <tr class="separator:ga0fce835e30d618280ff3efd754ac3041"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1bfa9e11607cad616748a8ef5d2a99c9"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename param_t &gt; </td></tr>
+<tr class="memitem:ga1bfa9e11607cad616748a8ef5d2a99c9"><td class="memTemplParams" colspan="2">template&lt;class type_t , class param_t &gt; </td></tr>
 <tr class="memitem:ga1bfa9e11607cad616748a8ef5d2a99c9"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga1bfa9e11607cad616748a8ef5d2a99c9">is</a> (const param_t &amp;value)</td></tr>
 <tr class="memdesc:ga1bfa9e11607cad616748a8ef5d2a99c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the result of an expression is compatible with a given type.  <br /></td></tr>
 <tr class="separator:ga1bfa9e11607cad616748a8ef5d2a99c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab47f92a22f4a0f253ddbffd86bbb2508"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename param_t &gt; </td></tr>
+<tr class="memitem:gab47f92a22f4a0f253ddbffd86bbb2508"><td class="memTemplParams" colspan="2">template&lt;class type_t , class param_t &gt; </td></tr>
 <tr class="memitem:gab47f92a22f4a0f253ddbffd86bbb2508"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gab47f92a22f4a0f253ddbffd86bbb2508">is</a> (param_t *value)</td></tr>
 <tr class="memdesc:gab47f92a22f4a0f253ddbffd86bbb2508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the result of an expression is compatible with a given type.  <br /></td></tr>
 <tr class="separator:gab47f92a22f4a0f253ddbffd86bbb2508"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0a8b1861b61e1d6371264460d8ee4bc6"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename param_t &gt; </td></tr>
+<tr class="memitem:ga0a8b1861b61e1d6371264460d8ee4bc6"><td class="memTemplParams" colspan="2">template&lt;class type_t , class param_t &gt; </td></tr>
 <tr class="memitem:ga0a8b1861b61e1d6371264460d8ee4bc6"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga0a8b1861b61e1d6371264460d8ee4bc6">is</a> (param_t &amp;value)</td></tr>
 <tr class="memdesc:ga0a8b1861b61e1d6371264460d8ee4bc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the result of an expression is compatible with a given type.  <br /></td></tr>
 <tr class="separator:ga0a8b1861b61e1d6371264460d8ee4bc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga35e088065fe87da2bfae2c36e0a115ce"><td class="memTemplParams" colspan="2">template&lt;typename new_type_t , typename current_type_t &gt; </td></tr>
+<tr class="memitem:ga35e088065fe87da2bfae2c36e0a115ce"><td class="memTemplParams" colspan="2">template&lt;class new_type_t , class current_type_t &gt; </td></tr>
 <tr class="memitem:ga35e088065fe87da2bfae2c36e0a115ce"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga35e088065fe87da2bfae2c36e0a115ce">is</a> (<a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; current_type_t &gt; &amp;value)</td></tr>
 <tr class="memdesc:ga35e088065fe87da2bfae2c36e0a115ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the result of an expression is compatible with a given type.  <br /></td></tr>
 <tr class="separator:ga35e088065fe87da2bfae2c36e0a115ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -5524,34 +5525,34 @@ template&lt;typename type_t &gt; </td></tr>
 <tr class="memitem:ga2cac3c0e13ba2d4fb6dd63ef2d25ba3e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__literals.html#ga2cac3c0e13ba2d4fb6dd63ef2d25ba3e">operator&quot;&quot;_z</a> (const <a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">wchar</a> *<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>, size_t <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>)</td></tr>
 <tr class="memdesc:ga2cac3c0e13ba2d4fb6dd63ef2d25ba3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to convert specified value into signed size_t.  <br /></td></tr>
 <tr class="separator:ga2cac3c0e13ba2d4fb6dd63ef2d25ba3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga22ae291f139e9d4ea1c669772f5b6749"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename ... args_t&gt; </td></tr>
+<tr class="memitem:ga22ae291f139e9d4ea1c669772f5b6749"><td class="memTemplParams" colspan="2">template&lt;class type_t , class ... args_t&gt; </td></tr>
 <tr class="memitem:ga22ae291f139e9d4ea1c669772f5b6749"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1any__object.html">any_object</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga22ae291f139e9d4ea1c669772f5b6749">make_any_object</a> (args_t &amp;&amp;... args)</td></tr>
 <tr class="memdesc:ga22ae291f139e9d4ea1c669772f5b6749"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__xtd__core.html#ga22ae291f139e9d4ea1c669772f5b6749" title="The xtd::make_any_object operator creates a xtd::any_object object.">xtd::make_any_object</a> operator creates a <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object.  <br /></td></tr>
 <tr class="separator:ga22ae291f139e9d4ea1c669772f5b6749"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae80914ccdaf9b80666bcafb1c633373e"><td class="memItemLeft" align="right" valign="top">std::error_code&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__exceptions.html#gae80914ccdaf9b80666bcafb1c633373e">make_error_code</a> (int <a class="el" href="classxtd_1_1h__result.html">h_result</a>) noexcept</td></tr>
 <tr class="memdesc:gae80914ccdaf9b80666bcafb1c633373e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates error code value for <a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">xtd::h_result</a> <code><a class="el" href="classxtd_1_1h__result.html" title="Contains the HRESULT values used by xtd.">h_result</a></code>.  <br /></td></tr>
 <tr class="separator:gae80914ccdaf9b80666bcafb1c633373e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2fd68f03198b2bf84b1e93149494b685"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename ... args_t&gt; </td></tr>
+<tr class="memitem:ga2fd68f03198b2bf84b1e93149494b685"><td class="memTemplParams" colspan="2">template&lt;class type_t , class ... args_t&gt; </td></tr>
 <tr class="memitem:ga2fd68f03198b2bf84b1e93149494b685"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a>&lt; type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685">new_ptr</a> (args_t &amp;&amp;... args)</td></tr>
 <tr class="memdesc:ga2fd68f03198b2bf84b1e93149494b685"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__xtd__core.html#ga2fd68f03198b2bf84b1e93149494b685" title="The xtd::new_ptr operator creates a xtd::ptr object.">xtd::new_ptr</a> operator creates a <a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object.  <br /></td></tr>
 <tr class="separator:ga2fd68f03198b2bf84b1e93149494b685"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7cc491fa6479b6976a467c83b82a902e"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename ... args_t&gt; </td></tr>
+<tr class="memitem:ga7cc491fa6479b6976a467c83b82a902e"><td class="memTemplParams" colspan="2">template&lt;class type_t , class ... args_t&gt; </td></tr>
 <tr class="memitem:ga7cc491fa6479b6976a467c83b82a902e"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">sptr</a>&lt; type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga7cc491fa6479b6976a467c83b82a902e">new_sptr</a> (args_t &amp;&amp;... args)</td></tr>
 <tr class="memdesc:ga7cc491fa6479b6976a467c83b82a902e"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::news_sptr operator creates a <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> object.  <br /></td></tr>
 <tr class="separator:ga7cc491fa6479b6976a467c83b82a902e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6380fbc5438993d147b093cfa5718caf"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename ... args_t&gt; </td></tr>
+<tr class="memitem:ga6380fbc5438993d147b093cfa5718caf"><td class="memTemplParams" colspan="2">template&lt;class type_t , class ... args_t&gt; </td></tr>
 <tr class="memitem:ga6380fbc5438993d147b093cfa5718caf"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a>&lt; type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga6380fbc5438993d147b093cfa5718caf">new_uptr</a> (args_t &amp;&amp;... args)</td></tr>
 <tr class="memdesc:ga6380fbc5438993d147b093cfa5718caf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__xtd__core.html#ga6380fbc5438993d147b093cfa5718caf" title="xtd::new_uptr operator. This operator creates a xtd::uptr object.">xtd::new_uptr</a> operator. This operator creates a <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object.  <br /></td></tr>
 <tr class="separator:ga6380fbc5438993d147b093cfa5718caf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf38b51b1a3c788f678bb6e89f7694ee4"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:gaf38b51b1a3c788f678bb6e89f7694ee4"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:gaf38b51b1a3c788f678bb6e89f7694ee4"><td class="memTemplItemLeft" align="right" valign="top">value_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaf38b51b1a3c788f678bb6e89f7694ee4">parse</a> (const std::string &amp;str)</td></tr>
 <tr class="memdesc:gaf38b51b1a3c788f678bb6e89f7694ee4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:gaf38b51b1a3c788f678bb6e89f7694ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafaa5a1db210858e50f9f06ac52f887bd"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:gafaa5a1db210858e50f9f06ac52f887bd"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:gafaa5a1db210858e50f9f06ac52f887bd"><td class="memTemplItemLeft" align="right" valign="top">value_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gafaa5a1db210858e50f9f06ac52f887bd">parse</a> (const std::string &amp;str, const std::locale &amp;locale)</td></tr>
 <tr class="memdesc:gafaa5a1db210858e50f9f06ac52f887bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:gafaa5a1db210858e50f9f06ac52f887bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae040b28b54f34dd055b41b4fc766f59f"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:gae040b28b54f34dd055b41b4fc766f59f"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:gae040b28b54f34dd055b41b4fc766f59f"><td class="memTemplItemLeft" align="right" valign="top">value_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gae040b28b54f34dd055b41b4fc766f59f">parse</a> (const std::string &amp;str, const std::string &amp;fmt)</td></tr>
 <tr class="memdesc:gae040b28b54f34dd055b41b4fc766f59f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:gae040b28b54f34dd055b41b4fc766f59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -5559,11 +5560,11 @@ template&lt;typename type_t &gt; </td></tr>
 <tr class="memitem:gaa09166b6dee0985ddc1f6bc668a56968"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaa09166b6dee0985ddc1f6bc668a56968">parse&lt; std::string &gt;</a> (const std::string &amp;str)</td></tr>
 <tr class="memdesc:gaa09166b6dee0985ddc1f6bc668a56968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:gaa09166b6dee0985ddc1f6bc668a56968"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4eb5468ecbbe24ad6af3fd26b714725f"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:ga4eb5468ecbbe24ad6af3fd26b714725f"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:ga4eb5468ecbbe24ad6af3fd26b714725f"><td class="memTemplItemLeft" align="right" valign="top">value_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga4eb5468ecbbe24ad6af3fd26b714725f">parse</a> (const std::string &amp;str, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">number_styles</a>)</td></tr>
 <tr class="memdesc:ga4eb5468ecbbe24ad6af3fd26b714725f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:ga4eb5468ecbbe24ad6af3fd26b714725f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga04f1185ee8ba5d9b15eea31883b0b434"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:ga04f1185ee8ba5d9b15eea31883b0b434"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:ga04f1185ee8ba5d9b15eea31883b0b434"><td class="memTemplItemLeft" align="right" valign="top">value_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga04f1185ee8ba5d9b15eea31883b0b434">parse</a> (const std::string &amp;str, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">number_styles</a>, const std::locale &amp;locale)</td></tr>
 <tr class="memdesc:ga04f1185ee8ba5d9b15eea31883b0b434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:ga04f1185ee8ba5d9b15eea31883b0b434"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -5695,170 +5696,170 @@ template&lt;typename type_t &gt; </td></tr>
 <tr class="memitem:ga46dbfc56869f6f4ce73f65568c49429c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga46dbfc56869f6f4ce73f65568c49429c">parse&lt; bool &gt;</a> (const std::string &amp;str)</td></tr>
 <tr class="memdesc:ga46dbfc56869f6f4ce73f65568c49429c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:ga46dbfc56869f6f4ce73f65568c49429c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae4840bc3b3209796a25ba4755761f8df"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:gae4840bc3b3209796a25ba4755761f8df"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:gae4840bc3b3209796a25ba4755761f8df"><td class="memTemplItemLeft" align="right" valign="top">value_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gae4840bc3b3209796a25ba4755761f8df">parse</a> (const std::wstring &amp;str)</td></tr>
 <tr class="memdesc:gae4840bc3b3209796a25ba4755761f8df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:gae4840bc3b3209796a25ba4755761f8df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2c41c95f65c2765885bacada50320145"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:ga2c41c95f65c2765885bacada50320145"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:ga2c41c95f65c2765885bacada50320145"><td class="memTemplItemLeft" align="right" valign="top">value_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga2c41c95f65c2765885bacada50320145">parse</a> (const std::u16string &amp;str)</td></tr>
 <tr class="memdesc:ga2c41c95f65c2765885bacada50320145"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:ga2c41c95f65c2765885bacada50320145"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae4397acb3b315f8a3a320c7d589ef64d"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:gae4397acb3b315f8a3a320c7d589ef64d"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:gae4397acb3b315f8a3a320c7d589ef64d"><td class="memTemplItemLeft" align="right" valign="top">value_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gae4397acb3b315f8a3a320c7d589ef64d">parse</a> (const std::u32string &amp;str)</td></tr>
 <tr class="memdesc:gae4397acb3b315f8a3a320c7d589ef64d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:gae4397acb3b315f8a3a320c7d589ef64d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafd4d41304c110da4b815801e502cc853"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:gafd4d41304c110da4b815801e502cc853"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:gafd4d41304c110da4b815801e502cc853"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gafd4d41304c110da4b815801e502cc853">try_parse</a> (const std::basic_string&lt; char &gt; &amp;str, value_t &amp;value) noexcept</td></tr>
 <tr class="memdesc:gafd4d41304c110da4b815801e502cc853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:gafd4d41304c110da4b815801e502cc853"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab0508b32ecc33f69a2cab44fc92af8ea"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:gab0508b32ecc33f69a2cab44fc92af8ea"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:gab0508b32ecc33f69a2cab44fc92af8ea"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gab0508b32ecc33f69a2cab44fc92af8ea">try_parse</a> (const std::basic_string&lt; <a class="el" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">xtd::char16</a> &gt; &amp;str, value_t &amp;value) noexcept</td></tr>
 <tr class="memdesc:gab0508b32ecc33f69a2cab44fc92af8ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:gab0508b32ecc33f69a2cab44fc92af8ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf27ccde5af5bc4532de16d3e7b8a67f8"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:gaf27ccde5af5bc4532de16d3e7b8a67f8"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:gaf27ccde5af5bc4532de16d3e7b8a67f8"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaf27ccde5af5bc4532de16d3e7b8a67f8">try_parse</a> (const std::basic_string&lt; <a class="el" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a> &gt; &amp;str, value_t &amp;value) noexcept</td></tr>
 <tr class="memdesc:gaf27ccde5af5bc4532de16d3e7b8a67f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:gaf27ccde5af5bc4532de16d3e7b8a67f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga47e9783ec5ae971322b29552034e7534"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:ga47e9783ec5ae971322b29552034e7534"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:ga47e9783ec5ae971322b29552034e7534"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga47e9783ec5ae971322b29552034e7534">try_parse</a> (const std::basic_string&lt; <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a> &gt; &amp;str, value_t &amp;value) noexcept</td></tr>
 <tr class="memdesc:ga47e9783ec5ae971322b29552034e7534"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:ga47e9783ec5ae971322b29552034e7534"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga191d80b953f8191464d4f4927a89c517"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:ga191d80b953f8191464d4f4927a89c517"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:ga191d80b953f8191464d4f4927a89c517"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga191d80b953f8191464d4f4927a89c517">try_parse</a> (const std::basic_string&lt; <a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a> &gt; &amp;str, value_t &amp;value) noexcept</td></tr>
 <tr class="memdesc:ga191d80b953f8191464d4f4927a89c517"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:ga191d80b953f8191464d4f4927a89c517"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6478273782d12248e70ed30dc672a556"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:ga6478273782d12248e70ed30dc672a556"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:ga6478273782d12248e70ed30dc672a556"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga6478273782d12248e70ed30dc672a556">try_parse</a> (const std::basic_string&lt; char &gt; &amp;str, value_t &amp;value, const std::locale &amp;locale) noexcept</td></tr>
 <tr class="memdesc:ga6478273782d12248e70ed30dc672a556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:ga6478273782d12248e70ed30dc672a556"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga61c733d5fd3eee97331dbcd41a654137"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:ga61c733d5fd3eee97331dbcd41a654137"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:ga61c733d5fd3eee97331dbcd41a654137"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga61c733d5fd3eee97331dbcd41a654137">try_parse</a> (const std::basic_string&lt; <a class="el" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">xtd::char16</a> &gt; &amp;str, value_t &amp;value, const std::locale &amp;locale) noexcept</td></tr>
 <tr class="memdesc:ga61c733d5fd3eee97331dbcd41a654137"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:ga61c733d5fd3eee97331dbcd41a654137"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga15c2f008e1033ee496bbb3326f7d6210"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:ga15c2f008e1033ee496bbb3326f7d6210"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:ga15c2f008e1033ee496bbb3326f7d6210"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga15c2f008e1033ee496bbb3326f7d6210">try_parse</a> (const std::basic_string&lt; <a class="el" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a> &gt; &amp;str, value_t &amp;value, const std::locale &amp;locale) noexcept</td></tr>
 <tr class="memdesc:ga15c2f008e1033ee496bbb3326f7d6210"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:ga15c2f008e1033ee496bbb3326f7d6210"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafa6c36d3e07692cc6195d3ca77c9cce0"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:gafa6c36d3e07692cc6195d3ca77c9cce0"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:gafa6c36d3e07692cc6195d3ca77c9cce0"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gafa6c36d3e07692cc6195d3ca77c9cce0">try_parse</a> (const std::basic_string&lt; <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a> &gt; &amp;str, value_t &amp;value, const std::locale &amp;locale) noexcept</td></tr>
 <tr class="memdesc:gafa6c36d3e07692cc6195d3ca77c9cce0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:gafa6c36d3e07692cc6195d3ca77c9cce0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafcd4da3b1f1464a8aed98a24443afc8c"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:gafcd4da3b1f1464a8aed98a24443afc8c"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:gafcd4da3b1f1464a8aed98a24443afc8c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gafcd4da3b1f1464a8aed98a24443afc8c">try_parse</a> (const std::basic_string&lt; <a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a> &gt; &amp;str, value_t &amp;value, const std::locale &amp;locale) noexcept</td></tr>
 <tr class="memdesc:gafcd4da3b1f1464a8aed98a24443afc8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:gafcd4da3b1f1464a8aed98a24443afc8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa6b477f80af39bc2721b6aeeaecb370a"><td class="memTemplParams" colspan="2">template&lt;typename value_t , typename char_t &gt; </td></tr>
+<tr class="memitem:gaa6b477f80af39bc2721b6aeeaecb370a"><td class="memTemplParams" colspan="2">template&lt;class value_t , class char_t &gt; </td></tr>
 <tr class="memitem:gaa6b477f80af39bc2721b6aeeaecb370a"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaa6b477f80af39bc2721b6aeeaecb370a">try_parse</a> (const char_t *str, value_t &amp;value) noexcept</td></tr>
 <tr class="memdesc:gaa6b477f80af39bc2721b6aeeaecb370a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:gaa6b477f80af39bc2721b6aeeaecb370a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga790035fd8ef4d2b131a84fe898ec107e"><td class="memTemplParams" colspan="2">template&lt;typename value_t , typename char_t &gt; </td></tr>
+<tr class="memitem:ga790035fd8ef4d2b131a84fe898ec107e"><td class="memTemplParams" colspan="2">template&lt;class value_t , class char_t &gt; </td></tr>
 <tr class="memitem:ga790035fd8ef4d2b131a84fe898ec107e"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga790035fd8ef4d2b131a84fe898ec107e">try_parse</a> (const char_t *str, value_t &amp;value, const std::locale &amp;locale) noexcept</td></tr>
 <tr class="memdesc:ga790035fd8ef4d2b131a84fe898ec107e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:ga790035fd8ef4d2b131a84fe898ec107e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6ff5be2cc91e65e93b48c432387d807f"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:ga6ff5be2cc91e65e93b48c432387d807f"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:ga6ff5be2cc91e65e93b48c432387d807f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga6ff5be2cc91e65e93b48c432387d807f">try_parse</a> (const std::basic_string&lt; char &gt; &amp;str, value_t &amp;value, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">number_styles</a> style) noexcept</td></tr>
 <tr class="memdesc:ga6ff5be2cc91e65e93b48c432387d807f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:ga6ff5be2cc91e65e93b48c432387d807f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga170c993f3cdf8d168073d2f6f2bcdb71"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:ga170c993f3cdf8d168073d2f6f2bcdb71"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:ga170c993f3cdf8d168073d2f6f2bcdb71"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga170c993f3cdf8d168073d2f6f2bcdb71">try_parse</a> (const std::basic_string&lt; <a class="el" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">xtd::char16</a> &gt; &amp;str, value_t &amp;value, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">number_styles</a> style) noexcept</td></tr>
 <tr class="memdesc:ga170c993f3cdf8d168073d2f6f2bcdb71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:ga170c993f3cdf8d168073d2f6f2bcdb71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0990344de59cbe41019bcccd530cc085"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:ga0990344de59cbe41019bcccd530cc085"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:ga0990344de59cbe41019bcccd530cc085"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga0990344de59cbe41019bcccd530cc085">try_parse</a> (const std::basic_string&lt; <a class="el" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a> &gt; &amp;str, value_t &amp;value, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">number_styles</a> style) noexcept</td></tr>
 <tr class="memdesc:ga0990344de59cbe41019bcccd530cc085"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:ga0990344de59cbe41019bcccd530cc085"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaff7dc2de561df55228ffc095a77942de"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:gaff7dc2de561df55228ffc095a77942de"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:gaff7dc2de561df55228ffc095a77942de"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaff7dc2de561df55228ffc095a77942de">try_parse</a> (const std::basic_string&lt; <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a> &gt; &amp;str, value_t &amp;value, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">number_styles</a> style) noexcept</td></tr>
 <tr class="memdesc:gaff7dc2de561df55228ffc095a77942de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:gaff7dc2de561df55228ffc095a77942de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga710189af006e9380a48c1e4e10f3673c"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:ga710189af006e9380a48c1e4e10f3673c"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:ga710189af006e9380a48c1e4e10f3673c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga710189af006e9380a48c1e4e10f3673c">try_parse</a> (const std::basic_string&lt; <a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a> &gt; &amp;str, value_t &amp;value, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">number_styles</a> style) noexcept</td></tr>
 <tr class="memdesc:ga710189af006e9380a48c1e4e10f3673c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:ga710189af006e9380a48c1e4e10f3673c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf4505a3d9936fb582fa33a5b12a2dd27"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:gaf4505a3d9936fb582fa33a5b12a2dd27"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:gaf4505a3d9936fb582fa33a5b12a2dd27"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaf4505a3d9936fb582fa33a5b12a2dd27">try_parse</a> (const std::basic_string&lt; char &gt; &amp;str, value_t &amp;value, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">number_styles</a> style, const std::locale &amp;locale) noexcept</td></tr>
 <tr class="memdesc:gaf4505a3d9936fb582fa33a5b12a2dd27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:gaf4505a3d9936fb582fa33a5b12a2dd27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad072423130fa9be5b4b0b3285c047eae"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:gad072423130fa9be5b4b0b3285c047eae"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:gad072423130fa9be5b4b0b3285c047eae"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gad072423130fa9be5b4b0b3285c047eae">try_parse</a> (const std::basic_string&lt; <a class="el" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">xtd::char16</a> &gt; &amp;str, value_t &amp;value, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">number_styles</a> style, const std::locale &amp;locale) noexcept</td></tr>
 <tr class="memdesc:gad072423130fa9be5b4b0b3285c047eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:gad072423130fa9be5b4b0b3285c047eae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab62e39af7b0b49c9739f2d051bec0d69"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:gab62e39af7b0b49c9739f2d051bec0d69"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:gab62e39af7b0b49c9739f2d051bec0d69"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gab62e39af7b0b49c9739f2d051bec0d69">try_parse</a> (const std::basic_string&lt; <a class="el" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a> &gt; &amp;str, value_t &amp;value, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">number_styles</a> style, const std::locale &amp;locale) noexcept</td></tr>
 <tr class="memdesc:gab62e39af7b0b49c9739f2d051bec0d69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:gab62e39af7b0b49c9739f2d051bec0d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6e14650b55369aa399119fbb6d1187bc"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:ga6e14650b55369aa399119fbb6d1187bc"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:ga6e14650b55369aa399119fbb6d1187bc"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga6e14650b55369aa399119fbb6d1187bc">try_parse</a> (const std::basic_string&lt; <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a> &gt; &amp;str, value_t &amp;value, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">number_styles</a> style, const std::locale &amp;locale) noexcept</td></tr>
 <tr class="memdesc:ga6e14650b55369aa399119fbb6d1187bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:ga6e14650b55369aa399119fbb6d1187bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9e62d38469f30635a0e8dd34b78a2a33"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:ga9e62d38469f30635a0e8dd34b78a2a33"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:ga9e62d38469f30635a0e8dd34b78a2a33"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga9e62d38469f30635a0e8dd34b78a2a33">try_parse</a> (const std::basic_string&lt; <a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a> &gt; &amp;str, value_t &amp;value, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">number_styles</a> style, const std::locale &amp;locale) noexcept</td></tr>
 <tr class="memdesc:ga9e62d38469f30635a0e8dd34b78a2a33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:ga9e62d38469f30635a0e8dd34b78a2a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1001467d259318cd4cafd6103242752f"><td class="memTemplParams" colspan="2">template&lt;typename value_t , typename char_t &gt; </td></tr>
+<tr class="memitem:ga1001467d259318cd4cafd6103242752f"><td class="memTemplParams" colspan="2">template&lt;class value_t , class char_t &gt; </td></tr>
 <tr class="memitem:ga1001467d259318cd4cafd6103242752f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga1001467d259318cd4cafd6103242752f">try_parse</a> (const char_t *str, value_t &amp;value, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">number_styles</a> style) noexcept</td></tr>
 <tr class="memdesc:ga1001467d259318cd4cafd6103242752f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:ga1001467d259318cd4cafd6103242752f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadc8db5ee33d989a096e8913f74b1dac1"><td class="memTemplParams" colspan="2">template&lt;typename value_t , typename char_t &gt; </td></tr>
+<tr class="memitem:gadc8db5ee33d989a096e8913f74b1dac1"><td class="memTemplParams" colspan="2">template&lt;class value_t , class char_t &gt; </td></tr>
 <tr class="memitem:gadc8db5ee33d989a096e8913f74b1dac1"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gadc8db5ee33d989a096e8913f74b1dac1">try_parse</a> (const char_t *str, value_t &amp;value, <a class="el" href="group__xtd__core.html#ga176c15b86e21b78ec7a3dd6f0a92c686">number_styles</a> style, const std::locale &amp;locale) noexcept</td></tr>
 <tr class="memdesc:gadc8db5ee33d989a096e8913f74b1dac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a string into a type.  <br /></td></tr>
 <tr class="separator:gadc8db5ee33d989a096e8913f74b1dac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0b02311122cc2bc504ab9218c85d5db"><td class="memTemplParams" colspan="2">template&lt;typename arg_t &gt; </td></tr>
+<tr class="memitem:af0b02311122cc2bc504ab9218c85d5db"><td class="memTemplParams" colspan="2">template&lt;class arg_t &gt; </td></tr>
 <tr class="memitem:af0b02311122cc2bc504ab9218c85d5db"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#af0b02311122cc2bc504ab9218c85d5db">print</a> (arg_t &amp;&amp;value)</td></tr>
 <tr class="memdesc:af0b02311122cc2bc504ab9218c85d5db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified value to the standard output stream.  <br /></td></tr>
 <tr class="separator:af0b02311122cc2bc504ab9218c85d5db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28cc6e13c0ba3a33707d84f6a4d60deb"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:a28cc6e13c0ba3a33707d84f6a4d60deb"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:a28cc6e13c0ba3a33707d84f6a4d60deb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#a28cc6e13c0ba3a33707d84f6a4d60deb">print</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;fmt, args_t &amp;&amp;... values)</td></tr>
 <tr class="memdesc:a28cc6e13c0ba3a33707d84f6a4d60deb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified list of values to the standard output stream using the specified format information.  <br /></td></tr>
 <tr class="separator:a28cc6e13c0ba3a33707d84f6a4d60deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa17c59454538a0d1133101c4159054e5"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:aa17c59454538a0d1133101c4159054e5"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:aa17c59454538a0d1133101c4159054e5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#aa17c59454538a0d1133101c4159054e5">print</a> (const char *fmt, args_t &amp;&amp;... values)</td></tr>
 <tr class="memdesc:aa17c59454538a0d1133101c4159054e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified list of values to the standard output stream using the specified format information.  <br /></td></tr>
 <tr class="separator:aa17c59454538a0d1133101c4159054e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab69db34223319c46dbeb2f57eee425e4"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:ab69db34223319c46dbeb2f57eee425e4"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:ab69db34223319c46dbeb2f57eee425e4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#ab69db34223319c46dbeb2f57eee425e4">print</a> (const char8_t *fmt, args_t &amp;&amp;... values)</td></tr>
 <tr class="memdesc:ab69db34223319c46dbeb2f57eee425e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified list of values to the standard output stream using the specified format information.  <br /></td></tr>
 <tr class="separator:ab69db34223319c46dbeb2f57eee425e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1b54e270a7fe5f6500f631161736cc18"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:a1b54e270a7fe5f6500f631161736cc18"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:a1b54e270a7fe5f6500f631161736cc18"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#a1b54e270a7fe5f6500f631161736cc18">print</a> (const char16_t *fmt, args_t &amp;&amp;... values)</td></tr>
 <tr class="memdesc:a1b54e270a7fe5f6500f631161736cc18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified list of values to the standard output stream using the specified format information.  <br /></td></tr>
 <tr class="separator:a1b54e270a7fe5f6500f631161736cc18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3322fabd180a0b078dbcc859a1a2d160"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:a3322fabd180a0b078dbcc859a1a2d160"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:a3322fabd180a0b078dbcc859a1a2d160"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#a3322fabd180a0b078dbcc859a1a2d160">print</a> (const char32_t *fmt, args_t &amp;&amp;... values)</td></tr>
 <tr class="memdesc:a3322fabd180a0b078dbcc859a1a2d160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified list of values to the standard output stream using the specified format information.  <br /></td></tr>
 <tr class="separator:a3322fabd180a0b078dbcc859a1a2d160"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4474b8f91d330cd906279185d0b1486"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:ab4474b8f91d330cd906279185d0b1486"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:ab4474b8f91d330cd906279185d0b1486"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#ab4474b8f91d330cd906279185d0b1486">print</a> (const wchar_t *fmt, args_t &amp;&amp;... values)</td></tr>
 <tr class="memdesc:ab4474b8f91d330cd906279185d0b1486"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified list of values to the standard output stream using the specified format information.  <br /></td></tr>
 <tr class="separator:ab4474b8f91d330cd906279185d0b1486"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21b702f46c6118c65f906f5564dc9e4d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacextd.html#a21b702f46c6118c65f906f5564dc9e4d">println</a> ()</td></tr>
 <tr class="memdesc:a21b702f46c6118c65f906f5564dc9e4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the current line terminator to the standard output stream using the specified format information.  <br /></td></tr>
 <tr class="separator:a21b702f46c6118c65f906f5564dc9e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68af0d8c08ea7428fc9de50373c0a3a4"><td class="memTemplParams" colspan="2">template&lt;typename arg_t &gt; </td></tr>
+<tr class="memitem:a68af0d8c08ea7428fc9de50373c0a3a4"><td class="memTemplParams" colspan="2">template&lt;class arg_t &gt; </td></tr>
 <tr class="memitem:a68af0d8c08ea7428fc9de50373c0a3a4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#a68af0d8c08ea7428fc9de50373c0a3a4">println</a> (arg_t &amp;&amp;value)</td></tr>
 <tr class="memdesc:a68af0d8c08ea7428fc9de50373c0a3a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified value, followed by the current line terminator, to the standard output stream.  <br /></td></tr>
 <tr class="separator:a68af0d8c08ea7428fc9de50373c0a3a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a575efb25992bdd39feb14fe94f4e22a0"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:a575efb25992bdd39feb14fe94f4e22a0"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:a575efb25992bdd39feb14fe94f4e22a0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#a575efb25992bdd39feb14fe94f4e22a0">println</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;fmt, args_t &amp;&amp;... values)</td></tr>
 <tr class="memdesc:a575efb25992bdd39feb14fe94f4e22a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.  <br /></td></tr>
 <tr class="separator:a575efb25992bdd39feb14fe94f4e22a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e1dbed9a6e08e88fa638c588a178b8b"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:a1e1dbed9a6e08e88fa638c588a178b8b"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:a1e1dbed9a6e08e88fa638c588a178b8b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#a1e1dbed9a6e08e88fa638c588a178b8b">println</a> (const char *fmt, args_t &amp;&amp;... values)</td></tr>
 <tr class="memdesc:a1e1dbed9a6e08e88fa638c588a178b8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.  <br /></td></tr>
 <tr class="separator:a1e1dbed9a6e08e88fa638c588a178b8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86dcf19cf7f35d20a0393ffe364e472b"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:a86dcf19cf7f35d20a0393ffe364e472b"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:a86dcf19cf7f35d20a0393ffe364e472b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#a86dcf19cf7f35d20a0393ffe364e472b">println</a> (const char8_t *fmt, args_t &amp;&amp;... values)</td></tr>
 <tr class="memdesc:a86dcf19cf7f35d20a0393ffe364e472b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.  <br /></td></tr>
 <tr class="separator:a86dcf19cf7f35d20a0393ffe364e472b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d8c0e13c15ff0e2fb6b1fdd286e5909"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:a7d8c0e13c15ff0e2fb6b1fdd286e5909"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:a7d8c0e13c15ff0e2fb6b1fdd286e5909"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#a7d8c0e13c15ff0e2fb6b1fdd286e5909">println</a> (const char16_t *fmt, args_t &amp;&amp;... values)</td></tr>
 <tr class="memdesc:a7d8c0e13c15ff0e2fb6b1fdd286e5909"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.  <br /></td></tr>
 <tr class="separator:a7d8c0e13c15ff0e2fb6b1fdd286e5909"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3c8a78190235046921272a9ac314c90"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:ab3c8a78190235046921272a9ac314c90"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:ab3c8a78190235046921272a9ac314c90"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#ab3c8a78190235046921272a9ac314c90">println</a> (const char32_t *fmt, args_t &amp;&amp;... values)</td></tr>
 <tr class="memdesc:ab3c8a78190235046921272a9ac314c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.  <br /></td></tr>
 <tr class="separator:ab3c8a78190235046921272a9ac314c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c08d0448e9b9992ccb43141fe50761c"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:a1c08d0448e9b9992ccb43141fe50761c"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:a1c08d0448e9b9992ccb43141fe50761c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#a1c08d0448e9b9992ccb43141fe50761c">println</a> (const wchar_t *fmt, args_t &amp;&amp;... values)</td></tr>
 <tr class="memdesc:a1c08d0448e9b9992ccb43141fe50761c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.  <br /></td></tr>
 <tr class="separator:a1c08d0448e9b9992ccb43141fe50761c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -5870,7 +5871,7 @@ template&lt;typename type_t &gt; </td></tr>
 <tr class="memitem:gaac49387378fdd2db92acc8c9dc3916bb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1time__span.html">xtd::time_span</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaac49387378fdd2db92acc8c9dc3916bb">parse&lt; time_span &gt;</a> (const std::string &amp;str)</td></tr>
 <tr class="memdesc:gaac49387378fdd2db92acc8c9dc3916bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string representation of a time interval to its <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> equivalent.  <br /></td></tr>
 <tr class="separator:gaac49387378fdd2db92acc8c9dc3916bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaceb0e0a25d04cce9beebad549c27c167"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:gaceb0e0a25d04cce9beebad549c27c167"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:gaceb0e0a25d04cce9beebad549c27c167"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaceb0e0a25d04cce9beebad549c27c167">to_string</a> (const value_t &amp;value, const std::string &amp;fmt, const std::locale &amp;loc)</td></tr>
 <tr class="memdesc:gaceb0e0a25d04cce9beebad549c27c167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
 <tr class="separator:gaceb0e0a25d04cce9beebad549c27c167"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -5942,10 +5943,10 @@ template&lt;typename type_t &gt; </td></tr>
 <tr class="memitem:gafa12d1a96a8a3dfab38f357e630a1bb5"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gafa12d1a96a8a3dfab38f357e630a1bb5">to_string</a> (const std::tm &amp;value, const std::string &amp;fmt, const std::locale &amp;loc)</td></tr>
 <tr class="memdesc:gafa12d1a96a8a3dfab38f357e630a1bb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
 <tr class="separator:gafa12d1a96a8a3dfab38f357e630a1bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaac5569fc495060c695cfd66f3a2646ae"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename Period &gt; </td></tr>
-<tr class="memitem:gaac5569fc495060c695cfd66f3a2646ae"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaac5569fc495060c695cfd66f3a2646ae">to_string</a> (const std::chrono::duration&lt; type_t, Period &gt; &amp;value, const std::string &amp;fmt, const std::locale &amp;loc)</td></tr>
-<tr class="memdesc:gaac5569fc495060c695cfd66f3a2646ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
-<tr class="separator:gaac5569fc495060c695cfd66f3a2646ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga501cb85f4ce37db615704cae3d5b5898"><td class="memTemplParams" colspan="2">template&lt;class type_t , class period_t &gt; </td></tr>
+<tr class="memitem:ga501cb85f4ce37db615704cae3d5b5898"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga501cb85f4ce37db615704cae3d5b5898">to_string</a> (const std::chrono::duration&lt; type_t, period_t &gt; &amp;value, const std::string &amp;fmt, const std::locale &amp;loc)</td></tr>
+<tr class="memdesc:ga501cb85f4ce37db615704cae3d5b5898"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
+<tr class="separator:ga501cb85f4ce37db615704cae3d5b5898"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga92335b2005f6f2f937851eaca07c6a5e"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
 <tr class="memitem:ga92335b2005f6f2f937851eaca07c6a5e"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga92335b2005f6f2f937851eaca07c6a5e">to_string</a> (const <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a> &amp;value, const std::string &amp;fmt, const std::locale &amp;loc)</td></tr>
 <tr class="memdesc:ga92335b2005f6f2f937851eaca07c6a5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
@@ -5962,11 +5963,11 @@ template&lt;typename type_t &gt; </td></tr>
 <tr class="memitem:ga91e93a965ae49a1a2ef962eb6441fbf1"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga91e93a965ae49a1a2ef962eb6441fbf1">to_string</a> (const <a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">wchar</a> &amp;value, const std::string &amp;fmt, const std::locale &amp;loc)</td></tr>
 <tr class="memdesc:ga91e93a965ae49a1a2ef962eb6441fbf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
 <tr class="separator:ga91e93a965ae49a1a2ef962eb6441fbf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1e1014e70173278b211e146c5c60192d"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:ga1e1014e70173278b211e146c5c60192d"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:ga1e1014e70173278b211e146c5c60192d"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga1e1014e70173278b211e146c5c60192d">to_string</a> (const value_t &amp;value, const std::string &amp;fmt)</td></tr>
 <tr class="memdesc:ga1e1014e70173278b211e146c5c60192d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format.  <br /></td></tr>
 <tr class="separator:ga1e1014e70173278b211e146c5c60192d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0a9de41ee94305c9740006992724810c"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:ga0a9de41ee94305c9740006992724810c"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:ga0a9de41ee94305c9740006992724810c"><td class="memTemplItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga0a9de41ee94305c9740006992724810c">to_string</a> (const value_t &amp;value, const std::wstring &amp;fmt, const std::locale &amp;loc)</td></tr>
 <tr class="memdesc:ga0a9de41ee94305c9740006992724810c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
 <tr class="separator:ga0a9de41ee94305c9740006992724810c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -6038,10 +6039,10 @@ template&lt;typename type_t &gt; </td></tr>
 <tr class="memitem:ga982f24d4888d14cb03d13a0518b7e8f7"><td class="memTemplItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga982f24d4888d14cb03d13a0518b7e8f7">to_string</a> (const std::tm &amp;value, const std::wstring &amp;fmt, const std::locale &amp;loc)</td></tr>
 <tr class="memdesc:ga982f24d4888d14cb03d13a0518b7e8f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
 <tr class="separator:ga982f24d4888d14cb03d13a0518b7e8f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabcea04723bc3ca6414835934018e8269"><td class="memTemplParams" colspan="2">template&lt;typename type_t , typename Period &gt; </td></tr>
-<tr class="memitem:gabcea04723bc3ca6414835934018e8269"><td class="memTemplItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gabcea04723bc3ca6414835934018e8269">to_string</a> (const std::chrono::duration&lt; type_t, Period &gt; &amp;value, const std::wstring &amp;fmt, const std::locale &amp;loc)</td></tr>
-<tr class="memdesc:gabcea04723bc3ca6414835934018e8269"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
-<tr class="separator:gabcea04723bc3ca6414835934018e8269"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacbae867b56493a89643abbf939091639"><td class="memTemplParams" colspan="2">template&lt;class type_t , class period_t &gt; </td></tr>
+<tr class="memitem:gacbae867b56493a89643abbf939091639"><td class="memTemplItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gacbae867b56493a89643abbf939091639">to_string</a> (const std::chrono::duration&lt; type_t, period_t &gt; &amp;value, const std::wstring &amp;fmt, const std::locale &amp;loc)</td></tr>
+<tr class="memdesc:gacbae867b56493a89643abbf939091639"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
+<tr class="separator:gacbae867b56493a89643abbf939091639"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2afd21ef8f5b4d6ba487ca3c14891f4e"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
 <tr class="memitem:ga2afd21ef8f5b4d6ba487ca3c14891f4e"><td class="memTemplItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga2afd21ef8f5b4d6ba487ca3c14891f4e">to_string</a> (const std::wstring &amp;value, const std::wstring &amp;fmt, const std::locale &amp;loc)</td></tr>
 <tr class="memdesc:ga2afd21ef8f5b4d6ba487ca3c14891f4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
@@ -6062,15 +6063,15 @@ template&lt;typename type_t &gt; </td></tr>
 <tr class="memitem:ga137b6b8455205036abbf2a08c7ab3e76"><td class="memTemplItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga137b6b8455205036abbf2a08c7ab3e76">to_string</a> (const <a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">wchar</a> &amp;value, const std::wstring &amp;fmt, const std::locale &amp;loc)</td></tr>
 <tr class="memdesc:ga137b6b8455205036abbf2a08c7ab3e76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format and locale.  <br /></td></tr>
 <tr class="separator:ga137b6b8455205036abbf2a08c7ab3e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1d59ec80e62f1ce335fabedc330da774"><td class="memTemplParams" colspan="2">template&lt;typename value_t &gt; </td></tr>
+<tr class="memitem:ga1d59ec80e62f1ce335fabedc330da774"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
 <tr class="memitem:ga1d59ec80e62f1ce335fabedc330da774"><td class="memTemplItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga1d59ec80e62f1ce335fabedc330da774">to_string</a> (const value_t &amp;value, const std::wstring &amp;fmt)</td></tr>
 <tr class="memdesc:ga1d59ec80e62f1ce335fabedc330da774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format.  <br /></td></tr>
 <tr class="separator:ga1d59ec80e62f1ce335fabedc330da774"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5aa911c016af5795d0482eefb481fcc9"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga5aa911c016af5795d0482eefb481fcc9"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga5aa911c016af5795d0482eefb481fcc9"><td class="memTemplItemLeft" align="right" valign="top">type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#ga5aa911c016af5795d0482eefb481fcc9">unboxing</a> (const <a class="el" href="classxtd_1_1box.html">xtd::box</a>&lt; type_t &gt; &amp;value) noexcept</td></tr>
 <tr class="memdesc:ga5aa911c016af5795d0482eefb481fcc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to unbox an object.  <br /></td></tr>
 <tr class="separator:ga5aa911c016af5795d0482eefb481fcc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae9b1d037b20137db8842fe5b1c6c1229"><td class="memTemplParams" colspan="2">template&lt;typename ... args_t&gt; </td></tr>
+<tr class="memitem:gae9b1d037b20137db8842fe5b1c6c1229"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:gae9b1d037b20137db8842fe5b1c6c1229"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gae9b1d037b20137db8842fe5b1c6c1229">unused</a> (args_t &amp;&amp;... args)</td></tr>
 <tr class="memdesc:gae9b1d037b20137db8842fe5b1c6c1229"><td class="mdescLeft">&#160;</td><td class="mdescRight">It may be used to suppress the "unused variable" or "unused local typedefs" compiler warnings when the variable or typedef can't be removed or commented out, e.g. when some blocks of the code are conditionally activated.  <br /></td></tr>
 <tr class="separator:gae9b1d037b20137db8842fe5b1c6c1229"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -6132,7 +6133,7 @@ Variables</h2></td></tr>
 <tr class="memitem:gaa7283e1dd31c385d954467f7ea324451"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> = intmax_t</td></tr>
 <tr class="memdesc:gaa7283e1dd31c385d954467f7ea324451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent a pointer or a handle.  <br /></td></tr>
 <tr class="separator:gaa7283e1dd31c385d954467f7ea324451"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga14f390dd1d27bfab4cc2f26c1502c8ec"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga14f390dd1d27bfab4cc2f26c1502c8ec"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga14f390dd1d27bfab4cc2f26c1502c8ec"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr</a> = <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; type_t &gt;</td></tr>
 <tr class="memdesc:ga14f390dd1d27bfab4cc2f26c1502c8ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object is a shared pointer.  <br /></td></tr>
 <tr class="separator:ga14f390dd1d27bfab4cc2f26c1502c8ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -6151,7 +6152,7 @@ Variables</h2></td></tr>
 <tr class="memitem:gaf4ae7b4402a8b6bb42003cc42fa6d17b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#gaf4ae7b4402a8b6bb42003cc42fa6d17b">slong</a> = __slong__</td></tr>
 <tr class="memdesc:gaf4ae7b4402a8b6bb42003cc42fa6d17b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a 32-bit or 64-bit signed integer.  <br /></td></tr>
 <tr class="separator:gaf4ae7b4402a8b6bb42003cc42fa6d17b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac95736233f2252af878f18687efabb92"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:gac95736233f2252af878f18687efabb92"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:gac95736233f2252af878f18687efabb92"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">sptr</a> = std::shared_ptr&lt; type_t &gt;</td></tr>
 <tr class="memdesc:gac95736233f2252af878f18687efabb92"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> object is a shared pointer.  <br /></td></tr>
 <tr class="separator:gac95736233f2252af878f18687efabb92"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -6173,14 +6174,14 @@ Variables</h2></td></tr>
 <tr class="memitem:ga313036ce703450f07d94c71ed78f2b21"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#ga313036ce703450f07d94c71ed78f2b21">ulong</a> = __ulong__</td></tr>
 <tr class="memdesc:ga313036ce703450f07d94c71ed78f2b21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a 32-bit or 64-bit unsigned integer.  <br /></td></tr>
 <tr class="separator:ga313036ce703450f07d94c71ed78f2b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4ac188feb2d52b21e188417441519bb2"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga4ac188feb2d52b21e188417441519bb2"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga4ac188feb2d52b21e188417441519bb2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">uptr</a> = std::unique_ptr&lt; type_t &gt;</td></tr>
 <tr class="memdesc:ga4ac188feb2d52b21e188417441519bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object is a unique pointer.  <br /></td></tr>
 <tr class="separator:ga4ac188feb2d52b21e188417441519bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga155357d92cf162b71b396e46accee518"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">wchar</a> = wchar_t</td></tr>
 <tr class="memdesc:ga155357d92cf162b71b396e46accee518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a wide character.  <br /></td></tr>
 <tr class="separator:ga155357d92cf162b71b396e46accee518"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga541ef37a59d2e67f6fd2ad9832ab220c"><td class="memTemplParams" colspan="2">template&lt;typename type_t &gt; </td></tr>
+<tr class="memitem:ga541ef37a59d2e67f6fd2ad9832ab220c"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga541ef37a59d2e67f6fd2ad9832ab220c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#ga541ef37a59d2e67f6fd2ad9832ab220c">wptr</a> = std::weak_ptr&lt; type_t &gt;</td></tr>
 <tr class="memdesc:ga541ef37a59d2e67f6fd2ad9832ab220c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object is a weak pointer.  <br /></td></tr>
 <tr class="separator:ga541ef37a59d2e67f6fd2ad9832ab220c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -6263,7 +6264,7 @@ Variables</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ... args_t&gt; </div>
+template&lt;class ... args_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="group__strings.html#ga87efea41d4bd7beb815934226919d4cf">xtd::u16string</a> xtd::format </td>
@@ -6304,7 +6305,7 @@ template&lt;typename ... args_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ... args_t&gt; </div>
+template&lt;class ... args_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="group__strings.html#ga8e905e9638523f5b5d380d8bcbcc834e">xtd::u32string</a> xtd::format </td>
@@ -6345,7 +6346,7 @@ template&lt;typename ... args_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ... args_t&gt; </div>
+template&lt;class ... args_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="group__strings.html#ga0852e1ddc5f45ee30560e3f95d6915b0">xtd::wstring</a> xtd::format </td>
@@ -6386,7 +6387,7 @@ template&lt;typename ... args_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename arg_t &gt; </div>
+template&lt;class arg_t &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void xtd::print </td>
@@ -6420,7 +6421,7 @@ template&lt;typename arg_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ... args_t&gt; </div>
+template&lt;class ... args_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void xtd::print </td>
@@ -6465,7 +6466,7 @@ template&lt;typename ... args_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ... args_t&gt; </div>
+template&lt;class ... args_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void xtd::print </td>
@@ -6510,7 +6511,7 @@ template&lt;typename ... args_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ... args_t&gt; </div>
+template&lt;class ... args_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void xtd::print </td>
@@ -6555,7 +6556,7 @@ template&lt;typename ... args_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ... args_t&gt; </div>
+template&lt;class ... args_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void xtd::print </td>
@@ -6600,7 +6601,7 @@ template&lt;typename ... args_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ... args_t&gt; </div>
+template&lt;class ... args_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void xtd::print </td>
@@ -6645,7 +6646,7 @@ template&lt;typename ... args_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ... args_t&gt; </div>
+template&lt;class ... args_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void xtd::print </td>
@@ -6717,7 +6718,7 @@ template&lt;typename ... args_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename arg_t &gt; </div>
+template&lt;class arg_t &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void xtd::println </td>
@@ -6751,7 +6752,7 @@ template&lt;typename arg_t &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ... args_t&gt; </div>
+template&lt;class ... args_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void xtd::println </td>
@@ -6796,7 +6797,7 @@ template&lt;typename ... args_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ... args_t&gt; </div>
+template&lt;class ... args_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void xtd::println </td>
@@ -6841,7 +6842,7 @@ template&lt;typename ... args_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ... args_t&gt; </div>
+template&lt;class ... args_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void xtd::println </td>
@@ -6886,7 +6887,7 @@ template&lt;typename ... args_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ... args_t&gt; </div>
+template&lt;class ... args_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void xtd::println </td>
@@ -6931,7 +6932,7 @@ template&lt;typename ... args_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ... args_t&gt; </div>
+template&lt;class ... args_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void xtd::println </td>
@@ -6976,7 +6977,7 @@ template&lt;typename ... args_t&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename ... args_t&gt; </div>
+template&lt;class ... args_t&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void xtd::println </td>
@@ -7019,7 +7020,7 @@ template&lt;typename ... args_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 9 2025 22:53:12 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 11 2025 22:29:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

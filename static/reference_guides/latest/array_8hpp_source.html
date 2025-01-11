@@ -112,7 +112,7 @@ $(function() {
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#undef __XTD_ARRAY_INTERNAL__</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {  </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t, xtd::size rank_, <span class="keyword">typename</span> allocator_t&gt;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, xtd::size rank_, <span class="keyword">class</span> allocator_t&gt;</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="classxtd_1_1array.html">   59</a></span>  <span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1array.html">array</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1basic__array.html">basic_array</a>&lt;type_t, allocator_t&gt; {</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    </div>
@@ -147,7 +147,7 @@ $(function() {
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#include &quot;<a class="code" href="____external__exceptions_8hpp.html">internal/__external_exceptions.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">#undef __XTD_CORE_INTERNAL__</span></div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> source_t&gt;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> source_t&gt;</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keyword">const</span> <a class="code hl_typedef" href="classxtd_1_1linq_1_1enumerable.html#a2bd1889dc1967c50ef692411dc2c4b92">xtd::linq::enumerable::ienumerable&lt;xtd::array&lt;source_t&gt;</a>&gt;&amp; <a class="code hl_function" href="classxtd_1_1linq_1_1enumerable.html#a12ffc9340ed9f4fdc52e7d62e32f8511">xtd::linq::enumerable::chunk</a>(<span class="keyword">const</span> ienumerable&lt;source_t&gt;&amp; source, <span class="keywordtype">size_t</span> size) {</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keywordflow">if</span> (<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a> == 0) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keyword">static</span> <span class="keyword">thread_local</span> <span class="keyword">auto</span> chunks = __opaque_xtd_linq_enumerable_collection__&lt;xtd::array&lt;source_t&gt;&gt; {};</div>
@@ -197,7 +197,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 9 2025 22:53:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 11 2025 22:29:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

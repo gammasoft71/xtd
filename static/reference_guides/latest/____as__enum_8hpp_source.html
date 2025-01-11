@@ -94,10 +94,10 @@ $(function() {
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;../convert_pointer.hpp&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> new_type_t, <span class="keyword">typename</span> current_type_t, <span class="keyword">typename</span> <span class="keywordtype">bool</span>_t&gt;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> new_type_t, <span class="keyword">class</span> current_type_t, <span class="keyword">class</span> <span class="keywordtype">bool</span>_t&gt;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">struct </span>__as_enum__ {};</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> new_type_t, <span class="keyword">typename</span> current_type_t&gt;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> new_type_t, <span class="keyword">class</span> current_type_t&gt;</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">struct </span>__as_enum__&lt;new_type_t, current_type_t, std::true_type&gt; {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  <span class="keyword">const</span> new_type_t&amp; convert(<span class="keyword">const</span> current_type_t&amp; value) {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    __result__ = <span class="keyword">static_cast&lt;</span>new_type_t<span class="keyword">&gt;</span>(value);</div>
@@ -110,7 +110,7 @@ $(function() {
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keyword">thread_local</span> <span class="keyword">inline</span> <span class="keyword">static</span> new_type_t __result__ {};</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> new_type_t, <span class="keyword">typename</span> current_type_t&gt;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> new_type_t, <span class="keyword">class</span> current_type_t&gt;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">struct </span>__as_enum__&lt;new_type_t, current_type_t, std::false_type&gt; {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">const</span> new_type_t&amp; convert(<span class="keyword">const</span> current_type_t&amp; value) {</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">return</span> xtd::convert_pointer::to_ref&lt;new_type_t&gt;(value);</div>
@@ -123,7 +123,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 9 2025 22:53:07 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jan 11 2025 22:29:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
