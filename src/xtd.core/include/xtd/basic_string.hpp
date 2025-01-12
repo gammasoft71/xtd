@@ -2296,10 +2296,8 @@ namespace xtd {
     static basic_string join(const basic_string separator, const collection_t& values) noexcept {
       xtd::size i = 0;
       basic_string result;
-      for (const auto& item : values) {
-        if (i++ != 0) result += separator;
-        result += format("{}", item);
-      }
+      for (const auto& item : values)
+        result += format("{}{}", (i++ != 0 ? separator : basic_string {}), item);
       return result;
     }
     /// @brief Concatenates a specified separator basic_string between each element of a specified object array, yielding a single concatenated basic_string.
@@ -2325,14 +2323,12 @@ namespace xtd {
       xtd::size i = 0;
       basic_string result;
       for (const auto& item : values) {
-        if (i >= index) {
-          if (i != index) result += separator;
-          result += format("{}", item);
-        }
+        if (i >= index) result += format("{}{}", (i != index ? separator : basic_string {}), item);
         if (++i >= index + count) break;
       }
       return result;
     }
+
     /// @cond
     template<class value_t>
     static basic_string join(const basic_string& separator, const std::initializer_list<value_t>& values) noexcept;
