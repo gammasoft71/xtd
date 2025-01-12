@@ -16,7 +16,7 @@ namespace xtd {
       namespace helpers {
         /// @brief Implements a function object for performing comparisons. Unless specialised, invokes operator== on type type_t. xtd::equator with the key and the value strongly typed to be std::any.
         /// ```cpp
-        /// template<class key_t = void>
+        /// template<class key_t>
         /// struct equator;
         /// ```
         /// @par Header
