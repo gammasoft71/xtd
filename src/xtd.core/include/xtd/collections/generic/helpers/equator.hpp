@@ -16,11 +16,12 @@ namespace xtd {
       namespace helpers {
         /// @brief Implements a function object for performing comparisons. Unless specialised, invokes operator== on type type_t. xtd::equator with the key and the value strongly typed to be std::any.
         /// ```cpp
+        /// template<class key_t = void>
         /// struct equator;
         /// ```
         /// @par Header
         /// ```cpp
-        /// #include <xtd/collections/equator>
+        /// #include <xtd/collections/generic/equator>
         /// ```
         /// @par Namespace
         /// xtd::collections::generic
@@ -33,8 +34,19 @@ namespace xtd {
         /// auto key_values = std::unordered_map<xtd::date_time, xtd::string, xtd::collections::generic::helpers::hasher<xtd::date_time>, xtd::collections::generic::helpers::equator<xtd::date_time>, xtd::collections::generic::helpers::allocator<xtd::collections::generic::key_value_pair<const xtd::date_time, xtd::string>>> {};
         /// key_values.insert({{1971, 1, 5}, "Birth date"});
         /// ```
-        template<class key_t = void>
+        template<class key_t>
         struct equator {
+          /// @name Public Aliases
+          
+          /// @{
+          /// @brief Represents the first argument type.
+          using first_argument_type = key_t;
+          /// @brief Represents the second argument type.
+          using second_argument_type = key_t;
+          /// @brief Represents the result type.
+          using result_type = bool;
+          /// @}
+          
           /// @name Public Operators
           
           /// @{
@@ -43,9 +55,9 @@ namespace xtd {
           /// @param b The second key to check.
           /// @return true if keys are equals; otherwise false.
           /// @remarks If key_t inherits from xtd::object, the xtd::object::equals method will be used; otherwise, the [std::equal_to](https://en.cppreference.com/w/cpp/utility/functional/equal_to) object function will be used.
-          bool operator()(const key_t& a, const key_t& b) const {
+          result_type operator()(const first_argument_type& a, const second_argument_type& b) const {
             if (&a == &b) return true;
-            return __polymorphic_equator__<key_t, typename std::is_polymorphic<key_t>::type> {}(a, b);
+            return __polymorphic_equator__<first_argument_type, typename std::is_polymorphic<first_argument_type>::type> {}(a, b);
           }
           /// @}
         };
