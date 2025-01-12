@@ -1,9 +1,12 @@
 #include <xtd/collections/generic/dictionary>
 #include <xtd/tunit/collection_assert>
 #include <xtd/tunit/assert>
+#include <xtd/tunit/valid>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
+#include <xtd/environment>
 #include <xtd/literals>
+#include <xtd/size_object>
 
 using namespace xtd;
 using namespace xtd::collections::generic;
@@ -110,7 +113,7 @@ namespace xtd::collections::generic::tests {
     void test_method_(constructor_with_equality_comparer) {
       struct lower_string_comparer : iequality_comparer<string> {
         bool equals(const string& x, const string& y) const noexcept override {return x.to_lower().equals(y.to_lower());}
-        size get_hash_code(const string& obj) const noexcept override {return obj.to_lower().get_hash_code();}
+        xtd::size get_hash_code(const string& obj) const noexcept override {return obj.to_lower().get_hash_code();}
       };
       
       auto items = dictionary<string, string> {lower_string_comparer {}};
@@ -344,7 +347,7 @@ namespace xtd::collections::generic::tests {
 
     void test_method_(constructor_with_specified_hasher_and_equator) {
       struct string_hash {
-        size operator ()(const string& obj) const {return obj.to_lower().get_hash_code();}
+        xtd::size operator ()(const string& obj) const {return obj.to_lower().get_hash_code();}
       };
       
       struct string_equal {
@@ -373,6 +376,139 @@ namespace xtd::collections::generic::tests {
       assert::is_false(items.contains_key("two"));
     }
     
+    void test_method_(const_begin) {
+      const auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
+      auto enumerator = items.get_enumerator();
+      assert::is_true(enumerator.move_next());
+      
+      assert::are_equal(enumerator.current(), *items.begin());
+    }
+    
+    void test_method_(begin) {
+      auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
+      auto enumerator = items.get_enumerator();
+      assert::is_true(enumerator.move_next());
+      
+      assert::are_equal(enumerator.current(), *items.begin());
+    }
+
+    void test_method_(bucket_count) {
+      auto items = dictionary<string, int> {};
+      assert::is_zero(items.bucket_count());
+      items.add("one", 1);
+      assert::is_not_zero(items.bucket_count());
+    }
+
+    void test_method_(capacity) {
+      auto items = dictionary<string, int> {};
+      assert::is_zero(items.capacity());
+      items.add("one", 1);
+      assert::are_equal(1_z, items.capacity());
+      items.add("two", 2);
+      assert::are_equal(2_z, items.capacity());
+    }
+    
+    void test_method_(cbegin) {
+      auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
+      auto enumerator = items.get_enumerator();
+      assert::is_true(enumerator.move_next());
+      
+      assert::are_equal(enumerator.current(), *items.cbegin());
+    }
+    
+    void test_method_(cend) {
+      auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
+      assert::are_not_equal(items.cbegin(), items.cend());
+      auto empty_items = dictionary<int, string> {};
+      assert::are_equal(empty_items.cbegin(), empty_items.cend());
+    }
+
+    void test_method_(count) {
+      auto items = dictionary<string, int> {};
+      assert::is_zero(items.count());
+      items.add("one", 1);
+      assert::are_equal(1_z, items.count());
+      items.add("two", 2);
+      assert::are_equal(2_z, items.count());
+    }
+
+    void test_method_(empty) {
+      auto items = dictionary<string, int> {};
+      assert::is_true(items.empty());
+      items.add("one", 1);
+      assert::is_false(items.empty());
+      items.add("two", 2);
+      assert::is_false(items.empty());
+    }
+
+    void test_method_(const_end) {
+      const auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
+      assert::are_not_equal(items.begin(), items.end());
+      const auto empty_items = dictionary<int, string> {};
+      assert::are_equal(empty_items.begin(), empty_items.end());
+    }
+
+    void test_method_(end) {
+      auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
+      assert::are_not_equal(items.begin(), items.end());
+      auto empty_items = dictionary<int, string> {};
+      assert::are_equal(empty_items.begin(), empty_items.end());
+    }
+
+    void test_method_(const_items) {
+      const auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}.items();
+      assert::is_instance_of<dictionary<int, string>::base_type>(items);
+      assert::are_equal("one", items.at(1));
+      assert::are_equal("two", items.at(2));
+      assert::are_equal("three", items.at(3));
+      assert::are_equal("four", items.at(4));
+      assert::are_equal("five", items.at(5));
+    }
+
+    void test_method_(items) {
+      auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}.items();
+      assert::is_instance_of<dictionary<int, string>::base_type>(items);
+      assert::are_equal("one", items[1]);
+      assert::are_equal("two", items[2]);
+      assert::are_equal("three", items[3]);
+      assert::are_equal("four", items[4]);
+      assert::are_equal("five", items[5]);
+    }
+    
+    void test_method_(keys) {
+      collection_assert::are_equivalent({1, 2, 3, 4, 5}, dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}.keys());
+    }
+    
+    void test_method_(load_factor) {
+      assert::are_equal(.0f, dictionary<int, string> {}.load_factor());
+      assert::are_equal(0.5f, dictionary<int, string> {{1, "one"}}.load_factor());
+      assert::are_equal(1.0f, dictionary<int, string> {{1, "one"}, {2, "two"}}.load_factor());
+    }
+    
+    void test_method_(max_bucket_count) {
+      assert::is_not_zero(dictionary<int, string> {}.max_bucket_count());
+    }
+    
+    void test_method_(max_load_factor) {
+      assert::is_not_zero(dictionary<int, string> {}.max_load_factor());
+    }
+    void test_method_(max_size) {
+      assert::is_not_zero(dictionary<int, string> {}.max_size());
+    }
+
+    void test_method_(size) {
+      auto items = dictionary<string, int> {};
+      assert::is_zero(items.size());
+      items.add("one", 1);
+      assert::are_equal(1_z, items.size());
+      items.add("two", 2);
+      assert::are_equal(2_z, items.size());
+    }
+    
+    void test_method_(values) {
+      collection_assert::are_equivalent({"one", "two", "three", "four", "five"}, dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}.values());
+    }
+
     void test_method_(hash_function) {
       auto items = dictionary<string, string> {};
       auto hasher = items.hash_function();
@@ -381,7 +517,7 @@ namespace xtd::collections::generic::tests {
     
     void test_method_(hash_function_instead_hasher_specified) {
       struct string_hash {
-        size operator ()(const string& obj) const {return obj.to_lower().get_hash_code();}
+        xtd::size operator ()(const string& obj) const {return obj.to_lower().get_hash_code();}
       };
       auto items = dictionary<string, string, string_hash> {};
       auto hasher = items.hash_function();

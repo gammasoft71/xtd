@@ -256,12 +256,14 @@ namespace xtd {
         /// @param alloc Allocator to use for all memory allocations of this container.
         /// @remarks Constructs empty container. Sets xtd::collections::generic::dictionary::max_load_factor() to 1.0. For the default constructor, the number of buckets is implementation-defined.
         dictionary(size_type bucket_count, const hasher_t& hash, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(bucket_count)) {}
+        
         /*
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param alloc Allocator to use for all memory allocations of this container.
         /// @remarks Constructs empty container. Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. For the default constructor, the number of buckets is implementation-defined.
         explicit dictionary(const allocator_t& alloc) noexcept {}
         */
+        
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param first The fist iterator of the range [first, last) to copy the elements from.
         /// @param last  Thaae last itezrator of the range [first, last) to copy the elements from.
