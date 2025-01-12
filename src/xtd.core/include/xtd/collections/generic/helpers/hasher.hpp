@@ -5,6 +5,7 @@
 #define __XTD_CORE_INTERNAL__
 #include "../../../internal/__hasher.hpp"
 #undef __XTD_CORE_INTERNAL__
+#include "../../../size.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -16,11 +17,12 @@ namespace xtd {
       namespace helpers {
         /// @brief Implements a function object for hashing data.
         /// ```cpp
-        /// struct hasher
+        // template<class key_t>
+        // struct hasher;
         /// ```
         /// @par Header
         /// ```cpp
-        /// #include <xtd/collections/hasher
+        /// #include <xtd/collections/generic/hasher
         /// ```
         /// @par Namespace
         /// xtd::collections::generic
@@ -36,14 +38,23 @@ namespace xtd {
         /// ```
         template<class key_t>
         struct hasher {
-          /// @name Public Operators
+          /// @name Public Aliases
           
+          /// @{
+          /// @brief Represents the argument type.
+          using argument_type = key_t;
+          /// @brief Represents the result type.
+          using result_type = xtd::size;
+          /// @}
+          
+          /// @name Public Operators
+
           /// @{
           /// @brief Serves as a hash function for a specified key with a particular type (type_t).
           /// @param key The key to hash.
           /// @return A hash code for the spesified key.
           /// @remarks If key_t inherits from xtd::object, the xtd::object::get_hash_code method will be used; otherwise, the [std::hash](https://en.cppreference.com/w/cpp/utility/hash) object function will be used.
-          size_t operator()(const key_t& key) const {return __polymorphic_hasher__<key_t, typename std::is_polymorphic<key_t>::type> {}(key);}
+          result_type operator()(const argument_type& key) const {return __polymorphic_hasher__<argument_type, typename std::is_polymorphic<argument_type>::type> {}(key);}
           /// @}
         };
       }
