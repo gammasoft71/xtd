@@ -273,7 +273,7 @@ namespace xtd {
         /// @param alloc Allocator to use for all memory allocations of this container.
         /// @remarks Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844).
         template <class input_iterator_t>
-        explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count = 0, const hasher_t& hash = hasher_t {}, const equator_t& equal = equator_t {}, const allocator_type& alloc = allocator_type {}) noexcept : data_(xtd::new_ptr<data>(bucket_count)) {
+        explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count = 0, const hasher_t& hash = hasher_t {}, const equator_t& equal = equator_t {}, const allocator_type& alloc = allocator_type {}) : data_(xtd::new_ptr<data>(bucket_count)) {
           for (auto iterator = first; iterator != last; ++iterator) {
             const auto& [key, value] = *iterator;
             add(key, value);
@@ -286,7 +286,7 @@ namespace xtd {
         /// @param alloc Allocator to use for all memory allocations of this container.
         /// @remarks Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844).
         template <class input_iterator_t>
-        explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(bucket_count)) {
+        explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count, const allocator_type& alloc) : data_(xtd::new_ptr<data>(bucket_count)) {
           for (auto iterator = first; iterator != last; ++iterator) {
             const auto& [key, value] = *iterator;
             add(key, value);
@@ -300,7 +300,7 @@ namespace xtd {
         /// @param alloc Allocator to use for all memory allocations of this container.
         /// @remarks Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844).
         template <class input_iterator_t>
-        explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count, const hasher_t& hash, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(bucket_count)) {
+        explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count, const hasher_t& hash, const allocator_type& alloc) : data_(xtd::new_ptr<data>(bucket_count)) {
           for (auto iterator = first; iterator != last; ++iterator) {
             const auto& [key, value] = *iterator;
             add(key, value);
@@ -327,7 +327,7 @@ namespace xtd {
         /// ```cpp
         /// std::allocator_traits<allocator_type>::select_on_container_copy_construction(other.get_allocator())
         /// ```
-        dictionary(const std::unordered_map<key_t, value_t>& other) noexcept {
+        dictionary(const std::unordered_map<key_t, value_t>& other) {
           for (auto iterator = other.begin(); iterator != other.end(); ++iterator) {
             const auto& [key, value] = *iterator;
             add(key, value);
@@ -340,7 +340,7 @@ namespace xtd {
         /// ```cpp
         /// std::allocator_traits<allocator_type>::select_on_container_copy_construction(other.get_allocator())
         /// ```
-        dictionary(const std::unordered_map<key_t, value_t>& other, const allocator_type& alloc) noexcept {
+        dictionary(const std::unordered_map<key_t, value_t>& other, const allocator_type& alloc) {
           for (auto iterator = other.begin(); iterator != other.end(); ++iterator) {
             const auto& [key, value] = *iterator;
             add(key, value);
@@ -398,7 +398,7 @@ namespace xtd {
         /// ```cpp
         /// dictionary(init.begin(), init.end())
         /// ```
-        dictionary(std::initializer_list<base_value_type> init, size_type bucket_count, const hasher_t& hash, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(bucket_count)) {
+        dictionary(std::initializer_list<base_value_type> init, size_type bucket_count, const hasher_t& hash, const allocator_type& alloc) : data_(xtd::new_ptr<data>(bucket_count)) {
           for (const auto& [key, value] : init)
             add(key, value);
         }
