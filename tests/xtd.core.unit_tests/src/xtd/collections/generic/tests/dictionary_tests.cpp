@@ -107,6 +107,34 @@ namespace xtd::collections::generic::tests {
       assert::is_zero(items.count());
     }
 
+    void test_method_(constructor_with_equality_comparer) {
+      struct lower_string_comparer : iequality_comparer<string> {
+        bool equals(const string& x, const string& y) const noexcept override {return x.to_lower().equals(y.to_lower());}
+        size get_hash_code(const string& obj) const noexcept override {return obj.to_lower().get_hash_code();}
+      };
+      
+      auto items = dictionary<string, string> {lower_string_comparer {}};
+      assert::is_zero(items.capacity());
+      assert::is_zero(items.count());
+      
+      items["one"] = "one";
+      items["oNe"] = "oNe";
+      items["OnE"] = "OnE";
+      items["ONE"] = "ONE";
+
+      auto enumerator = items.get_enumerator();
+      assert::is_true(enumerator.move_next());
+      assert::are_equal("one", enumerator.current().key());
+      assert::are_equal("ONE", enumerator.current().value());
+      assert::is_false(enumerator.move_next());
+      assert::is_true(items.contains_key("one"));
+      assert::is_true(items.contains_key("oNe"));
+      assert::is_true(items.contains_key("OnE"));
+      assert::is_true(items.contains_key("ONE"));
+      assert::is_true(items.contains_key("ONe"));
+      assert::is_false(items.contains_key("two"));
+    }
+
     void test_method_(constructor_with_bucket_count) {
       auto items = dictionary<int, string> {42_z};
       assert::is_zero(items.capacity());
@@ -312,6 +340,67 @@ namespace xtd::collections::generic::tests {
       auto items = dictionary<int, string> {{{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}, 42_z, helpers::hasher<int> {}, helpers::allocator<std::pair<int, string>> {}};
       assert::are_equal(5_z, items.capacity());
       assert::are_equal(5_z, items.count());
+    }
+
+    void test_method_(constructor_with_specified_hasher_and_equator) {
+      struct string_hash {
+        size operator ()(const string& obj) const {return obj.to_lower().get_hash_code();}
+      };
+      
+      struct string_equal {
+        bool operator ()(const string& x, const string & y) const {return x.to_lower().equals(y.to_lower());}
+      };
+      
+      auto items = dictionary<string, string, string_hash, string_equal> {};
+      assert::is_zero(items.capacity());
+      assert::is_zero(items.count());
+      
+      items["one"] = "one";
+      items["oNe"] = "oNe";
+      items["OnE"] = "OnE";
+      items["ONE"] = "ONE";
+      
+      auto enumerator = items.get_enumerator();
+      assert::is_true(enumerator.move_next());
+      assert::are_equal("one", enumerator.current().key());
+      assert::are_equal("ONE", enumerator.current().value());
+      assert::is_false(enumerator.move_next());
+      assert::is_true(items.contains_key("one"));
+      assert::is_true(items.contains_key("oNe"));
+      assert::is_true(items.contains_key("OnE"));
+      assert::is_true(items.contains_key("ONE"));
+      assert::is_true(items.contains_key("ONe"));
+      assert::is_false(items.contains_key("two"));
+    }
+    
+    void test_method_(hash_function) {
+      auto items = dictionary<string, string> {};
+      auto hasher = items.hash_function();
+      assert::is_instance_of<dictionary<string, string>::hasher>(hasher);
+    }
+    
+    void test_method_(hash_function_instead_hasher_specified) {
+      struct string_hash {
+        size operator ()(const string& obj) const {return obj.to_lower().get_hash_code();}
+      };
+      auto items = dictionary<string, string, string_hash> {};
+      auto hasher = items.hash_function();
+      assert::is_instance_of<dictionary<string, string, string_hash>::hasher>(hasher);
+    }
+
+    void test_method_(key_eq) {
+      auto items = dictionary<string, string> {};
+      auto equator = items.key_eq();
+      assert::is_instance_of<dictionary<string, string>::equator>(equator);
+    }
+
+    void test_method_(key_eq_instead_equator_specified) {
+      struct string_equal {
+        bool operator ()(const string& x, const string & y) const {return x.to_lower().equals(y.to_lower());}
+      };
+      auto items = dictionary<string, string, helpers::hasher<string>, string_equal> {};
+      auto equator = items.key_eq();
+      assert::is_instance_of<dictionary<string, string, helpers::hasher<string>, string_equal>::equator>(equator);
     }
   };
 }
