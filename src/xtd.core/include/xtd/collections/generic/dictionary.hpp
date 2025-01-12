@@ -83,13 +83,6 @@ namespace xtd {
         /// @{
         /// @brief Represents the dictionary hasher type.
         struct hasher {
-          /// @name Public Constructors
-          
-          /// @{
-          /// @brief Initializes a new instance of the xtd::collections::generic::dictionary::hasher class.
-          hasher() = default;
-          /// @}
-          
           /// @name Public Aliases
           
           /// @{
@@ -107,27 +100,20 @@ namespace xtd {
           /// @return A hash code for the spesified key.
           /// @remarks If key_t inherits from xtd::object, the xtd::object::get_hash_code method will be used; otherwise, the [std::hash](https://en.cppreference.com/w/cpp/utility/hash) object function will be used.
           size_t operator()(const key_t& key) const {
-            if (comparer)
-              return comparer->get_hash_code(key);
+            if (comparer) return comparer->get_hash_code(key);
             return hasher_t {}(key);
           }
           /// @}
 
         private:
           friend class dictionary;
+          hasher() = default;
           explicit hasher(const iequality_comparer<key_t>* comparer) : comparer {comparer} {}
           const iequality_comparer<key_t>* comparer = nullptr;
         };
         
         /// @brief Represents the dictionary equator type.
         struct equator {
-          /// @name Public Constructors
-          
-          /// @{
-          /// @brief Initializes a new instance of the xtd::collections::generic::dictionary::equator class.
-          equator() = default;
-          /// @}
-          
           /// @name Public Aliases
           
           /// @{
@@ -149,14 +135,14 @@ namespace xtd {
           /// @remarks If key_t inherits from xtd::object, the xtd::object::equals method will be used; otherwise, the [std::equal_to](https://en.cppreference.com/w/cpp/utility/functional/equal_to) object function will be used.
           bool operator()(const key_t& a, const key_t& b) const {
             if (&a == &b) return true;
-            if (comparer)
-              return comparer->equals(a, b);
+            if (comparer) return comparer->equals(a, b);
             return equator_t {}(a, b);
           }
           /// @}
           
         private:
           friend class dictionary;
+          equator() = default;
           explicit equator(const iequality_comparer<key_t>* comparer) : comparer {comparer} {}
           const iequality_comparer<key_t>* comparer = nullptr;
         };
