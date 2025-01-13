@@ -553,7 +553,7 @@ namespace xtd {
         /// @remarks If `pos` refers to the last element, then thextd::collections::generic::list:: end() iterator is returned.
         virtual iterator erase(const_iterator pos) {
           ++data_->version;
-          return to_iterator(data_->items.erase(to_base_type_iterator(pos)));
+          return to_type_iterator(data_->items.erase(to_base_type_iterator(pos)));
         }
         /// @brief Erases the specified elements from the container.
         /// @param pos The iterator to the element to remove.
@@ -565,7 +565,7 @@ namespace xtd {
         /// @remarks If [`first`, `last`) is an empty range, then `last` is returned.
         virtual iterator erase(const_iterator first, const_iterator last) {
           ++data_->version;
-          return to_iterator(data_->items.erase(to_base_type_iterator(first), to_base_type_iterator(last)));
+          return to_type_iterator(data_->items.erase(to_base_type_iterator(first), to_base_type_iterator(last)));
         }
         
         /// @brief Returns the allocator associated with the container.
@@ -666,7 +666,7 @@ namespace xtd {
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
         virtual iterator insert(const_iterator pos, const type_t& value) {
           ++data_->version;
-          return to_iterator(data_->items.insert(to_base_type_iterator(pos), value));
+          return to_type_iterator(data_->items.insert(to_base_type_iterator(pos), value));
         }
         /// @brief Inserts elements at the specified location in the container.
         /// @param pos the iterator before which the content will be inserted (pos may be the end() iterator).
@@ -676,7 +676,7 @@ namespace xtd {
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
         virtual iterator insert(const_iterator pos, const type_t&& value) {
           ++data_->version;
-          return to_iterator(data_->items.insert(to_base_type_iterator(pos), value));
+          return to_type_iterator(data_->items.insert(to_base_type_iterator(pos), value));
         }
         /// @brief Inserts elements at the specified location in the container.
         /// @param pos the iterator before which the content will be inserted (pos may be the end() iterator).
@@ -687,7 +687,7 @@ namespace xtd {
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
         virtual iterator insert(const_iterator pos, size_type count, const type_t& value) {
           ++data_->version;
-          return to_iterator(data_->items.insert(to_base_type_iterator(pos), count, value));
+          return to_type_iterator(data_->items.insert(to_base_type_iterator(pos), count, value));
         }
         /// @brief Inserts elements at the specified location in the container.
         /// @param first The first range of elements to insert, cannot be iterators into container for which insert is called
@@ -699,7 +699,7 @@ namespace xtd {
         template<class input_iterator_t>
         iterator insert(const_iterator pos, input_iterator_t first, input_iterator_t last) {
           ++data_->version;
-          return to_iterator(data_->items.insert(to_base_type_iterator(pos), first, last));
+          return to_type_iterator(data_->items.insert(to_base_type_iterator(pos), first, last));
         }
         /// @brief Inserts elements at the specified location in the container.
         /// @param pos the iterator before which the content will be inserted (pos may be the end() iterator).
@@ -709,7 +709,7 @@ namespace xtd {
         /// @remarks Inserts elements from initializer list `items` before `pos`.
         virtual iterator insert(const_iterator pos, const std::initializer_list<type_t>& items) {
           ++data_->version;
-          return to_iterator(data_->items.insert(to_base_type_iterator(pos), items.begin(), items.end()));
+          return to_type_iterator(data_->items.insert(to_base_type_iterator(pos), items.begin(), items.end()));
         }
         
         /// @brief Inserts an element into the xtd::collections::generic::list <type_t> at the specified index.
@@ -947,16 +947,20 @@ namespace xtd {
         /// @}
         
       private:
-        typename base_type::iterator to_base_type_iterator(iterator value) noexcept {
-          if (value == begin()) return data_->items.begin();
-          if (value == end()) return data_->items.end();
-          return data_->items.begin() + std::distance(begin(), value);
+        typename base_type::const_iterator to_base_type_iterator(const_iterator value) const noexcept {
+          return ilist<type_t>::to_iterator(value, *this, data_->items);
         }
         
-        iterator to_iterator(typename base_type::iterator value) noexcept {
-          if (value == data_->items.begin()) return begin();
-          if (value == data_->items.end()) return end();
-          return begin() + std::distance(data_->items.begin(), value);
+        typename base_type::iterator to_base_type_iterator(iterator value) noexcept {
+          return ilist<type_t>::to_iterator(value, *this, data_->items);
+        }
+        
+        const_iterator to_type_iterator(typename base_type::const_iterator value) const noexcept {
+          return ilist<type_t>::to_iterator(value, data_->items, *this);
+        }
+        
+        iterator to_type_iterator(typename base_type::iterator value) noexcept {
+          return ilist<type_t>::to_iterator(value, data_->items, *this);
         }
 
         struct list_data {
