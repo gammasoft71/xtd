@@ -681,6 +681,49 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(hint, iterator);
       assert::is_true(items.contains(6));
     }
+    
+    void test_method_(equal_range_with_key) {
+      auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
+      
+      const auto& [first1, last1] = items.equal_range(1);
+      assert::are_equal(1, std::distance(first1, last1));
+      assert::are_equal(1, first1->first);
+      assert::are_equal("one", first1->second);
+
+      const auto& [first2, last2] = items.equal_range(6);
+      assert::are_equal(0, std::distance(first2, last2));
+      assert::are_equal(items.end(), first2);
+    }
+    
+    void test_method_(erase_with_pos) {
+      auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
+      auto iterator = items.begin();
+      ++iterator;
+      auto [key, value] = *iterator;
+      iterator = items.erase(iterator);
+      assert::is_false(items.contains_key(key));
+    }
+    
+    void test_method_(erase_with_first_and_last) {
+      auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
+      auto iterator = items.begin();
+      auto first = ++iterator;
+      auto [key1, value1] = *first;
+      auto last = ++iterator;
+      auto [key2, value2] = *last;
+      ++last;
+      iterator = items.erase(first, last);
+      assert::is_false(items.contains_key(key1));
+      assert::is_false(items.contains_key(key2));
+    }
+
+    void test_method_(erase_with_key) {
+      auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
+      assert::are_equal(1, items.erase(4));
+      assert::is_false(items.contains_key(4));
+      assert::are_equal(0, items.erase(6));
+      assert::is_false(items.contains_key(6));
+    }
 
     void test_method_(hash_function_instead_hasher_specified) {
       struct string_hash {
