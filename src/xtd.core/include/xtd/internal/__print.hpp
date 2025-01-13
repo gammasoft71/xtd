@@ -12,11 +12,13 @@
 #include <cstdio>
 #include <ostream>
 #include "../io/io_exception.hpp"
+#include "../environment.hpp"
 #include "../null_pointer_exception.hpp"
 
 /// @cond
-void __xtd_print_with_file_write__(FILE* file, const std::string& s) {
+void __xtd_print_with_file_write__(bool new_line, FILE* file, xtd::string&& s) {
   if (!file) throw xtd::null_pointer_exception {};
+  if (new_line) s += xtd::environment::new_line();
   if (fwrite(s.c_str(), 1, s.length(), file) != s.length()) {
     auto exception = xtd::io::io_exception {};
     exception.h_result(errno);
@@ -24,8 +26,9 @@ void __xtd_print_with_file_write__(FILE* file, const std::string& s) {
   }
 }
 
-void __xtd_print_with_ostream_write__(std::ostream& os, const std::string& s) {
+void __xtd_print_with_ostream_write__(bool new_line, std::ostream& os, xtd::string&& s) {
   if (!os.good()) throw xtd::io::io_exception {};
+  if (new_line) s += xtd::environment::new_line();
   os.write(s.c_str(), s.length());
 }
 /// @endcond
