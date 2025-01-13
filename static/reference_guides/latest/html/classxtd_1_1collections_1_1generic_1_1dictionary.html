@@ -112,7 +112,7 @@ class xtd::collections::generic::dictionary&lt; key_t, value_t, hasher_t, equato
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1idictionary_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a></div><div class="ttdoc">Represents a generic collection of key/value pairs.</div><div class="ttdef"><b>Definition</b> idictionary.hpp:35</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:42</div></div>
 <div class="ttc" id="agroup__helpers__generic__collections_html_gac7dc24539787a344466014161f2d39af"><div class="ttname"><a href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">xtd::collections::generic::helpers::allocator</a></div><div class="ttdeci">std::allocator&lt; type_t &gt; allocator</div><div class="ttdoc">Represent an allocator alias.</div><div class="ttdef"><b>Definition</b> allocator.hpp:35</div></div>
-<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1helpers_1_1equator_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">xtd::collections::generic::helpers::equator</a></div><div class="ttdoc">Implements a function object for performing comparisons. Unless specialised, invokes operator== on ty...</div><div class="ttdef"><b>Definition</b> equator.hpp:37</div></div>
+<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1helpers_1_1equator_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">xtd::collections::generic::helpers::equator</a></div><div class="ttdoc">Implements a function object for performing comparisons. Unless specialised, invokes operator== on ty...</div><div class="ttdef"><b>Definition</b> equator.hpp:38</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/dictionary</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -231,30 +231,30 @@ Classes</h2></td></tr>
 <tr class="memitem:a933f2c0b545c0485ecf052ec431db7a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a933f2c0b545c0485ecf052ec431db7a4">dictionary</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad51c920c156b8cc6863e143972f5c11b">bucket_count</a>, const hasher_t &amp;hash, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
 <tr class="memdesc:a933f2c0b545c0485ecf052ec431db7a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
 <tr class="separator:a933f2c0b545c0485ecf052ec431db7a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa272d46f729f0b3812d09dc0b66a2efe"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t &gt; </td></tr>
-<tr class="memitem:aa272d46f729f0b3812d09dc0b66a2efe"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aa272d46f729f0b3812d09dc0b66a2efe">dictionary</a> (input_iterator_t first, input_iterator_t last, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad51c920c156b8cc6863e143972f5c11b">bucket_count</a>=0, const hasher_t &amp;hash=hasher_t {}, const equator_t &amp;equal=equator_t {}, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc=<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> {}) noexcept</td></tr>
-<tr class="memdesc:aa272d46f729f0b3812d09dc0b66a2efe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
-<tr class="separator:aa272d46f729f0b3812d09dc0b66a2efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca2ecbbabe9824db7185cf18c1e81a14"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t &gt; </td></tr>
-<tr class="memitem:aca2ecbbabe9824db7185cf18c1e81a14"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aca2ecbbabe9824db7185cf18c1e81a14">dictionary</a> (input_iterator_t first, input_iterator_t last, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad51c920c156b8cc6863e143972f5c11b">bucket_count</a>, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
-<tr class="memdesc:aca2ecbbabe9824db7185cf18c1e81a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
-<tr class="separator:aca2ecbbabe9824db7185cf18c1e81a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93425f9e9aec3e2cf3f75634097afef8"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t &gt; </td></tr>
-<tr class="memitem:a93425f9e9aec3e2cf3f75634097afef8"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a93425f9e9aec3e2cf3f75634097afef8">dictionary</a> (input_iterator_t first, input_iterator_t last, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad51c920c156b8cc6863e143972f5c11b">bucket_count</a>, const hasher_t &amp;hash, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
-<tr class="memdesc:a93425f9e9aec3e2cf3f75634097afef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
-<tr class="separator:a93425f9e9aec3e2cf3f75634097afef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78fb45416d0a2a0b1d27082b7912878b"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t &gt; </td></tr>
+<tr class="memitem:a78fb45416d0a2a0b1d27082b7912878b"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a78fb45416d0a2a0b1d27082b7912878b">dictionary</a> (input_iterator_t first, input_iterator_t last, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad51c920c156b8cc6863e143972f5c11b">bucket_count</a>=0, const hasher_t &amp;hash=hasher_t {}, const equator_t &amp;equal=equator_t {}, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc=<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> {})</td></tr>
+<tr class="memdesc:a78fb45416d0a2a0b1d27082b7912878b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a78fb45416d0a2a0b1d27082b7912878b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85a1e3057a72c385fc731c20b21e9606"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t &gt; </td></tr>
+<tr class="memitem:a85a1e3057a72c385fc731c20b21e9606"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a85a1e3057a72c385fc731c20b21e9606">dictionary</a> (input_iterator_t first, input_iterator_t last, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad51c920c156b8cc6863e143972f5c11b">bucket_count</a>, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc)</td></tr>
+<tr class="memdesc:a85a1e3057a72c385fc731c20b21e9606"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a85a1e3057a72c385fc731c20b21e9606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45d7fe8271b0f7dd1776a8a99de3b1d0"><td class="memTemplParams" colspan="2">template&lt;class input_iterator_t &gt; </td></tr>
+<tr class="memitem:a45d7fe8271b0f7dd1776a8a99de3b1d0"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a45d7fe8271b0f7dd1776a8a99de3b1d0">dictionary</a> (input_iterator_t first, input_iterator_t last, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad51c920c156b8cc6863e143972f5c11b">bucket_count</a>, const hasher_t &amp;hash, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc)</td></tr>
+<tr class="memdesc:a45d7fe8271b0f7dd1776a8a99de3b1d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a45d7fe8271b0f7dd1776a8a99de3b1d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa953d39916161c5551072ee7685d48dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aa953d39916161c5551072ee7685d48dc">dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept</td></tr>
 <tr class="memdesc:aa953d39916161c5551072ee7685d48dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
 <tr class="separator:aa953d39916161c5551072ee7685d48dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5cdced64621e8ed1a148df1709ce185e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a5cdced64621e8ed1a148df1709ce185e">dictionary</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
 <tr class="memdesc:a5cdced64621e8ed1a148df1709ce185e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
 <tr class="separator:a5cdced64621e8ed1a148df1709ce185e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9956d405104fcc34db6c56f3103c52f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#aa9956d405104fcc34db6c56f3103c52f">dictionary</a> (const std::unordered_map&lt; key_t, value_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept</td></tr>
-<tr class="memdesc:aa9956d405104fcc34db6c56f3103c52f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
-<tr class="separator:aa9956d405104fcc34db6c56f3103c52f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a557c19d6693d48bfd48f2c757210ba60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a557c19d6693d48bfd48f2c757210ba60">dictionary</a> (const std::unordered_map&lt; key_t, value_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
-<tr class="memdesc:a557c19d6693d48bfd48f2c757210ba60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
-<tr class="separator:a557c19d6693d48bfd48f2c757210ba60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27cea1264d53956ff616c99322bd744a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a27cea1264d53956ff616c99322bd744a">dictionary</a> (const std::unordered_map&lt; key_t, value_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>)</td></tr>
+<tr class="memdesc:a27cea1264d53956ff616c99322bd744a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a27cea1264d53956ff616c99322bd744a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5202127b516af4f37f86d4a3f472ddc6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a5202127b516af4f37f86d4a3f472ddc6">dictionary</a> (const std::unordered_map&lt; key_t, value_t &gt; &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc)</td></tr>
+<tr class="memdesc:a5202127b516af4f37f86d4a3f472ddc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a5202127b516af4f37f86d4a3f472ddc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07b758a73f04808f26eee3fa8ce363ef"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a07b758a73f04808f26eee3fa8ce363ef">dictionary</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a> &amp;&amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept=default</td></tr>
 <tr class="memdesc:a07b758a73f04808f26eee3fa8ce363ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
 <tr class="separator:a07b758a73f04808f26eee3fa8ce363ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -273,9 +273,9 @@ Classes</h2></td></tr>
 <tr class="memitem:acd1e2bddbc888c451b97e6cd2f760250"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#acd1e2bddbc888c451b97e6cd2f760250">dictionary</a> (std::initializer_list&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a6a69009b6f6be690dbfa2591d29b28c4">base_value_type</a> &gt; init, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad51c920c156b8cc6863e143972f5c11b">bucket_count</a>, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc)</td></tr>
 <tr class="memdesc:acd1e2bddbc888c451b97e6cd2f760250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
 <tr class="separator:acd1e2bddbc888c451b97e6cd2f760250"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bae9f250664164b9ad4abcb16416213"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a6bae9f250664164b9ad4abcb16416213">dictionary</a> (std::initializer_list&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a6a69009b6f6be690dbfa2591d29b28c4">base_value_type</a> &gt; init, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad51c920c156b8cc6863e143972f5c11b">bucket_count</a>, const hasher_t &amp;hash, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc) noexcept</td></tr>
-<tr class="memdesc:a6bae9f250664164b9ad4abcb16416213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
-<tr class="separator:a6bae9f250664164b9ad4abcb16416213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0db2868740c4f2c5e70bb845654d31cf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a0db2868740c4f2c5e70bb845654d31cf">dictionary</a> (std::initializer_list&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a6a69009b6f6be690dbfa2591d29b28c4">base_value_type</a> &gt; init, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad51c920c156b8cc6863e143972f5c11b">bucket_count</a>, const hasher_t &amp;hash, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc)</td></tr>
+<tr class="memdesc:a0db2868740c4f2c5e70bb845654d31cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
+<tr class="separator:a0db2868740c4f2c5e70bb845654d31cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8f5f06c57ba2d50fffe837ff8dde852"><td class="memTemplParams" colspan="2">template&lt;class init_key_t , class init_value_t &gt; </td></tr>
 <tr class="memitem:af8f5f06c57ba2d50fffe837ff8dde852"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af8f5f06c57ba2d50fffe837ff8dde852">dictionary</a> (std::initializer_list&lt; <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a>&lt; init_key_t, init_value_t &gt; &gt; init, <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af564e40d9fd72f4ad84f8e5ae62f4610">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad51c920c156b8cc6863e143972f5c11b">bucket_count</a>=0, const hasher_t &amp;hash=hasher_t {}, const equator_t &amp;equal=equator_t {}, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> &amp;alloc=<a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad1d7f951247c504df41d30e51f987394">allocator_type</a> {})</td></tr>
 <tr class="memdesc:af8f5f06c57ba2d50fffe837ff8dde852"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes instance of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; class from a variety of data sources. Optionally uses user supplied <code>bucket_count</code> as a minimal number of buckets to create, <code>hash</code> as the hash function, <code>equal</code> as the function to compare keys and <code>alloc</code> as the allocator.  <br /></td></tr>
@@ -780,6 +780,15 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a772d50f4da23b418b7e3a523f52564b5 inherit pub_static_methods_classxtd_1_1object"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5 inherit pub_static_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 <tr class="separator:a772d50f4da23b418b7e3a523f52564b5 inherit pub_static_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_static_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators&lt; type_t, enumerable_t &gt;</a></td></tr>
+<tr class="memitem:ad9916147a6bb982b9bb7e6b658baa74f inherit pub_static_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators"><td class="memTemplParams" colspan="2">template&lt;class source_iterator_t , class source_collection_t , class target_collection_t &gt; </td></tr>
+<tr class="memitem:ad9916147a6bb982b9bb7e6b658baa74f inherit pub_static_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators"><td class="memTemplItemLeft" align="right" valign="top">static target_collection_t::const_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#ad9916147a6bb982b9bb7e6b658baa74f">to_iterator</a> (source_iterator_t value, const source_collection_t &amp;source_collection, const target_collection_t &amp;target_collection) noexcept</td></tr>
+<tr class="memdesc:ad9916147a6bb982b9bb7e6b658baa74f inherit pub_static_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
+<tr class="separator:ad9916147a6bb982b9bb7e6b658baa74f inherit pub_static_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5abd531c746d753658170de27ce8bce0 inherit pub_static_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators"><td class="memTemplParams" colspan="2">template&lt;class source_iterator_t , class source_collection_t , class target_collection_t &gt; </td></tr>
+<tr class="memitem:a5abd531c746d753658170de27ce8bce0 inherit pub_static_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators"><td class="memTemplItemLeft" align="right" valign="top">static target_collection_t::iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a5abd531c746d753658170de27ce8bce0">to_iterator</a> (source_iterator_t value, source_collection_t &amp;source_collection, target_collection_t &amp;target_collection) noexcept</td></tr>
+<tr class="memdesc:a5abd531c746d753658170de27ce8bce0 inherit pub_static_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
+<tr class="separator:a5abd531c746d753658170de27ce8bce0 inherit pub_static_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="ac46665df3307e2ef72937349cbe9a043" name="ac46665df3307e2ef72937349cbe9a043"></a>
@@ -1214,7 +1223,7 @@ This constructor is an O(1) operation. </dd></dl>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;An element with Key = \&quot;txt\&quot; already exists.&quot;</span>);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1argument__exception_html"><div class="ttname"><a href="classxtd_1_1argument__exception.html">xtd::argument_exception</a></div><div class="ttdoc">The exception that is thrown when one of the arguments provided to a method is not valid.</div><div class="ttdef"><b>Definition</b> argument_exception.hpp:24</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1dictionary_html_a8e4b572d70b69d4b688a2835a3258522"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a8e4b572d70b69d4b688a2835a3258522">xtd::collections::generic::dictionary::add</a></div><div class="ttdeci">void add(const key_t &amp;key, const value_t value) override</div><div class="ttdoc">Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...</div><div class="ttdef"><b>Definition</b> dictionary.hpp:572</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1dictionary_html_a8e4b572d70b69d4b688a2835a3258522"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a8e4b572d70b69d4b688a2835a3258522">xtd::collections::generic::dictionary::add</a></div><div class="ttdeci">void add(const key_t &amp;key, const value_t value) override</div><div class="ttdoc">Adds an element with the provided key and value to the xtd::collections::generic::dictionary &lt;key_t,...</div><div class="ttdef"><b>Definition</b> dictionary.hpp:560</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 </div><!-- fragment --> 
 </div>
@@ -1427,8 +1436,8 @@ template&lt;class key_t , class value_t , class hasher_t  = xtd::collections::ge
 
 </div>
 </div>
-<a id="aa272d46f729f0b3812d09dc0b66a2efe" name="aa272d46f729f0b3812d09dc0b66a2efe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa272d46f729f0b3812d09dc0b66a2efe">&#9670;&#160;</a></span>dictionary() <span class="overload">[6/22]</span></h2>
+<a id="a78fb45416d0a2a0b1d27082b7912878b" name="a78fb45416d0a2a0b1d27082b7912878b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78fb45416d0a2a0b1d27082b7912878b">&#9670;&#160;</a></span>dictionary() <span class="overload">[6/22]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1484,7 +1493,7 @@ template&lt;class input_iterator_t &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1505,8 +1514,8 @@ template&lt;class input_iterator_t &gt; </div>
 
 </div>
 </div>
-<a id="aca2ecbbabe9824db7185cf18c1e81a14" name="aca2ecbbabe9824db7185cf18c1e81a14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aca2ecbbabe9824db7185cf18c1e81a14">&#9670;&#160;</a></span>dictionary() <span class="overload">[7/22]</span></h2>
+<a id="a85a1e3057a72c385fc731c20b21e9606" name="a85a1e3057a72c385fc731c20b21e9606"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85a1e3057a72c385fc731c20b21e9606">&#9670;&#160;</a></span>dictionary() <span class="overload">[7/22]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1550,7 +1559,7 @@ template&lt;class input_iterator_t &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1569,8 +1578,8 @@ template&lt;class input_iterator_t &gt; </div>
 
 </div>
 </div>
-<a id="a93425f9e9aec3e2cf3f75634097afef8" name="a93425f9e9aec3e2cf3f75634097afef8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93425f9e9aec3e2cf3f75634097afef8">&#9670;&#160;</a></span>dictionary() <span class="overload">[8/22]</span></h2>
+<a id="a45d7fe8271b0f7dd1776a8a99de3b1d0" name="a45d7fe8271b0f7dd1776a8a99de3b1d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45d7fe8271b0f7dd1776a8a99de3b1d0">&#9670;&#160;</a></span>dictionary() <span class="overload">[8/22]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1620,7 +1629,7 @@ template&lt;class input_iterator_t &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1728,8 +1737,8 @@ template&lt;class key_t , class value_t , class hasher_t  = xtd::collections::ge
 
 </div>
 </div>
-<a id="aa9956d405104fcc34db6c56f3103c52f" name="aa9956d405104fcc34db6c56f3103c52f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9956d405104fcc34db6c56f3103c52f">&#9670;&#160;</a></span>dictionary() <span class="overload">[11/22]</span></h2>
+<a id="a27cea1264d53956ff616c99322bd744a" name="a27cea1264d53956ff616c99322bd744a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27cea1264d53956ff616c99322bd744a">&#9670;&#160;</a></span>dictionary() <span class="overload">[11/22]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1749,7 +1758,7 @@ template&lt;class key_t , class value_t , class hasher_t  = xtd::collections::ge
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1766,8 +1775,8 @@ template&lt;class key_t , class value_t , class hasher_t  = xtd::collections::ge
 
 </div>
 </div>
-<a id="a557c19d6693d48bfd48f2c757210ba60" name="a557c19d6693d48bfd48f2c757210ba60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a557c19d6693d48bfd48f2c757210ba60">&#9670;&#160;</a></span>dictionary() <span class="overload">[12/22]</span></h2>
+<a id="a5202127b516af4f37f86d4a3f472ddc6" name="a5202127b516af4f37f86d4a3f472ddc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5202127b516af4f37f86d4a3f472ddc6">&#9670;&#160;</a></span>dictionary() <span class="overload">[12/22]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1797,7 +1806,7 @@ template&lt;class key_t , class value_t , class hasher_t  = xtd::collections::ge
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2111,8 +2120,8 @@ template&lt;class key_t , class value_t , class hasher_t  = xtd::collections::ge
 
 </div>
 </div>
-<a id="a6bae9f250664164b9ad4abcb16416213" name="a6bae9f250664164b9ad4abcb16416213"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bae9f250664164b9ad4abcb16416213">&#9670;&#160;</a></span>dictionary() <span class="overload">[19/22]</span></h2>
+<a id="a0db2868740c4f2c5e70bb845654d31cf" name="a0db2868740c4f2c5e70bb845654d31cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0db2868740c4f2c5e70bb845654d31cf">&#9670;&#160;</a></span>dictionary() <span class="overload">[19/22]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2154,7 +2163,7 @@ template&lt;class key_t , class value_t , class hasher_t  = xtd::collections::ge
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -6106,7 +6115,7 @@ template&lt;class key_t , class value_t , class hasher_t  = xtd::collections::ge
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 11 2025 22:29:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 13 2025 18:54:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
