@@ -217,6 +217,46 @@ namespace xtd {
           /// @return Iterator to the element following the last element.
           virtual iterator end() {return iterator::end(static_cast<enumerable_t*>(this));}
           /// @}
+
+          /// @name Public Static Methods
+          
+          /// @{
+          /// @brief Converts source iterator to target iterator.
+          /// @param value The source iterator to convert.
+          /// @param source The source collection from which the source iterator originates.
+          /// @param target_collection The target collection from which the target iterator originates.
+          /// @return The converted target iterator.
+          /// @remarks This converter is used only to convert a source iterator position into a target iterator position.
+          /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
+          /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
+          template<class source_iterator_t, class source_collection_t, class target_collection_t>
+          static typename target_collection_t::const_iterator to_iterator(source_iterator_t value, const source_collection_t& source_collection, const target_collection_t& target_collection) noexcept {
+            if (value == source_collection.begin()) return target_collection.begin();
+            if (value == source_collection.end()) return target_collection.end();
+
+            auto result = target_collection.begin();
+            for (auto index = ptrdiff {}; index < std::distance(source_collection.begin(), value); ++index, ++result);
+            return result;
+          }
+          
+          /// @brief Converts source iterator to target iterator.
+          /// @param value The source iterator to convert.
+          /// @param source The source collection from which the source iterator originates.
+          /// @param target_collection The target collection from which the target iterator originates.
+          /// @return The converted target iterator.
+          /// @remarks This converter is used only to convert a source iterator position into a target iterator position.
+          /// @note This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this.
+          /// @remarks The distance to move the target iterator is calculated with `std::distance(source_collection.begin(), value);`. Then simply move the target iterator from `target_collection.begin();`.
+          template<class source_iterator_t, class source_collection_t, class target_collection_t>
+          static typename target_collection_t::iterator to_iterator(source_iterator_t value, source_collection_t& source_collection, target_collection_t& target_collection) noexcept {
+            if (value == source_collection.begin()) return target_collection.begin();
+            if (value == source_collection.end()) return target_collection.end();
+
+            auto result = target_collection.begin();
+            for (auto index = ptrdiff {}; index < std::distance(source_collection.begin(), value); ++index, ++result);
+            return result;
+          }
+          /// @}
         };
       }
     }
