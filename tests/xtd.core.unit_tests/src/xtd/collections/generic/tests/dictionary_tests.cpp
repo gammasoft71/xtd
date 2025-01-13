@@ -719,9 +719,9 @@ namespace xtd::collections::generic::tests {
 
     void test_method_(erase_with_key) {
       auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
-      assert::are_equal(1, items.erase(4));
+      assert::are_equal(1_z, items.erase(4));
       assert::is_false(items.contains_key(4));
-      assert::are_equal(0, items.erase(6));
+      assert::are_equal(0_z, items.erase(6));
       assert::is_false(items.contains_key(6));
     }
 
