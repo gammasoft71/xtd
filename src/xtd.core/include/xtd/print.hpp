@@ -17,13 +17,13 @@ namespace xtd {
   /// @exceprion xtd::null_pointer_exception the `file`pointer is null.
   template<class arg_t>
   void print(FILE* file, arg_t&& value) {
-    __xtd_print_with_file_write__(file, string::format("{}",  value));
+    __xtd_print_with_file_write__(false, file, string::format("{}",  value));
   }
   
   /// @cond
   template<class type_t>
   void print(FILE* file, std::initializer_list<type_t>&& il) {
-    __xtd_print_with_file_write__(file, string::format("{}",  il));
+    __xtd_print_with_file_write__(false, file, string::format("{}",  il));
   }
   /// @endcond
   
@@ -35,7 +35,7 @@ namespace xtd {
   /// @exceprion xtd::null_pointer_exception the `file`pointer is null.
   template<class ...args_t>
   void print(FILE* file, const xtd::string& fmt, args_t&& ... values) {
-    __xtd_print_with_file_write__(file, string::format(fmt, std::forward<args_t>(values)...));
+    __xtd_print_with_file_write__(false, file, string::format(fmt, std::forward<args_t>(values)...));
   }
   /// @brief Writes the text representation of the specified list of values to the file output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
@@ -45,7 +45,7 @@ namespace xtd {
   /// @exceprion xtd::null_pointer_exception the `file`pointer is null.
   template<class ...args_t>
   void print(FILE* file, const char* fmt, args_t&& ... values) {
-    __xtd_print_with_file_write__(file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
+    __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
 #if defined(__xtd__cpp_lib_char8_t)
   /// @brief Writes the text representation of the specified list of values to the file output stream using the specified format information.
@@ -56,7 +56,7 @@ namespace xtd {
   /// @exceprion xtd::null_pointer_exception the `file`pointer is null.
   template<class ...args_t>
   void print(FILE* file, const char8_t* fmt, args_t&& ... values) {
-    __xtd_print_with_file_write__(file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
+    __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
 #endif
   /// @brief Writes the text representation of the specified list of values to the file output stream using the specified format information.
@@ -67,7 +67,7 @@ namespace xtd {
   /// @exceprion xtd::null_pointer_exception the `file`pointer is null.
   template<class ...args_t>
   void print(FILE* file, const char16_t* fmt, args_t&& ... values) {
-    __xtd_print_with_file_write__(file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
+    __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
   /// @brief Writes the text representation of the specified list of values to the file output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
@@ -77,7 +77,7 @@ namespace xtd {
   /// @exceprion xtd::null_pointer_exception the `file`pointer is null.
   template<class ...args_t>
   void print(FILE* file, const char32_t* fmt, args_t&& ... values) {
-    __xtd_print_with_file_write__(file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
+    __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
   /// @brief Writes the text representation of the specified list of values to the file output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
@@ -87,7 +87,7 @@ namespace xtd {
   /// @exceprion xtd::null_pointer_exception the `file`pointer is null.
   template<class ...args_t>
   void print(FILE* file, const wchar_t* fmt, args_t&& ... values) {
-    __xtd_print_with_file_write__(file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
+    __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
 
   /// @brief Writes the text representation of the specified value to the output stream.
@@ -96,13 +96,13 @@ namespace xtd {
   /// @param value The value to write,
   template<class arg_t>
   void print(std::ostream& os, arg_t&& value) {
-    __xtd_print_with_ostream_write__(os, string::format("{}",  value));
+    __xtd_print_with_ostream_write__(false, os, string::format("{}",  value));
   }
   
   /// @cond
   template<class type_t>
   void print(std::ostream& os, std::initializer_list<type_t>&& il) {
-    __xtd_print_with_ostream_write__(os, string::format("{}",  il));
+    __xtd_print_with_ostream_write__(false, os, string::format("{}",  il));
   }
   /// @endcond
   
@@ -113,7 +113,7 @@ namespace xtd {
   /// @param values Values to write,
   template<class ...args_t>
   void print(std::ostream& os, const xtd::string& fmt, args_t&& ... values) {
-    __xtd_print_with_ostream_write__(os, string::format(fmt, std::forward<args_t>(values)...));
+    __xtd_print_with_ostream_write__(false, os, string::format(fmt, std::forward<args_t>(values)...));
   }
   /// @brief Writes the text representation of the specified list of values to the output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
@@ -122,7 +122,7 @@ namespace xtd {
   /// @param values Values to write,
   template<class ...args_t>
   void print(std::ostream& os, const char* fmt, args_t&& ... values) {
-    __xtd_print_with_ostream_write__(os, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
+    __xtd_print_with_ostream_write__(false, os, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
 #if defined(__xtd__cpp_lib_char8_t)
   /// @brief Writes the text representation of the specified list of values to the output stream using the specified format information.
@@ -132,7 +132,7 @@ namespace xtd {
   /// @param values Values to write,
   template<class ...args_t>
   void print(std::ostream& os, const char8_t* fmt, args_t&& ... values) {
-    __xtd_print_with_ostream_write__(os, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
+    __xtd_print_with_ostream_write__(false, os, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
 #endif
   /// @brief Writes the text representation of the specified list of values to the output stream using the specified format information.
@@ -142,7 +142,7 @@ namespace xtd {
   /// @param values Values to write,
   template<class ...args_t>
   void print(std::ostream& os, const char16_t* fmt, args_t&& ... values) {
-    __xtd_print_with_ostream_write__(os, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
+    __xtd_print_with_ostream_write__(false, os, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
   /// @brief Writes the text representation of the specified list of values to the output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
@@ -151,7 +151,7 @@ namespace xtd {
   /// @param values Values to write,
   template<class ...args_t>
   void print(std::ostream& os, const char32_t* fmt, args_t&& ... values) {
-    __xtd_print_with_ostream_write__(os, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
+    __xtd_print_with_ostream_write__(false, os, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
   /// @brief Writes the text representation of the specified list of values to the output stream using the specified format information.
   /// @tparam ...args_t Types of the values to write.
@@ -160,7 +160,7 @@ namespace xtd {
   /// @param values Values to write,
   template<class ...args_t>
   void print(std::ostream& os, const wchar_t* fmt, args_t&& ... values) {
-    __xtd_print_with_ostream_write__(os, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
+    __xtd_print_with_ostream_write__(false, os, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
   }
   
   /// @brief Writes the text representation of the specified value to the standard output stream.
