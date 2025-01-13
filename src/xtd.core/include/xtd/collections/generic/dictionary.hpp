@@ -667,7 +667,7 @@ namespace xtd {
         key_value_pair<iterator, bool> emplace(args_t&& ...args) {
           const auto& [iterator, succeeded] = data_->items.emplace(std::forward<args_t>(args)...);
           if (succeeded) ++data_->version;
-          return {to_iterator(iterator), succeeded};
+          return {to_type_iterator(iterator), succeeded};
         }
 
         /// @brief constructs elements in-place using a hint
@@ -681,7 +681,7 @@ namespace xtd {
         template <class ...args_t>
         iterator emplace_hint(iterator hint, args_t&& ...args) {
           ++data_->version;
-          return to_iterator(data_->items.emplace_hint(to_base_type_iterator(hint), std::forward<args_t>(args)...));
+          return to_type_iterator(data_->items.emplace_hint(to_base_type_iterator(hint), std::forward<args_t>(args)...));
         }
         
         /// @brief Returns an iterator to the end of the specified bucket.
@@ -706,7 +706,7 @@ namespace xtd {
         /// @remarks Returns a range containing all elements with key `key` in the container. The range is defined by two iterators, the first pointing to the first element of the wanted range and the second pointing past the last element of the range.
         key_value_pair<iterator, iterator> equal_range(const key_t& key) {
           const auto& [first, last] = data_->items.equal_range(key);
-          return {to_iterator(first), to_iterator(last)};
+          return {to_type_iterator(first), to_type_iterator(last)};
         }
         
         /// @brief Returns range of elements matching a specific key.
@@ -716,7 +716,7 @@ namespace xtd {
         template <class equal_range_key_t>
         key_value_pair<const_iterator, const_iterator> equal_range(const equal_range_key_t& key) const {
           const auto& [first, last] = data_->items.equal_range(key);
-          return {to_iterator(first), to_iterator(last)};
+          return {to_type_iterator(first), to_type_iterator(last)};
         }
         
         /// @brief Returns range of elements matching a specific key.
@@ -726,7 +726,7 @@ namespace xtd {
         template <class equal_range_key_t>
         key_value_pair<iterator, iterator> equal_range(const equal_range_key_t& x) {
           const auto& [first, last] = data_->items.equal_range(x);
-          return {to_iterator(first), to_iterator(last)};
+          return {to_type_iterator(first), to_type_iterator(last)};
         }
         
         /// @brief Returns range of elements matching a specific key.
@@ -735,7 +735,7 @@ namespace xtd {
         /// @remarks Returns a range containing all elements in the container with key equivalent to `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such Hash is callable with both `equal_range_key_t` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `Key`.
         key_value_pair<const_iterator, const_iterator> equal_range(const key_t& x) const {
           const auto& [first, last] = data_->items.equal_range(x);
-          return {to_iterator(first), to_iterator(last)};
+          return {to_type_iterator(first), to_type_iterator(last)};
         }
 
         /// @brief Erases elements.
@@ -747,7 +747,7 @@ namespace xtd {
         /// @remarks The iterator `pos` must be valid and dereferenceable. Thus the xtd::collections::generic::dictionary::end iterator (which is valid, but is not dereferenceable) cannot be used as a value for `pos`.
         iterator erase(const_iterator pos) {
           ++data_->version;
-          return to_iterator(data_->items.erase(to_base_type_iterator(pos)));
+          return to_type_iterator(data_->items.erase(to_base_type_iterator(pos)));
         }
         /// @brief Erases elements.
         /// @param first The first iterator of the range of elements to remove.
@@ -759,7 +759,7 @@ namespace xtd {
         /// @remarks The iterator `pos` must be valid and dereferenceable. Thus the xtd::collections::generic::dictionary::end() iterator (which is valid, but is not dereferenceable) cannot be used as a value for `pos`.
         iterator erase(const_iterator first, const_iterator last) {
           ++data_->version;
-          return to_iterator(data_->items.erase(to_base_type_iterator(first), to_base_type_iterator(last)));
+          return to_type_iterator(data_->items.erase(to_base_type_iterator(first), to_base_type_iterator(last)));
         }
         /// @brief Erases elements.
         /// @param key The key value of the elements to remove.
@@ -800,7 +800,7 @@ namespace xtd {
         /// @return An iterator to the requested element. If no such element is found, past-the-end (see xtd::collections::generic::dictionary::end) iterator is returned.
         /// @remarks Finds an element with key equivalent to `key`.
         const_iterator find(const key_t& key) const {
-          return to_iterator(data_->items.find(key));
+          return to_type_iterator(data_->items.find(key));
         }
         
         /// @brief Finds element with specific key.
@@ -808,7 +808,7 @@ namespace xtd {
         /// @return An iterator to the requested element. If no such element is found, past-the-end (see xtd::collections::generic::dictionary::end) iterator is returned.
         /// @remarks Finds an element with key equivalent to `key`.
         iterator find(const key_t& key) {
-          return to_iterator(data_->items.find(key));
+          return to_type_iterator(data_->items.find(key));
         }
         
         /// @brief Finds element with specific key.
@@ -817,7 +817,7 @@ namespace xtd {
         /// @remarks Finds an element with key that compares equivalent to the value `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such `hasher_t` is callable with both `find_key_t` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `key_t`.
         template <class find_key_t>
         const_iterator find(const find_key_t& x) const {
-          return to_iterator(data_->items.find(x));
+          return to_type_iterator(data_->items.find(x));
         }
         
         /// @brief Finds element with specific key.
@@ -825,7 +825,7 @@ namespace xtd {
         /// @remarks Finds an element with key that compares equivalent to the value `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such `hasher_t` is callable with both `find_key_t` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `key_t`.
         template <class find_key_t>
         iterator find(const find_key_t& x) {
-          return to_iterator(data_->items.find(x));
+          return to_type_iterator(data_->items.find(x));
         }
 
         /// @brief Returns the allocator associated with the container.
@@ -889,7 +889,7 @@ namespace xtd {
         key_value_pair<iterator, bool> insert(const value_type& value) {
           const auto& [iterator, succeeded] = data_->items.insert(value);
           if (succeeded) ++data_->version;
-          return {to_iterator(iterator), succeeded};
+          return {to_type_iterator(iterator), succeeded};
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param value The element value to insert.
@@ -900,7 +900,7 @@ namespace xtd {
         key_value_pair<iterator, bool> insert(value_type&& value) {
           const auto& [iterator, succeeded] = data_->items.insert(value);
           if (succeeded) ++data_->version;
-          return {to_iterator(iterator), succeeded};
+          return {to_type_iterator(iterator), succeeded};
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param value The element value to insert.
@@ -913,7 +913,7 @@ namespace xtd {
         key_value_pair<iterator, bool> insert(type_t&& value) {
           const auto& [iterator, succeeded] = data_->items.insert(value);
           if (succeeded) ++data_->version;
-          return {to_iterator(iterator), succeeded};
+          return {to_type_iterator(iterator), succeeded};
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param hint The iterator, used as a suggestion as to where to insert the content.
@@ -924,7 +924,7 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         iterator insert(const_iterator hint, const value_type& value) {
           ++data_->version;
-          return to_iterator(data_->items.insert(to_base_type_iterator(hint), value));
+          return to_type_iterator(data_->items.insert(to_base_type_iterator(hint), value));
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param hint The iterator, used as a suggestion as to where to insert the content.
@@ -935,7 +935,7 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
         iterator insert(const_iterator hint, value_type&& value) {
           ++data_->version;
-          return to_iterator(data_->items.insert(to_base_type_iterator(hint), value));
+          return to_type_iterator(data_->items.insert(to_base_type_iterator(hint), value));
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param hint The iterator, used as a suggestion as to where to insert the content.
@@ -948,7 +948,7 @@ namespace xtd {
         template <class type_t>
         iterator insert(const_iterator hint, type_t&& value) {
           ++data_->version;
-          return to_iterator(data_->items.insert(to_base_type_iterator(hint), value));
+          return to_type_iterator(data_->items.insert(to_base_type_iterator(hint), value));
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param first The first iterator of the range of elements to insert.
@@ -1006,7 +1006,7 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
         iterator insert(const_iterator hint, node_type&& nh) {
           ++data_->version;
-          return to_iterator(data_->items.inser(to_base_type_iterator(hint), nh));
+          return to_type_iterator(data_->items.inser(to_base_type_iterator(hint), nh));
         }
         
         /// @brief Inserts an element or assigns to the current element if the key already exists.
@@ -1020,7 +1020,7 @@ namespace xtd {
         key_value_pair<iterator, bool> insert_or_assign(const key_t& k, type_t&& obj) {
           const auto& [iterator, succeeded] = data_->items.insert_or_assign(k, obj);
           if (succeeded) ++data_->version;
-          return {to_iterator(iterator), succeeded};
+          return {to_type_iterator(iterator), succeeded};
         }
         /// @brief Inserts an element or assigns to the current element if the key already exists.
         /// @param k The key used both to look up and to insert if not found.
@@ -1033,7 +1033,7 @@ namespace xtd {
         key_value_pair<iterator, bool> insert_or_assign(key_t&& k, type_t&& obj) {
           const auto& [iterator, succeeded] = data_->items.insert_or_assign(std::move(k), obj);
           if (succeeded) ++data_->version;
-          return {to_iterator(iterator), succeeded};
+          return {to_type_iterator(iterator), succeeded};
         }
         /// @brief Inserts an element or assigns to the current element if the key already exists.
         /// @param hint The iterator to the position before which the new element will be inserted.
@@ -1046,7 +1046,7 @@ namespace xtd {
         template <class type_t>
         iterator insert_or_assign(const_iterator hint, const key_t& k, type_t&& obj) {
           ++data_->version;
-          return to_iterator(data_->items.insert_or_assign(to_base_type_iterator(hint), k, obj));
+          return to_type_iterator(data_->items.insert_or_assign(to_base_type_iterator(hint), k, obj));
         }
         /// @brief Inserts an element or assigns to the current element if the key already exists.
         /// @param hint The iterator to the position before which the new element will be inserted.
@@ -1059,7 +1059,7 @@ namespace xtd {
         template <class type_t>
         iterator insert_or_assign(const_iterator hint, key_t&& k, type_t&& obj) {
           ++data_->version;
-          return to_iterator(data_->items.insert_or_assign(to_base_type_iterator(hint), std::move(k), obj));
+          return to_type_iterator(data_->items.insert_or_assign(to_base_type_iterator(hint), std::move(k), obj));
         }
         
         /// @brief Returns the function used to compare keys for equality.
@@ -1162,9 +1162,9 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
         template <class ...args_t>
         key_value_pair<iterator, bool> try_emplace(const key_t& k, args_t&&... args) {
-          const auto& [iterator, succeeded] = to_iterator(data_->items.try_emplace(k, std::forward<args_t>(args)...));
+          const auto& [iterator, succeeded] = to_type_iterator(data_->items.try_emplace(k, std::forward<args_t>(args)...));
           if (succeeded) ++data_->version;
-          return {to_iterator(iterator), succeeded};
+          return {to_type_iterator(iterator), succeeded};
         }
         /// @brief Inserts in-place if the key does not exist, does nothing if the key exists.
         /// @param k The key used both to look up and to insert if not found.
@@ -1175,9 +1175,9 @@ namespace xtd {
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
         template <class ...args_t>
         key_value_pair<iterator, bool> try_emplace(key_t&& k, args_t&&... args) {
-          const auto& [iterator, succeeded] = to_iterator(data_->items.try_emplace(std::move(k), std::forward<args_t>(args)...));
+          const auto& [iterator, succeeded] = to_type_iterator(data_->items.try_emplace(std::move(k), std::forward<args_t>(args)...));
           if (succeeded) ++data_->version;
-          return {to_iterator(iterator), succeeded};
+          return {to_type_iterator(iterator), succeeded};
         }
         /// @brief Inserts in-place if the key does not exist, does nothing if the key exists.
         /// @param hint The iterator to the position before which the new element will be inserted.
@@ -1190,7 +1190,7 @@ namespace xtd {
         template <class ...args_t>
         iterator try_emplace(const_iterator hint, const key_t& k, args_t&&... args) {
           ++data_->version;
-          return to_iterator(data_->items.try_emplace(to_base_type_iterator(hint), k, std::forward<args_t>(args)...));
+          return to_type_iterator(data_->items.try_emplace(to_base_type_iterator(hint), k, std::forward<args_t>(args)...));
         }
         /// @brief Inserts in-place if the key does not exist, does nothing if the key exists.
         /// @param hint The iterator to the position before which the new element will be inserted.
@@ -1203,7 +1203,7 @@ namespace xtd {
         template <class ...args_t>
         iterator try_emplace(const_iterator hint, key_t&& k, args_t&&... args) {
           ++data_->version;
-          return to_iterator(data_->items.try_emplace(to_base_type_iterator(hint), std::move(k), std::forward<args_t>(args)...));
+          return to_type_iterator(data_->items.try_emplace(to_base_type_iterator(hint), std::move(k), std::forward<args_t>(args)...));
         }
         /// @}
         
@@ -1281,18 +1281,21 @@ namespace xtd {
         /// @}
 
       private:
+        typename base_type::const_iterator to_base_type_iterator(const_iterator value) const noexcept {
+          return idictionary<key_t, value_t>::to_iterator(value, *this, data_->items);
+        }
+        
         typename base_type::iterator to_base_type_iterator(iterator value) noexcept {
-          if (value == begin()) return data_->items.begin();
-          if (value == end()) return data_->items.end();
-          return data_->items.begin() + std::distance(begin(), value);
+          return idictionary<key_t, value_t>::to_iterator(value, *this, data_->items);
         }
         
-        iterator to_iterator(typename base_type::iterator value) noexcept {
-          if (value == data_->items.begin()) return begin();
-          if (value == data_->items.end()) return end();
-          return begin() + std::distance(data_->items.begin(), value);
+        const_iterator to_type_iterator(typename base_type::const_iterator value) const noexcept {
+          return idictionary<key_t, value_t>::to_iterator(value, data_->items, *this);
         }
         
+        iterator to_type_iterator(typename base_type::iterator value) noexcept {
+          return idictionary<key_t, value_t>::to_iterator(value, data_->items, *this);
+        }
 
         struct data {
           data() : items {size_type {}, hasher {}, equator {}, allocator_type {}} {}
