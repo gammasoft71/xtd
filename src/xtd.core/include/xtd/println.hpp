@@ -2,6 +2,7 @@
 /// @brief Contains xtd::println methods.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "environment.hpp"
 #include "print.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
