@@ -487,7 +487,7 @@ namespace xtd {
         /// @remarks The capacity of a xtd::collections::generic::dictionary <key_t, value_t> is the number of elements that the xtd::collections::generic::dictionary <key_t, value_t> can store. The xtd::collections::generic::dictionary::count property is the number of elements that are actually in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @remarks The capacity is always greater than or equal to xtd::collections::generic::dictionary::count. If xtd::collections::generic::dictionary::count exceeds the capacity while adding elements, the capacity is increased by automatically reallocating the internal array before copying the old elements and adding the new elements.
         /// @remarks Getting the value of this property is an O(1) operation.
-        size_type count() const noexcept {return data_->items.size();}
+        size_type count() const noexcept override {return data_->items.size();}
 
         /// @brief Checks if the container has no elements, i.e. whether `begin() == end()`.
         /// @return `true` if the container is empty; otherwise `false`.
@@ -500,6 +500,27 @@ namespace xtd {
         /// @brief Returns an iterator to the element following the last element of the enumarable.
         /// @return Iterator to the element following the last element.
         iterator end() noexcept override {return ienumerable<value_type>::cend();}
+        
+        /// @brief Gets a value indicating whether the xtd::collections::generic::icollection <type_t> is read-only.
+        /// @return true if the xtd::collections::generic::icollection <type_t> is read-only; otherwise, false.
+        /// @remarks A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the xtd::collections::generic::icollection <type_t> interface only supports addition and removal operations. For example, the IsReadOnly property of an array that is cast or converted to an xtd::collections::generic::icollection <type_t> object returns true, even though individual array elements can be modified.
+        bool is_read_only() const noexcept override {return false;}
+
+        /// @brief Gets a value indicating whether access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe).
+        /// @return true if access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe); otherwise, false.
+        /// @remarks xtd::collections::generic::icollection::sync_root returns an object, which can be used to synchronize access to the xtd::collections::generic::icollection <type_t>.
+        /// @remarks Most collection classes in the xtd::collections namespace also implement a `synchronized` method, which provides a synchronized wrapper around the underlying collection.
+        /// @remarks Enumerating through a collection is intrinsically not a thread-safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads.
+        /// @remarks The following code example shows how to lock the collection using the xtd::collections::generic::icollection::sync_root property during the entire enumeration.
+        /// @code
+        /// icollection& my_collection = some_collection;
+        /// lock_(my_collection.sync_root()) {
+        ///   for (auto item : my_collection) {
+        ///     // Insert your code here.
+        ///   }
+        /// }
+        /// @endcode
+        bool is_synchronized() const noexcept override {return false;}
         
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
@@ -546,6 +567,29 @@ namespace xtd {
         /// @remarks Getting the value of this property is an O(1) operation.
         size_type size() const noexcept {return data_->items.size();}
 
+        /// @brief Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
+        /// @return An object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
+        /// @remarks For collections whose underlying store is not publicly available, the expected implementation is to return the current instance. Note that the pointer to the current instance might not be sufficient for collections that wrap other collections; those should return the underlying collection's `sync_root` property.
+        /// @remarks Most collection classes in the xts::.collections namespace also implement a `synchronized` method, which provides a synchronized wrapper around the underlying collection. However, derived classes can provide their own synchronized version of the collection using the xtd::collections::generic::icollection::sync_root property. The synchronizing code must perform operations on the xtd::collections::generic::icollection::sync_root property of the collection, not directly on the collection. This ensures proper operation of collections that are derived from other objects. Specifically, it maintains proper synchronization with other threads that might be simultaneously modifying the collection instance.
+        /// @remarks In the absence of a `synchronized` method on a collection, the expected usage for the xtd::collections::generic::icollection::sync_root looks as follows:
+        /// @code
+        /// icollection& my_collection = some_collection;
+        /// lock_(my_collection.sync_root()) {
+        ///   // Some operation on the collection, which is now thread safe.
+        /// }
+        /// @encode
+        /// @remarks Enumerating through a collection is intrinsically not a thread-safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads.
+        /// @remarks The following code example shows how to lock the collection using the xtd::collections::generic::icollection::sync_root property during the entire enumeration.
+        /// @code
+        /// icollection& my_collection = some_collection;
+        /// lock_(my_collection.sync_root()) {
+        ///   for (auto item : my_collection) {
+        ///     // Insert your code here.
+        ///   }
+        /// }
+        /// @endcode
+        const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
+
         /// @brief Gets a collection containing the values in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @return A xtd::collections::generic::dictionary::value_collection containing the values in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @remarks The order of the values in the xtd::collections::generic::dictionary::value_collection is unspecified, but it is the same order as the associated keys in the xtd::collections::generic::dictionary::key_collection returned by the xtd::collections::generic::dictionary::keys property.
@@ -570,6 +614,14 @@ namespace xtd {
         void add(const key_t& key, const value_t value) override {
           if (!try_add(key, value)) throw xtd::argument_exception {};
         }
+        
+        /// @brief Adds an item to the xtd::collections::generic::icollection <type_t>.
+        /// @param item The object to add to the xtd::collections::generic::icollection <type_t>.
+        /// @exception xtd::not_supported_exception The xtd::collections::generic::icollection <type_t> is read-only.
+        void add(const value_type& item) override {
+          add(item.key(), item.value());
+        }
+
 
         /// @brief Gets the element with the specified key.
         /// @param key The key of the element to get.
@@ -637,7 +689,7 @@ namespace xtd {
 
         /// @brief Removes all keys and values from the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @remarks The xtd::collections::generic::dictionary::count property is set to 0, and references to other objects from elements of the collection are also released. The capacity remains unchanged.
-        void clear() noexcept {
+        void clear() noexcept override {
           data_->items.clear();
           ++data_->version;
         }
@@ -658,7 +710,7 @@ namespace xtd {
         /// @brief Determines whether an element is in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @param item The object to be added to the end of the xtd::collections::generic::dictionary <key_t, value_t>. The value can ! be null for reference types.
         /// @return `true` if the xtd::collections::generic::dictionary <key_t, value_t> contains an element with the specified `item` ; otherwise, `false`.
-        bool contains(const value_type& item) const noexcept {
+        bool contains(const value_type& item) const noexcept override {
           auto iterator = find(item.key());
           if (iterator == end()) return false;
           return iterator->value() == item.value();
@@ -678,6 +730,17 @@ namespace xtd {
           return false;
         }
         
+        /// @brief Copies the elements of the xtd::collections::generic::icollection <type_t> to an xtd::array, starting at a particular xtd::array index.
+        /// @param array The one-dimensional xtd::array that is the destination of the elements copied from xtd::collections::generic::icollection <type_t>. The xtd::array must have zero-based indexing.
+        /// @param array_index The zero-based index in `array` at which copying begins.
+        /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::icollection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
+        void copy_to(xtd::array<value_type>& array, xtd::size array_index) const override {
+          if (array_index + count() > array.size()) throw xtd::argument_exception {};
+          auto index = size_type {0};
+          for (const auto& item : *this)
+            array[array_index + index++] = item;
+        }
+
         /// @brief Constructs element in-place.
         /// @param args The arguments to forward to the constructor of the element.
         /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to `true` if and only if the insertion took place.
@@ -1179,7 +1242,7 @@ namespace xtd {
         /// @brief Removes the first occurrence of a specific object from the Dictionary<TKey, TValue>.
         /// @param item The object to remove from the Dictionary<TKey, TValue>.
         /// @return `true` if item is successfully removed; otherwise, `false`. This method also returns `false` if item value was not found in the Dictionary<TKey, TValue>.
-        bool remove(const value_type& item) noexcept {
+        bool remove(const value_type& item) noexcept override {
           if (!contains_value(item.value())) return false;
           return erase(item.key()) == 1;
         }

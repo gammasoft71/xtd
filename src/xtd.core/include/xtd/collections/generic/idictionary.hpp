@@ -41,7 +41,7 @@ namespace xtd {
       ///   console::write_line("key = {}, value = {}", key, value);
       /// ```
       template<class key_t, class value_t>
-      class idictionary : public xtd::collections::generic::ienumerable<xtd::collections::generic::key_value_pair<key_t, value_t>> /* xtd::collections::generic::icollection<xtd::collections::generic::key_value_pair<key_t, value_t>> */ {
+      class idictionary : public xtd::collections::generic::icollection<xtd::collections::generic::key_value_pair<key_t, value_t>> {
       public:
         /// @name Public Aliases
         
@@ -63,13 +63,13 @@ namespace xtd {
         /// @}
         
         /// @name Public Properties
-
+        
         /// @{
         /// @brief Gets an xtd::collections::generic::icollection <type_t> containing the keys of the xtd::collections::generic::idictionary <key_t, value_t>.
         /// @return An xtd::collections::generic::icollection <type_t> containing the keys of the object that implements xtd::collections::generic::idictionary <key_t, value_t>.
         /// @remarks The order of the keys in the returned xtd::collections::generic::icollection <type_t> is unspecified, but it is guaranteed to be the same order as the corresponding values in the xtd::collections::generic::icollection <type_t> returned by the xtd::collections::generic::idictionary::values property.
         virtual key_collection keys() const noexcept = 0;
-
+        
         /// @brief Gets an xtd::collections::generic::icollection <type_t> containing the values of the xtd::collections::generic::idictionary <key_t, value_t>.
         /// @return An xtd::collections::generic::icollection <type_t> containing the values of the object that implements xtd::collections::generic::idictionary <key_t, value_t>.
         /// @remarks The order of the values in the returned xtd::collections::generic::icollection <type_t> is unspecified, but it is guaranteed to be the same order as the corresponding values in the xtd::collections::generic::icollection <type_t> returned by the xtd::collections::generic::idictionary::keys property.
@@ -79,6 +79,7 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
+        using icollection<xtd::collections::generic::key_value_pair<key_t, value_t>>::add;
         /// @brief Adds an element with the provided key and value to the xtd::collections::generic::idictionary <key_t, value_t>.
         /// @param key The object to use as the key of the element to add.
         /// @param value The object to use as the value of the element to add.
@@ -88,7 +89,7 @@ namespace xtd {
         /// @remarks Implementations can vary in how they determine equality of objects; for example, the xtd::collections::generic::list <type_t> class uses xtd::collections::generic::comparer::default_comparer, whereas the xtd::collections::generic::dictionary <key_t,value_t> class allows the user to specify the xtd::collections::generic::icomparer <type_t> implementation to use for comparing keys.
         virtual void add(const key_t& key, const value_t value) = 0;
         /// @}
-
+        
         /// @name Public Operators
         
         /// @{
@@ -115,3 +116,4 @@ namespace xtd {
     }
   }
 }
+
