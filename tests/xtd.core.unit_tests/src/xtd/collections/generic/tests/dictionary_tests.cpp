@@ -4,8 +4,10 @@
 #include <xtd/tunit/valid>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
+#include <xtd/as>
 #include <xtd/environment>
 #include <xtd/literals>
+#include <xtd/math>
 #include <xtd/size_object>
 
 using namespace xtd;
@@ -465,9 +467,14 @@ namespace xtd::collections::generic::tests {
       auto items = dictionary<string, int> {};
       assert::is_zero(items.capacity());
       items.add("one", 1);
-      assert::are_equal(1_z, items.capacity());
+      assert::is_greater_or_equal(items.capacity(), 1_z);
+      assert::are_equal(as<xtd::size>(math::ceiling(items.count() / items.load_factor())), items.capacity());
       items.add("two", 2);
-      assert::are_equal(2_z, items.capacity());
+      assert::is_greater_or_equal(items.capacity(), 2_z);
+      assert::are_equal(as<xtd::size>(math::ceiling(items.count() / items.load_factor())), items.capacity());
+      items.reserve(1000);
+      assert::is_greater_or_equal(items.capacity(), 1000_z);
+      assert::are_equal(as<xtd::size>(math::ceiling(items.count() / items.load_factor())), items.capacity());
     }
     
     void test_method_(cbegin) {
@@ -723,6 +730,36 @@ namespace xtd::collections::generic::tests {
       assert::is_false(items.contains_key(4));
       assert::are_equal(0_z, items.erase(6));
       assert::is_false(items.contains_key(6));
+    }
+    
+    void test_method_(find_with_key) {
+      auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
+      const auto& [key, value] = *items.find(3);
+      assert::are_equal(3, key);
+      assert::are_equal("three", value);
+      assert::are_equal(items.end(), items.find(6));
+    }
+
+    void test_method_(get_allocator) {
+      auto items = dictionary<string, string> {};
+      auto allocator = items.get_allocator();
+      assert::is_instance_of<dictionary<string, string>::allocator_type>(allocator);
+    }
+    
+    void test_method_(get_enumerator) {
+      auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
+      auto enumerator = items.get_enumerator();
+      assert::is_true(enumerator.move_next());
+      assert::is_true(items.contains(enumerator.current()));
+      assert::is_true(enumerator.move_next());
+      assert::is_true(items.contains(enumerator.current()));
+      assert::is_true(enumerator.move_next());
+      assert::is_true(items.contains(enumerator.current()));
+      assert::is_true(enumerator.move_next());
+      assert::is_true(items.contains(enumerator.current()));
+      assert::is_true(enumerator.move_next());
+      assert::is_true(items.contains(enumerator.current()));
+      assert::is_false(enumerator.move_next());
     }
 
     void test_method_(hash_function_instead_hasher_specified) {
