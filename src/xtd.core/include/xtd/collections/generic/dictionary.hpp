@@ -827,7 +827,7 @@ namespace xtd {
         /// @param The key to locate in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @return `true` if the xtd::collections::generic::dictionary <key_t, value_t> contains an element with the specified `key` ; otherwise, `false`.
         /// @remarks This method approaches an O(1) operation.
-        bool contains_key(const key_t& key) const noexcept {
+        bool contains_key(const key_t& key) const noexcept override {
           return contains(key);
         }
         
@@ -1342,7 +1342,7 @@ namespace xtd {
         /// @param key The key of the element to remove.
         /// @return `true` if the element is successfully found and removed; otherwise, `false`. This method returns `false` if key is not found in the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @remarks If the xtd::collections::generic::dictionary <key_t, value_t> does not contain an element with the specified key, the xtd::collections::generic::dictionary <key_t, value_t> remains unchanged. No exception is thrown.
-        bool remove(const key_t& key) noexcept {
+        bool remove(const key_t& key) noexcept override {
           return erase(key) == 1;
         }
         
@@ -1467,14 +1467,14 @@ namespace xtd {
         /// @param key The key of the value to get.
         /// @param value When this method returns, contains the value associated with the specified key, if the key is found; otherwise, the default value for the type of the value parameter.
         /// @return `true` if the xtd::collections::generic::dictionary <key_t, value_t> contains an element with the specified key; otherwise, `false`.
-        bool try_get_value(const key_t& key, value_t& value) {
+        bool try_get_value(const key_t& key, value_t& value) const override {
           auto iterator = find(key);
-          if (iterator == end()) {
-            value = value_t {};
-            return false;
+          if (iterator != end()) {
+            value = iterator->value();
+            return true;
           }
-          value = iterator->value();
-          return true;
+          value = value_t {};
+          return false;
         }
         /// @}
         
