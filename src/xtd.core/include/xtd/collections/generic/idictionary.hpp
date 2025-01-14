@@ -27,10 +27,19 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core generic_collections interfaces
-      /// @remarks The idictionary <key_t, value_t> interface is the base interface for generic collections of key/value pairs.
-      /// @remarks Each element is a key/value pair stored in a key_value_pair <key_t, value_t> object.
+      /// @remarks The xtd::collections::generic::idictionary <key_t, value_t> interface is the base interface for generic collections of key/value pairs.
+      /// @remarks Each element is a key/value pair stored in a xtd::collections::generic::key_value_pair <key_t, value_t> object.
       /// @remarks Each pair must have a unique key. Implementations can vary in whether they allow key to be empty. The value can be empty and does not have to be unique. The idictionary <key_t, value_t> interface allows the contained keys and values to be enumerated, but it does not imply any particular sort order.
-      /// @remarks The foreach statement of the C# language (For Each in Visual Basic, for each in C++) returns an object of the type of the elements in the collection. Since each element of the IDictionary<TKey,TValue> is a key/value pair, the element type is not the type of the key or the type of the value. Instead, the element type is KeyValuePair<TKey,TValue>. For example:
+      /// @remarks The for each statement returns an object of the type of the elements in the collection. Since each element of the xtd::collections::generic::idictionary <key_t, value_t> is a key/value pair, the element type is not the type of the key or the type of the value. Instead, the element type is xtd::collections::generic::key_value_pair <key_t, value_t>. For example:
+      /// ```cpp
+      /// for (const key_value_pair<int, string>& kvp : my_dictionary)
+      ///   console::write_line("key = {}, value = {}", kvp.key(), kvp.value());
+      /// ```
+      /// @remarks Or with `auto` key type and the value type. For example:
+      /// ```cpp
+      /// for (const auto& [key, value] : my_dictionary)
+      ///   console::write_line("key = {}, value = {}", key, value);
+      /// ```
       template<class key_t, class value_t>
       class idictionary : public xtd::collections::generic::ienumerable<xtd::collections::generic::key_value_pair<key_t, value_t>> /* xtd::collections::generic::icollection<xtd::collections::generic::key_value_pair<key_t, value_t>> */ {
       public:
