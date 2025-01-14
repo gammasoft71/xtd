@@ -64,11 +64,12 @@ var searchData=
   ['_5f_5fpolymorphic_5fany_5fobject_5f_5f_61',['__polymorphic_any_object__',['../structxtd_1_1____polymorphic__any__object____.html',1,'xtd']]],
   ['_5f_5fpolymorphic_5fany_5fobject_5f_5f_3c_20type_5ft_2c_20std_3a_3afalse_5ftype_20_3e_62',['__polymorphic_any_object__&lt; type_t, std::false_type &gt;',['../structxtd_1_1____polymorphic__any__object_____3_01type__t_00_01std_1_1false__type_01_4.html',1,'xtd']]],
   ['_5f_5fpolymorphic_5fany_5fobject_5f_5f_3c_20type_5ft_2c_20std_3a_3atrue_5ftype_20_3e_63',['__polymorphic_any_object__&lt; type_t, std::true_type &gt;',['../structxtd_1_1____polymorphic__any__object_____3_01type__t_00_01std_1_1true__type_01_4.html',1,'xtd']]],
-  ['_5f_5fshow_5fgeneric_5fexception_5fmessage_2ehpp_64',['__show_generic_exception_message.hpp',['../____show__generic__exception__message_8hpp.html',1,'']]],
-  ['_5f_5fsprintf_2ehpp_65',['__sprintf.hpp',['../____sprintf_8hpp.html',1,'']]],
-  ['_5f_5fstring_5fdefinitions_2ehpp_66',['__string_definitions.hpp',['../____string__definitions_8hpp.html',1,'']]],
-  ['_5f_5ftunit_5fjoin_5f_5fitems_2ehpp_67',['__tunit_join__items.hpp',['../____tunit__join____items_8hpp.html',1,'']]],
-  ['_5f_5fxtd_5fdebugbreak_2ehpp_68',['__xtd_debugbreak.hpp',['../____xtd__debugbreak_8hpp.html',1,'']]],
-  ['_5f_5fxtd_5fsource_5flocation_2ehpp_69',['__xtd_source_location.hpp',['../____xtd__source__location_8hpp.html',1,'']]],
-  ['_5f_5fxtd_5fstd_5fversion_2ehpp_70',['__xtd_std_version.hpp',['../____xtd__std__version_8hpp.html',1,'']]]
+  ['_5f_5fprint_2ehpp_64',['__print.hpp',['../____print_8hpp.html',1,'']]],
+  ['_5f_5fshow_5fgeneric_5fexception_5fmessage_2ehpp_65',['__show_generic_exception_message.hpp',['../____show__generic__exception__message_8hpp.html',1,'']]],
+  ['_5f_5fsprintf_2ehpp_66',['__sprintf.hpp',['../____sprintf_8hpp.html',1,'']]],
+  ['_5f_5fstring_5fdefinitions_2ehpp_67',['__string_definitions.hpp',['../____string__definitions_8hpp.html',1,'']]],
+  ['_5f_5ftunit_5fjoin_5f_5fitems_2ehpp_68',['__tunit_join__items.hpp',['../____tunit__join____items_8hpp.html',1,'']]],
+  ['_5f_5fxtd_5fdebugbreak_2ehpp_69',['__xtd_debugbreak.hpp',['../____xtd__debugbreak_8hpp.html',1,'']]],
+  ['_5f_5fxtd_5fsource_5flocation_2ehpp_70',['__xtd_source_location.hpp',['../____xtd__source__location_8hpp.html',1,'']]],
+  ['_5f_5fxtd_5fstd_5fversion_2ehpp_71',['__xtd_std_version.hpp',['../____xtd__std__version_8hpp.html',1,'']]]
 ];

@@ -100,8 +100,6 @@ Inheritance diagram for xtd::collections::generic::extensions::enumerable_iterat
 <area href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" alt="xtd::collections::generic::ienumerable&lt; list_type_t &gt;" shape="rect" coords="1160,56,1730,80"/>
 <area href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" alt="xtd::collections::generic::ienumerable&lt; value_type &gt;" shape="rect" coords="1740,56,2310,80"/>
 <area href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units." alt="xtd::basic_string&lt; char_t, traits_t, allocator_t &gt;" shape="rect" coords="0,112,570,136"/>
-<area href="classxtd_1_1collections_1_1generic_1_1idictionary.html" title="Represents a generic collection of key/value pairs." alt="xtd::collections::generic::idictionary&lt; key_t, value_t &gt;" shape="rect" coords="580,112,1150,136"/>
-<area href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values." alt="xtd::collections::generic::dictionary&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;" shape="rect" coords="580,168,1150,192"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -159,6 +157,24 @@ Classes</h2></td></tr>
 <tr class="memitem:a7158d69d20933e2f4216cbbdb82c6591"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators_1_1iterator.html">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a7158d69d20933e2f4216cbbdb82c6591">end</a> ()</td></tr>
 <tr class="memdesc:a7158d69d20933e2f4216cbbdb82c6591"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the element following the last element of the enumarable.  <br /></td></tr>
 <tr class="separator:a7158d69d20933e2f4216cbbdb82c6591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
+<tr class="memitem:a75ae170d894810f9884bf9bf994e8ebb"><td class="memTemplParams" colspan="2">template&lt;class source_collection_t , class target_collection_t &gt; </td></tr>
+<tr class="memitem:a75ae170d894810f9884bf9bf994e8ebb"><td class="memTemplItemLeft" align="right" valign="top">static target_collection_t::const_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a75ae170d894810f9884bf9bf994e8ebb">to_iterator</a> (typename source_collection_t::const_iterator &amp;value, const source_collection_t &amp;source_collection, const target_collection_t &amp;target_collection) noexcept</td></tr>
+<tr class="memdesc:a75ae170d894810f9884bf9bf994e8ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
+<tr class="separator:a75ae170d894810f9884bf9bf994e8ebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28a98d9b9cccd57f0512de8d49b3af99"><td class="memTemplParams" colspan="2">template&lt;class source_collection_t , class target_collection_t &gt; </td></tr>
+<tr class="memitem:a28a98d9b9cccd57f0512de8d49b3af99"><td class="memTemplItemLeft" align="right" valign="top">static target_collection_t::iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a28a98d9b9cccd57f0512de8d49b3af99">to_iterator</a> (typename source_collection_t::iterator &amp;value, const source_collection_t &amp;source_collection, const target_collection_t &amp;target_collection) noexcept</td></tr>
+<tr class="memdesc:a28a98d9b9cccd57f0512de8d49b3af99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
+<tr class="separator:a28a98d9b9cccd57f0512de8d49b3af99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5ef637a1485bdd83b5008e007f42000"><td class="memTemplParams" colspan="2">template&lt;class source_collection_t , class target_collection_t &gt; </td></tr>
+<tr class="memitem:ad5ef637a1485bdd83b5008e007f42000"><td class="memTemplItemLeft" align="right" valign="top">static target_collection_t::const_iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#ad5ef637a1485bdd83b5008e007f42000">to_iterator</a> (typename source_collection_t::const_iterator &amp;value, source_collection_t &amp;source_collection, target_collection_t &amp;target_collection) noexcept</td></tr>
+<tr class="memdesc:ad5ef637a1485bdd83b5008e007f42000"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
+<tr class="separator:ad5ef637a1485bdd83b5008e007f42000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a385ff7eb8493f644dbfa729c4a815fbd"><td class="memTemplParams" colspan="2">template&lt;class source_collection_t , class target_collection_t &gt; </td></tr>
+<tr class="memitem:a385ff7eb8493f644dbfa729c4a815fbd"><td class="memTemplItemLeft" align="right" valign="top">static target_collection_t::iterator&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#a385ff7eb8493f644dbfa729c4a815fbd">to_iterator</a> (typename source_collection_t::iterator &amp;value, source_collection_t &amp;source_collection, target_collection_t &amp;target_collection) noexcept</td></tr>
+<tr class="memdesc:a385ff7eb8493f644dbfa729c4a815fbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts source iterator to target iterator.  <br /></td></tr>
+<tr class="separator:a385ff7eb8493f644dbfa729c4a815fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a38c7595da1248eb6a6fefc117a185916" name="a38c7595da1248eb6a6fefc117a185916"></a>
@@ -372,6 +388,246 @@ template&lt;class type_t , class enumerable_t &gt; </div>
 
 </div>
 </div>
+<a id="a75ae170d894810f9884bf9bf994e8ebb" name="a75ae170d894810f9884bf9bf994e8ebb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75ae170d894810f9884bf9bf994e8ebb">&#9670;&#160;</a></span>to_iterator() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , class enumerable_t &gt; </div>
+<div class="memtemplate">
+template&lt;class source_collection_t , class target_collection_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static target_collection_t::const_iterator <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t &gt;::to_iterator </td>
+          <td>(</td>
+          <td class="paramtype">typename source_collection_t::const_iterator &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const source_collection_t &amp;&#160;</td>
+          <td class="paramname"><em>source_collection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const target_collection_t &amp;&#160;</td>
+          <td class="paramname"><em>target_collection</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts source iterator to target iterator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The source iterator to convert. </td></tr>
+    <tr><td class="paramname">source</td><td>The source collection from which the source iterator originates. </td></tr>
+    <tr><td class="paramname">target_collection</td><td>The target collection from which the target iterator originates. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The converted target iterator. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This converter is used only to convert a source iterator position into a target iterator position. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The distance to move the target iterator is calculated with <code>std::distance(source_collection.begin(), value);</code>. Then simply move the target iterator from <code>target_collection.begin();</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a28a98d9b9cccd57f0512de8d49b3af99" name="a28a98d9b9cccd57f0512de8d49b3af99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28a98d9b9cccd57f0512de8d49b3af99">&#9670;&#160;</a></span>to_iterator() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , class enumerable_t &gt; </div>
+<div class="memtemplate">
+template&lt;class source_collection_t , class target_collection_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static target_collection_t::iterator <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t &gt;::to_iterator </td>
+          <td>(</td>
+          <td class="paramtype">typename source_collection_t::iterator &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const source_collection_t &amp;&#160;</td>
+          <td class="paramname"><em>source_collection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const target_collection_t &amp;&#160;</td>
+          <td class="paramname"><em>target_collection</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts source iterator to target iterator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The source iterator to convert. </td></tr>
+    <tr><td class="paramname">source</td><td>The source collection from which the source iterator originates. </td></tr>
+    <tr><td class="paramname">target_collection</td><td>The target collection from which the target iterator originates. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The converted target iterator. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This converter is used only to convert a source iterator position into a target iterator position. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The distance to move the target iterator is calculated with <code>std::distance(source_collection.begin(), value);</code>. Then simply move the target iterator from <code>target_collection.begin();</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ad5ef637a1485bdd83b5008e007f42000" name="ad5ef637a1485bdd83b5008e007f42000"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5ef637a1485bdd83b5008e007f42000">&#9670;&#160;</a></span>to_iterator() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , class enumerable_t &gt; </div>
+<div class="memtemplate">
+template&lt;class source_collection_t , class target_collection_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static target_collection_t::const_iterator <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t &gt;::to_iterator </td>
+          <td>(</td>
+          <td class="paramtype">typename source_collection_t::const_iterator &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">source_collection_t &amp;&#160;</td>
+          <td class="paramname"><em>source_collection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">target_collection_t &amp;&#160;</td>
+          <td class="paramname"><em>target_collection</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts source iterator to target iterator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The source iterator to convert. </td></tr>
+    <tr><td class="paramname">source</td><td>The source collection from which the source iterator originates. </td></tr>
+    <tr><td class="paramname">target_collection</td><td>The target collection from which the target iterator originates. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The converted target iterator. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This converter is used only to convert a source iterator position into a target iterator position. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The distance to move the target iterator is calculated with <code>std::distance(source_collection.begin(), value);</code>. Then simply move the target iterator from <code>target_collection.begin();</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a385ff7eb8493f644dbfa729c4a815fbd" name="a385ff7eb8493f644dbfa729c4a815fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a385ff7eb8493f644dbfa729c4a815fbd">&#9670;&#160;</a></span>to_iterator() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , class enumerable_t &gt; </div>
+<div class="memtemplate">
+template&lt;class source_collection_t , class target_collection_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static target_collection_t::iterator <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators</a>&lt; type_t, enumerable_t &gt;::to_iterator </td>
+          <td>(</td>
+          <td class="paramtype">typename source_collection_t::iterator &amp;&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">source_collection_t &amp;&#160;</td>
+          <td class="paramname"><em>source_collection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">target_collection_t &amp;&#160;</td>
+          <td class="paramname"><em>target_collection</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts source iterator to target iterator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The source iterator to convert. </td></tr>
+    <tr><td class="paramname">source</td><td>The source collection from which the source iterator originates. </td></tr>
+    <tr><td class="paramname">target_collection</td><td>The target collection from which the target iterator originates. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The converted target iterator. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This converter is used only to convert a source iterator position into a target iterator position. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This converter does not check the validity and consistency of the data in the various collections; it is up to the user to ensure this. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The distance to move the target iterator is calculated with <code>std::distance(source_collection.begin(), value);</code>. Then simply move the target iterator from <code>target_collection.begin();</code>. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core/include/xtd/collections/generic/extensions/<a class="el" href="enumerable__iterators_8hpp_source.html">enumerable_iterators.hpp</a></li>
 </ul>
@@ -379,7 +635,7 @@ template&lt;class type_t , class enumerable_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 11 2025 22:29:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 14 2025 20:20:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

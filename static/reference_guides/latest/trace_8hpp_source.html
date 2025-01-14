@@ -154,7 +154,7 @@ $(function() {
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="preprocessor">        #endif</span></div>
 <div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>      }</div>
 <div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>      <span class="keyword">template</span>&lt;<span class="keyword">class </span>...args_t&gt;</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>      <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacextd.html#af0b02311122cc2bc504ab9218c85d5db">print</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* format, args_t&amp;&amp; ... args) {</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>      <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacextd.html#aa7ce9a70ea867f52d614f508f8911d27">print</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* format, args_t&amp;&amp; ... args) {</div>
 <div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="preprocessor">        #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)</span></div>
 <div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        write_line_(<a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(format, args...));</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span><span class="preprocessor">        #endif</span></div>
@@ -374,12 +374,12 @@ $(function() {
 <div class="ttc" id="agroup__xtd__core_html_gga05348bfa19746215ce9761e84d6ca0f4a165e6d21e0a2cc9ebb32ca05f90e0fa7"><div class="ttname"><a href="group__xtd__core.html#gga05348bfa19746215ce9761e84d6ca0f4a165e6d21e0a2cc9ebb32ca05f90e0fa7">xtd::diagnostics::assert_dialog_result::retry</a></div><div class="ttdeci">@ retry</div><div class="ttdoc">The assert dialog return value is Retry (usually sent from a button labeled Retry).</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gga05348bfa19746215ce9761e84d6ca0f4a5bb94a1c12413a2e5d14deabab29f2aa"><div class="ttname"><a href="group__xtd__core.html#gga05348bfa19746215ce9761e84d6ca0f4a5bb94a1c12413a2e5d14deabab29f2aa">xtd::diagnostics::assert_dialog_result::abort</a></div><div class="ttdeci">@ abort</div><div class="ttdoc">The assert dialog return value is Abort (usually sent from a button labeled Abort).</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
-<div class="ttc" id="anamespacextd_html_af0b02311122cc2bc504ab9218c85d5db"><div class="ttname"><a href="namespacextd.html#af0b02311122cc2bc504ab9218c85d5db">xtd::print</a></div><div class="ttdeci">void print(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> print.hpp:13</div></div>
+<div class="ttc" id="anamespacextd_html_aa7ce9a70ea867f52d614f508f8911d27"><div class="ttname"><a href="namespacextd.html#aa7ce9a70ea867f52d614f508f8911d27">xtd::print</a></div><div class="ttdeci">void print(FILE *file, arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the file output stream.</div><div class="ttdef"><b>Definition</b> print.hpp:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 11 2025 22:29:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 14 2025 20:20:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
