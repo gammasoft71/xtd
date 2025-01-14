@@ -4,10 +4,8 @@
 #include <xtd/tunit/valid>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
-#include <xtd/as>
 #include <xtd/environment>
 #include <xtd/literals>
-#include <xtd/math>
 #include <xtd/size_object>
 
 using namespace xtd;
@@ -111,6 +109,30 @@ namespace xtd::collections::generic::tests {
       assert::is_zero(items.capacity());
       assert::is_zero(items.count());
     }
+    
+    void test_method_(constructor_with_idictionary) {
+      const idictionary<int, string>& items1 = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
+      auto items2 = dictionary<int, string>(items1);
+      collection_assert::are_equivalent(array<key_value_pair<int, string>> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}, items2);
+    }
+    
+    void test_method_(constructor_with_ienumerable) {
+      const ienumerable<key_value_pair<int, string>>& items1 = array<key_value_pair<int, string>> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
+      auto items2 = dictionary<int, string>(items1);
+      collection_assert::are_equivalent(array<key_value_pair<int, string>> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}, items2);
+    }
+
+    void test_method_(constructor_with_ienumerable_and_equality_comparer) {
+      struct lower_string_comparer : iequality_comparer<string> {
+        bool equals(const string& x, const string& y) const noexcept override {return x.to_lower().equals(y.to_lower());}
+        xtd::size get_hash_code(const string& obj) const noexcept override {return obj.to_lower().get_hash_code();}
+      };
+      
+      const ienumerable<key_value_pair<string, string>>& items1 = array<key_value_pair<string, string>> {{"one", "one"}, {"oNe", "oNe"}, {"OnE", "OnE"}, {"ONE", "ONE"}};
+      auto items2 = dictionary<string, string>(items1);
+      collection_assert::are_equivalent(array<key_value_pair<string, string>> {{"one", "one"}, {"oNe", "oNe"}, {"OnE", "OnE"}, {"ONE", "ONE"}}, items2);
+      assert::throws<argument_exception>([&]{items2 = dictionary<string, string>(items1, lower_string_comparer {});});
+    }
 
     void test_method_(constructor_with_equality_comparer) {
       struct lower_string_comparer : iequality_comparer<string> {
@@ -118,69 +140,86 @@ namespace xtd::collections::generic::tests {
         xtd::size get_hash_code(const string& obj) const noexcept override {return obj.to_lower().get_hash_code();}
       };
       
-      auto items = dictionary<string, string> {lower_string_comparer {}};
-      assert::is_zero(items.capacity());
-      assert::is_zero(items.count());
+      auto items = dictionary<string, string> {};
+      items.add("one", "one");
+      items.add("oNe", "oNe");
+      items.add("OnE", "OnE");
+      items.add("ONE", "ONE");
+      collection_assert::are_equivalent(array<key_value_pair<string, string>> {{"one", "one"}, {"oNe", "oNe"}, {"OnE", "OnE"}, {"ONE", "ONE"}}, items);
       
-      items["one"] = "one";
-      items["oNe"] = "oNe";
-      items["OnE"] = "OnE";
-      items["ONE"] = "ONE";
+      items = dictionary<string, string> {lower_string_comparer {}};
+      items.add("one", "one");
+      assert::throws<argument_exception>([&]{items.add("oNe", "oNe");});
+      assert::throws<argument_exception>([&]{items.add("OnE", "OnE");});
+      assert::throws<argument_exception>([&]{items.add("ONE", "ONE");});
+    }
 
-      auto enumerator = items.get_enumerator();
-      assert::is_true(enumerator.move_next());
-      assert::are_equal("one", enumerator.current().key());
-      assert::are_equal("ONE", enumerator.current().value());
-      assert::is_false(enumerator.move_next());
-      assert::is_true(items.contains_key("one"));
-      assert::is_true(items.contains_key("oNe"));
-      assert::is_true(items.contains_key("OnE"));
-      assert::is_true(items.contains_key("ONE"));
-      assert::is_true(items.contains_key("ONe"));
-      assert::is_false(items.contains_key("two"));
+    void test_method_(constructor_with_capacity_and_equality_comparer) {
+      struct lower_string_comparer : iequality_comparer<string> {
+        bool equals(const string& x, const string& y) const noexcept override {return x.to_lower().equals(y.to_lower());}
+        xtd::size get_hash_code(const string& obj) const noexcept override {return obj.to_lower().get_hash_code();}
+      };
+      
+      auto items = dictionary<string, string> {10_z};
+      assert::is_greater_or_equal(items.capacity(), 10_z);
+      items.add("one", "one");
+      items.add("oNe", "oNe");
+      items.add("OnE", "OnE");
+      items.add("ONE", "ONE");
+      collection_assert::are_equivalent(array<key_value_pair<string, string>> {{"one", "one"}, {"oNe", "oNe"}, {"OnE", "OnE"}, {"ONE", "ONE"}}, items);
+      
+      items = dictionary<string, string> {10_z, lower_string_comparer {}};
+      assert::is_greater_or_equal(items.capacity(), 10_z);
+      items.add("one", "one");
+      assert::throws<argument_exception>([&]{items.add("oNe", "oNe");});
+      assert::throws<argument_exception>([&]{items.add("OnE", "OnE");});
+      assert::throws<argument_exception>([&]{items.add("ONE", "ONE");});
     }
 
     void test_method_(constructor_with_bucket_count) {
       auto items = dictionary<int, string> {42_z};
-      assert::is_zero(items.capacity());
+      assert::is_greater_or_equal(items.capacity(), 42_z);
       assert::is_zero(items.count());
     }
 
+    /* Confict with dictionary(size_t capacity, const equality_comparer_t& comparer) constructor
     void test_method_(constructor_with_bucket_count_and_hash) {
       auto items = dictionary<int, string> {42_z, helpers::hasher<int> {}};
-      assert::is_zero(items.capacity());
+      assert::is_greater_or_equal(items.capacity(), 42_z);
       assert::is_zero(items.count());
-    }
+    }*/
 
     void test_method_(constructor_with_bucket_count_hash_and_equator) {
       auto items = dictionary<int, string> {42_z, helpers::hasher<int> {}, helpers::equator<int> {}};
-      assert::is_zero(items.capacity());
+      assert::is_greater_or_equal(items.capacity(), 42_z);
       assert::is_zero(items.count());
     }
 
     void test_method_(constructor_with_bucket_count_hash_equator_and_hasher) {
       auto items = dictionary<int, string> {42_z, helpers::hasher<int> {}, helpers::equator<int> {}, helpers::allocator<std::pair<int, string>> {}};
-      assert::is_zero(items.capacity());
+      assert::is_greater_or_equal(items.capacity(), 42_z);
       assert::is_zero(items.count());
     }
 
+    /* Confict with dictionary(size_t capacity, const equality_comparer_t& comparer) constructor
     void test_method_(constructor_with_bucket_count_and_allocator) {
       auto items = dictionary<int, string> {42_z, helpers::allocator<std::pair<int, string>> {}};
-      assert::is_zero(items.capacity());
+      assert::is_greater_or_equal(items.capacity(), 42_z);
       assert::is_zero(items.count());
-    }
+    }*/
 
     void test_method_(constructor_with_bucket_count_hasher_and_allocator) {
       auto items = dictionary<int, string> {42_z, helpers::hasher<int> {}, helpers::allocator<std::pair<int, string>> {}};
-      assert::is_zero(items.capacity());
+      assert::is_greater_or_equal(items.capacity(), 42_z);
       assert::is_zero(items.count());
     }
 
-    //void test_method_(constructor_with_allocator) {
-    //  auto items = dictionary<int, string> {helpers::allocator<std::pair<int, string>> {}};
-    //  assert::is_zero(items.capacity());
-    //  assert::is_zero(items.count());
-    //}
+    /* Conflict with dictionary(const equality_comparer_t& comparer) constructor.
+    void test_method_(constructor_with_allocator) {
+      auto items = dictionary<int, string> {helpers::allocator<std::pair<int, string>> {}};
+      assert::is_zero(items.capacity());
+      assert::is_zero(items.count());
+    }*/
 
     void test_method_(constructor_with_first_and_last_iterators) {
       auto init = std::initializer_list<std::pair<int, string>> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
@@ -265,11 +304,12 @@ namespace xtd::collections::generic::tests {
       collection_assert::are_equivalent(array<key_value_pair<int, string>> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}, items2);
     }
 
+    /* Conflict with dictionary(const idictionary<key_t, value_t>& dictionary, const equality_comparer_t& comparer) constructor.
     void test_method_(constructor_with_dictionary_and_allocator) {
       auto items1 = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
       auto items2 = dictionary<int, string> {items1, helpers::allocator<std::pair<int, string>> {}};
       collection_assert::are_equivalent(array<key_value_pair<int, string>> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}, items2);
-    }
+    }*/
 
     void test_method_(constructor_with_unordered_map) {
       auto items1 = std::unordered_map<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}};
@@ -460,7 +500,14 @@ namespace xtd::collections::generic::tests {
       auto items = dictionary<string, int> {};
       assert::is_zero(items.bucket_count());
       items.add("one", 1);
-      assert::is_not_zero(items.bucket_count());
+      assert::is_greater_or_equal(items.bucket_count(), 1_z);
+      assert::are_equal(items.capacity(), items.bucket_count());
+      items.add("two", 2);
+      assert::is_greater_or_equal(items.bucket_count(), 2_z);
+      assert::are_equal(items.capacity(), items.bucket_count());
+      items.reserve(1000);
+      assert::is_greater_or_equal(items.bucket_count(), 1000_z);
+      assert::are_equal(items.capacity(), items.bucket_count());
     }
 
     void test_method_(capacity) {
@@ -468,13 +515,13 @@ namespace xtd::collections::generic::tests {
       assert::is_zero(items.capacity());
       items.add("one", 1);
       assert::is_greater_or_equal(items.capacity(), 1_z);
-      assert::are_equal(as<xtd::size>(math::ceiling(items.count() / items.load_factor())), items.capacity());
+      assert::are_equal(items.bucket_count(), items.capacity());
       items.add("two", 2);
       assert::is_greater_or_equal(items.capacity(), 2_z);
-      assert::are_equal(as<xtd::size>(math::ceiling(items.count() / items.load_factor())), items.capacity());
+      assert::are_equal(items.bucket_count(), items.capacity());
       items.reserve(1000);
       assert::is_greater_or_equal(items.capacity(), 1000_z);
-      assert::are_equal(as<xtd::size>(math::ceiling(items.count() / items.load_factor())), items.capacity());
+      assert::are_equal(items.bucket_count(), items.capacity());
     }
     
     void test_method_(cbegin) {
