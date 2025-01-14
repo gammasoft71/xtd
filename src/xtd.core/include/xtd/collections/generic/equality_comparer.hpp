@@ -39,7 +39,10 @@ namespace xtd {
         /// @{
         /// @brief Gets the default equality comparer for the type specified by the generic argument.
         /// @return The default instance of the xtd::collections::generic::equality_comparer <type_t> class.
-        static equality_comparer default_equality_comparer() {return equality_comparer {};}
+        static const equality_comparer& default_equality_comparer() {
+          static auto result = equality_comparer {};
+          return result;
+        }
         /// @}
         
         /// @name Public Methods
