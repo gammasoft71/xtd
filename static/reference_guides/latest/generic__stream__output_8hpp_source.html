@@ -141,7 +141,7 @@ $(function() {
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">char</span>_t, <span class="keyword">class</span> <span class="keywordtype">char</span>_traits_t, <span class="keyword">class</span> type_t, <span class="keywordtype">unsigned</span> n_t, <span class="keywordtype">unsigned</span> last_t&gt;</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">struct </span>__xtd_console_tuple_printer {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacextd.html#af0b02311122cc2bc504ab9218c85d5db">print</a>(std::basic_ostream&lt;char_t, char_traits_t&gt;&amp; os, <span class="keyword">const</span> type_t&amp; value) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacextd.html#aa7ce9a70ea867f52d614f508f8911d27">print</a>(std::basic_ostream&lt;char_t, char_traits_t&gt;&amp; os, <span class="keyword">const</span> type_t&amp; value) {</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    os &lt;&lt; std::get&lt;n_t&gt;(value) &lt;&lt; <span class="charliteral">&#39;,&#39;</span> &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    __xtd_console_tuple_printer &lt; char_t, char_traits_t, type_t, n_t + 1, last_t &gt;::print(os, value);</div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  }</div>
@@ -149,7 +149,7 @@ $(function() {
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">char</span>_t, <span class="keyword">class</span> <span class="keywordtype">char</span>_traits_t, <span class="keyword">class</span> type_t, <span class="keywordtype">unsigned</span> n_t&gt;</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">struct </span>__xtd_console_tuple_printer&lt;char_t, char_traits_t, type_t, n_t, n_t&gt; {</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacextd.html#af0b02311122cc2bc504ab9218c85d5db">print</a>(std::basic_ostream&lt;char_t, char_traits_t&gt;&amp; os, <span class="keyword">const</span> type_t&amp; value) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespacextd.html#aa7ce9a70ea867f52d614f508f8911d27">print</a>(std::basic_ostream&lt;char_t, char_traits_t&gt;&amp; os, <span class="keyword">const</span> type_t&amp; value) {</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    os &lt;&lt; std::get&lt;n_t&gt;(value);</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  }</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>};</div>
@@ -286,12 +286,12 @@ $(function() {
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  <span class="keywordflow">return</span> os &lt;&lt; it-&gt;second(value);</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>}</div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a7f021a1415b86f2d013b2618fb31ae53"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7f021a1415b86f2d013b2618fb31ae53">xtd::console_key::end</a></div><div class="ttdeci">@ end</div><div class="ttdoc">The END key.</div></div>
-<div class="ttc" id="anamespacextd_html_af0b02311122cc2bc504ab9218c85d5db"><div class="ttname"><a href="namespacextd.html#af0b02311122cc2bc504ab9218c85d5db">xtd::print</a></div><div class="ttdeci">void print(arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the standard output stream.</div><div class="ttdef"><b>Definition</b> print.hpp:13</div></div>
+<div class="ttc" id="anamespacextd_html_aa7ce9a70ea867f52d614f508f8911d27"><div class="ttname"><a href="namespacextd.html#aa7ce9a70ea867f52d614f508f8911d27">xtd::print</a></div><div class="ttdeci">void print(FILE *file, arg_t &amp;&amp;value)</div><div class="ttdoc">Writes the text representation of the specified value to the file output stream.</div><div class="ttdef"><b>Definition</b> print.hpp:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jan 11 2025 22:29:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Jan 14 2025 20:20:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
