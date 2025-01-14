@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "generic/key_value_pair.hpp"
-#include "../any.hpp"
+#include "../any_object.hpp"
 #include <utility>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -12,7 +12,7 @@ namespace xtd {
   namespace collections {
     /// @brief Implements a xtd::collections::generic::key_value_pair with the key and the value strongly typed to be std::any.
     /// ```cpp
-    /// using any_pair = xtd::collections::generic::key_value_pair<std::any, std::any>
+    /// using any_pair = xxtd::collections::generic::key_value_pair<xtd::any_object, xtd::any_object>;
     /// ```
     /// @par Header
     /// ```cpp
@@ -23,6 +23,6 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core collections
-    using any_pair = xtd::collections::generic::key_value_pair<std::any, std::any>;
+    using any_pair = xtd::collections::generic::key_value_pair<xtd::any_object, xtd::any_object>;
   }
 }
