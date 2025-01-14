@@ -25,9 +25,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core specialized_collections
-      /// @todo Use xtd::collections::generic::dictionary <xtd::string, xtd::string> when done.
-      //using string_dictionary = xtd::collections::generic::dictionary<xtd::string, xtd::string>;
-      using string_dictionary = std::unordered_map<xtd::string, xtd::string, xtd::collections::generic::helpers::hasher<xtd::string>, xtd::collections::generic::helpers::equator<xtd::string>, xtd::collections::generic::helpers::allocator<std::pair<const xtd::string, xtd::string>>>;
+      using string_dictionary = xtd::collections::generic::dictionary<xtd::string, xtd::string>;
     }
   }
 }
