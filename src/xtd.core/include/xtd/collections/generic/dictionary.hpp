@@ -231,9 +231,30 @@ namespace xtd {
         /// }
         /// ```
         dictionary() noexcept = default;
+
+        /// @brief Initializes a new instance of the xtd::collections::generic::dictionary <key_t, value_t> class that contains elements copied from the specified xtd::collections::generic::idictionary <key_t, value_t> and uses the default equality comparer for the key type.
+        /// @param dictionary The xtd::collections::generic::idictionary <key_t, value_t> whose elements are copied to the new xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
+        /// @remarks Every key in a xtd::collections::generic::dictionary <key_t, value_t> must be unique according to the default equality comparer; likewise, every key in the source `dictionary` must also be unique according to the default equality comparer.
+        /// @remarks The initial capacity of the new xtd::collections::generic::dictionary <key_t, value_t> is large enough to contain all the elements in dictionary.
+        /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. This constructor uses the default generic equality comparer, xtd::collections::generic::equality_comparer::default_equality_comparer. If type `key_t` implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation. Alternatively, you can specify an implementation of the xtd::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter.
+        /// @remarks This constructor is an O(n) operation, where n is the number of elements in dictionary.
+        dictionary(const idictionary<key_t, value_t>& dictionary) {
+          ensure_capacity(dictionary.count());
+          for (const auto& item : dictionary)
+            add(item);
+        }
+        
+        /// @brief Initializes a new instance of the xtd::collections::generic::dictionary <key_t, value_t> class that contains elements copied from the specified xtd::collections::generic::ienumerable <type_t>.
+        /// @param collection The xtd::collections::generic::ienumerable <type_t> whose elements are copied to the new xtd::collections::generic::dictionary <key_t, value_t>
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
+        dictionary(const ienumerable<value_type>& collection) {
+          for (const auto& item : collection)
+            add(item);
+        }
         
         /// @brief Initializes a new instance of the xtd::collections::generic::dictionary <key_t, value_t> class that is empty, has the default initial capacity, and uses the specified xtd::collections::generic::iequality_comparer<type_t>.
-        /// @param comparer The xtd::collections::generic::iequality_comparer<type_t> implementation to use when comparing keys, or null to use the default xtd::collections::generic::equality_comparer <type_t> for the type of the key.
+        /// @param comparer The xtd::collections::generic::iequality_comparer<type_t> implementation to use when comparing keys.
         /// @remarks Use this constructor with the case-insensitive string comparers provided by the xtd::string_comparer class to create dictionaries with case-insensitive string keys.
         /// @remarks Every key in a xtd::collections::generic::dictionary <key_t, value_t> must be unique according to the specified comparer.
         /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. If type `key_t` implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
@@ -246,20 +267,81 @@ namespace xtd {
         /// @param equal Comparison function to use for all key comparisons of this container.
         /// @param alloc Allocator to use for all memory allocations of this container.
         /// @remarks Constructs empty container. Sets xtd::collections::generic::dictionary::max_load_factor() to 1.0. For the default constructor, the number of buckets is implementation-defined.
+        /// @remarks Every key in a xtd::collections::generic::dictionary <key_t, value_t> must be unique according to the specified comparer.
+        /// @remarks The capacity of a xtd::collections::generic::dictionary <key_t, value_t> is the number of elements that can be added to the xtd::collections::generic::dictionary <key_t, value_t> before resizing is necessary. As elements are added to a xtd::collections::generic::dictionary <key_t, value_t>, the capacity is automatically increased as required by reallocating the internal array.
+        /// @remarks If the size of the collection can be estimated, specifying the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. If type `key_t` implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
+        /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         explicit dictionary(size_type bucket_count, const hasher_t& hash = hasher_t {}, const equator_t& equal = equator_t {}, const allocator_type& alloc = allocator_type {}) noexcept : data_(xtd::new_ptr<data>(bucket_count)) {}
+        
+        /* Confict with dictionary(size_t capacity, const equality_comparer_t& comparer) constructor
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
         /// @param alloc Allocator to use for all memory allocations of this container.
         /// @remarks Constructs empty container. Sets xtd::collections::generic::dictionary::max_load_factor() to 1.0. For the default constructor, the number of buckets is implementation-defined.
+        /// @remarks Every key in a xtd::collections::generic::dictionary <key_t, value_t> must be unique according to the specified comparer.
+        /// @remarks The capacity of a xtd::collections::generic::dictionary <key_t, value_t> is the number of elements that can be added to the xtd::collections::generic::dictionary <key_t, value_t> before resizing is necessary. As elements are added to a xtd::collections::generic::dictionary <key_t, value_t>, the capacity is automatically increased as required by reallocating the internal array.
+        /// @remarks If the size of the collection can be estimated, specifying the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. If type `key_t` implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
+        /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         dictionary(size_type bucket_count, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(bucket_count)) {}
+         */
+        
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
         /// @param hash Hash function to use.
         /// @param alloc Allocator to use for all memory allocations of this container.
         /// @remarks Constructs empty container. Sets xtd::collections::generic::dictionary::max_load_factor() to 1.0. For the default constructor, the number of buckets is implementation-defined.
+        /// @remarks Every key in a xtd::collections::generic::dictionary <key_t, value_t> must be unique according to the specified comparer.
+        /// @remarks The capacity of a xtd::collections::generic::dictionary <key_t, value_t> is the number of elements that can be added to the xtd::collections::generic::dictionary <key_t, value_t> before resizing is necessary. As elements are added to a xtd::collections::generic::dictionary <key_t, value_t>, the capacity is automatically increased as required by reallocating the internal array.
+        /// @remarks If the size of the collection can be estimated, specifying the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. If type `key_t` implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
+        /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         dictionary(size_type bucket_count, const hasher_t& hash, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(bucket_count)) {}
-        
-        /*
+
+        /// @brief Initializes a new instance of the xtd::collections::generic::dictionary <key_t, value_t> class that contains elements copied from the specified xtd::collections::generic::dictionary <key_t, value_t> and uses the specified xtd::collections::generic::iequality_comparer <type_t>.
+        /// @param dictionary The xtd::collections::generic::dictionary <key_t, value_t> whose elements are copied to the new xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @param comparer The xtd::collections::generic::iequality_comparer <type_t> implementation to use when comparing keys.
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
+        /// @remarks Use this constructor with the case-insensitive string comparers provided by the xtd::string_comparer class to create dictionaries with case-insensitive string keys.
+        /// @remarks Every key in a xtd::collections::generic::dictionary <key_t, value_t> must be unique according to the specified comparer; likewise, every key in the source `dictionary` must also be unique according to the specified comparer.
+        /// @note For example, duplicate keys can occur if `comparer` is one of the case-insensitive string comparers provided by the xtd::string_comparer class and `dictionary` does not use a case-insensitive comparer key.
+        /// @remarks The initial capacity of the new xtd::collections::generic::dictionary <key_t, value_t> is large enough to contain all the elements in `dictionary`.
+        /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. If type `key_t` implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
+        /// @remarks This constructor is an O(n) operation, where n is the number of elements in dictionary.
+        template<class equality_comparer_t>
+        dictionary(const idictionary<key_t, value_t>& dictionary, const equality_comparer_t& comparer) : data_(xtd::new_ptr<data>(new_ptr<equality_comparer_t>(comparer))) {
+          ensure_capacity(dictionary.count());
+          for (const auto& item : dictionary)
+            add(item);
+        }
+
+        /// @brief Initializes a new instance of the xtd::collections::generic::dictionary <key_t, value_t> class that contains elements copied from the specified IEnumerable<T> and uses the specified xtd::collections::generic::iequality_comparer <type_t>.
+        /// @param collection The IEnumerable<T> whose elements are copied to the new xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @param comparer The xtd::collections::generic::iequality_comparer <type_t> implementation to use when comparing keys.
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
+        template<class equality_comparer_t>
+        dictionary(const ienumerable<value_type>& collection, const equality_comparer_t& comparer) : data_(xtd::new_ptr<data>(new_ptr<equality_comparer_t>(comparer))) {
+          for (const auto& item : collection)
+            add(item);
+        }
+
+        /// @brief Initializes a new instance of the xtd::collections::generic::dictionary <key_t, value_t> class that is empty, has the specified initial capacity, and uses the specified xtd::collections::generic::iequality_comparer <type_t>.
+        /// @param capacity The initial number of elements that the xtd::collections::generic::dictionary <key_t, value_t> can contain.
+        /// @param comparer The xtd::collections::generic::iequality_comparer <type_t> implementation to use when comparing keys.
+        /// @remarks Use this constructor with the case-insensitive string comparers provided by the xtd::string_comparer class to create dictionaries with case-insensitive string keys.
+        /// @remarks Every key in a xtd::collections::generic::dictionary <key_t, value_t> must be unique according to the specified comparer; likewise, every key in the source `dictionary` must also be unique according to the specified comparer.
+        /// @remarks The capacity of a xtd::collections::generic::dictionary <key_t, value_t> is the number of elements that can be added to the xtd::collections::generic::dictionary <key_t, value_t> before resizing is necessary. As elements are added to a xtd::collections::generic::dictionary <key_t, value_t>, the capacity is automatically increased as required by reallocating the internal array.
+        /// @remarks If the size of the collection can be estimated, specifying the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. If type TKey implements the xtd::iequatable <type_t> generic interface, the default equality comparer uses that implementation.
+        /// @remarks This constructor is an O(1) operation.
+        /// @remarks xtd::collections::generic::dictionary::capacity and xtd::collections::generic::dictionary::bucket_count are equivalent properties.
+        template<class equality_comparer_t>
+        dictionary(size_t capacity, const equality_comparer_t& comparer) : data_(xtd::new_ptr<data>(new_ptr<equality_comparer_t>(comparer))) {
+          ensure_capacity(capacity);
+        }
+
+        /* Conflict with dictionary(const equality_comparer_t& comparer) constructor.
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param alloc Allocator to use for all memory allocations of this container.
         /// @remarks Constructs empty container. Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. For the default constructor, the number of buckets is implementation-defined.
@@ -273,7 +355,9 @@ namespace xtd {
         /// @param hash Hash function to use.
         /// @param equal Comparison function to use for all key comparisons of this container.
         /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
         /// @remarks Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844).
+        /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         template <class input_iterator_t>
         explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count = 0, const hasher_t& hash = hasher_t {}, const equator_t& equal = equator_t {}, const allocator_type& alloc = allocator_type {}) : data_(xtd::new_ptr<data>(bucket_count)) {
           for (auto iterator = first; iterator != last; ++iterator) {
@@ -286,7 +370,9 @@ namespace xtd {
         /// @param last  Thaae last itezrator of the range [first, last) to copy the elements from.
         /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
         /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
         /// @remarks Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844).
+        /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         template <class input_iterator_t>
         explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count, const allocator_type& alloc) : data_(xtd::new_ptr<data>(bucket_count)) {
           for (auto iterator = first; iterator != last; ++iterator) {
@@ -300,7 +386,9 @@ namespace xtd {
         /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
         /// @param hash Hash function to use.
         /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
         /// @remarks Constructs the container with the contents of the range [first, last). Sets xtd::collections::generic::dictionary::max_load_factor() to `1.0`. If multiple elements in the range have keys that compare equivalent, it is unspecified which element is inserted (pending [LWG2844](https://cplusplus.github.io/LWG/issue2844).
+        /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         template <class input_iterator_t>
         explicit dictionary(input_iterator_t first, input_iterator_t last, size_type bucket_count, const hasher_t& hash, const allocator_type& alloc) : data_(xtd::new_ptr<data>(bucket_count)) {
           for (auto iterator = first; iterator != last; ++iterator) {
@@ -315,6 +403,8 @@ namespace xtd {
         /// std::allocator_traits<allocator_type>::select_on_container_copy_construction(other.get_allocator())
         /// ```
         dictionary(const dictionary& other) noexcept : data_(xtd::new_ptr<data>(other.data_->comparer, other.data_->items, other.data_->version)) {}
+        
+        /* Conflict with dictionary(const idictionary<key_t, value_t>& dictionary, const equality_comparer_t& comparer) constructor.
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param other Another container to be used as source to initialize the elements of the container with.
         /// @param alloc Allocator to use for all memory allocations of this container.
@@ -323,8 +413,11 @@ namespace xtd {
         /// std::allocator_traits<allocator_type>::select_on_container_copy_construction(other.get_allocator())
         /// ```
         dictionary(const dictionary& other, const allocator_type& alloc) noexcept : data_(xtd::new_ptr<data>(other.data_->comparer, other.data_->items, other.data_->version)) {}
+         */
+        
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param other Another container to be used as source to initialize the elements of the container with.
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
         /// @remarks Copy constructor. Constructs the container with the copy of the contents of `other`, copies the load factor, the predicate, and the hash function as well. If `alloc` is not provided, allocator is obtained by calling
         /// ```cpp
         /// std::allocator_traits<allocator_type>::select_on_container_copy_construction(other.get_allocator())
@@ -338,6 +431,7 @@ namespace xtd {
         /// @brief Initializes instance of the xtd::collections::generic::dictionary <key_t, value_t> class from a variety of data sources. Optionally uses user supplied `bucket_count` as a minimal number of buckets to create, `hash` as the hash function, `equal` as the function to compare keys and `alloc` as the allocator.
         /// @param other Another container to be used as source to initialize the elements of the container with.
         /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
         /// @remarks Copy constructor. Constructs the container with the copy of the contents of `other`, copies the load factor, the predicate, and the hash function as well. If `alloc` is not provided, allocator is obtained by calling
         /// ```cpp
         /// std::allocator_traits<allocator_type>::select_on_container_copy_construction(other.get_allocator())
@@ -371,6 +465,7 @@ namespace xtd {
         /// @param hash Hash function to use.
         /// @param equal Comparison function to use for all key comparisons of this container.
         /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
         /// @remarks [Initializer-list](https://en.cppreference.com/w/cpp/language/list_initialization) constructor. Constructs the container with the contents of the initializer list init, same as
         /// ```cpp
         /// dictionary(init.begin(), init.end())
@@ -383,10 +478,12 @@ namespace xtd {
         /// @param init Initializer list to initialize the elements of the container with.
         /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
         /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
         /// @remarks [Initializer-list](https://en.cppreference.com/w/cpp/language/list_initialization) constructor. Constructs the container with the contents of the initializer list init, same as
         /// ```cpp
         /// dictionary(init.begin(), init.end())
         /// ```
+        /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         dictionary(std::initializer_list<base_value_type> init, size_type bucket_count, const allocator_type& alloc) : data_(xtd::new_ptr<data>(bucket_count)) {
           for (const auto& [key, value] : init)
             add(key, value);
@@ -396,10 +493,12 @@ namespace xtd {
         /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
         /// @param hash Hash function to use.
         /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
         /// @remarks [Initializer-list](https://en.cppreference.com/w/cpp/language/list_initialization) constructor. Constructs the container with the contents of the initializer list init, same as
         /// ```cpp
         /// dictionary(init.begin(), init.end())
         /// ```
+        /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         dictionary(std::initializer_list<base_value_type> init, size_type bucket_count, const hasher_t& hash, const allocator_type& alloc) : data_(xtd::new_ptr<data>(bucket_count)) {
           for (const auto& [key, value] : init)
             add(key, value);
@@ -410,10 +509,12 @@ namespace xtd {
         /// @param hash Hash function to use.
         /// @param equal Comparison function to use for all key comparisons of this container.
         /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
         /// @remarks [Initializer-list](https://en.cppreference.com/w/cpp/language/list_initialization) constructor. Constructs the container with the contents of the initializer list init, same as
         /// ```cpp
         /// dictionary(init.begin(), init.end())
         /// ```
+        /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         template <class init_key_t, class init_value_t>
         explicit dictionary(std::initializer_list<key_value_pair<init_key_t, init_value_t>> init, size_type bucket_count = 0, const hasher_t& hash = hasher_t {}, const equator_t& equal = equator_t {}, const allocator_type& alloc = allocator_type {}) : data_(xtd::new_ptr<data>(bucket_count)) {
           for (const auto& [key, value] : init)
@@ -423,10 +524,12 @@ namespace xtd {
         /// @param init Initializer list to initialize the elements of the container with.
         /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
         /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
         /// @remarks [Initializer-list](https://en.cppreference.com/w/cpp/language/list_initialization) constructor. Constructs the container with the contents of the initializer list init, same as
         /// ```cpp
         /// dictionary(init.begin(), init.end())
         /// ```
+        /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         template <class init_key_t, class init_value_t>
         dictionary(std::initializer_list<key_value_pair<init_key_t, init_value_t>> init, size_type bucket_count, const allocator_type& alloc) : data_(xtd::new_ptr<data>(bucket_count)) {
           for (const auto& [key, value] : init)
@@ -437,10 +540,12 @@ namespace xtd {
         /// @param bucket_count Minimal number of buckets to use on initialization. If it is not specified, implementation-defined default value is used.
         /// @param hash Hash function to use.
         /// @param alloc Allocator to use for all memory allocations of this container.
+        /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
         /// @remarks [Initializer-list](https://en.cppreference.com/w/cpp/language/list_initialization) constructor. Constructs the container with the contents of the initializer list init, same as
         /// ```cpp
         /// dictionary(init.begin(), init.end())
         /// ```
+        /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         template <class init_key_t, class init_value_t>
         dictionary(std::initializer_list<key_value_pair<init_key_t, init_value_t>> init, size_type bucket_count, const hasher_t& hash, const allocator_type& alloc) : data_(xtd::new_ptr<data>(bucket_count)) {
           for (const auto& [key, value] : init)
@@ -460,11 +565,13 @@ namespace xtd {
 
         /// @brief Gets the number of buckets in the container.
         /// @return The number of buckets in the container.
+        /// @remarks xtd::collections::generic::dictionary::bucket_count and xtd::collections::generic::dictionary::capacity are equivalent properties.
         size_type bucket_count() const noexcept {return data_->items.bucket_count();}
 
         /// @brief Gets the total numbers of elements the internal data structure can hold without resizing.
         /// @return The total numbers of elements the internal data structure can hold without resizing.
-        size_type capacity() const noexcept {return static_cast<xtd::size>(std::ceil(count() / load_factor()));}
+        /// @remarks xtd::collections::generic::dictionary::capacity and xtd::collections::generic::dictionary::bucket_count are equivalent properties.
+        size_type capacity() const noexcept {return bucket_count();}
         
         /// @brief Returns an iterator to the first element of the enumarable.
         /// @return Iterator to the first element.
@@ -475,7 +582,7 @@ namespace xtd {
         const_iterator cend() const noexcept override {return ienumerable<value_type>::cend();}
 
         /// @brief Gets the td::collections::generic::iequality_comparer <type_t> that is used to determine equality of keys for the dictionary.
-        /// @return The td::collections::generic::iequality_comparer <type_t> generic interface implementation that is used to determine equality of keys for the current xtd::collections::generic::dictionary <key_t, value_t> and to provide hash values for the keys.
+        /// @return The xtd::collections::generic::iequality_comparer <type_t> generic interface implementation that is used to determine equality of keys for the current xtd::collections::generic::dictionary <key_t, value_t> and to provide hash values for the keys.
         /// @remarks xtd::collections::generic::dictionary <key_t, value_t> requires an equality implementation to determine whether keys are equal. You can specify an implementation of the td::collections::generic::iequality_comparer <type_t> generic interface by using a constructor that accepts a comparer parameter; if you do not specify one, the default generic equality comparer td::collections::generic::equality_comparer::default_equality_comparer is used.
         const iequality_comparer<key_t>& comparer() const noexcept {
           if (data_->comparer) return *data_->comparer;
@@ -708,7 +815,7 @@ namespace xtd {
         }
         
         /// @brief Determines whether an element is in the xtd::collections::generic::dictionary <key_t, value_t>.
-        /// @param item The object to be added to the end of the xtd::collections::generic::dictionary <key_t, value_t>. The value can ! be null for reference types.
+        /// @param item The object to be added to the end of the xtd::collections::generic::dictionary <key_t, value_t>.
         /// @return `true` if the xtd::collections::generic::dictionary <key_t, value_t> contains an element with the specified `item` ; otherwise, `false`.
         bool contains(const value_type& item) const noexcept override {
           auto iterator = find(item.key());
@@ -1378,6 +1485,7 @@ namespace xtd {
         /// @param other Another container to use as data source.
         /// @return This current instance.
         dictionary& operator =(dictionary&& other) noexcept {
+          data_->comparer = std::move(other.data_->comparer);
           data_->items = std::move(other.data_->items);
           data_->version = std::move(other.data_->version);
           return *this;
