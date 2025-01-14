@@ -1346,9 +1346,9 @@ namespace xtd {
           return erase(key) == 1;
         }
         
-        /// @brief Removes the first occurrence of a specific object from the Dictionary<TKey, TValue>.
-        /// @param item The object to remove from the Dictionary<TKey, TValue>.
-        /// @return `true` if item is successfully removed; otherwise, `false`. This method also returns `false` if item value was not found in the Dictionary<TKey, TValue>.
+        /// @brief Removes the first occurrence of a specific object from the xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @param item The object to remove from the xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @return `true` if item is successfully removed; otherwise, `false`. This method also returns `false` if item value was not found in the xtd::collections::generic::dictionary <key_t, value_t>.
         bool remove(const value_type& item) noexcept override {
           if (!contains_value(item.value())) return false;
           return erase(item.key()) == 1;
