@@ -7,6 +7,7 @@
 #include <xtd/environment>
 #include <xtd/literals>
 #include <xtd/size_object>
+#include <xtd/string_comparer>
 
 using namespace xtd;
 using namespace xtd::collections::generic;
@@ -123,23 +124,13 @@ namespace xtd::collections::generic::tests {
     }
 
     void test_method_(constructor_with_ienumerable_and_equality_comparer) {
-      struct lower_string_comparer : iequality_comparer<string> {
-        bool equals(const string& x, const string& y) const noexcept override {return x.to_lower().equals(y.to_lower());}
-        xtd::size get_hash_code(const string& obj) const noexcept override {return obj.to_lower().get_hash_code();}
-      };
-      
       const ienumerable<key_value_pair<string, string>>& items1 = array<key_value_pair<string, string>> {{"one", "one"}, {"oNe", "oNe"}, {"OnE", "OnE"}, {"ONE", "ONE"}};
       auto items2 = dictionary<string, string>(items1);
       collection_assert::are_equivalent(array<key_value_pair<string, string>> {{"one", "one"}, {"oNe", "oNe"}, {"OnE", "OnE"}, {"ONE", "ONE"}}, items2);
-      assert::throws<argument_exception>([&]{items2 = dictionary<string, string>(items1, lower_string_comparer {});});
+      assert::throws<argument_exception>([&]{items2 = dictionary<string, string>(items1, string_comparer::ordinal_ignore_case());});
     }
 
     void test_method_(constructor_with_equality_comparer) {
-      struct lower_string_comparer : iequality_comparer<string> {
-        bool equals(const string& x, const string& y) const noexcept override {return x.to_lower().equals(y.to_lower());}
-        xtd::size get_hash_code(const string& obj) const noexcept override {return obj.to_lower().get_hash_code();}
-      };
-      
       auto items = dictionary<string, string> {};
       items.add("one", "one");
       items.add("oNe", "oNe");
@@ -147,7 +138,7 @@ namespace xtd::collections::generic::tests {
       items.add("ONE", "ONE");
       collection_assert::are_equivalent(array<key_value_pair<string, string>> {{"one", "one"}, {"oNe", "oNe"}, {"OnE", "OnE"}, {"ONE", "ONE"}}, items);
       
-      items = dictionary<string, string> {lower_string_comparer {}};
+      items = dictionary<string, string> {string_comparer::ordinal_ignore_case()};
       items.add("one", "one");
       assert::throws<argument_exception>([&]{items.add("oNe", "oNe");});
       assert::throws<argument_exception>([&]{items.add("OnE", "OnE");});
@@ -155,11 +146,6 @@ namespace xtd::collections::generic::tests {
     }
 
     void test_method_(constructor_with_capacity_and_equality_comparer) {
-      struct lower_string_comparer : iequality_comparer<string> {
-        bool equals(const string& x, const string& y) const noexcept override {return x.to_lower().equals(y.to_lower());}
-        xtd::size get_hash_code(const string& obj) const noexcept override {return obj.to_lower().get_hash_code();}
-      };
-      
       auto items = dictionary<string, string> {10_z};
       assert::is_greater_or_equal(items.capacity(), 10_z);
       items.add("one", "one");
@@ -168,7 +154,7 @@ namespace xtd::collections::generic::tests {
       items.add("ONE", "ONE");
       collection_assert::are_equivalent(array<key_value_pair<string, string>> {{"one", "one"}, {"oNe", "oNe"}, {"OnE", "OnE"}, {"ONE", "ONE"}}, items);
       
-      items = dictionary<string, string> {10_z, lower_string_comparer {}};
+      items = dictionary<string, string> {10_z, string_comparer::ordinal_ignore_case()};
       assert::is_greater_or_equal(items.capacity(), 10_z);
       items.add("one", "one");
       assert::throws<argument_exception>([&]{items.add("oNe", "oNe");});
