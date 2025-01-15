@@ -421,6 +421,7 @@
 #include "startup.hpp"
 #include "static.hpp"
 #include "string.hpp"
+#include "string_comparer.hpp"
 #include "string_comparison.hpp"
 #include "string_split_options.hpp"
 #include "system_exception.hpp"
