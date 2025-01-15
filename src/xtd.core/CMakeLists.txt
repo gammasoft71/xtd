@@ -415,6 +415,8 @@ add_sources(
   include/xtd/std
   include/xtd/string.hpp
   include/xtd/string
+  include/xtd/string_comparer.hpp
+  include/xtd/string_comparer
   include/xtd/string_comparison.hpp
   include/xtd/string_comparison
   include/xtd/string_split_options.hpp
@@ -1096,6 +1098,7 @@ add_sources(
   src/xtd/random.cpp
   src/xtd/signal_cancel_event_args.cpp
   src/xtd/startup.cpp
+  src/xtd/string_comparer.cpp
   src/xtd/system_exception.cpp
   src/xtd/target_type.cpp
   src/xtd/time_span.cpp
