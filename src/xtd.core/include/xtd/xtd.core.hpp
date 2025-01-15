@@ -245,6 +245,7 @@
 #include "argument_out_of_range_exception.hpp"
 #include "arithmetic_exception.hpp"
 #include "as.hpp"
+#include "as_const.hpp"
 #include "async_callback.hpp"
 #include "attribute.hpp"
 #include "availability_versions.hpp"
