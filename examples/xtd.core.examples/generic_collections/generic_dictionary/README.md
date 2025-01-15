@@ -19,34 +19,34 @@ xtdc run
 ## Output
 
 ```
-An element with Key = "txt" already exists.
+An element with key = "txt" already exists.
 For key = "rtf", value = wordpad.exe.
 For key = "rtf", value = winword.exe.
-Key = "tif" is not found.
-Key = "tif" is not found.
-Value added for key = "ht": hypertrm.exe
+key = "tif" is not found.
+key = "tif" is not found.
+value added for key = "ht": hypertrm.exe
 
-Key = doc, Value = winword.exe
-Key = rtf, Value = winword.exe
-Key = bmp, Value = paint.exe
-Key = ht, Value = hypertrm.exe
-Key = dib, Value = paint.exe
-Key = txt, Value = notepad.exe
+key = doc, value = winword.exe
+key = rtf, value = winword.exe
+key = bmp, value = paint.exe
+key = ht, value = hypertrm.exe
+key = dib, value = paint.exe
+key = txt, value = notepad.exe
 
-Value = winword.exe
-Value = winword.exe
-Value = paint.exe
-Value = hypertrm.exe
-Value = paint.exe
-Value = notepad.exe
+value = winword.exe
+value = winword.exe
+value = paint.exe
+value = hypertrm.exe
+value = paint.exe
+value = notepad.exe
 
-Key = doc
-Key = rtf
-Key = bmp
-Key = ht
-Key = dib
-Key = txt
+key = doc
+key = rtf
+key = bmp
+key = ht
+key = dib
+key = txt
 
 Remove("doc")
-Key "doc" is not found.
+key "doc" is not found.
 ```
