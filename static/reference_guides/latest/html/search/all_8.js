@@ -46,7 +46,7 @@ var searchData=
   ['hash_5fset_2ehpp_43',['hash_set.hpp',['../hash__set_8hpp.html',1,'']]],
   ['hasher_44',['hasher',['../structxtd_1_1collections_1_1generic_1_1dictionary_1_1hasher.html',1,'xtd::collections::generic::dictionary']]],
   ['hasher_2ehpp_45',['hasher.hpp',['../hasher_8hpp.html',1,'']]],
-  ['hashtable_46',['hashtable',['../group__collections.html#ga9869e5a28ce3a47249bdee5783d54dc9',1,'xtd::collections']]],
+  ['hashtable_46',['hashtable',['../group__collections.html#gad3e0111139723e7d2c53bab2257a33f7',1,'xtd::collections']]],
   ['hashtable_2ehpp_47',['hashtable.hpp',['../hashtable_8hpp.html',1,'']]],
   ['hatch_5fbrush_48',['hatch_brush',['../namespacextd_1_1drawing_1_1drawing2d.html#abd9c313af180cd366442e09c33331296',1,'xtd::drawing::drawing2d::hatch_brush'],['../classxtd_1_1drawing_1_1drawing__2d_1_1hatch__brush.html#aa343a81ccbaa5d54a38915da79bd258a',1,'xtd::drawing::drawing_2d::hatch_brush::hatch_brush(xtd::drawing::drawing_2d::hatch_style hatch_style, const xtd::drawing::color &amp;fore_color)'],['../classxtd_1_1drawing_1_1drawing__2d_1_1hatch__brush.html#a5f740083a592f93129f14806747ed701',1,'xtd::drawing::drawing_2d::hatch_brush::hatch_brush(xtd::drawing::drawing_2d::hatch_style hatch_style, const xtd::drawing::color &amp;fore_color, const xtd::drawing::color &amp;back_color)'],['../classxtd_1_1drawing_1_1drawing__2d_1_1hatch__brush.html',1,'xtd::drawing::drawing_2d::hatch_brush']]],
   ['hatch_5fbrush_2ehpp_49',['hatch_brush.hpp',['../drawing__2d_2hatch__brush_8hpp.html',1,'(Global Namespace)'],['../drawing2d_2hatch__brush_8hpp.html',1,'(Global Namespace)']]],
