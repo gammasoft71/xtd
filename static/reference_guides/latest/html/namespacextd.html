@@ -92,9 +92,9 @@ $(function() {
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more. </p>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000012">Todo:</a></b></dt><dd>Move to iterator.hpp file </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000031">Todo:</a></b></dt><dd>to remove </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000033">Todo:</a></b></dt><dd>to remove </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000035">Todo:</a></b></dt><dd>to remove </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000036">Todo:</a></b></dt><dd>to remove </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000034">Todo:</a></b></dt><dd>to remove </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -1343,6 +1343,10 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aacbd2f5780a3a0e2aa51480648286bc2"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
+<tr class="memitem:aacbd2f5780a3a0e2aa51480648286bc2"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::add_const_t&lt; type_t &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#aacbd2f5780a3a0e2aa51480648286bc2">as_const</a> (type_t &amp;<a class="el" href="group__types.html#gafa42bcceb7fb5768ea8cc4588e67dc15">type</a>) noexcept</td></tr>
+<tr class="memdesc:aacbd2f5780a3a0e2aa51480648286bc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains a reference to <code>const</code> to its argument.  <br /></td></tr>
+<tr class="separator:aacbd2f5780a3a0e2aa51480648286bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7352fcff0da12feb0aff421fc8c41d15"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga7352fcff0da12feb0aff421fc8c41d15"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#ga7352fcff0da12feb0aff421fc8c41d15">boxing</a> (const type_t &amp;value) noexcept</td></tr>
 <tr class="memdesc:ga7352fcff0da12feb0aff421fc8c41d15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to box an object.  <br /></td></tr>
@@ -6376,6 +6380,44 @@ Variables</h2></td></tr>
 <tr class="separator:gaa5ac5641de5f9362829662a60349ecde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="aacbd2f5780a3a0e2aa51480648286bc2" name="aacbd2f5780a3a0e2aa51480648286bc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacbd2f5780a3a0e2aa51480648286bc2">&#9670;&#160;</a></span>as_const()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::add_const_t&lt; type_t &gt; &amp; xtd::as_const </td>
+          <td>(</td>
+          <td class="paramtype">type_t &amp;&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Obtains a reference to <code>const</code> to its argument. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>The referecne of <code>type</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The const reference of <code>type</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Forms lvalue reference to const type of <code>type</code>. </dd></dl>
+
+</div>
+</div>
 <a id="gae19295d7166eb64721a5d9304d277137" name="gae19295d7166eb64721a5d9304d277137"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gae19295d7166eb64721a5d9304d277137">&#9670;&#160;</a></span>format() <span class="overload">[1/3]</span></h2>
 
@@ -8634,7 +8676,7 @@ template&lt;class ... args_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jan 14 2025 20:20:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jan 15 2025 20:08:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
