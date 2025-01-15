@@ -44,6 +44,8 @@ add_sources(
   include/xtd/array_abstract_object.hpp
   include/xtd/as.hpp
   include/xtd/as
+  include/xtd/as_const.hpp
+  include/xtd/as_const
   include/xtd/async_callback.hpp
   include/xtd/async_callback
   include/xtd/async_result.hpp

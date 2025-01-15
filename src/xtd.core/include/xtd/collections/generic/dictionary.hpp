@@ -56,10 +56,17 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core generic_collections
-      /// @remarks The xtd::collections::generic::dictionary class is same as [std::unordered_map](https://en.cppreference.com/w/cpp/container/unordered_map).
       /// @par Examples
-      /// The following shows how to use xtd::collections::generic::dictionary.
-      /// @include dictionary.cpp
+      /// The following code example creates an empty xtd::collections::generic::dictionary <key_t, value_t> of strings with string keys and uses the Add method to add some elements. The example demonstrates that the xtd::collections::generic::dictionary::add method throws an xtd::argument_exception when attempting to add a duplicate key.
+      ///
+      /// The example uses the xtd::collections::generic::dictionary::operator [] to retrieve values, demonstrating that a xtd::collections::generic::key_not_found_exception is thrown when a requested key is not present, and showing that the value associated with a key can be replaced.
+      ///
+      /// The example shows how to use the xtd::collections::generic::dictionary::try_get_vValue method as a more efficient way to retrieve values if a program often must try key values that are not in the dictionary, and it shows how to use the xtd::collections::generic::dictionary::contains_key method to test whether a key exists before calling the xtd::collections::generic::dictionary::add method.
+      ///
+      /// The example shows how to enumerate the keys and values in the dictionary and how to enumerate the keys and values alone using the xtd::collections::generic::dictionary::keys property and the xtd::collections::generic::dictionary::values property.
+      ///
+      /// Finally, the example demonstrates the xtd::collections::generic::dictionary::remove method.
+      /// @include generic_dictionary.cpp
       /// @remarks The xtd::collections::generic::dictionary <key_t, value_t> generic class provides a mapping from a set of keys to a set of values. Each addition to the dictionary consists of a value and its associated key. Retrieving a value by using its key is very fast, close to O(1), because the xtd::collections::generic::dictionary <key_t, value_t> class is implemented as a hash table.
       /// @note The speed of retrieval depends on the quality of the hashing algorithm of the type specified for `key_t`.
       /// @remarks As long as an object is used as a key in the xtd::collections::generic::dictionary <key_t, value_t>, it must not change in any way that affects its hash value. Every key in a xtd::collections::generic::dictionary <key_t, value_t> must be unique according to the dictionary's equality comparer.
@@ -1542,7 +1549,9 @@ namespace xtd {
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::dictionary <key_t, value_t> is read-only.
         /// @remarks This property provides the ability to access a specific element in the collection by using the following syntax: `my_collection[key]`.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::dictionary::add method does not modify existing elements.
-        value_t& operator [](const key_t& key) override {return data_->items[key];}
+        value_t& operator [](const key_t& key) override {
+          ++data_->version;
+          return data_->items[key];}
 
         /// @brief Returns a reference to the underlying base type.
         /// @return Reference to the underlying base type.

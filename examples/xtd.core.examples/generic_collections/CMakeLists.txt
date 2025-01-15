@@ -4,6 +4,7 @@ project(generic_collections)
 find_package(xtd REQUIRED)
 
 add_projects(
+  generic_dictionary
   generic_icollection
   generic_ienumerable
   generic_ienumerable2
