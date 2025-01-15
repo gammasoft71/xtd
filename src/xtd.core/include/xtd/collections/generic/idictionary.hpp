@@ -16,7 +16,7 @@ namespace xtd {
       /// @par Definition
       /// ```cpp
       /// template<class key_t, class value_t>
-      /// class idictionary interface_
+      /// class idictionary : public xtd::collections::generic::icollection<xtd::collections::generic::key_value_pair<key_t, value_t>>;
       /// ```
       /// @par Header
       /// ```cpp
@@ -50,8 +50,8 @@ namespace xtd {
         using key_type = key_t;
         /// @brief Represents the dictionary mapped type.
         using mapped_type = value_t;
-        /// @brief Represents the dictionary value type.
-        using value_type = xtd::collections::generic::key_value_pair<key_type, mapped_type>;
+        /// @brief Represents the xtd::collections::generic::idictionary value type.
+        using value_type = typename xtd::collections::generic::icollection<xtd::collections::generic::key_value_pair<key_t, value_t>>::value_type;
         /// @brief Represents the iterator of xtd::collections::generic::ienumerable value type.
         using iterator = typename xtd::collections::generic::icollection<value_type>::iterator;
         /// @brief Represents the const iterator of xtd::collections::generic::ienumerable value type.

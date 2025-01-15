@@ -54,10 +54,10 @@ namespace xtd {
             /// @name Public Aliases
             
             /// @{
-            /// @brief Represents the iterator category type.
-            using iterator_category = std::forward_iterator_tag;
             /// @brief Represents the value type.
             using value_type = type_t;
+            /// @brief Represents the iterator category type.
+            using iterator_category = std::forward_iterator_tag;
             /// @brief Represents the value type.
             using difference_type = xtd::ptrdiff;
             /// @brief Represents the pointer of the value type.

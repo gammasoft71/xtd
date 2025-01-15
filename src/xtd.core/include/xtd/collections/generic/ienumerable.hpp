@@ -38,6 +38,8 @@ namespace xtd {
         /// @name Public Aliases
         
         /// @{
+        /// @brief Represents the xtd::collections::generic::ienumerable value type.
+        using value_type = type_t;
         /// @brief Represents the iterator of xtd::collections::generic::ienumerable value type.
         using iterator = typename xtd::collections::generic::extensions::enumerable_iterators<type_t, xtd::collections::generic::ienumerable<type_t>>::iterator;
         /// @brief Represents the const iterator of xtd::collections::generic::ienumerable value type.

@@ -33,6 +33,10 @@ namespace xtd {
           /// @name Public Aliases
           
           /// @{
+          /// @brief Represents the ienumerable enumerable type.
+          using enumerable_type = enumerable_t;
+          /// @brief Represents the ienumerable source type.
+          using source_type = source_t;
           /// @brief Represents the ienumerable value type.
           template <class type_t>
           using ienumerable = typename xtd::linq::enumerable::ienumerable<type_t>;
