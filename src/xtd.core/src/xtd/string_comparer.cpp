@@ -22,6 +22,7 @@ int32 string_comparer::compare(const xtd::string& x, const xtd::string& y) const
 }
 
 bool string_comparer::equals(const string& x, const string& y) const noexcept {
+  if (&x == &y) return true;
   switch (comparison_) {
     case string_comparison::ordinal: return x.equals(y);
     case string_comparison::ordinal_ignore_case: return x.to_lower().equals(y.to_lower());
