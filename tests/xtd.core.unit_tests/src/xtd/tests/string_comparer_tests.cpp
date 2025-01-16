@@ -1,3 +1,4 @@
+#include <xtd/not_implemented_exception>
 #include <xtd/string_comparer>
 #include <xtd/time_span>
 #include <xtd/tunit/assert>
@@ -9,6 +10,34 @@ using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(string_comparer_tests) {
+    void test_method_(string_comparer_current_culture) {
+      assert::throws<not_implemented_exception>([]{string_comparer::current_culture();});
+      //assert::are_not_same(string_comparer::current_culture(), string_comparer::current_culture());
+    }
+    
+    void test_method_(string_comparer_current_culture_ignore_case) {
+      assert::throws<not_implemented_exception>([]{string_comparer::current_culture_ignore_case();});
+      //assert::are_not_same(string_comparer::current_culture_ignore_case(), string_comparer::current_culture_ignore_case());
+    }
+    
+    void test_method_(invariant_culture) {
+      assert::throws<not_implemented_exception>([]{string_comparer::invariant_culture();});
+      //assert::are_not_same(string_comparer::invariant_culture(), string_comparer::invariant_culture());
+    }
+    
+    void test_method_(invariant_culture_ignore_case) {
+      assert::throws<not_implemented_exception>([]{string_comparer::invariant_culture_ignore_case();});
+      //assert::are_not_same(string_comparer::invariant_culture_ignore_case(), string_comparer::invariant_culture_ignore_case());
+    }
+    
+    void test_method_(ordinal) {
+      assert::are_same(string_comparer::ordinal(), string_comparer::ordinal());
+    }
+    
+    void test_method_(ordinal_ignore_case) {
+      assert::are_same(string_comparer::ordinal_ignore_case(), string_comparer::ordinal_ignore_case());
+    }
+
     void test_method_(string_comparer_ordinal_compare_with_strings) {
       assert::is_zero(string_comparer::ordinal().compare(string {""}, string {""}));
       auto s = string {"abc"};
@@ -227,6 +256,12 @@ namespace xtd::tests {
       assert::are_not_equal(string {"ABC"}.get_hash_code(), string_comparer::ordinal_ignore_case().get_hash_code(string {"abc"}));
       assert::are_not_equal(string {"bca"}.get_hash_code(), string_comparer::ordinal_ignore_case().get_hash_code(string {"abc"}));
       assert::are_not_equal(string {"abc"}.get_hash_code(), string_comparer::ordinal_ignore_case().get_hash_code(string {"bca"}));
+    }
+    
+    void test_method_(from_comparison) {
+      assert::are_equal(string_comparer::ordinal(), string_comparer::from_comparison(string_comparison::ordinal));
+      assert::are_equal(string_comparer::ordinal_ignore_case(), string_comparer::from_comparison(string_comparison::ordinal_ignore_case));
+      assert::throws<argument_exception>([]{string_comparer::from_comparison(static_cast<string_comparison>(42));});
     }
   };
 }
