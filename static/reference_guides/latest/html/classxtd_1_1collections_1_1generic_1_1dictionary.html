@@ -269,7 +269,7 @@ class xtd::collections::generic::dictionary&lt; key_t, value_t, hasher_t, equato
 <dl class="section remark"><dt>Remarks</dt><dd>As long as an object is used as a key in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;, it must not change in any way that affects its hash value. Every key in a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; must be unique according to the dictionary's equality comparer. </dd>
 <dd>
 <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; requires an equality implementation to determine whether keys are equal. You can specify an implementation of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; generic interface by using a constructor that accepts a comparer parameter; if you do not specify an implementation, the default generic equality comparer <a class="el" href="classxtd_1_1collections_1_1generic_1_1equality__comparer.html#a5849423379f7c39750a1713ba8c44e35" title="Gets the default equality comparer for the type specified by the generic argument.">xtd::collections::generic::equality_comparer&lt;type_t&gt;::default_equality_comparer</a> is used. If type <code>key_t</code> implements the <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> &lt;type_t&gt; generic interface, the default equality comparer uses that implementation. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>For example, you can use the case-insensitive string comparers provided by the xtd::string_comparer class to create dictionaries with case-insensitive string keys. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>For example, you can use the case-insensitive string comparers provided by the <a class="el" href="group__system.html#ga088b87511ab0bc2c8d8d37b0582f0c5f" title="Represents a string comparison operation that uses specific case and culture-based or ordinal compari...">xtd::string_comparer</a> class to create dictionaries with case-insensitive string keys. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The capacity of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; is the number of elements the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; can hold. As elements are added to a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt;, the capacity is automatically increased as required by reallocating the internal array. </dd>
 <dd>
 For purposes of enumeration, each item in the dictionary is treated as a <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html" title="Defines a key/value pair that can be set or retrieved.">xtd::collections::generic::key_value_pair</a> &lt;key_t, value_t&gt; structure representing a value and its key. The order in which the items are returned is undefined. </dd>
@@ -1620,7 +1620,7 @@ template&lt;class equality_comparer_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Use this constructor with the case-insensitive string comparers provided by the xtd::string_comparer class to create dictionaries with case-insensitive string keys. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>Use this constructor with the case-insensitive string comparers provided by the <a class="el" href="group__system.html#ga088b87511ab0bc2c8d8d37b0582f0c5f" title="Represents a string comparison operation that uses specific case and culture-based or ordinal compari...">xtd::string_comparer</a> class to create dictionaries with case-insensitive string keys. </dd>
 <dd>
 Every key in a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; must be unique according to the specified comparer. </dd>
 <dd>
@@ -1817,10 +1817,10 @@ template&lt;class equality_comparer_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Use this constructor with the case-insensitive string comparers provided by the xtd::string_comparer class to create dictionaries with case-insensitive string keys. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>Use this constructor with the case-insensitive string comparers provided by the <a class="el" href="group__system.html#ga088b87511ab0bc2c8d8d37b0582f0c5f" title="Represents a string comparison operation that uses specific case and culture-based or ordinal compari...">xtd::string_comparer</a> class to create dictionaries with case-insensitive string keys. </dd>
 <dd>
 Every key in a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; must be unique according to the specified comparer; likewise, every key in the source <code>dictionary</code> must also be unique according to the specified comparer. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>For example, duplicate keys can occur if <code>comparer</code> is one of the case-insensitive string comparers provided by the xtd::string_comparer class and <code>dictionary</code> does not use a case-insensitive comparer key. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>For example, duplicate keys can occur if <code>comparer</code> is one of the case-insensitive string comparers provided by the <a class="el" href="group__system.html#ga088b87511ab0bc2c8d8d37b0582f0c5f" title="Represents a string comparison operation that uses specific case and culture-based or ordinal compari...">xtd::string_comparer</a> class and <code>dictionary</code> does not use a case-insensitive comparer key. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The initial capacity of the new <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; is large enough to contain all the elements in <code>dictionary</code>. </dd>
 <dd>
 <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; requires an equality implementation to determine whether keys are equal. If type <code>key_t</code> implements the <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> &lt;type_t&gt; generic interface, the default equality comparer uses that implementation. </dd>
@@ -1930,7 +1930,7 @@ template&lt;class equality_comparer_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Use this constructor with the case-insensitive string comparers provided by the xtd::string_comparer class to create dictionaries with case-insensitive string keys. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>Use this constructor with the case-insensitive string comparers provided by the <a class="el" href="group__system.html#ga088b87511ab0bc2c8d8d37b0582f0c5f" title="Represents a string comparison operation that uses specific case and culture-based or ordinal compari...">xtd::string_comparer</a> class to create dictionaries with case-insensitive string keys. </dd>
 <dd>
 Every key in a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; must be unique according to the specified comparer; likewise, every key in the source <code>dictionary</code> must also be unique according to the specified comparer. </dd>
 <dd>
@@ -7307,7 +7307,7 @@ template&lt;class key_t , class value_t , class hasher_t  = xtd::collections::ge
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 15 2025 20:08:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 16 2025 20:30:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
