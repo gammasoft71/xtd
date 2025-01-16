@@ -1,10 +1,11 @@
+#include <xtd/diagnostics/debugger>
 #include <xtd/forms/application>
 #include <xtd/forms/assert_dialog>
 #include <xtd/forms/button>
 #include <xtd/forms/form>
-#include <xtd/diagnostics/debug_break>
 
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::forms;
 
 class form1 : public form {
@@ -21,7 +22,7 @@ public:
       dialog.message("Index must be > 0");
       switch(dialog.show_sheet_dialog(*this)) {
         case forms::dialog_result::abort: application::exit(); break;
-        case forms::dialog_result::retry: debug_break_(); break;
+        case forms::dialog_result::retry: debugger::debug_break(); break;
         default: break;
       }
     };
