@@ -184,7 +184,7 @@ var searchData=
   ['control_5fkey_181',['control_key',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deab8c6ab27f19a3ff58d1aebaea3919563',1,'xtd::forms']]],
   ['control_5flight_182',['control_light',['../group__colors.html#ggabb6249e3fb8a4388778157257e99049ba8e047149aea0e91989157491e0c11f4a',1,'xtd::drawing::control_light'],['../group__xtd__forms.html#ggad628284799d529bfb37edb2fa250a986a8e047149aea0e91989157491e0c11f4a',1,'xtd::forms::control_light']]],
   ['control_5flight_5flight_183',['control_light_light',['../group__xtd__forms.html#ggad628284799d529bfb37edb2fa250a986a32138158c256af236d8652efa0f438e4',1,'xtd::forms::control_light_light'],['../group__colors.html#ggabb6249e3fb8a4388778157257e99049ba32138158c256af236d8652efa0f438e4',1,'xtd::drawing::control_light_light']]],
-  ['control_5ftext_184',['control_text',['../group__colors.html#ggabb6249e3fb8a4388778157257e99049bad084ae6747e1f971bed25aa57b48eb22',1,'xtd::drawing::control_text'],['../group__xtd__forms.html#ggad628284799d529bfb37edb2fa250a986ad084ae6747e1f971bed25aa57b48eb22',1,'xtd::forms::control_text']]],
+  ['control_5ftext_184',['control_text',['../group__xtd__forms.html#ggad628284799d529bfb37edb2fa250a986ad084ae6747e1f971bed25aa57b48eb22',1,'xtd::forms::control_text'],['../group__colors.html#ggabb6249e3fb8a4388778157257e99049bad084ae6747e1f971bed25aa57b48eb22',1,'xtd::drawing::control_text']]],
   ['control_5fz_185',['control_z',['../group__xtd__core.html#ggaa3d0d07e86f61a82f96e00c5f516622ea8bc496da1cd5d811e14bcc19368775db',1,'xtd']]],
   ['cookies_186',['cookies',['../classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a55e7dd3016ce4ac57b9a0f56af12f7c2',1,'xtd::environment']]],
   ['coral_187',['coral',['../group__colors.html#ggabb6249e3fb8a4388778157257e99049bad2ebed4eaf58509dcc358e1782c38fea',1,'xtd::drawing']]],
@@ -352,7 +352,9 @@ var searchData=
   ['ctrl_5fy_349',['ctrl_y',['../group__xtd__forms.html#gga1b02a3f72bd94bc7624745543998956ca90199273c2598721560e254ea25f68f9',1,'xtd::forms']]],
   ['ctrl_5fz_350',['ctrl_z',['../group__xtd__forms.html#gga1b02a3f72bd94bc7624745543998956cae7df54789bcecd3558b2a1a917fe1809',1,'xtd::forms']]],
   ['currency_351',['currency',['../group__xtd__core.html#gga176c15b86e21b78ec7a3dd6f0a92c686a1af0389838508d7016a9841eb6273962',1,'xtd']]],
-  ['custom_352',['custom',['../group__xtd__drawing.html#ggaf3c876b96fe581fd839e9586377f02b8a8b9035807842a4e4dbe009f3f1478127',1,'xtd::drawing::drawing_2d::custom'],['../group__xtd__forms.html#gga3aba202fc852006258f3a8da4f7bd0d1a8b9035807842a4e4dbe009f3f1478127',1,'xtd::forms::custom']]],
-  ['custom_5ftarget_353',['custom_target',['../group__xtd__core.html#gga5ecb92392db71dc0bde6ce6588f06912a4428dbc1f663e1961334cf40c7901269',1,'xtd']]],
-  ['cyan_354',['cyan',['../group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a6411532ba4971f378391776a9db629d3',1,'xtd::cyan'],['../group__colors.html#ggabb6249e3fb8a4388778157257e99049ba6411532ba4971f378391776a9db629d3',1,'xtd::drawing::cyan']]]
+  ['current_5fculture_352',['current_culture',['../group__xtd__core.html#gga04dd6c532656e286dfbf2f9aea3d8ccdadd68349b09c4864734705d08e1ea33e5',1,'xtd']]],
+  ['current_5fculture_5fignore_5fcase_353',['current_culture_ignore_case',['../group__xtd__core.html#gga04dd6c532656e286dfbf2f9aea3d8ccdac146979323b94d563b508887920f38a3',1,'xtd']]],
+  ['custom_354',['custom',['../group__xtd__drawing.html#ggaf3c876b96fe581fd839e9586377f02b8a8b9035807842a4e4dbe009f3f1478127',1,'xtd::drawing::drawing_2d::custom'],['../group__xtd__forms.html#gga3aba202fc852006258f3a8da4f7bd0d1a8b9035807842a4e4dbe009f3f1478127',1,'xtd::forms::custom']]],
+  ['custom_5ftarget_355',['custom_target',['../group__xtd__core.html#gga5ecb92392db71dc0bde6ce6588f06912a4428dbc1f663e1961334cf40c7901269',1,'xtd']]],
+  ['cyan_356',['cyan',['../group__xtd__core.html#ggab60a2a64b74b91771b667e4a079681f2a6411532ba4971f378391776a9db629d3',1,'xtd::cyan'],['../group__colors.html#ggabb6249e3fb8a4388778157257e99049ba6411532ba4971f378391776a9db629d3',1,'xtd::drawing::cyan']]]
 ];
