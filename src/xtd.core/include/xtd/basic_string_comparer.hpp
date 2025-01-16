@@ -38,7 +38,7 @@ namespace xtd {
     /// @return A xtd::basic_string_comparer object.
     /// @remarks The xtd::basic_string_comparer returned by the xtd::basic_string_comparer::current_culture property can be used when strings are linguistically relevant. For example, if strings are displayed to the user, or if strings are the result of user interaction, culture-sensitive string comparison should be used to order the string data.
     /// @remarks The current culture is the xtd::globalization::culture_info object associated with the current thread.
-    /// @remarks The xtd::::basic_string_comparer::current_culture property actually returns an instance of an anonymous class derived from the ::basic_string_comparer class.
+    /// @remarks The xtd::basic_string_comparer::current_culture property actually returns an instance of an anonymous class derived from the ::basic_string_comparer class.
     /// @remarks Each call to the ::basic_string_comparer::current_culture property get accessor returns a new ::basic_string_comparer object, as the following code shows.
     /// ```
     /// void compare_current_culture_basic_string_comparer() {
@@ -129,12 +129,12 @@ namespace xtd {
       throw xtd::argument_exception {};
     }
     /// @cond
-    int32 compare(const char* x, const char* y) const {
+    int32 compare(const char_t* x, const char_t* y) const {
       if (x == y) return 0;
       return compare(basic_string<char_t> {x}, basic_string<char_t> {y});
     }
-    int32 compare(const basic_string<char_t>& x, const char* y) const {return compare(x, basic_string<char_t> {y});}
-    int32 compare(const char* x, const basic_string<char_t>& y) const {return compare(basic_string<char_t> {x}, y);}
+    int32 compare(const basic_string<char_t>& x, const char_t* y) const {return compare(x, basic_string<char_t> {y});}
+    int32 compare(const char_t* x, const basic_string<char_t>& y) const {return compare(basic_string<char_t> {x}, y);}
     /// @endcond
     /// @brief When overridden in a derived class, compares two strings and returns an indication of their relative sort order.
     /// @param x An object to compare to `y`.
@@ -182,11 +182,11 @@ namespace xtd {
       throw xtd::argument_exception {};
     }
     /// @cond
-    bool equals(const char* x, const char* y) const {
+    bool equals(const char_t* x, const char_t* y) const {
       if (x == y) return true;
       return equals(basic_string<char_t> {x}, basic_string<char_t> {y});}
-    bool equals(const basic_string<char_t>& x, const char* y) const {return equals(x, basic_string<char_t> {y});}
-    bool equals(const char* x, const basic_string<char_t>& y) const {return equals(basic_string<char_t> {x}, y);}
+    bool equals(const basic_string<char_t>& x, const char_t* y) const {return equals(x, basic_string<char_t> {y});}
+    bool equals(const char_t* x, const basic_string<char_t>& y) const {return equals(basic_string<char_t> {x}, y);}
     /// @endcond
     /// @brief When overridden in a derived class, indicates whether two strings are equal.
     /// @param x An object to compare to `y`.
@@ -218,7 +218,7 @@ namespace xtd {
       throw xtd::hash_code::combine(obj);
     }
     /// @cond
-    xtd::size get_hash_code(const char* obj) const {return get_hash_code(basic_string<char_t> {obj});}
+    xtd::size get_hash_code(const char_t* obj) const {return get_hash_code(basic_string<char_t> {obj});}
     /// @endcond
     /// @brief When overridden in a derived class, gets the hash code for the specified string.
     /// @param obj A string.
