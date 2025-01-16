@@ -5,6 +5,7 @@
 #include "collections/generic/icomparer.hpp"
 #include "collections/generic/iequality_comparer.hpp"
 #include "argument_exception.hpp"
+#include "as.hpp"
 #include "string_comparison.hpp"
 #include "string.hpp"
 
@@ -58,13 +59,13 @@ namespace xtd {
     /// @remarks The xtd::string_comparer::compare(const string&, const string&) method is slightly more efficient than the xtd::string_comparer::compare(const object_t&, consy object_t&) method because no conversion of the `x` and `y` arguments is needed to perform the comparison.
     template <class object_t>
     int32 compare(const object_t& x, const object_t& y) const  {
-      if (xtd::is<xtd::string>(x) && xtd::is<xtd::string>(y)) return compare(static_cast<const xtd::string&>(x), static_cast<const xtd::string&>(y));
-      if (xtd::is<xtd::icomparable<object_t>>(x) && xtd::is<xtd::icomparable<object_t>>(y)) return static_cast<const xtd::icomparable<object_t>&>(x).compare_to(static_cast<const xtd::icomparable<object_t>&>(y));
-      if (xtd::is<xtd::object>(x) && xtd::is<xtd::object>(y) && static_cast<const xtd::object&>(x) == static_cast<const xtd::object&>(y)) return 0;
+      if (is<string>(x) && is<string>(y)) return compare(as<string>(x), as<string>(y));
+      if (is<icomparable<object_t>>(x) && is<icomparable<object_t>>(y)) return as<icomparable<object_t>>(x).compare_to(y);
+      if (is<object>(x) && is<object>(y) && as<object>(x) == as<object>(y)) return 0;
       throw xtd::argument_exception {};
     }
     /// @cond
-    int32 compare(const char* x, const char* y) const {return compare(xtd::string {x}, xtd::string {y});}
+    int32 compare(const char* x, const char* y) const {return compare(string {x}, string {y});}
     /// @endcond
     /// @brief When overridden in a derived class, compares two strings and returns an indication of their relative sort order.
     /// @param x An object to compare to `y`.
@@ -81,9 +82,9 @@ namespace xtd {
     using xtd::object::equals;
     template <class object_t>
     bool equals(const object_t& x, const object_t& y) const  {
-      if (xtd::is<xtd::string>(x) && xtd::is<xtd::string>(y)) return equals(static_cast<const xtd::string&>(x), static_cast<const xtd::string&>(y));
-      if (xtd::is<xtd::iequatable<object_t>>(x) && xtd::is<xtd::iequatable<object_t>>(y)) return static_cast<const xtd::iequatable<object_t>&>(x).equals(static_cast<const xtd::iequatable<object_t>&>(y));
-      if (xtd::is<xtd::object>(x) && xtd::is<xtd::object>(y) && static_cast<const xtd::object&>(x) == static_cast<const xtd::object&>(y)) return 0;
+      if (is<string>(x) && is<string>(y)) return equals(as<string>(x), as<string>(y));
+      if (is<iequatable<object_t>>(x) && is<iequatable<object_t>>(y)) return as<iequatable<object_t>>(x).equals(y);
+      if (is<object>(x) && is<object>(y) && as<object>(x) == as<object>(y)) return 0;
       throw xtd::argument_exception {};
     }
     /// @cond
@@ -94,8 +95,8 @@ namespace xtd {
     using xtd::object::get_hash_code;
     template <class object_t>
     xtd::size get_hash_code(const object_t& obj) const  {
-      if (xtd::is<xtd::string>(obj)) return get_hash_code(static_cast<const xtd::string&>(obj));
-      if (xtd::is<xtd::object>(obj)) return static_cast<const xtd::object&>(obj).get_hash_code();
+      if (is<string>(obj)) return get_hash_code(as<string>(obj));
+      if (is<object>(obj)) return as<object>(obj).get_hash_code();
       throw xtd::hash_code::combine(obj);
     }
     /// @cond
