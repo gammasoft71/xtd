@@ -15,6 +15,7 @@ namespace xtd::tests {
       assert::is_zero(string_comparer::ordinal().compare(s, s));
       assert::is_zero(string_comparer::ordinal().compare(string {"abc"}, string {"abc"}));
       assert::is_positive(string_comparer::ordinal().compare(string {"abc"}, string {"ABC"}));
+      assert::is_zero(string_comparer::ordinal().compare(string {"ABC"}, string {"ABC"}));
       assert::is_negative(string_comparer::ordinal().compare(string {"ABC"}, string {"abc"}));
       assert::is_positive(string_comparer::ordinal().compare(string {"bca"}, string {"abc"}));
       assert::is_negative(string_comparer::ordinal().compare(string {"abc"}, string {"bca"}));
@@ -26,6 +27,7 @@ namespace xtd::tests {
       assert::is_zero(string_comparer::ordinal().compare(s, s));
       assert::is_zero(string_comparer::ordinal().compare("abc", "abc"));
       assert::is_positive(string_comparer::ordinal().compare("abc", "ABC"));
+      assert::is_zero(string_comparer::ordinal().compare("ABC", "ABC"));
       assert::is_negative(string_comparer::ordinal().compare("ABC", "abc"));
       assert::is_positive(string_comparer::ordinal().compare("bca", "abc"));
       assert::is_negative(string_comparer::ordinal().compare("abc", "bca"));
@@ -35,6 +37,7 @@ namespace xtd::tests {
       assert::is_zero(string_comparer::ordinal().compare(string {""}, ""));
       assert::is_zero(string_comparer::ordinal().compare(string {"abc"}, "abc"));
       assert::is_positive(string_comparer::ordinal().compare(string {"abc"}, "ABC"));
+      assert::is_zero(string_comparer::ordinal().compare(string {"ABC"}, "ABC"));
       assert::is_negative(string_comparer::ordinal().compare(string {"ABC"}, "abc"));
       assert::is_positive(string_comparer::ordinal().compare(string {"bca"}, "abc"));
       assert::is_negative(string_comparer::ordinal().compare(string {"abc"}, "bca"));
@@ -44,6 +47,7 @@ namespace xtd::tests {
       assert::is_zero(string_comparer::ordinal().compare("", string {""}));
       assert::is_zero(string_comparer::ordinal().compare("abc", string {"abc"}));
       assert::is_positive(string_comparer::ordinal().compare("abc", string {"ABC"}));
+      assert::is_zero(string_comparer::ordinal().compare("ABC", string {"ABC"}));
       assert::is_negative(string_comparer::ordinal().compare("ABC", string {"abc"}));
       assert::is_positive(string_comparer::ordinal().compare("bca", string {"abc"}));
       assert::is_negative(string_comparer::ordinal().compare("abc", string {"bca"}));
@@ -61,6 +65,7 @@ namespace xtd::tests {
       assert::is_zero(string_comparer::ordinal_ignore_case().compare(s, s));
       assert::is_zero(string_comparer::ordinal_ignore_case().compare(string {"abc"}, string {"abc"}));
       assert::is_zero(string_comparer::ordinal_ignore_case().compare(string {"abc"}, string {"ABC"}));
+      assert::is_zero(string_comparer::ordinal_ignore_case().compare(string {"ABC"}, string {"ABC"}));
       assert::is_zero(string_comparer::ordinal_ignore_case().compare(string {"ABC"}, string {"abc"}));
       assert::is_positive(string_comparer::ordinal_ignore_case().compare(string {"bca"}, string {"abc"}));
       assert::is_negative(string_comparer::ordinal_ignore_case().compare(string {"abc"}, string {"bca"}));
@@ -72,6 +77,7 @@ namespace xtd::tests {
       assert::is_zero(string_comparer::ordinal_ignore_case().compare(s, s));
       assert::is_zero(string_comparer::ordinal_ignore_case().compare("abc", "abc"));
       assert::is_zero(string_comparer::ordinal_ignore_case().compare("abc", "ABC"));
+      assert::is_zero(string_comparer::ordinal_ignore_case().compare("ABC", "ABC"));
       assert::is_zero(string_comparer::ordinal_ignore_case().compare("ABC", "abc"));
       assert::is_positive(string_comparer::ordinal_ignore_case().compare("bca", "abc"));
       assert::is_negative(string_comparer::ordinal_ignore_case().compare("abc", "bca"));
@@ -81,6 +87,7 @@ namespace xtd::tests {
       assert::is_zero(string_comparer::ordinal_ignore_case().compare(string {""}, ""));
       assert::is_zero(string_comparer::ordinal_ignore_case().compare(string {"abc"}, "abc"));
       assert::is_zero(string_comparer::ordinal_ignore_case().compare(string {"abc"}, "ABC"));
+      assert::is_zero(string_comparer::ordinal_ignore_case().compare(string {"ABC"}, "ABC"));
       assert::is_zero(string_comparer::ordinal_ignore_case().compare(string {"ABC"}, "abc"));
       assert::is_positive(string_comparer::ordinal_ignore_case().compare(string {"bca"}, "abc"));
       assert::is_negative(string_comparer::ordinal_ignore_case().compare(string {"abc"}, "bca"));
@@ -90,6 +97,7 @@ namespace xtd::tests {
       assert::is_zero(string_comparer::ordinal_ignore_case().compare("", string {""}));
       assert::is_zero(string_comparer::ordinal_ignore_case().compare("abc", string {"abc"}));
       assert::is_zero(string_comparer::ordinal_ignore_case().compare("abc", string {"ABC"}));
+    assert::is_zero(string_comparer::ordinal_ignore_case().compare("ABC", string {"ABC"}));
       assert::is_zero(string_comparer::ordinal_ignore_case().compare("ABC", string {"abc"}));
       assert::is_positive(string_comparer::ordinal_ignore_case().compare("bca", string {"abc"}));
       assert::is_negative(string_comparer::ordinal_ignore_case().compare("abc", string {"bca"}));
@@ -107,6 +115,7 @@ namespace xtd::tests {
       assert::is_true(string_comparer::ordinal().equals(s, s));
       assert::is_true(string_comparer::ordinal().equals(string {"abc"}, string {"abc"}));
       assert::is_false(string_comparer::ordinal().equals(string {"abc"}, string {"ABC"}));
+      assert::is_true(string_comparer::ordinal().equals(string {"ABC"}, string {"ABC"}));
       assert::is_false(string_comparer::ordinal().equals(string {"ABC"}, string {"abc"}));
       assert::is_false(string_comparer::ordinal().equals(string {"bca"}, string {"abc"}));
       assert::is_false(string_comparer::ordinal().equals(string {"abc"}, string {"bca"}));
@@ -118,6 +127,7 @@ namespace xtd::tests {
       assert::is_true(string_comparer::ordinal().equals(s, s));
       assert::is_true(string_comparer::ordinal().equals("abc", "abc"));
       assert::is_false(string_comparer::ordinal().equals("abc", "ABC"));
+      assert::is_true(string_comparer::ordinal().equals("ABC", "ABC"));
       assert::is_false(string_comparer::ordinal().equals("ABC", "abc"));
       assert::is_false(string_comparer::ordinal().equals("bca", "abc"));
       assert::is_false(string_comparer::ordinal().equals("abc", "bca"));
@@ -127,6 +137,7 @@ namespace xtd::tests {
       assert::is_true(string_comparer::ordinal().equals(string {""}, ""));
       assert::is_true(string_comparer::ordinal().equals(string {"abc"}, "abc"));
       assert::is_false(string_comparer::ordinal().equals(string {"abc"}, "ABC"));
+      assert::is_true(string_comparer::ordinal().equals(string {"ABC"}, "ABC"));
       assert::is_false(string_comparer::ordinal().equals(string {"ABC"}, "abc"));
       assert::is_false(string_comparer::ordinal().equals(string {"bca"}, "abc"));
       assert::is_false(string_comparer::ordinal().equals(string {"abc"}, "bca"));
@@ -136,6 +147,7 @@ namespace xtd::tests {
       assert::is_true(string_comparer::ordinal().equals("", string {""}));
       assert::is_true(string_comparer::ordinal().equals("abc", string {"abc"}));
       assert::is_false(string_comparer::ordinal().equals("abc", string {"ABC"}));
+      assert::is_true(string_comparer::ordinal().equals("ABC", string {"ABC"}));
       assert::is_false(string_comparer::ordinal().equals("ABC", string {"abc"}));
       assert::is_false(string_comparer::ordinal().equals("bca", string {"abc"}));
       assert::is_false(string_comparer::ordinal().equals("abc", string {"bca"}));
@@ -153,6 +165,7 @@ namespace xtd::tests {
       assert::is_true(string_comparer::ordinal_ignore_case().equals(s, s));
       assert::is_true(string_comparer::ordinal_ignore_case().equals(string {"abc"}, string {"abc"}));
       assert::is_true(string_comparer::ordinal_ignore_case().equals(string {"abc"}, string {"ABC"}));
+      assert::is_true(string_comparer::ordinal_ignore_case().equals(string {"ABC"}, string {"ABC"}));
       assert::is_true(string_comparer::ordinal_ignore_case().equals(string {"ABC"}, string {"abc"}));
       assert::is_false(string_comparer::ordinal_ignore_case().equals(string {"bca"}, string {"abc"}));
       assert::is_false(string_comparer::ordinal_ignore_case().equals(string {"abc"}, string {"bca"}));
@@ -164,6 +177,7 @@ namespace xtd::tests {
       assert::is_true(string_comparer::ordinal_ignore_case().equals(s, s));
       assert::is_true(string_comparer::ordinal_ignore_case().equals("abc", "abc"));
       assert::is_true(string_comparer::ordinal_ignore_case().equals("abc", "ABC"));
+      assert::is_true(string_comparer::ordinal_ignore_case().equals("ABC", "ABC"));
       assert::is_true(string_comparer::ordinal_ignore_case().equals("ABC", "abc"));
       assert::is_false(string_comparer::ordinal_ignore_case().equals("bca", "abc"));
       assert::is_false(string_comparer::ordinal_ignore_case().equals("abc", "bca"));
@@ -173,6 +187,7 @@ namespace xtd::tests {
       assert::is_true(string_comparer::ordinal_ignore_case().equals(string {""}, ""));
       assert::is_true(string_comparer::ordinal_ignore_case().equals(string {"abc"}, "abc"));
       assert::is_true(string_comparer::ordinal_ignore_case().equals(string {"abc"}, "ABC"));
+      assert::is_true(string_comparer::ordinal_ignore_case().equals(string {"ABC"}, "ABC"));
       assert::is_true(string_comparer::ordinal_ignore_case().equals(string {"ABC"}, "abc"));
       assert::is_false(string_comparer::ordinal_ignore_case().equals(string {"bca"}, "abc"));
       assert::is_false(string_comparer::ordinal_ignore_case().equals(string {"abc"}, "bca"));
@@ -182,6 +197,7 @@ namespace xtd::tests {
       assert::is_true(string_comparer::ordinal_ignore_case().equals("", string {""}));
       assert::is_true(string_comparer::ordinal_ignore_case().equals("abc", string {"abc"}));
       assert::is_true(string_comparer::ordinal_ignore_case().equals("abc", string {"ABC"}));
+      assert::is_true(string_comparer::ordinal_ignore_case().equals("ABC", string {"ABC"}));
       assert::is_true(string_comparer::ordinal_ignore_case().equals("ABC", string {"abc"}));
       assert::is_false(string_comparer::ordinal_ignore_case().equals("bca", string {"abc"}));
       assert::is_false(string_comparer::ordinal_ignore_case().equals("abc", string {"bca"}));
@@ -191,6 +207,26 @@ namespace xtd::tests {
       assert::is_true(string_comparer::ordinal_ignore_case().equals(time_span {}, time_span {}));
       assert::is_false(string_comparer::ordinal_ignore_case().equals(time_span {42}, time_span {21}));
       assert::is_false(string_comparer::ordinal_ignore_case().equals(time_span {21}, time_span {42}));
+    }
+
+    void test_method_(string_comparer_ordinal_get_hash_code_with_strings) {
+      assert::are_equal(string {""}.get_hash_code(), string_comparer::ordinal().get_hash_code(string {""}));
+      assert::are_equal(string {"abc"}.get_hash_code(), string_comparer::ordinal().get_hash_code(string {"abc"}));
+      assert::are_not_equal(string {"abc"}.get_hash_code(), string_comparer::ordinal().get_hash_code(string {"ABC"}));
+      assert::are_equal(string {"ABC"}.get_hash_code(), string_comparer::ordinal().get_hash_code(string {"ABC"}));
+      assert::are_not_equal(string {"ABC"}.get_hash_code(), string_comparer::ordinal().get_hash_code(string {"abc"}));
+      assert::are_not_equal(string {"bca"}.get_hash_code(), string_comparer::ordinal().get_hash_code(string {"abc"}));
+      assert::are_not_equal(string {"abc"}.get_hash_code(), string_comparer::ordinal().get_hash_code(string {"bca"}));
+    }
+
+    void test_method_(string_comparer_ordinal_ignore_case_get_hash_code_with_strings) {
+      assert::are_equal(string {""}.get_hash_code(), string_comparer::ordinal_ignore_case().get_hash_code(string {""}));
+      assert::are_equal(string {"abc"}.get_hash_code(), string_comparer::ordinal_ignore_case().get_hash_code(string {"abc"}));
+      assert::are_equal(string {"abc"}.get_hash_code(), string_comparer::ordinal_ignore_case().get_hash_code(string {"ABC"}));
+      assert::are_not_equal(string {"ABC"}.get_hash_code(), string_comparer::ordinal_ignore_case().get_hash_code(string {"ABC"}));
+      assert::are_not_equal(string {"ABC"}.get_hash_code(), string_comparer::ordinal_ignore_case().get_hash_code(string {"abc"}));
+      assert::are_not_equal(string {"bca"}.get_hash_code(), string_comparer::ordinal_ignore_case().get_hash_code(string {"abc"}));
+      assert::are_not_equal(string {"abc"}.get_hash_code(), string_comparer::ordinal_ignore_case().get_hash_code(string {"bca"}));
     }
   };
 }
