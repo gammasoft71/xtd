@@ -1,4 +1,5 @@
 #include <xtd/string_comparer>
+#include <xtd/time_span>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
@@ -26,6 +27,12 @@ namespace xtd::tests {
       assert::is_negative(string_comparer::ordinal().compare("abc", "bca"));
     }
     
+    void test_method_(string_comparer_ordinal_compare_with_time_span) {
+      assert::is_zero(string_comparer::ordinal().compare(time_span {}, time_span {}));
+      assert::is_positive(string_comparer::ordinal().compare(time_span {42}, time_span {21}));
+      assert::is_negative(string_comparer::ordinal().compare(time_span {21}, time_span {42}));
+    }
+    
     void test_method_(string_comparer_ordinal_ignore_case_compare_with_strings) {
       assert::is_zero(string_comparer::ordinal_ignore_case().compare(string {""}, string {""}));
       assert::is_zero(string_comparer::ordinal_ignore_case().compare(string {"abc"}, string {"abc"}));
@@ -42,6 +49,12 @@ namespace xtd::tests {
       assert::is_zero(string_comparer::ordinal_ignore_case().compare("ABC", "abc"));
       assert::is_positive(string_comparer::ordinal_ignore_case().compare("bca", "abc"));
       assert::is_negative(string_comparer::ordinal_ignore_case().compare("abc", "bca"));
+    }
+    
+    void test_method_(string_comparer_ordinal_ignore_case_compare_with_time_span) {
+      assert::is_zero(string_comparer::ordinal_ignore_case().compare(time_span {}, time_span {}));
+      assert::is_positive(string_comparer::ordinal_ignore_case().compare(time_span {42}, time_span {21}));
+      assert::is_negative(string_comparer::ordinal_ignore_case().compare(time_span {21}, time_span {42}));
     }
   };
 }
