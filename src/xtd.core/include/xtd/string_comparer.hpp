@@ -65,7 +65,12 @@ namespace xtd {
       throw xtd::argument_exception {};
     }
     /// @cond
-    int32 compare(const char* x, const char* y) const {return compare(string {x}, string {y});}
+    int32 compare(const char* x, const char* y) const {
+      if (x == y) return 0;
+      return compare(string {x}, string {y});
+    }
+    int32 compare(const string& x, const char* y) const {return compare(x, string {y});}
+    int32 compare(const char* x, const string& y) const {return compare(string {x}, y);}
     /// @endcond
     /// @brief When overridden in a derived class, compares two strings and returns an indication of their relative sort order.
     /// @param x An object to compare to `y`.
@@ -80,19 +85,38 @@ namespace xtd {
     int32 compare(const xtd::string& x, const xtd::string& y) const noexcept override;
 
     using xtd::object::equals;
+    /// @brief When overridden in a derived class, indicates whether two objects are equal.
+    /// @param x An object to compare to `y`.
+    /// @param y An object to compare to `x`.
+    /// @return `true` if `x` and `y`  refer to the same object, or `x` and `y` are both the same type of object and those objects are equal; otherwise, `false`.
+    /// @remarks The xtd::string_comparer::equals(const string&, const string&) method is slightly more efficient than the xtd::string_comparer::equals(const object_t&, consy object_t&) method because no conversion of the `x` and `y` arguments is needed to perform the comparison.
     template <class object_t>
     bool equals(const object_t& x, const object_t& y) const  {
+      if (&x == &y) return true;
       if (is<string>(x) && is<string>(y)) return equals(as<string>(x), as<string>(y));
       if (is<iequatable<object_t>>(x) && is<iequatable<object_t>>(y)) return as<iequatable<object_t>>(x).equals(y);
       if (is<object>(x) && is<object>(y) && as<object>(x) == as<object>(y)) return 0;
       throw xtd::argument_exception {};
     }
     /// @cond
-    bool equals(const char* x, const char* y) const {return equals(xtd::string {x}, xtd::string {y});}
+    bool equals(const char* x, const char* y) const {
+      if (x == y) return true;
+      return equals(string {x}, string {y});}
+    bool equals(const string& x, const char* y) const {return equals(x, string {y});}
+    bool equals(const char* x, const string& y) const {return equals(string {x}, y);}
     /// @endcond
+    /// @brief When overridden in a derived class, indicates whether two strings are equal.
+    /// @param x An object to compare to `y`.
+    /// @param y An object to compare to `x`.
+    /// @return `true` if `x` and `y`  refer to the same object, or `x` and `y` are both the same type of object and those objects are equal; otherwise, `false`.
+    /// @remarks The xtd::string_comparer::equals(const string&, const string&) method is slightly more efficient than the xtd::string_comparer::equals(const object_t&, consy object_t&) method because no conversion of the `x` and `y` arguments is needed to perform the comparison.
     bool equals(const xtd::string& x, const xtd::string& y) const noexcept override;
     
     using xtd::object::get_hash_code;
+    /// @brief When overridden in a derived class, gets the hash code for the specified object.
+    /// @param obj An object.
+    /// @return A xtd::size hash code calculated from the value of the obj parameter.
+    /// @remarks The xtd::string_comparer::get_hash_code(const string&) method is more efficient than the xtd::string_comparer::get_hash_code(const object&) method because the obj parameter does not have to be converted to perform the operation.
     template <class object_t>
     xtd::size get_hash_code(const object_t& obj) const  {
       if (is<string>(obj)) return get_hash_code(as<string>(obj));
@@ -100,8 +124,12 @@ namespace xtd {
       throw xtd::hash_code::combine(obj);
     }
     /// @cond
-    xtd::size get_hash_code(const char* obj) const {return get_hash_code(xtd::string {obj});}
+    xtd::size get_hash_code(const char* obj) const {return get_hash_code(string {obj});}
     /// @endcond
+    /// @brief When overridden in a derived class, gets the hash code for the specified string.
+    /// @param obj A string.
+    /// @return A xtd::size hash code calculated from the value of the obj parameter.
+    /// @remarks The xtd::string_comparer::get_hash_code(const string&) method is more efficient than the xtd::string_comparer::get_hash_code(const object&) method because the obj parameter does not have to be converted to perform the operation.
     xtd::size get_hash_code(const xtd::string& obj) const noexcept override;
     /// @}
 
