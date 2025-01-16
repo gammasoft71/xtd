@@ -65,7 +65,7 @@ template<> struct xtd::enum_register<xtd::number_styles> {
 };
 
 template<> struct xtd::enum_register<xtd::string_comparison> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::string_comparison> {{xtd::string_comparison::ordinal, "ordinal"}, {xtd::string_comparison::ordinal_ignore_case, "ordinal_ignore_case"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::string_comparison> {{xtd::string_comparison::current_culture, "current_culture"}, {xtd::string_comparison::current_culture_ignore_case, "current_culture_ignore_case"}, {xtd::string_comparison::invariant_culture, "invariant_culture"}, {xtd::string_comparison::invariant_culture_ignore_case, "invariant_culture_ignore_case"}, {xtd::string_comparison::ordinal, "ordinal"}, {xtd::string_comparison::ordinal_ignore_case, "ordinal_ignore_case"}};}
 };
 
 template<> struct xtd::enum_register<xtd::string_split_options> {

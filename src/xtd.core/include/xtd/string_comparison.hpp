@@ -12,6 +12,14 @@ namespace xtd {
   /// @ingroup xtd_core
   /// @see xtd::string
   enum class string_comparison {
+    /// @brief Compare strings using culture-sensitive sort rules and the current culture.
+    current_culture,
+    /// @brief Compare strings using culture-sensitive sort rules, the current culture, and ignoring the case of the strings being compared.
+    current_culture_ignore_case,
+    /// @brief Compare strings using culture-sensitive sort rules and the invariant culture.
+    invariant_culture,
+    /// @brief Compare strings using culture-sensitive sort rules, the invariant culture, and ignoring the case of the strings being compared.
+    invariant_culture_ignore_case,
     /// @brief Compare strings using ordinal (binary) sort rules.
     ordinal,
     /// @brief Compare strings using ordinal (binary) sort rules and ignoring the case of the strings being compared.
