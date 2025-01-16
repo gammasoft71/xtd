@@ -27,6 +27,7 @@ sidebar_position: 16
 * [Sounds](/docs/documentation/Internal/sounds) provides information about sounds.
 * [Theme](/docs/documentation/Internal/theme) provides information about themes.
 * [Key events](/docs/documentation/Internal/key_events) provides information about key events.
+* [Globalization](/docs/documentation/Internal/globalization) provides ideas on importing globalization into xtd.
 
 ## Build
 
