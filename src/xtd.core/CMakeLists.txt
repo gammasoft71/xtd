@@ -461,10 +461,16 @@ add_sources(
   include/xtd/types
   include/xtd/u16string.hpp
   include/xtd/u16string
+  include/xtd/u16string_comparer.hpp
+  include/xtd/u16string_comparer
   include/xtd/u32string.hpp
   include/xtd/u32string
+  include/xtd/u32string_comparer.hpp
+  include/xtd/u32string_comparer
   include/xtd/u8string.hpp
   include/xtd/u8string
+  include/xtd/u8string_comparer.hpp
+  include/xtd/u8string_comparer
   include/xtd/uint16.hpp
   include/xtd/uint16
   include/xtd/uint16_object.hpp
@@ -525,6 +531,8 @@ add_sources(
   include/xtd/wptr
   include/xtd/wstring.hpp
   include/xtd/wstring
+  include/xtd/wstring_comparer.hpp
+  include/xtd/wstring_comparer
   include/xtd/xml_syntax_exception.hpp
   include/xtd/xml_syntax_exception
   include/xtd/xtd.core
