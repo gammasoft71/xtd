@@ -57,6 +57,8 @@ add_sources(
   include/xtd/background_color.hpp
   include/xtd/background_color
   include/xtd/basic_array.hpp
+  include/xtd/basic_string_comparer.hpp
+  include/xtd/basic_string_comparer
   include/xtd/basic_string.hpp
   include/xtd/basic_string
   include/xtd/basic_string_.hpp
@@ -1098,7 +1100,6 @@ add_sources(
   src/xtd/random.cpp
   src/xtd/signal_cancel_event_args.cpp
   src/xtd/startup.cpp
-  src/xtd/string_comparer.cpp
   src/xtd/system_exception.cpp
   src/xtd/target_type.cpp
   src/xtd/time_span.cpp
