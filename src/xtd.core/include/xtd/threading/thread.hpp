@@ -9,6 +9,8 @@
 #include "thread_state.hpp"
 #include "../as.hpp"
 #include "../core_export.hpp"
+#include "../date_time.hpp"
+#include "../intptr.hpp"
 #include "../object.hpp"
 #include "../time_span.hpp"
 #include "../types.hpp"
@@ -357,7 +359,7 @@ namespace xtd {
       /// @remarks If this method succeeds, the rest of the thread's current time slice is yielded. The operating system schedules the calling thread for another time slice, according to its priority and the status of other threads that are available to run.
       /// @remarks yielding is limited to the processor that is executing the calling thread. The operating system will not switch execution to another processor, even if that processor is idle or is running a thread of lower priority. If there are no other threads that are ready to execute on the current processor, the operating system does not yield execution, and this method returns false.
       /// @remarks This method is equivalent to using platform invoke to call the native Win32 switch_to_thread function. You should call the xtd::threading::thread::yield method instead of using platform invoke, because platform invoke bypasses any custom threading behavior the host has requested.
-      static bool yield();
+      static bool yield() noexcept;
       /// @}
       
       /// @cond
@@ -419,5 +421,159 @@ namespace xtd {
       xtd::sptr<data> data_;
       static intptr main_thread_id_;
     };
+    
+    /// @brief The xtd::threading::this_thread namespace contains some current thread properties and sheduling methods.
+    namespace this_thread {
+      /// @name Public Static Properties
+      
+      /// @{
+      /// @brief Gets the thread handle of the current thread.
+      /// @return The thread handle of the current thread.
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/threading/thread>
+      /// ```
+      /// @par Namespace
+      /// xtd
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core threading
+      xtd::intptr handle() noexcept;
+      
+      /// @brief Gets the managed thread id of the current thread.
+      /// @return The managed thread id of the current thread.
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/threading/thread>
+      /// ```
+      /// @par Namespace
+      /// xtd
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core threading
+      xtd::int32 managed_thread_id() noexcept;
+      
+      /// @brief Gets the thread name of the current thread.
+      /// @return The thread name of the current thread.
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/threading/thread>
+      /// ```
+      /// @par Namespace
+      /// xtd
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core threading
+      xtd::string name() noexcept;
+      /// @brief Sets the thread name of the current thread.
+      /// @param name The thread name of the current thread.
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/threading/thread>
+      /// ```
+      /// @par Namespace
+      /// xtd
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core threading
+      void name(const xtd::string& name);
+      
+      /// @brief Gets the thread priority of the current thread.
+      /// @return The thread priority of the current thread.
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/threading/thread>
+      /// ```
+      /// @par Namespace
+      /// xtd
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core threading
+      xtd::threading::thread_priority priority() noexcept;
+      /// @brief Sets the thread priority of the current thread.
+      /// @param priority The thread priority of the current thread.
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/threading/thread>
+      /// ```
+      /// @par Namespace
+      /// xtd
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core threading
+      void priority(xtd::threading::thread_priority priority);
+      
+      /// @brief Gets the thread id of the current thread.
+      /// @return The thread id of the current thread.
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/threading/thread>
+      /// ```
+      /// @par Namespace
+      /// xtd
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core threading
+      xtd::intptr thread_id() noexcept;
+      /// @}
+      
+      /// @name Public Static Methods
+      
+      /// @{
+      /// @brief Returns the thread id of the current thread.
+      /// @return The thread id of the current thread.
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/threading/thread>
+      /// ```
+      /// @par Namespace
+      /// xtd
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core threading
+      xtd::intptr get_id() noexcept;
+      
+      /// @brief Stops the execution of the current thread for a specified time duration.
+      /// @param sleep_duration The   time duration to sleep.
+      /// @remarks Blocks the execution of the current thread for at least the specified `sleep_duration`.
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/threading/thread>
+      /// ```
+      /// @par Namespace
+      /// xtd
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core threading
+      void sleep_for(const xtd::time_span& sleep_duration);
+      
+      /// @brief Stops the execution of the current thread until a specified time point.
+      /// @param sleep_time The time to block until.
+      /// @remarks Blocks the execution of the current thread until specified `sleep_time` has been reached.
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/threading/thread>
+      /// ```
+      /// @par Namespace
+      /// xtd
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core threading
+      void sleep_until(const xtd::date_time& sleep_time);
+      
+      /// @brief Suggests that the implementation reschedule execution of threads.
+      /// @return true if the operating system switched execution to another thread; otherwise, false.
+      /// @par Header
+      /// ```cpp
+      /// #include <xtd/threading/thread>
+      /// ```
+      /// @par Namespace
+      /// xtd
+      /// @par Library
+      /// xtd.core
+      /// @ingroup xtd_core threading
+      bool yield() noexcept;
+      /// @}
+    }
   }
 }
