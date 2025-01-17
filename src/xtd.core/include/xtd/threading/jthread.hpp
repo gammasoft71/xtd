@@ -6,7 +6,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief The xtd::threading namespace provides classes and interfaces that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::interlocked, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::jthread_pool class that allows you to use a pool of system-supplied threads, and a xtd::threading::timer class that executes callback methods on thread pool threads.
+  /// @brief The xtd::threading namespace provides classes and interfaces that enable multithreaded programming. In addition to classes for synchronizing thread activities and access to data ( xtd::threading::mutex, xtd::threading::monitor, xtd::threading::interlocked, xtd::threading::auto_reset_event, and so on), this namespace includes a xtd::threading::thread_pool class that allows you to use a pool of system-supplied threads, and a xtd::threading::timer class that executes callback methods on thread pool threads.
   namespace threading {
     /// @brief Creates and controls an automatically rejoins on destruction thread, sets its priority, and gets its status.
     /// ```cpp
@@ -26,7 +26,7 @@ namespace xtd {
     /// @par Examples
     /// The following example shows how to use xtd::threading::jthread.
     /// @include jthread.cpp
-    /// @remarks When a process starts, the system automatically creates a single foreground thread to execute application code. Along with this main foreground thread, a process can create one or more threads to execute a portion of the program code associated with the process. These threads can execute either in the foreground or in the background. In addition, you can use the xtd::threading::jthread_pool class to execute code on worker threads that are managed by the framework xrd.
+    /// @remarks When a process starts, the system automatically creates a single foreground thread to execute application code. Along with this main foreground thread, a process can create one or more threads to execute a portion of the program code associated with the process. These threads can execute either in the foreground or in the background. In addition, you can use the xtd::threading::thread_pool class to execute code on worker threads that are managed by the framework xrd.
     /// @remarks An xtd::threading::jthread object is identical to an xtd::threading::thread whose xtd::threading::thread::auto_join property is set to true.
     class core_export_ jthread final : public xtd::threading::thread {
     public:
