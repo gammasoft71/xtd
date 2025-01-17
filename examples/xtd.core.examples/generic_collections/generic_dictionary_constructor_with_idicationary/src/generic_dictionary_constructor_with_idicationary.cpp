@@ -7,7 +7,7 @@ class example {
 public:
   static auto main() -> void {
     // Create a new sorted dictionary of strings, with string keys.
-    auto open_with = ::sorted_dictionary<string, string> {};
+    auto open_with = sorted_dictionary<string, string> {};
     
     // Add some elements to the dictionary.
     open_with.add("txt", "notepad.exe");
