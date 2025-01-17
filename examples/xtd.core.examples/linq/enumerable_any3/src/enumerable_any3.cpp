@@ -8,7 +8,7 @@ using namespace xtd::linq;
 
 auto main() -> int {
   auto numbers = list {1, 2};
-  auto has_elements = enumerable::any<int>(numbers.begin(), numbers.end());
+  auto has_elements = enumerable::from(numbers.begin(), numbers.end()).any();
   
   console::write_line("The list {0} empty.", has_elements ? "is not" : "is");
 }
