@@ -208,6 +208,23 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.<br>-or-<br>month is less than 1 or greater than 12.<br>-or-<br>day is less than 1 or greater than the number of days in month.<br>-or-<br>hour is less than 0 or greater than 23.<br>-or-<br>minute is less than 0 or greater than 59<br>-or-<br>second is less than 0 or greater than 59<br>-or-<br>millisecond is less than 0 or greater than 999.
     /// @remarks This constructor interpretsyear, month, and day as a year, month, and day in the Gregorian calendar.
     date_time(uint32 year, uint32 month, uint32 day, uint32 hour, uint32 minute, uint32 second, uint32 millisecond, date_time_kind kind);
+
+    /// @brief Initializes a new instance of the xtd::date_time structure to a specified time point.
+    /// @param time_point A [std::chrono::time_point](https://en.cppreference.com/w/cpp/chrono/time_point) value.
+    /// @remarks This constructor is used to convert [std::chrono::system_clock::time_point](https://en.cppreference.com/w/cpp/chrono/system_clock) to xtd::date_time.
+    template<class clock_t, class duration_t = clock_t::duration>
+    date_time(const std::chrono::time_point<clock_t, duration_t>& time_point) {
+      *this = from_time_t(clock_t::to_time_t(time_point), date_time_kind::local);
+    }
+
+    /// @brief Initializes a new instance of the xtd::date_time structure to a specified time point, and Coordinated Universal Time (UTC) or local time.
+    /// @param time_point A [std::chrono::time_point](https://en.cppreference.com/w/cpp/chrono/time_point) value.
+    /// @param kind One of the enumeration values that indicates whether year, month, day, hour, minute and second specify a local time, Coordinated Universal Time (UTC), or neither.
+    /// @remarks This constructor is used to convert [std::chrono::system_clock::time_point](https://en.cppreference.com/w/cpp/chrono/system_clock) to xtd::date_time.
+    template<class clock_t, class duration_t = clock_t::duration>
+    date_time(const std::chrono::time_point<clock_t, duration_t>& time_point, date_time_kind kind) {
+      *this = from_time_t(clock_t::to_time_t(time_point), kind);
+    }
     /// @}
     
     /// @cond
