@@ -247,6 +247,41 @@ namespace xtd {
     static basic_string_comparer from_comparison(xtd::string_comparison comparison) {
       return basic_string_comparer {comparison};
     }
+    
+    /// @todo Uncomment following lines when xtd::globalization::culture_info and xtd::globalization::compare_options are developped.
+    /*
+    /// @brief Determines whether the specified xtd::collections::generic::iequality_comparer <type_t> is a well-known culture-aware string comparer.
+    /// @param comparer The comparer to query.
+    /// @param comapre_info When this method returns, contains a value indicating which xtd::globalization::compare_info was used to create `comparer`. Set to default value if this method returns `false`.
+    /// @param compare_options When this method returns, contains a value indicating which xtd::globalization::compare_options was used to create `comparer`. Set to td::globalization::compare_options::none if this method returns `false`.
+    /// @return `true` if comparer is a well-known culture-aware string comparer; otherwise, `false`.
+    /// @remarks A "well-known culture-aware comparer" describes a comparer that's tied to a specific xtd::globalization::compare_info using some defined xtd::globalization::compare_options. To create a xtd::basic_string_comparer instance wrapped around a xtd::globalization::compare_info and xtd::globalization::compare_options, use xtd::globalization::globalization_extensions::get_string_comparer. This method returns `false` when given xtd::basic_string_comparer::ordinal and other non-linguistic comparers as input.
+    bool is_well_known_culture_aware_comparer(const xtd::collections::generic::iequality_comparer<xtd::basic_string<char_t>>& comparer, xtd::globalization::compare_info& compare_info, xtd::globalization::compare_options& compare_options) {
+      if (xtd::is<>(comparer)) {
+        compare_info = get_compare_info();
+        compare_options = get_compare_options();
+        return true;
+      }
+      
+      compare_info = xtd::globalization::compare_info {};
+      compare_options = xtd::globalization::compare_options::none;
+      return false;
+    } */
+    
+    /// @brief Determines whether the specified xtd::collections::generic::iequality_comparer <type_t> is a well-known ordinal string comparer.
+    /// @param comparer The comparer to query.
+    /// @param ignore_case When this method returns, contains a value stating whether `comparer` is case-insensitive. Set to `false` if this method returns `false`.
+    /// @return `true` if comparer is a well-known ordinal string comparer; otherwise, `false`.
+    /// @remarks A "well-known ordinal comparer" describes a comparer that behaves identically to xtd::basic_string_comparer::ordinal when passed to xtd::collections::generic::dictionary <key_t, value_t> or xtd::collections::generic::hash_set <type_t>. For example, xtd::collections::generic::equality_comparer::default_equality_comparer is a well-known ordinal comparer because a xtd::collections::generic::dictionary <key_t, value_t> given xtd::collections::generic::equality_comparer::default_equality_comparer as a constructor argument will behave identically to a xtd::collections::generic::dictionary <key_t, value_t> given xtd::string_comparer::ordinal as a constructor argument. If `ignore_case` is `true` on method exit, then `comparer` behaves identically to xtd::basic_string_comparer::ordinal_ignore_case when passed to the constructor of such a collection.
+    static bool is_well_known_ordinal_comparer(const xtd::collections::generic::iequality_comparer<xtd::basic_string<char_t>>& comparer, bool& ignore_case) {
+      if (xtd::is<xtd::basic_string_comparer<char_t>>(comparer) && (xtd::as<xtd::basic_string_comparer<char_t>>(comparer).comparison_ == xtd::string_comparison::ordinal || xtd::as<xtd::basic_string_comparer<char_t>>(comparer).comparison_ == xtd::string_comparison::ordinal_ignore_case)) {
+        ignore_case = xtd::is<xtd::basic_string_comparer<char_t>>(comparer) && xtd::as<xtd::basic_string_comparer<char_t>>(comparer).comparison_ == xtd::string_comparison::ordinal_ignore_case;
+        return true;
+      }
+      
+      ignore_case = false;
+      return false;
+    }
     /// @}
 
   protected:
@@ -261,16 +296,17 @@ namespace xtd {
     /// @return A new xtd::basic_string_comparer object that performs string comparisons according to the comparison rules used by the `culture` parameter and the case rule specified by the `ignore_case` parameter.
     basic_string_comparer create(const xtd::globalization::culture_info& culture, bool ignore_case)  {
       return create {culture, ignore_case ? compare_options::ignore_case : compare_options::none};
-    }
+    } */
     
+    /// @todo Uncomment following lines when xtd::globalization::culture_info and xtd::globalization::compare_options are developped.
+    /*
     /// @brief Creates a xtd::basic_string_comparer object that compares strings according to the rules of a specified culture and string options.
     /// @param culture A culture whose linguistic rules are used to perform a string comparison.
     /// @param options A bitwise combination of the xtd::globalization::compare_options values.
     /// @exception xtd::argument_exception `options` has invalid flags.
     basic_string_comparer create(const xtd::globalization::culture_info& culture, xtd::globalization::compare_options options) {
       return basic_string_comparer {culture, options};
-    }
-     */
+    } */
 
     /// @brief Initializes a new instance of the xtd::basic_string_comparer class.
     basic_string_comparer() = default;
