@@ -4,6 +4,7 @@
 #pragma once
 #include "helpers/allocator.hpp"
 #include "helpers/comparer.hpp"
+#include "dictionary.hpp" /// @todo remove when sorted_dictionay is developped.
 #include <map>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -33,7 +34,8 @@ namespace xtd {
       /// The following shows how to use xtd::collections::generic::sorted_dictionary.
       /// @include sorted_dictionary.cpp
       template<class key_t, class value_t>
-      using sorted_dictionary = std::map<key_t, value_t, helpers::comparer<key_t>, helpers::allocator<std::pair<const key_t, value_t>>>;
+      using sorted_dictionary = dictionary<key_t, value_t>;
+      //using sorted_dictionary = std::map<key_t, value_t, helpers::comparer<key_t>, helpers::allocator<std::pair<const key_t, value_t>>>;
     }
   }
 }
