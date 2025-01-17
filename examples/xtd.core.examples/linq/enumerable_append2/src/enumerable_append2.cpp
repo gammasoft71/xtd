@@ -11,16 +11,16 @@ auto main() -> int {
   auto numbers = list {1, 2, 3, 4};
   
   // Trying to append any value of the same type
-  enumerable::append(numbers.begin(), numbers.end(), 5);
+  enumerable::from(numbers.begin(), numbers.end()).append(5);
   
   // It doesn't work because the original list has not been changed
   console::write_line(string::join(", ", numbers));
   
   // It works now because we are using a changed copy of the original list
-  console::write_line(string::join(", ", enumerable::append(numbers.begin(), numbers.end(), 5)));
+  console::write_line(string::join(", ", enumerable::from(numbers.begin(), numbers.end()).append(5)));
   
   // If you prefer, you can create a new list explicitly
-  auto new_numbers = enumerable::append(numbers.begin(), numbers.end(), 5).to_list();
+  auto new_numbers = enumerable::from(numbers.begin(), numbers.end()).append(5).to_list();
   
   // And then write to the console output
   console::write_line(string::join(", ", new_numbers));

@@ -10,6 +10,7 @@ public:
   // Simple business object.
   struct person : public object, public iequatable<person>, public icomparable<person> {
   public:
+    person() = default;
     person(const string& first_name, const string last_name) : first_name {first_name}, last_name {last_name} {}
     
     string first_name;
