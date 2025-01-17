@@ -71,7 +71,7 @@ public:
     // The elements of the value_collection are strongly typed
     // with the type that was specified for dictionary values.
     console::write_line();
-    for(const auto s : values)
+    for(const auto& s : values)
       console::write_line("value = {0}", s);
     
     // To get the keys alone, use the keys property.
