@@ -16,7 +16,7 @@
 #include "../null_pointer_exception.hpp"
 
 /// @cond
-void __xtd_print_with_file_write__(bool new_line, FILE* file, xtd::string&& s) {
+inline void __xtd_print_with_file_write__(bool new_line, FILE* file, xtd::string&& s) {
   if (!file) throw xtd::null_pointer_exception {};
   if (new_line) s += xtd::environment::new_line();
   if (fwrite(s.c_str(), 1, s.length(), file) != s.length()) {
@@ -26,7 +26,7 @@ void __xtd_print_with_file_write__(bool new_line, FILE* file, xtd::string&& s) {
   }
 }
 
-void __xtd_print_with_ostream_write__(bool new_line, std::ostream& os, xtd::string&& s) {
+inline void __xtd_print_with_ostream_write__(bool new_line, std::ostream& os, xtd::string&& s) {
   if (!os.good()) throw xtd::io::io_exception {};
   if (new_line) s += xtd::environment::new_line();
   os.write(s.c_str(), s.length());
