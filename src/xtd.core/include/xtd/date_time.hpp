@@ -212,7 +212,7 @@ namespace xtd {
     /// @brief Initializes a new instance of the xtd::date_time structure to a specified time point.
     /// @param time_point A [std::chrono::time_point](https://en.cppreference.com/w/cpp/chrono/time_point) value.
     /// @remarks This constructor is used to convert [std::chrono::system_clock::time_point](https://en.cppreference.com/w/cpp/chrono/system_clock) to xtd::date_time.
-    template<class clock_t, class duration_t = clock_t::duration>
+    template<class clock_t, class duration_t = clock_t::duration> // Can't be explicit by design.
     date_time(const std::chrono::time_point<clock_t, duration_t>& time_point) {
       *this = from_time_t(clock_t::to_time_t(time_point), date_time_kind::local);
     }
