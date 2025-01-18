@@ -8,10 +8,23 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {  
-  /// @brief Base object that represent array.
+  /// @brief Represents the type to array type.
+  /// @par Header
+  /// ```cpp
+  /// #include <xtd/array>
+  /// ```
+  /// @par Namespace
+  /// xtd::collections::generic
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core system
+  template<class type_t>
+  using type_to_array_t = typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type;
+  
+/// @brief Base object that represent array.
   /// @par Definition
   /// ```cpp
-  /// template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  /// template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
   /// class basic_array : public xtd::array_object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<basic_array<type_t, allocator_t>>;
   /// ```
   /// @par Header
@@ -23,7 +36,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core system
-  template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_to_array_t<type_t>>>
   class basic_array : public xtd::array_abstract_object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<basic_array<type_t, allocator_t>> {
     class comparer {
     public:

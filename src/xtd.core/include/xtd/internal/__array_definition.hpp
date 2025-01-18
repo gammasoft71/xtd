@@ -47,7 +47,7 @@ namespace xtd {
   /// @brief Base object that represent array.
   /// @par Definition
   /// ```cpp
-  /// template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type>>
+  /// template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
   /// class basic_array : public xtd::array_object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<basic_array<type_t, allocator_t>>;
   /// ```
   /// @par Header
