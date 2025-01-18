@@ -18,10 +18,10 @@ namespace xtd {
         /// ```
         /// @par Header
         /// ```cpp
-        /// #include <xtd/collections/comparer
+        /// #include <xtd/collections/generic/helpers/comparer
         /// ```
         /// @par Namespace
-        /// xtd::collections::generic
+        /// xtd::collections::generic::helpers
         /// @par Library
         /// xtd.core
         /// @ingroup xtd_core helpers_generic_collections
