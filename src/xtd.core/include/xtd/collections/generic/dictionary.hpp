@@ -5,6 +5,7 @@
 #include "helpers/allocator.hpp"
 #include "helpers/equator.hpp"
 #include "helpers/hasher.hpp"
+#include "helpers/iterator.hpp"
 #include "idictionary.hpp"
 #include "key_not_found_exception.hpp"
 #include "../../argument_out_of_range_exception.hpp"
@@ -12,28 +13,6 @@
 #include "../../ptr.hpp"
 #include <cmath>
 #include <unordered_map>
-
-/// @todo Move to iterator.hpp file
-/// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
-namespace xtd {
-  /// @brief The xtd::collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
-  namespace collections {
-    /// @brief The xtd::collections::generic namespace contains interfaces and classes that define generic collections, which allow users to create strongly typed collections that provide better type safety and performance than non-generic strongly typed collections.
-    namespace generic {
-      /// @brief Represents the value iterator type.
-      template <class input_iterator_t>
-      using iterator_value_t = typename std::iterator_traits<input_iterator_t>::value_type;
-      
-      /// @brief Represents the key iterator type.
-      template <class input_iterator_t>
-      using iterator_key_t = std::remove_const_t<std::tuple_element_t<0, iterator_value_t<input_iterator_t>>>;
-      
-      /// @brief Represents the mapped iterator type.
-      template <class input_iterator_t>
-      using iteraotor_mapped_t = std::tuple_element_t<1, iterator_value_t<input_iterator_t>>;
-    }
-  }
-}
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -234,7 +213,7 @@ namespace xtd {
         /// try {
         ///   open_with.add("txt", "winword.exe");
         /// } catch (const argument_exception&) {
-        ///   console::write_line("An element with Key = \"txt\" already exists.");
+        ///   console::write_line("An element with key = \"txt\" already exists.");
         /// }
         /// ```
         dictionary() noexcept = default;
@@ -326,8 +305,8 @@ namespace xtd {
             add(item);
         }
 
-        /// @brief Initializes a new instance of the xtd::collections::generic::dictionary <key_t, value_t> class that contains elements copied from the specified IEnumerable<T> and uses the specified xtd::collections::generic::iequality_comparer <type_t>.
-        /// @param collection The IEnumerable<T> whose elements are copied to the new xtd::collections::generic::dictionary <key_t, value_t>.
+        /// @brief Initializes a new instance of the xtd::collections::generic::dictionary <key_t, value_t> class that contains elements copied from the specified xtd::collections::generic::ienumerable <type_t> and uses the specified xtd::collections::generic::iequality_comparer <type_t>.
+        /// @param collection The xtd::collections::generic::ienumerable <type_t> whose elements are copied to the new xtd::collections::generic::dictionary <key_t, value_t>.
         /// @param comparer The xtd::collections::generic::iequality_comparer <type_t> implementation to use when comparing keys.
         /// @exception xtd::argument_exception `dictionary` contains one or more duplicate keys.
         template<class equality_comparer_t>
@@ -933,7 +912,7 @@ namespace xtd {
         /// @brief Returns range of elements matching a specific key.
         /// @param x A value of any type that can be transparently compared with a key.
         /// @return xtd::collections::generic::key_value_pair containing a pair of iterators defining the wanted range. If there are no such elements, past-the-end (see xtd::collections::generic::dictionary::end) iterators are returned as both elements of the pair.
-        /// @remarks Returns a range containing all elements in the container with key equivalent to `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such Hash is callable with both `equal_range_key_t` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `Key`.
+        /// @remarks Returns a range containing all elements in the container with key equivalent to `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such Hash is callable with both `equal_range_key_t` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `equal_range_key_t`.
         template <class equal_range_key_t>
         key_value_pair<iterator, iterator> equal_range(const equal_range_key_t& x) {
           const auto& [first, last] = data_->items.equal_range(x);
@@ -943,7 +922,7 @@ namespace xtd {
         /// @brief Returns range of elements matching a specific key.
         /// @param x A value of any type that can be transparently compared with a key.
         /// @return xtd::collections::generic::key_value_pair containing a pair of iterators defining the wanted range. If there are no such elements, past-the-end (see xtd::collections::generic::dictionary::end) iterators are returned as both elements of the pair.
-        /// @remarks Returns a range containing all elements in the container with key equivalent to `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such Hash is callable with both `equal_range_key_t` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `Key`.
+        /// @remarks Returns a range containing all elements in the container with key equivalent to `x`. This overload participates in overload resolution only if `hasher_t::is_transparent` and `equator_t::is_transparent` are valid and each denotes a type. This assumes that such Hash is callable with both `equal_range_key_t` and `key_t` type, and that the `equator_t` is transparent, which, together, allows calling this function without constructing an instance of `key_t`.
         key_value_pair<const_iterator, const_iterator> equal_range(const key_t& x) const {
           const auto& [first, last] = data_->items.equal_range(x);
           return {to_type_iterator(first), to_type_iterator(last)};
@@ -1605,10 +1584,35 @@ namespace xtd {
       /// @cond
       // C++17 deduction guides for xtd::collections::generic::dictionary
       // {
+      template <class input_iterator_t, class hasher_t = xtd::collections::generic::helpers::hasher<helpers::iterator_key_t<input_iterator_t>>, class equator_t = xtd::collections::generic::helpers::equator<helpers::iterator_key_t<input_iterator_t>>, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>>>>
+      dictionary(input_iterator_t first, input_iterator_t last, xtd::size bucket_count = 0, const hasher_t& hash = hasher_t {}, const equator_t& equal = equator_t {}, const allocator_t& alloc = allocator_t {}) -> dictionary<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>, hasher_t, equator_t, allocator_t>;
       
-      template <class input_iterator_t, class hasher_t = xtd::collections::generic::helpers::hasher<iterator_key_t<input_iterator_t>>, class equator_t = xtd::collections::generic::helpers::equator<iterator_key_t<input_iterator_t>>, class allocator_t = xtd::collections::generic::helpers::allocator<input_iterator_t>>
-      dictionary(input_iterator_t first, input_iterator_t last, xtd::size bucket_count = 0, const hasher_t& hash = hasher_t {}, const equator_t& equal = equator_t {}, const allocator_t& alloc = allocator_t {}) -> dictionary<iterator_key_t<input_iterator_t>, iterator_value_t<input_iterator_t>, hasher_t, equator_t, allocator_t>;
+      template<class key_t, class value_t, class hasher_t = xtd::collections::generic::helpers::hasher<key_t>, class equator_t = xtd::collections::generic::helpers::equator<key_t>, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
+      dictionary(std::initializer_list<std::pair<key_t, value_t>>, xtd::size bucket_count = 0,  const hasher_t& hash = hasher_t {}, const equator_t& equal = equator_t {}, const allocator_t& alloc = allocator_t {}) -> dictionary<key_t, value_t, hasher_t, equator_t, allocator_t>;
+      
+      template<class key_t, class value_t, class hasher_t = xtd::collections::generic::helpers::hasher<key_t>, class equator_t = xtd::collections::generic::helpers::equator<key_t>, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
+      dictionary(std::initializer_list<xtd::collections::generic::key_value_pair<key_t, value_t>>, xtd::size bucket_count = 0,  const hasher_t& hash = hasher_t {}, const equator_t& equal = equator_t {}, const allocator_t& alloc = allocator_t {}) -> dictionary<key_t, value_t, hasher_t, equator_t, allocator_t>;
+      
+      template <class input_iterator_t, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>>>>
+      dictionary(input_iterator_t input_iterator, xtd::size bucket_count = 0, const xtd::collections::generic::helpers::hasher<helpers::iterator_key_t<input_iterator_t>>& hash = xtd::collections::generic::helpers::hasher<helpers::iterator_key_t<input_iterator_t>> {}, const xtd::collections::generic::helpers::equator<helpers::iterator_key_t<input_iterator_t>>& equal = xtd::collections::generic::helpers::equator<helpers::iterator_key_t<input_iterator_t>> {}, const allocator_t& alloc = allocator_t {}) -> dictionary<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>, xtd::collections::generic::helpers::hasher<helpers::iterator_key_t<input_iterator_t>>, xtd::collections::generic::helpers::equator<helpers::iterator_key_t<input_iterator_t>>, allocator_t>;
+      
+      template <class input_iterator_t, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>>>>
+      dictionary(input_iterator_t first, input_iterator_t last, const allocator_t& alloc) -> dictionary<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>, xtd::collections::generic::helpers::hasher<helpers::iterator_key_t<input_iterator_t>>, xtd::collections::generic::helpers::equator<helpers::iterator_key_t<input_iterator_t>>, allocator_t>;
 
+      template <class input_iterator_t, class hasher_t = xtd::collections::generic::helpers::hasher<helpers::iterator_key_t<input_iterator_t>>, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>>>>
+      dictionary(input_iterator_t first, input_iterator_t last, xtd::size bucket_count, const allocator_t& alloc) -> dictionary<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>, hasher_t, xtd::collections::generic::helpers::equator<helpers::iterator_key_t<input_iterator_t>>, allocator_t>;
+      
+      template<class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
+      dictionary(std::initializer_list<std::pair<key_t, value_t>>, xtd::size bucket_count,  const allocator_t& alloc) -> dictionary<key_t, value_t, xtd::collections::generic::helpers::hasher<key_t>, xtd::collections::generic::helpers::equator<key_t>, allocator_t>;
+      
+      template<class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
+      dictionary(std::initializer_list<xtd::collections::generic::key_value_pair<key_t, value_t>>, xtd::size bucket_count,  const allocator_t& alloc) -> dictionary<key_t, value_t, xtd::collections::generic::helpers::hasher<key_t>, xtd::collections::generic::helpers::equator<key_t>, allocator_t>;
+      
+      template<class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
+      dictionary(std::initializer_list<std::pair<key_t, value_t>>, const allocator_t& alloc) -> dictionary<key_t, value_t, xtd::collections::generic::helpers::hasher<key_t>, xtd::collections::generic::helpers::equator<key_t>, allocator_t>;
+      
+      template<class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
+      dictionary(std::initializer_list<xtd::collections::generic::key_value_pair<key_t, value_t>>, const allocator_t& alloc) -> dictionary<key_t, value_t, xtd::collections::generic::helpers::hasher<key_t>, xtd::collections::generic::helpers::equator<key_t>, allocator_t>;
       // }
       /// @endcond
     }
