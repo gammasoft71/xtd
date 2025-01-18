@@ -25,6 +25,10 @@ namespace xtd {
         /// @brief Represents the mapped iterator type.
         template <class input_iterator_t>
         using iterator_mapped_t = std::tuple_element_t<1, iterator_value_t<input_iterator_t>>;
+        
+        /// @brief Represents the iterator to allocator type.
+        template< class input_iterator_t >
+        using iterator_to_allocator_t = std::pair<std::add_const_t<std::tuple_element_t<0, iterator_value_t<input_iterator_t>>>, std::tuple_element_t<1, iterator_value_t<input_iterator_t>>>;
       }
     }
   }
