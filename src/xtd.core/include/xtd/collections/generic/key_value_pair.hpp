@@ -2,7 +2,6 @@
 /// @brief Contains xtd::collections::key_value_pair <key_t, value_t> struct.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include <utility>
 #include "../../is.hpp"
 #include "../../object.hpp"
 #include "../../iequatable.hpp"
@@ -10,6 +9,8 @@
 #define __XTD_CORE_INTERNAL__
 #include "../../internal/__key_value_pair_definition.hpp"
 #undef  __XTD_CORE_INTERNAL__
+#include <utility>
+#include <tuple>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -65,7 +66,7 @@ namespace xtd {
         /// @param first_args The tuple of constructor arguments to initialize the first element of this key_value_pair.
         /// @param second_args The tuple of constructor arguments to initialize the second element of this key_value_pair.
         template<class... args1_t, class... args2_t>
-        key_value_pair(std::piecewise_construct_t, std::tuple<args1_t...> first_args, std::tuple<args1_t...> second_args) : first {first_args}, second {second_args} {}
+        key_value_pair(std::piecewise_construct_t, std::tuple<args1_t...> first_args, std::tuple<args2_t...> second_args) : first {first_args}, second {second_args} {}
         /// @}
         
         /// @name Public Properties
