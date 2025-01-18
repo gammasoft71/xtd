@@ -61,6 +61,11 @@ namespace xtd {
         /// @brief Initializes a new instance of the key_value_pair<key_t, value_t> class with the specified key and value.
         /// @param value The key and value of the key_value_pair<key_t, value_t>.
         key_value_pair(const std::pair<key_t, value_t>& value) : first {value.first}, second {value.second} {} // Can't be explicit by design.
+        /// @brief Initializes a new instance of the key_value_pair<key_t, value_t> class with the specified first_args and second_args.
+        /// @param first_args The tuple of constructor arguments to initialize the first element of this key_value_pair.
+        /// @param second_args The tuple of constructor arguments to initialize the second element of this key_value_pair.
+        template<class... args1_t, class... args2_t>
+        key_value_pair(std::piecewise_construct_t, std::tuple<args1_t...> first_args, std::tuple<args1_t...> second_args) : first {first_args}, second {second_args} {}
         /// @}
         
         /// @name Public Properties
@@ -73,15 +78,11 @@ namespace xtd {
         
         /// @brief Gets the key in the key/value pair.
         /// @return key_t A key_t that is the key of the key_value_pair<key_t, value_t>.
-        const key_t& key() const noexcept {
-          return first;
-        };
+        const key_t& key() const noexcept {return first;}
         
         /// @brief Gets the value in the key/value pair.
         /// @return value_t A value_t that is the value of the key_value_pair<key_t, value_t>.
-        const value_t& value() const noexcept {
-          return second;
-        };
+        const value_t& value() const noexcept {return second;}
         /// @}
         
         /// @name Public Methods
@@ -142,6 +143,14 @@ namespace xtd {
         static key_value_pair<key_t, value_t> create(key_t key, value_t value) {return key_value_pair<key_t, value_t>(key, value);}
         /// @}
       };
-    }
+      
+      /// @cond
+      // C++17 deduction guides for xtd::collections::generic::key_value_pair
+      // {
+      template<class key_t, class value_t>
+      key_value_pair(key_t, value_t) -> key_value_pair<key_t, value_t>;
+      // }
+      /// @endcond
+  }
   }
 }
