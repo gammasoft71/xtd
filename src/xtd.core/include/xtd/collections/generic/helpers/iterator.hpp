@@ -15,20 +15,56 @@ namespace xtd {
       /// @brief The xtd::collections::generic::helpers namespace contains helpers for generic collections, sush as comparer, equator an hasher structs.
       namespace helpers {
         /// @brief Represents the value iterator type.
+        /// @par Header
+        /// ```cpp
+        /// #include <xtd/collections/generic/helpers/iterator>
+        /// ```
+        /// @par Namespace
+        /// xtd::collections::generic::helpers
+        /// @par Library
+        /// xtd.core
+        /// @ingroup xtd_core helpers_generic_collections
         template <class input_iterator_t>
         using iterator_value_t = typename std::iterator_traits<input_iterator_t>::value_type;
         
         /// @brief Represents the key iterator type.
+        /// @par Header
+        /// ```cpp
+        /// #include <xtd/collections/generic/helpers/iterator>
+        /// ```
+        /// @par Namespace
+        /// xtd::collections::generic::helpers
+        /// @par Library
+        /// xtd.core
+        /// @ingroup xtd_core helpers_generic_collections
         template <class input_iterator_t>
         using iterator_key_t = std::remove_const_t<std::tuple_element_t<0, iterator_value_t<input_iterator_t>>>;
         
         /// @brief Represents the mapped iterator type.
+        /// @par Header
+        /// ```cpp
+        /// #include <xtd/collections/generic/helpers/iterator>
+        /// ```
+        /// @par Namespace
+        /// xtd::collections::generic::helpers
+        /// @par Library
+        /// xtd.core
+        /// @ingroup xtd_core helpers_generic_collections
         template <class input_iterator_t>
         using iterator_mapped_t = std::tuple_element_t<1, iterator_value_t<input_iterator_t>>;
         
         /// @brief Represents the iterator to allocator type.
+        /// @par Header
+        /// ```cpp
+        /// #include <xtd/collections/generic/helpers/iterator>
+        /// ```
+        /// @par Namespace
+        /// xtd::collections::generic::helpers
+        /// @par Library
+        /// xtd.core
+        /// @ingroup xtd_core helpers_generic_collections
         template< class input_iterator_t >
-        using iterator_to_allocator_t = std::pair<std::add_const_t<std::tuple_element_t<0, iterator_value_t<input_iterator_t>>>, std::tuple_element_t<1, iterator_value_t<input_iterator_t>>>;
+        using iterator_to_allocator_t = std::pair<std::add_const_t<iterator_key_t<input_iterator_t>>, iterator_mapped_t<input_iterator_t>>;
       }
     }
   }
