@@ -17,15 +17,15 @@ namespace xtd {
       namespace helpers {
         /// @brief Implements a function object for hashing data.
         /// ```cpp
-        // template<class key_t>
-        // struct hasher;
+        /// template<class key_t>
+        /// struct hasher;
         /// ```
         /// @par Header
         /// ```cpp
-        /// #include <xtd/collections/generic/hasher
+        /// #include <xtd/collections/generic/helpers/hasher
         /// ```
         /// @par Namespace
-        /// xtd::collections::generic
+        /// xtd::collections::generic::helpers
         /// @par Library
         /// xtd.core
         /// @ingroup xtd_core helpers_generic_collections

@@ -15,10 +15,10 @@ namespace xtd {
         /// @brief Represent an allocator alias.
         /// @par Header
         /// ```cpp
-        /// #include <xtd/collections/generic/allocator>
+        /// #include <xtd/collections/generic/helpers/allocator>
         /// ```
         /// @par Namespace
-        /// xtd::collections
+        /// xtd::collections::generic::helpers
         /// @par Library
         /// xtd.core
         /// @ingroup xtd_core helpers_generic_collections
