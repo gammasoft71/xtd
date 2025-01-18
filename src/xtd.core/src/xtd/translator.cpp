@@ -123,8 +123,11 @@ const char* translator::translate(const xtd::string& language, const char* value
 }
 
 void translator::initialize() {
-  static object sync_root;
-  auto lock = threading::lock_guard {sync_root};
+  try {
+    static object sync_root;
+    auto lock = threading::lock_guard {sync_root};
+  } catch(...) {
+  }
   
   if (language_.empty()) {
     if (!std::locale {}.name().empty() && std::locale {}.name() != "C") language_ = locale_to_language(std::locale {}.name());
