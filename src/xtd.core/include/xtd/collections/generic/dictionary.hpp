@@ -1584,6 +1584,12 @@ namespace xtd {
       /// @cond
       // C++17 deduction guides for xtd::collections::generic::dictionary
       // {
+      template<class key_t, class value_t>
+      dictionary(idictionary<key_t, value_t>) -> dictionary<key_t, value_t, helpers::hasher<key_t>, helpers::equator<key_t>, helpers::allocator<std::pair<const key_t, value_t>>>;
+      
+      template<class key_t, class value_t>
+      dictionary(ienumerable<key_value_pair<key_t, value_t>>) -> dictionary<key_t, value_t, helpers::hasher<key_t>, helpers::equator<key_t>, helpers::allocator<std::pair<const key_t, value_t>>>;
+
       template<class key_t, class value_t, class hasher_t = helpers::hasher<key_t>, class equator_t = helpers::equator<key_t>, class allocator_t = helpers::allocator<std::pair<const key_t, value_t>>>
       dictionary(std::initializer_list<key_value_pair<key_t, value_t>>, xtd::size = 0, hasher_t = hasher_t {}, equator_t = equator_t {}, allocator_t = allocator_t {}) -> dictionary<key_t, value_t, hasher_t, equator_t, allocator_t>;
       
