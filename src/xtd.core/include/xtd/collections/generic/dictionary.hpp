@@ -1585,40 +1585,40 @@ namespace xtd {
       // C++17 deduction guides for xtd::collections::generic::dictionary
       // {
       template<class key_t, class value_t, class hasher_t = xtd::collections::generic::helpers::hasher<key_t>, class equator_t = xtd::collections::generic::helpers::equator<key_t>, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
-      dictionary(std::initializer_list<xtd::collections::generic::key_value_pair<key_t, value_t>>, xtd::size bucket_count = 0, const hasher_t& hash = hasher_t {}, const equator_t& equal = equator_t {}, const allocator_t& alloc = allocator_t {}) -> dictionary<key_t, value_t, hasher_t, equator_t, allocator_t>;
+      dictionary(std::initializer_list<xtd::collections::generic::key_value_pair<key_t, value_t>>, xtd::size = 0, hasher_t = hasher_t {}, equator_t = equator_t {}, allocator_t = allocator_t {}) -> dictionary<key_t, value_t, hasher_t, equator_t, allocator_t>;
       
       template<class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
-      dictionary(std::initializer_list<xtd::collections::generic::key_value_pair<key_t, value_t>>, xtd::size bucket_count, const allocator_t& alloc) -> dictionary<key_t, value_t, xtd::collections::generic::helpers::hasher<key_t>, xtd::collections::generic::helpers::equator<key_t>, allocator_t>;
+      dictionary(std::initializer_list<xtd::collections::generic::key_value_pair<key_t, value_t>>, xtd::size, allocator_t) -> dictionary<key_t, value_t, xtd::collections::generic::helpers::hasher<key_t>, xtd::collections::generic::helpers::equator<key_t>, allocator_t>;
       
       template<class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
-      dictionary(std::initializer_list<xtd::collections::generic::key_value_pair<key_t, value_t>>, const allocator_t& alloc) -> dictionary<key_t, value_t, xtd::collections::generic::helpers::hasher<key_t>, xtd::collections::generic::helpers::equator<key_t>, allocator_t>;
+      dictionary(std::initializer_list<xtd::collections::generic::key_value_pair<key_t, value_t>>, allocator_t) -> dictionary<key_t, value_t, xtd::collections::generic::helpers::hasher<key_t>, xtd::collections::generic::helpers::equator<key_t>, allocator_t>;
       
       template<class key_t, class value_t, class hasher_t = xtd::collections::generic::helpers::hasher<key_t>, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
-      dictionary(std::initializer_list<xtd::collections::generic::key_value_pair<key_t, value_t>>, xtd::size bucket_count, const hasher_t& hash, const allocator_t& alloc) -> dictionary<key_t, value_t, hasher_t, xtd::collections::generic::helpers::equator<key_t>, allocator_t>;
+      dictionary(std::initializer_list<xtd::collections::generic::key_value_pair<key_t, value_t>>, xtd::size, hasher_t, allocator_t) -> dictionary<key_t, value_t, hasher_t, xtd::collections::generic::helpers::equator<key_t>, allocator_t>;
 
       template<class key_t, class value_t, class hasher_t = xtd::collections::generic::helpers::hasher<key_t>, class equator_t = xtd::collections::generic::helpers::equator<key_t>, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
-      dictionary(std::initializer_list<std::pair<key_t, value_t>>, xtd::size bucket_count = 0, const hasher_t& hash = hasher_t {}, const equator_t& equal = equator_t {}, const allocator_t& alloc = allocator_t {}) -> dictionary<key_t, value_t, hasher_t, equator_t, allocator_t>;
+      dictionary(std::initializer_list<std::pair<key_t, value_t>>, xtd::size bucket_count = 0, hasher_t = hasher_t {}, equator_t = equator_t {}, allocator_t = allocator_t {}) -> dictionary<key_t, value_t, hasher_t, equator_t, allocator_t>;
       
       template<class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
-      dictionary(std::initializer_list<std::pair<key_t, value_t>>, xtd::size bucket_count, const allocator_t& alloc) -> dictionary<key_t, value_t, xtd::collections::generic::helpers::hasher<key_t>, xtd::collections::generic::helpers::equator<key_t>, allocator_t>;
+      dictionary(std::initializer_list<std::pair<key_t, value_t>>, xtd::size, allocator_t) -> dictionary<key_t, value_t, xtd::collections::generic::helpers::hasher<key_t>, xtd::collections::generic::helpers::equator<key_t>, allocator_t>;
       
       template<class key_t, class value_t, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
-      dictionary(std::initializer_list<std::pair<key_t, value_t>>, const allocator_t& alloc) -> dictionary<key_t, value_t, xtd::collections::generic::helpers::hasher<key_t>, xtd::collections::generic::helpers::equator<key_t>, allocator_t>;
+      dictionary(std::initializer_list<std::pair<key_t, value_t>>, allocator_t) -> dictionary<key_t, value_t, xtd::collections::generic::helpers::hasher<key_t>, xtd::collections::generic::helpers::equator<key_t>, allocator_t>;
       
       template<class key_t, class value_t, class hasher_t = xtd::collections::generic::helpers::hasher<key_t>, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const key_t, value_t>>>
-      dictionary(std::initializer_list<std::pair<key_t, value_t>>, xtd::size bucket_count, const hasher_t& hash, const allocator_t& alloc) -> dictionary<key_t, value_t, hasher_t, xtd::collections::generic::helpers::equator<key_t>, allocator_t>;
+      dictionary(std::initializer_list<std::pair<key_t, value_t>>, xtd::size, hasher_t, allocator_t) -> dictionary<key_t, value_t, hasher_t, xtd::collections::generic::helpers::equator<key_t>, allocator_t>;
 
-      template<class input_iterator_t, class hasher_t = xtd::collections::generic::helpers::hasher<helpers::iterator_key_t<input_iterator_t>>, class equator_t = xtd::collections::generic::helpers::equator<helpers::iterator_key_t<input_iterator_t>>, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>>>>
-      dictionary(input_iterator_t first, input_iterator_t last, xtd::size bucket_count = 0, const hasher_t& hash = hasher_t {}, const equator_t& equal = equator_t {}, const allocator_t& alloc = allocator_t {}) -> dictionary<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>, hasher_t, equator_t, allocator_t>;
+      template<class input_iterator_t, class hasher_t = xtd::collections::generic::helpers::hasher<helpers::iterator_key_t<input_iterator_t>>, class equator_t = xtd::collections::generic::helpers::equator<helpers::iterator_key_t<input_iterator_t>>, class allocator_t = xtd::collections::generic::helpers::allocator<helpers::iterator_to_allocator_t<input_iterator_t>>>
+      dictionary(input_iterator_t, input_iterator_t, xtd::size = 0, hasher_t = hasher_t {}, equator_t = equator_t {}, allocator_t = allocator_t {}) -> dictionary<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>, hasher_t, equator_t, allocator_t>;
       
       template<class input_iterator_t, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>>>>
-      dictionary(input_iterator_t first, input_iterator_t last, xtd::size bucket_count, const allocator_t& allocator) -> dictionary<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>, xtd::collections::generic::helpers::hasher<helpers::iterator_key_t<input_iterator_t>>, xtd::collections::generic::helpers::equator<helpers::iterator_key_t<input_iterator_t>>, allocator_t>;
+      dictionary(input_iterator_t, input_iterator_t, xtd::size, allocator_t) -> dictionary<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>, xtd::collections::generic::helpers::hasher<helpers::iterator_key_t<input_iterator_t>>, xtd::collections::generic::helpers::equator<helpers::iterator_key_t<input_iterator_t>>, allocator_t>;
       
       template<class input_iterator_t, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>>>>
-      dictionary(input_iterator_t first, input_iterator_t last, const allocator_t& allocator) -> dictionary<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>, xtd::collections::generic::helpers::hasher<helpers::iterator_key_t<input_iterator_t>>, xtd::collections::generic::helpers::equator<helpers::iterator_key_t<input_iterator_t>>, allocator_t>;
+      dictionary(input_iterator_t, input_iterator_t, allocator_t) -> dictionary<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>, xtd::collections::generic::helpers::hasher<helpers::iterator_key_t<input_iterator_t>>, xtd::collections::generic::helpers::equator<helpers::iterator_key_t<input_iterator_t>>, allocator_t>;
 
       template<class input_iterator_t, class hasher_t = xtd::collections::generic::helpers::hasher<helpers::iterator_key_t<input_iterator_t>>, class allocator_t = xtd::collections::generic::helpers::allocator<std::pair<const helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>>>>
-      dictionary(input_iterator_t first, input_iterator_t last, xtd::size bucket_count, const hasher_t& hash, const allocator_t& alloc) -> dictionary<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>, hasher_t, xtd::collections::generic::helpers::equator<helpers::iterator_key_t<input_iterator_t>>, allocator_t>;
+      dictionary(input_iterator_t, input_iterator_t, xtd::size, hasher_t, allocator_t) -> dictionary<helpers::iterator_key_t<input_iterator_t>, helpers::iterator_mapped_t<input_iterator_t>, hasher_t, xtd::collections::generic::helpers::equator<helpers::iterator_key_t<input_iterator_t>>, allocator_t>;
       // }
       /// @endcond
     }
