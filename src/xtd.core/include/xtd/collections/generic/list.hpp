@@ -995,23 +995,23 @@ namespace xtd {
       /// @cond
       // C++17 deduction guides for xtd::collections::generic::list
       // {
-      template<class type_t, class allocator_t = helpers::allocator<type_to_list_t<type_t>>>
-      list(std::initializer_list<type_t>) -> list<type_t, allocator_t>;
+      template<class type_t>
+      list(std::initializer_list<type_t>) -> list<type_t, helpers::allocator<type_to_list_t<type_t>>>;
       
-      template<class type_t, class allocator_t = helpers::allocator<type_to_list_t<type_t>>>
-      list(const xtd::collections::generic::ienumerable<type_t>&) -> list<type_t, allocator_t>;
+      template<class type_t>
+      list(const ienumerable<type_t>&) -> list<type_t, helpers::allocator<type_to_list_t<type_t>>>;
       
-      template<class type_t, class allocator_t = helpers::allocator<type_to_list_t<type_t>>>
-      list(const xtd::collections::generic::ilist<type_t>&) -> list<type_t, allocator_t>;
+      template<class type_t>
+      list(const ilist<type_t>&) -> list<type_t, helpers::allocator<type_to_list_t<type_t>>>;
       
-      template<class type_t, class allocator_t = helpers::allocator<type_to_list_t<type_t>>>
-      list(const std::vector<type_t>&) -> list<type_t, allocator_t>;
+      template<class type_t>
+      list(const std::vector<type_t>&) -> list<type_t, helpers::allocator<type_to_list_t<type_t>>>;
       
       template<class type_t, class allocator_t = helpers::allocator<type_to_list_t<type_t>>>
       list(const list<type_t, allocator_t>&) -> list<type_t, allocator_t>;
       
-      template<class type_t, class allocator_t = helpers::allocator<type_to_list_t<type_t>>>
-      list(std::vector<type_t>&&) -> list<type_t, allocator_t>;
+      template<class type_t>
+      list(std::vector<type_t>&&) -> list<type_t, helpers::allocator<type_to_list_t<type_t>>>;
       
       template<class type_t, class allocator_t = helpers::allocator<type_to_list_t<type_t>>>
       list(list<type_t, allocator_t>&&) -> list<type_t, allocator_t>;
