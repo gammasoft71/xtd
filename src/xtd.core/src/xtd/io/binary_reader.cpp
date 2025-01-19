@@ -133,7 +133,7 @@ float binary_reader::read_single() {
 }
 
 string binary_reader::read_string() {
-  auto length = read_int32();
+  auto length = read_7bit_encoded_int();
   return string(read_chars(length).data(), static_cast<size_t>(length));
 }
 
@@ -159,4 +159,23 @@ void binary_reader::seekg(std::streamoff pos, std::ios_base::seekdir dir) {
 
 std::streampos binary_reader::tellg() {
   return stream_->tellg();
+}
+
+// From : https://github.com/dotnet/runtime/blob/1d1bf92fcf43aa6981804dc53c5174445069c9e4/src/libraries/System.Private.CoreLib/src/System/IO/BinaryReader.cs
+int32 binary_reader::read_7bit_encoded_int() {
+  auto result = 0_u32;
+  auto byte_read_just_now = 0_u8;
+  
+  const auto max_bytes_without_overflow = 4;
+  for (auto shift = 0; shift < max_bytes_without_overflow * 7; shift += 7) {
+    byte_read_just_now = read_byte();
+    result |= (byte_read_just_now & 0x7Fu) << shift;
+    if (byte_read_just_now <= 0x7Fu) return static_cast<int32>(result);
+  }
+  
+  byte_read_just_now = read_byte();
+  if (byte_read_just_now > 0b1111u) throw new format_exception {};
+  
+  result |= static_cast<uint32>(byte_read_just_now) << (max_bytes_without_overflow * 7);
+  return static_cast<int32>(result);
 }

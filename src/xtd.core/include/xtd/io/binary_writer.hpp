@@ -268,6 +268,7 @@ namespace xtd {
       /// @endcond
       
     private:
+      void write_7bit_encoded_int(int32 value);
       std::ostream* stream_ = nullptr;
       bool delete_when_destroy_ = false;
     };
