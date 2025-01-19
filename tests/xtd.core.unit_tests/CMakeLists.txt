@@ -21,6 +21,7 @@ add_sources(
   src/xtd/diagnostics/tests/trace_event_type_tests.cpp
   src/xtd/diagnostics/tests/trace_level_tests.cpp
   src/xtd/diagnostics/tests/trace_listener_tests.cpp
+  src/xtd/io/tests/binary_reader_tests.cpp
   src/xtd/io/tests/directory_tests.cpp
   src/xtd/io/tests/directory_info_tests.cpp
   src/xtd/io/tests/directory_not_found_exception_tests.cpp
