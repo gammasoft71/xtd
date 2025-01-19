@@ -94,6 +94,7 @@
 #include "io/file_permissions.hpp"
 #include "io/file_system_info.hpp"
 #include "io/io_exception.hpp"
+#include "io/memory_stream.hpp"
 #include "io/path.hpp"
 #include "io/path_too_long_exception.hpp"
 #include "io/search_option.hpp"
