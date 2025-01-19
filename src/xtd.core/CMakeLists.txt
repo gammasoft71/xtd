@@ -800,6 +800,8 @@ add_sources(
   include/xtd/io/file_system_info
   include/xtd/io/io_exception.hpp
   include/xtd/io/io_exception
+  include/xtd/io/memory_stream.hpp
+  include/xtd/io/memory_stream  
   include/xtd/io/path.hpp
   include/xtd/io/path
   include/xtd/io/path_too_long_exception.hpp
@@ -1170,6 +1172,7 @@ add_sources(
   src/xtd/io/drive_not_found_exception.cpp
   src/xtd/io/end_of_stream_exception.cpp
   src/xtd/io/io_exception.cpp
+  src/xtd/io/memory_stream.cpp
   src/xtd/io/path.cpp
   src/xtd/io/path_too_long_exception.cpp
   src/xtd/io/stream_reader.cpp
