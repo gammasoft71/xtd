@@ -4,6 +4,13 @@
 using namespace xtd;
 using namespace xtd::io;
 
+memory_stream::memory_stream() {
+}
+
+memory_stream::memory_stream(xtd::size capacity) {
+  this->capacity(capacity);
+}
+
 bool memory_stream::can_read() const noexcept {
   return true;
 }
