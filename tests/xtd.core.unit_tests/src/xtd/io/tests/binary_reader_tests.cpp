@@ -39,6 +39,7 @@ namespace xtd::io::tests {
       stream.write(bit_converter::get_bytes(true));
       stream.write(bit_converter::get_bytes(false));
       
+      stream.position(0);
       auto reader = binary_reader {stream};
       assert::is_true(reader.read_boolean());
       assert::is_false(reader.read_boolean());
@@ -50,6 +51,7 @@ namespace xtd::io::tests {
       stream.write(bit_converter::get_bytes(42_u8));
       stream.write(bit_converter::get_bytes(byte_object::max_value));
       
+      stream.position(0);
       auto reader = binary_reader {stream};
       assert::are_equal(byte_object::min_value, reader.read_byte());
       assert::are_equal(42_u8, reader.read_byte());
@@ -62,6 +64,7 @@ namespace xtd::io::tests {
       stream.write(bit_converter::get_bytes(date_time {1971, 1, 5, 23, 1, 42}.to_binary()));
       stream.write(bit_converter::get_bytes(date_time::max_value.to_binary()));
       
+      stream.position(0);
       auto reader = binary_reader {stream};
       assert::are_equal(date_time::min_value, date_time::from_binary(reader.read_int64()));
       assert::are_equal(date_time {1971, 1, 5, 23, 1, 42}, date_time::from_binary(reader.read_int64()));
@@ -74,6 +77,7 @@ namespace xtd::io::tests {
       stream.write(bit_converter::get_bytes(0.42));
       stream.write(bit_converter::get_bytes(double_object::max_value));
       
+      stream.position(0);
       auto reader = binary_reader {stream};
       assert::are_equal(double_object::min_value, reader.read_double());
       assert::are_equal(0.42, reader.read_double());
@@ -86,6 +90,7 @@ namespace xtd::io::tests {
       stream.write(bit_converter::get_bytes(42_s16));
       stream.write(bit_converter::get_bytes(int16_object::max_value));
       
+      stream.position(0);
       auto reader = binary_reader {stream};
       assert::are_equal(int16_object::min_value, reader.read_int16());
       assert::are_equal(42_s16, reader.read_int16());
@@ -98,6 +103,7 @@ namespace xtd::io::tests {
       stream.write(bit_converter::get_bytes(42_s32));
       stream.write(bit_converter::get_bytes(int32_object::max_value));
       
+      stream.position(0);
       auto reader = binary_reader {stream};
       assert::are_equal(int32_object::min_value, reader.read_int32());
       assert::are_equal(42_s32, reader.read_int32());
@@ -110,6 +116,7 @@ namespace xtd::io::tests {
       stream.write(bit_converter::get_bytes(42_s64));
       stream.write(bit_converter::get_bytes(int64_object::max_value));
       
+      stream.position(0);
       auto reader = binary_reader {stream};
       assert::are_equal(int64_object::min_value, reader.read_int64());
       assert::are_equal(42_s64, reader.read_int64());
@@ -122,6 +129,7 @@ namespace xtd::io::tests {
       stream.write(bit_converter::get_bytes(42_s8));
       stream.write(bit_converter::get_bytes(sbyte_object::max_value));
       
+      stream.position(0);
       auto reader = binary_reader {stream};
       assert::are_equal(sbyte_object::min_value, reader.read_sbyte());
       assert::are_equal(42_s8, reader.read_sbyte());
@@ -134,6 +142,7 @@ namespace xtd::io::tests {
       stream.write(bit_converter::get_bytes(0.42f));
       stream.write(bit_converter::get_bytes(single_object::max_value));
       
+      stream.position(0);
       auto reader = binary_reader {stream};
       assert::are_equal(single_object::min_value, reader.read_single());
       assert::are_equal(0.42f, reader.read_single());
@@ -146,6 +155,7 @@ namespace xtd::io::tests {
       stream.write(bit_converter::get_bytes(time_span {2, 18, 25, 36, 450, 200}.ticks()));
       stream.write(bit_converter::get_bytes(time_span::max_value.ticks()));
       
+      stream.position(0);
       auto reader = binary_reader {stream};
       assert::are_equal(time_span::min_value, time_span {reader.read_int64()});
       assert::are_equal(time_span {2, 18, 25, 36, 450, 200}, time_span {reader.read_int64()});
@@ -158,6 +168,7 @@ namespace xtd::io::tests {
       stream.write(bit_converter::get_bytes(42_u16));
       stream.write(bit_converter::get_bytes(uint16_object::max_value));
       
+      stream.position(0);
       auto reader = binary_reader {stream};
       assert::are_equal(uint16_object::min_value, reader.read_uint16());
       assert::are_equal(42_u16, reader.read_uint16());
@@ -170,6 +181,7 @@ namespace xtd::io::tests {
       stream.write(bit_converter::get_bytes(42_u32));
       stream.write(bit_converter::get_bytes(uint32_object::max_value));
       
+      stream.position(0);
       auto reader = binary_reader {stream};
       assert::are_equal(uint32_object::min_value, reader.read_uint32());
       assert::are_equal(42_u32, reader.read_uint32());
@@ -182,6 +194,7 @@ namespace xtd::io::tests {
       stream.write(bit_converter::get_bytes(42_u64));
       stream.write(bit_converter::get_bytes(uint64_object::max_value));
       
+      stream.position(0);
       auto reader = binary_reader {stream};
       assert::are_equal(uint64_object::min_value, reader.read_uint64());
       assert::are_equal(42_u64, reader.read_uint64());
