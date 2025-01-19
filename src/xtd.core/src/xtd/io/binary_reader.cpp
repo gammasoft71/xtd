@@ -121,7 +121,7 @@ int32 binary_reader::read_int32() {
 }
 
 int64 binary_reader::read_int64() {
-  return bit_converter::to_int16(read_bytes(sizeof(int64)), 0);
+  return bit_converter::to_int64(read_bytes(sizeof(int64)), 0);
 }
 
 sbyte binary_reader::read_sbyte() {
@@ -138,15 +138,15 @@ string binary_reader::read_string() {
 }
 
 uint16 binary_reader::read_uint16() {
-  return bit_converter::to_int16(read_bytes(sizeof(int16)), 0);
+  return bit_converter::to_uint16(read_bytes(sizeof(uint16)), 0);
 }
 
 uint32 binary_reader::read_uint32() {
-  return bit_converter::to_int32(read_bytes(sizeof(int32)), 0);
+  return bit_converter::to_uint32(read_bytes(sizeof(uint32)), 0);
 }
 
 uint64 binary_reader::read_uint64() {
-  return bit_converter::to_int16(read_bytes(sizeof(int64)), 0);
+  return bit_converter::to_uint64(read_bytes(sizeof(uint64)), 0);
 }
 
 void binary_reader::rewind() {
