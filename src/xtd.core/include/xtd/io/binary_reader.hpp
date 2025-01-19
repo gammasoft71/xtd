@@ -274,6 +274,7 @@ namespace xtd {
       /// @endcond
       
     private:
+      int32 read_7bit_encoded_int();
       std::istream* stream_ = nullptr;
       std::stack<std::streampos> pos_stack_;
       bool delete_when_destroy_ = false;

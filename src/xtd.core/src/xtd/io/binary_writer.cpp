@@ -114,7 +114,7 @@ void binary_writer::write(float value) {
 }
 
 void binary_writer::write(const string& value) {
-  write(static_cast<int32>(value.size()));
+  write_7bit_encoded_int(static_cast<int32>(value.size()));
   for (auto c : value)
     write(c);
 }
@@ -173,4 +173,16 @@ void binary_writer::write(uint32 value) {
 
 void binary_writer::write(uint64 value) {
   write(bit_converter::get_bytes(value));
+}
+
+// From https://github.com/dotnet/runtime/blob/1d1bf92fcf43aa6981804dc53c5174445069c9e4/src/libraries/System.Private.CoreLib/src/System/IO/BinaryWriter.cs
+void binary_writer::write_7bit_encoded_int(int32 value) {
+  auto u_value = static_cast<uint32>(value);
+  
+  while (u_value > 0x7Fu) {
+    write(static_cast<byte>(u_value | ~0x7Fu));
+    u_value >>= 7;
+  }
+  
+  write(static_cast<byte>(u_value));
 }
