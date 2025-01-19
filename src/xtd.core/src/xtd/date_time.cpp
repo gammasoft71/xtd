@@ -308,7 +308,7 @@ bool date_time::equals(const date_time& other) const noexcept {
 }
 
 date_time date_time::from_binary(int64 date_data) {
-  return date_time {xtd::ticks(date_data & 0x3FFFFFFFFFFFFFFFLL), as<date_time_kind>(as<int32>(((date_data & 0xC000000000000000LL) >> 62) & 0x0000000000000003LL))};
+  return date_time {date_data & 0x3FFFFFFFFFFFFFFFLL, as<date_time_kind>(as<int32>(((date_data & 0xC000000000000000LL) >> 62) & 0x0000000000000003LL))};
 }
 
 date_time date_time::from_duration(const time_span& value) {
@@ -398,7 +398,7 @@ date_time date_time::subtract(const time_span& value) const {
 }
 
 int64 date_time::to_binary() const {
-  return (std::chrono::duration_cast<std::chrono::seconds>(value_).count() & 0x3FFFFFFFFFFFFFFFLL) + ((as<int64>(kind_) << 62) & 0xC000000000000000LL);
+  return (value_.count() & 0x3FFFFFFFFFFFFFFFLL) + ((as<int64>(kind_) << 62) & 0xC000000000000000LL);
 }
 
 int64 date_time::to_file_time() const {
