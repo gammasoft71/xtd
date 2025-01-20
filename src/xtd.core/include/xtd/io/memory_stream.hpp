@@ -44,7 +44,6 @@ namespace xtd {
       /// @remarks The xtd::io::memory_stream::can_read, xtd::io::memory_stream::can_seek, and xtd::io::memory_stream::can_write properties are all set to true.
       /// @remarks The capacity of the current stream automatically increases when you use the xtd::io::memory_stream::set_length method to set the length to a value larger than the capacity of the current stream.
       /// @remarks This constructor exposes the underlying stream, which xtd::io::memory_stream::get_buffer returns.
-        This constructor exposes the underlying stream that GetBuffer returns.
       memory_stream(xtd::size capacity);
       /// @}
       
