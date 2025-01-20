@@ -1,5 +1,6 @@
 #include "../../../include/xtd/io/memory_stream.hpp"
 #include "../../../include/xtd/argument_out_of_range_exception.hpp"
+#include "../../../include/xtd/as.hpp"
 #include "../../../include/xtd/not_implemented_exception.hpp"
 
 using namespace xtd;
@@ -37,10 +38,11 @@ memory_stream& memory_stream::capacity(xtd::size value) {
 }
 
 xtd::size memory_stream::length() const noexcept {
-  auto current_pos = const_cast<memory_stream*>(this)->tellg();
-  const_cast<memory_stream*>(this)->seekg(0, std::ios_base::end);
-  auto result = const_cast<memory_stream*>(this)->tellg();
-  const_cast<memory_stream*>(this)->seekg(current_pos, std::ios_base::beg);
+  auto const_this = const_cast<memory_stream*>(this);
+  auto current_pos = const_this->tellg();
+  const_this->seekg(0, std::ios_base::end);
+  auto result = const_this->tellg();
+  const_this->seekg(current_pos, std::ios_base::beg);
   return result;
 }
 
@@ -49,8 +51,8 @@ xtd::size memory_stream::position() const noexcept {
 }
 
 memory_stream& memory_stream::position(xtd::size value) {
-  if (value > length()) seekg(0, std::ios_base::end);
-  else seekg(value, std::ios_base::beg);
+  if (value > length()) seek(0, seek_origin::end);
+  else seek(value, seek_origin::begin);
   return *this;
 }
 
@@ -72,6 +74,11 @@ xtd::int32 memory_stream::read_byte() {
   if (readsome(reinterpret_cast<char*>(&value), 1) != 1) return -1;
   if (position()) position(position() - 1);
   return static_cast<int32>(value);
+}
+
+xtd::size memory_stream::seek(xtd::size offset, seek_origin loc) {
+  seekg(offset, as<std::ios_base::seekdir>(loc));
+  return position();
 }
 
 void memory_stream::write(const xtd::array<xtd::byte>& bytes) {
