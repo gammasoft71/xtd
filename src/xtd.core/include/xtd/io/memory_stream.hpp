@@ -61,9 +61,11 @@ namespace xtd {
       /// @brief Gets a value indicating whether the current stream supports reading.
       /// @return `true` if the stream supports reading; otherwise, `false`.
       bool can_read() const noexcept;
+
       /// @brief Gets a value indicating whether the current stream supports seeking.
       /// @return `true` if the stream supports seeking; otherwise, `false`.
       bool can_seek() const noexcept;
+
       /// @brief Gets a value indicating whether the current stream supports writing.
       /// @return `true` if the stream supports writing; otherwise, `false`.
       bool can_write() const noexcept;
