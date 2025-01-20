@@ -3,6 +3,7 @@
 #include "../../../include/xtd/as.hpp"
 #include "../../../include/xtd/math.hpp"
 #include "../../../include/xtd/not_implemented_exception.hpp"
+#include "../../../include/xtd/object_closed_exception.hpp"
 
 using namespace xtd;
 using namespace xtd::io;
@@ -68,27 +69,29 @@ const memory_stream::memory_buffer& memory_stream::get_buffer() const {
   return *rdbuf();
 }
 
-void memory_stream::read(array<byte>& bytes) {
-  write(bytes, size {}, bytes.size());
+size memory_stream::read(array<byte>& buffer) {
+  return read(buffer, 0_z, buffer.size());
 }
 
-void memory_stream::read(array<byte>& bytes, size offset, size count) {
-  if (offset >= bytes.size() || offset + count > bytes.size()) throw argument_out_of_range_exception {};
-  for (auto index = offset; index < count; ++index) {
+size memory_stream::read(array<byte>& buffer, size offset, size count) {
+  if (offset >= buffer.size() || offset + count > buffer.size()) throw argument_out_of_range_exception {};
+  auto index = offset;
+  for (; index < count; ++index) {
     auto value = read_byte();
-    if (value == -1) return;
-    bytes[index] = static_cast<byte>(value);
+    if (value == -1) return index - offset;
+    buffer[index] = static_cast<byte>(value);
   }
+  return index - offset;
 }
 
 int32 memory_stream::read_byte() {
-  auto value = byte {};
+  auto value = 0_u8;
   if (readsome(reinterpret_cast<char*>(&value), 1) != 1) return -1;
   if (position()) position(position() - 1);
   return static_cast<int32>(value);
 }
 
-size memory_stream::seek(size offset, seek_origin loc) {
+size memory_stream::seek(std::streamoff offset, seek_origin loc) {
   seekg(offset, as<std::ios_base::seekdir>(loc));
   return position();
 }
@@ -117,4 +120,13 @@ void memory_stream::write(const array<byte>& bytes, size offset, size count) {
 void memory_stream::write_byte(byte value) {
   write(reinterpret_cast<const char*>(&value), 1);
   position(position() + 1);
+}
+
+void memory_stream::write_to(std::ostream& stream) const {
+  if (!stream.good()) throw object_closed_exception {};
+  for (auto index = 0_z; index < length(); ++index) {
+    auto value = char {};
+    const_cast<memory_stream*>(this)->readsome(&value, 1);
+    stream.write(&value, 1);
+  }
 }
