@@ -35,9 +35,11 @@ add_sources(
   src/xtd/io/tests/file_load_exception_tests.cpp
   src/xtd/io/tests/file_not_found_exception_tests.cpp
   src/xtd/io/tests/io_exception_tests.cpp
+  src/xtd/io/tests/memory_stream_tests.cpp
   src/xtd/io/tests/path_tests.cpp
   src/xtd/io/tests/path_too_long_exception_tests.cpp
   src/xtd/io/tests/search_option_tests.cpp
+  src/xtd/io/tests/seek_origin_tests.cpp
   src/xtd/io/tests/stream_writer_tests.cpp
   src/xtd/io/tests/string_reader_tests.cpp
   src/xtd/linq/tests/enumerable_tests.cpp
