@@ -10,6 +10,10 @@ using namespace xtd::tunit;
 
 namespace xtd::io::tests {
   class test_class_(memory_stream_tests) {
+    void test_method_(memory_buffer) {
+      assert::are_equal(typeof_<std::stringbuf>(), typeof_<memory_stream::memory_buffer>());
+    }
+    
     void test_method_(create_memory_stream) {
       auto stream = memory_stream {};
       assert::is_true(stream.can_read());
