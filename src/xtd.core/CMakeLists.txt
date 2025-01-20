@@ -808,6 +808,8 @@ add_sources(
   include/xtd/io/path_too_long_exception
   include/xtd/io/search_option.hpp
   include/xtd/io/search_option
+  include/xtd/io/seek_origin.hpp
+  include/xtd/io/seek_origin
   include/xtd/io/stream_reader.hpp
   include/xtd/io/stream_reader
   include/xtd/io/stream_writer.hpp
