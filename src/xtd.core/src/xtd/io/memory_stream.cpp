@@ -1,5 +1,6 @@
 #include "../../../include/xtd/io/memory_stream.hpp"
 #include "../../../include/xtd/argument_out_of_range_exception.hpp"
+#include "../../../include/xtd/not_implemented_exception.hpp"
 
 using namespace xtd;
 using namespace xtd::io;
@@ -24,13 +25,14 @@ bool memory_stream::can_write() const noexcept {
 }
 
 xtd::size memory_stream::capacity() const noexcept {
-  std::streamsize current_pos = rdbuf()->pubseekoff(0, std::ios::cur, std::ios::out);
-  std::streamsize result = rdbuf()->pubseekoff(0, std::ios::end, std::ios::out);
+  auto current_pos = rdbuf()->pubseekoff(0, std::ios::cur, std::ios::out);
+  auto result = rdbuf()->pubseekoff(0, std::ios::end, std::ios::out);
   rdbuf()->pubseekpos(current_pos, std::ios::out);
   return result;
 }
 
 memory_stream& memory_stream::capacity(xtd::size value) {
+  throw not_implemented_exception {};
   return *this;
 }
 
