@@ -32,6 +32,13 @@ namespace xtd {
     /// @ingroup xtd_core io
     class core_export_ memory_stream :  public xtd::object, public std::stringstream {
     public:
+      /// @name Public Aliases
+      
+      /// @{
+      /// @brief Represents the underlying memory buffer type.
+      using memory_buffer = std::stringbuf;
+      /// @}
+
       /// @name Public constructors
       
       /// @{
@@ -88,7 +95,11 @@ namespace xtd {
       
       /// @name Public Methods
       
-      /// @{
+      /// @{      
+      void copy_to(std::ostream& destination, xtd::size buffer_size) const;
+
+      const memory_buffer& get_buffer() const;
+
       using std::stringstream::read;
       void read(xtd::array<xtd::byte>& bytes);
       void read(xtd::array<xtd::byte>& bytes, size offset, size count);
@@ -97,6 +108,10 @@ namespace xtd {
       
       xtd::size seek(xtd::size offset, seek_origin loc);
 
+      void set_length(xtd::size value);
+
+      xtd::array<xtd::byte> to_array() const;
+      
       using std::stringstream::write;
       void write(const xtd::array<xtd::byte>& bytes);
       void write(const xtd::array<xtd::byte>& bytes, size offset, size count);
