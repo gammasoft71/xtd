@@ -2,6 +2,7 @@
 /// @brief Contains xtd::io::memory_stream class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "seek_origin.hpp"
 #include "../core_export.hpp"
 #include "../array.hpp"
 #include "../object.hpp"
@@ -93,6 +94,8 @@ namespace xtd {
       void read(xtd::array<xtd::byte>& bytes, size offset, size count);
       
       xtd::int32 read_byte();
+      
+      xtd::size seek(xtd::size offset, seek_origin loc);
 
       using std::stringstream::write;
       void write(const xtd::array<xtd::byte>& bytes);
