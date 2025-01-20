@@ -16,9 +16,7 @@ namespace xtd::io::tests {
     
     void test_method_(create_memory_stream) {
       auto stream = memory_stream {};
-      assert::is_true(stream.can_read());
-      assert::is_true(stream.can_seek());
-      assert::is_true(stream.can_write());
+      assert::are_equal("xtd::io::memory_stream", stream.to_string());
       assert::is_zero(stream.capacity());
       assert::is_zero(stream.length());
       assert::is_zero(stream.position());
@@ -28,5 +26,45 @@ namespace xtd::io::tests {
       assert::throws<not_implemented_exception>([] {auto stream = memory_stream {42_z};});
     }
     
+    void test_method_(can_read) {
+      auto stream = memory_stream {};
+      assert::is_true(stream.can_read());
+    }
+    
+    void test_method_(can_seek) {
+      auto stream = memory_stream {};
+      assert::is_true(stream.can_seek());
+    }
+    
+    void test_method_(can_write) {
+      auto stream = memory_stream {};
+      assert::is_true(stream.can_write());
+    }
+
+    void test_method_(capacity) {
+      auto stream = memory_stream {};
+      assert::is_zero(stream.capacity());
+      stream.write_byte(42);
+      assert::is_greater_or_equal(stream.capacity(), 1_z);
+    }
+    
+    void test_method_(set_capacity) {
+      assert::throws<not_implemented_exception>([] {memory_stream {}.capacity(42_z);});
+    }
+    
+    void test_method_(length) {
+      auto stream = memory_stream {};
+      assert::is_zero(stream.length());
+      stream.write_byte(42);
+      assert::are_equal(1_z, stream.length());
+    }
+
+    void test_method_(position) {
+      auto stream = memory_stream {};
+      assert::is_zero(stream.position());
+      stream.write_byte(42);
+      assert::are_equal(1_z, stream.position());
+    }
+
   };
 }
