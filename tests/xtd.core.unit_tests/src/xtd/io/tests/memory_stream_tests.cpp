@@ -62,9 +62,42 @@ namespace xtd::io::tests {
     void test_method_(position) {
       auto stream = memory_stream {};
       assert::is_zero(stream.position());
-      stream.write_byte(42);
+      stream.write_byte(10);
       assert::are_equal(1_z, stream.position());
+      stream.write_byte(20);
+      assert::are_equal(2_z, stream.position());
+      stream.write_byte(30);
+      assert::are_equal(3_z, stream.position());
+      stream.write_byte(40);
+      assert::are_equal(4_z, stream.position());
+      stream.write_byte(50);
+      assert::are_equal(5_z, stream.position());
     }
 
+    void test_method_(set_position) {
+      auto stream = memory_stream {};
+      assert::is_zero(stream.position());
+      stream.write({10, 20, 30, 40, 50});
+      assert::are_equal(5_z, stream.position());
+      stream.position(0);
+      assert::is_zero(stream.position());
+      stream.position(3);
+      assert::are_equal(3_z, stream.position());
+    }
+    
+    void test_method_(copy_to) {
+      auto stream1 = memory_stream {};
+      stream1.write({10, 20, 30, 40, 50});
+
+      auto stream2 = memory_stream {};
+      stream1.copy_to(stream2, stream1.length());
+      assert::are_equal(stream1.length(), stream2.length());
+      stream2.position(0);
+      assert::are_equal(10, stream2.read_byte());
+      assert::are_equal(20, stream2.read_byte());
+      assert::are_equal(30, stream2.read_byte());
+      assert::are_equal(40, stream2.read_byte());
+      assert::are_equal(50, stream2.read_byte());
+    }
   };
 }
