@@ -266,6 +266,14 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <tr class="memitem:a0369194a9fc6564450a4e09f9083bec1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a0369194a9fc6564450a4e09f9083bec1">date_time</a> (<a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> <a class="el" href="classxtd_1_1date__time.html#a9f66207e64a3cdc030e9a3d98fc0c416">year</a>, <a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> <a class="el" href="classxtd_1_1date__time.html#a800ef26e317f901a263d31e18319b4d7">month</a>, <a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> <a class="el" href="classxtd_1_1date__time.html#a64d8c6b7c2a6ad3628934e5058cca23a">day</a>, <a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> <a class="el" href="classxtd_1_1date__time.html#af6d5ec7775b954da23afcf5543cb7fbc">hour</a>, <a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> <a class="el" href="classxtd_1_1date__time.html#a55d9fe3569709cbbb4b229cbf615d306">minute</a>, <a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> <a class="el" href="classxtd_1_1date__time.html#ae084c4d68a46500b8e64f4aec4869a15">second</a>, <a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> <a class="el" href="classxtd_1_1date__time.html#aab8d1f41e620866ff93a0a04a611940a">millisecond</a>, <a class="el" href="group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea">date_time_kind</a> <a class="el" href="classxtd_1_1date__time.html#ac49ab9e61e6b546f483de527819a840f">kind</a>)</td></tr>
 <tr class="memdesc:a0369194a9fc6564450a4e09f9083bec1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure to the specified year, month, day, hour, minute, second, millisecond, and Coordinated Universal Time (UTC) or local time.  <br /></td></tr>
 <tr class="separator:a0369194a9fc6564450a4e09f9083bec1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2c74f1580df9837bc86cca709ad4981"><td class="memTemplParams" colspan="2">template&lt;class clock_t , class duration_t  = clock_t::duration&gt; </td></tr>
+<tr class="memitem:ab2c74f1580df9837bc86cca709ad4981"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#ab2c74f1580df9837bc86cca709ad4981">date_time</a> (const std::chrono::time_point&lt; clock_t, duration_t &gt; &amp;time_point)</td></tr>
+<tr class="memdesc:ab2c74f1580df9837bc86cca709ad4981"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure to a specified time point.  <br /></td></tr>
+<tr class="separator:ab2c74f1580df9837bc86cca709ad4981"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63d78408e788e58570f1792cf7d0113f"><td class="memTemplParams" colspan="2">template&lt;class clock_t , class duration_t  = clock_t::duration&gt; </td></tr>
+<tr class="memitem:a63d78408e788e58570f1792cf7d0113f"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a63d78408e788e58570f1792cf7d0113f">date_time</a> (const std::chrono::time_point&lt; clock_t, duration_t &gt; &amp;time_point, <a class="el" href="group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea">date_time_kind</a> <a class="el" href="classxtd_1_1date__time.html#ac49ab9e61e6b546f483de527819a840f">kind</a>)</td></tr>
+<tr class="memdesc:a63d78408e788e58570f1792cf7d0113f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure to a specified time point, and Coordinated Universal Time (UTC) or local time.  <br /></td></tr>
+<tr class="separator:a63d78408e788e58570f1792cf7d0113f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:a2b6f82824acbcb499acc6c6b62959644"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a2b6f82824acbcb499acc6c6b62959644">date</a> () const noexcept</td></tr>
@@ -497,7 +505,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9af33e7a4b6e3f10f19133e026c1bc0e" name="a9af33e7a4b6e3f10f19133e026c1bc0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9af33e7a4b6e3f10f19133e026c1bc0e">&#9670;&#160;</a></span>date_time() <span class="overload">[1/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9af33e7a4b6e3f10f19133e026c1bc0e">&#9670;&#160;</a></span>date_time() <span class="overload">[1/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -525,7 +533,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a207d2eb1675847f54a830410446170bc" name="a207d2eb1675847f54a830410446170bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a207d2eb1675847f54a830410446170bc">&#9670;&#160;</a></span>date_time() <span class="overload">[2/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a207d2eb1675847f54a830410446170bc">&#9670;&#160;</a></span>date_time() <span class="overload">[2/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -609,7 +617,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a8b808c857d6fc2416775fb5bafc97397" name="a8b808c857d6fc2416775fb5bafc97397"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b808c857d6fc2416775fb5bafc97397">&#9670;&#160;</a></span>date_time() <span class="overload">[3/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b808c857d6fc2416775fb5bafc97397">&#9670;&#160;</a></span>date_time() <span class="overload">[3/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -690,7 +698,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a6f4d331c1d6d4b32f9ea30f14f4f19ea" name="a6f4d331c1d6d4b32f9ea30f14f4f19ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f4d331c1d6d4b32f9ea30f14f4f19ea">&#9670;&#160;</a></span>date_time() <span class="overload">[4/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f4d331c1d6d4b32f9ea30f14f4f19ea">&#9670;&#160;</a></span>date_time() <span class="overload">[4/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -733,7 +741,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a3dd6bc50d4e2f402173f4674b21d184c" name="a3dd6bc50d4e2f402173f4674b21d184c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3dd6bc50d4e2f402173f4674b21d184c">&#9670;&#160;</a></span>date_time() <span class="overload">[5/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dd6bc50d4e2f402173f4674b21d184c">&#9670;&#160;</a></span>date_time() <span class="overload">[5/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -776,7 +784,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a54110cf956cfbf1ca1dc937af31281ed" name="a54110cf956cfbf1ca1dc937af31281ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54110cf956cfbf1ca1dc937af31281ed">&#9670;&#160;</a></span>date_time() <span class="overload">[6/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a54110cf956cfbf1ca1dc937af31281ed">&#9670;&#160;</a></span>date_time() <span class="overload">[6/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -836,7 +844,7 @@ day is less than 1 or greater than the number of days in month. </td></tr>
 </div>
 </div>
 <a id="acdec0f97a7590a2c3e84dbc713fb2342" name="acdec0f97a7590a2c3e84dbc713fb2342"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdec0f97a7590a2c3e84dbc713fb2342">&#9670;&#160;</a></span>date_time() <span class="overload">[7/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#acdec0f97a7590a2c3e84dbc713fb2342">&#9670;&#160;</a></span>date_time() <span class="overload">[7/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -920,7 +928,7 @@ This constructor interpretsyear, month, and day as a year, month, and day in the
 </div>
 </div>
 <a id="a732df6afda3f82cafbe9bcfb7df49816" name="a732df6afda3f82cafbe9bcfb7df49816"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a732df6afda3f82cafbe9bcfb7df49816">&#9670;&#160;</a></span>date_time() <span class="overload">[8/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a732df6afda3f82cafbe9bcfb7df49816">&#9670;&#160;</a></span>date_time() <span class="overload">[8/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1017,7 +1025,7 @@ This constructor interpretsyear, month, and day as a year, month, and day in the
 </div>
 </div>
 <a id="aae783ac4add6c161de1e11f926d39c9c" name="aae783ac4add6c161de1e11f926d39c9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae783ac4add6c161de1e11f926d39c9c">&#9670;&#160;</a></span>date_time() <span class="overload">[9/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aae783ac4add6c161de1e11f926d39c9c">&#9670;&#160;</a></span>date_time() <span class="overload">[9/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1108,7 +1116,7 @@ millisecond is less than 0 or greater than 999. </td></tr>
 </div>
 </div>
 <a id="a0369194a9fc6564450a4e09f9083bec1" name="a0369194a9fc6564450a4e09f9083bec1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0369194a9fc6564450a4e09f9083bec1">&#9670;&#160;</a></span>date_time() <span class="overload">[10/10]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0369194a9fc6564450a4e09f9083bec1">&#9670;&#160;</a></span>date_time() <span class="overload">[10/12]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1202,6 +1210,91 @@ millisecond is less than 0 or greater than 999. </td></tr>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This constructor interpretsyear, month, and day as a year, month, and day in the Gregorian calendar. </dd></dl>
+
+</div>
+</div>
+<a id="ab2c74f1580df9837bc86cca709ad4981" name="ab2c74f1580df9837bc86cca709ad4981"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2c74f1580df9837bc86cca709ad4981">&#9670;&#160;</a></span>date_time() <span class="overload">[11/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class clock_t , class duration_t  = clock_t::duration&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::date_time::date_time </td>
+          <td>(</td>
+          <td class="paramtype">const std::chrono::time_point&lt; clock_t, duration_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>time_point</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure to a specified time point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time_point</td><td>A <a href="https://en.cppreference.com/w/cpp/chrono/time_point">std::chrono::time_point</a> value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This constructor can be used for example to convert <a href="https://en.cppreference.com/w/cpp/chrono/system_clock">std::chrono::system_clock::time_point</a> to <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>. </dd></dl>
+
+</div>
+</div>
+<a id="a63d78408e788e58570f1792cf7d0113f" name="a63d78408e788e58570f1792cf7d0113f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63d78408e788e58570f1792cf7d0113f">&#9670;&#160;</a></span>date_time() <span class="overload">[12/12]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class clock_t , class duration_t  = clock_t::duration&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::date_time::date_time </td>
+          <td>(</td>
+          <td class="paramtype">const std::chrono::time_point&lt; clock_t, duration_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>time_point</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea">date_time_kind</a>&#160;</td>
+          <td class="paramname"><em>kind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure to a specified time point, and Coordinated Universal Time (UTC) or local time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">time_point</td><td>A <a href="https://en.cppreference.com/w/cpp/chrono/time_point">std::chrono::time_point</a> value. </td></tr>
+    <tr><td class="paramname">kind</td><td>One of the enumeration values that indicates whether year, month, day, hour, minute and second specify a local time, Coordinated Universal Time (UTC), or neither. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This constructor can be used for example to convert <a href="https://en.cppreference.com/w/cpp/chrono/system_clock">std::chrono::system_clock::time_point</a> to <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>. </dd></dl>
 
 </div>
 </div>
@@ -5785,7 +5878,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 17 2025 22:48:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jan 22 2025 14:45:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
