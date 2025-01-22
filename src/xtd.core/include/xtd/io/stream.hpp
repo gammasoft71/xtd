@@ -8,7 +8,7 @@
 #include "../async_callback.hpp"
 #include "../core_export.hpp"
 #include "../iasync_result.hpp"
-#include "../object.hpp"
+#include "../abstract_object.hpp"
 #include "../string.hpp"
 #include <cstdio>
 #include <sstream>
@@ -23,10 +23,10 @@ namespace xtd {
 
     /// @brief Provides a generic view of a sequence of bytes. This is an abstract class.
     /// ```cpp
-    /// class core_export_ stream :  public xtd::object, public std::iostream;
+    /// class core_export_ stream :  public xtd::abstract_object, public std::iostream;
     /// ```
     /// @par Inheritance
-    /// xtd::object → xtd::io::text_writer
+    /// xtd::object → abstract_object → xtd::io::text_writer
     /// @par Header
     /// ```cpp
     /// #include <xtd/io/stream>
@@ -36,7 +36,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core io
-    class core_export_ stream :  public xtd::object, public std::iostream {
+    class core_export_ stream :  public xtd::abstract_object, public std::iostream {
       class async_result_stream : public xtd::object, public xtd::iasync_result {
       public:
         explicit async_result_stream(std::any async_state) : async_state_(async_state) {}
@@ -60,7 +60,7 @@ namespace xtd {
         
       private:
         stream& owner_;
-        char_type value_ = EOF;
+        char_type value_ = stream::eof;
       };
       
     public:
@@ -75,6 +75,10 @@ namespace xtd {
       /// @brief A Stream with no backing store.
       /// @remarks Use xtd::io::stream::null_stream to redirect output to a stream that will not consume any operating system resources. When the methods of xtd::io::stream that provide writing are invoked on xtd::io::stream::null_stream, the call simply returns, and no data is written. xtd::io::stream::null_stream also implements a xtd::io::stream::stream::read method that returns zero without reading data.
       static xtd::io::null_stream null_stream;
+      
+      /// @brief Represnets an eof value.
+      /// @remarks Returns a value not equivalent to any valid value of stream type ([EOF](https://en.cppreference.com/w/cpp/header/cstdio) (-1)).
+      inline static constexpr int32 eof = EOF;
       /// @}
       
       /// @name Public Properties
@@ -150,6 +154,15 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      /// @brief Reads the bytes from the current memory stream and writes them to another stream.
+      /// @param destination The stream to which the contents of the current memory stream will be copied.
+      void copy_to(std::ostream& destination);
+      
+      /// @brief Reads the bytes from the current memory stream and writes them to another stream, using a specified buffer size.
+      /// @param destination The stream to which the contents of the current memory stream will be copied.
+      /// @param buffer_size The size of the buffer. This value must be greater than zero. The default size is 81920.
+      void copy_to(std::ostream& destination, xtd::size buffer_size);
+      
       using std::iostream::read;
       virtual xtd::size read(xtd::array<xtd::byte>& buffer);
       virtual xtd::size read(xtd::array<xtd::byte>& buffer, xtd::size offset, xtd::size count) = 0;
