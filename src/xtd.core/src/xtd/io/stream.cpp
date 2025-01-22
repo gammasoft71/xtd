@@ -14,7 +14,7 @@ stream::streambuf::streambuf(stream& owner) : owner_{owner} {
 
 stream::streambuf::int_type stream::streambuf::underflow() {
   auto int_read = owner_.read_byte();
-  if(int_read == EOF) return EOF;
+  if(int_read == stream::eof) return stream::eof;
   value_ = as<char_type>(int_read);
   setg(&value_, &value_, &value_ + 1);
   return int_read;
@@ -51,24 +51,51 @@ void stream::write_timeout(int32 value) {
   throw invalid_operation_exception {};
 }
 
+void stream::copy_to(std::ostream& destination) {
+  copy_to(destination, length());
+}
+
+void stream::copy_to(std::ostream& destination, xtd::size buffer_size) {
+  if (is_closed()) throw object_closed_exception {};
+  if (!can_read()) throw not_supported_exception {};
+  if (buffer_size == 0_z) throw argument_out_of_range_exception {};
+
+  auto copy_count = math::min(buffer_size, length() - position());
+  if (copy_count == 0) return;
+  for (auto index = 0_z; index < copy_count; ++index) {
+    auto b = read_byte();
+    destination.write(reinterpret_cast<const char_type*>(&b), 1);
+  }
+}
+
 xtd::size stream::read(xtd::array<xtd::byte>& buffer) {
+  if (is_closed()) throw object_closed_exception {};
+  if (!can_read()) throw not_supported_exception {};
+  
   return read(buffer, 0_z, buffer.length());
 }
 
 int32 stream::read_byte() {
   if (is_closed()) throw object_closed_exception {};
+  if (!can_read()) throw not_supported_exception {};
+  
   static array<byte> b(1_z);
   if (read(b) == 1_z)
     return as<int32>(b[0]);
-  return EOF;
+  return stream::eof;
 }
 
 void stream::write(const xtd::array<xtd::byte>& buffer) {
+  if (is_closed()) throw object_closed_exception {};
+  if (!can_write()) throw not_supported_exception {};
+  
   write(buffer, 0_z, buffer.length());
 }
 
 void stream::write_byte(xtd::byte value) {
   if (is_closed()) throw object_closed_exception {};
+  if (!can_write()) throw not_supported_exception {};
+  
   array<byte> b = {value};
   write(b);
 }
