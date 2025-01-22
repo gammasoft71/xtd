@@ -257,6 +257,8 @@ namespace xtd {
         /// @remarks Retrieving the value of this property is an O(1) operation; setting the property is an O(n) operation, where n is the new capacity.
         virtual void capacity(size_type value) {
           if (value < count()) throw argument_out_of_range_exception {};
+          if (value == capacity()) return;
+          if (value < capacity()) shrink_to_fit();
           reserve(value);
         }
         
