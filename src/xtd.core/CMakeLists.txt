@@ -810,6 +810,8 @@ add_sources(
   include/xtd/io/search_option
   include/xtd/io/seek_origin.hpp
   include/xtd/io/seek_origin
+  include/xtd/io/stream.hpp
+  include/xtd/io/stream  
   include/xtd/io/stream_reader.hpp
   include/xtd/io/stream_reader
   include/xtd/io/stream_writer.hpp
@@ -1177,6 +1179,7 @@ add_sources(
   src/xtd/io/memory_stream.cpp
   src/xtd/io/path.cpp
   src/xtd/io/path_too_long_exception.cpp
+  src/xtd/io/stream.cpp
   src/xtd/io/stream_reader.cpp
   src/xtd/io/stream_writer.cpp
   src/xtd/io/string_reader.cpp
