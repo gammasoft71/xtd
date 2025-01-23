@@ -5,7 +5,6 @@
 #include <xtd/console>
 
 using namespace xtd;
-using namespace xtd::collections::generic;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 using namespace xtd::threading;
@@ -18,7 +17,7 @@ auto main() -> int {
     server_socket.bind(ip_end_point {ip_address::any, 9400});
     
     while (!terminate_app) {
-      auto buffer = list<unsigned char>(256);
+      auto buffer = array<byte>(256);
       auto incoming_end_point = ip_end_point {};
       auto number_of_byte_received = server_socket.receive_from(buffer, incoming_end_point);
       if (!(number_of_byte_received == 1 && buffer[0] == 0xFF))
@@ -32,11 +31,11 @@ auto main() -> int {
     auto counter = 0;
     while (!terminate_app) {
       auto str = string::format("counter={}", ++counter);
-      client_socket.send_to(list<unsigned char> {str.begin(), str.end()}, ip_end_point {ip_address::loopback, 9400});
+      client_socket.send_to(array<byte> {str.begin(), str.end()}, ip_end_point {ip_address::loopback, 9400});
       thread::sleep(50_ms);
     }
     
-    client_socket.send_to(list<unsigned char> {0xFF}, ip_end_point {ip_address::loopback, 9400});
+    client_socket.send_to(array<byte> {0xFF}, ip_end_point {ip_address::loopback, 9400});
   }};
 
   server.start();

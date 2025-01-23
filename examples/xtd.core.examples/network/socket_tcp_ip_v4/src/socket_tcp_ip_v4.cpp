@@ -1,11 +1,9 @@
-#include <xtd/collections/generic/list>
 #include <xtd/net/sockets/socket>
 #include <xtd/net/ip_end_point>
 #include <xtd/threading/thread>
 #include <xtd/console>
 
 using namespace xtd;
-using namespace xtd::collections::generic;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 using namespace xtd::threading;
@@ -20,7 +18,7 @@ auto main() -> int {
     auto new_socket = server_socket.accept();
     
     while (!terminate_app) {
-      auto buffer = list<unsigned char>(256);
+      auto buffer = array<byte>(256);
       auto number_of_byte_received = new_socket.receive(buffer);
       if (number_of_byte_received) console::write_line(string {buffer.begin(), buffer.begin() + number_of_byte_received});
     }
@@ -33,7 +31,7 @@ auto main() -> int {
     auto counter = 0;
     while (!terminate_app) {
       auto str = string::format("counter={}", ++counter);
-      client_socket.send(list<unsigned char> {str.begin(), str.end()});
+      client_socket.send(array<byte> {str.begin(), str.end()});
       thread::sleep(50_ms);
     }
   }};
