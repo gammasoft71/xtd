@@ -784,6 +784,8 @@ add_sources(
   include/xtd/io/end_of_stream_exception
   include/xtd/io/file.hpp
   include/xtd/io/file
+  include/xtd/io/file_access.hpp
+  include/xtd/io/file_access
   include/xtd/io/file_attributes.hpp
   include/xtd/io/file_attributes
   include/xtd/io/file_format_exception.hpp
