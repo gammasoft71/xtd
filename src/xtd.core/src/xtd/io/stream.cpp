@@ -15,15 +15,15 @@ stream::streambuf::streambuf(stream& owner) : owner_{owner} {
 stream::streambuf::int_type stream::streambuf::underflow() {
   auto int_read = owner_.read_byte();
   if(int_read == stream::eof) return stream::eof;
-  value_ = as<char_type>(int_read);
-  setg(&value_, &value_, &value_ + 1);
+  value_ = as<byte>(int_read);
+  setg(value_ptr_, value_ptr_, value_ptr_ + 1);
   return int_read;
 }
 
 stream::streambuf::int_type stream::streambuf::overflow(int_type value) {
-  value_ = as<char>(value);
-  owner_.write_byte(as<byte>(value_));
-  setp(&value_, &value_);
+  value_ = as<byte>(value);
+  owner_.write_byte(value_);
+  setp(value_ptr_, value_ptr_);
   return 1;
 }
 
