@@ -53,6 +53,9 @@ void memory_stream::position(size value) {
   seek(data_->position, seek_origin::begin);
 }
 
+void memory_stream::flush() {
+}
+
 size memory_stream::read(array<byte>& buffer, size offset, size count) {
   if (is_closed()) throw object_closed_exception {};
   if (!can_read()) throw not_supported_exception {};

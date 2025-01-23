@@ -84,6 +84,11 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      /// @brief Overrides the Flush() method so that no action is performed.
+      /// @remarks This method overrides the xtd::io::stream::flush method.
+      /// @remarks Because any data written to a xtd::io::memory_stream object is written into RAM, this method is redundant.
+      void flush() override;
+      
       using xtd::io::stream::read;
       /// @brief Reads a block of bytes from the current stream and writes the data to a buffer.
       /// @param buffer When this method returns, contains the specified byte array with the values between `offset` and (`offset` + `count` - 1) replaced by the characters read from the current stream.
