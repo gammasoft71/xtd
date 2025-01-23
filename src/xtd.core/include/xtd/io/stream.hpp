@@ -60,7 +60,8 @@ namespace xtd {
         
       private:
         stream& owner_;
-        char_type value_ = stream::eof;
+        xtd::byte value_ = 0;
+        char_type* value_ptr_ = reinterpret_cast<char_type*>(&value_);
       };
       
     public:
