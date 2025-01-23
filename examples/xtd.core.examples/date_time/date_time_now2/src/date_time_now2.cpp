@@ -16,7 +16,7 @@ public:
         std::locale::global(std::locale {locale_name + ".utf-8"_s});
         console::write_line("{}: {}", locale_name, date_time::sprintf("%x %T", local_date));
       } catch (const std::exception& e) {
-        console::write_line(string::format("Make sure {} locale is installed on your system :\n\n{}\n", locale_name, e.what()), "Exception");
+        console::write_line("Make sure {} locale is installed on your system :\n\n{}\n", locale_name, e);
       }
     }
   }
