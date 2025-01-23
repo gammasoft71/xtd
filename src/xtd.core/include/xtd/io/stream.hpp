@@ -2,6 +2,7 @@
 /// @brief Contains xtd::io::stream class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "io_exception.hpp"
 #include "seek_origin.hpp"
 #include "../threading/manual_reset_event.hpp"
 #include "../array.hpp"
@@ -164,12 +165,42 @@ namespace xtd {
       /// @param buffer_size The size of the buffer. This value must be greater than zero. The default size is 81920.
       void copy_to(std::ostream& destination, xtd::size buffer_size);
       
+      /// @brief When overridden in a derived class, clears all buffers for this stream and causes any buffered data to be written to the underlying device.
+      /// exception xtd::io::io_exception An I/O error occurs.
+      virtual void flush() = 0;
+      
       using std::iostream::read;
+      /// @brief When overridden in a derived class, reads a sequence of bytes from the current stream and advances the position within the stream by the number of bytes read.
+      /// @param buffer A region of memory. When this method returns, the contents of this region are replaced by the bytes read from the current source.
       virtual xtd::size read(xtd::array<xtd::byte>& buffer);
       virtual xtd::size read(xtd::array<xtd::byte>& buffer, xtd::size offset, xtd::size count) = 0;
+      
+      /// @brief Reads at least a minimum number of bytes from the current stream and advances the position within the stream by the number of bytes read.
+      /// @param buffer A region of memory. When this method returns, the contents of this region are replaced by the bytes read from the current stream.
+      /// @param minimum_bytes The minimum number of bytes to read into the buffer.
+      /// @param throw_on_end_of_stream `true` to throw an exception if the end of the stream is reached before reading minimumBytes of bytes; `false` to return less than `minimum_bytes` when the end of the stream is reached. The default is `true`.
+      /// @return The total number of bytes read into the buffer. This is guaranteed to be greater than or equal to `minimum_bytes` when `throw_on_end_of_stream` is `true`. This will be less than `minimum_bytes` when the end of the stream is reached and `throw_on_end_of_stream` is `false`. This can be less than the number of bytes allocated in the buffer if that many bytes are not currently available.
+      /// @exception xtd::argument_out_of_range_exception `minimum_bytes` is greater than the length of `buffer`.
+      /// @exception xtd::io::end_of_stream_exception `throw_on_end_of_stream` is `true` and the end of the stream is reached before reading `minimum_bytes` bytes of data.
+      /// @remarks When `minimum_bytes` is 0 (zero), this read operation will be completed without waiting for available data in the stream.
+      xtd::size read_at_least(xtd::array<xtd::byte>& buffer, xtd::size minimum_bytes, bool throw_on_end_of_stream = true);
 
       virtual int32 read_byte();
-      
+
+      /// @brief Reads bytes from the current stream and advances the position within the stream until the buffer is filled.
+      /// @param buffer A region of memory. When this method returns, the contents of this region are replaced by the bytes read from the current stream
+      /// @exception xtd::end_of_stream_exception The end of the stream is reached before filling the buffer.
+      /// @remarks When `buffer` is empty, this read operation will be completed without waiting for available data in the stream.
+      void read_exactly(xtd::array<xtd::byte>& buffer);
+      /// @brief Reads `count` number of bytes from the current stream and advances the position within the stream.
+      /// @param buffer An array of bytes. When this method returns, the buffer contains the specified byte array with the values between `offset` and (`offset` + `count` - 1) replaced by the bytes read from the current stream.
+      /// @param offset The byte offset in buffer at which to begin storing the data read from the current stream.
+      /// @param count The number of bytes to be read from the current stream.
+      /// @exception xtd::argument_out_of_range_exception offset is outside the bounds of buffer.<br>-or-<br>The range specified by the combination of offset and count exceeds the length of buffer.
+      /// @exception xtd::io::end_of_stream_exception `throw_on_end_of_stream` is `true` and the end of the stream is reached before reading `minimum_bytes` bytes of data.
+      /// @remarks When `count` is 0 (zero), this read operation will be completed without waiting for available data in the stream.
+      void read_exactly(xtd::array<xtd::byte>& buffer, xtd::size offset, xtd::size count);
+
       virtual void set_length(xtd::size value) = 0;
       
       using std::iostream::write;
