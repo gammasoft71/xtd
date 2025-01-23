@@ -95,7 +95,8 @@ Inheritance diagram for xtd::io::memory_stream:</div>
  <div class="center">
   <img src="classxtd_1_1io_1_1memory__stream.png" usemap="#xtd::io::memory_5Fstream_map" alt=""/>
   <map id="xtd::io::memory_5Fstream_map" name="xtd::io::memory_5Fstream_map">
-<area href="classxtd_1_1io_1_1stream.html" title="Provides a generic view of a sequence of bytes. This is an abstract class." alt="xtd::io::stream" shape="rect" coords="74,56,212,80"/>
+<area href="classxtd_1_1io_1_1stream.html" title="Provides a generic view of a sequence of bytes. This is an abstract class." alt="xtd::io::stream" shape="rect" coords="74,112,212,136"/>
+<area href="classxtd_1_1abstract__object.html" title="Represent an abstract class." alt="xtd::abstract_object" shape="rect" coords="0,56,138,80"/>
 <area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,0,138,24"/>
   </map>
 </div></div>
@@ -146,12 +147,6 @@ Inheritance diagram for xtd::io::memory_stream:</div>
 <tr class="separator:a65738db618dad091f79f0e9cadfe4bf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a734b66924f7703aca2d6d534b250ffd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1memory__stream.html#a734b66924f7703aca2d6d534b250ffd2">copy_to</a> (std::ostream &amp;destination) const</td></tr>
-<tr class="memdesc:a734b66924f7703aca2d6d534b250ffd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the bytes from the current memory stream and writes them to another stream.  <br /></td></tr>
-<tr class="separator:a734b66924f7703aca2d6d534b250ffd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdc651ad87ef9f21831cad2af290df7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1memory__stream.html#acdc651ad87ef9f21831cad2af290df7e">copy_to</a> (std::ostream &amp;destination, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> buffer_size) const</td></tr>
-<tr class="memdesc:acdc651ad87ef9f21831cad2af290df7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the bytes from the current memory stream and writes them to another stream, using a specified buffer size.  <br /></td></tr>
-<tr class="separator:acdc651ad87ef9f21831cad2af290df7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf96eb1feb11fe44b06fa87854e25905"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1memory__stream.html#adf96eb1feb11fe44b06fa87854e25905">read</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a> offset, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a> count) override</td></tr>
 <tr class="memdesc:adf96eb1feb11fe44b06fa87854e25905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a block of bytes from the current stream and writes the data to a buffer.  <br /></td></tr>
 <tr class="separator:adf96eb1feb11fe44b06fa87854e25905"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,9 +162,9 @@ Inheritance diagram for xtd::io::memory_stream:</div>
 <tr class="memitem:a011700cfbaa7e79108bceb0ffc0a5fec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1memory__stream.html#a011700cfbaa7e79108bceb0ffc0a5fec">write</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a> offset, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a> count) override</td></tr>
 <tr class="memdesc:a011700cfbaa7e79108bceb0ffc0a5fec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a block of bytes to the current stream using data read from a buffer.  <br /></td></tr>
 <tr class="separator:a011700cfbaa7e79108bceb0ffc0a5fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a801fbde2b0c5c60bc3646a7c3f5cca83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1memory__stream.html#a801fbde2b0c5c60bc3646a7c3f5cca83">write_to</a> (std::ostream &amp;<a class="el" href="classxtd_1_1io_1_1stream.html">stream</a>) const</td></tr>
-<tr class="memdesc:a801fbde2b0c5c60bc3646a7c3f5cca83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the entire contents of this memory stream to another stream.  <br /></td></tr>
-<tr class="separator:a801fbde2b0c5c60bc3646a7c3f5cca83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a159383bb1cc11b7664be3c014464b189"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1memory__stream.html#a159383bb1cc11b7664be3c014464b189">write_to</a> (std::ostream &amp;<a class="el" href="classxtd_1_1io_1_1stream.html">stream</a>)</td></tr>
+<tr class="memdesc:a159383bb1cc11b7664be3c014464b189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the entire contents of this memory stream to another stream.  <br /></td></tr>
+<tr class="separator:a159383bb1cc11b7664be3c014464b189"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -177,6 +172,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a54e7926b2964502afbdae81560651651 inherit pub_static_attribs_classxtd_1_1io_1_1stream"><td class="memItemLeft" align="right" valign="top">static xtd::io::null_stream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#a54e7926b2964502afbdae81560651651">null_stream</a></td></tr>
 <tr class="memdesc:a54e7926b2964502afbdae81560651651 inherit pub_static_attribs_classxtd_1_1io_1_1stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Stream with no backing store.  <br /></td></tr>
 <tr class="separator:a54e7926b2964502afbdae81560651651 inherit pub_static_attribs_classxtd_1_1io_1_1stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67820a534703249afed34b22bf72539e inherit pub_static_attribs_classxtd_1_1io_1_1stream"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#a67820a534703249afed34b22bf72539e">eof</a></td></tr>
+<tr class="memdesc:a67820a534703249afed34b22bf72539e inherit pub_static_attribs_classxtd_1_1io_1_1stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represnets an eof value.  <br /></td></tr>
+<tr class="separator:a67820a534703249afed34b22bf72539e inherit pub_static_attribs_classxtd_1_1io_1_1stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1io_1_1stream"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1io_1_1stream')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1io_1_1stream.html">xtd::io::stream</a></td></tr>
 <tr class="memitem:ac2802d7a0eb3c602ce93db55f951e2eb inherit pub_methods_classxtd_1_1io_1_1stream"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#ac2802d7a0eb3c602ce93db55f951e2eb">can_timeout</a> () const noexcept</td></tr>
 <tr class="memdesc:ac2802d7a0eb3c602ce93db55f951e2eb inherit pub_methods_classxtd_1_1io_1_1stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that determines whether the current stream can time out.  <br /></td></tr>
@@ -196,6 +194,12 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a4fb5e8a091ac842a491596bf40e35e8f inherit pub_methods_classxtd_1_1io_1_1stream"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#a4fb5e8a091ac842a491596bf40e35e8f">write_timeout</a> (<a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> value)</td></tr>
 <tr class="memdesc:a4fb5e8a091ac842a491596bf40e35e8f inherit pub_methods_classxtd_1_1io_1_1stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value, in milliseconds, that determines how long the stream will attempt to write before timing out.  <br /></td></tr>
 <tr class="separator:a4fb5e8a091ac842a491596bf40e35e8f inherit pub_methods_classxtd_1_1io_1_1stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8225b3c465df28078d3b5303ffd5318c inherit pub_methods_classxtd_1_1io_1_1stream"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#a8225b3c465df28078d3b5303ffd5318c">copy_to</a> (std::ostream &amp;destination)</td></tr>
+<tr class="memdesc:a8225b3c465df28078d3b5303ffd5318c inherit pub_methods_classxtd_1_1io_1_1stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the bytes from the current memory stream and writes them to another stream.  <br /></td></tr>
+<tr class="separator:a8225b3c465df28078d3b5303ffd5318c inherit pub_methods_classxtd_1_1io_1_1stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac06b45cc7ea1065e275c0edf718cd760 inherit pub_methods_classxtd_1_1io_1_1stream"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#ac06b45cc7ea1065e275c0edf718cd760">copy_to</a> (std::ostream &amp;destination, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> buffer_size)</td></tr>
+<tr class="memdesc:ac06b45cc7ea1065e275c0edf718cd760 inherit pub_methods_classxtd_1_1io_1_1stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the bytes from the current memory stream and writes them to another stream, using a specified buffer size.  <br /></td></tr>
+<tr class="separator:ac06b45cc7ea1065e275c0edf718cd760 inherit pub_methods_classxtd_1_1io_1_1stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae345f64ba33516c143542b1599c9d142 inherit pub_methods_classxtd_1_1io_1_1stream"><td class="memItemLeft" align="right" valign="top">
 virtual <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;buffer)</td></tr>
 <tr class="separator:ae345f64ba33516c143542b1599c9d142 inherit pub_methods_classxtd_1_1io_1_1stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -241,6 +245,10 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>write_byte</b
 <tr class="memitem:a6096e89ac1971d83acb7a71d5789c6ba inherit pro_methods_classxtd_1_1io_1_1stream"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#a6096e89ac1971d83acb7a71d5789c6ba">stream</a> ()</td></tr>
 <tr class="memdesc:a6096e89ac1971d83acb7a71d5789c6ba inherit pro_methods_classxtd_1_1io_1_1stream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1io_1_1stream.html" title="Provides a generic view of a sequence of bytes. This is an abstract class.">xtd::io::stream</a> class.  <br /></td></tr>
 <tr class="separator:a6096e89ac1971d83acb7a71d5789c6ba inherit pro_methods_classxtd_1_1io_1_1stream"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classxtd_1_1abstract__object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classxtd_1_1abstract__object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classxtd_1_1abstract__object.html">xtd::abstract_object</a></td></tr>
+<tr class="memitem:ad7a701628e47b725c0bc15400085d714 inherit pro_methods_classxtd_1_1abstract__object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1abstract__object.html#ad7a701628e47b725c0bc15400085d714">abstract_object</a> ()=default</td></tr>
+<tr class="memdesc:ad7a701628e47b725c0bc15400085d714 inherit pro_methods_classxtd_1_1abstract__object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1abstract__object.html" title="Represent an abstract class.">xtd::abstract_object</a> class.  <br /></td></tr>
+<tr class="separator:ad7a701628e47b725c0bc15400085d714 inherit pro_methods_classxtd_1_1abstract__object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9f036cbdb6ba67c7f5ab25bbaf0b9677" name="a9f036cbdb6ba67c7f5ab25bbaf0b9677"></a>
@@ -545,69 +553,6 @@ This constructor exposes the underlying stream, which xtd::io::memory_stream::ge
 
 </div>
 </div>
-<a id="a734b66924f7703aca2d6d534b250ffd2" name="a734b66924f7703aca2d6d534b250ffd2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a734b66924f7703aca2d6d534b250ffd2">&#9670;&#160;</a></span>copy_to() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void xtd::io::memory_stream::copy_to </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>destination</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Reads the bytes from the current memory stream and writes them to another stream. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">destination</td><td>The stream to which the contents of the current memory stream will be copied. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="acdc651ad87ef9f21831cad2af290df7e" name="acdc651ad87ef9f21831cad2af290df7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdc651ad87ef9f21831cad2af290df7e">&#9670;&#160;</a></span>copy_to() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void xtd::io::memory_stream::copy_to </td>
-          <td>(</td>
-          <td class="paramtype">std::ostream &amp;&#160;</td>
-          <td class="paramname"><em>destination</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td>
-          <td class="paramname"><em>buffer_size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Reads the bytes from the current memory stream and writes them to another stream, using a specified buffer size. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">destination</td><td>The stream to which the contents of the current memory stream will be copied. </td></tr>
-    <tr><td class="paramname">buffer_size</td><td>The size of the buffer. This value must be greater than zero. The default size is 81920. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="adf96eb1feb11fe44b06fa87854e25905" name="adf96eb1feb11fe44b06fa87854e25905"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf96eb1feb11fe44b06fa87854e25905">&#9670;&#160;</a></span>read()</h2>
 
@@ -828,8 +773,8 @@ Except for a <code><a class="el" href="classxtd_1_1io_1_1memory__stream.html" ti
 
 </div>
 </div>
-<a id="a801fbde2b0c5c60bc3646a7c3f5cca83" name="a801fbde2b0c5c60bc3646a7c3f5cca83"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a801fbde2b0c5c60bc3646a7c3f5cca83">&#9670;&#160;</a></span>write_to()</h2>
+<a id="a159383bb1cc11b7664be3c014464b189" name="a159383bb1cc11b7664be3c014464b189"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a159383bb1cc11b7664be3c014464b189">&#9670;&#160;</a></span>write_to()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -839,7 +784,7 @@ Except for a <code><a class="el" href="classxtd_1_1io_1_1memory__stream.html" ti
           <td>(</td>
           <td class="paramtype">std::ostream &amp;&#160;</td>
           <td class="paramname"><em>stream</em></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -868,7 +813,7 @@ Except for a <code><a class="el" href="classxtd_1_1io_1_1memory__stream.html" ti
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 22 2025 14:46:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 23 2025 14:45:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

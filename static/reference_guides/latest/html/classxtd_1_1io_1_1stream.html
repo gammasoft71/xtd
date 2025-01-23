@@ -95,17 +95,19 @@ Inheritance diagram for xtd::io::stream:</div>
  <div class="center">
   <img src="classxtd_1_1io_1_1stream.png" usemap="#xtd::io::stream_map" alt=""/>
   <map id="xtd::io::stream_map" name="xtd::io::stream_map">
-<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,0,138,24"/>
-<area href="classxtd_1_1io_1_1memory__stream.html" title="Creates a stream whose backing store is memory." alt="xtd::io::memory_stream" shape="rect" coords="74,112,212,136"/>
+<area href="classxtd_1_1abstract__object.html" title="Represent an abstract class." alt="xtd::abstract_object" shape="rect" coords="0,56,193,80"/>
+<area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,0,193,24"/>
+<area href="classxtd_1_1io_1_1memory__stream.html" title="Creates a stream whose backing store is memory." alt="xtd::io::memory_stream" shape="rect" coords="0,168,193,192"/>
+<area href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access." alt="xtd::net::sockets::network_stream" shape="rect" coords="203,168,396,192"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Provides a generic view of a sequence of bytes. This is an abstract class. </p>
-<div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_class" href="classxtd_1_1io_1_1stream.html">stream</a> :  <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> std::iostream;</div>
+<div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_class" href="classxtd_1_1io_1_1stream.html">stream</a> :  <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1abstract__object.html">xtd::abstract_object</a>, <span class="keyword">public</span> std::iostream;</div>
+<div class="ttc" id="aclassxtd_1_1abstract__object_html"><div class="ttname"><a href="classxtd_1_1abstract__object.html">xtd::abstract_object</a></div><div class="ttdoc">Represent an abstract class.</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:27</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1stream_html"><div class="ttname"><a href="classxtd_1_1io_1_1stream.html">xtd::io::stream</a></div><div class="ttdoc">Provides a generic view of a sequence of bytes. This is an abstract class.</div><div class="ttdef"><b>Definition</b> stream.hpp:39</div></div>
-<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:42</div></div>
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.hpp:13</div></div>
-</div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="classxtd_1_1io_1_1text__writer.html" title="Represents a writer that can write a sequential series of characters.">xtd::io::text_writer</a> </dd></dl>
+</div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="classxtd_1_1abstract__object.html" title="Represent an abstract class.">abstract_object</a> → <a class="el" href="classxtd_1_1io_1_1text__writer.html" title="Represents a writer that can write a sequential series of characters.">xtd::io::text_writer</a> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/io/stream&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1io.html" title="The xtd::io namespace contains types that allow reading and writing to files and data streams,...">xtd::io</a> </dd></dl>
@@ -117,6 +119,9 @@ Inheritance diagram for xtd::io::stream:</div>
 <tr class="memitem:a54e7926b2964502afbdae81560651651"><td class="memItemLeft" align="right" valign="top">static xtd::io::null_stream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#a54e7926b2964502afbdae81560651651">null_stream</a></td></tr>
 <tr class="memdesc:a54e7926b2964502afbdae81560651651"><td class="mdescLeft">&#160;</td><td class="mdescRight">A Stream with no backing store.  <br /></td></tr>
 <tr class="separator:a54e7926b2964502afbdae81560651651"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67820a534703249afed34b22bf72539e"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#a67820a534703249afed34b22bf72539e">eof</a></td></tr>
+<tr class="memdesc:a67820a534703249afed34b22bf72539e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represnets an eof value.  <br /></td></tr>
+<tr class="separator:a67820a534703249afed34b22bf72539e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:a64cf1a27b6c46e18d34ae573e70c9f32"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#a64cf1a27b6c46e18d34ae573e70c9f32">can_read</a> () const noexcept=0</td></tr>
@@ -157,6 +162,12 @@ Inheritance diagram for xtd::io::stream:</div>
 <tr class="separator:a4fb5e8a091ac842a491596bf40e35e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
+<tr class="memitem:a8225b3c465df28078d3b5303ffd5318c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#a8225b3c465df28078d3b5303ffd5318c">copy_to</a> (std::ostream &amp;destination)</td></tr>
+<tr class="memdesc:a8225b3c465df28078d3b5303ffd5318c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the bytes from the current memory stream and writes them to another stream.  <br /></td></tr>
+<tr class="separator:a8225b3c465df28078d3b5303ffd5318c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac06b45cc7ea1065e275c0edf718cd760"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#ac06b45cc7ea1065e275c0edf718cd760">copy_to</a> (std::ostream &amp;destination, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> buffer_size)</td></tr>
+<tr class="memdesc:ac06b45cc7ea1065e275c0edf718cd760"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the bytes from the current memory stream and writes them to another stream, using a specified buffer size.  <br /></td></tr>
+<tr class="separator:ac06b45cc7ea1065e275c0edf718cd760"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae345f64ba33516c143542b1599c9d142"><td class="memItemLeft" align="right" valign="top"><a id="ae345f64ba33516c143542b1599c9d142" name="ae345f64ba33516c143542b1599c9d142"></a>
 virtual <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;buffer)</td></tr>
 <tr class="separator:ae345f64ba33516c143542b1599c9d142"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,6 +223,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a772d50f4da23b418b7e3a523f52564b5 inherit pub_static_methods_classxtd_1_1object"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a772d50f4da23b418b7e3a523f52564b5">reference_equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
 <tr class="memdesc:a772d50f4da23b418b7e3a523f52564b5 inherit pub_static_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are the same instance.  <br /></td></tr>
 <tr class="separator:a772d50f4da23b418b7e3a523f52564b5 inherit pub_static_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classxtd_1_1abstract__object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classxtd_1_1abstract__object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classxtd_1_1abstract__object.html">xtd::abstract_object</a></td></tr>
+<tr class="memitem:ad7a701628e47b725c0bc15400085d714 inherit pro_methods_classxtd_1_1abstract__object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1abstract__object.html#ad7a701628e47b725c0bc15400085d714">abstract_object</a> ()=default</td></tr>
+<tr class="memdesc:ad7a701628e47b725c0bc15400085d714 inherit pro_methods_classxtd_1_1abstract__object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1abstract__object.html" title="Represent an abstract class.">xtd::abstract_object</a> class.  <br /></td></tr>
+<tr class="separator:ad7a701628e47b725c0bc15400085d714 inherit pro_methods_classxtd_1_1abstract__object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a6096e89ac1971d83acb7a71d5789c6ba" name="a6096e89ac1971d83acb7a71d5789c6ba"></a>
@@ -273,7 +288,7 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
 <p>When overridden in a derived class, gets a value indicating whether the current stream supports reading. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the stream supports reading; otherwise, <code>false</code>. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a15210f802de0a097735496431e0e5ef2">xtd::io::memory_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a15210f802de0a097735496431e0e5ef2">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a49b54b2f8893abfdc68edc080ba37576">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -303,7 +318,7 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
 <p>When overridden in a derived class, gets a value indicating whether the current stream supports seeking. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the stream supports seeking; otherwise, <code>false</code>. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a78bb23cd5b0f0e7c9d6c91de01ad1bf4">xtd::io::memory_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a78bb23cd5b0f0e7c9d6c91de01ad1bf4">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#af9c46316791b86190ed30e2fb7a589eb">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -362,7 +377,7 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
 <p>Gets a value indicating whether the current stream supports writing. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the stream supports writing; otherwise, <code>false</code>. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a75e544c9fd9fc413d3c961dba59e954f">xtd::io::memory_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a75e544c9fd9fc413d3c961dba59e954f">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a378b5d17e663acf2c0019747d94f33d6">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -426,7 +441,7 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a76e149e537f3f832e79cd7e9af7b8048">xtd::io::memory_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a76e149e537f3f832e79cd7e9af7b8048">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a46d0ebe58e88514663c278726cdfd53a">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -465,7 +480,7 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
 <dd>
 Seeking to any location beyond the length of the stream is supported. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a58db47186e6902dedb5b4a8ab0a39838">xtd::io::memory_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a58db47186e6902dedb5b4a8ab0a39838">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a990bb4d4723898fa5cc1e1b34622b399">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -510,7 +525,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 <dd>
 Seeking to any location beyond the length of the stream is supported. </dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a65738db618dad091f79f0e9cadfe4bf5">xtd::io::memory_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a65738db618dad091f79f0e9cadfe4bf5">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#ae77a96178fa3d176428c4697b853dd29">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -666,6 +681,69 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 
 </div>
 </div>
+<a id="a8225b3c465df28078d3b5303ffd5318c" name="a8225b3c465df28078d3b5303ffd5318c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8225b3c465df28078d3b5303ffd5318c">&#9670;&#160;</a></span>copy_to() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xtd::io::stream::copy_to </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>destination</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads the bytes from the current memory stream and writes them to another stream. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">destination</td><td>The stream to which the contents of the current memory stream will be copied. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac06b45cc7ea1065e275c0edf718cd760" name="ac06b45cc7ea1065e275c0edf718cd760"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac06b45cc7ea1065e275c0edf718cd760">&#9670;&#160;</a></span>copy_to() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void xtd::io::stream::copy_to </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>destination</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td>
+          <td class="paramname"><em>buffer_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads the bytes from the current memory stream and writes them to another stream, using a specified buffer size. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">destination</td><td>The stream to which the contents of the current memory stream will be copied. </td></tr>
+    <tr><td class="paramname">buffer_size</td><td>The size of the buffer. This value must be greater than zero. The default size is 81920. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a74ad6bb09848a8d1cb3418cbc59a0412" name="a74ad6bb09848a8d1cb3418cbc59a0412"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a74ad6bb09848a8d1cb3418cbc59a0412">&#9670;&#160;</a></span>read()</h2>
 
@@ -706,7 +784,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#adf96eb1feb11fe44b06fa87854e25905">xtd::io::memory_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#adf96eb1feb11fe44b06fa87854e25905">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a733e5204cb52d56708d79087390414c7">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -734,7 +812,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a03b644daf7648f965f8c536fa6c52fde">xtd::io::memory_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a03b644daf7648f965f8c536fa6c52fde">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a17b8566d7896e36df460ece1ba256894">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -778,7 +856,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a011700cfbaa7e79108bceb0ffc0a5fec">xtd::io::memory_stream</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1io_1_1memory__stream.html#a011700cfbaa7e79108bceb0ffc0a5fec">xtd::io::memory_stream</a>, and <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a53a0303dccb539d85a272280b526e916">xtd::net::sockets::network_stream</a>.</p>
 
 </div>
 </div>
@@ -808,6 +886,31 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 
 </div>
 </div>
+<a id="a67820a534703249afed34b22bf72539e" name="a67820a534703249afed34b22bf72539e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67820a534703249afed34b22bf72539e">&#9670;&#160;</a></span>eof</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> xtd::io::stream::eof</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Represnets an eof value. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>Returns a value not equivalent to any valid value of stream type (<a href="https://en.cppreference.com/w/cpp/header/cstdio">EOF</a> (-1)). </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core/include/xtd/io/<a class="el" href="stream_8hpp_source.html">stream.hpp</a></li>
 </ul>
@@ -815,7 +918,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jan 22 2025 14:46:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 23 2025 14:45:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
