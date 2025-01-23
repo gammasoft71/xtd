@@ -119,7 +119,7 @@ namespace xtd {
     /// @name Public Properties
     
     /// @{
-    const_reference back() const noexcept {
+    const_reference back() const {
       if (empty()) throw argument_out_of_range_exception {};
       return *(data_ + size_ - 1);
     }
@@ -135,12 +135,12 @@ namespace xtd {
     
     constexpr const_pointer data() const noexcept {return data_;}
     
-    constexpr bool empty() noexcept {return !size_;}
+    constexpr bool empty() const noexcept {return !size_;}
 
     const_iterator end() const {return cend();}
     iterator end() {return iterator {data_ + size_};}
 
-    const_reference front() const noexcept {
+    const_reference front() const {
       if (empty()) throw argument_out_of_range_exception {};
       return *data_;
     }
@@ -170,18 +170,18 @@ namespace xtd {
 
     template<xtd::size count__>
     span<element_type, count__> first() const {
-      if (count__ >= size_) throw argument_out_of_range_exception {};
+      if (count__ > size_) throw argument_out_of_range_exception {};
       return span<element_type, count__> {data_};
     }
     
     template<xtd::size count__>
     span<type_t, count__> last() const {
-      if (count__ >= size_) throw argument_out_of_range_exception {};
+      if (count__ > size_) throw argument_out_of_range_exception {};
       return span<type_t, count__> {data_ + size_ - count__};
     }
     
     span<type_t> subspan(size_type offset, size_type count) const {
-      if (offset >= size_ || offset + count >= size_) throw argument_out_of_range_exception {};
+      if (offset + count > size_) throw argument_out_of_range_exception {};
       return span<type_t> {data_ + offset, count};
     }
 
