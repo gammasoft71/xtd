@@ -1,4 +1,3 @@
-#include <xtd/collections/generic/list>
 #include <xtd/io/stream_reader>
 #include <xtd/net/sockets/udp_client>
 #include <xtd/net/ip_end_point>
@@ -6,7 +5,6 @@
 #include <xtd/console>
 
 using namespace xtd;
-using namespace xtd::collections::generic;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 using namespace xtd::threading;
@@ -29,10 +27,10 @@ auto main() -> int {
     auto counter = 0;
     while (!terminate_app) {
       auto str = string::format("counter={}", ++counter);
-      udp.send(list<unsigned char>(str.begin(), str.end()), str.size(), ip_end_point(ip_address::loopback, 9400));
+      udp.send(array<byte>(str.begin(), str.end()), str.size(), ip_end_point(ip_address::loopback, 9400));
       thread::sleep(50_ms);
     }
-    udp.send(list<unsigned char> {0xFF}, 1, ip_end_point(ip_address::loopback, 9400));
+    udp.send(array<byte> {0xFF}, 1, ip_end_point(ip_address::loopback, 9400));
   }};
 
   server.start();
