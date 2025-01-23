@@ -153,11 +153,11 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
-    const_reference at(size_t index) const {
+    const_reference at(size_type index) const {
       if (index >= size_) throw argument_out_of_range_exception {};
       return *(data_ + index);
     }
-    reference at(size_t index) {
+    reference at(size_type index) {
       if (index >= size_) throw argument_out_of_range_exception {};
       return *(data_ + index);
     }
@@ -176,8 +176,8 @@ namespace xtd {
     /// @name Public Operators
     
     /// @{
-    const_reference operator[](size_t index) const {return at(index);}
-    reference operator[](size_t index) {return at(index);}
+    const_reference operator[](size_type index) const {return at(index);}
+    reference operator[](size_type index) {return at(index);}
     /// @}
 
   private:
