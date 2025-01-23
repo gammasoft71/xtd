@@ -33,7 +33,7 @@ namespace xtd {
       wrap_pointer_iterator operator ++(int) const noexcept {auto current = *this; operator ++(); return current;}
       
       wrap_pointer_iterator operator +(xtd::size value) const noexcept {return wrap_pointer_iterator {data_ + value};}
-      xtd::ptrdiff operator -(wrap_pointer_iterator value) const noexcept {return  data_ - value.data_;}
+      xtd::ptrdiff operator -(wrap_pointer_iterator value) const noexcept {return data_ - value.data_;}
       
       bool operator ==(const wrap_pointer_iterator& rhs) const noexcept {return data_ == rhs.data_;}
       bool operator !=(const wrap_pointer_iterator& rhs) const  noexcept {return !operator==(rhs);}
@@ -60,7 +60,7 @@ namespace xtd {
       xtd::ptrdiff operator -(wrap_pointer_reverse_iterator value) const noexcept {return  data_ + value.data_;}
       
       bool operator ==(const wrap_pointer_reverse_iterator& rhs) const noexcept {return data_ == rhs.data_;}
-      bool operator !=(const wrap_pointer_reverse_iterator& rhs) const  noexcept {return !operator==(rhs);}
+      bool operator !=(const wrap_pointer_reverse_iterator& rhs) const noexcept {return !operator==(rhs);}
       
     private:
       mutable pointer_t data_ = nullptr;
@@ -100,20 +100,14 @@ namespace xtd {
     /// @{
     span() = default;
     template<class collection_t>
-    explicit span(const collection_t& items) : data_ {const_cast<type_t*>(items.data())}, size_ {items.size()} {
-    }
+    explicit span(const collection_t& items) : data_ {const_cast<type_t*>(items.data())}, size_ {items.size()} {}
     template<class collection_t>
-    explicit span(collection_t& items) : data_ {items.data()}, size_ {items.size()} {
-    }
-    explicit span(const type_t* data) : data_ {const_cast<type_t*>(data)} {
-    }
-    explicit span(type_t* data) : data_ {data} {
-    }
+    explicit span(collection_t& items) : data_ {items.data()}, size_ {items.size()} {}
+    explicit span(const type_t* data) : data_ {const_cast<type_t*>(data)} {}
+    explicit span(type_t* data) : data_ {data} {}
 
-    explicit span(const type_t* data, size_type size) : data_ {const_cast<type_t*>(data)}, size_ {size} {
-    }
-    explicit span(type_t* data, size_type size) : data_ {data}, size_ {size} {
-    }
+    explicit span(const type_t* data, size_type size) : data_ {const_cast<type_t*>(data)}, size_ {size} {}
+    explicit span(type_t* data, size_type size) : data_ {data}, size_ {size} {}
 
     span(span&& items) = default;
     span(const span& items) = default;
@@ -172,7 +166,7 @@ namespace xtd {
     span<element_type, count__> first() const {return span<element_type, count__> {data_};}
     
     template<xtd::size count__>
-    span<type_t, count__> last() const  {return span<type_t, count__> {data_ + size_ - count__};}
+    span<type_t, count__> last() const {return span<type_t, count__> {data_ + size_ - count__};}
     
     span<type_t> subspan(size_type offset, size_type count) const {return span<type_t> {data_ + offset, count};}
 
@@ -182,12 +176,8 @@ namespace xtd {
     /// @name Public Operators
     
     /// @{
-    const_reference operator[](size_t index) const {
-      return at(index);
-    }
-    reference operator[](size_t index) {
-      return at(index);
-    }
+    const_reference operator[](size_t index) const {return at(index);}
+    reference operator[](size_t index) {return at(index);}
     /// @}
 
   private:
