@@ -45,7 +45,7 @@ namespace xtd {
         template<class type_t, class enumerable_t>
         class enumerable_iterators {
         public:
-          /// @name Public Aliases
+          /// @name Public Classes
           
           /// @{
           /// @brief Represents the iterator of enumarable value type.
