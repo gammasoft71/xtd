@@ -110,6 +110,11 @@ namespace xtd {
     explicit span(type_t* data) : data_ {data} {
     }
 
+    explicit span(const type_t* data, size_type size) : data_ {const_cast<type_t*>(data)}, size_ {size} {
+    }
+    explicit span(type_t* data, size_type size) : data_ {data}, size_ {size} {
+    }
+
     span(span&& items) = default;
     span(const span& items) = default;
 
@@ -162,17 +167,19 @@ namespace xtd {
       if (index >= size_) throw argument_out_of_range_exception {};
       return *(data_ + index);
     }
-    
-    template<xtd::size count__>
-    span<type_t, count__> last() {return span<type_t, count__> {data_ + size_ - count__};}
 
     template<xtd::size count__>
-    span<element_type, count__> first() {return span<element_type, count__> {data_};}
+    span<element_type, count__> first() const {return span<element_type, count__> {data_};}
     
+    template<xtd::size count__>
+    span<type_t, count__> last() const  {return span<type_t, count__> {data_ + size_ - count__};}
+    
+    span<type_t> subspan(size_type offset, size_type count) const {return span<type_t> {data_ + offset, count};}
+
     string to_string() const noexcept override {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}
     /// @}
     
-    /// @name Public Opertors
+    /// @name Public Operators
     
     /// @{
     const_reference operator[](size_t index) const {
