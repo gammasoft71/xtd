@@ -1,47 +1,75 @@
 #include "../../../../include/xtd/net/sockets/network_stream.hpp"
-#include "../../../../include/xtd/array.hpp"
 
 using namespace xtd;
+using namespace xtd::io;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
-network_stream::socket_streambuf::socket_streambuf(const xtd::net::sockets::socket& socket, bool owns_socket) : socket_(socket), owns_socket_(owns_socket) {
+network_stream::network_stream(const sockets::socket& socket) : network_stream {socket, file_access::read_write, false} {
 }
 
-network_stream::socket_streambuf::~socket_streambuf() {
-  if (owns_socket_) socket_.close();
+network_stream::network_stream(const sockets::socket& socket, bool owns_socket) : network_stream {socket, file_access::read_write, owns_socket}  {
 }
 
-int32 network_stream::socket_streambuf::underflow() {
-  auto buffer = array<xtd::byte>(1);
-  if (socket_.receive(buffer) == 1) {
-    value_ = static_cast<char>(buffer[0]);
-    setg(&value_, &value_, &value_ + 1);
-    return value_;
-  }
-  return std::streambuf::underflow(); // EOF
+network_stream::network_stream(const sockets::socket& socket, file_access access) : network_stream {socket, access, false} {
 }
 
-int32 network_stream::socket_streambuf::overflow(int32 value) {
-  value_ = static_cast<char>(value);
-  auto buffer = array {static_cast<xtd::byte>(value_)};
-  if (socket_.send(buffer) == 1) {
-    setp(&value_, &value_);
-    return 0;
-  }
-  return std::streambuf::overflow(value); // EOF
+network_stream::network_stream(const sockets::socket& socket, file_access access, bool owns_socket) {
+  data_->socket = socket;
+  data_->access = access;
+  data_->owns_socket = owns_socket;
 }
 
-network_stream::network_stream(const xtd::net::sockets::socket& socket) : std::iostream(&stream_buf_), stream_buf_(socket, false) {
+network_stream::~network_stream() {
+  if (data_->owns_socket) data_->socket.close();
 }
 
-network_stream::network_stream(const xtd::net::sockets::socket& socket, bool owns_socket) : std::iostream(&stream_buf_), stream_buf_(socket, owns_socket) {
+bool network_stream::can_read() const noexcept {
+  return (data_->access & file_access::read) == file_access::read;
+}
+
+bool network_stream::can_seek() const noexcept {
+  return false;
+}
+
+bool network_stream::can_write() const noexcept {
+  return (data_->access & file_access::write) == file_access::write;
 }
 
 bool network_stream::data_available() const {
-  return stream_buf_.socket_.available() != 0;
+  return data_->socket.available() != 0;
+}
+
+size network_stream::length() const {
+  return 1;
+}
+
+size network_stream::position() const {
+  return 0;
+}
+
+void network_stream::position(size value) {
+  throw not_supported_exception {};
 }
 
 xtd::net::sockets::socket network_stream::socket() const {
-  return stream_buf_.socket_;
+  return data_->socket;
+}
+
+size network_stream::read(array<byte>& buffer, size offset, size count) {
+  if (is_closed()) throw object_closed_exception {};
+  if (!can_read()) throw not_supported_exception {};
+  
+  return data_->socket.receive(buffer, offset, count, socket_flags::none);
+}
+
+void network_stream::set_length(size value) {
+  throw not_supported_exception {};
+}
+
+void network_stream::write(const array<byte>& buffer, size offset, size count) {
+  if (is_closed()) throw object_closed_exception {};
+  if (!can_write()) throw not_supported_exception {};
+  
+  data_->socket.send(buffer, offset, count, socket_flags::none);
 }

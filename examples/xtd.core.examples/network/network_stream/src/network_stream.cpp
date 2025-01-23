@@ -19,7 +19,7 @@ auto main() -> int {
     auto server_socket = socket {address_family::inter_network, socket_type::stream, protocol_type::tcp};
     server_socket.bind(ip_end_point {ip_address::any, 9400});
     server_socket.listen();
-    auto stream = network_stream {server_socket.accept()};
+    auto stream = network_stream {server_socket.accept(), file_access::read};
     auto reader = stream_reader {stream};
     
     while (!terminate_app)
@@ -28,13 +28,13 @@ auto main() -> int {
   server.start();
   
   auto client = thread {[&] {
-    auto stream = network_stream {socket {address_family::inter_network, socket_type::stream, protocol_type::tcp}};
+    auto stream = network_stream {socket {address_family::inter_network, socket_type::stream, protocol_type::tcp}, file_access::write};
     stream.socket().connect(ip_address::loopback, 9400);
     auto writer = stream_writer {stream};
     
     auto counter = 0;
     while (!terminate_app) {
-      writer.write_line(string::format("counter={}", ++counter));
+      writer.write_line("counter={}", ++counter);
       thread::sleep(50_ms);
     }
   }};
