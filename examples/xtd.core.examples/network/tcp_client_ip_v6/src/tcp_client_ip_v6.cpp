@@ -31,7 +31,7 @@ auto main() -> int {
     
     auto counter = 0;
     while (!terminate_app) {
-      writer.write_line(string::format("counter={}", ++counter));
+      writer.write_line("counter={}", ++counter);
       thread::sleep(50_ms);
     }
   }};
