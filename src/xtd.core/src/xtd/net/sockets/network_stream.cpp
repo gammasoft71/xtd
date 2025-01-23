@@ -32,6 +32,11 @@ bool network_stream::can_seek() const noexcept {
   return false;
 }
 
+
+bool network_stream::can_timeout() const noexcept {
+  return true;
+}
+
 bool network_stream::can_write() const noexcept {
   return (data_->access & file_access::write) == file_access::write;
 }
@@ -52,8 +57,27 @@ void network_stream::position(size value) {
   throw not_supported_exception {};
 }
 
+int32 network_stream::read_timeout() const {
+  return data_->socket.receive_timeout();
+}
+
+void network_stream::read_timeout(int32 value) {
+  data_->socket.receive_timeout(value);
+}
+
+int32 network_stream::write_timeout() const {
+  return data_->socket.send_timeout();
+}
+
+void network_stream::write_timeout(int32 value) {
+  data_->socket.send_timeout(value);
+}
+
 xtd::net::sockets::socket network_stream::socket() const {
   return data_->socket;
+}
+
+void network_stream::flush() {
 }
 
 size network_stream::read(array<byte>& buffer, size offset, size count) {
