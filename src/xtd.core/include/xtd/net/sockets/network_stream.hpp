@@ -79,6 +79,10 @@ namespace xtd {
         /// @return `true` if the stream supports seeking; otherwise, `false`.
         bool can_seek() const noexcept override;
         
+        /// @brief Indicates whether timeout properties are usable for xtd::net::sockets::network_stream.
+        /// @return `true` in all cases.
+        bool can_timeout() const noexcept override;
+        
         /// @brief Gets a value indicating whether the current stream supports writing.
         /// @return `true` if the stream supports writing; otherwise, `false`.
         bool can_write() const noexcept override;
@@ -101,15 +105,33 @@ namespace xtd {
         /// @param value The current position within the stream.
         void position(xtd::size value) override;
         
+        /// @brief Gets the amount of time that a read operation blocks waiting for data.
+        /// @return A xtd::int32 that specifies the amount of time, in milliseconds, that will elapse before a read operation fails. The default value, xtd::threading::timeout::infinite, specifies that the read operation does not time out.
+        int32 read_timeout() const override;
+        /// @brief Sets the amount of time that a read operation blocks waiting for data.
+        /// @param value A xtd::int32 that specifies the amount of time, in milliseconds, that will elapse before a read operation fails. The default value, xtd::threading::timeout::infinite, specifies that the read operation does not time out.
+        void read_timeout(int32 value) override;
+        
+        /// @brief Gets the amount of time that a write operation blocks waiting for data.
+        /// @return A xtd::int32 that specifies the amount of time, in milliseconds, that will elapse before a read operation fails. The default value, xtd::threading::timeout::infinite, specifies that the read operation does not time out.
+        int32 write_timeout() const override;
+        /// @brief Sets the amount of time that a write operation blocks waiting for data.
+        /// @param value A xtd::int32 that specifies the amount of time, in milliseconds, that will elapse before a read operation fails. The default value, xtd::threading::timeout::infinite, specifies that the read operation does not time out.
+        void write_timeout(int32 value) override;
+        
         /// @brief Gets the underlying xtd::net::sockets::socket.
         /// @return A xtd::net::sockets::socket that represents the underlying network connection.
-        /// @remarks Classes deriving from xtd::net::sockets::network_stream can use this property to get the underlying xtd::net::sockets::socket. Use the underlying xtd::net::sockets::socket returned from the xtd::net::sockets::socketproperty if you require access beyond that which xtd::net::sockets::network_stream provides.
+        /// @remarks Classes deriving from xtd::net::sockets::network_stream can use this property to get the underlying xtd::net::sockets::socket. Use the underlying xtd::net::sockets::socket returned from the xtd::net::sockets::socket property if you require access beyond that which xtd::net::sockets::network_stream provides.
         xtd::net::sockets::socket socket() const;
         /// @}
         
         /// @name Public Methods
         
         /// @{
+        /// @brief Flushes data from the stream. This method is reserved for future use.
+        /// @remarks The Flush method implements the xtd::io::stream::flush method; however, because xtd::net::sockets::network_stream is not buffered, it has no effect on network streams. Calling the xtd::net::sockets::network_stream::flush method does not throw an exception.
+        void flush() override;
+
         using xtd::io::stream::read;
         /// @brief Reads a block of bytes from the current stream and writes the data to a buffer.
         /// @param buffer When this method returns, contains the specified byte array with the values between `offset` and (`offset` + `count` - 1) replaced by the characters read from the current stream.
