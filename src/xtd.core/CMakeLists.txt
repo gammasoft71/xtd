@@ -407,6 +407,8 @@ add_sources(
   include/xtd/slong_object
   include/xtd/software_termination_exception.hpp
   include/xtd/software_termination_exception
+  include/xtd/span.hpp
+  include/xtd/span
   include/xtd/sptr.hpp
   include/xtd/sptr
   include/xtd/startup.hpp
