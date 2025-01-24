@@ -34,6 +34,17 @@ namespace xtd {
         /// ```
         template<class type_t = void>
         struct comparer {
+          /// @name Public Aliases
+          
+          /// @{
+          /// @brief Represents the first argument type.
+          using first_argument_type = type_t;
+          /// @brief Represents the second argument type.
+          using second_argument_type = type_t;
+          /// @brief Represents the result type.
+          using result_type = bool;
+          /// @}
+          
           /// @name Public Operators
           
           /// @{
@@ -41,7 +52,7 @@ namespace xtd {
           /// @param key The key to hash.
           /// @return A hash code for the spesified key.
           /// @remarks If key_t inherits from xtd::object, the xtd::object::get_hash_code method will be used; otherwise, the [std::hash](https://en.cppreference.com/w/cpp/utility/hash) object function will be used.
-          constexpr bool operator()(const type_t& lhs, const type_t& rhs) const {return std::less {}(lhs, rhs);}
+          constexpr result_type operator()(const first_argument_type& lhs, const second_argument_type& rhs) const {return std::less {}(lhs, rhs);}
           /// @}
         };
       }
