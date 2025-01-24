@@ -7,6 +7,9 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @name Aliases
+  
+  /// @{
   /// @brief Represents a u32string comparison operation that uses specific case and culture-based or ordinal comparison rules.
   /// @par Definition
   /// ```cpp
@@ -22,4 +25,5 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   using u32string_comparer = xtd::basic_string_comparer<xtd::char32>;
+  /// @}
 }

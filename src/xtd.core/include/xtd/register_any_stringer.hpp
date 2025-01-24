@@ -21,6 +21,9 @@ inline std::pair<const std::type_index, std::function<std::string(std::any const
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @name Static Methods
+  
+  /// @{
   /// @brief Register an any stringer method for a specified type.
   /// @param func Function to register any stringer for specified type.
   /// @par Namespace
@@ -36,4 +39,5 @@ namespace xtd {
     unregister_any_stringer<type_t>();
     __any_stringer__.insert(__to_any_stringer__<type_t>(func));
   }
+  /// @}
 }

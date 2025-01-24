@@ -28,6 +28,9 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @name Static Methods
+  
+  /// @{
   /// @brief Allows to unbox an object
   /// @param value Object to box.
   /// @return Unboxed object.
@@ -43,6 +46,7 @@ namespace xtd {
   /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types).
   template<class type_t>
   inline type_t unboxing(const xtd::box<type_t>& value) noexcept {return value.value();}
+  /// @}
   
   /// @cond
   template<class type_t>

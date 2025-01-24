@@ -7,6 +7,9 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @name Aliases
+  
+  /// @{
   /// @brief Represent a boxed bool.
   /// @par Header
   /// ```cpp
@@ -27,4 +30,5 @@ namespace xtd {
   /// console::write_line("result = {}", result); // Display: result = true;
   /// ```
   using boolean_object = box<bool>;
+  /// @}
 }
