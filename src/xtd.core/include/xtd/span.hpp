@@ -6,21 +6,18 @@
 #include "collections/generic/helpers/wrap_pointer_reverse_iterator.hpp"
 #include "argument_null_exception.hpp"
 #include "argument_out_of_range_exception.hpp"
+#include "dynamic_extent.hpp"
 #include "iequatable.hpp"
 #include "is.hpp"
 #include "null.hpp"
 #include "object.hpp"
 #include "ptrdiff.hpp"
-#include "size.hpp"
 #include "typeof.hpp"
-#include <limits>
 #include <type_traits>
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  inline constexpr xtd::size dynamic_extent = std::numeric_limits<xtd::size>::max();
-  
   template<class type_t, xtd::size extent = dynamic_extent>
   class span : public xtd::object, public xtd::iequatable<xtd::span<type_t, extent>> {
   public:

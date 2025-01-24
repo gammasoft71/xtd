@@ -176,6 +176,8 @@ add_sources(
   include/xtd/double
   include/xtd/double_object.hpp
   include/xtd/double_object
+  include/xtd/dynamic_extent.hpp
+  include/xtd/dynamic_extent
   include/xtd/enum.hpp
   include/xtd/enum
   include/xtd/enum_attribute.hpp
