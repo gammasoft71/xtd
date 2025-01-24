@@ -4096,7 +4096,7 @@ The value returned by the <a class="el" href="classxtd_1_1date__time.html#a60d4f
 <div class="line">        console::write_line(<span class="stringliteral">&quot;   Local date and time: {}, {}&quot;</span>, local_date.to_string(), local_date.kind());</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;   UTC date and time: {}, {}\n&quot;</span>, utc_date.to_string(), utc_date.kind());</div>
 <div class="line">      } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
-<div class="line">        console::write_line(string::format(<span class="stringliteral">&quot;Make sure {} locale is installed on your system :\n\n{}\n&quot;</span>, locale_name, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.what()), <span class="stringliteral">&quot;Exception&quot;</span>);</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;Make sure {} locale is installed on your system :\n\n{}\n&quot;</span>, locale_name, e);</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
@@ -4125,7 +4125,6 @@ The value returned by the <a class="el" href="classxtd_1_1date__time.html#a60d4f
 <div class="line"><span class="comment">// ru_RU</span></div>
 <div class="line"><span class="comment">//    Local date and time: воскресенье,  2 января 2022 г. 09:50:36, local</span></div>
 <div class="line"><span class="comment">//    UTC date and time: воскресенье,  2 января 2022 г. 08:50:36, utc</span></div>
-<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1date__time.html#ad94505e74efe9f353836901eda9230ed" title="Gets a xtd::date_time object that is set to the current date and time on this computer,...">xtd::date_time::now</a> property returns a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value that represents the current date and time on the local computer. Note that there is a difference between a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value, which represents the number of ticks that have elapsed since midnight of January 1, 0001, and the string representation of that <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value, which expresses a date and time value in a culture-specific-specific format. For information on formatting date and time values, see the to_string method. The following example displays the short date and time string in a number of culture-specific formats. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/date_time&gt;</span></div>
@@ -4145,7 +4144,7 @@ The value returned by the <a class="el" href="classxtd_1_1date__time.html#a60d4f
 <div class="line">        std::locale::global(std::locale {locale_name + <span class="stringliteral">&quot;.utf-8&quot;</span>_s});</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;{}: {}&quot;</span>, locale_name, date_time::sprintf(<span class="stringliteral">&quot;%x %T&quot;</span>, local_date));</div>
 <div class="line">      } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
-<div class="line">        console::write_line(string::format(<span class="stringliteral">&quot;Make sure {} locale is installed on your system :\n\n{}\n&quot;</span>, locale_name, <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.what()), <span class="stringliteral">&quot;Exception&quot;</span>);</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;Make sure {} locale is installed on your system :\n\n{}\n&quot;</span>, locale_name, e);</div>
 <div class="line">      }</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
@@ -5878,7 +5877,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 23 2025 14:45:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 24 2025 21:00:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

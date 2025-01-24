@@ -58,5 +58,6 @@ var searchData=
   ['drawing_5fexport_2ehpp_55',['drawing_export.hpp',['../drawing__export_8hpp.html',1,'']]],
   ['drive_5finfo_2ehpp_56',['drive_info.hpp',['../drive__info_8hpp.html',1,'']]],
   ['drive_5fnot_5ffound_5fexception_2ehpp_57',['drive_not_found_exception.hpp',['../drive__not__found__exception_8hpp.html',1,'']]],
-  ['drive_5ftype_2ehpp_58',['drive_type.hpp',['../drive__type_8hpp.html',1,'']]]
+  ['drive_5ftype_2ehpp_58',['drive_type.hpp',['../drive__type_8hpp.html',1,'']]],
+  ['dynamic_5fextent_2ehpp_59',['dynamic_extent.hpp',['../dynamic__extent_8hpp.html',1,'']]]
 ];
