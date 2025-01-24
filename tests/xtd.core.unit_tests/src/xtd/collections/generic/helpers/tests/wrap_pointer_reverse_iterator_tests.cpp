@@ -69,5 +69,53 @@ namespace xtd::collections::generic::helpers::tests {
       auto i = wrap_pointer_reverse_iterator<int*> {a.data() + a.size()};
       assert::are_equal(*(a.data() + a.size() - 1), *i);
     }
+
+    void test_method_(const_pointer_operator) {
+      auto a = array {"a b"_s, "c d"_s, "e f"_s, "g h"_s, "i j"_s};
+      auto i = wrap_pointer_reverse_iterator<string*> {a.data() + a.size()};
+      auto r = xtd::as_const(i)->split();
+      assert::are_equal("i", r[0]);
+      assert::are_equal("j", r[1]);
+    }
+    
+    void test_method_(pointer_operator) {
+      auto a = array {"a b"_s, "c d"_s, "e f"_s, "g h"_s, "i j"_s};
+      auto i = wrap_pointer_reverse_iterator<string*> {a.data() + a.size()};
+      auto r = i->split();
+      assert::are_equal("i", r[0]);
+      assert::are_equal("j", r[1]);
+    }
+
+    void test_method_(const_pre_increment_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto i = wrap_pointer_reverse_iterator<int*> {a.data() + a.size()};
+      assert::are_equal(*(a.data() + a.size() - 1), *i);
+      assert::are_equal(*(a.data() + a.size() - 2), *(++xtd::as_const(i)));
+      assert::are_equal(*(a.data() + a.size() - 2), *i);
+    }
+    
+    void test_method_(pre_increment_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto i = wrap_pointer_reverse_iterator<int*> {a.data() + a.size()};
+      assert::are_equal(*(a.data() + a.size() - 1), *i);
+      assert::are_equal(*(a.data() + a.size() - 2), *(++i));
+      assert::are_equal(*(a.data() + a.size() - 2), *i);
+    }
+    
+    void test_method_(const_post_increment_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto i = wrap_pointer_reverse_iterator<int*> {a.data() + a.size()};
+      assert::are_equal(*(a.data() + a.size() - 1), *i);
+      assert::are_equal(*(a.data() + a.size() - 1), *(xtd::as_const(i)++));
+      assert::are_equal(*(a.data() + a.size() - 2), *i);
+    }
+    
+    void test_method_(post_increment_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto i = wrap_pointer_reverse_iterator<int*> {a.data() + a.size()};
+      assert::are_equal(*(a.data() + a.size() - 1), *i);
+      assert::are_equal(*(a.data() + a.size() - 1), *(i++));
+      assert::are_equal(*(a.data() + a.size() - 2), *i);
+    }
   };
 }
