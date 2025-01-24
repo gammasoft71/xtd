@@ -613,6 +613,10 @@ add_sources(
   include/xtd/collections/generic/helpers/hasher
   include/xtd/collections/generic/helpers/iterator.hpp
   include/xtd/collections/generic/helpers/iterator
+  include/xtd/collections/generic/helpers/wrap_pointer_iterator.hpp
+  include/xtd/collections/generic/helpers/wrap_pointer_iterator
+  include/xtd/collections/generic/helpers/wrap_pointer_reverse_iterator.hpp
+  include/xtd/collections/generic/helpers/wrap_pointer_reverse_iterator
   include/xtd/collections/object_model/read_only_collection.hpp
   include/xtd/collections/object_model/read_only_collection
   include/xtd/collections/specialized/string_collection.hpp
