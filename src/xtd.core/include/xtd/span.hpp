@@ -2,7 +2,12 @@
 /// @brief Contains xtd::span class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "collections/generic/helpers/wrap_pointer_iterator.hpp"
+#include "collections/generic/helpers/wrap_pointer_reverse_iterator.hpp"
+#include "argument_null_exception.hpp"
 #include "argument_out_of_range_exception.hpp"
+#include "iequatable.hpp"
+#include "is.hpp"
 #include "null.hpp"
 #include "object.hpp"
 #include "ptrdiff.hpp"
@@ -15,57 +20,9 @@
 namespace xtd {
   inline constexpr xtd::size dynamic_extent = std::numeric_limits<xtd::size>::max();
   
-  template<class type_t, xtd::size count_ = dynamic_extent>
-  class span : public xtd::object {
+  template<class type_t, xtd::size extent = dynamic_extent>
+  class span : public xtd::object, public xtd::iequatable<xtd::span<type_t, extent>> {
   public:
-    template<class pointer_t>
-    class wrap_pointer_iterator {
-    public:
-      wrap_pointer_iterator(pointer_t data) noexcept : data_ {data} {}
-      
-      const std::remove_pointer_t<pointer_t> operator *() const noexcept {return *data_;}
-      std::remove_pointer_t<pointer_t> operator *() noexcept {return *data_;}
-      
-      const pointer_t operator ->() const noexcept {return data_;}
-      pointer_t operator ->() noexcept {return data_;}
-      
-      wrap_pointer_iterator& operator ++() const noexcept {++data_; return *const_cast<wrap_pointer_iterator*>(this);}
-      wrap_pointer_iterator operator ++(int) const noexcept {auto current = *this; operator ++(); return current;}
-      
-      wrap_pointer_iterator operator +(xtd::size value) const noexcept {return wrap_pointer_iterator {data_ + value};}
-      xtd::ptrdiff operator -(wrap_pointer_iterator value) const noexcept {return data_ - value.data_;}
-      
-      bool operator ==(const wrap_pointer_iterator& rhs) const noexcept {return data_ == rhs.data_;}
-      bool operator !=(const wrap_pointer_iterator& rhs) const  noexcept {return !operator==(rhs);}
-      
-    private:
-      mutable pointer_t data_ = nullptr;
-    };
-    
-    template<class pointer_t>
-    class wrap_pointer_reverse_iterator {
-    public:
-      wrap_pointer_reverse_iterator(pointer_t data) noexcept : data_ {data - 1} {}
-      
-      const std::remove_pointer_t<pointer_t> operator *() const noexcept {return *data_;}
-      std::remove_pointer_t<pointer_t> operator *() noexcept {return *data_;}
-      
-      const pointer_t operator ->() const noexcept {return data_;}
-      pointer_t operator ->() noexcept {return data_;}
-      
-      wrap_pointer_reverse_iterator& operator ++() const noexcept {--data_; return *const_cast<wrap_pointer_reverse_iterator*>(this);}
-      wrap_pointer_reverse_iterator operator ++(int) const noexcept {auto current = *this; operator ++(); return current;}
-      
-      wrap_pointer_reverse_iterator operator +(xtd::size value) const noexcept {return wrap_pointer_reverse_iterator {data_ - value};}
-      xtd::ptrdiff operator -(wrap_pointer_reverse_iterator value) const noexcept {return  data_ + value.data_;}
-      
-      bool operator ==(const wrap_pointer_reverse_iterator& rhs) const noexcept {return data_ == rhs.data_;}
-      bool operator !=(const wrap_pointer_reverse_iterator& rhs) const noexcept {return !operator==(rhs);}
-      
-    private:
-      mutable pointer_t data_ = nullptr;
-    };
-    
     /// @name Public Aliases
     
     /// @{
@@ -86,48 +43,61 @@ namespace xtd {
     /// @brief Represents the span const reference type.
     using const_reference = const type_t&;
     /// @brief Represents the iterator of span value type.
-    using iterator = const wrap_pointer_iterator<pointer>;
+    using iterator = const xtd::collections::generic::helpers::wrap_pointer_iterator<pointer>;
     /// @brief Represents the const iterator of span value type.
-    using const_iterator = const wrap_pointer_iterator<pointer>;
+    using const_iterator = const xtd::collections::generic::helpers::wrap_pointer_iterator<pointer>;
     /// @brief Represents the reverse iterator of span value type.
-    using reverse_iterator = wrap_pointer_reverse_iterator<pointer>;
+    using reverse_iterator = xtd::collections::generic::helpers::wrap_pointer_reverse_iterator<pointer>;
     /// @brief Represents the const reverse iterator of span value type.
-    using const_reverse_iterator = wrap_pointer_reverse_iterator<pointer>;
+    using const_reverse_iterator = xtd::collections::generic::helpers::wrap_pointer_reverse_iterator<pointer>;
     /// @}
     
     /// @name Public Constructors
     
     /// @{
-    span() = default;
+    
+    template <xtd::size count = 0>
+    span() : data_ {xtd::null}, size_ {0} {};
+
     template<class iterator_t>
-    explicit span(iterator_t first, iterator_t last) : data_ {const_cast<type_t*>(&(*first))}, size_ {static_cast<size_type>(std::distance(first, last))} {}
+    span(iterator_t first, iterator_t last) : data_ {const_cast<type_t*>(&(*first))}, size_ {extent != dynamic_extent ? extent : static_cast<size_type>(std::distance(first, last))} {}
+
     template<class collection_t>
-    explicit span(const collection_t& items) : data_ {const_cast<type_t*>(items.data())}, size_ {items.size()} {}
+    explicit span(const collection_t& items) noexcept : span {items, size_type {0}, items.size()} {}
     template<class collection_t>
-    explicit span(collection_t& items) : data_ {items.data()}, size_ {items.size()} {}
+    explicit span(collection_t& items) noexcept : span {items, size_type {0}, items.size()} {}
     template<class collection_t>
-    explicit span(const collection_t& items, xtd::size count) : data_ {const_cast<type_t*>(items.data())}, size_ {count} {}
+    span(const collection_t& items, xtd::size count) : span {items, size_type {0}, count} {}
     template<class collection_t>
-    explicit span(collection_t& items, xtd::size count) : data_ {items.data()}, size_ {count} {}
+    span(collection_t& items, xtd::size count) : span {items, size_type {0}, count} {}
     template<class collection_t>
-    explicit span(const collection_t& items, xtd::size offset, xtd::size count) : data_ {const_cast<type_t*>(items.data() + offset)}, size_ {count} {
+    span(const collection_t& items, xtd::size offset, xtd::size count) : data_ {const_cast<type_t*>(items.data() + offset)}, size_ {extent != dynamic_extent ? extent : count} {
       if (offset + count > items.size()) throw argument_out_of_range_exception {};
     }
     template<class collection_t>
-    explicit span(collection_t& items, xtd::size offset, xtd::size count) : data_ {items.data() + offset}, size_ {count} {
+    span(collection_t& items, xtd::size offset, xtd::size count) : data_ {items.data() + offset}, size_ {extent != dynamic_extent ? extent : count} {
       if (offset + count > items.size()) throw argument_out_of_range_exception {};
     }
-    explicit span(std::initializer_list<type_t> items) noexcept : data_ {const_cast<type_t*>(&(*items.begin()))}, size_ {items.size()} {}
-    explicit span(const type_t* data, size_type size) : data_ {const_cast<type_t*>(data)}, size_ {size} {}
-    explicit span(type_t* data, size_type size) : data_ {data}, size_ {size} {}
-    template<xtd::size len_>
-    constexpr span(const type_t (&array)[len_]) noexcept : data_ {array}, size_ {len_} {}
-    template<xtd::size len_>
-    constexpr span(type_t (&array)[len_]) noexcept : data_ {array}, size_ {len_} {}
-    template< class array_type_t, xtd::size len_>
-    constexpr span(const std::array<array_type_t, len_>& array) noexcept : data_ {const_cast<type_t*>(array.data())}, size_ {len_} {}
-    template< class array_type_t, xtd::size len_>
-    constexpr span(std::array<array_type_t, len_>& array) noexcept : data_ {array.data()}, size_ {len_} {}
+
+    explicit span(std::initializer_list<type_t> items) noexcept : data_ {const_cast<type_t*>(&(*items.begin()))}, size_ {extent != dynamic_extent ? extent : items.size()} {}
+
+    span(const type_t* data, size_type size) : data_ {const_cast<type_t*>(data)}, size_ {extent != dynamic_extent ? extent : size} {
+      if (!data) throw argument_null_exception {};
+    }
+    span(type_t* data, size_type size) : data_ {data}, size_ {extent != dynamic_extent ? extent : size} {
+      if (!data) throw argument_null_exception {};
+    }
+
+    template<xtd::size len>
+    constexpr span(const type_t (&array)[len]) noexcept : data_ {array}, size_ {extent != dynamic_extent ? extent : len} {}
+    template<xtd::size len>
+    constexpr span(type_t (&array)[len]) noexcept : data_ {array}, size_ {extent != dynamic_extent ? extent : len} {}
+
+    template<class array_type_t, xtd::size len>
+    constexpr span(const std::array<array_type_t, len>& array) noexcept : data_ {const_cast<type_t*>(array.data())}, size_ {extent != dynamic_extent ? extent : len} {}
+    template<class array_type_t, xtd::size len>
+    constexpr span(std::array<array_type_t, len>& array) noexcept : data_ {array.data()}, size_ {extent != dynamic_extent ? extent : len} {}
+
     span(span&& items) = default;
     span(const span& items) = default;
 
@@ -187,6 +157,19 @@ namespace xtd {
       return *(data_ + index);
     }
 
+    void clear() noexcept {
+      for (auto& item : *this)
+        item = value_type {};
+    }
+    
+    bool equals(const object& obj) const noexcept override {return is<span<value_type>>(obj) && equals(static_cast<const span<value_type>&>(obj));}
+    bool equals(const span& rhs) const noexcept override {
+      if (size() != rhs.size()) return false;
+      for (size_type i = 0; i < size(); i++)
+        if (!xtd::collections::generic::helpers::equator<type_t> {}(at(i), rhs.at(i))) return false;
+      return true;
+    }
+    
     template<xtd::size count__>
     span<element_type, count__> first() const {
       if (count__ > size_) throw argument_out_of_range_exception {};
@@ -199,9 +182,13 @@ namespace xtd {
       return span<type_t, count__> {data_ + size_ - count__, count__};
     }
     
-    span<type_t> subspan(size_type offset, size_type count) const {
+    span<type_t> slice(size_type offset, size_type count) const {
       if (offset + count > size_) throw argument_out_of_range_exception {};
       return span<type_t> {data_ + offset, count};
+    }
+    
+    span<type_t> subspan(size_type offset, size_type count) const {
+      return slice(offset, count);
     }
 
     string to_string() const noexcept override {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}
@@ -216,6 +203,53 @@ namespace xtd {
 
   private:
     pointer data_ = null;
-    size_type size_ = count_;
+    size_type size_ = size_type {};
   };
+  
+  /// @cond
+  // C++17 deduction guides for xtd::span
+  // {
+  template<class iterator_t>
+  span(iterator_t first, iterator_t last) -> span<typename iterator_t::value_type>;
+  
+  template<class collection_t>
+  explicit span(const collection_t& items) noexcept -> span<typename collection_t::value_type>;
+  
+  template<class collection_t>
+  explicit span(collection_t& items) noexcept -> span<typename collection_t::value_type>;
+  
+  template<class collection_t>
+  span(const collection_t& items, xtd::size) -> span<typename collection_t::value_type>;
+  
+  template<class collection_t>
+  span(collection_t& items, xtd::size) -> span<typename collection_t::value_type>;
+  
+  template<class collection_t>
+  span(const collection_t& items, xtd::size, xtd::size) -> span<typename collection_t::value_type>;
+  
+  template<class collection_t>
+  span(collection_t& items, xtd::size, xtd::size) -> span<typename collection_t::value_type>;
+
+  template<class type_t>
+  span(std::initializer_list<type_t>) noexcept -> span<type_t>;
+  
+  template<class type_t>
+  span(const type_t* data, xtd::size size) -> span<type_t>;
+  
+  template<class type_t>
+  span(type_t* data, xtd::size size) -> span<type_t>;
+  
+  template<class type_t, xtd::size len>
+  span(const type_t (&array)[len]) noexcept -> span<type_t>;
+  
+  template<class type_t, xtd::size len>
+  span(type_t (&array)[len]) noexcept -> span<type_t>;
+  
+  template< class type_t, xtd::size len>
+  span(const std::array<type_t, len>& array) noexcept -> span<type_t>;
+  
+  template< class type_t, xtd::size len>
+  span(std::array<type_t, len>& array) noexcept -> span<type_t>;
+  // }
+  /// @endcond
 }
