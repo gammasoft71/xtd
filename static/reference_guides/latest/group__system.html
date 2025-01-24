@@ -81,9 +81,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#groups">Modules</a> &#124;
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Classes</a>  </div>
   <div class="headertitle"><div class="title">system</div></div>
 </div><!--header-->
 <div class="contents">
@@ -270,8 +268,11 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the version number of an assembly, operating system, or the xtd. This class cannot be inherited.  <a href="classxtd_1_1version.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Aliases</h2></td></tr>
+<tr class="memitem:gaa4f1bcd93722aaf0d9cf00db4c68b75c"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
+<tr class="memitem:gaa4f1bcd93722aaf0d9cf00db4c68b75c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#gaa4f1bcd93722aaf0d9cf00db4c68b75c">xtd::type_to_array_t</a> = typename std::conditional&lt; std::is_same&lt; bool, type_t &gt;::value, char, type_t &gt;<a class="el" href="group__types.html#gafa42bcceb7fb5768ea8cc4588e67dc15">::type</a></td></tr>
+<tr class="memdesc:gaa4f1bcd93722aaf0d9cf00db4c68b75c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the type to array type.  <br /></td></tr>
+<tr class="separator:gaa4f1bcd93722aaf0d9cf00db4c68b75c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga020fbeceaf011505de3ac30168375664"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga020fbeceaf011505de3ac30168375664">xtd::boolean_object</a> = <a class="el" href="classxtd_1_1box.html">box</a>&lt; bool &gt;</td></tr>
 <tr class="memdesc:ga020fbeceaf011505de3ac30168375664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent a boxed bool.  <br /></td></tr>
 <tr class="separator:ga020fbeceaf011505de3ac30168375664"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -294,8 +295,12 @@ Typedefs</h2></td></tr>
 <tr class="memdesc:ga63d8779d2ee883a535bb5855002ec189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a wstring comparison operation that uses specific case and culture-based or ordinal comparison rules.  <br /></td></tr>
 <tr class="separator:ga63d8779d2ee883a535bb5855002ec189"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Static Fields</h2></td></tr>
+<tr class="memitem:gab0cdbdca5229915c7fdde3eb1d5e1a97"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#gab0cdbdca5229915c7fdde3eb1d5e1a97">xtd::dynamic_extent</a></td></tr>
+<tr class="memdesc:gab0cdbdca5229915c7fdde3eb1d5e1a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the constant of type <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d" title="Represents a size of any object in bytes.">xtd::size</a> signifying that the span has dynamic extent.  <br /></td></tr>
+<tr class="separator:gab0cdbdca5229915c7fdde3eb1d5e1a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Static Methods</h2></td></tr>
 <tr class="memitem:ga7352fcff0da12feb0aff421fc8c41d15"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga7352fcff0da12feb0aff421fc8c41d15"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#ga7352fcff0da12feb0aff421fc8c41d15">xtd::boxing</a> (const type_t &amp;value) noexcept</td></tr>
 <tr class="memdesc:ga7352fcff0da12feb0aff421fc8c41d15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to box an object.  <br /></td></tr>
@@ -314,6 +319,30 @@ Functions</h2></td></tr>
 <tr class="separator:ga5aa911c016af5795d0482eefb481fcc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="gaa4f1bcd93722aaf0d9cf00db4c68b75c" name="gaa4f1bcd93722aaf0d9cf00db4c68b75c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa4f1bcd93722aaf0d9cf00db4c68b75c">&#9670;&#160;</a></span>type_to_array_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__system.html#gaa4f1bcd93722aaf0d9cf00db4c68b75c">xtd::type_to_array_t</a> = typedef typename std::conditional&lt;std::is_same&lt;bool, type_t&gt;::value, char, type_t&gt;<a class="el" href="group__types.html#gafa42bcceb7fb5768ea8cc4588e67dc15">::type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="basic__array_8hpp.html">xtd.core/include/xtd/basic_array.hpp</a>&gt;</code></p>
+
+<p>Represents the type to array type. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/array&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+
+</div>
+</div>
 <a id="ga020fbeceaf011505de3ac30168375664" name="ga020fbeceaf011505de3ac30168375664"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga020fbeceaf011505de3ac30168375664">&#9670;&#160;</a></span>boolean_object</h2>
 
@@ -339,7 +368,7 @@ Functions</h2></td></tr>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = true;</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="agroup__system_html_ga020fbeceaf011505de3ac30168375664"><div class="ttname"><a href="group__system.html#ga020fbeceaf011505de3ac30168375664">xtd::boolean_object</a></div><div class="ttdeci">box&lt; bool &gt; boolean_object</div><div class="ttdoc">Represent a boxed bool.</div><div class="ttdef"><b>Definition</b> boolean_object.hpp:29</div></div>
+<div class="ttc" id="agroup__system_html_ga020fbeceaf011505de3ac30168375664"><div class="ttname"><a href="group__system.html#ga020fbeceaf011505de3ac30168375664">xtd::boolean_object</a></div><div class="ttdeci">box&lt; bool &gt; boolean_object</div><div class="ttdoc">Represent a boxed bool.</div><div class="ttdef"><b>Definition</b> boolean_object.hpp:32</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -366,7 +395,7 @@ Functions</h2></td></tr>
 <div class="line"><a class="code hl_typedef" href="group__system.html#ga38c2e723413a561059a0c53c07f167af">size_object</a> boxed_object = unboxed_object;</div>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = 42;</span></div>
-<div class="ttc" id="agroup__system_html_ga38c2e723413a561059a0c53c07f167af"><div class="ttname"><a href="group__system.html#ga38c2e723413a561059a0c53c07f167af">xtd::size_object</a></div><div class="ttdeci">box_integer&lt; size_t &gt; size_object</div><div class="ttdoc">Represent a boxed size_t.</div><div class="ttdef"><b>Definition</b> size_object.hpp:25</div></div>
+<div class="ttc" id="agroup__system_html_ga38c2e723413a561059a0c53c07f167af"><div class="ttname"><a href="group__system.html#ga38c2e723413a561059a0c53c07f167af">xtd::size_object</a></div><div class="ttdeci">box_integer&lt; size_t &gt; size_object</div><div class="ttdoc">Represent a boxed size_t.</div><div class="ttdef"><b>Definition</b> size_object.hpp:28</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -719,11 +748,43 @@ template&lt;class type_t &gt; </div>
 
 </div>
 </div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="gab0cdbdca5229915c7fdde3eb1d5e1a97" name="gab0cdbdca5229915c7fdde3eb1d5e1a97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab0cdbdca5229915c7fdde3eb1d5e1a97">&#9670;&#160;</a></span>dynamic_extent</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> xtd::dynamic_extent</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="dynamic__extent_8hpp.html">xtd.core/include/xtd/dynamic_extent.hpp</a>&gt;</code></p>
+
+<p>Represents the constant of type <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d" title="Represents a size of any object in bytes.">xtd::size</a> signifying that the span has dynamic extent. </p>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="group__system.html#gab0cdbdca5229915c7fdde3eb1d5e1a97" title="Represents the constant of type xtd::size signifying that the span has dynamic extent.">xtd::dynamic_extent</a> is a constant of type <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d" title="Represents a size of any object in bytes.">xtd::size</a> that is generally used to indicate that any type using <a class="el" href="group__system.html#gab0cdbdca5229915c7fdde3eb1d5e1a97" title="Represents the constant of type xtd::size signifying that the span has dynamic extent.">xtd::dynamic_extent</a> will dynamically store its value (e.g., size) rather than having the value statically known in the type. </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/dynamic_extent&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 16 2025 20:30:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 24 2025 21:15:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

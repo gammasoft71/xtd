@@ -136,11 +136,11 @@ Inheritance diagram for xtd::forms::assert_box:</div>
   </td></tr>
 </table>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1assert__box.html" title="Represents a common dialog box that displays assert box.">assert_box</a> dialog. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1assert__box.html" title="Represents a common dialog box that displays assert box.">assert_box</a> dialog. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/debugger&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/assert_box&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/button&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/diagnostics/debug_break&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
@@ -158,7 +158,7 @@ Inheritance diagram for xtd::forms::assert_box:</div>
 <div class="line">    <a class="code hl_enumvalue" href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">button1</a>.click += [&amp;] {</div>
 <div class="line">      <span class="keywordflow">switch</span>(assert_box::show(*<span class="keyword">this</span>, <span class="stringliteral">&quot;Index must be &gt; 0&quot;</span>, stack_frame::current())) {</div>
 <div class="line">        <span class="keywordflow">case</span> forms::dialog_result::abort: application::exit(); <span class="keywordflow">break</span>;</div>
-<div class="line">        <span class="keywordflow">case</span> forms::dialog_result::retry: <a class="code hl_define" href="group__debug.html#ga7a5088b030211d28a0a24ecc924f57b6">debug_break_</a>(); <span class="keywordflow">break</span>;</div>
+<div class="line">        <span class="keywordflow">case</span> forms::dialog_result::retry: debugger::debug_break(); <span class="keywordflow">break</span>;</div>
 <div class="line">        <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
 <div class="line">      }</div>
 <div class="line">    };</div>
@@ -174,7 +174,6 @@ Inheritance diagram for xtd::forms::assert_box:</div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.hpp:49</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
-<div class="ttc" id="agroup__debug_html_ga7a5088b030211d28a0a24ecc924f57b6"><div class="ttname"><a href="group__debug.html#ga7a5088b030211d28a0a24ecc924f57b6">debug_break_</a></div><div class="ttdeci">#define debug_break_()</div><div class="ttdoc">Signals a breakpoint to an attached debugger.</div><div class="ttdef"><b>Definition</b> debug_break.hpp:21</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9"><div class="ttname"><a href="group__xtd__forms.html#gga53e9b1de8292d8ace6f1637815d5a0c0a4eb63c27325d4162f66d32ee9bdc65f9">xtd::forms::message_dialog_default_button::button1</a></div><div class="ttdeci">@ button1</div><div class="ttdoc">The first button on the message box is the default button.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="group__xtd__forms.html#gga57070ef804d401fead746fcd411d02cca1cb251ec0d568de6a929b520c4aed8d1">xtd::forms::status_bar_panel_style::text</a></div><div class="ttdeci">@ text</div><div class="ttdoc">The xtd::forms::status_bar_panel displays text in the standard font.</div></div>
 <div class="ttc" id="anamespacextd_1_1diagnostics_html"><div class="ttname"><a href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a></div><div class="ttdoc">The xtd::diagnostics namespace provides classes that allow you to interact with system processes,...</div><div class="ttdef"><b>Definition</b> assert_dialog_result.hpp:10</div></div>
@@ -380,7 +379,7 @@ Inheritance diagram for xtd::forms::assert_box:</div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 16 2025 20:30:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 24 2025 21:15:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

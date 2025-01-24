@@ -6,7 +6,7 @@ var searchData=
   ['animation_5fupdated_5fevent_5fhandler_3',['animation_updated_event_handler',['../group__events.html#ga78fd8a84a2b923fd3c4e3b0b87f390e5',1,'xtd::forms']]],
   ['any_5fpair_4',['any_pair',['../group__collections.html#ga4ca2b5227c38e2043cd23cddfb4166b6',1,'xtd::collections']]],
   ['argument_5fcollection_5',['argument_collection',['../group__xtd__core.html#ga7c787cab5157aefef9c2d7466471cad2',1,'xtd']]],
-  ['argument_5ftype_6',['argument_type',['../structxtd_1_1collections_1_1generic_1_1dictionary_1_1hasher.html#a2d7e12484adc7cf0506275914807c5c5',1,'xtd::collections::generic::dictionary::hasher']]],
+  ['argument_5ftype_6',['argument_type',['../structxtd_1_1collections_1_1generic_1_1dictionary_1_1hasher.html#a2d7e12484adc7cf0506275914807c5c5',1,'xtd::collections::generic::dictionary::hasher::argument_type'],['../structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html#a7084c96751d1b25f759fcd9e7e68019d',1,'xtd::collections::generic::helpers::hasher::argument_type']]],
   ['array_5flist_7',['array_list',['../group__collections.html#gaf064333715d42a26e1ec3999ff384557',1,'xtd::collections']]],
   ['artist_5fcollection_8',['artist_collection',['../classxtd_1_1forms_1_1about__box.html#af04d25f871c2cbf1e8354d83a68fe9ad',1,'xtd::forms::about_box::artist_collection'],['../classxtd_1_1forms_1_1about__dialog.html#ad0cfb445d88c415a4fb7323b83e4ae08',1,'xtd::forms::about_dialog::artist_collection']]],
   ['async_5fcallback_9',['async_callback',['../group__xtd__core.html#ga2c9b01f90017e6d921f8642ab99f0fcc',1,'xtd']]],

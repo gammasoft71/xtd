@@ -107,7 +107,7 @@ struct xtd::collections::generic::key_value_pair&lt; key_t, value_t &gt;</div><p
 <div class="line"><span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">key_value_pair</a> : <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;key_value_pair&lt;key_t, value_t&gt;&gt;;</div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:22</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:42</div></div>
-<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1key__value__pair_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a></div><div class="ttdoc">Defines a key/value pair that can be set or retrieved.</div><div class="ttdef"><b>Definition</b> key_value_pair.hpp:36</div></div>
+<div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1key__value__pair_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a></div><div class="ttdoc">Defines a key/value pair that can be set or retrieved.</div><div class="ttdef"><b>Definition</b> key_value_pair.hpp:37</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/key_value_pair&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
@@ -155,6 +155,10 @@ struct xtd::collections::generic::key_value_pair&lt; key_t, value_t &gt;</div><p
 <tr class="memitem:a561128a87874bf5c234e51df6513cfa5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html#a561128a87874bf5c234e51df6513cfa5">key_value_pair</a> (const std::pair&lt; key_t, value_t &gt; &amp;<a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html#ad3b4cdf1fc6a8e82de0752d6d0e5d9a5">value</a>)</td></tr>
 <tr class="memdesc:a561128a87874bf5c234e51df6513cfa5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the key_value_pair&lt;key_t, value_t&gt; class with the specified key and value.  <br /></td></tr>
 <tr class="separator:a561128a87874bf5c234e51df6513cfa5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2652e0c8123812617fcddcaaff07488d"><td class="memTemplParams" colspan="2">template&lt;class... args1_t, class... args2_t&gt; </td></tr>
+<tr class="memitem:a2652e0c8123812617fcddcaaff07488d"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html#a2652e0c8123812617fcddcaaff07488d">key_value_pair</a> (std::piecewise_construct_t, std::tuple&lt; args1_t... &gt; first_args, std::tuple&lt; args2_t... &gt; second_args)</td></tr>
+<tr class="memdesc:a2652e0c8123812617fcddcaaff07488d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the key_value_pair&lt;key_t, value_t&gt; class with the specified first_args and second_args.  <br /></td></tr>
+<tr class="separator:a2652e0c8123812617fcddcaaff07488d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:ab9242929889e956f606df0a84020785d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html#ab9242929889e956f606df0a84020785d">to_string</a> () const noexcept override</td></tr>
@@ -295,7 +299,7 @@ template&lt;class key_t , class value_t &gt; </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a0dea553750349d8d19a748cf23b5e71d" name="a0dea553750349d8d19a748cf23b5e71d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0dea553750349d8d19a748cf23b5e71d">&#9670;&#160;</a></span>key_value_pair() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dea553750349d8d19a748cf23b5e71d">&#9670;&#160;</a></span>key_value_pair() <span class="overload">[1/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -324,7 +328,7 @@ template&lt;class key_t , class value_t &gt; </div>
 </div>
 </div>
 <a id="a43bfed180c347ee2c1e8315410c35f4c" name="a43bfed180c347ee2c1e8315410c35f4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43bfed180c347ee2c1e8315410c35f4c">&#9670;&#160;</a></span>key_value_pair() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a43bfed180c347ee2c1e8315410c35f4c">&#9670;&#160;</a></span>key_value_pair() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -371,7 +375,7 @@ template&lt;class key_t , class value_t &gt; </div>
 </div>
 </div>
 <a id="a561128a87874bf5c234e51df6513cfa5" name="a561128a87874bf5c234e51df6513cfa5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a561128a87874bf5c234e51df6513cfa5">&#9670;&#160;</a></span>key_value_pair() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a561128a87874bf5c234e51df6513cfa5">&#9670;&#160;</a></span>key_value_pair() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -400,6 +404,61 @@ template&lt;class key_t , class value_t &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>The key and value of the key_value_pair&lt;key_t, value_t&gt;. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2652e0c8123812617fcddcaaff07488d" name="a2652e0c8123812617fcddcaaff07488d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2652e0c8123812617fcddcaaff07488d">&#9670;&#160;</a></span>key_value_pair() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t &gt; </div>
+<div class="memtemplate">
+template&lt;class... args1_t, class... args2_t&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair</a>&lt; key_t, value_t &gt;::key_value_pair </td>
+          <td>(</td>
+          <td class="paramtype">std::piecewise_construct_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::tuple&lt; args1_t... &gt;&#160;</td>
+          <td class="paramname"><em>first_args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::tuple&lt; args2_t... &gt;&#160;</td>
+          <td class="paramname"><em>second_args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the key_value_pair&lt;key_t, value_t&gt; class with the specified first_args and second_args. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">first_args</td><td>The tuple of constructor arguments to initialize the first element of this <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html" title="Defines a key/value pair that can be set or retrieved.">key_value_pair</a>. </td></tr>
+    <tr><td class="paramname">second_args</td><td>The tuple of constructor arguments to initialize the second element of this <a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html" title="Defines a key/value pair that can be set or retrieved.">key_value_pair</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -651,7 +710,7 @@ template&lt;class key_t , class value_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 16 2025 20:30:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 24 2025 21:15:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

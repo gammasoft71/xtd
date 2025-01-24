@@ -98,6 +98,8 @@ Inheritance diagram for xtd::collections::generic::extensions::enumerable&lt; en
 <area href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" alt="xtd::collections::generic::ienumerable&lt; xtd::collections::generic::key_value_pair&lt; key_t, value_t &gt; &gt;" shape="rect" coords="580,56,1150,80"/>
 <area href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" alt="xtd::collections::generic::ienumerable&lt; list_type_t &gt;" shape="rect" coords="1160,56,1730,80"/>
 <area href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" alt="xtd::collections::generic::ienumerable&lt; value_type &gt;" shape="rect" coords="1740,56,2310,80"/>
+<area href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" alt="xtd::collections::generic::ienumerable&lt; byte &gt;" shape="rect" coords="2320,56,2890,80"/>
+<area href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" alt="xtd::collections::generic::ienumerable&lt; xtd::byte &gt;" shape="rect" coords="2900,56,3470,80"/>
 <area href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units." alt="xtd::basic_string&lt; char_t, traits_t, allocator_t &gt;" shape="rect" coords="0,112,570,136"/>
   </map>
 </div></div>
@@ -1315,7 +1317,7 @@ template&lt;class enumerable_t , class source_t &gt; </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// There are 2 unvaccinated animals.</span></div>
-<div class="ttc" id="aclassxtd_1_1basic__array_html_a2e50b538f5aa4913d3180fcee49499c2"><div class="ttname"><a href="classxtd_1_1basic__array.html#a2e50b538f5aa4913d3180fcee49499c2">xtd::basic_array::count</a></div><div class="ttdeci">size_type count() const noexcept override</div><div class="ttdoc">Gets the number of elements contained in the xtd::array &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:117</div></div>
+<div class="ttc" id="aclassxtd_1_1basic__array_html_a2e50b538f5aa4913d3180fcee49499c2"><div class="ttname"><a href="classxtd_1_1basic__array.html#a2e50b538f5aa4913d3180fcee49499c2">xtd::basic_array::count</a></div><div class="ttdeci">size_type count() const noexcept override</div><div class="ttdoc">Gets the number of elements contained in the xtd::array &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:134</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1367,6 +1369,7 @@ template&lt;class key_t &gt; </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>student : <a class="code hl_class" href="classxtd_1_1iequatable.html">iequatable</a>&lt;student&gt; {</div>
+<div class="line">  student() = <span class="keywordflow">default</span>;</div>
 <div class="line">  student(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; score) : name {name}, score {score} {}</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">string</span> name;</div>
@@ -1464,6 +1467,7 @@ template&lt;class key_t &gt; </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>student : <a class="code hl_class" href="classxtd_1_1iequatable.html">iequatable</a>&lt;student&gt; {</div>
+<div class="line">  student() = <span class="keywordflow">default</span>;</div>
 <div class="line">  student(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; score) : name {name}, score {score} {}</div>
 <div class="line">  </div>
 <div class="line">  <span class="keywordtype">string</span> name;</div>
@@ -2121,7 +2125,7 @@ template&lt;class enumerable_t , class source_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 16 2025 20:30:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 24 2025 21:15:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

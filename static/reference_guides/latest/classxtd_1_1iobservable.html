@@ -173,16 +173,16 @@ class xtd::iobservable&lt; type_t &gt;</div><p>Provides a mechanism for receivin
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordtype">void</span> on_completed() noexcept<span class="keyword"> override </span>{</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;The location Tracker has completed transmitting data to {}.&quot;</span>, name());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;The location Tracker has completed transmitting data to {}.&quot;</span>, <a class="code hl_function" href="group__threading.html#ga5ee11cda9ca27346d53de02c7c4883ea">name</a>());</div>
 <div class="line">    unsubscribe();</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordtype">void</span> on_error(<span class="keyword">const</span> exception&amp; e) <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;{}: The location cannot be determined.&quot;</span>, name());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;{}: The location cannot be determined.&quot;</span>, <a class="code hl_function" href="group__threading.html#ga5ee11cda9ca27346d53de02c7c4883ea">name</a>());</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordtype">void</span> on_next(<span class="keyword">const</span> location&amp; value) <span class="keyword">noexcept</span> <span class="keyword">override</span> {</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;{}: The current location is {}, {}&quot;</span>, name(), value.latitude(), value.longitude());</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;{}: The current location is {}, {}&quot;</span>, <a class="code hl_function" href="group__threading.html#ga5ee11cda9ca27346d53de02c7c4883ea">name</a>(), value.latitude(), value.longitude());</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">virtual</span> <span class="keywordtype">void</span> unsubscribe() {</div>
@@ -194,6 +194,7 @@ class xtd::iobservable&lt; type_t &gt;</div><p>Provides a mechanism for receivin
 <div class="line">  <span class="keywordtype">string</span> name_;</div>
 <div class="line">  iobservable&lt;location&gt;* provider_ = <span class="keyword">nullptr</span>;</div>
 <div class="line">};</div>
+<div class="ttc" id="agroup__threading_html_ga5ee11cda9ca27346d53de02c7c4883ea"><div class="ttname"><a href="group__threading.html#ga5ee11cda9ca27346d53de02c7c4883ea">xtd::threading::this_thread::name</a></div><div class="ttdeci">xtd::string name() noexcept</div><div class="ttdoc">Gets the thread name of the current thread.</div></div>
 </div><!-- fragment --><p> The following code then instantiates the provider and the observer. </p><div class="fragment"><div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Define a provider and two observers.</span></div>
 <div class="line">  location_tracker provider;</div>
@@ -329,7 +330,7 @@ template&lt;class type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 16 2025 20:30:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 24 2025 21:15:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
