@@ -100,7 +100,7 @@ namespace xtd {
           /// @brief Subtract The specified iterator from the current iterator.
           /// @param value The iterator to subtract from the current iterator.
           /// @return The difference between current iterator and the specified iterator.
-          xtd::ptrdiff operator -(wrap_pointer_reverse_iterator value) const noexcept {return  data_ + value.data_;}
+          xtd::ptrdiff operator -(wrap_pointer_reverse_iterator value) const noexcept {return  value.data_ - data_;}
           
           /// @brief The equality operator of specified underlyig itertators.
           /// @return true if underlying iterators are equels; otherwise false.
