@@ -48,20 +48,20 @@ namespace xtd::collections::generic::helpers::tests {
     void test_method_(data_const) {
       auto a = array {10, 20, 30, 40, 50};
       auto i = wrap_pointer_iterator<int*> {a.data()};
-      assert::are_equal(a.data(), as_const(i.data()));
+      assert::are_equal(a.data(), xtd::as_const(i.data()));
     }
 
     void test_method_(data) {
       auto a = array {10, 20, 30, 40, 50};
       auto i = wrap_pointer_iterator<int*> {a.data()};
-      i.data() = as_const(i.data()) + 1;
-      assert::are_equal(a.data() + 1, as_const(i.data()));
+      i.data() = xtd::as_const(i.data()) + 1;
+      assert::are_equal(a.data() + 1, xtd::as_const(i.data()));
     }
 
     void test_method_(const_reference_operator) {
       auto a = array {10, 20, 30, 40, 50};
       auto i = wrap_pointer_iterator<int*> {a.data()};
-      assert::are_equal(*a.data(), *as_const(i));
+      assert::are_equal(*a.data(), *xtd::as_const(i));
     }
 
     void test_method_(reference_operator) {
@@ -73,8 +73,84 @@ namespace xtd::collections::generic::helpers::tests {
     void test_method_(const_pointer_operator) {
       auto a = array {"a b"_s, "c d"_s, "e f"_s, "g h"_s, "i j"_s};
       auto i = wrap_pointer_iterator<string*> {a.data()};
+      auto r = xtd::as_const(i)->split();
+      assert::are_equal("a", r[0]);
+      assert::are_equal("b", r[1]);
+    }
+
+    void test_method_(pointer_operator) {
+      auto a = array {"a b"_s, "c d"_s, "e f"_s, "g h"_s, "i j"_s};
+      auto i = wrap_pointer_iterator<string*> {a.data()};
       auto r = i->split();
-      //assert::are_equal(*a.data(), *as_const(i));
+      assert::are_equal("a", r[0]);
+      assert::are_equal("b", r[1]);
+    }
+
+    void test_method_(const_pre_increment_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto i = wrap_pointer_iterator<int*> {a.data()};
+      assert::are_equal(*a.data(), *i);
+      assert::are_equal(*(a.data() + 1), *(++xtd::as_const(i)));
+      assert::are_equal(*(a.data() + 1), *i);
+    }
+
+    void test_method_(pre_increment_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto i = wrap_pointer_iterator<int*> {a.data()};
+      assert::are_equal(*a.data(), *i);
+      assert::are_equal(*(a.data() + 1), *(++i));
+      assert::are_equal(*(a.data() + 1), *i);
+    }
+
+    void test_method_(const_post_increment_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto i = wrap_pointer_iterator<int*> {a.data()};
+      assert::are_equal(*a.data(), *i);
+      assert::are_equal(*(a.data()), *(xtd::as_const(i)++));
+      assert::are_equal(*(a.data() + 1), *i);
+    }
+
+    void test_method_(post_increment_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto i = wrap_pointer_iterator<int*> {a.data()};
+      assert::are_equal(*a.data(), *i);
+      assert::are_equal(*(a.data()), *(i++));
+      assert::are_equal(*(a.data() + 1), *i);
+    }
+
+    void test_method_(add_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto i = wrap_pointer_iterator<int*> {a.data()};
+      assert::are_equal(*a.data(), *i);
+      i = i + 2;
+      assert::are_equal(*(a.data() + 2), *i);
+    }
+    
+    void test_method_(minus_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto i1 = wrap_pointer_iterator<int*> {a.data()};
+      auto i2 = wrap_pointer_iterator<int*> {a.data() + 3};
+      assert::are_equal(3, i2 - i1);
+    }
+    
+    void test_method_(equal_to_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto i1 = wrap_pointer_iterator<int*> {a.data()};
+      auto i2 = wrap_pointer_iterator<int*> {a.data()};
+      auto i3 = wrap_pointer_iterator<int*> {a.data() + 3};
+      assert::is_true(i1 == i2);
+      assert::is_false(i1 == i3);
+      assert::is_false(i2 == i3);
+    }
+    
+    void test_method_(not_equal_to_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto i1 = wrap_pointer_iterator<int*> {a.data()};
+      auto i2 = wrap_pointer_iterator<int*> {a.data()};
+      auto i3 = wrap_pointer_iterator<int*> {a.data() + 3};
+      assert::is_false(i1 != i2);
+      assert::is_true(i1 != i3);
+      assert::is_true(i2 != i3);
     }
   };
 }
