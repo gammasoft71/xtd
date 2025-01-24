@@ -101,12 +101,22 @@ namespace xtd {
     span() = default;
     template<class iterator_t>
     explicit span(iterator_t first, iterator_t last) : data_ {const_cast<type_t*>(&(*first))}, size_ {static_cast<size_type>(std::distance(first, last))} {}
-    template<class iterator_t>
-    explicit span(iterator_t first, size_type count) : data_ {const_cast<type_t*>(&(*first))}, size_ {count} {}
     template<class collection_t>
     explicit span(const collection_t& items) : data_ {const_cast<type_t*>(items.data())}, size_ {items.size()} {}
     template<class collection_t>
     explicit span(collection_t& items) : data_ {items.data()}, size_ {items.size()} {}
+    template<class collection_t>
+    explicit span(const collection_t& items, xtd::size count) : data_ {const_cast<type_t*>(items.data())}, size_ {count} {}
+    template<class collection_t>
+    explicit span(collection_t& items, xtd::size count) : data_ {items.data()}, size_ {count} {}
+    template<class collection_t>
+    explicit span(const collection_t& items, xtd::size offset, xtd::size count) : data_ {const_cast<type_t*>(items.data() + offset)}, size_ {count} {
+      if (offset + count > items.size()) throw argument_out_of_range_exception {};
+    }
+    template<class collection_t>
+    explicit span(collection_t& items, xtd::size offset, xtd::size count) : data_ {items.data() + offset}, size_ {count} {
+      if (offset + count > items.size()) throw argument_out_of_range_exception {};
+    }
     explicit span(std::initializer_list<type_t> items) noexcept : data_ {const_cast<type_t*>(&(*items.begin()))}, size_ {items.size()} {}
     explicit span(const type_t* data, size_type size) : data_ {const_cast<type_t*>(data)}, size_ {size} {}
     explicit span(type_t* data, size_type size) : data_ {data}, size_ {size} {}
