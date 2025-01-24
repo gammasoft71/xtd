@@ -138,6 +138,9 @@ class xtd::basic_string_comparer&lt; char_t &gt;</div><p>Represents a string com
 <tr class="memitem:a12fe1e31407c0ce2edc0cab84788fbd7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1basic__string__comparer.html">basic_string_comparer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1basic__string__comparer.html#a12fe1e31407c0ce2edc0cab84788fbd7">from_comparison</a> (<a class="el" href="group__xtd__core.html#ga04dd6c532656e286dfbf2f9aea3d8ccd">xtd::string_comparison</a> <a class="el" href="group__xtd__core.html#ga96dde0e13d4e8026ac2d45cc19a0a401">comparison</a>)</td></tr>
 <tr class="memdesc:a12fe1e31407c0ce2edc0cab84788fbd7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the specified <a class="el" href="group__xtd__core.html#ga04dd6c532656e286dfbf2f9aea3d8ccd" title="Specifies the culture, case, and sort rules to be used by certain overloads of the xtd::string::compa...">xtd::string_comparison</a> instance to a StringComparer instance.  <br /></td></tr>
 <tr class="separator:a12fe1e31407c0ce2edc0cab84788fbd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cf40360ef7379a2f4977bf46cf2734b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1basic__string__comparer.html#a6cf40360ef7379a2f4977bf46cf2734b">is_well_known_ordinal_comparer</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &gt; &amp;comparer, bool &amp;ignore_case)</td></tr>
+<tr class="memdesc:a6cf40360ef7379a2f4977bf46cf2734b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; is a well-known ordinal string comparer.  <br /></td></tr>
+<tr class="separator:a6cf40360ef7379a2f4977bf46cf2734b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:a743fabcf90653bc47bf5eabddce7be74"><td class="memTemplParams" colspan="2">template&lt;class object_t &gt; </td></tr>
@@ -230,7 +233,8 @@ template&lt;class char_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1basic__string__comparer.html" title="Represents a string comparison operation that uses specific case and culture-based or ordinal compari...">xtd::basic_string_comparer</a> class. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000018">Todo:</a></b></dt><dd>Uncomment following lines when xtd::globalization::culture_info and xtd::globalization::compare_options are developped. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000019">Todo:</a></b></dt><dd>Uncomment following lines when xtd::globalization::culture_info and xtd::globalization::compare_options are developped. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000020">Todo:</a></b></dt><dd>Uncomment following lines when xtd::globalization::culture_info and xtd::globalization::compare_options are developped. </dd></dl>
 
 </div>
 </div>
@@ -871,6 +875,56 @@ template&lt;class char_t &gt; </div>
 
 </div>
 </div>
+<a id="a6cf40360ef7379a2f4977bf46cf2734b" name="a6cf40360ef7379a2f4977bf46cf2734b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cf40360ef7379a2f4977bf46cf2734b">&#9670;&#160;</a></span>is_well_known_ordinal_comparer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class char_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool <a class="el" href="classxtd_1_1basic__string__comparer.html">xtd::basic_string_comparer</a>&lt; char_t &gt;::is_well_known_ordinal_comparer </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html">xtd::collections::generic::iequality_comparer</a>&lt; <a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>comparer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool &amp;&#160;</td>
+          <td class="paramname"><em>ignore_case</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1iequality__comparer.html" title="Defines methods to support the comparison of objects for equality.">xtd::collections::generic::iequality_comparer</a> &lt;type_t&gt; is a well-known ordinal string comparer. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000018">Todo:</a></b></dt><dd>Uncomment following lines when xtd::globalization::culture_info and xtd::globalization::compare_options are developped. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comparer</td><td>The comparer to query. </td></tr>
+    <tr><td class="paramname">ignore_case</td><td>When this method returns, contains a value stating whether <code>comparer</code> is case-insensitive. Set to <code>false</code> if this method returns <code>false</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if comparer is a well-known ordinal string comparer; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>A "well-known ordinal comparer" describes a comparer that behaves identically to <a class="el" href="classxtd_1_1basic__string__comparer.html#a50a7289afb37f8d8d2a9b2401e53d2ac" title="Gets a xtd::basic_string_comparer object that performs a case-sensitive ordinal string comparison.">xtd::basic_string_comparer::ordinal</a> when passed to <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; or <a class="el" href="group__generic__collections.html#ga64eee1442dc5ab233c858fb9210538f0" title="Represents a set of values.">xtd::collections::generic::hash_set</a> &lt;type_t&gt;. For example, <a class="el" href="classxtd_1_1collections_1_1generic_1_1equality__comparer.html#a5849423379f7c39750a1713ba8c44e35" title="Gets the default equality comparer for the type specified by the generic argument.">xtd::collections::generic::equality_comparer::default_equality_comparer</a> is a well-known ordinal comparer because a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; given <a class="el" href="classxtd_1_1collections_1_1generic_1_1equality__comparer.html#a5849423379f7c39750a1713ba8c44e35" title="Gets the default equality comparer for the type specified by the generic argument.">xtd::collections::generic::equality_comparer::default_equality_comparer</a> as a constructor argument will behave identically to a <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; given <a class="el" href="classxtd_1_1basic__string__comparer.html#a50a7289afb37f8d8d2a9b2401e53d2ac" title="Gets a xtd::basic_string_comparer object that performs a case-sensitive ordinal string comparison.">xtd::string_comparer::ordinal</a> as a constructor argument. If <code>ignore_case</code> is <code>true</code> on method exit, then <code>comparer</code> behaves identically to <a class="el" href="classxtd_1_1basic__string__comparer.html#a455d50963d3e18ce3a590d77e4e3a8fb" title="Gets a xtd::basic_string_comparer object that performs a case-insensitive ordinal string comparison.">xtd::basic_string_comparer::ordinal_ignore_case</a> when passed to the constructor of such a collection. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>xtd.core/include/xtd/<a class="el" href="basic__string__comparer_8hpp_source.html">basic_string_comparer.hpp</a></li>
 </ul>
@@ -878,7 +932,7 @@ template&lt;class char_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 16 2025 20:30:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 24 2025 21:15:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

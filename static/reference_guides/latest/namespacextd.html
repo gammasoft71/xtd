@@ -91,10 +91,10 @@ $(function() {
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000021">Todo:</a></b></dt><dd>Move to iterator.hpp file </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000040">Todo:</a></b></dt><dd>to remove </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000023">Todo:</a></b></dt><dd>remove when sorted_dictionay is developped. </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000042">Todo:</a></b></dt><dd>to remove </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000043">Todo:</a></b></dt><dd>to remove </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000044">Todo:</a></b></dt><dd>to remove </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000045">Todo:</a></b></dt><dd>to remove </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -464,6 +464,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1source__location.html">source_location</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classxtd_1_1source__location.html" title="The xtd::source_location class represents certain information about the source code,...">xtd::source_location</a> class represents certain information about the source code, such as file names, line numbers, and function names. Previously, functions that desire to obtain this information about the call site (for logging, testing, or debugging purposes) must use macros so that <a href="https://en.cppreference.com/w/cpp/preprocessor/replace#Predefined_macros">predefined macros</a> like <code>__LINE__</code> and <code>__FILE__</code> are expanded in the context of the caller. The <a class="el" href="classxtd_1_1source__location.html" title="The xtd::source_location class represents certain information about the source code,...">xtd::source_location</a> class provides a better alternative.  <a href="classxtd_1_1source__location.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html">span</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1startup.html">startup</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the <a class="el" href="classxtd_1_1startup.html" title="Defines the xtd::startup object that can be used in the main method to safely call the application&#39;s ...">xtd::startup</a> object that can be used in the main method to safely call the application's main entry point.  <a href="classxtd_1_1startup.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -537,9 +539,6 @@ Alias</h2></td></tr>
 <tr class="memitem:ga1bc34012935a93e10b5dba765c8d0d5a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga1bc34012935a93e10b5dba765c8d0d5a">async_result</a> = <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;</td></tr>
 <tr class="memdesc:ga1bc34012935a93e10b5dba765c8d0d5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the status of an asynchronous operation.  <br /></td></tr>
 <tr class="separator:ga1bc34012935a93e10b5dba765c8d0d5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga020fbeceaf011505de3ac30168375664"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga020fbeceaf011505de3ac30168375664">boolean_object</a> = <a class="el" href="classxtd_1_1box.html">box</a>&lt; bool &gt;</td></tr>
-<tr class="memdesc:ga020fbeceaf011505de3ac30168375664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent a boxed bool.  <br /></td></tr>
-<tr class="separator:ga020fbeceaf011505de3ac30168375664"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga96dde0e13d4e8026ac2d45cc19a0a401"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga96dde0e13d4e8026ac2d45cc19a0a401"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga96dde0e13d4e8026ac2d45cc19a0a401">comparison</a> = delegate&lt; <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>, type_t, type_t &gt;</td></tr>
 <tr class="memdesc:ga96dde0e13d4e8026ac2d45cc19a0a401"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the method that compares two objects of the same type.  <br /></td></tr>
@@ -609,24 +608,6 @@ Alias</h2></td></tr>
 <tr class="memitem:gabcbd275ea4718769d31cf61042c0bd77"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__events.html#gabcbd275ea4718769d31cf61042c0bd77">signal_cancel_event_handler</a> = xtd::delegate&lt; void(<a class="el" href="classxtd_1_1signal__cancel__event__args.html">signal_cancel_event_args</a> &amp;)&gt;</td></tr>
 <tr class="memdesc:gabcbd275ea4718769d31cf61042c0bd77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the method that will handle the signal events of a <a class="el" href="classxtd_1_1environment.html" title="The environment class.">xtd::environment</a>.  <br /></td></tr>
 <tr class="separator:gabcbd275ea4718769d31cf61042c0bd77"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga38c2e723413a561059a0c53c07f167af"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga38c2e723413a561059a0c53c07f167af">size_object</a> = <a class="el" href="classxtd_1_1box__integer.html">box_integer</a>&lt; size_t &gt;</td></tr>
-<tr class="memdesc:ga38c2e723413a561059a0c53c07f167af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent a boxed size_t.  <br /></td></tr>
-<tr class="separator:ga38c2e723413a561059a0c53c07f167af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga088b87511ab0bc2c8d8d37b0582f0c5f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga088b87511ab0bc2c8d8d37b0582f0c5f">string_comparer</a> = <a class="el" href="classxtd_1_1basic__string__comparer.html">basic_string_comparer</a>&lt; char &gt;</td></tr>
-<tr class="memdesc:ga088b87511ab0bc2c8d8d37b0582f0c5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a string comparison operation that uses specific case and culture-based or ordinal comparison rules.  <br /></td></tr>
-<tr class="separator:ga088b87511ab0bc2c8d8d37b0582f0c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9deac5d4f17f0bec6d5af6e7e173c1af"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga9deac5d4f17f0bec6d5af6e7e173c1af">u16string_comparer</a> = <a class="el" href="classxtd_1_1basic__string__comparer.html">xtd::basic_string_comparer</a>&lt; <a class="el" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">xtd::char16</a> &gt;</td></tr>
-<tr class="memdesc:ga9deac5d4f17f0bec6d5af6e7e173c1af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a u16string comparison operation that uses specific case and culture-based or ordinal comparison rules.  <br /></td></tr>
-<tr class="separator:ga9deac5d4f17f0bec6d5af6e7e173c1af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4ec37e6db5b3fa546fa302594ff8e3cf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga4ec37e6db5b3fa546fa302594ff8e3cf">u32string_comparer</a> = <a class="el" href="classxtd_1_1basic__string__comparer.html">xtd::basic_string_comparer</a>&lt; <a class="el" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a> &gt;</td></tr>
-<tr class="memdesc:ga4ec37e6db5b3fa546fa302594ff8e3cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a u32string comparison operation that uses specific case and culture-based or ordinal comparison rules.  <br /></td></tr>
-<tr class="separator:ga4ec37e6db5b3fa546fa302594ff8e3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4872bf721627bbf6a3d4f8fcc5db422d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga4872bf721627bbf6a3d4f8fcc5db422d">u8string_comparer</a> = <a class="el" href="classxtd_1_1basic__string__comparer.html">xtd::basic_string_comparer</a>&lt; <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a> &gt;</td></tr>
-<tr class="memdesc:ga4872bf721627bbf6a3d4f8fcc5db422d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a u8string comparison operation that uses specific case and culture-based or ordinal comparison rules.  <br /></td></tr>
-<tr class="separator:ga4872bf721627bbf6a3d4f8fcc5db422d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga63d8779d2ee883a535bb5855002ec189"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga63d8779d2ee883a535bb5855002ec189">wstring_comparer</a> = <a class="el" href="classxtd_1_1basic__string__comparer.html">xtd::basic_string_comparer</a>&lt; <a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a> &gt;</td></tr>
-<tr class="memdesc:ga63d8779d2ee883a535bb5855002ec189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a wstring comparison operation that uses specific case and culture-based or ordinal comparison rules.  <br /></td></tr>
-<tr class="separator:ga63d8779d2ee883a535bb5855002ec189"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -1373,14 +1354,6 @@ Functions</h2></td></tr>
 <tr class="memitem:aacbd2f5780a3a0e2aa51480648286bc2"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::add_const_t&lt; type_t &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#aacbd2f5780a3a0e2aa51480648286bc2">as_const</a> (type_t &amp;<a class="el" href="group__types.html#gafa42bcceb7fb5768ea8cc4588e67dc15">type</a>) noexcept</td></tr>
 <tr class="memdesc:aacbd2f5780a3a0e2aa51480648286bc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains a reference to <code>const</code> to its argument.  <br /></td></tr>
 <tr class="separator:aacbd2f5780a3a0e2aa51480648286bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7352fcff0da12feb0aff421fc8c41d15"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
-<tr class="memitem:ga7352fcff0da12feb0aff421fc8c41d15"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#ga7352fcff0da12feb0aff421fc8c41d15">boxing</a> (const type_t &amp;value) noexcept</td></tr>
-<tr class="memdesc:ga7352fcff0da12feb0aff421fc8c41d15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to box an object.  <br /></td></tr>
-<tr class="separator:ga7352fcff0da12feb0aff421fc8c41d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab155c2e1615c761866911598011c74b3"><td class="memTemplParams" colspan="2">template&lt;class type_t , class ... args_t&gt; </td></tr>
-<tr class="memitem:gab155c2e1615c761866911598011c74b3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1box.html">box</a>&lt; type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#gab155c2e1615c761866911598011c74b3">boxing</a> (args_t &amp;&amp;...args) noexcept</td></tr>
-<tr class="memdesc:gab155c2e1615c761866911598011c74b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to box an object.  <br /></td></tr>
-<tr class="separator:gab155c2e1615c761866911598011c74b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5a5584949bd381cfe6226427741595c6"><td class="memItemLeft" align="right" valign="top">std::ostream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga5a5584949bd381cfe6226427741595c6">cnull</a> (nullptr)</td></tr>
 <tr class="memdesc:ga5a5584949bd381cfe6226427741595c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a null std::ostream.  <br /></td></tr>
 <tr class="separator:ga5a5584949bd381cfe6226427741595c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -6011,10 +5984,6 @@ template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:a1c08d0448e9b9992ccb43141fe50761c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacextd.html#a1c08d0448e9b9992ccb43141fe50761c">println</a> (const wchar_t *fmt, args_t &amp;&amp;... values)</td></tr>
 <tr class="memdesc:a1c08d0448e9b9992ccb43141fe50761c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the text representation of the specified list of values, followed by the current line terminator, to the standard output stream using the specified format information.  <br /></td></tr>
 <tr class="separator:a1c08d0448e9b9992ccb43141fe50761c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad7c8890de68091b1a95110ec75c34e99"><td class="memTemplParams" colspan="2">template&lt;class type_t , class function_t &gt; </td></tr>
-<tr class="memitem:gad7c8890de68091b1a95110ec75c34e99"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#gad7c8890de68091b1a95110ec75c34e99">register_any_stringer</a> (const function_t &amp;<a class="el" href="group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9">func</a>)</td></tr>
-<tr class="memdesc:gad7c8890de68091b1a95110ec75c34e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register an any stringer method for a specified type.  <br /></td></tr>
-<tr class="separator:gad7c8890de68091b1a95110ec75c34e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaac49387378fdd2db92acc8c9dc3916bb"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
 <tr class="memitem:gaac49387378fdd2db92acc8c9dc3916bb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1time__span.html">xtd::time_span</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gaac49387378fdd2db92acc8c9dc3916bb">parse&lt; time_span &gt;</a> (const std::string &amp;str)</td></tr>
 <tr class="memdesc:gaac49387378fdd2db92acc8c9dc3916bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string representation of a time interval to its <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> equivalent.  <br /></td></tr>
@@ -6215,10 +6184,6 @@ template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga1d59ec80e62f1ce335fabedc330da774"><td class="memTemplItemLeft" align="right" valign="top">std::wstring&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#ga1d59ec80e62f1ce335fabedc330da774">to_string</a> (const value_t &amp;value, const std::wstring &amp;fmt)</td></tr>
 <tr class="memdesc:ga1d59ec80e62f1ce335fabedc330da774"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a specified value into a string with specified format.  <br /></td></tr>
 <tr class="separator:ga1d59ec80e62f1ce335fabedc330da774"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5aa911c016af5795d0482eefb481fcc9"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
-<tr class="memitem:ga5aa911c016af5795d0482eefb481fcc9"><td class="memTemplItemLeft" align="right" valign="top">type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#ga5aa911c016af5795d0482eefb481fcc9">unboxing</a> (const <a class="el" href="classxtd_1_1box.html">xtd::box</a>&lt; type_t &gt; &amp;value) noexcept</td></tr>
-<tr class="memdesc:ga5aa911c016af5795d0482eefb481fcc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to unbox an object.  <br /></td></tr>
-<tr class="separator:ga5aa911c016af5795d0482eefb481fcc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae9b1d037b20137db8842fe5b1c6c1229"><td class="memTemplParams" colspan="2">template&lt;class ... args_t&gt; </td></tr>
 <tr class="memitem:gae9b1d037b20137db8842fe5b1c6c1229"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__xtd__core.html#gae9b1d037b20137db8842fe5b1c6c1229">unused</a> (args_t &amp;&amp;... args)</td></tr>
 <tr class="memdesc:gae9b1d037b20137db8842fe5b1c6c1229"><td class="mdescLeft">&#160;</td><td class="mdescRight">It may be used to suppress the "unused variable" or "unused local typedefs" compiler warnings when the variable or typedef can't be removed or commented out, e.g. when some blocks of the code are conditionally activated.  <br /></td></tr>
@@ -6243,6 +6208,33 @@ Variables</h2></td></tr>
 <tr class="memitem:gaf0620df1fd6c165eaad955c07e15097d"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types.html#ga7c21e81155886d77db3bcf8d0785afe8">null_opt</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#gaf0620df1fd6c165eaad955c07e15097d">nullopt</a></td></tr>
 <tr class="memdesc:gaf0620df1fd6c165eaad955c07e15097d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a nullopt value. Used to indicate that an <a href="https://en.cppreference.com/w/cpp/utility/optional">std::optional</a> does not contain a value.  <br /></td></tr>
 <tr class="separator:gaf0620df1fd6c165eaad955c07e15097d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Aliases</h2></td></tr>
+<tr class="memitem:gaa4f1bcd93722aaf0d9cf00db4c68b75c"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
+<tr class="memitem:gaa4f1bcd93722aaf0d9cf00db4c68b75c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#gaa4f1bcd93722aaf0d9cf00db4c68b75c">type_to_array_t</a> = typename std::conditional&lt; std::is_same&lt; bool, type_t &gt;::value, char, type_t &gt;<a class="el" href="group__types.html#gafa42bcceb7fb5768ea8cc4588e67dc15">::type</a></td></tr>
+<tr class="memdesc:gaa4f1bcd93722aaf0d9cf00db4c68b75c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the type to array type.  <br /></td></tr>
+<tr class="separator:gaa4f1bcd93722aaf0d9cf00db4c68b75c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga020fbeceaf011505de3ac30168375664"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga020fbeceaf011505de3ac30168375664">boolean_object</a> = <a class="el" href="classxtd_1_1box.html">box</a>&lt; bool &gt;</td></tr>
+<tr class="memdesc:ga020fbeceaf011505de3ac30168375664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent a boxed bool.  <br /></td></tr>
+<tr class="separator:ga020fbeceaf011505de3ac30168375664"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga38c2e723413a561059a0c53c07f167af"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga38c2e723413a561059a0c53c07f167af">size_object</a> = <a class="el" href="classxtd_1_1box__integer.html">box_integer</a>&lt; size_t &gt;</td></tr>
+<tr class="memdesc:ga38c2e723413a561059a0c53c07f167af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent a boxed size_t.  <br /></td></tr>
+<tr class="separator:ga38c2e723413a561059a0c53c07f167af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga088b87511ab0bc2c8d8d37b0582f0c5f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga088b87511ab0bc2c8d8d37b0582f0c5f">string_comparer</a> = <a class="el" href="classxtd_1_1basic__string__comparer.html">basic_string_comparer</a>&lt; char &gt;</td></tr>
+<tr class="memdesc:ga088b87511ab0bc2c8d8d37b0582f0c5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a string comparison operation that uses specific case and culture-based or ordinal comparison rules.  <br /></td></tr>
+<tr class="separator:ga088b87511ab0bc2c8d8d37b0582f0c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9deac5d4f17f0bec6d5af6e7e173c1af"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga9deac5d4f17f0bec6d5af6e7e173c1af">u16string_comparer</a> = <a class="el" href="classxtd_1_1basic__string__comparer.html">xtd::basic_string_comparer</a>&lt; <a class="el" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">xtd::char16</a> &gt;</td></tr>
+<tr class="memdesc:ga9deac5d4f17f0bec6d5af6e7e173c1af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a u16string comparison operation that uses specific case and culture-based or ordinal comparison rules.  <br /></td></tr>
+<tr class="separator:ga9deac5d4f17f0bec6d5af6e7e173c1af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4ec37e6db5b3fa546fa302594ff8e3cf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga4ec37e6db5b3fa546fa302594ff8e3cf">u32string_comparer</a> = <a class="el" href="classxtd_1_1basic__string__comparer.html">xtd::basic_string_comparer</a>&lt; <a class="el" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a> &gt;</td></tr>
+<tr class="memdesc:ga4ec37e6db5b3fa546fa302594ff8e3cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a u32string comparison operation that uses specific case and culture-based or ordinal comparison rules.  <br /></td></tr>
+<tr class="separator:ga4ec37e6db5b3fa546fa302594ff8e3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4872bf721627bbf6a3d4f8fcc5db422d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga4872bf721627bbf6a3d4f8fcc5db422d">u8string_comparer</a> = <a class="el" href="classxtd_1_1basic__string__comparer.html">xtd::basic_string_comparer</a>&lt; <a class="el" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">xtd::char8</a> &gt;</td></tr>
+<tr class="memdesc:ga4872bf721627bbf6a3d4f8fcc5db422d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a u8string comparison operation that uses specific case and culture-based or ordinal comparison rules.  <br /></td></tr>
+<tr class="separator:ga4872bf721627bbf6a3d4f8fcc5db422d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga63d8779d2ee883a535bb5855002ec189"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#ga63d8779d2ee883a535bb5855002ec189">wstring_comparer</a> = <a class="el" href="classxtd_1_1basic__string__comparer.html">xtd::basic_string_comparer</a>&lt; <a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a> &gt;</td></tr>
+<tr class="memdesc:ga63d8779d2ee883a535bb5855002ec189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a wstring comparison operation that uses specific case and culture-based or ordinal comparison rules.  <br /></td></tr>
+<tr class="separator:ga63d8779d2ee883a535bb5855002ec189"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Native types</h2></td></tr>
 <tr class="memitem:gab7230dbe491f8bcef5e5f8bdaba5e27f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#gab7230dbe491f8bcef5e5f8bdaba5e27f">boolean</a> = bool</td></tr>
@@ -6404,6 +6396,29 @@ Variables</h2></td></tr>
 <tr class="memitem:gaa5ac5641de5f9362829662a60349ecde"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#gaa5ac5641de5f9362829662a60349ecde">wchar_object</a> = <a class="el" href="classxtd_1_1box__char.html">box_char</a>&lt; <a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">wchar</a> &gt;</td></tr>
 <tr class="memdesc:gaa5ac5641de5f9362829662a60349ecde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent a boxed wchar.  <br /></td></tr>
 <tr class="separator:gaa5ac5641de5f9362829662a60349ecde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Static Fields</h2></td></tr>
+<tr class="memitem:gab0cdbdca5229915c7fdde3eb1d5e1a97"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__system.html#gab0cdbdca5229915c7fdde3eb1d5e1a97">dynamic_extent</a></td></tr>
+<tr class="memdesc:gab0cdbdca5229915c7fdde3eb1d5e1a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the constant of type <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d" title="Represents a size of any object in bytes.">xtd::size</a> signifying that the span has dynamic extent.  <br /></td></tr>
+<tr class="separator:gab0cdbdca5229915c7fdde3eb1d5e1a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Static Methods</h2></td></tr>
+<tr class="memitem:ga7352fcff0da12feb0aff421fc8c41d15"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
+<tr class="memitem:ga7352fcff0da12feb0aff421fc8c41d15"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#ga7352fcff0da12feb0aff421fc8c41d15">boxing</a> (const type_t &amp;value) noexcept</td></tr>
+<tr class="memdesc:ga7352fcff0da12feb0aff421fc8c41d15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to box an object.  <br /></td></tr>
+<tr class="separator:ga7352fcff0da12feb0aff421fc8c41d15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab155c2e1615c761866911598011c74b3"><td class="memTemplParams" colspan="2">template&lt;class type_t , class ... args_t&gt; </td></tr>
+<tr class="memitem:gab155c2e1615c761866911598011c74b3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1box.html">box</a>&lt; type_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#gab155c2e1615c761866911598011c74b3">boxing</a> (args_t &amp;&amp;...args) noexcept</td></tr>
+<tr class="memdesc:gab155c2e1615c761866911598011c74b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to box an object.  <br /></td></tr>
+<tr class="separator:gab155c2e1615c761866911598011c74b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7c8890de68091b1a95110ec75c34e99"><td class="memTemplParams" colspan="2">template&lt;class type_t , class function_t &gt; </td></tr>
+<tr class="memitem:gad7c8890de68091b1a95110ec75c34e99"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#gad7c8890de68091b1a95110ec75c34e99">register_any_stringer</a> (const function_t &amp;<a class="el" href="group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9">func</a>)</td></tr>
+<tr class="memdesc:gad7c8890de68091b1a95110ec75c34e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register an any stringer method for a specified type.  <br /></td></tr>
+<tr class="separator:gad7c8890de68091b1a95110ec75c34e99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5aa911c016af5795d0482eefb481fcc9"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
+<tr class="memitem:ga5aa911c016af5795d0482eefb481fcc9"><td class="memTemplItemLeft" align="right" valign="top">type_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__system.html#ga5aa911c016af5795d0482eefb481fcc9">unboxing</a> (const <a class="el" href="classxtd_1_1box.html">xtd::box</a>&lt; type_t &gt; &amp;value) noexcept</td></tr>
+<tr class="memdesc:ga5aa911c016af5795d0482eefb481fcc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows to unbox an object.  <br /></td></tr>
+<tr class="separator:ga5aa911c016af5795d0482eefb481fcc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="aacbd2f5780a3a0e2aa51480648286bc2" name="aacbd2f5780a3a0e2aa51480648286bc2"></a>
@@ -8702,7 +8717,7 @@ template&lt;class ... args_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 16 2025 20:30:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 24 2025 21:15:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
