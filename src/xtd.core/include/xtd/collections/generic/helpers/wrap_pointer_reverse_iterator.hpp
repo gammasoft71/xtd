@@ -56,7 +56,18 @@ namespace xtd {
           /// @{
           /// @brief Initializes a new instance of the xtd::collections::generic::helpers::wrap_pointer_reverse_iterator class with specified pointer value.
           /// @param pointer The pointer value.
-          wrap_pointer_reverse_iterator(value_t data) noexcept : data_ {data - 1} {}
+          explicit wrap_pointer_reverse_iterator(value_t data) noexcept : data_ {data - 1} {}
+          /// @}
+
+          /// @name Public Properties
+          
+          /// @{
+          /// @brief Gets iterator data.
+          /// @return The iterator data.
+          const value_t& data() const noexcept {return data_;}
+          /// @brief Gets iterator data.
+          /// @return The iterator data.
+          value_t& data() noexcept {return data_;}
           /// @}
 
           /// @name Public Operators
@@ -64,16 +75,16 @@ namespace xtd {
           /// @{
           /// @brief Returns reference to the current element, or a proxy holding it.
           /// @return The reference to the current element.
-          const std::remove_pointer_t<value_t> operator *() const noexcept {return *data_;}
+          const std::remove_pointer_t<value_t>& operator *() const noexcept {return *data_;}
           /// @brief Returns reference to the current element, or a proxy holding it.
           /// @return The reference to the current element.
-          std::remove_pointer_t<value_t> operator *() noexcept {return *data_;}
+          std::remove_pointer_t<value_t>& operator *() noexcept {return *data_;}
           /// @brief Returns pointer to the current element, or a proxy holding it.
           /// @return The pointer to the current element.
-          const value_t operator ->() const noexcept {return data_;}
+          const value_t& operator ->() const noexcept {return data_;}
           /// @brief Returns pointer to the current element, or a proxy holding it.
           /// @return The pointer to the current element.
-          value_t operator ->() noexcept {return data_;}
+          value_t& operator ->() noexcept {return data_;}
           
           /// @brief Pre increments the underlying iterator.
           /// @return The underlying iterator.
