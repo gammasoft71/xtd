@@ -96,7 +96,7 @@ namespace xtd {
           /// @brief Add operator with specified value.
           /// @param value The number to add to the underlying iterator.
           /// @return The underlying iterator.
-          wrap_pointer_reverse_iterator operator +(xtd::size value) const noexcept {return wrap_pointer_reverse_iterator {data_ - value};}
+          wrap_pointer_reverse_iterator operator +(xtd::size value) const noexcept {return wrap_pointer_reverse_iterator {data_ - value + 1};}
           /// @brief Subtract The specified iterator from the current iterator.
           /// @param value The iterator to subtract from the current iterator.
           /// @return The difference between current iterator and the specified iterator.
