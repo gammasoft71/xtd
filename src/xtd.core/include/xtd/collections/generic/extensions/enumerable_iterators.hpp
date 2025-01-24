@@ -148,7 +148,6 @@ namespace xtd {
             /// @return The underlying iterator.
             template<class value_t>
             iterator operator +(value_t value) const noexcept {return iterator {*this, value};}
-            
             /// @brief Subtract The specified iterator from the current iterator.
             /// @param value The iterator to subtract from the current iterator.
             /// @return The difference between current iterator and the specified iterator.
