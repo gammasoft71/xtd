@@ -99,15 +99,21 @@ namespace xtd {
     
     /// @{
     span() = default;
+    template<class iterator_t>
+    explicit span(iterator_t first, iterator_t last) : data_ {const_cast<type_t*>(&(*first))}, size_ {static_cast<size_type>(std::distance(first, last))} {}
+    template<class iterator_t>
+    explicit span(iterator_t first, size_type count) : data_ {const_cast<type_t*>(&(*first))}, size_ {count} {}
     template<class collection_t>
     explicit span(const collection_t& items) : data_ {const_cast<type_t*>(items.data())}, size_ {items.size()} {}
     template<class collection_t>
     explicit span(collection_t& items) : data_ {items.data()}, size_ {items.size()} {}
-    explicit span(const type_t* data) : data_ {const_cast<type_t*>(data)} {}
-    explicit span(type_t* data) : data_ {data} {}
-
+    explicit span(std::initializer_list<type_t> items) : data_ {const_cast<type_t*>(&(*items.begin()))}, size_ {items.size()} {}
     explicit span(const type_t* data, size_type size) : data_ {const_cast<type_t*>(data)}, size_ {size} {}
     explicit span(type_t* data, size_type size) : data_ {data}, size_ {size} {}
+    template<std::size_t len_>
+    constexpr span(const type_t (&array)[len_] ) noexcept : data_ {array}, size_ {len_} {}
+    template<std::size_t len_>
+    constexpr span(type_t (&array)[len_] ) noexcept : data_ {array}, size_ {len_} {}
 
     span(span&& items) = default;
     span(const span& items) = default;
@@ -171,13 +177,13 @@ namespace xtd {
     template<xtd::size count__>
     span<element_type, count__> first() const {
       if (count__ > size_) throw argument_out_of_range_exception {};
-      return span<element_type, count__> {data_};
+      return span<element_type, count__> {data_, count__};
     }
     
     template<xtd::size count__>
     span<type_t, count__> last() const {
       if (count__ > size_) throw argument_out_of_range_exception {};
-      return span<type_t, count__> {data_ + size_ - count__};
+      return span<type_t, count__> {data_ + size_ - count__, count__};
     }
     
     span<type_t> subspan(size_type offset, size_type count) const {
