@@ -247,6 +247,7 @@ add_sources(
   src/xtd/tests/single_object_tests.cpp
   src/xtd/tests/signal_tests.cpp
   src/xtd/tests/software_termination_exception_tests.cpp
+  src/xtd/tests/span_tests.cpp
   src/xtd/tests/standard_name.hpp
   src/xtd/tests/string_comparer_tests.cpp
   src/xtd/tests/string_comparison_tests.cpp
