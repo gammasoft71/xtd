@@ -117,5 +117,40 @@ namespace xtd::collections::generic::helpers::tests {
       assert::are_equal(*(a.data() + a.size() - 1), *(i++));
       assert::are_equal(*(a.data() + a.size() - 2), *i);
     }
+
+    void test_method_(add_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto i = wrap_pointer_reverse_iterator<int*> {a.data() + a.size()};
+      assert::are_equal(*(a.data() + a.size() - 1), *i);
+      i = i + 2;
+      assert::are_equal(*(a.data() + a.size() - 3), *i);
+    }
+    
+    void test_method_(minus_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto i1 = wrap_pointer_reverse_iterator<int*> {a.data() + a.size()};
+      auto i2 = wrap_pointer_reverse_iterator<int*> {a.data() + a.size() - 3};
+      assert::are_equal(3, i2 - i1);
+    }
+    
+    void test_method_(equal_to_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto i1 = wrap_pointer_reverse_iterator<int*> {a.data() + a.size()};
+      auto i2 = wrap_pointer_reverse_iterator<int*> {a.data() + a.size()};
+      auto i3 = wrap_pointer_reverse_iterator<int*> {a.data() + a.size() - 3};
+      assert::is_true(i1 == i2);
+      assert::is_false(i1 == i3);
+      assert::is_false(i2 == i3);
+    }
+    
+    void test_method_(not_equal_to_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto i1 = wrap_pointer_reverse_iterator<int*> {a.data() + a.size()};
+      auto i2 = wrap_pointer_reverse_iterator<int*> {a.data() + a.size()};
+      auto i3 = wrap_pointer_reverse_iterator<int*> {a.data() + a.size() - 3};
+      assert::is_false(i1 != i2);
+      assert::is_true(i1 != i3);
+      assert::is_true(i2 != i3);
+    }
   };
 }
