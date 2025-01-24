@@ -6,6 +6,7 @@
 #include "collections/generic/helpers/wrap_pointer_reverse_iterator.hpp"
 #include "argument_null_exception.hpp"
 #include "argument_out_of_range_exception.hpp"
+#include "array.hpp"
 #include "dynamic_extent.hpp"
 #include "iequatable.hpp"
 #include "is.hpp"
@@ -77,7 +78,7 @@ namespace xtd {
       if (offset + count > items.size()) throw argument_out_of_range_exception {};
     }
     
-    explicit span(std::initializer_list<type_t> items) noexcept : data_ {const_cast<type_t*>(&(*items.begin()))}, length_ {extent != dynamic_extent ? extent : items.size()} {}
+    span(std::initializer_list<type_t> items) noexcept : data_ {const_cast<type_t*>(&(*items.begin()))}, length_ {extent != dynamic_extent ? extent : items.size()} {}
     
     span(const type_t* data, size_type size) : data_ {const_cast<type_t*>(data)}, length_ {extent != dynamic_extent ? extent : size} {
       if (!data) throw argument_null_exception {};
@@ -191,6 +192,11 @@ namespace xtd {
     
     span<type_t> subspan(size_type offset, size_type count) const {
       return slice(offset, count);
+    }
+    
+    xtd::array<type_t> to_array() const noexcept {
+      if (data_ == null || length_ == 0) return xtd::array<type_t> {};
+      return xtd::array<type_t> {data_, length_};
     }
     
     string to_string() const noexcept override {
