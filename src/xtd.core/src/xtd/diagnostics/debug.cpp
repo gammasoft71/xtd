@@ -207,5 +207,5 @@ bool debug::internal_show_assert_dialog() noexcept {
   for (auto listener : listeners())
     if (is<default_trace_listener>(listener) && as<default_trace_listener>(listener)->assert_ui_enabled())
       return true;
-  return false;;
+  return false;
 }
