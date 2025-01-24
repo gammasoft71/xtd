@@ -102,10 +102,10 @@ namespace xtd {
           /// @return The difference between current iterator and the specified iterator.
           xtd::ptrdiff operator -(wrap_pointer_iterator value) const noexcept {return data_ - value.data_;}
           
-          /// @biref The equality operator of specified underlyig itertators.
+          /// @brief The equality operator of specified underlyig itertators.
           /// @return true if underlying iterators are equels; otherwise false.
           bool operator ==(const wrap_pointer_iterator& rhs) const noexcept {return data_ == rhs.data_;}
-          /// @biref The inequality operator of specified underlyig itertators.
+          /// @brief The inequality operator of specified underlyig itertators.
           /// @return true if underlying iterators are not equels; otherwise false.
           bool operator !=(const wrap_pointer_iterator& rhs) const  noexcept {return !operator==(rhs);}
           /// @}
