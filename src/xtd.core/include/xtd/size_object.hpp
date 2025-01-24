@@ -7,6 +7,9 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @name Aliases
+  
+  /// @{
   /// @brief Represent a boxed size_t.
   /// @par Namespace
   /// xtd
@@ -23,4 +26,5 @@ namespace xtd {
   /// console::write_line("result = {}", result); // Display: result = 42;
   /// ```
   using size_object = box_integer<size_t>;
+  /// @}
 }

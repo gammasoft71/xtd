@@ -14,6 +14,9 @@ namespace xtd {
     namespace generic {
       /// @brief The xtd::collections::generic::helpers namespace contains helpers for generic collections, sush as comparer, equator an hasher structs.
       namespace helpers {
+        /// @name Aliases
+        
+        /// @{
         /// @brief Represents the value iterator type.
         /// @par Header
         /// ```cpp
@@ -65,6 +68,7 @@ namespace xtd {
         /// @ingroup xtd_core helpers_generic_collections
         template< class input_iterator_t >
         using iterator_to_allocator_t = std::pair<std::add_const_t<iterator_key_t<input_iterator_t>>, iterator_mapped_t<input_iterator_t>>;
+        /// @}
       }
     }
   }

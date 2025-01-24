@@ -12,6 +12,9 @@ namespace xtd {
     namespace generic {
       /// @brief The xtd::collections::generic::helpers namespace contains helpers for generic collections, sush as comparer, equator an hasher structs.
       namespace helpers {
+        /// @name Aliases
+        
+        /// @{
         /// @brief Represent an allocator alias.
         /// @par Header
         /// ```cpp
@@ -33,6 +36,7 @@ namespace xtd {
         /// ```
         template<class type_t>
         using allocator = std::allocator<type_t>;
+        /// @}
       }
     }
   }

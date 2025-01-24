@@ -8,6 +8,9 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {  
+  /// @name Aliases
+  
+  /// @{
   /// @brief Represents the type to array type.
   /// @par Header
   /// ```cpp
@@ -20,8 +23,9 @@ namespace xtd {
   /// @ingroup xtd_core system
   template<class type_t>
   using type_to_array_t = typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type;
+  /// @}
   
-/// @brief Base object that represent array.
+  /// @brief Base object that represent array.
   /// @par Definition
   /// ```cpp
   /// template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_t>>
