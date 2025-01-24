@@ -106,7 +106,7 @@ string color_translator::to_html(const color& value) noexcept {
 }
 
 string color_translator::to_rgb(const color& value) noexcept {
-  return to_rgb(value, false);;
+  return to_rgb(value, false);
 }
 
 string color_translator::to_rgb(const color& value, bool auto_rgba) noexcept {

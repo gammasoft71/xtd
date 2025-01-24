@@ -543,7 +543,7 @@ namespace xtd {
           if (count() != rhs.count()) return false;
           for (size_type i = 0; i < count(); i++)
             if (!helpers::equator<type_t> {}(at(i), rhs.at(i))) return false;
-          return data_->version == rhs.data_->version;;
+          return data_->version == rhs.data_->version;
         }
         
         /// @brief Erases the specified elements from the container.

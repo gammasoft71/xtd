@@ -45,7 +45,7 @@ namespace {
     auto frame_strings = xtd::native::macos::strings::split(xtd::native::macos::shell_execute::run(ss.str()), {'\n'});
     auto frames = ::frame_collection {};
     for (auto index = size_t {}; index < frame_strings.size(); ++index) {
-      if (frame_strings[index].size() < 2) continue;;
+      if (frame_strings[index].size() < 2) continue;
       frame_strings[index].erase(frame_strings[index].begin() + frame_strings[index].size() - 1, frame_strings[index].end());
       auto method = string {};
       if (frame_strings[index].find(" (in") != frame_strings[index].npos) {
