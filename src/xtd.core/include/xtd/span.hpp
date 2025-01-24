@@ -107,14 +107,17 @@ namespace xtd {
     explicit span(const collection_t& items) : data_ {const_cast<type_t*>(items.data())}, size_ {items.size()} {}
     template<class collection_t>
     explicit span(collection_t& items) : data_ {items.data()}, size_ {items.size()} {}
-    explicit span(std::initializer_list<type_t> items) : data_ {const_cast<type_t*>(&(*items.begin()))}, size_ {items.size()} {}
+    explicit span(std::initializer_list<type_t> items) noexcept : data_ {const_cast<type_t*>(&(*items.begin()))}, size_ {items.size()} {}
     explicit span(const type_t* data, size_type size) : data_ {const_cast<type_t*>(data)}, size_ {size} {}
     explicit span(type_t* data, size_type size) : data_ {data}, size_ {size} {}
-    template<std::size_t len_>
-    constexpr span(const type_t (&array)[len_] ) noexcept : data_ {array}, size_ {len_} {}
-    template<std::size_t len_>
-    constexpr span(type_t (&array)[len_] ) noexcept : data_ {array}, size_ {len_} {}
-
+    template<xtd::size len_>
+    constexpr span(const type_t (&array)[len_]) noexcept : data_ {array}, size_ {len_} {}
+    template<xtd::size len_>
+    constexpr span(type_t (&array)[len_]) noexcept : data_ {array}, size_ {len_} {}
+    template< class array_type_t, xtd::size len_>
+    constexpr span(const std::array<array_type_t, len_>& array) noexcept : data_ {const_cast<type_t*>(array.data())}, size_ {len_} {}
+    template< class array_type_t, xtd::size len_>
+    constexpr span(std::array<array_type_t, len_>& array) noexcept : data_ {array.data()}, size_ {len_} {}
     span(span&& items) = default;
     span(const span& items) = default;
 
