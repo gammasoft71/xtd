@@ -1,10 +1,8 @@
 /// @file
-/// @brief Contains xtd::collections::generic::helpers::wrap_pointer_reverse_iterator class.
+/// @brief Contains xtd::collections::generic::helpers::wrap_pointer_reverse_iterator alias.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include "../../../ptrdiff.hpp"
-#include "../../../size.hpp"
-#include <iterator>
+#include "wrap_pointer_iterator.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -17,8 +15,8 @@ namespace xtd {
         /// @brief Represents a wrap pointer reverse iterator.
         /// @par Definition
         /// ```cpp
-        /// template<class value_t>
-        /// class wrap_pointer_reverse_iterator;
+        /// template<class value_t, class iterator_tag_t = std::random_access_iterator_tag>
+        /// using wrap_pointer_reverse_iterator = std::reverse_iterator<wrap_pointer_iterator<value_t, iterator_tag_t>>;
         /// ```
         /// @par Header
         /// ```cpp
@@ -29,90 +27,8 @@ namespace xtd {
         /// @par Library
         /// xtd.core
         /// @ingroup xtd_core helpers_generic_collections
-        template<class value_t>
-        class wrap_pointer_reverse_iterator {
-        public:
-          /// @name Public Aliases
-          
-          /// @{
-          /// @brief Represents the value type.
-          using value_type = value_t;
-          /// @brief Represents the iterator category type.
-          using iterator_category = std::forward_iterator_tag;
-          /// @brief Represents the value type.
-          using difference_type = xtd::ptrdiff;
-          /// @brief Represents the pointer of the value type.
-          using pointer = value_type*;
-          /// @brief Represents the const pointer of the value type.
-          using const_pointer = const value_type*;
-          /// @brief Represents the reference of the value type.
-          using reference = value_type&;
-          /// @brief Represents the const reference of the value type.
-          using const_reference = const value_type&;
-          /// @}
-
-          /// @name Public Constructors
-          
-          /// @{
-          /// @brief Initializes a new instance of the xtd::collections::generic::helpers::wrap_pointer_reverse_iterator class with specified pointer value.
-          /// @param pointer The pointer value.
-          explicit wrap_pointer_reverse_iterator(value_t data) noexcept : data_ {data - 1} {}
-          /// @}
-
-          /// @name Public Properties
-          
-          /// @{
-          /// @brief Gets iterator data.
-          /// @return The iterator data.
-          const value_t& data() const noexcept {return data_;}
-          /// @brief Gets iterator data.
-          /// @return The iterator data.
-          value_t& data() noexcept {return data_;}
-          /// @}
-
-          /// @name Public Operators
-          
-          /// @{
-          /// @brief Returns reference to the current element, or a proxy holding it.
-          /// @return The reference to the current element.
-          const std::remove_pointer_t<value_t>& operator *() const noexcept {return *data_;}
-          /// @brief Returns reference to the current element, or a proxy holding it.
-          /// @return The reference to the current element.
-          std::remove_pointer_t<value_t>& operator *() noexcept {return *data_;}
-          /// @brief Returns pointer to the current element, or a proxy holding it.
-          /// @return The pointer to the current element.
-          const value_t& operator ->() const noexcept {return data_;}
-          /// @brief Returns pointer to the current element, or a proxy holding it.
-          /// @return The pointer to the current element.
-          value_t& operator ->() noexcept {return data_;}
-          
-          /// @brief Pre increments the underlying iterator.
-          /// @return The underlying iterator.
-          wrap_pointer_reverse_iterator& operator ++() const noexcept {--data_; return *const_cast<wrap_pointer_reverse_iterator*>(this);}
-          /// @brief Post increments the underlying iterator.
-          /// @return The underlying iterator.
-          wrap_pointer_reverse_iterator operator ++(int) const noexcept {auto current = *this; operator ++(); return current;}
-          
-          /// @brief Add operator with specified value.
-          /// @param value The number to add to the underlying iterator.
-          /// @return The underlying iterator.
-          wrap_pointer_reverse_iterator operator +(xtd::size value) const noexcept {return wrap_pointer_reverse_iterator {data_ - value + 1};}
-          /// @brief Subtract The specified iterator from the current iterator.
-          /// @param value The iterator to subtract from the current iterator.
-          /// @return The difference between current iterator and the specified iterator.
-          xtd::ptrdiff operator -(wrap_pointer_reverse_iterator value) const noexcept {return  value.data_ - data_;}
-          
-          /// @brief The equality operator of specified underlyig itertators.
-          /// @return true if underlying iterators are equels; otherwise false.
-          bool operator ==(const wrap_pointer_reverse_iterator& rhs) const noexcept {return data_ == rhs.data_;}
-          /// @brief The inequality operator of specified underlyig itertators.
-          /// @return true if underlying iterators are not equels; otherwise false.
-          bool operator !=(const wrap_pointer_reverse_iterator& rhs) const noexcept {return !operator==(rhs);}
-          /// @}
-          
-        private:
-          mutable value_t data_ = nullptr;
-        };
+        template<class value_t, class iterator_tag_t = std::random_access_iterator_tag>
+        using wrap_pointer_reverse_iterator = std::reverse_iterator<wrap_pointer_iterator<value_t, iterator_tag_t>>;
       }
     }
   }
