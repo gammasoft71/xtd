@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "collections/generic/helpers/wrap_pointer_iterator.hpp"
-#include "collections/generic/helpers/wrap_pointer_reverse_iterator.hpp"
 #include "argument_null_exception.hpp"
 #include "argument_out_of_range_exception.hpp"
 #include "array.hpp"
@@ -62,9 +61,9 @@ namespace xtd {
     /// @brief Represents the const iterator of span value type.
     using const_iterator = const xtd::collections::generic::helpers::wrap_pointer_iterator<pointer>;
     /// @brief Represents the reverse iterator of span value type.
-    using reverse_iterator = xtd::collections::generic::helpers::wrap_pointer_reverse_iterator<pointer>;
+    using reverse_iterator = std::reverse_iterator<iterator>;
     /// @brief Represents the const reverse iterator of span value type.
-    using const_reverse_iterator = xtd::collections::generic::helpers::wrap_pointer_reverse_iterator<pointer>;
+    using const_reverse_iterator = const std::reverse_iterator<iterator>;
     /// @}
     
     /// @name Public Constructors
@@ -137,8 +136,8 @@ namespace xtd {
     const_iterator cbegin() const {return const_iterator {data_};}
     const_iterator cend() const {return const_iterator {data_ + length_};}
     
-    const_reverse_iterator crbegin() const {return const_reverse_iterator {data_ + length_};}
-    reverse_iterator crend() const {return reverse_iterator {data_};}
+    const_reverse_iterator crbegin() const {return const_reverse_iterator {iterator {data_ + length_}};}
+    const_reverse_iterator crend() const {return const_reverse_iterator {iterator {data_}};}
     
     constexpr const_pointer data() const noexcept {return data_;}
     
@@ -157,10 +156,10 @@ namespace xtd {
     constexpr size_type length() const noexcept {return length_;}
 
     const_reverse_iterator rbegin() const {return crbegin();}
-    reverse_iterator rbegin() {return reverse_iterator {data_ + length_};}
+    reverse_iterator rbegin() {return reverse_iterator {iterator {data_ + length_}};}
     
     const_reverse_iterator rend() const {return crend();}
-    reverse_iterator rend() {return reverse_iterator {data_};}
+    reverse_iterator rend() {return reverse_iterator {iterator {data_}};}
     
     constexpr size_type size() const noexcept {return length();}
     
