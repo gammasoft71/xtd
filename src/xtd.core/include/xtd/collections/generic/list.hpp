@@ -878,7 +878,7 @@ namespace xtd {
         /// @par Examples
         /// The following code example demonstrates the xtd::collections::generic::list <type_t> constructor and various methods of the xtd::collections::generic::list <type_t> class that act on ranges. An array of strings is created and passed to the constructor, populating the list with the elements of the array. The xtd::collections::generic::list::capacity property is then displayed, to show that the initial capacity is exactly what is required to hold the input elements.
         /// @include generic_list3.cpp
-        virtual xtd::array<value_type> to_array() const noexcept {return xtd::array<value_type>(begin(), end());}
+        virtual xtd::array<value_type> to_array() const noexcept {return xtd::array<value_type>(data(), size());}
         
         string to_string() const noexcept override {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}
                 
