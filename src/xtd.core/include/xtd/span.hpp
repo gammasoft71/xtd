@@ -19,6 +19,22 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @brief Represents a non-owning view over a contiguous sequence of objects.
+  /// @par Definition
+  /// ```cpp
+  /// template<class type_t, xtd::size extent = dynamic_extent>
+  /// class span : public xtd::object, public xtd::iequatable<xtd::span<type_t, extent>>;
+  /// ```
+  /// @par Header
+  /// ```cpp
+  /// #include <xtd/span>
+  /// ```
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core system
+  /// @remarks The class template xtd::span describes an object that can refer to a contiguous sequence of objects with the first element of the sequence at position zero. A span can either have a static extent, in which case the number of elements in the sequence is known at compile-time and encoded in the type, or a dynamic extent.
   template<class type_t, xtd::size extent = dynamic_extent>
   class span : public xtd::object, public xtd::iequatable<xtd::span<type_t, extent>> {
   public:
@@ -54,17 +70,20 @@ namespace xtd {
     /// @name Public Constructors
     
     /// @{
-    
+    /// @brief Creates an empty xtd::span whose xtd::span::data is null and xtd::span::size is 0.
     template <xtd::size count = 0>
     span() : data_ {xtd::null}, length_ {0} {};
     
+    /// @brief 
     template<class iterator_t>
     span(iterator_t first, iterator_t last) : data_ {const_cast<type_t*>(&(*first))}, length_ {extent != dynamic_extent ? extent : static_cast<size_type>(std::distance(first, last))} {}
     
+    template<class range_t>
+    span(range_t&& range) noexcept : data_ {const_cast<type_t*>(range.data())}, length_ {extent != dynamic_extent ? extent : range.size()} {}
     template<class collection_t>
-    explicit span(const collection_t& items) noexcept : span {items, size_type {0}, items.size()} {}
+    span(const collection_t& items) noexcept : span {items, size_type {0}, items.size()} {}
     template<class collection_t>
-    explicit span(collection_t& items) noexcept : span {items, size_type {0}, items.size()} {}
+    span(collection_t& items) noexcept : span {items, size_type {0}, items.size()} {}
     template<class collection_t>
     span(const collection_t& items, xtd::size count) : span {items, size_type {0}, count} {}
     template<class collection_t>
@@ -223,15 +242,18 @@ namespace xtd {
   template<class iterator_t>
   span(iterator_t first, iterator_t last) -> span<typename iterator_t::value_type>;
   
-  template<class collection_t>
-  explicit span(const collection_t& items) noexcept -> span<typename collection_t::value_type>;
+  template<class range_t>
+  span(range_t&& items) noexcept -> span<typename range_t::value_type>;
   
   template<class collection_t>
-  explicit span(collection_t& items) noexcept -> span<typename collection_t::value_type>;
+  span(const collection_t& items) noexcept -> span<typename collection_t::value_type>;
+  
+  template<class collection_t>
+  span(collection_t& items) noexcept -> span<typename collection_t::value_type>;
   
   template<class collection_t>
   span(const collection_t& items, xtd::size) -> span<typename collection_t::value_type>;
-  
+
   template<class collection_t>
   span(collection_t& items, xtd::size) -> span<typename collection_t::value_type>;
   
