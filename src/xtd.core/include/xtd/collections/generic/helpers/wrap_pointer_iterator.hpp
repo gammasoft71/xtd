@@ -2,6 +2,8 @@
 /// @brief Contains xtd::collections::generic::helpers::wrap_pointer_iterator class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "../../../icomparable.hpp"
+#include "../../../iequatable.hpp"
 #include "../../../ptrdiff.hpp"
 #include "../../../size.hpp"
 #include <iterator>
@@ -29,8 +31,8 @@ namespace xtd {
         /// @par Library
         /// xtd.core
         /// @ingroup xtd_core helpers_generic_collections
-        template<class value_t>
-        class wrap_pointer_iterator {
+        template<class value_t, class iterator_tag_t = std::random_access_iterator_tag>
+        class wrap_pointer_iterator : public xtd::icomparable<wrap_pointer_iterator<value_t, iterator_tag_t>>, public xtd::iequatable<wrap_pointer_iterator<value_t, iterator_tag_t>> {
         public:
           /// @name Public Aliases
           
@@ -38,7 +40,9 @@ namespace xtd {
           /// @brief Represents the value type.
           using value_type = value_t;
           /// @brief Represents the iterator category type.
-          using iterator_category = std::forward_iterator_tag;
+          using iterator_category = iterator_tag_t;
+          /// @brief Represents the iterator concept type.
+          using iterator_concept  = iterator_tag_t;
           /// @brief Represents the value type.
           using difference_type = xtd::ptrdiff;
           /// @brief Represents the pointer of the value type.
@@ -54,11 +58,20 @@ namespace xtd {
           /// @name Public Constructors
           
           /// @{
+          /// @brief Initializes a new instance of the xtd::collections::generic::helpers::wrap_pointer_iterator class.
+          wrap_pointer_iterator() = default;
           /// @brief Initializes a new instance of the xtd::collections::generic::helpers::wrap_pointer_iterator class with specified pointer value.
           /// @param pointer The pointer value.
           explicit wrap_pointer_iterator(value_t pointer) noexcept : data_ {pointer} {}
           /// @}
 
+          /// @cond
+          wrap_pointer_iterator(const wrap_pointer_iterator& value) noexcept = default;
+          wrap_pointer_iterator& operator =(const wrap_pointer_iterator& value) noexcept = default;
+          wrap_pointer_iterator(wrap_pointer_iterator&& value) noexcept = default;
+          wrap_pointer_iterator& operator =(wrap_pointer_iterator&& value) noexcept = default;
+          /// @endcond
+          
           /// @name Public Properties
           
           /// @{
@@ -68,6 +81,13 @@ namespace xtd {
           /// @brief Gets iterator data.
           /// @return The iterator data.
           value_t& data() noexcept {return data_;}
+          /// @}
+
+          /// @name Public methods
+          
+          /// @{
+          int32 compare_to(const wrap_pointer_iterator& rhs) const noexcept override {return data_ < rhs.data_ ? -1 : data_ > rhs.data_ ? 1 : 0;}
+          bool equals(const wrap_pointer_iterator& rhs) const noexcept override {return data_ == rhs.data_;}
           /// @}
 
           /// @name Public Operators
@@ -93,21 +113,25 @@ namespace xtd {
           /// @return The underlying iterator.
           wrap_pointer_iterator operator ++(int) const noexcept {auto current = *this; operator ++(); return current;}
           
+          /// @brief Pre decrements the underlying iterator.
+          /// @return The underlying iterator.
+          wrap_pointer_iterator& operator --() const noexcept {--data_; return *const_cast<wrap_pointer_iterator*>(this);}
+          /// @brief Post decrements the underlying iterator.
+          /// @return The underlying iterator.
+          wrap_pointer_iterator operator --(int) const noexcept {auto current = *this; operator --(); return current;}
+          
           /// @brief Add operator with specified value.
           /// @param value The number to add to the underlying iterator.
           /// @return The underlying iterator.
           wrap_pointer_iterator operator +(xtd::size value) const noexcept {return wrap_pointer_iterator {data_ + value};}
+          /// @brief Add equal operator with specified value.
+          /// @param value The number to add to the underlying iterator.
+          /// @return The underlying iterator.
+          wrap_pointer_iterator& operator +=(xtd::size value) noexcept {*this = *this + value; return *this;}
           /// @brief Subtract The specified iterator from the current iterator.
           /// @param value The iterator to subtract from the current iterator.
           /// @return The difference between current iterator and the specified iterator.
           xtd::ptrdiff operator -(wrap_pointer_iterator value) const noexcept {return data_ - value.data_;}
-          
-          /// @brief The equality operator of specified underlyig itertators.
-          /// @return true if underlying iterators are equels; otherwise false.
-          bool operator ==(const wrap_pointer_iterator& rhs) const noexcept {return data_ == rhs.data_;}
-          /// @brief The inequality operator of specified underlyig itertators.
-          /// @return true if underlying iterators are not equels; otherwise false.
-          bool operator !=(const wrap_pointer_iterator& rhs) const  noexcept {return !operator==(rhs);}
           /// @}
 
         private:
