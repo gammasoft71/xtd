@@ -7,7 +7,6 @@ include(../../scripts/cmake/xtd_version.cmake)
 add_sources(
   src/main.cpp 
   src/xtd/collections/generic/helpers/tests/wrap_pointer_iterator_tests.cpp
-  src/xtd/collections/generic/helpers/tests/wrap_pointer_reverse_iterator_tests.cpp
   src/xtd/collections/generic/tests/comparer_tests.cpp
   src/xtd/collections/generic/tests/dictionary_tests.cpp
   src/xtd/collections/generic/tests/key_not_found_exception_tests.cpp
