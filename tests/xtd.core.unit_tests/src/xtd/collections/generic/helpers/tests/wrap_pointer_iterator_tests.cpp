@@ -16,7 +16,7 @@ namespace xtd::collections::generic::helpers::tests {
     }
     
     void test_method_(iterator_category) {
-      assert::are_equal(typeof_<std::forward_iterator_tag>(), typeof_<wrap_pointer_iterator<int*>::iterator_category>());
+      assert::are_equal(typeof_<std::bidirectional_iterator_tag>(), typeof_<wrap_pointer_iterator<int*>::iterator_category>());
     }
     
     void test_method_(difference_type) {
