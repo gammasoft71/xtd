@@ -3,6 +3,8 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../enumerator.hpp"
+#include "../../../icomparable.hpp"
+#include "../../../iequatable.hpp"
 #include "../../../ptrdiff.hpp"
 #include "../../../size.hpp"
 #include <limits>
@@ -42,14 +44,14 @@ namespace xtd {
         ///   console::write_line(part);
         /// ```
         /// @warning Internal use only for xtd::collections::generic::ienumerable interfece.
-        template<class type_t, class enumerable_t>
+        template<class type_t, class enumerable_t, class iterator_tag_t =  std::bidirectional_iterator_tag>
         class enumerable_iterators {
         public:
           /// @name Public Classes
           
           /// @{
           /// @brief Represents the iterator of enumarable value type.
-          class iterator {
+          class iterator : public xtd::icomparable<iterator>, public xtd::iequatable<iterator> {
           public:
             /// @name Public Aliases
             
@@ -57,7 +59,9 @@ namespace xtd {
             /// @brief Represents the value type.
             using value_type = type_t;
             /// @brief Represents the iterator category type.
-            using iterator_category = std::forward_iterator_tag;
+            using iterator_category = iterator_tag_t;
+            /// @brief Represents the iterator concept type.
+            using iterator_concept  = iterator_tag_t;
             /// @brief Represents the value type.
             using difference_type = xtd::ptrdiff;
             /// @brief Represents the pointer of the value type.
@@ -103,15 +107,23 @@ namespace xtd {
             
             /// @cond
             iterator(const iterator& value) noexcept : enumerable_(value.enumerable_), enumerator_(value.enumerable_->get_enumerator()), pos_ {value.pos_} {reset();}
-            iterator(iterator&& value) = default;
-            iterator& operator =(const iterator& value) const noexcept {
+            iterator& operator =(const iterator& value) noexcept {
               enumerable_ = value.enumerable_;
               enumerator_ = value.enumerable_->get_enumerator();
               pos_ = value.pos_;
               reset();
               return const_cast<iterator&>(*this);
             }
+            iterator(iterator&& value) noexcept = default;
+            iterator& operator =(iterator&& value) noexcept = default;
             /// @endcond
+            
+            /// @name Public Methods
+            
+            /// @{
+            int32 compare_to(const iterator& rhs) const noexcept override {return pos_ < rhs.pos_ ? -1 : pos_ > rhs.pos_ ? 1 : 0;}
+            bool equals(const iterator& rhs) const noexcept override {return pos_ == rhs.pos_;}
+            /// @}
             
             /// @name Public Operators
             
@@ -143,11 +155,33 @@ namespace xtd {
               return current;
             }
             
+            /// @brief Pre decrements the underlying iterator.
+            /// @return The underlying iterator.
+            iterator& operator --() const noexcept {
+              if (pos_ != 0) pos_ = enumerator_.move_next() ? pos_ - 1 : std::numeric_limits<xtd::size>::max();
+              return const_cast<iterator&>(*this);
+            }
+            /// @brief Post decrements the underlying iterator.
+            /// @return The underlying iterator.
+            iterator operator --(int) const noexcept {
+              auto current = *this;
+              operator --();
+              return current;
+            }
+            
             /// @brief Add operator with specified value.
             /// @param value The number to add to the underlying iterator.
             /// @return The underlying iterator.
             template<class value_t>
             iterator operator +(value_t value) const noexcept {return iterator {*this, value};}
+            /// @brief Add equal operator with specified value.
+            /// @param value The number to add to the underlying iterator.
+            /// @return The underlying iterator.
+            template<class value_t>
+            iterator& operator +=(value_t value) noexcept {
+              *this =  *this + value;
+              return *this;
+            }
             /// @brief Subtract The specified iterator from the current iterator.
             /// @param value The iterator to subtract from the current iterator.
             /// @return The difference between current iterator and the specified iterator.
@@ -155,13 +189,6 @@ namespace xtd {
               if (pos_ == std::numeric_limits<xtd::size>::max()) return std::numeric_limits<xtd::size>::max();
               return static_cast<difference_type>(pos_ - value.pos_);
             }
-            
-            /// @biref The equality operator of specified underlyig itertators.
-            /// @return true if underlying iterators are equels; otherwise false.
-            friend bool operator ==(const iterator& a, const iterator& b) noexcept {return a.pos_ == b.pos_;}
-            /// @biref The inequality operator of specified underlyig itertators.
-            /// @return true if underlying iterators are not equels; otherwise false.
-            friend bool operator !=(const iterator& a, const iterator& b) noexcept {return !operator==(a, b);}
             /// @}
             
           private:
