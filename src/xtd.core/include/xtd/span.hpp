@@ -212,7 +212,7 @@ namespace xtd {
     
     /// @brief Returns an empty xtd::span <type_t> object.
     /// @return An empty xtd::span <type_t> object.
-    inline static const span empty_span;
+    static const span empty_span;
     
     /// @brief Returns an iterator to the end.
     /// @return The iterator to the element following the last element.
@@ -434,6 +434,9 @@ namespace xtd {
     pointer data_ = null;
     size_type length_ = size_type {};
   };
+  
+  template<class type_t, xtd::size extent>
+  inline const span<type_t, extent> span<type_t, extent>::empty_span;
   
   /// @cond
   // C++17 deduction guides for xtd::span
