@@ -11,6 +11,7 @@
 #include "array.hpp"
 #include "dynamic_extent.hpp"
 #include "iequatable.hpp"
+#include "index_out_of_range_exception.hpp"
 #include "is.hpp"
 #include "null.hpp"
 #include "object.hpp"
@@ -172,65 +173,135 @@ namespace xtd {
     /// @name Public Properties
     
     /// @{
+    /// @brief Gets the last element.
+    /// @return The last element.
+    /// @exception argument_out_of_range_exception if xtd::san i empty.
     const_reference back() const {
       if (empty()) throw argument_out_of_range_exception {};
       return *(data_ + length_ - 1);
     }
     
+    /// @brief Returns an iterator to the beginning.
+    /// @return The iterator of the first element.
     const_iterator begin() const {return cbegin();}
+    /// @brief Returns an iterator to the beginning.
+    /// @return The iterator of the first element.
     iterator begin() {return iterator {data_};}
     
+    /// @brief Returns an iterator to the beginning.
+    /// @return The iterator of the first element.
     const_iterator cbegin() const {return const_iterator {data_};}
+    /// @brief Returns an iterator to the end.
+    /// @return The iterator to the element following the last element.
     const_iterator cend() const {return const_iterator {data_ + length_};}
     
+    /// @brief Returns a reverse iterator to the beginning.
+    /// @return The reverse iterator of the first element.
     const_reverse_iterator crbegin() const {return const_reverse_iterator {iterator {data_ + length_}};}
+    /// @brief Returns a reverse iterator to the end.
+    /// @return The reverse iterator to the element following the last element.
     const_reverse_iterator crend() const {return const_reverse_iterator {iterator {data_}};}
     
+    /// @brief Gets direct access to the underlying contiguous storage
+    /// @return A pointer to the beginning of the sequence.
     constexpr const_pointer data() const noexcept {return data_;}
     
+    /// @brief Returns a value that indicates whether the current xtd::span <type_t> is empty.
+    /// @return `true` if the current span is empty; otherwise, `false`.
     constexpr bool empty() const noexcept {return is_empty();}
     
+    /// @brief Returns an empty xtd::span <type_t> object.
+    /// @return An empty xtd::span <type_t> object.
+    inline static const span empty_span;
+    
+    /// @brief Returns an iterator to the end.
+    /// @return The iterator to the element following the last element.
     const_iterator end() const {return cend();}
+    /// @brief Returns an iterator to the end.
+    /// @return The iterator to the element following the last element.
     iterator end() {return iterator {data_ + length_};}
     
+    /// @brief Gets the first element.
+    /// @return The first element.
+    /// @exception argument_out_of_range_exception if xtd::san i empty.
     const_reference front() const {
       if (empty()) throw argument_out_of_range_exception {};
       return *data_;
     }
     
+    /// @brief Returns a value that indicates whether the current xtd::span <type_t> is empty.
+    /// @return `true` if the current span is empty; otherwise, `false`.
     constexpr bool is_empty() const noexcept {return !length_;}
 
+    /// @brief Returns the length of the current span.
+    /// @return The length of the current span.
     constexpr size_type length() const noexcept {return length_;}
 
+    /// @brief Returns a reverse iterator to the beginning.
+    /// @return The reverse iterator of the first element.
     const_reverse_iterator rbegin() const {return crbegin();}
+    /// @brief Returns a reverse iterator to the beginning.
+    /// @return The reverse iterator of the first element.
     reverse_iterator rbegin() {return reverse_iterator {iterator {data_ + length_}};}
     
+    /// @brief Returns a reverse iterator to the end.
+    /// @return The reverse iterator to the element following the last element.
     const_reverse_iterator rend() const {return crend();}
+    /// @brief Returns a reverse iterator to the end.
+    /// @return The reverse iterator to the element following the last element.
     reverse_iterator rend() {return reverse_iterator {iterator {data_}};}
     
+    /// @brief Returns the number of elements
+    /// @return The number of elements in the span.
     constexpr size_type size() const noexcept {return length();}
     
+    /// @brief Returns the size of the sequence in bytes
+    /// @return The size of the sequence in bytes, i.e., `size() * sizeof(element_type)`.
     constexpr size_type size_bytes() const noexcept {return length_ * sizeof(value_type);}
     /// @}
     
     /// @name Public Methods
     
     /// @{
-    const_reference at(size_type index) const {
-      if (index >= length_) throw argument_out_of_range_exception {};
-      return *(data_ + index);
+    /// @brief Gets the specified element with bounds checking.
+    /// @param pos The position of the element to return.
+    /// @return Reference to the requested element.
+    /// @exception xtd::index_out_of_range_exception `index` is less than zero or greater than or equal to xtd::span::length.
+    const_reference at(size_type pos) const {
+      if (pos >= length_) throw index_out_of_range_exception {};
+      return *(data_ + pos);
     }
-    reference at(size_type index) {
-      if (index >= length_) throw argument_out_of_range_exception {};
-      return *(data_ + index);
+    /// @brief Gets the specified element with bounds checking.
+    /// @param pos The position of the element to return.
+    /// @return Reference to the requested element.
+    /// @exception xtd::argument_out_of_range_exceptionv if pos greather or equal than length.
+    reference at(size_type pos) {
+      if (pos >= length_) throw index_out_of_range_exception {};
+      return *(data_ + pos);
     }
     
+    /// @brief Clears the contents of this xtd::span <type> object.
+    /// @remarks The xtd::span::clear method sets the items in the xtd::span <type_t> object to their default values. It does not remove items from the xtd::span <type_t>.
     void clear() noexcept {
       for (auto& item : *this)
         item = value_type {};
     }
     
+    /// @brief Copies the contents of this Span<T> into a destination xtd:span <type_t>.
+    /// @param destinaton The destination Span<T> object.
+    /// @exception xtd::argument_exception `destination` is shorter than the source xtd::span <type_t>.
+    void copy_to(span& destination) {
+      if (!try_copy_to(destination))
+        throw xtd::argument_exception {};
+    }
+
+    /// @brief Determines whether the specified object is equal to the current object.
+    /// @param obj The object to compare with the current object.
+    /// @return true if the specified object is equal to the current object. otherwise, false.
     bool equals(const object& obj) const noexcept override {return is<span<value_type>>(obj) && equals(static_cast<const span<value_type>&>(obj));}
+    /// @brief Indicates whether the current object is equal to another object of the same type.
+    /// @param obj An object to compare with this object.
+    /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
     bool equals(const span& rhs) const noexcept override {
       if (size() != rhs.size()) return false;
       for (size_type i = 0; i < size(); i++)
@@ -238,56 +309,124 @@ namespace xtd {
       return true;
     }
     
-    template<xtd::size count__>
-    span<element_type, count__> first() const {
-      if (count__ > length_) throw argument_out_of_range_exception {};
-      return span<element_type, count__> {data_, count__};
+    /// @brief Obtains a subspan consisting of the first `count` elements of the sequence.
+    /// @param count The count elements.
+    /// @return A span `r` that is a view over the first `count` elements of `*this`, such that `r.data() == this->data() && r.size() == count`.
+    template<xtd::size count>
+    span<element_type, count> first() const {
+      if (count > length_) throw argument_out_of_range_exception {};
+      return span<element_type, count> {data_, count};
     }
-    
-    template<xtd::size count__>
-    span<type_t, count__> last() const {
-      if (count__ > length_) throw argument_out_of_range_exception {};
-      return span<type_t, count__> {data_ + length_ - count__, count__};
+    /// @brief Obtains a subspan consisting of the first `count` elements of the sequence.
+    /// @param count The count elements.
+    /// @return A span `r` that is a view over the first `count` elements of `*this`, such that `r.data() == this->data() && r.size() == count`.
+    span<element_type> first(xtd::size count) const {
+      if (count > length_) throw argument_out_of_range_exception {};
+      return span<element_type> {data_, count};
     }
 
+    /// @brief Obtains a subspan consisting of the last N elements of the sequence
+    /// @param count The count elements.
+    /// @return A span `r` that is a view over the last `count` elements of `*this`, such that `r.data() == this->data() + (this->size() - count) && r.size() == count`.
+    template<xtd::size count>
+    span<type_t, count> last() const {
+      if (count > length_) throw argument_out_of_range_exception {};
+      return span<type_t, count> {data_ + length_ - count, count};
+    }
+    /// @brief Obtains a subspan consisting of the last N elements of the sequence
+    /// @param count The count elements.
+    /// @return A span `r` that is a view over the last `count` elements of `*this`, such that `r.data() == this->data() + (this->size() - count) && r.size() == count`.
+    span<type_t> last(xtd::size count) const {
+      if (count > length_) throw argument_out_of_range_exception {};
+      return span<type_t> {data_ + length_ - count, count};
+    }
+
+    /// @brief Forms a slice out of the current span starting at a specified index for a specified length.
+    /// @param start The zero-based index at which to begin this slice.
+    /// @param length The desired length for the slice.
+    /// @return A span that consists of length elements from the current span starting at start.
+    /// @exception xtd::argument_out_of_range_exception `start` or `start + length` is less than zero or greater than xtd::span::length.
     template<xtd::size start, size_type lenght = xtd::dynamic_extent>
     span<type_t> slice() const {
       return lenght == xtd::dynamic_extent ? slice(start) : slice(start, lenght);
     }
 
+    /// @brief Forms a slice out of the current span that begins at a specified index.
+    /// @param start The zero-based index at which to begin the slice.
+    /// @return A span that consists of all elements of the current span from `start` to the end of the span.
+    /// @exception xtd::argument_out_of_range_exception `start` is less than zero or greater than xtd::span::length.
     span<type_t> slice(size_type start) const {
       return slice(start, length_ - start);
     }
     
+    /// @brief Forms a slice out of the current span starting at a specified index for a specified length.
+    /// @param start The zero-based index at which to begin this slice.
+    /// @param length The desired length for the slice.
+    /// @return A span that consists of length elements from the current span starting at start.
+    /// @exception xtd::argument_out_of_range_exception `start` or `start + length` is less than zero or greater than xtd::span::length.
     span<type_t> slice(size_type start, size_type length) const {
       if (start + length > length_) throw argument_out_of_range_exception {};
       return span<type_t> {data_ + start, length};
     }
 
+    /// @brief Forms a subspan of the current span starting at a specified index for a specified length.
+    /// @param offset The zero-based index at which to begin this slice.
+    /// @param count The desired length for the slice.
+    /// @return A span that consists of length elements from the current span starting at start.
+    /// @exception xtd::argument_out_of_range_exception `offset` or `offset + count` is less than zero or greater than xtd::span::length.
     template<xtd::size offset, size_type count = xtd::dynamic_extent>
     span<type_t> subspan() const {
       return count == xtd::dynamic_extent ? slice(offset) : slice(offset, count);
     }
     
+    /// @brief Forms a subspan of the current span starting at a specified index for a specified length.
+    /// @param offset The zero-based index at which to begin this slice.
+    /// @param count The desired length for the slice.
+    /// @return A span that consists of length elements from the current span starting at start.
+    /// @exception xtd::argument_out_of_range_exception `offset` or `offset + count` is less than zero or greater than xtd::span::length.
     span<type_t> subspan(size_type offset, size_type count = xtd::dynamic_extent) const {
       return count == xtd::dynamic_extent ? slice(offset) : slice(offset, count);
     }
     
+    /// @brief Copies the contents of this span into a new array.
+    /// @return An array containing the data in the current span.
     xtd::array<type_t> to_array() const noexcept {
       if (data_ == null || length_ == 0) return xtd::array<type_t> {};
       return xtd::array<type_t> {data_, length_};
     }
     
+    /// @brief Returns the string representation of this xtd::span <type_t> object.
+    /// @return The string representation of this xtd::span <type_t> object.
+    /// @remarks For a xtd::span <type_t>, the xtd::span::to_string method returns a xtd::string that contains the characters pointed to by the xtd::span <type_t>. Otherwise, it returns a xtd::string with collection sequance string of the elements that the xtd::span <type_t> contains separated by `, `.
     string to_string() const noexcept override {
       if (typeof_<type_t>() == typeof_<char>()) return xtd::string::join("", *this);
       return xtd::string::format("[{}]", xtd::string::join(", ", *this));
+    }
+    
+    /// @brief Attempts to copy the current xtd::span <type_t> to a destination xtd::span <type_t> and returns a value that indicates whether the copy operation succeeded.
+    /// @param destination The target of the copy operation.
+    /// @return `true` if the copy operation succeeded; otherwise, `false`.
+    /// @remarks This method copies all of `source` to `destination` even if `source` and `destination` overlap.
+    bool try_copy_to(span& destination) noexcept {
+      if (destination.length() < length()) return false;
+      for (auto index = xtd::size {}; index < length_; ++index)
+        destination.at(index) = at(index);
+      return true;
     }
     /// @}
     
     /// @name Public Operators
     
     /// @{
+    /// @brief Gets the element at the specified zero-based index.
+    /// @param index The zero-based index of the element.
+    /// @return The element at the specified index.
+    /// @exception xtd::index_out_of_range_exception `index` is less than zero or greater than or equal to xtd::span::length.
     const_reference operator[](size_type index) const {return at(index);}
+    /// @brief Gets the element at the specified zero-based index.
+    /// @param index The zero-based index of the element.
+    /// @return The element at the specified index.
+    /// @exception xtd::index_out_of_range_exception `index` is less than zero or greater than or equal to xtd::span::length.
     reference operator[](size_type index) {return at(index);}
     /// @}
 
@@ -306,19 +445,10 @@ namespace xtd {
   span(range_t&& items) noexcept -> span<typename range_t::value_type>;
   
   template<class collection_t>
-  span(const collection_t& items) noexcept -> span<typename collection_t::value_type>;
-  
-  template<class collection_t>
   span(collection_t& items) noexcept -> span<typename collection_t::value_type>;
   
   template<class collection_t>
-  span(const collection_t& items, xtd::size) -> span<typename collection_t::value_type>;
-
-  template<class collection_t>
   span(collection_t& items, xtd::size) -> span<typename collection_t::value_type>;
-  
-  template<class collection_t>
-  span(const collection_t& items, xtd::size, xtd::size) -> span<typename collection_t::value_type>;
   
   template<class collection_t>
   span(collection_t& items, xtd::size, xtd::size) -> span<typename collection_t::value_type>;
@@ -327,22 +457,16 @@ namespace xtd {
   span(std::initializer_list<type_t>) noexcept -> span<type_t>;
   
   template<class type_t>
-  span(const type_t* data, xtd::size size) -> span<type_t>;
-  
-  template<class type_t>
   span(type_t* data, xtd::size size) -> span<type_t>;
-  
-  template<class type_t, xtd::size len>
-  span(const type_t (&array)[len]) noexcept -> span<type_t>;
   
   template<class type_t, xtd::size len>
   span(type_t (&array)[len]) noexcept -> span<type_t>;
   
   template< class type_t, xtd::size len>
-  span(const std::array<type_t, len>& array) noexcept -> span<type_t>;
-  
-  template< class type_t, xtd::size len>
   span(std::array<type_t, len>& array) noexcept -> span<type_t>;
+  
+  template< class type_t>
+  span(xtd::basic_string<type_t>& str) noexcept -> span<type_t>;
   // }
   /// @endcond
 }
