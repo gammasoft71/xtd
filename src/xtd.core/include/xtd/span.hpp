@@ -38,6 +38,12 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   /// @remarks The class template xtd::span describes an object that can refer to a contiguous sequence of objects with the first element of the sequence at position zero. A span can either have a static extent, in which case the number of elements in the sequence is known at compile-time and encoded in the type, or a dynamic extent.
+  /// @par Examples
+  /// Create a span from memory.
+  /// @include span_from_memory.cpp
+  ///
+  /// Create a span over an array.
+  /// @include span_over_array.cpp
   template<class type_t, xtd::size extent = dynamic_extent>
   class span : public xtd::object, public xtd::iequatable<xtd::span<type_t, extent>> {
   public:
@@ -253,14 +259,28 @@ namespace xtd {
       if (count__ > length_) throw argument_out_of_range_exception {};
       return span<type_t, count__> {data_ + length_ - count__, count__};
     }
-    
-    span<type_t> slice(size_type offset, size_type count) const {
-      if (offset + count > length_) throw argument_out_of_range_exception {};
-      return span<type_t> {data_ + offset, count};
+
+    template<xtd::size start, size_type lenght = xtd::dynamic_extent>
+    span<type_t> slice() const {
+      return lenght == xtd::dynamic_extent ? slice(start) : slice(start, lenght);
+    }
+
+    span<type_t> slice(size_type start) const {
+      return slice(start, length_ - start);
     }
     
-    span<type_t> subspan(size_type offset, size_type count) const {
-      return slice(offset, count);
+    span<type_t> slice(size_type start, size_type length) const {
+      if (start + length > length_) throw argument_out_of_range_exception {};
+      return span<type_t> {data_ + start, length};
+    }
+
+    template<xtd::size offset, size_type count = xtd::dynamic_extent>
+    span<type_t> subspan() const {
+      return count == xtd::dynamic_extent ? slice(offset) : slice(offset, count);
+    }
+    
+    span<type_t> subspan(size_type offset, size_type count = xtd::dynamic_extent) const {
+      return count == xtd::dynamic_extent ? slice(offset) : slice(offset, count);
     }
     
     xtd::array<type_t> to_array() const noexcept {
