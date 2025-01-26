@@ -204,7 +204,7 @@ namespace xtd {
       virtual void set_length(xtd::size value) = 0;
       
       using std::iostream::write;
-      virtual void write(const xtd::array<xtd::byte>& buffer);
+      virtual void write(xtd::span<const xtd::byte> buffer);
       virtual void write(const xtd::array<xtd::byte>& buffer, xtd::size offset, xtd::size count) = 0;
 
       virtual void write_byte(xtd::byte value);
