@@ -5,11 +5,11 @@
 #include "io_exception.hpp"
 #include "seek_origin.hpp"
 #include "../threading/manual_reset_event.hpp"
-#include "../array.hpp"
+#include "../abstract_object.hpp"
 #include "../async_callback.hpp"
 #include "../core_export.hpp"
 #include "../iasync_result.hpp"
-#include "../abstract_object.hpp"
+#include "../span.hpp"
 #include "../string.hpp"
 #include <cstdio>
 #include <sstream>
@@ -172,7 +172,7 @@ namespace xtd {
       using std::iostream::read;
       /// @brief When overridden in a derived class, reads a sequence of bytes from the current stream and advances the position within the stream by the number of bytes read.
       /// @param buffer A region of memory. When this method returns, the contents of this region are replaced by the bytes read from the current source.
-      virtual xtd::size read(xtd::array<xtd::byte>& buffer);
+      virtual xtd::size read(xtd::span<xtd::byte>& buffer);
       virtual xtd::size read(xtd::array<xtd::byte>& buffer, xtd::size offset, xtd::size count) = 0;
       
       /// @brief Reads at least a minimum number of bytes from the current stream and advances the position within the stream by the number of bytes read.

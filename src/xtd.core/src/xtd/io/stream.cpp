@@ -69,14 +69,20 @@ void stream::copy_to(std::ostream& destination, xtd::size buffer_size) {
   }
 }
 
-xtd::size stream::read(xtd::array<xtd::byte>& buffer) {
+size stream::read(span<byte>& buffer) {
   if (is_closed()) throw object_closed_exception {};
   if (!can_read()) throw not_supported_exception {};
   
-  return read(buffer, 0_z, buffer.length());
+  for (auto index = 0_z; index < buffer.length(); ++index) {
+    auto value = read_byte();
+    if (value == eof) return index;
+    buffer[index] = as<byte>(value);
+  }
+    
+  return buffer.length();
 }
 
-xtd::size stream::read_at_least(xtd::array<xtd::byte>& buffer, xtd::size minimum_bytes, bool throw_on_end_of_stream) {
+size stream::read_at_least(array<byte>& buffer, size minimum_bytes, bool throw_on_end_of_stream) {
   if (is_closed()) throw object_closed_exception {};
   if (!can_read()) throw not_supported_exception {};
   
@@ -93,16 +99,16 @@ int32 stream::read_byte() {
   if (!can_read()) throw not_supported_exception {};
   
   static array<byte> b(1_z);
-  if (read(b) == 1_z)
+  if (read(b, 0, 1_z) == 1_z)
     return as<int32>(b[0]);
   return stream::eof;
 }
 
-void stream::read_exactly(xtd::array<xtd::byte>& buffer) {
+void stream::read_exactly(array<byte>& buffer) {
   read_exactly(buffer, 0_z, buffer.length());
 }
 
-void stream::read_exactly(xtd::array<xtd::byte>& buffer, xtd::size offset, xtd::size count) {
+void stream::read_exactly(array<byte>& buffer, size offset, size count) {
   if (is_closed()) throw object_closed_exception {};
   if (!can_read()) throw not_supported_exception {};
 
@@ -118,19 +124,19 @@ void stream::read_exactly(xtd::array<xtd::byte>& buffer, xtd::size offset, xtd::
   }
 }
 
-void stream::write(const xtd::array<xtd::byte>& buffer) {
+void stream::write(const array<byte>& buffer) {
   if (is_closed()) throw object_closed_exception {};
   if (!can_write()) throw not_supported_exception {};
   
   write(buffer, 0_z, buffer.length());
 }
 
-void stream::write_byte(xtd::byte value) {
+void stream::write_byte(byte value) {
   if (is_closed()) throw object_closed_exception {};
   if (!can_write()) throw not_supported_exception {};
   
   array<byte> b = {value};
-  write(b);
+  write(b, 0, 1_z);
 }
 
 stream::stream() : std::iostream {&streambuf_} {
