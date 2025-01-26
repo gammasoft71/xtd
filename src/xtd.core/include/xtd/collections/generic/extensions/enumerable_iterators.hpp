@@ -20,8 +20,8 @@ namespace xtd {
         /// @brief Internal enumarable iterators definition.
         /// @par Definition
         /// ```cpp
-        /// template<class type_t, class enumerable_t>
-        /// class enumerable_iterators
+        /// template<class type_t, class enumerable_t, class iterator_tag_t =  std::bidirectional_iterator_tag>
+        /// class enumerable_iterators;
         /// ```
         /// @par Header
         /// ```cpp
