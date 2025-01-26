@@ -373,6 +373,7 @@
 
 ## [Span](span/README.md)
 
+* [span_from_memory](span/span_from_memory/README.md) Create a [xtd::span](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1span.html) from memory.
 * [span_over_array](span/span_over_array/README.md) Create a [xtd::span](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1span.html) over an array.
 
 ## [sprintf](sprintf/README.md)
