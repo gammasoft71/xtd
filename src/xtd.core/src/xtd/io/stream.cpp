@@ -124,11 +124,12 @@ void stream::read_exactly(array<byte>& buffer, size offset, size count) {
   }
 }
 
-void stream::write(const array<byte>& buffer) {
+void stream::write(xtd::span<const xtd::byte> buffer) {
   if (is_closed()) throw object_closed_exception {};
   if (!can_write()) throw not_supported_exception {};
   
-  write(buffer, 0_z, buffer.length());
+  for (auto item : buffer)
+    write_byte(item);
 }
 
 void stream::write_byte(byte value) {
