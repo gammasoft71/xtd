@@ -371,6 +371,10 @@
 * [random2](random/random2/README.md) shows how to use [xtd::random](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1random.html) class.
 * [random3](random/random3/README.md) shows how to use [xtd::random::next](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1random.html#aea69230c5fe2a5ecc5026aa568dc349c) method.
 
+## [Span](span/README.md)
+
+* [span_over_array](span/span_over_array/README.md) Create a [xtd::span](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1span.html) over an array.
+
 ## [sprintf](sprintf/README.md)
 
 * [sprintf](sprintf/sprintf/README.md) shows how to use [xtd::ustring::sprintf](https://gammasoft71.github.io/xtd/reference_guides/latest/group__sprintf__parse.html#ga0c65606fb81f84e4d9ea43002114d8de) method.
