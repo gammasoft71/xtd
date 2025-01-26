@@ -35,11 +35,15 @@
 #define __xtd__cpp_lib_optional
 #endif
 
+#if defined(__cpp_lib_ranges) || __cplusplus >= 201911l
+#define __xtd__cpp_lib_ranges
+#endif
+
 #if defined(__cpp_lib_semaphore) || __cplusplus >= 202002l
 #define __xtd__cpp_lib_semaphore
 #endif
 
-#if defined(__cpp_lib_three_way_comparison) || __cplusplus >= 201907
+#if defined(__cpp_lib_three_way_comparison) || __cplusplus >= 201907l
 #define __xtd__cpp_lib_three_way_comparison
 #endif
 
