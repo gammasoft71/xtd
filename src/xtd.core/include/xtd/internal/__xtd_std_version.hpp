@@ -35,7 +35,7 @@
 #define __xtd__cpp_lib_optional
 #endif
 
-#if defined(__cpp_lib_ranges) || __cplusplus >= 201911l
+#if defined(__cpp_lib_ranges) || __cplusplus >= 202002l
 #define __xtd__cpp_lib_ranges
 #endif
 
