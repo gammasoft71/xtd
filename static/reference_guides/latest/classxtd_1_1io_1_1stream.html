@@ -171,9 +171,9 @@ Inheritance diagram for xtd::io::stream:</div>
 <tr class="memitem:a7d03c86a2f08e064dd206ca3c8b797ed"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#a7d03c86a2f08e064dd206ca3c8b797ed">flush</a> ()=0</td></tr>
 <tr class="memdesc:a7d03c86a2f08e064dd206ca3c8b797ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, clears all buffers for this stream and causes any buffered data to be written to the underlying device. exception <a class="el" href="classxtd_1_1io_1_1io__exception.html" title="The exception that is thrown when an I/O error occurs.">xtd::io::io_exception</a> An I/O error occurs.  <br /></td></tr>
 <tr class="separator:a7d03c86a2f08e064dd206ca3c8b797ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae345f64ba33516c143542b1599c9d142"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#ae345f64ba33516c143542b1599c9d142">read</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;buffer)</td></tr>
-<tr class="memdesc:ae345f64ba33516c143542b1599c9d142"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, reads a sequence of bytes from the current stream and advances the position within the stream by the number of bytes read.  <br /></td></tr>
-<tr class="separator:ae345f64ba33516c143542b1599c9d142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa878d4ecbb30923c935bfb5eb8cb5ba8"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#aa878d4ecbb30923c935bfb5eb8cb5ba8">read</a> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;buffer)</td></tr>
+<tr class="memdesc:aa878d4ecbb30923c935bfb5eb8cb5ba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, reads a sequence of bytes from the current stream and advances the position within the stream by the number of bytes read.  <br /></td></tr>
+<tr class="separator:aa878d4ecbb30923c935bfb5eb8cb5ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74ad6bb09848a8d1cb3418cbc59a0412"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#a74ad6bb09848a8d1cb3418cbc59a0412">read</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> offset, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> count)=0</td></tr>
 <tr class="separator:a74ad6bb09848a8d1cb3418cbc59a0412"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2e26b1d6940c27423fb236bd9474937"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#ae2e26b1d6940c27423fb236bd9474937">read_at_least</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> minimum_bytes, bool throw_on_end_of_stream=true)</td></tr>
@@ -190,9 +190,9 @@ virtual <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e
 <tr class="separator:a6de77f0d5e60bc23383e0662c492fb6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37c2a7ded63f20d43f4d819d318a65b5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#a37c2a7ded63f20d43f4d819d318a65b5">set_length</a> (<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> value)=0</td></tr>
 <tr class="separator:a37c2a7ded63f20d43f4d819d318a65b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a250a4bb3ba663504f5290a7a238a251b"><td class="memItemLeft" align="right" valign="top"><a id="a250a4bb3ba663504f5290a7a238a251b" name="a250a4bb3ba663504f5290a7a238a251b"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;buffer)</td></tr>
-<tr class="separator:a250a4bb3ba663504f5290a7a238a251b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53b868dcda1bf1c549a75e3d45b1383c"><td class="memItemLeft" align="right" valign="top"><a id="a53b868dcda1bf1c549a75e3d45b1383c" name="a53b868dcda1bf1c549a75e3d45b1383c"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (<a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; const <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; buffer)</td></tr>
+<tr class="separator:a53b868dcda1bf1c549a75e3d45b1383c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c60521af84e94697628e491e98a6c29"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1stream.html#a3c60521af84e94697628e491e98a6c29">write</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;buffer, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> offset, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> count)=0</td></tr>
 <tr class="separator:a3c60521af84e94697628e491e98a6c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1770dafeeb76b8a1cb8fa55b9e676504"><td class="memItemLeft" align="right" valign="top"><a id="a1770dafeeb76b8a1cb8fa55b9e676504" name="a1770dafeeb76b8a1cb8fa55b9e676504"></a>
@@ -795,8 +795,8 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
 
 </div>
 </div>
-<a id="ae345f64ba33516c143542b1599c9d142" name="ae345f64ba33516c143542b1599c9d142"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae345f64ba33516c143542b1599c9d142">&#9670;&#160;</a></span>read() <span class="overload">[1/2]</span></h2>
+<a id="aa878d4ecbb30923c935bfb5eb8cb5ba8" name="aa878d4ecbb30923c935bfb5eb8cb5ba8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa878d4ecbb30923c935bfb5eb8cb5ba8">&#9670;&#160;</a></span>read() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -807,7 +807,7 @@ Seeking to any location beyond the length of the stream is supported. </dd></dl>
         <tr>
           <td class="memname">virtual <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> xtd::io::stream::read </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>buffer</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1143,7 +1143,7 @@ The range specified by the combination of offset and count exceeds the length of
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 24 2025 21:15:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 26 2025 21:20:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

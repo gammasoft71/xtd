@@ -80,7 +80,8 @@ $(function() {
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle"><div class="title">helpers<div class="ingroups"><a class="el" href="group__system.html">system</a> &raquo; <a class="el" href="group__collections.html">collections</a> &raquo; <a class="el" href="group__generic__collections.html">generic</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -98,12 +99,16 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html">xtd::collections::generic::helpers::hasher&lt; key_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements a function object for hashing data.  <a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html">xtd::collections::generic::helpers::wrap_pointer_iterator&lt; value_t &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html">xtd::collections::generic::helpers::wrap_pointer_iterator&lt; value_t, iterator_tag_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a wrap pointer iterator.  <a href="classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__reverse__iterator.html">xtd::collections::generic::helpers::wrap_pointer_reverse_iterator&lt; value_t &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a wrap pointer reverse iterator.  <a href="classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__reverse__iterator.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ga3c154f390eaa273d273d437a32f8604f"><td class="memTemplParams" colspan="2">template&lt;class value_t , class iterator_tag_t  = std::random_access_iterator_tag&gt; </td></tr>
+<tr class="memitem:ga3c154f390eaa273d273d437a32f8604f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__helpers__generic__collections.html#ga3c154f390eaa273d273d437a32f8604f">xtd::collections::generic::helpers::wrap_pointer_reverse_iterator</a> = std::reverse_iterator&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html">wrap_pointer_iterator</a>&lt; value_t, iterator_tag_t &gt; &gt;</td></tr>
+<tr class="memdesc:ga3c154f390eaa273d273d437a32f8604f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a wrap pointer reverse iterator.  <br /></td></tr>
+<tr class="separator:ga3c154f390eaa273d273d437a32f8604f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Aliases</h2></td></tr>
 <tr class="memitem:gac7dc24539787a344466014161f2d39af"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
@@ -256,11 +261,39 @@ template&lt;class input_iterator_t &gt; </div>
 
 </div>
 </div>
+<a id="ga3c154f390eaa273d273d437a32f8604f" name="ga3c154f390eaa273d273d437a32f8604f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3c154f390eaa273d273d437a32f8604f">&#9670;&#160;</a></span>wrap_pointer_reverse_iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class value_t , class iterator_tag_t  = std::random_access_iterator_tag&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__helpers__generic__collections.html#ga3c154f390eaa273d273d437a32f8604f">xtd::collections::generic::helpers::wrap_pointer_reverse_iterator</a> = typedef std::reverse_iterator&lt;<a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html">wrap_pointer_iterator</a>&lt;value_t, iterator_tag_t&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="wrap__pointer__reverse__iterator_8hpp.html">xtd.core/include/xtd/collections/generic/helpers/wrap_pointer_reverse_iterator.hpp</a>&gt;</code></p>
+
+<p>Represents a wrap pointer reverse iterator. </p>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> value_t, <span class="keyword">class</span> iterator_tag_t = std::random_access_iterator_tag&gt;</div>
+<div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__helpers__generic__collections.html#ga3c154f390eaa273d273d437a32f8604f">wrap_pointer_reverse_iterator</a> = std::reverse_iterator&lt;wrap_pointer_iterator&lt;value_t, iterator_tag_t&gt;&gt;;</div>
+<div class="ttc" id="agroup__helpers__generic__collections_html_ga3c154f390eaa273d273d437a32f8604f"><div class="ttname"><a href="group__helpers__generic__collections.html#ga3c154f390eaa273d273d437a32f8604f">xtd::collections::generic::helpers::wrap_pointer_reverse_iterator</a></div><div class="ttdeci">std::reverse_iterator&lt; wrap_pointer_iterator&lt; value_t, iterator_tag_t &gt; &gt; wrap_pointer_reverse_iterator</div><div class="ttdoc">Represents a wrap pointer reverse iterator.</div><div class="ttdef"><b>Definition</b> wrap_pointer_reverse_iterator.hpp:31</div></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/genric/helpers/wrap_pointer_reverse_iterator</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic_1_1helpers.html" title="The xtd::collections::generic::helpers namespace contains helpers for generic collections,...">xtd::collections::generic::helpers</a> </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jan 24 2025 21:15:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Jan 26 2025 21:20:18 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
