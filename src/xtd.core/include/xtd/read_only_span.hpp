@@ -205,7 +205,7 @@ namespace xtd {
     
     /// @brief Returns an empty xtd::read_only_span <type_t> object.
     /// @return An empty xtd::read_only_span <type_t> object.
-    static const read_only_span empty_only_span;
+    static const read_only_span empty_read_only_span;
     
     /// @brief Returns an iterator to the end.
     /// @return The iterator to the element following the last element.
@@ -400,7 +400,7 @@ namespace xtd {
   };
   
   template<class type_t, xtd::size extent>
-  inline const read_only_span<type_t, extent> read_only_span<type_t, extent>::empty_only_span;
+  inline const read_only_span<type_t, extent> read_only_span<type_t, extent>::empty_read_only_span;
   
   /// @cond
   // C++17 deduction guides for xtd::read_only_span
