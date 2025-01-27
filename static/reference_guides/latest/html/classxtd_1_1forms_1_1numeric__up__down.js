@@ -1,0 +1,27 @@
+var classxtd_1_1forms_1_1numeric__up__down =
+[
+    [ "numeric_up_down", "classxtd_1_1forms_1_1numeric__up__down.html#a0dec0cb8c24108f9f65c06a8be956e2d", null ],
+    [ "decimal_place", "classxtd_1_1forms_1_1numeric__up__down.html#a0cf2076b68cec89f6a44b29a4f416b23", null ],
+    [ "decimal_place", "classxtd_1_1forms_1_1numeric__up__down.html#ad490baf10c889c8243fecbfff6ab44a0", null ],
+    [ "increment", "classxtd_1_1forms_1_1numeric__up__down.html#a296ebb8a354de16a8b0e07758b063895", null ],
+    [ "increment", "classxtd_1_1forms_1_1numeric__up__down.html#a8322a06f348fe61c281bc9eeb75bfb48", null ],
+    [ "maximum", "classxtd_1_1forms_1_1numeric__up__down.html#aeb1258eb3fe4bc30aa6b94ab56bb7bab", null ],
+    [ "maximum", "classxtd_1_1forms_1_1numeric__up__down.html#a8516924187dfaedcd59666180403fbc4", null ],
+    [ "minimum", "classxtd_1_1forms_1_1numeric__up__down.html#a5df8e70144d2834d1ab97b7c875483c2", null ],
+    [ "minimum", "classxtd_1_1forms_1_1numeric__up__down.html#aa082950e8d02e36f5f6d29a17a794f12", null ],
+    [ "value", "classxtd_1_1forms_1_1numeric__up__down.html#aaef4b6ad91e587331c1f0646eb03e9a0", null ],
+    [ "value", "classxtd_1_1forms_1_1numeric__up__down.html#ab0fbd8d3e1622a7554cc9822de811391", null ],
+    [ "wrapped", "classxtd_1_1forms_1_1numeric__up__down.html#a87d0f98e1ed34d064740fb05d352456e", null ],
+    [ "wrapped", "classxtd_1_1forms_1_1numeric__up__down.html#a0d83da908eabe3e55db4fe6743ff1df6", null ],
+    [ "set_range", "classxtd_1_1forms_1_1numeric__up__down.html#a3404e97391dcf0e7e5a09b4f66fe7bf7", null ],
+    [ "to_string", "classxtd_1_1forms_1_1numeric__up__down.html#a75c2a4c114d81991e27f25325e357e36", null ],
+    [ "create_params", "classxtd_1_1forms_1_1numeric__up__down.html#a4a8d2276da1b073abd661017d6471889", null ],
+    [ "default_back_color", "classxtd_1_1forms_1_1numeric__up__down.html#a0d4432db90b75a535fb1b81bec8ca4f8", null ],
+    [ "default_fore_color", "classxtd_1_1forms_1_1numeric__up__down.html#af57848b297ccdeb5cfe9fdc80e2d2196", null ],
+    [ "clone", "classxtd_1_1forms_1_1numeric__up__down.html#a16855da2c2d4f15e5f32e2d060f183f7", null ],
+    [ "on_handle_created", "classxtd_1_1forms_1_1numeric__up__down.html#ac042a73594dfdf55a0d623dc7f99c977", null ],
+    [ "on_value_changed", "classxtd_1_1forms_1_1numeric__up__down.html#af23f00ddfdf80c05fef8da2c3b872500", null ],
+    [ "on_lost_focus", "classxtd_1_1forms_1_1numeric__up__down.html#ac74bac34b487cd9274f6abdda418408a", null ],
+    [ "wnd_proc", "classxtd_1_1forms_1_1numeric__up__down.html#ad0fea8399105a7f29546aebd55e4c8f2", null ],
+    [ "value_changed", "classxtd_1_1forms_1_1numeric__up__down.html#acad2e6ca54ed58e66c18a29d2a52b9b9", null ]
+];
