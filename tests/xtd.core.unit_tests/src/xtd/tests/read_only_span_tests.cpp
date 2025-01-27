@@ -430,5 +430,44 @@ namespace xtd::tests {
       assert::are_equal(a.data(), s.data());
       assert::are_equal(10, *s.data());
     }
+    
+    void test_method_(empty) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      assert::is_false(s.empty());
+      assert::is_true(read_only_span<int> {}.empty());
+      assert::is_true(read_only_span<int>::empty_read_only_span.empty());
+    }
+    
+    void test_method_(empty_read_only_span) {
+      assert::is_null(read_only_span<int>::empty_read_only_span.data());
+      assert::is_zero(read_only_span<int>::empty_read_only_span.size());
+    }
+    
+    void test_method_(const_end) {
+      auto a = array {10, 20, 30, 40, 50};
+      const auto s = read_only_span(a);
+      assert::are_equal(s.data() + 5, s.end().data());
+    }
+    
+    void test_method_(end) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      assert::are_equal(s.data() + 5, s.end().data());
+    }
+    
+    void test_method_(front) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      assert::are_equal(10, s.front());
+    }
+    
+    void test_method_(is_empty) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      assert::is_false(s.is_empty());
+      assert::is_true(read_only_span<int> {}.is_empty());
+      assert::is_true(read_only_span<int>::empty_read_only_span.is_empty());
+    }
   };
 }
