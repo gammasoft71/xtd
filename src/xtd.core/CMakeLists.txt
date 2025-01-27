@@ -373,6 +373,10 @@ add_sources(
   include/xtd/random
   include/xtd/rank_exception.hpp
   include/xtd/rank_exception
+  include/xtd/ranges.hpp
+  include/xtd/ranges
+  include/xtd/read_only_span.hpp
+  include/xtd/read_only_span
   include/xtd/register_any_stringer.hpp
   include/xtd/register_any_stringer
   include/xtd/reset_color.hpp

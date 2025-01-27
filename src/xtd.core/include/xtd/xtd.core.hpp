@@ -409,6 +409,7 @@
 #include "ptrdiff.hpp"
 #include "random.hpp"
 #include "rank_exception.hpp"
+#include "read_only_span.hpp"
 #include "register_any_stringer.hpp"
 #include "reset_color.hpp"
 #include "sbyte.hpp"
