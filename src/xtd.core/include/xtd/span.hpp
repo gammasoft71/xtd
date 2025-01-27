@@ -91,14 +91,14 @@ namespace xtd {
     /// @{
     /// @brief Creates an empty xtd::span whose xtd::span::data is null and xtd::span::size is 0.
     template <xtd::size count = 0>
-    span() : data_ {xtd::null}, length_ {0} {};
+    constexpr span() : data_ {xtd::null}, length_ {0} {};
     
     /// @brief 
     /// @brief Creates an xtd::span with specified iterators.
     /// @param first The iterator to the first element of the sequence.
     /// @param last The iterator to the last element of the sequence.
     template<class iterator_t>
-    span(iterator_t first, iterator_t last) : data_ {&(*first)}, length_ {extent != dynamic_extent ? extent : static_cast<size_type>(std::distance(first, last))} {}
+    constexpr span(iterator_t first, iterator_t last) : data_ {&(*first)}, length_ {extent != dynamic_extent ? extent : static_cast<size_type>(std::distance(first, last))} {}
     /* Conflict with span(collection_t& items, xtd::size count)
     /// @brief Creates an xtd::span with specified iterator and count.
     /// @param first The iterator to the first element of the sequence.
@@ -106,62 +106,80 @@ namespace xtd {
     //template<class iterator_t>
     span(iterator_t first, xtd::size count) : data_ {&(*first)}, length_ {extent != dynamic_extent ? extent : count} {}
      */
-#if defined(__xtd__cpp_lib_ranges)
-    /// @brief Creates an xtd::span with specified range.
-    /// @param range The range to construct a view for.
-    template<class range_t>
-    span(range_t&& range) noexcept : data_ {xtd::ranges::data(range)}, length_ {extent != dynamic_extent ? extent : xtd::ranges::size(range)} {}
-#else
-    /// @brief Creates an xtd::span with specified range.
-    /// @param range The range to construct a view for.
-    template<class range_t>
-    span(range_t&& range) noexcept : data_ {range.data()}, length_ {extent != dynamic_extent ? extent : range.size()} {}
-#endif
-    /// @brief Creates an xtd::span with specified collection and count.
-    /// @param items The collection to construct a view for.
-    /// @param count The number of elements in the collection.
-    /// @exception xtd::argument_out_of_range_exception if count is greater than items size.
-    template<class collection_t>
-    span(collection_t& items, xtd::size count) : span {items, size_type {0}, count} {}
-    /// @brief Creates an xtd::span with specified collection, offest and count.
-    /// @param items The collection to construct a view for.
-    /// @param offset The offset in the collection.
-    /// @param count The number of elements in the collection.
-    /// @exception xtd::argument_out_of_range_exception if offset or offset + count are greater than items size.
-    template<class collection_t>
-    span(collection_t& items, xtd::size offset, xtd::size count) : data_ {items.data() + offset}, length_ {extent != dynamic_extent ? extent : count} {
-      if (offset + count > items.size()) throw argument_out_of_range_exception {};
-    }
-#if __cplusplus >= 202002l
-    /// @brief Creates an xtd::span with specified initializer list.
-    /// @param items The initializer list to construct a view for.
-    span(std::initializer_list<type_t> items) noexcept requires std::is_const_v<element_type> : data_ {items.begin()}, length_ {extent != dynamic_extent ? extent : items.size()} {}
-#else
-    /// @brief Creates an xtd::span with specified initializer list.
-    /// @param items The initializer list to construct a view for.
-    span(std::initializer_list<type_t> items) noexcept : data_ {const_cast<type_t*>(items.begin())}, length_ {extent != dynamic_extent ? extent : items.size()} {
-      static_assert(std::is_const_v<element_type>, "type_t must be const");
-    }
-#endif
-    /// @brief Creates an xtd::span with specified data pointer and count.
-    /// @param data The data pointer to construct a view for.
-    /// @param count The number of elements to constuct.
-    span(type_t* data, size_type count) : data_ {data}, length_ {extent != dynamic_extent ? extent : count} {
-      if (!data) throw argument_null_exception {};
-    }
+#if defined(__xtd__cpp_lib_type_identity)
     /// @brief Creates an xtd::span with specified native array.
     /// @param array The native array to construct a view for.
     template<xtd::size len>
-    constexpr span(type_t (&array)[len]) noexcept : data_ {array}, length_ {extent != dynamic_extent ? extent : len} {}
+    constexpr span(std::type_identity_t<element_type> (&array)[len]) noexcept : data_ {array}, length_ {extent != dynamic_extent ? extent : len} {}
+#else
+    /// @brief Creates an xtd::span with specified native array.
+    /// @param array The native array to construct a view for.
+    template<xtd::size len>
+    constexpr span(element_type (&array)[len]) noexcept : data_ {array}, length_ {extent != dynamic_extent ? extent : len} {}
+#endif
+    /// @brief Creates an xtd::span with specified std::array.
+    /// @param array The std::array to construct a view for.
+    template<class array_type_t, xtd::size len>
+    constexpr span(const std::array<array_type_t, len>& array) noexcept : data_ {array.data()}, length_ {extent != dynamic_extent ? extent : len} {}
     /// @brief Creates an xtd::span with specified std::array.
     /// @param array The std::array to construct a view for.
     template<class array_type_t, xtd::size len>
     constexpr span(std::array<array_type_t, len>& array) noexcept : data_ {array.data()}, length_ {extent != dynamic_extent ? extent : len} {}
+#if defined(__xtd__cpp_lib_ranges)
+    /// @brief Creates an xtd::span with specified range.
+    /// @param range The range to construct a view for.
+    template<class range_t>
+    constexpr span(range_t&& range) noexcept : data_ {xtd::ranges::data(range)}, length_ {extent != dynamic_extent ? extent : xtd::ranges::size(range)} {}
+#else
+    /// @brief Creates an xtd::span with specified range.
+    /// @param range The range to construct a view for.
+    template<class range_t>
+    constexpr span(range_t&& range) noexcept : data_ {range.data()}, length_ {extent != dynamic_extent ? extent : range.size()} {}
+#endif
+#if __cplusplus >= 202002l
+    /// @brief Creates an xtd::span with specified initializer list.
+    /// @param items The initializer list to construct a view for.
+    constexpr span(std::initializer_list<type_t> items) noexcept requires std::is_const_v<element_type> : data_ {items.begin()}, length_ {extent != dynamic_extent ? extent : items.size()} {}
+#else
+    /// @brief Creates an xtd::span with specified initializer list.
+    /// @param items The initializer list to construct a view for.
+    constexpr span(std::initializer_list<type_t> items) noexcept : data_ {const_cast<type_t*>(items.begin())}, length_ {extent != dynamic_extent ? extent : items.size()} {
+      static_assert(std::is_const_v<element_type>, "type_t must be const");
+    }
+#endif
+    /* Conflict with span(range_t&& range) noexcept
+    /// @brief Creates an xtd::span with specified collection.
+    /// @param items The collection to construct a view for.
+    /// @exception xtd::argument_out_of_range_exception if length is greater than items size.
+    template<class collection_t>
+    constexpr span(collection_t& items) noexcept : span {items, size_type {0}, items.size()} {}
+     */
+    /// @brief Creates an xtd::span with specified collection and count.
+    /// @param items The collection to construct a view for.
+    /// @param length The number of elements in the collection.
+    /// @exception xtd::argument_out_of_range_exception if length is greater than items size.
+    template<class collection_t>
+    constexpr span(collection_t& items, size_type length) : span {items, size_type {0}, length} {}
+    /// @brief Creates an xtd::span with specified collection, offest and count.
+    /// @param items The collection to construct a view for.
+    /// @param start The offset in the collection.
+    /// @param length The number of elements in the collection.
+    /// @exception xtd::argument_out_of_range_exception if start or start + length are greater than items size.
+    template<class collection_t>
+    constexpr span(collection_t& items, size_type start, size_type length) : data_ {items.data() + start}, length_ {extent != dynamic_extent ? extent : length} {
+      if (start + length > items.size()) throw argument_out_of_range_exception {};
+    }
+    /// @brief Creates an xtd::span with specified data pointer and count.
+    /// @param data The data pointer to construct a view for.
+    /// @param length The number of elements to constuct.
+    constexpr span(type_t* data, size_type length) : data_ {data}, length_ {extent != dynamic_extent ? extent : length} {
+      if (!data) throw argument_null_exception {};
+    }
     /// @}
 
     /// @cond
-    span(span&& items) = default;
-    span(const span& items) = default;
+    constexpr span(span&& items) = default;
+    constexpr span(const span& items) = default;
     
     span& operator =(span&& items) = default;
     span& operator =(const span& items) = default;
@@ -448,8 +466,13 @@ namespace xtd {
   template<class iterator_t>
   span(iterator_t first, iterator_t last) -> span<typename iterator_t::value_type>;
   
+#if defined(__xtd__cpp_lib_ranges)
   template<class range_t>
   span(range_t&& items) noexcept -> span<typename std::remove_reference_t<xtd::ranges::range_reference_t<range_t>>>;
+#else
+  template<class range_t>
+  span(range_t&& items) noexcept -> span<typename range_t::value_type>;
+#endif
   
   template<class collection_t>
   span(collection_t& items) noexcept -> span<typename collection_t::value_type>;
