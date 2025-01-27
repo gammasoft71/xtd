@@ -115,7 +115,7 @@ namespace xtd {
     /// @brief Creates an xtd::span with specified native array.
     /// @param array The native array to construct a view for.
     template<xtd::size len>
-    constexpr span(element_type (&array)[len]) noexcept : data_ {array}, length_ {extent != dynamic_extent ? extent : len} {}
+    constexpr span(element_type (&array)[len]) noexcept : data_ {const_cast<element_type*>(array)}, length_ {extent != dynamic_extent ? extent : len} {}
 #endif
     /// @brief Creates an xtd::span with specified std::array.
     /// @param array The std::array to construct a view for.
@@ -172,7 +172,7 @@ namespace xtd {
     /// @brief Creates an xtd::span with specified data pointer and count.
     /// @param data The data pointer to construct a view for.
     /// @param length The number of elements to constuct.
-    constexpr span(type_t* data, size_type length) : data_ {data}, length_ {extent != dynamic_extent ? extent : length} {
+    constexpr span(type_t* const data, size_type length) : data_ {data}, length_ {extent != dynamic_extent ? extent : length} {
       if (!data) throw argument_null_exception {};
     }
     /// @}
@@ -464,36 +464,45 @@ namespace xtd {
   // C++17 deduction guides for xtd::span
   // {
   template<class iterator_t>
-  span(iterator_t first, iterator_t last) -> span<typename iterator_t::value_type>;
-  
-#if defined(__xtd__cpp_lib_ranges)
-  template<class range_t>
-  span(range_t&& items) noexcept -> span<typename std::remove_reference_t<xtd::ranges::range_reference_t<range_t>>>;
-#else
-  template<class range_t>
-  span(range_t&& items) noexcept -> span<typename range_t::value_type>;
-#endif
-  
-  template<class collection_t>
-  span(collection_t& items) noexcept -> span<typename collection_t::value_type>;
-  
-  template<class collection_t>
-  span(collection_t& items, xtd::size) -> span<typename collection_t::value_type>;
-  
-  template<class collection_t>
-  span(collection_t& items, xtd::size, xtd::size) -> span<typename collection_t::value_type>;
+  span(iterator_t, iterator_t) -> span<typename iterator_t::value_type>;
 
-  template<class type_t>
-  span(std::initializer_list<type_t>) noexcept -> span<type_t>;
-  
-  template<class type_t>
-  span(type_t* data, xtd::size size) -> span<type_t>;
-  
   template<class type_t, xtd::size len>
-  span(type_t (&array)[len]) noexcept -> span<type_t>;
+  span(type_t (&)[len]) noexcept -> span<type_t>;
   
   template< class type_t, xtd::size len>
-  span(std::array<type_t, len>& array) noexcept -> span<type_t>;
+  span(const std::array<type_t, len>&) noexcept -> span<const type_t>;
+  
+  template< class type_t, xtd::size len>
+  span(std::array<type_t, len>&) noexcept -> span<type_t>;
+
+#if defined(__xtd__cpp_lib_ranges)
+  template<class range_t>
+  span(range_t&&) noexcept -> span<std::remove_reference_t<xtd::ranges::range_reference_t<range_t>>>;
+#else
+  template<class range_t>
+  span(range_t&&) noexcept -> span<std::remove_reference_t<typename range_t::value_type>>;
+#endif
+
+  template<class type_t>
+  span(std::initializer_list<type_t>) noexcept -> span<const type_t>;
+
+  template<class collection_t>
+  span(const collection_t& items) noexcept -> span<const typename collection_t::value_type>;
+  
+  template<class collection_t>
+  span(const collection_t&, xtd::size) -> span<const typename collection_t::value_type>;
+
+  template<class collection_t>
+  span(collection_t&, xtd::size) -> span<typename collection_t::value_type>;
+  
+  template<class collection_t>
+  span(const collection_t&, xtd::size, xtd::size) -> span<const typename collection_t::value_type>;
+
+  template<class collection_t>
+  span(collection_t&, xtd::size, xtd::size) -> span<typename collection_t::value_type>;
+  
+  template<class type_t>
+  span(type_t* const, xtd::size) -> span<type_t>;
   // }
   /// @endcond
 }
