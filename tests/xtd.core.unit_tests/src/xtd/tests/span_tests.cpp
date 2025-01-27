@@ -393,5 +393,58 @@ namespace xtd::tests {
       assert::are_equal(3_z, s.size());
       collection_assert::are_equal({10, 20, 30}, s);
     }
+    
+    void test_method_(back) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span(a);
+      assert::are_equal(50, s.back());
+    }
+    
+    void test_method_(const_begin) {
+      auto a = array {10, 20, 30, 40, 50};
+      const auto s = span(a);
+      assert::are_equal(s.data(), s.begin().data());
+      assert::are_equal(10, *s.begin());
+    }
+    
+    void test_method_(begin) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span(a);
+      assert::are_equal(s.data(), s.begin().data());
+      assert::are_equal(10, *s.begin());
+    }
+    
+    void test_method_(cbegin) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span(a);
+      assert::are_equal(s.data(), s.cbegin().data());
+      assert::are_equal(10, *s.cbegin());
+    }
+    
+    void test_method_(cend) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span(a);
+      assert::are_equal(s.data() + 5, s.cend().data());
+    }
+    
+    void test_method_(crbegin) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span(a);
+      assert::are_equal(s.data() + 5, s.crbegin().base().data());
+      assert::are_equal(50, *s.crbegin());
+    }
+    
+    void test_method_(crend) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span(a);
+      assert::are_equal(s.data(), s.crend().base().data());
+    }
+    
+    void test_method_(data) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span(a);
+      assert::are_equal(a.data(), s.data());
+      assert::are_equal(10, *s.data());
+    }
   };
 }
