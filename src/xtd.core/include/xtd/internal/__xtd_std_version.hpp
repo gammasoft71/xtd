@@ -51,4 +51,8 @@
 #define __xtd__cpp_lib_source_location
 #endif
 
+#if defined(__cpp_lib_type_identity) || __cplusplus >= 202002l
+#define __xtd__cpp_lib_type_identity
+#endif
+
 /// @endcond
