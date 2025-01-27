@@ -25,7 +25,7 @@ namespace wiggly_example {
     void on_paint(paint_event_args& e) override {
       static const auto sins = list {0, 38, 71, 92, 100, 92, 71, 38, 0, -38, -71, -92, -100, -92, -71, -38};
       auto pos = point {(e.clip_rectangle().size().width() - as<int>(e.graphics().measure_string(text(), font()).width())) / 2, (e.clip_rectangle().size().height() - as<int>(e.graphics().measure_string(text(), font()).height())) / 2};
-      auto wiggly_text = as<std::u32string>(text());
+      auto wiggly_text = text().to_u32string();
       for (auto i = 0_z; i < wiggly_text.length(); i++) {
         auto index = (step + i) % sins.size();
         e.graphics().draw_string(string::format("{}", wiggly_text[i]), font(), solid_brush {color::from_hsb(360.0f / sins.size() * index, 1.0f, 0.75f)}, point::subtract(pos, point(0, sins[index] * font().height() / 400)));
