@@ -74,9 +74,9 @@ namespace xtd {
     /// @brief Represents the const iterator of read_only_span value type.
     using const_iterator = const xtd::collections::generic::helpers::wrap_pointer_iterator<pointer>;
     /// @brief Represents the reverse iterator of read_only_span value type.
-    using reverse_iterator = const std::reverse_iterator<iterator>;
+    using reverse_iterator = const std::reverse_iterator<xtd::collections::generic::helpers::wrap_pointer_iterator<pointer>>;
     /// @brief Represents the const reverse iterator of read_only_span value type.
-    using const_reverse_iterator = const std::reverse_iterator<iterator>;
+    using const_reverse_iterator = const std::reverse_iterator<xtd::collections::generic::helpers::wrap_pointer_iterator<pointer>>;
     /// @}
     
     /// @name Public Constructors
