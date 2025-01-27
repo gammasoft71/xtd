@@ -157,6 +157,8 @@ namespace xtd {
     /// @param array The std::array to construct a view for.
     template<class array_type_t, xtd::size len>
     constexpr span(std::array<array_type_t, len>& array) noexcept : data_ {array.data()}, length_ {extent != dynamic_extent ? extent : len} {}
+    /// @brief Creates an xtd::span with specified xtd::basic_string <char_t>.
+    /// @param str The xtd::basic_string <char_t> to construct a view for.
     template<class char_t>
     constexpr span(xtd::basic_string<char_t>& str) noexcept : data_ {str.data()}, length_ {extent != dynamic_extent ? extent : str.size()} {
     }
@@ -290,7 +292,7 @@ namespace xtd {
     /// @brief Copies the contents of this Span<T> into a destination xtd:span <type_t>.
     /// @param destinaton The destination Span<T> object.
     /// @exception xtd::argument_exception `destination` is shorter than the source xtd::span <type_t>.
-    void copy_to(span& destination) {
+    void copy_to(span& destination) const {
       if (!try_copy_to(destination))
         throw xtd::argument_exception {};
     }
@@ -307,6 +309,13 @@ namespace xtd {
       for (size_type i = 0; i < size(); i++)
         if (!xtd::collections::generic::helpers::equator<type_t> {}(at(i), rhs.at(i))) return false;
       return true;
+    }
+    
+    /// @brief Fills the elements of this span with a specified value.
+    /// @param value The value to assign to each element of the span.
+    void fill(const type_t& value) {
+      for (auto& item : *this)
+        item = value;
     }
     
     /// @brief Obtains a subspan consisting of the first `count` elements of the sequence.
@@ -407,7 +416,7 @@ namespace xtd {
     /// @param destination The target of the copy operation.
     /// @return `true` if the copy operation succeeded; otherwise, `false`.
     /// @remarks This method copies all of `source` to `destination` even if `source` and `destination` overlap.
-    bool try_copy_to(span& destination) noexcept {
+    bool try_copy_to(span& destination) const noexcept {
       if (destination.length() < length()) return false;
       for (auto index = xtd::size {}; index < length_; ++index)
         destination.at(index) = at(index);
