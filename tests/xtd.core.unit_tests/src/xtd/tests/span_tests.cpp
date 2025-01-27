@@ -5,10 +5,69 @@
 #include <xtd/tunit/test_method_attribute>
 
 using namespace xtd;
+using namespace xtd::collections::generic::helpers;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
   class test_class_(span_tests) {
+    void test_method_(element_type) {
+      assert::are_equal(typeof_<const int>(), typeof_<span<const int>::element_type>());
+      assert::are_equal(typeof_<int>(), typeof_<span<int>::element_type>());
+    }
+    
+    void test_method_(value_type) {
+      assert::are_equal(typeof_<int>(), typeof_<span<const int>::value_type>());
+      assert::are_equal(typeof_<int>(), typeof_<span<int>::value_type>());
+    }
+    
+    void test_method_(size_type) {
+      assert::are_equal(typeof_<size>(), typeof_<span<int>::size_type>());
+    }
+    
+    void test_method_(difference_type) {
+      assert::are_equal(typeof_<ptrdiff>(), typeof_<span<int>::difference_type>());
+    }
+
+    void test_method_(pointer) {
+      assert::are_equal(typeof_<const int*>(), typeof_<span<const int>::pointer>());
+      assert::are_equal(typeof_<int*>(), typeof_<span<int>::pointer>());
+    }
+    
+    void test_method_(const_pointer) {
+      assert::are_equal(typeof_<const int*>(), typeof_<span<const int>::const_pointer>());
+      assert::are_equal(typeof_<const int*>(), typeof_<span<int>::const_pointer>());
+    }
+
+    void test_method_(reference) {
+      assert::are_equal(typeof_<const int&>(), typeof_<span<const int>::reference>());
+      assert::are_equal(typeof_<int&>(), typeof_<span<int>::reference>());
+    }
+    
+    void test_method_(const_reference) {
+      assert::are_equal(typeof_<const int&>(), typeof_<span<const int>::const_reference>());
+      assert::are_equal(typeof_<const int&>(), typeof_<span<int>::const_reference>());
+    }
+
+    void test_method_(iterator) {
+      assert::are_equal(typeof_<wrap_pointer_iterator<const int*>>(), typeof_<span<const int>::iterator>());
+      assert::are_equal(typeof_<wrap_pointer_iterator<int*>>(), typeof_<span<int>::iterator>());
+    }
+    
+    void test_method_(const_iterator) {
+      assert::are_equal(typeof_<const wrap_pointer_iterator<const int*>>(), typeof_<span<const int>::const_iterator>());
+      assert::are_equal(typeof_<const wrap_pointer_iterator<int*>>(), typeof_<span<int>::const_iterator>());
+    }
+
+    void test_method_(reverse_iterator) {
+      assert::are_equal(typeof_<std::reverse_iterator<wrap_pointer_iterator<const int*>>>(), typeof_<span<const int>::reverse_iterator>());
+      assert::are_equal(typeof_<std::reverse_iterator<wrap_pointer_iterator<int*>>>(), typeof_<span<int>::reverse_iterator>());
+    }
+    
+    void test_method_(const_reverse_iterator) {
+      assert::are_equal(typeof_<const std::reverse_iterator<wrap_pointer_iterator<const int*>>>(), typeof_<span<const int>::const_reverse_iterator>());
+      assert::are_equal(typeof_<const std::reverse_iterator<wrap_pointer_iterator<int*>>>(), typeof_<span<int>::const_reverse_iterator>());
+    }
+
     void test_method_(constructor_default) {
       auto s = span<int>();
       assert::is_null(s.data());
