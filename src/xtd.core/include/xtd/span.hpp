@@ -157,11 +157,6 @@ namespace xtd {
     /// @param array The std::array to construct a view for.
     template<class array_type_t, xtd::size len>
     constexpr span(std::array<array_type_t, len>& array) noexcept : data_ {array.data()}, length_ {extent != dynamic_extent ? extent : len} {}
-    /// @brief Creates an xtd::span with specified xtd::basic_string <char_t>.
-    /// @param str The xtd::basic_string <char_t> to construct a view for.
-    template<class char_t>
-    constexpr span(xtd::basic_string<char_t>& str) noexcept : data_ {str.data()}, length_ {extent != dynamic_extent ? extent : str.size()} {
-    }
     /// @}
 
     /// @cond
@@ -476,9 +471,6 @@ namespace xtd {
   
   template< class type_t, xtd::size len>
   span(std::array<type_t, len>& array) noexcept -> span<type_t>;
-  
-  template< class type_t>
-  span(xtd::basic_string<type_t>& str) noexcept -> span<type_t>;
   // }
   /// @endcond
 }
