@@ -1,7 +1,7 @@
 var searchData=
 [
   ['elapsed_5fevent_5fhandler_0',['elapsed_event_handler',['../group__events.html#gaca6b2a5ebda108374322b3c6b0fbfcb8',1,'xtd::timers']]],
-  ['element_5ftype_1',['element_type',['../classxtd_1_1span.html#ab813979acabeb4cbb9dde8f4f492e33e',1,'xtd::span']]],
+  ['element_5ftype_1',['element_type',['../classxtd_1_1read__only__span.html#a301127cd8915c82ef32d2d0825c29b8f',1,'xtd::read_only_span::element_type'],['../classxtd_1_1span.html#ab813979acabeb4cbb9dde8f4f492e33e',1,'xtd::span::element_type']]],
   ['enum_5fcollection_2',['enum_collection',['../group__xtd__core.html#ga2be4d2f270243268ff197700fa3ae42f',1,'xtd']]],
   ['enumerable_5ftype_3',['enumerable_type',['../classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#afa0428a5d439bb7fd6a75f0ca54751c5',1,'xtd::collections::generic::extensions::enumerable']]],
   ['enumerator_4',['enumerator',['../group__collections.html#ga46ca5358d7207b976828dddad86adcf8',1,'xtd::collections']]],

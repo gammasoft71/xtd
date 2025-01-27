@@ -129,7 +129,7 @@ The referenced data can be modified through a <a class="el" href="classxtd_1_1sp
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Create a span from memory.</span></div>
 <div class="line">  <span class="keyword">auto</span> memory_pointer = <span class="keyword">new</span> <span class="keywordtype">byte</span>[100];</div>
-<div class="line">  <span class="keyword">auto</span> memory_span = <a class="code hl_function" href="classxtd_1_1span.html#ae9a167ad95ed59977cdbf901305f3d4a">span</a>(memory_pointer, 100);</div>
+<div class="line">  <span class="keyword">auto</span> memory_span = <a class="code hl_function" href="classxtd_1_1span.html#a74d48b0a681a79ef10c79b8d4810d437">span</a>(memory_pointer, 100);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="classxtd_1_1span.html#a2bdd4be772fff0a8157cfdd209fe24e3">data</a> = <span class="keywordtype">byte</span> {};</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0_z; ctr &lt; memory_span.length(); ++ctr)</div>
@@ -149,8 +149,8 @@ The referenced data can be modified through a <a class="el" href="classxtd_1_1sp
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The sum is 4950</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1span_html_a2bdd4be772fff0a8157cfdd209fe24e3"><div class="ttname"><a href="classxtd_1_1span.html#a2bdd4be772fff0a8157cfdd209fe24e3">xtd::span::data</a></div><div class="ttdeci">constexpr const_pointer data() const noexcept</div><div class="ttdoc">Gets direct access to the underlying contiguous storage.</div><div class="ttdef"><b>Definition</b> span.hpp:207</div></div>
-<div class="ttc" id="aclassxtd_1_1span_html_ae9a167ad95ed59977cdbf901305f3d4a"><div class="ttname"><a href="classxtd_1_1span.html#ae9a167ad95ed59977cdbf901305f3d4a">xtd::span::span</a></div><div class="ttdeci">span()</div><div class="ttdoc">Creates an empty xtd::span whose xtd::span::data is null and xtd::span::size is 0.</div><div class="ttdef"><b>Definition</b> span.hpp:94</div></div>
+<div class="ttc" id="aclassxtd_1_1span_html_a2bdd4be772fff0a8157cfdd209fe24e3"><div class="ttname"><a href="classxtd_1_1span.html#a2bdd4be772fff0a8157cfdd209fe24e3">xtd::span::data</a></div><div class="ttdeci">constexpr const_pointer data() const noexcept</div><div class="ttdoc">Gets direct access to the underlying contiguous storage.</div><div class="ttdef"><b>Definition</b> span.hpp:222</div></div>
+<div class="ttc" id="aclassxtd_1_1span_html_a74d48b0a681a79ef10c79b8d4810d437"><div class="ttname"><a href="classxtd_1_1span.html#a74d48b0a681a79ef10c79b8d4810d437">xtd::span::span</a></div><div class="ttdeci">constexpr span()</div><div class="ttdoc">Creates an empty xtd::span whose xtd::span::data is null and xtd::span::size is 0.</div><div class="ttdef"><b>Definition</b> span.hpp:94</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
 </div><!-- fragment --></dd></dl>
 <p>Create a span over an array. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/array&gt;</span></div>
@@ -162,7 +162,7 @@ The referenced data can be modified through a <a class="el" href="classxtd_1_1sp
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Create a span over an array.</span></div>
 <div class="line">  <span class="keyword">auto</span> bytes = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;byte&gt;</a>(100);</div>
-<div class="line">  <span class="keyword">auto</span> array_span = <a class="code hl_function" href="classxtd_1_1span.html#ae9a167ad95ed59977cdbf901305f3d4a">span</a>(bytes);</div>
+<div class="line">  <span class="keyword">auto</span> array_span = <a class="code hl_function" href="classxtd_1_1span.html#a74d48b0a681a79ef10c79b8d4810d437">span</a>(bytes);</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> <a class="code hl_function" href="classxtd_1_1span.html#a2bdd4be772fff0a8157cfdd209fe24e3">data</a> = <span class="keywordtype">byte</span> {};</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0_z; ctr &lt; array_span.length(); ++ctr)</div>
@@ -205,30 +205,30 @@ The referenced data can be modified through a <a class="el" href="classxtd_1_1sp
 <tr class="memitem:a550cb3e35290c243343b649f598a9da7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a550cb3e35290c243343b649f598a9da7">const_reference</a> = const type_t &amp;</td></tr>
 <tr class="memdesc:a550cb3e35290c243343b649f598a9da7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the span const reference type.  <br /></td></tr>
 <tr class="separator:a550cb3e35290c243343b649f598a9da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa833fd641cb1e0ad5cf38cb9e26ca33"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#afa833fd641cb1e0ad5cf38cb9e26ca33">iterator</a> = const <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html">xtd::collections::generic::helpers::wrap_pointer_iterator</a>&lt; <a class="el" href="classxtd_1_1span.html#a53b35b964c8c5683f4100850eb926bee">pointer</a> &gt;</td></tr>
-<tr class="memdesc:afa833fd641cb1e0ad5cf38cb9e26ca33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the iterator of span value type.  <br /></td></tr>
-<tr class="separator:afa833fd641cb1e0ad5cf38cb9e26ca33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9836c5faecb121e5e6e2b792d0fd79ab"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a9836c5faecb121e5e6e2b792d0fd79ab">iterator</a> = <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html">xtd::collections::generic::helpers::wrap_pointer_iterator</a>&lt; <a class="el" href="classxtd_1_1span.html#a53b35b964c8c5683f4100850eb926bee">pointer</a> &gt;</td></tr>
+<tr class="memdesc:a9836c5faecb121e5e6e2b792d0fd79ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the iterator of span value type.  <br /></td></tr>
+<tr class="separator:a9836c5faecb121e5e6e2b792d0fd79ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae0a544d5eed8cbd5804e3ed978d2491"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#aae0a544d5eed8cbd5804e3ed978d2491">const_iterator</a> = const <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html">xtd::collections::generic::helpers::wrap_pointer_iterator</a>&lt; <a class="el" href="classxtd_1_1span.html#a53b35b964c8c5683f4100850eb926bee">pointer</a> &gt;</td></tr>
 <tr class="memdesc:aae0a544d5eed8cbd5804e3ed978d2491"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the const iterator of span value type.  <br /></td></tr>
 <tr class="separator:aae0a544d5eed8cbd5804e3ed978d2491"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11508c0b348322a09d49371e4c831568"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a11508c0b348322a09d49371e4c831568">reverse_iterator</a> = std::reverse_iterator&lt; <a class="el" href="classxtd_1_1span.html#afa833fd641cb1e0ad5cf38cb9e26ca33">iterator</a> &gt;</td></tr>
-<tr class="memdesc:a11508c0b348322a09d49371e4c831568"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the reverse iterator of span value type.  <br /></td></tr>
-<tr class="separator:a11508c0b348322a09d49371e4c831568"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a217d0ac5fde6530427614710e5999499"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a217d0ac5fde6530427614710e5999499">const_reverse_iterator</a> = const std::reverse_iterator&lt; <a class="el" href="classxtd_1_1span.html#afa833fd641cb1e0ad5cf38cb9e26ca33">iterator</a> &gt;</td></tr>
-<tr class="memdesc:a217d0ac5fde6530427614710e5999499"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the const reverse iterator of span value type.  <br /></td></tr>
-<tr class="separator:a217d0ac5fde6530427614710e5999499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bb4255dbd60f90307050e16ac49861d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a3bb4255dbd60f90307050e16ac49861d">reverse_iterator</a> = std::reverse_iterator&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html">xtd::collections::generic::helpers::wrap_pointer_iterator</a>&lt; <a class="el" href="classxtd_1_1span.html#a53b35b964c8c5683f4100850eb926bee">pointer</a> &gt; &gt;</td></tr>
+<tr class="memdesc:a3bb4255dbd60f90307050e16ac49861d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the reverse iterator of span value type.  <br /></td></tr>
+<tr class="separator:a3bb4255dbd60f90307050e16ac49861d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59981b2d0ff975eef5f4bf4eadafbfeb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a59981b2d0ff975eef5f4bf4eadafbfeb">const_reverse_iterator</a> = const std::reverse_iterator&lt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html">xtd::collections::generic::helpers::wrap_pointer_iterator</a>&lt; <a class="el" href="classxtd_1_1span.html#a53b35b964c8c5683f4100850eb926bee">pointer</a> &gt; &gt;</td></tr>
+<tr class="memdesc:a59981b2d0ff975eef5f4bf4eadafbfeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the const reverse iterator of span value type.  <br /></td></tr>
+<tr class="separator:a59981b2d0ff975eef5f4bf4eadafbfeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:a0f6f2cb41306609e11d24f25e8cfa87c"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1span.html">span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a0f6f2cb41306609e11d24f25e8cfa87c">empty_span</a></td></tr>
-<tr class="memdesc:a0f6f2cb41306609e11d24f25e8cfa87c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an empty <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> &lt;type_t&gt; object.  <br /></td></tr>
-<tr class="separator:a0f6f2cb41306609e11d24f25e8cfa87c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fe4d210a86c22b5a6778bec352b6a95"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1span.html">span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a5fe4d210a86c22b5a6778bec352b6a95">empty_span</a></td></tr>
+<tr class="memdesc:a5fe4d210a86c22b5a6778bec352b6a95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an empty <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> &lt;type_t&gt; object.  <br /></td></tr>
+<tr class="separator:a5fe4d210a86c22b5a6778bec352b6a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18cf7c070a9a87c1d814a1ed20b4fecc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a550cb3e35290c243343b649f598a9da7">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a18cf7c070a9a87c1d814a1ed20b4fecc">back</a> () const</td></tr>
 <tr class="memdesc:a18cf7c070a9a87c1d814a1ed20b4fecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the last element.  <br /></td></tr>
 <tr class="separator:a18cf7c070a9a87c1d814a1ed20b4fecc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83270191b4f4d73770f5c215991e8beb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#aae0a544d5eed8cbd5804e3ed978d2491">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a83270191b4f4d73770f5c215991e8beb">begin</a> () const</td></tr>
 <tr class="memdesc:a83270191b4f4d73770f5c215991e8beb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the beginning.  <br /></td></tr>
 <tr class="separator:a83270191b4f4d73770f5c215991e8beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cb73065c5afa39e795779d10e6f4949"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#afa833fd641cb1e0ad5cf38cb9e26ca33">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a5cb73065c5afa39e795779d10e6f4949">begin</a> ()</td></tr>
+<tr class="memitem:a5cb73065c5afa39e795779d10e6f4949"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a9836c5faecb121e5e6e2b792d0fd79ab">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a5cb73065c5afa39e795779d10e6f4949">begin</a> ()</td></tr>
 <tr class="memdesc:a5cb73065c5afa39e795779d10e6f4949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the beginning.  <br /></td></tr>
 <tr class="separator:a5cb73065c5afa39e795779d10e6f4949"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e5d2b9bca0d09baaf6e02f1229d195f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#aae0a544d5eed8cbd5804e3ed978d2491">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a6e5d2b9bca0d09baaf6e02f1229d195f">cbegin</a> () const</td></tr>
@@ -237,10 +237,10 @@ The referenced data can be modified through a <a class="el" href="classxtd_1_1sp
 <tr class="memitem:ad5be3896cf6a2bc293df6b096f6c5d63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#aae0a544d5eed8cbd5804e3ed978d2491">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#ad5be3896cf6a2bc293df6b096f6c5d63">cend</a> () const</td></tr>
 <tr class="memdesc:ad5be3896cf6a2bc293df6b096f6c5d63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the end.  <br /></td></tr>
 <tr class="separator:ad5be3896cf6a2bc293df6b096f6c5d63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cfd07f60cec796f2a86e7cb8429848a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a217d0ac5fde6530427614710e5999499">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a0cfd07f60cec796f2a86e7cb8429848a">crbegin</a> () const</td></tr>
+<tr class="memitem:a0cfd07f60cec796f2a86e7cb8429848a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a59981b2d0ff975eef5f4bf4eadafbfeb">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a0cfd07f60cec796f2a86e7cb8429848a">crbegin</a> () const</td></tr>
 <tr class="memdesc:a0cfd07f60cec796f2a86e7cb8429848a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reverse iterator to the beginning.  <br /></td></tr>
 <tr class="separator:a0cfd07f60cec796f2a86e7cb8429848a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab50959515b6b2e2b321ccddd224f6086"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a217d0ac5fde6530427614710e5999499">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#ab50959515b6b2e2b321ccddd224f6086">crend</a> () const</td></tr>
+<tr class="memitem:ab50959515b6b2e2b321ccddd224f6086"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a59981b2d0ff975eef5f4bf4eadafbfeb">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#ab50959515b6b2e2b321ccddd224f6086">crend</a> () const</td></tr>
 <tr class="memdesc:ab50959515b6b2e2b321ccddd224f6086"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reverse iterator to the end.  <br /></td></tr>
 <tr class="separator:ab50959515b6b2e2b321ccddd224f6086"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bdd4be772fff0a8157cfdd209fe24e3"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classxtd_1_1span.html#a2f91808e982a25c1587dd5b6ff34f0b2">const_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a2bdd4be772fff0a8157cfdd209fe24e3">data</a> () const noexcept</td></tr>
@@ -252,7 +252,7 @@ The referenced data can be modified through a <a class="el" href="classxtd_1_1sp
 <tr class="memitem:a73c28a77982a6811810283c720cd0a07"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#aae0a544d5eed8cbd5804e3ed978d2491">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a73c28a77982a6811810283c720cd0a07">end</a> () const</td></tr>
 <tr class="memdesc:a73c28a77982a6811810283c720cd0a07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the end.  <br /></td></tr>
 <tr class="separator:a73c28a77982a6811810283c720cd0a07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7e5a67ac8c83badd0513e939216cc33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#afa833fd641cb1e0ad5cf38cb9e26ca33">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#ab7e5a67ac8c83badd0513e939216cc33">end</a> ()</td></tr>
+<tr class="memitem:ab7e5a67ac8c83badd0513e939216cc33"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a9836c5faecb121e5e6e2b792d0fd79ab">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#ab7e5a67ac8c83badd0513e939216cc33">end</a> ()</td></tr>
 <tr class="memdesc:ab7e5a67ac8c83badd0513e939216cc33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the end.  <br /></td></tr>
 <tr class="separator:ab7e5a67ac8c83badd0513e939216cc33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adccccfe53f38da4c584d4ec2075a97e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a550cb3e35290c243343b649f598a9da7">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#adccccfe53f38da4c584d4ec2075a97e2">front</a> () const</td></tr>
@@ -264,16 +264,16 @@ The referenced data can be modified through a <a class="el" href="classxtd_1_1sp
 <tr class="memitem:a385c8ab57f856aef24866794bf96f8d5"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classxtd_1_1span.html#a4dab3665205c1aac0e5749a643510256">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a385c8ab57f856aef24866794bf96f8d5">length</a> () const noexcept</td></tr>
 <tr class="memdesc:a385c8ab57f856aef24866794bf96f8d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the length of the current span.  <br /></td></tr>
 <tr class="separator:a385c8ab57f856aef24866794bf96f8d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe9773b90c286ae3623a6226116e5b8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a217d0ac5fde6530427614710e5999499">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#abe9773b90c286ae3623a6226116e5b8d">rbegin</a> () const</td></tr>
+<tr class="memitem:abe9773b90c286ae3623a6226116e5b8d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a59981b2d0ff975eef5f4bf4eadafbfeb">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#abe9773b90c286ae3623a6226116e5b8d">rbegin</a> () const</td></tr>
 <tr class="memdesc:abe9773b90c286ae3623a6226116e5b8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reverse iterator to the beginning.  <br /></td></tr>
 <tr class="separator:abe9773b90c286ae3623a6226116e5b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9995cb26060691cd57e60c343756f1a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a11508c0b348322a09d49371e4c831568">reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a9995cb26060691cd57e60c343756f1a2">rbegin</a> ()</td></tr>
+<tr class="memitem:a9995cb26060691cd57e60c343756f1a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a3bb4255dbd60f90307050e16ac49861d">reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a9995cb26060691cd57e60c343756f1a2">rbegin</a> ()</td></tr>
 <tr class="memdesc:a9995cb26060691cd57e60c343756f1a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reverse iterator to the beginning.  <br /></td></tr>
 <tr class="separator:a9995cb26060691cd57e60c343756f1a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05a6c23b77f1fb182839b9a55d5ff706"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a217d0ac5fde6530427614710e5999499">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a05a6c23b77f1fb182839b9a55d5ff706">rend</a> () const</td></tr>
+<tr class="memitem:a05a6c23b77f1fb182839b9a55d5ff706"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a59981b2d0ff975eef5f4bf4eadafbfeb">const_reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a05a6c23b77f1fb182839b9a55d5ff706">rend</a> () const</td></tr>
 <tr class="memdesc:a05a6c23b77f1fb182839b9a55d5ff706"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reverse iterator to the end.  <br /></td></tr>
 <tr class="separator:a05a6c23b77f1fb182839b9a55d5ff706"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96f50ec5bbf27d9e0390e54426592b78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a11508c0b348322a09d49371e4c831568">reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a96f50ec5bbf27d9e0390e54426592b78">rend</a> ()</td></tr>
+<tr class="memitem:a96f50ec5bbf27d9e0390e54426592b78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a3bb4255dbd60f90307050e16ac49861d">reverse_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a96f50ec5bbf27d9e0390e54426592b78">rend</a> ()</td></tr>
 <tr class="memdesc:a96f50ec5bbf27d9e0390e54426592b78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reverse iterator to the end.  <br /></td></tr>
 <tr class="separator:a96f50ec5bbf27d9e0390e54426592b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6f98a51149f6eb2722259dd1de148ec"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="classxtd_1_1span.html#a4dab3665205c1aac0e5749a643510256">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#af6f98a51149f6eb2722259dd1de148ec">size</a> () const noexcept</td></tr>
@@ -284,44 +284,44 @@ The referenced data can be modified through a <a class="el" href="classxtd_1_1sp
 <tr class="separator:a94d0a448e186f343e16960386d8c920e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
-<tr class="memitem:ae9a167ad95ed59977cdbf901305f3d4a"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> count = 0&gt; </td></tr>
-<tr class="memitem:ae9a167ad95ed59977cdbf901305f3d4a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#ae9a167ad95ed59977cdbf901305f3d4a">span</a> ()</td></tr>
-<tr class="memdesc:ae9a167ad95ed59977cdbf901305f3d4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> whose <a class="el" href="classxtd_1_1span.html#a2bdd4be772fff0a8157cfdd209fe24e3" title="Gets direct access to the underlying contiguous storage.">xtd::span::data</a> is null and <a class="el" href="classxtd_1_1span.html#af6f98a51149f6eb2722259dd1de148ec" title="Returns the number of elements.">xtd::span::size</a> is 0.  <br /></td></tr>
-<tr class="separator:ae9a167ad95ed59977cdbf901305f3d4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89ea2a700ce12ed7562d502dd982295c"><td class="memTemplParams" colspan="2">template&lt;class iterator_t &gt; </td></tr>
-<tr class="memitem:a89ea2a700ce12ed7562d502dd982295c"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a89ea2a700ce12ed7562d502dd982295c">span</a> (iterator_t <a class="el" href="classxtd_1_1span.html#a86b398fd6c387b83455c1c51d55bd0c6">first</a>, iterator_t <a class="el" href="classxtd_1_1span.html#a94fdb7cbc08a50d96e916bbecc8f6c9a">last</a>)</td></tr>
-<tr class="memdesc:a89ea2a700ce12ed7562d502dd982295c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified iterators.  <br /></td></tr>
-<tr class="separator:a89ea2a700ce12ed7562d502dd982295c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85c9f505c9d5ecdf9a433c750459c703"><td class="memTemplParams" colspan="2">template&lt;class range_t &gt; </td></tr>
-<tr class="memitem:a85c9f505c9d5ecdf9a433c750459c703"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a85c9f505c9d5ecdf9a433c750459c703">span</a> (range_t &amp;&amp;range) noexcept</td></tr>
-<tr class="memdesc:a85c9f505c9d5ecdf9a433c750459c703"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified range.  <br /></td></tr>
-<tr class="separator:a85c9f505c9d5ecdf9a433c750459c703"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e68e394b5c0a4a86f611fb48b8f6998"><td class="memTemplParams" colspan="2">template&lt;class collection_t &gt; </td></tr>
-<tr class="memitem:a6e68e394b5c0a4a86f611fb48b8f6998"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a6e68e394b5c0a4a86f611fb48b8f6998">span</a> (collection_t &amp;items, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> count)</td></tr>
-<tr class="memdesc:a6e68e394b5c0a4a86f611fb48b8f6998"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified collection and count.  <br /></td></tr>
-<tr class="separator:a6e68e394b5c0a4a86f611fb48b8f6998"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a169dc0c6123a16c906d17dad9c3ae790"><td class="memTemplParams" colspan="2">template&lt;class collection_t &gt; </td></tr>
-<tr class="memitem:a169dc0c6123a16c906d17dad9c3ae790"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a169dc0c6123a16c906d17dad9c3ae790">span</a> (collection_t &amp;items, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> offset, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> count)</td></tr>
-<tr class="memdesc:a169dc0c6123a16c906d17dad9c3ae790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified collection, offest and count.  <br /></td></tr>
-<tr class="separator:a169dc0c6123a16c906d17dad9c3ae790"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d7a78aa5b3c3d6e85abcec250d1f64f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a0d7a78aa5b3c3d6e85abcec250d1f64f">span</a> (std::initializer_list&lt; type_t &gt; items) noexcept</td></tr>
-<tr class="memdesc:a0d7a78aa5b3c3d6e85abcec250d1f64f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified initializer list.  <br /></td></tr>
-<tr class="separator:a0d7a78aa5b3c3d6e85abcec250d1f64f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadef87a8ff63fd42d1a359316ab6d51d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#aadef87a8ff63fd42d1a359316ab6d51d">span</a> (type_t *<a class="el" href="classxtd_1_1span.html#a2bdd4be772fff0a8157cfdd209fe24e3">data</a>, <a class="el" href="classxtd_1_1span.html#a4dab3665205c1aac0e5749a643510256">size_type</a> count)</td></tr>
-<tr class="memdesc:aadef87a8ff63fd42d1a359316ab6d51d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified data pointer and count.  <br /></td></tr>
-<tr class="separator:aadef87a8ff63fd42d1a359316ab6d51d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9eebf2a45402aca1ee8421178b44eabe"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> len&gt; </td></tr>
-<tr class="memitem:a9eebf2a45402aca1ee8421178b44eabe"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a9eebf2a45402aca1ee8421178b44eabe">span</a> (type_t(&amp;<a class="el" href="classxtd_1_1array.html">array</a>)[len]) noexcept</td></tr>
-<tr class="memdesc:a9eebf2a45402aca1ee8421178b44eabe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified native array.  <br /></td></tr>
-<tr class="separator:a9eebf2a45402aca1ee8421178b44eabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74d48b0a681a79ef10c79b8d4810d437"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> count = 0&gt; </td></tr>
+<tr class="memitem:a74d48b0a681a79ef10c79b8d4810d437"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a74d48b0a681a79ef10c79b8d4810d437">span</a> ()</td></tr>
+<tr class="memdesc:a74d48b0a681a79ef10c79b8d4810d437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> whose <a class="el" href="classxtd_1_1span.html#a2bdd4be772fff0a8157cfdd209fe24e3" title="Gets direct access to the underlying contiguous storage.">xtd::span::data</a> is null and <a class="el" href="classxtd_1_1span.html#af6f98a51149f6eb2722259dd1de148ec" title="Returns the number of elements.">xtd::span::size</a> is 0.  <br /></td></tr>
+<tr class="separator:a74d48b0a681a79ef10c79b8d4810d437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cbf3a6b889c696d0e1cf5117db6c167"><td class="memTemplParams" colspan="2">template&lt;class iterator_t &gt; </td></tr>
+<tr class="memitem:a7cbf3a6b889c696d0e1cf5117db6c167"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a7cbf3a6b889c696d0e1cf5117db6c167">span</a> (iterator_t <a class="el" href="classxtd_1_1span.html#a86b398fd6c387b83455c1c51d55bd0c6">first</a>, iterator_t <a class="el" href="classxtd_1_1span.html#a94fdb7cbc08a50d96e916bbecc8f6c9a">last</a>)</td></tr>
+<tr class="memdesc:a7cbf3a6b889c696d0e1cf5117db6c167"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified iterators.  <br /></td></tr>
+<tr class="separator:a7cbf3a6b889c696d0e1cf5117db6c167"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c5b490092f6baac1d056ec76a5b3702"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> len&gt; </td></tr>
+<tr class="memitem:a0c5b490092f6baac1d056ec76a5b3702"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a0c5b490092f6baac1d056ec76a5b3702">span</a> (<a class="el" href="classxtd_1_1span.html#ab813979acabeb4cbb9dde8f4f492e33e">element_type</a>(&amp;<a class="el" href="classxtd_1_1array.html">array</a>)[len]) noexcept</td></tr>
+<tr class="memdesc:a0c5b490092f6baac1d056ec76a5b3702"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified native array.  <br /></td></tr>
+<tr class="separator:a0c5b490092f6baac1d056ec76a5b3702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a085891c610710a74a0209b9036a71060"><td class="memTemplParams" colspan="2">template&lt;class array_type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> len&gt; </td></tr>
+<tr class="memitem:a085891c610710a74a0209b9036a71060"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a085891c610710a74a0209b9036a71060">span</a> (const std::array&lt; array_type_t, len &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>) noexcept</td></tr>
+<tr class="memdesc:a085891c610710a74a0209b9036a71060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified std::array.  <br /></td></tr>
+<tr class="separator:a085891c610710a74a0209b9036a71060"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fbc96d1dd903329e4c0d639118f87ea"><td class="memTemplParams" colspan="2">template&lt;class array_type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> len&gt; </td></tr>
 <tr class="memitem:a8fbc96d1dd903329e4c0d639118f87ea"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a8fbc96d1dd903329e4c0d639118f87ea">span</a> (std::array&lt; array_type_t, len &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>) noexcept</td></tr>
 <tr class="memdesc:a8fbc96d1dd903329e4c0d639118f87ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified std::array.  <br /></td></tr>
 <tr class="separator:a8fbc96d1dd903329e4c0d639118f87ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accbc35820e89b034d06917a24973dad9"><td class="memTemplParams" colspan="2"><a id="accbc35820e89b034d06917a24973dad9" name="accbc35820e89b034d06917a24973dad9"></a>
-template&lt;class char_t &gt; </td></tr>
-<tr class="memitem:accbc35820e89b034d06917a24973dad9"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><b>span</b> (<a class="el" href="classxtd_1_1basic__string.html">xtd::basic_string</a>&lt; char_t &gt; &amp;str) noexcept</td></tr>
-<tr class="separator:accbc35820e89b034d06917a24973dad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c2c64643af26723354661070fca48aa"><td class="memTemplParams" colspan="2">template&lt;class range_t &gt; </td></tr>
+<tr class="memitem:a1c2c64643af26723354661070fca48aa"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a1c2c64643af26723354661070fca48aa">span</a> (range_t &amp;&amp;range) noexcept</td></tr>
+<tr class="memdesc:a1c2c64643af26723354661070fca48aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified range.  <br /></td></tr>
+<tr class="separator:a1c2c64643af26723354661070fca48aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcdcb8880025565d35c9af5d02d762f2"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#afcdcb8880025565d35c9af5d02d762f2">span</a> (std::initializer_list&lt; type_t &gt; items) noexcept</td></tr>
+<tr class="memdesc:afcdcb8880025565d35c9af5d02d762f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified initializer list.  <br /></td></tr>
+<tr class="separator:afcdcb8880025565d35c9af5d02d762f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af091093546285d50623dbe801f8aea34"><td class="memTemplParams" colspan="2">template&lt;class collection_t &gt; </td></tr>
+<tr class="memitem:af091093546285d50623dbe801f8aea34"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#af091093546285d50623dbe801f8aea34">span</a> (collection_t &amp;items, <a class="el" href="classxtd_1_1span.html#a4dab3665205c1aac0e5749a643510256">size_type</a> <a class="el" href="classxtd_1_1span.html#a385c8ab57f856aef24866794bf96f8d5">length</a>)</td></tr>
+<tr class="memdesc:af091093546285d50623dbe801f8aea34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified collection and count.  <br /></td></tr>
+<tr class="separator:af091093546285d50623dbe801f8aea34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95959e101619ce5fcba0973dad2311e0"><td class="memTemplParams" colspan="2">template&lt;class collection_t &gt; </td></tr>
+<tr class="memitem:a95959e101619ce5fcba0973dad2311e0"><td class="memTemplItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a95959e101619ce5fcba0973dad2311e0">span</a> (collection_t &amp;items, <a class="el" href="classxtd_1_1span.html#a4dab3665205c1aac0e5749a643510256">size_type</a> start, <a class="el" href="classxtd_1_1span.html#a4dab3665205c1aac0e5749a643510256">size_type</a> <a class="el" href="classxtd_1_1span.html#a385c8ab57f856aef24866794bf96f8d5">length</a>)</td></tr>
+<tr class="memdesc:a95959e101619ce5fcba0973dad2311e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified collection, offest and count.  <br /></td></tr>
+<tr class="separator:a95959e101619ce5fcba0973dad2311e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae07642e51c5bc9ed57117117ba4a5954"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#ae07642e51c5bc9ed57117117ba4a5954">span</a> (type_t *const <a class="el" href="classxtd_1_1span.html#a2bdd4be772fff0a8157cfdd209fe24e3">data</a>, <a class="el" href="classxtd_1_1span.html#a4dab3665205c1aac0e5749a643510256">size_type</a> <a class="el" href="classxtd_1_1span.html#a385c8ab57f856aef24866794bf96f8d5">length</a>)</td></tr>
+<tr class="memdesc:ae07642e51c5bc9ed57117117ba4a5954"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified data pointer and count.  <br /></td></tr>
+<tr class="separator:ae07642e51c5bc9ed57117117ba4a5954"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:abe313ec3f909fd3186b6ef0730bf3135"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a550cb3e35290c243343b649f598a9da7">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#abe313ec3f909fd3186b6ef0730bf3135">at</a> (<a class="el" href="classxtd_1_1span.html#a4dab3665205c1aac0e5749a643510256">size_type</a> pos) const</td></tr>
@@ -333,15 +333,18 @@ template&lt;class char_t &gt; </td></tr>
 <tr class="memitem:ae5453b810210818ac20330c1ff36bfbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#ae5453b810210818ac20330c1ff36bfbe">clear</a> () noexcept</td></tr>
 <tr class="memdesc:ae5453b810210818ac20330c1ff36bfbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the contents of this <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> &lt;type&gt; object.  <br /></td></tr>
 <tr class="separator:ae5453b810210818ac20330c1ff36bfbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6df1e0bf40e1973273914e67f100863"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#ae6df1e0bf40e1973273914e67f100863">copy_to</a> (<a class="el" href="classxtd_1_1span.html">span</a> &amp;destination)</td></tr>
-<tr class="memdesc:ae6df1e0bf40e1973273914e67f100863"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the contents of this Span&lt;T&gt; into a destination xtd:span &lt;type_t&gt;.  <br /></td></tr>
-<tr class="separator:ae6df1e0bf40e1973273914e67f100863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2febb4d9e81778ba2d808fa496542b32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a2febb4d9e81778ba2d808fa496542b32">copy_to</a> (<a class="el" href="classxtd_1_1span.html">span</a> &amp;destination) const</td></tr>
+<tr class="memdesc:a2febb4d9e81778ba2d808fa496542b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the contents of this Span&lt;T&gt; into a destination xtd:span &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:a2febb4d9e81778ba2d808fa496542b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa63897f12c56167ead8d5401f4a1f7c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#afa63897f12c56167ead8d5401f4a1f7c">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept override</td></tr>
 <tr class="memdesc:afa63897f12c56167ead8d5401f4a1f7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="separator:afa63897f12c56167ead8d5401f4a1f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a178a3499369161a08b0a030a8f6c5d3d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a178a3499369161a08b0a030a8f6c5d3d">equals</a> (const <a class="el" href="classxtd_1_1span.html">span</a> &amp;rhs) const noexcept override</td></tr>
 <tr class="memdesc:a178a3499369161a08b0a030a8f6c5d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
 <tr class="separator:a178a3499369161a08b0a030a8f6c5d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8edb03caea678237d73f72b231b2e908"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a8edb03caea678237d73f72b231b2e908">fill</a> (const type_t &amp;value)</td></tr>
+<tr class="memdesc:a8edb03caea678237d73f72b231b2e908"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the elements of this span with a specified value.  <br /></td></tr>
+<tr class="separator:a8edb03caea678237d73f72b231b2e908"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86b398fd6c387b83455c1c51d55bd0c6"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> count&gt; </td></tr>
 <tr class="memitem:a86b398fd6c387b83455c1c51d55bd0c6"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html">span</a>&lt; <a class="el" href="classxtd_1_1span.html#ab813979acabeb4cbb9dde8f4f492e33e">element_type</a>, count &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#a86b398fd6c387b83455c1c51d55bd0c6">first</a> () const</td></tr>
 <tr class="memdesc:a86b398fd6c387b83455c1c51d55bd0c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Obtains a subspan consisting of the first <code>count</code> elements of the sequence.  <br /></td></tr>
@@ -379,9 +382,9 @@ template&lt;class char_t &gt; </td></tr>
 <tr class="memitem:abbe9a87ebb6822324eaa8db4e854779e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#abbe9a87ebb6822324eaa8db4e854779e">to_string</a> () const noexcept override</td></tr>
 <tr class="memdesc:abbe9a87ebb6822324eaa8db4e854779e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the string representation of this <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> &lt;type_t&gt; object.  <br /></td></tr>
 <tr class="separator:abbe9a87ebb6822324eaa8db4e854779e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba3cf22e59c50007cdc394286ce997c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#aba3cf22e59c50007cdc394286ce997c5">try_copy_to</a> (<a class="el" href="classxtd_1_1span.html">span</a> &amp;destination) noexcept</td></tr>
-<tr class="memdesc:aba3cf22e59c50007cdc394286ce997c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to copy the current <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> &lt;type_t&gt; to a destination <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> &lt;type_t&gt; and returns a value that indicates whether the copy operation succeeded.  <br /></td></tr>
-<tr class="separator:aba3cf22e59c50007cdc394286ce997c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad55660a17d8f8dcca5e9b321a5d9d542"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#ad55660a17d8f8dcca5e9b321a5d9d542">try_copy_to</a> (<a class="el" href="classxtd_1_1span.html">span</a> &amp;destination) const noexcept</td></tr>
+<tr class="memdesc:ad55660a17d8f8dcca5e9b321a5d9d542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to copy the current <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> &lt;type_t&gt; to a destination <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> &lt;type_t&gt; and returns a value that indicates whether the copy operation succeeded.  <br /></td></tr>
+<tr class="separator:ad55660a17d8f8dcca5e9b321a5d9d542"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Operators</h2></td></tr>
 <tr class="memitem:af8ceade09bd5a778c2c2b2a270e543f5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1span.html#a550cb3e35290c243343b649f598a9da7">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1span.html#af8ceade09bd5a778c2c2b2a270e543f5">operator[]</a> (<a class="el" href="classxtd_1_1span.html#a4dab3665205c1aac0e5749a643510256">size_type</a> index) const</td></tr>
@@ -566,8 +569,8 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
 
 </div>
 </div>
-<a id="afa833fd641cb1e0ad5cf38cb9e26ca33" name="afa833fd641cb1e0ad5cf38cb9e26ca33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa833fd641cb1e0ad5cf38cb9e26ca33">&#9670;&#160;</a></span>iterator</h2>
+<a id="a9836c5faecb121e5e6e2b792d0fd79ab" name="a9836c5faecb121e5e6e2b792d0fd79ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9836c5faecb121e5e6e2b792d0fd79ab">&#9670;&#160;</a></span>iterator</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -575,7 +578,7 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
 template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> extent = dynamic_extent&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::iterator =  const <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html">xtd::collections::generic::helpers::wrap_pointer_iterator</a>&lt;<a class="el" href="classxtd_1_1span.html#a53b35b964c8c5683f4100850eb926bee">pointer</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::iterator =  <a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html">xtd::collections::generic::helpers::wrap_pointer_iterator</a>&lt;<a class="el" href="classxtd_1_1span.html#a53b35b964c8c5683f4100850eb926bee">pointer</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -602,8 +605,8 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
 
 </div>
 </div>
-<a id="a11508c0b348322a09d49371e4c831568" name="a11508c0b348322a09d49371e4c831568"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11508c0b348322a09d49371e4c831568">&#9670;&#160;</a></span>reverse_iterator</h2>
+<a id="a3bb4255dbd60f90307050e16ac49861d" name="a3bb4255dbd60f90307050e16ac49861d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bb4255dbd60f90307050e16ac49861d">&#9670;&#160;</a></span>reverse_iterator</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -611,7 +614,7 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
 template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> extent = dynamic_extent&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::reverse_iterator =  std::reverse_iterator&lt;<a class="el" href="classxtd_1_1span.html#afa833fd641cb1e0ad5cf38cb9e26ca33">iterator</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::reverse_iterator =  std::reverse_iterator&lt;<a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html">xtd::collections::generic::helpers::wrap_pointer_iterator</a>&lt;<a class="el" href="classxtd_1_1span.html#a53b35b964c8c5683f4100850eb926bee">pointer</a>&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -620,8 +623,8 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
 
 </div>
 </div>
-<a id="a217d0ac5fde6530427614710e5999499" name="a217d0ac5fde6530427614710e5999499"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a217d0ac5fde6530427614710e5999499">&#9670;&#160;</a></span>const_reverse_iterator</h2>
+<a id="a59981b2d0ff975eef5f4bf4eadafbfeb" name="a59981b2d0ff975eef5f4bf4eadafbfeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59981b2d0ff975eef5f4bf4eadafbfeb">&#9670;&#160;</a></span>const_reverse_iterator</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -629,7 +632,7 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
 template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> extent = dynamic_extent&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::const_reverse_iterator =  const std::reverse_iterator&lt;<a class="el" href="classxtd_1_1span.html#afa833fd641cb1e0ad5cf38cb9e26ca33">iterator</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::const_reverse_iterator =  const std::reverse_iterator&lt;<a class="el" href="classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html">xtd::collections::generic::helpers::wrap_pointer_iterator</a>&lt;<a class="el" href="classxtd_1_1span.html#a53b35b964c8c5683f4100850eb926bee">pointer</a>&gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -639,8 +642,8 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae9a167ad95ed59977cdbf901305f3d4a" name="ae9a167ad95ed59977cdbf901305f3d4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9a167ad95ed59977cdbf901305f3d4a">&#9670;&#160;</a></span>span() <span class="overload">[1/9]</span></h2>
+<a id="a74d48b0a681a79ef10c79b8d4810d437" name="a74d48b0a681a79ef10c79b8d4810d437"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74d48b0a681a79ef10c79b8d4810d437">&#9670;&#160;</a></span>span() <span class="overload">[1/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -653,7 +656,7 @@ template&lt;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::span </td>
+          <td class="memname">constexpr <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::span </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -661,7 +664,7 @@ template&lt;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -670,8 +673,8 @@ template&lt;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810
 
 </div>
 </div>
-<a id="a89ea2a700ce12ed7562d502dd982295c" name="a89ea2a700ce12ed7562d502dd982295c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89ea2a700ce12ed7562d502dd982295c">&#9670;&#160;</a></span>span() <span class="overload">[2/9]</span></h2>
+<a id="a7cbf3a6b889c696d0e1cf5117db6c167" name="a7cbf3a6b889c696d0e1cf5117db6c167"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cbf3a6b889c696d0e1cf5117db6c167">&#9670;&#160;</a></span>span() <span class="overload">[2/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -684,7 +687,7 @@ template&lt;class iterator_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::span </td>
+          <td class="memname">constexpr <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::span </td>
           <td>(</td>
           <td class="paramtype">iterator_t&#160;</td>
           <td class="paramname"><em>first</em>, </td>
@@ -703,7 +706,7 @@ template&lt;class iterator_t &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -719,246 +722,8 @@ template&lt;class iterator_t &gt; </div>
 
 </div>
 </div>
-<a id="a85c9f505c9d5ecdf9a433c750459c703" name="a85c9f505c9d5ecdf9a433c750459c703"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a85c9f505c9d5ecdf9a433c750459c703">&#9670;&#160;</a></span>span() <span class="overload">[3/9]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> extent = dynamic_extent&gt; </div>
-<div class="memtemplate">
-template&lt;class range_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::span </td>
-          <td>(</td>
-          <td class="paramtype">range_t &amp;&amp;&#160;</td>
-          <td class="paramname"><em>range</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified range. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">range</td><td>The range to construct a view for. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a6e68e394b5c0a4a86f611fb48b8f6998" name="a6e68e394b5c0a4a86f611fb48b8f6998"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e68e394b5c0a4a86f611fb48b8f6998">&#9670;&#160;</a></span>span() <span class="overload">[4/9]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> extent = dynamic_extent&gt; </div>
-<div class="memtemplate">
-template&lt;class collection_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::span </td>
-          <td>(</td>
-          <td class="paramtype">collection_t &amp;&#160;</td>
-          <td class="paramname"><em>items</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td>
-          <td class="paramname"><em>count</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified collection and count. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">items</td><td>The collection to construct a view for. </td></tr>
-    <tr><td class="paramname">count</td><td>The number of elements in the collection. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>if count is greater than items size. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a169dc0c6123a16c906d17dad9c3ae790" name="a169dc0c6123a16c906d17dad9c3ae790"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a169dc0c6123a16c906d17dad9c3ae790">&#9670;&#160;</a></span>span() <span class="overload">[5/9]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> extent = dynamic_extent&gt; </div>
-<div class="memtemplate">
-template&lt;class collection_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::span </td>
-          <td>(</td>
-          <td class="paramtype">collection_t &amp;&#160;</td>
-          <td class="paramname"><em>items</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td>
-          <td class="paramname"><em>offset</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td>
-          <td class="paramname"><em>count</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified collection, offest and count. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">items</td><td>The collection to construct a view for. </td></tr>
-    <tr><td class="paramname">offset</td><td>The offset in the collection. </td></tr>
-    <tr><td class="paramname">count</td><td>The number of elements in the collection. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>if offset or offset + count are greater than items size. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a0d7a78aa5b3c3d6e85abcec250d1f64f" name="a0d7a78aa5b3c3d6e85abcec250d1f64f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d7a78aa5b3c3d6e85abcec250d1f64f">&#9670;&#160;</a></span>span() <span class="overload">[6/9]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> extent = dynamic_extent&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::span </td>
-          <td>(</td>
-          <td class="paramtype">std::initializer_list&lt; type_t &gt;&#160;</td>
-          <td class="paramname"><em>items</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified initializer list. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">items</td><td>The initializer list to construct a view for. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aadef87a8ff63fd42d1a359316ab6d51d" name="aadef87a8ff63fd42d1a359316ab6d51d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadef87a8ff63fd42d1a359316ab6d51d">&#9670;&#160;</a></span>span() <span class="overload">[7/9]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> extent = dynamic_extent&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::span </td>
-          <td>(</td>
-          <td class="paramtype">type_t *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classxtd_1_1span.html#a4dab3665205c1aac0e5749a643510256">size_type</a>&#160;</td>
-          <td class="paramname"><em>count</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified data pointer and count. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td>The data pointer to construct a view for. </td></tr>
-    <tr><td class="paramname">count</td><td>The number of elements to constuct. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a9eebf2a45402aca1ee8421178b44eabe" name="a9eebf2a45402aca1ee8421178b44eabe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9eebf2a45402aca1ee8421178b44eabe">&#9670;&#160;</a></span>span() <span class="overload">[8/9]</span></h2>
+<a id="a0c5b490092f6baac1d056ec76a5b3702" name="a0c5b490092f6baac1d056ec76a5b3702"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c5b490092f6baac1d056ec76a5b3702">&#9670;&#160;</a></span>span() <span class="overload">[3/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -973,7 +738,7 @@ template&lt;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810
         <tr>
           <td class="memname">constexpr <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::span </td>
           <td>(</td>
-          <td class="paramtype">type_t(&amp;)&#160;</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1span.html#ab813979acabeb4cbb9dde8f4f492e33e">element_type</a>(&amp;)&#160;</td>
           <td class="paramname"><em>array</em>[len]</td><td>)</td>
           <td></td>
         </tr>
@@ -995,8 +760,46 @@ template&lt;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810
 
 </div>
 </div>
+<a id="a085891c610710a74a0209b9036a71060" name="a085891c610710a74a0209b9036a71060"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a085891c610710a74a0209b9036a71060">&#9670;&#160;</a></span>span() <span class="overload">[4/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> extent = dynamic_extent&gt; </div>
+<div class="memtemplate">
+template&lt;class array_type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> len&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::span </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; array_type_t, len &gt; &amp;&#160;</td>
+          <td class="paramname"><em>array</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified std::array. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>The std::array to construct a view for. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a8fbc96d1dd903329e4c0d639118f87ea" name="a8fbc96d1dd903329e4c0d639118f87ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fbc96d1dd903329e4c0d639118f87ea">&#9670;&#160;</a></span>span() <span class="overload">[9/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fbc96d1dd903329e4c0d639118f87ea">&#9670;&#160;</a></span>span() <span class="overload">[5/10]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1027,6 +830,244 @@ template&lt;class array_type_t , <a class="el" href="group__types.html#ga92c4f59
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">array</td><td>The std::array to construct a view for. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1c2c64643af26723354661070fca48aa" name="a1c2c64643af26723354661070fca48aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c2c64643af26723354661070fca48aa">&#9670;&#160;</a></span>span() <span class="overload">[6/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> extent = dynamic_extent&gt; </div>
+<div class="memtemplate">
+template&lt;class range_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::span </td>
+          <td>(</td>
+          <td class="paramtype">range_t &amp;&amp;&#160;</td>
+          <td class="paramname"><em>range</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified range. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">range</td><td>The range to construct a view for. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="afcdcb8880025565d35c9af5d02d762f2" name="afcdcb8880025565d35c9af5d02d762f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcdcb8880025565d35c9af5d02d762f2">&#9670;&#160;</a></span>span() <span class="overload">[7/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> extent = dynamic_extent&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::span </td>
+          <td>(</td>
+          <td class="paramtype">std::initializer_list&lt; type_t &gt;&#160;</td>
+          <td class="paramname"><em>items</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified initializer list. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">items</td><td>The initializer list to construct a view for. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af091093546285d50623dbe801f8aea34" name="af091093546285d50623dbe801f8aea34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af091093546285d50623dbe801f8aea34">&#9670;&#160;</a></span>span() <span class="overload">[8/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> extent = dynamic_extent&gt; </div>
+<div class="memtemplate">
+template&lt;class collection_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::span </td>
+          <td>(</td>
+          <td class="paramtype">collection_t &amp;&#160;</td>
+          <td class="paramname"><em>items</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1span.html#a4dab3665205c1aac0e5749a643510256">size_type</a>&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified collection and count. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">items</td><td>The collection to construct a view for. </td></tr>
+    <tr><td class="paramname">length</td><td>The number of elements in the collection. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>if length is greater than items size. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a95959e101619ce5fcba0973dad2311e0" name="a95959e101619ce5fcba0973dad2311e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95959e101619ce5fcba0973dad2311e0">&#9670;&#160;</a></span>span() <span class="overload">[9/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> extent = dynamic_extent&gt; </div>
+<div class="memtemplate">
+template&lt;class collection_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::span </td>
+          <td>(</td>
+          <td class="paramtype">collection_t &amp;&#160;</td>
+          <td class="paramname"><em>items</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1span.html#a4dab3665205c1aac0e5749a643510256">size_type</a>&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1span.html#a4dab3665205c1aac0e5749a643510256">size_type</a>&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified collection, offest and count. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">items</td><td>The collection to construct a view for. </td></tr>
+    <tr><td class="paramname">start</td><td>The offset in the collection. </td></tr>
+    <tr><td class="paramname">length</td><td>The number of elements in the collection. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>if start or start + length are greater than items size. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae07642e51c5bc9ed57117117ba4a5954" name="ae07642e51c5bc9ed57117117ba4a5954"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae07642e51c5bc9ed57117117ba4a5954">&#9670;&#160;</a></span>span() <span class="overload">[10/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> extent = dynamic_extent&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::span </td>
+          <td>(</td>
+          <td class="paramtype">type_t *const&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1span.html#a4dab3665205c1aac0e5749a643510256">size_type</a>&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an <a class="el" href="classxtd_1_1span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::span</a> with specified data pointer and count. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>The data pointer to construct a view for. </td></tr>
+    <tr><td class="paramname">length</td><td>The number of elements to constuct. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1112,7 +1153,7 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1span.html#afa833fd641cb1e0ad5cf38cb9e26ca33">iterator</a> <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::begin </td>
+          <td class="memname"><a class="el" href="classxtd_1_1span.html#a9836c5faecb121e5e6e2b792d0fd79ab">iterator</a> <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1202,7 +1243,7 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1span.html#a217d0ac5fde6530427614710e5999499">const_reverse_iterator</a> <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::crbegin </td>
+          <td class="memname"><a class="el" href="classxtd_1_1span.html#a59981b2d0ff975eef5f4bf4eadafbfeb">const_reverse_iterator</a> <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::crbegin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1232,7 +1273,7 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1span.html#a217d0ac5fde6530427614710e5999499">const_reverse_iterator</a> <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::crend </td>
+          <td class="memname"><a class="el" href="classxtd_1_1span.html#a59981b2d0ff975eef5f4bf4eadafbfeb">const_reverse_iterator</a> <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::crend </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1352,7 +1393,7 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1span.html#afa833fd641cb1e0ad5cf38cb9e26ca33">iterator</a> <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::end </td>
+          <td class="memname"><a class="el" href="classxtd_1_1span.html#a9836c5faecb121e5e6e2b792d0fd79ab">iterator</a> <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::end </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1478,7 +1519,7 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1span.html#a217d0ac5fde6530427614710e5999499">const_reverse_iterator</a> <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::rbegin </td>
+          <td class="memname"><a class="el" href="classxtd_1_1span.html#a59981b2d0ff975eef5f4bf4eadafbfeb">const_reverse_iterator</a> <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::rbegin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1508,7 +1549,7 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1span.html#a11508c0b348322a09d49371e4c831568">reverse_iterator</a> <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::rbegin </td>
+          <td class="memname"><a class="el" href="classxtd_1_1span.html#a3bb4255dbd60f90307050e16ac49861d">reverse_iterator</a> <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::rbegin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1538,7 +1579,7 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1span.html#a217d0ac5fde6530427614710e5999499">const_reverse_iterator</a> <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::rend </td>
+          <td class="memname"><a class="el" href="classxtd_1_1span.html#a59981b2d0ff975eef5f4bf4eadafbfeb">const_reverse_iterator</a> <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::rend </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1568,7 +1609,7 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1span.html#a11508c0b348322a09d49371e4c831568">reverse_iterator</a> <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::rend </td>
+          <td class="memname"><a class="el" href="classxtd_1_1span.html#a3bb4255dbd60f90307050e16ac49861d">reverse_iterator</a> <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::rend </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1762,8 +1803,8 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
 
 </div>
 </div>
-<a id="ae6df1e0bf40e1973273914e67f100863" name="ae6df1e0bf40e1973273914e67f100863"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6df1e0bf40e1973273914e67f100863">&#9670;&#160;</a></span>copy_to()</h2>
+<a id="a2febb4d9e81778ba2d808fa496542b32" name="a2febb4d9e81778ba2d808fa496542b32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2febb4d9e81778ba2d808fa496542b32">&#9670;&#160;</a></span>copy_to()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1778,7 +1819,7 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1span.html">span</a>&lt; type_t, extent &gt; &amp;&#160;</td>
           <td class="paramname"><em>destination</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -1877,6 +1918,42 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current object is equal to the other parameter; otherwise, <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="a8edb03caea678237d73f72b231b2e908" name="a8edb03caea678237d73f72b231b2e908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8edb03caea678237d73f72b231b2e908">&#9670;&#160;</a></span>fill()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> extent = dynamic_extent&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::fill </td>
+          <td>(</td>
+          <td class="paramtype">const type_t &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Fills the elements of this span with a specified value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The value to assign to each element of the span. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2334,8 +2411,8 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
 
 </div>
 </div>
-<a id="aba3cf22e59c50007cdc394286ce997c5" name="aba3cf22e59c50007cdc394286ce997c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba3cf22e59c50007cdc394286ce997c5">&#9670;&#160;</a></span>try_copy_to()</h2>
+<a id="ad55660a17d8f8dcca5e9b321a5d9d542" name="ad55660a17d8f8dcca5e9b321a5d9d542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad55660a17d8f8dcca5e9b321a5d9d542">&#9670;&#160;</a></span>try_copy_to()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2350,7 +2427,7 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
           <td>(</td>
           <td class="paramtype"><a class="el" href="classxtd_1_1span.html">span</a>&lt; type_t, extent &gt; &amp;&#160;</td>
           <td class="paramname"><em>destination</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -2459,19 +2536,19 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a0f6f2cb41306609e11d24f25e8cfa87c" name="a0f6f2cb41306609e11d24f25e8cfa87c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f6f2cb41306609e11d24f25e8cfa87c">&#9670;&#160;</a></span>empty_span</h2>
+<a id="a5fe4d210a86c22b5a6778bec352b6a95" name="a5fe4d210a86c22b5a6778bec352b6a95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fe4d210a86c22b5a6778bec352b6a95">&#9670;&#160;</a></span>empty_span</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> extent = dynamic_extent&gt; </div>
+template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> extent&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1span.html">span</a> <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::empty_span</td>
+          <td class="memname">const <a class="el" href="classxtd_1_1span.html">span</a>&lt; type_t, extent &gt; <a class="el" href="classxtd_1_1span.html">xtd::span</a>&lt; type_t, extent &gt;::empty_span</td>
         </tr>
       </table>
   </td>
@@ -2493,7 +2570,7 @@ template&lt;class type_t , <a class="el" href="group__types.html#ga92c4f59ae3910
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jan 26 2025 21:20:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jan 27 2025 21:58:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
