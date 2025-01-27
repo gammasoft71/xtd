@@ -77,13 +77,13 @@ namespace xtd {
     /// @brief Represents the span const reference type.
     using const_reference = const type_t&;
     /// @brief Represents the iterator of span value type.
-    using iterator = const xtd::collections::generic::helpers::wrap_pointer_iterator<pointer>;
+    using iterator = xtd::collections::generic::helpers::wrap_pointer_iterator<pointer>;
     /// @brief Represents the const iterator of span value type.
     using const_iterator = const xtd::collections::generic::helpers::wrap_pointer_iterator<pointer>;
     /// @brief Represents the reverse iterator of span value type.
-    using reverse_iterator = std::reverse_iterator<iterator>;
+    using reverse_iterator = std::reverse_iterator<xtd::collections::generic::helpers::wrap_pointer_iterator<pointer>>;
     /// @brief Represents the const reverse iterator of span value type.
-    using const_reverse_iterator = const std::reverse_iterator<iterator>;
+    using const_reverse_iterator = const std::reverse_iterator<xtd::collections::generic::helpers::wrap_pointer_iterator<pointer>>;
     /// @}
     
     /// @name Public Constructors
