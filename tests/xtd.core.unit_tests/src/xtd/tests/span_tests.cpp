@@ -446,5 +446,44 @@ namespace xtd::tests {
       assert::are_equal(a.data(), s.data());
       assert::are_equal(10, *s.data());
     }
+    
+    void test_method_(empty) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span(a);
+      assert::is_false(s.empty());
+      assert::is_true(span<int> {}.empty());
+      assert::is_true(span<int>::empty_span.empty());
+    }
+    
+    void test_method_(empty_span) {
+      assert::is_null(span<int>::empty_span.data());
+      assert::is_zero(span<int>::empty_span.size());
+    }
+    
+    void test_method_(const_end) {
+      auto a = array {10, 20, 30, 40, 50};
+      const auto s = span(a);
+      assert::are_equal(s.data() + 5, s.end().data());
+    }
+    
+    void test_method_(end) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span(a);
+      assert::are_equal(s.data() + 5, s.end().data());
+    }
+    
+    void test_method_(front) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span(a);
+      assert::are_equal(10, s.front());
+    }
+    
+    void test_method_(is_empty) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span(a);
+      assert::is_false(s.is_empty());
+      assert::is_true(span<int> {}.is_empty());
+      assert::is_true(span<int>::empty_span.is_empty());
+    }
   };
 }
