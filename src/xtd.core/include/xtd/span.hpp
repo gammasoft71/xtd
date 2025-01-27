@@ -16,9 +16,9 @@
 #include "null.hpp"
 #include "object.hpp"
 #include "ptrdiff.hpp"
+#include "ranges.hpp"
 #include "typeof.hpp"
 #include <type_traits>
-#include <ranges>
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -110,7 +110,7 @@ namespace xtd {
     /// @brief Creates an xtd::span with specified range.
     /// @param range The range to construct a view for.
     template<class range_t>
-    span(range_t&& range) noexcept : data_ {std::ranges::data(range)}, length_ {extent != dynamic_extent ? extent : std::ranges::size(range)} {}
+    span(range_t&& range) noexcept : data_ {xtd::ranges::data(range)}, length_ {extent != dynamic_extent ? extent : xtd::ranges::size(range)} {}
 #else
     /// @brief Creates an xtd::span with specified range.
     /// @param range The range to construct a view for.
@@ -449,7 +449,7 @@ namespace xtd {
   span(iterator_t first, iterator_t last) -> span<typename iterator_t::value_type>;
   
   template<class range_t>
-  span(range_t&& items) noexcept -> span<typename range_t::value_type>;
+  span(range_t&& items) noexcept -> span<typename std::remove_reference_t<xtd::ranges::range_reference_t<range_t>>>;
   
   template<class collection_t>
   span(collection_t& items) noexcept -> span<typename collection_t::value_type>;
