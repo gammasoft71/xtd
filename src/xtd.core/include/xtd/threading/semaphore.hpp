@@ -195,7 +195,7 @@ namespace xtd {
       /// @brief Opens the specified named semaphore, if it already exists, and returns a value that indicates whether the operation succeeded.
       /// @param name The name of the synchronization object to be shared with other processes. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.
       /// @param result When this method returns, contains a xtd::threading::semaphore object that represents the named semaphore if the call succeeded.
-      /// @return true if the named semaphore was opened successfully; otherwise, false. In some cases, false may be returned for invalid names.
+      /// @return `true` if the named semaphore was opened successfully; otherwise, false. In some cases, false may be returned for invalid names.
       /// @remarks If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened.
       /// @remarks The xtd::threading::semaphore::open_existing method tries to open the specified named semaphore. To create the system semaphore when it does not already exist, use one of the xtd::threading::semaphore constructors that has a name parameter.
       /// @remarks Multiple calls to this method that use the same value for name do not necessarily return the same xtd::threading::semaphore object, even though the objects that are returned represent the same named system semaphore.

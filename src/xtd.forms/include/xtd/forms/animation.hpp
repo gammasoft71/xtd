@@ -72,11 +72,11 @@ namespace xtd {
       virtual animation& frames_per_second(uint32 value);
       
       /// @brief Gets a valiue that indicates if the animation is running.
-      /// @return true if the animation is running; otherwise false.
+      /// @return `true` if the animation is running; otherwise `false`.
       virtual bool running() const noexcept;
       
       /// @brief Gets a valiue that indicates if the animation is running.
-      /// @param value true if the animation is running; otherwise false.
+      /// @param value true if the animation is running; otherwise `false`.
       virtual animation& running(bool value);
       /// @}
       

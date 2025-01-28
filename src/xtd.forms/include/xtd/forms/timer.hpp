@@ -58,7 +58,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets whether the timer is running.
-      /// @return true if the timer is currently enabled; otherwise, false. The default is false.
+      /// @return `true` if the timer is currently enabled; otherwise, false. The default is false.
       /// @remarks Calling the start method is the same as setting enabled to true. Likewise, calling the stop method is the same as setting enabled to false.
       virtual bool enabled() const noexcept;
       /// @brief Sets whether the timer is running.

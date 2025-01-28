@@ -160,7 +160,7 @@ namespace xtd {
 
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
-    /// @return true if the specified object is equal to the current object. otherwise, false.
+    /// @return `true` if the specified object is equal to the current object. otherwise, false.
     /// @par Examples
     /// The following code example compares the current instance with another object.
     /// @include object_equals.cpp

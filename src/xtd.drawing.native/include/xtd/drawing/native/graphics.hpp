@@ -292,7 +292,7 @@ namespace xtd {
         /// @param line_alignment The alignment of the text (see string_alignments.h for more information).
         /// @param hot_key_prefix The hotkey prefix value (see hot_key_prefixes.h for more information).
         /// @param trimming The trimming value for the text (see string_trimmings.h for more information).
-        /// @param no_wrap True if the text wrapping between lines when formatting within a rectangle is disabled; otherwise false.
+        /// @param no_wrap True if the text wrapping between lines when formatting within a rectangle is disabled; otherwise `false`.
         /// @warning Internal use only
         static void draw_string(intptr handle, const xtd::string& text, intptr font, intptr brush, float x, float y, float width, float height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, int32 string_formats);
         

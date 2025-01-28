@@ -260,7 +260,7 @@ namespace xtd {
         
         /// @brief Gets a value indicating whether the control can respond to user interaction.
         /// @param control Control window handle.
-        /// @return true if the control can respond to user interaction; otherwise, false.
+        /// @return `true` if the control can respond to user interaction; otherwise, false.
         /// @warning Internal use only
         static bool enabled(intptr control);
         
@@ -277,7 +277,7 @@ namespace xtd {
         
         /// @brief Gets a value indicating whether the control has input focus.
         /// @param control Control window handle.
-        /// @return true if the control has focus; otherwise, false.
+        /// @return `true` if the control has focus; otherwise, false.
         /// @warning Internal use only
         static bool focused(intptr control);
         
@@ -449,7 +449,7 @@ namespace xtd {
         
         /// @brief Gets a value indicating whether the control and all its child controls are displayed.
         /// @param control Control window handle.
-        /// @return true if the control and all its child controls are displayed; otherwise, false.
+        /// @return `true` if the control and all its child controls are displayed; otherwise, false.
         /// @warning Internal use only
         static bool visible(intptr control);
         /// @brief Sets a value indicating whether the control and all its child controls are displayed.

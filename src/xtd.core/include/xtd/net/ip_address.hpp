@@ -105,7 +105,7 @@ namespace xtd {
       sockets::address_family address_family() const noexcept;
       
       /// @brief Gets whether the IP address is an IPv4-mapped IPv6 address.
-      /// @return true if the IP address is an IPv4-mapped IPv6 address; otherwise, false.
+      /// @return `true` if the IP address is an IPv4-mapped IPv6 address; otherwise, false.
       /// @remarks Dual-stack sockets always require IPv6 addresses. The ability to interact with an IPv4 address requires the use of the IPv4-mapped IPv6 address format. Any IPv4 addresses must be represented in the IPv4-mapped IPv6 address format which enables an IPv6 only application to communicate with an IPv4 node. The IPv4-mapped IPv6 address format allows the IPv4 address of an IPv4 node to be represented as an IPv6 address. The IPv4 address is encoded into the low-order 32 bits of the IPv6 address, and the high-order 96 bits hold the fixed prefix 0:0:0:0:0:FFFF. The IPv4-mapped IPv6 address format is specified in RFC 4291. For more information, see www.ietf.org/rfc/rfc4291.txt.
       bool is_ip_v4_mapped_to_ip_v6() const noexcept;
       
@@ -122,7 +122,7 @@ namespace xtd {
       bool is_ip_v6_site_local() const noexcept;
       
       /// @brief Gets whether the address is an IPv6 Teredo address.
-      /// @return true if the IP address is an IPv6 Teredo address; otherwise, false.
+      /// @return `true` if the IP address is an IPv6 Teredo address; otherwise, false.
       /// @remarks A Teredo address is an IPv6 address with the prefix of 2001::/32. Teredo addresses can be returned through normal DNS name resolution or enumerated as an IPv6 address assigned to a local interface.
       bool is_ip_v6_teredo() const noexcept;
       

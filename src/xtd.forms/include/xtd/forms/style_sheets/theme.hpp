@@ -116,7 +116,7 @@ namespace xtd {
         /// @brief Creates a xtd::forms::style_sheets::theme object from the specified css text.
         /// @param css_text A css xtd::string that represents a xtd::forms::style_sheets::theme object.
         /// @param result The xtd::forms::style_sheets::theme class that this method creates.
-        /// @return true if succeed; otherwise false.
+        /// @return `true` if succeed; otherwise `false`.
         static bool from_css(const xtd::string& css_text, theme& result);
         
         /// @brief Creates a xtd::forms::style_sheets::theme object from the specified text.
@@ -128,7 +128,7 @@ namespace xtd {
         /// @brief Creates a xtd::forms::style_sheets::theme object from the specified text.
         /// @param text A xtd::string that represents a xtd::forms::style_sheets::theme object.
         /// @param result The xtd::forms::style_sheets::theme class that this method creates.
-        /// @return true if succeed; otherwise false.
+        /// @return `true` if succeed; otherwise `false`.
         static bool try_parse(const xtd::string& text, theme& result) noexcept;
         /// @}
 

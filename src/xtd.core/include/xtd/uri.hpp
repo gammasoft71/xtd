@@ -639,7 +639,7 @@ namespace xtd {
     
     /// @brief  Determines whether a specified character is a valid hexadecimal digit.
     /// @param character The character to validate.
-    /// @return bool A bool value that is true if the character is a valid hexadecimal digit; otherwise false.
+    /// @return bool A bool value that is true if the character is a valid hexadecimal digit; otherwise `false`.
     /// @remarks Hexadecimal digits are the digits 0 to 9 and the letters A-F or a-f.
     static bool is_hex_digit(char character);
     

@@ -58,7 +58,7 @@ namespace xtd {
         
         /// @{
         /// @brief Gets a value indicating whether the caller can quit this application.
-        /// @return true if the caller can quit this application; otherwise, false.
+        /// @return `true` if the caller can quit this application; otherwise, false.
         /// @warning Internal use only
         static bool allow_quit();
         /// @brief Cleanup all data, handles, references, ... initialized by initialize() before quit.
@@ -72,7 +72,7 @@ namespace xtd {
         /// @warning Internal use only
         static void do_idle();
         /// @brief Return true if dark mode is enabled for the application; otherwise return false.
-        /// @return true if dark mode is enabled; otherwise false.
+        /// @return `true` if dark mode is enabled; otherwise `false`.
         /// @warning Internal use only
         static bool dark_mode_enabled();
         /// @brief Enables button images for the application.

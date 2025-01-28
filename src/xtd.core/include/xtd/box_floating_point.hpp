@@ -70,26 +70,26 @@ namespace xtd {
     /// @{
     /// @brief Determines whether the specified value is finite (zero, subnormal, or normal).
     /// @param value A floating-point number.
-    /// @return true if the value is finite (zero, subnormal or normal); false otherwise.
+    /// @return `true` if the value is finite (zero, subnormal or normal); false otherwise.
     static bool is_finite(type_t value) noexcept {return !is_infinity(value);}
     /// @brief Returns a value indicating whether the specified number evaluates to negative or positive infinity.
     /// @param value A floating-point number.
-    /// @return true if value evaluates to xtd::math::positive_infinity or xtd::math::negative_infinity; otherwise, false.
+    /// @return `true` if value evaluates to xtd::math::positive_infinity or xtd::math::negative_infinity; otherwise, false.
     static bool is_infinity(type_t value) noexcept {return is_negative_infinity(value) || is_positive_infinity(value);}
     
     /// @brief Returns a value indicating whether the specified number evaluates to negative infinity.
     /// @param value A floating-point number.
-    /// @return true if value evaluates to xtd::math::negative_infinity; otherwise, false.
+    /// @return `true` if value evaluates to xtd::math::negative_infinity; otherwise, false.
     static bool is_negative_infinity(type_t value) noexcept {return value <= negative_infinity;}
     
     /// @brief Returns a value indicating whether the specified number evaluates to positive infinity.
     /// @param value A floating-point number.
-    /// @return true if value evaluates to xtd::math::positive_infinity; otherwise, false.
+    /// @return `true` if value evaluates to xtd::math::positive_infinity; otherwise, false.
     static bool is_positive_infinity(type_t value) noexcept {return value >= positive_infinity;}
     
     /// @brief Returns a value indicating whether the specified number evaluates to not a number.
     /// @param value A floating-point number.
-    /// @return true if value evaluates to not a number; otherwise, false.
+    /// @return `true` if value evaluates to not a number; otherwise, false.
     static bool is_NaN(type_t value) noexcept {return value != value;}
     /// @}
   };

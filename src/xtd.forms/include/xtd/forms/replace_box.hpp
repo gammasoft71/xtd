@@ -76,7 +76,7 @@ namespace xtd {
       /// @param find_string The string to find.
       /// @param replace_string The replaced string.
       /// @param title The find dialog title.
-      /// @param match_case true if match case option selected; otherwise false.
+      /// @param match_case true if match case option selected; otherwise `false`.
       /// @param find_next The callback called when the user click the find button.
       /// @param replace The callback called when the user click the replace button.
       /// @param replace_all The callback called when the user click the replace all button.
@@ -88,8 +88,8 @@ namespace xtd {
       /// @param find_string The string to find.
       /// @param replace_string The replaced string.
       /// @param title The find dialog title.
-      /// @param match_case true if match case option selected; otherwise false.
-      /// @param whole_word true if whole word option selected; otherwise false.
+      /// @param match_case true if match case option selected; otherwise `false`.
+      /// @param whole_word true if whole word option selected; otherwise `false`.
       /// @param find_next The callback called when the user click the find button.
       /// @param replace The callback called when the user click the replace button.
       /// @param replace_all The callback called when the user click the replace all button.

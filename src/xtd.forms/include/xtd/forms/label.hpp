@@ -50,7 +50,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the ellipsis character (...) appears at the right edge of the xtd::forms::label, denoting that the xtd::forms::label text extends beyond the specified length of the xtd::forms::label.
-      /// @return true if the additional label text is to be indicated by an ellipsis; otherwise, false. The default is false.
+      /// @return `true` if the additional label text is to be indicated by an ellipsis; otherwise, false. The default is false.
       /// @remarks Set xtd::forms::label::auto_ellipsis to true to display text that extends beyond the width of the xtd::forms::label in a tooltip when the user passes over the control with the mouse. If xtd::forms::label::auto_size is true, the label will grow to fit the text and an ellipsis will not appear.
       /// @note If the font is taller than the height of the xtd::forms::label and xtd::forms::label::auto_ellipsis is true, you must set xtd::forms::label::auto_size to false for text to be drawn.
       virtual bool auto_ellipsis() const noexcept;
@@ -143,10 +143,10 @@ namespace xtd {
       virtual xtd::forms::label& image_list(const forms::image_list& value);
       
       /// @brief Gets a value that allows to draw a drop shadow under the text.
-      /// @return true allows to draw a drop shadow under the text; otherwise false. The default is false.
+      /// @return `true` allows to draw a drop shadow under the text; otherwise `false`. The default is false.
       virtual bool shadow() const noexcept;
       /// @brief Sets a value that allows to draw a drop shadow under the text.
-      /// @param value true allows to draw a drop shadow under the text; otherwise false. The default is false.
+      /// @param value true allows to draw a drop shadow under the text; otherwise `false`. The default is false.
       /// @return Current label instance.
       virtual xtd::forms::label& shadow(bool value);
       

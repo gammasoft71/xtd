@@ -35,7 +35,7 @@ namespace xtd {
       /// @brief Less than comparison operator with specidied lhs ans rhs values.
       /// @param lhs The left hand side value to compare.
       /// @param rhs The right hand side value to compare.
-      /// @return true if lhs less than rhs; otherwise false.
+      /// @return `true` if lhs less than rhs; otherwise `false`.
       friend bool operator <(const type_t& lhs, const type_t& rhs) noexcept {
         auto rhs_ptr = &rhs;
         return dynamic_cast<const type_t*>(rhs_ptr) && lhs.compare_to(static_cast<const type_t&>(rhs)) < 0;
@@ -44,7 +44,7 @@ namespace xtd {
       /// @brief Less than or equal to comparison operator with specidied lhs ans rhs values.
       /// @param lhs The left hand side value to compare.
       /// @param rhs The right hand side value to compare.
-      /// @return true if lhs less than or equal to rhs; otherwise false.
+      /// @return `true` if lhs less than or equal to rhs; otherwise `false`.
       friend bool operator <=(const type_t& lhs, const type_t& rhs) noexcept {
         auto rhs_ptr = &rhs;
         return dynamic_cast<const type_t*>(rhs_ptr) && lhs.compare_to(static_cast<const type_t&>(rhs)) <= 0;
@@ -53,7 +53,7 @@ namespace xtd {
       /// @brief Greater than or equal to comparison operator with specidied lhs ans rhs values.
       /// @param lhs The left hand side value to compare.
       /// @param rhs The right hand side value to compare.
-      /// @return true if lhs greater than rhs; otherwise false.
+      /// @return `true` if lhs greater than rhs; otherwise `false`.
       friend bool operator >(const type_t& lhs, const type_t& rhs) noexcept {
         auto rhs_ptr = &rhs;
         return dynamic_cast<const type_t*>(rhs_ptr) && lhs.compare_to(static_cast<const type_t&>(rhs)) > 0;
@@ -62,7 +62,7 @@ namespace xtd {
       /// @brief Less than comparison operator with specidied lhs ans rhs values.
       /// @param lhs The left hand side value to compare.
       /// @param rhs The right hand side value to compare.
-      /// @return true if lhs greater than or equal to rhs; otherwise false.
+      /// @return `true` if lhs greater than or equal to rhs; otherwise `false`.
       friend bool operator >=(const type_t& lhs, const type_t& rhs) noexcept {
         auto rhs_ptr = &rhs;
         return dynamic_cast<const type_t*>(rhs_ptr) && lhs.compare_to(static_cast<const type_t&>(rhs)) >= 0;

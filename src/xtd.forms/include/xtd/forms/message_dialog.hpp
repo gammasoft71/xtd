@@ -70,7 +70,7 @@ namespace xtd {
       message_dialog& default_button(xtd::forms::message_dialog_default_button default_button);
       
       /// @brief Gets a value indicate if help button is shown.
-      /// @return true to show the Help button; otherwise, false. The default is false.
+      /// @return `true` to show the Help button; otherwise, false. The default is false.
       bool display_help_button() const noexcept;
       /// @brief Sets a value indicate if help button is shown.
       /// @param display_help_button true to show the Help button; otherwise, false. The default is false.

@@ -131,7 +131,7 @@ namespace xtd {
       
       /// @brief Tries to lock the mutex. Returns immediately. On successful lock acquisition returns true, otherwise returns false.
       /// @param timeout timeout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::time_span that represents -1 milliseconds to wait indefinitely.
-      /// @return true if the lock was acquired successfully, otherwise false.
+      /// @return `true` if the lock was acquired successfully, otherwise `false`.
       /// @remarks This function is allowed to fail spuriously and return false even if the mutex is not currently locked by any other thread.
       /// @remarks If try_lock is called by a thread that already owns the mutex, the behavior is undefined.
       /// @remarks Prior unlock() operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns true. Note that prior lock() does not synchronize with this operation if it returns false.
@@ -139,7 +139,7 @@ namespace xtd {
       
       /// @brief Tries to lock the mutex. Blocks until specified timeout_duration has elapsed or the lock is acquired, whichever comes first. On successful lock acquisition returns true, otherwise returns false.
       /// @param timeout minimum duration to block for
-      /// @return true if the lock was acquired successfully, otherwise false.
+      /// @return `true` if the lock was acquired successfully, otherwise `false`.
       /// @remarks If timeout_duration is less or equal timeout_duration.zero(), the function behaves like try_lock().
       /// @remarks This function may block for longer than timeout_duration due to scheduling or resource contention delays.
       /// @remarks The standard recommends that a steady_clock is used to measure the duration. If an implementation uses a system_clock instead, the wait time may also be sensitive to clock adjustments.
@@ -150,7 +150,7 @@ namespace xtd {
       
       /// @brief Tries to lock the mutex. Blocks until specified timeout_time has been reached or the lock is acquired, whichever comes first. On successful lock acquisition returns true, otherwise returns false.
       /// @param timeout_time maximum time point to block until
-      /// @return true if the lock was acquired successfully, otherwise false.
+      /// @return `true` if the lock was acquired successfully, otherwise `false`.
       /// @remarks If timeout_time has already passed, this function behaves like try_lock().
       /// @remarks Clock must meet the Clock requirements. The program is ill-formed if std::chrono::is_clock_v<Clock> is false (since C++20).
       /// @remarks The standard recommends that the clock tied to timeout_time be used, in which case adjustments of the clock may be taken into account. Thus, the duration of the block might be more or less than timeout_time - Clock::now() at the time of the call, depending on the direction of the adjustment and whether it is honored by the implementation. The function also may block until after timeout_time has been reached due to process scheduling or resource contention delays.
@@ -179,7 +179,7 @@ namespace xtd {
       /// @brief Opens the specified named mutex, if it already exists, and returns a value that indicates whether the operation succeeded.
       /// @param name The name of the synchronization object to be shared with other processes. The name is case-sensitive. The backslash character (\) and (/) are reserved.
       /// @param result When this method returns, contains a xtd::threading::mutex object that represents the named mutex if the call succeeded.
-      /// @return true if the named mutex was opened successfully; otherwise, false. In some cases, false may be returned for invalid names.
+      /// @return `true` if the named mutex was opened successfully; otherwise, false. In some cases, false may be returned for invalid names.
       static bool try_open_existing(const string& name, mutex& result) noexcept;
       /// @}
 

@@ -82,7 +82,7 @@ namespace xtd {
       static std::string get_full_path(const std::string& relative_path);
       /// @brief Check if specified path is too long for the OS.
       /// @param path The path to cjheck the size.
-      /// @return true if path too long; otherwiser false.
+      /// @return `true` if path too long; otherwiser false.
       /// @warning Internal use only
       static bool is_path_too_long(const std::string& path);
       /// @brief Sets the attributes for the specified file or directory path.

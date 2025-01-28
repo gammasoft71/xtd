@@ -73,7 +73,7 @@ namespace xtd {
         static int32 pixels_per_inch(size_t index);
         /// @brief Gets a value indicating whether a particular display is the primary device.
         /// @param index The screen index.
-        /// @return true if index display is primary; otherwise, false.
+        /// @return `true` if index display is primary; otherwise, false.
         /// @warning Internal use only
         static bool primary(size_t index);
         /// @brief Gets the scale factor of the display.

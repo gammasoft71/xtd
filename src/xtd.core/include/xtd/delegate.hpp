@@ -114,7 +114,7 @@ namespace xtd {
     const std::vector<function_t>& functions() const {return data_->functions;}
     
     /// @brief Return if the delegate is empty.
-    /// @return bool Return true if delegate is empty; otherwise false.
+    /// @return bool Return true if delegate is empty; otherwise `false`.
     bool is_empty() const noexcept {return data_->functions.size() == 0;}
     
     /// @brief Return the size of invocation list.
@@ -546,7 +546,7 @@ namespace xtd {
     const std::vector<function_t>& functions() const {return data_->functions;}
     
     /// @brief Return if the delegate is empty.
-    /// @return bool Return true if delegate is empty; otherwise false.
+    /// @return bool Return true if delegate is empty; otherwise `false`.
     bool is_empty() const noexcept {return data_->functions.size() == 0 && data_->no_arguments_functions.size() == 0;}
     
     /// @brief Return the size of invocation list.

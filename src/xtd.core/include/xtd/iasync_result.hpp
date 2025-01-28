@@ -47,14 +47,14 @@ namespace xtd {
     virtual xtd::threading::wait_handle& async_wait_handle() noexcept = 0;
     
     /// @brief Gets a value that indicates whether the asynchronous operation completed synchronously.
-    /// @return true if the asynchronous operation completed synchronously; otherwise, false.
+    /// @return `true` if the asynchronous operation completed synchronously; otherwise, false.
     /// @remarks If the synchronous completion of the call is detected in the xtd::async_callback delegate, it is probable that the thread that initiated the asynchronous operation is the current thread.
     /// @par Notes to Callers
     /// Use this property to determine if the asynchronous operation completed synchronously. For example, this property can return true for an asynchronous I/O operation if the I/O request was small.
     virtual bool completed_synchronously() const noexcept = 0;
     
     /// @brief Gets a value that indicates whether the asynchronous operation has completed.
-    /// @return true if the operation is complete; otherwise, false.
+    /// @return `true` if the operation is complete; otherwise, false.
     /// @remarks When this property is true, you can assume it is safe to discard any resources you allocate for use by the asynchronous operation.
     /// @par Notes to Implementers
     /// Implementers will typically return the value of a private field or internal test as the value of this property.

@@ -77,7 +77,7 @@ namespace xtd {
     /// @{
     /// @brief Retrieves an array of the values of the constants in a specified enumeration.
     /// @param flag An enumeration value.
-    /// @return true if the bit field or bit fields that are set in flag are also set in the current instance; otherwise, false.
+    /// @return `true` if the bit field or bit fields that are set in flag are also set in the current instance; otherwise, false.
     /// @remarks The has_flag method returns the result of the following bool expression : this_instance And flag = flag
     bool has_flag(enum_type flag) const noexcept {return (to_int(value_) & to_int(flag)) == to_int(flag);}
     
@@ -514,13 +514,13 @@ namespace xtd {
     
     /// @brief Returns an indication whether a constant with a specified value exists in a specified enumeration.
     /// @param fromValue An enumeration value.
-    /// @return true if a constant in enumType has a value equal to value; otherwise, false.
+    /// @return `true` if a constant in enumType has a value equal to value; otherwise, false.
     /// @exception xtd::argument_exception The value is ! a value of enumType.
     template<class enum_t>
     static bool is_defined(enum_t value) noexcept {return std::find_if(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto item)->bool {return item.first == value;}) != enum_object<enum_t>().entries().end();}
     /// @brief Returns an indication whether a constant with a specified value exists in a specified enumeration.
     /// @param fromValue An enumeration value.
-    /// @return true if a constant in enumType has a value equal to value; otherwise, false.
+    /// @return `true` if a constant in enumType has a value equal to value; otherwise, false.
     /// @exception xtd::argument_exception The value is ! a value of enumType.
     template<class enum_t>
     static bool is_defined(enum_object<enum_t> value) noexcept {return std::find_if(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto item)->bool {return item.first == value;}) != enum_object<enum_t>().entries().end();}
@@ -598,7 +598,7 @@ namespace xtd {
     /// @brief Converts the xtd::string representation of the name or numeric value of one or more enumerated constants to an equivalent enumerated object. The return value indicates whether the conversion succeeded.
     /// @param vaue The xtd::string representation of the enumeration name or underlying value to convert.
     /// @param reslt When this method returns, result contains an object of type TEnum whose value is represented by value if the parse operation succeeds. If the parse operation fails, result contains the default value of the underlying type of TEnum. Note that this value need ! be a member of the TEnum enumeration. This parameter is passed uninitialized.
-    /// @return true if the value parameter was converted successfully; otherwise, false.
+    /// @return `true` if the value parameter was converted successfully; otherwise, false.
     template<class enum_t>
     static bool try_parse(const xtd::string& value, enum_t& result) noexcept {return try_parse<enum_t>(value, false, result);}
     
@@ -606,7 +606,7 @@ namespace xtd {
     /// @param vaue The xtd::string representation of the enumeration name or underlying value to convert.
     /// @param ignore_case true to Ignore case; false to regard case.
     /// @param reslt When this method returns, result contains an object of type TEnum whose value is represented by value if the parse operation succeeds. If the parse operation fails, result contains the default value of the underlying type of TEnum. Note that this value need ! be a member of the TEnum enumeration. This parameter is passed uninitialized.
-    /// @return true if the value parameter was converted successfully; otherwise, false.
+    /// @return `true` if the value parameter was converted successfully; otherwise, false.
     template<class enum_t>
     static bool try_parse(const xtd::string& value, bool ignore_case, enum_t& result) noexcept {
       try {

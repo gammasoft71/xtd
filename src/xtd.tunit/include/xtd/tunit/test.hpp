@@ -65,7 +65,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value that represent an aborted test.
-      /// @return true is the test is aborted; otherwise false.
+      /// @return `true` is the test is aborted; otherwise `false`.
       bool aborted() const noexcept;
       
       /// @brief Gets the actual value string.
@@ -81,19 +81,19 @@ namespace xtd {
       const xtd::string& expect() const noexcept;
       
       /// @brief Gest a value that represent an failed test.
-      /// @return tru is the test is failed; otherwise false.
+      /// @return tru is the test is failed; otherwise `false`.
       bool failed() const noexcept;
       
       /// @brief Get a value that represent an ignored test.
-      /// @return true is the test is ignored; otherwise false.
+      /// @return `true` is the test is ignored; otherwise `false`.
       bool ignored() const noexcept;
       
       /// @brief Get a value that represent a not started test.
-      /// @return true is the test is not started; otherwise false.
+      /// @return `true` is the test is not started; otherwise `false`.
       bool not_started() const noexcept;
       
       /// @brief Gets a value that represent an succeed test.
-      /// @return true is the test is succeed; otherwise false.
+      /// @return `true` is the test is succeed; otherwise `false`.
       bool succeed() const noexcept;
       
       /// @brief Gets the stack frame of the test method.

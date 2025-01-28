@@ -98,7 +98,7 @@ namespace xtd {
       xtd::string directory_name() const;
       
       /// @brief Gets a value indicating whether a file exists.
-      /// @return true if the file exists; false if the file does not exist or if the file is a directory.
+      /// @return `true` if the file exists; false if the file does not exist or if the file is a directory.
       /// @par Examples
       /// The following code example uses the xtd::io::file_info::exists property ensure a file exists before opening it. You can use this technique to throw a custom exception when the file is not found.
       /// ```cpp
@@ -133,7 +133,7 @@ namespace xtd {
       bool exists() const override;
       
       /// @brief Gets a value that determines if the current file is read only.
-      /// @return true if the current file is read only; otherwise, false.
+      /// @return `true` if the current file is read only; otherwise, false.
       /// @exception xtd::io::file_not_found_exception The file described by the current xtd::io::file_info object could not be found.
       /// @exception xtd::io::io_exception An I/O error occurred while opening the file.
       /// @exception xtd::unauthorized_access_exception This operation is not supported on the current platform.<br>-or-<br>The caller does not have the required permission.

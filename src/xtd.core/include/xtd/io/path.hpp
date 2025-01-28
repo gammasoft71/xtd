@@ -249,14 +249,14 @@ namespace xtd {
       
       /// @brief Determines whether a path includes a file name extension.
       /// @param path The path to search for an extension.
-      /// @return true if the characters that follow the last directory separator (\\ or /)
+      /// @return `true` if the characters that follow the last directory separator (\\ or /)
       /// @return or volume separator (:) in the path include a period (.) followed by one
       /// @return or more characters; otherwise, false.
       static bool has_extension(const xtd::string& path);
       
       /// @brief Gets a value indicating whether the specified path string contains absolute or relative path information.
       /// @param path The path to test.
-      /// @return true if path contains an absolute path; otherwise, false.
+      /// @return `true` if path contains an absolute path; otherwise, false.
       /// @remarks This method also returns false if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns false regardless of the existence of path.
       static bool is_path_rooted(const xtd::string& path);

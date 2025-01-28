@@ -33,7 +33,7 @@ namespace xtd {
     /// @param compiler_id One of xtd::compiler_id values.
     /// @param version The compiler version.
     /// @param build_type One of xtd::build_type values.
-    /// @param is_64_bit true if 64 bits; otherwise false.
+    /// @param is_64_bit true if 64 bits; otherwise `false`.
     compiler(xtd::compiler_id compiler_id, const xtd::version& version, xtd::build_type build_type, bool is_64_bit);
     /// @}
     
@@ -59,11 +59,11 @@ namespace xtd {
     xtd::compiler_id compiler_id() const noexcept;
     
     /// @brief Gets build type is debug.
-    /// @return true if build type debug; otherwise false.
+    /// @return `true` if build type debug; otherwise `false`.
     bool is_build_type_debug() const noexcept;
     
     /// @brief Gets is 64 bits.
-    /// @return true if 64 bits; otherwise false.
+    /// @return `true` if 64 bits; otherwise `false`.
     bool is_64_bit() noexcept;
     
     /// @brief Gets compiler name.

@@ -69,11 +69,11 @@ namespace xtd {
       
       /// @{
       /// @brief Gets whether this token is capable of being in the canceled state.
-      /// @return true if this token is capable of being in the canceled state; otherwise, false.
+      /// @return `true` if this token is capable of being in the canceled state; otherwise, false.
       bool can_be_canceled() const noexcept;
 
       /// @brief Gets whether cancellation has been requested for this token.
-      /// @return true if cancellation has been requested for this token; otherwise, false.
+      /// @return `true` if cancellation has been requested for this token; otherwise, false.
       /// @remarks This property indicates whether cancellation has been requested for this token, either through the token initially being constructed in a canceled state, or through calling xtd::threading::cancellation_token_source::cancel on the token's associated xtd::threading::cancellation_token_source.
       /// @remarks If this property is true, it only guarantees that cancellation has been requested. It does not guarantee that every registered handler has finished executing, nor that cancellation requests have finished propagating to all registered handlers. Additional synchronization may be required, particularly in situations where related objects are being canceled concurrently.
       bool is_cancellation_requested() const noexcept;

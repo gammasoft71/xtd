@@ -57,7 +57,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the checked or check_state values and the toggle_button's appearance are automatically changed when the toggle_button is clicked.
-      /// @return true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
+      /// @return `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
       /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
       virtual bool auto_check() const noexcept;
       /// @brief Sets a value indicating whether the checked or check_state values and the toggle_button's appearance are automatically changed when the toggle_button is clicked.
@@ -73,7 +73,7 @@ namespace xtd {
       virtual toggle_button& check_align(content_alignment check_align);
       
       /// @brief Gets a value indicating whether the toggle_button is in the checked state.
-      /// @return true if the toggle_button is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
+      /// @return `true` if the toggle_button is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
       /// @remarks When the value is true, the toggle_button portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when false.
       virtual bool checked() const noexcept;
       /// @brief Sets a value indicating whether the toggle_button is in the checked state.
@@ -102,7 +102,7 @@ namespace xtd {
       virtual toggle_button& check_state(forms::check_state check_state);
       
       /// @brief Gets a value indicating whether the toggle_button will allow three check states rather than two.
-      /// @return true if the toggle_button is able to display three check states; otherwise, false. The default value is false.
+      /// @return `true` if the toggle_button is able to display three check states; otherwise, false. The default value is false.
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
       virtual bool three_state() const noexcept;
       /// @brief Gets a value indicating whether the toggle_button will allow three check states rather than two.

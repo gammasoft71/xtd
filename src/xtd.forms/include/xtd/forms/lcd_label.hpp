@@ -77,10 +77,10 @@ namespace xtd {
       lcd_label& back_digit_opacity(double value);
       
       /// @brief Gets a value indicate if background digits are shown.
-      /// @return true if background digits are shown; otherwise false
+      /// @return `true` if background digits are shown; otherwise `false`
       bool show_back_digit() const noexcept;
       /// @brief Sets a value indicate if background digits are shown.
-      /// @param value true if background digits are shown; otherwise false
+      /// @param value true if background digits are shown; otherwise `false`
       /// @return Current lcd_label.
       lcd_label& show_back_digit(bool value);
       

@@ -179,7 +179,7 @@ namespace xtd {
         const forms_t& forms() const noexcept;
         
         /// @brief Gets a value indicate if this instance is system style sheet.
-        /// @return true if the current instance is system style sheet; otherwise false.
+        /// @return `true` if the current instance is system style sheet; otherwise `false`.
         /// @remarks This method return true only if the current instance is equal to xtd::forms::style_sheets::style_sheet::system_style_sheet.
         bool is_system_style_sheet() const noexcept;
         

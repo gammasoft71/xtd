@@ -65,11 +65,11 @@ namespace xtd {
       input_dialog& dialog_appearance(xtd::forms::dialog_appearance dialog_appearance);
       
       /// @brief Gets multiline status.
-      /// @return true if dialog text box is multiline; otherwise false.
+      /// @return `true` if dialog text box is multiline; otherwise `false`.
       /// @remarks The default value is false.
       bool multiline() const noexcept;
       /// @brief Sets multiline status.
-      /// @param multiline true if dialog text box is multiline; otherwise false.
+      /// @param multiline true if dialog text box is multiline; otherwise `false`.
       /// @return Current input_dialog instance.
       /// @remarks The default value is false.
       input_dialog& multiline(bool multiline);
@@ -91,11 +91,11 @@ namespace xtd {
       input_dialog& text(const xtd::string& text);
       
       /// @brief Gets use system password char status.
-      /// @return true if dialog text box use system password char status; otherwise false.
+      /// @return `true` if dialog text box use system password char status; otherwise `false`.
       /// @remarks The default value is false.
       bool use_system_password_char() const noexcept;
       /// @brief Sets use system password char status.
-      /// @param use_system_password_char true if dialog text box use system password char status; otherwise false.
+      /// @param use_system_password_char true if dialog text box use system password char status; otherwise `false`.
       /// @return Current input_dialog instance.
       /// @remarks The default value is false.
       input_dialog&  use_system_password_char(bool use_system_password_char);
@@ -109,11 +109,11 @@ namespace xtd {
       input_dialog& value(const xtd::string& value);
       
       /// @brief Gets word wrap status.
-      /// @return true if dialog text box is word wrap; otherwise false.
+      /// @return `true` if dialog text box is word wrap; otherwise `false`.
       /// @remarks The default value is true.
       bool word_wrap() const noexcept;
       /// @brief Sets word wrap status.
-      /// @param word_wrap true if dialog text box is word wrap; otherwise false.
+      /// @param word_wrap true if dialog text box is word wrap; otherwise `false`.
       /// @return Current input_dialog instance.
       /// @remarks The default value is true.
       input_dialog& word_wrap(bool word_wrap);

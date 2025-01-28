@@ -32,12 +32,12 @@ namespace xtd {
       /// @brief Equal to operator with specidied lhs ans rhs values.
       /// @param lhs The left hand side value to compare.
       /// @param rhs The right hand side value to compare.
-      /// @return true if lhs is equal to rhs; otherwise false.
+      /// @return `true` if lhs is equal to rhs; otherwise `false`.
       friend bool operator ==(const type_t& lhs, const type_t& rhs) noexcept {return lhs.equals(rhs);}
       /// @brief Not equal to operator with specidied lhs ans rhs values.
       /// @param lhs The left hand side value to compare.
       /// @param rhs The right hand side value to compare.
-      /// @return true if lhs is not equal to rhs; otherwise false.
+      /// @return `true` if lhs is not equal to rhs; otherwise `false`.
       friend bool operator !=(const type_t& lhs, const type_t& rhs) noexcept {return !operator ==(lhs, rhs);}
       /// @}
     private:

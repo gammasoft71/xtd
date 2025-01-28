@@ -205,7 +205,7 @@ namespace xtd {
         size_t available() const;
         
         /// @brief Gets a value that indicates whether the xtd::net::sockets::socket is in blocking mode.
-        /// @return true if the xtd::net::sockets::socket will block; otherwise, false. The default is true.
+        /// @return `true` if the xtd::net::sockets::socket will block; otherwise, false. The default is true.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks The xtd::net::sockets::socket::blocking property indicates whether a xtd::net::sockets::socket is in blocking mode.
@@ -223,14 +223,14 @@ namespace xtd {
         socket& blocking(bool value);
         
         /// @brief Gets a value that indicates whether a xtd::net::sockets::socket is connected to a remote host as of the last xtd::net::sockets::socket::send or xtd::net::sockets::socket::receive operation.
-        /// @return true if the xtd::net::sockets::socket was connected to a remote resource as of the most recent operation; otherwise, false.
+        /// @return `true` if the xtd::net::sockets::socket was connected to a remote resource as of the most recent operation; otherwise, false.
         /// @remarks The xtd::net::sockets::socket::connected property gets the connection state of the xtd::net::sockets::socket as of the last I/O operation. When it returns false, the xtd::net::sockets::socket was either never connected, or is no longer connected. xtd::net::sockets::socket::connected is not thread-safe; it may return true after an operation is aborted when the xtd::net::sockets::socket is disconnected from another thread.
         /// @remarks The value of the xtd::net::sockets::socket::connected property reflects the state of the connection as of the most recent operation. If you need to determine the current state of the connection, make a nonblocking, zero-byte xtd::net::sockets::socket::send call. If the call returns successfully or throws a WAEWOULDBLOCK error code (10035), then the socket is still connected; otherwise, the socket is no longer connected.
         /// @remarks If you call xtd::net::sockets::socket::connect on a User Datagram Protocol (UDP) socket, the xtd::net::sockets::socket::connected property always returns true; however, this action does not change the inherent connectionless nature of UDP.
         bool connected() const noexcept;
         
         /// @brief Gets a value that specifies whether the xtd::net::sockets::socket allows Internet Protocol (IP) datagrams to be fragmented.
-        /// @return true if the xtd::net::sockets::socket doesn't allow datagram fragmentation; otherwise, false. The default is true.
+        /// @return `true` if the xtd::net::sockets::socket doesn't allow datagram fragmentation; otherwise, false. The default is true.
         /// @exception xtd::not_supported_exception The socket is not in the xtd::net::sockets::address_family::inter_network family.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
@@ -246,7 +246,7 @@ namespace xtd {
         socket& dont_fragment(bool value);
         
         /// @brief Gets a value that specifies whether the xtd::net::sockets::socket is a dual-mode socket used for both IPv4 and IPv6.
-        /// @return true if the xtd::net::sockets::socket is a dual-mode socket; otherwise, false. The default is true if the socket was created by calling the xtd::net::sockets::socket(xtd::net::sockets::socket_type, xtd::net::sockets::protocol_type) constructor and the operating system supports IPv6; otherwise, the default is false.
+        /// @return `true` if the xtd::net::sockets::socket is a dual-mode socket; otherwise, false. The default is true if the socket was created by calling the xtd::net::sockets::socket(xtd::net::sockets::socket_type, xtd::net::sockets::protocol_type) constructor and the operating system supports IPv6; otherwise, the default is false.
         /// @exception xtd::not_supported_exception The socket is not in the xtd::net::sockets::address_family::inter_network_v6 family.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
@@ -262,7 +262,7 @@ namespace xtd {
         socket& dual_mode(bool value);
         
         /// @brief Gets a boolean value that specifies whether the xtd::net::sockets::socket can send or receive broadcast packets.
-        /// @return true if the xtd::net::sockets::socket allows broadcast packets; otherwise, false. The default is false.
+        /// @return `true` if the xtd::net::sockets::socket allows broadcast packets; otherwise, false. The default is false.
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks Broadcasting is limited to a specific subnet, and must use User Datagram Protocol (UDP.) For Internet Protocol version 4, you can broadcast to your local subnet by sending a packet to 255.255.255.255; or you can use the directed broadcast address, which is the network portion of an Internet Protocol (IP) address with all bits set in the host portion. For example, if your IP address is 192.168.1.40 (a Class C address, with a netmask of 255.255.255.0 -- the network portion is the first three octets, and the host portion is the last octet), your directed broadcast address is 192.168.1.255.
@@ -280,7 +280,7 @@ namespace xtd {
         socket& enable_broadcast(bool value);
         
         /// @brief Gets a boolean value that specifies whether the xtd::net::sockets::socket allows only one process to bind to a port.
-        /// @return true if the xtd::net::sockets::socket allows only one socket to bind to a specific port; otherwise, false. The default is true for Windows Server 2003 and Windows XP Service Pack 2, and false for all other versions.
+        /// @return `true` if the xtd::net::sockets::socket allows only one socket to bind to a specific port; otherwise, false. The default is true for Windows Server 2003 and Windows XP Service Pack 2, and false for all other versions.
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks If xtd::net::sockets::socket::exclusive_address_use is false, multiple sockets can use the xtd::net::sockets::socket::bind method to bind to a specific port; however only one of the sockets can perform operations on the network traffic sent to the port. If more than one socket attempts to use the xtd::net::sockets::socket::bind method to bind to a particular port, then the one with the more specific IP address will handle the network traffic sent to that port.
@@ -305,7 +305,7 @@ namespace xtd {
         intptr handle() const noexcept;
         
         /// @brief Gets a value that indicates whether the xtd::net::sockets::socket is bound to a specific local port.
-        /// @return true if the xtd::net::sockets::socket is bound to a local port; otherwise, false.
+        /// @return `true` if the xtd::net::sockets::socket is bound to a local port; otherwise, false.
         /// @remarks A socket is considered bound to a local port if it is explicitly bound by calling the xtd::net::sockets::socket::bind method, or implicitly bound by calling members like xtd::net::sockets::socket::connect, xtd::net::sockets::socket::send_to, or xtd::net::sockets::socket::receive_from, which use an ephemeral local port (a free port greater than 1024, selected by the operating system.) Servers use the xtd::net::sockets::socket::bind method to bind to a well-known port so that clients may connect to them.
         bool is_bound() const noexcept;
         
@@ -355,7 +355,7 @@ namespace xtd {
         xtd::sptr<xtd::net::end_point> local_end_point() const;
         
         /// @brief Gets a value that specifies whether outgoing multicast packets are delivered to the sending application.
-        /// @return true if the xtd::net::sockets::socket receives outgoing multicast packets; otherwise, false.
+        /// @return `true` if the xtd::net::sockets::socket receives outgoing multicast packets; otherwise, false.
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @exception xtd::not_supported_exception The xtd::net::sockets::socket is not in the xtd::net::sockets::address_family::inter_network or xtd::net::sockets::address_family::inter_network_v6 families.
@@ -504,12 +504,12 @@ namespace xtd {
         
         /// @{
         /// @brief Indicates whether the underlying operating system and network adaptors support Internet Protocol version 4 (IPv4).
-        /// @return true if the operating system and network adaptors support the IPv4 protocol; otherwise, false.
+        /// @return `true` if the operating system and network adaptors support the IPv4 protocol; otherwise, false.
         /// @remarks The operating system may support both IPv4 and IPv6 protocols.
         static bool os_supports_ip_v4() noexcept;
         
         /// @brief Indicates whether the underlying operating system and network adaptors support Internet Protocol version 6 (IPv6).
-        /// @return true if the operating system and network adaptors support the IPv6 protocol; otherwise, false.
+        /// @return `true` if the operating system and network adaptors support the IPv6 protocol; otherwise, false.
         /// @remarks The operating system may support both IPv4 and IPv6 protocols.
         static bool os_supports_ip_v6() noexcept;
         /// @}
@@ -531,7 +531,7 @@ namespace xtd {
         
         /// @brief Begins an asynchronous operation to accept an incoming connection attempt.
         /// @param e The xtd::net::sockets::socket::socket_async_event_args object to use for this asynchronous socket operation.
-        /// @return true if the I/O operation is pending. The Completed event on the e parameter will be raised upon completion of the operation. false if the I/O operation completed synchronously. The Completed event on the e parameter will not be raised and the e object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.
+        /// @return `true` if the I/O operation is pending. The Completed event on the e parameter will be raised upon completion of the operation. false if the I/O operation completed synchronously. The Completed event on the e parameter will not be raised and the e object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @exception xtd::argument_exception An argument is not valid. This exception occurs if the buffer provided is not large enough. The buffer must be at least 2 * (sizeof(SOCKADDR_STORAGE + 16) bytes. This exception also occurs if multiple buffers are specified, the xtd::net::sockets::socket_async_event_args::buffer_list property is not empty.

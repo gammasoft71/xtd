@@ -60,7 +60,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the application is running in user-interface mode.
-      /// @return true if user-interface mode is enabled; otherwise, false.
+      /// @return `true` if user-interface mode is enabled; otherwise, false.
       /// @par Examples
       /// The following code example calls a function that calls the xtd::diagnostics::default_trace_listener::fail method to log an error message if the function throws an exception. If the xtd::diagnostics::default_trace_listener::assert_ui_enabled property is false, the method also writes the error message to the console.
       /// ```cpp

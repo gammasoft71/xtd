@@ -64,7 +64,7 @@ namespace xtd {
       
       /// @brief Signal named mutex with specified mutex handle.
       /// @param handle The mutex handle to signal.
-      /// @return true if succeed; otherwhise false.
+      /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
       static bool signal(intmax_t handle, bool& io_error);
       

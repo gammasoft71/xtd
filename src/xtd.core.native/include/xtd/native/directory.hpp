@@ -192,7 +192,7 @@ namespace xtd {
       static file_and_directory_iterator enumerate_files_and_directories(const std::string& path, const std::string& pattern);
       /// @brief Check if specified directory exist.
       /// @param path The diretory path to check.
-      /// @return true is file exist; otherwise false.
+      /// @return `true` is file exist; otherwise `false`.
       /// @warning Internal use only
       static bool exists(const std::string& path);
       /// @brief Gets the current directory.

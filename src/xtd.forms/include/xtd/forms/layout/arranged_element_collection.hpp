@@ -212,7 +212,7 @@ namespace xtd {
         const_reverse_iterator crend() const noexcept {return collection_.crend();}
         
         /// @brief Checks whether the container is empty.
-        /// @return true if container is empty; otherwise false.
+        /// @return `true` if container is empty; otherwise `false`.
         bool empty() const noexcept {return collection_.empty();}
         
         /// @brief Returns the number of elements.
@@ -234,10 +234,10 @@ namespace xtd {
         void shrink_to_fit() {collection_.shrink_to_fit();}
         
         /// @brief Checks whether the container is sorted.
-        /// @return true if container is sorted; otherwise false.
+        /// @return `true` if container is sorted; otherwise `false`.
         virtual bool sorted() const noexcept {return sorted_;}
         /// @brief Sets the container is sorted.
-        /// @param value true if container is sorted; otherwise false.
+        /// @param value true if container is sorted; otherwise `false`.
         virtual void sorted(bool value) {
           if (sorted_ != value) {
             sorted_ = value;

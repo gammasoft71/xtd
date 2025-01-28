@@ -176,7 +176,7 @@ namespace xtd {
         tcp_client& linger_state(const xtd::net::sockets::linger_option& value);
         
         /// @brief Gets a value that disables a delay when send or receive buffers are not full.
-        /// @return true if the delay is disabled; otherwise, false. The default value is false.
+        /// @return `true` if the delay is disabled; otherwise, false. The default value is false.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket. See the Remarks section for more information.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks When xtd::net::sockets::tcp_client::no_delay is false, a xtd::net::sockets::tcp_client does not send a packet over the network until it has collected a significant amount of outgoing data.
@@ -344,7 +344,7 @@ namespace xtd {
         
         /// @{
         /// @brief Gets a value that indicates whether a connection has been made.
-        /// @return true if the connection has been made; otherwise, false.
+        /// @return `true` if the connection has been made; otherwise, false.
         /// @remarks Classes deriving from xtd::net::sockets::tcp_client can use this property to determine if a connection attempt has succeeded. It does not monitor the ongoing connection state of xtd::net::sockets::tcp_client. If the remote host closes the connection, xtd::net::sockets::tcp_client::active will not be updated. If you are deriving from xtd::net::sockets::tcp_client and require closer attention to the connection state, use the xtd::net::sockets::tcp_client::client::connected property of the xtd::net::sockets::socket returned by the xtd::net::sockets::tcp_client::client property.
         bool active() const noexcept;
         /// @brief Sets a value that indicates whether a connection has been made.

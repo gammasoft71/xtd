@@ -125,12 +125,12 @@ namespace xtd {
       bool equals(const event_wait_handle& value) const noexcept override;
 
       /// @brief Sets the state of the event to nonsignaled, causing threads to block.
-      /// @return true if the operation succeeds; otherwise, false.
+      /// @return `true` if the operation succeeds; otherwise, false.
       /// @exception xtd::object_closed_exception The xtd::threading::wait_handle::close() method was previously called on this xtd::threading::event_wait_handle.
       bool reset();
       
       /// @brief Sets the state of the event to signaled, allowing one or more waiting threads to proceed.
-      /// @return true if the operation succeeds; otherwise, false.
+      /// @return `true` if the operation succeeds; otherwise, false.
       /// @exception xtd::object_closed_exception The xtd::threading::wait_handle::close() method was previously called on this xtd::threading::event_wait_handle.
       /// @remarks For an xtd::threading::event_wait_handle with xtd::threading::event_reset_mode::auto_reset (including xtd::threading:::auto_reset_event), the xtd::threading::event_wait_handle::set method releases a single thread. If there are no waiting threads, the wait handle remains signaled until a thread attempts to wait on it, or until its xtd::threading::event_wait_handle::reset method is called.
       /// @warning There is no guarantee that every call to the xtd::threading::auto_reset_event::set method will release a thread. If two calls are too close together, so that the second call occurs before a thread has been released, only one thread is released. It's as if the second call did not happen. Also, if xtd::threading::auto_reset_event::set is called when there are no threads waiting and the xtd::threading::auto_reset_event is already signaled, the call has no effect.
@@ -157,7 +157,7 @@ namespace xtd {
       /// @brief Opens the specified named synchronization event, if it already exists, and returns a value that indicates whether the operation succeeded.
       /// @param name The name of the synchronization object to be opened and shared with other processes. The name is case-sensitive. The backslash character (\) is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name.
       /// @param result When this method returns, contains a The xtd::threading::event_wait_handle object that represents the named synchronization event if the call succeeded, or null if the call failed. This parameter is treated as uninitialized.
-      /// @return true if the named synchronization event was opened successfully; otherwise, false. In some cases, false may be returned for invalid names.
+      /// @return `true` if the named synchronization event was opened successfully; otherwise, false. In some cases, false may be returned for invalid names.
       /// @exception xtd::argument_exception name is an empty string.
       /// @exception xtd::io::io_exception name is invalid. This can be for various reasons, including some restrictions that may be placed by the operating system, such as an unknown prefix or invalid characters. Note that the name and common prefixes "Global\" and "Local\" are case-sensitive. For some invalid names, the method may return false instead.<br>-or-<br>There was some other error. The HResult property may provide more information.
       /// @exception xtd::io::path_too_long_exception The name is too long. Length restrictions may depend on the operating system or configuration.

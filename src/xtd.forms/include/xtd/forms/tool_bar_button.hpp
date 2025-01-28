@@ -96,7 +96,7 @@ namespace xtd {
       tool_bar_button& drop_down_menu(std::nullptr_t value);
       
       /// @brief Gets a value indicating whether the button is enabled.
-      /// @return true if the button is enabled; otherwise, false. The default is true.
+      /// @return `true` if the button is enabled; otherwise, false. The default is true.
       /// @remarks When the xtd::forms::tool_bar_button::enabled property is set to false, the toolbar button cannot be clicked, and the button's appearance changes. The xtd::drawing::image and xtd::forms::tool_bar_button::text assigned to the button appear grayed out. If the image or text has multiple colors, they display in a monochromatic gray.
       bool enabled() const noexcept;
       /// @brief Sets a value indicating whether the button is enabled.
@@ -185,7 +185,7 @@ namespace xtd {
       tool_bar_button& tool_tip_text(const xtd::string& value);
       
       /// @brief Gets a value indicating whether the toolbar button is visible.
-      /// @return true if the toolbar button is visible; otherwise, false. The default is true.
+      /// @return `true` if the toolbar button is visible; otherwise, false. The default is true.
       /// @remarks If the toolbar button is not visible, it will not be displayed on the toolbar, and therefore cannot receive user input.
       bool visible() const noexcept;
       /// @brief Sets a value indicating whether the toolbar button is visible.

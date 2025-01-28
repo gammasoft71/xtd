@@ -153,7 +153,7 @@ namespace xtd {
     virtual const_pointer data() const noexcept {return (pointer)data_->items.data();}
     
     /// @brief Checks if the container has no elements, i.e. whether xtd::array::begin() == xtd::array::end().
-    /// @return true if the container is empty, false otherwise.
+    /// @return `true` if the container is empty, false otherwise.
     virtual bool empty() const noexcept {return data_->items.empty();}
     
     /// @brief Returns an iterator to the element following the last element of the enumarable.

@@ -58,7 +58,7 @@ namespace xtd {
       
       /// @brief Signal named semaphore with specified semaphore handle.
       /// @param handle The semaphore handle to signal.
-      /// @return true if succeed; otherwhise false.
+      /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
       static bool signal(intmax_t handle, int32_t release_count, int32_t& previous_count, bool& io_error);
       

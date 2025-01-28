@@ -34,10 +34,10 @@ namespace xtd {
       
       /// @{
       /// @brief Check if the progress dialog is canceled
-      /// @return true if the progress dialog is canceled
+      /// @return `true` if the progress dialog is canceled
       static bool cancelled();
       /// @brief Check if the progress dialog is skipped
-      /// @return true if the progress dialog is skipped
+      /// @return `true` if the progress dialog is skipped
       static bool skipped();
       /// @brief Gets the minimum value of the range of the progress dialog.
       /// @return The minimum value of the range. The default is 0.

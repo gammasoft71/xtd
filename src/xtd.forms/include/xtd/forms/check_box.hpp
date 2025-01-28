@@ -73,7 +73,7 @@ namespace xtd {
       virtual check_box& appearance(forms::appearance appearance);
       
       /// @brief Gets a value indicating whether the checked or check_state values and the check_box's appearance are automatically changed when the check_box is clicked.
-      /// @return true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
+      /// @return `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
       /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
       /// @par Examples
       /// The following code example demonstrates the use of check_box auto_check.
@@ -92,7 +92,7 @@ namespace xtd {
       virtual check_box& check_align(content_alignment check_align);
       
       /// @brief Gets a value indicating whether the check_box is in the checked state.
-      /// @return true if the check_box is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
+      /// @return `true` if the check_box is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
       /// @remarks When the value is true, the check_box portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when false.
       /// @par Examples
       /// The following code example demonstrates the use of check_box checked.
@@ -130,7 +130,7 @@ namespace xtd {
       virtual check_box& check_state(forms::check_state check_state);
       
       /// @brief Gets a value indicating whether the check_box will allow three check states rather than two.
-      /// @return true if the check_box is able to display three check states; otherwise, false. The default value is false.
+      /// @return `true` if the check_box is able to display three check states; otherwise, false. The default value is false.
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
       /// @par Examples
       /// The following code example demonstrates the use of check_box three_state.

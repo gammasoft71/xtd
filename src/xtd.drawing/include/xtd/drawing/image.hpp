@@ -299,17 +299,17 @@ namespace xtd {
       
       /// @brief Returns a value that indicates whether the pixel format for this xtd::drawing::image contains alpha information.
       /// @param pixfmt The PixelFormat to test.
-      /// @return true if pixfmt contains alpha information; otherwise, false.
+      /// @return `true` if pixfmt contains alpha information; otherwise, false.
       static bool is_alpha_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
       
       /// @brief Returns a value that indicates whether the pixel format is 32 bits per pixel.
       /// @param pixfmt The PixelFormat to test.
-      /// @return true if pixfmt is canonical; otherwise, false.
+      /// @return `true` if pixfmt is canonical; otherwise, false.
       static bool is_canonical_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
       
       /// @brief Returns a value that indicates whether the pixel format is 64 bits per pixel.
       /// @param pixfmt The PixelFormat to test.
-      /// @return true if pixfmt is extended; otherwise, false.
+      /// @return `true` if pixfmt is extended; otherwise, false.
       static bool is_extended_pixel_format(xtd::drawing::imaging::pixel_format pixfmt) noexcept;
       /// @}
 

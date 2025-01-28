@@ -41,7 +41,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the event should be canceled.
-      /// @return true if the event should be canceled; otherwise, false.
+      /// @return `true` if the event should be canceled; otherwise, false.
       virtual bool cancel() const noexcept {return cancel_;}
       /// @brief Sets a value indicating whether the event should be canceled.
       /// @param cancel true if the event should be canceled; otherwise, false.

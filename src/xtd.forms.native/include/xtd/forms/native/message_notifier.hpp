@@ -31,7 +31,7 @@ namespace xtd {
         /// @param message The message text.
         /// @param icon The icon associate to the notifier.
         /// @param style The Style (see ... for more informations).
-        /// @param close_timeout_enabled true to enable close timeout; otherwhise false.
+        /// @param close_timeout_enabled true to enable close timeout; otherwise `false`.
         /// @param close_timeout_interval Interval for close time out in milliseconds.
         /// @param on_notifier_closed The delagate called when message notifier is closed.
         /// @warning Internal use only

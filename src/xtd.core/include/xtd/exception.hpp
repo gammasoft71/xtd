@@ -125,10 +125,10 @@ namespace xtd {
     
     /// @{
     /// @brief Gets if the generation of the stack trace is enabled.
-    /// @return triue if stack trace enabled; otherwhise false.
+    /// @return triue if stack trace enabled; otherwise `false`.
     static bool enable_stack_trace() noexcept;
     /// @brief Sets if the generation of the stack trace is enabled.
-    /// @paran enable triue if stack trace enabled; otherwhise false.
+    /// @paran enable triue if stack trace enabled; otherwise `false`.
     static void enable_stack_trace(bool enable) noexcept;
     /// @}
 

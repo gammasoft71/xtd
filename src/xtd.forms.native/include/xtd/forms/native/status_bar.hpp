@@ -42,9 +42,9 @@ namespace xtd {
         /// @param text The panel text.
         /// @param tool_tip_text The tool tip text.
         /// @param image The panel image.
-        /// @param visible true if panel is visible; otherwise false.
+        /// @param visible true if panel is visible; otherwise `false`.
         /// @param width The panel width.
-        /// @param stretchable true if panel is stretchable; otherwise false.
+        /// @param stretchable true if panel is stretchable; otherwise `false`.
         /// @warning Internal use only
         //static intptr add_status_bar_panel(intptr status_bar, int border_style, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool visible, int width, bool stretchable);
         static intptr add_status_bar_panel(intptr status_bar, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, int32 alignment, int32 auto_size, int32 border_style, int32 min_width, int32 width);
@@ -60,7 +60,7 @@ namespace xtd {
         /// @warning Internal use only
         static bool set_system_status_bar(intptr control, intptr status_bar);
         /// @brief Gets a value indicating whether OS displays a sizing grip.
-        /// @return true if OS displays a sizing grip; otherwise, false.
+        /// @return `true` if OS displays a sizing grip; otherwise, false.
         /// @warning Internal use only
         static bool sizing_grip();
         /// @brief Gets the cursor name used by sizing grip.
@@ -73,9 +73,9 @@ namespace xtd {
         /// @param text The panel text.
         /// @param tool_tip_text The tool tip text.
         /// @param image The panel image.
-        /// @param visible true if panel is visible; otherwise false.
+        /// @param visible true if panel is visible; otherwise `false`.
         /// @param width The panel width.
-        /// @param visible true if panel is stretchable; otherwise false.
+        /// @param visible true if panel is stretchable; otherwise `false`.
         /// @warning Internal use only
         static void update_status_bar_item(intptr status_bar, intptr handle, int32 border_style, const xtd::string& text, const xtd::string& tool_tip_text, const xtd::drawing::image& image, bool visible, int32 width, bool stretchable);
         /// @}

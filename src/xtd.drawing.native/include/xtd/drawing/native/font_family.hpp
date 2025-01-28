@@ -73,10 +73,10 @@ namespace xtd {
         /// @brief Gets the cell ascent.
         /// @param font_family The fontt family handle.
         /// @param em_height The em-height of the font family in pixels.
-        /// @param bold true if font family is bold; otherwise false.
-        /// @param italic true if font family is italic; otherwise false.
-        /// @param underline true if font family is underline; otherwise false.
-        /// @param strikeout true if font family is strikeout; otherwise false.
+        /// @param bold true if font family is bold; otherwise `false`.
+        /// @param italic true if font family is italic; otherwise `false`.
+        /// @param underline true if font family is underline; otherwise `false`.
+        /// @param strikeout true if font family is strikeout; otherwise `false`.
         /// @return The cell ascent.
         /// @warning Internal use only
         static int32 get_cell_ascent(intptr font_family, int32 em_height, bool bold, bool italic, bool underline, bool strikeout);
@@ -84,10 +84,10 @@ namespace xtd {
         /// @brief Gets the cell descent.
         /// @param font_family The fontt family handle.
         /// @param em_height The em-height of the font family in pixels.
-        /// @param bold true if font family is bold; otherwise false.
-        /// @param italic true if font family is italic; otherwise false.
-        /// @param underline true if font family is underline; otherwise false.
-        /// @param strikeout true if font family is strikeout; otherwise false.
+        /// @param bold true if font family is bold; otherwise `false`.
+        /// @param italic true if font family is italic; otherwise `false`.
+        /// @param underline true if font family is underline; otherwise `false`.
+        /// @param strikeout true if font family is strikeout; otherwise `false`.
         /// @return The cell descent.
         /// @warning Internal use only
         static int32 get_cell_descent(intptr font_family, int32 em_height, bool bold, bool italic, bool underline, bool strikeout);
@@ -95,10 +95,10 @@ namespace xtd {
         /// @brief Gets the line spacing.
         /// @param font_family The fontt family handle.
         /// @param em_height The em-height of the font family in pixels.
-        /// @param bold true if font family is bold; otherwise false.
-        /// @param italic true if font family is italic; otherwise false.
-        /// @param underline true if font family is underline; otherwise false.
-        /// @param strikeout true if font family is strikeout; otherwise false.
+        /// @param bold true if font family is bold; otherwise `false`.
+        /// @param italic true if font family is italic; otherwise `false`.
+        /// @param underline true if font family is underline; otherwise `false`.
+        /// @param strikeout true if font family is strikeout; otherwise `false`.
         /// @return The line spacing.
         /// @warning Internal use only
         static int32 get_line_spacing(intptr font_family, int32 em_height, bool bold, bool italic, bool underline, bool strikeout);
@@ -114,11 +114,11 @@ namespace xtd {
         /// @brief Gets the style availability.
         /// @param font_family The fontt family handle.
         /// @param em_height The em-height of the font family in pixels.
-        /// @param bold true if font family is bold; otherwise false.
-        /// @param italic true if font family is italic; otherwise false.
-        /// @param underline true if font family is underline; otherwise false.
-        /// @param strikeout true if font family is strikeout; otherwise false.
-        /// @return True if font family is availlable; otherwise false.
+        /// @param bold true if font family is bold; otherwise `false`.
+        /// @param italic true if font family is italic; otherwise `false`.
+        /// @param underline true if font family is underline; otherwise `false`.
+        /// @param strikeout true if font family is strikeout; otherwise `false`.
+        /// @return True if font family is availlable; otherwise `false`.
         /// @warning Internal use only
         static bool is_style_available(intptr font_family, bool bold, bool italic, bool underline, bool strikeout);
         /// @}

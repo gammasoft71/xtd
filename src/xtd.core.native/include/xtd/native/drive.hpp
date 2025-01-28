@@ -45,7 +45,7 @@ namespace xtd {
       /// @param free_bytes Return number of free bytes in bytes.
       /// @param total_number_of_bytes Return total number of bytes in bytes.
       /// @param total_number_of_free_bytes Return total number of free bytes in bytes.
-      /// @return true if succeed; otherwise false.
+      /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
       static bool get_available_free_space(const std::string& root_path_name, size_t& free_bytes, size_t& total_number_of_bytes, size_t& total_number_of_free_bytes);
       /// @brief Gets drive type.
@@ -61,13 +61,13 @@ namespace xtd {
       /// @param root_path_name The root path name of the volume
       /// @param volume_name The name of the volume.
       /// @param file_system_name The file system name.
-      /// @return true if succeed; otherwise false.
+      /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
       static bool get_volume_information(const std::string& root_path_name, std::string& volume_name, std::string& file_system_name);
       /// @brief Sets volume label
       /// @param root_path_name The root path name of the volume
       /// @param volume The volume name to set.
-      /// @return true if succeed; otherwise false.
+      /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
       static bool set_Volume_label(const std::string& root_path_name, const std::string& volume_name);
       /// @}

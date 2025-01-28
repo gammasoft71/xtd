@@ -119,7 +119,7 @@ namespace xtd {
           /// @brief checks if the specified a and b keys are equal.
           /// @param a The first key to check.
           /// @param b The second key to check.
-          /// @return true if keys are equals; otherwise false.
+          /// @return `true` if keys are equals; otherwise `false`.
           /// @remarks If key_t inherits from xtd::object, the xtd::object::equals method will be used; otherwise, the [std::equal_to](https://en.cppreference.com/w/cpp/utility/functional/equal_to) object function will be used.
           bool operator()(const key_t& a, const key_t& b) const {
             if (&a == &b) return true;
@@ -598,12 +598,12 @@ namespace xtd {
         iterator end() noexcept override {return ienumerable<value_type>::cend();}
         
         /// @brief Gets a value indicating whether the xtd::collections::generic::icollection <type_t> is read-only.
-        /// @return true if the xtd::collections::generic::icollection <type_t> is read-only; otherwise, false.
+        /// @return `true` if the xtd::collections::generic::icollection <type_t> is read-only; otherwise, false.
         /// @remarks A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the xtd::collections::generic::icollection <type_t> interface only supports addition and removal operations. For example, the IsReadOnly property of an array that is cast or converted to an xtd::collections::generic::icollection <type_t> object returns true, even though individual array elements can be modified.
         bool is_read_only() const noexcept override {return false;}
 
         /// @brief Gets a value indicating whether access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe).
-        /// @return true if access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe); otherwise, false.
+        /// @return `true` if access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe); otherwise, false.
         /// @remarks xtd::collections::generic::icollection::sync_root returns an object, which can be used to synchronize access to the xtd::collections::generic::icollection <type_t>.
         /// @remarks Most collection classes in the xtd::collections namespace also implement a `synchronized` method, which provides a synchronized wrapper around the underlying collection.
         /// @remarks Enumerating through a collection is intrinsically not a thread-safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads.

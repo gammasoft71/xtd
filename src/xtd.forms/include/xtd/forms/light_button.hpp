@@ -58,7 +58,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the checked or check_state values and the light_button's appearance are automatically changed when the light_button is clicked.
-      /// @return true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
+      /// @return `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
       /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
       /// @par Examples
       /// The following code example demonstrates the use of light_button auto_check.
@@ -70,7 +70,7 @@ namespace xtd {
       virtual light_button& auto_check(bool auto_check);
       
       /// @brief Gets a value indicating whether the light_button is in the checked state.
-      /// @return true if the light_button is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
+      /// @return `true` if the light_button is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
       /// @remarks When the value is true, the light_button portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when false.
       /// @par Examples
       /// The following code example demonstrates the use of light_button checked.
@@ -143,7 +143,7 @@ namespace xtd {
       /// @endcond
       
       /// @brief Gets a value indicating whether the light_button will allow three check states rather than two.
-      /// @return true if the light_button is able to display three check states; otherwise, false. The default value is false.
+      /// @return `true` if the light_button is able to display three check states; otherwise, false. The default value is false.
       /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
       /// @par Examples
       /// The following code example demonstrates the use of light_button three_state.

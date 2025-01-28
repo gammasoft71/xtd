@@ -136,7 +136,7 @@ namespace xtd {
       virtual tool_bar& button_size(std::nullptr_t value);
       
       /// @brief Gets a value indicating whether the toolbar displays a divider.
-      /// @return true if the toolbar displays a divider; otherwise, false. The default is true.
+      /// @return `true` if the toolbar displays a divider; otherwise, false. The default is true.
       /// @remarks Dividers are displayed to help distinguish the toolbar from adjacent controls, such as menus. A divider is displayed as a raised edge along the top of the xtd::forms::tool_bar control.
       /// @note Only on Windows and if xtd::forms::tool_bar::appearance is set to xtd::forms::tool_bar_appearance::system.
       virtual bool divider() const noexcept;
@@ -151,7 +151,7 @@ namespace xtd {
       control& dock(dock_style dock) override;
       
       /// @brief Gets a value indicating whether drop-down buttons on a toolbar display down arrows.
-      /// @return true if drop-down toolbar buttons display down arrows; otherwise, false. The default is true.
+      /// @return `true` if drop-down toolbar buttons display down arrows; otherwise, false. The default is true.
       /// @remarks When xtd::forms::tool_bar::drop_down_arrows is set to false, no down arrows display on drop-down style toolbar buttons. When the user clicks the drop-down button on the toolbar, the menu drops down for selection. When the drop-down arrow is displayed, the user must press the down arrow to display the menu.
       virtual bool drop_down_arrows() const noexcept;
       /// @brief Sets a value indicating whether drop-down buttons on a toolbar display down arrows.
@@ -179,7 +179,7 @@ namespace xtd {
       virtual xtd::drawing::size image_size() const noexcept;
       
       /// @brief Gets a value indicating whether the toolbar displays the image for each button.
-      /// @return true if the toolbar display the image for each button; otherwise, false. The default is true.
+      /// @return `true` if the toolbar display the image for each button; otherwise, false. The default is true.
       virtual bool show_icon() const noexcept;
       /// @brief Sets a value indicating whether the toolbar displays the image for each button.
       /// @param value true if the toolbar display the image for each button; otherwise, false. The default is true.
@@ -187,7 +187,7 @@ namespace xtd {
       virtual tool_bar& show_icon(bool value);
       
       /// @brief Gets a value indicating whether the toolbar displays the text for each button.
-      /// @return true if the toolbar display the text for each button; otherwise, false. The default is false.
+      /// @return `true` if the toolbar display the text for each button; otherwise, false. The default is false.
       virtual bool show_text() const noexcept;
       /// @brief Sets a value indicating whether the toolbar displays the text for each button.
       /// @param value true if the toolbar display the text for each button; otherwise, false. The default is false.
@@ -195,7 +195,7 @@ namespace xtd {
       virtual tool_bar& show_text(bool value);
       
       /// @brief Gets a value indicating whether the toolbar displays a xtd::forms::tool_tip for each button.
-      /// @return true if the toolbar display a xtd::forms::tool_tip for each button; otherwise, false. The default is false.
+      /// @return `true` if the toolbar display a xtd::forms::tool_tip for each button; otherwise, false. The default is false.
       /// @remarks To set the text displayed by the xtd::forms::tool_tip, set the xtd::forms::tool_bar_button::tool_tip_text property of each xtd::forms::tool_bar_button on the xtd::forms::tool_bar. To cause the xtd::forms::tool_tip to display as the user moves the mouse pointer over the toolbar button, set the xtd::forms::tool_bar::show_tool_tips property to true.
       virtual bool show_tool_tips() const noexcept;
       /// @brief Sets a value indicating whether the toolbar displays a xtd::forms::tool_tip for each button.
@@ -215,7 +215,7 @@ namespace xtd {
       virtual tool_bar& text_align(xtd::forms::tool_bar_text_align value);
       
       /// @brief Gets a value indicating whether the toolbar buttons wrap to the next line if the toolbar becomes too small to display all the buttons on the same line.
-      /// @return true if the toolbar buttons wrap to another line if the toolbar becomes too small to display all the buttons on the same line; otherwise, false. The default value is true.
+      /// @return `true` if the toolbar buttons wrap to another line if the toolbar becomes too small to display all the buttons on the same line; otherwise, false. The default value is true.
       /// @note Not yet implemented.
       virtual bool wrappable() const noexcept;
       /// @brief Gets a value indicating whether the toolbar buttons wrap to the next line if the toolbar becomes too small to display all the buttons on the same line.

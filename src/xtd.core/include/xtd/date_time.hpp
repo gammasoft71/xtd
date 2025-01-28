@@ -635,7 +635,7 @@ namespace xtd {
     std::vector<string> get_date_time_formats() const noexcept;
     
     /// @brief Indicates whether this instance of xtd::date_time is within the daylight saving time range for the current time zone.
-    /// @return true if the value of the xtd::date_time::kind property is xtd::date_time_kind::local or xtd::date_time_kind::unspecified and the value of this instance ofxtd::date_time is within the daylight saving time range for the local time zone; false if xtd::date_time::kind is xtd::date_time_kind::utc.
+    /// @return `true` if the value of the xtd::date_time::kind property is xtd::date_time_kind::local or xtd::date_time_kind::unspecified and the value of this instance ofxtd::date_time is within the daylight saving time range for the local time zone; false if xtd::date_time::kind is xtd::date_time_kind::utc.
     /// @remarks This method determines whether the current xtd::date_time value falls within the daylight saving time range of the local time zone, which is returned by the xtd::time_zone_info::local property. You can determine whether a time zone supports daylight saving time by retrieving the value of its xtd::time_zone_info::supports_daylight_saving_time property. For time zones that observe daylight saving time, you can determine when the transition to and from daylight saving time occurs by retrieving the xtd::time_zone_info::adjustment_rule array returned by the time zone's xtd::time_zone_info::get_adjustmen_rules property.
     /// @remarks If the current xtd::date_time value represents either an ambiguous or an invalid time in the local time zone, the method returns false.
     bool is_daylight_saving_time() const noexcept;
@@ -1022,7 +1022,7 @@ namespace xtd {
     
     /// @brief Returns an indication whether the specified year is a leap year.
     /// @param year A 4-digit year.
-    /// @return true if year is a leap year; otherwise, false.
+    /// @return `true` if year is a leap year; otherwise, false.
     /// @exception xtd::argument_out_of_range_exception year is less than 1 or greater than 9999.
     static bool is_leap_year(uint32 year);
     
@@ -1116,7 +1116,7 @@ namespace xtd {
     /// @brief Converts the specified string representation of a date and time to its xtd::date_time equivalent and returns a value that indicates whether the conversion succeeded.
     /// @param s A string containing a date and time to convert.
     /// @param result When this method returns, contains the xtd::date_time value equivalent to the date and time contained in s, if the conversion succeeded, or xtd::date_time::min_value if the conversion failed. The conversion fails if the s parameter is an empty string (""), or does not contain a valid string representation of a date and time.
-    /// @return true if the s parameter was converted successfully; otherwise, false.
+    /// @return `true` if the s parameter was converted successfully; otherwise, false.
     /// @remarks The xtd::date_time::try_parse method is similar to the xtd::date_time::parse method, except that the xtd::date_time::try_parse method does not throw an exception if the conversion fails.
     static bool try_parse(const string& s, date_time& result) noexcept;
     /// @}

@@ -61,10 +61,10 @@ namespace xtd {
       virtual collapsible_panel& border_style(std::nullptr_t);
 
       /// @brief Gets a value indicating whether the collapsible_panel is in the expanded.
-      /// @return true if collapsible_panel is expanded; otherwise false.
+      /// @return `true` if collapsible_panel is expanded; otherwise `false`.
       bool expanded() const noexcept;
       /// @brief Sets a value indicating whether the collapsible_panel is in the expanded.
-      /// @param expanded true if collapsible_panel is expanded; otherwise false.
+      /// @param expanded true if collapsible_panel is expanded; otherwise `false`.
       collapsible_panel& expanded(bool expanded);
       
       /// @cond

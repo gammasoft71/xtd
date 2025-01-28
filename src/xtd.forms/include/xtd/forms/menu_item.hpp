@@ -263,7 +263,7 @@ namespace xtd {
       intptr menu_id() const noexcept;
       
       /// @brief Gets a value indicating whether a check mark appears next to the text of the menu item.
-      /// @return true if there is a check mark next to the menu item; otherwise, false. The default is false.
+      /// @return `true` if there is a check mark next to the menu item; otherwise, false. The default is false.
       bool checked() const noexcept;
       /// @brief Sets a value indicating whether a check mark appears next to the text of the menu item.
       /// @param value true if there is a check mark next to the menu item; otherwise, false. The default is false.
@@ -271,7 +271,7 @@ namespace xtd {
       menu_item& checked(bool value);
       
       /// @brief Gets a value indicating whether the menu item is enabled.
-      /// @return true if the menu item is enabled; otherwise, false. The default is true.
+      /// @return `true` if the menu item is enabled; otherwise, false. The default is true.
       bool enabled() const noexcept;
       /// @brief Gets a value indicating whether the menu item is enabled.
       /// @param value true if the menu item is enabled; otherwise, false. The default is true.

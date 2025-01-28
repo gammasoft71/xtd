@@ -89,7 +89,7 @@ namespace xtd {
       xtd::day_of_week day_of_week() const noexcept;
       
       /// @brief Gets a value indicating whether the time change occurs at a fixed date and time (such as November 1) or a floating date and time (such as the last Sunday of October).
-      /// @return true if the time change rule is fixed-date; false if the time change rule is floating-date.
+      /// @return `true` if the time change rule is fixed-date; false if the time change rule is floating-date.
       /// @remarks A fixed-date rule indicates that the transition occurs on the same date and time of each year to which the adjustment rule applies. For example, a time change that occurs every November 3 follows a fixed-date rule. A floating-date rule indicates that the transition occurs on a specific day of a specific week of a specific month for each year to which the adjustment rule applies. For example, a time change that occurs on the first Sunday of November follows a floating-date rule.
       /// @remarks The value of the xtd::time_zone_info::transition_time::is_fixed_date_rule property determines which properties of a xtd::time_zone_info::transition_time object have valid values. The following table indicates which properties are affected by the value of the xtd::time_zone_info::transition_time::is_fixed_date_rule property.
       /// | transition_time property     | is_fixed_date_rule = true | is_fixed_date_rule = false |
@@ -333,7 +333,7 @@ namespace xtd {
     
     /// @brief Indicates whether a specified date and time falls in the range of daylight saving time for the time zone of the current xtd::time_zone_info object.
     /// @param date_time A date and time value.
-    /// @return true if the date_time parameter is a daylight saving time; otherwise, false.
+    /// @return `true` if the date_time parameter is a daylight saving time; otherwise, false.
     bool is_daylight_saving_time(const xtd::date_time& date_time) const noexcept;
     
     xtd::string to_string() const noexcept override;

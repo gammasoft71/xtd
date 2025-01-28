@@ -46,7 +46,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the xtd::forms::control::key_press event was handled.
-      /// @return true if the event is handled; otherwise, false.
+      /// @return `true` if the event is handled; otherwise, false.
       /// @remarks If the event is not handled, it will be sent to the operating system for default processing. Set handled to true to cancel the xtd::forms::control::key_press event.
       bool handled() const noexcept {return handled_;}
       /// @brief Sets a value indicating whether the xtd::forms::control::key_press event was handled.

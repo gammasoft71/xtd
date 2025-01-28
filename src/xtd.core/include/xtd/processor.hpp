@@ -23,7 +23,7 @@ namespace xtd {
     /// @{
     /// @brief Initialise a new instance oof xtd::processor class.
     /// @param architecture One of xtd::architectuure_id valuues.
-    /// @param is_64_bit true if 64 bit architecture; otherwise false.
+    /// @param is_64_bit true if 64 bit architecture; otherwise `false`.
     /// @param core_count THe number of cores.
     processor(xtd::architecture_id architecture, bool is_64_bit, uint32 core_count);
     /// @}
@@ -50,7 +50,7 @@ namespace xtd {
     uint32 core_count() const noexcept;
     
     /// @brief Determines whether the current operating system is a 64-bit operating system.
-    /// @return true if the operating system is 64-bit; otherwise, false.
+    /// @return `true` if the operating system is 64-bit; otherwise, false.
     bool is_64_bit() const noexcept;
     
     /// @brief Gets the concatenated string representation of the platform identifier.

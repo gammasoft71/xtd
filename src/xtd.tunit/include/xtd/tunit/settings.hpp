@@ -216,11 +216,11 @@ namespace xtd {
       void show_duration(bool show_duration) noexcept;
       
       /// @brief Gets shuffle tests.
-      /// @return `true` if shuffle test; otherwise false. The default value is `false`.
+      /// @return `true` if shuffle test; otherwise `false`. The default value is `false`.
       bool shuffle_test() const noexcept;
       
       /// @brief Sets shuffle tests.
-      /// @param shuffle_test `true` if shuffle test; otherwise false. The default value is `false`.
+      /// @param shuffle_test `true` if shuffle test; otherwise `false`. The default value is `false`.
       void shuffle_test(bool shuffle_test) noexcept;
       
       /// @brief Gets unit test start time.

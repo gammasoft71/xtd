@@ -123,21 +123,21 @@ namespace xtd {
       void signal_and_wait();
       /// @brief Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a 32-bit signed integer to measure the timeout.
       /// @param milliseconds_timeout The number of milliseconds to wait, or xtd::threading::timeout::infinite(-1) to wait indefinitely.
-      /// @return true if all participants reached the barrier within the specified time; otherwise false.
+      /// @return `true` if all participants reached the barrier within the specified time; otherwise `false`.
       /// @exception xtd::argument_out_of_range_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @exception xtd::threading::barrier_post_phase_exception If an exception is thrown from the post phase action of a xtd::threading::barrier after all participating threads have called xtd::threading::barrier::signal_and_wait, the exception will be wrapped in a xtd::threading::barrier_post_phase_exception and be thrown on all participating threads.
       bool signal_and_wait(int32 milliseconds_timeout);
       /// @brief Signals that a participant has reached the barrier and waits for all other participants to reach the barrier, while observing a cancellation token.
       /// @param cancellation_token The xtd::threading::cancellation_token to observe.
-      /// @return true if all participants reached the barrier within the specified time; otherwise false.
+      /// @return `true` if all participants reached the barrier within the specified time; otherwise `false`.
       /// @exception xtd::operation_canceled_exception cancellation_token has been canceled.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @exception xtd::threading::barrier_post_phase_exception If an exception is thrown from the post phase action of a xtd::threading::barrier after all participating threads have called xtd::threading::barrier::signal_and_wait, the exception will be wrapped in a xtd::threading::barrier_post_phase_exception and be thrown on all participating threads.
       bool signal_and_wait(const cancellation_token& cancellation_token);
       /// @brief Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a xtd::time_span object to measure the time interval.
       /// @param timout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::time_span that represents -1 milliseconds to wait indefinitely.
-      /// @return true if all participants reached the barrier within the specified time; otherwise false.
+      /// @return `true` if all participants reached the barrier within the specified time; otherwise `false`.
       /// @exception xtd::argument_out_of_range_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
       /// @exception xtd::threading::barrier_post_phase_exception If an exception is thrown from the post phase action of a xtd::threading::barrier after all participating threads have called xtd::threading::barrier::signal_and_wait, the exception will be wrapped in a xtd::threading::barrier_post_phase_exception and be thrown on all participating threads.
@@ -145,7 +145,7 @@ namespace xtd {
       /// @brief Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a 32-bit signed integer to measure the timeout, while observing a cancellation token.
       /// @param milliseconds_timeout The number of milliseconds to wait, or xtd::threading::timeout::infinite(-1) to wait indefinitely.
       /// @param cancellation_token The xtd::threading::cancellation_token to observe.
-      /// @return true if all participants reached the barrier within the specified time; otherwise false.
+      /// @return `true` if all participants reached the barrier within the specified time; otherwise `false`.
       /// @exception xtd::argument_out_of_range_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out.
       /// @exception xtd::operation_canceled_exception cancellation_token has been canceled.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.
@@ -154,7 +154,7 @@ namespace xtd {
       /// @brief Signals that a participant has reached the barrier and waits for all other participants to reach the barrier as well, using a xtd::time_span object to measure the time interval, while observing a cancellation token.
       /// @param timout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::time_span that represents -1 milliseconds to wait indefinitely.
       /// @param cancellation_token The xtd::threading::cancellation_token to observe.
-      /// @return true if all participants reached the barrier within the specified time; otherwise false.
+      /// @return `true` if all participants reached the barrier within the specified time; otherwise `false`.
       /// @exception xtd::argument_out_of_range_exception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out.
       /// @exception xtd::operation_canceled_exception cancellation_token has been canceled.
       /// @exception xtd::object_closed_exception The current instance has already been disposed.

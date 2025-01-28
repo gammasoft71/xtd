@@ -1122,11 +1122,11 @@ namespace xtd {
 
     /// @brief Returns a value indicating whether a specified char occurs within this basic_string.
     /// @param value The char to seek.
-    /// @return true if the value parameter occurs within this basic_string; otherwise, false.
+    /// @return `true` if the value parameter occurs within this basic_string; otherwise, false.
     virtual bool contains(value_type value) const noexcept {return find(value) != npos;}
     /// @brief Returns a value indicating whether a specified substring occurs within this basic_string.
     /// @param value The basic_string to seek.
-    /// @return true if the value parameter occurs within this basic_string, or if value is the empty basic_string (""); otherwise, false.
+    /// @return `true` if the value parameter occurs within this basic_string, or if value is the empty basic_string (""); otherwise, false.
     virtual bool contains(const basic_string& value) const noexcept {return find(value) != npos;}
 
     /// @brief Determines whether this instance and a specified object, which must also be a xtd::basic_string object, have the same value.
@@ -1150,19 +1150,19 @@ namespace xtd {
 
     /// @brief Determines whether the end of this basic_string matches the specified character.
     /// @param value The char_t to compare to the substring at the end of this instance.
-    /// @return true if value matches the end of this instance; otherwise, false.
+    /// @return `true` if value matches the end of this instance; otherwise, false.
     bool ends_with(value_type value) const noexcept {return ends_with(value, false);}
     /// @brief Determines whether the end of this basic_string matches the specified character, ignoring or honoring their case.
     /// @param value The char_t to compare to the substring at the end of this instance.
     /// @param ignore_case true to ignore case during the comparison; otherwise, false.
-    /// @return true if value matches the end of this instance; otherwise, false.
+    /// @return `true` if value matches the end of this instance; otherwise, false.
     bool ends_with(value_type value, bool ignore_case) const noexcept {
       if (ignore_case) return to_lower().rfind(static_cast<value_type>(tolower(value))) == size() - 1;
       return rfind(value) == size() - 1;
     }
     /// @brief Determines whether the end of this basic_string matches the specified basic_string.
     /// @param value The basic_string to compare to the substring at the end of this instance.
-    /// @return true if value matches the end of this instance; otherwise, false.
+    /// @return `true` if value matches the end of this instance; otherwise, false.
     bool ends_with(const basic_string& value) const noexcept {return ends_with(value, xtd::string_comparison::ordinal);}
     /// @brief Determines whether the end of this basic_string instance matches the specified basic_string, ignoring or honoring their case.
     /// @param value The string to compare to the substring at the end of this instance.
@@ -1505,7 +1505,7 @@ namespace xtd {
     }
 
     /// @brief Indicates whether this basic_string is an empty basic_string ("").
-    /// @return true if the value parameter is null or an empty basic_string (""); otherwise, false.
+    /// @return `true` if the value parameter is null or an empty basic_string (""); otherwise, false.
     /// @deprecated Replaced by xtd::basic_string::is_empty(const xtd::basic_string&) - Will be removed in version 0.4.0.
     [[deprecated("Replaced by xtd::basic_string::is_empty(const xtd::basic_string&) - Will be removed in version 0.4.0.")]]
     bool is_empty() const noexcept {return is_empty(*this);}
@@ -2283,7 +2283,7 @@ namespace xtd {
 
     /// @brief Indicates whether the specifeid basic_string is an empty basic_string ("").
     /// @param string The xtd::basic_string to check if empty.
-    /// @return true if the value parameter is null or an empty basic_string (""); otherwise, false.
+    /// @return `true` if the value parameter is null or an empty basic_string (""); otherwise, false.
     static bool is_empty(const xtd::basic_string<value_type, traits_type, allocator_type>& string) noexcept {return !string.length();}
     
     /// @brief Concatenates a specified separator basic_string between each element of a specified object array, yielding a single concatenated basic_string.
@@ -2412,7 +2412,7 @@ namespace xtd {
     /// @brief Try to convert a basic_string into a value_t type.
     /// @param str An xtd::basic_string to convert to value_t
     /// @param value The value that will contain the parsed xtd::basic_string.
-    /// @return true if xtd::basic_string:=:try_parse succed; otherwise, false.
+    /// @return `true` if xtd::basic_string:=:try_parse succed; otherwise, false.
     template<class value_t>
     static bool try_parse(const basic_string& str, value_t& value) noexcept {
       try {

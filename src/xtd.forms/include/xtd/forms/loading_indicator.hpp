@@ -62,11 +62,11 @@ namespace xtd {
       virtual xtd::forms::loading_indicator& loading_indicator_style(xtd::forms::loading_indicator_style loading_indicator_style);
       
       /// @brief Gets a valiue that indicates if the loading indicator is running.
-      /// @return true if the loading indicator is running; otherwise false.
+      /// @return `true` if the loading indicator is running; otherwise `false`.
       virtual bool running() const noexcept;
       
       /// @brief Gets a valiue that indicates if the loading indicator is running.
-      /// @param value true if the loading indicator is running; otherwise false.
+      /// @param value true if the loading indicator is running; otherwise `false`.
       virtual loading_indicator& running(bool value);
       /// @}
       

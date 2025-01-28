@@ -68,10 +68,10 @@ namespace xtd {
       
       /// @{
       /// @brief Gets if this button instance is auto repeat.
-      /// @return true, if is auto repeat; otherwise false. Default is false.
+      /// @return `true`, if is auto repeat; otherwise `false`. Default is false.
       virtual bool auto_repeat() const noexcept;
       /// @brief Sets if this button instance is auto repeat.
-      /// @param auto_repeat true, if is auto repeat; otherwise false. Default is false.
+      /// @param auto_repeat true, if is auto repeat; otherwise `false`. Default is false.
       /// @return This button.
       virtual button& auto_repeat(bool auto_repeat);
       

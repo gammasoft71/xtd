@@ -88,7 +88,7 @@ namespace xtd {
         bool can_write() const noexcept override;
         
         /// @brief Gets a value that indicates whether data is available on the xtd::net::sockets::network_stream to be read.
-        /// @return true if data is available on the stream to be read; otherwise, false.
+        /// @return `true` if data is available on the stream to be read; otherwise, false.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks Use the xtd::net::sockets::network_stream::data_available property to determine if data is ready to be read. If xtd::net::sockets::network_stream::data_available is true, a call to std::iostream::read returns immediately. If the remote host shuts down or closes the connection, xtd::net::sockets::network_stream::data_available may throw a xtd::net::sockets::socket_exception.

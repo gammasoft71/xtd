@@ -61,21 +61,21 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the dialog box shows alpha values and an opacity selector (slider).
-      /// @return true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, false. The default is true.
+      /// @return `true` if the dialog box  shows alpha values and an opacity selector (slider); otherwise, false. The default is true.
       bool alpha_color() const noexcept;
       /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
       /// @param alpha_color true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, false.
       color_dialog& alpha_color(bool alpha_color);
       
       /// @brief Gets a value indicating whether the user can use the dialog box to define custom colors.
-      /// @return true if the user can define custom colors; otherwise, false. The default is true.
+      /// @return `true` if the user can define custom colors; otherwise, false. The default is true.
       bool allow_full_open() const noexcept;
       /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
       /// @param allow_full_open true if the user can define custom colors; otherwise, false. The default is true.
       color_dialog& allow_full_open(bool allow_full_open);
       
       /// @brief Gets a value indicating whether the dialog box displays all available colors in the set of basic colors.
-      /// @return true if the dialog box displays all available colors in the set of basic colors; otherwise, false. The default value is false.
+      /// @return `true` if the dialog box displays all available colors in the set of basic colors; otherwise, false. The default value is false.
       bool any_color() const noexcept;
       /// @brief Sets a value indicating whether the dialog box displays all available colors in the set of basic colors.
       /// @param any_color true if the dialog box displays all available colors in the set of basic colors; otherwise, false. The default value is false.
@@ -102,7 +102,7 @@ namespace xtd {
       color_dialog& custom_colors(const colors& custom_colors);
       
       /// @brief Gets a value indicating whether the controls used to create custom colors are visible when the dialog box is opened
-      /// @return true if the custom color controls are available when the dialog box is opened; otherwise, false. The default value is false.
+      /// @return `true` if the custom color controls are available when the dialog box is opened; otherwise, false. The default value is false.
       /// @remarks By default, the custom color controls are not visible when the dialog box is first opened. You must click the Custom Colors button to display them.
       /// @note If allow_full_open is false, then full_open has no effect.
       bool full_open() const noexcept;
@@ -118,14 +118,14 @@ namespace xtd {
       size_t options() const noexcept;
       
       /// @brief Gets a value indicating whether a Help button appears in the color dialog box.
-      /// @return true if the Help button is shown in the dialog box; otherwise, false. The default value is false.
+      /// @return `true` if the Help button is shown in the dialog box; otherwise, false. The default value is false.
       bool show_help() const noexcept;
       /// @brief Sets a value indicating whether a Help button appears in the color dialog box.
       /// @param show_help true if the Help button is shown in the dialog box; otherwise, false.
       color_dialog& show_help(bool show_help);
       
       /// @brief Gets a value indicating whether the dialog box will restrict users to selecting solid colors only.
-      /// @return true if users can select only solid colors; otherwise, false. The default value is false.
+      /// @return `true` if users can select only solid colors; otherwise, false. The default value is false.
       /// @remarks This property is applicable to systems with 256 or fewer colors. On these types of systems, some colors are composites of others.
       bool solid_color_only() const noexcept;
       /// @brief Sets a value indicating whether the dialog box will restrict users to selecting solid colors only.
@@ -157,7 +157,7 @@ namespace xtd {
       /// @{
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
-      /// @return true if the dialog box was successfully run; otherwise, false.
+      /// @return `true` if the dialog box was successfully run; otherwise, false.
       bool run_dialog(intptr owner) override;
       
       /// @brief When overridden in a derived class, specifies a common dialog box.

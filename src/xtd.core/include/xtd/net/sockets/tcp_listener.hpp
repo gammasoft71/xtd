@@ -102,7 +102,7 @@ namespace xtd {
         
         /// @{
         /// @brief Gets a bool value that specifies whether the xtd::net::sockets::tcp_listener allows only one underlying socket to listen to a specific port.
-        /// @return true if the xtd::net::sockets::tcp_listener allows only one xtd::net::sockets::tcp_listener to listen to a specific port; otherwise, false. .
+        /// @return `true` if the xtd::net::sockets::tcp_listener allows only one xtd::net::sockets::tcp_listener to listen to a specific port; otherwise, false. .
         /// @exception xtd::invalid_operation_exception The xtd::net::sockets::tcp_listener has been started. Call the xtd::net::sockets::tcp_listener::stop() method and then set the xtd::net::sockets::tcp_listener::exclusive_address_use property.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
@@ -211,7 +211,7 @@ namespace xtd {
         bool equals(const tcp_listener& s) const noexcept override;
         
         /// @brief Determines if there are pending connection requests.
-        /// @return true if connections are pending; otherwise, false.
+        /// @return `true` if connections are pending; otherwise, false.
         /// @exception xtd::invalid_operation_exception The listener has not been started with a call to xtd::net::sockets::tcp_listener::start.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks This non-blocking method determines if there are any pending connection requests. Because the xtd::net::sockets::tcp_listener::accept_socket and xtd::net::sockets::tcp_listener::accept_tcp_client methods block execution until
@@ -259,7 +259,7 @@ namespace xtd {
         
         /// @{
         /// @brief Gets a value that indicates whether xtd::net::sockets::tcp_listener is actively listening for client connections.
-        /// @return true if xtd::net::sockets::tcp_listener is actively listening; otherwise, false.
+        /// @return `true` if xtd::net::sockets::tcp_listener is actively listening; otherwise, false.
         /// @remarks Classes deriving from xtd::net::sockets::tcp_listener can use this property to determine if the xtd::net::sockets::socket is currently listening for incoming connection attempts.
         /// @remarks The Active property can be used to avoid redundant xtd::net::sockets::tcp_listener::start attempts.
         bool active() const noexcept;

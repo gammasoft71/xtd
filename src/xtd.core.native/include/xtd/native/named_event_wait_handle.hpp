@@ -65,13 +65,13 @@ namespace xtd {
       
       /// @brief Sets the state of the event to signaled, allowing one or more waiting threads to proceed.
       /// @param handle The event wait handle handle to set.
-      /// @return true if succeed; otherwhise false.
+      /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
       static bool set(intmax_t handle, bool& io_error);
 
       /// @brief Sets the state of the event to nonsignaled, causing threads to block.
       /// @param handle The event wait handle handle to reset.
-      /// @return true if succeed; otherwhise false.
+      /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
       static bool reset(intmax_t handle, bool& io_error);
 

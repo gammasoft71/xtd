@@ -26,7 +26,7 @@ namespace xtd {
       /// @brief Compare two specified tab_page_ref.
       /// @param value1 The first value to compare.
       /// @param value2 The second value to compare.
-      /// @return true if value1 < value2; otherwise false.
+      /// @return `true` if value1 < value2; otherwise `false`.
       bool operator()(const tab_page_ref& value1, const tab_page_ref& value2) const {
         return &value1.get() < &value2.get();
       }

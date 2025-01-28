@@ -46,7 +46,7 @@ namespace xtd {
         /// @param color A xtd::drawing::color that specifies the color to display.
         /// @param custom_colors A colors array that contains user custom colors.
         /// @param options A bitwise combination of the color dialog flags.
-        /// @return true if the user clicks OK in the dialog box; otherwise, false.
+        /// @return `true` if the user clicks OK in the dialog box; otherwise, false.
         /// @remarks If result is true, the color parameter contains the new chosen color.
         /// @remarks If the title is an empty string, the system uses a default title, which is "Color".
         /// @warning Internal use only

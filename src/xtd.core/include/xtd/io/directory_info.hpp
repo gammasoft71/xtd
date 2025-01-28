@@ -289,7 +289,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the directory exists.
-      /// @return true if the directory exists; otherwise, false.
+      /// @return `true` if the directory exists; otherwise, false.
       /// @par Examples
       /// The following example demonstrates a use of the Exists property in the context of copying a source directory to a target directory.
       /// ```cpp

@@ -43,7 +43,7 @@ namespace xtd {
         
         /// @{
         /// @brief Gets a value indicating whether the ellipsis character (...) appears at the right edge of the control, denoting that the control text extends beyond the specified length of the control.
-        /// @return true if the additional control text is to be indicated by an ellipsis; otherwise, false.
+        /// @return `true` if the additional control text is to be indicated by an ellipsis; otherwise, false.
         virtual bool auto_ellipsis() const noexcept = 0;
         
         /// @brief Gets the alignment of the text.

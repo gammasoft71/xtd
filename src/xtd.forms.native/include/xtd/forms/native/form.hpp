@@ -52,12 +52,12 @@ namespace xtd {
         static void end_dialog(intptr control, int32 result);
         /// @brief Gets a value indicates whether full screen window.
         /// @param control Control window handle.
-        /// @return true if form is full screen; otherwise false.
+        /// @return `true` if form is full screen; otherwise `false`.
         /// @warning Internal use only
         static bool full_screen(intptr control);
         /// @brief Sets a value indicates whether full screen window.
         /// @param control Control window handle.
-        /// @param full_screen true if form is full screen; otherwise false.
+        /// @param full_screen true if form is full screen; otherwise `false`.
         /// @warning Internal use only
         static void full_screen(intptr control, bool full_screen);
         /// @brief Sets the icon for the form.
@@ -67,22 +67,22 @@ namespace xtd {
         static void icon(intptr control, const xtd::drawing::icon& icon);
         /// @brief Gets a value indicate whether maximized windows.
         /// @param control Control window handle.
-        /// @return true if form is full screen; otherwise false.
+        /// @return `true` if form is full screen; otherwise `false`.
         /// @warning Internal use only
         static bool maximize(intptr control);
         /// @brief Sets a value indicate whether maximized windows.
         /// @param control Control window handle.
-        /// @param maximize true if form is maximized; otherwise false.
+        /// @param maximize true if form is maximized; otherwise `false`.
         /// @warning Internal use only
         static void maximize(intptr control, bool maximize);
         /// @brief Gets a value indicate whether minimized windows.
         /// @param control Control window handle.
-        /// @return true if form is full screen; otherwise false.
+        /// @return `true` if form is full screen; otherwise `false`.
         /// @warning Internal use only
         static bool minimize(intptr control);
         /// @brief Sets a value indicate whether minimized windows.
         /// @param control Control window handle.
-        /// @param minimize true if form is full screen; otherwise false.
+        /// @param minimize true if form is full screen; otherwise `false`.
         /// @warning Internal use only
         static void minimize(intptr control, bool minimize);
         /// @brief Sets the main_menu that is displayed in the form.

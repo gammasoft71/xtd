@@ -106,7 +106,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating the current thread wiil be joined when destroyed.
-      /// @return true if this thread will be joined when destroyed; otherwise, false.
+      /// @return `true` if this thread will be joined when destroyed; otherwise, false.
       bool auto_join() const noexcept;
       /// @brief Sets a value indicating the current thread wiil be joined when destroyed.
       /// @param value true if this thread will be joined when destroyed; otherwise, false.
@@ -118,11 +118,11 @@ namespace xtd {
       intptr handle() const noexcept;
 
       /// @brief Gets a value indicating the execution status of the current thread.
-      /// @return true if this thread has been started and has not terminated normally or aborted; otherwise, false.
+      /// @return `true` if this thread has been started and has not terminated normally or aborted; otherwise, false.
       bool is_alive() const noexcept;
       
       /// @brief Gets a value indicating whether or not a thread is a background thread.
-      /// @return true if this thread is or is to become a background thread; otherwise, false.
+      /// @return `true` if this thread is or is to become a background thread; otherwise, false.
       /// @exception xtd::threadng::thread_state_exception The thread is dead.
       /// @remarks A thread is either a background thread or a foreground thread. Background threads are identical to foreground threads, except that background threads do not prevent a process from terminating. Once all foreground threads belonging to a process have terminated, the system ends the process. Any remaining background threads are stopped and do not complete.
       /// @remarks By default, the following threads execute in the foreground (that is, their xtd::threading::thread::is_background property returns false):
@@ -146,16 +146,16 @@ namespace xtd {
       thread& is_background(bool value);
 
       /// @brief Gets a value indicating the current thread is the main thread.
-      /// @return true if this thread is the main thread; otherwise, false.
+      /// @return `true` if this thread is the main thread; otherwise, false.
       bool is_main_thread() const noexcept;
 
       /// @brief Gets a value indicating whether or not a thread belongs to the managed thread pool.
-      /// @return true if this thread belongs to the managed thread pool; otherwise, false.
+      /// @return `true` if this thread belongs to the managed thread pool; otherwise, false.
       /// @remarks For more information see xtd::threading::thread_pool.
       bool is_thread_pool_thread() const noexcept;
       
       /// @brief Gets a value indicating the current thread is joinable.
-      /// @return true if this thread is joinable; otherwise, false.
+      /// @return `true` if this thread is joinable; otherwise, false.
       /// @remarks A thread is joinable if it started, not stopped and if is not a background thread.
       /// @remarks if the thread is joinable you can call the xtd::threading::thread::join method.
       bool joinable() const noexcept;
@@ -244,14 +244,14 @@ namespace xtd {
       
       /// @brief Blocks the calling thread until this thread object terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.
       /// @param milliseconds_timeout The number of milliseconds to wait for the thread to terminate.
-      /// @return true if the thread has terminated; false if the thread has not terminated after the amount of time specified by the xtd::milliseconds_timeout parameter has elapsed.
+      /// @return `true` if the thread has terminated; false if the thread has not terminated after the amount of time specified by the xtd::milliseconds_timeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @exception xtd::argument_out_of_range_rxception milliseconds_timeout is a negative number other than -1, which represents an infinite time-out.
       bool join(int32 milliseconds_timeout);
       
       /// @brief Blocks the calling thread until this thread object terminates or the specified time elapses, while continuing to perform standard COM and SendMessage pumping.
       /// @param timeout A xtd::time_span set to the amount of time to wait for the thread to terminate.
-      /// @return true if the thread has terminated; false if the thread has not terminated after the amount of time specified by the xtd::milliseconds_timeout parameter has elapsed.
+      /// @return `true` if the thread has terminated; false if the thread has not terminated after the amount of time specified by the xtd::milliseconds_timeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @exception xtd::argument_exception timeout is a negative number other than -1 milliseconds, which represents <br>-or-<br> timeout is greater than xtd::int32_object::max_value.
       bool join(const time_span& timeout);
@@ -299,14 +299,14 @@ namespace xtd {
       static void join_all();
       /// @brief Blocks the calling thread until all joinable threads terminate or the specified time elapses, while continuing.
       /// @param milliseconds_timeout The number of milliseconds to wait for all threads to terminate.
-      /// @return true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
+      /// @return `true` if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
       /// @remarks Call xtd::threading::thread_pool::close method to join the end of running worker threads too.
       static bool join_all(int32 milliseconds_timeout);
       /// @brief Blocks the calling thread until all joinable threads terminate or the specified time elapses, while continuing.
       /// @param timeout A xtd::time_span set to the amount of time to wait for all threads to terminate.
-      /// @return true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
+      /// @return `true` if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
       /// @remarks Call xtd::threading::thread_pool::close method to join the end of running worker threads too.
@@ -319,7 +319,7 @@ namespace xtd {
       static void join_all(const collection_t& threads) {join_all(threads, timeout::infinite);}
       /// @brief Blocks the calling thread until all specified joinable threads collection terminate or the specified time elapses, while continuing.
       /// @param milliseconds_timeout The number of milliseconds to wait for all threads to terminate.
-      /// @return true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
+      /// @return `true` if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
       template<class collection_t>
@@ -331,7 +331,7 @@ namespace xtd {
       }
       /// @brief Blocks the calling thread until all specified joinable threads collection terminate or the specified time elapses, while continuing.
       /// @param timeout A xtd::time_span set to the amount of time to wait for all threads to terminate.
-      /// @return true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
+      /// @return `true` if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
       /// @exception xtd::threading::thread_state_exception The caller attempted to join a thread that is in the xtd::threading::thread_state::unstarted state.
       /// @remarks If one or more threads are not joinable, they will be skipped.
       template<class collection_t>
@@ -355,7 +355,7 @@ namespace xtd {
       static void spin_wait(int32 iterations);
 
       /// @brief Causes the calling thread to yield execution to another thread that is ready to run on the current processor. The operating system selects the thread to yield to.
-      /// @return true if the operating system switched execution to another thread; otherwise, false.
+      /// @return `true` if the operating system switched execution to another thread; otherwise, false.
       /// @remarks If this method succeeds, the rest of the thread's current time slice is yielded. The operating system schedules the calling thread for another time slice, according to its priority and the status of other threads that are available to run.
       /// @remarks yielding is limited to the processor that is executing the calling thread. The operating system will not switch execution to another processor, even if that processor is idle or is running a thread of lower priority. If there are no other threads that are ready to execute on the current processor, the operating system does not yield execution, and this method returns false.
       /// @remarks This method is equivalent to using platform invoke to call the native Win32 switch_to_thread function. You should call the xtd::threading::thread::yield method instead of using platform invoke, because platform invoke bypasses any custom threading behavior the host has requested.
@@ -562,7 +562,7 @@ namespace xtd {
       void sleep_until(const xtd::date_time& sleep_time);
       
       /// @brief Suggests that the implementation reschedule execution of threads.
-      /// @return true if the operating system switched execution to another thread; otherwise, false.
+      /// @return `true` if the operating system switched execution to another thread; otherwise, false.
       /// @par Header
       /// ```cpp
       /// #include <xtd/threading/thread>
