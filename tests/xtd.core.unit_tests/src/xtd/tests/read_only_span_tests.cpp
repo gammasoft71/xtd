@@ -567,5 +567,236 @@ namespace xtd::tests {
       auto s = read_only_span<int, 3>(a);
       assert::are_equal(12_z, s.size_bytes());
     }
+    
+    void test_method_(const_at) {
+      auto a = array {10, 20, 30, 40, 50};
+      const auto s = read_only_span(a);
+      assert::are_equal(10, s.at(0));
+      assert::are_equal(20, s.at(1));
+      assert::are_equal(30, s.at(2));
+      assert::are_equal(40, s.at(3));
+      assert::are_equal(50, s.at(4));
+      assert::throws<index_out_of_range_exception>([&] {s.at(5);});
+      assert::throws<index_out_of_range_exception>([] {read_only_span<int> {}.at(0);});
+    }
+    
+    void test_method_(at) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      assert::are_equal(10, s.at(0));
+      assert::are_equal(20, s.at(1));
+      assert::are_equal(30, s.at(2));
+      assert::are_equal(40, s.at(3));
+      assert::are_equal(50, s.at(4));
+      assert::throws<index_out_of_range_exception>([&] {s.at(5);});
+      assert::throws<index_out_of_range_exception>([] {read_only_span<int> {}.at(0);});
+    }
+    
+    void test_method_(copy_to) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      auto ac = array {0, 0, 0, 0, 0};
+      auto sc = span<int> {ac};
+      s.copy_to(sc);
+      assert::are_equal(10, sc.at(0));
+      assert::are_equal(20, sc.at(1));
+      assert::are_equal(30, sc.at(2));
+      assert::are_equal(40, sc.at(3));
+      assert::are_equal(50, sc.at(4));
+      
+      assert::are_equal(10, ac.at(0));
+      assert::are_equal(20, ac.at(1));
+      assert::are_equal(30, ac.at(2));
+      assert::are_equal(40, ac.at(3));
+      assert::are_equal(50, ac.at(4));
+  
+      auto sc2 = span<int, 4> {ac};
+      assert::throws<argument_exception>([&] {s.copy_to(sc2);});
+    }
+    
+    void test_method_(equal_to_operator) {
+      auto a1 = array {10, 20, 30, 40, 50};
+      auto s1 = read_only_span(a1);
+      auto s2 = read_only_span(a1);
+      auto a3 = array {0, 0, 0, 0, 0};
+      auto s3 = read_only_span<int> {a3};
+      assert::is_true(s1 == s2);
+      assert::is_false(s1 == s3);
+      assert::is_false(s2 == s3);
+    }
+    
+    void test_method_(not_equal_to_operator) {
+      auto a1 = array {10, 20, 30, 40, 50};
+      auto s1 = read_only_span(a1);
+      auto s2 = read_only_span(a1);
+      auto a3 = array {0, 0, 0, 0, 0};
+      auto s3 = read_only_span<int> {a3};
+      assert::is_false(s1 != s2);
+      assert::is_true(s1 != s3);
+      assert::is_true(s2 != s3);
+    }
+    
+    void test_method_(first) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      auto s2 = s.first<3>();
+      
+      assert::are_equal(a.data(), s2.data());
+      assert::are_equal(3_z, s2.length());
+    }
+    
+    void test_method_(first_with_count) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      auto s2 = s.first(3);
+      
+      assert::are_equal(a.data(), s2.data());
+      assert::are_equal(3_z, s2.length());
+    }
+    
+    void test_method_(last) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      auto s2 = s.last<3>();
+      
+      assert::are_equal(a.data() + 2, s2.data());
+      assert::are_equal(3_z, s2.length());
+    }
+    
+    void test_method_(last_with_count) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      auto s2 = s.last(3);
+      
+      assert::are_equal(a.data() + 2, s2.data());
+      assert::are_equal(3_z, s2.length());
+    }
+    
+    void test_method_(slice) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      auto s2 = s.slice<1, 3>();
+      
+      assert::are_equal(a.data() + 1, s2.data());
+      assert::are_equal(3_z, s2.length());
+      
+      assert::throws<argument_out_of_range_exception>([&] {s.slice<6, 0>();});
+      assert::throws<argument_out_of_range_exception>([&] {s.slice<0, 6>();});
+      assert::throws<argument_out_of_range_exception>([&] {s.slice<2, 4>();});
+    }
+    
+    void test_method_(slice_with_start) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      auto s2 = s.slice(1);
+      
+      assert::are_equal(a.data() + 1, s2.data());
+      assert::are_equal(4_z, s2.length());
+      
+      assert::throws<argument_out_of_range_exception>([&] {s.slice(6);});
+    }
+    
+    void test_method_(slice_with_start_and_length) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      auto s2 = s.slice(1, 3);
+      
+      assert::are_equal(a.data() + 1, s2.data());
+      assert::are_equal(3_z, s2.length());
+      
+      assert::throws<argument_out_of_range_exception>([&] {s.slice(6, 0);});
+      assert::throws<argument_out_of_range_exception>([&] {s.slice(0, 6);});
+      assert::throws<argument_out_of_range_exception>([&] {s.slice(2, 4);});
+    }
+    
+    void test_method_(subspan) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      auto s2 = s.subspan<1, 3>();
+      
+      assert::are_equal(a.data() + 1, s2.data());
+      assert::are_equal(3_z, s2.length());
+      
+      assert::throws<argument_out_of_range_exception>([&] {s.slice(6, 0);});
+      assert::throws<argument_out_of_range_exception>([&] {s.slice(0, 6);});
+      assert::throws<argument_out_of_range_exception>([&] {s.slice(2, 4);});
+    }
+    
+    void test_method_(subspan_with_offset_and_count) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      auto s2 = s.subspan(1, 3);
+      
+      assert::are_equal(a.data() + 1, s2.data());
+      assert::are_equal(3_z, s2.length());
+      
+      assert::throws<argument_out_of_range_exception>([&] {s.slice(6, 0);});
+      assert::throws<argument_out_of_range_exception>([&] {s.slice(0, 6);});
+      assert::throws<argument_out_of_range_exception>([&] {s.slice(2, 4);});
+    }
+    
+    void test_method_(to_array) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      collection_assert::are_equal(a, s.to_array());
+    }
+    
+    void test_method_(to_string) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto sa = read_only_span(a);
+      assert::are_equal("[10, 20, 30, 40, 50]", sa.to_string());
+      
+      auto s = string {"Hello, World!"};
+      auto ss = read_only_span(s);
+      assert::are_equal("Hello, World!", ss.to_string());
+      
+      assert::are_equal("[]", read_only_span<int>::empty_read_only_span.to_string());
+    }
+    
+    void test_method_(try_copy_to) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      auto ac = array {0, 0, 0, 0, 0};
+      auto sc = span<int> {ac};
+      assert::is_true(s.try_copy_to(sc));
+      assert::are_equal(10, sc.at(0));
+      assert::are_equal(20, sc.at(1));
+      assert::are_equal(30, sc.at(2));
+      assert::are_equal(40, sc.at(3));
+      assert::are_equal(50, sc.at(4));
+      
+      assert::are_equal(10, ac.at(0));
+      assert::are_equal(20, ac.at(1));
+      assert::are_equal(30, ac.at(2));
+      assert::are_equal(40, ac.at(3));
+      assert::are_equal(50, ac.at(4));
+      
+      auto sc2 = span<int, 4> {ac};
+      assert::is_false(s.try_copy_to(sc2));
+    }
+    
+    void test_method_(const_index_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      const auto s = read_only_span(a);
+      assert::are_equal(10, s[0]);
+      assert::are_equal(20, s[1]);
+      assert::are_equal(30, s[2]);
+      assert::are_equal(40, s[3]);
+      assert::are_equal(50, s[4]);
+      assert::throws<index_out_of_range_exception>([&] {s[5];});
+      assert::throws<index_out_of_range_exception>([] {read_only_span<int> {}[0];});
+    }
+    
+    void test_method_(index_operator) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = read_only_span(a);
+      assert::are_equal(10, s[0]);
+      assert::are_equal(20, s[1]);
+      assert::are_equal(30, s[2]);
+      assert::are_equal(40, s[3]);
+      assert::are_equal(50, s[4]);
+      assert::throws<index_out_of_range_exception>([&] {s[5];});
+      assert::throws<index_out_of_range_exception>([] {read_only_span<int> {}[0];});
+    }
   };
 }
