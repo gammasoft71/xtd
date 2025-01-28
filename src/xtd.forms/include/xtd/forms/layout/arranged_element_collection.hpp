@@ -4,6 +4,7 @@
 #pragma once
 
 #include "sorter_none.hpp"
+#include <xtd/array>
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/event_args>
 #include <xtd/event_handler>
@@ -428,10 +429,8 @@ namespace xtd {
         
         /// @brief Gets an array with the elements of the container.
         /// @return The array that contains elements of the container.
-        std::vector<type_t> to_array() const noexcept {
-          std::vector<type_t> array;
-          std::for_each(collection_.begin(), collection_.end(), [&](auto item) {array.push_back(item);});
-          return array;
+        xtd::array<type_t> to_array() const noexcept {
+          return xtd::array<type_t> {collection_.data(), collection_.size()};
         }
         
         /// @brief Gets an array with the elements of the container.
