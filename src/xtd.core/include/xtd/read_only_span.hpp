@@ -17,6 +17,7 @@
 #include "object.hpp"
 #include "ptrdiff.hpp"
 #include "ranges.hpp"
+#include "span.hpp"
 #include "typeof.hpp"
 #include <type_traits>
 #include <vector>
@@ -256,10 +257,11 @@ namespace xtd {
       return *(data_ + pos);
     }
     
-    /// @brief Copies the contents of this Span<T> into a destination xtd:read_only_span <type_t>.
-    /// @param destinaton The destination Span<T> object.
-    /// @exception xtd::argument_exception `destination` is shorter than the source xtd::read_only_span <type_t>.
-    void copy_to(read_only_span& destination) const {
+    /// @brief Copies the contents of this xtd::read_only_span <type_t> into a destination xtd:span <type_t>.
+    /// @param destinaton The destination xtd::read_only_span <type_t> object.
+    /// @exception xtd::argument_exception `destination` is shorter than the source xtd::span <type_t>.
+    template<xtd::size length>
+    void copy_to(span<type_t, length>& destination) const {
       if (!try_copy_to(destination))
         throw xtd::argument_exception {};
     }
@@ -271,27 +273,22 @@ namespace xtd {
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-    bool equals(const read_only_span& rhs) const noexcept override {
-      if (size() != rhs.size()) return false;
-      for (size_type i = 0; i < size(); i++)
-        if (!xtd::collections::generic::helpers::equator<type_t> {}(at(i), rhs.at(i))) return false;
-      return true;
-    }
+    bool equals(const read_only_span& rhs) const noexcept override {return length() == rhs.length() && data() == rhs.data();}
     
     /// @brief Obtains a subspan consisting of the first `count` elements of the sequence.
     /// @param count The count elements.
     /// @return A read_only_span `r` that is a view over the first `count` elements of `*this`, such that `r.data() == this->data() && r.size() == count`.
     template<xtd::size count>
-    read_only_span<element_type, count> first() const {
+    read_only_span<type_t, count> first() const {
       if (count > length_) throw argument_out_of_range_exception {};
-      return read_only_span<element_type, count> {data_, count};
+      return read_only_span<type_t, count> {data_, count};
     }
     /// @brief Obtains a subspan consisting of the first `count` elements of the sequence.
     /// @param count The count elements.
     /// @return A read_only_span `r` that is a view over the first `count` elements of `*this`, such that `r.data() == this->data() && r.size() == count`.
-    read_only_span<element_type> first(xtd::size count) const {
+    read_only_span<type_t> first(xtd::size count) const {
       if (count > length_) throw argument_out_of_range_exception {};
-      return read_only_span<element_type> {data_, count};
+      return read_only_span<type_t> {data_, count};
     }
 
     /// @brief Obtains a subspan consisting of the last N elements of the sequence
@@ -334,7 +331,7 @@ namespace xtd {
     /// @return A read_only_span that consists of length elements from the current read_only_span starting at start.
     /// @exception xtd::argument_out_of_range_exception `start` or `start + length` is less than zero or greater than xtd::read_only_span::length.
     read_only_span<type_t> slice(size_type start, size_type length) const {
-      if (start + length > length_) throw argument_out_of_range_exception {};
+      if (start > length_ || start + length > length_) throw argument_out_of_range_exception {};
       return read_only_span<type_t> {data_ + start, length};
     }
 
@@ -376,8 +373,9 @@ namespace xtd {
     /// @param destination The target of the copy operation.
     /// @return `true` if the copy operation succeeded; otherwise, `false`.
     /// @remarks This method copies all of `source` to `destination` even if `source` and `destination` overlap.
-    bool try_copy_to(read_only_span& destination) const noexcept {
-      if (destination.length() < length()) return false;
+    template<xtd::size length>
+    bool try_copy_to(span<type_t, length>& destination) const noexcept {
+      if (destination.length() < this->length()) return false;
       for (auto index = xtd::size {}; index < length_; ++index)
         destination.at(index) = at(index);
       return true;
