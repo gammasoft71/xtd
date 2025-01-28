@@ -302,10 +302,11 @@ namespace xtd {
         item = value_type {};
     }
     
-    /// @brief Copies the contents of this Span<T> into a destination xtd:span <type_t>.
-    /// @param destinaton The destination Span<T> object.
+    /// @brief Copies the contents of this xtd::span <type_t> into a destination xtd:span <type_t>.
+    /// @param destinaton The destination xtd::span <type_t> object.
     /// @exception xtd::argument_exception `destination` is shorter than the source xtd::span <type_t>.
-    void copy_to(span& destination) const {
+    template<xtd::size length>
+    void copy_to(span<type_t, length>& destination) const {
       if (!try_copy_to(destination))
         throw xtd::argument_exception {};
     }
@@ -317,12 +318,7 @@ namespace xtd {
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-    bool equals(const span& rhs) const noexcept override {
-      if (size() != rhs.size()) return false;
-      for (size_type i = 0; i < size(); i++)
-        if (!xtd::collections::generic::helpers::equator<type_t> {}(at(i), rhs.at(i))) return false;
-      return true;
-    }
+    bool equals(const span& rhs) const noexcept override {return length() == rhs.length() && data() == rhs.data();}
     
     /// @brief Fills the elements of this span with a specified value.
     /// @param value The value to assign to each element of the span.
@@ -335,16 +331,16 @@ namespace xtd {
     /// @param count The count elements.
     /// @return A span `r` that is a view over the first `count` elements of `*this`, such that `r.data() == this->data() && r.size() == count`.
     template<xtd::size count>
-    span<element_type, count> first() const {
+    span<type_t, count> first() const {
       if (count > length_) throw argument_out_of_range_exception {};
-      return span<element_type, count> {data_, count};
+      return span<type_t, count> {data_, count};
     }
     /// @brief Obtains a subspan consisting of the first `count` elements of the sequence.
     /// @param count The count elements.
     /// @return A span `r` that is a view over the first `count` elements of `*this`, such that `r.data() == this->data() && r.size() == count`.
-    span<element_type> first(xtd::size count) const {
+    span<type_t> first(xtd::size count) const {
       if (count > length_) throw argument_out_of_range_exception {};
-      return span<element_type> {data_, count};
+      return span<type_t> {data_, count};
     }
 
     /// @brief Obtains a subspan consisting of the last N elements of the sequence
@@ -387,7 +383,7 @@ namespace xtd {
     /// @return A span that consists of length elements from the current span starting at start.
     /// @exception xtd::argument_out_of_range_exception `start` or `start + length` is less than zero or greater than xtd::span::length.
     span<type_t> slice(size_type start, size_type length) const {
-      if (start + length > length_) throw argument_out_of_range_exception {};
+      if (start > length_ || start + length > length_) throw argument_out_of_range_exception {};
       return span<type_t> {data_ + start, length};
     }
 
@@ -429,8 +425,9 @@ namespace xtd {
     /// @param destination The target of the copy operation.
     /// @return `true` if the copy operation succeeded; otherwise, `false`.
     /// @remarks This method copies all of `source` to `destination` even if `source` and `destination` overlap.
-    bool try_copy_to(span& destination) const noexcept {
-      if (destination.length() < length()) return false;
+    template<xtd::size length>
+    bool try_copy_to(span<type_t, length>& destination) const noexcept {
+      if (destination.length() < this->length()) return false;
       for (auto index = xtd::size {}; index < length_; ++index)
         destination.at(index) = at(index);
       return true;
