@@ -21,7 +21,7 @@ namespace xtd::tests {
     }
     
     void test_method_(size_type) {
-      assert::are_equal(typeof_<size>(), typeof_<span<int>::size_type>());
+      assert::are_equal(typeof_<xtd::size>(), typeof_<span<int>::size_type>());
     }
     
     void test_method_(difference_type) {
@@ -484,6 +484,104 @@ namespace xtd::tests {
       assert::is_false(s.is_empty());
       assert::is_true(span<int> {}.is_empty());
       assert::is_true(span<int>::empty_span.is_empty());
+    }
+    
+    void test_method_(const_length) {
+      auto a = array {10, 20, 30, 40, 50};
+      const auto s = span(a);
+      assert::are_equal(5_z, s.length());
+    }
+    
+    void test_method_(const_length_with_static_extend) {
+      auto a = array {10, 20, 30, 40, 50};
+      const auto s = span<int, 3>(a);
+      assert::are_equal(3_z, s.length());
+    }
+    
+    void test_method_(length) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span(a);
+      assert::are_equal(5_z, s.length());
+    }
+    
+    void test_method_(length_with_static_extend) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span<int, 3>(a);
+      assert::are_equal(3_z, s.length());
+    }
+    
+    void test_method_(const_rbegin) {
+      auto a = array {10, 20, 30, 40, 50};
+      const auto s = span(a);
+      assert::are_equal(s.data() + 5, s.rbegin().base().data());
+      assert::are_equal(50, *s.crbegin());
+    }
+    
+    void test_method_(rbegin) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span(a);
+      assert::are_equal(s.data() + 5, s.rbegin().base().data());
+      assert::are_equal(50, *s.crbegin());
+    }
+    
+    void test_method_(const_rend) {
+      auto a = array {10, 20, 30, 40, 50};
+      const auto s = span(a);
+      assert::are_equal(s.data(), s.rend().base().data());
+    }
+
+    void test_method_(rend) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span(a);
+      assert::are_equal(s.data(), s.rend().base().data());
+    }
+    
+    void test_method_(const_size) {
+      auto a = array {10, 20, 30, 40, 50};
+      const auto s = span(a);
+      assert::are_equal(5_z, s.size());
+    }
+    
+    void test_method_(const_size_with_static_extend) {
+      auto a = array {10, 20, 30, 40, 50};
+      const auto s = span<int, 3>(a);
+      assert::are_equal(3_z, s.size());
+    }
+    
+    void test_method_(size) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span(a);
+      assert::are_equal(5_z, s.size());
+    }
+    
+    void test_method_(size_with_static_extend) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span<int, 3>(a);
+      assert::are_equal(3_z, s.size());
+    }
+    
+    void test_method_(const_size_bytes) {
+      auto a = array {10, 20, 30, 40, 50};
+      const auto s = span(a);
+      assert::are_equal(20_z, s.size_bytes());
+    }
+    
+    void test_method_(const_size_bytes_with_static_extend) {
+      auto a = array {10, 20, 30, 40, 50};
+      const auto s = span<int, 3>(a);
+      assert::are_equal(12_z, s.size_bytes());
+    }
+    
+    void test_method_(size_bytes) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span(a);
+      assert::are_equal(20_z, s.size_bytes());
+    }
+    
+    void test_method_(size_bytes_with_static_extend) {
+      auto a = array {10, 20, 30, 40, 50};
+      auto s = span<int, 3>(a);
+      assert::are_equal(12_z, s.size_bytes());
     }
   };
 }
