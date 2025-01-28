@@ -359,9 +359,9 @@ namespace xtd {
     
     /// @brief Copies the contents of this read_only_span into a new array.
     /// @return An array containing the data in the current read_only_span.
-    xtd::array<type_t> to_array() const noexcept {
+    xtd::array<std::remove_cv_t<type_t>> to_array() const noexcept {
       if (data_ == null || length_ == 0) return xtd::array<type_t> {};
-      return xtd::array<type_t> {data_, length_};
+      return xtd::array<std::remove_cv_t<type_t>> {data_, length_};
     }
     
     /// @brief Returns the string representation of this xtd::read_only_span <type_t> object.
