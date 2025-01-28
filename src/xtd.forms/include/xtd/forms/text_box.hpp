@@ -43,7 +43,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether pressing ENTER in a multiline text_box control creates a new line of text in the control or activates the default button for the form.
-      /// @return true if the ENTER key creates a new line of text in a multiline version of the control; false if the ENTER key activates the default button for the form. The default is false.
+      /// @return `true` if the ENTER key creates a new line of text in a multiline version of the control; false if the ENTER key activates the default button for the form. The default is false.
       /// @remarks If the value of this property is false, the user must press CTRL+ENTER to create a new line in a multiline text_box control. If there is no default button for the form, the ENTER key will always create a new line of text in the control, regardless of the value of this property.
       virtual bool accepts_return() const noexcept;
       /// @brief Sets a value indicating whether pressing ENTER in a multiline text_box control creates a new line of text in the control or activates the default button for the form.
@@ -98,7 +98,7 @@ namespace xtd {
       control& text(const xtd::string& text) override;
       
       /// @brief Gets a value indicating whether the text in the TextBox control should appear as the default password character.
-      /// @return true if the text in the TextBox control should appear as the default password character; otherwise, false.
+      /// @return `true` if the text in the TextBox control should appear as the default password character; otherwise, false.
       /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to true, the default system password character is used and any character set by password_char is ignored.
       virtual bool use_system_password_char() const noexcept;
       /// @brief Sets a value indicating whether the text in the TextBox control should appear as the default password character.

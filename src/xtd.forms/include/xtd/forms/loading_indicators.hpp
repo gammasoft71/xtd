@@ -48,22 +48,22 @@ namespace xtd {
       /// @return The created loading indicator.
       static loading_indicator bar(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent bar loading indicator with specified and running state.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator bar(bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent bar loading indicator with specified running state, and location.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator bar(bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent bar loading indicator with specified running state, location, and size.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator bar(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent bar loading indicator with specified running state, location, size, and name.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -93,25 +93,25 @@ namespace xtd {
       static loading_indicator bar(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent bar loading indicator with specified parent, and running state.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator bar(const control& parent, bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent bar loading indicator with specified parent, running state, and location.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator bar(const control& parent, bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent bar loading indicator with specified parent, running state, location, and size.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator bar(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent bar loading indicator with specified parent, running state, location, size, and name.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -137,22 +137,22 @@ namespace xtd {
       /// @return The created loading indicator.
       static loading_indicator circle_bars(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent circle_bars loading indicator with specified and running state.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator circle_bars(bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent circle_bars loading indicator with specified running state, and location.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator circle_bars(bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent circle_bars loading indicator with specified running state, location, and size.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator circle_bars(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent circle_bars loading indicator with specified running state, location, size, and name.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -182,25 +182,25 @@ namespace xtd {
       static loading_indicator circle_bars(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent circle_bars loading indicator with specified parent, and running state.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator circle_bars(const control& parent, bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent circle_bars loading indicator with specified parent, running state, and location.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator circle_bars(const control& parent, bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent circle_bars loading indicator with specified parent, running state, location, and size.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator circle_bars(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent circle_bars loading indicator with specified parent, running state, location, size, and name.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -226,22 +226,22 @@ namespace xtd {
       /// @return The created loading indicator.
       static loading_indicator circle_blinks(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent circle_blinks loading indicator with specified and running state.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator circle_blinks(bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent circle_blinks loading indicator with specified running state, and location.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator circle_blinks(bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent circle_blinks loading indicator with specified running state, location, and size.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator circle_blinks(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent circle_blinks loading indicator with specified running state, location, size, and name.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -271,25 +271,25 @@ namespace xtd {
       static loading_indicator circle_blinks(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent circle_blinks loading indicator with specified parent, and running state.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator circle_blinks(const control& parent, bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent circle_blinks loading indicator with specified parent, running state, and location.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator circle_blinks(const control& parent, bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent circle_blinks loading indicator with specified parent, running state, location, and size.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator circle_blinks(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent circle_blinks loading indicator with specified parent, running state, location, size, and name.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -315,22 +315,22 @@ namespace xtd {
       /// @return The created loading indicator.
       static loading_indicator five_lines_center(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_center loading indicator with specified and running state.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator five_lines_center(bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_center loading indicator with specified running state, and location.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines_center(bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_center loading indicator with specified running state, location, and size.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines_center(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_center loading indicator with specified running state, location, size, and name.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -360,25 +360,25 @@ namespace xtd {
       static loading_indicator five_lines_center(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_center loading indicator with specified parent, and running state.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator five_lines_center(const control& parent, bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_center loading indicator with specified parent, running state, and location.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines_center(const control& parent, bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_center loading indicator with specified parent, running state, location, and size.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines_center(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_center loading indicator with specified parent, running state, location, size, and name.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -404,22 +404,22 @@ namespace xtd {
       /// @return The created loading indicator.
       static loading_indicator five_lines_chronological(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_chronological loading indicator with specified and running state.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator five_lines_chronological(bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_chronological loading indicator with specified running state, and location.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines_chronological(bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_chronological loading indicator with specified running state, location, and size.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines_chronological(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_chronological loading indicator with specified running state, location, size, and name.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -449,25 +449,25 @@ namespace xtd {
       static loading_indicator five_lines_chronological(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_chronological loading indicator with specified parent, and running state.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator five_lines_chronological(const control& parent, bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_chronological loading indicator with specified parent, running state, and location.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines_chronological(const control& parent, bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_chronological loading indicator with specified parent, running state, location, and size.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines_chronological(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_chronological loading indicator with specified parent, running state, location, size, and name.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -493,22 +493,22 @@ namespace xtd {
       /// @return The created loading indicator.
       static loading_indicator five_lines_pulse(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_pulse loading indicator with specified and running state.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator five_lines_pulse(bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_pulse loading indicator with specified running state, and location.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines_pulse(bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_pulse loading indicator with specified running state, location, and size.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines_pulse(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_pulse loading indicator with specified running state, location, size, and name.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -538,25 +538,25 @@ namespace xtd {
       static loading_indicator five_lines_pulse(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_pulse loading indicator with specified parent, and running state.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator five_lines_pulse(const control& parent, bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_pulse loading indicator with specified parent, running state, and location.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines_pulse(const control& parent, bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_pulse loading indicator with specified parent, running state, location, and size.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines_pulse(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_pulse loading indicator with specified parent, running state, location, size, and name.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -582,22 +582,22 @@ namespace xtd {
       /// @return The created loading indicator.
       static loading_indicator five_lines_wave(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_wave loading indicator with specified and running state.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator five_lines_wave(bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_wave loading indicator with specified running state, and location.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines_wave(bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_wave loading indicator with specified running state, location, and size.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines_wave(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_wave loading indicator with specified running state, location, size, and name.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -627,25 +627,25 @@ namespace xtd {
       static loading_indicator five_lines_wave(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_wave loading indicator with specified parent, and running state.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator five_lines_wave(const control& parent, bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_wave loading indicator with specified parent, running state, and location.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines_wave(const control& parent, bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_wave loading indicator with specified parent, running state, location, and size.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines_wave(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines_wave loading indicator with specified parent, running state, location, size, and name.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -671,22 +671,22 @@ namespace xtd {
       /// @return The created loading indicator.
       static loading_indicator five_lines(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines loading indicator with specified and running state.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator five_lines(bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines loading indicator with specified running state, and location.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines(bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines loading indicator with specified running state, location, and size.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines loading indicator with specified running state, location, size, and name.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -716,25 +716,25 @@ namespace xtd {
       static loading_indicator five_lines(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines loading indicator with specified parent, and running state.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator five_lines(const control& parent, bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines loading indicator with specified parent, running state, and location.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines(const control& parent, bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines loading indicator with specified parent, running state, location, and size.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator five_lines(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent five_lines loading indicator with specified parent, running state, location, size, and name.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -760,22 +760,22 @@ namespace xtd {
       /// @return The created loading indicator.
       static loading_indicator pulse(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent pulse loading indicator with specified and running state.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator pulse(bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent pulse loading indicator with specified running state, and location.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator pulse(bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent pulse loading indicator with specified running state, location, and size.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator pulse(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent pulse loading indicator with specified running state, location, size, and name.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -805,25 +805,25 @@ namespace xtd {
       static loading_indicator pulse(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent pulse loading indicator with specified parent, and running state.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator pulse(const control& parent, bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent pulse loading indicator with specified parent, running state, and location.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator pulse(const control& parent, bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent pulse loading indicator with specified parent, running state, location, and size.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator pulse(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent pulse loading indicator with specified parent, running state, location, size, and name.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -849,22 +849,22 @@ namespace xtd {
       /// @return The created loading indicator.
       static loading_indicator pulse_outline(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent pulse_outline loading indicator with specified and running state.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator pulse_outline(bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent pulse_outline loading indicator with specified running state, and location.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator pulse_outline(bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent pulse_outline loading indicator with specified running state, location, and size.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator pulse_outline(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent pulse_outline loading indicator with specified running state, location, size, and name.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -894,25 +894,25 @@ namespace xtd {
       static loading_indicator pulse_outline(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent pulse_outline loading indicator with specified parent, and running state.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator pulse_outline(const control& parent, bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent pulse_outline loading indicator with specified parent, running state, and location.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator pulse_outline(const control& parent, bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent pulse_outline loading indicator with specified parent, running state, location, and size.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator pulse_outline(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent pulse_outline loading indicator with specified parent, running state, location, size, and name.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -938,22 +938,22 @@ namespace xtd {
       /// @return The created loading indicator.
       static loading_indicator standard(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent standard loading indicator with specified and running state.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator standard(bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent standard loading indicator with specified running state, and location.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator standard(bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent standard loading indicator with specified running state, location, and size.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator standard(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent standard loading indicator with specified running state, location, size, and name.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -983,25 +983,25 @@ namespace xtd {
       static loading_indicator standard(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent standard loading indicator with specified parent, and running state.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator standard(const control& parent, bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent standard loading indicator with specified parent, running state, and location.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator standard(const control& parent, bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent standard loading indicator with specified parent, running state, location, and size.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator standard(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent standard loading indicator with specified parent, running state, location, size, and name.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -1027,22 +1027,22 @@ namespace xtd {
       /// @return The created loading indicator.
       static loading_indicator system(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent system loading indicator with specified and running state.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator system(bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent system loading indicator with specified running state, and location.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator system(bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent system loading indicator with specified running state, location, and size.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator system(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent system loading indicator with specified running state, location, size, and name.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -1072,25 +1072,25 @@ namespace xtd {
       static loading_indicator system(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent system loading indicator with specified parent, and running state.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator system(const control& parent, bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent system loading indicator with specified parent, running state, and location.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator system(const control& parent, bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent system loading indicator with specified parent, running state, location, and size.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator system(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent system loading indicator with specified parent, running state, location, size, and name.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -1116,22 +1116,22 @@ namespace xtd {
       /// @return The created loading indicator.
       static loading_indicator three_balls(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls loading indicator with specified and running state.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator three_balls(bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls loading indicator with specified running state, and location.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator three_balls(bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls loading indicator with specified running state, location, and size.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator three_balls(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls loading indicator with specified running state, location, size, and name.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -1161,25 +1161,25 @@ namespace xtd {
       static loading_indicator three_balls(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls loading indicator with specified parent, and running state.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator three_balls(const control& parent, bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls loading indicator with specified parent, running state, and location.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator three_balls(const control& parent, bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls loading indicator with specified parent, running state, location, and size.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator three_balls(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls loading indicator with specified parent, running state, location, size, and name.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -1205,22 +1205,22 @@ namespace xtd {
       /// @return The created loading indicator.
       static loading_indicator three_balls_bouncing(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls_bouncing loading indicator with specified and running state.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator three_balls_bouncing(bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls_bouncing loading indicator with specified running state, and location.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator three_balls_bouncing(bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls_bouncing loading indicator with specified running state, location, and size.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator three_balls_bouncing(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls_bouncing loading indicator with specified running state, location, size, and name.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -1250,25 +1250,25 @@ namespace xtd {
       static loading_indicator three_balls_bouncing(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls_bouncing loading indicator with specified parent, and running state.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator three_balls_bouncing(const control& parent, bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls_bouncing loading indicator with specified parent, running state, and location.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator three_balls_bouncing(const control& parent, bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls_bouncing loading indicator with specified parent, running state, location, and size.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator three_balls_bouncing(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls_bouncing loading indicator with specified parent, running state, location, size, and name.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -1294,22 +1294,22 @@ namespace xtd {
       /// @return The created loading indicator.
       static loading_indicator three_balls_rotation(const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls_rotation loading indicator with specified and running state.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator three_balls_rotation(bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls_rotation loading indicator with specified running state, and location.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator three_balls_rotation(bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls_rotation loading indicator with specified running state, location, and size.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator three_balls_rotation(bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls_rotation loading indicator with specified running state, location, size, and name.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.
@@ -1339,25 +1339,25 @@ namespace xtd {
       static loading_indicator three_balls_rotation(const control& parent, const xtd::drawing::point& location, const xtd::drawing::size& size, const xtd::string& name) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls_rotation loading indicator with specified parent, and running state.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @return The created loading indicator.
       static loading_indicator three_balls_rotation(const control& parent, bool running) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls_rotation loading indicator with specified parent, running state, and location.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @return The created loading indicator.
       static loading_indicator three_balls_rotation(const control& parent, bool running, const xtd::drawing::point& location) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls_rotation loading indicator with specified parent, running state, location, and size.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @return The created loading indicator.
       static loading_indicator three_balls_rotation(const control& parent, bool running, const xtd::drawing::point& location, const xtd::drawing::size& size) noexcept;
       /// @brief Create a system-defined xtd::forms::loading_indicator that represent three_balls_rotation loading indicator with specified parent, running state, location, size, and name.
       /// @param parent The control that contains the loading indicator.
-      /// @param running true if the loading indicator is running; otherwise false.
+      /// @param running true if the loading indicator is running; otherwise `false`.
       /// @param location The loading indicator location in pixels.
       /// @param size The loading indicator size in pixels.
       /// @param name The name of the loading indicator.

@@ -97,7 +97,7 @@ namespace xtd {
     /// @brief Creates an xtd::read_only_span with specified iterator and count.
     /// @param first The iterator to the first element of the sequence.
     /// @param count The number of elements in the iteration.
-    //template<class iterator_t>
+    template<class iterator_t>
     read_only_span(iterator_t first, xtd::size count) : data_ {&(*first)}, length_ {extent != dynamic_extent ? extent : count} {}
      */
 #if defined(__xtd__cpp_lib_type_identity)
@@ -268,7 +268,7 @@ namespace xtd {
 
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
-    /// @return true if the specified object is equal to the current object. otherwise, false.
+    /// @return `true` if the specified object is equal to the current object. otherwise, false.
     bool equals(const object& obj) const noexcept override {return is<read_only_span<value_type>>(obj) && equals(static_cast<const read_only_span<value_type>&>(obj));}
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.

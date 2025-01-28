@@ -107,7 +107,7 @@ namespace xtd {
         
         /// @{
         /// @brief Advances the enumerator to the next element of the collection.
-        /// @return true if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection.
+        /// @return `true` if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection.
         /// @exception xtd::invalid_operation_exception The collection was modified after the enumerator was created.
         /// @par Examples
         /// The following code example demonstrates the implementation of the IEnumerator interfaces for a custom collection. In this example, xtd::collections::generic::ienumerator::move_next is not explicitly called, but it is implemented to support the use of foreach (for each in Visual Basic). This code example is part of a larger example for the IEnumerator interface.

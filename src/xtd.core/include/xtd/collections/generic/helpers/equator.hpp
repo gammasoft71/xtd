@@ -53,7 +53,7 @@ namespace xtd {
           /// @brief checks if the specified a and b keys are equal.
           /// @param a The first key to check.
           /// @param b The second key to check.
-          /// @return true if keys are equals; otherwise false.
+          /// @return `true` if keys are equals; otherwise `false`.
           /// @remarks If key_t inherits from xtd::object, the xtd::object::equals method will be used; otherwise, the [std::equal_to](https://en.cppreference.com/w/cpp/utility/functional/equal_to) object function will be used.
           result_type operator()(const first_argument_type& a, const second_argument_type& b) const {
             if (&a == &b) return true;

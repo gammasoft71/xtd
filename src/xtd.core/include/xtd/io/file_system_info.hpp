@@ -242,7 +242,7 @@ namespace xtd {
       xtd::io::file_system_info& creation_time_utc(const xtd::date_time& value);
       
       /// @brief Gets a value indicating whether the file or directory exists.
-      /// @return true if the file or directory exists; otherwise, false.
+      /// @return `true` if the file or directory exists; otherwise, false.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual bool exists() const = 0;
       

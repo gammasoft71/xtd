@@ -82,7 +82,7 @@ namespace xtd {
         
         /// @{
         /// @brief Gets a value indicating whether the item is in the checked state.
-        /// @return true if the item is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
+        /// @return `true` if the item is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
         virtual bool checked() const;
         
         /// @brief Gets the state of the item.
@@ -203,7 +203,7 @@ namespace xtd {
       
       /// @brief Returns a value indicating whether the specified item is checked.
       /// @param index The index of the item.
-      /// @return true if the item is checked; otherwise, false.
+      /// @return `true` if the item is checked; otherwise, false.
       /// @remarks get_item_checked returns true if the value of CheckState is checked or indeterminate for the item. To determine the specific state the item is in, use the get_item_check_state method.
       bool get_item_checked(size_t index) const;
       

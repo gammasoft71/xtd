@@ -49,10 +49,10 @@ namespace xtd {
       xtd::forms::mouse_buttons button() const noexcept;
       
       /// @brief Gets the visited link value.
-      /// @return true if visited link; otherwise false.
+      /// @return `true` if visited link; otherwise `false`.
       bool visited() const noexcept;
       /// @brief Sets the visited link value.
-      /// @param value true if visited link; otherwise false.
+      /// @param value true if visited link; otherwise `false`.
       void visited(bool value);
       /// @}
       

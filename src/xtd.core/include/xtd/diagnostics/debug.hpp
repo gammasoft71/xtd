@@ -69,7 +69,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets whether xtd::diagnostics::debug::flush should be called on the xtd::diagnostics::debug::Listeners after every write.
-      /// @return true if xtd::diagnostics::debug::flush is called on the xtd::diagnostics::debug::listeners after every write; otherwise, false.
+      /// @return `true` if xtd::diagnostics::debug::flush is called on the xtd::diagnostics::debug::listeners after every write; otherwise, false.
       /// @remarks The default is false.
       /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call xtd::diagnostics::debug::flush or xtd::diagnostics::debug::close. Setting xtd::diagnostics::debug::auto_flush to true means that data will be flushed from the buffer to the stream.
       static bool auto_flush() noexcept;
@@ -109,7 +109,7 @@ namespace xtd {
       static void listeners(const listener_collection& listeners) noexcept;
       
       /// @brief Gets a value indicating whether the assert dialog should be show.
-      /// @return true if assert dialog is to be shown; otherwise, false. The default is true.
+      /// @return `true` if assert dialog is to be shown; otherwise, false. The default is true.
       /// @remarks The show assert dialog is used when xtd::diagnostics::debug::cassert or xtd::diagnostics::trace::cassert or assert_ is called to ask user to ignore, continue or retry the assert.
       /// @note The xtd::diagnostics::debug::show_assert_dialog boolean is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; updating the boolean to either class modify the show assert dialog to both.
       /// @deprecated Replaced by xtd::diagnostics::default_trace_listener::assert_ui_enabled - Will be removed in version 0.4.0.
@@ -124,7 +124,7 @@ namespace xtd {
       static void show_assert_dialog(bool show_assert_dialog) noexcept;
       
       /// @brief Gets a value indicating whether the global lock should be used.
-      /// @return true if the global lock is to be used; otherwise, false. The default is true.
+      /// @return `true` if the global lock is to be used; otherwise, false. The default is true.
       /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of xtd::diagnostics::debug::use_global_lock. The IsThreadSafe property is used to determine if the listener is thread safe. The global lock is not used only if the value of UseGlobalLock is false and the value of IsThreadSafe is true. The default behavior is to use the global lock.
       static bool use_global_lock() noexcept;
       /// @brief Sets a value indicating whether the global lock should be used.

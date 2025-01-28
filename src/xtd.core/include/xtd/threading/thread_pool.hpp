@@ -140,25 +140,25 @@ namespace xtd {
       static void join_all();
       /// @brief Join all resources and worker threads.
       /// @param milliseconds_timeout The number of milliseconds to wait for all threads to terminate.
-      /// @return true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
+      /// @return `true` if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
       /// @remarks If one or more threads are not joinable, they will be skipped.
       /// @remarks You can use this method to ensure that all pending threads are closed, and that resources are also closed.
       static bool join_all(int32 milliseconds_timeout);
       /// @brief Join all resources and worker threads.
       /// @param timeout A xtd::time_span set to the amount of time to wait for all threads to terminate.
-      /// @return true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
+      /// @return `true` if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
       /// @remarks If one or more threads are not joinable, they will be skipped.
       /// @remarks You can use this method to ensure that all pending threads are closed, and that resources are also closed.
       static bool join_all(const time_span& timeout);
 
       /// @brief Queues a method for execution. The method executes when a thread pool thread becomes available.
       /// @param callback A pointer function that represents the method to be executed.
-      /// @return true if the method is successfully queued; NotSupportException is thrown if the work item could not be queued
+      /// @return `true` if the method is successfully queued; NotSupportException is thrown if the work item could not be queued
       static bool queue_user_work_item(const wait_callback& callback);
       /// @brief Queues a method for execution. The method executes when a thread pool thread becomes available.
       /// @param callback A pointer function that represents the method to be executed.
       /// @param state An object containing data to be used by the method.
-      /// @return true if the method is successfully queued; NotSupportedException is thrown if the work item could not be queued
+      /// @return `true` if the method is successfully queued; NotSupportedException is thrown if the work item could not be queued
       static bool queue_user_work_item(const wait_callback& callback, std::any state);
 
       /// @cond
@@ -219,13 +219,13 @@ namespace xtd {
       /// @brief Sets the number of requests to the thread pool that can be active concurrently. All requests above that number remain queued until thread pool threads become available.
       /// @param worker_threads The maximum number of worker threads in the thread pool.
       /// @param completion_port_threads The maximum number of asynchronous I/O threads in the thread pool.
-      /// @return true if the change is successful; otherwise, false.
+      /// @return `true` if the change is successful; otherwise, false.
       static bool set_max_threads(size_t worker_threads, size_t completion_port_threads);
       
       /// @brief Sets the number of idle threads the thread pool maintains in anticipation of new requests.
       /// @param worker_threads The new minimum number of idle worker threads to be maintained by the thread pool.
       /// @param completion_port_threads The new minimum number of idle asynchronous I/O threads to be maintained by the thread pool.
-      /// @return true if the change is successful; otherwise, false.
+      /// @return `true` if the change is successful; otherwise, false.
       static bool set_min_threads(size_t worker_threads, size_t completion_port_threads);
       /// @}
 

@@ -281,7 +281,7 @@ namespace xtd {
     /// @brief Tries to convert the string representation of a version number to an equivalent xtd::version object, and returns a value that indicates whether the conversion succeeded.
     /// @param input A string that contains a version number to convert.
     /// @param result When this method returns, contains the xtd::version equivalent of the number that is contained in input, if the conversion succeeded. If input is empty, or if the conversion fails, result is empty when the method returns.
-    /// @return true if the input parameter was converted successfully; otherwise, false.
+    /// @return `true` if the input parameter was converted successfully; otherwise, false.
     /// @remarks The xtd::version::try_parse method is similar to the xtd::version::parse method, except that it doesn't throw an exception if the conversion fails. Instead, it returns false if input is null, has fewer than two or more than four components, has at least one component that is not an integer, has at least one component that is less than zero, or has at least one component that is greater than std::numeric_limits<int32>::max().
     /// For the parse operation to succeed, the input parameter must be in the following format:
     /// @verbatim major.minor[.build[.revision]] @endverbatim

@@ -474,7 +474,7 @@ namespace xtd {
       
       /// @brief Determines whether the given path refers to an existing directory on disk.
       /// @param path The path to test.
-      /// @return true if path refers to an existing directory; false if the directory does not exist or an error occurs when trying to determine if the specified directory exists.
+      /// @return `true` if path refers to an existing directory; false if the directory does not exist or an error occurs when trying to determine if the specified directory exists.
       /// @par rExample
       /// The following example takes an array of file or directory names on the command line, determines what kind of name it is, and processes it appropriately.
       /// ```cpp

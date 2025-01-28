@@ -318,7 +318,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether to indent the output.
-      /// @return true if the output should be indented; otherwise, false.
+      /// @return `true` if the output should be indented; otherwise, false.
       bool need_indent() const noexcept;
       /// @brief Sets a value indicating whether to indent the output.
       /// @param need_indent true if the output should be indented; otherwise, false.

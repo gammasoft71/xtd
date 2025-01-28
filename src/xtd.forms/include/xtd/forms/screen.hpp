@@ -54,7 +54,7 @@ namespace xtd {
       const xtd::string& device_name() const;
       
       /// @brief Gets a value indicating whether a particular display is high resolution.
-      /// @return true if this display is high resolution; otherwise, false.
+      /// @return `true` if this display is high resolution; otherwise, false.
       bool high_resolution() const noexcept;
       
       /// @brief Gets the number of pixels per inch of the display.
@@ -63,7 +63,7 @@ namespace xtd {
       int32 pixels_per_inch() const noexcept;
       
       /// @brief Gets a value indicating whether a particular display is the primary device.
-      /// @return true if this display is primary; otherwise, false.
+      /// @return `true` if this display is primary; otherwise, false.
       bool primary() const noexcept;
       
       /// @brief Gets the scale factor of the display.

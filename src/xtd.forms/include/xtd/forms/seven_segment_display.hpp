@@ -63,10 +63,10 @@ namespace xtd {
       virtual seven_segment_display& back_segment_opacity(double value);
       
       /// @brief Gets a value indicate if background segments are shown.
-      /// @return true if background segments are shown; otherwise false
+      /// @return `true` if background segments are shown; otherwise `false`
       virtual bool show_back_segment() const noexcept;
       /// @brief Sets a value indicate if background segments are shown.
-      /// @param value true if background segments are shown; otherwise false
+      /// @param value true if background segments are shown; otherwise `false`
       /// @return Current seven_segment_display.
       virtual seven_segment_display& show_back_segment(bool value);
       
@@ -99,11 +99,11 @@ namespace xtd {
       
       /// @{
       /// @brief Gets if specified xtd::forms::segments combination is on.
-      /// @return true if xtd::forms::segments combination is on; otherwise false.
+      /// @return `true` if xtd::forms::segments combination is on; otherwise `false`.
       virtual bool get_segments(forms::segments segment) const noexcept;
       /// @brief Sets specified xtd::forms::segments combination to on.
       /// @param segment A xtd::forms::segments combination to set.
-      /// @param on true to set to on; otherwise false.
+      /// @param on true to set to on; otherwise `false`.
       virtual void set_segments(forms::segments segment, bool value);
       /// @}
 
@@ -152,25 +152,25 @@ namespace xtd {
       static seven_segment_display create(xtd::forms::segments segments, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified segments, and back_segment visibility.
       /// @param segments A dots_collection that represent all dots status.
-      /// @param show_back_segment true if background segments are shown; otherwise false
+      /// @param show_back_segment true if background segments are shown; otherwise `false`
       /// @return New xtd::forms::seven_segment_display created.
       static seven_segment_display create(xtd::forms::segments segments, bool show_back_segment);
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified segments, back_segment visibility, and location.
       /// @param segments A dots_collection that represent all dots status.
-      /// @param show_back_segment true if background segments are shown; otherwise false
+      /// @param show_back_segment true if background segments are shown; otherwise `false`
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
       static seven_segment_display create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified segments, back_segment visibility, location, and size.
       /// @param segments A dots_collection that represent all dots status.
-      /// @param show_back_segment true if background segments are shown; otherwise false
+      /// @param show_back_segment true if background segments are shown; otherwise `false`
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
       static seven_segment_display create(xtd::forms::segments segments, bool show_back_segment, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified segments, back_segment visibility, location, size, and name.
       /// @param segments A dots_collection that represent all dots status.
-      /// @param show_back_segment true if background segments are shown; otherwise false
+      /// @param show_back_segment true if background segments are shown; otherwise `false`
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
       /// @param name The name of the xtd::forms::seven_segment_display.
@@ -227,20 +227,20 @@ namespace xtd {
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified parent, segments, and back_segment visibility.
       /// @param parent The parent that contains the new created xtd::forms::seven_segment_display.
       /// @param segments A xtd::forms::segments combination that represent seven_segment_display.
-      /// @param show_back_segment true if background segments are shown; otherwise false
+      /// @param show_back_segment true if background segments are shown; otherwise `false`
       /// @return New xtd::forms::seven_segment_display created.
       static seven_segment_display create(const control& parent, xtd::forms::segments segments, bool show_back_segment);
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified parent, segments, back_segment visibility, and location.
       /// @param parent The parent that contains the new created xtd::forms::seven_segment_display.
       /// @param segments A xtd::forms::segments combination that represent seven_segment_display.
-      /// @param show_back_segment true if background segments are shown; otherwise false
+      /// @param show_back_segment true if background segments are shown; otherwise `false`
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
       static seven_segment_display create(const control& parent, xtd::forms::segments segments, bool show_back_segment, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified parent, segments, back_segment visibility, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::seven_segment_display.
       /// @param segments A xtd::forms::segments combination that represent seven_segment_display.
-      /// @param show_back_segment true if background segments are shown; otherwise false
+      /// @param show_back_segment true if background segments are shown; otherwise `false`
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
       /// @return New xtd::forms::seven_segment_display created.
@@ -248,7 +248,7 @@ namespace xtd {
       /// @brief A factory to create an xtd::forms::seven_segment_display with specified parent, segments, back_segment visibility, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::seven_segment_display.
       /// @param segments A xtd::forms::segments combination that represent seven_segment_display.
-      /// @param show_back_segment true if background segments are shown; otherwise false
+      /// @param show_back_segment true if background segments are shown; otherwise `false`
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::seven_segment_display.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::seven_segment_display.
       /// @param name The name of the xtd::forms::seven_segment_display.

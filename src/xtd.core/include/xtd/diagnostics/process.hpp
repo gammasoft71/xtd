@@ -63,7 +63,7 @@ namespace xtd {
         
         /// @{
         /// @brief Gets a value indicate if the event is empty.
-        /// @return true if event does not contains functions; otherwise false.
+        /// @return `true` if event does not contains functions; otherwise `false`.
         bool is_empty() const noexcept;
         /// @}
         
@@ -127,7 +127,7 @@ namespace xtd {
         
         /// @{
         /// @brief Gets a value indicate if the event is empty.
-        /// @return true if event does not contains functions; otherwise false.
+        /// @return `true` if event does not contains functions; otherwise `false`.
         bool is_empty() const noexcept;
         /// @}
         
@@ -191,7 +191,7 @@ namespace xtd {
         
         /// @{
         /// @brief Gets a value indicate if the event is empty.
-        /// @return true if event does not contains functions; otherwise false.
+        /// @return `true` if event does not contains functions; otherwise `false`.
         bool is_empty() const noexcept;
         /// @}
         
@@ -282,7 +282,7 @@ namespace xtd {
       int32 base_priority() const;
       
       /// @brief Gets whether the xtd::diagnostics::process::exited event should be raised when the process terminates.
-      /// @return true if the xtd::diagnostics::process::exited event should be raised when the associated process is terminated (through either an exit or a call to xtd::diagnostics::process::kill()); otherwise, false. The default is false. Note that the xtd::diagnostics::process::exited event is raised even if the value of xtd::diagnostics::process::enable_raising_events is false when the process exits during or before the user performs a xtd::diagnostics::process::has_exited check.
+      /// @return `true` if the xtd::diagnostics::process::exited event should be raised when the associated process is terminated (through either an exit or a call to xtd::diagnostics::process::kill()); otherwise, false. The default is false. Note that the xtd::diagnostics::process::exited event is raised even if the value of xtd::diagnostics::process::enable_raising_events is false when the process exits during or before the user performs a xtd::diagnostics::process::has_exited check.
       /// @remarks The xtd::diagnostics::process::enable_raising_events property suggests whether the component should be notified when the operating system has shut down a process. The xtd::diagnostics::process::enable_raising_events property is used in asynchronous processing to notify your application that a process has exited. To force your application to synchronously wait for an exit event (which interrupts processing of the application until the exit event has occurred), use the xtd::diagnostics::process::wait_for_exit method.
       /// @remarks If the component's xtd::diagnostics::process::enable_raising_events value is true, or when xtd::diagnostics::process::enable_raising_events is false and a xtd::diagnostics::process::has_exited check is invoked by the component, the component can access the administrative information for the associated process, which remains stored by the operating system. Such information includes the xtd::diagnostics::process::exit_time and the xtd::diagnostics::process::exit_code.
       /// @remarks After the associated process exits, the xtd::diagnostics::process::handle of the component no longer points to an existing process resource. Instead, it can only be used to access the operating system's information about the process resource. The operating system is aware that there are handles to exited processes that haven't been released by xtd::diagnostics::process components, so it keeps the xtd::diagnostics::process::exit_time and xtd::diagnostics::process::handle information in memory.
@@ -327,7 +327,7 @@ namespace xtd {
       intptr handle() const;
       
       /// @brief Gets a value indicating whether the associated process has been terminated.
-      /// @return true if the operating system process referenced by the process component has terminated; otherwise, false.
+      /// @return `true` if the operating system process referenced by the process component has terminated; otherwise, false.
       /// @exception xtd::invalid_operation_exception There is no process associated with the object.
       /// @exception xtd::not_supported_exception You are trying to access the xtd::diagnostics::process::has_exited property for a process that is running on a remote computer. This property is available only for processes that are running on the local computer.
       /// @remarks A value of true for xtd::diagnostics::process::has_exited indicates that the associated process has terminated, either normally or abnormally. You can request or force the associated process to exit by calling xtd::diagnostics::process::close_main_window or xtd::diagnostics::process::kill. If a handle is open to the process, the operating system releases the process memory when the process has exited, but retains administrative information about the process, such as the handle, exit code, and exit time. To get this information, you can use the xtd::diagnostics::process::exit_code and xtd::diagnostics::process::exit_time properties. These properties are populated automatically for processes that were started by this component. The administrative information is released when all the Process components that are associated with the system process are destroyed and hold no more handles to the exited process.
@@ -741,7 +741,7 @@ namespace xtd {
       void kill();
       
       /// @brief Starts (or reuses) the process resource that is specified by the xtd::diagnostics::process::start_info property of this Process component and associates it with the component.
-      /// @return true if a process resource is started; false if no new process resource is started (for example, if an existing process is reused).
+      /// @return `true` if a process resource is started; false if no new process resource is started (for example, if an existing process is reused).
       /// @exception xtd::invalid_operation_exception No file name was specified in the xtd::diagnostics::process component's xtd::diagnostics::process::start_info.
       /// @par Examples
       /// The following example populates a StartInfo with the file to execute, the action performed on it and whether it should displays a user interface. For additional examples, refer to the reference pages for properties of the ProcessStartInfo class.

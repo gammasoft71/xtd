@@ -313,7 +313,7 @@ namespace xtd {
         virtual const_pointer data() const noexcept {return reinterpret_cast<const_pointer>(data_->items.data());}
 
         /// @brief Checks if the container has no elements, i.e. whether xtd::collections::generic::list::begin() == xtd::collections::generic::list::end().
-        /// @return true if the container is empty, false otherwise.
+        /// @return `true` if the container is empty, false otherwise.
         virtual bool empty() const noexcept {return data_->items.empty();}
         
         /// @brief Returns an iterator to the element following the last element of the enumarable.

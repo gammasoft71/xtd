@@ -73,7 +73,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets whether save should be called on the xtd::configuration::file_settings destructor.
-      /// @return true if xtd::configuration::file_settings::save is called on the xtd::configuration::file_settings destructor; otherwise, false.
+      /// @return `true` if xtd::configuration::file_settings::save is called on the xtd::configuration::file_settings destructor; otherwise, false.
       /// @remarks The default is false.
       /// @par Examples
       /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::auto_save property, xtd::configuration::file_settings::write methods.
@@ -239,7 +239,7 @@ namespace xtd {
       using object::equals;
       /// @brief Indicates whether the current object is equal to another object of the same type.
       /// @param obj An object to compare with this object.
-      /// @return true if the current object is equal to the other parameter; otherwise, false.
+      /// @return `true` if the current object is equal to the other parameter; otherwise, false.
       bool equals(const file_settings& obj) const noexcept override;
       
       /// @brief Sets the current settings with parsing the xtd::string in [INI format](https://en.wikipedia.org/wiki/INI_file).

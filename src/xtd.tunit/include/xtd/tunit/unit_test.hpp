@@ -59,7 +59,7 @@ namespace xtd {
       int32 repeat_iteration_count() const noexcept;
       
       /// @brief Gets a boolean indictaes if there is repeat tests.
-      /// @return true is repart test; otherwhise false.
+      /// @return `true` is repart test; otherwise `false`.
       /// @remarks Returns true if xtd::tunit::unit_test::repeat_test_count greater than 0.
       bool repeat_tests() const noexcept;
       
@@ -138,7 +138,7 @@ namespace xtd {
       
       /// @brief Parses the specified arguments.
       /// @param The arguments to parse.
-      /// @return true the execution process stops immediately after the analysis of the arguments; otherwise false the execution process continues its execution.
+      /// @return `true` the execution process stops immediately after the analysis of the arguments; otherwise `false` the execution process continues its execution.
       /// @remarks This method can be overloaded by the heirs. It is typically in this method that the heirs can react to their own arguments. Like for example display a helper when the @p -help argument is passed.
       virtual bool parse_arguments(const std::vector<string>& args);
       /// @}

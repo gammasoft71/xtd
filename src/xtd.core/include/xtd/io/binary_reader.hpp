@@ -71,7 +71,7 @@ namespace xtd {
       std::optional<std::reference_wrapper<std::istream>> base_stream() const;
       
       /// @brief Gets a value that indicates whether the current stream position is at the end of the stream.
-      /// @return true if the current stream position is at the end of the stream; otherwise false.
+      /// @return `true` if the current stream position is at the end of the stream; otherwise `false`.
       bool end_of_stream() const;
       /// @}
       
@@ -123,7 +123,7 @@ namespace xtd {
       virtual size_t read(std::vector<char>& buffer, size_t index, size_t count);
       
       /// @brief Reads a boolean value from the current stream and advances the current position of the stream by one byte.
-      /// @return true if the byte is nonzero; otherwise, false.
+      /// @return `true` if the byte is nonzero; otherwise, false.
       /// @exception EndOfStreamException The end of the stream is reached.
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.

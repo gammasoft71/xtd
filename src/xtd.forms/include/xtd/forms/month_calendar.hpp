@@ -241,7 +241,7 @@ namespace xtd {
       month_calendar& selection_start(xtd::date_time value);
       
       /// @brief Gets a value indicating whether the date represented by the xtd::today_date property is displayed at the bottom of the control.
-      /// @return true if today's date is displayed; otherwise, false. The default is true.
+      /// @return `true` if today's date is displayed; otherwise, false. The default is true.
       /// @remarks The date is displayed in the format specified by the system settings for the short date format.
       bool show_today() const noexcept;
       /// @brief Sets a value indicating whether the date represented by the xtd::today_date property is displayed at the bottom of the control.
@@ -251,7 +251,7 @@ namespace xtd {
       month_calendar& show_today(bool value);
       
       /// @brief Gets a value indicating whether today's date is identified with a circle or a square.
-      /// @return true if today's date is identified with a circle or a square; otherwise, false. The default is true.
+      /// @return `true` if today's date is identified with a circle or a square; otherwise, false. The default is true.
       /// @remarks If xtd::forms::month_calendar::show_today_circle is true, and visual styles are enabled and supported on the computer running the application, today's date will be enclosed in a square, otherwise today's date will be circled.
       bool show_today_circle() const noexcept;
       /// @brief Sets a value indicating whether today's date is identified with a circle or a square.
@@ -261,7 +261,7 @@ namespace xtd {
       month_calendar& show_today_circle(bool value);
       
       /// @brief Gets a value indicating whether the month calendar control displays week numbers (1-52) to the left of each row of days.
-      /// @return true if the week numbers are displayed; otherwise, false. The default is false.
+      /// @return `true` if the week numbers are displayed; otherwise, false. The default is false.
       bool show_week_numbers() const noexcept;
       /// @brief Sets a value indicating whether the month calendar control displays week numbers (1-52) to the left of each row of days.
       /// @param value true if the week numbers are displayed; otherwise, false. The default is false.
@@ -302,7 +302,7 @@ namespace xtd {
       month_calendar& today_date(const xtd::date_time& value);
       
       /// @brief Gets a value indicating whether the xtd::forms::month_calendar::today_date property has been explicitly set.
-      /// @return true if the value for the xtd::forms::month_calendar::today_date property has been explicitly set; otherwise, false. The default is false.
+      /// @return `true` if the value for the xtd::forms::month_calendar::today_date property has been explicitly set; otherwise, false. The default is false.
       bool today_date_set() const noexcept;
       
       /// @brief Gets a value indicating the color of days in months that are not fully displayed in the control.

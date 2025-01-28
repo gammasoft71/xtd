@@ -71,13 +71,13 @@ namespace xtd {
       static int32_t base_priority(int32_t priority);
       /// @brief Kill process.
       /// @param process The process handle to kill.
-      /// @return true if succeed; otherwise false.
+      /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
       static bool kill(intmax_t process);
       /// @brief Sets the overall priority category for the associated process.
       /// @param process The process handle to set priority class.
       /// @param priority The priority category for the associated process, from which the base_priority of the process is calculated. (see priority_class.h file).
-      /// @return true if succeed; otherwise false.
+      /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
       static bool priority_class(intmax_t process, int32_t priority);
       /// @brief Creates a process with specified file name, specified arguments, specified working directory, specified process creation flags, and specified process window style.
@@ -104,7 +104,7 @@ namespace xtd {
       /// @brief Wait process and close handles.
       /// @param process The process handle to wait.
       /// @param exit Receives the process exit code.
-      /// @return true if succeed; otherwise false.
+      /// @return `true` if succeed; otherwise `false`.
       /// @warning Internal use only
       static bool wait(intmax_t process, int32_t& exit_code);
       /// @}

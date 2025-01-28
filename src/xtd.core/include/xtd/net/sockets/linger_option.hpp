@@ -63,7 +63,7 @@ namespace xtd {
         
         /// @{
         /// @brief Gets a value that indicates whether to linger after the xtd::net::sockets::socket is closed.
-        /// @return true if the xtd::net::sockets::socket should linger after xtd::net::sockets::socket::close is called; otherwise, false.
+        /// @return `true` if the xtd::net::sockets::socket should linger after xtd::net::sockets::socket::close is called; otherwise, false.
         /// @remarks You can use the xtd::net::sockets::linger_option::enabled property to determine whether the xtd::net::sockets::socket will linger after closing. Change this value to true or false and pass the altered xtd::net::sockets::linger_option to the xtd::net::sockets::socket::set_socket_option method or set the xtd::net::sockets::socket::linger_state or xtd::net::sockets::tcp_client::linger_state property to disable or enable lingering.
         /// @remarks The following table describes the behavior on the xtd::net::sockets::socket::close and xtd::net::sockets::tcp_client::close methods based on the possible values of the enable and seconds parameters when an xtd::net::sockets::linger_option instance is created and set in the xtd::net::sockets::socket::linger_state or xtd::net::sockets::socket xtd::net::sockets::tcp_client::linger_state property.
         /// | enable                              | seconds                                    | Behavior                                                                                                                          |

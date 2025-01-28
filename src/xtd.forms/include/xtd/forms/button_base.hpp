@@ -42,7 +42,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the ellipsis character (...) appears at the right edge of the control, denoting that the control text extends beyond the specified length of the control.
-      /// @return true if the additional label text is to be indicated by an ellipsis; otherwise, false. The default is true.
+      /// @return `true` if the additional label text is to be indicated by an ellipsis; otherwise, false. The default is true.
       /// @remarks Set auto_ellipsis to true to display text that extends beyond the width of the control when the user passes over the control with the mouse. You must set the control's auto_size property to false if you want AutoEllipsis to be true. If AutoSize is true, the control will grow to fit the text and an ellipsis will not appear.
       virtual bool auto_ellipsis() const noexcept;
       
@@ -145,7 +145,7 @@ namespace xtd {
       forms::create_params create_params() const noexcept override;
       
       /// @brief Gets a value indicating whether the button control is the default button.
-      /// @return true if the button control is the default button; otherwise, false.
+      /// @return `true` if the button control is the default button; otherwise, false.
       /// @remarks When the xtd::forms::button_base::is_default property is set to true, the button is the default button for the xtd::forms::form. This means that the button is clicked when the ENTER key is pressed if no other button or any other control that captures the ENTER key has focus.
       /// @remarks To specify the default button of a form, set the xtd::forms::form::accept_button property of the form to the desired button.
       bool is_default() const noexcept;

@@ -30,7 +30,7 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::forms::replace_event_args class.
       /// @param find_string The string to find.
       /// @param replace_string A string that specifies the replaced text.
-      /// @param match_case true if match case option selected; otherwise false.
+      /// @param match_case true if match case option selected; otherwise `false`.
       /// @param whole_word One of xtd::forms::search_direction values.
       replace_event_args(const xtd::string& find_string, const xtd::string& replace_string, bool match_case, bool whole_word) : find_string_(find_string), replace_string_(replace_string), match_case_(match_case), whole_word_(whole_word) {}
       /// @}
@@ -52,11 +52,11 @@ namespace xtd {
       const xtd::string& replace_string() const noexcept {return replace_string_;}
       
       /// @brief Gets the match case value.
-      /// @return true if match case option selected; otherwise false. The default is false.
+      /// @return `true` if match case option selected; otherwise `false`. The default is false.
       bool match_case() const noexcept {return match_case_;}
       
       /// @brief Gets the whole word value.
-      /// @return true if whole word option selected; otherwise false. The default is false.
+      /// @return `true` if whole word option selected; otherwise `false`. The default is false.
       bool whole_word() const noexcept {return whole_word_;}
       
       /// @}

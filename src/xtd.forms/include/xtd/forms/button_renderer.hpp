@@ -62,13 +62,13 @@ namespace xtd {
       /// @param graphics The xtd::drawing::graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
       /// @param button_state The visual state of a button that is drawn with visual styles.
-      /// @param default_button Sets to tru if the buffon is default; otherwise false.
+      /// @param default_button Sets to tru if the buffon is default; otherwise `false`.
       static void draw_button(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::push_button_state button_state, bool default_button);
       /// @brief Draws a button in the specified bounds, button style, button state and background color.
       /// @param graphics The xtd::drawing::graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
       /// @param button_state The visual state of a button that is drawn with visual styles.
-      /// @param default_button Sets to tru if the buffon is default; otherwise false.
+      /// @param default_button Sets to tru if the buffon is default; otherwise `false`.
       /// @param back_color The background color for the button control.
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
       static void draw_button(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::push_button_state button_state, bool default_button, const std::optional<xtd::drawing::color>& back_color);
@@ -76,7 +76,7 @@ namespace xtd {
       /// @param graphics The xtd::drawing::graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
       /// @param button_state The visual state of a button that is drawn with visual styles.
-      /// @param default_button Sets to tru if the buffon is default; otherwise false.
+      /// @param default_button Sets to tru if the buffon is default; otherwise `false`.
       /// @param back_color The background color for the button control.
       /// @remarks The parameter back_color is set only if they are different from its default value; otherwise std::nullopt.
       static void draw_button(const style_sheets::style_sheet& style_sheet, xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& bounds, xtd::forms::visual_styles::push_button_state button_state, bool default_button, const std::optional<xtd::drawing::color>& back_color);
@@ -84,7 +84,7 @@ namespace xtd {
       /// @param graphics The xtd::drawing::graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
       /// @param button_state The visual state of a button that is drawn with visual styles.
-      /// @param default_button Sets to tru if the buffon is default; otherwise false.
+      /// @param default_button Sets to tru if the buffon is default; otherwise `false`.
       /// @param back_color The background color for the button control.
       /// @param text The text of the button control.
       /// @param text_flags Contains the display and layout information for text strings.
@@ -96,7 +96,7 @@ namespace xtd {
       /// @param graphics The xtd::drawing::graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
       /// @param button_state The visual state of a button that is drawn with visual styles.
-      /// @param default_button Sets to tru if the buffon is default; otherwise false.
+      /// @param default_button Sets to tru if the buffon is default; otherwise `false`.
       /// @param back_color The background color for the button control.
       /// @param text The text of the button control.
       /// @param text_flags Contains the display and layout information for text strings.
@@ -108,7 +108,7 @@ namespace xtd {
       /// @param graphics The xtd::drawing::graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
       /// @param button_state The visual state of a button that is drawn with visual styles.
-      /// @param default_button Sets to tru if the buffon is default; otherwise false.
+      /// @param default_button Sets to tru if the buffon is default; otherwise `false`.
       /// @param back_color The background color for the button control.
       /// @param text The text of the button control.
       /// @param text_flags Contains the display and layout information for text strings.
@@ -123,7 +123,7 @@ namespace xtd {
       /// @param graphics The xtd::drawing::graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
       /// @param button_state The visual state of a button that is drawn with visual styles.
-      /// @param default_button Sets to tru if the buffon is default; otherwise false.
+      /// @param default_button Sets to tru if the buffon is default; otherwise `false`.
       /// @param back_color The background color for the button control.
       /// @param text The text of the button control.
       /// @param text_flags Contains the display and layout information for text strings.
@@ -138,7 +138,7 @@ namespace xtd {
       /// @param graphics The xtd::drawing::graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
       /// @param button_state The visual state of a button that is drawn with visual styles.
-      /// @param default_button Sets to tru if the buffon is default; otherwise false.
+      /// @param default_button Sets to tru if the buffon is default; otherwise `false`.
       /// @param back_color The background color for the button control.
       /// @param text The text of the button control.
       /// @param text_flags Contains the display and layout information for text strings.
@@ -153,7 +153,7 @@ namespace xtd {
       /// @param graphics The xtd::drawing::graphics used to draw a button.
       /// @param bounds The xtd::drawing::rectangle that specifies the bounds of the button.
       /// @param button_state The visual state of a button that is drawn with visual styles.
-      /// @param default_button Sets to tru if the buffon is default; otherwise false.
+      /// @param default_button Sets to tru if the buffon is default; otherwise `false`.
       /// @param back_color The background color for the button control.
       /// @param text The text of the button control.
       /// @param text_flags Contains the display and layout information for text strings.

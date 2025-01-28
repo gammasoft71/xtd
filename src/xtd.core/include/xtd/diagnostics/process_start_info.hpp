@@ -77,7 +77,7 @@ namespace xtd {
       process_start_info& arguments(const xtd::string& value) noexcept;
       
       /// @brief Gets a value indicating whether to start the process in a new window.
-      /// @return true if the process should be started without creating a new window to contain it; otherwise, false. The default is false.
+      /// @return `true` if the process should be started without creating a new window to contain it; otherwise, false. The default is false.
       /// @remarks If the xtd::diagnostics::process_start_info::use_shell_execute property is true or the xtd::diagnostics::process_start_info::user_name and xtd::diagnostics::process_start_info::password properties are not empty, the xtd::diagnostics::process_start_info::create_no_window property value is ignored and a new window is created.
       bool create_no_window() const noexcept;
       /// @brief Sets a value indicating whether to start the process in a new window.
@@ -115,7 +115,7 @@ namespace xtd {
       std::map<xtd::string, xtd::string>& environment_variables() noexcept;
       
       /// @brief Gets a value indicating whether an error dialog box is displayed to the user if the process cannot be started.
-      /// @return true if an error dialog box should be displayed on the screen if the process cannot be started; otherwise, false. The default is false.
+      /// @return `true` if an error dialog box should be displayed on the screen if the process cannot be started; otherwise, false. The default is false.
       /// @note xtd::diagnostics::process_start_info::use_shell_execute must be true if you want to set xtd::diagnostics::process_start_info::error_dialog to true.
       bool error_dialog() const noexcept;
       /// @brief Sets a value indicating whether an error dialog box is displayed to the user if the process cannot be started.
@@ -150,7 +150,7 @@ namespace xtd {
       /// @endcond
       
       /// @brief Gets a value that indicates whether the Windows user profile is to be loaded from the registry.
-      /// @return true if the Windows user profile should be loaded; otherwise, false. The default is false.
+      /// @return `true` if the Windows user profile should be loaded; otherwise, false. The default is false.
       /// @remarks This property is referenced if the process is being started by using the user name, password, and domain.
       /// @remarks If the value is true, the user's profile in the HKEY_USERS registry key is loaded. Loading the profile can be time-consuming. Therefore, it is best to use this value only if you must access the information in the HKEY_CURRENT_USER registry key.
       bool load_user_profile() const noexcept;
@@ -188,7 +188,7 @@ namespace xtd {
       process_start_info& password_in_clear_text(const xtd::string& value) noexcept;
       
       /// @brief Gets a value that indicates whether the error output of an application is written to the xtd::diagnostics::process::standard_error stream.
-      /// @return true if error output should be written to xtd::diagnostics::process::standard_error; otherwise, false. The default is false.
+      /// @return `true` if error output should be written to xtd::diagnostics::process::standard_error; otherwise, false. The default is false.
       /// @par Examples
       /// The following example uses the net use command together with a user supplied argument to map a network resource. It then reads the standard error stream of the net command and writes it to console.
       /// ```cpp
@@ -402,7 +402,7 @@ namespace xtd {
       process_start_info& redirect_standard_error(bool value) noexcept;
       
       /// @brief Gets a value indicating whether the input for an application is read from the Process.StandardInput stream.
-      /// @return true if input should be read from Process.StandardInput; otherwise, false. The default is false.
+      /// @return `true` if input should be read from Process.StandardInput; otherwise, false. The default is false.
       /// @par Examples
       /// The following example illustrates how to redirect the xtd::diagnostics::process::standard_input stream of a process. The example starts the sort command with redirected input. It then prompts the user for text, and passes that to the sort process by means of the redirected xtd::diagnostics::process::standard_input stream. The sort results are displayed to the user on the console.
       /// ```cpp
@@ -784,7 +784,7 @@ namespace xtd {
       process_start_info& user_name(const xtd::string& value) noexcept;
       
       /// @brief Gets a value indicating whether to use the operating system shell to start the process.
-      /// @return true if the shell should be used when starting the process; false if the process should be created directly from the executable file. The default is true.
+      /// @return `true` if the shell should be used when starting the process; false if the process should be created directly from the executable file. The default is true.
       /// @remarks Setting this property to false enables you to redirect input, output, and error streams.
       /// @note xtd::diagnostics::process_start_info::use_shell_execute must be false if the xtd::diagnostics::process_start_info::user_name property is not an empty string, or an xtd::invalid_operation_exception will be thrown when the xtd::diagnostics::process::start(process_start_info) method is called.
       /// @remarks When you use the operating system shell to start processes, you can start any document (which is any registered file type associated with an executable that has a default open action) and perform operations on the file, such as printing, by using the Process object. When xtd::diagnostics::process_start_info::use_shell_execute is false, you can start only executables by using the xtd::diagnostics::process object.

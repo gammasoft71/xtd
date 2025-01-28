@@ -94,7 +94,7 @@ namespace xtd {
       status_bar_panel_collection& panels();
       
       /// @brief Gets a value indicating whether any panels that have been added to the control are displayed.
-      /// @return true if panels are displayed; otherwise, false. The default is false.
+      /// @return `true` if panels are displayed; otherwise, false. The default is false.
       /// @remarks By default, the xtd::forms::status_bar control displays the value of its xtd::forms::status_bar::text property without any panels. When xtd::forms::status_bar::show_panels is set to true, any xtd::forms::status_bar objects specified in the StatusBar control are displayed. No panels are initially created when you create an instance of the xtd::forms::status_bar class. You can add panels to a xtd::forms::status_bar control by using the xtd::forms::status_bar::status_bar_panel_collection::push_back method of the xtd::forms::status_bar::status_bar_panel_collection class. This collection class can be accessed through the xtd::forms::status_bar::panels property of xtd::forms::status_bar.
       virtual bool show_panels() const noexcept;
       /// @brief Sets a value indicating whether any panels that have been added to the control are displayed.
@@ -104,7 +104,7 @@ namespace xtd {
       virtual status_bar& show_panels(bool value);
       
       /// @brief Gets a value indicating whether the status bar displays a xtd::forms::tool_tip for each button.
-      /// @return true if the status bar display a xtd::forms::tool_tip for each button; otherwise, false. The default is false.
+      /// @return `true` if the status bar display a xtd::forms::tool_tip for each button; otherwise, false. The default is false.
       /// @remarks To set the text displayed by the xtd::forms::tool_tip, set the xtd::forms::tool_bar_button::tool_tip_text property of each xtd::forms::tool_bar_button on the xtd::forms::tool_bar. To cause the xtd::forms::tool_tip to display as the user moves the mouse pointer over the status bar button, set the xtd::forms::tool_bar::show_tool_tips property to true.
       virtual bool show_tool_tips() const noexcept;
       /// @brief Sets a value indicating whether the status bar displays a xtd::forms::tool_tip for each button.
@@ -114,7 +114,7 @@ namespace xtd {
       virtual status_bar& show_tool_tips(bool value);
       
       /// @brief Gets a value indicating whether a sizing grip is displayed in the lower-right corner of the control.
-      /// @return true if a sizing grip is displayed; otherwise, false. The default is true.
+      /// @return `true` if a sizing grip is displayed; otherwise, false. The default is true.
       /// @remarks You can use this property to display a sizing grip to provide an indication to the user when a form is resizable. If the xtd::forms::form_border_style property of your xtd::forms::form is set to a border style that is not resizable, such as xtd::forms::form_border_style::fixed_3d or xtd::forms::form_border_style::fixed_dialog, you should set the xtd::forms::status_bar::sizing_grip property to false to prevent the user from thinking that the form can be resized.
       virtual bool sizing_grip() const noexcept;
       /// @brief Sets a value indicating whether a sizing grip is displayed in the lower-right corner of the control.

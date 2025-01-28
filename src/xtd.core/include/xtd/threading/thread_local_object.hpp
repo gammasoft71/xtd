@@ -91,7 +91,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets whether xtd::threading::thread_local_object::value is initialized on the current thread.
-      /// @return true if xtd::threading::thread_local_object::value is initialized on the current thread; otherwise false.
+      /// @return `true` if xtd::threading::thread_local_object::value is initialized on the current thread; otherwise `false`.
       bool is_value_created() const noexcept {
         lock_guard_mutex lock {data_->mutex};
         return data_->values.find(thread::current_thread().thread_id()) != data_->values.end();

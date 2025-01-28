@@ -183,11 +183,11 @@ namespace xtd {
       /// @warning Internal use only
       static bool has_shutdown_started();
       /// @brief Determines whether the current processor is arm.
-      /// @return true if the processor is is arm; otherwise, false.
+      /// @return `true` if the processor is is arm; otherwise, false.
       /// @warning Internal use only
       static bool is_processor_arm();
       /// @brief Determines whether the current operating system is a 64-bit operating system.
-      /// @return true if the operating system is 64-bit; otherwise, false.
+      /// @return `true` if the operating system is 64-bit; otherwise, false.
       /// @warning Internal use only
       static bool is_os_64_bit();
       /// @brief Gets the newline string defined for this environment.

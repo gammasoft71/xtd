@@ -34,23 +34,23 @@ namespace xtd {
     
     /// @{
     /// @brief Gets target id is console application.
-    /// @return true if target id is console application; otherwise false.
+    /// @return `true` if target id is console application; otherwise `false`.
     bool is_console_application() const noexcept;
     
     /// @brief Gets target id is gui application.
-    /// @return true if target id is gui application; otherwise false.
+    /// @return `true` if target id is gui application; otherwise `false`.
     bool is_guid_application() const noexcept;
     
     /// @brief Gets target id is test application.
-    /// @return true if target id is test application; otherwise false.
+    /// @return `true` if target id is test application; otherwise `false`.
     bool is_test_application() const noexcept;
     
     /// @brief Gets target id is shared library.
-    /// @return true if target id is shared library; otherwise false.
+    /// @return `true` if target id is shared library; otherwise `false`.
     bool is_shared_library() const noexcept;
     
     /// @brief Gets target id is static library.
-    /// @return true if target id is static library; otherwise false.
+    /// @return `true` if target id is static library; otherwise `false`.
     bool is_static_library() const noexcept;
     
     /// @brief Gets target id name.

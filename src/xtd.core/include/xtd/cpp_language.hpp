@@ -42,11 +42,11 @@ namespace xtd {
     
     /// @{
     /// @brief Gets if is experimental language
-    /// @return true if is experimental language; otherwise false.
+    /// @return `true` if is experimental language; otherwise `false`.
     bool is_experimental_language() const noexcept;
     
     /// @brief Gets if is supported by xtd.
-    /// @return true is supported by xtd; otherwise false.
+    /// @return `true` is supported by xtd; otherwise `false`.
     bool is_supported() const noexcept;
     
     /// @brief Gets lagnguage id.

@@ -408,11 +408,11 @@ namespace xtd {
     static bool has_shutdown_started();
     
     /// @brief Determines whether the current operating system is a 64-bit operating system.
-    /// @return true if the operating system is 64-bit; otherwise, false.
+    /// @return `true` if the operating system is 64-bit; otherwise, false.
     static bool is_64_bit_operating_system() noexcept;
     
     /// @brief Determines whether the current process is a 64-bit process.
-    /// @return true if the process is 64-bit; otherwise, false.
+    /// @return `true` if the process is 64-bit; otherwise, false.
     static bool is_64_bit_process() noexcept;
     
     /// @brief Gets a copy of the global C++ locale, which is the locale most recently used as the argument to See [std::locale::global](https://en.cppreference.com/w/cpp/locale/locale/locale) or a copy of See [std::locale::classic()](https://en.cppreference.com/w/cpp/locale/locale/locale) if no call to See [std::locale::global](https://en.cppreference.com/w/cpp/locale/locale/locale) has been made.

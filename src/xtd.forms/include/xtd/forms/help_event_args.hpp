@@ -42,7 +42,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the help event was handled.
-      /// @return true if the event is handled; otherwise, false. The default is false.
+      /// @return `true` if the event is handled; otherwise, false. The default is false.
       /// @remarks If you do not set this property to true the event will be passed to Windows for additional processing.
       bool handled() const noexcept {return handled_;}
       /// @brief Sets a value indicating whether the help event was handled.

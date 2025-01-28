@@ -103,12 +103,12 @@ namespace xtd {
       static xtd::drawing::size cursor_size();
       
       /// @brief Gets a value indicating whether the operating system is capable of handling double-byte character set (DBCS) characters.
-      /// @return true if the operating system supports DBCS; otherwise, false.
+      /// @return `true` if the operating system supports DBCS; otherwise, false.
       /// @remarks The dbcs_enabled property indicates whether the current operating system supports DBCS.
       static bool dbcs_enabled();
       
       /// @brief Gets a value indicating whether the debug version of USER.EXE is installed.
-      /// @return true if the debugging version of USER.EXE is installed; otherwise, false.
+      /// @return `true` if the debugging version of USER.EXE is installed; otherwise, false.
       static bool debug_os();
       
       /// @brief Gets the dimensions, in pixels, of the area within which the user must click twice for the operating system to consider the two clicks a double-click.
@@ -123,7 +123,7 @@ namespace xtd {
       static int32 double_click_time();
       
       /// @brief Gets a value indicating whether the user has enabled full window drag.
-      /// @return true if the user has enabled full window drag; otherwise, false.
+      /// @return `true` if the user has enabled full window drag; otherwise, false.
       /// @remarks When this property is true, the content of a window is refreshed during a window move or resize drag, using the current position and size as they are updated.
       static bool drag_full_windows();
       
@@ -154,7 +154,7 @@ namespace xtd {
       static xtd::drawing::size frame_border_size();
       
       /// @brief Gets a value indicating whether the user has enabled the high-contrast mode accessibility feature.
-      /// @return true if the user has enabled high-contrast mode; otherwise, false.
+      /// @return `true` if the user has enabled high-contrast mode; otherwise, false.
       /// @remarks The high-contrast accessibility feature can make the screen easier for some users to view by enabling a color scheme that can heighten screen contrast with alternative color combinations. Some of the schemes also change font sizes for easier reading.
       /// @remarks The high-contrast mode feature can be enabled or disabled through the Accessibility Options control panel.
       static bool high_contrast();
@@ -201,22 +201,22 @@ namespace xtd {
       static int32 icon_vertical_spacing();
       
       /// @brief Gets a value indicating whether active window tracking is enabled.
-      /// @return true if active window tracking is enabled; otherwise, false.
+      /// @return `true` if active window tracking is enabled; otherwise, false.
       /// @remarks The is_active_window_tracking_enabled property indicates whether active window tracking is enabled. Active window tracking causes any window the mouse is directly over to become the active window.
       static bool is_active_window_tracking_enabled();
       
       /// @brief Gets a value indicating whether the slide-open effect for combo boxes is enabled.
-      /// @return true if the slide-open effect for combo boxes is enabled; otherwise, false.
+      /// @return `true` if the slide-open effect for combo boxes is enabled; otherwise, false.
       /// @remarks The is_combo_box_animation_enabled property indicates whether the slide-open effect for system control combo boxes is enabled.
       /// @remarks When the slide-open effect for system control combo boxes is enabled, the drop down menu of a combo box slides into view when it is displayed, instead of being immediately fully drawn in view.
       static bool is_combo_box_animation_enabled();
       
       /// @brief Gets a value indicating whether the drop shadow effect is enabled.
-      /// @return true if the drop shadow effect is enabled; otherwise, false.
+      /// @return `true` if the drop shadow effect is enabled; otherwise, false.
       static bool is_drop_shadow_enabled();
       
       /// @brief Gets a value indicating whether native user menus have a flat menu appearance.
-      /// @return true if native user menus have a flat menu appearance; otherwise, false.
+      /// @return `true` if native user menus have a flat menu appearance; otherwise, false.
       static bool is_flat_menu_enabled();
       
       /// @brief Gets a value indicating whether font smoothing is enabled.
@@ -239,50 +239,50 @@ namespace xtd {
       static bool is_keyboard_preferred();
       
       /// @brief Gets a value indicating whether the smooth-scrolling effect for list boxes is enabled.
-      /// @return true if smooth-scrolling is enabled; otherwise, false.
+      /// @return `true` if smooth-scrolling is enabled; otherwise, false.
       /// @remarks The is_list_box_smooth_scrolling_enabled property indicates whether the smooth-scrolling effect for system control list boxes is enabled.
       static bool is_list_box_smooth_scrolling_enabled();
       
       /// @brief Gets a value indicating whether menu fade or slide animation features are enabled.
-      /// @return true if menu fade or slide animation is enabled; otherwise, false.
+      /// @return `true` if menu fade or slide animation is enabled; otherwise, false.
       /// @remarks The is_menu_animation_enabled property indicates whether either of the fade or slide animation features of system control menus is enabled.
       /// @remarks If the value of this property is true, the xtd::forms::system_information::is_menu_fade_enabled property indicates whether menus use fade or slide animation.
       static bool is_menu_animation_enabled();
       
       /// @brief Gets a value indicating whether menu fade animation is enabled.
-      /// @return true if fade animation is enabled; false if it is disabled.
+      /// @return `true` if fade animation is enabled; false if it is disabled.
       /// @remarks The is_menu_fade_enabled property indicates whether a menu uses fade animation, if menu animation is enabled. The IsMenuAnimationEnabled property indicates whether menu animation is enabled.
       /// @remarks If menu animation is enabled and the value of this property is true, menus use fade animation. If menu animation is enabled and the value of this property is false, menus use slide animation. If menu animation is disabled, the value of this property is meaningless.
       static bool is_menu_fade_enabled();
       
       /// @brief Gets a value indicating whether window minimize and restore animation is enabled.
-      /// @return true if window minimize and restore animation is enabled; otherwise, false.
+      /// @return `true` if window minimize and restore animation is enabled; otherwise, false.
       /// @remarks The is_minimize_restore_animation_enabled property indicates whether the window minimize and restore sequence is animated.
       static bool is_minimize_restore_animation_enabled();
       
       /// @brief Gets the operating system is natively double buffered.
-      /// @return true is operating system is natively double buffered; otherwise false.
+      /// @return `true` is operating system is natively double buffered; otherwise `false`.
       /// @remarks The xtd::drawing::graphics is double_buffered.
       static bool is_operating_system_double_buffered();
       
       /// @brief Gets a value indicating whether the selection fade effect is enabled.
-      /// @return true if the selection fade effect is enabled; otherwise, false.
+      /// @return `true` if the selection fade effect is enabled; otherwise, false.
       /// @remarks The is_selection_fade_enabled property indicates whether the selection fade effect is enabled. The selection fade effect causes a menu item selected by the user to remain on the screen briefly while fading out after the menu is dismissed.
       static bool is_selection_fade_enabled();
       
       /// @brief Gets a value indicating whether the snap-to-default-button feature is enabled.
-      /// @return true if the snap-to-default-button feature is enabled; otherwise, false.
+      /// @return `true` if the snap-to-default-button feature is enabled; otherwise, false.
       /// @remarks The is_snap_to_default_enabled property indicates whether the snap-to-default-button feature is enabled. If the feature is enabled, the mouse cursor automatically moves to the default button, such as OK or Apply, of a dialog box.
       static bool is_snap_to_default_enabled();
       
       /// @brief Gets a value indicating whether the gradient effect for window title bars is enabled.
-      /// @return true if the gradient effect for window title bars is enabled; otherwise, false.
+      /// @return `true` if the gradient effect for window title bars is enabled; otherwise, false.
       /// @remarks The is_title_bar_gradient_enabled property indicates whether the background of window title bars are drawn using a gradient fill effect.
       /// @note This property is supported only on Windows 98, Windows Millennium Edition, Windows 2000, Windows XP, and the Windows Server 2003 family.
       static bool is_title_bar_gradient_enabled();
       
       /// @brief Gets a value indicating whether tool_tip animation is enabled.
-      /// @return true if tool_tip animation is enabled; otherwise, false.
+      /// @return `true` if tool_tip animation is enabled; otherwise, false.
       /// @remarks The is_tool_tip_animation_enabled property indicates whether tool_tips can fade or slide into view.
       /// @note This property is supported only on Windows 2000, Windows XP, and the Windows Server 2003 family. On other platforms, this property returns false.
       static bool is_tool_tip_animation_enabled();
@@ -310,7 +310,7 @@ namespace xtd {
       static xtd::drawing::size max_window_track_size();
       
       /// @brief Gets a value indicating whether menu access keys are always underlined.
-      /// @return true if menu access keys are always underlined; false if they are underlined only when the menu is activated or receives focus.
+      /// @return `true` if menu access keys are always underlined; false if they are underlined only when the menu is activated or receives focus.
       /// @remarks The menu_access_keys_underlined property indicates whether the menu shortcut keys are underlined in menu text even when the menu has not been activated or received focus.
       static bool menu_access_keys_underlined();
       
@@ -345,7 +345,7 @@ namespace xtd {
       static int32 menu_show_delay();
       
       /// @brief Gets a value indicating whether the operating system is enabled for the Hebrew and Arabic languages.
-      /// @return true if the operating system is enabled for Hebrew or Arabic; otherwise, false.
+      /// @return `true` if the operating system is enabled for Hebrew or Arabic; otherwise, false.
       /// @remarks The mid_east_enabled property indicates whether the operating system is enabled for the Hebrew and Arabic languages.
       static bool mid_east_enabled();
       
@@ -379,7 +379,7 @@ namespace xtd {
       static int32 monitor_count();
       
       /// @brief Gets a value indicating whether all the display monitors are using the same pixel color format.
-      /// @return true if all monitors are using the same pixel color format; otherwise, false.
+      /// @return `true` if all monitors are using the same pixel color format; otherwise, false.
       /// @remarks The monitors_same_display_format indicates whether all monitors currently recognized by the operating system are using the same pixel color format.
       /// @remarks Pixel formats define the data structure used to encode pixel color and luminosity information. The pixel_format enumeration indicates a set of standard pixel color formats. Pixel values can be encoded in a variety of formats, with differing color value ranges and bit precisions, and differing positions of bits in a pixel data format structure.
       /// @note Two displays can have the same bit depth but different color formats.
@@ -393,7 +393,7 @@ namespace xtd {
       static int32 mouse_buttons();
       
       /// @brief Gets a value indicating whether the functions of the left and right mouse buttons have been swapped.
-      /// @return true if the functions of the left and right mouse buttons are swapped; otherwise, false.
+      /// @return `true` if the functions of the left and right mouse buttons are swapped; otherwise, false.
       static bool mouse_buttons_swapped();
       
       /// @brief Gets the dimensions, in pixels, of the rectangle within which the mouse pointer has to stay for the mouse hover time before a mouse hover message is generated.
@@ -409,7 +409,7 @@ namespace xtd {
       static int32 mouse_hover_time();
       
       /// @brief Gets a value indicating whether the functions of the left and right mouse buttons have been swapped.
-      /// @return true if a mouse is installed; otherwise, false.
+      /// @return `true` if a mouse is installed; otherwise, false.
       /// @remarks The mouse_present property indicates whether a pointing device is present or installed on the system. This is usually the case, so mouse_present almost always returns true.
       static bool mouse_present();
       
@@ -419,7 +419,7 @@ namespace xtd {
       static int32 mouse_speed();
       
       /// @brief Gets a value indicating whether a mouse with a mouse wheel is installed.
-      /// @return true if a mouse with a mouse wheel is installed; otherwise, false.
+      /// @return `true` if a mouse with a mouse wheel is installed; otherwise, false.
       /// @remarks The Mouse_wheel_present property indicates whether the system recognizes a mouse wheel on an installed mouse.
       /// @note This property is equivalent to native_mouse_wheel_support.
       static bool Mouse_wheel_present();
@@ -436,19 +436,19 @@ namespace xtd {
       static int32 mouse_wheel_scroll_lines();
       
       /// @brief Gets a value indicating whether a mouse with a mouse wheel is installed.
-      /// @return true if a mouse with a mouse wheel is installed; otherwise, false.
+      /// @return `true` if a mouse with a mouse wheel is installed; otherwise, false.
       /// @remarks The native_mouse_wheel_support property indicates whether the system recognizes a mouse wheel on an installed mouse.
       /// @note This property is equivalent to mouse_wheel_present.
       static bool native_mouse_wheel_support();
       
       /// @brief Gets a value indicating whether a network connection is present.
-      /// @return true if a network connection is present; otherwise, false.
+      /// @return `true` if a network connection is present; otherwise, false.
       /// @remarks The network property indicates whether the system has a currently established network connection.
       /// @note This property always returns true on all platforms.
       static bool network();
       
       /// @brief Gets a value indicating whether the Microsoft Windows for Pen Computing extensions are installed.
-      /// @return true if the Windows for Pen Computing extensions are installed; false if Windows for Pen Computing extensions are not installed.
+      /// @return `true` if the Windows for Pen Computing extensions are installed; false if Windows for Pen Computing extensions are not installed.
       /// @remarks The xtd::forms::system_information::pen_windows property indicates whether the Microsoft Windows for Pen Computing extensions are installed.
       static bool pen_windows();
       
@@ -470,7 +470,7 @@ namespace xtd {
       static xtd::drawing::size primary_monitor_size();
       
       /// @brief Gets a value indicating whether drop-down menus are right-aligned with the corresponding menu-bar item.
-      /// @return true if drop-down menus are right-aligned with the corresponding menu-bar item; false if the menus are left-aligned.
+      /// @return `true` if drop-down menus are right-aligned with the corresponding menu-bar item; false if the menus are left-aligned.
       static bool right_aligned_menus();
       
       /// @brief Gets the orientation of the screen.
@@ -478,12 +478,12 @@ namespace xtd {
       static xtd::forms::screen_orientation screen_orientation();
       
       /// @brief Gets a value indicating whether a Security Manager is present on this operating system.
-      /// @return true if a Security Manager is present; otherwise, false.
+      /// @return `true` if a Security Manager is present; otherwise, false.
       /// @remarks The xtd::forms::system_information::secure property indicates whether a Security Manager is available from the operating system. A Security Manager determines access to the registry and file system.
       static bool secure();
       
       /// @brief Gets a value indicating whether the user prefers that an application present information in visual form in situations when it would present the information in audible form.
-      /// @return true if the application should visually show information about audible output; false if the application does not need to provide extra visual cues for audio events.
+      /// @return `true` if the application should visually show information about audible output; false if the application does not need to provide extra visual cues for audio events.
       /// @remarks The xtd::forms::system_information::show_sounds property indicates whether a user preference has been set that indicates the user prefers visual information displays for audio events.
       /// @remarks You can use this property to provide accessibility mode features to an application.
       static bool show_sounds();
@@ -503,7 +503,7 @@ namespace xtd {
       static xtd::drawing::size small_icon_size();
       
       /// @brief Gets a value indicating whether the calling process is associated with a Terminal Services client session.
-      /// @return true if the calling process is associated with a Terminal Services client session; otherwise, false.
+      /// @return `true` if the calling process is associated with a Terminal Services client session; otherwise, false.
       /// @remarks The xtd::forms::system_information::terminal_server_session property indicates whether the calling process is associated with a Terminal Services client session.
       static bool terminal_server_session();
       
@@ -517,7 +517,7 @@ namespace xtd {
       static int32 tool_window_caption_height();
       
       /// @brief Gets a value indicating whether user interface (UI) effects are enabled or disabled.
-      /// @return true if UI effects are enabled; otherwise, false.
+      /// @return `true` if UI effects are enabled; otherwise, false.
       /// @remarks UI effects include animation, fading, hot tracking, and smooth scrolling of system controls, and drawing a shadow under the mouse cursor. When UI effects are disabled, these features are disabled. When UI effects are enabled, only the effects configured as active for the current user are enabled.
       /// @remarks The following table lists properties that indicate whether particular UI effects are enabled, if the value of this property is true:
       /// | Name                                                                 | Description                                                                                             |
@@ -538,7 +538,7 @@ namespace xtd {
       static xtd::string user_domain_name();
       
       /// @brief Gets a value indicating whether the current process is running in user-interactive mode.
-      /// @return true if the current process is running in user-interactive mode; otherwise, false.
+      /// @return `true` if the current process is running in user-interactive mode; otherwise, false.
       /// @remarks When the xtd::forms::system_information::user_interactive property is false, do not display any modal dialogs or message boxes, as there is no graphical user interface for the user to interact with.
       /// @remarks This property is false only when called from a service process or from a Web application.
       static bool user_interactive();

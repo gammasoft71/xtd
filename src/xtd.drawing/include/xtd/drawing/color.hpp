@@ -563,7 +563,7 @@ namespace xtd {
       intptr handle() const noexcept;
       
       /// @brief Gets a value indicating wheter this xtd::drawing::color structure is dark color.
-      /// @remarks return true if dark color; otherwise false.
+      /// @remarks return true if dark color; otherwise `false`.
       bool is_dark() const noexcept;
       
       /// @brief Specifies whether this xtd::drawing::color class is uninitialized.
@@ -576,7 +576,7 @@ namespace xtd {
       bool is_known_color() const noexcept;
       
       /// @brief Gets a value indicating wheter this xtd::drawing::color structure is light color.
-      /// @remarks return true if light color; otherwise false.
+      /// @remarks return true if light color; otherwise `false`.
       bool is_light() const noexcept;
       
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a named color or a member of the xtd::drawing::known_color enumeration.

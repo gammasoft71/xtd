@@ -56,7 +56,7 @@ namespace xtd {
     
     /// @{
     /// @brief Gets a value indicating whether the xtd::console::out will flush its buffer to the underlying stream after every call to xtd::console::write and xtd::console::write_line.
-    /// @return true to force xtd::console::out to flush its buffer; otherwise, false. The default value is true.
+    /// @return `true` to force xtd::console::out to flush its buffer; otherwise, false. The default value is true.
     static bool auto_flush_out();
     /// @brief Sets a value indicating whether the xtd::console::out will flush its buffer to the underlying stream after every call to xtd::console::write and xtd::console::write_line.
     /// @param value true to force xtd::console::out to flush its buffer; otherwise, false. The default value is true.
@@ -107,7 +107,7 @@ namespace xtd {
     static void buffer_width(int32 width);
     
     /// @brief Gets a value indicating whether the CAPS LOCK keyboard toggle is turned on or turned off.
-    /// @return true if CAPS LOCK is turned on; false if CAPS LOCK is turned off.
+    /// @return `true` if CAPS LOCK is turned on; false if CAPS LOCK is turned off.
     static bool caps_lock();
     
     /// @brief Gets the column position of the cursor within the buffer area.
@@ -146,7 +146,7 @@ namespace xtd {
     static int32 cursor_top();
     /// @brief Sets the row position of the cursor within the buffer area.
     /// @param top The current position, in rows, of the cursor.
-    /// @return true if cursor top changed; otherwise false.
+    /// @return `true` if cursor top changed; otherwise `false`.
     /// @exception xtd::argument_out_of_range_exception The value in a set operation is less than zero <br>-or-<br> The value in a set operation is greater than or equal to xtd::console::buffer_height.
     /// @par Examples
     /// This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings.
@@ -154,7 +154,7 @@ namespace xtd {
     static void cursor_top(int32 top);
     
     /// @brief Gets a value indicating whether the cursor is visible.
-    /// @return true if the cursor is visible; otherwise, false.
+    /// @return `true` if the cursor is visible; otherwise, false.
     /// @par Examples
     /// This example demonstrates the cursor_visible property. The example makes the cursor visible if the first column of input is a '+' character or invisible if the input is a '-' character.
     /// @include console_cursor_visible.cpp
@@ -224,7 +224,7 @@ namespace xtd {
     static bool is_output_redirected();
     
     /// @brief Gets a value indicating whether a key press is available in the input stream.
-    /// @return true if a key press is available; otherwise, false.
+    /// @return `true` if a key press is available; otherwise, false.
     /// @remarks The key_available method is returned immediately; that is, the key_available method does not block input until a key press is available.
     /// @remarks Use the key_available method in conjunction with only the read_key method, not the read or read_line methods
     static bool key_available();
@@ -281,7 +281,7 @@ namespace xtd {
     static void title(const xtd::string& title);
     
     /// @brief Gets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.
-    /// @return true if Ctrl+C is treated as ordinary input; otherwise, false.
+    /// @return `true` if Ctrl+C is treated as ordinary input; otherwise, false.
     /// @remarks If the value of the treat_control_c_as_input property is false and Ctrl+C is pressed, the pressed keys are not stored in the input buffer and the operating system terminates the currently executing process. This is the default value.
     /// @warning Use this property judiciously because setting it to true has such a dramatic effect. Most users expect Ctrl+C to terminate a console application. If you disable the effect of Ctrl+C, the user must remember to use Ctrl+Break to terminate the application, which is a less familiar key combination.
     static bool treat_control_c_as_input();

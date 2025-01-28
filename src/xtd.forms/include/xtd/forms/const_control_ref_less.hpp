@@ -26,7 +26,7 @@ namespace xtd {
       /// @brief Compare two specified const_control_ref.
       /// @param value1 The first value to compare.
       /// @param value2 The second value to compare.
-      /// @return true if value1 < value2; otherwise false.
+      /// @return `true` if value1 < value2; otherwise `false`.
       bool operator()(const const_control_ref& value1, const const_control_ref& value2) const {
         return &value1.get() < &value2.get();
       }

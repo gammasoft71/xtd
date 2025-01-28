@@ -37,12 +37,12 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the component can raise an event.
-      /// @return true if the component can raise events; otherwise, false. The default is true.
+      /// @return `true` if the component can raise events; otherwise, false. The default is true.
       /// @remarks The default implementation of this property always returns true. Classes that inherit from the Component class should override this property to provide the ability to disable the raising of events.
       virtual bool can_raise_events() const noexcept;
       
       /// @brief Gets a value that indicates whether the component is currently in design mode.
-      /// @return true if the component is in design mode; otherwise, false.
+      /// @return `true` if the component is in design mode; otherwise, false.
       bool design_mode() const noexcept;
       /// @}
       

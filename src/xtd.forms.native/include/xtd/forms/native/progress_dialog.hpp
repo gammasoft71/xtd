@@ -43,7 +43,7 @@ namespace xtd {
         /// @{
         /// @brief Gets whether user has clicked on cancel button.
         /// @param dialog Progress dialog window handle.
-        /// @return true if user has clicked on cancel button; otherwise false.
+        /// @return `true` if user has clicked on cancel button; otherwise `false`.
         /// @warning Internal use only
         static bool cancelled(intptr dialog);
         /// @brief Creates progress dialog.
@@ -70,7 +70,7 @@ namespace xtd {
         static void informations(intptr dialog, const std::vector<xtd::string>& informations);
         /// @brief Gets a value that Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
         /// @param dialog Progress dialog window handle.
-        /// @param marquee tree is marquee; otherwise false. The default is false.
+        /// @param marquee tree is marquee; otherwise `false`. The default is false.
         /// @warning Internal use only
         static void marquee(intptr dialog, bool marquee, size_t animation_speed);
         /// @brief Sets the maximum value of the range of the control.
@@ -102,7 +102,7 @@ namespace xtd {
         static void show_sheet(intptr dialog);
         /// @brief Gets whether user has clicked on skip button.
         /// @param dialog Progress dialog window handle.
-        /// @return true if user has clicked on skip button; otherwise false.
+        /// @return `true` if user has clicked on skip button; otherwise `false`.
         /// @warning Internal use only
         static bool skipped(intptr dialog);
         /// @brief Sets the current position of the progress bar.

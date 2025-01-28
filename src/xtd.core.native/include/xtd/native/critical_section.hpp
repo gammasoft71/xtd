@@ -51,12 +51,12 @@ namespace xtd {
       
       /// @brief Wait critical section with specified critical section handle.
       /// @param handle The critical section handle to wait.
-      /// @return true if succeed; otherwhise false.
+      /// @return `true` if succeed; otherwise `false`.
       static void enter(intmax_t handle);
 
       /// @brief Attempts to enter critical section with specified critical section handle.
       /// @param handle The critical section handle to wait.
-      /// @return true if succeed; otherwhise false.
+      /// @return `true` if succeed; otherwise `false`.
       static bool try_enter(intmax_t handle);
 
       /// @brief Release`critical section with specified critical section handle.

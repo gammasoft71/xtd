@@ -82,7 +82,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a boolean indicating whether the xtd::timers::timer should raise the xtd::timers::timer::elapsed event only once (false) or repeatedly (true).
-      /// @return true if the xtd::timers::timer should raise the xtd::timers::timer::elapsed event each time the interval elapses; false if it should raise the xtd::timers::timer::elapsed event only once, after the first time the interval elapses. The default is true.
+      /// @return `true` if the xtd::timers::timer should raise the xtd::timers::timer::elapsed event each time the interval elapses; false if it should raise the xtd::timers::timer::elapsed event only once, after the first time the interval elapses. The default is true.
       /// @remarks If the xtd::timers::timer is already enabled when the xtd::timers::timer::start method is called, the interval is reset. If xtd::timers::timer::auto_reset is false, the xtd::timers::timer::start method must be called in order to start the count again.
       /// @remarks Resetting the interval affects when the xtd::timers::timer::elapsed event is raised. For example, if you set the interval to 5 seconds and then set the xtd::timers::timer::enabled property to true, the count starts at the time xtd::timers::timer::enabled is set. If you reset the interval to 10 seconds when the count is 3 seconds, the xtd::timers::timer::elapsed event is raised for the first time 13 seconds after the xtd::timers::timer::enabled property was set to true.
       bool auto_reset() const noexcept;
@@ -93,7 +93,7 @@ namespace xtd {
       timer& auto_reset(bool value);
 
       /// @brief Gets a value indicating whether the xtd::timers::timer should raise the xtd::timers::timer::elapsed event.
-      /// @return true if the xtd::timers::timer should raise the xtd::timers::timer::elapsed event; otherwise, false. The default is false.
+      /// @return `true` if the xtd::timers::timer should raise the xtd::timers::timer::elapsed event; otherwise, false. The default is false.
       /// @exception xtd::object_closed_exception This property cannot be set because the timer has been closed.
       /// @exception xtd::argument_exception The xtd::timers::timer::interval property was set to a value greater than xtd::int32_object::max_value before the timer was enabled.
       /// @remarks Setting xtd::timers::timer::enabled to true is the same as calling xtd::timers::timer::start, while setting xtd::timers::timer::enabled to false is the same as calling xtd::timers::timer::stop.

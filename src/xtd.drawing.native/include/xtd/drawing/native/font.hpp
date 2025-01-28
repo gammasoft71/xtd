@@ -38,10 +38,10 @@ namespace xtd {
         /// @brief Creates font.
         /// @param family_name A string representation of the font family for the new font.
         /// @param em_size The em-size of the new font in pixels.
-        /// @param bold true if font is bold; otherwise false.
-        /// @param italic true if font is italic; otherwise false.
-        /// @param underline true if font is underline; otherwise false.
-        /// @param strikeout true if font is strikeout; otherwise false.
+        /// @param bold true if font is bold; otherwise `false`.
+        /// @param italic true if font is italic; otherwise `false`.
+        /// @param underline true if font is underline; otherwise `false`.
+        /// @param strikeout true if font is strikeout; otherwise `false`.
         /// @param gdi_char_set A byte that specifies a GDI character set to use for this font.
         /// @param gdi_vertical_font A boolean value indicating whether the new xtd::drawing::font is derived from a GDI vertical font.
         /// @return The created font handle.
@@ -74,12 +74,12 @@ namespace xtd {
         /// @param font The font handle to retrieve informations.
         /// @param name The font name.
         /// @param em_size The font em-size.
-        /// @param bold True is the font is bold; otherwise false.
-        /// @param italic True is the font is italic; otherwise false.
-        /// @param underline True is the font is underline; otherwise false.
-        /// @param strikeout True is the font is strikeout; otherwise false.
+        /// @param bold True is the font is bold; otherwise `false`.
+        /// @param italic True is the font is italic; otherwise `false`.
+        /// @param underline True is the font is underline; otherwise `false`.
+        /// @param strikeout True is the font is strikeout; otherwise `false`.
         /// @param gdi_char_set The GDI character set.
-        /// @param gdi_vertical_font True is the font is GDI vertical font; otherwise false.
+        /// @param gdi_vertical_font True is the font is GDI vertical font; otherwise `false`.
         /// | Character set | Value |
         /// | ------------- | ----- |
         /// | ANSI          | 0     |

@@ -149,7 +149,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether this xtd::drawing::point is empty.
-      /// @return true if both xtd::drawing::point::x and xtd::drawing::point::y are 0; otherwise, false.
+      /// @return `true` if both xtd::drawing::point::x and xtd::drawing::point::y are 0; otherwise, false.
       bool is_empty() const noexcept;
       
       /// @brief Gets the x-coordinate of this xtd::drawing::point.

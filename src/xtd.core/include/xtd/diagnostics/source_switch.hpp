@@ -62,7 +62,7 @@ namespace xtd {
       /// @{
       /// @brief Determines if trace listeners should be called, based on the trace event type.
       /// @param event_type One of the trace_event_type values.
-      /// @return true if the trace listeners should be called; otherwise, false.
+      /// @return `true` if the trace listeners should be called; otherwise, false.
       /// @remarks This method is called by the trace methods in the trace_source class to determine whether listeners should be called to write a trace.
       /// @note Application code should not call this method; it is intended to be called only by methods in the trace_source class.
       bool should_trace(xtd::diagnostics::trace_event_type event_type) noexcept;

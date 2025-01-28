@@ -42,7 +42,7 @@ namespace xtd {
         /// @{
         /// @brief Checked menu item.
         /// @param menu_item Menu item handle.
-        /// @param checked true if menu item is checked; otherwise false.
+        /// @param checked true if menu item is checked; otherwise `false`.
         /// @warning Internal use only
         static void checked(intptr menu_item, bool checked);
         /// @brief Creates menu item with specified menu.
@@ -60,7 +60,7 @@ namespace xtd {
         static void destroy(intptr menu_item);
         /// @brief Enabled menu item.
         /// @param menu_item Menu item handle.
-        /// @param enabled true if menu item is enabled; otherwise false.
+        /// @param enabled true if menu item is enabled; otherwise `false`.
         /// @warning Internal use only
         static void enabled(intptr menu_item, bool enabled);
         /// @brief Gets menu id.

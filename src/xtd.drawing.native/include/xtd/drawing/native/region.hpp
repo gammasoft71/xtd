@@ -101,25 +101,25 @@ namespace xtd {
         
         /// @brief Tests whether the region has an empty interior.
         /// @param handle The region handle.
-        /// @return true if the interior of the region is empty; otherwise, false.
+        /// @return `true` if the interior of the region is empty; otherwise, false.
         /// @warning Internal use only
         static bool is_empty(intptr handle);
         /// @brief Tests whether the region has an empty interior on the specified drawing surface.
         /// @param handle The region handle.
         /// @param graphics A graphics handle that represents a drawing surface.
-        /// @return true if the interior of the region is empty when the transformation associated with graphics is applied; otherwise, false.
+        /// @return `true` if the interior of the region is empty when the transformation associated with graphics is applied; otherwise, false.
         /// @warning Internal use only
         static bool is_empty(intptr handle, intptr grpahics);
         
         /// @brief Tests whether the region has an infinite interior.
         /// @param handle The region handle.
-        /// @return true if the interior of the region is infinite; otherwise, false.
+        /// @return `true` if the interior of the region is infinite; otherwise, false.
         /// @warning Internal use only
         static bool is_infinite(intptr handle);
         /// @brief Tests whether the region has an infinite interior on the specified drawing surface.
         /// @param handle The region handle.
         /// @param graphics A graphics handle that represents a drawing surface.
-        /// @return true if the interior of the region is infinite when the transformation associated with graphics is applied; otherwise, false.
+        /// @return `true` if the interior of the region is infinite when the transformation associated with graphics is applied; otherwise, false.
         /// @warning Internal use only
         static bool is_infinite(intptr handle, intptr grpahics);
         
@@ -127,7 +127,7 @@ namespace xtd {
         /// @param handle The region handle.
         /// @param x The x-coordinate of the point to test.
         /// @param y The y-coordinate of the point to test.
-        /// @return true when the specified point is contained within the region; otherwise, false.
+        /// @return `true` when the specified point is contained within the region; otherwise, false.
         /// @warning Internal use only
         static bool is_visible(intptr handle, float x, float y);
         /// @brief Tests whether the specified point is contained within the region when drawn using the specified graphics.
@@ -135,7 +135,7 @@ namespace xtd {
         /// @param x The x-coordinate of the point to test.
         /// @param y The y-coordinate of the point to test.
         /// @param graphics The graphics handle that represents a draing surface.
-        /// @return true when the specified point is contained within the region; otherwise, false.
+        /// @return `true` when the specified point is contained within the region; otherwise, false.
         /// @warning Internal use only
         static bool is_visible(intptr handle, float x, float y, intptr grpahics);
         /// @brief Tests whether any portion of the specified rectangle is contained within the region.
@@ -144,7 +144,7 @@ namespace xtd {
         /// @param y The y-coordinate of the upper-left corner of the rectangle to test.
         /// @param width The width of the rectangle to test.
         /// @param height The height of the rectangle to test.
-        /// @return true when any portion of the specified rectangle is contained within the region; otherwise, false.
+        /// @return `true` when any portion of the specified rectangle is contained within the region; otherwise, false.
         /// @warning Internal use only
         static bool is_visible(intptr handle, float x, float y, float width, float height);
         /// @brief Tests whether any portion of the specified rectangle is contained within this xtd::drawing::region when drawn using the specified xtd::drawing::graphics.
@@ -154,7 +154,7 @@ namespace xtd {
         /// @param width The width of the rectangle to test.
         /// @param height The height of the rectangle to test.
         /// @param graphics A graphics handle that represents a graphics context.
-        /// @return true when any portion of the specified rectangle is contained within the region; otherwise, false.
+        /// @return `true` when any portion of the specified rectangle is contained within the region; otherwise, false.
         /// @warning Internal use only
         static bool is_visible(intptr handle, float x, float y, float width, float height, intptr grpahics);
         

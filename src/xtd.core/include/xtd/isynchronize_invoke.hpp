@@ -29,7 +29,7 @@ namespace xtd {
     
     /// @{
     /// @brief Gets a value indicating whether the caller must call Invoke(Delegate, Object[]) when calling an object that implements this interface.
-    /// @return true if the caller must call xtd::isynchronize_invoke::invoke; otherwise, false.
+    /// @return `true` if the caller must call xtd::isynchronize_invoke::invoke; otherwise, false.
     /// @remarks This property determines whether the caller must call xtd::isynchronize_invoke::invoke when making method calls to an object that implements this interface. Such objects are bound to a specific thread and are not thread-safe. If you are calling a method from a different thread, you must use the xtd::isynchronize_invoke::invoke method to marshal the call to the proper thread.
     virtual bool invoke_required() const noexcept = 0;
     /// @}

@@ -153,7 +153,7 @@ namespace xtd {
         /// @{
         /// @brief Determines whether an element is in the xtd::collections::object_model::read_only_collection <type_t>.
         /// @param item The object to locate in the xtd::collections::object_model::read_only_collection <type_t>. The value can be null for reference types.
-        /// @return true if value is found in the xtd::collections::object_model::read_only_collection <type_t>; otherwise, false.
+        /// @return `true` if value is found in the xtd::collections::object_model::read_only_collection <type_t>; otherwise, false.
         /// @par Examples
         /// The following code example demonstrates several members of the xtd::collections::object_model::read_only_collection <type_t> class. The code example creates a xtd::collections::generic::list <type_t> of strings and adds four dinosaur names to it. The code example then wraps the list in a xtd::collections::object_model::read_only_collection <type_t>.
         ///

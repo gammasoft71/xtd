@@ -104,7 +104,7 @@ namespace xtd {
       virtual bool can_write() const noexcept = 0;
 
       /// @brief Indicates if the stream is closed
-      /// @return true if the stream is closed, false otherwise
+      /// @return `true` if the stream is closed, false otherwise
       virtual bool is_closed() const noexcept;
 
       /// @brief When overridden in a derived class, gets the length in bytes of the stream.

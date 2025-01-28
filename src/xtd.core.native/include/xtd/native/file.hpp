@@ -48,7 +48,7 @@ namespace xtd {
       static int32_t copy(const std::string& source_file, const std::string& target_file);
       /// @brief Check if specified file exist.
       /// @param path The file path to check.
-      /// @return true is file exist; otherwise false.
+      /// @return `true` is file exist; otherwise `false`.
       /// @warning Internal use only
       static bool exists(const std::string& path);
       /// @brief Gets file size of specified path.

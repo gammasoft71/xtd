@@ -58,16 +58,16 @@ namespace xtd {
       
       /// @{
       /// @brief Gets whether the lock is currently held by any thread.
-      /// @return true if the lock is currently held by any thread; otherwise false.
+      /// @return `true` if the lock is currently held by any thread; otherwise `false`.
       bool is_held() const noexcept;
 
       /// @brief Gets whether the lock is held by the current thread.
-      /// @return true if the lock is held by the current thread; otherwise false.
+      /// @return `true` if the lock is held by the current thread; otherwise `false`.
       /// @remarks If the lock was initialized to track owner threads, this will return whether the lock is acquired by the current thread. It is invalid to use this property when the lock was initialized to not track thread ownership.
       bool is_held_by_current_thread() const noexcept;
       
       /// @brief Gets whether thread ownership tracking is enabled for this instance.
-      /// @return true if thread ownership tracking is enabled for this instance; otherwise false.
+      /// @return `true` if thread ownership tracking is enabled for this instance; otherwise `false`.
       bool is_thread_owner_tracking_enabled() const noexcept;
       /// @}
 
