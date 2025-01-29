@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::ienumerator alias.
+/// @brief Contains xtd::collections::enumerator alias.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "generic/enumerator.hpp"
@@ -17,7 +17,7 @@ namespace xtd {
     /// ```
     /// @par Header
     /// ```cpp
-    /// #include <xtd/collections/ienumerator>
+    /// #include <xtd/collections/enumerator>
     /// ```
     /// @par Namespace
     /// xtd::collections
