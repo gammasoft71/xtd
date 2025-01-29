@@ -551,12 +551,20 @@ add_sources(
   include/xtd/collections/any_pair
   include/xtd/collections/array_list.hpp
   include/xtd/collections/array_list
+  include/xtd/collections/comparer.hpp
+  include/xtd/collections/comparer
+  include/xtd/collections/dictionary_entry.hpp
+  include/xtd/collections/dictionary_entry
   include/xtd/collections/enumerator.hpp
   include/xtd/collections/enumerator
   include/xtd/collections/hashtable.hpp
   include/xtd/collections/hashtable
   include/xtd/collections/icollection.hpp
   include/xtd/collections/icollection
+  include/xtd/collections/icomparer.hpp
+  include/xtd/collections/icomparer
+  include/xtd/collections/idictionary.hpp
+  include/xtd/collections/idictionary
   include/xtd/collections/ienumerable.hpp
   include/xtd/collections/ienumerable
   include/xtd/collections/ienumerator.hpp
@@ -567,6 +575,12 @@ add_sources(
   include/xtd/collections/ilist
   include/xtd/collections/key_not_found_exception.hpp
   include/xtd/collections/key_not_found_exception
+  include/xtd/collections/queue.hpp
+  include/xtd/collections/queue
+  include/xtd/collections/sorted_list.hpp
+  include/xtd/collections/sorted_list
+  include/xtd/collections/stack.hpp
+  include/xtd/collections/stack
   include/xtd/collections/vector_list.hpp
   include/xtd/collections/vector_list
   include/xtd/collections/generic/extensions/enumerable.hpp
@@ -613,6 +627,8 @@ add_sources(
   include/xtd/collections/generic/queue
   include/xtd/collections/generic/sorted_dictionary.hpp
   include/xtd/collections/generic/sorted_dictionary
+  include/xtd/collections/generic/sorted_list.hpp
+  include/xtd/collections/generic/sorted_list
   include/xtd/collections/generic/sorted_set.hpp
   include/xtd/collections/generic/sorted_set
   include/xtd/collections/generic/stack.hpp
