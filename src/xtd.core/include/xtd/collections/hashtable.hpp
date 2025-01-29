@@ -1,8 +1,9 @@
 /// @file
-/// @brief Contains xtd::collections::hashtable typedef.
+/// @brief Contains xtd::collections::hashtable alias.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "generic/dictionary.hpp"
+#include "dictionary_entry.hpp"
 #include "../as.hpp"
 #include "../any_object.hpp"
 
@@ -12,7 +13,7 @@ namespace xtd {
   namespace collections {
     /// @brief Represents a collection of key/value pairs that are organized based on the hash code of the key.
     /// ```cpp
-    /// using hashtable = xtd::collections::generic::dictionary<std::any, std::any>
+    /// using hashtable = xtd::collections::generic::dictionary<xtd::any_object, xtd::any_object>
     /// ```
     /// @par Header
     /// ```cpp
