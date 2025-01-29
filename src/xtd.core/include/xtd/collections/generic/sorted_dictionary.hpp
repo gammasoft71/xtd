@@ -16,8 +16,8 @@ namespace xtd {
       /// @brief Represents a collection of key/value pairs that are sorted on the key.
       /// @par Definition
       /// ```cpp
-      /// template<class key_t, class value_t>
-      /// using sorted_dictionary = std::map<key_t, value_t, helpers::comparer<key_t>, helpers::allocator<std::pair<const key_t, value_t>>>;
+      /// template<class key_t, class value_t, class comparer_t = helpers::comparer<key_t>, class allocator_t = helpers::allocator<std::pair<const key_t, value_t>>>
+      /// class sorted_dictionary : public xtd::object, public xtd::collections::generic::idictionary<key_t, value_t>;
       /// ```
       /// @par Header
       /// ```cpp
@@ -33,9 +33,9 @@ namespace xtd {
       /// @par Examples
       /// The following shows how to use xtd::collections::generic::sorted_dictionary.
       /// @include sorted_dictionary.cpp
-      template<class key_t, class value_t>
-      using sorted_dictionary = dictionary<key_t, value_t>;
-      //using sorted_dictionary = std::map<key_t, value_t, helpers::comparer<key_t>, helpers::allocator<std::pair<const key_t, value_t>>>;
+      template<class key_t, class value_t, class comparer_t = helpers::comparer<key_t>, class allocator_t = helpers::allocator<std::pair<const key_t, value_t>>>
+      using sorted_dictionary = dictionary<key_t, value_t, helpers::hasher<key_t>, helpers::equator<key_t>, allocator_t>;
+      //using sorted_dictionary = std::map<key_t, value_t, comparer_t, allocator_t>;
     }
   }
 }
