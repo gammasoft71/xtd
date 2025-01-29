@@ -29,9 +29,9 @@ namespace xtd {
         /// @remarks The xtd::collections::generic::helpers::allocator is alias on [std::allocator](https://en.cppreference.com/w/cpp/memory/allocator).
         /// @remarks A simple alias for the moment, which leaves open the possibility of implementing a specific allocator for xtd if necessary in the future.
         /// @par Examples
-        /// The following example show how to use xtd::collections::generic::helpers::allocator with `std::vector`.
+        /// The following example show how to use xtd::collections::generic::helpers::allocator with `xtd::collection::generic::list`.
         /// ```cpp
-        /// auto values = std::vector<date_time, xtd::collections::generic::helpers::allocator<date_time>> {};
+        /// auto values = xtd::collection::generic::list<date_time, xtd::collections::generic::helpers::allocator<date_time>> {};
         /// values.emplace_back(1971, 1, 5);
         /// ```
         template<class type_t>
