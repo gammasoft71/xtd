@@ -1,10 +1,8 @@
 /// @file
-/// @brief Contains xtd::collections::any_pair typedef.
+/// @brief Contains xtd::collections::any_pair alias.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include "generic/key_value_pair.hpp"
-#include "../any_object.hpp"
-#include <utility>
+#include "dictionary_entry.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -12,7 +10,7 @@ namespace xtd {
   namespace collections {
     /// @brief Implements a xtd::collections::generic::key_value_pair with the key and the value strongly typed to be std::any.
     /// ```cpp
-    /// using any_pair = xxtd::collections::generic::key_value_pair<xtd::any_object, xtd::any_object>;
+    /// using any_pair = xtd::collections::dictionary_entry;
     /// ```
     /// @par Header
     /// ```cpp
@@ -23,6 +21,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core collections
-    using any_pair = xtd::collections::generic::key_value_pair<xtd::any_object, xtd::any_object>;
+    /// @deprecated Replaced by xtd::collections::dictionary_entry - Will be removed in version 0.4.0.
+    using any_pair [[deprecated("Replaced by xtd::collections::dictionary_entry - Will be removed in version 0.4.0.")]] = xtd::collections::dictionary_entry;
   }
 }
