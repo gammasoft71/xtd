@@ -5,6 +5,7 @@
 #include "std.hpp"
 
 #include "collections/array_list.hpp"
+#include "collections/bit_array.hpp"
 #include "collections/comparer.hpp"
 #include "collections/dictionary_entry.hpp"
 #include "collections/enumerator.hpp"
