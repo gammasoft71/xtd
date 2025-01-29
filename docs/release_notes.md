@@ -154,7 +154,7 @@ ________________________________________________________________________________
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - async_callback - References a method to be called when a corresponding asynchronous operation completes.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - background_color - Sets the background color of the console.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - beep - Represent beep output manipulator class.
-* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - bit_converter - Converts base data types to an std::vector of bytes, and an std::vector of bytes to base data types.
+* ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - bit_converter - Converts base data types to an xtd::array of bytes, and an xtd::array of bytes to base data types.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - block_scope - The specified expression is cleared automatically when the scope is ended.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - cdebug - Provides an std::ostream for xtd::diagnostics::debug.
 * ![added](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/releases/status/added.png) [ENHANCEMENT] xtd.core - cnull - Provides a null std::ostream.

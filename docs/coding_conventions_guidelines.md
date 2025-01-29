@@ -218,22 +218,22 @@ public:
   my_control(const my_control&) = default;
   my_control& my_control& operator =(const my_control& my_control);
   
-  const std::string base_name() const {return base_name_;}
+  const xtd::string base_name() const {return base_name_;}
   intptr_t handle() const {return handle_;}
   
   xtd::event<my_control, event_handler<xtd::forms::control>> name_changed;
   
-  std::string to_string() const override {return name_generator();}
+  xtd::string to_string() const override {return name_generator();}
 
 protected:
-  virtual std::string name_generator() const {return base_name_;}
+  virtual xtd::string name_generator() const {return base_name_;}
 
   intptr_t handle_ = 0;
   
 private:
   my_control(intptr_t handle);
 
-  std::string base_name_ = "BaseName";
+  xtd::string base_name_ = "BaseName";
 };
 ```
 
@@ -247,7 +247,7 @@ private:
 ```cpp
 class my_class {
 public:
-  static constexpr int max_value = std::numeric_limits<int>::max();
+  static constexpr int max_value = xtd::int32_object::max_value;
   static const xtd::version min_version;
 };
 ```
@@ -310,9 +310,9 @@ class my_class {
 ```cpp
 /// @brief my_func do something
 /// @param name A string that contains the name.
-/// @remarks The name must be begin by a uppercase; otherwise std::invalid_argument throws.
-/// @exception std::invalid_argument name not started by uppercase.
-void my_func(const std::string& name) {
+/// @remarks The name must be begin by a uppercase; otherwise xtd::argument_exception throws.
+/// @exception xtd::argument_exception name not started by uppercase.
+void my_func(const xtd::string& name) {
 };
 ```
 
@@ -519,8 +519,8 @@ void example() {
 
 ```cpp
 void example() {
-  std::vector<int> array_list {
-    42, 24, 84
+  array_list {
+    "One", 2, 3_min
   };
 }
 ```

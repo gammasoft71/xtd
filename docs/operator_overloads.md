@@ -85,7 +85,7 @@ private:
 
 //...
 
-time_span test::get_max_duration(const std::vector<time_span>& durations) const noexcept {
+time_span test::get_max_duration(const xtd::array<time_span>& durations) const noexcept {
   time_span result;
   for (const auto& duration : durations)
     if (duration > result) result = duration;

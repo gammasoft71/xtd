@@ -138,17 +138,15 @@
 /// The following example defines two arrays, one containing the names of employees and the other containing the hours they worked over a two-week period. The composite format string left-aligns the names in a 20-character field, and right-aligns their hours in a 5-character field. Note that the "N1" standard format string is also used to format the hours with one fractional digit.
 ///
 /// ```cpp
-/// #include <iostream>
-/// #include <vector>
 /// #include <xtd/xtd>
 ///
 /// auto main() -> int {
-///   std::vector names = {"Adam", "Bridgette", "Carla", "Daniel", "Ebenezer", "Francine", "George"};
-///   std::vector hours = {40.0, 6.667, 40.39, 82.0, 40.333, 80.0, 16.75};
+///   xtd::array names = {"Adam", "Bridgette", "Carla", "Daniel", "Ebenezer", "Francine", "George"};
+///   xtd::array hours = {40.0, 6.667, 40.39, 82.0, 40.333, 80.0, 16.75};
 ///
-///   std::cout << xtd::string::format("{0,-20} {1,5}\n", "Name", "Hours") << std::endl;
-///   for (size_t ctr = 0; ctr < names.size(); ctr++)
-///     std::cout << xtd::string::format("{0,-20} {1,5:N1}", names[ctr], hours[ctr]) << std::endl;
+///   xtd::console::out << xtd::string::format("{0,-20} {1,5}\n", "Name", "Hours") << xtd::environment::new_line;
+///   for (xtd::size ctr = 0; ctr < names.size(); ctr++)
+///     xtd::console::out << xtd::string::format("{0,-20} {1,5:N1}", names[ctr], hours[ctr]) << xtd::environment::new_line;
 /// }
 ///
 /// // The example displays the following output:

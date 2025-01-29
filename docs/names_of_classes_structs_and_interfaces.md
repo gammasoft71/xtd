@@ -63,32 +63,46 @@ For example, a parameter constrained to isession might be called session_t.
 
 **✔️ DO** follow the guidelines described in the following table when naming types derived from or implementing certain xtd Framework types.
 
-| Base Type               | Derived/Implementing Type Guideline                                                                |
-| ----------------------- | -------------------------------------------------------------------------------------------------- |
-| xtd::delegate           | **✔️ DO** add the suffix "_event_handler" to names of delegates that are used in events.            |
-| xtd::delegate           | **✔️ DO** add the suffix "_callback" to names of delegates other than those used as event handlers. |
-| xtd::delegate           | **❌ DO NOT** add the suffix "_delegate" to a delegate.                                             |
-| xtd::event_args         | **✔️ DO** add the suffix "_event_args".                                                             |
-| xtd::event_handler      | **✔️ DO** add the suffix "_event_handler".                                                          |
-| enum class              | **❌ DO NOT** add the suffix "_enum" or "_flag".                                                    |
-| xtd::system_exception| **✔️ DO** add the suffix "_exception".                                                              |
-| std::array              | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
-| std::vector             | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
-| std::deque              | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
-| std::forward_list       | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
-| std::list               | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
-| std::set                | **✔️ DO** add the suffix "_dictionary" for associative container.                                  |
-| std::multiset           | **✔️ DO** add the suffix "_dictionary" for associative container.                                  |
-| std::map                | **✔️ DO** add the suffix "_dictionary" for associative container.                                  |
-| std::multimap           | **✔️ DO** add the suffix "_dictionary" for associative container.                                  |
-| std::unordered_set      | **✔️ DO** add the suffix "_dictionary" for unordered associative container.                        |
-| std::unordered_multiset | **✔️ DO** add the suffix "_dictionary" for unordered associative container.                        |
-| std::unordered_map      | **✔️ DO** add the suffix "_dictionary" for unordered associative container.                        |
-| std::unordered_multimap | **✔️ DO** add the suffix "_dictionary" for unordered associative container.                        |
-| std::span               | **✔️ DO** add the suffix "_span".                                                                   |
-| std::istream            | **✔️ DO** add the suffix "_stream".                                                                 |
-| std::ostream            | **✔️ DO** add the suffix "_stream".                                                                 |
-| std::iostream           | **✔️ DO** add the suffix "_stream".                                                                 |
+| Base Type                                    | Derived/Implementing Type Guideline                                                                |
+| -------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| xtd::delegate                                | **✔️ DO** add the suffix "_event_handler" to names of delegates that are used in events.            |
+| xtd::delegate                                | **✔️ DO** add the suffix "_callback" to names of delegates other than those used as event handlers. |
+| xtd::delegate                                | **❌ DO NOT** add the suffix "_delegate" to a delegate.                                             |
+| xtd::event_args                              | **✔️ DO** add the suffix "_event_args".                                                             |
+| xtd::event_handler                           | **✔️ DO** add the suffix "_event_handler".                                                          |
+| enum class                                   | **❌ DO NOT** add the suffix "_enum" or "_flag".                                                    |
+| xtd::exception                               | **✔️ DO** add the suffix "_exception".                                                              |
+| xtd::array                                   | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| xtd::collections::generic::list              | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| xtd::collections::generic::linked_list       | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| xtd::collections::generic::queue             | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| xtd::collections::generic::sorted_list       | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| xtd::collections::generic::stack             | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| std::array                                   | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| std::vector                                  | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| std::deque                                   | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| std::forward_list                            | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| std::list                                    | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| xtd::collections::generic::dictionary        | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| xtd::collections::generic::hash_set          | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| std::set                                     | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
+| std::multiset                                | **✔️ DO** add the suffix "_dictionary" for associative container.                                  |
+| std::map                                     | **✔️ DO** add the suffix "_dictionary" for associative container.                                  |
+| std::multimap                                | **✔️ DO** add the suffix "_dictionary" for associative container.                                  |
+| xtd::collections::generic::sorted_dictionary | **✔️ DO** add the suffix "_dictionary" for unordered associative container.                        |
+| xtd::collections::generic::sorted_set        | **✔️ DO** add the suffix "_dictionary" for unordered associative container.                        |
+| std::unordered_set                           | **✔️ DO** add the suffix "_dictionary" for unordered associative container.                        |
+| std::unordered_multiset                      | **✔️ DO** add the suffix "_dictionary" for unordered associative container.                        |
+| std::unordered_map                           | **✔️ DO** add the suffix "_dictionary" for unordered associative container.                        |
+| std::unordered_multimap                      | **✔️ DO** add the suffix "_dictionary" for unordered associative container.                        |
+| xtd::span                                    | **✔️ DO** add the suffix "_span".                                                                   |
+| std::span                                    | **✔️ DO** add the suffix "_span".                                                                   |
+| xtd::io::stream                              | **✔️ DO** add the suffix "_stream".                                                                 |
+| xtd::io::file_stream                         | **✔️ DO** add the suffix "_stream".                                                                 |
+| xtd::io::memory_stream                       | **✔️ DO** add the suffix "_stream".                                                                 |
+| std::istream                                 | **✔️ DO** add the suffix "_stream".                                                                 |
+| std::ostream                                 | **✔️ DO** add the suffix "_stream".                                                                 |
+| std::iostream                                | **✔️ DO** add the suffix "_stream".                                                                 |
 
 # Naming Enumerations
 
