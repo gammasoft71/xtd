@@ -551,6 +551,8 @@ add_sources(
   include/xtd/collections/any_pair
   include/xtd/collections/array_list.hpp
   include/xtd/collections/array_list
+  include/xtd/collections/bit_array.hpp
+  include/xtd/collections/bit_array
   include/xtd/collections/comparer.hpp
   include/xtd/collections/comparer
   include/xtd/collections/dictionary_entry.hpp
@@ -1167,6 +1169,7 @@ add_sources(
   src/xtd/uri_template_match_exception.cpp
   src/xtd/string.cpp
   src/xtd/version.cpp
+  src/xtd/collections/bit_array.cpp
   src/xtd/collections/key_not_found_exception.cpp
   src/xtd/collections/generic/key_not_found_exception.cpp
   src/xtd/configuration/file_settings.cpp
