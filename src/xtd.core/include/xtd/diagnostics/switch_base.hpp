@@ -3,8 +3,8 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
-#include <map>
-#include <vector>
+#include "../collections/generic/dictionary.hpp"
+#include "../array.hpp"
 #include "../iequatable.hpp"
 #include "../object.hpp"
 #include "../string.hpp"
@@ -45,13 +45,13 @@ namespace xtd {
       /// @{
       /// @brief Gets the custom switch attributes
       /// @return nA StringDictionary containing the case-insensitive custom attributes for the trace switch.
-      const std::map<xtd::string, xtd::string>& attributes() const noexcept;
+      const xtd::collections::generic::dictionary<xtd::string, xtd::string>& attributes() const noexcept;
       /// @brief Gets the custom switch attributes
       /// @return A StringDictionary containing the case-insensitive custom attributes for the trace switch.
-      std::map<xtd::string, xtd::string>& attributes() noexcept;
+      xtd::collections::generic::dictionary<xtd::string, xtd::string>& attributes() noexcept;
       /// @brief Sets the custom switch attributes
       /// @param attributes A StringDictionary containing the case-insensitive custom attributes for the trace switch.
-      void attributes(const std::map<xtd::string, xtd::string>& attributes) noexcept;
+      void attributes(const xtd::collections::generic::dictionary<xtd::string, xtd::string>& attributes) noexcept;
       
       /// @brief Gets a description of the switch
       /// @return The description of the switch. The default value is an empty string ("").
@@ -122,7 +122,7 @@ namespace xtd {
       /// @remarks The default implementation for the get_supported_attributes method returns {} (empty array). If a switch is added in a configuration file and custom attributes are specified that are not included in the string array returned by get_supported_attributes, a configuration_exception is thrown when the switch is loaded.
       /// @par Notes to Inheritors
       /// When inheriting from the switch_base class or a derived class, you can override the get_supported_attributes() method to provide custom attributes for your class.
-      virtual std::vector<xtd::string> get_supported_attributes() const noexcept;
+      virtual xtd::array<xtd::string> get_supported_attributes() const noexcept;
       
       /// @brief Invoked when the switch_setting property is changed.
       virtual void on_switch_setting_changed();
@@ -137,7 +137,7 @@ namespace xtd {
     private:
       xtd::string display_name_;
       xtd::string description_;
-      std::map<xtd::string, xtd::string> attributes_;
+      xtd::collections::generic::dictionary<xtd::string, xtd::string> attributes_;
       int32 switch_setting_ = 0;
       xtd::string value_;
     };

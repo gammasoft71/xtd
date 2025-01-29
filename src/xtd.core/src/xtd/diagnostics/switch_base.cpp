@@ -1,17 +1,18 @@
 #include "../../../include/xtd/diagnostics/switch_base.hpp"
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
 
-const std::map<string, string>& switch_base::attributes() const noexcept {
+const dictionary<string, string>& switch_base::attributes() const noexcept {
   return attributes_;
 }
 
-std::map<string, string>& switch_base::attributes() noexcept {
+dictionary<string, string>& switch_base::attributes() noexcept {
   return attributes_;
 }
 
-void switch_base::attributes(const std::map<string, string>& attributes) noexcept {
+void switch_base::attributes(const dictionary<string, string>& attributes) noexcept {
   attributes_ = attributes;
 }
 
@@ -53,7 +54,7 @@ void switch_base::value(const string& value) {
   on_value_changed();
 }
 
-std::vector<string> switch_base::get_supported_attributes() const noexcept {
+array<string> switch_base::get_supported_attributes() const noexcept {
   return {};
 }
 
