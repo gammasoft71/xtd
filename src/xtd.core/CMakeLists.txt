@@ -599,16 +599,24 @@ add_sources(
   include/xtd/collections/generic/iequality_comparer
   include/xtd/collections/generic/ilist.hpp
   include/xtd/collections/generic/ilist
+  include/xtd/collections/generic/iset.hpp
+  include/xtd/collections/generic/iset
   include/xtd/collections/generic/key_not_found_exception.hpp
   include/xtd/collections/generic/key_not_found_exception
   include/xtd/collections/generic/key_value_pair.hpp
   include/xtd/collections/generic/key_value_pair
+  include/xtd/collections/generic/linked_list.hpp
+  include/xtd/collections/generic/linked_list
   include/xtd/collections/generic/list.hpp
   include/xtd/collections/generic/list
+  include/xtd/collections/generic/queue.hpp
+  include/xtd/collections/generic/queue
   include/xtd/collections/generic/sorted_dictionary.hpp
   include/xtd/collections/generic/sorted_dictionary
   include/xtd/collections/generic/sorted_set.hpp
   include/xtd/collections/generic/sorted_set
+  include/xtd/collections/generic/stack.hpp
+  include/xtd/collections/generic/stack
   include/xtd/collections/generic/helpers/allocator.hpp
   include/xtd/collections/generic/helpers/allocator
   include/xtd/collections/generic/helpers/comparer.hpp
