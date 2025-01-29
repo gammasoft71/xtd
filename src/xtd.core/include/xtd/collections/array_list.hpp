@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::array_list typedef.
+/// @brief Contains xtd::collections::array_list alias.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "generic/list.hpp"
