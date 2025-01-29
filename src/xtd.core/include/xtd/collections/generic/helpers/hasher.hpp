@@ -22,7 +22,7 @@ namespace xtd {
         /// ```
         /// @par Header
         /// ```cpp
-        /// #include <xtd/collections/generic/helpers/hasher
+        /// #include <xtd/collections/generic/helpers/hasher>
         /// ```
         /// @par Namespace
         /// xtd::collections::generic::helpers

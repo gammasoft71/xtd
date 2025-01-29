@@ -21,7 +21,7 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-      /// #include <xtd/collections/sorted_dictionary
+      /// #include <xtd/collections/generic/sorted_dictionary>
       /// ```
       /// @par Namespace
       /// xtd::collections::generic

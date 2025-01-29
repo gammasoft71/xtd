@@ -20,7 +20,7 @@ namespace xtd {
         /// ```
         /// @par Header
         /// ```cpp
-        /// #include <xtd/collections/genric/helpers/wrap_pointer_reverse_iterator
+        /// #include <xtd/collections/genric/helpers/wrap_pointer_reverse_iterator>
         /// ```
         /// @par Namespace
         /// xtd::collections::generic::helpers

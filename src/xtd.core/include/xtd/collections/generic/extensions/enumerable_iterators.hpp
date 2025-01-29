@@ -25,7 +25,7 @@ namespace xtd {
         /// ```
         /// @par Header
         /// ```cpp
-        /// #include <xtd/collections/enumerable_iterators
+        /// #include <xtd/collections/generic/extensions/enumerable_iterators>
         /// ```
         /// @par Namespace
         /// xtd::collections::generic

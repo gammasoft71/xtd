@@ -20,7 +20,7 @@ namespace xtd {
         /// ```
         /// @par Header
         /// ```cpp
-        /// #include <xtd/linq/enumerable
+        /// #include <xtd/linq/generic/extensions/enumerable>
         /// ```
         /// @par Namespace
         /// xtd::linq
