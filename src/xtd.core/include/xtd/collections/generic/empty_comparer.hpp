@@ -19,7 +19,7 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-      /// #include <xtd/collections/generic/empty_comparer
+      /// #include <xtd/collections/generic/empty_comparer>
       /// ```
       /// @par Namespace
       /// xtd::collections::generic

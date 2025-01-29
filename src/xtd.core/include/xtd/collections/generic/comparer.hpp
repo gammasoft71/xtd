@@ -21,7 +21,7 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-      /// #include <xtd/collections/generic/comparer
+      /// #include <xtd/collections/generic/comparer>
       /// ```
       /// @par Namespace
       /// xtd::collections::generic

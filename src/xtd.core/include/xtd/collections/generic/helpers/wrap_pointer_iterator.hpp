@@ -24,7 +24,7 @@ namespace xtd {
         /// ```
         /// @par Header
         /// ```cpp
-        /// #include <xtd/collections/genric/helpers/wrap_pointer_iterator
+        /// #include <xtd/collections/genric/helpers/wrap_pointer_iterator>
         /// ```
         /// @par Namespace
         /// xtd::collections::generic::helpers

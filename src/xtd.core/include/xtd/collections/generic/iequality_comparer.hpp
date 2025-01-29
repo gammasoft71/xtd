@@ -19,7 +19,7 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-      /// #include <xtd/collections/iequality_comparer
+      /// #include <xtd/collections/generic/iequality_comparer>
       /// ```
       /// @par Namespace
       /// xtd::collections::generic

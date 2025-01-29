@@ -19,7 +19,7 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-      /// #include <xtd/collections/ienumarable
+      /// #include <xtd/collections/generic/ienumarable>
       /// ```
       /// @par Namespace
       /// xtd::collections::generic

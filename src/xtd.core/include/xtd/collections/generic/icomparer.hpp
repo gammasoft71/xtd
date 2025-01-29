@@ -19,7 +19,7 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-      /// #include <xtd/collections/generic/icomparer
+      /// #include <xtd/collections/generic/icomparer>
       /// ```
       /// @par Namespace
       /// xtd::collections::generic

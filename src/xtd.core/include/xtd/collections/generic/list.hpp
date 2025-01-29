@@ -37,7 +37,7 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-      /// #include <xtd/collections/generic/list
+      /// #include <xtd/collections/generic/list>
       /// ```
       /// @par Namespace
       /// xtd::collections::generic

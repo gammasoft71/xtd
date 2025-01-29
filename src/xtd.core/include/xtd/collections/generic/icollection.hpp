@@ -23,7 +23,7 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-      /// #include <xtd/collections/icollection
+      /// #include <xtd/collections/generic/icollection>
       /// ```
       /// @par Namespace
       /// xtd::collections::generic

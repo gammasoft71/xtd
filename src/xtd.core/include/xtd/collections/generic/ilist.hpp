@@ -20,7 +20,7 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-      /// #include <xtd/collections/ilist
+      /// #include <xtd/collections/generic/ilist>
       /// ```
       /// @par Namespace
       /// xtd::collections::generic

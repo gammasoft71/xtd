@@ -25,7 +25,7 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-      /// #include <xtd/collections/key_value_pair>
+      /// #include <xtd/collections/generic/key_value_pair>
       /// ```
       /// @par Namespace
       /// xtd::collections::generic
@@ -121,7 +121,7 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-      /// #include <xtd/collections/key_value_pair>
+      /// #include <xtd/collections/generic/key_value_pair>
       /// ```
       /// @par Namespace
       /// xtd::collections::generic

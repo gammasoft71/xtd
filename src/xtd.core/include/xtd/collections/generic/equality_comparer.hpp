@@ -20,7 +20,7 @@ namespace xtd {
       /// ```
       /// @par Header
       /// ```cpp
-      /// #include <xtd/collections/equality_comparer
+      /// #include <xtd/collections/generic/equality_comparer>
       /// ```
       /// @par Namespace
       /// xtd::collections::generic
