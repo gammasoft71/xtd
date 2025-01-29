@@ -10,20 +10,20 @@ To improve performance, it is possible to use either the *Tester-Doer* Pattern o
 
 # Tester-Doer Pattern
 
-Sometimes performance of an exception-throwing member can be improved by breaking the member into two. Let’s look at the at method of the std::vector<type_t> interface.
+Sometimes performance of an exception-throwing member can be improved by breaking the member into two. Let’s look at the at method of the list<type_t> interface.
 
 ```cpp
-std::vector<int> numbers = ...
-auto val = numbers.at(9);
+list<int> numbers = ...
+auto val = numbers[9];
 ```
 
 The method at throws if the collection is size < 10. This can be a performance problem in scenarios where the method call is expected to fail often. One of the ways to mitigate the problem is to test whether the vector size is >= 10 before trying to get a value.
 
 ```cpp
-std::vector<int> numbers = ...
+list<int> numbers = ...
 ...
-if (numbers.size() >= 10) {
-  auto val = numbers.at(9);
+if (numbers.count() >= 10) {
+  auto val = numbers[9];
 }
 ```
 
@@ -42,7 +42,7 @@ struct date_time : public object {
     ...
   }
   
-  static bool try_parse(const string& dateTime, date_time& result) noexcept {
+  static bool try_parse(const string& date_time_str, date_time& result) noexcept {
     ...
   }
 };

@@ -14,7 +14,7 @@ Because methods are the means of taking action, the design guidelines require th
 ​class string : public object {
 public:
   int compare_to(...);
-  std::vectory<string> split(...);
+  xtd::array<string> split(...);
   string trim();
 };
 ```

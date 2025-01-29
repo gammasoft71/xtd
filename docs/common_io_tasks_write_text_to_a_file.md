@@ -28,7 +28,7 @@ class program {
 public:
   static auto main() {
     // Create a string array with the lines of text
-    std::vector<string> lines = { "First line", "Second line", "Third line" };
+    array<string> lines = { "First line", "Second line", "Third line" };
     
     // Set a variable to the Documents path.
     string doc_path = environment::get_folder_path(environment::special_folder::my_documents);
@@ -101,7 +101,7 @@ public:
     file::write_all_text(path::combine(doc_path, "write_file.txt"), text);
     
     // Create a string array with the additional lines of text
-    std::vector<string> lines = { "New line 1", "New line 2" };
+    array<string> lines = { "New line 1", "New line 2" };
     
     // Append new lines of text to the file
     file::append_all_lines(path::combine(doc_path, "write_file.txt"), lines);
