@@ -2,13 +2,15 @@
 /// @brief Contains xtd::collections::key_not_found_exception exception.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+/*
 #if defined(_MSC_VER) && __cplusplus < 202302L
 #  pragma message("Deprecated : Replaced by #include <xtd/collections/generic/key_not_found_exception.hpp> - Will be removed in version 0.4.0.")
 #else
 #  warning "Deprecated : Replaced by #include <xtd/collections/generic/key_not_found_exception.hpp> - Will be removed in version 0.4.0."
 #endif
+ */
 #include "generic/key_not_found_exception.hpp"
-
+ 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
