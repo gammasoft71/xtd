@@ -14,13 +14,13 @@ public:
     
     auto my_ba2 = bit_array(5_z, false);
     
-    auto my_bytes = array<byte> {1, 2, 3, 4, 5};
+    auto my_bytes = array {1_u8, 2_u8, 3_u8, 4_u8, 5_u8};
     auto my_ba3 = bit_array(my_bytes);
     
-    auto my_bools = array<bool> {true, false, true, true, false};
+    auto my_bools = array {true, false, true, true, false};
     auto my_ba4 = bit_array(my_bools);
     
-    auto my_ints  = array<int> {6, 7, 8, 9, 10};
+    auto my_ints  = array {6, 7, 8, 9, 10};
     auto my_ba5 = bit_array(my_ints);
     
     // Displays the properties and values of the bit_arrays.
@@ -57,7 +57,7 @@ public:
     
   template<class object_t>
   static void print_values(const ienumerable<object_t>& my_list, int my_width )  {
-    int i = my_width;
+    auto i = my_width;
     for (auto obj : my_list) {
       if (i <= 0)  {
         i = my_width;
