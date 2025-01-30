@@ -14,8 +14,8 @@
 
 ## [any](any/README.md)
 
-* [any](any/any/README.md) shows how to use [xtd:: any_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1any__object.html) class.
-* [any](any_info/any_info/README.md) shows how to use [xtd:: any_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1any__object.html) class.
+* [any](any/any/README.md) shows how to use [xtd::any_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1any__object.html) class.
+* [any](any_info/any_info/README.md) shows how to use [xtd::any_object](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1any__object.html) class.
 
 ## [Bit converter](bit_converter/README.md)
 
@@ -31,9 +31,10 @@
 
 ## [Collections](collections/README.md)
 
-* [array_list](collections/array_list/README.md) shows how to use [xtd::collections:: array_list](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) alias.
-* [array_list2](collections/array_list2/README.md) shows how to use [xtd::collections:: array_list](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) alias.
-* [hashtable](collections/hashtable/README.md) shows how to use [xtd::collections:: hashtable](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) alias.
+* [array_list](collections/array_list/README.md) shows how to use [xtd::collections::array_list](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) alias.
+* [array_list2](collections/array_list2/README.md) shows how to use [xtd::collections::array_list](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) alias.
+* [bit_array](collections/bit_array/README.md) shows how to use [xtd::collections::bit_array](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1bit__array.html) class.
+* [hashtable](collections/hashtable/README.md) shows how to use [xtd::collections::hashtable](https://gammasoft71.github.io/xtd/reference_guides/latest/group__collections.html#gaf18249e78122f5f0f0f09003cf6abc5c) alias.
 * [ienumerable](collections/ienumerable/README.md) shows how to use [xtd::collections::ienumerable](https://gammasoft71.github.io/xtd/reference_guides/latest/group__interfaces_gad6394329e5e329f3fda6d45017ee1a7c.html#gad6394329e5e329f3fda6d45017ee1a7c) interface.
 * [ienumerator](collections/ienumerator/README.md) shows how to use [xtd::collections::ienumerator](https://gammasoft71.github.io/xtd/reference_guides/latest/group__interfaces_ga1871d17c4798e1f712e5c7f09ff36506.html#ga1871d17c4798e1f712e5c7f09ff36506) interface.
 * [ilist](collections/ilist/README.md) shows how to use [xtd::collections::ilist](https://gammasoft71.github.io/xtd/reference_guides/latest/group__interfaces_gaf2cca35e1002dd44cdfa244b0654d6b4.html#gaf2cca35e1002dd44cdfa244b0654d6b4) interface.
@@ -220,7 +221,7 @@
 
 ## [Interfaces](interfaces/README.md)
 
-* [iasync_result](iasync_result/README.md) shows how to use how to use [xtd:: iasync_result](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iasync__result.html) interface.
+* [iasync_result](iasync_result/README.md) shows how to use how to use [xtd::iasync_result](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iasync__result.html) interface.
 * [iclonable](interfaces/iclonable/README.md) shows how to use how to use [xtd::iformatable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iclonable.html) interface.
 * [icompatable](interfaces/icomparable/README.md) shows how to use how to use [xtd::iformatable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1iequatable.html) interface.
 * [iequaable](iequatable/README.md) shows how to use how to use [xtd::iformatable](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1icomparable.html) interface.
