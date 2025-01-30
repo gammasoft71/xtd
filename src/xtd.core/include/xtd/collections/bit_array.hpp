@@ -21,9 +21,18 @@ namespace xtd {
   /// @brief The xtd::collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
   namespace collections {
     /// @brief Manages a compact array of bit values, which are represented as booleans, where true indicates that the bit is on (1) and false indicates the bit is off (0).
+    /// ```cpp
+    /// class core_export_ bit_array : public xtd::object, public xtd::iequatable<bit_array>, public xtd::collections::generic::icollection<bool>, public xtd::iclonable;
+    /// ```
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/collections/bit_array>
+    /// ```
+    /// @par Namespace
+    /// xtd::collections
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
+    /// @ingroup xtd_core collections
     /// @par Examples
     /// The following code example shows how to create and initialize a xtd::collections::bit_array and how to print out its values.
     /// @include bit_array.cpp
