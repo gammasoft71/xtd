@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: npm
@@ -21,7 +21,7 @@ jobs:
       - name: Build website
         run: npm run build
 
-      - uses: actions/upload-pages-artifact@v1
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: build
 
