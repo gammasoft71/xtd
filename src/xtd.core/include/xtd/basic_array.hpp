@@ -79,9 +79,9 @@ namespace xtd {
     /// @brief Represents the const pointer of array value type.
     using const_pointer = const value_type*;
     /// @brief Represents the iterator of array value type.
-    using iterator = typename xtd::collections::generic::ilist<type_t>::iterator;
+    using iterator = typename xtd::collections::generic::ienumerable<type_t>::iterator;
     /// @brief Represents the const iterator of array value type.
-    using const_iterator = typename xtd::collections::generic::ilist<type_t>::const_iterator;
+    using const_iterator = typename xtd::collections::generic::ienumerable<type_t>::const_iterator;
     /// @brief Represents the reverse iterator of array value type.
     using reverse_iterator = typename base_type::reverse_iterator;
     /// @brief Represents the const reverse iterator of array value type.
