@@ -640,7 +640,7 @@ template&lt;class object_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the current thread holds the lock on obj; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current thread holds the lock on obj; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method works only for locks that are acquired by using the methods of the <a class="el" href="classxtd_1_1threading_1_1monitor.html" title="Provides a mechanism that synchronizes access to objects.">xtd::threading::monitor</a> class, or the <a class="el" href="classxtd_1_1threading_1_1lock__guard.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::monitor.">xtd::threading::lock_guard</a> class, or by using the <a class="el" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a" title="The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion loc...">lock_</a> keyword, which are implemented with <a class="el" href="classxtd_1_1threading_1_1monitor.html" title="Provides a mechanism that synchronizes access to objects.">xtd::threading::monitor</a>. </dd>
 <dd>
 Use this method with diagnostic tools, such as the xtd::diagnostics::debug::assert method, to debug locking issues that involve the <a class="el" href="classxtd_1_1threading_1_1monitor.html" title="Provides a mechanism that synchronizes access to objects.">xtd::threading::monitor</a> class. </dd></dl>
@@ -1203,7 +1203,7 @@ template&lt;class object_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the lock was reacquired before the specified time elapsed; false if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the lock was reacquired before the specified time elapsed; false if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::synchronization_lock_exception</a></td><td><a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> is not invoked from within a synchronized block of code. </td></tr>
@@ -1270,7 +1270,7 @@ template&lt;class object_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the lock was reacquired before the specified time elapsed; false if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the lock was reacquired before the specified time elapsed; false if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::synchronization_lock_exception</a></td><td><a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> is not invoked from within a synchronized block of code. </td></tr>
@@ -1326,7 +1326,7 @@ template&lt;class object_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the call returned because the caller reacquired the lock for the specified object. This method does not return if the lock is not reacquired. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the call returned because the caller reacquired the lock for the specified object. This method does not return if the lock is not reacquired. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::synchronization_lock_exception</a></td><td><a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> is not invoked from within a synchronized block of code. </td></tr>
@@ -1356,7 +1356,7 @@ The remarks for the <a class="el" href="classxtd_1_1threading_1_1monitor.html#a0
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 27 2025 21:59:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 30 2025 20:13:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

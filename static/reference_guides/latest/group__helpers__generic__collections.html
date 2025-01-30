@@ -159,7 +159,7 @@ template&lt;class type_t &gt; </div>
 The <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af" title="Represent an allocator alias.">xtd::collections::generic::helpers::allocator</a> is alias on <a href="https://en.cppreference.com/w/cpp/memory/allocator">std::allocator</a>. </dd>
 <dd>
 A simple alias for the moment, which leaves open the possibility of implementing a specific allocator for xtd if necessary in the future. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example show how to use <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af" title="Represent an allocator alias.">xtd::collections::generic::helpers::allocator</a> with <code>std::vector</code>. <div class="fragment"><div class="line"><span class="keyword">auto</span> values = std::vector&lt;date_time, xtd::collections::generic::helpers::allocator&lt;date_time&gt;&gt; {};</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example show how to use <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af" title="Represent an allocator alias.">xtd::collections::generic::helpers::allocator</a> with <code>xtd::collection::generic::list</code>. <div class="fragment"><div class="line"><span class="keyword">auto</span> values = xtd::collection::generic::list&lt;date_time, xtd::collections::generic::helpers::allocator&lt;date_time&gt;&gt; {};</div>
 <div class="line">values.emplace_back(1971, 1, 5);</div>
 </div><!-- fragment --> </dd></dl>
 
@@ -282,7 +282,7 @@ template&lt;class value_t , class iterator_tag_t  = std::random_access_iterator_
 <div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__helpers__generic__collections.html#ga3c154f390eaa273d273d437a32f8604f">wrap_pointer_reverse_iterator</a> = std::reverse_iterator&lt;wrap_pointer_iterator&lt;value_t, iterator_tag_t&gt;&gt;;</div>
 <div class="ttc" id="agroup__helpers__generic__collections_html_ga3c154f390eaa273d273d437a32f8604f"><div class="ttname"><a href="group__helpers__generic__collections.html#ga3c154f390eaa273d273d437a32f8604f">xtd::collections::generic::helpers::wrap_pointer_reverse_iterator</a></div><div class="ttdeci">std::reverse_iterator&lt; wrap_pointer_iterator&lt; value_t, iterator_tag_t &gt; &gt; wrap_pointer_reverse_iterator</div><div class="ttdoc">Represents a wrap pointer reverse iterator.</div><div class="ttdef"><b>Definition</b> wrap_pointer_reverse_iterator.hpp:31</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/genric/helpers/wrap_pointer_reverse_iterator</span></div>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/genric/helpers/wrap_pointer_reverse_iterator&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic_1_1helpers.html" title="The xtd::collections::generic::helpers namespace contains helpers for generic collections,...">xtd::collections::generic::helpers</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
@@ -293,7 +293,7 @@ template&lt;class value_t , class iterator_tag_t  = std::random_access_iterator_
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 27 2025 21:58:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 30 2025 20:12:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

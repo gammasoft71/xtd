@@ -87,31 +87,40 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="std_8hpp_source.html">std.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="any__pair_8hpp_source.html">collections/any_pair.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="array__list_8hpp_source.html">collections/array_list.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="bit__array_8hpp_source.html">collections/bit_array.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="comparer_8hpp_source.html">collections/comparer.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="dictionary__entry_8hpp_source.html">collections/dictionary_entry.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="enumerator_8hpp_source.html">collections/enumerator.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="hashtable_8hpp_source.html">collections/hashtable.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="icollection_8hpp_source.html">collections/icollection.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="icomparer_8hpp_source.html">collections/icomparer.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="idictionary_8hpp_source.html">collections/idictionary.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ienumerable_8hpp_source.html">collections/ienumerable.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ienumerator_8hpp_source.html">collections/ienumerator.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="iequality__comparer_8hpp_source.html">collections/iequality_comparer.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ilist_8hpp_source.html">collections/ilist.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="queue_8hpp_source.html">collections/queue.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="sorted__list_8hpp_source.html">collections/sorted_list.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="stack_8hpp_source.html">collections/stack.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="collections_2generic_2extensions_2enumerable_8hpp_source.html">collections/generic/extensions/enumerable.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="enumerable__iterators_8hpp_source.html">collections/generic/extensions/enumerable_iterators.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="allocator_8hpp_source.html">collections/generic/helpers/allocator.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="helpers_2comparer_8hpp_source.html">collections/generic/helpers/comparer.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="generic_2helpers_2comparer_8hpp_source.html">collections/generic/helpers/comparer.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="equator_8hpp_source.html">collections/generic/helpers/equator.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="hasher_8hpp_source.html">collections/generic/helpers/hasher.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="iterator_8hpp_source.html">collections/generic/helpers/iterator.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="wrap__pointer__iterator_8hpp_source.html">collections/generic/helpers/wrap_pointer_iterator.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="wrap__pointer__reverse__iterator_8hpp_source.html">collections/generic/helpers/wrap_pointer_reverse_iterator.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="comparer_8hpp_source.html">collections/generic/comparer.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="generic_2comparer_8hpp_source.html">collections/generic/comparer.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="dictionary_8hpp_source.html">collections/generic/dictionary.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="empty__comparer_8hpp_source.html">collections/generic/empty_comparer.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="generic_2enumerator_8hpp_source.html">collections/generic/enumerator.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="equality__comparer_8hpp_source.html">collections/generic/equality_comparer.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="hash__set_8hpp_source.html">collections/generic/hash_set.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="generic_2icollection_8hpp_source.html">collections/generic/icollection.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="icomparer_8hpp_source.html">collections/generic/icomparer.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="generic_2icomparer_8hpp_source.html">collections/generic/icomparer.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="generic_2idictionary_8hpp_source.html">collections/generic/idictionary.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="generic_2ienumerable_8hpp_source.html">collections/generic/ienumerable.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="generic_2ienumerator_8hpp_source.html">collections/generic/ienumerator.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="generic_2iequality__comparer_8hpp_source.html">collections/generic/iequality_comparer.hpp</a>&quot;</code><br />
@@ -119,8 +128,12 @@ $(function() {
 <code>#include &quot;<a class="el" href="generic_2key__not__found__exception_8hpp_source.html">collections/generic/key_not_found_exception.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="key__value__pair_8hpp_source.html">collections/generic/key_value_pair.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="list_8hpp_source.html">collections/generic/list.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="linked__list_8hpp_source.html">collections/generic/linked_list.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="generic_2queue_8hpp_source.html">collections/generic/queue.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sorted__dictionary_8hpp_source.html">collections/generic/sorted_dictionary.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="generic_2sorted__list_8hpp_source.html">collections/generic/sorted_list.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sorted__set_8hpp_source.html">collections/generic/sorted_set.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="generic_2stack_8hpp_source.html">collections/generic/stack.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="read__only__collection_8hpp_source.html">collections/object_model/read_only_collection.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="string__collection_8hpp_source.html">collections/specialized/string_collection.hpp</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="string__dictionary_8hpp_source.html">collections/specialized/string_dictionary.hpp</a>&quot;</code><br />
@@ -572,7 +585,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 27 2025 21:58:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 30 2025 20:12:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

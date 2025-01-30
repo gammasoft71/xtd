@@ -795,7 +795,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value that indicates whether the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> is in blocking mode. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> will block; otherwise, false. The default is true. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> will block; otherwise, false. The default is true. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a></td><td>An error occurred when attempting to access the socket. </td></tr>
@@ -872,7 +872,7 @@ If you are in blocking mode, and you make a method call which does not complete 
 </div><div class="memdoc">
 
 <p>Gets a value that indicates whether a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> is connected to a remote host as of the last <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a3a24146461be02beb84c2913aa1d8c26" title="Sends data to a connected xtd::net::sockets::socket.">xtd::net::sockets::socket::send</a> or <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#ab56e43e51d047a79329cc5c22613f302" title="Receives data from a bound xtd::net::sockets::socket into a receive buffer.">xtd::net::sockets::socket::receive</a> operation. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> was connected to a remote resource as of the most recent operation; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> was connected to a remote resource as of the most recent operation; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#aec3371c75fd9ca71cf41ca71bd1561a3" title="Gets a value that indicates whether a xtd::net::sockets::socket is connected to a remote host as of t...">xtd::net::sockets::socket::connected</a> property gets the connection state of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> as of the last I/O operation. When it returns false, the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> was either never connected, or is no longer connected. <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#aec3371c75fd9ca71cf41ca71bd1561a3" title="Gets a value that indicates whether a xtd::net::sockets::socket is connected to a remote host as of t...">xtd::net::sockets::socket::connected</a> is not thread-safe; it may return true after an operation is aborted when the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> is disconnected from another thread. </dd>
 <dd>
 The value of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#aec3371c75fd9ca71cf41ca71bd1561a3" title="Gets a value that indicates whether a xtd::net::sockets::socket is connected to a remote host as of t...">xtd::net::sockets::socket::connected</a> property reflects the state of the connection as of the most recent operation. If you need to determine the current state of the connection, make a nonblocking, zero-byte <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a3a24146461be02beb84c2913aa1d8c26" title="Sends data to a connected xtd::net::sockets::socket.">xtd::net::sockets::socket::send</a> call. If the call returns successfully or throws a WAEWOULDBLOCK error code (10035), then the socket is still connected; otherwise, the socket is no longer connected. </dd>
@@ -897,7 +897,7 @@ If you call <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a9be29
 </div><div class="memdoc">
 
 <p>Gets a value that specifies whether the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> allows Internet Protocol (IP) datagrams to be fragmented. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> doesn't allow datagram fragmentation; otherwise, false. The default is true. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> doesn't allow datagram fragmentation; otherwise, false. The default is true. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The socket is not in the <a class="el" href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a1f418e7c6026fdaf0077607eedd4ccaa" title="Address for IP version 4.">xtd::net::sockets::address_family::inter_network</a> family. </td></tr>
@@ -962,7 +962,7 @@ If you call <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a9be29
 </div><div class="memdoc">
 
 <p>Gets a value that specifies whether the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> is a dual-mode socket used for both IPv4 and IPv6. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> is a dual-mode socket; otherwise, false. The default is true if the socket was created by calling the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket(xtd::net::sockets::socket_type, xtd::net::sockets::protocol_type)</a> constructor and the operating system supports IPv6; otherwise, the default is false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> is a dual-mode socket; otherwise, false. The default is true if the socket was created by calling the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket(xtd::net::sockets::socket_type, xtd::net::sockets::protocol_type)</a> constructor and the operating system supports IPv6; otherwise, the default is false. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The socket is not in the <a class="el" href="group__xtd__core.html#gga5c7a488efbbc9c766286c1485399aef3a927e80579d412742c19c0a31fe89369a" title="Address for IP version 6.">xtd::net::sockets::address_family::inter_network_v6</a> family. </td></tr>
@@ -1027,7 +1027,7 @@ If you call <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a9be29
 </div><div class="memdoc">
 
 <p>Gets a boolean value that specifies whether the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> can send or receive broadcast packets. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> allows broadcast packets; otherwise, false. The default is false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> allows broadcast packets; otherwise, false. The default is false. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a></td><td>This option is valid for a datagram socket only. </td></tr>
@@ -1096,7 +1096,7 @@ Setting this property on a Transmission Control Protocol (TCP) socket will have 
 </div><div class="memdoc">
 
 <p>Gets a boolean value that specifies whether the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> allows only one process to bind to a port. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> allows only one socket to bind to a specific port; otherwise, false. The default is true for Windows Server 2003 and Windows XP Service Pack 2, and false for all other versions. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> allows only one socket to bind to a specific port; otherwise, false. The default is true for Windows Server 2003 and Windows XP Service Pack 2, and false for all other versions. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a></td><td>This option is valid for a datagram socket only. </td></tr>
@@ -1208,7 +1208,7 @@ This property must be set before <a class="el" href="classxtd_1_1net_1_1sockets_
 </div><div class="memdoc">
 
 <p>Gets a value that indicates whether the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> is bound to a specific local port. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> is bound to a local port; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> is bound to a local port; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A socket is considered bound to a local port if it is explicitly bound by calling the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a0440f747b3ca6415815e92b700f0b559" title="Associates a xtd::net::sockets::socket with a local endpoint.">xtd::net::sockets::socket::bind</a> method, or implicitly bound by calling members like <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a9be292d3fe3c501d212641d4428a2293" title="Establishes a connection to a remote host.">xtd::net::sockets::socket::connect</a>, <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#af1c48987b4aef874081ef2f14f97a3a3" title="Sends data to the specified endpoint.">xtd::net::sockets::socket::send_to</a>, or <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#aa6866a5753cfbb7fec0e819561d09e7d" title="Receives data from a bound xtd::net::sockets::socket into a receive buffer.">xtd::net::sockets::socket::receive_from</a>, which use an ephemeral local port (a free port greater than 1024, selected by the operating system.) Servers use the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#a0440f747b3ca6415815e92b700f0b559" title="Associates a xtd::net::sockets::socket with a local endpoint.">xtd::net::sockets::socket::bind</a> method to bind to a well-known port so that clients may connect to them. </dd></dl>
 
 </div>
@@ -1367,7 +1367,7 @@ The <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html#ab1bf2688060ef
 </div><div class="memdoc">
 
 <p>Gets a value that specifies whether outgoing multicast packets are delivered to the sending application. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> receives outgoing multicast packets; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> receives outgoing multicast packets; otherwise, false. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a></td><td>This option is valid for a datagram socket only. </td></tr>
@@ -1943,7 +1943,7 @@ Setting this property on a Transmission Control Protocol (TCP) socket is ignored
 </div><div class="memdoc">
 
 <p>Indicates whether the underlying operating system and network adaptors support Internet Protocol version 4 (IPv4). </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the operating system and network adaptors support the IPv4 protocol; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the operating system and network adaptors support the IPv4 protocol; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The operating system may support both IPv4 and IPv6 protocols. </dd></dl>
 
 </div>
@@ -1972,7 +1972,7 @@ Setting this property on a Transmission Control Protocol (TCP) socket is ignored
 </div><div class="memdoc">
 
 <p>Indicates whether the underlying operating system and network adaptors support Internet Protocol version 6 (IPv6). </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the operating system and network adaptors support the IPv6 protocol; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the operating system and network adaptors support the IPv6 protocol; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The operating system may support both IPv4 and IPv6 protocols. </dd></dl>
 
 </div>
@@ -2036,7 +2036,7 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the I/O operation is pending. The Completed event on the e parameter will be raised upon completion of the operation. false if the I/O operation completed synchronously. The Completed event on the e parameter will not be raised and the e object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the I/O operation is pending. The Completed event on the e parameter will be raised upon completion of the operation. false if the I/O operation completed synchronously. The Completed event on the e parameter will not be raised and the e object passed as a parameter may be examined immediately after the method call returns to retrieve the result of the operation. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a></td><td>An error occurred when attempting to access the socket. </td></tr>
@@ -6144,7 +6144,7 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -6219,7 +6219,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -6265,7 +6265,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 27 2025 21:59:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 30 2025 20:13:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

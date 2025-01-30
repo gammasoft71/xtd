@@ -53,7 +53,7 @@ var searchData=
   ['command_5flink_5fbutton_2ehpp_50',['command_link_button.hpp',['../command__link__button_8hpp.html',1,'']]],
   ['command_5flink_5fbuttons_2ehpp_51',['command_link_buttons.hpp',['../command__link__buttons_8hpp.html',1,'']]],
   ['common_5fdialog_2ehpp_52',['common_dialog.hpp',['../common__dialog_8hpp.html',1,'']]],
-  ['comparer_2ehpp_53',['comparer.hpp',['../comparer_8hpp.html',1,'(Global Namespace)'],['../helpers_2comparer_8hpp.html',1,'(Global Namespace)']]],
+  ['comparer_2ehpp_53',['comparer.hpp',['../generic_2comparer_8hpp.html',1,'(Global Namespace)'],['../comparer_8hpp.html',1,'(Global Namespace)'],['../generic_2helpers_2comparer_8hpp.html',1,'(Global Namespace)']]],
   ['comparison_2ehpp_54',['comparison.hpp',['../comparison_8hpp.html',1,'']]],
   ['comparison_5foperators_2ehpp_55',['comparison_operators.hpp',['../comparison__operators_8hpp.html',1,'']]],
   ['compiler_2ehpp_56',['compiler.hpp',['../compiler_8hpp.html',1,'']]],

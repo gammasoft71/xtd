@@ -943,7 +943,7 @@ If the initial state of the event is nonsignaled, threads that wait on the event
 </div><div class="memdoc">
 
 <p>Sets the state of the event to nonsignaled, causing threads to block. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the operation succeeds; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the operation succeeds; otherwise, false. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a177d4ddb89f80c3932de535af29e7c76" title="Releases all resources held by the current xtd::threading::wait_handle.">xtd::threading::wait_handle::close()</a> method was previously called on this <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a>. </td></tr>
@@ -969,7 +969,7 @@ If the initial state of the event is nonsignaled, threads that wait on the event
 </div><div class="memdoc">
 
 <p>Sets the state of the event to signaled, allowing one or more waiting threads to proceed. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the operation succeeds; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the operation succeeds; otherwise, false. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a177d4ddb89f80c3932de535af29e7c76" title="Releases all resources held by the current xtd::threading::wait_handle.">xtd::threading::wait_handle::close()</a> method was previously called on this <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a>. </td></tr>
@@ -1079,7 +1079,7 @@ Multiple calls to this method that use the same value for name do not necessaril
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the named synchronization event was opened successfully; otherwise, false. In some cases, false may be returned for invalid names. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the named synchronization event was opened successfully; otherwise, false. In some cases, false may be returned for invalid names. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>name is an empty string. </td></tr>
@@ -1126,7 +1126,7 @@ Multiple calls to this method that use the same value for name do not necessaril
 </div><div class="memdoc">
 
 <p>Releases ownership of the specified <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>true If the function succeeds, false otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> If the function succeeds, false otherwise. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Override this function for all derived object </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ae3323e1eb8bc5686e88c8eb54d93e2c8">xtd::threading::wait_handle</a>.</p>
@@ -1165,7 +1165,7 @@ Multiple calls to this method that use the same value for name do not necessaril
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the current instance receives a signal; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current instance receives a signal; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If milliseconds_timeout is zero, the method does not block. It tests the state of the wait handle and returns immediately. </dd>
 <dd>
 Override this function for all derived object </dd></dl>
@@ -1205,7 +1205,7 @@ Override this function for all derived object </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1279,7 +1279,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1325,7 +1325,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 27 2025 21:59:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 30 2025 20:13:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -90,10 +90,11 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="allocator_8hpp_source.html">helpers/allocator.hpp</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="helpers_2comparer_8hpp_source.html">helpers/comparer.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="generic_2helpers_2comparer_8hpp_source.html">helpers/comparer.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="iset_8hpp_source.html">iset.hpp</a>&quot;</code><br />
 <code>#include &lt;set&gt;</code><br />
 </div><a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>Contains <a class="el" href="group__generic__collections.html#ga1b6a1fb3e965aaf21f075a1f3b99ec90" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> &lt;value_t&gt; class. </p>
+<div class="textblock"><p>Contains <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> &lt;value_t&gt; class. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 Gammasoft. All rights reserved. </dd></dl>
 </div>
 <p><a href="sorted__set_8hpp_source.html">Go to the source code of this file.</a></p>
@@ -112,16 +113,16 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga1b6a1fb3e965aaf21f075a1f3b99ec90"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
-<tr class="memitem:ga1b6a1fb3e965aaf21f075a1f3b99ec90"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga1b6a1fb3e965aaf21f075a1f3b99ec90">xtd::collections::generic::sorted_set</a> = std::set&lt; type_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html">helpers::comparer</a>&lt; type_t &gt;, <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator</a>&lt; type_t &gt; &gt;</td></tr>
-<tr class="memdesc:ga1b6a1fb3e965aaf21f075a1f3b99ec90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that is maintained in sorted order.  <br /></td></tr>
-<tr class="separator:ga1b6a1fb3e965aaf21f075a1f3b99ec90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa2b86548e24c1469949088a7ad576c69"><td class="memTemplParams" colspan="2">template&lt;class type_t , class comparer_t  = xtd::collections::generic::helpers::comparer&lt;type_t&gt;, class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:gaa2b86548e24c1469949088a7ad576c69"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69">xtd::collections::generic::sorted_set</a> = std::set&lt; type_t, comparer_t, allocator_t &gt;</td></tr>
+<tr class="memdesc:gaa2b86548e24c1469949088a7ad576c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that is maintained in sorted order.  <br /></td></tr>
+<tr class="separator:gaa2b86548e24c1469949088a7ad576c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 27 2025 21:58:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 30 2025 20:12:49 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

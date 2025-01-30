@@ -575,7 +575,7 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
 </div><div class="memdoc">
 
 <p>Gets a value indicating the current thread wiil be joined when destroyed. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if this thread will be joined when destroyed; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this thread will be joined when destroyed; otherwise, false. </dd></dl>
 
 </div>
 </div>
@@ -658,7 +658,7 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
 </div><div class="memdoc">
 
 <p>Gets a value indicating the execution status of the current thread. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if this thread has been started and has not terminated normally or aborted; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this thread has been started and has not terminated normally or aborted; otherwise, false. </dd></dl>
 
 </div>
 </div>
@@ -686,7 +686,7 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether or not a thread is a background thread. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if this thread is or is to become a background thread; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this thread is or is to become a background thread; otherwise, false. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">xtd::threadng::thread_state_exception</td><td>The thread is dead. </td></tr>
@@ -779,7 +779,7 @@ By default, the following threads execute in the background (that is, their <a c
 </div><div class="memdoc">
 
 <p>Gets a value indicating the current thread is the main thread. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if this thread is the main thread; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this thread is the main thread; otherwise, false. </dd></dl>
 
 </div>
 </div>
@@ -807,7 +807,7 @@ By default, the following threads execute in the background (that is, their <a c
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether or not a thread belongs to the managed thread pool. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if this thread belongs to the managed thread pool; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this thread belongs to the managed thread pool; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For more information see <a class="el" href="classxtd_1_1threading_1_1thread__pool.html" title="Provides a pool of threads that can be used to execute tasks, post work items, process asynchronous I...">xtd::threading::thread_pool</a>. </dd></dl>
 
 </div>
@@ -836,7 +836,7 @@ By default, the following threads execute in the background (that is, their <a c
 </div><div class="memdoc">
 
 <p>Gets a value indicating the current thread is joinable. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if this thread is joinable; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this thread is joinable; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A thread is joinable if it started, not stopped and if is not a background thread. </dd>
 <dd>
 if the thread is joinable you can call the <a class="el" href="classxtd_1_1threading_1_1thread.html#a65fc3f1079b67eb775925c7f1cb69a56" title="Blocks the calling thread until this thread object terminates, while continuing to perform standard C...">xtd::threading::thread::join</a> method. </dd></dl>
@@ -1256,7 +1256,7 @@ The value of the <a class="el" href="classxtd_1_1threading_1_1thread.html#a5a65a
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the thread has terminated; false if the thread has not terminated after the amount of time specified by the xtd::milliseconds_timeout parameter has elapsed. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the thread has terminated; false if the thread has not terminated after the amount of time specified by the xtd::milliseconds_timeout parameter has elapsed. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1thread__state__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::thread_state_exception</a></td><td>The caller attempted to join a thread that is in the <a class="el" href="group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a28ee56ece67abbd7bfc38eb955412865" title="The System::Threading::Thread.Start() method has not been invoked on the thread_state.">xtd::threading::thread_state::unstarted</a> state. </td></tr>
@@ -1290,7 +1290,7 @@ The value of the <a class="el" href="classxtd_1_1threading_1_1thread.html#a5a65a
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the thread has terminated; false if the thread has not terminated after the amount of time specified by the xtd::milliseconds_timeout parameter has elapsed. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the thread has terminated; false if the thread has not terminated after the amount of time specified by the xtd::milliseconds_timeout parameter has elapsed. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1thread__state__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::thread_state_exception</a></td><td>The caller attempted to join a thread that is in the <a class="el" href="group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a28ee56ece67abbd7bfc38eb955412865" title="The System::Threading::Thread.Start() method has not been invoked on the thread_state.">xtd::threading::thread_state::unstarted</a> state. </td></tr>
@@ -1576,7 +1576,7 @@ Call <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a67c0921c9e1
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1thread__state__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::thread_state_exception</a></td><td>The caller attempted to join a thread that is in the <a class="el" href="group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a28ee56ece67abbd7bfc38eb955412865" title="The System::Threading::Thread.Start() method has not been invoked on the thread_state.">xtd::threading::thread_state::unstarted</a> state. </td></tr>
@@ -1620,7 +1620,7 @@ Call <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a67c0921c9e1
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1thread__state__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::thread_state_exception</a></td><td>The caller attempted to join a thread that is in the <a class="el" href="group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a28ee56ece67abbd7bfc38eb955412865" title="The System::Threading::Thread.Start() method has not been invoked on the thread_state.">xtd::threading::thread_state::unstarted</a> state. </td></tr>
@@ -1713,7 +1713,7 @@ template&lt;class collection_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1thread__state__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::thread_state_exception</a></td><td>The caller attempted to join a thread that is in the <a class="el" href="group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a28ee56ece67abbd7bfc38eb955412865" title="The System::Threading::Thread.Start() method has not been invoked on the thread_state.">xtd::threading::thread_state::unstarted</a> state. </td></tr>
@@ -1767,7 +1767,7 @@ template&lt;class collection_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1thread__state__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::thread_state_exception</a></td><td>The caller attempted to join a thread that is in the <a class="el" href="group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a28ee56ece67abbd7bfc38eb955412865" title="The System::Threading::Thread.Start() method has not been invoked on the thread_state.">xtd::threading::thread_state::unstarted</a> state. </td></tr>
@@ -1921,7 +1921,7 @@ Contrast this with the <a class="el" href="classxtd_1_1threading_1_1thread.html#
 </div><div class="memdoc">
 
 <p>Causes the calling thread to yield execution to another thread that is ready to run on the current processor. The operating system selects the thread to yield to. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the operating system switched execution to another thread; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the operating system switched execution to another thread; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If this method succeeds, the rest of the thread's current time slice is yielded. The operating system schedules the calling thread for another time slice, according to its priority and the status of other threads that are available to run. </dd>
 <dd>
 yielding is limited to the processor that is executing the calling thread. The operating system will not switch execution to another processor, even if that processor is idle or is running a thread of lower priority. If there are no other threads that are ready to execute on the current processor, the operating system does not yield execution, and this method returns false. </dd>
@@ -1988,7 +1988,7 @@ This method is equivalent to using platform invoke to call the native Win32 swit
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 27 2025 21:59:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 30 2025 20:13:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

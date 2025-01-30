@@ -1573,7 +1573,7 @@ You can anchor a control to one or more edges of its container. For example, if 
 </div><div class="memdoc">
 
 <p>Gets a value that indicates whether the control resizes based on its contents. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if enabled; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if enabled; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This property is not relevant for this class. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1forms_1_1button__base.html#a8e1d78bbba134e8ffb9ddba53c3efce4">xtd::forms::button_base</a>, and <a class="el" href="classxtd_1_1forms_1_1collapsible__panel.html#a6f86389faf3707baabd2ac1221676b4e">xtd::forms::collapsible_panel</a>.</p>
@@ -1948,7 +1948,7 @@ The bottom property is a read-only property. You can manipulate this property va
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the control can receive focus. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the control can receive focus; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control can receive focus; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>In order for a control to receive input focus, the control must have a handle assigned to it, and the visible and enabled properties must both be set to true for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form. </dd></dl>
 
 </div>
@@ -1977,7 +1977,7 @@ The bottom property is a read-only property. You can manipulate this property va
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the control can be selected. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the control can be selected; otherwise, false.s </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control can be selected; otherwise, false.s </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This property returns true if the electable value of control_styles is set to true, is contained in another control, the control itself is visible and enabled, and all its parent controls are visible and enabled. </dd>
 <dd>
 The Windows Forms controls in the following list are not selectable and will return a value of false for the can_select property. controls derived from these controls are also not selectable.<ul>
@@ -2017,7 +2017,7 @@ The Windows Forms controls in the following list are not selectable and will ret
 </div><div class="memdoc">
 
 <p>Determines if events can be raised on the control. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the control can raise events; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control can raise events; otherwise, false. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1forms_1_1component.html#a4e9ca54c53522d1490054cd1d4543263">xtd::forms::component</a>.</p>
 
@@ -2419,7 +2419,7 @@ Use the controls property to iterate through all controls of a form, including n
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the control has been created. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the control has been created; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control has been created; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The created property returns true if the control was successfully created even though the control's handle might not have been created or recreated yet. </dd></dl>
 
 </div>
@@ -2626,7 +2626,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether this control should redraw its surface using a secondary buffer to reduce or prevent flicker. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the surface of the control should be drawn using double buffering; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the surface of the control should be drawn using double buffering; otherwise, false. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lcd_label2_8cpp-example.html#a4">lcd_label2.cpp</a>.</dd>
 </dl>
 
@@ -2691,7 +2691,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the control can respond to user interaction. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the control can respond to user interaction; otherwise, false. The default is true. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control can respond to user interaction; otherwise, false. The default is true. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="demo_8cpp-example.html#a20">demo.cpp</a>.</dd>
 </dl>
 
@@ -2756,7 +2756,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the control has input focus. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the control has focus; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control has focus; otherwise, false. </dd></dl>
 
 </div>
 </div>
@@ -3020,7 +3020,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the caller must call an invoke method when making method calls to the control because the caller is on a different thread than the one the control was created on. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the control's xttd::forms::control::handle was created on a different thread than the calling thread (indicating that you must make calls to the control through an invoke method); otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control's xttd::forms::control::handle was created on a different thread than the calling thread (indicating that you must make calls to the control through an invoke method); otherwise, false. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1isynchronize__invoke.html#a5434e03732b52c1b9b9861e1571a56a4">xtd::isynchronize_invoke</a>.</p>
 
@@ -3050,7 +3050,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the control has a handle associated with it. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if a handle has been assigned to the control; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if a handle has been assigned to the control; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Use the is_handle_created property to determine whether create_handle has been called. </dd></dl>
 
 </div>
@@ -4501,7 +4501,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the control is currently re-creating its handle. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the control is currently re-creating its handle; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control is currently re-creating its handle; otherwise, false. </dd></dl>
 
 </div>
 </div>
@@ -4918,7 +4918,7 @@ The <a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the user can give the focus to this control using the TAB key. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the user can give the focus to the control using the TAB key; otherwise, false. The default is true. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the user can give the focus to the control using the TAB key; otherwise, false. The default is true. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Note: This property will always return true for an instance of the <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> class. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>When the user presses the TAB key, the input focus is set to the next control in the tab order. Controls with the <a class="el" href="classxtd_1_1forms_1_1control.html#a623a8e0ab7f7ff9005fa9248ce481f0a" title="Gets a value indicating whether the user can give the focus to this control using the TAB key.">xtd::forms::control::tab_stop</a> property value of false are not included in the collection of controls in the tab order. The tab order can be manipulated by setting the control's xtd::forms::control::tab_index property value. </dd></dl>
 
@@ -5243,7 +5243,7 @@ A common use for the tag property is to store data that is closely associated wi
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the control and all its child controls are displayed. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the control and all its child controls are displayed; otherwise, false. The default is true. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control and all its child controls are displayed; otherwise, false. The default is true. </dd></dl>
 
 </div>
 </div>
@@ -5373,7 +5373,7 @@ A common use for the tag property is to store data that is closely associated wi
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol::handle property when an application is being debugged. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if calls on the wrong thread are caught; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if calls on the wrong thread are caught; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the <a class="el" href="classxtd_1_1forms_1_1control.html#a522ed11d9f4fa75a3356da769da9d7e8" title="Gets the window handle that the control is bound to.">xtd::forms::control::handle</a> property. Set <a class="el" href="classxtd_1_1forms_1_1control.html#ab4d42b1aa0788a66859a3d758046bdc8" title="Gets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol...">xtd::forms::control::check_for_illegal_cross_thread_calls</a> to true to find and diagnose this thread activity more easily while debugging. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Be careful, some OS don't support cross-thread UI operations! </dd></dl>
 
@@ -5741,7 +5741,7 @@ create_control does not create a control handle if the control's visible propert
 </div><div class="memdoc">
 
 <p>Sets input focus to the control. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the input focus request was successful; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the input focus request was successful; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The focus method returns true if the control successfully received input focus. The control can have the input focus while not displaying any visual cues of having the focus. This behavior is primarily observed by the unselectable controls listed below, or any controls derived from them. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="wiggly_8cpp-example.html#a19">wiggly.cpp</a>.</dd>
 </dl>
@@ -6343,7 +6343,7 @@ create_control does not create a control handle if the control's visible propert
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if message posted; otherwhise false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if message posted; otherwise <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -6378,7 +6378,7 @@ create_control does not create a control handle if the control's visible propert
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the message was processed by the control; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the message was processed by the control; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>pre_process_message is called by the application's message loop to preprocess input messages before they are dispatched. Possible values for the msg parameter are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1forms_1_1form.html#a4d2a230c33982d94e90f93a2f12e8aa0">xtd::forms::form</a>.</p>
@@ -8442,7 +8442,7 @@ template&lt;class control_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the specified control style bit is set to true; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified control style bit is set to true; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Control style bit flags are used to categorize supported behavior. A control can enable a style by calling the set_style method and passing in the appropriate control_styles bit and the bool value to set the bit to. To determine the value assigned to a specified control_styles bit, use the get_style method and pass in the control_styles member to evaluate. </dd></dl>
 
 </div>
@@ -10894,7 +10894,7 @@ The delegate is called asynchronously, and this method returns immediately. You 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -10968,7 +10968,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -13196,7 +13196,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 27 2025 21:58:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 30 2025 20:12:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

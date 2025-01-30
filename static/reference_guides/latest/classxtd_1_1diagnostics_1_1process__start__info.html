@@ -482,7 +482,7 @@ You can change the <a class="el" href="classxtd_1_1diagnostics_1_1process__start
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether to start the process in a new window. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the process should be started without creating a new window to contain it; otherwise, false. The default is false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the process should be started without creating a new window to contain it; otherwise, false. The default is false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b" title="Gets a value indicating whether to use the operating system shell to start the process.">xtd::diagnostics::process_start_info::use_shell_execute</a> property is true or the <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html#a5af2b0621675b7f34f14a99c21a0c9a3" title="Gets the user name to be used when starting the process.">xtd::diagnostics::process_start_info::user_name</a> and <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html#a1f2e6a54a446a45a14020dc091bd1205" title="Gets a secure string that contains the user password to use when starting the process.">xtd::diagnostics::process_start_info::password</a> properties are not empty, the <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html#a5f000d55cd7307d55b8f8e14f0c7b6e7" title="Gets a value indicating whether to start the process in a new window.">xtd::diagnostics::process_start_info::create_no_window</a> property value is ignored and a new window is created. </dd></dl>
 
 </div>
@@ -730,7 +730,7 @@ An applications, using the <a class="el" href="classxtd_1_1diagnostics_1_1proces
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether an error dialog box is displayed to the user if the process cannot be started. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if an error dialog box should be displayed on the screen if the process cannot be started; otherwise, false. The default is false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if an error dialog box should be displayed on the screen if the process cannot be started; otherwise, false. The default is false. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b" title="Gets a value indicating whether to use the operating system shell to start the process.">xtd::diagnostics::process_start_info::use_shell_execute</a> must be true if you want to set <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html#a04188c824ba21c7bf2ede5e72c915c8b" title="Gets a value indicating whether an error dialog box is displayed to the user if the process cannot be...">xtd::diagnostics::process_start_info::error_dialog</a> to true. </dd></dl>
 
 </div>
@@ -931,7 +931,7 @@ The set of file types available to you depends in part on the value of the <a cl
 </div><div class="memdoc">
 
 <p>Gets a value that indicates whether the Windows user profile is to be loaded from the registry. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the Windows user profile should be loaded; otherwise, false. The default is false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the Windows user profile should be loaded; otherwise, false. The default is false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This property is referenced if the process is being started by using the user name, password, and domain. </dd>
 <dd>
 If the value is true, the user's profile in the HKEY_USERS registry key is loaded. Loading the profile can be time-consuming. Therefore, it is best to use this value only if you must access the information in the HKEY_CURRENT_USER registry key. </dd></dl>
@@ -1134,7 +1134,7 @@ If the value is true, the user's profile in the HKEY_USERS registry key is loade
 </div><div class="memdoc">
 
 <p>Gets a value that indicates whether the error output of an application is written to the <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a9e09a8c158d401459b4ab4aa37a6f06e" title="Gets a stream used to read the error output of the application.">xtd::diagnostics::process::standard_error</a> stream. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if error output should be written to <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a9e09a8c158d401459b4ab4aa37a6f06e" title="Gets a stream used to read the error output of the application.">xtd::diagnostics::process::standard_error</a>; otherwise, false. The default is false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if error output should be written to <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a9e09a8c158d401459b4ab4aa37a6f06e" title="Gets a stream used to read the error output of the application.">xtd::diagnostics::process::standard_error</a>; otherwise, false. The default is false. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example uses the net use command together with a user supplied argument to map a network resource. It then reads the standard error stream of the net command and writes it to console. <div class="fragment"><div class="line"><a class="code hl_define" href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a>(<a class="code hl_class" href="classxtd_1_1diagnostics_1_1process.html">xtd::diagnostics::process</a> my_process) {</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1diagnostics_1_1process__start__info.html">xtd::diagnostics::process_start_info</a> my_process_start_info(<span class="stringliteral">&quot;net &quot;</span>, <span class="stringliteral">&quot;use &quot;</span> + args[0]);</div>
 <div class="line"> </div>
@@ -1414,7 +1414,7 @@ You can use asynchronous read operations to avoid these dependencies and their d
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the input for an application is read from the Process.StandardInput stream. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if input should be read from Process.StandardInput; otherwise, false. The default is false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if input should be read from Process.StandardInput; otherwise, false. The default is false. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following example illustrates how to redirect the <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a847f429e7d5a0a3c584213ab693d27b0" title="Gets a stream used to write the input of the application.">xtd::diagnostics::process::standard_input</a> stream of a process. The example starts the sort command with redirected input. It then prompts the user for text, and passes that to the sort process by means of the redirected <a class="el" href="classxtd_1_1diagnostics_1_1process.html#a847f429e7d5a0a3c584213ab693d27b0" title="Gets a stream used to write the input of the application.">xtd::diagnostics::process::standard_input</a> stream. The sort results are displayed to the user on the console. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1959,7 +1959,7 @@ You can use asynchronous read operations to avoid these dependencies and their d
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether to use the operating system shell to start the process. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the shell should be used when starting the process; false if the process should be created directly from the executable file. The default is true. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the shell should be used when starting the process; false if the process should be created directly from the executable file. The default is true. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Setting this property to false enables you to redirect input, output, and error streams. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd><a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b" title="Gets a value indicating whether to use the operating system shell to start the process.">xtd::diagnostics::process_start_info::use_shell_execute</a> must be false if the <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html#a5af2b0621675b7f34f14a99c21a0c9a3" title="Gets the user name to be used when starting the process.">xtd::diagnostics::process_start_info::user_name</a> property is not an empty string, or an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a> will be thrown when the xtd::diagnostics::process::start(process_start_info) method is called. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>When you use the operating system shell to start processes, you can start any document (which is any registered file type associated with an executable that has a default open action) and perform operations on the file, such as printing, by using the Process object. When <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html#afbe7913a04289abf0dcf6b51f6c0186b" title="Gets a value indicating whether to use the operating system shell to start the process.">xtd::diagnostics::process_start_info::use_shell_execute</a> is false, you can start only executables by using the <a class="el" href="classxtd_1_1diagnostics_1_1process.html" title="Provides access to local and remote processes and enables you to start and stop local system processe...">xtd::diagnostics::process</a> object. </dd></dl>
@@ -2265,7 +2265,7 @@ The <a class="el" href="classxtd_1_1diagnostics_1_1process__start__info.html#ae7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 27 2025 21:58:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 30 2025 20:12:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

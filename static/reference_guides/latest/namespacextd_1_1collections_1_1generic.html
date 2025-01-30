@@ -143,6 +143,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html">ilist</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that can be individually accessed by index.  <a href="classxtd_1_1collections_1_1generic_1_1ilist.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html">iset</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the base interface for the abstraction of sets.  <a href="classxtd_1_1collections_1_1generic_1_1iset.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1key__not__found__exception.html">key_not_found_exception</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The exception that is thrown when the key specified for accessing an element in a collection does not match any key in the collection.  <a href="classxtd_1_1collections_1_1generic_1_1key__not__found__exception.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,18 +161,34 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Alias</h2></td></tr>
-<tr class="memitem:ga64eee1442dc5ab233c858fb9210538f0"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
-<tr class="memitem:ga64eee1442dc5ab233c858fb9210538f0"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga64eee1442dc5ab233c858fb9210538f0">hash_set</a> = std::unordered_set&lt; type_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html">helpers::hasher</a>&lt; type_t &gt;, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">helpers::equator</a>&lt; type_t &gt;, <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator</a>&lt; type_t &gt; &gt;</td></tr>
-<tr class="memdesc:ga64eee1442dc5ab233c858fb9210538f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a set of values.  <br /></td></tr>
-<tr class="separator:ga64eee1442dc5ab233c858fb9210538f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga14b91f645f99106e1b8041b32791f9ed"><td class="memTemplParams" colspan="2">template&lt;class key_t , class value_t &gt; </td></tr>
-<tr class="memitem:ga14b91f645f99106e1b8041b32791f9ed"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga14b91f645f99106e1b8041b32791f9ed">sorted_dictionary</a> = <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>&lt; key_t, value_t &gt;</td></tr>
-<tr class="memdesc:ga14b91f645f99106e1b8041b32791f9ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of key/value pairs that are sorted on the key.  <br /></td></tr>
-<tr class="separator:ga14b91f645f99106e1b8041b32791f9ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1b6a1fb3e965aaf21f075a1f3b99ec90"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
-<tr class="memitem:ga1b6a1fb3e965aaf21f075a1f3b99ec90"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga1b6a1fb3e965aaf21f075a1f3b99ec90">sorted_set</a> = std::set&lt; type_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html">helpers::comparer</a>&lt; type_t &gt;, <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator</a>&lt; type_t &gt; &gt;</td></tr>
-<tr class="memdesc:ga1b6a1fb3e965aaf21f075a1f3b99ec90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that is maintained in sorted order.  <br /></td></tr>
-<tr class="separator:ga1b6a1fb3e965aaf21f075a1f3b99ec90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae5c86fd1f7e7f0a0b5de13af77c34d4c"><td class="memTemplParams" colspan="2">template&lt;class type_t , class hasher_t  = xtd::collections::generic::helpers::hasher&lt;type_t&gt;, class equator_t  = xtd::collections::generic::helpers::equator&lt;type_t&gt;, class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:gae5c86fd1f7e7f0a0b5de13af77c34d4c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#gae5c86fd1f7e7f0a0b5de13af77c34d4c">hash_set</a> = std::unordered_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</td></tr>
+<tr class="memdesc:gae5c86fd1f7e7f0a0b5de13af77c34d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a set of values.  <br /></td></tr>
+<tr class="separator:gae5c86fd1f7e7f0a0b5de13af77c34d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52295a51ccfe37b2a4192b073ce237b9"><td class="memTemplParams" colspan="2">template&lt;class type_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:ga52295a51ccfe37b2a4192b073ce237b9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga52295a51ccfe37b2a4192b073ce237b9">linked_list</a> = std::forward_list&lt; type_t, allocator_t &gt;</td></tr>
+<tr class="memdesc:ga52295a51ccfe37b2a4192b073ce237b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a doubly linked list.  <br /></td></tr>
+<tr class="separator:ga52295a51ccfe37b2a4192b073ce237b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe25926b152d27ca34bd3c297b77beb6"><td class="memTemplParams" colspan="2">template&lt;class type_t , class container_t  = std::deque&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:gafe25926b152d27ca34bd3c297b77beb6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#gafe25926b152d27ca34bd3c297b77beb6">queue</a> = std::stack&lt; type_t, container_t &gt;</td></tr>
+<tr class="memdesc:gafe25926b152d27ca34bd3c297b77beb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that is maintained in sorted order.  <br /></td></tr>
+<tr class="separator:gafe25926b152d27ca34bd3c297b77beb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga64bb7a14ab354aad70b9c8a839aca3d9"><td class="memTemplParams" colspan="2">template&lt;class key_t , class value_t , class comparer_t  = helpers::comparer&lt;key_t&gt;, class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ga64bb7a14ab354aad70b9c8a839aca3d9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9">sorted_dictionary</a> = <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>&lt; key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html">helpers::hasher</a>&lt; key_t &gt;, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">helpers::equator</a>&lt; key_t &gt;, allocator_t &gt;</td></tr>
+<tr class="memdesc:ga64bb7a14ab354aad70b9c8a839aca3d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of key/value pairs that are sorted on the key.  <br /></td></tr>
+<tr class="separator:ga64bb7a14ab354aad70b9c8a839aca3d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad3585c1ae4916c485b63e9186a0d6bd3"><td class="memTemplParams" colspan="2">template&lt;class key_t , class value_t , class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </td></tr>
+<tr class="memitem:gad3585c1ae4916c485b63e9186a0d6bd3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#gad3585c1ae4916c485b63e9186a0d6bd3">sorted_list</a> = <a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9">sorted_dictionary</a>&lt; key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html">helpers::comparer</a>&lt; key_t &gt;, allocator_t &gt;</td></tr>
+<tr class="memdesc:gad3585c1ae4916c485b63e9186a0d6bd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and by index.  <br /></td></tr>
+<tr class="separator:gad3585c1ae4916c485b63e9186a0d6bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa2b86548e24c1469949088a7ad576c69"><td class="memTemplParams" colspan="2">template&lt;class type_t , class comparer_t  = xtd::collections::generic::helpers::comparer&lt;type_t&gt;, class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:gaa2b86548e24c1469949088a7ad576c69"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69">sorted_set</a> = std::set&lt; type_t, comparer_t, allocator_t &gt;</td></tr>
+<tr class="memdesc:gaa2b86548e24c1469949088a7ad576c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that is maintained in sorted order.  <br /></td></tr>
+<tr class="separator:gaa2b86548e24c1469949088a7ad576c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga342a811c6871f2b7e44168e039adde1a"><td class="memTemplParams" colspan="2">template&lt;class type_t , class container_t  = std::deque&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:ga342a811c6871f2b7e44168e039adde1a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga342a811c6871f2b7e44168e039adde1a">stack</a> = std::stack&lt; type_t, container_t &gt;</td></tr>
+<tr class="memdesc:ga342a811c6871f2b7e44168e039adde1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified type.  <br /></td></tr>
+<tr class="separator:ga342a811c6871f2b7e44168e039adde1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga200965dd82cd1cef729d36c0b2f41a0a"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga200965dd82cd1cef729d36c0b2f41a0a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga200965dd82cd1cef729d36c0b2f41a0a">type_to_list_t</a> = typename std::conditional&lt; std::is_same&lt; bool, type_t &gt;::value, char, type_t &gt;<a class="el" href="group__types.html#gafa42bcceb7fb5768ea8cc4588e67dc15">::type</a></td></tr>
 <tr class="memdesc:ga200965dd82cd1cef729d36c0b2f41a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the type to list type.  <br /></td></tr>
@@ -179,7 +198,7 @@ Alias</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 27 2025 21:58:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 30 2025 20:12:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

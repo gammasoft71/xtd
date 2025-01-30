@@ -42,7 +42,7 @@ var searchData=
   ['hash_5fcode_39',['hash_code',['../classxtd_1_1hash__code.html#a686e1e2d91bc53dd5b887aee010dcccd',1,'xtd::hash_code::hash_code()'],['../classxtd_1_1hash__code.html',1,'xtd::hash_code']]],
   ['hash_5fcode_2ehpp_40',['hash_code.hpp',['../hash__code_8hpp.html',1,'']]],
   ['hash_5ffunction_41',['hash_function',['../classxtd_1_1collections_1_1generic_1_1dictionary.html#a14c1f0dd1e8ac7f753d0f56e05fa5a8c',1,'xtd::collections::generic::dictionary']]],
-  ['hash_5fset_42',['hash_set',['../group__generic__collections.html#ga64eee1442dc5ab233c858fb9210538f0',1,'xtd::collections::generic']]],
+  ['hash_5fset_42',['hash_set',['../group__generic__collections.html#gae5c86fd1f7e7f0a0b5de13af77c34d4c',1,'xtd::collections::generic']]],
   ['hash_5fset_2ehpp_43',['hash_set.hpp',['../hash__set_8hpp.html',1,'']]],
   ['hasher_44',['hasher',['../structxtd_1_1collections_1_1generic_1_1dictionary_1_1hasher.html',1,'xtd::collections::generic::dictionary&lt; key_t, value_t, hasher_t, equator_t, allocator_t &gt;::hasher'],['../structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html',1,'xtd::collections::generic::helpers::hasher&lt; key_t &gt;']]],
   ['hasher_2ehpp_45',['hasher.hpp',['../hasher_8hpp.html',1,'']]],
