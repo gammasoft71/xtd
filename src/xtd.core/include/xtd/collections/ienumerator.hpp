@@ -22,7 +22,7 @@ namespace xtd {
     /// xtd::collections
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core collections interfaces
+    /// @ingroup xtd_core interfaces collections
     /// The following code example demonstrates the best practice for iterating a custom collection by implementing the xtd::collection::ienumerable and xtd::collection::ienumerator interfaces. In this example, members of these interfaces are not explicitly called, but they are implemented to support the use of `for each` to iterate through the collection. This example is a complete Console app.
     /// @include ienumerable.cpp
     /// @remarks xtd::collections::ienumerator is the base interface for all non-generic enumerators. Its generic equivalent is the xtd::collections::generic::iznumerator <type_t> interface.

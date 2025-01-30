@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd::collections
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core collections interfaces
+    /// @ingroup xtd_core interfaces collections
     /// par Examples
     /// The following example demonstrates the implementation of the xtd::collections::ilist interface to create a simple, fixed-size list.
     /// @include ilist.cpp
