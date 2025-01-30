@@ -21,34 +21,6 @@ void bit_array::boolean_ref::from_boolean(bit_array& parent) noexcept {
   index = npos;
 }
 
-bit_array::bit_array(const array<byte>& values) {
-  length_ = values.length() * bits_per_byte;
-  auto position = 0_z;
-  while (bit_array_.count() < get_list_length(length_))
-    bit_array_.add(0);
-  for (auto index = 0_z; index < values.length(); ++index)
-    for (auto index_bits = 0_z; index_bits < bits_per_byte; ++index_bits)
-      set(position++, (values[index] & (1 << index_bits)) == (1 << index_bits));
-}
-
-bit_array::bit_array(const array<bool>& values) {
-  length_ = values.length();
-  while (bit_array_.count() < get_list_length(length_))
-    bit_array_.add(0);
-  for (auto index = 0_z; index < values.length(); ++index)
-    set(index, values[index]);
-}
-
-bit_array::bit_array(const array<int32>& values) {
-  length_ = values.length() * bits_per_int32;
-  auto position = 0_z;
-  while (bit_array_.count() < get_list_length(length_))
-    bit_array_.add(0);
-  for (auto index = 0_z; index < values.length(); ++index)
-    for (auto index_bits = 0_z; index_bits < bits_per_int32; ++index_bits)
-      set(position++, (values[index] & (1 << index_bits)) == (1 << index_bits));
-}
-
 bit_array::bit_array(size length) {
   length_ = length;
   while (bit_array_.count() < get_list_length(length_))
@@ -60,6 +32,7 @@ bit_array::bit_array(size length, bool default_value) {
   length_ = length;
   while (bit_array_.count() < get_list_length(length_))
     bit_array_.add(default_value ? 0xFFFFFFFFL : 0);
+  if (!default_value) return;
   auto extra_bits = length & (32 - 1); // equivalent to length % 32, since 32 is a power of 2
   if (extra_bits > 0) bit_array_[bit_array_.size() - 1] = (1 << extra_bits) - 1;
 }
@@ -71,6 +44,34 @@ bit_array::bit_array(std::initializer_list<bool> il) {
   auto index = 0_z;
   for (auto item : il)
     set(index++, item);
+}
+
+bit_array::bit_array(const array<bool>& values) {
+  length_ = values.length();
+  while (bit_array_.count() < get_list_length(length_))
+    bit_array_.add(0);
+  for (auto index = 0_z; index < values.length(); ++index)
+    set(index, values[index]);
+}
+
+bit_array::bit_array(const array<byte>& values) {
+  length_ = values.length() * bits_per_byte;
+  auto position = 0_z;
+  while (bit_array_.count() < get_list_length(length_))
+    bit_array_.add(0);
+  for (auto index = 0_z; index < values.length(); ++index)
+    for (auto index_bits = 0_z; index_bits < bits_per_byte; ++index_bits)
+      set(position++, (values[index] & (1 << index_bits)) == (1 << index_bits));
+}
+
+bit_array::bit_array(const array<int32>& values) {
+  length_ = values.length() * bits_per_int32;
+  auto position = 0_z;
+  while (bit_array_.count() < get_list_length(length_))
+    bit_array_.add(0);
+  for (auto index = 0_z; index < values.length(); ++index)
+    for (auto index_bits = 0_z; index_bits < bits_per_int32; ++index_bits)
+      set(position++, (values[index] & (1 << index_bits)) == (1 << index_bits));
 }
 
 size bit_array::count() const noexcept {
@@ -101,8 +102,16 @@ const object& bit_array::sync_root() const noexcept {
 const bit_array& bit_array::and_(const bit_array& value) {
   if (count() != value.count()) throw argument_exception {};
   for (auto index = 0_z; index < length(); ++index)
-    (*this)[index] = (*this)[index] && value[index];
+    operator [](index) = operator [](index) && value[index];
   return *this;
+}
+
+bool bit_array::at(size index) const {
+  return operator[](index);
+}
+
+bool& bit_array::at(size index) {
+  return operator[](index);
 }
 
 uptr<object> bit_array::clone() const {
@@ -113,7 +122,7 @@ uptr<object> bit_array::clone() const {
 void bit_array::copy_to(array<bool>& array, size index) const {
   if (index + length() > array.length()) throw argument_exception {};
   for (auto item : *this)
-    array[++index] = item;
+    array[index++] = item;
 }
 
 bool bit_array::equals(const bit_array& value) const noexcept {
@@ -128,15 +137,11 @@ bool bit_array::equals(const object& obj) const noexcept {
 }
 
 bool bit_array::get(size index) const {
-  if (index >= length_) throw argument_out_of_range_exception {};
-  const_cast<boolean_ref&>(value_ref_).from_boolean(const_cast<bit_array&>(*this));
-  return const_cast<boolean_ref&>(value_ref_).get_boolean_ref(get_bit_value(index), index);
+  return operator[](index);
 }
 
 bool& bit_array::get(size index) {
-  if (index >= length_) throw argument_out_of_range_exception {};
-  value_ref_.from_boolean(*this);
-  return value_ref_.get_boolean_ref(get_bit_value(index), index);
+  return operator[](index);
 }
 
 generic::enumerator<bool> bit_array::get_enumerator() const {
@@ -162,24 +167,24 @@ generic::enumerator<bool> bit_array::get_enumerator() const {
 
 const bit_array& bit_array::not_() {
   for (auto index = 0_z; index < length(); ++index)
-    (*this)[index] = !((*this)[index]);
+    operator [](index) = !operator [](index);
   return *this;
 }
 
 const bit_array& bit_array::or_(const bit_array& value) {
   if (count() != value.count()) throw argument_exception {};
   for (auto index = 0_z; index < length(); ++index)
-    (*this)[index] = (*this)[index] || value[index];
+    operator [](index) = operator [](index) || value[index];
   return *this;
 }
 
 void bit_array::set(size index, bool value) {
-  (*this)[index] = value;
+  operator [](index) = value;
 }
 
 void bit_array::set_all(bool value) {
   for (auto index = 0_z; index < length(); ++index)
-    (*this)[index] = value;
+    operator [](index) = value;
 }
 
 string bit_array::to_string() const noexcept {
@@ -189,7 +194,7 @@ string bit_array::to_string() const noexcept {
 const bit_array& bit_array::xor_(const bit_array& value) {
   if (count() != value.count()) throw argument_exception {};
   for (auto index = 0_z; index < length(); ++index)
-    (*this)[index] = (*this)[index] ^ value[index];
+    operator [](index) = operator [](index) != value[index];
   return *this;
 }
 
@@ -205,10 +210,13 @@ bool& bit_array::operator[](size index) {
   return value_ref_.get_boolean_ref(get_bit_value(index), index);
 }
 
-void bit_array::add(const bool&) {
+void bit_array::add(const bool& value) {
+  length(length() + 1);
+  operator [](length() - 1) = value;
 }
 
 void bit_array::clear() {
+  length(0);
 }
 
 bool bit_array::contains(const bool&) const noexcept {
