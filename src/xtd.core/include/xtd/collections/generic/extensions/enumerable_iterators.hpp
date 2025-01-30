@@ -74,35 +74,26 @@ namespace xtd {
             using const_reference = const value_type&;
             /// @}
             
-            /// @brief Create begin xtd::collections::generic::iterator with specified enumerator.
-            /// @param enumerator The enumerator to iterate with.
-            /// @return The begin xtd::collections::generic::iterator.
-            static iterator begin(const enumerable_t* enumerable) {
-              auto begin = iterator {};
-              begin.enumerable_ = enumerable;
-              begin.enumerator_ = begin.enumerable_->get_enumerator();
-              begin.pos_ = 0;
-              begin.reset();
-              return begin;
-            }
             
-            /// @brief Create end xtd::collections::generic::iterator with specified enumerator.
-            /// @param enumerator The enumerator to iterate with.
-            /// @return The end xtd::collections::generic::iterator.
-            static iterator end(const enumerable_t* enumerable) {
-              auto end = iterator {};
-              end.enumerable_ = enumerable;
-              end.enumerator_ = end.enumerable_->get_enumerator();
-              end.pos_ = std::numeric_limits<xtd::size>::max();
-              end.reset();
-              return end;
-            }
+            /// @name Public Fields
+            
+            /// @{
+            /// @brief This is a special value equal to the maximum value representable by the type xtd::size.
+            static constexpr xtd::size npos() {return std::numeric_limits<xtd::size>::max();}
+            /// @}
             
             /// @name Public Constructors
             
             /// @{
             /// @brief Initializes a new instance of the xtd::collections::generic::iterator class.
             iterator() = default;
+            
+            /// @brief Create an xtd::collections::generic::iterator with specified enumerator and position.
+            /// @param enumerator The enumerator to iterate with.
+            /// @param pos The position to iterate with.
+            /// @return The xtd::collections::generic::iterator.
+            /// @remarks Set pos to std::numeric_limits<xtd::size>::max() for end iterator.
+            iterator(const enumerable_t* enumerable, xtd::size pos) : enumerable_ {enumerable}, enumerator_ {enumerable->get_enumerator()}, pos_ {pos} {reset();}
             /// @}
             
             /// @cond
@@ -173,13 +164,13 @@ namespace xtd {
             /// @param value The number to add to the underlying iterator.
             /// @return The underlying iterator.
             template<class value_t>
-            iterator operator +(value_t value) const noexcept {return iterator {*this, value};}
+            iterator operator +(value_t value) const noexcept {return iterator {enumerable_, pos_ + value};}
             /// @brief Add equal operator with specified value.
             /// @param value The number to add to the underlying iterator.
             /// @return The underlying iterator.
             template<class value_t>
             iterator& operator +=(value_t value) noexcept {
-              *this =  *this + value;
+              *this = *this + value;
               return *this;
             }
             /// @brief Subtract The specified iterator from the current iterator.
@@ -192,9 +183,6 @@ namespace xtd {
             /// @}
             
           private:
-            template<class value_t>
-            iterator(const iterator& base, value_t value) noexcept : enumerable_(base.enumerable_),  enumerator_(base.enumerable_->get_enumerator()), pos_ {base.pos_ + value} {reset();}
-            
             void reset() const {
               enumerator_.reset();
               if (pos_ == std::numeric_limits<xtd::size>::max()) return;
@@ -223,25 +211,25 @@ namespace xtd {
           /// @{
           /// @brief Returns an iterator to the first element of the enumarable.
           /// @return Iterator to the first element.
-          virtual const_iterator begin() const {return const_iterator::begin(static_cast<const enumerable_t*>(this));}
+          virtual const_iterator begin() const {return cbegin();}
           /// @brief Returns an iterator to the first element of the enumarable.
           /// @return Iterator to the first element.
-          virtual iterator begin() {return iterator::begin(static_cast<enumerable_t*>(this));}
+          virtual iterator begin() {return iterator {static_cast<enumerable_t*>(this), 0};}
           
           /// @brief Returns an iterator to the first element of the enumarable.
           /// @return Iterator to the first element.
-          virtual const_iterator cbegin() const {return const_iterator::begin(static_cast<const enumerable_t*>(this));}
+          virtual const_iterator cbegin() const {return const_iterator {static_cast<const enumerable_t*>(this), 0};}
           
           /// @brief Returns an iterator to the element following the last element of the enumarable.
           /// @return Iterator to the element following the last element.
-          virtual const_iterator cend() const {return const_iterator::end(static_cast<const enumerable_t*>(this));}
+          virtual const_iterator cend() const {return const_iterator {static_cast<const enumerable_t*>(this), const_iterator::npos()};}
           
           /// @brief Returns an iterator to the element following the last element of the enumarable.
           /// @return Iterator to the element following the last element.
-          virtual const_iterator end() const {return const_iterator::end(static_cast<const enumerable_t*>(this));}
+          virtual const_iterator end() const {return cend();}
           /// @brief Returns an iterator to the element following the last element of the enumarable.
           /// @return Iterator to the element following the last element.
-          virtual iterator end() {return iterator::end(static_cast<enumerable_t*>(this));}
+          virtual iterator end() {return iterator {static_cast<enumerable_t*>(this), iterator::npos()};}
           /// @}
 
           /// @name Public Static Methods
