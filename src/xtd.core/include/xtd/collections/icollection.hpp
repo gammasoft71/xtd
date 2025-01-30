@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd::collections
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core collections interfaces
+    /// @ingroup xtd_core interfaces collections
     /// @remarks The xtd::collections::icollection interface is the base interface for classes in the xtd::collections namespace. Its generic equivalent is the xtd::collections::genric::icollection <type_t> interface.
     /// @remarks The xtd::collections::icollection interface extends xtd::collections::ienumerable; xtd::collections::idictionary and xtd::collections::ilist are more specialized interfaces that extend xtd::collections::icollection. An xtd::collections::idictionary implementation is a collection of key/value pairs, like the xtd::collections::hashtable class. An xtd::collections::ilist implementation is a collection of values and its members can be accessed by index, like the xtd::collections::array_list class.
     /// @remarks Some collections that limit access to their elements, such as the xtd::collections::queue class and the xtd::collections::stack class, directly implement the xtd::collections::icollection interface.

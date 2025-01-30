@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd::collections
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core collections interfaces
+    /// @ingroup xtd_core interfaces collections
     using icomparer = generic::icomparer<xtd::any_object>;
   }
 }

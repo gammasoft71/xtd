@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd::collections
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core collections interfaces
+    /// @ingroup xtd_core interfaces collections
     using idictionary = generic::idictionary<xtd::any_object, xtd::any_object>;
   }
 }
