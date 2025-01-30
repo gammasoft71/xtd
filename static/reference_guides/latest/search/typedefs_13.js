@@ -1,8 +1,27 @@
 var searchData=
 [
-  ['value_5fcollection_0',['value_collection',['../classxtd_1_1collections_1_1generic_1_1dictionary.html#a5837e916ed3ecf5ad27d9c1287033f52',1,'xtd::collections::generic::dictionary::value_collection'],['../classxtd_1_1collections_1_1generic_1_1idictionary.html#a0389edc8c5aa120ac731815b4cd96805',1,'xtd::collections::generic::idictionary::value_collection']]],
-  ['value_5ftype_1',['value_type',['../classxtd_1_1array_3_01type__t_00_011_00_01allocator__t_01_4.html#afc289cbf80806e32b11e95c6a274e08d',1,'xtd::array&lt; type_t, 1, allocator_t &gt;::value_type'],['../classxtd_1_1array_3_01type__t_00_012_00_01allocator__t_01_4.html#abf22a43ee1463d998175ca57f7313afd',1,'xtd::array&lt; type_t, 2, allocator_t &gt;::value_type'],['../classxtd_1_1array_3_01type__t_00_013_00_01allocator__t_01_4.html#aa82f89940f9a2fa101394df838bff19e',1,'xtd::array&lt; type_t, 3, allocator_t &gt;::value_type'],['../classxtd_1_1basic__array.html#a8a186922544d50c32678dbeead9d34fe',1,'xtd::basic_array::value_type'],['../classxtd_1_1basic__string.html#aba30f417a9a6e82bb49c465428af7aa5',1,'xtd::basic_string::value_type'],['../classxtd_1_1collections_1_1generic_1_1dictionary.html#a1f951179b33766491339c34e62fcc98f',1,'xtd::collections::generic::dictionary::value_type'],['../classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators_1_1iterator.html#a4b80d38173194037b40e307e39848b93',1,'xtd::collections::generic::extensions::enumerable_iterators::iterator::value_type'],['../classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html#ab5630cc21aed785a34395cdd13e31f46',1,'xtd::collections::generic::helpers::wrap_pointer_iterator::value_type'],['../classxtd_1_1collections_1_1generic_1_1icollection.html#aabf331b843fac4f0cc1f5ac55e839e2c',1,'xtd::collections::generic::icollection::value_type'],['../classxtd_1_1collections_1_1generic_1_1idictionary.html#a4cb74752fe514a28bebbd814114d869a',1,'xtd::collections::generic::idictionary::value_type'],['../classxtd_1_1collections_1_1generic_1_1ienumerable.html#a1b6f4bbb7a3c18056332b28dae525927',1,'xtd::collections::generic::ienumerable::value_type'],['../structxtd_1_1collections_1_1generic_1_1key__value__pair.html#a38d9513d46dbb2802fc315d540c47205',1,'xtd::collections::generic::key_value_pair::value_type'],['../classxtd_1_1collections_1_1generic_1_1list.html#aee91fe5bbf243bdafcee990bbb05a517',1,'xtd::collections::generic::list::value_type'],['../classxtd_1_1collections_1_1object__model_1_1read__only__collection.html#a86a177d59b116e61676643dfbb96558f',1,'xtd::collections::object_model::read_only_collection::value_type'],['../classxtd_1_1read__only__span.html#a77b77735e0c04563d338c8e6ea84aec2',1,'xtd::read_only_span::value_type'],['../classxtd_1_1span.html#abacfb0d3fd2e60e9e170f3739fda6477',1,'xtd::span::value_type'],['../classxtd_1_1text_1_1basic__string__builder.html#afc4750931de93fb98ca4024209bd18cc',1,'xtd::text::basic_string_builder::value_type']]],
-  ['vector_5flist_2',['vector_list',['../group__collections.html#ga3c07efce71e0899524aa31dfd0431817',1,'xtd::collections']]],
-  ['vertical_5fcontrol_5flayout_5fstyle_5fcollection_3',['vertical_control_layout_style_collection',['../group__xtd__forms.html#ga1936ca7e95ef2d3a6e2beabd2fd23030',1,'xtd::forms']]],
-  ['violet_5fcolors_4',['violet_colors',['../group__colors.html#ga00b820083dc10635d0003659f19bea3f',1,'xtd::drawing']]]
+  ['u16string_0',['u16string',['../group__strings.html#ga87efea41d4bd7beb815934226919d4cf',1,'xtd']]],
+  ['u16string_5fbuilder_1',['u16string_builder',['../group__strings.html#gae904e0b84e59ec1fb1f7b36c5d297170',1,'xtd::text']]],
+  ['u16string_5fcomparer_2',['u16string_comparer',['../group__system.html#ga9deac5d4f17f0bec6d5af6e7e173c1af',1,'xtd']]],
+  ['u32string_3',['u32string',['../group__strings.html#ga8e905e9638523f5b5d380d8bcbcc834e',1,'xtd']]],
+  ['u32string_5fbuilder_4',['u32string_builder',['../group__strings.html#gaf400587a5eb8700190f8519397e6a119',1,'xtd::text']]],
+  ['u32string_5fcomparer_5',['u32string_comparer',['../group__system.html#ga4ec37e6db5b3fa546fa302594ff8e3cf',1,'xtd']]],
+  ['u8string_6',['u8string',['../group__strings.html#ga10e56556495f88e0d68bde21820cdddf',1,'xtd']]],
+  ['u8string_5fbuilder_7',['u8string_builder',['../group__strings.html#ga42708caf1efb39fc106bcbe5194b84bb',1,'xtd::text']]],
+  ['u8string_5fcomparer_8',['u8string_comparer',['../group__system.html#ga4872bf721627bbf6a3d4f8fcc5db422d',1,'xtd']]],
+  ['uint16_9',['uint16',['../group__types.html#gad8523b51611f0fac793f78f16b155b21',1,'xtd']]],
+  ['uint16_5fobject_10',['uint16_object',['../group__types.html#ga776cbd485d3227a7cdab1b955452d4f1',1,'xtd']]],
+  ['uint32_11',['uint32',['../group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5',1,'xtd']]],
+  ['uint32_5fobject_12',['uint32_object',['../group__types.html#gabfb68f43b023aa3440e6c8e57ebc3ff4',1,'xtd']]],
+  ['uint64_13',['uint64',['../group__types.html#gab5833228ed21371660af349c9b1fe797',1,'xtd']]],
+  ['uint64_5fobject_14',['uint64_object',['../group__types.html#gaa72b2b225185fbb831bc7ec9d3a695ca',1,'xtd']]],
+  ['uintptr_15',['uintptr',['../group__types.html#ga611186545311a64ce96c09d1e7be8d8c',1,'xtd']]],
+  ['uintptr_5fobject_16',['uintptr_object',['../group__types.html#gadee39054ccaefc6ad4b507a42b361a91',1,'xtd']]],
+  ['ulong_17',['ulong',['../group__types.html#ga313036ce703450f07d94c71ed78f2b21',1,'xtd']]],
+  ['ulong_5fobject_18',['ulong_object',['../group__types.html#gac21c40190f1da798c4f81bdb7cf22604',1,'xtd']]],
+  ['uptr_19',['uptr',['../group__types.html#ga4ac188feb2d52b21e188417441519bb2',1,'xtd']]],
+  ['user_5fcontrol_20',['user_control',['../group__style__sheets.html#ga06078af6a78aeadf53ca7917ee51d433',1,'xtd::forms::style_sheets']]],
+  ['user_5fcontrol_5fstate_21',['user_control_state',['../group__xtd__forms.html#ga10d894ad82c3f4961cb09cf15bcff510',1,'xtd::forms::visual_styles']]],
+  ['user_5fcontrols_5ft_22',['user_controls_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a93ca4fcf2e6cddd91b4a094b79c908ed',1,'xtd::forms::style_sheets::style_sheet']]],
+  ['user_5ftab_5fpage_5fcollection_23',['user_tab_page_collection',['../classxtd_1_1forms_1_1about__dialog.html#a80e85f89515ea8b47b1b867ec9bc5514',1,'xtd::forms::about_dialog']]]
 ];

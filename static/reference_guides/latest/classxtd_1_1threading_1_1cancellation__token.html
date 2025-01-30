@@ -238,7 +238,7 @@ If canceled is true, both <a class="el" href="classxtd_1_1threading_1_1cancellat
 </div><div class="memdoc">
 
 <p>Gets whether this token is capable of being in the canceled state. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if this token is capable of being in the canceled state; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if this token is capable of being in the canceled state; otherwise, false. </dd></dl>
 
 </div>
 </div>
@@ -266,7 +266,7 @@ If canceled is true, both <a class="el" href="classxtd_1_1threading_1_1cancellat
 </div><div class="memdoc">
 
 <p>Gets whether cancellation has been requested for this token. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if cancellation has been requested for this token; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if cancellation has been requested for this token; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This property indicates whether cancellation has been requested for this token, either through the token initially being constructed in a canceled state, or through calling xtd::threading::cancellation_token_source::cancel on the token's associated <a class="el" href="classxtd_1_1threading_1_1cancellation__token__source.html" title="Signals to a xtd::threading::cancellation_token that it should be canceled.">xtd::threading::cancellation_token_source</a>. </dd>
 <dd>
 If this property is true, it only guarantees that cancellation has been requested. It does not guarantee that every registered handler has finished executing, nor that cancellation requests have finished propagating to all registered handlers. Additional synchronization may be required, particularly in situations where related objects are being canceled concurrently. </dd></dl>
@@ -361,7 +361,7 @@ If this property is true, it only guarantees that cancellation has been requeste
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -436,7 +436,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -510,7 +510,7 @@ Two empty cancellation tokens are always equal. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 27 2025 21:59:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 30 2025 20:13:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

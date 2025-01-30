@@ -18,10 +18,11 @@ var searchData=
   ['link_5flabel_5fclicked_5fevent_5fargs_15',['link_label_clicked_event_args',['../classxtd_1_1forms_1_1link__label__clicked__event__args.html',1,'xtd::forms']]],
   ['list_16',['list',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
   ['list_3c_20byte_20_3e_17',['list&lt; byte &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
-  ['list_5fbox_18',['list_box',['../classxtd_1_1forms_1_1list__box.html',1,'xtd::forms']]],
-  ['list_5fcontrol_19',['list_control',['../classxtd_1_1forms_1_1list__control.html',1,'xtd::forms']]],
-  ['loading_5findicator_20',['loading_indicator',['../classxtd_1_1forms_1_1loading__indicator.html',1,'xtd::forms']]],
-  ['loading_5findicators_21',['loading_indicators',['../classxtd_1_1forms_1_1loading__indicators.html',1,'xtd::forms']]],
-  ['lock_5fguard_22',['lock_guard',['../classxtd_1_1threading_1_1lock__guard.html',1,'xtd::threading']]],
-  ['lock_5frecursion_5fexception_23',['lock_recursion_exception',['../classxtd_1_1threading_1_1lock__recursion__exception.html',1,'xtd::threading']]]
+  ['list_3c_20int32_20_3e_18',['list&lt; int32 &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
+  ['list_5fbox_19',['list_box',['../classxtd_1_1forms_1_1list__box.html',1,'xtd::forms']]],
+  ['list_5fcontrol_20',['list_control',['../classxtd_1_1forms_1_1list__control.html',1,'xtd::forms']]],
+  ['loading_5findicator_21',['loading_indicator',['../classxtd_1_1forms_1_1loading__indicator.html',1,'xtd::forms']]],
+  ['loading_5findicators_22',['loading_indicators',['../classxtd_1_1forms_1_1loading__indicators.html',1,'xtd::forms']]],
+  ['lock_5fguard_23',['lock_guard',['../classxtd_1_1threading_1_1lock__guard.html',1,'xtd::threading']]],
+  ['lock_5frecursion_5fexception_24',['lock_recursion_exception',['../classxtd_1_1threading_1_1lock__recursion__exception.html',1,'xtd::threading']]]
 ];

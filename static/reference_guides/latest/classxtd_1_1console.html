@@ -404,7 +404,7 @@ Inheritance diagram for xtd::console:</div>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the <a class="el" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888" title="Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...">xtd::console::out</a> will flush its buffer to the underlying stream after every call to <a class="el" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76" title="Writes the text representation of the specified value to the standard output stream.">xtd::console::write</a> and <a class="el" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37" title="Writes the current line terminator to the standard output stream using the specified format informati...">xtd::console::write_line</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>true to force <a class="el" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888" title="Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...">xtd::console::out</a> to flush its buffer; otherwise, false. The default value is true. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> to force <a class="el" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888" title="Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...">xtd::console::out</a> to flush its buffer; otherwise, false. The default value is true. </dd></dl>
 
 </div>
 </div>
@@ -941,7 +941,7 @@ Inheritance diagram for xtd::console:</div>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the CAPS LOCK keyboard toggle is turned on or turned off. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if CAPS LOCK is turned on; false if CAPS LOCK is turned off. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if CAPS LOCK is turned on; false if CAPS LOCK is turned off. </dd></dl>
 
 </div>
 </div>
@@ -1390,7 +1390,7 @@ Inheritance diagram for xtd::console:</div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if cursor top changed; otherwise false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if cursor top changed; otherwise <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>The value in a set operation is less than zero <br  />
@@ -1482,7 +1482,7 @@ Inheritance diagram for xtd::console:</div>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the cursor is visible. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the cursor is visible; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the cursor is visible; otherwise, false. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_visible property. The example makes the cursor visible if the first column of input is a '+' character or invisible if the input is a '-' character. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1774,7 +1774,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="ttc" id="aclassxtd_1_1foreground__color_html"><div class="ttname"><a href="classxtd_1_1foreground__color.html">xtd::foreground_color</a></div><div class="ttdoc">Represent foreground color output manipulator class.</div><div class="ttdef"><b>Definition</b> foreground_color.hpp:20</div></div>
 <div class="ttc" id="aclassxtd_1_1reset__color_html"><div class="ttname"><a href="classxtd_1_1reset__color.html">xtd::reset_color</a></div><div class="ttdoc">Represent reset color output manipulator class.</div><div class="ttdef"><b>Definition</b> reset_color.hpp:20</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gab60a2a64b74b91771b667e4a079681f2"><div class="ttname"><a href="group__xtd__core.html#gab60a2a64b74b91771b667e4a079681f2">xtd::console_color</a></div><div class="ttdeci">console_color</div><div class="ttdoc">Specifies constants that define foreground and background colors for the console.</div><div class="ttdef"><b>Definition</b> console_color.hpp:20</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_html"><div class="ttname"><a href="namespacextd_1_1collections.html">xtd::collections</a></div><div class="ttdoc">The xtd::collections namespace contains interfaces and classes that define various collections of obj...</div><div class="ttdef"><b>Definition</b> any_pair.hpp:12</div></div>
+<div class="ttc" id="anamespacextd_1_1collections_html"><div class="ttname"><a href="namespacextd_1_1collections.html">xtd::collections</a></div><div class="ttdoc">The xtd::collections namespace contains interfaces and classes that define various collections of obj...</div><div class="ttdef"><b>Definition</b> any_pair.hpp:10</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -2154,7 +2154,7 @@ Inheritance diagram for xtd::console:</div>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether a key press is available in the input stream. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if a key press is available; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if a key press is available; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The key_available method is returned immediately; that is, the key_available method does not block input until a key press is available. </dd>
 <dd>
 Use the key_available method in conjunction with only the read_key method, not the read or read_line methods </dd></dl>
@@ -2466,7 +2466,7 @@ Use the key_available method in conjunction with only the read_key method, not t
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if Ctrl+C is treated as ordinary input; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if Ctrl+C is treated as ordinary input; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the value of the treat_control_c_as_input property is false and Ctrl+C is pressed, the pressed keys are not stored in the input buffer and the operating system terminates the currently executing process. This is the default value. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Use this property judiciously because setting it to true has such a dramatic effect. Most users expect Ctrl+C to terminate a console application. If you disable the effect of Ctrl+C, the user must remember to use Ctrl+Break to terminate the application, which is a less familiar key combination. </dd></dl>
 
@@ -4227,7 +4227,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 27 2025 21:58:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 30 2025 20:12:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -474,7 +474,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Blocks the current thread until the current <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a> receives a signal. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the current instance receives a signal. If the current instance is never signaled, xtd::threading::wait_handle.wait_one(int32, bool) never returns. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current instance receives a signal. If the current instance is never signaled, xtd::threading::wait_handle.wait_one(int32, bool) never returns. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>the handle is invalid </td></tr>
@@ -561,7 +561,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the current instance receives a signal. If the current instance is never signaled, xtd::threading::wait_handle.wait_one(int32, bool) never returns. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current instance receives a signal. If the current instance is never signaled, xtd::threading::wait_handle.wait_one(int32, bool) never returns. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>the handle is invalid </td></tr>
@@ -782,7 +782,7 @@ template&lt;class collection_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true when every element in wait_handles has received a signal; otherwise the method never returns. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> when every element in wait_handles has received a signal; otherwise the method never returns. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>the to_signal and/or to_wait are invalid </td></tr>
@@ -838,7 +838,7 @@ template&lt;class collection_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true when every element in wait_handles has received a signal; otherwise the method never returns. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> when every element in wait_handles has received a signal; otherwise the method never returns. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>timeout is a negative number other than -1 milliseconds, which represents an infinite time-out.<br  />
@@ -897,7 +897,7 @@ template&lt;class collection_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true when every element in wait_handles has received a signal; otherwise the method never returns. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> when every element in wait_handles has received a signal; otherwise the method never returns. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>timeout is a negative number other than -1 milliseconds, which represents an infinite time-out.<br  />
@@ -1102,7 +1102,7 @@ The number of objects in wait_handles is greater than the system permits. </td><
 </div><div class="memdoc">
 
 <p>Releases ownership of the specified <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>true If the function succeeds, false otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> If the function succeeds, false otherwise. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Override this function for all derived object </dd></dl>
 
 <p>Implemented in <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html#aaa4488a58c5f9a3d9275edcef7db8506">xtd::threading::event_wait_handle</a>, <a class="el" href="classxtd_1_1threading_1_1mutex.html#a9fdaa8f872d88a427616d3a309b8bdb9">xtd::threading::mutex</a>, and <a class="el" href="classxtd_1_1threading_1_1semaphore.html#aaa4697bd9662757ea8545edcaf66edb6">xtd::threading::semaphore</a>.</p>
@@ -1141,7 +1141,7 @@ The number of objects in wait_handles is greater than the system permits. </td><
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the current instance receives a signal; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current instance receives a signal; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If milliseconds_timeout is zero, the method does not block. It tests the state of the wait handle and returns immediately. </dd>
 <dd>
 Override this function for all derived object </dd></dl>
@@ -1209,7 +1209,7 @@ Override this function for all derived object </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 27 2025 21:59:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 30 2025 20:13:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

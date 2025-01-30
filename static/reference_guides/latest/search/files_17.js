@@ -1,18 +1,18 @@
 var searchData=
 [
-  ['xml_5fsyntax_5fexception_2ehpp_0',['xml_syntax_exception.hpp',['../xml__syntax__exception_8hpp.html',1,'']]],
-  ['xtd_2ecore_2ehpp_1',['xtd.core.hpp',['../xtd_8core_8hpp.html',1,'']]],
-  ['xtd_2edrawing_2ehpp_2',['xtd.drawing.hpp',['../xtd_8drawing_8hpp.html',1,'']]],
-  ['xtd_2eforms_2ehpp_3',['xtd.forms.hpp',['../xtd_8forms_8hpp.html',1,'']]],
-  ['xtd_2ehpp_4',['xtd.hpp',['../xtd_8hpp.html',1,'']]],
-  ['xtd_2etunit_2ehpp_5',['xtd.tunit.hpp',['../xtd_8tunit_8hpp.html',1,'']]],
-  ['xtd_5fabout_5fbox_2ehpp_6',['xtd_about_box.hpp',['../xtd__about__box_8hpp.html',1,'']]],
-  ['xtd_5fabout_5fdialog_2ehpp_7',['xtd_about_dialog.hpp',['../xtd__about__dialog_8hpp.html',1,'']]],
-  ['xtd_5fcmake_5fexamples_2edox_8',['xtd_cmake_examples.dox',['../xtd__cmake__examples_8dox.html',1,'']]],
-  ['xtd_5fcore_5fexamples_2edox_9',['xtd_core_examples.dox',['../xtd__core__examples_8dox.html',1,'']]],
-  ['xtd_5fdrawing_5fexamples_2edox_10',['xtd_drawing_examples.dox',['../xtd__drawing__examples_8dox.html',1,'']]],
-  ['xtd_5fforms_5fexamples_2edox_11',['xtd_forms_examples.dox',['../xtd__forms__examples_8dox.html',1,'']]],
-  ['xtd_5fnamespace_5faliases_2ehpp_12',['xtd_namespace_aliases.hpp',['../xtd__namespace__aliases_8hpp.html',1,'']]],
-  ['xtd_5fsystem_5fimages_2ehpp_13',['xtd_system_images.hpp',['../xtd__system__images_8hpp.html',1,'']]],
-  ['xtd_5ftunit_5fexamples_2edox_14',['xtd_tunit_examples.dox',['../xtd__tunit__examples_8dox.html',1,'']]]
+  ['wait_5fcallback_2ehpp_0',['wait_callback.hpp',['../wait__callback_8hpp.html',1,'']]],
+  ['wait_5fhandle_2ehpp_1',['wait_handle.hpp',['../wait__handle_8hpp.html',1,'']]],
+  ['wait_5fhandle_5fcannot_5fbe_5fopened_5fexception_2ehpp_2',['wait_handle_cannot_be_opened_exception.hpp',['../wait__handle__cannot__be__opened__exception_8hpp.html',1,'']]],
+  ['wait_5for_5ftimer_5fcallback_2ehpp_3',['wait_or_timer_callback.hpp',['../wait__or__timer__callback_8hpp.html',1,'']]],
+  ['wchar_2ehpp_4',['wchar.hpp',['../wchar_8hpp.html',1,'']]],
+  ['wchar_5fobject_2ehpp_5',['wchar_object.hpp',['../wchar__object_8hpp.html',1,'']]],
+  ['web_5fexception_2ehpp_6',['web_exception.hpp',['../web__exception_8hpp.html',1,'']]],
+  ['white_5fcolors_2ehpp_7',['white_colors.hpp',['../white__colors_8hpp.html',1,'']]],
+  ['white_5fspace_2ehpp_8',['white_space.hpp',['../white__space_8hpp.html',1,'']]],
+  ['wptr_2ehpp_9',['wptr.hpp',['../wptr_8hpp.html',1,'']]],
+  ['wrap_5fpointer_5fiterator_2ehpp_10',['wrap_pointer_iterator.hpp',['../wrap__pointer__iterator_8hpp.html',1,'']]],
+  ['wrap_5fpointer_5freverse_5fiterator_2ehpp_11',['wrap_pointer_reverse_iterator.hpp',['../wrap__pointer__reverse__iterator_8hpp.html',1,'']]],
+  ['wstring_2ehpp_12',['wstring.hpp',['../wstring_8hpp.html',1,'']]],
+  ['wstring_5fbuilder_2ehpp_13',['wstring_builder.hpp',['../wstring__builder_8hpp.html',1,'']]],
+  ['wstring_5fcomparer_2ehpp_14',['wstring_comparer.hpp',['../wstring__comparer_8hpp.html',1,'']]]
 ];

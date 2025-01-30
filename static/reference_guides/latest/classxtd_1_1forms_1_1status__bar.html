@@ -1565,7 +1565,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether any panels that have been added to the control are displayed. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if panels are displayed; otherwise, false. The default is false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if panels are displayed; otherwise, false. The default is false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>By default, the <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a> control displays the value of its <a class="el" href="classxtd_1_1forms_1_1control.html#ac12513e127a5cc7bb9ee8b238afa2fd5" title="Gets the text associated with this control.">xtd::forms::status_bar::text</a> property without any panels. When <a class="el" href="classxtd_1_1forms_1_1status__bar.html#aededed56474d067f2d59c9dc51c3e84d" title="Gets a value indicating whether any panels that have been added to the control are displayed.">xtd::forms::status_bar::show_panels</a> is set to true, any <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a> objects specified in the StatusBar control are displayed. No panels are initially created when you create an instance of the <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a> class. You can add panels to a <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a> control by using the <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a8c7d97b53051103f818d43f62a8a6bed" title="Adds an element to the end.">xtd::forms::status_bar::status_bar_panel_collection::push_back</a> method of the <a class="el" href="classxtd_1_1forms_1_1status__bar.html#ae81f1618bf51b25a4ddecffba289c122" title="Represents the collection of panels in a xtd::forms::status_bar control.">xtd::forms::status_bar::status_bar_panel_collection</a> class. This collection class can be accessed through the <a class="el" href="classxtd_1_1forms_1_1status__bar.html#ab78bde4291308927eb9f2bb36c2a437c" title="Gets the collection of xtd::forms::status_bar panels contained within the control.">xtd::forms::status_bar::panels</a> property of <a class="el" href="classxtd_1_1forms_1_1status__bar.html" title="Represents a Windows status bar control.">xtd::forms::status_bar</a>. </dd></dl>
 
 </div>
@@ -1630,7 +1630,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the status bar displays a xtd::forms::tool_tip for each button. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the status bar display a xtd::forms::tool_tip for each button; otherwise, false. The default is false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the status bar display a xtd::forms::tool_tip for each button; otherwise, false. The default is false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>To set the text displayed by the xtd::forms::tool_tip, set the <a class="el" href="classxtd_1_1forms_1_1tool__bar__button.html#ad8a575563235df1d2e92d8e143ad5c76" title="Gets the text that appears as a xtd::forms::tool_tip for the button.">xtd::forms::tool_bar_button::tool_tip_text</a> property of each <a class="el" href="classxtd_1_1forms_1_1tool__bar__button.html" title="Represents a toolbar button.">xtd::forms::tool_bar_button</a> on the <a class="el" href="classxtd_1_1forms_1_1tool__bar.html" title="Represents a Windows toolbar.">xtd::forms::tool_bar</a>. To cause the xtd::forms::tool_tip to display as the user moves the mouse pointer over the status bar button, set the <a class="el" href="classxtd_1_1forms_1_1tool__bar.html#a07ef5f6435cebfaf6c9600b16ef59e07" title="Gets a value indicating whether the toolbar displays a xtd::forms::tool_tip for each button.">xtd::forms::tool_bar::show_tool_tips</a> property to true. </dd></dl>
 
 </div>
@@ -1695,7 +1695,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether a sizing grip is displayed in the lower-right corner of the control. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if a sizing grip is displayed; otherwise, false. The default is true. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if a sizing grip is displayed; otherwise, false. The default is true. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>You can use this property to display a sizing grip to provide an indication to the user when a form is resizable. If the <a class="el" href="group__xtd__forms.html#gae69a2e9fdce97075bf7642aed73e5907" title="Specifies the border styles for a form.">xtd::forms::form_border_style</a> property of your <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> is set to a border style that is not resizable, such as <a class="el" href="group__xtd__forms.html#ggae69a2e9fdce97075bf7642aed73e5907a5660a203d49481b9b904b0dc5644b277" title="A fixed, three-dimensional border.">xtd::forms::form_border_style::fixed_3d</a> or <a class="el" href="group__xtd__forms.html#ggae69a2e9fdce97075bf7642aed73e5907a6fec4556b013bc10034cdae2e113734a" title="A thick, fixed dialog-style border.">xtd::forms::form_border_style::fixed_dialog</a>, you should set the <a class="el" href="classxtd_1_1forms_1_1status__bar.html#aacdf488da01df7a78d63c4ac3a16a7cd" title="Gets a value indicating whether a sizing grip is displayed in the lower-right corner of the control.">xtd::forms::status_bar::sizing_grip</a> property to false to prevent the user from thinking that the form can be resized. </dd></dl>
 
 </div>
@@ -3095,7 +3095,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 27 2025 21:58:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 30 2025 20:13:00 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

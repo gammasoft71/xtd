@@ -139,6 +139,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html">xtd::collections::generic::ilist&lt; type_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that can be individually accessed by index.  <a href="classxtd_1_1collections_1_1generic_1_1ilist.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1iset.html">xtd::collections::generic::iset&lt; type_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the base interface for the abstraction of sets.  <a href="classxtd_1_1collections_1_1generic_1_1iset.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html">xtd::collections::generic::key_value_pair&lt; key_t, value_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a key/value pair that can be set or retrieved.  <a href="structxtd_1_1collections_1_1generic_1_1key__value__pair.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,34 +154,50 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga64eee1442dc5ab233c858fb9210538f0"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
-<tr class="memitem:ga64eee1442dc5ab233c858fb9210538f0"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga64eee1442dc5ab233c858fb9210538f0">xtd::collections::generic::hash_set</a> = std::unordered_set&lt; type_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html">helpers::hasher</a>&lt; type_t &gt;, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">helpers::equator</a>&lt; type_t &gt;, <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator</a>&lt; type_t &gt; &gt;</td></tr>
-<tr class="memdesc:ga64eee1442dc5ab233c858fb9210538f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a set of values.  <br /></td></tr>
-<tr class="separator:ga64eee1442dc5ab233c858fb9210538f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga14b91f645f99106e1b8041b32791f9ed"><td class="memTemplParams" colspan="2">template&lt;class key_t , class value_t &gt; </td></tr>
-<tr class="memitem:ga14b91f645f99106e1b8041b32791f9ed"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga14b91f645f99106e1b8041b32791f9ed">xtd::collections::generic::sorted_dictionary</a> = <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>&lt; key_t, value_t &gt;</td></tr>
-<tr class="memdesc:ga14b91f645f99106e1b8041b32791f9ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of key/value pairs that are sorted on the key.  <br /></td></tr>
-<tr class="separator:ga14b91f645f99106e1b8041b32791f9ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1b6a1fb3e965aaf21f075a1f3b99ec90"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
-<tr class="memitem:ga1b6a1fb3e965aaf21f075a1f3b99ec90"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga1b6a1fb3e965aaf21f075a1f3b99ec90">xtd::collections::generic::sorted_set</a> = std::set&lt; type_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html">helpers::comparer</a>&lt; type_t &gt;, <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator</a>&lt; type_t &gt; &gt;</td></tr>
-<tr class="memdesc:ga1b6a1fb3e965aaf21f075a1f3b99ec90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that is maintained in sorted order.  <br /></td></tr>
-<tr class="separator:ga1b6a1fb3e965aaf21f075a1f3b99ec90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae5c86fd1f7e7f0a0b5de13af77c34d4c"><td class="memTemplParams" colspan="2">template&lt;class type_t , class hasher_t  = xtd::collections::generic::helpers::hasher&lt;type_t&gt;, class equator_t  = xtd::collections::generic::helpers::equator&lt;type_t&gt;, class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:gae5c86fd1f7e7f0a0b5de13af77c34d4c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#gae5c86fd1f7e7f0a0b5de13af77c34d4c">xtd::collections::generic::hash_set</a> = std::unordered_set&lt; type_t, hasher_t, equator_t, allocator_t &gt;</td></tr>
+<tr class="memdesc:gae5c86fd1f7e7f0a0b5de13af77c34d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a set of values.  <br /></td></tr>
+<tr class="separator:gae5c86fd1f7e7f0a0b5de13af77c34d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52295a51ccfe37b2a4192b073ce237b9"><td class="memTemplParams" colspan="2">template&lt;class type_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:ga52295a51ccfe37b2a4192b073ce237b9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga52295a51ccfe37b2a4192b073ce237b9">xtd::collections::generic::linked_list</a> = std::forward_list&lt; type_t, allocator_t &gt;</td></tr>
+<tr class="memdesc:ga52295a51ccfe37b2a4192b073ce237b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a doubly linked list.  <br /></td></tr>
+<tr class="separator:ga52295a51ccfe37b2a4192b073ce237b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafe25926b152d27ca34bd3c297b77beb6"><td class="memTemplParams" colspan="2">template&lt;class type_t , class container_t  = std::deque&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:gafe25926b152d27ca34bd3c297b77beb6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#gafe25926b152d27ca34bd3c297b77beb6">xtd::collections::generic::queue</a> = std::stack&lt; type_t, container_t &gt;</td></tr>
+<tr class="memdesc:gafe25926b152d27ca34bd3c297b77beb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that is maintained in sorted order.  <br /></td></tr>
+<tr class="separator:gafe25926b152d27ca34bd3c297b77beb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga64bb7a14ab354aad70b9c8a839aca3d9"><td class="memTemplParams" colspan="2">template&lt;class key_t , class value_t , class comparer_t  = helpers::comparer&lt;key_t&gt;, class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ga64bb7a14ab354aad70b9c8a839aca3d9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9">xtd::collections::generic::sorted_dictionary</a> = <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>&lt; key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html">helpers::hasher</a>&lt; key_t &gt;, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">helpers::equator</a>&lt; key_t &gt;, allocator_t &gt;</td></tr>
+<tr class="memdesc:ga64bb7a14ab354aad70b9c8a839aca3d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of key/value pairs that are sorted on the key.  <br /></td></tr>
+<tr class="separator:ga64bb7a14ab354aad70b9c8a839aca3d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad3585c1ae4916c485b63e9186a0d6bd3"><td class="memTemplParams" colspan="2">template&lt;class key_t , class value_t , class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </td></tr>
+<tr class="memitem:gad3585c1ae4916c485b63e9186a0d6bd3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#gad3585c1ae4916c485b63e9186a0d6bd3">xtd::collections::generic::sorted_list</a> = <a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9">sorted_dictionary</a>&lt; key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html">helpers::comparer</a>&lt; key_t &gt;, allocator_t &gt;</td></tr>
+<tr class="memdesc:gad3585c1ae4916c485b63e9186a0d6bd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and by index.  <br /></td></tr>
+<tr class="separator:gad3585c1ae4916c485b63e9186a0d6bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa2b86548e24c1469949088a7ad576c69"><td class="memTemplParams" colspan="2">template&lt;class type_t , class comparer_t  = xtd::collections::generic::helpers::comparer&lt;type_t&gt;, class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:gaa2b86548e24c1469949088a7ad576c69"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69">xtd::collections::generic::sorted_set</a> = std::set&lt; type_t, comparer_t, allocator_t &gt;</td></tr>
+<tr class="memdesc:gaa2b86548e24c1469949088a7ad576c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that is maintained in sorted order.  <br /></td></tr>
+<tr class="separator:gaa2b86548e24c1469949088a7ad576c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga342a811c6871f2b7e44168e039adde1a"><td class="memTemplParams" colspan="2">template&lt;class type_t , class container_t  = std::deque&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:ga342a811c6871f2b7e44168e039adde1a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga342a811c6871f2b7e44168e039adde1a">xtd::collections::generic::stack</a> = std::stack&lt; type_t, container_t &gt;</td></tr>
+<tr class="memdesc:ga342a811c6871f2b7e44168e039adde1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified type.  <br /></td></tr>
+<tr class="separator:ga342a811c6871f2b7e44168e039adde1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga200965dd82cd1cef729d36c0b2f41a0a"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga200965dd82cd1cef729d36c0b2f41a0a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga200965dd82cd1cef729d36c0b2f41a0a">xtd::collections::generic::type_to_list_t</a> = typename std::conditional&lt; std::is_same&lt; bool, type_t &gt;::value, char, type_t &gt;<a class="el" href="group__types.html#gafa42bcceb7fb5768ea8cc4588e67dc15">::type</a></td></tr>
 <tr class="memdesc:ga200965dd82cd1cef729d36c0b2f41a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the type to list type.  <br /></td></tr>
 <tr class="separator:ga200965dd82cd1cef729d36c0b2f41a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="ga64eee1442dc5ab233c858fb9210538f0" name="ga64eee1442dc5ab233c858fb9210538f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga64eee1442dc5ab233c858fb9210538f0">&#9670;&#160;</a></span>hash_set</h2>
+<a id="gae5c86fd1f7e7f0a0b5de13af77c34d4c" name="gae5c86fd1f7e7f0a0b5de13af77c34d4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae5c86fd1f7e7f0a0b5de13af77c34d4c">&#9670;&#160;</a></span>hash_set</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t &gt; </div>
+template&lt;class type_t , class hasher_t  = xtd::collections::generic::helpers::hasher&lt;type_t&gt;, class equator_t  = xtd::collections::generic::helpers::equator&lt;type_t&gt;, class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group__generic__collections.html#ga64eee1442dc5ab233c858fb9210538f0">xtd::collections::generic::hash_set</a> = typedef std::unordered_set&lt;type_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html">helpers::hasher</a>&lt;type_t&gt;, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">helpers::equator</a>&lt;type_t&gt;, <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator</a>&lt;type_t&gt; &gt;</td>
+          <td class="memname">using <a class="el" href="group__generic__collections.html#gae5c86fd1f7e7f0a0b5de13af77c34d4c">xtd::collections::generic::hash_set</a> = typedef std::unordered_set&lt;type_t, hasher_t, equator_t, allocator_t&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -186,30 +205,90 @@ template&lt;class type_t &gt; </div>
 <p><code>#include &lt;<a class="el" href="hash__set_8hpp.html">xtd.core/include/xtd/collections/generic/hash_set.hpp</a>&gt;</code></p>
 
 <p>Represents a set of values. </p>
-<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__generic__collections.html#ga64eee1442dc5ab233c858fb9210538f0">hash_set</a> = std::unordered_set&lt;type_t, helpers::hasher&lt;type_t&gt;, <a class="code hl_struct" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">helpers::equator&lt;type_t&gt;</a>, <a class="code hl_typedef" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator&lt;type_t&gt;</a>&gt;;</div>
-<div class="ttc" id="agroup__generic__collections_html_ga64eee1442dc5ab233c858fb9210538f0"><div class="ttname"><a href="group__generic__collections.html#ga64eee1442dc5ab233c858fb9210538f0">xtd::collections::generic::hash_set</a></div><div class="ttdeci">std::unordered_set&lt; type_t, helpers::hasher&lt; type_t &gt;, helpers::equator&lt; type_t &gt;, helpers::allocator&lt; type_t &gt; &gt; hash_set</div><div class="ttdoc">Represents a set of values.</div><div class="ttdef"><b>Definition</b> hash_set.hpp:33</div></div>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> hasher_t = xtd::collections::<span class="keyword">generic</span>::helpers::hasher&lt;type_t&gt;, <span class="keyword">class </span>equator_t = <a class="code hl_struct" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">xtd::collections::generic::helpers::equator&lt;type_t&gt;</a>, <span class="keyword">class </span>allocator_t = <a class="code hl_typedef" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">xtd::collections::generic::helpers::allocator&lt;type_t&gt;</a>&gt;</div>
+<div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__generic__collections.html#gae5c86fd1f7e7f0a0b5de13af77c34d4c">hash_set</a> = std::unordered_set&lt;type_t, hasher_t, equator_t, allocator_t&gt;;</div>
+<div class="ttc" id="agroup__generic__collections_html_gae5c86fd1f7e7f0a0b5de13af77c34d4c"><div class="ttname"><a href="group__generic__collections.html#gae5c86fd1f7e7f0a0b5de13af77c34d4c">xtd::collections::generic::hash_set</a></div><div class="ttdeci">std::unordered_set&lt; type_t, hasher_t, equator_t, allocator_t &gt; hash_set</div><div class="ttdoc">Represents a set of values.</div><div class="ttdef"><b>Definition</b> hash_set.hpp:34</div></div>
 <div class="ttc" id="agroup__helpers__generic__collections_html_gac7dc24539787a344466014161f2d39af"><div class="ttname"><a href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">xtd::collections::generic::helpers::allocator</a></div><div class="ttdeci">std::allocator&lt; type_t &gt; allocator</div><div class="ttdoc">Represent an allocator alias.</div><div class="ttdef"><b>Definition</b> allocator.hpp:38</div></div>
 <div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1helpers_1_1equator_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">xtd::collections::generic::helpers::equator</a></div><div class="ttdoc">Implements a function object for performing comparisons. Unless specialised, invokes operator== on ty...</div><div class="ttdef"><b>Definition</b> equator.hpp:38</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/hash_set</span></div>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/hash_set&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__generic__collections.html#ga64eee1442dc5ab233c858fb9210538f0" title="Represents a set of values.">xtd::collections::generic::hash_set</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/unordered_set">std::unordered_set</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__generic__collections.html#gae5c86fd1f7e7f0a0b5de13af77c34d4c" title="Represents a set of values.">xtd::collections::generic::hash_set</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/unordered_set">std::unordered_set</a>. </dd></dl>
 
 </div>
 </div>
-<a id="ga14b91f645f99106e1b8041b32791f9ed" name="ga14b91f645f99106e1b8041b32791f9ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga14b91f645f99106e1b8041b32791f9ed">&#9670;&#160;</a></span>sorted_dictionary</h2>
+<a id="ga52295a51ccfe37b2a4192b073ce237b9" name="ga52295a51ccfe37b2a4192b073ce237b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga52295a51ccfe37b2a4192b073ce237b9">&#9670;&#160;</a></span>linked_list</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t , class value_t &gt; </div>
+template&lt;class type_t , class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group__generic__collections.html#ga14b91f645f99106e1b8041b32791f9ed">xtd::collections::generic::sorted_dictionary</a> = typedef <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>&lt;key_t, value_t&gt;</td>
+          <td class="memname">using <a class="el" href="group__generic__collections.html#ga52295a51ccfe37b2a4192b073ce237b9">xtd::collections::generic::linked_list</a> = typedef std::forward_list&lt;type_t, allocator_t&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="linked__list_8hpp.html">xtd.core/include/xtd/collections/generic/linked_list.hpp</a>&gt;</code></p>
+
+<p>Represents a doubly linked list. </p>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
+<div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__generic__collections.html#ga52295a51ccfe37b2a4192b073ce237b9">linked_list</a> = std::list&lt;type_t, xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt;;</div>
+<div class="ttc" id="agroup__generic__collections_html_ga52295a51ccfe37b2a4192b073ce237b9"><div class="ttname"><a href="group__generic__collections.html#ga52295a51ccfe37b2a4192b073ce237b9">xtd::collections::generic::linked_list</a></div><div class="ttdeci">std::forward_list&lt; type_t, allocator_t &gt; linked_list</div><div class="ttdoc">Represents a doubly linked list.</div><div class="ttdef"><b>Definition</b> linked_list.hpp:32</div></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/linked_list&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
+
+</div>
+</div>
+<a id="gafe25926b152d27ca34bd3c297b77beb6" name="gafe25926b152d27ca34bd3c297b77beb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gafe25926b152d27ca34bd3c297b77beb6">&#9670;&#160;</a></span>queue</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , class container_t  = std::deque&lt;type_t&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__generic__collections.html#gafe25926b152d27ca34bd3c297b77beb6">xtd::collections::generic::queue</a> = typedef std::stack&lt;type_t, container_t&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="generic_2queue_8hpp.html">xtd.core/include/xtd/collections/generic/queue.hpp</a>&gt;</code></p>
+
+<p>Represents a collection of objects that is maintained in sorted order. </p>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> container_t = std::deque&lt;type_t&gt;&gt;</div>
+<div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__generic__collections.html#gafe25926b152d27ca34bd3c297b77beb6">queue</a> = std::stack&lt;type_t, container_t&gt;;</div>
+<div class="ttc" id="agroup__generic__collections_html_gafe25926b152d27ca34bd3c297b77beb6"><div class="ttname"><a href="group__generic__collections.html#gafe25926b152d27ca34bd3c297b77beb6">xtd::collections::generic::queue</a></div><div class="ttdeci">std::stack&lt; type_t, container_t &gt; queue</div><div class="ttdoc">Represents a collection of objects that is maintained in sorted order.</div><div class="ttdef"><b>Definition</b> queue.hpp:39</div></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/queue&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/set">std::set</a>. </dd>
+<dd>
+A <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> object maintains a sorted order without affecting performance as elements are inserted and deleted. Duplicate elements are ! allowed. Changing the sort values of existing items is ! supported and may lead to unexpected behavior. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to merge two disparate sets. This example creates two <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> objects, and populates them with even and odd numbers, respectively. A third <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> object is created from the set that contains the even numbers. The example then calls the UnionWith method, which adds the odd number set to the third set. <div class="fragment"></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ga64bb7a14ab354aad70b9c8a839aca3d9" name="ga64bb7a14ab354aad70b9c8a839aca3d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga64bb7a14ab354aad70b9c8a839aca3d9">&#9670;&#160;</a></span>sorted_dictionary</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class key_t , class value_t , class comparer_t  = helpers::comparer&lt;key_t&gt;, class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9">xtd::collections::generic::sorted_dictionary</a> = typedef <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>&lt;key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html">helpers::hasher</a>&lt;key_t&gt;, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">helpers::equator</a>&lt;key_t&gt;, allocator_t&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -217,31 +296,64 @@ template&lt;class key_t , class value_t &gt; </div>
 <p><code>#include &lt;<a class="el" href="sorted__dictionary_8hpp.html">xtd.core/include/xtd/collections/generic/sorted_dictionary.hpp</a>&gt;</code></p>
 
 <p>Represents a collection of key/value pairs that are sorted on the key. </p>
-<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> key_t, <span class="keyword">class</span> value_t&gt;</div>
-<div class="line"><span class="keyword">using </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">sorted_dictionary</a> = std::map&lt;key_t, value_t, helpers::comparer&lt;key_t&gt;, <a class="code hl_typedef" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;</a>&gt;&gt;;</div>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> key_t, <span class="keyword">class</span> value_t, <span class="keyword">class</span> comparer_t = helpers::comparer&lt;key_t&gt;, <span class="keyword">class</span> allocator_t = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt;</div>
+<div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">sorted_dictionary</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt;key_t, value_t&gt;;</div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1dictionary_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a></div><div class="ttdoc">Represents a collection of keys and values.</div><div class="ttdef"><b>Definition</b> dictionary.hpp:67</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1idictionary_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a></div><div class="ttdoc">Represents a generic collection of key/value pairs.</div><div class="ttdef"><b>Definition</b> idictionary.hpp:44</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:42</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/sorted_dictionary</span></div>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/sorted_dictionary&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__generic__collections.html#ga14b91f645f99106e1b8041b32791f9ed" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/map">std::map</a>. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/map">std::map</a>. </dd>
 <dd>
-A <a class="el" href="group__generic__collections.html#ga14b91f645f99106e1b8041b32791f9ed" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a> object maintains a sorted order without affecting performance as elements are inserted and deleted. Duplicate elements are ! allowed. Changing the sort values of existing items is ! supported and may lead to unexpected behavior. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following shows how to use <a class="el" href="group__generic__collections.html#ga14b91f645f99106e1b8041b32791f9ed" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a>. <div class="fragment"></div><!-- fragment --> </dd></dl>
+A <a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a> object maintains a sorted order without affecting performance as elements are inserted and deleted. Duplicate elements are ! allowed. Changing the sort values of existing items is ! supported and may lead to unexpected behavior. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following shows how to use <a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9" title="Represents a collection of key/value pairs that are sorted on the key.">xtd::collections::generic::sorted_dictionary</a>. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="ga1b6a1fb3e965aaf21f075a1f3b99ec90" name="ga1b6a1fb3e965aaf21f075a1f3b99ec90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga1b6a1fb3e965aaf21f075a1f3b99ec90">&#9670;&#160;</a></span>sorted_set</h2>
+<a id="gad3585c1ae4916c485b63e9186a0d6bd3" name="gad3585c1ae4916c485b63e9186a0d6bd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad3585c1ae4916c485b63e9186a0d6bd3">&#9670;&#160;</a></span>sorted_list</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t &gt; </div>
+template&lt;class key_t , class value_t , class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group__generic__collections.html#ga1b6a1fb3e965aaf21f075a1f3b99ec90">xtd::collections::generic::sorted_set</a> = typedef std::set&lt;type_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html">helpers::comparer</a>&lt;type_t&gt;, <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator</a>&lt;type_t&gt; &gt;</td>
+          <td class="memname">using <a class="el" href="group__generic__collections.html#gad3585c1ae4916c485b63e9186a0d6bd3">xtd::collections::generic::sorted_list</a> = typedef <a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9">sorted_dictionary</a>&lt;key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html">helpers::comparer</a>&lt;key_t&gt;, allocator_t&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="generic_2sorted__list_8hpp.html">xtd.core/include/xtd/collections/generic/sorted_list.hpp</a>&gt;</code></p>
+
+<p>Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and by index. </p>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> key_t, <span class="keyword">class</span> value_t, <span class="keyword">class</span> allocator_t = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt;</div>
+<div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">sorted_list</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt;key_t, value_t&gt;;</div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/sorted_list&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__generic__collections.html#gad3585c1ae4916c485b63e9186a0d6bd3" title="Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and ...">xtd::collections::generic::sorted_list</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/map">std::map</a>. </dd>
+<dd>
+A <a class="el" href="group__generic__collections.html#gad3585c1ae4916c485b63e9186a0d6bd3" title="Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and ...">xtd::collections::generic::sorted_list</a> object maintains a sorted order without affecting performance as elements are inserted and deleted. Duplicate elements are ! allowed. Changing the sort values of existing items is ! supported and may lead to unexpected behavior. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following shows how to use <a class="el" href="group__generic__collections.html#gad3585c1ae4916c485b63e9186a0d6bd3" title="Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and ...">xtd::collections::generic::sorted_list</a>. <div class="fragment"></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="gaa2b86548e24c1469949088a7ad576c69" name="gaa2b86548e24c1469949088a7ad576c69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa2b86548e24c1469949088a7ad576c69">&#9670;&#160;</a></span>sorted_set</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , class comparer_t  = xtd::collections::generic::helpers::comparer&lt;type_t&gt;, class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69">xtd::collections::generic::sorted_set</a> = typedef std::set&lt;type_t, comparer_t, allocator_t&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -249,18 +361,46 @@ template&lt;class type_t &gt; </div>
 <p><code>#include &lt;<a class="el" href="sorted__set_8hpp.html">xtd.core/include/xtd/collections/generic/sorted_set.hpp</a>&gt;</code></p>
 
 <p>Represents a collection of objects that is maintained in sorted order. </p>
-<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
-<div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__generic__collections.html#ga1b6a1fb3e965aaf21f075a1f3b99ec90">sorted_set</a> = std::set&lt;type_t, helpers::comparer&lt;type_t&gt;, <a class="code hl_typedef" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">helpers::allocator&lt;type_t&gt;</a>&gt;;</div>
-<div class="ttc" id="agroup__generic__collections_html_ga1b6a1fb3e965aaf21f075a1f3b99ec90"><div class="ttname"><a href="group__generic__collections.html#ga1b6a1fb3e965aaf21f075a1f3b99ec90">xtd::collections::generic::sorted_set</a></div><div class="ttdeci">std::set&lt; type_t, helpers::comparer&lt; type_t &gt;, helpers::allocator&lt; type_t &gt; &gt; sorted_set</div><div class="ttdoc">Represents a collection of objects that is maintained in sorted order.</div><div class="ttdef"><b>Definition</b> sorted_set.hpp:36</div></div>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> comparer_t = xtd::collections::<span class="keyword">generic</span>::helpers::comparer&lt;type_t&gt;, <span class="keyword">class </span>allocator_t = <a class="code hl_typedef" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">xtd::collections::generic::helpers::allocator&lt;type_t&gt;</a>&gt;</div>
+<div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69">sorted_set</a> = std::set&lt;type_t, comparer_t, allocator_t&gt;;</div>
+<div class="ttc" id="agroup__generic__collections_html_gaa2b86548e24c1469949088a7ad576c69"><div class="ttname"><a href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69">xtd::collections::generic::sorted_set</a></div><div class="ttdeci">std::set&lt; type_t, comparer_t, allocator_t &gt; sorted_set</div><div class="ttdoc">Represents a collection of objects that is maintained in sorted order.</div><div class="ttdef"><b>Definition</b> sorted_set.hpp:37</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/sorted_set</span></div>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/sorted_set&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__generic__collections.html#ga1b6a1fb3e965aaf21f075a1f3b99ec90" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/set">std::set</a>. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/set">std::set</a>. </dd>
 <dd>
-A <a class="el" href="group__generic__collections.html#ga1b6a1fb3e965aaf21f075a1f3b99ec90" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> object maintains a sorted order without affecting performance as elements are inserted and deleted. Duplicate elements are ! allowed. Changing the sort values of existing items is ! supported and may lead to unexpected behavior. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to merge two disparate sets. This example creates two <a class="el" href="group__generic__collections.html#ga1b6a1fb3e965aaf21f075a1f3b99ec90" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> objects, and populates them with even and odd numbers, respectively. A third <a class="el" href="group__generic__collections.html#ga1b6a1fb3e965aaf21f075a1f3b99ec90" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> object is created from the set that contains the even numbers. The example then calls the UnionWith method, which adds the odd number set to the third set. <div class="fragment"></div><!-- fragment --> </dd></dl>
+A <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> object maintains a sorted order without affecting performance as elements are inserted and deleted. Duplicate elements are ! allowed. Changing the sort values of existing items is ! supported and may lead to unexpected behavior. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to merge two disparate sets. This example creates two <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> objects, and populates them with even and odd numbers, respectively. A third <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> object is created from the set that contains the even numbers. The example then calls the UnionWith method, which adds the odd number set to the third set. <div class="fragment"></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ga342a811c6871f2b7e44168e039adde1a" name="ga342a811c6871f2b7e44168e039adde1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga342a811c6871f2b7e44168e039adde1a">&#9670;&#160;</a></span>stack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , class container_t  = std::deque&lt;type_t&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__generic__collections.html#ga342a811c6871f2b7e44168e039adde1a">xtd::collections::generic::stack</a> = typedef std::stack&lt;type_t, container_t&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="generic_2stack_8hpp.html">xtd.core/include/xtd/collections/generic/stack.hpp</a>&gt;</code></p>
+
+<p>Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified type. </p>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> container_t = std::deque&lt;type_t&gt;&gt;</div>
+<div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__generic__collections.html#ga342a811c6871f2b7e44168e039adde1a">stack</a> = std::stack&lt;type_t, container_t&gt;;</div>
+<div class="ttc" id="agroup__generic__collections_html_ga342a811c6871f2b7e44168e039adde1a"><div class="ttname"><a href="group__generic__collections.html#ga342a811c6871f2b7e44168e039adde1a">xtd::collections::generic::stack</a></div><div class="ttdeci">std::stack&lt; type_t, container_t &gt; stack</div><div class="ttdoc">Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified typ...</div><div class="ttdef"><b>Definition</b> stack.hpp:34</div></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/stack&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
 
 </div>
 </div>
@@ -292,7 +432,7 @@ template&lt;class type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 27 2025 21:58:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 30 2025 20:12:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

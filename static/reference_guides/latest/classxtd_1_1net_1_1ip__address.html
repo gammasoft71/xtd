@@ -674,7 +674,7 @@ The byte array is assumed to be in network byte order with the most significant 
 </div><div class="memdoc">
 
 <p>Gets whether the IP address is an IPv4-mapped IPv6 address. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the IP address is an IPv4-mapped IPv6 address; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the IP address is an IPv4-mapped IPv6 address; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Dual-stack sockets always require IPv6 addresses. The ability to interact with an IPv4 address requires the use of the IPv4-mapped IPv6 address format. Any IPv4 addresses must be represented in the IPv4-mapped IPv6 address format which enables an IPv6 only application to communicate with an IPv4 node. The IPv4-mapped IPv6 address format allows the IPv4 address of an IPv4 node to be represented as an IPv6 address. The IPv4 address is encoded into the low-order 32 bits of the IPv6 address, and the high-order 96 bits hold the fixed prefix 0:0:0:0:0:FFFF. The IPv4-mapped IPv6 address format is specified in RFC 4291. For more information, see www.ietf.org/rfc/rfc4291.txt. </dd></dl>
 
 </div>
@@ -787,7 +787,7 @@ The byte array is assumed to be in network byte order with the most significant 
 </div><div class="memdoc">
 
 <p>Gets whether the address is an IPv6 Teredo address. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if the IP address is an IPv6 Teredo address; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the IP address is an IPv6 Teredo address; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A Teredo address is an IPv6 address with the prefix of 2001::/32. Teredo addresses can be returned through normal DNS name resolution or enumerated as an IPv6 address assigned to a local interface. </dd></dl>
 
 </div>
@@ -1722,7 +1722,7 @@ The number of parts (each part is separated by a period) in str determines how t
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1796,7 +1796,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -2020,7 +2020,7 @@ The <a class="el" href="classxtd_1_1net_1_1ip__address.html#a470e4a32d7ceedb7c04
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 27 2025 21:59:01 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 30 2025 20:13:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

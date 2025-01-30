@@ -877,7 +877,7 @@ Prior <a class="el" href="classxtd_1_1threading_1_1mutex.html#acc9adcf7d62eddfb6
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the lock was acquired successfully, otherwise false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the lock was acquired successfully, otherwise <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This function is allowed to fail spuriously and return false even if the mutex is not currently locked by any other thread. </dd>
 <dd>
 If try_lock is called by a thread that already owns the mutex, the behavior is undefined. </dd>
@@ -917,7 +917,7 @@ Prior <a class="el" href="classxtd_1_1threading_1_1mutex.html#acc9adcf7d62eddfb6
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the lock was acquired successfully, otherwise false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the lock was acquired successfully, otherwise <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If timeout_duration is less or equal timeout_duration.zero(), the function behaves like <a class="el" href="classxtd_1_1threading_1_1mutex.html#af6f2b2901ae223419bef4baed022caee" title="Tries to lock the mutex. Returns immediately. On successful lock acquisition returns true,...">try_lock()</a>. </dd>
 <dd>
 This function may block for longer than timeout_duration due to scheduling or resource contention delays. </dd>
@@ -963,7 +963,7 @@ If try_lock_for is called by a thread that already owns the mutex, the behavior 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the lock was acquired successfully, otherwise false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the lock was acquired successfully, otherwise <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If timeout_time has already passed, this function behaves like <a class="el" href="classxtd_1_1threading_1_1mutex.html#af6f2b2901ae223419bef4baed022caee" title="Tries to lock the mutex. Returns immediately. On successful lock acquisition returns true,...">try_lock()</a>. </dd>
 <dd>
 Clock must meet the Clock requirements. The program is ill-formed if std::chrono::is_clock_v&lt;Clock&gt; is false (since C++20). </dd>
@@ -1088,7 +1088,7 @@ This operation synchronizes-with (as defined in std::memory_order) any subsequen
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the named mutex was opened successfully; otherwise, false. In some cases, false may be returned for invalid names. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the named mutex was opened successfully; otherwise, false. In some cases, false may be returned for invalid names. </dd></dl>
 
 </div>
 </div>
@@ -1116,7 +1116,7 @@ This operation synchronizes-with (as defined in std::memory_order) any subsequen
 </div><div class="memdoc">
 
 <p>Releases ownership of the specified <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd>true If the function succeeds, false otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> If the function succeeds, false otherwise. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Override this function for all derived object </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ae3323e1eb8bc5686e88c8eb54d93e2c8">xtd::threading::wait_handle</a>.</p>
@@ -1155,7 +1155,7 @@ This operation synchronizes-with (as defined in std::memory_order) any subsequen
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the current instance receives a signal; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current instance receives a signal; otherwise, false. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If milliseconds_timeout is zero, the method does not block. It tests the state of the wait handle and returns immediately. </dd>
 <dd>
 Override this function for all derived object </dd></dl>
@@ -1195,7 +1195,7 @@ Override this function for all derived object </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1269,7 +1269,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1315,7 +1315,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jan 27 2025 21:59:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Jan 30 2025 20:13:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
