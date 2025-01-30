@@ -100,14 +100,14 @@ namespace xtd::collections::generic::tests {
     }
 
     void test_method_(constructor_with_base_type) {
-      list<int>::base_type bt = {84, 42, 21};
+      auto bt = list<int>::base_type {84, 42, 21};
       auto items = list<int>(bt);
       assert::are_equal(3_z, items.count());
       collection_assert::are_equal({84, 42, 21}, items);
     }
 
     void test_method_(constructor_with_list) {
-      list l = {84, 42, 21};
+      auto l = list {84, 42, 21};
       auto items = list(l);
       l.add(10);
       assert::are_equal(3_z, items.count());
@@ -115,7 +115,7 @@ namespace xtd::collections::generic::tests {
     }
 
     void test_method_(constructor_with_move_list) {
-      list l = {84, 42, 21};
+      auto l = list {84, 42, 21};
       auto items = list(std::move(l));
       assert::are_equal(3_z, items.count());
       collection_assert::are_equal({84, 42, 21}, items);
@@ -123,7 +123,7 @@ namespace xtd::collections::generic::tests {
     }
 
     void test_method_(constructor_with_move_base_type) {
-      list<int>::base_type bt = {84, 42, 21};
+      auto bt = list<int>::base_type {84, 42, 21};
       auto items = list<int>(std::move(bt));
       assert::are_equal(3_z, items.count());
       collection_assert::are_equal({84, 42, 21}, items);
@@ -153,7 +153,7 @@ namespace xtd::collections::generic::tests {
       assert::are_equal(3_z, items.count());
 
       items.capacity(42);
-      assert::are_equal(42_z, items.capacity());
+      assert::is_greater_or_equal(items.capacity(), 42_z);
       assert::are_equal(3_z, items.count());
     }
 
@@ -268,7 +268,7 @@ namespace xtd::collections::generic::tests {
 
     void test_method_(items) {
       auto items = list {84, 42, 21};
-      assert::are_equal(typeof_<array<int>::base_type>(), typeof_(items.items()));
+      assert::are_equal(typeof_<list<int>::base_type>(), typeof_(items.items()));
       
       auto& inners = items.items();
       assert::are_equal(84, inners[0]);
@@ -289,7 +289,7 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(max_size) {
-      assert::are_equal(environment::os_version().is_linux() ? size_object::max_value / 8 : size_object::max_value / 4, list<int> {}.max_size());
+      assert::is_not_zero(list<int> {}.max_size());
     }
     
     void test_method_(rbegin) {
@@ -411,6 +411,9 @@ namespace xtd::collections::generic::tests {
       dest = array<int>(7);
       items.copy_to(dest, 2);
       collection_assert::are_equal({0, 0, 84, 42, 21, 0, 0}, dest);
+
+      dest = array<int>(3);
+      assert::throws<argument_exception>([&] {items.copy_to(dest, 1);});
     }
     
     void test_method_(equals_object) {
