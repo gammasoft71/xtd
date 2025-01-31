@@ -165,7 +165,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the list enables selection of list items.
-      /// @return `true` if the list enables list item selection; otherwise, `false`. The default is true.
+      /// @return `true` if the list enables list item selection; otherwise, `false`. The default is `true`.
       virtual bool allow_selection() const noexcept;
       
       /// @brief Raises the list_control::selected_index_changed event.

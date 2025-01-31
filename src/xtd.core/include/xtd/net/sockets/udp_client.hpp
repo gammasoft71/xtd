@@ -155,14 +155,14 @@ namespace xtd {
         udp_client& client(const xtd::net::sockets::socket& value) noexcept;
         
         /// @brief Gets a boolean value that specifies whether the xtd::net::sockets::udp_client allows Internet Protocol (IP) datagrams to be fragmented.
-        /// @return `true` if the xtd::net::sockets::udp_client allows datagram fragmentation; otherwise, `false`. The default is true.
+        /// @return `true` if the xtd::net::sockets::udp_client allows datagram fragmentation; otherwise, `false`. The default is `true`.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
         /// @exception xtd::object_closed_exception The underlying xtd::net::sockets::socket has been closed.
         /// @remarks Datagrams require fragmentation when their size exceeds the Maximum Transfer Unit (MTU) of the transmission medium. Datagrams may be fragmented by the sending host or by an intermediate router. If a datagram must be fragmented, and the xtd::net::sockets::socket_option_name::dont_fragment option is set, the datagram is discarded, and an Internet Control Message Protocol (ICMP) error message is sent back to the sender of the datagram.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         bool dont_fragment() const;
         /// @brief Sets boolean value that specifies whether the xtd::net::sockets::udp_client allows Internet Protocol (IP) datagrams to be fragmented.
-        /// @param value `true` if the xtd::net::sockets::udp_client allows datagram fragmentation; otherwise, `false`. The default is true.
+        /// @param value `true` if the xtd::net::sockets::udp_client allows datagram fragmentation; otherwise, `false`. The default is `true`.
         /// @return This current instance.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
         /// @exception xtd::object_closed_exception The underlying xtd::net::sockets::socket has been closed.
@@ -245,7 +245,7 @@ namespace xtd {
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
         /// @remarks The xtd::net::sockets::udp_client::allow_nat_traversal method is used to enable or disable NAT traversal for a xtd::net::sockets::udp_client instance. NAT traversal may be provided using Teredo, 6to4, or an ISATAP tunnel.
         /// @remarks When the allowed parameter is `false`, the xtd::net::sockets::ip_protection_level option on the associated socket is set to xtd::net::sockets::ip_protection_level::edge_restricted. This explicitly disables NAT traversal for a xtd::net::sockets::udp_client instance.
-        /// @remarks When the allowed parameter is true, the xtd::net::sockets::ip_protection_level option on the associated socket is set to xtd::net::sockets::ip_protection_level::edge_unrestricted. This may allow NAT traversal for a xtd::net::sockets::udp_client depending on firewall rules in place on the system.
+        /// @remarks When the allowed parameter is `true`, the xtd::net::sockets::ip_protection_level option on the associated socket is set to xtd::net::sockets::ip_protection_level::edge_unrestricted. This may allow NAT traversal for a xtd::net::sockets::udp_client depending on firewall rules in place on the system.
         /// @remarks A Teredo address is an IPv6 address with the prefix of 2001::/32. Teredo addresses can be returned through normal DNS name resolution or enumerated as an IPv6 address assigned to a local interface.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         void allow_nat_traversal(bool allowed);

@@ -55,7 +55,7 @@ namespace xtd {
     
     /// @brief Gets a value that indicates whether the asynchronous operation has completed.
     /// @return `true` if the operation is complete; otherwise, `false`.
-    /// @remarks When this property is true, you can assume it is safe to discard any resources you allocate for use by the asynchronous operation.
+    /// @remarks When this property is `true`, you can assume it is safe to discard any resources you allocate for use by the asynchronous operation.
     /// @par Notes to Implementers
     /// Implementers will typically return the value of a private field or internal test as the value of this property.
     /// @par Notes to Callers

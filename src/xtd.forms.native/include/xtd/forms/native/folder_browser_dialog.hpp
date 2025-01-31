@@ -47,7 +47,7 @@ namespace xtd {
         /// @param selected_path The path of the folder first selected in the dialog box or the last folder selected by the user.
         /// @param options A bitwise folder browser dialog flags value.
         /// @return `true` if the user clicks OK in the dialog box; otherwise, `false`.
-        /// @remarks If result is true, the selected_path parameter contains the new selected path.
+        /// @remarks If result is `true`, the selected_path parameter contains the new selected path.
         /// @warning Internal use only
         static bool run_dialog(intptr hwnd, const xtd::string& description, environment::special_folder root_folder, xtd::string& selected_path, size_t options);
         /// @brief Shows async dialog as sheet.
@@ -57,7 +57,7 @@ namespace xtd {
         /// @param selected_path The path of the folder first selected in the dialog box or the last folder selected by the user.
         /// @param options A bitwise folder browser dialog flags value.
         /// @return `true` if the user clicks OK in the dialog box; otherwise, `false`.
-        /// @remarks When dialog closed and if result is true, the selected_path parameter contains the new selected path.
+        /// @remarks When dialog closed and if result is `true`, the selected_path parameter contains the new selected path.
         /// @warning Internal use only
         static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr hwnd, const xtd::string& description, environment::special_folder root_folder, xtd::string& selected_path, size_t options);
         /// @}

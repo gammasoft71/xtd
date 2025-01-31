@@ -50,7 +50,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the xtd::net::sockets::network_stream class for the specified xtd::net::sockets::socket with the specified xtd::net::sockets::socket ownership.
         /// @param socket The xtd::net::sockets::socket that the xtd::net::sockets::network_stream will use to send and receive data.
         /// @param owns_socket Set to `true` to indicate that the xtd::net::sockets::network_stream will take ownership of the xtd::net::sockets::socket; otherwise, `false`.
-        /// @remarks The xtd::net::sockets::network_stream is created with read/write access to the specified xtd::net::sockets::socket. If the value of owns_socket parameter is true, the xtd::net::sockets::network_stream takes ownership of the underlying xtd::net::sockets::socket, and calling the close method also closes the underlying xtd::net::sockets::socket.
+        /// @remarks The xtd::net::sockets::network_stream is created with read/write access to the specified xtd::net::sockets::socket. If the value of owns_socket parameter is `true`, the xtd::net::sockets::network_stream takes ownership of the underlying xtd::net::sockets::socket, and calling the close method also closes the underlying xtd::net::sockets::socket.
         network_stream(const xtd::net::sockets::socket& socket, bool owns_socket);
 
         /// @brief Initializes a new instance of the network_stream class for the specified xtd::net::sockets::socket with the specified access rights.
@@ -91,7 +91,7 @@ namespace xtd {
         /// @return `true` if data is available on the stream to be read; otherwise, `false`.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
-        /// @remarks Use the xtd::net::sockets::network_stream::data_available property to determine if data is ready to be read. If xtd::net::sockets::network_stream::data_available is true, a call to std::iostream::read returns immediately. If the remote host shuts down or closes the connection, xtd::net::sockets::network_stream::data_available may throw a xtd::net::sockets::socket_exception.
+        /// @remarks Use the xtd::net::sockets::network_stream::data_available property to determine if data is ready to be read. If xtd::net::sockets::network_stream::data_available is `true`, a call to std::iostream::read returns immediately. If the remote host shuts down or closes the connection, xtd::net::sockets::network_stream::data_available may throw a xtd::net::sockets::socket_exception.
         virtual bool data_available() const;
         
         /// @brief Gets the length of the stream in bytes.

@@ -438,7 +438,7 @@ auto main() -> int {
 }
 ```
 
-The following example shows how to create a [horizontal_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1horizontal__layout__panel.html) whose children must have a size corresponding to a abosulte value in pixels and set expand to true.
+The following example shows how to create a [horizontal_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1horizontal__layout__panel.html) whose children must have a size corresponding to a abosulte value in pixels and set expand to `true`.
 
 ```cpp
 #include <xtd/xtd.forms.h>
@@ -595,7 +595,7 @@ auto main() -> int {
 }
 ```
 
-The following example shows how to create a [vertical_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1vertical__layout__panel.html) whose children must have a size corresponding to a abosulte value in pixels and set expand to true.
+The following example shows how to create a [vertical_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1vertical__layout__panel.html) whose children must have a size corresponding to a abosulte value in pixels and set expand to `true`.
 
 ```cpp
 #include <xtd/xtd.forms.h>

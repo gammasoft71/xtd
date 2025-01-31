@@ -116,7 +116,7 @@ namespace xtd {
     /// @brief Determines whether the specified object instances are considered equal.
     /// @param object_a The first object to compare.
     /// @param object_b The second object to compare.
-    /// @return `true` if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, `false`.
+    /// @return `true` if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns `true`. otherwise, `false`.
     /// @par Examples
     /// The following code example compares different objects.
     /// @include object_equals2.cpp

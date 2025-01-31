@@ -222,7 +222,7 @@ namespace xtd {
       static int32_t send_to(intmax_t handle, const std::vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags, const std::vector<uint8_t>& socket_address);
       /// @brief Sets a value that indicates whether the socket is in blocking mode.
       /// @param handle The socket handle.
-      /// @param blocking bool `true` if the Socket will block; otherwise, `false`. The default is true
+      /// @param blocking bool `true` if the Socket will block; otherwise, `false`. The default is `true`.
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
       static int32_t set_blocking(intmax_t handle, bool blocking);

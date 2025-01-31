@@ -27,7 +27,7 @@ namespace xtd {
     /// @remarks You can use a boolean trace switch to enable or disable messages based on their importance. Use the xtd::diagnostics::boolean_switch::enabled property to get the current value of the switch.
     /// @remarks You can create a xtd::diagnostics::boolean_switch in your code and set the xtd::diagnostics::boolean_switch::enabled property directly to instrument a specific section of code.
     /// @par Examples
-    /// This example configuration section defines a xtd::diagnostics::boolean_switch with the xtd::diagnostics::boolean_switch::display_name property set to my_switch and the xtd::diagnostics::boolean_switch::enabled value set to true. Within your application, you can use the configured switch value by creating a xtd::diagnostics::boolean_switch with the same name, as shown in the following code example.
+    /// This example configuration section defines a xtd::diagnostics::boolean_switch with the xtd::diagnostics::boolean_switch::display_name property set to my_switch and the xtd::diagnostics::boolean_switch::enabled value set to `true`. Within your application, you can use the configured switch value by creating a xtd::diagnostics::boolean_switch with the same name, as shown in the following code example.
     /// ```cpp
     /// private:
     ///   inline static xtd::diagnostics::boolean_switch boolean_switch("my_switch", "This is my switch");

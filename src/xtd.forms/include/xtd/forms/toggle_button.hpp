@@ -29,7 +29,7 @@ namespace xtd {
     /// @remarks toggle_button and radio_button controls have a similar function: they allow the user to choose from a list of options. toggle_button controls let the user pick a combination of options. In contrast, radio_button controls allow a user to choose from mutually exclusive options.
     /// @remarks The appearance property determines whether the toggle_button appears as a typical toggle_button or as a button.
     /// @remarks The three_state property determines whether the control supports two or three states. Use the checked property to get or set the value of a two-state toggle_button control and use the check_state property to get or set the value of a three-state toggle_button control.
-    /// @note If the three_state property is set to true, the checked property will return `true` for either a checked or indeterminate state.
+    /// @note If the three_state property is set to `true`, the checked property will return `true` for either a checked or indeterminate state.
     /// @remarks The flat_style property determines the style and appearance of the control. If the flat_style property is set to flat_style::system, the user's operating system determines the appearance of the control.
     /// @note When the flat_style property is set to flat_style::system, the check_align property is ignored and the control is displayed using the content_alignment::middle_left or content_alignment::middle_right alignment. If the check_align property is set to one of the right alignments, the control is displayed using the content_alignment::middle_right alignment; otherwise, it is displayed using the content_alignment::middle_left alignment.
     /// @remarks The following describes an indeterminate state: You have a toggle_button that determines if the selected text in a rich_text_box is bold. When you select text you can click the toggle_button to bold the selection. Likewise, when you select some text, the toggle_button displays whether the selected text is bold. If your selected text contains text that is bold and normal, the toggle_button will have an indeterminate state.
@@ -49,7 +49,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the CheckBox class.
-      /// @remarks By default, when a new toggle_button is instantiated, auto_check is set to true, checked is set to `false`, and appearance is set to normal.
+      /// @remarks By default, when a new toggle_button is instantiated, auto_check is set to `true`, checked is set to `false`, and appearance is set to normal.
       toggle_button();
       /// @}
       
@@ -57,11 +57,11 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the checked or check_state values and the toggle_button's appearance are automatically changed when the toggle_button is clicked.
-      /// @return `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, `false`. The default value is true.
+      /// @return `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, `false`. The default value is `true`.
       /// @remarks If auto_check is set to `false`, you will need to add code to update the checked or check_state values in the click event handler.
       virtual bool auto_check() const noexcept;
       /// @brief Sets a value indicating whether the checked or check_state values and the toggle_button's appearance are automatically changed when the toggle_button is clicked.
-      /// @param auto_check `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, `false`. The default value is true.
+      /// @param auto_check `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, `false`. The default value is `true`.
       /// @remarks If auto_check is set to `false`, you will need to add code to update the checked or check_state values in the click event handler.
       virtual toggle_button& auto_check(bool auto_check);
       
@@ -73,12 +73,12 @@ namespace xtd {
       virtual toggle_button& check_align(content_alignment check_align);
       
       /// @brief Gets a value indicating whether the toggle_button is in the checked state.
-      /// @return `true` if the toggle_button is in the checked state; otherwise, `false`. The default value is `false`. If the three_state property is set to true, the checked property will return `true` for either a checked or indeterminate check_state.
-      /// @remarks When the value is true, the toggle_button portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is `true` and raised like a standard button when `false`.
+      /// @return `true` if the toggle_button is in the checked state; otherwise, `false`. The default value is `false`. If the three_state property is set to `true`, the checked property will return `true` for either a checked or indeterminate check_state.
+      /// @remarks When the value is `true`, the toggle_button portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is `true` and raised like a standard button when `false`.
       virtual bool checked() const noexcept;
       /// @brief Sets a value indicating whether the toggle_button is in the checked state.
       /// @param checked `true` if the toggle_button is in the checked state; otherwise, `false`. The default value is `false`.
-      /// @remarks When the value is true, the toggle_button portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is `true` and raised like a standard button when `false`.
+      /// @remarks When the value is `true`, the toggle_button portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is `true` and raised like a standard button when `false`.
       virtual toggle_button& checked(bool checked);
       
       /// @brief Gets the state of the toggle_button.

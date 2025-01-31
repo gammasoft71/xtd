@@ -65,14 +65,14 @@ namespace xtd {
       
       /// @brief Gets button images are enabled.
       /// @return `true` if button images aree enabled; otherwise `false`.
-      /// @remarks The default value is true.
+      /// @remarks The default value is `true`.
       /// @remarks This method has an effect only on linux.
       static bool button_images() noexcept;
       
       /// @brief Gets button images are enabled.
       /// @param value `true` if button images aree enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
-      /// @remarks The default value is true.
+      /// @remarks The default value is `true`.
       /// @remarks This method has an effect only on linux.
       static void button_images(bool value);
 
@@ -173,14 +173,14 @@ namespace xtd {
 
       /// @brief Gets menu images are enabled.
       /// @return `true` if menu images aree enabled; otherwise `false`.
-      /// @remarks The default value is true.
+      /// @remarks The default value is `true`.
       /// @remarks This method has an effect only on linux.
       static bool menu_images() noexcept;
       
       /// @brief Sets menu images ilages are enabled.
       /// @param value `true` if menu images aree enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
-      /// @remarks The default value is true.
+      /// @remarks The default value is `true`.
       /// @remarks This method has an effect only on linux.
       static void menu_images(bool value);
 
@@ -282,14 +282,14 @@ namespace xtd {
       
       /// @brief Gets whether the wait cursor is used for all open forms of the application.
       /// @return `true` is the wait cursor is used for all open forms; otherwise, `false`.
-      /// @remarks When this property is set to true, the use_wait_cursor property of all open forms in the application will be set to true. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing.
+      /// @remarks When this property is set to `true`, the use_wait_cursor property of all open forms in the application will be set to `true`. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing.
       /// @par Examples
       /// The following code example demonstrates the use of application use wait cursor property.
       /// @include application_use_wait_cursor.cpp
       static bool use_wait_cursor() noexcept;
       /// @brief Sets whether the wait cursor is used for all open forms of the application.
       /// @param use_wait_cursor `true` is the wait cursor is used for all open forms; otherwise, `false`.
-      /// @remarks When this property is set to true, the use_wait_cursor property of all open forms in the application will be set to true. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing.
+      /// @remarks When this property is set to `true`, the use_wait_cursor property of all open forms in the application will be set to `true`. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing.
       /// @par Examples
       /// The following code example demonstrates the use of application use wait cursor property.
       /// @include application_use_wait_cursor.cpp
@@ -402,7 +402,7 @@ namespace xtd {
       /// @brief Informs all message pumps that they must terminate, and then closes all application windows after the messages have been processed.
       /// @remarks The exit method stops all running message loops on all threads and closes all windows of the application. This method does not necessarily force the application to exit. The exit method is typically called from within a message loop, and forces Run to return. To exit a message loop for the current thread only, call exit_thread.
       /// @remarks Exit raises the following events and performs the associated conditional actions:
-      /// * A form_closing event is raised for every form represented by the open_forms property. This event can be canceled by setting the cancel property of their form_closing_event_args parameter to true.
+      /// * A form_closing event is raised for every form represented by the open_forms property. This event can be canceled by setting the cancel property of their form_closing_event_args parameter to `true`.
       /// * If one of more of the handlers cancels the event, then exit returns without further action. Otherwise, a form_closed event is raised for every open form, then all running message loops and forms are closed.
       static void exit();
       
@@ -410,7 +410,7 @@ namespace xtd {
       /// @param e Returns whether any Form within the application cancelled the exit.
       /// @remarks The exit method stops all running message loops on all threads and closes all windows of the application. This method does not necessarily force the application to exit. The exit method is typically called from within a message loop, and forces Run to return. To exit a message loop for the current thread only, call exit_thread.
       /// @remarks Exit raises the following events and performs the associated conditional actions:
-      /// * A form_closing event is raised for every form represented by the open_forms property. This event can be canceled by setting the cancel property of their form_closing_event_args parameter to true.
+      /// * A form_closing event is raised for every form represented by the open_forms property. This event can be canceled by setting the cancel property of their form_closing_event_args parameter to `true`.
       /// * If one of more of the handlers cancels the event, then exit returns without further action. Otherwise, a form_closed event is raised for every open form, then all running message loops and forms are closed.
       static void exit(cancel_event_args& e);
       
@@ -487,7 +487,7 @@ namespace xtd {
       /// @param thread_scope `true` to set the thread exception mode; otherwise, `false`.
       /// @remarks It is often not feasible to catch all of the exceptions thrown by Windows Forms. Using this method, you can instruct your application whether it should catch all unhandled exceptions thrown by Windows Forms components and continue operating, or whether it should expose them to the user and halt execution.
       /// @remarks Call set_unhandled_exception_mode before you instantiate the main form of your application using the run method.
-      /// @remarks When threadScope is true, the thread exception mode is set. The thread exception mode overrides the application exception mode if mode is not set to automatic.
+      /// @remarks When threadScope is `true`, the thread exception mode is set. The thread exception mode overrides the application exception mode if mode is not set to automatic.
       /// @remarks When threadScope is `false`, the application exception mode is set. The application exception mode is used for all threads that have the automatic mode. Setting the application exception mode does not affect the setting of the current thread.
       /// @remarks To catch exceptions that occur in threads not created and owned by Windows Forms, use the unhandled_exception event handler.
       static void set_unhandled_exception_mode (unhandled_exception_mode mode, bool thread_scope);

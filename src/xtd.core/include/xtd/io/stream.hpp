@@ -96,7 +96,7 @@ namespace xtd {
 
       /// @brief Gets a value that determines whether the current stream can time out.
       /// @return A value that determines whether the current stream can time out.
-      /// @remarks The xtd::io::stream::can_timeout property always returns `false`. Some stream implementations require different behavior, such as xtd::net::sockets::network_stream, which times out if network connectivity is interrupted or lost. If you are implementing a stream that must be able to time out, this property should be overridden to return true.
+      /// @remarks The xtd::io::stream::can_timeout property always returns `false`. Some stream implementations require different behavior, such as xtd::net::sockets::network_stream, which times out if network connectivity is interrupted or lost. If you are implementing a stream that must be able to time out, this property should be overridden to return `true`.
       virtual bool can_timeout() const noexcept;
 
       /// @brief Gets a value indicating whether the current stream supports writing.

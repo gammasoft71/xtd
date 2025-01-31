@@ -156,7 +156,7 @@ namespace xtd {
       /// @brief Acquires an exclusive lock on the specified obj.
       /// @param obj The object on which to acquire the monitor lock.
       /// @param lock_taken The result of the attempt to acquire the lock, passed by reference. The input must be `false`. The output is `true` if the lock is acquired; otherwise, the output is `false`. The output is set even if an exception occurs during the attempt to acquire the lock.
-      /// @note If no exception occurs, the output of this method is always true.
+      /// @note If no exception occurs, the output of this method is always `true`.
       /// @remarks Use xtd::threading::monotor::enter to acquire the xtd::threading::monotor on the object passed as the parameter. If another thread has executed an xtd::threading::monotor::enter on the object, but has not yet executed the corresponding xtd::threading::monitor::exit, the current thread will block until the other thread releases the object. It is legal for the same thread to invoke xtd::threading::monotor::enter more than once without it blocking; however, an equal number of xtd::threading::monitor::exit calls must be invoked before other threads waiting on the object will unblock.
       template<class object_t>
       static void enter(const object_t& obj, bool& lock_taken) {
@@ -253,7 +253,7 @@ namespace xtd {
       /// @brief Attempts to acquire an exclusive lock on the specified object.
       /// @param obj The object on which to acquire the lock.
       /// @param lock_taken The result of the attempt to acquire the lock, passed by reference. The input must be `false`. The output is `true` if the lock is acquired; otherwise, the output is `false`. The output is set even if an exception occurs during the attempt to acquire the lock.
-      /// @note If no exception occurs, the output of this method is always true.
+      /// @note If no exception occurs, the output of this method is always `true`.
       /// @return bool `true` if the current thread acquires the lock; otherwise, `false`
       /// @remarks If successful, this method acquires an exclusive lock on the obj parameter. This method returns immediately, whether or not the lock is available.
       /// @remarks This method is similar to xtd::threading::monotor::enter, but it will never block. If the thread cannot enter without blocking, the method returns `false`, and the thread does not enter the critical section.
@@ -287,7 +287,7 @@ namespace xtd {
       /// @param obj The object on which to acquire the lock.
       /// @param milliseconds_timeout The number of milliseconds to wait for the lock.
       /// @param lock_taken The result of the attempt to acquire the lock, passed by reference. The input must be `false`. The output is `true` if the lock is acquired; otherwise, the output is `false`. The output is set even if an exception occurs during the attempt to acquire the lock.
-      /// @note If no exception occurs, the output of this method is always true.
+      /// @note If no exception occurs, the output of this method is always `true`.
       /// @return bool `true` if the current thread acquires the lock; otherwise, `false`
       /// @remarks If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to xtd::threading::monotor::enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter.
       template<class object_t>
@@ -320,7 +320,7 @@ namespace xtd {
       /// @param obj The object on which to acquire the lock.
       /// @param milliseconds_timeout The number of milliseconds to wait for the lock.
       /// @param lock_taken The result of the attempt to acquire the lock, passed by reference. The input must be `false`. The output is `true` if the lock is acquired; otherwise, the output is `false`. The output is set even if an exception occurs during the attempt to acquire the lock.
-      /// @note If no exception occurs, the output of this method is always true.
+      /// @note If no exception occurs, the output of this method is always `true`.
       /// @return bool `true` if the current thread acquires the lock; otherwise, `false`
       /// @remarks If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to xtd::threading::monotor::enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter.
       template<class object_t>
@@ -353,7 +353,7 @@ namespace xtd {
       /// @param obj The object on which to acquire the lock.
       /// @param timeout A time_span representing the amount of time to wait for the lock. A value of -1 millisecond specifies an infinite wait.
       /// @param lock_taken The result of the attempt to acquire the lock, passed by reference. The input must be `false`. The output is `true` if the lock is acquired; otherwise, the output is `false`. The output is set even if an exception occurs during the attempt to acquire the lock.
-      /// @note If no exception occurs, the output of this method is always true.
+      /// @note If no exception occurs, the output of this method is always `true`.
       /// @return bool `true` if the current thread acquires the lock; otherwise, `false`
       /// @remarks If the value of the timeout parameter converted to milliseconds equals -1, this method is equivalent to xtd::threading::monotor::enter. If the value of timeout equals 0, this method is equivalent to try_enter.
       template<class object_t>

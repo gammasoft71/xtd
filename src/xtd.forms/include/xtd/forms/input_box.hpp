@@ -85,7 +85,7 @@ namespace xtd {
       /// @param style On of xtd::forms::input_box_style values. The default is xtd::forms::input_box_style::normal
       /// @param casing On of xtd::forms::character_casing values. The default is xtd::forms::character_casing::normal
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
-      /// @param word_wrap `true` if word_wrap; otherwise `false`. The default is true.
+      /// @param word_wrap `true` if word_wrap; otherwise `false`. The default is `true`.
       /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
       static xtd::forms::dialog_result show(xtd::string& value, const xtd::forms::iwin32_window& owner, const xtd::string& text, const xtd::string& caption, xtd::forms::input_box_style style, xtd::forms::character_casing casing, bool word_wrap);
       
@@ -136,7 +136,7 @@ namespace xtd {
       /// @param caption A xtd::string that specifies the caption title of dialog.
       /// @param style On of xtd::forms::input_box_style values. The default is xtd::forms::input_box_style::normal
       /// @param casing On of xtd::forms::character_casing values. The default is xtd::forms::character_casing::normal
-      /// @param word_wrap `true` if word_wrap; otherwise `false`. The default is true.
+      /// @param word_wrap `true` if word_wrap; otherwise `false`. The default is `true`.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks If dialog_result is ok, the value parameter contains the new chosen value.
       static xtd::forms::dialog_result show(xtd::string& value, const xtd::string& text, const xtd::string& caption, xtd::forms::input_box_style style, xtd::forms::character_casing casing, bool word_wrap);

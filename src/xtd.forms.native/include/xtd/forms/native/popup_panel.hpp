@@ -39,7 +39,7 @@ namespace xtd {
         /// @{
         /// @brief Sets ignore mouse messages
         /// @param control Control popup panel handle.
-        /// @param value If true, the popup panel does not close automatically when the user clicks outside the popup panel; otherwise the popup panel will close automatically.
+        /// @param value If `true`, the popup panel does not close automatically when the user clicks outside the popup panel; otherwise the popup panel will close automatically.
         /// @warning Internal use only
         static void ignore_mouse_messages(intptr control, bool value);
         

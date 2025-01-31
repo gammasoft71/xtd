@@ -31,7 +31,7 @@ namespace xtd {
     /// @remarks light_button and radio_button controls have a similar function: they allow the user to choose from a list of options. light_button controls let the user pick a combination of options. In contrast, radio_button controls allow a user to choose from mutually exclusive options.
     /// @remarks The appearance property determines whether the light_button appears as a typical light_button or as a button.
     /// @remarks The three_state property determines whether the control supports two or three states. Use the checked property to get or set the value of a two-state light_button control and use the check_state property to get or set the value of a three-state light_button control.
-    /// @note If the three_state property is set to true, the checked property will return `true` for either a checked or indeterminate state.
+    /// @note If the three_state property is set to `true`, the checked property will return `true` for either a checked or indeterminate state.
     /// @remarks The flat_style property determines the style and appearance of the control. If the flat_style property is set to flat_style::system, the user's operating system determines the appearance of the control.
     /// @note When the flat_style property is set to flat_style::system, the check_align property is ignored and the control is displayed using the content_alignment::middle_left or content_alignment::middle_right alignment. If the check_align property is set to one of the right alignments, the control is displayed using the content_alignment::middle_right alignment; otherwise, it is displayed using the content_alignment::middle_left alignment.
     /// @par Appearance
@@ -58,27 +58,27 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the checked or check_state values and the light_button's appearance are automatically changed when the light_button is clicked.
-      /// @return `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, `false`. The default value is true.
+      /// @return `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, `false`. The default value is `true`.
       /// @remarks If auto_check is set to `false`, you will need to add code to update the checked or check_state values in the click event handler.
       /// @par Examples
       /// The following code example demonstrates the use of light_button auto_check.
       /// @include light_button.cpp
       virtual bool auto_check() const noexcept;
       /// @brief Sets a value indicating whether the checked or check_state values and the light_button's appearance are automatically changed when the light_button is clicked.
-      /// @param auto_check `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, `false`. The default value is true.
+      /// @param auto_check `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, `false`. The default value is `true`.
       /// @remarks If auto_check is set to `false`, you will need to add code to update the checked or check_state values in the click event handler.
       virtual light_button& auto_check(bool auto_check);
       
       /// @brief Gets a value indicating whether the light_button is in the checked state.
-      /// @return `true` if the light_button is in the checked state; otherwise, `false`. The default value is `false`. If the three_state property is set to true, the checked property will return `true` for either a checked or indeterminate check_state.
-      /// @remarks When the value is true, the light_button portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is `true` and raised like a standard button when `false`.
+      /// @return `true` if the light_button is in the checked state; otherwise, `false`. The default value is `false`. If the three_state property is set to `true`, the checked property will return `true` for either a checked or indeterminate check_state.
+      /// @remarks When the value is `true`, the light_button portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is `true` and raised like a standard button when `false`.
       /// @par Examples
       /// The following code example demonstrates the use of light_button checked.
       /// @include light_button.cpp
       virtual bool checked() const noexcept;
       /// @brief Sets a value indicating whether the light_button is in the checked state.
       /// @param checked `true` if the light_button is in the checked state; otherwise, `false`. The default value is `false`.
-      /// @remarks When the value is true, the light_button portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is `true` and raised like a standard button when `false`.
+      /// @remarks When the value is `true`, the light_button portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is `true` and raised like a standard button when `false`.
       virtual light_button& checked(bool checked);
       
       /// @brief Gets the state of the light_button.

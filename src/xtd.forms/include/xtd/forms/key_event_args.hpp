@@ -87,12 +87,12 @@ namespace xtd {
       /// @brief Gets a value indicating whether the key event should be passed on to the underlying control.
       /// @return `true` if the key event should not be sent to the control; otherwise, `false`.
       /// @remarks You can assign `true` to this property in an event handler such as xtd::forms::control::key_down in order to prevent user input.
-      /// @remarks Setting suppress_key_press to `true` also sets handled to true.
+      /// @remarks Setting suppress_key_press to `true` also sets handled to `true`.
       bool suppress_key_press() const noexcept {return suppress_key_press_;}
       /// @brief Sets a value indicating whether the key event should be passed on to the underlying control.
       /// @param suppress_key_press `true` if the key event should not be sent to the control; otherwise, `false`.
       /// @remarks You can assign `true` to this property in an event handler such as xtd::forms::control::key_down in order to prevent user input.
-      /// @remarks Setting suppress_key_press to `true` also sets handled to true.
+      /// @remarks Setting suppress_key_press to `true` also sets handled to `true`.
       void suppress_key_press(bool suppress_key_press) {
         suppress_key_press_ = suppress_key_press;
         if (suppress_key_press) handled(true);

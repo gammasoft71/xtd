@@ -271,10 +271,10 @@ namespace xtd {
       menu_item& checked(bool value);
       
       /// @brief Gets a value indicating whether the menu item is enabled.
-      /// @return `true` if the menu item is enabled; otherwise, `false`. The default is true.
+      /// @return `true` if the menu item is enabled; otherwise, `false`. The default is `true`.
       bool enabled() const noexcept;
       /// @brief Gets a value indicating whether the menu item is enabled.
-      /// @param value `true` if the menu item is enabled; otherwise, `false`. The default is true.
+      /// @param value `true` if the menu item is enabled; otherwise, `false`. The default is `true`.
       /// @return Current menu_item.
       menu_item& enabled(bool value);
       

@@ -157,7 +157,7 @@ namespace xtd {
       ///     // Display wether the file is read-only.
       ///     console::write_line("The file read-only value for " + file_name + " is: " + is_read_only);
       ///
-      ///     console::write_line("Changing the read-only value for " + file_name + " to true.");
+      ///     console::write_line("Changing the read-only value for " + file_name + " to `true`.");
       ///
       ///     // Set the file to read-only.
       ///     set_file_read_access(file_name, true);
@@ -195,7 +195,7 @@ namespace xtd {
       /// // results may vary based on the computer/file structure/etc.:
       /// //
       /// // The file read-only value for c:\test.xml is: True
-      /// // Changing the read-only value for c:\test.xml to true.
+      /// // Changing the read-only value for c:\test.xml to `true`.
       /// // The file read-only value for c:\test.xml is: True
       /// ```
       /// @remarks Use the xtd::io::file_info::is_read_only property to quickly determine or change whether the current file is read only.
@@ -226,7 +226,7 @@ namespace xtd {
       ///     // Display wether the file is read-only.
       ///     console::write_line("The file read-only value for " + file_name + " is: " + is_read_only);
       ///
-      ///     console::write_line("Changing the read-only value for " + file_name + " to true.");
+      ///     console::write_line("Changing the read-only value for " + file_name + " to `true`.");
       ///
       ///     // Set the file to read-only.
       ///     set_file_read_access(file_name, true);
@@ -264,7 +264,7 @@ namespace xtd {
       /// // results may vary based on the computer/file structure/etc.:
       /// //
       /// // The file read-only value for c:\test.xml is: True
-      /// // Changing the read-only value for c:\test.xml to true.
+      /// // Changing the read-only value for c:\test.xml to `true`.
       /// // The file read-only value for c:\test.xml is: True
       /// ```
       /// @remarks Use the xtd::io::file_info::is_read_only property to quickly determine or change whether the current file is read only.
@@ -518,7 +518,7 @@ namespace xtd {
       /// @brief Copies an existing file to a new file, allowing the overwriting of an existing file.
       /// @param dest_file_name The name of the new file to copy to.
       /// @param overwrite `true` to allow an existing file to be overwritten; otherwise, `false`.
-      /// @return A new file, or an overwrite of an existing file if overwrite is true. If the file exists and overwrite is `false`, an xtd::io::ioo_exception is thrown.
+      /// @return A new file, or an overwrite of an existing file if overwrite is `true`. If the file exists and overwrite is `false`, an xtd::io::ioo_exception is thrown.
       /// @exception xtd::argument_exception dest_file_name is empty, contains only white spaces, or contains invalid characters.
       /// @exception xtd::io_io_exception An error occurs, or the destination file already exists and overwrite is `false`.
       /// @exception xtd::security::security_exception The caller does not have the required permission.

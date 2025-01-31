@@ -116,7 +116,7 @@ namespace xtd {
         /// @remarks The xtd::net::sockets::tcp_client::client::connected property gets the connection state of the xtd::net::sockets::tcp_client::client socket as of the last I/O operation. When it returns `false`,
         /// @remarks the xtd::net::sockets::tcp_client::client socket was either never connected, or is no longer connected.Because the xtd::net::sockets::tcp_client::client::connected property only reflects the state
         /// @remarks of the connection as of the most recent operation, you should attempt to send or receive a message to determine the current state.
-        /// @remarks After the message send fails, this property no longer returns true. Note that this behavior is by design.
+        /// @remarks After the message send fails, this property no longer returns `true`. Note that this behavior is by design.
         /// @remarks You cannot reliably test the state of the connection because, in the time between the test and a send/receive,
         /// @remarks the connection could have been lost. Your code should assume the socket is connected, and gracefully handle failed transmissions.
         bool connected() const noexcept;

@@ -72,12 +72,12 @@ namespace xtd {
       /// @brief Gets the source switch value.
       /// @return A SourceSwitch object representing the source switch value.
       /// @remarks The source_switch property allows the filtering of messages before the trace source calls the listeners.
-      /// @remarks The switch is used to check whether trace calls should be generated or ignored. Each trace method calls the should_trace method of the source_switch to determine whether to proceed with the trace. If the call returns true, the listeners are called.
+      /// @remarks The switch is used to check whether trace calls should be generated or ignored. Each trace method calls the should_trace method of the source_switch to determine whether to proceed with the trace. If the call returns `true`, the listeners are called.
       const xtd::diagnostics::source_switch& source_switch() const noexcept;
       /// @brief Sets the source switch value.
       /// @param source_switch A SourceSwitch object representing the source switch value.
       /// @remarks The source_switch property allows the filtering of messages before the trace source calls the listeners.
-      /// @remarks The switch is used to check whether trace calls should be generated or ignored. Each trace method calls the should_trace method of the source_switch to determine whether to proceed with the trace. If the call returns true, the listeners are called.
+      /// @remarks The switch is used to check whether trace calls should be generated or ignored. Each trace method calls the should_trace method of the source_switch to determine whether to proceed with the trace. If the call returns `true`, the listeners are called.
       void source_switch(const xtd::diagnostics::source_switch& source_switch) noexcept;
       /// @}
       
@@ -97,7 +97,7 @@ namespace xtd {
       /// @param id A numeric identifier for the event.
       /// @param data The trace data.
       /// @remarks The trace_data method, like the trace_event method, is intended for automated tools, but it also allows the attaching of an additional object, such as an exception instance, to the trace.
-      /// @remarks The trace_data method calls the source_switch::should_trace method of the source_switch object returned by the source_switch property. If should_trace returns true, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods.
+      /// @remarks The trace_data method calls the source_switch::should_trace method of the source_switch object returned by the source_switch property. If should_trace returns `true`, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods.
       template<class object_t>
       void trace_data(const xtd::diagnostics::trace_event_type& event_type, int32 id, const object_t& data) {
         #if defined(TRACE)
@@ -112,7 +112,7 @@ namespace xtd {
       /// @param id A numeric identifier for the event.
       /// @param data The trace data.
       /// @remarks The trace_data method, like the trace_event method, is intended for automated tools, but it also allows the attaching of an additional object, such as an exception instance, to the trace.
-      /// @remarks The trace_data method calls the source_switch::should_trace method of the source_switch object returned by the source_switch property. If should_trace returns true, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods.
+      /// @remarks The trace_data method calls the source_switch::should_trace method of the source_switch object returned by the source_switch property. If should_trace returns `true`, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods.
       template<class object_t>
       void trace_data(const xtd::diagnostics::trace_event_type& event_type, int32 id, const std::vector<object_t>& data) {
         #if defined(TRACE)

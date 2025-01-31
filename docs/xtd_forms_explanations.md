@@ -575,7 +575,7 @@ The scroll bars can be managed :
 
 #### Manually
 
-The manual mode is not yet fully developed. But the principle is to set the properties xtd::forms::scrollable_control::h_scroll and xtd::forms::scrollable_control::v_scroll to true.
+The manual mode is not yet fully developed. But the principle is to set the properties xtd::forms::scrollable_control::h_scroll and xtd::forms::scrollable_control::v_scroll to `true`.
 
 Then set the value, minimum and maximum properties and specify the behavior to adopt when a scroll event occurs. Generally we scroll the client area of the container.
 
@@ -745,7 +745,7 @@ Key events occur in the following order:
   2. xtd::forms::control::key_press event : Occurs when a character. space or backspace key is pressed while the control has focus.
   3. xtd::forms::control::key_up event : Occurs when a key is released while the control has focus.
 
-To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the key_press_event_args::handled property in your form's key_press event-handling method to true. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the key_down event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of true. Instead of overriding the is_input_key method, you can handle the preview_key_down event and set the is_input_key property to true.
+To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the key_press_event_args::handled property in your form's key_press event-handling method to `true`. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the key_down event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of `true`. Instead of overriding the is_input_key method, you can handle the preview_key_down event and set the is_input_key property to `true`.
 
 The key_press event is not raised by non-character keys other than space and backspace; however, the non-character keys do raise the key_down and key_up events.
 
@@ -853,7 +853,7 @@ Here are the factories that allow to create an object graphics :
 * xtd::drawing::image::create_graphics : Creates the xtd::drawing::graphics for the image.
 * xtd::forms::screen::create_graphics : Creates the xtd::drawing::graphics for the screen.
 
-If a control has its double_buffered property set to true, then the graphics provided by xtd::forms::control::create_graphics will be double buffered.
+If a control has its double_buffered property set to `true`, then the graphics provided by xtd::forms::control::create_graphics will be double buffered.
 
 The double buffer property indicates whether this control should redraw its surface using a secondary buffer to reduce or prevent flicker.
 
@@ -1140,7 +1140,7 @@ Possible values for auto_size_mode :
 
 By default controls have auto_size_mode::auto_size_mode::grow_and_shrink except all button types, form, group_box, panel and user_control which are set to xtd::forms::auto_size_mode::growing_only.
 
-For example if a form contains three controls and we set the auto_size property of the form to true, then the size of the form will adapt to encompass the three controls.
+For example if a form contains three controls and we set the auto_size property of the form to `true`, then the size of the form will adapt to encompass the three controls.
 
 ```cpp
 #include <xtd/xtd>

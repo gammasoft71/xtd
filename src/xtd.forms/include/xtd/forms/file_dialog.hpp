@@ -41,7 +41,7 @@ namespace xtd {
     /// @remarks Notice that a full path may be built up using one or more of the described techniques. For example, the get_folder_path method might be used to obtain the path to the MyDocuments folder, then an application setting may be used to add a relative subdirectory portion.
     /// @remarks The xtd::io::path class contains static members to assist in manipulating absolute and relative path strings, whereas the System.IO.File and xtd::io::directory classes have static members that actually manipulate files and directories, respectively.
     /// @par Important
-    /// If the user of your application changes the folder in the file_dialog, then the current working directory for your application is set to the location specified in the file_dialog. To prevent this, set the restore_directory property to true.
+    /// If the user of your application changes the folder in the file_dialog, then the current working directory for your application is set to the location specified in the file_dialog. To prevent this, set the restore_directory property to `true`.
     class forms_export_ file_dialog : public common_dialog {
       struct data;
       
@@ -57,20 +57,20 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the dialog box automatically adds an extension to a file name if the user omits the extension.
-      /// @return `true` if the dialog box adds an extension to a file name if the user omits the extension; otherwise, `false`. The default value is true.
+      /// @return `true` if the dialog box adds an extension to a file name if the user omits the extension; otherwise, `false`. The default value is `true`.
       virtual bool add_extension() const noexcept;
       /// @brief Sets a value indicating whether the dialog box automatically adds an extension to a file name if the user omits the extension.
-      /// @param value `true` if the dialog box adds an extension to a file name if the user omits the extension; otherwise, `false`. The default value is true.
+      /// @param value `true` if the dialog box adds an extension to a file name if the user omits the extension; otherwise, `false`. The default value is `true`.
       /// @return Current file_dialog.
       virtual file_dialog& add_extension(bool value);
       
       /// @brief Gets a value indicating whether this file_dialog instance should automatically upgrade appearance and behavior when running on Windows Vista.
-      /// @return `true` if this file_dialog instance should automatically upgrade appearance and behavior when running on Windows Vista; otherwise, `false`. The default is true.
+      /// @return `true` if this file_dialog instance should automatically upgrade appearance and behavior when running on Windows Vista; otherwise, `false`. The default is `true`.
       /// @remarks If this property is `false`, the file_dialog class will have a Windows XP-style appearance and behavior on Windows Vista.
       /// @remarks On Windows XP, this property does not have any effect.
       virtual bool auto_upgrade_enabled() const noexcept;
       /// @brief Sets a value indicating whether this file_dialog instance should automatically upgrade appearance and behavior when running on Windows Vista.
-      /// @param value `true` if this file_dialog instance should automatically upgrade appearance and behavior when running on Windows Vista; otherwise, `false`. The default is true.
+      /// @param value `true` if this file_dialog instance should automatically upgrade appearance and behavior when running on Windows Vista; otherwise, `false`. The default is `true`.
       /// @return Current file_dialog.
       /// @remarks If this property is `false`, the file_dialog class will have a Windows XP-style appearance and behavior on Windows Vista.
       /// @remarks On Windows XP, this property does not have any effect.
@@ -87,10 +87,10 @@ namespace xtd {
       virtual file_dialog& check_file_exists(bool value);
       
       /// @brief Gets a value indicating whether the dialog box displays a warning if the user specifies a path that does not exist.
-      /// @return `true` if the dialog box displays a warning when the user specifies a path that does not exist; otherwise, `false`. The default value is true.
+      /// @return `true` if the dialog box displays a warning when the user specifies a path that does not exist; otherwise, `false`. The default value is `true`.
       virtual bool check_path_exists() const noexcept;
       /// @brief Sets a value indicating whether the dialog box displays a warning if the user specifies a path that does not exist.
-      /// @param value `true` if the dialog box displays a warning when the user specifies a path that does not exist; otherwise, `false`. The default value is true.
+      /// @param value `true` if the dialog box displays a warning when the user specifies a path that does not exist; otherwise, `false`. The default value is `true`.
       /// @return Current file_dialog.
       virtual file_dialog& check_path_exists(bool value);
       
@@ -105,10 +105,10 @@ namespace xtd {
       virtual file_dialog& default_ext(const xtd::string& value);
       
       /// @brief Gets a value indicating whether the dialog box returns the location of the file referenced by the shortcut or whether it returns the location of the shortcut (.lnk).
-      /// @return `true` if the dialog box returns the location of the file referenced by the shortcut; otherwise, `false`. The default value is true.
+      /// @return `true` if the dialog box returns the location of the file referenced by the shortcut; otherwise, `false`. The default value is `true`.
       virtual bool dereference_link() const noexcept;
       /// @brief Sets a value indicating whether the dialog box returns the location of the file referenced by the shortcut or whether it returns the location of the shortcut (.lnk).
-      /// @param value `true` if the dialog box returns the location of the file referenced by the shortcut; otherwise, `false`. The default value is true.
+      /// @param value `true` if the dialog box returns the location of the file referenced by the shortcut; otherwise, `false`. The default value is `true`.
       /// @return Current file_dialog.
       virtual file_dialog& dereference_link(bool value);
       
@@ -243,11 +243,11 @@ namespace xtd {
       virtual file_dialog& title(const xtd::string& value);
       
       /// @brief Gets a value indicating whether the dialog box accepts only valid file names.
-      /// @return `true` if the dialog box accepts only valid file names; otherwise, `false`. The default value is true.
+      /// @return `true` if the dialog box accepts only valid file names; otherwise, `false`. The default value is `true`.
       /// @remarks If the edit control contains anything but spaces when the user clicks OK, the dialog box returns the file name, whether it is valid or not. No default extension is added to the text.
       virtual bool validate_names() const noexcept;
       /// @brief Gets a value indicating whether the dialog box accepts only valid file names.
-      /// @param value `true` if the dialog box accepts only valid file names; otherwise, `false`. The default value is true.
+      /// @param value `true` if the dialog box accepts only valid file names; otherwise, `false`. The default value is `true`.
       /// @return Current file_dialog.
       /// @remarks If the edit control contains anything but spaces when the user clicks OK, the dialog box returns the file name, whether it is valid or not. No default extension is added to the text.
       virtual file_dialog& validate_names(bool value);

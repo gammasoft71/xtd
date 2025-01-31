@@ -64,7 +64,7 @@ namespace xtd {
       /// @brief ndicates whether the xtd::threading::countdown_event object's current count has reached zero.
       /// @return `true` if the current count is zero; otherwise, `false`.
       /// @exception xtd::object_closed_exception The current instance has already been closed.
-      /// @remarks The xtd::threading::countdown_event does not raise an event when the countdown has reached zero. Instead, the xtd::threading::countdown_event::current_count property equals zero, and the xtd::threading::countdown_event::is_set property equals true.
+      /// @remarks The xtd::threading::countdown_event does not raise an event when the countdown has reached zero. Instead, the xtd::threading::countdown_event::current_count property equals zero, and the xtd::threading::countdown_event::is_set property equals `true`.
       bool is_set() const;
       
       /// @brief Gets a xtd::threading::wait_handle that is used to wait for the event to be set.

@@ -60,20 +60,20 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the background_worker can report progress updates.Gets or sets a value indicating whether the background_worker can report progress updates.
       /// @return `true` if the background_worker supports progress updates; otherwise `false`. The default is `false`.
-      /// @remarks Set the worker_reports_progress property to `true` if you want the background_worker to support progress updates. When this property is true, user code can call the report_progress method to raise the progress_changed event.
+      /// @remarks Set the worker_reports_progress property to `true` if you want the background_worker to support progress updates. When this property is `true`, user code can call the report_progress method to raise the progress_changed event.
       bool worker_reports_progress() const noexcept;
       /// @brief Sets a value indicating whether the background_worker can report progress updates.Gets or sets a value indicating whether the background_worker can report progress updates.
       /// @param value `true` if the background_worker supports progress updates; otherwise `false`. The default is `false`.
-      /// @remarks Set the worker_reports_progress property to `true` if you want the background_worker to support progress updates. When this property is true, user code can call the report_progress method to raise the progress_changed event.
+      /// @remarks Set the worker_reports_progress property to `true` if you want the background_worker to support progress updates. When this property is `true`, user code can call the report_progress method to raise the progress_changed event.
       void worker_reports_progress(bool value);
       
       /// @brief Gets a value indicating whether the background_worker supports asynchronous cancellation.
       /// @return `true` if the background_worker supports cancellation; otherwise `false`. The default is `false`.
-      /// @remarks Set the worker_supports_cancellation property to `true` if you want the background_worker to support cancellation. When this property is true, you can call the cancel_async method to interrupt a background operation.
+      /// @remarks Set the worker_supports_cancellation property to `true` if you want the background_worker to support cancellation. When this property is `true`, you can call the cancel_async method to interrupt a background operation.
       bool worker_supports_cancellation() const noexcept;
       /// @brief Gets a value indicating whether the background_worker supports asynchronous cancellation.
       /// @param value `true` if the background_worker supports cancellation; otherwise `false`. The default is `false`.
-      /// @remarks Set the worker_supports_cancellation property to `true` if you want the background_worker to support cancellation. When this property is true, you can call the cancel_async method to interrupt a background operation.
+      /// @remarks Set the worker_supports_cancellation property to `true` if you want the background_worker to support cancellation. When this property is `true`, you can call the cancel_async method to interrupt a background operation.
       void worker_supports_cancellation(bool value);
       /// @}
       
@@ -81,8 +81,8 @@ namespace xtd {
       
       /// @{
       /// @brief Requests cancellation of a pending background operation.
-      /// @remarks cancel_async submits a request to terminate the pending background operation and sets the cancellation_pending property to true.
-      /// @remarks When you call cancel_async, your worker method has an opportunity to stop its execution and exit. The worker code should periodically check thecancellation_pending property to see if it has been set to true.
+      /// @remarks cancel_async submits a request to terminate the pending background operation and sets the cancellation_pending property to `true`.
+      /// @remarks When you call cancel_async, your worker method has an opportunity to stop its execution and exit. The worker code should periodically check thecancellation_pending property to see if it has been set to `true`.
       void cancel_async();
       
       /// @brief Raises the background_worker::do_work event.
@@ -98,12 +98,12 @@ namespace xtd {
       virtual void on_run_worker_completed(const run_worker_completed_event_args& e);
       
       /// @brief Starts execution of a background operation.
-      /// @exception xtd::invalid_operaton_exception xtd::background_worker::is_busy is true;
+      /// @exception xtd::invalid_operaton_exception xtd::background_worker::is_busy is `true`;
       void run_worker_async();
       
       /// @brief Starts execution of a background operation.
       /// @param argument A parameter for use by the background operation to be executed in the xtd::forms::background_worker::do_work event handler.
-      /// @exception xtd::invalid_operaton_exception xtd::background_worker::is_busy is true;
+      /// @exception xtd::invalid_operaton_exception xtd::background_worker::is_busy is `true`;
       template<class argument_t>
       void run_worker_async(argument_t argument) {
         argument_(std::any(argument));

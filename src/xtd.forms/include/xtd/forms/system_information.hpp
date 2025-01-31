@@ -124,7 +124,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the user has enabled full window drag.
       /// @return `true` if the user has enabled full window drag; otherwise, `false`.
-      /// @remarks When this property is true, the content of a window is refreshed during a window move or resize drag, using the current position and size as they are updated.
+      /// @remarks When this property is `true`, the content of a window is refreshed during a window move or resize drag, using the current position and size as they are updated.
       static bool drag_full_windows();
       
       /// @brief Gets the width and height of a rectangle centered on the point the mouse button was pressed, within which a drag operation will not begin.
@@ -246,13 +246,13 @@ namespace xtd {
       /// @brief Gets a value indicating whether menu fade or slide animation features are enabled.
       /// @return `true` if menu fade or slide animation is enabled; otherwise, `false`.
       /// @remarks The is_menu_animation_enabled property indicates whether either of the fade or slide animation features of system control menus is enabled.
-      /// @remarks If the value of this property is true, the xtd::forms::system_information::is_menu_fade_enabled property indicates whether menus use fade or slide animation.
+      /// @remarks If the value of this property is `true`, the xtd::forms::system_information::is_menu_fade_enabled property indicates whether menus use fade or slide animation.
       static bool is_menu_animation_enabled();
       
       /// @brief Gets a value indicating whether menu fade animation is enabled.
       /// @return `true` if fade animation is enabled; `false` if it is disabled.
       /// @remarks The is_menu_fade_enabled property indicates whether a menu uses fade animation, if menu animation is enabled. The IsMenuAnimationEnabled property indicates whether menu animation is enabled.
-      /// @remarks If menu animation is enabled and the value of this property is true, menus use fade animation. If menu animation is enabled and the value of this property is `false`, menus use slide animation. If menu animation is disabled, the value of this property is meaningless.
+      /// @remarks If menu animation is enabled and the value of this property is `true`, menus use fade animation. If menu animation is enabled and the value of this property is `false`, menus use slide animation. If menu animation is disabled, the value of this property is meaningless.
       static bool is_menu_fade_enabled();
       
       /// @brief Gets a value indicating whether window minimize and restore animation is enabled.
@@ -410,7 +410,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the functions of the left and right mouse buttons have been swapped.
       /// @return `true` if a mouse is installed; otherwise, `false`.
-      /// @remarks The mouse_present property indicates whether a pointing device is present or installed on the system. This is usually the case, so mouse_present almost always returns true.
+      /// @remarks The mouse_present property indicates whether a pointing device is present or installed on the system. This is usually the case, so mouse_present almost always returns `true`.
       static bool mouse_present();
       
       /// @brief Gets the current mouse speed.
@@ -519,7 +519,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether user interface (UI) effects are enabled or disabled.
       /// @return `true` if UI effects are enabled; otherwise, `false`.
       /// @remarks UI effects include animation, fading, hot tracking, and smooth scrolling of system controls, and drawing a shadow under the mouse cursor. When UI effects are disabled, these features are disabled. When UI effects are enabled, only the effects configured as active for the current user are enabled.
-      /// @remarks The following table lists properties that indicate whether particular UI effects are enabled, if the value of this property is true:
+      /// @remarks The following table lists properties that indicate whether particular UI effects are enabled, if the value of this property is `true`:
       /// | Name                                                                 | Description                                                                                             |
       /// | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
       /// | xtd::forms::system_information::is_combo_box_animation_enabled       | Indicates whether the slide-open effect for combo boxes is enabled.                                     |
