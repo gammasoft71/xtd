@@ -1056,8 +1056,8 @@ where major, minor, build, and revision are the string representations of the ve
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the input parameter was converted successfully; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1version.html#a4895a50d313b8be9c5fbbfc64704f72d" title="Tries to convert the string representation of a version number to an equivalent xtd::version object,...">xtd::version::try_parse</a> method is similar to the <a class="el" href="classxtd_1_1version.html#acaec012f6d5090bbeb56fb0be343c0e4" title="Converts the string representation of a version number to an equivalent Version object.">xtd::version::parse</a> method, except that it doesn't throw an exception if the conversion fails. Instead, it returns false if input is null, has fewer than two or more than four components, has at least one component that is not an integer, has at least one component that is less than zero, or has at least one component that is greater than std::numeric_limits&lt;int32&gt;::max(). For the parse operation to succeed, the input parameter must be in the following format: <pre class="fragment">major.minor[.build[.revision]] </pre> where major, minor, build, and revision are the string representations of the version number's four components: major version number, minor version number, build number, and revision number, respectively. Optional components are shown in square brackets ([ and ]). The components must appear in order and must be separated by periods. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the input parameter was converted successfully; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1version.html#a4895a50d313b8be9c5fbbfc64704f72d" title="Tries to convert the string representation of a version number to an equivalent xtd::version object,...">xtd::version::try_parse</a> method is similar to the <a class="el" href="classxtd_1_1version.html#acaec012f6d5090bbeb56fb0be343c0e4" title="Converts the string representation of a version number to an equivalent Version object.">xtd::version::parse</a> method, except that it doesn't throw an exception if the conversion fails. Instead, it returns <code>false</code> if input is null, has fewer than two or more than four components, has at least one component that is not an integer, has at least one component that is less than zero, or has at least one component that is greater than std::numeric_limits&lt;int32&gt;::max(). For the parse operation to succeed, the input parameter must be in the following format: <pre class="fragment">major.minor[.build[.revision]] </pre> where major, minor, build, and revision are the string representations of the version number's four components: major version number, minor version number, build number, and revision number, respectively. Optional components are shown in square brackets ([ and ]). The components must appear in order and must be separated by periods. </dd></dl>
 
 </div>
 </div>
@@ -1092,7 +1092,7 @@ where major, minor, build, and revision are the string representations of the ve
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1165,7 +1165,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns <code>true</code>. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1211,7 +1211,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:34:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

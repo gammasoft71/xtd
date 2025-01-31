@@ -110,7 +110,7 @@ A <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f017
 <dd>
 With each <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event, a <a class="el" href="classxtd_1_1forms_1_1key__press__event__args.html" title="Provides data for the xtd::forms::control::key_press event.">xtd::forms::key_press_event_args</a> is passed. A <a class="el" href="classxtd_1_1forms_1_1key__event__args.html" title="Provides data for the xtd::forms::control::key_down or xtd::forms::control::key_up event.">key_event_args</a> is passed with each <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> and <a class="el" href="classxtd_1_1forms_1_1control.html#a2eea8414562abe46ea6772526c254b8f" title="Occurs when a key is released while the xtd::forms::control has focus.">xtd::forms::control::key_up</a> event. A <a class="el" href="classxtd_1_1forms_1_1key__event__args.html" title="Provides data for the xtd::forms::control::key_down or xtd::forms::control::key_up event.">key_event_args</a> specifies whether any modifier keys (CMD, CTRL, SHIFT, or ALT) were pressed along with another key. (This modifier information can also be obtained through the modifier_keys property of the control class.) </dd>
 <dd>
-Set handled to true to cancel the <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event. This keeps the control from processing the key press. </dd></dl>
+Set handled to <code>true</code> to cancel the <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event. This keeps the control from processing the key press. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Some controls will process certain key strokes on <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a>. For example, rich_text_box processes the Enter key before <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> is called. In such cases, you cannot cancel the <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event, and must cancel the key stroke from <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> instead. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="calculator_8cpp-example.html#_a7">calculator.cpp</a>, <a class="el" href="key_events_8cpp-example.html#_a2">key_events.cpp</a>, and <a class="el" href="numeric_text_box_8cpp-example.html#_a3">numeric_text_box.cpp</a>.</dd>
 </dl>
@@ -266,8 +266,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event was handled. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the event is handled; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If the event is not handled, it will be sent to the operating system for default processing. Set handled to true to cancel the <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the event is handled; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the event is not handled, it will be sent to the operating system for default processing. Set handled to <code>true</code> to cancel the <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event. </dd></dl>
 
 </div>
 </div>
@@ -298,11 +298,11 @@ Additional Inherited Members</h2></td></tr>
 <p>Sets a value indicating whether the <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event was handled. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">handled</td><td>true if the event is handled; otherwise, false. </td></tr>
+    <tr><td class="paramname">handled</td><td><code>true</code> if the event is handled; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If the event is not handled, it will be sent to the operating system for default processing. Set handled to true to cancel the <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the event is not handled, it will be sent to the operating system for default processing. Set handled to <code>true</code> to cancel the <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event. </dd></dl>
 
 </div>
 </div>
@@ -421,7 +421,7 @@ You cannot get or set the following keys:<ul>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:35:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

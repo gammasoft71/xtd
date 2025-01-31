@@ -1179,7 +1179,7 @@ template&lt;class type_t , class allocator_t  = xtd::collections::generic::helpe
 </div><div class="memdoc">
 
 <p>Checks if the container has no elements, i.e. whether <a class="el" href="classxtd_1_1basic__array.html#a7acd2ad2fa08cf8fb94d254f70c91de3" title="Returns an iterator to the first element of the enumarable.">xtd::array::begin()</a> == <a class="el" href="classxtd_1_1basic__array.html#aabb880053eba2eefbc54d5d312626586" title="Returns an iterator to the element following the last element of the enumarable.">xtd::array::end()</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the container is empty, false otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the container is empty, <code>false</code> otherwise. </dd></dl>
 
 </div>
 </div>
@@ -1335,7 +1335,7 @@ template&lt;class type_t , class allocator_t  = xtd::collections::generic::helpe
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html" title="Represents a collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt; has a fixed size. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html" title="Represents a collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt; has a fixed size; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html" title="Represents a collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt; has a fixed size; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A collection with a fixed size does not allow the addition or removal of elements after the collection is created, but it allows the modification of existing elements. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a27d1e03ba6f5666f4e84f9bd7e96ce72">xtd::collections::generic::ilist&lt; type_t &gt;</a>.</p>
@@ -1368,8 +1368,8 @@ template&lt;class type_t , class allocator_t  = xtd::collections::generic::helpe
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; interface only supports addition and removal operations. For example, the IsReadOnly property of an array that is cast or converted to an <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; object returns true, even though individual array elements can be modified. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; interface only supports addition and removal operations. For example, the IsReadOnly property of an array that is cast or converted to an <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; object returns <code>true</code>, even though individual array elements can be modified. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a817ed0a0b5cdb551aac7512c52ed4c96">xtd::collections::generic::icollection&lt; type_t &gt;</a>.</p>
 
@@ -1401,7 +1401,7 @@ template&lt;class type_t , class allocator_t  = xtd::collections::generic::helpe
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is synchronized (thread safe). </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is synchronized (thread safe); otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is synchronized (thread safe); otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a2b277c3530daec2186daa89e213da290" title="Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollecti...">xtd::collections::generic::icollection::sync_root</a> returns an object, which can be used to synchronize access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;. </dd>
 <dd>
 Most collection classes in the <a class="el" href="namespacextd_1_1collections.html" title="The xtd::collections namespace contains interfaces and classes that define various collections of obj...">xtd::collections</a> namespace also implement a <code>synchronized</code> method, which provides a synchronized wrapper around the underlying collection. </dd>
@@ -2085,7 +2085,7 @@ template&lt;class type_t , class allocator_t  = xtd::collections::generic::helpe
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -3292,7 +3292,7 @@ template&lt;class type_t , class allocator_t  = xtd::collections::generic::helpe
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:34:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

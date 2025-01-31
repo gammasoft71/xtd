@@ -120,13 +120,13 @@ Inheritance diagram for xtd::forms::numeric_up_down:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd::forms</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a></dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>A <a class="el" href="classxtd_1_1forms_1_1numeric__up__down.html" title="Represents a standard Windows numeric up down.">numeric_up_down</a> control contains a single numeric value that can be incremented or decremented by clicking the up or down buttons of the control. The user can also enter in a value, unless the read_only property is set to true. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>A <a class="el" href="classxtd_1_1forms_1_1numeric__up__down.html" title="Represents a standard Windows numeric up down.">numeric_up_down</a> control contains a single numeric value that can be incremented or decremented by clicking the up or down buttons of the control. The user can also enter in a value, unless the read_only property is set to <code>true</code>. </dd>
 <dd>
-The numeric display can be formatted by setting the decimal_places, hexadecimal, or thousands_separator properties. To display hexadecimal values in the control, set the hexadecimal property to true. To display a thousands separator in decimal numbers when appropriate, set the thousands_separator property to true. To specify the number of digits displayed after the decimal symbol, set the decimal_places property to the number of decimal places to display. </dd>
+The numeric display can be formatted by setting the decimal_places, hexadecimal, or thousands_separator properties. To display hexadecimal values in the control, set the hexadecimal property to <code>true</code>. To display a thousands separator in decimal numbers when appropriate, set the thousands_separator property to <code>true</code>. To specify the number of digits displayed after the decimal symbol, set the decimal_places property to the number of decimal places to display. </dd>
 <dd>
 To specify the allowable range of values for the control, set the minimum and maximum properties. Set the increment value to specify the value to be incremented or decremented to the value property when the user clicks the up or down arrow buttons. You can increase the speed that the control moves through numbers when the user continuously presses the up or down arrow by setting the accelerations property. </dd>
 <dd>
-When the up_button or down_button methods are called, either in code or by the click of the up or down buttons, the new value is validated and the control is updated with the new value in the appropriate format. Specifically, if the user_edit property is set to true, the parse_edit_text method is called prior to validating or updating the value. The value is then verified to be between the minimum and maximum values, and the update_edit_text method is called. </dd></dl>
+When the up_button or down_button methods are called, either in code or by the click of the up or down buttons, the new value is validated and the control is updated with the new value in the appropriate format. Specifically, if the user_edit property is set to <code>true</code>, the parse_edit_text method is called prior to validating or updating the value. The value is then verified to be between the minimum and maximum values, and the update_edit_text method is called. </dd></dl>
 <dl class="section user"><dt>Appearance</dt><dd><table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone"></th><th class="markdownTableHeadNone">Windows   </th><th class="markdownTableHeadNone">macOS   </th><th class="markdownTableHeadNone">Gnome    </th></tr>
@@ -1414,7 +1414,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <tr class="memdesc:a86d36d6a47d6d7adea17442beb394a4f inherit pro_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the parent handle of the control.  <br /></td></tr>
 <tr class="separator:a86d36d6a47d6d7adea17442beb394a4f inherit pro_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1803ab3c808ee5f02e66d4fb76a1a65 inherit pro_methods_classxtd_1_1forms_1_1control"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#ae1803ab3c808ee5f02e66d4fb76a1a65">set_style</a> (<a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf">control_styles</a> flag, bool value)</td></tr>
-<tr class="memdesc:ae1803ab3c808ee5f02e66d4fb76a1a65 inherit pro_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a specified control_styles flag to either true or false.  <br /></td></tr>
+<tr class="memdesc:ae1803ab3c808ee5f02e66d4fb76a1a65 inherit pro_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a specified control_styles flag to either <code>true</code> or <code>false</code>.  <br /></td></tr>
 <tr class="separator:ae1803ab3c808ee5f02e66d4fb76a1a65 inherit pro_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classxtd_1_1forms_1_1component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classxtd_1_1forms_1_1component')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classxtd_1_1forms_1_1component.html">xtd::forms::component</a></td></tr>
 <tr class="memitem:a63ab8930bd0ee6af0857d95c58838b40 inherit pro_methods_classxtd_1_1forms_1_1component"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1component.html#a63ab8930bd0ee6af0857d95c58838b40">component</a> ()</td></tr>
@@ -1798,7 +1798,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div><div class="memdoc">
 
 <p>Gets a value indicate if value can be wrapped. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if value can be wrapped; otherwise <code>false</code>. The default is false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if value can be wrapped; otherwise <code>false</code>. The default is <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -1829,7 +1829,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <p>Sets a value indicate if value can be wrapped. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>true if value can be wrapped; otherwise <code>false</code>. The default is false. </td></tr>
+    <tr><td class="paramname">value</td><td><code>true</code> if value can be wrapped; otherwise <code>false</code>. The default is <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3990,7 +3990,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:35:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

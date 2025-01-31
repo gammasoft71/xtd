@@ -566,7 +566,7 @@ When first called, <a class="el" href="classxtd_1_1io_1_1file__info.html" title=
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether a file exists. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the file exists; false if the file does not exist or if the file is a directory. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the file exists; <code>false</code> if the file does not exist or if the file is a directory. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example uses the <a class="el" href="classxtd_1_1io_1_1file__info.html#a4f1abebe6cf1b8fb6646b5bd03817440" title="Gets a value indicating whether a file exists.">xtd::io::file_info::exists</a> property ensure a file exists before opening it. You can use this technique to throw a custom exception when the file is not found. <div class="fragment"><div class="line">std::vector&lt;char&gt; open_data_file(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; file_name) {</div>
 <div class="line">  <span class="comment">// Check the FileName argument.</span></div>
 <div class="line">  <span class="keywordflow">if</span> (file_name.<a class="code hl_function" href="classxtd_1_1basic__string.html#aa6e7750375addd424e2684f5f7f88853">size</a>() == 0)</div>
@@ -598,7 +598,7 @@ When first called, <a class="el" href="classxtd_1_1io_1_1file__info.html" title=
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>When first called, <a class="el" href="classxtd_1_1io_1_1file__info.html" title="Provides static methods for the creation, copying, deletion, moving, and opening of files,...">xtd::io::file_info</a> calls <a class="el" href="classxtd_1_1io_1_1file__system__info.html#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes the state of the object.">xtd::io::file_info::refresh</a> and caches information about the file. On subsequent calls, you must call <a class="el" href="classxtd_1_1io_1_1file__system__info.html#ab062e3d38143d80d6e2001a3e8873863" title="Refreshes the state of the object.">xtd::io::file_info::refresh</a> to get the latest copy of the information. </dd>
 <dd>
-The <a class="el" href="classxtd_1_1io_1_1file__info.html#a4f1abebe6cf1b8fb6646b5bd03817440" title="Gets a value indicating whether a file exists.">xtd::io::file_info::exists</a> property returns false if any error occurs while trying to determine if the specified file exists. This can occur in situations that raise exceptions such as passing a file name with invalid characters or too many characters, a failing or missing disk, or if the caller does not have permission to read the file. </dd></dl>
+The <a class="el" href="classxtd_1_1io_1_1file__info.html#a4f1abebe6cf1b8fb6646b5bd03817440" title="Gets a value indicating whether a file exists.">xtd::io::file_info::exists</a> property returns <code>false</code> if any error occurs while trying to determine if the specified file exists. This can occur in situations that raise exceptions such as passing a file name with invalid characters or too many characters, a failing or missing disk, or if the caller does not have permission to read the file. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1io_1_1file__system__info.html#add411f5f5ab91240dc07aace59fbbe18">xtd::io::file_system_info</a>.</p>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="file_info2_8cpp-example.html#a4">file_info2.cpp</a>, and <a class="el" href="file_info_move_to_8cpp-example.html#a5">file_info_move_to.cpp</a>.</dd>
@@ -622,7 +622,7 @@ The <a class="el" href="classxtd_1_1io_1_1file__info.html#a4f1abebe6cf1b8fb6646b
 </div><div class="memdoc">
 
 <p>Gets a value that determines if the current file is read only. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current file is read only; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current file is read only; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1io_1_1file__not__found__exception.html" title="The exception that is thrown when an attempt to access a file that does not exist on disk fails.">xtd::io::file_not_found_exception</a></td><td>The file described by the current <a class="el" href="classxtd_1_1io_1_1file__info.html" title="Provides static methods for the creation, copying, deletion, moving, and opening of files,...">xtd::io::file_info</a> object could not be found. </td></tr>
@@ -630,7 +630,7 @@ The <a class="el" href="classxtd_1_1io_1_1file__info.html#a4f1abebe6cf1b8fb6646b
     <tr><td class="paramname"><a class="el" href="classxtd_1_1unauthorized__access__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::unauthorized_access_exception</a></td><td>This operation is not supported on the current platform.<br  />
 -or-<br  />
 The caller does not have the required permission. </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The user does not have write permission, but attempted to set this property to false. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The user does not have write permission, but attempted to set this property to `false`. </td></tr>
   </table>
   </dd>
 </dl>
@@ -650,7 +650,7 @@ The caller does not have the required permission. </td></tr>
 <div class="line">    <span class="comment">// Display wether the file is read-only.</span></div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;The file read-only value for &quot;</span> + file_name + <span class="stringliteral">&quot; is: &quot;</span> + is_read_only);</div>
 <div class="line"> </div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Changing the read-only value for &quot;</span> + file_name + <span class="stringliteral">&quot; to true.&quot;</span>);</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Changing the read-only value for &quot;</span> + file_name + <span class="stringliteral">&quot; to `true`.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Set the file to read-only.</span></div>
 <div class="line">    set_file_read_access(file_name, <span class="keyword">true</span>);</div>
@@ -688,7 +688,7 @@ The caller does not have the required permission. </td></tr>
 <div class="line"><span class="comment">// results may vary based on the computer/file structure/etc.:</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The file read-only value for c:\test.xml is: True</span></div>
-<div class="line"><span class="comment">// Changing the read-only value for c:\test.xml to true.</span></div>
+<div class="line"><span class="comment">// Changing the read-only value for c:\test.xml to `true`.</span></div>
 <div class="line"><span class="comment">// The file read-only value for c:\test.xml is: True</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Use the <a class="el" href="classxtd_1_1io_1_1file__info.html#aa88db8cdb2e3df81191db6c42adf70b9" title="Gets a value that determines if the current file is read only.">xtd::io::file_info::is_read_only</a> property to quickly determine or change whether the current file is read only. </dd>
@@ -716,7 +716,7 @@ When first called, <a class="el" href="classxtd_1_1io_1_1file__info.html" title=
 <p>Sets a value that determines if the current file is read only. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>true if the current file is read only; otherwise, false. </td></tr>
+    <tr><td class="paramname">value</td><td><code>true</code> if the current file is read only; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -727,7 +727,7 @@ When first called, <a class="el" href="classxtd_1_1io_1_1file__info.html" title=
     <tr><td class="paramname"><a class="el" href="classxtd_1_1unauthorized__access__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::unauthorized_access_exception</a></td><td>This operation is not supported on the current platform.<br  />
 -or-<br  />
 The caller does not have the required permission. </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The user does not have write permission, but attempted to set this property to false. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The user does not have write permission, but attempted to set this property to `false`. </td></tr>
   </table>
   </dd>
 </dl>
@@ -747,7 +747,7 @@ The caller does not have the required permission. </td></tr>
 <div class="line">    <span class="comment">// Display wether the file is read-only.</span></div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;The file read-only value for &quot;</span> + file_name + <span class="stringliteral">&quot; is: &quot;</span> + is_read_only);</div>
 <div class="line"> </div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;Changing the read-only value for &quot;</span> + file_name + <span class="stringliteral">&quot; to true.&quot;</span>);</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;Changing the read-only value for &quot;</span> + file_name + <span class="stringliteral">&quot; to `true`.&quot;</span>);</div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// Set the file to read-only.</span></div>
 <div class="line">    set_file_read_access(file_name, <span class="keyword">true</span>);</div>
@@ -785,7 +785,7 @@ The caller does not have the required permission. </td></tr>
 <div class="line"><span class="comment">// results may vary based on the computer/file structure/etc.:</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// The file read-only value for c:\test.xml is: True</span></div>
-<div class="line"><span class="comment">// Changing the read-only value for c:\test.xml to true.</span></div>
+<div class="line"><span class="comment">// Changing the read-only value for c:\test.xml to `true`.</span></div>
 <div class="line"><span class="comment">// The file read-only value for c:\test.xml is: True</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Use the <a class="el" href="classxtd_1_1io_1_1file__info.html#aa88db8cdb2e3df81191db6c42adf70b9" title="Gets a value that determines if the current file is read only.">xtd::io::file_info::is_read_only</a> property to quickly determine or change whether the current file is read only. </dd>
@@ -929,7 +929,7 @@ The xtd::io::file_info::size property is called for a directory. </td></tr>
 <div class="line"><span class="comment">// fileinfoname.exe</span></div>
 <div class="line"><span class="comment">// fileinfoname.pdb</span></div>
 <div class="line"><span class="comment">// newTemp.txt</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:75</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:77</div></div>
 <div class="ttc" id="aclassxtd_1_1environment_html_ae25575bcef6ad4fe46723839788ff9bd"><div class="ttname"><a href="classxtd_1_1environment.html#ae25575bcef6ad4fe46723839788ff9bd">xtd::environment::current_directory</a></div><div class="ttdeci">static xtd::string current_directory()</div><div class="ttdoc">Gets the fully qualified path of the current working directory.</div></div>
 </div><!-- fragment --> <dl class="section remark"><dt>Remarks</dt><dd>When first called, <a class="el" href="classxtd_1_1io_1_1file__info.html" title="Provides static methods for the creation, copying, deletion, moving, and opening of files,...">xtd::io::file_info</a> calls Refresh and caches information about the file. On subsequent calls, you must call Refresh to get the latest copy of the information. </dd>
 <dd>
@@ -1087,7 +1087,7 @@ The name of the file includes the file extension. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>dest_file_name is empty, contains only white spaces, or contains invalid characters. </td></tr>
-    <tr><td class="paramname">xtd::io_io_exception</td><td>An error occurs, or the destination file already exists and overwrite is false. </td></tr>
+    <tr><td class="paramname">xtd::io_io_exception</td><td>An error occurs, or the destination file already exists and overwrite is `false`. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1security_1_1security__exception.html" title="The exception that is thrown when an I/O error occurs.">xtd::security::security_exception</a></td><td>The caller does not have the required permission. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1io_1_1directory__not__found__exception.html" title="The exception that is thrown when part of a file or directory cannot be found.">xtd::io::directory_not_found_exception</a></td><td>The directory specified in dest_file_name does not exist. </td></tr>
     <tr><td class="paramname">xtd::unauthorized_access_exceptionA</td><td>directory path is passed in, or the file is being moved to a different drive. </td></tr>
@@ -1230,15 +1230,15 @@ The name of the file includes the file extension. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dest_file_name</td><td>The name of the new file to copy to. </td></tr>
-    <tr><td class="paramname">overwrite</td><td>true to allow an existing file to be overwritten; otherwise, false. </td></tr>
+    <tr><td class="paramname">overwrite</td><td><code>true</code> to allow an existing file to be overwritten; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A new file, or an overwrite of an existing file if overwrite is true. If the file exists and overwrite is false, an xtd::io::ioo_exception is thrown. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A new file, or an overwrite of an existing file if overwrite is <code>true</code>. If the file exists and overwrite is <code>false</code>, an xtd::io::ioo_exception is thrown. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>dest_file_name is empty, contains only white spaces, or contains invalid characters. </td></tr>
-    <tr><td class="paramname">xtd::io_io_exception</td><td>An error occurs, or the destination file already exists and overwrite is false. </td></tr>
+    <tr><td class="paramname">xtd::io_io_exception</td><td>An error occurs, or the destination file already exists and overwrite is `false`. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1security_1_1security__exception.html" title="The exception that is thrown when an I/O error occurs.">xtd::security::security_exception</a></td><td>The caller does not have the required permission. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1io_1_1directory__not__found__exception.html" title="The exception that is thrown when part of a file or directory cannot be found.">xtd::io::directory_not_found_exception</a></td><td>The directory specified in dest_file_name does not exist. </td></tr>
     <tr><td class="paramname">xtd::unauthorized_access_exceptionA</td><td>directory path is passed in, or the file is being moved to a different drive. </td></tr>
@@ -1309,7 +1309,7 @@ The name of the file includes the file extension. </dd></dl>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;This is the information in the first file:&quot;</span>);</div>
 <div class="line">    <span class="keywordflow">while</span> (sr.peek() != -1)</div>
 <div class="line">      console::write_line(sr.read_line());</div>
-<div class="line">    <span class="comment">// Copy this file to another file. The true parameter specifies that the file will be overwritten if it already exists.</span></div>
+<div class="line">    <span class="comment">// Copy this file to another file. The `true` parameter specifies that the file will be overwritten if it already exists.</span></div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1io_1_1file__info.html">file_info</a> newfi = fi.<a class="code hl_function" href="classxtd_1_1io_1_1file__info.html#a08655cefe57473c6b7e5b23fc7de4cd9">copy_to</a>(<span class="stringliteral">&quot;newTemp.txt&quot;</span>, <span class="keyword">true</span>);</div>
 <div class="line">    <span class="comment">// Get the information out of the new file and display it.</span></div>
 <div class="line">    ifs = newfi.<a class="code hl_function" href="classxtd_1_1io_1_1file__info.html#a9b3abeefd4e4f232fe8d4c3e59f01b45">open_read</a>();</div>
@@ -1768,7 +1768,7 @@ This method is a wrapper for the functionality provided by <a class="el" href="c
 <div class="line"><span class="comment">// Preparing to delete directories.</span></div>
 <div class="line"><span class="comment">// Successfully deleted directories and files.</span></div>
 <div class="line"><span class="comment">// Press the ENTER key to close this application.</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_adf868f38f4e81d03746e453bab03f4c5"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#adf868f38f4e81d03746e453bab03f4c5">xtd::collections::generic::list::push_back</a></div><div class="ttdeci">virtual void push_back(const type_t &amp;value)</div><div class="ttdoc">Appends the given element value to the end of the container.</div><div class="ttdef"><b>Definition</b> list.hpp:791</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_adf868f38f4e81d03746e453bab03f4c5"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#adf868f38f4e81d03746e453bab03f4c5">xtd::collections::generic::list::push_back</a></div><div class="ttdeci">virtual void push_back(const type_t &amp;value)</div><div class="ttdoc">Appends the given element value to the end of the container.</div><div class="ttdef"><b>Definition</b> list.hpp:867</div></div>
 <div class="ttc" id="aclassxtd_1_1exception_html_ae8b169a950f0f009661b21e472ebf6e4"><div class="ttname"><a href="classxtd_1_1exception.html#ae8b169a950f0f009661b21e472ebf6e4">xtd::exception::stack_trace</a></div><div class="ttdeci">virtual xtd::string stack_trace() const noexcept</div><div class="ttdoc">Gets a string representation of the immediate frames on the call stack.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html_a77aaaba9fe19490908ee2fc105776dcd"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html#a77aaaba9fe19490908ee2fc105776dcd">xtd::io::directory_info::remove</a></div><div class="ttdeci">void remove() const override</div><div class="ttdoc">Deletes this xtd::io::directory_info if it is empty.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1file__info_html_a5f525f2417d754c1967e09a955528df8"><div class="ttname"><a href="classxtd_1_1io_1_1file__info.html#a5f525f2417d754c1967e09a955528df8">xtd::io::file_info::directory</a></div><div class="ttdeci">xtd::io::directory_info directory() const</div><div class="ttdoc">Gets an instance of the parent directory.</div></div>
@@ -1816,7 +1816,7 @@ This method does not overwrite the destination file if it already exists. For th
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dest_file_name</td><td>The path to move the file to, which can specify a different file name. </td></tr>
-    <tr><td class="paramname">overwrite</td><td>true to overwrite the destination file if it already exists; false otherwise. </td></tr>
+    <tr><td class="paramname">overwrite</td><td><code>true</code> to overwrite the destination file if it already exists; <code>false</code> otherwise. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2596,7 +2596,7 @@ Pass an empty string ("") to the dest_backup_file_name parameter if you do not w
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:35:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -106,7 +106,7 @@ Inheritance diagram for xtd::forms::timer:</div>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a></dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A timer is used to raise an event at user-defined intervals. This Windows timer is designed for a single-threaded environment where UI threads are used to perform processing. It requires that the user code have a UI message pump available and always operate from the same thread. </dd>
 <dd>
-When you use this timer, use the tick event to perform a polling operation or to display a splash screen for a specified period of time. Whenever the enabled property is set to true and the interval property is greater than zero, the tick event is raised at intervals based on the interval property setting. </dd>
+When you use this timer, use the tick event to perform a polling operation or to display a splash screen for a specified period of time. Whenever the enabled property is set to <code>true</code> and the interval property is greater than zero, the tick event is raised at intervals based on the interval property setting. </dd>
 <dd>
 This class provides methods to set the interval, and to start and stop the timer. </dd>
 <dd>
@@ -303,7 +303,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Initializes a new instance of the timer class. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>When a new timer is created, it is disabled; that is, enabled is set to false. To enable the timer, call the start method or set enabled to true. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>When a new timer is created, it is disabled; that is, enabled is set to <code>false</code>. To enable the timer, call the start method or set enabled to <code>true</code>. </dd>
 <dd>
 If the timer is disabled and the timer is out of scope, the timer will be destroyed. </dd></dl>
 
@@ -334,8 +334,8 @@ If the timer is disabled and the timer is out of scope, the timer will be destro
 </div><div class="memdoc">
 
 <p>Gets whether the timer is running. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the timer is currently enabled; otherwise, false. The default is false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Calling the start method is the same as setting enabled to true. Likewise, calling the stop method is the same as setting enabled to false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the timer is currently enabled; otherwise, <code>false</code>. The default is <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Calling the start method is the same as setting enabled to <code>true</code>. Likewise, calling the stop method is the same as setting enabled to <code>false</code>. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lcd_label2_8cpp-example.html#a18">lcd_label2.cpp</a>, <a class="el" href="lcd_label_with_dot_matrix_8cpp-example.html#a11">lcd_label_with_dot_matrix.cpp</a>, <a class="el" href="lcd_label_with_fourteen_segment_8cpp-example.html#a11">lcd_label_with_fourteen_segment.cpp</a>, <a class="el" href="lcd_label_with_nine_segment_8cpp-example.html#a11">lcd_label_with_nine_segment.cpp</a>, <a class="el" href="lcd_label_with_seven_segment_8cpp-example.html#a11">lcd_label_with_seven_segment.cpp</a>, <a class="el" href="lcd_label_with_sixteen_segment_8cpp-example.html#a11">lcd_label_with_sixteen_segment.cpp</a>, and <a class="el" href="wiggly_8cpp-example.html#a6">wiggly.cpp</a>.</dd>
 </dl>
 
@@ -368,11 +368,11 @@ If the timer is disabled and the timer is out of scope, the timer will be destro
 <p>Sets whether the timer is running. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">enabled</td><td>true if the timer is currently enabled; otherwise, false. The default is false. </td></tr>
+    <tr><td class="paramname">enabled</td><td><code>true</code> if the timer is currently enabled; otherwise, <code>false</code>. The default is <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Calling the start method is the same as setting enabled to true. Likewise, calling the stop method is the same as setting enabled to false. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Calling the start method is the same as setting enabled to <code>true</code>. Likewise, calling the stop method is the same as setting enabled to <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -512,7 +512,7 @@ If the timer is disabled and the timer is out of scope, the timer will be destro
 </div><div class="memdoc">
 
 <p>Stops the timer. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>You can also stop the timer by setting the enabled property to false. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>You can also stop the timer by setting the enabled property to <code>false</code>. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="timers_timer_synchronizing_object_8cpp-example.html#a6">timers_timer_synchronizing_object.cpp</a>.</dd>
 </dl>
 
@@ -534,7 +534,7 @@ If the timer is disabled and the timer is out of scope, the timer will be destro
 </div><div class="memdoc">
 
 <p>Starts the timer. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>You can also start the timer by setting the enabled property to true. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>You can also start the timer by setting the enabled property to <code>true</code>. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="timers_timer_synchronizing_object_8cpp-example.html#a4">timers_timer_synchronizing_object.cpp</a>.</dd>
 </dl>
 
@@ -641,7 +641,7 @@ If the timer is disabled and the timer is out of scope, the timer will be destro
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">interval</td><td>An <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> specifying the interval before the tick event is raised relative to the last occurrence of the tick event. The value must be greater than zero. </td></tr>
-    <tr><td class="paramname">enabled</td><td>true if the timer is currently enabled; otherwise, false. The default is false. </td></tr>
+    <tr><td class="paramname">enabled</td><td><code>true</code> if the timer is currently enabled; otherwise, <code>false</code>. The default is <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -722,7 +722,7 @@ If the timer is disabled and the timer is out of scope, the timer will be destro
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">interval_milliseconds</td><td>An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one. </td></tr>
-    <tr><td class="paramname">enabled</td><td>true if the timer is currently enabled; otherwise, false. The default is false. </td></tr>
+    <tr><td class="paramname">enabled</td><td><code>true</code> if the timer is currently enabled; otherwise, <code>false</code>. The default is <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -793,7 +793,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:35:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

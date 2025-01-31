@@ -158,7 +158,7 @@ Inheritance diagram for xtd::threading::thread_pool:</div>
 <li>When you call the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a6e1d511cd1dbe0a07b98128042118f3c" title="Queues a method for execution. The method executes when a thread pool thread becomes available.">xtd::threading::thread_pool::queue_user_work_item</a> method to queue a method for execution on a thread pool thread. You do this by passing the method a <a class="el" href="group__xtd__core.html#ga8e591282c14ed5ae0c0038b503b1373d" title="Represents a callback method to be executed by a thread pool thread.">xtd::threading::wait_callback</a> delegate. The delegate has the signature @verbatom using wait_callback = <a class="el" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31" title="Represents a xtd::delegate that has variable parameters and does not return a value.">action&lt;std::any&gt;</a>  where state is an object that contains data to be used by the delegate. The actual data can be passed to the delegate by calling the xtd::threading::thread_pool::queue_user_work_item(xtd::threading::wait_callback, std::any) method. </li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The threads in the managed thread pool are background threads. That is, their <a class="el" href="classxtd_1_1threading_1_1thread.html#a11f3c0ca7be2108803058899a895193e" title="Gets a value indicating whether or not a thread is a background thread.">xtd::threading::thread::is_background</a> properties are true. This means that a <a class="el" href="classxtd_1_1threading_1_1thread__pool.html" title="Provides a pool of threads that can be used to execute tasks, post work items, process asynchronous I...">xtd::threading::thread_pool</a> thread will not keep an application running after all foreground threads have exited. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The threads in the managed thread pool are background threads. That is, their <a class="el" href="classxtd_1_1threading_1_1thread.html#a11f3c0ca7be2108803058899a895193e" title="Gets a value indicating whether or not a thread is a background thread.">xtd::threading::thread::is_background</a> properties are <code>true</code>. This means that a <a class="el" href="classxtd_1_1threading_1_1thread__pool.html" title="Provides a pool of threads that can be used to execute tasks, post work items, process asynchronous I...">xtd::threading::thread_pool</a> thread will not keep an application running after all foreground threads have exited. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>You can also queue work items that are not related to a wait operation to the thread pool. To request that a work item be handled by a thread in the thread pool, call the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a6e1d511cd1dbe0a07b98128042118f3c" title="Queues a method for execution. The method executes when a thread pool thread becomes available.">xtd::threading::thread_pool::queue_user_work_item</a> method. This method takes as a parameter a reference to the method or delegate that will be called by the thread selected from the thread pool. There is no way to cancel a work item after it has been queued. </dd>
 <dd>
 Timer-queue timers and registered wait operations also use the thread pool. Their callback functions are queued to the thread pool. </dd>
@@ -458,7 +458,7 @@ You can use this method to ensure that all pending threads are closed, and that 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if all threads have terminated; <code>false</code> if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If one or more threads are not joinable, they will be skipped. </dd>
 <dd>
 You can use this method to ensure that all pending threads are closed, and that resources are also closed. </dd></dl>
@@ -496,7 +496,7 @@ You can use this method to ensure that all pending threads are closed, and that 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if all threads have terminated; <code>false</code> if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If one or more threads are not joinable, they will be skipped. </dd>
 <dd>
 You can use this method to ensure that all pending threads are closed, and that resources are also closed. </dd></dl>
@@ -643,7 +643,7 @@ You can use this method to ensure that all pending threads are closed, and that 
     <tr><td class="paramname">callback</td><td>A pointer function to call when the wait_object parameter is signaled. </td></tr>
     <tr><td class="paramname">state</td><td>The object that is passed to the callback. </td></tr>
     <tr><td class="paramname">milliseconds_timeout_interval</td><td>The time-out in milliseconds. If the milliseconds_timeout_interval parameter is 0 (zero), the function tests the object's state and returns immediately. If milliseconds_timeout_interval is -1, the function's time-out interval never elapses. </td></tr>
-    <tr><td class="paramname">execute_only_once</td><td>true to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; false to indicate that the timer is reset every time the wait operation completes until the wait is unregistered. </td></tr>
+    <tr><td class="paramname">execute_only_once</td><td><code>true</code> to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; <code>false</code> to indicate that the timer is reset every time the wait operation completes until the wait is unregistered. </td></tr>
   </table>
   </dd>
 </dl>
@@ -716,7 +716,7 @@ You can use this method to ensure that all pending threads are closed, and that 
     <tr><td class="paramname">callback</td><td>A pointer function to call when the wait_object parameter is signaled. </td></tr>
     <tr><td class="paramname">state</td><td>The object that is passed to the callback. </td></tr>
     <tr><td class="paramname">milliseconds_timeout_interval</td><td>The time-out in milliseconds. If the milliseconds_timeout_interval parameter is 0 (zero), the function tests the object's state and returns immediately. If milliseconds_timeout_interval is -1, the function's time-out interval never elapses. </td></tr>
-    <tr><td class="paramname">execute_only_once</td><td>true to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; false to indicate that the timer is reset every time the wait operation completes until the wait is unregistered. </td></tr>
+    <tr><td class="paramname">execute_only_once</td><td><code>true</code> to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; <code>false</code> to indicate that the timer is reset every time the wait operation completes until the wait is unregistered. </td></tr>
   </table>
   </dd>
 </dl>
@@ -789,7 +789,7 @@ You can use this method to ensure that all pending threads are closed, and that 
     <tr><td class="paramname">callback</td><td>A pointer function to call when the wait_object parameter is signaled. </td></tr>
     <tr><td class="paramname">state</td><td>The object that is passed to the callback. </td></tr>
     <tr><td class="paramname">timeout</td><td>The time-out represented by a time_span.If timeout is 0 (zero), the function tests the object's state and returns immediately.If timeout is -1, the function's time-out interval never elapses. </td></tr>
-    <tr><td class="paramname">execute_only_once</td><td>true to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; false to indicate that the timer is reset every time the wait operation completes until the wait is unregistered. </td></tr>
+    <tr><td class="paramname">execute_only_once</td><td><code>true</code> to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; <code>false</code> to indicate that the timer is reset every time the wait operation completes until the wait is unregistered. </td></tr>
   </table>
   </dd>
 </dl>
@@ -862,7 +862,7 @@ You can use this method to ensure that all pending threads are closed, and that 
     <tr><td class="paramname">callback</td><td>A pointer function to call when the wait_object parameter is signaled. </td></tr>
     <tr><td class="paramname">state</td><td>The object that is passed to the callback. </td></tr>
     <tr><td class="paramname">milliseconds_timeout_interval</td><td>The time-out in milliseconds. If the milliseconds_timeout_interval parameter is 0 (zero), the function tests the object's state and returns immediately. If milliseconds_timeout_interval is -1, the function's time-out interval never elapses. </td></tr>
-    <tr><td class="paramname">execute_only_once</td><td>true to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; false to indicate that the timer is reset every time the wait operation completes until the wait is unregistered. </td></tr>
+    <tr><td class="paramname">execute_only_once</td><td><code>true</code> to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; <code>false</code> to indicate that the timer is reset every time the wait operation completes until the wait is unregistered. </td></tr>
   </table>
   </dd>
 </dl>
@@ -918,7 +918,7 @@ You can use this method to ensure that all pending threads are closed, and that 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the change is successful; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the change is successful; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -964,7 +964,7 @@ You can use this method to ensure that all pending threads are closed, and that 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the change is successful; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the change is successful; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -975,7 +975,7 @@ You can use this method to ensure that all pending threads are closed, and that 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:35:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

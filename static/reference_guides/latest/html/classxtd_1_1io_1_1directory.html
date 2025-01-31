@@ -877,7 +877,7 @@ The <a class="el" href="classxtd_1_1io_1_1directory.html#a264974521f7c5f01c4081b
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if path refers to an existing directory; false if the directory does not exist or an error occurs when trying to determine if the specified directory exists. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if path refers to an existing directory; <code>false</code> if the directory does not exist or an error occurs when trying to determine if the specified directory exists. </dd></dl>
 <dl class="section user"><dt>rExample</dt><dd>The following example takes an array of file or directory names on the command line, determines what kind of name it is, and processes it appropriately. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -921,7 +921,7 @@ The <a class="el" href="classxtd_1_1io_1_1directory.html#a264974521f7c5f01c4081b
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:75</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:77</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1path_html"><div class="ttname"><a href="classxtd_1_1io_1_1path.html">xtd::io::path</a></div><div class="ttdoc">Performs operations on std::basic_string instances that contain file or directory path information....</div><div class="ttdef"><b>Definition</b> path.hpp:36</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:15</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -931,9 +931,9 @@ Trailing spaces are removed from the end of the path parameter before checking w
 <dd>
 The path parameter is not case-sensitive. </dd>
 <dd>
-If you do not have at a minimum read-only permission to the directory, the Exists method will return false. </dd>
+If you do not have at a minimum read-only permission to the directory, the Exists method will return <code>false</code>. </dd>
 <dd>
-The <a class="el" href="classxtd_1_1io_1_1directory.html#a02f80efcc4bb75c7f03c1faa7fc50cc5" title="Determines whether the given path refers to an existing directory on disk.">xtd::io::directory::exists</a> method returns false if any error occurs while trying to determine if the specified file exists. This can occur in situations that raise exceptions such as passing a file name with invalid characters or too many characters, a failing or missing disk, or if the caller does not have permission to read the file. </dd></dl>
+The <a class="el" href="classxtd_1_1io_1_1directory.html#a02f80efcc4bb75c7f03c1faa7fc50cc5" title="Determines whether the given path refers to an existing directory on disk.">xtd::io::directory::exists</a> method returns <code>false</code> if any error occurs while trying to determine if the specified file exists. This can occur in situations that raise exceptions such as passing a file name with invalid characters or too many characters, a failing or missing disk, or if the caller does not have permission to read the file. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="test_forms_8cpp-example.html#a42">test_forms.cpp</a>.</dd>
 </dl>
 
@@ -2551,7 +2551,7 @@ public:
   </table>
   </dd>
 </dl>
-<p><a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program::main)</a>;  </p><dl class="section remark"><dt>Remarks</dt><dd>This method behaves identically to xtd::io::dirctory::remove(const xtd::string&amp;, bool) with false specified for the second parameter. </dd>
+<p><a class="el" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd" title="Defines the entry point to be called when the application loads. Generally this is set either to the ...">startup_(program::main)</a>;  </p><dl class="section remark"><dt>Remarks</dt><dd>This method behaves identically to xtd::io::dirctory::remove(const xtd::string&amp;, bool) with <code>false</code> specified for the second parameter. </dd>
 <dd>
 The path parameter may specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see GetCurrentDirectory. </dd>
 <dd>
@@ -2603,7 +2603,7 @@ In some cases, if you have the specified directory open in File Explorer, the De
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>The name of the directory to remove. </td></tr>
-    <tr><td class="paramname">recursive</td><td>true to remove directories, subdirectories, and files in path; otherwise, false. </td></tr>
+    <tr><td class="paramname">recursive</td><td><code>true</code> to remove directories, subdirectories, and files in path; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2659,7 +2659,7 @@ Trailing spaces are removed from the end of the path parameter before deleting t
 <dd>
 The path parameter is not case-sensitive. </dd>
 <dd>
-If the recursive parameter is true, the user must have write permission for the current directory as well as for all subdirectories. </dd>
+If the recursive parameter is <code>true</code>, the user must have write permission for the current directory as well as for all subdirectories. </dd>
 <dd>
 The behavior of this method differs slightly when deleting a directory that contains a reparse point, such as a symbolic link or a mount point. If the reparse point is a directory, such as a mount point, it is unmounted and the mount point is deleted. This method does not recurse through the reparse point. If the reparse point is a symbolic link to a file, the reparse point is deleted and not the target of the symbolic link. </dd>
 <dd>
@@ -3185,7 +3185,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:35:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

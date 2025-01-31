@@ -137,7 +137,7 @@ For more information about types, see <a href="https://gammasoft71.github.io/xtd
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
 <tr class="memitem:ae01391d495cfbfbc1ae4d49e12e0ca91"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1box__char.html#ae01391d495cfbfbc1ae4d49e12e0ca91">is_ascii</a> (type_t <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a>) noexcept</td></tr>
-<tr class="memdesc:ae01391d495cfbfbc1ae4d49e12e0ca91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if c is an ASCII character ([ U+0000..U+007F ]).  <br /></td></tr>
+<tr class="memdesc:ae01391d495cfbfbc1ae4d49e12e0ca91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns <code>true</code> if c is an ASCII character ([ U+0000..U+007F ]).  <br /></td></tr>
 <tr class="separator:ae01391d495cfbfbc1ae4d49e12e0ca91"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee6a21a85ab2b34d981913983d1c9aa1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1box__char.html#aee6a21a85ab2b34d981913983d1c9aa1">is_ascii</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>, size_t index)</td></tr>
 <tr class="memdesc:aee6a21a85ab2b34d981913983d1c9aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the character at the specified position in a specified string is an ASCII character ([ U+0000..U+007F ]).  <br /></td></tr>
@@ -337,14 +337,14 @@ template&lt;class type_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns true if c is an ASCII character ([ U+0000..U+007F ]). </p>
+<p>Returns <code>true</code> if c is an ASCII character ([ U+0000..U+007F ]). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">c</td><td>The character to analyze. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is an ASCII character; false otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is an ASCII character; <code>false</code> otherwise. </dd></dl>
 
 </div>
 </div>
@@ -392,7 +392,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is n ASCII character; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is n ASCII character; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>index is greater than the last position in s. </td></tr>
@@ -435,7 +435,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a control character; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a control character; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -483,7 +483,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is a control character; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is a control character; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>index is greater than the last position in s. </td></tr>
@@ -526,7 +526,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a decimal digit; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a decimal digit; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method determines whether a type_tis a radix-10 digit. This contrasts with is_number, which determines whether a Char is of any numeric Unicode category. Numbers include characters such as fractions, subscripts, superscripts, Roman numerals, currency numerators, encircled numbers, and script-specific digits. </dd></dl>
 
 </div>
@@ -575,7 +575,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is decimal digit; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is decimal digit; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>index is greater than the last position in s. </td></tr>
@@ -618,7 +618,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a letter; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a letter; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -666,7 +666,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is a letter; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is a letter; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>index is greater than the last position in s. </td></tr>
@@ -709,7 +709,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a letter or a decimal digit; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a letter or a decimal digit; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -757,7 +757,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is a letter or a decimal digit; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is a letter or a decimal digit; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>index is greater than the last position in s. </td></tr>
@@ -800,7 +800,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a lowercase letter; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a lowercase letter; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -848,7 +848,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is a lowercase letter; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is a lowercase letter; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>index is greater than the last position in s. </td></tr>
@@ -891,7 +891,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a number; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a number; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -939,7 +939,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is a number; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is a number; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>index is greater than the last position in s. </td></tr>
@@ -982,7 +982,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a punctuation mark; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a punctuation mark; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -1073,7 +1073,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a separator character; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a separator character; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -1164,7 +1164,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a symbol character; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is a symbol character; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -1212,7 +1212,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is a symbol character; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is a symbol character; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>index is greater than the last position in s. </td></tr>
@@ -1255,7 +1255,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is an uppercase letter; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is an uppercase letter; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -1303,7 +1303,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is an uppercase letter; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is an uppercase letter; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>index is greater than the last position in s. </td></tr>
@@ -1346,7 +1346,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is white space; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if c is white space; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -1394,7 +1394,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is white space; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the character at position index in s is white space; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>index is greater than the last position in s. </td></tr>
@@ -1485,7 +1485,7 @@ template&lt;class type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:34:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

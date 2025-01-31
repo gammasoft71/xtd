@@ -268,7 +268,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the text appended; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the text appended; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>path contains one or more of the invalid characters<br  />
@@ -326,7 +326,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the text appended; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the text appended; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>path contains one or more of the invalid characters<br  />
@@ -384,7 +384,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the text appended; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the text appended; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>path contains one or more of the invalid characters<br  />
@@ -541,7 +541,7 @@ The system could not retrieve the absolute path. </td></tr>
   <table class="params">
     <tr><td class="paramname">src</td><td>The file to be opened for reading. </td></tr>
     <tr><td class="paramname">dest</td><td>The name of the destination file. This cannot be a directory. </td></tr>
-    <tr><td class="paramname">overwrite</td><td>true if the destination file can be overwritten; otherwise, false. </td></tr>
+    <tr><td class="paramname">overwrite</td><td><code>true</code> if the destination file can be overwritten; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -682,10 +682,10 @@ file dest exists. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the caller has the required permissions and path contains the name of an existing file; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method also returns false if path is empty or an invalid path. </dd>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the caller has the required permissions and path contains the name of an existing file; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method also returns <code>false</code> if path is empty or an invalid path. </dd>
 <dd>
-If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns false regardless of the existence of path. </dd></dl>
+If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns <code>false</code> regardless of the existence of path. </dd></dl>
 
 </div>
 </div>
@@ -945,7 +945,7 @@ If the caller does not have sufficient permissions to read the specified file, n
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the file moved; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the file moved; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>if dest already exist. </td></tr>
@@ -1002,11 +1002,11 @@ If the caller does not have sufficient permissions to read the specified file, n
   <table class="params">
     <tr><td class="paramname">src</td><td>The name of the file to move. </td></tr>
     <tr><td class="paramname">dest</td><td>The new path for the file. </td></tr>
-    <tr><td class="paramname">overwrite</td><td>true to overwrite the destination file if it already exists; false otherwise. </td></tr>
+    <tr><td class="paramname">overwrite</td><td><code>true</code> to overwrite the destination file if it already exists; <code>false</code> otherwise. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the file moved; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the file moved; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>if dest already exist. </td></tr>
@@ -1406,7 +1406,7 @@ If the caller does not have sufficient permissions to read the specified file, n
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::ofstream An unshared std::ofstream that provides access to the specified file, with the specified mode and access. </dd>
 <dd>
-<code>true</code> if the file is deleted; otherwise, false. </dd></dl>
+<code>true</code> if the file is deleted; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -1456,11 +1456,11 @@ If the caller does not have sufficient permissions to read the specified file, n
     <tr><td class="paramname">source_file_name</td><td>The name of a file that replaces the file specified by destination_file_name. </td></tr>
     <tr><td class="paramname">destination_file_name</td><td>The name of the file being replaced. </td></tr>
     <tr><td class="paramname">destination_backup_file_name</td><td>The name of the backup file. </td></tr>
-    <tr><td class="paramname">ignore_metadata_errors</td><td>true to ignore merge errors (such as attributes and access control lists (ACLs)) from the replaced file to the replacement file; otherwise, false. </td></tr>
+    <tr><td class="paramname">ignore_metadata_errors</td><td><code>true</code> to ignore merge errors (such as attributes and access control lists (ACLs)) from the replaced file to the replacement file; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>false source_file_name does not exist or bad format, or destination_file_name does not exist or bad format, or if ignore_metadata_errors equal false and destination_backup_file_name bad format or on ani io error; otherwise true. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>false</code> source_file_name does not exist or bad format, or destination_file_name does not exist or bad format, or if ignore_metadata_errors equal <code>false</code> and destination_backup_file_name bad format or on ani io error; otherwise <code>true</code>. </dd></dl>
 
 </div>
 </div>
@@ -1796,7 +1796,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the text written; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the text written; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>path contains one or more of the invalid characters<br  />
@@ -1854,7 +1854,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the text written; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the text written; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>path contains one or more of the invalid characters<br  />
@@ -1912,7 +1912,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the text written; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the text written; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>path contains one or more of the invalid characters<br  />
@@ -1976,7 +1976,7 @@ The system could not retrieve the absolute path. </td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:35:08 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -365,14 +365,14 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>ndicates whether the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> object's current count has reached zero. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current count is zero; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current count is zero; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The current instance has already been closed. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> does not raise an event when the countdown has reached zero. Instead, the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html#a14d2e99ff1f41ceda7a329b2b8d67dda" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a> property equals zero, and the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html#aafc56551d8aceea8e5c49474f0260d59" title="ndicates whether the xtd::threading::countdown_event object&#39;s current count has reached zero.">xtd::threading::countdown_event::is_set</a> property equals true. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> does not raise an event when the countdown has reached zero. Instead, the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html#a14d2e99ff1f41ceda7a329b2b8d67dda" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a> property equals zero, and the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html#aafc56551d8aceea8e5c49474f0260d59" title="ndicates whether the xtd::threading::countdown_event object&#39;s current count has reached zero.">xtd::threading::countdown_event::is_set</a> property equals <code>true</code>. </dd></dl>
 
 </div>
 </div>
@@ -583,7 +583,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Registers a signal with the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a>, decrementing the value of <a class="el" href="classxtd_1_1threading_1_1countdown__event.html#a14d2e99ff1f41ceda7a329b2b8d67dda" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the signal caused the count to reach zero and the event was set; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the signal caused the count to reach zero and the event was set; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The current instance has already been closed. </td></tr>
@@ -619,7 +619,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the signal caused the count to reach zero and the event was set; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the signal caused the count to reach zero and the event was set; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The current instance has already been closed. </td></tr>
@@ -655,7 +655,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Attempts to increment <a class="el" href="classxtd_1_1threading_1_1countdown__event.html#a14d2e99ff1f41ceda7a329b2b8d67dda" title="Gets the number of remaining signals required to set the event.">xtd::threading::countdown_event::current_count</a> by one. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the increment succeeded; otherwise, false. If CurrentCount is already at zero, this method will return false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the increment succeeded; otherwise, <code>false</code>. If CurrentCount is already at zero, this method will return <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -690,7 +690,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the increment succeeded; otherwise, false. If CurrentCount is already at zero, this method will return false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the increment succeeded; otherwise, <code>false</code>. If CurrentCount is already at zero, this method will return <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -745,7 +745,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> was set; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> was set; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The current instance has already been closed. </td></tr>
@@ -813,7 +813,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> was set; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> was set; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The current instance has already been closed. </td></tr>
@@ -858,7 +858,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> was set; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> was set; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The current instance has already been closed. </td></tr>
@@ -904,7 +904,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> was set; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1threading_1_1countdown__event.html" title="Represents a synchronization primitive that is signaled when its count reaches zero.">xtd::threading::countdown_event</a> was set; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The current instance has already been closed. </td></tr>
@@ -923,7 +923,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:35:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

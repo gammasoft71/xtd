@@ -130,7 +130,7 @@ Inheritance diagram for xtd::forms::light_button:</div>
 The appearance property determines whether the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> appears as a typical <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> or as a button. </dd>
 <dd>
 The three_state property determines whether the control supports two or three states. Use the checked property to get or set the value of a two-state <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> control and use the check_state property to get or set the value of a three-state <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> control. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If the three_state property is set to true, the checked property will return true for either a checked or indeterminate state. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If the three_state property is set to <code>true</code>, the checked property will return <code>true</code> for either a checked or indeterminate state. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The flat_style property determines the style and appearance of the control. If the flat_style property is set to <a class="el" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a54b53072540eeeb8f8e9343e71f28176" title="The appearance of the control is determined by the user&#39;s operating system.">flat_style::system</a>, the user's operating system determines the appearance of the control. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>When the flat_style property is set to <a class="el" href="group__xtd__forms.html#gga7cc15a089c6b538cb469caa2e9aba1a1a54b53072540eeeb8f8e9343e71f28176" title="The appearance of the control is determined by the user&#39;s operating system.">flat_style::system</a>, the check_align property is ignored and the control is displayed using the <a class="el" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a4d8a5580bcd972246c9910900a6efc09" title="Content is vertically aligned in the middle, and horizontally aligned on the left.">content_alignment::middle_left</a> or <a class="el" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aff1bb2ef26708d2a4dc98bdda5c48071" title="Content is vertically aligned at the middle, and horizontally aligned on the right.">content_alignment::middle_right</a> alignment. If the check_align property is set to one of the right alignments, the control is displayed using the <a class="el" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0aff1bb2ef26708d2a4dc98bdda5c48071" title="Content is vertically aligned at the middle, and horizontally aligned on the right.">content_alignment::middle_right</a> alignment; otherwise, it is displayed using the <a class="el" href="group__xtd__forms.html#ggad8fe8984e9f4652c13654b2c4d7288f0a4d8a5580bcd972246c9910900a6efc09" title="Content is vertically aligned in the middle, and horizontally aligned on the left.">content_alignment::middle_left</a> alignment. </dd></dl>
 <dl class="section user"><dt>Appearance</dt><dd><table class="markdownTable">
@@ -1444,7 +1444,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <tr class="memdesc:a86d36d6a47d6d7adea17442beb394a4f inherit pro_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the parent handle of the control.  <br /></td></tr>
 <tr class="separator:a86d36d6a47d6d7adea17442beb394a4f inherit pro_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1803ab3c808ee5f02e66d4fb76a1a65 inherit pro_methods_classxtd_1_1forms_1_1control"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#ae1803ab3c808ee5f02e66d4fb76a1a65">set_style</a> (<a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf">control_styles</a> flag, bool value)</td></tr>
-<tr class="memdesc:ae1803ab3c808ee5f02e66d4fb76a1a65 inherit pro_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a specified control_styles flag to either true or false.  <br /></td></tr>
+<tr class="memdesc:ae1803ab3c808ee5f02e66d4fb76a1a65 inherit pro_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a specified control_styles flag to either <code>true</code> or <code>false</code>.  <br /></td></tr>
 <tr class="separator:ae1803ab3c808ee5f02e66d4fb76a1a65 inherit pro_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classxtd_1_1forms_1_1component"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classxtd_1_1forms_1_1component')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classxtd_1_1forms_1_1component.html">xtd::forms::component</a></td></tr>
 <tr class="memitem:a63ab8930bd0ee6af0857d95c58838b40 inherit pro_methods_classxtd_1_1forms_1_1component"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1component.html#a63ab8930bd0ee6af0857d95c58838b40">component</a> ()</td></tr>
@@ -1504,8 +1504,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the checked or check_state values and the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a>'s appearance are automatically changed when the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> is clicked. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, <code>false</code>. The default value is <code>true</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If auto_check is set to <code>false</code>, you will need to add code to update the checked or check_state values in the click event handler. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> auto_check. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/light_button&gt;</span></div>
@@ -1588,11 +1588,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <p>Sets a value indicating whether the checked or check_state values and the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a>'s appearance are automatically changed when the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> is clicked. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">auto_check</td><td>true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true. </td></tr>
+    <tr><td class="paramname">auto_check</td><td><code>true</code> if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, <code>false</code>. The default value is <code>true</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If auto_check is set to <code>false</code>, you will need to add code to update the checked or check_state values in the click event handler. </dd></dl>
 
 </div>
 </div>
@@ -1620,8 +1620,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> is in the checked state. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>When the value is true, the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> is in the checked state; otherwise, <code>false</code>. The default value is <code>false</code>. If the three_state property is set to <code>true</code>, the checked property will return <code>true</code> for either a checked or indeterminate check_state. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>When the value is <code>true</code>, the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is <code>true</code> and raised like a standard button when <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> checked. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/light_button&gt;</span></div>
@@ -1704,11 +1704,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <p>Sets a value indicating whether the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> is in the checked state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">checked</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> is in the checked state; otherwise, false. The default value is false. </td></tr>
+    <tr><td class="paramname">checked</td><td><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> is in the checked state; otherwise, <code>false</code>. The default value is <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>When the value is true, the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when false. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>When the value is <code>true</code>, the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is <code>true</code> and raised like a standard button when <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -1737,7 +1737,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 
 <p>Gets the state of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>One of the check_state enumeration values. The default value is unchecked. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If the three_state property is set to false, the check_state property value can only be set to <a class="el" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a44560d82707cce3b8111a770924cf0e2" title="The control is indeterminate. An indeterminate control generally has a shaded appearance.">check_state::indeterminate</a> in code and not by u ser interaction. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>If the three_state property is set to <code>false</code>, the check_state property value can only be set to <a class="el" href="group__xtd__forms.html#gga5ada8078f6297710207025403d7e7866a44560d82707cce3b8111a770924cf0e2" title="The control is indeterminate. An indeterminate control generally has a shaded appearance.">check_state::indeterminate</a> in code and not by u ser interaction. </dd>
 <dd>
 The following table describes the <a class="el" href="group__xtd__forms.html#gaf920635f1980a82e3a8f9117bd068238" title="Specifies the appearance of a control.">xtd::forms::appearance</a> of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> control in its different states for the normal and button style control light_button::appearance. <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -2168,8 +2168,8 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> will allow three check states rather than two. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> is able to display three check states; otherwise, false. The default value is false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd.forms.check_state</a> in code and not by user interaction. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> is able to display three check states; otherwise, <code>false</code>. The default value is <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the three_state property is set to <code>false</code>, the check_state property value can only be set to the indeterminate value of <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd.forms.check_state</a> in code and not by user interaction. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> three_state. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/light_button&gt;</span></div>
@@ -2252,11 +2252,11 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <p>Gets a value indicating whether the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> will allow three check states rather than two. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> is able to display three check states; otherwise, false. The default value is false. </td></tr>
+    <tr><td class="paramname">three_state</td><td><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">light_button</a> is able to display three check states; otherwise, <code>false</code>. The default value is <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd.forms.check_state</a> in code and not by user interaction. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the three_state property is set to <code>false</code>, the check_state property value can only be set to the indeterminate value of <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd.forms.check_state</a> in code and not by user interaction. </dd></dl>
 
 </div>
 </div>
@@ -2886,7 +2886,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
-    <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, false. </td></tr>
+    <tr><td class="paramname">three_state</td><td><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, <code>false</code>. </td></tr>
     <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
   </table>
   </dd>
@@ -2945,7 +2945,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
-    <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, false. </td></tr>
+    <tr><td class="paramname">three_state</td><td><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, <code>false</code>. </td></tr>
     <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
   </table>
@@ -3011,7 +3011,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
-    <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, false. </td></tr>
+    <tr><td class="paramname">three_state</td><td><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, <code>false</code>. </td></tr>
     <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
@@ -3084,7 +3084,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
-    <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, false. </td></tr>
+    <tr><td class="paramname">three_state</td><td><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, <code>false</code>. </td></tr>
     <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
@@ -3821,7 +3821,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
   <table class="params">
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
-    <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, false. </td></tr>
+    <tr><td class="paramname">three_state</td><td><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, <code>false</code>. </td></tr>
     <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
   </table>
   </dd>
@@ -3887,7 +3887,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
   <table class="params">
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
-    <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, false. </td></tr>
+    <tr><td class="paramname">three_state</td><td><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, <code>false</code>. </td></tr>
     <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
   </table>
@@ -3960,7 +3960,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
   <table class="params">
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
-    <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, false. </td></tr>
+    <tr><td class="paramname">three_state</td><td><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, <code>false</code>. </td></tr>
     <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
@@ -4040,7 +4040,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
   <table class="params">
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
     <tr><td class="paramname">text</td><td>A string that represent text of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
-    <tr><td class="paramname">three_state</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, false. </td></tr>
+    <tr><td class="paramname">three_state</td><td><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1check__box.html" title="Represents a Windows check_box.">check_box</a> is able to display three check states; otherwise, <code>false</code>. </td></tr>
     <tr><td class="paramname">check_state</td><td>One of the check_state enumeration values. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1light__button.html" title="Represents a Windows light_button.">xtd::forms::light_button</a>. </td></tr>
@@ -4166,7 +4166,7 @@ The following table describes the <a class="el" href="group__xtd__forms.html#gaf
 
 <p>Measure this control. </p>
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">drawing::size</a> size of this control. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method is used when auto_size is true. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method is used when auto_size is <code>true</code>. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1forms_1_1button__base.html#aaac5049c34075739a66747389ff5b49a">xtd::forms::button_base</a>.</p>
 
@@ -4614,7 +4614,7 @@ The on_check_state_changed method also allows derived classes to handle the even
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:35:04 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
