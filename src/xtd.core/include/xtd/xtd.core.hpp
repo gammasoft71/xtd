@@ -309,6 +309,7 @@
 #include "convert.hpp"
 #include "convert_pointer.hpp"
 #include "convert_string.hpp"
+#include "converter.hpp"
 #include "core_export.hpp"
 #include "cpp_language.hpp"
 #include "ctrace.hpp"
