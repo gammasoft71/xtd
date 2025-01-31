@@ -40,7 +40,7 @@ namespace xtd {
       
       /// @{
       /// @brief Create named mutex with specified name and a bool value that.
-      /// @param initially_owned true to give the calling thread initial ownership of the named system mutex if the named system mutex is created as a result of this call; otherwise, false.
+      /// @param initially_owned true to give the calling thread initial ownership of the named system mutex if the named system mutex is created as a result of this call; otherwise, `false`.
       /// @param name The name, if the synchronization object is to be shared with other processes.
       /// @return The handle of the created mutex.
       /// @warning Internal use only

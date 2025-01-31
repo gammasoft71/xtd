@@ -112,8 +112,8 @@ namespace xtd {
         tcp_client& client(const xtd::net::sockets::socket& value) noexcept;
         
         /// @brief Gets a value indicating whether the underlying xtd::net::sockets::socket for a xtd::net::sockets::tcp_client is connected to a remote host.
-        /// @return bool true if the xtd::net::sockets::tcp_client::client was connected to a remote resource as of the most recent operation; otherwise, false.
-        /// @remarks The xtd::net::sockets::tcp_client::client::connected property gets the connection state of the xtd::net::sockets::tcp_client::client socket as of the last I/O operation. When it returns false,
+        /// @return bool true if the xtd::net::sockets::tcp_client::client was connected to a remote resource as of the most recent operation; otherwise, `false`.
+        /// @remarks The xtd::net::sockets::tcp_client::client::connected property gets the connection state of the xtd::net::sockets::tcp_client::client socket as of the last I/O operation. When it returns `false`,
         /// @remarks the xtd::net::sockets::tcp_client::client socket was either never connected, or is no longer connected.Because the xtd::net::sockets::tcp_client::client::connected property only reflects the state
         /// @remarks of the connection as of the most recent operation, you should attempt to send or receive a message to determine the current state.
         /// @remarks After the message send fails, this property no longer returns true. Note that this behavior is by design.
@@ -122,7 +122,7 @@ namespace xtd {
         bool connected() const noexcept;
         
         /// @brief Gets a bool value that specifies whether the xtd::net::sockets::tcp_client allows only one client to use a port.
-        /// @return bool true if the xtd::net::sockets::tcp_client allows only one client to use a specific port; otherwise, false.
+        /// @return bool true if the xtd::net::sockets::tcp_client allows only one client to use a specific port; otherwise, `false`.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket. See the Remarks section for more information.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks By default, multiple clients can use a specific port; however, only one of the clients can perform operations on the network traffic sent to the port.
@@ -130,7 +130,7 @@ namespace xtd {
         /// @remarks This property must be set before the underlying socket is bound to a client port. If you call xtd::net::sockets::tcp_client::connect, xtd::net::sockets::tcp_client::client::begin_connect, xtd::net::sockets::tcp_client(xtd::net::ip_end_point), or xtd::net::sockets::tcp_client(xtd::string, uint16), the client port is bound as a side effect of the method, and you cannot subsequently set the xtd::net::sockets::tcp_client::client::exclusive_address_use property.
         bool exclusive_address_use() const;
         /// @brief Sets a bool value that specifies whether the xtd::net::sockets::tcp_client allows only one client to use a port.
-        /// @param value bool true if the xtd::net::sockets::tcp_client allows only one client to use a specific port; otherwise, false.
+        /// @param value bool true if the xtd::net::sockets::tcp_client allows only one client to use a specific port; otherwise, `false`.
         /// @return This current instance.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket. See the Remarks section for more information.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
@@ -147,11 +147,11 @@ namespace xtd {
         /// @remarks This property controls the length of time that the TCP connection will remain open after a call to xtd::net::sockets::tcp_client::close when data remains to be sent. When you call the Write method, data is placed in the outgoing network buffer. This property can be used to ensure that this data is sent to the remote host before the xtd::net::sockets::tcp_client::close method drops the connection.
         /// @remarks To enable lingering, create a xtd::net::sockets::linger_option instance containing the desired values, and set the xtd::net::sockets::tcp_client::linger_state property to this instance.
         /// @remarks The following table describes the behavior of the xtd::net::sockets::tcp_client::close method for the possible values of the xtd::net::sockets::linger_option::enabled property and the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::tcp_client::linger_state property.
-        /// | xtd::net::sockets::linger_option::enabled | xtd::net::sockets::linger_option::linger_time | Behavior                                                                                                                          |
-        /// | ----------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-        /// | false (disabled), the default value       | The time-out is not applicable, (default).    | Attempts to send pending data until the default IP protocol time-out expires.                                                     |
-        /// | true (enabled)                            | A nonzero time-out                            | Attempts to send pending data until the specified time-out expires, and if the attempt fails, then Winsock resets the connection. |
-        /// | true (enabled)                            | A zero timeout.                               | Discards any pending data and Winsock resets the connection.                                                                      |
+        /// | xtd::net::sockets::linger_option::enabled   | xtd::net::sockets::linger_option::linger_time | Behavior                                                                                                                          |
+        /// | ------------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+        /// | `false` (disabled), the default value       | The time-out is not applicable, (default).    | Attempts to send pending data until the default IP protocol time-out expires.                                                     |
+        /// | `true` (enabled)                            | A nonzero time-out                            | Attempts to send pending data until the specified time-out expires, and if the attempt fails, then Winsock resets the connection. |
+        /// | `true` (enabled)                            | A zero timeout.                               | Discards any pending data and Winsock resets the connection.                                                                      |
         /// @remarks The IP stack computes the default IP protocol time-out period to use based on the round trip time of the connection. In most cases, the time-out computed by the stack is more relevant than one defined by an application.
         /// @remarks This is the default behavior for a socket when the xtd::net::sockets::tcp_client::linger_state property is not set.
         /// @remarks When the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::tcp_client::linger_state property is set greater than the default IP protocol time-out, the default IP protocol time-out will still apply and virtual.
@@ -165,28 +165,28 @@ namespace xtd {
         /// @remarks This property controls the length of time that the TCP connection will remain open after a call to xtd::net::sockets::tcp_client::close when data remains to be sent. When you call the Write method, data is placed in the outgoing network buffer. This property can be used to ensure that this data is sent to the remote host before the xtd::net::sockets::tcp_client::close method drops the connection.
         /// @remarks To enable lingering, create a xtd::net::sockets::linger_option instance containing the desired values, and set the xtd::net::sockets::tcp_client::linger_state property to this instance.
         /// @remarks The following table describes the behavior of the xtd::net::sockets::tcp_client::close method for the possible values of the xtd::net::sockets::linger_option::enabled property and the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::tcp_client::linger_state property.
-        /// | xtd::net::sockets::linger_option::enabled | xtd::net::sockets::linger_option::linger_time | Behavior                                                                                                                          |
-        /// | ----------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-        /// | false (disabled), the default value       | The time-out is not applicable, (default).    | Attempts to send pending data until the default IP protocol time-out expires.                                                     |
-        /// | true (enabled)                            | A nonzero time-out                            | Attempts to send pending data until the specified time-out expires, and if the attempt fails, then Winsock resets the connection. |
-        /// | true (enabled)                            | A zero timeout.                               | Discards any pending data and Winsock resets the connection.                                                                      |
+        /// | xtd::net::sockets::linger_option::enabled   | xtd::net::sockets::linger_option::linger_time | Behavior                                                                                                                          |
+        /// | ------------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+        /// | `false` (disabled), the default value       | The time-out is not applicable, (default).    | Attempts to send pending data until the default IP protocol time-out expires.                                                     |
+        /// | `true` (enabled)                            | A nonzero time-out                            | Attempts to send pending data until the specified time-out expires, and if the attempt fails, then Winsock resets the connection. |
+        /// | `true` (enabled)                            | A zero timeout.                               | Discards any pending data and Winsock resets the connection.                                                                      |
         /// @remarks The IP stack computes the default IP protocol time-out period to use based on the round trip time of the connection. In most cases, the time-out computed by the stack is more relevant than one defined by an application.
         /// @remarks This is the default behavior for a socket when the xtd::net::sockets::tcp_client::linger_state property is not set.
         /// @remarks When the xtd::net::sockets::linger_option::linger_time property stored in the xtd::net::sockets::tcp_client::linger_state property is set greater than the default IP protocol time-out, the default IP protocol time-out will still apply and virtual.
         tcp_client& linger_state(const xtd::net::sockets::linger_option& value);
         
         /// @brief Gets a value that disables a delay when send or receive buffers are not full.
-        /// @return `true` if the delay is disabled; otherwise, false. The default value is false.
+        /// @return `true` if the delay is disabled; otherwise, `false`. The default value is `false`.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket. See the Remarks section for more information.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
-        /// @remarks When xtd::net::sockets::tcp_client::no_delay is false, a xtd::net::sockets::tcp_client does not send a packet over the network until it has collected a significant amount of outgoing data.
+        /// @remarks When xtd::net::sockets::tcp_client::no_delay is `false`, a xtd::net::sockets::tcp_client does not send a packet over the network until it has collected a significant amount of outgoing data.
         bool no_delay() const;
         /// @brief Sets a value that disables a delay when send or receive buffers are not full.
-        /// @param value true if the delay is disabled; otherwise, false. The default value is false.
+        /// @param value true if the delay is disabled; otherwise, `false`. The default value is `false`.
         /// @return This current instance.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket. See the Remarks section for more information.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
-        /// @remarks When xtd::net::sockets::tcp_client::no_delay is false, a xtd::net::sockets::tcp_client does not send a packet over the network until it has collected a significant amount of outgoing data.
+        /// @remarks When xtd::net::sockets::tcp_client::no_delay is `false`, a xtd::net::sockets::tcp_client does not send a packet over the network until it has collected a significant amount of outgoing data.
         tcp_client& no_delay(bool value);
         
         /// @brief Gets the size of the receive buffer.
@@ -344,11 +344,11 @@ namespace xtd {
         
         /// @{
         /// @brief Gets a value that indicates whether a connection has been made.
-        /// @return `true` if the connection has been made; otherwise, false.
+        /// @return `true` if the connection has been made; otherwise, `false`.
         /// @remarks Classes deriving from xtd::net::sockets::tcp_client can use this property to determine if a connection attempt has succeeded. It does not monitor the ongoing connection state of xtd::net::sockets::tcp_client. If the remote host closes the connection, xtd::net::sockets::tcp_client::active will not be updated. If you are deriving from xtd::net::sockets::tcp_client and require closer attention to the connection state, use the xtd::net::sockets::tcp_client::client::connected property of the xtd::net::sockets::socket returned by the xtd::net::sockets::tcp_client::client property.
         bool active() const noexcept;
         /// @brief Sets a value that indicates whether a connection has been made.
-        /// @param value true if the connection has been made; otherwise, false.
+        /// @param value true if the connection has been made; otherwise, `false`.
         /// @return This current instance.
         /// @remarks Classes deriving from xtd::net::sockets::tcp_client can use this property to determine if a connection attempt has succeeded. It does not monitor the ongoing connection state of xtd::net::sockets::tcp_client. If the remote host closes the connection, xtd::net::sockets::tcp_client::active will not be updated. If you are deriving from xtd::net::sockets::tcp_client and require closer attention to the connection state, use the xtd::net::sockets::tcp_client::client::connected property of the xtd::net::sockets::socket returned by the xtd::net::sockets::tcp_client::client property.
         tcp_client& active(bool value) noexcept;

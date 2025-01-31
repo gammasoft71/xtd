@@ -349,7 +349,7 @@ An [horizontal_layout_style](https://gammasoft71.github.io/xtd/reference_guides/
   * [bottom_left](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned in the bottom, and horizontally aligned on the left.
   * [bottom_center](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the bottom, and horizontally aligned at the center.
   * [bottom_right](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the bottom, and horizontally aligned on the right.
-* exapend : A flag indicating if control is expanded to its containing layout container. The default is false.
+* exapend : A flag indicating if control is expanded to its containing layout container. The default is `false`.
 * size_type : One of the [size_type](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is auto_size.
   * [auto_size](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be automatically sized to share space with its peers.
   * [absolute](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be sized to an exact number of pixels. (Style by default)
@@ -505,7 +505,7 @@ An [vertical_layout_style](https://gammasoft71.github.io/xtd/reference_guides/la
   * [bottom_left](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned in the bottom, and horizontally aligned on the left.
   * [bottom_center](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the bottom, and horizontally aligned at the center.
   * [bottom_right](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gad8fe8984e9f4652c13654b2c4d7288f0) : Content is vertically aligned at the bottom, and horizontally aligned on the right.
-* exapend : A flag indicating if control is expanded to its containing layout container. The default is false.
+* exapend : A flag indicating if control is expanded to its containing layout container. The default is `false`.
 * size_type : One of the [size_type](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) values that specifies how layout container of user interface (UI) elements should be sized relative to their container. The default is auto_size.
   * [auto_size](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be automatically sized to share space with its peers.
   * [absolute](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html#gab29b04bbaf914660d81ba98475d8a100) : The control should be sized to an exact number of pixels. (Style by default)

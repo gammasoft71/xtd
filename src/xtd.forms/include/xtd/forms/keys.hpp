@@ -43,7 +43,7 @@ namespace xtd {
     ///
     /// // Handle the KeyDown event to determine the type of character entered into the control.
     /// void text_box1_key_down(object& sender, key_event_args& e) {
-    ///   // Initialize the flag to false.
+    ///   // Initialize the flag to `false`.
     ///   non_number_entered = false;
     ///
     ///   // Determine whether the keystroke is a number from the top of the keyboard.

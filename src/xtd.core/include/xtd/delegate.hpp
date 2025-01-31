@@ -168,7 +168,7 @@ namespace xtd {
     using object::equals;
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
     /// @param value The delegateType to compare.
-    /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
+    /// @return bool true if the value of this instance is the same as the value of value; otherwise, `false`.
     bool equals(const delegate& delegate) const noexcept override {
       if (data_->functions.size() != delegate.data_->functions.size())
         return false;
@@ -600,7 +600,7 @@ namespace xtd {
     using object::equals;
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
     /// @param value The delegateType to compare.
-    /// @return bool true if the value of this instance is the same as the value of value; otherwise, false.
+    /// @return bool true if the value of this instance is the same as the value of value; otherwise, `false`.
     bool equals(const delegate& delegate) const noexcept override {
       if (data_->functions.size() != delegate.data_->functions.size() || data_->no_arguments_functions.size() != delegate.data_->no_arguments_functions.size())
         return false;

@@ -49,7 +49,7 @@ namespace xtd {
       /// @remarks Enumerators can be used to read the data in the collection, but they cannot be used to modify the underlying collection.
       /// @remarks Initially, the enumerator is positioned before the first element in the collection. At this position, xtd::collections::generic::ienumerator::current is undefined. Therefore, you must call xtd::collections::generic::ienumerator::move_next to advance the enumerator to the first element of the collection before reading the value of xtd::collections::generic::ienumerator::current.
       /// @remarks xtd::collections::generic::ienumerator::current returns the same object until xtd::collections::generic::ienumerator::move_next is called. xtd::collections::generic::ienumerator::move_next sets xtd::collections::generic::ienumerator::current to the next element.
-      /// @remarks If xtd::collections::generic::ienumerator::move_next passes the end of the collection, the enumerator is positioned after the last element in the collection and xtd::collections::generic::ienumerator::move_next returns false. When the enumerator is at this position, subsequent calls to xtd::collections::generic::ienumerator::move_next also return false. If the last call to xtd::collections::generic::ienumerator::move_next returned false, xtd::collections::generic::ienumerator::current is undefined. You cannot set xtd::collections::generic::ienumerator::current to the first element of the collection again; you must create a new enumerator instance instead.
+      /// @remarks If xtd::collections::generic::ienumerator::move_next passes the end of the collection, the enumerator is positioned after the last element in the collection and xtd::collections::generic::ienumerator::move_next returns `false`. When the enumerator is at this position, subsequent calls to xtd::collections::generic::ienumerator::move_next also return `false`. If the last call to xtd::collections::generic::ienumerator::move_next returned `false`, xtd::collections::generic::ienumerator::current is undefined. You cannot set xtd::collections::generic::ienumerator::current to the first element of the collection again; you must create a new enumerator instance instead.
       /// @remarks The xtd::collections::generic::ienumerator::reset method is provided for COM interoperability. It does not necessarily need to be implemented; instead, the implementer can simply throw a NotSupportedException. However, if you choose to do this, you should make sure no callers are relying on the xtd::collections::generic::ienumerator::reset functionality.
       /// @remarks If changes are made to the collection, such as adding, modifying, or deleting elements, the behavior of the enumerator is undefined.
       /// @remarks The enumerator does not have exclusive access to the collection; therefore, enumerating through a collection is intrinsically not a thread-safe procedure. To guarantee thread safety during enumeration, you can lock the collection during the entire enumeration. To allow the collection to be accessed by multiple threads for reading and writing, you must implement your own synchronization.
@@ -95,7 +95,7 @@ namespace xtd {
         /// @endcode
         /// @remarks xtd::collections::generic::ienumerator::current is undefined under any of the following conditions:
         /// * The enumerator is positioned before the first element in the collection, immediately after the enumerator is created. xtd::collections::generic::ienumerator::move_next must be called to advance the enumerator to the first element of the collection before reading the value of xtd::collections::generic::ienumerator::current.
-        /// * The last call to xtd::collections::generic::ienumerator::move_next returned false, which indicates the end of the collection.
+        /// * The last call to xtd::collections::generic::ienumerator::move_next returned `false`, which indicates the end of the collection.
         /// * The enumerator is invalidated due to changes made in the collection, such as adding, modifying, or deleting elements.
         /// @remarks xtd::collections::generic::ienumerator::current returns the same object until xtd::collections::generic::ienumerator::move_next is called. xtd::collections::generic::ienumerator::move_next sets xtd::collections::generic::ienumerator::current to the next element.
         /// @par Notes to Implementers
@@ -107,7 +107,7 @@ namespace xtd {
         
         /// @{
         /// @brief Advances the enumerator to the next element of the collection.
-        /// @return `true` if the enumerator was successfully advanced to the next element; false if the enumerator has passed the end of the collection.
+        /// @return `true` if the enumerator was successfully advanced to the next element; `false` if the enumerator has passed the end of the collection.
         /// @exception xtd::invalid_operation_exception The collection was modified after the enumerator was created.
         /// @par Examples
         /// The following code example demonstrates the implementation of the IEnumerator interfaces for a custom collection. In this example, xtd::collections::generic::ienumerator::move_next is not explicitly called, but it is implemented to support the use of foreach (for each in Visual Basic). This code example is part of a larger example for the IEnumerator interface.
@@ -141,7 +141,7 @@ namespace xtd {
         /// };
         /// @endcode
         /// @remarks After an enumerator is created or after the xtd::collections::generic::ienumerator::reset method is called, an enumerator is positioned before the first element of the collection, and the first call to the xtd::collections::generic::ienumerator::move_next method moves the enumerator over the first element of the collection.
-        /// @remarks If xtd::collections::generic::ienumerator::move_next passes the end of the collection, the enumerator is positioned after the last element in the collection and xtd::collections::generic::ienumerator::move_next returns false. When the enumerator is at this position, subsequent calls to xtd::collections::generic::ienumerator::move_next also return false until xtd::collections::generic::ienumerator::reset is called.
+        /// @remarks If xtd::collections::generic::ienumerator::move_next passes the end of the collection, the enumerator is positioned after the last element in the collection and xtd::collections::generic::ienumerator::move_next returns `false`. When the enumerator is at this position, subsequent calls to xtd::collections::generic::ienumerator::move_next also return `false` until xtd::collections::generic::ienumerator::reset is called.
         /// @remarks If changes are made to the collection, such as adding, modifying, or deleting elements, the behavior of xtd::collections::generic::ienumerator::move_next is undefined.
         virtual bool move_next() = 0;
         

@@ -289,7 +289,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the directory exists.
-      /// @return `true` if the directory exists; otherwise, false.
+      /// @return `true` if the directory exists; otherwise, `false`.
       /// @par Examples
       /// The following example demonstrates a use of the Exists property in the context of copying a source directory to a target directory.
       /// ```cpp
@@ -331,7 +331,7 @@ namespace xtd {
       ///
       /// startup_(program::main);
       /// ```
-      /// @remarks The xtd::io::directory_info::exists property returns false if any error occurs while trying to determine if the specified file exists. This can occur in situations that raise exceptions such as passing a file name with invalid characters or too many characters, a failing or missing disk, or if the caller does not have permission to read the file.
+      /// @remarks The xtd::io::directory_info::exists property returns `false` if any error occurs while trying to determine if the specified file exists. This can occur in situations that raise exceptions such as passing a file name with invalid characters or too many characters, a failing or missing disk, or if the caller does not have permission to read the file.
       bool exists() const override;
       
       /// @brief Gets the name of this xtd::io::directory_info instance.
@@ -1318,7 +1318,7 @@ namespace xtd {
       void remove() const override;
       
       /// @brief Deletes this instance of a DirectoryInfo, specifying whether to delete subdirectories and files.
-      /// @param recursive true to delete this directory, its subdirectories, and all files; otherwise, false.
+      /// @param recursive true to delete this directory, its subdirectories, and all files; otherwise, `false`.
       /// @exception xtd::unauthorized_access_exception The directory contains a read-only file.
       /// @exception xtd::io::directory_not_found_exception The directory described by this xtd::io::directory_info object does not exist or could not be found.
       /// @exception xtd::io::io_exception The directory is not empty.<br>-or-<br>The directory is the application's current working directory.<br>-or-<br>There is an open handle on the directory.
@@ -1358,7 +1358,7 @@ namespace xtd {
       ///
       /// startup_(program::main);
       /// ```
-      /// @remarks If the xtd::io::directory_info has no files or subdirectories, this method deletes the xtd::io::directory_info even if recursive is false. Attempting to delete a xtd::io::directory_info that is not empty when recursive is false throws an xtd::io::io_exception.
+      /// @remarks If the xtd::io::directory_info has no files or subdirectories, this method deletes the xtd::io::directory_info even if recursive is `false`. Attempting to delete a xtd::io::directory_info that is not empty when recursive is `false` throws an xtd::io::io_exception.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       void remove(bool recursive) const;
       /// @}

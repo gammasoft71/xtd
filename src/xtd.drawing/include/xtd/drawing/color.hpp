@@ -567,12 +567,12 @@ namespace xtd {
       bool is_dark() const noexcept;
       
       /// @brief Specifies whether this xtd::drawing::color class is uninitialized.
-      /// @return bool Returns true if this color is uninitialized; otherwise, false.
+      /// @return bool Returns true if this color is uninitialized; otherwise, `false`.
       bool is_empty() const noexcept;
       
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a predefined color. Predefined colors are represented by the elements of the xtd::drawing::known_color enumeration.
-      /// @return bool Returns true if this xtd::drawing::color was created from a predefined color by using either the from_name method or the from_known_color method; otherwise, false.
-      /// @remarks This property does not do a comparison of the ARGB values. Therefore, when the is_known_color property is applied to a xtd::drawing::color structure that is created by using the xtd::drawing::color::from_argb method, is_known_color returns false, even if the ARGB value matches the ARGB value of a predefined color.
+      /// @return bool Returns true if this xtd::drawing::color was created from a predefined color by using either the from_name method or the from_known_color method; otherwise, `false`.
+      /// @remarks This property does not do a comparison of the ARGB values. Therefore, when the is_known_color property is applied to a xtd::drawing::color structure that is created by using the xtd::drawing::color::from_argb method, is_known_color returns `false`, even if the ARGB value matches the ARGB value of a predefined color.
       bool is_known_color() const noexcept;
       
       /// @brief Gets a value indicating wheter this xtd::drawing::color structure is light color.
@@ -580,11 +580,11 @@ namespace xtd {
       bool is_light() const noexcept;
       
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a named color or a member of the xtd::drawing::known_color enumeration.
-      /// @return bool Returns true if this xtd::drawing::color was created by using either the xtd::drawing::color::from_name method or the xtd::drawing::color::from_known_color method; otherwise, false.
+      /// @return bool Returns true if this xtd::drawing::color was created by using either the xtd::drawing::color::from_name method or the xtd::drawing::color::from_known_color method; otherwise, `false`.
       bool is_named_color() const noexcept;
       
       /// @brief Gets a value indicating whether this xtd::drawing::color structure is a system color. A system color is a color that is used in a Windows display element. System colors are represented by elements of the xtd::drawing::known_color enumeration.
-      /// @return bool Returns true if this xtd::drawing::color was created from a system color by using either the xtd::drawing::color::from_name method or the xtd::drawing::color::from_known_color method; otherwise, false.
+      /// @return bool Returns true if this xtd::drawing::color was created from a system color by using either the xtd::drawing::color::from_name method or the xtd::drawing::color::from_known_color method; otherwise, `false`.
       bool is_system_color() const noexcept;
       
       /// @brief Gets the name of this xtd::drawing::color.

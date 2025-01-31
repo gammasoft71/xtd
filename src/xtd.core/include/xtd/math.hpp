@@ -311,28 +311,28 @@ namespace xtd {
     
     /// @brief Returns a value indicating whether the specified number evaluates to negative or positive infinity.
     /// @param value A double-precision floating-point number.
-    /// @return `true` if value evaluates to xtd::math::positive_infinity or xtd::math::negative_infinity; otherwise, false.
+    /// @return `true` if value evaluates to xtd::math::positive_infinity or xtd::math::negative_infinity; otherwise, `false`.
     /// @deprecated Replaced by xtd::double_object::is_infinity - Will be removed in version 0.4.0.
     [[deprecated("Replaced by xtd::double_object::is_infinity - Will be removed in version 0.4.0.")]]
     static bool is_infinity(double value) noexcept;
     
     /// @brief Returns a value indicating whether the specified number evaluates to negative infinity.
     /// @param value A double-precision floating-point number.
-    /// @return `true` if value evaluates to xtd::math::negative_infinity; otherwise, false.
+    /// @return `true` if value evaluates to xtd::math::negative_infinity; otherwise, `false`.
     /// @deprecated Replaced by xtd::double_object::is_negative_infinity - Will be removed in version 0.4.0.
     [[deprecated("Replaced by xtd::double_object::is_negative_infinity - Will be removed in version 0.4.0.")]]
     static bool is_negative_infinity(double value) noexcept;
     
     /// @brief Returns a value indicating whether the specified number evaluates to positive infinity.
     /// @param value A double-precision floating-point number.
-    /// @return `true` if value evaluates to xtd::math::positive_infinity; otherwise, false.
+    /// @return `true` if value evaluates to xtd::math::positive_infinity; otherwise, `false`.
     /// @deprecated Replaced by xtd::double_object::is_positive_infinity - Will be removed in version 0.4.0.
     [[deprecated("Replaced by xtd::double_object::is_positive_infinity - Will be removed in version 0.4.0.")]]
     static bool is_positive_infinity(double value) noexcept;
     
     /// @brief Returns a value indicating whether the specified number evaluates to not a number.
     /// @param value A double-precision floating-point number.
-    /// @return `true` if value evaluates to not a number; otherwise, false.
+    /// @return `true` if value evaluates to not a number; otherwise, `false`.
     /// @deprecated Replaced by xtd::double_object::is_NaN - Will be removed in version 0.4.0.
     [[deprecated("Replaced by xtd::double_object::is_NaN - Will be removed in version 0.4.0.")]]
     static bool is_NaN(double value) noexcept;

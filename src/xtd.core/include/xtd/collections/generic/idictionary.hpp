@@ -107,7 +107,7 @@ namespace xtd {
         /// @param value When this method returns, the value associated with the specified key, if the key is found; otherwise, the default value for the type of the `value` parameter.
         /// @return `true` if the object that implements xtd::collections::generic::idictionary <key_t, value_t> contains an element with the specified key; otherwise, `false`.
         /// @remarks This method combines the functionality of the xtd::collections::generic::idictionary::contains_key method and the xtd::collections::generic::idictionary::operator [] property.
-        /// @remarks If the key is not found, then the value parameter gets the appropriate default value for the type `value_t`; for example, zero (0) for integer types, false for Boolean types, and null for reference types
+        /// @remarks If the key is not found, then the value parameter gets the appropriate default value for the type `value_t`; for example, zero (0) for integer types, `false` for Boolean types, and null for reference types
         virtual bool try_get_value(const key_t& key, value_t& value) const = 0;
         /// @}
         

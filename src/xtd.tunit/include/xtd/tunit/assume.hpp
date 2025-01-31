@@ -405,8 +405,8 @@ namespace xtd {
       static void is_empty(const wchar_t* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @endcond
       
-      /// @brief Assumes that a condition is false.
-      /// @param condition The condition to check is false.
+      /// @brief Assumes that a condition is `false`.
+      /// @param condition The condition to check is `false`.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
@@ -417,8 +417,8 @@ namespace xtd {
       /// xtd::tunit::assume::is_false(std::empty(s2)); // test throws an abort_error exception.
       /// ```
       static void is_false(bool condition, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
-      /// @brief Assumes that a condition is false.
-      /// @param condition The condition to check is false.
+      /// @brief Assumes that a condition is `false`.
+      /// @param condition The condition to check is `false`.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::abort_error If bad assertion.
@@ -1003,7 +1003,7 @@ namespace xtd {
       /// @brief Assumes that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
+      /// @remarks Always `false`, a std::nullptr_t is always equal to nullptr.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
@@ -1014,7 +1014,7 @@ namespace xtd {
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
+      /// @remarks Always `false`, a std::nullptr_t is always equal to nullptr.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
@@ -1193,7 +1193,7 @@ namespace xtd {
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @remarks Always `false`, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
@@ -1209,7 +1209,7 @@ namespace xtd {
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a weaptr can't be equal to nullptr by contruction or assignation.
+      /// @remarks Always `false`, a weaptr can't be equal to nullptr by contruction or assignation.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
@@ -1230,7 +1230,7 @@ namespace xtd {
       /// @brief Assumes that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
+      /// @remarks Always `false`, a std::nullptr_t is always equal to nullptr.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
@@ -1241,7 +1241,7 @@ namespace xtd {
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
+      /// @remarks Always `false`, a std::nullptr_t is always equal to nullptr.
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp

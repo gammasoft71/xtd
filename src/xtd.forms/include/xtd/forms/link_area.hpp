@@ -45,7 +45,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the LinkArea is empty.
-      /// @return `true` if the specified start and length return an empty link area; otherwise, false.
+      /// @return `true` if the specified start and length return an empty link area; otherwise, `false`.
       bool is_empty() const noexcept;
       
       /// @brief Gets the number of characters in the link area.

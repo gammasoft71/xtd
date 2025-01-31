@@ -474,7 +474,7 @@ namespace xtd {
       
       /// @brief Determines whether the given path refers to an existing directory on disk.
       /// @param path The path to test.
-      /// @return `true` if path refers to an existing directory; false if the directory does not exist or an error occurs when trying to determine if the specified directory exists.
+      /// @return `true` if path refers to an existing directory; `false` if the directory does not exist or an error occurs when trying to determine if the specified directory exists.
       /// @par rExample
       /// The following example takes an array of file or directory names on the command line, determines what kind of name it is, and processes it appropriately.
       /// ```cpp
@@ -525,8 +525,8 @@ namespace xtd {
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory.
       /// @remarks Trailing spaces are removed from the end of the path parameter before checking whether the directory exists.
       /// @remarks The path parameter is not case-sensitive.
-      /// @remarks If you do not have at a minimum read-only permission to the directory, the Exists method will return false.
-      /// @remarks The xtd::io::directory::exists method returns false if any error occurs while trying to determine if the specified file exists. This can occur in situations that raise exceptions such as passing a file name with invalid characters or too many characters, a failing or missing disk, or if the caller does not have permission to read the file.
+      /// @remarks If you do not have at a minimum read-only permission to the directory, the Exists method will return `false`.
+      /// @remarks The xtd::io::directory::exists method returns `false` if any error occurs while trying to determine if the specified file exists. This can occur in situations that raise exceptions such as passing a file name with invalid characters or too many characters, a failing or missing disk, or if the caller does not have permission to read the file.
       static bool exists(const xtd::string& path);
       
       /// @brief Gets the creation date and time of a directory.
@@ -1527,7 +1527,7 @@ namespace xtd {
       ///
       /// startup_(program::main);
       /// ```
-      /// @remarks This method behaves identically to xtd::io::dirctory::remove(const xtd::string&, bool) with false specified for the second parameter.
+      /// @remarks This method behaves identically to xtd::io::dirctory::remove(const xtd::string&, bool) with `false` specified for the second parameter.
       /// @remarks The path parameter may specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see GetCurrentDirectory.
       /// @remarks Trailing spaces are removed from the end of the path parameter before deleting the directory.
       /// @remarks This method throws an IOException if the directory specified in the path parameter contains files or subdirectories.
@@ -1537,7 +1537,7 @@ namespace xtd {
       
       /// @brief Deletes the specified directory and, if indicated, any subdirectories and files in the directory.
       /// @param path The name of the directory to remove.
-      /// @param recursive true to remove directories, subdirectories, and files in path; otherwise, false.
+      /// @param recursive true to remove directories, subdirectories, and files in path; otherwise, `false`.
       /// @exception xtd::io::io_exception A file with the same name and location specified by path exists.<br>-or-<br>The directory is the application's current working directory.<br>-or-<br>The directory specified by path is not empty.<br>-or-<br>The directory is read-only or contains a read-only file.<br>-or-<br>The directory is being used by another process.
       /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.

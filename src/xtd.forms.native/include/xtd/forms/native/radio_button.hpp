@@ -38,7 +38,7 @@ namespace xtd {
         /// @{
         /// @brief Sets checked.
         /// @param control Radio button window handle.
-        /// @param checked true if the radio button is checked; otherwise, false.
+        /// @param checked true if the radio button is checked; otherwise, `false`.
         /// @warning Internal use only
         static void checked(intptr control, bool checked);
         /// @}

@@ -20,7 +20,7 @@
 namespace xtd {
   /// @brief The xtd::collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
   namespace collections {
-    /// @brief Manages a compact array of bit values, which are represented as booleans, where true indicates that the bit is on (1) and false indicates the bit is off (0).
+    /// @brief Manages a compact array of bit values, which are represented as booleans, where `true` indicates that the bit is on (1) and `false` indicates the bit is off (0).
     /// ```cpp
     /// class core_export_ bit_array : public xtd::object, public xtd::iequatable<bit_array>, public xtd::collections::generic::icollection<bool>, public xtd::iclonable;
     /// ```
@@ -80,7 +80,7 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      /// @brief Initializes a new instance of the xtd::collections::bit_array class that can hold the specified number of bit values, which are initially set to false.
+      /// @brief Initializes a new instance of the xtd::collections::bit_array class that can hold the specified number of bit values, which are initially set to `false`.
       /// @param length_ The number of bit values in the new xtd::collections::bit_array.
       /// @exception xtd::argument_out_of_range_exception length_ is less than 0.
       /// @remarks This constructor is an O(n) operation, where n is length_.
@@ -156,7 +156,7 @@ namespace xtd {
       xtd::size count() const noexcept override;
       
       /// @brief Checks if the container has no elements, i.e. whether xtd::collections::bit_array::begin() == xtd::collections::bit_array::end().
-      /// @return `true` if the container is empty, false otherwise.
+      /// @return `true` if the container is empty, `false` otherwise.
       virtual bool empty() const noexcept {return !length();}
       
       /// @brief Returns an iterator to the element following the last element of the enumarable.
@@ -189,7 +189,7 @@ namespace xtd {
       /// @param value The xtd::collections::bit_array with which to perform the bitwise AND operation.
       /// @return The current instance containing the result of the bitwise AND operation on the elements in the current xtd::collections::bit_array against the corresponding elements in the specified xtd::collections::bit_array.
       /// @exception xtd::argument_exception value and the current xtd::collections::bit_array do not have the same number of elements.
-      /// @remarks The bitwise AND operation returns true if both operands are true, and returns false if one or both operands are false.
+      /// @remarks The bitwise AND operation returns `true` if both operands are true, and returns `false` if one or both operands are `false`.
       /// @remarks This method is an O(n) operation, where n is count.
       const bit_array& and_(const bit_array& value);
 
@@ -219,12 +219,12 @@ namespace xtd {
 
       /// @brief Determines whether this instance of xtd::collections::bit_array and a specified object, which must also be a xtd::collections::bit_array object, have the same value.
       /// @param value The xtd::collections::bit_array to compare with the current object.
-      /// @return true if the specified value is equal to the current object. otherwise, false.
+      /// @return true if the specified value is equal to the current object. otherwise, `false`.
       bool equals(const bit_array& value) const noexcept override;
 
       /// @brief Determines whether this instance of xtd::collections::bit_array and a specified object, which must also be a xtd::collections::bit_array object, have the same value.
       /// @param obj The object to compare with the current object.
-      /// @return true if the specified object is equal to the current object. otherwise, false.
+      /// @return true if the specified object is equal to the current object. otherwise, `false`.
       bool equals(const object& obj) const noexcept override;
 
       /// @brief Gets the value of the bit at a specific position in the xtd::collections::bit_array.
@@ -245,7 +245,7 @@ namespace xtd {
       /// @return An xtd::collection::generic::ienumerator object that can be used to iterate through the collection.
       xtd::collections::generic::enumerator<bool> get_enumerator() const override;
 
-      /// @brief Inverts all the bit values in the current xtd::collections::bit_array, so that elements set to true are changed to false, and elements set to false are changed to true.
+      /// @brief Inverts all the bit values in the current xtd::collections::bit_array, so that elements set to true are changed to `false`, and elements set to `false` are changed to true.
       /// @return The current instance with inverted bit values.
       /// @remarks This method is an O(n) operation, where n is count.
       const bit_array& not_();
@@ -254,7 +254,7 @@ namespace xtd {
       /// @param value The xtd::collections::bit_array with which to perform the bitwise OR operation.
       /// @return The current instance containing the result of the bitwise OR operation on the elements in the current xtd::collections::bit_array against the corresponding elements in the specified xtd::collections::bit_array.
       /// @exception xtd::argument_exception value and the current xtd::collections::bit_array do not have the same number of elements.
-      /// @remarks The bitwise OR operation returns true if one or both operands are true, and returns false if both operands are false.
+      /// @remarks The bitwise OR operation returns `true` if one or both operands are `true`, and returns `false` if both operands are `false`.
       /// @remarks This method is an O(n) operation, where n is count.
       const bit_array& or_(const bit_array& value);
 
@@ -276,7 +276,7 @@ namespace xtd {
       /// @param value The xtd::collections::bit_array with which to perform the bitwise exclusive OR operation.
       /// @return The current instance containing the result of the bitwise exclusive OR operation on the elements in the current xtd::collections::bit_array against the corresponding elements in the specified xtd::collections::bit_array.
       /// @exception xtd::argument_exception value and the current xtd::collections::bit_array do not have the same number of elements.
-      /// @remarks The bitwise exclusive OR operation returns true if exactly one operand is true, and returns false if both operands have the same bool value.
+      /// @remarks The bitwise exclusive OR operation returns `true` if exactly one operand is `true`, and returns `false` if both operands have the same bool value.
       /// @remarks This method is an O(n) operation, where n is count.
       const bit_array& xor_(const bit_array& value);
       /// @}

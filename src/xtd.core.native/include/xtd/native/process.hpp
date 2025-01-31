@@ -95,9 +95,9 @@ namespace xtd {
       /// @param process_window_style One of the values that indicates whether the process is started in a window that is maximized, minimized, normal (neither maximized nor minimized), or not visible. The default is Normal. (see process_window_window_style.h file).
       /// @param process_creation_flags One of the values that indicates whether the process is created. (see process_creation_flags.h file).
       /// @param redirect_standard_streams Tuple for redirect standard streams :
-      /// * [0] : true if input should be read from standard_input; otherwise, false. The default is false.
-      /// * [1] : true if input should be written to standard_output; otherwise, false. The default is false.
-      /// * [2] : true if input should be written to standard_error; otherwise, false. The default is false.
+      /// * [0] : true if input should be read from standard_input; otherwise, `false`. The default is `false`.
+      /// * [1] : true if input should be written to standard_output; otherwise, `false`. The default is `false`.
+      /// * [2] : true if input should be written to standard_error; otherwise, `false`. The default is `false`.
       /// @return A process::started_process that contains the created process handle, id and created standard streams.
       /// @warning Internal use only
       static started_process start(const std::string& file_name, const std::string& arguments, const std::string& working_directory, int32_t process_window_style, int32_t process_creation_flags, std::tuple<bool, bool, bool> redirect_standard_streams);

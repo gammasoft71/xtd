@@ -23,7 +23,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @param state An object containing information to be used by the callback method each time it executes.
-    /// @param timed_out true if the xtd::threading::wait_handle timed out; false if it was signaled.
+    /// @param timed_out `true` if the xtd::threading::wait_handle timed out; `false` if it was signaled.
     /// @remarks xtd::threading::wait_or_timer_callback represents a callback method that you want to execute when a registered wait handle times out or is signaled. Create the delegate by passing your callback method to the xtd::threading::wait_or_timer_callback constructor. Your method must have the signature shown here.
     /// @remarks Create the registered wait handle by passing the xtd::threading::wait_or_timer_callback delegate and a xtd::threading::wait_handle to xtd::threading::thread_pool::register_wait_for_single_object. Your callback method executes each time the xtd::threading::wait_handle times out or is signaled.
     /// @remarks If you want to pass information to your callback method, create an object that contains the necessary information and pass it to xtd::threading::thread_pool::register_wait_for_single_object when you create the registered wait handle. Each time your callback method executes, the state parameter contains this object.

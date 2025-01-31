@@ -131,7 +131,7 @@ namespace xtd {
         
         /// @brief Gets a bool value that indicates if this element should not be combined with the next element in a single send request from the sockets layer to the transport.
         /// @return A bool value that indicates if this element should not be combined with the next element in a single send request.
-        /// @remarks The default value for the xtd::net::sockets::send_packets_element::end_of_packet property is false if the xtd::net::sockets::send_packets_element class was not initialized with an end_of_packet parameter set to true.
+        /// @remarks The default value for the xtd::net::sockets::send_packets_element::end_of_packet property is `false` if the xtd::net::sockets::send_packets_element class was not initialized with an end_of_packet parameter set to `true`.
         bool end_of_packet() const noexcept;
         
         /// @brief Gets the filename of the file to send if the xtd::net::sockets::send_packets_element object was initialized with a file_path parameter.

@@ -66,7 +66,7 @@ namespace xtd {
       intptr handle() const noexcept;
       
       /// @brief Gets a value indicating whether this menu contains any menu items.
-      /// @return `true` if this menu contains menu_item objects; otherwise, false. The default is false.
+      /// @return `true` if this menu contains menu_item objects; otherwise, `false`. The default is `false`.
       virtual bool is_parent() const noexcept;
       
       /// @brief Gets a value indicating the menu_item that is used to display a list of multiple document interface (MDI) child forms.

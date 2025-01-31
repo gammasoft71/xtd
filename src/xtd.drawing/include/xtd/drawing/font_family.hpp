@@ -127,7 +127,7 @@ namespace xtd {
       
       /// @brief Indicates whether the specified font_style enumeration is available.
       /// @param style The font_style to test.
-      /// @return `true` if the specified font_style is available; otherwise, false.
+      /// @return `true` if the specified font_style is available; otherwise, `false`.
       bool is_style_available(font_style style) const;
       
       /// @brief Converts this font_family to a human-readable string representation.

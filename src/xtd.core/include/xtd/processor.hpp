@@ -50,7 +50,7 @@ namespace xtd {
     uint32 core_count() const noexcept;
     
     /// @brief Determines whether the current operating system is a 64-bit operating system.
-    /// @return `true` if the operating system is 64-bit; otherwise, false.
+    /// @return `true` if the operating system is 64-bit; otherwise, `false`.
     bool is_64_bit() const noexcept;
     
     /// @brief Gets the concatenated string representation of the platform identifier.

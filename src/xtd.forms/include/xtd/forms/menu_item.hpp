@@ -93,14 +93,14 @@ namespace xtd {
       /// @brief Initializes a new instance of the class with a specified caption, kind the menu item and checked.
       /// @param text The caption for the menu item.
       /// @param kind One of the xtd::forms::menu_item_kind value.
-      /// @param checked true if there is a check mark next to the menu item; otherwise, false. The default is false.
+      /// @param checked true if there is a check mark next to the menu item; otherwise, `false`. The default is `false`.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
       menu_item(const xtd::string& text, xtd::forms::menu_item_kind kind, bool checked);
       /// @brief Initializes a new instance of the class with a specified caption, kind the menu item, checked, and associated shortcut key for the menu item.
       /// @param text The caption for the menu item.
       /// @param kind One of the xtd::forms::menu_item_kind value.
-      /// @param checked true if there is a check mark next to the menu item; otherwise, false. The default is false.
+      /// @param checked true if there is a check mark next to the menu item; otherwise, `false`. The default is `false`.
       /// @param shortcut One of the xtd::forms::shortcut values.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
@@ -109,7 +109,7 @@ namespace xtd {
       /// @param text The caption for the menu item.
       /// @param image A xtd::drawing::image menu item.
       /// @param kind One of the xtd::forms::menu_item_kind value.
-      /// @param checked true if there is a check mark next to the menu item; otherwise, false. The default is false.
+      /// @param checked true if there is a check mark next to the menu item; otherwise, `false`. The default is `false`.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
       menu_item(const xtd::string& text, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked);
@@ -117,7 +117,7 @@ namespace xtd {
       /// @param text The caption for the menu item.
       /// @param image A xtd::drawing::image menu item.
       /// @param kind One of the xtd::forms::menu_item_kind value.
-      /// @param checked true if there is a check mark next to the menu item; otherwise, false. The default is false.
+      /// @param checked true if there is a check mark next to the menu item; otherwise, `false`. The default is `false`.
       /// @param shortcut One of the xtd::forms::shortcut values.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
@@ -186,7 +186,7 @@ namespace xtd {
       /// @param text The caption for the menu item.
       /// @param on_click The event_handler that handles the Click event for this menu item.
       /// @param kind One of the xtd::forms::menu_item_kind value.
-      /// @param checked true if there is a check mark next to the menu item; otherwise, false. The default is false.
+      /// @param checked true if there is a check mark next to the menu item; otherwise, `false`. The default is `false`.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
       menu_item(const xtd::string& text, xtd::event_handler on_click, xtd::forms::menu_item_kind kind, bool checked);
@@ -194,7 +194,7 @@ namespace xtd {
       /// @param text The caption for the menu item.
       /// @param on_click The event_handler that handles the Click event for this menu item.
       /// @param kind One of the xtd::forms::menu_item_kind value.
-      /// @param checked true if there is a check mark next to the menu item; otherwise, false. The default is false.
+      /// @param checked true if there is a check mark next to the menu item; otherwise, `false`. The default is `false`.
       /// @param shortcut One of the xtd::forms::shortcut values.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
@@ -204,7 +204,7 @@ namespace xtd {
       /// @param on_click The event_handler that handles the Click event for this menu item.
       /// @param image A xtd::drawing::image menu item.
       /// @param kind One of the xtd::forms::menu_item_kind value.
-      /// @param checked true if there is a check mark next to the menu item; otherwise, false. The default is false.
+      /// @param checked true if there is a check mark next to the menu item; otherwise, `false`. The default is `false`.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
       menu_item(const xtd::string& text, xtd::event_handler on_click, const xtd::drawing::image& image, xtd::forms::menu_item_kind kind, bool checked);
@@ -213,7 +213,7 @@ namespace xtd {
       /// @param on_click The event_handler that handles the Click event for this menu item.
       /// @param image A xtd::drawing::image menu item.
       /// @param kind One of the xtd::forms::menu_item_kind value.
-      /// @param checked true if there is a check mark next to the menu item; otherwise, false. The default is false.
+      /// @param checked true if there is a check mark next to the menu item; otherwise, `false`. The default is `false`.
       /// @param shortcut One of the xtd::forms::shortcut values.
       /// @remarks When you specify a caption for your menu item with the text parameter, you can also specify an access key by placing an '&' before the character to be used as the access key. For example, to specify the "F" in "File" as an access key, you would specify the caption for the menu item as "&File". You can use this feature to provide keyboard navigation for your menus.
       /// @remarks Setting the text parameter to "-" causes your menu item to be displayed as a separator (a horizontal line) rather than a standard menu item.
@@ -263,18 +263,18 @@ namespace xtd {
       intptr menu_id() const noexcept;
       
       /// @brief Gets a value indicating whether a check mark appears next to the text of the menu item.
-      /// @return `true` if there is a check mark next to the menu item; otherwise, false. The default is false.
+      /// @return `true` if there is a check mark next to the menu item; otherwise, `false`. The default is `false`.
       bool checked() const noexcept;
       /// @brief Sets a value indicating whether a check mark appears next to the text of the menu item.
-      /// @param value true if there is a check mark next to the menu item; otherwise, false. The default is false.
+      /// @param value true if there is a check mark next to the menu item; otherwise, `false`. The default is `false`.
       /// @return Current menu_item.
       menu_item& checked(bool value);
       
       /// @brief Gets a value indicating whether the menu item is enabled.
-      /// @return `true` if the menu item is enabled; otherwise, false. The default is true.
+      /// @return `true` if the menu item is enabled; otherwise, `false`. The default is true.
       bool enabled() const noexcept;
       /// @brief Gets a value indicating whether the menu item is enabled.
-      /// @param value true if the menu item is enabled; otherwise, false. The default is true.
+      /// @param value true if the menu item is enabled; otherwise, `false`. The default is true.
       /// @return Current menu_item.
       menu_item& enabled(bool value);
       

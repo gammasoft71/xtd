@@ -387,8 +387,8 @@ namespace xtd {
       static void is_empty(const wchar_t* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @endcond
       
-      /// @brief Validates that a condition is false.
-      /// @param condition The condition to check is false.
+      /// @brief Validates that a condition is `false`.
+      /// @param condition The condition to check is `false`.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
@@ -398,8 +398,8 @@ namespace xtd {
       /// xtd::tunit::valid::is_false(std::empty(s2)); // test fails.
       /// ```
       static void is_false(bool condition, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
-      /// @brief Validates that a condition is false.
-      /// @param condition The condition to check is false.
+      /// @brief Validates that a condition is `false`.
+      /// @param condition The condition to check is `false`.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
@@ -948,7 +948,7 @@ namespace xtd {
       /// @brief Validates that the pointer is not null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
+      /// @remarks Always `false`, a std::nullptr_t is always equal to nullptr.
       /// @par Examples
       /// ```cpp
       /// xtd::tunit::valid::is_not_null(nullptr); // test fails.
@@ -958,7 +958,7 @@ namespace xtd {
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
+      /// @remarks Always `false`, a std::nullptr_t is always equal to nullptr.
       /// @par Examples
       /// ```cpp
       /// xtd::tunit::valid::is_not_null(nullptr, "User message..."); // test fails.
@@ -1126,7 +1126,7 @@ namespace xtd {
       /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a xtd::wptr can't be equal to nullptr by construction or assignation.
+      /// @remarks Always `false`, a xtd::wptr can't be equal to nullptr by construction or assignation.
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
@@ -1141,7 +1141,7 @@ namespace xtd {
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a xtd::wptr can't be equal to nullptr by construction or assignation.
+      /// @remarks Always `false`, a xtd::wptr can't be equal to nullptr by construction or assignation.
       /// @par Examples
       /// ```cpp
       /// xtd::sptr<std::string> s = xtd::new_sptr<std::string>("Anything");
@@ -1161,7 +1161,7 @@ namespace xtd {
       /// @brief Validates that the pointer is null.
       /// @param pointer The pointer to check is null.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
+      /// @remarks Always `false`, a std::nullptr_t is always equal to nullptr.
       /// @par Examples
       /// ```cpp
       /// xtd::tunit::valid::is_null(nullptr); // test ok.
@@ -1171,7 +1171,7 @@ namespace xtd {
       /// @param pointer The pointer to check is null.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
-      /// @remarks Always false, a std::nullptr_t is always equal to nullptr.
+      /// @remarks Always `false`, a std::nullptr_t is always equal to nullptr.
       /// @par Examples
       /// ```cpp
       /// xtd::tunit::valid::is_null(nullptr, "User message..."); // test ok.

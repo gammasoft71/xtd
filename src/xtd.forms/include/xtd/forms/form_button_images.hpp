@@ -351,8 +351,8 @@ namespace xtd {
       /// @remarks The following table show size by operating system :
       /// | maximized form | Windows  | macOS    | linux    |
       /// | -------------- | -------- | -------- | -------- |
-      /// | false          | {90, 58} | {24, 24} | {64, 64} |
-      /// | true           | {90, 42} | {24, 24} | {64, 64} |
+      /// | `false`        | {90, 58} | {24, 24} | {64, 64} |
+      /// | `true`         | {90, 42} | {24, 24} | {64, 64} |
       static xtd::drawing::size size(bool maximized_form);
       
       /// @brief Gets image object with specified name.

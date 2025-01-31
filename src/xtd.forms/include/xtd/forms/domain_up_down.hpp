@@ -143,10 +143,10 @@ namespace xtd {
       domain_up_down& selected_item(const item& selected_item);
       
       /// @brief Gets a value indicating whether the collection of items continues to the first or last item if the user continues past the end of the list.
-      /// @return `true` if the list starts again when the user reaches the beginning or end of the collection; otherwise, false. The default value is false.
+      /// @return `true` if the list starts again when the user reaches the beginning or end of the collection; otherwise, `false`. The default value is `false`.
       virtual bool wrap() const noexcept;
       /// @brief Sets a value indicating whether the collection of items continues to the first or last item if the user continues past the end of the list.
-      /// @param value true if the list starts again when the user reaches the beginning or end of the collection; otherwise, false. The default value is false.
+      /// @param value true if the list starts again when the user reaches the beginning or end of the collection; otherwise, `false`. The default value is `false`.
       /// @return Current domain_up_down.
       virtual domain_up_down& wrap(bool value);
       /// @}

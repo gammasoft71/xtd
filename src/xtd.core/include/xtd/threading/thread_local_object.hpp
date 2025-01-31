@@ -58,19 +58,19 @@ namespace xtd {
       /// @{
       /// @brief Initializes the xtd::threading::thread_local_object instance.
       /// @remarks The default value of value_t is used to initialize the instance when xtd::threading::thread_local_object::value is accessed for the first time.
-      /// @remarks This constructor is equivalent to calling the xtd::threading::thread_local_object(bool) constructor with a value of false for the track_all_values argument.
+      /// @remarks This constructor is equivalent to calling the xtd::threading::thread_local_object(bool) constructor with a value of `false` for the track_all_values argument.
       thread_local_object() = default;
       /// @brief Initializes the xtd::threading::thread_local_object instance and specifies whether all values are accessible from any thread.
-      /// @param track_all_values true to track all values set on the instance and expose them through the xtd::threading::thread_local_object::values property; false otherwise. When set to true, a value stored from a given thread will be available through xtd::threading::thread_local_object::values even after that thread has exited.
-      /// @remarks If track_all_values is false, only the value of this instance for the current thread is accessible. Attempting to use the xtd::threading::thread_local_object::values property to retrieve all values throws an xtd::invalid_operation_exception exception.
+      /// @param track_all_values `true` to track all values set on the instance and expose them through the xtd::threading::thread_local_object::values property; `false` otherwise. When set to true, a value stored from a given thread will be available through xtd::threading::thread_local_object::values even after that thread has exited.
+      /// @remarks If track_all_values is `false`, only the value of this instance for the current thread is accessible. Attempting to use the xtd::threading::thread_local_object::values property to retrieve all values throws an xtd::invalid_operation_exception exception.
       explicit thread_local_object(bool track_all_values) {data_->track_all_values = track_all_values;}
       /// @brief Initializes the xtd::threading::thread_local_object instance with the specified value_factory function.
       /// @param value_factory The xtd::func invoked to produce a lazily-initialized value when an attempt is made to retrieve xtd::threading::thread_local_object::value without it having been previously initialized.
       explicit thread_local_object(const func<value_t>& value_factory) {data_->value_factory = value_factory;}
       /// @brief Initializes the xtd::threading::thread_local_object instance with the specified value_factory function and a flag that indicates whether all values are accessible from any thread.
       /// @param value_factory The xtd::func invoked to produce a lazily-initialized value when an attempt is made to retrieve Value without it having been previously initialized.
-      /// @param track_all_values true to track all values set on the instance and expose them through the xtd::threading::thread_local_object::values property; false otherwise. When set to true, a value stored from a given thread will be available through xtd::threading::thread_local_object::values even after that thread has exited.
-      /// @remarks If track_all_values is false, only the value of this instance for the current thread is accessible. Attempting to use the xtd::threading::thread_local_object::values property to retrieve all values throws an xtd::invalid_operation_exception exception.
+      /// @param track_all_values `true` to track all values set on the instance and expose them through the xtd::threading::thread_local_object::values property; `false` otherwise. When set to true, a value stored from a given thread will be available through xtd::threading::thread_local_object::values even after that thread has exited.
+      /// @remarks If track_all_values is `false`, only the value of this instance for the current thread is accessible. Attempting to use the xtd::threading::thread_local_object::values property to retrieve all values throws an xtd::invalid_operation_exception exception.
       thread_local_object(const func<value_t>& value_factory, bool track_all_values) {
         data_->value_factory = value_factory;
         data_->track_all_values = track_all_values;
@@ -116,7 +116,7 @@ namespace xtd {
       
       /// @brief Gets a list containing the values stored by all threads that have accessed this instance.
       /// @return A list for all of the values stored by all of the threads that have accessed this instance.
-      /// @exception xtd::invalid_operation_exception Values stored by all threads are not available because this instance was initialized with the track_all_values argument set to false in the call to a class constructor.
+      /// @exception xtd::invalid_operation_exception Values stored by all threads are not available because this instance was initialized with the track_all_values argument set to `false` in the call to a class constructor.
       /// @remarks Each thread that has ever accessed this instance will contribute to this list the value last stored into the instance. This includes threads that have since exited.
       std::vector<value_t> values() const {
         if (!data_->track_all_values) throw invalid_operation_exception {};

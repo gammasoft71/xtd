@@ -96,10 +96,10 @@ namespace xtd {
       virtual numeric_up_down& value(double value);
       
       /// @brief Gets a value indicate if value can be wrapped.
-      /// @return `true` if value can be wrapped; otherwise `false`. The default is false.
+      /// @return `true` if value can be wrapped; otherwise `false`. The default is `false`.
       virtual bool wrapped() const noexcept;
       /// @brief Sets a value indicate if value can be wrapped.
-      /// @param value true if value can be wrapped; otherwise `false`. The default is false.
+      /// @param value true if value can be wrapped; otherwise `false`. The default is `false`.
       /// @return Current numeric_up_down.
       virtual numeric_up_down& wrapped(bool value);
       /// @}

@@ -327,7 +327,7 @@ namespace xtd {
         virtual const_pointer data() const noexcept {return reinterpret_cast<const_pointer>(data_->items.data());}
 
         /// @brief Checks if the container has no elements, i.e. whether xtd::collections::generic::list::begin() == xtd::collections::generic::list::end().
-        /// @return `true` if the container is empty, false otherwise.
+        /// @return `true` if the container is empty, `false` otherwise.
         virtual bool empty() const noexcept {return data_->items.empty();}
         
         /// @brief Returns an iterator to the element following the last element of the enumarable.
@@ -533,11 +533,18 @@ namespace xtd {
           return ~std::distance(data_->items.begin(), position);
         }
 
+        /// @brief Removes all elements from the xtd::collections::generic::list <type_t>.
+        /// @remarks xtd::collections::generic::list::count is set to 0, and references to other objects from elements of the collection are also released.
+        /// @remarks xtd::collections::generic::list::capacity remains unchanged. To reset the capacity of the xtd::collections::generic::list <type_t>, call the xtd::collections::generic::list::trim_excess method or set the xtd::collections::generic::list::capacity property directly. Decreasing the capacity reallocates memory and copies all the elements in the xtd::collections::generic::list <type_t>. Trimming an empty xtd::collections::generic::list <type_t> sets the capacity of the xtd::collections::generic::list <type_t> to the default capacity.
+        /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         void clear() override {
           ++data_->version;
           data_->items.clear();
         }
         
+        /// @brief Determines whether an element is in the List<T>.
+        /// @param value The object to locate in the List<T>. The value can be null for reference types.
+        /// @return `true` if item is found in the List<T>; otherwise, `false`.
         bool contains(const type_t& value) const noexcept override {
           for (const auto& item : data_->items)
             if (helpers::equator<type_t> {}(reinterpret_cast<const type_t&>(item), value)) return true;

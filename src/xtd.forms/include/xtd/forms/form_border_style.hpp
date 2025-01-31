@@ -30,7 +30,7 @@ namespace xtd {
       fixed_dialog = 3,
       /// @brief A resizable border.
       sizable = 4,
-      /// @brief A tool window border that is not resizable. A tool window does not appear in the taskbar or in the window that appears when the user presses ALT+TAB. Although forms that specify fixed_tool_window typically are not shown in the taskbar, you must also ensure that the show_in_taskbar property is set to false, since its default value is true.
+      /// @brief A tool window border that is not resizable. A tool window does not appear in the taskbar or in the window that appears when the user presses ALT+TAB. Although forms that specify fixed_tool_window typically are not shown in the taskbar, you must also ensure that the show_in_taskbar property is set to `false`, since its default value is true.
       fixed_tool_window = 5,
       /// @brief A resizable tool window border. A tool window does not appear in the taskbar or in the window that appears when the user presses ALT+TAB.
       sizable_tool_window = 6,

@@ -147,7 +147,7 @@ size_t invocation_count = d1.size();
 
 Multicast delegates are used extensively in event handling. [xtd::event](../src/xtd.core/include/xtd/event.h) source objects send event notifications to recipient objects that have registered to receive that event. To register for an event, the recipient creates a method designed to handle the event, then creates a delegate for that method and passes the delegate to the event source. The source calls the delegate when the event occurs. The delegate then calls the event handling method on the recipient, delivering the event data. The delegate type for a given event is defined by the event source. For more, see [events](events_tutorial.md).
 
-Comparing delegates of two different types assigned at compile-time will result in a compilation error. If the delegate instances are statically of the type [xtd::delegate](../src/xtd.core/include/xtd/delegate.h), then the comparison is allowed, but will return false at run time. For example:
+Comparing delegates of two different types assigned at compile-time will result in a compilation error. If the delegate instances are statically of the type [xtd::delegate](../src/xtd.core/include/xtd/delegate.h), then the comparison is allowed, but will return `false` at run time. For example:
 
 ```cpp
 template<class result_t, class... arguments_t>

@@ -136,75 +136,75 @@ namespace xtd {
     
     /// @{
     /// @brief Determines whether the current operating system is a 64-bit operating system.
-    /// @return `true` if the operating system is 64-bit; otherwise, false.
+    /// @return `true` if the operating system is 64-bit; otherwise, `false`.
     bool is_64_bit() const noexcept;
     
     /// @brief Determines whether the current platform is Android.
-    /// @return `true` if the current platform is Android; otherwise, false.
+    /// @return `true` if the current platform is Android; otherwise, `false`.
     bool is_android() const noexcept;
     
     /// @brief Determines whether the current platform is FreeBSD.
-    /// @return `true` if the current platform is Android; otherwise, false.
+    /// @return `true` if the current platform is Android; otherwise, `false`.
     bool is_free_bsd() const noexcept;
     
     /// @brief Determines whether the current platform is iOS.
-    /// @return `true` if the current platform is iOS; otherwise, false.
+    /// @return `true` if the current platform is iOS; otherwise, `false`.
     bool is_ios() const noexcept;
     
     /// @brief Determines whether the current platform is Linux.
-    /// @return `true` if the current platform is Linux; otherwise, false.
+    /// @return `true` if the current platform is Linux; otherwise, `false`.
     bool is_linux() const noexcept;
 
     /// @brief Determines whether the current platform is macOS.
-    /// @return `true` if the current platform is macOS; otherwise, false.
+    /// @return `true` if the current platform is macOS; otherwise, `false`.
     bool is_macos() const noexcept;
     
     /// @brief Determines whether the current platform is macOS family.
-    /// @return `true` if the current platform is macOS family; otherwise, false.
+    /// @return `true` if the current platform is macOS family; otherwise, `false`.
     bool is_macos_platform() const noexcept;
     
     /// @brief Determines whether the current platform is MINGW.
-    /// @return `true` if the current platform is MINGW; otherwise, false.
+    /// @return `true` if the current platform is MINGW; otherwise, `false`.
     bool is_mingw() const noexcept;
     
     /// @brief Determines whether the current platform is MSYS.
-    /// @return `true` if the current platform is MSYS; otherwise, false.
+    /// @return `true` if the current platform is MSYS; otherwise, `false`.
     bool is_msys() const noexcept;
     
     /// @brief Determines whether the current platform is Posix.
-    /// @return `true` if the current platform is Posix; otherwise, false.
+    /// @return `true` if the current platform is Posix; otherwise, `false`.
     bool is_posix() const noexcept;
     
     /// @brief Determines whether the current platform is Posix family.
-    /// @return `true` if the current platform is Posix family; otherwise, false.
+    /// @return `true` if the current platform is Posix family; otherwise, `false`.
     bool is_posix_platform() const noexcept;
 
     /// @brief Determines whether the current platform is Unix family.
-    /// @return `true` if the current platform is Unix family; otherwise, false.
+    /// @return `true` if the current platform is Unix family; otherwise, `false`.
     bool is_unix_platform() const noexcept;
     
     /// @brief Determines whether the current platform is tvOS family.
-    /// @return `true` if the current platform is macOS family; otherwise, false.
+    /// @return `true` if the current platform is macOS family; otherwise, `false`.
     bool is_tvos() const noexcept;
     
     /// @brief Determines whether the current platform is watchOS.
-    /// @return `true` if the current platform is watchOS; otherwise, false.
+    /// @return `true` if the current platform is watchOS; otherwise, `false`.
     bool is_watchos() const noexcept;
     
     /// @brief Determines whether the current platform is Windows.
-    /// @return `true` if the current platform is Windows; otherwise, false.
+    /// @return `true` if the current platform is Windows; otherwise, `false`.
     bool is_windows() const noexcept;
     
     /// @brief Determines whether the current platform is Windows CE.
-    /// @return `true` if the current platform is Windows CE; otherwise, false.
+    /// @return `true` if the current platform is Windows CE; otherwise, `false`.
     bool is_windows_ce() const noexcept;
     
     /// @brief Determines whether the current platform is Windows family.
-    /// @return `true` if the current platform is Windows family; otherwise, false.
+    /// @return `true` if the current platform is Windows family; otherwise, `false`.
     bool is_windows_platform() const noexcept;
     
     /// @brief Determines whether the current platform is xbox.
-    /// @return `true` if the current platform is xbox; otherwise, false.
+    /// @return `true` if the current platform is xbox; otherwise, `false`.
     bool is_xbox() const noexcept;
     
     /// @brief Converts the value of this operating_system object to its equivalent string representation.

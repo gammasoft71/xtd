@@ -155,14 +155,14 @@ namespace xtd {
         udp_client& client(const xtd::net::sockets::socket& value) noexcept;
         
         /// @brief Gets a boolean value that specifies whether the xtd::net::sockets::udp_client allows Internet Protocol (IP) datagrams to be fragmented.
-        /// @return `true` if the xtd::net::sockets::udp_client allows datagram fragmentation; otherwise, false. The default is true.
+        /// @return `true` if the xtd::net::sockets::udp_client allows datagram fragmentation; otherwise, `false`. The default is true.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
         /// @exception xtd::object_closed_exception The underlying xtd::net::sockets::socket has been closed.
         /// @remarks Datagrams require fragmentation when their size exceeds the Maximum Transfer Unit (MTU) of the transmission medium. Datagrams may be fragmented by the sending host or by an intermediate router. If a datagram must be fragmented, and the xtd::net::sockets::socket_option_name::dont_fragment option is set, the datagram is discarded, and an Internet Control Message Protocol (ICMP) error message is sent back to the sender of the datagram.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         bool dont_fragment() const;
         /// @brief Sets boolean value that specifies whether the xtd::net::sockets::udp_client allows Internet Protocol (IP) datagrams to be fragmented.
-        /// @param value true if the xtd::net::sockets::udp_client allows datagram fragmentation; otherwise, false. The default is true.
+        /// @param value true if the xtd::net::sockets::udp_client allows datagram fragmentation; otherwise, `false`. The default is true.
         /// @return This current instance.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
         /// @exception xtd::object_closed_exception The underlying xtd::net::sockets::socket has been closed.
@@ -171,14 +171,14 @@ namespace xtd {
         udp_client& dont_fragment(bool value);
         
         /// @brief Gets a boolean value that specifies whether the xtd::net::sockets::udp_client may send or receive broadcast packets.
-        /// @return `true` if the xtd::net::sockets::udp_client allows broadcast packets; otherwise, false. The default is false.
+        /// @return `true` if the xtd::net::sockets::udp_client allows broadcast packets; otherwise, `false`. The default is `false`.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
         /// @exception xtd::object_closed_exception The underlying xtd::net::sockets::socket has been closed.
         /// @remarks Broadcasting is limited to a specific subnet. You can broadcast to your local subnet by sending a packet to 255.255.255.255; or, you can use the directed broadcast address, which is the network portion of an Internet Protocol (IP) address with all bits set in the host portion. For example, if your IP address is 192.168.1.40 (a Class C address, with the network portion as the first three octets, and the host portion is the last octet), your directed broadcast address is 192.168.1.255.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         bool enable_broadcast() const;
         /// @brief Sets a boolean value that specifies whether the xtd::net::sockets::udp_client may send or receive broadcast packets.
-        /// @param value true if the xtd::net::sockets::udp_client allows broadcast packets; otherwise, false. The default is false.
+        /// @param value true if the xtd::net::sockets::udp_client allows broadcast packets; otherwise, `false`. The default is `false`.
         /// @return This current instance.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
         /// @exception xtd::object_closed_exception The underlying xtd::net::sockets::socket has been closed.
@@ -187,7 +187,7 @@ namespace xtd {
         udp_client& enable_broadcast(bool value);
         
         /// @brief Gets a boolean value that specifies whether the xtd::net::sockets::udp_client allows only one client to use a port.
-        /// @return `true` if the xtd::net::sockets::udp_client allows only one client to use a specific port; otherwise, false. The default is true for Windows Server 2003 and Windows XP Service Pack 2 and later, and false for all other versions.
+        /// @return `true` if the xtd::net::sockets::udp_client allows only one client to use a specific port; otherwise, `false`. The default is true for Windows Server 2003 and Windows XP Service Pack 2 and later, and `false` for all other versions.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
         /// @exception xtd::object_closed_exception The underlying xtd::net::sockets::socket has been closed.
         /// @remarks By default, multiple clients can use a specific port; however, only one of the clients can perform operations on the network traffic sent to the port. You can use the xtd::net::sockets::udp_client::exclusive_address_use property to prevent multiple clients from using a specific port.
@@ -195,7 +195,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         bool exclusive_address_use() const;
         /// @brief Sets a boolean value that specifies whether the xtd::net::sockets::udp_client allows only one client to use a port.
-        /// @param value true if the xtd::net::sockets::udp_client allows only one client to use a specific port; otherwise, false. The default is true for Windows Server 2003 and Windows XP Service Pack 2 and later, and false for all other versions.
+        /// @param value true if the xtd::net::sockets::udp_client allows only one client to use a specific port; otherwise, `false`. The default is true for Windows Server 2003 and Windows XP Service Pack 2 and later, and `false` for all other versions.
         /// @return This current instance.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
         /// @exception xtd::object_closed_exception The underlying xtd::net::sockets::socket has been closed.
@@ -205,14 +205,14 @@ namespace xtd {
         udp_client& exclusive_address_use(bool value);
         
         /// @brief Gets a boolean value that specifies whether outgoing multicast packets are delivered to the sending application.
-        /// @return `true` if the xtd::net::sockets::udp_client receives outgoing multicast packets; otherwise, false.
+        /// @return `true` if the xtd::net::sockets::udp_client receives outgoing multicast packets; otherwise, `false`.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
         /// @exception xtd::object_closed_exception The underlying xtd::net::sockets::socket has been closed.
         /// @remarks Multicast is a scalable method for many-to-many communication on the Internet. If a process subscribes to a multicast address, any packets sent by that process are received by every other process that has subscribed to the multicast address.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         bool multicast_loopback() const;
         /// @brief Sets a boolean value that specifies whether outgoing multicast packets are delivered to the sending application.
-        /// @param value true if the xtd::net::sockets::udp_client receives outgoing multicast packets; otherwise, false.
+        /// @param value true if the xtd::net::sockets::udp_client receives outgoing multicast packets; otherwise, `false`.
         /// @return This current instance.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
         /// @exception xtd::object_closed_exception The underlying xtd::net::sockets::socket has been closed.
@@ -244,7 +244,7 @@ namespace xtd {
         /// @param allowed A boolean value that specifies whether to enable or disable NAT traversal.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the underlying socket.
         /// @remarks The xtd::net::sockets::udp_client::allow_nat_traversal method is used to enable or disable NAT traversal for a xtd::net::sockets::udp_client instance. NAT traversal may be provided using Teredo, 6to4, or an ISATAP tunnel.
-        /// @remarks When the allowed parameter is false, the xtd::net::sockets::ip_protection_level option on the associated socket is set to xtd::net::sockets::ip_protection_level::edge_restricted. This explicitly disables NAT traversal for a xtd::net::sockets::udp_client instance.
+        /// @remarks When the allowed parameter is `false`, the xtd::net::sockets::ip_protection_level option on the associated socket is set to xtd::net::sockets::ip_protection_level::edge_restricted. This explicitly disables NAT traversal for a xtd::net::sockets::udp_client instance.
         /// @remarks When the allowed parameter is true, the xtd::net::sockets::ip_protection_level option on the associated socket is set to xtd::net::sockets::ip_protection_level::edge_unrestricted. This may allow NAT traversal for a xtd::net::sockets::udp_client depending on firewall rules in place on the system.
         /// @remarks A Teredo address is an IPv6 address with the prefix of 2001::/32. Teredo addresses can be returned through normal DNS name resolution or enumerated as an IPv6 address assigned to a local interface.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
@@ -478,11 +478,11 @@ namespace xtd {
         
         /// @{
         /// @brief Gets a value that indicates whether a connection has been made.
-        /// @return bool true if the connection has been made; otherwise, false.
+        /// @return bool true if the connection has been made; otherwise, `false`.
         /// @remarks Classes deriving from xtd::net::sockets::udp_client can use this property to determine if a default remote host has been established. You can establish a default remote host by using the appropriate constructor or by calling the xtd::net::sockets::udp_client::connect method. If you do establish a default remote host, you cannot specify a remote host in your call to xtd::net::sockets::udp_client::send.
         bool active() const noexcept;
         /// @brief Sets a value that indicates whether a connection has been made.
-        /// @param value bool true if the connection has been made; otherwise, false.
+        /// @param value bool true if the connection has been made; otherwise, `false`.
         /// @return This current instance.
         /// @remarks Classes deriving from xtd::net::sockets::udp_client can use this property to determine if a default remote host has been established. You can establish a default remote host by using the appropriate constructor or by calling the xtd::net::sockets::udp_client::connect method. If you do establish a default remote host, you cannot specify a remote host in your call to xtd::net::sockets::udp_client::send.
         udp_client& active(bool value) noexcept;

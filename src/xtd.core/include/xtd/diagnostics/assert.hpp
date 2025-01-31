@@ -5,7 +5,7 @@
 #include "debug.hpp"
 #include "debug_break.hpp"
 
-/// @brief Checks for a condition; if the condition is false, displays a message box that shows the call stack.
+/// @brief Checks for a condition; if the condition is `false`, displays a message box that shows the call stack.
 /// @par Header
 /// ```cpp
 /// #include <xtd/diagnostics/assert>

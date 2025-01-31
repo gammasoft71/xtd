@@ -86,7 +86,7 @@ namespace xtd {
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
       virtual size_t seek(size_t offset, std::ios::seekdir origin);
       
-      /// @brief Writes a one-byte boolean value to the current stream, with 0 representing false and 1 representing true.
+      /// @brief Writes a one-byte boolean value to the current stream, with 0 representing `false` and 1 representing `true`.
       /// @param value The boolean value to write (0 or 1).
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).

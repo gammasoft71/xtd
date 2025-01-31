@@ -49,7 +49,7 @@ namespace xtd {
         static void delete_item(intptr control, size_t index);
         /// @brief Sets a value indicating whether the combo box is displaying its drop-down portion.
         /// @param control Combo box window handle.
-        /// @param value true if the drop-down portion is displayed; otherwise, false.
+        /// @param value true if the drop-down portion is displayed; otherwise, `false`.
         /// @warning Internal use only
         static void dropped_down(intptr control, bool value);
         /// @brief Resumes painting the combo_box control after painting is suspended by the begin_update method.

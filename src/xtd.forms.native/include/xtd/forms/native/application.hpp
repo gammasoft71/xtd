@@ -58,7 +58,7 @@ namespace xtd {
         
         /// @{
         /// @brief Gets a value indicating whether the caller can quit this application.
-        /// @return `true` if the caller can quit this application; otherwise, false.
+        /// @return `true` if the caller can quit this application; otherwise, `false`.
         /// @warning Internal use only
         static bool allow_quit();
         /// @brief Cleanup all data, handles, references, ... initialized by initialize() before quit.
@@ -71,7 +71,7 @@ namespace xtd {
         /// @brief Processes do idle event.
         /// @warning Internal use only
         static void do_idle();
-        /// @brief Return true if dark mode is enabled for the application; otherwise return false.
+        /// @brief Return true if dark mode is enabled for the application; otherwise return `false`.
         /// @return `true` if dark mode is enabled; otherwise `false`.
         /// @warning Internal use only
         static bool dark_mode_enabled();
@@ -124,7 +124,7 @@ namespace xtd {
         /// @warning Internal use only
         static void run();
         /// @brief Sets whether the wait cursor is used for all open forms of the application.
-        /// @param use_wait_cursor true is the wait cursor is used for all open forms; otherwise, false.
+        /// @param use_wait_cursor true is the wait cursor is used for all open forms; otherwise, `false`.
         /// @warning Internal use only
         static void use_wait_cursor(bool use_wait_cursor);
         /// @}

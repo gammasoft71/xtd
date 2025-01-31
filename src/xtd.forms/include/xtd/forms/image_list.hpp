@@ -68,7 +68,7 @@ namespace xtd {
       intptr handle() const noexcept;
       
       /// @brief Gets a value indicating whether the underlying Win32 handle has been created.
-      /// @return `true` if the Handle has been created; otherwise, false. The default is false.
+      /// @return `true` if the Handle has been created; otherwise, `false`. The default is `false`.
       bool handle_created() const noexcept;
       
       /// @brief Gets the xtd::forms::image_list::image_collection for this image list.

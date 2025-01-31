@@ -83,7 +83,7 @@ namespace xtd {
       xtd::io::drive_type drive_type() const;
       
       /// @brief Gets a value that indicates whether a drive is ready.
-      /// @return `true` if the drive is ready; false if the drive is not ready.
+      /// @return `true` if the drive is ready; `false` if the drive is not ready.
       /// @par Examples
       /// The following code example demonstrates the use of the xtd::io::drive_info class to display information about all of the drives on the current system.
       /// @include drive_info.cpp

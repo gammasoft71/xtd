@@ -67,10 +67,10 @@ namespace xtd {
       progress_dialog& informations(const std::vector<xtd::string>& informations);
       
       /// @brief Gets a value that Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
-      /// @return tree is marquee; otherwise `false`. The default is false.
+      /// @return tree is marquee; otherwise `false`. The default is `false`.
       bool marquee() const noexcept;
       /// @brief Gets a value that Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
-      /// @param marquee tree is marquee; otherwise `false`. The default is false.
+      /// @param marquee tree is marquee; otherwise `false`. The default is `false`.
       /// @return Current progress_dialog instance.
       progress_dialog& marquee(bool marquee);
       
@@ -115,42 +115,42 @@ namespace xtd {
       progress_dialog& minimum(int32 minimum);
       
       /// @brief Gets a value that indicates whether cancel button is shown.
-      /// @return `true` if cancel button shown; otherwise `false`. By default false.
+      /// @return `true` if cancel button shown; otherwise `false`. By default `false`.
       bool show_cancel_button() const noexcept;
       /// @brief Sets a value that indicates whether cancel button is shown.
-      /// @param show_cancel_button true if cancel button is shown; otherwise `false`. By default false.
+      /// @param show_cancel_button true if cancel button is shown; otherwise `false`. By default `false`.
       /// @return Current progress_dialog instance.
       progress_dialog& show_cancel_button(bool show_cancel_button);
       
       /// @brief Gets a value that indicates whether elapsed time is shown.
-      /// @return `true` if elapsed time is shown; otherwise `false`. By default false.
+      /// @return `true` if elapsed time is shown; otherwise `false`. By default `false`.
       bool show_elapsed_time() const noexcept;
       /// @brief Sets a value that indicates whether elapsed time is shown.
-      /// @param show_elapsed_time true if elapsed time is shown; otherwise `false`. By default false.
+      /// @param show_elapsed_time true if elapsed time is shown; otherwise `false`. By default `false`.
       /// @return Current progress_dialog instance.
       progress_dialog& show_elapsed_time(bool show_elapsed_time);
       
       /// @brief Gets a value that indicates whether estimated time is shown.
-      /// @return `true` if estimated time is shown; otherwise `false`. By default false.
+      /// @return `true` if estimated time is shown; otherwise `false`. By default `false`.
       bool show_estimated_time() const noexcept;
       /// @brief Sets a value that indicates whether estimated time is shown.
-      /// @param show_estimated_time true if estimated time is shown; otherwise `false`. By default false.
+      /// @param show_estimated_time true if estimated time is shown; otherwise `false`. By default `false`.
       /// @return Current progress_dialog instance.
       progress_dialog& show_estimated_time(bool show_estimated_time);
       
       /// @brief Gets a value that indicates whether remaining time is shown.
-      /// @return `true` if remaining time is shown; otherwise `false`. By default false.
+      /// @return `true` if remaining time is shown; otherwise `false`. By default `false`.
       bool show_remaining_time() const noexcept;
       /// @brief Sets a value that indicates whether remaining time is shown.
-      /// @param show_remaining_time true if remaining time is shown; otherwise `false`. By default false.
+      /// @param show_remaining_time true if remaining time is shown; otherwise `false`. By default `false`.
       /// @return Current progress_dialog instance.
       progress_dialog& show_remaining_time(bool show_remaining_time);
       
       /// @brief Gets a value that indicates whether skip button is shown.
-      /// @return `true` if skip button shown; otherwise `false`. By default false.
+      /// @return `true` if skip button shown; otherwise `false`. By default `false`.
       bool show_skip_button() const noexcept;
       /// @brief Sets a value that indicates whether skip button is shown.
-      /// @param show_skip_button true if skip button is shown; otherwise `false`. By default false.
+      /// @param show_skip_button true if skip button is shown; otherwise `false`. By default `false`.
       /// @return Current progress_dialog instance.
       progress_dialog& show_skip_button(bool show_skip_button);
       

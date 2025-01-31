@@ -403,16 +403,16 @@ namespace xtd {
     static void exit_code(int32 value) noexcept;
     
     /// @brief Gets a value that indicates whether the current application domain is shutting down.
-    /// @return bool true if the current application domain is shutting down; otherwise, false.
-    /// @remarks At this time the return value is always false for macOS and linux.
+    /// @return bool true if the current application domain is shutting down; otherwise, `false`.
+    /// @remarks At this time the return value is always `false` for macOS and linux.
     static bool has_shutdown_started();
     
     /// @brief Determines whether the current operating system is a 64-bit operating system.
-    /// @return `true` if the operating system is 64-bit; otherwise, false.
+    /// @return `true` if the operating system is 64-bit; otherwise, `false`.
     static bool is_64_bit_operating_system() noexcept;
     
     /// @brief Determines whether the current process is a 64-bit process.
-    /// @return `true` if the process is 64-bit; otherwise, false.
+    /// @return `true` if the process is 64-bit; otherwise, `false`.
     static bool is_64_bit_process() noexcept;
     
     /// @brief Gets a copy of the global C++ locale, which is the locale most recently used as the argument to See [std::locale::global](https://en.cppreference.com/w/cpp/locale/locale/locale) or a copy of See [std::locale::classic()](https://en.cppreference.com/w/cpp/locale/locale/locale) if no call to See [std::locale::global](https://en.cppreference.com/w/cpp/locale/locale/locale) has been made.
@@ -480,7 +480,7 @@ namespace xtd {
     
     
     /// @brief Gets a value indicating whether the current user is an administrator.
-    /// @return bool true if the current user is an administrator; otherwise, false.
+    /// @return bool true if the current user is an administrator; otherwise, `false`.
     static bool user_administrator();
     
     /// @brief Gets the network domain name associated with the current user.
@@ -488,8 +488,8 @@ namespace xtd {
     static xtd::string user_domain_name();
     
     /// @brief Gets a value indicating whether the current process is running in user interactive mode.
-    /// @return bool true if the current process is running in user interactive mode; otherwise, false.
-    /// @remarks The user_interactive method reports false for a Os process or a service like IIS that runs without a user interface. If this property is false, do not display modal dialogs or message boxes because there is no graphical user interface for the user to interact with.
+    /// @return bool true if the current process is running in user interactive mode; otherwise, `false`.
+    /// @remarks The user_interactive method reports `false` for a Os process or a service like IIS that runs without a user interface. If this property is `false`, do not display modal dialogs or message boxes because there is no graphical user interface for the user to interact with.
     /// @remarks Return always true for now.
     /// @todo check if process is an operating system process or service process...
     static bool user_interactive();

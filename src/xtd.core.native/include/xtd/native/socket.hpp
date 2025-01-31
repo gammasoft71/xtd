@@ -106,11 +106,11 @@ namespace xtd {
       /// @warning Internal use only
       static int32_t get_last_error();
       /// @brief Indicates whether the underlying operating system and network adaptors support Internet Protocol version 4 (IPv4).
-      /// @return bool true if the operating system and network adaptors support the IPv4 protocol; otherwise, false.
+      /// @return bool true if the operating system and network adaptors support the IPv4 protocol; otherwise, `false`.
       /// @warning Internal use only
       static bool get_os_supports_ip_v4() noexcept;
       /// @brief Indicates whether the underlying operating system and network adaptors support Internet Protocol version 6 (IPv6).
-      /// @return bool true if the operating system and network adaptors support the IPv6 protocol; otherwise, false.
+      /// @return bool true if the operating system and network adaptors support the IPv6 protocol; otherwise, `false`.
       /// @warning Internal use only
       static bool get_os_supports_ip_v6() noexcept;
       /// @brief Gets options on socket.
@@ -222,7 +222,7 @@ namespace xtd {
       static int32_t send_to(intmax_t handle, const std::vector<uint8_t>& buffer, size_t offset, size_t size, int32_t flags, const std::vector<uint8_t>& socket_address);
       /// @brief Sets a value that indicates whether the socket is in blocking mode.
       /// @param handle The socket handle.
-      /// @param blocking bool true if the Socket will block; otherwise, false. The default is true
+      /// @param blocking bool true if the Socket will block; otherwise, `false`. The default is true
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
       static int32_t set_blocking(intmax_t handle, bool blocking);

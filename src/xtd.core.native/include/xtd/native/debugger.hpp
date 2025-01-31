@@ -45,15 +45,15 @@ namespace xtd {
       /// @warning Internal use only
       static void debug_break();
       /// @brief Gets a value that indicates whether a debugger is attached to the process.
-      /// @return `true` if a debugger is attached; otherwise, false.
+      /// @return `true` if a debugger is attached; otherwise, `false`.
       /// @warning Internal use only
       static bool is_attached();
       /// @brief Checks to see if logging is enabled by an attached debugger.
-      /// @return `true` if a debugger is attached and logging is enabled; otherwise, false.
+      /// @return `true` if a debugger is attached and logging is enabled; otherwise, `false`.
       /// @warning Internal use only
       static bool is_logging();
       /// @brief Launches and attaches a debugger to the process.
-      /// @return `true` if the startup is successful or if the debugger is already attached; otherwise, false.
+      /// @return `true` if the startup is successful or if the debugger is already attached; otherwise, `false`.
       /// @remarks If a debugger is already attached, nothing happens.
       /// @remarks Debugger launch is only supported on Windows operating system. On Unix and macOS operating systems, the method returns true without launching a debugger.
       /// @warning Internal use only

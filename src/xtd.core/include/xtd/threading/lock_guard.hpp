@@ -68,7 +68,7 @@ namespace xtd {
       /// @brief Releases the lock on an object and blocks the current thread until it reacquires the lock. If the specified time-out interval elapses, the thread enters the ready queue.
       /// @param obj The object on which to wait.
       /// @param milliseconds_timeout The number of milliseconds to wait before the thread enters the ready queue.
-      /// @return `true` if the lock was reacquired before the specified time elapsed; false if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired.
+      /// @return `true` if the lock was reacquired before the specified time elapsed; `false` if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired.
       /// @exception xtd::threading::synchronization_lock_exception xtd::threading::monitor::wait is not invoked from within a synchronized block of code.
       /// @remarks This method does not return until it reacquires an exclusive lock on the obj parameter.
       /// @remarks The thread that currently owns the lock on the specified object invokes this method in order to release the object so that another thread can access it. The caller is blocked while waiting to reacquire the lock. This method is called when the caller needs to wait for a state change that will occur as a result of another thread's operations.
@@ -83,7 +83,7 @@ namespace xtd {
       
       /// @brief Releases the lock on an object and blocks the current thread until it reacquires the lock. If the specified time-out interval elapses, the thread enters the ready queue.
       /// @param timeout A xtd::time_span representing the amount of time to wait before the thread enters the ready queue.
-      /// @return `true` if the lock was reacquired before the specified time elapsed; false if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired.
+      /// @return `true` if the lock was reacquired before the specified time elapsed; `false` if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired.
       /// @exception xtd::threading::synchronization_lock_exception xtd::threading::monitor::wait is not invoked from within a synchronized block of code.
       /// @remarks This method does not return until it reacquires an exclusive lock on the obj parameter.
       /// @remarks The thread that currently owns the lock on the specified object invokes this method in order to release the object so that another thread can access it. The caller is blocked while waiting to reacquire the lock. This method is called when the caller needs to wait for a state change that will occur as a result of another thread's operations.

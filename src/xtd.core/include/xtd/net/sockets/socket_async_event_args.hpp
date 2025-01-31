@@ -48,7 +48,7 @@ namespace xtd {
       /// 2. Set properties on the context object to the operation about to be performed (the completion callback method, the data buffer, the offset into the buffer, and the maximum amount of data to transfer, for example).
       /// 3. Call the appropriate socket method (xxx_async) to initiate the asynchronous operation.
       /// 4. If the asynchronous socket method (xxx_async) returns true, in the callback, query the context properties for completion status.
-      /// 5. If the asynchronous socket method (xxx_async) returns false, the operation completed synchronously. The context properties may be queried for the operation result.
+      /// 5. If the asynchronous socket method (xxx_async) returns `false`, the operation completed synchronously. The context properties may be queried for the operation result.
       /// 6. Reuse the context for another operation, put it back in the pool, or discard it.
       /// @remarks The lifetime of the new asynchronous socket operation context object is determined by references by the application code and asynchronous I/O references. It is not necessary for the application to retain a reference to an asynchronous socket operation context object after it is submitted as a parameter to one of the asynchronous socket operation methods. It will remain referenced until the completion callback returns. However it is advantageous for the application to retain the reference to the context so that it can be reused for a future asynchronous socket operation.
       class core_export_ socket_async_event_args : public xtd::event_args {

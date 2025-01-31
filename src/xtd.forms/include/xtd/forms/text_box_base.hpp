@@ -31,10 +31,10 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether pressing the TAB key in a multiline text box control types a TAB character in the control instead of moving the focus to the next control in the tab order.
-      /// @return `true` if users can enter tabs in a multiline text box using the TAB key; false if pressing the TAB key moves the focus. The default is false.
+      /// @return `true` if users can enter tabs in a multiline text box using the TAB key; `false` if pressing the TAB key moves the focus. The default is `false`.
       virtual bool accepts_tab() const noexcept;
       /// @brief Sets a value indicating whether pressing the TAB key in a multiline text box control types a TAB character in the control instead of moving the focus to the next control in the tab order.
-      /// @param value true if users can enter tabs in a multiline text box using the TAB key; false if pressing the TAB key moves the focus. The default is false.
+      /// @param value `true` if users can enter tabs in a multiline text box using the TAB key; `false` if pressing the TAB key moves the focus. The default is `false`.
       /// @return Current text_box_base instance.
       virtual text_box_base& accepts_tab(bool value);
       
@@ -69,21 +69,21 @@ namespace xtd {
       text_box_base& lines(const std::vector<xtd::string>& lines);
       
       /// @brief Gets a value indicating whether this is a multiline text box control.
-      /// @return `true` if the control is a multiline text box control; otherwise, false. The default is false.
-      /// @remarks A multiline text box allows you to display more than one line of text in the control. If the word_wrap property is set to true, text entered into the multiline text box is wrapped to the next line in the control. If the word_wrap property is set to false, text entered into the multiline text box control will be displayed on the same line until a newline character is entered.
+      /// @return `true` if the control is a multiline text box control; otherwise, `false`. The default is `false`.
+      /// @remarks A multiline text box allows you to display more than one line of text in the control. If the word_wrap property is set to true, text entered into the multiline text box is wrapped to the next line in the control. If the word_wrap property is set to `false`, text entered into the multiline text box control will be displayed on the same line until a newline character is entered.
       virtual bool multiline() const noexcept;
       /// @brief Sets a value indicating whether this is a multiline text box control.
-      /// @param value true if the control is a multiline text box control; otherwise, false. The default is false.
+      /// @param value true if the control is a multiline text box control; otherwise, `false`. The default is `false`.
       /// @return Current text_box_base instance.
-      /// @remarks A multiline text box allows you to display more than one line of text in the control. If the word_wrap property is set to true, text entered into the multiline text box is wrapped to the next line in the control. If the word_wrap property is set to false, text entered into the multiline text box control will be displayed on the same line until a newline character is entered.
+      /// @remarks A multiline text box allows you to display more than one line of text in the control. If the word_wrap property is set to true, text entered into the multiline text box is wrapped to the next line in the control. If the word_wrap property is set to `false`, text entered into the multiline text box control will be displayed on the same line until a newline character is entered.
       virtual text_box_base& multiline(bool value);
       
       /// @brief Gets a value indicating whether text in the text box is read-only.
-      /// @return `true` if the text box is read-only; otherwise, false. The default is false.
+      /// @return `true` if the text box is read-only; otherwise, `false`. The default is `false`.
       /// @remarks When this property is set to true, the contents of the control cannot be changed by the user at runtime. With this property set to true, you can still set the value of the Text property in code. You can use this feature instead of disabling the control with the Enabled property to allow the contents to be copied and ToolTips to be shown.
       virtual bool read_only() const noexcept;
       /// @brief Sets a value indicating whether text in the text box is read-only.
-      /// @param value true if the text box is read-only; otherwise, false. The default is false.
+      /// @param value true if the text box is read-only; otherwise, `false`. The default is `false`.
       /// @return Current text_box_base instance.
       /// @remarks When this property is set to true, the contents of the control cannot be changed by the user at runtime. With this property set to true, you can still set the value of the Text property in code. You can use this feature instead of disabling the control with the Enabled property to allow the contents to be copied and ToolTips to be shown.
       virtual text_box_base& read_only(bool value);
@@ -109,10 +109,10 @@ namespace xtd {
       virtual text_box_base& selection_start(size_t value);
       
       /// @brief Indicates whether a multiline text box control automatically wraps words to the beginning of the next line when necessary.
-      /// @return `true` if the multiline text box control wraps words; false if the text box control automatically scrolls horizontally when the user types past the right edge of the control. The default is true.
+      /// @return `true` if the multiline text box control wraps words; `false` if the text box control automatically scrolls horizontally when the user types past the right edge of the control. The default is true.
       virtual bool word_wrap() const noexcept;
       /// @brief Indicates whether a multiline text box control automatically wraps words to the beginning of the next line when necessary.
-      /// @param value true if the multiline text box control wraps words; false if the text box control automatically scrolls horizontally when the user types past the right edge of the control. The default is true.
+      /// @param value `true` if the multiline text box control wraps words; `false` if the text box control automatically scrolls horizontally when the user types past the right edge of the control. The default is true.
       /// @return Current text_box_base instance.
       virtual text_box_base& word_wrap(bool value);
       

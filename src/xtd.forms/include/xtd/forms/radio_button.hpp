@@ -63,22 +63,22 @@ namespace xtd {
       virtual radio_button& appearance(forms::appearance appearance);
       
       /// @brief Gets a value indicating whether the checked value and the appearance of the control automatically change when the control is clicked.
-      /// @return `true` if the checked value and the appearance of the control automatically change on the click event; otherwise, false. The default value is true.
-      /// @remarks If the checked value is set to false, the radio_button portion of the control must be checked in code in the click event handler. In addition, if the radio_button is part of a radio_button control group, this property ensures that only one of the controls is checked at a given time.
-      /// @remarks If the auto_check property is set to false, a group of radio_button controls will not act as a mutually exclusive group and the checked property must be updated in code.
+      /// @return `true` if the checked value and the appearance of the control automatically change on the click event; otherwise, `false`. The default value is true.
+      /// @remarks If the checked value is set to `false`, the radio_button portion of the control must be checked in code in the click event handler. In addition, if the radio_button is part of a radio_button control group, this property ensures that only one of the controls is checked at a given time.
+      /// @remarks If the auto_check property is set to `false`, a group of radio_button controls will not act as a mutually exclusive group and the checked property must be updated in code.
       virtual bool auto_check() const noexcept;
       /// @brief Sets a value indicating whether the checked value and the appearance of the control automatically change when the control is clicked.
-      /// @param auto_check true if the checked value and the appearance of the control automatically change on the click event; otherwise, false. The default value is true.
+      /// @param auto_check true if the checked value and the appearance of the control automatically change on the click event; otherwise, `false`. The default value is true.
       /// @return Current radio_button instance.
-      /// @remarks If the checked value is set to false, the radio_button portion of the control must be checked in code in the click event handler. In addition, if the radio_button is part of a radio_button control group, this property ensures that only one of the controls is checked at a given time.
-      /// @remarks If the auto_check property is set to false, a group of radio_button controls will not act as a mutually exclusive group and the checked property must be updated in code.
+      /// @remarks If the checked value is set to `false`, the radio_button portion of the control must be checked in code in the click event handler. In addition, if the radio_button is part of a radio_button control group, this property ensures that only one of the controls is checked at a given time.
+      /// @remarks If the auto_check property is set to `false`, a group of radio_button controls will not act as a mutually exclusive group and the checked property must be updated in code.
       virtual radio_button& auto_check(bool auto_check);
       
       /// @brief Gets a value indicating whether the control is checked.
-      /// @return `true` if the check box is checked; otherwise, false.
+      /// @return `true` if the check box is checked; otherwise, `false`.
       virtual bool checked() const noexcept;
       /// @brief Sets a value indicating whether the control is checked.
-      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param checked true if the check box is checked; otherwise, `false`.
       /// @return Current radio_button instance.
       virtual radio_button& checked(bool checked);
       
@@ -148,25 +148,25 @@ namespace xtd {
       static radio_button create(const xtd::string& text, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::radio_button with specified text, and checked.
       /// @param text A string that represent text of the xtd::forms::radio_button.
-      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param checked true if the check box is checked; otherwise, `false`.
       /// @return New xtd::forms::radio_button created.
       static radio_button create(const xtd::string& text, bool checked);
       /// @brief A factory to create an xtd::forms::radio_button with specified text, checked, and location.
       /// @param text A string that represent text of the xtd::forms::radio_button.
-      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param checked true if the check box is checked; otherwise, `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
       /// @return New xtd::forms::radio_button created.
       static radio_button create(const xtd::string& text, bool checked, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::radio_button with specified text, checked, location, and size.
       /// @param text A string that represent text of the xtd::forms::radio_button.
-      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param checked true if the check box is checked; otherwise, `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::radio_button.
       /// @return New xtd::forms::radio_button created.
       static radio_button create(const xtd::string& text, bool checked, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::radio_button with specified text, checked, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::radio_button.
-      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param checked true if the check box is checked; otherwise, `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::radio_button.
       /// @param name The name of the xtd::forms::radio_button.
@@ -223,20 +223,20 @@ namespace xtd {
       /// @brief A factory to create a xtd::forms::radio_button with specified parent, text, and checked.
       /// @param parent The parent that contains the new created xtd::forms::radio_button.
       /// @param text A string that represent text of the xtd::forms::radio_button.
-      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param checked true if the check box is checked; otherwise, `false`.
       /// @return New xtd::forms::radio_button created.
       static radio_button create(const control& parent, const xtd::string& text, bool checked);
       /// @brief A factory to create a xtd::forms::radio_button with specified parent, text, checked, and location.
       /// @param parent The parent that contains the new created xtd::forms::radio_button.
       /// @param text A string that represent text of the xtd::forms::radio_button.
-      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param checked true if the check box is checked; otherwise, `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
       /// @return New xtd::forms::radio_button created.
       static radio_button create(const control& parent, const xtd::string& text, bool checked, const drawing::point& location);
       /// @brief A factory to create a xtd::forms::radio_button with specified parent, text, checked, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::radio_button.
       /// @param text A string that represent text of the xtd::forms::radio_button.
-      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param checked true if the check box is checked; otherwise, `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::radio_button.
       /// @return New xtd::forms::radio_button created.
@@ -244,7 +244,7 @@ namespace xtd {
       /// @brief A factory to create a xtd::forms::radio_button with specified parent, text, checked, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::radio_button.
       /// @param text A string that represent text of the xtd::forms::radio_button.
-      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param checked true if the check box is checked; otherwise, `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::radio_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::radio_button.
       /// @param name The name of the xtd::forms::radio_button.

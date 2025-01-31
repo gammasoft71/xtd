@@ -56,11 +56,11 @@ namespace xtd {
       /// @param skip_frame The number of frames up the stack to skip.
       explicit stack_frame(xtd::size skip_frame);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class, optionally capturing source information.
-      /// @param need_file_info true to capture the file name, line number, and column number of the stack frame; otherwise, false.
+      /// @param need_file_info true to capture the file name, line number, and column number of the stack frame; otherwise, `false`.
       explicit stack_frame(bool need_file_info);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that corresponds to a frame above the current stack frame, optionally capturing source information.
       /// @param skip_frame The number of frames up the stack to skip.
-      /// @param need_file_info true to capture the file name, line number, and column number of the stack frame; otherwise, false.
+      /// @param need_file_info true to capture the file name, line number, and column number of the stack frame; otherwise, `false`.
       stack_frame(xtd::size skip_frame, bool need_file_info);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given file name, and line number.
       /// @param file_name The file name.

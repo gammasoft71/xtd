@@ -33,7 +33,7 @@ The member used to test a condition, which in our example is the property size, 
 
 # Try-parse Pattern
 
-For extremely performance-sensitive APIs, an even faster pattern than the *Tester-Doer* Pattern described in the previous section should be used. The pattern calls for adjusting the member name to make a well-defined test case a part of the member semantics. For example, xtd::date_time defines a parse method that throws an exception if parsing of a string fails. It also defines a corresponding try_parse method that attempts to parse, but returns false if parsing is unsuccessful and returns the result of a successful parsing using an ref parameter.
+For extremely performance-sensitive APIs, an even faster pattern than the *Tester-Doer* Pattern described in the previous section should be used. The pattern calls for adjusting the member name to make a well-defined test case a part of the member semantics. For example, xtd::date_time defines a parse method that throws an exception if parsing of a string fails. It also defines a corresponding try_parse method that attempts to parse, but returns `false` if parsing is unsuccessful and returns the result of a successful parsing using an ref parameter.
 
 ```cpp
 struct date_time : public object {

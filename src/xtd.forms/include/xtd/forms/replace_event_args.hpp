@@ -52,11 +52,11 @@ namespace xtd {
       const xtd::string& replace_string() const noexcept {return replace_string_;}
       
       /// @brief Gets the match case value.
-      /// @return `true` if match case option selected; otherwise `false`. The default is false.
+      /// @return `true` if match case option selected; otherwise `false`. The default is `false`.
       bool match_case() const noexcept {return match_case_;}
       
       /// @brief Gets the whole word value.
-      /// @return `true` if whole word option selected; otherwise `false`. The default is false.
+      /// @return `true` if whole word option selected; otherwise `false`. The default is `false`.
       bool whole_word() const noexcept {return whole_word_;}
       
       /// @}
