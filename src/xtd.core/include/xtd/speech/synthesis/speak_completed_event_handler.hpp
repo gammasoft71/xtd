@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::speech::synthesis::speak_completed_event_handler alias.
+/// @brief Contains xtd::speech::synthesis::speak_completed_event_handler handler.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "speak_completed_event_args.hpp"

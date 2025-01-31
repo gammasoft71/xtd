@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::dialog_closed_event_handler dialog.
+/// @brief Contains xtd::forms::dialog_closed_event_handler handler.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "dialog_closed_event_args.hpp"

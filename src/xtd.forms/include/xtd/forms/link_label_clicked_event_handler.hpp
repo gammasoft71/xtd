@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::link_label class.
+/// @brief Contains xtd::forms::link_label_clicked_event_handler handler.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "link_label_clicked_event_args.hpp"

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::status_bar_draw_item_event_handler event handler.
+/// @brief Contains xtd::forms::status_bar_draw_item_event_handler handler.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "status_bar_draw_item_event_args.hpp"

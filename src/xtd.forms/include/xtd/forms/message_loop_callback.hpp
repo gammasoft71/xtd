@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::message_loop_callback callback.
+/// @brief Contains xtd::forms::message_loop_callback delegate.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/delegate>

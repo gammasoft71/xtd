@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::threading::wait_or_timer_callback exception.
+/// @brief Contains xtd::threading::wait_or_timer_callback delegate.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../delegate.hpp"

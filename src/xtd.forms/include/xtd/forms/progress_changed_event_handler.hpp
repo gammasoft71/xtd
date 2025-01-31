@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::progress_changed_event_handler event handler.
+/// @brief Contains xtd::forms::progress_changed_event_handler handler.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "progress_changed_event_args.hpp"

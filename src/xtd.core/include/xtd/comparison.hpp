@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::comparison alias.
+/// @brief Contains xtd::comparison delegate.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "delegate.hpp"
