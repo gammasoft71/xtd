@@ -78,10 +78,10 @@ namespace xtd {
       replace_dialog& location(const xtd::drawing::point& value);
       
       /// @brief Gets the match case value.
-      /// @return `true` if match case option selected; otherwise `false`. The default is false.
+      /// @return `true` if match case option selected; otherwise `false`. The default is `false`.
       bool match_case() const noexcept;
       /// @brief Sets the match case value.
-      /// @param value true if match case option selected; otherwise `false`. The default is false.
+      /// @param value true if match case option selected; otherwise `false`. The default is `false`.
       /// @return Current replace_dialog instance.
       replace_dialog& match_case(bool value);
       
@@ -110,10 +110,10 @@ namespace xtd {
       replace_dialog& title(const xtd::string& value);
       
       /// @brief Gets the whole word value.
-      /// @return `true` if whole word option selected; otherwise `false`. The default is false.
+      /// @return `true` if whole word option selected; otherwise `false`. The default is `false`.
       bool whole_word() const noexcept;
       /// @brief Sets the whole word value.
-      /// @param value true if whole word option selected; otherwise `false`. The default is false.
+      /// @param value true if whole word option selected; otherwise `false`. The default is `false`.
       /// @return Current replace_dialog instance.
       replace_dialog& whole_word(bool value);
       /// @}
@@ -153,10 +153,10 @@ namespace xtd {
       /// | title            | ""                                 |
       /// | find_string      | ""                                 |
       /// | replace_string   | ""                                 |
-      /// | show_whole_word  | true                               |
-      /// | show_match_case  | true                               |
-      /// | whole_word       | false                              |
-      /// | match_case       | false                              |
+      /// | show_whole_word  | `true`                             |
+      /// | show_match_case  | `true`                             |
+      /// | whole_word       | `false`                            |
+      /// | match_case       | `false`                            |
       void reset() noexcept;
       
       /// @brief Runs find dialog box.

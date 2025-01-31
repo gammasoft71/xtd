@@ -23,8 +23,8 @@ namespace xtd {
     /// @remarks This control presents a list of items that the user can navigate by using the keyboard or the scrollbar on the right side of the control. The user can place a check mark by one or more items and the checked items can be navigated with the checked_list_box::checked_item_collection and checked_list_box::checked_index_collection.
     /// @remarks To add objects to the list at run time, assign an array of object with the push_range method. The list then displays the default string value for each object. You can add individual items to the list with the push method.
     /// @remarks The checked_list_box object supports three states through the check_state enumeration: checked, indeterminate, and unchecked. You must set the state of indeterminate in the code because the user interface for a checked_list_box does not provide a mechanism to do so.
-    /// @remarks If use_tab_stops is true, the checked_list_box will recognize and expand tab characters in an item's text, creating columns. These tab stops are preset and cannot be changed. To use custom tab stops, set use_tab_stops to false, set use_custom_tab_offsets to true, and add the custom values to the custom_tab_offsets collection.
-    /// @note If the use_compatible_text_rendering property is false, the custom_tab_offsets property will be ignored and replaced with standard tab offsets.
+    /// @remarks If use_tab_stops is true, the checked_list_box will recognize and expand tab characters in an item's text, creating columns. These tab stops are preset and cannot be changed. To use custom tab stops, set use_tab_stops to `false`, set use_custom_tab_offsets to true, and add the custom values to the custom_tab_offsets collection.
+    /// @note If the use_compatible_text_rendering property is `false`, the custom_tab_offsets property will be ignored and replaced with standard tab offsets.
     /// @par Appearance
     /// |       | Windows                                       | macOS                                         | Gnome                                         |
     /// | ----- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
@@ -82,12 +82,12 @@ namespace xtd {
         
         /// @{
         /// @brief Gets a value indicating whether the item is in the checked state.
-        /// @return `true` if the item is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
+        /// @return `true` if the item is in the checked state; otherwise, `false`. The default value is `false`. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
         virtual bool checked() const;
         
         /// @brief Gets the state of the item.
         /// @return One of the check_state enumeration values. The default value is unchecked.
-        /// @remarks If the three_state property is set to false, the check_state property value can only be set to check_state::indeterminate in code and not by u ser interaction.
+        /// @remarks If the three_state property is set to `false`, the check_state property value can only be set to check_state::indeterminate in code and not by u ser interaction.
         virtual forms::check_state check_state() const;
         /// @}
         
@@ -203,7 +203,7 @@ namespace xtd {
       
       /// @brief Returns a value indicating whether the specified item is checked.
       /// @param index The index of the item.
-      /// @return `true` if the item is checked; otherwise, false.
+      /// @return `true` if the item is checked; otherwise, `false`.
       /// @remarks get_item_checked returns true if the value of CheckState is checked or indeterminate for the item. To determine the specific state the item is in, use the get_item_check_state method.
       bool get_item_checked(size_t index) const;
       
@@ -220,8 +220,8 @@ namespace xtd {
       
       /// @brief Sets check_state for the item at the specified index to checked.
       /// @param index The index of the item to set the check state for.
-      /// @param checked true to set the item as checked; otherwise, false.
-      /// @remarks When a value of true is passed, this method sets the check_state value to checked. A value of false sets check_state to unchecked.
+      /// @param checked true to set the item as checked; otherwise, `false`.
+      /// @remarks When a value of `true` is passed, this method sets the check_state value to checked. A value of `false` sets check_state to unchecked.
       void set_item_checked(size_t index, bool checked);
       
       /// @brief Sets the check state of the item at the specified index.

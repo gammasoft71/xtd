@@ -44,13 +44,13 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the checked and the switch_button's appearance are automatically changed when the switch_button is clicked.
-      /// @return `true` if the checked value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
-      /// @remarks If auto_check is set to false, you will need to add code to update the checked in the click event handler.
+      /// @return `true` if the checked value and the appearance of the control are automatically changed on the click event; otherwise, `false`. The default value is true.
+      /// @remarks If auto_check is set to `false`, you will need to add code to update the checked in the click event handler.
       virtual bool auto_check() const noexcept;
       /// @brief Sets a value indicating whether the checked and the switch_button's appearance are automatically changed when the switch_button is clicked.
-      /// @param auto_check true if the checked value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
+      /// @param auto_check true if the checked value and the appearance of the control are automatically changed on the click event; otherwise, `false`. The default value is true.
       /// @return Current switch_button instance.
-      /// @remarks If auto_check is set to false, you will need to add code to update the checked in the click event handler.
+      /// @remarks If auto_check is set to `false`, you will need to add code to update the checked in the click event handler.
       virtual switch_button& auto_check(bool auto_check);
       
       /// @brief Gets the checked background color for the control.
@@ -74,26 +74,26 @@ namespace xtd {
       /// @endcond
       
       /// @brief Gets a value indicating whether the switch_button is rounded appearance.
-      /// @return `true` if the switch_button is in the rounded appearance; otherwise, false. The default value is true.
+      /// @return `true` if the switch_button is in the rounded appearance; otherwise, `false`. The default value is true.
       virtual bool rounded() const noexcept;
       /// @brief Sets a value indicating whether the switch_button is rounded appearance.
-      /// @param value true if the switch_button is in the rounded appearance; otherwise, false. The default value is true.
+      /// @param value true if the switch_button is in the rounded appearance; otherwise, `false`. The default value is true.
       /// @return Current switch_button instance.
       virtual switch_button& rounded(bool value);
       
       /// @brief Gets a value indicating whether the switch_button is in the checked state.
-      /// @return `true` if the switch_button is in the checked state; otherwise, false. The default value is false.
+      /// @return `true` if the switch_button is in the checked state; otherwise, `false`. The default value is `false`.
       virtual bool checked() const noexcept;
       /// @brief Sets a value indicating whether the switch_button is in the checked state.
-      /// @param checked true if the switch_button is in the checked state; otherwise, false. The default value is false.
+      /// @param checked true if the switch_button is in the checked state; otherwise, `false`. The default value is `false`.
       /// @return Current switch_button instance.
       virtual switch_button& checked(bool checked);
       
       /// @brief Gets a value indicating whether the switch_button text is shown.
-      /// @return `true` if the switch_button text is shown; otherwise, false. The default value is false.
+      /// @return `true` if the switch_button text is shown; otherwise, `false`. The default value is `false`.
       virtual bool show_text() const noexcept;
       /// @brief Sets a value indicating whether the switch_button text is shown.
-      /// @param value true if the switch_button text is shown; otherwise, false. The default value is false.
+      /// @param value true if the switch_button text is shown; otherwise, `false`. The default value is `false`.
       /// @return Current switch_button instance.
       virtual switch_button& show_text(bool value);
       /// @}
@@ -121,25 +121,25 @@ namespace xtd {
       static switch_button create(const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::switch_button with specified text, and checked.
       /// @param text A string that represent text of the xtd::forms::switch_button.
-      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param checked true if the check box is checked; otherwise, `false`.
       /// @return New xtd::forms::switch_button created.
       static switch_button create(bool checked);
       /// @brief A factory to create an xtd::forms::switch_button with specified text, checked, and location.
       /// @param text A string that represent text of the xtd::forms::switch_button.
-      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param checked true if the check box is checked; otherwise, `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::switch_button.
       /// @return New xtd::forms::switch_button created.
       static switch_button create(bool checked, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::switch_button with specified text, checked, location, and size.
       /// @param text A string that represent text of the xtd::forms::switch_button.
-      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param checked true if the check box is checked; otherwise, `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::switch_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::switch_button.
       /// @return New xtd::forms::switch_button created.
       static switch_button create(bool checked, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::switch_button with specified text, checked, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::switch_button.
-      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param checked true if the check box is checked; otherwise, `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::switch_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::switch_button.
       /// @param name The name of the xtd::forms::switch_button.
@@ -170,20 +170,20 @@ namespace xtd {
       /// @brief A factory to create a xtd::forms::switch_button with specified parent, text, and checked.
       /// @param parent The parent that contains the new created xtd::forms::switch_button.
       /// @param text A string that represent text of the xtd::forms::switch_button.
-      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param checked true if the check box is checked; otherwise, `false`.
       /// @return New xtd::forms::switch_button created.
       static switch_button create(const control& parent, bool checked);
       /// @brief A factory to create a xtd::forms::switch_button with specified parent, text, checked, and location.
       /// @param parent The parent that contains the new created xtd::forms::switch_button.
       /// @param text A string that represent text of the xtd::forms::switch_button.
-      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param checked true if the check box is checked; otherwise, `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::switch_button.
       /// @return New xtd::forms::switch_button created.
       static switch_button create(const control& parent, bool checked, const drawing::point& location);
       /// @brief A factory to create a xtd::forms::switch_button with specified parent, text, checked, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::switch_button.
       /// @param text A string that represent text of the xtd::forms::switch_button.
-      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param checked true if the check box is checked; otherwise, `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::switch_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::switch_button.
       /// @return New xtd::forms::switch_button created.
@@ -191,7 +191,7 @@ namespace xtd {
       /// @brief A factory to create a xtd::forms::switch_button with specified parent, text, checked, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::switch_button.
       /// @param text A string that represent text of the xtd::forms::switch_button.
-      /// @param checked true if the check box is checked; otherwise, false.
+      /// @param checked true if the check box is checked; otherwise, `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::switch_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::switch_button.
       /// @param name The name of the xtd::forms::switch_button.

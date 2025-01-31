@@ -47,7 +47,7 @@ namespace xtd {
         /// @param multiline true for multiline; otherwise `false`.
         /// @param use_system_password_char true if use system password char; otherwise `false`.
         /// @param word_wrap true if word_wrap; otherwise `false`.
-        /// @return `true` if the user clicks OK in the dialog box; otherwise, false.
+        /// @return `true` if the user clicks OK in the dialog box; otherwise, `false`.
         /// @remarks If result is true, the font parameter contains the new font, and the color parameter contains the now color.
         /// @warning Internal use only
         static bool run_dialog(intptr hwnd, const xtd::string& text, const xtd::string& message, xtd::string& value, int32 character_casting, bool multiline, bool use_system_password_char, bool word_wrap);
@@ -61,7 +61,7 @@ namespace xtd {
         /// @param multiline true for multiline; otherwise `false`.
         /// @param use_system_password_char true if use system password char; otherwise `false`.
         /// @param word_wrap true if word_wrap; otherwise `false`.
-        /// @return `true` if the user clicks OK in the dialog box; otherwise, false.
+        /// @return `true` if the user clicks OK in the dialog box; otherwise, `false`.
         /// @remarks When dialog closed and if result is true, the value parameter contains the new string value.
         /// @warning Internal use only
         static void run_sheet(xtd::delegate<void(bool)> on_dialog_closed, intptr hwnd, const xtd::string& text, const xtd::string& message, xtd::string& value, int32 character_casting, bool multiline, bool use_system_password_char, bool word_wrap);

@@ -54,8 +54,8 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the caller can quit this application.
-      /// @return `true` if the caller can quit this application; otherwise, false.
-      /// @remarks This method returns false if it is called from a control being hosted within a Web browser. Thus, the control cannot quit the application.
+      /// @return `true` if the caller can quit this application; otherwise, `false`.
+      /// @remarks This method returns `false` if it is called from a control being hosted within a Web browser. Thus, the control cannot quit the application.
       static bool allow_quit() noexcept;
 
       /// @brief Gets the application context associate to the application.
@@ -110,7 +110,7 @@ namespace xtd {
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       static void dark_mode(bool value);
       
-      /// @brief Return true if dark mode is enabled for the application; otherwise return false.
+      /// @brief Return true if dark mode is enabled for the application; otherwise return `false`.
       /// @return True is dark mode enabled; otherwise `false`.
       /// @deprecated Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0.
       [[deprecated("Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0.")]]
@@ -142,13 +142,13 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the xtd framework keep cloned control is enabled.
       /// @return `true` if xtd framework keep cloned control is enabled; otherwise `false`.
-      /// @remarks By default the value is false.
+      /// @remarks By default the value is `false`.
       static bool keep_cloned_controls() noexcept;
       
       /// @brief Sets a value indicating whether the xtd framework keep cloned control is enabled.
       /// @param value true if xtd framework keep cloned control is enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
-      /// @remarks By default the value is false.
+      /// @remarks By default the value is `false`.
        static void keep_cloned_controls(bool value);
 
       /// @brief Gets a value indicating whether light mode is enabled for the application.
@@ -160,7 +160,7 @@ namespace xtd {
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       static void light_mode(bool value);
       
-      /// @brief Return true if dark mode is enabled for the application; otherwise return false.
+      /// @brief Return true if dark mode is enabled for the application; otherwise return `false`.
       /// @return True is light mode enabled; otherwise `false`.
       /// @deprecated Replaced by xtd::application::light_mode - Will be removed in version 0.4.0.
       [[deprecated("Replaced by xtd::application::light_mode - Will be removed in version 0.4.0.")]]
@@ -185,7 +185,7 @@ namespace xtd {
       static void menu_images(bool value);
 
       /// @brief Gets a value indicating whether a message loop exists on this thread.
-      /// @return `true` if a message loop exists; otherwise, false.
+      /// @return `true` if a message loop exists; otherwise, `false`.
       static bool message_loop() noexcept;
       
       /// @brief Gets a collection of open forms owned by the application.
@@ -274,21 +274,21 @@ namespace xtd {
        */
       
       /// @brief Gets a value that indicates whether visual styles are enabled for the application.
-      /// @return `true` if visual styles are enabled; otherwise, false.
+      /// @return `true` if visual styles are enabled; otherwise, `false`.
       /// @remarks The visual styles can be enabled by calling enable_xtd::forms::application::visual_styles.
       /// @deprecated Replaced by xtd::application::visual_styles - Will be removed in version 0.4.0.
       [[deprecated("Replaced by xtd::application::visual_styles - Will be removed in version 0.4.0.")]]
       static bool use_visual_styles() noexcept;
       
       /// @brief Gets whether the wait cursor is used for all open forms of the application.
-      /// @return `true` is the wait cursor is used for all open forms; otherwise, false.
+      /// @return `true` is the wait cursor is used for all open forms; otherwise, `false`.
       /// @remarks When this property is set to true, the use_wait_cursor property of all open forms in the application will be set to true. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing.
       /// @par Examples
       /// The following code example demonstrates the use of application use wait cursor property.
       /// @include application_use_wait_cursor.cpp
       static bool use_wait_cursor() noexcept;
       /// @brief Sets whether the wait cursor is used for all open forms of the application.
-      /// @param use_wait_cursor true is the wait cursor is used for all open forms; otherwise, false.
+      /// @param use_wait_cursor true is the wait cursor is used for all open forms; otherwise, `false`.
       /// @remarks When this property is set to true, the use_wait_cursor property of all open forms in the application will be set to true. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing.
       /// @par Examples
       /// The following code example demonstrates the use of application use wait cursor property.
@@ -296,13 +296,13 @@ namespace xtd {
       static void use_wait_cursor(bool use_wait_cursor);
       
       /// @brief Gets a value that indicates whether visual styles are enabled for the application.
-      /// @return `true` if visual styles are enabled; otherwise, false.
+      /// @return `true` if visual styles are enabled; otherwise, `false`.
       /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, enable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
       /// @remarks This method has an effect only on Windows.
       static bool visual_styles() noexcept;
       
       /// @brief Sets a value that indicates whether visual styles are enabled for the application.
-      /// @param value true if visual styles are enabled; otherwise, false.
+      /// @param value true if visual styles are enabled; otherwise, `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, enable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
       /// @remarks This method has an effect only on Windows.
@@ -431,7 +431,7 @@ namespace xtd {
       
       /// @brief Registers a callback for checking whether the message loop is running in hosted environments.
       /// @param callback The method to call when Windows Forms needs to check if the hosting environment is still sending messages.
-      /// @remarks This method is used when hosting Windows Forms in another environment. In hosted environments, the message_loop property will always return false if Windows Forms is not processing messages. Use this callback to tell Windows Forms if the hosting environment is still processing messages.
+      /// @remarks This method is used when hosting Windows Forms in another environment. In hosted environments, the message_loop property will always return `false` if Windows Forms is not processing messages. Use this callback to tell Windows Forms if the hosting environment is still processing messages.
       static void register_message_loop_callback(message_loop_callback callback);
       
       /// @brief Removes a message filter from the message pump of the application.
@@ -484,11 +484,11 @@ namespace xtd {
       /*
       /// @brief Instructs the application how to respond to unhandled exceptions, optionally applying thread-specific behavior.
       /// @param mode An unhandled_exception_mode value describing how the application should behave if an exception is thrown without being caught.
-      /// @param thread_scope true to set the thread exception mode; otherwise, false.
+      /// @param thread_scope true to set the thread exception mode; otherwise, `false`.
       /// @remarks It is often not feasible to catch all of the exceptions thrown by Windows Forms. Using this method, you can instruct your application whether it should catch all unhandled exceptions thrown by Windows Forms components and continue operating, or whether it should expose them to the user and halt execution.
       /// @remarks Call set_unhandled_exception_mode before you instantiate the main form of your application using the run method.
       /// @remarks When threadScope is true, the thread exception mode is set. The thread exception mode overrides the application exception mode if mode is not set to automatic.
-      /// @remarks When threadScope is false, the application exception mode is set. The application exception mode is used for all threads that have the automatic mode. Setting the application exception mode does not affect the setting of the current thread.
+      /// @remarks When threadScope is `false`, the application exception mode is set. The application exception mode is used for all threads that have the automatic mode. Setting the application exception mode does not affect the setting of the current thread.
       /// @remarks To catch exceptions that occur in threads not created and owned by Windows Forms, use the unhandled_exception event handler.
       static void set_unhandled_exception_mode (unhandled_exception_mode mode, bool thread_scope);
        */

@@ -96,12 +96,12 @@ namespace xtd {
         
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param value The key_value_pair to compare with the current object.
-        /// @return `true` if the specified object is equal to the current object; otherwise, false.
+        /// @return `true` if the specified object is equal to the current object; otherwise, `false`.
         bool equals(const key_value_pair& value) const noexcept override {return first == value.first && second == value.second;}
         
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
-        /// @return `true` if the specified object is equal to the current object; otherwise, false
+        /// @return `true` if the specified object is equal to the current object; otherwise, `false`
         bool equals(const object& obj) const noexcept override {return is<key_value_pair>(obj) && equals(static_cast<const key_value_pair&>(obj));}
         /// @}
         

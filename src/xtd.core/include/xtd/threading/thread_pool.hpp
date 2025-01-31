@@ -140,13 +140,13 @@ namespace xtd {
       static void join_all();
       /// @brief Join all resources and worker threads.
       /// @param milliseconds_timeout The number of milliseconds to wait for all threads to terminate.
-      /// @return `true` if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
+      /// @return `true` if all threads have terminated; `false` if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
       /// @remarks If one or more threads are not joinable, they will be skipped.
       /// @remarks You can use this method to ensure that all pending threads are closed, and that resources are also closed.
       static bool join_all(int32 milliseconds_timeout);
       /// @brief Join all resources and worker threads.
       /// @param timeout A xtd::time_span set to the amount of time to wait for all threads to terminate.
-      /// @return `true` if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
+      /// @return `true` if all threads have terminated; `false` if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed.
       /// @remarks If one or more threads are not joinable, they will be skipped.
       /// @remarks You can use this method to ensure that all pending threads are closed, and that resources are also closed.
       static bool join_all(const time_span& timeout);
@@ -173,7 +173,7 @@ namespace xtd {
       /// @param callback A pointer function to call when the wait_object parameter is signaled.
       /// @param state The object that is passed to the callback.
       /// @param milliseconds_timeout_interval The time-out in milliseconds. If the milliseconds_timeout_interval parameter is 0 (zero), the function tests the object's state and returns immediately. If milliseconds_timeout_interval is -1, the function's time-out interval never elapses.
-      /// @param execute_only_once true to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; false to indicate that the timer is reset every time the wait operation completes until the wait is unregistered.
+      /// @param execute_only_once `true` to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; `false` to indicate that the timer is reset every time the wait operation completes until the wait is unregistered.
       /// @return registered_wait_handle The xtd::threading::registered_wait_handle that encapsulates the native handle.
       /// @exception xtd::argument_out_of_range_exception The milliseconds_timeout_interval parameter is less than -1.
       static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, std::any state, int32 milliseconds_timeout_interval, bool execute_only_once);
@@ -182,7 +182,7 @@ namespace xtd {
       /// @param callback A pointer function to call when the wait_object parameter is signaled.
       /// @param state The object that is passed to the callback.
       /// @param milliseconds_timeout_interval The time-out in milliseconds. If the milliseconds_timeout_interval parameter is 0 (zero), the function tests the object's state and returns immediately. If milliseconds_timeout_interval is -1, the function's time-out interval never elapses.
-      /// @param execute_only_once true to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; false to indicate that the timer is reset every time the wait operation completes until the wait is unregistered.
+      /// @param execute_only_once `true` to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; `false` to indicate that the timer is reset every time the wait operation completes until the wait is unregistered.
       /// @return registered_wait_handle The xtd::threading::registered_wait_handle that encapsulates the native handle.
       /// @exception xtd::argument_out_of_range_exception The milliseconds_timeout_interval parameter is less than -1.
       static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, std::any state, int64 milliseconds_timeout_interval, bool execute_only_once);
@@ -191,7 +191,7 @@ namespace xtd {
       /// @param callback A pointer function to call when the wait_object parameter is signaled.
       /// @param state The object that is passed to the callback.
       /// @param timeout The time-out represented by a time_span.If timeout is 0 (zero), the function tests the object's state and returns immediately.If timeout is -1, the function's time-out interval never elapses.
-      /// @param execute_only_once true to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; false to indicate that the timer is reset every time the wait operation completes until the wait is unregistered.
+      /// @param execute_only_once `true` to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; `false` to indicate that the timer is reset every time the wait operation completes until the wait is unregistered.
       /// @return registered_wait_handle The xtd::threading::registered_wait_handle that encapsulates the native handle.
       /// @exception xtd::argument_out_of_range_exception The milliseconds_timeout_interval parameter is less than -1.
       static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, std::any state, const time_span& timeout, bool execute_only_once);
@@ -200,7 +200,7 @@ namespace xtd {
       /// @param callback A pointer function to call when the wait_object parameter is signaled.
       /// @param state The object that is passed to the callback.
       /// @param milliseconds_timeout_interval The time-out in milliseconds. If the milliseconds_timeout_interval parameter is 0 (zero), the function tests the object's state and returns immediately. If milliseconds_timeout_interval is -1, the function's time-out interval never elapses.
-      /// @param execute_only_once true to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; false to indicate that the timer is reset every time the wait operation completes until the wait is unregistered.
+      /// @param execute_only_once `true` to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; `false` to indicate that the timer is reset every time the wait operation completes until the wait is unregistered.
       /// @return registered_wait_handle The xtd::threading::registered_wait_handle that encapsulates the native handle.
       /// @exception xtd::argument_out_of_range_exception The milliseconds_timeout_interval parameter is less than -1.
       static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, std::any state, uint32 milliseconds_timeout_interval, bool execute_only_once);
@@ -219,13 +219,13 @@ namespace xtd {
       /// @brief Sets the number of requests to the thread pool that can be active concurrently. All requests above that number remain queued until thread pool threads become available.
       /// @param worker_threads The maximum number of worker threads in the thread pool.
       /// @param completion_port_threads The maximum number of asynchronous I/O threads in the thread pool.
-      /// @return `true` if the change is successful; otherwise, false.
+      /// @return `true` if the change is successful; otherwise, `false`.
       static bool set_max_threads(size_t worker_threads, size_t completion_port_threads);
       
       /// @brief Sets the number of idle threads the thread pool maintains in anticipation of new requests.
       /// @param worker_threads The new minimum number of idle worker threads to be maintained by the thread pool.
       /// @param completion_port_threads The new minimum number of idle asynchronous I/O threads to be maintained by the thread pool.
-      /// @return `true` if the change is successful; otherwise, false.
+      /// @return `true` if the change is successful; otherwise, `false`.
       static bool set_min_threads(size_t worker_threads, size_t completion_port_threads);
       /// @}
 

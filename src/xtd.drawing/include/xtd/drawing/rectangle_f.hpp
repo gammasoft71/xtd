@@ -85,7 +85,7 @@ namespace xtd {
       void height(float height) noexcept;
       
       /// @brief Tests whether all numeric properties of this xtd::drawing::rectangle_f have values of zero.
-      /// @return This property returns true if the xtd::drawing::rectangle_f::width, xtd::drawing::rectangle_f::height, xtd::drawing::rectangle_f::x, and xtd::drawing::rectangle_f::y properties of this xtd::drawing::rectangle_f all have values of zero; otherwise, false.
+      /// @return This property returns true if the xtd::drawing::rectangle_f::width, xtd::drawing::rectangle_f::height, xtd::drawing::rectangle_f::x, and xtd::drawing::rectangle_f::y properties of this xtd::drawing::rectangle_f all have values of zero; otherwise, `false`.
       bool is_empty() const noexcept;
       
       /// @brief Gets the x-coordinate of the left edge of this xtd::drawing::rectangle_f structure.

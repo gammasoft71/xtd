@@ -99,7 +99,7 @@ namespace xtd {
       /// @param icon One of the message_box_icon values that specifies which icon to display in the message box.
       /// @param default_button One of the message_box_default_button values that specifies the default button for the message box.
       /// @param options One of the message_box_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
-      /// @param display_help_button true to show the Help button; otherwise, false. The default is false.
+      /// @param display_help_button true to show the Help button; otherwise, `false`. The default is `false`.
       /// @return One of the xtd::forms::dialog_result values.
       static dialog_result show(const iwin32_window& owner, const xtd::string& text, const xtd::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button);
       
@@ -152,7 +152,7 @@ namespace xtd {
       /// @param icon One of the message_box_icon values that specifies which icon to display in the message box.
       /// @param default_button One of the message_box_default_button values that specifies the default button for the message box.
       /// @param options One of the message_box_options values that specifies which display and association options will be used for the message box. You may pass in 0 if you wish to use the defaults.
-      /// @param display_help_button true to show the Help button; otherwise, false. The default is false.
+      /// @param display_help_button true to show the Help button; otherwise, `false`. The default is `false`.
       /// @return One of the xtd::forms::dialog_result values.
       static dialog_result show(const xtd::string& text, const xtd::string& caption, message_box_buttons buttons, message_box_icon icon, message_box_default_button default_button, message_box_options options, bool display_help_button);
       /// @}

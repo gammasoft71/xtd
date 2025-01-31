@@ -19,7 +19,7 @@
 /// @warning Internal use only
 constexpr int32_t PROCESS_WINDOW_STYLE_NORMAL = 0;
 
-/// @brief The hidden window style. A window can be either visible or hidden. The system displays a hidden window by not drawing it. If a window is hidden, it is effectively disabled. A hidden window can process messages from the system or from other windows, but it cannot process input from the user or display output. Frequently, an application may keep a new window hidden while it customizes the window's appearance, and then make the window style Normal. To use process_window_style.Hidden, the ProcessStartInfo.UseShellExecute property must be false.
+/// @brief The hidden window style. A window can be either visible or hidden. The system displays a hidden window by not drawing it. If a window is hidden, it is effectively disabled. A hidden window can process messages from the system or from other windows, but it cannot process input from the user or display output. Frequently, an application may keep a new window hidden while it customizes the window's appearance, and then make the window style Normal. To use process_window_style.Hidden, the ProcessStartInfo.UseShellExecute property must be `false`.
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native pws

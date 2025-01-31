@@ -35,7 +35,7 @@ namespace xtd {
   /// | uint64   | xtd::bit_converter::get_bytes(uint64)                                     | xtd::bit_converter::to_uint64(const std::vector< xtd::byte >&, size_t)                                    |
   /// If you use bit_converter methods to round-trip data, make sure that the xtd::bit_converter::get_bytes overload and the to_<type> method specify the same type. As the following example illustrates, restoring an std::vector that represents a signed integer by calling the xtd::bit_converter::to_uint32 method can result in a value that is different from the original.
   /// @include bit_converter_round_trips.cpp
-  /// The order of bytes in the std::vector returned by the xtd::bit_converter::get_bytes method overloads (as well as the order of bits in the integer returned by the xtd::bit_converter:double_to_int64_bits method and the order of hexadecimal strings returned by the to_string(xtd::byte[]) method) depends on whether the computer architecture is little-endian or big-endian. Similarly, the order of bytes in the std::vector and returned by the ToIntegerValue methods and the to_char method depends on whether the computer architecture is little-endian or big-endian. The endianness of an architecture is indicated by the is_little_endian property, which returns true on little-endian systems and false on big-endian systems. On little-endian systems, lower-order bytes precede higher-order bytes. On big-endian system, higher-order bytes precede lower-order bytes. The following table illustrates the difference in the xtd::byte std::vectors that result from passing the integer 1,234,567,890 (0x499602D2) to the get_bytes(int32) method. The bytes are listed in order from the xtd::byte at index 0 to the xtd::byte at index 3.
+  /// The order of bytes in the std::vector returned by the xtd::bit_converter::get_bytes method overloads (as well as the order of bits in the integer returned by the xtd::bit_converter:double_to_int64_bits method and the order of hexadecimal strings returned by the to_string(xtd::byte[]) method) depends on whether the computer architecture is little-endian or big-endian. Similarly, the order of bytes in the std::vector and returned by the ToIntegerValue methods and the to_char method depends on whether the computer architecture is little-endian or big-endian. The endianness of an architecture is indicated by the is_little_endian property, which returns true on little-endian systems and `false` on big-endian systems. On little-endian systems, lower-order bytes precede higher-order bytes. On big-endian system, higher-order bytes precede lower-order bytes. The following table illustrates the difference in the xtd::byte std::vectors that result from passing the integer 1,234,567,890 (0x499602D2) to the get_bytes(int32) method. The bytes are listed in order from the xtd::byte at index 0 to the xtd::byte at index 3.
   /// |               |             |
   /// | ------------- | ----------- |
   /// | Little-endian | D2-02-96-49 |
@@ -67,14 +67,14 @@ namespace xtd {
     
     /// @{
     /// @brief Indicates the xtd::byte order ("endianness") in which data is stored in this computer architecture.
-    /// @return Returns true if the architecture is big-endian; false if it is little-endian.
+    /// @return Returns `true` if the architecture is big-endian; `false` if it is little-endian.
     /// @remarks Different computer architectures store data using different xtd::byte orders. "Big-endian" means the most significant xtd::byte is on the left end of a word. "Little-endian" means the most significant xtd::byte is on the right end of a word.
     /// @par Examples
     /// The following code example illustrates the use of the is_big_endian field.
     /// @include bit_converter_is_big_endian.cpp
     static constexpr bool is_big_endian = __endian_query__ == 0x01u;
     /// @brief Indicates the xtd::byte order ("endianness") in which data is stored in this computer architecture.
-    /// @return Returns true if the architecture is little-endian; false if it is big-endian.
+    /// @return Returns `true` if the architecture is little-endian; `false` if it is big-endian.
     /// @remarks Different computer architectures store data using different xtd::byte orders. "Big-endian" means the most significant xtd::byte is on the left end of a word. "Little-endian" means the most significant xtd::byte is on the right end of a word.
     /// @par Examples
     /// The following code example illustrates the use of the is_little_endian field.
@@ -241,7 +241,7 @@ namespace xtd {
     /// @brief Returns a Boolean value converted from one xtd::byte at a specified position in a xtd::byte std::vector.
     /// @param value An std::vector of bytes.
     /// @param start_index The starting position within value.
-    /// @return bool true if the xtd::byte at start_index in value is nonzero; otherwise, false.
+    /// @return bool true if the xtd::byte at start_index in value is nonzero; otherwise, `false`.
     /// @exception argument_null_exception value is null
     /// @exception argument_out_of_range_exception start_index is less than zero or greater than the length of value minus 1.
     /// @par Examples

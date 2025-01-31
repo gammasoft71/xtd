@@ -62,7 +62,7 @@ namespace xtd {
     /// @{
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
-    /// @return `true` if the specified object is equal to the current object. otherwise, false.
+    /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
     /// @par Examples
     /// The following code example compares the current instance with another object.
     /// @include object_equals.cpp
@@ -116,7 +116,7 @@ namespace xtd {
     /// @brief Determines whether the specified object instances are considered equal.
     /// @param object_a The first object to compare.
     /// @param object_b The second object to compare.
-    /// @return `true` if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false.
+    /// @return `true` if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, `false`.
     /// @par Examples
     /// The following code example compares different objects.
     /// @include object_equals2.cpp
@@ -130,7 +130,7 @@ namespace xtd {
     /// @brief Determines whether the specified object instances are the same instance.
     /// @param object_a The first object to compare.
     /// @param object_b The second object to compare.
-    /// @return `true` if object_a is the same instance as object_b or if both are null references; otherwise, false.
+    /// @return `true` if object_a is the same instance as object_b or if both are null references; otherwise, `false`.
     /// @par Examples
     /// The following code example uses xtd::object::reference_equals to determine if two objects are the same instance.
     /// @include object_reference_equals.cpp

@@ -98,7 +98,7 @@ namespace xtd {
       xtd::string directory_name() const;
       
       /// @brief Gets a value indicating whether a file exists.
-      /// @return `true` if the file exists; false if the file does not exist or if the file is a directory.
+      /// @return `true` if the file exists; `false` if the file does not exist or if the file is a directory.
       /// @par Examples
       /// The following code example uses the xtd::io::file_info::exists property ensure a file exists before opening it. You can use this technique to throw a custom exception when the file is not found.
       /// ```cpp
@@ -129,15 +129,15 @@ namespace xtd {
       /// }
       /// ```
       /// @remarks When first called, xtd::io::file_info calls xtd::io::file_info::refresh and caches information about the file. On subsequent calls, you must call xtd::io::file_info::refresh to get the latest copy of the information.
-      /// @remarks The xtd::io::file_info::exists property returns false if any error occurs while trying to determine if the specified file exists. This can occur in situations that raise exceptions such as passing a file name with invalid characters or too many characters, a failing or missing disk, or if the caller does not have permission to read the file.
+      /// @remarks The xtd::io::file_info::exists property returns `false` if any error occurs while trying to determine if the specified file exists. This can occur in situations that raise exceptions such as passing a file name with invalid characters or too many characters, a failing or missing disk, or if the caller does not have permission to read the file.
       bool exists() const override;
       
       /// @brief Gets a value that determines if the current file is read only.
-      /// @return `true` if the current file is read only; otherwise, false.
+      /// @return `true` if the current file is read only; otherwise, `false`.
       /// @exception xtd::io::file_not_found_exception The file described by the current xtd::io::file_info object could not be found.
       /// @exception xtd::io::io_exception An I/O error occurred while opening the file.
       /// @exception xtd::unauthorized_access_exception This operation is not supported on the current platform.<br>-or-<br>The caller does not have the required permission.
-      /// @exception xtd::argument_exception The user does not have write permission, but attempted to set this property to false.
+      /// @exception xtd::argument_exception The user does not have write permission, but attempted to set this property to `false`.
       /// @par Examples
       /// The following example uses the xtd::io::file_info::is_read_only property to mark a file as read only and then mark it as read-write.
       /// ```cpp
@@ -202,11 +202,11 @@ namespace xtd {
       /// @remarks When first called, file_info calls xtd::io::file_info::refresh and caches information about the file. On subsequent calls, you must call xtd::io::file_info::refresh to get the latest copy of the information.
       bool is_read_only() const;
       /// @brief Sets a value that determines if the current file is read only.
-      /// @param value true if the current file is read only; otherwise, false.
+      /// @param value true if the current file is read only; otherwise, `false`.
       /// @exception xtd::io::file_not_found_exception The file described by the current xtd::io::file_info object could not be found.
       /// @exception xtd::io::io_exception An I/O error occurred while opening the file.
       /// @exception xtd::unauthorized_access_exception This operation is not supported on the current platform.<br>-or-<br>The caller does not have the required permission.
-      /// @exception xtd::argument_exception The user does not have write permission, but attempted to set this property to false.
+      /// @exception xtd::argument_exception The user does not have write permission, but attempted to set this property to `false`.
       /// @par Examples
       /// The following example uses the xtd::io::file_info::is_read_only property to mark a file as read only and then mark it as read-write.
       /// ```cpp
@@ -410,7 +410,7 @@ namespace xtd {
       /// @param desy_file_name The name of the new file to copy to.
       /// @return A new file with a fully qualified path.
       /// @exception xtd::argument_exception dest_file_name is empty, contains only white spaces, or contains invalid characters.
-      /// @exception xtd::io_io_exception An error occurs, or the destination file already exists and overwrite is false.
+      /// @exception xtd::io_io_exception An error occurs, or the destination file already exists and overwrite is `false`.
       /// @exception xtd::security::security_exception The caller does not have the required permission.
       /// @exception xtd::io::directory_not_found_exception The directory specified in dest_file_name does not exist.
       /// @exception xtd::unauthorized_access_exceptionA directory path is passed in, or the file is being moved to a different drive.
@@ -517,10 +517,10 @@ namespace xtd {
       xtd::io::file_info copy_to(const xtd::string& dest_file_name) const;
       /// @brief Copies an existing file to a new file, allowing the overwriting of an existing file.
       /// @param dest_file_name The name of the new file to copy to.
-      /// @param overwrite true to allow an existing file to be overwritten; otherwise, false.
-      /// @return A new file, or an overwrite of an existing file if overwrite is true. If the file exists and overwrite is false, an xtd::io::ioo_exception is thrown.
+      /// @param overwrite true to allow an existing file to be overwritten; otherwise, `false`.
+      /// @return A new file, or an overwrite of an existing file if overwrite is true. If the file exists and overwrite is `false`, an xtd::io::ioo_exception is thrown.
       /// @exception xtd::argument_exception dest_file_name is empty, contains only white spaces, or contains invalid characters.
-      /// @exception xtd::io_io_exception An error occurs, or the destination file already exists and overwrite is false.
+      /// @exception xtd::io_io_exception An error occurs, or the destination file already exists and overwrite is `false`.
       /// @exception xtd::security::security_exception The caller does not have the required permission.
       /// @exception xtd::io::directory_not_found_exception The directory specified in dest_file_name does not exist.
       /// @exception xtd::unauthorized_access_exceptionA directory path is passed in, or the file is being moved to a different drive.
@@ -689,7 +689,7 @@ namespace xtd {
       
       /// @brief Moves a specified file to a new location, providing the options to specify a new file name and to overwrite the destination file if it already exists.
       /// @param dest_file_name The path to move the file to, which can specify a different file name.
-      /// @param overwrite true to overwrite the destination file if it already exists; false otherwise.
+      /// @param overwrite `true` to overwrite the destination file if it already exists; `false` otherwise.
       /// @exception xtd::io::io_exception An I/O error occurred, such as the destination device is not ready.
       /// @exception xtd::argument_exception dest_file_name is empty, contains only white spaces, or contains invalid characters.
       /// @exception xtd::security::security_exception The caller does not have the required permission.

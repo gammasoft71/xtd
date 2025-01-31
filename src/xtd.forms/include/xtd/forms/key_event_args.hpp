@@ -43,23 +43,23 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the ALT key was pressed.
-      /// @return `true` if the ALT key was pressed; otherwise, false.
+      /// @return `true` if the ALT key was pressed; otherwise, `false`.
       bool alt() const noexcept {return (key_data_ & xtd::forms::keys::alt) == keys::alt;}
       
       /// @brief Gets a value indicating whether the CMD key was pressed.
-      /// @return `true` if the CMD key was pressed; otherwise, false.
+      /// @return `true` if the CMD key was pressed; otherwise, `false`.
       bool command() const noexcept {return (key_data_ & xtd::forms::keys::command) == keys::command;}
       
       /// @brief Gets a value indicating whether the CTRL key was pressed.
-      /// @return `true` if the CTRL key was pressed; otherwise, false.
+      /// @return `true` if the CTRL key was pressed; otherwise, `false`.
       bool control() const noexcept {return (key_data_ & xtd::forms::keys::control) == keys::control;}
       
       /// @brief Gets a value indicating whether the event was handled.
-      /// @return `true` to bypass the control's default handling; otherwise, false to also pass the event along to the default control handler.
+      /// @return `true` to bypass the control's default handling; otherwise, `false` to also pass the event along to the default control handler.
       /// @remarks handled is implemented differently by different controls within xtd.forms. For controls like text_box which subclass native Win32 controls, it is interpreted to mean that the key message should not be passed to the underlying native control. If you set handled to true on a text_box, that control will not pass the key press events to the underlying Win32 text box control, but it will still display the characters that the user typed.
       bool handled() const noexcept {return handled_;}
       /// @brief Sets a value indicating whether the event was handled.
-      /// @param handled true to bypass the control's default handling; otherwise, false to also pass the event along to the default control handler.
+      /// @param handled true to bypass the control's default handling; otherwise, `false` to also pass the event along to the default control handler.
       /// @remarks handled is implemented differently by different controls within xtd.forms. For controls like text_box which subclass native Win32 controls, it is interpreted to mean that the key message should not be passed to the underlying native control. If you set handled to true on a text_box, that control will not pass the key press events to the underlying Win32 text box control, but it will still display the characters that the user typed.
       void handled(bool handled) {handled_ = handled;}
       
@@ -81,16 +81,16 @@ namespace xtd {
       keys modifiers() const noexcept {return key_data_ & xtd::forms::keys::modifiers;}
       
       /// @brief Gets a value indicating whether the SHIFT key was pressed.
-      /// @return `true` if the SHIFT key was pressed; otherwise, false.
+      /// @return `true` if the SHIFT key was pressed; otherwise, `false`.
       bool shift() const noexcept {return (key_data_ & xtd::forms::keys::shift) == keys::shift;}
       
       /// @brief Gets a value indicating whether the key event should be passed on to the underlying control.
-      /// @return `true` if the key event should not be sent to the control; otherwise, false.
+      /// @return `true` if the key event should not be sent to the control; otherwise, `false`.
       /// @remarks You can assign true to this property in an event handler such as xtd::forms::control::key_down in order to prevent user input.
       /// @remarks Setting suppress_key_press to true also sets handled to true.
       bool suppress_key_press() const noexcept {return suppress_key_press_;}
       /// @brief Sets a value indicating whether the key event should be passed on to the underlying control.
-      /// @param suppress_key_press true if the key event should not be sent to the control; otherwise, false.
+      /// @param suppress_key_press true if the key event should not be sent to the control; otherwise, `false`.
       /// @remarks You can assign true to this property in an event handler such as xtd::forms::control::key_down in order to prevent user input.
       /// @remarks Setting suppress_key_press to true also sets handled to true.
       void suppress_key_press(bool suppress_key_press) {

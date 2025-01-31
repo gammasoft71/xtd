@@ -35,7 +35,7 @@ namespace xtd {
       none = 0,
       /// @brief If true, the control is a container-like control.
       container_control = 0b1,
-      /// @brief If true, the control paints itself rather than the operating system doing so. If false, the xtd::forms::control::paint event is not raised. This style only applies to classes derived from control.
+      /// @brief If true, the control paints itself rather than the operating system doing so. If `false`, the xtd::forms::control::paint event is not raised. This style only applies to classes derived from control.
       user_paint = 0b10,
       /// @brief If true, the control is drawn opaque and the background is not painted.
       opaque = 0b100,
@@ -57,9 +57,9 @@ namespace xtd {
       standard_double_click = 0b1000000000000,
       /// @brief If true, the control ignores the window message WM_ERASEBKGND to reduce flicker. This style should only be applied if the user_paint bit is set to true.
       all_painting_in_wm_paint = 0b10000000000000,
-      /// @brief If true, the control keeps a copy of the text rather than getting it from the handle each time it is needed. This style defaults to false. This behavior improves performance, but makes it difficult to keep the text synchronized.
+      /// @brief If true, the control keeps a copy of the text rather than getting it from the handle each time it is needed. This style defaults to `false`. This behavior improves performance, but makes it difficult to keep the text synchronized.
       cache_text = 0b100000000000000,
-      /// @brief If true, the on_notify_message(message&) method is called for every message sent to the control's wnd_proc(message&). This style defaults to false. enable_notify_message does not work in partial trust.
+      /// @brief If true, the on_notify_message(message&) method is called for every message sent to the control's wnd_proc(message&). This style defaults to `false`. enable_notify_message does not work in partial trust.
       enable_notify_message = 0b1000000000000000,
       /// @brief If true, drawing is performed in a buffer, and after it completes, the result is output to the screen. Double-buffering prevents flicker caused by the redrawing of the control. If you set double_buffer to true, you should also set user_paint and all_painting_in_wm_paint to true.
       double_buffer = 0b10000000000000000,

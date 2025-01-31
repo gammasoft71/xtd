@@ -77,19 +77,19 @@ namespace xtd {
       control_layout_style& size_type(xtd::forms::size_type size_type);
       
       /// @brief Gets a flag indicating if control is expanded to its containing layout container.
-      /// @return `true` if control expanded; otherwise `false`. The default is false.
+      /// @return `true` if control expanded; otherwise `false`. The default is `false`.
       bool expanded() const noexcept;
       /// @brief Sets a flag indicating if control is expanded to its containing layout container.
-      /// @param expanded true if control expanded; otherwise `false`. The default is false.
+      /// @param expanded true if control expanded; otherwise `false`. The default is `false`.
       control_layout_style& expanded(bool expanded);
       
       /// @brief Gets a flag indicating how a control should be align to its containing layout container.
       /// @return align One of the content_alignment values. The default is top_left.
-      /// @remarks This property work only if expanded = false.
+      /// @remarks This property work only if expanded = `false`.
       xtd::forms::content_alignment align() const noexcept;
       /// @brief Sets a flag indicating how a control should be align to its containing layout container.
       /// @param align One of the content_alignment values. The default is top_left.
-      /// @remarks This property work only if expanded = false.
+      /// @remarks This property work only if expanded = `false`.
       control_layout_style& align(xtd::forms::content_alignment align);
       /// @}
       

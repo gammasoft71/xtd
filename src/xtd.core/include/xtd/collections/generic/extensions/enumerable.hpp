@@ -108,7 +108,7 @@ namespace xtd {
 
           /// @brief Determines whether all elements of a sequence satisfy a condition.
           /// @param predicate A function to test each element for a condition.
-          /// @return `true` if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
+          /// @return `true` if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, `false`.
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is true if all the pet names start with "B" or if the pets array is empty.
           /// @include enumerable_all.cpp
@@ -117,7 +117,7 @@ namespace xtd {
           }
           
           /// @brief Determines whether a sequence contains any elements.
-          /// @return `true` if the source sequence contains any elements; otherwise, false.
+          /// @return `true` if the source sequence contains any elements; otherwise, `false`.
           /// @par Examples
           /// The following code example demonstrates how to use Any to determine whether a sequence contains any elements.
           /// @include enumerable_any.cpp
@@ -126,7 +126,7 @@ namespace xtd {
           }
           /// @brief Determines whether any element of a sequence satisfies a condition.
           /// @param predicate A function to test each element for a condition.
-          /// @return `true` if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, false.
+          /// @return `true` if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, `false`.
           /// @par Examples
           /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is true if all the pet names start with "B" or if the pets array is empty.
           /// @include enumerable_any.cpp
@@ -187,7 +187,7 @@ namespace xtd {
 
           /// @brief Determines whether a sequence contains a specified element by using the default equality comparer.
           /// @param value The value to locate in the sequence.
-          /// @return `true` if the source sequence contains an element that has the specified value; otherwise, false.
+          /// @return `true` if the source sequence contains an element that has the specified value; otherwise, `false`.
           bool contains(const source_t& value) const noexcept {
             return xtd::linq::enumerable::contains(base(), value);
           }
@@ -195,7 +195,7 @@ namespace xtd {
           /// @brief Determines whether a sequence contains a specified element by using a specified equality comparer.
           /// @param value The value to locate in the sequence.
           /// @param comparer An equality comparer to compare values.
-          /// @return `true` if the source sequence contains an element that has the specified value; otherwise, false.
+          /// @return `true` if the source sequence contains an element that has the specified value; otherwise, `false`.
           bool contains(const source_t& value, const xtd::collections::generic::iequality_comparer<source_t>& comparer) const noexcept {
             return xtd::linq::enumerable::contains(base(), value, comparer);
           }

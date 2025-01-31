@@ -83,8 +83,8 @@ namespace xtd {
       void indent_size(uint32 indent_size) noexcept;
       
       /// @brief Gets a value indicating whether the trace listener is thread safe.
-      /// @return bool true if the trace listener is thread safe; otherwise, false. The default is false.
-      /// @remarks The value of IsThreadSafe is used to determine whether to use a global lock when writing to the listener. If the value of IsThreadSafe is false, the global lock is used regardless of the value of UseGlobalLock. The global lock is not used only if the value of IsThreadSafe is true and the value of UseGlobalLock is false. The default behavior is to use the global lock whenever writing to the listener.
+      /// @return bool true if the trace listener is thread safe; otherwise, `false`. The default is `false`.
+      /// @remarks The value of IsThreadSafe is used to determine whether to use a global lock when writing to the listener. If the value of IsThreadSafe is `false`, the global lock is used regardless of the value of UseGlobalLock. The global lock is not used only if the value of IsThreadSafe is true and the value of UseGlobalLock is `false`. The default behavior is to use the global lock whenever writing to the listener.
       virtual bool is_thread_safe() const noexcept;
       
       /// @brief Gets or sets a name for this TraceListener.
@@ -318,22 +318,22 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether to indent the output.
-      /// @return `true` if the output should be indented; otherwise, false.
+      /// @return `true` if the output should be indented; otherwise, `false`.
       bool need_indent() const noexcept;
       /// @brief Sets a value indicating whether to indent the output.
-      /// @param need_indent true if the output should be indented; otherwise, false.
+      /// @param need_indent true if the output should be indented; otherwise, `false`.
       void need_indent(bool need_indent) noexcept;
       
       /// @brief Sets a value indicating whether the trace listener is thread safe.
-      /// @param thread_safe true if the trace listener is thread safe; otherwise, false. The default is false.
+      /// @param thread_safe true if the trace listener is thread safe; otherwise, `false`. The default is `false`.
       void thread_safe(bool thread_safe) noexcept;
       /// @}
       
       /// @name Protected Methods
       
       /// @{
-      /// @brief Writes the indent to the listener you create when you implement this class, and resets the NeedIndent property to false.
-      /// @remarks This method writes the indent and resets the NeedIndent property to false. Call this method if NeedIndent is true when you are overriding the Write and WriteLine methods. By default, this method uses blank spaces for indentation. The size of the indent is determined by the values of the IndentSize and IndentLevel properties. The IndentLevel property represents the number of times the indent of the size specified by the IndentSize property is applied. This method is called by the DefaultTraceListener and TextWriterTraceListener classes.
+      /// @brief Writes the indent to the listener you create when you implement this class, and resets the NeedIndent property to `false`.
+      /// @remarks This method writes the indent and resets the NeedIndent property to `false`. Call this method if NeedIndent is true when you are overriding the Write and WriteLine methods. By default, this method uses blank spaces for indentation. The size of the indent is determined by the values of the IndentSize and IndentLevel properties. The IndentLevel property represents the number of times the indent of the size specified by the IndentSize property is applied. This method is called by the DefaultTraceListener and TextWriterTraceListener classes.
       virtual void write_indent() {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         need_indent_ = false;

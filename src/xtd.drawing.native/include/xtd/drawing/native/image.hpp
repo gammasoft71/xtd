@@ -313,7 +313,7 @@ namespace xtd {
         /// @brief Creates an image from specified filename and get the frame_solution collection.
         /// @param filename The filename of the image.
         /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
-        /// @param use_icm true to use color correction for this Bitmap; otherwise, false.
+        /// @param use_icm true to use color correction for this Bitmap; otherwise, `false`.
         /// @return A new image handle.
         /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
         /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
@@ -331,7 +331,7 @@ namespace xtd {
         static intptr create(std::istream& stream, std::map<size_t, size_t>& frame_resolutions);
         /// @brief Creates an image from specified std::istream and get the frame_solution collection.
         /// @param stream The std::istream containing the image.
-        /// @param use_icm true to use color correction for this Bitmap; otherwise, false.
+        /// @param use_icm true to use color correction for this Bitmap; otherwise, `false`.
         /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
         /// @return A new image handle.
         /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.

@@ -75,7 +75,7 @@ namespace xtd {
       static bool buffer_width(int32_t width);
       
       /// @brief Gets a value indicating whether the CAPS LOCK keyboard toggle is turned on or turned off.
-      /// @return `true` if CAPS LOCK is turned on; false if CAPS LOCK is turned off.
+      /// @return `true` if CAPS LOCK is turned on; `false` if CAPS LOCK is turned off.
       /// @warning Internal use only
       static bool caps_lock();
       
@@ -105,11 +105,11 @@ namespace xtd {
       static int32_t cursor_top();
       
       /// @brief Gets a value indicating whether the cursor is visible.
-      /// @return  true if the cursor is visible; otherwise, false.
+      /// @return `true` if the cursor is visible; otherwise, `false`.
       /// @warning Internal use only
       static bool cursor_visible();
       /// @brief Sets a value indicating whether the cursor is visible.
-      /// @param visible true if the cursor is visible; otherwise, false.
+      /// @param visible true if the cursor is visible; otherwise, `false`.
       /// @return `true` if successfull; otherwise `false`.
       /// @warning Internal use only
       static bool cursor_visible(bool visible);
@@ -140,7 +140,7 @@ namespace xtd {
       static bool input_code_page(int32_t codePage);
       
       /// @brief Gets a value indicating whether a key press is available in the input stream.
-      /// @param true if a key press is available; otherwise, false
+      /// @return `true` if a key press is available; otherwise, `false`
       /// @warning Internal use only
       static bool key_available();
       
@@ -154,7 +154,7 @@ namespace xtd {
       static int32_t largest_window_width();
       
       /// @brief Gets a value indicating whether the NUM LOCK keyboard toggle is turned on or turned off.
-      /// @param true if NUM LOCK is turned on; false if NUM LOCK is turned off.
+      /// @return `true` if NUM LOCK is turned on; `false` if NUM LOCK is turned off.
       /// @warning Internal use only
       static bool number_lock();
       
@@ -181,7 +181,7 @@ namespace xtd {
       /// @brief Register the user cancel callback.
       /// @param user_cancel_callback The user cancel callback method to register.
       /// @remarks This callback is call when when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).
-      /// @remarks By default, the return of callback is false, which causes program execution to terminate when the event handler exits. Changing its return to true specifies that the application should continue to execute.
+      /// @remarks By default, the return of callback is `false`, which causes program execution to terminate when the event handler exits. Changing its return to true specifies that the application should continue to execute.
       /// @warning Internal use only
       static void register_user_cancel_callback(std::function<bool(int32_t)> user_cancel_callback);
       
@@ -209,11 +209,11 @@ namespace xtd {
       static bool title(const std::string& title);
       
       /// @brief Gets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.
-      /// @return `true` if Ctrl+C is treated as ordinary input; otherwise, false.
+      /// @return `true` if Ctrl+C is treated as ordinary input; otherwise, `false`.
       /// @warning Internal use only
       static bool treat_control_c_as_input();
       /// @brief Sets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.
-      /// @param treat_control_c_as_input true if Ctrl+C is treated as ordinary input; otherwise, false.
+      /// @param treat_control_c_as_input true if Ctrl+C is treated as ordinary input; otherwise, `false`.
       /// @return `true` if successfull; otherwise `false`.
       /// @warning Internal use only
       static bool treat_control_c_as_input(bool treat_control_c_as_input);

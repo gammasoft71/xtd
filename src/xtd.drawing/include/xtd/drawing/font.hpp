@@ -174,7 +174,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value that indicates whether this xtd::drawing::font is bold.
-      /// @return `true` if this xtd::drawing::font is bold; otherwise, false.
+      /// @return `true` if this xtd::drawing::font is bold; otherwise, `false`.
       bool bold() const noexcept;
       
       /// @brief Gets the xtd::drawing::font_family associated with this xtd::drawing::font.
@@ -210,7 +210,7 @@ namespace xtd {
       xtd::byte gdi_char_set() const noexcept;
       
       /// @brief Gets a Boolean value that indicates whether this xtd::drawing::font is derived from a GDI vertical font.
-      /// @return `true` if this xtd::drawing::font is derived from a GDI vertical font; otherwise, false.
+      /// @return `true` if this xtd::drawing::font is derived from a GDI vertical font; otherwise, `false`.
       /// @remarks Use this property to determine if a font is compatible with native Win32 controls on non-Unicode platforms.
       /// @remarks gdi_vertical_font only returns true if this font was created from a classic GDI font definition, like a LOGFONT or HFONT.
       bool gdi_vertical_font() const noexcept;
@@ -228,12 +228,12 @@ namespace xtd {
       int32 height() const noexcept;
       
       /// @brief Gets a value indicating whether the font is a member of xtd::drawing::system_fonts.
-      /// @return `true` if the font is a member of xtd::drawing::system_fonts; otherwise, false. The default is false.
+      /// @return `true` if the font is a member of xtd::drawing::system_fonts; otherwise, `false`. The default is `false`.
       /// @remarks When the user changes the system font, the is_system_font property could return true, even if the font is not actually a system font.
       bool is_system_font() const noexcept;
       
       /// @brief Gets a value that indicates whether this xtd::drawing::font is italic.
-      /// @return `true` if this xtd::drawing::font is italic; otherwise, false.
+      /// @return `true` if this xtd::drawing::font is italic; otherwise, `false`.
       bool italic() const noexcept;
       
       /// @brief Gets the face name of this xtd::drawing::font.
@@ -253,7 +253,7 @@ namespace xtd {
       float size_in_points() const noexcept;
       
       /// @brief Gets a value that indicates whether this xtd::drawing::font is strikeout.
-      /// @return `true` if this xtd::drawing::font is strikeout; otherwise, false.
+      /// @return `true` if this xtd::drawing::font is strikeout; otherwise, `false`.
       bool strikeout() const noexcept;
       
       /// @brief Gets style information for this xtd::drawing::font.
@@ -261,7 +261,7 @@ namespace xtd {
       font_style style() const noexcept;
       
       /// @brief Gets a value that indicates whether this xtd::drawing::font is underline.
-      /// @return `true` if this xtd::drawing::font is underline; otherwise, false.
+      /// @return `true` if this xtd::drawing::font is underline; otherwise, `false`.
       bool underline() const noexcept;
       
       /// @brief Gets the unit of measure for this xtd::drawing::font.

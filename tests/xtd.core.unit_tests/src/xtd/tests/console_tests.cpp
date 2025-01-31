@@ -73,7 +73,7 @@ namespace xtd::tests {
     }
     
     void test_method_(caps_lock) {
-      // Remarks if caps lock is set on by user, the following test will be false.
+      // Remarks if caps lock is set on by user, the following test will be `false`.
       assert::is_false(console::caps_lock());
     }
     
@@ -192,7 +192,7 @@ namespace xtd::tests {
     }
     
     void test_method_(number_lock) {
-      // Remarks if number lock is set off by user, the following test will be false.
+      // Remarks if number lock is set off by user, the following test will be `false`.
       // assert::is_true(console::number_lock());
     }
     

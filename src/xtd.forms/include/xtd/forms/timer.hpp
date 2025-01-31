@@ -43,7 +43,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the timer class.
-      /// @remarks When a new timer is created, it is disabled; that is, enabled is set to false. To enable the timer, call the start method or set enabled to true.
+      /// @remarks When a new timer is created, it is disabled; that is, enabled is set to `false`. To enable the timer, call the start method or set enabled to true.
       /// @remarks If the timer is disabled and the timer is out of scope, the timer will be destroyed.
       timer();
       /// @}
@@ -58,12 +58,12 @@ namespace xtd {
       
       /// @{
       /// @brief Gets whether the timer is running.
-      /// @return `true` if the timer is currently enabled; otherwise, false. The default is false.
-      /// @remarks Calling the start method is the same as setting enabled to true. Likewise, calling the stop method is the same as setting enabled to false.
+      /// @return `true` if the timer is currently enabled; otherwise, `false`. The default is `false`.
+      /// @remarks Calling the start method is the same as setting enabled to true. Likewise, calling the stop method is the same as setting enabled to `false`.
       virtual bool enabled() const noexcept;
       /// @brief Sets whether the timer is running.
-      /// @param enabled true if the timer is currently enabled; otherwise, false. The default is false.
-      /// @remarks Calling the start method is the same as setting enabled to true. Likewise, calling the stop method is the same as setting enabled to false.
+      /// @param enabled true if the timer is currently enabled; otherwise, `false`. The default is `false`.
+      /// @remarks Calling the start method is the same as setting enabled to true. Likewise, calling the stop method is the same as setting enabled to `false`.
       virtual timer& enabled(bool enabled);
       
       /// @brief Gets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
@@ -87,7 +87,7 @@ namespace xtd {
       
       /// @{
       /// @brief Stops the timer.
-      /// @remarks You can also stop the timer by setting the enabled property to false.
+      /// @remarks You can also stop the timer by setting the enabled property to `false`.
       void start();
       
       /// @brief Starts the timer.
@@ -107,7 +107,7 @@ namespace xtd {
       static timer create(const time_span& interval);
       /// @brief A factory to create an xtd::forms::timer with specified interval, and enable values.
       /// @param interval An xtd::time_span specifying the interval before the tick event is raised relative to the last occurrence of the tick event. The value must be greater than zero.
-      /// @param enabled true if the timer is currently enabled; otherwise, false. The default is false.
+      /// @param enabled true if the timer is currently enabled; otherwise, `false`. The default is `false`.
       /// @return New xtd::forms::timer created.
       static timer create(const time_span& interval, bool enable);
       /// @brief A factory to create an xtd::forms::timer with specified interval.
@@ -116,7 +116,7 @@ namespace xtd {
       static timer create(int interval_milliseconds);
       /// @brief A factory to create an xtd::forms::timer with specified interval, and enable values.
       /// @param interval_milliseconds An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
-      /// @param enabled true if the timer is currently enabled; otherwise, false. The default is false.
+      /// @param enabled true if the timer is currently enabled; otherwise, `false`. The default is `false`.
       /// @return New xtd::forms::timer created.
       static timer create(int interval_milliseconds, bool enable);
       /// @}

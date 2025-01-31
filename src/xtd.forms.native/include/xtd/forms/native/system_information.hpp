@@ -92,10 +92,10 @@ namespace xtd {
         /// @warning Internal use only
         static xtd::drawing::size cursor_size();
         /// @brief Gets a value indicating whether the operating system is capable of handling double-byte character set (DBCS) characters.
-        /// @return `true` if the operating system supports DBCS; otherwise, false.
+        /// @return `true` if the operating system supports DBCS; otherwise, `false`.
         static bool dbcs_enabled();
         /// @brief Gets a value indicating whether the debug version of USER.EXE is installed.
-        /// @return `true` if the debugging version of USER.EXE is installed; otherwise, false.
+        /// @return `true` if the debugging version of USER.EXE is installed; otherwise, `false`.
         /// @warning Internal use only
         static bool debug_os();
         /// @brief Gets the dimensions, in pixels, of the area within which the user must click twice for the operating system to consider the two clicks a double-click.
@@ -107,7 +107,7 @@ namespace xtd {
         /// @warning Internal use only
         static int32 double_click_time();
         /// @brief Gets a value indicating whether the user has enabled full window drag.
-        /// @return `true` if the user has enabled full window drag; otherwise, false.
+        /// @return `true` if the user has enabled full window drag; otherwise, `false`.
         /// @warning Internal use only
         static bool drag_full_windows();
         /// @brief Gets the width and height of a rectangle centered on the point the mouse button was pressed, within which a drag operation will not begin.

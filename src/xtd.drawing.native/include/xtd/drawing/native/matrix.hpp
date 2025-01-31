@@ -63,13 +63,13 @@ namespace xtd {
         
         /// @brief Gets a value indicating whether the matrix is the identity matrix.
         /// @param handle The matrix handle.
-        /// @return This property is true if the matrix is identity; otherwise, false.
+        /// @return This property is true if the matrix is identity; otherwise, `false`.
         /// @warning Internal use only
         static bool is_identity(intptr handle);
         
         /// @brief Gets a value indicating whether the matrix is invertible.
         /// @param handle The matrix handle.
-        /// @return This property is true if the matrix is invertible; otherwise, false.
+        /// @return This property is true if the matrix is invertible; otherwise, `false`.
         /// @warning Internal use only
         static bool is_invertible(intptr handle);
         

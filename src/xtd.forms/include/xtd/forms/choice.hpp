@@ -78,12 +78,12 @@ namespace xtd {
       choice& selected_item(const item& selected_item);
       
       /// @brief Gets a value indicating whether the items in the choice are sorted.
-      /// @return `true` if the choice is sorted; otherwise, false. The default is false.
-      /// @remarks This property specifies whether the choice sorts existing entries and add new entries to the appropriate sorted position in the list. You can use this property to automatically sort items in a choice. As items are added to a sorted choice, the items are moved to the appropriate location in the sorted list. When you set the property to false, new items are added to the end of the existing list. The sort is case-insensitive and in alphabetically ascending order.
+      /// @return `true` if the choice is sorted; otherwise, `false`. The default is `false`.
+      /// @remarks This property specifies whether the choice sorts existing entries and add new entries to the appropriate sorted position in the list. You can use this property to automatically sort items in a choice. As items are added to a sorted choice, the items are moved to the appropriate location in the sorted list. When you set the property to `false`, new items are added to the end of the existing list. The sort is case-insensitive and in alphabetically ascending order.
       virtual bool sorted() const noexcept;
       /// @brief Sets a value indicating whether the items in the choice are sorted.
-      /// @param sorted true if the choice is sorted; otherwise, false. The default is false.
-      /// @remarks This property specifies whether the choice sorts existing entries and add new entries to the appropriate sorted position in the list. You can use this property to automatically sort items in a choice. As items are added to a sorted choice, the items are moved to the appropriate location in the sorted list. When you set the property to false, new items are added to the end of the existing list. The sort is case-insensitive and in alphabetically ascending order.
+      /// @param sorted true if the choice is sorted; otherwise, `false`. The default is `false`.
+      /// @remarks This property specifies whether the choice sorts existing entries and add new entries to the appropriate sorted position in the list. You can use this property to automatically sort items in a choice. As items are added to a sorted choice, the items are moved to the appropriate location in the sorted list. When you set the property to `false`, new items are added to the end of the existing list. The sort is case-insensitive and in alphabetically ascending order.
       virtual choice& sorted(bool sorted);
       
       using list_control::text;

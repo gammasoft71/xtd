@@ -58,32 +58,32 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the checked or check_state values and the light_button's appearance are automatically changed when the light_button is clicked.
-      /// @return `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
-      /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
+      /// @return `true` if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, `false`. The default value is true.
+      /// @remarks If auto_check is set to `false`, you will need to add code to update the checked or check_state values in the click event handler.
       /// @par Examples
       /// The following code example demonstrates the use of light_button auto_check.
       /// @include light_button.cpp
       virtual bool auto_check() const noexcept;
       /// @brief Sets a value indicating whether the checked or check_state values and the light_button's appearance are automatically changed when the light_button is clicked.
-      /// @param auto_check true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, false. The default value is true.
-      /// @remarks If auto_check is set to false, you will need to add code to update the checked or check_state values in the click event handler.
+      /// @param auto_check true if the checked value or check_state value and the appearance of the control are automatically changed on the click event; otherwise, `false`. The default value is true.
+      /// @remarks If auto_check is set to `false`, you will need to add code to update the checked or check_state values in the click event handler.
       virtual light_button& auto_check(bool auto_check);
       
       /// @brief Gets a value indicating whether the light_button is in the checked state.
-      /// @return `true` if the light_button is in the checked state; otherwise, false. The default value is false. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
-      /// @remarks When the value is true, the light_button portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when false.
+      /// @return `true` if the light_button is in the checked state; otherwise, `false`. The default value is `false`. If the three_state property is set to true, the checked property will return true for either a checked or indeterminate check_state.
+      /// @remarks When the value is true, the light_button portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when `false`.
       /// @par Examples
       /// The following code example demonstrates the use of light_button checked.
       /// @include light_button.cpp
       virtual bool checked() const noexcept;
       /// @brief Sets a value indicating whether the light_button is in the checked state.
-      /// @param checked true if the light_button is in the checked state; otherwise, false. The default value is false.
-      /// @remarks When the value is true, the light_button portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when false.
+      /// @param checked true if the light_button is in the checked state; otherwise, `false`. The default value is `false`.
+      /// @remarks When the value is true, the light_button portion of the control displays a check mark. If the appearance property is set to button, the control will appear sunken when checked is true and raised like a standard button when `false`.
       virtual light_button& checked(bool checked);
       
       /// @brief Gets the state of the light_button.
       /// @return One of the check_state enumeration values. The default value is unchecked.
-      /// @remarks If the three_state property is set to false, the check_state property value can only be set to check_state::indeterminate in code and not by u ser interaction.
+      /// @remarks If the three_state property is set to `false`, the check_state property value can only be set to check_state::indeterminate in code and not by u ser interaction.
       /// @remarks The following table describes the xtd::forms::appearance of the light_button control in its different states for the normal and button style control light_button::appearance.
       /// | Check_state   |  appearance::normal                                 | appearance::button          |
       /// | ------------- | --------------------------------------------------- | --------------------------- |
@@ -143,15 +143,15 @@ namespace xtd {
       /// @endcond
       
       /// @brief Gets a value indicating whether the light_button will allow three check states rather than two.
-      /// @return `true` if the light_button is able to display three check states; otherwise, false. The default value is false.
-      /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
+      /// @return `true` if the light_button is able to display three check states; otherwise, `false`. The default value is `false`.
+      /// @remarks If the three_state property is set to `false`, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
       /// @par Examples
       /// The following code example demonstrates the use of light_button three_state.
       /// @include light_button.cpp
       virtual bool three_state() const noexcept;
       /// @brief Gets a value indicating whether the light_button will allow three check states rather than two.
-      /// @param three_state true if the light_button is able to display three check states; otherwise, false. The default value is false.
-      /// @remarks If the three_state property is set to false, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
+      /// @param three_state true if the light_button is able to display three check states; otherwise, `false`. The default value is `false`.
+      /// @remarks If the three_state property is set to `false`, the check_state property value can only be set to the indeterminate value of xtd.forms.check_state in code and not by user interaction.
       virtual light_button& three_state(bool three_state);
       /// @}
       
@@ -226,20 +226,20 @@ namespace xtd {
       static light_button create(const xtd::string& text, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::light_button with specified text, three_state, and check_state.
       /// @param text A string that represent text of the xtd::forms::light_button.
-      /// @param three_state true if the check_box is able to display three check states; otherwise, false.
+      /// @param three_state true if the check_box is able to display three check states; otherwise, `false`.
       /// @param check_state One of the check_state enumeration values.
       /// @return New xtd::forms::light_button created.
       static light_button create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state);
       /// @brief A factory to create an xtd::forms::light_button with specified text, three_state, check_state, and location.
       /// @param text A string that represent text of the xtd::forms::light_button.
-      /// @param three_state true if the check_box is able to display three check states; otherwise, false.
+      /// @param three_state true if the check_box is able to display three check states; otherwise, `false`.
       /// @param check_state One of the check_state enumeration values.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
       /// @return New xtd::forms::light_button created.
       static light_button create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::light_button with specified text, three_state, check_state, location, and size.
       /// @param text A string that represent text of the xtd::forms::light_button.
-      /// @param three_state true if the check_box is able to display three check states; otherwise, false.
+      /// @param three_state true if the check_box is able to display three check states; otherwise, `false`.
       /// @param check_state One of the check_state enumeration values.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
@@ -247,7 +247,7 @@ namespace xtd {
       static light_button create(const xtd::string& text, bool three_state, xtd::forms::check_state check_state, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::light_button with specified text, three_state, check_state, location, size, and name.
       /// @param text A string that represent text of the xtd::forms::light_button.
-      /// @param three_state true if the check_box is able to display three check states; otherwise, false.
+      /// @param three_state true if the check_box is able to display three check states; otherwise, `false`.
       /// @param check_state One of the check_state enumeration values.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
@@ -335,14 +335,14 @@ namespace xtd {
       /// @brief A factory to create a xtd::forms::light_button with specified parent, text, three_state, and check_state.
       /// @param parent The parent that contains the new created xtd::forms::light_button.
       /// @param text A string that represent text of the xtd::forms::light_button.
-      /// @param three_state true if the check_box is able to display three check states; otherwise, false.
+      /// @param three_state true if the check_box is able to display three check states; otherwise, `false`.
       /// @param check_state One of the check_state enumeration values.
       /// @return New xtd::forms::light_button created.
       static light_button create(const control& parent, const xtd::string& text, bool three_state, xtd::forms::check_state check_state);
       /// @brief A factory to create a xtd::forms::light_button with specified parent, text, three_state, check_state, and location.
       /// @param parent The parent that contains the new created xtd::forms::light_button.
       /// @param text A string that represent text of the xtd::forms::light_button.
-      /// @param three_state true if the check_box is able to display three check states; otherwise, false.
+      /// @param three_state true if the check_box is able to display three check states; otherwise, `false`.
       /// @param check_state One of the check_state enumeration values.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
       /// @return New xtd::forms::light_button created.
@@ -350,7 +350,7 @@ namespace xtd {
       /// @brief A factory to create a xtd::forms::light_button with specified parent, text, three_state, check_state, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::light_button.
       /// @param text A string that represent text of the xtd::forms::light_button.
-      /// @param three_state true if the check_box is able to display three check states; otherwise, false.
+      /// @param three_state true if the check_box is able to display three check states; otherwise, `false`.
       /// @param check_state One of the check_state enumeration values.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.
@@ -359,7 +359,7 @@ namespace xtd {
       /// @brief A factory to create a xtd::forms::light_button with specified parent, text, three_state, check_state, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::light_button.
       /// @param text A string that represent text of the xtd::forms::light_button.
-      /// @param three_state true if the check_box is able to display three check states; otherwise, false.
+      /// @param three_state true if the check_box is able to display three check states; otherwise, `false`.
       /// @param check_state One of the check_state enumeration values.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::light_button.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::light_button.

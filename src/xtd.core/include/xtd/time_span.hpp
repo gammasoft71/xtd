@@ -404,7 +404,7 @@ namespace xtd {
     /// @brief Returns a value that indicates whether two specified instances of xtd::time_span are equal.
     /// @param t1 The first time interval to compare.
     /// @param t2 The second time interval to compare.
-    /// @return `true` if the values of t1 and t2 are equal; otherwise, false.
+    /// @return `true` if the values of t1 and t2 are equal; otherwise, `false`.
     static bool equals(time_span t1, time_span t2);
     
     /// @brief Returns a xtd::time_span that represents a specified number of days, where the specification is accurate to the nearest millisecond.
@@ -526,7 +526,7 @@ namespace xtd {
     /// @brief Converts the string representation of a time interval to its xtd::time_span equivalent and returns a value that indicates whether the conversion succeeded.
     /// @param value A string that specifies the time interval to convert.
     /// @param result When this method returns, contains an object that represents the time interval specified by value, or xtd::time_span::zero if the conversion failed.
-    /// @return `true` if s was converted successfully; otherwise, false. This operation returns false if the value parameter is empty (""), has an invalid format, represents a time interval that is less than xtd::time_span::min_value or greater than xtd::time_span::max_value, or has at least one days, hours, minutes, or seconds component outside its valid range.
+    /// @return `true` if s was converted successfully; otherwise, `false`. This operation returns `false` if the value parameter is empty (""), has an invalid format, represents a time interval that is less than xtd::time_span::min_value or greater than xtd::time_span::max_value, or has at least one days, hours, minutes, or seconds component outside its valid range.
     static bool try_parse(const string& value, time_span& result);
     /// @}
 

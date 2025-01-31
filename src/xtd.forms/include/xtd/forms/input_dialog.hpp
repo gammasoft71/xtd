@@ -66,12 +66,12 @@ namespace xtd {
       
       /// @brief Gets multiline status.
       /// @return `true` if dialog text box is multiline; otherwise `false`.
-      /// @remarks The default value is false.
+      /// @remarks The default value is `false`.
       bool multiline() const noexcept;
       /// @brief Sets multiline status.
       /// @param multiline true if dialog text box is multiline; otherwise `false`.
       /// @return Current input_dialog instance.
-      /// @remarks The default value is false.
+      /// @remarks The default value is `false`.
       input_dialog& multiline(bool multiline);
       
       /// @brief Gets the text message.
@@ -92,12 +92,12 @@ namespace xtd {
       
       /// @brief Gets use system password char status.
       /// @return `true` if dialog text box use system password char status; otherwise `false`.
-      /// @remarks The default value is false.
+      /// @remarks The default value is `false`.
       bool use_system_password_char() const noexcept;
       /// @brief Sets use system password char status.
       /// @param use_system_password_char true if dialog text box use system password char status; otherwise `false`.
       /// @return Current input_dialog instance.
-      /// @remarks The default value is false.
+      /// @remarks The default value is `false`.
       input_dialog&  use_system_password_char(bool use_system_password_char);
       
       /// @brief Gets the value.

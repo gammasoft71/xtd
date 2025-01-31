@@ -51,13 +51,13 @@ namespace xtd {
       /// @brief Initialize an xtd::configuration::file_settings with file path to load and save.
       /// @param file_path the file path to load and save.
       /// @remarks If the xtd::configuration::file_settings::auto_save is true the xtd::configuration::file_settings::save is called on the xtd::configuration::file_settings destructor; otherwise not, The xtd::configuration::file_settings::save method must be called manually.
-      /// @remarks xtd::configuration::file_settings::auto_save is false by default.
+      /// @remarks xtd::configuration::file_settings::auto_save is `false` by default.
       /// @remarks If the file path is empty, this is equivalent to using the xtd::configuration::file_settings constructor with no parameters.
       explicit file_settings(const xtd::string& file_path);
       /// @brief Initialize an xtd::configuration::file_settings with a stream to load and save.
       /// @param stream the stream to load and save.
       /// @remarks If the xtd::configuration::file_settings::auto_save is true the xtd::configuration::file_settings::save is called on the xtd::configuration::file_settings destructor; otherwise not, The xtd::configuration::file_settings::save method must be called manually.
-      /// @remarks xtd::configuration::file_settings::auto_save is false by default.
+      /// @remarks xtd::configuration::file_settings::auto_save is `false` by default.
       /// @remarks If the stream is empty, this is equivalent to using the xtd::configuration::file_settings constructor with no parameters.
       explicit file_settings(std::iostream& stream);
       /// @}
@@ -73,8 +73,8 @@ namespace xtd {
       
       /// @{
       /// @brief Gets whether save should be called on the xtd::configuration::file_settings destructor.
-      /// @return `true` if xtd::configuration::file_settings::save is called on the xtd::configuration::file_settings destructor; otherwise, false.
-      /// @remarks The default is false.
+      /// @return `true` if xtd::configuration::file_settings::save is called on the xtd::configuration::file_settings destructor; otherwise, `false`.
+      /// @remarks The default is `false`.
       /// @par Examples
       /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::auto_save property, xtd::configuration::file_settings::write methods.
       /// ```cpp
@@ -91,8 +91,8 @@ namespace xtd {
       /// ```
       bool auto_save() const noexcept;
       /// @brief Sets whether save should be called on the xtd::configuration::file_settings destructor.
-      /// @param value true if xtd::configuration::file_settings::save is called on the xtd::configuration::file_settings destructor; otherwise, false.
-      /// @remarks The default is false.
+      /// @param value true if xtd::configuration::file_settings::save is called on the xtd::configuration::file_settings destructor; otherwise, `false`.
+      /// @remarks The default is `false`.
       /// @par Examples
       /// The following example shows how to create xtd::configuration::file_settings and use xtd::configuration::file_settings::auto_save property, xtd::configuration::file_settings::write methods.
       /// ```cpp
@@ -239,7 +239,7 @@ namespace xtd {
       using object::equals;
       /// @brief Indicates whether the current object is equal to another object of the same type.
       /// @param obj An object to compare with this object.
-      /// @return `true` if the current object is equal to the other parameter; otherwise, false.
+      /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
       bool equals(const file_settings& obj) const noexcept override;
       
       /// @brief Sets the current settings with parsing the xtd::string in [INI format](https://en.wikipedia.org/wiki/INI_file).

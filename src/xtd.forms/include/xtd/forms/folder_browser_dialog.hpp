@@ -47,10 +47,10 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value that indicates whether the dialog will be automatically upgraded to enable new features.
-      /// @return `true` if the the dialog will be automatically upgraded to enable new features; otherwise, false. The default value is true.
+      /// @return `true` if the the dialog will be automatically upgraded to enable new features; otherwise, `false`. The default value is true.
       bool auto_upgrade_enable() const noexcept;
       /// @brief Sets a value that indicates whether the dialog will be automatically upgraded to enable new features.
-      /// @param value true if the the dialog will be automatically upgraded to enable new features; otherwise, false. The default value is true.
+      /// @param value true if the the dialog will be automatically upgraded to enable new features; otherwise, `false`. The default value is true.
       /// @return Current folder_browser_dialog.
       folder_browser_dialog& auto_upgrade_enable(bool value);
       
@@ -86,11 +86,11 @@ namespace xtd {
       folder_browser_dialog& selected_path(const xtd::string& value);
       
       /// @brief Gets a value indicating whether the New Folder button appears in the folder browser dialog box.
-      /// @return `true` if the New Folder button is shown in the dialog box; otherwise, false. The default is true.
+      /// @return `true` if the New Folder button is shown in the dialog box; otherwise, `false`. The default is true.
       /// @remarks When show_new_folder_button is true, the New Folder button is visible, giving the user a chance to create a folder. When the user clicks the New Folder button, a new folder is created and the user is prompted to specify the folder name. The selected node in the tree becomes the parent of the new folder. The actual caption of the New Folder button can vary depending upon the operating system
       bool show_new_folder_button() const noexcept;
       /// @brief Sets a value indicating whether the New Folder button appears in the folder browser dialog box.
-      /// @param value true if the New Folder button is shown in the dialog box; otherwise, false. The default is true.
+      /// @param value true if the New Folder button is shown in the dialog box; otherwise, `false`. The default is true.
       /// @remarks When show_new_folder_button is true, the New Folder button is visible, giving the user a chance to create a folder. When the user clicks the New Folder button, a new folder is created and the user is prompted to specify the folder name. The selected node in the tree becomes the parent of the new folder. The actual caption of the New Folder button can vary depending upon the operating system
       folder_browser_dialog& show_new_folder_button(bool value);
       /// @}
@@ -108,7 +108,7 @@ namespace xtd {
       /// @{
       /// @brief When overridden in a derived class, specifies a common dialog box.
       /// @param owner A value that represents the window handle of the owner window for the common dialog box.
-      /// @return `true` if the dialog box was successfully run; otherwise, false.
+      /// @return `true` if the dialog box was successfully run; otherwise, `false`.
       bool run_dialog(intptr owner) override;
       
       /// @brief When overridden in a derived class, specifies a common dialog box.

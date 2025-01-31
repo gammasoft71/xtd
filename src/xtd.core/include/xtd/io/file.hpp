@@ -44,7 +44,7 @@ namespace xtd {
       /// @brief Appends lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
       /// @param contents The lines to append to the file.
-      /// @return `true` if the text appended; otherwise, false.
+      /// @return `true` if the text appended; otherwise, `false`.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       /// @remarks If the target file already exists, it is overwritten.
@@ -58,7 +58,7 @@ namespace xtd {
       /// @brief Appends lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
       /// @param contents The lines to append to the file.
-      /// @return `true` if the text appended; otherwise, false.
+      /// @return `true` if the text appended; otherwise, `false`.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       /// @remarks If the target file already exists, it is overwritten.
@@ -72,7 +72,7 @@ namespace xtd {
       /// @brief Appends text to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
       /// @param contents The text to append to the file.
-      /// @return `true` if the text appended; otherwise, false.
+      /// @return `true` if the text appended; otherwise, `false`.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       template<class type_t>
@@ -99,7 +99,7 @@ namespace xtd {
       /// @brief Copies an existing file to a new file. Overwriting a file of the same name is allowed.
       /// @param src The file to be opened for reading.
       /// @param dest The name of the destination file. This cannot be a directory.
-      /// @param overwrite true if the destination file can be overwritten; otherwise, false.
+      /// @param overwrite true if the destination file can be overwritten; otherwise, `false`.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path<br>-or-<br>file dest exists.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       static void copy(const xtd::string& src, const xtd::string& dest, bool overwrite);
@@ -121,9 +121,9 @@ namespace xtd {
       
       /// @brief Determines whether the specified file exists.
       /// @param path The file to check.
-      /// @return `true` if the caller has the required permissions and path contains the name of an existing file; otherwise, false.
-      /// @remarks This method also returns false if path is empty or an invalid path.
-      /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns false regardless of the existence of path.
+      /// @return `true` if the caller has the required permissions and path contains the name of an existing file; otherwise, `false`.
+      /// @remarks This method also returns `false` if path is empty or an invalid path.
+      /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns `false` regardless of the existence of path.
       static bool exists(const xtd::string& path) noexcept;
       
       /// @brief Gets the xtd::io::file_attributes of the file on the path.
@@ -168,7 +168,7 @@ namespace xtd {
       /// @brief Moves a specified file to a new location, providing the option to specify a new file name.
       /// @param src The name of the file to move.
       /// @param dest The new path for the file.
-      /// @return `true` if the file moved; otherwise, false.
+      /// @return `true` if the file moved; otherwise, `false`.
       /// @exception xtd::argument_exception if dest already exist.
       /// @exception xtd::io::io_exception if path is empty or an invalid path.
       /// @exception xtd::io::io_exception if the caller has not the required permissions.
@@ -177,8 +177,8 @@ namespace xtd {
       /// @brief Moves a specified file to a new location, providing the options to specify a new file name and to overwrite the destination file if it already exists.
       /// @param src The name of the file to move.
       /// @param dest The new path for the file.
-      /// @param overwrite true to overwrite the destination file if it already exists; false otherwise.
-      /// @return `true` if the file moved; otherwise, false.
+      /// @param overwrite true to overwrite the destination file if it already exists; `false` otherwise.
+      /// @return `true` if the file moved; otherwise, `false`.
       /// @exception xtd::argument_exception if dest already exist.
       /// @exception xtd::io::io_exception if path is empty or an invalid path.
       /// @exception xtd::io::io_exception if the caller has not the required permissions.
@@ -247,15 +247,15 @@ namespace xtd {
       /// @brief Deletes the specified file.
       /// @param path The name of the file to be deleted.
       /// @return std::ofstream An unshared std::ofstream that provides access to the specified file, with the specified mode and access.
-      /// @return `true` if the file is deleted; otherwise, false.
+      /// @return `true` if the file is deleted; otherwise, `false`.
       static void remove(const xtd::string& path);
       
       /// @brief Replaces the contents of a specified file with the contents of another file, deleting the original file, and creating a backup of the replaced file and optionally ignores merge errors.
       /// @param source_file_name The name of a file that replaces the file specified by destination_file_name.
       /// @param destination_file_name The name of the file being replaced.
       /// @param destination_backup_file_name The name of the backup file.
-      /// @param ignore_metadata_errors true to ignore merge errors (such as attributes and access control lists (ACLs)) from the replaced file to the replacement file; otherwise, false.
-      /// @return false source_file_name does not exist or bad format, or destination_file_name does not exist or bad format, or if ignore_metadata_errors equal false and destination_backup_file_name bad format or on ani io error; otherwise true.
+      /// @param ignore_metadata_errors true to ignore merge errors (such as attributes and access control lists (ACLs)) from the replaced file to the replacement file; otherwise, `false`.
+      /// @return `false` source_file_name does not exist or bad format, or destination_file_name does not exist or bad format, or if ignore_metadata_errors equal `false` and destination_backup_file_name bad format or on ani io error; otherwise `true`.
       static void replace(const xtd::string& source_file_name, const xtd::string& destination_file_name, const xtd::string& destination_backup_file_name);
       
       /// @brief Sets the specified xtd::io::file_attributes of the file on the specified path.
@@ -324,7 +324,7 @@ namespace xtd {
       /// @brief Writes lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
       /// @param contents The lines to write to the file.
-      /// @return `true` if the text written; otherwise, false.
+      /// @return `true` if the text written; otherwise, `false`.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       /// @remarks If the target file already exists, it is overwritten.
@@ -338,7 +338,7 @@ namespace xtd {
       /// @brief Writes lines to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
       /// @param contents The lines to write to the file.
-      /// @return `true` if the text written; otherwise, false.
+      /// @return `true` if the text written; otherwise, `false`.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       /// @remarks If the target file already exists, it is overwritten.
@@ -352,7 +352,7 @@ namespace xtd {
       /// @brief Writes text to a file, and then closes the file. If the specified file does not exist, this method creates a file, writes the specified lines to the file, and then closes the file.
       /// @param path The file to write to.
       /// @param contents The text to write to the file.
-      /// @return `true` if the text written; otherwise, false.
+      /// @return `true` if the text written; otherwise, `false`.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       template<class type_t>

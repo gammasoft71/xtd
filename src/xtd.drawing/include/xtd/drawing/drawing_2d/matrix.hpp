@@ -118,11 +118,11 @@ namespace xtd {
         intptr handle() const noexcept;
         
         /// @brief Gets a value indicating whether this xtd::drawing::drawing_2d::matrix is the identity matrix.
-        /// @return This property is true if this xtd::drawing::drawing_2d::matrix is identity; otherwise, false.
+        /// @return This property is true if this xtd::drawing::drawing_2d::matrix is identity; otherwise, `false`.
         bool is_identity() const;
         
         /// @brief Gets a value indicating whether this xtd::drawing::drawing_2d::matrix is invertible.
-        /// @return This property is true if this xtd::drawing::drawing_2d::matrix is invertible; otherwise, false.
+        /// @return This property is true if this xtd::drawing::drawing_2d::matrix is invertible; otherwise, `false`.
         bool is_invertible() const;
         
         /// @brief Gets the x translation value (the dx value, or the element in the third row and first column) of this xtd::drawing::drawing_2d::matrix.

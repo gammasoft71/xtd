@@ -167,7 +167,7 @@ namespace xtd {
       /// @warning Internal use only
       static uint32_t get_tick_count();
       /// @brief Gets a value indicating whether the current user is an administrator.
-      /// @return bool true if the current user is an administrator; otherwise, false.
+      /// @return bool true if the current user is an administrator; otherwise, `false`.
       /// @warning Internal use only
       static bool get_user_administrator();
       /// @brief Gets the network domain name associated with the current user.
@@ -179,15 +179,15 @@ namespace xtd {
       /// @warning Internal use only
       static std::string get_user_name();
       /// @brief Gets a value that indicates whether the current application domain is shutting down.
-      /// @return bool true if the current application domain is shutting down; otherwise, false.
+      /// @return bool true if the current application domain is shutting down; otherwise, `false`.
       /// @warning Internal use only
       static bool has_shutdown_started();
       /// @brief Determines whether the current processor is arm.
-      /// @return `true` if the processor is is arm; otherwise, false.
+      /// @return `true` if the processor is is arm; otherwise, `false`.
       /// @warning Internal use only
       static bool is_processor_arm();
       /// @brief Determines whether the current operating system is a 64-bit operating system.
-      /// @return `true` if the operating system is 64-bit; otherwise, false.
+      /// @return `true` if the operating system is 64-bit; otherwise, `false`.
       /// @warning Internal use only
       static bool is_os_64_bit();
       /// @brief Gets the newline string defined for this environment.

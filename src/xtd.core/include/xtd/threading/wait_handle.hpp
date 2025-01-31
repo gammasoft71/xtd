@@ -302,14 +302,14 @@ namespace xtd {
       
       /// @{
       /// @brief Releases ownership of the specified wait_handle object.
-      /// @return `true` If the function succeeds, false otherwise.
+      /// @return `true` If the function succeeds, `false` otherwise.
       /// @remarks Override this function for all derived object
       virtual bool signal() = 0;
       
       /// @brief wait ownership of the specified mutex object.
       /// @param handle A valid handle to an open object.
       /// @param milliseconds_timeout The number of milliseconds to wait, or -1 to wait indefinitely.
-      /// @return `true` if the current instance receives a signal; otherwise, false.
+      /// @return `true` if the current instance receives a signal; otherwise, `false`.
       /// @remarks If milliseconds_timeout is zero, the method does not block. It tests the state of the wait handle and returns immediately.
       /// @remarks Override this function for all derived object
       virtual bool wait(int32 milliseconds_timeout) = 0;

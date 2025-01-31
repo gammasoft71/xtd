@@ -95,7 +95,7 @@ namespace xtd {
       int64 elapsed_ticks() const noexcept;
       
       /// @brief Gets a value indicating whether the stopwatch timer is running.
-      /// @return `true` if the xtd::diagnostics::stopwatch instance is currently running and measuring elapsed time for an interval; otherwise, false.
+      /// @return `true` if the xtd::diagnostics::stopwatch instance is currently running and measuring elapsed time for an interval; otherwise, `false`.
       /// @remarks A xtd::diagnostics::stopwatch instance begins running with a call to xtd::diagnostics::stopwatch::start or xtd::diagnostics::stopwatch::start_new. The instance stops running with a call to xtd::diagnostics::stopwatch::stop or xtd::diagnostics::stopwatch::reset.
       bool is_running() const noexcept;
       /// @}
@@ -108,8 +108,8 @@ namespace xtd {
       static int64 frequency() noexcept;
       
       /// @brief Indicates whether the timer is based on a high-resolution performance counter. This field is read-only.
-      /// @return `true` if the timer is based on a high-resolution performance count; otherwise, false.
-      /// @remarks The timer used by the xtd::diagnostics::stopwatch class depends on the system hardware and operating system. xtd::diagnostics::stopwatch::is_high_resolution is true if the xtd::diagnostics::stopwatch timer is based on a high-resolution performance counter. Otherwise, xtd::diagnostics::stopwatch::is_high_resolution is false, which indicates that the xtd::diagnostics::stopwatch timer is based on the system timer.
+      /// @return `true` if the timer is based on a high-resolution performance count; otherwise, `false`.
+      /// @remarks The timer used by the xtd::diagnostics::stopwatch class depends on the system hardware and operating system. xtd::diagnostics::stopwatch::is_high_resolution is true if the xtd::diagnostics::stopwatch timer is based on a high-resolution performance counter. Otherwise, xtd::diagnostics::stopwatch::is_high_resolution is `false`, which indicates that the xtd::diagnostics::stopwatch timer is based on the system timer.
       /// @remarks Returns always true
       static bool is_high_resolution() noexcept;
       /// @}

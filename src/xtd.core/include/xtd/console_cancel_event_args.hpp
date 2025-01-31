@@ -18,7 +18,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core events
   /// @remarks A user can interrupt a console application process by simultaneously pressing the Control modifier key and the C console key (Ctrl+C), or the Control modifier key and the Break console key (Ctrl+Break). The console consequently provides a console_cancel_event_args object to the event handler for the console::cancel_key_press event to specify whether the process should be cancelled.
-  /// @remarks If the cancel property is set to true in the event handler, the process is resumed; otherwise, the process is terminated. By default, the value of the console_cancel_event_args property is false, and the process terminates.
+  /// @remarks If the cancel property is set to true in the event handler, the process is resumed; otherwise, the process is terminated. By default, the value of the console_cancel_event_args property is `false`, and the process terminates.
   class console_cancel_event_args final : public xtd::event_args {
   public:
     /// @name Public Constructors
@@ -40,12 +40,12 @@ namespace xtd {
     /// @name Public Properties
     
     /// @{
-    /// @brief Gets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is false, which terminates the current process.
-    /// @return `true` if the current process should resume when the event handler concludes; false if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If true, the current process continues.
+    /// @brief Gets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is `false`, which terminates the current process.
+    /// @return `true` if the current process should resume when the event handler concludes; `false` if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If true, the current process continues.
     bool cancel() const noexcept;
     
-    /// @brief Sets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is false, which terminates the current process.
-    /// @param true if the current process should resume when the event handler concludes; false if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If true, the current process continues.
+    /// @brief Sets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is `false`, which terminates the current process.
+    /// @param cancel `true` if the current process should resume when the event handler concludes; `false` if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If true, the current process continues.
     void cancel(bool cancel);
     
     /// @brief Gets the combination of modifier and console keys that interrupted the current process.

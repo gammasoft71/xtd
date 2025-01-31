@@ -77,7 +77,7 @@ namespace xtd {
       
       /// @{
       /// @brief Collapse the collapsible_panel.
-      /// @remarks Collapsing the collapsible_panel is equivalent to setting the expanded property to false. After the collapse method is called, the expanded property returns a value of false until the expand method is called.
+      /// @remarks Collapsing the collapsible_panel is equivalent to setting the expanded property to `false`. After the collapse method is called, the expanded property returns a value of `false` until the expand method is called.
       void collapse();
       
       /// @brief Expand the collapsible_panel.

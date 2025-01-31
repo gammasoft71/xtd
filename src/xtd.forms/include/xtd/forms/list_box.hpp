@@ -134,11 +134,11 @@ namespace xtd {
       virtual list_box& selection_mode(forms::selection_mode selection_mode);
       
       /// @brief Gets a value indicating whether the items in the list_box are sorted alphabetically.
-      /// @return `true` if items in the control are sorted; otherwise, false. The default is false.
+      /// @return `true` if items in the control are sorted; otherwise, `false`. The default is `false`.
       /// @remarks Use the sorted property to automatically sort strings alphabetically in a list_box. As items are added to a sorted list_box, the items are moved to the appropriate location in the sorted list. When adding items to a list_box, it is more efficient to sort the items first and then add new items.
       virtual bool sorted() const noexcept;
       /// @brief Sets a value indicating whether the items in the list_box are sorted alphabetically.
-      /// @param sorted true if items in the control are sorted; otherwise, false. The default is false.
+      /// @param sorted true if items in the control are sorted; otherwise, `false`. The default is `false`.
       /// @return Current list_box.
       /// @remarks Use the sorted property to automatically sort strings alphabetically in a list_box. As items are added to a sorted list_box, the items are moved to the appropriate location in the sorted list. When adding items to a list_box, it is more efficient to sort the items first and then add new items.
       virtual list_box& sorted(bool sorted);

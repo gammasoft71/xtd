@@ -96,13 +96,13 @@ namespace xtd {
       tool_bar_button& drop_down_menu(std::nullptr_t value);
       
       /// @brief Gets a value indicating whether the button is enabled.
-      /// @return `true` if the button is enabled; otherwise, false. The default is true.
-      /// @remarks When the xtd::forms::tool_bar_button::enabled property is set to false, the toolbar button cannot be clicked, and the button's appearance changes. The xtd::drawing::image and xtd::forms::tool_bar_button::text assigned to the button appear grayed out. If the image or text has multiple colors, they display in a monochromatic gray.
+      /// @return `true` if the button is enabled; otherwise, `false`. The default is true.
+      /// @remarks When the xtd::forms::tool_bar_button::enabled property is set to `false`, the toolbar button cannot be clicked, and the button's appearance changes. The xtd::drawing::image and xtd::forms::tool_bar_button::text assigned to the button appear grayed out. If the image or text has multiple colors, they display in a monochromatic gray.
       bool enabled() const noexcept;
       /// @brief Sets a value indicating whether the button is enabled.
-      /// @param value true if the button is enabled; otherwise, false. The default is true.
+      /// @param value true if the button is enabled; otherwise, `false`. The default is true.
       /// @return This current instance.
-      /// @remarks When the xtd::forms::tool_bar_button::enabled property is set to false, the toolbar button cannot be clicked, and the button's appearance changes. The xtd::drawing::image and xtd::forms::tool_bar_button::text assigned to the button appear grayed out. If the image or text has multiple colors, they display in a monochromatic gray.
+      /// @remarks When the xtd::forms::tool_bar_button::enabled property is set to `false`, the toolbar button cannot be clicked, and the button's appearance changes. The xtd::drawing::image and xtd::forms::tool_bar_button::text assigned to the button appear grayed out. If the image or text has multiple colors, they display in a monochromatic gray.
       tool_bar_button& enabled(bool value);
       
       /// @brief Gets the index value of the image assigned to the button.
@@ -130,11 +130,11 @@ namespace xtd {
       std::optional<std::reference_wrapper<xtd::forms::tool_bar>> parent() const noexcept;
       
       /// @brief Gets a value indicating whether a toggle-style toolbar button is currently in the pushed state.
-      /// @return rue if a toggle-style toolbar button is currently in the pushed state; otherwise, false. The default is false.
+      /// @return rue if a toggle-style toolbar button is currently in the pushed state; otherwise, `false`. The default is `false`.
       /// @remarks When xtd::forms::tool_bar_button::pushed is set to true, the toolbar button appears sunken or inset relative to the other buttons. This property has no effect unless the xtd::forms::tool_bar_button::style is set to xtd::forms::tool_bar_button_style::toggle_button.
       bool pushed() const noexcept;
       /// @brief Sets a value indicating whether a toggle-style toolbar button is currently in the pushed state.
-      /// @param value rue if a toggle-style toolbar button is currently in the pushed state; otherwise, false. The default is false.
+      /// @param value rue if a toggle-style toolbar button is currently in the pushed state; otherwise, `false`. The default is `false`.
       /// @return This current instance.
       /// @remarks When xtd::forms::tool_bar_button::pushed is set to true, the toolbar button appears sunken or inset relative to the other buttons. This property has no effect unless the xtd::forms::tool_bar_button::style is set to xtd::forms::tool_bar_button_style::toggle_button.
       tool_bar_button& pushed(bool value);
@@ -185,11 +185,11 @@ namespace xtd {
       tool_bar_button& tool_tip_text(const xtd::string& value);
       
       /// @brief Gets a value indicating whether the toolbar button is visible.
-      /// @return `true` if the toolbar button is visible; otherwise, false. The default is true.
+      /// @return `true` if the toolbar button is visible; otherwise, `false`. The default is true.
       /// @remarks If the toolbar button is not visible, it will not be displayed on the toolbar, and therefore cannot receive user input.
       bool visible() const noexcept;
       /// @brief Sets a value indicating whether the toolbar button is visible.
-      /// @param value true if the toolbar button is visible; otherwise, false. The default is true.
+      /// @param value true if the toolbar button is visible; otherwise, `false`. The default is true.
       /// @return This current instance.
       /// @remarks If the toolbar button is not visible, it will not be displayed on the toolbar, and therefore cannot receive user input.
       tool_bar_button& visible(bool value);

@@ -39,8 +39,8 @@ namespace xtd {
       
       /// @{
       /// @brief Create named event wait handle with specified name, initial count and maxixum count.
-      /// @param initial_state true to set the initial state to signaled if the named event is created as a result of this call; false to set it to nonsignaled.
-      /// @param manual_reset true the event resets manually; false the event resets automatically.
+      /// @param initial_state `true` to set the initial state to signaled if the named event is created as a result of this call; `false` to set it to nonsignaled.
+      /// @param manual_reset `true` the event resets manually; `false` the event resets automatically.
       /// @param name The name, if the synchronization object is to be shared with other processes.
       /// @return The handle of the created event wait handle.
       /// @warning Internal use only
@@ -78,7 +78,7 @@ namespace xtd {
       /// @brief Wait named event wait handle with specified event wait handle handle, timeout and manual reset.
       /// @param handle The event wait handle handle to wait.
       /// @param milliseconds_timeout The timeout in milliseconds (-1 is infinite timeout).
-      /// @param manual_reset true the event resets manually; false the event resets automatically.
+      /// @param manual_reset `true` the event resets manually; `false` the event resets automatically.
       /// @return error code :
       ///  * 0x00000000 : Sucess
       ///  * 0x00000080 : Abandoned

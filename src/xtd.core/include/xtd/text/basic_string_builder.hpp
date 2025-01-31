@@ -433,7 +433,7 @@ namespace xtd {
       ///
       /// // The example displays the following output:
       /// //
-      /// // The value of the flag is false.
+      /// // The value of the flag is `false`.
       /// ```
       /// @remarks If `value` is `empty`, no changes are made.
       /// @remarks The capacity of this instance is adjusted as needed.
@@ -485,7 +485,7 @@ namespace xtd {
       ///
       /// // The example displays the following output:
       /// //
-      /// // The value of the flag is false.
+      /// // The value of the flag is `false`.
       /// ```
       /// @remarks The capacity of this instance is adjusted as needed.
       /// @par Notes to Callers

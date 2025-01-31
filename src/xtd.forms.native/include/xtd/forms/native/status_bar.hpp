@@ -60,7 +60,7 @@ namespace xtd {
         /// @warning Internal use only
         static bool set_system_status_bar(intptr control, intptr status_bar);
         /// @brief Gets a value indicating whether OS displays a sizing grip.
-        /// @return `true` if OS displays a sizing grip; otherwise, false.
+        /// @return `true` if OS displays a sizing grip; otherwise, `false`.
         /// @warning Internal use only
         static bool sizing_grip();
         /// @brief Gets the cursor name used by sizing grip.
