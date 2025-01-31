@@ -21,5 +21,5 @@ namespace xtd {
   /// | 0              | x equals y.          |
   /// | Greater than 0 | x is greater than y. |
   template<class type_t>
-  using comparison = delegate<int32, type_t, type_t>;
+  using comparison = xtd::delegate<int32(type_t, type_t)>;
 }
