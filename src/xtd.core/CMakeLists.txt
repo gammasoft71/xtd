@@ -142,6 +142,8 @@ add_sources(
   include/xtd/convert_pointer
   include/xtd/convert_string.hpp
   include/xtd/convert_string
+  include/xtd/converter.hpp
+  include/xtd/converter
   include/xtd/cpp_language.hpp
   include/xtd/cpp_language
   include/xtd/ctrace.hpp
