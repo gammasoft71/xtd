@@ -33,7 +33,7 @@ namespace xtd {
     /// * Instantiate a xtd::threading::cancellation_token_source object, which manages and sends cancellation notification to the individual cancellation tokens.
     /// * Pass the token returned by the xtd::threading::cancellation_token_source::token property to each task or thread that listens for cancellation.
     /// * Call the xtd::threading::cancellation_token::is_cancellation_requested method from operations that receive the cancellation token. Provide a mechanism for each task or thread to respond to a cancellation request. Whether you choose to cancel an operation, and exactly how you do it, depends on your application logic.
-    /// * Call the xtd::threading::cancellation_token_source::cancel method to provide notification of cancellation. This sets the xtd::threading::cancellation_token.is_cancellation_requested property on every copy of the cancellation token to true.
+    /// * Call the xtd::threading::cancellation_token_source::cancel method to provide notification of cancellation. This sets the xtd::threading::cancellation_token.is_cancellation_requested property on every copy of the cancellation token to `true`.
     /// * Call the xtd::threading::cancellation_token_source::close method when you are finished with the xtd::threading::cancellation_token_source object.
     class core_export_ cancellation_token_source : public object {
       struct data;

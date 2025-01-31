@@ -43,7 +43,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the timer class.
-      /// @remarks When a new timer is created, it is disabled; that is, enabled is set to `false`. To enable the timer, call the start method or set enabled to true.
+      /// @remarks When a new timer is created, it is disabled; that is, enabled is set to `false`. To enable the timer, call the start method or set enabled to `true`.
       /// @remarks If the timer is disabled and the timer is out of scope, the timer will be destroyed.
       timer();
       /// @}
@@ -59,11 +59,11 @@ namespace xtd {
       /// @{
       /// @brief Gets whether the timer is running.
       /// @return `true` if the timer is currently enabled; otherwise, `false`. The default is `false`.
-      /// @remarks Calling the start method is the same as setting enabled to true. Likewise, calling the stop method is the same as setting enabled to `false`.
+      /// @remarks Calling the start method is the same as setting enabled to `true`. Likewise, calling the stop method is the same as setting enabled to `false`.
       virtual bool enabled() const noexcept;
       /// @brief Sets whether the timer is running.
       /// @param enabled `true` if the timer is currently enabled; otherwise, `false`. The default is `false`.
-      /// @remarks Calling the start method is the same as setting enabled to true. Likewise, calling the stop method is the same as setting enabled to `false`.
+      /// @remarks Calling the start method is the same as setting enabled to `true`. Likewise, calling the stop method is the same as setting enabled to `false`.
       virtual timer& enabled(bool enabled);
       
       /// @brief Gets the time, in milliseconds, before the tick event is raised relative to the last occurrence of the tick event.
@@ -91,7 +91,7 @@ namespace xtd {
       void start();
       
       /// @brief Starts the timer.
-      /// @remarks You can also start the timer by setting the enabled property to true.
+      /// @remarks You can also start the timer by setting the enabled property to `true`.
       void stop();
       /// @}
       

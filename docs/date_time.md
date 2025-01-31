@@ -93,7 +93,7 @@ The following example illustrates the [date_time](https://gammasoft71.github.io/
 auto dat1 = date_time();
 // The following method call displays 1/1/0001 12:00:00 AM.
 console::write_line(dat1.to_string());
-// The following method call displays true.
+// The following method call displays `true`.
 console::write_line(dat1 == date_time::min_value);
 ```
 

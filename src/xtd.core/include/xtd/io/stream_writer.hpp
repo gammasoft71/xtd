@@ -40,7 +40,7 @@ namespace xtd {
       explicit stream_writer(std::ostream& stream);
       /// @brief Initializes a new instance of the xtd::io::stream_writer class for the specified file on the specified path, using the default encoding and buffer size. If the file exists, it can be either overwritten or appended to. If the file does not exist, this constructor creates a new file.
       /// @param path The complete file path to write to.
-      /// @param append Determines whether data is to be appended to the file. If the file exists and append is `false`, the file is overwritten. If the file exists and append is true, the data is appended to the file. Otherwise, a new file is created.
+      /// @param append Determines whether data is to be appended to the file. If the file exists and append is `false`, the file is overwritten. If the file exists and append is `true` the data is appended to the file. Otherwise, a new file is created.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened
       stream_writer(const xtd::string& path, bool append);

@@ -31,13 +31,13 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the MemoryStream class with an expandable capacity initialized to zero.
-      /// @remarks The xtd::io::memory_stream::can_read, xtd::io::memory_stream::can_seek, and xtd::io::memory_stream::can_write properties are all set to true.
+      /// @remarks The xtd::io::memory_stream::can_read, xtd::io::memory_stream::can_seek, and xtd::io::memory_stream::can_write properties are all set to `true`.
       /// @remarks The capacity of the current stream automatically increases when you use the xtd::io::memory_stream::set_length method to set the length to a value larger than the capacity of the current stream.
       /// @remarks This constructor exposes the underlying stream, which xtd::io::memory_stream::get_buffer returns.
       memory_stream();
       /// @brief Initializes a new instance of the MemoryStream class with an expandable capacity initialized as specified.
       /// @param capacity The initial size of the internal array in bytes.
-      /// @remarks The xtd::io::memory_stream::can_read, xtd::io::memory_stream::can_seek, and xtd::io::memory_stream::can_write properties are all set to true.
+      /// @remarks The xtd::io::memory_stream::can_read, xtd::io::memory_stream::can_seek, and xtd::io::memory_stream::can_write properties are all set to `true`.
       /// @remarks The capacity of the current stream automatically increases when you use the xtd::io::memory_stream::set_length method to set the length to a value larger than the capacity of the current stream.
       /// @remarks This constructor exposes the underlying stream, which xtd::io::memory_stream::get_buffer returns.
       memory_stream(xtd::size capacity);

@@ -77,7 +77,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the day on which the time change occurs.
       /// @return The day on which the time change occurs.
-      /// @remarks The xtd::time_zone_info::transition_time::day property returns a valid value only if the xtd::time_zone_info::transition_time::is_fixed_date_rule property is true.
+      /// @remarks The xtd::time_zone_info::transition_time::day property returns a valid value only if the xtd::time_zone_info::transition_time::is_fixed_date_rule property is `true`.
       /// @remarks The xtd::time_zone_info::transition_time::day property value corresponds to the value of the day parameter of the xtd::time_zone_info::transition_time::create_fixed_date_rule method. If its value is greater than the number of days in the month of the transition, the transition occurs on the last day of the month.
       /// @remarks The xtd::time_zone_info::transition_time::day property indicates the day of the month on which a fixed-date rule is applied (for example, April 15). In contrast, the xtd::time_zone_info::transition_time::day_of_week property indicates the day of the week on which a floating-date rule is applied (for example, the second Sunday of November).
       uint32 day() const noexcept;
@@ -273,7 +273,7 @@ namespace xtd {
     /// @return string The display name for the time zone's daylight saving time.
     /// @remarks The display name is localized based on the culture installed with the Windows operating system.
     /// @remarks A DaylightName property whose value is not string.Empty or null does not necessarily indicate that the time zone supports daylight saving time. To determine whether the time zone supports daylight saving time, check the value of its SupportsDaylightSavingTime property.
-    /// @remarks In most cases, the DaylightName property of time zones defined in the registry is not string.Empty or null. However, the DaylightName property of custom time zones can be set to string.Empty. This occurs when custom time zones are created by the time_zone_info.CreateCustomTimeZone(string, TimeSpan, string, string) or the time_zone_info.CreateCustomTimeZone(string, TimeSpan, string, string, string, time_zone_info.AdjustmentRule[], Boolean) overload and the disableDaylightSavingTime parameter is true. Therefore, your code should never assume that the value of the DaylightName property is not null or empty.
+    /// @remarks In most cases, the DaylightName property of time zones defined in the registry is not string.Empty or null. However, the DaylightName property of custom time zones can be set to string.Empty. This occurs when custom time zones are created by the time_zone_info.CreateCustomTimeZone(string, TimeSpan, string, string) or the time_zone_info.CreateCustomTimeZone(string, TimeSpan, string, string, string, time_zone_info.AdjustmentRule[], Boolean) overload and the disableDaylightSavingTime parameter is `true`. Therefore, your code should never assume that the value of the DaylightName property is not null or empty.
     /// @remarks The DaylightName property is equivalent to the DaylightName property of the TimeZone class.
     const string& daylight_name() const noexcept;
     
@@ -346,7 +346,7 @@ namespace xtd {
     /// @param dateTime The date and time to convert.
     /// @return date_time The Coordinated Universal Time (UTC) that corresponds to the dateTime parameter. The xtd::date_time value's Kind property is always set to xtd::date_timeKind.Utc.
     /// @exception ArgumentNullException dateTime is null.
-    /// @exception ArgumentException time_zone_info::Local().IsInvalidxtd::date_time(dateTime) returns true.
+    /// @exception ArgumentException time_zone_info::Local().IsInvalidxtd::date_time(dateTime) returns `true`.
     static xtd::date_time convert_time_to_utc(const xtd::date_time& date_time);
     
     /// @brief Returns a sorted collection of all the time zones about which information is available on the local system.

@@ -61,17 +61,17 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the dialog box shows alpha values and an opacity selector (slider).
-      /// @return `true` if the dialog box  shows alpha values and an opacity selector (slider); otherwise, `false`. The default is true.
+      /// @return `true` if the dialog box  shows alpha values and an opacity selector (slider); otherwise, `false`. The default is `true`.
       bool alpha_color() const noexcept;
       /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
       /// @param alpha_color `true` if the dialog box  shows alpha values and an opacity selector (slider); otherwise, `false`.
       color_dialog& alpha_color(bool alpha_color);
       
       /// @brief Gets a value indicating whether the user can use the dialog box to define custom colors.
-      /// @return `true` if the user can define custom colors; otherwise, `false`. The default is true.
+      /// @return `true` if the user can define custom colors; otherwise, `false`. The default is `true`.
       bool allow_full_open() const noexcept;
       /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
-      /// @param allow_full_open `true` if the user can define custom colors; otherwise, `false`. The default is true.
+      /// @param allow_full_open `true` if the user can define custom colors; otherwise, `false`. The default is `true`.
       color_dialog& allow_full_open(bool allow_full_open);
       
       /// @brief Gets a value indicating whether the dialog box displays all available colors in the set of basic colors.
@@ -93,12 +93,12 @@ namespace xtd {
       /// @brief Gets the set of custom colors shown in the dialog box.
       /// @return A set of custom colors shown by the dialog box. The default value is empty.
       /// @remarks Users can create their own set of custom colors. These colors are contained in an int32 composed of the BGR (blue, green, red) values necessary to create the color.
-      /// @remarks Custom colors can only be defined if allow_full_open is set to true.
+      /// @remarks Custom colors can only be defined if allow_full_open is set to `true`.
       const colors& custom_colors() const noexcept;
       /// @brief Sets the set of custom colors shown in the dialog box.
       /// @param custom_color A set of custom colors shown by the dialog box.
       /// @remarks Users can create their own set of custom colors. These colors are contained in an int32 composed of the BGR (blue, green, red) values necessary to create the color.
-      /// @remarks Custom colors can only be defined if allow_full_open is set to true.
+      /// @remarks Custom colors can only be defined if allow_full_open is set to `true`.
       color_dialog& custom_colors(const colors& custom_colors);
       
       /// @brief Gets a value indicating whether the controls used to create custom colors are visible when the dialog box is opened

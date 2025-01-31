@@ -41,7 +41,7 @@ namespace xtd {
         /// @brief Adds a font contained in system memory to this xtd::drawing::text::private_font_collection.
         /// @param memory The memory address of the font to add.
         /// @param length The memory length of the font to add.
-        /// @remarks To use the memory font, text on a control must be rendered with GDI+. Use the set_compatible_text_rendering_default method, passing true, to set GDI+ rendering on the application, or on individual controls by setting the control's use_compatible_text_rendering property to true. Some controls cannot be rendered with GDI+.
+        /// @remarks To use the memory font, text on a control must be rendered with GDI+. Use the set_compatible_text_rendering_default method, passing `true`, to set GDI+ rendering on the application, or on individual controls by setting the control's use_compatible_text_rendering property to `true`. Some controls cannot be rendered with GDI+.
         void add_memory_font(intptr memory, size_t length);
         /// @}
       };

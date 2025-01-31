@@ -207,7 +207,7 @@ By default controls have [auto_size_mode::auto_size_mode::grow_and_shrink](https
 
 #### Example
 
-For example if a form contains three controls and we set the [auto_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a571575a959ffc0ee42fd8d5426bcbd9f) property of the form to true, then the size of the form will adapt to encompass the three controls.
+For example if a form contains three controls and we set the [auto_size](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1control.html#a571575a959ffc0ee42fd8d5426bcbd9f) property of the form to `true`, then the size of the form will adapt to encompass the three controls.
 
 ```cpp
 #include <xtd/xtd>

@@ -4,7 +4,7 @@
 
 This article demonstrates how to use I/O classes to synchronously copy the contents of a directory to another location.
 For an example of asynchronous file copy, see Asynchronous file I/O.
-This example copies subdirectories by setting the recursive parameter of the copy_directory method to true. The copy_directory method recursively copies subdirectories by calling itself on each subdirectory until there are no more to copy.
+This example copies subdirectories by setting the recursive parameter of the copy_directory method to `true`. The copy_directory method recursively copies subdirectories by calling itself on each subdirectory until there are no more to copy.
 
 ## Examples
 

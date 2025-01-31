@@ -128,7 +128,7 @@ namespace xtd {
       /// @remarks By default, the following threads execute in the foreground (that is, their xtd::threading::thread::is_background property returns false):
       /// * The primary thread (or main application thread).
       /// * All threads created by calling a xtd::threading::thread class constructor.
-      /// @remarks By default, the following threads execute in the background (that is, their xtd::threading::thread::is_background property returns true):
+      /// @remarks By default, the following threads execute in the background (that is, their xtd::threading::thread::is_background property returns `true`):
       /// * Thread pool threads, which are a pool of worker threads maintained by the runtime. You can configure the thread pool and schedule work on thread pool threads by using the xtd::threading::thread_pool class.
       /// * All threads create without xtd::threading::thread class (std::thread or threads create by oparating system API).
       bool is_background() const noexcept;
@@ -137,10 +137,10 @@ namespace xtd {
       /// @return The xtd::threading::thread current instance.
       /// @exception xtd::threadng::thread_state_exception The thread is dead.
       /// @remarks A thread is either a background thread or a foreground thread. Background threads are identical to foreground threads, except that background threads do not prevent a process from terminating. Once all foreground threads belonging to a process have terminated, the system ends the process. Any remaining background threads are stopped and do not complete.
-      /// @remarks By default, the following threads execute in the foreground (that is, their xtd::threading::thread::is_background property returns false):
+      /// @remarks By default, the following threads execute in the foreground (that is, their xtd::threading::thread::is_background property returns `false`):
       /// * The primary thread (or main application thread).
       /// * All threads created by calling a xtd::threading::thread class constructor.
-      /// @remarks By default, the following threads execute in the background (that is, their xtd::threading::thread::is_background property returns true):
+      /// @remarks By default, the following threads execute in the background (that is, their xtd::threading::thread::is_background property returns `true`):
       /// * Thread pool threads, which are a pool of worker threads maintained by the runtime. You can configure the thread pool and schedule work on thread pool threads by using the xtd::threading::thread_pool class.
       /// * All threads create without xtd::threading::thread class (std::thread or threads create by oparating system API).
       thread& is_background(bool value);

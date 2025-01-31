@@ -56,7 +56,7 @@ namespace xtd {
       /// @brief Creates a new test instance with specified name, method and stack frame.
       /// @param name Represents the name of the method. Generally is the same name as the method name.
       /// @param method The method that contains the test.
-      /// @param ignored If true, the test will be ignored during tests execution; otherwise, the test will be taken into account during tests execution.
+      /// @param ignored If `true`, the test will be ignored during tests execution; otherwise, the test will be taken into account during tests execution.
       /// @param stack_frame The stack frame of the method.
       test(const xtd::string& name, const std::function<void()>& method, bool ignore, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) noexcept;
       /// @}

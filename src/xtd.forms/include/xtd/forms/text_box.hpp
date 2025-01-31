@@ -64,13 +64,13 @@ namespace xtd {
       
       /// @brief Gets the character used to mask characters of a password in a single-line TextBox control.
       /// @return The character used to mask characters entered in a single-line text_box control. Set the value of this property to '0' (U+0000) if you do not want the control to mask characters as they are typed. The default value is '0' (U+0000).
-      /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to true, the default system password character is used and any character set by password_char is ignored.
+      /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to `true`, the default system password character is used and any character set by password_char is ignored.
       /// @remarks When the password_char property is set, cut and copy actions in the control using the keyboard cannot be performed.
       virtual char32 password_char() const noexcept;
       /// @brief Sets the character used to mask characters of a password in a single-line TextBox control.
       /// @param value The character used to mask characters entered in a single-line text_box control. Set the value of this property to '0' (U+0000) if you do not want the control to mask characters as they are typed. The default value is '0' (U+0000).
       /// @return Current text_box instance.
-      /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to true, the default system password character is used and any character set by password_char is ignored.
+      /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to `true`, the default system password character is used and any character set by password_char is ignored.
       /// @remarks When the password_char property is set, cut and copy actions in the control using the keyboard cannot be performed.
       virtual text_box& password_char(char32 value);
       
@@ -99,12 +99,12 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the text in the TextBox control should appear as the default password character.
       /// @return `true` if the text in the TextBox control should appear as the default password character; otherwise, `false`.
-      /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to true, the default system password character is used and any character set by password_char is ignored.
+      /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to `true`, the default system password character is used and any character set by password_char is ignored.
       virtual bool use_system_password_char() const noexcept;
       /// @brief Sets a value indicating whether the text in the TextBox control should appear as the default password character.
       /// @param value `true` if the text in the TextBox control should appear as the default password character; otherwise, `false`.
       /// @return Current text_box instance.
-      /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to true, the default system password character is used and any character set by password_char is ignored.
+      /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to `true`, the default system password character is used and any character set by password_char is ignored.
       virtual text_box& use_system_password_char(bool value);
       /// @}
       

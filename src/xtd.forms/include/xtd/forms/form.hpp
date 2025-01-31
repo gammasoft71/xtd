@@ -40,7 +40,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms forms
-    /// @remarks A form is a representation of any window displayed in your application. The Form class can be used to create standard, tool, borderless, and floating windows. You can also use the form class to create modal windows such as a dialog box. A special kind of form, the multiple-document interface (MDI) form, can contain other forms called MDI child forms. An MDI form is created by setting the is_mdi_container property to true. MDI child forms are created by setting the mdi_parent property to the MDI parent form that will contain the child form.
+    /// @remarks A form is a representation of any window displayed in your application. The Form class can be used to create standard, tool, borderless, and floating windows. You can also use the form class to create modal windows such as a dialog box. A special kind of form, the multiple-document interface (MDI) form, can contain other forms called MDI child forms. An MDI form is created by setting the is_mdi_container property to `true`. MDI child forms are created by setting the mdi_parent property to the MDI parent form that will contain the child form.
     /// @remarks Using the properties available in the form class, you can determine the appearance, size, color, and window management features of the window or dialog box you are creating. The text property allows you to specify the caption of the window in the title bar. The size and desktop_location properties allow you to define the size and position of the window when it is displayed. You can use the fore_color color property to change the default foreground color of all controls placed on the form. The form_border_style, minimize_box, and maximize_box properties allow you to control whether the form can be minimized, maximized, or resized at run time.
     /// @remarks In addition to properties, you can use the methods of the class to manipulate a form. For example, you can use the show_dialog method to show a form as a modal dialog box. You can use the set_desktop_location method to position the form on the desktop.
     /// @par Appearance
@@ -115,18 +115,18 @@ namespace xtd {
       form& cancel_button(std::nullptr_t);
       
       /// @brief Gets a value indicating whether a close box is displayed in the caption bar of the form.
-      /// @return `true` if the form displays a close box in the upper-left corner of the form; otherwise, `false`. The default is true.
+      /// @return `true` if the form displays a close box in the upper-left corner of the form; otherwise, `false`. The default is `true`.
       virtual bool close_box() const noexcept;
       /// @brief Sets a value indicating whether a close box is displayed in the caption bar of the form.
-      /// @param value `true` if the form displays a close box in the upper-left corner of the form; otherwise, `false`. The default is true.
+      /// @param value `true` if the form displays a close box in the upper-left corner of the form; otherwise, `false`. The default is `true`.
       /// @return Current form.
       virtual form& close_box(bool value);
       
       /// @brief Gets a value indicating whether a control box is displayed in the caption bar of the form.
-      /// @return `true` if the form displays a control box in the upper-right corner of the form; otherwise, `false`. The default is true.
+      /// @return `true` if the form displays a control box in the upper-right corner of the form; otherwise, `false`. The default is `true`.
       virtual bool control_box() const noexcept;
       /// @brief Sets a value indicating whether a control box is displayed in the caption bar of the form.
-      /// @param value `true` if the form displays a control box in the upper-right corner of the form; otherwise, `false`. The default is true.
+      /// @param value `true` if the form displays a control box in the upper-right corner of the form; otherwise, `false`. The default is `true`.
       /// @return Current form.
       virtual form& control_box(bool value);
       
@@ -168,10 +168,10 @@ namespace xtd {
       virtual form& icon(const xtd::drawing::icon& value);
       
       /// @brief Gets a value indicating whether the Maximize button is displayed in the caption bar of the form.
-      /// @return `true` to display a Maximize button for the form; otherwise, `false`. The default is true.
+      /// @return `true` to display a Maximize button for the form; otherwise, `false`. The default is `true`.
       virtual bool maximize_box() const noexcept;
       /// @brief Sets a value indicating whether the Maximize button is displayed in the caption bar of the form.
-      /// @param value `true` to display a Maximize button for the form; otherwise, `false`. The default is true.
+      /// @param value `true` to display a Maximize button for the form; otherwise, `false`. The default is `true`.
       /// @return Current form.
       virtual form& maximize_box(bool value);
       
@@ -188,10 +188,10 @@ namespace xtd {
       virtual form& menu(std::nullptr_t);
       
       /// @brief Gets a value indicating whether the Minimize button is displayed in the caption bar of the form.
-      /// @return `true` to display a Minimize button for the form; otherwise, `false`. The default is true.
+      /// @return `true` to display a Minimize button for the form; otherwise, `false`. The default is `true`.
       virtual bool minimize_box() const noexcept;
       /// @brief Sets a value indicating whether the Minimize button is displayed in the caption bar of the form.
-      /// @param value `true` to display a Minimize button for the form; otherwise, `false`. The default is true.
+      /// @param value `true` to display a Minimize button for the form; otherwise, `false`. The default is `true`.
       /// @return Current form.
       virtual form& minimize_box(bool value);
       
@@ -224,21 +224,21 @@ namespace xtd {
       control& parent(const control& value) override;
       
       /// @brief Gets a value indicating whether an icon is displayed in the caption bar of the form.
-      /// @return `true` if the form displays an icon in the caption bar; otherwise, `false`. The default is true.
+      /// @return `true` if the form displays an icon in the caption bar; otherwise, `false`. The default is `true`.
       virtual bool show_icon() const noexcept;
       /// @brief Sets a value indicating whether an icon is displayed in the caption bar of the form.
-      /// @param value `true` if the form displays an icon in the caption bar; otherwise, `false`. The default is true.
+      /// @param value `true` if the form displays an icon in the caption bar; otherwise, `false`. The default is `true`.
       /// @return Current form.
       virtual form& show_icon(bool value);
       
       /// @brief Gets a value indicating whether the form is displayed in the Windows taskbar.
-      /// @return `true` to display the form in the Windows taskbar at run time; otherwise, `false`. The default is true.
+      /// @return `true` to display the form in the Windows taskbar at run time; otherwise, `false`. The default is `true`.
       /// @remarks If a form is parented within another form, the parented form is not displayed in the Windows taskbar.
       /// @remarks You can use this property to prevent users from selecting your form through the Windows taskbar. For example, if you display a Find and Replace tool window in your application, you might want to prevent that window from being selected through the Windows taskbar because you would need both the application's main window and the Find and Replace tool window displayed in order to process searches appropriately.
       /// @remarks You will often wish to use this property when creating a form with the xtd::forms::form_border_style::fixed_tool_window style. Setting the xtd::forms::form_border_style::fixed_tool_window style does not alone guarantee that a window will not appear in the taskbar.
       virtual bool show_in_taskbar() const noexcept;
       /// @brief Sets a value indicating whether the form is displayed in the Windows taskbar.
-      /// @param value `true` to display the form in the Windows taskbar at run time; otherwise, `false`. The default is true.
+      /// @param value `true` to display the form in the Windows taskbar at run time; otherwise, `false`. The default is `true`.
       /// @return Current form.
       /// @remarks If a form is parented within another form, the parented form is not displayed in the Windows taskbar.
       /// @remarks You can use this property to prevent users from selecting your form through the Windows taskbar. For example, if you display a Find and Replace tool window in your application, you might want to prevent that window from being selected through the Windows taskbar because you would need both the application's main window and the Find and Replace tool window displayed in order to process searches appropriately.
@@ -278,12 +278,12 @@ namespace xtd {
       virtual form& tool_bar(std::nullptr_t);
       
       /// @brief Gets a value indicating whether to display the form as a top-level window.
-      /// @return `true` to display the form as a top-level window; otherwise, `false`. The default is true.
+      /// @return `true` to display the form as a top-level window; otherwise, `false`. The default is `true`.
       /// @remarks A Multiple-document interface (MDI) parent form must be a top-level window. So set to `false` has no effect.
       /// @remarks A top-level form is a window that has no parent form, or whose parent form is the desktop window. Top-level windows are typically used as the main form in an application.
       virtual bool top_level() const noexcept;
       /// @brief Sets a value indicating whether to display the form as a top-level window.
-      /// @return `true` to display the form as a top-level window; otherwise, `false`. The default is true.
+      /// @return `true` to display the form as a top-level window; otherwise, `false`. The default is `true`.
       /// @remarks A Multiple-document interface (MDI) parent form must be a top-level window. So set to `false` has no effect.
       /// @remarks A top-level form is a window that has no parent form, or whose parent form is the desktop window. Top-level windows are typically used as the main form in an application.
       virtual form& top_level(bool top_level);
@@ -298,7 +298,7 @@ namespace xtd {
       
       using container_control::visible;
       /// @brief Sets a value indicating whether the control and all its child controls are displayed.
-      /// @param visible `true` if the control and all its child controls are displayed; otherwise, `false`. The default is true.
+      /// @param visible `true` if the control and all its child controls are displayed; otherwise, `false`. The default is `true`.
       /// @return Current control.
       control& visible(bool visible) override;
       

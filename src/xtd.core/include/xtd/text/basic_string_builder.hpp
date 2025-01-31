@@ -373,11 +373,11 @@ namespace xtd {
       /// @return Iterator to the character following the last character.
       iterator end() {return chars_.end();}
 
-      /// @brief Returns reference to the first character in the string. The behavior is undefined if empty() is true.
+      /// @brief Returns reference to the first character in the string. The behavior is undefined if empty() is `true`.
       /// @return Reference to the first character, equivalent to `operator[](0)`.
       /// @exception xtd::index_out_of_range_exception If is empty.
       const_reference front() const {return operator[](0);}
-      /// @brief Returns reference to the first character in the string. The behavior is undefined if empty() is true.
+      /// @brief Returns reference to the first character in the string. The behavior is undefined if empty() is `true`.
       /// @return Reference to the first character, equivalent to `operator[](0)`.
       /// @exception xtd::index_out_of_range_exception If is empty.
       reference front() {return operator[](0);}
@@ -2290,7 +2290,7 @@ namespace xtd {
       /// @remarks Equivalent to `return os << std::basic_string_view<char_t, traits_t>(str);`.
       friend std::basic_ostream<xtd::wchar>& operator <<(std::basic_ostream<xtd::wchar>& stream, const basic_string_builder& str) {return stream << xtd::basic_string<xtd::wchar>(str.chars()).chars();}
       
-      /// @brief Input stream operator. Behaves as a [FormattedInputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedInputFunction). After constructing and checking the sentry object, which may skip leading whitespace, first clears `str` with `str.erase()`, then reads characters from `is` and appends them to `str` as if by `str.append(1, c)`, until one of the following conditions becomes true:
+      /// @brief Input stream operator. Behaves as a [FormattedInputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedInputFunction). After constructing and checking the sentry object, which may skip leading whitespace, first clears `str` with `str.erase()`, then reads characters from `is` and appends them to `str` as if by `str.append(1, c)`, until one of the following conditions becomes `true`:
       /// * N characters are read, where N is `is.width()` if `is.width() > 0`, otherwise N is `str.max_size()`,
       /// * the end-of-file condition occurs in the stream is, or
       /// * `std::isspace(c, is.getloc())` is `true` for the next character `c` in `is` (this whitespace character remains in the input stream).
@@ -2304,7 +2304,7 @@ namespace xtd {
         str = xtd::basic_string<value_type>(s).chars();
         return stream;
       }
-      /// @brief Input stream operator. Behaves as a [FormattedInputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedInputFunction). After constructing and checking the sentry object, which may skip leading whitespace, first clears `str` with `str.erase()`, then reads characters from `is` and appends them to `str` as if by `str.append(1, c)`, until one of the following conditions becomes true:
+      /// @brief Input stream operator. Behaves as a [FormattedInputFunction](https://en.cppreference.com/w/cpp/named_req/FormattedInputFunction). After constructing and checking the sentry object, which may skip leading whitespace, first clears `str` with `str.erase()`, then reads characters from `is` and appends them to `str` as if by `str.append(1, c)`, until one of the following conditions becomes `true`:
       /// * N characters are read, where N is `is.width()` if `is.width() > 0`, otherwise N is `str.max_size()`,
       /// * the end-of-file condition occurs in the stream is, or
       /// * `std::isspace(c, is.getloc())` is `true` for the next character `c` in `is` (this whitespace character remains in the input stream).

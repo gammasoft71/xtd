@@ -30,7 +30,7 @@ namespace xtd {
     /// @ingroup xtd_core threading
     /// @remarks When two or more threads need to access a shared resource at the same time, the system needs a synchronization mechanism to ensure that only one thread at a time uses the resource. xtd::threading::mutex is a synchronization primitive that grants exclusive access to the shared resource to only one thread. If a thread acquires a mutex, the second thread that wants to acquire that mutex is suspended until the first thread releases the mutex.
     /// @remarks You can use the xtd::threading::wait_handle::wait_one method to request ownership of a mutex. The calling thread blocks until one of the following occurs:
-    /// * The mutex is signaled to indicate that it is not owned. When this happens, the xtd::threading::wait_handle::wait_one method returns true, and the calling thread assumes ownership of the mutex and accesses the resource protected by the mutex. When it has finished accessing the resource, the thread must call the xtd::threading::mutex::release_mutex method to release ownership of the mutex. The first example in the Examples section illustrates this pattern.
+    /// * The mutex is signaled to indicate that it is not owned. When this happens, the xtd::threading::wait_handle::wait_one method returns `true`, and the calling thread assumes ownership of the mutex and accesses the resource protected by the mutex. When it has finished accessing the resource, the thread must call the xtd::threading::mutex::release_mutex method to release ownership of the mutex. The first example in the Examples section illustrates this pattern.
     /// * The time-out interval specified in the call to a xtd::threading::wait_handle::wait_one method that has a @verbatim milliseconds_timeout @endverbatim or timeout parameter has elapsed. When this happens, the xtd::threading::wait_handle::wait_one method returns `false`, and the calling thread makes no further attempt to acquire ownership of the mutex. In this case, you should structure your code so that access to the resource that is protected by the mutex is denied to the calling thread. Because the thread never acquired ownership of the mutex, it must not call the xtd::threading::mutex::release_mutex method. The second example in the Examples section illustrates this pattern.
     /// @remarks The xtd::threading::mutex class enforces thread identity, so a mutex can be released only by the thread that acquired it. By contrast, the xtd::threading::semaphore class does not enforce thread identity. A mutex can also be passed across application domain boundaries.
     /// @remarks The thread that owns a mutex can request the same mutex in repeated calls to xtd::threading::wait_handle::wait_one without blocking its execution. However, the thread must call the xtd::threading::mutex::release_mutex method the same number of times to release ownership of the mutex.
@@ -129,33 +129,33 @@ namespace xtd {
       /// @exception xtd::object_closed_exception the handle is invalid
       void release_mutex();
       
-      /// @brief Tries to lock the mutex. Returns immediately. On successful lock acquisition returns true, otherwise returns `false`.
+      /// @brief Tries to lock the mutex. Returns immediately. On successful lock acquisition returns `true`, otherwise returns `false`.
       /// @param timeout timeout A xtd::time_span that represents the number of milliseconds to wait, or a xtd::time_span that represents -1 milliseconds to wait indefinitely.
       /// @return `true` if the lock was acquired successfully, otherwise `false`.
       /// @remarks This function is allowed to fail spuriously and return `false` even if the mutex is not currently locked by any other thread.
       /// @remarks If try_lock is called by a thread that already owns the mutex, the behavior is undefined.
-      /// @remarks Prior unlock() operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns true. Note that prior lock() does not synchronize with this operation if it returns `false`.
+      /// @remarks Prior unlock() operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns `true`. Note that prior lock() does not synchronize with this operation if it returns `false`.
       bool try_lock() noexcept;
       
-      /// @brief Tries to lock the mutex. Blocks until specified timeout_duration has elapsed or the lock is acquired, whichever comes first. On successful lock acquisition returns true, otherwise returns `false`.
+      /// @brief Tries to lock the mutex. Blocks until specified timeout_duration has elapsed or the lock is acquired, whichever comes first. On successful lock acquisition returns `true`, otherwise returns `false`.
       /// @param timeout minimum duration to block for
       /// @return `true` if the lock was acquired successfully, otherwise `false`.
       /// @remarks If timeout_duration is less or equal timeout_duration.zero(), the function behaves like try_lock().
       /// @remarks This function may block for longer than timeout_duration due to scheduling or resource contention delays.
       /// @remarks The standard recommends that a steady_clock is used to measure the duration. If an implementation uses a system_clock instead, the wait time may also be sensitive to clock adjustments.
       /// @remarks As with try_lock(), this function is allowed to fail spuriously and return `false` even if the mutex was not locked by any other thread at some point during timeout_duration.
-      /// @remarks Prior unlock() operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns true.
+      /// @remarks Prior unlock() operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns `true`.
       /// @remarks If try_lock_for is called by a thread that already owns the mutex, the behavior is undefined.
       bool try_lock_for(const time_span& timeout) noexcept;
       
-      /// @brief Tries to lock the mutex. Blocks until specified timeout_time has been reached or the lock is acquired, whichever comes first. On successful lock acquisition returns true, otherwise returns `false`.
+      /// @brief Tries to lock the mutex. Blocks until specified timeout_time has been reached or the lock is acquired, whichever comes first. On successful lock acquisition returns `true`, otherwise returns `false`.
       /// @param timeout_time maximum time point to block until
       /// @return `true` if the lock was acquired successfully, otherwise `false`.
       /// @remarks If timeout_time has already passed, this function behaves like try_lock().
       /// @remarks Clock must meet the Clock requirements. The program is ill-formed if std::chrono::is_clock_v<Clock> is `false` (since C++20).
       /// @remarks The standard recommends that the clock tied to timeout_time be used, in which case adjustments of the clock may be taken into account. Thus, the duration of the block might be more or less than timeout_time - Clock::now() at the time of the call, depending on the direction of the adjustment and whether it is honored by the implementation. The function also may block until after timeout_time has been reached due to process scheduling or resource contention delays.
       /// @remarks As with try_lock(), this function is allowed to fail spuriously and return `false` even if the mutex was not locked by any other thread at some point before timeout_time.
-      /// @remarks Prior unlock() operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns true.
+      /// @remarks Prior unlock() operation on the same mutex synchronizes-with (as defined in std::memory_order) this operation if it returns `true`.
       /// @remarks If try_lock_until is called by a thread that already owns the mutex, the behavior is undefined.
       bool try_lock_until(const date_time& timeout_time) noexcept;
 

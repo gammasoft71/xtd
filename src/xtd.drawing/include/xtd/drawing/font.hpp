@@ -229,7 +229,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the font is a member of xtd::drawing::system_fonts.
       /// @return `true` if the font is a member of xtd::drawing::system_fonts; otherwise, `false`. The default is `false`.
-      /// @remarks When the user changes the system font, the is_system_font property could return true, even if the font is not actually a system font.
+      /// @remarks When the user changes the system font, the is_system_font property could return `true`, even if the font is not actually a system font.
       bool is_system_font() const noexcept;
       
       /// @brief Gets a value that indicates whether this xtd::drawing::font is italic.

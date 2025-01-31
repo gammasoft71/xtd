@@ -23,7 +23,7 @@ namespace xtd {
     /// @remarks This control presents a list of items that the user can navigate by using the keyboard or the scrollbar on the right side of the control. The user can place a check mark by one or more items and the checked items can be navigated with the checked_list_box::checked_item_collection and checked_list_box::checked_index_collection.
     /// @remarks To add objects to the list at run time, assign an array of object with the push_range method. The list then displays the default string value for each object. You can add individual items to the list with the push method.
     /// @remarks The checked_list_box object supports three states through the check_state enumeration: checked, indeterminate, and unchecked. You must set the state of indeterminate in the code because the user interface for a checked_list_box does not provide a mechanism to do so.
-    /// @remarks If use_tab_stops is true, the checked_list_box will recognize and expand tab characters in an item's text, creating columns. These tab stops are preset and cannot be changed. To use custom tab stops, set use_tab_stops to `false`, set use_custom_tab_offsets to true, and add the custom values to the custom_tab_offsets collection.
+    /// @remarks If use_tab_stops is `true`, the checked_list_box will recognize and expand tab characters in an item's text, creating columns. These tab stops are preset and cannot be changed. To use custom tab stops, set use_tab_stops to `false`, set use_custom_tab_offsets to `true`, and add the custom values to the custom_tab_offsets collection.
     /// @note If the use_compatible_text_rendering property is `false`, the custom_tab_offsets property will be ignored and replaced with standard tab offsets.
     /// @par Appearance
     /// |       | Windows                                       | macOS                                         | Gnome                                         |
@@ -82,7 +82,7 @@ namespace xtd {
         
         /// @{
         /// @brief Gets a value indicating whether the item is in the checked state.
-        /// @return `true` if the item is in the checked state; otherwise, `false`. The default value is `false`. If the three_state property is set to true, the checked property will return `true` for either a checked or indeterminate check_state.
+        /// @return `true` if the item is in the checked state; otherwise, `false`. The default value is `false`. If the three_state property is set to `true`, the checked property will return `true` for either a checked or indeterminate check_state.
         virtual bool checked() const;
         
         /// @brief Gets the state of the item.

@@ -1261,8 +1261,8 @@ namespace xtd {
           fail("positive", to_string(value), message, stack_frame);
       }
       
-      /// @brief Asserts that a condition is true.
-      /// @param condition The condition to check is true.
+      /// @brief Asserts that a condition is `true`.
+      /// @param condition The condition to check is `true`.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
@@ -1273,8 +1273,8 @@ namespace xtd {
       /// xtd::tunit::assert::is_false(std::empty(s2)); // test throws an assert_error exception.
       /// ```
       static void is_true(bool condition, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
-      /// @brief Asserts that a condition is true.
-      /// @param condition The condition to check is true.
+      /// @brief Asserts that a condition is `true`.
+      /// @param condition The condition to check is `true`.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assert_error If bad assertion.

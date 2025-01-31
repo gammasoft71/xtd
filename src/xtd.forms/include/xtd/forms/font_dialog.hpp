@@ -65,36 +65,36 @@ namespace xtd {
       
       /// @{
       /// @brief Gets a value indicating whether the user can change the character set specified in the Script combo box to display a character set other than the one currently displayed.
-      /// @return `true` if the user can change the character set specified in the Script combo box; otherwise, `false`. The default value is true.
+      /// @return `true` if the user can change the character set specified in the Script combo box; otherwise, `false`. The default value is `true`.
       /// @remarks The Script combo box found on the Font dialog box contains character sets associated with the selected font.
       bool allow_script_change() const noexcept;
       /// @brief Sets a value indicating whether the user can change the character set specified in the Script combo box to display a character set other than the one currently displayed.
-      /// @param allow_script_change `true` if the user can change the character set specified in the Script combo box; otherwise, `false`. The default value is true.
+      /// @param allow_script_change `true` if the user can change the character set specified in the Script combo box; otherwise, `false`. The default value is `true`.
       /// @return Current font_dialog.
       /// @remarks The Script combo box found on the Font dialog box contains character sets associated with the selected font.
       font_dialog& allow_script_change(bool allow_script_change);
       
       /// @brief Gets a value indicating whether the dialog box allows graphics device interface (GDI) font simulations.
-      /// @return `true` if font simulations are allowed; otherwise, `false`. The default value is true.
+      /// @return `true` if font simulations are allowed; otherwise, `false`. The default value is `true`.
       bool allow_simulation() const noexcept;
       /// @brief Sets a value indicating whether the dialog box allows graphics device interface (GDI) font simulations.
-      /// @param allow_simulation `true` if font simulations are allowed; otherwise, `false`. The default value is true.
+      /// @param allow_simulation `true` if font simulations are allowed; otherwise, `false`. The default value is `true`.
       /// @return Current font_dialog.
       font_dialog& allow_simulation(bool allow_simulation);
       
       /// @brief Gets a value indicating whether the dialog box allows vector font selections.
-      /// @return `true` if vector fonts are allowed; otherwise, `false`. The default value is true.
+      /// @return `true` if vector fonts are allowed; otherwise, `false`. The default value is `true`.
       bool allow_vector_fonts() const noexcept;
       /// @brief Sets a value indicating whether the dialog box allows vector font selections.
-      /// @param allow_vector_fonts `true` if vector fonts are allowed; otherwise, `false`. The default value is true.
+      /// @param allow_vector_fonts `true` if vector fonts are allowed; otherwise, `false`. The default value is `true`.
       /// @return Current font_dialog.
       font_dialog& allow_vector_fonts(bool allow_vector_fonts);
       
       /// @brief Gets a value indicating whether the dialog box displays both vertical and horizontal fonts or only horizontal fonts.
-      /// @return `true` if both vertical and horizontal fonts are allowed; otherwise, `false`. The default value is true.
+      /// @return `true` if both vertical and horizontal fonts are allowed; otherwise, `false`. The default value is `true`.
       bool allow_vertical_fonts() const noexcept;
       /// @brief Sets a value indicating whether the dialog box displays both vertical and horizontal fonts or only horizontal fonts.
-      /// @param allow_vertical_fonts `true` if both vertical and horizontal fonts are allowed; otherwise, `false`. The default value is true.
+      /// @param allow_vertical_fonts `true` if both vertical and horizontal fonts are allowed; otherwise, `false`. The default value is `true`.
       /// @return Current font_dialog.
       font_dialog& allow_vertical_fonts(bool allow_vertical_fonts);
       
@@ -176,10 +176,10 @@ namespace xtd {
       font_dialog& show_color(bool show_color);
       
       /// @brief Gets a value indicating whether the dialog box contains controls that allow the user to specify strikethrough, underline, and text color options.
-      /// @return `true` if the dialog box contains controls to set strikethrough, underline, and text color options; otherwise, `false`. The default value is true.
+      /// @return `true` if the dialog box contains controls to set strikethrough, underline, and text color options; otherwise, `false`. The default value is `true`.
       bool show_effect() const noexcept;
       /// @brief Sets a value indicating whether the dialog box contains controls that allow the user to specify strikethrough, underline, and text color options.
-      /// @param show_effect `true` if the dialog box contains controls to set strikethrough, underline, and text color options; otherwise, `false`. The default value is true.
+      /// @param show_effect `true` if the dialog box contains controls to set strikethrough, underline, and text color options; otherwise, `false`. The default value is `true`.
       /// @return Current font_dialog.
       font_dialog& show_effect(bool show_effect);
       

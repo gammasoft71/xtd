@@ -43,7 +43,7 @@ struct tunit_export_ __tunit_main final static_ {
 /// @par Library
 /// xtd.tunit
 /// @ingroup xtd_tunit tunit
-/// @remarks The #tunit_main_  contains main method, launch xtd::tunit::console_unit_test::run and set xtd::tunit::settings::gtest_compatibility to true.
+/// @remarks The #tunit_main_  contains main method, launch xtd::tunit::console_unit_test::run and set xtd::tunit::settings::gtest_compatibility to `true`.
 /// @par Examples
 /// The followng code shows ho to use #tunit_main_with_gtest_compatibility_.
 /// ```cpp

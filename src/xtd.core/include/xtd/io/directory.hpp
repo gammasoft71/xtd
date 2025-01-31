@@ -1580,7 +1580,7 @@ namespace xtd {
       /// @remarks The path parameter may specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks Trailing spaces are removed from the end of the path parameter before deleting the directory.
       /// @remarks The path parameter is not case-sensitive.
-      /// @remarks If the recursive parameter is true, the user must have write permission for the current directory as well as for all subdirectories.
+      /// @remarks If the recursive parameter is `true`, the user must have write permission for the current directory as well as for all subdirectories.
       /// @remarks The behavior of this method differs slightly when deleting a directory that contains a reparse point, such as a symbolic link or a mount point. If the reparse point is a directory, such as a mount point, it is unmounted and the mount point is deleted. This method does not recurse through the reparse point. If the reparse point is a symbolic link to a file, the reparse point is deleted and not the target of the symbolic link.
       /// @remarks In some cases, if you have the specified directory open in File Explorer, the xtd::io::directory::remove method may not be able to delete it.
       static void remove(const xtd::string& path, bool recursive);

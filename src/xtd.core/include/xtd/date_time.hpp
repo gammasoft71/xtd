@@ -75,7 +75,7 @@ namespace xtd {
   /// date_time dat1;
   /// // The following method call displays 1/01/0001 00:00:00.
   /// console::write_line(dat1.to_string());
-  /// // The following method call displays true.
+  /// // The following method call displays `true`.
   /// console::write_line(dat1.equals(date_time::min_value));
   /// ```
   /// @remarks For more information about xtd::date_time, see [Date and time](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/date_time).

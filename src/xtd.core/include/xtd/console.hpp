@@ -56,10 +56,10 @@ namespace xtd {
     
     /// @{
     /// @brief Gets a value indicating whether the xtd::console::out will flush its buffer to the underlying stream after every call to xtd::console::write and xtd::console::write_line.
-    /// @return `true` to force xtd::console::out to flush its buffer; otherwise, `false`. The default value is true.
+    /// @return `true` to force xtd::console::out to flush its buffer; otherwise, `false`. The default value is `true`.
     static bool auto_flush_out();
     /// @brief Sets a value indicating whether the xtd::console::out will flush its buffer to the underlying stream after every call to xtd::console::write and xtd::console::write_line.
-    /// @param value `true` to force xtd::console::out to flush its buffer; otherwise, `false`. The default value is true.
+    /// @param value `true` to force xtd::console::out to flush its buffer; otherwise, `false`. The default value is `true`.
     static void auto_flush_out(bool value);
     
     /// @brief Gets the background color of the console.
@@ -329,7 +329,7 @@ namespace xtd {
     /// @remarks When the user presses either Ctrl+C or Ctrl+Break, the cancel_key_press event is fired and the application's console_cancel_event_handler event handler is executed. The event handler is passed a console_cancel_event_args object that has two useful properties:
     /// * special_key, which allows you to determine whether the handler was invoked as a result of the user pressing Ctrl+C (the property value is console_special_key::control_c) or Ctrl+Break (the property value is console_special_key.control_break).
     /// * Cancel, which allows you to determine how to your application should respond to the user pressing Ctrl+C or Ctrl+Break. By default, the cancel property is `false`, which causes program execution to terminate when the event handler exits. Changing its property to `true` specifies that the application should continue to execute.
-    /// @note If your application has simple requirements, you can use the treat_control_c_as_input property instead of this event. By setting this property to `false`, you can ensure that your application always exits if the user presses Ctrl+C. By setting it to true, you can ensure that pressing Ctrl+C will not terminate the application.
+    /// @note If your application has simple requirements, you can use the treat_control_c_as_input property instead of this event. By setting this property to `false`, you can ensure that your application always exits if the user presses Ctrl+C. By setting it to `true`, you can ensure that pressing Ctrl+C will not terminate the application.
     /// @warning The xtd::signal::interrupt and xtd::console_special_key::control_c use the same signal ([SIGINT](https://en.cppreference.com/w/cpp/utility/program/signal)).
     /// @warning The xtd::signal::interrupt and xtd::console_special_key::control_c can be cancelled with xtd::environment::cancel_signal event or xtd::console::cancel_key_press event. Both of these events are called when [SIGINT](https://en.cppreference.com/w/cpp/utility/program/signal) is raised.
     static event<console, console_cancel_event_handler> cancel_key_press;

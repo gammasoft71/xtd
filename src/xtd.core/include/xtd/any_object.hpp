@@ -55,11 +55,11 @@ namespace xtd {
     /// @{
     /// @brief Gets a value indicating whether the current xtd::any_object object has a valid value of its underlying type.
     /// @return `true` if the current xtd::any_object object has a value; `false` if the current xtd::any_object object has no value.
-    /// @remarks If the xtd::any_object::has_value property is true, the value of the current xtd::any_object object can be accessed with the xtd::any_object::value property. Otherwise, attempting to access its value throws an xtd::invalid_operation_exception exception.
+    /// @remarks If the xtd::any_object::has_value property is `true`, the value of the current xtd::any_object object can be accessed with the xtd::any_object::value property. Otherwise, attempting to access its value throws an xtd::invalid_operation_exception exception.
     bool has_value() const noexcept {return value_ != null;}
     
     /// @brief Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value.
-    /// @return The value of the current xtd::any_object object if the xtd::any_object::has_value property is true. An exception is thrown if the xtd::any_object::has_value property is `false`.
+    /// @return The value of the current xtd::any_object object if the xtd::any_object::has_value property is `true`. An exception is thrown if the xtd::any_object::has_value property is `false`.
     /// @exception xtd::invalid_operation_exception The xtd::any_object::has_value property is `false`.
     const object& value() const {
       if (value_ == null) throw invalid_operation_exception {};
@@ -85,7 +85,7 @@ namespace xtd {
     string to_string() const noexcept override {return has_value() ? value_->to_string() : "(null)";}
     
     /// @brief Reset the current object. Set the current object to null.
-    /// @remarks If xtd::any_object::has_values is true, destroys the contained object; otherwise does nothing.
+    /// @remarks If xtd::any_object::has_values is `true`, destroys the contained object; otherwise does nothing.
     void reset() noexcept {value_.reset();}
     /// @}
     

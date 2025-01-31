@@ -13,7 +13,7 @@
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core debug
-/// @param condition The conditional expression to evaluate. If the condition is true, a failure message is not sent and the message box is not displayed.
+/// @param condition The conditional expression to evaluate. If the condition is `true`, a failure message is not sent and the message box is not displayed.
 /// @param message (optional) The brief message to send to the xtd::diagnostics::debug::listeners collection.
 /// @param detail_message (optional) The detail message to send to the xtd::diagnostics::debug::listeners collection.
 /// @par Examples

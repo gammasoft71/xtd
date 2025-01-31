@@ -189,7 +189,7 @@ namespace xtd {
       /// @param value The xtd::collections::bit_array with which to perform the bitwise AND operation.
       /// @return The current instance containing the result of the bitwise AND operation on the elements in the current xtd::collections::bit_array against the corresponding elements in the specified xtd::collections::bit_array.
       /// @exception xtd::argument_exception value and the current xtd::collections::bit_array do not have the same number of elements.
-      /// @remarks The bitwise AND operation returns `true` if both operands are true, and returns `false` if one or both operands are `false`.
+      /// @remarks The bitwise AND operation returns `true` if both operands are `true`, and returns `false` if one or both operands are `false`.
       /// @remarks This method is an O(n) operation, where n is count.
       const bit_array& and_(const bit_array& value);
 
@@ -245,7 +245,7 @@ namespace xtd {
       /// @return An xtd::collection::generic::ienumerator object that can be used to iterate through the collection.
       xtd::collections::generic::enumerator<bool> get_enumerator() const override;
 
-      /// @brief Inverts all the bit values in the current xtd::collections::bit_array, so that elements set to `true` are changed to `false`, and elements set to `false` are changed to true.
+      /// @brief Inverts all the bit values in the current xtd::collections::bit_array, so that elements set to `true` are changed to `false`, and elements set to `false` are changed to `true`.
       /// @return The current instance with inverted bit values.
       /// @remarks This method is an O(n) operation, where n is count.
       const bit_array& not_();

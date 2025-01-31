@@ -110,12 +110,12 @@ namespace xtd {
       
       /// @brief Gets word wrap status.
       /// @return `true` if dialog text box is word wrap; otherwise `false`.
-      /// @remarks The default value is true.
+      /// @remarks The default value is `true`.
       bool word_wrap() const noexcept;
       /// @brief Sets word wrap status.
       /// @param word_wrap `true` if dialog text box is word wrap; otherwise `false`.
       /// @return Current input_dialog instance.
-      /// @remarks The default value is true.
+      /// @remarks The default value is `true`.
       input_dialog& word_wrap(bool word_wrap);
       /// @}
       

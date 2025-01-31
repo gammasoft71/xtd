@@ -45,7 +45,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of the radio_button class.
-      /// @remarks The default view of the radio_button has its text aligned to the right of the button and the auto_check property is set to true.
+      /// @remarks The default view of the radio_button has its text aligned to the right of the button and the auto_check property is set to `true`.
       radio_button();
       /// @}
       
@@ -63,12 +63,12 @@ namespace xtd {
       virtual radio_button& appearance(forms::appearance appearance);
       
       /// @brief Gets a value indicating whether the checked value and the appearance of the control automatically change when the control is clicked.
-      /// @return `true` if the checked value and the appearance of the control automatically change on the click event; otherwise, `false`. The default value is true.
+      /// @return `true` if the checked value and the appearance of the control automatically change on the click event; otherwise, `false`. The default value is `true`.
       /// @remarks If the checked value is set to `false`, the radio_button portion of the control must be checked in code in the click event handler. In addition, if the radio_button is part of a radio_button control group, this property ensures that only one of the controls is checked at a given time.
       /// @remarks If the auto_check property is set to `false`, a group of radio_button controls will not act as a mutually exclusive group and the checked property must be updated in code.
       virtual bool auto_check() const noexcept;
       /// @brief Sets a value indicating whether the checked value and the appearance of the control automatically change when the control is clicked.
-      /// @param auto_check `true` if the checked value and the appearance of the control automatically change on the click event; otherwise, `false`. The default value is true.
+      /// @param auto_check `true` if the checked value and the appearance of the control automatically change on the click event; otherwise, `false`. The default value is `true`.
       /// @return Current radio_button instance.
       /// @remarks If the checked value is set to `false`, the radio_button portion of the control must be checked in code in the click event handler. In addition, if the radio_button is part of a radio_button control group, this property ensures that only one of the controls is checked at a given time.
       /// @remarks If the auto_check property is set to `false`, a group of radio_button controls will not act as a mutually exclusive group and the checked property must be updated in code.
@@ -288,7 +288,7 @@ namespace xtd {
       /// @{
       /// @brief Measure this control.
       /// @return The drawing::size size of this control.
-      /// @remarks This method is used when auto_size is true.
+      /// @remarks This method is used when auto_size is `true`.
       drawing::size measure_control() const noexcept override;
       
       /// @brief Raises the radio_button::appearance_changed event.

@@ -402,13 +402,13 @@ namespace xtd {
       
       /// @brief Gets the background color for the control.
       /// @return A xtd::drawing::color that represents the background color of the control. The default is the value of the xtd::forms::control::default_back_color property.
-      /// @remarks The xtd::forms::control::back_color property does not support transparent colors unless the xtd::forms::control_styles::supports_transparent_back_color value of xtd::forms::control_styles is set to true.
+      /// @remarks The xtd::forms::control::back_color property does not support transparent colors unless the xtd::forms::control_styles::supports_transparent_back_color value of xtd::forms::control_styles is set to `true`.
       /// @remarks The xtd::forms::control::back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same xtd::forms::control::back_color as its parent form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
       virtual drawing::color back_color() const noexcept;
       /// @brief Sets the background color for the control.
       /// @param color A xtd::drawing::color that represents the background color of the control. The default is the value of the xtd::forms::control::default_back_color property.
       /// @return Current control.
-      /// @remarks The xtd::forms::control::back_color property does not support transparent colors unless the xtd::forms::control_styles::supports_transparent_back_color value of xtd::forms::control_styles is set to true.
+      /// @remarks The xtd::forms::control::back_color property does not support transparent colors unless the xtd::forms::control_styles::supports_transparent_back_color value of xtd::forms::control_styles is set to `true`.
       /// @remarks The xtd::forms::control::back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same xtd::forms::control::back_color as its parent form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
       /// @par Notes to Inheritors
       /// When overriding the xtd::forms::control::back_color property in a derived class, use the base class's xtd::forms::control::back_color property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the xtd::forms::control::back_color property; you can override only one if needed.
@@ -463,7 +463,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the control can be selected.
       /// @return `true` if the control can be selected; otherwise, `false`.s
-      /// @remarks This property returns `true` if the electable value of control_styles is set to true, is contained in another control, the control itself is visible and enabled, and all its parent controls are visible and enabled.
+      /// @remarks This property returns `true` if the electable value of control_styles is set to `true`, is contained in another control, the control itself is visible and enabled, and all its parent controls are visible and enabled.
       /// @remarks The Windows Forms controls in the following list are not selectable and will return a value of `false` for the can_select property. controls derived from these controls are also not selectable.
       /// * panel
       /// * group_box
@@ -589,10 +589,10 @@ namespace xtd {
       virtual control& double_buffered(bool double_buffered);
       
       /// @brief Gets a value indicating whether the control can respond to user interaction.
-      /// @return `true` if the control can respond to user interaction; otherwise, `false`. The default is true.
+      /// @return `true` if the control can respond to user interaction; otherwise, `false`. The default is `true`.
       virtual bool enabled() const noexcept;
       /// @brief Sets a value indicating whether the control can respond to user interaction.
-      /// @param enabled `true` if the control can respond to user interaction; otherwise, `false`. The default is true.
+      /// @param enabled `true` if the control can respond to user interaction; otherwise, `false`. The default is `true`.
       /// @return Current control.
       virtual control& enabled(bool enabled);
       
@@ -846,12 +846,12 @@ namespace xtd {
       virtual control& style_sheet(std::nullptr_t);
       
       /// @brief Gets a value indicating whether the user can give the focus to this control using the TAB key.
-      /// @return `true` if the user can give the focus to the control using the TAB key; otherwise, `false`. The default is true.
+      /// @return `true` if the user can give the focus to the control using the TAB key; otherwise, `false`. The default is `true`.
       /// @note Note: This property will always return `true` for an instance of the xtd::forms::form class.
       /// @remarks When the user presses the TAB key, the input focus is set to the next control in the tab order. Controls with the xtd::forms::control::tab_stop property value of `false` are not included in the collection of controls in the tab order. The tab order can be manipulated by setting the control's xtd::forms::control::tab_index property value.
       virtual bool tab_stop() const noexcept;
       /// @brief Sets a value indicating whether the user can give the focus to this control using the TAB key.
-      /// @param value `true` if the user can give the focus to the control using the TAB key; otherwise, `false`. The default is true.
+      /// @param value `true` if the user can give the focus to the control using the TAB key; otherwise, `false`. The default is `true`.
       /// @return Current control.
       /// @note Note: This property will always return `true` for an instance of the xtd::forms::form class.
       /// @remarks When the user presses the TAB key, the input focus is set to the next control in the tab order. Controls with the xtd::forms::control::tab_stop property value of `false` are not included in the collection of controls in the tab order. The tab order can be manipulated by setting the control's xtd::forms::control::tab_index property value.
@@ -895,10 +895,10 @@ namespace xtd {
       virtual std::optional<control_ref> top_level_control() const noexcept;
       
       /// @brief Gets a value indicating whether the control and all its child controls are displayed.
-      /// @return `true` if the control and all its child controls are displayed; otherwise, `false`. The default is true.
+      /// @return `true` if the control and all its child controls are displayed; otherwise, `false`. The default is `true`.
       virtual bool visible() const noexcept;
       /// @brief Sets a value indicating whether the control and all its child controls are displayed.
-      /// @param visible `true` if the control and all its child controls are displayed; otherwise, `false`. The default is true.
+      /// @param visible `true` if the control and all its child controls are displayed; otherwise, `false`. The default is `true`.
       /// @return Current control.
       virtual control& visible(bool visible);
       
@@ -1108,7 +1108,7 @@ namespace xtd {
       
       /// @brief Resumes usual layout logic, optionally forcing an immediate layout of pending layout requests.
       /// @param perform_layout `true` to execute pending layout requests; otherwise, `false`.
-      /// @remarks Calling the resume_layout method forces an immediate layout if there are any pending layout requests. When the perform_layout parameter is set to true, an immediate layout occurs if there are any pending layout requests.
+      /// @remarks Calling the resume_layout method forces an immediate layout if there are any pending layout requests. When the perform_layout parameter is set to `true`, an immediate layout occurs if there are any pending layout requests.
       /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple xtd::forms::control::layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
       /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
       /// @note When adding several controls to a parent control, it is recommended that you call the suspend_layout method before initializing the controls to be added. After adding the controls to the parent control, call the resume_layout method. This will increase the performance of applications with many controls.
@@ -1142,7 +1142,7 @@ namespace xtd {
       void set_bounds(int32 x, int32 y, int32 width, int32 height, bounds_specified specified);
       
       /// @brief Displays the control to the user.
-      /// @remarks Showing the control is equivalent to setting the visible property to true. After the show method is called, the visible property returns a value of `true` until the hide method is called.
+      /// @remarks Showing the control is equivalent to setting the visible property to `true`. After the show method is called, the visible property returns a value of `true` until the hide method is called.
       virtual void show();
       
       /// @brief Temporarily suspends the layout logic for the control.
@@ -1553,7 +1553,7 @@ namespace xtd {
       event<control, event_handler> got_focus;
       
       /// @brief Occurs when a handle is created for the xtd::forms::control.
-      /// @remarks A handle is created when the xtd::forms::control is displayed for the first time. For example, if a xtd::forms::control is created that has visible set to `false`, the xtd::forms::control::handle_created event will not be raised until visible is set to true.
+      /// @remarks A handle is created when the xtd::forms::control is displayed for the first time. For example, if a xtd::forms::control is created that has visible set to `false`, the xtd::forms::control::handle_created event will not be raised until visible is set to `true`.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
       event<control, event_handler> handle_created;
       
@@ -1587,7 +1587,7 @@ namespace xtd {
       /// 1. xtd::forms::control::key_down event
       /// 1. xtd::forms::control::key_press event
       /// 1. xtd::forms::control::key_up event
-      /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the xtd::forms::key_press_event_args::handled property in your form's xtd::forms::control::key_press event-handling method to true. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the xtd::forms::control::key_down event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of true. Instead of overriding the is_input_key method, you can handle the preview_key_down event and set the is_input_key property to true.
+      /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the xtd::forms::key_press_event_args::handled property in your form's xtd::forms::control::key_press event-handling method to `true`. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the xtd::forms::control::key_down event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of `true`. Instead of overriding the is_input_key method, you can handle the preview_key_down event and set the is_input_key property to `true`.
       /// @par Examples
       /// The following code example demonstrates the use of control keyboard events.
       /// @include key_events.cpp
@@ -1601,7 +1601,7 @@ namespace xtd {
       /// 1. xtd::forms::control::key_up event
       /// @remarks The xtd::forms::control::key_press event is not raised by non-character keys other than space and backspace; however, the non-character keys do raise the xtd::forms::control::key_down and xtd::forms::control::key_up events.
       /// @remarks Use the xtd::forms::key_press_event_args::key_char property to sample keystrokes at run time and to consume or modify a subset of common keystrokes.
-      /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the xtd::forms::key_press_event_args::handled property in your form's xtd::forms::control::key_press event-handling method to true.
+      /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the xtd::forms::key_press_event_args::handled property in your form's xtd::forms::control::key_press event-handling method to `true`.
       /// @par Examples
       /// The following code example demonstrates the use of control keyboard events.
       /// @include key_events.cpp
@@ -1613,7 +1613,7 @@ namespace xtd {
       /// 1. xtd::forms::control::key_down event
       /// 1. xtd::forms::control::key_press event
       /// 1. xtd::forms::control::key_up event
-      /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the xtd::forms::key_press_event_args::handled property in your form's xtd::forms::control::key_press event-handling method to true. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the xtd::forms::control::key_down event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of true. Instead of overriding the is_input_key method, you can handle the preview_key_down event and set the is_input_key property to true.
+      /// @remarks To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the xtd::forms::key_press_event_args::handled property in your form's xtd::forms::control::key_press event-handling method to `true`. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the xtd::forms::control::key_down event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of `true`. Instead of overriding the is_input_key method, you can handle the preview_key_down event and set the is_input_key property to `true`.
       /// @par Examples
       /// The following code example demonstrates the use of control keyboard events.
       /// @include key_events.cpp
@@ -1927,7 +1927,7 @@ namespace xtd {
       
       /// @brief Retrieves the value of the specified control style bit for the control.
       /// @param flag The control_styles bit to return the value from.
-      /// @return `true` if the specified control style bit is set to true; otherwise, `false`.
+      /// @return `true` if the specified control style bit is set to `true`; otherwise, `false`.
       /// @remarks Control style bit flags are used to categorize supported behavior. A control can enable a style by calling the set_style method and passing in the appropriate control_styles bit and the bool value to set the bit to. To determine the value assigned to a specified control_styles bit, use the get_style method and pass in the control_styles member to evaluate.
       bool get_style(control_styles flag) const noexcept;
       
@@ -2159,7 +2159,7 @@ namespace xtd {
       void post_recreate_handle() noexcept;
       
       /// @brief Forces the re-creation of the handle for the control.
-      /// @remarks The recreate_handle method is called whenever parameters are needed for a new control, but using a call from update_styles to create_params is insufficient. This method also calls destroy_handle and create_handle and sets recreating_handle to true.
+      /// @remarks The recreate_handle method is called whenever parameters are needed for a new control, but using a call from update_styles to create_params is insufficient. This method also calls destroy_handle and create_handle and sets recreating_handle to `true`.
       virtual void recreate_handle();
       
       /// @brief Performs the work of setting the specified bounds of this control.

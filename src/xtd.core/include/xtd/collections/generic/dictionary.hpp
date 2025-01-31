@@ -599,7 +599,7 @@ namespace xtd {
         
         /// @brief Gets a value indicating whether the xtd::collections::generic::icollection <type_t> is read-only.
         /// @return `true` if the xtd::collections::generic::icollection <type_t> is read-only; otherwise, `false`.
-        /// @remarks A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the xtd::collections::generic::icollection <type_t> interface only supports addition and removal operations. For example, the IsReadOnly property of an array that is cast or converted to an xtd::collections::generic::icollection <type_t> object returns true, even though individual array elements can be modified.
+        /// @remarks A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the xtd::collections::generic::icollection <type_t> interface only supports addition and removal operations. For example, the IsReadOnly property of an array that is cast or converted to an xtd::collections::generic::icollection <type_t> object returns `true`, even though individual array elements can be modified.
         bool is_read_only() const noexcept override {return false;}
 
         /// @brief Gets a value indicating whether access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe).

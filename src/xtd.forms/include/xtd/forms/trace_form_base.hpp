@@ -47,18 +47,18 @@ namespace xtd {
       const xtd::string& name() const noexcept override;
       
       /// @brief Gets a value indicate if date is showing before trace text.
-      /// @return `true` is date showing; otherwise `false`. By default is true.
+      /// @return `true` is date showing; otherwise `false`. By default is `true`.
       virtual bool show_date() const noexcept;
       /// @brief Sets a value indicate if date is showing before trace text.
-      /// @param value `true` is date showing; otherwise `false`. By default is true.
+      /// @param value `true` is date showing; otherwise `false`. By default is `true`.
       /// @return Current trace_form_base.
       virtual trace_form_base& show_date(bool value);
       
       /// @brief Gets a value indicate if time is showing before trace text.
-      /// @return `true` is time showing; otherwise `false`. By default is true.
+      /// @return `true` is time showing; otherwise `false`. By default is `true`.
       virtual  bool show_time() const noexcept;
       /// @brief Sets a value indicate if time is showing before trace text.
-      /// @param value `true` is time showing; otherwise `false`. By default is true.
+      /// @param value `true` is time showing; otherwise `false`. By default is `true`.
       /// @return Current trace_form_base.
       virtual trace_form_base& show_time(bool value);
       /// @}
