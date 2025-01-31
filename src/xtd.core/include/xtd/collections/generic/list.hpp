@@ -4,6 +4,7 @@
 #pragma once
 #include "helpers/allocator.hpp"
 #include "helpers/equator.hpp"
+#include "comparer.hpp"
 #include "ilist.hpp"
 #define __XTD_CORE_INTERNAL__
 #include "../../internal/__list_definition.hpp"
@@ -13,6 +14,7 @@
 #include "../../argument_out_of_range_exception.hpp"
 #include "../../index_out_of_range_exception.hpp"
 #include "../../box_integer.hpp"
+#include "../../comparison.hpp"
 #include "../../invalid_operation_exception.hpp"
 #include "../../intptr.hpp"
 #include "../../is.hpp"
@@ -73,6 +75,18 @@ namespace xtd {
       /// @include generic_list2.cpp
       template<class type_t, class allocator_t>
       class list : public xtd::object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<xtd::collections::generic::list<type_t, allocator_t>> {
+        struct __comparer__ {
+          __comparer__(const xtd::collections::generic::icomparer<type_t>& comparer) : comparer_(comparer) {}
+          bool operator()(const type_t& e1, const type_t& e2) const {return comparer_.compare(e1, e2) < 0;}
+          const xtd::collections::generic::icomparer<type_t>& comparer_;
+        };
+        
+        struct __comparison_comparer__ {
+          __comparison_comparer__(xtd::comparison<const type_t&> comparison) : comparison_(comparison) {}
+          bool operator()(const type_t& e1, const type_t& e2) const {return comparison_(e1, e2) < 0;}
+          xtd::comparison<const type_t&> comparison_;
+        };
+
       public:
         /// @name Public Aliases
         
@@ -414,6 +428,12 @@ namespace xtd {
         template<class enumerable_t>
         void add_range(const enumerable_t& enumerable) {insert_range(count(), enumerable);}
         /// @endcond
+        
+        /// @brief Returns a read-only xtd::collections::object_model::read_only_collection <type_t> wrapper for the current collection.
+        /// @return An object that acts as a read-only wrapper around the current xtd::collections::generic::list <type_t>.
+        /// @remarks To prevent any modifications to the xtd::collections::generic::list <type_t> object, expose it only through this wrapper. A xtd::collections::object_model::read_only_collection <type_t> object does not expose methods that modify the collection. However, if changes are made to the underlying xtd::collections::generic::list <type_t> object, the read-only collection reflects those changes.
+        /// @remarks This method is an O(1) operation.
+        read_only_collection as_read_only() const noexcept {return read_only_collection {new_ptr<list<value_type>>(*this)};}
 
         /// @brief Replaces the contents with count copies of value value.
         /// @param count The new size of the container.
@@ -432,12 +452,6 @@ namespace xtd {
           ++data_->version;
           data_->items.assign(first, last);
         }
-        
-        /// @brief Returns a read-only xtd::collections::object_model::read_only_collection <type_t> wrapper for the current collection.
-        /// @return An object that acts as a read-only wrapper around the current xtd::collections::generic::list <type_t>.
-        /// @remarks To prevent any modifications to the xtd::collections::generic::list <type_t> object, expose it only through this wrapper. A xtd::collections::object_model::read_only_collection <type_t> object does not expose methods that modify the collection. However, if changes are made to the underlying xtd::collections::generic::list <type_t> object, the read-only collection reflects those changes.
-        /// @remarks This method is an O(1) operation.
-        read_only_collection as_read_only() const noexcept {return read_only_collection {new_ptr<list<value_type>>(*this)};}
         
         /// @brief Replaces the contents with the elements from the initializer list items.
         /// @param items the initializer list to copy the values from.
@@ -463,7 +477,62 @@ namespace xtd {
           if (index >= count()) throw index_out_of_range_exception {};
           return reinterpret_cast<const_reference>(data_->items.at(index));
         }
+
+        /// @brief Searches the entire sorted xtd::collections::generic::list <type_t> for an element using the default comparer and returns the zero-based index of the element.
+        /// @param item The object to locate.
+        /// @return The zero-based index of item in the sorted xtd::collections::generic::list <type_t>, if item is found; otherwise, a number greater than xtd::collections::genric::list::count that is the bitwise complement of the index of the next element that is larger than item or, if there is no larger element, the bitwise complement of xtd::collections::genric::list::count.
+        /// @exception xtd::invalid_operation_exception The default comparer xtd::collections::generic::comparer::default_comparer cannot find an implementation of the xtd::icomparable <type_t> generic interface.
+        /// @remarks This method uses the default comparer xtd::collections::generic::comparer::default_comparer for `type `type_t` to determine the order of list elements. The xtd::collections::generic::comparer::default_comparer property checks whether type `type_t` implements the xtd::icomparable <type_t> generic interface and uses that implementation, if available. If not, xtd::collections::generic::comparer::default_comparer checks whether type `type_t` implements the xtd::icomparable interface. If type `type_t` does not implement either interface, xtd::collections::generic::comparer::default_comparer throws an xtd::invalid_operation_exception.
+        /// @remarks The xtd::collections::generic::list <type_t> must already be sorted according to the comparer implementation; otherwise, the result is incorrect.
+        /// @remarks If the xtd::collections::generic::list <type_t> contains more than one element with the same value, the method returns only one of the occurrences, and it might return any one of the occurrences, not necessarily the first one.
+        /// @remarks If the xtd::collections::generic::list <type_t> does not contain the specified value, the method returns an integer greater than xtd::collections::generic::list::count. You can apply the bitwise complement operation (~) to this integer to get the index of the first element that is larger than the search value. When inserting the value into the xtd::collections::generic::list <type_t>, this index should be used as the insertion point to maintain the sort order.
+        /// @remarks This method is an O(log n) operation, where n is the number of elements in the range.
+        /// @remarks The following code example demonstrates the xtd::collections::generic::list::sort() method overload and the xtd::collections::generic::list::binary_search method overload. A xtd::collections::generic::list <type_t> of strings is created and populated with four strings, in no particular order. The list is displayed, sorted, and displayed again.
+        /// @par Examples
+        /// The xtd::collections::generic::list::binary_search method overload is then used to search for two strings that are not in the list, and the xtd::collections::generic::list::insert method is used to insert them. The return value of the xtd::collections::generic::list::binary_search method is greater than xtd::collections::generic::list::count in each case, because the strings are not in the list. Taking the bitwise complement of this number produces the index of the first element in the list that is larger than the search string, and inserting at this location preserves the sort order. The second search string is larger than any element in the list, so the insertion position is at the end of the list.
+        /// @include list_binary_search.cpp
+        xtd::size binary_search(const type_t& item) const {return binary_search(0, count(), item, xtd::collections::generic::comparer<type_t>::default_comparer);}
         
+        /// @brief Searches the entire sorted xtd::collections::generic::list <type_t> for an element using the specified comparer and returns the zero-based index of the element.
+        /// @param item The object to locate.
+        /// @param comparer The xtd::collections::generic::icomparer <type_t> implementation to use when comparing elements.
+        /// @return The zero-based index of item in the sorted xtd::collections::generic::list <type_t>, if item is found; otherwise, a number greater than xtd::collections::genric::list::count that is the bitwise complement of the index of the next element that is larger than item or, if there is no larger element, the bitwise complement of xtd::collections::genric::list::count.
+        /// @exception xtd::invalid_operation_exception The default comparer xtd::collections::generic::comparer::default_comparer cannot find an implementation of the xtd::icomparable <type_t> generic interface.
+        /// @remarks The comparer customizes how the elements are compared. For example, you can use a xtd::case_insensitive_comparer instance as the comparer to perform case-insensitive string searches.
+        /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are compared to the specified value using the specified xtd::collections::generic::icomparer <type_t> implementation.
+        /// @remarks The xtd::collections::generic::list <type_t> must already be sorted according to the comparer implementation; otherwise, the result is incorrect.
+        /// @remarks If the xtd::collections::generic::list <type_t> contains more than one element with the same value, the method returns only one of the occurrences, and it might return any one of the occurrences, not necessarily the first one.
+        /// @remarks If the xtd::collections::generic::list <type_t> does not contain the specified value, the method returns an integer greater than xtd::collections::generic::list::count. You can apply the bitwise complement operation (~) to this integer to get the index of the first element that is larger than the search value. When inserting the value into the xtd::collections::generic::list <type_t>, this index should be used as the insertion point to maintain the sort order.
+        /// @remarks This method is an O(log n) operation, where n is the number of elements in the range.
+        xtd::size binary_search(const type_t& item, const xtd::collections::generic::icomparer<type_t>& comparer) const {return binary_search(0, count(), item, comparer);}
+        
+        /// @brief Searches a range of elements in the sorted xtd::collections::generic::list <type_t> for an element using the specified comparer and returns the zero-based index of the element.
+        /// @param index The zero-based starting index of the range to search.
+        /// @param count The length of the range to search.
+        /// @param item The object to locate.
+        /// @param comparer The xtd::collections::generic::icomparer <type_t> implementation to use when comparing elements, or null to use the default comparer xtd::collections::generic::comparer<type_t>::default_comparer.
+        /// @return The zero-based index of item in the sorted xtd::collections::generic::list <type_t>, if item is found; otherwise, a number greater than xtd::collections::genric::list::count that is the bitwise complement of the index of the next element that is larger than item or, if there is no larger element, the bitwise complement of xtd::collections::genric::list::count.
+        /// @exception xtd::argument_exception `index` and `count` do not denote a valid range in the xtd::collections::generic::list <type_t>.
+        /// @exception xtd::invalid_operation_exception The default comparer xtd::collections::generic::comparer::default_comparer cannot find an implementation of the xtd::icomparable <type_t> generic interface.
+        /// @remarks The comparer customizes how the elements are compared. For example, you can use a xtd::case_insensitive_comparer instance as the comparer to perform case-insensitive string searches.
+        /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are compared to the specified value using the specified xtd::collections::generic::icomparer <type_t> implementation.
+        /// @remarks The xtd::collections::generic::list <type_t> must already be sorted according to the comparer implementation; otherwise, the result is incorrect.
+        /// @remarks If the xtd::collections::generic::list <type_t> contains more than one element with the same value, the method returns only one of the occurrences, and it might return any one of the occurrences, not necessarily the first one.
+        /// @remarks If the xtd::collections::generic::list <type_t> does not contain the specified value, the method returns an integer greater than xtd::collections::generic::list::count. You can apply the bitwise complement operation (~) to this integer to get the index of the first element that is larger than the search value. When inserting the value into the xtd::collections::generic::list <type_t>, this index should be used as the insertion point to maintain the sort order.
+        /// @remarks This method is an O(log n) operation, where n is the number of elements in the range.
+        xtd::size binary_search(xtd::size index, xtd::size count, const type_t& item, const xtd::collections::generic::icomparer<type_t>& comparer) const {
+          if (index + count > size()) throw argument_exception {};
+          auto first = data_->items.begin();
+          auto last = data_->items.begin();
+          std::advance(first, index);
+          std::advance(last, index + count);
+          auto position = std::lower_bound(first, last, item, __comparer__{comparer});
+          
+          if (position != data_->items.end() && !comparer.compare(item, *position))
+            return std::distance(data_->items.begin(), position);
+          return ~std::distance(data_->items.begin(), position);
+        }
+
         void clear() override {
           ++data_->version;
           data_->items.clear();
@@ -863,7 +932,56 @@ namespace xtd {
         /// @remarks It is a non-binding request to reduce xtd::collections::generic::list::capacity() to xtd::collections::generic::list::size(). It depends on the implementation whether the request is fulfilled.
         /// @remarks If reallocation occurs, all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. If no reallocation occurs, no iterators or references are invalidated.
         virtual void shrink_to_fit() {data_->items.shrink_to_fit();}
+
+        /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the default comparer.
+        /// @exception xtd::invalid_operation_exception The default comparer xtd::collections::generic::comparer::default_comparer cannot find an implementation of the xtd::icomparable <type_t> generic interface.
+        /// @remarks This method uses the default comparer xtd::collections::generic::comparer::default_comparer for type `type_t` to determine the order of list elements. The xtd::collections::generic::comparer::default_comparer property checks whether type `type_t` implements the xtd::icomparable <type_t> generic interface and uses that implementation, if available. If not, xtd::collections::generic::comparer::default_comparer checks whether type T implements the xtd::icomparable interface. If type `type_t` does not implement either interface, xtd::collections::generic::comparer::default_comparer throws an xtd::invalid_operation_exception.
+        /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
+        /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
+        /// @remarks The following code example demonstrates the xtd::collections::generic::list::sort method overload and the xtd::collections::generic::list::binary_search method overload. A xtd::collections::generic::list <type_t> of strings is created and populated with four strings, in no particular order. The list is displayed, sorted, and displayed again.
+        /// @par Examples
+        /// The xtd::collections::generic::list::binary_search method overload is then used to search for two strings that are not in the list, and the xtd::collections::generic::list::insert method is used to insert them. The return value of the xtd::collections::generic::list::binary_search method is gretaer than xtd::collections::generic::list::count in each case, because the strings are not in the list. Taking the bitwise complement of this negative number produces the index of the first element in the list that is larger than the search string, and inserting at this location preserves the sort order. The second search string is larger than any element in the list, so the insertion position is at the end of the list.
+        /// @include generic_list_binary_search.cpp
+        void sort() {sort(xtd::collections::generic::comparer<type_t>::default_comparer);}
         
+        /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::comparison <type_t>.
+        /// @exception xtd::argument_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
+        /// @remarks If comparison is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the method represented by the delegate.
+        /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
+        /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
+        void sort(xtd::comparison<const type_t&> comparison) {
+          ++data_->version;
+          std::sort(data_->items.begin(), data_->items.end(), __comparison_comparer__ {comparison});
+        }
+        
+        /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified comparer.
+        /// @param comparer The xtd::collections::generic::icomparer <type_t> implementation to use when comparing elements, or null to use the default comparer xtd::collections::generic::comparer::default_comparer.
+        /// @exception xtd::argument_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
+        /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
+        /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
+        /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
+        void sort(const xtd::collections::generic::icomparer<type_t>& comparer) {
+          sort(0, count(), comparer);
+        }
+        
+        /// @brief Sorts the elements in a range of elements in xtd::collections::generic::list <type_t> using the specified comparer.
+        /// @param index The zero-based starting index of the range to sort.
+        /// @param count The length of the range to sort.
+        /// @param comparer The xtd::collections::generic::icomparer <type_t> implementation to use when comparing elements, or null to use the default comparer xtd::collections::generic::comparer::default_comparer.
+        /// @exception xtd::argument_exception The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself.
+        /// @remarks If comparer is provided, the elements of the xtd::collections::generic::list <type_t> are sorted using the specified xtd::collections::generic::icomparer <type_t> implementation.
+        /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
+        /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
+        void sort(xtd::size index, xtd::size count, const xtd::collections::generic::icomparer<type_t>& comparer) {
+          if (index + count > size()) throw argument_exception {};
+          auto first = data_->items.begin();
+          auto last = data_->items.begin();
+          std::advance(first, index);
+          std::advance(last, index + count);
+          ++data_->version;
+          std::sort(first, last, __comparer__ {comparer});
+        }
+
         /// @brief Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.
         /// @remarks All iterators and references remain valid. The xtd::collections::generic::list::end() iterator is invalidated.
         virtual void swap(list& other) noexcept {
