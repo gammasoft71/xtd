@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::threading::parameterized_thread_start exception.
+/// @brief Contains xtd::threading::parameterized_thread_start delegate.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../delegate.hpp"

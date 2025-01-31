@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::run_worker_completed_event_handler event handler.
+/// @brief Contains xtd::forms::run_worker_completed_event_handler handler.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "run_worker_completed_event_args.hpp"

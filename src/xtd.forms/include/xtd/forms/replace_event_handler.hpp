@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::forms::replace_event_handler event handler.
+/// @brief Contains xtd::forms::replace_event_handler handler.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "replace_event_args.hpp"
