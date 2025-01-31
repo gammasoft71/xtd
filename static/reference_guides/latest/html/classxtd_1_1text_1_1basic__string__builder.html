@@ -318,10 +318,10 @@ Several aliases for common character types are provided: </dd>
 <tr class="memdesc:a32e986bfe09f3fef3a459b2a7a7b866b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the character following the last character of the string. This character acts as a placeholder, attempting to access it results in undefined behavior.  <br /></td></tr>
 <tr class="separator:a32e986bfe09f3fef3a459b2a7a7b866b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac33db704e732528f8711c29847c1a36e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a7a9fff0c8a14fc2115fe86547402e0b4">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#ac33db704e732528f8711c29847c1a36e">front</a> () const</td></tr>
-<tr class="memdesc:ac33db704e732528f8711c29847c1a36e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference to the first character in the string. The behavior is undefined if <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#ac79077a3108f556f2ce8e4231c607fde" title="Checks if the string has no characters, i.e. whether begin() == end().">empty()</a> is true.  <br /></td></tr>
+<tr class="memdesc:ac33db704e732528f8711c29847c1a36e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference to the first character in the string. The behavior is undefined if <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#ac79077a3108f556f2ce8e4231c607fde" title="Checks if the string has no characters, i.e. whether begin() == end().">empty()</a> is <code>true</code>.  <br /></td></tr>
 <tr class="separator:ac33db704e732528f8711c29847c1a36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69b43937b0cd6ab3199960fd2bb86d56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a9b9b46ae1d66c7d5c9ac716899c0be58">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a69b43937b0cd6ab3199960fd2bb86d56">front</a> ()</td></tr>
-<tr class="memdesc:a69b43937b0cd6ab3199960fd2bb86d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference to the first character in the string. The behavior is undefined if <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#ac79077a3108f556f2ce8e4231c607fde" title="Checks if the string has no characters, i.e. whether begin() == end().">empty()</a> is true.  <br /></td></tr>
+<tr class="memdesc:a69b43937b0cd6ab3199960fd2bb86d56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference to the first character in the string. The behavior is undefined if <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#ac79077a3108f556f2ce8e4231c607fde" title="Checks if the string has no characters, i.e. whether begin() == end().">empty()</a> is <code>true</code>.  <br /></td></tr>
 <tr class="separator:a69b43937b0cd6ab3199960fd2bb86d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69a83b009389b1b5706ce202a2989afd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a00d3525c87b582cd9dbf27852cf1199f">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#a69a83b009389b1b5706ce202a2989afd">length</a> () const noexcept</td></tr>
 <tr class="memdesc:a69a83b009389b1b5706ce202a2989afd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the length of the current <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html" title="Represents a mutable string of characters. This class cannot be inherited.">xtd::text::basic_string_builder</a> object.  <br /></td></tr>
@@ -3099,7 +3099,7 @@ template&lt;class char_t , class traits_t  = std::char_traits&lt;char_t&gt;, cla
 </table>
 </div><div class="memdoc">
 
-<p>Returns reference to the first character in the string. The behavior is undefined if <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#ac79077a3108f556f2ce8e4231c607fde" title="Checks if the string has no characters, i.e. whether begin() == end().">empty()</a> is true. </p>
+<p>Returns reference to the first character in the string. The behavior is undefined if <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#ac79077a3108f556f2ce8e4231c607fde" title="Checks if the string has no characters, i.e. whether begin() == end().">empty()</a> is <code>true</code>. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the first character, equivalent to <code>operator[](0)</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -3135,7 +3135,7 @@ template&lt;class char_t , class traits_t  = std::char_traits&lt;char_t&gt;, cla
 </table>
 </div><div class="memdoc">
 
-<p>Returns reference to the first character in the string. The behavior is undefined if <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#ac79077a3108f556f2ce8e4231c607fde" title="Checks if the string has no characters, i.e. whether begin() == end().">empty()</a> is true. </p>
+<p>Returns reference to the first character in the string. The behavior is undefined if <a class="el" href="classxtd_1_1text_1_1basic__string__builder.html#ac79077a3108f556f2ce8e4231c607fde" title="Checks if the string has no characters, i.e. whether begin() == end().">empty()</a> is <code>true</code>. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the first character, equivalent to <code>operator[](0)</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -3374,7 +3374,7 @@ template&lt;class char_t , class traits_t  = std::char_traits&lt;char_t&gt;, cla
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// The value of the flag is false.</span></div>
+<div class="line"><span class="comment">// The value of the flag is `false`.</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1text_1_1basic__string__builder_html"><div class="ttname"><a href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a></div><div class="ttdoc">Represents a mutable string of characters. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:35</div></div>
 <div class="ttc" id="aclassxtd_1_1text_1_1basic__string__builder_html_a74b530fbbad4b6b67da525a5b401219d"><div class="ttname"><a href="classxtd_1_1text_1_1basic__string__builder.html#a74b530fbbad4b6b67da525a5b401219d">xtd::text::basic_string_builder::append</a></div><div class="ttdeci">basic_string_builder &amp; append(const xtd::basic_string&lt; char_t &gt; &amp;value)</div><div class="ttdoc">Appends a copy of the specified string to this instance.</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:442</div></div>
@@ -3523,7 +3523,7 @@ template&lt;class char_t , class traits_t  = std::char_traits&lt;char_t&gt;, cla
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// The value of the flag is false.</span></div>
+<div class="line"><span class="comment">// The value of the flag is `false`.</span></div>
 </div><!-- fragment --> </dd>
 <dd>
 The capacity of this instance is adjusted as needed. </dd></dl>
@@ -12034,7 +12034,7 @@ template&lt;class char_t , class traits_t  = std::char_traits&lt;char_t&gt;, cla
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:35:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

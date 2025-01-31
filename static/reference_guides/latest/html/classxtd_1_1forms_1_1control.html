@@ -1145,7 +1145,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <tr class="memdesc:a86d36d6a47d6d7adea17442beb394a4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the parent handle of the control.  <br /></td></tr>
 <tr class="separator:a86d36d6a47d6d7adea17442beb394a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1803ab3c808ee5f02e66d4fb76a1a65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#ae1803ab3c808ee5f02e66d4fb76a1a65">set_style</a> (<a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf">control_styles</a> flag, bool value)</td></tr>
-<tr class="memdesc:ae1803ab3c808ee5f02e66d4fb76a1a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a specified control_styles flag to either true or false.  <br /></td></tr>
+<tr class="memdesc:ae1803ab3c808ee5f02e66d4fb76a1a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a specified control_styles flag to either <code>true</code> or <code>false</code>.  <br /></td></tr>
 <tr class="separator:ae1803ab3c808ee5f02e66d4fb76a1a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac75d78bfc73154decabddc734cd28096"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#ac75d78bfc73154decabddc734cd28096">wnd_proc</a> (<a class="el" href="classxtd_1_1forms_1_1message.html">message</a> &amp;<a class="el" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea6f8f57715090da2632453988d9a1501b">m</a>)</td></tr>
 <tr class="memdesc:ac75d78bfc73154decabddc734cd28096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes Windows messages.  <br /></td></tr>
@@ -1573,7 +1573,7 @@ You can anchor a control to one or more edges of its container. For example, if 
 </div><div class="memdoc">
 
 <p>Gets a value that indicates whether the control resizes based on its contents. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if enabled; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if enabled; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This property is not relevant for this class. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1forms_1_1button__base.html#a8e1d78bbba134e8ffb9ddba53c3efce4">xtd::forms::button_base</a>, and <a class="el" href="classxtd_1_1forms_1_1collapsible__panel.html#a6f86389faf3707baabd2ac1221676b4e">xtd::forms::collapsible_panel</a>.</p>
@@ -1609,7 +1609,7 @@ You can anchor a control to one or more edges of its container. For example, if 
 <p>Sets a value that indicates whether the control resizes based on its contents. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">auto_size</td><td>true if enabled; otherwise, false. </td></tr>
+    <tr><td class="paramname">auto_size</td><td><code>true</code> if enabled; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1645,7 +1645,7 @@ You can anchor a control to one or more edges of its container. For example, if 
 
 <p>Gets the background color for the control. </p>
 <dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> that represents the background color of the control. The default is the value of the <a class="el" href="classxtd_1_1forms_1_1control.html#a4bd2302971df359722cecf6106a4c8ed" title="Gets the default background color of the control.">xtd::forms::control::default_back_color</a> property. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property does not support transparent colors unless the <a class="el" href="group__xtd__forms.html#gga8b6e8bca23778f49dc78093e0d5fadbfaea40a4cc3b5943ae2a00eb1b600da7be" title="If true, the control accepts a BackColor with an alpha component of less than 255 to simulate transpa...">xtd::forms::control_styles::supports_transparent_back_color</a> value of <a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf" title="Specifies the style and behavior of a control.">xtd::forms::control_styles</a> is set to true. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property does not support transparent colors unless the <a class="el" href="group__xtd__forms.html#gga8b6e8bca23778f49dc78093e0d5fadbfaea40a4cc3b5943ae2a00eb1b600da7be" title="If true, the control accepts a BackColor with an alpha component of less than 255 to simulate transpa...">xtd::forms::control_styles::supports_transparent_back_color</a> value of <a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf" title="Specifies the style and behavior of a control.">xtd::forms::control_styles</a> is set to <code>true</code>. </dd>
 <dd>
 The <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> as its parent form by default. For more information about ambient properties, see the <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties">ambient_properties</a> guide. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="animation_8cpp-example.html#a13">animation.cpp</a>, <a class="el" href="clock_8cpp-example.html#a10">clock.cpp</a>, <a class="el" href="debug_form_8cpp-example.html#a4">debug_form.cpp</a>, <a class="el" href="demo_8cpp-example.html#a21">demo.cpp</a>, <a class="el" href="lcd_label2_8cpp-example.html#a14">lcd_label2.cpp</a>, <a class="el" href="lcd_label_with_dot_matrix_8cpp-example.html#a8">lcd_label_with_dot_matrix.cpp</a>, <a class="el" href="lcd_label_with_fourteen_segment_8cpp-example.html#a8">lcd_label_with_fourteen_segment.cpp</a>, <a class="el" href="lcd_label_with_nine_segment_8cpp-example.html#a8">lcd_label_with_nine_segment.cpp</a>, <a class="el" href="lcd_label_with_seven_segment_8cpp-example.html#a8">lcd_label_with_seven_segment.cpp</a>, <a class="el" href="lcd_label_with_sixteen_segment_8cpp-example.html#a8">lcd_label_with_sixteen_segment.cpp</a>, <a class="el" href="test_forms_8cpp-example.html#a6">test_forms.cpp</a>, and <a class="el" href="trace_form_8cpp-example.html#a3">trace_form.cpp</a>.</dd>
@@ -1685,7 +1685,7 @@ The <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Current control. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property does not support transparent colors unless the <a class="el" href="group__xtd__forms.html#gga8b6e8bca23778f49dc78093e0d5fadbfaea40a4cc3b5943ae2a00eb1b600da7be" title="If true, the control accepts a BackColor with an alpha component of less than 255 to simulate transpa...">xtd::forms::control_styles::supports_transparent_back_color</a> value of <a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf" title="Specifies the style and behavior of a control.">xtd::forms::control_styles</a> is set to true. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property does not support transparent colors unless the <a class="el" href="group__xtd__forms.html#gga8b6e8bca23778f49dc78093e0d5fadbfaea40a4cc3b5943ae2a00eb1b600da7be" title="If true, the control accepts a BackColor with an alpha component of less than 255 to simulate transpa...">xtd::forms::control_styles::supports_transparent_back_color</a> value of <a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf" title="Specifies the style and behavior of a control.">xtd::forms::control_styles</a> is set to <code>true</code>. </dd>
 <dd>
 The <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> as its parent form by default. For more information about ambient properties, see the <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties">ambient_properties</a> guide. </dd></dl>
 <dl class="section user"><dt>Notes to Inheritors</dt><dd>When overriding the <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property in a derived class, use the base class's <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the <a class="el" href="classxtd_1_1forms_1_1control.html#ab4236dd32071d07bb8ec2452e041fbfa" title="Gets the background color for the control.">xtd::forms::control::back_color</a> property; you can override only one if needed. </dd></dl>
@@ -1948,8 +1948,8 @@ The bottom property is a read-only property. You can manipulate this property va
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the control can receive focus. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control can receive focus; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>In order for a control to receive input focus, the control must have a handle assigned to it, and the visible and enabled properties must both be set to true for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control can receive focus; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>In order for a control to receive input focus, the control must have a handle assigned to it, and the visible and enabled properties must both be set to <code>true</code> for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form. </dd></dl>
 
 </div>
 </div>
@@ -1977,10 +1977,10 @@ The bottom property is a read-only property. You can manipulate this property va
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the control can be selected. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control can be selected; otherwise, false.s </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This property returns true if the electable value of control_styles is set to true, is contained in another control, the control itself is visible and enabled, and all its parent controls are visible and enabled. </dd>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control can be selected; otherwise, <code>false</code>.s </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This property returns <code>true</code> if the electable value of control_styles is set to <code>true</code>, is contained in another control, the control itself is visible and enabled, and all its parent controls are visible and enabled. </dd>
 <dd>
-The Windows Forms controls in the following list are not selectable and will return a value of false for the can_select property. controls derived from these controls are also not selectable.<ul>
+The Windows Forms controls in the following list are not selectable and will return a value of <code>false</code> for the can_select property. controls derived from these controls are also not selectable.<ul>
 <li>panel</li>
 <li><a class="el" href="classxtd_1_1forms_1_1group__box.html" title="Represents a Windows control that displays a frame around a group of controls with an optional captio...">group_box</a></li>
 <li><a class="el" href="classxtd_1_1forms_1_1picture__box.html" title="Represents a standard Windows picture box.">picture_box</a></li>
@@ -2017,7 +2017,7 @@ The Windows Forms controls in the following list are not selectable and will ret
 </div><div class="memdoc">
 
 <p>Determines if events can be raised on the control. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control can raise events; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control can raise events; otherwise, <code>false</code>. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1forms_1_1component.html#a4e9ca54c53522d1490054cd1d4543263">xtd::forms::component</a>.</p>
 
@@ -2419,8 +2419,8 @@ Use the controls property to iterate through all controls of a form, including n
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the control has been created. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control has been created; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The created property returns true if the control was successfully created even though the control's handle might not have been created or recreated yet. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control has been created; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The created property returns <code>true</code> if the control was successfully created even though the control's handle might not have been created or recreated yet. </dd></dl>
 
 </div>
 </div>
@@ -2626,7 +2626,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether this control should redraw its surface using a secondary buffer to reduce or prevent flicker. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the surface of the control should be drawn using double buffering; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the surface of the control should be drawn using double buffering; otherwise, <code>false</code>. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="lcd_label2_8cpp-example.html#a4">lcd_label2.cpp</a>.</dd>
 </dl>
 
@@ -2659,7 +2659,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 <p>Sets a value indicating whether this control should redraw its surface using a secondary buffer to reduce or prevent flicker. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">double_buffered</td><td>true if the surface of the control should be drawn using double buffering; otherwise, false. </td></tr>
+    <tr><td class="paramname">double_buffered</td><td><code>true</code> if the surface of the control should be drawn using double buffering; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2691,7 +2691,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the control can respond to user interaction. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control can respond to user interaction; otherwise, false. The default is true. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control can respond to user interaction; otherwise, <code>false</code>. The default is <code>true</code>. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="demo_8cpp-example.html#a20">demo.cpp</a>.</dd>
 </dl>
 
@@ -2724,7 +2724,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 <p>Sets a value indicating whether the control can respond to user interaction. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">enabled</td><td>true if the control can respond to user interaction; otherwise, false. The default is true. </td></tr>
+    <tr><td class="paramname">enabled</td><td><code>true</code> if the control can respond to user interaction; otherwise, <code>false</code>. The default is <code>true</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2756,7 +2756,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the control has input focus. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control has focus; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control has focus; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -2923,7 +2923,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 
 <p>Gets the window handle that the control is bound to. </p>
 <dl class="section return"><dt>Returns</dt><dd>An intptr that contains the window handle (HWND) of the control. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>When the underlying toolkits is native, <a class="el" href="classxtd_1_1forms_1_1control.html#a522ed11d9f4fa75a3356da769da9d7e8" title="Gets the window handle that the control is bound to.">xtd::forms::control::handle</a> and <a class="el" href="classxtd_1_1forms_1_1control.html#a9b8b59c86293895877eea469f20a0b45" title="Gets the native handle that the control is bound to.">xtd::forms::control::native_handle</a> are the same, But if the underlying toolkit is not native, the <a class="el" href="classxtd_1_1forms_1_1control.html#a522ed11d9f4fa75a3356da769da9d7e8" title="Gets the window handle that the control is bound to.">xtd::forms::control::handle</a> matches the toolkit handle while <a class="el" href="classxtd_1_1forms_1_1control.html#a9b8b59c86293895877eea469f20a0b45" title="Gets the native handle that the control is bound to.">xtd::forms::control::native_handle</a> returns the true native handle. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>When the underlying toolkits is native, <a class="el" href="classxtd_1_1forms_1_1control.html#a522ed11d9f4fa75a3356da769da9d7e8" title="Gets the window handle that the control is bound to.">xtd::forms::control::handle</a> and <a class="el" href="classxtd_1_1forms_1_1control.html#a9b8b59c86293895877eea469f20a0b45" title="Gets the native handle that the control is bound to.">xtd::forms::control::native_handle</a> are the same, But if the underlying toolkit is not native, the <a class="el" href="classxtd_1_1forms_1_1control.html#a522ed11d9f4fa75a3356da769da9d7e8" title="Gets the window handle that the control is bound to.">xtd::forms::control::handle</a> matches the toolkit handle while <a class="el" href="classxtd_1_1forms_1_1control.html#a9b8b59c86293895877eea469f20a0b45" title="Gets the native handle that the control is bound to.">xtd::forms::control::native_handle</a> returns the <code>true</code> native handle. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1forms_1_1iwin32__window.html#a746551f2d17438f58eaeb31e57f0a70c">xtd::forms::iwin32_window</a>.</p>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="painting_8cpp-example.html#a16">painting.cpp</a>.</dd>
@@ -3020,7 +3020,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the caller must call an invoke method when making method calls to the control because the caller is on a different thread than the one the control was created on. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control's xttd::forms::control::handle was created on a different thread than the calling thread (indicating that you must make calls to the control through an invoke method); otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control's xttd::forms::control::handle was created on a different thread than the calling thread (indicating that you must make calls to the control through an invoke method); otherwise, <code>false</code>. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1isynchronize__invoke.html#a5434e03732b52c1b9b9861e1571a56a4">xtd::isynchronize_invoke</a>.</p>
 
@@ -3050,7 +3050,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the control has a handle associated with it. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if a handle has been assigned to the control; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if a handle has been assigned to the control; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Use the is_handle_created property to determine whether create_handle has been called. </dd></dl>
 
 </div>
@@ -4213,7 +4213,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 
 <p>Gets the native handle that the control is bound to. </p>
 <dl class="section return"><dt>Returns</dt><dd>An intptr that contains the native handle (HWND) of the control. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>When the underlying toolkits is native, <a class="el" href="classxtd_1_1forms_1_1control.html#a522ed11d9f4fa75a3356da769da9d7e8" title="Gets the window handle that the control is bound to.">xtd::forms::control::handle</a> and <a class="el" href="classxtd_1_1forms_1_1control.html#a9b8b59c86293895877eea469f20a0b45" title="Gets the native handle that the control is bound to.">xtd::forms::control::native_handle</a> are the same, But if the underlying toolkit is not native, the <a class="el" href="classxtd_1_1forms_1_1control.html#a522ed11d9f4fa75a3356da769da9d7e8" title="Gets the window handle that the control is bound to.">xtd::forms::control::handle</a> matches the toolkit handle while <a class="el" href="classxtd_1_1forms_1_1control.html#a9b8b59c86293895877eea469f20a0b45" title="Gets the native handle that the control is bound to.">xtd::forms::control::native_handle</a> returns the true native handle. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>When the underlying toolkits is native, <a class="el" href="classxtd_1_1forms_1_1control.html#a522ed11d9f4fa75a3356da769da9d7e8" title="Gets the window handle that the control is bound to.">xtd::forms::control::handle</a> and <a class="el" href="classxtd_1_1forms_1_1control.html#a9b8b59c86293895877eea469f20a0b45" title="Gets the native handle that the control is bound to.">xtd::forms::control::native_handle</a> are the same, But if the underlying toolkit is not native, the <a class="el" href="classxtd_1_1forms_1_1control.html#a522ed11d9f4fa75a3356da769da9d7e8" title="Gets the window handle that the control is bound to.">xtd::forms::control::handle</a> matches the toolkit handle while <a class="el" href="classxtd_1_1forms_1_1control.html#a9b8b59c86293895877eea469f20a0b45" title="Gets the native handle that the control is bound to.">xtd::forms::control::native_handle</a> returns the <code>true</code> native handle. </dd></dl>
 
 </div>
 </div>
@@ -4501,7 +4501,7 @@ Setting the <a class="el" href="classxtd_1_1forms_1_1control.html#a75fa27c1abc0d
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the control is currently re-creating its handle. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control is currently re-creating its handle; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control is currently re-creating its handle; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -4918,9 +4918,9 @@ The <a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the user can give the focus to this control using the TAB key. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the user can give the focus to the control using the TAB key; otherwise, false. The default is true. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Note: This property will always return true for an instance of the <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> class. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>When the user presses the TAB key, the input focus is set to the next control in the tab order. Controls with the <a class="el" href="classxtd_1_1forms_1_1control.html#a623a8e0ab7f7ff9005fa9248ce481f0a" title="Gets a value indicating whether the user can give the focus to this control using the TAB key.">xtd::forms::control::tab_stop</a> property value of false are not included in the collection of controls in the tab order. The tab order can be manipulated by setting the control's xtd::forms::control::tab_index property value. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the user can give the focus to the control using the TAB key; otherwise, <code>false</code>. The default is <code>true</code>. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Note: This property will always return <code>true</code> for an instance of the <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> class. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>When the user presses the TAB key, the input focus is set to the next control in the tab order. Controls with the <a class="el" href="classxtd_1_1forms_1_1control.html#a623a8e0ab7f7ff9005fa9248ce481f0a" title="Gets a value indicating whether the user can give the focus to this control using the TAB key.">xtd::forms::control::tab_stop</a> property value of <code>false</code> are not included in the collection of controls in the tab order. The tab order can be manipulated by setting the control's xtd::forms::control::tab_index property value. </dd></dl>
 
 </div>
 </div>
@@ -4951,13 +4951,13 @@ The <a class="el" href="classxtd_1_1forms_1_1control.html#aacdf46e9818911676ef45
 <p>Sets a value indicating whether the user can give the focus to this control using the TAB key. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>true if the user can give the focus to the control using the TAB key; otherwise, false. The default is true. </td></tr>
+    <tr><td class="paramname">value</td><td><code>true</code> if the user can give the focus to the control using the TAB key; otherwise, <code>false</code>. The default is <code>true</code>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Current control. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>Note: This property will always return true for an instance of the <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> class. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>When the user presses the TAB key, the input focus is set to the next control in the tab order. Controls with the <a class="el" href="classxtd_1_1forms_1_1control.html#a623a8e0ab7f7ff9005fa9248ce481f0a" title="Gets a value indicating whether the user can give the focus to this control using the TAB key.">xtd::forms::control::tab_stop</a> property value of false are not included in the collection of controls in the tab order. The tab order can be manipulated by setting the control's xtd::forms::control::tab_index property value. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Note: This property will always return <code>true</code> for an instance of the <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> class. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>When the user presses the TAB key, the input focus is set to the next control in the tab order. Controls with the <a class="el" href="classxtd_1_1forms_1_1control.html#a623a8e0ab7f7ff9005fa9248ce481f0a" title="Gets a value indicating whether the user can give the focus to this control using the TAB key.">xtd::forms::control::tab_stop</a> property value of <code>false</code> are not included in the collection of controls in the tab order. The tab order can be manipulated by setting the control's xtd::forms::control::tab_index property value. </dd></dl>
 
 </div>
 </div>
@@ -5243,7 +5243,7 @@ A common use for the tag property is to store data that is closely associated wi
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the control and all its child controls are displayed. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control and all its child controls are displayed; otherwise, false. The default is true. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the control and all its child controls are displayed; otherwise, <code>false</code>. The default is <code>true</code>. </dd></dl>
 
 </div>
 </div>
@@ -5274,7 +5274,7 @@ A common use for the tag property is to store data that is closely associated wi
 <p>Sets a value indicating whether the control and all its child controls are displayed. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">visible</td><td>true if the control and all its child controls are displayed; otherwise, false. The default is true. </td></tr>
+    <tr><td class="paramname">visible</td><td><code>true</code> if the control and all its child controls are displayed; otherwise, <code>false</code>. The default is <code>true</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -5373,8 +5373,8 @@ A common use for the tag property is to store data that is closely associated wi
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol::handle property when an application is being debugged. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if calls on the wrong thread are caught; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the <a class="el" href="classxtd_1_1forms_1_1control.html#a522ed11d9f4fa75a3356da769da9d7e8" title="Gets the window handle that the control is bound to.">xtd::forms::control::handle</a> property. Set <a class="el" href="classxtd_1_1forms_1_1control.html#ab4d42b1aa0788a66859a3d758046bdc8" title="Gets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol...">xtd::forms::control::check_for_illegal_cross_thread_calls</a> to true to find and diagnose this thread activity more easily while debugging. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if calls on the wrong thread are caught; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the <a class="el" href="classxtd_1_1forms_1_1control.html#a522ed11d9f4fa75a3356da769da9d7e8" title="Gets the window handle that the control is bound to.">xtd::forms::control::handle</a> property. Set <a class="el" href="classxtd_1_1forms_1_1control.html#ab4d42b1aa0788a66859a3d758046bdc8" title="Gets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol...">xtd::forms::control::check_for_illegal_cross_thread_calls</a> to <code>true</code> to find and diagnose this thread activity more easily while debugging. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Be careful, some OS don't support cross-thread UI operations! </dd></dl>
 
 </div>
@@ -5406,11 +5406,11 @@ A common use for the tag property is to store data that is closely associated wi
 <p>Sets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol::handle property when an application is being debugged. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>true if calls on the wrong thread are caught; otherwise, false. </td></tr>
+    <tr><td class="paramname">value</td><td><code>true</code> if calls on the wrong thread are caught; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the <a class="el" href="classxtd_1_1forms_1_1control.html#a522ed11d9f4fa75a3356da769da9d7e8" title="Gets the window handle that the control is bound to.">xtd::forms::control::handle</a> property. Set <a class="el" href="classxtd_1_1forms_1_1control.html#ab4d42b1aa0788a66859a3d758046bdc8" title="Gets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol...">xtd::forms::control::check_for_illegal_cross_thread_calls</a> to true to find and diagnose this thread activity more easily while debugging. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the <a class="el" href="classxtd_1_1forms_1_1control.html#a522ed11d9f4fa75a3356da769da9d7e8" title="Gets the window handle that the control is bound to.">xtd::forms::control::handle</a> property. Set <a class="el" href="classxtd_1_1forms_1_1control.html#ab4d42b1aa0788a66859a3d758046bdc8" title="Gets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol...">xtd::forms::control::check_for_illegal_cross_thread_calls</a> to <code>true</code> to find and diagnose this thread activity more easily while debugging. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Be careful, some OS don't support cross-thread UI operations! </dd></dl>
 
 </div>
@@ -5635,7 +5635,7 @@ The <a class="el" href="classxtd_1_1forms_1_1control.html#a401edfee5bfcb03598eda
 <p>Forces the creation of the visible control, including the creation of the handle and any visible child controls. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>The create_control method forces a handle to be created for the control and its child controls. This method is used when you need a handle immediately for manipulation of the control or its children; simply calling a control's constructor does not create the Handle. </dd>
 <dd>
-create_control does not create a control handle if the control's visible property is false. You can either call the create_control method or access the handle property to create the control's handle regardless of the control's visibility, but in this case, no window handles are created for the control's children. </dd></dl>
+create_control does not create a control handle if the control's visible property is <code>false</code>. You can either call the create_control method or access the handle property to create the control's handle regardless of the control's visibility, but in this case, no window handles are created for the control's children. </dd></dl>
 
 </div>
 </div>
@@ -5741,8 +5741,8 @@ create_control does not create a control handle if the control's visible propert
 </div><div class="memdoc">
 
 <p>Sets input focus to the control. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the input focus request was successful; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The focus method returns true if the control successfully received input focus. The control can have the input focus while not displaying any visual cues of having the focus. This behavior is primarily observed by the unselectable controls listed below, or any controls derived from them. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the input focus request was successful; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The focus method returns <code>true</code> if the control successfully received input focus. The control can have the input focus while not displaying any visual cues of having the focus. This behavior is primarily observed by the unselectable controls listed below, or any controls derived from them. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="wiggly_8cpp-example.html#a19">wiggly.cpp</a>.</dd>
 </dl>
 
@@ -5831,7 +5831,7 @@ create_control does not create a control handle if the control's visible propert
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">child</td><td>The control to search for in the control collection. </td></tr>
-    <tr><td class="paramname">throw_exception</td><td>true to throw an exception if the control specified in the child parameter is not a control in the <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html" title="Represents a collection of controls.">control::control_collection</a>; otherwise, false. </td></tr>
+    <tr><td class="paramname">throw_exception</td><td><code>true</code> to throw an exception if the control specified in the child parameter is not a control in the <a class="el" href="classxtd_1_1forms_1_1control_1_1control__collection.html" title="Represents a collection of controls.">control::control_collection</a>; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -5862,7 +5862,7 @@ create_control does not create a control handle if the control's visible propert
 </div><div class="memdoc">
 
 <p>Conceals the control from the user. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Hiding the control is equivalent to setting the visible property to false. After the hide method is called, the visible property returns a value of false until the show method is called. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Hiding the control is equivalent to setting the visible property to <code>false</code>. After the hide method is called, the visible property returns a value of <code>false</code> until the show method is called. </dd></dl>
 
 </div>
 </div>
@@ -5921,7 +5921,7 @@ create_control does not create a control handle if the control's visible propert
 <p>Invalidates a specific region of the control and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">invalidate_children</td><td>true to invalidate the control's child controls; otherwise, false. </td></tr>
+    <tr><td class="paramname">invalidate_children</td><td><code>true</code> to invalidate the control's child controls; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -6002,7 +6002,7 @@ create_control does not create a control handle if the control's visible propert
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rect</td><td>A <a class="el" href="classxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that represents the region to invalidate. </td></tr>
-    <tr><td class="paramname">invalidate_children</td><td>true to invalidate the control's child controls; otherwise, false. </td></tr>
+    <tr><td class="paramname">invalidate_children</td><td><code>true</code> to invalidate the control's child controls; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -6083,7 +6083,7 @@ create_control does not create a control handle if the control's visible propert
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">region</td><td>A <a class="el" href="classxtd_1_1drawing_1_1region.html" title="Describes the interior of a graphics shape composed of rectangles and paths. This class cannot be inh...">xtd::drawing::region</a> that represents the region to invalidate. </td></tr>
-    <tr><td class="paramname">invalidate_children</td><td>true to invalidate the control's child controls; otherwise, false. </td></tr>
+    <tr><td class="paramname">invalidate_children</td><td><code>true</code> to invalidate the control's child controls; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -6378,7 +6378,7 @@ create_control does not create a control handle if the control's visible propert
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the message was processed by the control; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the message was processed by the control; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>pre_process_message is called by the application's message loop to preprocess input messages before they are dispatched. Possible values for the msg parameter are WM_KEYDOWN, WM_SYSKEYDOWN, WM_CHAR, and WM_SYSCHAR. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1forms_1_1form.html#a4d2a230c33982d94e90f93a2f12e8aa0">xtd::forms::form</a>.</p>
@@ -6456,11 +6456,11 @@ There must be no pending calls to suspend_layout for resume_layout to be success
 <p>Resumes usual layout logic, optionally forcing an immediate layout of pending layout requests. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">perform_layout</td><td>true to execute pending layout requests; otherwise, false. </td></tr>
+    <tr><td class="paramname">perform_layout</td><td><code>true</code> to execute pending layout requests; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Calling the resume_layout method forces an immediate layout if there are any pending layout requests. When the perform_layout parameter is set to true, an immediate layout occurs if there are any pending layout requests. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>Calling the resume_layout method forces an immediate layout if there are any pending layout requests. When the perform_layout parameter is set to <code>true</code>, an immediate layout occurs if there are any pending layout requests. </dd>
 <dd>
 The suspend_layout and resume_layout methods are used in tandem to suppress multiple <a class="el" href="classxtd_1_1forms_1_1control.html#a4c62d42e86be033a0aa9f897155d9672" title="Occurs when a xtd::forms::control should reposition its child controls.">xtd::forms::control::layout</a> events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect. </dd>
 <dd>
@@ -6680,7 +6680,7 @@ There must be no pending calls to suspend_layout for resume_layout to be success
 </div><div class="memdoc">
 
 <p>Displays the control to the user. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>Showing the control is equivalent to setting the visible property to true. After the show method is called, the visible property returns a value of true until the hide method is called. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Showing the control is equivalent to setting the visible property to <code>true</code>. After the show method is called, the visible property returns a value of <code>true</code> until the hide method is called. </dd></dl>
 
 </div>
 </div>
@@ -6769,7 +6769,7 @@ There must be no pending calls to suspend_layout for resume_layout to be success
 <dd>
 There are two ways to repaint a form and its contents:<ul>
 <li>You can use one of the overloads of the invalidate method with the update method.</li>
-<li>You can call the refresh method, which forces the control to redraw itself and all its children. This is equivalent to setting the invalidate method to true and using it with update. </li>
+<li>You can call the refresh method, which forces the control to redraw itself and all its children. This is equivalent to setting the invalidate method to <code>true</code> and using it with update. </li>
 </ul>
 </dd>
 <dd>
@@ -8442,7 +8442,7 @@ template&lt;class control_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified control style bit is set to true; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified control style bit is set to <code>true</code>; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Control style bit flags are used to categorize supported behavior. A control can enable a style by calling the set_style method and passing in the appropriate control_styles bit and the bool value to set the bit to. To determine the value assigned to a specified control_styles bit, use the get_style method and pass in the control_styles member to evaluate. </dd></dl>
 
 </div>
@@ -10422,7 +10422,7 @@ template&lt;class control_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Forces the re-creation of the handle for the control. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>The recreate_handle method is called whenever parameters are needed for a new control, but using a call from update_styles to <a class="el" href="classxtd_1_1forms_1_1create__params.html" title="Encapsulates the information needed when creating a control.">create_params</a> is insufficient. This method also calls destroy_handle and create_handle and sets recreating_handle to true. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The recreate_handle method is called whenever parameters are needed for a new control, but using a call from update_styles to <a class="el" href="classxtd_1_1forms_1_1create__params.html" title="Encapsulates the information needed when creating a control.">create_params</a> is insufficient. This method also calls destroy_handle and create_handle and sets recreating_handle to <code>true</code>. </dd></dl>
 
 </div>
 </div>
@@ -10525,11 +10525,11 @@ The specified parameter represents the elements of the controls Bounds changed b
 <p>Sets a value indicating whether the control can receive focus. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>true if the control can receive focus; otherwise, false. </td></tr>
+    <tr><td class="paramname">value</td><td><code>true</code> if the control can receive focus; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>In order for a control to receive input focus, the control must have a handle assigned to it, and the visible and enabled properties must both be set to true for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>In order for a control to receive input focus, the control must have a handle assigned to it, and the visible and enabled properties must both be set to <code>true</code> for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form. </dd></dl>
 
 </div>
 </div>
@@ -10687,11 +10687,11 @@ Typically, you should not set the client_size of the control. </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Sets a specified control_styles flag to either true or false. </p>
+<p>Sets a specified control_styles flag to either <code>true</code> or <code>false</code>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">flag</td><td>The control_styles bit to set. </td></tr>
-    <tr><td class="paramname">value</td><td>true to apply the specified style to the control; otherwise, false. </td></tr>
+    <tr><td class="paramname">value</td><td><code>true</code> to apply the specified style to the control; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -10894,7 +10894,7 @@ The delegate is called asynchronously, and this method returns immediately. You 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -10968,7 +10968,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns <code>true</code>. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -11262,9 +11262,9 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <dd>
 A double-click is determined by the mouse settings of the user's operating system. The user can set the time between clicks of a mouse button that should be considered a double-click rather than two clicks. The <a class="el" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68" title="Occurs when the xtd::forms::control is clicked.">xtd::forms::control::click</a> event is raised every time a control is double-clicked. For example, if you have event handlers for the <a class="el" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68" title="Occurs when the xtd::forms::control is clicked.">xtd::forms::control::click</a> and <a class="el" href="classxtd_1_1forms_1_1control.html#a627763cd6f62a5d5a1272217820d2c1e" title="Occurs when the xtd::forms::control is double-clicked.">xtd::forms::control::double_click</a> events of a <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a>, the <a class="el" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68" title="Occurs when the xtd::forms::control is clicked.">xtd::forms::control::click</a> and <a class="el" href="classxtd_1_1forms_1_1control.html#a627763cd6f62a5d5a1272217820d2c1e" title="Occurs when the xtd::forms::control is double-clicked.">xtd::forms::control::double_click</a> events are raised when the form is double-clicked and both methods are called. If a control is double-clicked and that control does not support the <a class="el" href="classxtd_1_1forms_1_1control.html#a627763cd6f62a5d5a1272217820d2c1e" title="Occurs when the xtd::forms::control is double-clicked.">xtd::forms::control::double_click</a> event, the <a class="el" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68" title="Occurs when the xtd::forms::control is clicked.">xtd::forms::control::click</a> event might be raised twice. </dd>
 <dd>
-You must set the standard_click value of <a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf" title="Specifies the style and behavior of a control.">xtd::forms::control_styles</a> to true for this event to be raised. </dd></dl>
+You must set the standard_click value of <a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf" title="Specifies the style and behavior of a control.">xtd::forms::control_styles</a> to <code>true</code> for this event to be raised. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The following events are not raised for the <a class="el" href="classxtd_1_1forms_1_1tab__control.html" title="Manages a related set of tab pages.">xtd::forms::tab_control</a> class unless there is at least one <a class="el" href="classxtd_1_1forms_1_1tab__page.html" title="Represents a single tab page in a tab_control.">xtd::forms::tab_page</a> in the <a class="el" href="classxtd_1_1forms_1_1tab__control.html" title="Manages a related set of tab pages.">xtd::forms::tab_control</a>. <a class="el" href="classxtd_1_1forms_1_1tab__control.html#a763ae9a1981b791cdd6113a5fbad6aa9" title="Gets the collection of tab pages in this tab control.">xtd::forms::tab_control::tab_pages</a> collection: <a class="el" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68" title="Occurs when the xtd::forms::control is clicked.">xtd::forms::control::click</a>, <a class="el" href="classxtd_1_1forms_1_1control.html#a627763cd6f62a5d5a1272217820d2c1e" title="Occurs when the xtd::forms::control is double-clicked.">xtd::forms::control::double_click</a>, <a class="el" href="classxtd_1_1forms_1_1control.html#a78229b7c5de3da5379275b9189fbe2e0" title="Occurs when the mouse pointer is over the xtd::forms::control and a mouse button is pressed.">xtd::forms::control::mouse_down</a>, <a class="el" href="classxtd_1_1forms_1_1control.html#ad12926766d04fbdf9b9bdd5bfeff531e" title="Occurs when the mouse pointer is over the xtd::forms::control and a mouse button is released.">xtd::forms::control::mouse_up</a>, xtd::forms::control::mouse_hover, <a class="el" href="classxtd_1_1forms_1_1control.html#a89cd8db918a6ab0c50bff76775eb6936" title="Occurs when the mouse pointer enters the xtd::forms::control.">xtd::forms::control::mouse_enter</a>, <a class="el" href="classxtd_1_1forms_1_1control.html#aab2be456d6acbb1e9829da77c4cba4db" title="Occurs when the mouse pointer leaves the xtd::forms::control.">xtd::forms::control::mouse_leave</a> and <a class="el" href="classxtd_1_1forms_1_1control.html#aac2a16980e4b572a8d79d102124963e2" title="Occurs when the mouse pointer is moved over the xtd::forms::control.">xtd::forms::control::mouse_move</a>. If there is at least one <a class="el" href="classxtd_1_1forms_1_1tab__page.html" title="Represents a single tab page in a tab_control.">xtd::forms::tab_page</a> in the collection, and the user interacts with the tab control's header (where the <a class="el" href="classxtd_1_1forms_1_1tab__page.html" title="Represents a single tab page in a tab_control.">xtd::forms::tab_page</a> names appear), the <a class="el" href="classxtd_1_1forms_1_1tab__control.html" title="Manages a related set of tab pages.">xtd::forms::tab_control</a> raises the appropriate event. However, if the user interaction is within the client area of the tab page, the <a class="el" href="classxtd_1_1forms_1_1tab__page.html" title="Represents a single tab page in a tab_control.">xtd::forms::tab_page</a> raises the appropriate event. </dd></dl>
-<dl class="section user"><dt>Notes to Inheritors</dt><dd>Inheriting from a standard Windows Forms control and changing the standard_click or standard_double_click values of <a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf" title="Specifies the style and behavior of a control.">xtd::forms::control_styles</a> to true can cause unexpected behavior or have no effect at all if the control does not support the click or <a class="el" href="classxtd_1_1forms_1_1control.html#a627763cd6f62a5d5a1272217820d2c1e" title="Occurs when the xtd::forms::control is double-clicked.">xtd::forms::control::double_click</a> events. </dd></dl>
+<dl class="section user"><dt>Notes to Inheritors</dt><dd>Inheriting from a standard Windows Forms control and changing the standard_click or standard_double_click values of <a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf" title="Specifies the style and behavior of a control.">xtd::forms::control_styles</a> to <code>true</code> can cause unexpected behavior or have no effect at all if the control does not support the click or <a class="el" href="classxtd_1_1forms_1_1control.html#a627763cd6f62a5d5a1272217820d2c1e" title="Occurs when the xtd::forms::control is double-clicked.">xtd::forms::control::double_click</a> events. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The following table lists Windows Forms controls and which event (<a class="el" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68" title="Occurs when the xtd::forms::control is clicked.">xtd::forms::control::click</a> or <a class="el" href="classxtd_1_1forms_1_1control.html#a627763cd6f62a5d5a1272217820d2c1e" title="Occurs when the xtd::forms::control is double-clicked.">xtd::forms::control::double_click</a>) is raised in response to the mouse action specified. <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Control   </th><th class="markdownTableHeadNone">Left Mouse Click   </th><th class="markdownTableHeadNone">Left Mouse Double Click   </th><th class="markdownTableHeadNone">Right Mouse Click   </th><th class="markdownTableHeadNone">Right Mouse Click   </th><th class="markdownTableHeadNone">Middle Mouse Click   </th><th class="markdownTableHeadNone">Middle Mouse Double Click   </th><th class="markdownTableHeadNone">XButton1 Mouse Click   </th><th class="markdownTableHeadNone">XButton1 Mouse Double-Click   </th><th class="markdownTableHeadNone">XButton2 Mouse Click   </th><th class="markdownTableHeadNone">XButton2 Mouse Double-Click    </th></tr>
@@ -11466,9 +11466,9 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <p>Occurs when the <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> is double-clicked. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>A double-click is determined by the mouse settings of the user's operating system. The user can set the time between clicks of a mouse button that should be considered a double-click rather than two clicks. The click event is raised every time a control is double-clicked. For example, if you have event handlers for the <a class="el" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68" title="Occurs when the xtd::forms::control is clicked.">xtd::forms::control::click</a> and <a class="el" href="classxtd_1_1forms_1_1control.html#a627763cd6f62a5d5a1272217820d2c1e" title="Occurs when the xtd::forms::control is double-clicked.">xtd::forms::control::double_click</a> events of a <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a>, the <a class="el" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68" title="Occurs when the xtd::forms::control is clicked.">xtd::forms::control::click</a> and <a class="el" href="classxtd_1_1forms_1_1control.html#a627763cd6f62a5d5a1272217820d2c1e" title="Occurs when the xtd::forms::control is double-clicked.">xtd::forms::control::double_click</a> events are raised when the form is double-clicked and both methods are called. If a control is double-clicked and that control does not support the <a class="el" href="classxtd_1_1forms_1_1control.html#a627763cd6f62a5d5a1272217820d2c1e" title="Occurs when the xtd::forms::control is double-clicked.">xtd::forms::control::double_click</a> event, the click event might be raised twice. </dd>
 <dd>
-You must set the standard_double_click and standard_click value of <a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf" title="Specifies the style and behavior of a control.">xtd::forms::control_styles</a> to true for this event to be raised. </dd></dl>
+You must set the standard_double_click and standard_click value of <a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf" title="Specifies the style and behavior of a control.">xtd::forms::control_styles</a> to <code>true</code> for this event to be raised. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The following events are not raised for the <a class="el" href="classxtd_1_1forms_1_1tab__control.html" title="Manages a related set of tab pages.">xtd::forms::tab_control</a> class unless there is at least one <a class="el" href="classxtd_1_1forms_1_1tab__page.html" title="Represents a single tab page in a tab_control.">xtd::forms::tab_page</a> in the <a class="el" href="classxtd_1_1forms_1_1tab__control.html" title="Manages a related set of tab pages.">xtd::forms::tab_control</a>. <a class="el" href="classxtd_1_1forms_1_1tab__control.html#a763ae9a1981b791cdd6113a5fbad6aa9" title="Gets the collection of tab pages in this tab control.">xtd::forms::tab_control::tab_pages</a> collection: <a class="el" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68" title="Occurs when the xtd::forms::control is clicked.">xtd::forms::control::click</a>, <a class="el" href="classxtd_1_1forms_1_1control.html#a627763cd6f62a5d5a1272217820d2c1e" title="Occurs when the xtd::forms::control is double-clicked.">xtd::forms::control::double_click</a>, <a class="el" href="classxtd_1_1forms_1_1control.html#a78229b7c5de3da5379275b9189fbe2e0" title="Occurs when the mouse pointer is over the xtd::forms::control and a mouse button is pressed.">xtd::forms::control::mouse_down</a>, <a class="el" href="classxtd_1_1forms_1_1control.html#ad12926766d04fbdf9b9bdd5bfeff531e" title="Occurs when the mouse pointer is over the xtd::forms::control and a mouse button is released.">xtd::forms::control::mouse_up</a>, xtd::forms::control::mouse_hover, <a class="el" href="classxtd_1_1forms_1_1control.html#a89cd8db918a6ab0c50bff76775eb6936" title="Occurs when the mouse pointer enters the xtd::forms::control.">xtd::forms::control::mouse_enter</a>, <a class="el" href="classxtd_1_1forms_1_1control.html#aab2be456d6acbb1e9829da77c4cba4db" title="Occurs when the mouse pointer leaves the xtd::forms::control.">xtd::forms::control::mouse_leave</a> and <a class="el" href="classxtd_1_1forms_1_1control.html#aac2a16980e4b572a8d79d102124963e2" title="Occurs when the mouse pointer is moved over the xtd::forms::control.">xtd::forms::control::mouse_move</a>. If there is at least one <a class="el" href="classxtd_1_1forms_1_1tab__page.html" title="Represents a single tab page in a tab_control.">xtd::forms::tab_page</a> in the collection, and the user interacts with the tab control's header (where the <a class="el" href="classxtd_1_1forms_1_1tab__page.html" title="Represents a single tab page in a tab_control.">xtd::forms::tab_page</a> names appear), the <a class="el" href="classxtd_1_1forms_1_1tab__control.html" title="Manages a related set of tab pages.">xtd::forms::tab_control</a> raises the appropriate event. However, if the user interaction is within the client area of the tab page, the <a class="el" href="classxtd_1_1forms_1_1tab__page.html" title="Represents a single tab page in a tab_control.">xtd::forms::tab_page</a> raises the appropriate event. </dd></dl>
-<dl class="section user"><dt>Notes to Inheritors</dt><dd>Inheriting from a standard Windows Forms control and changing the standard_click or standard_double_click values of <a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf" title="Specifies the style and behavior of a control.">xtd::forms::control_styles</a> to true can cause unexpected behavior or have no effect at all if the control does not support the <a class="el" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68" title="Occurs when the xtd::forms::control is clicked.">xtd::forms::control::click</a> or <a class="el" href="classxtd_1_1forms_1_1control.html#a627763cd6f62a5d5a1272217820d2c1e" title="Occurs when the xtd::forms::control is double-clicked.">xtd::forms::control::double_click</a> events. </dd></dl>
+<dl class="section user"><dt>Notes to Inheritors</dt><dd>Inheriting from a standard Windows Forms control and changing the standard_click or standard_double_click values of <a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf" title="Specifies the style and behavior of a control.">xtd::forms::control_styles</a> to <code>true</code> can cause unexpected behavior or have no effect at all if the control does not support the <a class="el" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68" title="Occurs when the xtd::forms::control is clicked.">xtd::forms::control::click</a> or <a class="el" href="classxtd_1_1forms_1_1control.html#a627763cd6f62a5d5a1272217820d2c1e" title="Occurs when the xtd::forms::control is double-clicked.">xtd::forms::control::double_click</a> events. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The following table lists Windows Forms controls and which event (<a class="el" href="classxtd_1_1forms_1_1control.html#a651752ad0a3ec381983aa0b367291a68" title="Occurs when the xtd::forms::control is clicked.">xtd::forms::control::click</a> or <a class="el" href="classxtd_1_1forms_1_1control.html#a627763cd6f62a5d5a1272217820d2c1e" title="Occurs when the xtd::forms::control is double-clicked.">xtd::forms::control::double_click</a>) is raised in response to the mouse action specified. <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Control   </th><th class="markdownTableHeadNone">Left Mouse Click   </th><th class="markdownTableHeadNone">Left Mouse Double Click   </th><th class="markdownTableHeadNone">Right Mouse Click   </th><th class="markdownTableHeadNone">Right Mouse Click   </th><th class="markdownTableHeadNone">Middle Mouse Click   </th><th class="markdownTableHeadNone">Middle Mouse Double Click   </th><th class="markdownTableHeadNone">XButton1 Mouse Click   </th><th class="markdownTableHeadNone">XButton1 Mouse Double-Click   </th><th class="markdownTableHeadNone">XButton2 Mouse Click   </th><th class="markdownTableHeadNone">XButton2 Mouse Double-Click    </th></tr>
@@ -11592,7 +11592,7 @@ When you change the focus by using the mouse or by calling the focus method, foc
 </ol>
 </dd>
 <dd>
-If the causes_validation property is set to false, the xtd::forms::control::validating and xtd::forms::control::validated events are suppressed. </dd>
+If the causes_validation property is set to <code>false</code>, the xtd::forms::control::validating and xtd::forms::control::validated events are suppressed. </dd>
 <dd>
 Note The <a class="el" href="classxtd_1_1forms_1_1control.html#aca0b940773373fceeaaff52177dacf8d" title="Occurs when the xtd::forms::control receives focus.">xtd::forms::control::got_focus</a> and <a class="el" href="classxtd_1_1forms_1_1control.html#a99779ef8860ec5e4ae7d6db07fb23fd8" title="Occurs when the xtd::forms::control loses focus.">xtd::forms::control::lost_focus</a> events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the <a class="el" href="classxtd_1_1forms_1_1control.html#aca0b940773373fceeaaff52177dacf8d" title="Occurs when the xtd::forms::control receives focus.">xtd::forms::control::got_focus</a> and <a class="el" href="classxtd_1_1forms_1_1control.html#a99779ef8860ec5e4ae7d6db07fb23fd8" title="Occurs when the xtd::forms::control loses focus.">xtd::forms::control::lost_focus</a> events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> class, which uses the activated and deactivate events. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Do not attempt to set focus from within the xtd::forms::control::enter, <a class="el" href="classxtd_1_1forms_1_1control.html#aca0b940773373fceeaaff52177dacf8d" title="Occurs when the xtd::forms::control receives focus.">xtd::forms::control::got_focus</a>, xtd::forms::control::leave, <a class="el" href="classxtd_1_1forms_1_1control.html#a99779ef8860ec5e4ae7d6db07fb23fd8" title="Occurs when the xtd::forms::control loses focus.">xtd::forms::control::lost_focus</a>, xtd::forms::control::validating, or xtd::forms::control::validated event handlers. Doing so can cause your application or the operating system to stop responding. </dd></dl>
@@ -11613,7 +11613,7 @@ Note The <a class="el" href="classxtd_1_1forms_1_1control.html#aca0b940773373fce
 </div><div class="memdoc">
 
 <p>Occurs when a handle is created for the <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a>. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>A handle is created when the <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> is displayed for the first time. For example, if a <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> is created that has visible set to false, the <a class="el" href="classxtd_1_1forms_1_1control.html#a73566543c98d95a5c70066d127dfe115" title="Occurs when a handle is created for the xtd::forms::control.">xtd::forms::control::handle_created</a> event will not be raised until visible is set to true. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>A handle is created when the <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> is displayed for the first time. For example, if a <a class="el" href="classxtd_1_1forms_1_1control.html" title="Defines the base class for controls, which are components with visual representation.">xtd::forms::control</a> is created that has visible set to <code>false</code>, the <a class="el" href="classxtd_1_1forms_1_1control.html#a73566543c98d95a5c70066d127dfe115" title="Occurs when a handle is created for the xtd::forms::control.">xtd::forms::control::handle_created</a> event will not be raised until visible is set to <code>true</code>. </dd>
 <dd>
 For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd></dl>
 
@@ -11738,7 +11738,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 </ol>
 </dd>
 <dd>
-To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the <a class="el" href="classxtd_1_1forms_1_1key__press__event__args.html#ae7f40a0668ee13e70044867ac6e6d5b1" title="Gets a value indicating whether the xtd::forms::control::key_press event was handled.">xtd::forms::key_press_event_args::handled</a> property in your form's <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event-handling method to true. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of true. Instead of overriding the is_input_key method, you can handle the preview_key_down event and set the is_input_key property to true. </dd></dl>
+To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the <a class="el" href="classxtd_1_1forms_1_1key__press__event__args.html#ae7f40a0668ee13e70044867ac6e6d5b1" title="Gets a value indicating whether the xtd::forms::control::key_press event was handled.">xtd::forms::key_press_event_args::handled</a> property in your form's <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event-handling method to <code>true</code>. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of <code>true</code>. Instead of overriding the is_input_key method, you can handle the preview_key_down event and set the is_input_key property to <code>true</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of control keyboard events. <div class="fragment"><div class="line"><span class="preprocessor">#define TRACE</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -11817,7 +11817,7 @@ The <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0
 <dd>
 Use the <a class="el" href="classxtd_1_1forms_1_1key__press__event__args.html#a64d9048ab774c10bc8a70da6aea1cdf2" title="Gets the character corresponding to the key pressed.">xtd::forms::key_press_event_args::key_char</a> property to sample keystrokes at run time and to consume or modify a subset of common keystrokes. </dd>
 <dd>
-To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the <a class="el" href="classxtd_1_1forms_1_1key__press__event__args.html#ae7f40a0668ee13e70044867ac6e6d5b1" title="Gets a value indicating whether the xtd::forms::control::key_press event was handled.">xtd::forms::key_press_event_args::handled</a> property in your form's <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event-handling method to true. </dd></dl>
+To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the <a class="el" href="classxtd_1_1forms_1_1key__press__event__args.html#ae7f40a0668ee13e70044867ac6e6d5b1" title="Gets a value indicating whether the xtd::forms::control::key_press event was handled.">xtd::forms::key_press_event_args::handled</a> property in your form's <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event-handling method to <code>true</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of control keyboard events. <div class="fragment"><div class="line"><span class="preprocessor">#define TRACE</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -11886,7 +11886,7 @@ To handle keyboard events only at the form level and not enable other controls t
 </ol>
 </dd>
 <dd>
-To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the <a class="el" href="classxtd_1_1forms_1_1key__press__event__args.html#ae7f40a0668ee13e70044867ac6e6d5b1" title="Gets a value indicating whether the xtd::forms::control::key_press event was handled.">xtd::forms::key_press_event_args::handled</a> property in your form's <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event-handling method to true. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of true. Instead of overriding the is_input_key method, you can handle the preview_key_down event and set the is_input_key property to true. </dd></dl>
+To handle keyboard events only at the form level and not enable other controls to receive keyboard events, set the <a class="el" href="classxtd_1_1forms_1_1key__press__event__args.html#ae7f40a0668ee13e70044867ac6e6d5b1" title="Gets a value indicating whether the xtd::forms::control::key_press event was handled.">xtd::forms::key_press_event_args::handled</a> property in your form's <a class="el" href="classxtd_1_1forms_1_1control.html#a68f0c09a2af4b4311f0f0172000afb50" title="Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_press</a> event-handling method to <code>true</code>. Certain keys, such as the TAB, RETURN, ESC, and arrow keys are handled by controls automatically. To have these keys raise the <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> event, you must override the is_input_key method in each control on your form. The code for the override of the is_input_key would need to determine if one of the special keys is pressed and return a value of <code>true</code>. Instead of overriding the is_input_key method, you can handle the preview_key_down event and set the is_input_key property to <code>true</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of control keyboard events. <div class="fragment"><div class="line"><span class="preprocessor">#define TRACE</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/form&gt;</span></div>
@@ -12002,9 +12002,9 @@ When you change the focus by using the mouse or by calling the focus method, foc
 </ol>
 </dd>
 <dd>
-If the causes_validation property is set to false, the xtd::forms::control::validating and xtd::forms::control::validated events are suppressed. </dd>
+If the causes_validation property is set to <code>false</code>, the xtd::forms::control::validating and xtd::forms::control::validated events are suppressed. </dd>
 <dd>
-If the cancel property of the <a class="el" href="classxtd_1_1forms_1_1cancel__event__args.html" title="Provides data for a cancelable event.">xtd::forms::cancel_event_args</a> is set to true in the validating event delegate, all events that would usually occur after the validating event are suppressed. </dd>
+If the cancel property of the <a class="el" href="classxtd_1_1forms_1_1cancel__event__args.html" title="Provides data for a cancelable event.">xtd::forms::cancel_event_args</a> is set to <code>true</code> in the validating event delegate, all events that would usually occur after the validating event are suppressed. </dd>
 <dd>
 Note The <a class="el" href="classxtd_1_1forms_1_1control.html#aca0b940773373fceeaaff52177dacf8d" title="Occurs when the xtd::forms::control receives focus.">xtd::forms::control::got_focus</a> and <a class="el" href="classxtd_1_1forms_1_1control.html#a99779ef8860ec5e4ae7d6db07fb23fd8" title="Occurs when the xtd::forms::control loses focus.">xtd::forms::control::lost_focus</a> events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the <a class="el" href="classxtd_1_1forms_1_1control.html#aca0b940773373fceeaaff52177dacf8d" title="Occurs when the xtd::forms::control receives focus.">xtd::forms::control::got_focus</a> and <a class="el" href="classxtd_1_1forms_1_1control.html#a99779ef8860ec5e4ae7d6db07fb23fd8" title="Occurs when the xtd::forms::control loses focus.">xtd::forms::control::lost_focus</a> events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the <a class="el" href="classxtd_1_1forms_1_1form.html" title="Represents a window or dialog box that makes up an application&#39;s user interface.">xtd::forms::form</a> class, which uses the activated and deactivate events. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Do not attempt to set focus from within the xtd::forms::control::enter, <a class="el" href="classxtd_1_1forms_1_1control.html#aca0b940773373fceeaaff52177dacf8d" title="Occurs when the xtd::forms::control receives focus.">xtd::forms::control::got_focus</a>, xtd::forms::control::leave, <a class="el" href="classxtd_1_1forms_1_1control.html#a99779ef8860ec5e4ae7d6db07fb23fd8" title="Occurs when the xtd::forms::control loses focus.">xtd::forms::control::lost_focus</a>, xtd::forms::control::validating, or xtd::forms::control::validated event handlers. Doing so can cause your application or the operating system to stop responding. </dd></dl>
@@ -12921,7 +12921,7 @@ When creating a new custom control or an inherited control with a different visu
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(form_paint_example::form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:75</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:77</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1drawing__2d_1_1linear__gradient__brush_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1drawing__2d_1_1linear__gradient__brush.html">xtd::drawing::drawing_2d::linear_gradient_brush</a></div><div class="ttdoc">Encapsulates a xtd::drawing::brush with a linear gradient. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> linear_gradient_brush.hpp:31</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1drawing__2d_1_1radial__gradient__brush_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1drawing__2d_1_1radial__gradient__brush.html">xtd::drawing::drawing_2d::radial_gradient_brush</a></div><div class="ttdoc">Encapsulates a xtd::drawing::brush with a radial gradient. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> radial_gradient_brush.hpp:30</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1font_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1font.html">xtd::drawing::font</a></div><div class="ttdoc">Defines a particular format for text, including font face, size, and style attributes....</div><div class="ttdef"><b>Definition</b> font.hpp:45</div></div>
@@ -13196,7 +13196,7 @@ For more information about handling events, see <a href="https://gammasoft71.git
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:35:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

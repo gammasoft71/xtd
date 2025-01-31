@@ -141,7 +141,7 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <li>By calling the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> structure's implicit default constructor. The following example illustrates a call to the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> implicit default constructor. <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1date__time.html">date_time</a> dat1;</div>
 <div class="line"><span class="comment">// The following method call displays 1/01/0001 00:00:00.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dat1.<a class="code hl_function" href="classxtd_1_1date__time.html#a0337274cf6d6900b883fc5551b19bba6">to_string</a>());</div>
-<div class="line"><span class="comment">// The following method call displays true.</span></div>
+<div class="line"><span class="comment">// The following method call displays `true`.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(dat1.<a class="code hl_function" href="classxtd_1_1date__time.html#a956731f527035ac773da7a01d3df9782">equals</a>(<a class="code hl_variable" href="classxtd_1_1date__time.html#a2052693f474e549778be006a9bf9ffcd">date_time::min_value</a>));</div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1date__time_html_a0337274cf6d6900b883fc5551b19bba6"><div class="ttname"><a href="classxtd_1_1date__time.html#a0337274cf6d6900b883fc5551b19bba6">xtd::date_time::to_string</a></div><div class="ttdeci">xtd::string to_string() const noexcept override</div><div class="ttdoc">Converts the value of the current xtd::date_time object to its equivalent string representation using...</div></div>
@@ -2376,7 +2376,7 @@ The <a class="el" href="classxtd_1_1date__time.html#a7644578aa80da95945aad6a09ba
 <div class="line"><span class="comment">// 2009-03-01 12:00:00 + 31 hour(s) = 2009-03-02 19:00:00</span></div>
 <div class="line"><span class="comment">// 2009-03-01 12:00:00 + 90 hour(s) = 2009-03-05 06:00:00</span></div>
 <div class="line"><span class="comment">// 2009-03-01 12:00:00 + 365 hour(s) = 2009-03-16 17:00:00</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:75</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:77</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.hpp:36</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:15</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -2825,10 +2825,10 @@ If the current instance represents the leap day in a leap year, the return value
 </div><div class="memdoc">
 
 <p>Indicates whether this instance of <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> is within the daylight saving time range for the current time zone. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the value of the <a class="el" href="classxtd_1_1date__time.html#ac49ab9e61e6b546f483de527819a840f" title="Gets a value that indicates whether the time represented by this instance is based on local time,...">xtd::date_time::kind</a> property is <a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaaf5ddaf0ca7929578b408c909429f68f2" title="The time represented is local time.">xtd::date_time_kind::local</a> or <a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaad415f0e30c471dfdd9bc4f827329ef48" title="The time represented is not specified as either local time or Coordinated Universal Time (UTC).">xtd::date_time_kind::unspecified</a> and the value of this instance ofxtd::date_time is within the daylight saving time range for the local time zone; false if <a class="el" href="classxtd_1_1date__time.html#ac49ab9e61e6b546f483de527819a840f" title="Gets a value that indicates whether the time represented by this instance is based on local time,...">xtd::date_time::kind</a> is <a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaa52d33cb937bbdab234ab1729a0f8225b" title="The time represented is UTC.">xtd::date_time_kind::utc</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the value of the <a class="el" href="classxtd_1_1date__time.html#ac49ab9e61e6b546f483de527819a840f" title="Gets a value that indicates whether the time represented by this instance is based on local time,...">xtd::date_time::kind</a> property is <a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaaf5ddaf0ca7929578b408c909429f68f2" title="The time represented is local time.">xtd::date_time_kind::local</a> or <a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaad415f0e30c471dfdd9bc4f827329ef48" title="The time represented is not specified as either local time or Coordinated Universal Time (UTC).">xtd::date_time_kind::unspecified</a> and the value of this instance ofxtd::date_time is within the daylight saving time range for the local time zone; <code>false</code> if <a class="el" href="classxtd_1_1date__time.html#ac49ab9e61e6b546f483de527819a840f" title="Gets a value that indicates whether the time represented by this instance is based on local time,...">xtd::date_time::kind</a> is <a class="el" href="group__xtd__core.html#gga03b78d9831d31a0a2ea100078219f2eaa52d33cb937bbdab234ab1729a0f8225b" title="The time represented is UTC.">xtd::date_time_kind::utc</a>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method determines whether the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value falls within the daylight saving time range of the local time zone, which is returned by the <a class="el" href="classxtd_1_1time__zone__info.html#ada7ad2e057ff1fdd722c10e924a0bc7a" title="Gets a time_zone_info object that represents the local time zone.">xtd::time_zone_info::local</a> property. You can determine whether a time zone supports daylight saving time by retrieving the value of its <a class="el" href="classxtd_1_1time__zone__info.html#ac803e2d8fc76f63ca176308dd53fbe43" title="Gets a value indicating whether the time zone has any daylight saving time rules.*.">xtd::time_zone_info::supports_daylight_saving_time</a> property. For time zones that observe daylight saving time, you can determine when the transition to and from daylight saving time occurs by retrieving the xtd::time_zone_info::adjustment_rule array returned by the time zone's xtd::time_zone_info::get_adjustmen_rules property. </dd>
 <dd>
-If the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value represents either an ambiguous or an invalid time in the local time zone, the method returns false. </dd></dl>
+If the current <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value represents either an ambiguous or an invalid time in the local time zone, the method returns <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -5044,7 +5044,7 @@ See &lt;<a href="https://en.cppreference.com/w/c/chrono.h">std::chrono</a> for m
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if year is a leap year; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if year is a leap year; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__out__of__range__exception.html" title="The exception that is thrown when one of the arguments provided to a method is out of range.">xtd::argument_out_of_range_exception</a></td><td>year is less than 1 or greater than 9999. </td></tr>
@@ -5585,7 +5585,7 @@ See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time<
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the s parameter was converted successfully; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the s parameter was converted successfully; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1date__time.html#ab2e38ca4b0606e03e81fd27c377efbd1" title="Converts the specified string representation of a date and time to its xtd::date_time equivalent and ...">xtd::date_time::try_parse</a> method is similar to the <a class="el" href="classxtd_1_1date__time.html#a608851b4e0fbbc0ce027788f4796f3a2" title="Converts the string representation of a date and time to its xtd::date_time equivalent by using the c...">xtd::date_time::parse</a> method, except that the <a class="el" href="classxtd_1_1date__time.html#ab2e38ca4b0606e03e81fd27c377efbd1" title="Converts the specified string representation of a date and time to its xtd::date_time equivalent and ...">xtd::date_time::try_parse</a> method does not throw an exception if the conversion fails. </dd></dl>
 
 </div>
@@ -5621,7 +5621,7 @@ See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time<
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -5694,7 +5694,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns <code>true</code>. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -5877,7 +5877,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:34:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

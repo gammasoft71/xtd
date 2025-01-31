@@ -342,7 +342,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Acquires the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lock_taken</td><td>True if the lock is acquired; otherwise, false. </td></tr>
+    <tr><td class="paramname">lock_taken</td><td>True if the lock is acquired; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -378,7 +378,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The default overload of Exit provides the same behavior as if calling Exit using true as the argument. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The default overload of Exit provides the same behavior as if calling Exit using <code>true</code> as the argument. </dd>
 <dd>
 If you call <a class="el" href="classxtd_1_1threading_1_1spin__lock.html#a61ee56319b6e02c8c404321d04f6347e" title="Releases the lock.">xtd::threading::spin_lock::exit</a> without having first called <a class="el" href="classxtd_1_1threading_1_1spin__lock.html#a24e13fcd4189869a3d23e187b42c792a" title="Acquires the lock in a reliable manner, such that even if an exception occurs within the method call,...">xtd::threading::spin_lock::enter</a> the internal state of the <a class="el" href="classxtd_1_1threading_1_1spin__lock.html" title="Provides a mutual exclusion lock primitive where a thread trying to acquire the lock waits in a loop ...">xtd::threading::spin_lock</a> can become corrupted. </dd></dl>
 
@@ -413,7 +413,7 @@ If you call <a class="el" href="classxtd_1_1threading_1_1spin__lock.html#a61ee56
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Calling Exit with the use_memory_barrier argument set to true will improve the fairness of the lock at the expense of some performance. The default <a class="el" href="classxtd_1_1threading_1_1spin__lock.html#a61ee56319b6e02c8c404321d04f6347e" title="Releases the lock.">xtd::threading::spin_lock::exit</a> overload behaves as if specifying true for use_memory_barrier. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>Calling Exit with the use_memory_barrier argument set to <code>true</code> will improve the fairness of the lock at the expense of some performance. The default <a class="el" href="classxtd_1_1threading_1_1spin__lock.html#a61ee56319b6e02c8c404321d04f6347e" title="Releases the lock.">xtd::threading::spin_lock::exit</a> overload behaves as if specifying <code>true</code> for use_memory_barrier. </dd>
 <dd>
 If you call <a class="el" href="classxtd_1_1threading_1_1spin__lock.html#a61ee56319b6e02c8c404321d04f6347e" title="Releases the lock.">xtd::threading::spin_lock::exit</a> without having first called <a class="el" href="classxtd_1_1threading_1_1spin__lock.html#a24e13fcd4189869a3d23e187b42c792a" title="Acquires the lock in a reliable manner, such that even if an exception occurs within the method call,...">xtd::threading::spin_lock::enter</a> the internal state of the <a class="el" href="classxtd_1_1threading_1_1spin__lock.html" title="Provides a mutual exclusion lock primitive where a thread trying to acquire the lock waits in a loop ...">xtd::threading::spin_lock</a> can become corrupted. </dd></dl>
 
@@ -438,7 +438,7 @@ If you call <a class="el" href="classxtd_1_1threading_1_1spin__lock.html#a61ee56
 <p>Attempts to acquire the lock in a reliable manner, such that even if an exception occurs within the method call, lock_taken can be examined reliably to determine whether the lock was acquired. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lock_taken</td><td>True if the lock is acquired; otherwise, false. </td></tr>
+    <tr><td class="paramname">lock_taken</td><td>True if the lock is acquired; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -482,7 +482,7 @@ If you call <a class="el" href="classxtd_1_1threading_1_1spin__lock.html#a61ee56
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">milliseconds_timeout</td><td>The number of milliseconds to wait, or <a class="el" href="classxtd_1_1threading_1_1timeout.html#af4059e4ae0d201f7382742e6a7dfd1b2" title="A constant used to specify an infinite waiting period. This field is constant.">xtd::threading::timeout::infinite</a> (-1) to wait indefinitely. </td></tr>
-    <tr><td class="paramname">lock_taken</td><td>True if the lock is acquired; otherwise, false. </td></tr>
+    <tr><td class="paramname">lock_taken</td><td>True if the lock is acquired; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -526,7 +526,7 @@ If you call <a class="el" href="classxtd_1_1threading_1_1spin__lock.html#a61ee56
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">timeout</td><td>A <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> that represents the number of milliseconds to wait, or a <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> that represents -1 milliseconds to wait indefinitely. </td></tr>
-    <tr><td class="paramname">lock_taken</td><td>True if the lock is acquired; otherwise, false. </td></tr>
+    <tr><td class="paramname">lock_taken</td><td>True if the lock is acquired; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -547,7 +547,7 @@ If you call <a class="el" href="classxtd_1_1threading_1_1spin__lock.html#a61ee56
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:35:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

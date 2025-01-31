@@ -225,7 +225,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the day on which the time change occurs. </p>
 <dl class="section return"><dt>Returns</dt><dd>The day on which the time change occurs. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html#ad75ba94fff00f26a99e022abb4b6f113" title="Gets the day on which the time change occurs.">xtd::time_zone_info::transition_time::day</a> property returns a valid value only if the xtd::time_zone_info::transition_time::is_fixed_date_rule property is true. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html#ad75ba94fff00f26a99e022abb4b6f113" title="Gets the day on which the time change occurs.">xtd::time_zone_info::transition_time::day</a> property returns a valid value only if the xtd::time_zone_info::transition_time::is_fixed_date_rule property is <code>true</code>. </dd>
 <dd>
 The <a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html#ad75ba94fff00f26a99e022abb4b6f113" title="Gets the day on which the time change occurs.">xtd::time_zone_info::transition_time::day</a> property value corresponds to the value of the day parameter of the <a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html#aa961297083b5f76ff6094a0007b25ac9" title="Defines a time change that uses a fixed-date rule (that is, a time change that occurs on a specific d...">xtd::time_zone_info::transition_time::create_fixed_date_rule</a> method. If its value is greater than the number of days in the month of the transition, the transition occurs on the last day of the month. </dd>
 <dd>
@@ -258,7 +258,7 @@ The <a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html#ad
 
 <p>Gets the day of the week on which the time change occurs. </p>
 <dl class="section return"><dt>Returns</dt><dd>The day of the week on which the time change occurs. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html#ae2e61c30b38b416e23eba31f0685d706" title="Gets the day of the week on which the time change occurs.">xtd::time_zone_info::transition_time::day_of_week</a> property returns a valid value only if the xtd::time_zone_info::transition_time::is_fixed_date_rule property is false. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html#ae2e61c30b38b416e23eba31f0685d706" title="Gets the day of the week on which the time change occurs.">xtd::time_zone_info::transition_time::day_of_week</a> property returns a valid value only if the xtd::time_zone_info::transition_time::is_fixed_date_rule property is <code>false</code>. </dd>
 <dd>
 The <a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html#ae2e61c30b38b416e23eba31f0685d706" title="Gets the day of the week on which the time change occurs.">xtd::time_zone_info::transition_time::day_of_week</a> property indicates the day of the week on which a floating-date rule is applied (for example, the second Sunday of November). In contrast, the <a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html#ad75ba94fff00f26a99e022abb4b6f113" title="Gets the day on which the time change occurs.">xtd::time_zone_info::transition_time::day</a> property indicates the day of the month on which a fixed-date rule is applied (for example, April 15). </dd></dl>
 
@@ -288,12 +288,12 @@ The <a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html#ae
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the time change occurs at a fixed date and time (such as November 1) or a floating date and time (such as the last Sunday of October). </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the time change rule is fixed-date; false if the time change rule is floating-date. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the time change rule is fixed-date; <code>false</code> if the time change rule is floating-date. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A fixed-date rule indicates that the transition occurs on the same date and time of each year to which the adjustment rule applies. For example, a time change that occurs every November 3 follows a fixed-date rule. A floating-date rule indicates that the transition occurs on a specific day of a specific week of a specific month for each year to which the adjustment rule applies. For example, a time change that occurs on the first Sunday of November follows a floating-date rule. </dd>
 <dd>
 The value of the xtd::time_zone_info::transition_time::is_fixed_date_rule property determines which properties of a <a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html" title="Provides information about a specific time change, such as the change from daylight saving time to st...">xtd::time_zone_info::transition_time</a> object have valid values. The following table indicates which properties are affected by the value of the xtd::time_zone_info::transition_time::is_fixed_date_rule property. <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone"><a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html" title="Provides information about a specific time change, such as the change from daylight saving time to st...">transition_time</a> property   </th><th class="markdownTableHeadNone">is_fixed_date_rule = true   </th><th class="markdownTableHeadNone">is_fixed_date_rule = false    </th></tr>
+<th class="markdownTableHeadNone"><a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html" title="Provides information about a specific time change, such as the change from daylight saving time to st...">transition_time</a> property   </th><th class="markdownTableHeadNone">is_fixed_date_rule = <code>true</code>   </th><th class="markdownTableHeadNone">is_fixed_date_rule = <code>false</code>    </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html#ad75ba94fff00f26a99e022abb4b6f113" title="Gets the day on which the time change occurs.">transition_time::day</a>   </td><td class="markdownTableBodyNone">Valid   </td><td class="markdownTableBodyNone">Unused    </td></tr>
 <tr class="markdownTableRowEven">
@@ -596,7 +596,7 @@ For transitions from standard time to daylight saving time, the time_of_day argu
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -671,7 +671,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns <code>true</code>. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -717,7 +717,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:34:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

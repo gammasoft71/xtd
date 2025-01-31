@@ -734,7 +734,7 @@ If you want the same mutable <a class="el" href="classxtd_1_1basic__string.html"
 <tr class="memdesc:a6387fcdd54bee21d02cc5d244a3028ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the character following the last character of the string. This character acts as a placeholder, attempting to access it results in undefined behavior.  <br /></td></tr>
 <tr class="separator:a6387fcdd54bee21d02cc5d244a3028ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac82f74f75a637871f055a583780a120c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1basic__string.html#a5a19c12dd03024a0b27ae68115bbfa2b">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1basic__string.html#ac82f74f75a637871f055a583780a120c">front</a> () const</td></tr>
-<tr class="memdesc:ac82f74f75a637871f055a583780a120c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference to the first character in the string. The behavior is undefined if <a class="el" href="classxtd_1_1basic__string.html#adf2d306e379dd0b505b8c40e37c9439e" title="Checks if the string has no characters, i.e. whether begin() == end().">empty()</a> is true.  <br /></td></tr>
+<tr class="memdesc:ac82f74f75a637871f055a583780a120c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference to the first character in the string. The behavior is undefined if <a class="el" href="classxtd_1_1basic__string.html#adf2d306e379dd0b505b8c40e37c9439e" title="Checks if the string has no characters, i.e. whether begin() == end().">empty()</a> is <code>true</code>.  <br /></td></tr>
 <tr class="separator:ac82f74f75a637871f055a583780a120c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabfeb876a8fb51c80fa9adaa3663f232"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1basic__string.html#a84c19ff70f8314b59d8e711cadd91302">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1basic__string.html#aabfeb876a8fb51c80fa9adaa3663f232">length</a> () const noexcept</td></tr>
 <tr class="memdesc:aabfeb876a8fb51c80fa9adaa3663f232"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of characters in the current <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> object.  <br /></td></tr>
@@ -1045,7 +1045,7 @@ If you want the same mutable <a class="el" href="classxtd_1_1basic__string.html"
 <tr class="memdesc:a6f2a1c61ed2fd70d04090ff9e4ce3374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the last substring that is equal to the given character sequence. The search begins at <code>pos</code> and proceeds from right to left (thus, the found substring, if any, cannot begin in a position following <code>pos</code>). If <a class="el" href="classxtd_1_1basic__string.html#a9629cc4c296a49e4f99d718e8117689e" title="This is a special value equal to the maximum value representable by the type xtd::size.">xtd::basic_string::npos</a> or any value not smaller than <a class="el" href="classxtd_1_1basic__string.html#aa6e7750375addd424e2684f5f7f88853" title="Returns the number of char_t elements in the string, i.e. std::distance(begin(), end()).">xtd::basic_string::size()</a> - 1 is passed as <code>pos</code>, the whole string will be searched.  <br /></td></tr>
 <tr class="separator:a6f2a1c61ed2fd70d04090ff9e4ce3374"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1344c6559dbf009f5ab4bebe64b6bb69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1basic__string.html">basic_string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1basic__string.html#a1344c6559dbf009f5ab4bebe64b6bb69">split</a> () const noexcept</td></tr>
-<tr class="memdesc:a1344c6559dbf009f5ab4bebe64b6bb69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits this <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> into substrings that are based on the default white-space characters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method.  <br /></td></tr>
+<tr class="memdesc:a1344c6559dbf009f5ab4bebe64b6bb69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits this <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> into substrings that are based on the default white-space characters. White-space characters are defined by the c++ standard and return <code>true</code> if they are passed to the xtd::char_object::isspace() or std::iswspace() method.  <br /></td></tr>
 <tr class="separator:a1344c6559dbf009f5ab4bebe64b6bb69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f5dd5044af32ac25bb0baf9b6413342"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1basic__string.html">basic_string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1basic__string.html#a5f5dd5044af32ac25bb0baf9b6413342">split</a> (<a class="el" href="classxtd_1_1basic__string.html#aba30f417a9a6e82bb49c465428af7aa5">value_type</a> <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2aa0f0bc95016c862498bbad29d1f4d9d4">separator</a>) const noexcept</td></tr>
 <tr class="memdesc:a5f5dd5044af32ac25bb0baf9b6413342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splits this <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> into substrings that are based on the characters in an array.  <br /></td></tr>
@@ -7015,7 +7015,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns reference to the first character in the string. The behavior is undefined if <a class="el" href="classxtd_1_1basic__string.html#adf2d306e379dd0b505b8c40e37c9439e" title="Checks if the string has no characters, i.e. whether begin() == end().">empty()</a> is true. </p>
+<p>Returns reference to the first character in the string. The behavior is undefined if <a class="el" href="classxtd_1_1basic__string.html#adf2d306e379dd0b505b8c40e37c9439e" title="Checks if the string has no characters, i.e. whether begin() == end().">empty()</a> is <code>true</code>. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the first character, equivalent to <code>operator[](0)</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
@@ -7933,7 +7933,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the value parameter occurs within this <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the value parameter occurs within this <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -7970,7 +7970,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the value parameter occurs within this <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>, or if value is the empty <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> (""); otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the value parameter occurs within this <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>, or if value is the empty <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> (""); otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -8091,7 +8091,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>The <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> to compare to this instance. </td></tr>
-    <tr><td class="paramname">ignore_case</td><td>true to ignore case when comparing this instance and value; otherwise, false </td></tr>
+    <tr><td class="paramname">ignore_case</td><td><code>true</code> to ignore case when comparing this instance and value; otherwise, <code>false</code> </td></tr>
   </table>
   </dd>
 </dl>
@@ -8133,7 +8133,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if value matches the end of this instance; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if value matches the end of this instance; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -8177,11 +8177,11 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>The char_t to compare to the substring at the end of this instance. </td></tr>
-    <tr><td class="paramname">ignore_case</td><td>true to ignore case during the comparison; otherwise, false. </td></tr>
+    <tr><td class="paramname">ignore_case</td><td><code>true</code> to ignore case during the comparison; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if value matches the end of this instance; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if value matches the end of this instance; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -8218,7 +8218,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if value matches the end of this instance; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if value matches the end of this instance; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -8262,11 +8262,11 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>The string to compare to the substring at the end of this instance. </td></tr>
-    <tr><td class="paramname">ignore_case</td><td>true to ignore case during the comparison; otherwise, false. </td></tr>
+    <tr><td class="paramname">ignore_case</td><td><code>true</code> to ignore case during the comparison; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if value matches the end of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if value matches the end of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -8314,7 +8314,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if value matches the end of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if value matches the end of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -10534,7 +10534,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Indicates whether this <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> is an empty <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> (""). </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the value parameter is null or an empty <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> (""); otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the value parameter is null or an empty <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> (""); otherwise, <code>false</code>. </dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000009">Deprecated:</a></b></dt><dd>Replaced by xtd::basic_string::is_empty(const xtd::basic_string&amp;) - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
@@ -11780,7 +11780,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Splits this <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> into substrings that are based on the default white-space characters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method. </p>
+<p>Splits this <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> into substrings that are based on the default white-space characters. White-space characters are defined by the c++ standard and return <code>true</code> if they are passed to the xtd::char_object::isspace() or std::iswspace() method. </p>
 <dl class="section return"><dt>Returns</dt><dd>An array whose elements contain the substrings in this <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> that are delimited by one or more characters in white-space separators. For more information, see the Remarks section. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Delimiter characters are not included in the elements of the returned array. </dd>
 <dd>
@@ -11892,7 +11892,7 @@ Each element of separator defines a separate delimiter that consists of a single
 </ol>
 </dd>
 <dd>
-If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method. </dd>
+If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the c++ standard and return <code>true</code> if they are passed to the xtd::char_object::isspace() or std::iswspace() method. </dd>
 <dd>
 If count is greater than the number of substrings, the available substrings are returned. </dd></dl>
 
@@ -11946,7 +11946,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
 <dd>
 If the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>. </dd>
 <dd>
-If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return true if they are passed to the char_t.IsWhiteSpace method. </dd>
+If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return <code>true</code> if they are passed to the char_t.IsWhiteSpace method. </dd>
 <dd>
 Each element of separator defines a separate delimiter character. If two delimiters are adjacent, or a delimiter is found at the beginning or end of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>, the corresponding array element contains empty <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>. </dd>
 <dd>
@@ -12122,7 +12122,7 @@ Each element of separator defines a separate delimiter that consists of a single
 </ol>
 </dd>
 <dd>
-If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method. </dd>
+If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the c++ standard and return <code>true</code> if they are passed to the xtd::char_object::isspace() or std::iswspace() method. </dd>
 <dd>
 If count is greater than the number of substrings, the available substrings are returned. </dd></dl>
 
@@ -12176,7 +12176,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
 <dd>
 If the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>. </dd>
 <dd>
-If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return true if they are passed to the char_t.IsWhiteSpace method. </dd>
+If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return <code>true</code> if they are passed to the char_t.IsWhiteSpace method. </dd>
 <dd>
 Each element of separator defines a separate delimiter character. If two delimiters are adjacent, or a delimiter is found at the beginning or end of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>, the corresponding array element contains empty <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>. </dd>
 <dd>
@@ -12283,7 +12283,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if value matches the beginning of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if value matches the beginning of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method compares value to the substring at the beginning of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>. </dd></dl>
 
 </div>
@@ -12328,11 +12328,11 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>A <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> to compare to. </td></tr>
-    <tr><td class="paramname">ignore_case</td><td>true to ignore case when comparing the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> and value; otherwise, false </td></tr>
+    <tr><td class="paramname">ignore_case</td><td><code>true</code> to ignore case when comparing the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> and value; otherwise, <code>false</code> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if value matches the beginning of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if value matches the beginning of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method compares value to the substring at the beginning of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>. </dd></dl>
 
 </div>
@@ -12370,7 +12370,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if value matches the beginning of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if value matches the beginning of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method compares value to the substring at the beginning of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>. </dd></dl>
 
 </div>
@@ -12415,11 +12415,11 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>A <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a> to compare to. </td></tr>
-    <tr><td class="paramname">ignore_case</td><td>true to ignore case when comparing the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> and value; otherwise, false </td></tr>
+    <tr><td class="paramname">ignore_case</td><td><code>true</code> to ignore case when comparing the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> and value; otherwise, <code>false</code> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if value matches the beginning of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if value matches the beginning of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method compares value to the substring at the beginning of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>. </dd></dl>
 
 </div>
@@ -12468,7 +12468,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if value matches the end of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if value matches the end of the specified <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a>; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -13666,7 +13666,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
   <table class="params">
     <tr><td class="paramname">str_a</td><td>The first <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> to compare. </td></tr>
     <tr><td class="paramname">str_b</td><td>The second <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> to compare. </td></tr>
-    <tr><td class="paramname">ignore_case</td><td>true to ignore case during the comparison; otherwise, false. </td></tr>
+    <tr><td class="paramname">ignore_case</td><td><code>true</code> to ignore case during the comparison; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -13896,7 +13896,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
     <tr><td class="paramname">str_b</td><td>The second <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> to use in the comparison. </td></tr>
     <tr><td class="paramname">index_b</td><td>The position of the substring within str_b. </td></tr>
     <tr><td class="paramname">length</td><td>The maximum number of characters in the substrings to compare </td></tr>
-    <tr><td class="paramname">ignore_case</td><td>true to ignore case during the comparison; otherwise, false. </td></tr>
+    <tr><td class="paramname">ignore_case</td><td><code>true</code> to ignore case during the comparison; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -14653,7 +14653,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
   <table class="params">
     <tr><td class="paramname">a</td><td>The first <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> to compare. </td></tr>
     <tr><td class="paramname">b</td><td>The second <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> to compare. </td></tr>
-    <tr><td class="paramname">ignore_case</td><td>true to ignore case when comparing this instance and value; otherwise, false </td></tr>
+    <tr><td class="paramname">ignore_case</td><td><code>true</code> to ignore case when comparing this instance and value; otherwise, <code>false</code> </td></tr>
   </table>
   </dd>
 </dl>
@@ -14711,7 +14711,7 @@ template&lt;class char_a_t , class char_b_t &gt; </div>
   <table class="params">
     <tr><td class="paramname">a</td><td>The first <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> to compare. </td></tr>
     <tr><td class="paramname">b</td><td>The second <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> to compare. </td></tr>
-    <tr><td class="paramname">ignore_case</td><td>true to ignore case when comparing this instance and value; otherwise, false </td></tr>
+    <tr><td class="paramname">ignore_case</td><td><code>true</code> to ignore case when comparing this instance and value; otherwise, <code>false</code> </td></tr>
   </table>
   </dd>
 </dl>
@@ -14855,7 +14855,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the value parameter is null or an empty <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> (""); otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the value parameter is null or an empty <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">basic_string</a> (""); otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -15126,7 +15126,7 @@ template&lt;class value_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a>:=:try_parse succed; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if <a class="el" href="classxtd_1_1basic__string.html" title="Represents text as a sequence of character units.">xtd::basic_string</a>:=:try_parse succed; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -17516,7 +17516,7 @@ template&lt;class char_t , class traits_t , class allocator_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:34:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

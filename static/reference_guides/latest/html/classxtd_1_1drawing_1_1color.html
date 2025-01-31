@@ -947,7 +947,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value indicating wheter this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure is dark color. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>return true if dark color; otherwise <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>return <code>true</code> if dark color; otherwise <code>false</code>. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="border_style_8cpp-example.html#a3">border_style.cpp</a>.</dd>
 </dl>
 
@@ -977,7 +977,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Specifies whether this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> class is uninitialized. </p>
-<dl class="section return"><dt>Returns</dt><dd>bool Returns true if this color is uninitialized; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool Returns <code>true</code> if this color is uninitialized; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -1005,8 +1005,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure is a predefined color. Predefined colors are represented by the elements of the <a class="el" href="group__colors.html#gabb6249e3fb8a4388778157257e99049b" title="Specifies the known system colors.">xtd::drawing::known_color</a> enumeration. </p>
-<dl class="section return"><dt>Returns</dt><dd>bool Returns true if this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> was created from a predefined color by using either the from_name method or the from_known_color method; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This property does not do a comparison of the ARGB values. Therefore, when the is_known_color property is applied to a <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure that is created by using the <a class="el" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b" title="Creates a xtd::drawing::color class from a 32-bit ARGB value.">xtd::drawing::color::from_argb</a> method, is_known_color returns false, even if the ARGB value matches the ARGB value of a predefined color. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool Returns <code>true</code> if this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> was created from a predefined color by using either the from_name method or the from_known_color method; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This property does not do a comparison of the ARGB values. Therefore, when the is_known_color property is applied to a <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure that is created by using the <a class="el" href="classxtd_1_1drawing_1_1color.html#ac4a75a743036c1bfbb948db2d481736b" title="Creates a xtd::drawing::color class from a 32-bit ARGB value.">xtd::drawing::color::from_argb</a> method, is_known_color returns <code>false</code>, even if the ARGB value matches the ARGB value of a predefined color. </dd></dl>
 
 </div>
 </div>
@@ -1034,7 +1034,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value indicating wheter this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure is light color. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>return true if light color; otherwise <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>return <code>true</code> if light color; otherwise <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -1062,7 +1062,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure is a named color or a member of the <a class="el" href="group__colors.html#gabb6249e3fb8a4388778157257e99049b" title="Specifies the known system colors.">xtd::drawing::known_color</a> enumeration. </p>
-<dl class="section return"><dt>Returns</dt><dd>bool Returns true if this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> was created by using either the <a class="el" href="classxtd_1_1drawing_1_1color.html#a468c6e1e43beaab5ad6db68bab63dee2" title="Creates a xtd::drawing::color class from the specified name of a predefined color.">xtd::drawing::color::from_name</a> method or the <a class="el" href="classxtd_1_1drawing_1_1color.html#a0c1755c633fc5e3a25ddf310b7645e8c" title="Creates a xtd::drawing::color class from the four ARGB component (alpha, red, green,...">xtd::drawing::color::from_known_color</a> method; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool Returns <code>true</code> if this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> was created by using either the <a class="el" href="classxtd_1_1drawing_1_1color.html#a468c6e1e43beaab5ad6db68bab63dee2" title="Creates a xtd::drawing::color class from the specified name of a predefined color.">xtd::drawing::color::from_name</a> method or the <a class="el" href="classxtd_1_1drawing_1_1color.html#a0c1755c633fc5e3a25ddf310b7645e8c" title="Creates a xtd::drawing::color class from the four ARGB component (alpha, red, green,...">xtd::drawing::color::from_known_color</a> method; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -1090,7 +1090,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> structure is a system color. A system color is a color that is used in a Windows display element. System colors are represented by elements of the <a class="el" href="group__colors.html#gabb6249e3fb8a4388778157257e99049b" title="Specifies the known system colors.">xtd::drawing::known_color</a> enumeration. </p>
-<dl class="section return"><dt>Returns</dt><dd>bool Returns true if this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> was created from a system color by using either the <a class="el" href="classxtd_1_1drawing_1_1color.html#a468c6e1e43beaab5ad6db68bab63dee2" title="Creates a xtd::drawing::color class from the specified name of a predefined color.">xtd::drawing::color::from_name</a> method or the <a class="el" href="classxtd_1_1drawing_1_1color.html#a0c1755c633fc5e3a25ddf310b7645e8c" title="Creates a xtd::drawing::color class from the four ARGB component (alpha, red, green,...">xtd::drawing::color::from_known_color</a> method; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool Returns <code>true</code> if this <a class="el" href="classxtd_1_1drawing_1_1color.html" title="Represents an ARGB (alpha, red, green, blue) color.">xtd::drawing::color</a> was created from a system color by using either the <a class="el" href="classxtd_1_1drawing_1_1color.html#a468c6e1e43beaab5ad6db68bab63dee2" title="Creates a xtd::drawing::color class from the specified name of a predefined color.">xtd::drawing::color::from_name</a> method or the <a class="el" href="classxtd_1_1drawing_1_1color.html#a0c1755c633fc5e3a25ddf310b7645e8c" title="Creates a xtd::drawing::color class from the four ARGB component (alpha, red, green,...">xtd::drawing::color::from_known_color</a> method; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -1799,7 +1799,7 @@ Thus, a weight value of <code>1.0</code> will return the second color, while a v
     <tr><td class="paramname">color1</td><td>The first color. </td></tr>
     <tr><td class="paramname">color2</td><td>The second color. </td></tr>
     <tr><td class="paramname">weight</td><td>The weighting factor </td></tr>
-    <tr><td class="paramname">average_alpha</td><td>if true alpha was compute to; otherwise the alpha result is the alpha of color1 </td></tr>
+    <tr><td class="paramname">average_alpha</td><td>if <code>true</code> alpha was compute to; otherwise the alpha result is the alpha of color1 </td></tr>
   </table>
   </dd>
 </dl>
@@ -2744,7 +2744,7 @@ Thus, a weight value of 1.0 will return the first color, while a value of 0.0 wi
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -2819,7 +2819,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns <code>true</code>. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -6332,7 +6332,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:26 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:34:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

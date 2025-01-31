@@ -234,7 +234,7 @@ You must enable tracing or debugging to use a trace listener. The syntax is comp
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Methods</h2></td></tr>
 <tr class="memitem:ab260917fba3cabadf8e8e850cf3b336a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1trace__listener.html#ab260917fba3cabadf8e8e850cf3b336a">write_indent</a> ()</td></tr>
-<tr class="memdesc:ab260917fba3cabadf8e8e850cf3b336a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the indent to the listener you create when you implement this class, and resets the NeedIndent property to false.  <br /></td></tr>
+<tr class="memdesc:ab260917fba3cabadf8e8e850cf3b336a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the indent to the listener you create when you implement this class, and resets the NeedIndent property to <code>false</code>.  <br /></td></tr>
 <tr class="separator:ab260917fba3cabadf8e8e850cf3b336a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
@@ -499,8 +499,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the trace listener is thread safe. </p>
-<dl class="section return"><dt>Returns</dt><dd>bool true if the trace listener is thread safe; otherwise, false. The default is false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The value of IsThreadSafe is used to determine whether to use a global lock when writing to the listener. If the value of IsThreadSafe is false, the global lock is used regardless of the value of UseGlobalLock. The global lock is not used only if the value of IsThreadSafe is true and the value of UseGlobalLock is false. The default behavior is to use the global lock whenever writing to the listener. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if the trace listener is thread safe; otherwise, <code>false</code>. The default is <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The value of IsThreadSafe is used to determine whether to use a global lock when writing to the listener. If the value of IsThreadSafe is <code>false</code>, the global lock is used regardless of the value of UseGlobalLock. The global lock is not used only if the value of IsThreadSafe is <code>true</code> and the value of UseGlobalLock is <code>false</code>. The default behavior is to use the global lock whenever writing to the listener. </dd></dl>
 
 </div>
 </div>
@@ -1543,7 +1543,7 @@ template&lt;class <a class="el" href="classxtd_1_1object.html">object</a> &gt; <
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether to indent the output. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the output should be indented; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the output should be indented; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -1574,7 +1574,7 @@ template&lt;class <a class="el" href="classxtd_1_1object.html">object</a> &gt; <
 <p>Sets a value indicating whether to indent the output. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">need_indent</td><td>true if the output should be indented; otherwise, false. </td></tr>
+    <tr><td class="paramname">need_indent</td><td><code>true</code> if the output should be indented; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1608,7 +1608,7 @@ template&lt;class <a class="el" href="classxtd_1_1object.html">object</a> &gt; <
 <p>Sets a value indicating whether the trace listener is thread safe. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">thread_safe</td><td>true if the trace listener is thread safe; otherwise, false. The default is false. </td></tr>
+    <tr><td class="paramname">thread_safe</td><td><code>true</code> if the trace listener is thread safe; otherwise, <code>false</code>. The default is <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1638,8 +1638,8 @@ template&lt;class <a class="el" href="classxtd_1_1object.html">object</a> &gt; <
 </table>
 </div><div class="memdoc">
 
-<p>Writes the indent to the listener you create when you implement this class, and resets the NeedIndent property to false. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>This method writes the indent and resets the NeedIndent property to false. Call this method if NeedIndent is true when you are overriding the Write and WriteLine methods. By default, this method uses blank spaces for indentation. The size of the indent is determined by the values of the IndentSize and IndentLevel properties. The IndentLevel property represents the number of times the indent of the size specified by the IndentSize property is applied. This method is called by the DefaultTraceListener and TextWriterTraceListener classes. </dd></dl>
+<p>Writes the indent to the listener you create when you implement this class, and resets the NeedIndent property to <code>false</code>. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>This method writes the indent and resets the NeedIndent property to <code>false</code>. Call this method if NeedIndent is <code>true</code> when you are overriding the Write and WriteLine methods. By default, this method uses blank spaces for indentation. The size of the indent is determined by the values of the IndentSize and IndentLevel properties. The IndentLevel property represents the number of times the indent of the size specified by the IndentSize property is applied. This method is called by the DefaultTraceListener and TextWriterTraceListener classes. </dd></dl>
 
 </div>
 </div>
@@ -1650,7 +1650,7 @@ template&lt;class <a class="el" href="classxtd_1_1object.html">object</a> &gt; <
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:26 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:34:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

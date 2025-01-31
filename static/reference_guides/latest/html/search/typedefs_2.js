@@ -14,7 +14,7 @@ var searchData=
   ['color_5fpicker_5fevent_5fhandler_11',['color_picker_event_handler',['../group__events.html#ga32f97e456b16450f2420fcc62285edc8',1,'xtd::forms']]],
   ['colors_12',['colors',['../classxtd_1_1forms_1_1color__dialog.html#a3727adcc036ed57d1a3149c0641fa729',1,'xtd::forms::color_dialog']]],
   ['comparer_13',['comparer',['../group__collections.html#gab589c8318b996ea48c759e108af5458b',1,'xtd::collections']]],
-  ['comparison_14',['comparison',['../group__xtd__core.html#ga96dde0e13d4e8026ac2d45cc19a0a401',1,'xtd']]],
+  ['comparison_14',['comparison',['../group__xtd__core.html#gab4eef226c3976ea29ecc3d2225c57225',1,'xtd']]],
   ['console_5fcancel_5fevent_5fhandler_15',['console_cancel_event_handler',['../group__events.html#ga414dd206eb06f253f559f46ad8af431e',1,'xtd']]],
   ['const_5fcontrol_5fref_16',['const_control_ref',['../group__xtd__forms.html#gab2fb47b10e66101d10b9f2a847b3d45d',1,'xtd::forms']]],
   ['const_5fform_5fref_17',['const_form_ref',['../group__xtd__forms.html#ga6f3a0c556fa94dbc11ae257629355151',1,'xtd::forms']]],

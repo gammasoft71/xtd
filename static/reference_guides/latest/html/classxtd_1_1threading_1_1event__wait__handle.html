@@ -495,7 +495,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> class, specifying whether the wait handle is initially signaled. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">initial_state</td><td>true to set the initial state to signaled; false to set it to nonsignaled. </td></tr>
+    <tr><td class="paramname">initial_state</td><td><code>true</code> to set the initial state to signaled; <code>false</code> to set it to nonsignaled. </td></tr>
   </table>
   </dd>
 </dl>
@@ -534,7 +534,7 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The initial state is false and the mode is set to <a class="el" href="group__threading.html#gga0d88594f6d137d04a3d0aa7b102664b3ad15df6f4bb58577e7078575bd2924794" title="When signaled, the xtd::threading::event_wait_handle resets automatically after releasing a single th...">xtd::threading::event_reset_mode::auto_reset</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The initial state is <code>false</code> and the mode is set to <a class="el" href="group__threading.html#gga0d88594f6d137d04a3d0aa7b102664b3ad15df6f4bb58577e7078575bd2924794" title="When signaled, the xtd::threading::event_wait_handle resets automatically after releasing a single th...">xtd::threading::event_reset_mode::auto_reset</a>. </dd></dl>
 
 </div>
 </div>
@@ -568,7 +568,7 @@ Additional Inherited Members</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">name</td><td>The name, if the synchronization object is to be shared with other processes; otherwise, null or an empty string. The name is case-sensitive. The backslash character () is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name. </td></tr>
-    <tr><td class="paramname">created_new</td><td>When this method returns, contains true if a local event was created (that is, if name is null or an empty string) or if the specified named system event was created; false if the specified named system event already existed. This parameter is passed uninitialized. </td></tr>
+    <tr><td class="paramname">created_new</td><td>When this method returns, contains <code>true</code> if a local event was created (that is, if name is null or an empty string) or if the specified named system event was created; <code>false</code> if the specified named system event already existed. This parameter is passed uninitialized. </td></tr>
   </table>
   </dd>
 </dl>
@@ -604,7 +604,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> class, specifying whether the wait handle is initially signaled if created as a result of this call, and the name of a system synchronization event. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">initial_state</td><td>true to set the initial state to signaled; false to set it to nonsignaled. </td></tr>
+    <tr><td class="paramname">initial_state</td><td><code>true</code> to set the initial state to signaled; <code>false</code> to set it to nonsignaled. </td></tr>
     <tr><td class="paramname">name</td><td>The name, if the synchronization object is to be shared with other processes; otherwise, null or an empty string. The name is case-sensitive. The backslash character () is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name. </td></tr>
   </table>
   </dd>
@@ -647,9 +647,9 @@ Additional Inherited Members</h2></td></tr>
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> class, specifying whether the wait handle is initially signaled if created as a result of this call, the name of a system synchronization event, and a bool variable whose value after the call indicates whether the named system event was created. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">initial_state</td><td>true to set the initial state to signaled; false to set it to nonsignaled. </td></tr>
+    <tr><td class="paramname">initial_state</td><td><code>true</code> to set the initial state to signaled; <code>false</code> to set it to nonsignaled. </td></tr>
     <tr><td class="paramname">name</td><td>The name, if the synchronization object is to be shared with other processes; otherwise, null or an empty string. The name is case-sensitive. The backslash character () is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name. </td></tr>
-    <tr><td class="paramname">created_new</td><td>When this method returns, contains true if a local event was created (that is, if name is null or an empty string) or if the specified named system event was created; false if the specified named system event already existed. This parameter is passed uninitialized. </td></tr>
+    <tr><td class="paramname">created_new</td><td>When this method returns, contains <code>true</code> if a local event was created (that is, if name is null or an empty string) or if the specified named system event was created; <code>false</code> if the specified named system event already existed. This parameter is passed uninitialized. </td></tr>
   </table>
   </dd>
 </dl>
@@ -685,7 +685,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> class, specifying whether the wait handle is initially signaled, and whether it resets automatically or manually. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">initial_state</td><td>true to set the initial state to signaled; false to set it to nonsignaled. </td></tr>
+    <tr><td class="paramname">initial_state</td><td><code>true</code> to set the initial state to signaled; <code>false</code> to set it to nonsignaled. </td></tr>
     <tr><td class="paramname">mode</td><td>One of the <a class="el" href="group__threading.html#ga0d88594f6d137d04a3d0aa7b102664b3" title="Indicates whether an xtd::threading::event_wait_handle is reset automatically or manually after recei...">xtd::threading::event_reset_mode</a> values that determines whether the event resets automatically or manually. </td></tr>
   </table>
   </dd>
@@ -735,7 +735,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> class, specifying whether the wait handle is initially signaled if created as a result of this call, whether it resets automatically or manually, and the name of a system synchronization event. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">initial_state</td><td>true to set the initial state to signaled; false to set it to nonsignaled. </td></tr>
+    <tr><td class="paramname">initial_state</td><td><code>true</code> to set the initial state to signaled; <code>false</code> to set it to nonsignaled. </td></tr>
     <tr><td class="paramname">mode</td><td>One of the <a class="el" href="group__threading.html#ga0d88594f6d137d04a3d0aa7b102664b3" title="Indicates whether an xtd::threading::event_wait_handle is reset automatically or manually after recei...">xtd::threading::event_reset_mode</a> values that determines whether the event resets automatically or manually. </td></tr>
     <tr><td class="paramname">name</td><td>The name, if the synchronization object is to be shared with other processes; otherwise, null or an empty string. The name is case-sensitive. The backslash character () is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name. </td></tr>
   </table>
@@ -756,7 +756,7 @@ There was some other error. The HResult property may provide more information. <
 If a name is provided and a synchronization object of the requested type already exists in the namespace, the existing synchronization object is opened. If a synchronization object of a different type already exists in the namespace, a <a class="el" href="classxtd_1_1threading_1_1wait__handle__cannot__be__opened__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::wait_handle_cannot_be_opened_exception</a> is thrown. Otherwise, a new synchronization object is created. </dd>
 <dd>
 If a system event with the name specified for the name parameter already exists, the initialState parameter is ignored. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>When using this constructor for named system events, specify false for initial_state. This constructor provides no way to determine whether a named system event was created, so you cannot make any assumptions about the state of the named event. To determine whether a named event was created, use the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle(bool, xtd::threading::event_reset_mode, xtd::utring, bool)</a> constructor or the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle(bool, xtd::threading::event__reset_mode, xtd:string, bool)</a> constructor. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>When using this constructor for named system events, specify <code>false</code> for initial_state. This constructor provides no way to determine whether a named system event was created, so you cannot make any assumptions about the state of the named event. To determine whether a named event was created, use the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle(bool, xtd::threading::event_reset_mode, xtd::utring, bool)</a> constructor or the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle(bool, xtd::threading::event__reset_mode, xtd:string, bool)</a> constructor. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the initial state of the event is nonsignaled, threads that wait on the event will block. If the initial state is signaled, and the <a class="el" href="group__threading.html#gga0d88594f6d137d04a3d0aa7b102664b3ae24e926926861449731fb9418399a53d" title="When signaled, the xtd::threading::event_wait_handle releases all waiting threads and remains signale...">xtd::threading::event_reset_mode::manual_reset</a> flag is specified for mode, threads that wait on the event will not block. If the initial state is signaled, and mode is <a class="el" href="group__threading.html#gga0d88594f6d137d04a3d0aa7b102664b3ad15df6f4bb58577e7078575bd2924794" title="When signaled, the xtd::threading::event_wait_handle resets automatically after releasing a single th...">xtd::threading::event_reset_mode::auto_reset</a>, the first thread that waits on the event will be released immediately, after which the event will reset, and subsequent threads will block. </dd></dl>
 
 </div>
@@ -802,10 +802,10 @@ If a system event with the name specified for the name parameter already exists,
 <p>Initializes a new instance of the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> class, specifying whether the wait handle is initially signaled if created as a result of this call, whether it resets automatically or manually, the name of a system synchronization event, and a bool variable whose value after the call indicates whether the named system event was created. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">initial_state</td><td>true to set the initial state to signaled; false to set it to nonsignaled. </td></tr>
+    <tr><td class="paramname">initial_state</td><td><code>true</code> to set the initial state to signaled; <code>false</code> to set it to nonsignaled. </td></tr>
     <tr><td class="paramname">mode</td><td>One of the <a class="el" href="group__threading.html#ga0d88594f6d137d04a3d0aa7b102664b3" title="Indicates whether an xtd::threading::event_wait_handle is reset automatically or manually after recei...">xtd::threading::event_reset_mode</a> values that determines whether the event resets automatically or manually. </td></tr>
     <tr><td class="paramname">name</td><td>The name, if the synchronization object is to be shared with other processes; otherwise, null or an empty string. The name is case-sensitive. The backslash character () is reserved and may only be used to specify a namespace. For more information on namespaces, see the remarks section. There may be further restrictions on the name depending on the operating system. For example, on Unix-based operating systems, the name after excluding the namespace must be a valid file name. </td></tr>
-    <tr><td class="paramname">created_new</td><td>When this method returns, contains true if a local event was created (that is, if name is null or an empty string) or if the specified named system event was created; false if the specified named system event already existed. This parameter is passed uninitialized. </td></tr>
+    <tr><td class="paramname">created_new</td><td>When this method returns, contains <code>true</code> if a local event was created (that is, if name is null or an empty string) or if the specified named system event was created; <code>false</code> if the specified named system event already existed. This parameter is passed uninitialized. </td></tr>
   </table>
   </dd>
 </dl>
@@ -943,7 +943,7 @@ If the initial state of the event is nonsignaled, threads that wait on the event
 </div><div class="memdoc">
 
 <p>Sets the state of the event to nonsignaled, causing threads to block. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the operation succeeds; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the operation succeeds; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a177d4ddb89f80c3932de535af29e7c76" title="Releases all resources held by the current xtd::threading::wait_handle.">xtd::threading::wait_handle::close()</a> method was previously called on this <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a>. </td></tr>
@@ -969,7 +969,7 @@ If the initial state of the event is nonsignaled, threads that wait on the event
 </div><div class="memdoc">
 
 <p>Sets the state of the event to signaled, allowing one or more waiting threads to proceed. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the operation succeeds; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the operation succeeds; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#a177d4ddb89f80c3932de535af29e7c76" title="Releases all resources held by the current xtd::threading::wait_handle.">xtd::threading::wait_handle::close()</a> method was previously called on this <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a>. </td></tr>
@@ -1079,11 +1079,11 @@ Multiple calls to this method that use the same value for name do not necessaril
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the named synchronization event was opened successfully; otherwise, false. In some cases, false may be returned for invalid names. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the named synchronization event was opened successfully; otherwise, <code>false</code>. In some cases, <code>false</code> may be returned for invalid names. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>name is an empty string. </td></tr>
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1io_1_1io__exception.html" title="The exception that is thrown when an I/O error occurs.">xtd::io::io_exception</a></td><td>name is invalid. This can be for various reasons, including some restrictions that may be placed by the operating system, such as an unknown prefix or invalid characters. Note that the name and common prefixes "Global\" and "Local" are case-sensitive. For some invalid names, the method may return false instead.<br  />
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1io_1_1io__exception.html" title="The exception that is thrown when an I/O error occurs.">xtd::io::io_exception</a></td><td>name is invalid. This can be for various reasons, including some restrictions that may be placed by the operating system, such as an unknown prefix or invalid characters. Note that the name and common prefixes "Global\" and "Local" are case-sensitive. For some invalid names, the method may return `false` instead.<br  />
 -or-<br  />
 There was some other error. The HResult property may provide more information. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1io_1_1path__too__long__exception.html" title="The exception that is thrown when a path or file name is longer than the system-defined maximum lengt...">xtd::io::path_too_long_exception</a></td><td>The name is too long. Length restrictions may depend on the operating system or configuration. </td></tr>
@@ -1092,7 +1092,7 @@ There was some other error. The HResult property may provide more information. <
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The name may be prefixed with Global\ or Local\ to specify a namespace. When the Global namespace is specified, the synchronization object may be shared with any processes on the system. When the Local namespace is specified, which is also the default when no namespace is specified, the synchronization object may be shared with processes in the same session. On Windows, a session is a login session, and services typically run in a different non-interactive session. On Unix-like operating systems, each shell has its own session. Session-local synchronization objects may be appropriate for synchronizing between processes with a parent/child relationship where they all run in the same session. </dd>
 <dd>
-If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened. If a synchronization object does not exist in the namespace, or a synchronization object of a different type exists in the namespace, false is returned. </dd>
+If a synchronization object of the requested type exists in the namespace, the existing synchronization object is opened. If a synchronization object does not exist in the namespace, or a synchronization object of a different type exists in the namespace, <code>false</code> is returned. </dd>
 <dd>
 To create the system event when it does not already exist, use one of the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html" title="Represents a thread synchronization event.">xtd::threading::event_wait_handle</a> constructors that has a name parameter. </dd>
 <dd>
@@ -1126,7 +1126,7 @@ Multiple calls to this method that use the same value for name do not necessaril
 </div><div class="memdoc">
 
 <p>Releases ownership of the specified <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">wait_handle</a> object. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> If the function succeeds, false otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> If the function succeeds, <code>false</code> otherwise. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Override this function for all derived object </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1threading_1_1wait__handle.html#ae3323e1eb8bc5686e88c8eb54d93e2c8">xtd::threading::wait_handle</a>.</p>
@@ -1165,7 +1165,7 @@ Multiple calls to this method that use the same value for name do not necessaril
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current instance receives a signal; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current instance receives a signal; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If milliseconds_timeout is zero, the method does not block. It tests the state of the wait handle and returns immediately. </dd>
 <dd>
 Override this function for all derived object </dd></dl>
@@ -1205,7 +1205,7 @@ Override this function for all derived object </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1279,7 +1279,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns <code>true</code>. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1325,7 +1325,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:35:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

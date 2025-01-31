@@ -106,7 +106,7 @@ Inheritance diagram for xtd::console_cancel_event_args:</div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A user can interrupt a console application process by simultaneously pressing the Control modifier key and the C console key (Ctrl+C), or the Control modifier key and the Break console key (Ctrl+Break). The console consequently provides a <a class="el" href="classxtd_1_1console__cancel__event__args.html" title="Provides data for the console::cancel_key_press event. This class cannot be inherited.">console_cancel_event_args</a> object to the event handler for the <a class="el" href="classxtd_1_1console.html#a02258c1b2d77b3ca79f144db690d4c20" title="Occurs when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break ...">console::cancel_key_press</a> event to specify whether the process should be cancelled. </dd>
 <dd>
-If the cancel property is set to true in the event handler, the process is resumed; otherwise, the process is terminated. By default, the value of the <a class="el" href="classxtd_1_1console__cancel__event__args.html" title="Provides data for the console::cancel_key_press event. This class cannot be inherited.">console_cancel_event_args</a> property is false, and the process terminates. </dd></dl>
+If the cancel property is set to <code>true</code> in the event handler, the process is resumed; otherwise, the process is terminated. By default, the value of the <a class="el" href="classxtd_1_1console__cancel__event__args.html" title="Provides data for the console::cancel_key_press event. This class cannot be inherited.">console_cancel_event_args</a> property is <code>false</code>, and the process terminates. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="console_read_key_8cpp-example.html#_a0">console_read_key.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
@@ -120,10 +120,10 @@ If the cancel property is set to true in the event handler, the process is resum
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:a762cd441f8153c96de76a4010ea0eaca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1console__cancel__event__args.html#a762cd441f8153c96de76a4010ea0eaca">cancel</a> () const noexcept</td></tr>
-<tr class="memdesc:a762cd441f8153c96de76a4010ea0eaca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is false, which terminates the current process.  <br /></td></tr>
+<tr class="memdesc:a762cd441f8153c96de76a4010ea0eaca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is <code>false</code>, which terminates the current process.  <br /></td></tr>
 <tr class="separator:a762cd441f8153c96de76a4010ea0eaca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d176b33579dd38d901284024ce7cd13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1console__cancel__event__args.html#a9d176b33579dd38d901284024ce7cd13">cancel</a> (bool cancel)</td></tr>
-<tr class="memdesc:a9d176b33579dd38d901284024ce7cd13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is false, which terminates the current process.  <br /></td></tr>
+<tr class="memdesc:a9d176b33579dd38d901284024ce7cd13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is <code>false</code>, which terminates the current process.  <br /></td></tr>
 <tr class="separator:a9d176b33579dd38d901284024ce7cd13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4527f1da4e784086413e4ef1f44281b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__core.html#gaa3d0d07e86f61a82f96e00c5f516622e">console_special_key</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1console__cancel__event__args.html#af4527f1da4e784086413e4ef1f44281b">special_key</a> () const noexcept</td></tr>
 <tr class="memdesc:af4527f1da4e784086413e4ef1f44281b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the combination of modifier and console keys that interrupted the current process.  <br /></td></tr>
@@ -255,8 +255,8 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Gets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is false, which terminates the current process. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current process should resume when the event handler concludes; false if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If true, the current process continues. </dd></dl>
+<p>Gets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is <code>false</code>, which terminates the current process. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current process should resume when the event handler concludes; <code>false</code> if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If <code>true</code>, the current process continues. </dd></dl>
 
 </div>
 </div>
@@ -276,10 +276,10 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is false, which terminates the current process. </p>
+<p>Sets a value that indicates whether simultaneously pressing the Control modifier key and the C console key (Ctrl+C) or the Ctrl+Break keys terminates the current process. The default is <code>false</code>, which terminates the current process. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">true</td><td>if the current process should resume when the event handler concludes; false if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If true, the current process continues. </td></tr>
+    <tr><td class="paramname">cancel</td><td><code>true</code> if the current process should resume when the event handler concludes; <code>false</code> if the current process should terminate. The default value is false; the current process terminates when the event handler returns. If <code>true</code>, the current process continues. </td></tr>
   </table>
   </dd>
 </dl>
@@ -321,7 +321,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:34:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

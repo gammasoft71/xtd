@@ -204,7 +204,7 @@ Inheritance diagram for xtd::forms::dot_matrix_display:</div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(form1 {});</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:75</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:77</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a57ee57fb17a58f873f39e14234a8815e"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a57ee57fb17a58f873f39e14234a8815e">xtd::forms::control::height</a></div><div class="ttdeci">virtual int32 height() const noexcept</div><div class="ttdoc">Gets the height of the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1dot__matrix__display_html"><div class="ttname"><a href="classxtd_1_1forms_1_1dot__matrix__display.html">xtd::forms::dot_matrix_display</a></div><div class="ttdoc">Represents a dot matrix display class.</div><div class="ttdef"><b>Definition</b> dot_matrix_display.hpp:32</div></div>
@@ -1354,7 +1354,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <tr class="memdesc:a86d36d6a47d6d7adea17442beb394a4f inherit pro_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the parent handle of the control.  <br /></td></tr>
 <tr class="separator:a86d36d6a47d6d7adea17442beb394a4f inherit pro_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1803ab3c808ee5f02e66d4fb76a1a65 inherit pro_methods_classxtd_1_1forms_1_1control"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#ae1803ab3c808ee5f02e66d4fb76a1a65">set_style</a> (<a class="el" href="group__xtd__forms.html#ga8b6e8bca23778f49dc78093e0d5fadbf">control_styles</a> flag, bool value)</td></tr>
-<tr class="memdesc:ae1803ab3c808ee5f02e66d4fb76a1a65 inherit pro_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a specified control_styles flag to either true or false.  <br /></td></tr>
+<tr class="memdesc:ae1803ab3c808ee5f02e66d4fb76a1a65 inherit pro_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a specified control_styles flag to either <code>true</code> or <code>false</code>.  <br /></td></tr>
 <tr class="separator:ae1803ab3c808ee5f02e66d4fb76a1a65 inherit pro_methods_classxtd_1_1forms_1_1control"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac75d78bfc73154decabddc734cd28096 inherit pro_methods_classxtd_1_1forms_1_1control"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1control.html#ac75d78bfc73154decabddc734cd28096">wnd_proc</a> (<a class="el" href="classxtd_1_1forms_1_1message.html">message</a> &amp;<a class="el" href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea6f8f57715090da2632453988d9a1501b">m</a>)</td></tr>
 <tr class="memdesc:ac75d78bfc73154decabddc734cd28096 inherit pro_methods_classxtd_1_1forms_1_1control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes Windows messages.  <br /></td></tr>
@@ -1929,7 +1929,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <p>Sets a value indicate if background dots are shown. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>true if background dots are shown; otherwise <code>false</code>. </td></tr>
+    <tr><td class="paramname">value</td><td><code>true</code> if background dots are shown; otherwise <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2062,7 +2062,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <p>Sets all dots with specified boolean. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">on</td><td>true to set all dots to on; otherwise <code>false</code>. </td></tr>
+    <tr><td class="paramname">on</td><td><code>true</code> to set all dots to on; otherwise <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2107,7 +2107,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">point</td><td>dot point location in the matrix. </td></tr>
-    <tr><td class="paramname">on</td><td>true if specified dot point is on; otherwise <code>false</code>. </td></tr>
+    <tr><td class="paramname">on</td><td><code>true</code> if specified dot point is on; otherwise <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2186,7 +2186,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">points</td><td>Dot points collection tha contains locations in the matrix. </td></tr>
-    <tr><td class="paramname">on</td><td>true to set specified dots points to on; otherwise <code>false</code>. </td></tr>
+    <tr><td class="paramname">on</td><td><code>true</code> to set specified dots points to on; otherwise <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2587,7 +2587,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dots</td><td>A dots_collection that represent all dots status. </td></tr>
-    <tr><td class="paramname">show_back_dot</td><td>true if background dots are shown; otherwise <code>false</code>. </td></tr>
+    <tr><td class="paramname">show_back_dot</td><td><code>true</code> if background dots are shown; otherwise <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2639,7 +2639,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dots</td><td>A dots_collection that represent all dots status. </td></tr>
-    <tr><td class="paramname">show_back_dot</td><td>true if background dots are shown; otherwise <code>false</code>. </td></tr>
+    <tr><td class="paramname">show_back_dot</td><td><code>true</code> if background dots are shown; otherwise <code>false</code>. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1dot__matrix__display.html" title="Represents a dot matrix display class.">xtd::forms::dot_matrix_display</a>. </td></tr>
   </table>
   </dd>
@@ -2698,7 +2698,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dots</td><td>A dots_collection that represent all dots status. </td></tr>
-    <tr><td class="paramname">show_back_dot</td><td>true if background dots are shown; otherwise <code>false</code>. </td></tr>
+    <tr><td class="paramname">show_back_dot</td><td><code>true</code> if background dots are shown; otherwise <code>false</code>. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1dot__matrix__display.html" title="Represents a dot matrix display class.">xtd::forms::dot_matrix_display</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1dot__matrix__display.html" title="Represents a dot matrix display class.">xtd::forms::dot_matrix_display</a>. </td></tr>
   </table>
@@ -2764,7 +2764,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dots</td><td>A dots_collection that represent all dots status. </td></tr>
-    <tr><td class="paramname">show_back_dot</td><td>true if background dots are shown; otherwise <code>false</code>. </td></tr>
+    <tr><td class="paramname">show_back_dot</td><td><code>true</code> if background dots are shown; otherwise <code>false</code>. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1dot__matrix__display.html" title="Represents a dot matrix display class.">xtd::forms::dot_matrix_display</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1dot__matrix__display.html" title="Represents a dot matrix display class.">xtd::forms::dot_matrix_display</a>. </td></tr>
     <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1dot__matrix__display.html" title="Represents a dot matrix display class.">xtd::forms::dot_matrix_display</a>. </td></tr>
@@ -3240,7 +3240,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
   <table class="params">
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1dot__matrix__display.html" title="Represents a dot matrix display class.">xtd::forms::dot_matrix_display</a>. </td></tr>
     <tr><td class="paramname">dots</td><td>A dots_collection that represent all dots status. </td></tr>
-    <tr><td class="paramname">show_back_dot</td><td>true if background dots are shown; otherwise <code>false</code>. </td></tr>
+    <tr><td class="paramname">show_back_dot</td><td><code>true</code> if background dots are shown; otherwise <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3299,7 +3299,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
   <table class="params">
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1dot__matrix__display.html" title="Represents a dot matrix display class.">xtd::forms::dot_matrix_display</a>. </td></tr>
     <tr><td class="paramname">dots</td><td>A dots_collection that represent all dots status. </td></tr>
-    <tr><td class="paramname">show_back_dot</td><td>true if background dots are shown; otherwise <code>false</code>. </td></tr>
+    <tr><td class="paramname">show_back_dot</td><td><code>true</code> if background dots are shown; otherwise <code>false</code>. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1dot__matrix__display.html" title="Represents a dot matrix display class.">xtd::forms::dot_matrix_display</a>. </td></tr>
   </table>
   </dd>
@@ -3365,7 +3365,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
   <table class="params">
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1dot__matrix__display.html" title="Represents a dot matrix display class.">xtd::forms::dot_matrix_display</a>. </td></tr>
     <tr><td class="paramname">dots</td><td>A dots_collection that represent all dots status. </td></tr>
-    <tr><td class="paramname">show_back_dot</td><td>true if background dots are shown; otherwise <code>false</code>. </td></tr>
+    <tr><td class="paramname">show_back_dot</td><td><code>true</code> if background dots are shown; otherwise <code>false</code>. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1dot__matrix__display.html" title="Represents a dot matrix display class.">xtd::forms::dot_matrix_display</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1dot__matrix__display.html" title="Represents a dot matrix display class.">xtd::forms::dot_matrix_display</a>. </td></tr>
   </table>
@@ -3438,7 +3438,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
   <table class="params">
     <tr><td class="paramname">parent</td><td>The parent that contains the new created <a class="el" href="classxtd_1_1forms_1_1dot__matrix__display.html" title="Represents a dot matrix display class.">xtd::forms::dot_matrix_display</a>. </td></tr>
     <tr><td class="paramname">dots</td><td>A dots_collection that represent all dots status. </td></tr>
-    <tr><td class="paramname">show_back_dot</td><td>true if background dots are shown; otherwise <code>false</code>. </td></tr>
+    <tr><td class="paramname">show_back_dot</td><td><code>true</code> if background dots are shown; otherwise <code>false</code>. </td></tr>
     <tr><td class="paramname">location</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that represent location of the <a class="el" href="classxtd_1_1forms_1_1dot__matrix__display.html" title="Represents a dot matrix display class.">xtd::forms::dot_matrix_display</a>. </td></tr>
     <tr><td class="paramname">size</td><td>A <a class="el" href="classxtd_1_1drawing_1_1size.html" title="Stores an ordered pair of integers, which specify a height and width.">xtd::drawing::size</a> that represent size of the <a class="el" href="classxtd_1_1forms_1_1dot__matrix__display.html" title="Represents a dot matrix display class.">xtd::forms::dot_matrix_display</a>. </td></tr>
     <tr><td class="paramname">name</td><td>The name of the <a class="el" href="classxtd_1_1forms_1_1dot__matrix__display.html" title="Represents a dot matrix display class.">xtd::forms::dot_matrix_display</a>. </td></tr>
@@ -3707,7 +3707,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:35:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

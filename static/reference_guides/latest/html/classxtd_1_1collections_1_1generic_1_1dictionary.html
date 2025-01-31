@@ -3303,8 +3303,8 @@ template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;k
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; interface only supports addition and removal operations. For example, the IsReadOnly property of an array that is cast or converted to an <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; object returns true, even though individual array elements can be modified. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; interface only supports addition and removal operations. For example, the IsReadOnly property of an array that is cast or converted to an <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; object returns <code>true</code>, even though individual array elements can be modified. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a817ed0a0b5cdb551aac7512c52ed4c96">xtd::collections::generic::icollection&lt; xtd::collections::generic::key_value_pair&lt; key_t, value_t &gt; &gt;</a>.</p>
 
@@ -3336,7 +3336,7 @@ template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;k
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is synchronized (thread safe). </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is synchronized (thread safe); otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is synchronized (thread safe); otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a2b277c3530daec2186daa89e213da290" title="Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollecti...">xtd::collections::generic::icollection::sync_root</a> returns an object, which can be used to synchronize access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;. </dd>
 <dd>
 Most collection classes in the <a class="el" href="namespacextd_1_1collections.html" title="The xtd::collections namespace contains interfaces and classes that define various collections of obj...">xtd::collections</a> namespace also implement a <code>synchronized</code> method, which provides a synchronized wrapper around the underlying collection. </dd>
@@ -5261,7 +5261,7 @@ template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;k
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to <code>true</code> if and only if the insertion took place. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Inserts <code>value</code>. </dd>
 <dd>
 If after the operation the new number of elements is greater than old <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af4ebdfacb702aad8221aa1b77817cdbd" title="Gets the maximum load factor (number of elements per bucket). The container automatically increases t...">xtd::collections::generic::dictionary::max_load_factor</a> * <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad51c920c156b8cc6863e143972f5c11b" title="Gets the number of buckets in the container.">xtd::collections::generic::dictionary::bucket_count</a> a rehashing takes place. </dd>
@@ -5303,7 +5303,7 @@ template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;k
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to <code>true</code> if and only if the insertion took place. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Inserts <code>value</code>. </dd>
 <dd>
 If after the operation the new number of elements is greater than old <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af4ebdfacb702aad8221aa1b77817cdbd" title="Gets the maximum load factor (number of elements per bucket). The container automatically increases t...">xtd::collections::generic::dictionary::max_load_factor</a> * <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad51c920c156b8cc6863e143972f5c11b" title="Gets the number of buckets in the container.">xtd::collections::generic::dictionary::bucket_count</a> a rehashing takes place. </dd>
@@ -5347,7 +5347,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to <code>true</code> if and only if the insertion took place. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Inserts <code>value</code>. </dd>
 <dd>
 Is equivalent to <code>emplace(std::forward&lt;P&gt;(value))</code> and only participates in overload resolution if <code>std::is_constructible&lt;value_type, P&amp;&amp;&gt;::value == true</code>. </dd>
@@ -5809,7 +5809,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to <code>true</code> if and only if the insertion took place. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If a key equivalent to <code>k</code> already exists in the container, assigns <code>std::forward&lt;type_t&gt;(obj)</code> to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ab62f8fa8a47c2a7f0f4371ec0483086d" title="Represents the dictionary mapped type.">xtd::collections::generic::dictionary::mapped_type</a> corresponding to the key <code>k</code>. If the key does not exist, inserts the new value as if by <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a2536af020316364a5f3e053dbc02feb7" title="Inserts element(s) into the container, if the container doesn&#39;t already contain an element with an eq...">xtd::collections::generic::dictionary::insert</a>, constructing it from <code>value_type(k, std::forward&lt;type_t&gt;(obj))</code>. </dd>
 <dd>
 If after the operation the new number of elements is greater than old <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af4ebdfacb702aad8221aa1b77817cdbd" title="Gets the maximum load factor (number of elements per bucket). The container automatically increases t...">xtd::collections::generic::dictionary::max_load_factor</a> * <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad51c920c156b8cc6863e143972f5c11b" title="Gets the number of buckets in the container.">xtd::collections::generic::dictionary::bucket_count</a> a rehashing takes place. </dd>
@@ -5864,7 +5864,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to <code>true</code> if and only if the insertion took place. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If a key equivalent to <code>k</code> already exists in the container, assigns <code>std::forward&lt;type_t&gt;(obj)</code> to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ab62f8fa8a47c2a7f0f4371ec0483086d" title="Represents the dictionary mapped type.">xtd::collections::generic::dictionary::mapped_type</a> corresponding to the key <code>k</code>. If the key does not exist, inserts the new value as if by <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#a2536af020316364a5f3e053dbc02feb7" title="Inserts element(s) into the container, if the container doesn&#39;t already contain an element with an eq...">xtd::collections::generic::dictionary::insert</a>, constructing it from <code>value_type(k, std::forward&lt;type_t&gt;(obj))</code>. </dd>
 <dd>
 If after the operation the new number of elements is greater than old <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af4ebdfacb702aad8221aa1b77817cdbd" title="Gets the maximum load factor (number of elements per bucket). The container automatically increases t...">xtd::collections::generic::dictionary::max_load_factor</a> * <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad51c920c156b8cc6863e143972f5c11b" title="Gets the number of buckets in the container.">xtd::collections::generic::dictionary::bucket_count</a> a rehashing takes place. </dd>
@@ -6684,7 +6684,7 @@ template&lt;class ... args_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to <code>true</code> if and only if the insertion took place. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If value_type is not <a href="https://en.cppreference.com/w/cpp/named_req/EmplaceConstructible">EmplaceConstructible</a> into unordered_map from the corresponding expression, the behavior is undefined. </dd>
 <dd>
 If after the operation the new number of elements is greater than old <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af4ebdfacb702aad8221aa1b77817cdbd" title="Gets the maximum load factor (number of elements per bucket). The container automatically increases t...">xtd::collections::generic::dictionary::max_load_factor</a> * <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad51c920c156b8cc6863e143972f5c11b" title="Gets the number of buckets in the container.">xtd::collections::generic::dictionary::bucket_count</a> a rehashing takes place. </dd>
@@ -6739,7 +6739,7 @@ template&lt;class ... args_t&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to <code>true</code> if and only if the insertion took place. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If value_type is not <a href="https://en.cppreference.com/w/cpp/named_req/EmplaceConstructible">EmplaceConstructible</a> into unordered_map from the corresponding expression, the behavior is undefined. </dd>
 <dd>
 If after the operation the new number of elements is greater than old <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#af4ebdfacb702aad8221aa1b77817cdbd" title="Gets the maximum load factor (number of elements per bucket). The container automatically increases t...">xtd::collections::generic::dictionary::max_load_factor</a> * <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html#ad51c920c156b8cc6863e143972f5c11b" title="Gets the number of buckets in the container.">xtd::collections::generic::dictionary::bucket_count</a> a rehashing takes place. </dd>
@@ -7310,7 +7310,7 @@ template&lt;class key_t , class value_t , class hasher_t  = helpers::hasher&lt;k
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Fri Jan 31 2025 20:34:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
