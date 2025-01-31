@@ -52,7 +52,7 @@ namespace xtd {
       /// @return `true` if visited link; otherwise `false`.
       bool visited() const noexcept;
       /// @brief Sets the visited link value.
-      /// @param value true if visited link; otherwise `false`.
+      /// @param value `true` if visited link; otherwise `false`.
       void visited(bool value);
       /// @}
       

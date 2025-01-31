@@ -118,7 +118,7 @@ namespace xtd {
       /// @return `true` if cancel button shown; otherwise `false`. By default `false`.
       bool show_cancel_button() const noexcept;
       /// @brief Sets a value that indicates whether cancel button is shown.
-      /// @param show_cancel_button true if cancel button is shown; otherwise `false`. By default `false`.
+      /// @param show_cancel_button `true` if cancel button is shown; otherwise `false`. By default `false`.
       /// @return Current progress_dialog instance.
       progress_dialog& show_cancel_button(bool show_cancel_button);
       
@@ -126,7 +126,7 @@ namespace xtd {
       /// @return `true` if elapsed time is shown; otherwise `false`. By default `false`.
       bool show_elapsed_time() const noexcept;
       /// @brief Sets a value that indicates whether elapsed time is shown.
-      /// @param show_elapsed_time true if elapsed time is shown; otherwise `false`. By default `false`.
+      /// @param show_elapsed_time `true` if elapsed time is shown; otherwise `false`. By default `false`.
       /// @return Current progress_dialog instance.
       progress_dialog& show_elapsed_time(bool show_elapsed_time);
       
@@ -134,7 +134,7 @@ namespace xtd {
       /// @return `true` if estimated time is shown; otherwise `false`. By default `false`.
       bool show_estimated_time() const noexcept;
       /// @brief Sets a value that indicates whether estimated time is shown.
-      /// @param show_estimated_time true if estimated time is shown; otherwise `false`. By default `false`.
+      /// @param show_estimated_time `true` if estimated time is shown; otherwise `false`. By default `false`.
       /// @return Current progress_dialog instance.
       progress_dialog& show_estimated_time(bool show_estimated_time);
       
@@ -142,7 +142,7 @@ namespace xtd {
       /// @return `true` if remaining time is shown; otherwise `false`. By default `false`.
       bool show_remaining_time() const noexcept;
       /// @brief Sets a value that indicates whether remaining time is shown.
-      /// @param show_remaining_time true if remaining time is shown; otherwise `false`. By default `false`.
+      /// @param show_remaining_time `true` if remaining time is shown; otherwise `false`. By default `false`.
       /// @return Current progress_dialog instance.
       progress_dialog& show_remaining_time(bool show_remaining_time);
       
@@ -150,7 +150,7 @@ namespace xtd {
       /// @return `true` if skip button shown; otherwise `false`. By default `false`.
       bool show_skip_button() const noexcept;
       /// @brief Sets a value that indicates whether skip button is shown.
-      /// @param show_skip_button true if skip button is shown; otherwise `false`. By default `false`.
+      /// @param show_skip_button `true` if skip button is shown; otherwise `false`. By default `false`.
       /// @return Current progress_dialog instance.
       progress_dialog& show_skip_button(bool show_skip_button);
       

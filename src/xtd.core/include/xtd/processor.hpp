@@ -23,7 +23,7 @@ namespace xtd {
     /// @{
     /// @brief Initialise a new instance oof xtd::processor class.
     /// @param architecture One of xtd::architectuure_id valuues.
-    /// @param is_64_bit true if 64 bit architecture; otherwise `false`.
+    /// @param is_64_bit `true` if 64 bit architecture; otherwise `false`.
     /// @param core_count THe number of cores.
     processor(xtd::architecture_id architecture, bool is_64_bit, uint32 core_count);
     /// @}

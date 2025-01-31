@@ -109,13 +109,13 @@ namespace xtd {
       /// @warning Internal use only
       static bool cursor_visible();
       /// @brief Sets a value indicating whether the cursor is visible.
-      /// @param visible true if the cursor is visible; otherwise, `false`.
+      /// @param visible `true` if the cursor is visible; otherwise, `false`.
       /// @return `true` if successfull; otherwise `false`.
       /// @warning Internal use only
       static bool cursor_visible(bool visible);
       
       /// @brief Sets the echo of the console on or off.
-      /// @param on if true the echo is on; otherwise is off.
+      /// @param on if `true` the echo is on; otherwise is off.
       /// @warning Internal use only
       static bool echo(bool on);
       
@@ -171,9 +171,9 @@ namespace xtd {
       /// @brief Obtains the next character or function key pressed by the user.
       /// @param key_char A bitwise combination of the enumeration values. There is no default value.
       /// @param key_code A value that identifies the console key that was pressed.
-      /// @param alt true if alt key modifier is pressed; otherwise `false`.
-      /// @param shift true if shift key modifier is pressed; otherwise `false`.
-      /// @param ctrl true if control key modifier is pressed; otherwise `false`.
+      /// @param alt `true` if alt key modifier is pressed; otherwise `false`.
+      /// @param shift `true` if shift key modifier is pressed; otherwise `false`.
+      /// @param ctrl `true` if control key modifier is pressed; otherwise `false`.
       /// @remarks The five parameters will contains informations on key pressed.
       /// @warning Internal use only
       static void read_key(char32_t& key_char, char32_t& key_code, bool& alt, bool& shift, bool& ctrl);
@@ -181,7 +181,7 @@ namespace xtd {
       /// @brief Register the user cancel callback.
       /// @param user_cancel_callback The user cancel callback method to register.
       /// @remarks This callback is call when when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).
-      /// @remarks By default, the return of callback is `false`, which causes program execution to terminate when the event handler exits. Changing its return to true specifies that the application should continue to execute.
+      /// @remarks By default, the return of callback is `false`, which causes program execution to terminate when the event handler exits. Changing its return to `true` specifies that the application should continue to execute.
       /// @warning Internal use only
       static void register_user_cancel_callback(std::function<bool(int32_t)> user_cancel_callback);
       
@@ -213,7 +213,7 @@ namespace xtd {
       /// @warning Internal use only
       static bool treat_control_c_as_input();
       /// @brief Sets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.
-      /// @param treat_control_c_as_input true if Ctrl+C is treated as ordinary input; otherwise, `false`.
+      /// @param treat_control_c_as_input `true` if Ctrl+C is treated as ordinary input; otherwise, `false`.
       /// @return `true` if successfull; otherwise `false`.
       /// @warning Internal use only
       static bool treat_control_c_as_input(bool treat_control_c_as_input);

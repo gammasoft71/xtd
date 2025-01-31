@@ -116,7 +116,7 @@ namespace xtd {
         /// @brief Appends the specified graphics_path to the path.
         /// @param handle The graphics_path handle.
         /// @param adding_path The graphics path handle to add.
-        /// @param connect A bool value that specifies whether the first figure in the added path is part of the last figure in the path. A value of true specifies that (if possible) the first figure in the added path is part of the last figure in the path. A value of `false` specifies that the first figure in the added path is separate from the last figure in the path.
+        /// @param connect A bool value that specifies whether the first figure in the added path is part of the last figure in the path. A value of `true` specifies that (if possible) the first figure in the added path is part of the last figure in the path. A value of `false` specifies that the first figure in the added path is separate from the last figure in the path.
         /// @warning Internal use only
         static void add_path(intptr handle, intptr path, bool connect);
         

@@ -109,7 +109,7 @@ namespace xtd {
       /// @return `true` if this thread will be joined when destroyed; otherwise, `false`.
       bool auto_join() const noexcept;
       /// @brief Sets a value indicating the current thread wiil be joined when destroyed.
-      /// @param value true if this thread will be joined when destroyed; otherwise, `false`.
+      /// @param value `true` if this thread will be joined when destroyed; otherwise, `false`.
       /// @return The xtd::threading::thread current instance.
       thread& auto_join(bool value);
 
@@ -133,7 +133,7 @@ namespace xtd {
       /// * All threads create without xtd::threading::thread class (std::thread or threads create by oparating system API).
       bool is_background() const noexcept;
       /// @brief Sets a value indicating whether or not a thread is a background thread.
-      /// @param value true if this thread is or is to become a background thread; otherwise, `false`.
+      /// @param value `true` if this thread is or is to become a background thread; otherwise, `false`.
       /// @return The xtd::threading::thread current instance.
       /// @exception xtd::threadng::thread_state_exception The thread is dead.
       /// @remarks A thread is either a background thread or a foreground thread. Background threads are identical to foreground threads, except that background threads do not prevent a process from terminating. Once all foreground threads belonging to a process have terminated, the system ends the process. Any remaining background threads are stopped and do not complete.

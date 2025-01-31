@@ -99,7 +99,7 @@ namespace xtd {
       /// @brief Copies an existing file to a new file. Overwriting a file of the same name is allowed.
       /// @param src The file to be opened for reading.
       /// @param dest The name of the destination file. This cannot be a directory.
-      /// @param overwrite true if the destination file can be overwritten; otherwise, `false`.
+      /// @param overwrite `true` if the destination file can be overwritten; otherwise, `false`.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path<br>-or-<br>file dest exists.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       static void copy(const xtd::string& src, const xtd::string& dest, bool overwrite);
@@ -177,7 +177,7 @@ namespace xtd {
       /// @brief Moves a specified file to a new location, providing the options to specify a new file name and to overwrite the destination file if it already exists.
       /// @param src The name of the file to move.
       /// @param dest The new path for the file.
-      /// @param overwrite true to overwrite the destination file if it already exists; `false` otherwise.
+      /// @param overwrite `true` to overwrite the destination file if it already exists; `false` otherwise.
       /// @return `true` if the file moved; otherwise, `false`.
       /// @exception xtd::argument_exception if dest already exist.
       /// @exception xtd::io::io_exception if path is empty or an invalid path.
@@ -254,7 +254,7 @@ namespace xtd {
       /// @param source_file_name The name of a file that replaces the file specified by destination_file_name.
       /// @param destination_file_name The name of the file being replaced.
       /// @param destination_backup_file_name The name of the backup file.
-      /// @param ignore_metadata_errors true to ignore merge errors (such as attributes and access control lists (ACLs)) from the replaced file to the replacement file; otherwise, `false`.
+      /// @param ignore_metadata_errors `true` to ignore merge errors (such as attributes and access control lists (ACLs)) from the replaced file to the replacement file; otherwise, `false`.
       /// @return `false` source_file_name does not exist or bad format, or destination_file_name does not exist or bad format, or if ignore_metadata_errors equal `false` and destination_backup_file_name bad format or on ani io error; otherwise `true`.
       static void replace(const xtd::string& source_file_name, const xtd::string& destination_file_name, const xtd::string& destination_backup_file_name);
       

@@ -60,20 +60,20 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the background_worker can report progress updates.Gets or sets a value indicating whether the background_worker can report progress updates.
       /// @return `true` if the background_worker supports progress updates; otherwise `false`. The default is `false`.
-      /// @remarks Set the worker_reports_progress property to true if you want the background_worker to support progress updates. When this property is true, user code can call the report_progress method to raise the progress_changed event.
+      /// @remarks Set the worker_reports_progress property to `true` if you want the background_worker to support progress updates. When this property is true, user code can call the report_progress method to raise the progress_changed event.
       bool worker_reports_progress() const noexcept;
       /// @brief Sets a value indicating whether the background_worker can report progress updates.Gets or sets a value indicating whether the background_worker can report progress updates.
-      /// @param value true if the background_worker supports progress updates; otherwise `false`. The default is `false`.
-      /// @remarks Set the worker_reports_progress property to true if you want the background_worker to support progress updates. When this property is true, user code can call the report_progress method to raise the progress_changed event.
+      /// @param value `true` if the background_worker supports progress updates; otherwise `false`. The default is `false`.
+      /// @remarks Set the worker_reports_progress property to `true` if you want the background_worker to support progress updates. When this property is true, user code can call the report_progress method to raise the progress_changed event.
       void worker_reports_progress(bool value);
       
       /// @brief Gets a value indicating whether the background_worker supports asynchronous cancellation.
       /// @return `true` if the background_worker supports cancellation; otherwise `false`. The default is `false`.
-      /// @remarks Set the worker_supports_cancellation property to true if you want the background_worker to support cancellation. When this property is true, you can call the cancel_async method to interrupt a background operation.
+      /// @remarks Set the worker_supports_cancellation property to `true` if you want the background_worker to support cancellation. When this property is true, you can call the cancel_async method to interrupt a background operation.
       bool worker_supports_cancellation() const noexcept;
       /// @brief Gets a value indicating whether the background_worker supports asynchronous cancellation.
-      /// @param value true if the background_worker supports cancellation; otherwise `false`. The default is `false`.
-      /// @remarks Set the worker_supports_cancellation property to true if you want the background_worker to support cancellation. When this property is true, you can call the cancel_async method to interrupt a background operation.
+      /// @param value `true` if the background_worker supports cancellation; otherwise `false`. The default is `false`.
+      /// @remarks Set the worker_supports_cancellation property to `true` if you want the background_worker to support cancellation. When this property is true, you can call the cancel_async method to interrupt a background operation.
       void worker_supports_cancellation(bool value);
       /// @}
       

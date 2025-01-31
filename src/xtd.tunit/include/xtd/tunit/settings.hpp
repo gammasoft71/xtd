@@ -156,7 +156,7 @@ namespace xtd {
       bool output_color() const noexcept;
       
       /// @brief Sets output color.
-      /// @param output_color true for colored output; otherwise `false`. The default value is `true`.
+      /// @param output_color `true` for colored output; otherwise `false`. The default value is `true`.
       void output_color(bool output_color) noexcept;
       
       /// @brief Gets output xml.
@@ -164,7 +164,7 @@ namespace xtd {
       bool output_json() const noexcept;
       
       /// @brief Sets output json.
-      /// @param output_json true for generate json report; otherwise `false`. The default value is `false`.
+      /// @param output_json `true` for generate json report; otherwise `false`. The default value is `false`.
       void output_json(bool output_json) noexcept;
       
       /// @brief Gets output json path.
@@ -180,7 +180,7 @@ namespace xtd {
       bool output_xml() const noexcept;
       
       /// @brief Sets output xml.
-      /// @param output_xml true for generate xml report; otherwise `false`. The default value is `false`.
+      /// @param output_xml `true` for generate xml report; otherwise `false`. The default value is `false`.
       void output_xml(bool output_xml) noexcept;
       
       /// @brief Gets output xml path.

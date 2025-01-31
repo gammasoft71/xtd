@@ -358,7 +358,7 @@ An [horizontal_layout_style](https://gammasoft71.github.io/xtd/reference_guides/
 
 #### Remarks
 
-If you don't set expand to true and you set the height of the control. the [horizontal_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1horizontal__layout__panel.html) will take this into account.
+If you don't set expand to `true` and you set the height of the control. the [horizontal_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1horizontal__layout__panel.html) will take this into account.
 But not the width.
 
 #### Examples
@@ -514,7 +514,7 @@ An [vertical_layout_style](https://gammasoft71.github.io/xtd/reference_guides/la
 
 #### Remarks
 
-If you don't set expand to true and you set the width of the control. the [vertical_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1vertical__layout__panel.html) will take this into account.
+If you don't set expand to `true` and you set the width of the control. the [vertical_layout_panel](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1vertical__layout__panel.html) will take this into account.
 But not the height.
 
 

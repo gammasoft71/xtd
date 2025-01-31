@@ -166,7 +166,7 @@ namespace xtd {
         /// @remarks If allocator not specified, the std::allocator<value_type> is used.
         explicit control_collection(const allocator_type& allocator = allocator_type());
         /// @brief Creates a new object xtd::forms::control::control_collection with specified keep_cloned_controls, and allocator (optional).
-        /// @param keep_cloned_controls If true the collection clone and keep controls; otherwise none.
+        /// @param keep_cloned_controls If `true` the collection clone and keep controls; otherwise none.
         /// @param allocator The allocator associate to the collection (optional).
         /// @remarks If allocator not specified, the std::allocator<value_type> is used.
         /// @warning Internal use only
@@ -395,7 +395,7 @@ namespace xtd {
       /// @remarks This property is not relevant for this class.
       virtual bool auto_size() const noexcept;
       /// @brief Sets a value that indicates whether the control resizes based on its contents.
-      /// @param auto_size true if enabled; otherwise, `false`.
+      /// @param auto_size `true` if enabled; otherwise, `false`.
       /// @return Current control.
       /// @remarks This property is not relevant for this class.
       virtual control& auto_size(bool auto_size);
@@ -458,12 +458,12 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the control can receive focus.
       /// @return `true` if the control can receive focus; otherwise, `false`.
-      /// @remarks In order for a control to receive input focus, the control must have a handle assigned to it, and the visible and enabled properties must both be set to true for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form.
+      /// @remarks In order for a control to receive input focus, the control must have a handle assigned to it, and the visible and enabled properties must both be set to `true` for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form.
       virtual bool can_focus() const noexcept;
       
       /// @brief Gets a value indicating whether the control can be selected.
       /// @return `true` if the control can be selected; otherwise, `false`.s
-      /// @remarks This property returns true if the electable value of control_styles is set to true, is contained in another control, the control itself is visible and enabled, and all its parent controls are visible and enabled.
+      /// @remarks This property returns `true` if the electable value of control_styles is set to true, is contained in another control, the control itself is visible and enabled, and all its parent controls are visible and enabled.
       /// @remarks The Windows Forms controls in the following list are not selectable and will return a value of `false` for the can_select property. controls derived from these controls are also not selectable.
       /// * panel
       /// * group_box
@@ -540,7 +540,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the control has been created.
       /// @return `true` if the control has been created; otherwise, `false`.
-      /// @remarks The created property returns true if the control was successfully created even though the control's handle might not have been created or recreated yet.
+      /// @remarks The created property returns `true` if the control was successfully created even though the control's handle might not have been created or recreated yet.
       virtual bool created() const noexcept;
       
       /// @brief Gets the cursor that is displayed when the mouse pointer is over the control.
@@ -584,7 +584,7 @@ namespace xtd {
       /// @return `true` if the surface of the control should be drawn using double buffering; otherwise, `false`.
       virtual bool double_buffered() const noexcept;
       /// @brief Sets a value indicating whether this control should redraw its surface using a secondary buffer to reduce or prevent flicker.
-      /// @param double_buffered true if the surface of the control should be drawn using double buffering; otherwise, `false`.
+      /// @param double_buffered `true` if the surface of the control should be drawn using double buffering; otherwise, `false`.
       /// @return Current control.
       virtual control& double_buffered(bool double_buffered);
       
@@ -592,7 +592,7 @@ namespace xtd {
       /// @return `true` if the control can respond to user interaction; otherwise, `false`. The default is true.
       virtual bool enabled() const noexcept;
       /// @brief Sets a value indicating whether the control can respond to user interaction.
-      /// @param enabled true if the control can respond to user interaction; otherwise, `false`. The default is true.
+      /// @param enabled `true` if the control can respond to user interaction; otherwise, `false`. The default is true.
       /// @return Current control.
       virtual control& enabled(bool enabled);
       
@@ -628,7 +628,7 @@ namespace xtd {
       
       /// @brief Gets the window handle that the control is bound to.
       /// @return An intptr that contains the window handle (HWND) of the control.
-      /// @remarks When the underlying toolkits is native, xtd::forms::control::handle and xtd::forms::control::native_handle are the same, But if the underlying toolkit is not native, the xtd::forms::control::handle matches the toolkit handle while xtd::forms::control::native_handle returns the true native handle.
+      /// @remarks When the underlying toolkits is native, xtd::forms::control::handle and xtd::forms::control::native_handle are the same, But if the underlying toolkit is not native, the xtd::forms::control::handle matches the toolkit handle while xtd::forms::control::native_handle returns the `true` native handle.
       intptr handle() const override;
       
       /// @brief Gets the height of the control.
@@ -726,7 +726,7 @@ namespace xtd {
       
       /// @brief Gets the native handle that the control is bound to.
       /// @return An intptr that contains the native handle (HWND) of the control.
-      /// @remarks When the underlying toolkits is native, xtd::forms::control::handle and xtd::forms::control::native_handle are the same, But if the underlying toolkit is not native, the xtd::forms::control::handle matches the toolkit handle while xtd::forms::control::native_handle returns the true native handle.
+      /// @remarks When the underlying toolkits is native, xtd::forms::control::handle and xtd::forms::control::native_handle are the same, But if the underlying toolkit is not native, the xtd::forms::control::handle matches the toolkit handle while xtd::forms::control::native_handle returns the `true` native handle.
       intptr native_handle() const noexcept;
       
       /// @brief Gets the name of the control.
@@ -847,13 +847,13 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the user can give the focus to this control using the TAB key.
       /// @return `true` if the user can give the focus to the control using the TAB key; otherwise, `false`. The default is true.
-      /// @note Note: This property will always return true for an instance of the xtd::forms::form class.
+      /// @note Note: This property will always return `true` for an instance of the xtd::forms::form class.
       /// @remarks When the user presses the TAB key, the input focus is set to the next control in the tab order. Controls with the xtd::forms::control::tab_stop property value of `false` are not included in the collection of controls in the tab order. The tab order can be manipulated by setting the control's xtd::forms::control::tab_index property value.
       virtual bool tab_stop() const noexcept;
       /// @brief Sets a value indicating whether the user can give the focus to this control using the TAB key.
-      /// @param value true if the user can give the focus to the control using the TAB key; otherwise, `false`. The default is true.
+      /// @param value `true` if the user can give the focus to the control using the TAB key; otherwise, `false`. The default is true.
       /// @return Current control.
-      /// @note Note: This property will always return true for an instance of the xtd::forms::form class.
+      /// @note Note: This property will always return `true` for an instance of the xtd::forms::form class.
       /// @remarks When the user presses the TAB key, the input focus is set to the next control in the tab order. Controls with the xtd::forms::control::tab_stop property value of `false` are not included in the collection of controls in the tab order. The tab order can be manipulated by setting the control's xtd::forms::control::tab_index property value.
       virtual control& tab_stop(bool value);
       
@@ -898,7 +898,7 @@ namespace xtd {
       /// @return `true` if the control and all its child controls are displayed; otherwise, `false`. The default is true.
       virtual bool visible() const noexcept;
       /// @brief Sets a value indicating whether the control and all its child controls are displayed.
-      /// @param visible true if the control and all its child controls are displayed; otherwise, `false`. The default is true.
+      /// @param visible `true` if the control and all its child controls are displayed; otherwise, `false`. The default is true.
       /// @return Current control.
       virtual control& visible(bool visible);
       
@@ -916,12 +916,12 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol::handle property when an application is being debugged.
       /// @return `true` if calls on the wrong thread are caught; otherwise, `false`.
-      /// @remarks When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the xtd::forms::control::handle property. Set xtd::forms::control::check_for_illegal_cross_thread_calls to true to find and diagnose this thread activity more easily while debugging.
+      /// @remarks When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the xtd::forms::control::handle property. Set xtd::forms::control::check_for_illegal_cross_thread_calls to `true` to find and diagnose this thread activity more easily while debugging.
       /// @warning Be careful, some OS don't support cross-thread UI operations!
       static bool check_for_illegal_cross_thread_calls() noexcept;
       /// @brief Sets a value indicating whether to catch calls on the wrong thread that access a xtd::forms::contrtol::handle property when an application is being debugged.
-      /// @param value true if calls on the wrong thread are caught; otherwise, `false`.
-      /// @remarks When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the xtd::forms::control::handle property. Set xtd::forms::control::check_for_illegal_cross_thread_calls to true to find and diagnose this thread activity more easily while debugging.
+      /// @param value `true` if calls on the wrong thread are caught; otherwise, `false`.
+      /// @remarks When a thread other than the creating thread of a control tries to access one of that control's methods or properties, it often leads to unpredictable results. A common invalid thread activity is a call on the wrong thread that accesses the xtd::forms::control::handle property. Set xtd::forms::control::check_for_illegal_cross_thread_calls to `true` to find and diagnose this thread activity more easily while debugging.
       /// @warning Be careful, some OS don't support cross-thread UI operations!
       static void check_for_illegal_cross_thread_calls(bool value);
       
@@ -986,7 +986,7 @@ namespace xtd {
       
       /// @brief Sets input focus to the control.
       /// @return `true` if the input focus request was successful; otherwise, `false`.
-      /// @remarks The focus method returns true if the control successfully received input focus. The control can have the input focus while not displaying any visual cues of having the focus. This behavior is primarily observed by the unselectable controls listed below, or any controls derived from them.
+      /// @remarks The focus method returns `true` if the control successfully received input focus. The control can have the input focus while not displaying any visual cues of having the focus. This behavior is primarily observed by the unselectable controls listed below, or any controls derived from them.
       bool focus();
       
       /// @brief Gets a value indicating how a control will behave when its auto_size property is enabled.
@@ -1016,7 +1016,7 @@ namespace xtd {
       
       /// @brief Retrieves the index of the specified child control within the control collection, and optionally raises an exception if the specified control is not within the control collection.
       /// @param child The control to search for in the control collection.
-      /// @param throw_exception true to throw an exception if the control specified in the child parameter is not a control in the control::control_collection; otherwise, `false`.
+      /// @param throw_exception `true` to throw an exception if the control specified in the child parameter is not a control in the control::control_collection; otherwise, `false`.
       size_t get_child_index(intptr child, bool& throw_exception) const;
       
       /// @brief Conceals the control from the user.
@@ -1028,7 +1028,7 @@ namespace xtd {
       virtual void invalidate() const;
       
       /// @brief Invalidates a specific region of the control and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
-      /// @param invalidate_children true to invalidate the control's child controls; otherwise, `false`.
+      /// @param invalidate_children `true` to invalidate the control's child controls; otherwise, `false`.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
       virtual void invalidate(bool invalidate_children) const;
       
@@ -1039,7 +1039,7 @@ namespace xtd {
       
       /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
       /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
-      /// @param invalidate_children true to invalidate the control's child controls; otherwise, `false`.
+      /// @param invalidate_children `true` to invalidate the control's child controls; otherwise, `false`.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
       virtual void invalidate(const drawing::rectangle& rect, bool invalidate_children) const;
       
@@ -1050,7 +1050,7 @@ namespace xtd {
       
       /// @brief Invalidates the specified region of the control (adds it to the control's update region, which is the area that will be repainted at the next paint operation), and causes a paint message to be sent to the control. Optionally, invalidates the child controls assigned to the control.
       /// @param region A xtd::drawing::region that represents the region to invalidate.
-      /// @param invalidate_children true to invalidate the control's child controls; otherwise, `false`.
+      /// @param invalidate_children `true` to invalidate the control's child controls; otherwise, `false`.
       /// @remarks Calling the invalidate method does not force a synchronous paint; to force a synchronous paint, call the update method after calling the Invalidate method. When this method is called with no parameters, the entire client area is added to the update region.
       virtual void invalidate(const drawing::region& region, bool invalidate_children) const;
       
@@ -1107,7 +1107,7 @@ namespace xtd {
       void resume_layout();
       
       /// @brief Resumes usual layout logic, optionally forcing an immediate layout of pending layout requests.
-      /// @param perform_layout true to execute pending layout requests; otherwise, `false`.
+      /// @param perform_layout `true` to execute pending layout requests; otherwise, `false`.
       /// @remarks Calling the resume_layout method forces an immediate layout if there are any pending layout requests. When the perform_layout parameter is set to true, an immediate layout occurs if there are any pending layout requests.
       /// @remarks The suspend_layout and resume_layout methods are used in tandem to suppress multiple xtd::forms::control::layout events while you adjust multiple attributes of the control. For example, you would typically call the suspend_layout method, then set the size, location, anchor, or dock properties of the control, and then call the resume_layout method to enable the changes to take effect.
       /// @remarks There must be no pending calls to suspend_layout for resume_layout to be successfully called.
@@ -1142,7 +1142,7 @@ namespace xtd {
       void set_bounds(int32 x, int32 y, int32 width, int32 height, bounds_specified specified);
       
       /// @brief Displays the control to the user.
-      /// @remarks Showing the control is equivalent to setting the visible property to true. After the show method is called, the visible property returns a value of true until the hide method is called.
+      /// @remarks Showing the control is equivalent to setting the visible property to true. After the show method is called, the visible property returns a value of `true` until the hide method is called.
       virtual void show();
       
       /// @brief Temporarily suspends the layout logic for the control.
@@ -1160,7 +1160,7 @@ namespace xtd {
       /// @remarks Executes any pending requests for painting.
       /// @remarks There are two ways to repaint a form and its contents:
       /// * You can use one of the overloads of the invalidate method with the update method.
-      /// * You can call the refresh method, which forces the control to redraw itself and all its children. This is equivalent to setting the invalidate method to true and using it with update.
+      /// * You can call the refresh method, which forces the control to redraw itself and all its children. This is equivalent to setting the invalidate method to `true` and using it with update.
       /// @remarks The invalidate method governs what gets painted or repainted. The update method governs when the painting or repainting occurs. If you use the invalidate and update methods together rather than calling refresh, what gets repainted depends on which overload of invalidate you use. The update method just forces the control to be painted immediately, but the invalidate method governs what gets painted when you call the update method.
       virtual void update() const;
       /// @}
@@ -1462,10 +1462,10 @@ namespace xtd {
       /// @brief Occurs when the xtd::forms::control is clicked.
       /// @remarks The xtd::forms::control::click event passes an xtd::event_args to its event handler, so it only indicates that a click has occurred. If you need more specific mouse information (button, number of clicks, wheel rotation, or location), use the xtd::forms::control::mouse_click event. However, the xtd::forms::control::mouse_click event will not be raised if the click is caused by action other than that of the mouse, such as pressing the ENTER key.
       /// @remarks A double-click is determined by the mouse settings of the user's operating system. The user can set the time between clicks of a mouse button that should be considered a double-click rather than two clicks. The xtd::forms::control::click event is raised every time a control is double-clicked. For example, if you have event handlers for the xtd::forms::control::click and xtd::forms::control::double_click events of a xtd::forms::form, the xtd::forms::control::click and xtd::forms::control::double_click events are raised when the form is double-clicked and both methods are called. If a control is double-clicked and that control does not support the xtd::forms::control::double_click event, the xtd::forms::control::click event might be raised twice.
-      /// @remarks You must set the standard_click value of xtd::forms::control_styles to true for this event to be raised.
+      /// @remarks You must set the standard_click value of xtd::forms::control_styles to `true` for this event to be raised.
       /// @note The following events are not raised for the xtd::forms::tab_control class unless there is at least one xtd::forms::tab_page in the xtd::forms::tab_control. xtd::forms::tab_control::tab_pages collection: xtd::forms::control::click, xtd::forms::control::double_click, xtd::forms::control::mouse_down, xtd::forms::control::mouse_up, xtd::forms::control::mouse_hover, xtd::forms::control::mouse_enter, xtd::forms::control::mouse_leave and xtd::forms::control::mouse_move. If there is at least one xtd::forms::tab_page in the collection, and the user interacts with the tab control's header (where the xtd::forms::tab_page names appear), the xtd::forms::tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the xtd::forms::tab_page raises the appropriate event.
       /// @par Notes to Inheritors
-      /// Inheriting from a standard Windows Forms control and changing the standard_click or standard_double_click values of xtd::forms::control_styles to true can cause unexpected behavior or have no effect at all if the control does not support the click or xtd::forms::control::double_click events.
+      /// Inheriting from a standard Windows Forms control and changing the standard_click or standard_double_click values of xtd::forms::control_styles to `true` can cause unexpected behavior or have no effect at all if the control does not support the click or xtd::forms::control::double_click events.
       /// @remarks The following table lists Windows Forms controls and which event (xtd::forms::control::click or xtd::forms::control::double_click) is raised in response to the mouse action specified.
       /// | Control                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Left Mouse Click | Left Mouse Double Click | Right Mouse Click | Right Mouse Click   | Middle Mouse Click | Middle Mouse Double Click | XButton1 Mouse Click | XButton1 Mouse Double-Click | XButton2 Mouse Click | XButton2 Mouse Double-Click |
       /// | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ----------------------- | ----------------- | ------------------- | ------------------ | ------------------------- | -------------------- | --------------------------- | -------------------- | --------------------------- |
@@ -1509,10 +1509,10 @@ namespace xtd {
       
       /// @brief Occurs when the xtd::forms::control is double-clicked.
       /// @remarks A double-click is determined by the mouse settings of the user's operating system. The user can set the time between clicks of a mouse button that should be considered a double-click rather than two clicks. The click event is raised every time a control is double-clicked. For example, if you have event handlers for the xtd::forms::control::click and xtd::forms::control::double_click events of a xtd::forms::form, the xtd::forms::control::click and xtd::forms::control::double_click events are raised when the form is double-clicked and both methods are called. If a control is double-clicked and that control does not support the xtd::forms::control::double_click event, the click event might be raised twice.
-      /// @remarks You must set the standard_double_click and standard_click value of xtd::forms::control_styles to true for this event to be raised.
+      /// @remarks You must set the standard_double_click and standard_click value of xtd::forms::control_styles to `true` for this event to be raised.
       /// @note The following events are not raised for the xtd::forms::tab_control class unless there is at least one xtd::forms::tab_page in the xtd::forms::tab_control. xtd::forms::tab_control::tab_pages collection: xtd::forms::control::click, xtd::forms::control::double_click, xtd::forms::control::mouse_down, xtd::forms::control::mouse_up, xtd::forms::control::mouse_hover, xtd::forms::control::mouse_enter, xtd::forms::control::mouse_leave and xtd::forms::control::mouse_move. If there is at least one xtd::forms::tab_page in the collection, and the user interacts with the tab control's header (where the xtd::forms::tab_page names appear), the xtd::forms::tab_control raises the appropriate event. However, if the user interaction is within the client area of the tab page, the xtd::forms::tab_page raises the appropriate event.
       /// @par Notes to Inheritors
-      /// Inheriting from a standard Windows Forms control and changing the standard_click or standard_double_click values of xtd::forms::control_styles to true can cause unexpected behavior or have no effect at all if the control does not support the xtd::forms::control::click or xtd::forms::control::double_click events.
+      /// Inheriting from a standard Windows Forms control and changing the standard_click or standard_double_click values of xtd::forms::control_styles to `true` can cause unexpected behavior or have no effect at all if the control does not support the xtd::forms::control::click or xtd::forms::control::double_click events.
       /// @remarks The following table lists Windows Forms controls and which event (xtd::forms::control::click or xtd::forms::control::double_click) is raised in response to the mouse action specified.
       /// | Control                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | Left Mouse Click | Left Mouse Double Click | Right Mouse Click | Right Mouse Click   | Middle Mouse Click | Middle Mouse Double Click | XButton1 Mouse Click | XButton1 Mouse Double-Click | XButton2 Mouse Click | XButton2 Mouse Double-Click |
       /// | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------- | ----------------------- | ----------------- | ------------------- | ------------------ | ------------------------- | -------------------- | --------------------------- | -------------------- | --------------------------- |
@@ -1646,7 +1646,7 @@ namespace xtd {
       /// 5. xtd::forms::control::validating event
       /// 6. xtd::forms::control::validated event
       /// @remarks If the causes_validation property is set to `false`, the xtd::forms::control::validating and xtd::forms::control::validated events are suppressed.
-      /// @remarks If the cancel property of the xtd::forms::cancel_event_args is set to true in the validating event delegate, all events that would usually occur after the validating event are suppressed.
+      /// @remarks If the cancel property of the xtd::forms::cancel_event_args is set to `true` in the validating event delegate, all events that would usually occur after the validating event are suppressed.
       /// @remarks Note The xtd::forms::control::got_focus and xtd::forms::control::lost_focus events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the xtd::forms::control::got_focus and xtd::forms::control::lost_focus events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the xtd::forms::form class, which uses the activated and deactivate events.
       /// @warning Do not attempt to set focus from within the xtd::forms::control::enter, xtd::forms::control::got_focus, xtd::forms::control::leave, xtd::forms::control::lost_focus, xtd::forms::control::validating, or xtd::forms::control::validated event handlers. Doing so can cause your application or the operating system to stop responding.
       /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
@@ -2175,8 +2175,8 @@ namespace xtd {
       virtual void set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified);
       
       /// @brief Sets a value indicating whether the control can receive focus.
-      /// @param value true if the control can receive focus; otherwise, `false`.
-      /// @remarks In order for a control to receive input focus, the control must have a handle assigned to it, and the visible and enabled properties must both be set to true for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form.
+      /// @param value `true` if the control can receive focus; otherwise, `false`.
+      /// @remarks In order for a control to receive input focus, the control must have a handle assigned to it, and the visible and enabled properties must both be set to `true` for both the control and all its parent controls, and the control must be a form or the control's outermost parent must be a form.
       void set_can_focus(bool value);
       
       /// @brief Sets the text associated with this control.
@@ -2197,9 +2197,9 @@ namespace xtd {
       /// @param handle The parent handle.
       void set_parent(intptr handle);
       
-      /// @brief Sets a specified control_styles flag to either true or `false`.
+      /// @brief Sets a specified control_styles flag to either `true` or `false`.
       /// @param flag The control_styles bit to set.
-      /// @param value true to apply the specified style to the control; otherwise, `false`.
+      /// @param value `true` to apply the specified style to the control; otherwise, `false`.
       /// @remarks Control style bit flags are used to categorize supported behavior. A control can enable a style by calling the set_style method and passing in the appropriate control_styles bit (or bits) and the bool value to set the bit(s) to. To determine the value assigned to a specified control_styles bit, use the get_style method and pass in the control_styles member to evaluate.
       /// @warning Setting the control style bits can substantially change the behavior of the control. Review the control_styles enumeration documentation to understand the effects of changing the control style bits before calling the set_style method.
       void set_style(control_styles flag, bool value);

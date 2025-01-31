@@ -25,7 +25,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms components
     /// @remarks A timer is used to raise an event at user-defined intervals. This Windows timer is designed for a single-threaded environment where UI threads are used to perform processing. It requires that the user code have a UI message pump available and always operate from the same thread.
-    /// @remarks When you use this timer, use the tick event to perform a polling operation or to display a splash screen for a specified period of time. Whenever the enabled property is set to true and the interval property is greater than zero, the tick event is raised at intervals based on the interval property setting.
+    /// @remarks When you use this timer, use the tick event to perform a polling operation or to display a splash screen for a specified period of time. Whenever the enabled property is set to `true` and the interval property is greater than zero, the tick event is raised at intervals based on the interval property setting.
     /// @remarks This class provides methods to set the interval, and to start and stop the timer.
     /// @remarks The Windows Forms Timer component is single-threaded, and is limited to an accuracy of 55 milliseconds.
     /// @note xtd includes several timer classes, each of which offers different functionality:
@@ -62,7 +62,7 @@ namespace xtd {
       /// @remarks Calling the start method is the same as setting enabled to true. Likewise, calling the stop method is the same as setting enabled to `false`.
       virtual bool enabled() const noexcept;
       /// @brief Sets whether the timer is running.
-      /// @param enabled true if the timer is currently enabled; otherwise, `false`. The default is `false`.
+      /// @param enabled `true` if the timer is currently enabled; otherwise, `false`. The default is `false`.
       /// @remarks Calling the start method is the same as setting enabled to true. Likewise, calling the stop method is the same as setting enabled to `false`.
       virtual timer& enabled(bool enabled);
       
@@ -107,7 +107,7 @@ namespace xtd {
       static timer create(const time_span& interval);
       /// @brief A factory to create an xtd::forms::timer with specified interval, and enable values.
       /// @param interval An xtd::time_span specifying the interval before the tick event is raised relative to the last occurrence of the tick event. The value must be greater than zero.
-      /// @param enabled true if the timer is currently enabled; otherwise, `false`. The default is `false`.
+      /// @param enabled `true` if the timer is currently enabled; otherwise, `false`. The default is `false`.
       /// @return New xtd::forms::timer created.
       static timer create(const time_span& interval, bool enable);
       /// @brief A factory to create an xtd::forms::timer with specified interval.
@@ -116,7 +116,7 @@ namespace xtd {
       static timer create(int interval_milliseconds);
       /// @brief A factory to create an xtd::forms::timer with specified interval, and enable values.
       /// @param interval_milliseconds An int32 specifying the number of milliseconds before the tick event is raised relative to the last occurrence of the tick event. The value cannot be less than one.
-      /// @param enabled true if the timer is currently enabled; otherwise, `false`. The default is `false`.
+      /// @param enabled `true` if the timer is currently enabled; otherwise, `false`. The default is `false`.
       /// @return New xtd::forms::timer created.
       static timer create(int interval_milliseconds, bool enable);
       /// @}

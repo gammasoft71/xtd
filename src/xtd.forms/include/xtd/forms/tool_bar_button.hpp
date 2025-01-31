@@ -100,7 +100,7 @@ namespace xtd {
       /// @remarks When the xtd::forms::tool_bar_button::enabled property is set to `false`, the toolbar button cannot be clicked, and the button's appearance changes. The xtd::drawing::image and xtd::forms::tool_bar_button::text assigned to the button appear grayed out. If the image or text has multiple colors, they display in a monochromatic gray.
       bool enabled() const noexcept;
       /// @brief Sets a value indicating whether the button is enabled.
-      /// @param value true if the button is enabled; otherwise, `false`. The default is true.
+      /// @param value `true` if the button is enabled; otherwise, `false`. The default is true.
       /// @return This current instance.
       /// @remarks When the xtd::forms::tool_bar_button::enabled property is set to `false`, the toolbar button cannot be clicked, and the button's appearance changes. The xtd::drawing::image and xtd::forms::tool_bar_button::text assigned to the button appear grayed out. If the image or text has multiple colors, they display in a monochromatic gray.
       tool_bar_button& enabled(bool value);
@@ -189,7 +189,7 @@ namespace xtd {
       /// @remarks If the toolbar button is not visible, it will not be displayed on the toolbar, and therefore cannot receive user input.
       bool visible() const noexcept;
       /// @brief Sets a value indicating whether the toolbar button is visible.
-      /// @param value true if the toolbar button is visible; otherwise, `false`. The default is true.
+      /// @param value `true` if the toolbar button is visible; otherwise, `false`. The default is true.
       /// @return This current instance.
       /// @remarks If the toolbar button is not visible, it will not be displayed on the toolbar, and therefore cannot receive user input.
       tool_bar_button& visible(bool value);

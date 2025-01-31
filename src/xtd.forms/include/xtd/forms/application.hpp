@@ -70,7 +70,7 @@ namespace xtd {
       static bool button_images() noexcept;
       
       /// @brief Gets button images are enabled.
-      /// @param value true if button images aree enabled; otherwise `false`.
+      /// @param value `true` if button images aree enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks The default value is true.
       /// @remarks This method has an effect only on linux.
@@ -110,7 +110,7 @@ namespace xtd {
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       static void dark_mode(bool value);
       
-      /// @brief Return true if dark mode is enabled for the application; otherwise return `false`.
+      /// @brief Return `true` if dark mode is enabled for the application; otherwise return `false`.
       /// @return True is dark mode enabled; otherwise `false`.
       /// @deprecated Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0.
       [[deprecated("Replaced by xtd::application::dark_mode - Will be removed in version 0.4.0.")]]
@@ -133,7 +133,7 @@ namespace xtd {
       static bool font_size_correction();
       
       /// @brief Sets a value indicating whether font size correction is enabled.
-      /// @param value true if font size correction is enabled; otherwise `false`.
+      /// @param value `true` if font size correction is enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks By default, xtd corrects the size of fonts on non-Windows operating systems so that they have the same aspect ratio as Windows.
       /// @remarks If you disable this option, you will use the actual native font size of the operating system.
@@ -146,7 +146,7 @@ namespace xtd {
       static bool keep_cloned_controls() noexcept;
       
       /// @brief Sets a value indicating whether the xtd framework keep cloned control is enabled.
-      /// @param value true if xtd framework keep cloned control is enabled; otherwise `false`.
+      /// @param value `true` if xtd framework keep cloned control is enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks By default the value is `false`.
        static void keep_cloned_controls(bool value);
@@ -160,7 +160,7 @@ namespace xtd {
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       static void light_mode(bool value);
       
-      /// @brief Return true if dark mode is enabled for the application; otherwise return `false`.
+      /// @brief Return `true` if dark mode is enabled for the application; otherwise return `false`.
       /// @return True is light mode enabled; otherwise `false`.
       /// @deprecated Replaced by xtd::application::light_mode - Will be removed in version 0.4.0.
       [[deprecated("Replaced by xtd::application::light_mode - Will be removed in version 0.4.0.")]]
@@ -178,7 +178,7 @@ namespace xtd {
       static bool menu_images() noexcept;
       
       /// @brief Sets menu images ilages are enabled.
-      /// @param value true if menu images aree enabled; otherwise `false`.
+      /// @param value `true` if menu images aree enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks The default value is true.
       /// @remarks This method has an effect only on linux.
@@ -230,7 +230,7 @@ namespace xtd {
       static bool system_controls() noexcept;
       
       /// @brief Sets a value indicating whether the system control is enabled.
-      /// @param value true if system control is enabled; otherwise `false`.
+      /// @param value `true` if system control is enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks By default, xtd uses the standard control (xtd::forms::control_appearance::standard) with this method you can change to force the use of system control (xtd::forms::control_appearance::system) instead.
       /// @remarks The xtd::forms::control::control_appearance method can still be used to modify the control's appearance on the fly.
@@ -245,7 +245,7 @@ namespace xtd {
       static bool system_font_size() noexcept;
 
       /// @brief Sets a value indicating whether the system font size is enabled.
-      /// @param value true if the system font size is enabled; otherwise `false`.
+      /// @param value `true` if the system font size is enabled; otherwise `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks By default, xtd automatically limits the system font size to 9 points if it is larger than 9.
       /// @remarks If you enable this option, you can use the actual font size of the system if it exceeds 9 points and at the same time the default sizes of the different controls will be adapted as well.
@@ -288,7 +288,7 @@ namespace xtd {
       /// @include application_use_wait_cursor.cpp
       static bool use_wait_cursor() noexcept;
       /// @brief Sets whether the wait cursor is used for all open forms of the application.
-      /// @param use_wait_cursor true is the wait cursor is used for all open forms; otherwise, `false`.
+      /// @param use_wait_cursor `true` is the wait cursor is used for all open forms; otherwise, `false`.
       /// @remarks When this property is set to true, the use_wait_cursor property of all open forms in the application will be set to true. This call will not return until this property has been set on all forms. Use this property when you have a long-running operation, and want to indicate in all application forms that the operation is still processing.
       /// @par Examples
       /// The following code example demonstrates the use of application use wait cursor property.
@@ -302,7 +302,7 @@ namespace xtd {
       static bool visual_styles() noexcept;
       
       /// @brief Sets a value that indicates whether visual styles are enabled for the application.
-      /// @param value true if visual styles are enabled; otherwise, `false`.
+      /// @param value `true` if visual styles are enabled; otherwise, `false`.
       /// @exception xtd::invalid_operation_exception If this method is called after xtd::forms::application::run.
       /// @remarks This method enables visual styles for the application. Visual styles are the colors, fonts, and other visual elements that form an operating system theme. Controls will draw with visual styles if the control and the operating system support it. To have an effect, enable_visual_styles() must be called before creating any controls in the application; typically, enable_visual_styles() is the first line in the Main function. A separate manifest is not required to enable visual styles when calling enable_visual_styles().
       /// @remarks This method has an effect only on Windows.
@@ -484,7 +484,7 @@ namespace xtd {
       /*
       /// @brief Instructs the application how to respond to unhandled exceptions, optionally applying thread-specific behavior.
       /// @param mode An unhandled_exception_mode value describing how the application should behave if an exception is thrown without being caught.
-      /// @param thread_scope true to set the thread exception mode; otherwise, `false`.
+      /// @param thread_scope `true` to set the thread exception mode; otherwise, `false`.
       /// @remarks It is often not feasible to catch all of the exceptions thrown by Windows Forms. Using this method, you can instruct your application whether it should catch all unhandled exceptions thrown by Windows Forms components and continue operating, or whether it should expose them to the user and halt execution.
       /// @remarks Call set_unhandled_exception_mode before you instantiate the main form of your application using the run method.
       /// @remarks When threadScope is true, the thread exception mode is set. The thread exception mode overrides the application exception mode if mode is not set to automatic.

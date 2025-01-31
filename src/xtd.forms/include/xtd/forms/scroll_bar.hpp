@@ -98,7 +98,7 @@ namespace xtd {
       
       /// @{
       /// @brief Initializes a new instance of scroll_bar class.
-      /// @param vertical true if scroll_bar vertical; otherwise `false`.
+      /// @param vertical `true` if scroll_bar vertical; otherwise `false`.
       explicit scroll_bar(bool vertical);
       /// @}
       

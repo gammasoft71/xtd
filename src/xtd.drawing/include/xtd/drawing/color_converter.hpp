@@ -55,7 +55,7 @@ namespace xtd {
       /// @param color1 The first color.
       /// @param color2 The second color.
       /// @param weight The weighting factor
-      /// @param average_alpha if true alpha was compute to; otherwise the alpha result is the alpha of color1
+      /// @param average_alpha if `true` alpha was compute to; otherwise the alpha result is the alpha of color1
       /// @return The average color.
       /// @remarks The alpha, red, green and blue values are averages using the following formula:
       /// ```cpp

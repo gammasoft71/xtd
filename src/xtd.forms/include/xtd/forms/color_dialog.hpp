@@ -64,21 +64,21 @@ namespace xtd {
       /// @return `true` if the dialog box  shows alpha values and an opacity selector (slider); otherwise, `false`. The default is true.
       bool alpha_color() const noexcept;
       /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
-      /// @param alpha_color true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, `false`.
+      /// @param alpha_color `true` if the dialog box  shows alpha values and an opacity selector (slider); otherwise, `false`.
       color_dialog& alpha_color(bool alpha_color);
       
       /// @brief Gets a value indicating whether the user can use the dialog box to define custom colors.
       /// @return `true` if the user can define custom colors; otherwise, `false`. The default is true.
       bool allow_full_open() const noexcept;
       /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
-      /// @param allow_full_open true if the user can define custom colors; otherwise, `false`. The default is true.
+      /// @param allow_full_open `true` if the user can define custom colors; otherwise, `false`. The default is true.
       color_dialog& allow_full_open(bool allow_full_open);
       
       /// @brief Gets a value indicating whether the dialog box displays all available colors in the set of basic colors.
       /// @return `true` if the dialog box displays all available colors in the set of basic colors; otherwise, `false`. The default value is `false`.
       bool any_color() const noexcept;
       /// @brief Sets a value indicating whether the dialog box displays all available colors in the set of basic colors.
-      /// @param any_color true if the dialog box displays all available colors in the set of basic colors; otherwise, `false`. The default value is `false`.
+      /// @param any_color `true` if the dialog box displays all available colors in the set of basic colors; otherwise, `false`. The default value is `false`.
       color_dialog& any_color(bool any_color);
       
       /// @brief Gets the color selected by the user.
@@ -107,7 +107,7 @@ namespace xtd {
       /// @note If allow_full_open is `false`, then full_open has no effect.
       bool full_open() const noexcept;
       /// @brief Sets a value indicating whether the controls used to create custom colors are visible when the dialog box is opened
-      /// @param full_open true if the custom color controls are available when the dialog box is opened; otherwise, `false`. The default value is `false`.
+      /// @param full_open `true` if the custom color controls are available when the dialog box is opened; otherwise, `false`. The default value is `false`.
       /// @remarks By default, the custom color controls are not visible when the dialog box is first opened. You must click the Custom Colors button to display them.
       /// @note If allow_full_open is `false`, then full_open has no effect.
       color_dialog& full_open(bool full_open);
@@ -121,7 +121,7 @@ namespace xtd {
       /// @return `true` if the Help button is shown in the dialog box; otherwise, `false`. The default value is `false`.
       bool show_help() const noexcept;
       /// @brief Sets a value indicating whether a Help button appears in the color dialog box.
-      /// @param show_help true if the Help button is shown in the dialog box; otherwise, `false`.
+      /// @param show_help `true` if the Help button is shown in the dialog box; otherwise, `false`.
       color_dialog& show_help(bool show_help);
       
       /// @brief Gets a value indicating whether the dialog box will restrict users to selecting solid colors only.
@@ -129,7 +129,7 @@ namespace xtd {
       /// @remarks This property is applicable to systems with 256 or fewer colors. On these types of systems, some colors are composites of others.
       bool solid_color_only() const noexcept;
       /// @brief Sets a value indicating whether the dialog box will restrict users to selecting solid colors only.
-      /// @param solid_color_only true if users can select only solid colors; otherwise, `false`.
+      /// @param solid_color_only `true` if users can select only solid colors; otherwise, `false`.
       /// @remarks This property is applicable to systems with 256 or fewer colors. On these types of systems, some colors are composites of others.
       color_dialog& solid_color_only(bool solid_color_only);
       

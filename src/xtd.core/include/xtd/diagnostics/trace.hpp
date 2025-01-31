@@ -52,12 +52,12 @@ namespace xtd {
       /// @brief Gets whether Flush should be called on the Listeners after every write.
       /// @return `true` if Flush is called on the Listeners after every write; otherwise, `false`.
       /// @remarks The default is `false`.
-      /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call Flush or Close. Setting AutoFlush to true means that data will be flushed from the buffer to the stream, but the encoder state will not be flushed. This allows the encoder to keep its state (partial characters) so that it can encode the next block of characters correctly. This scenario affects UTF8 and UTF7 where certain characters can only be encoded after the encoder receives the adjacent character or characters.
+      /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call Flush or Close. Setting AutoFlush to `true` means that data will be flushed from the buffer to the stream, but the encoder state will not be flushed. This allows the encoder to keep its state (partial characters) so that it can encode the next block of characters correctly. This scenario affects UTF8 and UTF7 where certain characters can only be encoded after the encoder receives the adjacent character or characters.
       static bool auto_flush() noexcept;
       /// @brief Sets whether Flush should be called on the Listeners after every write.
-      /// @param auto_flush true if Flush is called on the Listeners after every write; otherwise, `false`.
+      /// @param auto_flush `true` if Flush is called on the Listeners after every write; otherwise, `false`.
       /// @remarks The default is `false`.
-      /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call Flush or Close. Setting AutoFlush to true means that data will be flushed from the buffer to the stream, but the encoder state will not be flushed. This allows the encoder to keep its state (partial characters) so that it can encode the next block of characters correctly. This scenario affects UTF8 and UTF7 where certain characters can only be encoded after the encoder receives the adjacent character or characters.
+      /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call Flush or Close. Setting AutoFlush to `true` means that data will be flushed from the buffer to the stream, but the encoder state will not be flushed. This allows the encoder to keep its state (partial characters) so that it can encode the next block of characters correctly. This scenario affects UTF8 and UTF7 where certain characters can only be encoded after the encoder receives the adjacent character or characters.
       static void auto_flush(bool auto_flush) noexcept;
       
       /// @brief Gets the indent level.
@@ -109,7 +109,7 @@ namespace xtd {
       /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of UseGlobalLock. The IsThreadSafe property is used to determine if the listener is thread safe. The global lock is not used only if the value of UseGlobalLock is `false` and the value of IsThreadSafe is `true`. The default behavior is to use the global lock.
       static bool use_global_lock() noexcept;
       /// @brief Sets a value indicating whether the global lock should be used.
-      /// @param use_global_lock true if the global lock is to be used; otherwise, `false`. The default is true.
+      /// @param use_global_lock `true` if the global lock is to be used; otherwise, `false`. The default is true.
       /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of UseGlobalLock. The IsThreadSafe property is used to determine if the listener is thread safe. The global lock is not used only if the value of UseGlobalLock is `false` and the value of IsThreadSafe is `true`. The default behavior is to use the global lock.
       static void use_global_lock(bool use_global_lock) noexcept;
       /// @}
@@ -303,7 +303,7 @@ namespace xtd {
       /// @endcond
       
       /// @brief Writes a message to the trace listeners in the Listeners collection if a condition is true.
-      /// @param condition true to cause a message to be written; otherwise, `false`.
+      /// @param condition `true` to cause a message to be written; otherwise, `false`.
       /// @param message A message to write.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
@@ -313,7 +313,7 @@ namespace xtd {
         #endif
       }
       /// @brief Writes a message to the trace listeners in the Listeners collection if a condition is true.
-      /// @param condition true to cause a message to be written; otherwise, `false`.
+      /// @param condition `true` to cause a message to be written; otherwise, `false`.
       /// @param message A message to write.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
@@ -324,7 +324,7 @@ namespace xtd {
         #endif
       }
       /// @brief Writes a category name and message to the trace listeners in the Listeners collection if a condition is true.
-      /// @param condition true to cause a message to be written; otherwise, `false`.
+      /// @param condition `true` to cause a message to be written; otherwise, `false`.
       /// @param message A message to write.
       /// @param category A category name used to organize the output.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
@@ -396,7 +396,7 @@ namespace xtd {
       /// @endcond
       
       /// @brief Writes a message followed by a line terminator to the trace listeners in the Listeners collection if a condition is true.
-      /// @param condition true to cause a message to be written; otherwise, `false`.
+      /// @param condition `true` to cause a message to be written; otherwise, `false`.
       /// @param message A message to write.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
@@ -406,7 +406,7 @@ namespace xtd {
         #endif
       }
       /// @brief Writes a message followed by a line terminator to the trace listeners in the Listeners collection if a condition is true.
-      /// @param condition true to cause a message to be written; otherwise, `false`.
+      /// @param condition `true` to cause a message to be written; otherwise, `false`.
       /// @param message A message to write.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
@@ -417,7 +417,7 @@ namespace xtd {
         #endif
       }
       /// @brief Writes a category name and message followed by a line terminator to the trace listeners in the Listeners collection if a condition is true.
-      /// @param condition true to cause a message to be written; otherwise, `false`.
+      /// @param condition `true` to cause a message to be written; otherwise, `false`.
       /// @param message A message to write.
       /// @param category A category name used to organize the output.
       /// @remarks By default, the output is written to an instance of default_trace_listener.

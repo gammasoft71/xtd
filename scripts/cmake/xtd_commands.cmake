@@ -1989,7 +1989,7 @@ macro(write_settings_file_header)
     "    /// @remarks All properties are reloaded with the last saved value.\n"
     "    settings() noexcept : settings {true} {}\n"
     "    /// @brief Initializes a new instance of the ${TARGET_DEFAULT_NAMESPACE}::properties::settings class.\n"
-    "    /// @param load If true all properties are reloaded with the last saved values; otherwise none.\n"
+    "    /// @param load If `true` all properties are reloaded with the last saved values; otherwise none.\n"
     "    explicit settings(bool load) noexcept {\n"
     "      if (load) reload();\n"
     "    }\n"

@@ -219,12 +219,12 @@ namespace xtd {
 
       /// @brief Determines whether this instance of xtd::collections::bit_array and a specified object, which must also be a xtd::collections::bit_array object, have the same value.
       /// @param value The xtd::collections::bit_array to compare with the current object.
-      /// @return true if the specified value is equal to the current object. otherwise, `false`.
+      /// @return `true` if the specified value is equal to the current object. otherwise, `false`.
       bool equals(const bit_array& value) const noexcept override;
 
       /// @brief Determines whether this instance of xtd::collections::bit_array and a specified object, which must also be a xtd::collections::bit_array object, have the same value.
       /// @param obj The object to compare with the current object.
-      /// @return true if the specified object is equal to the current object. otherwise, `false`.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
       bool equals(const object& obj) const noexcept override;
 
       /// @brief Gets the value of the bit at a specific position in the xtd::collections::bit_array.
@@ -245,7 +245,7 @@ namespace xtd {
       /// @return An xtd::collection::generic::ienumerator object that can be used to iterate through the collection.
       xtd::collections::generic::enumerator<bool> get_enumerator() const override;
 
-      /// @brief Inverts all the bit values in the current xtd::collections::bit_array, so that elements set to true are changed to `false`, and elements set to `false` are changed to true.
+      /// @brief Inverts all the bit values in the current xtd::collections::bit_array, so that elements set to `true` are changed to `false`, and elements set to `false` are changed to true.
       /// @return The current instance with inverted bit values.
       /// @remarks This method is an O(n) operation, where n is count.
       const bit_array& not_();

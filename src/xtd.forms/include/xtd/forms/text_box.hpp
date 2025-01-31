@@ -102,7 +102,7 @@ namespace xtd {
       /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to true, the default system password character is used and any character set by password_char is ignored.
       virtual bool use_system_password_char() const noexcept;
       /// @brief Sets a value indicating whether the text in the TextBox control should appear as the default password character.
-      /// @param value true if the text in the TextBox control should appear as the default password character; otherwise, `false`.
+      /// @param value `true` if the text in the TextBox control should appear as the default password character; otherwise, `false`.
       /// @return Current text_box instance.
       /// @remarks The use_system_password_char property has precedence over the password_char property. Whenever the use_system_password_char is set to true, the default system password character is used and any character set by password_char is ignored.
       virtual text_box& use_system_password_char(bool value);

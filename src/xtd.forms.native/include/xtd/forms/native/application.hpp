@@ -71,7 +71,7 @@ namespace xtd {
         /// @brief Processes do idle event.
         /// @warning Internal use only
         static void do_idle();
-        /// @brief Return true if dark mode is enabled for the application; otherwise return `false`.
+        /// @brief Return `true` if dark mode is enabled for the application; otherwise return `false`.
         /// @return `true` if dark mode is enabled; otherwise `false`.
         /// @warning Internal use only
         static bool dark_mode_enabled();
@@ -109,7 +109,7 @@ namespace xtd {
         static void register_message_filter(const delegate<bool(intptr, int32, intptr, intptr, intptr)>& message_filter);
         /// @brief Register a specified thread_exception from the message pump of the application.
         /// @param thread_exception A thread exception delegate to register.
-        /// @remarks The thread exception delegate return true if the user want quit application after exception.
+        /// @remarks The thread exception delegate return `true` if the user want quit application after exception.
         /// @warning Internal use only
         static void register_thread_exception(const delegate<bool()>& thread_exception);
         /// @brief Register a specified wnd proc from the message pump of the application.
@@ -124,7 +124,7 @@ namespace xtd {
         /// @warning Internal use only
         static void run();
         /// @brief Sets whether the wait cursor is used for all open forms of the application.
-        /// @param use_wait_cursor true is the wait cursor is used for all open forms; otherwise, `false`.
+        /// @param use_wait_cursor `true` is the wait cursor is used for all open forms; otherwise, `false`.
         /// @warning Internal use only
         static void use_wait_cursor(bool use_wait_cursor);
         /// @}

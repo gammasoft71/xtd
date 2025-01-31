@@ -1537,7 +1537,7 @@ namespace xtd {
       
       /// @brief Deletes the specified directory and, if indicated, any subdirectories and files in the directory.
       /// @param path The name of the directory to remove.
-      /// @param recursive true to remove directories, subdirectories, and files in path; otherwise, `false`.
+      /// @param recursive `true` to remove directories, subdirectories, and files in path; otherwise, `false`.
       /// @exception xtd::io::io_exception A file with the same name and location specified by path exists.<br>-or-<br>The directory is the application's current working directory.<br>-or-<br>The directory specified by path is not empty.<br>-or-<br>The directory is read-only or contains a read-only file.<br>-or-<br>The directory is being used by another process.
       /// @exception xtd::argument_exception path is a zero-length string, contains only white space, or contains one or more invalid characters. You can query for invalid characters by using the xtd::io::path::get_invalid_path_chars method.
       /// @exception xtd::io::path_too_long_exception The specified path, file name, or both exceed the system-defined maximum length.

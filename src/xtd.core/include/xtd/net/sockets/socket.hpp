@@ -213,7 +213,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation for a detailed description of the error.
         bool blocking() const;
         /// @brief Sets a value that indicates whether the xtd::net::sockets::socket is in blocking mode.
-        /// @param value true if the xtd::net::sockets::socket will block; otherwise, `false`. The default is true.
+        /// @param value `true` if the xtd::net::sockets::socket will block; otherwise, `false`. The default is true.
         /// @return This current instance.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
@@ -224,7 +224,7 @@ namespace xtd {
         
         /// @brief Gets a value that indicates whether a xtd::net::sockets::socket is connected to a remote host as of the last xtd::net::sockets::socket::send or xtd::net::sockets::socket::receive operation.
         /// @return `true` if the xtd::net::sockets::socket was connected to a remote resource as of the most recent operation; otherwise, `false`.
-        /// @remarks The xtd::net::sockets::socket::connected property gets the connection state of the xtd::net::sockets::socket as of the last I/O operation. When it returns `false`, the xtd::net::sockets::socket was either never connected, or is no longer connected. xtd::net::sockets::socket::connected is not thread-safe; it may return true after an operation is aborted when the xtd::net::sockets::socket is disconnected from another thread.
+        /// @remarks The xtd::net::sockets::socket::connected property gets the connection state of the xtd::net::sockets::socket as of the last I/O operation. When it returns `false`, the xtd::net::sockets::socket was either never connected, or is no longer connected. xtd::net::sockets::socket::connected is not thread-safe; it may return `true` after an operation is aborted when the xtd::net::sockets::socket is disconnected from another thread.
         /// @remarks The value of the xtd::net::sockets::socket::connected property reflects the state of the connection as of the most recent operation. If you need to determine the current state of the connection, make a nonblocking, zero-byte xtd::net::sockets::socket::send call. If the call returns successfully or throws a WAEWOULDBLOCK error code (10035), then the socket is still connected; otherwise, the socket is no longer connected.
         /// @remarks If you call xtd::net::sockets::socket::connect on a User Datagram Protocol (UDP) socket, the xtd::net::sockets::socket::connected property always returns true; however, this action does not change the inherent connectionless nature of UDP.
         bool connected() const noexcept;
@@ -237,7 +237,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         bool dont_fragment() const;
         /// @brief Sets a value that specifies whether the xtd::net::sockets::socket allows Internet Protocol (IP) datagrams to be fragmented.
-        /// @param value true if the xtd::net::sockets::socket doesn't allow datagram fragmentation; otherwise, `false`. The default is true.
+        /// @param value `true` if the xtd::net::sockets::socket doesn't allow datagram fragmentation; otherwise, `false`. The default is true.
         /// @return This current instance.
         /// @exception xtd::not_supported_exception The socket is not in the xtd::net::sockets::address_family::inter_network family.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -246,14 +246,14 @@ namespace xtd {
         socket& dont_fragment(bool value);
         
         /// @brief Gets a value that specifies whether the xtd::net::sockets::socket is a dual-mode socket used for both IPv4 and IPv6.
-        /// @return `true` if the xtd::net::sockets::socket is a dual-mode socket; otherwise, `false`. The default is true if the socket was created by calling the xtd::net::sockets::socket(xtd::net::sockets::socket_type, xtd::net::sockets::protocol_type) constructor and the operating system supports IPv6; otherwise, the default is `false`.
+        /// @return `true` if the xtd::net::sockets::socket is a dual-mode socket; otherwise, `false`. The default is `true` if the socket was created by calling the xtd::net::sockets::socket(xtd::net::sockets::socket_type, xtd::net::sockets::protocol_type) constructor and the operating system supports IPv6; otherwise, the default is `false`.
         /// @exception xtd::not_supported_exception The socket is not in the xtd::net::sockets::address_family::inter_network_v6 family.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         bool dual_mode() const;
         /// @brief Sets a value that specifies whether the xtd::net::sockets::socket is a dual-mode socket used for both IPv4 and IPv6.
-        /// @param value true if the xtd::net::sockets::socket is a dual-mode socket; otherwise, `false`. The default is true if the socket was created by calling the xtd::net::sockets::socket(xtd::net::sockets::socket_type, xtd::net::sockets::protocol_type) constructor and the operating system supports IPv6; otherwise, the default is `false`.
+        /// @param value `true` if the xtd::net::sockets::socket is a dual-mode socket; otherwise, `false`. The default is `true` if the socket was created by calling the xtd::net::sockets::socket(xtd::net::sockets::socket_type, xtd::net::sockets::protocol_type) constructor and the operating system supports IPv6; otherwise, the default is `false`.
         /// @return This current instance.
         /// @exception xtd::not_supported_exception The socket is not in the xtd::net::sockets::address_family::inter_network_v6 family.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -270,7 +270,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         bool enable_broadcast() const;
         /// @brief Sets a bool value that specifies whether the xtd::net::sockets::socket can send or receive broadcast packets.
-        /// @param value true if the xtd::net::sockets::socket allows broadcast packets; otherwise, `false`. The default is `false`.
+        /// @param value `true` if the xtd::net::sockets::socket allows broadcast packets; otherwise, `false`. The default is `false`.
         /// @return This current instance.
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
@@ -280,7 +280,7 @@ namespace xtd {
         socket& enable_broadcast(bool value);
         
         /// @brief Gets a boolean value that specifies whether the xtd::net::sockets::socket allows only one process to bind to a port.
-        /// @return `true` if the xtd::net::sockets::socket allows only one socket to bind to a specific port; otherwise, `false`. The default is true for Windows Server 2003 and Windows XP Service Pack 2, and `false` for all other versions.
+        /// @return `true` if the xtd::net::sockets::socket allows only one socket to bind to a specific port; otherwise, `false`. The default is `true` for Windows Server 2003 and Windows XP Service Pack 2, and `false` for all other versions.
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks If xtd::net::sockets::socket::exclusive_address_use is `false`, multiple sockets can use the xtd::net::sockets::socket::bind method to bind to a specific port; however only one of the sockets can perform operations on the network traffic sent to the port. If more than one socket attempts to use the xtd::net::sockets::socket::bind method to bind to a particular port, then the one with the more specific IP address will handle the network traffic sent to that port.
@@ -289,7 +289,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         bool exclusive_address_use() const;
         /// @brief Gets a boolean value that specifies whether the xtd::net::sockets::socket allows only one process to bind to a port.
-        /// @param value true if the xtd::net::sockets::socket allows only one socket to bind to a specific port; otherwise, `false`. The default is true for Windows Server 2003 and Windows XP Service Pack 2, and `false` for all other versions.
+        /// @param value `true` if the xtd::net::sockets::socket allows only one socket to bind to a specific port; otherwise, `false`. The default is `true` for Windows Server 2003 and Windows XP Service Pack 2, and `false` for all other versions.
         /// @return This current instance.
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
@@ -364,7 +364,7 @@ namespace xtd {
         /// @note If you receive a xtd::net::sockets::socket_exception exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         bool multicast_loopback() const;
         /// @brief Sets a value that specifies whether outgoing multicast packets are delivered to the sending application.
-        /// @param value true if the xtd::net::sockets::socket receives outgoing multicast packets; otherwise, `false`.
+        /// @param value `true` if the xtd::net::sockets::socket receives outgoing multicast packets; otherwise, `false`.
         /// @return This current instance.
         /// @exception xtd::net::sockets::socket_exception This option is valid for a datagram socket only.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
@@ -627,7 +627,7 @@ namespace xtd {
         xtd::sptr<xtd::iasync_result> begin_connect(const xtd::string& host, uint16 port, xtd::async_callback callback, const std::any& state);
         
         /// @brief Begins an asynchronous request to disconnect from a remote endpoint.
-        /// @param reuse_socket true if this socket can be reused after the connection is closed; otherwise, `false`.
+        /// @param reuse_socket `true` if this socket can be reused after the connection is closed; otherwise, `false`.
         /// @param callback The xtd::async_callback delegate.
         /// @param state An object that contains state information for this request.
         /// @return An xtd::iasync_result that references the asynchronous connection.
@@ -860,7 +860,7 @@ namespace xtd {
         void connect(const xtd::string& host, uint16 port);
         
         /// @brief Closes the socket connection and allows reuse of the socket.
-        /// @param reuse_socket true if this socket can be reused after the current connection is closed; otherwise, `false`.
+        /// @param reuse_socket `true` if this socket can be reused after the current connection is closed; otherwise, `false`.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks If you are using a connection-oriented protocol, you can use this method to close the socket. This method ends the connection and sets the xtd::net::sockets::socket::connected property to `false`. However, if reuseSocket is true, you can reuse the socket.
@@ -1094,9 +1094,9 @@ namespace xtd {
         /// @return The status of the xtd::net::sockets::socket based on the polling mode value passed in the mode parameter.
         /// | Mode                                         | Return Value                                                                                                                                                                                                                                               |
         /// | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-        /// | xtd::net::sockets::select_mode::select_read  | true if xtd::net::sockets::socket::listen has been called and a connection is pending;<br>-or-<br>true if data is available for reading;<br>-or-<br>true if the connection has been closed, reset, or terminated; otherwise, returns `false`.                            |
-        /// | xtd::net::sockets::select_mode::select_write | true, if processing a xtd::net::sockets::socket::connect, and the connection has succeeded;<br>-or-<br>true if data can be sent; otherwise, returns `false`.                                                                                                       |
-        /// | xtd::net::sockets::select_mode::select_error | true if processing a xtd::net::sockets::socket::connect that does not block, and the connection has failed;<br>-or-<br>true if xtd::net::sockets::socket_option_name::out_of_band_inline is not set and out-of-band data is available; otherwise, returns `false`. |
+        /// | xtd::net::sockets::select_mode::select_read  | `true` if xtd::net::sockets::socket::listen has been called and a connection is pending;<br>-or-<br>`true` if data is available for reading;<br>-or-<br>`true` if the connection has been closed, reset, or terminated; otherwise, returns `false`.                            |
+        /// | xtd::net::sockets::select_mode::select_write | true, if processing a xtd::net::sockets::socket::connect, and the connection has succeeded;<br>-or-<br>`true` if data can be sent; otherwise, returns `false`.                                                                                                       |
+        /// | xtd::net::sockets::select_mode::select_error | `true` if processing a xtd::net::sockets::socket::connect that does not block, and the connection has failed;<br>-or-<br>`true` if xtd::net::sockets::socket_option_name::out_of_band_inline is not set and out-of-band data is available; otherwise, returns `false`. |
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks The xtd::net::sockets::socket::poll method checks the state of the xtd::net::sockets::socket. Specify xtd::net::sockets::select_mode::select_read for the select_mode parameter to determine if the xtd::net::sockets::socket is readable. Specify xtd::net::sockets::select_mode::select_write to determine if the xtd::net::sockets::socket is writable. Use SelectMode.SelectError to detect an error condition. Poll will block execution until the specified time period, measured in microseconds, elapses. Set the microSeconds parameter to a negative integer if you would like to wait indefinitely for a response. If you want to check the status of multiple sockets, you might prefer to use the xtd::net::sockets::socket::select method.

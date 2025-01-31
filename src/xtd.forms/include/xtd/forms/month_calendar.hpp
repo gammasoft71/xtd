@@ -245,7 +245,7 @@ namespace xtd {
       /// @remarks The date is displayed in the format specified by the system settings for the short date format.
       bool show_today() const noexcept;
       /// @brief Sets a value indicating whether the date represented by the xtd::today_date property is displayed at the bottom of the control.
-      /// @param value true if today's date is displayed; otherwise, `false`. The default is true.
+      /// @param value `true` if today's date is displayed; otherwise, `false`. The default is true.
       /// @return Current month_calendar.
       /// @remarks The date is displayed in the format specified by the system settings for the short date format.
       month_calendar& show_today(bool value);
@@ -255,7 +255,7 @@ namespace xtd {
       /// @remarks If xtd::forms::month_calendar::show_today_circle is true, and visual styles are enabled and supported on the computer running the application, today's date will be enclosed in a square, otherwise today's date will be circled.
       bool show_today_circle() const noexcept;
       /// @brief Sets a value indicating whether today's date is identified with a circle or a square.
-      /// @param value true if today's date is identified with a circle or a square; otherwise, `false`. The default is true.
+      /// @param value `true` if today's date is identified with a circle or a square; otherwise, `false`. The default is true.
       /// @return Current month_calendar.
       /// @remarks If xtd::forms::month_calendar::show_today_circle is true, and visual styles are enabled and supported on the computer running the application, today's date will be enclosed in a square, otherwise today's date will be circled.
       month_calendar& show_today_circle(bool value);
@@ -264,7 +264,7 @@ namespace xtd {
       /// @return `true` if the week numbers are displayed; otherwise, `false`. The default is `false`.
       bool show_week_numbers() const noexcept;
       /// @brief Sets a value indicating whether the month calendar control displays week numbers (1-52) to the left of each row of days.
-      /// @param value true if the week numbers are displayed; otherwise, `false`. The default is `false`.
+      /// @param value `true` if the week numbers are displayed; otherwise, `false`. The default is `false`.
       /// @return Current month_calendar.
       month_calendar& show_week_numbers(bool value);
       
@@ -293,12 +293,12 @@ namespace xtd {
       
       /// @brief Gets the value that is used by xtd::forms::month_calendar as today's date.
       /// @return A xtd::date_time representing today's date. The default value is the current system date.
-      /// @remarks By default, the xtd::forms::month_calendar::today_date property returns the current system date, and the xtd::forms::month_calendar::today_date_set property is `false`. Setting the TodayDate property sets the xtd::forms::month_calendar::today_date_set property to true and, from that point, the value returned by the xtd::forms::month_calendar::roday_date property is the one the user sets.
+      /// @remarks By default, the xtd::forms::month_calendar::today_date property returns the current system date, and the xtd::forms::month_calendar::today_date_set property is `false`. Setting the TodayDate property sets the xtd::forms::month_calendar::today_date_set property to `true` and, from that point, the value returned by the xtd::forms::month_calendar::roday_date property is the one the user sets.
       const xtd::date_time& today_date() const noexcept;
       /// @brief Sets the value that is used by xtd::forms::month_calendar as today's date.
       /// @param value A xtd::date_time representing today's date. The default value is the current system date.
       /// @return Current month_calendar.
-      /// @remarks By default, the xtd::forms::month_calendar::today_date property returns the current system date, and the xtd::forms::month_calendar::today_date_set property is `false`. Setting the TodayDate property sets the xtd::forms::month_calendar::today_date_set property to true and, from that point, the value returned by the xtd::forms::month_calendar::roday_date property is the one the user sets.
+      /// @remarks By default, the xtd::forms::month_calendar::today_date property returns the current system date, and the xtd::forms::month_calendar::today_date_set property is `false`. Setting the TodayDate property sets the xtd::forms::month_calendar::today_date_set property to `true` and, from that point, the value returned by the xtd::forms::month_calendar::roday_date property is the one the user sets.
       month_calendar& today_date(const xtd::date_time& value);
       
       /// @brief Gets a value indicating whether the xtd::forms::month_calendar::today_date property has been explicitly set.

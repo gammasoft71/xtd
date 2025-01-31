@@ -83,7 +83,7 @@ namespace xtd {
       /// @return `true` if enable_debug flags is on; otherwise `false`.
       static bool get(const enable_debug& flags);
       /// @brief Sets enable_debug flags status.
-      /// @param on true if enable_debug flags is on; otherwise `false`.
+      /// @param on `true` if enable_debug flags is on; otherwise `false`.
       static void set(const enable_debug& flags, bool on);
       /// @}
       

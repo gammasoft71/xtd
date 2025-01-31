@@ -57,7 +57,7 @@ namespace xtd {
       /// @return `true` if the drop-down portion is displayed; otherwise, `false`. The default is `false`.
       bool dropped_down() const noexcept;
       /// @brief Sets a value indicating whether the combo box is displaying its drop-down portion.
-      /// @param value true if the drop-down portion is displayed; otherwise, `false`. The default is `false`.
+      /// @param value `true` if the drop-down portion is displayed; otherwise, `false`. The default is `false`.
       /// @warning This feature is not supported on macOS.
       combo_box& dropped_down(bool value);
       
@@ -101,7 +101,7 @@ namespace xtd {
       /// @remarks Use the sorted property to automatically sort strings alphabetically in a combo_box. As items are added to a sorted combo_box, the items are moved to the appropriate location in the sorted list. When adding items to a list_box, it is more efficient to sort the items first and then add new items.
       virtual bool sorted() const noexcept;
       /// @brief Sets a value indicating whether the items in the combo_box are sorted alphabetically.
-      /// @param sorted true if items in the control are sorted; otherwise, `false`. The default is `false`.
+      /// @param sorted `true` if items in the control are sorted; otherwise, `false`. The default is `false`.
       /// @return Current combo_box.
       /// @remarks Use the sorted property to automatically sort strings alphabetically in a combo_box. As items are added to a sorted combo_box, the items are moved to the appropriate location in the sorted list. When adding items to a list_box, it is more efficient to sort the items first and then add new items.
       virtual combo_box& sorted(bool sorted);

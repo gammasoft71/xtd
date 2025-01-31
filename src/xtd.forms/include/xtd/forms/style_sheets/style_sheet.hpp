@@ -180,7 +180,7 @@ namespace xtd {
         
         /// @brief Gets a value indicate if this instance is system style sheet.
         /// @return `true` if the current instance is system style sheet; otherwise `false`.
-        /// @remarks This method return true only if the current instance is equal to xtd::forms::style_sheets::style_sheet::system_style_sheet.
+        /// @remarks This method return `true` only if the current instance is equal to xtd::forms::style_sheets::style_sheet::system_style_sheet.
         bool is_system_style_sheet() const noexcept;
         
         /// @brief Gets the style sheet label for the xtd::forms::style_sheets::pseudo_state::standard pseudo state.
