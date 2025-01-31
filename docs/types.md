@@ -59,9 +59,9 @@ For the complete list of xtd types see [xtd - Referecne Guide - types](https://g
 
 xtd define the minimum and maximum constant value for each types.
 
-|Type                                                                                                               | Minimum Value                      | Maximum Value                       | Minimum Value             | Maximum Value               |
-| ----------------------------------------------------------------------------------------------------------------- | ---------------------------------- | ----------------------------------- | ------------------------- | --------------------------- |
-| [xtd::boolean_object](https://gammasoft71.github.io/xtd/reference_guides/latest/group__system.html#ga020fbeceaf011505de3ac30168375664) | [xtd::boolean_object::min_value]() | [xtd::boolean_object::man_value]()  | false                     | true                        |
+|Type                                                                                                                                    | Minimum Value                      | Maximum Value                       | Minimum Value             | Maximum Value               |
+| -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- | ----------------------------------- | ------------------------- | --------------------------- |
+| [xtd::boolean_object](https://gammasoft71.github.io/xtd/reference_guides/latest/group__system.html#ga020fbeceaf011505de3ac30168375664) | [xtd::boolean_object::min_value]() | [xtd::boolean_object::man_value]()  | `false`                   | `true`                      |
 | [xtd::byte_object](https://gammasoft71.github.io/xtd/reference_guides/latest/group__system.html#ga3fc22386b24ad6ba85daeff85cb79661)    | [xtd::byte_object::min_value]()    | [xtd::byte_object::max_value]()     | 0                         | 255                         |
 | [xtd::int16_object](https://gammasoft71.github.io/xtd/reference_guides/latest/group__system.html#ga9b68e8829910e613dac8a6148477ad7c)   | [xtd::int16_object::min_value]()   | [xtd::int16_object::int16_object]() | -32768                    | 32767                       |
 | [xtd::int32_object](https://gammasoft71.github.io/xtd/reference_guides/latest/group__system.html#ga4be46d51c646a03427dc92e2bf35cd38)   | [xtd::int32_object::min_value]()   | [xtd::int32_object::max_value]()    | -2147483648               | 2147483647                  |
