@@ -60,12 +60,12 @@ namespace xtd {
 
       /// @brief Gets the lines of text in a text box control.
       /// @return An array of strings that contains the text in a text box control.
-      /// @remarks Each element in the array becomes a line of text in the text box control. If the multiline property of the text box control is set to true and a newline character appears in the text, the text following the newline character is added to a new element in the array and displayed on a separate line.
+      /// @remarks Each element in the array becomes a line of text in the text box control. If the multiline property of the text box control is set to `true` and a newline character appears in the text, the text following the newline character is added to a new element in the array and displayed on a separate line.
       std::vector<xtd::string> lines() const noexcept;
       /// @brief Sets the lines of text in a text box control.
       /// @param lines An array of strings that contains the text in a text box control.
       /// @return Current text_box_base instance.
-      /// @remarks Each element in the array becomes a line of text in the text box control. If the multiline property of the text box control is set to true and a newline character appears in the text, the text following the newline character is added to a new element in the array and displayed on a separate line.
+      /// @remarks Each element in the array becomes a line of text in the text box control. If the multiline property of the text box control is set to `true` and a newline character appears in the text, the text following the newline character is added to a new element in the array and displayed on a separate line.
       text_box_base& lines(const std::vector<xtd::string>& lines);
       
       /// @brief Gets a value indicating whether this is a multiline text box control.
@@ -73,7 +73,7 @@ namespace xtd {
       /// @remarks A multiline text box allows you to display more than one line of text in the control. If the word_wrap property is set to true, text entered into the multiline text box is wrapped to the next line in the control. If the word_wrap property is set to `false`, text entered into the multiline text box control will be displayed on the same line until a newline character is entered.
       virtual bool multiline() const noexcept;
       /// @brief Sets a value indicating whether this is a multiline text box control.
-      /// @param value true if the control is a multiline text box control; otherwise, `false`. The default is `false`.
+      /// @param value `true` if the control is a multiline text box control; otherwise, `false`. The default is `false`.
       /// @return Current text_box_base instance.
       /// @remarks A multiline text box allows you to display more than one line of text in the control. If the word_wrap property is set to true, text entered into the multiline text box is wrapped to the next line in the control. If the word_wrap property is set to `false`, text entered into the multiline text box control will be displayed on the same line until a newline character is entered.
       virtual text_box_base& multiline(bool value);
@@ -83,7 +83,7 @@ namespace xtd {
       /// @remarks When this property is set to true, the contents of the control cannot be changed by the user at runtime. With this property set to true, you can still set the value of the Text property in code. You can use this feature instead of disabling the control with the Enabled property to allow the contents to be copied and ToolTips to be shown.
       virtual bool read_only() const noexcept;
       /// @brief Sets a value indicating whether text in the text box is read-only.
-      /// @param value true if the text box is read-only; otherwise, `false`. The default is `false`.
+      /// @param value `true` if the text box is read-only; otherwise, `false`. The default is `false`.
       /// @return Current text_box_base instance.
       /// @remarks When this property is set to true, the contents of the control cannot be changed by the user at runtime. With this property set to true, you can still set the value of the Text property in code. You can use this feature instead of disabling the control with the Enabled property to allow the contents to be copied and ToolTips to be shown.
       virtual text_box_base& read_only(bool value);

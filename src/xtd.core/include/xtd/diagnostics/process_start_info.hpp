@@ -78,12 +78,12 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether to start the process in a new window.
       /// @return `true` if the process should be started without creating a new window to contain it; otherwise, `false`. The default is `false`.
-      /// @remarks If the xtd::diagnostics::process_start_info::use_shell_execute property is true or the xtd::diagnostics::process_start_info::user_name and xtd::diagnostics::process_start_info::password properties are not empty, the xtd::diagnostics::process_start_info::create_no_window property value is ignored and a new window is created.
+      /// @remarks If the xtd::diagnostics::process_start_info::use_shell_execute property is `true` or the xtd::diagnostics::process_start_info::user_name and xtd::diagnostics::process_start_info::password properties are not empty, the xtd::diagnostics::process_start_info::create_no_window property value is ignored and a new window is created.
       bool create_no_window() const noexcept;
       /// @brief Sets a value indicating whether to start the process in a new window.
-      /// @param value true if the process should be started without creating a new window to contain it; otherwise, `false`. The default is `false`.
+      /// @param value `true` if the process should be started without creating a new window to contain it; otherwise, `false`. The default is `false`.
       /// @return The current instance of process_start_info.
-      /// @remarks If the xtd::diagnostics::process_start_info::use_shell_execute property is true or the xtd::diagnostics::process_start_info::user_name and xtd::diagnostics::process_start_info::password properties are not empty, the xtd::diagnostics::process_start_info::create_no_window property value is ignored and a new window is created.
+      /// @remarks If the xtd::diagnostics::process_start_info::use_shell_execute property is `true` or the xtd::diagnostics::process_start_info::user_name and xtd::diagnostics::process_start_info::password properties are not empty, the xtd::diagnostics::process_start_info::create_no_window property value is ignored and a new window is created.
       process_start_info& create_no_window(bool value) noexcept;
       
       /// @brief Gets a value that identifies the domain to use when starting the process.
@@ -116,12 +116,12 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether an error dialog box is displayed to the user if the process cannot be started.
       /// @return `true` if an error dialog box should be displayed on the screen if the process cannot be started; otherwise, `false`. The default is `false`.
-      /// @note xtd::diagnostics::process_start_info::use_shell_execute must be true if you want to set xtd::diagnostics::process_start_info::error_dialog to true.
+      /// @note xtd::diagnostics::process_start_info::use_shell_execute must be `true` if you want to set xtd::diagnostics::process_start_info::error_dialog to true.
       bool error_dialog() const noexcept;
       /// @brief Sets a value indicating whether an error dialog box is displayed to the user if the process cannot be started.
-      /// @param value true if an error dialog box should be displayed on the screen if the process cannot be started; otherwise, `false`. The default is `false`.
+      /// @param value `true` if an error dialog box should be displayed on the screen if the process cannot be started; otherwise, `false`. The default is `false`.
       /// @return The current instance of process_start_info.
-      /// @note xtd::diagnostics::process_start_info::use_shell_execute must be true if you want to set xtd::diagnostics::process_start_info::error_dialog to true.
+      /// @note xtd::diagnostics::process_start_info::use_shell_execute must be `true` if you want to set xtd::diagnostics::process_start_info::error_dialog to true.
       process_start_info& error_dialog(bool value) noexcept;
       
       /// @brief Gets the window handle to use when an error dialog box is shown for a process that cannot be started.
@@ -155,7 +155,7 @@ namespace xtd {
       /// @remarks If the value is true, the user's profile in the HKEY_USERS registry key is loaded. Loading the profile can be time-consuming. Therefore, it is best to use this value only if you must access the information in the HKEY_CURRENT_USER registry key.
       bool load_user_profile() const noexcept;
       /// @brief Sets a value that indicates whether the Windows user profile is to be loaded from the registry.
-      /// @param value true if the Windows user profile should be loaded; otherwise, `false`. The default is `false`.
+      /// @param value `true` if the Windows user profile should be loaded; otherwise, `false`. The default is `false`.
       /// @return The current instance of process_start_info.
       /// @remarks This property is referenced if the process is being started by using the user name, password, and domain.
       /// @remarks If the value is true, the user's profile in the HKEY_USERS registry key is loaded. Loading the profile can be time-consuming. Therefore, it is best to use this value only if you must access the information in the HKEY_CURRENT_USER registry key.
@@ -294,7 +294,7 @@ namespace xtd {
       /// @note You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a xtd::diagnostics::process is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow xtd::diagnostics::process::begin_error_read_line with a call to xtd::io::stream_reader::read_line on the xtd::diagnostics::process::standard_error stream, or vice versa. However, you can read two different streams in different modes. For example, you can call xtd::diagnostics::process::begin_output_read_line and then call xtd::io::sstream_reader::read_line for the xtd::diagnostics::process::standard_error stream.
       bool redirect_standard_error() const noexcept;
       /// @brief Sets a value that indicates whether the error output of an application is written to the xtd::diagnostics::process::standard_error stream.
-      /// @param value true if error output should be written to xtd::diagnostics::process::standard_error; otherwise, `false`. The default is `false`.
+      /// @param value `true` if error output should be written to xtd::diagnostics::process::standard_error; otherwise, `false`. The default is `false`.
       /// @return The current instance of process_start_info.
       /// @par Examples
       /// The following example uses the net use command together with a user supplied argument to map a network resource. It then reads the standard error stream of the net command and writes it to console.
@@ -464,7 +464,7 @@ namespace xtd {
       /// @note To use xtd::diagnostics::process::standard_input, you must set xtd::diagnostics::process_start_info::use_shell_execute to `false`, and you must set xtd::diagnostics::process_start_info::redirect_standard_input to true. Otherwise, writing to the xtd::diagnostics::process::standard_input stream throws an exception.
       bool redirect_standard_input() const noexcept;
       /// @brief Sts a value indicating whether the input for an application is read from the Process.StandardInput stream.
-      /// @param value true if input should be read from Process.StandardInput; otherwise, `false`. The default is `false`.
+      /// @param value `true` if input should be read from Process.StandardInput; otherwise, `false`. The default is `false`.
       /// @return The current instance of process_start_info.
       /// @par Examples
       /// The following example illustrates how to redirect the xtd::diagnostics::process::standard_input stream of a process. The example starts the sort command with redirected input. It then prompts the user for text, and passes that to the sort process by means of the redirected xtd::diagnostics::process::standard_input stream. The sort results are displayed to the user on the console.
@@ -528,7 +528,7 @@ namespace xtd {
       process_start_info& redirect_standard_input(bool value) noexcept;
       
       /// @brief Gets a value that indicates whether the textual output of an application is written to the xtd::diagnostics::process::standard_output stream.
-      /// @return bool true if output should be written to xtd::diagnostics::process::standard_output; otherwise, `false`. The default is `false`.
+      /// @return bool `true` if output should be written to xtd::diagnostics::process::standard_output; otherwise, `false`. The default is `false`.
       /// @par Examples
       /// The following example runs the ipconfig.exe command and redirects its standard output to the example's console window.
       /// ```cpp
@@ -648,7 +648,7 @@ namespace xtd {
       /// @note You cannot mix asynchronous and synchronous read operations on a redirected stream. Once the redirected stream of a xtd::diagnostics::process is opened in either asynchronous or synchronous mode, all further read operations on that stream must be in the same mode. For example, do not follow xtd::diagnostics::process::begin_output_read_line with a call to xtd::io::stream_reader::read_line on the xtd::diagnostics::process::standard_output stream, or vice versa. However, you can read two different streams in different modes. For example, you can call xtd::diagnostics::process::begin_output_read_line and then call xtd::io::stream_reader::read_line for the xtd::diagnostics::process::standard_error stream.
       bool redirect_standard_output() const noexcept;
       /// @brief Sets a value that indicates whether the textual output of an application is written to the xtd::diagnostics::process::standard_output stream.
-      /// @param value true if output should be written to xtd::diagnostics::process::standard_output; otherwise, `false`. The default is `false`.
+      /// @param value `true` if output should be written to xtd::diagnostics::process::standard_output; otherwise, `false`. The default is `false`.
       /// @return The current instance of process_start_info.
       /// @par Examples
       /// The following example runs the ipconfig.exe command and redirects its standard output to the example's console window.
@@ -788,7 +788,7 @@ namespace xtd {
       /// @remarks Setting this property to `false` enables you to redirect input, output, and error streams.
       /// @note xtd::diagnostics::process_start_info::use_shell_execute must be `false` if the xtd::diagnostics::process_start_info::user_name property is not an empty string, or an xtd::invalid_operation_exception will be thrown when the xtd::diagnostics::process::start(process_start_info) method is called.
       /// @remarks When you use the operating system shell to start processes, you can start any document (which is any registered file type associated with an executable that has a default open action) and perform operations on the file, such as printing, by using the Process object. When xtd::diagnostics::process_start_info::use_shell_execute is `false`, you can start only executables by using the xtd::diagnostics::process object.
-      /// @note xtd::diagnostics::process_start_info::use_shell_execute must be true if you set the xtd::diagnostics::process_start_info::error_dialog property to true.
+      /// @note xtd::diagnostics::process_start_info::use_shell_execute must be `true` if you set the xtd::diagnostics::process_start_info::error_dialog property to true.
       /// @remarks The xtd::diagnostics::process_start_info::working_directory property behaves differently depending on the value of the xtd::diagnostics::process_start_info::use_shell_execute property. When xtd::diagnostics::process_start_info::use_shell_execute is true, the xtd::diagnostics::process_start_info::working_directory property specifies the location of the executable. If working_directory is an empty string, it is assumed that the current directory contains the executable.
       /// @remarks When xtd::diagnostics::process_start_info::use_shell_execute is `false`, the xtd::diagnostics::process_start_info::working_directory property is not used to find the executable. Instead, it is used only by the process that is started and has meaning only within the context of the new process. When xtd::diagnostics::process_start_info::use_shell_execute is `false`, the xtd::diagnostics::process_start_info::file_name property can be either a fully qualified path to the executable, or a simple executable name that the system will attempt to find within folders specified by the PATH environment variable.
       bool use_shell_execute() const noexcept;
@@ -798,7 +798,7 @@ namespace xtd {
       /// @remarks Setting this property to `false` enables you to redirect input, output, and error streams.
       /// @note xtd::diagnostics::process_start_info::use_shell_execute must be `false` if the xtd::diagnostics::process_start_info::user_name property is not an empty string, or an xtd::invalid_operation_exception will be thrown when the xtd::diagnostics::process::start(process_start_info) method is called.
       /// @remarks When you use the operating system shell to start processes, you can start any document (which is any registered file type associated with an executable that has a default open action) and perform operations on the file, such as printing, by using the Process object. When xtd::diagnostics::process_start_info::use_shell_execute is `false`, you can start only executables by using the xtd::diagnostics::process object.
-      /// @note xtd::diagnostics::process_start_info::use_shell_execute must be true if you set the xtd::diagnostics::process_start_info::error_dialog property to true.
+      /// @note xtd::diagnostics::process_start_info::use_shell_execute must be `true` if you set the xtd::diagnostics::process_start_info::error_dialog property to true.
       /// @remarks The xtd::diagnostics::process_start_info::working_directory property behaves differently depending on the value of the xtd::diagnostics::process_start_info::use_shell_execute property. When xtd::diagnostics::process_start_info::use_shell_execute is true, the xtd::diagnostics::process_start_info::working_directory property specifies the location of the executable. If working_directory is an empty string, it is assumed that the current directory contains the executable.
       /// @remarks When xtd::diagnostics::process_start_info::use_shell_execute is `false`, the xtd::diagnostics::process_start_info::working_directory property is not used to find the executable. Instead, it is used only by the process that is started and has meaning only within the context of the new process. When xtd::diagnostics::process_start_info::use_shell_execute is `false`, the xtd::diagnostics::process_start_info::file_name property can be either a fully qualified path to the executable, or a simple executable name that the system will attempt to find within folders specified by the PATH environment variable.
       process_start_info& use_shell_execute(bool value) noexcept;
@@ -836,7 +836,7 @@ namespace xtd {
       /// @par Important
       /// The xtd::diagnostics::process_start_info::working_directory property must be set if xtd::diagnostics::process_start_info::user_name and xtd::diagnostics::process_start_info::password are provided. If the property is not set, the default working directory is %SYSTEMROOT%\system32.
       /// @remarks If the directory is already part of the system path variable, you do not have to repeat the directory's location in this property.
-      /// @remarks The xtd::diagnostics::process_start_info::working_directory property behaves differently when xtd::diagnostics::process_start_info::use_shell_execute is true than when xtd::diagnostics::process_start_info::use_shell_execute is `false`. When xtd::diagnostics::process_start_info::use_shell_execute is true, the xtd::diagnostics::process_start_info::working_directory property specifies the location of the executable. If xtd::diagnostics::process_start_info::working_directory is an empty string, the current directory is understood to contain the executable.
+      /// @remarks The xtd::diagnostics::process_start_info::working_directory property behaves differently when xtd::diagnostics::process_start_info::use_shell_execute is `true` than when xtd::diagnostics::process_start_info::use_shell_execute is `false`. When xtd::diagnostics::process_start_info::use_shell_execute is true, the xtd::diagnostics::process_start_info::working_directory property specifies the location of the executable. If xtd::diagnostics::process_start_info::working_directory is an empty string, the current directory is understood to contain the executable.
       /// @note When xtd::diagnostics::process_start_info::use_shell_execute is true, the working directory of the application that starts the executable is also the working directory of the executable.
       /// @remarks When xtd::diagnostics::process_start_info::use_shell_execute is `false`, the xtd::diagnostics::process_start_info::working_directory property is not used to find the executable. Instead, its value applies to the process that is started and only has meaning within the context of the new process.
       const xtd::string& working_directory() const noexcept;
@@ -846,7 +846,7 @@ namespace xtd {
       /// @par Important
       /// The xtd::diagnostics::process_start_info::working_directory property must be set if xtd::diagnostics::process_start_info::user_name and xtd::diagnostics::process_start_info::password are provided. If the property is not set, the default working directory is %SYSTEMROOT%\system32.
       /// @remarks If the directory is already part of the system path variable, you do not have to repeat the directory's location in this property.
-      /// @remarks The xtd::diagnostics::process_start_info::working_directory property behaves differently when xtd::diagnostics::process_start_info::use_shell_execute is true than when xtd::diagnostics::process_start_info::use_shell_execute is `false`. When xtd::diagnostics::process_start_info::use_shell_execute is true, the xtd::diagnostics::process_start_info::working_directory property specifies the location of the executable. If xtd::diagnostics::process_start_info::working_directory is an empty string, the current directory is understood to contain the executable.
+      /// @remarks The xtd::diagnostics::process_start_info::working_directory property behaves differently when xtd::diagnostics::process_start_info::use_shell_execute is `true` than when xtd::diagnostics::process_start_info::use_shell_execute is `false`. When xtd::diagnostics::process_start_info::use_shell_execute is true, the xtd::diagnostics::process_start_info::working_directory property specifies the location of the executable. If xtd::diagnostics::process_start_info::working_directory is an empty string, the current directory is understood to contain the executable.
       /// @note When xtd::diagnostics::process_start_info::use_shell_execute is true, the working directory of the application that starts the executable is also the working directory of the executable.
       /// @remarks When xtd::diagnostics::process_start_info::use_shell_execute is `false`, the xtd::diagnostics::process_start_info::working_directory property is not used to find the executable. Instead, its value applies to the process that is started and only has meaning within the context of the new process.
       process_start_info& working_directory(const xtd::string& value) noexcept;

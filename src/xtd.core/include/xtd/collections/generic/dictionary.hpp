@@ -1072,7 +1072,7 @@ namespace xtd {
         
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param value The element value to insert.
-        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place.
+        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to `true` if and only if the insertion took place.
         /// @remarks Inserts `value`.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
@@ -1083,7 +1083,7 @@ namespace xtd {
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param value The element value to insert.
-        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place.
+        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to `true` if and only if the insertion took place.
         /// @remarks Inserts `value`.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated. If the insertion is successful, pointers and references to the element obtained while it is held in the node handle are invalidated, and pointers and references obtained to that element before it was extracted become valid.
@@ -1094,7 +1094,7 @@ namespace xtd {
         }
         /// @brief Inserts element(s) into the container, if the container doesn't already contain an element with an equivalent key.
         /// @param value The element value to insert.
-        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place.
+        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to `true` if and only if the insertion took place.
         /// @remarks Inserts `value`.
         /// @remarks Is equivalent to `emplace(std::forward<P>(value))` and only participates in overload resolution if `std::is_constructible<value_type, P&&>::value == true`.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
@@ -1202,7 +1202,7 @@ namespace xtd {
         /// @brief Inserts an element or assigns to the current element if the key already exists.
         /// @param k The key used both to look up and to insert if not found.
         /// @param obj The value to insert or assign.
-        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place.
+        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to `true` if and only if the insertion took place.
         /// @remarks If a key equivalent to `k` already exists in the container, assigns `std::forward<type_t>(obj)` to the xtd::collections::generic::dictionary::mapped_type corresponding to the key `k`. If the key does not exist, inserts the new value as if by xtd::collections::generic::dictionary::insert, constructing it from `value_type(k, std::forward<type_t>(obj))`.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
@@ -1215,7 +1215,7 @@ namespace xtd {
         /// @brief Inserts an element or assigns to the current element if the key already exists.
         /// @param k The key used both to look up and to insert if not found.
         /// @param obj The value to insert or assign.
-        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place.
+        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to `true` if and only if the insertion took place.
         /// @remarks If a key equivalent to `k` already exists in the container, assigns `std::forward<type_t>(obj)` to the xtd::collections::generic::dictionary::mapped_type corresponding to the key `k`. If the key does not exist, inserts the new value as if by xtd::collections::generic::dictionary::insert, constructing it from `value_type(k, std::forward<type_t>(obj))`.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
@@ -1402,7 +1402,7 @@ namespace xtd {
         /// @brief Inserts in-place if the key does not exist, does nothing if the key exists.
         /// @param k The key used both to look up and to insert if not found.
         /// @param args The arguments to forward to the constructor of the element.
-        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place.
+        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to `true` if and only if the insertion took place.
         /// @remarks If value_type is not [EmplaceConstructible](https://en.cppreference.com/w/cpp/named_req/EmplaceConstructible) into unordered_map from the corresponding expression, the behavior is undefined.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.
@@ -1415,7 +1415,7 @@ namespace xtd {
         /// @brief Inserts in-place if the key does not exist, does nothing if the key exists.
         /// @param k The key used both to look up and to insert if not found.
         /// @param args The arguments to forward to the constructor of the element.
-        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to true if and only if the insertion took place.
+        /// @return A pair consisting of an iterator to the inserted element (or to the element that prevented the insertion) and a bool value set to `true` if and only if the insertion took place.
         /// @remarks If value_type is not [EmplaceConstructible](https://en.cppreference.com/w/cpp/named_req/EmplaceConstructible) into unordered_map from the corresponding expression, the behavior is undefined.
         /// @remarks If after the operation the new number of elements is greater than old xtd::collections::generic::dictionary::max_load_factor * xtd::collections::generic::dictionary::bucket_count a rehashing takes place.
         /// @remarks If rehashing occurs (due to the insertion), all iterators are invalidated. Otherwise (no rehashing), iterators are not invalidated.

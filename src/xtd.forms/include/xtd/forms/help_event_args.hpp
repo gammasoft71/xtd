@@ -43,11 +43,11 @@ namespace xtd {
       /// @{
       /// @brief Gets a value indicating whether the help event was handled.
       /// @return `true` if the event is handled; otherwise, `false`. The default is `false`.
-      /// @remarks If you do not set this property to true the event will be passed to Windows for additional processing.
+      /// @remarks If you do not set this property to `true` the event will be passed to Windows for additional processing.
       bool handled() const noexcept {return handled_;}
       /// @brief Sets a value indicating whether the help event was handled.
-      /// @param handled true if the event is handled; otherwise, `false`. The default is `false`.
-      /// @remarks If you do not set this property to true the event will be passed to Windows for additional processing.
+      /// @param handled `true` if the event is handled; otherwise, `false`. The default is `false`.
+      /// @remarks If you do not set this property to `true` the event will be passed to Windows for additional processing.
       void handled(bool handled) {handled_ = handled;}
       
       /// @brief Gets the screen coordinates of the mouse pointer.

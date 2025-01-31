@@ -1318,7 +1318,7 @@ namespace xtd {
       void remove() const override;
       
       /// @brief Deletes this instance of a DirectoryInfo, specifying whether to delete subdirectories and files.
-      /// @param recursive true to delete this directory, its subdirectories, and all files; otherwise, `false`.
+      /// @param recursive `true` to delete this directory, its subdirectories, and all files; otherwise, `false`.
       /// @exception xtd::unauthorized_access_exception The directory contains a read-only file.
       /// @exception xtd::io::directory_not_found_exception The directory described by this xtd::io::directory_info object does not exist or could not be found.
       /// @exception xtd::io::io_exception The directory is not empty.<br>-or-<br>The directory is the application's current working directory.<br>-or-<br>There is an open handle on the directory.
@@ -1347,7 +1347,7 @@ namespace xtd {
       ///     // Process that directory as required.
       ///     // ...
       ///
-      ///     // Delete the subdirectory. The true indicates that if subdirectories
+      ///     // Delete the subdirectory. The `true` indicates that if subdirectories
       ///     // or files are in this directory, they are to be deleted as well.
       ///     dis.remove(true);
       ///

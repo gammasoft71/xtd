@@ -71,12 +71,12 @@ namespace xtd {
       /// @brief Gets whether xtd::diagnostics::debug::flush should be called on the xtd::diagnostics::debug::Listeners after every write.
       /// @return `true` if xtd::diagnostics::debug::flush is called on the xtd::diagnostics::debug::listeners after every write; otherwise, `false`.
       /// @remarks The default is `false`.
-      /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call xtd::diagnostics::debug::flush or xtd::diagnostics::debug::close. Setting xtd::diagnostics::debug::auto_flush to true means that data will be flushed from the buffer to the stream.
+      /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call xtd::diagnostics::debug::flush or xtd::diagnostics::debug::close. Setting xtd::diagnostics::debug::auto_flush to `true` means that data will be flushed from the buffer to the stream.
       static bool auto_flush() noexcept;
       /// @brief Sets whether xtd::diagnostics::debug::flush should be called on the xtd::diagnostics::debug::Listeners after every write.
-      /// @param auto_flush true if xtd::diagnostics::debug::flush is called on the xtd::diagnostics::debug::listeners after every write; otherwise, `false`.
+      /// @param auto_flush `true` if xtd::diagnostics::debug::flush is called on the xtd::diagnostics::debug::listeners after every write; otherwise, `false`.
       /// @remarks The default is `false`.
-      /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call xtd::diagnostics::debug::flush or xtd::diagnostics::debug::close. Setting xtd::diagnostics::debug::auto_flush to true means that data will be flushed from the buffer to the stream.
+      /// @remarks Flushing the stream will not flush its underlying encoder unless you explicitly call xtd::diagnostics::debug::flush or xtd::diagnostics::debug::close. Setting xtd::diagnostics::debug::auto_flush to `true` means that data will be flushed from the buffer to the stream.
       static void auto_flush(bool auto_flush) noexcept;
       
       /// @brief Gets the indent level.
@@ -116,7 +116,7 @@ namespace xtd {
       [[deprecated("Replaced by xtd::diagnostics::default_trace_listener::assert_ui_enabled - Will be removed in version 0.4.0.")]]
       static bool show_assert_dialog() noexcept;
       /// @brief Sets a value indicating whether the assert dialog should be show.
-      /// @param show_assert_dialog true if assert dialog is to be shown; otherwise, `false`. The default is true.
+      /// @param show_assert_dialog `true` if assert dialog is to be shown; otherwise, `false`. The default is true.
       /// @remarks The show assert dialog is used when xtd::diagnostics::debug::cassert or xtd::diagnostics::trace::cassert or assert_ is called to ask user to ignore, continue or retry the assert.
       /// @note The xtd::diagnostics::debug::show_assert_dialog boolean is shared by both the xtd::diagnostics::debug and the xtd::diagnostics::trace classes; updating the boolean to either class modify the show assert dialog to both.
       /// @deprecated Replaced by xtd::diagnostics::default_trace_listener::assert_ui_enabled - Will be removed in version 0.4.0.
@@ -128,7 +128,7 @@ namespace xtd {
       /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of xtd::diagnostics::debug::use_global_lock. The IsThreadSafe property is used to determine if the listener is thread safe. The global lock is not used only if the value of UseGlobalLock is `false` and the value of IsThreadSafe is `true`. The default behavior is to use the global lock.
       static bool use_global_lock() noexcept;
       /// @brief Sets a value indicating whether the global lock should be used.
-      /// @param use_global_lock true if the global lock is to be used; otherwise, `false`. The default is true.
+      /// @param use_global_lock `true` if the global lock is to be used; otherwise, `false`. The default is true.
       /// @remarks The global lock is always used if the trace listener is not thread safe, regardless of the value of UseGlobalLock. The xtd::diagnostics::debug::is_thread_safe property is used to determine if the listener is thread safe. The global lock is not used only if the value of xtd::diagnostics::debug::use_global_lock is `false` and the value of xtd::diagnostics::debug::is_thread_safe is `true`. The default behavior is to use the global lock.
       static void use_global_lock(bool use_global_lock) noexcept;
       /// @}
@@ -321,7 +321,7 @@ namespace xtd {
       /// @endcond
       
       /// @brief Writes a message to the trace listeners in the Listeners collection if a condition is true.
-      /// @param condition true to cause a message to be written; otherwise, `false`.
+      /// @param condition `true` to cause a message to be written; otherwise, `false`.
       /// @param message A message to write.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
@@ -332,7 +332,7 @@ namespace xtd {
       }
       template<class object_t>
       /// @brief Writes a message to the trace listeners in the Listeners collection if a condition is true.
-      /// @param condition true to cause a message to be written; otherwise, `false`.
+      /// @param condition `true` to cause a message to be written; otherwise, `false`.
       /// @param message A message to write.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
@@ -342,7 +342,7 @@ namespace xtd {
         #endif
       }
       /// @brief Writes a category name and message to the trace listeners in the Listeners collection if a condition is true.
-      /// @param condition true to cause a message to be written; otherwise, `false`.
+      /// @param condition `true` to cause a message to be written; otherwise, `false`.
       /// @param message A message to write.
       /// @param category A category name used to organize the output.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
@@ -414,7 +414,7 @@ namespace xtd {
       /// @endcond
       
       /// @brief Writes a message followed by a line terminator to the trace listeners in the Listeners collection if a condition is true.
-      /// @param condition true to cause a message to be written; otherwise, `false`.
+      /// @param condition `true` to cause a message to be written; otherwise, `false`.
       /// @param message A message to write.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
@@ -424,7 +424,7 @@ namespace xtd {
         #endif
       }
       /// @brief Writes a message followed by a line terminator to the trace listeners in the Listeners collection if a condition is true.
-      /// @param condition true to cause a message to be written; otherwise, `false`.
+      /// @param condition `true` to cause a message to be written; otherwise, `false`.
       /// @param message A message to write.
       /// @remarks By default, the output is written to an instance of default_trace_listener.
       /// @remarks This method calls the write method of the trace listener.
@@ -435,7 +435,7 @@ namespace xtd {
         #endif
       }
       /// @brief Writes a category name and message followed by a line terminator to the trace listeners in the Listeners collection if a condition is true.
-      /// @param condition true to cause a message to be written; otherwise, `false`.
+      /// @param condition `true` to cause a message to be written; otherwise, `false`.
       /// @param message A message to write.
       /// @param category A category name used to organize the output.
       /// @remarks By default, the output is written to an instance of default_trace_listener.

@@ -60,7 +60,7 @@ namespace xtd {
       
       /// @brief Gets a boolean indictaes if there is repeat tests.
       /// @return `true` is repart test; otherwise `false`.
-      /// @remarks Returns true if xtd::tunit::unit_test::repeat_test_count greater than 0.
+      /// @remarks Returns `true` if xtd::tunit::unit_test::repeat_test_count greater than 0.
       bool repeat_tests() const noexcept;
       
       /// @brief Gets the test cases count.

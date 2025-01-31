@@ -125,7 +125,7 @@ namespace xtd {
       /// @brief Signals one xtd::threading::wait_handle and waits on another.
       /// @param to_signal The xtd::threading::wait_handle to signal.
       /// @param to_wait The xtd::threading::wait_handle to wait on.
-      /// @return bool true if both the signal and the wait complete successfully; if the wait does not complete, the method does not return.
+      /// @return bool `true` if both the signal and the wait complete successfully; if the wait does not complete, the method does not return.
       /// @exception xtd::object_closed_exception the to_signal and/or to_wait are invalid
       /// @exception xtd::invalid_operation_exception to_signal is a semaphore, and it already has a full count.
       /// @exception xtd::threading::abandoned_mutex_exception The wait completed because a thread exited without releasing a mutex.
@@ -135,7 +135,7 @@ namespace xtd {
       /// @param to_signal The xtd::threading::wait_handle to signal.
       /// @param to_wait The xtd::threading::wait_handle to wait on.
       /// @param milliseconds_timeout An integer that represents the interval to wait. If the value is xtd::threading::timeout::infinite, that is, -1, the wait is infinite
-      /// @return bool true if both the signal and the wait complete successfully; if the wait does not complete, the method does not return.
+      /// @return bool `true` if both the signal and the wait complete successfully; if the wait does not complete, the method does not return.
       /// @exception xtd::object_closed_exception the to_signal and/or to_wait are invalid
       /// @exception xtd::invalid_operation_exception to_signal is a semaphore, and it already has a full count.
       /// @exception xtd::threading::abandoned_mutex_exception The wait completed because a thread exited without releasing a mutex.
@@ -145,7 +145,7 @@ namespace xtd {
       /// @param to_signal The wait_handle to signal.
       /// @param to_wait The wait_handle to wait on.
       /// @param timeout A time_span that represents the interval to wait. If the value is -1, the wait is infinite
-      /// @return bool true if both the signal and the wait complete successfully; if the wait does not complete, the method does not return.
+      /// @return bool `true` if both the signal and the wait complete successfully; if the wait does not complete, the method does not return.
       /// @exception xtd::object_closed_exception the to_signal and/or to_wait are invalid
       /// @exception xtd::invalid_operation_exception to_signal is a semaphore, and it already has a full count.
       /// @exception xtd::threading::abandoned_mutex_exception The wait completed because a thread exited without releasing a mutex.

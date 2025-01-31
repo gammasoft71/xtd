@@ -30,7 +30,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core net
       /// @remarks The xtd::net::sockets::network_stream class provides methods for sending and receiving data over std::iostream sockets in blocking mode. You can use the xtd::net::sockets::network_stream class for both synchronous and asynchronous data transfer.
-      /// @remarks To create a xtd::net::sockets::network_stream, you must provide a connected xtd::net::sockets::socket. By default, closing the xtd::net::sockets::network_stream does not close the provided xtd::net::sockets::socket. If you want the xtd::net::sockets::network_stream to have permission to close the provided xtd::net::sockets::socket, you must specify true for the value of the owns_socket parameter.
+      /// @remarks To create a xtd::net::sockets::network_stream, you must provide a connected xtd::net::sockets::socket. By default, closing the xtd::net::sockets::network_stream does not close the provided xtd::net::sockets::socket. If you want the xtd::net::sockets::network_stream to have permission to close the provided xtd::net::sockets::socket, you must specify `true` for the value of the owns_socket parameter.
       /// @remarks Use the std::iostream::write and std::iostream::read methods for simple single thread synchronous blocking I/O.
       /// @remarks The xtd::net::sockets::network_stream does not support random access to the network data stream.
       /// @remarks std::iostream::read and std::iostream::write operations can be performed simultaneously on an instance of the xtd::net::sockets::network_stream class without the need for synchronization. As long as there is one unique thread for the write operations and one unique thread for the read operations, there will be no cross-interference between read and write threads and no synchronization is required.
@@ -49,7 +49,7 @@ namespace xtd {
         
         /// @brief Initializes a new instance of the xtd::net::sockets::network_stream class for the specified xtd::net::sockets::socket with the specified xtd::net::sockets::socket ownership.
         /// @param socket The xtd::net::sockets::socket that the xtd::net::sockets::network_stream will use to send and receive data.
-        /// @param owns_socket Set to true to indicate that the xtd::net::sockets::network_stream will take ownership of the xtd::net::sockets::socket; otherwise, `false`.
+        /// @param owns_socket Set to `true` to indicate that the xtd::net::sockets::network_stream will take ownership of the xtd::net::sockets::socket; otherwise, `false`.
         /// @remarks The xtd::net::sockets::network_stream is created with read/write access to the specified xtd::net::sockets::socket. If the value of owns_socket parameter is true, the xtd::net::sockets::network_stream takes ownership of the underlying xtd::net::sockets::socket, and calling the close method also closes the underlying xtd::net::sockets::socket.
         network_stream(const xtd::net::sockets::socket& socket, bool owns_socket);
 
@@ -60,7 +60,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the network_stream class for the specified xtd::net::sockets::socket with the specified access rights and the specified xtd::net::sockets::socket ownership.
         /// @param socket The xtd::net::sockets::socket that the xtd::net::sockets::network_stream will use to send and receive data.
         /// @param access A bitwise combination of the xtd::io::file_access values that specify the type of access given to the xtd::net::sockets::network_stream over the provided xtd::net::sockets::socket.
-        /// @param owns_socket Set to true to indicate that the xtd::net::sockets::network_stream will take ownership of the xtd::net::sockets::socket; otherwise, `false`.
+        /// @param owns_socket Set to `true` to indicate that the xtd::net::sockets::network_stream will take ownership of the xtd::net::sockets::socket; otherwise, `false`.
         network_stream(const xtd::net::sockets::socket& socket, xtd::io::file_access access, bool owns_socket);
         /// @}
         

@@ -254,7 +254,7 @@ namespace xtd {
         
         /// @brief Sets a value indicating whether this control should redraw its surface using a secondary buffer to reduce or prevent flicker.
         /// @param control Control window handle.
-        /// @param value true if the surface of the control should be drawn using double buffering; otherwise, `false`.
+        /// @param value `true` if the surface of the control should be drawn using double buffering; otherwise, `false`.
         /// @warning Internal use only
         static void double_buffered(intptr control, bool value);
         
@@ -266,7 +266,7 @@ namespace xtd {
         
         /// @brief Sets a value indicating whether the control can respond to user interaction.
         /// @param control Control window handle.
-        /// @param enabled true if the control can respond to user interaction; otherwise, `false`.
+        /// @param enabled `true` if the control can respond to user interaction; otherwise, `false`.
         /// @warning Internal use only
         static void enabled(intptr control, bool enabled);
         
@@ -302,14 +302,14 @@ namespace xtd {
         /// @brief Invalidates the entire surface of the control and causes the control to be redrawn.
         /// @param control Control window handle.
         /// @param rect A xtd::drawing::rectangle that represents the region to invalidate.
-        /// @param invalidate_children true to invalidate the control's child controls; otherwise, `false`.
+        /// @param invalidate_children `true` to invalidate the control's child controls; otherwise, `false`.
         /// @warning Internal use only
         static void invalidate(intptr control, const drawing::rectangle& rec, bool invalidate_children);
         
         /// @brief Invalidates the entire surface of the control and causes the control to be redrawn.
         /// @param control Control window handle.
         /// @param region A xtd::drawing::region that represents the region to invalidate.
-        /// @param invalidate_children true to invalidate the control's child controls; otherwise, `false`.
+        /// @param invalidate_children `true` to invalidate the control's child controls; otherwise, `false`.
         /// @warning Internal use only
         static void invalidate(intptr control, const drawing::region& region, bool invalidate_children);
         
@@ -454,7 +454,7 @@ namespace xtd {
         static bool visible(intptr control);
         /// @brief Sets a value indicating whether the control and all its child controls are displayed.
         /// @param control Control window handle.
-        /// @param visible true if the control and all its child controls are displayed; otherwise, `false`.
+        /// @param visible `true` if the control and all its child controls are displayed; otherwise, `false`.
         /// @warning Internal use only
         static void visible(intptr control, bool visible);
         

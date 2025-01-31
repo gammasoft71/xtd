@@ -57,7 +57,7 @@ namespace xtd {
       explicit bitmap(const xtd::string& filename);
       /// @brief Initializes a new instance of the bitmap class from the specified file.
       /// @param filename The bitmap file name and path.
-      /// @param use_icm true to use color correction for this xtd::drawing::bitmap; otherwise, `false`.
+      /// @param use_icm `true` to use color correction for this xtd::drawing::bitmap; otherwise, `false`.
       /// @remarks The file name and path can be relative to the application or an absolute path. Use this constructor to open images with the following file formats: BMP, GIF, EXIF, JPG, PNG and TIFF. For more information about supported formats, see Types of Bitmaps. The file remains locked until the xtd::drawing::bitmap is disposed.
       explicit bitmap(const xtd::string& filename, bool use_icm);
       /// @brief Initializes a new instance of the bitmap class from the specified data stream.
@@ -66,7 +66,7 @@ namespace xtd {
       explicit bitmap(std::istream& stream);
       /// @brief Initializes a new instance of the bitmap class from the specified data stream.
       /// @param stream The data stream used to load the image.
-      /// @param use_icm true to use color correction for this xtd::drawing::bitmap; otherwise, `false`.
+      /// @param use_icm `true` to use color correction for this xtd::drawing::bitmap; otherwise, `false`.
       /// @remarks You must keep the stream open for the lifetime of the xtd::drawing::bitmap.
       /// @remarks Due to a limitation of the GDI+ decoder, an xtd::argument_exception is thrown if you construct a bitmap from a .png image file with a single dimension greater than 65,535 pixels.
       explicit bitmap(std::istream& stream, bool use_icm);

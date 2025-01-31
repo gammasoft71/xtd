@@ -82,13 +82,13 @@ namespace xtd {
       
       /// @brief Releases the lock.
       /// @exception xtd::threading::synchronization_lock_exception Thread ownership tracking is enabled, and the current thread is not the owner of this lock.
-      /// @remarks The default overload of Exit provides the same behavior as if calling Exit using true as the argument.
+      /// @remarks The default overload of Exit provides the same behavior as if calling Exit using `true` as the argument.
       /// @remarks If you call xtd::threading::spin_lock::exit without having first called xtd::threading::spin_lock::enter the internal state of the xtd::threading::spin_lock can become corrupted.
       void exit();
       /// @brief Releases the lock.
       /// @param use_memory_barrier A bool value that indicates whether a memory fence should be issued in order to immediately publish the exit operation to other threads.
       /// @exception xtd::threading::synchronization_lock_exception Thread ownership tracking is enabled, and the current thread is not the owner of this lock.
-      /// @remarks Calling Exit with the use_memory_barrier argument set to true will improve the fairness of the lock at the expense of some performance. The default xtd::threading::spin_lock::exit overload behaves as if specifying true for use_memory_barrier.
+      /// @remarks Calling Exit with the use_memory_barrier argument set to `true` will improve the fairness of the lock at the expense of some performance. The default xtd::threading::spin_lock::exit overload behaves as if specifying `true` for use_memory_barrier.
       /// @remarks If you call xtd::threading::spin_lock::exit without having first called xtd::threading::spin_lock::enter the internal state of the xtd::threading::spin_lock can become corrupted.
       void exit(bool use_memory_barrier);
 

@@ -268,7 +268,7 @@ namespace xtd {
         
         /// @brief Appends the specified xtd::drawing::drawing_2d::graphics_path to this path.
         /// @param adding_path The xtd::drawing::drawing_2d::graphics_path to add.
-        /// @param connect A bool value that specifies whether the first figure in the added path is part of the last figure in this path. A value of true specifies that (if possible) the first figure in the added path is part of the last figure in this path. A value of `false` specifies that the first figure in the added path is separate from the last figure in this path.
+        /// @param connect A bool value that specifies whether the first figure in the added path is part of the last figure in this path. A value of `true` specifies that (if possible) the first figure in the added path is part of the last figure in this path. A value of `false` specifies that the first figure in the added path is separate from the last figure in this path.
         void add_path(const graphics_path& adding_path, bool connect);
         
         /// @brief Adds the outline of a pie shape to this path.
@@ -412,21 +412,21 @@ namespace xtd {
         
         /// @brief Indicates whether the specified point is contained within this xtd::drawing::drawing_2d::graphics_path.
         /// @param point A xtd::drawing::point that represents the point to test.
-        /// @return This method returns true if the specified point is contained within this xtd::drawing::drawing_2d::graphics_path; otherwise, `false`.
+        /// @return This method returns `true` if the specified point is contained within this xtd::drawing::drawing_2d::graphics_path; otherwise, `false`.
         bool is_vsible(const xtd::drawing::point& point) const;
         /// @brief Indicates whether the specified point is contained within this xtd::drawing::drawing_2d::graphics_path.
         /// @param point A xtd::drawing::point_f that represents the point to test.
-        /// @return This method returns true if the specified point is contained within this xtd::drawing::drawing_2d::graphics_path; otherwise, `false`.
+        /// @return This method returns `true` if the specified point is contained within this xtd::drawing::drawing_2d::graphics_path; otherwise, `false`.
         bool is_vsible(const xtd::drawing::point_f& point) const;
         /// @brief Indicates whether the specified point is contained within this xtd::drawing::drawing_2d::graphics_path.
         /// @param x The x-coordinate of the point to test.
         /// @param y The y-coordinate of the point to test.
-        /// @return This method returns true if the specified point is contained within this xtd::drawing::drawing_2d::graphics_path; otherwise, `false`.
+        /// @return This method returns `true` if the specified point is contained within this xtd::drawing::drawing_2d::graphics_path; otherwise, `false`.
         bool is_vsible(int32 x, int32 y) const;
         /// @brief Indicates whether the specified point is contained within this xtd::drawing::drawing_2d::graphics_path.
         /// @param x The x-coordinate of the point to test.
         /// @param y The y-coordinate of the point to test.
-        /// @return This method returns true if the specified point is contained within this xtd::drawing::drawing_2d::graphics_path; otherwise, `false`.
+        /// @return This method returns `true` if the specified point is contained within this xtd::drawing::drawing_2d::graphics_path; otherwise, `false`.
         bool is_vsible(float x, float y) const;
         
         /// @brief Empties the xtd::drawing::drawing_2d::graphics_path::path_points and xtd::drawing::drawing_2d::graphics_path::path_types arrays and sets the xtd::drawing::drawing_2d::graphics_path::fill_mode to xtd::drawing::drawing_2d::fill_mode::alternate.

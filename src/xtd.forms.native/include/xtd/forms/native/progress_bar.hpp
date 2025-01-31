@@ -38,7 +38,7 @@ namespace xtd {
         /// @{
         /// @brief Sets value indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
         /// @param control Control window handle.
-        /// @param marquee true if progress_bar is marquee; otherwise `false`.
+        /// @param marquee `true` if progress_bar is marquee; otherwise `false`.
         /// @param animation_speed The time period, in milliseconds, that it takes the progress block to scroll across the progress bar.
         /// @warning Internal use only
         static void marquee(intptr control, bool marquee, size_t animation_speed);

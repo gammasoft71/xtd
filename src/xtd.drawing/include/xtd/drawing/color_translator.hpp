@@ -95,13 +95,13 @@ namespace xtd {
 
       /// @brief Translates the specified xtd::drawing::color structure to an HSL string color representation.
       /// @param value The xtd::drawing::color structure to translate.
-      /// @param auto_alpha If true and alpha channel is not 100% shows alpha value; otherwise always not show alpha value.
+      /// @param auto_alpha If `true` and alpha channel is not 100% shows alpha value; otherwise always not show alpha value.
       /// @return The string that represents the HSL color.
       /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HSL color (e.g. "hsl(9, 100%, 64%)").
       static xtd::string to_hsl(const xtd::drawing::color& value) noexcept;
       /// @brief Translates the specified xtd::drawing::color structure to an HSL string color representation.
       /// @param value The xtd::drawing::color structure to translate.
-      /// @param auto_hsla If true and alpha channel is not 100% use HSLA; otherwise always use HSL.
+      /// @param auto_hsla If `true` and alpha channel is not 100% use HSLA; otherwise always use HSL.
       /// @return The string that represents the HSL color.
       /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HSL color (e.g. "hsl(9, 100%, 64%)").
       static xtd::string to_hsl(const xtd::drawing::color& value, bool auto_alpha) noexcept;
@@ -119,7 +119,7 @@ namespace xtd {
       static xtd::string to_hsv(const xtd::drawing::color& value) noexcept;
       /// @brief Translates the specified xtd::drawing::color structure to an HSV string color representation.
       /// @param value The xtd::drawing::color structure to translate.
-      /// @param auto_hsva If true and alpha channel is not 100% use HSLA; otherwise always use HSL.
+      /// @param auto_hsva If `true` and alpha channel is not 100% use HSLA; otherwise always use HSL.
       /// @return The string that represents the HSL color.
       /// @remarks This method translates an xtd::drawing::color structure into a string representation of a HSV color (e.g. "hsl(9, 100%, 64%)").
       static xtd::string to_hsv(const xtd::drawing::color& value, bool auto_hsva) noexcept;
@@ -143,7 +143,7 @@ namespace xtd {
       static xtd::string to_rgb(const xtd::drawing::color& value) noexcept;
       /// @brief Translates the specified xtd::drawing::color structure to an RGB string color representation.
       /// @param value The xtd::drawing::color structure to translate.
-      /// @param auto_rgba If true and alpha channel is not 100% use RGB; otherwise always use RGB.
+      /// @param auto_rgba If `true` and alpha channel is not 100% use RGB; otherwise always use RGB.
       /// @return The string that represents the RGB color.
       /// @remarks This method translates an xtd::drawing::color structure into a string representation of a RGB color (e.g."rgb(255, 99, 71)").
       static xtd::string to_rgb(const xtd::drawing::color& value, bool auto_rgba) noexcept;

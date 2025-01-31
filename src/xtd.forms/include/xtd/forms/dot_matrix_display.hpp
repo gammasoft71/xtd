@@ -116,7 +116,7 @@ namespace xtd {
       /// @return `true` if background dots are shown; otherwise `false`.
       virtual bool show_back_dot() const noexcept;
       /// @brief Sets a value indicate if background dots are shown.
-      /// @param value true if background dots are shown; otherwise `false`.
+      /// @param value `true` if background dots are shown; otherwise `false`.
       /// @return Current dot_matrix_display.
       virtual dot_matrix_display& show_back_dot(bool value);
       
@@ -138,12 +138,12 @@ namespace xtd {
       virtual bool get_dot(const drawing::point& point) const noexcept;
       
       /// @brief Sets all dots with specified boolean.
-      /// @param on true to set all dots to on; otherwise `false`.
+      /// @param on `true` to set all dots to on; otherwise `false`.
       virtual void set_all_dots(bool on);
       
       /// @brief Sets specified dot point status.
       /// @param point dot point location in the matrix.
-      /// @param on true if specified dot point is on; otherwise `false`.
+      /// @param on `true` if specified dot point is on; otherwise `false`.
       virtual void set_dot(const drawing::point& point, bool on);
       
       /// @brief Sets specified dots to on.
@@ -151,7 +151,7 @@ namespace xtd {
       virtual void set_dots(const points_collection& points);
       /// @brief Sets specified dots with specified boolean.
       /// @param points Dot points collection tha contains locations in the matrix.
-      /// @param on true to set specified dots points to on; otherwise `false`.
+      /// @param on `true` to set specified dots points to on; otherwise `false`.
       virtual void set_dots(const points_collection& points, bool on);
       /// @}
       
@@ -200,25 +200,25 @@ namespace xtd {
       static dot_matrix_display create(const dots_collection& dots, const drawing::point& location, const drawing::size& size, const xtd::string& name);
       /// @brief A factory to create an xtd::forms::dot_matrix_display with specified dots, and back_dot visibility.
       /// @param dots A dots_collection that represent all dots status.
-      /// @param show_back_dot true if background dots are shown; otherwise `false`.
+      /// @param show_back_dot `true` if background dots are shown; otherwise `false`.
       /// @return New xtd::forms::dot_matrix_display created.
       static dot_matrix_display create(const dots_collection& dots, bool show_back_dot);
       /// @brief A factory to create an xtd::forms::dot_matrix_display with specified dots, back_dot visibility, and location.
       /// @param dots A dots_collection that represent all dots status.
-      /// @param show_back_dot true if background dots are shown; otherwise `false`.
+      /// @param show_back_dot `true` if background dots are shown; otherwise `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::dot_matrix_display.
       /// @return New xtd::forms::dot_matrix_display created.
       static dot_matrix_display create(const dots_collection& dots, bool show_back_dot, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::dot_matrix_display with specified dots, back_dot visibility, location, and size.
       /// @param dots A dots_collection that represent all dots status.
-      /// @param show_back_dot true if background dots are shown; otherwise `false`.
+      /// @param show_back_dot `true` if background dots are shown; otherwise `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::dot_matrix_display.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::dot_matrix_display.
       /// @return New xtd::forms::dot_matrix_display created.
       static dot_matrix_display create(const dots_collection& dots, bool show_back_dot, const drawing::point& location, const drawing::size& size);
       /// @brief A factory to create an xtd::forms::dot_matrix_display with specified dots, back_dot visibility, location, size, and name.
       /// @param dots A dots_collection that represent all dots status.
-      /// @param show_back_dot true if background dots are shown; otherwise `false`.
+      /// @param show_back_dot `true` if background dots are shown; otherwise `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::dot_matrix_display.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::dot_matrix_display.
       /// @param name The name of the xtd::forms::dot_matrix_display.
@@ -275,20 +275,20 @@ namespace xtd {
       /// @brief A factory to create an xtd::forms::dot_matrix_display with specified parent, dots, and back_dot visibility.
       /// @param parent The parent that contains the new created xtd::forms::dot_matrix_display.
       /// @param dots A dots_collection that represent all dots status.
-      /// @param show_back_dot true if background dots are shown; otherwise `false`.
+      /// @param show_back_dot `true` if background dots are shown; otherwise `false`.
       /// @return New xtd::forms::dot_matrix_display created.
       static dot_matrix_display create(const control& parent, const dots_collection& dots, bool show_back_dot);
       /// @brief A factory to create an xtd::forms::dot_matrix_display with specified parent, dots, back_dot visibility, and location.
       /// @param parent The parent that contains the new created xtd::forms::dot_matrix_display.
       /// @param dots A dots_collection that represent all dots status.
-      /// @param show_back_dot true if background dots are shown; otherwise `false`.
+      /// @param show_back_dot `true` if background dots are shown; otherwise `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::dot_matrix_display.
       /// @return New xtd::forms::dot_matrix_display created.
       static dot_matrix_display create(const control& parent, const dots_collection& dots, bool show_back_dot, const drawing::point& location);
       /// @brief A factory to create an xtd::forms::dot_matrix_display with specified parent, dots, back_dot visibility, location, and size.
       /// @param parent The parent that contains the new created xtd::forms::dot_matrix_display.
       /// @param dots A dots_collection that represent all dots status.
-      /// @param show_back_dot true if background dots are shown; otherwise `false`.
+      /// @param show_back_dot `true` if background dots are shown; otherwise `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::dot_matrix_display.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::dot_matrix_display.
       /// @return New xtd::forms::dot_matrix_display created.
@@ -296,7 +296,7 @@ namespace xtd {
       /// @brief A factory to create an xtd::forms::dot_matrix_display with specified parent, dots, back_dot visibility, location, size, and name.
       /// @param parent The parent that contains the new created xtd::forms::dot_matrix_display.
       /// @param dots A dots_collection that represent all dots status.
-      /// @param show_back_dot true if background dots are shown; otherwise `false`.
+      /// @param show_back_dot `true` if background dots are shown; otherwise `false`.
       /// @param location A xtd::drawing::point that represent location of the xtd::forms::dot_matrix_display.
       /// @param size A xtd::drawing::size that represent size of the xtd::forms::dot_matrix_display.
       /// @param name The name of the xtd::forms::dot_matrix_display.

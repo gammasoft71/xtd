@@ -85,7 +85,7 @@ namespace xtd {
       void height(float height) noexcept;
       
       /// @brief Tests whether all numeric properties of this xtd::drawing::rectangle_f have values of zero.
-      /// @return This property returns true if the xtd::drawing::rectangle_f::width, xtd::drawing::rectangle_f::height, xtd::drawing::rectangle_f::x, and xtd::drawing::rectangle_f::y properties of this xtd::drawing::rectangle_f all have values of zero; otherwise, `false`.
+      /// @return This property returns `true` if the xtd::drawing::rectangle_f::width, xtd::drawing::rectangle_f::height, xtd::drawing::rectangle_f::x, and xtd::drawing::rectangle_f::y properties of this xtd::drawing::rectangle_f all have values of zero; otherwise, `false`.
       bool is_empty() const noexcept;
       
       /// @brief Gets the x-coordinate of the left edge of this xtd::drawing::rectangle_f structure.
@@ -157,18 +157,18 @@ namespace xtd {
       
       /// @brief Determines if the specified point is contained within this xtd::drawing::rectangle_f structure.
       /// @param pt The xtd::drawing::point_f to test.
-      /// @return This method returns true if the point represented by pt is contained within this xtd::drawing::rectangle_f structure; otherwise `false`.
+      /// @return This method returns `true` if the point represented by pt is contained within this xtd::drawing::rectangle_f structure; otherwise `false`.
       /// @remarks The containing rectangle must be normalized for this method to return accurate results.
       bool contains(const point_f& pt) const noexcept;
       /// @brief Determines if the rectangular region represented by rect is entirely contained within this xtd::drawing::rectangle_f structure.
       /// @param rect The xtd::drawing::rectangle_f to test.
-      /// @return This method returns true if the rectangular region represented by rect is entirely contained within this xtd::drawing::rectangle_f structure; otherwise `false`.
+      /// @return This method returns `true` if the rectangular region represented by rect is entirely contained within this xtd::drawing::rectangle_f structure; otherwise `false`.
       /// @remarks The containing rectangle must be normalized for this method to return accurate results.
       bool contains(const rectangle_f& rect) const noexcept;
       /// @brief Determines if the specified point is contained within this xtd::drawing::rectangle_f structure.
       /// @param x The x-coordinate of the point to test.
       /// @param y The y-coordinate of the point to test.
-      /// @return This method returns true if the point defined by x and y is contained within this xtd::drawing::rectangle_f structure; otherwise `false`.
+      /// @return This method returns `true` if the point defined by x and y is contained within this xtd::drawing::rectangle_f structure; otherwise `false`.
       /// @remarks The containing rectangle must be normalized for this method to return accurate results.
       bool contains(float x, float y) const noexcept;
       
@@ -188,7 +188,7 @@ namespace xtd {
       
       /// @brief Determines if this rectangle intersects with rect.
       /// @param rect The rectangle to test.
-      /// @return This method returns true if there is any intersection, otherwise `false`.
+      /// @return This method returns `true` if there is any intersection, otherwise `false`.
       bool intersects_with(const rectangle_f& rect) const noexcept;
 
       /// @brief Replaces this xtd::drawing::rectangle_f with the intersection of itself and the specified xtd::drawing::rectangle_f.

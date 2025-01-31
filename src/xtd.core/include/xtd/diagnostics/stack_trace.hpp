@@ -87,7 +87,7 @@ namespace xtd {
       /// @remarks Use this parameterless constructor when you want a complete trace with only summary method information about the call stack.
       stack_trace();
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class from the caller's frame, optionally capturing source information.
-      /// @param need_file_info true to capture the file name, line number, and column number; otherwise, `false`.
+      /// @param need_file_info `true` to capture the file name, line number, and column number; otherwise, `false`.
       /// @par Examples
       /// The following code example displays the first and last function calls in a stack trace.
       /// ```cpp
@@ -153,7 +153,7 @@ namespace xtd {
       stack_trace(const std::exception& exception, size_t skip_frames);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class from the caller's frame, skipping the specified number of frames and optionally capturing source information.
       /// @param skip_frames The number of frames up the stack from which to start the trace.
-      /// @param need_file_info true to capture the file name, line number, and column number; otherwise, `false`.
+      /// @param need_file_info `true` to capture the file name, line number, and column number; otherwise, `false`.
       /// @par Examples
       /// The following code example displays the first and last function calls in a stack trace.
       /// ```cpp
@@ -192,13 +192,13 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class using the provided exception object, skipping the specified number of frames and optionally capturing source information.
       /// @param exception The exception object from which to construct the stack trace.
       /// @param skip_frames The number of frames up the stack from which to start the trace.
-      /// @param need_file_info true to capture the file name, line number, and column number; otherwise, `false`.
+      /// @param need_file_info `true` to capture the file name, line number, and column number; otherwise, `false`.
       /// @remarks The resulting stack trace describes the stack at the time of the exception.
       /// @remarks If the number of frames to skip is greater than or equal to the total number of frames on the call stack at the time the instance is created, the xtd::diagnostics::stack_trace will contain no frames.
       stack_trace(const std::exception& exception, size_t skip_frames, bool need_file_info);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_trace class, using the provided exception object and optionally capturing source information.
       /// @param exception The exception object from which to construct the stack trace.
-      /// @param need_file_info true to capture the file name, line number, and column number; otherwise, `false`.
+      /// @param need_file_info `true` to capture the file name, line number, and column number; otherwise, `false`.
       /// @remarks The resulting stack trace describes the stack at the time of the exception.
       stack_trace(const std::exception& exception, bool need_file_info);
       /// @cond

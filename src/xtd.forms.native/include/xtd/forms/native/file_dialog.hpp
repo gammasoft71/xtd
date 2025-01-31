@@ -52,7 +52,7 @@ namespace xtd {
         /// @param filter_index A value containing the index of the filter currently selected in the file dialog box.
         /// @param initial_directory The initial directory displayed by the file dialog box.
         /// @param options A bitwise file dialog flags value.
-        /// @param support_multi_dotted_extensions true if the dialog box supports multiple file name extensions; otherwise, `false`. The default is `false`.
+        /// @param support_multi_dotted_extensions `true` if the dialog box supports multiple file name extensions; otherwise, `false`. The default is `false`.
         /// @param title The file dialog box title.
         /// @return `true` if the user clicks OK in the dialog box; otherwise, `false`.
         /// @remarks If result is true, the file_name parameter contains the new chosen file name and if option contains OFN_ALLOWMULTISELECT flags, the file_names parameter contains the new chosen file names.
@@ -68,7 +68,7 @@ namespace xtd {
         /// @param filter_index A value containing the index of the filter currently selected in the file dialog box.
         /// @param initial_directory The initial directory displayed by the file dialog box.
         /// @param options A bitwise file dialog flags value.
-        /// @param support_multi_dotted_extensions true if the dialog box supports multiple file name extensions; otherwise, `false`. The default is `false`.
+        /// @param support_multi_dotted_extensions `true` if the dialog box supports multiple file name extensions; otherwise, `false`. The default is `false`.
         /// @param title The file dialog box title.
         /// @return `true` if the user clicks OK in the dialog box; otherwise, `false`.
         /// @remarks When dialog closed and if result is true, the file_name parameter contains the new chosen file name and if option contains OFN_ALLOWMULTISELECT flags, the file_names parameter contains the new chosen file names.
@@ -83,7 +83,7 @@ namespace xtd {
         /// @param filter_index A value containing the index of the filter currently selected in the file dialog box.
         /// @param initial_directory The initial directory displayed by the file dialog box.
         /// @param options A bitwise file dialog flags value.
-        /// @param support_multi_dotted_extensions true if the dialog box supports multiple file name extensions; otherwise, `false`. The default is `false`.
+        /// @param support_multi_dotted_extensions `true` if the dialog box supports multiple file name extensions; otherwise, `false`. The default is `false`.
         /// @param title The file dialog box title.
         /// @return `true` if the user clicks OK in the dialog box; otherwise, `false`.
         /// @remarks If result is true, the file_name parameter contains the new chosen file name and if option contains OFN_ALLOWMULTISELECT flags, the file_names parameter contains the new chosen file names.
@@ -99,7 +99,7 @@ namespace xtd {
         /// @param filter_index A value containing the index of the filter currently selected in the file dialog box.
         /// @param initial_directory The initial directory displayed by the file dialog box.
         /// @param options A bitwise file dialog flags value.
-        /// @param support_multi_dotted_extensions true if the dialog box supports multiple file name extensions; otherwise, `false`. The default is `false`.
+        /// @param support_multi_dotted_extensions `true` if the dialog box supports multiple file name extensions; otherwise, `false`. The default is `false`.
         /// @param title The file dialog box title.
         /// @return `true` if the user clicks OK in the dialog box; otherwise, `false`.
         /// @remarks When dialog closed and if result is true, the file_name parameter contains the new chosen file name and if option contains OFN_ALLOWMULTISELECT flags, the file_names parameter contains the new chosen file names.

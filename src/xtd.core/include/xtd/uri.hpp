@@ -81,7 +81,7 @@ namespace xtd {
   /// ```
   /// These implicit file paths are not compliant with the URI specification and so should be avoided when possible. When using Unix-based systems, implicit file paths can be especially problematic, because an absolute implicit file path is indistinguishable from a relative path. When such ambiguity is present, xtd::uri default to interpreting the path as an absolute URI.
   /// @par Security Considerations
-  /// Because of security concerns, your application should use caution when accepting xtd::uri instances from untrusted sources and with dont_escape set to true in the constructor. You can check a URI string for validity by calling the xtd::uri::is_well_formed_original_string method.
+  /// Because of security concerns, your application should use caution when accepting xtd::uri instances from untrusted sources and with dont_escape set to `true` in the constructor. You can check a URI string for validity by calling the xtd::uri::is_well_formed_original_string method.
   /// <br><br>When dealing with untrusted user input, confirm assumptions about the newly created xtd::uri instance before trusting its properties. This can be done in the following way:
   /// ```cpp
   /// string user_input = ...;
@@ -382,31 +382,31 @@ namespace xtd {
     xtd::string idn_host() const;
     
     /// @brief Gets whether the xtd::uri instance is absolute.
-    /// @return bool A bool value that is true if the xtd::uri instance is absolute; otherwise, `false`.
-    /// @remarks This property is true if the string or xtd::uri instance that was passed into the constructor can be parsed as an absolute xtd::uri instance, which contains a scheme, an authority, and a path. Otherwise, the xtd::uri instance is treated as relative and might omit the scheme or other URI components.
+    /// @return bool A bool value that is `true` if the xtd::uri instance is absolute; otherwise, `false`.
+    /// @remarks This property is `true` if the string or xtd::uri instance that was passed into the constructor can be parsed as an absolute xtd::uri instance, which contains a scheme, an authority, and a path. Otherwise, the xtd::uri instance is treated as relative and might omit the scheme or other URI components.
     bool is_absolute_uri() const;
     
     /// @brief Gets whether the port value of the URI is the default for this scheme.
-    /// @return bool A bool value that is true if the value in the port property is the default port for this scheme; otherwise, `false`.
+    /// @return bool A bool value that is `true` if the value in the port property is the default port for this scheme; otherwise, `false`.
     /// @exception xtd::invalid_operation_exception This instance represents a relative URI, and this property is valid only for absolute URIs.
     bool is_default_port() const;
     
     /// @brief Gets a value indicating whether the specified xtd::uri is a file URI.
-    /// @return bool A bool value that is true if the xtd::uri is a file URI; otherwise, `false`.
+    /// @return bool A bool value that is `true` if the xtd::uri is a file URI; otherwise, `false`.
     /// @exception xtd::invalid_operation_exception This instance represents a relative URI, and this property is valid only for absolute URIs.
-    /// @remarks The is_file property is true when the scheme property equals uri_scheme_file.
+    /// @remarks The is_file property is `true` when the scheme property equals uri_scheme_file.
     bool is_file() const;
     
     /// @brief Gets whether the specified xtd::uri references the local host.
-    /// @return bool A bool value that is true if this xtd::uri references the local host; otherwise, `false`.
+    /// @return bool A bool value that is `true` if this xtd::uri references the local host; otherwise, `false`.
     /// @exception xtd::invalid_operation_exception This instance represents a relative URI, and this property is valid only for absolute URIs.
-    /// @remarks is_loopback returns true if the URI specified when this instance was created was 127.0.0.1, loopback, or localhost, or if the URI did not specify host information (for example, file:///c:Dir/file.txt). All other URIs return `false`.
+    /// @remarks is_loopback returns `true` if the URI specified when this instance was created was 127.0.0.1, loopback, or localhost, or if the URI did not specify host information (for example, file:///c:Dir/file.txt). All other URIs return `false`.
     bool is_loopback() const;
     
     /// @brief Gets whether the specified xtd::uri is a universal naming convention (UNC) path.
-    /// @return bool A bool value that is true if the xtd::uri is a UNC path; otherwise, `false`.
+    /// @return bool A bool value that is `true` if the xtd::uri is a UNC path; otherwise, `false`.
     /// @exception xtd::invalid_operation_exception This instance represents a relative URI, and this property is valid only for absolute URIs.
-    /// @remarks The is_unc property is true if the specified xtd::uri instance is a UNC path (such as \\server\folder or file://server/folder). This property always returns true if the URI has the file:// scheme and specifies a host component.
+    /// @remarks The is_unc property is `true` if the specified xtd::uri instance is a UNC path (such as \\server\folder or file://server/folder). This property always returns `true` if the URI has the file:// scheme and specifies a host component.
     bool is_unc() const;
     
     /// @brief Gets the original URI string that was passed to the xtd::uri constructor.
@@ -539,7 +539,7 @@ namespace xtd {
     
     /// @brief Determines whether the current xtd::uri instance is a base of the specified xtd::uri instance.
     /// @param uri The specified xtd::uri instance to test.
-    /// @return bool true if the current xtd::uri instance is a base of uri; otherwise, `false`.
+    /// @return bool `true` if the current xtd::uri instance is a base of uri; otherwise, `false`.
     /// @exception ArgumentNullException uri is null.
     /// @remarks IsBaseOf is used to compare the current xtd::uri instance to a specified xtd::uri to determine whether this URI is a base for the specified xtd::uri. When comparing two xtd::uri objects to determine a base relationship, the user information (user_info) is not evaluated. When comparing two URIs (uri1 and uri2), uri1 is the base of uri2 if, when you ignore everything in uri2 after the last slash (/), the two URIs are identical. Using http://host/path/path/file?query as the base URI, the following table shows whether it is a base for other URIs.
     /// | URI                                   | http://host/path/path/file?query is base of |
@@ -559,7 +559,7 @@ namespace xtd {
     bool is_base_of(const xtd::uri& uri) const;
     
     /// @brief Indicates whether the string used to construct this xtd::uri was well-formed and is not required to be further escaped.
-    /// @return bool A bool value that is true if the string was well-formed; else `false`.
+    /// @return bool A bool value that is `true` if the string was well-formed; else `false`.
     /// @remarks The string is considered to be well-formed in accordance with RFC 2396 and RFC 2732 by default. If International Resource Identifiers (IRIs) or Internationalized Domain Name (IDN) parsing is enabled, the string is considered to be well-formed in accordance with RFC 3986 and RFC 3987
     /// @remarks The string is considered poorly formed, causing the method to return `false`, if any of the following conditions occur.
     /// | Error                                                                                      | Example                                       |
@@ -589,7 +589,7 @@ namespace xtd {
     /// @{
     /// @brief Determines whether the specified scheme name is valid.
     /// @param scheme The scheme name to validate.
-    /// @return bool A bool value that is true if the scheme name is valid; otherwise, `false`.
+    /// @return bool A bool value that is `true` if the scheme name is valid; otherwise, `false`.
     /// @remarks This method checks the scheme name for validity according to RFC 2396 by default. If International Resource Identifiers (IRIs) or Internationalized Domain Name (IDN) parsing is enabled, this method checks the scheme name for validity according to RFC 3986. The scheme name must begin with a letter and must contain only letters, digits, and the characters ".", "+", or "-".
     /// @remarks For more information on URI support, see the Remarks section for the xtd::uri class.
     static bool check_scheme_name(const xtd::string& scheme);
@@ -639,21 +639,21 @@ namespace xtd {
     
     /// @brief  Determines whether a specified character is a valid hexadecimal digit.
     /// @param character The character to validate.
-    /// @return bool A bool value that is true if the character is a valid hexadecimal digit; otherwise `false`.
+    /// @return bool A bool value that is `true` if the character is a valid hexadecimal digit; otherwise `false`.
     /// @remarks Hexadecimal digits are the digits 0 to 9 and the letters A-F or a-f.
     static bool is_hex_digit(char character);
     
     /// @brief Determines whether a character in a string is hexadecimal encoded.
     /// @param pattern The string to check.
     /// @param index The location in pattern to check for hexadecimal encoding.
-    /// @return bool A bool value that is true if pattern is hexadecimal encoded at the specified location; otherwise, `false`.
+    /// @return bool A bool value that is `true` if pattern is hexadecimal encoded at the specified location; otherwise, `false`.
     /// @remarks The is_hex_encoding method checks for hexadecimal encoding that follows the pattern "%hexhex" in a string, where "hex" is a digit from 0 to 9 or a letter from A-F (case-insensitive).
     static bool is_hex_encoding(const xtd::string& pattern, size_t index);
     
     /// @brief Indicates whether the string is well-formed by attempting to construct a URI with the string and ensures that the string does not require further escaping.
     /// @param uri_string The string used to attempt to construct a xtd::uri.
     /// @param uri_kind The type of the xtd::uri in uri_string.
-    /// @return bool A bool value that is true if the string was well-formed; else `false`.
+    /// @return bool A bool value that is `true` if the string was well-formed; else `false`.
     /// @remarks By default, the string is considered well-formed in accordance with RFC 2396 and RFC 2732. If International Resource Identifiers (IRIs) or Internationalized Domain Name (IDN) parsing is enabled, the string is considered well-formed in accordance with RFC 3986 and RFC 3987.
     /// @remarks The string is considered poorly formed, causing the method to return `false`, if any of the following conditions occur
     /// | Error                                                                                      | Example                                       |

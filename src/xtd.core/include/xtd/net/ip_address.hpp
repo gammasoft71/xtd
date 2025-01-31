@@ -110,15 +110,15 @@ namespace xtd {
       bool is_ip_v4_mapped_to_ip_v6() const noexcept;
       
       /// @brief Gets whether the address is an IPv6 link local address.
-      /// @return bool true if the IP address is an IPv6 link local address; otherwise, `false`.
+      /// @return bool `true` if the IP address is an IPv6 link local address; otherwise, `false`.
       bool is_ip_v6_link_local() const noexcept;
       
       /// @brief Gets whether the address is an IPv6 multicast global address.
-      /// @return bool true if the IP address is an IPv6 multicast global address; otherwise, `false`.
+      /// @return bool `true` if the IP address is an IPv6 multicast global address; otherwise, `false`.
       bool is_ip_v6_multicast() const noexcept;
       
       /// @brief Gets whether the address is an IPv6 site local address.
-      /// @return bool true if the IP address is an IPv6 site local address; otherwise, `false`.
+      /// @return bool `true` if the IP address is an IPv6 site local address; otherwise, `false`.
       bool is_ip_v6_site_local() const noexcept;
       
       /// @brief Gets whether the address is an IPv6 Teredo address.
@@ -222,7 +222,7 @@ namespace xtd {
       
       /// @brief Indicates whether the specified IP address is the loopback address.
       /// @param address An IP address.
-      /// @return bool true if address is the loopback address; otherwise, `false`.
+      /// @return bool `true` if address is the loopback address; otherwise, `false`.
       static bool is_loopback(const ip_address& address);
       
       /// @brief Converts a Double value from network byte order to host byte order.
@@ -292,7 +292,7 @@ namespace xtd {
       /// @brief Determines whether a string is a valid IP address.
       /// @param str The string to validate.
       /// @param address The xtd::net::ip_address version of the string.
-      /// @return bool true if str is a valid IP address; otherwise, `false`.
+      /// @return bool `true` if str is a valid IP address; otherwise, `false`.
       static bool try_parse(const string& str, ip_address& address) noexcept;
       /// @}
 

@@ -54,7 +54,7 @@ namespace xtd {
         /// @{
         bool auto_ellipsis() const noexcept override;
         /// @brief Sets a value indicating whether the ellipsis character (...) appears at the right edge of the control, denoting that the control text extends beyond the specified length of the control.
-        /// @param value true if the additional control text is to be indicated by an ellipsis; otherwise, `false`.
+        /// @param value `true` if the additional control text is to be indicated by an ellipsis; otherwise, `false`.
         /// @return This current instance.
         control& auto_ellipsis(bool value) noexcept;
         

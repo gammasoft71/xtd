@@ -114,7 +114,7 @@ namespace xtd {
     const std::vector<function_t>& functions() const {return data_->functions;}
     
     /// @brief Return if the delegate is empty.
-    /// @return bool Return true if delegate is empty; otherwise `false`.
+    /// @return bool Return `true` if delegate is empty; otherwise `false`.
     bool is_empty() const noexcept {return data_->functions.size() == 0;}
     
     /// @brief Return the size of invocation list.
@@ -168,7 +168,7 @@ namespace xtd {
     using object::equals;
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
     /// @param value The delegateType to compare.
-    /// @return bool true if the value of this instance is the same as the value of value; otherwise, `false`.
+    /// @return bool `true` if the value of this instance is the same as the value of value; otherwise, `false`.
     bool equals(const delegate& delegate) const noexcept override {
       if (data_->functions.size() != delegate.data_->functions.size())
         return false;
@@ -546,7 +546,7 @@ namespace xtd {
     const std::vector<function_t>& functions() const {return data_->functions;}
     
     /// @brief Return if the delegate is empty.
-    /// @return bool Return true if delegate is empty; otherwise `false`.
+    /// @return bool Return `true` if delegate is empty; otherwise `false`.
     bool is_empty() const noexcept {return data_->functions.size() == 0 && data_->no_arguments_functions.size() == 0;}
     
     /// @brief Return the size of invocation list.
@@ -600,7 +600,7 @@ namespace xtd {
     using object::equals;
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
     /// @param value The delegateType to compare.
-    /// @return bool true if the value of this instance is the same as the value of value; otherwise, `false`.
+    /// @return bool `true` if the value of this instance is the same as the value of value; otherwise, `false`.
     bool equals(const delegate& delegate) const noexcept override {
       if (data_->functions.size() != delegate.data_->functions.size() || data_->no_arguments_functions.size() != delegate.data_->no_arguments_functions.size())
         return false;

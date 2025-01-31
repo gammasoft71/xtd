@@ -403,7 +403,7 @@ namespace xtd {
     static void exit_code(int32 value) noexcept;
     
     /// @brief Gets a value that indicates whether the current application domain is shutting down.
-    /// @return bool true if the current application domain is shutting down; otherwise, `false`.
+    /// @return bool `true` if the current application domain is shutting down; otherwise, `false`.
     /// @remarks At this time the return value is always `false` for macOS and linux.
     static bool has_shutdown_started();
     
@@ -480,7 +480,7 @@ namespace xtd {
     
     
     /// @brief Gets a value indicating whether the current user is an administrator.
-    /// @return bool true if the current user is an administrator; otherwise, `false`.
+    /// @return bool `true` if the current user is an administrator; otherwise, `false`.
     static bool user_administrator();
     
     /// @brief Gets the network domain name associated with the current user.
@@ -488,9 +488,9 @@ namespace xtd {
     static xtd::string user_domain_name();
     
     /// @brief Gets a value indicating whether the current process is running in user interactive mode.
-    /// @return bool true if the current process is running in user interactive mode; otherwise, `false`.
+    /// @return bool `true` if the current process is running in user interactive mode; otherwise, `false`.
     /// @remarks The user_interactive method reports `false` for a Os process or a service like IIS that runs without a user interface. If this property is `false`, do not display modal dialogs or message boxes because there is no graphical user interface for the user to interact with.
-    /// @remarks Return always true for now.
+    /// @remarks Return always `true` for now.
     /// @todo check if process is an operating system process or service process...
     static bool user_interactive();
     

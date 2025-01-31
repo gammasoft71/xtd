@@ -66,7 +66,7 @@ namespace xtd {
       virtual bool running() const noexcept;
       
       /// @brief Gets a valiue that indicates if the loading indicator is running.
-      /// @param value true if the loading indicator is running; otherwise `false`.
+      /// @param value `true` if the loading indicator is running; otherwise `false`.
       virtual loading_indicator& running(bool value);
       /// @}
       

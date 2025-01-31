@@ -302,7 +302,7 @@ namespace xtd {
     const string& standard_name() const noexcept;
     
     /// @brief Gets a value indicating whether the time zone has any daylight saving time rules.*
-    /// @return bool true if the time zone supports daylight saving time; otherwise, `false`.
+    /// @return bool `true` if the time zone supports daylight saving time; otherwise, `false`.
     /// @remarks The value of the SupportsDaylightSavingTime property for the local time zone returned by the time_zone_info.Local property reflects the setting of the Control Panel Date and Time application's checkbox that defines whether the system automatically adjusts for daylight saving time. If it is unchecked, or if no checkbox is displayed for a time zone, the value of this property is `false`.
     bool supports_daylight_saving_time() const noexcept;
     /// @}

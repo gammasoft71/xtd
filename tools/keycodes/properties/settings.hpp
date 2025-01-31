@@ -21,7 +21,7 @@ namespace keycodes::properties {
     /// @remarks All properties are reloaded with the last saved value.
     settings() noexcept : settings {true} {}
     /// @brief Initializes a new instance of the keycodes::properties::settings class.
-    /// @param load If true all properties are reloaded with the last saved values; otherwise none.
+    /// @param load If `true` all properties are reloaded with the last saved values; otherwise none.
     explicit settings(bool load) noexcept {
       if (load) reload();
     }

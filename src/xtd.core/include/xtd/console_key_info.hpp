@@ -34,9 +34,9 @@ namespace xtd {
     /// @brief Initializes a new instance of the console_key_info class using the specified character, console key, and modifier keys.
     /// @param keyChar The Unicode character that corresponds to the key parameter.
     /// @param key The console key that corresponds to the keyChar parameter.
-    /// @param shift true to indicate that a SHIFT key was pressed; otherwise, `false`.
-    /// @param alt true to indicate that an ALT key was pressed; otherwise, `false`.
-    /// @param control true to indicate that a CTRL key was pressed; otherwise, `false`.
+    /// @param shift `true` to indicate that a SHIFT key was pressed; otherwise, `false`.
+    /// @param alt `true` to indicate that an ALT key was pressed; otherwise, `false`.
+    /// @param control `true` to indicate that a CTRL key was pressed; otherwise, `false`.
     /// @remarks This type is not intended to be created by users. Instead, it is returned to the user in response to calling the Console::ReadKey method.
     /// @remarks The console_key_info type does not specify whether the left or right SHIFT, ALT, or CTRL modifier key was pressed
     console_key_info(char32 key_char, console_key key, bool shift, bool alt, bool control) noexcept;

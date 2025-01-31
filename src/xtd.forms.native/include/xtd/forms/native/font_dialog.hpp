@@ -45,7 +45,7 @@ namespace xtd {
         /// @param color The selected color.
         /// @param min_size The minimum point size a user can select.
         /// @param max_size The maximum point size a user can select.
-        /// @param show_color true if the dialog box displays the color choice; otherwise, `false`.
+        /// @param show_color `true` if the dialog box displays the color choice; otherwise, `false`.
         /// @return `true` if the user clicks OK in the dialog box; otherwise, `false`.
         /// @remarks If result is true, the font parameter contains the new font, and the color parameter contains the now color.
         /// @warning Internal use only
@@ -56,7 +56,7 @@ namespace xtd {
         /// @param color The selected color.
         /// @param min_size The minimum point size a user can select.
         /// @param max_size The maximum point size a user can select.
-        /// @param show_color true if the dialog box displays the color choice; otherwise, `false`.
+        /// @param show_color `true` if the dialog box displays the color choice; otherwise, `false`.
         /// @return `true` if the user clicks OK in the dialog box; otherwise, `false`.
         /// @remarks When dialog closed and if result is true, the font parameter contains the new font, and the color parameter contains the now color.
         /// @warning Internal use only

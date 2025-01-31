@@ -42,7 +42,7 @@ namespace xtd {
       
       /// @{
       /// @brief Notifies a control that it is the default button so that its appearance and behavior is adjusted accordingly.
-      /// @param value true if the control should behave as a default button; otherwise `false`.
+      /// @param value `true` if the control should behave as a default button; otherwise `false`.
       /// @remarks This method is called by a parent form to make a control the default button. Default buttons are set to have an extra thick border.
       virtual void notify_default(bool value) = 0;
       

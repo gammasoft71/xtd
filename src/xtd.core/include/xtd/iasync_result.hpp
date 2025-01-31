@@ -50,7 +50,7 @@ namespace xtd {
     /// @return `true` if the asynchronous operation completed synchronously; otherwise, `false`.
     /// @remarks If the synchronous completion of the call is detected in the xtd::async_callback delegate, it is probable that the thread that initiated the asynchronous operation is the current thread.
     /// @par Notes to Callers
-    /// Use this property to determine if the asynchronous operation completed synchronously. For example, this property can return true for an asynchronous I/O operation if the I/O request was small.
+    /// Use this property to determine if the asynchronous operation completed synchronously. For example, this property can return `true` for an asynchronous I/O operation if the I/O request was small.
     virtual bool completed_synchronously() const noexcept = 0;
     
     /// @brief Gets a value that indicates whether the asynchronous operation has completed.

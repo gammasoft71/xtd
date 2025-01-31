@@ -53,7 +53,7 @@ namespace xtd {
     ///       // Determine whether the keystroke is a backspace.
     ///       if(e.key_code() != keys::back) {
     ///         // A non-numerical keystroke was pressed.
-    ///         // Set the flag to true and evaluate in xtd::forms::control::key_press event.
+    ///         // Set the flag to `true` and evaluate in xtd::forms::control::key_press event.
     ///         non_number_entered = true;
     ///       }
     ///     }

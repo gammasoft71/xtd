@@ -50,7 +50,7 @@ namespace xtd {
       /// @return `true` is date showing; otherwise `false`. By default is true.
       virtual bool show_date() const noexcept;
       /// @brief Sets a value indicate if date is showing before trace text.
-      /// @param value true is date showing; otherwise `false`. By default is true.
+      /// @param value `true` is date showing; otherwise `false`. By default is true.
       /// @return Current trace_form_base.
       virtual trace_form_base& show_date(bool value);
       
@@ -58,7 +58,7 @@ namespace xtd {
       /// @return `true` is time showing; otherwise `false`. By default is true.
       virtual  bool show_time() const noexcept;
       /// @brief Sets a value indicate if time is showing before trace text.
-      /// @param value true is time showing; otherwise `false`. By default is true.
+      /// @param value `true` is time showing; otherwise `false`. By default is true.
       /// @return Current trace_form_base.
       virtual trace_form_base& show_time(bool value);
       /// @}
@@ -95,7 +95,7 @@ namespace xtd {
       /// @remarks After each line terminator, header was needed.
       virtual bool need_header() const;
       /// @brief Sets a value indicate if header need written.
-      /// @param value true if header needed; otherwise `false`.
+      /// @param value `true` if header needed; otherwise `false`.
       /// @remarks After each line terminator, header was needed.
       /// @return Current trace_form_base.
       virtual trace_form_base& need_header(bool value);

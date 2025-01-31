@@ -202,7 +202,7 @@ namespace xtd {
       /// @remarks When first called, file_info calls xtd::io::file_info::refresh and caches information about the file. On subsequent calls, you must call xtd::io::file_info::refresh to get the latest copy of the information.
       bool is_read_only() const;
       /// @brief Sets a value that determines if the current file is read only.
-      /// @param value true if the current file is read only; otherwise, `false`.
+      /// @param value `true` if the current file is read only; otherwise, `false`.
       /// @exception xtd::io::file_not_found_exception The file described by the current xtd::io::file_info object could not be found.
       /// @exception xtd::io::io_exception An I/O error occurred while opening the file.
       /// @exception xtd::unauthorized_access_exception This operation is not supported on the current platform.<br>-or-<br>The caller does not have the required permission.
@@ -517,7 +517,7 @@ namespace xtd {
       xtd::io::file_info copy_to(const xtd::string& dest_file_name) const;
       /// @brief Copies an existing file to a new file, allowing the overwriting of an existing file.
       /// @param dest_file_name The name of the new file to copy to.
-      /// @param overwrite true to allow an existing file to be overwritten; otherwise, `false`.
+      /// @param overwrite `true` to allow an existing file to be overwritten; otherwise, `false`.
       /// @return A new file, or an overwrite of an existing file if overwrite is true. If the file exists and overwrite is `false`, an xtd::io::ioo_exception is thrown.
       /// @exception xtd::argument_exception dest_file_name is empty, contains only white spaces, or contains invalid characters.
       /// @exception xtd::io_io_exception An error occurs, or the destination file already exists and overwrite is `false`.
@@ -594,7 +594,7 @@ namespace xtd {
       ///     console::write_line("This is the information in the first file:");
       ///     while (sr.peek() != -1)
       ///       console::write_line(sr.read_line());
-      ///     // Copy this file to another file. The true parameter specifies that the file will be overwritten if it already exists.
+      ///     // Copy this file to another file. The `true` parameter specifies that the file will be overwritten if it already exists.
       ///     file_info newfi = fi.copy_to("newTemp.txt", true);
       ///     // Get the information out of the new file and display it.
       ///     ifs = newfi.open_read();

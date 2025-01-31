@@ -237,7 +237,7 @@ namespace xtd {
         /// @return `true` if container is sorted; otherwise `false`.
         virtual bool sorted() const noexcept {return sorted_;}
         /// @brief Sets the container is sorted.
-        /// @param value true if container is sorted; otherwise `false`.
+        /// @param value `true` if container is sorted; otherwise `false`.
         virtual void sorted(bool value) {
           if (sorted_ != value) {
             sorted_ = value;

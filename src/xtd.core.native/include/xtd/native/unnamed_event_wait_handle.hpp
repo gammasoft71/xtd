@@ -67,7 +67,7 @@ namespace xtd {
       /// @brief Wait named event wait handle with specified event wait handle handle, timeout and manual reset.
       /// @param handle The event wait handle handle to wait.
       /// @param milliseconds_timeout The timeout in milliseconds (-1 is infinite timeout).
-      /// @param manual_reset true the event resets manually; `false` the event resets automatically.
+      /// @param manual_reset `true` the event resets manually; `false` the event resets automatically.
       /// @return error code :
       ///  * 0x00000000 : Sucess
       ///  * 0x00000080 : Abandoned

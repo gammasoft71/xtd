@@ -81,7 +81,7 @@ namespace xtd {
       /// @return `true` if match case option selected; otherwise `false`. The default is `false`.
       bool match_case() const noexcept;
       /// @brief Sets the match case value.
-      /// @param value true if match case option selected; otherwise `false`. The default is `false`.
+      /// @param value `true` if match case option selected; otherwise `false`. The default is `false`.
       /// @return Current replace_dialog instance.
       replace_dialog& match_case(bool value);
       
@@ -89,7 +89,7 @@ namespace xtd {
       /// @return `true` if match case option is shown; otherwise `false`. The default is true.
       bool show_match_case() const noexcept;
       /// @brief Sets a value that indicates whether match case option is shown.
-      /// @param value true if match case option is shown; otherwise `false`. The default is true.
+      /// @param value `true` if match case option is shown; otherwise `false`. The default is true.
       /// @return Current replace_dialog instance.
       replace_dialog& show_match_case(bool value);
       
@@ -97,7 +97,7 @@ namespace xtd {
       /// @return `true` if whole word option is shown; otherwise `false`. The default is true.
       bool show_whole_word() const noexcept;
       /// @brief Sets a value that indicates whether whole word option is shown.
-      /// @param value true if whole word option is shown; otherwise `false`. The default is true.
+      /// @param value `true` if whole word option is shown; otherwise `false`. The default is true.
       /// @return Current replace_dialog instance.
       replace_dialog& show_whole_word(bool value);
       
@@ -113,7 +113,7 @@ namespace xtd {
       /// @return `true` if whole word option selected; otherwise `false`. The default is `false`.
       bool whole_word() const noexcept;
       /// @brief Sets the whole word value.
-      /// @param value true if whole word option selected; otherwise `false`. The default is `false`.
+      /// @param value `true` if whole word option selected; otherwise `false`. The default is `false`.
       /// @return Current replace_dialog instance.
       replace_dialog& whole_word(bool value);
       /// @}

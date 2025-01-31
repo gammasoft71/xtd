@@ -33,8 +33,8 @@ namespace xtd {
       find_event_args();
       /// @brief Initializes a new instance of the xtd::forms::find_event_args class.
       /// @param find_string The string to find.
-      /// @param match_case true if match case option selected; otherwise `false`.
-      /// @param search_direction true if match case option selected; otherwise `false`.
+      /// @param match_case `true` if match case option selected; otherwise `false`.
+      /// @param search_direction `true` if match case option selected; otherwise `false`.
       /// @param whole_word One of xtd::forms::search_direction values.
       find_event_args(const xtd::string& find_string, bool match_case, xtd::forms::search_direction search_direction, bool whole_word);
       /// @}

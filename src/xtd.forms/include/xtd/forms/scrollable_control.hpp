@@ -30,7 +30,7 @@ namespace xtd {
       /// @return `true` if the container enables auto-scrolling; otherwise, `false`. The default value is `false`.
       virtual bool auto_scroll() const noexcept;
       /// @brief Sets a value indicating whether the container enables the user to scroll to any controls placed outside of its visible boundaries.
-      /// @param auto_scroll true if the container enables auto-scrolling; otherwise, `false`. The default value is `false`.
+      /// @param auto_scroll `true` if the container enables auto-scrolling; otherwise, `false`. The default value is `false`.
       /// @return Current scrollable_control instance.
       virtual scrollable_control& auto_scroll(bool auto_scroll);
       
@@ -50,7 +50,7 @@ namespace xtd {
       /// @return `true` if the horizontal scroll bar is visible; otherwise, `false`.
       virtual bool h_scroll() const noexcept;
       /// @brief Sets a value indicating whether the horizontal scroll bar is visible.
-      /// @param hscrooll true if the horizontal scroll bar is visible; otherwise, `false`.
+      /// @param hscrooll `true` if the horizontal scroll bar is visible; otherwise, `false`.
       /// @return Current scrollable_control instance.
       virtual scrollable_control& h_scroll(bool h_scroll);
       
@@ -58,7 +58,7 @@ namespace xtd {
       /// @return `true` if the vertical scroll bar is visible; otherwise, `false`.
       virtual bool v_scroll() const noexcept;
       /// @brief Sets a value indicating whether the vertical scroll bar is visible.
-      /// @param vscroll true if the vertical scroll bar is visible; otherwise, `false`.
+      /// @param vscroll `true` if the vertical scroll bar is visible; otherwise, `false`.
       /// @return Current scrollable_control instance.
       virtual scrollable_control& v_scroll(bool v_scroll);
       /// @}

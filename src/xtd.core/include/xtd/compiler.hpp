@@ -33,7 +33,7 @@ namespace xtd {
     /// @param compiler_id One of xtd::compiler_id values.
     /// @param version The compiler version.
     /// @param build_type One of xtd::build_type values.
-    /// @param is_64_bit true if 64 bits; otherwise `false`.
+    /// @param is_64_bit `true` if 64 bits; otherwise `false`.
     compiler(xtd::compiler_id compiler_id, const xtd::version& version, xtd::build_type build_type, bool is_64_bit);
     /// @}
     

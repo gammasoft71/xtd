@@ -112,7 +112,7 @@ namespace xtd {
         tcp_client& client(const xtd::net::sockets::socket& value) noexcept;
         
         /// @brief Gets a value indicating whether the underlying xtd::net::sockets::socket for a xtd::net::sockets::tcp_client is connected to a remote host.
-        /// @return bool true if the xtd::net::sockets::tcp_client::client was connected to a remote resource as of the most recent operation; otherwise, `false`.
+        /// @return bool `true` if the xtd::net::sockets::tcp_client::client was connected to a remote resource as of the most recent operation; otherwise, `false`.
         /// @remarks The xtd::net::sockets::tcp_client::client::connected property gets the connection state of the xtd::net::sockets::tcp_client::client socket as of the last I/O operation. When it returns `false`,
         /// @remarks the xtd::net::sockets::tcp_client::client socket was either never connected, or is no longer connected.Because the xtd::net::sockets::tcp_client::client::connected property only reflects the state
         /// @remarks of the connection as of the most recent operation, you should attempt to send or receive a message to determine the current state.
@@ -122,7 +122,7 @@ namespace xtd {
         bool connected() const noexcept;
         
         /// @brief Gets a bool value that specifies whether the xtd::net::sockets::tcp_client allows only one client to use a port.
-        /// @return bool true if the xtd::net::sockets::tcp_client allows only one client to use a specific port; otherwise, `false`.
+        /// @return bool `true` if the xtd::net::sockets::tcp_client allows only one client to use a specific port; otherwise, `false`.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket. See the Remarks section for more information.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
         /// @remarks By default, multiple clients can use a specific port; however, only one of the clients can perform operations on the network traffic sent to the port.
@@ -130,7 +130,7 @@ namespace xtd {
         /// @remarks This property must be set before the underlying socket is bound to a client port. If you call xtd::net::sockets::tcp_client::connect, xtd::net::sockets::tcp_client::client::begin_connect, xtd::net::sockets::tcp_client(xtd::net::ip_end_point), or xtd::net::sockets::tcp_client(xtd::string, uint16), the client port is bound as a side effect of the method, and you cannot subsequently set the xtd::net::sockets::tcp_client::client::exclusive_address_use property.
         bool exclusive_address_use() const;
         /// @brief Sets a bool value that specifies whether the xtd::net::sockets::tcp_client allows only one client to use a port.
-        /// @param value bool true if the xtd::net::sockets::tcp_client allows only one client to use a specific port; otherwise, `false`.
+        /// @param value bool `true` if the xtd::net::sockets::tcp_client allows only one client to use a specific port; otherwise, `false`.
         /// @return This current instance.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket. See the Remarks section for more information.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
@@ -182,7 +182,7 @@ namespace xtd {
         /// @remarks When xtd::net::sockets::tcp_client::no_delay is `false`, a xtd::net::sockets::tcp_client does not send a packet over the network until it has collected a significant amount of outgoing data.
         bool no_delay() const;
         /// @brief Sets a value that disables a delay when send or receive buffers are not full.
-        /// @param value true if the delay is disabled; otherwise, `false`. The default value is `false`.
+        /// @param value `true` if the delay is disabled; otherwise, `false`. The default value is `false`.
         /// @return This current instance.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket. See the Remarks section for more information.
         /// @exception xtd::object_closed_exception The xtd::net::sockets::socket has been closed.
@@ -333,7 +333,7 @@ namespace xtd {
         
         /// @brief Returns the xtd::net::sockets::network_stream used to send and receive data.
         /// @return The underlying xtd::net::sockets::network_stream.
-        /// @remarks xtd::net::sockets::tcp_client::get_stream returns a xtd::net::sockets::network_stream that you can use to send and receive data. The xtd::net::sockets::network_stream class inherits from the std::iostream class, which provides a rich collection of methods and properties used to facilitate network communications.You must call the xtd::net::sockets::tcp_client::connect method first, or the xtd::net::sockets::tcp_client::get_stream method will throw an xtd::invalid_operation_exception. After you have obtained the xtd::net::sockets::network_stream, call the std::iostream::write method to send data to the remote host. Call the std::iostream::read method to receive data arriving from the remote host. Both of these methods block until the specified operation is performed. You can avoid blocking on a read operation by checking the xtd::net::sockets::network_stream::data_available property. A true value means that data has arrived from the remote host and is available for reading. In this case, std::iostream::read is guaranteed to complete immediately. If the remote host has shutdown its connection, std::iostream::read will immediately return with zero bytes.
+        /// @remarks xtd::net::sockets::tcp_client::get_stream returns a xtd::net::sockets::network_stream that you can use to send and receive data. The xtd::net::sockets::network_stream class inherits from the std::iostream class, which provides a rich collection of methods and properties used to facilitate network communications.You must call the xtd::net::sockets::tcp_client::connect method first, or the xtd::net::sockets::tcp_client::get_stream method will throw an xtd::invalid_operation_exception. After you have obtained the xtd::net::sockets::network_stream, call the std::iostream::write method to send data to the remote host. Call the std::iostream::read method to receive data arriving from the remote host. Both of these methods block until the specified operation is performed. You can avoid blocking on a read operation by checking the xtd::net::sockets::network_stream::data_available property. A `true` value means that data has arrived from the remote host and is available for reading. In this case, std::iostream::read is guaranteed to complete immediately. If the remote host has shutdown its connection, std::iostream::read will immediately return with zero bytes.
         /// @note You must close the xtd::net::sockets::network_stream when you are through sending and receiving data. Closing xtd::net::sockets::tcp_client does not release the xtd::net::sockets::network_stream.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
         xtd::net::sockets::network_stream get_stream() const;
@@ -348,7 +348,7 @@ namespace xtd {
         /// @remarks Classes deriving from xtd::net::sockets::tcp_client can use this property to determine if a connection attempt has succeeded. It does not monitor the ongoing connection state of xtd::net::sockets::tcp_client. If the remote host closes the connection, xtd::net::sockets::tcp_client::active will not be updated. If you are deriving from xtd::net::sockets::tcp_client and require closer attention to the connection state, use the xtd::net::sockets::tcp_client::client::connected property of the xtd::net::sockets::socket returned by the xtd::net::sockets::tcp_client::client property.
         bool active() const noexcept;
         /// @brief Sets a value that indicates whether a connection has been made.
-        /// @param value true if the connection has been made; otherwise, `false`.
+        /// @param value `true` if the connection has been made; otherwise, `false`.
         /// @return This current instance.
         /// @remarks Classes deriving from xtd::net::sockets::tcp_client can use this property to determine if a connection attempt has succeeded. It does not monitor the ongoing connection state of xtd::net::sockets::tcp_client. If the remote host closes the connection, xtd::net::sockets::tcp_client::active will not be updated. If you are deriving from xtd::net::sockets::tcp_client and require closer attention to the connection state, use the xtd::net::sockets::tcp_client::client::connected property of the xtd::net::sockets::socket returned by the xtd::net::sockets::tcp_client::client property.
         tcp_client& active(bool value) noexcept;

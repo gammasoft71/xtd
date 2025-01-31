@@ -212,7 +212,7 @@ namespace xtd {
       /// @brief Gets a Boolean value that indicates whether this xtd::drawing::font is derived from a GDI vertical font.
       /// @return `true` if this xtd::drawing::font is derived from a GDI vertical font; otherwise, `false`.
       /// @remarks Use this property to determine if a font is compatible with native Win32 controls on non-Unicode platforms.
-      /// @remarks gdi_vertical_font only returns true if this font was created from a classic GDI font definition, like a LOGFONT or HFONT.
+      /// @remarks gdi_vertical_font only returns `true` if this font was created from a classic GDI font definition, like a LOGFONT or HFONT.
       bool gdi_vertical_font() const noexcept;
       
       /// @brief Gets the window handle that the font is bound to.

@@ -170,7 +170,7 @@ namespace xtd {
       /// @param predicate A function to test each element for a condition.
       /// @return `true` if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, `false`.
       /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is true if all the pet names start with "B" or if the pets array is empty.
+      /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is `true` if all the pet names start with "B" or if the pets array is empty.
       /// @include enumerable_all.cpp
       template<class source_t>
       static bool all(const ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate) {
@@ -197,7 +197,7 @@ namespace xtd {
       /// @param predicate A function to test each element for a condition.
       /// @return `true` if every element of the source sequence passes the test in the specified predicate, or if the sequence is empty; otherwise, `false`.
       /// @par Examples
-      /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is true if all the pet names start with "B" or if the pets array is empty.
+      /// The following code example demonstrates how to use xtd::linq::enumerable::all <source_t> to determine whether all the elements in a sequence satisfy a condition. Variable all_start_with_B is `true` if all the pet names start with "B" or if the pets array is empty.
       /// @include enumerable_all.cpp
       template<class source_t>
       static bool any(const ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate) {

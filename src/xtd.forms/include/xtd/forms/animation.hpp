@@ -76,7 +76,7 @@ namespace xtd {
       virtual bool running() const noexcept;
       
       /// @brief Gets a valiue that indicates if the animation is running.
-      /// @param value true if the animation is running; otherwise `false`.
+      /// @param value `true` if the animation is running; otherwise `false`.
       virtual animation& running(bool value);
       /// @}
       

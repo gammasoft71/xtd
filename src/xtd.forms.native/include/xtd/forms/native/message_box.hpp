@@ -44,7 +44,7 @@ namespace xtd {
         /// @param text The text to display in the message box.
         /// @param caption The text to display in the title bar of the message box.
         /// @param options A bitwise of message box styles.
-        /// @param display_help_button true to show the Help button; otherwise, `false`.
+        /// @param display_help_button `true` to show the Help button; otherwise, `false`.
         /// @return A dialog box ids.
         /// @warning Internal use only
         static int32 show(intptr hwnd, const xtd::string& text, const xtd::string& caption, uint32 options, bool display_help_button);
@@ -54,7 +54,7 @@ namespace xtd {
         /// @param text The text to display in the message box.
         /// @param caption The text to display in the title bar of the message box.
         /// @param options A bitwise of message box styles.
-        /// @param display_help_button true to show the Help button; otherwise, `false`.
+        /// @param display_help_button `true` to show the Help button; otherwise, `false`.
         /// @warning Internal use only
         static void show_sheet(xtd::delegate<void(int32)> on_dialog_closed, intptr hwnd, const xtd::string& text, const xtd::string& caption, uint32 options, bool display_help_button);
         /// @}

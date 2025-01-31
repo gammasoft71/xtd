@@ -220,21 +220,21 @@ namespace xtd {
       static bool is_flat_menu_enabled();
       
       /// @brief Gets a value indicating whether font smoothing is enabled.
-      /// @return bool true if the font smoothing feature is enabled; otherwise, `false`.
+      /// @return bool `true` if the font smoothing feature is enabled; otherwise, `false`.
       /// @remarks This font smoothing feature uses font antialiasing to make font curves appear smoother by painting pixels at different gray levels.
       static bool is_font_smoothing_enabled();
       
       /// @brief Gets a value indicating whether hot tracking of user-interface elements, such as menu names on menu bars, is enabled.
-      /// @return bool true if hot tracking of user-interface elements is enabled; otherwise, `false`.
+      /// @return bool `true` if hot tracking of user-interface elements is enabled; otherwise, `false`.
       /// @remarks The IsHotTrackingEnabled property indicates whether hot tracking of user-interface elements is enabled. Hot tracking means that when the cursor moves over an item, it is highlighted but not selected.
       static bool is_hot_tracking_enabled();
       
       /// @brief Gets a value indicating whether icon-title wrapping is enabled.
-      /// @return bool true if the icon-title wrapping feature is enabled; otherwise, `false`.
+      /// @return bool `true` if the icon-title wrapping feature is enabled; otherwise, `false`.
       static bool is_icon_title_wrapping_enabled();
       
       /// @brief Gets a value indicating whether the user relies on the keyboard instead of the mouse, and prefers applications to display keyboard interfaces that would otherwise be hidden.
-      /// @return bool true if keyboard preferred mode is enabled; otherwise, `false`.
+      /// @return bool `true` if keyboard preferred mode is enabled; otherwise, `false`.
       /// @remarks The IsKeyboardPreferred property indicates whether the user has indicated a preference for keyboard-based input interfaces.
       static bool is_keyboard_preferred();
       
@@ -444,7 +444,7 @@ namespace xtd {
       /// @brief Gets a value indicating whether a network connection is present.
       /// @return `true` if a network connection is present; otherwise, `false`.
       /// @remarks The network property indicates whether the system has a currently established network connection.
-      /// @note This property always returns true on all platforms.
+      /// @note This property always returns `true` on all platforms.
       static bool network();
       
       /// @brief Gets a value indicating whether the Microsoft Windows for Pen Computing extensions are installed.

@@ -59,7 +59,7 @@ namespace xtd {
     /// @return `true` to force xtd::console::out to flush its buffer; otherwise, `false`. The default value is true.
     static bool auto_flush_out();
     /// @brief Sets a value indicating whether the xtd::console::out will flush its buffer to the underlying stream after every call to xtd::console::write and xtd::console::write_line.
-    /// @param value true to force xtd::console::out to flush its buffer; otherwise, `false`. The default value is true.
+    /// @param value `true` to force xtd::console::out to flush its buffer; otherwise, `false`. The default value is true.
     static void auto_flush_out(bool value);
     
     /// @brief Gets the background color of the console.
@@ -160,7 +160,7 @@ namespace xtd {
     /// @include console_cursor_visible.cpp
     static bool cursor_visible();
     /// @brief Sets a value indicating whether the cursor is visible.
-    /// @param visible true if the cursor is visible; otherwise, `false`.
+    /// @param visible `true` if the cursor is visible; otherwise, `false`.
     /// @par Examples
     /// This example demonstrates the cursor_visible property. The example makes the cursor visible if the first column of input is a '+' character or invisible if the input is a '-' character.
     /// @include console_cursor_visible.cpp
@@ -283,12 +283,12 @@ namespace xtd {
     /// @brief Gets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.
     /// @return `true` if Ctrl+C is treated as ordinary input; otherwise, `false`.
     /// @remarks If the value of the treat_control_c_as_input property is `false` and Ctrl+C is pressed, the pressed keys are not stored in the input buffer and the operating system terminates the currently executing process. This is the default value.
-    /// @warning Use this property judiciously because setting it to true has such a dramatic effect. Most users expect Ctrl+C to terminate a console application. If you disable the effect of Ctrl+C, the user must remember to use Ctrl+Break to terminate the application, which is a less familiar key combination.
+    /// @warning Use this property judiciously because setting it to `true` has such a dramatic effect. Most users expect Ctrl+C to terminate a console application. If you disable the effect of Ctrl+C, the user must remember to use Ctrl+Break to terminate the application, which is a less familiar key combination.
     static bool treat_control_c_as_input();
     /// @brief Sets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system.
     /// @param treat_control_c_as_input `true` if Ctrl+C is treated as ordinary input; otherwise, `false`.
     /// @remarks If the value of the treat_control_c_as_input property is `false` and Ctrl+C is pressed, the pressed keys are not stored in the input buffer and the operating system terminates the currently executing process. This is the default value.
-    /// @warning Use this property judiciously because setting it to true has such a dramatic effect. Most users expect Ctrl+C to terminate a console application. If you disable the effect of Ctrl+C, the user must remember to use Ctrl+Break to terminate the application, which is a less familiar key combination.
+    /// @warning Use this property judiciously because setting it to `true` has such a dramatic effect. Most users expect Ctrl+C to terminate a console application. If you disable the effect of Ctrl+C, the user must remember to use Ctrl+Break to terminate the application, which is a less familiar key combination.
     static void treat_control_c_as_input(bool treat_control_c_as_input);
     
     /// @brief Gets the height of the console window area.
@@ -328,7 +328,7 @@ namespace xtd {
     /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
     /// @remarks When the user presses either Ctrl+C or Ctrl+Break, the cancel_key_press event is fired and the application's console_cancel_event_handler event handler is executed. The event handler is passed a console_cancel_event_args object that has two useful properties:
     /// * special_key, which allows you to determine whether the handler was invoked as a result of the user pressing Ctrl+C (the property value is console_special_key::control_c) or Ctrl+Break (the property value is console_special_key.control_break).
-    /// * Cancel, which allows you to determine how to your application should respond to the user pressing Ctrl+C or Ctrl+Break. By default, the cancel property is `false`, which causes program execution to terminate when the event handler exits. Changing its property to true specifies that the application should continue to execute.
+    /// * Cancel, which allows you to determine how to your application should respond to the user pressing Ctrl+C or Ctrl+Break. By default, the cancel property is `false`, which causes program execution to terminate when the event handler exits. Changing its property to `true` specifies that the application should continue to execute.
     /// @note If your application has simple requirements, you can use the treat_control_c_as_input property instead of this event. By setting this property to `false`, you can ensure that your application always exits if the user presses Ctrl+C. By setting it to true, you can ensure that pressing Ctrl+C will not terminate the application.
     /// @warning The xtd::signal::interrupt and xtd::console_special_key::control_c use the same signal ([SIGINT](https://en.cppreference.com/w/cpp/utility/program/signal)).
     /// @warning The xtd::signal::interrupt and xtd::console_special_key::control_c can be cancelled with xtd::environment::cancel_signal event or xtd::console::cancel_key_press event. Both of these events are called when [SIGINT](https://en.cppreference.com/w/cpp/utility/program/signal) is raised.
@@ -399,7 +399,7 @@ namespace xtd {
     /// @return xtd::console_key_info A xtd::console_key_info object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key. The xtd::console_key_info object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.
     static console_key_info read_key();
     /// @brief Obtains the next character or function key pressed by the user. The pressed key is optionally displayed in the console window.
-    /// @param intercept Determines whether to display the pressed key in the console window. true to not display the pressed key; otherwise, `false`
+    /// @param intercept Determines whether to display the pressed key in the console window. `true` to not display the pressed key; otherwise, `false`
     /// @return xtd::console_key_info A xtd::console_key_info object that describes the ConsoleKey constant and Unicode character, if any, that correspond to the pressed console key. The xtd::console_key_info object also describes, in a bitwise combination of ConsoleModifiers values, whether one or more SHIFT, ALT, or CTRL modifier keys was pressed simultaneously with the console key.
     static console_key_info read_key(bool intercept);
     
@@ -407,7 +407,7 @@ namespace xtd {
     /// @return The next line of characters from the input stream, or "" if no more lines are available.
     static xtd::string read_line();
     /// @brief Reads the next line of characters from the standard input stream.
-    /// @param intercept Determines whether to display the pressed key in the console window. true to not display the pressed key; otherwise, `false`
+    /// @param intercept Determines whether to display the pressed key in the console window. `true` to not display the pressed key; otherwise, `false`
     /// @return The next line of characters from the input stream, or "" if no more lines are available.
     static xtd::string read_line(bool intercept);
 

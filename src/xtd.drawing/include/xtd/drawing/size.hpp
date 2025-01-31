@@ -70,7 +70,7 @@ namespace xtd {
       void height(int32 value) noexcept;
       
       /// @brief Tests whether this xtd::drawing::size class has xtd::drawing::size_fwidth and xtd::drawing::size_fheight of 0.
-      /// @return Returns true  when this xtd::drawing::size class has both a xtd::drawing::size::width and xtd::drawing::size::height of 0; otherwise, `false`.
+      /// @return Returns `true`  when this xtd::drawing::size class has both a xtd::drawing::size::width and xtd::drawing::size::height of 0; otherwise, `false`.
       bool is_empty() const noexcept;
       
       /// @brief Gets the horizontal component of this xtd::drawing::size class.

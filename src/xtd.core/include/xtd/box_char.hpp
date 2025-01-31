@@ -48,7 +48,7 @@ namespace xtd {
     /// @name Public Static Methods
     
     /// @{
-    /// @brief Returns true if c is an ASCII character ([ U+0000..U+007F ]).
+    /// @brief Returns `true` if c is an ASCII character ([ U+0000..U+007F ]).
     /// @param c The character to analyze.
     /// @return `true` if c is an ASCII character; `false` otherwise.
     static bool is_ascii(type_t c) noexcept {return c > 0 && c <= 0x7F;}

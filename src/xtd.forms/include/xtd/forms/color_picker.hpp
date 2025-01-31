@@ -47,7 +47,7 @@ namespace xtd {
       /// @return `true` if the dialog box  shows alpha values and an opacity selector (slider); otherwise, `false`. The default is true.
       virtual bool alpha_color() const noexcept;
       /// @brief Sets a value indicating whether the user can use the dialog box to define custom colors.
-      /// @param alpha_color true if the dialog box  shows alpha values and an opacity selector (slider); otherwise, `false`.
+      /// @param alpha_color `true` if the dialog box  shows alpha values and an opacity selector (slider); otherwise, `false`.
       virtual color_picker& alpha_color(bool alpha_color);
       
       /// @brief Gets the color selected by the user.

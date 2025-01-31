@@ -60,7 +60,7 @@ namespace xtd {
       /// @return `true` if the dialog box adds an extension to a file name if the user omits the extension; otherwise, `false`. The default value is true.
       virtual bool add_extension() const noexcept;
       /// @brief Sets a value indicating whether the dialog box automatically adds an extension to a file name if the user omits the extension.
-      /// @param value true if the dialog box adds an extension to a file name if the user omits the extension; otherwise, `false`. The default value is true.
+      /// @param value `true` if the dialog box adds an extension to a file name if the user omits the extension; otherwise, `false`. The default value is true.
       /// @return Current file_dialog.
       virtual file_dialog& add_extension(bool value);
       
@@ -70,7 +70,7 @@ namespace xtd {
       /// @remarks On Windows XP, this property does not have any effect.
       virtual bool auto_upgrade_enabled() const noexcept;
       /// @brief Sets a value indicating whether this file_dialog instance should automatically upgrade appearance and behavior when running on Windows Vista.
-      /// @param value true if this file_dialog instance should automatically upgrade appearance and behavior when running on Windows Vista; otherwise, `false`. The default is true.
+      /// @param value `true` if this file_dialog instance should automatically upgrade appearance and behavior when running on Windows Vista; otherwise, `false`. The default is true.
       /// @return Current file_dialog.
       /// @remarks If this property is `false`, the file_dialog class will have a Windows XP-style appearance and behavior on Windows Vista.
       /// @remarks On Windows XP, this property does not have any effect.
@@ -78,19 +78,19 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether the dialog box displays a warning if the user specifies a file name that does not exist.
       /// @return `true` if the dialog box displays a warning if the user specifies a file name that does not exist; otherwise, `false`. The default value is `false`.
-      /// @remarks The default value is true for an inheriting open_file_dialog and `false` for an inheriting save_file_dialog.
+      /// @remarks The default value is `true` for an inheriting open_file_dialog and `false` for an inheriting save_file_dialog.
       virtual bool check_file_exists() const noexcept;
       /// @brief Sets a value indicating whether the dialog box displays a warning if the user specifies a file name that does not exist.
-      /// @param value true if the dialog box displays a warning if the user specifies a file name that does not exist; otherwise, `false`. The default value is `false`.
+      /// @param value `true` if the dialog box displays a warning if the user specifies a file name that does not exist; otherwise, `false`. The default value is `false`.
       /// @return Current file_dialog.
-      /// @remarks The default value is true for an inheriting open_file_dialog and `false` for an inheriting save_file_dialog.
+      /// @remarks The default value is `true` for an inheriting open_file_dialog and `false` for an inheriting save_file_dialog.
       virtual file_dialog& check_file_exists(bool value);
       
       /// @brief Gets a value indicating whether the dialog box displays a warning if the user specifies a path that does not exist.
       /// @return `true` if the dialog box displays a warning when the user specifies a path that does not exist; otherwise, `false`. The default value is true.
       virtual bool check_path_exists() const noexcept;
       /// @brief Sets a value indicating whether the dialog box displays a warning if the user specifies a path that does not exist.
-      /// @param value true if the dialog box displays a warning when the user specifies a path that does not exist; otherwise, `false`. The default value is true.
+      /// @param value `true` if the dialog box displays a warning when the user specifies a path that does not exist; otherwise, `false`. The default value is true.
       /// @return Current file_dialog.
       virtual file_dialog& check_path_exists(bool value);
       
@@ -108,7 +108,7 @@ namespace xtd {
       /// @return `true` if the dialog box returns the location of the file referenced by the shortcut; otherwise, `false`. The default value is true.
       virtual bool dereference_link() const noexcept;
       /// @brief Sets a value indicating whether the dialog box returns the location of the file referenced by the shortcut or whether it returns the location of the shortcut (.lnk).
-      /// @param value true if the dialog box returns the location of the file referenced by the shortcut; otherwise, `false`. The default value is true.
+      /// @param value `true` if the dialog box returns the location of the file referenced by the shortcut; otherwise, `false`. The default value is true.
       /// @return Current file_dialog.
       virtual file_dialog& dereference_link(bool value);
       
@@ -190,7 +190,7 @@ namespace xtd {
       /// @return `true` if the dialog box restores the current directory to the previously selected directory if the user changed the directory while searching for files; otherwise, `false`. The default value is `false`.
       virtual bool restore_directory() const noexcept;
       /// @brief Sets a value indicating whether the dialog box restores the directory to the previously selected directory before closing.
-      /// @param value true if the dialog box restores the current directory to the previously selected directory if the user changed the directory while searching for files; otherwise, `false`. The default value is `false`.
+      /// @param value `true` if the dialog box restores the current directory to the previously selected directory if the user changed the directory while searching for files; otherwise, `false`. The default value is `false`.
       /// @return Current file_dialog.
       virtual file_dialog& restore_directory(bool value);
       
@@ -199,7 +199,7 @@ namespace xtd {
       /// @remarks A xtd::forms::control::help_requested event is raised when the user clicks the Help button.
       virtual bool show_help() const noexcept;
       /// @brief Sets a value indicating whether the Help button is displayed in the file dialog box.
-      /// @param value true if the dialog box includes a help button; otherwise, `false`. The default value is `false`.
+      /// @param value `true` if the dialog box includes a help button; otherwise, `false`. The default value is `false`.
       /// @return Current file_dialog.
       /// @remarks A xtd::forms::control::help_requested event is raised when the user clicks the Help button.
       virtual file_dialog& show_help(bool value);
@@ -208,7 +208,7 @@ namespace xtd {
       /// @return `true` if the dialog box includes hidden files; otherwise, `false`. The default value is `false`.
       virtual bool show_hidden_files() const noexcept;
       /// @brief Sets a value indicating whether hidden files are displayed in the file dialog box.
-      /// @param value true if the dialog box includes hidden files; otherwise, `false`. The default value is `false`.
+      /// @param value `true` if the dialog box includes hidden files; otherwise, `false`. The default value is `false`.
       /// @return Current file_dialog.
       virtual file_dialog& show_hidden_files(bool value);
       
@@ -216,19 +216,19 @@ namespace xtd {
       /// @return `true` if the dialog box includes preview file; otherwise, `false`. The default value is `false`.
       virtual bool show_preview() const noexcept;
       /// @brief Sets a value indicating whether preview file is displayed in the file dialog box.
-      /// @param value true if the dialog box includes preview file; otherwise, `false`. The default value is `false`.
+      /// @param value `true` if the dialog box includes preview file; otherwise, `false`. The default value is `false`.
       /// @return Current file_dialog.
       virtual file_dialog& show_preview(bool value);
       
       /// @brief Gets whether the dialog box supports displaying and saving files that have multiple file name extensions.Gets or sets whether the dialog box supports displaying and saving files that have multiple file name extensions.
       /// @return `true` if the dialog box supports multiple file name extensions; otherwise, `false`. The default is `false`.
-      /// @remarks Sometimes users must open and save files that use multiple file name extensions. For example, the application manifest files used by the click_once deployment technology end in the complex file name extension ".exe.manifest". Setting this property to true enables you to set the FFilter property to a multi-dotted extension.
+      /// @remarks Sometimes users must open and save files that use multiple file name extensions. For example, the application manifest files used by the click_once deployment technology end in the complex file name extension ".exe.manifest". Setting this property to `true` enables you to set the FFilter property to a multi-dotted extension.
       /// @remarks If support_multi_dotted_extensions is `false`, and you assign a multi-dotted extension to Filter, derived controls such as save_file_dialog will only use the last extension in the string. For example, ".manifest" will be used instead of ".exe.manifest".
       virtual bool support_multi_dotted_extensions() const noexcept;
       /// @brief Sets whether the dialog box supports displaying and saving files that have multiple file name extensions.Gets or sets whether the dialog box supports displaying and saving files that have multiple file name extensions.
-      /// @param value true if the dialog box supports multiple file name extensions; otherwise, `false`. The default is `false`.
+      /// @param value `true` if the dialog box supports multiple file name extensions; otherwise, `false`. The default is `false`.
       /// @return Current file_dialog.
-      /// @remarks Sometimes users must open and save files that use multiple file name extensions. For example, the application manifest files used by the click_once deployment technology end in the complex file name extension ".exe.manifest". Setting this property to true enables you to set the FFilter property to a multi-dotted extension.
+      /// @remarks Sometimes users must open and save files that use multiple file name extensions. For example, the application manifest files used by the click_once deployment technology end in the complex file name extension ".exe.manifest". Setting this property to `true` enables you to set the FFilter property to a multi-dotted extension.
       /// @remarks If support_multi_dotted_extensions is `false`, and you assign a multi-dotted extension to Filter, derived controls such as save_file_dialog will only use the last extension in the string. For example, ".manifest" will be used instead of ".exe.manifest".
       virtual file_dialog& support_multi_dotted_extensions(bool value);
       
@@ -247,7 +247,7 @@ namespace xtd {
       /// @remarks If the edit control contains anything but spaces when the user clicks OK, the dialog box returns the file name, whether it is valid or not. No default extension is added to the text.
       virtual bool validate_names() const noexcept;
       /// @brief Gets a value indicating whether the dialog box accepts only valid file names.
-      /// @param value true if the dialog box accepts only valid file names; otherwise, `false`. The default value is true.
+      /// @param value `true` if the dialog box accepts only valid file names; otherwise, `false`. The default value is true.
       /// @return Current file_dialog.
       /// @remarks If the edit control contains anything but spaces when the user clicks OK, the dialog box returns the file name, whether it is valid or not. No default extension is added to the text.
       virtual file_dialog& validate_names(bool value);

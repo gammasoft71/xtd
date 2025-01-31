@@ -1140,7 +1140,7 @@ namespace xtd {
     bool equals(const basic_string& value) const noexcept override {return equals(value, false);}
     /// @brief Determines whether this instance and another specified xtd::basic_string object have the same value, ignoring or honoring their case.
     /// @param value The basic_string to compare to this instance.
-    /// @param ignore_case true to ignore case when comparing this instance and value; otherwise, `false`
+    /// @param ignore_case `true` to ignore case when comparing this instance and value; otherwise, `false`
     /// @return `true` if the `value` of the value parameter is the same as the value of this instance; otherwise, `false`.
     /// @remarks This method performs an ordinal comparison.
     bool equals(const basic_string& value, bool ignore_case) const noexcept {
@@ -1154,7 +1154,7 @@ namespace xtd {
     bool ends_with(value_type value) const noexcept {return ends_with(value, false);}
     /// @brief Determines whether the end of this basic_string matches the specified character, ignoring or honoring their case.
     /// @param value The char_t to compare to the substring at the end of this instance.
-    /// @param ignore_case true to ignore case during the comparison; otherwise, `false`.
+    /// @param ignore_case `true` to ignore case during the comparison; otherwise, `false`.
     /// @return `true` if value matches the end of this instance; otherwise, `false`.
     bool ends_with(value_type value, bool ignore_case) const noexcept {
       if (ignore_case) return to_lower().rfind(static_cast<value_type>(tolower(value))) == size() - 1;
@@ -1166,13 +1166,13 @@ namespace xtd {
     bool ends_with(const basic_string& value) const noexcept {return ends_with(value, xtd::string_comparison::ordinal);}
     /// @brief Determines whether the end of this basic_string instance matches the specified basic_string, ignoring or honoring their case.
     /// @param value The string to compare to the substring at the end of this instance.
-    /// @param ignore_case true to ignore case during the comparison; otherwise, `false`.
-    /// @return bool true if value matches the end of the specified basic_string; otherwise, `false`.
+    /// @param ignore_case `true` to ignore case during the comparison; otherwise, `false`.
+    /// @return bool `true` if value matches the end of the specified basic_string; otherwise, `false`.
     bool ends_with(const basic_string& value, bool ignore_case) const noexcept {return ends_with(value, ignore_case ? xtd::string_comparison::ordinal_ignore_case : xtd::string_comparison::ordinal);}
     /// @brief Determines whether the end of this basic_string matches the specified basic_string when compared using the specified comparison option.
     /// @param value The string to compare to the substring at the end of this instance.
     /// @param comparison_type One of the enumeration values that determines how this basic_string and value are compared.
-    /// @return bool true if value matches the end of the specified basic_string; otherwise, `false`.
+    /// @return bool `true` if value matches the end of the specified basic_string; otherwise, `false`.
     bool ends_with(const basic_string& value, xtd::string_comparison comparison_type) const noexcept {
       if (comparison_type == xtd::string_comparison::ordinal_ignore_case) return to_lower().rfind(value.to_lower()) + value.to_lower().size() == size();
       return rfind(value) + value.size() == size();
@@ -1711,7 +1711,7 @@ namespace xtd {
     /// @remarks Finds the first character `ch` (treated as a single-character substring by the formal rules below).
     size_type rfind(value_type ch, size_type pos) const {return chars_.rfind(ch, pos);}
     
-    /// @brief Splits this basic_string into substrings that are based on the default white-space characters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
+    /// @brief Splits this basic_string into substrings that are based on the default white-space characters. White-space characters are defined by the c++ standard and return `true` if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
     /// @return An array whose elements contain the substrings in this basic_string that are delimited by one or more characters in white-space separators. For more information, see the Remarks section.
     /// @remarks Delimiter characters are not included in the elements of the returned array.
     /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
@@ -1736,7 +1736,7 @@ namespace xtd {
     ///   3. "aa",
     ///   4. empty basic_string, which represents the empty basic_string that follows the "_" character at index 4.
     ///   5. empty basic_string, which represents the empty basic_string that follows the "-" character at index 5.
-    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
+    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the c++ standard and return `true` if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
     /// @remarks If count is greater than the number of substrings, the available substrings are returned.
     xtd::array<basic_string> split(value_type separator, xtd::string_split_options options) const noexcept;
     /// @brief Splits this basic_string into a maximum number of substrings based on the characters in an array. You also specify the maximum number of substrings to return.
@@ -1744,7 +1744,7 @@ namespace xtd {
     /// @param count The maximum number of substrings to return.
     /// @remarks Delimiter characters are not included in the elements of the returned array.
     /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
-    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return true if they are passed to the char_t.IsWhiteSpace method.
+    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return `true` if they are passed to the char_t.IsWhiteSpace method.
     /// @remarks Each element of separator defines a separate delimiter character. If two delimiters are adjacent, or a delimiter is found at the beginning or end of the specified basic_string, the corresponding array element contains empty basic_string.
     /// @remarks If there are more than count substrings in the specified basic_string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified basic_string are returned in the last element of the return value.
     xtd::array<basic_string> split(value_type separator, xtd::size count) const noexcept;
@@ -1780,7 +1780,7 @@ namespace xtd {
     ///   3. "aa",
     ///   4. empty basic_string, which represents the empty basic_string that follows the "_" character at index 4.
     ///   5. empty basic_string, which represents the empty basic_string that follows the "-" character at index 5.
-    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the c++ standard and return true if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
+    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the c++ standard and return `true` if they are passed to the xtd::char_object::isspace() or std::iswspace() method.
     /// @remarks If count is greater than the number of substrings, the available substrings are returned.
     xtd::array<basic_string> split(const xtd::array<value_type>& separators, xtd::string_split_options options) const noexcept;
     /// @brief Splits this basic_string into a maximum number of substrings based on the characters in an array. You also specify the maximum number of substrings to return.
@@ -1788,7 +1788,7 @@ namespace xtd {
     /// @param count The maximum number of substrings to return.
     /// @remarks Delimiter characters are not included in the elements of the returned array.
     /// @remarks If the specified basic_string does not contain any of the characters in separator, or the count parameter is 1, the returned array consists of a single element that contains the specified basic_string.
-    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return true if they are passed to the char_t.IsWhiteSpace method.
+    /// @remarks If the separator parameter contains no characters, white-space characters are assumed to be the delimiters. White-space characters are defined by the Unicode standard and return `true` if they are passed to the char_t.IsWhiteSpace method.
     /// @remarks Each element of separator defines a separate delimiter character. If two delimiters are adjacent, or a delimiter is found at the beginning or end of the specified basic_string, the corresponding array element contains empty basic_string.
     /// @remarks If there are more than count substrings in the specified basic_string, the first count minus 1 substrings are returned in the first count minus 1 elements of the return value, and the remaining characters in the specified basic_string are returned in the last element of the return value.
     xtd::array<basic_string> split(const xtd::array<value_type>& separators, xtd::size count) const noexcept;
@@ -1807,13 +1807,13 @@ namespace xtd {
     
     /// @brief Determines whether the beginning of this instance of xtd::basic_string matches a specified xtd::basic_string.
     /// @param value A xtd::basic_string to compare to.
-    /// @return bool true if value matches the beginning of the specified basic_string; otherwise, `false`.
+    /// @return bool `true` if value matches the beginning of the specified basic_string; otherwise, `false`.
     /// @remarks This method compares value to the substring at the beginning of the specified basic_string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified basic_string.
     bool starts_with(value_type value) const noexcept {return starts_with(value, false);}
     /// @brief Determines whether the beginning of this instance of xtd::basic_string matches a specified xtd::basic_string, ignoring or honoring their case.
     /// @param value A xtd::basic_string to compare to.
-    /// @param ignore_case true to ignore case when comparing the specified basic_string and value; otherwise, `false`
-    /// @return bool true if value matches the beginning of the specified basic_string; otherwise, `false`.
+    /// @param ignore_case `true` to ignore case when comparing the specified basic_string and value; otherwise, `false`
+    /// @return bool `true` if value matches the beginning of the specified basic_string; otherwise, `false`.
     /// @remarks This method compares value to the substring at the beginning of the specified basic_string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified basic_string.
     bool starts_with(value_type value, bool ignore_case) const noexcept {
       if (ignore_case) return to_lower().find(static_cast<value_type>(tolower(value))) == 0;
@@ -1821,19 +1821,19 @@ namespace xtd {
     }
     /// @brief Determines whether the beginning of this instance of xtd::basic_string matches a specified xtd::basic_string.
     /// @param value A xtd::basic_string to compare to.
-    /// @return bool true if value matches the beginning of the specified basic_string; otherwise, `false`.
+    /// @return bool `true` if value matches the beginning of the specified basic_string; otherwise, `false`.
     /// @remarks This method compares value to the substring at the beginning of the specified basic_string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified basic_string.
     bool starts_with(const basic_string& value) const noexcept {return starts_with(value, string_comparison::ordinal);}
     /// @brief Determines whether the beginning of this instance of xtd::basic_string matches a specified xtd::basic_string, ignoring or honoring their case.
     /// @param value A xtd::basic_string to compare to.
-    /// @param ignore_case true to ignore case when comparing the specified basic_string and value; otherwise, `false`
-    /// @return bool true if value matches the beginning of the specified basic_string; otherwise, `false`.
+    /// @param ignore_case `true` to ignore case when comparing the specified basic_string and value; otherwise, `false`
+    /// @return bool `true` if value matches the beginning of the specified basic_string; otherwise, `false`.
     /// @remarks This method compares value to the substring at the beginning of the specified basic_string that is the same length as value, and returns an indication whether they are equal. To be equal, value must be a reference to this same instance, or match the beginning of the specified basic_string.
     bool starts_with(const basic_string& value, bool ignore_case) const noexcept {return starts_with(value, ignore_case ? string_comparison::ordinal_ignore_case : string_comparison::ordinal);}
     /// @brief Determines whether the end of this basic_string matches the specified basic_string when compared using the specified comparison option.
     /// @param value The string to compare to the substring at the end of this instance.
     /// @param comparison_type One of the enumeration values that determines how this basic_string and value are compared.
-    /// @return bool true if value matches the end of the specified basic_string; otherwise, `false`.
+    /// @return bool `true` if value matches the end of the specified basic_string; otherwise, `false`.
     bool starts_with(const basic_string& value, xtd::string_comparison comparison_type) const noexcept {
       if (comparison_type == xtd::string_comparison::ordinal_ignore_case) return to_lower().find(value.to_lower()) == 0;
       return find(value) == 0;
@@ -2049,7 +2049,7 @@ namespace xtd {
     /// @brief Compares two specified basic_string objects, ignoring or honoring their case, and returns an integer that indicates their relative position in the sort order.
     /// @param str_a The first basic_string to compare.
     /// @param str_b The second basic_string to compare.
-    /// @param ignore_case true to ignore case during the comparison; otherwise, `false`.
+    /// @param ignore_case `true` to ignore case during the comparison; otherwise, `false`.
     /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
     /// | Value             | Condition                                                     |
     /// | ----------------- | ------------------------------------------------------------- |
@@ -2087,7 +2087,7 @@ namespace xtd {
     /// @param str_b The second basic_string to use in the comparison.
     /// @param index_b The position of the substring within str_b.
     /// @param length The maximum number of characters in the substrings to compare
-    /// @param ignore_case true to ignore case during the comparison; otherwise, `false`.
+    /// @param ignore_case `true` to ignore case during the comparison; otherwise, `false`.
     /// @return A 32-bit signed integer that indicates the lexical relationship between the two compares.
     /// | Value             | Condition                                                     |
     /// | ----------------- | ------------------------------------------------------------- |
@@ -2238,14 +2238,14 @@ namespace xtd {
     /// @brief Determines whether two specified xtd::basic_string objects have the same value, ignoring or honoring their case.
     /// @param a The first basic_string to compare.
     /// @param b The second basic_string to compare.
-    /// @param ignore_case true to ignore case when comparing this instance and value; otherwise, `false`
+    /// @param ignore_case `true` to ignore case when comparing this instance and value; otherwise, `false`
     /// @return `true` if the value of `a` is the same as the value of `b`; otherwise, `false`.
     /// @remarks This method performs an ordinal comparison.
     static bool equals(const basic_string& a, const basic_string& b, bool ignore_case) noexcept {return a.equals(b, ignore_case);}
     /// @brief Determines whether two specified xtd::basic_string objects have the same value, ignoring or honoring their case.
     /// @param a The first basic_string to compare.
     /// @param b The second basic_string to compare.
-    /// @param ignore_case true to ignore case when comparing this instance and value; otherwise, `false`
+    /// @param ignore_case `true` to ignore case when comparing this instance and value; otherwise, `false`
     /// @return `true` if the value of `a` is the same as the value of `b`; otherwise, `false`.
     /// @remarks This method performs an ordinal comparison.
     template<class char_a_t, class char_b_t>
