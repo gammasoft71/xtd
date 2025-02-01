@@ -10,6 +10,7 @@
 #include "../../internal/__list_definition.hpp"
 #undef  __XTD_CORE_INTERNAL__
 #include "../object_model/read_only_collection.hpp"
+#include "../../action.hpp"
 #include "../../argument_exception.hpp"
 #include "../../argument_out_of_range_exception.hpp"
 #include "../../box_integer.hpp"
@@ -22,6 +23,7 @@
 #include "../../literals.hpp"
 #include "../../object.hpp"
 #include "../../new_ptr.hpp"
+#include "../../predicate.hpp"
 #include "../../ptr.hpp"
 #include "../../string.hpp"
 #include <utility>
@@ -47,18 +49,6 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core generic_collections
-      /// @remarks The xtd::collections::generic::list <type_t> class instanciate as xtd::collections::generic::list::base_type a [std::vector](https://en.cppreference.com/w/cpp/container/vector) with xtd::collections::generic::helpers::allocator instead [std::allocator](https://en.cppreference.com/w/cpp/memory/allocator). Use xtd::collections::generic::list::get_base_type() to access the underlying [std::vector](https://en.cppreference.com/w/cpp/container/vector).
-      /// @remarks The xtd::collections::generic::list <type_t> class can also be used to manage a dynamic array of `bool` exactly as other types unlike [std::vector](https://en.cppreference.com/w/cpp/container/vector) with xtd::collections::generic::helpers::allocator instead [std::allocator](https://en.cppreference.com/w/cpp/memory/allocator). When the `type_t`is `bool` The underlying [std::vector](https://en.cppreference.com/w/cpp/container/vector) uses xtd::byte.
-      /// @remarks The xtd::collections::generic::list <type_t> class is the generic equivalent of the xtd::collections::array_list class. It implements the xtd::collections::generic::ilist <type_t> generic interface by using an array whose size is dynamically increased as required.
-      /// @remarks You can add items to a xtd::collections::generic::list <type_t> by using the xtd::collections::generic::list::add or xtd::collections::generic::list::add_range methods.
-      /// @remarks The xtd::collections::generic::list <type_t> class uses both an equality comparer and an ordering comparer.
-      /// * Methods such as xtd::collections::generic::list::contains, xtd::collections::generic::list::index_of, xtd::collections::generic::list::last_index_of, and xtd::collections::generic::list::remove use an equality comparer for the list elements. The default equality comparer for type `type_t` is determined as follows. If type `type_t` implements the xtd::iequatable <type_t> generic interface, then the equality comparer is the xtd::iequatable::equals method of that interface; otherwise, if the `type_t`inherits of the xtd::object class, the default equality comparer is xtd::object::equals. If the `type_t` does not implement the xtd::iequality <type_t> interface and does not inherit from xtd::object, the `type_t` must implement the euqality operator : `bool operator ==(const type_t& rhs) const noexcept`.
-      /// * Methods such as xtd::collections::generic::list::binary_search and xtd::collections::generic::list::sort use an ordering comparer for the list elements. The default comparer for type `type_t` is determined as follows. If type `type_t` implements the xtd::icomparable <type_t> generic interface, then the default comparer is the xtd::icomaprable::compare_to method of that interface. If the `type_t` type does not implement the xtd::icomparable <type_t> interface, the `type_t` type must implement the less than operator : `bool operator <(const type_t& rhs) const noexcept`.
-      /// @remarks The xtd::collections::generic::list <type_t> is not guaranteed to be sorted. You must sort the xtd::collections::generic::list <type_t> before performing operations (such as xtd::collections::binary_search) that require the xtd::collections::generic::list <type_t> to be sorted.
-      /// @remarks Elements in this collection can be accessed using an integer index. Indexes in this collection are zero-based.
-      /// @remarks For an immutable version of the xtd::collections::generic::list <type_t> class, see xtd::collections::immutale::immutable_list <type_t>.
-      /// @par Performance considerations
-      /// As xtd::collections::generic::list <type_t> instantiates and uses only the methods of [std::vector](https://en.cppreference.com/w/cpp/container/vector), the performance of xtd::collections::generic::list <type_t> is practically identical to that of [std::vector](https://en.cppreference.com/w/cpp/container/vector).
       /// @par Examples
       /// The following example demonstrates how to add, remove, and insert a simple business object in a xtd::collections::generic::list <type_t>.
       /// @include generic_list.cpp
@@ -74,6 +64,18 @@ namespace xtd {
       ///
       /// Finally, the xtd::collections::generic::list::clear method is used to remove all items from the list, and the xtd::collections::generic::list::capacity and xtd::collections::generic::list::count properties are displayed.
       /// @include generic_list2.cpp
+      /// @remarks The xtd::collections::generic::list <type_t> class instanciate as xtd::collections::generic::list::base_type a [std::vector](https://en.cppreference.com/w/cpp/container/vector) with xtd::collections::generic::helpers::allocator instead [std::allocator](https://en.cppreference.com/w/cpp/memory/allocator). Use xtd::collections::generic::list::get_base_type() to access the underlying [std::vector](https://en.cppreference.com/w/cpp/container/vector).
+      /// @remarks The xtd::collections::generic::list <type_t> class can also be used to manage a dynamic array of `bool` exactly as other types unlike [std::vector](https://en.cppreference.com/w/cpp/container/vector) with xtd::collections::generic::helpers::allocator instead [std::allocator](https://en.cppreference.com/w/cpp/memory/allocator). When the `type_t`is `bool` The underlying [std::vector](https://en.cppreference.com/w/cpp/container/vector) uses xtd::byte.
+      /// @remarks The xtd::collections::generic::list <type_t> class is the generic equivalent of the xtd::collections::array_list class. It implements the xtd::collections::generic::ilist <type_t> generic interface by using an array whose size is dynamically increased as required.
+      /// @remarks You can add items to a xtd::collections::generic::list <type_t> by using the xtd::collections::generic::list::add or xtd::collections::generic::list::add_range methods.
+      /// @remarks The xtd::collections::generic::list <type_t> class uses both an equality comparer and an ordering comparer.
+      /// * Methods such as xtd::collections::generic::list::contains, xtd::collections::generic::list::index_of, xtd::collections::generic::list::last_index_of, and xtd::collections::generic::list::remove use an equality comparer for the list elements. The default equality comparer for type `type_t` is determined as follows. If type `type_t` implements the xtd::iequatable <type_t> generic interface, then the equality comparer is the xtd::iequatable::equals method of that interface; otherwise, if the `type_t`inherits of the xtd::object class, the default equality comparer is xtd::object::equals. If the `type_t` does not implement the xtd::iequality <type_t> interface and does not inherit from xtd::object, the `type_t` must implement the euqality operator : `bool operator ==(const type_t& rhs) const noexcept`.
+      /// * Methods such as xtd::collections::generic::list::binary_search and xtd::collections::generic::list::sort use an ordering comparer for the list elements. The default comparer for type `type_t` is determined as follows. If type `type_t` implements the xtd::icomparable <type_t> generic interface, then the default comparer is the xtd::icomaprable::compare_to method of that interface. If the `type_t` type does not implement the xtd::icomparable <type_t> interface, the `type_t` type must implement the less than operator : `bool operator <(const type_t& rhs) const noexcept`.
+      /// @remarks The xtd::collections::generic::list <type_t> is not guaranteed to be sorted. You must sort the xtd::collections::generic::list <type_t> before performing operations (such as xtd::collections::binary_search) that require the xtd::collections::generic::list <type_t> to be sorted.
+      /// @remarks Elements in this collection can be accessed using an integer index. Indexes in this collection are zero-based.
+      /// @remarks For an immutable version of the xtd::collections::generic::list <type_t> class, see xtd::collections::immutale::immutable_list <type_t>.
+      /// @par Performance considerations
+      /// As xtd::collections::generic::list <type_t> instantiates and uses only the methods of [std::vector](https://en.cppreference.com/w/cpp/container/vector), the performance of xtd::collections::generic::list <type_t> is practically identical to that of [std::vector](https://en.cppreference.com/w/cpp/container/vector).
       template<class type_t, class allocator_t>
       class list : public xtd::object, public xtd::collections::generic::ilist<type_t>, public xtd::iequatable<xtd::collections::generic::list<type_t, allocator_t>> {
         struct __comparer__ {
@@ -86,6 +88,33 @@ namespace xtd {
           __comparison_comparer__(xtd::comparison<const type_t&> comparison) : comparison_(comparison) {}
           bool operator()(const type_t& e1, const type_t& e2) const {return comparison_(e1, e2) < 0;}
           xtd::comparison<const type_t&> comparison_;
+        };
+
+        struct __enumerator__ : public ienumerator<type_t> {
+        public:
+          explicit __enumerator__(const list& items, xtd::size version) : items_(items), version_(version) {}
+          
+          const type_t& current() const override {
+            if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute."};
+            if (index_ < items_.count()) return items_[index_];
+            static thread_local auto default_value = value_type {};
+            return default_value;
+          }
+          
+          bool move_next() override {
+            if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute."};
+            return ++index_ < items_.count();
+          }
+          
+          void reset() override {
+            version_ = items_.data_->version;
+            index_ = list::npos;
+          }
+          
+        protected:
+          const list& items_;
+          xtd::size index_ = list::npos;
+          xtd::size version_ = 0;
         };
 
       public:
@@ -133,14 +162,14 @@ namespace xtd {
         
         /// @{
         /// @brief Initializes a new instance of the xtd::collections::generic::list class that is empty.
+        /// @par Examples
+        /// The code example adds, inserts, and removes items, showing how the capacity changes as these methods are used.
+        /// @include generic_list.cpp
         /// @remarks The capacity of a xtd::collections::generic::list is the number of elements that the xtd::collections::generic::list can hold. As elements are added to a xtd::collections::generic::list, the capacity is automatically increased as required by reallocating the internal array.
         /// @remarks If the size of the collection can be estimated, using the xtd::collections::generic::list (size_type) constructor and specifying the initial capacity eliminates the need to perform a number of resizing operations while adding elements to the xtd::collections::generic::list.
         /// @remarks The capacity can be decreased by calling the xtd::collections::generic::list::trim_excess method or by setting the xtd::collections::generic::list::capacity property explicitly. Decreasing the capacity reallocates memory and copies all the elements in the xtd::collections::generic::list.
         /// @remarks This constructor is an O(1) operation.
         /// @remarks The following code example demonstrates the default constructor of the xtd::collections::generic::list generic class. The default constructor creates a list with the default capacity, as demonstrated by displaying the xtd::collections::generic::list::capacity property.
-        /// @par Examples
-        /// The code example adds, inserts, and removes items, showing how the capacity changes as these methods are used.
-        /// @include generic_list.cpp
         list() noexcept = default;
         
         /// @brief Constructs an empty container with the given allocator.
@@ -347,8 +376,30 @@ namespace xtd {
         /// @remarks Calling front on an empty container causes undefined behavior.
         virtual const_reference front() const {return at(0);}
         
+        /// @brief Gets a value indicating whether the xtd::collections::generic::list <type_t> has a fixed size.
+        /// @return `true` if the xtd::collections::generic::list <type_t> has a fixed size; otherwise, `false`.
+        /// @remarks A collection with a fixed size does not allow the addition or removal of elements after the collection is created, but it allows the modification of existing elements.
         bool is_fixed_size() const noexcept override {return false;}
+
+        /// @brief Gets a value indicating whether the xtd::collections::generic::list <type_t> is read-only.
+        /// @return `true` if the xtd::collections::generic::list <type_t> is read-only; otherwise, `false`.
+        /// @remarks A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the xtd::collections::generic::list <type_t> interface only supports addition and removal operations. For example, the xtd::collections::generic::list::is_read_only property of an array that is cast or converted to an xtd::collections::generic::list <type_t> object returns `true`, even though individual array elements can be modified.
         bool is_read_only() const noexcept override {return false;}
+
+        /// @brief Gets a value indicating whether access to the xtd::collections::generic::list <type_t> is synchronized (thread safe).
+        /// @return `true` if access to the xtd::collections::generic::list <type_t> is synchronized (thread safe); otherwise, `false`.
+        /// @remarks xtd::collections::generic::list::sync_root returns an object, which can be used to synchronize access to the xtd::collections::generic::list <type_t>.
+        /// @remarks Most collection classes in the xtd::collections namespace also implement a `synchronized` method, which provides a synchronized wrapper around the underlying collection.
+        /// @remarks Enumerating through a collection is intrinsically not a thread-safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads.
+        /// @remarks The following code example shows how to lock the collection using the xtd::collections::generic::list::sync_root property during the entire enumeration.
+        /// @code
+        /// list& my_collection = some_collection;
+        /// lock_(my_collection.sync_root()) {
+        ///   for (auto item : my_collection) {
+        ///     // Insert your code here.
+        ///   }
+        /// }
+        /// @endcode
         bool is_synchronized() const noexcept override {return false;}
         
         /// @brief Returns the underlying base type items.
@@ -384,6 +435,27 @@ namespace xtd {
         /// @return The number of elements in the container.
         virtual size_type size() const noexcept {return data_->items.size();}
         
+        /// @brief Gets an object that can be used to synchronize access to the the xtd::collections::generic::list <type_t>.
+        /// @return An object that can be used to synchronize access to the the xtd::collections::generic::list <type_t>.
+        /// @remarks For collections whose underlying store is not publicly available, the expected implementation is to return the current instance. Note that the pointer to the current instance might not be sufficient for collections that wrap other collections; those should return the underlying collection's `sync_root` property.
+        /// @remarks Most collection classes in the xts::.collections namespace also implement a `synchronized` method, which provides a synchronized wrapper around the underlying collection. However, derived classes can provide their own synchronized version of the collection using the xtd::collections::generic::list::sync_root property. The synchronizing code must perform operations on the xtd::collections::generic::list::sync_root property of the collection, not directly on the collection. This ensures proper operation of collections that are derived from other objects. Specifically, it maintains proper synchronization with other threads that might be simultaneously modifying the collection instance.
+        /// @remarks In the absence of a `synchronized` method on a collection, the expected usage for the xtd::collections::generic::list::sync_root looks as follows:
+        /// @code
+        /// list& my_collection = some_collection;
+        /// lock_(my_collection.sync_root()) {
+        ///   // Some operation on the collection, which is now thread safe.
+        /// }
+        /// @encode
+        /// @remarks Enumerating through a collection is intrinsically not a thread-safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads.
+        /// @remarks The following code example shows how to lock the collection using the xtd::collections::generic::list::sync_root property during the entire enumeration.
+        /// @code
+        /// list& my_collection = some_collection;
+        /// lock_(my_collection.sync_root()) {
+        ///   for (auto item : my_collection) {
+        ///     // Insert your code here.
+        ///   }
+        /// }
+        /// @endcode
         const xtd::object& sync_root() const noexcept override {return data_->sync_root;}
         /// @}
         
@@ -483,15 +555,15 @@ namespace xtd {
         /// @param item The object to locate.
         /// @return The zero-based index of item in the sorted xtd::collections::generic::list <type_t>, if item is found; otherwise, a number greater than xtd::collections::genric::list::count that is the bitwise complement of the index of the next element that is larger than item or, if there is no larger element, the bitwise complement of xtd::collections::genric::list::count.
         /// @exception xtd::invalid_operation_exception The default comparer xtd::collections::generic::comparer::default_comparer cannot find an implementation of the xtd::icomparable <type_t> generic interface.
+        /// @par Examples
+        /// The xtd::collections::generic::list::binary_search method overload is then used to search for two strings that are not in the list, and the xtd::collections::generic::list::insert method is used to insert them. The return value of the xtd::collections::generic::list::binary_search method is greater than xtd::collections::generic::list::count in each case, because the strings are not in the list. Taking the bitwise complement of this number produces the index of the first element in the list that is larger than the search string, and inserting at this location preserves the sort order. The second search string is larger than any element in the list, so the insertion position is at the end of the list.
+        /// @include generic_list_binary_search.cpp
         /// @remarks This method uses the default comparer xtd::collections::generic::comparer::default_comparer for type `type_t` to determine the order of list elements. The xtd::collections::generic::comparer::default_comparer property checks whether type `type_t` implements the xtd::icomparable <type_t> generic interface and uses that implementation, if available. If not, xtd::collections::generic::comparer::default_comparer checks whether type `type_t` implements the xtd::icomparable interface. If type `type_t` does not implement either interface, xtd::collections::generic::comparer::default_comparer throws an xtd::invalid_operation_exception.
         /// @remarks The xtd::collections::generic::list <type_t> must already be sorted according to the comparer implementation; otherwise, the result is incorrect.
         /// @remarks If the xtd::collections::generic::list <type_t> contains more than one element with the same value, the method returns only one of the occurrences, and it might return any one of the occurrences, not necessarily the first one.
         /// @remarks If the xtd::collections::generic::list <type_t> does not contain the specified value, the method returns an integer greater than xtd::collections::generic::list::count. You can apply the bitwise complement operation (~) to this integer to get the index of the first element that is larger than the search value. When inserting the value into the xtd::collections::generic::list <type_t>, this index should be used as the insertion point to maintain the sort order.
         /// @remarks This method is an O(log n) operation, where n is the number of elements in the range.
         /// @remarks The following code example demonstrates the xtd::collections::generic::list::sort() method overload and the xtd::collections::generic::list::binary_search method overload. A xtd::collections::generic::list <type_t> of strings is created and populated with four strings, in no particular order. The list is displayed, sorted, and displayed again.
-        /// @par Examples
-        /// The xtd::collections::generic::list::binary_search method overload is then used to search for two strings that are not in the list, and the xtd::collections::generic::list::insert method is used to insert them. The return value of the xtd::collections::generic::list::binary_search method is greater than xtd::collections::generic::list::count in each case, because the strings are not in the list. Taking the bitwise complement of this number produces the index of the first element in the list that is larger than the search string, and inserting at this location preserves the sort order. The second search string is larger than any element in the list, so the insertion position is at the end of the list.
-        /// @include generic_list_binary_search.cpp
         xtd::size binary_search(const type_t& item) const {return binary_search(0, count(), item, xtd::collections::generic::comparer<type_t>::default_comparer);}
         
         /// @brief Searches the entire sorted xtd::collections::generic::list <type_t> for an element using the specified comparer and returns the zero-based index of the element.
@@ -543,16 +615,16 @@ namespace xtd {
           data_->items.clear();
         }
         
-        /// @brief Determines whether an element is in the List<T>.
-        /// @param value The object to locate in the List<T>. The value can be null for reference types.
-        /// @return `true` if item is found in the List<T>; otherwise, `false`.
+        /// @brief Determines whether an element is in the xtd::colllections::generic::list <type_t>.
+        /// @param value The object to locate in the xtd::colllections::generic::list <type_t>. The value can be null for reference types.
+        /// @return `true` if item is found in the xtd::colllections::generic::list <type_t>; otherwise, `false`.
         bool contains(const type_t& value) const noexcept override {
           for (const auto& item : data_->items)
             if (helpers::equator<type_t> {}(reinterpret_cast<const type_t&>(item), value)) return true;
           return false;
         }
 
-        /// @brief Converts the elements in the current List<T> to another type, and returns a list containing the converted elements.
+        /// @brief Converts the elements in the current xtd::colllections::generic::list <type_t> to another type, and returns a list containing the converted elements.
         /// @tparam output_t The type of the elements of the target array.
         /// @param converter A xtd::converter <output_t, input_t> delegate that converts each element from one type to another type.
         /// @return A xtd::collections::generic::list <type_t> of the target type containing the converted elements from the current xtd::collections::generic::list <type_t>.
@@ -560,7 +632,7 @@ namespace xtd {
         /// The following example defines a method named `point_f_to_point` that converts a xtd::drawing::point_f structure to a xtd::drawing::point structure. The example then creates a xtd::collections::generic::list <type_t> of xtd::drawing::point_f structures, creates a xtd::converter <point_f, point> delegate to represent the `point_f_to_point` method, and passes the delegate to the xtd::collections::generic::list::convert_all method. The xtd::collections::generic::list::convert_all method passes each element of the input list to the `point_f_to_point` method and puts the converted elements into a new list of Point structures. Both lists are displayed.
         /// @include generic_list_convert_all.cpp
         template<class output_t>
-        list<output_t> convert_all(xtd::converter<output_t, type_t> converter) const {
+        list<output_t> convert_all(xtd::converter<output_t, const type_t&> converter) const {
           auto result = list<output_t> {};
           for (const auto& item : *this)
             result.add(converter(item));
@@ -571,16 +643,21 @@ namespace xtd {
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from ICollection. The xtd::array must have zero-based indexing.
         /// @exception ArgumentNullException array is null.
         /// @exception ArgumentException The number of elements in the source xtd::collections::generic::list <type_t> is greater than the number of elements that the destination array can contain.
-        /// @remarks TThis method uses xtd::array::copy to copy the elements.
-        /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
-        /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         /// @par Examples
         /// The following code example demonstrates all three overloads of the CopyTo method. A xtd::collections::generic::list <type_t> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the copy_to(type_t[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(type_t[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, type_t[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
         /// @include ListCopyTo.cpp
+        /// @remarks TThis method uses xtd::array::copy to copy the elements.
+        /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
+        /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         virtual void copy_to(xtd::array<type_t>& array) const {copy_to(0, array, 0, count());}
-        
+        /// @brief Copies the entire xtd::colllections::generic::list <type_t> to a compatible one-dimensional array, starting at the specified index of the target array.
+        /// @param array The one-dimensional Array that is the destination of the elements copied from xtd::colllections::generic::list <type_t>. The Array must have zero-based indexing.
+        /// @param array_index The zero-based index in array at which copying begins.
+        /// @exception xtd::argument_exception The number of elements in the source xtd::colllections::generic::list <type_t> is greater than the available space from arrayIndex to the end of the destination array.
+        /// @remarks This method uses xtd::array::copy to copy the elements.
+        /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::colllections::generic::list <type_t>.
+        /// @remarks This method is an O(n) operation, where n is xtd::colllections::generic::list::count.
         void copy_to(xtd::array<type_t>& array, size_type array_index) const override {copy_to(0, array, array_index, count());}
-        
         /// @brief Copies the entire xtd::collections::generic::list <type_t> to a compatible one-dimensional array, starting at the specified index of the target array.
         /// @param index The zero-based index in the source xtd::collections::generic::list <type_t> at which copying begins.
         /// @param array The one-dimensional xtd::array that is the destination of the elements copied from ICollection. The xtd::array must have zero-based indexing.
@@ -589,12 +666,12 @@ namespace xtd {
         /// @exception ArgumentNullException array is null.
         /// @exception ArgumentOutOfRangeException The arrayIndex or count is less than 0.
         /// @exception ArgumentException The number of elements in the source xtd::collections::generic::list <type_t> is greater than the number of elements that the destination array can contain.
-        /// @remarks TThis method uses xtd::array::copy to copy the elements.
-        /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
-        /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         /// @par Examples
         /// The following code example demonstrates all three overloads of the CopyTo method. A xtd::collections::generic::list <type_t> of strings is created and populated with 5 strings. An empty string array of 15 elements is created, and the CopyTo(type_t[]) method overload is used to copy all the elements of the list to the array beginning at the first element of the array. The CopyTo(type_t[], Int32) method overload is used to copy all the elements of the list to the array beginning at array index 6 (leaving index 5 empty). Finally, the CopyTo(Int32, type_t[], Int32, Int32) method overload is used to copy 3 elements from the list, beginning with index 2, to the array beginning at array index 12 (leaving index 11 empty). The contents of the array are then displayed.
         /// @include ListCopyTo.cpp
+        /// @remarks TThis method uses xtd::array::copy to copy the elements.
+        /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
+        /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         virtual void copy_to(size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const {
           if (index + count > this->count() || array_index + count > array.size()) throw xtd::argument_exception {};
           auto i = size_type {0}, c = size_type {0};
@@ -630,6 +707,14 @@ namespace xtd {
           return data_->items.emplace_back(std::forward<args_t>(args)...);
         }
         
+        /// @brief Ensures that the capacity of this list is at least the specified `capacity`. If the current capacity is less than `capacity`, it is increased to at least the specified `capacity`.
+        /// @param capacity The minimum capacity to ensure.
+        /// @return The new capacity of this list.
+        xtd::size ensure_capacity(xtd::size capacity) {
+          data_->items.reserve(capacity);
+          return this->capacity();
+        }
+        
         bool equals(const object& obj) const noexcept override {return is<list<value_type>>(obj) && equals(static_cast<const list<value_type>&>(obj));}
         bool equals(const list& rhs) const noexcept override {
           if (count() != rhs.count()) return false;
@@ -662,6 +747,144 @@ namespace xtd {
           return to_type_iterator(data_->items.erase(to_base_type_iterator(first), to_base_type_iterator(last)));
         }
         
+        /// @brief Determines whether the xtd::collections::generic::list <type_t> contains elements that match the conditions defined by the specified predicate.
+        /// @param match The xtd::predicate <type_t> delegate that defines the conditions of the elements to search for.
+        /// @return `true` if the xtd::collections::generic::list <type_t> contains one or more elements that match the conditions defined by the specified `predicate`; otherwise, `false`.
+        /// @par Examples
+        /// The following example demonstrates the xtd::collections::generic::list::exists method and several other methods that use the xtd::predicate <type_t> generic delegate.
+        /// <br>A xtd::collections::generic::list <type_t> of strings is created, containing 8 dinosaur names, two of which (at positions 1 and 5) end with "saurus". The example also defines a search predicate method named `ends_with_saurus`, which accepts a string parameter and returns a boolean value indicating whether the input string ends in "saurus".
+        /// <br>The xtd::collections::generic::list::find, xtd::collections::generic::list::find_last, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the xtd::collections::generic::list::remove_all method is used to remove all entries ending with "saurus".
+        /// <br>Finally, the xtd::collections::generic::list::exists method is called. It traverses the list from the beginning, passing each element in turn to the `ends_with_saurus` method. The search stops and the method returns `true` if the `ends_with_saurus` method returns `true` for any element. The xtd::collections::generic::list::exists method returns `false` because all such elements have been removed.
+        /// @include generic_list_exists.cpp
+        /// @remarks The xtd::predicate <type_t> is a delegate to a method that returns true if the object passed to it matches the conditions defined in the delegate. The elements of the current xtd::collections::generic::list <type_t> are individually passed to the xtd::predicate <type_t> delegate, and the elements that match the conditions are removed from the xtd::collections::generic::list <type_t>.
+        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        bool exists(xtd::predicate<const type_t&> match) const {
+          for (const auto& item : *this)
+            if (match(item)) return true;
+          return false;
+        }
+
+        /// @brief Searches for an element that matches the conditions defined by the specified predicate, and returns the first occurrence within the entire xtd::collections::generic::list <type_t>.
+        /// @param match The xtd::predicate <type_t> delegate that defines the conditions of the elements to search for.
+        /// @return The first element that matches the conditions defined by the specified `predicate`, if found; otherwise, the default value for type `type_t`.
+        /// @par Examples
+        /// The following example demonstrates the xtd::collections::generic::list::exists method and several other methods that use the xtd::predicate <type_t> generic delegate.
+        /// <br>A xtd::collections::generic::list <type_t> of strings is created, containing 8 dinosaur names, two of which (at positions 1 and 5) end with "saurus". The example also defines a search predicate method named `ends_with_saurus`, which accepts a string parameter and returns a boolean value indicating whether the input string ends in "saurus".
+        /// <br>The xtd::collections::generic::list::find, xtd::collections::generic::list::find_last, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the xtd::collections::generic::list::remove_all method is used to remove all entries ending with "saurus".
+        /// <br>Finally, the xtd::collections::generic::list::exists method is called. It traverses the list from the beginning, passing each element in turn to the `ends_with_saurus` method. The search stops and the method returns `true` if the `ends_with_saurus` method returns `true` for any element. The xtd::collections::generic::list::exists method returns `false` because all such elements have been removed.
+        /// @include generic_list_exists.cpp
+        /// @remarks The xtd::predicate <type_t> is a delegate to a method that returns true if the object passed to it matches the conditions defined in the delegate. The elements of the current xtd::collections::generic::list <type_t> are individually passed to the xtd::predicate <type_t> delegate, and the elements that match the conditions are removed from the xtd::collections::generic::list <type_t>.
+        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        type_t find(xtd::predicate<const type_t&> match) const {
+          for (const auto& item : *this)
+            if (match(item)) return item;
+          return type_t {};
+        }
+        
+        /// @brief Retrieves all the elements that match the conditions defined by the specified predicate.
+        /// @param match The xtd::predicate <type_t> delegate that defines the conditions of the elements to search for.
+        /// @return A xtd::collections::generic::list <type_t> containing all the elements that match the conditions defined by the specified `predicate`, if found; otherwise, an empty xtd::collections::generic::list <type_t>.
+        /// @par Examples
+        /// The following example demonstrates the xtd::collections::generic::list::exists method and several other methods that use the xtd::predicate <type_t> generic delegate.
+        /// <br>A xtd::collections::generic::list <type_t> of strings is created, containing 8 dinosaur names, two of which (at positions 1 and 5) end with "saurus". The example also defines a search predicate method named `ends_with_saurus`, which accepts a string parameter and returns a boolean value indicating whether the input string ends in "saurus".
+        /// <br>The xtd::collections::generic::list::find, xtd::collections::generic::list::find_last, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the xtd::collections::generic::list::remove_all method is used to remove all entries ending with "saurus".
+        /// <br>Finally, the xtd::collections::generic::list::exists method is called. It traverses the list from the beginning, passing each element in turn to the `ends_with_saurus` method. The search stops and the method returns `true` if the `ends_with_saurus` method returns `true` for any element. The xtd::collections::generic::list::exists method returns `false` because all such elements have been removed.
+        /// @include generic_list_exists.cpp
+        /// @remarks The xtd::predicate <type_t> is a delegate to a method that returns true if the object passed to it matches the conditions defined in the delegate. The elements of the current xtd::collections::generic::list <type_t> are individually passed to the xtd::predicate <type_t> delegate, and the elements that match the conditions are removed from the xtd::collections::generic::list <type_t>.
+        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        list<type_t> find_all(xtd::predicate<const type_t&> match) const {
+          auto result = list<type_t> {};
+          for (const auto& item : *this)
+            if (match(item)) result.add(item);
+          return result;
+        }
+        
+        /// @brief Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the entire xtd::collections::generic::list <type_t>.
+        /// @param match The xtd::predicate <type_t> delegate that defines the conditions of the elements to search for.
+        /// @return The zero-based index of the first occurrence of an element that matches the conditions defined by match, if found; otherwise, xtd::collections::generic::list::npos.
+        /// @remarks The xtd::predicate <type_t> is a delegate to a method that returns true if the object passed to it matches the conditions defined in the delegate. The elements of the current xtd::collections::generic::list <type_t> are individually passed to the xtd::predicate <type_t> delegate, and the elements that match the conditions are removed from the xtd::collections::generic::list <type_t>.
+        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        xtd::size find_index(xtd::predicate<const type_t&> match) const {return find_index(0, size(), match);}
+        /// @brief Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the range of elements in the xtd::collections::generic::list <type_t> that extends from the specified index to the last element.
+        /// @param start_index The zero-based starting index of the search.
+        /// @param match The xtd::predicate <type_t> delegate that defines the conditions of the elements to search for.
+        /// @return The zero-based index of the first occurrence of an element that matches the conditions defined by match, if found; otherwise, xtd::collections::generic::list::npos.
+        /// @exception xtd::argument_out_of_range_exception `start_index` is outside the range of valid indexes for the xtd::collections::generic::list <type_t>..
+        /// @remarks The xtd::predicate <type_t> is a delegate to a method that returns true if the object passed to it matches the conditions defined in the delegate. The elements of the current xtd::collections::generic::list <type_t> are individually passed to the xtd::predicate <type_t> delegate, and the elements that match the conditions are removed from the xtd::collections::generic::list <type_t>.
+        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        xtd::size find_index(xtd::size start_index, xtd::predicate<const type_t&> match) const {return find_index(start_index, size() - start_index, match);}
+        /// @brief Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the first occurrence within the range of elements in the xtd::collections::generic::list <type_t> that starts at the specified index and contains the specified number of elements.
+        /// @param start_index The zero-based starting index of the search.
+        /// @param count The number of elements in the section to search.
+        /// @param match The xtd::predicate <type_t> delegate that defines the conditions of the elements to search for.
+        /// @return The zero-based index of the first occurrence of an element that matches the conditions defined by match, if found; otherwise, xtd::collections::generic::list::npos.
+        /// @exception xtd::argument_out_of_range_exception `start_index` is outside the range of valid indexes for the xtd::collections::generic::list <type_t>.<br>-or-<br>`start_index` and `count` do not specify a valid section in the xtd::collections::generic::list <type_t>.
+        /// @remarks The xtd::predicate <type_t> is a delegate to a method that returns true if the object passed to it matches the conditions defined in the delegate. The elements of the current xtd::collections::generic::list <type_t> are individually passed to the xtd::predicate <type_t> delegate, and the elements that match the conditions are removed from the xtd::collections::generic::list <type_t>.
+        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        xtd::size find_index(xtd::size start_index, xtd::size count, xtd::predicate<const type_t&> match) const {
+          if (start_index > size() || start_index + count > size()) throw argument_out_of_range_exception {};
+          for (auto index = start_index; index < start_index + count; ++index)
+            if (match((*this)[index])) return index;
+          return npos;
+        }
+        
+        /// @brief Searches for an element that matches the conditions defined by the specified predicate, and returns the last occurrence within the entire xtd::collections::generic::list <type_t>.
+        /// @param match The xtd::predicate <type_t> delegate that defines the conditions of the elements to search for.
+        /// @return The last element that matches the conditions defined by the specified predicate, if found; otherwise, the default value for type `type_t`.
+        /// @par Examples
+        /// The following example demonstrates the xtd::collections::generic::list::exists method and several other methods that use the xtd::predicate <type_t> generic delegate.
+        /// <br>A xtd::collections::generic::list <type_t> of strings is created, containing 8 dinosaur names, two of which (at positions 1 and 5) end with "saurus". The example also defines a search predicate method named `ends_with_saurus`, which accepts a string parameter and returns a boolean value indicating whether the input string ends in "saurus".
+        /// <br>The xtd::collections::generic::list::find, xtd::collections::generic::list::find_last, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the xtd::collections::generic::list::remove_all method is used to remove all entries ending with "saurus".
+        /// <br>Finally, the xtd::collections::generic::list::exists method is called. It traverses the list from the beginning, passing each element in turn to the `ends_with_saurus` method. The search stops and the method returns `true` if the `ends_with_saurus` method returns `true` for any element. The xtd::collections::generic::list::exists method returns `false` because all such elements have been removed.
+        /// @include generic_list_exists.cpp
+        /// @remarks The xtd::predicate <type_t> is a delegate to a method that returns true if the object passed to it matches the conditions defined in the delegate. The elements of the current xtd::collections::generic::list <type_t> are individually passed to the xtd::predicate <type_t> delegate, and the elements that match the conditions are removed from the xtd::collections::generic::list <type_t>.
+        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        type_t find_last(xtd::predicate<const type_t&> match) const {
+          for (auto iterator = rbegin(); iterator != rend(); ++iterator)
+            if (match(*iterator)) return *iterator;
+          return type_t {};
+        }
+        
+        /// @brief Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the entire xtd::collections::generic::list <type_t>.
+        /// @param match The xtd::predicate <type_t> delegate that defines the conditions of the elements to search for.
+        /// @return The zero-based index of the last occurrence of an element that matches the conditions defined by match, if found; otherwise, xtd::collections::generic::list::npos.
+        /// @remarks The xtd::predicate <type_t> is a delegate to a method that returns true if the object passed to it matches the conditions defined in the delegate. The elements of the current xtd::collections::generic::list <type_t> are individually passed to the xtd::predicate <type_t> delegate, and the elements that match the conditions are removed from the xtd::collections::generic::list <type_t>.
+        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        xtd::size find_last_index(xtd::predicate<const type_t&> match) const {return find_last_index(size() - 1, size(), match);}
+        /// @brief Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the range of elements in the xtd::collections::generic::list <type_t> that extends from the first element to the specified index.
+        /// @param start_index The zero-based starting index of the backward search.
+        /// @param match The xtd::predicate <type_t> delegate that defines the conditions of the elements to search for.
+        /// @return The zero-based index of the last occurrence of an element that matches the conditions defined by match, if found; otherwise, xtd::collections::generic::list::npos.
+        /// @exception xtd::argument_out_of_range_exception `start_index` is outside the range of valid indexes for the xtd::collections::generic::list <type_t>.
+        /// @remarks The xtd::predicate <type_t> is a delegate to a method that returns true if the object passed to it matches the conditions defined in the delegate. The elements of the current xtd::collections::generic::list <type_t> are individually passed to the xtd::predicate <type_t> delegate, and the elements that match the conditions are removed from the xtd::collections::generic::list <type_t>.
+        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        xtd::size find_last_index(xtd::size start_index, xtd::predicate<const type_t&> match) const {return find_last_index(start_index, start_index + 1, match);}
+        /// @brief Searches for an element that matches the conditions defined by the specified predicate, and returns the zero-based index of the last occurrence within the range of elements in the xtd::collections::generic::list <type_t> that contains the specified number of elements and ends at the specified index.
+        /// @param start_index The zero-based starting index of the backward search.
+        /// @param count The number of elements in the section to search.
+        /// @param match The xtd::predicate <type_t> delegate that defines the conditions of the elements to search for.
+        /// @return The zero-based index of the last occurrence of an element that matches the conditions defined by match, if found; otherwise, xtd::collections::generic::list::npos.
+        /// @exception xtd::argument_out_of_range_exception `start_index` is outside the range of valid indexes for the xtd::collections::generic::list <type_t>.<br>-or-<br>`start_index` and `count` do not specify a valid section in the xtd::collections::generic::list <type_t>.
+        /// @remarks The xtd::predicate <type_t> is a delegate to a method that returns true if the object passed to it matches the conditions defined in the delegate. The elements of the current xtd::collections::generic::list <type_t> are individually passed to the xtd::predicate <type_t> delegate, and the elements that match the conditions are removed from the xtd::collections::generic::list <type_t>.
+        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        xtd::size find_last_index(xtd::size start_index, xtd::size count, xtd::predicate<const type_t&> match) const {
+          if (count > size() || start_index - count + 1 > size()) throw argument_exception {};
+          auto end_index = start_index - count;
+          for (auto index = start_index; index > end_index; --index)
+            if (match((*this)[index])) return index;
+          return npos;
+        }
+        
+        /// @brief Performs the specified action on each element of the xtd::collections::generic::list <type_t>.
+        /// @param action The xtd::action <type_t> delegate to perform on each element of the xtd::collections::generic::list <type_t>.
+        /// @remarks The xtd::action <type_t> is a delegate to a method that performs an action on the object passed to it. The elements of the current xtd::collections::generic::list <type_t> are individually passed to the xtd::action <type_t> delegate.
+        /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        /// @remarks Modifying the underlying collection in the body of the Action<T> delegate is not supported and causes undefined behavior.
+        void for_each(xtd::action<const type_t&> action) {
+          for (const auto& item : *this)
+            action(item);
+        }
+        
         /// @brief Returns the allocator associated with the container.
         /// @return The associated allocator.
         virtual allocator_type get_allocator() const {return data_->items.get_allocator();}
@@ -674,34 +897,10 @@ namespace xtd {
         /// @return The underlying base type.
         virtual const base_type& get_base_type() const noexcept {return data_->items;}
 
+        /// @brief Returns an enumerator that iterates through the xtd::collections::generic::list <type_t>.
+        /// @return A xtd::collection::generic::.enumerator for the xtd::collections::generic::list <type_t>.
         enumerator<value_type> get_enumerator() const noexcept override {
-          struct internal_enumerator : public ienumerator<value_type> {
-          public:
-            explicit internal_enumerator(const list& items, size_type version) : items_(items), version_(version) {}
-            
-            const value_type& current() const override {
-              if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute."};
-              if (index_ < items_.count()) return items_[index_];
-              static thread_local auto default_value = value_type {};
-              return default_value;
-            }
-            
-            bool move_next() override {
-              if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute."};
-              return ++index_ < items_.count();
-            }
-            
-            void reset() override {
-              version_ = items_.data_->version;
-              index_ = list::npos;
-            }
-            
-          protected:
-            const list& items_;
-            size_type index_ = list::npos;
-            size_type version_ = 0;
-          };
-          return {new_ptr<internal_enumerator>(*this, data_->version)};
+          return {new_ptr<__enumerator__>(*this, data_->version)};
         }
         
         /// @brief Creates a shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
@@ -902,7 +1101,32 @@ namespace xtd {
           }
           return false;
         }
-        
+
+        /// @brief Removes all the elements that match the conditions defined by the specified predicate.
+        /// @param match The xtd::predicate <type_t> delegate that defines the conditions of the elements to search for.
+        /// @return The number of elements removed from the xtd::collections::generic::list <type_t>.
+        /// @par Examples
+        /// The following example demonstrates the xtd::collections::generic::list::exists method and several other methods that use the xtd::predicate <type_t> generic delegate.
+        /// <br>A xtd::collections::generic::list <type_t> of strings is created, containing 8 dinosaur names, two of which (at positions 1 and 5) end with "saurus". The example also defines a search predicate method named `ends_with_saurus`, which accepts a string parameter and returns a boolean value indicating whether the input string ends in "saurus".
+        /// <br>The xtd::collections::generic::list::find, xtd::collections::generic::list::find_last, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the xtd::collections::generic::list::remove_all method is used to remove all entries ending with "saurus".
+        /// <br>Finally, the xtd::collections::generic::list::exists method is called. It traverses the list from the beginning, passing each element in turn to the `ends_with_saurus` method. The search stops and the method returns `true` if the `ends_with_saurus` method returns `true` for any element. The xtd::collections::generic::list::exists method returns `false` because all such elements have been removed.
+        /// @include generic_list_exists.cpp
+        /// @remarks The xtd::predicate <type_t> is a delegate to a method that returns true if the object passed to it matches the conditions defined in the delegate. The elements of the current xtd::collections::generic::list <type_t> are individually passed to the xtd::predicate <type_t> delegate, and the elements that match the conditions are removed from the xtd::collections::generic::list <type_t>.
+        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        xtd::size remove_all(const xtd::predicate<const type_t&>& match) {
+          auto count = xtd::size {0};
+          auto iterator = data_->items.begin();
+          while (iterator != data_->items.end())
+            if (!match(*iterator)) iterator++;
+            else {
+              iterator = data_->items.erase(iterator);
+              ++count;
+            }
+          
+          if (count) ++data_->version;
+          return count;
+        }
+
         /// @brief Removes the element at the specified index of the xtd::collections::generic::list <type_t>.
         /// @param index The zero-based index of the item to remove
         /// @exception ArgumentOutOfRangeException index is less than 0 or index is greater than xtd::collections::generic::list::count.
@@ -916,10 +1140,10 @@ namespace xtd {
         /// @brief Removes a range of elements from the xtd::collections::generic::list <type_t>.
         /// @param index The zero-based index of the item to remove
         /// @param count The number of elements to remove
+        /// @exception xtd::argument_out_of_range_exception index or count is less than 0 or index + count is greater than xtd::collections::generic::list::count.
         /// @par Examples
         /// The following code example demonstrates the xtd::collections::generic::list <type_t> constructor and various methods of the xtd::collections::generic::list <type_t> class that act on ranges. An array of strings is created and passed to the constructor, populating the list with the elements of the array. The xtd::collections::generic::list::capacity property is then displayed, to show that the initial capacity is exactly what is required to hold the input elements.
         /// @include generic_list3.cpp
-        /// @exception xtd::argument_out_of_range_exception index or count is less than 0 or index + count is greater than xtd::collections::generic::list::count.
         /// @remarks The items are removed and all the elements following them in the xtd::collections::generic::list <type_t> have their indexes reduced by count.
         virtual void remove_range(size_type index, size_type count) {
           if (index + count >= this->count()) throw xtd::argument_out_of_range_exception {};
@@ -958,13 +1182,13 @@ namespace xtd {
 
         /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the default comparer.
         /// @exception xtd::invalid_operation_exception The default comparer xtd::collections::generic::comparer::default_comparer cannot find an implementation of the xtd::icomparable <type_t> generic interface.
+        /// @par Examples
+        /// The xtd::collections::generic::list::binary_search method overload is then used to search for two strings that are not in the list, and the xtd::collections::generic::list::insert method is used to insert them. The return value of the xtd::collections::generic::list::binary_search method is gretaer than xtd::collections::generic::list::count in each case, because the strings are not in the list. Taking the bitwise complement of this negative number produces the index of the first element in the list that is larger than the search string, and inserting at this location preserves the sort order. The second search string is larger than any element in the list, so the insertion position is at the end of the list.
+        /// @include generic_list_binary_search.cpp
         /// @remarks This method uses the default comparer xtd::collections::generic::comparer::default_comparer for type `type_t` to determine the order of list elements. The xtd::collections::generic::comparer::default_comparer property checks whether type `type_t` implements the xtd::icomparable <type_t> generic interface and uses that implementation, if available. If not, xtd::collections::generic::comparer::default_comparer checks whether type T implements the xtd::icomparable interface. If type `type_t` does not implement either interface, xtd::collections::generic::comparer::default_comparer throws an xtd::invalid_operation_exception.
         /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         /// @remarks The following code example demonstrates the xtd::collections::generic::list::sort method overload and the xtd::collections::generic::list::binary_search method overload. A xtd::collections::generic::list <type_t> of strings is created and populated with four strings, in no particular order. The list is displayed, sorted, and displayed again.
-        /// @par Examples
-        /// The xtd::collections::generic::list::binary_search method overload is then used to search for two strings that are not in the list, and the xtd::collections::generic::list::insert method is used to insert them. The return value of the xtd::collections::generic::list::binary_search method is gretaer than xtd::collections::generic::list::count in each case, because the strings are not in the list. Taking the bitwise complement of this negative number produces the index of the first element in the list that is larger than the search string, and inserting at this location preserves the sort order. The second search string is larger than any element in the list, so the insertion position is at the end of the list.
-        /// @include generic_list_binary_search.cpp
         void sort() {sort(xtd::collections::generic::comparer<type_t>::default_comparer);}
         
         /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the specified xtd::comparison <type_t>.
@@ -1014,11 +1238,11 @@ namespace xtd {
         
         /// @brief Copies the elements of the xtd::collections::generic::list <type_t> to a new array.
         /// @return An array containing copies of the elements of the xtd::collections::generic::list <type_t>.
-        /// @remarks The elements are copied using xtd::array::copy, which is an O(n) operation, where n is xtd::collections::generic::list::count.
-        /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         /// @par Examples
         /// The following code example demonstrates the xtd::collections::generic::list <type_t> constructor and various methods of the xtd::collections::generic::list <type_t> class that act on ranges. An array of strings is created and passed to the constructor, populating the list with the elements of the array. The xtd::collections::generic::list::capacity property is then displayed, to show that the initial capacity is exactly what is required to hold the input elements.
         /// @include generic_list3.cpp
+        /// @remarks The elements are copied using xtd::array::copy, which is an O(n) operation, where n is xtd::collections::generic::list::count.
+        /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         virtual xtd::array<value_type> to_array() const noexcept {return xtd::array<value_type>(data(), size());}
         
         string to_string() const noexcept override {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}
@@ -1044,6 +1268,23 @@ namespace xtd {
         /// @remarks To reset a xtd::collections::generic::list <type_t> to its initial state, call the xtd::collections::generic::list::clear method before calling the xtd::collections::generic::list::trim_excess method. Trimming an empty xtd::collections::generic::list <type_t> sets the capacity of the xtd::collections::generic::list <type_t> to the default capacity.
         /// @remarks The capacity can also be set using the xtd::collections::generic::list::capacity property.
         virtual void trim_excess() {shrink_to_fit();}
+
+        /// @brief Determines whether every element in the xtd::collections::generic::list <type_t> matches the conditions defined by the specified predicate.
+        /// @param match The xtd::predicate <type_t> delegate that defines the conditions of the elements to search for.
+        /// @return `true` if every element in the xtd::collections::generic::list <type_t> matches the conditions defined by the specified `predicate`; otherwise, `false`. If the list has no elements, the return value is `true`.
+        /// @par Examples
+        /// The following example demonstrates the xtd::collections::generic::list::exists method and several other methods that use the xtd::predicate <type_t> generic delegate.
+        /// <br>A xtd::collections::generic::list <type_t> of strings is created, containing 8 dinosaur names, two of which (at positions 1 and 5) end with "saurus". The example also defines a search predicate method named `ends_with_saurus`, which accepts a string parameter and returns a boolean value indicating whether the input string ends in "saurus".
+        /// <br>The xtd::collections::generic::list::find, xtd::collections::generic::list::find_last, and xtd::collections::generic::list::findA_all methods are used to search the list with the search predicate method, and then the xtd::collections::generic::list::remove_all method is used to remove all entries ending with "saurus".
+        /// <br>Finally, the xtd::collections::generic::list::exists method is called. It traverses the list from the beginning, passing each element in turn to the `ends_with_saurus` method. The search stops and the method returns `true` if the `ends_with_saurus` method returns `true` for any element. The xtd::collections::generic::list::exists method returns `false` because all such elements have been removed.
+        /// @include generic_list_exists.cpp
+        /// @remarks The xtd::predicate <type_t> is a delegate to a method that returns true if the object passed to it matches the conditions defined in the delegate. The elements of the current xtd::collections::generic::list <type_t> are individually passed to the xtd::predicate <type_t> delegate, and the elements that match the conditions are removed from the xtd::collections::generic::list <type_t>.
+        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        bool true_for_all(xtd::predicate<const type_t&> match) const {
+          for (const auto& item : *this)
+            if (!match(item)) return false;
+          return true;
+        }
         /// @}
         
         /// @name Public Operators
