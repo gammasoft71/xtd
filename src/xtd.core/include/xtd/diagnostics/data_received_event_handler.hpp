@@ -11,7 +11,7 @@ namespace xtd {
   namespace diagnostics {
     /// @brief Represents the method that will handle the xtd::diagnostics::process::output_data_received and xtd::diagnostics::process::error_data_received event of a Process.
     /// ```cpp
-    /// using data_received_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::diagnostics::data_received_event_args& e)>
+    /// using data_received_event_handler = xtd::delegate<void(xtd::object& sender, const xtd::diagnostics::data_received_event_args& e)>;
     /// ```
     /// @param sender The source of the event.
     /// @param e A xtd::diagnostics::process::data_received_event_args that contains the event data.
