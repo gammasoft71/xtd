@@ -113,7 +113,7 @@ class xtd::collections::generic::list&lt; type_t, allocator_t &gt;</div><p>Repre
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1ilist.html">xtd::collections::generic::ilist</a>&lt;type_t&gt;, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;xtd::collections::generic::list&lt;type_t&gt;&gt;</div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1ilist_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1ilist.html">xtd::collections::generic::ilist</a></div><div class="ttdoc">Represents a collection of objects that can be individually accessed by index.</div><div class="ttdef"><b>Definition</b> ilist.hpp:41</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:75</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:78</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:22</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:42</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/list&gt;</span></div>
@@ -129,8 +129,8 @@ The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="
 You can add items to a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; by using the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97" title="Adds an object to the end of the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::add</a> or <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#ab146efcfd252877905f7b7175ec5d519" title="Adds copy of elements from the specified collection to the end of the xtd::collections::generic::list...">xtd::collections::generic::list::add_range</a> methods. </dd>
 <dd>
 The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; class uses both an equality comparer and an ordering comparer.<ul>
-<li>Methods such as <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether the xtd::collections::generic::icollection &lt;type_t&gt; contains a specific value.">xtd::collections::generic::list::contains</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a71eaba7a78e7622cbbe300e45e438278" title="Determines the index of a specific item in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::index_of</a>, xtd::collections::generic::list::last_index_of, and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af25282b05c76b050d5e5c1cd030c291e" title="Removes the first occurrence of a specific object from the xtd::collections::generic::icollection &lt;ty...">xtd::collections::generic::list::remove</a> use an equality comparer for the list elements. The default equality comparer for type <code>type_t</code> is determined as follows. If type <code>type_t</code> implements the <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> &lt;type_t&gt; generic interface, then the equality comparer is the <a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903" title="Indicates whether the current object is equal to another object of the same type.">xtd::iequatable::equals</a> method of that interface; otherwise, if the <code>type_t</code>inherits of the <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> class, the default equality comparer is <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b" title="Determines whether the specified object is equal to the current object.">xtd::object::equals</a>. If the <code>type_t</code> does not implement the xtd::iequality &lt;type_t&gt; interface and does not inherit from <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a>, the <code>type_t</code> must implement the euqality operator : <code>bool operator ==(const type_t&amp; rhs) const noexcept</code>.</li>
-<li>Methods such as xtd::collections::generic::list::binary_search and xtd::collections::generic::list::sort use an ordering comparer for the list elements. The default comparer for type <code>type_t</code> is determined as follows. If type <code>type_t</code> implements the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> &lt;type_t&gt; generic interface, then the default comparer is the xtd::icomaprable::compare_to method of that interface. If the <code>type_t</code> type does not implement the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> &lt;type_t&gt; interface, the <code>type_t</code> type must implement the less than operator : <code>bool operator &lt;(const type_t&amp; rhs) const noexcept</code>. </li>
+<li>Methods such as <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether an element is in the List&lt;T&gt;.">xtd::collections::generic::list::contains</a>, <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a71eaba7a78e7622cbbe300e45e438278" title="Determines the index of a specific item in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::index_of</a>, xtd::collections::generic::list::last_index_of, and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af25282b05c76b050d5e5c1cd030c291e" title="Removes the first occurrence of a specific object from the xtd::collections::generic::icollection &lt;ty...">xtd::collections::generic::list::remove</a> use an equality comparer for the list elements. The default equality comparer for type <code>type_t</code> is determined as follows. If type <code>type_t</code> implements the <a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> &lt;type_t&gt; generic interface, then the equality comparer is the <a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903" title="Indicates whether the current object is equal to another object of the same type.">xtd::iequatable::equals</a> method of that interface; otherwise, if the <code>type_t</code>inherits of the <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> class, the default equality comparer is <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b" title="Determines whether the specified object is equal to the current object.">xtd::object::equals</a>. If the <code>type_t</code> does not implement the xtd::iequality &lt;type_t&gt; interface and does not inherit from <a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a>, the <code>type_t</code> must implement the euqality operator : <code>bool operator ==(const type_t&amp; rhs) const noexcept</code>.</li>
+<li>Methods such as <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a1ef4c073b2d33df08aa60c2135181120" title="Searches the entire sorted xtd::collections::generic::list &lt;type_t&gt; for an element using the default ...">xtd::collections::generic::list::binary_search</a> and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#ac9bdef873d976a7b33372793497acd34" title="Sorts the elements in the entire xtd::collections::generic::list &lt;type_t&gt; using the default comparer.">xtd::collections::generic::list::sort</a> use an ordering comparer for the list elements. The default comparer for type <code>type_t</code> is determined as follows. If type <code>type_t</code> implements the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> &lt;type_t&gt; generic interface, then the default comparer is the xtd::icomaprable::compare_to method of that interface. If the <code>type_t</code> type does not implement the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> &lt;type_t&gt; interface, the <code>type_t</code> type must implement the less than operator : <code>bool operator &lt;(const type_t&amp; rhs) const noexcept</code>. </li>
 </ul>
 </dd>
 <dd>
@@ -224,12 +224,12 @@ For an immutable version of the <a class="el" href="classxtd_1_1collections_1_1g
 <div class="ttc" id="agroup__xtd__core_html_ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf"><div class="ttname"><a href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">xtd::platform_id::other</a></div><div class="ttdeci">@ other</div><div class="ttdoc">The operating system is other.</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:15</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
-</div><!-- fragment --> The following example demonstrates several properties and methods of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; generic class of type string. (For an example of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of complex types, see the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether the xtd::collections::generic::icollection &lt;type_t&gt; contains a specific value.">xtd::collections::generic::list::contains</a> method.)</dd></dl>
+</div><!-- fragment --> The following example demonstrates several properties and methods of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; generic class of type string. (For an example of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of complex types, see the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether an element is in the List&lt;T&gt;.">xtd::collections::generic::list::contains</a> method.)</dd></dl>
 <p>The parameterless constructor is used to create a list of strings with the default capacity. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> property is displayed and then the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97" title="Adds an object to the end of the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::add</a> method is used to add several items. The items are listed, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> property is displayed again, along with the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> property, to show that the capacity has been increased as needed.</p>
-<p>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether the xtd::collections::generic::icollection &lt;type_t&gt; contains a specific value.">xtd::collections::generic::list::contains</a> method is used to test for the presence of an item in the list, the Insert method is used to insert a new item in the middle of the list, and the contents of the list are displayed again.</p>
+<p>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether an element is in the List&lt;T&gt;.">xtd::collections::generic::list::contains</a> method is used to test for the presence of an item in the list, the Insert method is used to insert a new item in the middle of the list, and the contents of the list are displayed again.</p>
 <p>The default xtd::collections::generic::list::operator [] is used to retrieve an item, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af25282b05c76b050d5e5c1cd030c291e" title="Removes the first occurrence of a specific object from the xtd::collections::generic::icollection &lt;ty...">xtd::collections::generic::list::remove</a> method is used to remove the first instance of the duplicate item added earlier, and the contents are displayed again. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af25282b05c76b050d5e5c1cd030c291e" title="Removes the first occurrence of a specific object from the xtd::collections::generic::icollection &lt;ty...">xtd::collections::generic::list::remove</a> method always removes the first instance it encounters.</p>
 <p>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a34439117eaf523a2c2cd78e3f3d04c51" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::list &lt;type_t&gt;,...">xtd::collections::generic::list::trim_excess</a> method is used to reduce the capacity to match the count, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> properties are displayed. If the unused capacity had been less than 10 percent of total capacity, the list would not have been resized.</p>
-<p>Finally, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a63d8a101c0b0d67fd52dc07850e1061a" title="Removes all items from the xtd::collections::generic::icollection &lt;type_t&gt;.">xtd::collections::generic::list::clear</a> method is used to remove all items from the list, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> properties are displayed. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<p>Finally, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a63d8a101c0b0d67fd52dc07850e1061a" title="Removes all elements from the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::clear</a> method is used to remove all items from the list, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> properties are displayed. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
@@ -529,6 +529,9 @@ For an immutable version of the <a class="el" href="classxtd_1_1collections_1_1g
 <tr class="memitem:ad649cdd1d4ed0f37473e0be1e6c76f74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#ad649cdd1d4ed0f37473e0be1e6c76f74">add_range</a> (std::initializer_list&lt; type_t &gt; il)</td></tr>
 <tr class="memdesc:ad649cdd1d4ed0f37473e0be1e6c76f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds copy of elements from the specified collection to the end of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:ad649cdd1d4ed0f37473e0be1e6c76f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6bff7bbd7524a36c909e5c7e3b96f4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#ae972471ee3a5ee221127efb60f126ea4">read_only_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#ab6bff7bbd7524a36c909e5c7e3b96f4d">as_read_only</a> () const noexcept</td></tr>
+<tr class="memdesc:ab6bff7bbd7524a36c909e5c7e3b96f4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a read-only <a class="el" href="classxtd_1_1collections_1_1object__model_1_1read__only__collection.html" title="Provides the base class for a generic read-only collection.">xtd::collections::object_model::read_only_collection</a> &lt;type_t&gt; wrapper for the current collection.  <br /></td></tr>
+<tr class="separator:ab6bff7bbd7524a36c909e5c7e3b96f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4aa4ca45046ee7a83a563bf49338984a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a4aa4ca45046ee7a83a563bf49338984a">assign</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>, const type_t &amp;value)</td></tr>
 <tr class="memdesc:a4aa4ca45046ee7a83a563bf49338984a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the contents with count copies of value value.  <br /></td></tr>
 <tr class="separator:a4aa4ca45046ee7a83a563bf49338984a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -536,9 +539,6 @@ For an immutable version of the <a class="el" href="classxtd_1_1collections_1_1g
 <tr class="memitem:a4f0650151d39201a2e72a0c6c8741ba6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a4f0650151d39201a2e72a0c6c8741ba6">assign</a> (input_iterator_t first, input_iterator_t last)</td></tr>
 <tr class="memdesc:a4f0650151d39201a2e72a0c6c8741ba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the contents with copies of those in the range [first, last).  <br /></td></tr>
 <tr class="separator:a4f0650151d39201a2e72a0c6c8741ba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6bff7bbd7524a36c909e5c7e3b96f4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#ae972471ee3a5ee221127efb60f126ea4">read_only_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#ab6bff7bbd7524a36c909e5c7e3b96f4d">as_read_only</a> () const noexcept</td></tr>
-<tr class="memdesc:ab6bff7bbd7524a36c909e5c7e3b96f4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a read-only <a class="el" href="classxtd_1_1collections_1_1object__model_1_1read__only__collection.html" title="Provides the base class for a generic read-only collection.">xtd::collections::object_model::read_only_collection</a> &lt;type_t&gt; wrapper for the current collection.  <br /></td></tr>
-<tr class="separator:ab6bff7bbd7524a36c909e5c7e3b96f4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93ef654400908743b15f100acc16ce1a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93ef654400908743b15f100acc16ce1a">assign</a> (std::initializer_list&lt; type_t &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a07317e2f4ae2fed1201ad0274025cd88">items</a>)</td></tr>
 <tr class="memdesc:a93ef654400908743b15f100acc16ce1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the contents with the elements from the initializer list items.  <br /></td></tr>
 <tr class="separator:a93ef654400908743b15f100acc16ce1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -548,12 +548,25 @@ For an immutable version of the <a class="el" href="classxtd_1_1collections_1_1g
 <tr class="memitem:a1813c0a23f6318c3281f8b5a6ba93476"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a91e7d925cabbe6f5d705f3fe09f0d8f8">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a1813c0a23f6318c3281f8b5a6ba93476">at</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a8cce3f868fe90a8a29735f032fb89d3a">size_type</a> index) const</td></tr>
 <tr class="memdesc:a1813c0a23f6318c3281f8b5a6ba93476"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the element at specified location pos, with bounds checking.  <br /></td></tr>
 <tr class="separator:a1813c0a23f6318c3281f8b5a6ba93476"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ef4c073b2d33df08aa60c2135181120"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a1ef4c073b2d33df08aa60c2135181120">binary_search</a> (const type_t &amp;item) const</td></tr>
+<tr class="memdesc:a1ef4c073b2d33df08aa60c2135181120"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the entire sorted <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; for an element using the default comparer and returns the zero-based index of the element.  <br /></td></tr>
+<tr class="separator:a1ef4c073b2d33df08aa60c2135181120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20289a4b2209fb63aa05c9fbb510789b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a20289a4b2209fb63aa05c9fbb510789b">binary_search</a> (const type_t &amp;item, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>) const</td></tr>
+<tr class="memdesc:a20289a4b2209fb63aa05c9fbb510789b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the entire sorted <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; for an element using the specified comparer and returns the zero-based index of the element.  <br /></td></tr>
+<tr class="separator:a20289a4b2209fb63aa05c9fbb510789b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8334ad9f2f45981dea761560cf7880ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a8334ad9f2f45981dea761560cf7880ee">binary_search</a> (<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> index, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>, const type_t &amp;item, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>) const</td></tr>
+<tr class="memdesc:a8334ad9f2f45981dea761560cf7880ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches a range of elements in the sorted <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; for an element using the specified comparer and returns the zero-based index of the element.  <br /></td></tr>
+<tr class="separator:a8334ad9f2f45981dea761560cf7880ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63d8a101c0b0d67fd52dc07850e1061a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a63d8a101c0b0d67fd52dc07850e1061a">clear</a> () override</td></tr>
-<tr class="memdesc:a63d8a101c0b0d67fd52dc07850e1061a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all items from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="memdesc:a63d8a101c0b0d67fd52dc07850e1061a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all elements from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;.  <br /></td></tr>
 <tr class="separator:a63d8a101c0b0d67fd52dc07850e1061a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedaff6cb993ad45d6430f50c893a3efa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa">contains</a> (const type_t &amp;value) const noexcept override</td></tr>
-<tr class="memdesc:aedaff6cb993ad45d6430f50c893a3efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; contains a specific value.  <br /></td></tr>
+<tr class="memdesc:aedaff6cb993ad45d6430f50c893a3efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether an element is in the List&lt;T&gt;.  <br /></td></tr>
 <tr class="separator:aedaff6cb993ad45d6430f50c893a3efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4973efbf10ce20036565ba59d88ba5f9"><td class="memTemplParams" colspan="2">template&lt;class output_t &gt; </td></tr>
+<tr class="memitem:a4973efbf10ce20036565ba59d88ba5f9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a>&lt; output_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a4973efbf10ce20036565ba59d88ba5f9">convert_all</a> (<a class="el" href="group__delegates.html#gae0fe7e0915f4d7728637f60e5746f00f">xtd::converter</a>&lt; output_t, type_t &gt; <a class="el" href="group__delegates.html#gae0fe7e0915f4d7728637f60e5746f00f">converter</a>) const</td></tr>
+<tr class="memdesc:a4973efbf10ce20036565ba59d88ba5f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the elements in the current List&lt;T&gt; to another type, and returns a list containing the converted elements.  <br /></td></tr>
+<tr class="separator:a4973efbf10ce20036565ba59d88ba5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54474e45841745045ade0f1a82afdd73"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a54474e45841745045ade0f1a82afdd73">copy_to</a> (<a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1array.html">array</a>) const</td></tr>
 <tr class="memdesc:a54474e45841745045ade0f1a82afdd73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; to a compatible one-dimensional array.  <br /></td></tr>
 <tr class="separator:a54474e45841745045ade0f1a82afdd73"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -662,6 +675,18 @@ For an immutable version of the <a class="el" href="classxtd_1_1collections_1_1g
 <tr class="memitem:a88ef0388a54942cfee9f9be5a9227c67"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a88ef0388a54942cfee9f9be5a9227c67">shrink_to_fit</a> ()</td></tr>
 <tr class="memdesc:a88ef0388a54942cfee9f9be5a9227c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests the removal of unused capacity.  <br /></td></tr>
 <tr class="separator:a88ef0388a54942cfee9f9be5a9227c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9bdef873d976a7b33372793497acd34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#ac9bdef873d976a7b33372793497acd34">sort</a> ()</td></tr>
+<tr class="memdesc:ac9bdef873d976a7b33372793497acd34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the default comparer.  <br /></td></tr>
+<tr class="separator:ac9bdef873d976a7b33372793497acd34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c4e0c77ca5e0ca462c11f7901be1cca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9c4e0c77ca5e0ca462c11f7901be1cca">sort</a> (<a class="el" href="group__delegates.html#gaee2e6d85dc448b84344444a378c3cbfa">xtd::comparison</a>&lt; const type_t &amp; &gt; <a class="el" href="group__delegates.html#gaee2e6d85dc448b84344444a378c3cbfa">comparison</a>)</td></tr>
+<tr class="memdesc:a9c4e0c77ca5e0ca462c11f7901be1cca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified <a class="el" href="group__delegates.html#gaee2e6d85dc448b84344444a378c3cbfa" title="Represents the method that compares two objects of the same type.">xtd::comparison</a> &lt;type_t&gt;.  <br /></td></tr>
+<tr class="separator:a9c4e0c77ca5e0ca462c11f7901be1cca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68d3d813b499b731a69bcbda3c6096de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a68d3d813b499b731a69bcbda3c6096de">sort</a> (const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
+<tr class="memdesc:a68d3d813b499b731a69bcbda3c6096de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified comparer.  <br /></td></tr>
+<tr class="separator:a68d3d813b499b731a69bcbda3c6096de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4341b2c629025e7b95b58637b5d6f8c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a4341b2c629025e7b95b58637b5d6f8c8">sort</a> (<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> index, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438">count</a>, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;<a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html">comparer</a>)</td></tr>
+<tr class="memdesc:a4341b2c629025e7b95b58637b5d6f8c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts the elements in a range of elements in <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified comparer.  <br /></td></tr>
+<tr class="separator:a4341b2c629025e7b95b58637b5d6f8c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a073a9ad7aba5a50e2a3ce8b10f5696fe"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a073a9ad7aba5a50e2a3ce8b10f5696fe">swap</a> (<a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) noexcept</td></tr>
 <tr class="memdesc:a073a9ad7aba5a50e2a3ce8b10f5696fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchanges the contents and capacity of the container with those of other. Does not invoke any move, copy, or swap operations on individual elements.  <br /></td></tr>
 <tr class="separator:a073a9ad7aba5a50e2a3ce8b10f5696fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -770,19 +795,19 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1collections_1_1generic_1_1ienumerable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1collections_1_1generic_1_1ienumerable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html">xtd::collections::generic::ienumerable&lt; type_t &gt;</a></td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html">xtd::collections::generic::extensions::enumerable_iterators&lt; type_t, xtd::collections::generic::ienumerable&lt; type_t &gt; &gt;</a></td></tr>
 <tr class="inherit_header pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html">xtd::collections::generic::extensions::enumerable&lt; ienumerable&lt; type_t &gt;, type_t &gt;</a></td></tr>
-<tr class="memitem:a22f3540f62b3b6140ecf188faf509842 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">type_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a22f3540f62b3b6140ecf188faf509842">aggregate</a> (const std::function&lt; type_t(const type_t &amp;, const type_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9">func</a>) const</td></tr>
+<tr class="memitem:a22f3540f62b3b6140ecf188faf509842 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">type_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a22f3540f62b3b6140ecf188faf509842">aggregate</a> (const std::function&lt; type_t(const type_t &amp;, const type_t &amp;)&gt; &amp;<a class="el" href="group__delegates.html#ga972b9383c3235752ab971d9d6be04c88">func</a>) const</td></tr>
 <tr class="memdesc:a22f3540f62b3b6140ecf188faf509842 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence.  <br /></td></tr>
 <tr class="separator:a22f3540f62b3b6140ecf188faf509842 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8bbfa7cff2e26dcf33e973a97d42316 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">type_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#af8bbfa7cff2e26dcf33e973a97d42316">aggregate</a> (const type_t &amp;seed, const std::function&lt; type_t(const type_t &amp;, const type_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9">func</a>) const</td></tr>
+<tr class="memitem:af8bbfa7cff2e26dcf33e973a97d42316 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">type_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#af8bbfa7cff2e26dcf33e973a97d42316">aggregate</a> (const type_t &amp;seed, const std::function&lt; type_t(const type_t &amp;, const type_t &amp;)&gt; &amp;<a class="el" href="group__delegates.html#ga972b9383c3235752ab971d9d6be04c88">func</a>) const</td></tr>
 <tr class="memdesc:af8bbfa7cff2e26dcf33e973a97d42316 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.  <br /></td></tr>
 <tr class="separator:af8bbfa7cff2e26dcf33e973a97d42316 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2705732af439af4da98a7a28f0a02f5a inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">accumulate_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a2705732af439af4da98a7a28f0a02f5a">aggregate</a> (const accumulate_t &amp;seed, const std::function&lt; accumulate_t(const type_t &amp;, const accumulate_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9">func</a>) const</td></tr>
+<tr class="memitem:a2705732af439af4da98a7a28f0a02f5a inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">accumulate_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a2705732af439af4da98a7a28f0a02f5a">aggregate</a> (const accumulate_t &amp;seed, const std::function&lt; accumulate_t(const type_t &amp;, const accumulate_t &amp;)&gt; &amp;<a class="el" href="group__delegates.html#ga972b9383c3235752ab971d9d6be04c88">func</a>) const</td></tr>
 <tr class="memdesc:a2705732af439af4da98a7a28f0a02f5a inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value.  <br /></td></tr>
 <tr class="separator:a2705732af439af4da98a7a28f0a02f5a inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a487db86dcfc03a261804db9288b917df inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">type_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a487db86dcfc03a261804db9288b917df">aggregate</a> (const type_t &amp;seed, const std::function&lt; type_t(const type_t &amp;, const type_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9">func</a>, const std::function&lt; type_t(const type_t &amp;)&gt; &amp;result_selector) const</td></tr>
+<tr class="memitem:a487db86dcfc03a261804db9288b917df inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">type_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a487db86dcfc03a261804db9288b917df">aggregate</a> (const type_t &amp;seed, const std::function&lt; type_t(const type_t &amp;, const type_t &amp;)&gt; &amp;<a class="el" href="group__delegates.html#ga972b9383c3235752ab971d9d6be04c88">func</a>, const std::function&lt; type_t(const type_t &amp;)&gt; &amp;result_selector) const</td></tr>
 <tr class="memdesc:a487db86dcfc03a261804db9288b917df inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.  <br /></td></tr>
 <tr class="separator:a487db86dcfc03a261804db9288b917df inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b91578ce3ebc8da03751dfca700bf7d inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">result_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a0b91578ce3ebc8da03751dfca700bf7d">aggregate</a> (const accumulate_t &amp;seed, const std::function&lt; accumulate_t(const type_t &amp;, const accumulate_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga655ac2d710f5daaa327ac82c8c235de9">func</a>, const std::function&lt; result_t(const accumulate_t &amp;)&gt; &amp;result_selector) const</td></tr>
+<tr class="memitem:a0b91578ce3ebc8da03751dfca700bf7d inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">result_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a0b91578ce3ebc8da03751dfca700bf7d">aggregate</a> (const accumulate_t &amp;seed, const std::function&lt; accumulate_t(const type_t &amp;, const accumulate_t &amp;)&gt; &amp;<a class="el" href="group__delegates.html#ga972b9383c3235752ab971d9d6be04c88">func</a>, const std::function&lt; result_t(const accumulate_t &amp;)&gt; &amp;result_selector) const</td></tr>
 <tr class="memdesc:a0b91578ce3ebc8da03751dfca700bf7d inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies an accumulator function over a sequence. The specified seed value is used as the initial accumulator value, and the specified function is used to select the result value.  <br /></td></tr>
 <tr class="separator:a0b91578ce3ebc8da03751dfca700bf7d inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c344a4319826da54bae2611d78f7e41 inherit pub_methods_classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable.html#a8c344a4319826da54bae2611d78f7e41">all</a> (const std::function&lt; bool(const type_t &amp;)&gt; &amp;<a class="el" href="group__xtd__core.html#ga535b9ce590888fa8d367c010a725fe20">predicate</a>) const</td></tr>
@@ -2211,12 +2236,12 @@ template&lt;class type_t , class allocator_t &gt; </div>
 <div class="line"><span class="comment">// clear()</span></div>
 <div class="line"><span class="comment">// capacity: 5</span></div>
 <div class="line"><span class="comment">// count: 0</span></div>
-</div><!-- fragment --> The following example demonstrates several properties and methods of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; generic class of type string. (For an example of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of complex types, see the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether the xtd::collections::generic::icollection &lt;type_t&gt; contains a specific value.">xtd::collections::generic::list::contains</a> method.)</dd></dl>
+</div><!-- fragment --> The following example demonstrates several properties and methods of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; generic class of type string. (For an example of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of complex types, see the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether an element is in the List&lt;T&gt;.">xtd::collections::generic::list::contains</a> method.)</dd></dl>
 <p>The parameterless constructor is used to create a list of strings with the default capacity. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> property is displayed and then the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97" title="Adds an object to the end of the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::add</a> method is used to add several items. The items are listed, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> property is displayed again, along with the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> property, to show that the capacity has been increased as needed.</p>
-<p>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether the xtd::collections::generic::icollection &lt;type_t&gt; contains a specific value.">xtd::collections::generic::list::contains</a> method is used to test for the presence of an item in the list, the Insert method is used to insert a new item in the middle of the list, and the contents of the list are displayed again.</p>
+<p>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether an element is in the List&lt;T&gt;.">xtd::collections::generic::list::contains</a> method is used to test for the presence of an item in the list, the Insert method is used to insert a new item in the middle of the list, and the contents of the list are displayed again.</p>
 <p>The default xtd::collections::generic::list::operator [] is used to retrieve an item, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af25282b05c76b050d5e5c1cd030c291e" title="Removes the first occurrence of a specific object from the xtd::collections::generic::icollection &lt;ty...">xtd::collections::generic::list::remove</a> method is used to remove the first instance of the duplicate item added earlier, and the contents are displayed again. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af25282b05c76b050d5e5c1cd030c291e" title="Removes the first occurrence of a specific object from the xtd::collections::generic::icollection &lt;ty...">xtd::collections::generic::list::remove</a> method always removes the first instance it encounters.</p>
 <p>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a34439117eaf523a2c2cd78e3f3d04c51" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::list &lt;type_t&gt;,...">xtd::collections::generic::list::trim_excess</a> method is used to reduce the capacity to match the count, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> properties are displayed. If the unused capacity had been less than 10 percent of total capacity, the list would not have been resized.</p>
-<p>Finally, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a63d8a101c0b0d67fd52dc07850e1061a" title="Removes all items from the xtd::collections::generic::icollection &lt;type_t&gt;.">xtd::collections::generic::list::clear</a> method is used to remove all items from the list, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> properties are displayed. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<p>Finally, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a63d8a101c0b0d67fd52dc07850e1061a" title="Removes all elements from the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::clear</a> method is used to remove all items from the list, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> properties are displayed. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
@@ -2429,12 +2454,12 @@ template&lt;class type_t , class allocator_t &gt; </div>
 <div class="line"><span class="comment">// clear()</span></div>
 <div class="line"><span class="comment">// capacity: 5</span></div>
 <div class="line"><span class="comment">// count: 0</span></div>
-</div><!-- fragment --> The following example demonstrates several properties and methods of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; generic class of type string. (For an example of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of complex types, see the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether the xtd::collections::generic::icollection &lt;type_t&gt; contains a specific value.">xtd::collections::generic::list::contains</a> method.)</dd></dl>
+</div><!-- fragment --> The following example demonstrates several properties and methods of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; generic class of type string. (For an example of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of complex types, see the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether an element is in the List&lt;T&gt;.">xtd::collections::generic::list::contains</a> method.)</dd></dl>
 <p>The parameterless constructor is used to create a list of strings with the default capacity. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> property is displayed and then the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97" title="Adds an object to the end of the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::add</a> method is used to add several items. The items are listed, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> property is displayed again, along with the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> property, to show that the capacity has been increased as needed.</p>
-<p>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether the xtd::collections::generic::icollection &lt;type_t&gt; contains a specific value.">xtd::collections::generic::list::contains</a> method is used to test for the presence of an item in the list, the Insert method is used to insert a new item in the middle of the list, and the contents of the list are displayed again.</p>
+<p>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether an element is in the List&lt;T&gt;.">xtd::collections::generic::list::contains</a> method is used to test for the presence of an item in the list, the Insert method is used to insert a new item in the middle of the list, and the contents of the list are displayed again.</p>
 <p>The default xtd::collections::generic::list::operator [] is used to retrieve an item, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af25282b05c76b050d5e5c1cd030c291e" title="Removes the first occurrence of a specific object from the xtd::collections::generic::icollection &lt;ty...">xtd::collections::generic::list::remove</a> method is used to remove the first instance of the duplicate item added earlier, and the contents are displayed again. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af25282b05c76b050d5e5c1cd030c291e" title="Removes the first occurrence of a specific object from the xtd::collections::generic::icollection &lt;ty...">xtd::collections::generic::list::remove</a> method always removes the first instance it encounters.</p>
 <p>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a34439117eaf523a2c2cd78e3f3d04c51" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::list &lt;type_t&gt;,...">xtd::collections::generic::list::trim_excess</a> method is used to reduce the capacity to match the count, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> properties are displayed. If the unused capacity had been less than 10 percent of total capacity, the list would not have been resized.</p>
-<p>Finally, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a63d8a101c0b0d67fd52dc07850e1061a" title="Removes all items from the xtd::collections::generic::icollection &lt;type_t&gt;.">xtd::collections::generic::list::clear</a> method is used to remove all items from the list, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> properties are displayed. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<p>Finally, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a63d8a101c0b0d67fd52dc07850e1061a" title="Removes all elements from the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::clear</a> method is used to remove all items from the list, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> properties are displayed. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
@@ -2710,12 +2735,12 @@ template&lt;class type_t , class allocator_t &gt; </div>
 <div class="line"><span class="comment">// clear()</span></div>
 <div class="line"><span class="comment">// capacity: 5</span></div>
 <div class="line"><span class="comment">// count: 0</span></div>
-</div><!-- fragment --> The following example demonstrates several properties and methods of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; generic class of type string. (For an example of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of complex types, see the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether the xtd::collections::generic::icollection &lt;type_t&gt; contains a specific value.">xtd::collections::generic::list::contains</a> method.)</dd></dl>
+</div><!-- fragment --> The following example demonstrates several properties and methods of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; generic class of type string. (For an example of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of complex types, see the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether an element is in the List&lt;T&gt;.">xtd::collections::generic::list::contains</a> method.)</dd></dl>
 <p>The parameterless constructor is used to create a list of strings with the default capacity. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> property is displayed and then the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97" title="Adds an object to the end of the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::add</a> method is used to add several items. The items are listed, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> property is displayed again, along with the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> property, to show that the capacity has been increased as needed.</p>
-<p>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether the xtd::collections::generic::icollection &lt;type_t&gt; contains a specific value.">xtd::collections::generic::list::contains</a> method is used to test for the presence of an item in the list, the Insert method is used to insert a new item in the middle of the list, and the contents of the list are displayed again.</p>
+<p>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether an element is in the List&lt;T&gt;.">xtd::collections::generic::list::contains</a> method is used to test for the presence of an item in the list, the Insert method is used to insert a new item in the middle of the list, and the contents of the list are displayed again.</p>
 <p>The default xtd::collections::generic::list::operator [] is used to retrieve an item, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af25282b05c76b050d5e5c1cd030c291e" title="Removes the first occurrence of a specific object from the xtd::collections::generic::icollection &lt;ty...">xtd::collections::generic::list::remove</a> method is used to remove the first instance of the duplicate item added earlier, and the contents are displayed again. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af25282b05c76b050d5e5c1cd030c291e" title="Removes the first occurrence of a specific object from the xtd::collections::generic::icollection &lt;ty...">xtd::collections::generic::list::remove</a> method always removes the first instance it encounters.</p>
 <p>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a34439117eaf523a2c2cd78e3f3d04c51" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::list &lt;type_t&gt;,...">xtd::collections::generic::list::trim_excess</a> method is used to reduce the capacity to match the count, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> properties are displayed. If the unused capacity had been less than 10 percent of total capacity, the list would not have been resized.</p>
-<p>Finally, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a63d8a101c0b0d67fd52dc07850e1061a" title="Removes all items from the xtd::collections::generic::icollection &lt;type_t&gt;.">xtd::collections::generic::list::clear</a> method is used to remove all items from the list, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> properties are displayed. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<p>Finally, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a63d8a101c0b0d67fd52dc07850e1061a" title="Removes all elements from the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::clear</a> method is used to remove all items from the list, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> properties are displayed. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
@@ -2977,7 +3002,7 @@ template&lt;class type_t , class allocator_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Checks if the container has no elements, i.e. whether <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#abdcd8950ed68d4da4ca1c41ea7c3515f" title="Returns an iterator to the first element of the enumarable.">xtd::collections::generic::list::begin()</a> == <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a938c175d84c2ef69d7524d1a014e035c" title="Returns an iterator to the element following the last element of the enumarable.">xtd::collections::generic::list::end()</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the container is empty, false otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the container is empty, <code>false</code> otherwise. </dd></dl>
 
 </div>
 </div>
@@ -3135,7 +3160,7 @@ template&lt;class type_t , class allocator_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html" title="Represents a collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt; has a fixed size. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html" title="Represents a collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt; has a fixed size; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html" title="Represents a collection of objects that can be individually accessed by index.">xtd::collections::generic::ilist</a> &lt;type_t&gt; has a fixed size; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A collection with a fixed size does not allow the addition or removal of elements after the collection is created, but it allows the modification of existing elements. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1ilist.html#a27d1e03ba6f5666f4e84f9bd7e96ce72">xtd::collections::generic::ilist&lt; type_t &gt;</a>.</p>
@@ -3168,8 +3193,8 @@ template&lt;class type_t , class allocator_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; interface only supports addition and removal operations. For example, the IsReadOnly property of an array that is cast or converted to an <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; object returns true, even though individual array elements can be modified. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; interface only supports addition and removal operations. For example, the IsReadOnly property of an array that is cast or converted to an <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; object returns <code>true</code>, even though individual array elements can be modified. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a817ed0a0b5cdb551aac7512c52ed4c96">xtd::collections::generic::icollection&lt; type_t &gt;</a>.</p>
 
@@ -3201,7 +3226,7 @@ template&lt;class type_t , class allocator_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is synchronized (thread safe). </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is synchronized (thread safe); otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is synchronized (thread safe); otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a2b277c3530daec2186daa89e213da290" title="Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollecti...">xtd::collections::generic::icollection::sync_root</a> returns an object, which can be used to synchronize access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;. </dd>
 <dd>
 Most collection classes in the <a class="el" href="namespacextd_1_1collections.html" title="The xtd::collections namespace contains interfaces and classes that define various collections of obj...">xtd::collections</a> namespace also implement a <code>synchronized</code> method, which provides a synchronized wrapper around the underlying collection. </dd>
@@ -4049,6 +4074,39 @@ If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" titl
 
 </div>
 </div>
+<a id="ab6bff7bbd7524a36c909e5c7e3b96f4d" name="ab6bff7bbd7524a36c909e5c7e3b96f4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6bff7bbd7524a36c909e5c7e3b96f4d">&#9670;&#160;</a></span>as_read_only()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , class allocator_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#ae972471ee3a5ee221127efb60f126ea4">read_only_collection</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::as_read_only </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a read-only <a class="el" href="classxtd_1_1collections_1_1object__model_1_1read__only__collection.html" title="Provides the base class for a generic read-only collection.">xtd::collections::object_model::read_only_collection</a> &lt;type_t&gt; wrapper for the current collection. </p>
+<dl class="section return"><dt>Returns</dt><dd>An object that acts as a read-only wrapper around the current <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>To prevent any modifications to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; object, expose it only through this wrapper. A <a class="el" href="classxtd_1_1collections_1_1object__model_1_1read__only__collection.html" title="Provides the base class for a generic read-only collection.">xtd::collections::object_model::read_only_collection</a> &lt;type_t&gt; object does not expose methods that modify the collection. However, if changes are made to the underlying <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; object, the read-only collection reflects those changes. </dd>
+<dd>
+This method is an O(1) operation. </dd></dl>
+
+</div>
+</div>
 <a id="a4aa4ca45046ee7a83a563bf49338984a" name="a4aa4ca45046ee7a83a563bf49338984a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4aa4ca45046ee7a83a563bf49338984a">&#9670;&#160;</a></span>assign() <span class="overload">[1/3]</span></h2>
 
@@ -4143,39 +4201,6 @@ template&lt;class input_iterator_t &gt; </div>
   </dd>
 </dl>
 <dl class="section warning"><dt>Warning</dt><dd>The behavior is undefined if either argument is an iterator this current instance. </dd></dl>
-
-</div>
-</div>
-<a id="ab6bff7bbd7524a36c909e5c7e3b96f4d" name="ab6bff7bbd7524a36c909e5c7e3b96f4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6bff7bbd7524a36c909e5c7e3b96f4d">&#9670;&#160;</a></span>as_read_only()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class type_t , class allocator_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#ae972471ee3a5ee221127efb60f126ea4">read_only_collection</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::as_read_only </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns a read-only <a class="el" href="classxtd_1_1collections_1_1object__model_1_1read__only__collection.html" title="Provides the base class for a generic read-only collection.">xtd::collections::object_model::read_only_collection</a> &lt;type_t&gt; wrapper for the current collection. </p>
-<dl class="section return"><dt>Returns</dt><dd>An object that acts as a read-only wrapper around the current <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>To prevent any modifications to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; object, expose it only through this wrapper. A <a class="el" href="classxtd_1_1collections_1_1object__model_1_1read__only__collection.html" title="Provides the base class for a generic read-only collection.">xtd::collections::object_model::read_only_collection</a> &lt;type_t&gt; object does not expose methods that modify the collection. However, if changes are made to the underlying <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; object, the read-only collection reflects those changes. </dd>
-<dd>
-This method is an O(1) operation. </dd></dl>
 
 </div>
 </div>
@@ -4301,6 +4326,284 @@ template&lt;class type_t , class allocator_t &gt; </div>
 
 </div>
 </div>
+<a id="a1ef4c073b2d33df08aa60c2135181120" name="a1ef4c073b2d33df08aa60c2135181120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ef4c073b2d33df08aa60c2135181120">&#9670;&#160;</a></span>binary_search() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , class allocator_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::binary_search </td>
+          <td>(</td>
+          <td class="paramtype">const type_t &amp;&#160;</td>
+          <td class="paramname"><em>item</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches the entire sorted <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; for an element using the default comparer and returns the zero-based index of the element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The object to locate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The zero-based index of item in the sorted <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;, if item is found; otherwise, a number greater than xtd::collections::genric::list::count that is the bitwise complement of the index of the next element that is larger than item or, if there is no larger element, the bitwise complement of xtd::collections::genric::list::count. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The default comparer <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a> cannot find an implementation of the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> &lt;type_t&gt; generic interface. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method uses the default comparer <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a> for type <code>type_t</code> to determine the order of list elements. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a> property checks whether type <code>type_t</code> implements the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> &lt;type_t&gt; generic interface and uses that implementation, if available. If not, <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a> checks whether type <code>type_t</code> implements the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface. If type <code>type_t</code> does not implement either interface, <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a> throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </dd>
+<dd>
+The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; must already be sorted according to the comparer implementation; otherwise, the result is incorrect. </dd>
+<dd>
+If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; contains more than one element with the same value, the method returns only one of the occurrences, and it might return any one of the occurrences, not necessarily the first one. </dd>
+<dd>
+If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; does not contain the specified value, the method returns an integer greater than <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. You can apply the bitwise complement operation (~) to this integer to get the index of the first element that is larger than the search value. When inserting the value into the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;, this index should be used as the insertion point to maintain the sort order. </dd>
+<dd>
+This method is an O(log n) operation, where n is the number of elements in the range. </dd>
+<dd>
+The following code example demonstrates the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#ac9bdef873d976a7b33372793497acd34" title="Sorts the elements in the entire xtd::collections::generic::list &lt;type_t&gt; using the default comparer.">xtd::collections::generic::list::sort()</a> method overload and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a1ef4c073b2d33df08aa60c2135181120" title="Searches the entire sorted xtd::collections::generic::list &lt;type_t&gt; for an element using the default ...">xtd::collections::generic::list::binary_search</a> method overload. A <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of strings is created and populated with four strings, in no particular order. The list is displayed, sorted, and displayed again. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a1ef4c073b2d33df08aa60c2135181120" title="Searches the entire sorted xtd::collections::generic::list &lt;type_t&gt; for an element using the default ...">xtd::collections::generic::list::binary_search</a> method overload is then used to search for two strings that are not in the list, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#ac7d8138ef7c2a2181ed4411cb7f309ce" title="Inserts elements at the specified location in the container.">xtd::collections::generic::list::insert</a> method is used to insert them. The return value of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a1ef4c073b2d33df08aa60c2135181120" title="Searches the entire sorted xtd::collections::generic::list &lt;type_t&gt; for an element using the default ...">xtd::collections::generic::list::binary_search</a> method is greater than <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> in each case, because the strings are not in the list. Taking the bitwise complement of this number produces the index of the first element in the list that is larger than the search string, and inserting at this location preserves the sort order. The second search string is larger than any element in the list, so the insertion position is at the end of the list. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>example {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">    <span class="keyword">auto</span> dinosaurs = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;string&gt;</a> {};</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97">add</a>(<span class="stringliteral">&quot;Pachycephalosaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Amargasaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Mamenchisaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Deinonychus&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    console::write_line();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;\nsort&quot;</span>);</div>
+<div class="line">    dinosaurs.sort();</div>
+<div class="line">    </div>
+<div class="line">    console::write_line();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;\nbinary_search and insert \&quot;Coelophysis\&quot;:&quot;</span>);</div>
+<div class="line">    <span class="keyword">auto</span> index = dinosaurs.binary_search(<span class="stringliteral">&quot;Coelophysis&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (index &gt; dinosaurs.count()) dinosaurs.insert(~index, <span class="stringliteral">&quot;Coelophysis&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    console::write_line();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">string</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;\nbinary_search and insert \&quot;Tyrannosaurus\&quot;:&quot;</span>);</div>
+<div class="line">    index = dinosaurs.binary_search(<span class="stringliteral">&quot;Tyrannosaurus&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (index &gt; dinosaurs.count()) dinosaurs.insert(~index, <span class="stringliteral">&quot;Tyrannosaurus&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    console::write_line();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(dinosaur);</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(example::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Pachycephalosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// sort</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Pachycephalosaurus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// binary_search and insert &quot;Coelophysis&quot;:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Coelophysis</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Pachycephalosaurus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// binary_search and insert &quot;Tyrannosaurus&quot;:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Coelophysis</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Pachycephalosaurus</span></div>
+<div class="line"><span class="comment">// Tyrannosaurus</span></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a077f3f048bbe2f59db4a97ecba08df97"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97">xtd::collections::generic::list::add</a></div><div class="ttdeci">void add(const type_t &amp;item) override</div><div class="ttdoc">Adds an object to the end of the xtd::collections::generic::list &lt;type_t&gt;.</div><div class="ttdef"><b>Definition</b> list.hpp:406</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a20289a4b2209fb63aa05c9fbb510789b" name="a20289a4b2209fb63aa05c9fbb510789b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20289a4b2209fb63aa05c9fbb510789b">&#9670;&#160;</a></span>binary_search() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , class allocator_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::binary_search </td>
+          <td>(</td>
+          <td class="paramtype">const type_t &amp;&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>comparer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches the entire sorted <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; for an element using the specified comparer and returns the zero-based index of the element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">item</td><td>The object to locate. </td></tr>
+    <tr><td class="paramname">comparer</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; implementation to use when comparing elements. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The zero-based index of item in the sorted <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;, if item is found; otherwise, a number greater than xtd::collections::genric::list::count that is the bitwise complement of the index of the next element that is larger than item or, if there is no larger element, the bitwise complement of xtd::collections::genric::list::count. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The default comparer <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a> cannot find an implementation of the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> &lt;type_t&gt; generic interface. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The comparer customizes how the elements are compared. For example, you can use a xtd::case_insensitive_comparer instance as the comparer to perform case-insensitive string searches. </dd>
+<dd>
+If comparer is provided, the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; are compared to the specified value using the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; implementation. </dd>
+<dd>
+The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; must already be sorted according to the comparer implementation; otherwise, the result is incorrect. </dd>
+<dd>
+If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; contains more than one element with the same value, the method returns only one of the occurrences, and it might return any one of the occurrences, not necessarily the first one. </dd>
+<dd>
+If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; does not contain the specified value, the method returns an integer greater than <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. You can apply the bitwise complement operation (~) to this integer to get the index of the first element that is larger than the search value. When inserting the value into the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;, this index should be used as the insertion point to maintain the sort order. </dd>
+<dd>
+This method is an O(log n) operation, where n is the number of elements in the range. </dd></dl>
+
+</div>
+</div>
+<a id="a8334ad9f2f45981dea761560cf7880ee" name="a8334ad9f2f45981dea761560cf7880ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8334ad9f2f45981dea761560cf7880ee">&#9670;&#160;</a></span>binary_search() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , class allocator_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::binary_search </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const type_t &amp;&#160;</td>
+          <td class="paramname"><em>item</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>comparer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Searches a range of elements in the sorted <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; for an element using the specified comparer and returns the zero-based index of the element. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The zero-based starting index of the range to search. </td></tr>
+    <tr><td class="paramname">count</td><td>The length of the range to search. </td></tr>
+    <tr><td class="paramname">item</td><td>The object to locate. </td></tr>
+    <tr><td class="paramname">comparer</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; implementation to use when comparing elements, or null to use the default comparer <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer&lt;type_t&gt;::default_comparer</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The zero-based index of item in the sorted <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;, if item is found; otherwise, a number greater than xtd::collections::genric::list::count that is the bitwise complement of the index of the next element that is larger than item or, if there is no larger element, the bitwise complement of xtd::collections::genric::list::count. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>`index` and `count` do not denote a valid range in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The default comparer <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a> cannot find an implementation of the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> &lt;type_t&gt; generic interface. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The comparer customizes how the elements are compared. For example, you can use a xtd::case_insensitive_comparer instance as the comparer to perform case-insensitive string searches. </dd>
+<dd>
+If comparer is provided, the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; are compared to the specified value using the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; implementation. </dd>
+<dd>
+The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; must already be sorted according to the comparer implementation; otherwise, the result is incorrect. </dd>
+<dd>
+If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; contains more than one element with the same value, the method returns only one of the occurrences, and it might return any one of the occurrences, not necessarily the first one. </dd>
+<dd>
+If the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; does not contain the specified value, the method returns an integer greater than <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. You can apply the bitwise complement operation (~) to this integer to get the index of the first element that is larger than the search value. When inserting the value into the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;, this index should be used as the insertion point to maintain the sort order. </dd>
+<dd>
+This method is an O(log n) operation, where n is the number of elements in the range. </dd></dl>
+
+</div>
+</div>
 <a id="a63d8a101c0b0d67fd52dc07850e1061a" name="a63d8a101c0b0d67fd52dc07850e1061a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a63d8a101c0b0d67fd52dc07850e1061a">&#9670;&#160;</a></span>clear()</h2>
 
@@ -4326,14 +4629,12 @@ template&lt;class type_t , class allocator_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Removes all items from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;. </p>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#ab1b79f5d91774cc70b8a4e21d979e1ea" title="Gets the number of elements contained in the xtd::collections::generic::icollection &lt;type_t&gt;.">xtd::collections::generic::icollection::count</a> must be set to 0, and references to other objects from elements of the collection must be released. </dd></dl>
+<p>Removes all elements from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </p>
+<dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> is set to 0, and references to other objects from elements of the collection are also released. </dd>
+<dd>
+<a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> remains unchanged. To reset the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;, call the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a34439117eaf523a2c2cd78e3f3d04c51" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::list &lt;type_t&gt;,...">xtd::collections::generic::list::trim_excess</a> method or set the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> property directly. Decreasing the capacity reallocates memory and copies all the elements in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. Trimming an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; sets the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; to the default capacity. </dd>
+<dd>
+This method is an O(n) operation, where n is <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#af14af0908d5e7bde4a3e33ebca358852">xtd::collections::generic::icollection&lt; type_t &gt;</a>.</p>
 
@@ -4354,7 +4655,7 @@ template&lt;class type_t , class allocator_t &gt; </div>
           <td class="memname">bool <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::contains </td>
           <td>(</td>
           <td class="paramtype">const type_t &amp;&#160;</td>
-          <td class="paramname"><em>item</em></td><td>)</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -4365,17 +4666,113 @@ template&lt;class type_t , class allocator_t &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Determines whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; contains a specific value. </p>
+<p>Determines whether an element is in the List&lt;T&gt;. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">item</td><td>The object to locate in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;. </td></tr>
+    <tr><td class="paramname">value</td><td>The object to locate in the List&lt;T&gt;. The value can be null for reference types. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if item is found in the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Implementations can vary in how they determine equality of objects; for example, <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; uses xtd::collections::generic::compoarer &lt;type_t&gt;::default_comparer, whereas <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html" title="Represents a collection of keys and values.">xtd::collections::generic::dictionary</a> &lt;key_t, value_t&gt; allows the user to specify the xtd::collections::generic::icompoarer &lt;type_t&gt; implementation to use for comparing keys. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if item is found in the List&lt;T&gt;; otherwise, <code>false</code>. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a6bcee883f64746e43b1755f9f1b5d18c">xtd::collections::generic::icollection&lt; type_t &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a4973efbf10ce20036565ba59d88ba5f9" name="a4973efbf10ce20036565ba59d88ba5f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4973efbf10ce20036565ba59d88ba5f9">&#9670;&#160;</a></span>convert_all()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , class allocator_t &gt; </div>
+<div class="memtemplate">
+template&lt;class output_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">list</a>&lt; output_t &gt; <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::convert_all </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__delegates.html#gae0fe7e0915f4d7728637f60e5746f00f">xtd::converter</a>&lt; output_t, type_t &gt;&#160;</td>
+          <td class="paramname"><em>converter</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts the elements in the current List&lt;T&gt; to another type, and returns a list containing the converted elements. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">output_t</td><td>The type of the elements of the target array. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">converter</td><td>A <a class="el" href="group__delegates.html#gae0fe7e0915f4d7728637f60e5746f00f" title="Represents a method that converts an object from one type to another type.">xtd::converter</a> &lt;output_t, input_t&gt; delegate that converts each element from one type to another type. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of the target type containing the converted elements from the current <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt;. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example defines a method named <code>point_f_to_point</code> that converts a <a class="el" href="classxtd_1_1drawing_1_1point__f.html" title="Represents an ordered pair of floating-point x- and y-coordinates that defines a point in a two-dimen...">xtd::drawing::point_f</a> structure to a <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> structure. The example then creates a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of <a class="el" href="classxtd_1_1drawing_1_1point__f.html" title="Represents an ordered pair of floating-point x- and y-coordinates that defines a point in a two-dimen...">xtd::drawing::point_f</a> structures, creates a <a class="el" href="group__delegates.html#gae0fe7e0915f4d7728637f60e5746f00f" title="Represents a method that converts an object from one type to another type.">xtd::converter</a> &lt;point_f, point&gt; delegate to represent the <code>point_f_to_point</code> method, and passes the delegate to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a4973efbf10ce20036565ba59d88ba5f9" title="Converts the elements in the current List&lt;T&gt; to another type, and returns a list containing the conve...">xtd::collections::generic::list::convert_all</a> method. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a4973efbf10ce20036565ba59d88ba5f9" title="Converts the elements in the current List&lt;T&gt; to another type, and returns a list containing the conve...">xtd::collections::generic::list::convert_all</a> method passes each element of the input list to the <code>point_f_to_point</code> method and puts the converted elements into a new list of Point structures. Both lists are displayed. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1drawing.html">xtd::drawing</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>example {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">    <span class="keyword">auto</span> lpf = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;point_f&gt;</a> {};</div>
+<div class="line">    </div>
+<div class="line">    lpf.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97">add</a>(<a class="code hl_class" href="classxtd_1_1drawing_1_1point__f.html">point_f</a> {27.8f, 32.62f});</div>
+<div class="line">    lpf.add(<a class="code hl_class" href="classxtd_1_1drawing_1_1point__f.html">point_f</a> {99.3f, 147.273f});</div>
+<div class="line">    lpf.add(<a class="code hl_class" href="classxtd_1_1drawing_1_1point__f.html">point_f</a> {7.5f, 1412.2f});</div>
+<div class="line">    </div>
+<div class="line">    console::write_line();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p : lpf)</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(p);</div>
+<div class="line">    </div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;point&gt;</a> lp = lpf.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a4973efbf10ce20036565ba59d88ba5f9">convert_all</a>(<a class="code hl_typedef" href="group__delegates.html#gae0fe7e0915f4d7728637f60e5746f00f">converter&lt;point, point_f&gt;</a> {point_f_to_point});</div>
+<div class="line">    </div>
+<div class="line">    console::write_line();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; p : lp)</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(<a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">p</a>);</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">static</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1point.html">point</a> point_f_to_point(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1point__f.html">point_f</a>&amp; pf) {</div>
+<div class="line">    <span class="keywordflow">return</span> <a class="code hl_class" href="classxtd_1_1drawing_1_1point.html">point</a> {as&lt;int&gt;(pf.<a class="code hl_function" href="classxtd_1_1drawing_1_1point__f.html#a44d0b81c1fa208b26e4cf0d2553d4421">x</a>()), as&lt;int&gt;(pf.<a class="code hl_function" href="classxtd_1_1drawing_1_1point__f.html#a3adc6087a8a9dbc26ad6b7976e991654">y</a>())};</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(example::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// {x=27.8, y=32.62}</span></div>
+<div class="line"><span class="comment">// {x=99.3, y=147.273}</span></div>
+<div class="line"><span class="comment">// {x=7.5, y=1412.2}</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// {x=28, y=33}</span></div>
+<div class="line"><span class="comment">// {x=99, y=147}</span></div>
+<div class="line"><span class="comment">// {x=8, y=1412}</span></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a4973efbf10ce20036565ba59d88ba5f9"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a4973efbf10ce20036565ba59d88ba5f9">xtd::collections::generic::list::convert_all</a></div><div class="ttdeci">list&lt; output_t &gt; convert_all(xtd::converter&lt; output_t, type_t &gt; converter) const</div><div class="ttdoc">Converts the elements in the current List&lt;T&gt; to another type, and returns a list containing the conve...</div><div class="ttdef"><b>Definition</b> list.hpp:563</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1point__f_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1point__f.html">xtd::drawing::point_f</a></div><div class="ttdoc">Represents an ordered pair of floating-point x- and y-coordinates that defines a point in a two-dimen...</div><div class="ttdef"><b>Definition</b> point_f.hpp:35</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1point__f_html_a3adc6087a8a9dbc26ad6b7976e991654"><div class="ttname"><a href="classxtd_1_1drawing_1_1point__f.html#a3adc6087a8a9dbc26ad6b7976e991654">xtd::drawing::point_f::y</a></div><div class="ttdeci">float y() const noexcept</div><div class="ttdoc">Gets the y-coordinate of this xtd::drawing::point_f.</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1point__f_html_a44d0b81c1fa208b26e4cf0d2553d4421"><div class="ttname"><a href="classxtd_1_1drawing_1_1point__f.html#a44d0b81c1fa208b26e4cf0d2553d4421">xtd::drawing::point_f::x</a></div><div class="ttdeci">float x() const noexcept</div><div class="ttdoc">Gets the x-coordinate of this xtd::drawing::point_f.</div></div>
+<div class="ttc" id="aclassxtd_1_1drawing_1_1point_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1point.html">xtd::drawing::point</a></div><div class="ttdoc">Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...</div><div class="ttdef"><b>Definition</b> point.hpp:54</div></div>
+<div class="ttc" id="agroup__delegates_html_gae0fe7e0915f4d7728637f60e5746f00f"><div class="ttname"><a href="group__delegates.html#gae0fe7e0915f4d7728637f60e5746f00f">xtd::converter</a></div><div class="ttdeci">xtd::delegate&lt; output_t(input_t input)&gt; converter</div><div class="ttdoc">Represents a method that converts an object from one type to another type.</div><div class="ttdef"><b>Definition</b> converter.hpp:33</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83878c91171338902e0fe0fb97a8c47a">xtd::console_key::p</a></div><div class="ttdeci">@ p</div><div class="ttdoc">The P key.</div></div>
+<div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.hpp:11</div></div>
+</div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -4687,7 +5084,7 @@ template&lt;class type_t , class allocator_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -5962,7 +6359,7 @@ template&lt;class type_t , class allocator_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if item was successfully removed from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;; otherwise, false. This method also returns false if item is not found in the original <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if item was successfully removed from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;; otherwise, <code>false</code>. This method also returns <code>false</code> if item is not found in the original <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt;. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only. </td></tr>
@@ -6310,6 +6707,279 @@ If reallocation occurs, all iterators (including the <a class="el" href="classxt
 
 </div>
 </div>
+<a id="ac9bdef873d976a7b33372793497acd34" name="ac9bdef873d976a7b33372793497acd34"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9bdef873d976a7b33372793497acd34">&#9670;&#160;</a></span>sort() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , class allocator_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::sort </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the default comparer. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The default comparer <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a> cannot find an implementation of the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> &lt;type_t&gt; generic interface. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This method uses the default comparer <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a> for type <code>type_t</code> to determine the order of list elements. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a> property checks whether type <code>type_t</code> implements the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> &lt;type_t&gt; generic interface and uses that implementation, if available. If not, <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a> checks whether type T implements the <a class="el" href="classxtd_1_1icomparable.html" title="Defines a generalized comparison method that a value type or class implements to create a type-specif...">xtd::icomparable</a> interface. If type <code>type_t</code> does not implement either interface, <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a> throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a>. </dd>
+<dd>
+This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal. </dd>
+<dd>
+On average, this method is an O(n log n) operation, where n is <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>; in the worst case it is an O(n ^ 2) operation. </dd>
+<dd>
+The following code example demonstrates the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#ac9bdef873d976a7b33372793497acd34" title="Sorts the elements in the entire xtd::collections::generic::list &lt;type_t&gt; using the default comparer.">xtd::collections::generic::list::sort</a> method overload and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a1ef4c073b2d33df08aa60c2135181120" title="Searches the entire sorted xtd::collections::generic::list &lt;type_t&gt; for an element using the default ...">xtd::collections::generic::list::binary_search</a> method overload. A <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of strings is created and populated with four strings, in no particular order. The list is displayed, sorted, and displayed again. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a1ef4c073b2d33df08aa60c2135181120" title="Searches the entire sorted xtd::collections::generic::list &lt;type_t&gt; for an element using the default ...">xtd::collections::generic::list::binary_search</a> method overload is then used to search for two strings that are not in the list, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#ac7d8138ef7c2a2181ed4411cb7f309ce" title="Inserts elements at the specified location in the container.">xtd::collections::generic::list::insert</a> method is used to insert them. The return value of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a1ef4c073b2d33df08aa60c2135181120" title="Searches the entire sorted xtd::collections::generic::list &lt;type_t&gt; for an element using the default ...">xtd::collections::generic::list::binary_search</a> method is gretaer than <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> in each case, because the strings are not in the list. Taking the bitwise complement of this negative number produces the index of the first element in the list that is larger than the search string, and inserting at this location preserves the sort order. The second search string is larger than any element in the list, so the insertion position is at the end of the list. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">class </span>example {</div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">auto</span> main() -&gt; <span class="keywordtype">void</span> {</div>
+<div class="line">    <span class="keyword">auto</span> dinosaurs = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;string&gt;</a> {};</div>
+<div class="line">    </div>
+<div class="line">    dinosaurs.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97">add</a>(<span class="stringliteral">&quot;Pachycephalosaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Amargasaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Mamenchisaurus&quot;</span>);</div>
+<div class="line">    dinosaurs.add(<span class="stringliteral">&quot;Deinonychus&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    console::write_line();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;\nsort&quot;</span>);</div>
+<div class="line">    dinosaurs.sort();</div>
+<div class="line">    </div>
+<div class="line">    console::write_line();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;\nbinary_search and insert \&quot;Coelophysis\&quot;:&quot;</span>);</div>
+<div class="line">    <span class="keyword">auto</span> index = dinosaurs.binary_search(<span class="stringliteral">&quot;Coelophysis&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (index &gt; dinosaurs.count()) dinosaurs.insert(~index, <span class="stringliteral">&quot;Coelophysis&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    console::write_line();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keywordtype">string</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(dinosaur);</div>
+<div class="line">    </div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;\nbinary_search and insert \&quot;Tyrannosaurus\&quot;:&quot;</span>);</div>
+<div class="line">    index = dinosaurs.binary_search(<span class="stringliteral">&quot;Tyrannosaurus&quot;</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (index &gt; dinosaurs.count()) dinosaurs.insert(~index, <span class="stringliteral">&quot;Tyrannosaurus&quot;</span>);</div>
+<div class="line">    </div>
+<div class="line">    console::write_line();</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dinosaur : dinosaurs)</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(dinosaur);</div>
+<div class="line">  }</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(example::main);</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Pachycephalosaurus</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// sort</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Pachycephalosaurus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// binary_search and insert &quot;Coelophysis&quot;:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Coelophysis</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Pachycephalosaurus</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// binary_search and insert &quot;Tyrannosaurus&quot;:</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Amargasaurus</span></div>
+<div class="line"><span class="comment">// Coelophysis</span></div>
+<div class="line"><span class="comment">// Deinonychus</span></div>
+<div class="line"><span class="comment">// Mamenchisaurus</span></div>
+<div class="line"><span class="comment">// Pachycephalosaurus</span></div>
+<div class="line"><span class="comment">// Tyrannosaurus</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="a9c4e0c77ca5e0ca462c11f7901be1cca" name="a9c4e0c77ca5e0ca462c11f7901be1cca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c4e0c77ca5e0ca462c11f7901be1cca">&#9670;&#160;</a></span>sort() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , class allocator_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::sort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__delegates.html#gaee2e6d85dc448b84344444a378c3cbfa">xtd::comparison</a>&lt; const type_t &amp; &gt;&#160;</td>
+          <td class="paramname"><em>comparison</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified <a class="el" href="group__delegates.html#gaee2e6d85dc448b84344444a378c3cbfa" title="Represents the method that compares two objects of the same type.">xtd::comparison</a> &lt;type_t&gt;. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If comparison is provided, the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; are sorted using the method represented by the delegate. </dd>
+<dd>
+This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal. </dd>
+<dd>
+On average, this method is an O(n log n) operation, where n is <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>; in the worst case it is an O(n ^ 2) operation. </dd></dl>
+
+</div>
+</div>
+<a id="a68d3d813b499b731a69bcbda3c6096de" name="a68d3d813b499b731a69bcbda3c6096de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68d3d813b499b731a69bcbda3c6096de">&#9670;&#160;</a></span>sort() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , class allocator_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::sort </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>comparer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sorts the elements in the entire <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified comparer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comparer</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; implementation to use when comparing elements, or null to use the default comparer <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If comparer is provided, the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; are sorted using the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; implementation. </dd>
+<dd>
+This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal. </dd>
+<dd>
+On average, this method is an O(n log n) operation, where n is <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>; in the worst case it is an O(n ^ 2) operation. </dd></dl>
+
+</div>
+</div>
+<a id="a4341b2c629025e7b95b58637b5d6f8c8" name="a4341b2c629025e7b95b58637b5d6f8c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4341b2c629025e7b95b58637b5d6f8c8">&#9670;&#160;</a></span>sort() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , class allocator_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; type_t, allocator_t &gt;::sort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html">xtd::collections::generic::icomparer</a>&lt; type_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>comparer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sorts the elements in a range of elements in <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; using the specified comparer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index</td><td>The zero-based starting index of the range to sort. </td></tr>
+    <tr><td class="paramname">count</td><td>The length of the range to sort. </td></tr>
+    <tr><td class="paramname">comparer</td><td>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; implementation to use when comparing elements, or null to use the default comparer <a class="el" href="classxtd_1_1collections_1_1generic_1_1comparer.html#a9a8d918ad60fc9ba6aff540a7ef2b4b0" title="Returns a default sort order comparer for the type specified by the generic argument.">xtd::collections::generic::comparer::default_comparer</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::argument_exception</a></td><td>The implementation of comparison caused an error during the sort. For example, comparison might not return 0 when comparing an item with itself. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If comparer is provided, the elements of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; are sorted using the specified <a class="el" href="classxtd_1_1collections_1_1generic_1_1icomparer.html" title="Exposes a method that compares two objects.">xtd::collections::generic::icomparer</a> &lt;type_t&gt; implementation. </dd>
+<dd>
+This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal. </dd>
+<dd>
+On average, this method is an O(n log n) operation, where n is <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>; in the worst case it is an O(n ^ 2) operation. </dd></dl>
+
+</div>
+</div>
 <a id="a073a9ad7aba5a50e2a3ce8b10f5696fe" name="a073a9ad7aba5a50e2a3ce8b10f5696fe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a073a9ad7aba5a50e2a3ce8b10f5696fe">&#9670;&#160;</a></span>swap()</h2>
 
@@ -6630,12 +7300,12 @@ template&lt;class type_t , class allocator_t &gt; </div>
 <div class="line"><span class="comment">// clear()</span></div>
 <div class="line"><span class="comment">// capacity: 5</span></div>
 <div class="line"><span class="comment">// count: 0</span></div>
-</div><!-- fragment --> The following example demonstrates several properties and methods of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; generic class of type string. (For an example of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of complex types, see the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether the xtd::collections::generic::icollection &lt;type_t&gt; contains a specific value.">xtd::collections::generic::list::contains</a> method.)</dd></dl>
+</div><!-- fragment --> The following example demonstrates several properties and methods of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; generic class of type string. (For an example of a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; of complex types, see the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether an element is in the List&lt;T&gt;.">xtd::collections::generic::list::contains</a> method.)</dd></dl>
 <p>The parameterless constructor is used to create a list of strings with the default capacity. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> property is displayed and then the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a077f3f048bbe2f59db4a97ecba08df97" title="Adds an object to the end of the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::add</a> method is used to add several items. The items are listed, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> property is displayed again, along with the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> property, to show that the capacity has been increased as needed.</p>
-<p>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether the xtd::collections::generic::icollection &lt;type_t&gt; contains a specific value.">xtd::collections::generic::list::contains</a> method is used to test for the presence of an item in the list, the Insert method is used to insert a new item in the middle of the list, and the contents of the list are displayed again.</p>
+<p>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#aedaff6cb993ad45d6430f50c893a3efa" title="Determines whether an element is in the List&lt;T&gt;.">xtd::collections::generic::list::contains</a> method is used to test for the presence of an item in the list, the Insert method is used to insert a new item in the middle of the list, and the contents of the list are displayed again.</p>
 <p>The default xtd::collections::generic::list::operator [] is used to retrieve an item, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af25282b05c76b050d5e5c1cd030c291e" title="Removes the first occurrence of a specific object from the xtd::collections::generic::icollection &lt;ty...">xtd::collections::generic::list::remove</a> method is used to remove the first instance of the duplicate item added earlier, and the contents are displayed again. The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#af25282b05c76b050d5e5c1cd030c291e" title="Removes the first occurrence of a specific object from the xtd::collections::generic::icollection &lt;ty...">xtd::collections::generic::list::remove</a> method always removes the first instance it encounters.</p>
 <p>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a34439117eaf523a2c2cd78e3f3d04c51" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::list &lt;type_t&gt;,...">xtd::collections::generic::list::trim_excess</a> method is used to reduce the capacity to match the count, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> properties are displayed. If the unused capacity had been less than 10 percent of total capacity, the list would not have been resized.</p>
-<p>Finally, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a63d8a101c0b0d67fd52dc07850e1061a" title="Removes all items from the xtd::collections::generic::icollection &lt;type_t&gt;.">xtd::collections::generic::list::clear</a> method is used to remove all items from the list, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> properties are displayed. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<p>Finally, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a63d8a101c0b0d67fd52dc07850e1061a" title="Removes all elements from the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::clear</a> method is used to remove all items from the list, and the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> and <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a> properties are displayed. </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
@@ -6737,7 +7407,7 @@ template&lt;class type_t , class allocator_t &gt; </div>
 <dd>
 This method is an O(n) operation, where n is <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a9fc65d3d8c22e9fafb4b35265be9c438" title="Gets the number of elements contained in the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::count</a>. </dd>
 <dd>
-To reset a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; to its initial state, call the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a63d8a101c0b0d67fd52dc07850e1061a" title="Removes all items from the xtd::collections::generic::icollection &lt;type_t&gt;.">xtd::collections::generic::list::clear</a> method before calling the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a34439117eaf523a2c2cd78e3f3d04c51" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::list &lt;type_t&gt;,...">xtd::collections::generic::list::trim_excess</a> method. Trimming an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; sets the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; to the default capacity. </dd>
+To reset a <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; to its initial state, call the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a63d8a101c0b0d67fd52dc07850e1061a" title="Removes all elements from the xtd::collections::generic::list &lt;type_t&gt;.">xtd::collections::generic::list::clear</a> method before calling the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a34439117eaf523a2c2cd78e3f3d04c51" title="Sets the capacity to the actual number of elements in the xtd::collections::generic::list &lt;type_t&gt;,...">xtd::collections::generic::list::trim_excess</a> method. Trimming an empty <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; sets the capacity of the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a> &lt;type_t&gt; to the default capacity. </dd>
 <dd>
 The capacity can also be set using the <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html#a93d9dcf2cfc4ca86e83bad39b291f472" title="Gets the total number of elements the internal data structure can hold without resizing.">xtd::collections::generic::list::capacity</a> property. </dd></dl>
 
@@ -7038,7 +7708,7 @@ template&lt;class type_t , class allocator_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:26 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 1 2025 12:14:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

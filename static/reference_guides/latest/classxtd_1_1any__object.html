@@ -373,8 +373,8 @@ template&lt;class type_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object has a valid value of its underlying type. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object has a value; false if the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object has no value. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If the <a class="el" href="classxtd_1_1any__object.html#a6c644ac6583e871820b545ffa1cddeeb" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is true, the value of the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object can be accessed with the <a class="el" href="classxtd_1_1any__object.html#aef3445700d50ea9699aec36b46299cac" title="Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value...">xtd::any_object::value</a> property. Otherwise, attempting to access its value throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a> exception. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object has a value; <code>false</code> if the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object has no value. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the <a class="el" href="classxtd_1_1any__object.html#a6c644ac6583e871820b545ffa1cddeeb" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is <code>true</code>, the value of the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object can be accessed with the <a class="el" href="classxtd_1_1any__object.html#aef3445700d50ea9699aec36b46299cac" title="Gets the value of the current xtd::any_object object if it has been assigned a valid underlying value...">xtd::any_object::value</a> property. Otherwise, attempting to access its value throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a> exception. </dd></dl>
 
 </div>
 </div>
@@ -402,10 +402,10 @@ template&lt;class type_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Gets the value of the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object if it has been assigned a valid underlying value. </p>
-<dl class="section return"><dt>Returns</dt><dd>The value of the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object if the <a class="el" href="classxtd_1_1any__object.html#a6c644ac6583e871820b545ffa1cddeeb" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is true. An exception is thrown if the <a class="el" href="classxtd_1_1any__object.html#a6c644ac6583e871820b545ffa1cddeeb" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the current <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> object if the <a class="el" href="classxtd_1_1any__object.html#a6c644ac6583e871820b545ffa1cddeeb" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is <code>true</code>. An exception is thrown if the <a class="el" href="classxtd_1_1any__object.html#a6c644ac6583e871820b545ffa1cddeeb" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="classxtd_1_1any__object.html#a6c644ac6583e871820b545ffa1cddeeb" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is false. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>The <a class="el" href="classxtd_1_1any__object.html#a6c644ac6583e871820b545ffa1cddeeb" title="Gets a value indicating whether the current xtd::any_object object has a valid value of its underlyin...">xtd::any_object::has_value</a> property is `false`. </td></tr>
   </table>
   </dd>
 </dl>
@@ -490,7 +490,7 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -669,7 +669,7 @@ template&lt;class type_t &gt; </div>
 </div><div class="memdoc">
 
 <p>Reset the current object. Set the current object to null. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>If xtd::any_object::has_values is true, destroys the contained object; otherwise does nothing. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If xtd::any_object::has_values is <code>true</code>, destroys the contained object; otherwise does nothing. </dd></dl>
 
 </div>
 </div>
@@ -750,7 +750,7 @@ template&lt;class type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 1 2025 12:14:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

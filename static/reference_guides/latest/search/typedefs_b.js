@@ -10,6 +10,6 @@ var searchData=
   ['message_5fbox_5fdefault_5fbutton_7',['message_box_default_button',['../group__xtd__forms.html#gab9bcd686f062a193db68d7431d66ebf7',1,'xtd::forms']]],
   ['message_5fbox_5ficon_8',['message_box_icon',['../group__xtd__forms.html#ga0c39a630e1108a1fbe6776207bd2358c',1,'xtd::forms']]],
   ['message_5fbox_5foptions_9',['message_box_options',['../group__xtd__forms.html#ga7d4ac295cf52e41025c94ad1b3f49bd0',1,'xtd::forms']]],
-  ['message_5floop_5fcallback_10',['message_loop_callback',['../group__events.html#ga4ad4df9ee7750a6194c4a00a602bc4ca',1,'xtd::forms']]],
-  ['mouse_5fevent_5fhandler_11',['mouse_event_handler',['../group__events.html#ga1f6a09d177faa8d78c3db862990139d8',1,'xtd::forms']]]
+  ['message_5floop_5fcallback_10',['message_loop_callback',['../group__delegates.html#gac79f93a0714c6c4430b1dbf08b27cba1',1,'xtd::forms']]],
+  ['mouse_5fevent_5fhandler_11',['mouse_event_handler',['../group__events.html#ga11b73a5d692be35c5d60e55d407d84fd',1,'xtd::forms']]]
 ];

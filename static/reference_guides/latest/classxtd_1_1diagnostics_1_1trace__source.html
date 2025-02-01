@@ -418,7 +418,7 @@ Additional Inherited Members</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>A SourceSwitch object representing the source switch value. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> property allows the filtering of messages before the trace source calls the listeners. </dd>
 <dd>
-The switch is used to check whether trace calls should be generated or ignored. Each trace method calls the should_trace method of the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> to determine whether to proceed with the trace. If the call returns true, the listeners are called. </dd></dl>
+The switch is used to check whether trace calls should be generated or ignored. Each trace method calls the should_trace method of the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> to determine whether to proceed with the trace. If the call returns <code>true</code>, the listeners are called. </dd></dl>
 
 </div>
 </div>
@@ -455,7 +455,7 @@ The switch is used to check whether trace calls should be generated or ignored. 
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> property allows the filtering of messages before the trace source calls the listeners. </dd>
 <dd>
-The switch is used to check whether trace calls should be generated or ignored. Each trace method calls the should_trace method of the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> to determine whether to proceed with the trace. If the call returns true, the listeners are called. </dd></dl>
+The switch is used to check whether trace calls should be generated or ignored. Each trace method calls the should_trace method of the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> to determine whether to proceed with the trace. If the call returns <code>true</code>, the listeners are called. </dd></dl>
 
 </div>
 </div>
@@ -552,7 +552,7 @@ template&lt;class object_t &gt; </div>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The trace_data method, like the trace_event method, is intended for automated tools, but it also allows the attaching of an additional object, such as an exception instance, to the trace. </dd>
 <dd>
-The trace_data method calls the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html#ac895cf9a201540831d467522edf1d022" title="Determines if trace listeners should be called, based on the trace event type.">source_switch::should_trace</a> method of the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> object returned by the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> property. If should_trace returns true, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods. </dd></dl>
+The trace_data method calls the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html#ac895cf9a201540831d467522edf1d022" title="Determines if trace listeners should be called, based on the trace event type.">source_switch::should_trace</a> method of the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> object returned by the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> property. If should_trace returns <code>true</code>, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods. </dd></dl>
 
 </div>
 </div>
@@ -609,7 +609,7 @@ template&lt;class object_t &gt; </div>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The trace_data method, like the trace_event method, is intended for automated tools, but it also allows the attaching of an additional object, such as an exception instance, to the trace. </dd>
 <dd>
-The trace_data method calls the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html#ac895cf9a201540831d467522edf1d022" title="Determines if trace listeners should be called, based on the trace event type.">source_switch::should_trace</a> method of the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> object returned by the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> property. If should_trace returns true, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods. </dd></dl>
+The trace_data method calls the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html#ac895cf9a201540831d467522edf1d022" title="Determines if trace listeners should be called, based on the trace event type.">source_switch::should_trace</a> method of the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> object returned by the <a class="el" href="classxtd_1_1diagnostics_1_1source__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">source_switch</a> property. If should_trace returns <code>true</code>, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods. </dd></dl>
 
 </div>
 </div>
@@ -915,7 +915,7 @@ trace_transfer is intended to be used with the logical operations of a correlati
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:26 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 1 2025 12:14:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

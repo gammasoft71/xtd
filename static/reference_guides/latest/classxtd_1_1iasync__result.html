@@ -101,7 +101,7 @@ Inheritance diagram for xtd::iasync_result:</div>
 <div class="textblock"><p>Represents the status of an asynchronous operation. </p>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> interface is implemented by classes containing methods that can operate asynchronously. It is the return type of methods that initiate an asynchronous operation, such as xtd::io::file_stream.begin_read, and it is passed to methods that conclude an asynchronous operation, such as xtd::io::file_stream::end_read. <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> objects are also passed to methods invoked by <a class="el" href="group__xtd__core.html#ga2c9b01f90017e6d921f8642ab99f0fcc" title="References a method to be called when a corresponding asynchronous operation completes.">xtd::async_callback</a> delegates when an asynchronous operation completes. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> interface is implemented by classes containing methods that can operate asynchronously. It is the return type of methods that initiate an asynchronous operation, such as xtd::io::file_stream.begin_read, and it is passed to methods that conclude an asynchronous operation, such as xtd::io::file_stream::end_read. <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> objects are also passed to methods invoked by <a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c" title="References a method to be called when a corresponding asynchronous operation completes.">xtd::async_callback</a> delegates when an asynchronous operation completes. </dd>
 <dd>
 An object that supports the <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> interface stores state information for an asynchronous operation and provides a synchronization object to allow threads to be signaled when the operation completes. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The async_result class is the implementation of <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> that is returned by the begin_invoke method when you use a delegate to call a method asynchronously. </dd></dl>
@@ -270,9 +270,9 @@ An object that supports the <a class="el" href="classxtd_1_1iasync__result.html"
 </div><div class="memdoc">
 
 <p>Gets a value that indicates whether the asynchronous operation completed synchronously. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the asynchronous operation completed synchronously; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If the synchronous completion of the call is detected in the <a class="el" href="group__xtd__core.html#ga2c9b01f90017e6d921f8642ab99f0fcc" title="References a method to be called when a corresponding asynchronous operation completes.">xtd::async_callback</a> delegate, it is probable that the thread that initiated the asynchronous operation is the current thread. </dd></dl>
-<dl class="section user"><dt>Notes to Callers</dt><dd>Use this property to determine if the asynchronous operation completed synchronously. For example, this property can return true for an asynchronous I/O operation if the I/O request was small. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the asynchronous operation completed synchronously; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the synchronous completion of the call is detected in the <a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c" title="References a method to be called when a corresponding asynchronous operation completes.">xtd::async_callback</a> delegate, it is probable that the thread that initiated the asynchronous operation is the current thread. </dd></dl>
+<dl class="section user"><dt>Notes to Callers</dt><dd>Use this property to determine if the asynchronous operation completed synchronously. For example, this property can return <code>true</code> for an asynchronous I/O operation if the I/O request was small. </dd></dl>
 
 </div>
 </div>
@@ -300,8 +300,8 @@ An object that supports the <a class="el" href="classxtd_1_1iasync__result.html"
 </div><div class="memdoc">
 
 <p>Gets a value that indicates whether the asynchronous operation has completed. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the operation is complete; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>When this property is true, you can assume it is safe to discard any resources you allocate for use by the asynchronous operation. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the operation is complete; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>When this property is <code>true</code>, you can assume it is safe to discard any resources you allocate for use by the asynchronous operation. </dd></dl>
 <dl class="section user"><dt>Notes to Implementers</dt><dd>Implementers will typically return the value of a private field or internal test as the value of this property. </dd></dl>
 <dl class="section user"><dt>Notes to Callers</dt><dd>Clients that poll for operation status (as opposed to waiting on a synchronization object) use this property to determine the status of the operation. </dd></dl>
 
@@ -314,7 +314,7 @@ An object that supports the <a class="el" href="classxtd_1_1iasync__result.html"
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 1 2025 12:14:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

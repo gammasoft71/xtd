@@ -359,7 +359,7 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
 
 <p>Gets a value that determines whether the current stream can time out. </p>
 <dl class="section return"><dt>Returns</dt><dd>A value that determines whether the current stream can time out. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1io_1_1stream.html#ac2802d7a0eb3c602ce93db55f951e2eb" title="Gets a value that determines whether the current stream can time out.">xtd::io::stream::can_timeout</a> property always returns false. Some stream implementations require different behavior, such as <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a>, which times out if network connectivity is interrupted or lost. If you are implementing a stream that must be able to time out, this property should be overridden to return true. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1io_1_1stream.html#ac2802d7a0eb3c602ce93db55f951e2eb" title="Gets a value that determines whether the current stream can time out.">xtd::io::stream::can_timeout</a> property always returns <code>false</code>. Some stream implementations require different behavior, such as <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html" title="Provides the underlying stream of data for network access.">xtd::net::sockets::network_stream</a>, which times out if network connectivity is interrupted or lost. If you are implementing a stream that must be able to time out, this property should be overridden to return <code>true</code>. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classxtd_1_1net_1_1sockets_1_1network__stream.html#a38b0f7034e608d8b472c6eee2f710217">xtd::net::sockets::network_stream</a>.</p>
 
@@ -419,7 +419,7 @@ This constructor exposes the underlying stream, which xtd::io::stream::get_buffe
 </div><div class="memdoc">
 
 <p>Indicates if the stream is closed. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the stream is closed, false otherwise </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the stream is closed, <code>false</code> otherwise </dd></dl>
 
 </div>
 </div>
@@ -1143,7 +1143,7 @@ The range specified by the combination of offset and count exceeds the length of
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 1 2025 12:14:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -244,7 +244,7 @@ With the growth of the Internet, there is a growing need to identify resources u
 <dl class="section user"><dt>Implicit File Path Support</dt><dd><a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> can also be used to represent local file system paths. These paths can be represented explicitly in URIs that begin with the <a href="file://">file://</a> scheme, and implicitly in URIs that do not have the <a href="file://">file://</a> scheme. As a concrete example, the following two URIs are both valid, and represent the same file path: <div class="fragment"><div class="line"><span class="keyword">auto</span> uri1 = <a class="code hl_function" href="classxtd_1_1uri.html#a4e9abcaee8852c7e0722e8bd8d78440d">uri</a>(<span class="stringliteral">&quot;C:/test/path/file.txt&quot;</span>) <span class="comment">// Implicit file path.</span></div>
 <div class="line">auto uri2 = <a class="code hl_class" href="classxtd_1_1uri.html">uri</a>(&quot;file:</div>
 </div><!-- fragment --> These implicit file paths are not compliant with the URI specification and so should be avoided when possible. When using Unix-based systems, implicit file paths can be especially problematic, because an absolute implicit file path is indistinguishable from a relative path. When such ambiguity is present, <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> default to interpreting the path as an absolute URI. </dd></dl>
-<dl class="section user"><dt>Security Considerations</dt><dd>Because of security concerns, your application should use caution when accepting <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instances from untrusted sources and with dont_escape set to true in the constructor. You can check a URI string for validity by calling the <a class="el" href="classxtd_1_1uri.html#ac75706ca90ad17345c4c8d5e533436e2" title="Indicates whether the string used to construct this xtd::uri was well-formed and is not required to b...">xtd::uri::is_well_formed_original_string</a> method. <br  />
+<dl class="section user"><dt>Security Considerations</dt><dd>Because of security concerns, your application should use caution when accepting <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instances from untrusted sources and with dont_escape set to <code>true</code> in the constructor. You can check a URI string for validity by calling the <a class="el" href="classxtd_1_1uri.html#ac75706ca90ad17345c4c8d5e533436e2" title="Indicates whether the string used to construct this xtd::uri was well-formed and is not required to b...">xtd::uri::is_well_formed_original_string</a> method. <br  />
 <br  />
 When dealing with untrusted user input, confirm assumptions about the newly created <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance before trusting its properties. This can be done in the following way: <div class="fragment"><div class="line"><span class="keywordtype">string</span> user_input = ...;</div>
 <div class="line"> </div>
@@ -1065,8 +1065,8 @@ If you used an escaped string to construct this instance (for example, "http://[
 </div><div class="memdoc">
 
 <p>Gets whether the <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance is absolute. </p>
-<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is true if the <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance is absolute; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This property is true if the string or <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance that was passed into the constructor can be parsed as an absolute <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance, which contains a scheme, an authority, and a path. Otherwise, the <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance is treated as relative and might omit the scheme or other URI components. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is <code>true</code> if the <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance is absolute; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This property is <code>true</code> if the string or <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance that was passed into the constructor can be parsed as an absolute <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance, which contains a scheme, an authority, and a path. Otherwise, the <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance is treated as relative and might omit the scheme or other URI components. </dd></dl>
 
 </div>
 </div>
@@ -1086,7 +1086,7 @@ If you used an escaped string to construct this instance (for example, "http://[
 </div><div class="memdoc">
 
 <p>Gets whether the port value of the URI is the default for this scheme. </p>
-<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is true if the value in the port property is the default port for this scheme; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is <code>true</code> if the value in the port property is the default port for this scheme; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>This instance represents a relative URI, and this property is valid only for absolute URIs. </td></tr>
@@ -1112,14 +1112,14 @@ If you used an escaped string to construct this instance (for example, "http://[
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the specified <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> is a file URI. </p>
-<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is true if the <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> is a file URI; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is <code>true</code> if the <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> is a file URI; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>This instance represents a relative URI, and this property is valid only for absolute URIs. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The is_file property is true when the scheme property equals uri_scheme_file. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The is_file property is <code>true</code> when the scheme property equals uri_scheme_file. </dd></dl>
 
 </div>
 </div>
@@ -1139,14 +1139,14 @@ If you used an escaped string to construct this instance (for example, "http://[
 </div><div class="memdoc">
 
 <p>Gets whether the specified <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> references the local host. </p>
-<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is true if this <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> references the local host; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is <code>true</code> if this <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> references the local host; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>This instance represents a relative URI, and this property is valid only for absolute URIs. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>is_loopback returns true if the URI specified when this instance was created was 127.0.0.1, loopback, or localhost, or if the URI did not specify host information (for example, <a href="file:///c:Dir/file.txt">file:///c:Dir/file.txt</a>). All other URIs return false. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>is_loopback returns <code>true</code> if the URI specified when this instance was created was 127.0.0.1, loopback, or localhost, or if the URI did not specify host information (for example, <a href="file:///c:Dir/file.txt">file:///c:Dir/file.txt</a>). All other URIs return <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -1166,14 +1166,14 @@ If you used an escaped string to construct this instance (for example, "http://[
 </div><div class="memdoc">
 
 <p>Gets whether the specified <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> is a universal naming convention (UNC) path. </p>
-<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is true if the <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> is a UNC path; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is <code>true</code> if the <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> is a UNC path; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a></td><td>This instance represents a relative URI, and this property is valid only for absolute URIs. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The is_unc property is true if the specified <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance is a UNC path (such as \server\folder or <a href="file://server/folder">file://server/folder</a>). This property always returns true if the URI has the <a href="file://">file://</a> scheme and specifies a host component. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The is_unc property is <code>true</code> if the specified <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance is a UNC path (such as \server\folder or <a href="file://server/folder">file://server/folder</a>). This property always returns <code>true</code> if the URI has the <a href="file://">file://</a> scheme and specifies a host component. </dd></dl>
 
 </div>
 </div>
@@ -1614,7 +1614,7 @@ The following examples show a URI and the results of calling get_left_part with 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if the current <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance is a base of uri; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if the current <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance is a base of uri; otherwise, <code>false</code>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">ArgumentNullException</td><td>uri is null. </td></tr>
@@ -1669,10 +1669,10 @@ The following examples show a URI and the results of calling get_left_part with 
 </div><div class="memdoc">
 
 <p>Indicates whether the string used to construct this <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> was well-formed and is not required to be further escaped. </p>
-<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is true if the string was well-formed; else false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is <code>true</code> if the string was well-formed; else <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The string is considered to be well-formed in accordance with RFC 2396 and RFC 2732 by default. If International Resource Identifiers (IRIs) or Internationalized Domain Name (IDN) parsing is enabled, the string is considered to be well-formed in accordance with RFC 3986 and RFC 3987 </dd>
 <dd>
-The string is considered poorly formed, causing the method to return false, if any of the following conditions occur. <table class="markdownTable">
+The string is considered poorly formed, causing the method to return <code>false</code>, if any of the following conditions occur. <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Error   </th><th class="markdownTableHeadNone">Example    </th></tr>
 <tr class="markdownTableRowOdd">
@@ -1797,7 +1797,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is true if the scheme name is valid; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is <code>true</code> if the scheme name is valid; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method checks the scheme name for validity according to RFC 2396 by default. If International Resource Identifiers (IRIs) or Internationalized Domain Name (IDN) parsing is enabled, this method checks the scheme name for validity according to RFC 3986. The scheme name must begin with a letter and must contain only letters, digits, and the characters ".", "+", or "-". </dd>
 <dd>
 For more information on URI support, see the Remarks section for the <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> class. </dd></dl>
@@ -2070,7 +2070,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is true if the character is a valid hexadecimal digit; otherwise <code>false</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is <code>true</code> if the character is a valid hexadecimal digit; otherwise <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Hexadecimal digits are the digits 0 to 9 and the letters A-F or a-f. </dd></dl>
 
 </div>
@@ -2117,7 +2117,7 @@ For more information on URI support, see the Remarks section for the <a class="e
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is true if pattern is hexadecimal encoded at the specified location; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is <code>true</code> if pattern is hexadecimal encoded at the specified location; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The is_hex_encoding method checks for hexadecimal encoding that follows the pattern "%hexhex" in a string, where "hex" is a digit from 0 to 9 or a letter from A-F (case-insensitive). </dd></dl>
 
 </div>
@@ -2164,10 +2164,10 @@ For more information on URI support, see the Remarks section for the <a class="e
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is true if the string was well-formed; else false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool A bool value that is <code>true</code> if the string was well-formed; else <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>By default, the string is considered well-formed in accordance with RFC 2396 and RFC 2732. If International Resource Identifiers (IRIs) or Internationalized Domain Name (IDN) parsing is enabled, the string is considered well-formed in accordance with RFC 3986 and RFC 3987. </dd>
 <dd>
-The string is considered poorly formed, causing the method to return false, if any of the following conditions occur <table class="markdownTable">
+The string is considered poorly formed, causing the method to return <code>false</code>, if any of the following conditions occur <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Error   </th><th class="markdownTableHeadNone">Example    </th></tr>
 <tr class="markdownTableRowOdd">
@@ -2264,7 +2264,7 @@ Many Web browsers escape spaces inside of URIs into plus ("+") characters; howev
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -2337,7 +2337,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns <code>true</code>. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -2704,7 +2704,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 1 2025 12:14:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

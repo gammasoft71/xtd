@@ -1,7 +1,7 @@
 var searchData=
 [
   ['tab_5fpage_5fref_0',['tab_page_ref',['../group__xtd__forms.html#gae288603170e3c217fad121b8fafcf8a1',1,'xtd::forms']]],
-  ['thread_5fstart_1',['thread_start',['../group__xtd__core.html#gaf06e74c3474ef92b55e4c26a5fdb1155',1,'xtd::threading']]],
+  ['thread_5fstart_1',['thread_start',['../group__delegates.html#gadfd209f4571a91d4631003faf1716194',1,'xtd::threading']]],
   ['tick_2',['tick',['../group__types.html#gad006729ac2ef808d4e071c3273776236',1,'xtd']]],
   ['ticks_3',['ticks',['../group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea',1,'xtd']]],
   ['timer_5fcallback_4',['timer_callback',['../group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9',1,'xtd::threading']]],
@@ -9,7 +9,7 @@ var searchData=
   ['toggle_5fbuttons_5ft_6',['toggle_buttons_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a230911379abcd8e49b354844609258b2',1,'xtd::forms::style_sheets::style_sheet']]],
   ['tool_5fbar_7',['tool_bar',['../group__style__sheets.html#ga5a0a6baea5209692038ff9e11cd760b8',1,'xtd::forms::style_sheets']]],
   ['tool_5fbar_5fbutton_8',['tool_bar_button',['../group__style__sheets.html#ga9f1753f058615baa6aa91a545a29fc8f',1,'xtd::forms::style_sheets']]],
-  ['tool_5fbar_5fbutton_5fclick_5fevent_5fhandler_9',['tool_bar_button_click_event_handler',['../group__events.html#gacab93047ba9b9a286418cf1eed77cc6f',1,'xtd::forms']]],
+  ['tool_5fbar_5fbutton_5fclick_5fevent_5fhandler_9',['tool_bar_button_click_event_handler',['../group__events.html#ga03cb5f2252a297afde27396f0faee074',1,'xtd::forms']]],
   ['tool_5fbar_5fbutton_5fcollection_10',['tool_bar_button_collection',['../classxtd_1_1forms_1_1tool__bar.html#aba8a86ea0ef23ccb2c48bf9cf59a1d97',1,'xtd::forms::tool_bar']]],
   ['tool_5fbar_5fbutton_5fref_11',['tool_bar_button_ref',['../group__xtd__forms.html#ga2978f69335e51f0acbb93a59a729b67d',1,'xtd::forms']]],
   ['tool_5fbar_5fbuttons_5ft_12',['tool_bar_buttons_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a06daf163499e05bec6e2841f5739f7dd',1,'xtd::forms::style_sheets::style_sheet']]],
