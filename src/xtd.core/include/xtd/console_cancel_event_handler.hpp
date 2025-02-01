@@ -8,7 +8,9 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents the method that will handle the cancel_key_press event of a xtd::console.
-  /// @param sender The source of the event.
+  /// ```cpp
+  /// using console_cancel_event_handler = xtd::delegate<void(console_cancel_event_args& e)>;
+  /// ```
   /// @param e A xtd::console_cancel_event_args object that contains the event data.
   /// @par Header
   /// ```cpp
@@ -19,5 +21,5 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core events
-  using console_cancel_event_handler = xtd::delegate<void(console_cancel_event_args&)>;
+  using console_cancel_event_handler = xtd::delegate<void(console_cancel_event_args& e)>;
 }

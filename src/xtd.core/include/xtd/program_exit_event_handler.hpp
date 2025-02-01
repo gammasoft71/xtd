@@ -8,7 +8,14 @@
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief Represents the method that will handle the program exit events of a xtd::environment.
+  /// ```cpp
+  /// using program_exit_event_handler = xtd::delegate<void(const program_exit_event_args&)>;
+  /// ```
   /// @param e A xtd::program_exit_event_args object that contains the exit data.
+  /// @par Header
+  /// ```cpp
+  /// #include <xtd/program_exit_event_handler>
+  /// ```
   /// @par Namespace
   /// xtd
   /// @par Library

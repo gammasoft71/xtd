@@ -23,17 +23,20 @@ namespace xtd {
   /// @endcond
 
   /// @brief References a method to be called when a corresponding asynchronous operation completes.
+  /// ```cpp
+  /// using async_callback = xtd::delegate<void(async_result ar)>;
+  /// ```
   /// @param ar The result of the asynchronous operation.
   /// @par Header
   /// ```cpp
   /// #include <xtd/async_callback>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core
-  using async_callback = delegate<void(async_result ar)>;
+  /// @ingroup xtd_core system delegates
+  using async_callback = xtd::delegate<void(async_result ar)>;
 
   /// @brief Represents a delegate, which is a data structure that refers to a static method or to a class instance && an instance method of that class.
   /// @par Header
@@ -44,7 +47,7 @@ namespace xtd {
   /// xtd
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core system
+  /// @ingroup xtd_core system delegates
   /// @remarks For more info about delegates see [Delegates](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/delegates) guide.
   /// @par Examples
   /// The following example shows how to define a delegate named my Method delegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.
@@ -361,7 +364,7 @@ namespace xtd {
   /// xtd
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core system
+  /// @ingroup xtd_core system delegates
   /// @remarks For more info about delegates see [Delegates](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/delegates) guide.
   /// @par Examples
   /// The following example shows how to define a delegate named my Method delegate. Instances of this delegate are created for an instance method && a static method of the nested mySampleClass class. The delegate for the instance method requires an instance of mySampleClass. The mySampleClass instance is saved in a variable named mySC.

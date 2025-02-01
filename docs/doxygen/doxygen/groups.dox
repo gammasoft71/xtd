@@ -25,6 +25,9 @@
     |- debug
     |     /// @brief All needed for debugging and tracing.
     |     /// @defgroup debug debug
+    |- delegates
+    |     /// @brief Contains delegates definitions
+    |     /// @defgroup delegates delegates
     |- drawing
     |   | /// @brief All needed for drawing something.
     |   | /// @remarks A xtd::drawing::graphics class is create from xtd::forms::control::create_graphics or xtd::forms::screen::create_graphics or xtd::drawing::image::create_graphics.

@@ -10,7 +10,7 @@ namespace xtd {
   namespace threading {
     /// @brief Represents the method that executes on a xtd::threading::thread.
     /// ```cpp
-    /// using thread_start = xtd::action<>
+    /// using thread_start = xtd::delegate<void()>;
     /// ```
     /// @par Header
     /// ```cpp
@@ -20,7 +20,7 @@ namespace xtd {
     /// xtd::threading
     /// @par Library
     /// xtd.core
-    /// @ingroup xtd_core
-    using thread_start = delegate<void()>;
+    /// @ingroup xtd_core threading delegates
+    using thread_start = xtd::delegate<void()>;
   }
 }

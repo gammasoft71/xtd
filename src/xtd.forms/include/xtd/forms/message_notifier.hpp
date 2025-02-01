@@ -32,7 +32,7 @@ namespace xtd {
       //...
     };
     
-    using notifier_button_click_event_handler = delegate<void(object& sender, const notifier_button_click_event_args& e)>;
+    using notifier_button_click_event_handler = xtd::delegate<void(object& sender, const notifier_button_click_event_args& e)>;
     
     
     // TODO: IMPL + move to seperate file
@@ -59,7 +59,7 @@ namespace xtd {
       //...
     };
     
-    using notifier_closed_event_handler = delegate<void(object& sender, const notifier_closed_event_args& e)>;
+    using notifier_closed_event_handler = xtd::delegate<void(object& sender, const notifier_closed_event_args& e)>;
     
     
     class forms_export_ message_notifier final : public component {

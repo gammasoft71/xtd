@@ -9,6 +9,10 @@ namespace xtd {
   /// @brief The xtd::forms namespace contains classes for creating Windows-based applications that take full advantage of the rich user interface features available in the Microsoft Windows operating system, Apple macOS and Linux like Ubuntu operating system.
   namespace forms {
     /// @brief Represents a method that will check whether the hosting environment is still sending messages.
+    /// ```cpp
+    /// using message_loop_callback = xtd::delegate<bool()>;
+    /// ```
+    /// @return `true` if the hosting environment is still sending messages; otherwise, `false`.
     /// @par Header
     /// ```cpp
     /// #include <xtd/forms/message_loop_callback>
@@ -17,9 +21,8 @@ namespace xtd {
     /// xtd::forms
     /// @par Library
     /// xtd.forms
-    /// @ingroup xtd_forms events
-    /// @return `true` if the hosting environment is still sending messages; otherwise, `false`.
+    /// @ingroup xtd_forms delegates
     /// @remarks This delegate is used with the application::register_message_loop method.
-    using message_loop_callback = delegate<bool()>;
+    using message_loop_callback = xtd::delegate<bool()>;
   }
 }

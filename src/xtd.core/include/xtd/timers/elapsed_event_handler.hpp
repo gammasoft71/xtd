@@ -10,7 +10,15 @@ namespace xtd {
   /// @brief Provides the xtd::timers::timer component, which allows you to raise an event on a specified interval.
   namespace timers {
     /// @brief Represents the method that will handle the signal events of a xtd::environment.
-    /// @param e A xtd::elapsed_event_args object that contains the event data.
+    /// ```cpp
+    /// using elapsed_event_handler = xtd::delegate<void(xtd::object& sender, const elapsed_event_args& e)>;
+    /// ```
+    /// @param sender The source of the event.
+    /// @param e A xtd::timers::elapsed_event_args object that contains the event data.
+    /// @par Header
+    /// ```cpp
+    /// #include <xtd/timers/elapsed_event_handler>
+    /// ```
     /// @par Namespace
     /// xtd
     /// @par Library
