@@ -232,8 +232,8 @@ Inheritance diagram for xtd::net::ip_address:</div>
 <div class="line"><span class="comment">// ip_v6_none: ::</span></div>
 <div class="line"><span class="comment">// is_loopback(ip_v6_loopback): true</span></div>
 <div class="line"><span class="comment">// is_loopback(loopback):true</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:75</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_ac58e0941ae647494403850c828049614"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#ac58e0941ae647494403850c828049614">xtd::collections::generic::list::size</a></div><div class="ttdeci">virtual size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container, i.e. std::distance(xtd::collections::generic::list::...</div><div class="ttdef"><b>Definition</b> list.hpp:370</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:78</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_ac58e0941ae647494403850c828049614"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#ac58e0941ae647494403850c828049614">xtd::collections::generic::list::size</a></div><div class="ttdeci">virtual size_type size() const noexcept</div><div class="ttdoc">Returns the number of elements in the container, i.e. std::distance(xtd::collections::generic::list::...</div><div class="ttdef"><b>Definition</b> list.hpp:385</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">The exception that is thrown when a method call is invalid for the object's current state.</div><div class="ttdef"><b>Definition</b> system_exception.hpp:18</div></div>
 <div class="ttc" id="aclassxtd_1_1text_1_1basic__string__builder_html"><div class="ttname"><a href="classxtd_1_1text_1_1basic__string__builder.html">xtd::text::basic_string_builder</a></div><div class="ttdoc">Represents a mutable string of characters. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> basic_string_builder.hpp:35</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:175</div></div>
@@ -674,7 +674,7 @@ The byte array is assumed to be in network byte order with the most significant 
 </div><div class="memdoc">
 
 <p>Gets whether the IP address is an IPv4-mapped IPv6 address. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the IP address is an IPv4-mapped IPv6 address; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the IP address is an IPv4-mapped IPv6 address; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Dual-stack sockets always require IPv6 addresses. The ability to interact with an IPv4 address requires the use of the IPv4-mapped IPv6 address format. Any IPv4 addresses must be represented in the IPv4-mapped IPv6 address format which enables an IPv6 only application to communicate with an IPv4 node. The IPv4-mapped IPv6 address format allows the IPv4 address of an IPv4 node to be represented as an IPv6 address. The IPv4 address is encoded into the low-order 32 bits of the IPv6 address, and the high-order 96 bits hold the fixed prefix 0:0:0:0:0:FFFF. The IPv4-mapped IPv6 address format is specified in RFC 4291. For more information, see www.ietf.org/rfc/rfc4291.txt. </dd></dl>
 
 </div>
@@ -703,7 +703,7 @@ The byte array is assumed to be in network byte order with the most significant 
 </div><div class="memdoc">
 
 <p>Gets whether the address is an IPv6 link local address. </p>
-<dl class="section return"><dt>Returns</dt><dd>bool true if the IP address is an IPv6 link local address; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if the IP address is an IPv6 link local address; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -731,7 +731,7 @@ The byte array is assumed to be in network byte order with the most significant 
 </div><div class="memdoc">
 
 <p>Gets whether the address is an IPv6 multicast global address. </p>
-<dl class="section return"><dt>Returns</dt><dd>bool true if the IP address is an IPv6 multicast global address; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if the IP address is an IPv6 multicast global address; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -759,7 +759,7 @@ The byte array is assumed to be in network byte order with the most significant 
 </div><div class="memdoc">
 
 <p>Gets whether the address is an IPv6 site local address. </p>
-<dl class="section return"><dt>Returns</dt><dd>bool true if the IP address is an IPv6 site local address; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if the IP address is an IPv6 site local address; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -787,7 +787,7 @@ The byte array is assumed to be in network byte order with the most significant 
 </div><div class="memdoc">
 
 <p>Gets whether the address is an IPv6 Teredo address. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the IP address is an IPv6 Teredo address; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the IP address is an IPv6 Teredo address; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A Teredo address is an IPv6 address with the prefix of 2001::/32. Teredo addresses can be returned through normal DNS name resolution or enumerated as an IPv6 address assigned to a local interface. </dd></dl>
 
 </div>
@@ -1293,7 +1293,7 @@ The xtd::net::sockets::socket::host_to_network_order method converts multibyte i
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if address is the loopback address; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if address is the loopback address; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -1687,7 +1687,7 @@ The number of parts (each part is separated by a period) in str determines how t
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if str is a valid IP address; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if str is a valid IP address; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -1722,7 +1722,7 @@ The number of parts (each part is separated by a period) in str determines how t
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1796,7 +1796,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns <code>true</code>. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -2020,7 +2020,7 @@ The <a class="el" href="classxtd_1_1net_1_1ip__address.html#a470e4a32d7ceedb7c04
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 1 2025 12:14:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

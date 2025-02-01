@@ -319,7 +319,7 @@ The BaseUtcOffset property differs from the GetUtcOffset method in the following
 <dd>
 A DaylightName property whose value is not string.Empty or null does not necessarily indicate that the time zone supports daylight saving time. To determine whether the time zone supports daylight saving time, check the value of its SupportsDaylightSavingTime property. </dd>
 <dd>
-In most cases, the DaylightName property of time zones defined in the registry is not string.Empty or null. However, the DaylightName property of custom time zones can be set to string.Empty. This occurs when custom time zones are created by the time_zone_info.CreateCustomTimeZone(string, TimeSpan, string, string) or the time_zone_info.CreateCustomTimeZone(string, TimeSpan, string, string, string, time_zone_info.AdjustmentRule[], Boolean) overload and the disableDaylightSavingTime parameter is true. Therefore, your code should never assume that the value of the DaylightName property is not null or empty. </dd>
+In most cases, the DaylightName property of time zones defined in the registry is not string.Empty or null. However, the DaylightName property of custom time zones can be set to string.Empty. This occurs when custom time zones are created by the time_zone_info.CreateCustomTimeZone(string, TimeSpan, string, string) or the time_zone_info.CreateCustomTimeZone(string, TimeSpan, string, string, string, time_zone_info.AdjustmentRule[], Boolean) overload and the disableDaylightSavingTime parameter is <code>true</code>. Therefore, your code should never assume that the value of the DaylightName property is not null or empty. </dd>
 <dd>
 The DaylightName property is equivalent to the DaylightName property of the TimeZone class. </dd></dl>
 
@@ -446,8 +446,8 @@ The value of the StandardName property is usually, but not always, identical to 
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the time zone has any daylight saving time rules.*. </p>
-<dl class="section return"><dt>Returns</dt><dd>bool true if the time zone supports daylight saving time; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The value of the SupportsDaylightSavingTime property for the local time zone returned by the time_zone_info.Local property reflects the setting of the Control Panel Date and Time application's checkbox that defines whether the system automatically adjusts for daylight saving time. If it is unchecked, or if no checkbox is displayed for a time zone, the value of this property is false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if the time zone supports daylight saving time; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The value of the SupportsDaylightSavingTime property for the local time zone returned by the time_zone_info.Local property reflects the setting of the Control Panel Date and Time application's checkbox that defines whether the system automatically adjusts for daylight saving time. If it is unchecked, or if no checkbox is displayed for a time zone, the value of this property is <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -650,7 +650,7 @@ The value of the StandardName property is usually, but not always, identical to 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">date_time</a> parameter is a daylight saving time; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">date_time</a> parameter is a daylight saving time; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -750,7 +750,7 @@ The value of the StandardName property is usually, but not always, identical to 
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">ArgumentNullException</td><td>dateTime is null. </td></tr>
-    <tr><td class="paramname">ArgumentException</td><td>time_zone_info::Local().IsInvalidxtd::date_time(dateTime) returns true. </td></tr>
+    <tr><td class="paramname">ArgumentException</td><td>time_zone_info::Local().IsInvalidxtd::date_time(dateTime) returns `true`. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1199,7 +1199,7 @@ The <a class="el" href="classxtd_1_1date__time.html" title="Represents an instan
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1272,7 +1272,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns true. otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns <code>true</code>. otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1318,7 +1318,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 1 2025 12:14:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

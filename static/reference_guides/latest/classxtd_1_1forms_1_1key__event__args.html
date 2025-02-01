@@ -285,7 +285,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the ALT key was pressed. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the ALT key was pressed; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the ALT key was pressed; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -313,7 +313,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the CMD key was pressed. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the CMD key was pressed; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the CMD key was pressed; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -341,7 +341,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the CTRL key was pressed. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the CTRL key was pressed; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the CTRL key was pressed; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -369,8 +369,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the event was handled. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> to bypass the control's default handling; otherwise, false to also pass the event along to the default control handler. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>handled is implemented differently by different controls within <a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a>. For controls like <a class="el" href="classxtd_1_1forms_1_1text__box.html" title="Represents a standard Windows text box.">text_box</a> which subclass native Win32 controls, it is interpreted to mean that the key message should not be passed to the underlying native control. If you set handled to true on a <a class="el" href="classxtd_1_1forms_1_1text__box.html" title="Represents a standard Windows text box.">text_box</a>, that control will not pass the key press events to the underlying Win32 text box control, but it will still display the characters that the user typed. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> to bypass the control's default handling; otherwise, <code>false</code> to also pass the event along to the default control handler. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>handled is implemented differently by different controls within <a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a>. For controls like <a class="el" href="classxtd_1_1forms_1_1text__box.html" title="Represents a standard Windows text box.">text_box</a> which subclass native Win32 controls, it is interpreted to mean that the key message should not be passed to the underlying native control. If you set handled to <code>true</code> on a <a class="el" href="classxtd_1_1forms_1_1text__box.html" title="Represents a standard Windows text box.">text_box</a>, that control will not pass the key press events to the underlying Win32 text box control, but it will still display the characters that the user typed. </dd></dl>
 
 </div>
 </div>
@@ -401,11 +401,11 @@ Additional Inherited Members</h2></td></tr>
 <p>Sets a value indicating whether the event was handled. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">handled</td><td>true to bypass the control's default handling; otherwise, false to also pass the event along to the default control handler. </td></tr>
+    <tr><td class="paramname">handled</td><td><code>true</code> to bypass the control's default handling; otherwise, <code>false</code> to also pass the event along to the default control handler. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>handled is implemented differently by different controls within <a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a>. For controls like <a class="el" href="classxtd_1_1forms_1_1text__box.html" title="Represents a standard Windows text box.">text_box</a> which subclass native Win32 controls, it is interpreted to mean that the key message should not be passed to the underlying native control. If you set handled to true on a <a class="el" href="classxtd_1_1forms_1_1text__box.html" title="Represents a standard Windows text box.">text_box</a>, that control will not pass the key press events to the underlying Win32 text box control, but it will still display the characters that the user typed. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>handled is implemented differently by different controls within <a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a>. For controls like <a class="el" href="classxtd_1_1forms_1_1text__box.html" title="Represents a standard Windows text box.">text_box</a> which subclass native Win32 controls, it is interpreted to mean that the key message should not be passed to the underlying native control. If you set handled to <code>true</code> on a <a class="el" href="classxtd_1_1forms_1_1text__box.html" title="Represents a standard Windows text box.">text_box</a>, that control will not pass the key press events to the underlying Win32 text box control, but it will still display the characters that the user typed. </dd></dl>
 
 </div>
 </div>
@@ -546,7 +546,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the SHIFT key was pressed. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the SHIFT key was pressed; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the SHIFT key was pressed; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -574,10 +574,10 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the key event should be passed on to the underlying control. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the key event should not be sent to the control; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>You can assign true to this property in an event handler such as <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> in order to prevent user input. </dd>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the key event should not be sent to the control; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>You can assign <code>true</code> to this property in an event handler such as <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> in order to prevent user input. </dd>
 <dd>
-Setting suppress_key_press to true also sets handled to true. </dd></dl>
+Setting suppress_key_press to <code>true</code> also sets handled to <code>true</code>. </dd></dl>
 
 </div>
 </div>
@@ -608,13 +608,13 @@ Setting suppress_key_press to true also sets handled to true. </dd></dl>
 <p>Sets a value indicating whether the key event should be passed on to the underlying control. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">suppress_key_press</td><td>true if the key event should not be sent to the control; otherwise, false. </td></tr>
+    <tr><td class="paramname">suppress_key_press</td><td><code>true</code> if the key event should not be sent to the control; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>You can assign true to this property in an event handler such as <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> in order to prevent user input. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>You can assign <code>true</code> to this property in an event handler such as <a class="el" href="classxtd_1_1forms_1_1control.html#ac96010544d92d981406f0bfb477294b7" title="Occurs when a key is pressed while the xtd::forms::control has focus.">xtd::forms::control::key_down</a> in order to prevent user input. </dd>
 <dd>
-Setting suppress_key_press to true also sets handled to true. </dd></dl>
+Setting suppress_key_press to <code>true</code> also sets handled to <code>true</code>. </dd></dl>
 
 </div>
 </div>
@@ -625,7 +625,7 @@ Setting suppress_key_press to true also sets handled to true. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 1 2025 12:14:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

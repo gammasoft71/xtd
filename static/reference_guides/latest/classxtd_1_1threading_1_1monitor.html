@@ -180,7 +180,7 @@ Inheritance diagram for xtd::threading::monitor:</div>
 <div class="line"><span class="comment">// Mean for task 11: 498.69 (N=10000)</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Mean for all tasks: 499.84 (N=100000)</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:75</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:78</div></div>
 <div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.hpp:40</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">The exception that is thrown when a method call is invalid for the object's current state.</div><div class="ttdef"><b>Definition</b> system_exception.hpp:18</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1thread_html"><div class="ttname"><a href="classxtd_1_1threading_1_1thread.html">xtd::threading::thread</a></div><div class="ttdoc">Creates and controls a thread, sets its priority, and gets its status.</div><div class="ttdef"><b>Definition</b> thread.hpp:45</div></div>
@@ -343,7 +343,7 @@ As the output from the example shows, synchronized access ensures that the calli
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><a class="el" href="classxtd_1_1threading_1_1monitor.html#a511fd1ffb8c451222fe4071f7a19f243" title="Releases an exclusive lock on the specified obj.">xtd::threading::monitor::exit</a>   </td><td class="markdownTableBodyNone">Releases the lock on an object. This action also marks the end of a critical section protected by the locked object.   </td></tr>
 </table>
-There are two sets of overloads for the <a class="el" href="classxtd_1_1threading_1_1monitor.html#afabaf5361f6d4dd04701dd1973d0a0f9" title="Acquires an exclusive lock on the specified obj.">xtd::threading::monitor::enter</a> and <a class="el" href="classxtd_1_1threading_1_1monitor.html#a2d6c3abf3a67c1ea400c2c63002ffd1d" title="Attempts to acquire an exclusive lock on the specified object.">xtd::threading::monitor::try_enter</a> methods. One set of overloads has a boolean parameter that is atomically set to true if the lock is acquired, even if an exception is thrown when acquiring the lock. Use these overloads if it is critical to release the lock in all cases, even when the resources the lock is protecting might not be in a consistent state. </li>
+There are two sets of overloads for the <a class="el" href="classxtd_1_1threading_1_1monitor.html#afabaf5361f6d4dd04701dd1973d0a0f9" title="Acquires an exclusive lock on the specified obj.">xtd::threading::monitor::enter</a> and <a class="el" href="classxtd_1_1threading_1_1monitor.html#a2d6c3abf3a67c1ea400c2c63002ffd1d" title="Attempts to acquire an exclusive lock on the specified object.">xtd::threading::monitor::try_enter</a> methods. One set of overloads has a boolean parameter that is atomically set to <code>true</code> if the lock is acquired, even if an exception is thrown when acquiring the lock. Use these overloads if it is critical to release the lock in all cases, even when the resources the lock is protecting might not be in a consistent state. </li>
 </ul>
 </dd></dl>
 <dl class="section user"><dt>The lock object</dt><dd>The <a class="el" href="classxtd_1_1threading_1_1monitor.html" title="Provides a mechanism that synchronizes access to objects.">xtd::threading::monitor</a> class consists of static methods that operate on an object that controls access to the critical section. The following information is maintained for each synchronized object:<ul>
@@ -559,11 +559,11 @@ template&lt;class object_t &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The object on which to acquire the monitor lock. </td></tr>
-    <tr><td class="paramname">lock_taken</td><td>The result of the attempt to acquire the lock, passed by reference. The input must be false. The output is true if the lock is acquired; otherwise, the output is false. The output is set even if an exception occurs during the attempt to acquire the lock. </td></tr>
+    <tr><td class="paramname">lock_taken</td><td>The result of the attempt to acquire the lock, passed by reference. The input must be <code>false</code>. The output is <code>true</code> if the lock is acquired; otherwise, the output is <code>false</code>. The output is set even if an exception occurs during the attempt to acquire the lock. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>If no exception occurs, the output of this method is always true. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If no exception occurs, the output of this method is always <code>true</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Use xtd::threading::monotor::enter to acquire the xtd::threading::monotor on the object passed as the parameter. If another thread has executed an xtd::threading::monotor::enter on the object, but has not yet executed the corresponding <a class="el" href="classxtd_1_1threading_1_1monitor.html#a511fd1ffb8c451222fe4071f7a19f243" title="Releases an exclusive lock on the specified obj.">xtd::threading::monitor::exit</a>, the current thread will block until the other thread releases the object. It is legal for the same thread to invoke xtd::threading::monotor::enter more than once without it blocking; however, an equal number of <a class="el" href="classxtd_1_1threading_1_1monitor.html#a511fd1ffb8c451222fe4071f7a19f243" title="Releases an exclusive lock on the specified obj.">xtd::threading::monitor::exit</a> calls must be invoked before other threads waiting on the object will unblock. </dd></dl>
 
 </div>
@@ -640,7 +640,7 @@ template&lt;class object_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current thread holds the lock on obj; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current thread holds the lock on obj; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method works only for locks that are acquired by using the methods of the <a class="el" href="classxtd_1_1threading_1_1monitor.html" title="Provides a mechanism that synchronizes access to objects.">xtd::threading::monitor</a> class, or the <a class="el" href="classxtd_1_1threading_1_1lock__guard.html" title="Provides a mechanism that synchronizes access to objects with xtd::threading::monitor.">xtd::threading::lock_guard</a> class, or by using the <a class="el" href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a" title="The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion loc...">lock_</a> keyword, which are implemented with <a class="el" href="classxtd_1_1threading_1_1monitor.html" title="Provides a mechanism that synchronizes access to objects.">xtd::threading::monitor</a>. </dd>
 <dd>
 Use this method with diagnostic tools, such as the xtd::diagnostics::debug::assert method, to debug locking issues that involve the <a class="el" href="classxtd_1_1threading_1_1monitor.html" title="Provides a mechanism that synchronizes access to objects.">xtd::threading::monitor</a> class. </dd></dl>
@@ -782,10 +782,10 @@ template&lt;class object_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if the current thread acquires the lock; otherwise, false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if the current thread acquires the lock; otherwise, <code>false</code> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If successful, this method acquires an exclusive lock on the obj parameter. This method returns immediately, whether or not the lock is available. </dd>
 <dd>
-This method is similar to xtd::threading::monotor::enter, but it will never block. If the thread cannot enter without blocking, the method returns false, and the thread does not enter the critical section. </dd></dl>
+This method is similar to xtd::threading::monotor::enter, but it will never block. If the thread cannot enter without blocking, the method returns <code>false</code>, and the thread does not enter the critical section. </dd></dl>
 
 </div>
 </div>
@@ -829,15 +829,15 @@ template&lt;class object_t &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The object on which to acquire the lock. </td></tr>
-    <tr><td class="paramname">lock_taken</td><td>The result of the attempt to acquire the lock, passed by reference. The input must be false. The output is true if the lock is acquired; otherwise, the output is false. The output is set even if an exception occurs during the attempt to acquire the lock. </td></tr>
+    <tr><td class="paramname">lock_taken</td><td>The result of the attempt to acquire the lock, passed by reference. The input must be <code>false</code>. The output is <code>true</code> if the lock is acquired; otherwise, the output is <code>false</code>. The output is set even if an exception occurs during the attempt to acquire the lock. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>If no exception occurs, the output of this method is always true. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if the current thread acquires the lock; otherwise, false </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If no exception occurs, the output of this method is always <code>true</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if the current thread acquires the lock; otherwise, <code>false</code> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If successful, this method acquires an exclusive lock on the obj parameter. This method returns immediately, whether or not the lock is available. </dd>
 <dd>
-This method is similar to xtd::threading::monotor::enter, but it will never block. If the thread cannot enter without blocking, the method returns false, and the thread does not enter the critical section. </dd></dl>
+This method is similar to xtd::threading::monotor::enter, but it will never block. If the thread cannot enter without blocking, the method returns <code>false</code>, and the thread does not enter the critical section. </dd></dl>
 
 </div>
 </div>
@@ -885,7 +885,7 @@ template&lt;class object_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if the current thread acquires the lock; otherwise, false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if the current thread acquires the lock; otherwise, <code>false</code> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to xtd::threading::monotor::enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter. </dd></dl>
 
 </div>
@@ -937,12 +937,12 @@ template&lt;class object_t &gt; </div>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The object on which to acquire the lock. </td></tr>
     <tr><td class="paramname">milliseconds_timeout</td><td>The number of milliseconds to wait for the lock. </td></tr>
-    <tr><td class="paramname">lock_taken</td><td>The result of the attempt to acquire the lock, passed by reference. The input must be false. The output is true if the lock is acquired; otherwise, the output is false. The output is set even if an exception occurs during the attempt to acquire the lock. </td></tr>
+    <tr><td class="paramname">lock_taken</td><td>The result of the attempt to acquire the lock, passed by reference. The input must be <code>false</code>. The output is <code>true</code> if the lock is acquired; otherwise, the output is <code>false</code>. The output is set even if an exception occurs during the attempt to acquire the lock. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>If no exception occurs, the output of this method is always true. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if the current thread acquires the lock; otherwise, false </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If no exception occurs, the output of this method is always <code>true</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if the current thread acquires the lock; otherwise, <code>false</code> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to xtd::threading::monotor::enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter. </dd></dl>
 
 </div>
@@ -991,7 +991,7 @@ template&lt;class object_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if the current thread acquires the lock; otherwise, false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if the current thread acquires the lock; otherwise, <code>false</code> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to xtd::threading::monotor::enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter. </dd></dl>
 
 </div>
@@ -1043,12 +1043,12 @@ template&lt;class object_t &gt; </div>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The object on which to acquire the lock. </td></tr>
     <tr><td class="paramname">milliseconds_timeout</td><td>The number of milliseconds to wait for the lock. </td></tr>
-    <tr><td class="paramname">lock_taken</td><td>The result of the attempt to acquire the lock, passed by reference. The input must be false. The output is true if the lock is acquired; otherwise, the output is false. The output is set even if an exception occurs during the attempt to acquire the lock. </td></tr>
+    <tr><td class="paramname">lock_taken</td><td>The result of the attempt to acquire the lock, passed by reference. The input must be <code>false</code>. The output is <code>true</code> if the lock is acquired; otherwise, the output is <code>false</code>. The output is set even if an exception occurs during the attempt to acquire the lock. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>If no exception occurs, the output of this method is always true. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if the current thread acquires the lock; otherwise, false </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If no exception occurs, the output of this method is always <code>true</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if the current thread acquires the lock; otherwise, <code>false</code> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the milliseconds_timeout parameter equals Timeout::Infinite, this method is equivalent to xtd::threading::monotor::enter. If milliseconds_timeout equals 0, this method is equivalent to try_enter. </dd></dl>
 
 </div>
@@ -1097,7 +1097,7 @@ template&lt;class object_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if the current thread acquires the lock; otherwise, false </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if the current thread acquires the lock; otherwise, <code>false</code> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the value of the timeout parameter converted to milliseconds equals -1, this method is equivalent to xtd::threading::monotor::enter. If the value of timeout equals 0, this method is equivalent to try_enter. </dd></dl>
 
 </div>
@@ -1149,12 +1149,12 @@ template&lt;class object_t &gt; </div>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The object on which to acquire the lock. </td></tr>
     <tr><td class="paramname">timeout</td><td>A <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">time_span</a> representing the amount of time to wait for the lock. A value of -1 millisecond specifies an infinite wait. </td></tr>
-    <tr><td class="paramname">lock_taken</td><td>The result of the attempt to acquire the lock, passed by reference. The input must be false. The output is true if the lock is acquired; otherwise, the output is false. The output is set even if an exception occurs during the attempt to acquire the lock. </td></tr>
+    <tr><td class="paramname">lock_taken</td><td>The result of the attempt to acquire the lock, passed by reference. The input must be <code>false</code>. The output is <code>true</code> if the lock is acquired; otherwise, the output is <code>false</code>. The output is set even if an exception occurs during the attempt to acquire the lock. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>If no exception occurs, the output of this method is always true. </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>bool true if the current thread acquires the lock; otherwise, false </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If no exception occurs, the output of this method is always <code>true</code>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if the current thread acquires the lock; otherwise, <code>false</code> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the value of the timeout parameter converted to milliseconds equals -1, this method is equivalent to xtd::threading::monotor::enter. If the value of timeout equals 0, this method is equivalent to try_enter. </dd></dl>
 
 </div>
@@ -1203,7 +1203,7 @@ template&lt;class object_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the lock was reacquired before the specified time elapsed; false if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the lock was reacquired before the specified time elapsed; <code>false</code> if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::synchronization_lock_exception</a></td><td><a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> is not invoked from within a synchronized block of code. </td></tr>
@@ -1270,7 +1270,7 @@ template&lt;class object_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the lock was reacquired before the specified time elapsed; false if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the lock was reacquired before the specified time elapsed; <code>false</code> if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::synchronization_lock_exception</a></td><td><a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> is not invoked from within a synchronized block of code. </td></tr>
@@ -1356,7 +1356,7 @@ The remarks for the <a class="el" href="classxtd_1_1threading_1_1monitor.html#a0
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 1 2025 12:14:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

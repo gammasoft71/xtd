@@ -241,13 +241,13 @@ To set up for a background operation, add an event handler for the <a class="el"
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Events</h2></td></tr>
-<tr class="memitem:aa4047b732cf383aa932c806080d03216"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1background__worker.html">background_worker</a>, <a class="el" href="group__events.html#ga4167bc3bd2a98a460a6d5609572385f1">do_work_event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1background__worker.html#aa4047b732cf383aa932c806080d03216">do_work</a></td></tr>
+<tr class="memitem:aa4047b732cf383aa932c806080d03216"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1background__worker.html">background_worker</a>, <a class="el" href="group__events.html#gaa747f854c033e2b808066256c5f9d80c">do_work_event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1background__worker.html#aa4047b732cf383aa932c806080d03216">do_work</a></td></tr>
 <tr class="memdesc:aa4047b732cf383aa932c806080d03216"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when <a class="el" href="classxtd_1_1forms_1_1background__worker.html#a3c1a81605e6f790fe68cf021f80f1952" title="Starts execution of a background operation.">run_worker_async()</a> is called.  <br /></td></tr>
 <tr class="separator:aa4047b732cf383aa932c806080d03216"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01b056bb600ffc6552edff4830361bf4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1background__worker.html">background_worker</a>, <a class="el" href="group__events.html#gab622f963701c9e772309591048e9f180">progress_changed_event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1background__worker.html#a01b056bb600ffc6552edff4830361bf4">progress_changed</a></td></tr>
+<tr class="memitem:a01b056bb600ffc6552edff4830361bf4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1background__worker.html">background_worker</a>, <a class="el" href="group__events.html#gaa71cf71548a97f12e435cf0b69a7df70">progress_changed_event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1background__worker.html#a01b056bb600ffc6552edff4830361bf4">progress_changed</a></td></tr>
 <tr class="memdesc:a01b056bb600ffc6552edff4830361bf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when <a class="el" href="classxtd_1_1forms_1_1background__worker.html#a2ff105b7fb03b12df288576759721a9e" title="Raises the ProgressChanged event.">report_progress(int32)</a> is called.  <br /></td></tr>
 <tr class="separator:a01b056bb600ffc6552edff4830361bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08a598bc14af024ea2a9d16b18925f22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1background__worker.html">background_worker</a>, <a class="el" href="group__events.html#ga415f76a09816da51d4b05fd2717477bc">run_worker_completed_event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1background__worker.html#a08a598bc14af024ea2a9d16b18925f22">run_worker_completed</a></td></tr>
+<tr class="memitem:a08a598bc14af024ea2a9d16b18925f22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1background__worker.html">background_worker</a>, <a class="el" href="group__events.html#ga65cddbf1f3a1f81f45038f4a8320018b">run_worker_completed_event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1background__worker.html#a08a598bc14af024ea2a9d16b18925f22">run_worker_completed</a></td></tr>
 <tr class="memdesc:a08a598bc14af024ea2a9d16b18925f22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the background operation has completed, has been canceled, or has raised an exception.  <br /></td></tr>
 <tr class="separator:a08a598bc14af024ea2a9d16b18925f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -399,7 +399,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the application has requested cancellation of a background operation. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the application has requested cancellation of a background operation; otherwise, false. The default is false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the application has requested cancellation of a background operation; otherwise, <code>false</code>. The default is <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -427,7 +427,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> is running an asynchronous operation. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code>, if the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> is running an asynchronous operation; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code>, if the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> is running an asynchronous operation; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -455,8 +455,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> can report progress updates.Gets or sets a value indicating whether the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> can report progress updates. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> supports progress updates; otherwise <code>false</code>. The default is false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Set the worker_reports_progress property to true if you want the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> to support progress updates. When this property is true, user code can call the report_progress method to raise the progress_changed event. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> supports progress updates; otherwise <code>false</code>. The default is <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Set the worker_reports_progress property to <code>true</code> if you want the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> to support progress updates. When this property is <code>true</code>, user code can call the report_progress method to raise the progress_changed event. </dd></dl>
 
 </div>
 </div>
@@ -479,11 +479,11 @@ Additional Inherited Members</h2></td></tr>
 <p>Sets a value indicating whether the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> can report progress updates.Gets or sets a value indicating whether the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> can report progress updates. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> supports progress updates; otherwise <code>false</code>. The default is false. </td></tr>
+    <tr><td class="paramname">value</td><td><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> supports progress updates; otherwise <code>false</code>. The default is <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Set the worker_reports_progress property to true if you want the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> to support progress updates. When this property is true, user code can call the report_progress method to raise the progress_changed event. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Set the worker_reports_progress property to <code>true</code> if you want the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> to support progress updates. When this property is <code>true</code>, user code can call the report_progress method to raise the progress_changed event. </dd></dl>
 
 </div>
 </div>
@@ -511,8 +511,8 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> supports asynchronous cancellation. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> supports cancellation; otherwise <code>false</code>. The default is false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Set the worker_supports_cancellation property to true if you want the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> to support cancellation. When this property is true, you can call the cancel_async method to interrupt a background operation. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> supports cancellation; otherwise <code>false</code>. The default is <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Set the worker_supports_cancellation property to <code>true</code> if you want the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> to support cancellation. When this property is <code>true</code>, you can call the cancel_async method to interrupt a background operation. </dd></dl>
 
 </div>
 </div>
@@ -535,11 +535,11 @@ Additional Inherited Members</h2></td></tr>
 <p>Gets a value indicating whether the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> supports asynchronous cancellation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>true if the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> supports cancellation; otherwise <code>false</code>. The default is false. </td></tr>
+    <tr><td class="paramname">value</td><td><code>true</code> if the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> supports cancellation; otherwise <code>false</code>. The default is <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Set the worker_supports_cancellation property to true if you want the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> to support cancellation. When this property is true, you can call the cancel_async method to interrupt a background operation. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>Set the worker_supports_cancellation property to <code>true</code> if you want the <a class="el" href="classxtd_1_1forms_1_1background__worker.html" title="Executes an operation on a separate thread.">background_worker</a> to support cancellation. When this property is <code>true</code>, you can call the cancel_async method to interrupt a background operation. </dd></dl>
 
 </div>
 </div>
@@ -559,9 +559,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Requests cancellation of a pending background operation. </p>
-<dl class="section remark"><dt>Remarks</dt><dd>cancel_async submits a request to terminate the pending background operation and sets the cancellation_pending property to true. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>cancel_async submits a request to terminate the pending background operation and sets the cancellation_pending property to <code>true</code>. </dd>
 <dd>
-When you call cancel_async, your worker method has an opportunity to stop its execution and exit. The worker code should periodically check thecancellation_pending property to see if it has been set to true. </dd></dl>
+When you call cancel_async, your worker method has an opportunity to stop its execution and exit. The worker code should periodically check thecancellation_pending property to see if it has been set to <code>true</code>. </dd></dl>
 
 </div>
 </div>
@@ -685,7 +685,7 @@ When you call cancel_async, your worker method has an opportunity to stop its ex
 <p>Starts execution of a background operation. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">xtd::invalid_operaton_exception</td><td>xtd::background_worker::is_busy is true; </td></tr>
+    <tr><td class="paramname">xtd::invalid_operaton_exception</td><td>xtd::background_worker::is_busy is `true`; </td></tr>
   </table>
   </dd>
 </dl>
@@ -727,7 +727,7 @@ template&lt;class argument_t &gt; </div>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname">xtd::invalid_operaton_exception</td><td>xtd::background_worker::is_busy is true; </td></tr>
+    <tr><td class="paramname">xtd::invalid_operaton_exception</td><td>xtd::background_worker::is_busy is `true`; </td></tr>
   </table>
   </dd>
 </dl>
@@ -805,7 +805,7 @@ template&lt;class argument_t &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="classxtd_1_1forms_1_1background__worker.html">background_worker</a>, <a class="el" href="group__events.html#ga4167bc3bd2a98a460a6d5609572385f1">do_work_event_handler</a>&gt; xtd::forms::background_worker::do_work</td>
+          <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="classxtd_1_1forms_1_1background__worker.html">background_worker</a>, <a class="el" href="group__events.html#gaa747f854c033e2b808066256c5f9d80c">do_work_event_handler</a>&gt; xtd::forms::background_worker::do_work</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -822,7 +822,7 @@ template&lt;class argument_t &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="classxtd_1_1forms_1_1background__worker.html">background_worker</a>, <a class="el" href="group__events.html#gab622f963701c9e772309591048e9f180">progress_changed_event_handler</a>&gt; xtd::forms::background_worker::progress_changed</td>
+          <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="classxtd_1_1forms_1_1background__worker.html">background_worker</a>, <a class="el" href="group__events.html#gaa71cf71548a97f12e435cf0b69a7df70">progress_changed_event_handler</a>&gt; xtd::forms::background_worker::progress_changed</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -839,7 +839,7 @@ template&lt;class argument_t &gt; </div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="classxtd_1_1forms_1_1background__worker.html">background_worker</a>, <a class="el" href="group__events.html#ga415f76a09816da51d4b05fd2717477bc">run_worker_completed_event_handler</a>&gt; xtd::forms::background_worker::run_worker_completed</td>
+          <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="classxtd_1_1forms_1_1background__worker.html">background_worker</a>, <a class="el" href="group__events.html#ga65cddbf1f3a1f81f45038f4a8320018b">run_worker_completed_event_handler</a>&gt; xtd::forms::background_worker::run_worker_completed</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -856,7 +856,7 @@ template&lt;class argument_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 1 2025 12:14:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

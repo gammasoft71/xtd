@@ -169,7 +169,7 @@ Inheritance diagram for xtd::console:</div>
 <tr class="separator:a923837ac84baf01726703e0474ca4888"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Events</h2></td></tr>
-<tr class="memitem:a02258c1b2d77b3ca79f144db690d4c20"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1console.html">console</a>, <a class="el" href="group__events.html#ga414dd206eb06f253f559f46ad8af431e">console_cancel_event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1console.html#a02258c1b2d77b3ca79f144db690d4c20">cancel_key_press</a></td></tr>
+<tr class="memitem:a02258c1b2d77b3ca79f144db690d4c20"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1console.html">console</a>, <a class="el" href="group__events.html#ga2adf7ab2a37ed2a0a5353a76a6008316">console_cancel_event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1console.html#a02258c1b2d77b3ca79f144db690d4c20">cancel_key_press</a></td></tr>
 <tr class="memdesc:a02258c1b2d77b3ca79f144db690d4c20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Occurs when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break).  <br /></td></tr>
 <tr class="separator:a02258c1b2d77b3ca79f144db690d4c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -404,7 +404,7 @@ Inheritance diagram for xtd::console:</div>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the <a class="el" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888" title="Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...">xtd::console::out</a> will flush its buffer to the underlying stream after every call to <a class="el" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76" title="Writes the text representation of the specified value to the standard output stream.">xtd::console::write</a> and <a class="el" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37" title="Writes the current line terminator to the standard output stream using the specified format informati...">xtd::console::write_line</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> to force <a class="el" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888" title="Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...">xtd::console::out</a> to flush its buffer; otherwise, false. The default value is true. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> to force <a class="el" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888" title="Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...">xtd::console::out</a> to flush its buffer; otherwise, <code>false</code>. The default value is <code>true</code>. </dd></dl>
 
 </div>
 </div>
@@ -435,7 +435,7 @@ Inheritance diagram for xtd::console:</div>
 <p>Sets a value indicating whether the <a class="el" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888" title="Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...">xtd::console::out</a> will flush its buffer to the underlying stream after every call to <a class="el" href="classxtd_1_1console.html#a636319332e94e01197105aab55ca6d76" title="Writes the text representation of the specified value to the standard output stream.">xtd::console::write</a> and <a class="el" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37" title="Writes the current line terminator to the standard output stream using the specified format informati...">xtd::console::write_line</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>true to force <a class="el" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888" title="Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...">xtd::console::out</a> to flush its buffer; otherwise, false. The default value is true. </td></tr>
+    <tr><td class="paramname">value</td><td><code>true</code> to force <a class="el" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888" title="Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...">xtd::console::out</a> to flush its buffer; otherwise, <code>false</code>. The default value is <code>true</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -566,7 +566,7 @@ Inheritance diagram for xtd::console:</div>
 <div class="line"><span class="comment">//                                    Gammasoft</span></div>
 <div class="line"><span class="comment">// More than thirty years of passion for high technology especially in development</span></div>
 <div class="line"><span class="comment">// (c++, c#, objective-c, ...).</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:75</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:78</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a7015d166663fd50f1983ec1e375a6cdf"><div class="ttname"><a href="classxtd_1_1console.html#a7015d166663fd50f1983ec1e375a6cdf">xtd::console::background_color</a></div><div class="ttdeci">static console_color background_color()</div><div class="ttdoc">Gets the background color of the console.</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a70caf80623c8b653dc6b15d10ea52454"><div class="ttname"><a href="classxtd_1_1console.html#a70caf80623c8b653dc6b15d10ea52454">xtd::console::output_code_page</a></div><div class="ttdeci">static int32 output_code_page()</div><div class="ttdoc">Gets the code page the console uses to write output.</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a7828d85c021b5515a2eb94105ca6c149"><div class="ttname"><a href="classxtd_1_1console.html#a7828d85c021b5515a2eb94105ca6c149">xtd::console::foreground_color</a></div><div class="ttdeci">static console_color foreground_color()</div><div class="ttdoc">Gets the foreground color of the console.</div></div>
@@ -941,7 +941,7 @@ Inheritance diagram for xtd::console:</div>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the CAPS LOCK keyboard toggle is turned on or turned off. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if CAPS LOCK is turned on; false if CAPS LOCK is turned off. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if CAPS LOCK is turned on; <code>false</code> if CAPS LOCK is turned off. </dd></dl>
 
 </div>
 </div>
@@ -1482,7 +1482,7 @@ Inheritance diagram for xtd::console:</div>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the cursor is visible. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the cursor is visible; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the cursor is visible; otherwise, <code>false</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_visible property. The example makes the cursor visible if the first column of input is a '+' character or invisible if the input is a '-' character. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -1581,7 +1581,7 @@ Inheritance diagram for xtd::console:</div>
 <p>Sets a value indicating whether the cursor is visible. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">visible</td><td>true if the cursor is visible; otherwise, false. </td></tr>
+    <tr><td class="paramname">visible</td><td><code>true</code> if the cursor is visible; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2055,12 +2055,7 @@ Inheritance diagram for xtd::console:</div>
 </div><div class="memdoc">
 
 <p>Gets a value that indicates whether the error output stream has been redirected from the standard error stream. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">true</td><td>if error output is redirected; otherwise, false. </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if error output is redirected; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -2088,12 +2083,7 @@ Inheritance diagram for xtd::console:</div>
 </div><div class="memdoc">
 
 <p>Gets a value that indicates whether the input stream has been redirected from the standard input stream. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">true</td><td>if input is redirected; otherwise, false. </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if input is redirected; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -2121,12 +2111,7 @@ Inheritance diagram for xtd::console:</div>
 </div><div class="memdoc">
 
 <p>Gets a value that indicates whether the output stream has been redirected from the standard output stream. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">true</td><td>if output is redirected; otherwise, false. </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if output is redirected; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -2154,7 +2139,7 @@ Inheritance diagram for xtd::console:</div>
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether a key press is available in the input stream. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if a key press is available; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if a key press is available; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The key_available method is returned immediately; that is, the key_available method does not block input until a key press is available. </dd>
 <dd>
 Use the key_available method in conjunction with only the read_key method, not the read or read_line methods </dd></dl>
@@ -2185,12 +2170,7 @@ Use the key_available method in conjunction with only the read_key method, not t
 </div><div class="memdoc">
 
 <p>Gets the largest possible number of console window rows, based on the current font and screen resolution. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">The</td><td>height of the largest possible console window measured in rows. </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>The height of the largest possible console window measured in rows. </dd></dl>
 
 </div>
 </div>
@@ -2218,12 +2198,7 @@ Use the key_available method in conjunction with only the read_key method, not t
 </div><div class="memdoc">
 
 <p>Gets the largest possible number of console window columns, based on the current font and screen resolution. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">The</td><td>width of the largest possible console window measured in columns. </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>The width of the largest possible console window measured in columns. </dd></dl>
 
 </div>
 </div>
@@ -2251,12 +2226,7 @@ Use the key_available method in conjunction with only the read_key method, not t
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the NUM LOCK keyboard toggle is turned on or turned off. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">true</td><td>if NUM LOCK is turned on; false if NUM LOCK is turned off. </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if NUM LOCK is turned on; <code>false</code> if NUM LOCK is turned off. </dd></dl>
 
 </div>
 </div>
@@ -2466,9 +2436,9 @@ Use the key_available method in conjunction with only the read_key method, not t
 </div><div class="memdoc">
 
 <p>Gets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if Ctrl+C is treated as ordinary input; otherwise, false. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If the value of the treat_control_c_as_input property is false and Ctrl+C is pressed, the pressed keys are not stored in the input buffer and the operating system terminates the currently executing process. This is the default value. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Use this property judiciously because setting it to true has such a dramatic effect. Most users expect Ctrl+C to terminate a console application. If you disable the effect of Ctrl+C, the user must remember to use Ctrl+Break to terminate the application, which is a less familiar key combination. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if Ctrl+C is treated as ordinary input; otherwise, <code>false</code>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the value of the treat_control_c_as_input property is <code>false</code> and Ctrl+C is pressed, the pressed keys are not stored in the input buffer and the operating system terminates the currently executing process. This is the default value. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Use this property judiciously because setting it to <code>true</code> has such a dramatic effect. Most users expect Ctrl+C to terminate a console application. If you disable the effect of Ctrl+C, the user must remember to use Ctrl+Break to terminate the application, which is a less familiar key combination. </dd></dl>
 
 </div>
 </div>
@@ -2499,12 +2469,12 @@ Use the key_available method in conjunction with only the read_key method, not t
 <p>Sets a value indicating whether the combination of the Control modifier key and C console key (Ctrl+C) is treated as ordinary input or as an interruption that is handled by the operating system. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">treat_control_c_as_input</td><td>true if Ctrl+C is treated as ordinary input; otherwise, false. </td></tr>
+    <tr><td class="paramname">treat_control_c_as_input</td><td><code>true</code> if Ctrl+C is treated as ordinary input; otherwise, <code>false</code>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If the value of the treat_control_c_as_input property is false and Ctrl+C is pressed, the pressed keys are not stored in the input buffer and the operating system terminates the currently executing process. This is the default value. </dd></dl>
-<dl class="section warning"><dt>Warning</dt><dd>Use this property judiciously because setting it to true has such a dramatic effect. Most users expect Ctrl+C to terminate a console application. If you disable the effect of Ctrl+C, the user must remember to use Ctrl+Break to terminate the application, which is a less familiar key combination. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the value of the treat_control_c_as_input property is <code>false</code> and Ctrl+C is pressed, the pressed keys are not stored in the input buffer and the operating system terminates the currently executing process. This is the default value. </dd></dl>
+<dl class="section warning"><dt>Warning</dt><dd>Use this property judiciously because setting it to <code>true</code> has such a dramatic effect. Most users expect Ctrl+C to terminate a console application. If you disable the effect of Ctrl+C, the user must remember to use Ctrl+Break to terminate the application, which is a less familiar key combination. </dd></dl>
 
 </div>
 </div>
@@ -3068,8 +3038,8 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(console_clear_example::program::main);</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a17d9001d0282c327e7cfcffa8ada02a8"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a17d9001d0282c327e7cfcffa8ada02a8">xtd::collections::generic::list::begin</a></div><div class="ttdeci">const_iterator begin() const noexcept override</div><div class="ttdoc">Returns an iterator to the first element of the enumarable.</div><div class="ttdef"><b>Definition</b> list.hpp:208</div></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a3854f8170419af3c496d0bdda60bb2c9"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a3854f8170419af3c496d0bdda60bb2c9">xtd::collections::generic::list::end</a></div><div class="ttdeci">const_iterator end() const noexcept override</div><div class="ttdoc">Returns an iterator to the element following the last element of the enumarable.</div><div class="ttdef"><b>Definition</b> list.hpp:321</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a17d9001d0282c327e7cfcffa8ada02a8"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a17d9001d0282c327e7cfcffa8ada02a8">xtd::collections::generic::list::begin</a></div><div class="ttdeci">const_iterator begin() const noexcept override</div><div class="ttdoc">Returns an iterator to the first element of the enumarable.</div><div class="ttdef"><b>Definition</b> list.hpp:223</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a3854f8170419af3c496d0bdda60bb2c9"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a3854f8170419af3c496d0bdda60bb2c9">xtd::collections::generic::list::end</a></div><div class="ttdeci">const_iterator end() const noexcept override</div><div class="ttdoc">Returns an iterator to the element following the last element of the enumarable.</div><div class="ttdef"><b>Definition</b> list.hpp:336</div></div>
 <div class="ttc" id="aclassxtd_1_1console__key__info_html"><div class="ttname"><a href="classxtd_1_1console__key__info.html">xtd::console_key_info</a></div><div class="ttdoc">Specifies the standard keys on a console.</div><div class="ttdef"><b>Definition</b> console_key_info.hpp:24</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:175</div></div>
 </div><!-- fragment --> The example relies on a get_key_press method to validate the user's selection of a foreground and background color. </dd></dl>
@@ -3417,7 +3387,7 @@ such as a text file, that has an actual end-of-file character. </dd></dl>
 <p>Obtains the next character or function key pressed by the user. The pressed key is optionally displayed in the console window. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">intercept</td><td>Determines whether to display the pressed key in the console window. true to not display the pressed key; otherwise, false </td></tr>
+    <tr><td class="paramname">intercept</td><td>Determines whether to display the pressed key in the console window. <code>true</code> to not display the pressed key; otherwise, <code>false</code> </td></tr>
   </table>
   </dd>
 </dl>
@@ -3480,7 +3450,7 @@ such as a text file, that has an actual end-of-file character. </dd></dl>
 <p>Reads the next line of characters from the standard input stream. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">intercept</td><td>Determines whether to display the pressed key in the console window. true to not display the pressed key; otherwise, false </td></tr>
+    <tr><td class="paramname">intercept</td><td>Determines whether to display the pressed key in the console window. <code>true</code> to not display the pressed key; otherwise, <code>false</code> </td></tr>
   </table>
   </dd>
 </dl>
@@ -4193,7 +4163,7 @@ template&lt;class ... args_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="classxtd_1_1console.html">console</a>, <a class="el" href="group__events.html#ga414dd206eb06f253f559f46ad8af431e">console_cancel_event_handler</a>&gt; xtd::console::cancel_key_press</td>
+          <td class="memname"><a class="el" href="classxtd_1_1event.html">event</a>&lt;<a class="el" href="classxtd_1_1console.html">console</a>, <a class="el" href="group__events.html#ga2adf7ab2a37ed2a0a5353a76a6008316">console_cancel_event_handler</a>&gt; xtd::console::cancel_key_press</td>
         </tr>
       </table>
   </td>
@@ -4204,16 +4174,16 @@ template&lt;class ... args_t&gt; </div>
 </div><div class="memdoc">
 
 <p>Occurs when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break key are pressed simultaneously (Ctrl+C or Ctrl+Break). </p>
-<dl class="section remark"><dt>Remarks</dt><dd>This event is used in conjunction with <a class="el" href="group__events.html#ga414dd206eb06f253f559f46ad8af431e" title="Represents the method that will handle the cancel_key_press event of a xtd::console.">xtd::console_cancel_event_handler</a> and <a class="el" href="classxtd_1_1console__cancel__event__args.html" title="Provides data for the console::cancel_key_press event. This class cannot be inherited.">xtd::console_cancel_event_args</a>. The cancel_key_press event enables a console application to intercept the Ctrl+C signal so the event handler can decide whether to continue executing or terminate. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>This event is used in conjunction with <a class="el" href="group__events.html#ga2adf7ab2a37ed2a0a5353a76a6008316" title="Represents the method that will handle the cancel_key_press event of a xtd::console.">xtd::console_cancel_event_handler</a> and <a class="el" href="classxtd_1_1console__cancel__event__args.html" title="Provides data for the console::cancel_key_press event. This class cannot be inherited.">xtd::console_cancel_event_args</a>. The cancel_key_press event enables a console application to intercept the Ctrl+C signal so the event handler can decide whether to continue executing or terminate. </dd>
 <dd>
 For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd>
 <dd>
 When the user presses either Ctrl+C or Ctrl+Break, the cancel_key_press event is fired and the application's console_cancel_event_handler event handler is executed. The event handler is passed a <a class="el" href="classxtd_1_1console__cancel__event__args.html" title="Provides data for the console::cancel_key_press event. This class cannot be inherited.">console_cancel_event_args</a> object that has two useful properties:<ul>
 <li>special_key, which allows you to determine whether the handler was invoked as a result of the user pressing Ctrl+C (the property value is <a class="el" href="group__xtd__core.html#ggaa3d0d07e86f61a82f96e00c5f516622ead90e6591472c47bff157b01a3d9acad3" title="The console_modifiers::control modifier key plus the console_key C console key.">console_special_key::control_c</a>) or Ctrl+Break (the property value is <a class="el" href="group__xtd__core.html#ggaa3d0d07e86f61a82f96e00c5f516622eac605716609da42088b0d5854ebba3380" title="The console_modifiers::control modifier key plus the BREAK console key.">console_special_key.control_break</a>).</li>
-<li>Cancel, which allows you to determine how to your application should respond to the user pressing Ctrl+C or Ctrl+Break. By default, the cancel property is false, which causes program execution to terminate when the event handler exits. Changing its property to true specifies that the application should continue to execute. </li>
+<li>Cancel, which allows you to determine how to your application should respond to the user pressing Ctrl+C or Ctrl+Break. By default, the cancel property is <code>false</code>, which causes program execution to terminate when the event handler exits. Changing its property to <code>true</code> specifies that the application should continue to execute. </li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If your application has simple requirements, you can use the treat_control_c_as_input property instead of this event. By setting this property to false, you can ensure that your application always exits if the user presses Ctrl+C. By setting it to true, you can ensure that pressing Ctrl+C will not terminate the application. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If your application has simple requirements, you can use the treat_control_c_as_input property instead of this event. By setting this property to <code>false</code>, you can ensure that your application always exits if the user presses Ctrl+C. By setting it to <code>true</code>, you can ensure that pressing Ctrl+C will not terminate the application. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c72a2414c252176310b2c04547257948c7b7" title="external interrupt, usually initiated by the user. Is equal to SIGINT.">xtd::signal::interrupt</a> and <a class="el" href="group__xtd__core.html#ggaa3d0d07e86f61a82f96e00c5f516622ead90e6591472c47bff157b01a3d9acad3" title="The console_modifiers::control modifier key plus the console_key C console key.">xtd::console_special_key::control_c</a> use the same signal (<a href="https://en.cppreference.com/w/cpp/utility/program/signal">SIGINT</a>). </dd>
 <dd>
 The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c72a2414c252176310b2c04547257948c7b7" title="external interrupt, usually initiated by the user. Is equal to SIGINT.">xtd::signal::interrupt</a> and <a class="el" href="group__xtd__core.html#ggaa3d0d07e86f61a82f96e00c5f516622ead90e6591472c47bff157b01a3d9acad3" title="The console_modifiers::control modifier key plus the console_key C console key.">xtd::console_special_key::control_c</a> can be cancelled with <a class="el" href="classxtd_1_1environment.html#a5eecf5ff0c77fe58bf24407004e0956a" title="Occurs when a signal is sent to the current process.">xtd::environment::cancel_signal</a> event or <a class="el" href="classxtd_1_1console.html#a02258c1b2d77b3ca79f144db690d4c20" title="Occurs when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break ...">xtd::console::cancel_key_press</a> event. Both of these events are called when <a href="https://en.cppreference.com/w/cpp/utility/program/signal">SIGINT</a> is raised. </dd></dl>
@@ -4227,7 +4197,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 1 2025 12:14:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

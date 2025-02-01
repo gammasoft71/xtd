@@ -155,10 +155,10 @@ Inheritance diagram for xtd::threading::thread_pool:</div>
 <li>When you create a xtd::threading::task::task or xtd::threading::task::task &lt; result_t &gt; object to perform some task asynchronously, by default the task is scheduled to run on a thread pool thread.</li>
 <li>Asynchronous timers use the thread pool. Thread pool threads execute callbacks from the <a class="el" href="classxtd_1_1threading_1_1timer.html" title="Provides a mechanism for executing a method on a thread pool thread at specified intervals....">xtd::threading::timer</a> class and raise events from the <a class="el" href="classxtd_1_1timers_1_1timer.html" title="Generates an event after a set interval, with an option to generate recurring events.">xtd::timers::timer</a> class.</li>
 <li>When you use registered wait handles, a system thread monitors the status of the wait handles. When a wait operation completes, a worker thread from the thread pool executes the corresponding callback function.</li>
-<li>When you call the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a6e1d511cd1dbe0a07b98128042118f3c" title="Queues a method for execution. The method executes when a thread pool thread becomes available.">xtd::threading::thread_pool::queue_user_work_item</a> method to queue a method for execution on a thread pool thread. You do this by passing the method a <a class="el" href="group__xtd__core.html#ga8e591282c14ed5ae0c0038b503b1373d" title="Represents a callback method to be executed by a thread pool thread.">xtd::threading::wait_callback</a> delegate. The delegate has the signature @verbatom using wait_callback = <a class="el" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31" title="Represents a xtd::delegate that has variable parameters and does not return a value.">action&lt;std::any&gt;</a>  where state is an object that contains data to be used by the delegate. The actual data can be passed to the delegate by calling the xtd::threading::thread_pool::queue_user_work_item(xtd::threading::wait_callback, std::any) method. </li>
+<li>When you call the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a6e1d511cd1dbe0a07b98128042118f3c" title="Queues a method for execution. The method executes when a thread pool thread becomes available.">xtd::threading::thread_pool::queue_user_work_item</a> method to queue a method for execution on a thread pool thread. You do this by passing the method a <a class="el" href="group__delegates.html#ga00d6e5f6f5ec48e0f31106a8371e19fb" title="Represents a callback method to be executed by a thread pool thread.">xtd::threading::wait_callback</a> delegate. The delegate has the signature @verbatom using wait_callback = <a class="el" href="group__xtd__core.html#ga53c721aac682a7ccf19ee17d92280e31" title="Represents a xtd::delegate that has variable parameters and does not return a value.">action&lt;std::any&gt;</a>  where state is an object that contains data to be used by the delegate. The actual data can be passed to the delegate by calling the xtd::threading::thread_pool::queue_user_work_item(xtd::threading::wait_callback, std::any) method. </li>
 </ul>
 </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>The threads in the managed thread pool are background threads. That is, their <a class="el" href="classxtd_1_1threading_1_1thread.html#a11f3c0ca7be2108803058899a895193e" title="Gets a value indicating whether or not a thread is a background thread.">xtd::threading::thread::is_background</a> properties are true. This means that a <a class="el" href="classxtd_1_1threading_1_1thread__pool.html" title="Provides a pool of threads that can be used to execute tasks, post work items, process asynchronous I...">xtd::threading::thread_pool</a> thread will not keep an application running after all foreground threads have exited. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>The threads in the managed thread pool are background threads. That is, their <a class="el" href="classxtd_1_1threading_1_1thread.html#a11f3c0ca7be2108803058899a895193e" title="Gets a value indicating whether or not a thread is a background thread.">xtd::threading::thread::is_background</a> properties are <code>true</code>. This means that a <a class="el" href="classxtd_1_1threading_1_1thread__pool.html" title="Provides a pool of threads that can be used to execute tasks, post work items, process asynchronous I...">xtd::threading::thread_pool</a> thread will not keep an application running after all foreground threads have exited. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>You can also queue work items that are not related to a wait operation to the thread pool. To request that a work item be handled by a thread in the thread pool, call the <a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a6e1d511cd1dbe0a07b98128042118f3c" title="Queues a method for execution. The method executes when a thread pool thread becomes available.">xtd::threading::thread_pool::queue_user_work_item</a> method. This method takes as a parameter a reference to the method or delegate that will be called by the thread selected from the thread pool. There is no way to cancel a work item after it has been queued. </dd>
 <dd>
 Timer-queue timers and registered wait operations also use the thread pool. Their callback functions are queued to the thread pool. </dd>
@@ -192,22 +192,22 @@ The thread pool provides new worker threads or I/O completion threads on demand 
 <tr class="memitem:a5da6db77a7e9173bd1db7c1e8122c10d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a5da6db77a7e9173bd1db7c1e8122c10d">join_all</a> (const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>)</td></tr>
 <tr class="memdesc:a5da6db77a7e9173bd1db7c1e8122c10d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Join all resources and worker threads.  <br /></td></tr>
 <tr class="separator:a5da6db77a7e9173bd1db7c1e8122c10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e1d511cd1dbe0a07b98128042118f3c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a6e1d511cd1dbe0a07b98128042118f3c">queue_user_work_item</a> (const <a class="el" href="group__xtd__core.html#ga8e591282c14ed5ae0c0038b503b1373d">wait_callback</a> &amp;callback)</td></tr>
+<tr class="memitem:a6e1d511cd1dbe0a07b98128042118f3c"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a6e1d511cd1dbe0a07b98128042118f3c">queue_user_work_item</a> (const <a class="el" href="group__delegates.html#ga00d6e5f6f5ec48e0f31106a8371e19fb">wait_callback</a> &amp;callback)</td></tr>
 <tr class="memdesc:a6e1d511cd1dbe0a07b98128042118f3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queues a method for execution. The method executes when a thread pool thread becomes available.  <br /></td></tr>
 <tr class="separator:a6e1d511cd1dbe0a07b98128042118f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a495589d2c33d3b82fa4e8478a2082088"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a495589d2c33d3b82fa4e8478a2082088">queue_user_work_item</a> (const <a class="el" href="group__xtd__core.html#ga8e591282c14ed5ae0c0038b503b1373d">wait_callback</a> &amp;callback, std::any state)</td></tr>
+<tr class="memitem:a495589d2c33d3b82fa4e8478a2082088"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a495589d2c33d3b82fa4e8478a2082088">queue_user_work_item</a> (const <a class="el" href="group__delegates.html#ga00d6e5f6f5ec48e0f31106a8371e19fb">wait_callback</a> &amp;callback, std::any state)</td></tr>
 <tr class="memdesc:a495589d2c33d3b82fa4e8478a2082088"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queues a method for execution. The method executes when a thread pool thread becomes available.  <br /></td></tr>
 <tr class="separator:a495589d2c33d3b82fa4e8478a2082088"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21cce31828de40647b89320b2ace3a5e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1threading_1_1registered__wait__handle.html">registered_wait_handle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a21cce31828de40647b89320b2ace3a5e">register_wait_for_single_object</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;wait_object, const <a class="el" href="group__xtd__core.html#gae8743c04a110382ce68fbd35eef2f782">wait_or_timer_callback</a> &amp;callback, std::any state, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> milliseconds_timeout_interval, bool execute_only_once)</td></tr>
+<tr class="memitem:a21cce31828de40647b89320b2ace3a5e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1threading_1_1registered__wait__handle.html">registered_wait_handle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a21cce31828de40647b89320b2ace3a5e">register_wait_for_single_object</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;wait_object, const <a class="el" href="group__delegates.html#ga70e248cce69f153c66a9662bd2c3d1b9">wait_or_timer_callback</a> &amp;callback, std::any state, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> milliseconds_timeout_interval, bool execute_only_once)</td></tr>
 <tr class="memdesc:a21cce31828de40647b89320b2ace3a5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a delegate to wait for a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>, specifying a 32-bit signed integer for the time-out in milliseconds.  <br /></td></tr>
 <tr class="separator:a21cce31828de40647b89320b2ace3a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3a112c7bc6718335fd075cccd2dd1af"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1threading_1_1registered__wait__handle.html">registered_wait_handle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__pool.html#ac3a112c7bc6718335fd075cccd2dd1af">register_wait_for_single_object</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;wait_object, const <a class="el" href="group__xtd__core.html#gae8743c04a110382ce68fbd35eef2f782">wait_or_timer_callback</a> &amp;callback, std::any state, <a class="el" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> milliseconds_timeout_interval, bool execute_only_once)</td></tr>
+<tr class="memitem:ac3a112c7bc6718335fd075cccd2dd1af"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1threading_1_1registered__wait__handle.html">registered_wait_handle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__pool.html#ac3a112c7bc6718335fd075cccd2dd1af">register_wait_for_single_object</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;wait_object, const <a class="el" href="group__delegates.html#ga70e248cce69f153c66a9662bd2c3d1b9">wait_or_timer_callback</a> &amp;callback, std::any state, <a class="el" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> milliseconds_timeout_interval, bool execute_only_once)</td></tr>
 <tr class="memdesc:ac3a112c7bc6718335fd075cccd2dd1af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a delegate to wait for a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>, specifying a 32-bit signed integer for the time-out in milliseconds.  <br /></td></tr>
 <tr class="separator:ac3a112c7bc6718335fd075cccd2dd1af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a923290b27e20898255ee9d38b4bfd2ed"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1threading_1_1registered__wait__handle.html">registered_wait_handle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a923290b27e20898255ee9d38b4bfd2ed">register_wait_for_single_object</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;wait_object, const <a class="el" href="group__xtd__core.html#gae8743c04a110382ce68fbd35eef2f782">wait_or_timer_callback</a> &amp;callback, std::any state, const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>, bool execute_only_once)</td></tr>
+<tr class="memitem:a923290b27e20898255ee9d38b4bfd2ed"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1threading_1_1registered__wait__handle.html">registered_wait_handle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a923290b27e20898255ee9d38b4bfd2ed">register_wait_for_single_object</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;wait_object, const <a class="el" href="group__delegates.html#ga70e248cce69f153c66a9662bd2c3d1b9">wait_or_timer_callback</a> &amp;callback, std::any state, const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;<a class="el" href="classxtd_1_1threading_1_1timeout.html">timeout</a>, bool execute_only_once)</td></tr>
 <tr class="memdesc:a923290b27e20898255ee9d38b4bfd2ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a delegate to wait for a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>, specifying a 32-bit signed integer for the time-out in milliseconds.  <br /></td></tr>
 <tr class="separator:a923290b27e20898255ee9d38b4bfd2ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4005a0a841c8b79f8a687c881b9baaeb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1threading_1_1registered__wait__handle.html">registered_wait_handle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a4005a0a841c8b79f8a687c881b9baaeb">register_wait_for_single_object</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;wait_object, const <a class="el" href="group__xtd__core.html#gae8743c04a110382ce68fbd35eef2f782">wait_or_timer_callback</a> &amp;callback, std::any state, <a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> milliseconds_timeout_interval, bool execute_only_once)</td></tr>
+<tr class="memitem:a4005a0a841c8b79f8a687c881b9baaeb"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1threading_1_1registered__wait__handle.html">registered_wait_handle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a4005a0a841c8b79f8a687c881b9baaeb">register_wait_for_single_object</a> (<a class="el" href="classxtd_1_1threading_1_1wait__handle.html">wait_handle</a> &amp;wait_object, const <a class="el" href="group__delegates.html#ga70e248cce69f153c66a9662bd2c3d1b9">wait_or_timer_callback</a> &amp;callback, std::any state, <a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> milliseconds_timeout_interval, bool execute_only_once)</td></tr>
 <tr class="memdesc:a4005a0a841c8b79f8a687c881b9baaeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a delegate to wait for a <a class="el" href="classxtd_1_1threading_1_1wait__handle.html" title="Encapsulates operating system specific objects that wait for exclusive access to shared resources.">xtd::threading::wait_handle</a>, specifying a 32-bit signed integer for the time-out in milliseconds.  <br /></td></tr>
 <tr class="separator:a4005a0a841c8b79f8a687c881b9baaeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35f26921fd206db30d10595147869ac5"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__pool.html#a35f26921fd206db30d10595147869ac5">set_max_threads</a> (size_t worker_threads, size_t completion_port_threads)</td></tr>
@@ -458,7 +458,7 @@ You can use this method to ensure that all pending threads are closed, and that 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if all threads have terminated; <code>false</code> if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If one or more threads are not joinable, they will be skipped. </dd>
 <dd>
 You can use this method to ensure that all pending threads are closed, and that resources are also closed. </dd></dl>
@@ -496,7 +496,7 @@ You can use this method to ensure that all pending threads are closed, and that 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if all threads have terminated; false if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if all threads have terminated; <code>false</code> if all threads have not terminated after the amount of time specified by the timeout parameter has elapsed. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If one or more threads are not joinable, they will be skipped. </dd>
 <dd>
 You can use this method to ensure that all pending threads are closed, and that resources are also closed. </dd></dl>
@@ -515,7 +515,7 @@ You can use this method to ensure that all pending threads are closed, and that 
         <tr>
           <td class="memname">static bool xtd::threading::thread_pool::queue_user_work_item </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga8e591282c14ed5ae0c0038b503b1373d">wait_callback</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__delegates.html#ga00d6e5f6f5ec48e0f31106a8371e19fb">wait_callback</a> &amp;&#160;</td>
           <td class="paramname"><em>callback</em></td><td>)</td>
           <td></td>
         </tr>
@@ -550,7 +550,7 @@ You can use this method to ensure that all pending threads are closed, and that 
         <tr>
           <td class="memname">static bool xtd::threading::thread_pool::queue_user_work_item </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga8e591282c14ed5ae0c0038b503b1373d">wait_callback</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__delegates.html#ga00d6e5f6f5ec48e0f31106a8371e19fb">wait_callback</a> &amp;&#160;</td>
           <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
@@ -602,7 +602,7 @@ You can use this method to ensure that all pending threads are closed, and that 
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__xtd__core.html#gae8743c04a110382ce68fbd35eef2f782">wait_or_timer_callback</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__delegates.html#ga70e248cce69f153c66a9662bd2c3d1b9">wait_or_timer_callback</a> &amp;&#160;</td>
           <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
@@ -643,7 +643,7 @@ You can use this method to ensure that all pending threads are closed, and that 
     <tr><td class="paramname">callback</td><td>A pointer function to call when the wait_object parameter is signaled. </td></tr>
     <tr><td class="paramname">state</td><td>The object that is passed to the callback. </td></tr>
     <tr><td class="paramname">milliseconds_timeout_interval</td><td>The time-out in milliseconds. If the milliseconds_timeout_interval parameter is 0 (zero), the function tests the object's state and returns immediately. If milliseconds_timeout_interval is -1, the function's time-out interval never elapses. </td></tr>
-    <tr><td class="paramname">execute_only_once</td><td>true to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; false to indicate that the timer is reset every time the wait operation completes until the wait is unregistered. </td></tr>
+    <tr><td class="paramname">execute_only_once</td><td><code>true</code> to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; <code>false</code> to indicate that the timer is reset every time the wait operation completes until the wait is unregistered. </td></tr>
   </table>
   </dd>
 </dl>
@@ -675,7 +675,7 @@ You can use this method to ensure that all pending threads are closed, and that 
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__xtd__core.html#gae8743c04a110382ce68fbd35eef2f782">wait_or_timer_callback</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__delegates.html#ga70e248cce69f153c66a9662bd2c3d1b9">wait_or_timer_callback</a> &amp;&#160;</td>
           <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
@@ -716,7 +716,7 @@ You can use this method to ensure that all pending threads are closed, and that 
     <tr><td class="paramname">callback</td><td>A pointer function to call when the wait_object parameter is signaled. </td></tr>
     <tr><td class="paramname">state</td><td>The object that is passed to the callback. </td></tr>
     <tr><td class="paramname">milliseconds_timeout_interval</td><td>The time-out in milliseconds. If the milliseconds_timeout_interval parameter is 0 (zero), the function tests the object's state and returns immediately. If milliseconds_timeout_interval is -1, the function's time-out interval never elapses. </td></tr>
-    <tr><td class="paramname">execute_only_once</td><td>true to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; false to indicate that the timer is reset every time the wait operation completes until the wait is unregistered. </td></tr>
+    <tr><td class="paramname">execute_only_once</td><td><code>true</code> to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; <code>false</code> to indicate that the timer is reset every time the wait operation completes until the wait is unregistered. </td></tr>
   </table>
   </dd>
 </dl>
@@ -748,7 +748,7 @@ You can use this method to ensure that all pending threads are closed, and that 
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__xtd__core.html#gae8743c04a110382ce68fbd35eef2f782">wait_or_timer_callback</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__delegates.html#ga70e248cce69f153c66a9662bd2c3d1b9">wait_or_timer_callback</a> &amp;&#160;</td>
           <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
@@ -789,7 +789,7 @@ You can use this method to ensure that all pending threads are closed, and that 
     <tr><td class="paramname">callback</td><td>A pointer function to call when the wait_object parameter is signaled. </td></tr>
     <tr><td class="paramname">state</td><td>The object that is passed to the callback. </td></tr>
     <tr><td class="paramname">timeout</td><td>The time-out represented by a time_span.If timeout is 0 (zero), the function tests the object's state and returns immediately.If timeout is -1, the function's time-out interval never elapses. </td></tr>
-    <tr><td class="paramname">execute_only_once</td><td>true to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; false to indicate that the timer is reset every time the wait operation completes until the wait is unregistered. </td></tr>
+    <tr><td class="paramname">execute_only_once</td><td><code>true</code> to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; <code>false</code> to indicate that the timer is reset every time the wait operation completes until the wait is unregistered. </td></tr>
   </table>
   </dd>
 </dl>
@@ -821,7 +821,7 @@ You can use this method to ensure that all pending threads are closed, and that 
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__xtd__core.html#gae8743c04a110382ce68fbd35eef2f782">wait_or_timer_callback</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__delegates.html#ga70e248cce69f153c66a9662bd2c3d1b9">wait_or_timer_callback</a> &amp;&#160;</td>
           <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
@@ -862,7 +862,7 @@ You can use this method to ensure that all pending threads are closed, and that 
     <tr><td class="paramname">callback</td><td>A pointer function to call when the wait_object parameter is signaled. </td></tr>
     <tr><td class="paramname">state</td><td>The object that is passed to the callback. </td></tr>
     <tr><td class="paramname">milliseconds_timeout_interval</td><td>The time-out in milliseconds. If the milliseconds_timeout_interval parameter is 0 (zero), the function tests the object's state and returns immediately. If milliseconds_timeout_interval is -1, the function's time-out interval never elapses. </td></tr>
-    <tr><td class="paramname">execute_only_once</td><td>true to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; false to indicate that the timer is reset every time the wait operation completes until the wait is unregistered. </td></tr>
+    <tr><td class="paramname">execute_only_once</td><td><code>true</code> to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; <code>false</code> to indicate that the timer is reset every time the wait operation completes until the wait is unregistered. </td></tr>
   </table>
   </dd>
 </dl>
@@ -918,7 +918,7 @@ You can use this method to ensure that all pending threads are closed, and that 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the change is successful; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the change is successful; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -964,7 +964,7 @@ You can use this method to ensure that all pending threads are closed, and that 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the change is successful; otherwise, false. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the change is successful; otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -975,7 +975,7 @@ You can use this method to ensure that all pending threads are closed, and that 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jan 30 2025 20:26:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 1 2025 12:14:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
