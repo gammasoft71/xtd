@@ -17,7 +17,7 @@ public:
     for (const auto& p : lpf)
       console::write_line(p);
     
-    list<point> lp = lpf.convert_all(converter<point, point_f> {point_f_to_point});
+    list<point> lp = lpf.convert_all(converter<point, const point_f&> {point_f_to_point});
     
     console::write_line();
     for (const auto& p : lp)

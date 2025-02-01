@@ -19,4 +19,6 @@ add_projects(
   generic_list_as_read_only
   generic_list_binary_search
   generic_list_convert_all
+  generic_list_exists
+  generic_list_for_each
 )
