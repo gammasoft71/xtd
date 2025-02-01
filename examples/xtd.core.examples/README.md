@@ -210,6 +210,8 @@
 * [generic_list3](generic_Collections/generic_list3/README.md) shows how to use [xtd::collections::generic::list](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) class.
 * [generic_list4](generic_Collections/generic_list4/README.md) shows how to use [xtd::collections::generic::list](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) class.
 * [generic_list_as_read_only](generic_Collections/generic_list_as_read_only/README.md) shows how to use [xtd::collections::generic::list](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) class.
+* [generic_list_binary_search](generic_Collections/generic_list_binary_search/README.md) shows how to use [xtd::collections::generic::list::binary_search](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) method.
+* [generic_list_convert_all](generic_Collections/generic_list_convert_all/README.md) shows how to use [xtd::collections::generic::list::convert_all](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) method.
 
 ## [Guid](guid/README.md)
 
