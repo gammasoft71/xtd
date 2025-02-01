@@ -12,9 +12,10 @@
 #include "../object_model/read_only_collection.hpp"
 #include "../../argument_exception.hpp"
 #include "../../argument_out_of_range_exception.hpp"
-#include "../../index_out_of_range_exception.hpp"
 #include "../../box_integer.hpp"
 #include "../../comparison.hpp"
+#include "../../converter.hpp"
+#include "../../index_out_of_range_exception.hpp"
 #include "../../invalid_operation_exception.hpp"
 #include "../../intptr.hpp"
 #include "../../is.hpp"
@@ -549,6 +550,21 @@ namespace xtd {
           for (const auto& item : data_->items)
             if (helpers::equator<type_t> {}(reinterpret_cast<const type_t&>(item), value)) return true;
           return false;
+        }
+
+        /// @brief Converts the elements in the current List<T> to another type, and returns a list containing the converted elements.
+        /// @tparam output_t The type of the elements of the target array.
+        /// @param converter A xtd::converter <output_t, input_t> delegate that converts each element from one type to another type.
+        /// @return A xtd::collections::generic::list <type_t> of the target type containing the converted elements from the current xtd::collections::generic::list <type_t>.
+        /// @par Examples
+        /// The following example defines a method named `point_f_to_point` that converts a xtd::drawing::point_f structure to a xtd::drawing::point structure. The example then creates a xtd::collections::generic::list <type_t> of xtd::drawing::point_f structures, creates a xtd::converter <point_f, point> delegate to represent the `point_f_to_point` method, and passes the delegate to the xtd::collections::generic::list::convert_all method. The xtd::collections::generic::list::convert_all method passes each element of the input list to the `point_f_to_point` method and puts the converted elements into a new list of Point structures. Both lists are displayed.
+        /// @include generic_list_convert_all.cpp
+        template<class output_t>
+        list<output_t> convert_all(xtd::converter<output_t, type_t> converter) const {
+          auto result = list<output_t> {};
+          for (const auto& item : *this)
+            result.add(converter(item));
+          return result;
         }
         
         /// @brief Copies the entire xtd::collections::generic::list <type_t> to a compatible one-dimensional array.

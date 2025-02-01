@@ -12,6 +12,11 @@ namespace xtd {
     /// @brief Contains classes for initializing and configuring a speech synthesis engine, for creating prompts, for generating speech, for responding to events, and for modifying voice characteristics.
     namespace synthesis {
       /// @brief Represents the method that will handle xtd::speech::synthesis::speech_synthesizer::speak_started event.
+      /// ```cpp
+      /// using state_changed_event_handler = xtd::delegate<void(object& sender, const state_changed_event_args& e)>;
+      /// ```
+      /// @param sender The source of the event.
+      /// @param e A xtd::speech::synthesis::state_changed_event_args that contains the event data.
       /// @par Header
       /// ```cpp
       /// #include <xtd/speech/synthesis/state_changed_event_handler>
@@ -21,7 +26,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core synthesis
-      using state_changed_event_handler = delegate<void(object& sender, const state_changed_event_args& e)>;
+      using state_changed_event_handler = xtd::delegate<void(object& sender, const state_changed_event_args& e)>;
     }
   }
 }
