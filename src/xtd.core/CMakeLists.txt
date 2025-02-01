@@ -221,6 +221,8 @@ add_sources(
   include/xtd/format_exception
   include/xtd/func.hpp
   include/xtd/func
+  include/xtd/generic_event_handler.hpp
+  include/xtd/generic_event_handler
   include/xtd/generic_stream_output.hpp
   include/xtd/generic_stream_output
   include/xtd/guid.hpp
