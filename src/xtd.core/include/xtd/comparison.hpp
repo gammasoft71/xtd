@@ -16,6 +16,7 @@ namespace xtd {
   /// @param x The first object to compare.
   /// @param y The second object to compare.
   /// @return A signed integer that indicates the relative values of x and y, as shown in the following table.
+  /// 
   /// | Value          | Meaning              |
   /// |----------------|----------------------|
   /// | less than 0    | x is less than y.    |
