@@ -214,6 +214,7 @@
 * [generic_list_convert_all](generic_Collections/generic_list_convert_all/README.md) shows how to use [xtd::collections::generic::list::convert_all](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) method.
 * [generic_list_exists](generic_Collections/generic_list_exists/README.md) shows how to use [xtd::collections::generic::list::exists](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) method.
 * [generic_list_for_each](generic_Collections/generic_list_for_each/README.md) shows how to use [xtd::collections::generic::list::for_each](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) method.
+* [generic_list_reverse](generic_Collections/generic_list_reverse/README.md) shows how to use [xtd::collections::generic::list::reverse](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1collections_1_1generic_1_1list.html) method.
 
 ## [Guid](guid/README.md)
 
