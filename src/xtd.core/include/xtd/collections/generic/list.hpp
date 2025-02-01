@@ -877,6 +877,9 @@ namespace xtd {
         
         /// @brief Performs the specified action on each element of the xtd::collections::generic::list <type_t>.
         /// @param action The xtd::action <type_t> delegate to perform on each element of the xtd::collections::generic::list <type_t>.
+        /// @par Examples
+        /// The following example demonstrates the use of the xtd::action <type_t> delegate to print the contents of a xtd::collections::generic::list <type_t> object. In this example the `print` method is used to display the contents of the list to the console.
+        /// @include generic_list_for_each.cpp
         /// @remarks The xtd::action <type_t> is a delegate to a method that performs an action on the object passed to it. The elements of the current xtd::collections::generic::list <type_t> are individually passed to the xtd::action <type_t> delegate.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         /// @remarks Modifying the underlying collection in the body of the Action<T> delegate is not supported and causes undefined behavior.
@@ -1067,6 +1070,38 @@ namespace xtd {
         }
         /// @endcond
 
+        /// @brief Determines the last index of a specific item in the xtd::collections::generic::list <type_t>.
+        /// @param value The object to locate in the xtd::collections::generic::list <type_t>.
+        /// @return Int32 The last index of value if found in the list; otherwise, xtd::collections::generic::list::npos.
+        size_type last_index_of(const type_t& value) const {
+          if (size() == 0) return npos;
+          return last_index_of(value, size() - 1, size());
+        }
+        
+        /// @brief Determines the last index of a specific item in the xtd::collections::generic::list <type_t>.
+        /// @param value The object to locate in the xtd::collections::generic::list <type_t>.
+        /// @param index The zero-based starting index of the search.
+        /// @return Int32 The last index of value if found in the list; otherwise, xtd::collections::generic::list::npos.
+        /// @exception xd::argument_exception The parameters `indexù  is greater than xtd::collections::generic::list::count().
+        size_type last_index_of(const type_t& value, size_type index) const {
+          return last_index_of(value, index, index + 1);
+        }
+        /// @brief Determines the last index of a specific item in the xtd::collections::generic::list <type_t>.
+        /// @param value The object to locate in the xtd::collections::generic::list <type_t>.
+        /// @param index The zero-based starting index of the search.
+        /// @param count The number of elements in the section to search
+        /// @return Int32 The last index of value if found in the list; otherwise, xtd::collections::generic::list::npos.
+        /// @exception xd::argument_exception `index` and `count` do not specify a valid section in the xtd::collections::generic::list <type_t>.
+        size_type last_index_of(const type_t& value, size_type index, size_type count) const {
+          if (count < size() || index >= size()) throw xtd::argument_out_of_range_exception {};
+          if (index - count > size()) throw xtd::argument_exception {};
+
+          for (auto i = index; i >= index - (count - 1); --i)
+            if (value == data_->items[i])  return i;
+          
+          return npos;
+        }
+
         /// @brief Removes the last element of the container.
         /// @remarks Calling pop_back on an empty container results in undefined behavior.
         /// @remarks Iterators (including the xtd::collections::generic::list::end() iterator) and references to the last element are invalidated.
@@ -1092,6 +1127,11 @@ namespace xtd {
           data_->items.push_back(value);
         }
         
+        /// @brief Removes the first occurrence of a specific object from the xtd::collections::generic::list <type_t>.
+        /// @param item The object to remove from the xtd::collections::generic::list <type_t>.
+        /// @return `true` if item is successfully removed; otherwise, `false`. This method also returns `false` if item was not found in the xtd::collections::generic::list <type_t>.
+        /// @remarks If type `typ_t` implements the xtd::iequatable <type_t> generic interface, the equality comparer is the xtd::iequatable::equals method of that interface; otherwise, the default equality comparer is xtd::object::equals.
+        /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
         bool remove(const type_t& item) override {
           if (count() == 0)  return false;
           for (auto index = size_type {0}; index < count(); ++index) {
@@ -1175,11 +1215,50 @@ namespace xtd {
           data_->items.resize(count, value);
         }
         
+        /// @brief Reverses the order of the elements in the entire xtd::collections::generic::list <type_t>.
+        /// @par Examples
+        /// The following example demonstrates both overloads of the xtd::collections::generic::list::reverse method. The example creates a xtd::collections::generic::list <type_t> of strings and adds six strings. The xtd::collections::generic::list::reverse () method overload is used to reverse the list, and then the xtd::collections::generic::list::reverse (xtd::size, xtd::size) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements.
+        /// @include generic_list_reverse.cpp
+        /// @remarks This method uses xtd::array::reverse to reverse the order of the elements.
+        /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        void reverse() {reverse(0, count());}
+        /// @brief Reverses the order of the elements in the specified range.
+        /// @param index The zero-based starting index of the range to reverse.
+        /// @param count The number of elements in the range to reverse.
+        /// @exception xtd::argument_exception `index` and `count` do not denote a valid range of elements in the xtd::collections::generic::list <type_t>.
+        /// @par Examples
+        /// The following example demonstrates both overloads of the xtd::collections::generic::list::reverse method. The example creates a xtd::collections::generic::list <type_t> of strings and adds six strings. The xtd::collections::generic::list::reverse () method overload is used to reverse the list, and then the xtd::collections::generic::list::reverse (xtd::size, xtd::size) method overload is used to reverse the middle of the list, beginning with element 1 and encompassing four elements.
+        /// @include generic_list_reverse.cpp
+        /// @remarks This method uses xtd::array::reverse to reverse the order of the elements.
+        /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
+        void reverse(size_type index, size_type count) {
+          if (index + count > size()) throw xtd::argument_exception {};
+          
+          ++data_->version;
+          auto poitions1 = index;
+          auto position2 = (index + count) - 1;
+          auto iterator1 = data_->items.begin() + poitions1;
+          auto iterator2 = data_->items.begin() + position2;
+          
+          while (poitions1++ < position2--)
+            std::iter_swap(iterator1++, iterator2--);
+        }
+        
         /// @brief Requests the removal of unused capacity.
         /// @remarks It is a non-binding request to reduce xtd::collections::generic::list::capacity() to xtd::collections::generic::list::size(). It depends on the implementation whether the request is fulfilled.
         /// @remarks If reallocation occurs, all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. If no reallocation occurs, no iterators or references are invalidated.
         virtual void shrink_to_fit() {data_->items.shrink_to_fit();}
 
+        /// @brief Creates a shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
+        /// @param start The zero-based xtd::collections::generic::list <type_t> index at which the range starts.
+        /// @param length The length of the range.
+        /// @return A shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
+        /// @exception xt::argument_exception `start` and `length` do not denote a valid range of elements in the xtd::collections::generic::list <type_t>.
+        list<type_t> slice(size_type start, size_type length) const {
+          if (start + length > size()) throw xtd::argument_exception {};
+          return list<type_t> {data_->items.begin() + start, data_->items.begin() + start + length};
+        }
+        
         /// @brief Sorts the elements in the entire xtd::collections::generic::list <type_t> using the default comparer.
         /// @exception xtd::invalid_operation_exception The default comparer xtd::collections::generic::comparer::default_comparer cannot find an implementation of the xtd::icomparable <type_t> generic interface.
         /// @par Examples
