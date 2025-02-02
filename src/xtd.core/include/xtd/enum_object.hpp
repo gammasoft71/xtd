@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::enum_object.
+/// @brief Contains xtd::enum_object struct.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "enum_attribute.hpp"
@@ -23,6 +23,12 @@ namespace xtd {
   
   /// @{
   /// @brief Provides the base class for enumerations.
+  /// ```cpp
+  /// template<class enum_t = std::nullptr_t>
+  /// struct enum_object : xtd::object, xtd::icomparable<enum_object<enum_t>>, xtd::iequatable<enum_object<enum_t>>, xtd::iformatable;
+  /// ```
+  /// @par Inheritance
+  /// xtd::object → xtd::enum_object <enum_t>
   /// @par Header
   /// ```cpp
   /// #include <xtd/enum_object>
@@ -91,6 +97,16 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
+    /// @brief Compares the current instance with another object of the same type.
+    /// @param value An object to compare with this instance.
+    /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
+    /// The return value has these meanings:
+    ///
+    /// | Value             | Condition                          |
+    /// | ----------------- | ---------------------------------- |
+    /// | Less than zero    | This instance is less than obj.    |
+    /// | Zero              | This instance is equal to obj.     |
+    /// | Greater than zero | This instance is greater than obj. |
     int32 compare_to(const enum_object& value) const noexcept override {
       if (to_int(this->value) == to_int(value.value)) return 0;
       if (to_int(this->value) < to_int(value.value)) return -1;

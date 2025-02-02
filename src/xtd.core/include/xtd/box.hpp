@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::box class.
+/// @brief Contains xtd::box struct.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "collections/generic/helpers/comparer.hpp"
@@ -117,7 +117,7 @@ namespace xtd {
     
     /// @{
     /// @brief Compares the current instance with another object of the same type.
-    /// @param obj An object to compare with this instance.
+    /// @param value An object to compare with this instance.
     /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
     /// The return value has these meanings:
     ///
