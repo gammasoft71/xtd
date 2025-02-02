@@ -21,7 +21,7 @@ namespace xtd {
   class event : protected handler_t {
     friend object_t;
   public:
-    /// @name Public Methods
+    /// @name Public Properties
     
     /// @{
     /// @brief Gets a value indicate if the event is empty.
