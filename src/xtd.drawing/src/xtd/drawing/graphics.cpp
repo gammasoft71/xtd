@@ -69,7 +69,7 @@ graphics& graphics::clip(const xtd::drawing::region value) {
 
 rectangle_f graphics::clip_bounds() const noexcept {
   auto rect_pixels = data_->clip.get_bounds(*this);
-  return rectangle_f(to_page_unit(rect_pixels.x()), to_page_unit(rect_pixels.y()), to_page_unit(rect_pixels.width()), to_page_unit(rect_pixels.height()));
+  return rectangle_f(to_page_unit(rect_pixels.x), to_page_unit(rect_pixels.y), to_page_unit(rect_pixels.width), to_page_unit(rect_pixels.height));
 }
 
 xtd::drawing::drawing_2d::compositing_mode graphics::compositing_mode() const noexcept {
@@ -236,7 +236,7 @@ void graphics::draw_arc(const xtd::drawing::pen& pen, const xtd::drawing::rectan
 }
 
 void graphics::draw_arc(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle) {
-  draw_arc(pen, rect.x(), rect.y(), rect.width(), rect.height(), start_angle, sweep_angle);
+  draw_arc(pen, rect.x, rect.y, rect.width, rect.height, start_angle, sweep_angle);
 }
 
 void graphics::draw_arc(const pen& pen, int32 x, int32 y, int32 width, int32 height, int32 start_angle, int32 sweep_angle) {
@@ -345,7 +345,7 @@ void graphics::draw_ellipse(const xtd::drawing::pen& pen, const xtd::drawing::re
 }
 
 void graphics::draw_ellipse(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect) {
-  draw_ellipse(pen, rect.x(), rect.y(), rect.width(), rect.height());
+  draw_ellipse(pen, rect.x, rect.y, rect.width, rect.height);
 }
 
 void graphics::draw_ellipse(const pen& pen, int32 x, int32 y, int32 width, int32 height) {
@@ -374,7 +374,7 @@ void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle_f& rect) {
-  draw_image(image, rect.x(), rect.y(), rect.width(), rect.height());
+  draw_image(image, rect.x, rect.y, rect.width, rect.height);
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::point& point) {
@@ -407,7 +407,7 @@ void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle_f& dest_rect, const xtd::drawing::rectangle_f& src_rect) {
-  draw_image(image, dest_rect, src_rect.x(), src_rect.y(), src_rect.width(), src_rect.height());
+  draw_image(image, dest_rect, src_rect.x, src_rect.y, src_rect.width, src_rect.height);
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::point& dest_point, const xtd::drawing::rectangle& src_rect) {
@@ -415,7 +415,7 @@ void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::point_f& dest_point, const xtd::drawing::rectangle_f& src_rect) {
-  draw_image(image, dest_point, src_rect.x(), src_rect.y(), src_rect.width(), src_rect.height());
+  draw_image(image, dest_point, src_rect.x, src_rect.y, src_rect.width, src_rect.height);
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle& dest_rect, int32 src_x, int32 src_y, int32 src_width, int32 src_height) {
@@ -423,9 +423,9 @@ void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle_f& dest_rect, float src_x, float src_y, float src_width, float src_height) {
-  if (dest_rect.width() <= 0 || dest_rect.height() <= 0) throw argument_exception {};
+  if (dest_rect.width <= 0 || dest_rect.height <= 0) throw argument_exception {};
   if (src_width < 0 || src_height < 0) throw argument_exception {};
-  native::graphics::draw_image(handle(), image.handle(), dest_rect.x(), dest_rect.y(), dest_rect.width(), dest_rect.height(), src_x, src_y, src_width, src_height);
+  native::graphics::draw_image(handle(), image.handle(), dest_rect.x, dest_rect.y, dest_rect.width, dest_rect.height, src_x, src_y, src_width, src_height);
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::point& dest_point, int32 src_x, int32 src_y, int32 src_width, int32 src_height) {
@@ -501,7 +501,7 @@ void graphics::draw_pie(const xtd::drawing::pen& pen, const xtd::drawing::rectan
 }
 
 void graphics::draw_pie(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle) {
-  draw_pie(pen, rect.x(), rect.y(), rect.width(), rect.height(), start_angle, sweep_angle);
+  draw_pie(pen, rect.x, rect.y, rect.width, rect.height, start_angle, sweep_angle);
 }
 
 void graphics::draw_pie(const xtd::drawing::pen& pen, int32 x, int32 y, int32 width, int32 height, int32 start_angle, int32 sweep_angle) {
@@ -548,7 +548,7 @@ void graphics::draw_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::
   draw_rectangle(pen, rect.x, rect.y, rect.width, rect.height);
 }
 void graphics::draw_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect) {
-  draw_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height());
+  draw_rectangle(pen, rect.x, rect.y, rect.width, rect.height);
 }
 
 void graphics::draw_rectangle(const pen& pen, int32 x, int32 y, int32 width, int32 height) {
@@ -568,7 +568,7 @@ void graphics::draw_rectangles(const xtd::drawing::pen& pen, const std::vector<x
 
 void graphics::draw_rectangles(const xtd::drawing::pen& pen, const std::vector<xtd::drawing::rectangle_f>& rects) {
   auto rectangles = std::vector<std::tuple<float, float, float, float>> {};
-  for_each(rects.begin(), rects.end(), [&](auto rect) {rectangles.emplace_back(to_pixels(rect.x()), to_pixels(rect.y()), to_pixels(rect.width()), to_pixels(rect.height()));});
+  for_each(rects.begin(), rects.end(), [&](auto rect) {rectangles.emplace_back(to_pixels(rect.x), to_pixels(rect.y), to_pixels(rect.width), to_pixels(rect.height));});
   native::graphics::draw_rectangles(handle(), pen.handle(), rectangles);
 }
 
@@ -585,7 +585,7 @@ void graphics::draw_rounded_rectangle(const xtd::drawing::pen& pen, const xtd::d
 }
 
 void graphics::draw_rounded_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect, float radius) {
-  draw_rounded_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height(), radius);
+  draw_rounded_rectangle(pen, rect.x, rect.y, rect.width, rect.height, radius);
 }
 
 void graphics::draw_rounded_rectangle(const pen& pen, int32 x, int32 y, int32 width, int32 height, int32 radius) {
@@ -602,7 +602,7 @@ void graphics::draw_string(const xtd::string& s, const xtd::drawing::font& font,
 }
 
 void graphics::draw_string(const string& s, const font& font, const brush& brush, const rectangle_f& layout_rectangle, const string_format& format) {
-  native::graphics::draw_string(handle(), s, font.handle(), brush.handle(), to_pixels(layout_rectangle.x()), to_pixels(layout_rectangle.y()), to_pixels(layout_rectangle.width()), to_pixels(layout_rectangle.height()), static_cast<int32>(format.alignment()), static_cast<int32>(format.line_alignment()), static_cast<int32>(format.hotkey_prefix()), static_cast<int32>(format.trimming()), static_cast<int32>(format.format_flags()));
+  native::graphics::draw_string(handle(), s, font.handle(), brush.handle(), to_pixels(layout_rectangle.x), to_pixels(layout_rectangle.y), to_pixels(layout_rectangle.width), to_pixels(layout_rectangle.height), static_cast<int32>(format.alignment()), static_cast<int32>(format.line_alignment()), static_cast<int32>(format.hotkey_prefix()), static_cast<int32>(format.trimming()), static_cast<int32>(format.format_flags()));
 }
 
 void graphics::draw_string(const xtd::string& s, const xtd::drawing::font& font, const xtd::drawing::brush& brush, const xtd::drawing::point_f& point) {
@@ -667,7 +667,7 @@ void graphics::fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing
 }
 
 void graphics::fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect) {
-  fill_ellipse(brush, rect.x(), rect.y(), rect.width(), rect.height());
+  fill_ellipse(brush, rect.x, rect.y, rect.width, rect.height);
 }
 
 void graphics::fill_ellipse(const brush& brush, int32 x, int32 y, int32 width, int32 height) {
@@ -688,7 +688,7 @@ void graphics::fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::re
 }
 
 void graphics::fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle) {
-  fill_pie(brush, rect.x(), rect.y(), rect.width(), rect.height(), start_angle, sweep_angle);
+  fill_pie(brush, rect.x, rect.y, rect.width, rect.height, start_angle, sweep_angle);
 }
 
 void graphics::fill_pie(const brush& brush, int32 x, int32 y, int32 width, int32 height, int32 start_angle, int32 sweep_angle) {
@@ -727,7 +727,7 @@ void graphics::fill_rectangle(const xtd::drawing::brush& brush, const xtd::drawi
 }
 
 void graphics::fill_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect) {
-  fill_rectangle(brush, rect.x(), rect.y(), rect.width(), rect.height());
+  fill_rectangle(brush, rect.x, rect.y, rect.width, rect.height);
 }
 
 void graphics::fill_rectangle(const brush& brush, int32 x, int32 y, int32 width, int32 height) {
@@ -747,7 +747,7 @@ void graphics::fill_rectangles(const xtd::drawing::brush& brush, const std::vect
 
 void graphics::fill_rectangles(const xtd::drawing::brush& brush, const std::vector<xtd::drawing::rectangle_f>& rects) {
   auto rectangles = std::vector<std::tuple<float, float, float, float>> {};
-  for_each(rects.begin(), rects.end(), [&](auto rect) {rectangles.emplace_back(to_pixels(rect.x()), to_pixels(rect.y()), to_pixels(rect.width()), to_pixels(rect.height()));});
+  for_each(rects.begin(), rects.end(), [&](auto rect) {rectangles.emplace_back(to_pixels(rect.x), to_pixels(rect.y), to_pixels(rect.width), to_pixels(rect.height));});
   native::graphics::fill_rectangles(handle(), brush.handle(), rectangles);
 }
 
@@ -760,7 +760,7 @@ void graphics::fill_rounded_rectangle(const xtd::drawing::brush& brush, const xt
 }
 
 void graphics::fill_rounded_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect, float radius) {
-  fill_rounded_rectangle(brush, rect.x(), rect.y(), rect.width(), rect.height(), radius);
+  fill_rounded_rectangle(brush, rect.x, rect.y, rect.width, rect.height, radius);
 }
 
 void graphics::fill_rounded_rectangle(const brush& brush, int32 x, int32 y, int32 width, int32 height, int32 radius) {

@@ -173,11 +173,11 @@ xtd::string matrix::to_string() const noexcept {
 }
 
 void matrix::init_from_rect_3points(const rectangle_f& rect, const point_f pt1, const point_f pt2, const point_f pt3) {
-  auto m11 = (pt2.x - pt1.x) / rect.width();
-  auto m12 = (pt2.y - pt1.y) / rect.width();
-  auto m21 = (pt3.x - pt1.x) / rect.height();
-  auto m22 = (pt3.y - pt1.y) / rect.height();
+  auto m11 = (pt2.x - pt1.x) / rect.width;
+  auto m12 = (pt2.y - pt1.y) / rect.width;
+  auto m21 = (pt3.x - pt1.x) / rect.height;
+  auto m22 = (pt3.y - pt1.y) / rect.height;
   
   data_->handle = native::matrix::create(m11, m12, m21, m22, pt1.x, pt1.y);
-  native::matrix::translate(handle(), -rect.x(), -rect.y(), as<int32>(matrix_order::prepend));
+  native::matrix::translate(handle(), -rect.x, -rect.y, as<int32>(matrix_order::prepend));
 }

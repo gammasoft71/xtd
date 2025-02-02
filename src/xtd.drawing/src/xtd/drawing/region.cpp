@@ -26,7 +26,7 @@ region::region(const rectangle& rect) : region(rectangle_f(rect)) {
 }
 
 region::region(const rectangle_f& rect) : data_(xtd::new_sptr<data>()) {
-  data_->handle = native::region::create_from_rect(rect.x(), rect.y(), rect.width(), rect.height());
+  data_->handle = native::region::create_from_rect(rect.x, rect.y, rect.width, rect.height);
 }
 
 region::~region() {
@@ -87,10 +87,10 @@ rectangle_f region::get_bounds() const noexcept {
 
 rectangle_f region::get_bounds(const xtd::drawing::graphics& g) const noexcept {
   auto rect = get_bounds();
-  rect.x(g.to_page_unit(rect.x()));
-  rect.y(g.to_page_unit(rect.y()));
-  rect.width(g.to_page_unit(rect.width()));
-  rect.height(g.to_page_unit(rect.height()));
+  rect.x = g.to_page_unit(rect.x);
+  rect.y = g.to_page_unit(rect.y);
+  rect.width = g.to_page_unit(rect.width);
+  rect.height = g.to_page_unit(rect.height);
   return rect;
 }
 
@@ -131,7 +131,7 @@ bool region::is_infinite(const xtd::drawing::graphics& g) const noexcept {
 }
 
 bool region::is_visible(const xtd::drawing::rectangle_f& rect, const xtd::drawing::graphics& g) const noexcept {
-  return is_visible(rect.x(), rect.y(), rect.width(), rect.height(), g);
+  return is_visible(rect.x, rect.y, rect.width, rect.height, g);
 }
 
 bool region::is_visible(float x, float y, float width, float height, const xtd::drawing::graphics& g) const noexcept {
@@ -147,7 +147,7 @@ bool region::is_visible(int32 x, int32 y, int32 width, int32 height, const xtd::
 }
 
 bool region::is_visible(const xtd::drawing::rectangle_f& rect) const noexcept {
-  return is_visible(rect.x(), rect.y(), rect.width(), rect.height());
+  return is_visible(rect.x, rect.y, rect.width, rect.height);
 }
 
 bool region::is_visible(float x, float y, float width, float height) const noexcept {
