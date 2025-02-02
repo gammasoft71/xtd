@@ -9,7 +9,7 @@ const rectangle_f rectangle_f::empty;
 rectangle_f::rectangle_f(float x, float y, float width, float height) noexcept  : x_(x), y_(y), width_(width), height_(height) {
 }
 
-rectangle_f::rectangle_f(const point_f& location, const size_f& size) noexcept  : rectangle_f(location.x, location.y, size.width(), size.height()) {
+rectangle_f::rectangle_f(const point_f& location, const size_f& size) noexcept  : rectangle_f(location.x, location.y, size.width, size.height) {
 }
 
 float rectangle_f::bottom() const noexcept {
@@ -54,8 +54,8 @@ size_f rectangle_f::size() const noexcept {
 }
 
 void rectangle_f::size(const size_f& size) noexcept {
-  width_ = size.width();
-  height_ = size.height();
+  width_ = size.width;
+  height_ = size.height;
 }
 
 float rectangle_f::top() const noexcept {
@@ -87,7 +87,7 @@ void rectangle_f::y(float y) noexcept {
 }
 
 void rectangle_f::add(const drawing::size_f& sz) noexcept {
-  add(sz.width(), sz.height());
+  add(sz.width, sz.height);
 }
 
 void rectangle_f::add(float width, float height) noexcept {
@@ -102,7 +102,7 @@ rectangle_f rectangle_f::add(const rectangle_f& rect, float x, float y) noexcept
 }
 
 rectangle_f rectangle_f::add(const rectangle_f& rect, const size_f& sz) noexcept {
-  return add(rect, sz.width(), sz.height());
+  return add(rect, sz.width, sz.height);
 }
 
 bool rectangle_f::contains(const point_f& pt) const noexcept {
@@ -126,7 +126,7 @@ rectangle_f rectangle_f::from_ltrb(float left, float top, float right, float bot
 }
 
 void rectangle_f::inflate(const drawing::size_f& sz) noexcept {
-  inflate(sz.width(), sz.height());
+  inflate(sz.width, sz.height);
 }
 
 void rectangle_f::inflate(float width, float height) noexcept {
@@ -137,7 +137,7 @@ void rectangle_f::inflate(float width, float height) noexcept {
 }
 
 rectangle_f rectangle_f::inflate(const rectangle_f& rect, const drawing::size_f& sz) noexcept {
-  return inflate(rect, sz.width(), sz.height());
+  return inflate(rect, sz.width, sz.height);
 }
 
 rectangle_f rectangle_f::inflate(const rectangle_f& rect, float width, float height) noexcept {

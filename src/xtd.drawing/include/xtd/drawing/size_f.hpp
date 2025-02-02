@@ -28,8 +28,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing coordinates
-    class drawing_export_ size_f : public xtd::object, public xtd::iequatable<size_f> {
-    public:
+    struct drawing_export_ size_f : xtd::object, xtd::iequatable<size_f> {
       /// @name Public Fields
       
       /// @{
@@ -61,29 +60,19 @@ namespace xtd {
       /// @name Public Properties
       
       /// @{
-      /// @brief Gets he vertical component of this xtd::drawing::size_f class.
-      /// @return The vertical component of this xtd::drawing::size_f class, typically measured in pixels.
+      /// @brief Gets or sets he vertical component of this xtd::drawing::size_f class.
+      /// @param height The vertical component of this xtd::drawing::size_f class, typically measured in pixels.
       /// @remarks The unit for the xtd::drawing::size_f::height and xtd::drawing::size_f::width of the xtd::drawing::size_f class depend on the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale settings for the xtd::drawing::graphics object that is used to draw.
-      float height() const noexcept;
-      
-      /// @brief Sets the vertical component of this xtd::drawing::size_f Class.
-      /// @param value The vertical component of this xtd::drawing::size_f class, typically measured in pixels.
-      /// @remarks The unit for the xtd::drawing::size_f::height and xtd::drawing::size_f::width of the xtd::drawing::size_f class depend on the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale settings for the xtd::drawing::graphics object that is used to draw.
-      void height(float value) noexcept;
+      float height = .0f;
       
       /// @brief Tests whether this Size class has xtd::drawing::size_f::width and xtd::drawing::size_f::height of 0.
       /// @return Returns `true`  when this xtd::drawing::size_f class has both a xtd::drawing::size_fwidth and xtd::drawing::size_fheight of 0; otherwise, `false`.
       bool is_empty() const noexcept;
       
-      /// @brief Gets the horizontal component of this xtd::drawing::size_f class.
-      /// @return The horizontal component of this xtd::drawing::size_f class, typically measured in pixels.
+      /// @brief Gets or sets the horizontal component of this xtd::drawing::size_f class.
+      /// @param width The horizontal component of this xtd::drawing::size_f class, typically measured in pixels.
       /// @remarks The unit for the xtd::drawing::size_f::height and xtd::drawing::size_f::width of the xtd::drawing::size_f class depend on the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale settings for the xtd::drawing::graphics object that is used to draw.
-      float width() const noexcept;
-      
-      /// @brief Sets the horizontal component of this xtd::drawing::size_f class.
-      /// @param value The horizontal component of this xtd::drawing::size_f class, typically measured in pixels.
-      /// @remarks The unit for the xtd::drawing::size_f::height and xtd::drawing::size_f::width of the xtd::drawing::size_f class depend on the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale settings for the xtd::drawing::graphics object that is used to draw.
-      void width(float value) noexcept;
+      float width = .0f;
       /// @}
       
       /// @name Public Methods
@@ -152,10 +141,6 @@ namespace xtd {
       /// @return The decreased xtd::drawing::size_f.
       size_f& operator -=(const xtd::drawing::size& size) noexcept;
       /// @}
-      
-    private:
-      float width_ = 0;
-      float height_ = 0;
     };
   }
   
