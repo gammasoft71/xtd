@@ -16,10 +16,10 @@ namespace application_add_message_filter_example {
       text("Application add message filter example");
       panel_.border_style(forms::border_style::groove);
       skip_button_click_check_box_.auto_size(true);
-      click += [&] {debug::write_line(string::format("(form.click) x={}, y={}", mouse_position().x(), mouse_position().y()));};
-      button_.click += [&] {debug::write_line(string::format("(button.click) x={}, y={}", mouse_position().x(), mouse_position().y()));};
-      skip_button_click_check_box_.click += [&] {debug::write_line(string::format("(check_box.click) x={}, y={}", mouse_position().x(), mouse_position().y()));};
-      panel_.click += [&] {debug::write_line(string::format("(panel.click) x={}, y={}", mouse_position().x(), mouse_position().y()));};
+      click += [&] {debug::write_line(string::format("(form.click) x={}, y={}", mouse_position().x, mouse_position().y));};
+      button_.click += [&] {debug::write_line(string::format("(button.click) x={}, y={}", mouse_position().x, mouse_position().y));};
+      skip_button_click_check_box_.click += [&] {debug::write_line(string::format("(check_box.click) x={}, y={}", mouse_position().x, mouse_position().y));};
+      panel_.click += [&] {debug::write_line(string::format("(panel.click) x={}, y={}", mouse_position().x, mouse_position().y));};
     }
     
   private:

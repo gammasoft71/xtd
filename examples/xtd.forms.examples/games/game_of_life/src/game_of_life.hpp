@@ -119,15 +119,15 @@ namespace game_of_life {
       panel_grid_.double_buffered(true);
       
       panel_grid_.mouse_down += [&](object & sender, const xtd::forms::mouse_event_args & e) {
-        current_state_ = grid_.cells()[offset_y_ + e.location().y() / zoom_][offset_x_ + e.location().x() / zoom_] == cell::populated ? cell::empty : cell::populated;
-        grid_.cells()[offset_y_ + e.location().y() / zoom_][offset_x_ + e.location().x() / zoom_] = current_state_;
-        panel_grid_.invalidate(xtd::drawing::rectangle(e.location().x() / zoom_ * zoom_, e.location().y() / zoom_ * zoom_, zoom_, zoom_), false);
+        current_state_ = grid_.cells()[offset_y_ + e.location().y / zoom_][offset_x_ + e.location().x / zoom_] == cell::populated ? cell::empty : cell::populated;
+        grid_.cells()[offset_y_ + e.location().y / zoom_][offset_x_ + e.location().x / zoom_] = current_state_;
+        panel_grid_.invalidate(xtd::drawing::rectangle(e.location().x / zoom_ * zoom_, e.location().y / zoom_ * zoom_, zoom_, zoom_), false);
       };
       
       panel_grid_.mouse_move += [&](object & sender, const xtd::forms::mouse_event_args & e) {
         if (e.button() == xtd::forms::mouse_buttons::left) {
-          grid_.cells()[offset_y_ + e.location().y() / zoom_][offset_x_ + e.location().x() / zoom_] = current_state_;
-          panel_grid_.invalidate(xtd::drawing::rectangle(e.location().x() / zoom_ * zoom_, e.location().y() / zoom_ * zoom_, zoom_, zoom_), false);
+          grid_.cells()[offset_y_ + e.location().y / zoom_][offset_x_ + e.location().x / zoom_] = current_state_;
+          panel_grid_.invalidate(xtd::drawing::rectangle(e.location().x / zoom_ * zoom_, e.location().y / zoom_ * zoom_, zoom_, zoom_), false);
         }
       };
       
