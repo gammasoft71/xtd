@@ -238,9 +238,9 @@ protected:
     draw_axis(e.clip_rectangle(), e.graphics());
     
     auto x = .0;
-    auto y = as<float>(e.clip_rectangle().height()) / 2;
-    auto height = as<float>(e.clip_rectangle().height()) / 2;
-    auto step = as<float>(e.clip_rectangle().width()) / (signals_max_size_ -1);
+    auto y = as<float>(e.clip_rectangle().height) / 2;
+    auto height = as<float>(e.clip_rectangle().height) / 2;
+    auto step = as<float>(e.clip_rectangle().width) / (signals_max_size_ -1);
     auto points = list<point_f> {};
     for (auto value : values_) {
       points.emplace_back(x, y - value * height);
@@ -265,8 +265,8 @@ private:
     auto x_axis_line_color = x_axis_line_color_.value_or(fore_color().is_dark() ? color_converter::light(fore_color()) : color_converter::dark(fore_color()));
     auto y_axis_line_color = y_axis_line_color_.value_or(fore_color().is_dark() ? color_converter::light(fore_color()) : color_converter::dark(fore_color()));
     
-    if (x_axis_line_visible_) graphics.draw_line(pen {x_axis_line_color, x_axis_line_width_}, rect.left(), rect.top() + rect.height() / 2, rect.width(), rect.top() + rect.height() / 2);
-    if (y_axis_line_visible_) graphics.draw_line(pen {y_axis_line_color, y_axis_line_width_}, rect.left() + rect.width() / 2, rect.top(), rect.left() + rect.width() / 2, rect.top() + rect.height());
+    if (x_axis_line_visible_) graphics.draw_line(pen {x_axis_line_color, x_axis_line_width_}, rect.left(), rect.top() + rect.height / 2, rect.width, rect.top() + rect.height / 2);
+    if (y_axis_line_visible_) graphics.draw_line(pen {y_axis_line_color, y_axis_line_width_}, rect.left() + rect.width / 2, rect.top(), rect.left() + rect.width / 2, rect.top() + rect.height);
   }
   
   list<float> values_;

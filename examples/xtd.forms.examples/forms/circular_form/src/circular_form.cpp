@@ -20,7 +20,7 @@ public:
     start_position(form_start_position::manual);
     client_size({200, 200});
     double_buffered(true);
-    location({screen::from_control(*this).working_area().left() + screen::from_control(*this).working_area().width() / 2 - client_size().width / 2, screen::from_control(*this).working_area().bottom() - client_size().height});
+    location({screen::from_control(*this).working_area().left() + screen::from_control(*this).working_area().width / 2 - client_size().width / 2, screen::from_control(*this).working_area().bottom() - client_size().height});
     top_most(true);
     
     // Create a circular region for the form
@@ -51,8 +51,8 @@ public:
       new_bounds.location(new_bounds.location() + e.location() - mouse_location);
       if (new_bounds.left() < working_area.left()) new_bounds.location({working_area.left(), new_bounds.top()});
       if (new_bounds.top() < working_area.top()) new_bounds.location({new_bounds.left(), working_area.top()});
-      if (new_bounds.left() + new_bounds.width() > working_area.right()) new_bounds.location({working_area.right() - new_bounds.width(), new_bounds.top()});
-      if (new_bounds.top() + new_bounds.height() > working_area.bottom()) new_bounds.location({new_bounds.left(), working_area.bottom() - new_bounds.height()});
+      if (new_bounds.left() + new_bounds.width > working_area.right()) new_bounds.location({working_area.right() - new_bounds.width, new_bounds.top()});
+      if (new_bounds.top() + new_bounds.height > working_area.bottom()) new_bounds.location({new_bounds.left(), working_area.bottom() - new_bounds.height});
       bounds(new_bounds);
     };
   }

@@ -10,7 +10,7 @@ using namespace xtd::forms;
 auto main() -> int {
   auto colored_forms = list<ptr<form>> {};
   auto form_color = known_color::alice_blue;
-  auto form_main = form::create("Main Form", point {screen::primary_screen().working_area().width() - 340, 40});
+  auto form_main = form::create("Main Form", point {screen::primary_screen().working_area().width - 340, 40});
   auto create_button = button::create(form_main, "Create", {10, 10});
 
   create_button.click += [&] {

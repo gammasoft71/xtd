@@ -30,10 +30,10 @@ namespace colors_example {
       
       void on_paint(xtd::forms::paint_event_args& e) override {
         xtd::forms::user_control::on_paint(e);
-        e.graphics().fill_rectangle(xtd::drawing::drawing_2d::hatch_brush(xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)), 6, 4, 94, e.clip_rectangle().height() - 8);
-        e.graphics().fill_rectangle(xtd::drawing::solid_brush(color_), 6, 4, 94, e.clip_rectangle().height() - 8);
+        e.graphics().fill_rectangle(xtd::drawing::drawing_2d::hatch_brush(xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)), 6, 4, 94, e.clip_rectangle().height - 8);
+        e.graphics().fill_rectangle(xtd::drawing::solid_brush(color_), 6, 4, 94, e.clip_rectangle().height - 8);
         auto name = color_.name().replace("apple_", "").replace("crayons_", "");
-        e.graphics().draw_string(name, font(), xtd::drawing::solid_brush {fore_color()}, 110, (e.clip_rectangle().height() - e.graphics().measure_string(name, font()).height) / 2);
+        e.graphics().draw_string(name, font(), xtd::drawing::solid_brush {fore_color()}, 110, (e.clip_rectangle().height - e.graphics().measure_string(name, font()).height) / 2);
       }
       
       auto color() const {return color_;}
