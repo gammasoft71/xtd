@@ -79,11 +79,11 @@ namespace xtd {
       
       /// @brief Gets the x-coordinate of the mouse during the generating mouse event.
       /// @return The x-coordinate of the mouse, in pixels.
-      int32 x() const noexcept {return location().x();}
+      int32 x() const noexcept {return location().x;}
       
       /// @brief Gets the y-coordinate of the mouse during the generating mouse event.
       /// @return The y-coordinate of the mouse, in pixels.
-      int32 y() const noexcept {return location().y();}
+      int32 y() const noexcept {return location().y;}
       /// @}
       
     private:

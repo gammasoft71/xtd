@@ -11,7 +11,7 @@ void cursor::hide() {
 }
 
 void cursor::position(const drawing::point& position) {
-  CGDisplayMoveCursorToPoint(kCGDirectMainDisplay, CGPointMake(position.x(), position.y()));
+  CGDisplayMoveCursorToPoint(kCGDirectMainDisplay, CGPointMake(position.x, position.y));
 }
 
 void cursor::show() {

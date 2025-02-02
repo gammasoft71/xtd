@@ -171,7 +171,7 @@ bool region::is_visible(float x, float y, const xtd::drawing::graphics& g) const
 }
 
 bool region::is_visible(xtd::drawing::point pt, const xtd::drawing::graphics& g) const noexcept {
-  return is_visible(as<float>(pt.x()), as<float>(pt.y()), g);
+  return is_visible(as<float>(pt.x), as<float>(pt.y), g);
 }
 
 bool region::is_visible(int32 x, int32 y, const xtd::drawing::graphics& g) const noexcept {
@@ -187,7 +187,7 @@ bool region::is_visible(float x, float y) const noexcept {
 }
 
 bool region::is_visible(xtd::drawing::point pt) const noexcept {
-  return is_visible(as<float>(pt.x()), as<float>(pt.y()));
+  return is_visible(as<float>(pt.x), as<float>(pt.y));
 }
 
 bool region::is_visible(int32 x, int32 y) const noexcept {

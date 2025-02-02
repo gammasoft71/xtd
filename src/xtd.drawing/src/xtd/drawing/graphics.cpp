@@ -200,11 +200,11 @@ void graphics::clear(const color& color) {
 }
 
 void graphics::copy_from_graphics(const graphics& source, const xtd::drawing::point& upper_left_source, const xtd::drawing::point& upper_left_destination, const xtd::drawing::size& block_region_size) {
-  copy_from_graphics(source, upper_left_source.x(), upper_left_source.y(), upper_left_destination.x(), upper_left_destination.y(), block_region_size, xtd::drawing::copy_pixel_operation::source_copy);
+  copy_from_graphics(source, upper_left_source.x, upper_left_source.y, upper_left_destination.x, upper_left_destination.y, block_region_size, xtd::drawing::copy_pixel_operation::source_copy);
 }
 
 void graphics::copy_from_graphics(const graphics& source, const xtd::drawing::point& upper_left_source, const xtd::drawing::point& upper_left_destination, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation) {
-  copy_from_graphics(source, upper_left_source.x(), upper_left_source.y(), upper_left_destination.x(), upper_left_destination.y(), block_region_size, copy_pixel_operation);
+  copy_from_graphics(source, upper_left_source.x, upper_left_source.y, upper_left_destination.x, upper_left_destination.y, block_region_size, copy_pixel_operation);
 }
 
 void graphics::copy_from_graphics(const graphics& source, int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, const xtd::drawing::size& block_region_size) {
@@ -216,11 +216,11 @@ void graphics::copy_from_graphics(const graphics& source, int32 source_x, int32 
 }
 
 void graphics::copy_from_screen(const xtd::drawing::point& upper_left_source, const xtd::drawing::point& upper_left_destination, const xtd::drawing::size& block_region_size) {
-  copy_from_screen(upper_left_source.x(), upper_left_source.y(), upper_left_destination.x(), upper_left_destination.y(), block_region_size, xtd::drawing::copy_pixel_operation::source_copy);
+  copy_from_screen(upper_left_source.x, upper_left_source.y, upper_left_destination.x, upper_left_destination.y, block_region_size, xtd::drawing::copy_pixel_operation::source_copy);
 }
 
 void graphics::copy_from_screen(const xtd::drawing::point& upper_left_source, const xtd::drawing::point& upper_left_destination, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation) {
-  copy_from_screen(upper_left_source.x(), upper_left_source.y(), upper_left_destination.x(), upper_left_destination.y(), block_region_size, copy_pixel_operation);
+  copy_from_screen(upper_left_source.x, upper_left_source.y, upper_left_destination.x, upper_left_destination.y, block_region_size, copy_pixel_operation);
 }
 
 void graphics::copy_from_screen(int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, const xtd::drawing::size& block_region_size) {
@@ -254,7 +254,7 @@ void graphics::draw_arc(const xtd::drawing::pen& pen, float x, float y, float wi
 }
 
 void graphics::draw_bezier(const xtd::drawing::pen& pen, const xtd::drawing::point& pt1, const xtd::drawing::point& pt2, const xtd::drawing::point& pt3, const xtd::drawing::point& pt4) {
-  draw_bezier(pen, pt1.x(), pt1.y(), pt2.x(), pt2.y(), pt3.x(), pt3.y(), pt4.x(), pt4.y());
+  draw_bezier(pen, pt1.x, pt1.y, pt2.x, pt2.y, pt3.x, pt3.y, pt4.x, pt4.y);
 }
 
 void graphics::draw_bezier(const xtd::drawing::pen& pen, const xtd::drawing::point_f& pt1, const xtd::drawing::point_f& pt2, const xtd::drawing::point_f& pt3, const xtd::drawing::point_f& pt4) {
@@ -378,7 +378,7 @@ void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::point& point) {
-  draw_image(image, point.x(), point.y());
+  draw_image(image, point.x, point.y);
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::point_f& point) {
@@ -429,7 +429,7 @@ void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::point& dest_point, int32 src_x, int32 src_y, int32 src_width, int32 src_height) {
-  draw_image(image, rectangle_f {static_cast<float>(dest_point.x()), static_cast<float>(dest_point.y()), static_cast<float>(image.width()), static_cast<float>(image.height())}, static_cast<float>(src_x), static_cast<float>(src_y), static_cast<float>(src_width), static_cast<float>(src_height));
+  draw_image(image, rectangle_f {static_cast<float>(dest_point.x), static_cast<float>(dest_point.y), static_cast<float>(image.width()), static_cast<float>(image.height())}, static_cast<float>(src_x), static_cast<float>(src_y), static_cast<float>(src_width), static_cast<float>(src_height));
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::point_f& dest_point, float src_x, float src_y, float src_width, float src_height) {
@@ -437,7 +437,7 @@ void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::
 }
 
 void graphics::draw_image_unscaled(const xtd::drawing::image& image, const xtd::drawing::point& point) {
-  draw_image_unscaled(image, point.x(), point.y());
+  draw_image_unscaled(image, point.x, point.y);
 }
 
 void graphics::draw_image_unscaled(const xtd::drawing::image& image, int32 x, int32 y) {
@@ -465,7 +465,7 @@ void graphics::draw_image_disabled(const image& image, float x, float y, float w
 }
 
 void graphics::draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point& pt1, const point& pt2) {
-  draw_line(pen, pt1.x(), pt1.y(), pt2.x(), pt2.y());
+  draw_line(pen, pt1.x, pt1.y, pt2.x, pt2.y);
 }
 
 void graphics::draw_line(const xtd::drawing::pen& pen, const xtd::drawing::point_f& pt1, const point_f& pt2) {
@@ -528,7 +528,7 @@ void graphics::draw_polygon(const xtd::drawing::pen& pen, const std::vector<xtd:
 }
 
 void graphics::draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point& point) {
-  draw_point(pen, point.x(), point.y());
+  draw_point(pen, point.x, point.y);
 }
 
 void graphics::draw_point(const xtd::drawing::pen& pen, const xtd::drawing::point_f& point) {

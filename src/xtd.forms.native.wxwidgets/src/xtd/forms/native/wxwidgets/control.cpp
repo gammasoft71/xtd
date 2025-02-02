@@ -119,7 +119,7 @@ void control::context_menu(intptr control, intptr context_menu, const xtd::drawi
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  reinterpret_cast<control_handler*>(control)->control()->PopupMenu(context_menu ? reinterpret_cast<wxMenu*>(context_menu) : nullptr, wxPoint(pos.x(), pos.y()));
+  reinterpret_cast<control_handler*>(control)->control()->PopupMenu(context_menu ? reinterpret_cast<wxMenu*>(context_menu) : nullptr, wxPoint(pos.x, pos.y));
 }
 
 intptr control::user_context_menu(intptr control, intptr context_menu, const xtd::drawing::point& pos) {
@@ -128,7 +128,7 @@ intptr control::user_context_menu(intptr control, intptr context_menu, const xtd
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return static_cast<intptr>(-1);
   }
-  return static_cast<intptr>(reinterpret_cast<control_handler*>(control)->control()->GetPopupMenuSelectionFromUser(*reinterpret_cast<wxMenu*>(context_menu), pos.x(), pos.y()));
+  return static_cast<intptr>(reinterpret_cast<control_handler*>(control)->control()->GetPopupMenuSelectionFromUser(*reinterpret_cast<wxMenu*>(context_menu), pos.x, pos.y));
 }
 
 intptr control::create(const forms::native::create_params& create_params) {
@@ -399,7 +399,7 @@ void control::location(intptr control, const point& location) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return;
   }
-  reinterpret_cast<control_handler*>(control)->SetPosition({location.x(), location.y()});
+  reinterpret_cast<control_handler*>(control)->SetPosition({location.x, location.y});
 }
 
 void control::maximum_client_size(intptr control, const drawing::size& size) {
@@ -444,7 +444,7 @@ drawing::point control::point_to_screen(intptr control, const drawing::point& p)
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return {};
   }
-  wxPoint result = reinterpret_cast<control_handler*>(control)->control()->ClientToScreen(wxPoint(p.x(), p.y()));
+  wxPoint result = reinterpret_cast<control_handler*>(control)->control()->ClientToScreen(wxPoint(p.x, p.y));
   return {result.x, result.y};
 }
 
@@ -454,7 +454,7 @@ drawing::point control::point_to_client(intptr control, const drawing::point& p)
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
     return {};
   }
-  wxPoint result = reinterpret_cast<control_handler*>(control)->control()->ScreenToClient(wxPoint(p.x(), p.y()));
+  wxPoint result = reinterpret_cast<control_handler*>(control)->control()->ScreenToClient(wxPoint(p.x, p.y));
   return {result.x, result.y};
 }
 

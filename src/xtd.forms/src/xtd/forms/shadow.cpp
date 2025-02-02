@@ -75,20 +75,20 @@ shadow& shadow::radius(int32 value) noexcept {
 }
 
 int32 shadow::x() const noexcept {
-  return data_->offset.x();
+  return data_->offset.x;
 }
 
 shadow& shadow::x(int32 value) noexcept {
-  data_->offset.x(value);
+  data_->offset.x = value;
   return *this;
 }
 
 int32 shadow::y() const noexcept {
-  return data_->offset.y();
+  return data_->offset.y;
 }
 
 shadow& shadow::y(int32 value) noexcept {
-  data_->offset.y(value);
+  data_->offset.y = value;
   return *this;
 }
 

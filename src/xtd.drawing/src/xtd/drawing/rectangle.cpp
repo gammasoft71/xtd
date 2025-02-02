@@ -10,7 +10,7 @@ const rectangle rectangle::empty;
 rectangle::rectangle(int32 x, int32 y, int32 width, int32 height) noexcept : x_(x), y_(y), width_(width), height_(height) {
 }
 
-rectangle::rectangle(const point& location, const drawing::size& size) noexcept : rectangle(location.x(), location.y(), size.width(), size.height()) {
+rectangle::rectangle(const point& location, const drawing::size& size) noexcept : rectangle(location.x, location.y, size.width(), size.height()) {
 }
 
 rectangle::operator rectangle_f() const noexcept {
@@ -46,8 +46,8 @@ point rectangle::location() const noexcept {
 }
 
 void rectangle::location(const point& value) noexcept {
-  x_ = value.x();
-  y_ = value.y();
+  x_ = value.x;
+  y_ = value.y;
 }
 
 int32 rectangle::right() const noexcept {
@@ -115,7 +115,7 @@ rectangle rectangle::ceiling(const rectangle_f& rect) noexcept {
 }
 
 bool rectangle::contains(const point& pt) const noexcept {
-  return contains(pt.x(), pt.y());
+  return contains(pt.x, pt.y);
 }
 
 bool rectangle::contains(const rectangle& rect) const noexcept {
@@ -199,7 +199,7 @@ void rectangle::make_union(const rectangle& rect) noexcept {
 }
 
 void rectangle::offset(const point& pos) noexcept {
-  offset(pos.x(), pos.y());
+  offset(pos.x, pos.y);
 }
 
 void rectangle::offset(int32 x, int32 y) noexcept {
@@ -208,7 +208,7 @@ void rectangle::offset(int32 x, int32 y) noexcept {
 }
 
 rectangle rectangle::offset(const rectangle& rect, const point& pos) noexcept {
-  return offset(rect, pos.x(), pos.y());
+  return offset(rect, pos.x, pos.y);
 }
 
 rectangle rectangle::offset(const rectangle& rect, int32 x, int32 y) noexcept {

@@ -77,7 +77,7 @@ std::tuple<uint32, xtd::date_time> month_calendar::hit_test(intptr control, cons
   uint32 hit_area = 0;
   wxDateTime time;
   
-  wxCalendarHitTestResult result = wx_calendar_ctrl->HitTest({point.x(), point.y()}, &time);
+  wxCalendarHitTestResult result = wx_calendar_ctrl->HitTest({point.x, point.y}, &time);
   switch (result) {
     case wxCalendarHitTestResult::wxCAL_HITTEST_NOWHERE: hit_area = 0; break;
     case wxCalendarHitTestResult::wxCAL_HITTEST_HEADER: hit_area = 1; break;

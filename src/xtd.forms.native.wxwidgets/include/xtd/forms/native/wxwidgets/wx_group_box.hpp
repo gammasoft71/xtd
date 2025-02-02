@@ -186,13 +186,13 @@ namespace xtd {
           if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t);
           owner_draw_ = (create_params.style & BS_OWNERDRAW) == BS_OWNERDRAW;
           if (owner_draw_)
-            control_handler::create<wxGroupBoxOwnerDraw>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_style(create_params.style, create_params.ex_style));
+            control_handler::create<wxGroupBoxOwnerDraw>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), wxPoint(create_params.location.x, create_params.location.y), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_style(create_params.style, create_params.ex_style));
           else {
             auto caption = create_params.caption;
             #if defined(__WXOSX__)
             if (string::is_empty(caption)) caption = " ";
             #endif
-            control_handler::create<wxGroupBox>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(caption)), wxPoint(create_params.location.x(), create_params.location.y()), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_style(create_params.style, create_params.ex_style));
+            control_handler::create<wxGroupBox>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(caption)), wxPoint(create_params.location.x, create_params.location.y), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_style(create_params.style, create_params.ex_style));
             dynamic_cast<wxGroupBox*>(control())->set_wx_evt(dynamic_cast<iwx_evt*>(control()));
             #if defined(__WXMSW__)
             if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {

@@ -328,11 +328,11 @@ void control_paint::draw_image_disabled(xtd::drawing::graphics& graphics, const 
 }
 
 void control_paint::draw_image_disabled(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, const point& location, float brightness) {
-  draw_image_disabled(graphics, image, location.x(), location.y(), brightness);
+  draw_image_disabled(graphics, image, location.x, location.y, brightness);
 }
 
 void control_paint::draw_image_disabled(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, const point& location, const xtd::drawing::color& background) {
-  draw_image_disabled(graphics, image, location.x(), location.y(), background.get_brightness());
+  draw_image_disabled(graphics, image, location.x, location.y, background.get_brightness());
 }
 
 xtd::drawing::color control_paint::light(const xtd::drawing::color& base_color) {

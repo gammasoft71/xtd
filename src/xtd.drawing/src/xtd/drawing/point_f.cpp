@@ -44,7 +44,7 @@ point_f point_f::add(const point_f& pt, const size_f& sz) noexcept {
 }
 
 point_f point_f::add(const point_f& pt1, const point& pt2) noexcept {
-  return {pt1.x() + as<float>(pt2.x()), pt1.y() + as<float>(pt2.y())};
+  return {pt1.x() + as<float>(pt2.x), pt1.y() + as<float>(pt2.y)};
 }
 
 point_f point_f::add(const point_f& pt1, const point_f& pt2) noexcept {
@@ -73,7 +73,7 @@ point_f point_f::subtract(const point_f& pt, const size_f& sz) noexcept {
 }
 
 point_f point_f::subtract(const point_f& pt1, const point& pt2) noexcept {
-  return {pt1.x() - as<float>(pt2.x()), pt1.y() - as<float>(pt2.y())};
+  return {pt1.x() - as<float>(pt2.x), pt1.y() - as<float>(pt2.y)};
 }
 
 point_f point_f::subtract(const point_f& pt1, const point_f& pt2) noexcept {

@@ -6,43 +6,27 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
-const point point::empty;
+const point point::empty {};
 
-point::point(int32 dw) noexcept : x_(dw & 0x0000FFFF), y_((dw & 0xFFFF0000) >> 16) {
+point::point(int32 dw) noexcept : x(dw & 0x0000FFFF), y((dw & 0xFFFF0000) >> 16) {
 }
 
-point::point(int32 x, int32 y) noexcept : x_(x), y_(y) {
+point::point(int32 x, int32 y) noexcept : x(x), y(y) {
 }
 
-point::point(const size& size) noexcept : x_(size.width()), y_(size.height()) {
+point::point(const size& size) noexcept : x(size.width()), y(size.height()) {
 }
 
 point::operator point_f() const noexcept {
-  return point_f(as<float>(x_), as<float>(y_));
+  return point_f(as<float>(x), as<float>(y));
 }
 
 bool point::is_empty() const noexcept {
   return *this == point::empty;
 }
 
-int32 point::x() const noexcept {
-  return x_;
-}
-
-void point::x(int32 x) noexcept {
-  x_ = x;
-}
-
-int32 point::y() const noexcept {
-  return y_;
-}
-
-void point::y(int32 y) noexcept {
-  y_ = y;
-}
-
 point point::add(const point& pt, const size& sz) noexcept {
-  return {pt.x_ + sz.width(), pt.y_ + sz.height()};
+  return {pt.x + sz.width(), pt.y + sz.height()};
 }
 
 point point::add(const point& pt1, const point& pt2) noexcept {
@@ -54,16 +38,16 @@ point point::ceiling(const point_f& value) noexcept {
 }
 
 bool point::equals(const point& value) const noexcept {
-  return x_ == value.x_ && y_ == value.y_;
+  return x == value.x && y == value.y;
 }
 
 void point::offset(int32 dx, int32 dy) noexcept {
-  x_ += dx;
-  y_ += dy;
+  x += dx;
+  y += dy;
 }
 
 void point::offset(const point& p) noexcept {
-  offset(p.x_, p.y_);
+  offset(p.x, p.y);
 }
 
 point point::round(const point_f& value) noexcept {
@@ -71,7 +55,7 @@ point point::round(const point_f& value) noexcept {
 }
 
 point point::subtract(const point& pt, const size& sz) noexcept {
-  return {pt.x_ - sz.width(), pt.y_ - sz.height()};
+  return {pt.x - sz.width(), pt.y - sz.height()};
 }
 
 point point::subtract(const point& pt1, const point& pt2) noexcept {
@@ -79,7 +63,7 @@ point point::subtract(const point& pt1, const point& pt2) noexcept {
 }
 
 xtd::string point::to_string() const noexcept {
-  return  string::format("{{x={}, y={}}}", x_, y_);
+  return  string::format("{{x={}, y={}}}", x, y);
 }
 
 point point::truncate(const point_f& value) noexcept {

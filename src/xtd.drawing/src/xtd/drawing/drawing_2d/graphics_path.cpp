@@ -62,7 +62,7 @@ void graphics_path::add_arc(float x, float y, float width, float height, float s
 }
 
 void graphics_path::add_bezier(const xtd::drawing::point& pt1, const xtd::drawing::point& pt2, const xtd::drawing::point& pt3, const xtd::drawing::point& pt4) {
-  add_bezier(pt1.x(), pt1.y(), pt2.x(), pt2.y(), pt3.x(), pt3.y(), pt4.x(), pt4.y());
+  add_bezier(pt1.x, pt1.y, pt2.x, pt2.y, pt3.x, pt3.y, pt4.x, pt4.y);
 }
 
 void graphics_path::add_bezier(const xtd::drawing::point_f& pt1, const xtd::drawing::point_f& pt2, const xtd::drawing::point_f& pt3, const xtd::drawing::point_f& pt4) {
@@ -154,7 +154,7 @@ void graphics_path::add_ellipse(float x, float y, float width, float height) {
 }
 
 void graphics_path::add_line(const xtd::drawing::point& pt1, const xtd::drawing::point& pt2) {
-  add_line(pt1.x(), pt1.y(), pt2.x(), pt2.y());
+  add_line(pt1.x, pt1.y, pt2.x, pt2.y);
 }
 
 void graphics_path::add_line(const xtd::drawing::point_f& pt1, const xtd::drawing::point_f& pt2) {
@@ -301,7 +301,7 @@ xtd::drawing::point_f graphics_path::get_lat_point() const {
 }
 
 bool graphics_path::is_vsible(const xtd::drawing::point& point) const {
-  return is_vsible(point.x(), point.y());
+  return is_vsible(point.x, point.y);
 }
 
 bool graphics_path::is_vsible(const xtd::drawing::point_f& point) const {

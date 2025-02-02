@@ -123,7 +123,7 @@ void splitter::on_handle_created(const event_args& e) {
 
 void splitter::on_mouse_down(const mouse_event_args& e) {
   control::on_mouse_down(e);
-  data_->mouse_down_location = control::dock() == dock_style::left || control::dock() == dock_style::right ? cursor::position().x() : cursor::position().y();
+  data_->mouse_down_location = control::dock() == dock_style::left || control::dock() == dock_style::right ? cursor::position().x : cursor::position().y;
   if (parent().has_value()) {
     for (auto index = 0_z; index < parent().value().get().controls().size(); ++index) {
       if (parent().value().get().controls()[index].get() == *this) {
@@ -145,13 +145,13 @@ void splitter::on_mouse_move(const mouse_event_args& e) {
     if (data_->splitter_style == splitter_style::draw_line) {
     
     } else {
-      auto delta_size = control::dock() == dock_style::left || control::dock() == dock_style::right ? (data_->next_control->width() + cursor::position().x()) : (data_->next_control->height() + cursor::position().y());
+      auto delta_size = control::dock() == dock_style::left || control::dock() == dock_style::right ? (data_->next_control->width() + cursor::position().x) : (data_->next_control->height() + cursor::position().y);
       auto new_size = delta_size - data_->mouse_down_location;
       if (new_size < data_->min_size) new_size = data_->min_size;
       //if (data_->previous_control.size()  < data_->min_size_extra) new_size = data_->min_size;
       if (control::dock() == dock_style::left || control::dock() == dock_style::right) data_->next_control->width(new_size);
       else data_->next_control->height(new_size);
-      data_->mouse_down_location = control::dock() == dock_style::left || control::dock() == dock_style::right ? cursor::position().x() : cursor::position().y();
+      data_->mouse_down_location = control::dock() == dock_style::left || control::dock() == dock_style::right ? cursor::position().x : cursor::position().y;
     }
   }
 }
@@ -161,7 +161,7 @@ void splitter::on_mouse_up(const mouse_event_args& e) {
   if (data_->previous_control) data_->previous_control->cursor(data_->previous_control_cursor);
   if (data_->next_control) data_->next_control->cursor(data_->previous_control_cursor);
   if (data_->mouse_down_location != -1 && parent().has_value() && data_->next_control) {
-    auto new_size = (control::dock() == dock_style::left || control::dock() == dock_style::right ? (data_->next_control->width() + cursor::position().x()) : (data_->next_control->height() + cursor::position().y())) - data_->mouse_down_location;
+    auto new_size = (control::dock() == dock_style::left || control::dock() == dock_style::right ? (data_->next_control->width() + cursor::position().x) : (data_->next_control->height() + cursor::position().y)) - data_->mouse_down_location;
     if (new_size < data_->min_size) new_size = data_->min_size;
     if (control::dock() == dock_style::left || control::dock() == dock_style::right) data_->next_control->width(new_size);
     else data_->next_control->height(new_size);

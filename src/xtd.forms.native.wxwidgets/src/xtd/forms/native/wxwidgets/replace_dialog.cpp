@@ -113,7 +113,7 @@ intptr replace_dialog::create(intptr hwnd, const std::optional<xtd::drawing::poi
   });
   
   if (location.has_value())
-    replace_dialog->SetPosition({location.value().x(), location.value().y()});
+    replace_dialog->SetPosition({location.value().x, location.value().y});
     
   return reinterpret_cast<intptr>(replace_dialog);
 }
