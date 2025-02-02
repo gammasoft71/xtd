@@ -68,21 +68,13 @@ namespace xtd {
       /// @return `true` if both xtd::drawing::point_f::x and xtd::drawing::point_f::y are 0; otherwise, `false`.
       bool is_empty() const noexcept;
       
-      /// @brief Gets the x-coordinate of this xtd::drawing::point_f.
-      /// @return The x-coordinate of this xtd::drawing::point_f.
-      float x() const noexcept;
-      
-      /// @brief Sets the x-coordinate of this xtd::drawing::point_f.
+      /// @brief Gets or sets the x-coordinate of this xtd::drawing::point_f.
       /// @param x The x-coordinate of this xtd::drawing::point_f.
-      void x(float x) noexcept;
+      float x = .0f;
       
-      /// @brief Gets the y-coordinate of this xtd::drawing::point_f.
-      /// @return The y-coordinate of this xtd::drawing::point_f.
-      float y() const noexcept;
-      
-      /// @brief Sets the y-coordinate of this xtd::drawing::point_f.
+      /// @brief Gets or sets the y-coordinate of this xtd::drawing::point_f.
       /// @param y The x-coordinate of this xtd::drawing::point_f.
-      void y(float y) noexcept;
+      float y = .0f;
       /// @}
       
       /// @name Public Methods
@@ -227,10 +219,6 @@ namespace xtd {
       /// @return The translated xtd::drawing::point_f.
       point_f& operator -=(const point_f& pt) noexcept;
       /// @}
-      
-    private:
-      float x_ = 0;
-      float y_ = 0;
     };
   }
 }

@@ -99,7 +99,7 @@ void matrix::rotate_at(float angle, const point_f& point) {
 }
 
 void matrix::rotate_at(float angle, const point_f& point, xtd::drawing::drawing_2d::matrix_order order) {
-  native::matrix::rotate_at(handle(), angle, point.x(), point.y(), static_cast<int32>(order));
+  native::matrix::rotate_at(handle(), angle, point.x, point.y, static_cast<int32>(order));
 }
 
 void matrix::scale(float scale_x, float scale_y) {
@@ -129,10 +129,10 @@ void matrix::transform_points(std::vector<xtd::drawing::point>& points) {
 
 void matrix::transform_points(std::vector<xtd::drawing::point_f>& points) {
   for (auto& point : points) {
-    auto tx = point.x(), ty = point.y();
+    auto tx = point.x, ty = point.y;
     native::matrix::transform_point(handle(), tx, ty);
-    point.x(tx);
-    point.y(ty);
+    point.x = tx;
+    point.y = ty;
   }
 }
 
@@ -146,7 +146,7 @@ void matrix::transform_vectors(std::vector<xtd::drawing::point>& points) {
 
 void matrix::transform_vectors(std::vector<xtd::drawing::point_f>& points) {
   auto tr_points = std::vector<key_value_pair<float, float>> {};
-  std::for_each(points.begin(), points.end(), [&](auto point) {tr_points.emplace_back(point.x(), point.y());});
+  std::for_each(points.begin(), points.end(), [&](auto point) {tr_points.emplace_back(point.x, point.y);});
   native::matrix::transform_vectors(handle(), tr_points);
   points.clear();
   for_each(tr_points.begin(), tr_points.end(), [&](const key_value_pair<float, float>&  point) {points.push_back(xtd::drawing::point_f(point.first, point.second));});
@@ -173,11 +173,11 @@ xtd::string matrix::to_string() const noexcept {
 }
 
 void matrix::init_from_rect_3points(const rectangle_f& rect, const point_f pt1, const point_f pt2, const point_f pt3) {
-  auto m11 = (pt2.x() - pt1.x()) / rect.width();
-  auto m12 = (pt2.y() - pt1.y()) / rect.width();
-  auto m21 = (pt3.x() - pt1.x()) / rect.height();
-  auto m22 = (pt3.y() - pt1.y()) / rect.height();
+  auto m11 = (pt2.x - pt1.x) / rect.width();
+  auto m12 = (pt2.y - pt1.y) / rect.width();
+  auto m21 = (pt3.x - pt1.x) / rect.height();
+  auto m22 = (pt3.y - pt1.y) / rect.height();
   
-  data_->handle = native::matrix::create(m11, m12, m21, m22, pt1.x(), pt1.y());
+  data_->handle = native::matrix::create(m11, m12, m21, m22, pt1.x, pt1.y);
   native::matrix::translate(handle(), -rect.x(), -rect.y(), as<int32>(matrix_order::prepend));
 }
