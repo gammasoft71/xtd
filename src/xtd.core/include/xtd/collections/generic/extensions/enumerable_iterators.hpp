@@ -65,6 +65,13 @@ namespace xtd {
             enumerable_iterator(enumerable_iterator&& value) noexcept = default;
             enumerable_iterator(const enumerable_iterator& value) noexcept : enumerable_(value.enumerable_), enumerator_(value.enumerable_->get_enumerator()), pos_ {value.pos_} {reset();}
             enumerable_iterator& operator =(enumerable_iterator&& value) noexcept = default;
+            enumerable_iterator& operator =(const enumerable_iterator& value) const noexcept {
+              enumerable_ = value.enumerable_;
+              enumerator_ = value.enumerable_->get_enumerator();
+              pos_ = value.pos_;
+              reset();
+              return const_cast<enumerable_iterator&>(*this);
+            }
             enumerable_iterator& operator =(const enumerable_iterator& value) noexcept {
               enumerable_ = value.enumerable_;
               enumerator_ = value.enumerable_->get_enumerator();
@@ -72,7 +79,7 @@ namespace xtd {
               reset();
               return const_cast<enumerable_iterator&>(*this);
             }
-
+            
             int32 compare_to(const enumerable_iterator& rhs) const noexcept override {return pos_ < rhs.pos_ ? -1 : pos_ > rhs.pos_ ? 1 : 0;}
             bool equals(const enumerable_iterator& rhs) const noexcept override {return pos_ == rhs.pos_;}
 
