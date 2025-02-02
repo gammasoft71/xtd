@@ -80,10 +80,10 @@ namespace game_of_life {
       track_bar_zoom_.tick_style(xtd::forms::tick_style::none);
       track_bar_zoom_.value(zoom_);
       track_bar_zoom_.value_changed += [&] {
-        if ((track_bar_zoom_.value() * grid::columns) < panel_grid_.client_size().width())
-          track_bar_zoom_.value(panel_grid_.client_size().width() / grid::columns + 1);
-        if ((track_bar_zoom_.value() * grid::rows) < panel_grid_.client_size().height())
-          track_bar_zoom_.value(panel_grid_.client_size().height() / grid::rows + 1);
+        if ((track_bar_zoom_.value() * grid::columns) < panel_grid_.client_size().width)
+          track_bar_zoom_.value(panel_grid_.client_size().width / grid::columns + 1);
+        if ((track_bar_zoom_.value() * grid::rows) < panel_grid_.client_size().height)
+          track_bar_zoom_.value(panel_grid_.client_size().height / grid::rows + 1);
         zoom_ = track_bar_zoom_.value();
         panel_grid_.invalidate();
         label_zoom_.text(xtd::string::format("Zoom : {}", zoom_));
@@ -133,26 +133,26 @@ namespace game_of_life {
       
       panel_grid_.paint += [&](object & sender, xtd::forms::paint_event_args & e) {
         e.graphics().clear(back_color());
-        if ((track_bar_zoom_.value() * grid::columns) >= panel_grid_.client_size().width() && (track_bar_zoom_.value() * grid::rows) >= panel_grid_.client_size().height())
-          for (auto y = 0; y < panel_grid_.client_size().height(); y += zoom_)
-            for (auto x = 0; x < panel_grid_.client_size().width(); x += zoom_)
+        if ((track_bar_zoom_.value() * grid::columns) >= panel_grid_.client_size().width && (track_bar_zoom_.value() * grid::rows) >= panel_grid_.client_size().height)
+          for (auto y = 0; y < panel_grid_.client_size().height; y += zoom_)
+            for (auto x = 0; x < panel_grid_.client_size().width; x += zoom_)
               if (grid_.cells()[offset_y_ + y / zoom_][offset_x_ + x / zoom_] != cell::empty)
                 e.graphics().fill_rectangle(xtd::drawing::solid_brush(populated_color_), x, y, zoom_, zoom_);
         if (zoom_ > 3) {
-          for (auto index = 0; index < panel_grid_.client_size().width(); index += zoom_)
-            e.graphics().fill_rectangle(xtd::drawing::solid_brush(line_color_), index, 0, 1, panel_grid_.client_size().height());
-          for (auto index = 0; index < panel_grid_.client_size().height(); index += zoom_)
-            e.graphics().fill_rectangle(xtd::drawing::solid_brush(line_color_), 0, index, panel_grid_.client_size().width(), 1);
+          for (auto index = 0; index < panel_grid_.client_size().width; index += zoom_)
+            e.graphics().fill_rectangle(xtd::drawing::solid_brush(line_color_), index, 0, 1, panel_grid_.client_size().height);
+          for (auto index = 0; index < panel_grid_.client_size().height; index += zoom_)
+            e.graphics().fill_rectangle(xtd::drawing::solid_brush(line_color_), 0, index, panel_grid_.client_size().width, 1);
         }
       };
       
       panel_grid_.resize += [&] {
-        if ((track_bar_zoom_.value() * grid::columns) < panel_grid_.client_size().width()) {
-          zoom_ = panel_grid_.client_size().width() / grid::columns + 1;
+        if ((track_bar_zoom_.value() * grid::columns) < panel_grid_.client_size().width) {
+          zoom_ = panel_grid_.client_size().width / grid::columns + 1;
           track_bar_zoom_.value(zoom_);
         }
-        if ((track_bar_zoom_.value() * grid::rows) < panel_grid_.client_size().height()) {
-          zoom_ = panel_grid_.client_size().height() / grid::rows + 1;
+        if ((track_bar_zoom_.value() * grid::rows) < panel_grid_.client_size().height) {
+          zoom_ = panel_grid_.client_size().height / grid::rows + 1;
           track_bar_zoom_.value(zoom_);
         }
       };
@@ -200,8 +200,8 @@ namespace game_of_life {
     void random() {
       xtd::random rand;
       auto max = rand.next(100, 300);
-      auto max_x = panel_grid_.client_size().width() / zoom_;
-      auto max_y = panel_grid_.client_size().height() / zoom_;
+      auto max_x = panel_grid_.client_size().width / zoom_;
+      auto max_y = panel_grid_.client_size().height / zoom_;
       for (auto counter = 0; counter < max; counter++) {
         auto x = rand.next(0, max_x);
         auto y = rand.next(0, max_y);
@@ -216,8 +216,8 @@ namespace game_of_life {
       for (auto line : figure)
         if (line.length() > width) width = xtd::as<int>(line.length());
         
-      auto start_x = (panel_grid_.client_size().width() / zoom_ / 2) - (width / 2);
-      auto y = (panel_grid_.client_size().height() / zoom_ / 2) - (height / 2);
+      auto start_x = (panel_grid_.client_size().width / zoom_ / 2) - (width / 2);
+      auto y = (panel_grid_.client_size().height / zoom_ / 2) - (height / 2);
       
       if (start_x < 5) start_x = 5;
       if (y < 5) y = 5;

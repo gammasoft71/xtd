@@ -358,12 +358,12 @@ namespace image_converter_example {
       percent_hue_rotate_track_bar.value(90);
       percent_invert_track_bar.value(100);
       percent_opacity_track_bar.value(50);
-      rescale_aspect_ratio = as<double>(original_image().size().width()) / original_image().size().height();
+      rescale_aspect_ratio = as<double>(original_image().size().width) / original_image().size().height;
       rescale_maintain_aspect_ratio_check_box.checked(true);
-      rescale_width_track_bar.value(original_image().size().width() / 5 * 4);
-      resize_aspect_ratio = as<double>(original_image().size().width()) / original_image().size().height();
+      rescale_width_track_bar.value(original_image().size().width / 5 * 4);
+      resize_aspect_ratio = as<double>(original_image().size().width) / original_image().size().height;
       resize_maintain_aspect_ratio_check_box.checked(true);
-      resize_width_track_bar.value(original_image().size().width() / 5 * 4);
+      resize_width_track_bar.value(original_image().size().width / 5 * 4);
       rotate_flip_choice.selected_index(6);
       percent_saturate_track_bar.value(300);
       percent_sepia_track_bar.value(100);
@@ -431,8 +431,8 @@ namespace image_converter_example {
     const image& original_image() const {return original_image_;}
     image original_image_ = properties::resources::pineapple();
     image adjusted_image = properties::resources::pineapple();
-    double rescale_aspect_ratio = as<double>(original_image().size().width()) / original_image().size().height();
-    double resize_aspect_ratio = as<double>(original_image().size().width()) / original_image().size().height();
+    double rescale_aspect_ratio = as<double>(original_image().size().width) / original_image().size().height;
+    double resize_aspect_ratio = as<double>(original_image().size().width) / original_image().size().height;
 
     panel bitonal_panel = panel::create(*this, {0, 0}, {730, 170});
     label threshold_bitonal_label = label::create(bitonal_panel, "Threshold", {10, 34}, {70, 23});
@@ -533,20 +533,20 @@ namespace image_converter_example {
     
     panel rescale_panel = panel::create(*this, {0, 0}, {730, 170});
     label rescale_width_label = label::create(rescale_panel, "Width", {10, 34}, {50, 23});
-    track_bar rescale_width_track_bar = track_bar::create(rescale_panel, original_image().size().width(), 1, original_image().size().width() * 2, {60, 30}, {200, 25});
-    numeric_up_down rescale_width_numeric_up_down = numeric_up_down::create(rescale_panel, original_image().size().width(), 1, original_image().size().width() * 2, {270, 30}, {130, 25});
+    track_bar rescale_width_track_bar = track_bar::create(rescale_panel, original_image().size().width, 1, original_image().size().width * 2, {60, 30}, {200, 25});
+    numeric_up_down rescale_width_numeric_up_down = numeric_up_down::create(rescale_panel, original_image().size().width, 1, original_image().size().width * 2, {270, 30}, {130, 25});
     label rescale_height_label = label::create(rescale_panel, "Height", {10, 74}, {50, 23});
-    track_bar rescale_height_track_bar = track_bar::create(rescale_panel, original_image().size().height(), 1, original_image().size().height() * 2, {60, 70}, {200, 25});
-    numeric_up_down rescale_height_numeric_up_down = numeric_up_down::create(rescale_panel, original_image().size().height(), 1, original_image().size().height() * 2, {270, 70}, {130, 25});
+    track_bar rescale_height_track_bar = track_bar::create(rescale_panel, original_image().size().height, 1, original_image().size().height * 2, {60, 70}, {200, 25});
+    numeric_up_down rescale_height_numeric_up_down = numeric_up_down::create(rescale_panel, original_image().size().height, 1, original_image().size().height * 2, {270, 70}, {130, 25});
     check_box rescale_maintain_aspect_ratio_check_box = check_box::create(rescale_panel, "Maintain aspect ratio", check_state::checked, {420, 54}, {150, 23});
     
     panel resize_panel = panel::create(*this, {0, 0}, {730, 170});
     label resize_width_label = label::create(resize_panel, "Width", {10, 34}, {50, 23});
-    track_bar resize_width_track_bar = track_bar::create(resize_panel, original_image().size().width(), 1, original_image().size().width() * 2, {60, 30}, {200, 25});
-    numeric_up_down resize_width_numeric_up_down = numeric_up_down::create(resize_panel, original_image().size().width(), 1, original_image().size().width() * 2, {270, 30}, {130, 25});
+    track_bar resize_width_track_bar = track_bar::create(resize_panel, original_image().size().width, 1, original_image().size().width * 2, {60, 30}, {200, 25});
+    numeric_up_down resize_width_numeric_up_down = numeric_up_down::create(resize_panel, original_image().size().width, 1, original_image().size().width * 2, {270, 30}, {130, 25});
     label resize_height_label = label::create(resize_panel, "Height", {10, 74}, {50, 23});
-    track_bar resize_height_track_bar = track_bar::create(resize_panel, original_image().size().height(), 1, original_image().size().height() * 2, {60, 70}, {200, 25});
-    numeric_up_down resize_height_numeric_up_down = numeric_up_down::create(resize_panel, original_image().size().height(), 1, original_image().size().height() * 2, {270, 70}, {130, 25});
+    track_bar resize_height_track_bar = track_bar::create(resize_panel, original_image().size().height, 1, original_image().size().height * 2, {60, 70}, {200, 25});
+    numeric_up_down resize_height_numeric_up_down = numeric_up_down::create(resize_panel, original_image().size().height, 1, original_image().size().height * 2, {270, 70}, {130, 25});
     check_box resize_maintain_aspect_ratio_check_box = check_box::create(resize_panel, "Maintain aspect ratio", check_state::checked, {420, 54}, {150, 23});
 
     panel rotate_flip_panel = panel::create(*this, {0, 0}, {730, 170});

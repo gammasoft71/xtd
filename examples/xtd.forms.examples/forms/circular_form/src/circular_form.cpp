@@ -20,7 +20,7 @@ public:
     start_position(form_start_position::manual);
     client_size({200, 200});
     double_buffered(true);
-    location({screen::from_control(*this).working_area().left() + screen::from_control(*this).working_area().width() / 2 - client_size().width() / 2, screen::from_control(*this).working_area().bottom() - client_size().height()});
+    location({screen::from_control(*this).working_area().left() + screen::from_control(*this).working_area().width() / 2 - client_size().width / 2, screen::from_control(*this).working_area().bottom() - client_size().height});
     top_most(true);
     
     // Create a circular region for the form

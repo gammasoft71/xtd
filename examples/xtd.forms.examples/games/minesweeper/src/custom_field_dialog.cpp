@@ -27,7 +27,7 @@ custom_field_dialog::custom_field_dialog() {
   
   message_label_.parent(*this);
   message_label_.top(26);
-  message_label_.width(client_size().width());
+  message_label_.width(client_size().width);
   message_label_.text_align(content_alignment::middle_center);
   message_label_.text("Custom Field"_t);
   

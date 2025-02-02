@@ -44,8 +44,8 @@ namespace toggle_light_example {
     
   protected:
     void on_resize(const event_args&) override {
-      auto step_x = client_size().width() / num_x;
-      auto step_y = client_size().height() / num_y;
+      auto step_x = client_size().width / num_x;
+      auto step_y = client_size().height / num_y;
       
       for (auto y = 0; y < num_y; ++y)
         for (auto x = 0; x < num_x; ++x)

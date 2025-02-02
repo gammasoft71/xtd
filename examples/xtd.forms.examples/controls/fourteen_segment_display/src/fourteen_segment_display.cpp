@@ -13,7 +13,7 @@ class form1 : public form {
 public:
   form1() {
     fourteen_segment_display1.height(250);
-    fourteen_segment_display1.location({(client_size().width() - fourteen_segment_display1.width()) / 2, (client_size().height() - fourteen_segment_display1.height()) / 2});
+    fourteen_segment_display1.location({(client_size().width - fourteen_segment_display1.width()) / 2, (client_size().height - fourteen_segment_display1.height()) / 2});
     fourteen_segment_display1.parent(*this);
     fourteen_segment_display1.fore_color(color::red);
     fourteen_segment_display1.anchor(anchor_styles::top | anchor_styles::bottom);
@@ -28,7 +28,7 @@ public:
     back_color(color_converter::average(color::black, fourteen_segment_display1.fore_color(), 0.20));
     text("Fourteen segment display example");
     resize += [&] {
-      fourteen_segment_display1.left((client_size().width() - fourteen_segment_display1.width()) / 2);
+      fourteen_segment_display1.left((client_size().width - fourteen_segment_display1.width()) / 2);
     };
   }
   

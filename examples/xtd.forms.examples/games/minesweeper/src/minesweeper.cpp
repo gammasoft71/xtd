@@ -58,7 +58,7 @@ minesweeper_form::minesweeper_form() {
   start_game_.parent(status_panel_);
   start_game_.image(bitmap {properties::resources::smiley1(), {24, 24}});
   start_game_.size({42, 38});
-  start_game_.location({status_panel_.size().width() / 2 - 21, 17});
+  start_game_.location({status_panel_.size().width / 2 - 21, 17});
   start_game_.click += {*this, &minesweeper_form::new_game};
   
   stopwatch_timer_.interval_milliseconds(1000);
@@ -77,8 +77,8 @@ void minesweeper_form::change_level(level l) {
   grid_size_ = std::map<minesweeper::level, grid_size> {{minesweeper::level::beginner, {9, 9}}, {minesweeper::level::intermediate, {16, 16}}, {minesweeper::level::expert, {30, 16}}, {minesweeper::level::custom, {properties::settings::default_settings().custom_width(), properties::settings::default_settings().custom_height()}}} [level_];
   mine_count_ = std::map<minesweeper::level, int> {{minesweeper::level::beginner, 10}, {minesweeper::level::intermediate, 40}, {minesweeper::level::expert, 99}, {minesweeper::level::custom, properties::settings::default_settings().custom_mines()}} [level_];
   
-  game_panel_.size({30 + grid_size_.width() * cell::width(), 30 + grid_size_.height() * cell::height()});
-  cells_ = row_cell(grid_size_.width(), column_cell(grid_size_.height()));
+  game_panel_.size({30 + grid_size_.width * cell::width(), 30 + grid_size_.height * cell::height()});
+  cells_ = row_cell(grid_size_.width, column_cell(grid_size_.height));
   status_panel_.width(game_panel_.width());
   new_game();
 }
@@ -89,14 +89,14 @@ void minesweeper_form::new_game() {
   checked_cell_count_ = 0;
   flagged_mine_count_ = 0;
   stopwatch_count_ = 0;
-  for (auto y = 0; y < grid_size_.height(); ++y)
-    for (auto x = 0; x < grid_size_.width(); ++x)
+  for (auto y = 0; y < grid_size_.height; ++y)
+    for (auto x = 0; x < grid_size_.width; ++x)
       cells_[x][y].clear();
       
   xtd::random rand;
   for (auto count = 0; count < mine_count_; ++count) {
-    auto x = rand.next(0, grid_size_.width() - 1);
-    auto y = rand.next(0, grid_size_.height() - 1);
+    auto x = rand.next(0, grid_size_.width - 1);
+    auto y = rand.next(0, grid_size_.height - 1);
     
     if (cells_[x][y].contains_mine()) {
       count--;
@@ -105,11 +105,11 @@ void minesweeper_form::new_game() {
     cells_[x][y].has_mine(true);
   }
   
-  for (auto y = 0; y < grid_size_.height(); ++y)
-    for (auto x = 0; x < grid_size_.width(); ++x)
+  for (auto y = 0; y < grid_size_.height; ++y)
+    for (auto x = 0; x < grid_size_.width; ++x)
       for (auto yy = y - 1; yy <= y + 1; ++yy)
         for (auto xx = x - 1; xx <= x + 1; ++xx)
-          if (yy >= 0 && yy < grid_size_.height() && xx >= 0 && xx < grid_size_.width() && cells_[xx][yy].contains_mine())
+          if (yy >= 0 && yy < grid_size_.height && xx >= 0 && xx < grid_size_.width && cells_[xx][yy].contains_mine())
             cells_[x][y].neighbors(cells_[x][y].number_of_neighbouring_mines() + 1);
             
   mine_count_label_.text(string::format("{:D3}", mine_count_ - flagged_mine_count_));
@@ -122,7 +122,7 @@ void minesweeper_form::check_neighbors(const point& cell_location) {
   if (checked_cell(cell_location) != 0) return;
   for (auto y = cell_location.y - 1; y <= cell_location.y + 1; ++y)
     for (auto x = cell_location.x - 1; x <= cell_location.x + 1; ++x)
-      if (y >= 0 && y < grid_size_.height() && x >= 0 && x < grid_size_.width() && cells_[x][y].state() == cell_state::unchecked && checked_cell({x, y}) == 0)
+      if (y >= 0 && y < grid_size_.height && x >= 0 && x < grid_size_.width && cells_[x][y].state() == cell_state::unchecked && checked_cell({x, y}) == 0)
         check_neighbors({x, y});
 }
 
@@ -260,8 +260,8 @@ void minesweeper_form::game_over() {
   stopwatch_timer_.enabled(false);
   game_over_ = true;
   start_game_.image(bitmap {properties::resources::smiley2(), {24, 24}});
-  for (auto y = 0; y < grid_size_.height(); ++y) {
-    for (auto x = 0; x < grid_size_.width(); ++x) {
+  for (auto y = 0; y < grid_size_.height; ++y) {
+    for (auto x = 0; x < grid_size_.width; ++x) {
       if (cells_[x][y].state() == cell_state::exploded_mine) continue;
       if (cells_[x][y].state() == cell_state::flag && !cells_[x][y].contains_mine())
         cells_[x][y].state(cell_state::error);
@@ -353,7 +353,7 @@ void minesweeper_form::on_game_panel_mouse_up(object& sender, const mouse_event_
   if (game_over_) return;
   stopwatch_timer_.enabled(true);
   
-  if (e.location().x < 15 || e.location().y < 15 || e.location().x >= (grid_size_.width() * cell::width() + 15) || e.location().y >= (grid_size_.height() * cell::height() + 15)) return;
+  if (e.location().x < 15 || e.location().y < 15 || e.location().x >= (grid_size_.width * cell::width() + 15) || e.location().y >= (grid_size_.height * cell::height() + 15)) return;
   auto x = (e.location().x - 15) / cell::width();
   auto y = (e.location().y - 15) / cell::height();
   
@@ -387,8 +387,8 @@ void minesweeper_form::on_game_panel_paint(object& sender, paint_event_args& e) 
   e.graphics().draw_line(pen {color_converter::light(color_converter::light(back_color()))}, e.clip_rectangle().width() - 2 - offset, 1 + offset, e.clip_rectangle().width() - 2 - offset, e.clip_rectangle().height() - 2 - offset);
   e.graphics().draw_line(pen {color_converter::light(color_converter::light(color_converter::light(back_color())))}, e.clip_rectangle().width() - 1 - offset, offset, e.clip_rectangle().width() - 1 - offset, e.clip_rectangle().height() - 1 - offset);
   
-  for (auto y = 0; y < grid_size_.height(); ++y)
-    for (auto x = 0; x < grid_size_.width(); ++x)
+  for (auto y = 0; y < grid_size_.height; ++y)
+    for (auto x = 0; x < grid_size_.width; ++x)
       draw_cell(e, {15 + x * cell::width(), 15 + y * cell::height(), cell::width(), cell::height()}, cells_[x][y]);
 }
 
@@ -431,7 +431,7 @@ void minesweeper_form::on_status_panel_paint(object& sender, paint_event_args& e
 }
 
 void minesweeper_form::on_status_panel_resize(object& sender, const event_args& e) {
-  start_game_.location({status_panel_.size().width() / 2 - 21, 17});
+  start_game_.location({status_panel_.size().width / 2 - 21, 17});
   stopwatch_label_.location({status_panel_.width() - stopwatch_label_.width() - 18, 17});
 }
 
@@ -451,7 +451,7 @@ void minesweeper_form::uncover_cell(int x, int y) {
       game_over();
     } else {
       check_neighbors({x, y});
-      if (grid_size_.width() * grid_size_.height() - checked_cell_count_ != mine_count_) start_game_.image(bitmap(properties::resources::smiley1(), {24, 24}));
+      if (grid_size_.width * grid_size_.height - checked_cell_count_ != mine_count_) start_game_.image(bitmap(properties::resources::smiley1(), {24, 24}));
       else you_win();
     }
     invalidate();
@@ -466,8 +466,8 @@ void minesweeper_form::update_colors() {
 void minesweeper_form::you_win() {
   stopwatch_timer_.enabled(false);
   game_over_ = true;
-  for (auto y = 0; y < grid_size_.height(); ++y)
-    for (auto x = 0; x < grid_size_.width(); ++x)
+  for (auto y = 0; y < grid_size_.height; ++y)
+    for (auto x = 0; x < grid_size_.width; ++x)
       if (cells_[x][y].state() != cell_state::flag && cells_[x][y].contains_mine())
         cells_[x][y].state(cell_state::mine);
         
