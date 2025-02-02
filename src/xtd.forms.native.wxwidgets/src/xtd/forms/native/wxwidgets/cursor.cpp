@@ -60,13 +60,13 @@ point cursor::position() {
 
 #if defined(__WXMSW__)
 void cursor::position(const point& position) {
-  SetCursorPos(position.x(), position.y());
+  SetCursorPos(position.x, position.y);
 }
 #elif !defined (__WXOSX__)
 void cursor::position(const point& position) {
   wxWindow* window = wxGetActiveWindow();
   if (window) {
-    wxPoint clientPosition = window->ScreenToClient(wxPoint(position.x(), position.y()));
+    wxPoint clientPosition = window->ScreenToClient(wxPoint(position.x, position.y));
     window->WarpPointer(clientPosition.x, clientPosition.y);
   }
 }
