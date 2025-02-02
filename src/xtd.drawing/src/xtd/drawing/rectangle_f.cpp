@@ -6,26 +6,18 @@ using namespace xtd::drawing;
 
 const rectangle_f rectangle_f::empty;
 
-rectangle_f::rectangle_f(float x, float y, float width, float height) noexcept  : x_(x), y_(y), width_(width), height_(height) {
+rectangle_f::rectangle_f(float x, float y, float width, float height) noexcept  : height(height), width(width), x(x), y(y) {
 }
 
 rectangle_f::rectangle_f(const point_f& location, const size_f& size) noexcept  : rectangle_f(location.x, location.y, size.width, size.height) {
 }
 
 float rectangle_f::bottom() const noexcept {
-  return y_ + height_;
+  return y + height;
 }
 
 point_f rectangle_f::center() const noexcept {
-  return {x_ + width_ / 2, y_ + height_ / 2};
-}
-
-float rectangle_f::height() const noexcept {
-  return height_;
-}
-
-void rectangle_f::height(float height) noexcept {
-  height_ = height;
+  return {x + width / 2, y + height / 2};
 }
 
 bool rectangle_f::is_empty() const noexcept {
@@ -33,57 +25,33 @@ bool rectangle_f::is_empty() const noexcept {
 }
 
 float rectangle_f::left() const noexcept {
-  return x_;
+  return x;
 }
 
 point_f rectangle_f::location() const noexcept {
-  return {x_, y_};
+  return {x, y};
 }
 
 void rectangle_f::location(const point_f& location) {
-  x_ = location.x;
-  y_ = location.y;
+  x = location.x;
+  y = location.y;
 }
 
 float rectangle_f::right() const noexcept {
-  return x_ + width_;
+  return x + width;
 }
 
 size_f rectangle_f::size() const noexcept {
-  return {width_, height_};
+  return {width, height};
 }
 
 void rectangle_f::size(const size_f& size) noexcept {
-  width_ = size.width;
-  height_ = size.height;
+  width = size.width;
+  height = size.height;
 }
 
 float rectangle_f::top() const noexcept {
-  return y_;
-}
-
-float rectangle_f::width() const noexcept {
-  return width_;
-}
-
-void rectangle_f::width(float width) noexcept {
-  width_ = width;
-}
-
-float rectangle_f::x() const noexcept {
-  return x_;
-}
-
-void rectangle_f::x(float x) noexcept {
-  x_ = x;
-}
-
-float rectangle_f::y() const noexcept {
-  return y_;
-}
-
-void rectangle_f::y(float y) noexcept {
-  y_ = y;
+  return y;
 }
 
 void rectangle_f::add(const drawing::size_f& sz) noexcept {
@@ -91,8 +59,8 @@ void rectangle_f::add(const drawing::size_f& sz) noexcept {
 }
 
 void rectangle_f::add(float width, float height) noexcept {
-  width_ += width;
-  height_ += height;
+  width += width;
+  height += height;
 }
 
 rectangle_f rectangle_f::add(const rectangle_f& rect, float x, float y) noexcept {
@@ -110,15 +78,15 @@ bool rectangle_f::contains(const point_f& pt) const noexcept {
 }
 
 bool rectangle_f::contains(const rectangle_f& rect) const noexcept {
-  return x_ <= rect.x_ && (rect.x_ + rect.width_) <= (x_ + width_) && y_ <= rect.y_ && (rect.y_ + rect.height_) <= (y_ + height_);
+  return x <= rect.x && (rect.x + rect.width) <= (x + width) && y <= rect.y && (rect.y + rect.height) <= (y + height);
 }
 
 bool rectangle_f::contains(float x, float y) const noexcept {
-  return x_ <= x && x < x_ + width_ && y_ <= y && y < y_ + height_;
+  return this->x <= x && x < this->x + width && this->y <= y && y < this->y + height;
 }
 
 bool rectangle_f::equals(const rectangle_f& value) const noexcept {
-  return x_ == value.x_ && y_ == value.y_ && width_ == value.width_ && height_ == value.height_;
+  return x == value.x && y == value.y && width == value.width && height == value.height;
 }
 
 rectangle_f rectangle_f::from_ltrb(float left, float top, float right, float bottom) noexcept {
@@ -130,10 +98,10 @@ void rectangle_f::inflate(const drawing::size_f& sz) noexcept {
 }
 
 void rectangle_f::inflate(float width, float height) noexcept {
-  x_ -= width;
-  y_ -= height;
-  width_ += 2 * width;
-  height_ += 2 * height;
+  x -= width;
+  y -= height;
+  width += 2 * width;
+  height += 2 * height;
 }
 
 rectangle_f rectangle_f::inflate(const rectangle_f& rect, const drawing::size_f& sz) noexcept {
@@ -147,7 +115,7 @@ rectangle_f rectangle_f::inflate(const rectangle_f& rect, float width, float hei
 }
 
 bool rectangle_f::intersects_with(const rectangle_f& rect) const noexcept {
-  return (rect.x_ < x_ + width_) && (x_ < (rect.x_ + rect.width_)) && (rect.y_ < y_ + height_) && (y_ < rect.y_ + rect.height_);
+  return (rect.x < x + width) && (x < (rect.x + rect.width)) && (rect.y < y + height) && (y < rect.y + rect.height);
 }
 
 rectangle_f rectangle_f::make_intersect(const rectangle_f& a, const rectangle_f& b) noexcept {
@@ -157,17 +125,17 @@ rectangle_f rectangle_f::make_intersect(const rectangle_f& a, const rectangle_f&
 }
 
 void rectangle_f::make_intersect(const rectangle_f& rect) noexcept {
-  auto x1 = math::max(x_, rect.x_);
-  auto x2 = math::min(x_ + width_, rect.x_ + rect.width_);
-  auto y1 = math::max(y_, rect.y_);
-  auto y2 = math::min(y_ + height_, rect.y_ + rect.height_);
+  auto x1 = math::max(x, rect.x);
+  auto x2 = math::min(x + width, rect.x + rect.width);
+  auto y1 = math::max(y, rect.y);
+  auto y2 = math::min(y + height, rect.y + rect.height);
   
-  if (x2 < x1 || y2 < y1) x_ = y_ = width_ = height_ = 0;
+  if (x2 < x1 || y2 < y1) x = y = width = height = 0;
   else {
-    x_ = x1;
-    y_ = y1;
-    width_ = x2 - x1;
-    height_ = y2 - y1;
+    x = x1;
+    y = y1;
+    width = x2 - x1;
+    height = y2 - y1;
   }
 }
 
@@ -178,15 +146,15 @@ rectangle_f rectangle_f::make_union(const rectangle_f& a, const rectangle_f& b) 
 }
 
 void rectangle_f::make_union(const rectangle_f& rect) noexcept {
-  auto x1 = math::min(x_, rect.x_);
-  auto x2 = math::max(x_ + width_, rect.x_ + rect.width_);
-  auto y1 = math::min(y_, rect.y_);
-  auto y2 = math::max(y_ + height_, rect.y_ + rect.height_);
+  auto x1 = math::min(x, rect.x);
+  auto x2 = math::max(x + width, rect.x + rect.width);
+  auto y1 = math::min(y, rect.y);
+  auto y2 = math::max(y + height, rect.y + rect.height);
   
-  x_ = x1;
-  y_ = y1;
-  width_ = x2 - x1;
-  height_ = y2 - y1;
+  x = x1;
+  y = y1;
+  width = x2 - x1;
+  height = y2 - y1;
 }
 
 void rectangle_f::offset(const point_f& pos) noexcept {
@@ -194,8 +162,8 @@ void rectangle_f::offset(const point_f& pos) noexcept {
 }
 
 void rectangle_f::offset(float x, float y) noexcept {
-  x_ += x;
-  y_ += y;
+  x += x;
+  y += y;
 }
 
 rectangle_f rectangle_f::offset(const rectangle_f& rect, const point_f& pos) noexcept {
@@ -209,5 +177,5 @@ rectangle_f rectangle_f::offset(const rectangle_f& rect, float x, float y) noexc
 }
 
 xtd::string rectangle_f::to_string() const noexcept {
-  return string::format("{{x={}, y={}, width={}, heght={}}}", x(), y(), width(), height());
+  return string::format("{{x={}, y={}, width={}, heght={}}}", x, y, width, height);
 }

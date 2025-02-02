@@ -50,7 +50,7 @@ void graphics_path::add_arc(const xtd::drawing::rectangle& rect, float start_ang
 }
 
 void graphics_path::add_arc(const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle) {
-  add_arc(rect.x(), rect.y(), rect.width(), rect.height(), start_angle, sweep_angle);
+  add_arc(rect.x, rect.y, rect.width, rect.height, start_angle, sweep_angle);
 }
 
 void graphics_path::add_arc(int32 x, int32 y, int32 width, int32 height, float start_angle, float sweep_angle) {
@@ -142,7 +142,7 @@ void graphics_path::add_ellipse(const xtd::drawing::rectangle& rect) {
 }
 
 void graphics_path::add_ellipse(const xtd::drawing::rectangle_f& rect) {
-  add_ellipse(rect.x(), rect.y(), rect.width(), rect.height());
+  add_ellipse(rect.x, rect.y, rect.width, rect.height);
 }
 
 void graphics_path::add_ellipse(int32 x, int32 y, int32 width, int32 height) {
@@ -190,7 +190,7 @@ void graphics_path::add_pie(const xtd::drawing::rectangle& rect, float start_ang
 }
 
 void graphics_path::add_pie(const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle) {
-  add_pie(rect.x(), rect.y(), rect.width(), rect.height(), start_angle, sweep_angle);
+  add_pie(rect.x, rect.y, rect.width, rect.height, start_angle, sweep_angle);
 }
 
 void graphics_path::add_pie(int32 x, int32 y, int32 width, int32 height, float start_angle, float sweep_angle) {
@@ -219,7 +219,7 @@ void graphics_path::add_rectangle(const rectangle& rect) {
   add_rectangle(rectangle_f(rect));
 }
 void graphics_path::add_rectangle(const rectangle_f& rect) {
-  add_rectangle(rect.x(), rect.y(), rect.width(), rect.height());
+  add_rectangle(rect.x, rect.y, rect.width, rect.height);
 }
 
 void graphics_path::add_rectangle(int32 x, int32 y, int32 width, int32 height) {
@@ -243,7 +243,7 @@ void graphics_path::add_rounded_rectangle(const rectangle& rect, float radius) {
   add_rounded_rectangle(rectangle_f(rect), radius);
 }
 void graphics_path::add_rounded_rectangle(const rectangle_f& rect, float radius) {
-  add_rounded_rectangle(rect.x(), rect.y(), rect.width(), rect.height(), radius);
+  add_rounded_rectangle(rect.x, rect.y, rect.width, rect.height, radius);
 }
 
 void graphics_path::add_rounded_rectangle(int32 x, int32 y, int32 width, int32 height, float radius) {
@@ -269,7 +269,7 @@ void graphics_path::add_string(const xtd::string& s, const xtd::drawing::font_fa
 
 void graphics_path::add_string(const xtd::string& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::rectangle_f& layout_rect, const xtd::drawing::string_format& format) {
   auto f = font {family, em_size, style};
-  native::graphics_path::add_string(handle(), s, f.handle(), layout_rect.x(), layout_rect.y(), layout_rect.width(), layout_rect.height(), static_cast<int32>(format.alignment()), static_cast<int32>(format.line_alignment()), static_cast<int32>(format.hotkey_prefix()), static_cast<int32>(format.trimming()));
+  native::graphics_path::add_string(handle(), s, f.handle(), layout_rect.x, layout_rect.y, layout_rect.width, layout_rect.height, static_cast<int32>(format.alignment()), static_cast<int32>(format.line_alignment()), static_cast<int32>(format.hotkey_prefix()), static_cast<int32>(format.trimming()));
 }
 
 void graphics_path::close_all_figures() {

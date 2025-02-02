@@ -79,7 +79,7 @@ rectangle rectangle::add(const rectangle& rect, const drawing::size& sz) noexcep
 }
 
 rectangle rectangle::ceiling(const rectangle_f& rect) noexcept {
-  return rectangle(as<int32>(math::ceiling(rect.x())), as<int32>(math::ceiling(rect.y())), as<int32>(math::ceiling(rect.width())), as<int32>(math::ceiling(rect.height())));
+  return rectangle(as<int32>(math::ceiling(rect.x)), as<int32>(math::ceiling(rect.y)), as<int32>(math::ceiling(rect.width)), as<int32>(math::ceiling(rect.height)));
 }
 
 bool rectangle::contains(const point& pt) const noexcept {
@@ -186,11 +186,11 @@ rectangle rectangle::offset(const rectangle& rect, int32 x, int32 y) noexcept {
 }
 
 rectangle rectangle::round(const rectangle_f& rect) noexcept {
-  return rectangle(as<int32>(math::round(rect.x())), as<int32>(math::round(rect.y())), as<int32>(math::round(rect.width())), as<int32>(math::round(rect.height())));
+  return rectangle(as<int32>(math::round(rect.x)), as<int32>(math::round(rect.y)), as<int32>(math::round(rect.width)), as<int32>(math::round(rect.height)));
 }
 
 rectangle rectangle::truncate(const rectangle_f& rect) noexcept {
-  return rectangle(as<int32>(math::truncate(rect.x())), as<int32>(math::truncate(rect.y())), as<int32>(math::truncate(rect.width())), as<int32>(math::truncate(rect.height())));
+  return rectangle(as<int32>(math::truncate(rect.x)), as<int32>(math::truncate(rect.y)), as<int32>(math::truncate(rect.width)), as<int32>(math::truncate(rect.height)));
 }
 
 xtd::string rectangle::to_string() const noexcept {
