@@ -303,8 +303,8 @@ void control_paint::draw_image(xtd::drawing::graphics& graphics, const xtd::draw
   if (image_layout == xtd::forms::image_layout::none)
     graphics.draw_image(image, x, y);
   else if (image_layout == xtd::forms::image_layout::tile) {
-    for (auto offset_y = 0; offset_y < height; offset_y += image.size().height())
-      for (auto offset_x = 0; offset_x < width; offset_x += image.size().width())
+    for (auto offset_y = 0; offset_y < height; offset_y += image.size().height)
+      for (auto offset_x = 0; offset_x < width; offset_x += image.size().width)
         graphics.draw_image(image, x + offset_x, y + offset_y);
   } else if (image_layout == xtd::forms::image_layout::center)
     graphics.draw_image(image, x + (width - image.width()) / 2, y + (height - image.height()) / 2);

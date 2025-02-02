@@ -26,7 +26,7 @@ namespace xtd {
           control_handler::create<wxCheckListBox>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x, create_params.location.y), wxSize(0, 0), 0, nullptr, style_to_wx_style(create_params.style, create_params.ex_style));
           // Workaround : with wxWidgets version <= 3.1.4 checked item alignment error on macos...
           static_cast<wxCheckListBox*>(control())->SetPosition({create_params.location.x, create_params.location.y});
-          static_cast<wxCheckListBox*>(control())->SetSize(create_params.size.width(), create_params.size.height());
+          static_cast<wxCheckListBox*>(control())->SetSize(create_params.size.width, create_params.size.height);
           #if defined(__WXMSW__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::window().r(), xtd::drawing::system_colors::window().g(), xtd::drawing::system_colors::window().b(), xtd::drawing::system_colors::window().a()));

@@ -12,24 +12,24 @@ namespace xtd::drawing::tests {
       size s;
       assert::are_equal(size(0, 0), s);
       assert::are_equal(size::empty, s);
-      assert::are_equal(0, s.width());
-      assert::are_equal(0, s.height());
+      assert::are_equal(0, s.width);
+      assert::are_equal(0, s.height);
     }
     
     void test_method_(create_size_with_values) {
       size s(1, 2);
       assert::are_equal(size(1, 2), s);
       assert::are_not_equal(size::empty, s);
-      assert::are_equal(1, s.width());
-      assert::are_equal(2, s.height());
+      assert::are_equal(1, s.width);
+      assert::are_equal(2, s.height);
     }
     
     void test_method_(create_size_with_copy) {
       size s = {1, 2};
       assert::are_equal(size(1, 2), s);
       assert::are_not_equal(size::empty, s);
-      assert::are_equal(1, s.width());
-      assert::are_equal(2, s.height());
+      assert::are_equal(1, s.width);
+      assert::are_equal(2, s.height);
     }
     
     void test_method_(create_size_and_assign_it) {
@@ -37,8 +37,8 @@ namespace xtd::drawing::tests {
       s = {1, 2};
       assert::are_equal(size(1, 2), s);
       assert::are_not_equal(size::empty, s);
-      assert::are_equal(1, s.width());
-      assert::are_equal(2, s.height());
+      assert::are_equal(1, s.width);
+      assert::are_equal(2, s.height);
     }
     
     void test_method_(is_empty) {
@@ -48,20 +48,20 @@ namespace xtd::drawing::tests {
     
     void test_method_(set_width) {
       size s;
-      s.width(3);
+      s.width = 3;
       assert::are_equal(size(3, 0), s);
     }
     
     void test_method_(set_height) {
       size s;
-      s.height(4);
+      s.height = 4;
       assert::are_equal(size(0, 4), s);
     }
     
     void test_method_(set_width_height) {
       size s;
-      s.width(3);
-      s.height(4);
+      s.width = 3;
+      s.height = 4;
       assert::are_equal(size(3, 4), s);
     }
     

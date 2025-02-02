@@ -31,7 +31,7 @@ namespace xtd::forms::tests {
       assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), animation.back_color());
       assert::are_equal(drawing::image::empty, animation.background_image());
       assert::are_equal(image_layout::tile, animation.background_image_layout());
-      assert::are_equal(animation.default_size().height(), animation.bottom());
+      assert::are_equal(animation.default_size().height, animation.bottom());
       assert::are_equal(drawing::rectangle({0, 0}, animation.default_size()), animation.bounds());
       assert::is_false(animation.can_focus());
       assert::is_true(animation.can_raise_events());
@@ -57,7 +57,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::system_fonts::default_font(), animation.font());
       assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), animation.fore_color());
       assert::is_zero(animation.handle());
-      assert::are_equal(animation.default_size().height(), animation.height());
+      assert::are_equal(animation.default_size().height, animation.height());
       assert::is_false(animation.invoke_required());
       assert::is_false(animation.is_handle_created());
       assert::is_zero(animation.left());
@@ -73,7 +73,7 @@ namespace xtd::forms::tests {
       assert::is_null(animation.parent());
       assert::are_equal("xtd", animation.product_name());
       assert::is_not_zero(animation.region().handle());
-      assert::are_equal(animation.default_size().width(), animation.right());
+      assert::are_equal(animation.default_size().width, animation.right());
       assert::are_equal(animation.default_size(), animation.size());
       assert::is_empty(animation.style_sheet().theme().name());
       assert::is_true(animation.tab_stop());
@@ -83,7 +83,7 @@ namespace xtd::forms::tests {
       assert::is_zero(animation.top());
       assert::is_null(animation.top_level_control());
       assert::is_true(animation.visible());
-      assert::are_equal(animation.default_size().width(), animation.width());
+      assert::are_equal(animation.default_size().width, animation.width());
       assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls());
       assert::are_equal(keys::none, forms::control::modifier_keys());
       assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons());

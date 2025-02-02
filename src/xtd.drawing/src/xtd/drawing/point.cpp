@@ -14,7 +14,7 @@ point::point(int32 dw) noexcept : x(dw & 0x0000FFFF), y((dw & 0xFFFF0000) >> 16)
 point::point(int32 x, int32 y) noexcept : x(x), y(y) {
 }
 
-point::point(const size& size) noexcept : x(size.width()), y(size.height()) {
+point::point(const size& size) noexcept : x(size.width), y(size.height) {
 }
 
 point::operator point_f() const noexcept {
@@ -26,7 +26,7 @@ bool point::is_empty() const noexcept {
 }
 
 point point::add(const point& pt, const size& sz) noexcept {
-  return {pt.x + sz.width(), pt.y + sz.height()};
+  return {pt.x + sz.width, pt.y + sz.height};
 }
 
 point point::add(const point& pt1, const point& pt2) noexcept {
@@ -55,7 +55,7 @@ point point::round(const point_f& value) noexcept {
 }
 
 point point::subtract(const point& pt, const size& sz) noexcept {
-  return {pt.x - sz.width(), pt.y - sz.height()};
+  return {pt.x - sz.width, pt.y - sz.height};
 }
 
 point point::subtract(const point& pt1, const point& pt2) noexcept {

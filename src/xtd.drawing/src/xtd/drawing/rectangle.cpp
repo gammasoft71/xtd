@@ -10,7 +10,7 @@ const rectangle rectangle::empty;
 rectangle::rectangle(int32 x, int32 y, int32 width, int32 height) noexcept : x_(x), y_(y), width_(width), height_(height) {
 }
 
-rectangle::rectangle(const point& location, const drawing::size& size) noexcept : rectangle(location.x, location.y, size.width(), size.height()) {
+rectangle::rectangle(const point& location, const drawing::size& size) noexcept : rectangle(location.x, location.y, size.width, size.height) {
 }
 
 rectangle::operator rectangle_f() const noexcept {
@@ -59,8 +59,8 @@ drawing::size rectangle::size() const noexcept {
 }
 
 void rectangle::size(const xtd::drawing::size& value) noexcept {
-  width_ = value.width();
-  height_ = value.height();
+  width_ = value.width;
+  height_ = value.height;
 }
 
 int32 rectangle::top() const noexcept {
@@ -92,7 +92,7 @@ void rectangle::y(int32 value) noexcept {
 }
 
 void rectangle::add(const drawing::size& sz) noexcept {
-  add(sz.width(), sz.height());
+  add(sz.width, sz.height);
 }
 
 void rectangle::add(int32 width, int32 height) noexcept {
@@ -107,7 +107,7 @@ rectangle rectangle::add(const rectangle& rect, int32 x, int32 y) noexcept {
 }
 
 rectangle rectangle::add(const rectangle& rect, const drawing::size& sz) noexcept {
-  return add(rect, sz.width(), sz.height());
+  return add(rect, sz.width, sz.height);
 }
 
 rectangle rectangle::ceiling(const rectangle_f& rect) noexcept {
@@ -135,7 +135,7 @@ rectangle rectangle::from_ltrb(int32 left, int32 top, int32 right, int32 bottom)
 }
 
 void rectangle::inflate(const drawing::size& sz) noexcept {
-  inflate(sz.width(), sz.height());
+  inflate(sz.width, sz.height);
 }
 
 void rectangle::inflate(int32 width, int32 height) noexcept {
@@ -152,7 +152,7 @@ rectangle rectangle::inflate(const rectangle& rect, int32 x, int32 y) noexcept {
 }
 
 rectangle rectangle::inflate(const rectangle& rect, const drawing::size& sz) noexcept {
-  return inflate(rect, sz.width(), sz.height());
+  return inflate(rect, sz.width, sz.height);
 }
 
 bool rectangle::intersects_with(const rectangle& rect) const noexcept {

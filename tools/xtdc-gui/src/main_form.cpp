@@ -80,7 +80,7 @@ main_form::main_form() {
   
   startup_open_recent_projects_list_box_.parent(startup_panel_);
   startup_open_recent_projects_list_box_.location({50, 175});
-  startup_open_recent_projects_list_box_.size({500, startup_panel_.size().height() - 175});
+  startup_open_recent_projects_list_box_.size({500, startup_panel_.size().height - 175});
   startup_open_recent_projects_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   startup_open_recent_projects_list_box_.key_down += [&](object & sender, key_event_args & e) {
     if (e.key_code() == keys::del && startup_open_recent_projects_list_box_.selected_index() != startup_open_recent_projects_list_box_.npos)
@@ -95,7 +95,7 @@ main_form::main_form() {
   };
   
   startup_get_started_title_label_.parent(startup_panel_);
-  startup_get_started_title_label_.location({startup_panel_.size().width() - 400, 115});
+  startup_get_started_title_label_.location({startup_panel_.size().width - 400, 115});
   startup_get_started_title_label_.auto_size(true);
   startup_get_started_title_label_.text("Get started");
   startup_get_started_title_label_.font({startup_get_started_title_label_.font(), 16.0});
@@ -106,7 +106,7 @@ main_form::main_form() {
   startup_open_project_button_.image(bitmap(xtd_open_icon));
   startup_open_project_button_.image_align(content_alignment::middle_left);
   startup_open_project_button_.text("Open a project or solution");
-  startup_open_project_button_.location({startup_panel_.size().width() - 400, 175});
+  startup_open_project_button_.location({startup_panel_.size().width - 400, 175});
   startup_open_project_button_.size({350, 100});
   startup_open_project_button_.font({startup_open_project_button_.font(), 14.0});
   startup_open_project_button_.anchor(anchor_styles::top | anchor_styles::right);
@@ -117,7 +117,7 @@ main_form::main_form() {
   startup_run_project_button_.image(bitmap(xtd_run_icon));
   startup_run_project_button_.image_align(content_alignment::middle_left);
   startup_run_project_button_.text("Run a project");
-  startup_run_project_button_.location({startup_panel_.size().width() - 400, 285});
+  startup_run_project_button_.location({startup_panel_.size().width - 400, 285});
   startup_run_project_button_.size({350, 100});
   startup_run_project_button_.font({startup_run_project_button_.font(), 14.0});
   startup_run_project_button_.anchor(anchor_styles::top | anchor_styles::right);
@@ -128,7 +128,7 @@ main_form::main_form() {
   startup_new_project_button_.image(bitmap(xtd_new_icon));
   startup_new_project_button_.image_align(content_alignment::middle_left);
   startup_new_project_button_.text("Create a new project");
-  startup_new_project_button_.location({startup_panel_.size().width() - 400, 395});
+  startup_new_project_button_.location({startup_panel_.size().width - 400, 395});
   startup_new_project_button_.size({350, 100});
   startup_new_project_button_.font({startup_new_project_button_.font(), 14.0});
   startup_new_project_button_.anchor(anchor_styles::top | anchor_styles::right);
@@ -139,7 +139,7 @@ main_form::main_form() {
   startup_open_xtd_examples_button_.image(bitmap(xtd_open_examples_icon));
   startup_open_xtd_examples_button_.image_align(content_alignment::middle_left);
   startup_open_xtd_examples_button_.text("Open xtd examples");
-  startup_open_xtd_examples_button_.location({startup_panel_.size().width() - 400, 505});
+  startup_open_xtd_examples_button_.location({startup_panel_.size().width - 400, 505});
   startup_open_xtd_examples_button_.size({350, 100});
   startup_open_xtd_examples_button_.font({startup_new_project_button_.font(), 14.0});
   startup_open_xtd_examples_button_.anchor(anchor_styles::top | anchor_styles::right);
@@ -158,7 +158,7 @@ main_form::main_form() {
   
   open_xtd_example_tab_control_.parent(open_xtd_examples_panel_);
   open_xtd_example_tab_control_.location({50, 115});
-  open_xtd_example_tab_control_.size({450, open_xtd_examples_panel_.size().height() - 115});
+  open_xtd_example_tab_control_.size({450, open_xtd_examples_panel_.size().height - 115});
   open_xtd_example_tab_control_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   open_xtd_example_tab_control_.selected_index_changed += [&] {
     if (open_xtd_example_tab_control_.selected_index() == 0) {
@@ -205,7 +205,7 @@ main_form::main_form() {
   open_xtd_examples_information_link_label_.back_color(xtd::forms::application::style_sheet().system_colors().window());
   open_xtd_examples_information_link_label_.border_style(xtd::forms::border_style::solid);
   open_xtd_examples_information_link_label_.location({550, 100});
-  open_xtd_examples_information_link_label_.size({400, open_xtd_examples_panel_.size().height() - 390});
+  open_xtd_examples_information_link_label_.size({400, open_xtd_examples_panel_.size().height - 390});
   open_xtd_examples_information_link_label_.font({open_xtd_examples_information_link_label_.font(), 12.0f});
   open_xtd_examples_information_link_label_.anchor(anchor_styles::top | anchor_styles::bottom | anchor_styles::right);
   open_xtd_examples_information_link_label_.text_align(content_alignment::top_left);
@@ -215,7 +215,7 @@ main_form::main_form() {
   };
   
   open_xtd_examples_information_picture_label_.parent(open_xtd_examples_panel_);
-  open_xtd_examples_information_picture_label_.location({550, open_xtd_examples_panel_.size().height() - 270});
+  open_xtd_examples_information_picture_label_.location({550, open_xtd_examples_panel_.size().height - 270});
   open_xtd_examples_information_picture_label_.auto_size(true);
   open_xtd_examples_information_picture_label_.font({open_xtd_examples_information_picture_label_.font(), 16.0});
   open_xtd_examples_information_picture_label_.text("Output");
@@ -224,7 +224,7 @@ main_form::main_form() {
   open_xtd_examples_information_picture_box_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_picture_box_.back_color(xtd::forms::application::style_sheet().system_colors().window());
   open_xtd_examples_information_picture_box_.border_style(xtd::forms::border_style::solid);
-  open_xtd_examples_information_picture_box_.location({550, open_xtd_examples_panel_.size().height() - 230});
+  open_xtd_examples_information_picture_box_.location({550, open_xtd_examples_panel_.size().height - 230});
   open_xtd_examples_information_picture_box_.size({400, 230});
   open_xtd_examples_information_picture_box_.size_mode(picture_box_size_mode::zoom);
   open_xtd_examples_information_picture_box_.anchor(anchor_styles::bottom | anchor_styles::right);
@@ -232,7 +232,7 @@ main_form::main_form() {
   open_xtd_examples_information_output_text_box_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_output_text_box_.back_color(xtd::forms::application::style_sheet().system_colors().window());
   open_xtd_examples_information_output_text_box_.border_style(xtd::forms::border_style::solid);
-  open_xtd_examples_information_output_text_box_.location({ 550, open_xtd_examples_panel_.size().height() - 230 });
+  open_xtd_examples_information_output_text_box_.location({ 550, open_xtd_examples_panel_.size().height - 230 });
   open_xtd_examples_information_output_text_box_.size({ 400, 230 });
   open_xtd_examples_information_output_text_box_.anchor(anchor_styles::bottom | anchor_styles::right);
   open_xtd_examples_information_output_text_box_.word_wrap(false);
@@ -414,7 +414,7 @@ main_form::main_form() {
   
   create_create_recent_projects_list_box_.parent(create_panel_);
   create_create_recent_projects_list_box_.location({50, 175});
-  create_create_recent_projects_list_box_.size({400, create_panel_.size().height() - 175});
+  create_create_recent_projects_list_box_.size({400, create_panel_.size().height - 175});
   create_create_recent_projects_list_box_.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom | anchor_styles::right);
   create_create_recent_projects_list_box_.selected_index_changed += [&] {
     if (create_create_recent_projects_list_box_.selected_index() == create_create_recent_projects_list_box_.npos)
@@ -435,7 +435,7 @@ main_form::main_form() {
   
   create_language_choice_.parent(create_panel_);
   create_language_choice_.width(140);
-  create_language_choice_.location({create_panel_.size().width() - create_type_choice_.width() - 400, 50});
+  create_language_choice_.location({create_panel_.size().width - create_type_choice_.width() - 400, 50});
   create_language_choice_.anchor(anchor_styles::top | anchor_styles::right);
   create_language_choice_.items().push_back_range({{"All languages", project_language::all}, {"xtd (c++)", project_language::xtd}, {"xtd_c (c)", project_language::xtd_c}, {"c++", project_language::cpp}, {"c", project_language::c}, {"c#", project_language::csharp}, {"objective-c", project_language::objectivec}});
   create_language_choice_.selected_value_changed += [&] {
@@ -446,7 +446,7 @@ main_form::main_form() {
   
   create_platform_choice_.parent(create_panel_);
   create_platform_choice_.width(140);
-  create_platform_choice_.location({create_panel_.size().width() - create_type_choice_.width() - 230, 50});
+  create_platform_choice_.location({create_panel_.size().width - create_type_choice_.width() - 230, 50});
   create_platform_choice_.anchor(anchor_styles::top | anchor_styles::right);
   create_platform_choice_.items().push_back_range({{"All platforms", project_platform::all}, {"Windows", project_platform::windows}, {"Linux", project_platform::linux}, {"macOS", project_platform::macos}});
   create_platform_choice_.selected_value_changed += [&] {
@@ -457,7 +457,7 @@ main_form::main_form() {
   
   create_type_choice_.parent(create_panel_);
   create_type_choice_.width(140);
-  create_type_choice_.location({create_panel_.size().width() - create_type_choice_.width() - 50, 50});
+  create_type_choice_.location({create_panel_.size().width - create_type_choice_.width() - 50, 50});
   create_type_choice_.anchor(anchor_styles::top | anchor_styles::right);
   create_type_choice_.items().push_back_range({{"All project types", project_type::all}, {"Gui", project_type::gui}, {"Console", project_type::console}, {"Shared library", project_type::shared_library}, {"Static library", project_type::static_library}, {"UnitTest Project", project_type::unit_tests_project}, {"Solution File", project_type::solution_file}});
   create_type_choice_.selected_value_changed += [&] {
@@ -467,8 +467,8 @@ main_form::main_form() {
   create_type_choice_.selected_index(properties::settings::default_settings().type_index());
   
   create_project_type_items_control_.parent(create_panel_);
-  create_project_type_items_control_.location({create_panel_.size().width() - 475 - 50, 100});
-  create_project_type_items_control_.size({475, create_panel_.size().height() - 100});
+  create_project_type_items_control_.location({create_panel_.size().width - 475 - 50, 100});
+  create_project_type_items_control_.size({475, create_panel_.size().height - 100});
   create_project_type_items_control_.anchor(anchor_styles::top | anchor_styles::bottom | anchor_styles::right);
   create_project_type_items_control_.selected_index_changed += [&] {
     if (create_project_type_items_control_.selected_index() == create_project_type_items_control_.npos)

@@ -21,7 +21,7 @@ forms::create_params h_scroll_bar::create_params() const noexcept {
 }
 
 xtd::drawing::size h_scroll_bar::default_size() const noexcept {
-  return {80, control::default_size().height()};
+  return {80, control::default_size().height};
 }
 
 h_scroll_bar h_scroll_bar::create() {

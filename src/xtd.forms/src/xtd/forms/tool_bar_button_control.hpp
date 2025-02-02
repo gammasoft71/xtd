@@ -225,7 +225,7 @@ private:
     auto center_drop_down = xtd::drawing::point(e.clip_rectangle().right() - drop_down_rectangle().width() / 2, e.clip_rectangle().top() + drop_down_rectangle().height() / 2);
     auto drop_down_size = drawing::size(drop_down_rectangle().width() - 4, (drop_down_rectangle().width() - 4) / 2);
     box_renderer::draw_box(e.graphics(), drop_down_rectangle(), current_style_sheet);
-    e.graphics().fill_polygon(xtd::drawing::solid_brush(current_style_sheet.color()), std::vector<xtd::drawing::point> {xtd::drawing::point {center_drop_down.x - drop_down_size.width() / 2, center_drop_down.y - drop_down_size.height() / 2}, xtd::drawing::point {center_drop_down.x + drop_down_size.width() / 2, center_drop_down.y - drop_down_size.height() / 2}, xtd::drawing::point {center_drop_down.x, center_drop_down.y + drop_down_size.height() / 2} });
+    e.graphics().fill_polygon(xtd::drawing::solid_brush(current_style_sheet.color()), std::vector<xtd::drawing::point> {xtd::drawing::point {center_drop_down.x - drop_down_size.width / 2, center_drop_down.y - drop_down_size.height / 2}, xtd::drawing::point {center_drop_down.x + drop_down_size.width / 2, center_drop_down.y - drop_down_size.height / 2}, xtd::drawing::point {center_drop_down.x, center_drop_down.y + drop_down_size.height / 2} });
   }
   
   void draw_separator(xtd::forms::paint_event_args& e) {
@@ -233,14 +233,14 @@ private:
       auto percent_of_color = 1.0 / 6;
       auto color = back_color().get_lightness() < 0.5 ? xtd::forms::control_paint::light(back_color(), percent_of_color) : xtd::forms::control_paint::dark(back_color(), percent_of_color);
       if (is_horizontal()) {
-        auto left = image_size().width() / 4;
+        auto left = image_size().width / 4;
         auto top = 4;
         auto right = left;
         auto bottom = e.clip_rectangle().height() - 4;
         e.graphics().draw_line(xtd::drawing::pen {color}, xtd::drawing::point {left, top}, xtd::drawing::point {right, bottom});
       } else {
         auto left = 4;
-        auto top = image_size().height() / 4;
+        auto top = image_size().height / 4;
         auto right = e.clip_rectangle().width() - 4;
         auto bottom = top;
         e.graphics().draw_line(xtd::drawing::pen {color}, xtd::drawing::point {left, top}, xtd::drawing::point {right, bottom});
@@ -261,8 +261,8 @@ private:
       if (data_->control) text_rect.width(text_rect.width() - data_->control->width() - 4);
       if (data_->control) text_rect.x(text_rect.x() + data_->control->width() + 4);
     } else {
-      text_rect.height(measure_text().height());
-      text_rect.y(height() - measure_text().height() - 3);
+      text_rect.height(measure_text().height);
+      text_rect.y(height() - measure_text().height - 3);
     }
     text_renderer::draw_text(e.graphics(), text_rect, text(), current_style_sheet);
   }
@@ -292,32 +292,32 @@ private:
     auto drop_down_size = drop_down_rectangle().size();
     
     if (data_->style == tool_bar_button_style::control && data_->control) {
-      if (current_size.height() < data_->control->height()) current_size.height(data_->control->height());
-      if (current_size.width() < data_->control->width()) current_size.width(data_->control->width());
+      if (current_size.height < data_->control->height()) current_size.height = data_->control->height();
+      if (current_size.width < data_->control->width()) current_size.width = data_->control->width();
       
       if (data_->show_text == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
-        if (current_size.width() < (data_->control->size().width() + text_size.width() + 6)) current_size.width(data_->control->size().width() + text_size.width() + 6);
-        if (current_size.height() < text_size.height()) current_size.height(text_size.height());
-        const_cast<xtd::forms::control*>(data_->control)->location({(current_size.width() - data_->control->width() - text_size.width()) / 2, (current_size.height() - data_->control->height()) / 2});
+        if (current_size.width < (data_->control->size().width + text_size.width + 6)) current_size.width = data_->control->size().width + text_size.width + 6;
+        if (current_size.height < text_size.height) current_size.height = text_size.height;
+        const_cast<xtd::forms::control*>(data_->control)->location({(current_size.width - data_->control->width() - text_size.width) / 2, (current_size.height - data_->control->height()) / 2});
       } else if (data_->show_text == true && data_->tool_bar_text_align == tool_bar_text_align::underneath) {
-        if (current_size.width() < text_size.width()) current_size.width(text_size.width());
-        if (current_size.height() < (data_->control->size().height() + text_size.height() + 6)) current_size.height(data_->control->size().height() + text_size.height() + 6);
-        const_cast<xtd::forms::control*>(data_->control)->location({(current_size.width() - data_->control->width()) / 2, (current_size.height() - data_->control->height() - text_size.height()) / 2});
+        if (current_size.width < text_size.width) current_size.width = text_size.width;
+        if (current_size.height < (data_->control->size().height + text_size.height + 6)) current_size.height = data_->control->size().height + text_size.height + 6;
+        const_cast<xtd::forms::control*>(data_->control)->location({(current_size.width - data_->control->width()) / 2, (current_size.height - data_->control->height() - text_size.height) / 2});
       } else
-        const_cast<xtd::forms::control*>(data_->control)->location({(current_size.width() - data_->control->width()) / 2, (current_size.height() - data_->control->height()) / 2});
+        const_cast<xtd::forms::control*>(data_->control)->location({(current_size.width - data_->control->width()) / 2, (current_size.height - data_->control->height()) / 2});
     } else if (data_->style != tool_bar_button_style::separator && data_->style != tool_bar_button_style::stretchable_separator) {
       if (data_->show_text == false) {
-        if (current_size.width() < image_size().width() + drop_down_size.width()) current_size.width(image_size().width() + drop_down_size.width() + 12);
-        if (current_size.height() < image_size().height()) current_size.height(image_size().height() + 12);
+        if (current_size.width < image_size().width + drop_down_size.width) current_size.width = image_size().width + drop_down_size.width + 12;
+        if (current_size.height < image_size().height) current_size.height = image_size().height + 12;
       } else if (data_->show_icon == false) {
-        if (current_size.width() < text_size.width() + drop_down_size.width()) current_size.width(text_size.width() + drop_down_size.width());
-        if (current_size.height() < text_size.height()) current_size.height(text_size.height());
+        if (current_size.width < text_size.width + drop_down_size.width) current_size.width = text_size.width + drop_down_size.width;
+        if (current_size.height < text_size.height) current_size.height = text_size.height;
       } else if (data_->tool_bar_text_align == tool_bar_text_align::right) {
-        if (current_size.width() < (image_size().width() + text_size.width() + drop_down_size.width() + 4)) current_size.width(image_size().width() + text_size.width() + drop_down_size.width() + 4);
-        if (current_size.height() < text_size.height()) current_size.height(text_size.height());
+        if (current_size.width < (image_size().width + text_size.width + drop_down_size.width + 4)) current_size.width = image_size().width + text_size.width + drop_down_size.width + 4;
+        if (current_size.height < text_size.height) current_size.height = text_size.height;
       }  else {
-        if (current_size.width() < text_size.width() + drop_down_size.width()) current_size.width(text_size.width() + drop_down_size.width());
-        if (current_size.height() < (image_size().height() + text_size.height() + 6)) current_size.height(image_size().height() + text_size.height() + 6);
+        if (current_size.width < text_size.width + drop_down_size.width) current_size.width = text_size.width + drop_down_size.width;
+        if (current_size.height < (image_size().height + text_size.height + 6)) current_size.height = image_size().height + text_size.height + 6;
       }
     }
     this->size(current_size);

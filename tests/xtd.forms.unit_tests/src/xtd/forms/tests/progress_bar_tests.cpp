@@ -32,7 +32,7 @@ namespace xtd::forms::tests {
       assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), progress_bar.back_color());
       assert::are_equal(drawing::image::empty, progress_bar.background_image());
       assert::are_equal(image_layout::tile, progress_bar.background_image_layout());
-      assert::are_equal(progress_bar.default_size().height(), progress_bar.bottom());
+      assert::are_equal(progress_bar.default_size().height, progress_bar.bottom());
       assert::are_equal(drawing::rectangle({0, 0}, progress_bar.default_size()), progress_bar.bounds());
       assert::is_false(progress_bar.can_focus());
       assert::is_true(progress_bar.can_raise_events());
@@ -58,7 +58,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::system_fonts::default_font(), progress_bar.font());
       assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), progress_bar.fore_color());
       assert::is_zero(progress_bar.handle());
-      assert::are_equal(progress_bar.default_size().height(), progress_bar.height());
+      assert::are_equal(progress_bar.default_size().height, progress_bar.height());
       assert::is_false(progress_bar.invoke_required());
       assert::is_false(progress_bar.is_handle_created());
       assert::is_zero(progress_bar.left());
@@ -74,7 +74,7 @@ namespace xtd::forms::tests {
       assert::is_null(progress_bar.parent());
       assert::are_equal("xtd", progress_bar.product_name());
       assert::is_not_zero(progress_bar.region().handle());
-      assert::are_equal(progress_bar.default_size().width(), progress_bar.right());
+      assert::are_equal(progress_bar.default_size().width, progress_bar.right());
       assert::are_equal(progress_bar.default_size(), progress_bar.size());
       assert::is_empty(progress_bar.style_sheet().theme().name());
       assert::is_true(progress_bar.tab_stop());
@@ -84,7 +84,7 @@ namespace xtd::forms::tests {
       assert::is_zero(progress_bar.top());
       assert::is_null(progress_bar.top_level_control());
       assert::is_true(progress_bar.visible());
-      assert::are_equal(progress_bar.default_size().width(), progress_bar.width());
+      assert::are_equal(progress_bar.default_size().width, progress_bar.width());
       assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls());
       assert::are_equal(keys::none, forms::control::modifier_keys());
       assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons());

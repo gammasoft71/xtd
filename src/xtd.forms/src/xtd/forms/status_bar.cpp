@@ -435,8 +435,8 @@ void status_bar::fill() {
       button_control->pushed(button_item.pushed());
       button_control->visible(button_item.visible());
       if (button_item.style() == status_bar_panel_style::separator || button_item.style() == status_bar_panel_style::stretchable_separator) {
-        button_control->height(image_size().height() / 2);
-        button_control->width(image_size().width() / 2);
+        button_control->height(image_size().height / 2);
+        button_control->width(image_size().width / 2);
       }
       if (button_item.style() == status_bar_panel_style::stretchable_separator)
         data_->spring_panels.push_back(button_control);
@@ -498,15 +498,15 @@ void status_bar::wnd_proc(message& message) {
 void status_bar::resize_spring_panels() {
   /*
   if (data_->spring_panels.size()) {
-    auto remaining_size = is_horizontal() ? size().width() - padding().left() - padding().right() : size().height() - padding().top() - padding().bottom();
+    auto remaining_size = is_horizontal() ? size().width - padding().left() - padding().right() : size().height - padding().top() - padding().bottom();
     for (auto status_bar_panel : data_->status_bar_panels) {
       if (status_bar_panel->style() != status_bar_panel_style::stretchable_separator && status_bar_panel->visible())
-        remaining_size -= is_horizontal() ? status_bar_panel->size().width() : status_bar_panel->size().height();
+        remaining_size -= is_horizontal() ? status_bar_panel->size().width : status_bar_panel->size().height;
     }
   
     auto stretchable_size = remaining_size / as<int32>(data_->spring_panels.size());
     for (auto stretchable_separator : data_->spring_panels) {
-      auto default_stretchable_size = (is_horizontal() ? image_size().width() : image_size().height()) / 2;
+      auto default_stretchable_size = (is_horizontal() ? image_size().width : image_size().height) / 2;
       if (stretchable_size > default_stretchable_size) {
         if (is_horizontal()) stretchable_separator->width(stretchable_size);
         else stretchable_separator->height(stretchable_size);

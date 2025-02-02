@@ -32,12 +32,12 @@ namespace {
       
       if (environment::os_version().is_windows()) {
         // Bottom right screen location
-        location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().bottom() - client_size().height() - 5});
+        location({screen::primary_screen().working_area().right() - client_size().width - 5, screen::primary_screen().working_area().bottom() - client_size().height - 5});
         opacity(0.90);
         
       } else if (environment::os_version().is_macos()) {
         // Top right screen location
-        location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().top() + 5});
+        location({screen::primary_screen().working_area().right() - client_size().width - 5, screen::primary_screen().working_area().top() + 5});
         // Set round rectangle form
         drawing::drawing_2d::graphics_path path;
         path.add_rounded_rectangle(client_rectangle(), 7);
@@ -46,7 +46,7 @@ namespace {
         opacity(0.95);
       } else { // if (environment::os_version().is_linux())
         // Top right screen location
-        location({screen::primary_screen().working_area().right() - client_size().width() - 5, screen::primary_screen().working_area().top() + 5});
+        location({screen::primary_screen().working_area().right() - client_size().width - 5, screen::primary_screen().working_area().top() + 5});
         // Set round rectangle form
         drawing::drawing_2d::graphics_path path;
         path.add_rounded_rectangle(client_rectangle(), 7);

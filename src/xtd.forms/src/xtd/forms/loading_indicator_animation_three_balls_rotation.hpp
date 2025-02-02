@@ -16,9 +16,9 @@ namespace xtd::forms {
       auto offset2 = enabled ? std::vector<xtd::drawing::size> {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}} : std::vector<xtd::drawing::size> {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}};
       auto offset3 = enabled ? std::vector<xtd::drawing::size> {{0, 0}, {0, 0}, {0, 0}, {-x2 / 2 + x1, y / 2}, {-x2 + x1, y}, {-x3, y / 2}} : std::vector<xtd::drawing::size> {{0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}, {0, 0}};
 
-      graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x1 + offset1[frame_].width(), y + offset1[frame_].height(), dot_size, dot_size);
-      graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x2 + offset2[frame_].width(), y + offset2[frame_].height(), dot_size, dot_size);
-      graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x3 + offset3[frame_].width(), y + offset3[frame_].height(), dot_size, dot_size);
+      graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x1 + offset1[frame_].width, y + offset1[frame_].height, dot_size, dot_size);
+      graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x2 + offset2[frame_].width, y + offset2[frame_].height, dot_size, dot_size);
+      graphics.fill_ellipse(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x3 + offset3[frame_].width, y + offset3[frame_].height, dot_size, dot_size);
     }
     
     void on_timer() override {

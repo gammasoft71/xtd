@@ -435,7 +435,7 @@ void link_label::on_paint(paint_event_args& e) {
           e.graphics().draw_string(text, font(), solid_brush(fore_color()), {text_location, size_text});
         else
           e.graphics().draw_string(text, font(), solid_brush(application::style_sheet().system_colors().gray_text()), {text_location, size_text});
-        text_location.x = text_location.x + size_text.width();
+        text_location.x = text_location.x + size_text.width;
         line_index += text.length();
       }
       
@@ -446,7 +446,7 @@ void link_label::on_paint(paint_event_args& e) {
           e.graphics().draw_string(text, link_font(), solid_brush(color), {text_location, size_text});
         else
           e.graphics().draw_string(text, link_font(), solid_brush(application::style_sheet().system_colors().gray_text()), {text_location, size_text});
-        text_location.x = text_location.x + size_text.width();
+        text_location.x = text_location.x + size_text.width;
         line_index = link.start() - index + text.length();
       }
     }
@@ -494,15 +494,15 @@ xtd::drawing::point link_label::get_text_location(size_t line_number) const noex
     auto text_location = point {};
     auto text_size = drawing::size::ceiling(screen::create_graphics().measure_string(line, link_font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
     switch (text_align()) {
-      case content_alignment::top_left: text_location = point(0, text_size.height() * as<int32>(line_number)); break;
-      case content_alignment::top_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, text_size.height() * as<int32>(line_number)); break;
-      case content_alignment::top_right: text_location = point(client_rectangle().width() - text_size.width(), text_size.height() * as<int32>(line_number)); break;
-      case content_alignment::middle_left: text_location = point(0, client_rectangle().height() / 2 - text_size.height() / 2 + text_size.height() * as<int32>(line_number)); break;
-      case content_alignment::middle_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, client_rectangle().height() / 2 - text_size.height() / 2 + text_size.height() * as<int32>(line_number)); break;
-      case content_alignment::middle_right: text_location = point(client_rectangle().width() - text_size.width(), client_rectangle().height() / 2 - text_size.height() / 2 + text_size.height() * as<int32>(line_number)); break;
-      case content_alignment::bottom_left: text_location = point(0, client_rectangle().height() - text_size.height() + text_size.height() * as<int32>(line_number)); break;
-      case content_alignment::bottom_center: text_location = point(client_rectangle().width() / 2 - text_size.width() / 2, client_rectangle().height() - text_size.height() + text_size.height() * as<int32>(line_number)); break;
-      case content_alignment::bottom_right: text_location = point(client_rectangle().width() - text_size.width(), client_rectangle().height() - text_size.height() + text_size.height() * as<int32>(line_number)); break;
+      case content_alignment::top_left: text_location = point(0, text_size.height * as<int32>(line_number)); break;
+      case content_alignment::top_center: text_location = point(client_rectangle().width() / 2 - text_size.width / 2, text_size.height * as<int32>(line_number)); break;
+      case content_alignment::top_right: text_location = point(client_rectangle().width() - text_size.width, text_size.height * as<int32>(line_number)); break;
+      case content_alignment::middle_left: text_location = point(0, client_rectangle().height() / 2 - text_size.height / 2 + text_size.height * as<int32>(line_number)); break;
+      case content_alignment::middle_center: text_location = point(client_rectangle().width() / 2 - text_size.width / 2, client_rectangle().height() / 2 - text_size.height / 2 + text_size.height * as<int32>(line_number)); break;
+      case content_alignment::middle_right: text_location = point(client_rectangle().width() - text_size.width, client_rectangle().height() / 2 - text_size.height / 2 + text_size.height * as<int32>(line_number)); break;
+      case content_alignment::bottom_left: text_location = point(0, client_rectangle().height() - text_size.height + text_size.height * as<int32>(line_number)); break;
+      case content_alignment::bottom_center: text_location = point(client_rectangle().width() / 2 - text_size.width / 2, client_rectangle().height() - text_size.height + text_size.height * as<int32>(line_number)); break;
+      case content_alignment::bottom_right: text_location = point(client_rectangle().width() - text_size.width, client_rectangle().height() - text_size.height + text_size.height * as<int32>(line_number)); break;
       default: break;
     }
     if (line_number == line_index) return text_location;
@@ -525,7 +525,7 @@ std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text
         text = line.substring(line_index, link.start() - line_index);
         size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
         text_rects.push_back({{text_location, size_text}, false});
-        text_location.x = text_location.x + size_text.width();
+        text_location.x = text_location.x + size_text.width;
         line_index += text.length();
       }
       
@@ -533,7 +533,7 @@ std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text
         text = line.substring(link.start() - index, link.length() - link.start() - index);
         size_text = drawing::size::ceiling(screen::create_graphics().measure_string(text, link_font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces)));
         text_rects.push_back({{text_location, size_text}, true});
-        text_location.x = text_location.x + size_text.width();
+        text_location.x = text_location.x + size_text.width;
         line_index = link.start() - index + text.length();
       }
     }

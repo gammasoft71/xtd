@@ -31,7 +31,7 @@ namespace xtd::forms::tests {
       assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), radio_button.back_color());
       assert::are_equal(drawing::image::empty, radio_button.background_image());
       assert::are_equal(image_layout::tile, radio_button.background_image_layout());
-      assert::are_equal(radio_button.default_size().height(), radio_button.bottom());
+      assert::are_equal(radio_button.default_size().height, radio_button.bottom());
       assert::are_equal(drawing::rectangle({0, 0}, radio_button.default_size()), radio_button.bounds());
       assert::is_false(radio_button.can_focus());
       assert::is_true(radio_button.can_raise_events());
@@ -57,7 +57,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::system_fonts::default_font(), radio_button.font());
       assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), radio_button.fore_color());
       assert::is_zero(radio_button.handle());
-      assert::are_equal(radio_button.default_size().height(), radio_button.height());
+      assert::are_equal(radio_button.default_size().height, radio_button.height());
       assert::is_false(radio_button.invoke_required());
       assert::is_false(radio_button.is_handle_created());
       assert::is_zero(radio_button.left());
@@ -73,7 +73,7 @@ namespace xtd::forms::tests {
       assert::is_null(radio_button.parent());
       assert::are_equal("xtd", radio_button.product_name());
       assert::is_not_zero(radio_button.region().handle());
-      assert::are_equal(radio_button.default_size().width(), radio_button.right());
+      assert::are_equal(radio_button.default_size().width, radio_button.right());
       assert::are_equal(radio_button.default_size(), radio_button.size());
       assert::is_empty(radio_button.style_sheet().theme().name());
       assert::is_true(radio_button.tab_stop());
@@ -83,7 +83,7 @@ namespace xtd::forms::tests {
       assert::is_zero(radio_button.top());
       assert::is_null(radio_button.top_level_control());
       assert::is_true(radio_button.visible());
-      assert::are_equal(radio_button.default_size().width(), radio_button.width());
+      assert::are_equal(radio_button.default_size().width, radio_button.width());
       assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls());
       assert::are_equal(keys::none, forms::control::modifier_keys());
       assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons());

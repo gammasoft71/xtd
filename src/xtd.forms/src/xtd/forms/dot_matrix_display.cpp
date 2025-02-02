@@ -6,7 +6,7 @@ using namespace xtd::forms;
 
 struct dot_matrix_display::data {
   drawing::size matrix_size = {7, 7};
-  dots_collection dots = dots_collection(matrix_size.width(), std::vector<bool>(matrix_size.height(), false));
+  dots_collection dots = dots_collection(matrix_size.width, std::vector<bool>(matrix_size.height, false));
   bool show_back_dot = true;
   std::optional<drawing::color> back_dot_color;
   double back_dot_opacity = 0.95;
@@ -69,20 +69,20 @@ dot_matrix_display& dot_matrix_display::dots(const dots_collection& dots) {
 }
 
 int32 dot_matrix_display::matrix_height() const noexcept {
-  return data_->matrix_size.height();
+  return data_->matrix_size.height;
 }
 
 dot_matrix_display& dot_matrix_display::matrix_height(int32 value) {
-  matrix_size({data_->matrix_size.width(), value});
+  matrix_size({data_->matrix_size.width, value});
   return *this;
 }
 
 int32 dot_matrix_display::matrix_width() const noexcept {
-  return data_->matrix_size.width();
+  return data_->matrix_size.width;
 }
 
 dot_matrix_display& dot_matrix_display::matrix_width(int32 value) {
-  matrix_size({value, data_->matrix_size.height()});
+  matrix_size({value, data_->matrix_size.height});
   return *this;
 }
 
@@ -93,7 +93,7 @@ const drawing::size& dot_matrix_display::matrix_size() const noexcept {
 dot_matrix_display& dot_matrix_display::matrix_size(const drawing::size& value) {
   if (data_->matrix_size == value) return *this;
   data_->matrix_size = value;
-  data_->dots = dots_collection(data_->matrix_size.height(), std::vector<bool>(data_->matrix_size.width(), false));
+  data_->dots = dots_collection(data_->matrix_size.height, std::vector<bool>(data_->matrix_size.width, false));
   invalidate();
   return *this;
 }
@@ -110,7 +110,7 @@ dot_matrix_display& dot_matrix_display::show_back_dot(bool value) {
 }
 
 int32 dot_matrix_display::thickness() const noexcept {
-  return data_->thickness.value_or(size().height() < (data_->matrix_size.height() * 2) ? 1 : (size().height() - data_->matrix_size.height()) / data_->matrix_size.height());
+  return data_->thickness.value_or(size().height < (data_->matrix_size.height * 2) ? 1 : (size().height - data_->matrix_size.height) / data_->matrix_size.height);
 }
 
 dot_matrix_display& dot_matrix_display::thickness(int32 value) {

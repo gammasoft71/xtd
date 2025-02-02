@@ -181,7 +181,7 @@ intptr image::handle() const noexcept {
 }
 
 int32 image::height() const noexcept {
-  return data_->size_.height();
+  return data_->size_.height;
 }
 
 float image::horizontal_resolution() const noexcept {
@@ -233,7 +233,7 @@ float image::vertical_resolution() const noexcept {
 }
 
 int32 image::width() const noexcept {
-  return data_->size_.width();
+  return data_->size_.width;
 }
 
 image image::clone() const {
@@ -293,7 +293,7 @@ xtd::byte* image::get_alpha() {
 }
 
 xtd::drawing::rectangle_f image::get_bounds(graphics_unit page_unit) const noexcept {
-  return rectangle_f {0.0f, 0.0f, graphics::to_page_unit(as<float>(data_->size_.width()), page_unit, 1.0f, native::image::screen_dpi()), graphics::to_page_unit(as<float>(data_->size_.height()), page_unit, 1.0f, native::image::screen_dpi())};
+  return rectangle_f {0.0f, 0.0f, graphics::to_page_unit(as<float>(data_->size_.width), page_unit, 1.0f, native::image::screen_dpi()), graphics::to_page_unit(as<float>(data_->size_.height), page_unit, 1.0f, native::image::screen_dpi())};
 }
 
 xtd::drawing::imaging::encoder_parameters image::get_encoder_parameter_list(xtd::guid encoder) const noexcept {

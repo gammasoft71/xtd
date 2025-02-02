@@ -54,7 +54,7 @@ size_f size_f::operator +(const size_f& size) const noexcept {
 }
 
 size_f size_f::operator +(const size& size) const noexcept {
-  return {width_ + as<float>(size.width()), height_ + as<float>(size.height())};
+  return {width_ + as<float>(size.width), height_ + as<float>(size.height)};
 }
 
 size_f& size_f::operator +=(const size_f& size) noexcept {
@@ -64,8 +64,8 @@ size_f& size_f::operator +=(const size_f& size) noexcept {
 }
 
 size_f& size_f::operator +=(const size& size) noexcept {
-  width_ += as<float>(size.width());
-  height_ += as<float>(size.height());
+  width_ += as<float>(size.width);
+  height_ += as<float>(size.height);
   return *this;
 }
 
@@ -74,7 +74,7 @@ size_f size_f::operator -(const size_f& size) const noexcept {
 }
 
 size_f size_f::operator -(const size& size) const noexcept {
-  return {width_ - as<float>(size.width()), height_ - as<float>(size.height())};
+  return {width_ - as<float>(size.width), height_ - as<float>(size.height)};
 }
 
 size_f& size_f::operator -=(const size_f& size) noexcept {
@@ -84,7 +84,7 @@ size_f& size_f::operator -=(const size_f& size) noexcept {
 }
 
 size_f& size_f::operator -=(const size& size) noexcept {
-  width_ -= as<float>(size.width());
-  height_ -= as<float>(size.height());
+  width_ -= as<float>(size.width);
+  height_ -= as<float>(size.height);
   return *this;
 }

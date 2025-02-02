@@ -235,7 +235,7 @@ xtd::uptr<xtd::object> button::clone() const {
 
 drawing::size button::measure_control() const noexcept {
   auto size = button_base::measure_control();
-  if (size.height() < default_size().height()) size.height(default_size().height());
+  if (size.height < default_size().height) size.height = default_size().height;
   return size;
 }
 

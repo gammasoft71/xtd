@@ -93,7 +93,7 @@ void scrollable_control::on_layout(const event_args& e) {
       if (item.get().visible())
         data_->display_rectangle = drawing::rectangle::make_union(data_->display_rectangle, item.get().bounds());
     }
-    data_->display_rectangle.width(data_->display_rectangle.width() + data_->auto_scroll_margin.width());
-    data_->display_rectangle.height(data_->display_rectangle.height() + data_->auto_scroll_margin.height());
+    data_->display_rectangle.width(data_->display_rectangle.width() + data_->auto_scroll_margin.width);
+    data_->display_rectangle.height(data_->display_rectangle.height() + data_->auto_scroll_margin.height);
   }
 }

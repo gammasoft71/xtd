@@ -29,7 +29,7 @@ namespace xtd {
             control_handler::create<wxTimePickerCtrl>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxDefaultDateTime, wxPoint(create_params.location.x, create_params.location.y), wxDefaultSize, style_to_wx_style_time_picker(create_params.style, create_params.ex_style));
           else
             control_handler::create<wxDatePickerCtrl>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxDefaultDateTime, wxPoint(create_params.location.x, create_params.location.y), wxDefaultSize, style_to_wx_style_date_picker(create_params.style, create_params.ex_style));
-          SetSize(create_params.size.width(), create_params.size.height());
+          SetSize(create_params.size.width, create_params.size.height);
           #if defined(__WXMSW__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {
             control()->SetBackgroundColour(wxColour(xtd::drawing::system_colors::window().r(), xtd::drawing::system_colors::window().g(), xtd::drawing::system_colors::window().b(), xtd::drawing::system_colors::window().a()));

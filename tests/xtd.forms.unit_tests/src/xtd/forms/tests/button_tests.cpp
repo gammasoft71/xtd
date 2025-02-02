@@ -31,7 +31,7 @@ namespace xtd::forms::tests {
       assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), button.back_color());
       assert::are_equal(drawing::image::empty, button.background_image());
       assert::are_equal(image_layout::tile, button.background_image_layout());
-      assert::are_equal(button.default_size().height(), button.bottom());
+      assert::are_equal(button.default_size().height, button.bottom());
       assert::are_equal(drawing::rectangle({0, 0}, button.default_size()), button.bounds());
       assert::is_false(button.can_focus());
       assert::is_true(button.can_raise_events());
@@ -57,7 +57,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::system_fonts::default_font(), button.font());
       assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), button.fore_color());
       assert::is_zero(button.handle());
-      assert::are_equal(button.default_size().height(), button.height());
+      assert::are_equal(button.default_size().height, button.height());
       assert::is_false(button.invoke_required());
       assert::is_false(button.is_handle_created());
       assert::is_zero(button.left());
@@ -73,7 +73,7 @@ namespace xtd::forms::tests {
       assert::is_null(button.parent());
       assert::are_equal("xtd", button.product_name());
       assert::is_not_zero(button.region().handle());
-      assert::are_equal(button.default_size().width(), button.right());
+      assert::are_equal(button.default_size().width, button.right());
       assert::are_equal(button.default_size(), button.size());
       assert::is_empty(button.style_sheet().theme().name());
       assert::is_true(button.tab_stop());
@@ -83,7 +83,7 @@ namespace xtd::forms::tests {
       assert::is_zero(button.top());
       assert::is_null(button.top_level_control());
       assert::is_true(button.visible());
-      assert::are_equal(button.default_size().width(), button.width());
+      assert::are_equal(button.default_size().width, button.width());
       assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls());
       assert::are_equal(keys::none, forms::control::modifier_keys());
       assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons());

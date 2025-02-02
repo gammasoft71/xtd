@@ -197,7 +197,7 @@ xtd::forms::image_list& tool_bar::image_list() {
 xtd::forms::tool_bar& tool_bar::image_list(const xtd::forms::image_list& value) {
   if (data_->image_list == value) return *this;
   data_->image_list = value;
-  height(data_->image_list.image_size().height() + 8);
+  height(data_->image_list.image_size().height + 8);
   return *this;
 }
 
@@ -594,8 +594,8 @@ void tool_bar::fill() {
       button_control->pushed(button_item.pushed());
       button_control->visible(button_item.visible());
       if (button_item.style() == tool_bar_button_style::separator || button_item.style() == tool_bar_button_style::stretchable_separator) {
-        button_control->height(image_size().height() / 2);
-        button_control->width(image_size().width() / 2);
+        button_control->height(image_size().height / 2);
+        button_control->width(image_size().width / 2);
       }
       if (button_item.style() == tool_bar_button_style::stretchable_separator)
         data_->stretchable_separators.push_back(button_control);
@@ -656,15 +656,15 @@ void tool_bar::wnd_proc(message& message) {
 
 void tool_bar::resize_stretchable_separtors() {
   if (data_->stretchable_separators.size()) {
-    auto remaining_size = is_horizontal() ? size().width() - padding().left() - padding().right() : size().height() - padding().top() - padding().bottom();
+    auto remaining_size = is_horizontal() ? size().width - padding().left() - padding().right() : size().height - padding().top() - padding().bottom();
     for (auto tool_bar_button : data_->tool_bar_buttons) {
       if (tool_bar_button->style() != tool_bar_button_style::stretchable_separator && tool_bar_button->visible())
-        remaining_size -= is_horizontal() ? tool_bar_button->size().width() : tool_bar_button->size().height();
+        remaining_size -= is_horizontal() ? tool_bar_button->size().width : tool_bar_button->size().height;
     }
     
     auto stretchable_size = remaining_size / as<int32>(data_->stretchable_separators.size());
     for (auto stretchable_separator : data_->stretchable_separators) {
-      auto default_stretchable_size = (is_horizontal() ? image_size().width() : image_size().height()) / 2;
+      auto default_stretchable_size = (is_horizontal() ? image_size().width : image_size().height) / 2;
       if (stretchable_size > default_stretchable_size) {
         if (is_horizontal()) stretchable_separator->width(stretchable_size);
         else stretchable_separator->height(stretchable_size);

@@ -8,34 +8,18 @@ using namespace xtd::drawing;
 
 const drawing::size drawing::size::empty;
 
-drawing::size::size(const point& point) noexcept : width_(point.x), height_(point.y) {
+drawing::size::size(const point& point) noexcept : height(point.y), width(point.x) {
 }
 
-drawing::size::size(int32 width, int32 height) noexcept : width_(width), height_(height) {
+drawing::size::size(int32 width, int32 height) noexcept : height(height), width(width) {
 }
 
 drawing::size::operator size_f() const noexcept {
-  return size_f(static_cast<float>(width_), static_cast<float>(height_));
-}
-
-int32 drawing::size::height() const noexcept {
-  return height_;
-}
-
-void drawing::size::height(int32 value) noexcept {
-  height_ = value;
+  return size_f(static_cast<float>(width), static_cast<float>(height));
 }
 
 bool drawing::size::is_empty() const noexcept {
   return *this == size::empty;
-}
-
-int32 drawing::size::width() const noexcept {
-  return width_;
-}
-
-void drawing::size::width(int32 value) noexcept {
-  width_ = value;
 }
 
 drawing::size drawing::size::add(const drawing::size& size1, const drawing::size& size2) noexcept {
@@ -47,7 +31,7 @@ drawing::size drawing::size::ceiling(const size_f& value) noexcept {
 }
 
 bool drawing::size::equals(const xtd::drawing::size& value) const noexcept {
-  return width_ == value.width_ && height_ == value.height_;
+  return width == value.width && height == value.height;
 }
 
 drawing::size drawing::size::round(const size_f& value) noexcept {
@@ -63,25 +47,25 @@ drawing::size drawing::size::subtract(const drawing::size& size1, const drawing:
 }
 
 xtd::string drawing::size::to_string() const noexcept {
-  return string::format("{{width={}, height={}}}", width(), height());
+  return string::format("{{width={}, height={}}}", width, height);
 }
 
 drawing::size drawing::size::operator +(const drawing::size& size) const noexcept {
-  return {width_ + size.width_, height_ + size.height_};
+  return {width + size.width, height + size.height};
 }
 
 drawing::size& drawing::size::operator +=(const drawing::size& size) noexcept {
-  width_ += size.width_;
-  height_ += size.height_;
+  width += size.width;
+  height += size.height;
   return *this;
 }
 
 drawing::size drawing::size::operator -(const drawing::size& size) const noexcept {
-  return {width_ - size.width_, height_ - size.height_};
+  return {width - size.width, height - size.height};
 }
 
 drawing::size& drawing::size::operator -=(const drawing::size& size) noexcept {
-  width_ -= size.width_;
-  height_ -= size.height_;
+  width -= size.width;
+  height -= size.height;
   return *this;
 }

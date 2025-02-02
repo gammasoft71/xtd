@@ -185,7 +185,7 @@ namespace xtd {
       public:
         explicit wx_form(const xtd::forms::native::create_params& create_params) {
           wxPoint location = wxPoint(create_params.location.x, create_params.location.y);
-          wxSize size = wxSize(create_params.size.width(), create_params.size.height());
+          wxSize size = wxSize(create_params.size.width, create_params.size.height);
           if (size.GetWidth() > -1 && size.GetWidth() < min_width) size.SetWidth(min_width);
           if (size.GetHeight() > -1 && size.GetHeight() < min_height) size.SetHeight(min_height);
           if ((create_params.ex_style & WS_EX_MODALWINDOW) == WS_EX_MODALWINDOW || (create_params.ex_style & WS_EX_DLGMODALFRAME) == WS_EX_DLGMODALFRAME) control_handler::create<wxFormDialog>(create_params.parent ? (reinterpret_cast<control_handler*>(create_params.parent)->control()) : nullptr, wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), location, size, form_style_to_wx_style(create_params.style, create_params.ex_style, create_params.class_style, create_params.parent));
