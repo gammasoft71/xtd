@@ -26,7 +26,7 @@ namespace xtd::tests {
       assert::is_true(e.has_flag(enum_object_with_unregistered_enum_flags_test::none));
       assert::is_false(e.has_flag(enum_object_with_unregistered_enum_flags_test::one));
       assert::are_equal(enum_object_with_unregistered_enum_flags_test::none, e);
-      assert::are_equal(enum_object_with_unregistered_enum_flags_test::none, e.value());
+      assert::are_equal(enum_object_with_unregistered_enum_flags_test::none, e.value);
       assert::are_equal(as<byte>(0), e.to_byte());
       assert::are_equal(as<int16>(0), e.to_int16());
       assert::are_equal(as<int32>(0), e.to_int32());
@@ -44,7 +44,7 @@ namespace xtd::tests {
       assert::is_true(e.has_flag(enum_object_with_unregistered_enum_flags_test::one));
       assert::is_false(e.has_flag(enum_object_with_unregistered_enum_flags_test::two));
       assert::are_equal(enum_object_with_unregistered_enum_flags_test::one, e);
-      assert::are_equal(enum_object_with_unregistered_enum_flags_test::one, e.value());
+      assert::are_equal(enum_object_with_unregistered_enum_flags_test::one, e.value);
       assert::are_equal(as<byte>(1), e.to_byte());
       assert::are_equal(as<int16>(1), e.to_int16());
       assert::are_equal(as<int32>(1), e.to_int32());
@@ -62,7 +62,7 @@ namespace xtd::tests {
       assert::is_true(e.has_flag(enum_object_with_unregistered_enum_flags_test::two));
       assert::is_false(e.has_flag(enum_object_with_unregistered_enum_flags_test::one));
       assert::are_equal(enum_object_with_unregistered_enum_flags_test::two, e);
-      assert::are_equal(enum_object_with_unregistered_enum_flags_test::two, e.value());
+      assert::are_equal(enum_object_with_unregistered_enum_flags_test::two, e.value);
       assert::are_equal(as<byte>(2), e.to_byte());
       assert::are_equal(as<int16>(2), e.to_int16());
       assert::are_equal(as<int32>(2), e.to_int32());
@@ -80,7 +80,7 @@ namespace xtd::tests {
       assert::is_true(e.has_flag(enum_object_with_unregistered_enum_flags_test::three));
       assert::is_false(e.has_flag(enum_object_with_unregistered_enum_flags_test::four));
       assert::are_equal(enum_object_with_unregistered_enum_flags_test::three, e);
-      assert::are_equal(enum_object_with_unregistered_enum_flags_test::three, e.value());
+      assert::are_equal(enum_object_with_unregistered_enum_flags_test::three, e.value);
       assert::are_equal(as<byte>(4), e.to_byte());
       assert::are_equal(as<int16>(4), e.to_int16());
       assert::are_equal(as<int32>(4), e.to_int32());
@@ -98,7 +98,7 @@ namespace xtd::tests {
       assert::is_true(e.has_flag(enum_object_with_unregistered_enum_flags_test::four));
       assert::is_false(e.has_flag(enum_object_with_unregistered_enum_flags_test::one));
       assert::are_equal(enum_object_with_unregistered_enum_flags_test::four, e);
-      assert::are_equal(enum_object_with_unregistered_enum_flags_test::four, e.value());
+      assert::are_equal(enum_object_with_unregistered_enum_flags_test::four, e.value);
       assert::are_equal(as<byte>(8), e.to_byte());
       assert::are_equal(as<int16>(8), e.to_int16());
       assert::are_equal(as<int32>(8), e.to_int32());
@@ -117,7 +117,7 @@ namespace xtd::tests {
       assert::is_true(e.has_flag(enum_object_with_unregistered_enum_flags_test::two));
       assert::is_false(e.has_flag(enum_object_with_unregistered_enum_flags_test::four));
       assert::are_equal(enum_object_with_unregistered_enum_flags_test::one | enum_object_with_unregistered_enum_flags_test::two, e);
-      assert::are_equal(enum_object_with_unregistered_enum_flags_test::one | enum_object_with_unregistered_enum_flags_test::two, e.value());
+      assert::are_equal(enum_object_with_unregistered_enum_flags_test::one | enum_object_with_unregistered_enum_flags_test::two, e.value);
       assert::are_equal(as<byte>(3), e.to_byte());
       assert::are_equal(as<int16>(3), e.to_int16());
       assert::are_equal(as<int32>(3), e.to_int32());
@@ -136,7 +136,7 @@ namespace xtd::tests {
       assert::is_true(e.has_flag(enum_object_with_unregistered_enum_flags_test::four));
       assert::is_false(e.has_flag(enum_object_with_unregistered_enum_flags_test::one));
       assert::are_equal(enum_object_with_unregistered_enum_flags_test::three | enum_object_with_unregistered_enum_flags_test::four, e);
-      assert::are_equal(enum_object_with_unregistered_enum_flags_test::three | enum_object_with_unregistered_enum_flags_test::four, e.value());
+      assert::are_equal(enum_object_with_unregistered_enum_flags_test::three | enum_object_with_unregistered_enum_flags_test::four, e.value);
       assert::are_equal(as<byte>(12), e.to_byte());
       assert::are_equal(as<int16>(12), e.to_int16());
       assert::are_equal(as<int32>(12), e.to_int32());
@@ -154,7 +154,7 @@ namespace xtd::tests {
       assert::is_true(e.has_flag(as<enum_object_with_unregistered_enum_flags_test>(16)));
       assert::is_false(e.has_flag(enum_object_with_unregistered_enum_flags_test::two));
       assert::are_equal(as<enum_object_with_unregistered_enum_flags_test>(16), e);
-      assert::are_equal(as<enum_object_with_unregistered_enum_flags_test>(16), e.value());
+      assert::are_equal(as<enum_object_with_unregistered_enum_flags_test>(16), e.value);
       assert::are_equal(as<byte>(16), e.to_byte());
       assert::are_equal(as<int16>(16), e.to_int16());
       assert::are_equal(as<int32>(16), e.to_int32());

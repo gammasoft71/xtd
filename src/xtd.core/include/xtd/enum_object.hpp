@@ -39,12 +39,14 @@ namespace xtd {
   /// The following code show how to use xtd::enum_object class for an enum flags.
   /// @include enum_class_flags.cpp
   template<class enum_t = std::nullptr_t>
-  class enum_object : public xtd::object, public xtd::icomparable<enum_object<enum_t>>, public xtd::iequatable<enum_object<enum_t>>, public xtd::iformatable {
-  public:
+  struct enum_object : xtd::object, xtd::icomparable<enum_object<enum_t>>, xtd::iequatable<enum_object<enum_t>>, xtd::iformatable {
     /// @name Public Aliases
     
     /// @{
+    /// @brief Represents the enumeration type.
     using enum_type = enum_t;
+    /// @brief Represents the enumeration type.
+    using value_type = enum_t;
     /// @}
     
     /// @name Public Constructors
@@ -54,22 +56,22 @@ namespace xtd {
     enum_object() noexcept = default;
     /// @brief Initializes a new instance of the xtd::enum_object class with specified value.
     /// @param value Value to set to this instance.
-    explicit enum_object(enum_type value) : value_(value) {}
+    explicit enum_object(enum_type value) : value(value) {}
     /// @}
     
     /// @cond
-    explicit enum_object(xtd::byte value) : value_(to_enum(value)) {}
-    explicit enum_object(sbyte value) : value_(to_enum(value)) {}
-    explicit enum_object(int16 value) : value_(to_enum(value)) {}
-    explicit enum_object(int32 value) : value_(to_enum(value)) {}
-    explicit enum_object(int64 value) : value_(to_enum(value)) {}
-    explicit enum_object(uint16 value) : value_(to_enum(value)) {}
-    explicit enum_object(uint32 value) : value_(to_enum(value)) {}
-    explicit enum_object(uint64 value) : value_(to_enum(value)) {}
+    explicit enum_object(xtd::byte value) : value(to_enum(value)) {}
+    explicit enum_object(sbyte value) : value(to_enum(value)) {}
+    explicit enum_object(int16 value) : value(to_enum(value)) {}
+    explicit enum_object(int32 value) : value(to_enum(value)) {}
+    explicit enum_object(int64 value) : value(to_enum(value)) {}
+    explicit enum_object(uint16 value) : value(to_enum(value)) {}
+    explicit enum_object(uint32 value) : value(to_enum(value)) {}
+    explicit enum_object(uint64 value) : value(to_enum(value)) {}
     enum_object(enum_object&&) noexcept = default;
     enum_object(const enum_object&) noexcept = default;
     enum_object& operator =(const enum_object&) noexcept = default;
-    operator enum_type() const noexcept {return value_;}
+    operator enum_type() const noexcept {return value;}
     /// @endcond
     
     /// @name Public Properties
@@ -79,66 +81,81 @@ namespace xtd {
     /// @param flag An enumeration value.
     /// @return `true` if the bit field or bit fields that are set in flag are also set in the current instance; otherwise, `false`.
     /// @remarks The has_flag method returns the result of the following bool expression : this_instance And flag = flag
-    bool has_flag(enum_type flag) const noexcept {return (to_int(value_) & to_int(flag)) == to_int(flag);}
+    bool has_flag(enum_type flag) const noexcept {return (to_int(value) & to_int(flag)) == to_int(flag);}
     
-    /// @brief Gets the value of the enum.
-    /// @return The value of the enum.
-    enum_type value() const noexcept {return value_;}
-    /// @brief Sets the value of the enum.
+    /// @brief Gets or sets the value of the enum.
     /// @param value The value of the enum.
-    enum_object& value(enum_type value) {
-      value_ = value;
-      return *this;
-    }
+    enum_type value {};
     /// @}
     
     /// @name Public Methods
     
     /// @{
     int32 compare_to(const enum_object& value) const noexcept override {
-      if (to_int(value_) == to_int(value.value_)) return 0;
-      if (to_int(value_) < to_int(value.value_)) return -1;
+      if (to_int(this->value) == to_int(value.value)) return 0;
+      if (to_int(this->value) < to_int(value.value)) return -1;
       return 1;
     }
     
+    using object::equals;
+    /// @brief Determines whether the specified object is equal to the current object.
+    /// @param obj The object to compare with the current object.
+    /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+    bool equals(const enum_object& value) const noexcept override {return this->value == value.value;}
+    /// @brief Indicates whether the current object is equal to another object of the same type.
+    /// @param obj An object to compare with this object.
+    /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
+    bool equals(enum_type value) const noexcept {return this->value == value;}
+    /// @brief Indicates whether the current object is equal to another object with defferent type.
+    /// @param obj An object to compare with this object.
+    /// @return Always return `false`.
+    template<class attribute_t>
+    bool equals(attribute_t value) const noexcept {return false;}
+    
+    /// @brief Serves as a hash function for a particular type.
+    /// @return size_t A hash code for the current object.
+    xtd::size get_hash_code() const noexcept override {return hash_code::combine(value);}
+
     /// @brief Converts this instance to byte.
     /// @return A new xtd::byte object converted from this instance.
-    xtd::byte to_byte() const noexcept {return static_cast<xtd::byte>(value_);}
+    xtd::byte to_byte() const noexcept {return static_cast<xtd::byte>(value);}
     
     /// @brief Converts this instance to int16.
     /// @return A new to_int16 object converted from this instance.
-    int16 to_int16() const noexcept {return static_cast<int16>(value_);}
+    int16 to_int16() const noexcept {return static_cast<int16>(value);}
     
     /// @brief Converts this instance to int32.
     /// @return A new to_int32 object converted from this instance.
-    int32 to_int32() const noexcept {return static_cast<int32>(value_);}
+    int32 to_int32() const noexcept {return static_cast<int32>(value);}
     
     /// @brief Converts this instance to int64.
     /// @return A new to_int64 object converted from this instance.
-    int64 to_int64() const noexcept {return static_cast<int64>(value_);}
+    int64 to_int64() const noexcept {return static_cast<int64>(value);}
     
     /// @brief Converts this instance to signed byte.
     /// @return A new sbyte object converted from this instance.
-    sbyte to_sbyte() const noexcept {return static_cast<sbyte>(value_);}
+    sbyte to_sbyte() const noexcept {return static_cast<sbyte>(value);}
     
     /// @brief Converts this instance to unsigned int16.
     /// @return A new to_uint16 object converted from this instance.
-    uint16 to_uint16() const noexcept {return static_cast<uint16>(value_);}
+    uint16 to_uint16() const noexcept {return static_cast<uint16>(value);}
     
     /// @brief Converts this instance to unsigned int32.
     /// @return A new to_uint32 object converted from this instance.
-    uint32 to_uint32() const noexcept {return static_cast<uint32>(value_);}
+    uint32 to_uint32() const noexcept {return static_cast<uint32>(value);}
     
     /// @brief Converts this instance to unsigned int64.
     /// @return A new to_uint64 object converted from this instance.
-    uint64 to_uint64() const noexcept {return static_cast<uint64>(value_);}
+    uint64 to_uint64() const noexcept {return static_cast<uint64>(value);}
     
+    /// @brief Returns a xtd::string that represents the current object.
+    /// @return A string that represents the current object.
     xtd::string to_string() const noexcept override {
       init();
       if (attribute() == xtd::enum_attribute::flags) return to_string_flags();
       
-      auto iterator = std::find_if(entries().begin(), entries().end(), [&](auto value)->bool {return value.first == value_;});
-      if (iterator == entries().end()) return string::format("{}", to_int(value_));
+      auto iterator = std::find_if(entries().begin(), entries().end(), [&](auto value)->bool {return value.first == this->value;});
+      if (iterator == entries().end()) return string::format("{}", to_int(value));
       
       return iterator->second;
     }
@@ -180,15 +197,19 @@ namespace xtd {
     /// ```
     xtd::string to_string(const xtd::string& format, const std::locale& loc) const override;
     /// @}
+
+    /// @name Public Static Methods
     
-    /// @cond
-    using object::equals;
-    bool equals(const enum_object& value) const noexcept override {return value_ == value.value_;}
-    bool equals(enum_type value) const noexcept {return value_ == value;}
-    template<class attribute_t>
-    bool equals(attribute_t value) const noexcept {return false;}
-    
+    /// @{
+    /// @{
+    /// @brief Converts the string to its `enum_type` equivalent.
+    /// @param value A string containing a `enum_type` to convert.
+    /// @return A `enum_type` equivalent to the native value contained in value.
     static enum_type parse(const xtd::string& str) {return parse(str, false);}
+    /// @brief Converts the string to its `enum_type` equivalent with a specified boolean to ignore case.
+    /// @param value A string containing a `enum_type` to convert.
+    /// @param ignore_case 'true` to ingore case; otherwise `false`.
+    /// @return A `enum_type` equivalent to the native value contained in value.
     static enum_type parse(const xtd::string& str, bool ignore_case) {
       enum_object<enum_type>().init();
       if (enum_object<enum_type>().attribute() == xtd::enum_attribute::flags) return parse_flags(str, ignore_case);
@@ -200,12 +221,22 @@ namespace xtd {
       
       return to_enum(xtd::parse<int64>(str));
     }
+    /// @}
+
+  private:
+    friend struct enum_object<std::nullptr_t>;
+    
+    xtd::string get_name() const noexcept {
+      auto iterator = std::find_if(entries().begin(), entries().end(), [&](auto value)->bool {return value.first == this->value;});
+      if (iterator == entries().end()) return xtd::string::format("{}", to_int(value));
+      return iterator->second;
+    }
     
     static enum_type parse_flags(const xtd::string& value, bool ignore_case) {
       std::vector<xtd::string> values = value.split(',');
       for (xtd::string& str : values)
         str = str.trim(' ');
-        
+      
       if (values.size() == 1) {
         for (auto item : enum_object<enum_type>().entries()) {
           if (xtd::string::compare(value, item.second, ignore_case) == 0)
@@ -230,26 +261,16 @@ namespace xtd {
       
       return to_enum(result);
     }
-    /// @endcond
-    
-  private:
-    friend class enum_object<std::nullptr_t>;
-    
-    xtd::string get_name() const noexcept {
-      auto iterator = std::find_if(entries().begin(), entries().end(), [&](auto value)->bool {return value.first == value_;});
-      if (iterator == entries().end()) return xtd::string::format("{}", to_int(value_));
-      return iterator->second;
-    }
-    
+
     xtd::string to_string_flags() const noexcept {
-      auto iterator = std::find_if(entries().begin(), entries().end(), [&](auto value)->bool {return value.first == value_;});
-      if (to_int(value_) == 0 && iterator == entries().end()) return "0";
+      auto iterator = std::find_if(entries().begin(), entries().end(), [&](auto value)->bool {return value.first == this->value;});
+      if (to_int(value) == 0 && iterator == entries().end()) return "0";
       
       iterator = std::find_if(entries().begin(), entries().end(), [&](auto value)->bool {return value.first == to_enum(0);});
-      if (to_int(value_) == 0) return iterator == entries().end() ? "0" : iterator->second;
+      if (to_int(value) == 0) return iterator == entries().end() ? "0" : iterator->second;
       
       xtd::string str;
-      int64 rest = to_int(value_);
+      int64 rest = to_int(value);
       enum_collection<enum_type> reversed_entries = entries();
       std::reverse(reversed_entries.begin(), reversed_entries.end());
       
@@ -261,7 +282,7 @@ namespace xtd {
         }
       }
       
-      if (str.empty() || rest > 0) return  xtd::string::format("{}", to_int(value_));
+      if (str.empty() || rest > 0) return  xtd::string::format("{}", to_int(value));
       
       return str;
     }
@@ -289,7 +310,6 @@ namespace xtd {
     
     inline static std::optional<xtd::enum_attribute> attribute_;
     inline static std::optional<enum_collection<enum_type>> entries_;
-    enum_type value_ {};
   };
   
   /// @brief Provides the base class for enumerations.
@@ -635,11 +655,11 @@ namespace xtd {
       case 'o':
       case 'O':
       case 'x':
-      case 'X': return __numeric_formatter(fmt.chars(), static_cast<long long int>(value_), std::locale());
+      case 'X': return __numeric_formatter(fmt.chars(), static_cast<long long int>(value), std::locale());
       case 'f':
       case 'F':
       case 'g':
-      case 'G': return xtd::enum_object<>::get_name(value_);
+      case 'G': return xtd::enum_object<>::get_name(value);
     }
     throw format_exception("Invalid format"_t);
   }
