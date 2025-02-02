@@ -9,8 +9,8 @@ auto main() -> int {
   auto location = point {10, 235};
   console::write_line("location = {}", location);
   
-  location.x(location.x() + 20);
-  location.y(location.y() - 15);
+  location.x = location.x + 20;
+  location.y = location.y - 15;
   console::write_line("location = {}", location);
   
   location = point {10, 10} + drawing::size {20, 50};

@@ -120,18 +120,18 @@ void minesweeper_form::new_game() {
 
 void minesweeper_form::check_neighbors(const point& cell_location) {
   if (checked_cell(cell_location) != 0) return;
-  for (auto y = cell_location.y() - 1; y <= cell_location.y() + 1; ++y)
-    for (auto x = cell_location.x() - 1; x <= cell_location.x() + 1; ++x)
+  for (auto y = cell_location.y - 1; y <= cell_location.y + 1; ++y)
+    for (auto x = cell_location.x - 1; x <= cell_location.x + 1; ++x)
       if (y >= 0 && y < grid_size_.height() && x >= 0 && x < grid_size_.width() && cells_[x][y].state() == cell_state::unchecked && checked_cell({x, y}) == 0)
         check_neighbors({x, y});
 }
 
 int minesweeper_form::checked_cell(const point& cell_location) {
-  if (cells_[cell_location.x()][cell_location.y()].state() == cell_state::unchecked) {
-    cells_[cell_location.x()][cell_location.y()].state(cell_state::checked);
+  if (cells_[cell_location.x][cell_location.y].state() == cell_state::unchecked) {
+    cells_[cell_location.x][cell_location.y].state(cell_state::checked);
     checked_cell_count_++;
   }
-  return cells_[cell_location.x()][cell_location.y()].number_of_neighbouring_mines();
+  return cells_[cell_location.x][cell_location.y].number_of_neighbouring_mines();
 }
 
 void minesweeper_form::draw_cell(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
@@ -353,9 +353,9 @@ void minesweeper_form::on_game_panel_mouse_up(object& sender, const mouse_event_
   if (game_over_) return;
   stopwatch_timer_.enabled(true);
   
-  if (e.location().x() < 15 || e.location().y() < 15 || e.location().x() >= (grid_size_.width() * cell::width() + 15) || e.location().y() >= (grid_size_.height() * cell::height() + 15)) return;
-  auto x = (e.location().x() - 15) / cell::width();
-  auto y = (e.location().y() - 15) / cell::height();
+  if (e.location().x < 15 || e.location().y < 15 || e.location().x >= (grid_size_.width() * cell::width() + 15) || e.location().y >= (grid_size_.height() * cell::height() + 15)) return;
+  auto x = (e.location().x - 15) / cell::width();
+  auto y = (e.location().y - 15) / cell::height();
   
   if (e.button() == mouse_buttons::right) mark_cell(x, y);
   else if (e.button() == mouse_buttons::left) uncover_cell(x, y);
