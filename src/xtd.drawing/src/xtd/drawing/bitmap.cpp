@@ -92,7 +92,7 @@ bitmap_data bitmap::lock_bits(const rectangle& rect, xtd::drawing::imaging::imag
   auto image_data_scan0 = data.scan0();
   auto image_data_stride = data.stride();
   auto image_data_width = data.width();
-  native::image::lock_bits(handle(), rect.left(), rect.top(), rect.width(), rect.height(), static_cast<int32>(flags), static_cast<int32>(format), image_data_height, image_data_pixel_format, image_data_reserved, image_data_scan0, image_data_stride, image_data_width);
+  native::image::lock_bits(handle(), rect.left(), rect.top(), rect.width, rect.height, static_cast<int32>(flags), static_cast<int32>(format), image_data_height, image_data_pixel_format, image_data_reserved, image_data_scan0, image_data_stride, image_data_width);
   return bitmap_data().height(image_data_height).pixel_format(static_cast<xtd::drawing::imaging::pixel_format>(image_data_pixel_format)).reserved(image_data_reserved).scan0(image_data_scan0).stride(image_data_stride).width(image_data_width);
 }
 

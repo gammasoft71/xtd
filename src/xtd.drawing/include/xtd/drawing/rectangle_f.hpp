@@ -16,7 +16,7 @@ namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
     /// @cond
-    class rectangle;
+    struct rectangle;
     /// @endcond
     
     /// @brief Stores a set of four floating-point numbers that represent the location and size of a rectangle. For more advanced region functions, use a xtd::drawing::region object.

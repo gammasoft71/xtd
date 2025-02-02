@@ -41,8 +41,7 @@ namespace xtd {
     /// @remarks To draw rectangles, you need a xtd::drawing::graphics object and a xtd::drawing::pen object. The xtd::drawing::graphics object provides the xtd::drawing::graphics::draw_rectangle method, and the xtd::drawing::pen object stores features of the line, such as color and width. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
     /// @remarks To draw a xtd::drawing::rectangle filled with color, you need a xtd::drawing::graphics object and an object derived from xtd::drawing::brush such as xtd::drawing::solid_brush or xtd::drawing::texture_brush or xtd::drawing::drawing_2d::conical_gradient_brush or xtd::drawing::drawing_2d::hatch_gradient_brush or xtd::drawing::drawing_2d::linear_gradient_brush or xtd::drawing::drawing_2d::radial_gradient_brush. The xtd::drawing::graphics object provides the xtd::drawing::graphics::fill_rectangle method and the xtd::drawing::brush object provides the color and fill information.
     /// @remarks For more advanced shapes, use a xtd::drawing::region object.
-    class drawing_export_ rectangle : public xtd::object, public xtd::iequatable<rectangle> {
-    public:
+    struct drawing_export_ rectangle : xtd::object, xtd::iequatable<rectangle> {
       /// @name Public Fields
       
       /// @{
@@ -86,14 +85,10 @@ namespace xtd {
       /// @return The center of this xtd::drawing::rectangle.
       point center() const noexcept;
       
-      /// @brief Gets the height of this xtd::drawing::rectangle structure.
-      /// @return The height of this Rectangle structure. The default is 0.
+      /// @brief Gets or sets the height of this xtd::drawing::rectangle structure.
+      /// @param height The height of this Rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::height property will also cause a change in the xtd::drawing::rectangle::bottom property of the xtd::drawing::rectangle. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
-      int32 height() const noexcept;
-      /// @brief Sets the height of this xtd::drawing::rectangle structure.
-      /// @param value The height of this Rectangle structure. The default is 0.
-      /// @remarks Changing the xtd::drawing::rectangle::height property will also cause a change in the xtd::drawing::rectangle::bottom property of the xtd::drawing::rectangle. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
-      void height(int32 value) noexcept;
+      int32 height = 0;
       
       /// @brief Tests whether all numeric properties of this xtd::drawing::rectangle have values of zero.
       /// @return This property returns `true` if the xtd::drawing::rectangle::width, xtd::drawing::rectangle::height, xtd::drawing::rectangle::x, and xtd::drawing::rectangle::y properties of this xtd::drawing::rectangle all have values of zero; otherwise, `false`.
@@ -125,32 +120,20 @@ namespace xtd {
       /// @return The y-coordinate of the top edge of this xtd::drawing::rectangle structure.
       int32 top() const noexcept;
       
-      /// @brief Gets the width of this xtd::drawing::rectangle structure.
-      /// @return The width of this xtd::drawing::rectangle structure. The default is 0.
+      /// @brief Gets or sets the width of this xtd::drawing::rectangle structure.
+      /// @param width The width of this xtd::drawing::rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::width property will also cause a change in the xtd::drawing::rectangle::bottom property of the xtd::drawing::rectangle. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
-      int32 width() const noexcept;
-      /// @brief Sets the width of this xtd::drawing::rectangle structure.
-      /// @param value The width of this xtd::drawing::rectangle structure. The default is 0.
-      /// @remarks Changing the xtd::drawing::rectangle::width property will also cause a change in the xtd::drawing::rectangle::bottom property of the xtd::drawing::rectangle. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
-      void width(int32 value) noexcept;
+      int32 width = 0;
       
-      /// @brief Gets the x-coordinate of the upper-left corner of this xtd::drawing::rectangle structure.
-      /// @return The x-coordinate of the upper-left corner of this xtd::drawing::rectangle structure. The default is 0.
+      /// @brief Gets or sets the x-coordinate of the upper-left corner of this xtd::drawing::rectangle structure.
+      /// @para mx The x-coordinate of the upper-left corner of this xtd::drawing::rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::x property will also cause a change in the xtd::drawing::rectangle::right property of the xtd::drawing::rectangle.
-      int32 x() const noexcept;
-      /// @brief Sets the x-coordinate of the upper-left corner of this xtd::drawing::rectangle structure.
-      /// @param value The x-coordinate of the upper-left corner of this xtd::drawing::rectangle structure. The default is 0.
-      /// @remarks Changing the xtd::drawing::rectangle::x property will also cause a change in the xtd::drawing::rectangle::right property of the xtd::drawing::rectangle.
-      void x(int32 value) noexcept;
+      int32 x = 0;
       
-      /// @brief Gets the y-coordinate of the upper-left corner of this xtd::drawing::rectangle structure.
-      /// @return The y-coordinate of the upper-left corner of this xtd::drawing::rectangle structure. The default is 0.
+      /// @brief Gets or sets the y-coordinate of the upper-left corner of this xtd::drawing::rectangle structure.
+      /// @param y The y-coordinate of the upper-left corner of this xtd::drawing::rectangle structure. The default is 0.
       /// @remarks Changing the xtd::drawing::rectangle::y property will also cause a change in the xtd::drawing::rectangle::bottom property of the xtd::drawing::rectangle.
-      int32 y() const noexcept;
-      /// @brief Sets the y-coordinate of the upper-left corner of this xtd::drawing::rectangle structure.
-      /// @param value The y-coordinate of the upper-left corner of this xtd::drawing::rectangle structure. The default is 0.
-      /// @remarks Changing the xtd::drawing::rectangle::y property will also cause a change in the xtd::drawing::rectangle::bottom property of the xtd::drawing::rectangle.
-      void y(int32 value) noexcept;
+      int32 y = 0;
       /// @}
       
       /// @name Public Methods
@@ -305,12 +288,6 @@ namespace xtd {
       /// @return The truncated value of the xtd::drawing::rectangle.
       static rectangle truncate(const rectangle_f& rect) noexcept;
       /// @}
-
-    private:
-      int32 x_ = 0;
-      int32 y_ = 0;
-      int32 width_ = 0;
-      int32 height_ = 0;
     };
   }
 }

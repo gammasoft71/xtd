@@ -77,7 +77,7 @@ extern std::vector<control_handler*> __control_handler_to_delete_items__;
 
 namespace {
   void RefreshRect(wxWindow* wnd, const drawing::rectangle& rect, bool invalidate_children) {
-    wnd->RefreshRect(wxRect(rect.left(), rect.top(), rect.width(), rect.height()));
+    wnd->RefreshRect(wxRect(rect.left(), rect.top(), rect.width, rect.height));
     if (!invalidate_children) return;
     
     for (auto child : wnd->GetChildren())

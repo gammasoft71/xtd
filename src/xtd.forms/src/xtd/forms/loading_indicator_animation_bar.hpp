@@ -6,16 +6,16 @@ namespace xtd::forms {
   class loading_indicator_animation_bar : public loading_indicator_animation {
   public:
     void on_paint(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& clip_rectangle, const xtd::drawing::color& color, bool enabled) override {
-      auto h = clip_rectangle.height() / 6;
-      auto w = static_cast<xtd::int32>(clip_rectangle.width() / 1.3);
-      auto p = clip_rectangle.width() * 2 / intervals_;
-      auto x = -clip_rectangle.width();
-      auto y = (clip_rectangle.height() - h) / 2;
+      auto h = clip_rectangle.height / 6;
+      auto w = static_cast<xtd::int32>(clip_rectangle.width / 1.3);
+      auto p = clip_rectangle.width * 2 / intervals_;
+      auto x = -clip_rectangle.width;
+      auto y = (clip_rectangle.height - h) / 2;
       auto opacity = enabled ? 32 : 64;
       auto opacity_bar = enabled ? 255 : 0;
 
       auto graphics_path = xtd::drawing::drawing_2d::graphics_path {};
-      graphics_path.add_rounded_rectangle(0, y, clip_rectangle.width(), h, h / 2.0f);
+      graphics_path.add_rounded_rectangle(0, y, clip_rectangle.width, h, h / 2.0f);
       auto region = xtd::drawing::region {graphics_path};
       graphics.clip(region);
       graphics.clear(xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color));

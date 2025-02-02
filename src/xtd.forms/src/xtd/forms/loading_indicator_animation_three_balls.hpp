@@ -6,11 +6,11 @@ namespace xtd::forms {
   class loading_indicator_animation_three_balls : public loading_indicator_animation {
   public:
     void on_paint(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& clip_rectangle, const xtd::drawing::color& color, bool enabled) override {
-      auto dot_size = xtd::math::min(clip_rectangle.height(), clip_rectangle.width()) / radius_factor_ * 2;
+      auto dot_size = xtd::math::min(clip_rectangle.height, clip_rectangle.width) / radius_factor_ * 2;
       auto x1 = clip_rectangle.left() + 2;
-      auto x2 = clip_rectangle.left() + clip_rectangle.width() / 2 - dot_size / 2;
+      auto x2 = clip_rectangle.left() + clip_rectangle.width / 2 - dot_size / 2;
       auto x3 = clip_rectangle.right() - dot_size - 2;
-      auto y = clip_rectangle.top() + clip_rectangle.height() / 2 - dot_size / 2;
+      auto y = clip_rectangle.top() + clip_rectangle.height / 2 - dot_size / 2;
       auto opacity = enabled ? 255 : 64;
       auto size1 = enabled ? std::vector {4, 4, 2, 2, 0, 0, 2, 2} : std::vector {0, 0, 0, 0, 0, 0, 0, 0};
       auto size2 = enabled ? std::vector {2, 2, 4, 4, 2, 2, 0, 0} : std::vector {0, 0, 0, 0, 0, 0, 0, 0};

@@ -215,15 +215,15 @@ private:
   void draw_drop_down_button(xtd::forms::paint_event_args& e) {
     auto sstyle = style_sheet() != style_sheets::style_sheet::empty ? style_sheet() : style_sheets::style_sheet::current_style_sheet();
     auto button_rect = e.clip_rectangle();
-    button_rect.width(button_rect.width() - drop_down_rectangle().width());
+    button_rect.width = button_rect.width - drop_down_rectangle().width;
     visual_styles::push_button_state current_state = state();
     if (data_->mouse_on_drop_down_menu) current_state = visual_styles::push_button_state::normal;
     tool_bar_button_renderer::draw_tool_bar_button(sstyle, e.graphics(), button_rect, current_state, back_color() != default_back_color() ? std::optional<drawing::color> {back_color()} : std::nullopt, flat_appearance(), text(), text_align(), fore_color() != default_fore_color() ? std::optional<drawing::color> {fore_color()} : std::nullopt, font(), image(), image_align());
     xtd::forms::style_sheets::tool_bar_button current_style_sheet = sstyle.tool_bar_button(xtd::forms::style_sheets::pseudo_state::standard);
     if (data_->mouse_on_drop_down_menu) current_style_sheet = sstyle.tool_bar_button(xtd::forms::style_sheets::pseudo_state::hover);
     if (data_->mouse_down_on_drop_down_menu) current_style_sheet = sstyle.tool_bar_button(xtd::forms::style_sheets::pseudo_state::pressed);
-    auto center_drop_down = xtd::drawing::point(e.clip_rectangle().right() - drop_down_rectangle().width() / 2, e.clip_rectangle().top() + drop_down_rectangle().height() / 2);
-    auto drop_down_size = drawing::size(drop_down_rectangle().width() - 4, (drop_down_rectangle().width() - 4) / 2);
+    auto center_drop_down = xtd::drawing::point(e.clip_rectangle().right() - drop_down_rectangle().width / 2, e.clip_rectangle().top() + drop_down_rectangle().height / 2);
+    auto drop_down_size = drawing::size(drop_down_rectangle().width - 4, (drop_down_rectangle().width - 4) / 2);
     box_renderer::draw_box(e.graphics(), drop_down_rectangle(), current_style_sheet);
     e.graphics().fill_polygon(xtd::drawing::solid_brush(current_style_sheet.color()), std::vector<xtd::drawing::point> {xtd::drawing::point {center_drop_down.x - drop_down_size.width / 2, center_drop_down.y - drop_down_size.height / 2}, xtd::drawing::point {center_drop_down.x + drop_down_size.width / 2, center_drop_down.y - drop_down_size.height / 2}, xtd::drawing::point {center_drop_down.x, center_drop_down.y + drop_down_size.height / 2} });
   }
@@ -236,12 +236,12 @@ private:
         auto left = image_size().width / 4;
         auto top = 4;
         auto right = left;
-        auto bottom = e.clip_rectangle().height() - 4;
+        auto bottom = e.clip_rectangle().height - 4;
         e.graphics().draw_line(xtd::drawing::pen {color}, xtd::drawing::point {left, top}, xtd::drawing::point {right, bottom});
       } else {
         auto left = 4;
         auto top = image_size().height / 4;
-        auto right = e.clip_rectangle().width() - 4;
+        auto right = e.clip_rectangle().width - 4;
         auto bottom = top;
         e.graphics().draw_line(xtd::drawing::pen {color}, xtd::drawing::point {left, top}, xtd::drawing::point {right, bottom});
       }
@@ -258,11 +258,11 @@ private:
     current_style_sheet.font(font());
     auto text_rect = current_style_sheet.get_content_rectangle(e.clip_rectangle());
     if (data_->show_text == true && data_->tool_bar_text_align == tool_bar_text_align::right) {
-      if (data_->control) text_rect.width(text_rect.width() - data_->control->width() - 4);
-      if (data_->control) text_rect.x(text_rect.x() + data_->control->width() + 4);
+      if (data_->control) text_rect.width = text_rect.width - data_->control->width() - 4;
+      if (data_->control) text_rect.x = text_rect.x + data_->control->width() + 4;
     } else {
-      text_rect.height(measure_text().height);
-      text_rect.y(height() - measure_text().height - 3);
+      text_rect.height = measure_text().height;
+      text_rect.y = height() - measure_text().height - 3;
     }
     text_renderer::draw_text(e.graphics(), text_rect, text(), current_style_sheet);
   }

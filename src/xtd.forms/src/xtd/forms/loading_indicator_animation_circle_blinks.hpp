@@ -9,8 +9,8 @@ namespace xtd::forms {
       graphics.translate_transform(static_cast<float>(clip_rectangle.center().x), static_cast<float>(clip_rectangle.center().y));
       auto angle = -360.f / intervals_;
       graphics.rotate_transform(frame_ * angle);
-      auto height = static_cast<float>(xtd::math::min(clip_rectangle.width(), clip_rectangle.height())) / radius_factor_;
-      auto width = static_cast<float>(xtd::math::min(clip_rectangle.width(), clip_rectangle.height())) / radius_factor_;
+      auto height = static_cast<float>(xtd::math::min(clip_rectangle.width, clip_rectangle.height)) / radius_factor_;
+      auto width = static_cast<float>(xtd::math::min(clip_rectangle.width, clip_rectangle.height)) / radius_factor_;
       for (auto n = 0; n < intervals_; n++) {
         auto opacity_index = enabled ? n + 1 : 2;
         auto opacity = opacity_index * (255 + 1) / intervals_ - 1;

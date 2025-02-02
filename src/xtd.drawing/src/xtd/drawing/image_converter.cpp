@@ -204,7 +204,7 @@ image image_converter::contrast(const image& image, double percent) {
 }
 
 void image_converter::crop(xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle) {
-  image.crop(rectangle.left(), rectangle.top(), rectangle.width(), rectangle.height());
+  image.crop(rectangle.left(), rectangle.top(), rectangle.width, rectangle.height);
 }
 
 xtd::drawing::image image_converter::crop(const xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle) {

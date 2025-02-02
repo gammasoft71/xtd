@@ -25,11 +25,11 @@ struct trace_form_base::data {
 };
 
 control& trace_form_base::dock(dock_style dock) {
-  if (dock == dock_style::left) bounds({screen::get_working_area(handle()).left(), screen::get_working_area(handle()).top(), screen::get_working_area(handle()).width() / 4, screen::get_working_area(handle()).height()});
-  else if (dock == dock_style::top) bounds({screen::get_working_area(handle()).left(), screen::get_working_area(handle()).top(), screen::get_working_area(handle()).width(), screen::get_working_area(handle()).height() / 4});
-  else if (dock == dock_style::right) bounds({screen::get_working_area(handle()).left() + screen::get_working_area(handle()).width() - screen::get_working_area(handle()).width() / 4, screen::get_working_area(handle()).top(), screen::get_working_area(handle()).width() / 4, screen::get_working_area(handle()).height()});
-  else if (dock == dock_style::bottom) bounds({screen::get_working_area(handle()).left(), screen::get_working_area(handle()).top() + screen::get_working_area(handle()).height() - screen::get_working_area(handle()).height() / 4, screen::get_working_area(handle()).width(), screen::get_working_area(handle()).height() / 4});
-  else if (dock == dock_style::fill) bounds({screen::get_working_area(handle()).left(), screen::get_working_area(handle()).top(), screen::get_working_area(handle()).width(), screen::get_working_area(handle()).height()});
+  if (dock == dock_style::left) bounds({screen::get_working_area(handle()).left(), screen::get_working_area(handle()).top(), screen::get_working_area(handle()).width / 4, screen::get_working_area(handle()).height});
+  else if (dock == dock_style::top) bounds({screen::get_working_area(handle()).left(), screen::get_working_area(handle()).top(), screen::get_working_area(handle()).width, screen::get_working_area(handle()).height / 4});
+  else if (dock == dock_style::right) bounds({screen::get_working_area(handle()).left() + screen::get_working_area(handle()).width - screen::get_working_area(handle()).width / 4, screen::get_working_area(handle()).top(), screen::get_working_area(handle()).width / 4, screen::get_working_area(handle()).height});
+  else if (dock == dock_style::bottom) bounds({screen::get_working_area(handle()).left(), screen::get_working_area(handle()).top() + screen::get_working_area(handle()).height - screen::get_working_area(handle()).height / 4, screen::get_working_area(handle()).width, screen::get_working_area(handle()).height / 4});
+  else if (dock == dock_style::fill) bounds({screen::get_working_area(handle()).left(), screen::get_working_area(handle()).top(), screen::get_working_area(handle()).width, screen::get_working_area(handle()).height});
   return control::dock(dock);
 }
 

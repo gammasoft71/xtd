@@ -341,7 +341,7 @@ void graphics::draw_curve(const pen& pen, const std::vector<xtd::drawing::point_
 }
 
 void graphics::draw_ellipse(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect) {
-  draw_ellipse(pen, rect.x(), rect.y(), rect.width(), rect.height());
+  draw_ellipse(pen, rect.x, rect.y, rect.width, rect.height);
 }
 
 void graphics::draw_ellipse(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect) {
@@ -366,11 +366,11 @@ void graphics::draw_icon(const xtd::drawing::icon& icon, const xtd::drawing::rec
 }
 
 void graphics::draw_icon_unstretched(const xtd::drawing::icon& icon, const xtd::drawing::rectangle& rect) {
-  draw_image_unscaled(icon.to_bitmap(), rect.x(), rect.y());
+  draw_image_unscaled(icon.to_bitmap(), rect.x, rect.y);
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle& rect) {
-  draw_image(image, rect.x(), rect.y(), rect.width(), rect.height());
+  draw_image(image, rect.x, rect.y, rect.width, rect.height);
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle_f& rect) {
@@ -403,7 +403,7 @@ void graphics::draw_image(const xtd::drawing::image& image, float x, float y) {
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle& dest_rect, const xtd::drawing::rectangle& src_rect) {
-  draw_image(image, dest_rect, src_rect.x(), src_rect.y(), src_rect.width(), src_rect.height());
+  draw_image(image, dest_rect, src_rect.x, src_rect.y, src_rect.width, src_rect.height);
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle_f& dest_rect, const xtd::drawing::rectangle_f& src_rect) {
@@ -411,7 +411,7 @@ void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::point& dest_point, const xtd::drawing::rectangle& src_rect) {
-  draw_image(image, dest_point, src_rect.x(), src_rect.y(), src_rect.width(), src_rect.height());
+  draw_image(image, dest_point, src_rect.x, src_rect.y, src_rect.width, src_rect.height);
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::point_f& dest_point, const xtd::drawing::rectangle_f& src_rect) {
@@ -419,7 +419,7 @@ void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle& dest_rect, int32 src_x, int32 src_y, int32 src_width, int32 src_height) {
-  draw_image(image, rectangle_f {static_cast<float>(dest_rect.x()), static_cast<float>(dest_rect.y()), static_cast<float>(dest_rect.width()), static_cast<float>(dest_rect.height())}, static_cast<float>(src_x), static_cast<float>(src_y), static_cast<float>(src_width), static_cast<float>(src_height));
+  draw_image(image, rectangle_f {static_cast<float>(dest_rect.x), static_cast<float>(dest_rect.y), static_cast<float>(dest_rect.width), static_cast<float>(dest_rect.height)}, static_cast<float>(src_x), static_cast<float>(src_y), static_cast<float>(src_width), static_cast<float>(src_height));
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle_f& dest_rect, float src_x, float src_y, float src_width, float src_height) {
@@ -445,7 +445,7 @@ void graphics::draw_image_unscaled(const xtd::drawing::image& image, int32 x, in
 }
 
 void graphics::draw_image_unscaled(const xtd::drawing::image& image, const xtd::drawing::rectangle& rect) {
-  draw_image_unscaled(image, rect.x(), rect.y());
+  draw_image_unscaled(image, rect.x, rect.y);
 }
 
 void graphics::draw_image_unscaled(const xtd::drawing::image& image, int32 x, int32 y, int32 width, int32 height) {
@@ -455,7 +455,7 @@ void graphics::draw_image_unscaled(const xtd::drawing::image& image, int32 x, in
 void graphics::draw_image_unscaled_and_clipped(const xtd::drawing::image& image, const xtd::drawing::rectangle& rect) {
   auto backup_clip = clip();
   clip(region(rect));
-  draw_image_unscaled(image, rect.x(), rect.y());
+  draw_image_unscaled(image, rect.x, rect.y);
   clip(backup_clip);
 }
 
@@ -497,7 +497,7 @@ void graphics::draw_path(const xtd::drawing::pen& pen, const xtd::drawing::drawi
 }
 
 void graphics::draw_pie(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle) {
-  draw_pie(pen, as<float>(rect.x()), as<float>(rect.y()), as<float>(rect.width()), as<float>(rect.height()), start_angle, sweep_angle);
+  draw_pie(pen, as<float>(rect.x), as<float>(rect.y), as<float>(rect.width), as<float>(rect.height), start_angle, sweep_angle);
 }
 
 void graphics::draw_pie(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle) {
@@ -545,7 +545,7 @@ void graphics::draw_point(const xtd::drawing::pen& pen, float x, float y) {
 }
 
 void graphics::draw_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect) {
-  draw_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height());
+  draw_rectangle(pen, rect.x, rect.y, rect.width, rect.height);
 }
 void graphics::draw_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect) {
   draw_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height());
@@ -581,7 +581,7 @@ void graphics::draw_rotated_string(const xtd::string& s, const xtd::drawing::fon
 }
 
 void graphics::draw_rounded_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, int32 radius) {
-  draw_rounded_rectangle(pen, rect.x(), rect.y(), rect.width(), rect.height(), radius);
+  draw_rounded_rectangle(pen, rect.x, rect.y, rect.width, rect.height, radius);
 }
 
 void graphics::draw_rounded_rectangle(const xtd::drawing::pen& pen, const xtd::drawing::rectangle_f& rect, float radius) {
@@ -663,7 +663,7 @@ void graphics::fill_closed_curve(const xtd::drawing::brush& brush, const std::ve
 }
 
 void graphics::fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect) {
-  fill_ellipse(brush, rect.x(), rect.y(), rect.width(), rect.height());
+  fill_ellipse(brush, rect.x, rect.y, rect.width, rect.height);
 }
 
 void graphics::fill_ellipse(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect) {
@@ -684,7 +684,7 @@ void graphics::fill_path(const brush& brush, const drawing_2d::graphics_path& pa
 }
 
 void graphics::fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle) {
-  fill_pie(brush, as<float>(rect.x()), as<float>(rect.y()), as<float>(rect.width()), as<float>(rect.height()), start_angle, sweep_angle);
+  fill_pie(brush, as<float>(rect.x), as<float>(rect.y), as<float>(rect.width), as<float>(rect.height), start_angle, sweep_angle);
 }
 
 void graphics::fill_pie(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle) {
@@ -723,7 +723,7 @@ void graphics::fill_polygon(const xtd::drawing::brush& brush, const std::vector<
 }
 
 void graphics::fill_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect) {
-  fill_rectangle(brush, rect.x(), rect.y(), rect.width(), rect.height());
+  fill_rectangle(brush, rect.x, rect.y, rect.width, rect.height);
 }
 
 void graphics::fill_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect) {
@@ -756,7 +756,7 @@ void graphics::fill_region(const xtd::drawing::brush& brush, const xtd::drawing:
 }
 
 void graphics::fill_rounded_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle& rect, int32 radius) {
-  fill_rounded_rectangle(brush, rect.x(), rect.y(), rect.width(), rect.height(), radius);
+  fill_rounded_rectangle(brush, rect.x, rect.y, rect.width, rect.height, radius);
 }
 
 void graphics::fill_rounded_rectangle(const xtd::drawing::brush& brush, const xtd::drawing::rectangle_f& rect, float radius) {
