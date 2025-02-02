@@ -15,7 +15,7 @@ bool cell::has_neighbouring_mines() const noexcept {
 }
 
 int cell::height() noexcept {
-  return size_.height();
+  return size_.height;
 }
 
 int cell::number_of_neighbouring_mines() const noexcept {
@@ -39,7 +39,7 @@ void cell::state(cell_state value) noexcept {
 }
 
 int cell::width() noexcept {
-  return size_.width();
+  return size_.width;
 }
 
 void cell::clear() noexcept {

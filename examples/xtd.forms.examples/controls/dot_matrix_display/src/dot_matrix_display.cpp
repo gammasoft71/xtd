@@ -13,7 +13,7 @@ class form1 : public form {
 public:
   form1() {
     dot_matrix_display1.height(250);
-    dot_matrix_display1.location({(client_size().width() - dot_matrix_display1.width()) / 2, (client_size().height() - dot_matrix_display1.height()) / 2});
+    dot_matrix_display1.location({(client_size().width - dot_matrix_display1.width()) / 2, (client_size().height - dot_matrix_display1.height()) / 2});
     dot_matrix_display1.parent(*this);
     dot_matrix_display1.fore_color(color::red);
     dot_matrix_display1.anchor(anchor_styles::top | anchor_styles::bottom);
@@ -28,7 +28,7 @@ public:
     back_color(color_converter::average(color::black, dot_matrix_display1.fore_color(), 0.20));
     text("Dot matrix display example");
     resize += [&] {
-      dot_matrix_display1.left((client_size().width() - dot_matrix_display1.width()) / 2);
+      dot_matrix_display1.left((client_size().width - dot_matrix_display1.width()) / 2);
     };
   }
   

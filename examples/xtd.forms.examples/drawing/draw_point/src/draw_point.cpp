@@ -41,7 +41,7 @@ namespace draw_point_example {
       static auto colors = basic_colors::get_colors();
       colored_points.resize(random.next(height() * width() / 800, height() * width() / 400));
       for (auto& colored_point : colored_points)
-        colored_point = {{random.next(client_size().width()), random.next(client_size().height())}, colors[random.next(colors.size())], random.next(1, 10)};
+        colored_point = {{random.next(client_size().width), random.next(client_size().height)}, colors[random.next(colors.size())], random.next(1, 10)};
       invalidate();
     }
     

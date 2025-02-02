@@ -49,7 +49,7 @@ namespace border_style_example {
       
       colors_chooser.items().push_back_range(colors::get_color_names());
       colors_chooser.items().push_back_range(system_colors::get_color_names());
-      colors_chooser.bounds({120, 37, 220, colors_chooser.size().height()});
+      colors_chooser.bounds({120, 37, 220, colors_chooser.size().height});
       colors_chooser.selected_index_changed += [&] {
         auto color = color::from_name(colors_chooser.selected_item().value());
         colored_panel.back_color(colors_chooser.selected_item() == "control" ? color : color.is_dark() ? color_converter::light(color, .1) :  color_converter::dark(color, .1));

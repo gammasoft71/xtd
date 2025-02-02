@@ -188,7 +188,7 @@ namespace example {
       picture_xtd_theme.image(images::from_name("xtd", images::names(images::contexts()[current_context_index])[current_name_index], images::sizes()[current_size_index]) != image::empty ? images::from_name("xtd", images::names(images::contexts()[current_context_index])[current_name_index], images::sizes()[current_size_index]) : images::image_missing({256, 256}));
       label_picture_context.text(images::contexts()[current_context_index]);
       label_picture_name.text(images::names(images::contexts()[current_context_index])[current_name_index]);
-      label_picture_size.text(string::format("{}x{} pixels", images::sizes()[current_size_index].width(), images::sizes()[current_size_index].height()));
+      label_picture_size.text(string::format("{}x{} pixels", images::sizes()[current_size_index].width, images::sizes()[current_size_index].height));
       button_context_previous.enabled(current_context_index > 0);
       button_context_next.enabled(current_context_index < images::contexts().size() - 1);
       button_name_previous.enabled(current_name_index > 0);

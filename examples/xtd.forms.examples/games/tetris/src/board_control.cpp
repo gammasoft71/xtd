@@ -159,11 +159,11 @@ bool board_control::try_move(const shape& new_piece, int new_x, int new_y) noexc
 }
 
 int board_control::square_width() {
-  return client_size().width() / board_width;
+  return client_size().width / board_width;
 }
 
 int board_control::square_height() {
-  return client_size().height() / board_height;
+  return client_size().height / board_height;
 }
 
 tetrominoes& board_control::tetrominoes_at(int x, int y) {
@@ -175,7 +175,7 @@ void board_control::on_paint(paint_event_args& event) {
   
   auto graphics = event.graphics();
   auto size = event.clip_rectangle().size();
-  auto board_top = size.height() - board_height * square_height();
+  auto board_top = size.height - board_height * square_height();
   
   for (auto i = 0; i < board_height; ++i) {
     for (auto j = 0; j < board_width; ++j) {

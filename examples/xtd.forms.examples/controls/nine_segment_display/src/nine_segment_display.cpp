@@ -13,7 +13,7 @@ class form1 : public form {
 public:
   form1() {
     nine_segment_display1.height(250);
-    nine_segment_display1.location({(client_size().width() - nine_segment_display1.width()) / 2, (client_size().height() - nine_segment_display1.height()) / 2});
+    nine_segment_display1.location({(client_size().width - nine_segment_display1.width()) / 2, (client_size().height - nine_segment_display1.height()) / 2});
     nine_segment_display1.parent(*this);
     nine_segment_display1.fore_color(color::red);
     nine_segment_display1.anchor(anchor_styles::top | anchor_styles::bottom);
@@ -28,7 +28,7 @@ public:
     back_color(color_converter::average(color::black, nine_segment_display1.fore_color(), 0.20));
     text("Nine segment display example");
     resize += [&] {
-      nine_segment_display1.left((client_size().width() - nine_segment_display1.width()) / 2);
+      nine_segment_display1.left((client_size().width - nine_segment_display1.width()) / 2);
     };
   }
   
