@@ -31,7 +31,7 @@ namespace xtd::forms::tests {
       assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), command_link_button.back_color());
       assert::are_equal(drawing::image::empty, command_link_button.background_image());
       assert::are_equal(image_layout::tile, command_link_button.background_image_layout());
-      assert::are_equal(command_link_button.default_size().height(), command_link_button.bottom());
+      assert::are_equal(command_link_button.default_size().height, command_link_button.bottom());
       assert::are_equal(drawing::rectangle({0, 0}, command_link_button.default_size()), command_link_button.bounds());
       assert::is_false(command_link_button.can_focus());
       assert::is_true(command_link_button.can_raise_events());
@@ -57,7 +57,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::system_fonts::default_font(), command_link_button.font());
       assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), command_link_button.fore_color());
       assert::is_zero(command_link_button.handle());
-      assert::are_equal(command_link_button.default_size().height(), command_link_button.height());
+      assert::are_equal(command_link_button.default_size().height, command_link_button.height());
       assert::is_false(command_link_button.invoke_required());
       assert::is_false(command_link_button.is_handle_created());
       assert::is_zero(command_link_button.left());
@@ -73,7 +73,7 @@ namespace xtd::forms::tests {
       assert::is_null(command_link_button.parent());
       assert::are_equal("xtd", command_link_button.product_name());
       assert::is_not_zero(command_link_button.region().handle());
-      assert::are_equal(command_link_button.default_size().width(), command_link_button.right());
+      assert::are_equal(command_link_button.default_size().width, command_link_button.right());
       assert::are_equal(command_link_button.default_size(), command_link_button.size());
       assert::is_empty(command_link_button.style_sheet().theme().name());
       assert::is_true(command_link_button.tab_stop());
@@ -83,7 +83,7 @@ namespace xtd::forms::tests {
       assert::is_zero(command_link_button.top());
       assert::is_null(command_link_button.top_level_control());
       assert::is_true(command_link_button.visible());
-      assert::are_equal(command_link_button.default_size().width(), command_link_button.width());
+      assert::are_equal(command_link_button.default_size().width, command_link_button.width());
       assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls());
       assert::are_equal(keys::none, forms::control::modifier_keys());
       assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons());

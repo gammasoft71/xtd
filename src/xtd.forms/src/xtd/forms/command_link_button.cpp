@@ -247,6 +247,6 @@ void command_link_button::on_handle_created(const event_args& e) {
 
 drawing::size command_link_button::measure_control() const noexcept {
   auto size = drawing::size::ceiling(screen::create_graphics().measure_string(data_->text, font(), size_f(0.0f, 0.0f), string_format(string_format_flags::measure_trailing_spaces))) + drawing::size(31, 1);
-  if (size.height() < default_size().height()) size.height(default_size().height());
+  if (size.height < default_size().height) size.height = default_size().height;
   return size;
 }

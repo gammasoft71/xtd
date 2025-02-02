@@ -212,7 +212,7 @@ void graphics::copy_from_graphics(const graphics& source, int32 source_x, int32 
 }
 
 void graphics::copy_from_graphics(const graphics& source, int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation) {
-  native::graphics::copy_from_graphics(handle(), source.handle(), to_pixels(source_x), to_pixels(source_y), to_pixels(destination_x), to_pixels(destination_y), to_pixels(block_region_size.width()), to_pixels(block_region_size.height()), static_cast<int32>(copy_pixel_operation));
+  native::graphics::copy_from_graphics(handle(), source.handle(), to_pixels(source_x), to_pixels(source_y), to_pixels(destination_x), to_pixels(destination_y), to_pixels(block_region_size.width), to_pixels(block_region_size.height), static_cast<int32>(copy_pixel_operation));
 }
 
 void graphics::copy_from_screen(const xtd::drawing::point& upper_left_source, const xtd::drawing::point& upper_left_destination, const xtd::drawing::size& block_region_size) {
@@ -228,7 +228,7 @@ void graphics::copy_from_screen(int32 source_x, int32 source_y, int32 destinatio
 }
 
 void graphics::copy_from_screen(int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, const xtd::drawing::size& block_region_size, xtd::drawing::copy_pixel_operation copy_pixel_operation) {
-  native::graphics::copy_from_screen(handle(), to_pixels(source_x), to_pixels(source_y), to_pixels(destination_x), to_pixels(destination_y), to_pixels(block_region_size.width()), to_pixels(block_region_size.height()), static_cast<int32>(copy_pixel_operation));
+  native::graphics::copy_from_screen(handle(), to_pixels(source_x), to_pixels(source_y), to_pixels(destination_x), to_pixels(destination_y), to_pixels(block_region_size.width), to_pixels(block_region_size.height), static_cast<int32>(copy_pixel_operation));
 }
 
 void graphics::draw_arc(const xtd::drawing::pen& pen, const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle) {
@@ -395,7 +395,7 @@ void graphics::draw_image(const xtd::drawing::image& image, float x, float y, fl
 }
 
 void graphics::draw_image(const image& image, int32 x, int32 y) {
-  draw_image(image, x, y, image.size().width(), image.size().height());
+  draw_image(image, x, y, image.size().width, image.size().height);
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, float x, float y) {

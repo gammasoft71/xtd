@@ -384,7 +384,7 @@ image image_converter::opacity(const image& image, double percent) {
 }
 
 void image_converter::rescale(xtd::drawing::image& image, const xtd::drawing::size& size) {
-  image.rescale(size.width(), size.height());
+  image.rescale(size.width, size.height);
 }
 
 xtd::drawing::image image_converter::rescale(const xtd::drawing::image& image, const xtd::drawing::size& size) {
@@ -394,7 +394,7 @@ xtd::drawing::image image_converter::rescale(const xtd::drawing::image& image, c
 }
 
 void image_converter::resize(xtd::drawing::image& image, const xtd::drawing::size& size) {
-  image.resize(size.width(), size.height());
+  image.resize(size.width, size.height);
 }
 
 xtd::drawing::image image_converter::resize(const xtd::drawing::image& image, const xtd::drawing::size& size) {

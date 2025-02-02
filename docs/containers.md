@@ -742,7 +742,7 @@ protected:
     panel::on_layout(e);
     auto left = 0;
     for (auto control : controls()) {
-      control.get().left(left).height(client_size().height());
+      control.get().left(left).height(client_size().height);
       left += control.get().width();
     }
   }

@@ -13,7 +13,7 @@ bitmap bitmap::empty;
 bitmap::bitmap(const image& original) : xtd::drawing::image(original) {
 }
 
-bitmap::bitmap(const image& original, const xtd::drawing::size& new_size) : xtd::drawing::image(original, new_size.width(), new_size.height()) {
+bitmap::bitmap(const image& original, const xtd::drawing::size& new_size) : xtd::drawing::image(original, new_size.width, new_size.height) {
 }
 
 bitmap::bitmap(const image& original, int32 width, int32 height) : xtd::drawing::image(original, width, height) {
@@ -49,7 +49,7 @@ bitmap::bitmap(int32 width, int32 height, xtd::drawing::imaging::pixel_format fo
 bitmap::bitmap(int32 width, int32 height, int32 stride, xtd::drawing::imaging::pixel_format format, intptr scan0) : xtd::drawing::image(width, height, stride, format, scan0) {
 }
 
-bitmap::bitmap(const xtd::drawing::size& size) : xtd::drawing::image(size.width(), size.height()) {
+bitmap::bitmap(const xtd::drawing::size& size) : xtd::drawing::image(size.width, size.height) {
 }
 
 bitmap bitmap::clone(const rectangle& rect) const {

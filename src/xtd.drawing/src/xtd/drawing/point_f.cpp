@@ -20,7 +20,7 @@ bool point_f::is_empty() const noexcept {
 }
 
 point_f point_f::add(const point_f& pt, const size& sz) noexcept {
-  return {pt.x + as<float>(sz.width()), pt.y + as<float>(sz.height())};
+  return {pt.x + as<float>(sz.width), pt.y + as<float>(sz.height)};
 }
 
 point_f point_f::add(const point_f& pt, const size_f& sz) noexcept {
@@ -49,7 +49,7 @@ void point_f::offset(const point_f& pt) noexcept {
 }
 
 point_f point_f::subtract(const point_f& pt, const size& sz) noexcept {
-  return {pt.x - as<float>(sz.width()), pt.y - as<float>(sz.height())};
+  return {pt.x - as<float>(sz.width), pt.y - as<float>(sz.height)};
 }
 
 point_f point_f::subtract(const point_f& pt, const size_f& sz) noexcept {

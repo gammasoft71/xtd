@@ -31,7 +31,7 @@ namespace xtd::forms::tests {
       assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), check_box.back_color());
       assert::are_equal(drawing::image::empty, check_box.background_image());
       assert::are_equal(image_layout::tile, check_box.background_image_layout());
-      assert::are_equal(check_box.default_size().height(), check_box.bottom());
+      assert::are_equal(check_box.default_size().height, check_box.bottom());
       assert::are_equal(drawing::rectangle({0, 0}, check_box.default_size()), check_box.bounds());
       assert::is_false(check_box.can_focus());
       assert::is_true(check_box.can_raise_events());
@@ -57,7 +57,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::system_fonts::default_font(), check_box.font());
       assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), check_box.fore_color());
       assert::is_zero(check_box.handle());
-      assert::are_equal(check_box.default_size().height(), check_box.height());
+      assert::are_equal(check_box.default_size().height, check_box.height());
       assert::is_false(check_box.invoke_required());
       assert::is_false(check_box.is_handle_created());
       assert::is_zero(check_box.left());
@@ -73,7 +73,7 @@ namespace xtd::forms::tests {
       assert::is_null(check_box.parent());
       assert::are_equal("xtd", check_box.product_name());
       assert::is_not_zero(check_box.region().handle());
-      assert::are_equal(check_box.default_size().width(), check_box.right());
+      assert::are_equal(check_box.default_size().width, check_box.right());
       assert::are_equal(check_box.default_size(), check_box.size());
       assert::is_empty(check_box.style_sheet().theme().name());
       assert::is_true(check_box.tab_stop());
@@ -83,7 +83,7 @@ namespace xtd::forms::tests {
       assert::is_zero(check_box.top());
       assert::is_null(check_box.top_level_control());
       assert::is_true(check_box.visible());
-      assert::are_equal(check_box.default_size().width(), check_box.width());
+      assert::are_equal(check_box.default_size().width, check_box.width());
       assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls());
       assert::are_equal(keys::none, forms::control::modifier_keys());
       assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons());

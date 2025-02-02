@@ -292,7 +292,7 @@ forms::create_params v_scroll_bar::create_params() const noexcept {
 }
 
 xtd::drawing::size v_scroll_bar::default_size() const noexcept {
-  return {control::default_size().width(), 80};
+  return {control::default_size().width, 80};
 }
 
 xtd::uptr<xtd::object> v_scroll_bar::clone() const {

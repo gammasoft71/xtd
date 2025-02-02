@@ -278,7 +278,7 @@ xtd::uptr<xtd::object> text_box::clone() const {
 }
 
 drawing::size text_box::measure_control() const noexcept {
-  return drawing::size(client_size().width(), static_cast<int32>(font().get_height()) + 2 + (border_style() == border_style::none ? 0 : 4));
+  return drawing::size(client_size().width, static_cast<int32>(font().get_height()) + 2 + (border_style() == border_style::none ? 0 : 4));
 }
 
 void text_box::on_accepts_return_changed(const event_args& e) {

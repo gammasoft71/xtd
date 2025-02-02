@@ -83,7 +83,7 @@ namespace xtd::forms::tests {
       assert::are_equal(GetSystemMetrics(SM_CYCAPTION), system_information::caption_height());
       #elif defined (__APPLE__)
       form form;
-      assert::are_equal(form.size().height() - form.client_size().height(), system_information::caption_height());
+      assert::are_equal(form.size().height - form.client_size().height, system_information::caption_height());
       #else
       assert::are_equal(1, system_information::caption_height());
       #endif

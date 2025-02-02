@@ -16,8 +16,8 @@ namespace xtd {
   namespace drawing {
     /// @cond
     struct point;
-    class point_f;
-    class size;
+    struct point_f;
+    struct size;
     class size_f;
     /// @endcond
     
@@ -32,8 +32,7 @@ namespace xtd {
     /// @par Library
     /// xtd.drawing
     /// @ingroup xtd_drawing coordinates
-    class drawing_export_ point_f : public xtd::object, public xtd::iequatable<point_f> {
-    public:
+    struct drawing_export_ point_f : xtd::object, xtd::iequatable<point_f> {
       /// @name Public Fields
       
       /// @{

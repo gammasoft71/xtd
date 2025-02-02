@@ -25,11 +25,11 @@ namespace xtd {
         enum class character_casing {normal, upper, lower};
         explicit wx_text_box(const xtd::forms::native::create_params& create_params) {
           if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t);
-          int32 height = create_params.size.height();
+          int32 height = create_params.size.height;
           #if defined(__WXGTK__)
           if (height < 32) height = 32;
           #endif
-          control_handler::create<wxTextCtrl>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), wxPoint(create_params.location.x, create_params.location.y), wxSize(create_params.size.width(), height), style_to_wx_style(create_params.style, create_params.ex_style, character_casing_));
+          control_handler::create<wxTextCtrl>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxString(xtd::convert_string::to_wstring(create_params.caption)), wxPoint(create_params.location.x, create_params.location.y), wxSize(create_params.size.width, height), style_to_wx_style(create_params.style, create_params.ex_style, character_casing_));
           if (character_casing_ != character_casing::normal) {
             control()->Bind(wxEVT_CHAR, [&](wxKeyEvent & event) {
               switch (character_casing_) {

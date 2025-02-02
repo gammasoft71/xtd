@@ -32,7 +32,7 @@ namespace xtd::forms::tests {
       assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().window(), combo_box.back_color());
       assert::are_equal(drawing::image::empty, combo_box.background_image());
       assert::are_equal(image_layout::tile, combo_box.background_image_layout());
-      assert::are_equal(combo_box.default_size().height(), combo_box.bottom());
+      assert::are_equal(combo_box.default_size().height, combo_box.bottom());
       assert::are_equal(drawing::rectangle({0, 0}, combo_box.default_size()), combo_box.bounds());
       assert::is_false(combo_box.can_focus());
       assert::is_true(combo_box.can_raise_events());
@@ -58,7 +58,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::system_fonts::default_font(), combo_box.font());
       assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().window_text(), combo_box.fore_color());
       assert::is_zero(combo_box.handle());
-      assert::are_equal(combo_box.default_size().height(), combo_box.height());
+      assert::are_equal(combo_box.default_size().height, combo_box.height());
       assert::is_false(combo_box.invoke_required());
       assert::is_false(combo_box.is_handle_created());
       assert::is_zero(combo_box.left());
@@ -74,7 +74,7 @@ namespace xtd::forms::tests {
       assert::is_null(combo_box.parent());
       assert::are_equal("xtd", combo_box.product_name());
       assert::is_not_zero(combo_box.region().handle());
-      assert::are_equal(combo_box.default_size().width(), combo_box.right());
+      assert::are_equal(combo_box.default_size().width, combo_box.right());
       assert::are_equal(combo_box.default_size(), combo_box.size());
       assert::is_empty(combo_box.style_sheet().theme().name());
       assert::is_true(combo_box.tab_stop());
@@ -84,7 +84,7 @@ namespace xtd::forms::tests {
       assert::is_zero(combo_box.top());
       assert::is_null(combo_box.top_level_control());
       assert::is_true(combo_box.visible());
-      assert::are_equal(combo_box.default_size().width(), combo_box.width());
+      assert::are_equal(combo_box.default_size().width, combo_box.width());
       assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls());
       assert::are_equal(keys::none, forms::control::modifier_keys());
       assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons());

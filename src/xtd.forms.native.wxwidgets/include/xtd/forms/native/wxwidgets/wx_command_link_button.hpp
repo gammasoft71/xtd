@@ -31,7 +31,7 @@ namespace xtd {
           if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t);
           owner_draw_ = (create_params.style & BS_OWNERDRAW) == BS_OWNERDRAW;
           if (owner_draw_) {
-            control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x, create_params.location.y), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_user_window_style(create_params.style, create_params.ex_style));
+            control_handler::create<wx_user_window>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x, create_params.location.y), wxSize(create_params.size.width, create_params.size.height), style_to_wx_user_window_style(create_params.style, create_params.ex_style));
             #if defined(__WXOSX__)
             reinterpret_cast<wx_user_window*>(control())->set_accepts_focus(false);
             #else
@@ -39,7 +39,7 @@ namespace xtd {
             #endif
             
           } else {
-            control_handler::create<wxCommandLinkButton>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxEmptyString, wxEmptyString, wxPoint(create_params.location.x, create_params.location.y), wxSize(create_params.size.width(), create_params.size.height()), style_to_wx_style(create_params.style, create_params.ex_style));
+            control_handler::create<wxCommandLinkButton>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxEmptyString, wxEmptyString, wxPoint(create_params.location.x, create_params.location.y), wxSize(create_params.size.width, create_params.size.height), style_to_wx_style(create_params.style, create_params.ex_style));
             if (!xtd::environment::os_version().is_windows_platform() || (xtd::environment::os_version().is_windows_platform() && application::dark_mode_enabled()))
               static_cast<wxCommandLinkButton*>(control())->SetBitmap(wxBitmap(*reinterpret_cast<wxImage*>(xtd::drawing::system_images::from_name("go-next", xtd::drawing::size(16, 16)).handle())));
           }

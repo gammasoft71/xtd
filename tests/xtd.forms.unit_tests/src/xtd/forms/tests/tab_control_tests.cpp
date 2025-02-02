@@ -33,7 +33,7 @@ namespace xtd::forms::tests {
       assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control(), tab_control.back_color());
       assert::are_equal(drawing::image::empty, tab_control.background_image());
       assert::are_equal(image_layout::tile, tab_control.background_image_layout());
-      assert::are_equal(tab_control.default_size().height(), tab_control.bottom());
+      assert::are_equal(tab_control.default_size().height, tab_control.bottom());
       assert::are_equal(drawing::rectangle({0, 0}, tab_control.default_size()), tab_control.bounds());
       assert::is_false(tab_control.can_focus());
       assert::is_true(tab_control.can_raise_events());
@@ -58,7 +58,7 @@ namespace xtd::forms::tests {
       assert::are_equal(drawing::system_fonts::default_font(), tab_control.font());
       assert::are_equal(style_sheets::style_sheet::current_style_sheet().system_colors().control_text(), tab_control.fore_color());
       assert::is_zero(tab_control.handle());
-      assert::are_equal(tab_control.default_size().height(), tab_control.height());
+      assert::are_equal(tab_control.default_size().height, tab_control.height());
       assert::is_false(tab_control.invoke_required());
       assert::is_false(tab_control.is_handle_created());
       assert::is_zero(tab_control.left());
@@ -74,7 +74,7 @@ namespace xtd::forms::tests {
       assert::is_null(tab_control.parent());
       assert::are_equal("xtd", tab_control.product_name());
       assert::is_not_zero(tab_control.region().handle());
-      assert::are_equal(tab_control.default_size().width(), tab_control.right());
+      assert::are_equal(tab_control.default_size().width, tab_control.right());
       assert::are_equal(tab_control.default_size(), tab_control.size());
       assert::is_empty(tab_control.style_sheet().theme().name());
       assert::is_true(tab_control.tab_stop());
@@ -84,7 +84,7 @@ namespace xtd::forms::tests {
       assert::is_zero(tab_control.top());
       assert::is_null(tab_control.top_level_control());
       assert::is_true(tab_control.visible());
-      assert::are_equal(tab_control.default_size().width(), tab_control.width());
+      assert::are_equal(tab_control.default_size().width, tab_control.width());
       assert::are_equal(diagnostics::debugger::is_attached(), forms::control::check_for_illegal_cross_thread_calls());
       assert::are_equal(keys::none, forms::control::modifier_keys());
       assert::are_equal(forms::mouse_buttons::none, forms::control::mouse_buttons());

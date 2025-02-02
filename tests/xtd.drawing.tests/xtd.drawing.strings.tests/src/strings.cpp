@@ -187,13 +187,13 @@ private:
   void draw_grid(const rectangle& rect, drawing::graphics& graphics, const drawing::size& grid_size = drawing::size(5, 5)) {
     auto color1 = back_color().is_dark() ? color_converter::light(back_color()) : color_converter::dark(back_color());
     auto color2 = fore_color().is_dark() ? color_converter::light(fore_color()) : color_converter::dark(fore_color());
-    for (auto x = rect.left(); x < rect.right(); x += grid_size.width())
+    for (auto x = rect.left(); x < rect.right(); x += grid_size.width)
       graphics.draw_line(pen(color1, 1), point(x, rect.top()), point(x, rect.bottom()));
-    for (auto y = rect.top(); y < rect.bottom(); y += grid_size.height())
+    for (auto y = rect.top(); y < rect.bottom(); y += grid_size.height)
       graphics.draw_line(pen(color1, 1), point(rect.left(), y), point(rect.right(), y));
-    for (auto x = rect.left(); x < rect.right(); x += grid_size.width() * 10)
+    for (auto x = rect.left(); x < rect.right(); x += grid_size.width * 10)
       graphics.draw_line(pen(color2, 1), point(x, rect.top()), point(x, rect.bottom()));
-    for (auto y = rect.top(); y < rect.bottom(); y += grid_size.height() * 10)
+    for (auto y = rect.top(); y < rect.bottom(); y += grid_size.height * 10)
       graphics.draw_line(pen(color2, 1), point(rect.left(), y), point(rect.right(), y));
   }
   

@@ -64,11 +64,11 @@ create_params& create_params::ex_style(size_t ex_style) {
 }
 
 int32 create_params::height() const noexcept {
-  return data_->size.height();
+  return data_->size.height;
 }
 
 create_params& create_params::height(int32 height) {
-  data_->size.height(height);
+  data_->size.height = height;
   return *this;
 }
 
@@ -119,11 +119,11 @@ create_params& create_params::size(const drawing::size size) {
 
 
 int32 create_params::width() const noexcept {
-  return data_->size.width();
+  return data_->size.width;
 }
 
 create_params& create_params::width(int32 width) {
-  data_->size.width(width);
+  data_->size.width = width;
   return *this;
 }
 
@@ -146,5 +146,5 @@ create_params& create_params::y(int32 y) {
 }
 
 xtd::string create_params::to_string() const noexcept {
-  return string::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", data_->class_name, data_->caption, data_->style, data_->ex_style, data_->location.x, data_->location.y, data_->size.width(), data_->size.height());
+  return string::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", data_->class_name, data_->caption, data_->style, data_->ex_style, data_->location.x, data_->location.y, data_->size.width, data_->size.height);
 }

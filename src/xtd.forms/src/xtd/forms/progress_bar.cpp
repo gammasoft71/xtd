@@ -405,7 +405,7 @@ forms::create_params progress_bar::create_params() const noexcept {
 
 drawing::size progress_bar::default_size() const noexcept {
   static auto size = control::default_size();
-  return orientation() == forms::orientation::horizontal ? size : drawing::size(size.height(), size.width());
+  return orientation() == forms::orientation::horizontal ? size : drawing::size(size.height, size.width);
 }
 
 xtd::uptr<xtd::object> progress_bar::clone() const {

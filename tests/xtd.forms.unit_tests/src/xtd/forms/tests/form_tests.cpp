@@ -27,8 +27,8 @@ namespace xtd::forms::tests {
     
     void test_method_(new_form_client_size) {
       form_for_test form;
-      assert::is_less_or_equal(form.client_size().height(), form.size().height());
-      assert::is_less_or_equal(form.client_size().width(), form.size().width());
+      assert::is_less_or_equal(form.client_size().height, form.size().height);
+      assert::is_less_or_equal(form.client_size().width, form.size().width);
     }
     
     void test_method_(new_form_fore_color) {

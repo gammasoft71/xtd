@@ -102,11 +102,11 @@ void horizontal_layout_panel::on_layout(const event_args& e) {
   if (!parent() && controls().size() == 0) return;
   
   auto auto_size_control_count = count_if(control_layout_styles_.begin(), control_layout_styles_.end(), [](auto layout_style)->bool {return layout_style.second.size_type() == size_type::auto_size;});
-  auto auto_size_width = client_size().width() - static_cast<int32>(control_layout_styles().size() * padding().left()) - static_cast<int32>(control_layout_styles().size() * padding().right());
+  auto auto_size_width = client_size().width - static_cast<int32>(control_layout_styles().size() * padding().left()) - static_cast<int32>(control_layout_styles().size() * padding().right());
   
   auto absolute_width = 0;
   for (auto& [control, layout_style] : control_layout_styles_)
-    if (layout_style.size_type() == size_type::absolute) absolute_width += static_cast<int32>(layout_style.width().value_or(control.get().default_size().width()));
+    if (layout_style.size_type() == size_type::absolute) absolute_width += static_cast<int32>(layout_style.width().value_or(control.get().default_size().width));
   auto_size_width -= absolute_width;
   
   auto total_percent = .0f;
@@ -122,11 +122,11 @@ void horizontal_layout_panel::on_layout(const event_args& e) {
     if (layout_style.expanded()) top = padding().top();
     else {
       if (layout_style.align() == content_alignment::top_left || layout_style.align() == content_alignment::top_center || layout_style.align() == content_alignment::top_right) top = padding().top();
-      else if (layout_style.align() == content_alignment::bottom_left || layout_style.align() == content_alignment::bottom_center || layout_style.align() == content_alignment::bottom_right) top = client_size().height() - padding().bottom() - control.get().height();
-      else top = client_size().height() / 2 - control.get().height() / 2;
+      else if (layout_style.align() == content_alignment::bottom_left || layout_style.align() == content_alignment::bottom_center || layout_style.align() == content_alignment::bottom_right) top = client_size().height - padding().bottom() - control.get().height();
+      else top = client_size().height / 2 - control.get().height() / 2;
     }
-    auto height = layout_style.expanded() ? client_size().height() - padding().top() - padding().bottom() : control.get().height();
-    if (layout_style.size_type() == size_type::absolute) width = static_cast<int32>(layout_style.width().value_or(control.get().default_size().width()));
+    auto height = layout_style.expanded() ? client_size().height - padding().top() - padding().bottom() : control.get().height();
+    if (layout_style.size_type() == size_type::absolute) width = static_cast<int32>(layout_style.width().value_or(control.get().default_size().width));
     else if (layout_style.size_type() == size_type::percent) width = static_cast<int32>(percent_width * (layout_style.width().value_or(0) / total_percent));
     else if (layout_style.size_type() == size_type::auto_size) width = static_cast<int32>(auto_size_width / auto_size_control_count);
     else throw argument_exception {};

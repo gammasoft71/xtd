@@ -12,7 +12,7 @@ using namespace xtd;
 using namespace xtd::forms::native;
 
 intptr image_list::create(const drawing::size& image_size) {
-  return reinterpret_cast<intptr>(new wxImageList(image_size.width(), image_size.height()));
+  return reinterpret_cast<intptr>(new wxImageList(image_size.width, image_size.height));
 }
 
 void image_list::delete_item(intptr image_list, size_t pos) {

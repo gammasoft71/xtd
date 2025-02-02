@@ -242,7 +242,7 @@ control& control::anchor(anchor_styles anchor) {
   if (data_->anchor == anchor) return *this;
   data_->anchor = anchor;
   set_state(state::docked, false);
-  if (handle() && parent()) data_->anchoring = {left(), location().y, parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
+  if (handle() && parent()) data_->anchoring = {left(), location().y, parent().value().get().client_size().width - width() - left(), parent().value().get().client_size().height - height() - top()};
   perform_layout();
   return *this;
 }
@@ -367,8 +367,8 @@ const drawing::rectangle& control::client_rectangle() const noexcept {
 
 const drawing::size& control::client_size() const noexcept {
   try {
-    if (!handle() && data_->client_size.width() == 0 && width() != 0) data_->client_size = {width(), data_->client_size.height()};
-    if (!handle() && data_->client_size.height() == 0 && height() != 0) data_->client_size = {data_->client_size.width(), height()};
+    if (!handle() && data_->client_size.width == 0 && width() != 0) data_->client_size = {width(), data_->client_size.height};
+    if (!handle() && data_->client_size.height == 0 && height() != 0) data_->client_size = {data_->client_size.width, height()};
   } catch (...) {
   }
   return data_->client_size;
@@ -377,7 +377,7 @@ const drawing::size& control::client_size() const noexcept {
 control& control::client_size(const drawing::size& client_size) {
   if (get_state(state::client_size_setted) && data_->client_size == client_size) return *this;
   set_state(state::client_size_setted, true);
-  set_client_size_core(client_size.width(), client_size.height());
+  set_client_size_core(client_size.width, client_size.height);
   return *this;
 }
 
@@ -558,11 +558,11 @@ intptr control::handle() const {
 }
 
 int32 control::height() const noexcept {
-  return size().height();
+  return size().height;
 }
 
 control& control::height(int32 height) {
-  if (size().height() == height) return *this;
+  if (size().height == height) return *this;
   set_bounds_core(0, 0, 0, height, bounds_specified::height);
   return *this;
 }
@@ -611,7 +611,7 @@ const drawing::size& control::maximum_client_size() const noexcept {
 control& control::maximum_client_size(const drawing::size& size) {
   if (data_->maximum_client_size == size) return *this;
   data_->maximum_client_size = size;
-  client_size({this->client_size().width() > maximum_client_size().width() ? data_->maximum_client_size.width() : client_size().width(), this->client_size().height() > maximum_client_size().height() ? maximum_client_size().height() : client_size().height()});
+  client_size({this->client_size().width > maximum_client_size().width ? data_->maximum_client_size.width : client_size().width, this->client_size().height > maximum_client_size().height ? maximum_client_size().height : client_size().height});
   if (handle()) native::control::maximum_client_size(handle(), data_->maximum_client_size);
   return *this;
 }
@@ -623,7 +623,7 @@ const drawing::size& control::maximum_size() const noexcept {
 control& control::maximum_size(const drawing::size& size) {
   if (data_->maximum_size == size) return *this;
   data_->maximum_size = size;
-  this->size({this->size().width() > maximum_size().width() ? maximum_size().width() : this->size().width(), this->size().height() > maximum_size().height() ? maximum_size().height() : this->size().height()});
+  this->size({this->size().width > maximum_size().width ? maximum_size().width : this->size().width, this->size().height > maximum_size().height ? maximum_size().height : this->size().height});
   if (handle()) native::control::maximum_size(handle(), data_->maximum_size);
   return *this;
 }
@@ -635,7 +635,7 @@ const drawing::size& control::minimum_client_size() const noexcept {
 control& control::minimum_client_size(const drawing::size& size) {
   if (data_->minimum_client_size == size) return *this;
   data_->minimum_client_size = size;
-  client_size({this->client_size().width() < minimum_client_size().width() ? minimum_client_size().width() : client_size().width(), this->client_size().height() < minimum_client_size().height() ? minimum_client_size().height() : client_size().height()});
+  client_size({this->client_size().width < minimum_client_size().width ? minimum_client_size().width : client_size().width, this->client_size().height < minimum_client_size().height ? minimum_client_size().height : client_size().height});
   if (handle()) native::control::minimum_client_size(handle(), data_->minimum_client_size);
   return *this;
 }
@@ -647,7 +647,7 @@ const drawing::size& control::minimum_size() const noexcept {
 control& control::minimum_size(const drawing::size& size) {
   if (data_->minimum_size == size) return *this;
   data_->minimum_size = size;
-  this->size({this->size().width() < minimum_size().width() ? minimum_size().width() : this->size().width(), this->size().height() < minimum_size().height() ? minimum_size().height() : this->size().height()});
+  this->size({this->size().width < minimum_size().width ? minimum_size().width : this->size().width, this->size().height < minimum_size().height ? minimum_size().height : this->size().height});
   if (handle()) native::control::minimum_size(handle(), data_->minimum_size);
   return *this;
 }
@@ -771,7 +771,7 @@ drawing::size control::size() const noexcept {
 control& control::size(const drawing::size& size) {
   if (!get_state(state::client_size_setted) && this->size() == size) return *this;
   set_state(state::client_size_setted, false);
-  set_bounds_core(0, 0, size.width(), size.height(), bounds_specified::size);
+  set_bounds_core(0, 0, size.width, size.height, bounds_specified::size);
   return *this;
 }
 
@@ -869,11 +869,11 @@ control& control::visible(bool visible) {
 }
 
 int32 control::width() const noexcept {
-  return size().width();
+  return size().width;
 }
 
 control& control::width(int32 width) {
-  if (size().width() == width) return *this;
+  if (size().width == width) return *this;
   set_bounds_core(0, 0, width, 0, bounds_specified::width);
   return *this;
 }
@@ -1283,7 +1283,7 @@ void control::on_handle_created(const event_args& e) {
   data_->location = native::control::location(handle());
   data_->size = native::control::size(handle());
   
-  if (parent().has_value()) data_->anchoring = {left(), location().y, parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
+  if (parent().has_value()) data_->anchoring = {left(), location().y, parent().value().get().client_size().width - width() - left(), parent().value().get().client_size().height - height() - top()};
   
   native::control::right_to_left(handle(), static_cast<int32>(right_to_left()));
   
@@ -1455,29 +1455,29 @@ void control::on_region_changed(const event_args& e) {
 }
 
 void control::on_resize(const event_args& e) {
-  if (minimum_client_size() != xtd::drawing::size::empty && client_size().width() < minimum_client_size().width())
-    client_size({minimum_client_size().width(), client_size().height()});
+  if (minimum_client_size() != xtd::drawing::size::empty && client_size().width < minimum_client_size().width)
+    client_size({minimum_client_size().width, client_size().height});
     
-  if (minimum_client_size() != xtd::drawing::size::empty && client_size().height() < minimum_client_size().height())
-    client_size({client_size().width(), minimum_client_size().height()});
+  if (minimum_client_size() != xtd::drawing::size::empty && client_size().height < minimum_client_size().height)
+    client_size({client_size().width, minimum_client_size().height});
     
-  if (minimum_size() != xtd::drawing::size::empty && size().width() < minimum_size().width())
-    size({minimum_size().width(), size().height()});
+  if (minimum_size() != xtd::drawing::size::empty && size().width < minimum_size().width)
+    size({minimum_size().width, size().height});
     
-  if (minimum_size() != xtd::drawing::size::empty && size().height() < minimum_size().height())
-    size({size().width(), minimum_size().height()});
+  if (minimum_size() != xtd::drawing::size::empty && size().height < minimum_size().height)
+    size({size().width, minimum_size().height});
     
-  if (maximum_client_size() != xtd::drawing::size::empty && client_size().width() > maximum_client_size().width())
-    client_size({maximum_client_size().width(), client_size().height()});
+  if (maximum_client_size() != xtd::drawing::size::empty && client_size().width > maximum_client_size().width)
+    client_size({maximum_client_size().width, client_size().height});
     
-  if (maximum_client_size() != xtd::drawing::size::empty && client_size().height() > maximum_client_size().height())
-    client_size({client_size().width(), maximum_client_size().height()});
+  if (maximum_client_size() != xtd::drawing::size::empty && client_size().height > maximum_client_size().height)
+    client_size({client_size().width, maximum_client_size().height});
     
-  if (maximum_size() != xtd::drawing::size::empty && size().width() > maximum_size().width())
-    size({maximum_size().width(), size().height()});
+  if (maximum_size() != xtd::drawing::size::empty && size().width > maximum_size().width)
+    size({maximum_size().width, size().height});
     
-  if (maximum_size() != xtd::drawing::size::empty && size().height() > maximum_size().height())
-    size({size().width(), maximum_size().height()});
+  if (maximum_size() != xtd::drawing::size::empty && size().height > maximum_size().height)
+    size({size().width, maximum_size().height});
     
   if (is_handle_created()) data_->client_rectangle = native::control::client_rectangle(handle());
   if (parent().has_value() && parent().value().get().auto_size()) parent().value().get().perform_layout();
@@ -1748,18 +1748,18 @@ void control::set_bounds_core(int32 x, int32 y, int32 width, int32 height, bound
   if ((specified & bounds_specified::y) == bounds_specified::y) data_->location.y = y;
   if ((specified & bounds_specified::width) == bounds_specified::width) {
     if (!data_->size.has_value()) data_->size = default_size();
-    data_->size.value().width(width);
+    data_->size.value().width = width;
   }
   if ((specified & bounds_specified::height) == bounds_specified::height) {
     if (!data_->size.has_value()) data_->size = default_size();
-    data_->size.value().height(height);
+    data_->size.value().height = height;
   }
   
   if ((specified & bounds_specified::width) == bounds_specified::width || (specified & bounds_specified::height) == bounds_specified::height) {
-    if (size().width() < minimum_size().width()) data_->size.value().width(minimum_size().width());
-    if (size().height() < minimum_size().height()) data_->size.value().height(minimum_size().height());
-    if (!maximum_size().is_empty() && size().width() > maximum_size().width()) data_->size.value().width(maximum_size().width());
-    if (!maximum_size().is_empty() && size().height() > maximum_size().height()) data_->size.value().height(maximum_size().height());
+    if (size().width < minimum_size().width) data_->size.value().width = minimum_size().width;
+    if (size().height < minimum_size().height) data_->size.value().height = minimum_size().height;
+    if (!maximum_size().is_empty() && size().width > maximum_size().width) data_->size.value().width = maximum_size().width;
+    if (!maximum_size().is_empty() && size().height > maximum_size().height) data_->size.value().height = maximum_size().height;
     
     if (is_handle_created()) native::control::size(handle(), size());
     on_client_size_changed(event_args::empty);
@@ -1779,8 +1779,8 @@ void control::set_bounds_core(int32 x, int32 y, int32 width, int32 height, bound
 }
 
 void control::set_client_size_core(int32 width, int32 height) {
-  data_->client_size.width(width);
-  data_->client_size.height(height);
+  data_->client_size.width = width;
+  data_->client_size.height = height;
   
   if (is_handle_created()) native::control::client_size(handle(), data_->client_size);
   on_client_size_changed(event_args::empty);
@@ -1951,30 +1951,30 @@ void control::do_layout_with_anchor_styles() {
     if ((data_->anchor & anchor_styles::left) == anchor_styles::left && (data_->anchor & anchor_styles::right) != anchor_styles::right)
       left(left());
     else if ((data_->anchor & anchor_styles::left) == anchor_styles::left && (data_->anchor & anchor_styles::right) == anchor_styles::right)
-      width(parent().value().get().client_size().width() - data_->anchoring.right() - left());
+      width(parent().value().get().client_size().width - data_->anchoring.right() - left());
     else if ((data_->anchor & anchor_styles::left) != anchor_styles::left && (data_->anchor & anchor_styles::right) == anchor_styles::right)
-      left(parent().value().get().client_size().width() - width() - data_->anchoring.right());
+      left(parent().value().get().client_size().width - width() - data_->anchoring.right());
     else
-      left(parent().value().get().client_size().width() / 2 - width() / 2);
+      left(parent().value().get().client_size().width / 2 - width() / 2);
     
     if ((data_->anchor & anchor_styles::top) == anchor_styles::top && (data_->anchor & anchor_styles::bottom) != anchor_styles::bottom)
       top(top());
     else if ((data_->anchor & anchor_styles::top) == anchor_styles::top && (data_->anchor & anchor_styles::bottom) == anchor_styles::bottom)
-      height(parent().value().get().client_size().height() - data_->anchoring.bottom() - top());
+      height(parent().value().get().client_size().height - data_->anchoring.bottom() - top());
     else if ((data_->anchor & anchor_styles::top) != anchor_styles::top && (data_->anchor & anchor_styles::bottom) == anchor_styles::bottom)
-      top(parent().value().get().client_size().height() - height() - data_->anchoring.bottom());
+      top(parent().value().get().client_size().height - height() - data_->anchoring.bottom());
     else
-      top(parent().value().get().client_size().height() / 2 - height() / 2);
+      top(parent().value().get().client_size().height / 2 - height() / 2);
   }
 }
 
 void control::do_layout_with_auto_size_mode() {
   if (get_state(state::auto_size)) {
     auto auto_size_size_ = measure_control();
-    if (data_->auto_size_mode == auto_size_mode::grow_only && auto_size_size_.width() < data_->client_size.width())
-      auto_size_size_.width(data_->client_size.width());
-    if (data_->auto_size_mode == auto_size_mode::grow_only && auto_size_size_.height() < data_->client_size.height())
-      auto_size_size_.height(data_->client_size.height());
+    if (data_->auto_size_mode == auto_size_mode::grow_only && auto_size_size_.width < data_->client_size.width)
+      auto_size_size_.width = data_->client_size.width;
+    if (data_->auto_size_mode == auto_size_mode::grow_only && auto_size_size_.height < data_->client_size.height)
+      auto_size_size_.height = data_->client_size.height;
     client_size(auto_size_size_);
   }
 }
