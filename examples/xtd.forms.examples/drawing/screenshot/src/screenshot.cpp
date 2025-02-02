@@ -58,7 +58,7 @@ namespace screenshot_example {
     }
 
     auto take_new_screenshot() -> void {
-      auto screenshot_bitmap = bitmap {screen::primary_screen().bounds().width(), screen::primary_screen().bounds().height()};
+      auto screenshot_bitmap = bitmap {screen::primary_screen().bounds().width, screen::primary_screen().bounds().height};
       screenshot_bitmap.create_graphics().copy_from_screen({0, 0}, {0, 0}, screenshot_bitmap.size());
       screenshot_picture_box.image(screenshot_bitmap);
     }
