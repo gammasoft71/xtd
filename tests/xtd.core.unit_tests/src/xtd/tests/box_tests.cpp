@@ -12,30 +12,30 @@ namespace xtd::tests {
   class test_class_(box_tests) {
     void test_method_(create_box_with_default_constructor) {
       box<int32> b;
-      assert::is_zero(b.value());
+      assert::is_zero(b.value);
     }
     
     void test_method_(create_box_value_type) {
       box<int32> b;
-      assert::is_true(is<int32>(b.value()));
-      assert::is_zero(b.value());
+      assert::is_true(is<int32>(b.value));
+      assert::is_zero(b.value);
     }
     
     void test_method_(create_box_with_value_constructor) {
       box<int32> b(42);
-      assert::are_equal(42, b.value());
+      assert::are_equal(42, b.value);
     }
     
     void test_method_(create_box_with_copy_constructor) {
       box<int32> b1(42);
       box<int32> b2(b1);
-      assert::are_equal(42, b2.value());
+      assert::are_equal(42, b2.value);
     }
     
     void test_method_(box_equal_operator) {
       box<int32> b;
       b = 42;
-      assert::are_equal(42, b.value());
+      assert::are_equal(42, b.value);
     }
     
     void test_method_(box_value_type_operator) {
@@ -46,14 +46,14 @@ namespace xtd::tests {
     
     void test_method_(box_get_value) {
       box<int32> b(42);
-      int32 i = b.value();
+      int32 i = b.value;
       assert::are_equal(42, i);
     }
     
     void test_method_(box_set_value) {
       box<int32> b;
-      b.value(42);
-      assert::are_equal(42, b.value());
+      b.value = 42;
+      assert::are_equal(42, b.value);
     }
     
     void test_method_(box_equals) {
