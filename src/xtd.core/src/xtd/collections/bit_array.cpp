@@ -28,7 +28,6 @@ bit_array::bit_array(size length) {
 }
 
 bit_array::bit_array(size length, bool default_value) {
-  if (length_ < 0) throw argument_out_of_range_exception {};
   length_ = length;
   while (bit_array_.count() < get_list_length(length_))
     bit_array_.add(default_value ? 0xFFFFFFFFL : 0);
