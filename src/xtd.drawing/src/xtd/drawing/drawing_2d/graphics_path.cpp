@@ -66,7 +66,7 @@ void graphics_path::add_bezier(const xtd::drawing::point& pt1, const xtd::drawin
 }
 
 void graphics_path::add_bezier(const xtd::drawing::point_f& pt1, const xtd::drawing::point_f& pt2, const xtd::drawing::point_f& pt3, const xtd::drawing::point_f& pt4) {
-  add_bezier(pt1.x(), pt1.y(), pt2.x(), pt2.y(), pt3.x(), pt3.y(), pt4.x(), pt4.y());
+  add_bezier(pt1.x, pt1.y, pt2.x, pt2.y, pt3.x, pt3.y, pt4.x, pt4.y);
 }
 
 void graphics_path::add_bezier(int32 x1, int32 y1, int32 x2, int32 y2, int32 x3, int32 y3, int32 x4, int32 y4) {
@@ -85,7 +85,7 @@ void graphics_path::add_beziers(const std::vector<xtd::drawing::point>& points) 
 
 void graphics_path::add_beziers(const std::vector<xtd::drawing::point_f>& points) {
   auto pair_points = std::vector<key_value_pair<float, float>> {};
-  std::for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x(), point.y());});
+  std::for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x, point.y);});
   native::graphics_path::add_beziers(handle(), pair_points);
 }
 
@@ -105,7 +105,7 @@ void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point>& poi
 
 void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point_f>& points, float tension) {
   auto pair_points = std::vector<key_value_pair<float, float>> {};
-  std::for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x(), point.y());});
+  std::for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x, point.y);});
   native::graphics_path::add_closed_curve(handle(), pair_points, tension);
 }
 
@@ -133,7 +133,7 @@ void graphics_path::add_curve(const std::vector<xtd::drawing::point>& points, si
 
 void graphics_path::add_curve(const std::vector<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension) {
   auto pair_points = std::vector<key_value_pair<float, float>> {};
-  std::for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x(), point.y());});
+  std::for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x, point.y);});
   native::graphics_path::add_curve(handle(), pair_points, offset, number_of_segments, tension);
 }
 
@@ -158,7 +158,7 @@ void graphics_path::add_line(const xtd::drawing::point& pt1, const xtd::drawing:
 }
 
 void graphics_path::add_line(const xtd::drawing::point_f& pt1, const xtd::drawing::point_f& pt2) {
-  add_line(pt1.x(), pt1.y(), pt2.x(), pt2.y());
+  add_line(pt1.x, pt1.y, pt2.x, pt2.y);
 }
 
 void graphics_path::add_line(int32 x1, int32 y1, int32 x2, int32 y2) {
@@ -260,7 +260,7 @@ void graphics_path::add_string(const xtd::string& s, const xtd::drawing::font_fa
 
 void graphics_path::add_string(const xtd::string& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::point_f& origin, const xtd::drawing::string_format& format) {
   auto f = font {family, em_size, style};
-  native::graphics_path::add_string(handle(), s, f.handle(), origin.x(), origin.y(), static_cast<int32>(format.alignment()), static_cast<int32>(format.line_alignment()), static_cast<int32>(format.hotkey_prefix()), static_cast<int32>(format.trimming()));
+  native::graphics_path::add_string(handle(), s, f.handle(), origin.x, origin.y, static_cast<int32>(format.alignment()), static_cast<int32>(format.line_alignment()), static_cast<int32>(format.hotkey_prefix()), static_cast<int32>(format.trimming()));
 }
 
 void graphics_path::add_string(const xtd::string& s, const xtd::drawing::font_family& family, xtd::drawing::font_style style, float em_size, const xtd::drawing::rectangle& layout_rect, const xtd::drawing::string_format& format) {
@@ -305,7 +305,7 @@ bool graphics_path::is_vsible(const xtd::drawing::point& point) const {
 }
 
 bool graphics_path::is_vsible(const xtd::drawing::point_f& point) const {
-  return is_vsible(point.x(), point.y());
+  return is_vsible(point.x, point.y);
 }
 
 bool graphics_path::is_vsible(int32 x, int32 y) const {

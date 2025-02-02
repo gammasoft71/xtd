@@ -25,7 +25,7 @@ public:
   }
 
   static point point_f_to_point(const point_f& pf) {
-    return point {as<int>(pf.x()), as<int>(pf.y())};
+    return point {as<int>(pf.x), as<int>(pf.y)};
   }
 };
 

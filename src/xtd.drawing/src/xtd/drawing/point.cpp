@@ -6,7 +6,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 
-const point point::empty {};
+const point point::empty;
 
 point::point(int32 dw) noexcept : x(dw & 0x0000FFFF), y((dw & 0xFFFF0000) >> 16) {
 }
@@ -34,7 +34,7 @@ point point::add(const point& pt1, const point& pt2) noexcept {
 }
 
 point point::ceiling(const point_f& value) noexcept {
-  return {as<int32>(math::ceiling(value.x())), as<int32>(math::ceiling(value.y()))};
+  return {as<int32>(math::ceiling(value.x)), as<int32>(math::ceiling(value.y))};
 }
 
 bool point::equals(const point& value) const noexcept {
@@ -51,7 +51,7 @@ void point::offset(const point& p) noexcept {
 }
 
 point point::round(const point_f& value) noexcept {
-  return {as<int32>(math::round(value.x())), as<int32>(math::round(value.y()))};
+  return {as<int32>(math::round(value.x)), as<int32>(math::round(value.y))};
 }
 
 point point::subtract(const point& pt, const size& sz) noexcept {
@@ -67,7 +67,7 @@ xtd::string point::to_string() const noexcept {
 }
 
 point point::truncate(const point_f& value) noexcept {
-  return {as<int32>(math::truncate(value.x())), as<int32>(math::truncate(value.y()))};
+  return {as<int32>(math::truncate(value.x)), as<int32>(math::truncate(value.y))};
 }
 
 point point::operator +(const size& sz) const noexcept {

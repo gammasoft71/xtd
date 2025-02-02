@@ -9,7 +9,7 @@ const rectangle_f rectangle_f::empty;
 rectangle_f::rectangle_f(float x, float y, float width, float height) noexcept  : x_(x), y_(y), width_(width), height_(height) {
 }
 
-rectangle_f::rectangle_f(const point_f& location, const size_f& size) noexcept  : rectangle_f(location.x(), location.y(), size.width(), size.height()) {
+rectangle_f::rectangle_f(const point_f& location, const size_f& size) noexcept  : rectangle_f(location.x, location.y, size.width(), size.height()) {
 }
 
 float rectangle_f::bottom() const noexcept {
@@ -41,8 +41,8 @@ point_f rectangle_f::location() const noexcept {
 }
 
 void rectangle_f::location(const point_f& location) {
-  x_ = location.x();
-  y_ = location.y();
+  x_ = location.x;
+  y_ = location.y;
 }
 
 float rectangle_f::right() const noexcept {
@@ -106,7 +106,7 @@ rectangle_f rectangle_f::add(const rectangle_f& rect, const size_f& sz) noexcept
 }
 
 bool rectangle_f::contains(const point_f& pt) const noexcept {
-  return contains(pt.x(), pt.y());
+  return contains(pt.x, pt.y);
 }
 
 bool rectangle_f::contains(const rectangle_f& rect) const noexcept {
@@ -190,7 +190,7 @@ void rectangle_f::make_union(const rectangle_f& rect) noexcept {
 }
 
 void rectangle_f::offset(const point_f& pos) noexcept {
-  offset(pos.x(), pos.y());
+  offset(pos.x, pos.y);
 }
 
 void rectangle_f::offset(float x, float y) noexcept {
@@ -199,7 +199,7 @@ void rectangle_f::offset(float x, float y) noexcept {
 }
 
 rectangle_f rectangle_f::offset(const rectangle_f& rect, const point_f& pos) noexcept {
-  return offset(rect, pos.x(), pos.y());
+  return offset(rect, pos.x, pos.y);
 }
 
 rectangle_f rectangle_f::offset(const rectangle_f& rect, float x, float y) noexcept {

@@ -22,7 +22,7 @@ linear_gradient_brush::linear_gradient_brush() : linear_gradient_brush(rectangle
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::point& point1, const xtd::drawing::point& point2, const xtd::drawing::color& color1, const xtd::drawing::color& color2) : linear_gradient_brush(point_f(as<float>(point1.x), as<float>(point1.y)), point_f(as<float>(point2.x), as<float>(point2.y)), {color1, color2}) {
 }
 
-linear_gradient_brush::linear_gradient_brush(const xtd::drawing::point_f& point1, const xtd::drawing::point_f& point2, const xtd::drawing::color& color1, const xtd::drawing::color& color2) : linear_gradient_brush(rectangle_f::from_ltrb(point1.x(), point1.y(), point2.x(), point2.y()), {color1, color2}, .0) {
+linear_gradient_brush::linear_gradient_brush(const xtd::drawing::point_f& point1, const xtd::drawing::point_f& point2, const xtd::drawing::color& color1, const xtd::drawing::color& color2) : linear_gradient_brush(rectangle_f::from_ltrb(point1.x, point1.y, point2.x, point2.y), {color1, color2}, .0) {
 }
 
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2, xtd::drawing::drawing_2d::linear_gradient_mode linear_gradient_mode) : linear_gradient_brush(rectangle_f(rect), {color1, color2}, linear_gradient_mode_to_angle(linear_gradient_mode)) {
@@ -46,7 +46,7 @@ linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& re
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::point& point1, const xtd::drawing::point& point2, const std::vector<xtd::drawing::color>& linear_colors) : linear_gradient_brush(point_f(as<float>(point1.x), as<float>(point1.y)), point_f(as<float>(point2.x), as<float>(point2.y)), linear_colors) {
 }
 
-linear_gradient_brush::linear_gradient_brush(const xtd::drawing::point_f& point1, const xtd::drawing::point_f& point2, const std::vector<xtd::drawing::color>& linear_colors) : linear_gradient_brush(rectangle_f::from_ltrb(point1.x(), point1.y(), point2.x(), point2.y()), linear_colors, .0) {
+linear_gradient_brush::linear_gradient_brush(const xtd::drawing::point_f& point1, const xtd::drawing::point_f& point2, const std::vector<xtd::drawing::color>& linear_colors) : linear_gradient_brush(rectangle_f::from_ltrb(point1.x, point1.y, point2.x, point2.y), linear_colors, .0) {
 }
 
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect, const std::vector<xtd::drawing::color>& linear_colors, xtd::drawing::drawing_2d::linear_gradient_mode linear_gradient_mode) : linear_gradient_brush(rectangle_f(rect), linear_colors, linear_gradient_mode_to_angle(linear_gradient_mode)) {
