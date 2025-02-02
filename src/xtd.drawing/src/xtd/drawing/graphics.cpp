@@ -878,7 +878,7 @@ size_f graphics::measure_string(const xtd::string& text, const xtd::drawing::fon
 size_f graphics::measure_string(const xtd::string& text, const xtd::drawing::font& font, const xtd::drawing::size_f& layout_area, const xtd::drawing::string_format& format, size_t characters_fitted, size_t lines_filled) {
   auto string_width = 0.0f;
   auto string_height = 0.0f;
-  native::graphics::measure_string(handle(), text, font.handle(), string_width, string_height, to_pixels(layout_area.width()), to_pixels(layout_area.height()), static_cast<int32>(format.alignment()), static_cast<int32>(format.line_alignment()), static_cast<int32>(format.hotkey_prefix()), static_cast<int32>(format.trimming()), characters_fitted, lines_filled, (format.format_flags() & string_format_flags::measure_trailing_spaces) == string_format_flags::measure_trailing_spaces);
+  native::graphics::measure_string(handle(), text, font.handle(), string_width, string_height, to_pixels(layout_area.width), to_pixels(layout_area.height), static_cast<int32>(format.alignment()), static_cast<int32>(format.line_alignment()), static_cast<int32>(format.hotkey_prefix()), static_cast<int32>(format.trimming()), characters_fitted, lines_filled, (format.format_flags() & string_format_flags::measure_trailing_spaces) == string_format_flags::measure_trailing_spaces);
   return size_f(to_page_unit(string_width), to_page_unit(string_height));
 }
 

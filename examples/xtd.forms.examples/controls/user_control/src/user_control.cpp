@@ -41,7 +41,7 @@ namespace user_control_example {
       e.graphics().draw_line(pen(color_converter::dark(color_converter::dark(back_color()))), status_rectangle.location(), point {1, status_rectangle.height()});
       e.graphics().draw_line(pen(color_converter::light(color_converter::light(back_color()))), point {1, status_rectangle.height()}, point {status_rectangle.width(), status_rectangle.height()});
       e.graphics().draw_line(pen(color_converter::light(color_converter::light(back_color()))), point {status_rectangle.width(), 1}, point {status_rectangle.width(), status_rectangle.height()});
-      e.graphics().draw_string(text(), default_font(), system_brushes::control_text(), 35, e.graphics().measure_string(text(), default_font()).height() / 2);
+      e.graphics().draw_string(text(), default_font(), system_brushes::control_text(), 35, e.graphics().measure_string(text(), default_font()).height / 2);
     }
     
     drawing::size default_size() const noexcept override {return {160, 30};}

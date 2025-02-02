@@ -221,18 +221,18 @@ private:
     e.graphics().draw_string(bold_str, bold_font, linear_gradient_brush(point_f(50, 50), point_f(e.graphics().measure_string(bold_str, bold_font)), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}), point(50, 150));
     
     auto text_size = e.graphics().measure_string(regular_str, regular_font);
-    e.graphics().draw_rotated_string(regular_str, regular_font, linear_gradient_brush(rectangle_f(point_f(100, 250), size_f(text_size.height(), text_size.width())), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}, 90.0f), point(100, 250), 90);
+    e.graphics().draw_rotated_string(regular_str, regular_font, linear_gradient_brush(rectangle_f(point_f(100, 250), size_f(text_size.height, text_size.width)), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}, 90.0f), point(100, 250), 90);
     text_size = e.graphics().measure_string(italic_str, italic_font);
-    e.graphics().draw_rotated_string(italic_str, italic_font, linear_gradient_brush(rectangle_f(point_f(150, 250), size_f(text_size.height(), text_size.width())), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}, 90.0f), point(150, 250), 90);
+    e.graphics().draw_rotated_string(italic_str, italic_font, linear_gradient_brush(rectangle_f(point_f(150, 250), size_f(text_size.height, text_size.width)), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}, 90.0f), point(150, 250), 90);
     text_size = e.graphics().measure_string(bold_str, bold_font);
-    e.graphics().draw_rotated_string(bold_str, bold_font, linear_gradient_brush(rectangle_f(point_f(200, 250), size_f(text_size.height(), text_size.width())), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}, 90.0f), point(200, 250), 90);
+    e.graphics().draw_rotated_string(bold_str, bold_font, linear_gradient_brush(rectangle_f(point_f(200, 250), size_f(text_size.height, text_size.width)), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}, 90.0f), point(200, 250), 90);
     
     text_size = size_f(300.0f, 300.0f);
-    e.graphics().draw_rotated_string(regular_str, regular_font, linear_gradient_brush(rectangle_f(point_f(300, 250), size_f(text_size.width(), text_size.height())), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}, 45.0f), point(300, 250), 45);
+    e.graphics().draw_rotated_string(regular_str, regular_font, linear_gradient_brush(rectangle_f(point_f(300, 250), size_f(text_size.width, text_size.height)), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}, 45.0f), point(300, 250), 45);
     text_size = size_f(260.0f, 260.0f);
-    e.graphics().draw_rotated_string(italic_str, italic_font, linear_gradient_brush(rectangle_f(point_f(350, 250), size_f(text_size.width(), text_size.height())), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}, 45.0f), point(350, 250), 45);
+    e.graphics().draw_rotated_string(italic_str, italic_font, linear_gradient_brush(rectangle_f(point_f(350, 250), size_f(text_size.width, text_size.height)), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}, 45.0f), point(350, 250), 45);
     text_size = size_f(240.0f, 240.0f);
-    e.graphics().draw_rotated_string(bold_str, bold_font, linear_gradient_brush(rectangle_f(point_f(400, 250), size_f(text_size.width(), text_size.height())), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}, 45.0f), point(400, 250), 45);
+    e.graphics().draw_rotated_string(bold_str, bold_font, linear_gradient_brush(rectangle_f(point_f(400, 250), size_f(text_size.width, text_size.height)), {color::red, color::orange, color::yellow, color::green, color::cyan, color::blue, color::dark_magenta, color::magenta}, 45.0f), point(400, 250), 45);
   }
   
   void draw_strings_hotkey_prefix(object& sender, paint_event_args& e) {
@@ -248,12 +248,12 @@ private:
     auto text = "Lorem ipsum dolor sitas amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec,"_s;
     auto text_size = e.graphics().measure_string(text, regular_font);
     
-    e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 50.0f, 850.0f, as<float>(text_size.height())), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::none));
-    e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 150.0f, 850.0f, as<float>(text_size.height())), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::character));
-    e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 250.0f, 850.0f, as<float>(text_size.height())), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::word));
-    e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 350.0f, 850.0f, as<float>(text_size.height())), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::ellipsis_character));
-    e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 450.0f, 850.0f, as<float>(text_size.height())), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::ellipsis_word));
-    e.graphics().draw_string(string::format("{0}directory1{0}directory2{0}directory3{0}directory4{0}directory5{0}directory6{0}file.txt", xtd::io::path::directory_separator_char()), regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 550.0f, 850.0f, as<float>(text_size.height())), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::ellipsis_path));
+    e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 50.0f, 850.0f, as<float>(text_size.height)), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::none));
+    e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 150.0f, 850.0f, as<float>(text_size.height)), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::character));
+    e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 250.0f, 850.0f, as<float>(text_size.height)), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::word));
+    e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 350.0f, 850.0f, as<float>(text_size.height)), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::ellipsis_character));
+    e.graphics().draw_string(text, regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 450.0f, 850.0f, as<float>(text_size.height)), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::ellipsis_word));
+    e.graphics().draw_string(string::format("{0}directory1{0}directory2{0}directory3{0}directory4{0}directory5{0}directory6{0}file.txt", xtd::io::path::directory_separator_char()), regular_font, solid_brush(system_colors::control_text()), rectangle_f(50.0f, 550.0f, 850.0f, as<float>(text_size.height)), string_format(string_format_flags::no_wrap).trimming(xtd::drawing::string_trimming::ellipsis_path));
   }
   
   void draw_strings_with_string_format(object& sender, paint_event_args& e) {

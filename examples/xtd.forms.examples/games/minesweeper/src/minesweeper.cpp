@@ -185,8 +185,8 @@ void minesweeper_form::draw_checked(paint_event_args& e, const rectangle& clip_r
     }
   }
   auto text = std::to_string(cell.number_of_neighbouring_mines());
-  auto x = clip_rectangle.left() + (clip_rectangle.width() - e.graphics().measure_string(text, font()).width()) / 2;
-  auto y = clip_rectangle.top() + (clip_rectangle.height() - e.graphics().measure_string(text, font()).height()) / 2;
+  auto x = clip_rectangle.left() + (clip_rectangle.width() - e.graphics().measure_string(text, font()).width) / 2;
+  auto y = clip_rectangle.top() + (clip_rectangle.height() - e.graphics().measure_string(text, font()).height) / 2;
   e.graphics().draw_string(text, font(), solid_brush(text_color), x, y);
 }
 
@@ -201,8 +201,8 @@ void minesweeper_form::draw_flag(paint_event_args& e, const rectangle& clip_rect
 
 void minesweeper_form::draw_question(paint_event_args& e, const rectangle& clip_rectangle, minesweeper::cell cell) {
   draw_border_unchecked(e, clip_rectangle);
-  auto x = clip_rectangle.left() + (clip_rectangle.width() - e.graphics().measure_string("?", font()).width()) / 2;
-  auto y = clip_rectangle.top() + (clip_rectangle.height() - e.graphics().measure_string("?", font()).height()) / 2;
+  auto x = clip_rectangle.left() + (clip_rectangle.width() - e.graphics().measure_string("?", font()).width) / 2;
+  auto y = clip_rectangle.top() + (clip_rectangle.height() - e.graphics().measure_string("?", font()).height) / 2;
   auto question_color = back_color().get_brightness() < 0.5f ? color::light_sky_blue : color::blue;
   e.graphics().draw_string("?", font(), solid_brush(question_color), x, y);
 }

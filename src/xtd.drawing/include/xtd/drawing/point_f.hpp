@@ -18,7 +18,7 @@ namespace xtd {
     struct point;
     struct point_f;
     struct size;
-    class size_f;
+    struct size_f;
     /// @endcond
     
     /// @brief Represents an ordered pair of floating-point x- and y-coordinates that defines a point in a two-dimensional plane.
