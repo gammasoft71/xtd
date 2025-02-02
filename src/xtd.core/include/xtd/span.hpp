@@ -91,7 +91,7 @@ namespace xtd {
     /// @{
     /// @brief Creates an empty xtd::span whose xtd::span::data is null and xtd::span::size is 0.
     template <xtd::size count = 0>
-    constexpr span() : data_ {xtd::null}, length_ {0} {};
+    constexpr span() : data_ {xtd::null}, length_ {0} {}
     
     /// @brief 
     /// @brief Creates an xtd::span with specified iterators.
