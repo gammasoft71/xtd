@@ -95,7 +95,7 @@ bool form::maximize(intptr control) {
   #if defined(__WXGTK__)
   xtd::drawing::size form_size = control::size(control);
   xtd::drawing::size screen_size = screen::working_area(screen::from_handle(control)).size();
-  return form_size.width() == screen_size.width() && form_size.height() == screen_size.height();
+  return form_size.width == screen_size.width && form_size.height == screen_size.height;
   #else
   return static_cast<wxTopLevelWindow*>(reinterpret_cast<control_handler*>(control)->control())->IsMaximized();
   #endif
