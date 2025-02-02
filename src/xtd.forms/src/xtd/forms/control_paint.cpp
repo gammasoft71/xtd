@@ -132,45 +132,45 @@ namespace {
     //graphics.draw_rounded_rectangle(pen(light ? light_color : dark_color, 1), rect, 4);
     
     auto radius = 6;
-    if (math::max(rect.width(), rect.height()) <= 12) radius = 5;
-    if (math::max(rect.width(), rect.height()) <= 10) radius = 4;
-    if (math::max(rect.width(), rect.height()) <= 8) radius = 3;
-    if (math::max(rect.width(), rect.height()) <= 6) radius = 2;
-    if (math::max(rect.width(), rect.height()) <= 4) radius = 1;
-    if (math::max(rect.width(), rect.height()) <= 2) radius = 0;
+    if (math::max(rect.width, rect.height) <= 12) radius = 5;
+    if (math::max(rect.width, rect.height) <= 10) radius = 4;
+    if (math::max(rect.width, rect.height) <= 8) radius = 3;
+    if (math::max(rect.width, rect.height) <= 6) radius = 2;
+    if (math::max(rect.width, rect.height) <= 4) radius = 1;
+    if (math::max(rect.width, rect.height) <= 2) radius = 0;
     
     if ((sides & border_sides::top) == border_sides::top) {
       // top
-      graphics.draw_line(pen(light ? light_color : dark_color, 1), rect.x() + radius, rect.y(), rect.right() - radius, rect.y());
+      graphics.draw_line(pen(light ? light_color : dark_color, 1), rect.x + radius, rect.y, rect.right() - radius, rect.y);
       // top-left
-      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.x(), rect.y(), radius * 2, radius * 2, 225, 45);
+      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.x, rect.y, radius * 2, radius * 2, 225, 45);
       // top-right
-      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.right() - radius * 2, rect.y(), radius * 2, radius * 2, 270, 45);
+      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.right() - radius * 2, rect.y, radius * 2, radius * 2, 270, 45);
     }
     
     if ((sides & border_sides::left) == border_sides::left) {
       // left
-      graphics.draw_line(pen(light ? light_color : dark_color, 1), rect.x(), rect.y() + radius, rect.x(), rect.bottom() - radius);
+      graphics.draw_line(pen(light ? light_color : dark_color, 1), rect.x, rect.y + radius, rect.x, rect.bottom() - radius);
       // left-top
-      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.x(), rect.y(), radius * 2, radius * 2, 180, 45);
+      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.x, rect.y, radius * 2, radius * 2, 180, 45);
       // left-bottom
-      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.x(), rect.bottom() - radius * 2, radius * 2, radius * 2, 135, 45);
+      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.x, rect.bottom() - radius * 2, radius * 2, radius * 2, 135, 45);
     }
     
     if ((sides & border_sides::bottom) == border_sides::bottom) {
       // botttom
-      graphics.draw_line(pen(light ? light_color : dark_color, 1), rect.x() + radius, rect.bottom(), rect.right() - radius, rect.bottom());
+      graphics.draw_line(pen(light ? light_color : dark_color, 1), rect.x + radius, rect.bottom(), rect.right() - radius, rect.bottom());
       // bottom-left
-      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.x(), rect.bottom() - radius * 2, radius * 2, radius * 2, 90, 45);
+      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.x, rect.bottom() - radius * 2, radius * 2, radius * 2, 90, 45);
       // botttom-right
       graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.right() - radius * 2, rect.bottom() - radius * 2, radius * 2, radius * 2, 45, 45);
     }
     
     if ((sides & border_sides::right) == border_sides::right) {
       // right
-      graphics.draw_line(pen(light ? light_color : dark_color, 1), rect.right(), rect.y() + radius, rect.right(), rect.bottom() - radius);
+      graphics.draw_line(pen(light ? light_color : dark_color, 1), rect.right(), rect.y + radius, rect.right(), rect.bottom() - radius);
       // right-top
-      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.right() - radius * 2, rect.y(), radius * 2, radius * 2, 315, 45);
+      graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.right() - radius * 2, rect.y, radius * 2, radius * 2, 315, 45);
       // right-bottom
       graphics.draw_arc(pen(light ? light_color : dark_color, 1), rect.right() - radius * 2, rect.bottom() - radius * 2, radius * 2, radius * 2, 0, 45);
     }
@@ -254,7 +254,7 @@ color control_paint::dark_dark(const color& base_color) {
 }
 
 void control_paint::draw_button(const forms::control& control, drawing::graphics& graphics, const drawing::rectangle& rectangle, button_state state) {
-  draw_button(control, graphics, rectangle.x(), rectangle.y(), rectangle.width(), rectangle.height(), state);
+  draw_button(control, graphics, rectangle.x, rectangle.y, rectangle.width, rectangle.height, state);
 }
 
 void control_paint::draw_button(const forms::control& control, drawing::graphics& graphics, int32 x, int32 y, int32 width, int32 height, button_state state) {
@@ -296,7 +296,7 @@ void control_paint::draw_border_from_back_color(const forms::control& control, d
 }
 
 void control_paint::draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle, xtd::forms::image_layout image_layout) {
-  draw_image(graphics, image, rectangle.x(), rectangle.y(), rectangle.width(), rectangle.height(), image_layout);
+  draw_image(graphics, image, rectangle.x, rectangle.y, rectangle.width, rectangle.height, image_layout);
 }
 
 void control_paint::draw_image(xtd::drawing::graphics& graphics, const xtd::drawing::image& image, int32 x, int32 y, int32 width, int32 height, xtd::forms::image_layout image_layout) {

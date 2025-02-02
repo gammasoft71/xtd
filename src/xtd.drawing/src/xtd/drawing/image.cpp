@@ -155,9 +155,9 @@ image::image(const image& image, int32 width, int32 height) : data_(xtd::new_spt
 }
 
 image::image(const image& image, const rectangle& rect) : data_(xtd::new_sptr<data>()) {
-  if (rect.left() < 0 || rect.top() < 0 || rect.width() < 1 || rect.height() < 1) throw argument_exception {};
+  if (rect.left() < 0 || rect.top() < 0 || rect.width < 1 || rect.height < 1) throw argument_exception {};
   *this = image;
-  crop(rect.left(), rect.top(), rect.width(), rect.height());
+  crop(rect.left(), rect.top(), rect.width, rect.height);
   update_properties();
 }
 

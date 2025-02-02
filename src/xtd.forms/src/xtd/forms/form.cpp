@@ -392,8 +392,8 @@ void form::center_to_screen() {
   if (!data_->previous_screen) start_position(form_start_position::center_screen);
   else {
     screen screen = screen::from_control(*this);
-    left((screen.working_area().width() - width()) / 2);
-    top((screen.working_area().height() - height()) / 2);
+    left((screen.working_area().width - width()) / 2);
+    top((screen.working_area().height - height()) / 2);
   }
 }
 
@@ -840,7 +840,7 @@ void form::fill_in_create_params_start_position(xtd::forms::create_params& creat
         create_params.size(size());
         break;
       case form_start_position::center_screen:
-        create_params.location({(data_->previous_screen->working_area().width() - width()) / 2, (data_->previous_screen->working_area().height() - height()) / 2});
+        create_params.location({(data_->previous_screen->working_area().width - width()) / 2, (data_->previous_screen->working_area().height - height()) / 2});
         create_params.size(size());
         break;
       case form_start_position::windows_default_location:
@@ -849,7 +849,7 @@ void form::fill_in_create_params_start_position(xtd::forms::create_params& creat
         break;
       case form_start_position::windows_default_bounds:
         create_params.location({default_location, default_location});
-        create_params.size({data_->previous_screen->working_area().width() / 4 * 3, data_->previous_screen->working_area().height() / 4 * 3});
+        create_params.size({data_->previous_screen->working_area().width / 4 * 3, data_->previous_screen->working_area().height / 4 * 3});
         break;
       case form_start_position::center_parent:
         if (parent().has_value())

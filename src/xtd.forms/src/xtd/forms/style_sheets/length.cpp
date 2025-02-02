@@ -42,15 +42,15 @@ int32 length::get_pixels(const xtd::drawing::rectangle& rect) const noexcept {
     case length_unit::pixels: return as<int32>(value());
     case length_unit::points: return as<int32>(value() / 96.0 * 72.0);
     case length_unit::picas: return as<int32>(value() * 12.0 / 96.0 * 72.0);
-    case length_unit::element: return as<int32>(rect.width() / 100.0 * value());
-    case length_unit::element_x_height: return as<int32>(rect.height() / 100.0 * value());
-    case length_unit::chase: return as<int32>(rect.height() / 100.0 * value());
-    case length_unit::root_element: return as<int32>(rect.width() / 100.0 * value());
-    case length_unit::viewport_width: return as<int32>(rect.width() / 100.0 * value());
-    case length_unit::viewport_height: return as<int32>(rect.height() / 100.0 * value());
-    case length_unit::viewport_min: return as<int32>(math::min(rect.width(), rect.height()) / 100.0 * value());
-    case length_unit::viewport_max: return as<int32>(math::max(rect.width(), rect.height()) / 100.0 * value());
-    case length_unit::percent: return as<int32>(rect.height() / 100.0 * value());
+    case length_unit::element: return as<int32>(rect.width / 100.0 * value());
+    case length_unit::element_x_height: return as<int32>(rect.height / 100.0 * value());
+    case length_unit::chase: return as<int32>(rect.height / 100.0 * value());
+    case length_unit::root_element: return as<int32>(rect.width / 100.0 * value());
+    case length_unit::viewport_width: return as<int32>(rect.width / 100.0 * value());
+    case length_unit::viewport_height: return as<int32>(rect.height / 100.0 * value());
+    case length_unit::viewport_min: return as<int32>(math::min(rect.width, rect.height) / 100.0 * value());
+    case length_unit::viewport_max: return as<int32>(math::max(rect.width, rect.height) / 100.0 * value());
+    case length_unit::percent: return as<int32>(rect.height / 100.0 * value());
   }
   return 0;
 }

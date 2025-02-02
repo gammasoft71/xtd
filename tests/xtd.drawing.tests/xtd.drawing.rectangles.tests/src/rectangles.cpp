@@ -226,7 +226,7 @@ private:
     auto left = gap, top = gap, width = 130, height = 50;
     for (auto pattern : patterns) {
       e.graphics().fill_rectangle(hatch_brush(pattern, forground_color, background_color), rectangle(left, top, width, height));
-      if (left + width + width + gap < e.clip_rectangle().width()) left += width + gap;
+      if (left + width + width + gap < e.clip_rectangle().width) left += width + gap;
       else {
         top += height + gap;
         left = gap;

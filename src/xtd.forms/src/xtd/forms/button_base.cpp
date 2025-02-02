@@ -252,15 +252,15 @@ xtd::drawing::rectangle button_base::compute_image_bounds(const xtd::drawing::re
   auto image_bounds = xtd::drawing::rectangle {(width() - data_->image.width()) / 2, (height() - data_->image.height()) / 2, data_->image.width(), data_->image.height()};
   auto image_margin = 4;
   switch (data_->image_align) {
-    case content_alignment::top_left: image_bounds = {rectangle.x() + image_margin, rectangle.y() + image_margin, data_->image.width(), data_->image.height()}; break;
-    case content_alignment::top_center: image_bounds = {(rectangle.width() - data_->image.width()) / 2, rectangle.y() + image_margin, data_->image.width(), data_->image.height()}; break;
-    case content_alignment::top_right: image_bounds = {rectangle.width() - data_->image.width() - image_margin, rectangle.y() + image_margin, data_->image.width(), data_->image.height()}; break;
-    case content_alignment::middle_left: image_bounds = {rectangle.x() + image_margin, (rectangle.height() - data_->image.height()) / 2, data_->image.width(), data_->image.height()}; break;
-    case content_alignment::middle_center: image_bounds = {(rectangle.width() - data_->image.width()) / 2, (rectangle.height() - data_->image.height()) / 2, data_->image.width(), data_->image.height()}; break;
-    case content_alignment::middle_right: image_bounds = {rectangle.width() - data_->image.width() - image_margin, (rectangle.height() - data_->image.height()) / 2, data_->image.width(), data_->image.height()}; break;
-    case content_alignment::bottom_left: image_bounds = {rectangle.x() + image_margin, rectangle.height() - data_->image.height() - image_margin, data_->image.width(), data_->image.height()}; break;
-    case content_alignment::bottom_center: image_bounds = {(rectangle.width() - data_->image.width()) / 2, rectangle.height() - data_->image.height() - image_margin, data_->image.width(), data_->image.height()}; break;
-    case content_alignment::bottom_right: image_bounds = {rectangle.width() - data_->image.width() - image_margin, rectangle.height() - data_->image.height() - image_margin, data_->image.width(), data_->image.height()}; break;
+    case content_alignment::top_left: image_bounds = {rectangle.x + image_margin, rectangle.y + image_margin, data_->image.width(), data_->image.height()}; break;
+    case content_alignment::top_center: image_bounds = {(rectangle.width - data_->image.width()) / 2, rectangle.y + image_margin, data_->image.width(), data_->image.height()}; break;
+    case content_alignment::top_right: image_bounds = {rectangle.width - data_->image.width() - image_margin, rectangle.y + image_margin, data_->image.width(), data_->image.height()}; break;
+    case content_alignment::middle_left: image_bounds = {rectangle.x + image_margin, (rectangle.height - data_->image.height()) / 2, data_->image.width(), data_->image.height()}; break;
+    case content_alignment::middle_center: image_bounds = {(rectangle.width - data_->image.width()) / 2, (rectangle.height - data_->image.height()) / 2, data_->image.width(), data_->image.height()}; break;
+    case content_alignment::middle_right: image_bounds = {rectangle.width - data_->image.width() - image_margin, (rectangle.height - data_->image.height()) / 2, data_->image.width(), data_->image.height()}; break;
+    case content_alignment::bottom_left: image_bounds = {rectangle.x + image_margin, rectangle.height - data_->image.height() - image_margin, data_->image.width(), data_->image.height()}; break;
+    case content_alignment::bottom_center: image_bounds = {(rectangle.width - data_->image.width()) / 2, rectangle.height - data_->image.height() - image_margin, data_->image.width(), data_->image.height()}; break;
+    case content_alignment::bottom_right: image_bounds = {rectangle.width - data_->image.width() - image_margin, rectangle.height - data_->image.height() - image_margin, data_->image.width(), data_->image.height()}; break;
     default: break;
   }
   return image_bounds;

@@ -46,7 +46,7 @@ graphics_path& graphics_path::fill_mode(xtd::drawing::drawing_2d::fill_mode valu
 }
 
 void graphics_path::add_arc(const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle) {
-  add_arc(rect.x(), rect.y(), rect.width(), rect.height(), start_angle, sweep_angle);
+  add_arc(rect.x, rect.y, rect.width, rect.height, start_angle, sweep_angle);
 }
 
 void graphics_path::add_arc(const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle) {
@@ -186,7 +186,7 @@ void graphics_path::add_path(const graphics_path& adding_path, bool connect) {
 }
 
 void graphics_path::add_pie(const xtd::drawing::rectangle& rect, float start_angle, float sweep_angle) {
-  add_pie(rect.x(), rect.y(), rect.width(), rect.height(), start_angle, sweep_angle);
+  add_pie(rect.x, rect.y, rect.width, rect.height, start_angle, sweep_angle);
 }
 
 void graphics_path::add_pie(const xtd::drawing::rectangle_f& rect, float start_angle, float sweep_angle) {

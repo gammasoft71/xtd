@@ -87,13 +87,13 @@ void scrollable_control::on_layout(const event_args& e) {
   control::on_layout(e);
   if (data_->auto_scroll) {
     data_->display_rectangle = control::client_rectangle();
-    data_->display_rectangle.height(data_->display_rectangle.height() - system_information::horizontal_scroll_bar_height());
-    data_->display_rectangle.width(data_->display_rectangle.width() - system_information::vertical_scroll_bar_width());
+    data_->display_rectangle.height = data_->display_rectangle.height - system_information::horizontal_scroll_bar_height();
+    data_->display_rectangle.width = data_->display_rectangle.width - system_information::vertical_scroll_bar_width();
     for (auto item : controls()) {
       if (item.get().visible())
         data_->display_rectangle = drawing::rectangle::make_union(data_->display_rectangle, item.get().bounds());
     }
-    data_->display_rectangle.width(data_->display_rectangle.width() + data_->auto_scroll_margin.width);
-    data_->display_rectangle.height(data_->display_rectangle.height() + data_->auto_scroll_margin.height);
+    data_->display_rectangle.width = data_->display_rectangle.width + data_->auto_scroll_margin.width;
+    data_->display_rectangle.height = data_->display_rectangle.height + data_->auto_scroll_margin.height;
   }
 }

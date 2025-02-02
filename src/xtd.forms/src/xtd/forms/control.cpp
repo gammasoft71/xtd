@@ -320,7 +320,7 @@ drawing::rectangle control::bounds() const noexcept {
 }
 
 control& control::bounds(const drawing::rectangle& bounds) {
-  set_bounds_core(bounds.x(), bounds.y(), bounds.width(), bounds.height(), bounds_specified::all);
+  set_bounds_core(bounds.x, bounds.y, bounds.width, bounds.height, bounds_specified::all);
   return *this;
 }
 
@@ -1907,37 +1907,37 @@ void control::do_layout_children_with_dock_style() {
     if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::indent();
     if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), string::format("docking_rect = {}", docking_rect));
     if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), string::format("padding = {}", data_->padding));
-    docking_rect.x(docking_rect.left() + data_->padding.left());
-    docking_rect.y(docking_rect.top() + data_->padding.top());
-    docking_rect.width(docking_rect.width() - data_->padding.left() - data_->padding.right());
-    docking_rect.height(docking_rect.height() - data_->padding.top() - data_->padding.bottom());
+    docking_rect.x = docking_rect.left() + data_->padding.left();
+    docking_rect.y = docking_rect.top() + data_->padding.top();
+    docking_rect.width = docking_rect.width - data_->padding.left() - data_->padding.right();
+    docking_rect.height = docking_rect.height - data_->padding.top() - data_->padding.bottom();
     for (auto iterator = data_->controls.rbegin(); iterator != data_->controls.rend(); ++iterator) {
       if (!iterator->get().visible()) continue;
       if (iterator->get().dock() == dock_style::top) {
         iterator->get().location({docking_rect.left(), docking_rect.top()});
-        iterator->get().width(docking_rect.width());
-        docking_rect.y(docking_rect.top() + iterator->get().height());
-        docking_rect.height(docking_rect.height() - iterator->get().height());
+        iterator->get().width(docking_rect.width);
+        docking_rect.y = docking_rect.top() + iterator->get().height();
+        docking_rect.height = docking_rect.height - iterator->get().height();
         if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), string::format("top ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::bottom) {
         iterator->get().location({docking_rect.left(), docking_rect.bottom() - iterator->get().height()});
-        iterator->get().width(docking_rect.width());
-        docking_rect.height(docking_rect.height() - iterator->get().height());
+        iterator->get().width(docking_rect.width);
+        docking_rect.height = docking_rect.height - iterator->get().height();
         if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), string::format("bottom ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::left) {
         iterator->get().location({docking_rect.left(), docking_rect.top()});
-        iterator->get().height(docking_rect.height());
-        docking_rect.x(docking_rect.left() + iterator->get().width());
-        docking_rect.width(docking_rect.width() - iterator->get().width());
+        iterator->get().height(docking_rect.height);
+        docking_rect.x = docking_rect.left() + iterator->get().width();
+        docking_rect.width = docking_rect.width - iterator->get().width();
         if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), string::format("left ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::right) {
         iterator->get().location({docking_rect.right() - iterator->get().width(), docking_rect.top()});
-        iterator->get().height(docking_rect.height());
-        docking_rect.width(docking_rect.width() - iterator->get().width());
+        iterator->get().height(docking_rect.height);
+        docking_rect.width = docking_rect.width - iterator->get().width();
         if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), string::format("right ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       } else if (iterator->get().dock() == dock_style::fill) {
         iterator->get().location({docking_rect.left(), docking_rect.top()});
-        iterator->get().size({docking_rect.width(), docking_rect.height()});
+        iterator->get().size({docking_rect.width, docking_rect.height});
         if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::layout), string::format("fill ({}) = location = {}, size = {}", iterator->get().name(), iterator->get().location(), iterator->get().size()));
       }
     }
