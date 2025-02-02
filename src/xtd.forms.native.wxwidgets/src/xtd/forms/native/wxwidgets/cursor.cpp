@@ -20,8 +20,8 @@ intptr cursor::create() {
 
 intptr cursor::create(const xtd::drawing::image& image, const xtd::drawing::point& hot_spot) {
   wxImage wx_image(*reinterpret_cast<wxImage*>(image.handle()));
-  wx_image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_X, hot_spot.x());
-  wx_image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_Y, hot_spot.y());
+  wx_image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_X, hot_spot.x);
+  wx_image.SetOption(wxIMAGE_OPTION_CUR_HOTSPOT_Y, hot_spot.y);
   return reinterpret_cast<intptr>(new wxCursor(wx_image));
 }
 

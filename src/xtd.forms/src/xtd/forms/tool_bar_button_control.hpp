@@ -225,7 +225,7 @@ private:
     auto center_drop_down = xtd::drawing::point(e.clip_rectangle().right() - drop_down_rectangle().width() / 2, e.clip_rectangle().top() + drop_down_rectangle().height() / 2);
     auto drop_down_size = drawing::size(drop_down_rectangle().width() - 4, (drop_down_rectangle().width() - 4) / 2);
     box_renderer::draw_box(e.graphics(), drop_down_rectangle(), current_style_sheet);
-    e.graphics().fill_polygon(xtd::drawing::solid_brush(current_style_sheet.color()), std::vector<xtd::drawing::point> {xtd::drawing::point {center_drop_down.x() - drop_down_size.width() / 2, center_drop_down.y() - drop_down_size.height() / 2}, xtd::drawing::point {center_drop_down.x() + drop_down_size.width() / 2, center_drop_down.y() - drop_down_size.height() / 2}, xtd::drawing::point {center_drop_down.x(), center_drop_down.y() + drop_down_size.height() / 2} });
+    e.graphics().fill_polygon(xtd::drawing::solid_brush(current_style_sheet.color()), std::vector<xtd::drawing::point> {xtd::drawing::point {center_drop_down.x - drop_down_size.width() / 2, center_drop_down.y - drop_down_size.height() / 2}, xtd::drawing::point {center_drop_down.x + drop_down_size.width() / 2, center_drop_down.y - drop_down_size.height() / 2}, xtd::drawing::point {center_drop_down.x, center_drop_down.y + drop_down_size.height() / 2} });
   }
   
   void draw_separator(xtd::forms::paint_event_args& e) {

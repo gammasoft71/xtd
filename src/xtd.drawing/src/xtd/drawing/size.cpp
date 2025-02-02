@@ -8,7 +8,7 @@ using namespace xtd::drawing;
 
 const drawing::size drawing::size::empty;
 
-drawing::size::size(const point& point) noexcept : width_(point.x()), height_(point.y()) {
+drawing::size::size(const point& point) noexcept : width_(point.x), height_(point.y) {
 }
 
 drawing::size::size(int32 width, int32 height) noexcept : width_(width), height_(height) {

@@ -128,23 +128,23 @@ create_params& create_params::width(int32 width) {
 }
 
 int32 create_params::x() const noexcept {
-  return data_->location.x();
+  return data_->location.x;
 }
 
 create_params& create_params::x(int32 x) {
-  data_->location.x(x);
+  data_->location.x = x;
   return *this;
 }
 
 int32 create_params::y() const noexcept {
-  return data_->location.y();
+  return data_->location.y;
 }
 
 create_params& create_params::y(int32 y) {
-  data_->location.y(y);
+  data_->location.y = y;
   return *this;
 }
 
 xtd::string create_params::to_string() const noexcept {
-  return string::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", data_->class_name, data_->caption, data_->style, data_->ex_style, data_->location.x(), data_->location.y(), data_->size.width(), data_->size.height());
+  return string::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", data_->class_name, data_->caption, data_->style, data_->ex_style, data_->location.x, data_->location.y, data_->size.width(), data_->size.height());
 }

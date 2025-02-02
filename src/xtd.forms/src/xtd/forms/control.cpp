@@ -242,7 +242,7 @@ control& control::anchor(anchor_styles anchor) {
   if (data_->anchor == anchor) return *this;
   data_->anchor = anchor;
   set_state(state::docked, false);
-  if (handle() && parent()) data_->anchoring = {left(), location().y(), parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
+  if (handle() && parent()) data_->anchoring = {left(), location().y, parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
   perform_layout();
   return *this;
 }
@@ -576,11 +576,11 @@ bool control::is_handle_created() const noexcept {
 }
 
 int32 control::left() const noexcept {
-  return data_->location.x();
+  return data_->location.x;
 }
 
 control& control::left(int32 left) {
-  if (data_->location.x() == left) return *this;
+  if (data_->location.x == left) return *this;
   set_bounds_core(left, 0, 0, 0, bounds_specified::x);
   return *this;
 }
@@ -591,7 +591,7 @@ drawing::point control::location() const noexcept {
 
 control& control::location(const drawing::point& location) {
   if (data_->location == location) return *this;
-  set_bounds_core(location.x(), location.y(), 0, 0, bounds_specified::location);
+  set_bounds_core(location.x, location.y, 0, 0, bounds_specified::location);
   return *this;
 }
 
@@ -839,11 +839,11 @@ intptr control::toolkit_handle() const noexcept {
 }
 
 int32 control::top() const noexcept {
-  return data_->location.y();
+  return data_->location.y;
 }
 
 control& control::top(int32 top) {
-  if (data_->location.y() == top) return *this;
+  if (data_->location.y == top) return *this;
   set_bounds_core(0, top, 0, 0, bounds_specified::y);
   return *this;
 }
@@ -1283,7 +1283,7 @@ void control::on_handle_created(const event_args& e) {
   data_->location = native::control::location(handle());
   data_->size = native::control::size(handle());
   
-  if (parent().has_value()) data_->anchoring = {left(), location().y(), parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
+  if (parent().has_value()) data_->anchoring = {left(), location().y, parent().value().get().client_size().width() - width() - left(), parent().value().get().client_size().height() - height() - top()};
   
   native::control::right_to_left(handle(), static_cast<int32>(right_to_left()));
   
@@ -1744,8 +1744,8 @@ void control::recreate_handle() {
 }
 
 void control::set_bounds_core(int32 x, int32 y, int32 width, int32 height, bounds_specified specified) {
-  if ((specified & bounds_specified::x) == bounds_specified::x) data_->location.x(x);
-  if ((specified & bounds_specified::y) == bounds_specified::y) data_->location.y(y);
+  if ((specified & bounds_specified::x) == bounds_specified::x) data_->location.x = x;
+  if ((specified & bounds_specified::y) == bounds_specified::y) data_->location.y = y;
   if ((specified & bounds_specified::width) == bounds_specified::width) {
     if (!data_->size.has_value()) data_->size = default_size();
     data_->size.value().width(width);

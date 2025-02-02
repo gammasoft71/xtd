@@ -184,7 +184,7 @@ namespace xtd {
         
       public:
         explicit wx_form(const xtd::forms::native::create_params& create_params) {
-          wxPoint location = wxPoint(create_params.location.x(), create_params.location.y());
+          wxPoint location = wxPoint(create_params.location.x, create_params.location.y);
           wxSize size = wxSize(create_params.size.width(), create_params.size.height());
           if (size.GetWidth() > -1 && size.GetWidth() < min_width) size.SetWidth(min_width);
           if (size.GetHeight() > -1 && size.GetHeight() < min_height) size.SetHeight(min_height);

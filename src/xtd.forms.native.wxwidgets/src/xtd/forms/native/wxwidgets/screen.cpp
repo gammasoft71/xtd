@@ -77,5 +77,5 @@ size_t screen::from_handle(intptr handle) {
 
 size_t screen::from_point(const point& point) {
   application::initialize();
-  return wxDisplay::GetFromPoint(wxPoint(point.x(), point.y()));
+  return wxDisplay::GetFromPoint(wxPoint(point.x, point.y));
 }
