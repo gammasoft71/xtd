@@ -20,7 +20,7 @@ struct __polymorphic_comparer__ {};
 template<class type_t>
 struct __polymorphic_comparer__<type_t, std::true_type> {
   bool operator()(const type_t& lhs, const type_t& rhs) const {
-    if (dynamic_cast<const xtd::icomparable<type_t>*>(&lhs)) return static_cast<const xtd::icomparable<type_t>&>(lhs).compare_to(rhs) < 0;
+    if (dynamic_cast<const xtd::icomparable<type_t>*>(&lhs)) return dynamic_cast<const xtd::icomparable<type_t>&>(lhs).compare_to(rhs) < 0;
     return std::less<type_t> {}(lhs, rhs);
   }
 };
