@@ -6,21 +6,25 @@
 
 using namespace xtd;
 
-class foo {
-public:
+// To box a structure or class, it must inherit the xtd::icomparable, xtd::iequatable and xtd::ihashable interfaces.
+struct foo : icomparable<foo>, iequatable<foo>, ihashable, istringable {
   foo() = default;
-  foo(int value) : value_(value) {}
+  foo(int value) : value {value} {}
   
-  int value() const noexcept {return value_;}
+  int value = 0;
   
-  // For boxing a struct, it must implements oprtat = and operator <.
-  // Or the struct must xtd::inherites from icomparable and xtd::iequatble interfaces.
-  bool operator ==(const foo& v) const noexcept {return value_ == v.value_;}
-  bool operator <(const foo& v) const noexcept {return value_ < v.value_;}
-  
-private:
-  int value_ = 0;
+  int32 compare_to(const foo& other) const noexcept override {return value - other.value;}
+  size get_hash_code() const noexcept override {return hash_code::combine(value);}
+  bool equals(const foo& other) const noexcept override {return value == other.value;}
+  string to_string() const noexcept override {return string::format("{}", value);}
 };
+
+namespace std {
+  template<>
+  struct hash<foo> {
+    size_t operator()(const foo&) {return 0;}
+  };
+}
 
 template<typename type_t>
 string get_boxed_info(const type_t& value) {
