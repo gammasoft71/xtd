@@ -2,7 +2,9 @@
 /// @brief Contains xtd::collections::generic::helpers::comparer struct.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include <functional>
+#define __XTD_CORE_INTERNAL__
+#include "../../../internal/__polymorphic_comparer.hpp"
+#undef __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -52,7 +54,9 @@ namespace xtd {
           /// @param key The key to hash.
           /// @return A hash code for the spesified key.
           /// @remarks If key_t inherits from xtd::object, the xtd::object::get_hash_code method will be used; otherwise, the [std::hash](https://en.cppreference.com/w/cpp/utility/hash) object function will be used.
-          constexpr result_type operator()(const first_argument_type& lhs, const second_argument_type& rhs) const {return std::less {}(lhs, rhs);}
+          constexpr result_type operator()(const first_argument_type& lhs, const second_argument_type& rhs) const {
+            return __polymorphic_comparer__<first_argument_type, typename std::is_polymorphic<first_argument_type>::type> {}(lhs, rhs);
+          }
           /// @}
         };
       }

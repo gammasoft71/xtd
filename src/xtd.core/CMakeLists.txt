@@ -243,6 +243,8 @@ add_sources(
   include/xtd/iequatable
   include/xtd/iformatable.hpp
   include/xtd/iformatable
+  include/xtd/ihashable.hpp
+  include/xtd/ihashable
   include/xtd/implicit_using_namespaces.hpp
   include/xtd/implicit_using_namespaces
   include/xtd/index_out_of_range_exception.hpp
@@ -785,13 +787,11 @@ add_sources(
   include/xtd/internal/__enum_definition_to_enum_collection.hpp
   include/xtd/internal/__enum_introspection.hpp
   include/xtd/internal/__enumerable_collection.hpp
-  include/xtd/internal/__equator.hpp
   include/xtd/internal/__external_exceptions.hpp
   include/xtd/internal/__floating_point_formatter.hpp
   include/xtd/internal/__format_exception.hpp
   include/xtd/internal/__format_information.hpp
   include/xtd/internal/__format_stringer.hpp
-  include/xtd/internal/__hasher.hpp
   include/xtd/internal/__hexfloat_formatter.hpp
   include/xtd/internal/__iformatable_formatter.hpp
   include/xtd/internal/__key_value_pair_definition.hpp
@@ -799,6 +799,9 @@ add_sources(
   include/xtd/internal/__natural_formatter.hpp
   include/xtd/internal/__numeric_formatter.hpp
   include/xtd/internal/__parse.hpp
+  include/xtd/internal/__polymorphic_comparer.hpp
+  include/xtd/internal/__polymorphic_equator.hpp
+  include/xtd/internal/__polymorphic_hasher.hpp
   include/xtd/internal/__print.hpp
   include/xtd/internal/__show_generic_exception_message.hpp
   include/xtd/internal/__sprintf.hpp

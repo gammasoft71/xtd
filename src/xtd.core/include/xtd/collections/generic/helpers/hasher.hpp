@@ -3,9 +3,8 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #define __XTD_CORE_INTERNAL__
-#include "../../../internal/__hasher.hpp"
+#include "../../../internal/__polymorphic_hasher.hpp"
 #undef __XTD_CORE_INTERNAL__
-#include "../../../size.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
