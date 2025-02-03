@@ -45,6 +45,7 @@ namespace xtd {
         /// @param x The first entity to compare.
         /// @param y The second entity to compare.
         /// @return A 32-bit signed integer that indicates the relative order of the entities being compared. The return value has these meanings:
+        /// 
         /// | Value             | Condition            |
         /// |-------------------|----------------------|
         /// | Less than zero    | x is less than y.    |
