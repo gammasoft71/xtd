@@ -27,7 +27,7 @@ var searchData=
   ['border_5fcolor_24',['border_color',['../classxtd_1_1forms_1_1style__sheets_1_1border__color.html',1,'xtd::forms::style_sheets']]],
   ['border_5fradius_25',['border_radius',['../classxtd_1_1forms_1_1style__sheets_1_1border__radius.html',1,'xtd::forms::style_sheets']]],
   ['border_5fstyle_26',['border_style',['../classxtd_1_1forms_1_1style__sheets_1_1border__style.html',1,'xtd::forms::style_sheets']]],
-  ['box_27',['box',['../classxtd_1_1box.html',1,'xtd']]],
+  ['box_27',['box',['../structxtd_1_1box.html',1,'xtd']]],
   ['box_5fchar_28',['box_char',['../classxtd_1_1box__char.html',1,'xtd']]],
   ['box_5ffloating_5fpoint_29',['box_floating_point',['../classxtd_1_1box__floating__point.html',1,'xtd']]],
   ['box_5finteger_30',['box_integer',['../classxtd_1_1box__integer.html',1,'xtd']]],

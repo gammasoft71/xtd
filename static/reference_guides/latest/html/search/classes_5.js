@@ -12,7 +12,7 @@ var searchData=
   ['encoder_5fparameters_9',['encoder_parameters',['../classxtd_1_1drawing_1_1imaging_1_1encoder__parameters.html',1,'xtd::drawing::imaging']]],
   ['end_5fof_5fstream_5fexception_10',['end_of_stream_exception',['../classxtd_1_1io_1_1end__of__stream__exception.html',1,'xtd::io']]],
   ['end_5fpoint_11',['end_point',['../classxtd_1_1net_1_1end__point.html',1,'xtd::net']]],
-  ['enum_5fobject_12',['enum_object',['../classxtd_1_1enum__object.html',1,'xtd']]],
+  ['enum_5fobject_12',['enum_object',['../structxtd_1_1enum__object.html',1,'xtd']]],
   ['enum_5fobject_3c_20std_3a_3anullptr_5ft_20_3e_13',['enum_object&lt; std::nullptr_t &gt;',['../classxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html',1,'xtd']]],
   ['enum_5fregister_14',['enum_register',['../structxtd_1_1enum__register.html',1,'xtd']]],
   ['enum_5fset_5fattribute_15',['enum_set_attribute',['../structxtd_1_1enum__set__attribute.html',1,'xtd']]],
