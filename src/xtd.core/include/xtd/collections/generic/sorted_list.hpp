@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "helpers/allocator.hpp"
-#include "helpers/comparer.hpp"
+#include "helpers/lesser.hpp"
 #include "sorted_dictionary.hpp" /// @todo remove when sorted_dictionay is developped.
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -33,7 +33,7 @@ namespace xtd {
       /// The following shows how to use xtd::collections::generic::sorted_list.
       /// @include sorted_list.cpp
       template<class key_t, class value_t, class allocator_t = helpers::allocator<std::pair<const key_t, value_t>>>
-      using sorted_list = sorted_dictionary<key_t, value_t, helpers::comparer<key_t>, allocator_t>;
+      using sorted_list = sorted_dictionary<key_t, value_t, helpers::lesser<key_t>, allocator_t>;
     }
   }
 }
