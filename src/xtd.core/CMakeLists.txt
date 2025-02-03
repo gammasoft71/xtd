@@ -651,6 +651,8 @@ add_sources(
   include/xtd/collections/generic/helpers/hasher
   include/xtd/collections/generic/helpers/iterator.hpp
   include/xtd/collections/generic/helpers/iterator
+  include/xtd/collections/generic/helpers/lesser.hpp
+  include/xtd/collections/generic/helpers/lesser
   include/xtd/collections/generic/helpers/wrap_pointer_iterator.hpp
   include/xtd/collections/generic/helpers/wrap_pointer_iterator
   include/xtd/collections/generic/helpers/wrap_pointer_reverse_iterator.hpp
@@ -802,6 +804,7 @@ add_sources(
   include/xtd/internal/__polymorphic_comparer.hpp
   include/xtd/internal/__polymorphic_equator.hpp
   include/xtd/internal/__polymorphic_hasher.hpp
+  include/xtd/internal/__polymorphic_lesser.hpp
   include/xtd/internal/__print.hpp
   include/xtd/internal/__show_generic_exception_message.hpp
   include/xtd/internal/__sprintf.hpp
