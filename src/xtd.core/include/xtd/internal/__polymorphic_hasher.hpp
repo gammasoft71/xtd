@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains __object_hasher__ and __polymorphic_hasher__ structs.
+/// @brief Contains __polymorphic_hasher__ structs.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 
 #pragma once
@@ -9,7 +9,8 @@
 #endif
 /// @endcond
 
-#include "../object"
+#include "../object.hpp"
+#include "../ihashable.hpp"
 #include <functional>
 #include <type_traits>
 
@@ -28,11 +29,24 @@ struct __object_hasher__<key_t, std::false_type> {
 };
 
 template<class key_t, class bool_t>
+struct __ihashable_hasher__ {};
+
+template<class key_t>
+struct __ihashable_hasher__<key_t, std::true_type> {
+  size_t operator()(const key_t& key) const {return static_cast<const xtd::ihashable&>(key).get_hash_code();}
+};
+
+template<class key_t>
+struct __ihashable_hasher__<key_t, std::false_type> {
+  size_t operator()(const key_t& key) const {return __object_hasher__<key_t, typename std::is_base_of<xtd::object, key_t>::type> {}(key);}
+};
+
+template<class key_t, class bool_t>
 struct __polymorphic_hasher__ {};
 
 template<class key_t>
 struct __polymorphic_hasher__<key_t, std::true_type> {
-  size_t operator()(const key_t& key) const {return __object_hasher__<key_t, typename std::is_base_of<xtd::object, key_t>::type> {}(key);}
+  size_t operator()(const key_t& key) const {return __ihashable_hasher__<key_t, typename std::is_base_of<xtd::ihashable, key_t>::type> {}(key);}
 };
 
 template<class key_t>

@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #define __XTD_CORE_INTERNAL__
-#include "../../../internal/__equator.hpp"
+#include "../../../internal/__polymorphic_equator.hpp"
 #undef __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

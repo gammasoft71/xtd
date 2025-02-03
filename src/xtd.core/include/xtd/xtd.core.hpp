@@ -362,6 +362,7 @@
 #include "icomparable.hpp"
 #include "iequatable.hpp"
 #include "iformatable.hpp"
+#include "ihashable.hpp"
 #include "index_out_of_range_exception.hpp"
 #include "int16.hpp"
 #include "int16_object.hpp"
