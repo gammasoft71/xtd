@@ -11,6 +11,7 @@
 #include "invalid_cast_exception.hpp"
 #include "iequatable.hpp"
 #include "iformatable.hpp"
+#include "istringable.hpp"
 #include "is.hpp"
 #include "enum.hpp"
 #include "object.hpp"
@@ -143,7 +144,7 @@ namespace xtd {
 
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
-    xtd::string to_string() const noexcept override {return std::is_integral<value_type>::value || std::is_floating_point<value_type>::value || std::is_enum<type>::value || std::is_pointer<type>::value || std::is_base_of<xtd::object, value_type>::value ? xtd::string::format("{}", value) : typeof_<value_type>().full_name();}
+    xtd::string to_string() const noexcept override {return std::is_integral<value_type>::value || std::is_floating_point<value_type>::value || std::is_enum<type>::value || std::is_pointer<type>::value || std::is_base_of<xtd::istringable, value_type>::value || std::is_base_of<xtd::object, value_type>::value ? xtd::string::format("{}", value) : typeof_<value_type>().full_name();}
     /// @brief Converts the value of this instance to its equivalent string representation, using the specified format.
     /// @param format A value type format string.
     /// @return The string representation of the value of this instance as specified by format.
