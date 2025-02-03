@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #define __XTD_CORE_INTERNAL__
+#include "../../../internal/__external_exceptions.hpp"
 #include "../../../internal/__polymorphic_hasher.hpp"
 #undef __XTD_CORE_INTERNAL__
 
