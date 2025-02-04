@@ -10,23 +10,35 @@
 /// @endcond
 
 #include "../icomparable.hpp"
+#include "../int32.hpp"
 #include <functional>
 #include <type_traits>
 
 /// @cond
+
+template<typename type_t, typename bool_t>
+struct __icomparable_comparer__ {};
+
+template<typename type_t>
+struct __icomparable_comparer__<type_t, std::true_type> {
+  xtd::int32 operator()(const type_t& x, const type_t& y) const {return static_cast<const xtd::icomparable<type_t>&>(x).compare_to(y);}
+};
+
+template<typename type_t>
+struct __icomparable_comparer__<type_t, std::false_type> {
+  xtd::int32 operator()(const type_t& x, const type_t& y) const {return x < y ? -1 : (x > y ? 1 : 0);}
+};
+
 template<class type_t, class bool_t>
 struct __polymorphic_comparer__ {};
 
 template<class type_t>
 struct __polymorphic_comparer__<type_t, std::true_type> {
-  bool operator()(const type_t& lhs, const type_t& rhs) const {
-    if (dynamic_cast<const xtd::icomparable<type_t>*>(&lhs)) return dynamic_cast<const xtd::icomparable<type_t>&>(lhs).compare_to(rhs) < 0;
-    return std::less<type_t> {}(lhs, rhs);
-  }
+  xtd::int32 operator()(const type_t& x, const type_t& y) const {return __icomparable_comparer__<type_t, typename std::is_base_of<xtd::icomparable<type_t>, type_t>::type> {}(x, y);}
 };
 
 template<class type_t>
 struct __polymorphic_comparer__<type_t, std::false_type> {
-  bool operator()(const type_t& lhs, const type_t& rhs) const {return std::less<type_t> {}(lhs, rhs);}
+  xtd::int32 operator()(const type_t& x, const type_t& y) const {return x < y ? -1 : (x > y ? 1 : 0);}
 };
 /// @endcond
