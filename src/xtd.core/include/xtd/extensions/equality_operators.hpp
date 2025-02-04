@@ -7,7 +7,7 @@
 namespace xtd {
   /// @brief The xtd::extensions namespace contains interface extensions.
   namespace extensions {
-    /// @brief Internal comparable operators definition.
+    /// @brief Internal equality operators definition.
     /// @par Definition
     /// ```cpp
     /// template<class type_t, class equatable_t>
@@ -15,7 +15,7 @@ namespace xtd {
     /// ```
     /// @par Header
     /// ```cpp
-    /// #include <xtd/equality_operators
+    /// #include <xtd/extensions/equality_operators
     /// ```
     /// @par Namespace
     /// xtd
@@ -38,8 +38,9 @@ namespace xtd {
       /// @param lhs The left hand side value to compare.
       /// @param rhs The right hand side value to compare.
       /// @return `true` if lhs is not equal to rhs; otherwise `false`.
-      friend bool operator !=(const type_t& lhs, const type_t& rhs) noexcept {return !operator ==(lhs, rhs);}
+      friend bool operator !=(const type_t& lhs, const type_t& rhs) noexcept {return !lhs.equals(rhs);}
       /// @}
+    
     private:
       friend equatable_t;
       equality_operators() = default;
