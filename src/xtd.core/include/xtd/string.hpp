@@ -85,5 +85,5 @@ inline std::string xtd::to_string(const xtd::string& value, const std::string& f
 
 /// @cond
 template<class key_t, class value_t>
-xtd::string xtd::collections::generic::key_value_pair<key_t, value_t>::to_string() const noexcept {return xtd::string::format("[{0}, {1}]", first, second);}
+xtd::string xtd::collections::generic::key_value_pair<key_t, value_t>::to_string() const noexcept {return xtd::string::format("({0}, {1})", first, second);}
 /// @endcond
