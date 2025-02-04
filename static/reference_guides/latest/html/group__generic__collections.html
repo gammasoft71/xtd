@@ -166,18 +166,18 @@ Typedefs</h2></td></tr>
 <tr class="memitem:gafe25926b152d27ca34bd3c297b77beb6"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#gafe25926b152d27ca34bd3c297b77beb6">xtd::collections::generic::queue</a> = std::stack&lt; type_t, container_t &gt;</td></tr>
 <tr class="memdesc:gafe25926b152d27ca34bd3c297b77beb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that is maintained in sorted order.  <br /></td></tr>
 <tr class="separator:gafe25926b152d27ca34bd3c297b77beb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga64bb7a14ab354aad70b9c8a839aca3d9"><td class="memTemplParams" colspan="2">template&lt;class key_t , class value_t , class comparer_t  = helpers::comparer&lt;key_t&gt;, class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ga64bb7a14ab354aad70b9c8a839aca3d9"><td class="memTemplParams" colspan="2">template&lt;class key_t , class value_t , class lesser_t  = helpers::lesser&lt;key_t&gt;, class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </td></tr>
 <tr class="memitem:ga64bb7a14ab354aad70b9c8a839aca3d9"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9">xtd::collections::generic::sorted_dictionary</a> = <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>&lt; key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html">helpers::hasher</a>&lt; key_t &gt;, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">helpers::equator</a>&lt; key_t &gt;, allocator_t &gt;</td></tr>
 <tr class="memdesc:ga64bb7a14ab354aad70b9c8a839aca3d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of key/value pairs that are sorted on the key.  <br /></td></tr>
 <tr class="separator:ga64bb7a14ab354aad70b9c8a839aca3d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad3585c1ae4916c485b63e9186a0d6bd3"><td class="memTemplParams" colspan="2">template&lt;class key_t , class value_t , class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </td></tr>
-<tr class="memitem:gad3585c1ae4916c485b63e9186a0d6bd3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#gad3585c1ae4916c485b63e9186a0d6bd3">xtd::collections::generic::sorted_list</a> = <a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9">sorted_dictionary</a>&lt; key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html">helpers::comparer</a>&lt; key_t &gt;, allocator_t &gt;</td></tr>
-<tr class="memdesc:gad3585c1ae4916c485b63e9186a0d6bd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and by index.  <br /></td></tr>
-<tr class="separator:gad3585c1ae4916c485b63e9186a0d6bd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa2b86548e24c1469949088a7ad576c69"><td class="memTemplParams" colspan="2">template&lt;class type_t , class comparer_t  = xtd::collections::generic::helpers::comparer&lt;type_t&gt;, class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </td></tr>
-<tr class="memitem:gaa2b86548e24c1469949088a7ad576c69"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69">xtd::collections::generic::sorted_set</a> = std::set&lt; type_t, comparer_t, allocator_t &gt;</td></tr>
-<tr class="memdesc:gaa2b86548e24c1469949088a7ad576c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that is maintained in sorted order.  <br /></td></tr>
-<tr class="separator:gaa2b86548e24c1469949088a7ad576c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4e3f7a8627af93602241a666512a6ffa"><td class="memTemplParams" colspan="2">template&lt;class key_t , class value_t , class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </td></tr>
+<tr class="memitem:ga4e3f7a8627af93602241a666512a6ffa"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga4e3f7a8627af93602241a666512a6ffa">xtd::collections::generic::sorted_list</a> = <a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9">sorted_dictionary</a>&lt; key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">helpers::lesser</a>&lt; key_t &gt;, allocator_t &gt;</td></tr>
+<tr class="memdesc:ga4e3f7a8627af93602241a666512a6ffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and by index.  <br /></td></tr>
+<tr class="separator:ga4e3f7a8627af93602241a666512a6ffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga04c5dae2f5fbd4e27e72020315c50dfa"><td class="memTemplParams" colspan="2">template&lt;class type_t , class lesser_t  = xtd::collections::generic::helpers::lesser&lt;type_t&gt;, class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </td></tr>
+<tr class="memitem:ga04c5dae2f5fbd4e27e72020315c50dfa"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa">xtd::collections::generic::sorted_set</a> = std::set&lt; type_t, lesser_t, allocator_t &gt;</td></tr>
+<tr class="memdesc:ga04c5dae2f5fbd4e27e72020315c50dfa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a collection of objects that is maintained in sorted order.  <br /></td></tr>
+<tr class="separator:ga04c5dae2f5fbd4e27e72020315c50dfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga342a811c6871f2b7e44168e039adde1a"><td class="memTemplParams" colspan="2">template&lt;class type_t , class container_t  = std::deque&lt;type_t&gt;&gt; </td></tr>
 <tr class="memitem:ga342a811c6871f2b7e44168e039adde1a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__generic__collections.html#ga342a811c6871f2b7e44168e039adde1a">xtd::collections::generic::stack</a> = std::stack&lt; type_t, container_t &gt;</td></tr>
 <tr class="memdesc:ga342a811c6871f2b7e44168e039adde1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a variable size last-in-first-out (LIFO) collection of instances of the same specified type.  <br /></td></tr>
@@ -272,10 +272,10 @@ template&lt;class type_t , class container_t  = std::deque&lt;type_t&gt;&gt; </d
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/set">std::set</a>. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/set">std::set</a>. </dd>
 <dd>
-A <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> object maintains a sorted order without affecting performance as elements are inserted and deleted. Duplicate elements are ! allowed. Changing the sort values of existing items is ! supported and may lead to unexpected behavior. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to merge two disparate sets. This example creates two <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> objects, and populates them with even and odd numbers, respectively. A third <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> object is created from the set that contains the even numbers. The example then calls the UnionWith method, which adds the odd number set to the third set. <div class="fragment"></div><!-- fragment --> </dd></dl>
+A <a class="el" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> object maintains a sorted order without affecting performance as elements are inserted and deleted. Duplicate elements are ! allowed. Changing the sort values of existing items is ! supported and may lead to unexpected behavior. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to merge two disparate sets. This example creates two <a class="el" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> objects, and populates them with even and odd numbers, respectively. A third <a class="el" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> object is created from the set that contains the even numbers. The example then calls the UnionWith method, which adds the odd number set to the third set. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -285,7 +285,7 @@ A <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class key_t , class value_t , class comparer_t  = helpers::comparer&lt;key_t&gt;, class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
+template&lt;class key_t , class value_t , class lesser_t  = helpers::lesser&lt;key_t&gt;, class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9">xtd::collections::generic::sorted_dictionary</a> = typedef <a class="el" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">dictionary</a>&lt;key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1hasher.html">helpers::hasher</a>&lt;key_t&gt;, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">helpers::equator</a>&lt;key_t&gt;, allocator_t&gt;</td>
@@ -296,7 +296,7 @@ template&lt;class key_t , class value_t , class comparer_t  = helpers::comparer&
 <p><code>#include &lt;<a class="el" href="sorted__dictionary_8hpp.html">xtd.core/include/xtd/collections/generic/sorted_dictionary.hpp</a>&gt;</code></p>
 
 <p>Represents a collection of key/value pairs that are sorted on the key. </p>
-<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> key_t, <span class="keyword">class</span> value_t, <span class="keyword">class</span> comparer_t = helpers::comparer&lt;key_t&gt;, <span class="keyword">class</span> allocator_t = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt;</div>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> key_t, <span class="keyword">class</span> value_t, <span class="keyword">class</span> lesser_t = helpers::lesser&lt;key_t&gt;, <span class="keyword">class</span> allocator_t = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1dictionary.html">sorted_dictionary</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a>&lt;key_t, value_t&gt;;</div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1dictionary_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1dictionary.html">xtd::collections::generic::dictionary</a></div><div class="ttdoc">Represents a collection of keys and values.</div><div class="ttdef"><b>Definition</b> dictionary.hpp:67</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1idictionary_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1idictionary.html">xtd::collections::generic::idictionary</a></div><div class="ttdoc">Represents a generic collection of key/value pairs.</div><div class="ttdef"><b>Definition</b> idictionary.hpp:44</div></div>
@@ -313,8 +313,8 @@ A <a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a
 
 </div>
 </div>
-<a id="gad3585c1ae4916c485b63e9186a0d6bd3" name="gad3585c1ae4916c485b63e9186a0d6bd3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad3585c1ae4916c485b63e9186a0d6bd3">&#9670;&#160;</a></span>sorted_list</h2>
+<a id="ga4e3f7a8627af93602241a666512a6ffa" name="ga4e3f7a8627af93602241a666512a6ffa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4e3f7a8627af93602241a666512a6ffa">&#9670;&#160;</a></span>sorted_list</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -322,7 +322,7 @@ A <a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a
 template&lt;class key_t , class value_t , class allocator_t  = helpers::allocator&lt;std::pair&lt;const key_t, value_t&gt;&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group__generic__collections.html#gad3585c1ae4916c485b63e9186a0d6bd3">xtd::collections::generic::sorted_list</a> = typedef <a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9">sorted_dictionary</a>&lt;key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1comparer.html">helpers::comparer</a>&lt;key_t&gt;, allocator_t&gt;</td>
+          <td class="memname">using <a class="el" href="group__generic__collections.html#ga4e3f7a8627af93602241a666512a6ffa">xtd::collections::generic::sorted_list</a> = typedef <a class="el" href="group__generic__collections.html#ga64bb7a14ab354aad70b9c8a839aca3d9">sorted_dictionary</a>&lt;key_t, value_t, <a class="el" href="structxtd_1_1collections_1_1generic_1_1helpers_1_1lesser.html">helpers::lesser</a>&lt;key_t&gt;, allocator_t&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -337,23 +337,23 @@ template&lt;class key_t , class value_t , class allocator_t  = helpers::allocato
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__generic__collections.html#gad3585c1ae4916c485b63e9186a0d6bd3" title="Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and ...">xtd::collections::generic::sorted_list</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/map">std::map</a>. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__generic__collections.html#ga4e3f7a8627af93602241a666512a6ffa" title="Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and ...">xtd::collections::generic::sorted_list</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/map">std::map</a>. </dd>
 <dd>
-A <a class="el" href="group__generic__collections.html#gad3585c1ae4916c485b63e9186a0d6bd3" title="Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and ...">xtd::collections::generic::sorted_list</a> object maintains a sorted order without affecting performance as elements are inserted and deleted. Duplicate elements are ! allowed. Changing the sort values of existing items is ! supported and may lead to unexpected behavior. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following shows how to use <a class="el" href="group__generic__collections.html#gad3585c1ae4916c485b63e9186a0d6bd3" title="Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and ...">xtd::collections::generic::sorted_list</a>. <div class="fragment"></div><!-- fragment --> </dd></dl>
+A <a class="el" href="group__generic__collections.html#ga4e3f7a8627af93602241a666512a6ffa" title="Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and ...">xtd::collections::generic::sorted_list</a> object maintains a sorted order without affecting performance as elements are inserted and deleted. Duplicate elements are ! allowed. Changing the sort values of existing items is ! supported and may lead to unexpected behavior. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following shows how to use <a class="el" href="group__generic__collections.html#ga4e3f7a8627af93602241a666512a6ffa" title="Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and ...">xtd::collections::generic::sorted_list</a>. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
-<a id="gaa2b86548e24c1469949088a7ad576c69" name="gaa2b86548e24c1469949088a7ad576c69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaa2b86548e24c1469949088a7ad576c69">&#9670;&#160;</a></span>sorted_set</h2>
+<a id="ga04c5dae2f5fbd4e27e72020315c50dfa" name="ga04c5dae2f5fbd4e27e72020315c50dfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga04c5dae2f5fbd4e27e72020315c50dfa">&#9670;&#160;</a></span>sorted_set</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class type_t , class comparer_t  = xtd::collections::generic::helpers::comparer&lt;type_t&gt;, class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
+template&lt;class type_t , class lesser_t  = xtd::collections::generic::helpers::lesser&lt;type_t&gt;, class allocator_t  = xtd::collections::generic::helpers::allocator&lt;type_t&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69">xtd::collections::generic::sorted_set</a> = typedef std::set&lt;type_t, comparer_t, allocator_t&gt;</td>
+          <td class="memname">using <a class="el" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa">xtd::collections::generic::sorted_set</a> = typedef std::set&lt;type_t, lesser_t, allocator_t&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -361,18 +361,18 @@ template&lt;class type_t , class comparer_t  = xtd::collections::generic::helper
 <p><code>#include &lt;<a class="el" href="sorted__set_8hpp.html">xtd.core/include/xtd/collections/generic/sorted_set.hpp</a>&gt;</code></p>
 
 <p>Represents a collection of objects that is maintained in sorted order. </p>
-<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> comparer_t = xtd::collections::<span class="keyword">generic</span>::helpers::comparer&lt;type_t&gt;, <span class="keyword">class </span>allocator_t = <a class="code hl_typedef" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">xtd::collections::generic::helpers::allocator&lt;type_t&gt;</a>&gt;</div>
-<div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69">sorted_set</a> = std::set&lt;type_t, comparer_t, allocator_t&gt;;</div>
-<div class="ttc" id="agroup__generic__collections_html_gaa2b86548e24c1469949088a7ad576c69"><div class="ttname"><a href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69">xtd::collections::generic::sorted_set</a></div><div class="ttdeci">std::set&lt; type_t, comparer_t, allocator_t &gt; sorted_set</div><div class="ttdoc">Represents a collection of objects that is maintained in sorted order.</div><div class="ttdef"><b>Definition</b> sorted_set.hpp:37</div></div>
+<dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> lesser_t = xtd::collections::<span class="keyword">generic</span>::helpers::lesser&lt;type_t&gt;, <span class="keyword">class </span>allocator_t = <a class="code hl_typedef" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">xtd::collections::generic::helpers::allocator&lt;type_t&gt;</a>&gt;</div>
+<div class="line"><span class="keyword">using </span><a class="code hl_typedef" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa">sorted_set</a> = std::set&lt;type_t, comparer_t, allocator_t&gt;;</div>
+<div class="ttc" id="agroup__generic__collections_html_ga04c5dae2f5fbd4e27e72020315c50dfa"><div class="ttname"><a href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa">xtd::collections::generic::sorted_set</a></div><div class="ttdeci">std::set&lt; type_t, lesser_t, allocator_t &gt; sorted_set</div><div class="ttdoc">Represents a collection of objects that is maintained in sorted order.</div><div class="ttdef"><b>Definition</b> sorted_set.hpp:37</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/collections/generic/sorted_set&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1collections_1_1generic.html" title="The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...">xtd::collections::generic</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/set">std::set</a>. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> class is same as <a href="https://en.cppreference.com/w/cpp/container/set">std::set</a>. </dd>
 <dd>
-A <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> object maintains a sorted order without affecting performance as elements are inserted and deleted. Duplicate elements are ! allowed. Changing the sort values of existing items is ! supported and may lead to unexpected behavior. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to merge two disparate sets. This example creates two <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> objects, and populates them with even and odd numbers, respectively. A third <a class="el" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> object is created from the set that contains the even numbers. The example then calls the UnionWith method, which adds the odd number set to the third set. <div class="fragment"></div><!-- fragment --> </dd></dl>
+A <a class="el" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> object maintains a sorted order without affecting performance as elements are inserted and deleted. Duplicate elements are ! allowed. Changing the sort values of existing items is ! supported and may lead to unexpected behavior. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to merge two disparate sets. This example creates two <a class="el" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> objects, and populates them with even and odd numbers, respectively. A third <a class="el" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa" title="Represents a collection of objects that is maintained in sorted order.">xtd::collections::generic::sorted_set</a> object is created from the set that contains the even numbers. The example then calls the UnionWith method, which adds the odd number set to the third set. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -432,7 +432,7 @@ template&lt;class type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 2 2025 22:28:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Feb 4 2025 16:35:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
