@@ -9,6 +9,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
   template<class type_t, class bool_t>
   struct __enum_any_object__ {};
   
@@ -34,6 +35,7 @@ namespace xtd {
   struct __polymorphic_any_object__<type_t, std::false_type> {
     type_t operator()(const any_object& o) const {return __enum_any_object__<type_t, typename std::is_enum<type_t>::type> {}(o);}
   };
+  /// @endcond
   
   /// @brief Casts a type into another type.
   /// @param value object to convert.
