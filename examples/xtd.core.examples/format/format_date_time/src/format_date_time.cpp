@@ -12,7 +12,7 @@ auto print_date_time(const string& text, const date_time& value, cap c) {
     console::out
     << "┌───────────────────────────────────────┬────────────┬──────────────────────────────────────────┐" << environment::new_line
     << "│  date_time                            │   format   │      representation                      │" << environment::new_line
-    << "// ├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤" << environment::new_line;
+    << "├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤" << environment::new_line;
   
   console::out <<  "│ " << text.pad_right(37) << " │ {}         │ " << format("{}", value).pad_right(40) << " │" << environment::new_line;
   console::out <<  "│ " << text.pad_right(37) << " │ {:a}       │ " << format("{:a}", value).pad_right(40) << " │" << environment::new_line;
@@ -64,7 +64,7 @@ auto print_date_time(const string& text, const date_time& value, cap c) {
   console::out <<  "│ " << text.pad_right(37) << " │ {:Z}       │ " << format("{:Z}", value).pad_right(40) << " │" << environment::new_line;
 
   if (c != cap::end)
-    console::out << "// ├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤" << environment::new_line;
+    console::out << "├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤" << environment::new_line;
   else
     console::out << "└───────────────────────────────────────┴────────────┴──────────────────────────────────────────┘" << environment::new_line;
 }
@@ -99,7 +99,7 @@ auto main() -> int {
 // │ date_time {}                          │ {:f}       │ Mon Jan  1 00:00:00 0001                 │
 // │ date_time {}                          │ {:F}       │ Mon Jan  1 00:00:00 0001                 │
 // │ date_time {}                          │ {:g}       │ Mon Jan  1 00:00:00 0001                 │
-// │ date_time {}                          │ {:G}       │ Mon Jan  1 00:00:00 0001                 │
+// │ date_time {}                          │ {:G}       │ 1-01-01 00:00:00                         │
 // │ date_time {}                          │ {:h}       │ Mon                                      │
 // │ date_time {}                          │ {:H}       │ Monday                                   │
 // │ date_time {}                          │ {:i}       │ 01                                       │
@@ -148,7 +148,7 @@ auto main() -> int {
 // │ date_time {123456789123456789}        │ {:f}       │ Sat Mar 21 19:15:12 0392                 │
 // │ date_time {123456789123456789}        │ {:F}       │ Sat Mar 21 19:15:12 0392                 │
 // │ date_time {123456789123456789}        │ {:g}       │ Sat Mar 21 19:15:12 0392                 │
-// │ date_time {123456789123456789}        │ {:G}       │ Sat Mar 21 19:15:12 0392                 │
+// │ date_time {123456789123456789}        │ {:G}       │ 392-03-21 19:15:12                       │
 // │ date_time {123456789123456789}        │ {:h}       │ Sat                                      │
 // │ date_time {123456789123456789}        │ {:H}       │ Saturday                                 │
 // │ date_time {123456789123456789}        │ {:i}       │ 21                                       │
@@ -197,7 +197,7 @@ auto main() -> int {
 // │ date_time {1971, 1, 5}                │ {:f}       │ Tue Jan  5 00:00:00 1971                 │
 // │ date_time {1971, 1, 5}                │ {:F}       │ Tue Jan  5 00:00:00 1971                 │
 // │ date_time {1971, 1, 5}                │ {:g}       │ Tue Jan  5 00:00:00 1971                 │
-// │ date_time {1971, 1, 5}                │ {:G}       │ Tue Jan  5 00:00:00 1971                 │
+// │ date_time {1971, 1, 5}                │ {:G}       │ 1971-01-05 00:00:00                      │
 // │ date_time {1971, 1, 5}                │ {:h}       │ Tue                                      │
 // │ date_time {1971, 1, 5}                │ {:H}       │ Tuesday                                  │
 // │ date_time {1971, 1, 5}                │ {:i}       │ 05                                       │
@@ -246,7 +246,7 @@ auto main() -> int {
 // │ date_time {1971, 1, 5, 21, 30, 3}     │ {:f}       │ Tue Jan  5 21:30:03 1971                 │
 // │ date_time {1971, 1, 5, 21, 30, 3}     │ {:F}       │ Tue Jan  5 21:30:03 1971                 │
 // │ date_time {1971, 1, 5, 21, 30, 3}     │ {:g}       │ Tue Jan  5 21:30:03 1971                 │
-// │ date_time {1971, 1, 5, 21, 30, 3}     │ {:G}       │ Tue Jan  5 21:30:03 1971                 │
+// │ date_time {1971, 1, 5, 21, 30, 3}     │ {:G}       │ 1971-01-05 21:30:03                      │
 // │ date_time {1971, 1, 5, 21, 30, 3}     │ {:h}       │ Tue                                      │
 // │ date_time {1971, 1, 5, 21, 30, 3}     │ {:H}       │ Tuesday                                  │
 // │ date_time {1971, 1, 5, 21, 30, 3}     │ {:i}       │ 05                                       │
@@ -295,7 +295,7 @@ auto main() -> int {
 // │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:f}       │ Tue Jan  5 21:30:03 1971                 │
 // │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:F}       │ Tue Jan  5 21:30:03 1971                 │
 // │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:g}       │ Tue Jan  5 21:30:03 1971                 │
-// │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:G}       │ Tue Jan  5 21:30:03 1971                 │
+// │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:G}       │ 1971-01-05 21:30:03                      │
 // │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:h}       │ Tue                                      │
 // │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:H}       │ Tuesday                                  │
 // │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:i}       │ 05                                       │
@@ -344,7 +344,7 @@ auto main() -> int {
 // │ date_time::now()                      │ {:f}       │ Wed Dec 18 20:10:41 2024                 │
 // │ date_time::now()                      │ {:F}       │ Wed Dec 18 20:10:41 2024                 │
 // │ date_time::now()                      │ {:g}       │ Wed Dec 18 20:10:41 2024                 │
-// │ date_time::now()                      │ {:G}       │ Wed Dec 18 20:10:41 2024                 │
+// │ date_time::now()                      │ {:G}       │ 2024-12-18 20:10:41                      │
 // │ date_time::now()                      │ {:h}       │ Wed                                      │
 // │ date_time::now()                      │ {:H}       │ Wednesday                                │
 // │ date_time::now()                      │ {:i}       │ 18                                       │
@@ -393,7 +393,7 @@ auto main() -> int {
 // │ date_time::utc_now()                  │ {:f}       │ Wed Dec 18 19:10:41 2024                 │
 // │ date_time::utc_now()                  │ {:F}       │ Wed Dec 18 19:10:41 2024                 │
 // │ date_time::utc_now()                  │ {:g}       │ Wed Dec 18 19:10:41 2024                 │
-// │ date_time::utc_now()                  │ {:G}       │ Wed Dec 18 19:10:41 2024                 │
+// │ date_time::utc_now()                  │ {:G}       │ 2024-12-18 19:10:41                      │
 // │ date_time::utc_now()                  │ {:h}       │ Wed                                      │
 // │ date_time::utc_now()                  │ {:H}       │ Wednesday                                │
 // │ date_time::utc_now()                  │ {:i}       │ 18                                       │
@@ -442,7 +442,7 @@ auto main() -> int {
 // │ date_time::min_value                  │ {:f}       │ Mon Jan  1 00:00:00 0001                 │
 // │ date_time::min_value                  │ {:F}       │ Mon Jan  1 00:00:00 0001                 │
 // │ date_time::min_value                  │ {:g}       │ Mon Jan  1 00:00:00 0001                 │
-// │ date_time::min_value                  │ {:G}       │ Mon Jan  1 00:00:00 0001                 │
+// │ date_time::min_value                  │ {:G}       │ 1-01-01 00:00:00                         │
 // │ date_time::min_value                  │ {:h}       │ Mon                                      │
 // │ date_time::min_value                  │ {:H}       │ Monday                                   │
 // │ date_time::min_value                  │ {:i}       │ 01                                       │
@@ -491,7 +491,7 @@ auto main() -> int {
 // │ date_time::max_value                  │ {:f}       │ Fri Dec 31 23:59:59 9999                 │
 // │ date_time::max_value                  │ {:F}       │ Fri Dec 31 23:59:59 9999                 │
 // │ date_time::max_value                  │ {:g}       │ Fri Dec 31 23:59:59 9999                 │
-// │ date_time::max_value                  │ {:G}       │ Fri Dec 31 23:59:59 9999                 │
+// │ date_time::max_value                  │ {:G}       │ 9999-12-31 23:59:59                      │
 // │ date_time::max_value                  │ {:h}       │ Fri                                      │
 // │ date_time::max_value                  │ {:H}       │ Friday                                   │
 // │ date_time::max_value                  │ {:i}       │ 31                                       │
