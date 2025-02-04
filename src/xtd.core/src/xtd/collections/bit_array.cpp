@@ -164,6 +164,10 @@ generic::enumerator<bool> bit_array::get_enumerator() const {
   return generic::enumerator<bool>(new_ptr<enumerator>(const_cast<bit_array*>(this)));
 }
 
+bit_array& bit_array::left_shift(xtd::size count) noexcept {
+  return *this <<= count;
+}
+
 const bit_array& bit_array::not_() {
   for (auto index = 0_z; index < length(); ++index)
     operator [](index) = !operator [](index);
@@ -175,6 +179,10 @@ const bit_array& bit_array::or_(const bit_array& value) {
   for (auto index = 0_z; index < length(); ++index)
     operator [](index) = operator [](index) || value[index];
   return *this;
+}
+
+bit_array& bit_array::right_shift(xtd::size count) noexcept {
+  return *this >>= count;
 }
 
 void bit_array::set(size index, bool value) {
@@ -209,6 +217,30 @@ bool& bit_array::operator[](size index) {
   return value_ref_.get_boolean_ref(get_bit_value(index), index);
 }
 
+bit_array bit_array::operator >>(xtd::size pos) const noexcept {
+  auto result = bit_array(count());
+  for (auto index = count() - 1; index > 0; --index)
+    result[index] = index >= pos ? at(index - pos) : false;
+  return result;
+}
+
+bit_array& bit_array::operator >>=(xtd::size pos) noexcept {
+  *this = *this >> pos;
+  return *this;
+}
+
+bit_array bit_array::operator <<(xtd::size pos) const noexcept {
+  auto result = bit_array(count());
+  for (auto index = xtd::size {0}; index < count(); ++index)
+    result[index] = index + pos < count() ? at(index + pos) : false;
+  return result;
+}
+
+bit_array& bit_array::operator <<=(xtd::size pos) noexcept {
+  *this = *this << pos;
+  return *this;
+}
+
 void bit_array::add(const bool& value) {
   length(length() + 1);
   operator [](length() - 1) = value;
@@ -218,7 +250,9 @@ void bit_array::clear() {
   length(0);
 }
 
-bool bit_array::contains(const bool&) const noexcept {
+bool bit_array::contains(const bool& value) const noexcept {
+  for (auto bit : *this)
+    if (bit == value) return true;
   return false;
 }
 
