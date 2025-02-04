@@ -20,7 +20,7 @@ public:
     console::write_line(date1.to_string("f")); // Tue Apr  1 18:07:05 2008
     console::write_line(date1.to_string("F")); // Tue Apr  1 18:07:05 2008
     console::write_line(date1.to_string("g")); // Tue Apr  1 18:07:05 2008
-    console::write_line(date1.to_string("G")); // Tue Apr  1 18:07:05 2008
+    console::write_line(date1.to_string("G")); // 2008-04-01 18:07:05
     console::write_line(date1.to_string("h")); // Tue
     console::write_line(date1.to_string("H")); // Tuesday
     console::write_line(date1.to_string("i")); // 01
@@ -75,7 +75,7 @@ startup_(program::main);
 // Tue Apr  1 18:07:05 2008
 // Tue Apr  1 18:07:05 2008
 // Tue Apr  1 18:07:05 2008
-// Tue Apr  1 18:07:05 2008
+// 2008-04-01 18:07:05
 // Tue
 // Tuesday
 // 01
