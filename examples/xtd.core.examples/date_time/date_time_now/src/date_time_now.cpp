@@ -16,8 +16,8 @@ public:
       try {
         std::locale::global(std::locale {locale_name + ".utf-8"_s});
         console::write_line("{}:", locale_name);
-        console::write_line("   Local date and time: {}, {}", local_date.to_string(), local_date.kind());
-        console::write_line("   UTC date and time: {}, {}\n", utc_date.to_string(), utc_date.kind());
+        console::write_line("   Local date and time: {:f}, {}", local_date, local_date.kind());
+        console::write_line("   UTC date and time: {:f}, {}\n", utc_date, utc_date.kind());
       } catch (const std::exception& e) {
         console::write_line("Make sure {} locale is installed on your system :\n\n{}\n", locale_name, e);
       }
