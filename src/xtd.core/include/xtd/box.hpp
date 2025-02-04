@@ -127,7 +127,7 @@ namespace xtd {
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
-    int32 compare_to(const box& value) const noexcept override {return equals(value) ? 0 : xtd::collections::generic::helpers::comparer<value_type> {}(this->value, value.value) ? -1 : 1;}
+    int32 compare_to(const box& value) const noexcept override {return xtd::collections::generic::helpers::comparer<value_type> {}(this->value, value.value);}
 
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.

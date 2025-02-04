@@ -73,7 +73,7 @@ namespace xtd {
     int32 compare_to(const any_object& other) const noexcept override {
       if (!has_value() && other.has_value()) return -1;
       if (has_value() && !other.has_value()) return 1;
-      return equals(other) ? 0 : xtd::collections::generic::helpers::comparer<ptr<object>> {}(value_, other.value_) ? -1 : 1;
+      return xtd::collections::generic::helpers::comparer<ptr<object>> {}(value_, other.value_);
     }
     bool equals(const object& other) const noexcept override {return dynamic_cast<const any_object*>(&other) && equals(static_cast<const any_object&>(other));}
     bool equals(const any_object& other) const noexcept override {
