@@ -28,8 +28,8 @@ startup_(program::main);
 //
 // Original date: 09/08/2010/16:00:00.0000000 (634195584000000000 ticks)
 //
-// Second date:   09/08/2010/16:00:00.0000000 (634195584000010000 ticks)
-// Difference between dates: Mon Jan  1 00:00:00 0001 (10000 ticks)
+// Second date:   09/08/2010/16:00:00.0000000 (634195584000009984 ticks)
+// Difference between dates: 00:00:00.0010000 (10000 ticks)
 //
-// Third date:    09/08/2010/16:00:00.0005000 (634195584000015000 ticks)
-// Difference between dates: Mon Jan  1 00:00:00 0001 (15000 ticks)
+// Third date:    09/08/2010/16:00:00.0005000 (634195584000014976 ticks)
+// Difference between dates: 00:00:00.0015000 (15000 ticks)
