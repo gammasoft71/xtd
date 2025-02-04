@@ -309,6 +309,8 @@ add_sources(
   include/xtd/month_of_year
   include/xtd/nameof.hpp
   include/xtd/nameof
+  include/xtd/native_array.hpp
+  include/xtd/native_array
   include/xtd/new_ptr.hpp
   include/xtd/new_ptr
   include/xtd/new_sptr.hpp
