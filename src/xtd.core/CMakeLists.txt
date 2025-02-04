@@ -591,6 +591,8 @@ add_sources(
   include/xtd/collections/stack
   include/xtd/collections/vector_list.hpp
   include/xtd/collections/vector_list
+  include/xtd/collections/generic/extensions/collection_operators.hpp
+  include/xtd/collections/generic/extensions/collection_operators
   include/xtd/collections/generic/extensions/enumerable.hpp
   include/xtd/collections/generic/extensions/enumerable
   include/xtd/collections/generic/extensions/enumerable_iterators.hpp
