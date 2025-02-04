@@ -245,6 +245,12 @@ namespace xtd {
       /// @return An xtd::collection::generic::ienumerator object that can be used to iterate through the collection.
       xtd::collections::generic::enumerator<bool> get_enumerator() const override;
 
+      /// @brief Shifts all the bit values of the current xtd::collections::bit_array to the left on count bits.
+      /// @param count The number of shifts to make for each bit.
+      /// @return The current xtd::collections::bit_array.
+      /// @remarks The current xtd::collections::bit_array is updated and returned.
+      bit_array& left_shift(xtd::size count) noexcept;
+      
       /// @brief Inverts all the bit values in the current xtd::collections::bit_array, so that elements set to `true` are changed to `false`, and elements set to `false` are changed to `true`.
       /// @return The current instance with inverted bit values.
       /// @remarks This method is an O(n) operation, where n is count.
@@ -258,6 +264,12 @@ namespace xtd {
       /// @remarks This method is an O(n) operation, where n is count.
       const bit_array& or_(const bit_array& value);
 
+      /// @brief Shifts all the bit values of the current xtd::collections::bit_array to the right on count bits.
+      /// @param count The number of shifts to make for each bit.
+      /// @return The current xtd::collections::bit_array.
+      /// @remarks The current xtd::collections::bit_array is updated and returned.
+      bit_array& right_shift(xtd::size count) noexcept;
+      
       /// @brief Sets the value of the bit at a specific position in the xtd::collections::bit_array.
       /// @param index The zero-based index of the value to get.
       /// @param value The bool value to assign to the bit.
@@ -295,6 +307,30 @@ namespace xtd {
       /// @return The element at the specified index.
       /// @exception xtd::argument_out_of_range_exception index is less than 0 or index is equal to or greater than count.
       bool& operator[](xtd::size index);
+      
+      /// @brief The right shift operator shifts all the bit values of the current xtd::collections::bit_array to the right on count bits.
+      /// @param count The number of shifts to make for each bit.
+      /// @return The new shifted xtd::collections::bit_array.
+      /// @remarks The current xtd::collections::bit_array is not updated.
+      bit_array operator >>(xtd::size count) const noexcept;
+      
+      /// @brief The right shift operator shifts all the bit values of the current xtd::collections::bit_array to the right on count bits.
+      /// @param count The number of shifts to make for each bit.
+      /// @return The current xtd::collections::bit_array.
+      /// @remarks The current xtd::collections::bit_array is updated and returned.
+      bit_array& operator >>=(xtd::size count) noexcept;
+
+      /// @brief The left shift operator shifts all the bit values of the current xtd::collections::bit_array to the left on count bits.
+      /// @param count The number of shifts to make for each bit.
+      /// @return The new shifted xtd::collections::bit_array.
+      /// @remarks The current xtd::collections::bit_array is not updated.
+      bit_array operator <<(xtd::size count) const noexcept;
+      
+      /// @brief The left shift operator shifts all the bit values of the current xtd::collections::bit_array to the left on count bits.
+      /// @param count The number of shifts to make for each bit.
+      /// @return The current xtd::collections::bit_array.
+      /// @remarks The current xtd::collections::bit_array is updated and returned.
+      bit_array& operator <<=(xtd::size count) noexcept;
       /// @}
 
     private:
