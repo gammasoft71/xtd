@@ -22,7 +22,7 @@ xtdc run
 ┌───────────────────────────────────────┬────────────┬──────────────────────────────────────────┐
 │  date_time                            │   format   │      representation                      │
 ├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
-│ date_time {}                          │ {}         │ Mon Jan  1 00:00:00 0001                 │
+│ date_time {}                          │ {}         │ 1-01-01 00:00:00                         │
 │ date_time {}                          │ {:a}       │ AM                                       │
 │ date_time {}                          │ {:b}       │ 000                                      │
 │ date_time {}                          │ {:B}       │ 0                                        │
@@ -35,7 +35,7 @@ xtdc run
 │ date_time {}                          │ {:f}       │ Mon Jan  1 00:00:00 0001                 │
 │ date_time {}                          │ {:F}       │ Mon Jan  1 00:00:00 0001                 │
 │ date_time {}                          │ {:g}       │ Mon Jan  1 00:00:00 0001                 │
-│ date_time {}                          │ {:G}       │ Mon Jan  1 00:00:00 0001                 │
+│ date_time {}                          │ {:G}       │ 1-01-01 00:00:00                         │
 │ date_time {}                          │ {:h}       │ Mon                                      │
 │ date_time {}                          │ {:H}       │ Monday                                   │
 │ date_time {}                          │ {:i}       │ 01                                       │
@@ -71,7 +71,7 @@ xtdc run
 │ date_time {}                          │ {:z}       │ UTC                                      │
 │ date_time {}                          │ {:Z}       │ UTC                                      │
 ├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
-│ date_time {123456789123456789}        │ {}         │ Sat Mar 21 19:15:12 0392                 │
+│ date_time {123456789123456789}        │ {}         │ 392-03-21 19:15:12                       │
 │ date_time {123456789123456789}        │ {:a}       │ PM                                       │
 │ date_time {123456789123456789}        │ {:b}       │ 345                                      │
 │ date_time {123456789123456789}        │ {:B}       │ 345                                      │
@@ -84,7 +84,7 @@ xtdc run
 │ date_time {123456789123456789}        │ {:f}       │ Sat Mar 21 19:15:12 0392                 │
 │ date_time {123456789123456789}        │ {:F}       │ Sat Mar 21 19:15:12 0392                 │
 │ date_time {123456789123456789}        │ {:g}       │ Sat Mar 21 19:15:12 0392                 │
-│ date_time {123456789123456789}        │ {:G}       │ Sat Mar 21 19:15:12 0392                 │
+│ date_time {123456789123456789}        │ {:G}       │ 392-03-21 19:15:12                       │
 │ date_time {123456789123456789}        │ {:h}       │ Sat                                      │
 │ date_time {123456789123456789}        │ {:H}       │ Saturday                                 │
 │ date_time {123456789123456789}        │ {:i}       │ 21                                       │
@@ -120,7 +120,7 @@ xtdc run
 │ date_time {123456789123456789}        │ {:z}       │ UTC                                      │
 │ date_time {123456789123456789}        │ {:Z}       │ UTC                                      │
 ├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
-│ date_time {1971, 1, 5}                │ {}         │ Tue Jan  5 00:00:00 1971                 │
+│ date_time {1971, 1, 5}                │ {}         │ 1971-01-05 00:00:00                      │
 │ date_time {1971, 1, 5}                │ {:a}       │ AM                                       │
 │ date_time {1971, 1, 5}                │ {:b}       │ 000                                      │
 │ date_time {1971, 1, 5}                │ {:B}       │ 0                                        │
@@ -133,7 +133,7 @@ xtdc run
 │ date_time {1971, 1, 5}                │ {:f}       │ Tue Jan  5 00:00:00 1971                 │
 │ date_time {1971, 1, 5}                │ {:F}       │ Tue Jan  5 00:00:00 1971                 │
 │ date_time {1971, 1, 5}                │ {:g}       │ Tue Jan  5 00:00:00 1971                 │
-│ date_time {1971, 1, 5}                │ {:G}       │ Tue Jan  5 00:00:00 1971                 │
+│ date_time {1971, 1, 5}                │ {:G}       │ 1971-01-05 00:00:00                      │
 │ date_time {1971, 1, 5}                │ {:h}       │ Tue                                      │
 │ date_time {1971, 1, 5}                │ {:H}       │ Tuesday                                  │
 │ date_time {1971, 1, 5}                │ {:i}       │ 05                                       │
@@ -169,7 +169,7 @@ xtdc run
 │ date_time {1971, 1, 5}                │ {:z}       │ UTC                                      │
 │ date_time {1971, 1, 5}                │ {:Z}       │ UTC                                      │
 ├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
-│ date_time {1971, 1, 5, 21, 30, 3}     │ {}         │ Tue Jan  5 21:30:03 1971                 │
+│ date_time {1971, 1, 5, 21, 30, 3}     │ {}         │ 1971-01-05 21:30:03                      │
 │ date_time {1971, 1, 5, 21, 30, 3}     │ {:a}       │ PM                                       │
 │ date_time {1971, 1, 5, 21, 30, 3}     │ {:b}       │ 000                                      │
 │ date_time {1971, 1, 5, 21, 30, 3}     │ {:B}       │ 0                                        │
@@ -182,7 +182,7 @@ xtdc run
 │ date_time {1971, 1, 5, 21, 30, 3}     │ {:f}       │ Tue Jan  5 21:30:03 1971                 │
 │ date_time {1971, 1, 5, 21, 30, 3}     │ {:F}       │ Tue Jan  5 21:30:03 1971                 │
 │ date_time {1971, 1, 5, 21, 30, 3}     │ {:g}       │ Tue Jan  5 21:30:03 1971                 │
-│ date_time {1971, 1, 5, 21, 30, 3}     │ {:G}       │ Tue Jan  5 21:30:03 1971                 │
+│ date_time {1971, 1, 5, 21, 30, 3}     │ {:G}       │ 1971-01-05 21:30:03                      │
 │ date_time {1971, 1, 5, 21, 30, 3}     │ {:h}       │ Tue                                      │
 │ date_time {1971, 1, 5, 21, 30, 3}     │ {:H}       │ Tuesday                                  │
 │ date_time {1971, 1, 5, 21, 30, 3}     │ {:i}       │ 05                                       │
@@ -218,7 +218,7 @@ xtdc run
 │ date_time {1971, 1, 5, 21, 30, 3}     │ {:z}       │ UTC                                      │
 │ date_time {1971, 1, 5, 21, 30, 3}     │ {:Z}       │ UTC                                      │
 ├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
-│ date_time {1971, 1, 5, 21, 30, 3, 42} │ {}         │ Tue Jan  5 21:30:03 1971                 │
+│ date_time {1971, 1, 5, 21, 30, 3, 42} │ {}         │ 1971-01-05 21:30:03                      │
 │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:a}       │ PM                                       │
 │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:b}       │ 042                                      │
 │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:B}       │ 42                                       │
@@ -231,7 +231,7 @@ xtdc run
 │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:f}       │ Tue Jan  5 21:30:03 1971                 │
 │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:F}       │ Tue Jan  5 21:30:03 1971                 │
 │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:g}       │ Tue Jan  5 21:30:03 1971                 │
-│ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:G}       │ Tue Jan  5 21:30:03 1971                 │
+│ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:G}       │ 1971-01-05 21:30:03                      │
 │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:h}       │ Tue                                      │
 │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:H}       │ Tuesday                                  │
 │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:i}       │ 05                                       │
@@ -267,105 +267,105 @@ xtdc run
 │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:z}       │ UTC                                      │
 │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:Z}       │ UTC                                      │
 ├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
-│ date_time::now()                      │ {}         │ Wed Dec 18 20:10:41 2024                 │
+│ date_time::now()                      │ {}         │ 2025-02-04 22:07:02                      │
 │ date_time::now()                      │ {:a}       │ PM                                       │
-│ date_time::now()                      │ {:b}       │ 825                                      │
-│ date_time::now()                      │ {:B}       │ 825                                      │
-│ date_time::now()                      │ {:c}       │ 0002420                                  │
-│ date_time::now()                      │ {:C}       │ 2420                                     │
-│ date_time::now()                      │ {:d}       │ 12/18/2024                               │
-│ date_time::now()                      │ {:D}       │ 12/18/2024                               │
-│ date_time::now()                      │ {:e}       │ 41                                       │
-│ date_time::now()                      │ {:E}       │ 41                                       │
-│ date_time::now()                      │ {:f}       │ Wed Dec 18 20:10:41 2024                 │
-│ date_time::now()                      │ {:F}       │ Wed Dec 18 20:10:41 2024                 │
-│ date_time::now()                      │ {:g}       │ Wed Dec 18 20:10:41 2024                 │
-│ date_time::now()                      │ {:G}       │ Wed Dec 18 20:10:41 2024                 │
-│ date_time::now()                      │ {:h}       │ Wed                                      │
-│ date_time::now()                      │ {:H}       │ Wednesday                                │
-│ date_time::now()                      │ {:i}       │ 18                                       │
-│ date_time::now()                      │ {:I}       │ 18                                       │
-│ date_time::now()                      │ {:j}       │ Dec                                      │
-│ date_time::now()                      │ {:J}       │ December                                 │
-│ date_time::now()                      │ {:k}       │ 12                                       │
-│ date_time::now()                      │ {:K}       │ 12                                       │
-│ date_time::now()                      │ {:l}       │ 24                                       │
-│ date_time::now()                      │ {:L}       │ 2024                                     │
-│ date_time::now()                      │ {:m}       │ 2024                                     │
-│ date_time::now()                      │ {:M}       │ December 18                              │
-│ date_time::now()                      │ {:n}       │ Wednesday, 18 December 2024              │
-│ date_time::now()                      │ {:n}       │ Wednesday, 18 December 2024 20:10:41     │
-│ date_time::now()                      │ {:o}       │ 18 December 2024                         │
-│ date_time::now()                      │ {:O}       │ 18 December 2024                         │
-│ date_time::now()                      │ {:p}       │ 10                                       │
-│ date_time::now()                      │ {:P}       │ 10                                       │
-│ date_time::now()                      │ {:s}       │ 2024-12-18T20:10:41.8252420              │
-│ date_time::now()                      │ {:S}       │ 2024-12-18T20:10:41.825                  │
-│ date_time::now()                      │ {:t}       │ 20:10:41                                 │
-│ date_time::now()                      │ {:T}       │ 20:10:41                                 │
-│ date_time::now()                      │ {:u}       │ 2024-12-18 20:10:41                      │
-│ date_time::now()                      │ {:U}       │ Wednesday, 18 December 2024 20:10:41     │
-│ date_time::now()                      │ {:v}       │ 20:10                                    │
-│ date_time::now()                      │ {:V}       │ 20:10                                    │
-│ date_time::now()                      │ {:w}       │ 20                                       │
-│ date_time::now()                      │ {:W}       │ 20                                       │
-│ date_time::now()                      │ {:x}       │ 08                                       │
-│ date_time::now()                      │ {:X}       │ 8                                        │
-│ date_time::now()                      │ {:y}       │ December 24                              │
-│ date_time::now()                      │ {:Y}       │ December 2024                            │
+│ date_time::now()                      │ {:b}       │ 435                                      │
+│ date_time::now()                      │ {:B}       │ 435                                      │
+│ date_time::now()                      │ {:c}       │ 0001250                                  │
+│ date_time::now()                      │ {:C}       │ 1250                                     │
+│ date_time::now()                      │ {:d}       │ 02/04/2025                               │
+│ date_time::now()                      │ {:D}       │ 2/04/2025                                │
+│ date_time::now()                      │ {:e}       │ 02                                       │
+│ date_time::now()                      │ {:E}       │ 2                                        │
+│ date_time::now()                      │ {:f}       │ Tue Feb  4 22:07:02 2025                 │
+│ date_time::now()                      │ {:F}       │ Tue Feb  4 22:07:02 2025                 │
+│ date_time::now()                      │ {:g}       │ Tue Feb  4 22:07:02 2025                 │
+│ date_time::now()                      │ {:G}       │ 2025-02-04 22:07:02                      │
+│ date_time::now()                      │ {:h}       │ Tue                                      │
+│ date_time::now()                      │ {:H}       │ Tuesday                                  │
+│ date_time::now()                      │ {:i}       │ 04                                       │
+│ date_time::now()                      │ {:I}       │ 4                                        │
+│ date_time::now()                      │ {:j}       │ Feb                                      │
+│ date_time::now()                      │ {:J}       │ February                                 │
+│ date_time::now()                      │ {:k}       │ 02                                       │
+│ date_time::now()                      │ {:K}       │ 2                                        │
+│ date_time::now()                      │ {:l}       │ 25                                       │
+│ date_time::now()                      │ {:L}       │ 2025                                     │
+│ date_time::now()                      │ {:m}       │ 2025                                     │
+│ date_time::now()                      │ {:M}       │ February 4                               │
+│ date_time::now()                      │ {:n}       │ Tuesday, 4 February 2025                 │
+│ date_time::now()                      │ {:n}       │ Tuesday, 4 February 2025 22:07:02        │
+│ date_time::now()                      │ {:o}       │ 4 February 2025                          │
+│ date_time::now()                      │ {:O}       │ 4 February 2025                          │
+│ date_time::now()                      │ {:p}       │ 07                                       │
+│ date_time::now()                      │ {:P}       │ 7                                        │
+│ date_time::now()                      │ {:s}       │ 2025-02-04T22:07:02.4351250              │
+│ date_time::now()                      │ {:S}       │ 2025-02-04T22:07:02.435                  │
+│ date_time::now()                      │ {:t}       │ 22:07:02                                 │
+│ date_time::now()                      │ {:T}       │ 22:07:02                                 │
+│ date_time::now()                      │ {:u}       │ 2025-02-04 22:07:02                      │
+│ date_time::now()                      │ {:U}       │ Tuesday, 4 February 2025 22:07:02        │
+│ date_time::now()                      │ {:v}       │ 22:07                                    │
+│ date_time::now()                      │ {:V}       │ 22:07                                    │
+│ date_time::now()                      │ {:w}       │ 22                                       │
+│ date_time::now()                      │ {:W}       │ 22                                       │
+│ date_time::now()                      │ {:x}       │ 10                                       │
+│ date_time::now()                      │ {:X}       │ 10                                       │
+│ date_time::now()                      │ {:y}       │ February 25                              │
+│ date_time::now()                      │ {:Y}       │ February 2025                            │
 │ date_time::now()                      │ {:z}       │                                          │
 │ date_time::now()                      │ {:Z}       │                                          │
 ├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
-│ date_time::utc_now()                  │ {}         │ Wed Dec 18 19:10:41 2024                 │
+│ date_time::utc_now()                  │ {}         │ 2025-02-04 21:07:02                      │
 │ date_time::utc_now()                  │ {:a}       │ PM                                       │
-│ date_time::utc_now()                  │ {:b}       │ 827                                      │
-│ date_time::utc_now()                  │ {:B}       │ 827                                      │
-│ date_time::utc_now()                  │ {:c}       │ 0005120                                  │
-│ date_time::utc_now()                  │ {:C}       │ 5120                                     │
-│ date_time::utc_now()                  │ {:d}       │ 12/18/2024                               │
-│ date_time::utc_now()                  │ {:D}       │ 12/18/2024                               │
-│ date_time::utc_now()                  │ {:e}       │ 41                                       │
-│ date_time::utc_now()                  │ {:E}       │ 41                                       │
-│ date_time::utc_now()                  │ {:f}       │ Wed Dec 18 19:10:41 2024                 │
-│ date_time::utc_now()                  │ {:F}       │ Wed Dec 18 19:10:41 2024                 │
-│ date_time::utc_now()                  │ {:g}       │ Wed Dec 18 19:10:41 2024                 │
-│ date_time::utc_now()                  │ {:G}       │ Wed Dec 18 19:10:41 2024                 │
-│ date_time::utc_now()                  │ {:h}       │ Wed                                      │
-│ date_time::utc_now()                  │ {:H}       │ Wednesday                                │
-│ date_time::utc_now()                  │ {:i}       │ 18                                       │
-│ date_time::utc_now()                  │ {:I}       │ 18                                       │
-│ date_time::utc_now()                  │ {:j}       │ Dec                                      │
-│ date_time::utc_now()                  │ {:J}       │ December                                 │
-│ date_time::utc_now()                  │ {:k}       │ 12                                       │
-│ date_time::utc_now()                  │ {:K}       │ 12                                       │
-│ date_time::utc_now()                  │ {:l}       │ 24                                       │
-│ date_time::utc_now()                  │ {:L}       │ 2024                                     │
-│ date_time::utc_now()                  │ {:m}       │ 2024                                     │
-│ date_time::utc_now()                  │ {:M}       │ December 18                              │
-│ date_time::utc_now()                  │ {:n}       │ Wednesday, 18 December 2024              │
-│ date_time::utc_now()                  │ {:n}       │ Wednesday, 18 December 2024 19:10:41     │
-│ date_time::utc_now()                  │ {:o}       │ 18 December 2024                         │
-│ date_time::utc_now()                  │ {:O}       │ 18 December 2024                         │
-│ date_time::utc_now()                  │ {:p}       │ 10                                       │
-│ date_time::utc_now()                  │ {:P}       │ 10                                       │
-│ date_time::utc_now()                  │ {:s}       │ 2024-12-18T19:10:41.8275120              │
-│ date_time::utc_now()                  │ {:S}       │ 2024-12-18T19:10:41.827                  │
-│ date_time::utc_now()                  │ {:t}       │ 19:10:41                                 │
-│ date_time::utc_now()                  │ {:T}       │ 19:10:41                                 │
-│ date_time::utc_now()                  │ {:u}       │ 2024-12-18 19:10:41                      │
-│ date_time::utc_now()                  │ {:U}       │ Wednesday, 18 December 2024 19:10:41     │
-│ date_time::utc_now()                  │ {:v}       │ 19:10                                    │
-│ date_time::utc_now()                  │ {:V}       │ 19:10                                    │
-│ date_time::utc_now()                  │ {:w}       │ 19                                       │
-│ date_time::utc_now()                  │ {:W}       │ 19                                       │
-│ date_time::utc_now()                  │ {:x}       │ 07                                       │
-│ date_time::utc_now()                  │ {:X}       │ 7                                        │
-│ date_time::utc_now()                  │ {:y}       │ December 24                              │
-│ date_time::utc_now()                  │ {:Y}       │ December 2024                            │
+│ date_time::utc_now()                  │ {:b}       │ 437                                      │
+│ date_time::utc_now()                  │ {:B}       │ 437                                      │
+│ date_time::utc_now()                  │ {:c}       │ 0000300                                  │
+│ date_time::utc_now()                  │ {:C}       │ 300                                      │
+│ date_time::utc_now()                  │ {:d}       │ 02/04/2025                               │
+│ date_time::utc_now()                  │ {:D}       │ 2/04/2025                                │
+│ date_time::utc_now()                  │ {:e}       │ 02                                       │
+│ date_time::utc_now()                  │ {:E}       │ 2                                        │
+│ date_time::utc_now()                  │ {:f}       │ Tue Feb  4 21:07:02 2025                 │
+│ date_time::utc_now()                  │ {:F}       │ Tue Feb  4 21:07:02 2025                 │
+│ date_time::utc_now()                  │ {:g}       │ Tue Feb  4 21:07:02 2025                 │
+│ date_time::utc_now()                  │ {:G}       │ 2025-02-04 21:07:02                      │
+│ date_time::utc_now()                  │ {:h}       │ Tue                                      │
+│ date_time::utc_now()                  │ {:H}       │ Tuesday                                  │
+│ date_time::utc_now()                  │ {:i}       │ 04                                       │
+│ date_time::utc_now()                  │ {:I}       │ 4                                        │
+│ date_time::utc_now()                  │ {:j}       │ Feb                                      │
+│ date_time::utc_now()                  │ {:J}       │ February                                 │
+│ date_time::utc_now()                  │ {:k}       │ 02                                       │
+│ date_time::utc_now()                  │ {:K}       │ 2                                        │
+│ date_time::utc_now()                  │ {:l}       │ 25                                       │
+│ date_time::utc_now()                  │ {:L}       │ 2025                                     │
+│ date_time::utc_now()                  │ {:m}       │ 2025                                     │
+│ date_time::utc_now()                  │ {:M}       │ February 4                               │
+│ date_time::utc_now()                  │ {:n}       │ Tuesday, 4 February 2025                 │
+│ date_time::utc_now()                  │ {:n}       │ Tuesday, 4 February 2025 21:07:02        │
+│ date_time::utc_now()                  │ {:o}       │ 4 February 2025                          │
+│ date_time::utc_now()                  │ {:O}       │ 4 February 2025                          │
+│ date_time::utc_now()                  │ {:p}       │ 07                                       │
+│ date_time::utc_now()                  │ {:P}       │ 7                                        │
+│ date_time::utc_now()                  │ {:s}       │ 2025-02-04T21:07:02.4370300              │
+│ date_time::utc_now()                  │ {:S}       │ 2025-02-04T21:07:02.437                  │
+│ date_time::utc_now()                  │ {:t}       │ 21:07:02                                 │
+│ date_time::utc_now()                  │ {:T}       │ 21:07:02                                 │
+│ date_time::utc_now()                  │ {:u}       │ 2025-02-04 21:07:02                      │
+│ date_time::utc_now()                  │ {:U}       │ Tuesday, 4 February 2025 21:07:02        │
+│ date_time::utc_now()                  │ {:v}       │ 21:07                                    │
+│ date_time::utc_now()                  │ {:V}       │ 21:07                                    │
+│ date_time::utc_now()                  │ {:w}       │ 21                                       │
+│ date_time::utc_now()                  │ {:W}       │ 21                                       │
+│ date_time::utc_now()                  │ {:x}       │ 09                                       │
+│ date_time::utc_now()                  │ {:X}       │ 9                                        │
+│ date_time::utc_now()                  │ {:y}       │ February 25                              │
+│ date_time::utc_now()                  │ {:Y}       │ February 2025                            │
 │ date_time::utc_now()                  │ {:z}       │ UTC                                      │
 │ date_time::utc_now()                  │ {:Z}       │ UTC                                      │
 ├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
-│ date_time::min_value                  │ {}         │ Mon Jan  1 00:00:00 0001                 │
+│ date_time::min_value                  │ {}         │ 1-01-01 00:00:00                         │
 │ date_time::min_value                  │ {:a}       │ AM                                       │
 │ date_time::min_value                  │ {:b}       │ 000                                      │
 │ date_time::min_value                  │ {:B}       │ 0                                        │
@@ -378,7 +378,7 @@ xtdc run
 │ date_time::min_value                  │ {:f}       │ Mon Jan  1 00:00:00 0001                 │
 │ date_time::min_value                  │ {:F}       │ Mon Jan  1 00:00:00 0001                 │
 │ date_time::min_value                  │ {:g}       │ Mon Jan  1 00:00:00 0001                 │
-│ date_time::min_value                  │ {:G}       │ Mon Jan  1 00:00:00 0001                 │
+│ date_time::min_value                  │ {:G}       │ 1-01-01 00:00:00                         │
 │ date_time::min_value                  │ {:h}       │ Mon                                      │
 │ date_time::min_value                  │ {:H}       │ Monday                                   │
 │ date_time::min_value                  │ {:i}       │ 01                                       │
@@ -414,7 +414,7 @@ xtdc run
 │ date_time::min_value                  │ {:z}       │ UTC                                      │
 │ date_time::min_value                  │ {:Z}       │ UTC                                      │
 ├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤
-│ date_time::max_value                  │ {}         │ Fri Dec 31 23:59:59 9999                 │
+│ date_time::max_value                  │ {}         │ 9999-12-31 23:59:59                      │
 │ date_time::max_value                  │ {:a}       │ PM                                       │
 │ date_time::max_value                  │ {:b}       │ 999                                      │
 │ date_time::max_value                  │ {:B}       │ 999                                      │
@@ -427,7 +427,7 @@ xtdc run
 │ date_time::max_value                  │ {:f}       │ Fri Dec 31 23:59:59 9999                 │
 │ date_time::max_value                  │ {:F}       │ Fri Dec 31 23:59:59 9999                 │
 │ date_time::max_value                  │ {:g}       │ Fri Dec 31 23:59:59 9999                 │
-│ date_time::max_value                  │ {:G}       │ Fri Dec 31 23:59:59 9999                 │
+│ date_time::max_value                  │ {:G}       │ 9999-12-31 23:59:59                      │
 │ date_time::max_value                  │ {:h}       │ Fri                                      │
 │ date_time::max_value                  │ {:H}       │ Friday                                   │
 │ date_time::max_value                  │ {:i}       │ 31                                       │
