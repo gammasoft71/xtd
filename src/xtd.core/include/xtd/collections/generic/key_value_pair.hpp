@@ -92,7 +92,7 @@ namespace xtd {
         /// @brief Returns a String representation of the key_value_pair<key_t, value_t>, using the String representations of the key and value.
         /// @return const String A String representation of the key_value_pair<key_t, value_t>, which includes the String representations of the key and value.
         /// @return String
-        xtd::string to_string() const noexcept override;
+        xtd::string to_string() const noexcept override; // defined in "../../string.hpp"
         
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param value The key_value_pair to compare with the current object.
