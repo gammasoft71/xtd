@@ -23,7 +23,7 @@ public:
 startup_(program::main);
 
 // This code produces the following output :
-// Sun Jun  1 07:47:00 2008
+// 008-06-01 07:47:00
 // 06/01/2008
 // Sun Jun  1 00:00:00 2008
 // 2008-06-01 00:00:00
