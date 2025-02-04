@@ -1067,7 +1067,8 @@ h1.glow, h2.glow, h3.glow, h4.glow, h5.glow, h6.glow {
 
 .dotgraph {
     max-width: 100%;
-    overflow-x: scroll;
+    /*overflow-x: scroll;*/
+    overflow: scroll;
 }
 
 .dotgraph .caption {

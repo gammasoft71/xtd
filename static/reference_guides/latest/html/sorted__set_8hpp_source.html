@@ -89,29 +89,29 @@ $(function() {
 <a href="sorted__set_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="allocator_8hpp.html">helpers/allocator.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="generic_2helpers_2comparer_8hpp.html">helpers/comparer.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="lesser_8hpp.html">helpers/lesser.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="iset_8hpp.html">iset.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;set&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keyword">namespace </span>collections {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">namespace </span>generic {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> comparer_t = xtd::collections::<span class="keyword">generic</span>::helpers::comparer&lt;type_t&gt;, <span class="keyword">class </span>allocator_t = <a class="code hl_typedef" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">xtd::collections::generic::helpers::allocator&lt;type_t&gt;</a>&gt;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69">   37</a></span>      <span class="keyword">using </span><a class="code hl_typedef" href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69">sorted_set</a> = std::set&lt;type_t, comparer_t, allocator_t&gt;;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, <span class="keyword">class</span> lesser_t = xtd::collections::<span class="keyword">generic</span>::helpers::lesser&lt;type_t&gt;, <span class="keyword">class </span>allocator_t = <a class="code hl_typedef" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">xtd::collections::generic::helpers::allocator&lt;type_t&gt;</a>&gt;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa">   37</a></span>      <span class="keyword">using </span><a class="code hl_typedef" href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa">sorted_set</a> = std::set&lt;type_t, lesser_t, allocator_t&gt;;</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  }</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
 <div class="ttc" id="aallocator_8hpp_html"><div class="ttname"><a href="allocator_8hpp.html">allocator.hpp</a></div><div class="ttdoc">Contains xtd::collections::generic::helpers::allocator alias.</div></div>
-<div class="ttc" id="ageneric_2helpers_2comparer_8hpp_html"><div class="ttname"><a href="generic_2helpers_2comparer_8hpp.html">comparer.hpp</a></div><div class="ttdoc">Contains xtd::collections::generic::helpers::comparer struct.</div></div>
-<div class="ttc" id="agroup__generic__collections_html_gaa2b86548e24c1469949088a7ad576c69"><div class="ttname"><a href="group__generic__collections.html#gaa2b86548e24c1469949088a7ad576c69">xtd::collections::generic::sorted_set</a></div><div class="ttdeci">std::set&lt; type_t, comparer_t, allocator_t &gt; sorted_set</div><div class="ttdoc">Represents a collection of objects that is maintained in sorted order.</div><div class="ttdef"><b>Definition</b> sorted_set.hpp:37</div></div>
+<div class="ttc" id="agroup__generic__collections_html_ga04c5dae2f5fbd4e27e72020315c50dfa"><div class="ttname"><a href="group__generic__collections.html#ga04c5dae2f5fbd4e27e72020315c50dfa">xtd::collections::generic::sorted_set</a></div><div class="ttdeci">std::set&lt; type_t, lesser_t, allocator_t &gt; sorted_set</div><div class="ttdoc">Represents a collection of objects that is maintained in sorted order.</div><div class="ttdef"><b>Definition</b> sorted_set.hpp:37</div></div>
 <div class="ttc" id="agroup__helpers__generic__collections_html_gac7dc24539787a344466014161f2d39af"><div class="ttname"><a href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af">xtd::collections::generic::helpers::allocator</a></div><div class="ttdeci">std::allocator&lt; type_t &gt; allocator</div><div class="ttdoc">Represent an allocator alias.</div><div class="ttdef"><b>Definition</b> allocator.hpp:38</div></div>
 <div class="ttc" id="aiset_8hpp_html"><div class="ttname"><a href="iset_8hpp.html">iset.hpp</a></div><div class="ttdoc">Contains xtd::collections::generic::iset &lt;type_t&gt; interface.</div></div>
+<div class="ttc" id="alesser_8hpp_html"><div class="ttname"><a href="lesser_8hpp.html">lesser.hpp</a></div><div class="ttdoc">Contains xtd::collections::generic::helpers::lesser struct.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 2 2025 22:28:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Feb 4 2025 16:35:52 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
