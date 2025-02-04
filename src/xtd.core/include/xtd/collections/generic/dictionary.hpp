@@ -1369,6 +1369,10 @@ namespace xtd {
           std::swap(data_->version, other.data_->version);
         }
         
+        /// @brief Gets a string that represents the current object.
+        /// @return A string that represents the current object.
+        xtd::string to_string() const noexcept override {return xtd::string::format("{{{}}}", xtd::string::join(", ", *this));}
+        
         /// @brief Sets the capacity of this dictionary to hold up a specified number of entries without any further expansion of its backing storage.
         /// @param capacity The new capacity.
         /// @exception xtd::argument_out_of_range_exception `capacity` is less than xtd::collections::generic::dictionary::count.
