@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "ienumerable.hpp"
+#include "extensions/collection_operators.hpp"
 #define __XTD_CORE_INTERNAL__
 #include "../../internal/__array_definition.hpp"
 #undef __XTD_CORE_INTERNAL__
@@ -19,7 +20,7 @@ namespace xtd {
       /// @par Definition
       /// ```cpp
       /// template<class type_t>
-      /// class icollection : public xtd::collections::generic::ienumerable<type_t>
+      /// class icollection : public xtd::collections::generic::ienumerable<type_t>, public xtd::collections::generic::extensions::collection_operators<type_t, icollection<type_t>>;
       /// ```
       /// @par Header
       /// ```cpp
@@ -41,7 +42,7 @@ namespace xtd {
       /// @remarks The xtd::collections::generic::icollection <type_t> interface extends xtd::collections::generic::ienumerable <type_t>; xtd::collections::generic::idictionary <key_t, value_t> and xtd::collections::generic::ilist <type_t> are more specialized interfaces that extend xtd::collections::generic::icollection <type_t>. A xtd::collections::generic::idictionary <key_t, value_t> implementation is a collection of key/value pairs, like the xtd::collections::generic::dictoinary <key_t, value_t> class. A xtd::collections::generic::ilist <type_t> implementation is a collection of values, and its members can be accessed by index, like the xtd::collections::generic::list <type_t> class.
       /// @remarks If neither the xtd::collections::generic::idictionary <key_t, value_t> interface nor the xtd::collections::generic::ilist <type_t> interface meet the requirements of the required collection, derive the new collection class from the xtd::collections::generic::icollection <type_t> interface instead for more flexibility.
       template<class type_t>
-      class icollection : public xtd::collections::generic::ienumerable<type_t> {
+      class icollection : public xtd::collections::generic::ienumerable<type_t>, public xtd::collections::generic::extensions::collection_operators<type_t, icollection<type_t>> {
       public:
         /// @name Public Aliases
         
