@@ -465,7 +465,7 @@ string date_time::to_string(const string& format, const std::locale& loc) const 
     case 'f': return sprintf("%Ec", *this);
     case 'F': return sprintf("%c", *this);
     case 'g': return sprintf("%Ec", *this);
-    case 'G': return sprintf("%c", *this);
+    case 'G': return string::format("{:D}-{:D2}-{:D2} {:D2}:{:D2}:{:D2}", year, month, day, hour, minute, second);
     case 'h': return sprintf("%a", *this);
     case 'H': return sprintf("%A", *this);
     case 'i': return string::format("{:D2}", day);

@@ -21,73 +21,31 @@ namespace xtd::tests {
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_default_argument) {
-      #if defined(__APPLE__)
-      assert::are_equal("Wed Jan  2 03:04:05 2019", format("{0}", date_time {2019, 1, 2, 3, 4, 5}));
-      #elif defined(_WIN32)
-      assert::are_equal("1/2/2019 3:04:05 AM", format("{0}", date_time {2019, 1, 2, 3, 4, 5}));
-      #else
-      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format("{0}", date_time {2019, 1, 2, 3, 4, 5}));
-      #endif
+      assert::are_equal("2019-01-02 03:04:05", format("{0}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_date_time_local_with_left_alignment) {
-      #if defined(__APPLE__)
-      assert::are_equal("           Wed Jan  2 03:04:05 2019", format("{0, 35}", date_time {2019, 1, 2, 3, 4, 5}));
-      #elif defined(_WIN32)
-      assert::are_equal("                1/2/2019 3:04:05 AM", format("{0, 35}", date_time {2019, 1, 2, 3, 4, 5}));
-      #else
-      string_assert::starts_with("    Wed 02 Jan 2019 03:04:05 AM", format("{0, 35}", date_time {2019, 1, 2, 3, 4, 5}));
-      #endif
+      assert::are_equal("                2019-01-02 03:04:05", format("{0, 35}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_date_time_local_with_left_alignment_wth_plus) {
-      #if defined(__APPLE__)
-      assert::are_equal("           Wed Jan  2 03:04:05 2019", format("{0,+35}", date_time {2019, 1, 2, 3, 4, 5}));
-      #elif defined(_WIN32)
-      assert::are_equal("                1/2/2019 3:04:05 AM", format("{0,+35}", date_time {2019, 1, 2, 3, 4, 5}));
-      #else
-      string_assert::starts_with("    Wed 02 Jan 2019 03:04:05 AM", format("{0,+35}", date_time {2019, 1, 2, 3, 4, 5}));
-      #endif
+      assert::are_equal("                2019-01-02 03:04:05", format("{0,+35}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_date_time_local_with_left_to_zero) {
-      #if defined(__APPLE__)
-      assert::are_equal("Wed Jan  2 03:04:05 2019", format("{0,0}", date_time {2019, 1, 2, 3, 4, 5}));
-      #elif defined(_WIN32)
-      assert::are_equal("1/2/2019 3:04:05 AM", format("{0,0}", date_time {2019, 1, 2, 3, 4, 5}));
-      #else
-      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format("{0,0}", date_time {2019, 1, 2, 3, 4, 5}));
-      #endif
+      assert::are_equal("2019-01-02 03:04:05", format("{0,0}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_date_time_local_with_right_alignment) {
-      #if defined(__APPLE__)
-      assert::are_equal("Wed Jan  2 03:04:05 2019           ", format("{0,-35}", date_time {2019, 1, 2, 3, 4, 5}));
-      #elif defined(_WIN32)
-      assert::are_equal("1/2/2019 3:04:05 AM                ", format("{0,-35}", date_time {2019, 1, 2, 3, 4, 5}));
-      #else
-      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format("{0,-35}", date_time {2019, 1, 2, 3, 4, 5}));
-      #endif
+      assert::are_equal("2019-01-02 03:04:05                ", format("{0,-35}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_date_time_local_with_right_alignment_to_zero) {
-      #if defined(__APPLE__)
-      assert::are_equal("Wed Jan  2 03:04:05 2019", format("{0,-0}", date_time {2019, 1, 2, 3, 4, 5}));
-      #elif defined(_WIN32)
-      assert::are_equal("1/2/2019 3:04:05 AM", format("{0,-0}", date_time {2019, 1, 2, 3, 4, 5}));
-      #else
-      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format("{0,-0}", date_time {2019, 1, 2, 3, 4, 5}));
-      #endif
+      assert::are_equal("2019-01-02 03:04:05", format("{0,-0}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_date_time_local_with_alignment_empty) {
-      #if defined(__APPLE__)
-      assert::are_equal("Wed Jan  2 03:04:05 2019", format("{0,}", date_time {2019, 1, 2, 3, 4, 5}));
-      #elif defined(_WIN32)
-      assert::are_equal("1/2/2019 3:04:05 AM", format("{0,}", date_time {2019, 1, 2, 3, 4, 5}));
-      #else
-      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format("{0,}", date_time {2019, 1, 2, 3, 4, 5}));
-      #endif
+      assert::are_equal("2019-01-02 03:04:05", format("{0,}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_date_time_local_with_alignment_invalid) {
@@ -133,13 +91,7 @@ namespace xtd::tests {
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_general_argument) {
-      #if defined(__APPLE__)
-      assert::are_equal("Wed Jan  2 03:04:05 2019", format("{0:G}", date_time {2019, 1, 2, 3, 4, 5}));
-      #elif defined(_WIN32)
-      assert::are_equal("1/2/2019 3:04:05 AM", format("{0:G}", date_time {2019, 1, 2, 3, 4, 5}));
-      #else
-      string_assert::starts_with("Wed 02 Jan 2019 03:04:05 AM", format("{0:G}", date_time {2019, 1, 2, 3, 4, 5}));
-      #endif
+      assert::are_equal("2019-01-02 03:04:05", format("{0:G}", date_time {2019, 1, 2, 3, 4, 5}));
     }
     
     void test_method_(format_date_time_local_with_std_tm_with_brief_weekday_name_argument) {

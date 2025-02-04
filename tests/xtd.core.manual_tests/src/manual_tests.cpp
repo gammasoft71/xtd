@@ -1,24 +1,13 @@
 #include <xtd/xtd>
 
-auto main() -> int {
-  const auto& squares = enumerable::range(1, 10).select([](auto x) {return x * x;});
-  
-  for (auto num : squares)
-    console::write_line(num);
+using namespace xtd::collections;
 
-  /*
-  try {
-    throw exception {};
-  } catch(const exception& e) {
-    console::write_line("type              = {}", e.get_type());
-    console::write_line("help_link         = {}", e.help_link());
-    console::write_line("h_result          = 0x{0:X8} ({0})", static_cast<uint>(e.h_result()));
-    console::write_line("inner_exception   = {}", e.inner_exception());
-    console::write_line("message           = {}", e.message());
-    console::write_line("source            = {}", e.source());
-    console::write_line("stack_trace       = {}", e.stack_trace());
-  }
-   */
+auto main() -> int {
+  auto items = dictionary<string, int> {};
+  items << key_value_pair<>::create("one"_s, 1) << key_value_pair<>::create("two"_s, 2);
+  println("std::pair = {}", std::make_pair("one", 1));
+  println("key_value_pair = {}", key_value_pair<>::create("one", 1));
+  println("items = {{{}}}", xtd::string::join(", ", items));
 }
 
 // This code can produces the following output:

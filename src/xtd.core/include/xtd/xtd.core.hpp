@@ -396,6 +396,7 @@
 #include "memory_information.hpp"
 #include "month_of_year.hpp"
 #include "nameof.hpp"
+#include "native_array.hpp"
 #include "new_ptr.hpp"
 #include "new_sptr.hpp"
 #include "new_uptr.hpp"

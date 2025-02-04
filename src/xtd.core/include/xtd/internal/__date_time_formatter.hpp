@@ -44,7 +44,7 @@ inline std::string __date_time_formatter(std::string fmt, const std::tm& time, x
     case 'f': return __to_string("%Ec", time, loc);
     case 'F': return __to_string("%c", time, loc);
     case 'g': return __to_string("%Ec", time, loc);
-    case 'G': return __to_string("%c", time, loc);
+    case 'G': return __sprintf("%d-%02d-%02d %02d:%02d:%02d", time.tm_year + 1900, time.tm_mon + 1, time.tm_mday, time.tm_hour, time.tm_min, time.tm_sec);
     case 'h': return __sprintf("%s", __to_string("%a", time, loc).c_str());
     case 'H': return __sprintf("%s", __to_string("%A", time, loc).c_str());
     case 'i': return __sprintf("%02d", time.tm_mday);
