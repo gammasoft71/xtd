@@ -18,7 +18,7 @@ namespace xtd {
     /// ```
     /// @par Header
     /// ```cpp
-    /// #include <xtd/comparison_operators
+    /// #include <xtd/extensions/comparison_operators
     /// ```
     /// @par Namespace
     /// xtd
@@ -85,6 +85,7 @@ namespace xtd {
       }
 #endif
       /// @}
+    
     private:
       friend comparable_t;
       comparison_operators() = default;
