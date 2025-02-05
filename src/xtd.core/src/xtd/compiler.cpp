@@ -48,6 +48,10 @@ const xtd::version& compiler::version() const noexcept {
   return version_;
 }
 
+size compiler::get_hash_code() const noexcept {
+  return hash_code::combine(compiler_id_, version_, build_type_, is_64_bit_);
+}
+
 xtd::string compiler::to_string() const noexcept {
   return version_string();
 }
