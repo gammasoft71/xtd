@@ -62,7 +62,13 @@ xtd::version cpp_language::version() const noexcept {
   return xtd::version(cpp_ / 100, cpp_ % 100);
 }
 
-int32 cpp_language::year() const noexcept {return cpp_ / 100;}
+int32 cpp_language::year() const noexcept {
+  return cpp_ / 100;
+}
+
+size cpp_language::get_hash_code() const noexcept {
+  return hash_code::combine(cpp_);
+}
 
 xtd::string cpp_language::to_string() const noexcept {
   return version_string();
