@@ -144,6 +144,8 @@ namespace xtd {
       /// @return Iterator to the first element.
       iterator begin() noexcept override {return xtd::collections::generic::ienumerable<value_type>::begin();}
       
+      /// @brief Returns a [std::bitset](https://en.cppreference.com/w/cpp/utility/bitset) object containing the Booleans contained in the current xtd::collections::bit_array.
+      /// @return The [std::bitset](https://en.cppreference.com/w/cpp/utility/bitset) object.
       template<xtd::size length>
       std::bitset<length> bits() const noexcept {
         auto result = std::bitset<length> {};
