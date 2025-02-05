@@ -11,7 +11,7 @@ bool hash_code::equals(const object& other) const noexcept {
 }
 
 size hash_code::get_hash_code() const noexcept {
-  return hash_code_;
+  return to_hash_code();
 }
 
 size hash_code::to_hash_code() const noexcept {
