@@ -230,6 +230,7 @@ bit_array& bit_array::right_shift(xtd::size count) noexcept {
 
 void bit_array::set(size index, bool value) {
   flush(); // Must be call first
+  if (index >= length()) throw argument_out_of_range_exception {};
   set_bit_value(index, value);
 }
 
