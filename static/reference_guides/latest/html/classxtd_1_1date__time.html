@@ -203,15 +203,15 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// d1 (Thu Dec 30 16:18:10 2021) ~= d1 (Thu Dec 30 16:18:10 2021): true</span></div>
-<div class="line"><span class="comment">// d1 (Thu Dec 30 16:18:10 2021) ~= d2 (Thu Dec 30 16:18:30 2021): false</span></div>
-<div class="line"><span class="comment">// d1 (Thu Dec 30 16:18:10 2021) ~= d3 (Thu Dec 30 16:17:50 2021): false</span></div>
-<div class="line"><span class="comment">// d1 (Thu Dec 30 16:18:10 2021) ~= d4 (Thu Dec 30 16:18:15 2021): true</span></div>
-<div class="line"><span class="comment">// d1 (Thu Dec 30 16:18:10 2021) ~= d5 (Thu Dec 30 16:18:05 2021): true</span></div>
-<div class="line"><span class="comment">// d1 (Thu Dec 30 16:18:10 2021) ~= d6 (Thu Dec 30 18:18:30 2021): false</span></div>
-<div class="line"><span class="comment">// d1 (Thu Dec 30 16:18:10 2021) ~= d7 (Thu Dec 30 18:17:50 2021): false</span></div>
-<div class="line"><span class="comment">// d1 (Thu Dec 30 16:18:10 2021) ~= d8 (Thu Dec 30 18:18:15 2021): true</span></div>
-<div class="line"><span class="comment">// d1 (Thu Dec 30 16:18:10 2021) ~= d9 (Thu Dec 30 18:18:05 2021): true</span></div>
+<div class="line"><span class="comment">// d1 (2025-02-04 21:51:19) ~= d1 (2025-02-04 21:51:19): true</span></div>
+<div class="line"><span class="comment">// d1 (2025-02-04 21:51:19) ~= d2 (2025-02-04 21:51:39): false</span></div>
+<div class="line"><span class="comment">// d1 (2025-02-04 21:51:19) ~= d3 (2025-02-04 21:50:59): false</span></div>
+<div class="line"><span class="comment">// d1 (2025-02-04 21:51:19) ~= d4 (2025-02-04 21:51:24): true</span></div>
+<div class="line"><span class="comment">// d1 (2025-02-04 21:51:19) ~= d5 (2025-02-04 21:51:14): true</span></div>
+<div class="line"><span class="comment">// d1 (2025-02-04 21:51:19) ~= d6 (2025-02-04 23:51:39): false</span></div>
+<div class="line"><span class="comment">// d1 (2025-02-04 21:51:19) ~= d7 (2025-02-04 23:50:59): false</span></div>
+<div class="line"><span class="comment">// d1 (2025-02-04 21:51:19) ~= d8 (2025-02-04 23:51:24): true</span></div>
+<div class="line"><span class="comment">// d1 (2025-02-04 21:51:19) ~= d9 (2025-02-04 23:51:14): true</span></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:175</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a45f9901d0370bc0facb9220619e6cbd7"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a45f9901d0370bc0facb9220619e6cbd7">xtd::console_key::d6</a></div><div class="ttdeci">@ d6</div><div class="ttdoc">The 6 key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a83c2d09a5dd1d1c5f4f7f484450be380"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a83c2d09a5dd1d1c5f4f7f484450be380">xtd::console_key::d8</a></div><div class="ttdeci">@ d8</div><div class="ttdoc">The 8 key.</div></div>
@@ -1349,7 +1349,7 @@ template&lt;class clock_t , class duration_t  = clock_t::duration&gt; </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">// Sun Jun  1 07:47:00 2008</span></div>
+<div class="line"><span class="comment">// 008-06-01 07:47:00</span></div>
 <div class="line"><span class="comment">// 06/01/2008</span></div>
 <div class="line"><span class="comment">// Sun Jun  1 00:00:00 2008</span></div>
 <div class="line"><span class="comment">// 2008-06-01 00:00:00</span></div>
@@ -2240,8 +2240,8 @@ If you want to display the time of day or retrieve the string representation of 
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produce the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Wed Jan 12 14:06:34 2022</span></div>
-<div class="line"><span class="comment">// Thu Feb 17 14:06:34 2022</span></div>
+<div class="line"><span class="comment">// 2025-02-04 21:53:13</span></div>
+<div class="line"><span class="comment">// 2025-03-12 21:53:13</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>You can use the <a class="el" href="classxtd_1_1date__time.html#a6f0a5355543e1aed529a2a78bf6c630b" title="Returns a new xtd::date_time that adds the value of the specified xtd::time_span to the value of this...">xtd::date_time::add</a> method to add more than one kind of time interval (days, hours, minutes, seconds, or milliseconds) in a single operation. This method's behavior is identical to that of the addition operator. The xtd::date_time::addxtd::date_time structure also supports specialized addition methods (such as <a class="el" href="classxtd_1_1date__time.html#a7644578aa80da95945aad6a09baeb8ff" title="Returns a new xtd::date_time that adds the specified number of days to the value of this instance.">xtd::date_time::add_days</a>, <a class="el" href="classxtd_1_1date__time.html#a154440d7ac0ca311e6e861481f89bbd5" title="Returns a new xtd::date_time that adds the specified number of hours to the value of this instance.">xtd::date_time::add_hours</a>, and <a class="el" href="classxtd_1_1date__time.html#a707bef059e2d5161b8545cedc58983b2" title="Returns a new xtd::date_time that adds the specified number of minutes to the value of this instance.">xtd::date_time::add_minutes</a>) for each time interval. </dd>
 <dd>
@@ -2300,8 +2300,8 @@ This method does not change the value of this <a class="el" href="classxtd_1_1da
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produce the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Wed Jan 12 14:06:34 2022</span></div>
-<div class="line"><span class="comment">// Thu Feb 17 14:06:34 2022</span></div>
+<div class="line"><span class="comment">// 2025-02-04 21:54:44</span></div>
+<div class="line"><span class="comment">// 2025-03-12 21:54:44</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method does not change the value of this <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>. Instead, it returns a new <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> whose value is the result of this operation. </dd>
 <dd>
@@ -2448,11 +2448,11 @@ Converting time intervals of less than an hour to a fraction can involve a loss 
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Original date: 09/08/2010/16:00:00.0000000 (634195584000000000 ticks)</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Second date:   09/08/2010/16:00:00.0000000 (634195584000010000 ticks)</span></div>
-<div class="line"><span class="comment">// Difference between dates: Mon Jan  1 00:00:00 0001 (10000 ticks)</span></div>
+<div class="line"><span class="comment">// Second date:   09/08/2010/16:00:00.0000000 (634195584000009984 ticks)</span></div>
+<div class="line"><span class="comment">// Difference between dates: 00:00:00.0010000 (10000 ticks)</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// Third date:    09/08/2010/16:00:00.0005000 (634195584000015000 ticks)</span></div>
-<div class="line"><span class="comment">// Difference between dates: Mon Jan  1 00:00:00 0001 (15000 ticks)</span></div>
+<div class="line"><span class="comment">// Third date:    09/08/2010/16:00:00.0005000 (634195584000014976 ticks)</span></div>
+<div class="line"><span class="comment">// Difference between dates: 00:00:00.0015000 (15000 ticks)</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>This method does not change the value of this <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>. Instead, it returns a new <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> whose value is the result of this operation. </dd>
 <dd>
@@ -3406,7 +3406,7 @@ The length si greater than 1. </td></tr>
 <div class="line">    console::write_line(date1.to_string(<span class="stringliteral">&quot;f&quot;</span>)); <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
 <div class="line">    console::write_line(date1.to_string(<span class="stringliteral">&quot;F&quot;</span>)); <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
 <div class="line">    console::write_line(date1.to_string(<span class="stringliteral">&quot;g&quot;</span>)); <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line">    console::write_line(date1.to_string(<span class="stringliteral">&quot;G&quot;</span>)); <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
+<div class="line">    console::write_line(date1.to_string(<span class="stringliteral">&quot;G&quot;</span>)); <span class="comment">// 2008-04-01 18:07:05</span></div>
 <div class="line">    console::write_line(date1.to_string(<span class="stringliteral">&quot;h&quot;</span>)); <span class="comment">// Tue</span></div>
 <div class="line">    console::write_line(date1.to_string(<span class="stringliteral">&quot;H&quot;</span>)); <span class="comment">// Tuesday</span></div>
 <div class="line">    console::write_line(date1.to_string(<span class="stringliteral">&quot;i&quot;</span>)); <span class="comment">// 01</span></div>
@@ -3461,7 +3461,7 @@ The length si greater than 1. </td></tr>
 <div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
 <div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
 <div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
+<div class="line"><span class="comment">// 2008-04-01 18:07:05</span></div>
 <div class="line"><span class="comment">// Tue</span></div>
 <div class="line"><span class="comment">// Tuesday</span></div>
 <div class="line"><span class="comment">// 01</span></div>
@@ -3669,7 +3669,7 @@ The length si greater than 1. </td></tr>
 <div class="line">    console::write_line(date1.to_string(<span class="stringliteral">&quot;f&quot;</span>)); <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
 <div class="line">    console::write_line(date1.to_string(<span class="stringliteral">&quot;F&quot;</span>)); <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
 <div class="line">    console::write_line(date1.to_string(<span class="stringliteral">&quot;g&quot;</span>)); <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line">    console::write_line(date1.to_string(<span class="stringliteral">&quot;G&quot;</span>)); <span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
+<div class="line">    console::write_line(date1.to_string(<span class="stringliteral">&quot;G&quot;</span>)); <span class="comment">// 2008-04-01 18:07:05</span></div>
 <div class="line">    console::write_line(date1.to_string(<span class="stringliteral">&quot;h&quot;</span>)); <span class="comment">// Tue</span></div>
 <div class="line">    console::write_line(date1.to_string(<span class="stringliteral">&quot;H&quot;</span>)); <span class="comment">// Tuesday</span></div>
 <div class="line">    console::write_line(date1.to_string(<span class="stringliteral">&quot;i&quot;</span>)); <span class="comment">// 01</span></div>
@@ -3724,7 +3724,7 @@ The length si greater than 1. </td></tr>
 <div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
 <div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
 <div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
-<div class="line"><span class="comment">// Tue Apr  1 18:07:05 2008</span></div>
+<div class="line"><span class="comment">// 2008-04-01 18:07:05</span></div>
 <div class="line"><span class="comment">// Tue</span></div>
 <div class="line"><span class="comment">// Tuesday</span></div>
 <div class="line"><span class="comment">// 01</span></div>
@@ -4093,8 +4093,8 @@ The value returned by the <a class="el" href="classxtd_1_1date__time.html#a60d4f
 <div class="line">      <span class="keywordflow">try</span> {</div>
 <div class="line">        std::locale::global(std::locale {locale_name + <span class="stringliteral">&quot;.utf-8&quot;</span>_s});</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;{}:&quot;</span>, locale_name);</div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;   Local date and time: {}, {}&quot;</span>, local_date.to_string(), local_date.kind());</div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;   UTC date and time: {}, {}\n&quot;</span>, utc_date.to_string(), utc_date.kind());</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;   Local date and time: {:f}, {}&quot;</span>, local_date, local_date.kind());</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;   UTC date and time: {:f}, {}\n&quot;</span>, utc_date, utc_date.kind());</div>
 <div class="line">      } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;Make sure {} locale is installed on your system :\n\n{}\n&quot;</span>, locale_name, e);</div>
 <div class="line">      }</div>
@@ -5877,7 +5877,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 4 2025 16:35:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Feb 5 2025 19:16:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

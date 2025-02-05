@@ -97,7 +97,7 @@ $(function() {
 <div class="line">    console::out</div>
 <div class="line">    &lt;&lt; <span class="stringliteral">&quot;┌───────────────────────────────────────┬────────────┬──────────────────────────────────────────┐&quot;</span> &lt;&lt; environment::new_line</div>
 <div class="line">    &lt;&lt; <span class="stringliteral">&quot;│  date_time                            │   format   │      representation                      │&quot;</span> &lt;&lt; environment::new_line</div>
-<div class="line">    &lt;&lt; <span class="stringliteral">&quot;// ├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">    &lt;&lt; <span class="stringliteral">&quot;├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  </div>
 <div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(37) &lt;&lt; <span class="stringliteral">&quot; │ {}         │ &quot;</span> &lt;&lt; format(<span class="stringliteral">&quot;{}&quot;</span>, value).<a id="a1" name="a1"></a><a class="code hl_function" href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">pad_right</a>(40) &lt;&lt; <span class="stringliteral">&quot; │&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(37) &lt;&lt; <span class="stringliteral">&quot; │ {:a}       │ &quot;</span> &lt;&lt; format(<span class="stringliteral">&quot;{:a}&quot;</span>, value).<a class="code hl_function" href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">pad_right</a>(40) &lt;&lt; <span class="stringliteral">&quot; │&quot;</span> &lt;&lt; environment::new_line;</div>
@@ -149,7 +149,7 @@ $(function() {
 <div class="line">  console::out &lt;&lt;  <span class="stringliteral">&quot;│ &quot;</span> &lt;&lt; text.pad_right(37) &lt;&lt; <span class="stringliteral">&quot; │ {:Z}       │ &quot;</span> &lt;&lt; format(<span class="stringliteral">&quot;{:Z}&quot;</span>, value).<a class="code hl_function" href="classxtd_1_1basic__string.html#abe37d71513cd7f2585290402bd45afb2">pad_right</a>(40) &lt;&lt; <span class="stringliteral">&quot; │&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">if</span> (c != cap::end)</div>
-<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;// ├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤&quot;</span> &lt;&lt; environment::new_line;</div>
+<div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;├───────────────────────────────────────┼────────────┼──────────────────────────────────────────┤&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">  <span class="keywordflow">else</span></div>
 <div class="line">    console::out &lt;&lt; <span class="stringliteral">&quot;└───────────────────────────────────────┴────────────┴──────────────────────────────────────────┘&quot;</span> &lt;&lt; environment::new_line;</div>
 <div class="line">}</div>
@@ -184,7 +184,7 @@ $(function() {
 <div class="line"><span class="comment">// │ date_time {}                          │ {:f}       │ Mon Jan  1 00:00:00 0001                 │</span></div>
 <div class="line"><span class="comment">// │ date_time {}                          │ {:F}       │ Mon Jan  1 00:00:00 0001                 │</span></div>
 <div class="line"><span class="comment">// │ date_time {}                          │ {:g}       │ Mon Jan  1 00:00:00 0001                 │</span></div>
-<div class="line"><span class="comment">// │ date_time {}                          │ {:G}       │ Mon Jan  1 00:00:00 0001                 │</span></div>
+<div class="line"><span class="comment">// │ date_time {}                          │ {:G}       │ 1-01-01 00:00:00                         │</span></div>
 <div class="line"><span class="comment">// │ date_time {}                          │ {:h}       │ Mon                                      │</span></div>
 <div class="line"><span class="comment">// │ date_time {}                          │ {:H}       │ Monday                                   │</span></div>
 <div class="line"><span class="comment">// │ date_time {}                          │ {:i}       │ 01                                       │</span></div>
@@ -233,7 +233,7 @@ $(function() {
 <div class="line"><span class="comment">// │ date_time {123456789123456789}        │ {:f}       │ Sat Mar 21 19:15:12 0392                 │</span></div>
 <div class="line"><span class="comment">// │ date_time {123456789123456789}        │ {:F}       │ Sat Mar 21 19:15:12 0392                 │</span></div>
 <div class="line"><span class="comment">// │ date_time {123456789123456789}        │ {:g}       │ Sat Mar 21 19:15:12 0392                 │</span></div>
-<div class="line"><span class="comment">// │ date_time {123456789123456789}        │ {:G}       │ Sat Mar 21 19:15:12 0392                 │</span></div>
+<div class="line"><span class="comment">// │ date_time {123456789123456789}        │ {:G}       │ 392-03-21 19:15:12                       │</span></div>
 <div class="line"><span class="comment">// │ date_time {123456789123456789}        │ {:h}       │ Sat                                      │</span></div>
 <div class="line"><span class="comment">// │ date_time {123456789123456789}        │ {:H}       │ Saturday                                 │</span></div>
 <div class="line"><span class="comment">// │ date_time {123456789123456789}        │ {:i}       │ 21                                       │</span></div>
@@ -282,7 +282,7 @@ $(function() {
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5}                │ {:f}       │ Tue Jan  5 00:00:00 1971                 │</span></div>
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5}                │ {:F}       │ Tue Jan  5 00:00:00 1971                 │</span></div>
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5}                │ {:g}       │ Tue Jan  5 00:00:00 1971                 │</span></div>
-<div class="line"><span class="comment">// │ date_time {1971, 1, 5}                │ {:G}       │ Tue Jan  5 00:00:00 1971                 │</span></div>
+<div class="line"><span class="comment">// │ date_time {1971, 1, 5}                │ {:G}       │ 1971-01-05 00:00:00                      │</span></div>
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5}                │ {:h}       │ Tue                                      │</span></div>
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5}                │ {:H}       │ Tuesday                                  │</span></div>
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5}                │ {:i}       │ 05                                       │</span></div>
@@ -331,7 +331,7 @@ $(function() {
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5, 21, 30, 3}     │ {:f}       │ Tue Jan  5 21:30:03 1971                 │</span></div>
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5, 21, 30, 3}     │ {:F}       │ Tue Jan  5 21:30:03 1971                 │</span></div>
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5, 21, 30, 3}     │ {:g}       │ Tue Jan  5 21:30:03 1971                 │</span></div>
-<div class="line"><span class="comment">// │ date_time {1971, 1, 5, 21, 30, 3}     │ {:G}       │ Tue Jan  5 21:30:03 1971                 │</span></div>
+<div class="line"><span class="comment">// │ date_time {1971, 1, 5, 21, 30, 3}     │ {:G}       │ 1971-01-05 21:30:03                      │</span></div>
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5, 21, 30, 3}     │ {:h}       │ Tue                                      │</span></div>
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5, 21, 30, 3}     │ {:H}       │ Tuesday                                  │</span></div>
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5, 21, 30, 3}     │ {:i}       │ 05                                       │</span></div>
@@ -380,7 +380,7 @@ $(function() {
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:f}       │ Tue Jan  5 21:30:03 1971                 │</span></div>
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:F}       │ Tue Jan  5 21:30:03 1971                 │</span></div>
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:g}       │ Tue Jan  5 21:30:03 1971                 │</span></div>
-<div class="line"><span class="comment">// │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:G}       │ Tue Jan  5 21:30:03 1971                 │</span></div>
+<div class="line"><span class="comment">// │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:G}       │ 1971-01-05 21:30:03                      │</span></div>
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:h}       │ Tue                                      │</span></div>
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:H}       │ Tuesday                                  │</span></div>
 <div class="line"><span class="comment">// │ date_time {1971, 1, 5, 21, 30, 3, 42} │ {:i}       │ 05                                       │</span></div>
@@ -429,7 +429,7 @@ $(function() {
 <div class="line"><span class="comment">// │ date_time::now()                      │ {:f}       │ Wed Dec 18 20:10:41 2024                 │</span></div>
 <div class="line"><span class="comment">// │ date_time::now()                      │ {:F}       │ Wed Dec 18 20:10:41 2024                 │</span></div>
 <div class="line"><span class="comment">// │ date_time::now()                      │ {:g}       │ Wed Dec 18 20:10:41 2024                 │</span></div>
-<div class="line"><span class="comment">// │ date_time::now()                      │ {:G}       │ Wed Dec 18 20:10:41 2024                 │</span></div>
+<div class="line"><span class="comment">// │ date_time::now()                      │ {:G}       │ 2024-12-18 20:10:41                      │</span></div>
 <div class="line"><span class="comment">// │ date_time::now()                      │ {:h}       │ Wed                                      │</span></div>
 <div class="line"><span class="comment">// │ date_time::now()                      │ {:H}       │ Wednesday                                │</span></div>
 <div class="line"><span class="comment">// │ date_time::now()                      │ {:i}       │ 18                                       │</span></div>
@@ -478,7 +478,7 @@ $(function() {
 <div class="line"><span class="comment">// │ date_time::utc_now()                  │ {:f}       │ Wed Dec 18 19:10:41 2024                 │</span></div>
 <div class="line"><span class="comment">// │ date_time::utc_now()                  │ {:F}       │ Wed Dec 18 19:10:41 2024                 │</span></div>
 <div class="line"><span class="comment">// │ date_time::utc_now()                  │ {:g}       │ Wed Dec 18 19:10:41 2024                 │</span></div>
-<div class="line"><span class="comment">// │ date_time::utc_now()                  │ {:G}       │ Wed Dec 18 19:10:41 2024                 │</span></div>
+<div class="line"><span class="comment">// │ date_time::utc_now()                  │ {:G}       │ 2024-12-18 19:10:41                      │</span></div>
 <div class="line"><span class="comment">// │ date_time::utc_now()                  │ {:h}       │ Wed                                      │</span></div>
 <div class="line"><span class="comment">// │ date_time::utc_now()                  │ {:H}       │ Wednesday                                │</span></div>
 <div class="line"><span class="comment">// │ date_time::utc_now()                  │ {:i}       │ 18                                       │</span></div>
@@ -527,7 +527,7 @@ $(function() {
 <div class="line"><span class="comment">// │ date_time::min_value                  │ {:f}       │ Mon Jan  1 00:00:00 0001                 │</span></div>
 <div class="line"><span class="comment">// │ date_time::min_value                  │ {:F}       │ Mon Jan  1 00:00:00 0001                 │</span></div>
 <div class="line"><span class="comment">// │ date_time::min_value                  │ {:g}       │ Mon Jan  1 00:00:00 0001                 │</span></div>
-<div class="line"><span class="comment">// │ date_time::min_value                  │ {:G}       │ Mon Jan  1 00:00:00 0001                 │</span></div>
+<div class="line"><span class="comment">// │ date_time::min_value                  │ {:G}       │ 1-01-01 00:00:00                         │</span></div>
 <div class="line"><span class="comment">// │ date_time::min_value                  │ {:h}       │ Mon                                      │</span></div>
 <div class="line"><span class="comment">// │ date_time::min_value                  │ {:H}       │ Monday                                   │</span></div>
 <div class="line"><span class="comment">// │ date_time::min_value                  │ {:i}       │ 01                                       │</span></div>
@@ -576,7 +576,7 @@ $(function() {
 <div class="line"><span class="comment">// │ date_time::max_value                  │ {:f}       │ Fri Dec 31 23:59:59 9999                 │</span></div>
 <div class="line"><span class="comment">// │ date_time::max_value                  │ {:F}       │ Fri Dec 31 23:59:59 9999                 │</span></div>
 <div class="line"><span class="comment">// │ date_time::max_value                  │ {:g}       │ Fri Dec 31 23:59:59 9999                 │</span></div>
-<div class="line"><span class="comment">// │ date_time::max_value                  │ {:G}       │ Fri Dec 31 23:59:59 9999                 │</span></div>
+<div class="line"><span class="comment">// │ date_time::max_value                  │ {:G}       │ 9999-12-31 23:59:59                      │</span></div>
 <div class="line"><span class="comment">// │ date_time::max_value                  │ {:h}       │ Fri                                      │</span></div>
 <div class="line"><span class="comment">// │ date_time::max_value                  │ {:H}       │ Friday                                   │</span></div>
 <div class="line"><span class="comment">// │ date_time::max_value                  │ {:i}       │ 31                                       │</span></div>
@@ -619,7 +619,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 4 2025 16:35:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Feb 5 2025 19:16:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

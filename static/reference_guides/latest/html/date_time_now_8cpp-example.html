@@ -101,8 +101,8 @@ $(function() {
 <div class="line">      <span class="keywordflow">try</span> {</div>
 <div class="line">        std::locale::global(std::locale {locale_name + <span class="stringliteral">&quot;.utf-8&quot;</span>_s});</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;{}:&quot;</span>, locale_name);</div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;   Local date and time: {}, {}&quot;</span>, local_date.to_string(), local_date.kind());</div>
-<div class="line">        console::write_line(<span class="stringliteral">&quot;   UTC date and time: {}, {}\n&quot;</span>, utc_date.to_string(), utc_date.kind());</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;   Local date and time: {:f}, {}&quot;</span>, local_date, local_date.kind());</div>
+<div class="line">        console::write_line(<span class="stringliteral">&quot;   UTC date and time: {:f}, {}\n&quot;</span>, utc_date, utc_date.kind());</div>
 <div class="line">      } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
 <div class="line">        console::write_line(<span class="stringliteral">&quot;Make sure {} locale is installed on your system :\n\n{}\n&quot;</span>, locale_name, e);</div>
 <div class="line">      }</div>
@@ -141,7 +141,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 4 2025 16:35:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Feb 5 2025 19:16:02 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

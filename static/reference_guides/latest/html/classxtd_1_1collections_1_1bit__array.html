@@ -112,7 +112,7 @@ Inheritance diagram for xtd::collections::bit_array:</div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Manages a compact array of bit values, which are represented as booleans, where <code>true</code> indicates that the bit is on (1) and <code>false</code> indicates the bit is off (0). </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_class" href="classxtd_1_1collections_1_1bit__array.html">bit_array</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;bit_array&gt;, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1icollection.html">xtd::collections::generic::icollection</a>&lt;bool&gt;, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iclonable.html">xtd::iclonable</a>;</div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1bit__array_html"><div class="ttname"><a href="classxtd_1_1collections_1_1bit__array.html">xtd::collections::bit_array</a></div><div class="ttdoc">Manages a compact array of bit values, which are represented as booleans, where true indicates that t...</div><div class="ttdef"><b>Definition</b> bit_array.hpp:39</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1bit__array_html"><div class="ttname"><a href="classxtd_1_1collections_1_1bit__array.html">xtd::collections::bit_array</a></div><div class="ttdoc">Manages a compact array of bit values, which are represented as booleans, where true indicates that t...</div><div class="ttdef"><b>Definition</b> bit_array.hpp:40</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1icollection_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1icollection.html">xtd::collections::generic::icollection</a></div><div class="ttdoc">Defines methods to manipulate generic collections.</div><div class="ttdef"><b>Definition</b> icollection.hpp:45</div></div>
 <div class="ttc" id="aclassxtd_1_1iclonable_html"><div class="ttname"><a href="classxtd_1_1iclonable.html">xtd::iclonable</a></div><div class="ttdoc">Supports cloning, which creates a new instance of a class with the same value as an existing instance...</div><div class="ttdef"><b>Definition</b> iclonable.hpp:21</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:22</div></div>
@@ -310,6 +310,10 @@ Inheritance diagram for xtd::collections::bit_array:</div>
 <tr class="memitem:a191e1fd1067680a901c65aab013fa1b5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1bit__array.html#a191e1fd1067680a901c65aab013fa1b5">bit_array</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> &gt; &amp;values)</td></tr>
 <tr class="memdesc:a191e1fd1067680a901c65aab013fa1b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> class that contains bit values copied from the specified array of 32-bit integers.  <br /></td></tr>
 <tr class="separator:a191e1fd1067680a901c65aab013fa1b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf7e7a9df024e4e8322d49cff9af0bc1"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> length&gt; </td></tr>
+<tr class="memitem:adf7e7a9df024e4e8322d49cff9af0bc1"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1bit__array.html#adf7e7a9df024e4e8322d49cff9af0bc1">bit_array</a> (const std::bitset&lt; <a class="el" href="classxtd_1_1collections_1_1bit__array.html#a85a990e8e789ce3b471b76fecf306ee9">length</a> &gt; &amp;bit_set)</td></tr>
+<tr class="memdesc:adf7e7a9df024e4e8322d49cff9af0bc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> class that contains bit values copied from the specified <a href="https://en.cppreference.com/w/cpp/utility/bitset">bitset</a>.  <br /></td></tr>
+<tr class="separator:adf7e7a9df024e4e8322d49cff9af0bc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:a1ac6e7dfa4782bbb2aa35eab3238278b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1bit__array.html#a784e417e8cf9a2efad245a8cd278b808">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1bit__array.html#a1ac6e7dfa4782bbb2aa35eab3238278b">begin</a> () const noexcept override</td></tr>
@@ -318,6 +322,10 @@ Inheritance diagram for xtd::collections::bit_array:</div>
 <tr class="memitem:aa4255b7b70a5476ef62267f361a98c62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1bit__array.html#a7cc4e497bc4a03644d21e9fa6c866651">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1bit__array.html#aa4255b7b70a5476ef62267f361a98c62">begin</a> () noexcept override</td></tr>
 <tr class="memdesc:aa4255b7b70a5476ef62267f361a98c62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first element of the enumarable.  <br /></td></tr>
 <tr class="separator:aa4255b7b70a5476ef62267f361a98c62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61c07cfa379d00d6467414816d7a1a76"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> length&gt; </td></tr>
+<tr class="memitem:a61c07cfa379d00d6467414816d7a1a76"><td class="memTemplItemLeft" align="right" valign="top">std::bitset&lt; <a class="el" href="classxtd_1_1collections_1_1bit__array.html#a85a990e8e789ce3b471b76fecf306ee9">length</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1bit__array.html#a61c07cfa379d00d6467414816d7a1a76">bits</a> () const noexcept</td></tr>
+<tr class="memdesc:a61c07cfa379d00d6467414816d7a1a76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a href="https://en.cppreference.com/w/cpp/utility/bitset">std::bitset</a> object containing the Booleans contained in the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
+<tr class="separator:a61c07cfa379d00d6467414816d7a1a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5e63aa65cc7c4e994bcda6c7c56a7aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1bit__array.html#a784e417e8cf9a2efad245a8cd278b808">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1bit__array.html#ae5e63aa65cc7c4e994bcda6c7c56a7aa">cbegin</a> () const noexcept override</td></tr>
 <tr class="memdesc:ae5e63aa65cc7c4e994bcda6c7c56a7aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first element of the enumarable.  <br /></td></tr>
 <tr class="separator:ae5e63aa65cc7c4e994bcda6c7c56a7aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -343,7 +351,7 @@ Inheritance diagram for xtd::collections::bit_array:</div>
 <tr class="memdesc:a8e66edc323ef11b549519ab5841655bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the number of elements contained in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>.  <br /></td></tr>
 <tr class="separator:a8e66edc323ef11b549519ab5841655bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ef43e31d706a7dac9b0342e236446c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1bit__array.html#a8ef43e31d706a7dac9b0342e236446c1">is_read_only</a> () const noexcept override</td></tr>
-<tr class="memdesc:a8ef43e31d706a7dac9b0342e236446c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only.  <br /></td></tr>
+<tr class="memdesc:a8ef43e31d706a7dac9b0342e236446c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> is read-only.  <br /></td></tr>
 <tr class="separator:a8ef43e31d706a7dac9b0342e236446c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe70fe3ef1359569b4f97cb9eab26efa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1bit__array.html#abe70fe3ef1359569b4f97cb9eab26efa">is_synchronized</a> () const noexcept override</td></tr>
 <tr class="memdesc:abe70fe3ef1359569b4f97cb9eab26efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value indicating whether access to the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is synchronized (thread safe).  <br /></td></tr>
@@ -383,6 +391,12 @@ Inheritance diagram for xtd::collections::bit_array:</div>
 <tr class="memitem:ac33bda42040b74e8b5cbceacd11e46e6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1bit__array.html#ac33bda42040b74e8b5cbceacd11e46e6">get_enumerator</a> () const override</td></tr>
 <tr class="memdesc:ac33bda42040b74e8b5cbceacd11e46e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerator that iterates through a collection.  <br /></td></tr>
 <tr class="separator:ac33bda42040b74e8b5cbceacd11e46e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adac08174159c123f5fae7e091274a85a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1bit__array.html#adac08174159c123f5fae7e091274a85a">has_all_set</a> () const noexcept</td></tr>
+<tr class="memdesc:adac08174159c123f5fae7e091274a85a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether all bits in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> are set to <code>true</code>.  <br /></td></tr>
+<tr class="separator:adac08174159c123f5fae7e091274a85a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af052424318282a630c1e8313149bb061"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1bit__array.html#af052424318282a630c1e8313149bb061">has_any_set</a> () const noexcept</td></tr>
+<tr class="memdesc:af052424318282a630c1e8313149bb061"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether any bit in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> is set to <code>true</code>.  <br /></td></tr>
+<tr class="separator:af052424318282a630c1e8313149bb061"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3fda105346b3cdb31554a17a8cf4ef7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1collections_1_1bit__array.html">bit_array</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1collections_1_1bit__array.html#af3fda105346b3cdb31554a17a8cf4ef7">left_shift</a> (<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> <a class="el" href="classxtd_1_1collections_1_1bit__array.html#a51dad6f4c8af7c827a16ad21194fcc3e">count</a>) noexcept</td></tr>
 <tr class="memdesc:af3fda105346b3cdb31554a17a8cf4ef7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shifts all the bit values of the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> to the left on count bits.  <br /></td></tr>
 <tr class="separator:af3fda105346b3cdb31554a17a8cf4ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -801,7 +815,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a65df69b129d45e65c7f9bfd7fa7fc31c" name="a65df69b129d45e65c7f9bfd7fa7fc31c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65df69b129d45e65c7f9bfd7fa7fc31c">&#9670;&#160;</a></span>bit_array() <span class="overload">[1/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a65df69b129d45e65c7f9bfd7fa7fc31c">&#9670;&#160;</a></span>bit_array() <span class="overload">[1/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -842,7 +856,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a9b853f786bebd3d7c4a226612bc9055f" name="a9b853f786bebd3d7c4a226612bc9055f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b853f786bebd3d7c4a226612bc9055f">&#9670;&#160;</a></span>bit_array() <span class="overload">[2/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b853f786bebd3d7c4a226612bc9055f">&#9670;&#160;</a></span>bit_array() <span class="overload">[2/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -886,7 +900,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a49dffa822444a44d06c83dce6fddd7de" name="a49dffa822444a44d06c83dce6fddd7de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49dffa822444a44d06c83dce6fddd7de">&#9670;&#160;</a></span>bit_array() <span class="overload">[3/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a49dffa822444a44d06c83dce6fddd7de">&#9670;&#160;</a></span>bit_array() <span class="overload">[3/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -913,7 +927,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="af648633fd158e79f359fd791f859f97f" name="af648633fd158e79f359fd791f859f97f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af648633fd158e79f359fd791f859f97f">&#9670;&#160;</a></span>bit_array() <span class="overload">[4/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af648633fd158e79f359fd791f859f97f">&#9670;&#160;</a></span>bit_array() <span class="overload">[4/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -940,7 +954,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a34ffd1ecccc561b2ef60ad889da14257" name="a34ffd1ecccc561b2ef60ad889da14257"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34ffd1ecccc561b2ef60ad889da14257">&#9670;&#160;</a></span>bit_array() <span class="overload">[5/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a34ffd1ecccc561b2ef60ad889da14257">&#9670;&#160;</a></span>bit_array() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -969,7 +983,7 @@ This constructor is an O(n) operation, where n is the number of elements in valu
 </div>
 </div>
 <a id="a191e1fd1067680a901c65aab013fa1b5" name="a191e1fd1067680a901c65aab013fa1b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a191e1fd1067680a901c65aab013fa1b5">&#9670;&#160;</a></span>bit_array() <span class="overload">[6/6]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a191e1fd1067680a901c65aab013fa1b5">&#9670;&#160;</a></span>bit_array() <span class="overload">[6/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -994,6 +1008,43 @@ This constructor is an O(n) operation, where n is the number of elements in valu
 <dl class="section remark"><dt>Remarks</dt><dd>The number in the first values array element represents bits 0 through 31, the second number in the array represents bits 32 through 63, and so on. The Least Significant Bit of each integer represents the lowest index value: " values [0] &amp; 1" represents bit 0, " values [0] &amp; 2" represents bit 1, " values [0] &amp; 4" represents bit 2, and so on. </dd>
 <dd>
 This constructor is an O(n) operation, where n is the number of elements in values. </dd></dl>
+
+</div>
+</div>
+<a id="adf7e7a9df024e4e8322d49cff9af0bc1" name="adf7e7a9df024e4e8322d49cff9af0bc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf7e7a9df024e4e8322d49cff9af0bc1">&#9670;&#160;</a></span>bit_array() <span class="overload">[7/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> length&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::collections::bit_array::bit_array </td>
+          <td>(</td>
+          <td class="paramtype">const std::bitset&lt; <a class="el" href="classxtd_1_1collections_1_1bit__array.html#a85a990e8e789ce3b471b76fecf306ee9">length</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>bit_set</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> class that contains bit values copied from the specified <a href="https://en.cppreference.com/w/cpp/utility/bitset">bitset</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td>A <a href="https://en.cppreference.com/w/cpp/utility/bitset">std::bitset</a> object that contains bit values. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>This constructor is an O(n) operation, where n is the number of elements in values. </dd></dl>
 
 </div>
 </div>
@@ -1055,6 +1106,36 @@ This constructor is an O(n) operation, where n is the number of elements in valu
 <dl class="section return"><dt>Returns</dt><dd>Iterator to the first element. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html#ad1e3a53b1e5c0e7769075bd28132d959">xtd::collections::generic::extensions::enumerable_iterators&lt; type_t, xtd::collections::generic::ienumerable&lt; type_t &gt; &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a61c07cfa379d00d6467414816d7a1a76" name="a61c07cfa379d00d6467414816d7a1a76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61c07cfa379d00d6467414816d7a1a76">&#9670;&#160;</a></span>bits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> length&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::bitset&lt; <a class="el" href="classxtd_1_1collections_1_1bit__array.html#a85a990e8e789ce3b471b76fecf306ee9">length</a> &gt; xtd::collections::bit_array::bits </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a <a href="https://en.cppreference.com/w/cpp/utility/bitset">std::bitset</a> object containing the Booleans contained in the current <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a href="https://en.cppreference.com/w/cpp/utility/bitset">std::bitset</a> object. </dd></dl>
 
 </div>
 </div>
@@ -1316,8 +1397,8 @@ This constructor is an O(n) operation, where n is the number of elements in valu
 </table>
 </div><div class="memdoc">
 
-<p>Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only. </p>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; is read-only; otherwise, <code>false</code>. </dd></dl>
+<p>Gets a value indicating whether the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> is read-only. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> is read-only; otherwise, <code>false</code>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; interface only supports addition and removal operations. For example, the <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a817ed0a0b5cdb551aac7512c52ed4c96" title="Gets a value indicating whether the xtd::collections::generic::icollection &lt;type_t&gt; is read-only.">xtd::collections::generic::icollection::is_read_only</a> property of an array that is cast or converted to an <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html" title="Defines methods to manipulate generic collections.">xtd::collections::generic::icollection</a> &lt;type_t&gt; object returns <code>true</code>, even though individual array elements can be modified. </dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1collections_1_1generic_1_1icollection.html#a817ed0a0b5cdb551aac7512c52ed4c96">xtd::collections::generic::icollection&lt; bool &gt;</a>.</p>
@@ -1776,6 +1857,62 @@ This method is an O(n) operation, where n is count. </dd></dl>
 
 </div>
 </div>
+<a id="adac08174159c123f5fae7e091274a85a" name="adac08174159c123f5fae7e091274a85a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adac08174159c123f5fae7e091274a85a">&#9670;&#160;</a></span>has_all_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool xtd::collections::bit_array::has_all_set </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether all bits in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> are set to <code>true</code>. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if every bit in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> is set to true, or if <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> is empty; otherwise, <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="af052424318282a630c1e8313149bb061" name="af052424318282a630c1e8313149bb061"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af052424318282a630c1e8313149bb061">&#9670;&#160;</a></span>has_any_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool xtd::collections::bit_array::has_any_set </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether any bit in the <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> is set to <code>true</code>. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if <a class="el" href="classxtd_1_1collections_1_1bit__array.html" title="Manages a compact array of bit values, which are represented as booleans, where true indicates that t...">xtd::collections::bit_array</a> is not empty and at least one of its bit is set to <code>true</code>; otherwise, <code>false</code>. </dd></dl>
+
+</div>
+</div>
 <a id="af3fda105346b3cdb31554a17a8cf4ef7" name="af3fda105346b3cdb31554a17a8cf4ef7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af3fda105346b3cdb31554a17a8cf4ef7">&#9670;&#160;</a></span>left_shift()</h2>
 
@@ -2001,36 +2138,6 @@ This method is an O(n) operation, where n is count. </dd></dl>
 
 <p>Returns a <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object. </p>
 <dl class="section return"><dt>Returns</dt><dd>A string that represents the current object. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates what to_string returns. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">namespace </span>examples {</div>
-<div class="line">  <span class="keyword">namespace </span>object_test {</div>
-<div class="line">    <span class="keyword">class </span>object1 : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">object</a> {</div>
-<div class="line">    };</div>
-<div class="line">  }</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr&lt;object&gt;</a> obj1 = new_ptr&lt;examples::object_test::object1&gt;();</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj1-&gt;to_string());</div>
-<div class="line"> </div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr&lt;object&gt;</a> obj2 = new_ptr&lt;date_time&gt;(1971, 1, 5, 23, 5, 0);</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj2-&gt;to_string());</div>
-<div class="line"> </div>
-<div class="line">  <a class="code hl_typedef" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr&lt;object&gt;</a> obj3 = new_ptr&lt;boolean_object&gt;();</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(obj3-&gt;to_string());</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// examples::object_test::object1</span></div>
-<div class="line"><span class="comment">// Tue Jan  5 23:05:00 1971</span></div>
-<div class="line"><span class="comment">// false</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="agroup__types_html_ga14f390dd1d27bfab4cc2f26c1502c8ec"><div class="ttname"><a href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">xtd::ptr</a></div><div class="ttdeci">xtd::sptr&lt; type_t &gt; ptr</div><div class="ttdoc">The xtd::ptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> ptr.hpp:27</div></div>
-</div><!-- fragment --> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe">xtd::object</a>.</p>
 
@@ -2289,7 +2396,7 @@ This method is an O(n) operation, where n is count. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 4 2025 16:35:59 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Feb 5 2025 19:16:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
