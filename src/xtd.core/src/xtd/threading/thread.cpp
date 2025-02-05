@@ -217,6 +217,10 @@ void thread::detach() {
   is_background(true);
 }
 
+size thread::get_hash_code() const noexcept {
+  return hash_code::combine(data_->handle);
+}
+
 void thread::interrupt() {
   data_->interrupted = true;
 }

@@ -232,7 +232,11 @@ namespace xtd {
       /// @brief Sets the thread background.
       /// @remarks This method is identical to the call to xtd::threading::thread::is_background(true).
       void detach();
-      
+
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+
       /// @brief Interrupts a thread that is in the xtd::threading::thread_state::wait_sleep_join thread state.
       /// @remarks If this thread is not currently blocked in a thread_state::wait, thread_state::sleep, or thread_state::join state, it will be interrupted when it next begins to block.
       /// @remarks xtd::threading::thread_interrupted_exception is thrown in the interrupted thread, but not until the thread blocks. If the thread never blocks, the exception is never thrown, and thus the thread might complete without ever being interrupted.
