@@ -41,6 +41,10 @@ const xtd::string& distribution::version_string() const noexcept {
   return version_string_;
 }
 
+size distribution::get_hash_code() const noexcept {
+  return hash_code::combine(name_, version_, code_name_, description_, id_, version_string_, home_, bug_repport_);
+}
+
 xtd::string distribution::to_string() const noexcept {
   return description();
 }
