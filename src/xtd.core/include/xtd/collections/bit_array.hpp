@@ -9,6 +9,7 @@
 #include "../boolean.hpp"
 #include "../byte.hpp"
 #include "../int32.hpp"
+#include "../math.hpp"
 #include "../object.hpp"
 #include "../size.hpp"
 #include "../types.hpp"
@@ -114,6 +115,15 @@ namespace xtd {
       /// @remarks The number in the first values array element represents bits 0 through 31, the second number in the array represents bits 32 through 63, and so on. The Least Significant Bit of each integer represents the lowest index value: " values [0] & 1" represents bit 0, " values [0] & 2" represents bit 1, " values [0] & 4" represents bit 2, and so on.
       /// @remarks This constructor is an O(n) operation, where n is the number of elements in values.
       bit_array(const xtd::array<int32>& values);
+
+      /// @brief Initializes a new instance of the xtd::collections::bit_array class that contains bit values copied from the specified [bitset](https://en.cppreference.com/w/cpp/utility/bitset).
+      /// @param values A [std::bitset](https://en.cppreference.com/w/cpp/utility/bitset) object that contains bit values.
+      /// @remarks This constructor is an O(n) operation, where n is the number of elements in values.
+      template<xtd::size length>
+      bit_array(const std::bitset<length>& bit_set) : bit_array(length) {
+        for (auto index = xtd::size {0}; index < length; ++index)
+          set(index, bit_set.test(index));
+      }
       /// @}
 
       /// @cond
@@ -121,14 +131,6 @@ namespace xtd {
       bit_array& operator=(bit_array&&) = default;
       bit_array(const bit_array& bits) = default;
       bit_array& operator=(const bit_array&) = default;
-      template<xtd::size length>
-      bit_array(const std::bitset<length>& bit_set) {
-        length_ = length;
-        while (bit_array_.count() < get_list_length(length_))
-          bit_array_.add(0);
-        for (auto index = xtd::size {0}; index < length; index++)
-          set(index, bit_set.test(index));
-      }
       /// @endcond
 
       /// @name Public Properties
@@ -141,6 +143,15 @@ namespace xtd {
       /// @brief Returns an iterator to the first element of the enumarable.
       /// @return Iterator to the first element.
       iterator begin() noexcept override {return xtd::collections::generic::ienumerable<value_type>::begin();}
+      
+      template<xtd::size length>
+      std::bitset<length> bits() const noexcept {
+        auto result = std::bitset<length> {};
+        auto bits_count = xtd::math::min(length, count());
+        for (auto index = xtd::size {0}; index < bits_count; ++index)
+          result[index] = at(index);
+        return result;
+      }
       
       /// @brief Returns an iterator to the first element of the enumarable.
       /// @return Iterator to the first element.
@@ -175,10 +186,48 @@ namespace xtd {
       /// @remarks xtd::collections::bit_array::length and xtd::collections::bit_array::count return the same value. xtd::collections::bit_array::length can be set to a specific value.
       void length(xtd::size value);
 
+      /// @brief Gets a value indicating whether the xtd::collections::bit_array is read-only.
+      /// @return `true` if the xtd::collections::bit_array is read-only; otherwise, `false`.
+      /// @remarks A collection that is read-only does not allow the addition or removal of elements after the collection is created. Note that read-only in this context does not indicate whether individual elements of the collection can be modified, since the xtd::collections::generic::icollection <type_t> interface only supports addition and removal operations. For example, the xtd::collections::generic::icollection::is_read_only property of an array that is cast or converted to an xtd::collections::generic::icollection <type_t> object returns `true`, even though individual array elements can be modified.
       bool is_read_only() const noexcept override;
 
+      /// @brief Gets a value indicating whether access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe).
+      /// @return `true` if access to the xtd::collections::generic::icollection <type_t> is synchronized (thread safe); otherwise, `false`.
+      /// @remarks xtd::collections::generic::icollection::sync_root returns an object, which can be used to synchronize access to the xtd::collections::generic::icollection <type_t>.
+      /// @remarks Most collection classes in the xtd::collections namespace also implement a `synchronized` method, which provides a synchronized wrapper around the underlying collection.
+      /// @remarks Enumerating through a collection is intrinsically not a thread-safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads.
+      /// @remarks The following code example shows how to lock the collection using the xtd::collections::generic::icollection::sync_root property during the entire enumeration.
+      /// @code
+      /// icollection& my_collection = some_collection;
+      /// lock_(my_collection.sync_root()) {
+      ///   for (auto item : my_collection) {
+      ///     // Insert your code here.
+      ///   }
+      /// }
+      /// @endcode
       bool is_synchronized() const noexcept override;
 
+      /// @brief Gets an object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
+      /// @return An object that can be used to synchronize access to the the xtd::collections::generic::icollection <type_t>.
+      /// @remarks For collections whose underlying store is not publicly available, the expected implementation is to return the current instance. Note that the pointer to the current instance might not be sufficient for collections that wrap other collections; those should return the underlying collection's `sync_root` property.
+      /// @remarks Most collection classes in the xts::.collections namespace also implement a `synchronized` method, which provides a synchronized wrapper around the underlying collection. However, derived classes can provide their own synchronized version of the collection using the xtd::collections::generic::icollection::sync_root property. The synchronizing code must perform operations on the xtd::collections::generic::icollection::sync_root property of the collection, not directly on the collection. This ensures proper operation of collections that are derived from other objects. Specifically, it maintains proper synchronization with other threads that might be simultaneously modifying the collection instance.
+      /// @remarks In the absence of a `synchronized` method on a collection, the expected usage for the xtd::collections::generic::icollection::sync_root looks as follows:
+      /// @code
+      /// icollection& my_collection = some_collection;
+      /// lock_(my_collection.sync_root()) {
+      ///   // Some operation on the collection, which is now thread safe.
+      /// }
+      /// @encode
+      /// @remarks Enumerating through a collection is intrinsically not a thread-safe procedure. Even when a collection is synchronized, other threads can still modify the collection, which causes the enumerator to throw an exception. To guarantee thread safety during enumeration, you can either lock the collection during the entire enumeration or catch the exceptions resulting from changes made by other threads.
+      /// @remarks The following code example shows how to lock the collection using the xtd::collections::generic::icollection::sync_root property during the entire enumeration.
+      /// @code
+      /// icollection& my_collection = some_collection;
+      /// lock_(my_collection.sync_root()) {
+      ///   for (auto item : my_collection) {
+      ///     // Insert your code here.
+      ///   }
+      /// }
+      /// @endcode
       const object& sync_root() const noexcept override;
       /// @}
 
@@ -244,7 +293,15 @@ namespace xtd {
       /// @brief Returns an enumerator that iterates through a collection.
       /// @return An xtd::collection::generic::ienumerator object that can be used to iterate through the collection.
       xtd::collections::generic::enumerator<bool> get_enumerator() const override;
-
+      
+      /// @brief Determines whether all bits in the xtd::collections::bit_array are set to `true`.
+      /// @return `true` if every bit in the xtd::collections::bit_array is set to true, or if xtd::collections::bit_array is empty; otherwise, `false`.
+      bool has_all_set() const noexcept;
+      
+      /// @brief Determines whether any bit in the xtd::collections::bit_array is set to `true`.
+      /// @return `true` if xtd::collections::bit_array is not empty and at least one of its bit is set to `true`; otherwise, `false`.
+      bool has_any_set() const noexcept;
+      
       /// @brief Shifts all the bit values of the current xtd::collections::bit_array to the left on count bits.
       /// @param count The number of shifts to make for each bit.
       /// @return The current xtd::collections::bit_array.
@@ -282,6 +339,8 @@ namespace xtd {
       /// @remarks This method is an O(n) operation, where n is count.
       void set_all(bool value);
       
+      /// @brief Returns a xtd::string that represents the current object.
+      /// @return A string that represents the current object.
       xtd::string to_string() const noexcept override;
 
       /// @brief Performs the bitwise exclusive OR operation on the elements in the current xtd::collections::bit_array against the corresponding elements in the specified xtd::collections::bit_array.
@@ -300,13 +359,13 @@ namespace xtd {
       /// @param index The zero-based index of the element to get.
       /// @return The element at the specified index.
       /// @exception xtd::argument_out_of_range_exception index is less than 0 or index is equal to or greater than count.
-      const bool& operator[](xtd::size index) const;
+      const bool& operator [](xtd::size index) const;
 
       /// @brief Gets or Sets the element at the specified index.
       /// @param index The zero-based index of the element to get.
       /// @return The element at the specified index.
       /// @exception xtd::argument_out_of_range_exception index is less than 0 or index is equal to or greater than count.
-      bool& operator[](xtd::size index);
+      bool& operator [](xtd::size index);
       
       /// @brief The right shift operator shifts all the bit values of the current xtd::collections::bit_array to the right on count bits.
       /// @param count The number of shifts to make for each bit.
@@ -339,17 +398,19 @@ namespace xtd {
       bool contains(const bool&) const noexcept override;
       bool remove(const bool&) override;
 
-
-      inline xtd::size get_list_length(xtd::size length_) const noexcept;
-      inline xtd::size get_list_position(xtd::size index) const noexcept;
-      inline xtd::size get_bit_position(xtd::size index) const noexcept;
+      void flush() const noexcept;
+      size get_int32_array_length_from_bit_length(size n) const noexcept;
+      xtd::size get_list_length(xtd::size length_) const noexcept;
+      xtd::size get_list_position(xtd::size index) const noexcept;
+      xtd::size get_bit_position(xtd::size index) const noexcept;
       bool get_bit_value(xtd::size index) const noexcept;
       void set_bit_value(xtd::size index, bool value) noexcept;
 
-      static constexpr xtd::size bits_per_byte   = 8;
-      static constexpr xtd::size bits_per_int32  = 32;
+      static constexpr xtd::size bits_per_byte = 8;
+      static constexpr xtd::size bits_per_int32 = 32;
       static constexpr xtd::size bytes_per_int32 = 4;
-      boolean_ref value_ref_;
+      static constexpr xtd::size bit_shift_per_int32 = 5;
+      mutable boolean_ref value_ref_;
       xtd::collections::generic::list<int32> bit_array_;
       xtd::size length_ = 0;
     };
