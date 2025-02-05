@@ -76,6 +76,10 @@ int32 guid::compare_to(const guid& value) const noexcept {
   return 0;
 }
 
+bool guid::equals(const object& obj) const noexcept {
+  return is<guid>(obj) && equals(static_cast<const guid&>(obj));
+}
+
 bool guid::equals(const guid& g) const noexcept {
   for (auto index = 0_z; index < data_.size(); ++index)
     if (data_[index] != g.data_[index]) return false;
@@ -84,6 +88,13 @@ bool guid::equals(const guid& g) const noexcept {
 
 guid guid::new_guid() noexcept {
   return guid(native::guid::new_guid());
+}
+
+size guid::get_hash_code() const noexcept {
+  auto result = hash_code {};
+  for (auto d : data_)
+    result.add(d);
+  return result.to_hash_code();
 }
 
 const std::vector<xtd::byte>& guid::to_byte_array() const noexcept {

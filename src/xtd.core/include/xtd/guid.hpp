@@ -135,6 +135,7 @@ namespace xtd {
     /// @param obj An object to compare with this instance.
     /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
     /// The return value has these meanings:
+    ///
     /// | Value             | Condition                          |
     /// | ----------------- | ---------------------------------- |
     /// | Less than zero    | This instance is less than obj.    |
@@ -142,8 +143,18 @@ namespace xtd {
     /// | Greater than zero | This instance is greater than obj. |
     int32 compare_to(const guid& value) const noexcept override;
     
-    using object::equals;
+    /// @brief Determines whether the specified object is equal to the current object.
+    /// @param obj The object to compare with the current object.
+    /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+    bool equals(const object& obj) const noexcept override;
+    /// @brief Determines whether the specified object is equal to the current object.
+    /// @param g The object to compare with the current object.
+    /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
     bool equals(const guid& g) const noexcept override;
+    
+    /// @brief Serves as a hash function for a particular type.
+    /// @return A hash code for the current object.
+    xtd::size get_hash_code() const noexcept override;
     
     /// @brief Returns a 16-element byte array that contains the value of this instance.
     /// @return A 16-element byte array.
