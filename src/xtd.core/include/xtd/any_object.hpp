@@ -40,6 +40,8 @@ namespace xtd {
     /// @param value The value to initialize the contained value with.
     template<class type_t> // Can't be explicit by design.
     any_object(type_t& value) noexcept : value_(boxing_ptr(value)) {}
+    /// @brief Initializes a new instance of the xtd::any_object class with specified value.
+    /// @param value The value to initialize the contained value with.
     template<class type_t> // Can't be explicit by design.
     any_object(const type_t& value) noexcept : value_(boxing_ptr(value)) {}
     /// @}
@@ -70,18 +72,40 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
+    /// @brief Compares the current instance with another object of the same type.
+    /// @param obj An object to compare with this instance.
+    /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
+    /// The return value has these meanings:
+    ///
+    /// | Value             | Condition                          |
+    /// | ----------------- | ---------------------------------- |
+    /// | Less than zero    | This instance is less than obj.    |
+    /// | Zero              | This instance is equal to obj.     |
+    /// | Greater than zero | This instance is greater than obj. |
     int32 compare_to(const any_object& other) const noexcept override {
       if (!has_value() && other.has_value()) return -1;
       if (has_value() && !other.has_value()) return 1;
       return xtd::collections::generic::helpers::comparer<ptr<object>> {}(value_, other.value_);
     }
+    /// @brief Determines whether the specified object is equal to the current object.
+    /// @param obj The object to compare with the current object.
+    /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
     bool equals(const object& other) const noexcept override {return dynamic_cast<const any_object*>(&other) && equals(static_cast<const any_object&>(other));}
+    /// @brief Indicates whether the current object is equal to another object of the same type.
+    /// @param obj An object to compare with this object.
+    /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
     bool equals(const any_object& other) const noexcept override {
       if (!has_value() && !other.has_value()) return true;
       if (has_value() != other.has_value()) return false;
       return value_->equals(*other.value_);
     }
+
+    /// @brief Serves as a hash function for a particular type.
+    /// @return A hash code for the current object.
     xtd::size get_hash_code() const noexcept override {return has_value() ? value_->get_hash_code() : 0;}
+
+    /// @brief Returns a xtd::string that represents the current object.
+    /// @return A string that represents the current object.
     string to_string() const noexcept override {return has_value() ? value_->to_string() : "(null)";}
     
     /// @brief Reset the current object. Set the current object to null.
