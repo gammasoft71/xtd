@@ -339,8 +339,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system types
   template<>
-  class enum_object<std::nullptr_t> static_ {
-  public:
+  struct enum_object<std::nullptr_t> static_ {
     /// @name Public Static Methods
     
     /// @{
@@ -693,4 +692,3 @@ value_t __parse_enum(const std::string& str) {
   return xtd::enum_object<>::parse<value_t>(str);
 }
 /// @endcond
-
