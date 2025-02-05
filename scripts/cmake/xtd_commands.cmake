@@ -280,7 +280,7 @@ endmacro()
 
 ## @brief Specifies the entry point to be called when the application is load.
 ## @param ARGV0 the main entry point.
-## @param ARGV1 the object definition file. (optional if you use TUnitMain_ or TUnitFrameworkMain_ entry point)
+## @param ARGV1 the object definition file. (optional if you use tunit_main_ entry point for xtd unit test applications)
 ## @remarks Do not use this method of startup_(...) is present in your files or if you use standard c++ main() method.
 ## @remarks Call only once by project.
 ## @remarks This method must be call before target_type().
