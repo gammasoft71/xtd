@@ -636,10 +636,6 @@ namespace xtd {
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
     int32 compare_to(const date_time& value) const noexcept override;
-
-    /// @brief Serves as a hash function for a particular type.
-    /// @return A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override;
     
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
@@ -649,7 +645,11 @@ namespace xtd {
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
     bool equals(const date_time& obj) const noexcept override;
-    
+
+    /// @brief Serves as a hash function for a particular type.
+    /// @return A hash code for the current object.
+    xtd::size get_hash_code() const noexcept override;
+
     /// @brief Converts the value of this instance to all the string representations supported by the standard date and time format specifiers.
     /// @return A string array where each element is the representation of the value of this instance formatted with one of the standard date and time format specifiers.
     std::vector<string> get_date_time_formats() const noexcept;
