@@ -172,7 +172,7 @@ var searchData=
   ['enum_5fcollection_2ehpp_169',['enum_collection.hpp',['../enum__collection_8hpp.html',1,'']]],
   ['enum_5fobject_170',['enum_object',['../structxtd_1_1enum__object.html#ad83a0a2f3a6287e2b47e7c2271bf8088',1,'xtd::enum_object::enum_object() noexcept=default'],['../structxtd_1_1enum__object.html#a456f9e95fa4ebdd47925e8df3a37b51d',1,'xtd::enum_object::enum_object(enum_type value)'],['../structxtd_1_1enum__object.html',1,'xtd::enum_object&lt; enum_t &gt;']]],
   ['enum_5fobject_2ehpp_171',['enum_object.hpp',['../enum__object_8hpp.html',1,'']]],
-  ['enum_5fobject_3c_20std_3a_3anullptr_5ft_20_3e_172',['enum_object&lt; std::nullptr_t &gt;',['../classxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html',1,'xtd']]],
+  ['enum_5fobject_3c_20std_3a_3anullptr_5ft_20_3e_172',['enum_object&lt; std::nullptr_t &gt;',['../structxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html',1,'xtd']]],
   ['enum_5fregister_173',['enum_register',['../structxtd_1_1enum__register.html',1,'xtd']]],
   ['enum_5fregister_2ehpp_174',['enum_register.hpp',['../enum__register_8hpp.html',1,'']]],
   ['enum_5fset_5fattribute_175',['enum_set_attribute',['../structxtd_1_1enum__set__attribute.html',1,'xtd']]],

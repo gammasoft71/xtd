@@ -97,8 +97,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1enum__object.html">xtd::enum_object&lt; enum_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the base class for enumerations.  <a href="structxtd_1_1enum__object.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html">xtd::enum_object&lt; std::nullptr_t &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the base class for enumerations.  <a href="classxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html">xtd::enum_object&lt; std::nullptr_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the base class for enumerations.  <a href="structxtd_1_1enum__object_3_01std_1_1nullptr__t_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1type__object.html">xtd::type_object</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.  <a href="classxtd_1_1type__object.html#details">More...</a><br /></td></tr>
@@ -106,6 +106,10 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr class="memitem:ga29eed4a2408c667dded4ab8d7a9f7c09"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
+<tr class="memitem:ga29eed4a2408c667dded4ab8d7a9f7c09"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#ga29eed4a2408c667dded4ab8d7a9f7c09">xtd::native_array</a> = type_t[]</td></tr>
+<tr class="memdesc:ga29eed4a2408c667dded4ab8d7a9f7c09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a native array alias.  <br /></td></tr>
+<tr class="separator:ga29eed4a2408c667dded4ab8d7a9f7c09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7c21e81155886d77db3bcf8d0785afe8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#ga7c21e81155886d77db3bcf8d0785afe8">xtd::null_opt</a> = std::nullopt_t</td></tr>
 <tr class="memdesc:ga7c21e81155886d77db3bcf8d0785afe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the null_opt alias on <a href="https://en.cppreference.com/w/cpp/utility/optional/nullopt_t">std::nullopt_t</a>.  <br /></td></tr>
 <tr class="separator:ga7c21e81155886d77db3bcf8d0785afe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -896,6 +900,30 @@ For more information about types, see <a href="https://gammasoft71.github.io/xtd
 <div class="ttc" id="agroup__types_html_ga80e43cf0f75b3bd8374de9e634c036fe"><div class="ttname"><a href="group__types.html#ga80e43cf0f75b3bd8374de9e634c036fe">xtd::intptr_object</a></div><div class="ttdeci">box_integer&lt; intptr &gt; intptr_object</div><div class="ttdoc">Represent a boxed intptr.</div><div class="ttdef"><b>Definition</b> intptr_object.hpp:29</div></div>
 <div class="ttc" id="agroup__types_html_gaa7283e1dd31c385d954467f7ea324451"><div class="ttname"><a href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">xtd::intptr</a></div><div class="ttdeci">intmax_t intptr</div><div class="ttdoc">Represent a pointer or a handle.</div><div class="ttdef"><b>Definition</b> intptr.hpp:23</div></div>
 </div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ga29eed4a2408c667dded4ab8d7a9f7c09" name="ga29eed4a2408c667dded4ab8d7a9f7c09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga29eed4a2408c667dded4ab8d7a9f7c09">&#9670;&#160;</a></span>native_array</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__types.html#ga29eed4a2408c667dded4ab8d7a9f7c09">xtd::native_array</a> = typedef type_t[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="native__array_8hpp.html">xtd.core/include/xtd/native_array.hpp</a>&gt;</code></p>
+
+<p>Represents a native array alias. </p>
+<dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/native_array&gt;</span></div>
+</div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
+<dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
 
 </div>
 </div>
@@ -1756,7 +1784,7 @@ template&lt;class type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 4 2025 16:35:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Feb 5 2025 19:16:09 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
