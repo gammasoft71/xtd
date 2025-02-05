@@ -344,6 +344,7 @@ namespace xtd::collections::generic::tests {
       lock_ (synchronized_items.sync_root()) {
         collection_assert::are_equal({1, 2, 3, 4, 5, 6}, synchronized_items);
       }
+      threading::thread_pool::join_all();
     }
 
     void test_method_(at) {
