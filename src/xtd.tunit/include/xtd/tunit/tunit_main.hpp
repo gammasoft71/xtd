@@ -34,7 +34,7 @@ struct tunit_export_ __tunit_main final static_ {
 ///   };
 /// }
 ///
-/// startup_(tunit_main_::main);
+/// startup_(tunit_main_);
 /// ```
 #define tunit_main_ \
   __tunit_main::main
@@ -60,7 +60,7 @@ struct tunit_export_ __tunit_main final static_ {
 ///   };
 /// }
 ///
-/// startup_(tunit_main_with_gtest_compatibility_::main);
+/// startup_(tunit_main_with_gtest_compatibility_);
 /// ```
 #define tunit_main_with_gtest_compatibility_ \
   __tunit_main::main_with_gtest_compatibility
