@@ -625,10 +625,30 @@ namespace xtd {
     /// The following example illustrates using the xtd::date_time::add_years method with a xtd::date_time value that represents a leap year day. It displays the date for the fifteen years prior to and the fifteen years that follow February 29, 2000.
     date_time add_years(int32 value) const;
     
+    /// @brief Compares the current instance with another object of the same type.
+    /// @param value An object to compare with this instance.
+    /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
+    /// The return value has these meanings:
+    ///
+    /// | Value             | Condition                          |
+    /// | ----------------- | ---------------------------------- |
+    /// | Less than zero    | This instance is less than obj.    |
+    /// | Zero              | This instance is equal to obj.     |
+    /// | Greater than zero | This instance is greater than obj. |
     int32 compare_to(const date_time& value) const noexcept override;
+
+    /// @brief Serves as a hash function for a particular type.
+    /// @return A hash code for the current object.
+    xtd::size get_hash_code() const noexcept override;
     
-    using object::equals;
-    bool equals(const date_time&) const noexcept override;
+    /// @brief Determines whether the specified object is equal to the current object.
+    /// @param obj The object to compare with the current object.
+    /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+    bool equals(const object& obj) const noexcept override;
+    /// @brief Indicates whether the current object is equal to another object of the same type.
+    /// @param obj An object to compare with this object.
+    /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
+    bool equals(const date_time& obj) const noexcept override;
     
     /// @brief Converts the value of this instance to all the string representations supported by the standard date and time format specifiers.
     /// @return A string array where each element is the representation of the value of this instance formatted with one of the standard date and time format specifiers.
