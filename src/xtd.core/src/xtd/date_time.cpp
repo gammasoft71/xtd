@@ -303,6 +303,14 @@ int32 date_time::days_in_month(uint32 year, uint32 month) {
   return 31;
 }
 
+size date_time::get_hash_code() const noexcept {
+  return hash_code::combine(value_.count(), kind_);
+}
+
+bool date_time::equals(const object& obj) const noexcept {
+  return is<date_time>(obj) && equals(static_cast<const date_time&>(obj));
+}
+
 bool date_time::equals(const date_time& other) const noexcept {
   return value_.count() == other.value_.count();
 }
