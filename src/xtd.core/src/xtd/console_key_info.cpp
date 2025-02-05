@@ -20,14 +20,14 @@ console_modifiers console_key_info::modifiers() const noexcept {
   return modifiers_;
 }
 
-size console_key_info::get_hash_code() const noexcept {
-  return hash_code::combine(key_char_, key_, modifiers_);
-}
-
 bool console_key_info::equals(const object& obj) const noexcept {
   return is<console_key_info>(obj) && equals(static_cast<const console_key_info&>(obj));
 }
 
 bool console_key_info::equals(const console_key_info& key_info) const noexcept {
   return key_char_ == key_info.key_char_ && key_ == key_info.key_ && modifiers_ == key_info.modifiers_;
+}
+
+size console_key_info::get_hash_code() const noexcept {
+  return hash_code::combine(key_char_, key_, modifiers_);
 }
