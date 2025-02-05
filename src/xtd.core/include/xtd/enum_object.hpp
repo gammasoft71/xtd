@@ -113,7 +113,10 @@ namespace xtd {
       return 1;
     }
     
-    using object::equals;
+    /// @brief Determines whether the specified object is equal to the current object.
+    /// @param obj The object to compare with the current object.
+    /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+    bool equals(const object& obj) const noexcept override {return dynamic_cast<const enum_object*>(&obj) && equals(static_cast<const enum_object&>(obj));}
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
