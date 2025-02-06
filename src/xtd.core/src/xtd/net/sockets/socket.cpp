@@ -902,7 +902,7 @@ void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_opt
 void socket::set_socket_option(xtd::net::sockets::linger_option option_value) {
   if (data_->handle == 0) throw object_closed_exception {};
   if (data_->socket_type == xtd::net::sockets::socket_type::dgram) throw socket_exception(socket_error::protocol_not_supported);
-  if (native::socket::set_socket_linger_option(data_->handle, option_value.enabled, option_value.linger_time) != 0) throw socket_exception(get_last_error_());
+  if (native::socket::set_socket_linger_option(data_->handle, option_value.enabled(), option_value.linger_time()) != 0) throw socket_exception(get_last_error_());
 }
 
 void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, const xtd::net::sockets::multicast_option& option_value) {
