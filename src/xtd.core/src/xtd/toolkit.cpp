@@ -2,23 +2,31 @@
 
 using namespace xtd;
 
-xtd::toolkit::toolkit(const xtd::string& name, const xtd::version& version, const xtd::string& description) : description_(description), name_(name), version_(version) {
+toolkit::toolkit(const string& name, const xtd::version& version, const string& description) : description_(description), name_(name), version_(version) {
 }
 
-const xtd::string& xtd::toolkit::description() const noexcept {
+const string& toolkit::description() const noexcept {
   return description_;
 }
 
-const xtd::string& xtd::toolkit::name() const noexcept {
+const string& toolkit::name() const noexcept {
   return name_;
 }
 
-const xtd::version& xtd::toolkit::version() const noexcept {
+const xtd::version& toolkit::version() const noexcept {
   return version_;
 }
 
-bool xtd::toolkit::equals(const xtd::toolkit& other) const noexcept {
+bool toolkit::equals(const object& obj) const noexcept {
+  return is<toolkit>(obj) && equals(static_cast<const toolkit&>(obj));
+}
+
+bool toolkit::equals(const toolkit& other) const noexcept {
   return name_ == other.name_ && version_ == other.version_;
+}
+
+size toolkit::get_hash_code() const noexcept {
+  return hash_code::combine(description_, name_, version_);
 }
 
 xtd::string xtd::toolkit::to_string() const noexcept {
