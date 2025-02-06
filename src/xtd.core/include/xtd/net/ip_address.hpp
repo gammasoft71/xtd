@@ -76,7 +76,7 @@ namespace xtd {
       ip_address();
       /// @brief Initializes a new instance of the xtd::net::ip_address class with the address specified as an uint32.
       /// @param address The value of the IP address. For example, the value 0x2414188F in big-endian format would be the IP address "143.24.20.36".
-      explicit ip_address(uint32 address);
+      explicit ip_address(xtd::uint32 address);
       /// @brief Initializes a new instance of the xtd::net::ip_address class with the address specified as a byte array.
       /// @param address The byte array value of the IP address.
       explicit ip_address(const xtd::array<xtd::byte>& address);
@@ -87,7 +87,7 @@ namespace xtd {
       /// @remarks This constructor instantiates an IPv6 address. The scope_dd identifies a network interface in the case of a link-local address.
       /// @remarks The scope is valid only for link-local and site-local addresses.
       /// @remarks The byte array is assumed to be in network byte order with the most significant byte first in index position 0.
-      ip_address(const xtd::array<xtd::byte>& address, uint32 scope_id);
+      ip_address(const xtd::array<xtd::byte>& address, xtd::uint32 scope_id);
       /// @brief Initializes a new instance of the xtd::net::ip_address class with the address specified as a four Bytes.
       /// @param quad_part_address1 The first quad part of the IP address.
       /// @param quad_part_address2 The second quad part of the IP address.
@@ -107,7 +107,7 @@ namespace xtd {
       /// @{
       /// @brief Gets the address family of the IP address.
       /// @return Returns sockets::address_family::inter_network for IPv4 or sockets::address_family::inter_network_v6 for IPv6.
-      sockets::address_family address_family() const noexcept;
+      xtd::net::sockets::address_family address_family() const noexcept;
       
       /// @brief Gets whether the IP address is an IPv4-mapped IPv6 address.
       /// @return `true` if the IP address is an IPv4-mapped IPv6 address; otherwise, `false`.
@@ -134,11 +134,11 @@ namespace xtd {
       /// @brief Gets the IPv6 address scope identifier.
       /// @return A uint32 that specifies the scope of the address.
       /// @exception xtd::net::sockets::socket_exception if address_family = sockets::address_family::inter_network
-      uint32 scope_id() const;
+      xtd::uint32 scope_id() const;
       /// @brief Sets the IPv6 address scope identifier.
       /// @param value A uint32 that specifies the scope of the address.
       /// @exception xtd::net::sockets::socket_exception if address_family = sockets::address_family::inter_network
-      ip_address& scope_id(uint32 value);
+      ip_address& scope_id(xtd::uint32 value);
       /// @}
       
       /// @name Public Methods
@@ -173,7 +173,7 @@ namespace xtd {
       
       /// @brief Converts an Internet address to its standard notation.
       /// @return A string that contains the IP address in either IPv4 dotted-quad or in IPv6 colon-hexadecimal notation.
-      string to_string() const noexcept override;
+      xtd::string to_string() const noexcept override;
       /// @}
 
       /// @name Public Static Methods
@@ -191,21 +191,21 @@ namespace xtd {
       /// @return A short value, expressed in network byte order.
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values.Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::host_to_network_order method converts multibyte integer values that are stored on the host system from the byte order used by the host to the byte order used by the network.
-      static int16 host_to_network_order(int16 host);
+      static xtd::int16 host_to_network_order(xtd::int16 host);
       
       /// @brief Converts a integer value from host byte order to network byte order.
       /// @param host The number to convert, expressed in host byte order.
       /// @return A integer value, expressed in network byte order.
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values.Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::host_to_network_order method converts multibyte integer values that are stored on the host system from the byte order used by the host to the byte order used by the network.
-      static int32 host_to_network_order(int32 host);
+      static xtd::int32 host_to_network_order(xtd::int32 host);
       
       /// @brief Converts a long value from host byte order to network byte order.
       /// @param host The number to convert, expressed in host byte order.
       /// @return A long value, expressed in network byte order.
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values.Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::host_to_network_order method converts multibyte integer values that are stored on the host system from the byte order used by the host to the byte order used by the network.
-      static int64 host_to_network_order(int64 host);
+      static xtd::int64 host_to_network_order(xtd::int64 host);
       
       /// @brief Converts a Single value from host byte order to network byte order.
       /// @param host The number to convert, expressed in host byte order.
@@ -219,21 +219,21 @@ namespace xtd {
       /// @return A unsigned short value, expressed in network byte order.
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values.Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::host_to_network_order method converts multibyte integer values that are stored on the host system from the byte order used by the host to the byte order used by the network.
-      static uint16 host_to_network_order(uint16 host);
+      static xtd::uint16 host_to_network_order(xtd::uint16 host);
       
       /// @brief Converts a integer value from host byte order to network byte order.
       /// @param host The number to convert, expressed in host byte order.
       /// @return A unsigned integer value, expressed in network byte order.
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values.Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::host_to_network_order method converts multibyte integer values that are stored on the host system from the byte order used by the host to the byte order used by the network.
-      static uint32 host_to_network_order(uint32 host);
+      static xtd::uint32 host_to_network_order(xtd::uint32 host);
       
       /// @brief Converts a long value from host byte order to network byte order.
       /// @param host The number to convert, expressed in host byte order.
       /// @return A unsigned long value, expressed in network byte order.
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values.Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::host_to_network_order method converts multibyte integer values that are stored on the host system from the byte order used by the host to the byte order used by the network.
-      static uint64 host_to_network_order(uint64 host);
+      static xtd::uint64 host_to_network_order(xtd::uint64 host);
       
       /// @brief Indicates whether the specified IP address is the loopback address.
       /// @param address An IP address.
@@ -252,21 +252,21 @@ namespace xtd {
       /// @return A short value, expressed in host byte order.
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values. Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::network_to_host_order method converts multibyte integer values that are stored on the host system from the byte order used by the network to the byte order used by the host.
-      static int16 network_to_host_order(int16 network);
+      static xtd::int16 network_to_host_order(xtd::int16 network);
       
       /// @brief Converts a integer value from network byte order to host byte order.
       /// @param host The number to convert, expressed in network byte order.
       /// @return A integer value, expressed in host byte order.
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values. Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::network_to_host_order method converts multibyte integer values that are stored on the host system from the byte order used by the network to the byte order used by the host.
-      static int32 network_to_host_order(int32 host);
+      static xtd::int32 network_to_host_order(xtd::int32 host);
       
       /// @brief Converts a long value from network byte order to host byte order.
       /// @param network The number to convert, expressed in network byte order.
       /// @return A long value, expressed in host byte order.
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values. Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::network_to_host_order method converts multibyte integer values that are stored on the host system from the byte order used by the network to the byte order used by the host.
-      static int64 network_to_host_order(int64 network);
+      static xtd::int64 network_to_host_order(xtd::int64 network);
       
       /// @brief Converts a Single value from network byte order to host byte order.
       /// @param network The number to convert, expressed in host byte order.
@@ -280,21 +280,21 @@ namespace xtd {
       /// @return A unsigned short value, expressed in host byte order.
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values. Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::network_to_host_order method converts multibyte integer values that are stored on the host system from the byte order used by the network to the byte order used by the host.
-      static uint16 network_to_host_order(uint16 network);
+      static xtd::uint16 network_to_host_order(xtd::uint16 network);
       
       /// @brief Converts a integer value from network byte order to host byte order.
       /// @param network The number to convert, expressed in network byte order.
       /// @return A unsigned integer value, expressed in host byte order.
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values. Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::network_to_host_order method converts multibyte integer values that are stored on the host system from the byte order used by the network to the byte order used by the host.
-      static uint32 network_to_host_order(uint32 network);
+      static xtd::uint32 network_to_host_order(xtd::uint32 network);
       
       /// @brief Converts a long value from network byte order to host byte order.
       /// @param network The number to convert, expressed in network byte order.
       /// @return A unsigned long value, expressed in host byte order.
       /// @remarks Different computers use different conventions for ordering the bytes within multibyte integer values. Some computers put the most significant byte first (known as big-endian order) and others put the least-significant byte first (known as little-endian order). To work with computers that use different byte ordering, all integer values that are sent over the network are sent in network byte order which has the most significant byte first.
       /// @remarks The xtd::net::sockets::socket::network_to_host_order method converts multibyte integer values that are stored on the host system from the byte order used by the network to the byte order used by the host.
-      static uint64 network_to_host_order(uint64 network);
+      static xtd::uint64 network_to_host_order(xtd::uint64 network);
       
       /// @brief Converts an IP address string to an xtd::net::ip_address instance.
       /// @param str A string that contains an IP address in dotted-quad notation for IPv4 and in colon-hexadecimal notation for IPv6.
@@ -302,21 +302,21 @@ namespace xtd {
       /// @exception xtd::format_exception str is not a valid IP address.
       /// @remarks The static xtd::net::ip_address::parse method creates an xtd::net::ip_address instance from an IP address expressed in dotted-quad notation for IPv4 and in colon-hexadecimal notation for IPv6.
       /// @remarks The number of parts (each part is separated by a period) in str determines how the IP address is constructed. A one part address is stored directly in the network address. A two part address, convenient for specifying a class A address, puts the leading part in the first byte and the trailing part in the right-most three bytes of the network address. A three part address, convenient for specifying a class B address, puts the first part in the first byte, the second part in the second byte, and the final part in the right-most two bytes of the network address.
-      static ip_address parse(const string& str);
+      static ip_address parse(const xtd::string& str);
       
       /// @brief Determines whether a string is a valid IP address.
       /// @param str The string to validate.
       /// @param address The xtd::net::ip_address version of the string.
       /// @return bool `true` if str is a valid IP address; otherwise, `false`.
-      static bool try_parse(const string& str, ip_address& address) noexcept;
+      static bool try_parse(const xtd::string& str, ip_address& address) noexcept;
       /// @}
 
     private:
       friend xtd::net::sockets::socket;
-      static constexpr size_t number_of_numbers_ = 8;
-      ip_address(const xtd::array<uint16>& numbers, uint32 scope_id);
-      uint32 address_or_scope_id_ = 0;
-      xtd::array<uint16> numbers_ = xtd::array<uint16>(number_of_numbers_);
+      static constexpr xtd::size number_of_numbers_ = 8;
+      ip_address(const xtd::array<xtd::uint16>& numbers, xtd::uint32 scope_id);
+      xtd::uint32 address_or_scope_id_ = 0;
+      xtd::array<xtd::uint16> numbers_ = xtd::array<xtd::uint16>(number_of_numbers_);
       sockets::address_family address_family_ = sockets::address_family::inter_network;
     };
   }
