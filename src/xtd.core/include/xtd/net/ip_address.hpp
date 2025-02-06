@@ -72,7 +72,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the xtd::net::ip_address.
       /// @remarks ip_address is initialized by default value xtd::net::ip_address::none.
-      ip_address() = default;
+      ip_address();
       /// @brief Initializes a new instance of the xtd::net::ip_address class with the address specified as an uint32.
       /// @param address The value of the IP address. For example, the value 0x2414188F in big-endian format would be the IP address "143.24.20.36".
       explicit ip_address(uint32 address);
@@ -314,9 +314,8 @@ namespace xtd {
       friend xtd::net::sockets::socket;
       static constexpr size_t number_of_numbers_ = 8;
       ip_address(const std::vector<uint16>& numbers, uint32 scope_id);
-      uint32 address_ = 0xFFFFFFFF;
+      uint32 address_or_scope_id_ = 0;
       std::vector<uint16> numbers_ = std::vector<uint16>(number_of_numbers_);
-      uint32 scope_id_ = 0;
       sockets::address_family address_family_ = sockets::address_family::inter_network;
     };
   }
