@@ -63,8 +63,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_zero(s.handle());
       assert::is_false(s.is_bound());
       linger_option linger = s.linger_state();
-      assert::is_false(linger.enabled);
-      assert::is_zero(linger.linger_time);
+      assert::is_false(linger.enabled());
+      assert::is_zero(linger.linger_time());
       assert::is_null(s.local_end_point());
       assert::throws<socket_exception>([&] {s.multicast_loopback();});
       assert::is_false(s.no_delay());
@@ -93,8 +93,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_zero(s.handle());
       assert::is_false(s.is_bound());
       linger_option linger = s.linger_state();
-      assert::is_false(linger.enabled);
-      assert::is_zero(linger.linger_time);
+      assert::is_false(linger.enabled());
+      assert::is_zero(linger.linger_time());
       assert::is_null(s.local_end_point());
       assert::throws<socket_exception>([&] {s.multicast_loopback();});
       assert::is_false(s.no_delay());
@@ -126,8 +126,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_zero(s.handle());
       assert::is_false(s.is_bound());
       linger_option linger = s.linger_state();
-      assert::is_false(linger.enabled);
-      assert::is_zero(linger.linger_time);
+      assert::is_false(linger.enabled());
+      assert::is_zero(linger.linger_time());
       assert::is_null(s.local_end_point());
       assert::throws<socket_exception>([&] {s.multicast_loopback();});
       assert::is_false(s.no_delay());
