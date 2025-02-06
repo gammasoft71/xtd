@@ -307,9 +307,19 @@ namespace xtd {
     /// @return A new object whose value is the absolute value of the current xtd::time_span object.
     time_span duration() const noexcept;
     
-    using object::equals;
+    /// @brief Determines whether the specified object is equal to the current object.
+    /// @param obj The object to compare with the current object.
+    /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+    bool equals(const object& value) const noexcept override;
+    /// @brief Determines whether the specified object is equal to the current object.
+    /// @param value The object to compare with the current object.
+    /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
     bool equals(const time_span& value) const noexcept override;
-    
+
+    /// @brief Serves as a hash function for a particular type.
+    /// @return A hash code for the current object.
+    xtd::size get_hash_code() const noexcept override;
+
     /// @brief Returns a new xtd::time_spam object which value is the result of multiplication of this instance and the specified factor.
     /// @param factor The value to be multiplied by.
     /// @return A double that represents the value of this instance multiplied by the value of factor.
