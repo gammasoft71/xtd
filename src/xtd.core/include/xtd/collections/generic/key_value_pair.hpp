@@ -88,21 +88,21 @@ namespace xtd {
         
         /// @name Public Methods
         
-        /// @{
-        /// @brief Returns a String representation of the key_value_pair<key_t, value_t>, using the String representations of the key and value.
-        /// @return const String A String representation of the key_value_pair<key_t, value_t>, which includes the String representations of the key and value.
-        /// @return String
-        xtd::string to_string() const noexcept override; // defined in "../../string.hpp"
+        /// @{        
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param obj The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object; otherwise, `false`
+        bool equals(const object& obj) const noexcept override {return is<key_value_pair>(obj) && equals(static_cast<const key_value_pair&>(obj));}
         
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param value The key_value_pair to compare with the current object.
         /// @return `true` if the specified object is equal to the current object; otherwise, `false`.
         bool equals(const key_value_pair& value) const noexcept override {return first == value.first && second == value.second;}
-        
-        /// @brief Determines whether the specified object is equal to the current object.
-        /// @param obj The object to compare with the current object.
-        /// @return `true` if the specified object is equal to the current object; otherwise, `false`
-        bool equals(const object& obj) const noexcept override {return is<key_value_pair>(obj) && equals(static_cast<const key_value_pair&>(obj));}
+
+        /// @brief Returns a String representation of the key_value_pair<key_t, value_t>, using the String representations of the key and value.
+        /// @return const String A String representation of the key_value_pair<key_t, value_t>, which includes the String representations of the key and value.
+        /// @return String
+        xtd::string to_string() const noexcept override; // defined in "../../string.hpp"
         /// @}
         
         /// @name Public Operators
