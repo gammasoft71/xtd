@@ -23,12 +23,16 @@ bool target_type::is_static_library() const noexcept {
   return target_id_ == xtd::target_id::static_library;
 }
 
+string target_type::name() const noexcept {
+  return enum_object<xtd::target_id>(target_id_).to_string().replace("_", " ");
+}
+
 target_id target_type::target_id() const noexcept {
   return target_id_;
 }
 
-string target_type::name() const noexcept {
-  return enum_object<xtd::target_id>(target_id_).to_string().replace("_", " ");
+size target_type::get_hash_code() const noexcept {
+  return hash_code::combine(target_id_, name());
 }
 
 string target_type::to_string() const noexcept {
