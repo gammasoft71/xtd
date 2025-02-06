@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../ip_address.hpp"
+#include "../../iequatable.hpp"
 
 /// @cond
 #undef unix
@@ -20,7 +21,7 @@ namespace xtd {
       
       /// @brief Gets the network interface information that is associated with a call to xtd::net::sockets::socket::receive_message_from or xtd::net::sockets::socket::end_receive_message_from.
       /// ```cpp
-      /// class core_export_ ip_packet_information : public xtd::object
+      /// class core_export_ ip_packet_information : public xtd::object, public xtd::iequatable<xtd::net::sockets::ip_packet_information>;
       /// ```
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::ip_packet_information
@@ -33,7 +34,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core
-      class core_export_ ip_packet_information : public xtd::object {
+      class core_export_ ip_packet_information : public xtd::object, public xtd::iequatable<xtd::net::sockets::ip_packet_information> {
       public:
         /// @name Public Constructors
         
@@ -59,7 +60,24 @@ namespace xtd {
         /// @return An int32 value, which represents the index of the network interface. You can use this index with xtd::net::network_information::network_interface::get_all_network_interfaces() to get more information about the relevant interface.
         int32 interface() const noexcept;
         /// @}
+
+        /// @name Public Methods
         
+        /// @{
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param obj The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const xtd::object& obj) const noexcept override;
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param other The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const ip_packet_information& other) const noexcept override;
+
+        /// @brief Serves as a hash function for a particular type.
+        /// @return A hash code for the current object.
+        xtd::size get_hash_code() const noexcept override;
+        /// @}
+
       private:
         friend class socket;
         xtd::net::ip_address address_;
