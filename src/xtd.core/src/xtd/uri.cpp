@@ -348,8 +348,16 @@ string uri::unescape_data_string(const string& value) {
   return ret_value;
 }
 
+bool uri::equals(const object& obj) const noexcept {
+  return is<uri>(obj) && equals(static_cast<const uri&>(obj));
+}
+
 bool uri::equals(const uri& uri) const noexcept {
   return scheme_ == uri.scheme_ && scheme_delimiter_ == uri.scheme_delimiter_ && host_ == uri.host_ && port_ == uri.port_ && path_ == uri.path_ && query_ == uri.query_ && kind_ == uri.kind_;
+}
+
+size uri::get_hash_code() const noexcept {
+  return hash_code::combine(original_uri_, scheme_, scheme_delimiter_, user_info_, host_, port_, path_, query_, fragment_, kind_);
 }
 
 string uri::to_string() const noexcept {

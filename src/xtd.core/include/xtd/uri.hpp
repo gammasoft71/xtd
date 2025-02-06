@@ -575,16 +575,26 @@ namespace xtd {
     /// @remarks For more information on URI support, see the Remarks section for the xtd::uri class.
     bool is_well_formed_original_string();
      
-    using object::equals;
+    /// @brief Determines whether the specified object is equal to the current object.
+    /// @param obj The object to compare with the current object.
+    /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+    bool equals(const xtd::object& obj) const noexcept override;
+    /// @brief Determines whether the specified object is equal to the current object.
+    /// @param uri The object to compare with the current object.
+    /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
     bool equals(const xtd::uri& uri) const noexcept override;
-    
+
+    /// @brief Serves as a hash function for a particular type.
+    /// @return A hash code for the current object.
+    xtd::size get_hash_code() const noexcept override;
+
     /// @brief Gets a canonical string representation for the specified xtd::uri instance.
     /// @return string A string instance that contains the unescaped canonical representation of the xtd::uri instance. All characters are unescaped except #, ?, and %.
     /// @remarks The string returned by this method does not contain port information when the port is the default port for the scheme.
     xtd::string to_string() const noexcept override;
     /// @}
     
-    /// @name Public Methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief Determines whether the specified scheme name is valid.
