@@ -52,6 +52,18 @@ xtd::uptr<end_point> ip_end_point::create(const socket_address& socket_address) 
   return xtd::new_uptr<ip_end_point>(ip_address(current_address), current_port);
 }
 
+bool ip_end_point::equals(const object& obj) const noexcept {
+  return is<ip_end_point>(obj) && equals(static_cast<const ip_end_point&>(obj));
+}
+
+bool ip_end_point::equals(const ip_end_point& other) const noexcept {
+  return address_family_ == other.address_family_ && address_ == other.address_ && port_ == other.port_;
+}
+
+size ip_end_point::get_hash_code() const noexcept {
+  return hash_code::combine(address_family_, address_, port_);
+}
+
 socket_address ip_end_point::serialize() const {
   socket_address result(address_family_, address_family_ == address_family::inter_network ? 16 : 28);
   size_t index = 2;
