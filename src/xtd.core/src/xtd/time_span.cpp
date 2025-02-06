@@ -225,12 +225,20 @@ time_span time_span::duration() const noexcept {
   return time_span {math::abs(ticks_)};
 }
 
+bool time_span::equals(const object& obj) const noexcept {
+  return is<time_span>(obj) && equals(static_cast<const time_span&>(obj));
+}
+
 bool time_span::equals(const time_span& value) const noexcept {
   return ticks_ == value.ticks_;
 }
 
 bool time_span::equals(time_span t1, time_span t2) {
   return  t1.equals(t2);
+}
+
+size time_span::get_hash_code() const noexcept {
+  return hash_code::combine(ticks_);
 }
 
 time_span time_span::from_days(double value) {
