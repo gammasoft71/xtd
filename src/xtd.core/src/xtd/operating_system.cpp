@@ -129,6 +129,10 @@ bool operating_system::is_xbox() const noexcept {
   return platform_ == xtd::platform_id::xbox;
 }
 
+size operating_system::get_hash_code() const noexcept {
+  return hash_code::combine(platform_, version_, service_pack_, desktop_environment_, desktop_theme_, is_64_bit_, distribution_);
+}
+
 string operating_system::to_string() const noexcept {
   return version_string();
 }
