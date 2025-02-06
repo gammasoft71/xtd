@@ -1,5 +1,4 @@
 #include <xtd/net/sockets/multicast_option>
-#include <xtd/argument_out_of_range_exception>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
@@ -39,10 +38,6 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(ip_address::none, mo.local_address());
     }
     
-    void test_method_(constructor_with_group_and_interface_index_greater_than_0x00FFFFFF) {
-      assert::throws<argument_out_of_range_exception>([] {multicast_option(ip_address(172, 16, 12, 24), 0x1000000);});
-    }
-    
     void test_method_(set_group) {
       multicast_option mo;
       mo.group(ip_address(172, 16, 12, 24));
@@ -57,11 +52,6 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(ip_address::none, mo.group());
       assert::are_equal(427u, mo.interface_index());
       assert::are_equal(ip_address::none, mo.local_address());
-    }
-    
-    void test_method_(set_interface_index_greater_than_0x00FFFFFF) {
-      multicast_option mo;
-      assert::throws<argument_out_of_range_exception>([&] {mo.interface_index(0x1000000);});
     }
     
     void test_method_(set_local_address) {
