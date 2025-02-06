@@ -65,6 +65,12 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
+    /// @brief Serves as a hash function for a particular type.
+    /// @return A hash code for the current object.
+    xtd::size get_hash_code() const noexcept override;
+    
+    /// @brief Returns a xtd::string that represents the current object.
+    /// @return A string that represents the current object.
     string to_string() const noexcept override;
     /// @}
     
