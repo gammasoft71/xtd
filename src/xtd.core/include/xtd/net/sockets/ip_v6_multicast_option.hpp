@@ -4,6 +4,7 @@
 #pragma once
 #include "../ip_address.hpp"
 #include "../../core_export.hpp"
+#include "../../iequatable.hpp"
 #include "../../object.hpp"
 #include "../../types.hpp"
 #include "../../string.hpp"
@@ -16,7 +17,7 @@ namespace xtd {
     namespace sockets {
       /// @brief Contains option values for joining an IPv6 multicast group.
       /// ```cpp
-      /// class core_export_ ip_v6_multicast_option : public xtd::object
+      /// struct core_export_ ip_v6_multicast_option : xtd::object, xtd::iequatable<xtd::net::sockets::ip_v6_multicast_option>;
       /// ```
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::ip_v6_multicast_option
@@ -29,7 +30,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core
-      struct core_export_ ip_v6_multicast_option : xtd::object {
+      struct core_export_ ip_v6_multicast_option : xtd::object, xtd::iequatable<xtd::net::sockets::ip_v6_multicast_option> {
         /// @name Public Constructors
         
         /// @{
@@ -62,6 +63,23 @@ namespace xtd {
         /// @param value A uint32 value that specifies the address of the interface.
         /// @remarks This property specifies the interface on which data is received or sent.
         xtd::uint32 interface_index = 0;
+        /// @}
+
+        /// @name Public Methods
+        
+        /// @{
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param obj The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const object& obj) const noexcept override;
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param other The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const ip_v6_multicast_option& other) const noexcept override;
+        
+        /// @brief Serves as a hash function for a particular type.
+        /// @return A hash code for the current object.
+        xtd::size get_hash_code() const noexcept override;
         /// @}
       };
     }
