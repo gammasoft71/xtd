@@ -81,7 +81,6 @@ namespace xtd {
         /// @brief Sets the interface index that is associated with a multicast group.
         /// @param value A uint32 value that specifies the address of the interface.
         /// @return the current instance.
-        /// @exception xtd::argument_out_of_range_exception value > 0x00FFFFFF.
         /// @remarks This property specifies the interface on which data is received or sent.
         multicast_option& interface_index(uint32 value) noexcept;
         

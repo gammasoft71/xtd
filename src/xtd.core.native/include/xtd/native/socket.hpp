@@ -153,7 +153,7 @@ namespace xtd {
       /// @param interface_index The interface index that is associated with a multicast group.
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
-      static int32_t get_socket_ip_v6_multicast_option(intmax_t handle, int32_t socket_option_name, std::vector<uint8_t>& multicast_address, uint32_t& interface_index);
+      static int32_t get_socket_ip_v6_multicast_option(intmax_t handle, int32_t socket_option_name, std::vector<uint8_t>& multicast_address, uint64_t& interface_index);
       /// @brief Sets low-level operating modes for the Socket using the IOControlCode enumeration to specify control codes.
       /// @param handle The socket handle.
       /// @param io_control A io control code value that specifies the control code of the operation to perform (see io_control_code_constants.h).
@@ -267,7 +267,7 @@ namespace xtd {
       /// @param linger_time The amount of time to remain connected after calling the socket close method if data remains to be sent.
       /// @return Zero (0) if succeed; otherwise on error.
       /// @warning Internal use only
-      static int32_t set_socket_ip_v6_multicast_option(intmax_t handle, int32_t socket_option_name, const std::vector<uint8_t>& multicast_address, uint32_t interface_index);
+      static int32_t set_socket_ip_v6_multicast_option(intmax_t handle, int32_t socket_option_name, const std::vector<uint8_t>& multicast_address, uint64_t interface_index);
       /// @brief Shut down part of a full-duplex connection.
       /// @param handle The socket handle.
       /// @param how One of socket shutdown values (see socket_shutdown_constants.h).

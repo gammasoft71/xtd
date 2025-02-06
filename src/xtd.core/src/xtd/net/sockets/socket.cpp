@@ -705,7 +705,7 @@ xtd::net::sockets::ip_v6_multicast_option socket::get_socket_ip_v6_multicast_opt
   if (data_->handle == 0) throw object_closed_exception {};
   if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception {};
   auto multicast_address = array<xtd::byte> {};
-  auto interface_index = 0_u32;
+  auto interface_index = 0_u64;
   if (native::socket::get_socket_ip_v6_multicast_option(data_->handle, static_cast<int32>(socket_option_name), multicast_address, interface_index) != 0) throw socket_exception(get_last_error_());
   return ip_v6_multicast_option(ip_address(multicast_address), interface_index);
 }

@@ -160,10 +160,10 @@ int32_t socket::get_socket_multicast_option(intmax_t handle, int32_t socket_opti
   return result;
 }
 
-int32_t socket::get_socket_ip_v6_multicast_option(intmax_t handle, int32_t socket_option_name, vector<uint8_t>& multicast_address, uint32_t& interface_index) {
+int32_t socket::get_socket_ip_v6_multicast_option(intmax_t handle, int32_t socket_option_name, vector<uint8_t>& multicast_address, uint64_t& interface_index) {
   struct multicast {
     uint8_t multicast_address[16];
-    uint32_t interface_index;
+    uint64_t interface_index;
   } m;
   auto multicast_size = sizeof(multicast);
   auto result = getsockopt(static_cast<SOCKET>(handle), IPPROTO_IP, socket_option_name_to_native(socket_option_name), reinterpret_cast<char*>(&m), reinterpret_cast<int32_t*>(&multicast_size));
@@ -293,10 +293,10 @@ int32_t socket::set_socket_multicast_option(intmax_t handle, int32_t socket_opti
   return setsockopt(static_cast<SOCKET>(handle), IPPROTO_TCP, socket_option_name_to_native(socket_option_name), reinterpret_cast<const char*>(&m), static_cast<int32_t>(sizeof(multicast)));
 }
 
-int32_t socket::set_socket_ip_v6_multicast_option(intmax_t handle, int32_t socket_option_name, const vector<uint8_t>& multicast_address, uint32_t interface_index) {
+int32_t socket::set_socket_ip_v6_multicast_option(intmax_t handle, int32_t socket_option_name, const vector<uint8_t>& multicast_address, uint64_t interface_index) {
   struct multicast {
     uint8_t multicast_address[16];
-    uint32_t interface_index;
+    uint64_t interface_index;
   } m;
   for (auto index = 0U; index < multicast_address.size(); ++index)
     m.multicast_address[index] = multicast_address[index];
