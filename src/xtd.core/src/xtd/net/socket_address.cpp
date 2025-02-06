@@ -42,6 +42,21 @@ const xtd::byte& socket_address::operator [](size_t index) const {
   return bytes_[index];
 }
 
+bool socket_address::equals(const object& obj) const noexcept {
+  return is<socket_address>(obj) && equals(static_cast<const socket_address&>(obj));
+}
+
+bool socket_address::equals(const socket_address& other) const noexcept {
+  return bytes_ == other.bytes_;
+}
+
+size socket_address::get_hash_code() const noexcept {
+  auto result = hash_code {};
+  for (auto b : bytes_)
+    result.add(b);
+  return result.to_hash_code();
+}
+
 string socket_address::to_string() const noexcept {
   return string::format("{}:{}:{{{}}}", address_family(), size(), size() <= 2 ? "" : string::join(",", bytes_, 2, size() - 2));
 }
