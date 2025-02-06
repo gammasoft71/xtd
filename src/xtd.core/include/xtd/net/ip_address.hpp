@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "sockets/address_family.hpp"
+#include "../array.hpp"
 #include "../core_export.hpp"
 #include "../iequatable.hpp"
 #include "../object.hpp"
@@ -78,7 +79,7 @@ namespace xtd {
       explicit ip_address(uint32 address);
       /// @brief Initializes a new instance of the xtd::net::ip_address class with the address specified as a byte array.
       /// @param address The byte array value of the IP address.
-      explicit ip_address(const std::vector<xtd::byte>& address);
+      explicit ip_address(const xtd::array<xtd::byte>& address);
       /// @brief Initializes a new instance of the xtd::net::ip_address class with the address specified as a byte array.
       /// @param address The byte array value of the IP address.
       /// @param scope_id The long value of the scope identifier.
@@ -86,7 +87,7 @@ namespace xtd {
       /// @remarks This constructor instantiates an IPv6 address. The scope_dd identifies a network interface in the case of a link-local address.
       /// @remarks The scope is valid only for link-local and site-local addresses.
       /// @remarks The byte array is assumed to be in network byte order with the most significant byte first in index position 0.
-      ip_address(const std::vector<xtd::byte>& address, uint32 scope_id);
+      ip_address(const xtd::array<xtd::byte>& address, uint32 scope_id);
       /// @brief Initializes a new instance of the xtd::net::ip_address class with the address specified as a four Bytes.
       /// @param quad_part_address1 The first quad part of the IP address.
       /// @param quad_part_address2 The second quad part of the IP address.
@@ -154,7 +155,7 @@ namespace xtd {
       
       /// @brief Provides a copy of the IPAddress as an array of bytes.
       /// @return  A byte array.
-      std::vector<xtd::byte> get_address_bytes() const;
+      xtd::array<xtd::byte> get_address_bytes() const;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
@@ -313,9 +314,9 @@ namespace xtd {
     private:
       friend xtd::net::sockets::socket;
       static constexpr size_t number_of_numbers_ = 8;
-      ip_address(const std::vector<uint16>& numbers, uint32 scope_id);
+      ip_address(const xtd::array<uint16>& numbers, uint32 scope_id);
       uint32 address_or_scope_id_ = 0;
-      std::vector<uint16> numbers_ = std::vector<uint16>(number_of_numbers_);
+      xtd::array<uint16> numbers_ = xtd::array<uint16>(number_of_numbers_);
       sockets::address_family address_family_ = sockets::address_family::inter_network;
     };
   }
