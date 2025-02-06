@@ -92,6 +92,7 @@ namespace xtd {
         /// @return A hash code for the current object.
         xtd::size get_hash_code() const noexcept override;
         /// @}
+        
       private:
         xtd::net::ip_address group_ = xtd::net::ip_address::ip_v6_none;
         uint32 interface_index_ = 0;

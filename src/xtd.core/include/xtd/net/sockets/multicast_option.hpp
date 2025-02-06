@@ -16,7 +16,7 @@ namespace xtd {
     namespace sockets {
       /// @brief Contains IPAddress values used to join and drop multicast groups.
       /// ```cpp
-      /// class core_export_ multicast_option : public xtd::object
+      /// class core_export_ multicast_option : public xtd::object, public xtd::iequatable<xtd::net::sockets::multicast_option>;
       /// ```
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::multicast_option
@@ -36,7 +36,7 @@ namespace xtd {
       /// | socket_option_name  | xtd::net::sockets::socket_option_name::add_membership |
       /// | object            | xtd::net::sockets::multicast_option                     |
       /// @remarks Use xtd::net::sockets::socket_option_name::drop_membership to drop a multicast group.
-      class core_export_ multicast_option : public xtd::object {
+      class core_export_ multicast_option : public xtd::object, public xtd::iequatable<xtd::net::sockets::multicast_option> {
       public:
         /// @name Public Constructors
         
@@ -83,7 +83,7 @@ namespace xtd {
         /// @return the current instance.
         /// @exception xtd::argument_out_of_range_exception value > 0x00FFFFFF.
         /// @remarks This property specifies the interface on which data is received or sent.
-        multicast_option& interface_index(uint32 value);
+        multicast_option& interface_index(uint32 value) noexcept;
         
         /// @brief Gets the local IP address associated with a multicast group.
         /// @return An xtd::net::ip_address that contains the local address associated with a multicast group.
@@ -92,6 +92,23 @@ namespace xtd {
         /// @param value An xtd::net::ip_address that contains the local address associated with a multicast group.
         /// @return the current instance.
         multicast_option& local_address(const xtd::net::ip_address& value) noexcept;
+        /// @}
+
+        /// @name Public Methods
+        
+        /// @{
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param obj The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const object& obj) const noexcept override;
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param other The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const multicast_option& other) const noexcept override;
+        
+        /// @brief Serves as a hash function for a particular type.
+        /// @return A hash code for the current object.
+        xtd::size get_hash_code() const noexcept override;
         /// @}
         
       private:
