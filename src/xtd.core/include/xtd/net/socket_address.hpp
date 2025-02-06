@@ -3,6 +3,7 @@
 #pragma once
 #include "sockets/address_family.hpp"
 #include "../core_export.hpp"
+#include "../iequatable.hpp"
 #include "../object.hpp"
 #include "../types.hpp"
 #include "../string.hpp"
@@ -18,6 +19,10 @@ namespace xtd {
     /// @endcond
     
     /// @brief Stores serialized information from end_point derived classes.
+    /// #par Deinition
+    /// ```cpp
+    /// class core_export_ socket_address : public xtd::object, public xtd::iequatable<xtd::net::socket_address>;
+    /// ```
     /// @par Header
     /// ```cpp
     /// #include <xtd/net/socket_address>
@@ -28,7 +33,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core
     /// @remarks The first 2 bytes of the underlying buffer are reserved for the xtd::net::sockets::address_family enumerated value. When the xtd::net::socket_address is used to store a serialized xtd::net::ipend_point, the third and fourth bytes are used to store port number information. The next bytes are used to store the IP address. You can access any information within this underlying byte buffer by referring to its index position; the byte buffer uses zero-based indexing. You can also use the xtd::net::socket_address::family and xtd::net::socket_address::size properties to get the xtd::net::sockets::address_family value and the buffer size, respectively. To view any of this information as a string, use the xtd::net::socket_address::to_string method.
-    class core_export_ socket_address : public xtd::object {
+    class core_export_ socket_address : public xtd::object, public xtd::iequatable<xtd::net::socket_address> {
     public:
       /// @name Public Constructors
       
@@ -83,6 +88,19 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const socket_address& other) const noexcept override;
+
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+      
       /// @brief Returns information about the socket address.
       /// @return A string that contains information about the xtd::net::socket_address.
       /// @remarks The xtd::net::socket_address::to_string method returns a string that contains the xtd::net::sockets::address_family enumerated value, the size of the underlying buffer of the socket_address structure, and the remaining contents of the buffer.
