@@ -29,8 +29,7 @@ namespace xtd {
       /// @par Library
       /// xtd.core
       /// @ingroup xtd_core
-      class core_export_ ip_v6_multicast_option : public xtd::object {
-      public:
+      struct core_export_ ip_v6_multicast_option : xtd::object {
         /// @name Public Constructors
         
         /// @{
@@ -47,6 +46,7 @@ namespace xtd {
         
         /// @cond
         ip_v6_multicast_option(ip_v6_multicast_option&& ip_v6_multicast_option) = default;
+        ip_v6_multicast_option& operator =(ip_v6_multicast_option&&) = default;
         ip_v6_multicast_option(const ip_v6_multicast_option& ip_v6_multicast_option) = default;
         ip_v6_multicast_option& operator =(const ip_v6_multicast_option&) = default;
         /// @endcond
@@ -54,28 +54,15 @@ namespace xtd {
         /// @name Public Properties
         
         /// @{
-        /// @brief Gets the IP address of a multicast group.
-        /// @return An xtd::net::ip_address that contains the Internet address of a multicast group.
-        const xtd::net::ip_address& group() const noexcept;
-        /// @brief Sets the IP address of a multicast group.
-        /// @param value An xtd::net::ip_address that contains the Internet address of a multicast group.
-        /// @return the current instance.
-        ip_v6_multicast_option& group(const xtd::net::ip_address& value) noexcept;
+        /// @brief Gets or sets the IP address of a multicast group.
+        /// @param group An xtd::net::ip_address that contains the Internet address of a multicast group.
+        xtd::net::ip_address group = xtd::net::ip_address::ip_v6_none;
         
-        /// @brief Gets the interface index that is associated with a multicast group.
-        /// @return A uint32 value that specifies the address of the interface.
-        /// @remarks This property specifies the interface on which data is received or sent.
-        uint32 interface_index() const noexcept;
-        /// @brief Sets the interface index that is associated with a multicast group.
+        /// @brief Gets or sets the interface index that is associated with a multicast group.
         /// @param value A uint32 value that specifies the address of the interface.
-        /// @return the current instance.
         /// @remarks This property specifies the interface on which data is received or sent.
-        ip_v6_multicast_option& interface_index(uint32 value) noexcept;
+        xtd::uint32 interface_index = 0;
         /// @}
-        
-      private:
-        xtd::net::ip_address group_ = xtd::net::ip_address::ip_v6_none;
-        uint32 interface_index_ = 0;
       };
     }
   }
