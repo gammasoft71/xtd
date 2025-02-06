@@ -21,7 +21,7 @@ namespace xtd {
     /// xtd::drawing
     /// @par Library
     /// xtd.drawing
-    /// @ingroup xtd_drawing images
+    /// @ingroup xtd_drawing colors
     class drawing_export_ red_colors final static_ {
     public:
       /// @name Public Static Properties
