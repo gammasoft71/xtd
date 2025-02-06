@@ -908,8 +908,8 @@ void socket::set_socket_option(xtd::net::sockets::linger_option option_value) {
 void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, const xtd::net::sockets::multicast_option& option_value) {
   if (data_->handle == 0) throw object_closed_exception {};
   if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw argument_exception {};
-  auto multicast_address = option_value.group().address_;
-  auto interface_index = option_value.local_address() != ip_address::none ? option_value.local_address().address_ : ip_address::host_to_network_order(option_value.interface_index());
+  auto multicast_address = option_value.group().address_or_scope_id_;
+  auto interface_index = option_value.local_address() != ip_address::none ? option_value.local_address().address_or_scope_id_ : ip_address::host_to_network_order(option_value.interface_index());
   if (native::socket::set_socket_multicast_option(data_->handle, static_cast<int32>(socket_option_name), multicast_address, interface_index) != 0) throw socket_exception(get_last_error_());
 }
 
