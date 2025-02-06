@@ -74,7 +74,7 @@ namespace xtd::net::tests {
     }
     
     void test_method_(constructors_with_invalid_bytes_array) {
-      assert::throws<argument_exception>([] {ip_address({172, 16});});
+      assert::throws<argument_exception>([] {ip_address(array<byte >{172, 16});});
       assert::throws<argument_exception>([] {ip_address({172, 16, 10, 30, 25, 42});});
     }
     
