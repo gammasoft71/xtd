@@ -94,8 +94,25 @@ ip_address& ip_address::scope_id(uint32 value) {
   return *this;
 }
 
+bool ip_address::equals(const object& obj) const noexcept {
+  return is<ip_address>(obj) && equals(static_cast<const ip_address&>(obj));
+}
+
 bool ip_address::equals(const ip_address& other) const noexcept {
   return address_ == other.address_ && numbers_ == other.numbers_ && scope_id_ == other.scope_id_ && address_family_ == other.address_family_;
+}
+
+size ip_address::get_hash_code() const noexcept {
+  auto result = hash_code {};
+  if (address_family_ == sockets::address_family::inter_network)
+    result.add(address_);
+  else {
+    for (auto number : numbers_)
+      result.add(number);
+    result.add(scope_id_);
+  }
+  result.add(address_family_);
+  return result.to_hash_code();
 }
 
 std::vector<xtd::byte> ip_address::get_address_bytes() const {

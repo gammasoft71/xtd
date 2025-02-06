@@ -21,6 +21,10 @@ namespace xtd {
     /// @endcond
     
     /// @brief Provides an Internet Protocol (IP) address.
+    /// @par Definition
+    /// ```cpp
+    /// class core_export_ ip_address : public xtd::object, public xtd::iequatable<xtd::net::ip_address>
+    /// ```
     /// @par Header
     /// ```cpp
     /// #include <xtd/net/ip_address>
@@ -34,7 +38,7 @@ namespace xtd {
     /// The following code example shows how to query a server to obtain the family addresses and the IP addresses it supports.
     /// @include ip_address.cpp
     /// @remarks The xtd::net::ip_address class contains the address of a computer on an IP network.
-    class core_export_ ip_address : public xtd::object, public xtd::iequatable<ip_address> {
+    class core_export_ ip_address : public xtd::object, public xtd::iequatable<xtd::net::ip_address> {
     public:
       /// @name Public Fields
       
@@ -139,13 +143,23 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
-      using object::equals;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
       bool equals(const ip_address& other) const noexcept override;
       
       /// @brief Provides a copy of the IPAddress as an array of bytes.
       /// @return  A byte array.
       std::vector<xtd::byte> get_address_bytes() const;
       
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+
       /// @brief Maps the xtd::net::ip_address object to an IPv4 address.
       /// @return An IPv4 address.
       /// @remarks Dual-stack sockets always require IPv6 addresses. The ability to interact with an IPv4 address requires the use of the IPv4-mapped IPv6 address format. Any IPv4 addresses must be represented in the IPv4-mapped IPv6 address format which enables an IPv6 only application to communicate with an IPv4 node. The IPv4-mapped IPv6 address format allows the IPv4 address of an IPv4 node to be represented as an IPv6 address. The IPv4 address is encoded into the low-order 32 bits of the IPv6 address, and the high-order 96 bits hold the fixed prefix 0:0:0:0:0:FFFF. The IPv4-mapped IPv6 address format is specified in RFC 4291. For more information, see www.ietf.org/rfc/rfc4291.txt.
