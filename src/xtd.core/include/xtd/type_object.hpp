@@ -43,7 +43,7 @@ namespace xtd {
     type_object& operator=(const type_object&) noexcept;
     /// @endcond
 
-    /// @par Properties
+    /// @par Public Properties
     /// @{
     /// @brief Gets the fully qualified name of the type_object, including the namespace of the type_object.
     /// @return The fully qualified name of the type_object, including the namespace of the type_object.
@@ -61,11 +61,23 @@ namespace xtd {
     xtd::string namespace_() const noexcept;
     /// @}
     
-    using object::equals;
-    /// @par Methods
+    /// @par Public Methods
     /// @{
+    /// @brief Determines whether the specified object is equal to the current object.
+    /// @param obj The object to compare with the current object.
+    /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+    bool equals(const object& obj) const noexcept override;
+    /// @brief Determines whether the specified object is equal to the current object.
+    /// @param type The object to compare with the current object.
+    /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
     bool equals(const type_object& type) const noexcept override;
 
+    /// @brief Serves as a hash function for a particular type.
+    /// @return A hash code for the current object.
+    xtd::size get_hash_code() const noexcept override;
+
+    /// @brief Returns a xtd::string that represents the current object.
+    /// @return A string that represents the current object.
     xtd::string to_string() const noexcept override;
     /// @}
     
