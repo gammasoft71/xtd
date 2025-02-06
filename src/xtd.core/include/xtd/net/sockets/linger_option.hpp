@@ -4,6 +4,7 @@
 #pragma once
 #include "../ip_address.hpp"
 #include "../../core_export.hpp"
+#include "../../iequatable.hpp"
 #include "../../object.hpp"
 #include "../../types.hpp"
 #include "../../string.hpp"
@@ -16,7 +17,7 @@ namespace xtd {
     namespace sockets {
       /// @brief Specifies whether a xtd::net::sockets::socket will remain connected after a call to the xtd::net::sockets::socket::close or xtd::net::sockets::tcp_client::close methods and the length of time it will remain connected, if data remains to be sent.
       /// ```cpp
-      /// class core_export_ linger_option : public xtd::object
+      /// struct core_export_ linger_option : xtd::object, xtd::iequatable<xtd::net::sockets::linger_option>;
       /// ```
       /// @par Inheritance
       /// xtd::object → xtd::net::sockets::linger_option
@@ -31,7 +32,7 @@ namespace xtd {
       /// @ingroup xtd_core
       /// @remarks There may still be data available in the outgoing network buffer after an application calls the xtd::net::sockets::socket or xtd::net::sockets::tcp_client method. If you want to specify the amount of time that the xtd::net::sockets::socket will attempt to transmit unsent data after closing, create a xtd::net::sockets::linger_option with the enable parameter set to `true`, and the seconds parameter set to the desired amount of time. The seconds parameter is used to indicate how long you would like the xtd::net::sockets::socket to remain connected before timing out. If you do not want the xtd::net::sockets::socket to stay connected for any length of time after closing, create a xtd::net::sockets::linger_option instance with the enable parameter set to `true` and the seconds parameter set to zero. In this case, the xtd::net::sockets::socket will close immediately and any unsent data will be lost. Once created, pass the xtd::net::sockets::linger_option to the xtd::net::sockets::socket::set_socket_option method. If you are sending and receiving data with a xtd::net::sockets::tcp_client, then set the xtd::net::sockets::linger_option instance in the xtd::net::sockets::tcp_client::linger_state property.
       /// @remarks The IP stack computes the default IP protocol time-out period to use based on the round trip time of the connection. In most cases, the time-out computed by the stack is more relevant than one defined by an application. This is the default behavior for a xtd::net::sockets::socket when the xtd::net::sockets::socket::linger_state property is not set and for a xtd::net::sockets::tcp_client when the xtd::net::sockets::tcp_client::linger_state property is not set.
-      struct core_export_ linger_option : xtd::object {
+      struct core_export_ linger_option : xtd::object, xtd::iequatable<xtd::net::sockets::linger_option> {
         /// @name Public Constructors
         
         /// @{
@@ -89,6 +90,23 @@ namespace xtd {
         uint32 linger_time = 0;
         /// @}
         
+        /// @name Public Methods
+        
+        /// @{
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param obj The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const object& obj) const noexcept override;
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param other The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const linger_option& other) const noexcept override;
+
+        /// @brief Serves as a hash function for a particular type.
+        /// @return A hash code for the current object.
+        xtd::size get_hash_code() const noexcept override;
+        /// @}
+
       private:
       };
     }
