@@ -60,8 +60,16 @@ int32 version::compare_to(const version& value) const noexcept {
   return 0;
 }
 
+bool version::equals(const object& obj) const noexcept {
+  return is<version>(obj) && equals(static_cast<const version&>(obj));
+}
+
 bool version::equals(const version& v) const noexcept {
   return major_ == v.major_ && minor_ == v.minor_ && build_ == v.build_ && revision_ == v.revision_;
+}
+
+size version::get_hash_code() const noexcept {
+  return hash_code::combine(major_, minor_, build_, revision_);
 }
 
 version version::parse(const xtd::string& input) {
