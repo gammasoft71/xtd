@@ -342,6 +342,15 @@ namespace xtd {
       if (count > length_) throw argument_out_of_range_exception {};
       return span<type_t> {data_, count};
     }
+    
+    /// @brief Serves as a hash function for a particular type.
+    /// @return A hash code for the current object.
+    xtd::size get_hash_code() const noexcept override {
+      auto result = hash_code {};
+      for (const auto& item : *this)
+        result.add(item);
+      return result.to_hash_code();
+    }
 
     /// @brief Obtains a subspan consisting of the last N elements of the sequence
     /// @param count The count elements.
