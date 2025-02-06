@@ -3,12 +3,17 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "end_point.hpp"
+#include "../iequatable.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::net namespace provides a simple programming interface for many of the protocols used on networks today. The xtd::net::web_request and xtd::net::web_response classes form the basis of what are called pluggable protocols, an implementation of network services that enables you to develop applications that use Internet resources without worrying about the specific details of the individual protocols.
   namespace net {
     /// @brief Represents a network endpoint as a host name or a string representation of an IP address and a port number.
+    /// @par Definition
+    /// ```cpp
+    /// class core_export_ dns_end_point : public xtd::net::end_point, public xtd::iequatable<xtd::net::dns_end_point>;
+    /// ```
     /// @par Header
     /// ```cpp
     /// #include <xtd/net/dns_end_point>
@@ -18,7 +23,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    class core_export_ dns_end_point : public xtd::net::end_point {
+    class core_export_ dns_end_point : public xtd::net::end_point, public xtd::iequatable<xtd::net::dns_end_point> {
     public:
       /// @name Public Constructors
       
@@ -62,6 +67,19 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const dns_end_point& other) const noexcept override;
+      
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+
       /// @brief Returns a string that represents the current object.
       /// @return string A string that represents the current object.
       xtd::string to_string() const noexcept override;
