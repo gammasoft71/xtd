@@ -3,7 +3,6 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../core_export.hpp"
-#include "../iequatable.hpp"
 #include "../object.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -26,7 +25,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core media
-    class core_export_ system_sound : public xtd::iequatable<system_sound>, public xtd::object {
+    class core_export_ system_sound : public xtd::object {
     public:
       /// @cond
       system_sound() = default;
@@ -35,9 +34,6 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
-      using object::equals;
-      bool equals(const system_sound& sound) const noexcept override;
-      
       /// @brief Plays the system sound type.
       /// @par Examples
       /// The following code example demonstrates the use of the xtd::media::system_sounds::asterisk property.
