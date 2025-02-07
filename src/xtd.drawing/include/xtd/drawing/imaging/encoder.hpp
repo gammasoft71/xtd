@@ -23,6 +23,7 @@ namespace xtd {
       /// @ingroup xtd_drawing
       /// @remarks When you pass a parameter to an image encoder, the parameter is encapsulated in an EncoderParameter object. One of the fields of the EncoderParameter object is a GUID that specifies the category of the parameter. Use the static fields of the Encoder class to retrieve an Encoder that contains parameters of the desired category.
       /// @remarks The image encoders that are built into GDI+ receive parameters that belong to several categories. The following table lists all the categories and the GUID associated with each category.
+      /// 
       /// | Category          | GUID                                 |
       /// | ----------------- | ------------------------------------ |
       /// | chrominance_table | f2e455dc-09b3-4316-8260-676ada32481c |
@@ -42,15 +43,16 @@ namespace xtd {
         /// @{
         /// @brief Initializes a new instance of the xtd::drawing::imaging::encoder class from the specified globally unique identifier (GUID). The GUID specifies an image encoder parameter category.
         /// @param guid A globally unique identifier that identifies an image encoder parameter category.
-        explicit encoder(const xtd::guid& guid) : guid_(guid) {}
+        explicit encoder(const xtd::guid& guid);
         /// @}
         
         /// @cond
         encoder() = default;
+        encoder(encoder&&) = default;
         encoder(const encoder&) = default;
+        encoder& operator =(encoder&&) = default;
         encoder& operator =(const encoder&) = default;
         /// @endcond
-        
         
         /// @name Public Fields
         
@@ -69,7 +71,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::scan_method 3a4e2661-3109-4e56-8536-42c156e7dcfa
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
-        static encoder chrominance_table() noexcept {return encoder(xtd::guid("f2e455dc-09b3-4316-8260-676ada32481c"));}
+        static encoder chrominance_table() noexcept;
         
         /// @brief An Encoder object that is initialized with the globally unique identifier for the color depth parameter category.
         /// @return The encoder.
@@ -85,7 +87,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::scan_method 3a4e2661-3109-4e56-8536-42c156e7dcfa
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
-        static encoder color_depth() noexcept {return encoder(xtd::guid("66087055-ad66-4c7c-9a18-38a2310b8337"));}
+        static encoder color_depth() noexcept;
         
         /// @brief An Encoder object that is initialized with the globally unique identifier for the compression parameter category.
         /// @return The encoder.
@@ -101,7 +103,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::scan_method 3a4e2661-3109-4e56-8536-42c156e7dcfa
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
-        static encoder compression() noexcept {return encoder(xtd::guid("e09d739d-ccd4-44ee-8eba-3fbf8be4fc58"));}
+        static encoder compression() noexcept;
         
         /// @brief An Encoder object that is initialized with the globally unique identifier for the luminance table parameter category.
         /// @return The encoder.
@@ -117,7 +119,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::scan_method 3a4e2661-3109-4e56-8536-42c156e7dcfa
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
-        static encoder luminance_table() noexcept {return encoder(xtd::guid("edb33bce-0266-4a77-b904-27216099e717"));}
+        static encoder luminance_table() noexcept;
         
         /// @brief An Encoder object that is initialized with the globally unique identifier for the quality parameter category.
         /// @return The encoder.
@@ -133,7 +135,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::scan_method 3a4e2661-3109-4e56-8536-42c156e7dcfa
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
-        static encoder quality() noexcept {return encoder(xtd::guid("1d5be4b5-fa4a-452d-9cdd-5db35105e7eb"));}
+        static encoder quality() noexcept;
         
         /// @brief An Encoder object that is initialized with the globally unique identifier for the renderer method category.
         /// @return The encoder.
@@ -149,7 +151,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::scan_method 3a4e2661-3109-4e56-8536-42c156e7dcfa
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
-        static encoder render_method() noexcept {return encoder(xtd::guid("6d42c53a-229a-4825-8bb7-5c99e2b9a8b8"));}
+        static encoder render_method() noexcept;
         
         /// @brief An Encoder object that is initialized with the globally unique identifier for the save flag category.
         /// @return The encoder.
@@ -165,7 +167,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::scan_method 3a4e2661-3109-4e56-8536-42c156e7dcfa
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
-        static encoder save_flag() noexcept {return encoder(xtd::guid("292266fc-ac40-47bf-8cfc-a85b89a655de"));}
+        static encoder save_flag() noexcept;
         
         /// @brief An Encoder object that is initialized with the globally unique identifier for the scan method category.
         /// @return The encoder.
@@ -181,7 +183,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::scan_method 3a4e2661-3109-4e56-8536-42c156e7dcfa
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
-        static encoder scan_method() noexcept {return encoder(xtd::guid("3a4e2661-3109-4e56-8536-42c156e7dcfa"));}
+        static encoder scan_method() noexcept;
         
         /// @brief An Encoder object that is initialized with the globally unique identifier for the transformation category.
         /// @return The encoder.
@@ -197,7 +199,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::scan_method 3a4e2661-3109-4e56-8536-42c156e7dcfa
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
-        static encoder transformation() noexcept {return encoder(xtd::guid("8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9"));}
+        static encoder transformation() noexcept;
         
         /// @brief An Encoder object that is initialized with the globally unique identifier for the version category.
         /// @return The encoder.
@@ -213,7 +215,7 @@ namespace xtd {
         /// * xtd::drawing::imaging:encoder::scan_method 3a4e2661-3109-4e56-8536-42c156e7dcfa
         /// * xtd::drawing::imaging:encoder::transformation 8d0eb2d1-a58e-4ea8-aa14-108074b7b6f9
         /// * xtd::drawing::imaging:encoder::version 24d18c76-814a-41a4-bf53-1c219cccf797
-        static encoder version() noexcept {return encoder(xtd::guid("24d18c76-814a-41a4-bf53-1c219cccf797"));}
+        static encoder version() noexcept;
         /// @}
         
         /// @name Public Properties
@@ -221,14 +223,24 @@ namespace xtd {
         /// @{
         /// @brief Gets a globally unique identifier (GUID) that identifies an image encoder parameter category.
         /// @return The GUID that identifies an image encoder parameter category.
-        const xtd::guid& guid() const noexcept {return guid_;}
+        const xtd::guid& guid() const noexcept;
         /// @}
         
         /// @name Public Methods
         
         /// @{
-        using object::equals;
-        bool equals(const encoder& value) const noexcept override {return guid_ == value.guid_;}
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param obj The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const object& obj) const noexcept override;
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param other The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const encoder& other) const noexcept override;
+        
+        /// @brief Serves as a hash function for a particular type.
+        /// @return A hash code for the current object.
+        xtd::size get_hash_code() const noexcept override;
         /// @}
         
       private:
