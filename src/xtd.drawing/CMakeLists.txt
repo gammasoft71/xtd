@@ -311,6 +311,7 @@ add_sources(
   src/xtd/drawing/drawing_2d/linear_gradient_brush.cpp
   src/xtd/drawing/drawing_2d/matrix.cpp
   src/xtd/drawing/drawing_2d/radial_gradient_brush.cpp
+  src/xtd/drawing/imaging/color_palette.cpp
   src/xtd/drawing/imaging/encoder_parameter.cpp
   src/xtd/drawing/text/installed_font_collection.cpp
   src/xtd/drawing/text/private_font_collection.cpp

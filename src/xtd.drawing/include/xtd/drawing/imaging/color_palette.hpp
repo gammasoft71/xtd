@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../color.hpp"
+#include <xtd/collections/generic/list>
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <cstdint>
@@ -30,7 +31,9 @@ namespace xtd {
       class color_palette final : public object, public xtd::iequatable<color_palette> {
       public:
         /// @cond
+        color_palette(color_palette&&) = default;
         color_palette(const color_palette&) = default;
+        color_palette& operator =(color_palette&&) = default;
         color_palette& operator =(const color_palette&) = default;
         /// @endcond
         
@@ -39,27 +42,37 @@ namespace xtd {
         /// @{
         /// @brief Gets an array of color structures.
         /// @return The array of color structure that make up this color_palette.
-        const std::vector<color>& entries() const noexcept {return entries_;}
+        xtd::array<color> entries() const noexcept;
         
         /// @brief Gets a value that specifies how to interpret the color information in the array of colors.
         /// @remarks The following flag values are valid:
         /// * 0x00000001 The color values in the array contain alpha information.
         /// * 0x00000002 The colors in the array are grayscale values.
         /// * 0x00000004 The colors in the array are halftone values.
-        int32 flags() const noexcept {return flags_;}
+        int32 flags() const noexcept;
         /// @}
         
         /// @name Public Methods
         
         /// @{
-        using object::equals;
-        bool equals(const color_palette& value) const noexcept override {return entries_ == value.entries_ && flags_ == value.flags_;}
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param obj The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const object& obj) const noexcept override;
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param other The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const color_palette& other) const noexcept override;
+        
+        /// @brief Serves as a hash function for a particular type.
+        /// @return A hash code for the current object.
+        xtd::size get_hash_code() const noexcept override;
         /// @}
         
       private:
         friend class xtd::drawing::image;
         color_palette() = default;
-        std::vector<color> entries_;
+        xtd::collections::generic::list<color> entries_;
         int32 flags_ = 0;
       };
     }
