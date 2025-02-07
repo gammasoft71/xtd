@@ -2,6 +2,7 @@
 /// @brief Contains xtd::reflection::assembly_product_attribute attribute.
 #pragma once
 #include "../attribute.hpp"
+#include "../iequatable.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -9,7 +10,7 @@ namespace xtd {
   namespace reflection {
     /// @brief Defines a product name custom attribute for an assembly manifest.
     /// ```cpp
-    /// class core_export_ assembly_product_attribute final : public xtd::attribute
+    /// class assembly_product_attribute final : public xtd::attribute, public xtd::iequatable<xtd::reflection::assembly_product_attribute>;
     /// ```
     /// @par Inheritance
     /// xtd::object → xtd::attribute → xtd::reflection::assembly_product_attribute
@@ -22,7 +23,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    class assembly_product_attribute final : public xtd::attribute {
+    class assembly_product_attribute final : public xtd::attribute, public xtd::iequatable<xtd::reflection::assembly_product_attribute> {
     public:
       /// @name Public Constructors
       
@@ -42,7 +43,24 @@ namespace xtd {
       /// @return A string containing the product information.
       const string& product() const noexcept;
       /// @}
+
+      /// @name Public Methods
       
+      /// @{
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const assembly_product_attribute& other) const noexcept override;
+      
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+      /// @}
+
     protected:
       xtd::sptr<object> get_type_id() const noexcept override;
       
