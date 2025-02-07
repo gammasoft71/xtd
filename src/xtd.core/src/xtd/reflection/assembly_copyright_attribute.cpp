@@ -14,6 +14,18 @@ const string& assembly_copyright_attribute::copyright() const noexcept {
   return copyright_;
 }
 
+bool assembly_copyright_attribute::equals(const object& obj) const noexcept {
+  return is<assembly_copyright_attribute>(obj) && equals(static_cast<const assembly_copyright_attribute&>(obj));
+}
+
+bool assembly_copyright_attribute::equals(const assembly_copyright_attribute& other) const noexcept {
+  return copyright_ == other.copyright_;
+}
+
+size assembly_copyright_attribute::get_hash_code() const noexcept {
+  return hash_code::combine(copyright_);
+}
+
 xtd::sptr<object> assembly_copyright_attribute::get_type_id() const noexcept {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
 }
