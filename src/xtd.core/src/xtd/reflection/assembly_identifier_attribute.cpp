@@ -14,6 +14,18 @@ const string& assembly_identifier_attribute::identifier() const noexcept {
   return identifier_;
 }
 
+bool assembly_identifier_attribute::equals(const object& obj) const noexcept {
+  return is<assembly_identifier_attribute>(obj) && equals(static_cast<const assembly_identifier_attribute&>(obj));
+}
+
+bool assembly_identifier_attribute::equals(const assembly_identifier_attribute& other) const noexcept {
+  return identifier_ == other.identifier_;
+}
+
+size assembly_identifier_attribute::get_hash_code() const noexcept {
+  return hash_code::combine(identifier_);
+}
+
 xtd::sptr<object> assembly_identifier_attribute::get_type_id() const noexcept {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
 }
