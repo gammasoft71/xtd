@@ -125,7 +125,7 @@ bool radial_gradient_brush::equals(const radial_gradient_brush& value) const noe
 
 void radial_gradient_brush::recreate_handle() {
   auto colors = std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> {};
-  for_each(data_->radial_colors.begin(), data_->radial_colors.end(), [&](auto color) {colors.emplace_back(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second);});
+  std::for_each(data_->radial_colors.begin(), data_->radial_colors.end(), [&](auto color) {colors.emplace_back(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second);});
   native::brush::radial_gradient(handle(), as<int32>(data_->center_point.x), as<int32>(data_->center_point.y), as<int32>(data_->focal_point.x), as<int32>(data_->focal_point.y), colors, data_->radius);
 }
 
