@@ -2,6 +2,7 @@
 /// @brief Contains xtd::reflection::assembly_version_attribute attribute.
 #pragma once
 #include "../attribute.hpp"
+#include "../iequatable.hpp"
 
 /// @cond
 /// Internal used only
@@ -16,7 +17,7 @@ namespace xtd {
   namespace reflection {
     /// @brief Specifies the version of the assembly being attributed.
     /// ```cpp
-    /// class core_export_ assembly_version_attribute final : public xtd::attribute
+    /// class core_export_ assembly_version_attribute final : public xtd::attribute, public xtd::iequatable<xtd::reflection::assembly_version_attribute>;
     /// ```
     /// @par Inheritance
     /// xtd::object → xtd::attribute → xtd::reflection::assembly_version_attribute
@@ -29,7 +30,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    class core_export_ assembly_version_attribute final : public xtd::attribute {
+    class core_export_ assembly_version_attribute final : public xtd::attribute, public xtd::iequatable<xtd::reflection::assembly_version_attribute> {
     public:
       /// @{
       /// @brief Initializes a new instance of the xtd::reflection::assembly_version_attribute class.
@@ -47,7 +48,24 @@ namespace xtd {
       /// @return A string containing the version information.
       const string& version() const noexcept;
       /// @}
+
+      /// @name Public Methods
       
+      /// @{
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const assembly_version_attribute& other) const noexcept override;
+      
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+      /// @}
+
     protected:
       xtd::sptr<object> get_type_id() const noexcept override;
       
