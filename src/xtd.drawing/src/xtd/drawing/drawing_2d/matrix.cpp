@@ -66,8 +66,16 @@ float matrix::offset_y() const {
   return native::matrix::offset_y(handle());
 }
 
+bool matrix::equals(const object& obj) const noexcept {
+  return is<matrix>(obj) && equals(static_cast<const matrix&>(obj));
+}
+
 bool matrix::equals(const matrix& value) const noexcept {
   return data_ == value.data_;
+}
+
+xtd::size matrix::get_hash_code() const noexcept {
+  return hash_code::combine(data_->handle);
 }
 
 void matrix::invert() {

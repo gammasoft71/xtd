@@ -137,9 +137,19 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        using object::equals;
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param obj The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const xtd::object& obj) const noexcept override;
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param value The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
         bool equals(const xtd::drawing::drawing_2d::matrix& value) const noexcept override;
         
+        /// @brief Serves as a hash function for a particular type.
+        /// @return A hash code for the current object.
+        xtd::size get_hash_code() const noexcept override;
+
         /// @brief Inverts this xtd::drawing::drawing_2d::matrix, if it is invertible.
         void invert();
         
