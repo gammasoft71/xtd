@@ -86,9 +86,19 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
-      using object::equals;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const object& obj) const noexcept;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
       bool equals(const cancellation_token& other) const noexcept;
       
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+
       /// @brief Throws a xtd::operation_canceled_exception if this token has had cancellation requested.
       /// @exception xtd::operation_canceled_exception The token has had cancellation requested.
       /// @remarks This method provides functionality equivalent to:
