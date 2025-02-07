@@ -13,6 +13,18 @@ const string& assembly_company_attribute::company() const noexcept {
   return company_;
 }
 
+bool assembly_company_attribute::equals(const object& obj) const noexcept {
+  return is<assembly_company_attribute>(obj) && equals(static_cast<const assembly_company_attribute&>(obj));
+}
+
+bool assembly_company_attribute::equals(const assembly_company_attribute& other) const noexcept {
+  return company_ == other.company_;
+}
+
+size assembly_company_attribute::get_hash_code() const noexcept {
+  return hash_code::combine(company_);
+}
+
 xtd::sptr<object> assembly_company_attribute::get_type_id() const noexcept {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
 }
