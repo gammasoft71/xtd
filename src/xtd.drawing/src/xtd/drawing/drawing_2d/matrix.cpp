@@ -141,7 +141,7 @@ void matrix::transform_vectors(std::vector<xtd::drawing::point>& points) {
   std::for_each(points.begin(), points.end(), [&](auto point) {tr_points.emplace_back(point.x, point.y);});
   native::matrix::transform_vectors(handle(), tr_points);
   points.clear();
-  for_each(tr_points.begin(), tr_points.end(), [&](const key_value_pair<int32, int32>& point) {points.push_back(xtd::drawing::point(point.first, point.second));});
+  std::for_each(tr_points.begin(), tr_points.end(), [&](const key_value_pair<int32, int32>& point) {points.push_back(xtd::drawing::point(point.first, point.second));});
 }
 
 void matrix::transform_vectors(std::vector<xtd::drawing::point_f>& points) {
@@ -149,7 +149,7 @@ void matrix::transform_vectors(std::vector<xtd::drawing::point_f>& points) {
   std::for_each(points.begin(), points.end(), [&](auto point) {tr_points.emplace_back(point.x, point.y);});
   native::matrix::transform_vectors(handle(), tr_points);
   points.clear();
-  for_each(tr_points.begin(), tr_points.end(), [&](const key_value_pair<float, float>&  point) {points.push_back(xtd::drawing::point_f(point.first, point.second));});
+  std::for_each(tr_points.begin(), tr_points.end(), [&](const key_value_pair<float, float>&  point) {points.push_back(xtd::drawing::point_f(point.first, point.second));});
 }
 
 void matrix::translate(float offset_x, float offset_y) {
@@ -165,7 +165,7 @@ void matrix::vector_transform_points(std::vector<xtd::drawing::point>& points) {
   std::for_each(points.begin(), points.end(), [&](auto point) {tr_points.emplace_back(point.x, point.y);});
   native::matrix::vector_transform_points(handle(), tr_points);
   points.clear();
-  for_each(tr_points.begin(), tr_points.end(), [&](const key_value_pair<int32, int32>& point) {points.push_back(xtd::drawing::point(point.first, point.second));});
+  std::for_each(tr_points.begin(), tr_points.end(), [&](const key_value_pair<int32, int32>& point) {points.push_back(xtd::drawing::point(point.first, point.second));});
 }
 
 xtd::string matrix::to_string() const noexcept {

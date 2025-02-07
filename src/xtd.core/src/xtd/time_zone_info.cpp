@@ -159,7 +159,7 @@ const std::list<time_zone_info>& time_zone_info::get_system_time_zones() noexcep
   static auto system_time_zones = std::list<time_zone_info> {};
   if (system_time_zones.size()) return system_time_zones;
   auto stzs = native::date_time::get_system_time_zones();
-  for_each(stzs.begin(), stzs.end(), [&](auto item) {system_time_zones.emplace_back(time_zone_info(item.id, ticks(item.base_utc_offset), item.daylight_name, item.display_name, item.standard_name, item.supports_daylight_saving_time));});
+  std::for_each(stzs.begin(), stzs.end(), [&](auto item) {system_time_zones.emplace_back(time_zone_info(item.id, ticks(item.base_utc_offset), item.daylight_name, item.display_name, item.standard_name, item.supports_daylight_saving_time));});
   return system_time_zones;
 }
 

@@ -42,7 +42,7 @@ std::vector<xtd::string> translator::languages() {
   }
   static auto languages = std::vector<xtd::string> {};
   if (!languages.empty()) return languages;
-  for_each(language_values_.begin(), language_values_.end(), [&](auto language_value) {languages.push_back(language_value.first);});
+  std::for_each(language_values_.begin(), language_values_.end(), [&](auto language_value) {languages.push_back(language_value.first);});
   return languages;
 }
 
