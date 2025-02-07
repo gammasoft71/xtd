@@ -1,6 +1,7 @@
 /// @file
 /// @brief Contains xtd::reflection::assembly class.
 #pragma once
+#include "../iequatable.hpp"
 #include "../object.hpp"
 #include "../string.hpp"
 
@@ -10,7 +11,7 @@ namespace xtd {
   namespace reflection {
     /// @brief Represents an assembly, which is a reusable, versionable, and self-describing building block of an application.
     /// ```cpp
-    /// class assembly : public xtd::object
+    /// class core_export_ assembly : public xtd::object, public xtd::iequatable<xtd::reflection::assembly>;
     /// ```
     /// @par Inheritance
     /// xtd::object → xtd::reflection::assembly
@@ -23,7 +24,7 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    class core_export_ assembly : public xtd::object {
+    class core_export_ assembly : public xtd::object, public xtd::iequatable<xtd::reflection::assembly> {
     public:
       /// @cond
       assembly(const assembly&) = default;
@@ -95,7 +96,24 @@ namespace xtd {
       const string& version() const noexcept;
       /// @}
       
-      /// @name Static ethods
+      /// @name Public Methods
+      
+      /// @{
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const assembly& other) const noexcept override;
+      
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+      /// @}
+      
+      /// @name Public Static Methods
       
       /// @{
       /// @brief Gets the assembly that contains the code that is currently executing.
