@@ -14,6 +14,18 @@ const string& assembly_configuration_attribute::configuration() const noexcept {
   return configuration_;
 }
 
+bool assembly_configuration_attribute::equals(const object& obj) const noexcept {
+  return is<assembly_configuration_attribute>(obj) && equals(static_cast<const assembly_configuration_attribute&>(obj));
+}
+
+bool assembly_configuration_attribute::equals(const assembly_configuration_attribute& other) const noexcept {
+  return configuration_ == other.configuration_;
+}
+
+size assembly_configuration_attribute::get_hash_code() const noexcept {
+  return hash_code::combine(configuration_);
+}
+
 xtd::sptr<object> assembly_configuration_attribute::get_type_id() const noexcept {
   return xtd::guid::new_guid().memberwise_clone<xtd::guid>();
 }
