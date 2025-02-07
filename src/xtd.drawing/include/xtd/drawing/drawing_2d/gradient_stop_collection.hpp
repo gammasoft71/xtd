@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "gradient_stop.hpp"
-#include <vector>
+#include <xtd/collections/generic/list>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -17,7 +17,7 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing brushes
-      using gradient_stop_collection = std::vector<xtd::drawing::drawing_2d::gradient_stop>;
+      using gradient_stop_collection = xtd::collections::generic::list<xtd::drawing::drawing_2d::gradient_stop>;
     }
   }
 }
