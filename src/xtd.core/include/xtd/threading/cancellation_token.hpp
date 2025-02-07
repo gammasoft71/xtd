@@ -89,11 +89,11 @@ namespace xtd {
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const object& obj) const noexcept;
+      bool equals(const object& obj) const noexcept override;
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param other The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-      bool equals(const cancellation_token& other) const noexcept;
+      bool equals(const cancellation_token& other) const noexcept override;
       
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.
