@@ -31,15 +31,23 @@ threading::wait_handle& cancellation_token::wait_handle() noexcept {
   return *wait_handle_;
 }
 
+bool cancellation_token::equals(const object& obj) const noexcept {
+  return is<cancellation_token>(obj) && equals(static_cast<const cancellation_token&>(obj));
+}
+
 bool cancellation_token::equals(const cancellation_token& other) const noexcept {
   return token_source_ == other.token_source_;
+}
+
+size cancellation_token::get_hash_code() const noexcept {
+  if (!token_source_) return hash_code::combine(null);
+  return hash_code::combine(*token_source_);
 }
 
 void cancellation_token::throw_if_cancellation_requested() const {
   if (!is_cancellation_requested()) return;
   throw operation_canceled_exception {};
 }
-
 
 cancellation_token::cancellation_token(cancellation_token_source& token_source) {
   token_source_ = &token_source;
