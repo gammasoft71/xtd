@@ -67,6 +67,18 @@ const string& assembly::version() const noexcept {
   return version_;
 }
 
+bool assembly::equals(const object& obj) const noexcept {
+  return is<assembly>(obj) && equals(static_cast<const assembly&>(obj));
+}
+
+bool assembly::equals(const assembly& other) const noexcept {
+  return company_ == other.company_ && configuration_ == other.configuration_ && copyright_ == other.copyright_ && culture_ == other.culture_ && description_ == other.description_ && file_version_ == other.file_version_ && guid_ == other.guid_ && identifier_ == other.identifier_ && name_ == other.name_ && product_ == other.product_ && title_ == other.title_ && trademarks_ == other.trademarks_ && version_ == other.version_;
+}
+
+size assembly::get_hash_code() const noexcept {
+  return hash_code::combine(company_, configuration_, copyright_, culture_, description_, file_version_, guid_, identifier_, name_, product_, title_, trademarks_, version_);
+}
+
 const assembly& assembly::get_executing_assembly() noexcept {
   static auto current_assembly = assembly {};
   if (__assembly_company_attribute__() && current_assembly.company_ != __assembly_company_attribute__()->company()) current_assembly.company_ = __assembly_company_attribute__()->company();
