@@ -157,6 +157,10 @@
     |   |     /// @brief Contains interfaces extensions.
     |   |     /// @ingroup system
     |   |     /// @defgroup extensions extensions
+    |   |- helpers
+    |   |     /// @brief Contains object helpers.
+    |   |     /// @ingroup system
+    |   |     /// @defgroup helpers helpers
     |   |- io
     |   |     /// @brief Contains io definitions.
     |   |     /// @ingroup system
