@@ -614,8 +614,14 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
-      using object::equals;
-      bool equals(const color& value) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const xtd::object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const color& other) const noexcept override;
 
       /// @brief Gets the hue-saturation-brightness (HSB) brightness value for this xtd::drawing::color structure.
       /// @return The brightness of this xtd::drawing::color. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white.
@@ -668,6 +674,10 @@ namespace xtd {
       /// ```
       float get_brightness() const noexcept;
       
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+
       /// @brief Gets the hue-saturation-brightness (HSB) hue value, in degrees, for this xtd::drawing::color structure.
       /// @return The hue, in degrees, of this xtd::drawing::color. The hue is measured in degrees, ranging from 0.0 through 360.0, in HSL color space.
       /// @par Examples
