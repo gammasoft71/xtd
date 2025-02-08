@@ -399,7 +399,6 @@ void image::update_properties() {
   for (const native::image::property_item& i : native::image::property_items(data_->handle_)) {
     auto item = imaging::property_item {};
     item.id(i.id);
-    item.len(i.len);
     item.value(i.value);
     data_->property_items_.push_back(item);
   }

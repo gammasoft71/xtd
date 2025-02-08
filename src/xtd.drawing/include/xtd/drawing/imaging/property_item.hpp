@@ -2,10 +2,9 @@
 /// @brief Contains xtd::drawing::imaging::property_item class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include <xtd/array>
 #include <xtd/iequatable>
 #include <xtd/object>
-#include <cstdint>
-#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -23,7 +22,7 @@ namespace xtd {
       /// @remarks The data consists of: an identifier, the length (in bytes) of the property, the property type, and a pointer to the property value.
       /// @remarks A property_item is not intended to be used as a stand-alone object. A property_item object is intended to be used by classes that are derived from image. A property_item object is used to retrieve and to change the metadata of existing image files, not to create the metadata. Therefore, the property_item class does not have a defined Public constructor, and you cannot create an instance of a property_item object.
       /// @remarks To work around the absence of a Public constructor, use an existing property_item object instead of creating a new instance of the property_item class. For more information, see image.Getproperty_item.
-      class property_item final : public object, iequatable<property_item> {
+      class property_item final : public xtd::object, xtd::iequatable<property_item> {
       public:
         /// @cond
         property_item() = default;
@@ -254,9 +253,9 @@ namespace xtd {
         /// | 0xA300 | property_tag_exif_file_Source                 |
         /// | 0xA301 | property_tag_exif_scene_type                  |
         /// | 0xA302 | property_tag_exif_cfa_pattern                 |
-        int32 id() const noexcept {return id_;}
+        xtd::int32 id() const noexcept;
         /// @brief Sets the ID of the property.
-        /// @param id The integer that represents the ID of the property.
+        /// @param value The integer that represents the ID of the property.
         /// @remarks The following table shows the property tags and their IDs.
         /// | ID     | Property tag                                  |
         /// | ------ | --------------------------------------------- |
@@ -477,14 +476,11 @@ namespace xtd {
         /// | 0xA300 | property_tag_exif_file_Source                 |
         /// | 0xA301 | property_tag_exif_scene_type                  |
         /// | 0xA302 | property_tag_exif_cfa_pattern                 |
-        void id(int32 id) noexcept {id_ = id;}
+        void id(xtd::int32 value) noexcept;
         
         /// @brief Gets the length (in bytes) of the value property.
         /// @return An integer that represents the length (in bytes) of the value byte array.
-        int32 len() const noexcept {return len_;}
-        /// @brief Sets the length (in bytes) of the value property.
-        /// &param len An integer that represents the length (in bytes) of the value byte array.
-        void len(int32 len) noexcept {len_ = len;}
+        xtd::size len() const noexcept;
         
         /// @brief Gets an integer that defines the type of data contained in the value property.
         /// @return An integer that defines the type of data contained in value.
@@ -499,9 +495,9 @@ namespace xtd {
         /// | 6       | Specifies that Value is an array of bytes that can hold values of any data type.                                                                                                                                                                            |
         /// | 7       | Specifies that Value is an array of signed long (32-bit) integers.                                                                                                                                                                                          |
         /// | 10      | Specifies that Value is an array of pairs of signed long integers. Each pair represents a fraction; the first integer is the numerator and the second integer is the denominator.                                                                           |
-        int16 type() const noexcept {return type_;}
+        xtd::int16 type() const noexcept;
         /// @brief Sets an integer that defines the type of data contained in the value property.
-        /// @param type An integer that defines the type of data contained in value.
+        /// @param value An integer that defines the type of data contained in value.
         /// @remarks The following table shows integers and the types they represent.
         /// | Integer | Represented Type                                                                                                                                                                                                                                            |
         /// | ------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -513,34 +509,43 @@ namespace xtd {
         /// | 6       | Specifies that Value is an array of bytes that can hold values of any data type.                                                                                                                                                                            |
         /// | 7       | Specifies that Value is an array of signed long (32-bit) integers.                                                                                                                                                                                          |
         /// | 10      | Specifies that Value is an array of pairs of signed long integers. Each pair represents a fraction; the first integer is the numerator and the second integer is the denominator.                                                                           |
-        void type(int16 type) noexcept {type_ = type;}
+        void type(xtd::int16 value) noexcept;
         
         /// @brief Gets the value of the property item.
         /// @return A byte array that represents the value of the property item.
         /// @remarks The byte array returned by the Value property contains data in one of several different primitive types. To use the data, determine the data type using the type property and convert the byte array accordingly.
-        const std::vector<xtd::byte>& value() const noexcept {return value_;}
+        const xtd::array<xtd::byte>& value() const noexcept;
         /// @brief Gets the value of the property item.
         /// @return A byte array that represents the value of the property item.
         /// @remarks The byte array returned by the Value property contains data in one of several different primitive types. To use the data, determine the data type using the type property and convert the byte array accordingly.
-        std::vector<xtd::byte>& value() noexcept {return value_;}
+        xtd::array<xtd::byte>& value() noexcept;
         /// @brief Sets the value of the property item.
         /// @param value A byte array that represents the value of the property item.
         /// @remarks The byte array returned by the Value property contains data in one of several different primitive types. To use the data, determine the data type using the type property and convert the byte array accordingly.
-        void value(const std::vector<xtd::byte>& value) noexcept {value_ = value;}
+        void value(const xtd::array<xtd::byte>& value) noexcept;
         /// @}
 
         /// @name Public Properties
         
         /// @{
-        using object::equals;
-        bool equals(const property_item& value) const noexcept override {return id_ == value.id_ && len_ == value.len_ && type_ == value.type_ && value_ != value.value_;}
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param obj The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const xtd::object& obj) const noexcept override;
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param other The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const property_item& other) const noexcept override;
+        
+        /// @brief Serves as a hash function for a particular type.
+        /// @return A hash code for the current object.
+        xtd::size get_hash_code() const noexcept override;
         /// @}
 
       private:
-        int32 id_ = 0;
-        int32 len_ = 0;
-        int16 type_ = 1;
-        std::vector<xtd::byte> value_;
+        xtd::int32 id_ = 0;
+        xtd::int16 type_ = 1;
+        xtd::array<xtd::byte> value_;
       };
     }
   }

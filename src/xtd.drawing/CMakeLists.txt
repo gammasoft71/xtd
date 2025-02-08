@@ -316,6 +316,7 @@ add_sources(
   src/xtd/drawing/imaging/encoder_parameter.cpp
   src/xtd/drawing/imaging/frame_dimension.cpp
   src/xtd/drawing/imaging/image_format.cpp
+  src/xtd/drawing/imaging/property_item.cpp
   src/xtd/drawing/text/installed_font_collection.cpp
   src/xtd/drawing/text/private_font_collection.cpp
 )
