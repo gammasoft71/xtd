@@ -236,11 +236,14 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
-      using object::equals;
       /// @brief Indicates whether the current object is equal to another object of the same type.
       /// @param obj An object to compare with this object.
       /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-      bool equals(const file_settings& obj) const noexcept override;
+      bool equals(const xtd::object& obj) const noexcept override;
+      /// @brief Indicates whether the current object is equal to another object of the same type.
+      /// @param other An object to compare with this object.
+      /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
+      bool equals(const file_settings& other) const noexcept override;
       
       /// @brief Sets the current settings with parsing the xtd::string in [INI format](https://en.wikipedia.org/wiki/INI_file).
       /// @param text A text to set the current setting.

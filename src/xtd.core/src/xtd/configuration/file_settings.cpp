@@ -91,8 +91,12 @@ file_settings& file_settings::top_file_comment(const xtd::string& value) noexcep
   return *this;
 }
 
-bool file_settings::equals(const file_settings& obj) const noexcept {
-  return section_key_values_ == obj.section_key_values_;
+bool file_settings::equals(const object& obj) const noexcept {
+  return is<file_settings>(obj) && equals(static_cast<const file_settings&>(obj));
+}
+
+bool file_settings::equals(const file_settings& other) const noexcept {
+  return section_key_values_ == other.section_key_values_;
 }
 
 void file_settings::from_string(const xtd::string& text) {
