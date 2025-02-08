@@ -309,7 +309,7 @@ encoder_parameters image::get_encoder_parameter_list(guid encoder) const noexcep
 }
 
 size_t image::get_frame_count(const frame_dimension& dimension) const {
-  auto iterator = find_if(data_->frame_dimensions.begin(), data_->frame_dimensions.end(), [&](auto frame) {return frame.first == dimension.guid();});
+  auto iterator = std::find_if(data_->frame_dimensions.begin(), data_->frame_dimensions.end(), [&](auto frame) {return frame.first == dimension.guid();});
   if (iterator == data_->frame_dimensions.end()) throw argument_exception {};
   return iterator->second;
 }

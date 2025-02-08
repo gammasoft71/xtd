@@ -94,7 +94,7 @@ namespace {
   
   bool is_valid_uri(const std::string& command_line) {
     static auto schemes = std::vector<std::string> {"file", "ftp", "gopher", "http", "https", "mailto", "net.pipe", "net.tcp", "news", "nntp"};
-    auto iterator = find_if(schemes.begin(), schemes.end(), [&](auto scheme) {return command_line.find(scheme + ":") == 0;});
+    auto iterator = std::find_if(schemes.begin(), schemes.end(), [&](auto scheme) {return command_line.find(scheme + ":") == 0;});
     return iterator != schemes.end();
   }
   
