@@ -8,6 +8,7 @@
 #include "../object.hpp"
 #include "../ptr.hpp"
 #include "../size.hpp"
+
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
   /// @brief The xtd::diagnostics namespace provides classes that allow you to interact with system processes, event logs, and performance counters.
