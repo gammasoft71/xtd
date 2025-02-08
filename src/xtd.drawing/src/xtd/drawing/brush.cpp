@@ -34,11 +34,19 @@ intptr brush::handle() const noexcept {
   return data_->handle_;
 }
 
-bool brush::equals(const brush& value) const noexcept {
-  return data_->handle_ == value.data_->handle_;
+bool brush::equals(const object& obj) const noexcept {
+  return is<brush>(obj) && equals(static_cast<const brush&>(obj));
 }
 
-xtd::string brush::to_string() const noexcept {
+bool brush::equals(const brush& other) const noexcept {
+  return data_->handle_ == other.data_->handle_;
+}
+
+size brush::get_hash_code() const noexcept {
+  return hash_code::combine(data_->handle_);
+}
+
+string brush::to_string() const noexcept {
   return get_type().full_name();
 }
 

@@ -51,9 +51,19 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
-      using object::equals;
-      bool equals(const brush& value) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const xtd::object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const brush& other) const noexcept override;
       
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+
       /// @brief Converts this brush object to a human-readable string.
       /// @return A string that represents this brush object.
       xtd::string to_string() const noexcept override;
