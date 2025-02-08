@@ -123,12 +123,19 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
-      using object::equals;
       /// @brief Indicates whether the current xtd::diagnostic::stack_frame is equal to another xtd::diagnostic::stack_frame.
-      /// @param sf An object to compare with this object.
+      /// @param obj An object to compare with this object.
       /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-      bool equals(const stack_frame& sf) const noexcept override;
+      bool equals(const xtd::object& obj) const noexcept override;
+      /// @brief Indicates whether the current xtd::diagnostic::stack_frame is equal to another xtd::diagnostic::stack_frame.
+      /// @param other An object to compare with this object.
+      /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
+      bool equals(const stack_frame& other) const noexcept override;
       
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+
       /// @brief Gets the column number in the file that contains the code that is executing. This information is typically extracted from the debugging symbols for the executable.
       /// @return The file column number, or 0 (zero) if the file column number cannot be determined.
       /// @par Examples
