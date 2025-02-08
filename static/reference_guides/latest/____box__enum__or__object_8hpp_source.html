@@ -97,21 +97,21 @@ $(function() {
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">struct </span>__box_enum_or_object__&lt;type_t, std::true_type&gt; {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">using </span><a class="code hl_typedef" href="group__types.html#gafa42bcceb7fb5768ea8cc4588e67dc15">type</a> = <a class="code hl_class" href="classxtd_1_1enum__object.html">xtd::enum_object&lt;type_t&gt;</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  <span class="keyword">using </span><a class="code hl_typedef" href="group__types.html#gafa42bcceb7fb5768ea8cc4588e67dc15">type</a> = <a class="code hl_struct" href="structxtd_1_1enum__object.html">xtd::enum_object&lt;type_t&gt;</a>;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>};</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">struct </span>__box_enum_or_object__&lt;type_t, std::false_type&gt; {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keyword">using </span><a class="code hl_typedef" href="group__types.html#gafa42bcceb7fb5768ea8cc4588e67dc15">type</a> = <span class="keyword">typename</span> std::conditional&lt;std::is_base_of&lt;xtd::object, type_t&gt;::value, type_t, <a class="code hl_class" href="classxtd_1_1box.html">xtd::box&lt;type_t&gt;</a>&gt;::type;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keyword">using </span><a class="code hl_typedef" href="group__types.html#gafa42bcceb7fb5768ea8cc4588e67dc15">type</a> = <span class="keyword">typename</span> std::conditional&lt;std::is_base_of&lt;xtd::object, type_t&gt;::value, type_t, <a class="code hl_struct" href="structxtd_1_1box.html">xtd::box&lt;type_t&gt;</a>&gt;::type;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>};</div>
-<div class="ttc" id="aclassxtd_1_1box_html"><div class="ttname"><a href="classxtd_1_1box.html">xtd::box</a></div><div class="ttdoc">Represents a boxed object.</div><div class="ttdef"><b>Definition</b> box.hpp:53</div></div>
-<div class="ttc" id="aclassxtd_1_1enum__object_html"><div class="ttname"><a href="classxtd_1_1enum__object.html">xtd::enum_object</a></div><div class="ttdoc">Provides the base class for enumerations.</div><div class="ttdef"><b>Definition</b> enum_object.hpp:42</div></div>
 <div class="ttc" id="agroup__types_html_gafa42bcceb7fb5768ea8cc4588e67dc15"><div class="ttname"><a href="group__types.html#gafa42bcceb7fb5768ea8cc4588e67dc15">xtd::type</a></div><div class="ttdeci">std::type_info type</div><div class="ttdoc">Stores information about a type.</div><div class="ttdef"><b>Definition</b> type.hpp:23</div></div>
+<div class="ttc" id="astructxtd_1_1box_html"><div class="ttname"><a href="structxtd_1_1box.html">xtd::box</a></div><div class="ttdoc">Represents a boxed object.</div><div class="ttdef"><b>Definition</b> box.hpp:56</div></div>
+<div class="ttc" id="astructxtd_1_1enum__object_html"><div class="ttname"><a href="structxtd_1_1enum__object.html">xtd::enum_object</a></div><div class="ttdoc">Provides the base class for enumerations.</div><div class="ttdef"><b>Definition</b> enum_object.hpp:48</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 2 2025 00:11:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 8 2025 21:59:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -91,26 +91,30 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">class </span>foo {</div>
-<div class="line"><span class="keyword">public</span>:</div>
+<div class="line"><span class="comment">// To box a structure or class, it must inherit the xtd::icomparable, xtd::iequatable and xtd::ihashable interfaces.</span></div>
+<div class="line"><span class="keyword">struct </span>foo : <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1icomparable.html">icomparable</a>&lt;foo&gt;, <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1iequatable.html">iequatable</a>&lt;foo&gt;, <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1ihashable.html">ihashable</a>, <a id="_a3" name="_a3"></a><a class="code hl_class" href="classxtd_1_1istringable.html">istringable</a> {</div>
 <div class="line">  foo() = <span class="keywordflow">default</span>;</div>
-<div class="line">  foo(<span class="keywordtype">int</span> value) : value_(value) {}</div>
+<div class="line">  foo(<span class="keywordtype">int</span> value) : value {value} {}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">int</span> value() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> value_;}</div>
+<div class="line">  <span class="keywordtype">int</span> value = 0;</div>
 <div class="line">  </div>
-<div class="line">  <span class="comment">// For boxing a struct, it must implements oprtat = and operator &lt;.</span></div>
-<div class="line">  <span class="comment">// Or the struct must xtd::inherites from icomparable and xtd::iequatble interfaces.</span></div>
-<div class="line">  <span class="keywordtype">bool</span> operator ==(<span class="keyword">const</span> foo&amp; v) <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> value_ == v.value_;}</div>
-<div class="line">  <span class="keywordtype">bool</span> operator &lt;(<span class="keyword">const</span> foo&amp; v) <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> value_ &lt; v.value_;}</div>
-<div class="line">  </div>
-<div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <span class="keywordtype">int</span> value_ = 0;</div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> compare_to(<span class="keyword">const</span> foo&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> value - other.value;}</div>
+<div class="line">  <a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a> get_hash_code() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> hash_code::combine(value);}</div>
+<div class="line">  <span class="keywordtype">bool</span> equals(<span class="keyword">const</span> foo&amp; other) <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> value == other.value;}</div>
+<div class="line">  <span class="keywordtype">string</span> to_string() <span class="keyword">const</span> <span class="keyword">noexcept</span> <span class="keyword">override</span> {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{}&quot;</span>, value);}</div>
 <div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>std {</div>
+<div class="line">  <span class="keyword">template</span>&lt;&gt;</div>
+<div class="line">  <span class="keyword">struct </span>hash&lt;foo&gt; {</div>
+<div class="line">    <span class="keywordtype">size_t</span> operator()(<span class="keyword">const</span> foo&amp;) {<span class="keywordflow">return</span> 0;}</div>
+<div class="line">  };</div>
+<div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> type_t&gt;</div>
 <div class="line"><span class="keywordtype">string</span> get_boxed_info(<span class="keyword">const</span> type_t&amp; value) {</div>
-<div class="line">  <span class="keyword">auto</span> boxed_value = boxing(value);</div>
-<div class="line">  <span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;[type = {}, boxed type = {}, value = {}]&quot;</span>, <a id="a0" name="a0"></a><a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(value), <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(boxed_value), boxed_value.to_string());</div>
+<div class="line">  <span class="keyword">auto</span> boxed_value = <a class="code hl_function" href="group__system.html#ga7352fcff0da12feb0aff421fc8c41d15">boxing</a>(value);</div>
+<div class="line">  <span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;[type = {}, boxed type = {}, value = {}]&quot;</span>, <a id="a4" name="a4"></a><a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(value), <a class="code hl_define" href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a>(boxed_value), boxed_value.to_string());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
@@ -135,13 +139,20 @@ $(function() {
 <div class="line"><span class="comment">// [type = xtd::date_time, boxed type = xtd::date_time, value = Thu Dec  1 20:00:57 2022]</span></div>
 <div class="line"><span class="comment">// [type = foo, boxed type = xtd::box&lt;foo&gt;, value = (unregistered)]</span></div>
 <div class="line"> </div>
+<div class="ttc" id="aclassxtd_1_1icomparable_html"><div class="ttname"><a href="classxtd_1_1icomparable.html">xtd::icomparable</a></div><div class="ttdoc">Defines a generalized comparison method that a value type or class implements to create a type-specif...</div><div class="ttdef"><b>Definition</b> icomparable.hpp:21</div></div>
+<div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:22</div></div>
+<div class="ttc" id="aclassxtd_1_1ihashable_html"><div class="ttname"><a href="classxtd_1_1ihashable.html">xtd::ihashable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> ihashable.hpp:21</div></div>
+<div class="ttc" id="aclassxtd_1_1istringable_html"><div class="ttname"><a href="classxtd_1_1istringable.html">xtd::istringable</a></div><div class="ttdoc">Provides a way to represent the current object as a string.</div><div class="ttdef"><b>Definition</b> istringable.hpp:23</div></div>
 <div class="ttc" id="agroup__keywords_html_gafa2ffd9b4a6568b57ab2731bec095d99"><div class="ttname"><a href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></div><div class="ttdeci">#define typeof_</div><div class="ttdoc">Used to obtain the type object of a specified type or object.</div><div class="ttdef"><b>Definition</b> typeof.hpp:45</div></div>
+<div class="ttc" id="agroup__system_html_ga7352fcff0da12feb0aff421fc8c41d15"><div class="ttname"><a href="group__system.html#ga7352fcff0da12feb0aff421fc8c41d15">xtd::boxing</a></div><div class="ttdeci">auto boxing(const type_t &amp;value) noexcept</div><div class="ttdoc">Allows to box an object.</div><div class="ttdef"><b>Definition</b> boxing.hpp:52</div></div>
+<div class="ttc" id="agroup__types_html_ga205462e259a4eca1545511085c2c350e"><div class="ttname"><a href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a></div><div class="ttdeci">int32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> int32.hpp:23</div></div>
+<div class="ttc" id="agroup__types_html_ga92c4f59ae39104d31ce9c0c20810001d"><div class="ttname"><a href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">Represents a size of any object in bytes.</div><div class="ttdef"><b>Definition</b> size.hpp:23</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 2 2025 00:11:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 8 2025 21:59:14 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

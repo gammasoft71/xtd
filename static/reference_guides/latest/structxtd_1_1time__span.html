@@ -99,7 +99,7 @@ Inheritance diagram for xtd::time_span:</div>
 <area href="classxtd_1_1icomparable.html" alt="xtd::icomparable&lt; time_span &gt;" shape="rect" coords="1419,56,1882,80"/>
 <area href="classxtd_1_1iformatable.html" title="Provides functionality to format the value of an object into a string representation." alt="xtd::iformatable" shape="rect" coords="2128,56,2591,80"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="236,0,699,24"/>
-<area href="classxtd_1_1extensions_1_1equality__operators.html" title="Internal comparable operators definition." alt="xtd::extensions::equality_operators&lt; type_t, equatable_t &gt;" shape="rect" coords="709,0,1172,24"/>
+<area href="classxtd_1_1extensions_1_1equality__operators.html" title="Internal equality operators definition." alt="xtd::extensions::equality_operators&lt; type_t, equatable_t &gt;" shape="rect" coords="709,0,1172,24"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="1182,0,1645,24"/>
 <area href="classxtd_1_1extensions_1_1comparison__operators.html" title="Internal comparable operators definition." alt="xtd::extensions::comparison_operators&lt; type_t, comparable_t &gt;" shape="rect" coords="1655,0,2118,24"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="2128,0,2591,24"/>
@@ -327,9 +327,15 @@ Inheritance diagram for xtd::time_span:</div>
 <tr class="memitem:ab216dbe88315d273b04fc283012b01f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1time__span.html">time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1time__span.html#ab216dbe88315d273b04fc283012b01f2">duration</a> () const noexcept</td></tr>
 <tr class="memdesc:ab216dbe88315d273b04fc283012b01f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object whose value is the absolute value of the current <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object.  <br /></td></tr>
 <tr class="separator:ab216dbe88315d273b04fc283012b01f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fa7418503988176e6ed3bfe4900c0b3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1time__span.html#a5fa7418503988176e6ed3bfe4900c0b3">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;value) const noexcept override</td></tr>
+<tr class="memdesc:a5fa7418503988176e6ed3bfe4900c0b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="separator:a5fa7418503988176e6ed3bfe4900c0b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0b3ad230c4ac192606142aadc05152c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1time__span.html#af0b3ad230c4ac192606142aadc05152c">equals</a> (const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;value) const noexcept override</td></tr>
-<tr class="memdesc:af0b3ad230c4ac192606142aadc05152c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
+<tr class="memdesc:af0b3ad230c4ac192606142aadc05152c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="separator:af0b3ad230c4ac192606142aadc05152c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26d5d2e5df9db3aef1a90bc1481a9b9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1time__span.html#a26d5d2e5df9db3aef1a90bc1481a9b9b">get_hash_code</a> () const noexcept override</td></tr>
+<tr class="memdesc:a26d5d2e5df9db3aef1a90bc1481a9b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="separator:a26d5d2e5df9db3aef1a90bc1481a9b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a59e31ff07fdb2e54358771a4ea8b4f21"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1time__span.html#a59e31ff07fdb2e54358771a4ea8b4f21">multiply</a> (const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;ts) const noexcept</td></tr>
 <tr class="memdesc:a59e31ff07fdb2e54358771a4ea8b4f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new xtd::time_spam object which value is the result of multiplication of this instance and the specified factor.  <br /></td></tr>
 <tr class="separator:a59e31ff07fdb2e54358771a4ea8b4f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -351,16 +357,9 @@ Inheritance diagram for xtd::time_span:</div>
 <tr class="memitem:a0f6373b00e7c3c8601166bb64a3b289c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1time__span.html#a0f6373b00e7c3c8601166bb64a3b289c">to_string</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a> &amp;<a class="el" href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">format</a>, const std::locale &amp;loc) const override</td></tr>
 <tr class="memdesc:a0f6373b00e7c3c8601166bb64a3b289c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object to its equivalent string representation by using the specified format, and locale.  <br /></td></tr>
 <tr class="separator:a0f6373b00e7c3c8601166bb64a3b289c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2743b6f75405882c28eebe2456f3837b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1time__span.html#a2743b6f75405882c28eebe2456f3837b">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept</td></tr>
-<tr class="memdesc:a2743b6f75405882c28eebe2456f3837b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="separator:a2743b6f75405882c28eebe2456f3837b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a164452fe9cdf507b747f78f3b9d73053"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structxtd_1_1time__span.html">time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1time__span.html#a164452fe9cdf507b747f78f3b9d73053">parse</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a> &amp;value)</td></tr>
 <tr class="memdesc:a164452fe9cdf507b747f78f3b9d73053"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the string representation of a time interval to its <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> equivalent.  <br /></td></tr>
 <tr class="separator:a164452fe9cdf507b747f78f3b9d73053"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t , class object_b_t &gt; </td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structxtd_1_1time__span.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
-<tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="separator:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
 <tr class="memitem:a0ef6ab5b6c2ae1113774882f7e60b700"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1time__span.html#a0ef6ab5b6c2ae1113774882f7e60b700">equals</a> (<a class="el" href="structxtd_1_1time__span.html">time_span</a> t1, <a class="el" href="structxtd_1_1time__span.html">time_span</a> t2)</td></tr>
@@ -424,9 +423,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ad2cab851376bb6ca085b567bf5da0f5f inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> ()=default</td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="separator:ad2cab851376bb6ca085b567bf5da0f5f inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a1fea096f8a49ac5eef1f2431806109ca">get_hash_code</a> () const noexcept</td></tr>
-<tr class="memdesc:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="separator:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="separator:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1639,7 +1635,8 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings: <table class="markdownTable">
+<dl class="section return"><dt>Returns</dt><dd>A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:</dd></dl>
+<table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Value   </th><th class="markdownTableHeadNone">Condition    </th></tr>
 <tr class="markdownTableRowOdd">
@@ -1649,7 +1646,6 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Greater than zero   </td><td class="markdownTableBodyNone">This instance is greater than obj.   </td></tr>
 </table>
-</dd></dl>
 
 <p>Implements <a class="el" href="classxtd_1_1icomparable.html#a8e5ad6ed9d798584e8b9be5749d6faa5">xtd::icomparable&lt; time_span &gt;</a>.</p>
 
@@ -1737,8 +1733,45 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
 
 </div>
 </div>
+<a id="a5fa7418503988176e6ed3bfe4900c0b3" name="a5fa7418503988176e6ed3bfe4900c0b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fa7418503988176e6ed3bfe4900c0b3">&#9670;&#160;</a></span>equals() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool xtd::time_span::equals </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">object</a> &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether the specified object is equal to the current object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The object to compare with the current object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object</a>.</p>
+
+</div>
+</div>
 <a id="af0b3ad230c4ac192606142aadc05152c" name="af0b3ad230c4ac192606142aadc05152c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0b3ad230c4ac192606142aadc05152c">&#9670;&#160;</a></span>equals() <span class="overload">[1/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af0b3ad230c4ac192606142aadc05152c">&#9670;&#160;</a></span>equals() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1750,6 +1783,42 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
           <td class="memname">bool xtd::time_span::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether the specified object is equal to the current object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The object to compare with the current object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
+
+<p>Implements <a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">xtd::iequatable&lt; time_span &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a26d5d2e5df9db3aef1a90bc1481a9b9b" name="a26d5d2e5df9db3aef1a90bc1481a9b9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26d5d2e5df9db3aef1a90bc1481a9b9b">&#9670;&#160;</a></span>get_hash_code()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> xtd::time_span::get_hash_code </td>
+          <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
@@ -1761,16 +1830,10 @@ See <a href="https://en.cppreference.com/w/cpp/chrono/duration">std::chrono::dur
 </table>
 </div><div class="memdoc">
 
-<p>Indicates whether the current object is equal to another object of the same type. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>An object to compare with this object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current object is equal to the other parameter; otherwise, <code>false</code>. </dd></dl>
+<p>Serves as a hash function for a particular type. </p>
+<dl class="section return"><dt>Returns</dt><dd>A hash code for the current object. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">xtd::iequatable&lt; time_span &gt;</a>.</p>
+<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">xtd::object</a>.</p>
 
 </div>
 </div>
@@ -2003,7 +2066,7 @@ At least one of the days, hours, minutes, or seconds components is outside its v
 <div class="line"><span class="comment">// Tue Jan  5 23:05:00 1971</span></div>
 <div class="line"><span class="comment">// false</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:42</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:43</div></div>
 <div class="ttc" id="agroup__types_html_ga14f390dd1d27bfab4cc2f26c1502c8ec"><div class="ttname"><a href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">xtd::ptr</a></div><div class="ttdeci">xtd::sptr&lt; type_t &gt; ptr</div><div class="ttdoc">The xtd::ptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> ptr.hpp:27</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -2191,7 +2254,7 @@ The formatting codes for <a class="el" href="structxtd_1_1time__span.html#a46964
 </div>
 </div>
 <a id="a0ef6ab5b6c2ae1113774882f7e60b700" name="a0ef6ab5b6c2ae1113774882f7e60b700"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ef6ab5b6c2ae1113774882f7e60b700">&#9670;&#160;</a></span>equals() <span class="overload">[2/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ef6ab5b6c2ae1113774882f7e60b700">&#9670;&#160;</a></span>equals() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3048,149 +3111,6 @@ value is <a class="el" href="classxtd_1_1box__floating__point.html#af0e356626d4d
 
 </div>
 </div>
-<a id="a2743b6f75405882c28eebe2456f3837b" name="a2743b6f75405882c28eebe2456f3837b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2743b6f75405882c28eebe2456f3837b">&#9670;&#160;</a></span>equals() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool xtd::object::equals </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">object</a> &amp;&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Determines whether the specified object is equal to the current object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>The object to compare with the current object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> object1 = new_ptr&lt;object&gt;();</div>
-<div class="line">  <span class="keyword">auto</span> object2 = new_ptr&lt;object&gt;();</div>
-<div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> object3 = object2;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(object1-&gt;equals(*object3));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(*object1 == *object3);</div>
-<div class="line">  object3 = object1;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(object1-&gt;equals(*object3));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(*object1 == *object3);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// false</span></div>
-<div class="line"><span class="comment">// false</span></div>
-<div class="line"><span class="comment">// true</span></div>
-<div class="line"><span class="comment">// true</span></div>
-</div><!-- fragment --> </dd></dl>
-
-<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object</a>.</p>
-
-</div>
-</div>
-<a id="a7fa6fd860800fb1dd1caac338e2355e6" name="a7fa6fd860800fb1dd1caac338e2355e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fa6fd860800fb1dd1caac338e2355e6">&#9670;&#160;</a></span>equals() <span class="overload">[4/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class object_a_t , class object_b_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static bool xtd::object::equals </td>
-          <td>(</td>
-          <td class="paramtype">const object_a_t &amp;&#160;</td>
-          <td class="paramname"><em>object_a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const object_b_t &amp;&#160;</td>
-          <td class="paramname"><em>object_b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Determines whether the specified object instances are considered equal. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">object_a</td><td>The first object to compare. </td></tr>
-    <tr><td class="paramname">object_b</td><td>The second object to compare. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns <code>true</code>. otherwise, <code>false</code>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keywordtype">string</span> s1 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
-<div class="line">  <span class="keywordtype">string</span> s2 = <span class="stringliteral">&quot;Carol&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">  </div>
-<div class="line">  s1 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
-<div class="line">  s2 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">  </div>
-<div class="line">  s1 = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line">  s2 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">  </div>
-<div class="line">  s1 = <span class="stringliteral">&quot;Carol&quot;</span>;</div>
-<div class="line">  s2 = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">  </div>
-<div class="line">  s1 = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line">  s2 = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;Tom&quot;, &quot;Carol&quot;) =&gt; false</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;Tom&quot;, &quot;Tom&quot;) =&gt; true</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;&quot;, &quot;Tom&quot;) =&gt; false</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;Carol&quot;, &quot;&quot;) =&gt; false</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;&quot;, &quot;&quot;) =&gt; true</span></div>
-<div class="ttc" id="aclassxtd_1_1object_html_a2743b6f75405882c28eebe2456f3837b"><div class="ttname"><a href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object::equals</a></div><div class="ttdeci">virtual bool equals(const object &amp;obj) const noexcept</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div></div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="abf78fd51401a5c8677ab85f1da4e1c24" name="abf78fd51401a5c8677ab85f1da4e1c24"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abf78fd51401a5c8677ab85f1da4e1c24">&#9670;&#160;</a></span>max_value</h2>
@@ -3449,7 +3369,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 2 2025 00:11:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 8 2025 21:59:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

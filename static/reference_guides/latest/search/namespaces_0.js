@@ -10,7 +10,7 @@ var searchData=
   ['extensions_7',['extensions',['../namespacextd_1_1collections_1_1generic_1_1extensions.html',1,'xtd::collections::generic::extensions'],['../namespacextd_1_1extensions.html',1,'xtd::extensions']]],
   ['forms_8',['forms',['../namespacextd_1_1forms.html',1,'xtd']]],
   ['generic_9',['generic',['../namespacextd_1_1collections_1_1generic.html',1,'xtd::collections']]],
-  ['helpers_10',['helpers',['../namespacextd_1_1collections_1_1generic_1_1helpers.html',1,'xtd::collections::generic']]],
+  ['helpers_10',['helpers',['../namespacextd_1_1collections_1_1generic_1_1helpers.html',1,'xtd::collections::generic::helpers'],['../namespacextd_1_1helpers.html',1,'xtd::helpers']]],
   ['imaging_11',['imaging',['../namespacextd_1_1drawing_1_1imaging.html',1,'xtd::drawing']]],
   ['io_12',['io',['../namespacextd_1_1io.html',1,'xtd']]],
   ['layout_13',['layout',['../namespacextd_1_1forms_1_1layout.html',1,'xtd::forms']]],

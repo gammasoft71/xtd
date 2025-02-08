@@ -99,9 +99,9 @@ Inheritance diagram for xtd::drawing::drawing_2d::hatch_brush:</div>
 <area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,457,80"/>
 <area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; brush &gt;" shape="rect" coords="467,56,924,80"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="934,56,1391,80"/>
-<area href="classxtd_1_1extensions_1_1equality__operators.html" title="Internal comparable operators definition." alt="xtd::extensions::equality_operators&lt; type_t, equatable_t &gt;" shape="rect" coords="1401,56,1858,80"/>
+<area href="classxtd_1_1extensions_1_1equality__operators.html" title="Internal equality operators definition." alt="xtd::extensions::equality_operators&lt; type_t, equatable_t &gt;" shape="rect" coords="1401,56,1858,80"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="233,0,690,24"/>
-<area href="classxtd_1_1extensions_1_1equality__operators.html" title="Internal comparable operators definition." alt="xtd::extensions::equality_operators&lt; type_t, equatable_t &gt;" shape="rect" coords="700,0,1157,24"/>
+<area href="classxtd_1_1extensions_1_1equality__operators.html" title="Internal equality operators definition." alt="xtd::extensions::equality_operators&lt; type_t, equatable_t &gt;" shape="rect" coords="700,0,1157,24"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -141,26 +141,26 @@ Inheritance diagram for xtd::drawing::drawing_2d::hatch_brush:</div>
 <div class="line">      <span class="keyword">auto</span> back_color = color::navy;</div>
 <div class="line">      <span class="keyword">auto</span> fore_color = color::white;</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1solid__brush.html">solid_brush</a> {color::transparent}, <a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a> {10, 10, 150, 150});</div>
-<div class="line">      e.graphics().draw_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1pen.html">pen</a> {fore_color, 4}, <a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a> {10, 10, 150, 150});</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1solid__brush.html">solid_brush</a> {color::transparent}, <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {10, 10, 150, 150});</div>
+<div class="line">      e.graphics().draw_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1pen.html">pen</a> {fore_color, 4}, <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {10, 10, 150, 150});</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1solid__brush.html">solid_brush</a> {back_color}, <a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a> {180, 10, 150, 150});</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1pen.html">pen</a> {fore_color, 4}, <a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a> {180, 10, 150, 150});</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1solid__brush.html">solid_brush</a> {back_color}, <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {180, 10, 150, 150});</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1pen.html">pen</a> {fore_color, 4}, <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {180, 10, 150, 150});</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1texture__brush.html">texture_brush</a> {create_circle_texture(fore_color, back_color)}, <a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a> {350, 10, 150, 150});</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1pen.html">pen</a> {fore_color, 4}, <a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a> {350, 10, 150, 150});</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1texture__brush.html">texture_brush</a> {create_circle_texture(fore_color, back_color)}, <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {350, 10, 150, 150});</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1pen.html">pen</a> {fore_color, 4}, <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {350, 10, 150, 150});</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1hatch__brush.html">hatch_brush</a> {hatch_style::diagonal_brick, color::white, back_color}, <a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a> {520, 10, 150, 150});</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1pen.html">pen</a> {color::white, 4}, <a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a> {520, 10, 150, 150});</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1hatch__brush.html">hatch_brush</a> {hatch_style::diagonal_brick, color::white, back_color}, <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {520, 10, 150, 150});</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1pen.html">pen</a> {color::white, 4}, <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {520, 10, 150, 150});</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1conical__gradient__brush.html">conical_gradient_brush</a> {<a class="code hl_class" href="classxtd_1_1drawing_1_1point.html">point</a> {85, 255}, back_color, fore_color, 0}, <a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a> {10, 180, 150, 150});</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1pen.html">pen</a> {color::white, 4}, <a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a> {10, 180, 150, 150});</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1conical__gradient__brush.html">conical_gradient_brush</a> {<a class="code hl_struct" href="structxtd_1_1drawing_1_1point.html">point</a> {85, 255}, back_color, fore_color, 0}, <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {10, 180, 150, 150});</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1pen.html">pen</a> {color::white, 4}, <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {10, 180, 150, 150});</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1linear__gradient__brush.html">linear_gradient_brush</a> {<a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a> {180, 180, 150, 150}, back_color, fore_color, 315}, <a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a> {180, 180, 150, 150});</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1pen.html">pen</a> {color::white, 4}, <a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a> {180, 180, 150, 150});</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1linear__gradient__brush.html">linear_gradient_brush</a> {<a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {180, 180, 150, 150}, back_color, fore_color, 315}, <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {180, 180, 150, 150});</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1pen.html">pen</a> {color::white, 4}, <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {180, 180, 150, 150});</div>
 <div class="line">      </div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1radial__gradient__brush.html">radial_gradient_brush</a> {<a class="code hl_class" href="classxtd_1_1drawing_1_1point.html">point</a> {425, 255}, fore_color, back_color, 73}, <a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a> {350, 180, 150, 150});</div>
-<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1pen.html">pen</a> {color::white, 4}, <a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a> {350, 180, 150, 150});</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().fill_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1drawing__2d_1_1radial__gradient__brush.html">radial_gradient_brush</a> {<a class="code hl_struct" href="structxtd_1_1drawing_1_1point.html">point</a> {425, 255}, fore_color, back_color, 73}, <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {350, 180, 150, 150});</div>
+<div class="line">      <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">e</a>.graphics().draw_rectangle(<a class="code hl_class" href="classxtd_1_1drawing_1_1pen.html">pen</a> {color::white, 4}, <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {350, 180, 150, 150});</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
@@ -188,8 +188,6 @@ Inheritance diagram for xtd::drawing::drawing_2d::hatch_brush:</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1graphics_html_aa7094aba7779155c8ff3094d4a1e1f61"><div class="ttname"><a href="classxtd_1_1drawing_1_1graphics.html#aa7094aba7779155c8ff3094d4a1e1f61">xtd::drawing::graphics::draw_ellipse</a></div><div class="ttdeci">void draw_ellipse(const xtd::drawing::pen &amp;pen, const xtd::drawing::rectangle &amp;rect)</div><div class="ttdoc">Draws an ellipse specified by a bounding xtd::drawing::rectangle structure.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1pen_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1pen.html">xtd::drawing::pen</a></div><div class="ttdoc">Defines an object used to draw lines and curves. This class cannot be inherited.</div><div class="ttdef"><b>Definition</b> pen.hpp:35</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1pen_html_a3aed4c4ec4e630bde307ddbe8b32981a"><div class="ttname"><a href="classxtd_1_1drawing_1_1pen.html#a3aed4c4ec4e630bde307ddbe8b32981a">xtd::drawing::pen::width</a></div><div class="ttdeci">float width() const noexcept</div><div class="ttdoc">Gets the width of this xtd::drawing::pen, in units of the xtd::drawing::graphics object used for draw...</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1point_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1point.html">xtd::drawing::point</a></div><div class="ttdoc">Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...</div><div class="ttdef"><b>Definition</b> point.hpp:54</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1rectangle_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></div><div class="ttdoc">Stores a set of four integers that represent the location and size of a rectangle.</div><div class="ttdef"><b>Definition</b> rectangle.hpp:44</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1solid__brush_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1solid__brush.html">xtd::drawing::solid_brush</a></div><div class="ttdoc">Defines a xtd::drawing::brush of a single color. Brushes are used to fill graphics shapes,...</div><div class="ttdef"><b>Definition</b> solid_brush.hpp:30</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1texture__brush_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1texture__brush.html">xtd::drawing::texture_brush</a></div><div class="ttdoc">Each property of the xtd::drawing::texture_brush class is a xtd::drawing::brush object that uses an i...</div><div class="ttdef"><b>Definition</b> texture_brush.hpp:29</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1form_html"><div class="ttname"><a href="classxtd_1_1forms_1_1form.html">xtd::forms::form</a></div><div class="ttdoc">Represents a window or dialog box that makes up an application's user interface.</div><div class="ttdef"><b>Definition</b> form.hpp:54</div></div>
@@ -199,6 +197,8 @@ Inheritance diagram for xtd::drawing::drawing_2d::hatch_brush:</div>
 <div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.hpp:11</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:12</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1point_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a></div><div class="ttdoc">Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...</div><div class="ttdef"><b>Definition</b> point.hpp:54</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1rectangle_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></div><div class="ttdoc">Stores a set of four integers that represent the location and size of a rectangle.</div><div class="ttdef"><b>Definition</b> rectangle.hpp:44</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="color_dialog_8cpp-example.html#_a5">color_dialog.cpp</a>, <a class="el" href="color_picker_8cpp-example.html#_a9">color_picker.cpp</a>, <a class="el" href="fill_ellipse_8cpp-example.html#_a6">fill_ellipse.cpp</a>, <a class="el" href="fill_rectangle_8cpp-example.html#_a6">fill_rectangle.cpp</a>, <a class="el" href="fill_rounded_rectangle_8cpp-example.html#_a6">fill_rounded_rectangle.cpp</a>, and <a class="el" href="image_converter_8cpp-example.html#_a12">image_converter.cpp</a>.</dd>
 </dl>
@@ -226,16 +226,12 @@ Inheritance diagram for xtd::drawing::drawing_2d::hatch_brush:</div>
 <tr class="memitem:a0ced8dbe60ae15f01354b3843ca2882e"><td class="memItemLeft" align="right" valign="top"><a id="a0ced8dbe60ae15f01354b3843ca2882e" name="a0ced8dbe60ae15f01354b3843ca2882e"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1hatch__brush.html">hatch_brush</a> &amp;value) const noexcept override</td></tr>
 <tr class="separator:a0ced8dbe60ae15f01354b3843ca2882e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cec2698b353fc7da786c55908f22f10"><td class="memItemLeft" align="right" valign="top"><a id="a4cec2698b353fc7da786c55908f22f10" name="a4cec2698b353fc7da786c55908f22f10"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a class="el" href="classxtd_1_1drawing_1_1brush.html">brush</a> &amp;value) const noexcept override</td></tr>
-<tr class="separator:a4cec2698b353fc7da786c55908f22f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2743b6f75405882c28eebe2456f3837b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1hatch__brush.html#a2743b6f75405882c28eebe2456f3837b">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept</td></tr>
-<tr class="memdesc:a2743b6f75405882c28eebe2456f3837b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="separator:a2743b6f75405882c28eebe2456f3837b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t , class object_b_t &gt; </td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1hatch__brush.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
-<tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="separator:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8d4aa34679ce151b612cd93ba4c0183"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1hatch__brush.html#ac8d4aa34679ce151b612cd93ba4c0183">equals</a> (const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;obj) const noexcept override</td></tr>
+<tr class="memdesc:ac8d4aa34679ce151b612cd93ba4c0183"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="separator:ac8d4aa34679ce151b612cd93ba4c0183"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75a5bce9448b15edb474f3e31e42eb42"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1drawing__2d_1_1hatch__brush.html#a75a5bce9448b15edb474f3e31e42eb42">equals</a> (const <a class="el" href="classxtd_1_1drawing_1_1brush.html">brush</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept override</td></tr>
+<tr class="memdesc:a75a5bce9448b15edb474f3e31e42eb42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="separator:a75a5bce9448b15edb474f3e31e42eb42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -243,9 +239,12 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a561ebe7ed96541310d33b460d0c3adf2 inherit pub_methods_classxtd_1_1drawing_1_1brush"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1brush.html#a561ebe7ed96541310d33b460d0c3adf2">handle</a> () const noexcept</td></tr>
 <tr class="memdesc:a561ebe7ed96541310d33b460d0c3adf2 inherit pub_methods_classxtd_1_1drawing_1_1brush"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the handle of the brush.  <br /></td></tr>
 <tr class="separator:a561ebe7ed96541310d33b460d0c3adf2 inherit pub_methods_classxtd_1_1drawing_1_1brush"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cec2698b353fc7da786c55908f22f10 inherit pub_methods_classxtd_1_1drawing_1_1brush"><td class="memItemLeft" align="right" valign="top">
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a class="el" href="classxtd_1_1drawing_1_1brush.html">brush</a> &amp;value) const noexcept override</td></tr>
-<tr class="separator:a4cec2698b353fc7da786c55908f22f10 inherit pub_methods_classxtd_1_1drawing_1_1brush"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75a5bce9448b15edb474f3e31e42eb42 inherit pub_methods_classxtd_1_1drawing_1_1brush"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1brush.html#a75a5bce9448b15edb474f3e31e42eb42">equals</a> (const <a class="el" href="classxtd_1_1drawing_1_1brush.html">brush</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept override</td></tr>
+<tr class="memdesc:a75a5bce9448b15edb474f3e31e42eb42 inherit pub_methods_classxtd_1_1drawing_1_1brush"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="separator:a75a5bce9448b15edb474f3e31e42eb42 inherit pub_methods_classxtd_1_1drawing_1_1brush"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a874111139b9663e1f533cc5a442d2199 inherit pub_methods_classxtd_1_1drawing_1_1brush"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1brush.html#a874111139b9663e1f533cc5a442d2199">get_hash_code</a> () const noexcept override</td></tr>
+<tr class="memdesc:a874111139b9663e1f533cc5a442d2199 inherit pub_methods_classxtd_1_1drawing_1_1brush"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="separator:a874111139b9663e1f533cc5a442d2199 inherit pub_methods_classxtd_1_1drawing_1_1brush"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32922fa31db48dcd982873c0cee60508 inherit pub_methods_classxtd_1_1drawing_1_1brush"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1brush.html#a32922fa31db48dcd982873c0cee60508">to_string</a> () const noexcept override</td></tr>
 <tr class="memdesc:a32922fa31db48dcd982873c0cee60508 inherit pub_methods_classxtd_1_1drawing_1_1brush"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts this brush object to a human-readable string.  <br /></td></tr>
 <tr class="separator:a32922fa31db48dcd982873c0cee60508 inherit pub_methods_classxtd_1_1drawing_1_1brush"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -253,9 +252,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:ad2cab851376bb6ca085b567bf5da0f5f inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> ()=default</td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="separator:ad2cab851376bb6ca085b567bf5da0f5f inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a1fea096f8a49ac5eef1f2431806109ca">get_hash_code</a> () const noexcept</td></tr>
-<tr class="memdesc:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="separator:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="separator:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -271,11 +267,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:a1f8bbde943d2e5ecf565734c60e23903 inherit pub_methods_classxtd_1_1iequatable"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">equals</a> (const hatch_brush &amp;) const noexcept=0</td></tr>
 <tr class="memdesc:a1f8bbde943d2e5ecf565734c60e23903 inherit pub_methods_classxtd_1_1iequatable"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
 <tr class="separator:a1f8bbde943d2e5ecf565734c60e23903 inherit pub_methods_classxtd_1_1iequatable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_static_methods_classxtd_1_1drawing_1_1brush"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classxtd_1_1drawing_1_1brush')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classxtd_1_1drawing_1_1brush.html">xtd::drawing::brush</a></td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 inherit pub_static_methods_classxtd_1_1drawing_1_1brush"><td class="memTemplParams" colspan="2">template&lt;class object_a_t , class object_b_t &gt; </td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 inherit pub_static_methods_classxtd_1_1drawing_1_1brush"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1brush.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
-<tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6 inherit pub_static_methods_classxtd_1_1drawing_1_1brush"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="separator:a7fa6fd860800fb1dd1caac338e2355e6 inherit pub_static_methods_classxtd_1_1drawing_1_1brush"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classxtd_1_1object"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classxtd_1_1object')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classxtd_1_1object.html">xtd::object</a></td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 inherit pub_static_methods_classxtd_1_1object"><td class="memTemplParams" colspan="2">template&lt;class object_a_t , class object_b_t &gt; </td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6 inherit pub_static_methods_classxtd_1_1object"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
@@ -461,8 +452,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 
 </div>
 </div>
-<a id="a2743b6f75405882c28eebe2456f3837b" name="a2743b6f75405882c28eebe2456f3837b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2743b6f75405882c28eebe2456f3837b">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
+<a id="ac8d4aa34679ce151b612cd93ba4c0183" name="ac8d4aa34679ce151b612cd93ba4c0183"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8d4aa34679ce151b612cd93ba4c0183">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -471,16 +462,16 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool xtd::object::equals </td>
+          <td class="memname">bool xtd::drawing::brush::equals </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">object</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -493,115 +484,43 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> object1 = new_ptr&lt;object&gt;();</div>
-<div class="line">  <span class="keyword">auto</span> object2 = new_ptr&lt;object&gt;();</div>
-<div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> object3 = object2;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(object1-&gt;equals(*object3));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(*object1 == *object3);</div>
-<div class="line">  object3 = object1;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(object1-&gt;equals(*object3));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(*object1 == *object3);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// false</span></div>
-<div class="line"><span class="comment">// false</span></div>
-<div class="line"><span class="comment">// true</span></div>
-<div class="line"><span class="comment">// true</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-</div><!-- fragment --> </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classxtd_1_1drawing_1_1brush.html#a2743b6f75405882c28eebe2456f3837b">xtd::drawing::brush</a>.</p>
+<p>Reimplemented from <a class="el" href="classxtd_1_1drawing_1_1brush.html#ac8d4aa34679ce151b612cd93ba4c0183">xtd::drawing::brush</a>.</p>
 
 </div>
 </div>
-<a id="a7fa6fd860800fb1dd1caac338e2355e6" name="a7fa6fd860800fb1dd1caac338e2355e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fa6fd860800fb1dd1caac338e2355e6">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
+<a id="a75a5bce9448b15edb474f3e31e42eb42" name="a75a5bce9448b15edb474f3e31e42eb42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75a5bce9448b15edb474f3e31e42eb42">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class object_a_t , class object_b_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool xtd::object::equals </td>
+          <td class="memname">bool xtd::drawing::brush::equals </td>
           <td>(</td>
-          <td class="paramtype">const object_a_t &amp;&#160;</td>
-          <td class="paramname"><em>object_a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const object_b_t &amp;&#160;</td>
-          <td class="paramname"><em>object_b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1brush.html">brush</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Determines whether the specified object instances are considered equal. </p>
+<p>Determines whether the specified object is equal to the current object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">object_a</td><td>The first object to compare. </td></tr>
-    <tr><td class="paramname">object_b</td><td>The second object to compare. </td></tr>
+    <tr><td class="paramname">other</td><td>The object to compare with the current object. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns <code>true</code>. otherwise, <code>false</code>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keywordtype">string</span> s1 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
-<div class="line">  <span class="keywordtype">string</span> s2 = <span class="stringliteral">&quot;Carol&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">  </div>
-<div class="line">  s1 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
-<div class="line">  s2 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">  </div>
-<div class="line">  s1 = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line">  s2 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">  </div>
-<div class="line">  s1 = <span class="stringliteral">&quot;Carol&quot;</span>;</div>
-<div class="line">  s2 = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">  </div>
-<div class="line">  s1 = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line">  s2 = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;Tom&quot;, &quot;Carol&quot;) =&gt; false</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;Tom&quot;, &quot;Tom&quot;) =&gt; true</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;&quot;, &quot;Tom&quot;) =&gt; false</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;Carol&quot;, &quot;&quot;) =&gt; false</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;&quot;, &quot;&quot;) =&gt; true</span></div>
-<div class="ttc" id="aclassxtd_1_1object_html_a2743b6f75405882c28eebe2456f3837b"><div class="ttname"><a href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object::equals</a></div><div class="ttdeci">virtual bool equals(const object &amp;obj) const noexcept</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div></div>
-</div><!-- fragment --> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
 
 </div>
 </div>
@@ -612,7 +531,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 2 2025 00:11:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 8 2025 21:59:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -404,7 +404,7 @@ target_startup</h2>
 <p>Specifies the entry point to be called when the application is load. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ARGV0</td><td>the object that contains the entry point. </td></tr>
-    <tr><td class="paramname">ARGV1</td><td>the object definition file. (optional if you use TUnitMain_ or TUnitFrameworkMain_ entry point) </td></tr>
+    <tr><td class="paramname">ARGV1</td><td>the object definition file. (optional if you use <a class="el" href="group__tunit.html#ga3717390138bb7497869306999933bc3a" title="Defines the entry point to be called with startup_ for unit test application.">tunit_main_</a> entry point for xtd unit test applications) </td></tr>
   </table>
   </dd>
 </dl>
@@ -421,7 +421,7 @@ This method is optional. </dd></dl>
 <div class="line">find_package(<a class="code hl_namespace" href="namespacextd.html">xtd</a> REQUIRED)</div>
 <div class="line">add_sources(my_project.cpp)</div>
 <div class="line"> </div>
-<div class="line">target_startup(&quot;my_project::my_class&quot; my_project.cpp)</div>
+<div class="line">target_startup(&quot;my_project::my_class::main&quot; my_project.cpp)</div>
 <div class="line">target_type(GUI_APPLICATION)</div>
 </div><!-- fragment --></dd></dl>
 <h2><a class="anchor" id="TargetTypeSubSection"></a>
@@ -1187,7 +1187,7 @@ USER_DIRECTORY</h2>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 2 2025 00:11:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 8 2025 21:59:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
