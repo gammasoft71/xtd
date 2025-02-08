@@ -10,46 +10,46 @@ using namespace xtd::drawing::imaging;
 
 bitmap bitmap::empty;
 
-bitmap::bitmap(const image& original) : xtd::drawing::image(original) {
+bitmap::bitmap(const image& original) : image(original) {
 }
 
-bitmap::bitmap(const image& original, const xtd::drawing::size& new_size) : xtd::drawing::image(original, new_size.width, new_size.height) {
+bitmap::bitmap(const image& original, const xtd::drawing::size& new_size) : image(original, new_size.width, new_size.height) {
 }
 
-bitmap::bitmap(const image& original, int32 width, int32 height) : xtd::drawing::image(original, width, height) {
+bitmap::bitmap(const image& original, int32 width, int32 height) : image(original, width, height) {
 }
 
-bitmap::bitmap(const image& original, const rectangle& new_rect) : xtd::drawing::image(original, new_rect) {
+bitmap::bitmap(const image& original, const rectangle& new_rect) : image(original, new_rect) {
 }
 
-bitmap::bitmap(const xtd::string& filename) : xtd::drawing::image(filename) {
+bitmap::bitmap(const string& filename) : image(filename) {
 }
 
-bitmap::bitmap(const xtd::string& filename, bool use_icm) : xtd::drawing::image(filename, use_icm) {
+bitmap::bitmap(const string& filename, bool use_icm) : image(filename, use_icm) {
 }
 
-bitmap::bitmap(std::istream& stream) : xtd::drawing::image(stream) {
+bitmap::bitmap(std::istream& stream) : image(stream) {
 }
 
-bitmap::bitmap(std::istream& stream, bool use_icm) : xtd::drawing::image(stream, use_icm) {
+bitmap::bitmap(std::istream& stream, bool use_icm) : image(stream, use_icm) {
 }
 
-bitmap::bitmap(const char* const* bits) : xtd::drawing::image(bits) {
+bitmap::bitmap(const char* const* bits) : image(bits) {
 }
 
-bitmap::bitmap(int32 width, int32 height) : xtd::drawing::image(width, height) {
+bitmap::bitmap(int32 width, int32 height) : image(width, height) {
 }
 
-bitmap::bitmap(int32 width, int32 height, const graphics& g) : xtd::drawing::image(width, height, g.dpi_x(), g.dpi_y()) {
+bitmap::bitmap(int32 width, int32 height, const graphics& g) : image(width, height, g.dpi_x(), g.dpi_y()) {
 }
 
-bitmap::bitmap(int32 width, int32 height, xtd::drawing::imaging::pixel_format format) : xtd::drawing::image(width, height, format) {
+bitmap::bitmap(int32 width, int32 height, enum pixel_format format) : image(width, height, format) {
 }
 
-bitmap::bitmap(int32 width, int32 height, int32 stride, xtd::drawing::imaging::pixel_format format, intptr scan0) : xtd::drawing::image(width, height, stride, format, scan0) {
+bitmap::bitmap(int32 width, int32 height, int32 stride, enum pixel_format format, intptr scan0) : image(width, height, stride, format, scan0) {
 }
 
-bitmap::bitmap(const xtd::drawing::size& size) : xtd::drawing::image(size.width, size.height) {
+bitmap::bitmap(const xtd::drawing::size& size) : image(size.width, size.height) {
 }
 
 bitmap bitmap::clone(const rectangle& rect) const {
@@ -80,12 +80,12 @@ drawing::color bitmap::get_pixel(int32 x, int32 y) const {
   return image::get_pixel(x, y);
 }
 
-bitmap_data bitmap::lock_bits(const rectangle& rect, xtd::drawing::imaging::image_lock_mode flags, xtd::drawing::imaging::pixel_format format) {
+bitmap_data bitmap::lock_bits(const rectangle& rect, image_lock_mode flags, enum pixel_format format) {
   return lock_bits(rect, flags, format, bitmap_data {});
 }
 
-bitmap_data bitmap::lock_bits(const rectangle& rect, xtd::drawing::imaging::image_lock_mode flags, xtd::drawing::imaging::pixel_format format, const bitmap_data& data) {
-  if (format == xtd::drawing::imaging::pixel_format::indexed || format == xtd::drawing::imaging::pixel_format::gdi) throw argument_exception {};
+bitmap_data bitmap::lock_bits(const rectangle& rect, image_lock_mode flags, enum pixel_format format, const bitmap_data& data) {
+  if (format == pixel_format::indexed || format == pixel_format::gdi) throw argument_exception {};
   auto image_data_height = data.height;
   auto image_data_pixel_format = static_cast<int32>(data.pixel_format);
   auto image_data_reserved = data.reserved;
@@ -95,7 +95,7 @@ bitmap_data bitmap::lock_bits(const rectangle& rect, xtd::drawing::imaging::imag
   native::image::lock_bits(handle(), rect.left(), rect.top(), rect.width, rect.height, static_cast<int32>(flags), static_cast<int32>(format), image_data_height, image_data_pixel_format, image_data_reserved, image_data_scan0, image_data_stride, image_data_width);
   auto result = bitmap_data {};
   result.height = image_data_height;
-  result.pixel_format = static_cast<xtd::drawing::imaging::pixel_format>(image_data_pixel_format);
+  result.pixel_format = static_cast<enum pixel_format>(image_data_pixel_format);
   result.reserved = image_data_reserved;
   result.scan0 = image_data_scan0;
   result.stride = image_data_stride;
@@ -111,11 +111,11 @@ void bitmap::make_transparent() {
 }
 
 void bitmap::make_transparent(const color& transparent_color) {
-  set_pixel_format(imaging::pixel_format::format_32bpp_argb);
+  set_pixel_format(pixel_format::format_32bpp_argb);
   native::image::make_transparent(handle(), transparent_color.a(), transparent_color.r(), transparent_color.g(), transparent_color.b());
 }
 
-void bitmap::set_pixel(int32 x, int32 y, const drawing::color& color) {
+void bitmap::set_pixel(int32 x, int32 y, const color& color) {
   image::set_pixel(x, y, color);
 }
 
