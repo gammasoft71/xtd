@@ -226,8 +226,12 @@ color color::dark(const color& color, double percent) noexcept {
   return color_converter::dark(color, percent);
 }
 
-bool color::equals(const color& value) const noexcept {
-  return argb_ == value.argb_ && handle_ == value.handle_ && name_ == value.name_ && empty_ == value.empty_;
+bool color::equals(const object& obj) const noexcept {
+  return is<color>(obj) && equals(static_cast<const color&>(obj));
+}
+
+bool color::equals(const color& other) const noexcept {
+  return argb_ == other.argb_ && handle_ == other.handle_ && empty_ == other.empty_ && name_ == other.name_;
 }
 
 color color::from_argb(uint32 argb) noexcept {
@@ -587,6 +591,10 @@ float color::get_brightness() const noexcept {
   //return ((float)max(max(r(), g()), b()) + (float)min(min(r(), g()), b())) / 255.0 / 2.0;
   // algorithm  version (see https://www.programmingalgorithms.com/algorithm/rgb-to-hsv)
   return static_cast<float>(math::max(math::max(r(), g()), b())) / 255.0f;
+}
+
+size color::get_hash_code() const noexcept {
+  return hash_code::combine(argb_, empty_, handle_, name_);
 }
 
 float color::get_hue() const noexcept {
