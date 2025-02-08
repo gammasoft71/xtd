@@ -204,8 +204,16 @@ graphics_unit font::unit() const noexcept {
   return data_->unit_;
 }
 
-bool font::equals(const font& value) const noexcept {
-  return data_->font_family_ == value.data_->font_family_ && data_->gdi_char_set_ == value.data_->gdi_char_set_ && data_->gdi_vertical_font_ == value.data_->gdi_vertical_font_ && data_->style_ == value.data_->style_ && data_->size_ == value.data_->size_ && data_->unit_ == value.data_->unit_;
+bool font::equals(const object& obj) const noexcept {
+  return is<font>(obj) && equals(static_cast<const font&>(obj));
+}
+
+bool font::equals(const font& other) const noexcept {
+  return data_->font_family_ == other.data_->font_family_ && data_->gdi_char_set_ == other.data_->gdi_char_set_ && data_->gdi_vertical_font_ == other.data_->gdi_vertical_font_ && data_->style_ == other.data_->style_ && data_->size_ == other.data_->size_ && data_->unit_ == other.data_->unit_;
+}
+
+xtd::size font::get_hash_code() const noexcept {
+  return hash_code::combine(data_->font_family_, data_->gdi_char_set_, data_->gdi_vertical_font_, data_->style_, data_->size_, data_->unit_);
 }
 
 font font::from_hdc(const intptr hdc) {
