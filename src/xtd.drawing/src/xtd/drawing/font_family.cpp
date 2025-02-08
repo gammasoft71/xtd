@@ -30,7 +30,7 @@ font_family::font_family(text::generic_font_families generic_font_families) : da
 
 font_family::font_family(const string& name, const text::font_collection& font_collection) : data_(xtd::new_sptr<data>()) {
   auto font_families = font_collection.families();
-  auto iterator = find_if(font_families.begin(), font_families.end(), [&](const font_family & font_family) {return name == font_family.name();});
+  auto iterator = std::find_if(font_families.begin(), font_families.end(), [&](const font_family & font_family) {return name == font_family.name();});
   if (iterator == font_families.end()) throw xtd::argument_exception("name specifies a font that is not a part of specified font_collection."_t);
   *this = *iterator;
 }

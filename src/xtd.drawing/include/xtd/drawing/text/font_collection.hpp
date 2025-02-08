@@ -3,8 +3,8 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../font_family.hpp"
+#include <xtd/array>
 #include <xtd/object>
-#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -18,23 +18,23 @@ namespace xtd {
       /// @par Library
       /// xtd.drawing
       /// @ingroup xtd_drawing fonts
-      /// @remarks The xtd::drawing::text::font_collection allows you to get a list of the font families contained in the collection with its families property. For additional information on fonts and text, including example code, see Using fonts and text.
+      /// @remarks The xtd::drawing::text::font_collection allows you to get a list of the font families contained in the collection with its xtd::drawing::text::font_collection::families property.
       class font_collection : public object {
       public:
         /// @name Public Properties
         
         /// @{
-        /// @brief Gets the array of FontFamily objects associated with this FontCollection.
-        /// @return Array<FontFamily> An array of FontFamily objects.
-        const std::vector<font_family>& families() const noexcept {return families_;}
+        /// @brief Gets the array of xtd::drawing::text::font_family objects associated with this xtd::drawing::text::font_collection.
+        /// @return xtd::array<xtd::drawing::text::font_family> An array of xtd::drawing::text::font_family objects.
+        const xtd::array<font_family>& families() const noexcept {return families_;}
         /// @}
         
       protected:
-        /// @brief Initialise new instance of font_collection class.
+        /// @brief Initialise new instance of xtd::drawing::text::font_collection class.
         font_collection() = default;
         
         /// @cond
-        std::vector<font_family> families_;
+        xtd::array<font_family> families_;
         /// @endcond
       };
     }
