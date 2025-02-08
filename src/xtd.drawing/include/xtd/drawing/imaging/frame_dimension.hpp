@@ -4,9 +4,6 @@
 #pragma once
 #include <xtd/guid>
 #include <xtd/iequatable>
-#include <xtd/object>
-#include <cstdint>
-#include <ostream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -28,7 +25,7 @@ namespace xtd {
         /// @{
         /// @brief Initializes a new instance of the FrameDimension class using the specified Guid structure.
         /// @param guid A xtd::guid structure that contains a GUID for this frame_dimension object.
-        explicit frame_dimension(const xtd::guid& guid) : guid_(guid) {}
+        explicit frame_dimension(const xtd::guid& guid) noexcept;
         /// @}
         
         /// @cond
@@ -41,7 +38,7 @@ namespace xtd {
         /// @{
         /// @brief Gets a globally unique identifier (GUID) that represents this frame_dimension object.
         /// @return An xtd::guid structure that contains a GUID that represents this frame_dimension object.
-        const xtd::guid& guid() const noexcept {return guid_;}
+        const xtd::guid& guid() const noexcept;
         /// @}
         
         /// @name Public Static Properties
@@ -49,22 +46,32 @@ namespace xtd {
         /// @{
         /// @brief Gets the page dimension.
         /// @return The page dimension.
-        static frame_dimension page() noexcept {return frame_dimension(xtd::guid("7462dc86-6180-4c7e-8e3f-ee7333a7a483"));}
+        static frame_dimension page() noexcept;
         
         /// @brief Gets the resolution dimension.
         /// @return The resolution dimension.
-        static frame_dimension resolution() noexcept {return frame_dimension(xtd::guid("84236f7b-3bd3-428f-8dab-4ea1439ca315"));}
+        static frame_dimension resolution() noexcept;
         
         /// @brief Gets the time dimension.
         /// @return The time dimension.
-        static frame_dimension time() noexcept {return frame_dimension(xtd::guid("6aedbd6d-3fb5-418a-83a6-7f45229dc872"));}
+        static frame_dimension time() noexcept;
         /// @}
         
         /// @name Public Methods
         
         /// @{
-        using object::equals;
-        bool equals(const frame_dimension& value) const noexcept override {return guid_ == value.guid_;}
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param obj The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const object& obj) const noexcept override;
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param other The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const frame_dimension& other) const noexcept override;
+        
+        /// @brief Serves as a hash function for a particular type.
+        /// @return A hash code for the current object.
+        xtd::size get_hash_code() const noexcept override;
         /// @}
         
       private:
