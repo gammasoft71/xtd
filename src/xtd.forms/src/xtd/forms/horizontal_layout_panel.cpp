@@ -9,13 +9,13 @@ const horizontal_control_layout_style_collection& horizontal_layout_panel::contr
 }
 
 const horizontal_control_layout_style& horizontal_layout_panel::control_layout_style(const control_ref& control) const {
-  auto it = find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](auto item) {return item.first.get() == control;});
+  auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](auto item) {return item.first.get() == control;});
   if (it == control_layout_styles_.end()) throw argument_exception {};
   return it->second;
 }
 
 horizontal_layout_panel& horizontal_layout_panel::control_layout_style(const control_ref& control, const horizontal_control_layout_style& value) {
-  auto it = find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](auto item) {return item.first.get() == control;});
+  auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](auto item) {return item.first.get() == control;});
   if (it == control_layout_styles_.end()) throw argument_exception {};
   if (it->second != value) {
     it->second = value;
@@ -92,7 +92,7 @@ void horizontal_layout_panel::on_control_added(const xtd::forms::control_event_a
 
 void horizontal_layout_panel::on_control_removed(const xtd::forms::control_event_args& e) {
   panel::on_control_removed(e);
-  auto it = find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](auto item) {return item.first.get() == e.control();});
+  auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](auto item) {return item.first.get() == e.control();});
   if (it == control_layout_styles_.end()) throw argument_exception {};
   control_layout_styles_.erase(it);
 }
