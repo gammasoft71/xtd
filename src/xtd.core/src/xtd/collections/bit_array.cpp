@@ -21,13 +21,13 @@ void bit_array::boolean_ref::from_boolean(bit_array& parent) noexcept {
   index = npos;
 }
 
-bit_array::bit_array(size length) {
+bit_array::bit_array(size length) noexcept {
   length_ = length;
   while (bit_array_.count() < get_list_length(length_))
     bit_array_.add(0);
 }
 
-bit_array::bit_array(size length, bool default_value) {
+bit_array::bit_array(size length, bool default_value) noexcept {
   length_ = length;
   while (bit_array_.count() < get_list_length(length_))
     bit_array_.add(default_value ? 0xFFFFFFFFL : 0);
@@ -36,7 +36,7 @@ bit_array::bit_array(size length, bool default_value) {
   if (extra_bits > 0) bit_array_[bit_array_.size() - 1] = static_cast<int32>(1 << extra_bits) - 1;
 }
 
-bit_array::bit_array(std::initializer_list<bool> il) {
+bit_array::bit_array(std::initializer_list<bool> il) noexcept {
   length_ = il.size();
   while (bit_array_.count() < get_list_length(length_))
     bit_array_.add(0);
@@ -45,7 +45,7 @@ bit_array::bit_array(std::initializer_list<bool> il) {
     set_bit_value(index++, item);
 }
 
-bit_array::bit_array(const array<bool>& values) {
+bit_array::bit_array(const array<bool>& values) noexcept {
   length_ = values.length();
   while (bit_array_.count() < get_list_length(length_))
     bit_array_.add(0);
@@ -53,7 +53,7 @@ bit_array::bit_array(const array<bool>& values) {
     set(index, values[index]);
 }
 
-bit_array::bit_array(const array<byte>& values) {
+bit_array::bit_array(const array<byte>& values) noexcept {
   length_ = values.length() * bits_per_byte;
   auto position = 0_z;
   while (bit_array_.count() < get_list_length(length_))
@@ -63,7 +63,7 @@ bit_array::bit_array(const array<byte>& values) {
       set(position++, (values[index] & (1 << index_bits)) == (1 << index_bits));
 }
 
-bit_array::bit_array(const array<int32>& values) {
+bit_array::bit_array(const array<int32>& values) noexcept {
   length_ = values.length() * bits_per_int32;
   auto position = 0_z;
   while (bit_array_.count() < get_list_length(length_))
@@ -71,6 +71,11 @@ bit_array::bit_array(const array<int32>& values) {
   for (auto index = 0_z; index < values.length(); ++index)
     for (auto index_bits = 0_z; index_bits < bits_per_int32; ++index_bits)
       set(position++, (values[index] & (1 << index_bits)) == (1 << index_bits));
+}
+
+bit_array::bit_array(const std::vector<bool>& booleans) noexcept : bit_array(booleans.size()) {
+  for (auto index = 0_z; index < booleans.size(); ++index)
+    set(index, booleans[index]);
 }
 
 size bit_array::count() const noexcept {

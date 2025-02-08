@@ -85,45 +85,50 @@ namespace xtd {
       /// @param length_ The number of bit values in the new xtd::collections::bit_array.
       /// @exception xtd::argument_out_of_range_exception length_ is less than 0.
       /// @remarks This constructor is an O(n) operation, where n is length_.
-      explicit bit_array(xtd::size length);
+      explicit bit_array(xtd::size length) noexcept;
       
       /// @brief Initializes a new instance of the xtd::collections::bit_array class that can hold the specified number of bit values, which are initially set to the specified value.
       /// @param length_ The number of bit values in the new xtd::collections::bit_array.
       /// @param defaultValueThe bool value to assign to each bit.
       /// @exception xtd::argument_out_of_range_exception length_ is less than 0.
       /// @remarks This constructor is an O(n) operation, where n is length_.
-      bit_array(xtd::size length, bool defaultValue);
+      bit_array(xtd::size length, bool defaultValue) noexcept;
 
       /// @brief Initializes a new instance of the xtd::collections::bit_array class that contains bit values copied from the specified initializer list of booleans.
       /// @param values An array of booleans to copy.
       /// @remarks This constructor is an O(n) operation, where n is the number of elements in values.
-      bit_array(std::initializer_list<bool> il);
+      bit_array(std::initializer_list<bool> il) noexcept;
 
       /// @brief Initializes a new instance of the xtd::collections::bit_array class that contains bit values copied from the specified array of booleans.
       /// @param values An initializer list of booleans to copy.
       /// @remarks This constructor is an O(n) operation, where n is the number of elements in values.
-      bit_array(const xtd::array<bool>& values);
+      bit_array(const xtd::array<bool>& values) noexcept;
       
       /// @brief Initializes a new instance of the xtd::collections::bit_array class that contains bit values copied from the specified array of bytes.
       /// @param values An array of bytes containing the values to copy, where each byte represents eight consecutive bits.
       /// @remarks The first byte in the array represents bits 0 through 7, the second byte represents bits 8 through 15, and so on. The Least Significant Bit of each byte represents the lowest index value: " bytes [0] & 1" represents bit 0, " bytes [0] & 2" represents bit 1, " bytes [0] & 4" represents bit 2, and so on.
       /// @remarks This constructor is an O(n) operation, where n is the number of elements in values.
-      bit_array(const xtd::array<xtd::byte>& values);
+      bit_array(const xtd::array<xtd::byte>& values) noexcept;
 
       /// @brief Initializes a new instance of the xtd::collections::bit_array class that contains bit values copied from the specified array of 32-bit integers.
       /// @param values An array of integers containing the values to copy, where each integer represents 32 consecutive bits.
       /// @remarks The number in the first values array element represents bits 0 through 31, the second number in the array represents bits 32 through 63, and so on. The Least Significant Bit of each integer represents the lowest index value: " values [0] & 1" represents bit 0, " values [0] & 2" represents bit 1, " values [0] & 4" represents bit 2, and so on.
       /// @remarks This constructor is an O(n) operation, where n is the number of elements in values.
-      bit_array(const xtd::array<int32>& values);
+      bit_array(const xtd::array<int32>& values) noexcept;
 
       /// @brief Initializes a new instance of the xtd::collections::bit_array class that contains bit values copied from the specified [bitset](https://en.cppreference.com/w/cpp/utility/bitset).
       /// @param values A [std::bitset](https://en.cppreference.com/w/cpp/utility/bitset) object that contains bit values.
       /// @remarks This constructor is an O(n) operation, where n is the number of elements in values.
       template<xtd::size length>
-      bit_array(const std::bitset<length>& bit_set) : bit_array(length) {
+      bit_array(const std::bitset<length>& bit_set) noexcept : bit_array(length) {
         for (auto index = xtd::size {0}; index < length; ++index)
           set(index, bit_set.test(index));
       }
+
+      /// @brief Initializes a new instance of the xtd::collections::bit_array class that contains bit values copied from the specified [std::vector<bool>](https://en.cppreference.com/w/cpp/container/vector_bool).
+      /// @param values A [std::vector<bool>](https://en.cppreference.com/w/cpp/container/vector_bool) object that contains bit values.
+      /// @remarks This constructor is an O(n) operation, where n is the number of elements in values.
+      bit_array(const std::vector<bool>& booleans) noexcept;
       /// @}
 
       /// @cond
@@ -151,6 +156,15 @@ namespace xtd {
         auto result = std::bitset<length> {};
         auto bits_count = xtd::math::min(length, count());
         for (auto index = xtd::size {0}; index < bits_count; ++index)
+          result[index] = at(index);
+        return result;
+      }
+      
+      /// @brief Returns a [std::vector<bool>](https://en.cppreference.com/w/cpp/container/vector_bool) object containing the Booleans contained in the current xtd::collections::bit_array.
+      /// @return The [std::vector<bool>](https://en.cppreference.com/w/cpp/container/vector_bool) object.
+      std::vector<bool> bits() const noexcept {
+        auto result = std::vector<bool> {};
+        for (auto index = xtd::size {0}; index < count(); ++index)
           result[index] = at(index);
         return result;
       }
