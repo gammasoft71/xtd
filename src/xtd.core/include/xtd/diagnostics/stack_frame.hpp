@@ -92,11 +92,11 @@ namespace xtd {
       stack_frame(const xtd::string& file_name, xtd::size line_number, const xtd::string& method_name, xtd::size column_number, xtd::size offset);
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given source location.
       /// @param source_location The source location caontaing the file name, the line number, the method name, and the column number.
-      stack_frame(const xtd::source_location& source_location); // Not explicit by design.
+      stack_frame(const xtd::diagnostics::source_location& source_location); // Not explicit by design.
       /// @brief Initializes a new instance of the xtd::diagnostics::stack_frame class that contains only the given given source location, and offset.
       /// @param source_location The source location caontaing the file name, the line number, the method name, and the column number.
       /// @param offset The offset from the code for the method that is being executed.
-      stack_frame(const xtd::source_location& source_location, xtd::size offset);
+      stack_frame(const xtd::diagnostics::source_location& source_location, xtd::size offset);
       /// @brief Initializes a new empty instance of the xtd::diagnostics::stack_frame.
       /// @param frame nullptr.
       stack_frame(xtd::null_ptr frame); // Not explicit by design.
@@ -248,12 +248,12 @@ namespace xtd {
       /// @{
       /// @brief Crates a new xtd::diagnostics::stack_frame object corresponding to the location of the call site.
       /// @return The currentsouce stack frame informations.
-      /// @remarks If xtd::diagnostics::stack_frame::current is invoked directly (via a function call that names xtd::source_location::current), it returns a source_location object with implementation-defined values representing the location of the call. The values should be affected by the [#line preprocessor directive](https://en.cppreference.com/w/cpp/preprocessor/line) in the same manner as the predefined macros `__LINE__` and `__FILE__`.
+      /// @remarks If xtd::diagnostics::stack_frame::current is invoked directly (via a function call that names xtd::diagnostics::source_location::current), it returns a source_location object with implementation-defined values representing the location of the call. The values should be affected by the [#line preprocessor directive](https://en.cppreference.com/w/cpp/preprocessor/line) in the same manner as the predefined macros `__LINE__` and `__FILE__`.
       /// @remarks If xtd::diagnostics::stack_frame::current is used in a [default member initializer](https://en.cppreference.com/w/cpp/language/data_members#Member_initialization), the return value corresponds to the location of the constructor definition or [aggregate initialization](https://en.cppreference.com/w/cpp/language/aggregate_initialization) that initializes the data member.
-      /// @remarks If xtd::diagnostics::stack_frame::current is used in a default argument, the return value corresponds to the location of the call to xtd::source_location::current at the call site.
+      /// @remarks If xtd::diagnostics::stack_frame::current is used in a default argument, the return value corresponds to the location of the call to xtd::diagnostics::source_location::current at the call site.
       /// @remarks If xtd::diagnostics::stack_frame::current is invoked in any other manner, the return value is unspecified.
       /// @note xtd::diagnostics::stack_frame::current typically requires compiler's built-in implementation.
-      static stack_frame current(const xtd::source_location& value = xtd::source_location::current()) noexcept;
+      static stack_frame current(const xtd::diagnostics::source_location& value = xtd::diagnostics::source_location::current()) noexcept;
       /// @}
       
     private:

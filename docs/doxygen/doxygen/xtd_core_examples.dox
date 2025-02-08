@@ -773,7 +773,7 @@
 /// Shows how to use xtd::random::next method.
 ///
 /// @example source_location_invoked_directly.cpp
-/// Shows how to use xtd::source_location class.
+/// Shows how to use xtd::diagnostics::source_location class.
 ///
 /// @example sprintf.cpp
 /// Shows how to use xtd::string::sprintf method.
