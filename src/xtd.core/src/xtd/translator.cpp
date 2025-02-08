@@ -114,12 +114,12 @@ const char* translator::translate(const char* value) noexcept {
 }
 
 const char* translator::translate(const xtd::string& language, const char* value) noexcept {
-  try {
-    initialize(); // Must be first
-    return language_values_.at(language).at(value).c_str();
-  } catch (...) {
-    return value;
-  }
+  initialize(); // Must be first
+  auto language_iterator = language_values_.find(language);
+  if (language_iterator == language_values_.end()) return value;
+  auto value_iterator = language_iterator->second.find(value);
+  if (value_iterator == language_iterator->second.end()) return value;
+  return value_iterator->second.c_str();
 }
 
 void translator::initialize() {
