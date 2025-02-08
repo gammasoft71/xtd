@@ -2,6 +2,7 @@
 #include "../../../include/xtd/string.hpp"
 
 using namespace xtd;
+using namespace xtd::diagnostics;
 
 struct source_location::data {
   data() = default;
