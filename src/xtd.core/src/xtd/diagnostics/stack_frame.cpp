@@ -97,8 +97,16 @@ stack_frame stack_frame::empty() noexcept {
   return null;
 }
 
-bool stack_frame::equals(const stack_frame& sf) const noexcept {
-  return data_->file_name == sf.data_->file_name && data_->file_line_number == sf.data_->file_line_number && data_->method_name == sf.data_->method_name && data_->file_column_number == sf.data_->file_column_number && data_->offset == sf.data_->offset;
+bool stack_frame::equals(const object& obj) const noexcept {
+  return is<stack_frame>(obj) && equals(static_cast<const stack_frame&>(obj));
+}
+
+bool stack_frame::equals(const stack_frame& other) const noexcept {
+  return data_->file_name == other.data_->file_name && data_->file_line_number == other.data_->file_line_number && data_->method_name == other.data_->method_name && data_->file_column_number == other.data_->file_column_number && data_->offset == other.data_->offset;
+}
+
+size stack_frame::get_hash_code() const noexcept {
+  return hash_code::combine(data_->file_name, data_->file_line_number, data_->method_name, data_->file_column_number, data_->offset);
 }
 
 xtd::size stack_frame::get_file_column_number() const noexcept {
