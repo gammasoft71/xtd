@@ -1,0 +1,57 @@
+#define __XTD_CORE_INTERNAL__
+#include "../../../include/xtd/helpers/throw_helper.hpp"
+#undef __XTD_CORE_INTERNAL__
+#include "../../../include/xtd/diagnostics/stack_frame.hpp"
+#include "../../../include/xtd/argument_exception.hpp"
+#include "../../../include/xtd/argument_null_exception.hpp"
+#include "../../../include/xtd/argument_out_of_range_exception.hpp"
+#include "../../../include/xtd/format_exception.hpp"
+#include "../../../include/xtd/index_out_of_range_exception.hpp"
+#include "../../../include/xtd/invalid_operation_exception.hpp"
+#include "../../../include/xtd/null_pointer_exception.hpp"
+#include "../../../include/xtd/rank_exception.hpp"
+
+using namespace xtd;
+using namespace xtd::diagnostics;
+using namespace xtd::helpers;
+
+namespace {
+  stack_frame to_stack_frame(const throw_helper::source_location& location) {
+    return stack_frame {location.file_name(), location.line(), location.function_name(), location.column()};
+  }
+}
+
+void throw_helper::throws(exception_case ecase, const source_location& location) {
+  switch (ecase) {
+    case exception_case::argument: throw argument_exception(to_stack_frame(location));
+    case exception_case::argument_null: throw xtd::argument_null_exception(to_stack_frame(location));
+    case exception_case::argument_out_of_range: throw argument_out_of_range_exception(to_stack_frame(location));
+    case exception_case::format: throw xtd::format_exception(to_stack_frame(location));
+    case exception_case::format_no_close_bracket: throw xtd::format_exception(to_stack_frame(location));
+    case exception_case::format_no_open_bracket: throw xtd::format_exception(to_stack_frame(location));
+    case exception_case::format_no_start_colon: throw xtd::format_exception(to_stack_frame(location));
+    case exception_case::index_out_of_range: throw xtd::index_out_of_range_exception(to_stack_frame(location));
+    case exception_case::invalid_operation: throw xtd::invalid_operation_exception(to_stack_frame(location));
+    case exception_case::null_pointer: throw xtd::null_pointer_exception(to_stack_frame(location));
+    case exception_case::rank: throw xtd::rank_exception(to_stack_frame(location));
+    default: throw xtd::exception("Invalid xtd::helpers::exception_case value", to_stack_frame(source_location::current()));
+  }
+}
+
+void throw_helper::throws(exception_case ecase, const char* message, const source_location& location) {
+  if (!message) throws(ecase, location);
+  else switch (ecase) {
+    case exception_case::argument: throw xtd::argument_exception(message, to_stack_frame(location));
+    case exception_case::argument_null: throw xtd::argument_null_exception(message, to_stack_frame(location));
+    case exception_case::argument_out_of_range: throw xtd::argument_out_of_range_exception(message, to_stack_frame(location));
+    case exception_case::format: throw xtd::format_exception(message, to_stack_frame(location));
+    case exception_case::format_no_close_bracket: throw xtd::format_exception(message, to_stack_frame(location));
+    case exception_case::format_no_open_bracket: throw xtd::format_exception(message, to_stack_frame(location));
+    case exception_case::format_no_start_colon: throw xtd::format_exception(message, to_stack_frame(location));
+    case exception_case::index_out_of_range: throw xtd::index_out_of_range_exception(message, to_stack_frame(location));
+    case exception_case::invalid_operation: throw xtd::invalid_operation_exception(message, to_stack_frame(location));
+    case exception_case::null_pointer: throw xtd::null_pointer_exception(message, to_stack_frame(location));
+    case exception_case::rank: throw xtd::rank_exception(message, to_stack_frame(location));
+    default: throw xtd::exception("Invalid xtd::helpers::exception_case value", to_stack_frame(source_location::current()));
+  }
+}

@@ -746,6 +746,10 @@ add_sources(
   include/xtd/diagnostics/trace_source
   include/xtd/diagnostics/trace_switch.hpp
   include/xtd/diagnostics/trace_switch
+  include/xtd/helpers/exception_case.hpp
+  include/xtd/helpers/exception_case
+  include/xtd/helpers/throw_helper.hpp
+  include/xtd/helpers/throw_helper
   include/xtd/extensions/comparison_operators.hpp
   include/xtd/extensions/comparison_operators
   include/xtd/extensions/equality_operators.hpp
@@ -1211,6 +1215,7 @@ add_sources(
   src/xtd/diagnostics/trace_listener_collection.cpp
   src/xtd/diagnostics/trace_source.cpp 
   src/xtd/diagnostics/trace_switch.cpp 
+  src/xtd/helpers/throw_helper.cpp
   src/xtd/internal/__external_exceptions.cpp
   src/xtd/internal/__format_exception.cpp
   src/xtd/internal/__format_stringer.cpp
