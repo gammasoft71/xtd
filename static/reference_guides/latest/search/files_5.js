@@ -24,7 +24,7 @@ var searchData=
   ['enum_5fstruct_2ehpp_21',['enum_struct.hpp',['../enum__struct_8hpp.html',1,'']]],
   ['enumerable_2ehpp_22',['enumerable.hpp',['../collections_2generic_2extensions_2enumerable_8hpp.html',1,'(Global Namespace)'],['../linq_2enumerable_8hpp.html',1,'(Global Namespace)']]],
   ['enumerable_5fiterators_2ehpp_23',['enumerable_iterators.hpp',['../enumerable__iterators_8hpp.html',1,'']]],
-  ['enumerator_2ehpp_24',['enumerator.hpp',['../enumerator_8hpp.html',1,'(Global Namespace)'],['../generic_2enumerator_8hpp.html',1,'(Global Namespace)']]],
+  ['enumerator_2ehpp_24',['enumerator.hpp',['../generic_2enumerator_8hpp.html',1,'(Global Namespace)'],['../enumerator_8hpp.html',1,'(Global Namespace)']]],
   ['environment_2ehpp_25',['environment.hpp',['../environment_8hpp.html',1,'']]],
   ['environment_5fvariable_5ftarget_2ehpp_26',['environment_variable_target.hpp',['../environment__variable__target_8hpp.html',1,'']]],
   ['equality_5fcomparer_2ehpp_27',['equality_comparer.hpp',['../equality__comparer_8hpp.html',1,'']]],
@@ -39,10 +39,11 @@ var searchData=
   ['event_5fwait_5fhandle_2ehpp_36',['event_wait_handle.hpp',['../event__wait__handle_8hpp.html',1,'']]],
   ['exception_2ehpp_37',['exception.hpp',['../exception_8hpp.html',1,'']]],
   ['exception_5fbox_2ehpp_38',['exception_box.hpp',['../exception__box_8hpp.html',1,'']]],
-  ['exception_5fdialog_2ehpp_39',['exception_dialog.hpp',['../exception__dialog_8hpp.html',1,'']]],
-  ['exception_5fdispatch_5finfo_2ehpp_40',['exception_dispatch_info.hpp',['../exception__dispatch__info_8hpp.html',1,'']]],
-  ['exit_5fmode_2ehpp_41',['exit_mode.hpp',['../exit__mode_8hpp.html',1,'']]],
-  ['exit_5fstatus_2ehpp_42',['exit_status.hpp',['../exit__status_8hpp.html',1,'']]],
-  ['export_2ehpp_43',['export.hpp',['../export_8hpp.html',1,'']]],
-  ['extended_5fcolors_2ehpp_44',['extended_colors.hpp',['../extended__colors_8hpp.html',1,'']]]
+  ['exception_5fcase_2ehpp_39',['exception_case.hpp',['../exception__case_8hpp.html',1,'']]],
+  ['exception_5fdialog_2ehpp_40',['exception_dialog.hpp',['../exception__dialog_8hpp.html',1,'']]],
+  ['exception_5fdispatch_5finfo_2ehpp_41',['exception_dispatch_info.hpp',['../exception__dispatch__info_8hpp.html',1,'']]],
+  ['exit_5fmode_2ehpp_42',['exit_mode.hpp',['../exit__mode_8hpp.html',1,'']]],
+  ['exit_5fstatus_2ehpp_43',['exit_status.hpp',['../exit__status_8hpp.html',1,'']]],
+  ['export_2ehpp_44',['export.hpp',['../export_8hpp.html',1,'']]],
+  ['extended_5fcolors_2ehpp_45',['extended_colors.hpp',['../extended__colors_8hpp.html',1,'']]]
 ];

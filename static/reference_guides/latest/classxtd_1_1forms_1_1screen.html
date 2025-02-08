@@ -110,44 +110,38 @@ Inheritance diagram for xtd::forms::screen:</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1forms.html">xtd::forms</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> area = <a class="code hl_function" href="classxtd_1_1forms_1_1screen.html#aab4139ada0e9bb8f1ad765dd5a1c0c61">screen::primary_screen</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1screen.html#a475f01848052b5f36f0c331eaa3ec280">working_area</a>();</div>
+<div class="line">  <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> area = <a class="code hl_function" href="classxtd_1_1forms_1_1screen.html#aab4139ada0e9bb8f1ad765dd5a1c0c61">screen::primary_screen</a>().<a class="code hl_function" href="classxtd_1_1forms_1_1screen.html#a475f01848052b5f36f0c331eaa3ec280">working_area</a>();</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> form1;</div>
 <div class="line">  form1.<a class="code hl_function" href="classxtd_1_1forms_1_1form.html#ab49c0795b5f5478d3277fd566c32d4cf">start_position</a>(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggac490ea79fddd26e2c8354e1e58701019a3c78b35502b2693fefdfc51cba3a53a5">form_start_position::manual</a>);</div>
-<div class="line">  form1.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>(area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ae30e17f4955d1deabd4392204e5b3530">location</a>());</div>
-<div class="line">  form1.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ad6b15530ad92e3df1996d4fd3c0c862e">size</a>({area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">width</a>() / 2, area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_function" href="classxtd_1_1drawing_1_1size.html#a7275f6fddadf6fcc596d426c141b1695">height</a>() / 2});</div>
+<div class="line">  form1.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>(area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ae30e17f4955d1deabd4392204e5b3530">location</a>());</div>
+<div class="line">  form1.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ad6b15530ad92e3df1996d4fd3c0c862e">size</a>({area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">width</a> / 2, area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_variable" href="structxtd_1_1drawing_1_1size.html#a63bd1e3c54cf1eddde02f11ac181a95b">height</a> / 2});</div>
 <div class="line">  form1.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ac12513e127a5cc7bb9ee8b238afa2fd5">text</a>(<span class="stringliteral">&quot;screen 1/4&quot;</span>);</div>
 <div class="line">  form1.<a class="code hl_function" href="classxtd_1_1forms_1_1form.html#a15e40cc4032aa697d156b4416850661b">visible</a>(<span class="keyword">true</span>);</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> form2;</div>
 <div class="line">  form2.<a class="code hl_function" href="classxtd_1_1forms_1_1form.html#ab49c0795b5f5478d3277fd566c32d4cf">start_position</a>(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggac490ea79fddd26e2c8354e1e58701019a3c78b35502b2693fefdfc51cba3a53a5">form_start_position::manual</a>);</div>
-<div class="line">  form2.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>({area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ae30e17f4955d1deabd4392204e5b3530">location</a>().<a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962a9dd4e461268c8034f5c8564e155c67a6">x</a>() + area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_function" href="classxtd_1_1drawing_1_1size.html#ae4218f2f5f296e8fb5a9e0792361454d">width</a>() / 2, area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ae30e17f4955d1deabd4392204e5b3530">location</a>().<a class="code hl_function" href="classxtd_1_1drawing_1_1point.html#a03bec99e22ac61014f59dc9286a223d7">y</a>()});</div>
-<div class="line">  form2.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ad6b15530ad92e3df1996d4fd3c0c862e">size</a>({area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">width</a>() / 2, area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_function" href="classxtd_1_1drawing_1_1size.html#a7275f6fddadf6fcc596d426c141b1695">height</a>() / 2});</div>
+<div class="line">  form2.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>({area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ae30e17f4955d1deabd4392204e5b3530">location</a>().<a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962a9dd4e461268c8034f5c8564e155c67a6">x</a> + area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_variable" href="structxtd_1_1drawing_1_1size.html#af990d903c96a2013bec03e71c1288147">width</a> / 2, area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ae30e17f4955d1deabd4392204e5b3530">location</a>().<a class="code hl_variable" href="structxtd_1_1drawing_1_1point.html#a5d87cc2efeb1c2eee31ea0451f0e7995">y</a>});</div>
+<div class="line">  form2.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ad6b15530ad92e3df1996d4fd3c0c862e">size</a>({area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">width</a> / 2, area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_variable" href="structxtd_1_1drawing_1_1size.html#a63bd1e3c54cf1eddde02f11ac181a95b">height</a> / 2});</div>
 <div class="line">  form2.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ac12513e127a5cc7bb9ee8b238afa2fd5">text</a>(<span class="stringliteral">&quot;screen 2/4&quot;</span>);</div>
 <div class="line">  form2.<a class="code hl_function" href="classxtd_1_1forms_1_1form.html#a15e40cc4032aa697d156b4416850661b">visible</a>(<span class="keyword">true</span>);</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> form3;</div>
 <div class="line">  form3.<a class="code hl_function" href="classxtd_1_1forms_1_1form.html#ab49c0795b5f5478d3277fd566c32d4cf">start_position</a>(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggac490ea79fddd26e2c8354e1e58701019a3c78b35502b2693fefdfc51cba3a53a5">form_start_position::manual</a>);</div>
-<div class="line">  form3.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>({area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ae30e17f4955d1deabd4392204e5b3530">location</a>().<a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962a9dd4e461268c8034f5c8564e155c67a6">x</a>(), area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ae30e17f4955d1deabd4392204e5b3530">location</a>().<a class="code hl_function" href="classxtd_1_1drawing_1_1point.html#a03bec99e22ac61014f59dc9286a223d7">y</a>() + area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_function" href="classxtd_1_1drawing_1_1size.html#a7275f6fddadf6fcc596d426c141b1695">height</a>() / 2});</div>
-<div class="line">  form3.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ad6b15530ad92e3df1996d4fd3c0c862e">size</a>({area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">width</a>() / 2, area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_function" href="classxtd_1_1drawing_1_1size.html#a7275f6fddadf6fcc596d426c141b1695">height</a>() / 2});</div>
+<div class="line">  form3.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>({area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ae30e17f4955d1deabd4392204e5b3530">location</a>().<a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962a9dd4e461268c8034f5c8564e155c67a6">x</a>, area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ae30e17f4955d1deabd4392204e5b3530">location</a>().<a class="code hl_variable" href="structxtd_1_1drawing_1_1point.html#a5d87cc2efeb1c2eee31ea0451f0e7995">y</a> + area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_variable" href="structxtd_1_1drawing_1_1size.html#a63bd1e3c54cf1eddde02f11ac181a95b">height</a> / 2});</div>
+<div class="line">  form3.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ad6b15530ad92e3df1996d4fd3c0c862e">size</a>({area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">width</a> / 2, area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_variable" href="structxtd_1_1drawing_1_1size.html#a63bd1e3c54cf1eddde02f11ac181a95b">height</a> / 2});</div>
 <div class="line">  form3.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ac12513e127a5cc7bb9ee8b238afa2fd5">text</a>(<span class="stringliteral">&quot;screen 3/4&quot;</span>);</div>
 <div class="line">  form3.<a class="code hl_function" href="classxtd_1_1forms_1_1form.html#a15e40cc4032aa697d156b4416850661b">visible</a>(<span class="keyword">true</span>);</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1forms_1_1form.html">form</a> form4;</div>
 <div class="line">  form4.<a class="code hl_function" href="classxtd_1_1forms_1_1form.html#ab49c0795b5f5478d3277fd566c32d4cf">start_position</a>(<a class="code hl_enumvalue" href="group__xtd__forms.html#ggac490ea79fddd26e2c8354e1e58701019a3c78b35502b2693fefdfc51cba3a53a5">form_start_position::manual</a>);</div>
-<div class="line">  form4.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>({area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ae30e17f4955d1deabd4392204e5b3530">location</a>().<a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962a9dd4e461268c8034f5c8564e155c67a6">x</a>() + area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_function" href="classxtd_1_1drawing_1_1size.html#ae4218f2f5f296e8fb5a9e0792361454d">width</a>() / 2, area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ae30e17f4955d1deabd4392204e5b3530">location</a>().<a class="code hl_function" href="classxtd_1_1drawing_1_1point.html#a03bec99e22ac61014f59dc9286a223d7">y</a>() + area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_function" href="classxtd_1_1drawing_1_1size.html#a7275f6fddadf6fcc596d426c141b1695">height</a>() / 2});</div>
-<div class="line">  form4.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ad6b15530ad92e3df1996d4fd3c0c862e">size</a>({area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">width</a>() / 2, area.<a class="code hl_function" href="classxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_function" href="classxtd_1_1drawing_1_1size.html#a7275f6fddadf6fcc596d426c141b1695">height</a>() / 2});</div>
+<div class="line">  form4.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">location</a>({area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ae30e17f4955d1deabd4392204e5b3530">location</a>().<a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962a9dd4e461268c8034f5c8564e155c67a6">x</a> + area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_variable" href="structxtd_1_1drawing_1_1size.html#af990d903c96a2013bec03e71c1288147">width</a> / 2, area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ae30e17f4955d1deabd4392204e5b3530">location</a>().<a class="code hl_variable" href="structxtd_1_1drawing_1_1point.html#a5d87cc2efeb1c2eee31ea0451f0e7995">y</a> + area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_variable" href="structxtd_1_1drawing_1_1size.html#a63bd1e3c54cf1eddde02f11ac181a95b">height</a> / 2});</div>
+<div class="line">  form4.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ad6b15530ad92e3df1996d4fd3c0c862e">size</a>({area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_enumvalue" href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">width</a> / 2, area.<a class="code hl_function" href="structxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">size</a>().<a class="code hl_variable" href="structxtd_1_1drawing_1_1size.html#a63bd1e3c54cf1eddde02f11ac181a95b">height</a> / 2});</div>
 <div class="line">  form4.<a class="code hl_function" href="classxtd_1_1forms_1_1control.html#ac12513e127a5cc7bb9ee8b238afa2fd5">text</a>(<span class="stringliteral">&quot;screen 4/4&quot;</span>);</div>
 <div class="line">  form4.<a class="code hl_function" href="classxtd_1_1forms_1_1form.html#a15e40cc4032aa697d156b4416850661b">visible</a>(<span class="keyword">true</span>);</div>
 <div class="line">  </div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">application::run</a>(form1);</div>
 <div class="line">}</div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1point_html_a03bec99e22ac61014f59dc9286a223d7"><div class="ttname"><a href="classxtd_1_1drawing_1_1point.html#a03bec99e22ac61014f59dc9286a223d7">xtd::drawing::point::y</a></div><div class="ttdeci">int32 y() const noexcept</div><div class="ttdoc">Gets the y-coordinate of this xtd::drawing::point.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1rectangle_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></div><div class="ttdoc">Stores a set of four integers that represent the location and size of a rectangle.</div><div class="ttdef"><b>Definition</b> rectangle.hpp:44</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1rectangle_html_ad9e308514bbe35c9028cd3bb32d16048"><div class="ttname"><a href="classxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">xtd::drawing::rectangle::size</a></div><div class="ttdeci">xtd::drawing::size size() const noexcept</div><div class="ttdoc">Gets the size of this xtd::drawing::rectangle.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1rectangle_html_ae30e17f4955d1deabd4392204e5b3530"><div class="ttname"><a href="classxtd_1_1drawing_1_1rectangle.html#ae30e17f4955d1deabd4392204e5b3530">xtd::drawing::rectangle::location</a></div><div class="ttdeci">xtd::drawing::point location() const noexcept</div><div class="ttdoc">Gets the coordinates of the upper-left corner of this xtd::drawing::rectangle structure.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1size_html_a7275f6fddadf6fcc596d426c141b1695"><div class="ttname"><a href="classxtd_1_1drawing_1_1size.html#a7275f6fddadf6fcc596d426c141b1695">xtd::drawing::size::height</a></div><div class="ttdeci">int32 height() const noexcept</div><div class="ttdoc">Gets he vertical component of this xtd::drawing::size class.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1size_html_ae4218f2f5f296e8fb5a9e0792361454d"><div class="ttname"><a href="classxtd_1_1drawing_1_1size.html#ae4218f2f5f296e8fb5a9e0792361454d">xtd::drawing::size::width</a></div><div class="ttdeci">int32 width() const noexcept</div><div class="ttdoc">Gets the horizontal component of this xtd::drawing::size class.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1application_html_a4ee49410f3156fd66b61c2567a59388e"><div class="ttname"><a href="classxtd_1_1forms_1_1application.html#a4ee49410f3156fd66b61c2567a59388e">xtd::forms::application::run</a></div><div class="ttdeci">static void run()</div><div class="ttdoc">Begins running a standard application message loop on the current thread, without a form.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_a53e5a75ad180a2efadc129e5a3c18cbd"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#a53e5a75ad180a2efadc129e5a3c18cbd">xtd::forms::control::location</a></div><div class="ttdeci">virtual drawing::point location() const noexcept</div><div class="ttdoc">Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its...</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html_ac12513e127a5cc7bb9ee8b238afa2fd5"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html#ac12513e127a5cc7bb9ee8b238afa2fd5">xtd::forms::control::text</a></div><div class="ttdeci">virtual const xtd::string &amp; text() const noexcept</div><div class="ttdoc">Gets the text associated with this control.</div></div>
@@ -161,6 +155,12 @@ Inheritance diagram for xtd::forms::screen:</div>
 <div class="ttc" id="agroup__xtd__forms_html_gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc"><div class="ttname"><a href="group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962aeaae26a6fb20ed3ef54fb23bfa0b1fcc">xtd::forms::bounds_specified::width</a></div><div class="ttdeci">@ width</div><div class="ttdoc">Specifies that the width of the control is defined.</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_ggac490ea79fddd26e2c8354e1e58701019a3c78b35502b2693fefdfc51cba3a53a5"><div class="ttname"><a href="group__xtd__forms.html#ggac490ea79fddd26e2c8354e1e58701019a3c78b35502b2693fefdfc51cba3a53a5">xtd::forms::form_start_position::manual</a></div><div class="ttdeci">@ manual</div><div class="ttdoc">The position of the form is determined by the Location property.</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:12</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1point_html_a5d87cc2efeb1c2eee31ea0451f0e7995"><div class="ttname"><a href="structxtd_1_1drawing_1_1point.html#a5d87cc2efeb1c2eee31ea0451f0e7995">xtd::drawing::point::y</a></div><div class="ttdeci">int32 y</div><div class="ttdoc">Gets or sets the y-coordinate of this xtd::drawing::point.</div><div class="ttdef"><b>Definition</b> point.hpp:198</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1rectangle_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></div><div class="ttdoc">Stores a set of four integers that represent the location and size of a rectangle.</div><div class="ttdef"><b>Definition</b> rectangle.hpp:44</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1rectangle_html_ad9e308514bbe35c9028cd3bb32d16048"><div class="ttname"><a href="structxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">xtd::drawing::rectangle::size</a></div><div class="ttdeci">xtd::drawing::size size() const noexcept</div><div class="ttdoc">Gets the size of this xtd::drawing::rectangle.</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1rectangle_html_ae30e17f4955d1deabd4392204e5b3530"><div class="ttname"><a href="structxtd_1_1drawing_1_1rectangle.html#ae30e17f4955d1deabd4392204e5b3530">xtd::drawing::rectangle::location</a></div><div class="ttdeci">xtd::drawing::point location() const noexcept</div><div class="ttdoc">Gets the coordinates of the upper-left corner of this xtd::drawing::rectangle structure.</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1size_html_a63bd1e3c54cf1eddde02f11ac181a95b"><div class="ttname"><a href="structxtd_1_1drawing_1_1size.html#a63bd1e3c54cf1eddde02f11ac181a95b">xtd::drawing::size::height</a></div><div class="ttdeci">int32 height</div><div class="ttdoc">Gets or sets he vertical component of this xtd::drawing::size class.</div><div class="ttdef"><b>Definition</b> size.hpp:65</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1size_html_af990d903c96a2013bec03e71c1288147"><div class="ttname"><a href="structxtd_1_1drawing_1_1size.html#af990d903c96a2013bec03e71c1288147">xtd::drawing::size::width</a></div><div class="ttdeci">int32 width</div><div class="ttdoc">Gets or sets the horizontal component of this xtd::drawing::size class.</div><div class="ttdef"><b>Definition</b> size.hpp:74</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example shows how to get screen informations of screen component. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/drawing/colors&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/forms/application&gt;</span></div>
@@ -230,7 +230,7 @@ Inheritance diagram for xtd::forms::screen:</div>
 <tr class="memitem:a236a186c34176422cbb958b3755f687a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a236a186c34176422cbb958b3755f687a">bits_per_pixel</a> () const noexcept</td></tr>
 <tr class="memdesc:a236a186c34176422cbb958b3755f687a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of bits of memory, associated with one pixel of data.  <br /></td></tr>
 <tr class="separator:a236a186c34176422cbb958b3755f687a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a180bb0ad68186d5ac4e71e2fdaa213f1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a180bb0ad68186d5ac4e71e2fdaa213f1">bounds</a> () const noexcept</td></tr>
+<tr class="memitem:a180bb0ad68186d5ac4e71e2fdaa213f1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a180bb0ad68186d5ac4e71e2fdaa213f1">bounds</a> () const noexcept</td></tr>
 <tr class="memdesc:a180bb0ad68186d5ac4e71e2fdaa213f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the bounds of the display.  <br /></td></tr>
 <tr class="separator:a180bb0ad68186d5ac4e71e2fdaa213f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aede79f918c1a18098057081fff5e250e"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#aede79f918c1a18098057081fff5e250e">device_name</a> () const</td></tr>
@@ -248,7 +248,7 @@ Inheritance diagram for xtd::forms::screen:</div>
 <tr class="memitem:a16a1e6d78314ff4224e52d9d0d9695b5"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a16a1e6d78314ff4224e52d9d0d9695b5">scale_factor</a> () const noexcept</td></tr>
 <tr class="memdesc:a16a1e6d78314ff4224e52d9d0d9695b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the scale factor of the display.  <br /></td></tr>
 <tr class="separator:a16a1e6d78314ff4224e52d9d0d9695b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a475f01848052b5f36f0c331eaa3ec280"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a475f01848052b5f36f0c331eaa3ec280">working_area</a> () const noexcept</td></tr>
+<tr class="memitem:a475f01848052b5f36f0c331eaa3ec280"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a475f01848052b5f36f0c331eaa3ec280">working_area</a> () const noexcept</td></tr>
 <tr class="memdesc:a475f01848052b5f36f0c331eaa3ec280"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the working area of the display. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.  <br /></td></tr>
 <tr class="separator:a475f01848052b5f36f0c331eaa3ec280"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -270,37 +270,37 @@ Inheritance diagram for xtd::forms::screen:</div>
 <tr class="memitem:a0bfe4b2facdbdabc470dbb6e86cb1aae"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1screen.html">screen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a0bfe4b2facdbdabc470dbb6e86cb1aae">from_handle</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
 <tr class="memdesc:a0bfe4b2facdbdabc470dbb6e86cb1aae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a screen for the display that contains the largest portion of the object referred to by the specified handle.  <br /></td></tr>
 <tr class="separator:a0bfe4b2facdbdabc470dbb6e86cb1aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00ab7f4e2cdb059ffad17cc5973b2bc9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1screen.html">screen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a00ab7f4e2cdb059ffad17cc5973b2bc9">from_point</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;point)</td></tr>
+<tr class="memitem:a00ab7f4e2cdb059ffad17cc5973b2bc9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1screen.html">screen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a00ab7f4e2cdb059ffad17cc5973b2bc9">from_point</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;point)</td></tr>
 <tr class="memdesc:a00ab7f4e2cdb059ffad17cc5973b2bc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a screen for the display that contains the specified point.  <br /></td></tr>
 <tr class="separator:a00ab7f4e2cdb059ffad17cc5973b2bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fda4be958ddc043388846dee2b8365b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1screen.html">screen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a9fda4be958ddc043388846dee2b8365b">from_rectangle</a> (const <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;rect)</td></tr>
+<tr class="memitem:a9fda4be958ddc043388846dee2b8365b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1screen.html">screen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a9fda4be958ddc043388846dee2b8365b">from_rectangle</a> (const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;rect)</td></tr>
 <tr class="memdesc:a9fda4be958ddc043388846dee2b8365b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a screen for the display that contains the largest portion of the rectangle.  <br /></td></tr>
 <tr class="separator:a9fda4be958ddc043388846dee2b8365b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a743b2c68c8d42ab644b18f5379e76e12"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a743b2c68c8d42ab644b18f5379e76e12">get_bounds</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html">control</a>)</td></tr>
+<tr class="memitem:a743b2c68c8d42ab644b18f5379e76e12"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a743b2c68c8d42ab644b18f5379e76e12">get_bounds</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html">control</a>)</td></tr>
 <tr class="memdesc:a743b2c68c8d42ab644b18f5379e76e12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the bounds of the display that contains the largest portion of the specified control.  <br /></td></tr>
 <tr class="separator:a743b2c68c8d42ab644b18f5379e76e12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49c088b68a7f983c76e0598ece62fa69"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a49c088b68a7f983c76e0598ece62fa69">get_bounds</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
+<tr class="memitem:a49c088b68a7f983c76e0598ece62fa69"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a49c088b68a7f983c76e0598ece62fa69">get_bounds</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
 <tr class="memdesc:a49c088b68a7f983c76e0598ece62fa69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the bounds of the display that contains the largest portion of the specified handle.  <br /></td></tr>
 <tr class="separator:a49c088b68a7f983c76e0598ece62fa69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bb1ee7b9f286b044e4bd4d1e73bba04"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a0bb1ee7b9f286b044e4bd4d1e73bba04">get_bounds</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;point)</td></tr>
+<tr class="memitem:a0bb1ee7b9f286b044e4bd4d1e73bba04"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a0bb1ee7b9f286b044e4bd4d1e73bba04">get_bounds</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;point)</td></tr>
 <tr class="memdesc:a0bb1ee7b9f286b044e4bd4d1e73bba04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the bounds of the display that contains the specified point.  <br /></td></tr>
 <tr class="separator:a0bb1ee7b9f286b044e4bd4d1e73bba04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a045eb17a209d04ff75147032763ab06b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a045eb17a209d04ff75147032763ab06b">get_bounds</a> (const <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;rect)</td></tr>
+<tr class="memitem:a045eb17a209d04ff75147032763ab06b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a045eb17a209d04ff75147032763ab06b">get_bounds</a> (const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;rect)</td></tr>
 <tr class="memdesc:a045eb17a209d04ff75147032763ab06b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the bounds of the display that contains the largest portion of the specified rectangle.  <br /></td></tr>
 <tr class="separator:a045eb17a209d04ff75147032763ab06b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d160889c2ab64e7c7cce90ad3d56dc1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a3d160889c2ab64e7c7cce90ad3d56dc1">get_standard_pixels_per_inch</a> ()</td></tr>
 <tr class="memdesc:a3d160889c2ab64e7c7cce90ad3d56dc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the the standard number of pixels per inch of the display.  <br /></td></tr>
 <tr class="separator:a3d160889c2ab64e7c7cce90ad3d56dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49d2522890eabc2fb112888f980f82d2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a49d2522890eabc2fb112888f980f82d2">get_working_area</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html">control</a>)</td></tr>
+<tr class="memitem:a49d2522890eabc2fb112888f980f82d2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a49d2522890eabc2fb112888f980f82d2">get_working_area</a> (const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;<a class="el" href="classxtd_1_1forms_1_1control.html">control</a>)</td></tr>
 <tr class="memdesc:a49d2522890eabc2fb112888f980f82d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the working area for the display that contains the largest region of the specified control. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.  <br /></td></tr>
 <tr class="separator:a49d2522890eabc2fb112888f980f82d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fe33d7c51fe74010210c81ec6647409"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a5fe33d7c51fe74010210c81ec6647409">get_working_area</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
+<tr class="memitem:a5fe33d7c51fe74010210c81ec6647409"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a5fe33d7c51fe74010210c81ec6647409">get_working_area</a> (<a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a> handle)</td></tr>
 <tr class="memdesc:a5fe33d7c51fe74010210c81ec6647409"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the working area for the display that contains the largest region of the specified handle. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.  <br /></td></tr>
 <tr class="separator:a5fe33d7c51fe74010210c81ec6647409"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d15cd9f7cd995d0d0c680d09dd5d464"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a0d15cd9f7cd995d0d0c680d09dd5d464">get_working_area</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;point)</td></tr>
+<tr class="memitem:a0d15cd9f7cd995d0d0c680d09dd5d464"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#a0d15cd9f7cd995d0d0c680d09dd5d464">get_working_area</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;point)</td></tr>
 <tr class="memdesc:a0d15cd9f7cd995d0d0c680d09dd5d464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the working area closest to the specified point. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.  <br /></td></tr>
 <tr class="separator:a0d15cd9f7cd995d0d0c680d09dd5d464"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6d48f9aceb5c311c2efbb61b63bce76"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#aa6d48f9aceb5c311c2efbb61b63bce76">get_working_area</a> (const <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;rect)</td></tr>
+<tr class="memitem:aa6d48f9aceb5c311c2efbb61b63bce76"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1screen.html#aa6d48f9aceb5c311c2efbb61b63bce76">get_working_area</a> (const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;rect)</td></tr>
 <tr class="memdesc:aa6d48f9aceb5c311c2efbb61b63bce76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the working area for the display that contains the largest portion of the specified rectangle. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars.  <br /></td></tr>
 <tr class="separator:aa6d48f9aceb5c311c2efbb61b63bce76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -313,9 +313,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a2743b6f75405882c28eebe2456f3837b inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept</td></tr>
 <tr class="memdesc:a2743b6f75405882c28eebe2456f3837b inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="separator:a2743b6f75405882c28eebe2456f3837b inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a1fea096f8a49ac5eef1f2431806109ca">get_hash_code</a> () const noexcept</td></tr>
-<tr class="memdesc:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="separator:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bd11aa88ce86568b701b33fd1b3e508 inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">get_hash_code</a> () const noexcept</td></tr>
+<tr class="memdesc:a6bd11aa88ce86568b701b33fd1b3e508 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="separator:a6bd11aa88ce86568b701b33fd1b3e508 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="separator:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -378,7 +378,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp; xtd::forms::screen::bounds </td>
+          <td class="memname">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp; xtd::forms::screen::bounds </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -392,7 +392,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the bounds of the display. </p>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a>, representing the bounds of the display. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a>, representing the bounds of the display. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="screen_informations_8cpp-example.html#a3">screen_informations.cpp</a>.</dd>
 </dl>
 
@@ -557,7 +557,7 @@ See <a class="el" href="classxtd_1_1forms_1_1screen.html#a3d160889c2ab64e7c7cce9
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp; xtd::forms::screen::working_area </td>
+          <td class="memname">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp; xtd::forms::screen::working_area </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -571,7 +571,7 @@ See <a class="el" href="classxtd_1_1forms_1_1screen.html#a3d160889c2ab64e7c7cce9
 </div><div class="memdoc">
 
 <p>Gets the working area of the display. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars. </p>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a>, representing the working area of the display. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a>, representing the working area of the display. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars. </dd>
 <dd>
 working_area will return the entire area of the screen if the Windows Taskbar is set to Auto-Hide, no matter whether the Taskbar is currently displayed or not. </dd></dl>
@@ -747,7 +747,7 @@ working_area will return the entire area of the screen if the Windows Taskbar is
         <tr>
           <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1screen.html">screen</a> xtd::forms::screen::from_point </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
           <td class="paramname"><em>point</em></td><td>)</td>
           <td></td>
         </tr>
@@ -762,7 +762,7 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 <p>Retrieves a screen for the display that contains the specified point. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">point</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that specifies the location for which to retrieve a screen. </td></tr>
+    <tr><td class="paramname">point</td><td>A <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that specifies the location for which to retrieve a screen. </td></tr>
   </table>
   </dd>
 </dl>
@@ -782,7 +782,7 @@ working_area will return the entire area of the screen if the Windows Taskbar is
         <tr>
           <td class="memname">static <a class="el" href="classxtd_1_1forms_1_1screen.html">screen</a> xtd::forms::screen::from_rectangle </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;&#160;</td>
           <td class="paramname"><em>rect</em></td><td>)</td>
           <td></td>
         </tr>
@@ -797,7 +797,7 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 <p>Retrieves a screen for the display that contains the largest portion of the rectangle. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">A</td><td><a class="el" href="classxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the area for which to retrieve the display. </td></tr>
+    <tr><td class="paramname">A</td><td><a class="el" href="structxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the area for which to retrieve the display. </td></tr>
   </table>
   </dd>
 </dl>
@@ -815,7 +815,7 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_bounds </td>
+          <td class="memname">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_bounds </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
           <td class="paramname"><em>control</em></td><td>)</td>
@@ -836,7 +836,7 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the bounds of the display that contains the specified control. In multiple display environments where no display contains the specified control, the display closest to the control is returned. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the bounds of the display that contains the specified control. In multiple display environments where no display contains the specified control, the display closest to the control is returned. </dd></dl>
 
 </div>
 </div>
@@ -850,7 +850,7 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_bounds </td>
+          <td class="memname">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_bounds </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -871,7 +871,7 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the bounds of the display that contains the specified handle. In multiple display environments where no display contains the specified handle, the display closest to the object is returned. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the bounds of the display that contains the specified handle. In multiple display environments where no display contains the specified handle, the display closest to the object is returned. </dd></dl>
 
 </div>
 </div>
@@ -885,9 +885,9 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_bounds </td>
+          <td class="memname">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_bounds </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
           <td class="paramname"><em>point</em></td><td>)</td>
           <td></td>
         </tr>
@@ -902,11 +902,11 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 <p>Retrieves the bounds of the display that contains the specified point. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">point</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that specifies the coordinates for which to retrieve the display bounds. </td></tr>
+    <tr><td class="paramname">point</td><td>A <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that specifies the coordinates for which to retrieve the display bounds. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the bounds of the display that contains the specified point. In multiple display environments where no display contains the specified point, the display closest to the point is returned. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the bounds of the display that contains the specified point. In multiple display environments where no display contains the specified point, the display closest to the point is returned. </dd></dl>
 
 </div>
 </div>
@@ -920,9 +920,9 @@ working_area will return the entire area of the screen if the Windows Taskbar is
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_bounds </td>
+          <td class="memname">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_bounds </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;&#160;</td>
           <td class="paramname"><em>rect</em></td><td>)</td>
           <td></td>
         </tr>
@@ -937,11 +937,11 @@ working_area will return the entire area of the screen if the Windows Taskbar is
 <p>Retrieves the bounds of the display that contains the largest portion of the specified rectangle. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">rect</td><td>A <a class="el" href="classxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the area for which to retrieve the display bounds. </td></tr>
+    <tr><td class="paramname">rect</td><td>A <a class="el" href="structxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the area for which to retrieve the display bounds. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the bounds of the display that contains the specified rectangle. In multiple display environments where no monitor contains the specified rectangle, the monitor closest to the rectangle is returned. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the bounds of the display that contains the specified rectangle. In multiple display environments where no monitor contains the specified rectangle, the monitor closest to the rectangle is returned. </dd></dl>
 
 </div>
 </div>
@@ -996,7 +996,7 @@ The following table shows the standard values by operating system : <table class
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_working_area </td>
+          <td class="memname">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_working_area </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td>
           <td class="paramname"><em>control</em></td><td>)</td>
@@ -1017,7 +1017,7 @@ The following table shows the standard values by operating system : <table class
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the working area. In multiple display environments where no display contains the specified control, the display closest to the control is returned. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the working area. In multiple display environments where no display contains the specified control, the display closest to the control is returned. </dd></dl>
 
 </div>
 </div>
@@ -1031,7 +1031,7 @@ The following table shows the standard values by operating system : <table class
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_working_area </td>
+          <td class="memname">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_working_area </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td>
           <td class="paramname"><em>handle</em></td><td>)</td>
@@ -1052,7 +1052,7 @@ The following table shows the standard values by operating system : <table class
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the working area. In multiple display environments where no display contains the specified handle, the display closest to the object is returned. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the working area. In multiple display environments where no display contains the specified handle, the display closest to the object is returned. </dd></dl>
 
 </div>
 </div>
@@ -1066,9 +1066,9 @@ The following table shows the standard values by operating system : <table class
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_working_area </td>
+          <td class="memname">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_working_area </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
           <td class="paramname"><em>point</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1083,11 +1083,11 @@ The following table shows the standard values by operating system : <table class
 <p>Retrieves the working area closest to the specified point. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">point</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that specifies the coordinates for which to retrieve the working area. </td></tr>
+    <tr><td class="paramname">point</td><td>A <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> that specifies the coordinates for which to retrieve the working area. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the working area. In multiple display environments where no display contains the specified point, the display closest to the point is returned. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the working area. In multiple display environments where no display contains the specified point, the display closest to the point is returned. </dd></dl>
 
 </div>
 </div>
@@ -1101,9 +1101,9 @@ The following table shows the standard values by operating system : <table class
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_working_area </td>
+          <td class="memname">static <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> xtd::forms::screen::get_working_area </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">drawing::rectangle</a> &amp;&#160;</td>
           <td class="paramname"><em>rect</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1118,11 +1118,11 @@ The following table shows the standard values by operating system : <table class
 <p>Retrieves the working area for the display that contains the largest portion of the specified rectangle. The working area is the desktop area of the display, excluding taskbars, docked windows, and docked tool bars. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">rect</td><td>The <a class="el" href="classxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the area for which to retrieve the working area. </td></tr>
+    <tr><td class="paramname">rect</td><td>The <a class="el" href="structxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the area for which to retrieve the working area. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the working area. In multiple display environments where no display contains the specified rectangle, the display closest to the rectangle is returned. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structxtd_1_1drawing_1_1rectangle.html" title="Stores a set of four integers that represent the location and size of a rectangle.">xtd::drawing::rectangle</a> that specifies the working area. In multiple display environments where no display contains the specified rectangle, the display closest to the rectangle is returned. </dd></dl>
 
 </div>
 </div>
@@ -1133,7 +1133,7 @@ The following table shows the standard values by operating system : <table class
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 2 2025 00:11:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 8 2025 21:59:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

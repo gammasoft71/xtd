@@ -487,11 +487,11 @@ Macros</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;name = {}&quot;</span>, enum_test::value_four);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_byte());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_byte());</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;byte&gt; = {}&quot;</span>, as&lt;byte&gt;(enum_test::value_four));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -502,8 +502,8 @@ Macros</h2></td></tr>
 <div class="line"><span class="comment">// values = [0, 1, 2, 3]</span></div>
 <div class="line"><span class="comment">// names = [value_one, value_two, value_three, value_four]</span></div>
 <div class="line"><span class="comment">// entries = [(0, value_one), (1, value_two), (2, value_three), (3, value_four)]</span></div>
-<div class="ttc" id="aclassxtd_1_1enum__object_html"><div class="ttname"><a href="classxtd_1_1enum__object.html">xtd::enum_object</a></div><div class="ttdoc">Provides the base class for enumerations.</div><div class="ttdef"><b>Definition</b> enum_object.hpp:42</div></div>
 <div class="ttc" id="agroup__keywords_html_gab2f79c6b0b3afc4eb78cb892fe72b373"><div class="ttname"><a href="group__keywords.html#gab2f79c6b0b3afc4eb78cb892fe72b373">enum_ut_</a></div><div class="ttdeci">#define enum_ut_(namespace_name, enum_t, underlying_t,...)</div><div class="ttdoc">Provides the registration struct for enum with specified underlying type.</div><div class="ttdef"><b>Definition</b> enum.hpp:30</div></div>
+<div class="ttc" id="astructxtd_1_1enum__object_html"><div class="ttname"><a href="structxtd_1_1enum__object.html">xtd::enum_object</a></div><div class="ttdoc">Provides the base class for enumerations.</div><div class="ttdef"><b>Definition</b> enum_object.hpp:48</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="enum_ut_8cpp-example.html#a0">enum_ut.cpp</a>.</dd>
 </dl>
@@ -576,11 +576,11 @@ Macros</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;name = {}&quot;</span>, enum_test::value_four);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_int32());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_int32());</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;int&gt; = {}&quot;</span>, as&lt;int&gt;(enum_test::value_four));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -671,11 +671,11 @@ Macros</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;name = {}&quot;</span>, enum_test::value_four);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_int32());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_int32());</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;int&gt; = {}&quot;</span>, as&lt;int&gt;(enum_test::value_four));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -759,11 +759,11 @@ Macros</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;name = {}&quot;</span>, enum_test::value_four);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_int32());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_int32());</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;int&gt; = {}&quot;</span>, as&lt;int&gt;(enum_test::value_four));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -854,11 +854,11 @@ Macros</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;name = {}&quot;</span>, enum_test::value_four);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_int32());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_int32());</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;int&gt; = {}&quot;</span>, as&lt;int&gt;(enum_test::value_four));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"> </div>
@@ -943,11 +943,11 @@ Macros</h2></td></tr>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;name = {}&quot;</span>, enum_test::value_four);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_int32());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;value = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object</a>(enum_test::value_four).to_int32());</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;int&gt; = {}&quot;</span>, as&lt;int&gt;(enum_test::value_four));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;values = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_values_as_int32&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;names = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_names&lt;enum_test&gt;</a>());</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;entries = {}&quot;</span>, <a class="code hl_struct" href="structxtd_1_1enum__object.html">enum_object&lt;&gt;::get_entries_as_int32&lt;enum_test&gt;</a>());</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -1411,7 +1411,7 @@ You can't use the await_ keyword in the body of a lock_ statement. </dd></dl>
 <div class="line"><span class="comment">// Balance before Withdrawal :  2</span></div>
 <div class="line"><span class="comment">// Amount to Withdraw        : -2</span></div>
 <div class="line"><span class="comment">// Balance after Withdrawal  :  0</span></div>
-<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:42</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:43</div></div>
 <div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.hpp:40</div></div>
 <div class="ttc" id="aclassxtd_1_1random_html_a629a30d5ddd8035f45afe7d982fda712"><div class="ttname"><a href="classxtd_1_1random.html#a629a30d5ddd8035f45afe7d982fda712">xtd::random::next</a></div><div class="ttdeci">virtual int32 next() const</div><div class="ttdoc">Returns a nonnegative random number.</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">The exception that is thrown when a method call is invalid for the object's current state.</div><div class="ttdef"><b>Definition</b> system_exception.hpp:18</div></div>
@@ -1615,16 +1615,16 @@ Use CMake assembly macro if you want create assembly informations with CMake scr
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a>(<span class="stringliteral">&quot;1.2.3&quot;</span>);</div>
 <div class="line"><span class="preprocessor">#pragma endregion</span></div>
-<div class="ttc" id="agroup__keywords_html_ga1048ddb398815fec3ab669a0eaee09b4"><div class="ttname"><a href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a></div><div class="ttdeci">#define assembly_product_(product)</div><div class="ttdoc">Sets the assembly product information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_product_attribute.hpp:74</div></div>
-<div class="ttc" id="agroup__keywords_html_ga33cf23f5ce8f9e2223dcb37d414f03b3"><div class="ttname"><a href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a></div><div class="ttdeci">#define assembly_title_(title)</div><div class="ttdoc">Sets the assembly title information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_title_attribute.hpp:74</div></div>
-<div class="ttc" id="agroup__keywords_html_ga3514dd1eece9d6c77e86331ef05e61dd"><div class="ttname"><a href="group__keywords.html#ga3514dd1eece9d6c77e86331ef05e61dd">assembly_description_</a></div><div class="ttdeci">#define assembly_description_(description)</div><div class="ttdoc">Sets the assembly description information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_description_attribute.hpp:78</div></div>
-<div class="ttc" id="agroup__keywords_html_ga3e5f438101ab9588f3e24c7ebd9dcd05"><div class="ttname"><a href="group__keywords.html#ga3e5f438101ab9588f3e24c7ebd9dcd05">assembly_culture_</a></div><div class="ttdeci">#define assembly_culture_(culture)</div><div class="ttdoc">Sets the assembly culture information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_culture_attribute.hpp:76</div></div>
-<div class="ttc" id="agroup__keywords_html_ga48f60b6fa94cd6b17b95266a06fc69b7"><div class="ttname"><a href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a></div><div class="ttdeci">#define assembly_version_(version)</div><div class="ttdoc">Sets the assembly version information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_version_attribute.hpp:79</div></div>
-<div class="ttc" id="agroup__keywords_html_ga74c3c67b3fff0e9c75dbf571469802f8"><div class="ttname"><a href="group__keywords.html#ga74c3c67b3fff0e9c75dbf571469802f8">assembly_guid_</a></div><div class="ttdeci">#define assembly_guid_(guid)</div><div class="ttdoc">Sets the assembly guid information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_guid_attribute.hpp:74</div></div>
-<div class="ttc" id="agroup__keywords_html_ga7cf5a2fbc4a6d1fadc9c7e51472fcc36"><div class="ttname"><a href="group__keywords.html#ga7cf5a2fbc4a6d1fadc9c7e51472fcc36">assembly_trademark_</a></div><div class="ttdeci">#define assembly_trademark_(trademark)</div><div class="ttdoc">Sets the assembly trademark information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_trademark_attribute.hpp:72</div></div>
-<div class="ttc" id="agroup__keywords_html_gaa9d9362b8802d11f00781c6293d6a2a1"><div class="ttname"><a href="group__keywords.html#gaa9d9362b8802d11f00781c6293d6a2a1">assembly_company_</a></div><div class="ttdeci">#define assembly_company_(company)</div><div class="ttdoc">Sets the assembly company information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_company_attribute.hpp:76</div></div>
-<div class="ttc" id="agroup__keywords_html_gacd21bf2a172183b6091bf93ac4d4e0c7"><div class="ttname"><a href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a></div><div class="ttdeci">#define assembly_configuration_(configuration)</div><div class="ttdoc">Sets the assembly configuration information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_configuration_attribute.hpp:76</div></div>
-<div class="ttc" id="agroup__keywords_html_gaf4b63e6247372f65d3aa5ae42ebd017c"><div class="ttname"><a href="group__keywords.html#gaf4b63e6247372f65d3aa5ae42ebd017c">assembly_copyright_</a></div><div class="ttdeci">#define assembly_copyright_(copyright)</div><div class="ttdoc">Sets the assembly copoyright information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_copyright_attribute.hpp:76</div></div>
+<div class="ttc" id="agroup__keywords_html_ga1048ddb398815fec3ab669a0eaee09b4"><div class="ttname"><a href="group__keywords.html#ga1048ddb398815fec3ab669a0eaee09b4">assembly_product_</a></div><div class="ttdeci">#define assembly_product_(product)</div><div class="ttdoc">Sets the assembly product information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_product_attribute.hpp:92</div></div>
+<div class="ttc" id="agroup__keywords_html_ga33cf23f5ce8f9e2223dcb37d414f03b3"><div class="ttname"><a href="group__keywords.html#ga33cf23f5ce8f9e2223dcb37d414f03b3">assembly_title_</a></div><div class="ttdeci">#define assembly_title_(title)</div><div class="ttdoc">Sets the assembly title information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_title_attribute.hpp:92</div></div>
+<div class="ttc" id="agroup__keywords_html_ga3514dd1eece9d6c77e86331ef05e61dd"><div class="ttname"><a href="group__keywords.html#ga3514dd1eece9d6c77e86331ef05e61dd">assembly_description_</a></div><div class="ttdeci">#define assembly_description_(description)</div><div class="ttdoc">Sets the assembly description information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_description_attribute.hpp:96</div></div>
+<div class="ttc" id="agroup__keywords_html_ga3e5f438101ab9588f3e24c7ebd9dcd05"><div class="ttname"><a href="group__keywords.html#ga3e5f438101ab9588f3e24c7ebd9dcd05">assembly_culture_</a></div><div class="ttdeci">#define assembly_culture_(culture)</div><div class="ttdoc">Sets the assembly culture information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_culture_attribute.hpp:94</div></div>
+<div class="ttc" id="agroup__keywords_html_ga48f60b6fa94cd6b17b95266a06fc69b7"><div class="ttname"><a href="group__keywords.html#ga48f60b6fa94cd6b17b95266a06fc69b7">assembly_version_</a></div><div class="ttdeci">#define assembly_version_(version)</div><div class="ttdoc">Sets the assembly version information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_version_attribute.hpp:97</div></div>
+<div class="ttc" id="agroup__keywords_html_ga74c3c67b3fff0e9c75dbf571469802f8"><div class="ttname"><a href="group__keywords.html#ga74c3c67b3fff0e9c75dbf571469802f8">assembly_guid_</a></div><div class="ttdeci">#define assembly_guid_(guid)</div><div class="ttdoc">Sets the assembly guid information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_guid_attribute.hpp:92</div></div>
+<div class="ttc" id="agroup__keywords_html_ga7cf5a2fbc4a6d1fadc9c7e51472fcc36"><div class="ttname"><a href="group__keywords.html#ga7cf5a2fbc4a6d1fadc9c7e51472fcc36">assembly_trademark_</a></div><div class="ttdeci">#define assembly_trademark_(trademark)</div><div class="ttdoc">Sets the assembly trademark information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_trademark_attribute.hpp:90</div></div>
+<div class="ttc" id="agroup__keywords_html_gaa9d9362b8802d11f00781c6293d6a2a1"><div class="ttname"><a href="group__keywords.html#gaa9d9362b8802d11f00781c6293d6a2a1">assembly_company_</a></div><div class="ttdeci">#define assembly_company_(company)</div><div class="ttdoc">Sets the assembly company information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_company_attribute.hpp:94</div></div>
+<div class="ttc" id="agroup__keywords_html_gacd21bf2a172183b6091bf93ac4d4e0c7"><div class="ttname"><a href="group__keywords.html#gacd21bf2a172183b6091bf93ac4d4e0c7">assembly_configuration_</a></div><div class="ttdeci">#define assembly_configuration_(configuration)</div><div class="ttdoc">Sets the assembly configuration information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_configuration_attribute.hpp:94</div></div>
+<div class="ttc" id="agroup__keywords_html_gaf4b63e6247372f65d3aa5ae42ebd017c"><div class="ttname"><a href="group__keywords.html#gaf4b63e6247372f65d3aa5ae42ebd017c">assembly_copyright_</a></div><div class="ttdeci">#define assembly_copyright_(copyright)</div><div class="ttdoc">Sets the assembly copoyright information. Must be called once in your application.</div><div class="ttdef"><b>Definition</b> assembly_copyright_attribute.hpp:94</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3805,7 +3805,7 @@ You can't use the await_ keyword in the body of a lock_guard_ statement. </dd></
 <div class="ttc" id="agroup__keywords_html_gafa2ffd9b4a6568b57ab2731bec095d99"><div class="ttname"><a href="group__keywords.html#gafa2ffd9b4a6568b57ab2731bec095d99">typeof_</a></div><div class="ttdeci">#define typeof_</div><div class="ttdoc">Used to obtain the type object of a specified type or object.</div><div class="ttdef"><b>Definition</b> typeof.hpp:45</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The typeof_ operator cannot be overloaded. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="any_8cpp-example.html#a2">any.cpp</a>, <a class="el" href="any_info_8cpp-example.html#a4">any_info.cpp</a>, <a class="el" href="array_list2_8cpp-example.html#a1">array_list2.cpp</a>, <a class="el" href="boxed_info_8cpp-example.html#a0">boxed_info.cpp</a>, <a class="el" href="file_info_move_to_8cpp-example.html#a15">file_info_move_to.cpp</a>, <a class="el" href="iclonable_8cpp-example.html#a2">iclonable.cpp</a>, and <a class="el" href="object_get_type_8cpp-example.html#a1">object_get_type.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="any_8cpp-example.html#a2">any.cpp</a>, <a class="el" href="any_info_8cpp-example.html#a4">any_info.cpp</a>, <a class="el" href="array_list2_8cpp-example.html#a1">array_list2.cpp</a>, <a class="el" href="boxed_info_8cpp-example.html#a4">boxed_info.cpp</a>, <a class="el" href="file_info_move_to_8cpp-example.html#a15">file_info_move_to.cpp</a>, <a class="el" href="iclonable_8cpp-example.html#a2">iclonable.cpp</a>, and <a class="el" href="object_get_type_8cpp-example.html#a1">object_get_type.cpp</a>.</dd>
 </dl>
 
 </div>
@@ -3937,7 +3937,7 @@ You can't use the await_ keyword in the body of a lock_guard_ statement. </dd></
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 2 2025 00:11:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 8 2025 21:59:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

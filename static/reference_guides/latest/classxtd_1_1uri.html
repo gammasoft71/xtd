@@ -97,14 +97,14 @@ Inheritance diagram for xtd::uri:</div>
 <area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; uri &gt;" shape="rect" coords="178,56,525,80"/>
 <area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="535,56,882,80"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="0,0,347,24"/>
-<area href="classxtd_1_1extensions_1_1equality__operators.html" title="Internal comparable operators definition." alt="xtd::extensions::equality_operators&lt; type_t, equatable_t &gt;" shape="rect" coords="357,0,704,24"/>
+<area href="classxtd_1_1extensions_1_1equality__operators.html" title="Internal equality operators definition." alt="xtd::extensions::equality_operators&lt; type_t, equatable_t &gt;" shape="rect" coords="357,0,704,24"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Provides an object representation of a uniform resource identifier (URI) and easy access to the parts of the URI. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1uri.html">uri</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;uri&gt;, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:22</div></div>
-<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:42</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:43</div></div>
 <div class="ttc" id="aclassxtd_1_1uri_html"><div class="ttname"><a href="classxtd_1_1uri.html">xtd::uri</a></div><div class="ttdoc">Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...</div><div class="ttdef"><b>Definition</b> uri.hpp:103</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> </dd></dl>
 <dl class="section user"><dt>Implements</dt><dd><a class="el" href="classxtd_1_1iequatable.html" title="Defines a generalized method that a value type or class implements to create a type-specific method f...">xtd::iequatable</a> &lt;&gt; </dd></dl>
@@ -392,15 +392,20 @@ When dealing with untrusted user input, confirm assumptions about the newly crea
 <tr class="memitem:ac75706ca90ad17345c4c8d5e533436e2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1uri.html#ac75706ca90ad17345c4c8d5e533436e2">is_well_formed_original_string</a> ()</td></tr>
 <tr class="memdesc:ac75706ca90ad17345c4c8d5e533436e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the string used to construct this <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> was well-formed and is not required to be further escaped.  <br /></td></tr>
 <tr class="separator:ac75706ca90ad17345c4c8d5e533436e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2597f02a684b598ef9e3844c7f57e669"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1uri.html#a2597f02a684b598ef9e3844c7f57e669">equals</a> (const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;obj) const noexcept override</td></tr>
+<tr class="memdesc:a2597f02a684b598ef9e3844c7f57e669"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="separator:a2597f02a684b598ef9e3844c7f57e669"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6d87c0c1a113a19bc0d13c15b52052b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1uri.html#ab6d87c0c1a113a19bc0d13c15b52052b">equals</a> (const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;<a class="el" href="classxtd_1_1uri.html">uri</a>) const noexcept override</td></tr>
-<tr class="memdesc:ab6d87c0c1a113a19bc0d13c15b52052b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether the current object is equal to another object of the same type.  <br /></td></tr>
+<tr class="memdesc:ab6d87c0c1a113a19bc0d13c15b52052b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="separator:ab6d87c0c1a113a19bc0d13c15b52052b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6743ede6e5793384a9939f0aa4ec4d60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1uri.html#a6743ede6e5793384a9939f0aa4ec4d60">get_hash_code</a> () const noexcept override</td></tr>
+<tr class="memdesc:a6743ede6e5793384a9939f0aa4ec4d60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="separator:a6743ede6e5793384a9939f0aa4ec4d60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86350acf4907de964fa3d02032106d64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1uri.html#a86350acf4907de964fa3d02032106d64">to_string</a> () const noexcept override</td></tr>
 <tr class="memdesc:a86350acf4907de964fa3d02032106d64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a canonical string representation for the specified <a class="el" href="classxtd_1_1uri.html" title="Provides an object representation of a uniform resource identifier (URI) and easy access to the parts...">xtd::uri</a> instance.  <br /></td></tr>
 <tr class="separator:a86350acf4907de964fa3d02032106d64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2743b6f75405882c28eebe2456f3837b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1uri.html#a2743b6f75405882c28eebe2456f3837b">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept</td></tr>
-<tr class="memdesc:a2743b6f75405882c28eebe2456f3837b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="separator:a2743b6f75405882c28eebe2456f3837b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
 <tr class="memitem:a79c2c8f2895156c45ae5c6dd83808481"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1uri.html#a79c2c8f2895156c45ae5c6dd83808481">check_scheme_name</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1uri.html#ad9251943cbc5b5c9e72e8688aa2e9f21">scheme</a>)</td></tr>
 <tr class="memdesc:a79c2c8f2895156c45ae5c6dd83808481"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified scheme name is valid.  <br /></td></tr>
 <tr class="separator:a79c2c8f2895156c45ae5c6dd83808481"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -431,10 +436,6 @@ When dealing with untrusted user input, confirm assumptions about the newly crea
 <tr class="memitem:a543e78bf5b21d8ef95501e991ae62d6c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1uri.html#a543e78bf5b21d8ef95501e991ae62d6c">unescape_data_string</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;value)</td></tr>
 <tr class="memdesc:a543e78bf5b21d8ef95501e991ae62d6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string to its unescaped representation.  <br /></td></tr>
 <tr class="separator:a543e78bf5b21d8ef95501e991ae62d6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t , class object_b_t &gt; </td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1uri.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
-<tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="separator:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -443,9 +444,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ad2cab851376bb6ca085b567bf5da0f5f inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> ()=default</td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="separator:ad2cab851376bb6ca085b567bf5da0f5f inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a1fea096f8a49ac5eef1f2431806109ca">get_hash_code</a> () const noexcept</td></tr>
-<tr class="memdesc:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="separator:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="separator:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1698,8 +1696,45 @@ For more information on URI support, see the Remarks section for the <a class="e
 
 </div>
 </div>
+<a id="a2597f02a684b598ef9e3844c7f57e669" name="a2597f02a684b598ef9e3844c7f57e669"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2597f02a684b598ef9e3844c7f57e669">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool xtd::uri::equals </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">xtd::object</a> &amp;&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether the specified object is equal to the current object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The object to compare with the current object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object</a>.</p>
+
+</div>
+</div>
 <a id="ab6d87c0c1a113a19bc0d13c15b52052b" name="ab6d87c0c1a113a19bc0d13c15b52052b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab6d87c0c1a113a19bc0d13c15b52052b">&#9670;&#160;</a></span>equals() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6d87c0c1a113a19bc0d13c15b52052b">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1711,6 +1746,42 @@ For more information on URI support, see the Remarks section for the <a class="e
           <td class="memname">bool xtd::uri::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1uri.html">xtd::uri</a> &amp;&#160;</td>
+          <td class="paramname"><em>uri</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines whether the specified object is equal to the current object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uri</td><td>The object to compare with the current object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
+
+<p>Implements <a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">xtd::iequatable&lt; uri &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a6743ede6e5793384a9939f0aa4ec4d60" name="a6743ede6e5793384a9939f0aa4ec4d60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6743ede6e5793384a9939f0aa4ec4d60">&#9670;&#160;</a></span>get_hash_code()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> xtd::uri::get_hash_code </td>
+          <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
         </tr>
@@ -1722,16 +1793,10 @@ For more information on URI support, see the Remarks section for the <a class="e
 </table>
 </div><div class="memdoc">
 
-<p>Indicates whether the current object is equal to another object of the same type. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>An object to compare with this object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the current object is equal to the other parameter; otherwise, <code>false</code>. </dd></dl>
+<p>Serves as a hash function for a particular type. </p>
+<dl class="section return"><dt>Returns</dt><dd>A hash code for the current object. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1iequatable.html#a1f8bbde943d2e5ecf565734c60e23903">xtd::iequatable&lt; uri &gt;</a>.</p>
+<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">xtd::object</a>.</p>
 
 </div>
 </div>
@@ -2233,149 +2298,6 @@ Many Web browsers escape spaces inside of URIs into plus ("+") characters; howev
 
 </div>
 </div>
-<a id="a2743b6f75405882c28eebe2456f3837b" name="a2743b6f75405882c28eebe2456f3837b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2743b6f75405882c28eebe2456f3837b">&#9670;&#160;</a></span>equals() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool xtd::object::equals </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">object</a> &amp;&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Determines whether the specified object is equal to the current object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj</td><td>The object to compare with the current object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> object1 = new_ptr&lt;object&gt;();</div>
-<div class="line">  <span class="keyword">auto</span> object2 = new_ptr&lt;object&gt;();</div>
-<div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> object3 = object2;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(object1-&gt;equals(*object3));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(*object1 == *object3);</div>
-<div class="line">  object3 = object1;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(object1-&gt;equals(*object3));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(*object1 == *object3);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// false</span></div>
-<div class="line"><span class="comment">// false</span></div>
-<div class="line"><span class="comment">// true</span></div>
-<div class="line"><span class="comment">// true</span></div>
-</div><!-- fragment --> </dd></dl>
-
-<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object</a>.</p>
-
-</div>
-</div>
-<a id="a7fa6fd860800fb1dd1caac338e2355e6" name="a7fa6fd860800fb1dd1caac338e2355e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fa6fd860800fb1dd1caac338e2355e6">&#9670;&#160;</a></span>equals() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class object_a_t , class object_b_t &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static bool xtd::object::equals </td>
-          <td>(</td>
-          <td class="paramtype">const object_a_t &amp;&#160;</td>
-          <td class="paramname"><em>object_a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const object_b_t &amp;&#160;</td>
-          <td class="paramname"><em>object_b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Determines whether the specified object instances are considered equal. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">object_a</td><td>The first object to compare. </td></tr>
-    <tr><td class="paramname">object_b</td><td>The second object to compare. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns <code>true</code>. otherwise, <code>false</code>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keywordtype">string</span> s1 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
-<div class="line">  <span class="keywordtype">string</span> s2 = <span class="stringliteral">&quot;Carol&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">  </div>
-<div class="line">  s1 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
-<div class="line">  s2 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">  </div>
-<div class="line">  s1 = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line">  s2 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">  </div>
-<div class="line">  s1 = <span class="stringliteral">&quot;Carol&quot;</span>;</div>
-<div class="line">  s2 = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">  </div>
-<div class="line">  s1 = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line">  s2 = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;Tom&quot;, &quot;Carol&quot;) =&gt; false</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;Tom&quot;, &quot;Tom&quot;) =&gt; true</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;&quot;, &quot;Tom&quot;) =&gt; false</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;Carol&quot;, &quot;&quot;) =&gt; false</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;&quot;, &quot;&quot;) =&gt; true</span></div>
-<div class="ttc" id="aclassxtd_1_1object_html_a2743b6f75405882c28eebe2456f3837b"><div class="ttname"><a href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object::equals</a></div><div class="ttdeci">virtual bool equals(const object &amp;obj) const noexcept</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div></div>
-</div><!-- fragment --> </dd></dl>
-
-</div>
-</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a631a51c6d0fc38bf8cd76b25b728429a" name="a631a51c6d0fc38bf8cd76b25b728429a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a631a51c6d0fc38bf8cd76b25b728429a">&#9670;&#160;</a></span>scheme_delimiter</h2>
@@ -2704,7 +2626,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 2 2025 00:11:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 8 2025 21:59:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

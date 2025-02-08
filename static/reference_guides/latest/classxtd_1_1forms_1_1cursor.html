@@ -97,7 +97,7 @@ Inheritance diagram for xtd::forms::cursor:</div>
 <area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,391,80"/>
 <area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; cursor &gt;" shape="rect" coords="401,56,792,80"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="200,0,591,24"/>
-<area href="classxtd_1_1extensions_1_1equality__operators.html" title="Internal comparable operators definition." alt="xtd::extensions::equality_operators&lt; type_t, equatable_t &gt;" shape="rect" coords="601,0,992,24"/>
+<area href="classxtd_1_1extensions_1_1equality__operators.html" title="Internal equality operators definition." alt="xtd::extensions::equality_operators&lt; type_t, equatable_t &gt;" shape="rect" coords="601,0,992,24"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -183,10 +183,10 @@ All controls that derive from the Control class have a Cursor property. To chang
 <tr class="memitem:a65823380cd440d8fc169b29635534c38"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#a65823380cd440d8fc169b29635534c38">handle</a> () const noexcept</td></tr>
 <tr class="memdesc:a65823380cd440d8fc169b29635534c38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the handle of the cursor.  <br /></td></tr>
 <tr class="separator:a65823380cd440d8fc169b29635534c38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf330fe198df0b6d379e5f0272ef48fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#acf330fe198df0b6d379e5f0272ef48fc">hot_spot</a> () const noexcept</td></tr>
+<tr class="memitem:acf330fe198df0b6d379e5f0272ef48fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#acf330fe198df0b6d379e5f0272ef48fc">hot_spot</a> () const noexcept</td></tr>
 <tr class="memdesc:acf330fe198df0b6d379e5f0272ef48fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the cursor hot spot.  <br /></td></tr>
 <tr class="separator:acf330fe198df0b6d379e5f0272ef48fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6bdfafe249a3e572ed5c2ba7a771e50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#af6bdfafe249a3e572ed5c2ba7a771e50">size</a> () const noexcept</td></tr>
+<tr class="memitem:af6bdfafe249a3e572ed5c2ba7a771e50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#af6bdfafe249a3e572ed5c2ba7a771e50">size</a> () const noexcept</td></tr>
 <tr class="memdesc:af6bdfafe249a3e572ed5c2ba7a771e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the size of the cursor object.  <br /></td></tr>
 <tr class="separator:af6bdfafe249a3e572ed5c2ba7a771e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c88b50432be3a65650417fd568ca29c"><td class="memItemLeft" align="right" valign="top">std::any&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#a6c88b50432be3a65650417fd568ca29c">tag</a> () const noexcept</td></tr>
@@ -221,15 +221,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a 
 <tr class="memitem:aaa45169a743daa727cc5753b7c43cff7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#aaa45169a743daa727cc5753b7c43cff7">current</a> (const <a class="el" href="classxtd_1_1forms_1_1cursor.html">xtd::forms::cursor</a> &amp;<a class="el" href="classxtd_1_1forms_1_1cursor.html">cursor</a>)</td></tr>
 <tr class="memdesc:aaa45169a743daa727cc5753b7c43cff7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a cursor object that represents the mouse cursor.  <br /></td></tr>
 <tr class="separator:aaa45169a743daa727cc5753b7c43cff7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08e14598bed302e023d3b34e96dbb684"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#a08e14598bed302e023d3b34e96dbb684">position</a> ()</td></tr>
+<tr class="memitem:a08e14598bed302e023d3b34e96dbb684"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#a08e14598bed302e023d3b34e96dbb684">position</a> ()</td></tr>
 <tr class="memdesc:a08e14598bed302e023d3b34e96dbb684"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the cursor's position.  <br /></td></tr>
 <tr class="separator:a08e14598bed302e023d3b34e96dbb684"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba5e10b4efd7a7f442ad1350f98b52ae"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#aba5e10b4efd7a7f442ad1350f98b52ae">position</a> (const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;position)</td></tr>
+<tr class="memitem:aba5e10b4efd7a7f442ad1350f98b52ae"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#aba5e10b4efd7a7f442ad1350f98b52ae">position</a> (const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;position)</td></tr>
 <tr class="memdesc:aba5e10b4efd7a7f442ad1350f98b52ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cursor's position.  <br /></td></tr>
 <tr class="separator:aba5e10b4efd7a7f442ad1350f98b52ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Static methodds</h2></td></tr>
-<tr class="memitem:af8a3cda6e654534192c906acc7aef7ae"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1cursor.html">cursor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#af8a3cda6e654534192c906acc7aef7ae">from_bitmap</a> (const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;bitmap, const <a class="el" href="classxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1cursor.html#acf330fe198df0b6d379e5f0272ef48fc">hot_spot</a>)</td></tr>
+<tr class="memitem:af8a3cda6e654534192c906acc7aef7ae"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1cursor.html">cursor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#af8a3cda6e654534192c906acc7aef7ae">from_bitmap</a> (const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;bitmap, const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;<a class="el" href="classxtd_1_1forms_1_1cursor.html#acf330fe198df0b6d379e5f0272ef48fc">hot_spot</a>)</td></tr>
 <tr class="memdesc:af8a3cda6e654534192c906acc7aef7ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a cursor form a specified bitmap with specified hot spot.  <br /></td></tr>
 <tr class="separator:af8a3cda6e654534192c906acc7aef7ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7682764471c4c3f56d01bb69cd196ec"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1forms_1_1cursor.html">cursor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#aa7682764471c4c3f56d01bb69cd196ec">from_bitmap</a> (const <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">xtd::drawing::bitmap</a> &amp;bitmap)</td></tr>
@@ -248,9 +248,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ad2cab851376bb6ca085b567bf5da0f5f inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> ()=default</td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="separator:ad2cab851376bb6ca085b567bf5da0f5f inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a1fea096f8a49ac5eef1f2431806109ca">get_hash_code</a> () const noexcept</td></tr>
-<tr class="memdesc:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="separator:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bd11aa88ce86568b701b33fd1b3e508 inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">get_hash_code</a> () const noexcept</td></tr>
+<tr class="memdesc:a6bd11aa88ce86568b701b33fd1b3e508 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="separator:a6bd11aa88ce86568b701b33fd1b3e508 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="separator:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -367,7 +367,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> xtd::forms::cursor::hot_spot </td>
+          <td class="memname"><a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> xtd::forms::cursor::hot_spot </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -396,7 +396,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1drawing_1_1size.html">drawing::size</a> xtd::forms::cursor::size </td>
+          <td class="memname"><a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> xtd::forms::cursor::size </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -544,7 +544,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> xtd::forms::cursor::position </td>
+          <td class="memname">static <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> xtd::forms::cursor::position </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -575,7 +575,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">static void xtd::forms::cursor::position </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">drawing::point</a> &amp;&#160;</td>
           <td class="paramname"><em>position</em></td><td>)</td>
           <td></td>
         </tr>
@@ -667,7 +667,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1point.html">xtd::drawing::point</a> &amp;&#160;</td>
           <td class="paramname"><em>hot_spot</em>&#160;</td>
         </tr>
         <tr>
@@ -687,7 +687,7 @@ Additional Inherited Members</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">bitmap</td><td>A <a class="el" href="classxtd_1_1drawing_1_1bitmap.html" title="Encapsulates a GDI+ bitmap, which consists of the pixel data for a graphics image and its attributes....">xtd::drawing::bitmap</a> image will be use by cursor. </td></tr>
-    <tr><td class="paramname">hot_spot</td><td>A <a class="el" href="classxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> hot spot location. </td></tr>
+    <tr><td class="paramname">hot_spot</td><td>A <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> hot spot location. </td></tr>
   </table>
   </dd>
 </dl>
@@ -963,7 +963,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 2 2025 00:11:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 8 2025 21:59:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

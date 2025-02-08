@@ -296,6 +296,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a5251f21f947f99a446a8bf6fbdd4cf95 inherit pub_methods_classxtd_1_1threading_1_1thread"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread.html#a5251f21f947f99a446a8bf6fbdd4cf95">detach</a> ()</td></tr>
 <tr class="memdesc:a5251f21f947f99a446a8bf6fbdd4cf95 inherit pub_methods_classxtd_1_1threading_1_1thread"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the thread background.  <br /></td></tr>
 <tr class="separator:a5251f21f947f99a446a8bf6fbdd4cf95 inherit pub_methods_classxtd_1_1threading_1_1thread"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a547137846df20cafba5cfb998b3f297c inherit pub_methods_classxtd_1_1threading_1_1thread"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread.html#a547137846df20cafba5cfb998b3f297c">get_hash_code</a> () const noexcept override</td></tr>
+<tr class="memdesc:a547137846df20cafba5cfb998b3f297c inherit pub_methods_classxtd_1_1threading_1_1thread"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="separator:a547137846df20cafba5cfb998b3f297c inherit pub_methods_classxtd_1_1threading_1_1thread"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23a6354206f5d065d706198b3afac452 inherit pub_methods_classxtd_1_1threading_1_1thread"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread.html#a23a6354206f5d065d706198b3afac452">interrupt</a> ()</td></tr>
 <tr class="memdesc:a23a6354206f5d065d706198b3afac452 inherit pub_methods_classxtd_1_1threading_1_1thread"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupts a thread that is in the <a class="el" href="group__threading.html#ggad404f38f7d4e370680b792bc0f397d04a39c85f6d7fe5d8369799963a01b17f3b" title="The thread_state is blocked. This could be the result of calling System::Threading::Thread....">xtd::threading::thread_state::wait_sleep_join</a> thread state.  <br /></td></tr>
 <tr class="separator:a23a6354206f5d065d706198b3afac452 inherit pub_methods_classxtd_1_1threading_1_1thread"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -327,9 +330,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a2743b6f75405882c28eebe2456f3837b inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept</td></tr>
 <tr class="memdesc:a2743b6f75405882c28eebe2456f3837b inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
 <tr class="separator:a2743b6f75405882c28eebe2456f3837b inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a1fea096f8a49ac5eef1f2431806109ca">get_hash_code</a> () const noexcept</td></tr>
-<tr class="memdesc:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="separator:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="separator:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -670,7 +670,7 @@ Important For partially trusted code, max_stack_size is ignored if it is greater
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 2 2025 00:11:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 8 2025 21:59:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

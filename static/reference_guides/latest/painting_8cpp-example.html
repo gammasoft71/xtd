@@ -218,27 +218,27 @@ $(function() {
 <div class="line">      panel_painting.mouse_down += [&amp;](<span class="keywordtype">object</span> &amp; sender, <span class="keyword">const</span> <a id="_a9" name="_a9"></a><a class="code hl_class" href="classxtd_1_1forms_1_1mouse__event__args.html">mouse_event_args</a> &amp; e) {</div>
 <div class="line">        <span class="keywordflow">if</span> (e.x() / zoom &gt;= 0 &amp;&amp; e.x() / zoom &lt; picture.width() &amp;&amp; e.y() / zoom &gt;= 0 &amp;&amp; e.y() / zoom &lt; picture.height()) {</div>
 <div class="line">          picture.set_pixel(e.x() / zoom, e.y() / zoom, e.button() == mouse_buttons::left ? current_color : color::from_argb(0, 0, 0, 0));</div>
-<div class="line">          panel_painting.invalidate(<a id="_a10" name="_a10"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a>(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));</div>
+<div class="line">          panel_painting.invalidate(<a id="_a10" name="_a10"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a>(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));</div>
 <div class="line">        }</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      panel_painting.mouse_move += [&amp;](<span class="keywordtype">object</span> &amp; sender, <span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1forms_1_1mouse__event__args.html">mouse_event_args</a> &amp; e) {</div>
 <div class="line">        <span class="keywordflow">if</span> (e.button() == mouse_buttons::left &amp;&amp; e.x() / zoom &gt;= 0 &amp;&amp; e.x() / zoom &lt; picture.width() &amp;&amp; e.y() / zoom &gt;= 0 &amp;&amp; e.y() / zoom &lt; picture.height()) {</div>
 <div class="line">          picture.set_pixel(e.x() / zoom, e.y() / zoom, current_color);</div>
-<div class="line">          panel_painting.invalidate(<a class="code hl_class" href="classxtd_1_1drawing_1_1rectangle.html">rectangle</a>(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));</div>
+<div class="line">          panel_painting.invalidate(<a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a>(e.x() / zoom * zoom, e.y() / zoom * zoom, zoom, zoom));</div>
 <div class="line">        }</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      panel_painting.paint += [&amp;](<span class="keywordtype">object</span> &amp; sender, <a id="_a11" name="_a11"></a><a class="code hl_class" href="classxtd_1_1forms_1_1paint__event__args.html">paint_event_args</a> &amp; e) {</div>
-<div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> y = 0; y &lt; panel_painting.client_size().height(); y += zoom)</div>
-<div class="line">          <span class="keywordflow">for</span> (<span class="keyword">auto</span> x = 0; x &lt; panel_painting.client_size().width(); x += zoom)</div>
+<div class="line">        <span class="keywordflow">for</span> (<span class="keyword">auto</span> y = 0; y &lt; panel_painting.client_size().height; y += zoom)</div>
+<div class="line">          <span class="keywordflow">for</span> (<span class="keyword">auto</span> x = 0; x &lt; panel_painting.client_size().width; x += zoom)</div>
 <div class="line">            <span class="keywordflow">if</span> (picture.get_pixel(x / zoom, y / zoom) != color::from_argb(0, 0, 0, 0))</div>
 <div class="line">              e.graphics().fill_rectangle(<a id="_a12" name="_a12"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1solid__brush.html">solid_brush</a>(picture.get_pixel(x / zoom, y / zoom)), x, y, zoom, zoom);</div>
 <div class="line">        <span class="keywordflow">if</span> (zoom &gt; 3) {</div>
-<div class="line">          <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0; index &lt; panel_painting.client_size().width(); index += zoom)</div>
-<div class="line">            e.graphics().draw_line(pens::light_blue(), index, 0, index, panel_painting.client_size().height());</div>
-<div class="line">          <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0; index &lt; panel_painting.client_size().height(); index += zoom)</div>
-<div class="line">            e.graphics().draw_line(pens::light_blue(), 0, index, panel_painting.client_size().width(), index);</div>
+<div class="line">          <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0; index &lt; panel_painting.client_size().width; index += zoom)</div>
+<div class="line">            e.graphics().draw_line(pens::light_blue(), index, 0, index, panel_painting.client_size().height);</div>
+<div class="line">          <span class="keywordflow">for</span> (<span class="keyword">auto</span> index = 0; index &lt; panel_painting.client_size().height; index += zoom)</div>
+<div class="line">            e.graphics().draw_line(pens::light_blue(), 0, index, panel_painting.client_size().width, index);</div>
 <div class="line">        }</div>
 <div class="line">      };</div>
 <div class="line">    }</div>
@@ -275,7 +275,6 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_a949196d571aaa1e0b8a3bbcf59141074"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#a949196d571aaa1e0b8a3bbcf59141074">xtd::drawing::image::height</a></div><div class="ttdeci">int32 height() const noexcept</div><div class="ttdoc">Gets the height, in pixels, of this image.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_aede72dea65624fed9a8676a866a1d2e8"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#aede72dea65624fed9a8676a866a1d2e8">xtd::drawing::image::width</a></div><div class="ttdeci">int32 width() const noexcept</div><div class="ttdoc">Gets the width, in pixels, of this image.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_af3dfbcc629a79d01814da6519011ed85"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#af3dfbcc629a79d01814da6519011ed85">xtd::drawing::image::size</a></div><div class="ttdeci">const drawing::size &amp; size() const noexcept</div><div class="ttdoc">Gets the width and height, in pixels, of this image.</div></div>
-<div class="ttc" id="aclassxtd_1_1drawing_1_1rectangle_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></div><div class="ttdoc">Stores a set of four integers that represent the location and size of a rectangle.</div><div class="ttdef"><b>Definition</b> rectangle.hpp:44</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1solid__brush_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1solid__brush.html">xtd::drawing::solid_brush</a></div><div class="ttdoc">Defines a xtd::drawing::brush of a single color. Brushes are used to fill graphics shapes,...</div><div class="ttdef"><b>Definition</b> solid_brush.hpp:30</div></div>
 <div class="ttc" id="aclassxtd_1_1event__args_html"><div class="ttname"><a href="classxtd_1_1event__args.html">xtd::event_args</a></div><div class="ttdoc">Represents the base class for classes that contain event data, and provides a value to use for events...</div><div class="ttdef"><b>Definition</b> event_args.hpp:18</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1button_html"><div class="ttname"><a href="classxtd_1_1forms_1_1button.html">xtd::forms::button</a></div><div class="ttdoc">Represents a Windows button control.</div><div class="ttdef"><b>Definition</b> button.hpp:49</div></div>
@@ -292,15 +291,16 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1forms_1_1panel_html_a038eb8f5c3e6fe9cce869cf6b4101a6f"><div class="ttname"><a href="classxtd_1_1forms_1_1panel.html#a038eb8f5c3e6fe9cce869cf6b4101a6f">xtd::forms::panel::border_style</a></div><div class="ttdeci">virtual forms::border_style border_style() const noexcept</div><div class="ttdoc">Gets the border style for the control.</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1track__bar_html"><div class="ttname"><a href="classxtd_1_1forms_1_1track__bar.html">xtd::forms::track_bar</a></div><div class="ttdoc">Represents a standard Windows track bar.</div><div class="ttdef"><b>Definition</b> track_bar.hpp:34</div></div>
 <div class="ttc" id="agroup__events_html_ga226db3bbc8ae6fdf2afaa94a5c947c54"><div class="ttname"><a href="group__events.html#ga226db3bbc8ae6fdf2afaa94a5c947c54">xtd::event_handler</a></div><div class="ttdeci">generic_event_handler&lt; const xtd::event_args &amp; &gt; event_handler</div><div class="ttdoc">Represents the method that will handle an event that has no event data.</div><div class="ttdef"><b>Definition</b> event_handler.hpp:24</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:15</div></div>
+<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
 <div class="ttc" id="anamespacextd_1_1drawing_html"><div class="ttname"><a href="namespacextd_1_1drawing.html">xtd::drawing</a></div><div class="ttdoc">The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...</div><div class="ttdef"><b>Definition</b> actions_system_images.hpp:11</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:12</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1rectangle_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></div><div class="ttdoc">Stores a set of four integers that represent the location and size of a rectangle.</div><div class="ttdef"><b>Definition</b> rectangle.hpp:44</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 2 2025 00:11:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 8 2025 21:59:16 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -97,7 +97,7 @@ Inheritance diagram for xtd::drawing::imaging::encoder:</div>
 <area href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes...." alt="xtd::object" shape="rect" coords="0,56,411,80"/>
 <area href="classxtd_1_1iequatable.html" alt="xtd::iequatable&lt; encoder &gt;" shape="rect" coords="421,56,832,80"/>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="210,0,621,24"/>
-<area href="classxtd_1_1extensions_1_1equality__operators.html" title="Internal comparable operators definition." alt="xtd::extensions::equality_operators&lt; type_t, equatable_t &gt;" shape="rect" coords="631,0,1042,24"/>
+<area href="classxtd_1_1extensions_1_1equality__operators.html" title="Internal equality operators definition." alt="xtd::extensions::equality_operators&lt; type_t, equatable_t &gt;" shape="rect" coords="631,0,1042,24"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -106,7 +106,8 @@ Inheritance diagram for xtd::drawing::imaging::encoder:</div>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing.html" title="The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...">xtd.drawing</a></dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>When you pass a parameter to an image encoder, the parameter is encapsulated in an EncoderParameter object. One of the fields of the EncoderParameter object is a GUID that specifies the category of the parameter. Use the static fields of the Encoder class to retrieve an Encoder that contains parameters of the desired category. </dd>
 <dd>
-The image encoders that are built into GDI+ receive parameters that belong to several categories. The following table lists all the categories and the GUID associated with each category. <table class="markdownTable">
+The image encoders that are built into GDI+ receive parameters that belong to several categories. The following table lists all the categories and the GUID associated with each category.</dd></dl>
+<table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Category   </th><th class="markdownTableHeadNone">GUID    </th></tr>
 <tr class="markdownTableRowOdd">
@@ -130,7 +131,6 @@ The image encoders that are built into GDI+ receive parameters that belong to se
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">version   </td><td class="markdownTableBodyNone">24d18c76-814a-41a4-bf53-1c219cccf797   </td></tr>
 </table>
-</dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:ab5bae83d965c96107b699f0ade0ee8ce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1imaging_1_1encoder.html#ab5bae83d965c96107b699f0ade0ee8ce">encoder</a> (const <a class="el" href="structxtd_1_1guid.html">xtd::guid</a> &amp;<a class="el" href="structxtd_1_1guid.html">guid</a>)</td></tr>
@@ -143,16 +143,15 @@ The image encoders that are built into GDI+ receive parameters that belong to se
 <tr class="separator:ac3fa7ef9dfa569f5115166919ed65fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:aea8a7bdb535c207b8e1eb27958cd4ec5"><td class="memItemLeft" align="right" valign="top"><a id="aea8a7bdb535c207b8e1eb27958cd4ec5" name="aea8a7bdb535c207b8e1eb27958cd4ec5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>equals</b> (const <a class="el" href="classxtd_1_1drawing_1_1imaging_1_1encoder.html">encoder</a> &amp;value) const noexcept override</td></tr>
-<tr class="separator:aea8a7bdb535c207b8e1eb27958cd4ec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2743b6f75405882c28eebe2456f3837b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1imaging_1_1encoder.html#a2743b6f75405882c28eebe2456f3837b">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept</td></tr>
-<tr class="memdesc:a2743b6f75405882c28eebe2456f3837b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
-<tr class="separator:a2743b6f75405882c28eebe2456f3837b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t , class object_b_t &gt; </td></tr>
-<tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1imaging_1_1encoder.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
-<tr class="memdesc:a7fa6fd860800fb1dd1caac338e2355e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object instances are considered equal.  <br /></td></tr>
-<tr class="separator:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2386f805fd901f08a7d7a9fe31e17ea8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1imaging_1_1encoder.html#a2386f805fd901f08a7d7a9fe31e17ea8">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept override</td></tr>
+<tr class="memdesc:a2386f805fd901f08a7d7a9fe31e17ea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="separator:a2386f805fd901f08a7d7a9fe31e17ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60bc3c2be945950158a64117625d83fb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1imaging_1_1encoder.html#a60bc3c2be945950158a64117625d83fb">equals</a> (const <a class="el" href="classxtd_1_1drawing_1_1imaging_1_1encoder.html">encoder</a> &amp;<a class="el" href="group__xtd__core.html#ggac34b9e6b6738a27b73c2f5ffeaa2ecf2a795f3202b17cb6bc3d4b771d8c6c9eaf">other</a>) const noexcept override</td></tr>
+<tr class="memdesc:a60bc3c2be945950158a64117625d83fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the specified object is equal to the current object.  <br /></td></tr>
+<tr class="separator:a60bc3c2be945950158a64117625d83fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8bb787db94a95e4ab347408d621f17f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1imaging_1_1encoder.html#ae8bb787db94a95e4ab347408d621f17f">get_hash_code</a> () const noexcept override</td></tr>
+<tr class="memdesc:ae8bb787db94a95e4ab347408d621f17f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
+<tr class="separator:ae8bb787db94a95e4ab347408d621f17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Fields</h2></td></tr>
 <tr class="memitem:a8458400e4535e2e9a70c7370e9f4ed79"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1imaging_1_1encoder.html">encoder</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1imaging_1_1encoder.html#a8458400e4535e2e9a70c7370e9f4ed79">chrominance_table</a> () noexcept</td></tr>
@@ -192,9 +191,6 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ad2cab851376bb6ca085b567bf5da0f5f inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> ()=default</td></tr>
 <tr class="memdesc:ad2cab851376bb6ca085b567bf5da0f5f inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of the ultimate base class object.  <br /></td></tr>
 <tr class="separator:ad2cab851376bb6ca085b567bf5da0f5f inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a1fea096f8a49ac5eef1f2431806109ca">get_hash_code</a> () const noexcept</td></tr>
-<tr class="memdesc:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serves as a hash function for a particular type.  <br /></td></tr>
-<tr class="separator:a1fea096f8a49ac5eef1f2431806109ca inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="separator:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -239,7 +235,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -273,7 +269,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -316,7 +312,7 @@ The image encoders that are built into GDI+ receive parameters that belong to se
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -359,7 +355,7 @@ The image encoders that are built into GDI+ receive parameters that belong to se
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -402,7 +398,7 @@ The image encoders that are built into GDI+ receive parameters that belong to se
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -445,7 +441,7 @@ The image encoders that are built into GDI+ receive parameters that belong to se
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -488,7 +484,7 @@ The image encoders that are built into GDI+ receive parameters that belong to se
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -531,7 +527,7 @@ The image encoders that are built into GDI+ receive parameters that belong to se
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -574,7 +570,7 @@ The image encoders that are built into GDI+ receive parameters that belong to se
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -617,7 +613,7 @@ The image encoders that are built into GDI+ receive parameters that belong to se
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -660,7 +656,7 @@ The image encoders that are built into GDI+ receive parameters that belong to se
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -703,7 +699,7 @@ The image encoders that are built into GDI+ receive parameters that belong to se
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -713,8 +709,8 @@ The image encoders that are built into GDI+ receive parameters that belong to se
 
 </div>
 </div>
-<a id="a2743b6f75405882c28eebe2456f3837b" name="a2743b6f75405882c28eebe2456f3837b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2743b6f75405882c28eebe2456f3837b">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
+<a id="a2386f805fd901f08a7d7a9fe31e17ea8" name="a2386f805fd901f08a7d7a9fe31e17ea8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2386f805fd901f08a7d7a9fe31e17ea8">&#9670;&#160;</a></span>equals() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -723,7 +719,7 @@ The image encoders that are built into GDI+ receive parameters that belong to se
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool xtd::object::equals </td>
+          <td class="memname">bool xtd::drawing::imaging::encoder::equals </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1object.html">object</a> &amp;&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -732,7 +728,7 @@ The image encoders that are built into GDI+ receive parameters that belong to se
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -745,116 +741,73 @@ The image encoders that are built into GDI+ receive parameters that belong to se
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example compares the current instance with another object. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> object1 = new_ptr&lt;object&gt;();</div>
-<div class="line">  <span class="keyword">auto</span> object2 = new_ptr&lt;object&gt;();</div>
-<div class="line">  </div>
-<div class="line">  <span class="keyword">auto</span> object3 = object2;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(object1-&gt;equals(*object3));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(*object1 == *object3);</div>
-<div class="line">  object3 = object1;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(object1-&gt;equals(*object3));</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(*object1 == *object3);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// false</span></div>
-<div class="line"><span class="comment">// false</span></div>
-<div class="line"><span class="comment">// true</span></div>
-<div class="line"><span class="comment">// true</span></div>
-<div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
-</div><!-- fragment --> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object</a>.</p>
 
 </div>
 </div>
-<a id="a7fa6fd860800fb1dd1caac338e2355e6" name="a7fa6fd860800fb1dd1caac338e2355e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7fa6fd860800fb1dd1caac338e2355e6">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
+<a id="a60bc3c2be945950158a64117625d83fb" name="a60bc3c2be945950158a64117625d83fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60bc3c2be945950158a64117625d83fb">&#9670;&#160;</a></span>equals() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class object_a_t , class object_b_t &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool xtd::object::equals </td>
+          <td class="memname">bool xtd::drawing::imaging::encoder::equals </td>
           <td>(</td>
-          <td class="paramtype">const object_a_t &amp;&#160;</td>
-          <td class="paramname"><em>object_a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const object_b_t &amp;&#160;</td>
-          <td class="paramname"><em>object_b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1imaging_1_1encoder.html">encoder</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Determines whether the specified object instances are considered equal. </p>
+<p>Determines whether the specified object is equal to the current object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">object_a</td><td>The first object to compare. </td></tr>
-    <tr><td class="paramname">object_b</td><td>The second object to compare. </td></tr>
+    <tr><td class="paramname">other</td><td>The object to compare with the current object. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if object_a is the same instance as object_b or if both are null references or if object_a(object_b) returns <code>true</code>. otherwise, <code>false</code>. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example compares different objects. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keywordtype">string</span> s1 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
-<div class="line">  <span class="keywordtype">string</span> s2 = <span class="stringliteral">&quot;Carol&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">  </div>
-<div class="line">  s1 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
-<div class="line">  s2 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">  </div>
-<div class="line">  s1 = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line">  s2 = <span class="stringliteral">&quot;Tom&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">  </div>
-<div class="line">  s1 = <span class="stringliteral">&quot;Carol&quot;</span>;</div>
-<div class="line">  s2 = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">  </div>
-<div class="line">  s1 = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line">  s2 = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;object::equals(\&quot;{0}\&quot;, \&quot;{1}\&quot;) =&gt; {2}&quot;</span>, s1, s2, <a class="code hl_function" href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">object::equals</a>(s1, s2));</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">// This code produces the following output :</span></div>
-<div class="line"><span class="comment">//</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;Tom&quot;, &quot;Carol&quot;) =&gt; false</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;Tom&quot;, &quot;Tom&quot;) =&gt; true</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;&quot;, &quot;Tom&quot;) =&gt; false</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;Carol&quot;, &quot;&quot;) =&gt; false</span></div>
-<div class="line"><span class="comment">// object::equals(&quot;&quot;, &quot;&quot;) =&gt; true</span></div>
-<div class="ttc" id="aclassxtd_1_1object_html_a2743b6f75405882c28eebe2456f3837b"><div class="ttname"><a href="classxtd_1_1object.html#a2743b6f75405882c28eebe2456f3837b">xtd::object::equals</a></div><div class="ttdeci">virtual bool equals(const object &amp;obj) const noexcept</div><div class="ttdoc">Determines whether the specified object is equal to the current object.</div></div>
-</div><!-- fragment --> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the specified object is equal to the current object. otherwise, <code>false</code>. </dd></dl>
+
+</div>
+</div>
+<a id="ae8bb787db94a95e4ab347408d621f17f" name="ae8bb787db94a95e4ab347408d621f17f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8bb787db94a95e4ab347408d621f17f">&#9670;&#160;</a></span>get_hash_code()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> xtd::drawing::imaging::encoder::get_hash_code </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Serves as a hash function for a particular type. </p>
+<dl class="section return"><dt>Returns</dt><dd>A hash code for the current object. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classxtd_1_1object.html#a6bd11aa88ce86568b701b33fd1b3e508">xtd::object</a>.</p>
 
 </div>
 </div>
@@ -865,7 +818,7 @@ template&lt;class object_a_t , class object_b_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 2 2025 00:11:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 8 2025 21:59:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

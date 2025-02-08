@@ -97,7 +97,7 @@ Inheritance diagram for xtd::icomparable&lt; type_t &gt;:</div>
 <area href="classxtd_1_1interface.html" title="Represent an interface class." alt="xtd::interface" shape="rect" coords="0,0,466,24"/>
 <area href="classxtd_1_1extensions_1_1comparison__operators.html" alt="xtd::extensions::comparison_operators&lt; type_t, icomparable&lt; type_t &gt; &gt;" shape="rect" coords="476,0,942,24"/>
 <area href="classxtd_1_1collections_1_1generic_1_1helpers_1_1wrap__pointer__iterator.html" title="Represents a wrap pointer iterator." alt="xtd::collections::generic::helpers::wrap_pointer_iterator&lt; value_t, iterator_tag_t &gt;" shape="rect" coords="0,112,466,136"/>
-<area href="classxtd_1_1enum__object.html" title="Provides the base class for enumerations." alt="xtd::enum_object&lt; enum_t &gt;" shape="rect" coords="476,112,942,136"/>
+<area href="structxtd_1_1enum__object.html" title="Provides the base class for enumerations." alt="xtd::enum_object&lt; enum_t &gt;" shape="rect" coords="476,112,942,136"/>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
@@ -184,7 +184,7 @@ class xtd::icomparable&lt; type_t &gt;</div><p>Defines a generalized comparison 
 <div class="ttc" id="aclassxtd_1_1icomparable_html"><div class="ttname"><a href="classxtd_1_1icomparable.html">xtd::icomparable</a></div><div class="ttdoc">Defines a generalized comparison method that a value type or class implements to create a type-specif...</div><div class="ttdef"><b>Definition</b> icomparable.hpp:21</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="generic_ienumerator_8cpp-example.html#_a2">generic_ienumerator.cpp</a>, <a class="el" href="icomparable_8cpp-example.html#_a0">icomparable.cpp</a>, <a class="el" href="ienumerable_8cpp-example.html#_a2">ienumerable.cpp</a>, <a class="el" href="ienumerator_8cpp-example.html#_a2">ienumerator.cpp</a>, and <a class="el" href="sprintf_class_8cpp-example.html#_a1">sprintf_class.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="boxed_info_8cpp-example.html#_a0">boxed_info.cpp</a>, <a class="el" href="generic_ienumerator_8cpp-example.html#_a2">generic_ienumerator.cpp</a>, <a class="el" href="icomparable_8cpp-example.html#_a0">icomparable.cpp</a>, <a class="el" href="ienumerable_8cpp-example.html#_a2">ienumerable.cpp</a>, <a class="el" href="ienumerator_8cpp-example.html#_a2">ienumerator.cpp</a>, and <a class="el" href="sprintf_class_8cpp-example.html#_a1">sprintf_class.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
@@ -226,7 +226,8 @@ template&lt;class type_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings: <table class="markdownTable">
+<dl class="section return"><dt>Returns</dt><dd>A 32-bit signed integer that indicates the relative order of the objects being compared. The return value has these meanings:</dd></dl>
+<table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Value   </th><th class="markdownTableHeadNone">Condition    </th></tr>
 <tr class="markdownTableRowOdd">
@@ -236,9 +237,8 @@ template&lt;class type_t &gt; </div>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Greater than zero   </td><td class="markdownTableBodyNone">This instance is greater than obj.   </td></tr>
 </table>
-</dd></dl>
 
-<p>Implemented in <a class="el" href="classxtd_1_1any__object.html#ab66e8167b4e6e2126f3a936407764cdc">xtd::any_object</a>, <a class="el" href="classxtd_1_1box.html#a76aedcf3c5bf4019ba6ae7c11e28303f">xtd::box&lt; type_t &gt;</a>, <a class="el" href="classxtd_1_1date__time.html#a78daaabc891e23e228e59cb43f731411">xtd::date_time</a>, <a class="el" href="structxtd_1_1guid.html#accf2eb6b3390cef023bc8c9348066df2">xtd::guid</a>, <a class="el" href="structxtd_1_1time__span.html#a78ddb85e57655fe47521aa681afd2fd5">xtd::time_span</a>, <a class="el" href="classxtd_1_1time__zone__info.html#a1ce6c1ab375dc527042825b62647016e">xtd::time_zone_info</a>, and <a class="el" href="classxtd_1_1version.html#ab77b49d5430810732b4dd085272b5735">xtd::version</a>.</p>
+<p>Implemented in <a class="el" href="classxtd_1_1any__object.html#ab66e8167b4e6e2126f3a936407764cdc">xtd::any_object</a>, <a class="el" href="structxtd_1_1box.html#a76aedcf3c5bf4019ba6ae7c11e28303f">xtd::box&lt; type_t &gt;</a>, <a class="el" href="classxtd_1_1date__time.html#a78daaabc891e23e228e59cb43f731411">xtd::date_time</a>, <a class="el" href="structxtd_1_1guid.html#accf2eb6b3390cef023bc8c9348066df2">xtd::guid</a>, <a class="el" href="structxtd_1_1time__span.html#a78ddb85e57655fe47521aa681afd2fd5">xtd::time_span</a>, <a class="el" href="classxtd_1_1time__zone__info.html#a1ce6c1ab375dc527042825b62647016e">xtd::time_zone_info</a>, and <a class="el" href="classxtd_1_1version.html#ab77b49d5430810732b4dd085272b5735">xtd::version</a>.</p>
 
 </div>
 </div>
@@ -249,7 +249,7 @@ template&lt;class type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 2 2025 00:11:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 8 2025 21:59:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
