@@ -92,19 +92,16 @@ int32 icon::width() const noexcept {
   return data_->size.width;
 }
 
-bool icon::equals(const icon& icon) const noexcept {
-  return data_->handle == icon.data_->handle;
+bool icon::equals(const object& obj) const noexcept {
+  return is<icon>(obj) && equals(static_cast<const icon&>(obj));
 }
 
-icon icon::from_handle(intptr handle) {
-  auto icon = drawing::icon {};
-  icon.data_->handle = native::icon::from_handle(handle);
-  icon.data_->size = {native::icon::get_width(icon.data_->handle), native::icon::get_height(icon.data_->handle)};
-  return icon;
+bool icon::equals(const icon& other) const noexcept {
+  return data_->handle == other.data_->handle;
 }
 
-icon icon::from_bitmap(const bitmap& bitmap) {
-  return icon(bitmap);
+xtd::size icon::get_hash_code() const noexcept {
+  return hash_code::combine(data_->handle);
 }
 
 void icon::save(const string& filename) const {
@@ -121,4 +118,15 @@ bitmap icon::to_bitmap() const {
 
 xtd::string icon::to_string() const noexcept {
   return get_type().full_name();
+}
+
+icon icon::from_bitmap(const bitmap& bitmap) {
+  return icon(bitmap);
+}
+
+icon icon::from_handle(intptr handle) {
+  auto icon = drawing::icon {};
+  icon.data_->handle = native::icon::from_handle(handle);
+  icon.data_->size = {native::icon::get_width(icon.data_->handle), native::icon::get_height(icon.data_->handle)};
+  return icon;
 }
