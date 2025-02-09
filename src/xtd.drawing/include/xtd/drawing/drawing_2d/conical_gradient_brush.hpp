@@ -32,7 +32,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of conical_gradient_brush class.
       /// @include fill_rectangle.cpp
-      class drawing_export_ conical_gradient_brush final : public brush, public xtd::iequatable<conical_gradient_brush> {
+      class drawing_export_ conical_gradient_brush final : public brush {
         struct data;
         
       public:
@@ -125,13 +125,6 @@ namespace xtd {
         /// @param conical_colors An array of two xtd::drawing::color structures that represents the starting and ending colors of the gradient.
         /// @return Current conical_gradient_brush instance.
         xtd::drawing::drawing_2d::conical_gradient_brush& conical_colors(const xtd::drawing::drawing_2d::gradient_stop_collection& conical_colors);
-        /// @}
-        
-        /// @name Public Methods
-        
-        /// @{
-        using brush::equals;
-        bool equals(const conical_gradient_brush& value) const noexcept override;
         /// @}
         
       private:

@@ -101,10 +101,6 @@ conical_gradient_brush& conical_gradient_brush::center_point(const point& value)
   return center_point(point_f(as<float>(value.x), as<float>(value.y)));
 }
 
-bool conical_gradient_brush::equals(const conical_gradient_brush& value) const noexcept {
-  return data_ == value.data_;
-}
-
 void conical_gradient_brush::recreate_handle() {
   auto colors = std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> {};
   std::for_each(data_->conical_colors.begin(), data_->conical_colors.end(), [&](auto color) {colors.emplace_back(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second);});
