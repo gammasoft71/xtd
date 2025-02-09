@@ -3,7 +3,7 @@
 // Changes to this file may cause incorrect behavior and will be lost if the file is regenerated.
 
 /// @file
-/// @brief Contains [xtd](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html) framework headers.
+/// @brief Contains xtd library headers.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "xtd/xtd.core"
