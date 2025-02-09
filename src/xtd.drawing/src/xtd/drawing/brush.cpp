@@ -8,7 +8,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 
 struct brush::data {
-  intptr handle_ = 0;
+  intptr handle = 0;
 };
 
 brush::brush() : data_(xtd::new_sptr<data>()) {
@@ -16,22 +16,22 @@ brush::brush() : data_(xtd::new_sptr<data>()) {
 }
 
 brush::brush(const brush& value) : data_(xtd::new_sptr<data>()) {
-  if (data_.use_count() == 1 && data_->handle_ != 0) native::brush::destroy(data_->handle_);
+  if (data_.use_count() == 1 && data_->handle != 0) native::brush::destroy(data_->handle);
   data_ = value.data_;
 }
 
 brush& brush::operator =(const brush& value) {
-  if (data_.use_count() == 1 && data_->handle_ != 0) native::brush::destroy(data_->handle_);
+  if (data_.use_count() == 1 && data_->handle != 0) native::brush::destroy(data_->handle);
   data_ = value.data_;
   return *this;
 }
 
 brush::~brush() {
-  if (data_.use_count() == 1 && data_->handle_ != 0) native::brush::destroy(data_->handle_);
+  if (data_.use_count() == 1 && data_->handle != 0) native::brush::destroy(data_->handle);
 }
 
 intptr brush::handle() const noexcept {
-  return data_->handle_;
+  return data_->handle;
 }
 
 bool brush::equals(const object& obj) const noexcept {
@@ -39,11 +39,11 @@ bool brush::equals(const object& obj) const noexcept {
 }
 
 bool brush::equals(const brush& other) const noexcept {
-  return data_->handle_ == other.data_->handle_;
+  return data_->handle == other.data_->handle;
 }
 
 size brush::get_hash_code() const noexcept {
-  return hash_code::combine(data_->handle_);
+  return hash_code::combine(data_->handle);
 }
 
 string brush::to_string() const noexcept {
@@ -51,5 +51,5 @@ string brush::to_string() const noexcept {
 }
 
 void brush::set_native_brush(intptr brush) {
-  data_->handle_ = brush;
+  data_->handle = brush;
 }
