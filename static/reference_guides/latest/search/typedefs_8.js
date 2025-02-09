@@ -10,7 +10,7 @@ var searchData=
   ['ifstream_5fref_7',['ifstream_ref',['../classxtd_1_1net_1_1sockets_1_1send__packets__element.html#a946a0bbf547eb1c2f97cc7e4000b15e1',1,'xtd::net::sockets::send_packets_element']]],
   ['ilist_8',['ilist',['../group__collections.html#gaf2cca35e1002dd44cdfa244b0654d6b4',1,'xtd::collections']]],
   ['image_5fcollection_9',['image_collection',['../classxtd_1_1forms_1_1image__list.html#ab2980da466b87684eb01dc92804c1d73',1,'xtd::forms::image_list']]],
-  ['init_5ffile_5fsettings_10',['init_file_settings',['../group__configuration.html#ga03474f9ed666f1f3e7f9244b0666c18f',1,'xtd::configuration']]],
+  ['ini_5ffile_5fsettings_10',['ini_file_settings',['../group__configuration.html#ga0cc9b009d78c24861364601a3233e020',1,'xtd::configuration']]],
   ['insert_5freturn_5ftype_11',['insert_return_type',['../classxtd_1_1collections_1_1generic_1_1dictionary.html#a7e88bf6f5031a8e127a56adb37ec848d',1,'xtd::collections::generic::dictionary']]],
   ['int16_12',['int16',['../group__types.html#ga09d26135a9af4f7a5f4cae382627d6d1',1,'xtd']]],
   ['int16_5fobject_13',['int16_object',['../group__types.html#ga58c299ba39634dc95bc9f28d8938b2ff',1,'xtd']]],

@@ -167,6 +167,9 @@ Macros</h2></td></tr>
 <tr class="memitem:ga71bc78cb9e1ea9d8a968d69022f42120"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tunit.html#ga71bc78cb9e1ea9d8a968d69022f42120">class_initialize_</a>(method_name)</td></tr>
 <tr class="memdesc:ga71bc78cb9e1ea9d8a968d69022f42120"><td class="mdescLeft">&#160;</td><td class="mdescRight">add initialize class method to class test.  <br /></td></tr>
 <tr class="separator:ga71bc78cb9e1ea9d8a968d69022f42120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga57dc8fa8330342288c8870f2de36c256"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tunit.html#ga57dc8fa8330342288c8870f2de36c256">TUNIT_CONFIG_MAIN</a></td></tr>
+<tr class="memdesc:ga57dc8fa8330342288c8870f2de36c256"><td class="mdescLeft">&#160;</td><td class="mdescRight">If you define TUNIT_CONFIG_MAIN before including xtd.tunit.h include, a main entry point is generated for you.  <br /></td></tr>
+<tr class="separator:ga57dc8fa8330342288c8870f2de36c256"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga14fc641d752637ef79a213a129f925a0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__tunit.html#ga14fc641d752637ef79a213a129f925a0">test_class_</a>(class_name)</td></tr>
 <tr class="memdesc:ga14fc641d752637ef79a213a129f925a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to create a test_class in a test unit.  <br /></td></tr>
 <tr class="separator:ga14fc641d752637ef79a213a129f925a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -376,6 +379,51 @@ Enumerations</h2></td></tr>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="test_class_8cpp-example.html#a0">test_class.cpp</a>.</dd>
 </dl>
+
+</div>
+</div>
+<a id="ga57dc8fa8330342288c8870f2de36c256" name="ga57dc8fa8330342288c8870f2de36c256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga57dc8fa8330342288c8870f2de36c256">&#9670;&#160;</a></span>TUNIT_CONFIG_MAIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TUNIT_CONFIG_MAIN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="default__main_8hpp.html">xtd.tunit/include/xtd/tunit/default_main.hpp</a>&gt;</code></p>
+
+<p>If you define TUNIT_CONFIG_MAIN before including xtd.tunit.h include, a main entry point is generated for you. </p>
+<dl class="section user"><dt>Examples</dt><dd>This example shows how to use <div class="fragment"><div class="line"><span class="preprocessor">#define TUNIT_CONFIG_MAIN</span></div>
+<div class="line"><span class="preprocessor">#include &lt;xtd/xtd.tunit&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1tunit.html">xtd::tunit</a>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">namespace </span>unit_tests {</div>
+<div class="line">  <span class="comment">// The class test must be declared with test_class_ helper.</span></div>
+<div class="line">  <span class="keyword">class </span>test_class_(test) {</div>
+<div class="line">    <span class="keywordtype">void</span> <a class="code hl_define" href="group__tunit.html#ga1fa6dc01b83d00ce9e92402c9694c6af">test_method_</a>(test_case1) {</div>
+<div class="line">      <span class="keyword">auto</span> s = <span class="keywordtype">string</span> {<span class="stringliteral">&quot;Hello&quot;</span>};</div>
+<div class="line">      assert::is_true(s == <span class="stringliteral">&quot;Hello&quot;</span>);</div>
+<div class="line">    }</div>
+<div class="line">  };</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code can produce the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Start 1 test from 1 test case</span></div>
+<div class="line"><span class="comment">// Run tests:</span></div>
+<div class="line"><span class="comment">//   SUCCEED unit_tests::test.test_case1 (0 ms total)</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// Test results:</span></div>
+<div class="line"><span class="comment">//   SUCCEED 1 test.</span></div>
+<div class="line"><span class="comment">// End 1 test from 1 test case ran. (0 ms total)</span></div>
+<div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
+</div><!-- fragment --> TUNIT_CONFIG_MAIN </dd></dl>
 
 </div>
 </div>
@@ -966,7 +1014,7 @@ Enumerations</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 8 2025 21:59:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Feb 9 2025 12:24:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
