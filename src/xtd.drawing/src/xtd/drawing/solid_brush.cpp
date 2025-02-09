@@ -36,9 +36,5 @@ solid_brush& solid_brush::color(const drawing::color& value) noexcept {
   return *this;
 }
 
-bool solid_brush::equals(const solid_brush& value) const noexcept {
-  return data_->color_ == value.data_->color_;
-}
-
 solid_brush::solid_brush(const solid_brush& value) : brush(value), data_(value.data_) {
 }
