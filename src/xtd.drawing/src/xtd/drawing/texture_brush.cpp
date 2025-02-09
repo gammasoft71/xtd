@@ -35,9 +35,5 @@ texture_brush& texture_brush::image(const drawing::image& image) {
   return *this;
 }
 
-bool texture_brush::equals(const texture_brush& value) const noexcept {
-  return data_->image_ == value.data_->image_;
-}
-
 texture_brush::texture_brush(const texture_brush& value) : brush(value), data_(value.data_) {
 }

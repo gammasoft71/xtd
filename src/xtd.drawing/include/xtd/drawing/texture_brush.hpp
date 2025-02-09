@@ -26,7 +26,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of texture_brush class.
     /// @include fill_rectangle.cpp
-    class drawing_export_ texture_brush final : public brush, public xtd::iequatable<texture_brush> {
+    class drawing_export_ texture_brush final : public brush {
       struct data;
       
     public:
@@ -52,13 +52,6 @@ namespace xtd {
       /// @brief Sets the xtd::drawing::image object associated with this xtd::drawing::texture_brush object.
       /// @param image An xtd::drawing::image object that represents the image with which this xtd::drawing::texture_brush object fills shapes.
       texture_brush& image(const drawing::image& image);
-      /// @}
-      
-      /// @name Public Methods
-      
-      /// @{
-      using brush::equals;
-      bool equals(const texture_brush& value) const noexcept override;
       /// @}
       
     private:
