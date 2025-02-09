@@ -126,10 +126,6 @@ linear_gradient_brush& linear_gradient_brush::rectangle(const rectangle_f& value
   return *this;
 }
 
-bool linear_gradient_brush::equals(const linear_gradient_brush& value) const noexcept {
-  return data_ == value.data_;
-}
-
 float linear_gradient_brush::linear_gradient_mode_to_angle(xtd::drawing::drawing_2d::linear_gradient_mode linear_gradient_mode) {
   switch (linear_gradient_mode) {
     case drawing_2d::linear_gradient_mode::horizontal : return 0.0;
