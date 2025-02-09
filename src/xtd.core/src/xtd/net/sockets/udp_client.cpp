@@ -223,8 +223,12 @@ size_t udp_client::end_send(xtd::sptr<xtd::iasync_result> async_result) {
   return as<async_result_send>(async_result)->number_of_bytes_sent_;
 }
 
-bool udp_client::equals(const udp_client& s) const noexcept {
-  return data_ == s.data_;
+bool udp_client::equals(const object& obj) const noexcept {
+  return is<udp_client>(obj) && equals(static_cast<const udp_client&>(obj));
+}
+
+bool udp_client::equals(const udp_client& other) const noexcept {
+  return data_ == other.data_;
 }
 
 void udp_client::join_multicast_group(const xtd::net::ip_address& multicast_address) {
