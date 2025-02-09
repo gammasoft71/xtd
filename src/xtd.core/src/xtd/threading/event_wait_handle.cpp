@@ -79,8 +79,12 @@ int32 event_wait_handle::compare_to(const event_wait_handle& value) const noexce
   return handle() < value.handle() ? - 1 : handle() > value.handle() ? 1 : 0;
 }
 
-bool event_wait_handle::equals(const event_wait_handle& value) const noexcept {
-  return handle() == value.handle();
+bool event_wait_handle::equals(const object& obj) const noexcept {
+  return is<event_wait_handle>(obj) && equals(static_cast<const event_wait_handle&>(obj));
+}
+
+bool event_wait_handle::equals(const event_wait_handle& other) const noexcept {
+  return handle() == other.handle();
 }
 
 event_wait_handle event_wait_handle::open_existing(const string& name) {
