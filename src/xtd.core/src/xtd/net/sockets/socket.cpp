@@ -93,8 +93,12 @@ socket::~socket() {
   }
 }
 
-bool socket::equals(const socket& s) const noexcept {
-  return data_ == s.data_;
+bool socket::equals(const object& obj) const noexcept {
+  return is<socket>(obj) && equals(static_cast<const socket&>(obj));
+}
+
+bool socket::equals(const socket& other) const noexcept {
+  return data_ == other.data_;
 }
 
 address_family socket::address_family() const noexcept {
