@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains __as_enum__ struct.
+/// @brief Contains xtd::as struct.
 #pragma once
 /// @cond
 #if !defined(__XTD_CORE_INTERNAL__)

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::threading::task_canceled_exception exception.
+/// @brief Contains xtd::threading::tasks::task_canceled_exception exception.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../../literals.hpp"

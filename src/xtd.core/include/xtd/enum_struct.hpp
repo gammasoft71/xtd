@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contain senum_struct_ and enum_struct_ut_ keywords.
+/// @brief Contain #enum_struct_ and #enum_struct_ut_ keywords.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "enum_attribute.hpp"

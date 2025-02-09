@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains std::any type and std::bad_any_cast exception.
+/// @brief Contains [std::any](https://en.cppreference.com/w/cpp/utility/any) type and [std::bad_any_cast](https://en.cppreference.com/w/cpp/utility/any/bad_any_cast) exception.
 #pragma once
 /// @cond
 #define __XTD_STD_INTERNAL__

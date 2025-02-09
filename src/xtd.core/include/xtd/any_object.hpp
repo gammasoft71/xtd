@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains std::any type and xtd::any_object class.
+/// @brief Contains xtd::any_object class.
 #pragma once
 #include "collections/generic/helpers/comparer.hpp"
 #include "boxing.hpp"

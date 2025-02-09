@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains std::counting_semaphore and std::binary_semaphore types.
+/// @brief Contains [std::counting_semaphore](https://en.cppreference.com/w/cpp/thread/counting_semaphore) and [std::binary_semaphore](https://en.cppreference.com/w/cpp/thread/counting_semaphore) types.
 #pragma once
 /// @cond
 #define __XTD_STD_INTERNAL__

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::delegate delegate.
+/// @brief Contains xtd::delegate <result_t(arguments_t...)> delegate.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "any.hpp"

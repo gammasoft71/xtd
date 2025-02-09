@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd.core library headers.
+/// @brief Contains [xtd.core](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html) library headers.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "std.hpp"
