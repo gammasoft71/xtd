@@ -280,8 +280,12 @@ void graphics_path::close_figure() {
   native::graphics_path::close_figure(handle());
 }
 
-bool graphics_path::equals(const graphics_path& value) const noexcept {
-  return data_ == value.data_;
+bool graphics_path::equals(const object& obj) const noexcept {
+  return is<graphics_path>(obj) && equals(static_cast<const graphics_path&>(obj));
+}
+
+bool graphics_path::equals(const graphics_path& other) const noexcept {
+  return data_ == other.data_;
 }
 
 void graphics_path::flatten() {
