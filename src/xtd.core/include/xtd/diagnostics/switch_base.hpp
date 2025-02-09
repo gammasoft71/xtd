@@ -67,8 +67,14 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
-      using object::equals;
-      bool equals(const switch_base& value) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const xtd::object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const switch_base& other) const noexcept override;
       /// @}
       
     protected:

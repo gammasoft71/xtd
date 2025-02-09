@@ -24,8 +24,12 @@ const string& switch_base::display_name() const noexcept {
   return display_name_;
 }
 
-bool switch_base::equals(const switch_base& value) const noexcept {
-  return display_name_ == value.display_name_ && description_ == value.description_ && attributes_ == value.attributes_ && switch_setting_ == value.switch_setting_ && value_ == value.value_;
+bool switch_base::equals(const object& obj) const noexcept {
+  return is<switch_base>(obj) && equals(static_cast<const switch_base&>(obj));
+}
+
+bool switch_base::equals(const switch_base& other) const noexcept {
+  return display_name_ == other.display_name_ && description_ == other.description_ && attributes_ == other.attributes_ && switch_setting_ == other.switch_setting_ && value_ == other.value_;
 }
 
 switch_base::switch_base(const string& display_name, const string& description) : display_name_(display_name), description_(description) {
