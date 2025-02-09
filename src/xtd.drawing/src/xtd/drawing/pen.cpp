@@ -184,8 +184,16 @@ pen& pen::width(float value) {
   return *this;
 }
 
-bool pen::equals(const xtd::drawing::pen& value) const noexcept {
-  return data_ == value.data_;
+bool pen::equals(const object& obj) const noexcept {
+  return is<pen>(obj) && equals(static_cast<const pen&>(obj));
+}
+
+bool pen::equals(const xtd::drawing::pen& other) const noexcept {
+  return data_ == other.data_;
+}
+
+xtd::size pen::get_hash_code() const noexcept {
+  return hash_code::combine(data_);
 }
 
 xtd::string pen::to_string() const noexcept {
