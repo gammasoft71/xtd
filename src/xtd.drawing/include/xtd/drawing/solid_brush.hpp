@@ -5,7 +5,6 @@
 #include "../drawing_export.hpp"
 #include "brush.hpp"
 #include "color.hpp"
-#include <xtd/iequatable>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -27,7 +26,7 @@ namespace xtd {
     /// The following code example demonstrates the use of solid_brush class.
     /// @include fill_rectangle.cpp
     /// @remarks This class inherits from the xtd::drawing::brush class.
-    class drawing_export_ solid_brush final : public xtd::drawing::brush, public xtd::iequatable<solid_brush> {
+    class drawing_export_ solid_brush final : public xtd::drawing::brush {
       struct data;
       
     public:
@@ -54,13 +53,6 @@ namespace xtd {
       /// @param value A xtd::drawing::color structure that represents the color of this brush.
       /// @return This current instance.
       xtd::drawing::solid_brush& color(const xtd::drawing::color& value) noexcept;
-      /// @}
-      
-      /// @name Public Methods
-      
-      /// @{
-      using brush::equals;
-      bool equals(const solid_brush& value) const noexcept override;
       /// @}
       
     private:
