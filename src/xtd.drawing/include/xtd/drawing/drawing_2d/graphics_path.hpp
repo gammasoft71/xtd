@@ -395,8 +395,14 @@ namespace xtd {
         /// @brief Closes the current figure and starts a new figure. If the current figure contains a sequence of connected lines and curves, the method closes the loop by connecting a line from the endpoint to the starting point.
         void close_figure();
         
-        using object::equals;
-        bool equals(const xtd::drawing::drawing_2d::graphics_path& value) const noexcept override;
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param obj The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const object& obj) const noexcept override;
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param other The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const graphics_path& other) const noexcept override;
         
         /// @brief Converts each curve in this path into a sequence of connected line segments.
         void flatten();
