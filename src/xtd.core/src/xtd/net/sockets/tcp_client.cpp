@@ -158,8 +158,12 @@ void tcp_client::end_connect(xtd::sptr<xtd::iasync_result> async_result) {
   active(true);
 }
 
-bool tcp_client::equals(const tcp_client& s) const noexcept {
-  return data_ == s.data_;
+bool tcp_client::equals(const object& obj) const noexcept {
+  return is<tcp_client>(obj) && equals(static_cast<const tcp_client&>(obj));
+}
+
+bool tcp_client::equals(const tcp_client& other) const noexcept {
+  return data_ == other.data_;
 }
 
 network_stream tcp_client::get_stream() const {
