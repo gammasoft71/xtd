@@ -116,8 +116,8 @@ namespace xtd {
       
       int32 compare_to(const mutex& value) const noexcept override;
       
-      using object::equals;
-      bool equals(const mutex& value) const noexcept override;
+      bool equals(const object& obj) const noexcept override;
+      bool equals(const mutex& other) const noexcept override;
       
       /// @brief Locks the mutex. If another thread has already locked the mutex, a call to lock will block execution until the lock is acquired.
       /// @remarks If lock is called by a thread that already owns the mutex, the behavior is undefined: for example, the program may deadlock. An implementation that can detect the invalid usage is encouraged to throw a std::system_error with error condition resource_deadlock_would_occur instead of deadlocking.
