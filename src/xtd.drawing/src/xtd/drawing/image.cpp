@@ -252,38 +252,30 @@ graphics image::create_graphics() {
   return graphics::from_image(*this);
 }
 
-bool image::equals(const image& image) const noexcept {
-  if (handle() == image.handle()) return true;
-  if (flags() != image.flags()) return false;
-  if (frame_dimentions_list() != image.frame_dimentions_list()) return false;
-  if (horizontal_resolution() != image.horizontal_resolution()) return false;
-  if (palette() != image.palette()) return false;
-  if (physical_dimension() != image.physical_dimension()) return false;
-  if (pixel_format() != image.pixel_format()) return false;
-  if (property_id_list() != image.property_id_list()) return false;
-  if (property_items() != image.property_items()) return false;
-  if (raw_format() != image.raw_format()) return false;
-  if (size() != image.size()) return false;
-  //if (tag() != image.tag()) return false;
-  if (vertical_resolution() != image.vertical_resolution()) return false;
+bool image::equals(const object& obj) const noexcept {
+  return is<image>(obj) && equals(static_cast<const image&>(obj));
+}
+
+bool image::equals(const image& other) const noexcept {
+  if (handle() == other.handle()) return true;
+  if (flags() != other.flags()) return false;
+  if (frame_dimentions_list() != other.frame_dimentions_list()) return false;
+  if (horizontal_resolution() != other.horizontal_resolution()) return false;
+  if (palette() != other.palette()) return false;
+  if (physical_dimension() != other.physical_dimension()) return false;
+  if (pixel_format() != other.pixel_format()) return false;
+  if (property_id_list() != other.property_id_list()) return false;
+  if (property_items() != other.property_items()) return false;
+  if (raw_format() != other.raw_format()) return false;
+  if (size() != other.size()) return false;
+  //if (tag() != other.tag()) return false;
+  if (vertical_resolution() != other.vertical_resolution()) return false;
   auto bmp1 = bitmap {*this};
-  auto bmp2 = bitmap {image};
+  auto bmp2 = bitmap {other};
   for (auto x = 0; x < width(); ++x)
     for (auto y = 0; y < height(); ++y)
       if (bmp1.get_pixel(x, y) != bmp2.get_pixel(x, y)) return false;
   return true;
-}
-
-bitmap image::from_hbitmap(intptr hbitmap) {
-  return bitmap {image {hbitmap}};
-}
-
-image image::from_stream(std::istream& stream) { // stream param can't be const by design.
-  return image {stream};
-}
-
-image image::from_data(const char* const* bits) {
-  return image {bits};
 }
 
 const xtd::byte* image::get_alpha() const {
@@ -312,6 +304,31 @@ size_t image::get_frame_count(const frame_dimension& dimension) const {
   auto iterator = std::find_if(data_->frame_dimensions.begin(), data_->frame_dimensions.end(), [&](auto frame) {return frame.first == dimension.guid();});
   if (iterator == data_->frame_dimensions.end()) throw argument_exception {};
   return iterator->second;
+}
+
+xtd::size image::get_hash_code() const noexcept {
+  auto result = hash_code {};
+  result.add(handle());
+  result.add(flags());
+  for (const auto& frame_dimention : frame_dimentions_list())
+    result.add(frame_dimention);
+  result.add(horizontal_resolution());
+  result.add(palette());
+  result.add(physical_dimension());
+  result.add(pixel_format());
+  for (const auto& property_id : property_id_list())
+    result.add(property_id);
+  for (const auto& property_item : property_items())
+  result.add(property_item);
+  result.add(raw_format());
+  result.add(size());
+  //result.add(tag());
+  result.add(vertical_resolution());
+  auto bmp = bitmap {*this};
+  for (auto x = 0; x < width(); ++x)
+    for (auto y = 0; y < height(); ++y)
+      result.add(get_pixel(x, y));
+  return result.to_hash_code();
 }
 
 int32 image::get_pixel_format_size(enum pixel_format pixfmt) noexcept {
@@ -364,6 +381,18 @@ void image::save(std::ostream& stream, const imaging::image_format& format) cons
   native::image::save(data_->handle_, stream, to_raw_format(format));
 }
 
+bitmap image::from_hbitmap(intptr hbitmap) {
+  return bitmap {image {hbitmap}};
+}
+
+image image::from_stream(std::istream& stream) { // stream param can't be const by design.
+  return image {stream};
+}
+
+image image::from_data(const char* const* bits) {
+  return image {bits};
+}
+
 image image::from_hicon(intptr hicon) {
   auto result = image {};
   result.data_->handle_ = native::image::from_hicon(hicon);
@@ -371,50 +400,9 @@ image image::from_hicon(intptr hicon) {
   return result;
 }
 
-void image::set_pixel_format(imaging::pixel_format value) {
-  data_->pixel_format_ = value;
-}
-
-void image::update_properties() {
-  if (!data_->handle_) return;
-  data_->alpha = native::image::get_alpha(handle());
-  data_->rgb = native::image::get_data(handle());
-  data_->flags_ = static_cast<imaging::image_flags>(native::image::flags(data_->handle_));
-  
-  data_->horizontal_resolution_ = native::image::horizontal_resolution(data_->handle_);
-  
-  auto palette_entries = std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>> {};
-  native::image::color_palette(data_->handle_, palette_entries, data_->palette_.flags_);
-  for (auto [a, r, g, b] : palette_entries)
-    data_->palette_.entries_.push_back(color::from_argb(a, r, g, b));
-    
-  data_->pixel_format_ = static_cast<imaging::pixel_format>(native::image::pixel_format(data_->handle_));
-  
-  auto physical_width = 0, physical_height = 0;
-  native::image::physical_dimension(data_->handle_, physical_width, physical_height);
-  data_->physical_dimension_ = drawing::size_f(static_cast<float>(physical_width), static_cast<float>(physical_height));
-  
-  data_->property_id_list_ = native::image::property_id_list(data_->handle_);
-  
-  for (const native::image::property_item& i : native::image::property_items(data_->handle_)) {
-    auto item = imaging::property_item {};
-    item.id(i.id);
-    item.value(i.value);
-    data_->property_items_.push_back(item);
-  }
-  
-  data_->raw_format_ = to_image_format(native::image::raw_format(data_->handle_));
-  
-  auto w = 0, h = 0;
-  native::image::size(data_->handle_, w, h);
-  data_->size_ = drawing::size(w, h);
-  
-  data_->vertical_resolution_ = native::image::vertical_resolution(data_->handle_);
-}
-
 drawing::color image::get_pixel(int32 x, int32 y) const {
   if (x < 0 || x > width() || y < 0 || y > height()) throw argument_exception {};
-
+  
   auto alpha = get_alpha();
   auto rgb = reinterpret_cast<const ::rgb*>(get_rgb());
   auto pixel = y * width() + x;
@@ -423,13 +411,17 @@ drawing::color image::get_pixel(int32 x, int32 y) const {
 
 void image::set_pixel(int32 x, int32 y, const drawing::color& color) {
   if (x < 0 || x > width() || y < 0 || y > height()) throw argument_exception {};
-
+  
   auto alpha = get_alpha();
   auto rgb = reinterpret_cast<::rgb*>(get_rgb());
   auto pixel = y * width() + x;
   alpha[pixel] = color.a();
   rgb[pixel] = {color.r(), color.g(), color.b()};
-  }
+}
+
+void image::set_pixel_format(imaging::pixel_format value) {
+  data_->pixel_format_ = value;
+}
 
 void image::blur(int32 radius) {
   if (*this == drawing::image::empty) return;
@@ -458,4 +450,41 @@ void image::resize(int32 width, int32 height) {
   auto graphics = result.create_graphics();
   graphics.draw_image(*this, rectangle {0, 0, width, height}, rectangle {0, 0, width, height});
   *this = result;
+}
+
+void image::update_properties() {
+  if (!data_->handle_) return;
+  data_->alpha = native::image::get_alpha(handle());
+  data_->rgb = native::image::get_data(handle());
+  data_->flags_ = static_cast<imaging::image_flags>(native::image::flags(data_->handle_));
+  
+  data_->horizontal_resolution_ = native::image::horizontal_resolution(data_->handle_);
+  
+  auto palette_entries = std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>> {};
+  native::image::color_palette(data_->handle_, palette_entries, data_->palette_.flags_);
+  for (auto [a, r, g, b] : palette_entries)
+    data_->palette_.entries_.push_back(color::from_argb(a, r, g, b));
+  
+  data_->pixel_format_ = static_cast<imaging::pixel_format>(native::image::pixel_format(data_->handle_));
+  
+  auto physical_width = 0, physical_height = 0;
+  native::image::physical_dimension(data_->handle_, physical_width, physical_height);
+  data_->physical_dimension_ = drawing::size_f(static_cast<float>(physical_width), static_cast<float>(physical_height));
+  
+  data_->property_id_list_ = native::image::property_id_list(data_->handle_);
+  
+  for (const native::image::property_item& i : native::image::property_items(data_->handle_)) {
+    auto item = imaging::property_item {};
+    item.id(i.id);
+    item.value(i.value);
+    data_->property_items_.push_back(item);
+  }
+  
+  data_->raw_format_ = to_image_format(native::image::raw_format(data_->handle_));
+  
+  auto w = 0, h = 0;
+  native::image::size(data_->handle_, w, h);
+  data_->size_ = drawing::size(w, h);
+  
+  data_->vertical_resolution_ = native::image::vertical_resolution(data_->handle_);
 }

@@ -171,8 +171,14 @@ namespace xtd {
       /// @return A xtd::drawing::graphics for the image.
       graphics create_graphics();
       
-      using object::equals;
-      bool equals(const image& image) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const object& obj) const noexcept override;
+      /// @brief Indicates whether the current object is equal to another object of the same type.
+      /// @param other An object to compare with this object.
+      /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
+      bool equals(const image& other) const noexcept override;
 
       /// @brief Gets the image alpha pointer, which represents the alpha data of the image.
       /// @return The pointer or alpha image.
@@ -207,7 +213,11 @@ namespace xtd {
       /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
       /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the xtd::drawing::imaging::frame_dimension.
       size_t get_frame_count(const xtd::drawing::imaging::frame_dimension& dimension) const;
-      
+
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+
       /// @brief Gets the specified property item from this xtd::drawing::image.
       /// @param propid The ID of the property item to get.
       /// @return The xtd::drawing::imaging::property_item this method gets.
@@ -328,9 +338,9 @@ namespace xtd {
       image(const image& image, int32 width, int32 height);
       image(const image& image, const rectangle& rect);
       static image from_hicon(intptr hicon);
-      void set_pixel_format(imaging::pixel_format value);
       drawing::color get_pixel(int32 x, int32 y) const;
       void set_pixel(int32 x, int32 y, const drawing::color& color);
+      void set_pixel_format(imaging::pixel_format value);
       /// @endcond
       
     private:
