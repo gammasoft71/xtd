@@ -58,8 +58,12 @@ int32 mutex::compare_to(const mutex& value) const noexcept {
   return handle() < value.handle() ? - 1 : handle() > value.handle() ? 1 : 0;
 }
 
-bool mutex::equals(const mutex& value) const noexcept {
-  return mutex_ == value.mutex_ && name_ == value.name_;
+bool mutex::equals(const object& obj) const noexcept {
+  return is<mutex>(obj) && equals(static_cast<const mutex&>(obj));
+}
+
+bool mutex::equals(const mutex& other) const noexcept {
+  return mutex_ == other.mutex_ && name_ == other.name_;
 }
 
 void mutex::lock() {
