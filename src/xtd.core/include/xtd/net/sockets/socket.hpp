@@ -1007,7 +1007,7 @@ namespace xtd {
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param obj The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-        bool equals(const object& obj) const noexcept override;
+        bool equals(const xtd::object& obj) const noexcept override;
         /// @brief Determines whether the specified object is equal to the current object.
         /// @param other The object to compare with the current object.
         /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
