@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains unit test application main entry point.
+/// @brief Contains unit test application main entry point #tunit_main_ definition.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/startup>

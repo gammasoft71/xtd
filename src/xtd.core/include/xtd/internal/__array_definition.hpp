@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains array definitions.
+/// @brief Contains xtd::array definitions.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 /// @cond

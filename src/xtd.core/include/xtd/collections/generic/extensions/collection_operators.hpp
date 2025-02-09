@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::extensions::collection_operators class.
+/// @brief Contains xtd::collections::generic::extensions::collection_operators class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 

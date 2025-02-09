@@ -19,6 +19,6 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core configuration
     /// @remarks An [INI file](https://en.wikipedia.org/wiki/INI_file) is a configuration file that consists of a text-based content with a structure and syntax comprising key–value pairs for properties, and sections that organize the properties.
-    using init_file_settings = file_settings;
+    using ini_file_settings = file_settings;
   }
 }

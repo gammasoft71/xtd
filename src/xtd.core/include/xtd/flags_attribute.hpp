@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains flags_attribute_ keyword.
+/// @brief Contains #flags_attribute_ keyword.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "enum_set_attribute.hpp"

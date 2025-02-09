@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::collections::generic::ienumarable <type_t> interface.
+/// @brief Contains xtd::collections::generic::ienumerable <type_t> interface.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "extensions/enumerable.hpp"

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::diagnostics::debug_break keyword.
+/// @brief Contains #debug_break_ keyword.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "debugger.hpp"

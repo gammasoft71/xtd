@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains Switch::System::Collections::bit_array class.
+/// @brief Contains xtd::collections::bit_array class.
 #pragma once
 
 #include "generic/list.hpp"

@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains dyas, weeks, months and years durationtypes.
+/// @brief Contains [std::chrono::days](https://en.cppreference.com/w/cpp/chrono), [std::chrono::weeks](https://en.cppreference.com/w/cpp/chrono), [std::chrono::months](https://en.cppreference.com/w/cpp/chrono) and [std::chrono::years](https://en.cppreference.com/w/cpp/chrono) duration types.
 #pragma once
 #include <chrono>
 #include <ratio>

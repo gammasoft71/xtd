@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains c++ std library headers.
+/// @brief Contains [C++ Standard Library headers](https://en.cppreference.com/w/cpp/header).
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 

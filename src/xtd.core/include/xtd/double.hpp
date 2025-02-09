@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::doule type.
+/// @brief Contains xtd::double_ type.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
