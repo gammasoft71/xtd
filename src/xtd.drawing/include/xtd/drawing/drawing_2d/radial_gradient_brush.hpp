@@ -7,7 +7,6 @@
 #include "../point.hpp"
 #include "../rectangle.hpp"
 #include "gradient_stop_collection.hpp"
-#include <xtd/iequatable>
 #include <array>
 #include <utility>
 
@@ -27,7 +26,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of radial_gradient_brush class.
       /// @include fill_rectangle.cpp
-      class drawing_export_ radial_gradient_brush final : public brush, public xtd::iequatable<radial_gradient_brush> {
+      class drawing_export_ radial_gradient_brush final : public brush {
         struct data;
         
       public:
@@ -130,13 +129,6 @@ namespace xtd {
         /// @param value A float that specifies the radius of the radial gradient.
         /// @return Current linear_gradient_brush instance.
         radial_gradient_brush& radius(float value) noexcept;
-        /// @}
-        
-        /// @name Public Methods
-        
-        /// @{
-        using brush::equals;
-        bool equals(const radial_gradient_brush& value) const noexcept override;
         /// @}
         
       private:

@@ -119,10 +119,6 @@ radial_gradient_brush& radial_gradient_brush::radius(float value) noexcept {
   return *this;
 }
 
-bool radial_gradient_brush::equals(const radial_gradient_brush& value) const noexcept {
-  return data_ == value.data_;
-}
-
 void radial_gradient_brush::recreate_handle() {
   auto colors = std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> {};
   std::for_each(data_->radial_colors.begin(), data_->radial_colors.end(), [&](auto color) {colors.emplace_back(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second);});
