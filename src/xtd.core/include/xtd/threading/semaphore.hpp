@@ -159,8 +159,14 @@ namespace xtd {
       
       int32 compare_to(const semaphore& value) const noexcept override;
       
-      using object::equals;
-      bool equals(const semaphore& value) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const semaphore& other) const noexcept override;
 
       /// @brief Exits the semaphore and returns the previous count.
       /// @return The count on the semaphore before the xtd::threading::semaphore::release method was called.
