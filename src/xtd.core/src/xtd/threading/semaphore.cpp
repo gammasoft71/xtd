@@ -74,8 +74,12 @@ int32 semaphore::compare_to(const semaphore& value) const noexcept {
   return handle() < value.handle() ? - 1 : handle() > value.handle() ? 1 : 0;
 }
 
-bool semaphore::equals(const semaphore& value) const noexcept {
-  return handle() == value.handle();
+bool semaphore::equals(const object& obj) const noexcept {
+  return is<semaphore>(obj) && equals(static_cast<const semaphore&>(obj));
+}
+
+bool semaphore::equals(const semaphore& other) const noexcept {
+  return handle() == other.handle();
 }
 
 semaphore semaphore::open_existing(const string& name) {
