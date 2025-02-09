@@ -9,7 +9,6 @@
 #include "../point.hpp"
 #include "../rectangle.hpp"
 #include "hatch_style.hpp"
-#include <xtd/iequatable>
 #include <array>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -29,7 +28,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of hatch_brush class.
       /// @include fill_rectangle.cpp
-      class drawing_export_ hatch_brush final : public brush, public xtd::iequatable<hatch_brush> {
+      class drawing_export_ hatch_brush final : public brush {
         struct data;
         
       public:
@@ -67,13 +66,6 @@ namespace xtd {
         /// @brief Gets the hatch style of this hatch_brush object.
         /// @return One of the xtd::drawing::drawing_2d::hatch_style values that represents the pattern of this hatch_brush.
         xtd::drawing::drawing_2d::hatch_style hatch_style() const noexcept;
-        /// @}
-        
-        /// @name Public Methods
-        
-        /// @{
-        using brush::equals;
-        bool equals(const hatch_brush& value) const noexcept override;
         /// @}
         
       private:

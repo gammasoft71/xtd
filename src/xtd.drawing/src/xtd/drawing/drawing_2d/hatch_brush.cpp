@@ -573,7 +573,3 @@ xtd::drawing::color hatch_brush::foreground_color() const noexcept {
 xtd::drawing::drawing_2d::hatch_style hatch_brush::hatch_style() const noexcept {
   return data_->hatch_style_;
 }
-
-bool hatch_brush::equals(const hatch_brush& value) const noexcept {
-  return data_->hatch_style_ == value.data_->hatch_style_ && data_->fore_color_ == value.data_->fore_color_ && data_->back_color_ == value.data_->back_color_;
-}
