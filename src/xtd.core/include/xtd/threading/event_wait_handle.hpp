@@ -121,8 +121,14 @@ namespace xtd {
       
       int32 compare_to(const event_wait_handle& value) const noexcept override;
       
-      using object::equals;
-      bool equals(const event_wait_handle& value) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const event_wait_handle& other) const noexcept override;
 
       /// @brief Sets the state of the event to nonsignaled, causing threads to block.
       /// @return `true` if the operation succeeds; otherwise, `false`.
