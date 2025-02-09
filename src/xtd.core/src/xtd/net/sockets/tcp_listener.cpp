@@ -108,8 +108,12 @@ xtd::net::sockets::tcp_client tcp_listener::end_accept_tcp_client(xtd::sptr<xtd:
   return as<async_result_accept_tcp_client>(async_result)->tcp_client_;
 }
 
-bool tcp_listener::equals(const tcp_listener& s) const noexcept {
-  return data_ == s.data_;
+bool tcp_listener::equals(const object& obj) const noexcept {
+  return is<tcp_listener>(obj) && equals(static_cast<const tcp_listener&>(obj));
+}
+
+bool tcp_listener::equals(const tcp_listener& other) const noexcept {
+  return data_ == other.data_;
 }
 
 bool tcp_listener::pending() {
