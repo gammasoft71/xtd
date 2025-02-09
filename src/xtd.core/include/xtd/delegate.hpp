@@ -168,16 +168,19 @@ namespace xtd {
     /// @include delegate_begin_invoke.cpp
     result_t invoke() const {return operator()();}
     
-    using object::equals;
     /// @brief Determines whether this instance and another specified delegateType object have the same value.
-    /// @param value The delegateType to compare.
+    /// @param obj The delegateType to compare.
     /// @return bool `true` if the value of this instance is the same as the value of value; otherwise, `false`.
-    bool equals(const delegate& delegate) const noexcept override {
-      if (data_->functions.size() != delegate.data_->functions.size())
+    bool equals(const object& obj) const noexcept override {return is<delegate>(obj) && equals(static_cast<const delegate&>(obj));}
+    /// @brief Determines whether this instance and another specified delegateType object have the same value.
+    /// @param other The delegateType to compare.
+    /// @return bool `true` if the value of this instance is the same as the value of value; otherwise, `false`.
+    bool equals(const delegate& other) const noexcept override {
+      if (data_->functions.size() != other.data_->functions.size())
         return false;
       
       for (size_t i = 0; i < data_->functions.size(); i++)
-        if (!are_equals(data_->functions[i], delegate.data_->functions[i]))
+        if (!are_equals(data_->functions[i], other.data_->functions[i]))
           return false;
       
       return true;
