@@ -21,8 +21,16 @@ size_f size_f::add(const size_f& size1, const size_f& size2) noexcept {
   return size1 + size2;
 }
 
+bool size_f::equals(const object& obj) const noexcept {
+  return is<size_f>(obj) && equals(static_cast<const size_f&>(obj));
+}
+
 bool size_f::equals(const xtd::drawing::size_f& value) const noexcept {
   return width == value.width && height == value.height;
+}
+
+xtd::size size_f::get_hash_code() const noexcept {
+  return hash_code::combine(width, height);
 }
 
 size_f size_f::subtract(const size_f& size1, const size_f& size2) noexcept {
