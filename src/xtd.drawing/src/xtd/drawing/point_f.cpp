@@ -35,8 +35,16 @@ point_f point_f::add(const point_f& pt1, const point_f& pt2) noexcept {
   return {pt1.x + pt2.x, pt1.y + pt2.y};
 }
 
-bool point_f::equals(const point_f& value) const noexcept {
-  return x == value.x && y == value.y;
+bool point_f::equals(const object& obj) const noexcept {
+  return is<point_f>(obj) && equals(static_cast<const point_f&>(obj));
+}
+
+bool point_f::equals(const point_f& other) const noexcept {
+  return x == other.x && y == other.y;
+}
+
+xtd::size point_f::get_hash_code() const noexcept {
+  return hash_code::combine(x, y);
 }
 
 void point_f::offset(float dx, float dy) noexcept {
