@@ -37,8 +37,16 @@ point point::ceiling(const point_f& value) noexcept {
   return {as<int32>(math::ceiling(value.x)), as<int32>(math::ceiling(value.y))};
 }
 
-bool point::equals(const point& value) const noexcept {
-  return x == value.x && y == value.y;
+bool point::equals(const object& obj) const noexcept {
+  return is<point>(obj) && equals(static_cast<const point&>(obj));
+}
+
+bool point::equals(const point& other) const noexcept {
+  return x == other.x && y == other.y;
+}
+
+xtd::size point::get_hash_code() const noexcept {
+  return hash_code::combine(x, y);
 }
 
 void point::offset(int32 dx, int32 dy) noexcept {
