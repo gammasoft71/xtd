@@ -20,6 +20,18 @@ namespace xtd::forms::tests {
       using form::default_size;
     };
     
+    void test_method_(form_handle_destroyed) {
+      auto on_handle_destroy_raised = false;
+      auto on_handle_destroyed = [&] {
+        on_handle_destroy_raised = true;
+      };
+      {
+        form_for_test form;
+        form.handle_destroyed += on_handle_destroyed;
+      }
+      assert::is_true(on_handle_destroy_raised);
+    }
+    
     void test_method_(new_form_back_color) {
       form_for_test form;
       assert::are_equal(form.default_back_color(), form.back_color());
