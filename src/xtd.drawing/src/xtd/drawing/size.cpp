@@ -30,8 +30,16 @@ drawing::size drawing::size::ceiling(const size_f& value) noexcept {
   return {as<int32>(math::ceiling(value.width)), as<int32>(math::ceiling(value.height))};
 }
 
-bool drawing::size::equals(const xtd::drawing::size& value) const noexcept {
-  return width == value.width && height == value.height;
+bool drawing::size::equals(const object& obj) const noexcept {
+  return is<size>(obj) && equals(static_cast<const size&>(obj));
+}
+
+bool drawing::size::equals(const xtd::drawing::size& other) const noexcept {
+  return width == other.width && height == other.height;
+}
+
+xtd::size drawing::size::get_hash_code() const noexcept {
+  return hash_code::combine(width, height);
 }
 
 drawing::size drawing::size::round(const size_f& value) noexcept {
