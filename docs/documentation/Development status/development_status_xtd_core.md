@@ -166,6 +166,7 @@
 | [startup_](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/startup.h)                                                      | keyword       | ![progress](/pictures/progress100.png) |
 | [static_](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/static.h)                                                        | keyword       | ![progress](/pictures/progress100.png) |
 | [static_object_](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/static.h)                                                 | keyword       | ![progress](/pictures/progress100.png) |
+| [string](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/string.h)                                                       | class         | ![progress](/pictures/progress100.png) |
 | [string_comparison](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/string_comparison.h)                                   | enumeration   | ![progress](/pictures/progress100.png) |
 | [string_split_options](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/string_split_options.h)                             | enumeration   | ![progress](/pictures/progress100.png) |
 | [system_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/system_exception.h)                                     | exception     | ![progress](/pictures/progress100.png) |
@@ -203,7 +204,6 @@
 | [uri_partial](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/uri_partial.h)                                               | enumeration   | ![progress](/pictures/progress100.png) |
 | [uri_template_match_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/uri_template_match_exception.h)             | exception     | ![progress](/pictures/progress100.png) |
 | [using_](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/using.h)                                                          | keyword       | ![progress](/pictures/progress100.png) |
-| [ustring](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/ustring.h)                                                       | class         | ![progress](/pictures/progress100.png) |
 | [version](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/version.h)                                                       | class         | ![progress](/pictures/progress100.png) |
 | [wchar_object](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/wchar_object.h)                                             | class         | ![progress](/pictures/progress100.png) |
 | [xml_syntax_exception](https://github.com/gammasoft71/xtd/tree/master/src/xtd.core/include/xtd/xml_syntax_exception.h)                             | exception     | ![progress](/pictures/progress100.png) |

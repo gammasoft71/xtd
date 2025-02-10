@@ -18,7 +18,7 @@ using namespace xtd::io;
 
 class program {
 private:
-  inline static const ustring FILE_NAME = "test.data";
+  inline static const string FILE_NAME = "test.data";
   
 public:
   static auto main() {

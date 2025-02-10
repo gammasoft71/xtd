@@ -60,7 +60,7 @@ auto main() -> int {
   console::write_line("name = {}", enum_name<enum_test>(enum_test::value_four));
   console::write_line("value = {}", enum_integer<enum_test>(enum_test::value_four));
   console::write_line("as<int> = {}", as<int>(enum_test::value_four));
-  console::write_line("values = [{}]", ustring::join(", ", enum_values<enum_test>()));
+  console::write_line("values = [{}]", string::join(", ", enum_values<enum_test>()));
   console::write_line("names = {}", enum_names<enum_test>());
   console::write("entries = [");
   for (auto entry : enum_entries<enum_test>()) {
@@ -103,8 +103,8 @@ nav_declare_enum(enum_test, int,
 auto main() -> int {
   console::write_line("name = {}", enum_test::value_four);
   console::write_line("as<int> = {}", as<int>(enum_test::value_four));
-  console::write_line("values = {}", ustring::join(", ", enum_values<enum_test>));
-  console::write_line("names = {}", ustring::join(", ", enum_names<enum_test>));
+  console::write_line("values = {}", string::join(", ", enum_values<enum_test>));
+  console::write_line("names = {}", string::join(", ", enum_names<enum_test>));
   console::write("entries = [");
   for (size_t num_state = 0; num_state < num_states<enum_test>; ++num_state)
     console::write("{}({}, {})", num_state == 0 ? "" : ", ", enum_values<enum_test>[num_state], enum_names<enum_test>[num_state]);

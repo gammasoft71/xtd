@@ -14,18 +14,18 @@
 * Updating [examples/xtd.forms.examples/dialogs/CMakeLists.txt](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/dialogs/CMakeLists.txt) to add open_file_box project.
 * Updating [examples/xtd.forms.examples/README.md](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/README.md) to add open_file_box example.
 * Updating [examples/xtd.forms.examples/open_file_box/src/open_file_box.cpp](https://github.com/gammasoft71/xtd/blob/master/eexamples/xtd.forms.examples/open_file_box/src/open_file_box.cpp) to fix build warning : capture this in lambda button_open_multiple_files.click
-* Updating [examples/xtd.forms.examples/open_file_box/src/open_file_box.cpp](https://github.com/gammasoft71/xtd/blob/master/eexamples/xtd.forms.examples/open_file_box/src/open_file_box.cpp) to use xtd::ustring::join :
+* Updating [examples/xtd.forms.examples/open_file_box/src/open_file_box.cpp](https://github.com/gammasoft71/xtd/blob/master/eexamples/xtd.forms.examples/open_file_box/src/open_file_box.cpp) to use xtd::string::join :
   * using
 
 ```cpp
-message_box::show(ustring::format("Selected files are:\n{}", ustring::join("\n", file_names)));
+message_box::show(string::format("Selected files are:\n{}", string::join("\n", file_names)));
 ```
   * instead
 
 ```cpp
-xtd::ustring txt;
+xtd::string txt;
 for (auto& filename : file_names) txt += filename + '\n';
-message_box::show(ustring::format("Selected files are:\n{}", txt));
+message_box::show(string::format("Selected files are:\n{}", txt));
 ```
 * Updating [examples/xtd.forms.examples/open_file_box/src/open_file_box.cpp](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/open_file_box/src/open_file_box.cpp) to fix some code styles.
 

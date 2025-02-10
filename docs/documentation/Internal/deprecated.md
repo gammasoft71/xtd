@@ -20,15 +20,15 @@ In version 1.2.1 of xtd, we want to remove the *void xtd::old_function_name(int3
 * Version 1.2.1 update code as :
 
 ```cpp
-/// @deprecated Replaced by xtd::new_function_name(const xtd::ustring& new_param) - Will be removed in version 1.2.3
-[[deprecated("Replaced by xtd::new_function_name(xtd::ustring new_param) - Will be removed in version 1.2.3")]]
+/// @deprecated Replaced by xtd::new_function_name(const xtd::string& new_param) - Will be removed in version 1.2.3
+[[deprecated("Replaced by xtd::new_function_name(xtd::string new_param) - Will be removed in version 1.2.3")]]
 void xtd::old_function_name(int32_t old_param) {
   // ...
 }
 
 /// @bref The new function do something.
 /// @param new_param The new specifie parameter.
-void xtd::new_function_name(const std::ustring& new_param) {
+void xtd::new_function_name(const std::string& new_param) {
   // ...
 }
 ```
@@ -40,7 +40,7 @@ void xtd::new_function_name(const std::ustring& new_param) {
 ```cpp
 /// @bref The new function do something.
 /// @param new_param The new specifie parameter.
-void xtd::new_function_name(const std::ustring& new_param) {
+void xtd::new_function_name(const std::string& new_param) {
   // ...
 }
 ```

@@ -271,9 +271,9 @@ Although the [dynamic_cast](https://en.cppreference.com/w/cpp/language/dynamic_c
 The following example illustrates the use of the [xtd::convert_pointer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__pointer.html) class to perform several widening and narrowing conversions between [shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr).
 
 ```cpp
-shared_ptr<object> object_ptr = make_shared<ustring>("string");
+shared_ptr<object> object_ptr = make_shared<string>("string");
 
-shared_ptr<ustring> string_ptr = convert_pointer::to_shared_ptr<ustring>(object_ptr);
+shared_ptr<string> string_ptr = convert_pointer::to_shared_ptr<string>(object_ptr);
 console::write_line("Converted the {0} value \"{1}\" to "
                     "the {2} value \"{3}\".",
                     typeof_(object_ptr).name(),
@@ -295,16 +295,16 @@ try {
 }
 
 // The example displays the following output:
-//       Converted the shared_ptr<xtd::object> value "string" to the shared_ptr<xtd::ustring> value "string".
+//       Converted the shared_ptr<xtd::object> value "string" to the shared_ptr<xtd::string> value "string".
 //       Unable to convert the shared_ptr<xtd::object> value "string".
 ```
 
 The following example illustrates the use of the [xtd::convert_pointer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__pointer.html) class to perform several widening and narrowing conversions between [unqiue_ptr](https://en.cppreference.com/w/cpp/memory/unique_ptr).
 
 ```cpp
-unique_ptr<object> object_ptr = make_unique<ustring>("string");
+unique_ptr<object> object_ptr = make_unique<string>("string");
 
-unique_ptr<ustring> string_ptr = convert_pointer::to_unique_ptr<ustring>(object_ptr);
+unique_ptr<string> string_ptr = convert_pointer::to_unique_ptr<string>(object_ptr);
 console::write_line("Converted the {0} value \"{1}\" to "
                     "the {2} value \"{3}\".",
                     typeof_(object_ptr).name(),
@@ -313,7 +313,7 @@ console::write_line("Converted the {0} value \"{1}\" to "
                     *string_ptr);
 
 try {
-  object_ptr = make_unique<ustring>("string");
+  object_ptr = make_unique<string>("string");
   unique_ptr<date_time> date_time_ptr = convert_pointer::to_unique_ptr<date_time>(object_ptr);
   console::write_line("Converted the {0} value \"{1}\" to "
                       "the {2} value \"{3}\".",
@@ -327,16 +327,16 @@ try {
 }
 
 // The example displays the following output:
-//       Converted the unique_ptr<xtd::object> value "(null)" to the unique_ptr<xtd::ustring> value "string".
+//       Converted the unique_ptr<xtd::object> value "(null)" to the unique_ptr<xtd::string> value "string".
 //       Unable to convert the unique_ptr<xtd::object> value "string".
 ```
 
 The following example illustrates the use of the [xtd::convert_pointer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__pointer.html) class to perform several widening and narrowing conversions between pointers.
 
 ```cpp
-object* object_ptr = new ustring("string");
+object* object_ptr = new string("string");
 
-ustring* string_ptr = convert_pointer::to_ptr<ustring>(object_ptr);
+string* string_ptr = convert_pointer::to_ptr<string>(object_ptr);
 console::write_line("Converted the {0} to "
                     "the {1} value \"{2}\".",
                     typeof_(object_ptr).name(),
@@ -346,7 +346,7 @@ console::write_line("Converted the {0} to "
 delete string_ptr;
 
 try {
-  object_ptr =  new ustring("string");
+  object_ptr =  new string("string");
   date_time* date_time_ptr = convert_pointer::to_ptr<date_time>(object_ptr);
   console::write_line("Converted the {0} to "
                       "the {1} value \"{2}\".",
@@ -361,17 +361,17 @@ try {
 delete object_ptr;
 
 // The example displays the following output:
-//       Converted the object* to the ustring* value "string".
+//       Converted the object* to the string* value "string".
 //       Unable to convert the object* value "string".
 ```
 
 The following example illustrates the use of the [xtd::convert_pointer](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1convert__pointer.html) class to perform several widening and narrowing conversions between references.
 
 ```cpp
-ustring value = "string";
+string value = "string";
 object& object_ref = value;
 
-ustring& string_ref = convert_pointer::to_ref<ustring>(object_ref);
+string& string_ref = convert_pointer::to_ref<string>(object_ref);
 console::write_line("Converted the {0} to "
                     "the {1} value \"{2}\".",
                     typeof_(object_ref).name(),
@@ -391,13 +391,13 @@ try {
 }
 
 // The example displays the following output:
-//       Converted the ustring to the ustring value "string".
-//       Unable to convert the ustring value "string".
+//       Converted the string to the string value "string".
+//       Unable to convert the string value "string".
 ```
 
 ## The convert_string class
 
-In C++, there are several types of container managed by the std: [string](https://en.cppreference.com/w/cpp/string/basic_string), [wstring](https://en.cppreference.com/w/cpp/string/basic_string), [u8string](https://en.cppreference.com/w/cpp/string/basic_string), [u16string](https://en.cppreference.com/w/cpp/string/basic_string) and [u32string](https://en.cppreference.com/w/cpp/string/basic_string). xtd also adds a new container, [ustring](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html), which is exactly the same as [string](https://en.cppreference.com/w/cpp/string/basic_string), with the added feature of being immutable. See the [ustring page](/docs/documentation/Guides/xtd.core/Types%20overview/ustring) for more information.
+In C++, there are several types of container managed by the std: [string](https://en.cppreference.com/w/cpp/string/basic_string), [wstring](https://en.cppreference.com/w/cpp/string/basic_string), [u8string](https://en.cppreference.com/w/cpp/string/basic_string), [u16string](https://en.cppreference.com/w/cpp/string/basic_string) and [u32string](https://en.cppreference.com/w/cpp/string/basic_string). xtd also adds a new container, [string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html), which is exactly the same as [string](https://en.cppreference.com/w/cpp/string/basic_string), with the added feature of being immutable. See the [string page](/docs/documentation/Guides/xtd.core/Types%20overview/string) for more information.
 
 There are several encoding types that are not handled by std: ASCII (20127), UTF7 (65000), UTF-8 (65001), UTF-16 Unicode (1200), UTF-16 Big Endian (1201), UTF-32 (12000), UFT-32 Big Endian (12001), as well as other code pages.
 
@@ -406,14 +406,14 @@ The [convert_string](https://gammasoft71.github.io/xtd/reference_guides/latest/c
 > **Warning**
 > The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
 
-The following example shows how to convert any container to [ustring](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html).
+The following example shows how to convert any container to [string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html).
 
 ```cpp
-ustring s1 = convert_string::to_ustring("string test 🐨"s);
-ustring s2 = convert_string::to_ustring(L"wstring test 🐨");
-ustring s3 = convert_string::to_ustring(u8"u8string test 🐨"s);
-ustring s4 = convert_string::to_ustring(u"u16string test 🐨");
-ustring s5 = convert_string::to_ustring(U"u32string test 🐨"s);
+string s1 = convert_string::to_string("string test 🐨"s);
+string s2 = convert_string::to_string(L"wstring test 🐨");
+string s3 = convert_string::to_string(u8"u8string test 🐨"s);
+string s4 = convert_string::to_string(u"u16string test 🐨");
+string s5 = convert_string::to_string(U"u32string test 🐨"s);
 
 console::write_line(s1);
 console::write_line(s2);
@@ -490,17 +490,17 @@ decimal decimal_value = as<decimal>(.42);
 console::write_line(short_value);
 console::write_line(decimal_value);
 
-object* object_ptr = new ustring("string text");
-ustring* ustring_ptr = as<ustring>(object_ptr);
+object* object_ptr = new string("string text");
+string* string_ptr = as<string>(object_ptr);
 
-console::write_line(*ustring_ptr);
+console::write_line(*string_ptr);
 delete object_ptr;
 
 u16string u16string_value = as<u16string>(u8"string 🐨");
-ustring ustring_value = as<ustring>(U"string 🐨");
+string string_value = as<string>(U"string 🐨");
 
 console::write_line(u16string_value);
-console::write_line(ustring_value);
+console::write_line(string_value);
 
 int int_value = as<int>(day_of_week::tuesday);
 day_of_week number_value = as<day_of_week>(3);
@@ -525,25 +525,25 @@ The [is](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__c
 The following example shows how to use the [is](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__core.html#ga1bfa9e11607cad616748a8ef5d2a99c9) operator to prevent an exception.
 
 ```cpp
-ustring ustring_value = "string text";
+string string_value = "string text";
 
-if (is<object>(ustring_value)) {
-  object& object_value = as<object&>(ustring_value);
+if (is<object>(string_value)) {
+  object& object_value = as<object&>(string_value);
   console::write_line("object = {}", object_value.to_string());
 } else {
-  console::write_line("{} is not a object type", typeof_(ustring_value).name());
+  console::write_line("{} is not a object type", typeof_(string_value).name());
 }
 
-if (is<date_time>(ustring_value)) {
-  date_time& date_time_value = as<date_time&>(ustring_value);
+if (is<date_time>(string_value)) {
+  date_time& date_time_value = as<date_time&>(string_value);
   console::write_line("date_time = {}", date_time_value);
 } else {
-  console::write_line("{} is not a date_time type", typeof_(ustring_value).name());
+  console::write_line("{} is not a date_time type", typeof_(string_value).name());
 }
 
 // The example displays the following output:
 //       object = string text
-//       ustring is not a date_time type
+//       string is not a date_time type
 ```
 
 ## See also

@@ -40,7 +40,7 @@ namespace console_application1 {
 
   class program {
   public:
-    static auto main(const std::vector<ustring>& args) {
+    static auto main(const argument_collection& args) {
       counter c(xtd::random().next(10));
       c.threshold_reached += c_threshold_reached;
       
@@ -119,7 +119,7 @@ namespace console_application1 {
 
   class program {
   public:
-    static auto main(const std::vector<ustring>& args) {
+    static auto main(const argument_collection& args) {
       counter c(xtd::random().next(10));
       c.threshold_reached += c_threshold_reached;
       
@@ -202,7 +202,7 @@ namespace console_application1 {
 
   class program {
   public:
-    static auto main(const std::vector<ustring>& args) {
+    static auto main(const argument_collection& args) {
       counter c(xtd::random().next(10));
       c.threshold_reached += c_threshold_reached;
       

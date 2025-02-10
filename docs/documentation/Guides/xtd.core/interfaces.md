@@ -63,7 +63,7 @@ public:
 
 class itext_box : public icontrol {
 public:
-  virtual void set_text(const ustring& text) = 0;
+  virtual void set_text(const string& text) = 0;
 };
 
 class text_box : public itextBox {
@@ -130,7 +130,7 @@ private:
 
 //...
 
-static ustring form1::check_points(const point& p1, const point& p2) {
+static string form1::check_points(const point& p1, const point& p2) {
   if (p1 == p2) eturn "Equals";
   return "Not equals";
 }

@@ -20,7 +20,7 @@ The following table summarizes the methods that return enumerable collections of
 
 ## Examples: Use the directory class
 
-The following example uses the [directory::enumerate_directories(const ustring&)](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1directory.html#a18b4ef2bf2e42182dfd412ffacba57b1) method to get a list of the top-level directory names in a specified path.
+The following example uses the [directory::enumerate_directories(const string&)](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1io_1_1directory.html#a18b4ef2bf2e42182dfd412ffacba57b1) method to get a list of the top-level directory names in a specified path.
 
 ```cpp
 #include <xtd/xtd>
@@ -34,10 +34,10 @@ public:
   static auto main() {
     try {
       // Set a variable to the My Documents path.
-      ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
+      string doc_path = environment::get_folder_path(environment::special_folder::my_documents);
       
       auto dirs_iterator = directory::enumerate_directories(doc_path);
-      vector<ustring> dirs(dirs_iterator.begin(), dirs_iterator.end());
+      vector<string> dirs(dirs_iterator.begin(), dirs_iterator.end());
       
       for (auto dir : dirs) {
         console::write_line("{}", dir.substring(dir.last_index_of(path::directory_separator_char()) + 1));
@@ -69,7 +69,7 @@ class program {
 public:
   static auto main() {
     // Set a variable to the Documents path.
-    ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
+    string doc_path = environment::get_folder_path(environment::special_folder::my_documents);
     
     directory_info dir_programs(doc_path);
     date_time start_of_2021(2021, 1, 1);
@@ -103,7 +103,7 @@ class program {
 public:
   static auto main() {
     // Set a variable to the Documents path.
-    ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
+    string doc_path = environment::get_folder_path(environment::special_folder::my_documents);
     
     directory_info di_top(doc_path);
     
