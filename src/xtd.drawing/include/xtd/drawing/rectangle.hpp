@@ -166,9 +166,30 @@ namespace xtd {
       /// @remarks The containing rectangle must be normalized for this method to return accurate results.
       bool contains(int32 x, int32 y) const noexcept;
       
-      using object::equals;
-      bool equals(const rectangle& value) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const xtd::object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const rectangle& other) const noexcept override;
       
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+      
+      /// @brief Enlarges this xtd::drawing::rectangle by the specified amount.
+      /// @param sz The amount to inflate this rectangle.
+      /// @remarks This method enlarges this rectangle, not a copy of it. The rectangle is enlarged in both directions along an axis. For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.
+      void inflate(const drawing::size& sz) noexcept;
+      /// @brief Enlarges this xtd::drawing::rectangle by the specified amount.
+      /// @param width The amount to inflate this xtd::drawing::rectangle horizontally.
+      /// @param height The amount to inflate this xtd::drawing::rectangle verticaly.
+      /// @remarks This method enlarges this rectangle, not a copy of it. The rectangle is enlarged in both directions along an axis. For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.
+      /// @remarks If either x or y is negative, the xtd::drawing::rectangle structure is deflated in the corresponding direction.
+      void inflate(int32 width, int32 height) noexcept;
+
       /// @brief Determines if this rectangle intersects with rect.
       /// @param rect The rectangle to test.
       /// @return This method returns `true` if there is any intersection, otherwise `false`.
@@ -195,17 +216,6 @@ namespace xtd {
       /// @return A string that contains the position, width, and height of this Rectangle structure ¾ for example, {x=20, y=20, width=100, height=50}.
       xtd::string to_string() const noexcept override;
       /// @}
-      
-      /// @brief Enlarges this xtd::drawing::rectangle by the specified amount.
-      /// @param sz The amount to inflate this rectangle.
-      /// @remarks This method enlarges this rectangle, not a copy of it. The rectangle is enlarged in both directions along an axis. For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.
-      void inflate(const drawing::size& sz) noexcept;
-      /// @brief Enlarges this xtd::drawing::rectangle by the specified amount.
-      /// @param width The amount to inflate this xtd::drawing::rectangle horizontally.
-      /// @param height The amount to inflate this xtd::drawing::rectangle verticaly.
-      /// @remarks This method enlarges this rectangle, not a copy of it. The rectangle is enlarged in both directions along an axis. For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.
-      /// @remarks If either x or y is negative, the xtd::drawing::rectangle structure is deflated in the corresponding direction.
-      void inflate(int32 width, int32 height) noexcept;
       
       /// @name Public Static Methods
       

@@ -68,20 +68,6 @@ void rectangle::add(int32 width, int32 height) noexcept {
   height += height;
 }
 
-rectangle rectangle::add(const rectangle& rect, int32 x, int32 y) noexcept {
-  auto result = rect;
-  result.add(x, y);
-  return result;
-}
-
-rectangle rectangle::add(const rectangle& rect, const drawing::size& sz) noexcept {
-  return add(rect, sz.width, sz.height);
-}
-
-rectangle rectangle::ceiling(const rectangle_f& rect) noexcept {
-  return rectangle(as<int32>(math::ceiling(rect.x)), as<int32>(math::ceiling(rect.y)), as<int32>(math::ceiling(rect.width)), as<int32>(math::ceiling(rect.height)));
-}
-
 bool rectangle::contains(const point& pt) const noexcept {
   return contains(pt.x, pt.y);
 }
@@ -94,12 +80,16 @@ bool rectangle::contains(int32 x, int32 y) const noexcept {
   return this->x <= x && x < this->x + this->width && this->y <= y && y < this->y + this->height;
 }
 
-bool rectangle::equals(const rectangle& value) const noexcept {
-  return x == value.x && y == value.y && width == value.width && height == value.height;
+bool rectangle::equals(const object& obj) const noexcept {
+  return is<rectangle>(obj) && equals(static_cast<const rectangle&>(obj));
 }
 
-rectangle rectangle::from_ltrb(int32 left, int32 top, int32 right, int32 bottom) noexcept {
-  return rectangle(left, top, right - left, bottom - top);
+bool rectangle::equals(const rectangle& other) const noexcept {
+  return x == other.x && y == other.y && width == other.width && height == other.height;
+}
+
+xtd::size rectangle::get_hash_code() const noexcept {
+  return hash_code::combine(x, y, width, height);
 }
 
 void rectangle::inflate(const drawing::size& sz) noexcept {
@@ -113,24 +103,8 @@ void rectangle::inflate(int32 width, int32 height) noexcept {
   height += 2 * height;
 }
 
-rectangle rectangle::inflate(const rectangle& rect, int32 x, int32 y) noexcept {
-  auto result = rect;
-  result.inflate(x, y);
-  return result;
-}
-
-rectangle rectangle::inflate(const rectangle& rect, const drawing::size& sz) noexcept {
-  return inflate(rect, sz.width, sz.height);
-}
-
 bool rectangle::intersects_with(const rectangle& rect) const noexcept {
   return (rect.x < x + width) && (x < (rect.x + rect.width)) && (rect.y < y + height) && (y < rect.y + rect.height);
-}
-
-rectangle rectangle::make_intersect(const rectangle& a, const rectangle& b) noexcept {
-  auto result = a;
-  result.make_intersect(b);
-  return result;
 }
 
 void rectangle::make_intersect(const rectangle& rect) noexcept {
@@ -146,12 +120,6 @@ void rectangle::make_intersect(const rectangle& rect) noexcept {
     width = x2 - x1;
     height = y2 - y1;
   }
-}
-
-rectangle rectangle::make_union(const rectangle& a, const rectangle& b) noexcept {
-  auto result = a;
-  result.make_union(b);
-  return result;
 }
 
 void rectangle::make_union(const rectangle& rect) noexcept {
@@ -175,6 +143,50 @@ void rectangle::offset(int32 x, int32 y) noexcept {
   y += y;
 }
 
+xtd::string rectangle::to_string() const noexcept {
+  return string::format("{{x={}, y={}, width={}, heght={}}}", x, y, width, height);
+}
+
+rectangle rectangle::add(const rectangle& rect, int32 x, int32 y) noexcept {
+  auto result = rect;
+  result.add(x, y);
+  return result;
+}
+
+rectangle rectangle::add(const rectangle& rect, const drawing::size& sz) noexcept {
+  return add(rect, sz.width, sz.height);
+}
+
+rectangle rectangle::ceiling(const rectangle_f& rect) noexcept {
+  return rectangle(as<int32>(math::ceiling(rect.x)), as<int32>(math::ceiling(rect.y)), as<int32>(math::ceiling(rect.width)), as<int32>(math::ceiling(rect.height)));
+}
+
+rectangle rectangle::from_ltrb(int32 left, int32 top, int32 right, int32 bottom) noexcept {
+  return rectangle(left, top, right - left, bottom - top);
+}
+
+rectangle rectangle::inflate(const rectangle& rect, int32 x, int32 y) noexcept {
+  auto result = rect;
+  result.inflate(x, y);
+  return result;
+}
+
+rectangle rectangle::inflate(const rectangle& rect, const drawing::size& sz) noexcept {
+  return inflate(rect, sz.width, sz.height);
+}
+
+rectangle rectangle::make_intersect(const rectangle& a, const rectangle& b) noexcept {
+  auto result = a;
+  result.make_intersect(b);
+  return result;
+}
+
+rectangle rectangle::make_union(const rectangle& a, const rectangle& b) noexcept {
+  auto result = a;
+  result.make_union(b);
+  return result;
+}
+
 rectangle rectangle::offset(const rectangle& rect, const point& pos) noexcept {
   return offset(rect, pos.x, pos.y);
 }
@@ -191,8 +203,4 @@ rectangle rectangle::round(const rectangle_f& rect) noexcept {
 
 rectangle rectangle::truncate(const rectangle_f& rect) noexcept {
   return rectangle(as<int32>(math::truncate(rect.x)), as<int32>(math::truncate(rect.y)), as<int32>(math::truncate(rect.width)), as<int32>(math::truncate(rect.height)));
-}
-
-xtd::string rectangle::to_string() const noexcept {
-  return string::format("{{x={}, y={}, width={}, heght={}}}", x, y, width, height);
 }
