@@ -2,6 +2,7 @@
 #include <xtd/drawing/system_images>
 #include <xtd/forms/application>
 #include <xtd/forms/form>
+#include <xtd/forms/window_messages>
 #include <xtd/diagnostics/debugger>
 #include <xtd/invalid_operation_exception>
 #include <xtd/tunit/assert>
@@ -2137,6 +2138,12 @@ namespace xtd::forms::tests {
         control_for_test() = default;
         bool on_create_control_raised = false;
         
+        // trick for forcing post message to be sent...
+        void do_events() {
+          auto m = message::create(handle(), WM_NULL, 0, 0);
+          wnd_proc(m);
+        }
+
       protected:
         void on_create_control() override {
           control::on_create_control();
@@ -2149,6 +2156,7 @@ namespace xtd::forms::tests {
       control.parent(nullptr);
       assert::is_false(control.on_create_control_raised);
       control.parent(form);
+      control.do_events();
       assert::is_true(control.on_create_control_raised);
     }
     
