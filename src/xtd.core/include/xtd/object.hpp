@@ -11,6 +11,7 @@
 #undef __XTD_CORE_INTERNAL__
 #include "core_export.hpp"
 #include "iequatable.hpp"
+#include "ptr.hpp"
 #include "types.hpp"
 #if defined(__xtd__cpp_lib_format)
 #include <cassert>
