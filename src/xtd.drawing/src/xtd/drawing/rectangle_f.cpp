@@ -63,16 +63,6 @@ void rectangle_f::add(float width, float height) noexcept {
   height += height;
 }
 
-rectangle_f rectangle_f::add(const rectangle_f& rect, float x, float y) noexcept {
-  auto result = rect;
-  result.add(x, y);
-  return result;
-}
-
-rectangle_f rectangle_f::add(const rectangle_f& rect, const size_f& sz) noexcept {
-  return add(rect, sz.width, sz.height);
-}
-
 bool rectangle_f::contains(const point_f& pt) const noexcept {
   return contains(pt.x, pt.y);
 }
@@ -85,12 +75,16 @@ bool rectangle_f::contains(float x, float y) const noexcept {
   return this->x <= x && x < this->x + width && this->y <= y && y < this->y + height;
 }
 
+bool rectangle_f::equals(const object& obj) const noexcept {
+  return is<rectangle_f>(obj) && equals(static_cast<const rectangle_f&>(obj));
+}
+
 bool rectangle_f::equals(const rectangle_f& value) const noexcept {
   return x == value.x && y == value.y && width == value.width && height == value.height;
 }
 
-rectangle_f rectangle_f::from_ltrb(float left, float top, float right, float bottom) noexcept {
-  return rectangle_f(left, top, right - left, bottom - top);
+xtd::size rectangle_f::get_hash_code() const noexcept {
+  return hash_code::combine(x, y, width, height);
 }
 
 void rectangle_f::inflate(const drawing::size_f& sz) noexcept {
@@ -104,24 +98,8 @@ void rectangle_f::inflate(float width, float height) noexcept {
   height += 2 * height;
 }
 
-rectangle_f rectangle_f::inflate(const rectangle_f& rect, const drawing::size_f& sz) noexcept {
-  return inflate(rect, sz.width, sz.height);
-}
-
-rectangle_f rectangle_f::inflate(const rectangle_f& rect, float width, float height) noexcept {
-  auto result = rect;
-  result.inflate(width, height);
-  return result;
-}
-
 bool rectangle_f::intersects_with(const rectangle_f& rect) const noexcept {
   return (rect.x < x + width) && (x < (rect.x + rect.width)) && (rect.y < y + height) && (y < rect.y + rect.height);
-}
-
-rectangle_f rectangle_f::make_intersect(const rectangle_f& a, const rectangle_f& b) noexcept {
-  auto result = a;
-  result.make_intersect(b);
-  return result;
 }
 
 void rectangle_f::make_intersect(const rectangle_f& rect) noexcept {
@@ -137,12 +115,6 @@ void rectangle_f::make_intersect(const rectangle_f& rect) noexcept {
     width = x2 - x1;
     height = y2 - y1;
   }
-}
-
-rectangle_f rectangle_f::make_union(const rectangle_f& a, const rectangle_f& b) noexcept {
-  auto result = a;
-  result.make_union(b);
-  return result;
 }
 
 void rectangle_f::make_union(const rectangle_f& rect) noexcept {
@@ -166,6 +138,46 @@ void rectangle_f::offset(float x, float y) noexcept {
   y += y;
 }
 
+xtd::string rectangle_f::to_string() const noexcept {
+  return string::format("{{x={}, y={}, width={}, heght={}}}", x, y, width, height);
+}
+
+rectangle_f rectangle_f::add(const rectangle_f& rect, float x, float y) noexcept {
+  auto result = rect;
+  result.add(x, y);
+  return result;
+}
+
+rectangle_f rectangle_f::add(const rectangle_f& rect, const size_f& sz) noexcept {
+  return add(rect, sz.width, sz.height);
+}
+
+rectangle_f rectangle_f::from_ltrb(float left, float top, float right, float bottom) noexcept {
+  return rectangle_f(left, top, right - left, bottom - top);
+}
+
+rectangle_f rectangle_f::inflate(const rectangle_f& rect, const drawing::size_f& sz) noexcept {
+  return inflate(rect, sz.width, sz.height);
+}
+
+rectangle_f rectangle_f::inflate(const rectangle_f& rect, float width, float height) noexcept {
+  auto result = rect;
+  result.inflate(width, height);
+  return result;
+}
+
+rectangle_f rectangle_f::make_intersect(const rectangle_f& a, const rectangle_f& b) noexcept {
+  auto result = a;
+  result.make_intersect(b);
+  return result;
+}
+
+rectangle_f rectangle_f::make_union(const rectangle_f& a, const rectangle_f& b) noexcept {
+  auto result = a;
+  result.make_union(b);
+  return result;
+}
+
 rectangle_f rectangle_f::offset(const rectangle_f& rect, const point_f& pos) noexcept {
   return offset(rect, pos.x, pos.y);
 }
@@ -174,8 +186,4 @@ rectangle_f rectangle_f::offset(const rectangle_f& rect, float x, float y) noexc
   auto result = rect;
   result.offset(x, y);
   return result;
-}
-
-xtd::string rectangle_f::to_string() const noexcept {
-  return string::format("{{x={}, y={}, width={}, heght={}}}", x, y, width, height);
 }
