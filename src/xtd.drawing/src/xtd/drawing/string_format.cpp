@@ -27,16 +27,6 @@ xtd::drawing::string_format& string_format::format_flags(xtd::drawing::string_fo
   return *this;
 }
 
-xtd::drawing::string_format string_format::generic_default() noexcept {
-  auto format = xtd::drawing::string_format {};
-  format.trimming_ = xtd::drawing::string_trimming::character;
-  return format;
-}
-
-xtd::drawing::string_format string_format::generic_typographic() noexcept {
-  return xtd::drawing::string_format {xtd::drawing::string_format_flags::no_clip | xtd::drawing::string_format_flags::fit_black_box | xtd::drawing::string_format_flags::line_limit};
-}
-
 xtd::drawing::text::hotkey_prefix string_format::hotkey_prefix() const noexcept {
   return hotkey_prefix_;
 }
@@ -62,4 +52,14 @@ xtd::drawing::string_trimming string_format::trimming() const noexcept {
 xtd::drawing::string_format& string_format::trimming(xtd::drawing::string_trimming trimming) noexcept {
   trimming_ = trimming;
   return *this;
+}
+
+xtd::drawing::string_format string_format::generic_default() noexcept {
+  auto format = xtd::drawing::string_format {};
+  format.trimming_ = xtd::drawing::string_trimming::character;
+  return format;
+}
+
+xtd::drawing::string_format string_format::generic_typographic() noexcept {
+  return xtd::drawing::string_format {xtd::drawing::string_format_flags::no_clip | xtd::drawing::string_format_flags::fit_black_box | xtd::drawing::string_format_flags::line_limit};
 }
