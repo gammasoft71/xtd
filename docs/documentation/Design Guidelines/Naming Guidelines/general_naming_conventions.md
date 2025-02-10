@@ -53,7 +53,7 @@ The following table presents several base data types using the **cstdint** type 
 | long double        | long double | decimal | 16            |
 | bool               | bool        | bool    | 1             |
 | wchar_t            | wchar_t     | wcchar  | 4             |
-| char*              | string      | ustring | variable      |
+| char*              | string      | string  | variable      |
 
 **✔️ DO** use a common name, such as value or item, rather than repeating the type name, in the rare cases when an identifier has no semantic meaning and the type of the parameter is not important.
 

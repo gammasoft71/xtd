@@ -12,7 +12,7 @@ using namespace xtd::io;
 class program {
 public:
   static auto main() {
-    ustring file_name = "textfile.txt";
+    string file_name = "textfile.txt";
     
     stream_writer sw(file_name);
     sw.write_line("A text file is born!");

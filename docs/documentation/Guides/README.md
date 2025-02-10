@@ -39,7 +39,7 @@ The xtd guides provide an explanation on how to use the important features of th
     * [Preprocessor symbols](/docs/documentation/Guides/xtd.core/Types%20overview/preprocessor_symbols)
     * [Native types, boxing and unboxing](/docs/documentation/Guides/xtd.core/Types%20overview/types)
     * [enum, enum class and enum struct](/docs/documentation/Guides/xtd.core/Types%20overview/enum_class)
-    * [ustring](/docs/documentation/Guides/xtd.core/Types%20overview/ustring)
+    * [string](/docs/documentation/Guides/xtd.core/Types%20overview/string)
     * [Dates, times, and time zones](/docs/documentation/Guides/xtd.core/Types%20overview/date_time)
     * [Delegates](/docs/documentation/Guides/xtd.core/Types%20overview/delegates)
     * [Events](/docs/documentation/Guides/xtd.core/Types%20overview/events)

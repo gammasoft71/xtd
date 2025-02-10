@@ -26,14 +26,14 @@ class program {
 public:
   static auto main() {
     // Create a string array with the lines of text
-    std::vector<ustring> lines = {"First line", "Second line", "Third line"};
+    std::vector<string> lines = {"First line", "Second line", "Third line"};
     
     // Set a variable to the Documents path.
-    ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
+    string doc_path = environment::get_folder_path(environment::special_folder::my_documents);
     
     // Write the string array to a new file named "write_lines.txt".
     using_ (stream_writer output_file(path::combine(doc_path, "write_lines.txt"))) {
-      for (const ustring& line : lines)
+      for (const string& line : lines)
         output_file.write_line(line);
     }
   }
@@ -61,7 +61,7 @@ class program {
 public:
   static auto main() {
     // Set a variable to the Documents path.
-    ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
+    string doc_path = environment::get_folder_path(environment::special_folder::my_documents);
     
     // Append text to an existing file named "write_lines.txt".
     using_ (stream_writer output_file(path::combine(doc_path, "write_lines.txt"), true)) {
@@ -90,16 +90,16 @@ class program {
 public:
   static auto main() {
     // Create a string with a line of text.
-    ustring text = "First line" + environment::new_line();
+    string text = "First line" + environment::new_line();
     
     // Set a variable to the Documents path.
-    ustring doc_path = environment::get_folder_path(environment::special_folder::my_documents);
+    string doc_path = environment::get_folder_path(environment::special_folder::my_documents);
     
     // Write the text to a new file named "write_file.txt".
     file::write_all_text(path::combine(doc_path, "write_file.txt"), text);
     
     // Create a string array with the additional lines of text
-    std::vector<ustring> lines = { "New line 1", "New line 2" };
+    std::vector<string> lines = { "New line 1", "New line 2" };
     
     // Append new lines of text to the file
     file::append_all_lines(path::combine(doc_path, "write_file.txt"), lines);

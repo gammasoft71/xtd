@@ -29,7 +29,7 @@ sidebar_position: 1
 | ------------------------------------------------------------------------------------------ |
 | [Types specifications](/docs/documentation/Guides/xtd.core/Types%20overview/types)         |
 | [Enumerations management](/docs/documentation/Guides/xtd.core/Types%20overview/enum_class) |
-| [String manipulations](/docs/documentation/Guides/xtd.core/Types%20overview/ustring)       |
+| [String manipulations](/docs/documentation/Guides/xtd.core/Types%20overview/string)        |
 | [Date and time usages](/docs/documentation/Guides/xtd.core/Types%20overview/date_time)     |
 | [What is a delegate?](/docs/documentation/Guides/xtd.core/Types%20overview/delegates)      |
 | [What is an event?](/docs/documentation/Guides/xtd.core/Types%20overview/events)           |

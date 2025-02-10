@@ -156,7 +156,7 @@ You use the [parse](https://gammasoft71.github.io/xtd/reference_guides/latest/cl
   std::locale::global(std::locale("en_GB.utf-8"));
   
   auto date1 = date_time {2013, 6, 1, 12, 32, 30};
-  auto bad_formats = vector<ustring> {};
+  auto bad_formats = vector<string> {};
   
   console::write_line("{,-37} {,-19}\n", "Date String", "Date");
   for (auto date_string : date1.get_date_time_formats()) {

@@ -179,7 +179,7 @@ public:
       button_normal.enabled(window_state() != form_window_state::normal);
       button_minimize.enabled(window_state() != form_window_state::minimized && window_state() != form_window_state::full_screen);
 
-      ctrace << ustring::format("resize: {}, {}", size(), window_state()) << std::endl;
+      ctrace << string::format("resize: {}, {}", size(), window_state()) << std::endl;
     };
     client_size({410, 200});
     window_state(form_window_state::maximized);
@@ -282,8 +282,8 @@ public:
     active_control(input);
   }
   
-  virtual ustring input_text() const {return input.text();}
-  virtual user_input_dialog& input_text(const ustring& input_text) {
+  virtual string input_text() const {return input.text();}
+  virtual user_input_dialog& input_text(const string& input_text) {
     input.text(input_text);
     return *this;
   }

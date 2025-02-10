@@ -238,7 +238,7 @@ namespace tutorial {
         count++;
         control& form = parent().value().get();
         panel_right& panel = static_cast<panel_right&>(form.controls()[0].get());
-        panel.label.text(xtd::ustring::format("{}", count));
+        panel.label.text(xtd::string::format("{}", count));
       };
       
       button_minus.auto_repeat(true);
@@ -248,7 +248,7 @@ namespace tutorial {
         count--;
         control& form = parent().value().get();
         panel_right& panel = static_cast<panel_right&>(form.controls()[0].get());
-        panel.label.text(xtd::ustring::format("{}", count));
+        panel.label.text(xtd::string::format("{}", count));
       };
     }
     
@@ -286,7 +286,7 @@ The question is, how do we grab the pointer to the label?
 ```cpp
 control& form = parent().value().get();
 panel_right& panel = static_cast<panel_right&>(form.controls()[0].get());
-panel.label.text(xtd::ustring::format("{}", count));
+panel.label.text(xtd::string::format("{}", count));
 ```
 
 These two lines are the most important lines of the example. 

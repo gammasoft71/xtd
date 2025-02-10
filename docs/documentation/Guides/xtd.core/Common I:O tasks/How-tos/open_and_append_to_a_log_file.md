@@ -34,7 +34,7 @@ public:
     }
   }
   
-  static void log(const ustring& log_message, text_writer& w) {
+  static void log(const string& log_message, text_writer& w) {
     w.write("\r\nLog Entry : ");
     w.write_line("{} {}", date_time::now().to_long_time_string(), date_time::now().to_long_date_string());
     w.write_line("  :");
@@ -44,7 +44,7 @@ public:
   
   static void dump_log(stream_reader& r) {
     while (!r.end_of_stream()) {
-      ustring line = r.read_line();
+      string line = r.read_line();
       console::write_line(line);
     }
   }

@@ -124,13 +124,13 @@ auto main() -> int {
   // button1 click event
   button1.click += [&] {
     static auto button_clicked = 0;
-    label1.text(ustring::format("button1 clicked {} times", ++button_clicked));
+    label1.text(string::format("button1 clicked {} times", ++button_clicked));
   };
 
   // button2 click event
   button2.click += [&] {
     static auto button_clicked = 0;
-    label2.text(ustring::format("button2 clicked {} times", ++button_clicked));
+    label2.text(string::format("button2 clicked {} times", ++button_clicked));
   };
 
   // Displays form and run Windows loop message until form closed

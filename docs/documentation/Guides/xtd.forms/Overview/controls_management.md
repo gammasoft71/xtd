@@ -261,7 +261,7 @@ public:
     };
     form2.form_closed += [&] {
       static auto close_count = 0;
-      form2.text(ustring::format("Close count = {}", ++close_count));
+      form2.text(string::format("Close count = {}", ++close_count));
     };
   }
   
