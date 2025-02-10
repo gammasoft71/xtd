@@ -53,8 +53,16 @@ void region::complement(const xtd::drawing::region& region) noexcept {
   native::region::complement(data_->handle, region.data_->handle);
 }
 
-bool region::equals(const region& value) const noexcept {
-  return data_ == value.data_;
+bool region::equals(const object& obj) const noexcept {
+  return is<region>(obj) && equals(static_cast<const region&>(obj));
+}
+
+bool region::equals(const region& other) const noexcept {
+  return data_ == other.data_;
+}
+
+xtd::size region::get_hash_code() const noexcept {
+  return hash_code::combine(data_);
 }
 
 void region::exclude(const xtd::drawing::drawing_2d::graphics_path& path) noexcept {
@@ -71,12 +79,6 @@ void region::exclude(const xtd::drawing::rectangle_f& rect) noexcept {
 
 void region::exclude(const xtd::drawing::region& region) noexcept {
   native::region::exclude(data_->handle, region.data_->handle);
-}
-
-xtd::drawing::region region::from_hrgn(intptr hrgn) {
-  auto result = region {};
-  result.data_->handle = native::region::from_hrgn(hrgn);
-  return result;
 }
 
 rectangle_f region::get_bounds() const noexcept {
@@ -244,4 +246,14 @@ void region::translate(int32 dx, int32 dy) noexcept {
 
 void region::translate(float dx, float dy) noexcept {
   native::region::translate(handle(), dx, dy);
+}
+
+bool region::equals(const region& region, const xtd::drawing::graphics& g) noexcept {
+  return region == g.clip();
+}
+
+xtd::drawing::region region::from_hrgn(intptr hrgn) {
+  auto result = region {};
+  result.data_->handle = native::region::from_hrgn(hrgn);
+  return result;
 }
