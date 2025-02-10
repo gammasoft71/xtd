@@ -155,9 +155,19 @@ namespace xtd {
       /// @remarks The containing rectangle must be normalized for this method to return accurate results.
       bool contains(float x, float y) const noexcept;
       
-      using object::equals;
-      bool equals(const rectangle_f& value) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const xtd::object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const rectangle_f& other) const noexcept override;
       
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+
       /// @brief Enlarges this xtd::drawing::rectangle_f by the specified amount.
       /// @param sz The amount to inflate this rectangle.
       /// @remarks This method enlarges this rectangle, not a copy of it. The rectangle is enlarged in both directions along an axis. For example, if a 50 by 50 rectangle is enlarged by 50 in the x-axis, the resultant rectangle will be 150 units long (the original 50, the 50 in the minus direction, and the 50 in the plus direction) maintaining the rectangle's geometric center.
