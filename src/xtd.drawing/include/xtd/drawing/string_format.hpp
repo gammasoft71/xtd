@@ -121,9 +121,9 @@ namespace xtd {
       /// @}
 
     private:
-      xtd::drawing::text::hotkey_prefix hotkey_prefix_ = xtd::drawing::text::hotkey_prefix::none;
-      xtd::drawing::string_format_flags format_flags_ = static_cast<xtd::drawing::string_format_flags>(0);
       xtd::drawing::string_alignment alignment_ = xtd::drawing::string_alignment::near;
+      xtd::drawing::string_format_flags format_flags_ = static_cast<xtd::drawing::string_format_flags>(0);
+      xtd::drawing::text::hotkey_prefix hotkey_prefix_ = xtd::drawing::text::hotkey_prefix::none;
       xtd::drawing::string_alignment line_alignment_ = xtd::drawing::string_alignment::near;
       xtd::drawing::string_trimming trimming_ = xtd::drawing::string_trimming::none;
     };
