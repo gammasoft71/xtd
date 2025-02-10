@@ -83,9 +83,19 @@ namespace xtd {
       /// @param region The xtd::drawing::region object to complement this xtd::drawing::region object.
       void complement(const xtd::drawing::region& region) noexcept;
       
-      using object::equals;
-      bool equals(const region& value) const noexcept override;
-      
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const xtd::object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const region& other) const noexcept override;
+
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+
       /// @brief Updates this xtd::drawing::region to contain only the portion of its interior that does not intersect with the specified xtd::drawing::graphics_path.
       /// @param path The xtd::drawing::graphics_path to exclude from this xtd::drawing::region.
       void exclude(const xtd::drawing::drawing_2d::graphics_path& path) noexcept;
@@ -294,6 +304,13 @@ namespace xtd {
       /// @name Public Static Methods
       
       /// @{
+      /// @brief Tests whether the specified Region is identical to this xtd::drawing::region on the specified drawing surface.
+      /// @param region The Region to test.
+      /// @param g A xtd::drawing::graphics that represents a drawing surface.
+      /// @return `true` if the interior of region is identical to the interior of this region when the transformation associated with the `g` parameter is applied; otherwise, `false`.
+      /// @remarks The current transformation of the graphics context `g` is used to compute the region interiors on the drawing surface.
+      static bool equals(const region& region, const xtd::drawing::graphics& g) noexcept;
+
       /// @brief Initializes a new xtd::drawing::region from a handle to the specified existing GDI region.
       /// @param hrgn A handle to an existing xtd::drawing::region.
       /// @return The new xtd::drawing::region.
