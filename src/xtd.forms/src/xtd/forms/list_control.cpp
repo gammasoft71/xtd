@@ -26,12 +26,20 @@ std::any list_control::item::tag() const noexcept {
   return tag_;
 }
 
-bool list_control::item::equals(const item& value) const noexcept {
-  return value_ == value.value_;
-}
-
 int32 list_control::item::compare_to(const item& value) const noexcept {
   return value_ < value.value_ ? -1 : value_ > value.value_ ? 1 : 0;
+}
+
+bool list_control::item::equals(const object& obj) const noexcept {
+  return is<list_control::item>(obj) && equals(static_cast<const list_control::item&>(obj));
+}
+
+bool list_control::item::equals(const item& other) const noexcept {
+  return value_ == other.value_;
+}
+
+xtd::size list_control::item::get_hash_code() const noexcept {
+  return hash_code::combine(value_);
 }
 
 xtd::string list_control::item::to_string() const noexcept {
