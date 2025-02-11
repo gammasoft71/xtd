@@ -28,8 +28,16 @@ link_area& link_area::start(size_t value) noexcept {
   return *this;
 }
 
+bool link_area::equals(const object& obj) const noexcept {
+  return is<link_area>(obj) && equals(static_cast<const link_area&>(obj));
+}
+
 bool link_area::equals(const link_area& other) const noexcept {
   return start_ == other.start_ && length_ == other.length_;
+}
+
+xtd::size link_area::get_hash_code() const noexcept {
+  return hash_code::combine(start_, length_);
 }
 
 xtd::string link_area::to_string() const noexcept {
