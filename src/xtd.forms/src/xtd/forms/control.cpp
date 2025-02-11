@@ -992,6 +992,14 @@ graphics control::create_graphics() const {
   return graphics(native::control::create_graphics(handle()));
 }
 
+bool control::equals(const object& obj) const noexcept {
+  return is<control>(obj) && equals(static_cast<const control&>(obj));
+}
+
+bool control::equals(const control& value) const noexcept {
+  return data_->id == value.data_->id;
+}
+
 bool control::focus() {
   if (!is_handle_created() || !data_->can_focus) return false;
   native::control::focus(handle());
@@ -1054,6 +1062,10 @@ size_t control::get_child_index(intptr child, bool& throw_exception) const {
   }
 }
 
+xtd::size control::get_hash_code() const noexcept {
+  return hash_code::combine(data_->id);
+}
+
 void control::hide() {
   visible(false);
 }
@@ -1092,10 +1104,6 @@ std::optional<object_ref> control::invoke(delegate<void(std::vector<std::any>)> 
 
 std::optional<object_ref> control::invoke(delegate<void(std::vector<std::any>)> method, std::any arg) {
   return end_invoke(begin_invoke(method, std::vector<std::any> {arg}));
-}
-
-bool control::equals(const control& value) const noexcept {
-  return data_->id == value.data_->id;
 }
 
 std::optional<object_ref> control::end_invoke(async_result async) {
