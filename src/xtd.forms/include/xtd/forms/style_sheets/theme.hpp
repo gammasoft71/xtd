@@ -100,9 +100,19 @@ namespace xtd {
         /// @name Public Methods
         
         /// @{
-        using object::equals;
-        bool equals(const theme& other) const noexcept override {return name_ == other.name_ && description_ == other.description_ && authors_ == other.authors_ && website_ == other.website_;}
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param obj The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const xtd::object& obj) const noexcept override;
+        /// @brief Determines whether the specified object is equal to the current object.
+        /// @param other The object to compare with the current object.
+        /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+        bool equals(const theme& other) const noexcept override;
         
+        /// @brief Serves as a hash function for a particular type.
+        /// @return A hash code for the current object.
+        xtd::size get_hash_code() const noexcept override;
+
         xtd::string to_string() const noexcept override;
         
         /// @brief Return a xtd::string that represents the css format of the current xtd::forms::style_sheets::theme object.

@@ -48,6 +48,22 @@ void theme::website(const uri& value) noexcept {
   website_ = value;
 }
 
+bool theme::equals(const object& obj) const noexcept {
+  return is<theme>(obj) && equals(static_cast<const theme&>(obj));
+}
+
+bool theme::equals(const theme& other) const noexcept {
+  return name_ == other.name_ && description_ == other.description_ && authors_ == other.authors_ && website_ == other.website_;
+}
+
+xtd::size theme::get_hash_code() const noexcept {
+  return hash_code::combine(name_, description_, authors_, website_);
+}
+
+xtd::string theme::to_string() const noexcept {
+  return string::format("[name={}, description={}, authors={}, website={}, ]", name(), description(), authors(), website());
+}
+
 bool theme::from_css(const xtd::string& css_text, theme& result) {
   return try_parse(css_text, result);
 }
@@ -57,10 +73,6 @@ theme theme::parse(const xtd::string& text) {
   if (!try_parse(text, result))
     throw argument_exception {};
   return result;
-}
-
-xtd::string theme::to_string() const noexcept {
-  return string::format("[name={}, description={}, authors={}, website={}, ]", name(), description(), authors(), website());
 }
 
 xtd::string theme::to_css() const noexcept {
