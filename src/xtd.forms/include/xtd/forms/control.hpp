@@ -981,7 +981,13 @@ namespace xtd {
       /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke(delegate).
       std::optional<object_ref> end_invoke(xtd::async_result async) override;
       
-      using object::equals;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const xtd::object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
       bool equals(const control& value) const noexcept override;
       
       /// @brief Sets input focus to the control.
@@ -1019,6 +1025,10 @@ namespace xtd {
       /// @param throw_exception `true` to throw an exception if the control specified in the child parameter is not a control in the control::control_collection; otherwise, `false`.
       size_t get_child_index(intptr child, bool& throw_exception) const;
       
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+
       /// @brief Conceals the control from the user.
       /// @remarks Hiding the control is equivalent to setting the visible property to `false`. After the hide method is called, the visible property returns a value of `false` until the show method is called.
       virtual void hide();
