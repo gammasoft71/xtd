@@ -222,8 +222,42 @@ style_sheets::control& style_sheets::control::font(const drawing::font& value) n
   return *this;
 }
 
+bool style_sheets::control::equals(const object& obj) const noexcept {
+  return is<style_sheets::control>(obj) && equals(static_cast<const style_sheets::control&>(obj));
+}
+
 bool style_sheets::control::equals(const style_sheets::control& other) const noexcept {
-  return margin_ == other.margin_ && border_style_ == other.border_style_ && border_color_ == other.border_color_ && border_width_ == other.border_width_ && border_radius_ == other.border_radius_ && padding_ == other.padding_ && background_color_ == other.background_color_ && background_image_ == other.background_image_ && width_ == other.width_ && height_ == other.height_ && color_ == other.color_ && text_alignment_ == other.text_alignment_ && font_ == other.font_ && decoration_ == other.decoration_ && transformation_ == other.transformation_;
+  return auto_ellipsis_ == other.auto_ellipsis_ && margin_ == other.margin_ && border_color_ == other.border_color_ && border_radius_ == other.border_radius_ && border_style_ == other.border_style_ && border_width_ == other.border_width_&& outline_color_ == other.outline_color_ && outline_offset_ == other.outline_offset_ && outline_radius_ == other.outline_radius_ && outline_style_ == other.outline_style_ && outline_width_ == other.outline_width_ && padding_ == other.padding_ && background_color_ == other.background_color_ && background_image_ == other.background_image_ && width_ == other.width_ && height_ == other.height_ && color_ == other.color_ && text_alignment_ == other.text_alignment_ && font_ == other.font_ && decoration_ == other.decoration_ && shadows_ == other.shadows_ && transformation_ == other.transformation_ && image_alignment_ == other.image_alignment_ && white_space_ == other.white_space_;
+}
+
+xtd::size style_sheets::control::get_hash_code() const noexcept {
+  auto result = hash_code {};
+  result.add(auto_ellipsis_);
+  result.add(margin_);
+  result.add(border_color_);
+  result.add(border_radius_);
+  result.add(border_style_);
+  result.add(border_width_);
+  result.add(outline_color_);
+  result.add(outline_offset_);
+  result.add(outline_radius_);
+  result.add(outline_style_);
+  result.add(outline_width_);
+  result.add(padding_);
+  result.add(background_color_);
+  result.add(background_image_);
+  result.add(width_.value_or(length {}));
+  result.add(height_.value_or(length {}));
+  result.add(color_);
+  result.add(text_alignment_);
+  result.add(font_);
+  result.add(decoration_);
+  for (const auto& shadow : shadows_)
+    result.add(shadow);
+  result.add(transformation_);
+  result.add(image_alignment_);
+  result.add(white_space_);
+  return result.to_hash_code();
 }
 
 xtd::drawing::color style_sheets::control::get_solid_background_color() const noexcept {
