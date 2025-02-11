@@ -19,7 +19,6 @@
 #include "int32.hpp"
 #include "int64.hpp"
 #include "intptr.hpp"
-#include "native_array.hpp"
 #include "new_ptr.hpp"
 #include "new_sptr.hpp"
 #include "new_uptr.hpp"

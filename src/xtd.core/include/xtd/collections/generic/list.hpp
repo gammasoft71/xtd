@@ -127,6 +127,8 @@ namespace xtd {
         using allocator_type = typename xtd::collections::generic::helpers::allocator<typename std::conditional<std::is_same<bool, value_type>::value, xtd::byte, value_type>::type>;
         /// @brief Represents the list base type.
         using base_type = std::vector<typename std::conditional<std::is_same<bool, value_type>::value, xtd::byte, value_type>::type, allocator_type>;
+        /// @brief Represents the list base type.
+        using const_base_type = const base_type;
         /// @brief Represents the list size type (usually xtd::size).
         using size_type = xtd::size;
         /// @brief Represents the list difference type (usually xtd::ptrdiff).
@@ -404,7 +406,7 @@ namespace xtd {
         
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
-        virtual const base_type& items() const noexcept {return data_->items;}
+        virtual const_base_type& items() const noexcept {return data_->items;}
         /// @brief Returns the underlying base type items.
         /// @return The underlying base type items.
         virtual base_type& items() noexcept {return data_->items;}
@@ -1324,6 +1326,8 @@ namespace xtd {
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         virtual xtd::array<value_type> to_array() const noexcept {return xtd::array<value_type>(data(), size());}
         
+        /// @brief Returns a xtd::string that represents the current object.
+        /// @return A string that represents the current object.
         string to_string() const noexcept override {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}
                 
         /// @brief Sets the capacity to the actual number of elements in the xtd::collections::generic::list <type_t>, if that number is less than a threshold value.
@@ -1393,7 +1397,7 @@ namespace xtd {
         /// @brief Returns a reference to the element at specified location index.
         /// @param index The position of the element to return.
         /// @return Reference to the requested element.
-        /// @exception std::out_of_range If pos is not within the range of the container.
+        /// @exception std::out_of_range If `index` is not within the range of the container.
         const_reference operator [](size_type index) const override {return at(index);}
         /// @brief Returns a reference to the element at specified location index.
         /// @param index The position of the element to return.
