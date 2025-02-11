@@ -59,8 +59,20 @@ const std::vector<char32>& emoticon::codepoints() const noexcept {
   return data_->codepoints;
 }
 
-bool emoticon::equals(const emoticon& value) const noexcept {
-  return data_->name == value.data_->name && data_->codepoints == value.data_->codepoints;
+bool emoticon::equals(const object& obj) const noexcept {
+  return is<emoticon>(obj) && equals(static_cast<const emoticon&>(obj));
+}
+
+bool emoticon::equals(const emoticon& other) const noexcept {
+  return data_->name == other.data_->name && data_->codepoints == other.data_->codepoints;
+}
+
+xtd::size emoticon::get_hash_code() const noexcept {
+  auto result = hash_code {};
+  result.add(data_->name);
+  for (const auto& codepoint : data_->codepoints)
+    result.add(codepoint);
+  return result.to_hash_code();
 }
 
 xtd::string emoticon::to_string() const noexcept {
