@@ -211,6 +211,8 @@ add_sources(
   include/xtd/exit_mode
   include/xtd/exit_status.hpp
   include/xtd/exit_status
+  include/xtd/fixed_array.hpp
+  include/xtd/fixed_array
   include/xtd/flags_attribute.hpp
   include/xtd/flags_attribute
   include/xtd/foreground_color.hpp
@@ -309,8 +311,6 @@ add_sources(
   include/xtd/month_of_year
   include/xtd/nameof.hpp
   include/xtd/nameof
-  include/xtd/native_array.hpp
-  include/xtd/native_array
   include/xtd/new_ptr.hpp
   include/xtd/new_ptr
   include/xtd/new_sptr.hpp
