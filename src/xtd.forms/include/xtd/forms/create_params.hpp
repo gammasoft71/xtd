@@ -26,7 +26,7 @@ namespace xtd {
     /// @ingroup xtd_forms
     /// @remarks The information in a create_params can be used to pass information about the initial state and appearance of a control. Most control derived controls override the create_params property to pass in the appropriate values or include additional information in the create_params.
     /// @note The constants used to set the style, ex_style, and class_style properties are defined in the xtd.forms.native library as constants.
-    class create_params : public object {
+    class create_params : public object, iequatable<create_params> {
       struct data;
       
     public:
@@ -163,6 +163,19 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const xtd::object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const create_params& other) const noexcept override;
+      
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+
       /// @brief Returns a string that represents the current object.
       /// @return A string that represents the current object.
       xtd::string to_string() const noexcept override;
