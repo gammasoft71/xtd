@@ -29,12 +29,20 @@ std::any domain_up_down::item::tag() const noexcept {
   return tag_;
 }
 
-bool domain_up_down::item::equals(const item& value) const noexcept {
-  return value_ == value.value_;
-}
-
 int32 domain_up_down::item::compare_to(const item& value) const noexcept {
   return value_ < value.value_ ? -1 : value_ > value.value_ ? 1 : 0;
+}
+
+bool domain_up_down::item::equals(const object& obj) const noexcept {
+  return is<domain_up_down::item>(obj) && equals(static_cast<const domain_up_down::item&>(obj));
+}
+
+bool domain_up_down::item::equals(const item& other) const noexcept {
+  return value_ == other.value_;
+}
+
+xtd::size domain_up_down::item::get_hash_code() const noexcept {
+  return hash_code::combine(value_);
 }
 
 xtd::string domain_up_down::item::to_string() const noexcept {
