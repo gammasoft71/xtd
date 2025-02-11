@@ -30,8 +30,16 @@ void length::unit(length_unit value) noexcept {
   unit_ = value;
 }
 
+bool length::equals(const object& obj) const noexcept {
+  return is<length>(obj) && equals(static_cast<const length&>(obj));
+}
+
 bool length::equals(const length& other) const noexcept {
   return value_ == other.value_ && unit_ == other.unit_;
+}
+
+xtd::size length::get_hash_code() const noexcept {
+  return hash_code::combine(value_, unit_);
 }
 
 int32 length::get_pixels(const xtd::drawing::rectangle& rect) const noexcept {
