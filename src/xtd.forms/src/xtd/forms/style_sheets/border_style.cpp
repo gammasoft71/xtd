@@ -66,6 +66,14 @@ void border_style::top(border_type top) noexcept {
   }
 }
 
+bool border_style::equals(const object& obj) const noexcept {
+  return is<border_style>(obj) && equals(static_cast<const border_style&>(obj));
+}
+
 bool border_style::equals(const border_style& other) const noexcept {
-  return all_ == other.all_ && left_ == other.left_ && top_ == other.top_ && right_ == other.right_ && bottom_ == other.bottom_;
+  return all_ == other.all_ && bottom_ == other.bottom_ && left_ == other.left_ && right_ == other.right_ && top_ == other.top_;
+}
+
+xtd::size border_style::get_hash_code() const noexcept {
+  return hash_code::combine(all_, bottom_, left_, right_, top_);
 }
