@@ -25,8 +25,16 @@ xtd::diagnostics::trace_switch& enable_debug::trace_switch() noexcept {
   return trace_switch_;
 }
 
-bool enable_debug::equals(const enable_debug& value) const noexcept {
-  return value_ == value.value_;
+bool enable_debug::equals(const object& obj) const noexcept {
+  return is<enable_debug>(obj) && equals(static_cast<const enable_debug&>(obj));
+}
+
+bool enable_debug::equals(const enable_debug& other) const noexcept {
+  return value_ == other.value_;
+}
+
+xtd::size enable_debug::get_hash_code() const noexcept {
+  return hash_code::combine(value_);
 }
 
 bool enable_debug::get(const enable_debug& flags) {
