@@ -14,47 +14,47 @@ namespace {
 }
 
 struct cursor::data {
-  intptr handle_ = 0;
-  bool destroyable_ = true;
-  xtd::drawing::point hot_spot_;
-  xtd::string name_;
-  xtd::drawing::size size_;
-  std::any tag_;
+  intptr handle = 0;
+  bool destroyable = true;
+  xtd::drawing::point hot_spot;
+  xtd::string name;
+  xtd::drawing::size size;
+  std::any tag;
 };
 
 cursor cursor::none(0, false, "none");
 
 cursor::cursor(intptr handle, bool destroyable, const xtd::string& name) : data_(xtd::new_sptr<data>()) {
-  data_->handle_ = handle;
-  data_->destroyable_ = destroyable;
-  data_->name_ = name;
-  data_->hot_spot_ = native::cursor::hot_spot(data_->handle_);
-  data_->size_ = native::cursor::size(data_->handle_);
+  data_->handle = handle;
+  data_->destroyable = destroyable;
+  data_->name = name;
+  data_->hot_spot = native::cursor::hot_spot(data_->handle);
+  data_->size = native::cursor::size(data_->handle);
 }
 
 cursor::cursor() : data_(xtd::new_sptr<data>()) {
-  data_->handle_ = native::cursor::create();
-  data_->hot_spot_ = native::cursor::hot_spot(data_->handle_);
-  data_->size_ = native::cursor::size(data_->handle_);
+  data_->handle = native::cursor::create();
+  data_->hot_spot = native::cursor::hot_spot(data_->handle);
+  data_->size = native::cursor::size(data_->handle);
 }
 
 cursor::cursor(intptr handle) : cursor(handle, false, string::empty_string) {
 }
 
 cursor::cursor(const bitmap& bitmap, const xtd::drawing::point& hot_spot) : data_(xtd::new_sptr<data>()) {
-  data_->handle_ = native::cursor::create(bitmap, hot_spot);
-  data_->hot_spot_ = hot_spot;
-  data_->size_ = native::cursor::size(data_->handle_);
+  data_->handle = native::cursor::create(bitmap, hot_spot);
+  data_->hot_spot = hot_spot;
+  data_->size = native::cursor::size(data_->handle);
 }
 
 cursor::~cursor() {
-  if (data_.use_count() == 1 && data_->handle_ && data_->destroyable_)
-    native::cursor::destroy(data_->handle_);
+  if (data_.use_count() == 1 && data_->handle && data_->destroyable)
+    native::cursor::destroy(data_->handle);
 }
 
 void cursor::current(const cursor& cursor) {
   current_cursor = cursor;
-  native::cursor::current(cursor.data_->name_ == "default_cursor" ? 0 : cursor.data_->handle_);
+  native::cursor::current(cursor.data_->name == "default_cursor" ? 0 : cursor.data_->handle);
 }
 
 cursor cursor::current() {
@@ -62,11 +62,11 @@ cursor cursor::current() {
 }
 
 intptr cursor::handle() const noexcept {
-  return data_->handle_;
+  return data_->handle;
 }
 
 drawing::point cursor::hot_spot() const noexcept {
-  return data_->hot_spot_;
+  return data_->hot_spot;
 }
 
 point cursor::position() {
@@ -78,23 +78,37 @@ void cursor::position(const point& position) {
 }
 
 drawing::size cursor::size() const noexcept {
-  return data_->size_;
+  return data_->size;
 }
 
 std::any cursor::tag() const noexcept {
-  return data_->tag_;
+  return data_->tag;
 }
 
 void cursor::tag(std::any tag) {
-  data_->tag_ = tag;
+  data_->tag = tag;
 }
 
 intptr cursor::copy_handle() const {
-  return native::cursor::copy(data_->handle_);
+  return native::cursor::copy(data_->handle);
+}
+
+bool cursor::equals(const object& obj) const noexcept {
+  return is<cursor>(obj) && equals(static_cast<const cursor&>(obj));
 }
 
 bool cursor::equals(const cursor& value) const noexcept {
-  return data_ == value.data_ || (!data_->name_.empty() && data_->name_ == value.data_->name_);
+  if (!string::is_empty(data_->name)) return data_->name == value.data_->name;
+  return data_->handle == value.data_->handle;
+}
+
+xtd::size cursor::get_hash_code() const noexcept {
+  if (!string::is_empty(data_->name)) return hash_code::combine(data_->name);
+  return hash_code::combine(data_->handle);
+}
+
+string cursor::to_string() const noexcept {
+  return string::format("[cursor: {}]", data_->name != "" ? data_->name : get_type().full_name());
 }
 
 cursor cursor::from_bitmap(const xtd::drawing::bitmap& bitmap, const xtd::drawing::point& hot_spot) {
@@ -111,8 +125,4 @@ void cursor::hide() {
 
 void cursor::show() {
   native::cursor::show();
-}
-
-string cursor::to_string() const noexcept {
-  return string::format("[cursor: {}]", data_->name_ != "" ? data_->name_ : get_type().full_name());
 }
