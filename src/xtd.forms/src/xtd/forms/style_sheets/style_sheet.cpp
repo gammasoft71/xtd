@@ -411,8 +411,16 @@ const style_sheet::user_controls_t& style_sheet::user_controls() const noexcept 
   return data_->user_controls;
 }
 
+bool style_sheet::equals(const object& obj) const noexcept {
+  return is<style_sheet>(obj) && equals(static_cast<const style_sheet&>(obj));
+}
+
 bool style_sheet::equals(const style_sheet& other) const noexcept {
   return data_->theme == other.data_->theme;
+}
+
+xtd::size style_sheet::get_hash_code() const noexcept {
+  return hash_code::combine(data_->theme);
 }
 
 style_sheet::buttons_t style_sheet::button_from_css(const  string& css_text) {
