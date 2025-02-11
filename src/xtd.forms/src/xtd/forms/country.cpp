@@ -63,8 +63,16 @@ int32 country::numeric_code() const noexcept {
   return data_->numeric_code;
 }
 
+bool country::equals(const object& obj) const noexcept {
+  return is<country>(obj) && equals(static_cast<const country&>(obj));
+}
+
 bool country::equals(const country& value) const noexcept {
-  return data_->name == value.data_->name && data_->alpha_2_code == value.data_->alpha_2_code && data_->alpha_3_code == value.data_->alpha_3_code && data_->numeric_code == value.data_->numeric_code;
+  return data_->name == value.data_->name && data_->alpha_2_code == value.data_->alpha_2_code && data_->alpha_3_code == value.data_->alpha_3_code && data_->numeric_code == value.data_->numeric_code && data_->emoticon == value.data_->emoticon;
+}
+
+xtd::size country::get_hash_code() const noexcept {
+  return hash_code::combine(data_->name, data_->alpha_2_code, data_->alpha_3_code, data_->numeric_code, data_->emoticon);
 }
 
 country country::from_alpha_2_code(const xtd::string& alpha_2_code) {
