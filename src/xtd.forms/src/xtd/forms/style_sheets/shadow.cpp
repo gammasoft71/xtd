@@ -32,6 +32,14 @@ void shadow::radius(int32 value) noexcept {
   radius_ = value;
 }
 
+bool shadow::equals(const object& obj) const noexcept {
+  return is<shadow>(obj) && equals(static_cast<const shadow&>(obj));
+}
+
 bool shadow::equals(const shadow& other) const noexcept {
   return color_ == other.color_ && offset_ == other.offset_ && radius_ == other.radius_;
+}
+
+xtd::size shadow::get_hash_code() const noexcept {
+  return hash_code::combine(color_, offset_, radius_);
 }
