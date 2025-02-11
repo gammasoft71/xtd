@@ -81,10 +81,18 @@ control_layout_style& control_layout_style::align(xtd::forms::content_alignment 
   return *this;
 }
 
-xtd::string control_layout_style::to_string() const noexcept {
-  return string::format("control_layout_style=[expanded={}, align={}, size_type={}]", data_->expanded, data_->align, data_->size_type);
+bool control_layout_style::equals(const object& obj) const noexcept {
+  return is<control_layout_style>(obj) && equals(static_cast<const control_layout_style&>(obj));
 }
 
-bool control_layout_style::equals(const control_layout_style& value) const noexcept {
-  return data_->size_type == value.data_->size_type && data_->expanded == value.data_->expanded;
+bool control_layout_style::equals(const control_layout_style& other) const noexcept {
+  return data_->size_type == other.data_->size_type && data_->expanded == other.data_->expanded && data_->align == other.data_->align;
+}
+
+xtd::size control_layout_style::get_hash_code() const noexcept {
+  return hash_code::combine(data_->size_type, data_->expanded, data_->align);
+}
+
+xtd::string control_layout_style::to_string() const noexcept {
+  return string::format("control_layout_style=[expanded={}, align={}, size_type={}]", data_->expanded, data_->align, data_->size_type);
 }
