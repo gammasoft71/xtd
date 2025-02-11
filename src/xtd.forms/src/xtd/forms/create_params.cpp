@@ -145,6 +145,18 @@ create_params& create_params::y(int32 y) {
   return *this;
 }
 
+bool create_params::equals(const object& obj) const noexcept {
+  return is<create_params>(obj) && equals(static_cast<const create_params&>(obj));
+}
+
+bool create_params::equals(const create_params& other) const noexcept {
+  return data_->caption == other.data_->caption && data_->class_name == other.data_->class_name && data_->class_style == other.data_->class_style && data_->ex_style == other.data_->ex_style && data_->location == other.data_->location && data_->param == other.data_->param && data_->parent == other.data_->parent && data_->style == other.data_->style && data_->size == other.data_->size;
+}
+
+xtd::size create_params::get_hash_code() const noexcept {
+  return hash_code::combine(data_->caption, data_->class_name, data_->class_style, data_->ex_style, data_->location, data_->param, data_->parent, data_->style, data_->size);
+}
+
 xtd::string create_params::to_string() const noexcept {
   return string::format("create_params {{'{}' , '{}', 0x{:X}, 0x{:X}, {{{}, {}, {}, {}}}}}", data_->class_name, data_->caption, data_->style, data_->ex_style, data_->location.x, data_->location.y, data_->size.width, data_->size.height);
 }
