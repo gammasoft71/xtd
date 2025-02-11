@@ -81,6 +81,24 @@ xtd::uptr<xtd::drawing::brush> background_image::make_brush(const xtd::forms::st
   return nullptr;
 }
 
+bool background_image::equals(const object& obj) const noexcept {
+  return is<background_image>(obj) && equals(static_cast<const background_image&>(obj));
+}
+
+bool background_image::equals(const background_image& other) const noexcept {
+  return image_type_ == other.image_type_ && url_ == other.url_ && colors_ == other.colors_ && angle_ == other.angle_;
+}
+
+xtd::size background_image::get_hash_code() const noexcept {
+  auto result = hash_code {};
+  result.add(image_type_);
+  result.add(url_);
+  for (const auto& color : colors_)
+    result.add(color);
+  result.add(angle_);
+  return result.to_hash_code();
+}
+
 xtd::string background_image::to_string() const noexcept {
   return string::format("[image_type={}, url={}, colors=[{}], angle={}]", image_type(), url(), colors(), angle());
 }
