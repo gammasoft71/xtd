@@ -109,6 +109,10 @@ xtd::forms::link& xtd::forms::link::visited(bool value) {
   return *this;
 }
 
+bool xtd::forms::link::equals(const object& obj) const noexcept {
+  return is<xtd::forms::link>(obj) && equals(static_cast<const xtd::forms::link&>(obj));
+}
+
 bool xtd::forms::link::equals(const xtd::forms::link& other) const noexcept {
   return data_->description == other.data_->description && data_->enabled == other.data_->enabled && data_->length == other.data_->length && /*data_->link_data == other.data_->link_data &&*/ data_->name == other.data_->name && data_->start == other.data_->start;
 }
@@ -120,7 +124,6 @@ xtd::size xtd::forms::link::get_hash_code() const noexcept {
 bool xtd::forms::link::active_() const noexcept {
   return data_->active;
 }
-
 
 void xtd::forms::link::active_(bool active) noexcept {
   data_->active = active;
