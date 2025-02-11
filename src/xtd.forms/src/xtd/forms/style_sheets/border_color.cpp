@@ -68,6 +68,14 @@ void border_color::top(const xtd::drawing::color& top) noexcept {
   }
 }
 
+bool border_color::equals(const object& obj) const noexcept {
+  return is<border_color>(obj) && equals(static_cast<const border_color&>(obj));
+}
+
 bool border_color::equals(const border_color& other) const noexcept {
-  return all_ == other.all_ && left_ == other.left_ && top_ == other.top_ && right_ == other.right_ && bottom_ == other.bottom_;
+  return all_ == other.all_ && bottom_ == other.bottom_ && left_ == other.left_ && right_ == other.right_ && top_ == other.top_;
+}
+
+xtd::size border_color::get_hash_code() const noexcept {
+  return hash_code::combine(all_, bottom_, left_, right_, top_);
 }
