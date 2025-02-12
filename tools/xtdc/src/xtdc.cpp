@@ -11,7 +11,7 @@ using namespace xtd::diagnostics;
 namespace xtdc_command {
   class xtdc final :public project_base {
   public:
-    static auto main(const list<string>& args) {
+    static auto main(const argument_collection& args) {
       if (args.size() == 0) {
         console::write_line(string::join("\n", get_help()));
         return -1;

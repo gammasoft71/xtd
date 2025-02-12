@@ -17,7 +17,7 @@ using namespace xtd::collections::generic;
 namespace set_path {
   class program final static_ {
   public:
-    static auto main(const list<string>& args) {
+    static auto main(const argument_collection& args) {
       string key;
       string value;
       bool show_version = false;

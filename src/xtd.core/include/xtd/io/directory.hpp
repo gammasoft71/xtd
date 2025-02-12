@@ -486,7 +486,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static auto main(const list<string>& args) {
+      ///   static auto main(const argument_collection& args) {
       ///     for (string path : args) {
       ///       if (file::exists(path)) {
       ///         // This path is a file
@@ -634,7 +634,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static auto main(const list<string>& args) {
+      ///   static auto main(const argument_collection& args) {
       ///     for (string path : args) {
       ///       if (file::exists(path)) {
       ///         // This path is a file
@@ -787,7 +787,7 @@ namespace xtd {
       ///
       /// class program {
       /// public:
-      ///   static auto main(const std::vector<list>& args) {
+      ///   static auto main(const argument_collection& args) {
       ///     for (string path : args) {
       ///       if (file::exists(path)) {
       ///         // This path is a file

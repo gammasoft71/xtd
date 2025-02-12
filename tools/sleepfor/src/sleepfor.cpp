@@ -14,7 +14,7 @@ namespace sleepfor {
     enum class period_type {nanoseconds, microseconds, milliseconds, seconds, minutes};
     
   public:
-    static auto main(const list<string>& args) {
+    static auto main(const argument_collection& args) {
       int duration = 0;
       period_type type = period_type::milliseconds;
       bool indefinitely = false;

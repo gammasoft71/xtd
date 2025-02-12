@@ -302,7 +302,7 @@ namespace xtd {
       ///
       /// class touch {
       /// public:
-      ///   static auto main(const std::vector<string>& args) {
+      ///   static auto main(const argument_collection& args) {
       ///     // Make sure a filename was provided.
       ///     if (args.size() > 0) {
       ///       // Verify that the provided filename exists.
@@ -357,7 +357,7 @@ namespace xtd {
       ///
       /// class touch {
       /// public:
-      ///   static auto main(const std::vector<string>& args) {
+      ///   static auto main(const argument_collection& args) {
       ///     // Make sure a filename was provided.
       ///     if (args.size() > 0) {
       ///       // Verify that the provided filename exists.
@@ -444,7 +444,7 @@ namespace xtd {
       ///
       /// class touch {
       /// public:
-      ///   static auto main(const std::vector<string>& args) {
+      ///   static auto main(const argument_collection& args) {
       ///     // Make sure a filename was provided.
       ///     if (args.size() > 0) {
       ///       // Verify that the provided filename exists.
@@ -499,7 +499,7 @@ namespace xtd {
       ///
       /// class touch {
       /// public:
-      ///   static auto main(const std::vector<string>& args) {
+      ///   static auto main(const argument_collection& args) {
       ///     // Make sure a filename was provided.
       ///     if (args.size() > 0) {
       ///       // Verify that the provided filename exists.
