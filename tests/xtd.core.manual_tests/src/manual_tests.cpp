@@ -10,8 +10,8 @@ struct std::hash<xtd::string> {
 auto main() -> int {
   println();
   //auto items = fixed_array<string, 4> {"one", "two", "three", "four"};
-  string items[4] {"one", "two", "three", "four"};
-  println("items = {}", items);
+  //string items[4] {"one", "two", "three", "four"};
+  //println("items = {}", items);
 
   println();
   println("array<string>         = {}", array<string> {"one", "two", "three", "four"});
@@ -36,6 +36,12 @@ auto main() -> int {
   println("sorted_set<string>                        = {}", sorted_set<string> {"one", "two", "three", "four"});
   println("std::set<string>                          = {}", std::set<string> {"one", "two", "three", "four"});
   println("std::set<string, helpers::lesser<string>> = {}", std::set<string, xtd::collections::generic::helpers::lesser<string>> {"one", "two", "three", "four"});
+  
+  println();
+  //auto items = list<string> {"one", "two", "three", "four"};
+  //foreach_(const auto& item, list {"one", "two", "three", "four"})
+  foreach_(const auto& item, {"one", "two", "three", "four"})
+    println(item);
   
   //println("items = {}", items);
   

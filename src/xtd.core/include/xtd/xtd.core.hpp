@@ -129,6 +129,8 @@
 #include "io/text_reader.hpp"
 #include "io/text_writer.hpp"
 #include "linq/enumerable.hpp"
+#include "linq/foreach.hpp"
+#include "linq/from.hpp"
 #include "media/system_sound.hpp"
 #include "media/system_sounds.hpp"
 #include "net/cookie_exception.hpp"
