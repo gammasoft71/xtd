@@ -2,7 +2,7 @@
 /// @brief Contains xtd::argument_collection alias.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include "collections/specialized/string_collection.hpp"
+#include "array.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -16,5 +16,5 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
-  using argument_collection = xtd::collections::specialized::string_collection;
+  using argument_collection = xtd::array<xtd::string>;
 }

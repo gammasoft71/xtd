@@ -8,7 +8,7 @@ using namespace xtd;
 namespace guidgen {
   class program final static_ {
   public:
-    static auto main(const std::vector<string>& args) {
+    static auto main(const argument_collection& args) {
       auto format = string::empty_string;
       auto count = 1;
       auto show_help = false;
