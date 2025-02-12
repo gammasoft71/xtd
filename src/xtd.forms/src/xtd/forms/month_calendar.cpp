@@ -187,8 +187,8 @@ forms::selection_range month_calendar::selection_range() const noexcept {
 }
 
 month_calendar& month_calendar::selection_range(const forms::selection_range& value) {
-  data_->selection_start = value.start();
-  data_->selection_end = value.end();
+  data_->selection_start = value.start;
+  data_->selection_end = value.end;
   return *this;
 }
 
