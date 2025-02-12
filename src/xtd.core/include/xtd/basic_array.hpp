@@ -239,7 +239,7 @@ namespace xtd {
     /// @return Reference to the requested element.
     /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the container.
     virtual reference at(size_type index) {
-      if (index >= count()) __throw_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       return (reference)data_->items.at(index);
     }
     /// @brief Returns a reference to the element at specified location pos, with bounds checking.
@@ -247,7 +247,7 @@ namespace xtd {
     /// @return Reference to the requested element.
     /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the container.
     virtual const_reference at(size_type index) const {
-      if (index >= count()) __throw_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       return (reference)data_->items.at(index);
     }
     
@@ -261,9 +261,9 @@ namespace xtd {
     
     void copy_to(xtd::array<type_t>& array, size_type index) const override {
       /// @todo uncomment want array remamed into array.
-      //if (array.rank() != 1) __throw_argument_exception(__FILE__, __LINE__, __func__);
-      if (rank() != 1) __throw_rank_exception(__FILE__, __LINE__, __func__);
-      if (index + length() > array.size()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      //if (array.rank() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+      if (rank() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::rank);
+      if (index + length() > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       for (auto increment = size_type {0}; increment < length(); ++increment)
         array[index + increment] = at(increment);
     }
@@ -293,14 +293,14 @@ namespace xtd {
         explicit basic_array_enumerator(const basic_array& items, size_type version) : items_(items), version_(version) {}
         
         const value_type& current() const override {
-          if (version_ != items_.data_->version) __throw_invalid_operation_exception("Collection was modified; enumeration operation may not execute.", __FILE__, __LINE__, __func__);
+          if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
           if (index_ < items_.count()) return items_[index_];
           static thread_local auto default_value = value_type {};
           return default_value;
         }
         
         bool move_next() override {
-          if (version_ != items_.data_->version) __throw_invalid_operation_exception("Collection was modified; enumeration operation may not execute.", __FILE__, __LINE__, __func__);
+          if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
           return ++index_ < items_.count();
         }
         
@@ -343,7 +343,7 @@ namespace xtd {
     /// The following code example uses xtd::array::get_lower_bound and xtd::array::get_upper_bound to initialize a one-dimensional array and a multidimensional array.
     /// @include array_get_lower_bound.cpp
     constexpr size_type get_lower_bound(size_type dimension) const {
-      if (dimension >= rank()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (dimension >= rank()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return data_->lower_bound[dimension];
     }
     
@@ -355,7 +355,7 @@ namespace xtd {
     /// The following code example uses xtd::array::get_lower_bound and xtd::array::get_upper_bound to initialize a one-dimensional array and a multidimensional array.
     /// @include array_get_lower_bound.cpp
     constexpr size_type get_upper_bound(size_type dimension) const {
-      if (dimension >= rank()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (dimension >= rank()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return data_->upper_bound[dimension];
     }
     
@@ -385,7 +385,7 @@ namespace xtd {
     /// @remarks If the current size is less than `count`, additional default-inserted elements are appended.
     void resize(size_type new_size, value_type value) {
       if (new_size == length()) return;
-      if (new_size > max_size()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (new_size > max_size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       ++data_->version;
       data_->items.resize(new_size, value);
       data_->upper_bound[0] = new_size - 1;
@@ -441,7 +441,7 @@ namespace xtd {
     /// The following code example shows how to determine the index of the first occurrence of a specified element.
     /// @include array_index_of.cpp
     static size_type index_of(const basic_array& array, const value_type& value, size_type index, size_type count) {
-      if (index > array.length() || index + count > array.length()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index > array.length() || index + count > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       
       if (array.size() == 0) return npos;
       for (auto increment = size_type {0}; increment < count; ++increment) {
@@ -462,7 +462,7 @@ namespace xtd {
     /// @remarks This method uses std::reverse to reverse the order of the elements, such that the element at xtd::basic_array <type_t>[i], where `i` is any index within the range, moves to xtd::basic_array <type_t>[j], where `j` equals index plus index plus count minus `i` minus 1.
     /// @remarks This method is an O(n) operation, where n is `count`.
     static void reverse(basic_array& array, size_type index, size_type count) {
-      if (index > array.size() || index + count > array.size()) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index > array.size() || index + count > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if (count == 0) return;
       ++array.data_->version;
       std::reverse(array.data_->items.begin() + index, array.data_->items.begin() + index + count);
@@ -538,7 +538,7 @@ namespace xtd {
     basic_array(const array<size_type, 1>& lengths);
     
     basic_array(const_pointer array, size_type length) {
-      if (array == null) __throw_argument_null_exception(__FILE__, __LINE__, __func__);
+      if (array == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
       data_->items = base_type {array, array + length};
       data_->upper_bound[0] = data_->items.size() - 1;
     }

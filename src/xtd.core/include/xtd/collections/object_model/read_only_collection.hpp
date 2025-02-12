@@ -4,7 +4,7 @@
 #pragma once
 #include "../generic/ilist.hpp"
 #define __XTD_CORE_INTERNAL__
-#include "../../internal/__external_exceptions.hpp"
+#include "../../helpers/throw_helper.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include "../../size.hpp"
 #include <limits>
@@ -51,7 +51,7 @@ namespace xtd {
           generic::enumerator<list_type_t> get_enumerator() const noexcept {
             class empty_enumerator : public generic::ienumerator<list_type_t> {
             public:
-              const list_type_t& current() const override {__throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);}
+              const list_type_t& current() const override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
               bool move_next() override {return false;}
               void reset() override {}
             private:
@@ -60,8 +60,8 @@ namespace xtd {
           }
           xtd::size index_of(const list_type_t& item) const noexcept override {return npos;}
           
-          const list_type_t& operator [](xtd::size index) const override {__throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);}
-          list_type_t& operator [](xtd::size index) override {__throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);}
+          const list_type_t& operator [](xtd::size index) const override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
+          list_type_t& operator [](xtd::size index) override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);}
 
         private:
           bool is_fixed_size() const noexcept override {return false;}
@@ -254,7 +254,7 @@ namespace xtd {
         /// @}
 
       private:
-        reference operator [](size_type index) override {__throw_invalid_operation_exception(__FILE__, __LINE__, __func__);}
+        reference operator [](size_type index) override {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);}
         bool is_fixed_size() const noexcept override {return false;}
         bool is_read_only() const noexcept override {return false;}
         bool is_synchronized() const noexcept override {return false;}

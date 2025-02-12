@@ -797,7 +797,6 @@ add_sources(
   include/xtd/internal/__enum_definition_to_enum_collection.hpp
   include/xtd/internal/__enum_introspection.hpp
   include/xtd/internal/__enumerable_collection.hpp
-  include/xtd/internal/__external_exceptions.hpp
   include/xtd/internal/__floating_point_formatter.hpp
   include/xtd/internal/__format_exception.hpp
   include/xtd/internal/__format_information.hpp
@@ -1218,7 +1217,6 @@ add_sources(
   src/xtd/diagnostics/trace_source.cpp 
   src/xtd/diagnostics/trace_switch.cpp 
   src/xtd/helpers/throw_helper.cpp
-  src/xtd/internal/__external_exceptions.cpp
   src/xtd/internal/__format_exception.cpp
   src/xtd/internal/__format_stringer.cpp
   src/xtd/internal/__iformatable_formatter.cpp
