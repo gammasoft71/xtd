@@ -247,8 +247,16 @@ tool_bar_button tool_bar_button::create_toggle_button(const xtd::string& text, s
   return result;
 }
 
+bool tool_bar_button::equals(const object& obj) const noexcept {
+  return is<tool_bar_button>(obj) && equals(static_cast<const tool_bar_button&>(obj));
+}
+
 bool tool_bar_button::equals(const tool_bar_button& other) const noexcept {
   return data_ == other.data_;
+}
+
+xtd::size tool_bar_button::get_hash_code() const noexcept {
+  return hash_code::combine(data_);
 }
 
 xtd::string tool_bar_button::to_string() const noexcept {

@@ -198,9 +198,19 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
-      using object::equals;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const xtd::object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
       bool equals(const tool_bar_button& other) const noexcept override;
       
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+
       /// @brief Returns a string that represents the xtd::forms::tool_bar_button control.
       /// @return A xtd::string that represents the current xtd::forms::tool_bar_button.
       /// @remarks The xtd::forms::tool_bar_button::to_string method returns a string that includes the type and the value of the xtd::forms::tool_bar_button::style and xtd::forms::tool_bar_button::text properties.
