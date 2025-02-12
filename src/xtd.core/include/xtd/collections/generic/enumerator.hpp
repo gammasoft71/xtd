@@ -4,7 +4,7 @@
 #pragma once
 #include "ienumerator.hpp"
 #define __XTD_CORE_INTERNAL__
-#include "../../internal/__external_exceptions.hpp"
+#include "../../helpers/throw_helper.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include "../../ptr.hpp"
 #include "../../static.hpp"
@@ -121,14 +121,14 @@ namespace xtd {
             explicit internal_enumerator(const collection_t& items, const vertion_t* current_version) : items_(items), version_(current_version ? *current_version : vertion_t {}), current_version_(current_version) {}
             
             const value_type& current() const override {
-              if (current_version_ && version_ != *current_version_) __throw_invalid_operation_exception("Collection was modified; enumeration operation may not execute.", __FILE__, __LINE__, __func__);
+              if (current_version_ && version_ != *current_version_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               if (iterator_ != items_.cend()) return *iterator_;
               static auto default_value_type = value_type {};
               return default_value_type;
             }
             
             bool move_next() override {
-              if (current_version_ && version_ != *current_version_) __throw_invalid_operation_exception("Collection was modified; enumeration operation may not execute.", __FILE__, __LINE__, __func__);
+              if (current_version_ && version_ != *current_version_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               if (!reset_) return ++iterator_ != items_.cend();
               reset_ = false;
               iterator_ = items_.cbegin();

@@ -4,7 +4,7 @@
 #pragma once
 #define __XTD_CORE_INTERNAL__
 #include "internal/__array_definition.hpp"
-#include "internal/__external_exceptions.hpp"
+#include "helpers/throw_helper.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include "collections/generic/helpers/equator.hpp"
 #include "collections/generic/enumerator.hpp"
@@ -109,13 +109,13 @@ namespace xtd {
 #include "array_.hpp"
 #undef __XTD_ARRAY_INTERNAL__
 #define __XTD_CORE_INTERNAL__
-#include "internal/__external_exceptions.hpp"
+#include "helpers/throw_helper.hpp"
 #undef __XTD_CORE_INTERNAL__
 
 /// @cond
 template<class source_t>
 const xtd::linq::enumerable::ienumerable<xtd::array<source_t>>& xtd::linq::enumerable::chunk(const ienumerable<source_t>& source, size_t size) {
-  if (size == 0) __throw_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+  if (size == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   static thread_local auto chunks = __opaque_xtd_linq_enumerable_collection__<xtd::array<source_t>> {};
   chunks = __opaque_xtd_linq_enumerable_collection__<xtd::array<source_t>> {};
   auto chunk = std::vector<source_t> {};
