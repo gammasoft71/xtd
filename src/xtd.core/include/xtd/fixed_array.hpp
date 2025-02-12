@@ -11,7 +11,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Represents a native array alias.
+  /// @brief Represents a fixed array class.
   /// @par Header
   /// ```cpp
   /// #include <xtd/fixed_array>
@@ -20,7 +20,7 @@ namespace xtd {
   /// xtd
   /// @par Library
   /// xtd.core
-  /// @ingroup xtd_core types
+  /// @ingroup xtd_core system
   template<class type_t, xtd::size len>
   class fixed_array : public xtd::object {
   public:
