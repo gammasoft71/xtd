@@ -25,7 +25,7 @@ xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const x
 
 template<class char_t, class traits_t, class allocator_t>
 inline xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::index_of_any(const xtd::array<value_type>& values, xtd::size start_index, xtd::size count) const {
-  if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+  if (start_index > size() || start_index + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
   auto index = xtd::size {0};
   for (const auto& item : *this) {
     if (index++ < start_index) continue;
@@ -62,7 +62,7 @@ inline xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of
 
 template<class char_t, class traits_t, class allocator_t>
 inline xtd::size xtd::basic_string<char_t, traits_t, allocator_t>::last_index_of_any(const xtd::array<value_type>& values, xtd::size start_index, xtd::size count) const {
-  if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+  if (start_index > size() || start_index + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
   auto index = size() - 1;
   for (auto iterator = crbegin(); iterator != crend(); ++iterator) {
     if (index-- > start_index + count) continue;
@@ -263,14 +263,14 @@ inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t
   for (auto iterator = fmt.begin(); iterator != fmt.end(); ++iterator) {
     if (*iterator == '{') {
       if (++iterator == fmt.end())
-        __throw_basic_string_format_exception_open_bracket(__FILE__, __LINE__, __func__);
+        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format_opened_bracket_without_end_bracket);
       if (*iterator == '{')
         result += *iterator;
       else {
         begin_format_iterator = iterator;
         while (iterator != fmt.end() && *iterator != '}') ++iterator;
         if (iterator == fmt.end())
-          __throw_basic_string_format_exception_open_bracket(__FILE__, __LINE__, __func__);
+          xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format_opened_bracket_without_end_bracket);
         end_format_iterator = iterator;
         __format_information<char> fi;
         fi.location = result.size();
@@ -302,10 +302,10 @@ inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t
               index_str = std::move(format_str);
             try {
               for (auto c : index_str)
-                if (!std::isdigit(c)) __throw_basic_string_format_exception_start_colon(__FILE__, __LINE__, __func__);
+                if (!std::isdigit(c)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
               fi.index = std::stoi(index_str);
             } catch (...) {
-              __throw_basic_string_format_exception_start_colon(__FILE__, __LINE__, __func__);
+              xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
             }
           }
         }
@@ -313,11 +313,11 @@ inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t
       }
     } else if (*iterator == '}') {
       if (++iterator == fmt.end()) {
-        __throw_basic_string_format_exception_close_bracket(__FILE__, __LINE__, __func__);
+        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format_closing_bracket_without_open_bracket);
         break;
       }
       if (*iterator != '}') {
-        __throw_basic_string_format_exception_close_bracket(__FILE__, __LINE__, __func__);
+        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format_closing_bracket_without_open_bracket);
         break;
       }
       result += *iterator;
@@ -369,7 +369,7 @@ void __basic_string_extract_format_arg(std::basic_string<char>& fmt, xtd::size& 
         try {
           alignment = std::stoi(format.alignment);
         } catch (...) {
-          __throw_basic_string_format_exception(__FILE__, __LINE__, __func__);
+          xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
         }
         if (alignment > 0) arg_str = arg_str.pad_left(alignment);
         else if (alignment < 0) arg_str = arg_str.pad_right(-alignment);

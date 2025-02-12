@@ -32,27 +32,3 @@ std::basic_string<char> __xtd_get_class_name(const std::type_info& value) noexce
 std::basic_string<char> __xtd_get_full_class_name(const std::type_info& value) noexcept {
   return typeof_(value).full_name();
 }
-
-void __throw_basic_string_format_exception(const char* file, uint32 line, const char* func) {
-  throw format_exception {{file, line, func}};
-}
-
-void __throw_basic_string_format_exception_close_bracket(const char* file, uint32 line, const char* func) {
-  throw format_exception {"Invalid format expression : closing bracket '{' without open bracket '}'"_t, {file, line, func}};
-}
-
-void __throw_basic_string_format_exception_open_bracket(const char* file, uint32 line, const char* func) {
-  throw format_exception {"Invalid format expression : open bracket '}' without end bracket '{'"_t, {file, line, func}};
-}
-
-void __throw_basic_string_format_exception_start_colon(const char* file, uint32 line, const char* func) {
-  throw format_exception {"Invalid format expression : format argument must be start by ':'"_t, {file, line, func}};
-}
-
-void __throw_basic_string_index_out_of_range_exception(const char* file, xtd::uint32 line, const char* func) {
-  throw index_out_of_range_exception {{file, line, func}};
-}
-
-void __throw_basic_string_null_pointer_exception(const char* file, xtd::uint32 line, const char* func) {
-  throw null_pointer_exception {{file, line, func}};
-}
