@@ -67,8 +67,8 @@ bool country::equals(const object& obj) const noexcept {
   return is<country>(obj) && equals(static_cast<const country&>(obj));
 }
 
-bool country::equals(const country& value) const noexcept {
-  return data_->name == value.data_->name && data_->alpha_2_code == value.data_->alpha_2_code && data_->alpha_3_code == value.data_->alpha_3_code && data_->numeric_code == value.data_->numeric_code && data_->emoticon == value.data_->emoticon;
+bool country::equals(const country& other) const noexcept {
+  return data_->name == other.data_->name && data_->alpha_2_code == other.data_->alpha_2_code && data_->alpha_3_code == other.data_->alpha_3_code && data_->numeric_code == other.data_->numeric_code && data_->emoticon == other.data_->emoticon;
 }
 
 xtd::size country::get_hash_code() const noexcept {
