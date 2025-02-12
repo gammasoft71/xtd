@@ -92,6 +92,14 @@ shadow& shadow::y(int32 value) noexcept {
   return *this;
 }
 
+bool shadow::equals(const object& obj) const noexcept {
+  return is<shadow>(obj) && equals(static_cast<const shadow&>(obj));
+}
+
 bool shadow::equals(const shadow& other) const noexcept {
   return data_->color == other.data_->color && data_->offset == other.data_->offset && data_->radius == other.data_->radius;
+}
+
+xtd::size shadow::get_hash_code() const noexcept {
+  return hash_code::combine(data_->color, data_->offset, data_->radius);
 }
