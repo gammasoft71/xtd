@@ -188,6 +188,10 @@ status_bar_panel status_bar_panel::create_panel(const xtd::string& text, const x
   return result;
 }
 
+bool status_bar_panel::equals(const object& obj) const noexcept {
+  return is<status_bar_panel>(obj) && equals(static_cast<const status_bar_panel&>(obj));
+}
+
 bool status_bar_panel::equals(const status_bar_panel& other) const noexcept {
   return data_ == other.data_;
 }
@@ -195,6 +199,10 @@ bool status_bar_panel::equals(const status_bar_panel& other) const noexcept {
 void status_bar_panel::end_init() {
   data_->init_mode = false;
   if (data_->parent) data_->parent->update_status_bar_panel_control(data_->handle, data_->text, data_->tool_tip_text, data_->image, data_->alignment, data_->auto_size, data_->border_style, data_->style, data_->min_width, data_->width);
+}
+
+xtd::size status_bar_panel::get_hash_code() const noexcept {
+  return hash_code::combine(data_);
 }
 
 xtd::string status_bar_panel::to_string() const noexcept {
