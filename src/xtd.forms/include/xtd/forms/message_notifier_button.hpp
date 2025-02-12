@@ -20,12 +20,25 @@ namespace xtd {
         return *this;
       }
       
-      //TODO:
-      using object::equals;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const xtd::object& obj) const noexcept override {
+        return is<message_notifier_button>(obj) && equals(static_cast<const message_notifier_button&>(obj));
+      }
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
       bool equals(const message_notifier_button& other) const noexcept override {
         return text_ == other.text_;
       }
       
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override {
+        return hash_code::combine(text_);
+      }
+
     private:
       xtd::string text_;
     };
