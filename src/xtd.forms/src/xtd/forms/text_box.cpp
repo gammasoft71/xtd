@@ -319,7 +319,7 @@ void text_box::on_text_changed(const event_args& e) {
 }
 
 void text_box::wnd_proc(message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case WM_KEYDOWN: wm_key_char(message); break;
     case WM_CHAR: wm_key_char(message); break;
     case WM_KEYUP: wm_key_char(message); break;
@@ -332,19 +332,19 @@ void text_box::wm_key_char(message& message) {
   if (data_->use_system_password_char || data_->password_char == 0)
     control::wnd_proc(message);
   else {
-    if (message.msg() == WM_KEYDOWN) {
-      auto key_event_args = forms::key_event_args {static_cast<keys>(message.wparam())};
+    if (message.msg == WM_KEYDOWN) {
+      auto key_event_args = forms::key_event_args {static_cast<keys>(message.wparam)};
       on_key_down(key_event_args);
-      message.result(key_event_args.suppress_key_press());
-    } else if (message.msg() == WM_CHAR && char32_object::is_control(static_cast<char32>(message.wparam())) == 0) {
-      auto key_event_args = key_press_event_args {static_cast<char32>(message.wparam())};
+      message.result = key_event_args.suppress_key_press();
+    } else if (message.msg == WM_CHAR && char32_object::is_control(static_cast<char32>(message.wparam)) == 0) {
+      auto key_event_args = key_press_event_args {static_cast<char32>(message.wparam)};
       set_text(control::text() + xtd::string::format("{}", key_event_args.key_char()));
       native::text_box::append(handle(), xtd::string::format("{}", data_->password_char));
-      message.result(true);
-    } else if (message.msg() == WM_KEYUP) {
-      auto key_event_args = forms::key_event_args {static_cast<keys>(message.wparam())};
+      message.result = true;
+    } else if (message.msg == WM_KEYUP) {
+      auto key_event_args = forms::key_event_args {static_cast<keys>(message.wparam)};
       on_key_up(key_event_args);
-      message.result(key_event_args.suppress_key_press());
+      message.result = key_event_args.suppress_key_press();
     }
   }
 }
@@ -354,8 +354,8 @@ void text_box::wm_set_text(message& message) {
     on_text_changed(event_args::empty);
   else {
     def_wnd_proc(message);
-    if (control::text() != convert_string::to_string(reinterpret_cast<const wchar*>(message.lparam()))) {
-      set_text(convert_string::to_string(reinterpret_cast<const wchar*>(message.lparam())));
+    if (control::text() != convert_string::to_string(reinterpret_cast<const wchar*>(message.lparam))) {
+      set_text(convert_string::to_string(reinterpret_cast<const wchar*>(message.lparam)));
       on_text_changed(event_args::empty);
     }
   }

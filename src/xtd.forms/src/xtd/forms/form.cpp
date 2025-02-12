@@ -505,8 +505,8 @@ form form::create(const xtd::string& text, form_start_position start_position, c
 }
 
 bool form::pre_process_message(const xtd::forms::message& message) {
-  if (message.msg() == WM_KEYUP) {
-    auto key_event_args = forms::key_event_args {static_cast<keys>(message.wparam())};
+  if (message.msg == WM_KEYUP) {
+    auto key_event_args = forms::key_event_args {static_cast<keys>(message.wparam)};
     if (key_event_args.key_data() == keys::enter && data_->accept_button.has_value()) {
       data_->accept_button.value().get().perform_click();
       return true;
@@ -718,7 +718,7 @@ void form::on_resize(const event_args& e) {
 }
 
 void form::wnd_proc(message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case WM_ACTIVATE: wm_activate(message); break;
     case WM_CLOSE: wm_close(message); break;
     case WM_MENUCOMMAND: if (data_->menu.has_value()) data_->menu.value().get().wm_click(message); break;
@@ -874,7 +874,7 @@ void form::fill_in_create_params_window_state(xtd::forms::create_params& create_
 }
 
 void form::wm_activate(message& message) {
-  if (message.lparam() == WA_INACTIVE && active_form_.has_value() && &active_form_.value().get() == this) {
+  if (message.lparam == WA_INACTIVE && active_form_.has_value() && &active_form_.value().get() == this) {
     active_form_.reset();
     on_deactivate(event_args::empty);
   } else {
@@ -887,7 +887,7 @@ void form::wm_close(message& message) {
   if (data_->closed) return;
   auto event_args = form_closing_event_args {};
   on_form_closing(event_args);
-  message.result(event_args.cancel() == true);
+  message.result = event_args.cancel();
   if (event_args.cancel() != true) {
     data_->closed = true;
     if (!get_state(state::modal))

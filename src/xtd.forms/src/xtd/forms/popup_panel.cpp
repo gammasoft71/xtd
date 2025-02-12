@@ -113,7 +113,7 @@ void popup_panel::on_region_changed(const event_args& e) {
 }
 
 void popup_panel::wnd_proc(message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case WM_SHOWWINDOW: wm_show(message); break;
     default: panel::wnd_proc(message); break;
   }
@@ -122,7 +122,7 @@ void popup_panel::wnd_proc(message& message) {
 void popup_panel::wm_show(message& message) {
   panel::wnd_proc(message);
   
-  auto visible = message.lparam() != 0;
+  auto visible = message.lparam != 0;
   if (get_state(state::visible) == visible) return;
   set_state(state::visible, visible);
   on_visible_changed(event_args::empty);

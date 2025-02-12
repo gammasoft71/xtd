@@ -338,7 +338,7 @@ void collapsible_panel::on_handle_created(const event_args& e) {
 }
 
 void collapsible_panel::wnd_proc(message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case  WM_COMMAND: wm_command_control(message); break;
     default: control::wnd_proc(message);
   }

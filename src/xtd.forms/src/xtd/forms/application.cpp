@@ -28,6 +28,10 @@ using namespace xtd::threading;
 
 extern std::optional<xtd::toolkit> __xtd_toolkit__;
 
+auto application::__opaque_crt_prv_msg__(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr result, intptr handle) noexcept {
+  return xtd::forms::message(hwnd, msg, wparam, lparam, result, handle);
+}
+
 // Initialize xtd::diagnostics::process::message_box_message_ delegate th show message_box dialog.
 // This operation can be done only if xtd.forms lib is present.
 struct __init_process_message_box_message__ {
@@ -64,10 +68,10 @@ namespace {
     if (current_control.has_value() && (current_control.value().get().name() == __xtd_forms_trace_form_base_default_form_name__() || current_control.value().get().name() == __xtd_forms_trace_form_base_default_text_box_name__())) return false;
 
     for (auto message_filter : message_filters)
-      if (message_filter.get().pre_filter_message(xtd::forms::message::create(hwnd, msg, wparam, lparam, 0, handle))) return true;
+      if (message_filter.get().pre_filter_message(application::__opaque_crt_prv_msg__(hwnd, msg, wparam, lparam, 0, handle))) return true;
 
     for (auto open_form : application::open_forms())
-      if (open_form.get().pre_process_message(xtd::forms::message::create(hwnd, msg, wparam, lparam, 0, handle))) return true;
+      if (open_form.get().pre_process_message(application::__opaque_crt_prv_msg__(hwnd, msg, wparam, lparam, 0, handle))) return true;
 
     return false;
   }
@@ -476,13 +480,13 @@ void application::raise_leave_thread_modal(const event_args& e) {
 }
 
 intptr application::wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle) {
-  auto message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
+  auto message = forms::message {hwnd, msg, wparam, lparam, 0, handle};
   wnd_proc(message);
-  return message.result();
+  return message.result;
 }
 
 void application::wnd_proc(message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case WM_ACTIVATEAPP: wm_activate_app(message); break;
     case WM_APPIDLE: wm_app_idle(message); break;
     case WM_QUIT: wm_quit(message); break;
@@ -492,7 +496,7 @@ void application::wnd_proc(message& message) {
 
 void application::wm_activate_app(message& message) {
   for (auto form : open_forms())
-    form.get().send_message(form.get().handle(), message.msg(), message.wparam(), message.lparam());
+    form.get().send_message(form.get().handle(), message.msg, message.wparam, message.lparam);
 }
 
 void application::wm_app_idle(message& message) {

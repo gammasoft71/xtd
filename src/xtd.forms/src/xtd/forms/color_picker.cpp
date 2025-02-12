@@ -187,7 +187,7 @@ void color_picker::on_color_picker_changed(const color_picker_event_args& e) {
 }
 
 void color_picker::wnd_proc(message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case WM_REFLECT + WM_COMMAND: wm_command_control(message); break;
     default: control::wnd_proc(message);
   }
@@ -195,7 +195,7 @@ void color_picker::wnd_proc(message& message) {
 
 void color_picker::wm_command_control(message& message) {
   control::wnd_proc(message);
-  switch (HIWORD(message.wparam())) {
+  switch (HIWORD(message.wparam)) {
     case CPN_SELCHANGE: wm_command_control_selchange(message); break;
     default: break;
   }

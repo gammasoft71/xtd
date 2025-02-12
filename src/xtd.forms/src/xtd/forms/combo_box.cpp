@@ -408,7 +408,7 @@ void combo_box::on_items_item_updated(size_t pos, const item& item) {
 
 
 void combo_box::wnd_proc(message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case WM_LBUTTONDOWN: wm_mouse_down(message); break;
     case WM_LBUTTONUP: wm_mouse_up(message); break;
     case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
@@ -419,7 +419,7 @@ void combo_box::wnd_proc(message& message) {
 
 void combo_box::wm_command_control(message& message) {
   on_click(event_args::empty);
-  switch (HIWORD(message.wparam())) {
+  switch (HIWORD(message.wparam)) {
     case CBN_DROPDOWN: on_drop_down(event_args::empty); break;
     case CBN_CLOSEUP: on_drop_down_closed(event_args::empty); break;
     case CBN_SELCHANGE: wm_command_control_selchange(message); break;

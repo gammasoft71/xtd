@@ -430,7 +430,7 @@ void checked_list_box::on_selected_value_changed(const event_args& e) {
 }
 
 void checked_list_box::wnd_proc(message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case WM_LBUTTONDOWN: wm_mouse_down(message); break;
     case WM_LBUTTONUP: wm_mouse_up(message); break;
     case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;

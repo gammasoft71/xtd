@@ -457,7 +457,7 @@ void track_bar::set_client_size_core(int32 width, int32 height) {
 }
 
 void track_bar::wnd_proc(message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case WM_REFLECT + WM_HSCROLL:
     case WM_REFLECT + WM_VSCROLL: wm_scroll_control(message); break;
     default: control::wnd_proc(message);

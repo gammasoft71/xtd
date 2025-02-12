@@ -42,7 +42,7 @@ namespace xtd {
     class domain_up_down;
     class form;
     class light_button;
-    class message;
+    struct message;
     class paint_event_args;
     class status_bar;
     class tool_bar;

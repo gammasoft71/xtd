@@ -494,6 +494,10 @@ namespace xtd {
        */
       /// @}
       
+      /// @cond
+      static auto __opaque_crt_prv_msg__(intptr, int32, intptr, intptr, intptr, intptr) noexcept;
+      /// @endcond
+      
     private:
       friend class form;
       friend class input_dialog;

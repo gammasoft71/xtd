@@ -466,7 +466,7 @@ xtd::forms::visual_styles::toggle_button_state toggle_button::state() const noex
 }
 
 void toggle_button::wnd_proc(message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case WM_LBUTTONDOWN: wm_mouse_down(message); break;
     case WM_LBUTTONUP: wm_mouse_up(message); break;
     case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
@@ -479,7 +479,7 @@ void toggle_button::wm_mouse_double_click(message& message) {
 }
 
 void toggle_button::wm_mouse_down(message& message) { // message parameter can't be const by design.
-  set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
+  set_state(control::state::double_click_fired, message.msg == WM_LBUTTONDBLCLK || message.msg == WM_RBUTTONDBLCLK || message.msg == WM_MBUTTONDBLCLK || message.msg == WM_XBUTTONDBLCLK);
   mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
   set_mouse_buttons(mouse_buttons() | e.button());
   on_mouse_down(e);
