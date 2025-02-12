@@ -884,6 +884,8 @@ add_sources(
   include/xtd/io/text_writer
   include/xtd/linq/enumerable.hpp
   include/xtd/linq/enumerable
+  include/xtd/linq/foreach.hpp
+  include/xtd/linq/foreach
   include/xtd/linq/from.hpp
   include/xtd/linq/from
   include/xtd/media/system_sound.hpp
