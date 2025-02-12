@@ -145,8 +145,8 @@ namespace xtd {
             return xtd::linq::enumerable::append(base(), element);
           }
 
-          /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
-          /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
+          /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
+          /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
           /// @par Example
           /// The following code example demonstrates how to use as_enumerable <source_t>(ienumerable <source_t>) to hide a type's custom Where method when the standard query operator implementation is desired.
           /// @include enumerable_as_enumerable.cpp
@@ -161,9 +161,9 @@ namespace xtd {
             return xtd::linq::enumerable::average(base());
           }
           
-          /// @brief Casts the elements of an xtd::collection::generic::ienumerable to the specified type.
+          /// @brief Casts the elements of an xtd::collections::generic::ienumerable to the specified type.
           /// @tparam result_t The type of the resulting value.
-          /// @return An xtd::collection::generic::ienumerable <type_t> that contains each element of the source sequence cast to the specified type.
+          /// @return An xtd::collections::generic::ienumerable <type_t> that contains each element of the source sequence cast to the specified type.
           /// @exception xtd::invalid_cast_exception An element in the sequence cannot be cast to type `result_t`.
           template <class result_t>
           const ienumerable<result_t>& cast() const noexcept {
@@ -181,7 +181,7 @@ namespace xtd {
 
           /// @brief Concatenates two sequences.
           /// @param second The sequence to concatenate to the current sequence.
-          /// @return An xtd::collection::generic::ienumerable <type_t> that contains the concatenated elements of the two input sequences.
+          /// @return An xtd::collections::generic::ienumerable <type_t> that contains the concatenated elements of the two input sequences.
           const ienumerable<source_t>& concat(const ienumerable<source_t>& second) const noexcept {
             return xtd::linq::enumerable::concat(base(), second);
           }
@@ -246,14 +246,14 @@ namespace xtd {
           }
           
           /// @brief Returns the elements of the specified sequence or the type parameter's default value in a singleton collection if the current sequence is empty.
-          /// @return An xtd::collection::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
+          /// @return An xtd::collections::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
           const ienumerable<source_t>& default_if_empty() const noexcept {
             return xtd::linq::enumerable::default_if_empty(base());
           }
           
           /// @brief Returns the elements of the specified sequence or the specified value in a singleton collection if the current sequence is empty.
           /// @param default_value The value to return if the sequence is empty.
-          /// @return An xtd::collection::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
+          /// @return An xtd::collections::generic::ienumerable <type_t> that contains default_value if source is empty; otherwise, source.
           const ienumerable<source_t>& default_if_empty(const source_t& default_value) const noexcept {
             return xtd::linq::enumerable::default_if_empty(base(), default_value);
           }
@@ -333,7 +333,7 @@ namespace xtd {
           /// @brief Creates a xtd::collections::generic::list <type_t> from an xtd::collections::generic::ienumerable <type_t>.
           /// @return A xtd::collections::generic::list <type_t> that contains elements from the input sequence.
           /// @par Examples
-          /// The following code example demonstrates how to use xtd::linq::enumerable::to_list to force immediate query evaluation and return a xtd::collection::generic::list <type_t> that contains the query results.
+          /// The following code example demonstrates how to use xtd::linq::enumerable::to_list to force immediate query evaluation and return a xtd::collections::generic::list <type_t> that contains the query results.
           /// @include enumerable_to_list.cpp
           const list<source_t>& to_list() const noexcept;
           

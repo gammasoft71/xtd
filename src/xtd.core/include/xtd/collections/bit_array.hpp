@@ -307,7 +307,7 @@ namespace xtd {
       bool& get(xtd::size index);
 
       /// @brief Returns an enumerator that iterates through a collection.
-      /// @return An xtd::collection::generic::ienumerator object that can be used to iterate through the collection.
+      /// @return An xtd::collections::generic::ienumerator object that can be used to iterate through the collection.
       xtd::collections::generic::enumerator<bool> get_enumerator() const override;
       
       /// @brief Determines whether all bits in the xtd::collections::bit_array are set to `true`.
