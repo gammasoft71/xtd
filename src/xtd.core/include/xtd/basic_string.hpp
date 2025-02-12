@@ -45,12 +45,6 @@ std::basic_string<target_t> __xtd_convert_to_string(const std::basic_string<sour
 std::basic_string<char> __xtd_demangle(const std::basic_string<char>& value) noexcept;
 std::basic_string<char> __xtd_get_class_name(const std::type_info& value) noexcept;
 std::basic_string<char> __xtd_get_full_class_name(const std::type_info& value) noexcept;
-void __throw_basic_string_format_exception(const char* file, xtd::uint32 line, const char* func);
-void __throw_basic_string_format_exception_close_bracket(const char* file, xtd::uint32 line, const char* func);
-void __throw_basic_string_format_exception_open_bracket(const char* file, xtd::uint32 line, const char* func);
-void __throw_basic_string_format_exception_start_colon(const char* file, xtd::uint32 line, const char* func);
-void __throw_basic_string_index_out_of_range_exception(const char* file, xtd::uint32 line, const char* func);
-void __throw_basic_string_null_pointer_exception(const char* file, xtd::uint32 line, const char* func);
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -528,21 +522,21 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const char* str) {  // Can't be explicit by design.
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<char, char_t>) chars_ = std::basic_string<char>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<char>(str));
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const xtd::char16* str) {  // Can't be explicit by design.
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::char16, char_t>) chars_ = std::basic_string<xtd::char16>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str));
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const xtd::char32* str) {  // Can't be explicit by design.
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str));
     }
@@ -550,7 +544,7 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const xtd::char8* str) {  // Can't be explicit by design.
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str));
     }
@@ -558,7 +552,7 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified string to copy.
     /// @param str The string to copy.
     basic_string(const xtd::wchar* str) {  // Can't be explicit by design.
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::wchar, char_t>) chars_ = std::basic_string<xtd::wchar>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str));
     }
@@ -567,7 +561,7 @@ namespace xtd {
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(const char* str, const allocator_type& allocator) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<char, char_t>) chars_ = std::basic_string<char>(str, allocator);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<char>(str), allocator);
     }
@@ -575,7 +569,7 @@ namespace xtd {
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(const xtd::char16* str, const allocator_type& allocator) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::char16, char_t>) chars_ = std::basic_string<xtd::char16>(str, allocator);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str), allocator);
     }
@@ -583,7 +577,7 @@ namespace xtd {
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(const xtd::char32* str, const allocator_type& allocator) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str, allocator);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str), allocator);
     }
@@ -592,7 +586,7 @@ namespace xtd {
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(const xtd::char8* str, const allocator_type& allocator) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str, allocator);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str), allocator);
     }
@@ -601,7 +595,7 @@ namespace xtd {
     /// @param str The string to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(const xtd::wchar* str, const allocator_type& allocator) : chars_(allocator) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::wchar, char_t>) chars_ = std::basic_string<xtd::wchar>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str));
     }
@@ -609,21 +603,21 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
     basic_string(const char* str, xtd::size count) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<char, char_t>) chars_ = std::basic_string<char>(str, count);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<char>(str, count));
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
     basic_string(const xtd::char16* str, xtd::size count) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::char16, char_t>) chars_ = std::basic_string<xtd::char16>(str, count);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str, count));
     }
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
     basic_string(const xtd::char32* str, xtd::size count) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str, count);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str, count));
     }
@@ -631,7 +625,7 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
     basic_string(const xtd::char8* str, xtd::size count) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str, count);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str, count));
     }
@@ -639,7 +633,7 @@ namespace xtd {
     /// @brief Initializes a new instance of xtd::basic_string with specified substring and count characters.
     /// @param count The number of substring characters to copy.
     basic_string(const xtd::wchar* str, xtd::size count) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::wchar, char_t>) chars_ = std::basic_string<xtd::wchar>(str, count);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str, count));
     }
@@ -649,7 +643,7 @@ namespace xtd {
     /// @param count The number of substring characters to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(const char* str, xtd::size count, const allocator_type& allocator) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<char, char_t>) chars_ = std::basic_string<char>(str, count, allocator);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<char>(str, count), allocator);
     }
@@ -658,7 +652,7 @@ namespace xtd {
     /// @param count The number of substring characters to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(const xtd::char16* str, xtd::size count, const allocator_type& allocator) : chars_(allocator) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::char16, char_t>) chars_ = std::basic_string<xtd::char16>(str, count, allocator);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str, count), allocator);
     }
@@ -667,7 +661,7 @@ namespace xtd {
     /// @param count The number of substring characters to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(const xtd::char32* str, xtd::size count, const allocator_type& allocator) : chars_(allocator) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str, count, allocator);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str, count), allocator);
     }
@@ -677,7 +671,7 @@ namespace xtd {
     /// @param count The number of substring characters to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(const xtd::char8* str, xtd::size count, const allocator_type& allocator) : chars_(allocator) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str, count, allocator);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str, count), allocator);
     }
@@ -687,7 +681,7 @@ namespace xtd {
     /// @param count The number of substring characters to copy.
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     basic_string(const xtd::wchar* str, xtd::size count, const allocator_type& allocator) : chars_(allocator) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::wchar, char_t>) chars_ = std::basic_string<xtd::wchar>(str, count, allocator);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str, count), allocator);
     }
@@ -1441,7 +1435,7 @@ namespace xtd {
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
     xtd::size index_of(const basic_string& value, xtd::size start_index, xtd::size count) const {
-      if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (start_index > size() || start_index + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       auto result = find(value, start_index);
       return result > start_index + count ? npos : result;
     }
@@ -1461,7 +1455,7 @@ namespace xtd {
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
     xtd::size index_of(value_type value, xtd::size start_index, xtd::size count) const {
-      if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (start_index > size() || start_index + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       auto result = find(value, start_index);
       return result > start_index + count ? npos : result;
     }
@@ -1496,7 +1490,7 @@ namespace xtd {
     /// @remarks If start_index is equal to the length of this instance, value is appended to the end of this instance.
     /// @remarks For example, the return value of "abc".Insert(2, "XYZ") is "abXYZc".
     basic_string insert(xtd::size start_index, const basic_string& value) const {
-      if (start_index > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (start_index > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       auto result = *this;
       result.chars_.insert(start_index, value);
       return result;
@@ -1525,7 +1519,7 @@ namespace xtd {
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
     xtd::size last_index_of(const basic_string& value, xtd::size start_index, xtd::size count) const {
-      if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (start_index > size() || start_index + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       auto result = rfind(value, start_index + count - value.size());
       return result < start_index ? npos : result;
     }
@@ -1547,7 +1541,7 @@ namespace xtd {
     /// @return The index position of value if that character is found, or std::basic_string<char_t>::npos if it is not.
     /// @exception xtd::index_out_of_range_exception start_index + count are greater than the length of this instance.
     xtd::size last_index_of(value_type value, xtd::size start_index, xtd::size count) const {
-      if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (start_index > size() || start_index + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       auto result = rfind(value, start_index + count - 1);
       return result < start_index ? npos : result;
     }
@@ -1632,7 +1626,7 @@ namespace xtd {
     /// @param count The number of characters to delete.
     /// @return A new basic_string object that is equivalent to this basic_string less the removed characters.
     basic_string remove(xtd::size start_index, xtd::size count) const {
-      if (start_index > size() || start_index + count > size()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (start_index > size() || start_index + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       auto result = *this;
       result.chars_.erase(start_index, count);
       return result;
@@ -2430,7 +2424,7 @@ namespace xtd {
     /// @return Reference to the requested character.
     /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
     const_reference operator [](xtd::size index) const {
-      if (index >= length()) __throw_basic_string_index_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index >= length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       return chars_[index];
     }
     
@@ -2615,7 +2609,7 @@ namespace xtd {
     /// @exception xtd::tring_null_pointer_exception The `str` is null.
     /// @return This current instance.
     basic_string& operator =(const char* str) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<char, char_t>) chars_ = std::basic_string<char>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<char>(str));
       return *this;
@@ -2625,7 +2619,7 @@ namespace xtd {
     /// @exception xtd::tring_null_pointer_exception The `str` is null.
     /// @return This current instance.
     basic_string& operator =(const xtd::char16* str) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::char16, char_t>) chars_ = std::basic_string<xtd::char16>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str));
       return *this;
@@ -2635,7 +2629,7 @@ namespace xtd {
     /// @exception xtd::tring_null_pointer_exception The `str` is null.
     /// @return This current instance.
     basic_string& operator =(const xtd::char32* str) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = std::basic_string<xtd::char32>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str));
       return *this;
@@ -2646,7 +2640,7 @@ namespace xtd {
     /// @exception xtd::tring_null_pointer_exception The `str` is null.
     /// @return This current instance.
     basic_string& operator =(const xtd::char8* str) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = std::basic_string<xtd::char8>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str));
       return *this;
@@ -2657,7 +2651,7 @@ namespace xtd {
     /// @exception xtd::tring_null_pointer_exception The `str` is null.
     /// @return This current instance.
     basic_string& operator =(const xtd::wchar* str) {
-      if (str == null) __throw_basic_string_null_pointer_exception(__FILE__, __LINE__, __func__);
+      if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
       if constexpr (std::is_same_v<xtd::wchar, char_t>) chars_ = std::basic_string<xtd::wchar>(str);
       else chars_ = __xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str));
       return *this;
