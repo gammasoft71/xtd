@@ -8,9 +8,9 @@
 namespace xtd {
   /// @brief Provides classes and interfaces that support queries that use Language-Integrated Query (LINQ).
   namespace linq {
-    /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+    /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
     /// @param source A sequence of values.
-    /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
+    /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
     /// @par Header
     /// ```cpp
     /// #include <xtd/linq/from>
@@ -27,9 +27,9 @@ namespace xtd {
     const xtd::collections::generic::ienumerable<source_t>& from(const xtd::collections::generic::ienumerable<source_t>& source) noexcept {
       return enumerable::as_enumerable(source);
     }
-    /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+    /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
     /// @param source A sequence of values.
-    /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
+    /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
     /// @par Header
     /// ```cpp
     /// #include <xtd/linq/from>
@@ -46,9 +46,9 @@ namespace xtd {
     const xtd::collections::generic::ienumerable<source_t>& from(const std::initializer_list<source_t>& source) noexcept{
       return enumerable::as_enumerable(source);
     }
-    /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+    /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
     /// @param source A sequence of values.
-    /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
+    /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
     /// @par Header
     /// ```cpp
     /// #include <xtd/linq/from>
@@ -65,10 +65,10 @@ namespace xtd {
     const auto& from(const collection_t& source) noexcept {
       return enumerable::as_enumerable(source);
     }
-    /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+    /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
     /// @param first The first iterator.
     /// @param last The last iterator.
-    /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
+    /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
     /// @par Header
     /// ```cpp
     /// #include <xtd/linq/from>
@@ -85,11 +85,11 @@ namespace xtd {
     const auto& from(input_iterator_t first, input_iterator_t last) noexcept {
       return enumerable::as_enumerable(first, last);
     }
-    /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+    /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
     /// @tparam input_iterator_t The type of the source iterators.
     /// @param iterator The iterator.
     /// @param legnth The le,gth to iterate.
-    /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
+    /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
     /// @par Header
     /// ```cpp
     /// #include <xtd/linq/from>
@@ -106,11 +106,11 @@ namespace xtd {
     const auto& from(input_iterator_t iterator, size_t length) noexcept {
       return enumerable::as_enumerable(iterator, iterator + length);
     }
-    /// @brief Returns the input typed as xtd::collection::generic::ienumerable <type_t>.
+    /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
     /// @tparam source_t The type of the source array.
     /// @param array The native array.
     /// @param legnth The length of the array.
-    /// @return The input sequence typed as xtd::collection::generic::ienumerable <type_t>.
+    /// @return The input sequence typed as xtd::collections::generic::ienumerable <type_t>.
     /// @par Header
     /// ```cpp
     /// #include <xtd/linq/from>

@@ -903,7 +903,7 @@ namespace xtd {
         virtual const base_type& get_base_type() const noexcept {return data_->items;}
 
         /// @brief Returns an enumerator that iterates through the xtd::collections::generic::list <type_t>.
-        /// @return A xtd::collection::generic::.enumerator for the xtd::collections::generic::list <type_t>.
+        /// @return A xtd::collections::generic::.enumerator for the xtd::collections::generic::list <type_t>.
         enumerator<value_type> get_enumerator() const noexcept override {
           return {new_ptr<__enumerator__>(*this, data_->version)};
         }
