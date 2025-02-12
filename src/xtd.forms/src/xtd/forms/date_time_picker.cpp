@@ -393,14 +393,14 @@ void date_time_picker::on_value_changed(const event_args& e) {
 }
 
 void date_time_picker::wnd_proc(message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case WM_REFLECT + WM_NOTIFY: wm_nottify_control(message); break;
     default: control::wnd_proc(message);
   }
 }
 
 void date_time_picker::wm_nottify_control(message& message) {
-  auto nmhdr = reinterpret_cast<NMHDR*>(message.lparam());
+  auto nmhdr = reinterpret_cast<NMHDR*>(message.lparam);
   switch (nmhdr->code) {
     case DTN_CLOSEUP: wm_nottify_control_closeup(message); break;
     case DTN_DROPDOWN: wm_nottify_control_dropdown(message); break;

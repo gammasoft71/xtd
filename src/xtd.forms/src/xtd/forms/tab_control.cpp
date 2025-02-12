@@ -253,7 +253,7 @@ void tab_control::on_selected_index_changed(const event_args& e) {
 }
 
 void tab_control::wnd_proc(message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case WM_REFLECT + WM_COMMAND: wm_command_control(message); break;
     default: control::wnd_proc(message);
   }

@@ -260,7 +260,7 @@ void font_picker::on_font_picker_changed(const font_picker_event_args& e) {
 }
 
 void font_picker::wnd_proc(message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case WM_REFLECT + WM_COMMAND: wm_command_control(message); break;
     default: control::wnd_proc(message);
   }
@@ -268,7 +268,7 @@ void font_picker::wnd_proc(message& message) {
 
 void font_picker::wm_command_control(message& message) {
   control::wnd_proc(message);
-  switch (HIWORD(message.wparam())) {
+  switch (HIWORD(message.wparam)) {
     case FPN_SELCHANGE: wm_command_control_selchange(message); break;
     default: break;
   }

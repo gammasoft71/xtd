@@ -6,51 +6,29 @@
 using namespace xtd;
 using namespace xtd::forms;
 
-intptr message::hwnd() const noexcept {return hwnd_;}
+bool message::equals(const object& obj) const noexcept {
+  return is<message>(obj) && equals(static_cast<const message&>(obj));
+}
 
-void message::hwnd(intptr value) {hwnd_ = value;}
+bool message::equals(const message& other) const noexcept {
+  return hwnd == other.hwnd && msg == other.msg && wparam == other.wparam && lparam == other.lparam && result == other.result && __handle__ == other.__handle__;
+}
 
-intptr message::lparam() const noexcept {return lparam_;}
-
-void message::lparam(intptr value) {lparam_ = value;}
-
-uint32 message::msg() const noexcept {return msg_;}
-
-void message::msg(uint32 value) {msg_ = value;}
-
-intptr message::result() const noexcept {return result_;}
-
-void message::result(intptr value) {result_ = value;}
-
-intptr message::wparam() const noexcept {return wparam_;}
-
-void message::wparam(intptr value) {wparam_ = value;}
-
-intptr message::handle() const noexcept {return handle_;}
-
-void message::handle(intptr value) {handle_ = value;}
-
-message message::create(intptr hwnd, int32 msg, intptr wparam, intptr lparam) {return message(hwnd, msg, wparam, lparam);}
-
-message message::create(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr result) {return message(hwnd, msg, wparam, lparam, result);}
-message message::create(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr result, intptr handle) {return message(hwnd, msg, wparam, lparam, result, handle);}
+xtd::size message::get_hash_code() const noexcept {
+  return hash_code::combine(hwnd, msg);
+}
 
 string message::to_msg_string() const noexcept {
-  return native::control::message_to_string(msg_);
+  return native::control::message_to_string(msg);
 }
 
 string message::to_string() const noexcept {
-  return string::format("msg=0x{:X4} ({}), hwnd=0x{:X}, wparam=0x{:X}, lparam=0x{:X}, result=0x{:X}", msg_, to_msg_string(), hwnd_, wparam_, lparam_, result_);
+  return string::format("msg=0x{:X4} ({}), hwnd=0x{:X}, wparam=0x{:X}, lparam=0x{:X}, result=0x{:X}", msg, to_msg_string(), hwnd, wparam, lparam, result);
 }
 
-message::message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) : hwnd_(hwnd), msg_(msg), wparam_(wparam), lparam_(lparam) {
-  ++id_;
+message message::create(intptr hwnd, int32 msg, intptr wparam, intptr lparam) {
+  return message(hwnd, msg, wparam, lparam, 0, 0);
 }
 
-message::message(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr result) : hwnd_(hwnd), msg_(msg), wparam_(wparam), lparam_(lparam), result_(result) {
-  ++id_;
-}
-
-message::message(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr result, intptr handle) : hwnd_(hwnd), msg_(msg), wparam_(wparam), lparam_(lparam), result_(result), handle_(handle) {
-  ++id_;
+message::message(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr result, intptr handle) : hwnd(hwnd), msg(msg), wparam(wparam), lparam(lparam), result(result), __handle__(handle) {
 }

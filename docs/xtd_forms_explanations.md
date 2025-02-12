@@ -721,7 +721,7 @@ Here is a typical example of a **wnd_proc** method for a [xtd::forms::track_bar]
 
 ```cpp
 void track_bar::wnd_proc(xtd::forms::message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case WM_REFLECT + WM_HSCROLL:
     case WM_REFLECT + WM_VSCROLL: wm_scroll_control(message); break;
     default: control::wnd_proc(message);

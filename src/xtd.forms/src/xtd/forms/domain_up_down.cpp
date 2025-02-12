@@ -384,7 +384,7 @@ void domain_up_down::on_selected_item_changed(const event_args& e) {
 }
 
 void domain_up_down::wnd_proc(message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case WM_REFLECT + WM_VSCROLL: wm_scroll_control(message); break;
     default: up_down_base::wnd_proc(message);
   }

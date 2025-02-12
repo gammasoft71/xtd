@@ -52,9 +52,9 @@ namespace {
   std::set<control*> reentrant_layout::do_layouts;
   
   mouse_buttons wparam_to_mouse_buttons(const message& message) {
-    if ((message.wparam() & MK_LBUTTON) == MK_LBUTTON) return mouse_buttons::left;
-    else if ((message.wparam() & MK_RBUTTON) == MK_RBUTTON) return mouse_buttons::right;
-    else if ((message.wparam() & MK_MBUTTON) == MK_MBUTTON) return mouse_buttons::middle;
+    if ((message.wparam & MK_LBUTTON) == MK_LBUTTON) return mouse_buttons::left;
+    else if ((message.wparam & MK_RBUTTON) == MK_RBUTTON) return mouse_buttons::right;
+    else if ((message.wparam & MK_MBUTTON) == MK_MBUTTON) return mouse_buttons::middle;
     return mouse_buttons::none;
   }
 }
@@ -1661,14 +1661,14 @@ control& control::operator >>(control& child) {
 
 void control::reflect_message(intptr handle, message& message) { // message parameter can't be const by design.
   if (handle != 0 && from_handle(handle).has_value())
-    from_handle(handle).value().get().send_message(handle, WM_REFLECT + message.msg(), message.wparam(), message.lparam());
+    from_handle(handle).value().get().send_message(handle, WM_REFLECT + message.msg, message.wparam, message.lparam);
 }
 
 intptr control::wnd_proc_(intptr hwnd, int32 msg, intptr wparam, intptr lparam, intptr handle) {
   //try {
-  auto message = forms::message::create(hwnd, msg, wparam, lparam, 0, handle);
+  auto message = forms::message {hwnd, msg, wparam, lparam, 0, handle};
   wnd_proc(message);
-  return message.result();
+  return message.result;
   /*
   } catch(const exception& e) {
     message_box::show(from_handle(hwnd).value(), xtd::string::format("message: {}", e.what()), xtd::string::format("Exception {}", typeof_(e).name()), message_box_buttons::ok, message_box_icon::error);
@@ -1730,7 +1730,7 @@ void control::destroy_handle() {
 }
 
 void control::def_wnd_proc(message& message) {
-  if (is_handle_created() && message.handle()) message.result(native::control::def_wnd_proc(handle(), message.hwnd(), message.msg(), message.wparam(), message.lparam(), message.result(), message.handle()));
+  if (is_handle_created() && message.__handle__) message.result = native::control::def_wnd_proc(handle(), message.hwnd, message.msg, message.wparam, message.lparam, message.result, message.__handle__);
 }
 
 void control::recreate_handle() {
@@ -1812,11 +1812,11 @@ void control::wnd_proc(message& message) {
   while (!data_->post_messages.empty()) {
     auto m = data_->post_messages.front();
     data_->post_messages.pop();
-    send_message(m.hwnd(), m.msg(), m.wparam(), m.lparam());
+    send_message(m.hwnd, m.msg, m.wparam, m.lparam);
   }
   
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::events), string::format("({}) receive message [{}]", *this, message));
-  switch (message.msg()) {
+  switch (message.msg) {
       // keyboard events
     case WM_CHAR:
     case WM_KEYDOWN:
@@ -2028,17 +2028,17 @@ void control::wm_child_activate(message& message) {
 
 void control::wm_command(message& message) {
   def_wnd_proc(message);
-  reflect_message(message.lparam(), message);
+  reflect_message(message.lparam, message);
 }
 
 void control::wm_command_control(message& message) {
-  if (HIWORD(message.wparam()) == BN_CLICKED) on_click(event_args::empty);
+  if (HIWORD(message.wparam) == BN_CLICKED) on_click(event_args::empty);
   def_wnd_proc(message);
 }
 
 void control::wm_ctlcolor(message& message) {
   def_wnd_proc(message);
-  reflect_message(message.lparam(), message);
+  reflect_message(message.lparam, message);
 }
 
 void control::wm_ctlcolor_control(message& message) {
@@ -2064,7 +2064,7 @@ void control::wm_erase_background(message& message) {
 
 void control::wm_help(message& message) {
   def_wnd_proc(message);
-  HELPINFO* help_info = reinterpret_cast<HELPINFO*>(message.lparam());
+  HELPINFO* help_info = reinterpret_cast<HELPINFO*>(message.lparam);
   help_event_args e(point(help_info->MousePos.x, help_info->MousePos.y));
   on_help_requested(e);
   if (!e.handled()) def_wnd_proc(message);
@@ -2072,8 +2072,8 @@ void control::wm_help(message& message) {
 
 void control::wm_key_char(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::key_events), string::format("({}) receive message [{}]", *this, message));
-  if (message.msg() == WM_KEYDOWN || message.msg() == WM_SYSKEYDOWN) {
-    auto key = static_cast<keys>(message.wparam());
+  if (message.msg == WM_KEYDOWN || message.msg == WM_SYSKEYDOWN) {
+    auto key = static_cast<keys>(message.wparam);
     if ((key & keys::key_code) == keys::shift_key || (key & keys::key_code) == keys::lshift_key || (key & keys::key_code) == keys::rshift_key) modifier_keys_ |= keys::shift;
     if ((key & keys::key_code) == keys::control_key || (key & keys::key_code) == keys::lcontrol_key || (key & keys::rcontrol_key) == keys::rcontrol_key) modifier_keys_ |= keys::control;
     if ((key & keys::key_code) == keys::menu || (key & keys::key_code) == keys::lmenu || (key & keys::key_code) == keys::rmenu) modifier_keys_ |= keys::alt;
@@ -2084,13 +2084,13 @@ void control::wm_key_char(message& message) {
     on_key_down(key_event_args);
     data_->suppress_key_press = key_event_args.suppress_key_press();
     if (!key_event_args.handled()) def_wnd_proc(message);
-  } else if ((message.msg() == WM_CHAR || message.msg() == WM_SYSCHAR) && data_->suppress_key_press == false && (message.wparam() > 255u || char32_object::is_control(static_cast<char32>(message.wparam())) == 0)) {
-    auto key_press_event_args = forms::key_press_event_args {static_cast<char32>(message.wparam())};
+  } else if ((message.msg == WM_CHAR || message.msg == WM_SYSCHAR) && data_->suppress_key_press == false && (message.wparam > 255u || char32_object::is_control(static_cast<char32>(message.wparam)) == 0)) {
+    auto key_press_event_args = forms::key_press_event_args {static_cast<char32>(message.wparam)};
     on_key_press(key_press_event_args);
-    message.result(key_press_event_args.handled());
+    message.result = key_press_event_args.handled();
     if (!key_press_event_args.handled()) def_wnd_proc(message);
-  } else if (message.msg() == WM_KEYUP || message.msg() == WM_SYSKEYUP) {
-    auto key = static_cast<keys>(message.wparam());
+  } else if (message.msg == WM_KEYUP || message.msg == WM_SYSKEYUP) {
+    auto key = static_cast<keys>(message.wparam);
     if ((key & keys::key_code) == keys::shift_key || (key & keys::key_code) == keys::lshift_key || (key & keys::key_code) == keys::rshift_key) modifier_keys_ &= ~keys::shift;
     if ((key & keys::key_code) == keys::control_key || (key & keys::key_code) == keys::lcontrol_key || (key & keys::rcontrol_key) == keys::rcontrol_key) modifier_keys_ &= ~keys::control;
     if ((key & keys::key_code) == keys::menu || (key & keys::key_code) == keys::lmenu || (key & keys::key_code) == keys::rmenu) modifier_keys_ &= ~keys::alt;
@@ -2099,7 +2099,7 @@ void control::wm_key_char(message& message) {
     key += modifier_keys_;
     auto key_event_args = forms::key_event_args {key};
     on_key_up(key_event_args);
-    message.result(key_event_args.handled());
+    message.result = key_event_args.handled();
     if (!key_event_args.handled()) def_wnd_proc(message);
   } else
     def_wnd_proc(message);
@@ -2114,13 +2114,13 @@ void control::wm_kill_focus(message& message) {
 void control::wm_menu_command(message& message) {
   def_wnd_proc(message);
   if (data_->context_menu.has_value())
-    on_context_menu_item_click(data_->context_menu.value().get(), message.wparam());
+    on_context_menu_item_click(data_->context_menu.value().get(), message.wparam);
 }
 
 void control::wm_mouse_down(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), string::format("({}) receive message [{}]", *this, message));
   set_state(control::state::mouse_pressed, true);
-  if (get_style(control_styles::standard_double_click)) set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
+  if (get_style(control_styles::standard_double_click)) set_state(control::state::double_click_fired, message.msg == WM_LBUTTONDBLCLK || message.msg == WM_RBUTTONDBLCLK || message.msg == WM_MBUTTONDBLCLK || message.msg == WM_XBUTTONDBLCLK);
   mouse_event_args e = mouse_event_args::create(message, get_state(state::double_click_fired));
   mouse_buttons_ |= e.button();
   def_wnd_proc(message);
@@ -2130,7 +2130,7 @@ void control::wm_mouse_down(message& message) {
 void control::wm_mouse_double_click(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), string::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
-  if (get_style(control_styles::standard_double_click)) set_state(control::state::double_click_fired, message.msg() == WM_LBUTTONDBLCLK || message.msg() == WM_RBUTTONDBLCLK || message.msg() == WM_MBUTTONDBLCLK || message.msg() == WM_XBUTTONDBLCLK);
+  if (get_style(control_styles::standard_double_click)) set_state(control::state::double_click_fired, message.msg == WM_LBUTTONDBLCLK || message.msg == WM_RBUTTONDBLCLK || message.msg == WM_MBUTTONDBLCLK || message.msg == WM_XBUTTONDBLCLK);
   
   if (get_state(control::state::double_click_fired)) {
     on_double_click(event_args::empty);
@@ -2160,7 +2160,7 @@ void control::wm_mouse_leave(message& message) {
 void control::wm_mouse_move(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), string::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
-  mouse_event_args e = mouse_event_args(wparam_to_mouse_buttons(message), get_state(control::state::double_click_fired) ? 2 : 1, {(int16)LOWORD(message.lparam()), (int16)HIWORD(message.lparam())}, 0);
+  mouse_event_args e = mouse_event_args(wparam_to_mouse_buttons(message), get_state(control::state::double_click_fired) ? 2 : 1, {(int16)LOWORD(message.lparam), (int16)HIWORD(message.lparam)}, 0);
   // Workaround : sometimes mouse enter and/or mouse leave message are not send
   // For example on macos when mouse down in control and mouse is moved out then moved in, the mouse enter message is not send...
   // The two followed line fixed it
@@ -2190,10 +2190,10 @@ void control::wm_mouse_up(message& message) {
 void control::wm_mouse_wheel(message& message) {
   if (enable_debug::trace_switch().trace_verbose()) diagnostics::debug::write_line_if(!is_trace_form_or_control(name()) && enable_debug::get(enable_debug::mouse_events), string::format("({}) receive message [{}]", *this, message));
   def_wnd_proc(message);
-  if (message.msg() == WM_MOUSEHWHEEL)
-    on_mouse_horizontal_wheel(mouse_event_args::create(message, get_state(state::double_click_fired), static_cast<int32>(HIWORD(message.wparam()))));
+  if (message.msg == WM_MOUSEHWHEEL)
+    on_mouse_horizontal_wheel(mouse_event_args::create(message, get_state(state::double_click_fired), static_cast<int32>(HIWORD(message.wparam))));
   else
-    on_mouse_wheel(mouse_event_args::create(message, get_state(state::double_click_fired), static_cast<int32>(HIWORD(message.wparam()))));
+    on_mouse_wheel(mouse_event_args::create(message, get_state(state::double_click_fired), static_cast<int32>(HIWORD(message.wparam))));
 }
 
 void control::wm_move(message& message) {
@@ -2207,7 +2207,7 @@ void control::wm_move(message& message) {
 
 void control::wm_notify(message& message) {
   def_wnd_proc(message);
-  reflect_message(reinterpret_cast<intptr>(reinterpret_cast<NMHDR*>(message.lparam())->hwndFrom), message);
+  reflect_message(reinterpret_cast<intptr>(reinterpret_cast<NMHDR*>(message.lparam)->hwndFrom), message);
 }
 
 void control::wm_notify_control(message& message) {
@@ -2224,7 +2224,7 @@ void control::wm_paint(message& message) { // message parameter can't be const b
 
 void control::wm_scroll(message& message) {
   def_wnd_proc(message);
-  reflect_message(message.lparam(), message);
+  reflect_message(message.lparam, message);
 }
 
 void control::wm_scroll_control(message& message) {
@@ -2239,15 +2239,15 @@ void control::wm_set_focus(message& message) {
 
 void control::wm_set_text(message& message) {
   def_wnd_proc(message);
-  if (data_->text != reinterpret_cast<const wchar*>(message.lparam())) {
-    data_->text = reinterpret_cast<const wchar*>(message.lparam());
+  if (data_->text != reinterpret_cast<const wchar*>(message.lparam)) {
+    data_->text = reinterpret_cast<const wchar*>(message.lparam);
     on_text_changed(event_args::empty);
   }
 }
 
 void control::wm_show(message& message) {
   def_wnd_proc(message);
-  set_state(state::visible, message.wparam() != 0);
+  set_state(state::visible, message.wparam != 0);
 }
 
 void control::wm_size(message& message) {

@@ -343,7 +343,7 @@ void choice::set_client_size_core(int32 width, int32 height) {
 }
 
 void choice::wnd_proc(message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case WM_LBUTTONDOWN: wm_mouse_down(message); break;
     case WM_LBUTTONUP: wm_mouse_up(message); break;
     case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
@@ -373,7 +373,7 @@ void choice::on_items_item_updated(size_t pos, const item& item) {
 
 void choice::wm_command_control(message& message) {
   def_wnd_proc(message);
-  if (HIWORD(message.wparam()) == LBN_SELCHANGE) {
+  if (HIWORD(message.wparam) == LBN_SELCHANGE) {
     selected_index(native::choice::selected_index(handle()));
     if (selected_index() != npos) selected_item(data_->items[selected_index()]);
     on_click(event_args::empty);

@@ -398,7 +398,7 @@ void up_down_button::on_value_changed(const event_args& e) {
 }
 
 void up_down_button::wnd_proc(message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case WM_REFLECT + WM_HSCROLL:
     case WM_REFLECT + WM_VSCROLL: wm_scroll_control(message); break;
     default: control::wnd_proc(message);
@@ -406,8 +406,8 @@ void up_down_button::wnd_proc(message& message) {
 }
 
 void up_down_button::wm_scroll_control(message& message) {
-  if (message.wparam() == SB_LINEDOWN) data_->value = data_->value > data_->minimum ? data_->value - 1 : data_->maximum;
-  if (message.wparam() == SB_LINEUP) data_->value = data_->value < data_->maximum ? data_->value + 1 : data_->minimum;
+  if (message.wparam == SB_LINEDOWN) data_->value = data_->value > data_->minimum ? data_->value - 1 : data_->maximum;
+  if (message.wparam == SB_LINEUP) data_->value = data_->value < data_->maximum ? data_->value + 1 : data_->minimum;
   on_scroll(event_args::empty);
   on_value_changed(event_args::empty);
   control::def_wnd_proc(message);

@@ -421,7 +421,7 @@ void list_box::on_selected_value_changed(const event_args& e) {
 
 
 void list_box::wnd_proc(message& message) {
-  switch (message.msg()) {
+  switch (message.msg) {
     case WM_LBUTTONDOWN: wm_mouse_down(message); break;
     case WM_LBUTTONUP: wm_mouse_up(message); break;
     case WM_LBUTTONDBLCLK: wm_mouse_double_click(message); break;
@@ -470,7 +470,7 @@ void list_box::wm_mouse_up(message& message) {
 
 void list_box::wm_command_control(message& message) {
   def_wnd_proc(message);
-  if (HIWORD(message.wparam()) == LBN_SELCHANGE) {
+  if (HIWORD(message.wparam) == LBN_SELCHANGE) {
     selected_index(native::list_box::selected_index(handle()));
     if (selected_index() != npos) selected_item(data_->items[selected_index()]);
     on_click(event_args::empty);

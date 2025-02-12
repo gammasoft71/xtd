@@ -66,10 +66,10 @@ main_form::main_form() {
 }
 
 bool main_form::pre_process_message(const xtd::forms::message& message) {
-  switch (message.msg()) {
-    case WM_KEYDOWN: on_message_key_down(key_event_args(static_cast<keys>(message.wparam()))); return true;
-    case WM_CHAR: on_message_key_press(key_press_event_args(static_cast<int>(message.wparam()))); return true;
-    case WM_KEYUP: on_message_key_up(key_event_args(static_cast<keys>(message.wparam()))); return true;
+  switch (message.msg) {
+    case WM_KEYDOWN: on_message_key_down(key_event_args(static_cast<keys>(message.wparam))); return true;
+    case WM_CHAR: on_message_key_press(key_press_event_args(static_cast<int>(message.wparam))); return true;
+    case WM_KEYUP: on_message_key_up(key_event_args(static_cast<keys>(message.wparam))); return true;
     default: break;
   }
   return form::pre_process_message(message);

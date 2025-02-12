@@ -650,7 +650,7 @@ void tool_bar::on_item_removed(size_t pos, tool_bar_button_ref item) {
 }
 
 void tool_bar::wnd_proc(message& message) {
-  if (is_system_tool_bar() && message.msg() == WM_MENUCOMMAND && handle() == message.hwnd()) wm_click(message);
+  if (is_system_tool_bar() && message.msg == WM_MENUCOMMAND && handle() == message.hwnd) wm_click(message);
   else control::wnd_proc(message);
 }
 
@@ -695,7 +695,7 @@ void tool_bar::update_toolbar_button_control(intptr handle, const xtd::string& t
 void tool_bar::wm_click(const message& message) {
   auto found_button_or_menu = false;
   for (auto index = 0_z; !found_button_or_menu && index < data_->system_tool_bar_button_handles.size(); ++index) {
-    if (index < data_->system_tool_bar_button_handles.size() && message.wparam() == data_->system_tool_bar_button_handles[index]) {
+    if (index < data_->system_tool_bar_button_handles.size() && message.wparam == data_->system_tool_bar_button_handles[index]) {
       if (data_->buttons[index].get().style() == tool_bar_button_style::toggle_button)
         data_->buttons[index].get().pushed(!data_->buttons[index].get().pushed());
       on_button_click(xtd::forms::tool_bar_button_click_event_args(data_->buttons[index].get()));
@@ -705,7 +705,7 @@ void tool_bar::wm_click(const message& message) {
   
   for (auto index = 0_z; !found_button_or_menu && index < data_->system_tool_bar_button_handles.size(); ++index) {
     if (data_->buttons[index].get().style() == tool_bar_button_style::drop_down_button && data_->buttons[index].get().drop_down_menu().has_value())
-      found_button_or_menu = on_context_menu_item_click(data_->buttons[index].get().drop_down_menu().value(), message.wparam());
+      found_button_or_menu = on_context_menu_item_click(data_->buttons[index].get().drop_down_menu().value(), message.wparam);
   }
   
   if (!found_button_or_menu)
