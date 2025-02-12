@@ -33,14 +33,6 @@ std::basic_string<char> __xtd_get_full_class_name(const std::type_info& value) n
   return typeof_(value).full_name();
 }
 
-void __throw_basic_string_argument_exception(const char* file, uint32 line, const char* func) {
-  throw argument_exception {{file, line, func}};
-}
-
-void __throw_basic_string_argument_out_of_range_exception(const char* file, uint32 line, const char* func) {
-  throw argument_out_of_range_exception {{file, line, func}};
-}
-
 void __throw_basic_string_format_exception(const char* file, uint32 line, const char* func) {
   throw format_exception {{file, line, func}};
 }

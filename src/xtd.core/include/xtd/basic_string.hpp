@@ -45,8 +45,6 @@ std::basic_string<target_t> __xtd_convert_to_string(const std::basic_string<sour
 std::basic_string<char> __xtd_demangle(const std::basic_string<char>& value) noexcept;
 std::basic_string<char> __xtd_get_class_name(const std::type_info& value) noexcept;
 std::basic_string<char> __xtd_get_full_class_name(const std::type_info& value) noexcept;
-void __throw_basic_string_argument_exception(const char* file, xtd::uint32 line, const char* func);
-void __throw_basic_string_argument_out_of_range_exception(const char* file, xtd::uint32 line, const char* func);
 void __throw_basic_string_format_exception(const char* file, xtd::uint32 line, const char* func);
 void __throw_basic_string_format_exception_close_bracket(const char* file, xtd::uint32 line, const char* func);
 void __throw_basic_string_format_exception_open_bracket(const char* file, xtd::uint32 line, const char* func);
@@ -213,7 +211,7 @@ namespace xtd {
     /// @param index The index of the first substring character where start copy.
     /// @exception xtd::argument_out_of_range_exception `index` is greater or equal than `str` size.
     basic_string(const basic_string<char>& str, xtd::size index) {
-      if (index > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<char, char_t>) chars_ = base_type(str.chars_, index);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<char>(str.chars_, index)));
     }
@@ -222,7 +220,7 @@ namespace xtd {
     /// @param index The index of the first substring character where start copy.
     /// @exception xtd::argument_out_of_range_exception `index` is greater or equal than `str` size.
     basic_string(const basic_string<xtd::char16>& str, xtd::size index) {
-      if (index > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<xtd::char16, char_t>) chars_ = base_type(str.chars_, index);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str.chars_, index)));
     }
@@ -231,7 +229,7 @@ namespace xtd {
     /// @param index The index of the first substring character where start copy.
     /// @exception xtd::argument_out_of_range_exception `index` is greater or equal than `str` size.
     basic_string(const basic_string<xtd::char32>& str, xtd::size index) {
-      if (index > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = base_type(str.chars_, index);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str.chars_, index)));
     }
@@ -241,7 +239,7 @@ namespace xtd {
     /// @param index The index of the first substring character where start copy.
     /// @exception xtd::argument_out_of_range_exception `index` is greater or equal than `str` size.
     basic_string(const basic_string<xtd::char8>& str, xtd::size index) {
-      if (index > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = base_type(str.chars_, index);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str.chars_, index)));
     }
@@ -251,7 +249,7 @@ namespace xtd {
     /// @param index The index of the first substring character where start copy.
     /// @exception xtd::argument_out_of_range_exception `index` is greater or equal than `str` size.
     basic_string(const basic_string<xtd::wchar>& str, xtd::size index) {
-      if (index > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<xtd::wchar, char_t>) chars_ = base_type(str.chars_, index);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str.chars_, index)));
     }
@@ -262,7 +260,7 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     /// @exception xtd::argument_out_of_range_exception `index` is greater or equal than `str` size.
     basic_string(const basic_string<char>& str, xtd::size index, const allocator_type& allocator) {
-      if (index > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<char, char_t>) chars_ = base_type(str.chars_, index, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<char>(str.chars_, index)), allocator);
     }
@@ -272,7 +270,7 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     /// @exception xtd::argument_out_of_range_exception `index` is greater or equal than `str` size.
     basic_string(const basic_string<xtd::char16>& str, xtd::size index, const allocator_type& allocator) {
-      if (index > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<xtd::char16, char_t>) chars_ = base_type(str.chars_, index, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str.chars_, index)), allocator);
     }
@@ -282,7 +280,7 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     /// @exception xtd::argument_out_of_range_exception `index` is greater or equal than `str` size.
     basic_string(const basic_string<xtd::char32>& str, xtd::size index, const allocator_type& allocator) {
-      if (index > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = base_type(str.chars_, index, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str.chars_, index)), allocator);
     }
@@ -293,7 +291,7 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     /// @exception xtd::argument_out_of_range_exception `index` is greater or equal than `str` size.
     basic_string(const basic_string<xtd::char8>& str, xtd::size index, const allocator_type& allocator) {
-      if (index > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = base_type(str.chars_, index, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str.chars_, index)), allocator);
     }
@@ -304,7 +302,7 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     /// @exception xtd::argument_out_of_range_exception `index` is greater or equal than `str` size.
     basic_string(const basic_string<xtd::wchar>& str, xtd::size index, const allocator_type& allocator) {
-      if (index > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<xtd::wchar, char_t>) chars_ = base_type(str.chars_, index, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str.chars_, index)), allocator);
     }
@@ -315,7 +313,7 @@ namespace xtd {
     /// @param count The number of substring characters to copy.
     /// @exception xtd::argument_out_of_range_exception `index` + `count`is greater or equal than `str` size.
     basic_string(const basic_string<char>& str, xtd::size index, xtd::size count) {
-      if (index + count > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index + count > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<char, char_t>) chars_ = base_type(str.chars_, index, count);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<char>(str.chars_, index, count)));
     }
@@ -325,7 +323,7 @@ namespace xtd {
     /// @param count The number of substring characters to copy.
     /// @exception xtd::argument_out_of_range_exception `index` + `count`is greater or equal than `str` size.
     basic_string(const basic_string<xtd::char16>& str, xtd::size index, xtd::size count) {
-      if (index + count > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index + count > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<xtd::char16, char_t>) chars_ = base_type(str.chars_, index, count);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str.chars_, index, count)));
     }
@@ -335,7 +333,7 @@ namespace xtd {
     /// @param count The number of substring characters to copy.
     /// @exception xtd::argument_out_of_range_exception `index` + `count`is greater or equal than `str` size.
     basic_string(const basic_string<xtd::char32>& str, xtd::size index, xtd::size count) {
-      if (index + count > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index + count > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = base_type(str.chars_, index, count);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str.chars_, index, count)));
     }
@@ -346,7 +344,7 @@ namespace xtd {
     /// @param count The number of substring characters to copy.
     /// @exception xtd::argument_out_of_range_exception `index` + `count`is greater or equal than `str` size.
     basic_string(const basic_string<xtd::char8>& str, xtd::size index, xtd::size count) {
-      if (index + count > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index + count > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = base_type(str.chars_, index, count);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str.chars_, index, count)));
     }
@@ -357,7 +355,7 @@ namespace xtd {
     /// @param count The number of substring characters to copy.
     /// @exception xtd::argument_out_of_range_exception `index` + `count`is greater or equal than `str` size.
     basic_string(const basic_string<xtd::wchar>& str, xtd::size index, xtd::size count) {
-      if (index + count > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index + count > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<xtd::wchar, char_t>) chars_ = base_type(str.chars_, index, count);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str.chars_, index, count)));
     }
@@ -369,7 +367,7 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     /// @exception xtd::argument_out_of_range_exception `index` + `count`is greater or equal than `str` size.
     basic_string(const basic_string<char>& str, xtd::size index, xtd::size count, const allocator_type& allocator) {
-      if (index + count > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index + count > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<char, char_t>) chars_ = base_type(str.chars_, index, count, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<char>(str.chars_, index, count)), allocator);
     }
@@ -380,7 +378,7 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     /// @exception xtd::argument_out_of_range_exception `index` + `count`is greater or equal than `str` size.
     basic_string(const basic_string<xtd::char16>& str, xtd::size index, xtd::size count, const allocator_type& allocator) {
-      if (index + count > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index + count > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<xtd::char16, char_t>) chars_ = base_type(str.chars_, index, count, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char16>(str.chars_, index, count)), allocator);
     }
@@ -391,7 +389,7 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     /// @exception xtd::argument_out_of_range_exception `index` + `count`is greater or equal than `str` size.
     basic_string(const basic_string<xtd::char32>& str, xtd::size index, xtd::size count, const allocator_type& allocator) {
-      if (index + count > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index + count > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<xtd::char32, char_t>) chars_ = base_type(str.chars_, index, count, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char32>(str.chars_, index, count)), allocator);
     }
@@ -403,7 +401,7 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     /// @exception xtd::argument_out_of_range_exception `index` + `count`is greater or equal than `str` size.
     basic_string(const basic_string<xtd::char8>& str, xtd::size index, xtd::size count, const allocator_type& allocator) {
-      if (index + count > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index + count > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<xtd::char8, char_t>) chars_ = base_type(str.chars_, index, count, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::char8>(str.chars_, index, count)), allocator);
     }
@@ -415,7 +413,7 @@ namespace xtd {
     /// @param allocator The allocator to use for all memory allocations of this basic_string.
     /// @exception xtd::argument_out_of_range_exception `index` + `count`is greater or equal than `str` size.
     basic_string(const basic_string<xtd::wchar>& str, xtd::size index, xtd::size count, const allocator_type& allocator) {
-      if (index + count > str.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index + count > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if constexpr (std::is_same_v<xtd::wchar, char_t>) chars_ = base_type(str.chars_, index, count, allocator);
       else chars_ = base_type(__xtd_convert_to_string<value_type>(std::basic_string<xtd::wchar>(str.chars_, index, count)), allocator);
     }
@@ -1107,7 +1105,7 @@ namespace xtd {
     /// | Greater than zero | This instance follows `value`.                                    |
     /// @exception xtd::argument_exception `value` is not a xtd::basic_string.
     int32 compare_to(const object& value) const {
-      if (!dynamic_cast<const basic_string*>(&value)) __throw_basic_string_argument_exception(__FILE__, __LINE__, __func__);
+      if (!dynamic_cast<const basic_string*>(&value)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
       return compare_to(static_cast<const basic_string&>(value));
     }
     /// @brief Compares this instance with a specified xtd::basic_string object and indicates whether this instance precedes, follows, or appears in the same position in the sort order as the specified string.
@@ -1850,7 +1848,7 @@ namespace xtd {
     /// @exception `std::out_of_range` if `pos > size()`.
     /// @remarks Equivalent to return `basic_string(*this, pos, count);`.
     basic_string substr(size_type pos) const {
-      if (pos > size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (pos > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return chars_.substr(pos);
     }
     /// @brief Returns a substring [`pos`, `pos + count`). If the requested substring extends past the end of the string, i.e. the `count` is greater than size() - pos (e.g. if `count` == xtd::basic_string::npos), the returned substring is [`pos`, size()).
@@ -1860,7 +1858,7 @@ namespace xtd {
     /// @exception `std::out_of_range` if `pos > size()`.
     /// @remarks Equivalent to return `basic_string(*this, pos, count);`.
     basic_string substr(size_type pos, size_type count) const {
-      if (pos > size() || pos + count > size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (pos > size() || pos + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return chars_.substr(pos, count);
     }
   
@@ -1870,7 +1868,7 @@ namespace xtd {
     /// @return A basic_string equivalent to the substring of length length that begins at start_index in this instance, or Empty if start_index is equal to the length of this instance and length is zero.
     /// @exception xtd::argument_out_of_range_exception `start_index` is greater than the length() of this instance.
     basic_string substring(xtd::size start_index) const {
-      if (start_index > size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (start_index > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return substr(start_index);
     }
     /// @brief Retrieves a substring from this instance. The substring starts at a specified character position and has a specified length.
@@ -1879,7 +1877,7 @@ namespace xtd {
     /// @return A basic_string equivalent to the substring of length length that begins at start_index in this instance, or Empty if start_index is equal to the length of this instance and length is zero.
     /// @exception xtd::argument_out_of_range_exception `start_index` plus `length` is greater than the length() of this instance.
     basic_string substring(xtd::size start_index, xtd::size length) const {
-      if (start_index > size() || start_index + length > size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (start_index > size() || start_index + length > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return substr(start_index, length);
     }
     
@@ -2319,7 +2317,7 @@ namespace xtd {
     /// @remarks stream << operator is called on each object to generate the content.
     template<class collection_t>
     static basic_string join(const basic_string& separator, const collection_t& values, xtd::size index, xtd::size count) {
-      if (index > values.size() || index + count > values.size()) __throw_basic_string_argument_out_of_range_exception(__FILE__, __LINE__, __func__);
+      if (index > values.size() || index + count > values.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       xtd::size i = 0;
       basic_string result;
       for (const auto& item : values) {
