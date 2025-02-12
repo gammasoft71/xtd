@@ -116,8 +116,16 @@ menu& menu::tag(std::any value) {
   return *this;
 }
 
-bool menu::equals(const menu& value) const noexcept {
-  return data_ == value.data_;
+bool menu::equals(const object& obj) const noexcept {
+  return is<menu>(obj) && equals(static_cast<const menu&>(obj));
+}
+
+bool menu::equals(const menu& other) const noexcept {
+  return data_ == other.data_;
+}
+
+xtd::size menu::get_hash_code() const noexcept {
+  return hash_code::combine(data_);
 }
 
 std::optional<std::reference_wrapper<context_menu>> menu::get_context_menu() const noexcept {
