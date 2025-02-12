@@ -218,13 +218,23 @@ namespace xtd {
       /// @remarks This method is used to start the initialization of a component that is used on a form or used by another component. The xtd::forms::status_bar_panel::end_init method ends the initialization. Using the xtd::forms::status_bar_panel::begin_init and xtd::forms::status_bar_panel::end_init methods prevents the control from being used before it is fully initialized.
       void begin_init();
       
-      using object::equals;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const xtd::object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
       bool equals(const status_bar_panel& other) const noexcept override;
       
       /// @brief Ends the initialization of a xtd::forms::status_bar_panel.
       /// @remarks This method is used to end the initialization of a component that is used on a form or used by another component. The xtd::forms::status_bar_panel::end_init method ends the initialization. Using the xtd::forms::status_bar_panel::begin_init and xtd::forms::status_bar_panel::end_init methods prevents the control from being used before it is fully initialized.
       void end_init();
       
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
+
       /// @brief Returns a string that represents the xtd::forms::status_bar_panel control.
       /// @return A xtd::string that represents the current xtd::forms::status_bar_panel.
       /// @remarks The xtd::forms::status_bar_panel::to_string method returns a string that includes the type and the value of the xtd::forms::status_bar_panel::style and xtd::forms::status_bar_panel::text properties.
