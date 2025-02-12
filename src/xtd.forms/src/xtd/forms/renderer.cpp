@@ -76,8 +76,16 @@ void renderer::draw_radio_button(xtd::drawing::graphics g, const xtd::drawing::r
   data_->radio_button_renderer(g, bounds, text, font, flags, image, image_bounds, focused, state, back_color, fore_color);
 }
 
-bool renderer::equals(const renderer& value) const noexcept {
-  return data_->name == value.data_->name;
+bool renderer::equals(const object& obj) const noexcept {
+  return is<renderer>(obj) && equals(static_cast<const renderer&>(obj));
+}
+
+bool renderer::equals(const renderer& other) const noexcept {
+  return data_->name == other.data_->name;
+}
+
+xtd::size renderer::get_hash_code() const noexcept {
+  return hash_code::combine(data_->name);
 }
 
 xtd::string renderer::to_string() const noexcept {
