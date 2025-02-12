@@ -8,14 +8,6 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
-std::vector<screen> screen::all_screens() {
-  auto screens = std::vector<screen> {};
-  auto count = native::screen::count();
-  for (auto index = 0_z; index < count; index++)
-    screens.push_back({native::screen::bits_per_pixel(index), native::screen::bounds(index), native::screen::device_name(index), native::screen::pixels_per_inch(index), native::screen::primary(index), native::screen::scale_factor(index), native::screen::working_area(index)});
-  return screens;
-}
-
 int32 screen::bits_per_pixel() const noexcept {
   return bits_per_pixel_;
 }
@@ -44,6 +36,18 @@ double screen::scale_factor() const noexcept {
   return scale_factor_;
 }
 
+const drawing::rectangle& screen::working_area() const noexcept {
+  return working_area_;
+}
+
+std::vector<screen> screen::all_screens() {
+  auto screens = std::vector<screen> {};
+  auto count = native::screen::count();
+  for (auto index = 0_z; index < count; index++)
+    screens.push_back({native::screen::bits_per_pixel(index), native::screen::bounds(index), native::screen::device_name(index), native::screen::pixels_per_inch(index), native::screen::primary(index), native::screen::scale_factor(index), native::screen::working_area(index)});
+  return screens;
+}
+
 screen screen::primary_screen() {
   auto screens = all_screens();
   for (auto& screen : screens)
@@ -51,9 +55,16 @@ screen screen::primary_screen() {
   return screens[0];
 }
 
+bool screen::equals(const object& obj) const noexcept {
+  return is<screen>(obj) && equals(static_cast<const screen&>(obj));
+}
 
-const drawing::rectangle& screen::working_area() const noexcept {
-  return working_area_;
+bool screen::equals(const screen& other) const noexcept {
+  return device_name_ == other.device_name_;
+}
+
+xtd::size screen::get_hash_code() const noexcept {
+  return hash_code::combine(device_name_);
 }
 
 graphics screen::create_graphics() {

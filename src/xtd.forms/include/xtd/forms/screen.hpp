@@ -29,7 +29,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example shows how to get screen informations of screen component.
     /// @include screen_informations.cpp
-    class forms_export_ screen : public object {
+    class forms_export_ screen : public object, public iequatable<screen> {
     public:
       /// @cond
       screen(const screen&) = default;
@@ -91,6 +91,23 @@ namespace xtd {
       /// @return The primary display.
       /// @remarks For a single display system, the primary display is the only display.
       static screen primary_screen();
+      /// @}
+      
+      /// @name Public Methods
+      
+      /// @{
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param obj The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const xtd::object& obj) const noexcept override;
+      /// @brief Determines whether the specified object is equal to the current object.
+      /// @param other The object to compare with the current object.
+      /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
+      bool equals(const screen& other) const noexcept override;
+      
+      /// @brief Serves as a hash function for a particular type.
+      /// @return A hash code for the current object.
+      xtd::size get_hash_code() const noexcept override;
       /// @}
 
       /// @name Public Static Methods
