@@ -27,9 +27,9 @@ void throw_helper::throws(exception_case ecase, const source_location& location)
     case exception_case::argument_null: throw xtd::argument_null_exception(to_stack_frame(location));
     case exception_case::argument_out_of_range: throw argument_out_of_range_exception(to_stack_frame(location));
     case exception_case::format: throw xtd::format_exception(to_stack_frame(location));
-    case exception_case::format_no_close_bracket: throw xtd::format_exception(to_stack_frame(location));
-    case exception_case::format_no_open_bracket: throw xtd::format_exception(to_stack_frame(location));
-    case exception_case::format_no_start_colon: throw xtd::format_exception(to_stack_frame(location));
+    case exception_case::format_closing_bracket_without_open_bracket: throw xtd::format_exception("Invalid format expression : closing bracket '{' without open bracket '}'"_t, to_stack_frame(location));
+    case exception_case::format_opened_bracket_without_end_bracket: throw xtd::format_exception("Invalid format expression : open bracket '}' without end bracket '{'"_t, to_stack_frame(location));
+    case exception_case::format_no_start_colon: throw xtd::format_exception("Invalid format expression : format argument must be start by ':'"_t, to_stack_frame(location));
     case exception_case::index_out_of_range: throw xtd::index_out_of_range_exception(to_stack_frame(location));
     case exception_case::invalid_operation: throw xtd::invalid_operation_exception(to_stack_frame(location));
     case exception_case::null_pointer: throw xtd::null_pointer_exception(to_stack_frame(location));
@@ -45,8 +45,8 @@ void throw_helper::throws(exception_case ecase, const char* message, const sourc
     case exception_case::argument_null: throw xtd::argument_null_exception(message, to_stack_frame(location));
     case exception_case::argument_out_of_range: throw xtd::argument_out_of_range_exception(message, to_stack_frame(location));
     case exception_case::format: throw xtd::format_exception(message, to_stack_frame(location));
-    case exception_case::format_no_close_bracket: throw xtd::format_exception(message, to_stack_frame(location));
-    case exception_case::format_no_open_bracket: throw xtd::format_exception(message, to_stack_frame(location));
+    case exception_case::format_closing_bracket_without_open_bracket: throw xtd::format_exception(message, to_stack_frame(location));
+    case exception_case::format_opened_bracket_without_end_bracket: throw xtd::format_exception(message, to_stack_frame(location));
     case exception_case::format_no_start_colon: throw xtd::format_exception(message, to_stack_frame(location));
     case exception_case::index_out_of_range: throw xtd::index_out_of_range_exception(message, to_stack_frame(location));
     case exception_case::invalid_operation: throw xtd::invalid_operation_exception(message, to_stack_frame(location));

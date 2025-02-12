@@ -36,10 +36,10 @@ namespace xtd {
       argument_out_of_range,
       /// @brief The format is not valid.
       format,
-      /// @brief The format does not contains close backet.
-      format_no_close_bracket,
-      /// @brief The format does not contains open backet.
-      format_no_open_bracket,
+      /// @brief The format contains close backet_without_open_bracket.
+      format_closing_bracket_without_open_bracket,
+      /// @brief The format contains open backet_without_end_bracket.
+      format_opened_bracket_without_end_bracket,
       /// @brief The format does not contains start colon.
       format_no_start_colon,
       /// @brief The index is out of range.
