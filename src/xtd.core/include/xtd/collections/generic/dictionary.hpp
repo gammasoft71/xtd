@@ -726,7 +726,7 @@ namespace xtd {
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::dictionary <key_t, value_t> is read-only.
         const value_t& at(const key_t& key) const {
           auto iterator = data_->items.find(key);
-          if (iterator == data_->items.end()) throw key_not_found_exception {};
+          if (iterator == data_->items.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::key_not_found);
           return iterator->second;
         }
 
@@ -737,7 +737,7 @@ namespace xtd {
         /// @exception xtd::not_supported_exception The property is set and the xtd::collections::generic::dictionary <key_t, value_t> is read-only.
         value_t& at(const key_t& key) {
           auto iterator = data_->items.find(key);
-          if (iterator == data_->items.end()) throw key_not_found_exception {};
+          if (iterator == data_->items.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::key_not_found);
           return iterator->second;
         }
         

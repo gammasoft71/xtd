@@ -48,6 +48,10 @@ namespace xtd {
       invalid_cast,
       /// @brief The operation is not valid.
       invalid_operation,
+      /// @brief The key is not found.
+      key_not_found,
+      /// @brief The method or operation is not implemented.
+      not_implemented,
       /// @brief The pointer is null.
       null_pointer,
       /// @brief Arithmetic overflow.
