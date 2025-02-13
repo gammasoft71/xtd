@@ -33,7 +33,7 @@ namespace xtd {
   template<class value_t>
   inline value_t parse(const std::string& str) {
     if (std::is_enum<value_t>::value) return __parse_enum<value_t>(str);
-    __throw_parse_format_exception("Parse specialisation not found", __FILE__, __LINE__, __func__);
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found");
     return {};
   }
   
@@ -44,7 +44,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<class value_t>
-  inline value_t parse(const std::string& str, const std::locale& locale) {__throw_parse_format_exception("Parse specialisation not found", __FILE__, __LINE__, __func__); return {};}
+  inline value_t parse(const std::string& str, const std::locale& locale) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -53,7 +53,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<class value_t>
-  inline value_t parse(const std::string& str, const std::string& fmt) {__throw_parse_format_exception("Parse specialisation not found", __FILE__, __LINE__, __func__); return {};}
+  inline value_t parse(const std::string& str, const std::string& fmt) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -71,7 +71,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<class value_t>
-  inline value_t parse(const std::string& str, number_styles) {__throw_parse_format_exception("Parse specialisation not found", __FILE__, __LINE__, __func__); return {};}
+  inline value_t parse(const std::string& str, number_styles) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -80,7 +80,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<class value_t>
-  inline value_t parse(const std::string& str, number_styles, const std::locale& locale) {__throw_parse_format_exception("Parse specialisation not found", __FILE__, __LINE__, __func__); return {};}
+  inline value_t parse(const std::string& str, number_styles, const std::locale& locale) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -376,7 +376,7 @@ namespace xtd {
       lower_str.erase(lower_str.size() - 1, 1);
     for (auto& c : lower_str)
       c = static_cast<char>(std::tolower(c));
-    if (lower_str != "true" && lower_str != "1" && lower_str != "false" && lower_str != "0")  __throw_parse_format_exception("Invalid string format", __FILE__, __LINE__, __func__);
+    if (lower_str != "true" && lower_str != "1" && lower_str != "false" && lower_str != "0")  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid string format");
     return lower_str == "true" || lower_str == "1";
   }
   
@@ -387,7 +387,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<class value_t>
-  inline value_t parse(const std::wstring& str) {__throw_parse_format_exception("Parse specialisation not found", __FILE__, __LINE__, __func__); return {};}
+  inline value_t parse(const std::wstring& str) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -396,7 +396,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<class value_t>
-  inline value_t parse(const std::u16string& str) {__throw_parse_format_exception("Parse specialisation not found", __FILE__, __LINE__, __func__); return {};}
+  inline value_t parse(const std::u16string& str) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
   
   /// @brief Convert a string into a type.
   /// @par Namespace
@@ -405,7 +405,7 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core
   template<class value_t>
-  inline value_t parse(const std::u32string& str) {__throw_parse_format_exception("Parse specialisation not found", __FILE__, __LINE__, __func__); return {};}
+  inline value_t parse(const std::u32string& str) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found"); return {};}
   
   /// @brief Convert a string into a type.
   /// @par Namespace

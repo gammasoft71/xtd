@@ -44,10 +44,14 @@ namespace xtd {
       format_no_start_colon,
       /// @brief The index is out of range.
       index_out_of_range,
+      /// @brief The cast is not valid.
+      invalid_cast,
       /// @brief The operation is not valid.
       invalid_operation,
       /// @brief The pointer is null.
       null_pointer,
+      /// @brief Arithmetic overflow.
+      overflow,
       /// @brief The rank is not valid.
       rank,
     };
