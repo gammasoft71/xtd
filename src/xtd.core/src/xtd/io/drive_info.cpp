@@ -11,9 +11,9 @@ using namespace io;
 const drive_info drive_info::empty;
 
 drive_info::drive_info(const string& drive_name) : drive_name_(drive_name) {
-  if (drive_name.empty()) throw argument_exception {};
+  if (drive_name.empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   auto drives = native::drive::get_drives();
-  if (std::find(drives.begin(), drives.end(), drive_name) == drives.end()) throw argument_exception {};
+  if (std::find(drives.begin(), drives.end(), drive_name) == drives.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
 }
 
 size_t drive_info::available_free_space() const {

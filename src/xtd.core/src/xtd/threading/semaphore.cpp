@@ -45,7 +45,7 @@ semaphore::semaphore(int32 initial_count, int32 maximum_count, const string& nam
 
 semaphore::semaphore(int32 initial_count, int32 maximum_count, const string& name, bool& created_new) : data_(xtd::new_sptr<data>()) {
   if (name.size() > native::named_semaphore::max_name_size()) throw io::path_too_long_exception {};
-  if (initial_count > maximum_count) throw argument_exception {};
+  if (initial_count > maximum_count) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (maximum_count < 1 || initial_count < 0) throw argument_out_of_range_exception {};
   data_->name = name;
   create(initial_count, maximum_count, created_new);
@@ -83,7 +83,7 @@ bool semaphore::equals(const semaphore& other) const noexcept {
 }
 
 semaphore semaphore::open_existing(const string& name) {
-  if (name.empty()) throw argument_exception {};
+  if (name.empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (name.size() > native::named_semaphore::max_name_size()) throw io::path_too_long_exception {};
   auto result = semaphore{};
   if (!try_open_existing(name, result)) throw io::io_exception {};

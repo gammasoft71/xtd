@@ -12,7 +12,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 void popup_panel::ignore_mouse_messages(intptr control, bool value) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -21,7 +21,7 @@ void popup_panel::ignore_mouse_messages(intptr control, bool value) {
 }
 
 void popup_panel::set_region(intptr control, intptr region) {
-  if (!control || !region || !wxTheApp) throw argument_exception {};
+  if (!control || !region || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -30,7 +30,7 @@ void popup_panel::set_region(intptr control, intptr region) {
 }
 
 void popup_panel::virtual_size(intptr control, const drawing::size& size) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;

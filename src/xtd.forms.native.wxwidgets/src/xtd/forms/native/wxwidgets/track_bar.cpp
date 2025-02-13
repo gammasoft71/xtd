@@ -10,7 +10,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 void track_bar::large_change(intptr control, int32 large_change) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -19,7 +19,7 @@ void track_bar::large_change(intptr control, int32 large_change) {
 }
 
 void track_bar::maximum(intptr control, int32 maximum) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -28,7 +28,7 @@ void track_bar::maximum(intptr control, int32 maximum) {
 }
 
 void track_bar::minimum(intptr control, int32 minimum) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -37,7 +37,7 @@ void track_bar::minimum(intptr control, int32 minimum) {
 }
 
 void track_bar::small_change(intptr control, int32 small_change) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -46,7 +46,7 @@ void track_bar::small_change(intptr control, int32 small_change) {
 }
 
 void track_bar::tick_frequency(intptr control, int32 tick_frequency) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -58,7 +58,7 @@ void track_bar::tick_frequency(intptr control, int32 tick_frequency) {
 }
 
 int32 track_bar::value(intptr control) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return 0;
@@ -67,7 +67,7 @@ int32 track_bar::value(intptr control) {
 }
 
 void track_bar::value(intptr control, int32 value) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;

@@ -71,7 +71,7 @@ void mutex::lock() {
 }
 
 mutex mutex::open_existing(const string& name) {
-  if (name.empty()) throw argument_exception {};
+  if (name.empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (name.size() > native::named_mutex::max_name_size()) throw io::path_too_long_exception {};
   auto result = mutex{};
   if (!try_open_existing(name, result)) throw io::io_exception {};

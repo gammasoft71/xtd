@@ -43,7 +43,7 @@ event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, 
   data_->mode = mode;
   data_->name = name;
   data_->is_set = initial_state;
-  if (!enum_object<>::is_defined(mode)) throw argument_exception {};
+  if (!enum_object<>::is_defined(mode)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (name.size() > native::named_event_wait_handle::max_name_size()) throw io::path_too_long_exception {};
   auto created_new = false;
   create(initial_state, created_new);
@@ -88,7 +88,7 @@ bool event_wait_handle::equals(const event_wait_handle& other) const noexcept {
 }
 
 event_wait_handle event_wait_handle::open_existing(const string& name) {
-  if (name.empty()) throw argument_exception {};
+  if (name.empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (name.size() > native::named_event_wait_handle::max_name_size()) throw io::path_too_long_exception {};
   auto result = event_wait_handle{};
   if (!try_open_existing(name, result)) throw io::io_exception {};

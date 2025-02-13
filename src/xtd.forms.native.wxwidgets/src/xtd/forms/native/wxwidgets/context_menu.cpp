@@ -18,28 +18,28 @@ void context_menu::destroy(intptr context_menu) {
 }
 
 void context_menu::insert_item(intptr context_menu, size_t pos, intptr menu_item) {
-  if (context_menu == 0) throw argument_exception {};
-  if (menu_item == 0) throw argument_exception {};
+  if (context_menu == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (menu_item == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   reinterpret_cast<wxMenu*>(context_menu)->Insert(pos, reinterpret_cast<wxMenuItem*>(menu_item));
 }
 
 void context_menu::insert_menu(intptr context_menu, size_t pos, intptr menu_item, const string& text) {
-  if (context_menu == 0) throw argument_exception {};
-  if (menu_item == 0) throw argument_exception {};
+  if (context_menu == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (menu_item == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   reinterpret_cast<wxMenu*>(context_menu)->Insert(pos, wxID_ANY, convert_string::to_wstring(text), reinterpret_cast<wxMenu*>(menu_item));
 }
 
 intptr context_menu::native_handle(intptr context_menu) {
-  if (context_menu == 0) throw argument_exception {};
+  if (context_menu == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   return context_menu;
 }
 
 void context_menu::remove_item(intptr context_menu, size_t pos) {
-  if (context_menu == 0) throw argument_exception {};
+  if (context_menu == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   reinterpret_cast<wxMenu*>(context_menu)->Remove(reinterpret_cast<wxMenu*>(context_menu)->FindItemByPosition(pos));
 }
 
 void context_menu::text(intptr context_menu, const xtd::string& text) {
-  if (context_menu == 0) throw argument_exception {};
+  if (context_menu == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   reinterpret_cast<wxMenu*>(context_menu)->SetTitle(text.chars());
 }

@@ -13,7 +13,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 size_t text_box::selection_length(intptr control) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return 0;
@@ -24,7 +24,7 @@ size_t text_box::selection_length(intptr control) {
 }
 
 size_t text_box::selection_start(intptr control) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return 0;
@@ -35,7 +35,7 @@ size_t text_box::selection_start(intptr control) {
 }
 
 void text_box::append(intptr control, const string& text) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -44,7 +44,7 @@ void text_box::append(intptr control, const string& text) {
 }
 
 void text_box::select(intptr control, size_t start, size_t length) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -52,7 +52,7 @@ void text_box::select(intptr control, size_t start, size_t length) {
   return static_cast<wxTextCtrl*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(start, start + length);
 }
 string text_box::text(intptr control) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return "";
@@ -61,7 +61,7 @@ string text_box::text(intptr control) {
 }
 
 void text_box::text(intptr control, const string& text) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -74,7 +74,7 @@ void text_box::text(intptr control, const string& text) {
 }
 
 void text_box::placeholder_text(intptr control, const string& text) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;

@@ -71,7 +71,7 @@ bool theme::from_css(const xtd::string& css_text, theme& result) {
 theme theme::parse(const xtd::string& text) {
   auto result = theme {};
   if (!try_parse(text, result))
-    throw argument_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   return result;
 }
 

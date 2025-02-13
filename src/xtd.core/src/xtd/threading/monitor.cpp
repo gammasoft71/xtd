@@ -63,7 +63,7 @@ void monitor::exit_ptr(object_ptr obj) {
 }
 
 intptr monitor::get_ustring_ptr(const string& str) {
-  if (str.empty()) throw argument_exception {};
+  if (str.empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   get_static_data().monitor_items_critical_section.enter();
   auto ptr = reinterpret_cast<intptr>(&str);
   for (const auto& item : get_static_data().monitor_items)

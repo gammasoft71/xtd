@@ -248,7 +248,7 @@ void lcd_label::dot_matrix_display_digit::set_character(char32 value) {
   };
   if (character_ != value) {
     auto it = characters.find(value);
-    if (it == characters.end()) throw argument_exception(string::format("Only characters : \"{}\" are valid"_t, get_valid_characters()));
+    if (it == characters.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, string::format("Only characters : \"{}\" are valid"_t, get_valid_characters()).c_str());
     character_ = value;
     set_dots(it->second);
   }
@@ -375,7 +375,7 @@ void lcd_label::fourteen_segment_display_digit::set_character(char32 value) {
   };
   if (character_ != value) {
     auto it = characters.find(value);
-    if (it == characters.end()) throw argument_exception(string::format("Only characters : \"{}\" are valid"_t, get_valid_characters()));
+    if (it == characters.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, string::format("Only characters : \"{}\" are valid"_t, get_valid_characters()).c_str());
     character_ = value;
     fourteen_segment_display_digit::value(it->second);
   }
@@ -482,7 +482,7 @@ void lcd_label::nine_segment_display_digit::set_character(char32 value) {
   };
   if (character_ != value) {
     auto it = characters.find(value);
-    if (it == characters.end()) throw argument_exception(string::format("Only characters : \"{}\" are valid"_t, get_valid_characters()));
+    if (it == characters.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, string::format("Only characters : \"{}\" are valid"_t, get_valid_characters()).c_str());
     character_ = value;
     nine_segment_display_digit::value(it->second);
   }
@@ -589,7 +589,7 @@ void lcd_label::seven_segment_display_digit::set_character(char32 value) {
     {U':', forms::segments::pc}};
   if (character_ != value) {
     auto it = characters.find(value);
-    if (it == characters.end()) throw argument_exception(string::format("Only characters : \"{}\" are valid"_t, get_valid_characters()));
+    if (it == characters.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, string::format("Only characters : \"{}\" are valid"_t, get_valid_characters()).c_str());
     character_ = value;
     seven_segment_display::value(it->second);
   }
@@ -710,7 +710,7 @@ void lcd_label::sixteen_segment_display_digit::set_character(char32 value) {
   };
   if (character_ != value) {
     auto it = characters.find(value);
-    if (it == characters.end()) throw argument_exception(string::format("Only characters : \"{}\" are valid"_t, get_valid_characters()));
+    if (it == characters.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, string::format("Only characters : \"{}\" are valid"_t, get_valid_characters()).c_str());
     character_ = value;
     sixteen_segment_display::value(it->second);
   }
@@ -853,7 +853,7 @@ control& lcd_label::text(const xtd::string& value) {
         case lcd_style::fourteen_segment_display: data_->digits.push_back(xtd::new_sptr<fourteen_segment_display_digit>()); break;
         case lcd_style::sixteen_segment_display: data_->digits.push_back(xtd::new_sptr<sixteen_segment_display_digit>()); break;
         case lcd_style::dot_matrix_display: data_->digits.push_back(xtd::new_sptr<dot_matrix_display_digit>()); break;
-        default: throw argument_exception("lcd_style invalid"_t);
+        default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "lcd_style invalid"_t);
       }
       dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->parent(*this);
       dynamic_cast<control*>(data_->digits[data_->digits.size() - 1].get())->double_buffered(double_buffered());
@@ -878,7 +878,7 @@ std::vector<char32> lcd_label::valid_characters() {
     case lcd_style::fourteen_segment_display: digit = xtd::new_sptr<fourteen_segment_display_digit>(); break;
     case lcd_style::sixteen_segment_display: digit = xtd::new_sptr<sixteen_segment_display_digit>(); break;
     case lcd_style::dot_matrix_display: digit = xtd::new_sptr<dot_matrix_display_digit>(); break;
-    default: throw argument_exception("lcd_style invalid"_t);
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "lcd_style invalid"_t);
   }
   auto vc = digit->get_valid_characters();
   return {vc.begin(), vc.end()};

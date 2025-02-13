@@ -24,7 +24,7 @@ int32 text_reader::read() {
 }
 
 size_t text_reader::read(std::vector<char>& buffer, size_t index, size_t count) {
-  if (index + count > buffer.size()) throw argument_exception {};
+  if (index + count > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
     if (current == EOF) return i;

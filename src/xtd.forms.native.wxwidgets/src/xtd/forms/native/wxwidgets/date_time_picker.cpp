@@ -12,7 +12,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 void date_time_picker::allowable_dates(const intptr control, date_time min_date, date_time max_date) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -27,7 +27,7 @@ void date_time_picker::allowable_dates(const intptr control, date_time min_date,
 }
 
 date_time date_time_picker::value(intptr control) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return {};
@@ -41,7 +41,7 @@ date_time date_time_picker::value(intptr control) {
 }
 
 void date_time_picker::value(intptr control, date_time value) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;

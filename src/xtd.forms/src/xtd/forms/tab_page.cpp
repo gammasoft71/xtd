@@ -46,7 +46,7 @@ tab_page& tab_page::image_index(size_t value) {
 }
 
 control& tab_page::parent(const control& parent) {
-  if (!is<tab_control>(parent)) throw argument_exception(string::format("tab_page cannot be added to a '{}'.  tab_page can only be added to tab_control"), parent.get_type().full_name());
+  if (!is<tab_control>(parent)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, string::format("tab_page cannot be added to a '{}'.  tab_page can only be added to tab_control", parent.get_type().full_name()).c_str());
   as<tab_control>(const_cast<control&>(parent)).tab_pages().push_back(*this);
   return *this;
 }

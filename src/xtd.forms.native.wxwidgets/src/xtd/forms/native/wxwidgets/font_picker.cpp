@@ -12,7 +12,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 color font_picker::color(intptr control) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return {};
@@ -22,7 +22,7 @@ color font_picker::color(intptr control) {
 }
 
 void font_picker::color(intptr control, const drawing::color& color) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -31,7 +31,7 @@ void font_picker::color(intptr control, const drawing::color& color) {
 }
 
 font font_picker::font(intptr control) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return system_fonts::default_font();
@@ -40,7 +40,7 @@ font font_picker::font(intptr control) {
 }
 
 void font_picker::font(intptr control, const drawing::font& font) {
-  if (!control || !wxTheApp) throw argument_exception {};
+  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;

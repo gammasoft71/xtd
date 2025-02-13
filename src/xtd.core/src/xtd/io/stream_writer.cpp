@@ -17,8 +17,8 @@ stream_writer::stream_writer(std::ostream& stream) : stream_writer(stream, false
 }
 
 stream_writer::stream_writer(const string& path, bool append) : stream_(new std::ofstream(path, append ? std::ios::out | std::ios_base::app : std::ios::out | std::ios_base::trunc)), delete_when_destroy_(true) {
-  if (path.index_of_any(path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!file::exists(path)) throw file_not_found_exception {};
   if ((file::get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {};
   if (!dynamic_cast<std::ofstream*>(stream_)->is_open() || !stream_->good()) throw io_exception {};

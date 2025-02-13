@@ -19,25 +19,25 @@ background_image::background_image(const string& url) : image_type_(style_sheets
 }
 
 background_image::background_image(const std::vector<color>& colors) : image_type_(style_sheets::image_type::linear_gradient), colors_(colors) {
-  if (colors.size() < 2_z) throw argument_exception {};
+  if (colors.size() < 2_z) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
 }
 
 background_image::background_image(const std::vector<color>& colors, int32 angle) : image_type_(style_sheets::image_type::linear_gradient), colors_(colors), angle_((angle % 360) < 0 ? 360 + (angle % 360) : (angle % 360)) {
-  if (colors.size() < 2_z) throw argument_exception {};
+  if (colors.size() < 2_z) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
 }
 
 background_image::background_image(style_sheets::image_type image_type, const std::vector<color>& colors) : image_type_(image_type), colors_(colors) {
-  if (colors.size() < 2_z) throw argument_exception {};
+  if (colors.size() < 2_z) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (image_type != style_sheets::image_type::linear_gradient) throw not_supported_exception {};
 }
 
 background_image::background_image(style_sheets::image_type image_type, const std::vector<color>& colors, int32 angle) : image_type_(image_type), colors_(colors), angle_((angle % 360) < 0 ? 360 + (angle % 360) : (angle % 360)) {
-  if (colors.size() < 2_z) throw argument_exception {};
+  if (colors.size() < 2_z) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (image_type != style_sheets::image_type::linear_gradient) throw not_supported_exception {};
 }
 
 background_image::background_image(const std::initializer_list<xtd::drawing::color>& colors) : image_type_(style_sheets::image_type::linear_gradient), colors_(colors) {
-  if (colors.size() < 2_z) throw argument_exception {};
+  if (colors.size() < 2_z) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
 }
 
 int32 background_image::angle() const noexcept {
@@ -54,7 +54,7 @@ const std::vector<xtd::drawing::color>& background_image::colors() const noexcep
 
 void background_image::colors(const std::vector<xtd::drawing::color>& value) {
   colors_ = value;
-  if (colors_.size() < 2_z) throw argument_exception {};
+  if (colors_.size() < 2_z) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
 }
 
 const xtd::uri& background_image::url() const noexcept {

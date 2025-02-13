@@ -233,7 +233,7 @@ int32 uri::from_hex(char digit) {
   if ('0' <= digit && digit <= '9') return digit - '0';
   if ('a' <= digit && digit <= 'f') return 10 + digit - 'a';
   if ('A' <= digit && digit <= 'F') return 10 + digit - 'A';
-  throw argument_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
 }
 
 string uri::get_components(uri_components components, uri_format format) const {
@@ -266,7 +266,7 @@ string uri::get_left_part(uri_partial part) const {
     case uri_partial::query: return get_components(uri_components::scheme | uri_components::user_info | uri_components::host | uri_components::port | uri_components::path_and_query, uri_format::uri_escaped);
     default: break;
   }
-  throw argument_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
 }
 
 string uri::hex_escape(char character) {

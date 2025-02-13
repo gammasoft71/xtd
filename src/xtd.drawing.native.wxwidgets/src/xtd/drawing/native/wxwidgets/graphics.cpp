@@ -717,7 +717,7 @@ void graphics::reset_transform(intptr handle) {
 
 void graphics::restore(intptr handle, intptr& gstate) {
   if (!handle) return;
-  if (gstate == 0 || gstate != graphics_state[handle]) throw argument_exception {};
+  if (gstate == 0 || gstate != graphics_state[handle]) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   --graphics_state[handle];
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->PopState();
   gstate = 0;

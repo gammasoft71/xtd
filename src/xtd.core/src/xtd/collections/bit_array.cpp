@@ -111,7 +111,7 @@ const object& bit_array::sync_root() const noexcept {
 
 const bit_array& bit_array::and_(const bit_array& value) {
   flush(); // Must be call first
-  if (count() != value.count()) throw argument_exception {};
+  if (count() != value.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   for (auto index = 0_z; index < length(); ++index)
     set_bit_value(index, get_bit_value(index) && value[index]);
   return *this;
@@ -133,7 +133,7 @@ uptr<object> bit_array::clone() const {
 
 void bit_array::copy_to(array<bool>& array, size index) const {
   flush(); // Must be call first
-  if (index + length() > array.length()) throw argument_exception {};
+  if (index + length() > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   for (auto item : *this)
     array[index++] = item;
 }
@@ -223,7 +223,7 @@ const bit_array& bit_array::not_() {
 
 const bit_array& bit_array::or_(const bit_array& value) {
   flush(); // Must be call first
-  if (count() != value.count()) throw argument_exception {};
+  if (count() != value.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   for (auto index = 0_z; index < length(); ++index)
     set_bit_value(index, get_bit_value(index) || value[index]);
   return *this;
@@ -252,7 +252,7 @@ string bit_array::to_string() const noexcept {
 
 const bit_array& bit_array::xor_(const bit_array& value) {
   flush(); // Must be call first
-  if (count() != value.count()) throw argument_exception {};
+  if (count() != value.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   for (auto index = 0_z; index < length(); ++index)
     set_bit_value(index, get_bit_value(index) != value[index]);
   return *this;

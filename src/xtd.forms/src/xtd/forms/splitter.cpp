@@ -22,7 +22,7 @@ splitter::splitter() : data_(xtd::new_sptr<data>()) {
 }
 
 control& splitter::dock(dock_style dock) {
-  if (dock != dock_style::left && dock != dock_style::right && dock != dock_style::top && dock != dock_style::bottom) throw argument_exception("splitter control must be docked left, right, top, or bottom."_t);
+  if (dock != dock_style::left && dock != dock_style::right && dock != dock_style::top && dock != dock_style::bottom) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "splitter control must be docked left, right, top, or bottom."_t);
   control::dock(dock);
   cursor(default_cursor());
   if (data_->default_width && (dock == dock_style::left || dock == dock_style::right)) width(3);

@@ -10,13 +10,13 @@ const vertical_control_layout_style_collection& vertical_layout_panel::control_l
 
 const vertical_control_layout_style& vertical_layout_panel::control_layout_style(const control_ref& control) const {
   auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](auto item) {return item.first.get() == control;});
-  if (it == control_layout_styles_.end()) throw argument_exception {};
+  if (it == control_layout_styles_.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   return it->second;
 }
 
 vertical_layout_panel& vertical_layout_panel::control_layout_style(const control_ref& control, const vertical_control_layout_style& value) {
   auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](auto item) {return item.first.get() == control;});
-  if (it == control_layout_styles_.end()) throw argument_exception {};
+  if (it == control_layout_styles_.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (it->second != value) {
     it->second = value;
     perform_layout();
@@ -93,7 +93,7 @@ void vertical_layout_panel::on_control_added(const xtd::forms::control_event_arg
 void vertical_layout_panel::on_control_removed(const xtd::forms::control_event_args& e) {
   panel::on_control_removed(e);
   auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](auto item) {return item.first.get() == e.control();});
-  if (it == control_layout_styles_.end()) throw argument_exception {};
+  if (it == control_layout_styles_.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   control_layout_styles_.erase(it);
 }
 
@@ -131,7 +131,7 @@ void vertical_layout_panel::on_layout(const event_args& e) {
     if (layout_style.size_type() == size_type::absolute) height = static_cast<int32>(layout_style.height().value_or(control.get().default_size().height));
     else if (layout_style.size_type() == size_type::percent) height = static_cast<int32>(percent_height * (layout_style.height().value_or(0) / total_percent));
     else if (layout_style.size_type() == size_type::auto_size) height = static_cast<int32>(auto_size_height / auto_size_control_count);
-    else throw argument_exception {};
+    else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
     control.get().set_bounds(left, top, width, height);
     top += height + padding().bottom() + padding().top();
   }
