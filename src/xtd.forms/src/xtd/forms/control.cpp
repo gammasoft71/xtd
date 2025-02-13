@@ -1049,7 +1049,7 @@ size_t control::get_child_index(intptr child) const {
   if (child == 0) return control_collection::npos;
   for (size_t index = 0; index < controls().size(); ++index)
     if (controls()[index].get().handle() == child) return index;
-  throw xtd::argument_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
 }
 
 size_t control::get_child_index(intptr child, bool& throw_exception) const {

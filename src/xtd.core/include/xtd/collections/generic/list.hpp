@@ -675,7 +675,7 @@ namespace xtd {
         /// @remarks The elements are copied to the xtd::array in the same order in which the enumerator iterates through the xtd::collections::generic::list <type_t>.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         virtual void copy_to(size_type index, xtd::array<type_t>& array, size_type array_index, size_type count) const {
-          if (index + count > this->count() || array_index + count > array.size()) throw xtd::argument_exception {};
+          if (index + count > this->count() || array_index + count > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
           auto i = size_type {0}, c = size_type {0};
           for (const type_t& item : *this) {
             if (i >= index + count) return;
@@ -921,7 +921,7 @@ namespace xtd {
         /// @remarks In contrast, a deep copy of a collection copies the elements and everything directly or indirectly referenced by the elements.
         /// @remarks This method is an O(n) operation, where n is count.
         list get_range(size_type index, size_type count) {
-          if (index + count > this->count()) throw xtd::argument_exception {};
+          if (index + count > this->count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
           
           return list<type_t> {begin() + index, begin() + index + count};
         }
@@ -1096,7 +1096,7 @@ namespace xtd {
         /// @exception xd::argument_exception `index` and `count` do not specify a valid section in the xtd::collections::generic::list <type_t>.
         size_type last_index_of(const type_t& value, size_type index, size_type count) const {
           if (count < size() || index >= size()) throw xtd::argument_out_of_range_exception {};
-          if (index - count > size()) throw xtd::argument_exception {};
+          if (index - count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
 
           for (auto i = index; i >= index - (count - 1); --i)
             if (value == data_->items[i])  return i;
@@ -1234,7 +1234,7 @@ namespace xtd {
         /// @remarks This method uses xtd::array::reverse to reverse the order of the elements.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
         void reverse(size_type index, size_type count) {
-          if (index + count > size()) throw xtd::argument_exception {};
+          if (index + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
           
           ++data_->version;
           auto poitions1 = index;
@@ -1257,7 +1257,7 @@ namespace xtd {
         /// @return A shallow copy of a range of elements in the source xtd::collections::generic::list <type_t>.
         /// @exception xt::argument_exception `start` and `length` do not denote a valid range of elements in the xtd::collections::generic::list <type_t>.
         list<type_t> slice(size_type start, size_type length) const {
-          if (start + length > size()) throw xtd::argument_exception {};
+          if (start + length > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
           return list<type_t> {data_->items.begin() + start, data_->items.begin() + start + length};
         }
         

@@ -230,7 +230,7 @@ drawing::size tab_control::measure_control() const noexcept {
 }
 
 void tab_control::on_control_added(const control_event_args& e) {
-  if (!is<xtd::forms::tab_page>(e.control())) throw xtd::argument_exception(string::format("Cannot add '{}' to tab_control.  Only tab_pages can be directly added to tab_controls.", e.control().get_type().name()));
+  if (!is<xtd::forms::tab_page>(e.control())) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, string::format("Cannot add '{}' to tab_control.  Only tab_pages can be directly added to tab_controls.", e.control().get_type().name()).c_str());
   control::on_control_added(e);
   if (data_->selected_index == npos) data_->selected_index = 0;
 }

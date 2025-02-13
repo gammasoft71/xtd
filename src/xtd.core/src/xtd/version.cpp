@@ -84,7 +84,7 @@ version version::parse(const xtd::string& input) {
     case 4: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1]), string::parse<int32>(versions[2]), string::parse<int32>(versions[3])};
   }
   
-  throw xtd::argument_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
 }
 
 bool version::try_parse(const xtd::string& input, version& result) noexcept {
@@ -105,7 +105,7 @@ xtd::string version::to_string() const noexcept {
 }
 
 xtd::string version::to_string(size_t field_count) const {
-  if (field_count > 4 || (field_count >= 3 && build_ == -1) || (field_count == 4 && revision_ == -1)) throw xtd::argument_exception {"Field count invalid"_t};
+  if (field_count > 4 || (field_count >= 3 && build_ == -1) || (field_count == 4 && revision_ == -1)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "Field count invalid"_t);
   auto result = string::empty_string;
   if (field_count >= 1) result += string::format("{}", major_);
   if (field_count >= 2) result += string::format(".{}", minor_);
