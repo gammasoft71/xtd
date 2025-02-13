@@ -204,11 +204,11 @@ void message_notifier::show() {
   if (notifier_appearance_ == xtd::forms::notifier_appearance::standard)
     message_notifier_standard::show(0, *this);
   else
-    throw xtd::not_implemented_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
 }
 void message_notifier::show(const iwin32_window& owner) {
   if (notifier_appearance_ == xtd::forms::notifier_appearance::standard)
     message_notifier_standard::show(owner.handle(), *this);
   else
-    throw xtd::not_implemented_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
 }
