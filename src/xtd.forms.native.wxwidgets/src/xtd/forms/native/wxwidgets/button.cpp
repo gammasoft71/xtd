@@ -7,6 +7,7 @@
 #include <xtd/cdebug>
 
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::forms::native;
 
 void button::image(intptr control, const drawing::image& image) {
@@ -32,7 +33,7 @@ void button::image_align(intptr control, uint32 align) {
 void button::set_default_button(intptr control) {
   if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
   }
   static_cast<wxButton*>(reinterpret_cast<control_handler*>(control)->control())->SetDefault();

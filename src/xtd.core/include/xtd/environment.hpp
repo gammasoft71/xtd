@@ -45,8 +45,7 @@
 // | Constant          | Windows Value                | macOS        | linux        |
 // | ----------------- | ---------------------------- |--------------|--------------|
 // | __XTD_ROOT_PATH__ | "C:\Program Files (x86)\xtd" | "/usr/local" | "/usr/local" |
-// Remarks : If __XTD_ROOT_PATH__ is empty the environment variable XTD_ROOT_PATH is used. And if the environment variable XTD_ROOT_PATH is empty too the directory componant of __FILE__ macro is used.
-
+// Remarks : If __XTD_ROOT_PATH__ is empty the environment variable XTD_ROOT_PATH is used. And if the environment variable XTD_ROOT_PATH is empty too the directory componant of xtd::diagnostics::source_location::current().file_name() is used.
 #if !defined(__XTD_ROOT_PATH__)
 #  define __XTD_ROOT_PATH__ ""
 #endif
@@ -661,7 +660,7 @@ namespace xtd {
     static void on_program_exit(const program_exit_event_args& e);
 
     static xtd::string get_folder_path_(environment::special_folder folder, environment::special_folder_option option, bool is_gui_application = target_type().is_guid_application());
-    inline static const string xtd_root_path() {return xtd::io::path::get_full_path(string::is_empty(__XTD_ROOT_PATH__) ? (string::is_empty(get_environment_variable("XTD_ROOT_PATH")) ? io::path::get_full_path(io::path::combine(io::path::get_directory_name(__FILE__), "..", "..")) : get_environment_variable("XTD_ROOT_PATH")) : __XTD_ROOT_PATH__);}
+    inline static const string xtd_root_path() {return xtd::io::path::get_full_path(string::is_empty(__XTD_ROOT_PATH__) ? (string::is_empty(get_environment_variable("XTD_ROOT_PATH")) ? io::path::get_full_path(io::path::combine(io::path::get_directory_name(xtd::diagnostics::source_location::current().file_name()), "..", "..")) : get_environment_variable("XTD_ROOT_PATH")) : __XTD_ROOT_PATH__);}
     static signal_catcher signal_catcher_;
   };
 }
