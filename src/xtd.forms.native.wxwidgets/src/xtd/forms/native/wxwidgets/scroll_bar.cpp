@@ -5,13 +5,14 @@
 #include <xtd/argument_exception>
 
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 void scroll_bar::large_change(intptr control, int32 large_change) {
   if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
   }
   auto wxsb = reinterpret_cast<wx_scroll_bar*>(control);
@@ -22,7 +23,7 @@ void scroll_bar::large_change(intptr control, int32 large_change) {
 void scroll_bar::maximum(intptr control, int32 maximum) {
   if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
   }
   auto wxsb = reinterpret_cast<wx_scroll_bar*>(control);
@@ -33,7 +34,7 @@ void scroll_bar::maximum(intptr control, int32 maximum) {
 void scroll_bar::minimum(intptr control, int32 minimum) {
   if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
   }
   auto wxsb = reinterpret_cast<wx_scroll_bar*>(control);
@@ -44,7 +45,7 @@ void scroll_bar::minimum(intptr control, int32 minimum) {
 void scroll_bar::small_change(intptr control, int32 small_change) {
   if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
   }
   auto wxsb = reinterpret_cast<wx_scroll_bar*>(control);
@@ -55,7 +56,7 @@ void scroll_bar::small_change(intptr control, int32 small_change) {
 int32 scroll_bar::value(intptr control) {
   if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return 0;
   }
   auto wxsb = reinterpret_cast<wx_scroll_bar*>(control);
@@ -66,7 +67,7 @@ int32 scroll_bar::value(intptr control) {
 void scroll_bar::value(intptr control, int32 value) {
   if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
   }
   auto wxsb = reinterpret_cast<wx_scroll_bar*>(control);

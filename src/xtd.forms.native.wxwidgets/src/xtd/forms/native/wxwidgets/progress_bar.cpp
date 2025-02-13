@@ -5,13 +5,14 @@
 #include <xtd/argument_exception>
 
 using namespace xtd;
+using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
 
 void progress_bar::value(intptr control, int32 value) {
   if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
   }
   static_cast<wxGauge*>(reinterpret_cast<control_handler*>(control)->control())->SetValue(value);
@@ -20,7 +21,7 @@ void progress_bar::value(intptr control, int32 value) {
 void progress_bar::maximum(intptr control, int32 maximum) {
   if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
   }
   reinterpret_cast<wx_progress_bar*>(control)->maximum_ = maximum;
@@ -30,7 +31,7 @@ void progress_bar::maximum(intptr control, int32 maximum) {
 void progress_bar::minimum(intptr control, int32 minimum) {
   if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
   }
   reinterpret_cast<wx_progress_bar*>(control)->minimum_ = minimum;
@@ -40,7 +41,7 @@ void progress_bar::minimum(intptr control, int32 minimum) {
 void progress_bar::marquee(intptr control, bool marquee, size_t animation_speed) {
   if (!control || !wxTheApp) throw argument_exception {};
   if (!reinterpret_cast<control_handler*>(control)->control()) {
-    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", __FILE__, __LINE__, __func__);
+    wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
   }
   reinterpret_cast<wx_progress_bar*>(control)->marquee(marquee, animation_speed);
