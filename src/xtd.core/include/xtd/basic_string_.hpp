@@ -312,14 +312,10 @@ inline xtd::basic_string<char_t, traits_t, allocator_t> xtd::basic_string<char_t
         formats.push_back(fi);
       }
     } else if (*iterator == '}') {
-      if (++iterator == fmt.end()) {
+      if (++iterator == fmt.end())
         xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format_closing_bracket_without_open_bracket);
-        break;
-      }
-      if (*iterator != '}') {
+      if (*iterator != '}')
         xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format_closing_bracket_without_open_bracket);
-        break;
-      }
       result += *iterator;
     } else
       result += *iterator;
