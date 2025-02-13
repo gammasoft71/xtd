@@ -34,10 +34,6 @@ string object::to_string() const noexcept {
   return get_type().full_name();
 }
 
-void object::__throw_invalid_cast_exception(const string& file, uint32 line, const string& method) const {
-  throw invalid_cast_exception {{file, line, method}};
-}
-
 std::ostream& operator <<(std::ostream& os, const object& obj) noexcept {
   return os << obj.to_string();
 }

@@ -7,6 +7,7 @@
 #endif
 /// @endcond
 
+#include "../helpers/throw_helper.hpp"
 #include "../number_styles.hpp"
 #include "../types.hpp"
 #include <locale>
@@ -15,9 +16,6 @@
 #include <sstream>
 
 /// @cond
-void __throw_parse_format_exception(const std::string& message, const char* file, xtd::uint32 line, const char* func);
-void __throw_parse_overflow_exception(const char* file, xtd::uint32 line, const char* func);
-
 template<class char_t>
 inline std::basic_string<char_t> __parse_remove_decorations(const std::basic_string<char_t>& s, xtd::number_styles styles) {
   std::basic_string<char_t> str(s);
@@ -42,32 +40,32 @@ inline int __parse_remove_signs(std::basic_string<char_t>& str, xtd::number_styl
   int sign = 0;
   
   while ((styles & xtd::number_styles::allow_leading_sign) == xtd::number_styles::allow_leading_sign && str.find('+') == 0) {
-    if (sign != 0) __throw_parse_format_exception("String contains more than one sign", __FILE__, __LINE__, __func__);
+    if (sign != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "String contains more than one sign");
     str = str.substr(1, str.size() - 1);
     sign += 1;
   }
   
   while ((styles & xtd::number_styles::allow_leading_sign) == xtd::number_styles::allow_leading_sign && str.find('-') == 0) {
-    if (sign != 0) __throw_parse_format_exception("String contains more than one sign", __FILE__, __LINE__, __func__);
+    if (sign != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "String contains more than one sign");
     str = str.substr(1, str.size() - 1);
     sign -= 1;
   }
   
   while ((styles & xtd::number_styles::allow_trailing_sign) == xtd::number_styles::allow_trailing_sign && str.rfind('+') + 1 == str.size()) {
-    if (sign != 0) __throw_parse_format_exception("String contains more than one sign", __FILE__, __LINE__, __func__);
+    if (sign != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "String contains more than one sign");
     str.pop_back();
     sign += 1;
   }
   
   while ((styles & xtd::number_styles::allow_trailing_sign) == xtd::number_styles::allow_trailing_sign && str.rfind('-') + 1 == str.size()) {
-    if (sign != 0) __throw_parse_format_exception("String contains more than one sign", __FILE__, __LINE__, __func__);
+    if (sign != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "String contains more than one sign");
     str.pop_back();
     sign -= 1;
   }
   
   while ((styles & xtd::number_styles::allow_parentheses) == xtd::number_styles::allow_parentheses && str.find('(') == 0 && str.rfind(')') + 1 == str.size()) {
     str = str.substr(1, str.size() - 2);
-    if (sign != 0) __throw_parse_format_exception("String contains more than one sign", __FILE__, __LINE__, __func__);
+    if (sign != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "String contains more than one sign");
     sign -= 1;
   }
   return sign;
@@ -85,20 +83,20 @@ inline void __parse_check_valid_characters(const std::basic_string<char_t>& str,
   
   for (auto c : str) {
     if (valid_characters.find(c) == std::basic_string<char_t>::npos)
-      __throw_parse_format_exception("invalid character found", __FILE__, __LINE__, __func__);
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "invalid character found");
   }
   
   if ((styles & xtd::number_styles::allow_decimal_point) == xtd::number_styles::allow_decimal_point) {
     size_t index = str.find(std::use_facet<std::numpunct<char_t>>(std::locale()).decimal_point());
     if (index != std::basic_string<char_t>::npos && str.find(std::use_facet<std::numpunct<char_t>>(std::locale()).decimal_point(), index + 1) != std::basic_string<char_t>::npos)
-      __throw_parse_format_exception("invalid character found", __FILE__, __LINE__, __func__);
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "invalid character found");
   }
   
   if ((styles & xtd::number_styles::allow_thousands) == xtd::number_styles::allow_thousands) {
     size_t index = 1;
     while ((index = str.find(std::use_facet<std::numpunct<char_t>>(std::locale()).thousands_sep(), index)) != std::basic_string<char_t>::npos) {
       if (str[index - 1] == std::use_facet<std::numpunct<char_t>>(std::locale()).thousands_sep())
-        __throw_parse_format_exception("invalid character found", __FILE__, __LINE__, __func__);
+        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "invalid character found");
       ++index;
     }
   }
@@ -107,7 +105,7 @@ inline void __parse_check_valid_characters(const std::basic_string<char_t>& str,
     size_t index = str.find('+');
     if (index == std::basic_string<char_t>::npos) index = str.find('-');
     if (index != std::basic_string<char_t>::npos && str[index - 1] != 'e' && str[index - 1] != 'E')
-      __throw_parse_format_exception("invalid character found", __FILE__, __LINE__, __func__);
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "invalid character found");
   }
 }
 
@@ -123,7 +121,7 @@ inline value_t __parse_floating_point(const std::basic_string<char_t>& str, int 
   }
   
   result = sign < 0 ? -result : result;
-  if (result < std::numeric_limits<value_t>::lowest() || result > std::numeric_limits<value_t>::max()) __throw_parse_overflow_exception(__FILE__, __LINE__, __func__);
+  if (result < std::numeric_limits<value_t>::lowest() || result > std::numeric_limits<value_t>::max()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::overflow);
   return static_cast<value_t>(result);
 }
 
@@ -139,7 +137,7 @@ inline value_t __parse_signed(const std::basic_string<char_t>& str, int base, in
   }
   
   result = sign < 0 ? -result : result;
-  if (result < std::numeric_limits<value_t>::lowest() || result > std::numeric_limits<value_t>::max()) __throw_parse_overflow_exception(__FILE__, __LINE__, __func__);
+  if (result < std::numeric_limits<value_t>::lowest() || result > std::numeric_limits<value_t>::max()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::overflow);
   return static_cast<value_t>(result);
 }
 
@@ -154,15 +152,15 @@ inline value_t __parse_unsigned(const std::basic_string<char_t>& str, int base, 
     ss >> result;
   }
   
-  if (result > std::numeric_limits<value_t>::max()) __throw_parse_overflow_exception(__FILE__, __LINE__, __func__);
+  if (result > std::numeric_limits<value_t>::max()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::overflow);
   return static_cast<value_t>(result);
 }
 
 template<class value_t, class char_t>
 inline value_t __parse_floating_point_number(const std::basic_string<char_t>& s, xtd::number_styles styles, const std::locale& locale) {
-  if ((styles & xtd::number_styles::binary_number) == xtd::number_styles::binary_number) __throw_parse_format_exception("xtd::number_styles::binary_number not supported by floating point", __FILE__, __LINE__, __func__);
-  if ((styles & xtd::number_styles::octal_number) == xtd::number_styles::octal_number) __throw_parse_format_exception("xtd::number_styles::octal_number not supported by floating point", __FILE__, __LINE__, __func__);
-  if ((styles & xtd::number_styles::hex_number) == xtd::number_styles::hex_number) __throw_parse_format_exception("xtd::number_styles::hex_number not supported by floating point", __FILE__, __LINE__, __func__);
+  if ((styles & xtd::number_styles::binary_number) == xtd::number_styles::binary_number) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "xtd::number_styles::binary_number not supported by floating point");
+  if ((styles & xtd::number_styles::octal_number) == xtd::number_styles::octal_number) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "xtd::number_styles::octal_number not supported by floating point");
+  if ((styles & xtd::number_styles::hex_number) == xtd::number_styles::hex_number) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "xtd::number_styles::hex_number not supported by floating point");
   
   auto lower_str = s;
   for (auto& c : lower_str)
@@ -186,15 +184,15 @@ inline value_t __parse_floating_point_number(const std::basic_string<char_t>& s,
   }
   
   result = sign < 0 ? -result : result;
-  if (result < std::numeric_limits<value_t>::lowest() || result > std::numeric_limits<value_t>::max()) __throw_parse_overflow_exception(__FILE__, __LINE__, __func__);
+  if (result < std::numeric_limits<value_t>::lowest() || result > std::numeric_limits<value_t>::max()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::overflow);
   return static_cast<value_t>(result);
 }
 
 template<class value_t, class char_t>
 inline value_t __parse_number(const std::basic_string<char_t>& s, xtd::number_styles styles) {
-  if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier && (styles - xtd::number_styles::binary_number) != xtd::number_styles::none) __throw_parse_format_exception("Invalid xtd::number_styles flags", __FILE__, __LINE__, __func__);
-  if ((styles & xtd::number_styles::allow_octal_specifier) == xtd::number_styles::allow_octal_specifier && (styles - xtd::number_styles::octal_number) != xtd::number_styles::none) __throw_parse_format_exception("Invalid xtd::number_styles flags", __FILE__, __LINE__, __func__);
-  if ((styles & xtd::number_styles::allow_hex_specifier) == xtd::number_styles::allow_hex_specifier && (styles - xtd::number_styles::hex_number) != xtd::number_styles::none) __throw_parse_format_exception("Invalid xtd::number_styles flags", __FILE__, __LINE__, __func__);
+  if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier && (styles - xtd::number_styles::binary_number) != xtd::number_styles::none) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid xtd::number_styles flags");
+  if ((styles & xtd::number_styles::allow_octal_specifier) == xtd::number_styles::allow_octal_specifier && (styles - xtd::number_styles::octal_number) != xtd::number_styles::none) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid xtd::number_styles flags");
+  if ((styles & xtd::number_styles::allow_hex_specifier) == xtd::number_styles::allow_hex_specifier && (styles - xtd::number_styles::hex_number) != xtd::number_styles::none) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid xtd::number_styles flags");
   
   int base = 10;
   if ((styles & xtd::number_styles::binary_number) == xtd::number_styles::binary_number) base = 2;
@@ -212,9 +210,9 @@ inline value_t __parse_number(const std::basic_string<char_t>& s, xtd::number_st
 
 template<class value_t, class char_t>
 inline value_t __parse_unsigned_number(const std::basic_string<char_t>& s, xtd::number_styles styles) {
-  if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier && (styles - xtd::number_styles::binary_number) != xtd::number_styles::none) __throw_parse_format_exception("Invalid xtd::number_styles flags", __FILE__, __LINE__, __func__);
-  if ((styles & xtd::number_styles::allow_octal_specifier) == xtd::number_styles::allow_octal_specifier && (styles - xtd::number_styles::octal_number) != xtd::number_styles::none) __throw_parse_format_exception("Invalid xtd::number_styles flags", __FILE__, __LINE__, __func__);
-  if ((styles & xtd::number_styles::allow_hex_specifier) == xtd::number_styles::allow_hex_specifier && (styles - xtd::number_styles::hex_number) != xtd::number_styles::none) __throw_parse_format_exception("Invalid xtd::number_styles flags", __FILE__, __LINE__, __func__);
+  if ((styles & xtd::number_styles::allow_binary_specifier) == xtd::number_styles::allow_binary_specifier && (styles - xtd::number_styles::binary_number) != xtd::number_styles::none) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid xtd::number_styles flags");
+  if ((styles & xtd::number_styles::allow_octal_specifier) == xtd::number_styles::allow_octal_specifier && (styles - xtd::number_styles::octal_number) != xtd::number_styles::none) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid xtd::number_styles flags");
+  if ((styles & xtd::number_styles::allow_hex_specifier) == xtd::number_styles::allow_hex_specifier && (styles - xtd::number_styles::hex_number) != xtd::number_styles::none) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid xtd::number_styles flags");
   
   int base = 10;
   if ((styles & xtd::number_styles::binary_number) == xtd::number_styles::binary_number) base = 2;
@@ -222,7 +220,7 @@ inline value_t __parse_unsigned_number(const std::basic_string<char_t>& s, xtd::
   if ((styles & xtd::number_styles::hex_number) == xtd::number_styles::hex_number) base = 16;
   
   std::basic_string<char_t> str = __parse_remove_decorations(s, styles);
-  if (__parse_remove_signs(str, styles) < 0) __throw_parse_format_exception("unsigned type can't have minus sign", __FILE__, __LINE__, __func__);
+  if (__parse_remove_signs(str, styles) < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "unsigned type can't have minus sign");
   
   __parse_check_valid_characters(str, styles);
   

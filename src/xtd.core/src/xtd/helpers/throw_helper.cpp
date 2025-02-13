@@ -7,8 +7,10 @@
 #include "../../../include/xtd/argument_out_of_range_exception.hpp"
 #include "../../../include/xtd/format_exception.hpp"
 #include "../../../include/xtd/index_out_of_range_exception.hpp"
+#include "../../../include/xtd/invalid_cast_exception.hpp"
 #include "../../../include/xtd/invalid_operation_exception.hpp"
 #include "../../../include/xtd/null_pointer_exception.hpp"
+#include "../../../include/xtd/overflow_exception.hpp"
 #include "../../../include/xtd/rank_exception.hpp"
 
 using namespace xtd;
@@ -31,8 +33,10 @@ void throw_helper::throws(exception_case ecase, const source_location& location)
     case exception_case::format_opened_bracket_without_end_bracket: throw xtd::format_exception("Invalid format expression : open bracket '}' without end bracket '{'"_t, to_stack_frame(location));
     case exception_case::format_no_start_colon: throw xtd::format_exception("Invalid format expression : format argument must be start by ':'"_t, to_stack_frame(location));
     case exception_case::index_out_of_range: throw xtd::index_out_of_range_exception(to_stack_frame(location));
+    case exception_case::invalid_cast: throw xtd::invalid_cast_exception(to_stack_frame(location));
     case exception_case::invalid_operation: throw xtd::invalid_operation_exception(to_stack_frame(location));
     case exception_case::null_pointer: throw xtd::null_pointer_exception(to_stack_frame(location));
+    case exception_case::overflow: throw xtd::overflow_exception(to_stack_frame(location));
     case exception_case::rank: throw xtd::rank_exception(to_stack_frame(location));
     default: throw xtd::exception("Invalid xtd::helpers::exception_case value", to_stack_frame(source_location::current()));
   }
@@ -49,8 +53,10 @@ void throw_helper::throws(exception_case ecase, const char* message, const sourc
     case exception_case::format_opened_bracket_without_end_bracket: throw xtd::format_exception(message, to_stack_frame(location));
     case exception_case::format_no_start_colon: throw xtd::format_exception(message, to_stack_frame(location));
     case exception_case::index_out_of_range: throw xtd::index_out_of_range_exception(message, to_stack_frame(location));
+    case exception_case::invalid_cast: throw xtd::invalid_cast_exception(message, to_stack_frame(location));
     case exception_case::invalid_operation: throw xtd::invalid_operation_exception(message, to_stack_frame(location));
     case exception_case::null_pointer: throw xtd::null_pointer_exception(message, to_stack_frame(location));
+    case exception_case::overflow: throw xtd::overflow_exception(message, to_stack_frame(location));
     case exception_case::rank: throw xtd::rank_exception(message, to_stack_frame(location));
     default: throw xtd::exception("Invalid xtd::helpers::exception_case value", to_stack_frame(source_location::current()));
   }

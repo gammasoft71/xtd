@@ -7,6 +7,7 @@
 #include "internal/__xtd_std_version.hpp"
 #undef __XTD_STD_INTERNAL__
 #define __XTD_CORE_INTERNAL__
+#include "helpers/throw_helper.hpp"
 #include "internal/__string_definitions.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include "core_export.hpp"
@@ -99,7 +100,7 @@ namespace xtd {
     template<class object_t>
     xtd::uptr<object_t> memberwise_clone() const {
       auto object_ptr = dynamic_cast<const object_t*>(this);
-      if (object_ptr == nullptr) __throw_invalid_cast_exception(__FILE__, __LINE__, __func__);
+      if (object_ptr == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       return xtd::new_uptr<object_t>(*object_ptr);
     }
     
@@ -142,9 +143,6 @@ namespace xtd {
       return &object_a == &object_b;
     }
     /// @}
-    
-  private:
-    void __throw_invalid_cast_exception(const string& file, uint32 line, const string& method) const;
   };
 }
 

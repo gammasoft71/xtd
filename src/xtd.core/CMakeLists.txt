@@ -1220,7 +1220,6 @@ add_sources(
   src/xtd/internal/__format_exception.cpp
   src/xtd/internal/__format_stringer.cpp
   src/xtd/internal/__iformatable_formatter.cpp
-  src/xtd/internal/__parse.cpp
   src/xtd/io/binary_reader.cpp
   src/xtd/io/binary_writer.cpp
   src/xtd/io/directory.cpp
