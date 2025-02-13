@@ -2,12 +2,12 @@
 
 class manual_tests static_ {
 public:
-  static auto startup(const auto& args) {
+  static auto main(const auto& args) {
     println("Hello, world!");
   }
 };
 
-startup_(manual_tests::startup);
+startup_(manual_tests::main);
 
 // This code can produces the following output:
 //

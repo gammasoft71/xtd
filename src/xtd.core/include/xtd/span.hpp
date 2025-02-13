@@ -308,7 +308,7 @@ namespace xtd {
     template<xtd::size length>
     void copy_to(span<type_t, length>& destination) const {
       if (!try_copy_to(destination))
-        throw xtd::argument_exception {};
+        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
     }
 
     /// @brief Determines whether the specified object is equal to the current object.

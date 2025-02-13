@@ -22,7 +22,7 @@ namespace xtd {
         friend xtd::forms::native::list_box;
       private:
         explicit wx_list_box(const xtd::forms::native::create_params& create_params) {
-          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t);
+          if (!create_params.parent) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "control must have a parent"_t);
           control_handler::create<wxListBox>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x, create_params.location.y), wxSize(create_params.size.width, create_params.size.height), 0, nullptr, style_to_wx_style(create_params.style, create_params.ex_style));
           #if defined(__WXMSW__)
           if (xtd::drawing::system_colors::window().get_lightness() < 0.5) {

@@ -126,7 +126,7 @@ namespace xtd {
       if (is<basic_string<char_t>>(x) && is<basic_string<char_t>>(y)) return compare(as<basic_string<char_t>>(x), as<basic_string<char_t>>(y));
       if (is<icomparable<object_t>>(x) && is<icomparable<object_t>>(y)) return as<icomparable<object_t>>(x).compare_to(y);
       if (is<object>(x) && is<object>(y) && as<object>(x) == as<object>(y)) return 0;
-      throw xtd::argument_exception {};
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
     }
     /// @cond
     int32 compare(const char_t* x, const char_t* y) const {
@@ -179,7 +179,7 @@ namespace xtd {
       if (is<basic_string<char_t>>(x) && is<basic_string<char_t>>(y)) return equals(as<basic_string<char_t>>(x), as<basic_string<char_t>>(y));
       if (is<iequatable<object_t>>(x) && is<iequatable<object_t>>(y)) return as<iequatable<object_t>>(x).equals(y);
       if (is<object>(x) && is<object>(y) && as<object>(x) == as<object>(y)) return 0;
-      throw xtd::argument_exception {};
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
     }
     /// @cond
     bool equals(const char_t* x, const char_t* y) const {

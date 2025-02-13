@@ -708,7 +708,7 @@ namespace xtd {
         /// @exception xtd::not_supported_exception The xtd::collections::generic::dictionary <key_t, value_t> is read-only.
         /// @remarks You can also use the `operator []` to add new elements by setting the value of a key that does not exist in the dictionary; for example, `my_collection["my_nonexistent_key"] = my_value`. However, if the specified key already exists in the dictionary, setting the `operator []` overwrites the old value. In contrast, the xtd::collections::generic::dictionary::add method does not modify existing elements.
         void add(const key_t& key, const value_t value) override {
-          if (!try_add(key, value)) throw xtd::argument_exception {};
+          if (!try_add(key, value)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
         }
         
         /// @brief Adds an item to the xtd::collections::generic::icollection <type_t>.
@@ -831,7 +831,7 @@ namespace xtd {
         /// @param array_index The zero-based index in `array` at which copying begins.
         /// @exception xtd::argument_exception The number of elements in the source xtd::collections::generic::icollection <type_t> is greater than the available space from `array_index` to the end of the destination `array`.
         void copy_to(xtd::array<value_type>& array, xtd::size array_index) const override {
-          if (array_index + count() > array.size()) throw xtd::argument_exception {};
+          if (array_index + count() > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
           auto index = size_type {0};
           for (const auto& item : *this)
             array[array_index + index++] = item;

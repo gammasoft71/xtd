@@ -39,7 +39,7 @@ namespace xtd {
         friend xtd::forms::native::month_calendar;
       private:
         explicit wx_month_calendar(const xtd::forms::native::create_params& create_params) {
-          if (!create_params.parent) throw xtd::argument_exception("control must have a parent"_t);
+          if (!create_params.parent) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "control must have a parent"_t);
           control_handler::create<wxMonthCalendar>(reinterpret_cast<control_handler*>(create_params.parent)->main_control(), wxID_ANY, wxPoint(create_params.location.x, create_params.location.y), wxSize(create_params.size.width, create_params.size.height), style_to_wx_style(create_params.style, create_params.ex_style));
           if ((create_params.style & MCS_NOTODAY) == MCS_NOTODAY) show_today = false;
           if ((create_params.style & MCS_NOTODAYCIRCLE) == MCS_NOTODAYCIRCLE) show_today_circle = false;

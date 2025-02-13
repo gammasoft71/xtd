@@ -14,9 +14,9 @@ struct font_family::data {
 
 font_family::font_family(const string& name) : data_(xtd::new_sptr<data>()) {
   data_->name = name;
-  if (data_->name.empty()) throw xtd::argument_exception("name is an empty string"_t);
+  if (data_->name.empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "name is an empty string"_t);
   data_->handle = native::font_family::create(name);
-  if (data_->handle == 0) throw xtd::argument_exception("name specifies a font that is not installed on the computer running the application."_t);
+  if (data_->handle == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "name specifies a font that is not installed on the computer running the application."_t);
 }
 
 font_family::font_family(text::generic_font_families generic_font_families) : data_(xtd::new_sptr<data>()) {
@@ -24,14 +24,14 @@ font_family::font_family(text::generic_font_families generic_font_families) : da
     case text::generic_font_families::serif: *this = font_family(native::font_family::generic_serif_name()); break;
     case text::generic_font_families::sans_serif: *this = font_family(native::font_family::generic_sans_serif_name()); break;
     case text::generic_font_families::monospace: *this = font_family(native::font_family::generic_monospace_name()); break;
-    default: throw xtd::argument_exception("name specifies a font that is not installed on the computer running the application."_t);
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "name specifies a font that is not installed on the computer running the application."_t);
   }
 }
 
 font_family::font_family(const string& name, const text::font_collection& font_collection) : data_(xtd::new_sptr<data>()) {
   auto font_families = font_collection.families();
   auto iterator = std::find_if(font_families.begin(), font_families.end(), [&](const font_family & font_family) {return name == font_family.name();});
-  if (iterator == font_families.end()) throw xtd::argument_exception("name specifies a font that is not a part of specified font_collection."_t);
+  if (iterator == font_families.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "name specifies a font that is not a part of specified font_collection."_t);
   *this = *iterator;
 }
 
