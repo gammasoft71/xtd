@@ -43,7 +43,7 @@ void throw_helper::throws(enum exception_case exception_case, const source_locat
     case exception_case::null_pointer: throw null_pointer_exception {to_stack_frame(location)};
     case exception_case::overflow: throw overflow_exception {to_stack_frame(location)};
     case exception_case::rank: throw rank_exception {to_stack_frame(location)};
-    default: throw exception {"Invalid xtd::helpers::exception_case value", to_stack_frame(source_location::current())};
+    default: throw argument_exception {"Invalid xtd::helpers::exception_case value"};
   }
 }
 
@@ -65,6 +65,6 @@ void throw_helper::throws(enum exception_case exception_case, const char* messag
     case exception_case::null_pointer: throw null_pointer_exception {message, to_stack_frame(location)};
     case exception_case::overflow: throw overflow_exception {message, to_stack_frame(location)};
     case exception_case::rank: throw rank_exception {message, to_stack_frame(location)};
-    default: throw exception {"Invalid xtd::helpers::exception_case value", to_stack_frame(source_location::current())};
+    default: throw argument_exception {"Invalid xtd::helpers::exception_case value"};
   }
 }
