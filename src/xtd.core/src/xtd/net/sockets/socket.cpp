@@ -65,7 +65,7 @@ socket::socket(intptr handle)  {
 
 socket::socket(const socket_information& socket_information) {
   /*data_ = xtd::new_sptr<socket::data>();*/
-  if (data_) throw not_implemented_exception {};
+  if (data_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
 }
 
 socket::socket(xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) : socket(native::socket::get_os_supports_ip_v6() ? address_family::inter_network_v6 : address_family::inter_network, socket_type, protocol_type)  {

@@ -50,7 +50,7 @@ namespace xtd {
     /// ```
     /// @remarks To improve performance, you can store the xtd::basic_string_comparer object in a local variable rather than retrieve the value of the xtd::basic_string_comparer::current_culture property multiple times.
     static basic_string_comparer current_culture() {
-      throw not_implemented_exception {};
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
       //return create(culture_info::current_culture);
     }
 
@@ -72,19 +72,19 @@ namespace xtd {
     /// @remarks To improve performance, you can store the xtd::basic_string_comparer object in a local variable rather than retrieve the value of the xtd::basic_string_comparer::current_culture_ignore_case property multiple times.
     static basic_string_comparer current_culture_ignore_case() {
       /// @todo Uncomment following lines when xtd::globalization::culture_info and xtd::globalization::compare_options are developped.
-      throw not_implemented_exception {};
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
       //return create(culture_info::current_culture, true);
     }
 
     static basic_string_comparer invariant_culture() {
       /// @todo Uncomment following lines when xtd::globalization::culture_info and xtd::globalization::compare_options are developped.
-      throw not_implemented_exception {};
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
       //return create(culture_info::invariant_culture);
     }
     
     static basic_string_comparer invariant_culture_ignore_case() {
       /// @todo Uncomment following lines when xtd::globalization::culture_info and xtd::globalization::compare_options are developped.
-      throw not_implemented_exception {};
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
       //return create(culture_info::invariant_culture, true);
     }
     
@@ -316,10 +316,10 @@ namespace xtd {
   private:
     explicit basic_string_comparer(xtd::string_comparison comparison) : comparison_ {comparison} {
       /// @todo Remove following lines when xtd::globalization::culture_info and xtd::globalization::compare_options are developped.
-      if (comparison == string_comparison::current_culture) throw not_implemented_exception {};
-      if (comparison == string_comparison::current_culture_ignore_case) throw not_implemented_exception {};
-      if (comparison == string_comparison::invariant_culture) throw not_implemented_exception {};
-      if (comparison == string_comparison::invariant_culture_ignore_case) throw not_implemented_exception {};
+      if (comparison == string_comparison::current_culture) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
+      if (comparison == string_comparison::current_culture_ignore_case) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
+      if (comparison == string_comparison::invariant_culture) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
+      if (comparison == string_comparison::invariant_culture_ignore_case) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
       
       if (!enum_object<>::is_defined(comparison)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
     }
