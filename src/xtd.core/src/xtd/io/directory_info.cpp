@@ -174,8 +174,8 @@ directory_info::file_system_info_iterator::value_type directory_info::file_syste
 const directory_info directory_info::empty;
 
 directory_info::directory_info(const xtd::string& path) {
-  if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   original_path_ = path.length() == 2 && path[1] == ':' ?  "." : path;
   refresh();
 }
@@ -207,8 +207,8 @@ void directory_info::create() {
 }
 
 directory_info directory_info::create_subdirectory(const string& path) const {
-  if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (native::file_system::is_path_too_long(path::combine(full_path_, path))) throw path_too_long_exception {};
   
   auto dir_info = directory_info {path::combine(full_path_, path)};

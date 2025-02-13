@@ -67,7 +67,7 @@ thread::thread(const xtd::threading::thread_start& start) : thread::thread(start
 }
 
 thread::thread(const xtd::threading::thread_start& start, int32 max_stack_size) : data_(xtd::new_sptr<data>()) {
-  if (start.is_empty() || max_stack_size < 0) throw argument_exception {};
+  if (start.is_empty() || max_stack_size < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   data_->managed_thread_id = generate_managed_thread_id();
   data_->thread_start = start;
   data_->max_stack_size = max_stack_size;
@@ -81,7 +81,7 @@ thread::thread(const xtd::threading::parameterized_thread_start& start) : thread
 }
 
 thread::thread(const xtd::threading::parameterized_thread_start& start, int32 max_stack_size) : data_(xtd::new_sptr<data>()) {
-  if (start.is_empty() || max_stack_size < 0) throw argument_exception {};
+  if (start.is_empty() || max_stack_size < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   data_->managed_thread_id = generate_managed_thread_id();
   data_->parameterized_thread_start = start;
   data_->max_stack_size = max_stack_size;
@@ -177,7 +177,7 @@ xtd::threading::thread_priority thread::priority() const noexcept {
 }
 
 thread& thread::priority(xtd::threading::thread_priority value) {
-  if (!enum_object<>::is_defined(value)) throw argument_exception {};
+  if (!enum_object<>::is_defined(value)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (is_aborted() || is_stopped()) throw thread_state_exception {};
   
   if (data_->priority == value) return *this;
@@ -231,7 +231,7 @@ void thread::join() {
 
 bool thread::join(int32 milliseconds_timeout) {
   if (is_unstarted()) throw thread_state_exception {};
-  if (milliseconds_timeout < timeout::infinite) throw argument_exception {};
+  if (milliseconds_timeout < timeout::infinite) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   
   if (data_->interrupted == true) interrupt_internal();
   if (!joinable()) return false;
@@ -293,7 +293,7 @@ void thread::sleep(const time_span& timeout) {
 }
 
 void thread::sleep(int32 milliseconds_timeout) {
-  if (milliseconds_timeout < timeout::infinite) throw argument_exception {};
+  if (milliseconds_timeout < timeout::infinite) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   
   auto current_thread = thread::current_thread();
   
@@ -427,7 +427,7 @@ void thread::close() {
 }
 
 bool thread::do_wait(wait_handle& wait_handle, int32 milliseconds_timeout) {
-  if (milliseconds_timeout < timeout::infinite) throw argument_exception {};
+  if (milliseconds_timeout < timeout::infinite) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   
   auto current_thread = thread::current_thread();
   if (current_thread.is_unmanaged_thread()) return wait_handle.wait(milliseconds_timeout);
@@ -518,7 +518,7 @@ bool thread::is_wait_sleep_join() const noexcept {
 }
 
 bool thread::join_all_ptr(const std::vector<thread*>& threads, int32 milliseconds_timeout) {
-  if (milliseconds_timeout < timeout::infinite) throw argument_exception {};
+  if (milliseconds_timeout < timeout::infinite) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   
   thread::yield();
   if (milliseconds_timeout == timeout::infinite) {

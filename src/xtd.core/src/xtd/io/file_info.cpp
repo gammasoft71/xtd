@@ -84,7 +84,7 @@ stream_writer file_info::create_text() const {
 
 void file_info::move_to(const xtd::string& dest_file_name) {
   if (!exists()) throw file_not_found_exception {};
-  if ((attributes() & file_attributes::directory) == file_attributes::directory) throw argument_exception {};
+  if ((attributes() & file_attributes::directory) == file_attributes::directory) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (native::file::move(full_path_, path::get_full_path(dest_file_name)) != 0)  throw io_exception {};
   
   original_path_ = dest_file_name;

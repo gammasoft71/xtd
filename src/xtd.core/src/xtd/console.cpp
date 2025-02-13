@@ -56,7 +56,7 @@ console_color console::background_color() {
 }
 
 void console::background_color(console_color color) {
-  if (!enum_object<>::is_defined(color)) throw argument_exception {};
+  if (!enum_object<>::is_defined(color)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   register_cancel_key_press(); // Must be first...
   native::console::background_color(as<int32>(color));
 }
@@ -136,7 +136,7 @@ console_color console::foreground_color() {
 
 bool console::foreground_color(console_color color) {
   register_cancel_key_press(); // Must be first...
-  if (!enum_object<>::is_defined(color)) throw argument_exception {};
+  if (!enum_object<>::is_defined(color)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   return native::console::foreground_color(as<int32>(color));
 }
 

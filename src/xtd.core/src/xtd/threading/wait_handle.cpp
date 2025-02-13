@@ -155,7 +155,7 @@ bool wait_handle::wait_one() {
 }
 
 bool wait_handle::wait_one(int32 milliseconds_timeout) {
-  if (milliseconds_timeout < timeout::infinite) throw argument_exception {};
+  if (milliseconds_timeout < timeout::infinite) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   return thread::do_wait(*this, milliseconds_timeout);
 }
 
@@ -164,7 +164,7 @@ bool wait_handle::wait_one(const time_span& timeout) {
 }
 
 bool wait_handle::wait_all(const std::vector<wait_handle*>& wait_handles, int32 milliseconds_timeout) {
-  if (milliseconds_timeout < timeout::infinite) throw argument_exception {};
+  if (milliseconds_timeout < timeout::infinite) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   
   if (milliseconds_timeout == timeout::infinite) {
     for (auto item : wait_handles)
@@ -179,7 +179,7 @@ bool wait_handle::wait_all(const std::vector<wait_handle*>& wait_handles, int32 
 }
 
 size_t wait_handle::wait_any(const std::vector<wait_handle*>& wait_handles, int32 milliseconds_timeout) {
-  if (milliseconds_timeout < timeout::infinite) throw argument_exception {};
+  if (milliseconds_timeout < timeout::infinite) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   
   if (milliseconds_timeout == timeout::infinite) {
     while (true) {

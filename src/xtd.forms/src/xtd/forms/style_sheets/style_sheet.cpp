@@ -174,7 +174,7 @@ const style_sheet& style_sheet::current_style_sheet() noexcept {
 }
 
 void style_sheet::current_style_sheet(const style_sheet& value) {
-  if (value == style_sheet::empty) throw argument_exception {};
+  if (value == style_sheet::empty) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (current_style_sheet_ != value) {
     current_style_sheet_ = value;
     on_style_sheet_changed(event_args::empty);
@@ -451,7 +451,7 @@ style_sheet style_sheet::get_style_sheet_from_name(const string& name) {
       return style_sheet(theme_css);
     }
   }
-  throw argument_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
 }
 
 style_sheet style_sheet::get_style_sheet_from_file(const string& file_name) {

@@ -596,7 +596,7 @@ namespace xtd {
         /// @remarks If the xtd::collections::generic::list <type_t> does not contain the specified value, the method returns an integer greater than xtd::collections::generic::list::count. You can apply the bitwise complement operation (~) to this integer to get the index of the first element that is larger than the search value. When inserting the value into the xtd::collections::generic::list <type_t>, this index should be used as the insertion point to maintain the sort order.
         /// @remarks This method is an O(log n) operation, where n is the number of elements in the range.
         xtd::size binary_search(xtd::size index, xtd::size count, const type_t& item, const xtd::collections::generic::icomparer<type_t>& comparer) const {
-          if (index + count > size()) throw argument_exception {};
+          if (index + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           auto first = data_->items.begin();
           auto last = data_->items.begin();
           std::advance(first, index);
@@ -870,7 +870,7 @@ namespace xtd {
         /// @remarks The xtd::predicate <type_t> is a delegate to a method that returns true if the object passed to it matches the conditions defined in the delegate. The elements of the current xtd::collections::generic::list <type_t> are individually passed to the xtd::predicate <type_t> delegate, and the elements that match the conditions are removed from the xtd::collections::generic::list <type_t>.
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
         xtd::size find_last_index(xtd::size start_index, xtd::size count, xtd::predicate<const type_t&> match) const {
-          if (count > size() || start_index - count + 1 > size()) throw argument_exception {};
+          if (count > size() || start_index - count + 1 > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           auto end_index = start_index - count;
           for (auto index = start_index; index > end_index; --index)
             if (match((*this)[index])) return index;
@@ -1301,7 +1301,7 @@ namespace xtd {
         /// @remarks This method uses xtd::array::sort, which uses the QuickSort algorithm. This implementation performs an unstable sort; that is, if two elements are equal, their order might ! be preserved. In contrast, a stable sort preserves the order of elements that are equal.
         /// @remarks On average, this method is an O(n log n) operation, where n is xtd::collections::generic::list::count; in the worst case it is an O(n ^ 2) operation.
         void sort(xtd::size index, xtd::size count, const xtd::collections::generic::icomparer<type_t>& comparer) {
-          if (index + count > size()) throw argument_exception {};
+          if (index + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
           auto first = data_->items.begin();
           auto last = data_->items.begin();
           std::advance(first, index);

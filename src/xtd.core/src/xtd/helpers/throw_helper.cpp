@@ -25,39 +25,39 @@ namespace {
 
 void throw_helper::throws(enum exception_case exception_case, const source_location& location) {
   switch (exception_case) {
-    case exception_case::argument: throw argument_exception(to_stack_frame(location));
-    case exception_case::argument_null: throw xtd::argument_null_exception(to_stack_frame(location));
+    case exception_case::argument: throw argument_exception {to_stack_frame(location)};
+    case exception_case::argument_null: throw argument_null_exception(to_stack_frame(location));
     case exception_case::argument_out_of_range: throw argument_out_of_range_exception(to_stack_frame(location));
-    case exception_case::format: throw xtd::format_exception(to_stack_frame(location));
-    case exception_case::format_closing_bracket_without_open_bracket: throw xtd::format_exception("Invalid format expression : closing bracket '{' without open bracket '}'"_t, to_stack_frame(location));
-    case exception_case::format_opened_bracket_without_end_bracket: throw xtd::format_exception("Invalid format expression : open bracket '}' without end bracket '{'"_t, to_stack_frame(location));
-    case exception_case::format_no_start_colon: throw xtd::format_exception("Invalid format expression : format argument must be start by ':'"_t, to_stack_frame(location));
-    case exception_case::index_out_of_range: throw xtd::index_out_of_range_exception(to_stack_frame(location));
-    case exception_case::invalid_cast: throw xtd::invalid_cast_exception(to_stack_frame(location));
-    case exception_case::invalid_operation: throw xtd::invalid_operation_exception(to_stack_frame(location));
-    case exception_case::null_pointer: throw xtd::null_pointer_exception(to_stack_frame(location));
-    case exception_case::overflow: throw xtd::overflow_exception(to_stack_frame(location));
-    case exception_case::rank: throw xtd::rank_exception(to_stack_frame(location));
-    default: throw xtd::exception("Invalid xtd::helpers::exception_case value", to_stack_frame(source_location::current()));
+    case exception_case::format: throw format_exception(to_stack_frame(location));
+    case exception_case::format_closing_bracket_without_open_bracket: throw format_exception("Invalid format expression : closing bracket '{' without open bracket '}'"_t, to_stack_frame(location));
+    case exception_case::format_opened_bracket_without_end_bracket: throw format_exception("Invalid format expression : open bracket '}' without end bracket '{'"_t, to_stack_frame(location));
+    case exception_case::format_no_start_colon: throw format_exception("Invalid format expression : format argument must be start by ':'"_t, to_stack_frame(location));
+    case exception_case::index_out_of_range: throw index_out_of_range_exception(to_stack_frame(location));
+    case exception_case::invalid_cast: throw invalid_cast_exception(to_stack_frame(location));
+    case exception_case::invalid_operation: throw invalid_operation_exception(to_stack_frame(location));
+    case exception_case::null_pointer: throw null_pointer_exception(to_stack_frame(location));
+    case exception_case::overflow: throw overflow_exception(to_stack_frame(location));
+    case exception_case::rank: throw rank_exception(to_stack_frame(location));
+    default: throw exception("Invalid xtd::helpers::exception_case value", to_stack_frame(source_location::current()));
   }
 }
 
 void throw_helper::throws(enum exception_case exception_case, const char* message, const source_location& location) {
   if (!message) throws(exception_case, location);
   else switch (exception_case) {
-    case exception_case::argument: throw xtd::argument_exception {message, to_stack_frame(location)};
-    case exception_case::argument_null: throw xtd::argument_null_exception(message, to_stack_frame(location));
-    case exception_case::argument_out_of_range: throw xtd::argument_out_of_range_exception(message, to_stack_frame(location));
-    case exception_case::format: throw xtd::format_exception(message, to_stack_frame(location));
-    case exception_case::format_closing_bracket_without_open_bracket: throw xtd::format_exception(message, to_stack_frame(location));
-    case exception_case::format_opened_bracket_without_end_bracket: throw xtd::format_exception(message, to_stack_frame(location));
-    case exception_case::format_no_start_colon: throw xtd::format_exception(message, to_stack_frame(location));
-    case exception_case::index_out_of_range: throw xtd::index_out_of_range_exception(message, to_stack_frame(location));
-    case exception_case::invalid_cast: throw xtd::invalid_cast_exception(message, to_stack_frame(location));
-    case exception_case::invalid_operation: throw xtd::invalid_operation_exception(message, to_stack_frame(location));
-    case exception_case::null_pointer: throw xtd::null_pointer_exception(message, to_stack_frame(location));
-    case exception_case::overflow: throw xtd::overflow_exception(message, to_stack_frame(location));
-    case exception_case::rank: throw xtd::rank_exception(message, to_stack_frame(location));
-    default: throw xtd::exception("Invalid xtd::helpers::exception_case value", to_stack_frame(source_location::current()));
+    case exception_case::argument: throw argument_exception {message, to_stack_frame(location)};
+    case exception_case::argument_null: throw argument_null_exception(message, to_stack_frame(location));
+    case exception_case::argument_out_of_range: throw argument_out_of_range_exception(message, to_stack_frame(location));
+    case exception_case::format: throw format_exception(message, to_stack_frame(location));
+    case exception_case::format_closing_bracket_without_open_bracket: throw format_exception(message, to_stack_frame(location));
+    case exception_case::format_opened_bracket_without_end_bracket: throw format_exception(message, to_stack_frame(location));
+    case exception_case::format_no_start_colon: throw format_exception(message, to_stack_frame(location));
+    case exception_case::index_out_of_range: throw index_out_of_range_exception(message, to_stack_frame(location));
+    case exception_case::invalid_cast: throw invalid_cast_exception(message, to_stack_frame(location));
+    case exception_case::invalid_operation: throw invalid_operation_exception(message, to_stack_frame(location));
+    case exception_case::null_pointer: throw null_pointer_exception(message, to_stack_frame(location));
+    case exception_case::overflow: throw overflow_exception(message, to_stack_frame(location));
+    case exception_case::rank: throw rank_exception(message, to_stack_frame(location));
+    default: throw exception("Invalid xtd::helpers::exception_case value", to_stack_frame(source_location::current()));
   }
 }

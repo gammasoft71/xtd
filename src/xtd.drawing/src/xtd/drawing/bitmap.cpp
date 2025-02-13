@@ -85,7 +85,7 @@ bitmap_data bitmap::lock_bits(const rectangle& rect, image_lock_mode flags, enum
 }
 
 bitmap_data bitmap::lock_bits(const rectangle& rect, image_lock_mode flags, enum pixel_format format, const bitmap_data& data) {
-  if (format == pixel_format::indexed || format == pixel_format::gdi) throw argument_exception {};
+  if (format == pixel_format::indexed || format == pixel_format::gdi) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   auto image_data_height = data.height;
   auto image_data_pixel_format = static_cast<int32>(data.pixel_format);
   auto image_data_reserved = data.reserved;

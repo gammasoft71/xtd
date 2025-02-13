@@ -11,8 +11,8 @@ using namespace xtd;
 using namespace xtd::io;
 
 binary_writer::binary_writer(const string& path) : stream_(new std::ofstream(path, std::ios::out | std::ios::binary | std::ios_base::trunc)), delete_when_destroy_(true) {
-  if (path.index_of_any(path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!file::exists(path)) throw file_not_found_exception {};
   if ((file::get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {};
   if (!dynamic_cast<std::ofstream*>(stream_)->is_open() || !stream_->good()) throw io_exception {};
@@ -72,7 +72,7 @@ void binary_writer::write(const std::vector<xtd::byte>& buffer) {
 
 void binary_writer::write(const std::vector<xtd::byte>& buffer, size_t index, size_t count) {
   if (!stream_) throw io_exception {};
-  if (index + count > buffer.size()) throw argument_exception {};
+  if (index + count > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   for (auto i = index; i < (index + count); ++i)
     write(buffer[i]);
 }
@@ -83,7 +83,7 @@ void binary_writer::write(const std::vector<char>& buffer) {
 
 void binary_writer::write(const std::vector<char>& buffer, size_t index, size_t count) {
   if (!stream_) throw io_exception {};
-  if (index + count > buffer.size()) throw argument_exception {};
+  if (index + count > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   for (auto i = index; i < (index + count); ++i)
     write(buffer[i]);
 }

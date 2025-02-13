@@ -10,7 +10,7 @@ using namespace xtd;
 using namespace xtd::io;
 
 binary_reader::binary_reader(const string& path) : stream_(new std::ifstream(path, std::ios::binary)), delete_when_destroy_(true) {
-  if (path.trim(' ').length() == 0 || path.index_of_any(io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
+  if (path.trim(' ').length() == 0 || path.index_of_any(io::path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!file::exists(path)) throw file_not_found_exception {};
 }
 
@@ -63,7 +63,7 @@ int32 binary_reader::read() {
 }
 
 size_t binary_reader::read(std::vector<xtd::byte>& buffer, size_t index, size_t count) {
-  if (index + count > buffer.size()) throw argument_exception {};
+  if (index + count > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
     if (current == EOF) return i;
@@ -73,7 +73,7 @@ size_t binary_reader::read(std::vector<xtd::byte>& buffer, size_t index, size_t 
 }
 
 size_t binary_reader::read(std::vector<char>& buffer, size_t index, size_t count) {
-  if (index + count > buffer.size()) throw argument_exception {};
+  if (index + count > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
     if (current == EOF) return i;

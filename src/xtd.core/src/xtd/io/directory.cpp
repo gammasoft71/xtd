@@ -148,8 +148,8 @@ bool directory::file_system_entry_iterator::equals(const directory::file_system_
 }
 
 directory_info directory::create_directory(const string& path) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
   if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
   
@@ -167,8 +167,8 @@ directory::directory_iterator directory::enumerate_directories(const string& pat
 }
 
 directory::directory_iterator directory::enumerate_directories(const string& path, const string& search_pattern) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
   if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
   if (!exists(path)) throw directory_not_found_exception {};
@@ -181,8 +181,8 @@ directory::file_iterator directory::enumerate_files(const string& path) {
 }
 
 directory::file_iterator directory::enumerate_files(const string& path, const string& search_pattern) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
   if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
   if (!exists(path)) throw directory_not_found_exception {};
@@ -195,8 +195,8 @@ directory::file_system_entry_iterator directory::enumerate_file_system_entries(c
 }
 
 directory::file_system_entry_iterator directory::enumerate_file_system_entries(const string& path, const string& search_pattern) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
   if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
   if (!exists(path)) throw directory_not_found_exception {};
@@ -209,8 +209,8 @@ bool directory::exists(const string& path) {
 }
 
 date_time directory::get_creation_time(const string& path) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
   if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
   if (!exists(path)) throw directory_not_found_exception {};
@@ -254,8 +254,8 @@ std::vector<string> directory::get_file_system_entries(const string& path, const
 }
 
 date_time directory::get_last_access_time(const string& path) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
   if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
   if (!exists(path)) throw directory_not_found_exception {};
@@ -265,8 +265,8 @@ date_time directory::get_last_access_time(const string& path) {
 }
 
 date_time directory::get_last_write_time(const string& path) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
   if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
   if (!exists(path)) throw directory_not_found_exception {};
@@ -287,8 +287,8 @@ directory_info directory::get_parent(const string& path) {
 }
 
 xtd::io::file_permissions directory::get_permissions(const string& path) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
   if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
   if (!exists(path)) throw directory_not_found_exception {};
@@ -299,8 +299,8 @@ xtd::io::file_permissions directory::get_permissions(const string& path) {
 }
 
 void directory::move(const string& src, const string& dst) {
-  if (src.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
-  if (src.empty() || src.trim(' ').empty()) throw argument_exception {};
+  if (src.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (src.empty() || src.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (native::file_system::is_path_too_long(src)) throw path_too_long_exception {};
   if (!exists(src)) throw directory_not_found_exception {};
   
@@ -309,8 +309,8 @@ void directory::move(const string& src, const string& dst) {
 }
 
 void directory::remove(const string& path) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
   if (!exists(path)) throw directory_not_found_exception {};
   
@@ -322,40 +322,40 @@ void directory::remove(const string& path, bool recursive) {
 }
 
 void directory::set_creation_time(const xtd::string& path, const xtd::date_time& creation_time) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
   if (!exists(path)) throw directory_not_found_exception {};
   if (native::file_system::set_creation_time(path, creation_time.to_time_t()) != 0) throw io_exception {};
 }
 
 void directory::set_current_directory(const string& path) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (exists(path) && (file::get_attributes(path) & file_attributes::directory) != file_attributes::directory) throw io_exception {};
   if (!exists(path)) throw directory_not_found_exception {};
   if (native::directory::set_current_directory(path) != 0) throw io_exception {};
 }
 
 void directory::set_last_access_time(const xtd::string& path, const xtd::date_time& last_access_time) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
   if (!exists(path)) throw directory_not_found_exception {};
   if (native::file_system::set_last_access_time(path, last_access_time.to_time_t()) != 0) throw io_exception {};
 }
 
 void directory::set_last_write_time(const xtd::string& path, const xtd::date_time& last_write_time) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
   if (!exists(path)) throw directory_not_found_exception {};
   if (native::file_system::set_last_write_time(path, last_write_time.to_time_t()) != 0) throw io_exception {};
 }
 
 void directory::set_permissions(const xtd::string& path, xtd::io::file_permissions permissions) {
-  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw argument_exception {};
-  if (path.empty() || path.trim(' ').empty()) throw argument_exception {};
+  if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (native::file_system::is_path_too_long(path)) throw path_too_long_exception {};
   if (!exists(path)) throw directory_not_found_exception {};
   if (native::file_system::set_permissions(path, static_cast<int32>(permissions)) != 0) throw io_exception {};

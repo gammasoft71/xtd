@@ -421,7 +421,7 @@ xtd::byte convert::to_byte(const string& value, xtd::byte from_base) {
     case 8: return parse<xtd::byte>(value, number_styles::octal_number); break;
     case 10: return parse<xtd::byte>(value, number_styles::integer); break;
     case 16: return parse<xtd::byte>(value, number_styles::hex_number); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -1976,7 +1976,7 @@ int16 convert::to_int16(const string& value, xtd::byte from_base) {
     case 8: return parse<int16>(value, number_styles::octal_number); break;
     case 10: return parse<int16>(value, number_styles::integer); break;
     case 16: return parse<int16>(value, number_styles::hex_number); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -2147,7 +2147,7 @@ int32 convert::to_int32(const string& value, xtd::byte from_base) {
     case 8: return parse<int32>(value, number_styles::octal_number); break;
     case 10: return parse<int32>(value, number_styles::integer); break;
     case 16: return parse<int32>(value, number_styles::hex_number); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -2313,7 +2313,7 @@ int64 convert::to_int64(const string& value, xtd::byte from_base) {
     case 8: return parse<int64>(value, number_styles::octal_number); break;
     case 10: return parse<int64>(value, number_styles::integer); break;
     case 16: return parse<int64>(value, number_styles::hex_number); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -2479,7 +2479,7 @@ slong convert::to_llong(const string& value, xtd::byte from_base) {
     case 8: return parse<slong>(value, number_styles::octal_number); break;
     case 10: return parse<slong>(value, number_styles::integer); break;
     case 16: return parse<slong>(value, number_styles::hex_number); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -2657,7 +2657,7 @@ sbyte convert::to_sbyte(const string& value, xtd::byte from_base) {
     case 8: return parse<sbyte>(value, number_styles::octal_number); break;
     case 10: return parse<sbyte>(value, number_styles::integer); break;
     case 16: return parse<sbyte>(value, number_styles::hex_number); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -2833,7 +2833,7 @@ uint16 convert::to_uint16(const string& value, xtd::byte from_base) {
     case 8: return parse<uint16>(value, number_styles::octal_number); break;
     case 10: return parse<uint16>(value, number_styles::integer); break;
     case 16: return parse<uint16>(value, number_styles::hex_number); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -3007,7 +3007,7 @@ uint32 convert::to_uint32(const string& value, xtd::byte from_base) {
     case 8: return parse<uint32>(value, number_styles::octal_number); break;
     case 10: return parse<uint32>(value, number_styles::integer); break;
     case 16: return parse<uint32>(value, number_styles::hex_number); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -3183,7 +3183,7 @@ uint64 convert::to_uint64(const string& value, xtd::byte from_base) {
     case 8: return parse<uint64>(value, number_styles::octal_number); break;
     case 10: return parse<uint64>(value, number_styles::integer); break;
     case 16: return parse<uint64>(value, number_styles::hex_number); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -3351,7 +3351,7 @@ xtd::ulong convert::to_ullong(const string& value, xtd::byte from_base) {
     case 8: return parse<xtd::ulong>(value, number_styles::octal_number); break;
     case 10: return parse<xtd::ulong>(value, number_styles::integer); break;
     case 16: return parse<xtd::ulong>(value, number_styles::hex_number); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -3437,7 +3437,7 @@ string convert::to_string(xtd::byte value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -3485,7 +3485,7 @@ string convert::to_string(int16 value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -3499,7 +3499,7 @@ string convert::to_string(int32 value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -3513,7 +3513,7 @@ string convert::to_string(int64 value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -3527,7 +3527,7 @@ string convert::to_string(slong value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -3541,7 +3541,7 @@ string convert::to_string(sbyte value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -3555,7 +3555,7 @@ string convert::to_string(uint16 value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -3569,7 +3569,7 @@ string convert::to_string(uint32 value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -3583,7 +3583,7 @@ string convert::to_string(uint64 value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 
@@ -3597,7 +3597,7 @@ string convert::to_string(xtd::ulong value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: throw argument_exception {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   }
 }
 

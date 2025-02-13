@@ -200,7 +200,7 @@ process& process::priority_class(process_priority_class value) {
   data_->priority_class_ = value;
   auto priorities = std::map<process_priority_class, int32> {{process_priority_class::idle, IDLE_PRIORITY_CLASS}, {process_priority_class::below_normal, BELOW_NORMAL_PRIORITY_CLASS}, {process_priority_class::normal, NORMAL_PRIORITY_CLASS}, {process_priority_class::above_normal, ABOVE_NORMAL_PRIORITY_CLASS}, {process_priority_class::high, HIGH_PRIORITY_CLASS}, {process_priority_class::real_time, REALTIME_PRIORITY_CLASS}};
   auto it = priorities.find(value);
-  if (it == priorities.end()) throw argument_exception {};
+  if (it == priorities.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (native::process::priority_class(data_->handle_.value(), it->second) == false) throw invalid_operation_exception {};
   return *this;
 }

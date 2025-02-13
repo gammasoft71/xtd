@@ -321,7 +321,7 @@ namespace xtd {
       if (comparison == string_comparison::invariant_culture) throw not_implemented_exception {};
       if (comparison == string_comparison::invariant_culture_ignore_case) throw not_implemented_exception {};
       
-      if (!enum_object<>::is_defined(comparison)) throw argument_exception {};
+      if (!enum_object<>::is_defined(comparison)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
     }
     /// @todo Uncomment following lines when xtd::globalization::culture_info and xtd::globalization::compare_options are developped.
     /*

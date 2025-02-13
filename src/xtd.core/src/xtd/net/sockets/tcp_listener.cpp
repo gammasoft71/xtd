@@ -94,7 +94,7 @@ tcp_listener tcp_listener::create(uint16 port) {
 
 xtd::net::sockets::socket tcp_listener::end_accept_socket(xtd::sptr<xtd::iasync_result> async_result) {
   if (async_result == nullptr) throw argument_null_exception {};
-  if (!is<async_result_accept_socket>(async_result)) throw argument_exception {};
+  if (!is<async_result_accept_socket>(async_result)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   async_result->async_wait_handle().wait_one();
   if (as<async_result_accept_socket>(async_result)->exception_) rethrow_exception(as<async_result_accept_socket>(async_result)->exception_);
   return as<async_result_accept_socket>(async_result)->socket_;
@@ -102,7 +102,7 @@ xtd::net::sockets::socket tcp_listener::end_accept_socket(xtd::sptr<xtd::iasync_
 
 xtd::net::sockets::tcp_client tcp_listener::end_accept_tcp_client(xtd::sptr<xtd::iasync_result> async_result) {
   if (async_result == nullptr) throw argument_null_exception {};
-  if (!is<async_result_accept_tcp_client>(async_result)) throw argument_exception {};
+  if (!is<async_result_accept_tcp_client>(async_result)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   async_result->async_wait_handle().wait_one();
   if (as<async_result_accept_tcp_client>(async_result)->exception_) rethrow_exception(as<async_result_accept_tcp_client>(async_result)->exception_);
   return as<async_result_accept_tcp_client>(async_result)->tcp_client_;
