@@ -130,11 +130,3 @@ const enumerable::ienumerable<int32>& enumerable::range(int32 start, int32 count
     result.items.push_back(index);
   return result;
 }
-
-void enumerable::throw_argument_out_of_range_exception() {
-  throw argument_out_of_range_exception {};
-}
-
-void enumerable::throw_invalid_operation_exception() {
-  throw invalid_operation_exception {};
-}

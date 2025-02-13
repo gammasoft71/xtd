@@ -767,8 +767,6 @@ namespace xtd {
       static const list<source_t>& collection_to_list(const collection_t& source) noexcept;
       template<class source_t, class input_iterator_t>
       static const list<source_t>& input_iterator_to_list(input_iterator_t first, input_iterator_t last) noexcept;
-      static void throw_argument_out_of_range_exception();
-      static void throw_invalid_operation_exception();
     };
   }
 }
