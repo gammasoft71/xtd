@@ -34,7 +34,6 @@ namespace xtd {
   inline value_t parse(const std::string& str) {
     if (std::is_enum<value_t>::value) return __parse_enum<value_t>(str);
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Parse specialisation not found");
-    return {};
   }
   
   /// @brief Convert a string into a type.

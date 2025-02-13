@@ -2,12 +2,6 @@
 /// @brief Contains xtd::helpers::exception_case enum class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-/// @cond
-#if !defined(__XTD_CORE_INTERNAL__)
-#error "Do not include this file: Internal use only"
-#endif
-/// @endcond
-
 #include "../internal/__xtd_source_location.hpp"
 #include "exception_case.hpp"
 
@@ -29,7 +23,6 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core helpers
-    /// @warning Internal use only
     class throw_helper {
     public:
       /// @brief Represents the internal source location type.
@@ -41,14 +34,14 @@ namespace xtd {
       /// @endcond
       
       /// @brief Throws an exption with specified exception case.
-      /// @param ecase One of xtd::helpers::exception_case values.
+      /// @param exception_case One of xtd::helpers::exception_case values.
       /// @warning Internal use only
-      static void throws(xtd::helpers::exception_case ecase, const source_location& location = source_location::current());
+      [[noreturn]] static void throws(xtd::helpers::exception_case exception_case, const source_location& location = source_location::current());
       /// @brief Throws an exption with specified exception case, and message.
-      /// @param ecase One of xtd::helpers::exception_case values.
+      /// @param exception_case One of xtd::helpers::exception_case values.
       /// @param message The message associate to the exception.
       /// @warning Internal use only
-      static void throws(xtd::helpers::exception_case ecase, const char* message, const source_location& location = source_location::current());
+      [[noreturn]] static void throws(xtd::helpers::exception_case exception_case, const char* message, const source_location& location = source_location::current());
     };
   }
 }

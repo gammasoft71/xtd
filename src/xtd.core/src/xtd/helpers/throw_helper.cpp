@@ -23,8 +23,8 @@ namespace {
   }
 }
 
-void throw_helper::throws(exception_case ecase, const source_location& location) {
-  switch (ecase) {
+void throw_helper::throws(enum exception_case exception_case, const source_location& location) {
+  switch (exception_case) {
     case exception_case::argument: throw argument_exception(to_stack_frame(location));
     case exception_case::argument_null: throw xtd::argument_null_exception(to_stack_frame(location));
     case exception_case::argument_out_of_range: throw argument_out_of_range_exception(to_stack_frame(location));
@@ -42,10 +42,10 @@ void throw_helper::throws(exception_case ecase, const source_location& location)
   }
 }
 
-void throw_helper::throws(exception_case ecase, const char* message, const source_location& location) {
-  if (!message) throws(ecase, location);
-  else switch (ecase) {
-    case exception_case::argument: throw xtd::argument_exception(message, to_stack_frame(location));
+void throw_helper::throws(enum exception_case exception_case, const char* message, const source_location& location) {
+  if (!message) throws(exception_case, location);
+  else switch (exception_case) {
+    case exception_case::argument: throw xtd::argument_exception {message, to_stack_frame(location)};
     case exception_case::argument_null: throw xtd::argument_null_exception(message, to_stack_frame(location));
     case exception_case::argument_out_of_range: throw xtd::argument_out_of_range_exception(message, to_stack_frame(location));
     case exception_case::format: throw xtd::format_exception(message, to_stack_frame(location));
