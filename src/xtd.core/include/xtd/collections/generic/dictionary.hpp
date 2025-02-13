@@ -1030,7 +1030,7 @@ namespace xtd {
             explicit internal_enumerator(const dictionary& items, size_type version) : items_(items), version_(version) {}
             
             const value_type& current() const override {
-              if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute."};
+              if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               if (iterator_ != items_.items().cend()) {
                 static thread_local auto value = value_type {};
                 value = value_type {*iterator_};
@@ -1041,7 +1041,7 @@ namespace xtd {
             }
             
             bool move_next() override {
-              if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute."};
+              if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
               if (!reset_) return ++iterator_ != items_.items().cend();
               reset_ = false;
               iterator_ = items_.items().cbegin();

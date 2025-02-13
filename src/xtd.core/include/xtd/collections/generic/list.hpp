@@ -95,14 +95,14 @@ namespace xtd {
           explicit __enumerator__(const list& items, xtd::size version) : items_(items), version_(version) {}
           
           const type_t& current() const override {
-            if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute."};
+            if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
             if (index_ < items_.count()) return items_[index_];
             static thread_local auto default_value = value_type {};
             return default_value;
           }
           
           bool move_next() override {
-            if (version_ != items_.data_->version) throw xtd::invalid_operation_exception {"Collection was modified; enumeration operation may not execute."};
+            if (version_ != items_.data_->version) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Collection was modified; enumeration operation may not execute.");
             return ++index_ < items_.count();
           }
           
