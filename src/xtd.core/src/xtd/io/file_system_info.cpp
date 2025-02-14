@@ -18,7 +18,7 @@ file_attributes file_system_info::attributes() const {
 file_system_info& file_system_info::attributes(file_attributes value) {
   auto result = native::file_system::set_attributes(full_path_, as<int32>(value));
   if (result == -1) throw platform_not_supported_exception {};
-  if (result != 0) throw io_exception {};
+  if (result != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
   attributes_ = value;
   return *this;
 }
@@ -30,7 +30,7 @@ const date_time& file_system_info::creation_time() const {
 file_system_info& file_system_info::creation_time(const date_time& value) {
   auto result = native::file_system::set_creation_time(full_path_, value.to_time_t());
   if (result == -1) throw platform_not_supported_exception {};
-  if (result != 0) throw io_exception {};
+  if (result != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
   creation_time_ = value;
   return *this;
 }
@@ -58,7 +58,7 @@ const date_time& file_system_info::last_access_time() const {
 file_system_info& file_system_info::last_access_time(const date_time& value) {
   auto result = native::file_system::set_last_access_time(full_path_, value.to_time_t());
   if (result == -1) throw platform_not_supported_exception {};
-  if (result != 0) throw io_exception {};
+  if (result != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
   last_access_time_ = value;
   return *this;
 }
@@ -78,7 +78,7 @@ const date_time& file_system_info::last_write_time() const {
 file_system_info& file_system_info::last_write_time(const date_time& value) {
   auto result = native::file_system::set_last_write_time(full_path_, value.to_time_t());
   if (result == -1) throw platform_not_supported_exception {};
-  if (result != 0) throw io_exception {};
+  if (result != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
   last_write_time_ = value;
   return *this;
 }
@@ -98,7 +98,7 @@ file_permissions file_system_info::permissions() const {
 file_system_info& file_system_info::permissions(file_permissions value) {
   auto result = native::file_system::set_permissions(full_path_, as<int32>(value));
   if (result == -1) throw platform_not_supported_exception {};
-  if (result != 0) throw io_exception {};
+  if (result != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
   permissions_ = value;
   return *this;
 }
