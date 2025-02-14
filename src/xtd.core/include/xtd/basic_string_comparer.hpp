@@ -215,7 +215,7 @@ namespace xtd {
     xtd::size get_hash_code(const object_t& obj) const  {
       if (is<basic_string<char_t>>(obj)) return get_hash_code(as<basic_string<char_t>>(obj));
       if (is<object>(obj)) return as<object>(obj).get_hash_code();
-      throw xtd::hash_code::combine(obj);
+      return xtd::hash_code::combine(obj);
     }
     /// @cond
     xtd::size get_hash_code(const char_t* obj) const {return get_hash_code(basic_string<char_t> {obj});}
