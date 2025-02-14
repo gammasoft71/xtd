@@ -15,7 +15,7 @@ var searchData=
   ['oem_5fbackslash_12',['oem_backslash',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea507317172339f662910ffb52ed86f582',1,'xtd::forms']]],
   ['oem_5fclear_13',['oem_clear',['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ab81d4eee04dd57bb73fbcbc9b364d53d',1,'xtd::oem_clear'],['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deab81d4eee04dd57bb73fbcbc9b364d53d',1,'xtd::forms::oem_clear']]],
   ['oem_5fclose_5fbrackets_14',['oem_close_brackets',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deacf13f859a388322fe77cd5a1cf9a9475',1,'xtd::forms']]],
-  ['oem_5fcomma_15',['oem_comma',['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ac6e8d8ba1191b61dfdc23d7e224edf3e',1,'xtd::oem_comma'],['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac6e8d8ba1191b61dfdc23d7e224edf3e',1,'xtd::forms::oem_comma']]],
+  ['oem_5fcomma_15',['oem_comma',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deac6e8d8ba1191b61dfdc23d7e224edf3e',1,'xtd::forms::oem_comma'],['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ac6e8d8ba1191b61dfdc23d7e224edf3e',1,'xtd::oem_comma']]],
   ['oem_5fminus_16',['oem_minus',['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9b8bc9b0b9d7c7be8b4c688d3b084365',1,'xtd::oem_minus'],['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea9b8bc9b0b9d7c7be8b4c688d3b084365',1,'xtd::forms::oem_minus']]],
   ['oem_5fopen_5fbrackets_17',['oem_open_brackets',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea002bc1bb96caaecc43aa470e12984ead',1,'xtd::forms']]],
   ['oem_5fperiod_18',['oem_period',['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a601779946664176dabc64f06cd7aea1c',1,'xtd::oem_period'],['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea601779946664176dabc64f06cd7aea1c',1,'xtd::forms::oem_period']]],
@@ -83,10 +83,11 @@ var searchData=
   ['out_5fof_5fband_5finline_80',['out_of_band_inline',['../group__xtd__core.html#ggaac9f71cf2a0b71c1b99cab47f8abc4cbabcb38c56f674ce217c23c4944a5082b9',1,'xtd::net::sockets']]],
   ['outlined_5fdiamond_81',['outlined_diamond',['../group__xtd__drawing.html#ggae7711973ea9941238900716fbd331fccaece4f3488da39fdbcb8ac4e98c56e297',1,'xtd::drawing::drawing_2d']]],
   ['outset_82',['outset',['../group__xtd__drawing.html#gga1fa23df0cbf09589187247035b61b504a7e9a8014e9a9073a06e9602c54bb2173',1,'xtd::drawing::drawing_2d::outset'],['../group__xtd__forms.html#gga663fa5bbff2ea7ea9ece8563a188a1c6a7e9a8014e9a9073a06e9602c54bb2173',1,'xtd::forms::outset'],['../group__xtd__forms.html#gga37ab2b016bef74fa42812b6dc69b4c9aa7e9a8014e9a9073a06e9602c54bb2173',1,'xtd::forms::outset'],['../group__style__sheets.html#ggaf113fb84f70cd93a23dd95e91bbebdd4a7e9a8014e9a9073a06e9602c54bb2173',1,'xtd::forms::style_sheets::outset']]],
-  ['overline_83',['overline',['../group__style__sheets.html#gga54167367c919f2f359cf55d34ee71c44a1e1ba9e565c8eaad8141c31ec521d762',1,'xtd::forms::style_sheets']]],
-  ['owner_5fall_84',['owner_all',['../group__xtd__core.html#ggac1ad31e82b8a9af93776488ad7c14843a3e6083e076d1f7125c0bbf7070df5440',1,'xtd::io']]],
-  ['owner_5fdraw_85',['owner_draw',['../group__xtd__forms.html#gga57070ef804d401fead746fcd411d02ccaaf6283d5bd545faad64aad281d4c47f9',1,'xtd::forms']]],
-  ['owner_5fexecute_86',['owner_execute',['../group__xtd__core.html#ggac1ad31e82b8a9af93776488ad7c14843a873db9455356e7092827b83f9321bde6',1,'xtd::io']]],
-  ['owner_5fread_87',['owner_read',['../group__xtd__core.html#ggac1ad31e82b8a9af93776488ad7c14843a13804bd89bd86850b7c1b3cf17148c8b',1,'xtd::io']]],
-  ['owner_5fwrite_88',['owner_write',['../group__xtd__core.html#ggac1ad31e82b8a9af93776488ad7c14843a0d521a25ebf962a812b43c32fe36500e',1,'xtd::io']]]
+  ['overflow_83',['overflow',['../group__helpers.html#gga9449ffb8e13ad8c25c987085078568dca0bd9f6dd716003f3818d15d2e211ee73',1,'xtd::helpers']]],
+  ['overline_84',['overline',['../group__style__sheets.html#gga54167367c919f2f359cf55d34ee71c44a1e1ba9e565c8eaad8141c31ec521d762',1,'xtd::forms::style_sheets']]],
+  ['owner_5fall_85',['owner_all',['../group__xtd__core.html#ggac1ad31e82b8a9af93776488ad7c14843a3e6083e076d1f7125c0bbf7070df5440',1,'xtd::io']]],
+  ['owner_5fdraw_86',['owner_draw',['../group__xtd__forms.html#gga57070ef804d401fead746fcd411d02ccaaf6283d5bd545faad64aad281d4c47f9',1,'xtd::forms']]],
+  ['owner_5fexecute_87',['owner_execute',['../group__xtd__core.html#ggac1ad31e82b8a9af93776488ad7c14843a873db9455356e7092827b83f9321bde6',1,'xtd::io']]],
+  ['owner_5fread_88',['owner_read',['../group__xtd__core.html#ggac1ad31e82b8a9af93776488ad7c14843a13804bd89bd86850b7c1b3cf17148c8b',1,'xtd::io']]],
+  ['owner_5fwrite_89',['owner_write',['../group__xtd__core.html#ggac1ad31e82b8a9af93776488ad7c14843a0d521a25ebf962a812b43c32fe36500e',1,'xtd::io']]]
 ];
