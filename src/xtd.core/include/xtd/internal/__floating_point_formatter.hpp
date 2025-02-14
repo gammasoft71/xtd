@@ -10,10 +10,10 @@
 #include "__binary_formatter.hpp"
 #include "__character_formatter.hpp"
 #include "__currency_formatter.hpp"
-#include "__format_exception.hpp"
 #include "__hexfloat_formatter.hpp"
 #include "__natural_formatter.hpp"
 #include "__sprintf.hpp"
+#include "../helpers/throw_helper.hpp"
 #include <algorithm>
 #include <cstring>
 #include <vector>
@@ -96,13 +96,13 @@ inline std::basic_string<char_t> __floating_point_formatter(const std::basic_str
   
   std::vector<char_t> possible_formats {'b', 'B', 'c', 'C', 'e', 'E', 'f', 'F', 'g', 'G', 'n', 'N', 'p', 'P', 'x', 'X'};
   if (fmt.size() > 3 || std::find(possible_formats.begin(), possible_formats.end(), fmt[0]) == possible_formats.end() || (fmt.size() >= 2 && !std::isdigit(fmt[1])) || (fmt.size() == 3 && !std::isdigit(fmt[2])))
-    __format_exception("Custom format not yet implemented");
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Custom format not yet implemented");
     
   int precision = 0;
   try {
     if (fmt.size() > 1) precision = std::stoi(fmt.substr(1));
   } catch (...) {
-    __format_exception("Invalid format expression");
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format expression");
   }
   if ((fmt[0] == 'f' || fmt[0] == 'F' || fmt[0] == 'n' || fmt[0] == 'N' || fmt[0] == 'p' || fmt[0] == 'P' || fmt[0] == 'r' || fmt[0] == 'R') && fmt.size() == 1) precision = 2;
   if ((fmt[0] == 'e' || fmt[0] == 'E') && fmt.size() == 1) precision = 6;
@@ -126,7 +126,7 @@ inline std::basic_string<char_t> __floating_point_formatter(const std::basic_str
     case 'P': return __sprintf((fmt_str + char_t('F')).c_str(), precision, static_cast<long double>(value * 100)) + std::basic_string<char_t>({char_t(' '), char_t('%')});
     case 'x':
     case 'X': return __hexfloat_formatter<char_t>(static_cast<long double>(value), precision, loc);
-    default: __format_exception("Invalid format expression"); return {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format expression");
   }
 }
 /// @endcond

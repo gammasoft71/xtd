@@ -369,7 +369,7 @@ string time_span::to_string(const string& format, const std::locale& loc) const 
     case 'S': return string::format("{:d2}", math::abs(seconds()));
     case 't': return string::format("{0:d}", math::abs(ticks() % ticks_per_second));
     case 'T': return string::format("{:d7}", math::abs(ticks() % ticks_per_second));
-    default: throw xtd::format_exception("Invalid format");
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format");
   }
 }
 

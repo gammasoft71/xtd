@@ -7,8 +7,8 @@
 #endif
 /// @endcond
 
+#include "../helpers/throw_helper.hpp"
 #include "../types.hpp"
-#include "__format_exception.hpp"
 #include "__sprintf.hpp"
 
 /// @cond
@@ -33,7 +33,7 @@ inline std::basic_string<char_t> __to_string(const char_t* fmt, const std::tm& v
 
 inline std::string __date_time_formatter(std::string fmt, const std::tm& time, xtd::uint32 nanoseconds, const std::locale& loc) {
   if (fmt.empty()) fmt = "G";
-  if (fmt.size() > 1) __format_exception("Invalid format");
+  if (fmt.size() > 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format");
   
   switch (fmt[0]) {
     case 'a': return __sprintf("%s", time.tm_hour / 12 ? "PM" : "AM");
@@ -76,13 +76,13 @@ inline std::string __date_time_formatter(std::string fmt, const std::tm& time, x
     case 'Y': return __sprintf("%s %d", __to_string("%B", time, loc).c_str(), time.tm_year + 1900);
     case 'z':
     case 'Z': return __to_string("%Z", time, loc);
-    default: __format_exception("Invalid format"); return {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format");
   }
 }
 
 inline std::wstring __date_time_formatter(std::wstring fmt, const std::tm& time, xtd::uint32 nanoseconds, const std::locale& loc) {
   if (fmt.empty()) fmt = L"G";
-  if (fmt.size() > 1) __format_exception("Invalid format");
+  if (fmt.size() > 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format");
   
   switch (fmt[0]) {
     case 'a': return __sprintf(L"%s", time.tm_hour / 12 ? "PM" : "AM");
@@ -125,7 +125,7 @@ inline std::wstring __date_time_formatter(std::wstring fmt, const std::tm& time,
     case 'Y': return __sprintf(L"%ls %d", __to_string(L"%B", time, loc).c_str(), time.tm_year + 1900);
     case 'z':
     case 'Z': return __to_string(L"%Z", time, loc);
-    default: __format_exception("Invalid format"); return {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format");
   }
 }
 
