@@ -8,7 +8,7 @@
 /// @endcond
 
 #include "__numeric_formatter.hpp"
-#include "__format_exception.hpp"
+#include "../helpers/throw_helper.hpp"
 
 
 /// @cond
@@ -27,7 +27,7 @@ inline std::basic_string<char_t> __boolean_formatter(const std::basic_string<cha
     case 'X': return __numeric_formatter(fmt, value ? 1 : 0, loc);
     case 'g':
     case 'G': return value ? std::basic_string<char_t> {'t', 'r', 'u', 'e'} : std::basic_string<char_t> {'f', 'a', 'l', 's', 'e'};
-    default: __format_exception("Invalid format expression"); return {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format expression");
   }
 }
 /// @endcond

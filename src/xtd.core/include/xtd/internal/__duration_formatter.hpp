@@ -7,8 +7,8 @@
 #endif
 /// @endcond
 
-#include "__format_exception.hpp"
 #include "__sprintf.hpp"
+#include "../helpers/throw_helper.hpp"
 #include "../chrono.hpp"
 #include "../ticks.hpp"
 
@@ -32,7 +32,7 @@ inline std::basic_string<char_t> __make_string_from_duration(std::chrono::durati
 template<class char_t, class type_t, class period_t = std::ratio<1>>
 inline std::basic_string<char_t> __duration_formatter(std::basic_string<char_t> fmt, const std::chrono::duration<type_t, period_t>& value, const std::locale& loc) {
   if (fmt.empty()) fmt = std::basic_string<char_t> {'G'};
-  if (fmt.size() > 1) __format_exception("Invalid format");
+  if (fmt.size() > 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format");
   
   switch (fmt[0]) {
     case 'c': return __make_string_from_duration<char_t>(value);
@@ -56,7 +56,7 @@ inline std::basic_string<char_t> __duration_formatter(std::basic_string<char_t> 
     case 'S': return __sprintf(std::basic_string<char_t> {'%', '0', '2', 'd'}.c_str(), std::abs(std::chrono::duration_cast<std::chrono::seconds>(value).count()) % 60);
     case 't': return __sprintf(std::basic_string<char_t> {'%', 'l', 'u'}.c_str(), std::abs(std::chrono::duration_cast<xtd::ticks>(value).count()) % 10000000ul);
     case 'T': return __sprintf(std::basic_string<char_t> {'%', '0', '7', 'l', 'u'}.c_str(), std::abs(std::chrono::duration_cast<xtd::ticks>(value).count()) % 10000000ul);
-    default: __format_exception("Invalid format"); return {};
+    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format");
   }
 }
 /// @endcond

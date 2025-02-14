@@ -42,6 +42,8 @@ namespace xtd {
       format_opened_bracket_without_end_bracket,
       /// @brief The format does not contains start colon.
       format_no_start_colon,
+      /// @brief The object is not iformatable.
+      format_not_iformatable,
       /// @brief The index is out of range.
       index_out_of_range,
       /// @brief The cast is not valid.

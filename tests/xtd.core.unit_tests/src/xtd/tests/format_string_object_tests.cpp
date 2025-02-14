@@ -24,14 +24,14 @@ namespace xtd {
   template<>
   std::string to_string(const point& p, const std::string& fmt, const std::locale& loc) {
     if (fmt.empty()) return format("({}, {})", p.x, p.y);
-    if (fmt.size() > 1) throw xtd::format_exception("Format can contains only one character.");
+    if (fmt.size() > 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Format can contains only one character.");
     
     switch (fmt[0]) {
       case 'l': return format("(x={}, y={})", p.x, p.y);
       case 'L': return format("(X={}, Y={})", p.x, p.y);
       case 'g':
       case 'G': return format("({}, {})", p.x, p.y);
-      default: throw xtd::format_exception("Format invalid argument.");
+      default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Format invalid argument.");
     }
   }
 }

@@ -9,7 +9,6 @@
 
 #include "__binary_formatter.hpp"
 #include "__floating_point_formatter.hpp"
-#include "__format_exception.hpp"
 #include "__sprintf.hpp"
 #include <algorithm>
 
@@ -21,16 +20,16 @@ inline std::basic_string<char_t> __numeric_formatter(const std::basic_string<cha
   
   std::vector<char_t> possible_formats {'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'n', 'N', 'o', 'O', 'p', 'P', 'x', 'X'};
   if (format.size() > 3 || std::find(possible_formats.begin(), possible_formats.end(), format[0]) == possible_formats.end() || (format.size() >= 2 && !std::isdigit(format[1])) || (format.size() == 3 && !std::isdigit(format[2])))
-    __format_exception("Custom format not yet implemented");
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Custom format not yet implemented");
     
   int precision = 0;
   if (format[0] == 'b' || format[0] == 'B' || format[0] == 'd' || format[0] == 'D' || format[0] == 'o' || format[0] == 'O' || format[0] == 'x' || format[0] == 'X') {
     try {
       for (auto c : format.substr(1))
-        if (!std::isdigit(c) && c != ' ' && c != '+' && c != '-') __format_exception("Invalid format expression");
+        if (!std::isdigit(c) && c != ' ' && c != '+' && c != '-') xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format expression");
       if (format.size() > 1) precision = std::stoi(format.substr(1));
     } catch (...) {
-      __format_exception("Invalid format expression");
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format expression");
     }
     if ((format[0] == 'd' || format[0] == 'D') && precision > 0 && value < 0) precision += 1;
     if ((format[0] == 'd' || format[0] == 'D') && precision < 0 && value < 0) precision -= 1;

@@ -275,7 +275,7 @@ namespace xtd {
           }
         }
         if (found == false)
-          throw xtd::format_exception {};
+          xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);;
       }
       
       return to_enum(result);

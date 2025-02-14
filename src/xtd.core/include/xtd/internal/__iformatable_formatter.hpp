@@ -8,6 +8,7 @@
 /// @endcond
 
 #include "__enum_formatter.hpp"
+#include "../helpers/throw_helper.hpp"
 #include "../iformatable.hpp"
 #include "../istringable.hpp"
 
@@ -26,7 +27,7 @@ static std::string __to_string_polymorphic(const value_t& value, const std::stri
   if (dynamic_cast<const xtd::istringable*>(value_ptr)) return __to_string_istringable_to_string(dynamic_cast<const xtd::istringable*>(&value));
   if (dynamic_cast<const xtd::object*>(value_ptr)) return __to_string_object_to_string(dynamic_cast<const xtd::object*>(value_ptr));
   if (dynamic_cast<const std::exception*>(value_ptr)) return std::string {"exception: "} + dynamic_cast<const std::exception&>(value).what();
-  __format_exception(typeid(value)); return {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format_not_iformatable, typeid(value));
 }
 
 template<class value_t>

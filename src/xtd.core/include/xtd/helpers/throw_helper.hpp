@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../internal/__xtd_source_location.hpp"
+#include "../type.hpp"
 #include "exception_case.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -42,6 +43,11 @@ namespace xtd {
       /// @param message The message associate to the exception.
       /// @warning Internal use only
       [[noreturn]] static void throws(xtd::helpers::exception_case exception_case, const char* message, const source_location& location = source_location::current());
+      /// @brief Throws an exption with specified exception case, and message.
+      /// @param exception_case One of xtd::helpers::exception_case values.
+      /// @param type The type associate to the exception.
+      /// @warning Internal use only
+      [[noreturn]] static void throws(xtd::helpers::exception_case exception_case, const xtd::type& type, const source_location& location = source_location::current());
     };
   }
 }
