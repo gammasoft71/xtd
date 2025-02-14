@@ -7,6 +7,7 @@
 #include "../../../include/xtd/object_closed_exception.hpp"
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::io;
 
 memory_stream::memory_stream() {
@@ -34,7 +35,7 @@ size memory_stream::capacity() const {
 }
 
 void memory_stream::capacity(size value) {
-  if (data_->static_buffer) throw not_supported_exception {};
+  if (data_->static_buffer) throw_helper::throws(exception_case::not_supported);
   if (value != data_->dynamic_buffer.capacity()) data_->dynamic_buffer.capacity(value);
 }
 
@@ -58,11 +59,11 @@ void memory_stream::flush() {
 
 size memory_stream::read(array<byte>& buffer, size offset, size count) {
   if (is_closed()) throw object_closed_exception {};
-  if (!can_read()) throw not_supported_exception {};
+  if (!can_read()) throw_helper::throws(exception_case::not_supported);
 
   if (count == 0_z) return 0_z;
   if (offset >= buffer.size() || offset + count > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-  if (data_->static_buffer && (data_->position + count > capacity())) throw not_supported_exception {};
+  if (data_->static_buffer && (data_->position + count > capacity())) throw_helper::throws(exception_case::not_supported);
 
   auto read_count = math::min(length() - data_->position, count);
   if (!read_count) return 0_z;
@@ -76,7 +77,7 @@ size memory_stream::seek(std::streamoff offset, seek_origin loc) {
 }
 
 void memory_stream::set_length(size value) {
-  if (data_->static_buffer) throw not_supported_exception {};
+  if (data_->static_buffer) throw_helper::throws(exception_case::not_supported);
   data_->dynamic_buffer.resize(value);
 }
 
@@ -87,11 +88,11 @@ array<byte> memory_stream::to_array() const {
 
 void memory_stream::write(const array<byte>& buffer, size offset, size count) {
   if (is_closed()) throw object_closed_exception {};
-  if (!can_write()) throw not_supported_exception {};
+  if (!can_write()) throw_helper::throws(exception_case::not_supported);
 
   if (count == 0_z) return;
   if (offset >= buffer.size() || offset + count > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-  if (data_->static_buffer && data_->position + count > capacity()) throw not_supported_exception {};
+  if (data_->static_buffer && data_->position + count > capacity()) throw_helper::throws(exception_case::not_supported);
 
   if (length() < position()) {
     auto fill_count = position() - length();
@@ -106,7 +107,7 @@ void memory_stream::write(const array<byte>& buffer, size offset, size count) {
 
 void memory_stream::write_to(std::ostream& stream) {
   if (is_closed()) throw object_closed_exception {};
-  if (!can_read()) throw not_supported_exception {};
+  if (!can_read()) throw_helper::throws(exception_case::not_supported);
 
   auto current_postion = position();
   position(0_z);

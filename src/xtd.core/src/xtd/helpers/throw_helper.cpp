@@ -16,7 +16,9 @@
 #include "../../../include/xtd/invalid_cast_exception.hpp"
 #include "../../../include/xtd/invalid_operation_exception.hpp"
 #include "../../../include/xtd/not_implemented_exception.hpp"
+#include "../../../include/xtd/not_supported_exception.hpp"
 #include "../../../include/xtd/null_pointer_exception.hpp"
+#include "../../../include/xtd/object_closed_exception.hpp"
 #include "../../../include/xtd/overflow_exception.hpp"
 #include "../../../include/xtd/platform_not_supported_exception.hpp"
 #include "../../../include/xtd/rank_exception.hpp"
@@ -54,7 +56,9 @@ void throw_helper::throws(enum exception_case exception_case, const source_locat
     case exception_case::io: throw io_exception {to_stack_frame(location)};
     case exception_case::key_not_found: throw key_not_found_exception {to_stack_frame(location)};
     case exception_case::not_implemented: throw not_implemented_exception {to_stack_frame(location)};
+    case exception_case::not_supported: throw not_supported_exception {to_stack_frame(location)};
     case exception_case::null_pointer: throw null_pointer_exception {to_stack_frame(location)};
+    case exception_case::object_closed: throw object_closed_exception {to_stack_frame(location)};
     case exception_case::overflow: throw overflow_exception {to_stack_frame(location)};
     case exception_case::path_too_long: throw path_too_long_exception {to_stack_frame(location)};
     case exception_case::platform_not_supported: throw platform_not_supported_exception {to_stack_frame(location)};
@@ -84,7 +88,9 @@ void throw_helper::throws(enum exception_case exception_case, const char* messag
     case exception_case::io: throw io_exception {message, to_stack_frame(location)};
     case exception_case::key_not_found: throw key_not_found_exception {message, to_stack_frame(location)};
     case exception_case::not_implemented: throw not_implemented_exception {message, to_stack_frame(location)};
+    case exception_case::not_supported: throw not_supported_exception {message, to_stack_frame(location)};
     case exception_case::null_pointer: throw null_pointer_exception {message, to_stack_frame(location)};
+    case exception_case::object_closed: throw object_closed_exception {message, to_stack_frame(location)};
     case exception_case::overflow: throw overflow_exception {message, to_stack_frame(location)};
     case exception_case::path_too_long: throw path_too_long_exception {message, to_stack_frame(location)};
     case exception_case::platform_not_supported: throw platform_not_supported_exception {message, to_stack_frame(location)};

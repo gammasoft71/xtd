@@ -62,8 +62,12 @@ namespace xtd {
       key_not_found,
       /// @brief The method or operation is not implemented.
       not_implemented,
+      /// @brief The method or operation is not supported.
+      not_supported,
       /// @brief The pointer is null.
       null_pointer,
+      /// @brief The object is closed.
+      object_closed,
       /// @brief Arithmetic overflow.
       overflow,
       /// @brief The path is too long.
