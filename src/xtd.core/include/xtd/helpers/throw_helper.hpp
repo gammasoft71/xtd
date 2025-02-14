@@ -36,17 +36,14 @@ namespace xtd {
       
       /// @brief Throws an exption with specified exception case.
       /// @param exception_case One of xtd::helpers::exception_case values.
-      /// @warning Internal use only
       [[noreturn]] static void throws(xtd::helpers::exception_case exception_case, const source_location& location = source_location::current());
       /// @brief Throws an exption with specified exception case, and message.
       /// @param exception_case One of xtd::helpers::exception_case values.
       /// @param message The message associate to the exception.
-      /// @warning Internal use only
       [[noreturn]] static void throws(xtd::helpers::exception_case exception_case, const char* message, const source_location& location = source_location::current());
       /// @brief Throws an exption with specified exception case, and message.
       /// @param exception_case One of xtd::helpers::exception_case values.
       /// @param type The type associate to the exception.
-      /// @warning Internal use only
       [[noreturn]] static void throws(xtd::helpers::exception_case exception_case, const xtd::type& type, const source_location& location = source_location::current());
     };
   }
