@@ -324,7 +324,7 @@ time_span time_span::negate() const {
 time_span time_span::parse(const string& value) {
   auto result = time_span {};
   switch (try_parse_internal(value, result)) {
-    case parse_format: throw format_exception {};
+    case parse_format: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
     case parse_overflow: throw overflow_exception {};
   }
   return result;

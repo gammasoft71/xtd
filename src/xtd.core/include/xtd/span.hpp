@@ -173,7 +173,7 @@ namespace xtd {
     /// @param data The data pointer to construct a view for.
     /// @param length The number of elements to constuct.
     constexpr span(type_t* const data, size_type length) : data_ {data}, length_ {extent != dynamic_extent ? extent : length} {
-      if (!data) throw argument_null_exception {};
+      if (!data) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
     }
     /// @}
 

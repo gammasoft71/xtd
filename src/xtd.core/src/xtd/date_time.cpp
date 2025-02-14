@@ -509,7 +509,7 @@ string date_time::to_string(const string& format, const std::locale& loc) const 
     case 'z':
     case 'Z': return kind_ == date_time_kind::local ? time_zone_info::local().id().c_str() : time_zone_info::utc().id().c_str();
   }
-  throw format_exception {"Invalid format"_t};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format"_t);
 }
 
 std::time_t date_time::to_time_t() const {

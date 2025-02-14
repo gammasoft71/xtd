@@ -156,7 +156,7 @@ namespace xtd {
     /// @remarks Each element of the array of values is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<value_t>::max().
     template<class value_t>
     void next_values(value_t* buffer, size_t buffer_size) const {
-      if (buffer == nullptr) throw argument_null_exception {};
+      if (buffer == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
       for (size_t index = 0; index < buffer_size; index++)
         buffer[index] = next<value_t>(0, xtd::box_integer<value_t>::max_value);
     }

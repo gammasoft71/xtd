@@ -260,7 +260,7 @@ ip_address ip_address::parse(const string& str) {
     }
   }
   
-  throw format_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
 }
 
 string ip_address::to_string() const noexcept {

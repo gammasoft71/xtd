@@ -207,7 +207,7 @@ void udp_client::drop_multicast_group(const xtd::net::ip_address& multicast_addr
 }
 
 array<xtd::byte> udp_client::end_receive(xtd::sptr<xtd::iasync_result> async_result, ip_end_point& remote_end_point) {
-  if (async_result == nullptr) throw argument_null_exception {};
+  if (async_result == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
   if (!is<async_result_receive>(async_result)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   async_result->async_wait_handle().wait_one();
   if (as<async_result_receive>(async_result)->exception_) rethrow_exception(as<async_result_receive>(async_result)->exception_);
@@ -216,7 +216,7 @@ array<xtd::byte> udp_client::end_receive(xtd::sptr<xtd::iasync_result> async_res
 }
 
 size_t udp_client::end_send(xtd::sptr<xtd::iasync_result> async_result) {
-  if (async_result == nullptr) throw argument_null_exception {};
+  if (async_result == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
   if (!is<async_result_send>(async_result)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   async_result->async_wait_handle().wait_one();
   if (as<async_result_send>(async_result)->exception_) rethrow_exception(as<async_result_receive>(async_result)->exception_);
