@@ -234,21 +234,21 @@ namespace xtd {
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified string to copy.
       /// @param str The string to copy.
       basic_string_builder(const_pointer str) {  // Can't be explicit by design.
-        if (str == null) throw xtd::null_pointer_exception {};
+        if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
         chars_ = base_type(str);
       }
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified string to copy, and allocator.
       /// @param str The string to copy.
       /// @param allocator The allocator to use for all memory allocations of this basic_string_builder.
       basic_string_builder(const_pointer str, const allocator_type& allocator) {
-        if (str == null) throw xtd::null_pointer_exception {};
+        if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
         chars_ = base_type(str, allocator);
       }
       
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified substring and count characters.
       /// @param count The number of substring characters to copy.
       basic_string_builder(const_pointer str, xtd::size count) {
-        if (str == null) throw xtd::null_pointer_exception {};
+        if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
         chars_ = base_type(str, count);
       }
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified substring, count characters and allocator.
@@ -256,7 +256,7 @@ namespace xtd {
       /// @param count The number of substring characters to copy.
       /// @param allocator The allocator to use for all memory allocations of this basic_string_builder.
       basic_string_builder(const_pointer str, xtd::size count, const allocator_type& allocator) : chars_(allocator) {
-        if (str == null) throw xtd::null_pointer_exception {};
+        if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
         chars_ = base_type(str, count);
       }
       
@@ -2101,7 +2101,7 @@ namespace xtd {
       /// @exception xtd::tring_null_pointer_exception The `str` is null.
       /// @return This current instance.
       basic_string_builder& operator =(const_pointer str) {
-        if (str == null) throw xtd::null_pointer_exception {};
+        if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
         chars_ = str;
         return *this;
       }
@@ -2143,7 +2143,7 @@ namespace xtd {
       /// @param str string to append.
       /// @return This current instance with characters added.
       basic_string_builder& operator +=(const_pointer str) {
-        if (str == null) throw xtd::null_pointer_exception {};
+        if (str == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
         chars_ += str;
         return *this;
       }

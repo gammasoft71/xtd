@@ -17,7 +17,7 @@
 
 /// @cond
 inline void __xtd_print_with_file_write__(bool new_line, FILE* file, xtd::string&& s) {
-  if (!file) throw xtd::null_pointer_exception {};
+  if (!file) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
   if (new_line) s += xtd::environment::new_line();
   if (fwrite(s.c_str(), 1, s.length(), file) != s.length()) {
     auto exception = xtd::io::io_exception {};
