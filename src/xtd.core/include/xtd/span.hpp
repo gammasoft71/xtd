@@ -283,7 +283,7 @@ namespace xtd {
     /// @return Reference to the requested element.
     /// @exception xtd::index_out_of_range_exception `index` is less than zero or greater than or equal to xtd::span::length.
     const_reference at(size_type pos) const {
-      if (pos >= length_) throw index_out_of_range_exception {};
+      if (pos >= length_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       return *(data_ + pos);
     }
     /// @brief Gets the specified element with bounds checking.
@@ -291,7 +291,7 @@ namespace xtd {
     /// @return Reference to the requested element.
     /// @exception xtd::argument_out_of_range_exceptionv if pos greather or equal than length.
     reference at(size_type pos) {
-      if (pos >= length_) throw index_out_of_range_exception {};
+      if (pos >= length_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
       return *(data_ + pos);
     }
     
