@@ -679,7 +679,7 @@ namespace xtd {
       case 'g':
       case 'G': return xtd::enum_object<>::get_name(value);
     }
-    throw format_exception("Invalid format"_t);
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format"_t);
   }
   /// @endcond
 }

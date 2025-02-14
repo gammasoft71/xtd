@@ -174,7 +174,7 @@ int32 binary_reader::read_7bit_encoded_int() {
   }
   
   byte_read_just_now = read_byte();
-  if (byte_read_just_now > 0b1111u) throw new format_exception {};
+  if (byte_read_just_now > 0b1111u) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
   
   result |= static_cast<uint32>(byte_read_just_now) << (max_bytes_without_overflow * 7);
   return static_cast<int32>(result);
