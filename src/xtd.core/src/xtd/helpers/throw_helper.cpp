@@ -3,6 +3,8 @@
 #undef __XTD_CORE_INTERNAL__
 #include "../../../include/xtd/collections/generic/key_not_found_exception.hpp"
 #include "../../../include/xtd/diagnostics/stack_frame.hpp"
+#include "../../../include/xtd/io/end_of_stream_exception.hpp"
+#include "../../../include/xtd/io/file_not_found_exception.hpp"
 #include "../../../include/xtd/io/io_exception.hpp"
 #include "../../../include/xtd/argument_exception.hpp"
 #include "../../../include/xtd/argument_null_exception.hpp"
@@ -34,6 +36,8 @@ void throw_helper::throws(enum exception_case exception_case, const source_locat
     case exception_case::argument: throw argument_exception {to_stack_frame(location)};
     case exception_case::argument_null: throw argument_null_exception {to_stack_frame(location)};
     case exception_case::argument_out_of_range: throw argument_out_of_range_exception {to_stack_frame(location)};
+    case exception_case::end_of_stream: throw end_of_stream_exception {to_stack_frame(location)};
+    case exception_case::file_not_found: throw file_not_found_exception {to_stack_frame(location)};
     case exception_case::format: throw format_exception {to_stack_frame(location)};
     case exception_case::format_closing_bracket_without_open_bracket: throw format_exception("Invalid format expression : closing bracket '{' without open bracket '}'"_t, to_stack_frame(location));
     case exception_case::format_opened_bracket_without_end_bracket: throw format_exception("Invalid format expression : open bracket '}' without end bracket '{'"_t, to_stack_frame(location));
@@ -58,6 +62,8 @@ void throw_helper::throws(enum exception_case exception_case, const char* messag
     case exception_case::argument: throw argument_exception {message, to_stack_frame(location)};
     case exception_case::argument_null: throw argument_null_exception {message, to_stack_frame(location)};
     case exception_case::argument_out_of_range: throw argument_out_of_range_exception {message, to_stack_frame(location)};
+    case exception_case::end_of_stream: throw end_of_stream_exception {message, to_stack_frame(location)};
+    case exception_case::file_not_found: throw file_not_found_exception {message, to_stack_frame(location)};
     case exception_case::format: throw format_exception {message, to_stack_frame(location)};
     case exception_case::format_closing_bracket_without_open_bracket: throw format_exception {message, to_stack_frame(location)};
     case exception_case::format_opened_bracket_without_end_bracket: throw format_exception {message, to_stack_frame(location)};
@@ -77,24 +83,5 @@ void throw_helper::throws(enum exception_case exception_case, const char* messag
 }
 
 void throw_helper::throws(enum exception_case exception_case, const xtd::type& type, const source_location& location) {
-  switch (exception_case) {
-    case exception_case::argument: throw argument_exception {typeof_(type).full_name(), to_stack_frame(location)};
-    case exception_case::argument_null: throw argument_null_exception {typeof_(type).full_name(), to_stack_frame(location)};
-    case exception_case::argument_out_of_range: throw argument_out_of_range_exception {typeof_(type).full_name(), to_stack_frame(location)};
-    case exception_case::format: throw format_exception {typeof_(type).full_name(), to_stack_frame(location)};
-    case exception_case::format_closing_bracket_without_open_bracket: throw format_exception {typeof_(type).full_name(), to_stack_frame(location)};
-    case exception_case::format_opened_bracket_without_end_bracket: throw format_exception {typeof_(type).full_name(), to_stack_frame(location)};
-    case exception_case::format_no_start_colon: throw format_exception {typeof_(type).full_name(), to_stack_frame(location)};
-    case exception_case::format_not_iformatable: throw format_exception {string::format("The `{0}` type does not inherit from `xtd::iformat` or the specialisation for the `{0}` type in the `xtd::to_string` specialisation method does not exist.", typeof_(type).full_name()), to_stack_frame(location)};
-    case exception_case::index_out_of_range: throw index_out_of_range_exception {typeof_(type).full_name(), to_stack_frame(location)};
-    case exception_case::invalid_cast: throw invalid_cast_exception {typeof_(type).full_name(), to_stack_frame(location)};
-    case exception_case::invalid_operation: throw invalid_operation_exception {typeof_(type).full_name(), to_stack_frame(location)};
-    case exception_case::io: throw io_exception {typeof_(type).full_name(), to_stack_frame(location)};
-    case exception_case::key_not_found: throw key_not_found_exception {typeof_(type).full_name(), to_stack_frame(location)};
-    case exception_case::not_implemented: throw not_implemented_exception {typeof_(type).full_name(), to_stack_frame(location)};
-    case exception_case::null_pointer: throw null_pointer_exception {typeof_(type).full_name(), to_stack_frame(location)};
-    case exception_case::overflow: throw overflow_exception {typeof_(type).full_name(), to_stack_frame(location)};
-    case exception_case::rank: throw rank_exception {typeof_(type).full_name(), to_stack_frame(location)};
-    default: throw argument_exception {"Invalid xtd::helpers::exception_case value"};
-  }
+  throws(exception_case, (exception_case == exception_case::format_not_iformatable ? string::format("The `{0}` type does not inherit from `xtd::iformat` or the specialisation for the `{0}` type in the `xtd::to_string` specialisation method does not exist.", typeof_(type).full_name()) : typeof_(type).full_name()).c_str(), location);
 }
