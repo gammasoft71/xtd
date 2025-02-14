@@ -1378,7 +1378,7 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception `capacity` is less than xtd::collections::generic::dictionary::count.
         /// @remarks This method can be used to minimize the memory overhead once it is known that no new elements will be added.
         void trim_excess(size_type capacity) {
-          if (capacity < count()) throw xtd::argument_out_of_range_exception {};
+          if (capacity < count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
           rehash(capacity);
         }
 

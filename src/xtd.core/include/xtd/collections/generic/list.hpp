@@ -948,8 +948,8 @@ namespace xtd {
         /// @return The index of value if found in the xtd::collections::generic::list; otherwise, xtd::collections::generic::ilist::npos.
         /// @exception xtd::argument_out_of_range_exception `index` and `countù  do not specify a valid section in the xtd::collections::generic::list <type_t>.
         virtual size_type index_of(const type_t& value, size_type index, size_type count) const {
-          if (index >= this->count()) throw xtd::argument_out_of_range_exception {};
-          if (index + count > this->count()) throw xtd::argument_out_of_range_exception {};
+          if (index >= this->count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
+          if (index + count > this->count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
           
           for (auto i = index; i < index + count; ++i)
             if (helpers::equator<type_t> {}(at(i), value)) return i;
@@ -1016,7 +1016,7 @@ namespace xtd {
         /// @exception xtd::argument_out_of_range_exception index is is greater than xtd::collections::generic::list::count.
         /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
         void insert(size_type index, const type_t& value) override {
-          if (index > count()) throw xtd::argument_out_of_range_exception {};
+          if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
           insert(begin() + index, value);
         }
         
@@ -1030,7 +1030,7 @@ namespace xtd {
         /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
         /// @remarks The order of the elements in the collection is preserved in the xtd::collections::generic::list <type_t>.
         virtual void insert_range(size_type index, const xtd::collections::generic::ienumerable<type_t>& enumerable) {
-          if (index > count()) throw xtd::argument_out_of_range_exception {};
+          if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
 
           // If the collection is this instance, it must be copied to avoid an infinite loop.
           if (reinterpret_cast<xtd::intptr>(&enumerable) == reinterpret_cast<xtd::intptr>(this)) {
@@ -1052,14 +1052,14 @@ namespace xtd {
         /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
         /// @remarks The order of the elements in the collection is preserved in the xtd::collections::generic::list <type_t>.
         virtual void insert_range(size_type index, const std::initializer_list<type_t>& items) {
-          if (index > count()) throw xtd::argument_out_of_range_exception {};
+          if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
           insert(begin() + index, items);
         }
 
         /// @cond
         template<class ienumerable_t>
         void insert_range(size_type index, const ienumerable_t& enumerable) {
-          if (index > count()) throw xtd::argument_out_of_range_exception {};
+          if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
           
           // If the collection is this instance, it must be copied to avoid an infinite loop.
           if (reinterpret_cast<xtd::intptr>(&enumerable) == reinterpret_cast<xtd::intptr>(this)) {
@@ -1095,7 +1095,7 @@ namespace xtd {
         /// @return Int32 The last index of value if found in the list; otherwise, xtd::collections::generic::list::npos.
         /// @exception xd::argument_exception `index` and `count` do not specify a valid section in the xtd::collections::generic::list <type_t>.
         size_type last_index_of(const type_t& value, size_type index, size_type count) const {
-          if (count < size() || index >= size()) throw xtd::argument_out_of_range_exception {};
+          if (count < size() || index >= size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
           if (index - count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
 
           for (auto i = index; i >= index - (count - 1); --i)
@@ -1173,7 +1173,7 @@ namespace xtd {
         /// @param index The zero-based index of the item to remove
         /// @exception ArgumentOutOfRangeException index is less than 0 or index is greater than xtd::collections::generic::list::count.
         void remove_at(size_type index) override {
-          if (index >= count()) throw xtd::argument_out_of_range_exception {};
+          if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
 
           if (index == count() - 1) pop_back();
           else erase(begin() + index);
@@ -1188,7 +1188,7 @@ namespace xtd {
         /// @include generic_list3.cpp
         /// @remarks The items are removed and all the elements following them in the xtd::collections::generic::list <type_t> have their indexes reduced by count.
         virtual void remove_range(size_type index, size_type count) {
-          if (index + count >= this->count()) throw xtd::argument_out_of_range_exception {};
+          if (index + count >= this->count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
           
           erase(begin() + index, begin() + index + count);
         }
@@ -1211,7 +1211,7 @@ namespace xtd {
         /// @remarks If the current size is greater than `count`, the container is reduced to its first `count` elements.
         /// @remarks If the current size is less than `count`, additional copies of `value` are appended.
         virtual void resize(size_type count, const value_type& value) {
-          if (count > max_size()) throw xtd::argument_out_of_range_exception {};
+          if (count > max_size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
           if (count == size()) return;
           ++data_->version;
           data_->items.resize(count, value);
