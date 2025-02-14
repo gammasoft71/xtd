@@ -2029,7 +2029,7 @@ namespace xtd {
       /// @return Reference to the requested character.
       /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
       const_reference operator [](xtd::size index) const {
-        if (index >= length()) throw xtd::index_out_of_range_exception {};
+        if (index >= length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
         return chars_[index];
       }
       /// @brief Returns a reference to the character at specified location index.
@@ -2037,7 +2037,7 @@ namespace xtd {
       /// @return Reference to the requested character.
       /// @exception xtd::index_out_of_range_exception If `index` is not within the range of the string.
       reference operator [](xtd::size index) {
-        if (index >= length()) throw xtd::index_out_of_range_exception {};
+        if (index >= length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
         return chars_[index];
       }
 
