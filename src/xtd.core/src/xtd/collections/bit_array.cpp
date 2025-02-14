@@ -235,7 +235,7 @@ bit_array& bit_array::right_shift(xtd::size count) noexcept {
 
 void bit_array::set(size index, bool value) {
   flush(); // Must be call first
-  if (index >= length()) throw argument_out_of_range_exception {};
+  if (index >= length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   set_bit_value(index, value);
 }
 
@@ -260,13 +260,13 @@ const bit_array& bit_array::xor_(const bit_array& value) {
 
 const bool& bit_array::operator [](size index) const {
   flush(); // Must be call first
-  if (index >= length_) throw argument_out_of_range_exception {};
+  if (index >= length_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   return value_ref_.get_boolean_ref(get_bit_value(index), index);
 }
 
 bool& bit_array::operator [](size index) {
   flush(); // Must be call first
-  if (index >= length()) throw argument_out_of_range_exception {};
+  if (index >= length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   return value_ref_.get_boolean_ref(get_bit_value(index), index);
 }
 

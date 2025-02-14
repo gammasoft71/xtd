@@ -22,7 +22,7 @@ countdown_event::countdown_event() : countdown_event(0) {
 }
 
 countdown_event::countdown_event(int32 initial_count) : data_(xtd::new_sptr<data>()) {
-  if (initial_count < 0) throw argument_out_of_range_exception {};
+  if (initial_count < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   data_->current_count = initial_count;
   data_->initial_count = initial_count;
   if (data_->current_count == 0) data_->event.set();
@@ -74,7 +74,7 @@ void countdown_event::add_count() {
 
 void countdown_event::add_count(int32 count) {
   if (!data_) throw object_closed_exception {};
-  if (count < 0) throw argument_out_of_range_exception {};
+  if (count < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   if (data_->current_count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   lock_(*data_) data_->current_count += count;
 }
@@ -86,7 +86,7 @@ void countdown_event::reset() {
 
 void countdown_event::reset(int32 count) {
   if (!data_) throw object_closed_exception {};
-  if (count < 0) throw argument_out_of_range_exception {};
+  if (count < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   lock_(*data_) {
     data_->event.reset();
     data_->initial_count = count;
@@ -101,7 +101,7 @@ bool countdown_event::signal() {
 bool countdown_event::signal(int32 signal_count) {
   if (!data_) throw object_closed_exception {};
   if (data_->current_count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-  if (signal_count < 0 || signal_count > data_->current_count) throw argument_out_of_range_exception {};
+  if (signal_count < 0 || signal_count > data_->current_count) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   auto lock = lock_guard {*data_};
   data_->current_count -= signal_count;
   if (data_->current_count == 0) data_->event.set();
@@ -124,7 +124,7 @@ void countdown_event::wait() {
 
 bool countdown_event::wait(int32 milliseconds_timeout) {
   if (!data_) throw object_closed_exception {};
-  if (milliseconds_timeout < timeout::infinite) throw argument_out_of_range_exception {};
+  if (milliseconds_timeout < timeout::infinite) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   if (!data_->cancellation_token) return data_->event.wait_one(milliseconds_timeout);
   if (milliseconds_timeout == timeout::infinite) return wait_wtih_cancellation_token();
   return wait_wtih_cancellation_token(milliseconds_timeout);

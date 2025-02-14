@@ -67,7 +67,7 @@ forms::orientation progress_bar::orientation() const noexcept {
 }
 
 progress_bar& progress_bar::orientation(forms::orientation orientation) {
-  if (!enum_object<>::is_defined<forms::orientation>(orientation)) throw argument_out_of_range_exception {};
+  if (!enum_object<>::is_defined<forms::orientation>(orientation)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   if (data_->orientation == orientation) return *this;
   data_->orientation = orientation;
   post_recreate_handle();
@@ -88,7 +88,7 @@ progress_bar_style progress_bar::style() const noexcept {
 }
 
 progress_bar& progress_bar::style(progress_bar_style style) {
-  if (!enum_object<>::is_defined<progress_bar_style>(style)) throw argument_out_of_range_exception {};
+  if (!enum_object<>::is_defined<progress_bar_style>(style)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   if (data_->style == style) return *this;
   data_->style = style;
   if (is_handle_created()) native::progress_bar::marquee(handle(), data_->style == progress_bar_style::marquee, data_->marquee_animation_speed);

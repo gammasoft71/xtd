@@ -46,7 +46,7 @@ semaphore::semaphore(int32 initial_count, int32 maximum_count, const string& nam
 semaphore::semaphore(int32 initial_count, int32 maximum_count, const string& name, bool& created_new) : data_(xtd::new_sptr<data>()) {
   if (name.size() > native::named_semaphore::max_name_size()) throw io::path_too_long_exception {};
   if (initial_count > maximum_count) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-  if (maximum_count < 1 || initial_count < 0) throw argument_out_of_range_exception {};
+  if (maximum_count < 1 || initial_count < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   data_->name = name;
   create(initial_count, maximum_count, created_new);
 }
@@ -95,7 +95,7 @@ int32 semaphore::release() {
 }
 
 int32 semaphore::release(int32 release_count) {
-  if (release_count < 1) throw argument_out_of_range_exception {};
+  if (release_count < 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   if (!semaphore_) throw object_closed_exception {};
   if (data_->count + release_count > data_->maximum_count) throw semaphore_full_exception {};
   auto io_error = false;
@@ -127,7 +127,7 @@ bool semaphore::signal() {
 
 bool semaphore::wait(int32 milliseconds_timeout) {
   if (!semaphore_) throw object_closed_exception {};
-  if (milliseconds_timeout < -1) throw argument_out_of_range_exception {};
+  if (milliseconds_timeout < -1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   auto result = semaphore_->wait(milliseconds_timeout);
   if (result == 0xFFFFFFFF) throw io::io_exception {};
   if (result == 0x00000080) throw abandoned_mutex_exception {};

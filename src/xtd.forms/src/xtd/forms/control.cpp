@@ -553,7 +553,7 @@ control& control::fore_color(std::nullptr_t) {
 
 intptr control::handle() const {
   if (check_for_illegal_cross_thread_calls() && invoke_required())
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, string::format("Cross-thread operation not valid: {}"_t, to_string()));
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, string::format("Cross-thread operation not valid: {}"_t, to_string()).c_str());
   return data_->handle;
 }
 
@@ -1570,7 +1570,7 @@ drawing::point control::point_to_screen(const xtd::drawing::point& p) const {
 
 bool control::post_message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) const {
   if (check_for_illegal_cross_thread_calls() && invoke_required())
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation), string::format("Cross-thread operation not valid: {}"_t, to_string()));
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, string::format("Cross-thread operation not valid: {}"_t, to_string()).c_str());
   if (!is_handle_created()) return false;
   data_->post_messages.push(message::create(hwnd, msg, wparam, lparam));
   return true;
@@ -1602,7 +1602,7 @@ void control::refresh() const {
 
 intptr control::send_message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) const {
   if (check_for_illegal_cross_thread_calls() && invoke_required())
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, string::format("Cross-thread operation not valid: {}"_t, to_string()));
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, string::format("Cross-thread operation not valid: {}"_t, to_string()).c_str());
   return is_handle_created() ? native::control::send_message(handle(), hwnd, msg, wparam, lparam) : static_cast<intptr>(-1);
 }
 

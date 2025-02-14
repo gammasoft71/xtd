@@ -123,7 +123,7 @@ optional<double> enumerable::average(const ienumerable<optional<int64>>& source)
 }
 
 const enumerable::ienumerable<int32>& enumerable::range(int32 start, int32 count) {
-  if (count < 0) throw argument_out_of_range_exception {};
+  if (count < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<int32> {};
   result = __opaque_xtd_linq_enumerable_collection__<int32> {};
   for (auto index = start; index < start + count; ++index)
