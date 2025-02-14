@@ -263,7 +263,7 @@ menu_item& menu_item::text(const xtd::string& value) {
 
 xtd::uptr<xtd::object> menu_item::clone() const {
   auto result = xtd::new_uptr<menu_item>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()));
+  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 

@@ -37,7 +37,7 @@ namespace xtd {
     try {
       return std::any_cast<new_type_t>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what());
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
   }
   
@@ -484,7 +484,7 @@ namespace xtd {
     try {
       return dynamic_cast<const new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what());
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
     throw std::bad_cast();
   }
@@ -512,7 +512,7 @@ namespace xtd {
     try {
       return dynamic_cast<new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what());
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
     throw std::bad_cast();
   }
@@ -520,47 +520,47 @@ namespace xtd {
   /// @cond
   template<class new_type_t>
   new_type_t as(const xtd::string& value, xtd::byte from_base) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   template<class new_type_t>
   new_type_t as(xtd::byte value, xtd::byte from_base) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   template<class new_type_t>
   new_type_t as(int16 value, xtd::byte from_base) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   template<class new_type_t>
   new_type_t as(int32 value, xtd::byte from_base) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   template<class new_type_t>
   new_type_t as(int64 value, xtd::byte from_base) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   template<class new_type_t>
   new_type_t as(slong value, xtd::byte from_base) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   template<class new_type_t>
   new_type_t as(sbyte value, xtd::byte from_base) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   template<class new_type_t>
   new_type_t as(uint16 value, xtd::byte from_base) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   template<class new_type_t>
   new_type_t as(uint32 value, xtd::byte from_base) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   template<class new_type_t>
   new_type_t as(uint64 value, xtd::byte from_base) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   template<class new_type_t>
   new_type_t as(xtd::ulong value, xtd::byte from_base) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   /// @endcond
   
@@ -582,7 +582,7 @@ namespace xtd {
     try {
       return dynamic_cast<const new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what());
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
     throw std::bad_cast();
   }
@@ -605,7 +605,7 @@ namespace xtd {
     try {
       return dynamic_cast<new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what());
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
     throw std::bad_cast();
   }
@@ -629,7 +629,7 @@ namespace xtd {
     try {
       return dynamic_cast<const new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what());
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
     throw std::bad_cast();
   }
@@ -652,7 +652,7 @@ namespace xtd {
     try {
       return dynamic_cast<new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what());
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
     throw std::bad_cast();
   }
@@ -676,7 +676,7 @@ namespace xtd {
     try {
       return dynamic_cast<const new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what());
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
     throw std::bad_cast();
   }
@@ -699,7 +699,7 @@ namespace xtd {
     try {
       return dynamic_cast<new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what());
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
     throw std::bad_cast();
   }
@@ -722,7 +722,7 @@ namespace xtd {
     try {
       return dynamic_cast<const new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what());
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
     throw std::bad_cast();
   }
@@ -745,7 +745,7 @@ namespace xtd {
     try {
       return dynamic_cast<new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what());
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
     throw std::bad_cast();
   }
@@ -768,7 +768,7 @@ namespace xtd {
     try {
       return dynamic_cast<const new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what());
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
     throw std::bad_cast();
   }
@@ -791,7 +791,7 @@ namespace xtd {
     try {
       return dynamic_cast<new_type_t&>(value);
     } catch (const std::exception& e) {
-      throw invalid_cast_exception(e.what());
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
     throw std::bad_cast();
   }
