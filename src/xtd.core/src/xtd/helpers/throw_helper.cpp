@@ -3,6 +3,7 @@
 #undef __XTD_CORE_INTERNAL__
 #include "../../../include/xtd/collections/generic/key_not_found_exception.hpp"
 #include "../../../include/xtd/diagnostics/stack_frame.hpp"
+#include "../../../include/xtd/io/io_exception.hpp"
 #include "../../../include/xtd/argument_exception.hpp"
 #include "../../../include/xtd/argument_null_exception.hpp"
 #include "../../../include/xtd/argument_out_of_range_exception.hpp"
@@ -19,6 +20,7 @@
 using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
+using namespace xtd::io;
 using namespace xtd::helpers;
 
 namespace {
@@ -40,6 +42,7 @@ void throw_helper::throws(enum exception_case exception_case, const source_locat
     case exception_case::index_out_of_range: throw index_out_of_range_exception {to_stack_frame(location)};
     case exception_case::invalid_cast: throw invalid_cast_exception {to_stack_frame(location)};
     case exception_case::invalid_operation: throw invalid_operation_exception {to_stack_frame(location)};
+    case exception_case::io: throw io_exception {to_stack_frame(location)};
     case exception_case::key_not_found: throw key_not_found_exception {to_stack_frame(location)};
     case exception_case::not_implemented: throw not_implemented_exception {to_stack_frame(location)};
     case exception_case::null_pointer: throw null_pointer_exception {to_stack_frame(location)};
@@ -63,6 +66,7 @@ void throw_helper::throws(enum exception_case exception_case, const char* messag
     case exception_case::index_out_of_range: throw index_out_of_range_exception {message, to_stack_frame(location)};
     case exception_case::invalid_cast: throw invalid_cast_exception {message, to_stack_frame(location)};
     case exception_case::invalid_operation: throw invalid_operation_exception {message, to_stack_frame(location)};
+    case exception_case::io: throw io_exception {message, to_stack_frame(location)};
     case exception_case::key_not_found: throw key_not_found_exception {message, to_stack_frame(location)};
     case exception_case::not_implemented: throw not_implemented_exception {message, to_stack_frame(location)};
     case exception_case::null_pointer: throw null_pointer_exception {message, to_stack_frame(location)};
@@ -85,6 +89,7 @@ void throw_helper::throws(enum exception_case exception_case, const xtd::type& t
     case exception_case::index_out_of_range: throw index_out_of_range_exception {typeof_(type).full_name(), to_stack_frame(location)};
     case exception_case::invalid_cast: throw invalid_cast_exception {typeof_(type).full_name(), to_stack_frame(location)};
     case exception_case::invalid_operation: throw invalid_operation_exception {typeof_(type).full_name(), to_stack_frame(location)};
+    case exception_case::io: throw io_exception {typeof_(type).full_name(), to_stack_frame(location)};
     case exception_case::key_not_found: throw key_not_found_exception {typeof_(type).full_name(), to_stack_frame(location)};
     case exception_case::not_implemented: throw not_implemented_exception {typeof_(type).full_name(), to_stack_frame(location)};
     case exception_case::null_pointer: throw null_pointer_exception {typeof_(type).full_name(), to_stack_frame(location)};

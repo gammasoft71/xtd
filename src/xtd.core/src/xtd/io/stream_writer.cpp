@@ -21,11 +21,11 @@ stream_writer::stream_writer(const string& path, bool append) : stream_(new std:
   if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (!file::exists(path)) throw file_not_found_exception {};
   if ((file::get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {};
-  if (!dynamic_cast<std::ofstream*>(stream_)->is_open() || !stream_->good()) throw io_exception {};
+  if (!dynamic_cast<std::ofstream*>(stream_)->is_open() || !stream_->good()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
 }
 
 stream_writer::stream_writer(std::ostream& stream, bool append) : stream_(&stream) {
-  if (!stream_->good()) throw io_exception {};
+  if (!stream_->good()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
   if (append) stream_->seekp(0, std::ios_base::end);
   stream_->flush();
 }

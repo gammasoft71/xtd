@@ -202,7 +202,7 @@ directory_info directory_info::root() const {
 }
 
 void directory_info::create() {
-  if (native::directory::create(full_path_) != 0) throw io_exception {};
+  if (native::directory::create(full_path_) != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
   refresh();
 }
 
@@ -266,7 +266,7 @@ std::vector<xtd::sptr<file_system_info>> directory_info::get_file_system_infos(c
 
 void directory_info::move_to(const string& dest_dir_name) {
   auto dest_dir_info = directory_info {dest_dir_name};
-  if (dest_dir_name == "" || dest_dir_info.exists() || equals(dest_dir_info) || !path::get_path_root(full_name()).equals(path::get_path_root(dest_dir_info.full_name())) || dest_dir_info.full_name().starts_with(full_name())) throw io_exception {};
+  if (dest_dir_name == "" || dest_dir_info.exists() || equals(dest_dir_info) || !path::get_path_root(full_name()).equals(path::get_path_root(dest_dir_info.full_name())) || dest_dir_info.full_name().starts_with(full_name())) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
   
   auto target_dir_name = path::combine(dest_dir_name, full_path_.substring(full_path_.last_index_of(path::directory_separator_char()) + 1));
   if (!dest_dir_info.exists()) throw directory_not_found_exception {};
@@ -321,5 +321,5 @@ void directory_info::remove(bool recursive) const {
   
   if ((attributes() & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {};
   if (native::directory::remove(full_path_) != 0)
-    throw io_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
 }
