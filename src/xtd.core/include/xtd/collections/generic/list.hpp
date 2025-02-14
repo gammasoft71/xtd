@@ -541,7 +541,7 @@ namespace xtd {
         /// @return Reference to the requested element.
         /// @exception std::out_of_range If pos is not within the range of the container.
         virtual reference at(size_type index) {
-          if (index >= count()) throw index_out_of_range_exception {};
+          if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
           return reinterpret_cast<reference>(data_->items.at(index));
         }
         /// @brief Returns a reference to the element at specified location pos, with bounds checking.
@@ -549,7 +549,7 @@ namespace xtd {
         /// @return Reference to the requested element.
         /// @exception std::out_of_range If pos is not within the range of the container.
         virtual const_reference at(size_type index) const {
-          if (index >= count()) throw index_out_of_range_exception {};
+          if (index >= count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
           return reinterpret_cast<const_reference>(data_->items.at(index));
         }
 

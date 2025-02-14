@@ -33,12 +33,12 @@ size_t socket_address::size() const {
 }
 
 xtd::byte& socket_address::operator [](size_t index) {
-  if (index >= bytes_.size()) throw index_out_of_range_exception {};
+  if (index >= bytes_.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
   return bytes_[index];
 }
 
 const xtd::byte& socket_address::operator [](size_t index) const {
-  if (index >= bytes_.size()) throw index_out_of_range_exception {};
+  if (index >= bytes_.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
   return bytes_[index];
 }
 
