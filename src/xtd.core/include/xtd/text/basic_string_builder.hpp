@@ -170,7 +170,7 @@ namespace xtd {
       /// @param index The index of the first substring character where start copy.
       /// @exception xtd::index_out_of_range_exception `index` is greater or equal than `str` size.
       basic_string_builder(const basic_string_builder& str, xtd::size index) {
-        if (index > str.size()) throw xtd::argument_out_of_range_exception {};
+        if (index > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
         chars_ = base_type(str.chars_, index);
       }
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified substring at index and allocator.
@@ -179,7 +179,7 @@ namespace xtd {
       /// @param allocator The allocator to use for all memory allocations of this basic_string_builder.
       /// @exception xtd::index_out_of_range_exception `index` is greater or equal than `str` size.
       basic_string_builder(const basic_string_builder& str, xtd::size index, const allocator_type& allocator) {
-        if (index > str.size()) throw xtd::argument_out_of_range_exception {};
+        if (index > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
         chars_ = base_type(str.chars_, index, allocator);
       }
       
@@ -189,7 +189,7 @@ namespace xtd {
       /// @param count The number of substring characters to copy.
       /// @exception xtd::index_out_of_range_exception `index` + `count`is greater or equal than `str` size.
       basic_string_builder(const basic_string_builder& str, xtd::size index, xtd::size count) {
-        if (index + count > str.size()) throw xtd::argument_out_of_range_exception {};
+        if (index + count > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
         chars_ = base_type(str.chars_, index, count);
       }
       /// @brief Initializes a new instance of xtd::text::basic_string_builder with specified substring at index, count characters and allocator.
@@ -199,7 +199,7 @@ namespace xtd {
       /// @param allocator The allocator to use for all memory allocations of this basic_string_builder.
       /// @exception xtd::index_out_of_range_exception `index` + `count`is greater or equal than `str` size.
       basic_string_builder(const basic_string_builder& str, xtd::size index, xtd::size count, const allocator_type& allocator) {
-        if (index + count > str.size()) throw xtd::argument_out_of_range_exception {};
+        if (index + count > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
         chars_ = base_type(str.chars_, index, count, allocator);
       }
       
@@ -808,7 +808,7 @@ namespace xtd {
       /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       basic_string_builder& append(const basic_string_builder& str, size_type pos, size_type count) {
         if (length() + count > max_capacity()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        if (pos > str.size() || pos + count > str.length()) throw xtd::argument_out_of_range_exception {};
+        if (pos > str.size() || pos + count > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
         chars_.append(str.chars_, pos, count);
         return *this;
       }
@@ -1100,7 +1100,7 @@ namespace xtd {
       /// @return The number of characters copied.
       /// @remarks The resulting character string is not null-terminated.
       size_type copy(pointer dest, size_type count) const {
-        if (count > length()) throw xtd::argument_out_of_range_exception {};
+        if (count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
         return chars_.copy(dest, count);
       }
       /// @brief Copies a substring [`pos`, `pos + count`) to character string pointed to by `dest`. If the requested substring lasts past the end of the string, or if `count == npos`, the copied substring is [`pos`, size()).
@@ -1110,7 +1110,7 @@ namespace xtd {
       /// @return The number of characters copied.
       /// @remarks The resulting character string is not null-terminated.
       size_type copy(pointer dest, size_type count, size_type pos) const {
-        if (pos > length() || pos + count > length()) throw xtd::argument_out_of_range_exception {};
+        if (pos > length() || pos + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
         return chars_.copy(dest, count, pos);
       }
       
@@ -1123,8 +1123,8 @@ namespace xtd {
       /// @remarks The xtd::text::basic_string_builder::copy_to method is intended to be used in the rare situation when you need to efficiently copy successive sections of a xtd::text::basic_string_builder object to an array. The array should be a fixed size, preallocated, reusable, and possibly globally accessible.
       /// @remarks For example, your code could populate a xtd::text::basic_string_builder object with a large number of characters then use the xtd::text::basic_string_builder::copy_to method to copy small, successive pieces of the xtd::text::basic_string_builder object to an array where the pieces are processed. When all the data in the xtd::text::basic_string_builder object is processed, the size of the xtd::text::basic_string_builder object is set to zero and the cycle is repeated.
       void copy_to(xtd::size source_index, xtd::array<value_type>& destination, xtd::size destination_index, xtd::size destination_count) const {
-        if (source_index > length() || source_index + destination_count > length()) throw xtd::argument_out_of_range_exception {};
-        if (destination_index >= destination.size() || destination_index + destination_count > destination.size()) throw xtd::argument_out_of_range_exception {};
+        if (source_index > length() || source_index + destination_count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
+        if (destination_index >= destination.size() || destination_index + destination_count > destination.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
         copy(destination.data() + destination_index, destination_count, source_index);
       }
 
@@ -1160,7 +1160,7 @@ namespace xtd {
       /// @return This current instance of xtd::text::basic_string_builder.
       /// @remarks Removes `std::min(count, size() - index)` characters starting at index.
       basic_string_builder& erase(size_type index) {
-        if (index > length()) throw xtd::argument_out_of_range_exception {};
+        if (index > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
         chars_.erase(index);
         return *this;
       }
@@ -1170,7 +1170,7 @@ namespace xtd {
       /// @return This current instance of xtd::text::basic_string_builder.
       /// @remarks Removes `std::min(count, size() - index)` characters starting at index.
       basic_string_builder& erase(size_type index, size_type count) {
-        if (index > length() || index + count > length()) throw xtd::argument_out_of_range_exception {};
+        if (index > length() || index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
         chars_.erase(index, count);
         return *this;
       }
@@ -1645,7 +1645,7 @@ namespace xtd {
       basic_string_builder& insert(size_type index, const basic_string_builder& str, size_type s_index, size_type count) {
         if (length() + count > max_capacity()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         if (index > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        if (s_index > str.size() || s_index + count > str.length()) throw xtd::argument_out_of_range_exception {};
+        if (s_index > str.size() || s_index + count > str.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
         chars_.insert(index, str.chars_, s_index, count);
         return *this;
       }
@@ -1914,7 +1914,7 @@ namespace xtd {
       /// @remarks If `new_cap` is less than or equal to the current capacity(), there is no effect.
       /// @remarks If a capacity change takes place, all iterators and references, including the past-the-end iterator, are invalidated.
       void reserve(size_type new_cap) {
-        if (new_cap > max_capacity_) throw xtd::argument_out_of_range_exception {};
+        if (new_cap > max_capacity_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
         if (new_cap <= capacity()) return;
         chars_.reserve(new_cap);
       }
