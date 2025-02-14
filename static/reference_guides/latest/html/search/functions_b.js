@@ -118,7 +118,6 @@ var searchData=
   ['logical_5foperation_5fstack_115',['logical_operation_stack',['../classxtd_1_1diagnostics_1_1trace__event__cache.html#a11e50ff054352443f0df0630cc0e74cd',1,'xtd::diagnostics::trace_event_cache']]],
   ['long_5flength_116',['long_length',['../classxtd_1_1basic__array.html#a48551f7aa950699c881a79fdd70f4f39',1,'xtd::basic_array']]],
   ['long_5fversion_117',['long_version',['../classxtd_1_1forms_1_1about__dialog.html#a49033e331c6c49d78b1efe850ac8147b',1,'xtd::forms::about_dialog::long_version() const noexcept'],['../classxtd_1_1forms_1_1about__dialog.html#aa185a0e4cc57f18fdcf15d165e51bcca',1,'xtd::forms::about_dialog::long_version(const xtd::string &amp;long_version)']]],
-  ['lparam_118',['lparam',['../classxtd_1_1forms_1_1message.html#a303bbe885f5bedf8d6552ce4ddc3c9aa',1,'xtd::forms::message::lparam() const noexcept'],['../classxtd_1_1forms_1_1message.html#a082edd773142a82107b3f97b6bf77333',1,'xtd::forms::message::lparam(intptr value)']]],
-  ['luminance_5ftable_119',['luminance_table',['../classxtd_1_1drawing_1_1imaging_1_1encoder.html#aa3258cc5d7c3ef95bf1eae81b06fe7a8',1,'xtd::drawing::imaging::encoder']]],
-  ['luxembourg_120',['luxembourg',['../classxtd_1_1forms_1_1countries.html#acb1e17137da00cc805da5843d49f3c2f',1,'xtd::forms::countries']]]
+  ['luminance_5ftable_118',['luminance_table',['../classxtd_1_1drawing_1_1imaging_1_1encoder.html#aa3258cc5d7c3ef95bf1eae81b06fe7a8',1,'xtd::drawing::imaging::encoder']]],
+  ['luxembourg_119',['luxembourg',['../classxtd_1_1forms_1_1countries.html#acb1e17137da00cc805da5843d49f3c2f',1,'xtd::forms::countries']]]
 ];

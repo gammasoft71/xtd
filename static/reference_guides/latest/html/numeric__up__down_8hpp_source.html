@@ -176,9 +176,9 @@ $(function() {
 <div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>      </div>
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1numeric__up__down.html#ac74bac34b487cd9274f6abdda418408a">  368</a></span>      <span class="keywordtype">void</span> on_lost_focus(const <a class="code hl_class" href="classxtd_1_1event__args.html">event_args</a>&amp; e) override;</div>
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>      </div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1numeric__up__down.html#ad0fea8399105a7f29546aebd55e4c8f2">  370</a></span>      <span class="keywordtype">void</span> wnd_proc(<a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>) override;</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1numeric__up__down.html#ad0fea8399105a7f29546aebd55e4c8f2">  370</a></span>      <span class="keywordtype">void</span> wnd_proc(<a class="code hl_struct" href="structxtd_1_1forms_1_1message.html">message</a>&amp; <a class="code hl_struct" href="structxtd_1_1forms_1_1message.html">message</a>) override;</div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>      </div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>      <span class="keywordtype">void</span> wm_command_control(<a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>&amp; <a class="code hl_class" href="classxtd_1_1forms_1_1message.html">message</a>);</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>      <span class="keywordtype">void</span> wm_command_control(<a class="code hl_struct" href="structxtd_1_1forms_1_1message.html">message</a>&amp; <a class="code hl_struct" href="structxtd_1_1forms_1_1message.html">message</a>);</div>
 <div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>      </div>
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>    private:</div>
 <div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>      <a class="code hl_namespace" href="namespacextd.html">xtd</a>::<a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">sptr</a>&lt;data&gt; data_;</div>
@@ -190,7 +190,6 @@ $(function() {
 <div class="ttc" id="aclassxtd_1_1event_html"><div class="ttname"><a href="classxtd_1_1event.html">xtd::event</a></div><div class="ttdoc">Represents an event.</div><div class="ttdef"><b>Definition</b> event.hpp:21</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1control_html"><div class="ttname"><a href="classxtd_1_1forms_1_1control.html">xtd::forms::control</a></div><div class="ttdoc">Defines the base class for controls, which are components with visual representation.</div><div class="ttdef"><b>Definition</b> control.hpp:81</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1create__params_html"><div class="ttname"><a href="classxtd_1_1forms_1_1create__params.html">xtd::forms::create_params</a></div><div class="ttdoc">Encapsulates the information needed when creating a control.</div><div class="ttdef"><b>Definition</b> create_params.hpp:29</div></div>
-<div class="ttc" id="aclassxtd_1_1forms_1_1message_html"><div class="ttname"><a href="classxtd_1_1forms_1_1message.html">xtd::forms::message</a></div><div class="ttdoc">Implements a Windows message.</div><div class="ttdef"><b>Definition</b> message.hpp:28</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1numeric__up__down_html"><div class="ttname"><a href="classxtd_1_1forms_1_1numeric__up__down.html">xtd::forms::numeric_up_down</a></div><div class="ttdoc">Represents a standard Windows numeric up down.</div><div class="ttdef"><b>Definition</b> numeric_up_down.hpp:34</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1numeric__up__down_html_a0cf2076b68cec89f6a44b29a4f416b23"><div class="ttname"><a href="classxtd_1_1forms_1_1numeric__up__down.html#a0cf2076b68cec89f6a44b29a4f416b23">xtd::forms::numeric_up_down::decimal_place</a></div><div class="ttdeci">virtual double decimal_place() const noexcept</div><div class="ttdoc">Gets the number of decimal places to display in the spin box (also known as an up-down control)....</div></div>
 <div class="ttc" id="aclassxtd_1_1forms_1_1numeric__up__down_html_a0dec0cb8c24108f9f65c06a8be956e2d"><div class="ttname"><a href="classxtd_1_1forms_1_1numeric__up__down.html#a0dec0cb8c24108f9f65c06a8be956e2d">xtd::forms::numeric_up_down::numeric_up_down</a></div><div class="ttdeci">numeric_up_down()</div><div class="ttdoc">Initializes a new instance of the numeric_up_down class.</div></div>
@@ -203,12 +202,13 @@ $(function() {
 <div class="ttc" id="agroup__types_html_gac95736233f2252af878f18687efabb92"><div class="ttname"><a href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a></div><div class="ttdeci">std::shared_ptr&lt; type_t &gt; sptr</div><div class="ttdoc">The xtd::sptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> sptr.hpp:25</div></div>
 <div class="ttc" id="anamespacextd_1_1forms_html"><div class="ttname"><a href="namespacextd_1_1forms.html">xtd::forms</a></div><div class="ttdoc">The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:12</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
+<div class="ttc" id="astructxtd_1_1forms_1_1message_html"><div class="ttname"><a href="structxtd_1_1forms_1_1message.html">xtd::forms::message</a></div><div class="ttdoc">Implements a Windows message.</div><div class="ttdef"><b>Definition</b> message.hpp:33</div></div>
 <div class="ttc" id="aup__down__base_8hpp_html"><div class="ttname"><a href="up__down__base_8hpp.html">up_down_base.hpp</a></div><div class="ttdoc">Contains xtd::forms::up_down_base control.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 12 2025 11:43:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Feb 13 2025 12:30:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
