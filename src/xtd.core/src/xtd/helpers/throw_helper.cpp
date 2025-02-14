@@ -3,9 +3,11 @@
 #undef __XTD_CORE_INTERNAL__
 #include "../../../include/xtd/collections/generic/key_not_found_exception.hpp"
 #include "../../../include/xtd/diagnostics/stack_frame.hpp"
+#include "../../../include/xtd/io/directory_not_found_exception.hpp"
 #include "../../../include/xtd/io/end_of_stream_exception.hpp"
 #include "../../../include/xtd/io/file_not_found_exception.hpp"
 #include "../../../include/xtd/io/io_exception.hpp"
+#include "../../../include/xtd/io/path_too_long_exception.hpp"
 #include "../../../include/xtd/argument_exception.hpp"
 #include "../../../include/xtd/argument_null_exception.hpp"
 #include "../../../include/xtd/argument_out_of_range_exception.hpp"
@@ -16,8 +18,10 @@
 #include "../../../include/xtd/not_implemented_exception.hpp"
 #include "../../../include/xtd/null_pointer_exception.hpp"
 #include "../../../include/xtd/overflow_exception.hpp"
+#include "../../../include/xtd/platform_not_supported_exception.hpp"
 #include "../../../include/xtd/rank_exception.hpp"
 #include "../../../include/xtd/typeof.hpp"
+#include "../../../include/xtd/unauthorized_access_exception.hpp"
 
 using namespace xtd;
 using namespace xtd::collections::generic;
@@ -36,6 +40,7 @@ void throw_helper::throws(enum exception_case exception_case, const source_locat
     case exception_case::argument: throw argument_exception {to_stack_frame(location)};
     case exception_case::argument_null: throw argument_null_exception {to_stack_frame(location)};
     case exception_case::argument_out_of_range: throw argument_out_of_range_exception {to_stack_frame(location)};
+    case exception_case::directory_not_found: throw directory_not_found_exception {to_stack_frame(location)};
     case exception_case::end_of_stream: throw end_of_stream_exception {to_stack_frame(location)};
     case exception_case::file_not_found: throw file_not_found_exception {to_stack_frame(location)};
     case exception_case::format: throw format_exception {to_stack_frame(location)};
@@ -51,7 +56,10 @@ void throw_helper::throws(enum exception_case exception_case, const source_locat
     case exception_case::not_implemented: throw not_implemented_exception {to_stack_frame(location)};
     case exception_case::null_pointer: throw null_pointer_exception {to_stack_frame(location)};
     case exception_case::overflow: throw overflow_exception {to_stack_frame(location)};
+    case exception_case::path_too_long: throw path_too_long_exception {to_stack_frame(location)};
+    case exception_case::platform_not_supported: throw platform_not_supported_exception {to_stack_frame(location)};
     case exception_case::rank: throw rank_exception {to_stack_frame(location)};
+    case exception_case::unauthorized_access: throw unauthorized_access_exception {to_stack_frame(location)};
     default: throw argument_exception {"Invalid xtd::helpers::exception_case value"};
   }
 }
@@ -62,6 +70,7 @@ void throw_helper::throws(enum exception_case exception_case, const char* messag
     case exception_case::argument: throw argument_exception {message, to_stack_frame(location)};
     case exception_case::argument_null: throw argument_null_exception {message, to_stack_frame(location)};
     case exception_case::argument_out_of_range: throw argument_out_of_range_exception {message, to_stack_frame(location)};
+    case exception_case::directory_not_found: throw directory_not_found_exception {message, to_stack_frame(location)};
     case exception_case::end_of_stream: throw end_of_stream_exception {message, to_stack_frame(location)};
     case exception_case::file_not_found: throw file_not_found_exception {message, to_stack_frame(location)};
     case exception_case::format: throw format_exception {message, to_stack_frame(location)};
@@ -77,7 +86,10 @@ void throw_helper::throws(enum exception_case exception_case, const char* messag
     case exception_case::not_implemented: throw not_implemented_exception {message, to_stack_frame(location)};
     case exception_case::null_pointer: throw null_pointer_exception {message, to_stack_frame(location)};
     case exception_case::overflow: throw overflow_exception {message, to_stack_frame(location)};
+    case exception_case::path_too_long: throw path_too_long_exception {message, to_stack_frame(location)};
+    case exception_case::platform_not_supported: throw platform_not_supported_exception {message, to_stack_frame(location)};
     case exception_case::rank: throw rank_exception {message, to_stack_frame(location)};
+    case exception_case::unauthorized_access: throw unauthorized_access_exception {message, to_stack_frame(location)};
     default: throw argument_exception {"Invalid xtd::helpers::exception_case value"};
   }
 }
