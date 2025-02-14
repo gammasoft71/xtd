@@ -34,6 +34,10 @@ namespace xtd {
       argument_null,
       /// @brief The argument is out of range.
       argument_out_of_range,
+      /// @brief The end of stream is reached.
+      end_of_stream,
+      /// @brief The file is not found.
+      file_not_found,
       /// @brief The format is not valid.
       format,
       /// @brief The format contains close backet_without_open_bracket.

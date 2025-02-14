@@ -13,7 +13,7 @@ using namespace xtd::io;
 binary_writer::binary_writer(const string& path) : stream_(new std::ofstream(path, std::ios::out | std::ios::binary | std::ios_base::trunc)), delete_when_destroy_(true) {
   if (path.index_of_any(path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-  if (!file::exists(path)) throw file_not_found_exception {};
+  if (!file::exists(path)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::file_not_found);
   if ((file::get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {};
   if (!dynamic_cast<std::ofstream*>(stream_)->is_open() || !stream_->good()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
 }
