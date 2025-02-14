@@ -22,7 +22,7 @@ std::any convert::to_any(char value) noexcept {
 #if defined(__xtd__cpp_lib_char8_t)
 std::any convert::to_any(char8 value) {
   //return value;
-  throw invalid_cast_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
 }
 #endif
 
@@ -123,12 +123,12 @@ std::any convert::to_any(char* value) noexcept {
 #if defined(__xtd__cpp_lib_char8_t)
 std::any convert::to_any(const char8* value) {
   //return value;
-  throw invalid_cast_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
 }
 
 std::any convert::to_any(char8* value) {
   //return value;
-  throw invalid_cast_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
 }
 #endif
 
@@ -160,7 +160,7 @@ bool convert::to_boolean(std::any value) {
   try {
     return std::any_cast<bool>(value);
   } catch (...) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
 }
 
@@ -173,25 +173,25 @@ bool convert::to_boolean(xtd::byte value) noexcept {
 }
 
 bool convert::to_boolean(char value) {
-  throw invalid_cast_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 bool convert::to_boolean(char8 value) {
-  throw invalid_cast_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
 }
 #endif
 
 bool convert::to_boolean(char16 value) {
-  throw invalid_cast_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
 }
 
 bool convert::to_boolean(char32 value) {
-  throw invalid_cast_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
 }
 
 bool convert::to_boolean(wchar value) {
-  throw invalid_cast_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
 }
 
 bool convert::to_boolean(decimal value) noexcept {
@@ -314,7 +314,7 @@ xtd::byte convert::to_byte(std::any value) {
   try {
     return std::any_cast<xtd::byte>(value);
   } catch (...) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
 }
 
@@ -493,12 +493,12 @@ char convert::to_char(std::any value) {
   try {
     return std::any_cast<char>(value);
   } catch (...) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
 }
 
 char convert::to_char(bool value) {
-  throw invalid_cast_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
 }
 
 char convert::to_char(xtd::byte value) noexcept {
@@ -676,11 +676,11 @@ char convert::to_char(wchar* value) {
 
 #if defined(__xtd__cpp_lib_char8_t)
 char8 convert::to_char8(std::any value) {
-  throw invalid_cast_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
 }
 
 char8 convert::to_char8(bool value) {
-  throw invalid_cast_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
 }
 
 char8 convert::to_char8(xtd::byte value) noexcept {
@@ -858,13 +858,13 @@ char16 convert::to_char16(std::any value) {
     try {
       return *std::any_cast<char16*>(value);
     } catch (...) {
-      throw invalid_cast_exception {};
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
     }
   }
 }
 
 char16 convert::to_char16(bool value) {
-  throw invalid_cast_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
 }
 
 char16 convert::to_char16(xtd::byte value) noexcept {
@@ -1044,13 +1044,13 @@ char32 convert::to_char32(std::any value) {
     try {
       return *std::any_cast<char32*>(value);
     } catch (...) {
-      throw invalid_cast_exception {};
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
     }
   }
 }
 
 char32 convert::to_char32(bool value) {
-  throw invalid_cast_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
 }
 
 char32 convert::to_char32(xtd::byte value) noexcept {
@@ -1228,13 +1228,13 @@ wchar convert::to_wchar(std::any value) {
     try {
       return *std::any_cast<wchar*>(value);
     } catch (...) {
-      throw invalid_cast_exception {};
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
     }
   }
 }
 
 wchar convert::to_wchar(bool value) {
-  throw invalid_cast_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
 }
 
 wchar convert::to_wchar(xtd::byte value) noexcept {
@@ -1411,7 +1411,7 @@ decimal convert::to_decimal(std::any value) {
   try {
     return std::any_cast<decimal>(value);
   } catch (...) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
 }
 
@@ -1565,7 +1565,7 @@ double convert::to_double(std::any value) {
   try {
     return std::any_cast<double>(value);
   } catch (...) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
 }
 
@@ -1719,7 +1719,7 @@ float convert::to_single(std::any value) {
   try {
     return std::any_cast<float>(value);
   } catch (...) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
 }
 
@@ -1873,7 +1873,7 @@ int16 convert::to_int16(std::any value) {
   try {
     return std::any_cast<int16>(value);
   } catch (...) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
 }
 
@@ -2048,7 +2048,7 @@ int32 convert::to_int32(std::any value) {
   try {
     return std::any_cast<int32>(value);
   } catch (...) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
 }
 
@@ -2219,7 +2219,7 @@ int64 convert::to_int64(std::any value) {
   try {
     return std::any_cast<int64>(value);
   } catch (...) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
 }
 
@@ -2385,7 +2385,7 @@ slong convert::to_llong(std::any value) {
   try {
     return std::any_cast<slong>(value);
   } catch (...) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
 }
 
@@ -2551,7 +2551,7 @@ sbyte convert::to_sbyte(std::any value) {
   try {
     return std::any_cast<sbyte>(value);
   } catch (...) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
 }
 
@@ -2729,7 +2729,7 @@ uint16 convert::to_uint16(std::any value) {
   try {
     return std::any_cast<uint16>(value);
   } catch (...) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
 }
 
@@ -2905,7 +2905,7 @@ uint32 convert::to_uint32(std::any value) {
   try {
     return std::any_cast<uint32>(value);
   } catch (...) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
 }
 
@@ -3079,7 +3079,7 @@ uint64 convert::to_uint64(std::any value) {
   try {
     return std::any_cast<uint64>(value);
   } catch (...) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
 }
 
@@ -3251,7 +3251,7 @@ xtd::ulong convert::to_ullong(std::any value) {
   try {
     return std::any_cast<xtd::ulong>(value);
   } catch (...) {
-    throw invalid_cast_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
 }
 

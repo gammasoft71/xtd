@@ -20,7 +20,7 @@ namespace xtd {
   
   template<class type_t>
   struct __enum_any_object__<type_t, std::false_type> {
-    type_t operator()(const any_object& o) const {throw invalid_cast_exception {};}
+    type_t operator()(const any_object& o) const {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);}
   };
   
   template<class type_t, class bool_t>

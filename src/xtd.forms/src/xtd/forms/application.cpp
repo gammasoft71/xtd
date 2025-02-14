@@ -422,7 +422,7 @@ void application::run() {
 
 void application::run(xtd::forms::application_context& context) {
   if (application::application::message_loop_ == true) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Application already running"_t);
-  if (control::check_for_illegal_cross_thread_calls() && !thread::current_thread().is_main_thread()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, xtd::string::format("Cross-thread operation not valid: {}"_t, typeof_<application>().full_name()));
+  if (control::check_for_illegal_cross_thread_calls() && !thread::current_thread().is_main_thread()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, xtd::string::format("Cross-thread operation not valid: {}"_t, typeof_<application>().full_name()).c_str());
 
   context_ = &context;
   context.thread_exit += application::on_app_thread_exit;

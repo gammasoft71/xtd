@@ -60,6 +60,6 @@ splitter_panel splitter_panel::create(const control& parent, const drawing::poin
 
 xtd::uptr<xtd::object> splitter_panel::clone() const {
   auto result = xtd::new_uptr<splitter_panel>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()));
+  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }

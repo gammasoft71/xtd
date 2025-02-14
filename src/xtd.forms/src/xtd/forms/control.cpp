@@ -1685,7 +1685,7 @@ void control::show_context_menu(xtd::forms::context_menu& menu, const xtd::drawi
 
 xtd::uptr<xtd::object> control::clone() const {
   auto result = xtd::new_uptr<control>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()));
+  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 

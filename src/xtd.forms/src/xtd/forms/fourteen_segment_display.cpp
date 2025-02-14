@@ -213,7 +213,7 @@ fourteen_segment_display fourteen_segment_display::create(const control& parent,
 
 xtd::uptr<xtd::object> fourteen_segment_display::clone() const {
   auto result = xtd::new_uptr<fourteen_segment_display>(*this);
-  if (typeof_(*result) != typeof_(*this)) throw xtd::invalid_cast_exception(xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()));
+  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 

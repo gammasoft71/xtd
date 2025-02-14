@@ -65,9 +65,9 @@ namespace xtd {
   inline const char* unboxing(string& value) noexcept {return value.c_str();}
   
   template<class char_t>
-  inline const char_t* unboxing(const string& value) {throw invalid_cast_exception("Invalid character type");}
+  inline const char_t* unboxing(const string& value) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, "Invalid character type");}
   template<class char_t>
-  inline const char_t* unboxing(string& value) {throw invalid_cast_exception("Invalid character type");}
+  inline const char_t* unboxing(string& value) {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, "Invalid character type");}
   
   template<>
   inline const char* unboxing<char>(const string& value) {return value.c_str();}

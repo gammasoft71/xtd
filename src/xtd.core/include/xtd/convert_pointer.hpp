@@ -114,9 +114,9 @@ namespace xtd {
       try {
         return dynamic_cast<const new_type_t&>(value);
       } catch (const std::exception& e) {
-        throw invalid_cast_exception(e.what());
+        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }
-      throw invalid_cast_exception {};
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
     }
     
     /// @brief Casts a type into another type.
@@ -136,9 +136,9 @@ namespace xtd {
       try {
         return dynamic_cast<new_type_t&>(value);
       } catch (const std::exception& e) {
-        throw invalid_cast_exception(e.what());
+        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }
-      throw invalid_cast_exception {};
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
     }
     
     /// @brief Casts a type into another type.
@@ -159,9 +159,9 @@ namespace xtd {
       try {
         return dynamic_cast<const new_type_t&>(*value);
       } catch (const std::exception& e) {
-        throw invalid_cast_exception(e.what());
+        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }
-      throw invalid_cast_exception {};
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
     }
     
     /// @brief Casts a type into another type.
@@ -182,9 +182,9 @@ namespace xtd {
       try {
         return dynamic_cast<new_type_t&>(*value);
       } catch (const std::exception& e) {
-        throw invalid_cast_exception(e.what());
+        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }
-      throw invalid_cast_exception {};
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
     }
     
     /// @brief Casts a type into another type.
@@ -206,9 +206,9 @@ namespace xtd {
         return xtd::uptr<new_type_t>(__convert_value__<new_type_t>(ptr));
       } catch (const std::exception& e) {
         value = xtd::uptr<current_type_t>(ptr);
-        throw invalid_cast_exception(e.what());
+        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }
-      throw invalid_cast_exception {};
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
     }
     
     /// @brief Casts a type into another type.
@@ -229,9 +229,9 @@ namespace xtd {
         return xtd::uptr<new_type_t>(__convert_value__<new_type_t>(ptr));
       } catch (const std::exception& e) {
         value = xtd::uptr<current_type_t>(ptr);
-        throw invalid_cast_exception(e.what());
+        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }
-      throw invalid_cast_exception {};
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
     }
     
     /// @brief Casts a type into another type.
@@ -251,7 +251,7 @@ namespace xtd {
       try {
         unused_(dynamic_cast<new_type_t&>(*value.get()));
       } catch (const std::exception& e) {
-        throw invalid_cast_exception(e.what());
+        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }
       return std::dynamic_pointer_cast<new_type_t>(value);
     }
@@ -272,7 +272,7 @@ namespace xtd {
       try {
         unused_(dynamic_cast<new_type_t&>(*value.get()));
       } catch (const std::exception& e) {
-        throw invalid_cast_exception(e.what());
+        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }
       return std::dynamic_pointer_cast<new_type_t>(value);
     }
@@ -294,7 +294,7 @@ namespace xtd {
       try {
         unused_(dynamic_cast<new_type_t&>(*value.get()));
       } catch (const std::exception& e) {
-        throw invalid_cast_exception(e.what());
+        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }
       //return std::move(value);
       return std::dynamic_pointer_cast<new_type_t>(std::move(value));
