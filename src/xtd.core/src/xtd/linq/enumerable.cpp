@@ -14,7 +14,7 @@ decimal enumerable::average(const ienumerable<decimal>& source) {
     average += item;
     ++count;
   }
-  if (count == 0) throw invalid_operation_exception {};
+  if (count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   return average / count;
 }
 
@@ -25,7 +25,7 @@ double enumerable::average(const ienumerable<double>& source) {
     average += item;
     ++count;
   }
-  if (count == 0) throw invalid_operation_exception {};
+  if (count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   return average / count;
 }
 
@@ -36,7 +36,7 @@ float enumerable::average(const ienumerable<float>& source) {
     average += item;
     ++count;
   }
-  if (count == 0) throw invalid_operation_exception {};
+  if (count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   return average / count;
 }
 
@@ -47,7 +47,7 @@ double enumerable::average(const ienumerable<int32>& source) {
     average += as<double>(item);
     ++count;
   }
-  if (count == 0) throw invalid_operation_exception {};
+  if (count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   return average / count;
 }
 
@@ -58,7 +58,7 @@ double enumerable::average(const ienumerable<int64>& source) {
     average += as<double>(item);
     ++count;
   }
-  if (count == 0) throw invalid_operation_exception {};
+  if (count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   return average / count;
 }
 

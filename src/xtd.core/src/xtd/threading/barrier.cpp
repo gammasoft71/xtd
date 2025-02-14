@@ -71,7 +71,7 @@ int32 barrier::add_participants(int32 participant_count) {
   if (!data_) throw object_closed_exception {};
   auto lock = lock_guard {*data_};
   if (participant_count < 0 || data_->participant_count + participant_count > int16_object::max_value) throw argument_out_of_range_exception {};
-  if (data_->run_post_phase_action) throw invalid_operation_exception {};
+  if (data_->run_post_phase_action) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   data_->participant_count += participant_count;
   data_->participants_remaining += participant_count;
   return data_->current_phase_number;
@@ -89,7 +89,7 @@ int32 barrier::remove_participants(int32 participant_count) {
   if (!data_) throw object_closed_exception {};
   auto lock = lock_guard {*data_};
   if (participant_count < 0) throw argument_out_of_range_exception {};
-  if (data_->participant_count == 0 || data_->run_post_phase_action || data_->participants_remaining < data_->participant_count - participant_count) throw invalid_operation_exception {};
+  if (data_->participant_count == 0 || data_->run_post_phase_action || data_->participants_remaining < data_->participant_count - participant_count) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   if (data_->participant_count < participant_count) throw argument_out_of_range_exception {};
   data_->participant_count -= participant_count;
   data_->participants_remaining -= participant_count;

@@ -61,7 +61,7 @@ string uri::host() const {
 }
 
 uri_host_name_type uri::host_name_type() const {
-  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {};
+  if (kind_ != uri_kind::absolute) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   
   if (!host().empty()) {
     auto address = ip_address();
@@ -90,7 +90,7 @@ bool uri::is_absolute_uri() const {
 }
 
 bool uri::is_default_port() const {
-  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {};
+  if (kind_ != uri_kind::absolute) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   
   auto prt = -1;
   if (string::try_parse<int32>(get_components(uri_components::port, uri_format::uri_escaped), prt) == true) return false;
@@ -98,12 +98,12 @@ bool uri::is_default_port() const {
 }
 
 bool uri::is_file() const {
-  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {};
+  if (kind_ != uri_kind::absolute) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   return scheme() == uri_scheme_file;
 }
 
 bool uri::is_loopback() const {
-  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {};
+  if (kind_ != uri_kind::absolute) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   if (!host().empty()) {
     auto address = ip_address();
     if (ip_address::try_parse(host(), address) == true && ip_address::is_loopback(address)) return true;
@@ -112,7 +112,7 @@ bool uri::is_loopback() const {
 }
 
 bool uri::is_unc() const {
-  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {};
+  if (kind_ != uri_kind::absolute) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   return scheme() == uri::uri_scheme_file && !host().empty();
 }
 
@@ -121,7 +121,7 @@ string uri::local_path() const {
 }
 
 const string& uri::original_string() const {
-  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {};
+  if (kind_ != uri_kind::absolute) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   return original_uri_;
 }
 
@@ -237,7 +237,7 @@ int32 uri::from_hex(char digit) {
 }
 
 string uri::get_components(uri_components components, uri_format format) const {
-  if (kind_ != uri_kind::absolute) throw invalid_operation_exception {};
+  if (kind_ != uri_kind::absolute) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   
   auto str = string::empty_string;
   if ((components & uri_components::scheme) == uri_components::scheme) str += format_componant(scheme_, format);

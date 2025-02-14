@@ -22,7 +22,7 @@ public:
   }
   
   bool create(bool initially_owned, const string& name) override {
-    throw invalid_operation_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   }
 
   void destroy() override {
@@ -31,7 +31,7 @@ public:
   }
   
   bool open(const string& name) override {
-    throw invalid_operation_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   }
 
   bool signal(bool& io_error) override {

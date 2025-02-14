@@ -75,7 +75,7 @@ void countdown_event::add_count() {
 void countdown_event::add_count(int32 count) {
   if (!data_) throw object_closed_exception {};
   if (count < 0) throw argument_out_of_range_exception {};
-  if (data_->current_count == 0) throw invalid_operation_exception {};
+  if (data_->current_count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   lock_(*data_) data_->current_count += count;
 }
 
@@ -100,7 +100,7 @@ bool countdown_event::signal() {
 
 bool countdown_event::signal(int32 signal_count) {
   if (!data_) throw object_closed_exception {};
-  if (data_->current_count == 0) throw invalid_operation_exception {};
+  if (data_->current_count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   if (signal_count < 0 || signal_count > data_->current_count) throw argument_out_of_range_exception {};
   auto lock = lock_guard {*data_};
   data_->current_count -= signal_count;

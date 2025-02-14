@@ -168,7 +168,7 @@ bool socket::exclusive_address_use() const {
 }
 
 socket& socket::exclusive_address_use(bool value) {
-  if (data_->is_bound) throw invalid_operation_exception {};
+  if (data_->is_bound) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   set_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::exclusive_address_use, value);
   return *this;
 }
@@ -293,7 +293,7 @@ socket& socket::ttl(xtd::byte value) {
 
 socket socket::accept() {
   if (data_->handle == 0) throw object_closed_exception {};
-  if (data_->is_bound == false || data_->is_listening == false) throw invalid_operation_exception {};
+  if (data_->is_bound == false || data_->is_listening == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   
   auto address = socket_address {data_->address_family};
   auto new_socket_handle = native::socket::accept(data_->handle, address.bytes_);
@@ -310,7 +310,7 @@ socket socket::accept() {
 
 bool socket::accept_async(xtd::net::sockets::socket_async_event_args& e) {
   if (data_->handle == 0) throw object_closed_exception {};
-  if (data_->is_bound == false || data_->is_listening == false) throw invalid_operation_exception {};
+  if (data_->is_bound == false || data_->is_listening == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   
   auto operation_thread = std::thread {[](xtd::net::sockets::socket_async_event_args * e, xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) {
     if (e->accept_socket_.data_->address_family == xtd::net::sockets::address_family::unknown && e->accept_socket_.data_->socket_type == xtd::net::sockets::socket_type::unknown && e->accept_socket_.data_->protocol_type == xtd::net::sockets::protocol_type::unknown) {
@@ -327,7 +327,7 @@ bool socket::accept_async(xtd::net::sockets::socket_async_event_args& e) {
 
 xtd::sptr<xtd::iasync_result> socket::begin_accept(xtd::async_callback callback, const std::any& state) {
   if (data_->handle == 0) throw object_closed_exception {};
-  if (data_->is_bound == false || data_->is_listening == false) throw invalid_operation_exception {};
+  if (data_->is_bound == false || data_->is_listening == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   
   auto ar = xtd::new_sptr<async_result_accept>(state);
   auto operation_thread = std::thread {[](socket s, xtd::sptr<async_result_accept> ar, xtd::async_callback callback) {

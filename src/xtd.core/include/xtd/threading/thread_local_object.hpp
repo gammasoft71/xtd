@@ -119,7 +119,7 @@ namespace xtd {
       /// @exception xtd::invalid_operation_exception Values stored by all threads are not available because this instance was initialized with the track_all_values argument set to `false` in the call to a class constructor.
       /// @remarks Each thread that has ever accessed this instance will contribute to this list the value last stored into the instance. This includes threads that have since exited.
       std::vector<value_t> values() const {
-        if (!data_->track_all_values) throw invalid_operation_exception {};
+        if (!data_->track_all_values) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
         lock_guard_mutex lock {data_->mutex};
         auto values = std::vector<value_t> {};
         for (const auto& entry : data_->values)

@@ -89,7 +89,7 @@ private:
     environment::on_cancel_signal(e);
     if (!e.cancel()) {
       last_signal_ = signal;
-      throw invalid_operation_exception {};
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
     }
   }
   

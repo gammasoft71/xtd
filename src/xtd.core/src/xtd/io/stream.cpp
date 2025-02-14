@@ -37,19 +37,19 @@ bool stream::is_closed() const noexcept {
 }
 
 int32 stream::read_timeout() const {
-  throw invalid_operation_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
 }
 
 void stream::read_timeout(int32 value) {
-  throw invalid_operation_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
 }
 
 int32 stream::write_timeout() const {
-  throw invalid_operation_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
 }
 
 void stream::write_timeout(int32 value) {
-  throw invalid_operation_exception {};
+  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
 }
 
 void stream::copy_to(std::ostream& destination) {
