@@ -486,7 +486,7 @@ namespace xtd {
     } catch (const std::exception& e) {
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
-    throw std::bad_cast();
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   
   /// @brief Casts a type into another type.
@@ -514,7 +514,7 @@ namespace xtd {
     } catch (const std::exception& e) {
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
-    throw std::bad_cast();
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   
   /// @cond
@@ -584,7 +584,7 @@ namespace xtd {
     } catch (const std::exception& e) {
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
-    throw std::bad_cast();
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   
   /// @brief Casts a type into another type.
@@ -607,7 +607,7 @@ namespace xtd {
     } catch (const std::exception& e) {
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
-    throw std::bad_cast();
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   
 #if defined(__xtd__cpp_lib_char8_t)
@@ -631,7 +631,7 @@ namespace xtd {
     } catch (const std::exception& e) {
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
-    throw std::bad_cast();
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   
   /// @brief Casts a type into another type.
@@ -654,7 +654,7 @@ namespace xtd {
     } catch (const std::exception& e) {
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
-    throw std::bad_cast();
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
 #endif
   
@@ -678,7 +678,7 @@ namespace xtd {
     } catch (const std::exception& e) {
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
-    throw std::bad_cast();
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   
   /// @brief Casts a type into another type.
@@ -701,7 +701,7 @@ namespace xtd {
     } catch (const std::exception& e) {
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
-    throw std::bad_cast();
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   
   /// @brief Casts a type into another type.
@@ -724,7 +724,7 @@ namespace xtd {
     } catch (const std::exception& e) {
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
-    throw std::bad_cast();
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   
   /// @brief Casts a type into another type.
@@ -747,7 +747,7 @@ namespace xtd {
     } catch (const std::exception& e) {
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
-    throw std::bad_cast();
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   
   /// @brief Casts a type into another type.
@@ -770,7 +770,7 @@ namespace xtd {
     } catch (const std::exception& e) {
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
-    throw std::bad_cast();
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   
   /// @brief Casts a type into another type.
@@ -793,7 +793,7 @@ namespace xtd {
     } catch (const std::exception& e) {
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, e.what());
     }
-    throw std::bad_cast();
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
   }
   
   /// @brief Casts a type into another type.
