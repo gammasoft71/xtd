@@ -580,7 +580,7 @@ void socket::disconnect(bool reuse_socket) {
 }
 
 socket socket::end_accept(xtd::sptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) throw argument_null_exception {};
+  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
   if (!is<async_result_accept>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_accept>(ar)->exception_) rethrow_exception(as<async_result_accept>(ar)->exception_);
@@ -588,21 +588,21 @@ socket socket::end_accept(xtd::sptr<xtd::iasync_result> ar) {
 }
 
 void socket::end_connect(xtd::sptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) throw argument_null_exception {};
+  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
   if (!is<async_result_connect>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_connect>(ar)->exception_) rethrow_exception(as<async_result_connect>(ar)->exception_);
 }
 
 void socket::end_disconnect(xtd::sptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) throw argument_null_exception {};
+  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
   if (!is<async_result_disconnect>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_disconnect>(ar)->exception_) rethrow_exception(as<async_result_disconnect>(ar)->exception_);
 }
 
 size_t socket::end_receive(xtd::sptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) throw argument_null_exception {};
+  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
   if (!is<async_result_receive>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_receive>(ar)->exception_) rethrow_exception(as<async_result_receive>(ar)->exception_);
@@ -610,7 +610,7 @@ size_t socket::end_receive(xtd::sptr<xtd::iasync_result> ar) {
 }
 
 size_t socket::end_receive(xtd::sptr<xtd::iasync_result> ar, xtd::net::sockets::socket_error& error) {
-  if (ar == nullptr) throw argument_null_exception {};
+  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
   if (!is<async_result_receive>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_receive>(ar)->exception_) rethrow_exception(as<async_result_receive>(ar)->exception_);
@@ -619,7 +619,7 @@ size_t socket::end_receive(xtd::sptr<xtd::iasync_result> ar, xtd::net::sockets::
 }
 
 size_t socket::end_receive_from(xtd::sptr<xtd::iasync_result> ar, xtd::sptr<xtd::net::end_point>& end_point) {
-  if (ar == nullptr) throw argument_null_exception {};
+  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
   if (!is<async_result_receive_from>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_receive_from>(ar)->exception_) rethrow_exception(as<async_result_receive_from>(ar)->exception_);
@@ -628,7 +628,7 @@ size_t socket::end_receive_from(xtd::sptr<xtd::iasync_result> ar, xtd::sptr<xtd:
 }
 
 size_t socket::end_receive_message_from(xtd::sptr<xtd::iasync_result> ar, xtd::net::sockets::socket_flags& socket_flags, xtd::sptr<xtd::net::end_point>& end_point, ip_packet_information& ip_packet_information) {
-  if (ar == nullptr) throw argument_null_exception {};
+  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
   if (!is<async_result_receive_message_from>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_receive_message_from>(ar)->exception_) rethrow_exception(as<async_result_receive_message_from>(ar)->exception_);
@@ -639,7 +639,7 @@ size_t socket::end_receive_message_from(xtd::sptr<xtd::iasync_result> ar, xtd::n
 }
 
 size_t socket::end_send(xtd::sptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) throw argument_null_exception {};
+  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
   if (!is<async_result_send>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_send>(ar)->exception_) rethrow_exception(as<async_result_send>(ar)->exception_);
@@ -647,7 +647,7 @@ size_t socket::end_send(xtd::sptr<xtd::iasync_result> ar) {
 }
 
 size_t socket::end_send(xtd::sptr<xtd::iasync_result> ar, xtd::net::sockets::socket_error& error) {
-  if (ar == nullptr) throw argument_null_exception {};
+  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
   if (!is<async_result_send>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_send>(ar)->exception_) rethrow_exception(as<async_result_send>(ar)->exception_);
@@ -656,7 +656,7 @@ size_t socket::end_send(xtd::sptr<xtd::iasync_result> ar, xtd::net::sockets::soc
 }
 
 size_t socket::end_send_to(xtd::sptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) throw argument_null_exception {};
+  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
   if (!is<async_result_send_to>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_send_to>(ar)->exception_) rethrow_exception(as<async_result_send_to>(ar)->exception_);

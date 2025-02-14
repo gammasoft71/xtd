@@ -129,7 +129,7 @@ void file_settings::from_string(const xtd::string& text) {
       if (line.starts_with(section_start_delimiter)) {
         auto section_comment = string::empty_string;
         line = separate_comment(line, section_comment);
-        if (!line.ends_with(section_end_delimiter)) throw format_exception {string::format("Section start with '{}' but not end with '{}'", section_start_delimiter, section_end_delimiter)};
+        if (!line.ends_with(section_end_delimiter)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, string::format("Section start with '{}' but not end with '{}'", section_start_delimiter, section_end_delimiter).c_str());
         section = unescaping(line.substring(1, line.size() - 2));
         if (!string::is_empty(section_comment)) section_comment_[section] = section_comment;
         section_key_values_[section] = {};

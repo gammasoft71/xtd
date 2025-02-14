@@ -155,7 +155,7 @@ namespace xtd {
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
     static const new_type_t& to_ref(const current_type_t* value) {
-      if (value == nullptr) throw argument_null_exception {};
+      if (value == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
       try {
         return dynamic_cast<const new_type_t&>(*value);
       } catch (const std::exception& e) {
@@ -178,7 +178,7 @@ namespace xtd {
     /// @exception xtd::invalid_cast_exception the parameters is bad cast.
     template<class new_type_t, class current_type_t>
     static new_type_t& to_ref(current_type_t* value) {
-      if (value == nullptr) throw argument_null_exception {};
+      if (value == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
       try {
         return dynamic_cast<new_type_t&>(*value);
       } catch (const std::exception& e) {
