@@ -33,7 +33,7 @@ bool tcp_listener::exclusive_address_use() const {
 }
 
 tcp_listener& tcp_listener::exclusive_address_use(bool value) {
-  if (active()) throw invalid_operation_exception {};
+  if (active()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   data_->server_socket.exclusive_address_use(value);
   return *this;
 }
@@ -47,12 +47,12 @@ xtd::net::sockets::socket tcp_listener::server() const noexcept {
 }
 
 xtd::net::sockets::socket tcp_listener::accept_socket() {
-  if (!active()) throw invalid_operation_exception {};
+  if (!active()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   return data_->server_socket.accept();
 }
 
 xtd::net::sockets::tcp_client tcp_listener::accept_tcp_client() {
-  if (!active()) throw invalid_operation_exception {};
+  if (!active()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   return tcp_client(data_->server_socket.accept());
 }
 
@@ -117,7 +117,7 @@ bool tcp_listener::equals(const tcp_listener& other) const noexcept {
 }
 
 bool tcp_listener::pending() {
-  if (!active()) throw invalid_operation_exception {};
+  if (!active()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   return data_->server_socket.poll(0, select_mode::select_read);
 }
 

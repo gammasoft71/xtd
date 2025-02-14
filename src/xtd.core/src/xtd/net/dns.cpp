@@ -30,10 +30,10 @@ ip_host_entry dns::get_host_entry(const string& host_name_or_address) {
   intptr host;
   if (ip_address::try_parse(host_name_or_address, host_address) == false) {
     host = native::dns::get_host_by_name(host_name_or_address);
-    if (host == 0) throw invalid_operation_exception {};
+    if (host == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   } else {
     host = native::dns::get_host_by_address(host_address.to_string(), static_cast<int32>(host_address.address_family()));
-    if (host == 0) throw invalid_operation_exception {};
+    if (host == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   }
   
   ip_host_entry host_entry;
@@ -51,6 +51,6 @@ ip_host_entry dns::get_host_entry(const string& host_name_or_address) {
 string dns::get_host_name() {
   __using_dns__ hotent;
   std::string host_name;
-  if (native::dns::get_host_name(host_name) != 0) throw invalid_operation_exception {};
+  if (native::dns::get_host_name(host_name) != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   return host_name;
 }

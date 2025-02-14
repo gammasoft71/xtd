@@ -19,7 +19,7 @@ public:
   }
   
   bool create(bool initial_state, bool manual_reset) override {
-    throw invalid_operation_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   }
   
   bool create(bool initial_state, bool manual_reset, const string& name) override {

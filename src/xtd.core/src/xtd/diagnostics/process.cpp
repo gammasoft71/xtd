@@ -201,7 +201,7 @@ process& process::priority_class(process_priority_class value) {
   auto priorities = std::map<process_priority_class, int32> {{process_priority_class::idle, IDLE_PRIORITY_CLASS}, {process_priority_class::below_normal, BELOW_NORMAL_PRIORITY_CLASS}, {process_priority_class::normal, NORMAL_PRIORITY_CLASS}, {process_priority_class::above_normal, ABOVE_NORMAL_PRIORITY_CLASS}, {process_priority_class::high, HIGH_PRIORITY_CLASS}, {process_priority_class::real_time, REALTIME_PRIORITY_CLASS}};
   auto it = priorities.find(value);
   if (it == priorities.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-  if (native::process::priority_class(data_->handle_.value(), it->second) == false) throw invalid_operation_exception {};
+  if (native::process::priority_class(data_->handle_.value(), it->second) == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   return *this;
 }
 
@@ -212,19 +212,19 @@ string process::process_name() const {
 
 std::istream& process::standard_error() {
   if (!data_->handle_.has_value() || data_->standard_error_ == nullptr || !data_->start_info_.redirect_standard_error() || data_->start_info_.use_shell_execute())
-    throw invalid_operation_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   return *data_->standard_error_;
 }
 
 std::ostream& process::standard_input() {
   if (!data_->handle_.has_value() || data_->standard_input_ == nullptr || !data_->start_info_.redirect_standard_input() || data_->start_info_.use_shell_execute())
-    throw invalid_operation_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   return *data_->standard_input_;
 }
 
 std::istream& process::standard_output() {
   if (!data_->handle_.has_value() || data_->standard_output_ == nullptr || !data_->start_info_.redirect_standard_output() || data_->start_info_.use_shell_execute())
-    throw invalid_operation_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   return *data_->standard_output_;
 }
 
@@ -284,14 +284,14 @@ bool process::start() {
         process.data_->standard_output_ = std::move(standard_output);
         process.data_->standard_error_ = std::move(standard_error);
       }
-      if (process.data_->handle_ == 0) throw invalid_operation_exception {"The system cannot find the file specified"_t};
+      if (process.data_->handle_ == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "The system cannot find the file specified"_t);
       allow_to_continue = true;
       debug::write_line_if(show_debug_process.enabled(), string::format("process::start [handle={}, command_line={}, start_time={:u}.{:D6}, started]", process.data_->handle_, string::format("{}{}", process.start_info().file_name(), process.start_info().arguments() == "" ? "" : string::format(" {}", process.start_info().arguments())), process.data_->start_time_, (std::chrono::duration_cast<std::chrono::microseconds>(process.data_->start_time_.ticks_duration())).count() % 1000000));
       auto exit_code = 0;
       process.data_->exit_code_ = native::process::wait(process.data_->handle_.value(), exit_code) ? exit_code : -1;
       process.data_->exit_time_ = date_time::now();
       debug::write_line_if(show_debug_process.enabled(), string::format("process::start [handle={}, exit_time={:u}.{:D6}, exit_code={}, exited]", process.data_->handle_, process.data_->exit_time_, std::chrono::duration_cast<std::chrono::microseconds>(process.data_->exit_time_.ticks_duration()).count() % 1000000, process.data_->exit_code_));
-      if (!process.data_->exit_code_.has_value() || process.data_->exit_code_ == -1 || process.data_->exit_code_ == 0x00ffffff) throw invalid_operation_exception("The system cannot find the file specified");
+      if (!process.data_->exit_code_.has_value() || process.data_->exit_code_ == -1 || process.data_->exit_code_ == 0x00ffffff) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "The system cannot find the file specified");
       process.on_exited();
     } catch (...) {
       process.data_->exception_pointer_ = std::current_exception();

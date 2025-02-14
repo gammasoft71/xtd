@@ -18,7 +18,7 @@ public:
   }
   
   bool create(int32 initial_count, int32 maximum_count) override {
-    throw invalid_operation_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   }
   
   bool create(int32 initial_count, int32 maximum_count, const string& name) override {

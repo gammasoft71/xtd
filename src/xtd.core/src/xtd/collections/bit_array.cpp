@@ -167,7 +167,7 @@ generic::enumerator<bool> bit_array::get_enumerator() const {
     
     void reset() override {pos_ = npos;}
     const bool& current() const override {
-      if (pos_ == npos || pos_ >= bit_array_->length()) throw invalid_operation_exception {};
+      if (pos_ == npos || pos_ >= bit_array_->length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
       return (*bit_array_)[pos_];
     }
     

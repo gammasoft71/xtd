@@ -18,7 +18,7 @@ public:
   }
   
   bool create(bool initially_owned) override {
-    throw invalid_operation_exception {};
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
   }
   
   bool create(bool initially_owned, const string& name) override {

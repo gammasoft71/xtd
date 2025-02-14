@@ -64,7 +64,7 @@ namespace xtd {
     /// @return The value of the current xtd::any_object object if the xtd::any_object::has_value property is `true`. An exception is thrown if the xtd::any_object::has_value property is `false`.
     /// @exception xtd::invalid_operation_exception The xtd::any_object::has_value property is `false`.
     const object& value() const {
-      if (value_ == null) throw invalid_operation_exception {};
+      if (value_ == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
       return *value_;
     }
     /// @}
