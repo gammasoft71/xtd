@@ -61,7 +61,7 @@ size memory_stream::read(array<byte>& buffer, size offset, size count) {
   if (!can_read()) throw not_supported_exception {};
 
   if (count == 0_z) return 0_z;
-  if (offset >= buffer.size() || offset + count > buffer.size()) throw argument_out_of_range_exception {};
+  if (offset >= buffer.size() || offset + count > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   if (data_->static_buffer && (data_->position + count > capacity())) throw not_supported_exception {};
 
   auto read_count = math::min(length() - data_->position, count);
@@ -90,7 +90,7 @@ void memory_stream::write(const array<byte>& buffer, size offset, size count) {
   if (!can_write()) throw not_supported_exception {};
 
   if (count == 0_z) return;
-  if (offset >= buffer.size() || offset + count > buffer.size()) throw argument_out_of_range_exception {};
+  if (offset >= buffer.size() || offset + count > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   if (data_->static_buffer && data_->position + count > capacity()) throw not_supported_exception {};
 
   if (length() < position()) {

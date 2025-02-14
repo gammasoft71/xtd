@@ -59,7 +59,7 @@ void stream::copy_to(std::ostream& destination) {
 void stream::copy_to(std::ostream& destination, xtd::size buffer_size) {
   if (is_closed()) throw object_closed_exception {};
   if (!can_read()) throw not_supported_exception {};
-  if (buffer_size == 0_z) throw argument_out_of_range_exception {};
+  if (buffer_size == 0_z) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
 
   auto copy_count = math::min(buffer_size, length() - position());
   if (copy_count == 0) return;
@@ -87,7 +87,7 @@ size stream::read_at_least(array<byte>& buffer, size minimum_bytes, bool throw_o
   if (!can_read()) throw not_supported_exception {};
   
   if (minimum_bytes == 0_z) return 0_z;
-  if (buffer.length() < minimum_bytes) throw argument_out_of_range_exception {};
+  if (buffer.length() < minimum_bytes) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   
   auto read_count = read(buffer, 0_z, minimum_bytes);
   if (throw_on_end_of_stream && read_count < minimum_bytes) throw end_of_stream_exception {};
@@ -113,7 +113,7 @@ void stream::read_exactly(array<byte>& buffer, size offset, size count) {
   if (!can_read()) throw not_supported_exception {};
 
   if (count == 0_z) return;
-  if (offset >= buffer.size() || offset + count > buffer.size()) throw argument_out_of_range_exception {};
+  if (offset >= buffer.size() || offset + count > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
 
   auto total_read_count = 0_z;
   

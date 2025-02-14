@@ -132,7 +132,7 @@ bool mutex::signal() {
 
 bool mutex::wait(int32 milliseconds_timeout) {
   if (!mutex_) throw object_closed_exception {};
-  if (milliseconds_timeout < -1) throw argument_out_of_range_exception {};
+  if (milliseconds_timeout < -1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   auto result = mutex_->wait(milliseconds_timeout);
   if (result == 0xFFFFFFFF) throw io::io_exception {};
   if (result == 0x00000080) throw abandoned_mutex_exception {};

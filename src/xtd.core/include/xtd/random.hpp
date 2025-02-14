@@ -117,7 +117,7 @@ namespace xtd {
     /// @remarks Unlike the other overloads of the next method, which return only non-negative values, this method can return a negative random integer.
     template<class value_t>
     value_t next(value_t min_value, value_t max_value) const {
-      if (min_value > max_value) throw argument_out_of_range_exception {};
+      if (min_value > max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if (min_value == max_value) return min_value;
       return min_value + static_cast<value_t>(math::round(sample() * xtd::box_integer<value_t>::max_value)) % ((max_value - 1) - min_value + 1);
     }

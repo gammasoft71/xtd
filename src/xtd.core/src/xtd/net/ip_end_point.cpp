@@ -83,7 +83,7 @@ socket_address ip_end_point::serialize() const {
       result[index++] = b;
   }
   
-  if (index > result.size()) throw argument_out_of_range_exception {};
+  if (index > result.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   
   return result;
 }

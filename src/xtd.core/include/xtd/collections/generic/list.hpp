@@ -302,7 +302,7 @@ namespace xtd {
         /// @remarks If the capacity is significantly larger than the count and you want to reduce the memory used by the xtd::collections::generic::list <type_t>, you can decrease capacity by calling the xtd::collections::generic::list::trim_excess method or by setting the xtd::collections::generic::list::capacity property explicitly to a lower value. When the value of xtd::collections::generic::list::capacity is set explicitly, the internal array is also reallocated to accommodate the specified capacity, and all the elements are copied.
         /// @remarks Retrieving the value of this property is an O(1) operation; setting the property is an O(n) operation, where n is the new capacity.
         virtual void capacity(size_type value) {
-          if (value < count()) throw argument_out_of_range_exception {};
+          if (value < count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           if (value == capacity()) return;
           if (value < capacity()) shrink_to_fit();
           reserve(value);
@@ -824,7 +824,7 @@ namespace xtd {
         /// @remarks The xtd::predicate <type_t> is a delegate to a method that returns true if the object passed to it matches the conditions defined in the delegate. The elements of the current xtd::collections::generic::list <type_t> are individually passed to the xtd::predicate <type_t> delegate, and the elements that match the conditions are removed from the xtd::collections::generic::list <type_t>.
         /// @remarks This method performs a linear search; therefore, this method is an O(n) operation, where n is xtd::collections::generic::list::count.
         xtd::size find_index(xtd::size start_index, xtd::size count, xtd::predicate<const type_t&> match) const {
-          if (start_index > size() || start_index + count > size()) throw argument_out_of_range_exception {};
+          if (start_index > size() || start_index + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
           for (auto index = start_index; index < start_index + count; ++index)
             if (match((*this)[index])) return index;
           return npos;

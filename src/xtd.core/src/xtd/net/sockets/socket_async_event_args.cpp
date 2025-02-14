@@ -31,7 +31,7 @@ void socket_async_event_args::set_buffer(size_t offset, size_t count) {
 }
 
 void socket_async_event_args::set_buffer(const std::vector<xtd::byte>& buffer, size_t offset, size_t count) {
-  if (offset + count > buffer_.size()) throw argument_out_of_range_exception {};
+  if (offset + count > buffer_.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   buffer_ = buffer;
   offset_ = offset;
   count_ = count;

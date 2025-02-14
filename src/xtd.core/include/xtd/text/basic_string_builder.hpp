@@ -807,7 +807,7 @@ namespace xtd {
       /// @par Notes to Callers
       /// When you instantiate the xtd::text::basic_string_builder object by calling the xtd::text::basic_string_builder::basic_string_builder(xtd::size, xtd::size) constructor, both the length and the capacity of the xtd::text::basic_string_builder instance can grow beyond the value of its xtd::text::basic_string_builder::max_capacity property. This can occur particularly when you call the xtd::text::basic_string_builder::append and xtd::text::basic_string_builder::append_format methods to append small strings.
       basic_string_builder& append(const basic_string_builder& str, size_type pos, size_type count) {
-        if (length() + count > max_capacity()) throw argument_out_of_range_exception {};
+        if (length() + count > max_capacity()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         if (pos > str.size() || pos + count > str.length()) throw xtd::argument_out_of_range_exception {};
         chars_.append(str.chars_, pos, count);
         return *this;
@@ -842,7 +842,7 @@ namespace xtd {
       /// @remarks The capacity of this instance is adjusted as needed.
       template<class input_iterator_t>
       basic_string_builder& append(input_iterator_t first, input_iterator_t last) {
-        if (length() + std::distance(first, last) > max_capacity()) throw argument_out_of_range_exception {};
+        if (length() + std::distance(first, last) > max_capacity()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         return append(basic_string_builder {first, last});
       }
       /// @brief Appends additional characters to the string.
@@ -1607,8 +1607,8 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts `count` copies of character `ch` at the position `index`.
       basic_string_builder& insert(size_type index, size_type count, value_type ch) {
-        if (index > length()) throw argument_out_of_range_exception {};
-        if (length() + count > max_capacity()) throw argument_out_of_range_exception {};
+        if (index > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        if (length() + count > max_capacity()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_.insert(index, count, ch);
         return *this;
       }
@@ -1643,8 +1643,8 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception `index` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts a string, obtained by `str.substr(s_index, count)` at the position `index.
       basic_string_builder& insert(size_type index, const basic_string_builder& str, size_type s_index, size_type count) {
-        if (length() + count > max_capacity()) throw argument_out_of_range_exception {};
-        if (index > length()) throw argument_out_of_range_exception {};
+        if (length() + count > max_capacity()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        if (index > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         if (s_index > str.size() || s_index + count > str.length()) throw xtd::argument_out_of_range_exception {};
         chars_.insert(index, str.chars_, s_index, count);
         return *this;
@@ -1672,8 +1672,8 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception `pos` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts `count` copies of character `ch` before the element (if any) pointed by `pos`.
       iterator insert(const_iterator pos, size_type count, value_type ch ) {
-        if (static_cast<size_type>(std::distance(cbegin(), pos)) > length()) throw argument_out_of_range_exception {};
-        if (length() + count > max_capacity()) throw argument_out_of_range_exception {};
+        if (static_cast<size_type>(std::distance(cbegin(), pos)) > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        if (length() + count > max_capacity()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         return chars_.insert(pos, count, ch);
       }
       /// @brief Inserts characters into the string.
@@ -1686,8 +1686,8 @@ namespace xtd {
       /// @remarks This overload does not participate in overload resolution if input_iterator_t does not satisfy [LegacyInputIterator](https://en.cppreference.com/w/cpp/named_req/InputIterator).
       template<class input_iterator_t>
       iterator insert( const_iterator pos, input_iterator_t first, input_iterator_t last) {
-        if (static_cast<size_type>(std::distance(cbegin(), pos)) > length()) throw argument_out_of_range_exception {};
-        if (length() + std::distance(first, last) > max_capacity()) throw argument_out_of_range_exception {};
+        if (static_cast<size_type>(std::distance(cbegin(), pos)) > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        if (length() + std::distance(first, last) > max_capacity()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         return chars_.insert(pos, first, last);
       }
       /// @brief Inserts characters into the string.
@@ -1697,7 +1697,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception `pos` is greater than the length of this instance.<rr>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks Inserts elements from initializer list `ilist` before the element (if any) pointed by `pos`.
       iterator insert(const_iterator pos, std::initializer_list<value_type> ilist) {
-        if (static_cast<size_type>(std::distance(cbegin(), pos)) > length()) throw argument_out_of_range_exception {};
+        if (static_cast<size_type>(std::distance(cbegin(), pos)) > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         return chars_.insert(pos, ilist);
       }
       
@@ -1748,7 +1748,7 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception `start_index` plus `count` indicates a character position not within this instance.<br>-or-<br>Enlarging the value of this instance would exceed xtd::text::basic_string_builder::max_capacity.
       /// @remarks This method performs an ordinal, case-sensitive comparison to identify occurrences of `old_value` in the substring of this current instance. If `new_value` is xtd::basic_string::empty_string, all occurrences of `old_value` are removed.
       basic_string_builder& replace(const xtd::basic_string<char_t>& old_value, const xtd::basic_string<char_t>& new_value, size_type start_index, size_type count) {
-        if (start_index > length() || start_index + count > length()) throw argument_out_of_range_exception {};
+        if (start_index > length() || start_index + count > length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         auto old_size = old_value.size();
         auto new_size = new_value.size();
         auto index = xtd::size {0};
@@ -1774,7 +1774,7 @@ namespace xtd {
       /// @return This current instance of xtd::text::basic_string_builder.
       /// @remarks Those characters are replaced with `str`.
       basic_string_builder& replace(size_type pos, size_type count, const basic_string_builder& str) {
-        if (pos > size() || pos + count > size()) throw argument_out_of_range_exception {};
+        if (pos > size() || pos + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_.replace(pos, count, str);
         return *this;
       }
@@ -1797,8 +1797,8 @@ namespace xtd {
       /// @return This current instance of xtd::text::basic_string_builder.
       /// @remarks Those characters are replaced with a substring [`pos2`, `std::min(pos2 + count2, str.size())`) of `str`.
       basic_string_builder& replace(size_type pos, size_type count, const basic_string_builder& str, size_type pos2) {
-        if (pos > size() || pos + count > size()) throw argument_out_of_range_exception {};
-        if (pos2 > str.size()) throw argument_out_of_range_exception {};
+        if (pos > size() || pos + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        if (pos2 > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_.replace(pos, count, str, pos2);
         return *this;
       }
@@ -1811,8 +1811,8 @@ namespace xtd {
       /// @return This current instance of xtd::text::basic_string_builder.
       /// @remarks Those characters are replaced with a substring [`pos2`, `std::min(pos2 + count2, str.size())`) of `str`.
       basic_string_builder& replace(size_type pos, size_type count, const basic_string_builder& str, size_type pos2, size_type count2) {
-        if (pos > size() || pos + count > size()) throw argument_out_of_range_exception {};
-        if (pos2 > str.size() || pos2 + count2 > str.size()) throw argument_out_of_range_exception {};
+        if (pos > size() || pos + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        if (pos2 > str.size() || pos2 + count2 > str.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_.replace(pos, count, str, pos2, count2);
         return *this;
       }
@@ -1824,7 +1824,7 @@ namespace xtd {
       /// @remarks Those characters are replaced with the characters in the range [`cstr`, `cstr + count2`).
       /// @remarks If [`cstr`, `cstr + count2`) is not a valid range, the behavior is undefined.
       basic_string_builder& replace(size_type pos, size_type count, const_pointer cstr, size_type count2) {
-        if (pos > size() || pos + count > size()) throw argument_out_of_range_exception {};
+        if (pos > size() || pos + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_.replace(pos, count, cstr, count2);
         return *this;
       }
@@ -1868,7 +1868,7 @@ namespace xtd {
       /// @return This current instance of xtd::text::basic_string_builder.
       /// @remarks Those characters are replaced with `count2` copies of `ch`.
       basic_string_builder& replace(size_type pos, size_type count, size_type count2, value_type ch) {
-        if (pos > size() || pos + count > size()) throw argument_out_of_range_exception {};
+        if (pos > size() || pos + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         chars_.replace(pos, count, count2, ch);
         return *this;
       }
@@ -1990,7 +1990,7 @@ namespace xtd {
       /// @exception `std::out_of_range` if `pos > size()`.
       /// @remarks Equivalent to return `basic_string_builder(*this, pos, count);`.
       basic_string_builder substr(size_type pos) const {
-        if (pos > size()) throw argument_out_of_range_exception {};
+        if (pos > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         return chars_.substr(pos);
       }
       /// @brief Returns a substring [`pos`, `pos + count`). If the requested substring extends past the end of the string, i.e. the `count` is greater than size() - pos (e.g. if `count` == xtd::text::basic_string_builder::npos), the returned substring is [`pos`, size()).
@@ -2000,7 +2000,7 @@ namespace xtd {
       /// @exception `std::out_of_range` if `pos > size()`.
       /// @remarks Equivalent to return `basic_string_builder(*this, pos, count);`.
       basic_string_builder substr(size_type pos, size_type count) const {
-        if (pos > size() || pos + count > size()) throw argument_out_of_range_exception {};
+        if (pos > size() || pos + count > size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
         return chars_.substr(pos, count);
       }
       

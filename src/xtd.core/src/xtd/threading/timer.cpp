@@ -72,7 +72,7 @@ timer::~timer() {
 
 void timer::change(int32 due_time, int32 period) {
   if (data_->callback.is_empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-  if (due_time < timeout::infinite || period < timeout::infinite) throw argument_out_of_range_exception {};
+  if (due_time < timeout::infinite || period < timeout::infinite) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   
   data_->due_time = due_time;
   data_->period = period;

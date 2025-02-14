@@ -13,15 +13,15 @@ version::version(const string& version) {
 }
 
 version::version(int32 major, int32 minor) : major_(major), minor_(minor) {
-  if (major < 0 || minor < 0) throw argument_out_of_range_exception {};
+  if (major < 0 || minor < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
 }
 
 version::version(int32 major, int32 minor, int32 build) : major_(major), minor_(minor), build_(build) {
-  if (major < 0 || minor < 0 || build < 0) throw argument_out_of_range_exception {};
+  if (major < 0 || minor < 0 || build < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
 }
 
 version::version(int32 major, int32 minor, int32 build, int32 revision) : major_(major), minor_(minor), build_(build), revision_(revision) {
-  if (major < 0 || minor < 0 || build < 0 || revision < 0) throw argument_out_of_range_exception {};
+  if (major < 0 || minor < 0 || build < 0 || revision < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
 }
 
 int32 version::build() const noexcept {

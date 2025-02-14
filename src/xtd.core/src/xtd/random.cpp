@@ -27,7 +27,7 @@ int32 random::next(int32 max_value) const {
 }
 
 int32 random::next(int32 min_value, int32 max_value) const {
-  if (min_value > max_value) throw argument_out_of_range_exception {};
+  if (min_value > max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   if (min_value == max_value) return min_value;
   return min_value + as<int32>(math::round(sample() * int32_object::max_value)) % ((max_value - 1) - min_value + 1);
 }
@@ -45,19 +45,19 @@ float random::next(float max_value) const {
 }
 
 decimal random::next(decimal min_value, decimal max_value) const {
-  if (min_value > max_value) throw argument_out_of_range_exception {};
+  if (min_value > max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   if (min_value == max_value) return min_value;
   return min_value + (sample() * (max_value - min_value));
 }
 
 double random::next(double min_value, double max_value) const {
-  if (min_value > max_value) throw argument_out_of_range_exception {};
+  if (min_value > max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   if (min_value == max_value) return min_value;
   return min_value + (sample() * (max_value - min_value));
 }
 
 float random::next(float min_value, float max_value) const {
-  if (min_value > max_value) throw argument_out_of_range_exception {};
+  if (min_value > max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   if (min_value == max_value) return min_value;
   return static_cast<float>(min_value + (sample() * (max_value - min_value)));
 }

@@ -167,7 +167,7 @@ namespace xtd {
     /// @exception xtd::argument_out_of_range_exception if start or start + length are greater than items size.
     template<class collection_t>
     constexpr span(collection_t& items, size_type start, size_type length) : data_ {items.data() + start}, length_ {extent != dynamic_extent ? extent : length} {
-      if (start + length > items.size()) throw argument_out_of_range_exception {};
+      if (start + length > items.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
     }
     /// @brief Creates an xtd::span with specified data pointer and count.
     /// @param data The data pointer to construct a view for.
@@ -192,7 +192,7 @@ namespace xtd {
     /// @return The last element.
     /// @exception argument_out_of_range_exception if xtd::san i empty.
     const_reference back() const {
-      if (empty()) throw argument_out_of_range_exception {};
+      if (empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return *(data_ + length_ - 1);
     }
     
@@ -240,7 +240,7 @@ namespace xtd {
     /// @return The first element.
     /// @exception argument_out_of_range_exception if xtd::san i empty.
     const_reference front() const {
-      if (empty()) throw argument_out_of_range_exception {};
+      if (empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return *data_;
     }
     
@@ -332,14 +332,14 @@ namespace xtd {
     /// @return A span `r` that is a view over the first `count` elements of `*this`, such that `r.data() == this->data() && r.size() == count`.
     template<xtd::size count>
     span<type_t, count> first() const {
-      if (count > length_) throw argument_out_of_range_exception {};
+      if (count > length_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return span<type_t, count> {data_, count};
     }
     /// @brief Obtains a subspan consisting of the first `count` elements of the sequence.
     /// @param count The count elements.
     /// @return A span `r` that is a view over the first `count` elements of `*this`, such that `r.data() == this->data() && r.size() == count`.
     span<type_t> first(xtd::size count) const {
-      if (count > length_) throw argument_out_of_range_exception {};
+      if (count > length_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return span<type_t> {data_, count};
     }
     
@@ -357,14 +357,14 @@ namespace xtd {
     /// @return A span `r` that is a view over the last `count` elements of `*this`, such that `r.data() == this->data() + (this->size() - count) && r.size() == count`.
     template<xtd::size count>
     span<type_t, count> last() const {
-      if (count > length_) throw argument_out_of_range_exception {};
+      if (count > length_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return span<type_t, count> {data_ + length_ - count, count};
     }
     /// @brief Obtains a subspan consisting of the last N elements of the sequence
     /// @param count The count elements.
     /// @return A span `r` that is a view over the last `count` elements of `*this`, such that `r.data() == this->data() + (this->size() - count) && r.size() == count`.
     span<type_t> last(xtd::size count) const {
-      if (count > length_) throw argument_out_of_range_exception {};
+      if (count > length_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return span<type_t> {data_ + length_ - count, count};
     }
 
@@ -392,7 +392,7 @@ namespace xtd {
     /// @return A span that consists of length elements from the current span starting at start.
     /// @exception xtd::argument_out_of_range_exception `start` or `start + length` is less than zero or greater than xtd::span::length.
     span<type_t> slice(size_type start, size_type length) const {
-      if (start > length_ || start + length > length_) throw argument_out_of_range_exception {};
+      if (start > length_ || start + length > length_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       return span<type_t> {data_ + start, length};
     }
 
