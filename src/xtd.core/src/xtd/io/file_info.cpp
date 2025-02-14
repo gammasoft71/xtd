@@ -10,6 +10,7 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace io;
 
 const file_info file_info::empty;
@@ -42,10 +43,10 @@ bool file_info::is_read_only() const {
 
 void file_info::is_read_only(bool value) {
   auto attributes = 0;
-  if (native::file_system::get_attributes(full_path_, attributes) != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
+  if (native::file_system::get_attributes(full_path_, attributes) != 0) throw_helper::throws(exception_case::io);
   if (value) attributes |= static_cast<int32>(file_attributes::read_only);
   else attributes &= ~static_cast<int32>(file_attributes::read_only);
-  if (native::file_system::set_attributes(full_path_, attributes) != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
+  if (native::file_system::set_attributes(full_path_, attributes) != 0) throw_helper::throws(exception_case::io);
 }
 
 size_t file_info::length() const {
@@ -63,9 +64,9 @@ stream_writer file_info::append_text() const {
 }
 
 file_info file_info::copy_to(const xtd::string& dest_file_name) const {
-  if (!exists()) throw file_not_found_exception {};
-  if (file::exists(dest_file_name)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
-  if (native::file::copy(full_path_, path::get_full_path(dest_file_name)) != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
+  if (!exists()) throw_helper::throws(exception_case::file_not_found);
+  if (file::exists(dest_file_name)) throw_helper::throws(exception_case::io);
+  if (native::file::copy(full_path_, path::get_full_path(dest_file_name)) != 0) throw_helper::throws(exception_case::io);
   return file_info {dest_file_name};
 }
 
@@ -83,9 +84,9 @@ stream_writer file_info::create_text() const {
 }
 
 void file_info::move_to(const xtd::string& dest_file_name) {
-  if (!exists()) throw file_not_found_exception {};
-  if ((attributes() & file_attributes::directory) == file_attributes::directory) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-  if (native::file::move(full_path_, path::get_full_path(dest_file_name)) != 0)  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
+  if (!exists()) throw_helper::throws(exception_case::file_not_found);
+  if ((attributes() & file_attributes::directory) == file_attributes::directory) throw_helper::throws(exception_case::argument);
+  if (native::file::move(full_path_, path::get_full_path(dest_file_name)) != 0)  throw_helper::throws(exception_case::io);
   
   original_path_ = dest_file_name;
   refresh();

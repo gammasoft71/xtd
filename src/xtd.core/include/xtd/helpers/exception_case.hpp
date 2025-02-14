@@ -34,6 +34,8 @@ namespace xtd {
       argument_null,
       /// @brief The argument is out of range.
       argument_out_of_range,
+      /// @brief The directory is not found.
+      directory_not_found,
       /// @brief The end of stream is reached.
       end_of_stream,
       /// @brief The file is not found.
@@ -64,8 +66,14 @@ namespace xtd {
       null_pointer,
       /// @brief Arithmetic overflow.
       overflow,
+      /// @brief The path is too long.
+      path_too_long,
+      /// @brief The platform is not supported.
+      platform_not_supported,
       /// @brief The rank is not valid.
       rank,
+      /// @brief The access is denied.
+      unauthorized_access,
     };
   }
 }

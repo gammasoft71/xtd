@@ -17,6 +17,7 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace io;
 
 struct directory_info::directory_iterator::data {
@@ -174,8 +175,8 @@ directory_info::file_system_info_iterator::value_type directory_info::file_syste
 const directory_info directory_info::empty;
 
 directory_info::directory_info(const xtd::string& path) {
-  if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw_helper::throws(exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) throw_helper::throws(exception_case::argument);
   original_path_ = path.length() == 2 && path[1] == ':' ?  "." : path;
   refresh();
 }
@@ -202,14 +203,14 @@ directory_info directory_info::root() const {
 }
 
 void directory_info::create() {
-  if (native::directory::create(full_path_) != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
+  if (native::directory::create(full_path_) != 0) throw_helper::throws(exception_case::io);
   refresh();
 }
 
 directory_info directory_info::create_subdirectory(const string& path) const {
-  if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-  if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-  if (native::file_system::is_path_too_long(path::combine(full_path_, path))) throw path_too_long_exception {};
+  if (path.index_of_any(io::path::get_invalid_path_chars()) != path.npos) throw_helper::throws(exception_case::argument);
+  if (path.empty() || path.trim(' ').empty()) throw_helper::throws(exception_case::argument);
+  if (native::file_system::is_path_too_long(path::combine(full_path_, path))) throw_helper::throws(exception_case::path_too_long);
   
   auto dir_info = directory_info {path::combine(full_path_, path)};
   if (!dir_info.exists()) dir_info.create();
@@ -266,10 +267,10 @@ std::vector<xtd::sptr<file_system_info>> directory_info::get_file_system_infos(c
 
 void directory_info::move_to(const string& dest_dir_name) {
   auto dest_dir_info = directory_info {dest_dir_name};
-  if (dest_dir_name == "" || dest_dir_info.exists() || equals(dest_dir_info) || !path::get_path_root(full_name()).equals(path::get_path_root(dest_dir_info.full_name())) || dest_dir_info.full_name().starts_with(full_name())) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
+  if (dest_dir_name == "" || dest_dir_info.exists() || equals(dest_dir_info) || !path::get_path_root(full_name()).equals(path::get_path_root(dest_dir_info.full_name())) || dest_dir_info.full_name().starts_with(full_name())) throw_helper::throws(exception_case::io);
   
   auto target_dir_name = path::combine(dest_dir_name, full_path_.substring(full_path_.last_index_of(path::directory_separator_char()) + 1));
-  if (!dest_dir_info.exists()) throw directory_not_found_exception {};
+  if (!dest_dir_info.exists()) throw_helper::throws(exception_case::directory_not_found);
   
   directory::create_directory(target_dir_name);
   for (string item : native::directory::enumerate_files(full_path_, "*"))
@@ -287,7 +288,7 @@ void directory_info::remove() const {
 }
 
 void directory_info::remove(bool recursive) const {
-  if (!exists()) throw directory_not_found_exception {};
+  if (!exists()) throw_helper::throws(exception_case::directory_not_found);
   
   // I don't think is a good think that check recursively directory is read only before...
   /*
@@ -306,20 +307,20 @@ void directory_info::remove(bool recursive) const {
     return (directory_info(path).attributes() & file_attributes::read_only) == file_attributes::read_only;
   };
   
-  if (is_read_only(full_path_, recursive) == true) throw unauthorized_access_exception {};
+  if (is_read_only(full_path_, recursive) == true) throw_helper::throws(exception_case::unauthorized_access);
    */
   
   if (recursive) {
     for (const auto& item : native::directory::enumerate_files(full_path_, "*")) {
       file_info fi(path::combine(full_path_, item));
-      if ((fi.attributes() & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {};
+      if ((fi.attributes() & file_attributes::read_only) == file_attributes::read_only) throw_helper::throws(exception_case::unauthorized_access);
       file::remove(path::combine(full_path_, item));
     }
     for (const auto& item : native::directory::enumerate_directories(full_path_, "*"))
       directory_info(path::combine(full_path_, item)).remove(true);
   }
   
-  if ((attributes() & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {};
+  if ((attributes() & file_attributes::read_only) == file_attributes::read_only) throw_helper::throws(exception_case::unauthorized_access);
   if (native::directory::remove(full_path_) != 0)
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
+    throw_helper::throws(exception_case::io);
 }

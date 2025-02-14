@@ -7,11 +7,12 @@
 #include "../../../include/xtd/bit_converter.hpp"
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::io;
 
 binary_reader::binary_reader(const string& path) : stream_(new std::ifstream(path, std::ios::binary)), delete_when_destroy_(true) {
-  if (path.trim(' ').length() == 0 || path.index_of_any(io::path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-  if (!file::exists(path)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::file_not_found);
+  if (path.trim(' ').length() == 0 || path.index_of_any(io::path::get_invalid_path_chars()) != string::npos) throw_helper::throws(exception_case::argument);
+  if (!file::exists(path)) throw_helper::throws(exception_case::file_not_found);
 }
 
 binary_reader::binary_reader(std::istream& stream) : stream_(&stream) {
@@ -63,7 +64,7 @@ int32 binary_reader::read() {
 }
 
 size_t binary_reader::read(std::vector<xtd::byte>& buffer, size_t index, size_t count) {
-  if (index + count > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (index + count > buffer.size()) throw_helper::throws(exception_case::argument);
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
     if (current == EOF) return i;
@@ -73,7 +74,7 @@ size_t binary_reader::read(std::vector<xtd::byte>& buffer, size_t index, size_t 
 }
 
 size_t binary_reader::read(std::vector<char>& buffer, size_t index, size_t count) {
-  if (index + count > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (index + count > buffer.size()) throw_helper::throws(exception_case::argument);
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
     if (current == EOF) return i;
@@ -93,7 +94,7 @@ xtd::byte binary_reader::read_byte() {
 std::vector<xtd::byte> binary_reader::read_bytes(size_t count) {
   auto result = std::vector<xtd::byte>(count);
   if (read(result, 0, count) != count)
-    throw end_of_stream_exception {};
+    throw_helper::throws(exception_case::end_of_stream);
   return result;
 }
 
@@ -104,7 +105,7 @@ char binary_reader::read_char() {
 std::vector<char> binary_reader::read_chars(size_t count) {
   auto result = std::vector<char>(count);
   if (read(result, 0, count) != count)
-    throw end_of_stream_exception {};
+    throw_helper::throws(exception_case::end_of_stream);
   return result;
 }
 
@@ -174,7 +175,7 @@ int32 binary_reader::read_7bit_encoded_int() {
   }
   
   byte_read_just_now = read_byte();
-  if (byte_read_just_now > 0b1111u) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (byte_read_just_now > 0b1111u) throw_helper::throws(exception_case::format);
   
   result |= static_cast<uint32>(byte_read_just_now) << (max_bytes_without_overflow * 7);
   return static_cast<int32>(result);

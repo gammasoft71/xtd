@@ -7,7 +7,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief The exception that is thrown when one of the arguments provided to a method is not valid.
+  /// @brief The exception that is thrown when the operating system denies access because of an I/O error or a specific type of security error.
   /// @par Namespace
   /// xtd
   /// @par Library
