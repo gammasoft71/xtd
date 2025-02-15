@@ -8,6 +8,8 @@
 #include "../../../include/xtd/io/file_not_found_exception.hpp"
 #include "../../../include/xtd/io/io_exception.hpp"
 #include "../../../include/xtd/io/path_too_long_exception.hpp"
+#include "../../../include/xtd/threading/abandoned_mutex_exception.hpp"
+#include "../../../include/xtd/threading/barrier_post_phase_exception.hpp"
 #include "../../../include/xtd/argument_exception.hpp"
 #include "../../../include/xtd/argument_null_exception.hpp"
 #include "../../../include/xtd/argument_out_of_range_exception.hpp"
@@ -19,6 +21,7 @@
 #include "../../../include/xtd/not_supported_exception.hpp"
 #include "../../../include/xtd/null_pointer_exception.hpp"
 #include "../../../include/xtd/object_closed_exception.hpp"
+#include "../../../include/xtd/operation_canceled_exception.hpp"
 #include "../../../include/xtd/overflow_exception.hpp"
 #include "../../../include/xtd/platform_not_supported_exception.hpp"
 #include "../../../include/xtd/rank_exception.hpp"
@@ -28,8 +31,9 @@
 using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
-using namespace xtd::io;
 using namespace xtd::helpers;
+using namespace xtd::io;
+using namespace xtd::threading;
 
 namespace {
   stack_frame to_stack_frame(const throw_helper::source_location& location) {
@@ -39,9 +43,11 @@ namespace {
 
 void throw_helper::throws(enum exception_case exception_case, const source_location& location) {
   switch (exception_case) {
+    case exception_case::abandoned_mutex: throw abandoned_mutex_exception {to_stack_frame(location)};
     case exception_case::argument: throw argument_exception {to_stack_frame(location)};
     case exception_case::argument_null: throw argument_null_exception {to_stack_frame(location)};
     case exception_case::argument_out_of_range: throw argument_out_of_range_exception {to_stack_frame(location)};
+    case exception_case::barrier_post_phase: throw barrier_post_phase_exception {to_stack_frame(location)};
     case exception_case::directory_not_found: throw directory_not_found_exception {to_stack_frame(location)};
     case exception_case::end_of_stream: throw end_of_stream_exception {to_stack_frame(location)};
     case exception_case::file_not_found: throw file_not_found_exception {to_stack_frame(location)};
@@ -59,6 +65,7 @@ void throw_helper::throws(enum exception_case exception_case, const source_locat
     case exception_case::not_supported: throw not_supported_exception {to_stack_frame(location)};
     case exception_case::null_pointer: throw null_pointer_exception {to_stack_frame(location)};
     case exception_case::object_closed: throw object_closed_exception {to_stack_frame(location)};
+    case exception_case::operation_canceled: throw operation_canceled_exception {to_stack_frame(location)};
     case exception_case::overflow: throw overflow_exception {to_stack_frame(location)};
     case exception_case::path_too_long: throw path_too_long_exception {to_stack_frame(location)};
     case exception_case::platform_not_supported: throw platform_not_supported_exception {to_stack_frame(location)};
@@ -71,9 +78,11 @@ void throw_helper::throws(enum exception_case exception_case, const source_locat
 void throw_helper::throws(enum exception_case exception_case, const char* message, const source_location& location) {
   if (!message) throws(exception_case, location);
   else switch (exception_case) {
+    case exception_case::abandoned_mutex: throw abandoned_mutex_exception {message, to_stack_frame(location)};
     case exception_case::argument: throw argument_exception {message, to_stack_frame(location)};
     case exception_case::argument_null: throw argument_null_exception {message, to_stack_frame(location)};
     case exception_case::argument_out_of_range: throw argument_out_of_range_exception {message, to_stack_frame(location)};
+    case exception_case::barrier_post_phase: throw barrier_post_phase_exception {message, to_stack_frame(location)};
     case exception_case::directory_not_found: throw directory_not_found_exception {message, to_stack_frame(location)};
     case exception_case::end_of_stream: throw end_of_stream_exception {message, to_stack_frame(location)};
     case exception_case::file_not_found: throw file_not_found_exception {message, to_stack_frame(location)};
@@ -91,6 +100,7 @@ void throw_helper::throws(enum exception_case exception_case, const char* messag
     case exception_case::not_supported: throw not_supported_exception {message, to_stack_frame(location)};
     case exception_case::null_pointer: throw null_pointer_exception {message, to_stack_frame(location)};
     case exception_case::object_closed: throw object_closed_exception {message, to_stack_frame(location)};
+    case exception_case::operation_canceled: throw operation_canceled_exception {message, to_stack_frame(location)};
     case exception_case::overflow: throw overflow_exception {message, to_stack_frame(location)};
     case exception_case::path_too_long: throw path_too_long_exception {message, to_stack_frame(location)};
     case exception_case::platform_not_supported: throw platform_not_supported_exception {message, to_stack_frame(location)};

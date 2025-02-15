@@ -4,6 +4,7 @@
 #include "../../../include/xtd/threading/manual_reset_event.hpp"
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::threading;
 
 cancellation_token cancellation_token::none;
@@ -46,7 +47,7 @@ size cancellation_token::get_hash_code() const noexcept {
 
 void cancellation_token::throw_if_cancellation_requested() const {
   if (!is_cancellation_requested()) return;
-  throw operation_canceled_exception {};
+  throw_helper::throws(exception_case::operation_canceled);
 }
 
 cancellation_token::cancellation_token(cancellation_token_source& token_source) {

@@ -129,7 +129,7 @@ bool barrier::signal_and_wait(int32 milliseconds_timeout) {
   if (!data_->cancellation_token) result = data_->phase_semaphore.wait_one(milliseconds_timeout);
   else if (milliseconds_timeout == timeout::infinite) result = wait_wtih_cancellation_token();
   else result = wait_wtih_cancellation_token(milliseconds_timeout);
-  if (data_->throw_barrier_post_phase_exception) throw barrier_post_phase_exception {};
+  if (data_->throw_barrier_post_phase_exception) throw_helper::throws(exception_case::barrier_post_phase);
   return result;
 }
 
@@ -153,7 +153,7 @@ bool barrier::signal_and_wait(const time_span& timeout, const cancellation_token
 bool barrier::wait_wtih_cancellation_token() {
   auto result = false;
   while (!result) {
-    if (data_->cancellation_token->is_cancellation_requested()) throw operation_canceled_exception {};
+    if (data_->cancellation_token->is_cancellation_requested()) throw_helper::throws(exception_case::operation_canceled);
     result = data_->phase_semaphore.wait_one(1);
   }
   return result;
@@ -163,7 +163,7 @@ bool barrier::wait_wtih_cancellation_token(int32 milliseconds_timeout) {
   auto sw = stopwatch::start_new();
   auto result = false;
   while (!result && sw.elapsed_milliseconds() <= milliseconds_timeout) {
-    if (data_->cancellation_token->is_cancellation_requested()) throw operation_canceled_exception {};
+    if (data_->cancellation_token->is_cancellation_requested()) throw_helper::throws(exception_case::operation_canceled);
     result = data_->phase_semaphore.wait_one(1);
   }
   return result;

@@ -28,12 +28,16 @@ namespace xtd {
     /// @ingroup xtd_core helpers
     /// @warning Internal use only
     enum class exception_case {
+      /// @brief The mutex is abandoned.
+      abandoned_mutex,
       /// @brief The argument is not valid.
       argument,
       /// @brief The argument is null.
       argument_null,
       /// @brief The argument is out of range.
       argument_out_of_range,
+      /// @brief The post-phase action of a xtd::threading::barrier fails.
+      barrier_post_phase,
       /// @brief The directory is not found.
       directory_not_found,
       /// @brief The end of stream is reached.
@@ -68,6 +72,8 @@ namespace xtd {
       null_pointer,
       /// @brief The object is closed.
       object_closed,
+      /// @brief The operation is canceled.
+      operation_canceled,
       /// @brief Arithmetic overflow.
       overflow,
       /// @brief The path is too long.

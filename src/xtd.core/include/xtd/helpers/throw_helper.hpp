@@ -44,9 +44,11 @@ namespace xtd {
       /// @brief Throws an exption with specified exception case, and message.
       /// @param exception_case One of xtd::helpers::exception_case values.
       /// @param type The type associate to the exception.
+      /// @remarks This overload is used with the xtd::helpers::exception_case::format_not_iformatable value.
       [[noreturn]] static void throws(xtd::helpers::exception_case exception_case, const xtd::type& type, const source_location& location = source_location::current());
       /// @brief Throws an exption with specified exception.
-      /// @param exception An xtd::exception to throw.
+      /// @tparam exception_t The exceptio type to throw.
+      /// @param arguments The arguments of the exceptio to throw.
       template<class exception_t, class ...args_t>
       [[noreturn]] static void throws(args_t... arguments) {
         throw exception_t(arguments...);
