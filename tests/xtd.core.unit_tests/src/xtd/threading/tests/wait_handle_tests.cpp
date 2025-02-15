@@ -14,6 +14,7 @@
 #include <semaphore.h>
 #endif
 
+using namespace xtd::helpers;
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
@@ -47,7 +48,7 @@ namespace xtd::tests {
       
       bool wait(int32_t milliseconds_timeout) override {
         if (!mutex_) throw object_closed_exception {};
-        if (milliseconds_timeout < -1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        if (milliseconds_timeout < -1) throw_helper::throws(exception_case::argument_out_of_range);
 
         if (milliseconds_timeout != timeout::infinite) return (locked_ = mutex_->try_lock_for(std::chrono::milliseconds {milliseconds_timeout}));
         mutex_->lock();

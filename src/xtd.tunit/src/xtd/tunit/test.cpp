@@ -7,6 +7,7 @@
 
 using namespace xtd;
 using namespace xtd::diagnostics;
+using namespace xtd::helpers;
 using namespace xtd::runtime::exception_services;
 using namespace xtd::tunit;
 
@@ -80,17 +81,17 @@ const string& test::user_message() const noexcept {
 }
 
 test& test::current_test() {
-  if (!has_current_test()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
+  if (!has_current_test()) throw_helper::throws(exception_case::null_pointer);
   return *current_test_;
 }
 
 const test_class& test::current_test_class() {
-  if (!has_current_test_class()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
+  if (!has_current_test_class()) throw_helper::throws(exception_case::null_pointer);
   return *current_test_class_;
 }
 
 const unit_test& test::current_unit_test() {
-  if (!has_current_unit_test()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
+  if (!has_current_unit_test()) throw_helper::throws(exception_case::null_pointer);
   return *current_unit_test_;
 }
 

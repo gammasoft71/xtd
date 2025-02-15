@@ -7,6 +7,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 v_scroll_bar::v_scroll_bar() : scroll_bar(true) {
   /// @todo Delete the next line when the standard control is developed.
@@ -297,6 +298,6 @@ xtd::drawing::size v_scroll_bar::default_size() const noexcept {
 
 xtd::uptr<xtd::object> v_scroll_bar::clone() const {
   auto result = xtd::new_uptr<v_scroll_bar>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
