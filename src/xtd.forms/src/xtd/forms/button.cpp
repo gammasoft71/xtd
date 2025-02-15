@@ -15,6 +15,7 @@
 
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 struct button::data {
   bool auto_repeat = false;
@@ -229,7 +230,7 @@ xtd::forms::visual_styles::push_button_state button::state() const noexcept {
 
 xtd::uptr<xtd::object> button::clone() const {
   auto result = xtd::new_uptr<button>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 
