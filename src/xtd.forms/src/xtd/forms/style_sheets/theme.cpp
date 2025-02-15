@@ -3,6 +3,7 @@
 
 using namespace xtd;
 using namespace xtd::forms::style_sheets;
+using namespace xtd::helpers;
 
 theme::theme(const string& name) : name_(name) {
 }
@@ -71,7 +72,7 @@ bool theme::from_css(const xtd::string& css_text, theme& result) {
 theme theme::parse(const xtd::string& text) {
   auto result = theme {};
   if (!try_parse(text, result))
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    throw_helper::throws(exception_case::argument);
   return result;
 }
 

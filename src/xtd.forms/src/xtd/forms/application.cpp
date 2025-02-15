@@ -23,6 +23,7 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 using namespace xtd::reflection;
 using namespace xtd::threading;
 
@@ -123,7 +124,7 @@ bool application::button_images() noexcept {
 }
 
 void application::button_images(bool value) {
-  if (application::application::message_loop_ == true) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Call xtd::application::button_images() before application::run()"_t);
+  if (application::application::message_loop_ == true) throw_helper::throws(exception_case::invalid_operation, "Call xtd::application::button_images() before application::run()"_t);
   if (button_images_ == value) return;
   button_images_ = value;
   native::application::enable_button_images(value);
@@ -164,7 +165,7 @@ bool application::dark_mode() noexcept {
 }
 
 void application::dark_mode(bool value) {
-  if (application::application::message_loop_ == true) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Call xtd::application::light_mode() before application::run()"_t);
+  if (application::application::message_loop_ == true) throw_helper::throws(exception_case::invalid_operation, "Call xtd::application::light_mode() before application::run()"_t);
   if (dark_mode() == value) return;
   native::application::enable_dark_mode(value);
 }
@@ -182,7 +183,7 @@ bool application::font_size_correction() {
 }
 
 void application::font_size_correction(bool value) {
-  if (application::application::message_loop_ == true) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Call application::font_size_correction() before application::run()"_t);
+  if (application::application::message_loop_ == true) throw_helper::throws(exception_case::invalid_operation, "Call application::font_size_correction() before application::run()"_t);
   if (font_size_correction_ == value) return;
   font_size_correction_ = value;
   native::application::enable_font_size_correction(value);
@@ -193,7 +194,7 @@ bool application::keep_cloned_controls() noexcept {
 }
 
 void application::keep_cloned_controls(bool value) {
-  if (application::application::message_loop_ == true) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Call xtd::keep_cloned_controls::button_images() before application::run()"_t);
+  if (application::application::message_loop_ == true) throw_helper::throws(exception_case::invalid_operation, "Call xtd::keep_cloned_controls::button_images() before application::run()"_t);
   keep_cloned_controls_ = value;
 }
 
@@ -202,7 +203,7 @@ bool application::light_mode() noexcept {
 }
 
 void application::light_mode(bool value) {
-  if (application::application::message_loop_ == true) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Call xtd::application::light_mode() before application::run()"_t);
+  if (application::application::message_loop_ == true) throw_helper::throws(exception_case::invalid_operation, "Call xtd::application::light_mode() before application::run()"_t);
   if (light_mode() == value) return;
   native::application::enable_light_mode(value);
 }
@@ -225,7 +226,7 @@ bool application::menu_images() noexcept {
 }
 
 void application::menu_images(bool value) {
-  if (application::application::message_loop_ == true) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Call xtd::application::menu_images() before application::run()"_t);
+  if (application::application::message_loop_ == true) throw_helper::throws(exception_case::invalid_operation, "Call xtd::application::menu_images() before application::run()"_t);
   if (menu_images_ == value) return;
   menu_images_ = value;
   native::application::enable_menu_images(value);
@@ -286,7 +287,7 @@ bool application::system_controls() noexcept {
 }
 
 void application::system_controls(bool value) {
-  if (application::application::message_loop_ == true) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Call application::system_controls() before application::run()"_t);
+  if (application::application::message_loop_ == true) throw_helper::throws(exception_case::invalid_operation, "Call application::system_controls() before application::run()"_t);
   system_controls_ = value;
 }
 
@@ -295,7 +296,7 @@ bool application::system_font_size() noexcept {
 }
 
 void application::system_font_size(bool value) {
-  if (application::application::message_loop_ == true) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Call application::system_font_size() before application::run()"_t);
+  if (application::application::message_loop_ == true) throw_helper::throws(exception_case::invalid_operation, "Call application::system_font_size() before application::run()"_t);
   if (system_font_size_ == value) return;
   system_font_size_ = value;
   native::application::enable_system_font_size(value);
@@ -341,7 +342,7 @@ bool application::visual_styles() noexcept {
 }
 
 void application::visual_styles(bool value) {
-  if (application::application::message_loop_ == true) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Call application::visual_styles() before application::run()"_t);
+  if (application::application::message_loop_ == true) throw_helper::throws(exception_case::invalid_operation, "Call application::visual_styles() before application::run()"_t);
   if (visual_styles_ == value) return;
   visual_styles_ = true;
   native::application::enable_visual_style(value);
@@ -421,8 +422,8 @@ void application::run() {
 }
 
 void application::run(xtd::forms::application_context& context) {
-  if (application::application::message_loop_ == true) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Application already running"_t);
-  if (control::check_for_illegal_cross_thread_calls() && !thread::current_thread().is_main_thread()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, xtd::string::format("Cross-thread operation not valid: {}"_t, typeof_<application>().full_name()).c_str());
+  if (application::application::message_loop_ == true) throw_helper::throws(exception_case::invalid_operation, "Application already running"_t);
+  if (control::check_for_illegal_cross_thread_calls() && !thread::current_thread().is_main_thread()) throw_helper::throws(exception_case::invalid_operation, xtd::string::format("Cross-thread operation not valid: {}"_t, typeof_<application>().full_name()).c_str());
 
   context_ = &context;
   context.thread_exit += application::on_app_thread_exit;
