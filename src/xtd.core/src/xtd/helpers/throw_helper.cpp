@@ -8,6 +8,8 @@
 #include "../../../include/xtd/io/file_not_found_exception.hpp"
 #include "../../../include/xtd/io/io_exception.hpp"
 #include "../../../include/xtd/io/path_too_long_exception.hpp"
+#include "../../../include/xtd/net/sockets/socket_error.hpp"
+#include "../../../include/xtd/net/sockets/socket_exception.hpp"
 #include "../../../include/xtd/threading/abandoned_mutex_exception.hpp"
 #include "../../../include/xtd/threading/barrier_post_phase_exception.hpp"
 #include "../../../include/xtd/threading/lock_recursion_exception.hpp"
@@ -46,6 +48,7 @@ using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
 using namespace xtd::helpers;
 using namespace xtd::io;
+using namespace xtd::net::sockets;
 using namespace xtd::threading;
 
 namespace {
@@ -89,6 +92,7 @@ void throw_helper::throws(enum exception_case exception_case, const source_locat
     case exception_case::platform_not_supported: throw platform_not_supported_exception {to_stack_frame(location)};
     case exception_case::rank: throw rank_exception {to_stack_frame(location)};
     case exception_case::semaphore_full: throw semaphore_full_exception {to_stack_frame(location)};
+    case exception_case::socket: throw socket_exception {to_stack_frame(location)};
     case exception_case::software_termination: throw software_termination_exception {to_stack_frame(location)};
     case exception_case::synchronization_lock: throw synchronization_lock_exception {to_stack_frame(location)};
     case exception_case::thread_abort: throw thread_abort_exception {to_stack_frame(location)};
@@ -150,7 +154,11 @@ void throw_helper::throws(enum exception_case exception_case, const char* messag
 }
 
 void throw_helper::throws(enum exception_case exception_case, const xtd::type& type, const source_location& location) {
-  if (exception_case == exception_case::format_not_iformatable)
-    throws(exception_case, string::format("The `{0}` type does not inherit from `xtd::iformat` or the specialisation for the `{0}` type in the `xtd::to_string` specialisation method does not exist.", typeof_(type).full_name()).c_str(), location);
-  throw argument_exception {"This overload can only be used with the xtd::helpers::exception_case::format_not_iformatable value."};
+  if (exception_case != exception_case::format_not_iformatable) throw argument_exception {"This overload can only be used with the xtd::helpers::exception_case::format_not_iformatable value."};
+  throws(exception_case, string::format("The `{0}` type does not inherit from `xtd::iformat` or the specialisation for the `{0}` type in the `xtd::to_string` specialisation method does not exist.", typeof_(type).full_name()).c_str(), location);
+}
+
+void throw_helper::throws(xtd::helpers::exception_case exception_case, const xtd::net::sockets::socket_error& error, const source_location& location) {
+  if (exception_case != exception_case::socket) throw argument_exception {"This overload can only be used with the xtd::helpers::exception_case::socket value."};
+  throw socket_exception(error, to_stack_frame(location));
 }

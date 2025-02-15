@@ -14,7 +14,7 @@ namespace xtd {
   /// @tparam arg_t The type of the value to write.
   /// @param file A file output stream.
   /// @param value The value to write,
-  /// @exceprion xtd::null_pointer_exception the `file`pointer is null.
+  /// @exception xtd::null_pointer_exception the `file`pointer is null.
   template<class arg_t>
   void print(FILE* file, arg_t&& value) {
     __xtd_print_with_file_write__(false, file, string::format("{}",  value));
@@ -32,7 +32,7 @@ namespace xtd {
   /// @param file A file output stream.
   /// @param fmt A composite format string.
   /// @param values Values to write,
-  /// @exceprion xtd::null_pointer_exception the `file`pointer is null.
+  /// @exception xtd::null_pointer_exception the `file`pointer is null.
   template<class ...args_t>
   void print(FILE* file, const xtd::string& fmt, args_t&& ... values) {
     __xtd_print_with_file_write__(false, file, string::format(fmt, std::forward<args_t>(values)...));
@@ -42,7 +42,7 @@ namespace xtd {
   /// @param file A file output stream.
   /// @param fmt A composite format string.
   /// @param values Values to write,
-  /// @exceprion xtd::null_pointer_exception the `file`pointer is null.
+  /// @exception xtd::null_pointer_exception the `file`pointer is null.
   template<class ...args_t>
   void print(FILE* file, const char* fmt, args_t&& ... values) {
     __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
@@ -53,7 +53,7 @@ namespace xtd {
   /// @param file A file output stream.
   /// @param fmt A composite format string.
   /// @param values Values to write,
-  /// @exceprion xtd::null_pointer_exception the `file`pointer is null.
+  /// @exception xtd::null_pointer_exception the `file`pointer is null.
   template<class ...args_t>
   void print(FILE* file, const char8_t* fmt, args_t&& ... values) {
     __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
@@ -64,7 +64,7 @@ namespace xtd {
   /// @param file A file output stream.
   /// @param fmt A composite format string.
   /// @param values Values to write,
-  /// @exceprion xtd::null_pointer_exception the `file`pointer is null.
+  /// @exception xtd::null_pointer_exception the `file`pointer is null.
   template<class ...args_t>
   void print(FILE* file, const char16_t* fmt, args_t&& ... values) {
     __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
@@ -74,7 +74,7 @@ namespace xtd {
   /// @param file A file output stream.
   /// @param fmt A composite format string.
   /// @param values Values to write,
-  /// @exceprion xtd::null_pointer_exception the `file`pointer is null.
+  /// @exception xtd::null_pointer_exception the `file`pointer is null.
   template<class ...args_t>
   void print(FILE* file, const char32_t* fmt, args_t&& ... values) {
     __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));
@@ -84,7 +84,7 @@ namespace xtd {
   /// @param file A file output stream.
   /// @param fmt A composite format string.
   /// @param values Values to write,
-  /// @exceprion xtd::null_pointer_exception the `file`pointer is null.
+  /// @exception xtd::null_pointer_exception the `file`pointer is null.
   template<class ...args_t>
   void print(FILE* file, const wchar_t* fmt, args_t&& ... values) {
     __xtd_print_with_file_write__(false, file, string::format(xtd::string {fmt}, std::forward<args_t>(values)...));

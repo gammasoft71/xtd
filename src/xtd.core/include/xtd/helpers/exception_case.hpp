@@ -94,6 +94,8 @@ namespace xtd {
       rank,
       /// @brief The semaphore is full.
       semaphore_full,
+      /// @brief The socket is not valid.
+      socket,
       /// @brief A software termination occurs.
       software_termination,
       /// @brief The lock is not valid.

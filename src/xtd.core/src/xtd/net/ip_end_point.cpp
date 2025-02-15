@@ -36,7 +36,7 @@ ip_end_point& ip_end_point::port(uint16 port) {
 
 xtd::uptr<end_point> ip_end_point::create(const socket_address& socket_address) const {
   if (socket_address.address_family() != address_family_ || socket_address.size() < 8) throw_helper::throws(exception_case::argument);
-  if (address_family_ != address_family::inter_network && address_family_ != address_family::inter_network_v6) throw_helper::throws<socket_exception>(socket_error::address_family_not_supported);
+  if (address_family_ != address_family::inter_network && address_family_ != address_family::inter_network_v6) throw_helper::throws(exception_case::socket, socket_error::address_family_not_supported);
   
   uint16 current_port = ip_address::network_to_host_order(bit_converter::to_uint16(socket_address.bytes_, 2)); // static_cast<uint16>((socket_address[2] << 8 & 0xFF00) | (socket_address[3]));
   

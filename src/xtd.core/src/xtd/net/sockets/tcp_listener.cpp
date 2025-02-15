@@ -1,6 +1,7 @@
 #include "../../../../include/xtd/net/sockets/tcp_listener.hpp"
 #include "../../../../include/xtd/net/sockets/socket_exception.hpp"
 #include "../../../../include/xtd/invalid_operation_exception.hpp"
+#include "../../../../include/xtd/runtime/exception_services/exception_dispatch_info.hpp"
 #include "../../../../include/xtd/as.hpp"
 #include "../../../../include/xtd/is.hpp"
 #include <thread>
@@ -9,6 +10,7 @@ using namespace xtd;
 using namespace xtd::helpers;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
+using namespace xtd::runtime::exception_services;
 
 struct tcp_listener::data {
   socket server_socket {address_family::inter_network, socket_type::stream, protocol_type::tcp};
@@ -133,7 +135,7 @@ void tcp_listener::start(size_t backlog) {
       data_->server_socket.listen(backlog);
     } catch (const socket_exception& e) {
       stop();
-      throw_helper::throws<socket_exception>(e);
+      exception_dispatch_info::rethrow(e);
     }
   }
   data_->active = true;
