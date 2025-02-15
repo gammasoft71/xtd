@@ -11,6 +11,7 @@
 
 using namespace xtd;
 using namespace xtd::drawing;
+using namespace xtd::helpers;
 
 const color color::empty = color();
 const color color::transparent = color::from_known_color(known_color::transparent);
@@ -546,7 +547,7 @@ color color::from_known_color(known_color color) {
     case known_color::window: return drawing::color {color::from_handle(native::system_colors::window()), color};
     case known_color::window_frame: return drawing::color {color::from_handle(native::system_colors::window_frame()), color};
     case known_color::window_text: return drawing::color {color::from_handle(native::system_colors::window_text()), color};
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "know_color invalid"_t);
+    default: throw_helper::throws(exception_case::argument, "know_color invalid"_t);
   }
 }
 

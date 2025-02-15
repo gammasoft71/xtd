@@ -72,6 +72,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
+using namespace xtd::helpers;
 
 extern drawing_native_export_ bool __enable_system_font_size__ ;
 extern std::vector<control_handler*> __control_handler_to_delete_items__;
@@ -100,7 +101,7 @@ namespace {
 extern int32 __mainloop_runnning__;
 
 void control::back_color(intptr control, const color& color) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -115,7 +116,7 @@ void control::back_color(intptr control, const color& color) {
 }
 
 void control::context_menu(intptr control, intptr context_menu, const xtd::drawing::point& pos) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -124,7 +125,7 @@ void control::context_menu(intptr control, intptr context_menu, const xtd::drawi
 }
 
 intptr control::user_context_menu(intptr control, intptr context_menu, const xtd::drawing::point& pos) {
-  if (!control || !context_menu || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !context_menu || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return static_cast<intptr>(-1);
@@ -173,7 +174,7 @@ intptr control::create(const forms::native::create_params& create_params) {
 }
 
 intptr control::create_paint_graphics(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper;
   #if defined(__WXGTK__)
   hdc_wrapper->create<wxClientDC>(reinterpret_cast<control_handler*>(control)->main_control());
@@ -184,7 +185,7 @@ intptr control::create_paint_graphics(intptr control) {
 }
 
 intptr control::create_double_buffered_paint_graphics(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper;
   //wxColour back_color = reinterpret_cast<control_handler*>(control)->main_control()->GetBackgroundColour();
   reinterpret_cast<control_handler*>(control)->main_control()->SetBackgroundStyle(wxBackgroundStyle::wxBG_STYLE_PAINT);
@@ -198,14 +199,14 @@ intptr control::create_double_buffered_paint_graphics(intptr control) {
 }
 
 intptr control::create_graphics(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = new xtd::drawing::native::hdc_wrapper;
   hdc_wrapper->create<wxClientDC>(reinterpret_cast<control_handler*>(control)->main_control());
   return reinterpret_cast<intptr>(hdc_wrapper);
 }
 
 intptr control::def_wnd_proc(intptr control, intptr hwnd, uint32 msg, intptr wparam, intptr lparam, intptr presult, intptr handle) {
-  if (!control || !handle) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !handle) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return static_cast<intptr>(-1);
@@ -261,7 +262,7 @@ xtd::drawing::size control::default_size(const xtd::string& class_name) {
 }
 
 void control::destroy(intptr control) {
-  if (!control) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control) throw_helper::throws(exception_case::argument);
   if (reinterpret_cast<control_handler*>(control)->control() == 0 || !wxTheApp) return;
   reinterpret_cast<control_handler*>(control)->control()->Unlink();
   reinterpret_cast<control_handler*>(control)->control()->DeletePendingEvents();
@@ -271,7 +272,7 @@ void control::destroy(intptr control) {
 }
 
 drawing::rectangle control::client_rectangle(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return {};
@@ -281,7 +282,7 @@ drawing::rectangle control::client_rectangle(intptr control) {
 }
 
 drawing::size control::client_size(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return {};
@@ -291,7 +292,7 @@ drawing::size control::client_size(intptr control) {
 }
 
 void control::client_size(intptr control, const drawing::size& size) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -300,7 +301,7 @@ void control::client_size(intptr control, const drawing::size& size) {
 }
 
 void control::cursor(intptr control, intptr cursor) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -309,7 +310,7 @@ void control::cursor(intptr control, intptr cursor) {
 }
 
 void control::double_buffered(intptr control, bool value) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -318,7 +319,7 @@ void control::double_buffered(intptr control, bool value) {
 }
 
 bool control::enabled(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return false;
@@ -327,7 +328,7 @@ bool control::enabled(intptr control) {
 }
 
 void control::enabled(intptr control, bool enabled) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -336,7 +337,7 @@ void control::enabled(intptr control, bool enabled) {
 }
 
 void control ::focus(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -345,7 +346,7 @@ void control ::focus(intptr control) {
 }
 
 void control::fore_color(intptr control, const color& color) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -354,7 +355,7 @@ void control::fore_color(intptr control, const color& color) {
 }
 
 void control::font(intptr control, const drawing::font& font) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -363,7 +364,7 @@ void control::font(intptr control, const drawing::font& font) {
 }
 
 intptr control::native_handle(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return 0;
@@ -385,7 +386,7 @@ void control::invoke_in_control_thread(intptr control, delegate<void(std::vector
 }
 
 point control::location(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return {};
@@ -395,7 +396,7 @@ point control::location(intptr control) {
 }
 
 void control::location(intptr control, const point& location) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -404,7 +405,7 @@ void control::location(intptr control, const point& location) {
 }
 
 void control::maximum_client_size(intptr control, const drawing::size& size) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -413,7 +414,7 @@ void control::maximum_client_size(intptr control, const drawing::size& size) {
 }
 
 void control::maximum_size(intptr control, const drawing::size& size) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -422,7 +423,7 @@ void control::maximum_size(intptr control, const drawing::size& size) {
 }
 
 void control::minimum_client_size(intptr control, const drawing::size& size) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -431,7 +432,7 @@ void control::minimum_client_size(intptr control, const drawing::size& size) {
 }
 
 void control::minimum_size(intptr control, const drawing::size& size) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -440,7 +441,7 @@ void control::minimum_size(intptr control, const drawing::size& size) {
 }
 
 drawing::point control::point_to_screen(intptr control, const drawing::point& p) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return {};
@@ -450,7 +451,7 @@ drawing::point control::point_to_screen(intptr control, const drawing::point& p)
 }
 
 drawing::point control::point_to_client(intptr control, const drawing::point& p) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return {};
@@ -460,7 +461,7 @@ drawing::point control::point_to_client(intptr control, const drawing::point& p)
 }
 
 drawing::size control::size(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return {};
@@ -470,7 +471,7 @@ drawing::size control::size(intptr control) {
 }
 
 void control::size(intptr control, const drawing::size& size) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -479,7 +480,7 @@ void control::size(intptr control, const drawing::size& size) {
 }
 
 string control::text(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return "";
@@ -488,7 +489,7 @@ string control::text(intptr control) {
 }
 
 void control::text(intptr control, const string& text) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -497,7 +498,7 @@ void control::text(intptr control, const string& text) {
 }
 
 intptr control::toolkit_handle(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return 0;
@@ -506,7 +507,7 @@ intptr control::toolkit_handle(intptr control) {
 }
 
 bool control::visible(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return false;
@@ -515,7 +516,7 @@ bool control::visible(intptr control) {
 }
 
 void control::visible(intptr control, bool visible) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -524,7 +525,7 @@ void control::visible(intptr control, bool visible) {
 }
 
 void control::invalidate(intptr control, const drawing::rectangle& rect, bool invalidate_children) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -537,7 +538,7 @@ void control::invalidate(intptr control, const drawing::region& region, bool inv
 }
 
 void control::register_wnd_proc(intptr control, const delegate<intptr(intptr, int32, intptr, intptr, intptr)>& wnd_proc) {
-  if (!control) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -546,7 +547,7 @@ void control::register_wnd_proc(intptr control, const delegate<intptr(intptr, in
 }
 
 void control::resume_layout(intptr control) {
-  if (!control) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -558,7 +559,7 @@ void control::resume_layout(intptr control) {
 }
 
 void control::right_to_left(intptr control, int32 value) {
-  if (!control) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -572,7 +573,7 @@ void control::right_to_left(intptr control, int32 value) {
 }
 
 intptr control::send_message(intptr control, intptr hwnd, int32 msg, intptr wparam, intptr lparam) {
-  if (!control) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return static_cast<intptr>(-1);
@@ -581,7 +582,7 @@ intptr control::send_message(intptr control, intptr hwnd, int32 msg, intptr wpar
 }
 
 void control::suspend_layout(intptr control) {
-  if (!control) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -592,7 +593,7 @@ void control::suspend_layout(intptr control) {
 }
 
 void control::unregister_wnd_proc(intptr control) {
-  if (!control) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -601,7 +602,7 @@ void control::unregister_wnd_proc(intptr control) {
 }
 
 void control::update(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;

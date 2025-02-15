@@ -5,6 +5,7 @@
 
 using namespace xtd;
 using namespace xtd::drawing;
+using namespace xtd::helpers;
 using namespace xtd::threading;
 
 const xtd::drawing::size& buffered_graphics_context::maximum_buffer() const noexcept {
@@ -12,7 +13,7 @@ const xtd::drawing::size& buffered_graphics_context::maximum_buffer() const noex
 }
 
 buffered_graphics_context& buffered_graphics_context::maximum_buffer(const xtd::drawing::size& value) {
-  if (value.height <= 0 || value.width <= 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (value.height <= 0 || value.width <= 0) throw_helper::throws(exception_case::argument);
   if (value.height * value.width < maximum_buffer_.height * maximum_buffer_.width) invalidate();
   maximum_buffer_ = value;
   return *this;

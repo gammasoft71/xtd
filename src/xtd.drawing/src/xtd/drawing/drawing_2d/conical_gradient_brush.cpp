@@ -9,6 +9,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
+using namespace xtd::helpers;
 
 struct conical_gradient_brush::data {
   xtd::drawing::point_f center_point;
@@ -41,7 +42,7 @@ conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point& center
 }
 
 conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point_f& center, const std::vector<xtd::drawing::color>& conical_colors, float angle) : data_(xtd::new_sptr<data>()) {
-  if (conical_colors.size() < 2) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (conical_colors.size() < 2) throw_helper::throws(exception_case::argument);
   
   data_->center_point = center;
   data_->angle = angle;
@@ -74,7 +75,7 @@ conical_gradient_brush& conical_gradient_brush::angle(float value) noexcept {
 
 conical_gradient_brush& conical_gradient_brush::conical_colors(const gradient_stop_collection& value) {
   if (data_->conical_colors != value) {
-    if (value.size() < 2) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    if (value.size() < 2) throw_helper::throws(exception_case::argument);
     data_->conical_colors = value;
     recreate_handle();
   }

@@ -10,6 +10,7 @@
 
 using namespace xtd;
 using namespace xtd::forms::native;
+using namespace xtd::helpers;
 
 //int32 convert_to_buttons(uint32 style){
 //    switch(style)
@@ -34,7 +35,7 @@ void message_notifier::show(intptr hwnd, const xtd::string& title,
   std::chrono::system_clock::duration close_timeout_interval,
   xtd::delegate<void()> on_notifier_closed) {
   
-  if (!wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!wxTheApp) throw_helper::throws(exception_case::argument);
   auto notifmsg = xtd::new_uptr<wxNotificationMessage>();
   notifmsg->SetParent(hwnd == 0 ? nullptr : reinterpret_cast<control_handler*>(hwnd)->control());
   notifmsg->SetTitle(convert_string::to_wstring(title));

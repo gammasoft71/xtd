@@ -8,14 +8,15 @@
 
 using namespace xtd;
 using namespace xtd::forms::native;
+using namespace xtd::helpers;
 
 bool __toggle_full_screen_frame__(wxTopLevelWindow* control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   return ([[control->GetHandle() window] styleMask] & NSWindowStyleMaskFullScreen) == NSWindowStyleMaskFullScreen;
 }
 
 void __toggle_full_screen_frame__(wxTopLevelWindow* control, bool full_screen) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (full_screen != __toggle_full_screen_frame__(control)) [[control->GetHandle() window] toggleFullScreen:[control->GetHandle() window]];
 }
 #endif

@@ -14,6 +14,7 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
+using namespace xtd::helpers;
 using namespace xtd::threading;
 
 void __toggle_full_screen_frame__(wxTopLevelWindow* control, bool full_screen);
@@ -34,7 +35,7 @@ wxMenuBar* __create_default_menu_bar__() {
 }
 
 void form::activate(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -43,7 +44,7 @@ void form::activate(intptr control) {
 }
 
 void form::close(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -52,7 +53,7 @@ void form::close(intptr control) {
 }
 
 bool form::full_screen(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return false;
@@ -65,7 +66,7 @@ bool form::full_screen(intptr control) {
 }
 
 void form::full_screen(intptr control, bool full_screen) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -78,7 +79,7 @@ void form::full_screen(intptr control, bool full_screen) {
 }
 
 void form::icon(intptr control, const xtd::drawing::icon& icon) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -88,7 +89,7 @@ void form::icon(intptr control, const xtd::drawing::icon& icon) {
 }
 
 bool form::maximize(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return false;
@@ -103,7 +104,7 @@ bool form::maximize(intptr control) {
 }
 
 void form::maximize(intptr control, bool maximize) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -112,8 +113,8 @@ void form::maximize(intptr control, bool maximize) {
 }
 
 void form::menu(intptr control, intptr menu) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-  if (menu != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "dialog can't have menu"_t);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
+  if (menu != 0 && !dynamic_cast<wxFrame*>(reinterpret_cast<control_handler*>(control)->control())) throw_helper::throws(exception_case::argument, "dialog can't have menu"_t);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -123,7 +124,7 @@ void form::menu(intptr control, intptr menu) {
 }
 
 bool form::minimize(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return false;
@@ -132,7 +133,7 @@ bool form::minimize(intptr control) {
 }
 
 void form::minimize(intptr control, bool minimize) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -141,7 +142,7 @@ void form::minimize(intptr control, bool minimize) {
 }
 
 void form::restore(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -155,7 +156,7 @@ void form::restore(intptr control) {
 }
 
 void form::set_region(intptr control, intptr region) {
-  if (!control || !region || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !region || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -164,23 +165,23 @@ void form::set_region(intptr control, intptr region) {
 }
 
 int32 form::show_dialog(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return 0;
   }
-  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "show_dialog work only with dialog"_t);
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw_helper::throws(exception_case::argument, "show_dialog work only with dialog"_t);
   auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control());
   return dialog->ShowModal();
 }
 
 void form::show_sheet(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
   }
-  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "show_sheet work only with dialog"_t);
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw_helper::throws(exception_case::argument, "show_sheet work only with dialog"_t);
   #if defined(__WXOSX__)
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->ShowWindowModal();
   #else
@@ -189,12 +190,12 @@ void form::show_sheet(intptr control) {
 }
 
 int32 form::show_sheet_dialog(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return 0;
   }
-  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "show_sheet_dialog work only with dialog"_t);
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw_helper::throws(exception_case::argument, "show_sheet_dialog work only with dialog"_t);
   auto dialog = static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control());
   #if defined(__WXOSX__)
   if (!dialog->GetParent()) return dialog->ShowModal();
@@ -217,17 +218,17 @@ int32 form::show_sheet_dialog(intptr control) {
 }
 
 void form::end_dialog(intptr control, int32 result) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
   }
-  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "end_dialog work only with dialog"_t);
+  if (!dynamic_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())) throw_helper::throws(exception_case::argument, "end_dialog work only with dialog"_t);
   static_cast<wxDialog*>(reinterpret_cast<control_handler*>(control)->control())->EndModal(result);
 }
 
 void form::opacity(intptr control, double opacity) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
@@ -236,7 +237,7 @@ void form::opacity(intptr control, double opacity) {
 }
 
 void form::virtual_size(intptr control, const drawing::size& size) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;

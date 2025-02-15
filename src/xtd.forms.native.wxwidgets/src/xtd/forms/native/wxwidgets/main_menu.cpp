@@ -9,6 +9,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
+using namespace xtd::helpers;
 
 #if defined(__WXOSX__)
 namespace {
@@ -36,13 +37,13 @@ intptr main_menu::create() {
 
 void main_menu::destroy(intptr main_menu) {
   if (!wxTheApp) return;
-  if (main_menu == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (main_menu == 0) throw_helper::throws(exception_case::argument);
   reinterpret_cast<wxMenuBar*>(main_menu)->Destroy();
 }
 
 void main_menu::insert_item(intptr main_menu, size_t pos, intptr menu_item, const string& text) {
-  if (main_menu == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-  if (menu_item == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (main_menu == 0) throw_helper::throws(exception_case::argument);
+  if (menu_item == 0) throw_helper::throws(exception_case::argument);
   
   auto wx_main_menu = reinterpret_cast<wxMenuBar*>(main_menu);
   
@@ -65,6 +66,6 @@ void main_menu::insert_item(intptr main_menu, size_t pos, intptr menu_item, cons
 }
 
 void main_menu::remove_item(intptr main_menu, size_t pos) {
-  if (main_menu == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (main_menu == 0) throw_helper::throws(exception_case::argument);
   reinterpret_cast<wxMenuBar*>(main_menu)->Remove(pos);
 }

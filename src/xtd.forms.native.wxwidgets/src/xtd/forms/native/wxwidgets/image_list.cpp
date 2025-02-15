@@ -10,23 +10,24 @@
 
 using namespace xtd;
 using namespace xtd::forms::native;
+using namespace xtd::helpers;
 
 intptr image_list::create(const drawing::size& image_size) {
   return reinterpret_cast<intptr>(new wxImageList(image_size.width, image_size.height));
 }
 
 void image_list::delete_item(intptr image_list, size_t pos) {
-  if (!image_list) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!image_list) throw_helper::throws(exception_case::argument);
   reinterpret_cast<wxImageList*>(image_list)->Remove(static_cast<int32>(pos));
 }
 
 void image_list::destroy(intptr image_list) {
-  if (!image_list) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!image_list) throw_helper::throws(exception_case::argument);
   delete reinterpret_cast<wxImageList*>(image_list);
 }
 
 void image_list::insert_item(intptr image_list, size_t pos, const drawing::image& image) {
-  if (!image_list) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!image_list) throw_helper::throws(exception_case::argument);
   if (pos == static_cast<size_t>(reinterpret_cast<wxImageList*>(image_list)->GetImageCount()))
     reinterpret_cast<wxImageList*>(image_list)->Add(*reinterpret_cast<wxImage*>(image.handle()));
   else {
@@ -42,6 +43,6 @@ void image_list::insert_item(intptr image_list, size_t pos, const drawing::image
 }
 
 void image_list::update_item(intptr image_list, size_t pos, const drawing::image& image) {
-  if (!image_list) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!image_list) throw_helper::throws(exception_case::argument);
   reinterpret_cast<wxImageList*>(image_list)->Replace(static_cast<int32>(pos), wxBitmap(*reinterpret_cast<wxImage*>(image.handle())));
 }

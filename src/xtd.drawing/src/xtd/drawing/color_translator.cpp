@@ -5,60 +5,61 @@
 
 using namespace xtd;
 using namespace xtd::drawing;
+using namespace xtd::helpers;
 
 color color_translator::from_hex(const string& text) {
   auto result = color::empty;
   if (string::is_empty(text)) return result;
-  if (try_parse_hex_color(text, result) == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (try_parse_hex_color(text, result) == false) throw_helper::throws(exception_case::format);
   return result;
 }
 
 color color_translator::from_hsl(const string& text) {
   auto result = color::empty;
   if (string::is_empty(text)) return result;
-  if (try_parse_hsl_color(text, result) == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (try_parse_hsl_color(text, result) == false) throw_helper::throws(exception_case::format);
   return result;
 }
 
 color color_translator::from_hsla(const string& text) {
   auto result = color::empty;
   if (string::is_empty(text)) return result;
-  if (try_parse_hsla_color(text, result) == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (try_parse_hsla_color(text, result) == false) throw_helper::throws(exception_case::format);
   return result;
 }
 
 color color_translator::from_hsv(const string& text) {
   auto result = color::empty;
   if (string::is_empty(text)) return result;
-  if (try_parse_hsv_color(text, result) == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (try_parse_hsv_color(text, result) == false) throw_helper::throws(exception_case::format);
   return result;
 }
 
 color color_translator::from_hsva(const string& text) {
   auto result = color::empty;
   if (string::is_empty(text)) return result;
-  if (try_parse_hsva_color(text, result) == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (try_parse_hsva_color(text, result) == false) throw_helper::throws(exception_case::format);
   return result;
 }
 
 color color_translator::from_html(const string& text) {
   auto result = color::empty;
   if (string::is_empty(text)) return result;
-  if (try_parse_html_color(text, result) == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (try_parse_html_color(text, result) == false) throw_helper::throws(exception_case::format);
   return result;
 }
 
 color color_translator::from_rgb(const string& text) {
   auto result = color::empty;
   if (string::is_empty(text)) return result;
-  if (try_parse_rgb_color(text, result) == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (try_parse_rgb_color(text, result) == false) throw_helper::throws(exception_case::format);
   return result;
 }
 
 color color_translator::from_rgba(const string& text) {
   auto result = color::empty;
   if (string::is_empty(text)) return result;
-  if (try_parse_rgba_color(text, result) == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (try_parse_rgba_color(text, result) == false) throw_helper::throws(exception_case::format);
   return result;
 }
 
