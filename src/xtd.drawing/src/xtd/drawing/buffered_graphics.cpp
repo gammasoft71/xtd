@@ -3,6 +3,7 @@
 
 using namespace xtd;
 using namespace xtd::drawing;
+using namespace xtd::helpers;
 
 const graphics& buffered_graphics::graphics() const noexcept {
   return buffered_graphics_surface_;
@@ -27,5 +28,5 @@ void buffered_graphics::render(intptr target_dc) {
 }
 
 buffered_graphics::buffered_graphics(const xtd::drawing::graphics& buffered_graphics_surface, std::optional<xtd::drawing::graphics> target_graphics, intptr target_dc, const xtd::drawing::point& target_location, xtd::drawing::size virtual_size) : buffered_graphics_surface_(buffered_graphics_surface), target_dc_(target_dc), target_graphics_(target_graphics), target_location_(target_location), virtual_size_(virtual_size) {
-  if (!target_graphics.has_value() && !target_dc) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!target_graphics.has_value() && !target_dc) throw_helper::throws(exception_case::argument);
 }

@@ -8,9 +8,10 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::forms::native;
+using namespace xtd::helpers;
 
 bool collapsible_panel::expanded(intptr control) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return false;
@@ -19,7 +20,7 @@ bool collapsible_panel::expanded(intptr control) {
 }
 
 void collapsible_panel::expanded(intptr control, bool expand) {
-  if (!control || !wxTheApp) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;

@@ -9,6 +9,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
+using namespace xtd::helpers;
 
 struct radial_gradient_brush::data {
   xtd::drawing::point_f center_point;
@@ -42,7 +43,7 @@ radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point& center, 
 }
 
 radial_gradient_brush::radial_gradient_brush(const xtd::drawing::point_f& center, const std::vector<xtd::drawing::color>& radial_colors, float radius) : data_(xtd::new_sptr<data>()) {
-  if (radial_colors.size() < 2) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (radial_colors.size() < 2) throw_helper::throws(exception_case::argument);
   
   data_->center_point = center;
   data_->focal_point = center;
@@ -96,7 +97,7 @@ radial_gradient_brush& radial_gradient_brush::focal_point(const point& value) no
 
 radial_gradient_brush& radial_gradient_brush::radial_colors(const gradient_stop_collection& value) {
   if (data_->radial_colors != value) {
-    if (value.size() < 2) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    if (value.size() < 2) throw_helper::throws(exception_case::argument);
     data_->radial_colors = value;
     recreate_handle();
   }

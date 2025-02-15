@@ -9,6 +9,7 @@ using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
+using namespace xtd::helpers;
 
 struct matrix::data {
   intptr handle = 0;
@@ -22,12 +23,12 @@ matrix::matrix(float m11, float m12, float m21, float m22, float dx, float dy) :
 }
 
 matrix::matrix(const rectangle& rect, const std::vector<point>& plgpts) : data_(xtd::new_sptr<data>()) {
-  if (plgpts.size() != 3) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (plgpts.size() != 3) throw_helper::throws(exception_case::argument);
   init_from_rect_3points(rectangle_f(rect), point_f(plgpts[0]), point_f(plgpts[1]), point_f(plgpts[2]));
 }
 
 matrix::matrix(const rectangle_f& rect, const std::vector<point_f>& plgpts) : data_(xtd::new_sptr<data>()) {
-  if (plgpts.size() != 3) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (plgpts.size() != 3) throw_helper::throws(exception_case::argument);
   init_from_rect_3points(rect, plgpts[0], plgpts[1], plgpts[2]);
 }
 

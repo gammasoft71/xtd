@@ -7,6 +7,7 @@ using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::drawing::imaging;
+using namespace xtd::helpers;
 
 namespace {
   template<class type_t>
@@ -21,12 +22,12 @@ encoder_parameter::encoder_parameter(const imaging::encoder& encoder, byte value
 }
 
 encoder_parameter::encoder_parameter(const imaging::encoder& encoder, int16 value) : encoder_(encoder), number_of_values_(1), type_(encoder_parameter_value_type::value_type_short) {
-  if (value < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (value < 0) throw_helper::throws(exception_case::argument_out_of_range);
   add_bytes(value_, value);
 }
 
 encoder_parameter::encoder_parameter(const imaging::encoder& encoder, int64 value) : encoder_(encoder), number_of_values_(1), type_(encoder_parameter_value_type::value_type_long) {
-  if (value < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (value < 0) throw_helper::throws(exception_case::argument_out_of_range);
   add_bytes(value_, as<int32>(value));
 }
 
@@ -46,21 +47,21 @@ encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<byte
 
 encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<int16> value) : encoder_(encoder), number_of_values_(value.size()), type_(encoder_parameter_value_type::value_type_short) {
   for (auto v : value) {
-    if (v < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+    if (v < 0) throw_helper::throws(exception_case::argument_out_of_range);
     add_bytes(value_, v);
   }
 }
 
 encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<int32> value) : encoder_(encoder), number_of_values_(value.size()), type_(encoder_parameter_value_type::value_type_long) {
   for (auto v : value) {
-    if (v < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+    if (v < 0) throw_helper::throws(exception_case::argument_out_of_range);
     add_bytes(value_, v);
   }
 }
 
 encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<int64> value) : encoder_(encoder), number_of_values_(value.size()), type_(encoder_parameter_value_type::value_type_long) {
   for (auto v : value) {
-    if (v < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+    if (v < 0) throw_helper::throws(exception_case::argument_out_of_range);
     add_bytes(value_, as<int32>(v));
   }
 }
@@ -71,13 +72,13 @@ encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<byte
 }
 
 encoder_parameter::encoder_parameter(const imaging::encoder& encoder, int32 numerator, int32 denominator) : encoder_(encoder), number_of_values_(1), type_(encoder_parameter_value_type::value_type_rational) {
-  if (numerator < 0 || denominator < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (numerator < 0 || denominator < 0) throw_helper::throws(exception_case::argument_out_of_range);
   add_bytes(value_, numerator);
   add_bytes(value_, denominator);
 }
 
 encoder_parameter::encoder_parameter(const imaging::encoder& encoder, int32 numerator1, int32 denominator1, int32 numerator2, int32 denominator2) : encoder_(encoder), number_of_values_(1), type_(encoder_parameter_value_type::value_type_rational_range) {
-  if (numerator1 < 0 || denominator1 < 0 || numerator2 < 0 || denominator2 < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (numerator1 < 0 || denominator1 < 0 || numerator2 < 0 || denominator2 < 0) throw_helper::throws(exception_case::argument_out_of_range);
   add_bytes(value_, numerator1);
   add_bytes(value_, denominator1);
   add_bytes(value_, numerator2);
@@ -85,18 +86,18 @@ encoder_parameter::encoder_parameter(const imaging::encoder& encoder, int32 nume
 }
 
 encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<int32> numerator, array<int32> denominator) : encoder_(encoder), number_of_values_(numerator.size()), type_(encoder_parameter_value_type::value_type_rational_range) {
-  if (numerator.size() != denominator.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (numerator.size() != denominator.size()) throw_helper::throws(exception_case::argument_out_of_range);
   for (auto index = 0_z; index < numerator.size(); ++index) {
-    if (numerator[index] < 0 || denominator[index] < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+    if (numerator[index] < 0 || denominator[index] < 0) throw_helper::throws(exception_case::argument_out_of_range);
     add_bytes(value_, numerator[index]);
     add_bytes(value_, denominator[index]);
   }
 }
 
 encoder_parameter::encoder_parameter(const imaging::encoder& encoder, array<int64> rangebegin, array<int64> rangeend) : encoder_(encoder), number_of_values_(rangebegin.size()), type_(encoder_parameter_value_type::value_type_long_range) {
-  if (rangebegin.size() != rangeend.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (rangebegin.size() != rangeend.size()) throw_helper::throws(exception_case::argument_out_of_range);
   for (auto index = 0_z; index < rangebegin.size(); ++index) {
-    if (rangebegin[index] < 0 || rangeend[index] < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+    if (rangebegin[index] < 0 || rangeend[index] < 0) throw_helper::throws(exception_case::argument_out_of_range);
     add_bytes(value_, as<int32>(rangebegin[index]));
     add_bytes(value_, as<int32>(rangeend[index]));
   }

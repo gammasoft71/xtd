@@ -34,6 +34,7 @@
 using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::drawing::native;
+using namespace xtd::helpers;
 
 namespace {
   std::map<intptr, int32> graphics_state;
@@ -717,7 +718,7 @@ void graphics::reset_transform(intptr handle) {
 
 void graphics::restore(intptr handle, intptr& gstate) {
   if (!handle) return;
-  if (gstate == 0 || gstate != graphics_state[handle]) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (gstate == 0 || gstate != graphics_state[handle]) throw_helper::throws(exception_case::argument);
   --graphics_state[handle];
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->PopState();
   gstate = 0;
