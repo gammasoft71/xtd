@@ -45,6 +45,12 @@ namespace xtd {
       /// @param exception_case One of xtd::helpers::exception_case values.
       /// @param type The type associate to the exception.
       [[noreturn]] static void throws(xtd::helpers::exception_case exception_case, const xtd::type& type, const source_location& location = source_location::current());
+      /// @brief Throws an exption with specified exception.
+      /// @param exception An xtd::exception to throw.
+      template<class exception_t, class ...args_t>
+      [[noreturn]] static void throws(args_t... arguments) {
+        throw exception_t(arguments...);
+      }
     };
   }
 }

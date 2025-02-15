@@ -11,6 +11,7 @@
 #include <atomic>
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::diagnostics;
 using namespace xtd::threading;
 
@@ -32,7 +33,7 @@ barrier::barrier(int32 participant_count) : barrier(participant_count, {}) {
 }
 
 barrier::barrier(int32 participant_count, barrier::post_phase_action post_phase_action) : data_(xtd::new_sptr<data>()) {
-  if (participant_count < 0 || participant_count > int16_object::max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (participant_count < 0 || participant_count > int16_object::max_value) throw_helper::throws(exception_case::argument_out_of_range);
   data_->participant_count = participant_count;
   data_->participants_remaining = participant_count;
   data_->post_phase_action = post_phase_action;
@@ -49,17 +50,17 @@ barrier::~barrier() {
 }
 
 int32 barrier::current_phase_number() const {
-  if (!data_) throw object_closed_exception {};
+  if (!data_) throw_helper::throws(exception_case::object_closed);
   return data_->current_phase_number;
 }
 
 int32 barrier::participant_count() const {
-  if (!data_) throw object_closed_exception {};
+  if (!data_) throw_helper::throws(exception_case::object_closed);
   return data_->participant_count;
 }
 
 int32 barrier::participants_remaining() const {
-  if (!data_) throw object_closed_exception {};
+  if (!data_) throw_helper::throws(exception_case::object_closed);
   return data_->participants_remaining;
 }
 
@@ -68,10 +69,10 @@ int32 barrier::add_participant() {
 }
 
 int32 barrier::add_participants(int32 participant_count) {
-  if (!data_) throw object_closed_exception {};
+  if (!data_) throw_helper::throws(exception_case::object_closed);
   auto lock = lock_guard {*data_};
-  if (participant_count < 0 || data_->participant_count + participant_count > int16_object::max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-  if (data_->run_post_phase_action) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  if (participant_count < 0 || data_->participant_count + participant_count > int16_object::max_value) throw_helper::throws(exception_case::argument_out_of_range);
+  if (data_->run_post_phase_action) throw_helper::throws(exception_case::invalid_operation);
   data_->participant_count += participant_count;
   data_->participants_remaining += participant_count;
   return data_->current_phase_number;
@@ -86,11 +87,11 @@ int32 barrier::remove_participant() {
 }
 
 int32 barrier::remove_participants(int32 participant_count) {
-  if (!data_) throw object_closed_exception {};
+  if (!data_) throw_helper::throws(exception_case::object_closed);
   auto lock = lock_guard {*data_};
-  if (participant_count < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-  if (data_->participant_count == 0 || data_->run_post_phase_action || data_->participants_remaining < data_->participant_count - participant_count) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-  if (data_->participant_count < participant_count) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (participant_count < 0) throw_helper::throws(exception_case::argument_out_of_range);
+  if (data_->participant_count == 0 || data_->run_post_phase_action || data_->participants_remaining < data_->participant_count - participant_count) throw_helper::throws(exception_case::invalid_operation);
+  if (data_->participant_count < participant_count) throw_helper::throws(exception_case::argument_out_of_range);
   data_->participant_count -= participant_count;
   data_->participants_remaining -= participant_count;
   return data_->current_phase_number;
@@ -101,8 +102,8 @@ void barrier::signal_and_wait() {
 }
 
 bool barrier::signal_and_wait(int32 milliseconds_timeout) {
-  if (milliseconds_timeout < timeout::infinite) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-  if (!data_) throw object_closed_exception {};
+  if (milliseconds_timeout < timeout::infinite) throw_helper::throws(exception_case::argument_out_of_range);
+  if (!data_) throw_helper::throws(exception_case::object_closed);
   lock_(*data_) {
     data_->participants_remaining--;
     

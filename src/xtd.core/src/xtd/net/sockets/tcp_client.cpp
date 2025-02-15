@@ -5,6 +5,7 @@
 #include <mutex>
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
@@ -115,17 +116,17 @@ tcp_client& tcp_client::send_timeout(int32 value) {
 }
 
 xtd::sptr<xtd::iasync_result> tcp_client::begin_connect(const xtd::net::ip_address& address, uint16 port, xtd::async_callback callback, const std::any& state) {
-  if (active()) throw socket_exception(socket_error::is_connected);
+  if (active()) throw_helper::throws<socket_exception>(socket_error::is_connected);
   return data_->client_socket.begin_connect(address, port, callback, state);
 }
 
 xtd::sptr<xtd::iasync_result> tcp_client::begin_connect(const std::vector<xtd::net::ip_address>& addresses, uint16 port, xtd::async_callback callback, const std::any& state) {
-  if (active()) throw socket_exception(socket_error::is_connected);
+  if (active()) throw_helper::throws<socket_exception>(socket_error::is_connected);
   return data_->client_socket.begin_connect(addresses, port, callback, state);
 }
 
 xtd::sptr<xtd::iasync_result> tcp_client::begin_connect(const xtd::string& host, uint16 port, xtd::async_callback callback, const std::any& state) {
-  if (active()) throw socket_exception(socket_error::is_connected);
+  if (active()) throw_helper::throws<socket_exception>(socket_error::is_connected);
   return data_->client_socket.begin_connect(host, port, callback, state);
 }
 
@@ -136,19 +137,19 @@ void tcp_client::close() {
 }
 
 void tcp_client::connect(const xtd::net::ip_end_point& remote_end_point) {
-  if (active()) throw socket_exception(socket_error::is_connected);
+  if (active()) throw_helper::throws<socket_exception>(socket_error::is_connected);
   data_->client_socket.connect(remote_end_point);
   active(true);
 }
 
 void tcp_client::connect(const xtd::net::ip_address& ip_address, uint16 port) {
-  if (active()) throw socket_exception(socket_error::is_connected);
+  if (active()) throw_helper::throws<socket_exception>(socket_error::is_connected);
   data_->client_socket.connect(ip_address, port);
   active(true);
 }
 
 void tcp_client::connect(const xtd::string& host_name, uint16 port) {
-  if (active()) throw socket_exception(socket_error::is_connected);
+  if (active()) throw_helper::throws<socket_exception>(socket_error::is_connected);
   data_->client_socket.connect(dns::get_host_addresses(host_name), port);
   active(true);
 }
@@ -167,7 +168,7 @@ bool tcp_client::equals(const tcp_client& other) const noexcept {
 }
 
 network_stream tcp_client::get_stream() const {
-  if (!data_->client_socket.connected()) throw socket_exception(socket_error::not_connected);
+  if (!data_->client_socket.connected()) throw_helper::throws<socket_exception>(socket_error::not_connected);
   return network_stream(data_->client_socket, true);
 }
 

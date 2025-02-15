@@ -1,6 +1,7 @@
 #include "../../../../include/xtd/net/sockets/network_stream.hpp"
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::io;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
@@ -54,7 +55,7 @@ size network_stream::position() const {
 }
 
 void network_stream::position(size value) {
-  throw not_supported_exception {};
+  throw_helper::throws(exception_case::not_supported);
 }
 
 int32 network_stream::read_timeout() const {
@@ -81,19 +82,19 @@ void network_stream::flush() {
 }
 
 size network_stream::read(array<byte>& buffer, size offset, size count) {
-  if (is_closed()) throw object_closed_exception {};
-  if (!can_read()) throw not_supported_exception {};
+  if (is_closed()) throw_helper::throws(exception_case::object_closed);
+  if (!can_read()) throw_helper::throws(exception_case::not_supported);
   
   return data_->socket.receive(buffer, offset, count, socket_flags::none);
 }
 
 void network_stream::set_length(size value) {
-  throw not_supported_exception {};
+  throw_helper::throws(exception_case::not_supported);
 }
 
 void network_stream::write(const array<byte>& buffer, size offset, size count) {
-  if (is_closed()) throw object_closed_exception {};
-  if (!can_write()) throw not_supported_exception {};
+  if (is_closed()) throw_helper::throws(exception_case::object_closed);
+  if (!can_write()) throw_helper::throws(exception_case::not_supported);
   
   data_->socket.send(buffer, offset, count, socket_flags::none);
 }

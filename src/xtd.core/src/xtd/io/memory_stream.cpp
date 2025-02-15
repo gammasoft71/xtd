@@ -58,7 +58,7 @@ void memory_stream::flush() {
 }
 
 size memory_stream::read(array<byte>& buffer, size offset, size count) {
-  if (is_closed()) throw object_closed_exception {};
+  if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
 
   if (count == 0_z) return 0_z;
@@ -87,7 +87,7 @@ array<byte> memory_stream::to_array() const {
 }
 
 void memory_stream::write(const array<byte>& buffer, size offset, size count) {
-  if (is_closed()) throw object_closed_exception {};
+  if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_write()) throw_helper::throws(exception_case::not_supported);
 
   if (count == 0_z) return;
@@ -106,7 +106,7 @@ void memory_stream::write(const array<byte>& buffer, size offset, size count) {
 }
 
 void memory_stream::write_to(std::ostream& stream) {
-  if (is_closed()) throw object_closed_exception {};
+  if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
 
   auto current_postion = position();

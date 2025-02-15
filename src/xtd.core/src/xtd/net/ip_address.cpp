@@ -7,6 +7,7 @@
 #include "../../../include/xtd/net/sockets/socket_exception.hpp"
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
@@ -86,12 +87,12 @@ bool ip_address::is_ip_v6_teredo() const noexcept {
 }
 
 uint32 ip_address::scope_id() const {
-  if (address_family_ == sockets::address_family::inter_network) throw socket_exception(socket_error::operation_not_supported);
+  if (address_family_ == sockets::address_family::inter_network) throw_helper::throws<socket_exception>(socket_error::operation_not_supported);
   return address_or_scope_id_;
 }
 
 ip_address& ip_address::scope_id(uint32 value) {
-  if (address_family_ == sockets::address_family::inter_network) throw socket_exception(socket_error::operation_not_supported);
+  if (address_family_ == sockets::address_family::inter_network) throw_helper::throws<socket_exception>(socket_error::operation_not_supported);
   
   address_or_scope_id_ = static_cast<uint32>(value);
   return *this;

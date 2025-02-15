@@ -8,6 +8,7 @@
 #include "../../../include/xtd/diagnostics/debug.hpp"
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::io;
 
 stream_writer::stream_writer(const string& path) : stream_writer(path, false) {
@@ -19,8 +20,8 @@ stream_writer::stream_writer(std::ostream& stream) : stream_writer(stream, false
 stream_writer::stream_writer(const string& path, bool append) : stream_(new std::ofstream(path, append ? std::ios::out | std::ios_base::app : std::ios::out | std::ios_base::trunc)), delete_when_destroy_(true) {
   if (path.index_of_any(path::get_invalid_path_chars()) != string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (path.empty() || path.trim(' ').empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-  if (!file::exists(path)) throw file_not_found_exception {};
-  if ((file::get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw unauthorized_access_exception {};
+  if (!file::exists(path)) throw_helper::throws(exception_case::file_not_found);
+  if ((file::get_attributes(path) & file_attributes::read_only) == file_attributes::read_only) throw_helper::throws(exception_case::unauthorized_access);
   if (!dynamic_cast<std::ofstream*>(stream_)->is_open() || !stream_->good()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
 }
 
