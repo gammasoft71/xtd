@@ -64,6 +64,8 @@ namespace xtd {
       io,
       /// @brief The key is not found.
       key_not_found,
+      /// @brief The lock recursion is not valid.
+      lock_recursion,
       /// @brief The method or operation is not implemented.
       not_implemented,
       /// @brief The method or operation is not supported.
@@ -82,6 +84,10 @@ namespace xtd {
       platform_not_supported,
       /// @brief The rank is not valid.
       rank,
+      /// @brief The semaphore is full.
+      semaphore_full,
+      /// @brief The lock is not valid.
+      synchronization_lock,
       /// @brief The access is denied.
       unauthorized_access,
     };

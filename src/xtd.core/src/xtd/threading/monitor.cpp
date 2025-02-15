@@ -17,6 +17,7 @@
 
 using namespace xtd;
 using namespace xtd::diagnostics;
+using namespace xtd::helpers;
 using namespace xtd::threading;
 
 struct monitor::item {
@@ -46,7 +47,7 @@ void monitor::exit_ptr(object_ptr obj) {
   get_static_data().monitor_items_critical_section.enter();
   if (!is_entered_ptr(obj)) {
     get_static_data().monitor_items_critical_section.leave();
-    throw synchronization_lock_exception {};
+    throw_helper::throws(exception_case::synchronization_lock);
   }
   
   item saved;
@@ -88,7 +89,7 @@ void monitor::pulse_ptr(object_ptr obj) {
   get_static_data().monitor_items_critical_section.leave();
   
   if (monitor_item == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-  if (monitor_item->thread_id.value() != thread::current_thread().thread_id()) throw synchronization_lock_exception {};
+  if (monitor_item->thread_id.value() != thread::current_thread().thread_id()) throw_helper::throws(exception_case::synchronization_lock);
 
   monitor_item->condition_variable.pulse();
 }
@@ -100,7 +101,7 @@ void monitor::pulse_all_ptr(object_ptr obj) {
   get_static_data().monitor_items_critical_section.leave();
   
   if (monitor_item == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-  if (monitor_item->thread_id.value() != thread::current_thread().thread_id()) throw synchronization_lock_exception {};
+  if (monitor_item->thread_id.value() != thread::current_thread().thread_id()) throw_helper::throws(exception_case::synchronization_lock);
 
   monitor_item->condition_variable.pulse_all();
 }
@@ -131,7 +132,7 @@ bool monitor::wait_ptr(object_ptr obj, int32 milliseconds_timeout) {
   get_static_data().monitor_items_critical_section.leave();
   
   if (monitor_item == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
-  if (monitor_item->thread_id.value() != thread::current_thread().thread_id()) throw synchronization_lock_exception {};
+  if (monitor_item->thread_id.value() != thread::current_thread().thread_id()) throw_helper::throws(exception_case::synchronization_lock);
 
   return monitor_item->condition_variable.wait(monitor_item->critical_section, milliseconds_timeout);
 }

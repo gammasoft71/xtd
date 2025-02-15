@@ -8,6 +8,7 @@
 #include <atomic>
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::threading;
 
 struct semaphore::data {
@@ -44,7 +45,7 @@ semaphore::semaphore(int32 initial_count, int32 maximum_count, const string& nam
 }
 
 semaphore::semaphore(int32 initial_count, int32 maximum_count, const string& name, bool& created_new) : data_(xtd::new_sptr<data>()) {
-  if (name.size() > native::named_semaphore::max_name_size()) throw io::path_too_long_exception {};
+  if (name.size() > native::named_semaphore::max_name_size()) throw_helper::throws(exception_case::path_too_long);
   if (initial_count > maximum_count) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   if (maximum_count < 1 || initial_count < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   data_->name = name;
@@ -84,9 +85,9 @@ bool semaphore::equals(const semaphore& other) const noexcept {
 
 semaphore semaphore::open_existing(const string& name) {
   if (name.empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-  if (name.size() > native::named_semaphore::max_name_size()) throw io::path_too_long_exception {};
+  if (name.size() > native::named_semaphore::max_name_size()) throw_helper::throws(exception_case::path_too_long);
   auto result = semaphore{};
-  if (!try_open_existing(name, result)) throw io::io_exception {};
+  if (!try_open_existing(name, result)) throw_helper::throws(exception_case::io);
   return result;
 }
 
@@ -96,13 +97,13 @@ int32 semaphore::release() {
 
 int32 semaphore::release(int32 release_count) {
   if (release_count < 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-  if (!semaphore_) throw object_closed_exception {};
-  if (data_->count + release_count > data_->maximum_count) throw semaphore_full_exception {};
+  if (!semaphore_) throw_helper::throws(exception_case::object_closed);
+  if (data_->count + release_count > data_->maximum_count) throw_helper::throws(exception_case::semaphore_full);
   auto io_error = false;
   auto previous_count = -1;
   semaphore_->signal(io_error, release_count, previous_count);
   if (previous_count != -1) data_->count.exchange(previous_count);
-  if (io_error) throw io::io_exception {};
+  if (io_error) throw_helper::throws(exception_case::io);
   previous_count = data_->count;
   data_->count += release_count;
   return previous_count;
@@ -126,11 +127,11 @@ bool semaphore::signal() {
 }
 
 bool semaphore::wait(int32 milliseconds_timeout) {
-  if (!semaphore_) throw object_closed_exception {};
+  if (!semaphore_) throw_helper::throws(exception_case::object_closed);
   if (milliseconds_timeout < -1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   auto result = semaphore_->wait(milliseconds_timeout);
-  if (result == 0xFFFFFFFF) throw io::io_exception {};
-  if (result == 0x00000080) throw abandoned_mutex_exception {};
+  if (result == 0xFFFFFFFF) throw_helper::throws(exception_case::io);
+  if (result == 0x00000080) throw_helper::throws(exception_case::abandoned_mutex);
   if (result == 0x00000102) return false;
   --data_->count;
   return true;
@@ -142,10 +143,10 @@ void semaphore::create(int32 initial_count, int32 maximum_count, bool& created_n
   created_new = true;
   if (data_->name.empty()) {
     semaphore_ = xtd::new_sptr<semaphore::unnamed_semaphore>();
-    if (!semaphore_->create(initial_count, maximum_count)) throw io::io_exception {};
+    if (!semaphore_->create(initial_count, maximum_count)) throw_helper::throws(exception_case::io);
   } else {
     semaphore_ = xtd::new_sptr<semaphore::named_semaphore>();
     created_new = semaphore_->create(initial_count, maximum_count, data_->name);
-    if (!created_new && !semaphore_->open(data_->name)) throw io::io_exception {};
+    if (!created_new && !semaphore_->open(data_->name)) throw_helper::throws(exception_case::io);
   }
 }

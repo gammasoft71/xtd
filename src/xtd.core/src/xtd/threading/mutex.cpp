@@ -7,6 +7,7 @@
 #include "../../../include/xtd/threading/abandoned_mutex_exception.hpp"
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::threading;
 
 mutex::mutex() : mutex(false) {
@@ -22,7 +23,7 @@ mutex::mutex(const string& name, bool& created_new) : mutex(false, name, created
 }
 
 mutex::mutex(bool initially_owned, const string& name) : name_(name) {
-  if (name.size() > native::named_mutex::max_name_size()) throw io::path_too_long_exception {};
+  if (name.size() > native::named_mutex::max_name_size()) throw_helper::throws(exception_case::path_too_long);
   auto created_new = false;
   create(initially_owned, created_new);
 }
@@ -72,14 +73,14 @@ void mutex::lock() {
 
 mutex mutex::open_existing(const string& name) {
   if (name.empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-  if (name.size() > native::named_mutex::max_name_size()) throw io::path_too_long_exception {};
+  if (name.size() > native::named_mutex::max_name_size()) throw_helper::throws(exception_case::path_too_long);
   auto result = mutex{};
-  if (!try_open_existing(name, result)) throw io::io_exception {};
+  if (!try_open_existing(name, result)) throw_helper::throws(exception_case::io);
   return result;
 }
 
 void mutex::release_mutex() {
-  if (!signal()) throw io::io_exception {};
+  if (!signal()) throw_helper::throws(exception_case::io);
 }
 
 bool mutex::try_lock() noexcept {
@@ -123,19 +124,19 @@ void mutex::unlock() {
 }
 
 bool mutex::signal() {
-  if (!mutex_) throw object_closed_exception {};
+  if (!mutex_) throw_helper::throws(exception_case::object_closed);
   auto io_error = false;
   auto result = mutex_->signal(io_error);
-  if (io_error) throw io::io_exception {};
+  if (io_error) throw_helper::throws(exception_case::io);
   return result;
 }
 
 bool mutex::wait(int32 milliseconds_timeout) {
-  if (!mutex_) throw object_closed_exception {};
+  if (!mutex_) throw_helper::throws(exception_case::object_closed);
   if (milliseconds_timeout < -1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   auto result = mutex_->wait(milliseconds_timeout);
-  if (result == 0xFFFFFFFF) throw io::io_exception {};
-  if (result == 0x00000080) throw abandoned_mutex_exception {};
+  if (result == 0xFFFFFFFF) throw_helper::throws(exception_case::io);
+  if (result == 0x00000080) throw_helper::throws(exception_case::abandoned_mutex);
   if (result == 0x00000102) return false;
   return true;
 }
@@ -144,10 +145,10 @@ void mutex::create(bool initially_owned, bool& created_new) {
   created_new = true;
   if (name_.empty()) {
     mutex_ = xtd::new_sptr<mutex::unnamed_mutex>();
-    if (!mutex_->create(initially_owned)) throw io::io_exception {};
+    if (!mutex_->create(initially_owned)) throw_helper::throws(exception_case::io);
   } else {
     mutex_ = xtd::new_sptr<mutex::named_mutex>();
     created_new = mutex_->create(initially_owned, name_);
-    if (!created_new && !mutex_->open(name_)) throw io::io_exception {};
+    if (!created_new && !mutex_->open(name_)) throw_helper::throws(exception_case::io);
   }
 }

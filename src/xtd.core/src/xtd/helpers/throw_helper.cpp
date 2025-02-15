@@ -10,6 +10,9 @@
 #include "../../../include/xtd/io/path_too_long_exception.hpp"
 #include "../../../include/xtd/threading/abandoned_mutex_exception.hpp"
 #include "../../../include/xtd/threading/barrier_post_phase_exception.hpp"
+#include "../../../include/xtd/threading/lock_recursion_exception.hpp"
+#include "../../../include/xtd/threading/semaphore_full_exception.hpp"
+#include "../../../include/xtd/threading/synchronization_lock_exception.hpp"
 #include "../../../include/xtd/argument_exception.hpp"
 #include "../../../include/xtd/argument_null_exception.hpp"
 #include "../../../include/xtd/argument_out_of_range_exception.hpp"
@@ -61,6 +64,7 @@ void throw_helper::throws(enum exception_case exception_case, const source_locat
     case exception_case::invalid_operation: throw invalid_operation_exception {to_stack_frame(location)};
     case exception_case::io: throw io_exception {to_stack_frame(location)};
     case exception_case::key_not_found: throw key_not_found_exception {to_stack_frame(location)};
+    case exception_case::lock_recursion: throw lock_recursion_exception {to_stack_frame(location)};
     case exception_case::not_implemented: throw not_implemented_exception {to_stack_frame(location)};
     case exception_case::not_supported: throw not_supported_exception {to_stack_frame(location)};
     case exception_case::null_pointer: throw null_pointer_exception {to_stack_frame(location)};
@@ -70,6 +74,8 @@ void throw_helper::throws(enum exception_case exception_case, const source_locat
     case exception_case::path_too_long: throw path_too_long_exception {to_stack_frame(location)};
     case exception_case::platform_not_supported: throw platform_not_supported_exception {to_stack_frame(location)};
     case exception_case::rank: throw rank_exception {to_stack_frame(location)};
+    case exception_case::semaphore_full: throw semaphore_full_exception {to_stack_frame(location)};
+    case exception_case::synchronization_lock: throw synchronization_lock_exception {to_stack_frame(location)};
     case exception_case::unauthorized_access: throw unauthorized_access_exception {to_stack_frame(location)};
     default: throw argument_exception {"Invalid xtd::helpers::exception_case value"};
   }
@@ -96,6 +102,7 @@ void throw_helper::throws(enum exception_case exception_case, const char* messag
     case exception_case::invalid_operation: throw invalid_operation_exception {message, to_stack_frame(location)};
     case exception_case::io: throw io_exception {message, to_stack_frame(location)};
     case exception_case::key_not_found: throw key_not_found_exception {message, to_stack_frame(location)};
+    case exception_case::lock_recursion: throw lock_recursion_exception {message, to_stack_frame(location)};
     case exception_case::not_implemented: throw not_implemented_exception {message, to_stack_frame(location)};
     case exception_case::not_supported: throw not_supported_exception {message, to_stack_frame(location)};
     case exception_case::null_pointer: throw null_pointer_exception {message, to_stack_frame(location)};
@@ -105,11 +112,15 @@ void throw_helper::throws(enum exception_case exception_case, const char* messag
     case exception_case::path_too_long: throw path_too_long_exception {message, to_stack_frame(location)};
     case exception_case::platform_not_supported: throw platform_not_supported_exception {message, to_stack_frame(location)};
     case exception_case::rank: throw rank_exception {message, to_stack_frame(location)};
+    case exception_case::semaphore_full: throw semaphore_full_exception {message, to_stack_frame(location)};
+    case exception_case::synchronization_lock: throw synchronization_lock_exception {message, to_stack_frame(location)};
     case exception_case::unauthorized_access: throw unauthorized_access_exception {message, to_stack_frame(location)};
     default: throw argument_exception {"Invalid xtd::helpers::exception_case value"};
   }
 }
 
 void throw_helper::throws(enum exception_case exception_case, const xtd::type& type, const source_location& location) {
-  throws(exception_case, (exception_case == exception_case::format_not_iformatable ? string::format("The `{0}` type does not inherit from `xtd::iformat` or the specialisation for the `{0}` type in the `xtd::to_string` specialisation method does not exist.", typeof_(type).full_name()) : typeof_(type).full_name()).c_str(), location);
+  if (exception_case == exception_case::format_not_iformatable)
+    throws(exception_case, string::format("The `{0}` type does not inherit from `xtd::iformat` or the specialisation for the `{0}` type in the `xtd::to_string` specialisation method does not exist.", typeof_(type).full_name()).c_str(), location);
+  throw argument_exception {"This overload can only be used with the xtd::helpers::exception_case::format_not_iformatable value."};
 }
