@@ -15,7 +15,7 @@
 * Free and open-source ([MIT License](https://github.com/gammasoft71/xtd/blob/master/docs/license.md));
 * a collection of native C++ classes libraries, to complete std;
 * API close to the .net API with a modern C++ approach and full integration with the std standard;
-* written in efficient, modern C++17/20 with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom;
+* written in efficient, modern C++17/20 with [RAII](https://en.cppreference.com/w/cpp/language/raii) programming idiom;
 * and [highly portable](portability.md#the-xtd-libraries-portability-list) and available on [many different platforms](portability.md#operating-system-supported);
 
 ## xtd libraries architecture
