@@ -11,6 +11,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 struct command_link_button::data {
   std::tuple<string, string> texts;
@@ -227,7 +228,7 @@ forms::create_params command_link_button::create_params() const noexcept {
 
 xtd::uptr<xtd::object> command_link_button::clone() const {
   auto result = xtd::new_uptr<command_link_button>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 

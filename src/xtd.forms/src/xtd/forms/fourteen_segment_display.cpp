@@ -3,6 +3,7 @@
 
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 struct fourteen_segment_display::data {
   std::optional<int32> thickness;
@@ -213,7 +214,7 @@ fourteen_segment_display fourteen_segment_display::create(const control& parent,
 
 xtd::uptr<xtd::object> fourteen_segment_display::clone() const {
   auto result = xtd::new_uptr<fourteen_segment_display>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 

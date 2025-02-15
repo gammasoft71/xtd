@@ -407,7 +407,7 @@ forms::create_params checked_list_box::create_params() const noexcept {
 
 xtd::uptr<xtd::object> checked_list_box::clone() const {
   auto result = xtd::new_uptr<checked_list_box>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 
