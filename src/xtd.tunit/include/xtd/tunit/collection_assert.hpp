@@ -607,8 +607,7 @@ namespace xtd {
       static void is_empty(const value_t& value, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (std::empty(value))
           assert::succeed(message, stack_frame);
-        else
-          fail("<empty>", join_items(value), message, stack_frame);
+        else fail("<empty>", join_items(value), message, stack_frame);
       }
       
       /// @cond
@@ -618,8 +617,7 @@ namespace xtd {
       static void is_empty(const std::initializer_list<value_t>& value, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (std::empty(value))
           assert::succeed(message, stack_frame);
-        else
-          fail("<empty>", join_items(value), message, stack_frame);
+        else fail("<empty>", join_items(value), message, stack_frame);
       }
       /// @endcond
       
@@ -652,8 +650,7 @@ namespace xtd {
       static void is_not_empty(const value_t& value, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (!std::empty(value))
           assert::succeed(message, stack_frame);
-        else
-          fail("not <empty>", "<empty>", message, stack_frame);
+        else fail("not <empty>", "<empty>", message, stack_frame);
       }
       
       /// @cond
@@ -663,8 +660,7 @@ namespace xtd {
       static void is_not_empty(const std::initializer_list<value_t>& value, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (!std::empty(value))
           assert::succeed(message, stack_frame);
-        else
-          fail("not <empty>", "<empty>", message, stack_frame);
+        else fail("not <empty>", "<empty>", message, stack_frame);
       }
       /// @endcond
       
@@ -697,8 +693,7 @@ namespace xtd {
       static void is_ordered(const value_t& value, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (std::is_sorted(value.begin(), value.end()))
           assert::succeed(message, stack_frame);
-        else
-          fail("<ordered>", join_items(value), message, stack_frame);
+        else fail("<ordered>", join_items(value), message, stack_frame);
       }
       
       /// @cond
@@ -708,8 +703,7 @@ namespace xtd {
       static void is_ordered(const std::initializer_list<value_t>& value, const std::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         if (std::is_sorted(value.begin(), value.end()))
           assert::succeed(message, stack_frame);
-        else
-          fail("<ordered>", join_items(value), message, stack_frame);
+        else fail("<ordered>", join_items(value), message, stack_frame);
       }
       /// @endcond
       /// @}

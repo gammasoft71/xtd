@@ -61,10 +61,8 @@ namespace xtd {
       /// ```
       template<class expected_t, class actual_t>
       static void are_equal(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (actual == expected)
-          succeed(message, stack_frame);
-        else
-          fail(to_string(expected), to_string(actual), message, stack_frame);
+        if (actual == expected) succeed(message, stack_frame);
+        else fail(to_string(expected), to_string(actual), message, stack_frame);
       }
       
       /// @cond
@@ -186,10 +184,8 @@ namespace xtd {
       /// ```
       template<class expected_t, class actual_t>
       static void are_not_equal(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (actual != expected)
-          succeed(message, stack_frame);
-        else
-          fail("not " + to_string(expected), to_string(actual), message, stack_frame);
+        if (actual != expected) succeed(message, stack_frame);
+        else fail("not " + to_string(expected), to_string(actual), message, stack_frame);
       }
       
       /// @cond
@@ -233,10 +229,8 @@ namespace xtd {
       /// ```
       template<class expected_t, class actual_t>
       static void are_not_same(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (&actual != &expected)
-          succeed(message, stack_frame);
-        else
-          fail("not same as " + to_string(expected), to_string(actual), message, stack_frame);
+        if (&actual != &expected) succeed(message, stack_frame);
+        else fail("not same as " + to_string(expected), to_string(actual), message, stack_frame);
       }
       
       /// @brief Asserts that two objects do refer to differents objects.
@@ -270,10 +264,8 @@ namespace xtd {
       /// ```
       template<class expected_t, class actual_t>
       static void are_same(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (&actual == &expected)
-          succeed(message, stack_frame);
-        else
-          fail("same as " + to_string(expected), to_string(actual), message, stack_frame);
+        if (&actual == &expected) succeed(message, stack_frame);
+        else fail("same as " + to_string(expected), to_string(actual), message, stack_frame);
       }
       
       /// @brief Asserts that collection contains an item.
@@ -304,10 +296,8 @@ namespace xtd {
       template<class item_t, class collection_t>
       static void contains(const item_t& item, const collection_t& collection, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         auto result = std::find(collection.begin(), collection.end(), item);
-        if (result != collection.end())
-          succeed(message, stack_frame);
-        else
-          fail("collection containing " + to_string(item), join_items(collection), message, stack_frame);
+        if (result != collection.end()) succeed(message, stack_frame);
+        else fail("collection containing " + to_string(item), join_items(collection), message, stack_frame);
       }
       
       /// @cond
@@ -316,10 +306,8 @@ namespace xtd {
       template<class item_t, class value_t>
       static void contains(const item_t& item, const std::initializer_list<value_t>& values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         auto result = std::find(values.begin(), values.end(), item);
-        if (result != values.end())
-          succeed(message, stack_frame);
-        else
-          fail("collection containing " + to_string(item), join_items(values), message, stack_frame);
+        if (result != values.end()) succeed(message, stack_frame);
+        else fail("collection containing " + to_string(item), join_items(values), message, stack_frame);
       }
       static void contains(char item, const char* values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #if defined(__xtd__cpp_lib_char8_t)
@@ -381,10 +369,8 @@ namespace xtd {
       /// ```
       template<class value_t>
       static void is_empty(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (std::empty(value))
-          succeed(message, stack_frame);
-        else
-          fail("collection <empty>", join_items(value), message, stack_frame);
+        if (std::empty(value)) succeed(message, stack_frame);
+        else fail("collection <empty>", join_items(value), message, stack_frame);
       }
       
       /// @cond
@@ -392,10 +378,8 @@ namespace xtd {
       static void is_empty(const std::initializer_list<value_t>& values, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_empty(values, xtd::string::empty_string, stack_frame);}
       template<class value_t>
       static void is_empty(const std::initializer_list<value_t>& values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (std::empty(values))
-          succeed(message, stack_frame);
-        else
-          fail("collection <empty>", join_items(values), message, stack_frame);
+        if (std::empty(values)) succeed(message, stack_frame);
+        else fail("collection <empty>", join_items(values), message, stack_frame);
       }
       static void is_empty(const char* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #if defined(__xtd__cpp_lib_char8_t)
@@ -457,10 +441,8 @@ namespace xtd {
       /// ```
       template<class value1_t, class value2_t>
       static void is_greater(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (val1 > val2)
-          succeed(message, stack_frame);
-        else
-          fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
+        if (val1 > val2) succeed(message, stack_frame);
+        else fail("greater than " + to_string(val2), to_string(val1), message, stack_frame);
       }
       
       /// @cond
@@ -500,10 +482,8 @@ namespace xtd {
       /// ```
       template<class value1_t, class value2_t>
       static void is_greater_or_equal(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (val1 >= val2)
-          succeed(message, stack_frame);
-        else
-          fail("greater than or equal to " + to_string(val2), to_string(val1), message, stack_frame);
+        if (val1 >= val2) succeed(message, stack_frame);
+        else fail("greater than or equal to " + to_string(val2), to_string(val1), message, stack_frame);
       }
       
       /// @cond
@@ -542,10 +522,8 @@ namespace xtd {
       template<class type_t, class value_t>
       static void is_instance_of(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         const type_t* instance = dynamic_cast<const type_t*>(&value);
-        if (instance != nullptr)
-          succeed(message, stack_frame);
-        else
-          fail("instance of <" + typeof_<type_t>().full_name() + ">", "<" + typeof_(value).full_name() + ">", message, stack_frame);
+        if (instance != nullptr) succeed(message, stack_frame);
+        else fail("instance of <" + typeof_<type_t>().full_name() + ">", "<" + typeof_(value).full_name() + ">", message, stack_frame);
       }
       
       /// @brief Asserts that the first value is is_less than the second value.
@@ -573,10 +551,8 @@ namespace xtd {
       /// ```
       template<class value1_t, class value2_t>
       static void is_less(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (val1 < val2)
-          succeed(message, stack_frame);
-        else
-          fail("less than " + to_string(val2), to_string(val1), message, stack_frame);
+        if (val1 < val2) succeed(message, stack_frame);
+        else fail("less than " + to_string(val2), to_string(val1), message, stack_frame);
       }
       
       /// @cond
@@ -616,10 +592,8 @@ namespace xtd {
       /// ```
       template<class value1_t, class value2_t>
       static void is_less_or_equal(const value1_t& val1, const value2_t& val2, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (val1 <= val2)
-          succeed(message, stack_frame);
-        else
-          fail("less than or equal to " + to_string(val2), to_string(val1), message, stack_frame);
+        if (val1 <= val2) succeed(message, stack_frame);
+        else fail("less than or equal to " + to_string(val2), to_string(val1), message, stack_frame);
       }
       
       /// @cond
@@ -735,10 +709,8 @@ namespace xtd {
       /// ```
       template<class value_t>
       static void is_negative(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (value < 0)
-          succeed(message, stack_frame);
-        else
-          fail("negative", to_string(value), message, stack_frame);
+        if (value < 0) succeed(message, stack_frame);
+        else fail("negative", to_string(value), message, stack_frame);
       }
       
       /// @brief Asserts that collection does not contain any item.
@@ -768,10 +740,8 @@ namespace xtd {
       /// ```
       template<class value_t>
       static void is_not_empty(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (!std::empty(value))
-          succeed(message, stack_frame);
-        else
-          fail("collection not <empty>", "<empty>", message, stack_frame);
+        if (!std::empty(value)) succeed(message, stack_frame);
+        else fail("collection not <empty>", "<empty>", message, stack_frame);
       }
       
       /// @cond
@@ -779,10 +749,8 @@ namespace xtd {
       static void is_not_empty(const std::initializer_list<value_t>& values, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {is_not_empty(values, xtd::string::empty_string, stack_frame);}
       template<class value_t>
       static void is_not_empty(const std::initializer_list<value_t>& values, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (!std::empty(values))
-          succeed(message, stack_frame);
-        else
-          fail("collection not <empty>", "<empty>", message, stack_frame);
+        if (!std::empty(values)) succeed(message, stack_frame);
+        else fail("collection not <empty>", "<empty>", message, stack_frame);
       }
       static void is_not_empty(const char* value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
 #if defined(__xtd__cpp_lib_char8_t)
@@ -819,10 +787,8 @@ namespace xtd {
       template<class type_t, class value_t>
       static void is_not_instance_of(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
         const type_t* instance = dynamic_cast<const type_t*>(&value);
-        if (instance == nullptr)
-          succeed(message, stack_frame);
-        else
-          fail("not instance of <" + typeof_<type_t>().full_name() + ">", "<" + typeof_(value).full_name() + ">", message, stack_frame);
+        if (instance == nullptr) succeed(message, stack_frame);
+        else fail("not instance of <" + typeof_<type_t>().full_name() + ">", "<" + typeof_(value).full_name() + ">", message, stack_frame);
       }
       
       /// @brief Asserts that the pointer is not null.
@@ -854,10 +820,8 @@ namespace xtd {
       /// ```
       template<class pointer_t>
       static void is_not_null(const pointer_t* pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (pointer != nullptr)
-          succeed(message, stack_frame);
-        else
-          fail("not null", "null", message, stack_frame);
+        if (pointer != nullptr) succeed(message, stack_frame);
+        else fail("not null", "null", message, stack_frame);
       }
       /// @brief Asserts that the optional is not std::nullopt.
       /// @param opt The optional to check is std::nullopt.
@@ -886,10 +850,8 @@ namespace xtd {
       /// ```
       template<class optional_t>
       static void is_not_null(const std::optional<optional_t>& opt, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (opt != std::nullopt)
-          succeed(message, stack_frame);
-        else
-          fail("not null", "null", message, stack_frame);
+        if (opt != std::nullopt) succeed(message, stack_frame);
+        else fail("not null", "null", message, stack_frame);
       }
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -918,10 +880,8 @@ namespace xtd {
       /// ```
       template<class pointer_t>
       static void is_not_null(const xtd::uptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (pointer != nullptr)
-          succeed(message, stack_frame);
-        else
-          fail("not null", "null", message, stack_frame);
+        if (pointer != nullptr) succeed(message, stack_frame);
+        else fail("not null", "null", message, stack_frame);
       }
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -950,10 +910,8 @@ namespace xtd {
       /// ```
       template<class pointer_t>
       static void is_not_null(const xtd::sptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (pointer != nullptr)
-          succeed(message, stack_frame);
-        else
-          fail("not null", "null", message, stack_frame);
+        if (pointer != nullptr) succeed(message, stack_frame);
+        else fail("not null", "null", message, stack_frame);
       }
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -982,10 +940,8 @@ namespace xtd {
       /// ```
       template<class pointer_t>
       static void is_not_null(const xtd::wptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (pointer.owner_before(xtd::wptr<pointer_t> {}) || xtd::wptr<pointer_t> {}.owner_before(pointer))
-          succeed(message, stack_frame);
-        else
-          fail("not null", "null", message, stack_frame);
+        if (pointer.owner_before(xtd::wptr<pointer_t> {}) || xtd::wptr<pointer_t> {}.owner_before(pointer)) succeed(message, stack_frame);
+        else fail("not null", "null", message, stack_frame);
       }
       /// @brief Asserts that the pointer is not null.
       /// @param pointer The pointer to check is null.
@@ -1036,10 +992,8 @@ namespace xtd {
       /// ```
       template<class value_t>
       static void is_not_zero(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (value != static_cast<value_t>(0))
-          succeed(message, stack_frame);
-        else
-          fail("not zero", "0", message, stack_frame);
+        if (value != static_cast<value_t>(0)) succeed(message, stack_frame);
+        else fail("not zero", "0", message, stack_frame);
       }
       
       /// @brief Asserts that the pointer is null.
@@ -1071,10 +1025,8 @@ namespace xtd {
       /// ```
       template<class pointer_t>
       static void is_null(const pointer_t* pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (pointer == nullptr)
-          succeed(message, stack_frame);
-        else
-          fail("null", "not null", message, stack_frame);
+        if (pointer == nullptr) succeed(message, stack_frame);
+        else fail("null", "not null", message, stack_frame);
       }
       /// @brief Asserts that the optional is std::nullopt.
       /// @param opt The optional to check is std::nullopt.
@@ -1103,10 +1055,8 @@ namespace xtd {
       /// ```
       template<class optional_t>
       static void is_null(const std::optional<optional_t>& opt, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (opt == std::nullopt)
-          succeed(message, stack_frame);
-        else
-          fail("null", "not null", message, stack_frame);
+        if (opt == std::nullopt) succeed(message, stack_frame);
+        else fail("null", "not null", message, stack_frame);
       }
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -1135,10 +1085,8 @@ namespace xtd {
       /// ```
       template<class pointer_t>
       static void is_null(const xtd::uptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (pointer == nullptr)
-          succeed(message, stack_frame);
-        else
-          fail("null", "not null", message, stack_frame);
+        if (pointer == nullptr) succeed(message, stack_frame);
+        else fail("null", "not null", message, stack_frame);
       }
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -1167,10 +1115,8 @@ namespace xtd {
       /// ```
       template<class pointer_t>
       static void is_null(const xtd::sptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (pointer == nullptr)
-          succeed(message, stack_frame);
-        else
-          fail("null", "not null", message, stack_frame);
+        if (pointer == nullptr) succeed(message, stack_frame);
+        else fail("null", "not null", message, stack_frame);
       }
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -1201,10 +1147,8 @@ namespace xtd {
       /// ```
       template<class pointer_t>
       static void is_null(const xtd::wptr<pointer_t>& pointer, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (!pointer.owner_before(xtd::wptr<pointer_t> {}) && !xtd::wptr<pointer_t> {}.owner_before(pointer))
-          succeed(message, stack_frame);
-        else
-          fail("null", "not null", message, stack_frame);
+        if (!pointer.owner_before(xtd::wptr<pointer_t> {}) && !xtd::wptr<pointer_t> {}.owner_before(pointer)) succeed(message, stack_frame);
+        else fail("null", "not null", message, stack_frame);
       }
       /// @brief Asserts that the pointer is null.
       /// @param pointer The pointer to check is null.
@@ -1255,10 +1199,8 @@ namespace xtd {
       /// ```
       template<class value_t>
       static void is_positive(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (value > 0)
-          succeed(message, stack_frame);
-        else
-          fail("positive", to_string(value), message, stack_frame);
+        if (value > 0) succeed(message, stack_frame);
+        else fail("positive", to_string(value), message, stack_frame);
       }
       
       /// @brief Asserts that a condition is `true`.
@@ -1314,10 +1256,8 @@ namespace xtd {
       /// ```
       template<class value_t>
       static void is_zero(const value_t& value, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (value == static_cast<value_t>(0))
-          succeed(message, stack_frame);
-        else
-          fail("zero", to_string(value), message, stack_frame);
+        if (value == static_cast<value_t>(0)) succeed(message, stack_frame);
+        else fail("zero", to_string(value), message, stack_frame);
       }
       
       /// @brief Asserts that the statement throws a particular exception when called.
