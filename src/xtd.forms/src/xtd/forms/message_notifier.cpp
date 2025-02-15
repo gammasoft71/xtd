@@ -15,6 +15,7 @@
 
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 namespace {
   class message_notifier_standard : public form {
@@ -204,11 +205,11 @@ void message_notifier::show() {
   if (notifier_appearance_ == xtd::forms::notifier_appearance::standard)
     message_notifier_standard::show(0, *this);
   else
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
+    throw_helper::throws(exception_case::not_implemented);
 }
 void message_notifier::show(const iwin32_window& owner) {
   if (notifier_appearance_ == xtd::forms::notifier_appearance::standard)
     message_notifier_standard::show(owner.handle(), *this);
   else
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
+    throw_helper::throws(exception_case::not_implemented);
 }

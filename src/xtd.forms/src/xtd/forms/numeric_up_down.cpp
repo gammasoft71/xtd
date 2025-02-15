@@ -10,6 +10,7 @@
 
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 struct numeric_up_down::data {
   int32 decimal_place = 0;
@@ -395,7 +396,7 @@ forms::create_params numeric_up_down::create_params() const noexcept {
 
 xtd::uptr<xtd::object> numeric_up_down::clone() const {
   auto result = xtd::new_uptr<numeric_up_down>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 

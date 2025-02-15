@@ -2,6 +2,7 @@
 
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 struct split_container::data {
   xtd::forms::orientation orientation = xtd::forms::orientation::vertical;
@@ -142,7 +143,7 @@ drawing::size split_container::default_size() const noexcept {
 
 xtd::uptr<xtd::object> split_container::clone() const {
   auto result = xtd::new_uptr<split_container>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 

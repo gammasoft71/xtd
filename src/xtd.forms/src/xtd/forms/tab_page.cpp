@@ -13,6 +13,7 @@
 
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 struct tab_page::data {
   size_t image_index = image_list::npos;
@@ -46,7 +47,7 @@ tab_page& tab_page::image_index(size_t value) {
 }
 
 control& tab_page::parent(const control& parent) {
-  if (!is<tab_control>(parent)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, string::format("tab_page cannot be added to a '{}'.  tab_page can only be added to tab_control", parent.get_type().full_name()).c_str());
+  if (!is<tab_control>(parent)) throw_helper::throws(exception_case::argument, string::format("tab_page cannot be added to a '{}'.  tab_page can only be added to tab_control", parent.get_type().full_name()).c_str());
   as<tab_control>(const_cast<control&>(parent)).tab_pages().push_back(*this);
   return *this;
 }
@@ -191,7 +192,7 @@ void tab_page::destroy_handle() {
 
 xtd::uptr<xtd::object> tab_page::clone() const {
   auto result = xtd::new_uptr<tab_page>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 

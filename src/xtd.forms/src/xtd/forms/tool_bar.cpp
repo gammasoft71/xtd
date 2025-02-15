@@ -17,6 +17,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 namespace {
   struct parent_client_size_guard {
