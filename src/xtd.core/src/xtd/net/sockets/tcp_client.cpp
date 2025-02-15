@@ -22,7 +22,7 @@ tcp_client::tcp_client(const ip_end_point& local_end_point) : data_(xtd::new_spt
 }
 
 tcp_client::tcp_client(address_family address_family) : data_(xtd::new_sptr<tcp_client::data>()) {
-  if (address_family != address_family::inter_network && address_family != address_family::inter_network_v6) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (address_family != address_family::inter_network && address_family != address_family::inter_network_v6) throw_helper::throws(exception_case::argument);
   data_->client_socket = socket(address_family, socket_type::stream, protocol_type::tcp);
 }
 

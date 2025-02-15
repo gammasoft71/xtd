@@ -2,6 +2,7 @@
 #include "../../../../include/xtd/argument_out_of_range_exception.hpp"
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
@@ -9,7 +10,7 @@ ip_v6_multicast_option::ip_v6_multicast_option(const ip_address& group) : group_
 }
 
 ip_v6_multicast_option::ip_v6_multicast_option(const ip_address& group, uint64 interface_index) : group_ {group}, interface_index_ {interface_index} {
-  if (interface_index > 0x00000000FFFFFFFF) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (interface_index > 0x00000000FFFFFFFF) throw_helper::throws(exception_case::argument_out_of_range);
 }
 
 const xtd::net::ip_address& ip_v6_multicast_option::group() const noexcept {
@@ -26,7 +27,7 @@ uint64 ip_v6_multicast_option::interface_index() const noexcept {
 }
 
 ip_v6_multicast_option& ip_v6_multicast_option::interface_index(uint64 value) {
-  if (value > 0x00000000FFFFFFFF) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (value > 0x00000000FFFFFFFF) throw_helper::throws(exception_case::argument_out_of_range);
   interface_index_ = value;
   return *this;
 }

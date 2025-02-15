@@ -9,6 +9,7 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
@@ -16,7 +17,7 @@ socket_address::socket_address(sockets::address_family address_family) : socket_
 }
 
 socket_address::socket_address(sockets::address_family address_family, size_t buffer_size) : bytes_(buffer_size) {
-  if (buffer_size < 2) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (buffer_size < 2) throw_helper::throws(exception_case::argument_out_of_range);
   bytes_[0] = static_cast<xtd::byte>(native::socket::address_family_to_native(as<int32>(address_family))); // do not use as because sockets::address_family::unknown is -1 and as<byte> throw an exception overflow_exception.
   bytes_[1] = 0;
 }
@@ -33,12 +34,12 @@ size_t socket_address::size() const {
 }
 
 xtd::byte& socket_address::operator [](size_t index) {
-  if (index >= bytes_.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+  if (index >= bytes_.size()) throw_helper::throws(exception_case::index_out_of_range);
   return bytes_[index];
 }
 
 const xtd::byte& socket_address::operator [](size_t index) const {
-  if (index >= bytes_.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::index_out_of_range);
+  if (index >= bytes_.size()) throw_helper::throws(exception_case::index_out_of_range);
   return bytes_[index];
 }
 

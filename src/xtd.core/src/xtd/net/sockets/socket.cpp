@@ -58,7 +58,7 @@ socket::socket(intptr handle)  {
   debug::write_if(show_debug_socket.enabled(), string::format("socket::socket(handle) : socket=[{}]", handle));
   if (handle == 0) {
     debug::write_line_if(show_debug_socket.enabled(), " error=[handle_invalid]");
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    throw_helper::throws(exception_case::argument);
   }
   data_->handle = handle;
   debug::write_line_if(show_debug_socket.enabled(), " succeed");
@@ -66,7 +66,7 @@ socket::socket(intptr handle)  {
 
 socket::socket(const socket_information& socket_information) {
   /*data_ = xtd::new_sptr<socket::data>();*/
-  if (data_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
+  if (data_) throw_helper::throws(exception_case::not_implemented);
 }
 
 socket::socket(xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) : socket(native::socket::get_os_supports_ip_v6() ? address_family::inter_network_v6 : address_family::inter_network, socket_type, protocol_type)  {
@@ -169,7 +169,7 @@ bool socket::exclusive_address_use() const {
 }
 
 socket& socket::exclusive_address_use(bool value) {
-  if (data_->is_bound) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  if (data_->is_bound) throw_helper::throws(exception_case::invalid_operation);
   set_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::exclusive_address_use, value);
   return *this;
 }
@@ -243,7 +243,7 @@ int32 socket::receive_timeout() const {
 }
 
 socket& socket::receive_timeout(int32 value) {
-  if (value < -1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (value < -1) throw_helper::throws(exception_case::argument_out_of_range);
   set_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::receive_timeout, value);
   return *this;
 }
@@ -267,7 +267,7 @@ int32 socket::send_timeout() const {
 }
 
 socket& socket::send_timeout(int32 value) {
-  if (value < -1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (value < -1) throw_helper::throws(exception_case::argument_out_of_range);
   if (value >= 1 && value <= 499) value = 500;
   set_socket_option(xtd::net::sockets::socket_option_level::socket, xtd::net::sockets::socket_option_name::send_timeout, value);
   return *this;
@@ -294,7 +294,7 @@ socket& socket::ttl(xtd::byte value) {
 
 socket socket::accept() {
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
-  if (data_->is_bound == false || data_->is_listening == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  if (data_->is_bound == false || data_->is_listening == false) throw_helper::throws(exception_case::invalid_operation);
   
   auto address = socket_address {data_->address_family};
   auto new_socket_handle = native::socket::accept(data_->handle, address.bytes_);
@@ -311,7 +311,7 @@ socket socket::accept() {
 
 bool socket::accept_async(xtd::net::sockets::socket_async_event_args& e) {
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
-  if (data_->is_bound == false || data_->is_listening == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  if (data_->is_bound == false || data_->is_listening == false) throw_helper::throws(exception_case::invalid_operation);
   
   auto operation_thread = std::thread {[](xtd::net::sockets::socket_async_event_args * e, xtd::net::sockets::address_family address_family, xtd::net::sockets::socket_type socket_type, xtd::net::sockets::protocol_type protocol_type) {
     if (e->accept_socket_.data_->address_family == xtd::net::sockets::address_family::unknown && e->accept_socket_.data_->socket_type == xtd::net::sockets::socket_type::unknown && e->accept_socket_.data_->protocol_type == xtd::net::sockets::protocol_type::unknown) {
@@ -328,7 +328,7 @@ bool socket::accept_async(xtd::net::sockets::socket_async_event_args& e) {
 
 xtd::sptr<xtd::iasync_result> socket::begin_accept(xtd::async_callback callback, const std::any& state) {
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
-  if (data_->is_bound == false || data_->is_listening == false) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  if (data_->is_bound == false || data_->is_listening == false) throw_helper::throws(exception_case::invalid_operation);
   
   auto ar = xtd::new_sptr<async_result_accept>(state);
   auto operation_thread = std::thread {[](socket s, xtd::sptr<async_result_accept> ar, xtd::async_callback callback) {
@@ -355,7 +355,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_connect(const array<xtd::net::ip_add
     if (data_->is_connected == false)
       return begin_connect(address, port, callback, state);
   }
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  throw_helper::throws(exception_case::argument);
 }
 
 xtd::sptr<xtd::iasync_result> socket::begin_connect(const xtd::string& host, uint16 port, xtd::async_callback callback, const std::any& state) {
@@ -383,7 +383,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_disconnect(bool reuse_socket, xtd::a
 }
 
 xtd::sptr<xtd::iasync_result> socket::begin_receive(array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state) {
-  if (offset + size > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (!data_->is_connected) throw_helper::throws<socket_exception>(socket_error::not_connected);
   
@@ -404,7 +404,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_receive(array<xtd::byte>& buffer, si
 }
 
 xtd::sptr<xtd::iasync_result> socket::begin_receive(array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error_code, xtd::async_callback callback, const std::any& state) {
-  if (offset + size > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (!data_->is_connected) throw_helper::throws<socket_exception>(socket_error::not_connected);
   
@@ -425,7 +425,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_receive(array<xtd::byte>& buffer, si
 }
 
 xtd::sptr<xtd::iasync_result> socket::begin_receive_from(array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state) {
-  if (offset + size > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   
   auto ar = xtd::new_sptr<async_result_receive_from>(state);
@@ -446,7 +446,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_receive_from(array<xtd::byte>& buffe
 }
 
 xtd::sptr<xtd::iasync_result> socket::begin_receive_message_from(array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state) {
-  if (offset + size > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   
   auto ar = xtd::new_sptr<async_result_receive_message_from>(state);
@@ -468,7 +468,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_receive_message_from(array<xtd::byte
 }
 
 xtd::sptr<xtd::iasync_result> socket::begin_send(const array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state) {
-  if (offset + size > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (!data_->is_connected) throw_helper::throws<socket_exception>(socket_error::not_connected);
   
@@ -489,7 +489,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_send(const array<xtd::byte>& buffer,
 }
 
 xtd::sptr<xtd::iasync_result> socket::begin_send(const array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error, xtd::async_callback callback, const std::any& state) {
-  if (offset + size > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (!data_->is_connected) throw_helper::throws<socket_exception>(socket_error::not_connected);
   
@@ -510,7 +510,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_send(const array<xtd::byte>& buffer,
 }
 
 xtd::sptr<xtd::iasync_result> socket::begin_send_to(const array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state) {
-  if (offset + size > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   
   auto ar = xtd::new_sptr<async_result_send_to>(state);
@@ -557,7 +557,7 @@ void socket::connect(const array<ip_address>& addresses, uint16 port) {
     if (data_->is_connected == false)
       connect(address, port);
   }
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  throw_helper::throws(exception_case::argument);
 }
 
 void socket::connect(const xtd::string& host, uint16 port) {
@@ -581,38 +581,38 @@ void socket::disconnect(bool reuse_socket) {
 }
 
 socket socket::end_accept(xtd::sptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
-  if (!is<async_result_accept>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (ar == nullptr) throw_helper::throws(exception_case::argument_null);
+  if (!is<async_result_accept>(ar)) throw_helper::throws(exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_accept>(ar)->exception_) rethrow_exception(as<async_result_accept>(ar)->exception_);
   return as<socket>(as<async_result_accept>(ar)->socket_);
 }
 
 void socket::end_connect(xtd::sptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
-  if (!is<async_result_connect>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (ar == nullptr) throw_helper::throws(exception_case::argument_null);
+  if (!is<async_result_connect>(ar)) throw_helper::throws(exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_connect>(ar)->exception_) rethrow_exception(as<async_result_connect>(ar)->exception_);
 }
 
 void socket::end_disconnect(xtd::sptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
-  if (!is<async_result_disconnect>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (ar == nullptr) throw_helper::throws(exception_case::argument_null);
+  if (!is<async_result_disconnect>(ar)) throw_helper::throws(exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_disconnect>(ar)->exception_) rethrow_exception(as<async_result_disconnect>(ar)->exception_);
 }
 
 size_t socket::end_receive(xtd::sptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
-  if (!is<async_result_receive>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (ar == nullptr) throw_helper::throws(exception_case::argument_null);
+  if (!is<async_result_receive>(ar)) throw_helper::throws(exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_receive>(ar)->exception_) rethrow_exception(as<async_result_receive>(ar)->exception_);
   return as<async_result_receive>(ar)->number_of_bytes_received_;
 }
 
 size_t socket::end_receive(xtd::sptr<xtd::iasync_result> ar, xtd::net::sockets::socket_error& error) {
-  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
-  if (!is<async_result_receive>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (ar == nullptr) throw_helper::throws(exception_case::argument_null);
+  if (!is<async_result_receive>(ar)) throw_helper::throws(exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_receive>(ar)->exception_) rethrow_exception(as<async_result_receive>(ar)->exception_);
   error = as<async_result_receive>(ar)->error_code_;
@@ -620,8 +620,8 @@ size_t socket::end_receive(xtd::sptr<xtd::iasync_result> ar, xtd::net::sockets::
 }
 
 size_t socket::end_receive_from(xtd::sptr<xtd::iasync_result> ar, xtd::sptr<xtd::net::end_point>& end_point) {
-  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
-  if (!is<async_result_receive_from>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (ar == nullptr) throw_helper::throws(exception_case::argument_null);
+  if (!is<async_result_receive_from>(ar)) throw_helper::throws(exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_receive_from>(ar)->exception_) rethrow_exception(as<async_result_receive_from>(ar)->exception_);
   end_point = as<async_result_receive_from>(ar)->end_point_;
@@ -629,8 +629,8 @@ size_t socket::end_receive_from(xtd::sptr<xtd::iasync_result> ar, xtd::sptr<xtd:
 }
 
 size_t socket::end_receive_message_from(xtd::sptr<xtd::iasync_result> ar, xtd::net::sockets::socket_flags& socket_flags, xtd::sptr<xtd::net::end_point>& end_point, ip_packet_information& ip_packet_information) {
-  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
-  if (!is<async_result_receive_message_from>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (ar == nullptr) throw_helper::throws(exception_case::argument_null);
+  if (!is<async_result_receive_message_from>(ar)) throw_helper::throws(exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_receive_message_from>(ar)->exception_) rethrow_exception(as<async_result_receive_message_from>(ar)->exception_);
   end_point = as<async_result_receive_message_from>(ar)->end_point_;
@@ -640,16 +640,16 @@ size_t socket::end_receive_message_from(xtd::sptr<xtd::iasync_result> ar, xtd::n
 }
 
 size_t socket::end_send(xtd::sptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
-  if (!is<async_result_send>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (ar == nullptr) throw_helper::throws(exception_case::argument_null);
+  if (!is<async_result_send>(ar)) throw_helper::throws(exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_send>(ar)->exception_) rethrow_exception(as<async_result_send>(ar)->exception_);
   return as<async_result_send>(ar)->number_of_bytes_sent_;
 }
 
 size_t socket::end_send(xtd::sptr<xtd::iasync_result> ar, xtd::net::sockets::socket_error& error) {
-  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
-  if (!is<async_result_send>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (ar == nullptr) throw_helper::throws(exception_case::argument_null);
+  if (!is<async_result_send>(ar)) throw_helper::throws(exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_send>(ar)->exception_) rethrow_exception(as<async_result_send>(ar)->exception_);
   error = as<async_result_send>(ar)->error_code_;
@@ -657,8 +657,8 @@ size_t socket::end_send(xtd::sptr<xtd::iasync_result> ar, xtd::net::sockets::soc
 }
 
 size_t socket::end_send_to(xtd::sptr<xtd::iasync_result> ar) {
-  if (ar == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
-  if (!is<async_result_send_to>(ar)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (ar == nullptr) throw_helper::throws(exception_case::argument_null);
+  if (!is<async_result_send_to>(ar)) throw_helper::throws(exception_case::argument);
   ar->async_wait_handle().wait_one();
   if (as<async_result_send_to>(ar)->exception_) rethrow_exception(as<async_result_send_to>(ar)->exception_);
   return as<async_result_send_to>(ar)->number_of_bytes_sent_;
@@ -675,7 +675,7 @@ int32 socket::get_socket_option(xtd::net::sockets::socket_option_level socket_op
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (socket_option_name == xtd::net::sockets::socket_option_name::broadcast && data_->socket_type != xtd::net::sockets::socket_type::dgram) throw_helper::throws<socket_exception>(socket_error::protocol_not_supported);
   if (socket_option_name == xtd::net::sockets::socket_option_name::multicast_loopback && data_->socket_type != xtd::net::sockets::socket_type::dgram) throw_helper::throws<socket_exception>(socket_error::protocol_not_supported);
-  if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) throw_helper::throws(exception_case::argument);
   auto result = 0;
   auto size = sizeof(int32);
   if (native::socket::get_socket_option(data_->handle, as<int32>(socket_option_level), as<int32>(socket_option_name), reinterpret_cast<intptr>(&result), size) != 0) throw_helper::throws<socket_exception>(get_last_error_());
@@ -693,7 +693,7 @@ xtd::net::sockets::linger_option socket::get_socket_linger_option() const {
 
 xtd::net::sockets::multicast_option socket::get_socket_multicast_option(xtd::net::sockets::socket_option_name socket_option_name) const {
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
-  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw_helper::throws(exception_case::argument);
   auto multicast_address = 0_u32;
   auto interface_index = 0_u32;
   if (native::socket::get_socket_multicast_option(data_->handle, static_cast<int32>(socket_option_name), multicast_address, interface_index) != 0) throw_helper::throws<socket_exception>(get_last_error_());
@@ -708,7 +708,7 @@ xtd::net::sockets::multicast_option socket::get_socket_multicast_option(xtd::net
 
 xtd::net::sockets::ip_v6_multicast_option socket::get_socket_ip_v6_multicast_option(xtd::net::sockets::socket_option_name socket_option_name) const {
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
-  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw_helper::throws(exception_case::argument);
   auto multicast_address = array<xtd::byte> {};
   auto interface_index = 0_u64;
   if (native::socket::get_socket_ip_v6_multicast_option(data_->handle, static_cast<int32>(socket_option_name), multicast_address, interface_index) != 0) throw_helper::throws<socket_exception>(get_last_error_());
@@ -764,7 +764,7 @@ size_t socket::receive(array<xtd::byte>& buffer, size_t offset, size_t size, soc
 }
 
 size_t socket::receive(array<xtd::byte>& buffer, size_t offset, size_t size, socket_flags socket_flags, socket_error& error_code) {
-  if (offset + size > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (!data_->is_connected) throw_helper::throws<socket_exception>(socket_error::not_connected);
   
@@ -786,7 +786,7 @@ size_t socket::receive_from(array<xtd::byte>& buffer, size_t size, socket_flags 
 }
 
 size_t socket::receive_from(array<xtd::byte>& buffer, size_t offset, size_t size, socket_flags socket_flags, end_point& remote_end_point) {
-  if (offset + size > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   auto socket_address = remote_end_point.serialize();
   auto number_of_bytes_received = native::socket::receive_from(data_->handle, buffer, offset, size, static_cast<int32>(socket_flags), socket_address.bytes_);
@@ -795,7 +795,7 @@ size_t socket::receive_from(array<xtd::byte>& buffer, size_t offset, size_t size
 }
 
 size_t socket::receive_message_from(array<xtd::byte>& buffer, size_t offset, size_t size, socket_flags socket_flags, end_point& remote_end_point, ip_packet_information& ip_packet_information) {
-  if (offset + size > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   auto socket_address = remote_end_point.serialize();
   auto number_of_bytes_received = native::socket::receive_from(data_->handle, buffer, offset, size, static_cast<int32>(socket_flags), socket_address.bytes_);
@@ -810,7 +810,7 @@ size_t socket::receive_message_from(array<xtd::byte>& buffer, size_t offset, siz
 }
 
 size_t socket::select(ilist<socket>& check_read, ilist<socket>& check_write, ilist<socket>& check_error, int32 microseconds) {
-  if (check_read.count() == 0 && check_write.count() == 0 && check_error.count() == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (check_read.count() == 0 && check_write.count() == 0 && check_error.count() == 0) throw_helper::throws(exception_case::argument);
   
   auto check_read_handles = list<intptr> {};
   std::for_each(check_read.begin(), check_read.end(), [&](auto s) {check_read_handles.add(s.data_->handle);});
@@ -857,7 +857,7 @@ size_t socket::send(const array<xtd::byte>& buffer, size_t offset, size_t size, 
 }
 
 size_t socket::send(const array<xtd::byte>& buffer, size_t offset, size_t size, socket_flags socket_flags, socket_error& error_code) {
-  if (offset + size > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   auto number_of_bytes_sent = native::socket::send(data_->handle, buffer, offset, size, static_cast<int32>(socket_flags));
   error_code = number_of_bytes_sent == -1 ? get_last_error_() : socket_error::success;
@@ -877,7 +877,7 @@ size_t socket::send_to(const array<xtd::byte>& buffer, size_t size, socket_flags
 }
 
 size_t socket::send_to(const array<xtd::byte>& buffer, size_t offset, size_t size, socket_flags socket_flags, const end_point& remote_end_point) {
-  if (offset + size > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   auto socket_address = remote_end_point.serialize();
   auto number_of_bytes_sent = native::socket::send_to(data_->handle, buffer, offset, size, static_cast<int32>(socket_flags), socket_address.bytes_);
@@ -886,7 +886,7 @@ size_t socket::send_to(const array<xtd::byte>& buffer, size_t offset, size_t siz
 }
 
 void socket::set_ip_protection_level(ip_protection_level level) {
-  if (level == ip_protection_level::unspecified) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (level == ip_protection_level::unspecified) throw_helper::throws(exception_case::argument);
   if (data_->address_family == address_family::inter_network_v6) set_socket_option(socket_option_level::ip_v6, socket_option_name::ip_protection_level, static_cast<int32>(level));
   else if (data_->address_family == address_family::inter_network) set_socket_option(socket_option_level::ip, socket_option_name::ip_protection_level, static_cast<int32>(level));
   else throw_helper::throws(exception_case::not_supported);
@@ -900,7 +900,7 @@ void socket::set_socket_option(xtd::net::sockets::socket_option_level socket_opt
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (socket_option_name == xtd::net::sockets::socket_option_name::broadcast && data_->socket_type != xtd::net::sockets::socket_type::dgram) throw_helper::throws<socket_exception>(socket_error::protocol_not_supported);
   if (socket_option_name == xtd::net::sockets::socket_option_name::multicast_loopback && data_->socket_type != xtd::net::sockets::socket_type::dgram) throw_helper::throws<socket_exception>(socket_error::protocol_not_supported);
-  if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (socket_option_name == xtd::net::sockets::socket_option_name::linger || socket_option_name == xtd::net::sockets::socket_option_name::add_membership || socket_option_name == xtd::net::sockets::socket_option_name::drop_membership) throw_helper::throws(exception_case::argument);
   if (native::socket::set_socket_option(data_->handle, static_cast<int32>(socket_option_level), static_cast<int32>(socket_option_name), reinterpret_cast<intptr>(&option_value), sizeof(int32)) != 0) throw_helper::throws<socket_exception>(get_last_error_());
 }
 
@@ -912,7 +912,7 @@ void socket::set_socket_option(xtd::net::sockets::linger_option option_value) {
 
 void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, const xtd::net::sockets::multicast_option& option_value) {
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
-  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw_helper::throws(exception_case::argument);
   auto multicast_address = option_value.group().address_or_scope_id_;
   auto interface_index = option_value.local_address() != ip_address::none ? option_value.local_address().address_or_scope_id_ : ip_address::host_to_network_order(option_value.interface_index());
   if (native::socket::set_socket_multicast_option(data_->handle, static_cast<int32>(socket_option_name), multicast_address, interface_index) != 0) throw_helper::throws<socket_exception>(get_last_error_());
@@ -920,7 +920,7 @@ void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_opti
 
 void socket::set_socket_option(xtd::net::sockets::socket_option_name socket_option_name, const xtd::net::sockets::ip_v6_multicast_option& option_value) {
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
-  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (socket_option_name != xtd::net::sockets::socket_option_name::add_membership && socket_option_name != xtd::net::sockets::socket_option_name::drop_membership) throw_helper::throws(exception_case::argument);
   if (native::socket::set_socket_ip_v6_multicast_option(data_->handle, static_cast<int32>(socket_option_name), option_value.group().get_address_bytes(), option_value.interface_index()) != 0) throw_helper::throws<socket_exception>(get_last_error_());
 }
 

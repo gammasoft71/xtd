@@ -9,7 +9,8 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd;
-using namespace io;
+using namespace xtd::helpers;
+using namespace xtd::io;
 
 char path::alt_directory_separator_char() noexcept {
   return native::path::alt_directory_separator_char();
@@ -72,7 +73,7 @@ string path::get_file_name_without_extension(const string& path) {
 }
 
 string path::get_full_path(const string& path) {
-  if (string::is_empty(path)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (string::is_empty(path)) throw_helper::throws(exception_case::argument);
   return native::file_system::get_full_path(path);
 }
 
@@ -81,7 +82,7 @@ std::vector<char> path::get_invalid_path_chars() noexcept {
 }
 
 string path::get_path_root(const string& path) {
-  if (string::is_empty(path)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (string::is_empty(path)) throw_helper::throws(exception_case::argument);
   return is_path_rooted(path) ? path.substr(0, __get_index_path_rooted(path) + 1) : "";
 }
 

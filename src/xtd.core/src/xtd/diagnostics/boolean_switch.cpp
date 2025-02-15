@@ -4,6 +4,7 @@
 
 using namespace xtd;
 using namespace xtd::diagnostics;
+using namespace xtd::helpers;
 
 boolean_switch::boolean_switch(const string& display_name, const string& description) : switch_base(display_name, description) {
 }
@@ -18,7 +19,7 @@ bool boolean_switch::enabled() const {
     if (string::try_parse(this->value(), bool_value) == true)
       enabled_ = bool_value;
     else if (string::try_parse(this->value(), int_value) == true) enabled_ = int_value != 0;
-    else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Input xtd::string was not in a correct format."_t);
+    else throw_helper::throws(exception_case::format, "Input xtd::string was not in a correct format."_t);
   }
   return enabled_.value();
 }

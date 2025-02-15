@@ -6,25 +6,26 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace io;
 
 const drive_info drive_info::empty;
 
 drive_info::drive_info(const string& drive_name) : drive_name_(drive_name) {
-  if (drive_name.empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (drive_name.empty()) throw_helper::throws(exception_case::argument);
   auto drives = native::drive::get_drives();
-  if (std::find(drives.begin(), drives.end(), drive_name) == drives.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (std::find(drives.begin(), drives.end(), drive_name) == drives.end()) throw_helper::throws(exception_case::argument);
 }
 
 size_t drive_info::available_free_space() const {
   auto free_bytes = 0_z, total_number_of_bytes = 0_z, total_number_of_free_bytes = 0_z;
-  if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
+  if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) throw_helper::throws(exception_case::io);
   return free_bytes;
 }
 
 string drive_info::drive_format() const {
   auto volume_name = std::string {}, file_system_name = std::string {};
-  if (!native::drive::get_volume_information(drive_name_, volume_name, file_system_name)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
+  if (!native::drive::get_volume_information(drive_name_, volume_name, file_system_name)) throw_helper::throws(exception_case::io);
   return file_system_name;
 }
 
@@ -48,19 +49,19 @@ directory_info drive_info::root_directory() const noexcept {
 
 size_t drive_info::total_free_space() const {
   auto free_bytes = 0_z, total_number_of_bytes = 0_z, total_number_of_free_bytes = 0_z;
-  if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
+  if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) throw_helper::throws(exception_case::io);
   return total_number_of_free_bytes;
 }
 
 size_t drive_info::total_size() const {
   auto free_bytes = 0_z, total_number_of_bytes = 0_z, total_number_of_free_bytes = 0_z;
-  if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
+  if (!native::drive::get_available_free_space(drive_name_, free_bytes, total_number_of_bytes, total_number_of_free_bytes)) throw_helper::throws(exception_case::io);
   return total_number_of_bytes;
 }
 
 string drive_info::volume_label() const {
   auto volume_name = std::string {}, file_system_name = std::string {};
-  if (!native::drive::get_volume_information(drive_name_, volume_name, file_system_name)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
+  if (!native::drive::get_volume_information(drive_name_, volume_name, file_system_name)) throw_helper::throws(exception_case::io);
   return volume_name;
 }
 

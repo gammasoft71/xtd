@@ -38,19 +38,19 @@ bool stream::is_closed() const noexcept {
 }
 
 int32 stream::read_timeout() const {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  throw_helper::throws(exception_case::invalid_operation);
 }
 
 void stream::read_timeout(int32 value) {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  throw_helper::throws(exception_case::invalid_operation);
 }
 
 int32 stream::write_timeout() const {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  throw_helper::throws(exception_case::invalid_operation);
 }
 
 void stream::write_timeout(int32 value) {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  throw_helper::throws(exception_case::invalid_operation);
 }
 
 void stream::copy_to(std::ostream& destination) {
@@ -60,7 +60,7 @@ void stream::copy_to(std::ostream& destination) {
 void stream::copy_to(std::ostream& destination, xtd::size buffer_size) {
   if (is_closed()) throw_helper::throws(exception_case::object_closed);
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
-  if (buffer_size == 0_z) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (buffer_size == 0_z) throw_helper::throws(exception_case::argument_out_of_range);
 
   auto copy_count = math::min(buffer_size, length() - position());
   if (copy_count == 0) return;
@@ -88,7 +88,7 @@ size stream::read_at_least(array<byte>& buffer, size minimum_bytes, bool throw_o
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
   
   if (minimum_bytes == 0_z) return 0_z;
-  if (buffer.length() < minimum_bytes) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (buffer.length() < minimum_bytes) throw_helper::throws(exception_case::argument_out_of_range);
   
   auto read_count = read(buffer, 0_z, minimum_bytes);
   if (throw_on_end_of_stream && read_count < minimum_bytes) throw_helper::throws(exception_case::end_of_stream);
@@ -114,7 +114,7 @@ void stream::read_exactly(array<byte>& buffer, size offset, size count) {
   if (!can_read()) throw_helper::throws(exception_case::not_supported);
 
   if (count == 0_z) return;
-  if (offset >= buffer.size() || offset + count > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (offset >= buffer.size() || offset + count > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
 
   auto total_read_count = 0_z;
   

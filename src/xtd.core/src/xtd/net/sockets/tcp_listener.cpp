@@ -34,7 +34,7 @@ bool tcp_listener::exclusive_address_use() const {
 }
 
 tcp_listener& tcp_listener::exclusive_address_use(bool value) {
-  if (active()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  if (active()) throw_helper::throws(exception_case::invalid_operation);
   data_->server_socket.exclusive_address_use(value);
   return *this;
 }
@@ -48,12 +48,12 @@ xtd::net::sockets::socket tcp_listener::server() const noexcept {
 }
 
 xtd::net::sockets::socket tcp_listener::accept_socket() {
-  if (!active()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  if (!active()) throw_helper::throws(exception_case::invalid_operation);
   return data_->server_socket.accept();
 }
 
 xtd::net::sockets::tcp_client tcp_listener::accept_tcp_client() {
-  if (!active()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  if (!active()) throw_helper::throws(exception_case::invalid_operation);
   return tcp_client(data_->server_socket.accept());
 }
 
@@ -94,16 +94,16 @@ tcp_listener tcp_listener::create(uint16 port) {
 }
 
 xtd::net::sockets::socket tcp_listener::end_accept_socket(xtd::sptr<xtd::iasync_result> async_result) {
-  if (async_result == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
-  if (!is<async_result_accept_socket>(async_result)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (async_result == nullptr) throw_helper::throws(exception_case::argument_null);
+  if (!is<async_result_accept_socket>(async_result)) throw_helper::throws(exception_case::argument);
   async_result->async_wait_handle().wait_one();
   if (as<async_result_accept_socket>(async_result)->exception_) rethrow_exception(as<async_result_accept_socket>(async_result)->exception_);
   return as<async_result_accept_socket>(async_result)->socket_;
 }
 
 xtd::net::sockets::tcp_client tcp_listener::end_accept_tcp_client(xtd::sptr<xtd::iasync_result> async_result) {
-  if (async_result == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
-  if (!is<async_result_accept_tcp_client>(async_result)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (async_result == nullptr) throw_helper::throws(exception_case::argument_null);
+  if (!is<async_result_accept_tcp_client>(async_result)) throw_helper::throws(exception_case::argument);
   async_result->async_wait_handle().wait_one();
   if (as<async_result_accept_tcp_client>(async_result)->exception_) rethrow_exception(as<async_result_accept_tcp_client>(async_result)->exception_);
   return as<async_result_accept_tcp_client>(async_result)->tcp_client_;
@@ -118,7 +118,7 @@ bool tcp_listener::equals(const tcp_listener& other) const noexcept {
 }
 
 bool tcp_listener::pending() {
-  if (!active()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  if (!active()) throw_helper::throws(exception_case::invalid_operation);
   return data_->server_socket.poll(0, select_mode::select_read);
 }
 

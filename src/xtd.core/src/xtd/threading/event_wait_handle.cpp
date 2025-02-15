@@ -44,7 +44,7 @@ event_wait_handle::event_wait_handle(bool initial_state, event_reset_mode mode, 
   data_->mode = mode;
   data_->name = name;
   data_->is_set = initial_state;
-  if (!enum_object<>::is_defined(mode)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!enum_object<>::is_defined(mode)) throw_helper::throws(exception_case::argument);
   if (name.size() > native::named_event_wait_handle::max_name_size()) throw_helper::throws(exception_case::path_too_long);
   auto created_new = false;
   create(initial_state, created_new);
@@ -89,7 +89,7 @@ bool event_wait_handle::equals(const event_wait_handle& other) const noexcept {
 }
 
 event_wait_handle event_wait_handle::open_existing(const string& name) {
-  if (name.empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (name.empty()) throw_helper::throws(exception_case::argument);
   if (name.size() > native::named_event_wait_handle::max_name_size()) throw_helper::throws(exception_case::path_too_long);
   auto result = event_wait_handle{};
   if (!try_open_existing(name, result)) throw_helper::throws(exception_case::io);
@@ -132,7 +132,7 @@ bool event_wait_handle::signal() {
 
 bool event_wait_handle::wait(int32 milliseconds_timeout) {
   if (!data_) throw_helper::throws(exception_case::object_closed);
-  if (milliseconds_timeout < -1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (milliseconds_timeout < -1) throw_helper::throws(exception_case::argument_out_of_range);
   auto result = data_->event_wait_handle->wait(milliseconds_timeout);
   if (result == 0xFFFFFFFF) throw_helper::throws(exception_case::io);
   if (result == 0x00000080) throw_helper::throws(exception_case::abandoned_mutex);
