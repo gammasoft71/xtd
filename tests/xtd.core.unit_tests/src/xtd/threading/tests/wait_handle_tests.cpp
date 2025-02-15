@@ -39,7 +39,7 @@ namespace xtd::tests {
       
     protected:
       bool signal() override {
-        if (!mutex_) throw object_closed_exception {};
+        if (!mutex_) throw_helper::throws(exception_case::object_closed);
         auto result = false;
         mutex_->unlock();
         std::swap(locked_, result);
@@ -47,7 +47,7 @@ namespace xtd::tests {
       }
       
       bool wait(int32_t milliseconds_timeout) override {
-        if (!mutex_) throw object_closed_exception {};
+        if (!mutex_) throw_helper::throws(exception_case::object_closed);
         if (milliseconds_timeout < -1) throw_helper::throws(exception_case::argument_out_of_range);
 
         if (milliseconds_timeout != timeout::infinite) return (locked_ = mutex_->try_lock_for(std::chrono::milliseconds {milliseconds_timeout}));

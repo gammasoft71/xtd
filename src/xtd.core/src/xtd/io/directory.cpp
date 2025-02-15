@@ -222,7 +222,7 @@ date_time directory::get_creation_time(const string& path) {
 
 string directory::get_current_directory() {
   auto path = io::path::get_full_path(native::directory::get_current_directory());
-  if (path.empty()) throw not_supported_exception {};
+  if (path.empty()) throw_helper::throws(exception_case::not_supported);
   return path;
 }
 

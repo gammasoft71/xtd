@@ -22,13 +22,14 @@ using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 using namespace xtd::io;
 using namespace xtdc_gui;
 
 namespace {
   static void copy_directory(const string& source_dir, const string& destination_dir, bool recursive) {
     auto dir = directory_info(source_dir);
-    if (!dir.exists()) throw directory_not_found_exception(string::format("Source directory not found: {}", dir.full_name()));
+    if (!dir.exists()) throw_helper::throws(exception_case::directory_not_found, string::format("Source directory not found: {}", dir.full_name()).c_str());
     
     directory::create_directory(destination_dir);
     
