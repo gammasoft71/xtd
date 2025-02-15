@@ -3,6 +3,7 @@
 
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 struct dot_matrix_display::data {
   drawing::size matrix_size = {7, 7};
@@ -36,7 +37,7 @@ double dot_matrix_display::back_dot_opacity() const noexcept {
 }
 
 dot_matrix_display& dot_matrix_display::back_dot_opacity(double value) {
-  if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t);
+  if (value < 0.0 || value > 1.0) throw_helper::throws(exception_case::argument_out_of_range, "value must be between 0.0 and 1.0."_t);
   if (data_->back_dot_opacity == value) return *this;
   data_->back_dot_opacity = value;
   if (data_->back_dot_opacity < 0.0) data_->back_dot_opacity = 0.0;

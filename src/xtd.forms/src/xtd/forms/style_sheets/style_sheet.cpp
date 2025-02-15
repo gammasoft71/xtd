@@ -16,14 +16,15 @@ using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
-using namespace xtd::io;
 using namespace xtd::forms;
 using namespace xtd::forms::style_sheets;
+using namespace xtd::helpers;
+using namespace xtd::io;
 using namespace xtd::web::css;
 
 namespace {
   string get_css_string_from_path(const string& path_name) {
-    if (!xtd::io::directory::exists(path_name)) throw xtd::io::directory_not_found_exception {};
+    if (!xtd::io::directory::exists(path_name)) throw_helper::throws(exception_case::directory_not_found);
     auto theme_css = string::empty_string;
     for (auto theme_file : directory::enumerate_files(path_name, "*.css"))
       theme_css += file::read_all_text(theme_file);
@@ -455,7 +456,7 @@ style_sheet style_sheet::get_style_sheet_from_name(const string& name) {
 }
 
 style_sheet style_sheet::get_style_sheet_from_file(const string& file_name) {
-  if (!xtd::io::file::exists(file_name)) throw xtd::io::directory_not_found_exception {};
+  if (!xtd::io::file::exists(file_name)) throw_helper::throws(exception_case::directory_not_found);
   auto theme_css = file::read_all_text(file_name);
   return style_sheet(theme_css);
 }

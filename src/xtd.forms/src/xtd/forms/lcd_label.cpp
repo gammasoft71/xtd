@@ -3,6 +3,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 class lcd_label::idigit interface_ {
 public:
@@ -755,7 +756,7 @@ double lcd_label::back_digit_opacity() const noexcept {
 }
 
 lcd_label& lcd_label::back_digit_opacity(double value) {
-  if (value < 0.0 || value > 1.0) throw argument_out_of_range_exception("value must be between 0.0 and 1.0."_t);
+  if (value < 0.0 || value > 1.0) throw_helper::throws(exception_case::argument_out_of_range, "value must be between 0.0 and 1.0."_t);
   if (data_->back_digit_opacity == value) return *this;
   data_->back_digit_opacity = value;
   set_digits_params();
@@ -778,7 +779,7 @@ int32 lcd_label::digit_spacing() const noexcept {
 }
 
 lcd_label& lcd_label::digit_spacing(int32 value) {
-  if (value < 0) throw argument_out_of_range_exception("value must be positive"_t);
+  if (value < 0) throw_helper::throws(exception_case::argument_out_of_range, "value must be positive"_t);
   if (data_->digit_spacing == value) return *this;
   data_->digit_spacing = value;
   set_digits_params();

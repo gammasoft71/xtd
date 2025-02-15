@@ -8,6 +8,7 @@
 
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 struct text_box_base::data {
   bool accepts_tab = false;
@@ -139,8 +140,8 @@ void text_box_base::clear() {
 
 void text_box_base::select(size_t start, size_t length) {
   if (data_->selection_start != start || length != data_->selection_length) {
-    if (start > text().size()) throw argument_out_of_range_exception("start greater than text size"_t);
-    if (start + length > text().size()) throw argument_out_of_range_exception("start + length greater than text size"_t);
+    if (start > text().size()) throw_helper::throws(exception_case::argument_out_of_range, "start greater than text size"_t);
+    if (start + length > text().size()) throw_helper::throws(exception_case::argument_out_of_range, "start + length greater than text size"_t);
     data_->selection_start = start;
     data_->selection_length = length;
   }
