@@ -37,6 +37,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 namespace {
   class reentrant_layout {
@@ -553,7 +554,7 @@ control& control::fore_color(std::nullptr_t) {
 
 intptr control::handle() const {
   if (check_for_illegal_cross_thread_calls() && invoke_required())
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, string::format("Cross-thread operation not valid: {}"_t, to_string()).c_str());
+    throw_helper::throws(exception_case::invalid_operation, string::format("Cross-thread operation not valid: {}"_t, to_string()).c_str());
   return data_->handle;
 }
 
@@ -988,7 +989,7 @@ void control::destroy_control() {
 
 graphics control::create_graphics() const {
   if (!is_handle_created())
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+    throw_helper::throws(exception_case::invalid_operation);
   return graphics(native::control::create_graphics(handle()));
 }
 
@@ -1049,7 +1050,7 @@ size_t control::get_child_index(intptr child) const {
   if (child == 0) return control_collection::npos;
   for (size_t index = 0; index < controls().size(); ++index)
     if (controls()[index].get().handle() == child) return index;
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+  throw_helper::throws(exception_case::argument);;
 }
 
 size_t control::get_child_index(intptr child, bool& throw_exception) const {
@@ -1570,7 +1571,7 @@ drawing::point control::point_to_screen(const xtd::drawing::point& p) const {
 
 bool control::post_message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) const {
   if (check_for_illegal_cross_thread_calls() && invoke_required())
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, string::format("Cross-thread operation not valid: {}"_t, to_string()).c_str());
+    throw_helper::throws(exception_case::invalid_operation, string::format("Cross-thread operation not valid: {}"_t, to_string()).c_str());
   if (!is_handle_created()) return false;
   data_->post_messages.push(message::create(hwnd, msg, wparam, lparam));
   return true;
@@ -1602,7 +1603,7 @@ void control::refresh() const {
 
 intptr control::send_message(intptr hwnd, int32 msg, intptr wparam, intptr lparam) const {
   if (check_for_illegal_cross_thread_calls() && invoke_required())
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, string::format("Cross-thread operation not valid: {}"_t, to_string()).c_str());
+    throw_helper::throws(exception_case::invalid_operation, string::format("Cross-thread operation not valid: {}"_t, to_string()).c_str());
   return is_handle_created() ? native::control::send_message(handle(), hwnd, msg, wparam, lparam) : static_cast<intptr>(-1);
 }
 
@@ -1685,7 +1686,7 @@ void control::show_context_menu(xtd::forms::context_menu& menu, const xtd::drawi
 
 xtd::uptr<xtd::object> control::clone() const {
   auto result = xtd::new_uptr<control>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 

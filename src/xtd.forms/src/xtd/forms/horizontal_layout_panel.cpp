@@ -3,6 +3,7 @@
 
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 const horizontal_control_layout_style_collection& horizontal_layout_panel::control_layout_styles() const noexcept {
   return control_layout_styles_;
@@ -10,13 +11,13 @@ const horizontal_control_layout_style_collection& horizontal_layout_panel::contr
 
 const horizontal_control_layout_style& horizontal_layout_panel::control_layout_style(const control_ref& control) const {
   auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](auto item) {return item.first.get() == control;});
-  if (it == control_layout_styles_.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (it == control_layout_styles_.end()) throw_helper::throws(exception_case::argument);
   return it->second;
 }
 
 horizontal_layout_panel& horizontal_layout_panel::control_layout_style(const control_ref& control, const horizontal_control_layout_style& value) {
   auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](auto item) {return item.first.get() == control;});
-  if (it == control_layout_styles_.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (it == control_layout_styles_.end()) throw_helper::throws(exception_case::argument);
   if (it->second != value) {
     it->second = value;
     perform_layout();
@@ -81,7 +82,7 @@ horizontal_layout_panel horizontal_layout_panel::create(const control& parent, c
 
 xtd::uptr<xtd::object> horizontal_layout_panel::clone() const {
   auto result = xtd::new_uptr<horizontal_layout_panel>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 
@@ -93,7 +94,7 @@ void horizontal_layout_panel::on_control_added(const xtd::forms::control_event_a
 void horizontal_layout_panel::on_control_removed(const xtd::forms::control_event_args& e) {
   panel::on_control_removed(e);
   auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](auto item) {return item.first.get() == e.control();});
-  if (it == control_layout_styles_.end()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (it == control_layout_styles_.end()) throw_helper::throws(exception_case::argument);
   control_layout_styles_.erase(it);
 }
 
@@ -129,7 +130,7 @@ void horizontal_layout_panel::on_layout(const event_args& e) {
     if (layout_style.size_type() == size_type::absolute) width = static_cast<int32>(layout_style.width().value_or(control.get().default_size().width));
     else if (layout_style.size_type() == size_type::percent) width = static_cast<int32>(percent_width * (layout_style.width().value_or(0) / total_percent));
     else if (layout_style.size_type() == size_type::auto_size) width = static_cast<int32>(auto_size_width / auto_size_control_count);
-    else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    else throw_helper::throws(exception_case::argument);
     control.get().set_bounds(left, top, width, height);
     left += width + padding().right() + padding().left();
   }

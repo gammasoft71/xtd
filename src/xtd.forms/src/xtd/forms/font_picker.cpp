@@ -9,6 +9,7 @@
 
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 struct font_picker::data {
   drawing::color color;
@@ -243,7 +244,7 @@ forms::create_params font_picker::create_params() const noexcept {
 
 xtd::uptr<xtd::object> font_picker::clone() const {
   auto result = xtd::new_uptr<font_picker>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 

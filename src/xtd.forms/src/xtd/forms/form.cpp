@@ -23,6 +23,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 struct form::data {
   std::optional<ibutton_control_ref> accept_button;
@@ -252,7 +253,7 @@ form& form::owner(std::nullptr_t) {
 }
 
 control& form::parent(const control& parent) {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Top-level control cannot be added to a control."_t);
+  throw_helper::throws(exception_case::invalid_operation, "Top-level control cannot be added to a control."_t);
 }
 
 bool form::show_icon() const noexcept {
@@ -643,7 +644,7 @@ drawing::size form::default_size() const noexcept {
 
 xtd::uptr<xtd::object> form::clone() const {
   auto result = xtd::new_uptr<form>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 
