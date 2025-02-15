@@ -1,5 +1,9 @@
 #include "../../../include/xtd/tunit/assert.hpp"
-#include <cstring>
+#include <xtd/string>
+#include <xtd/u16string>
+#include <xtd/u32string>
+#include <xtd/u8string>
+#include <xtd/wstring>
 
 using namespace xtd;
 using namespace xtd::diagnostics;
@@ -33,20 +37,17 @@ void assert::are_equal(const wchar_t* expected, const wchar_t* actual, const str
 }
 
 void assert::are_equal(float expected, float actual, const string& message, const stack_frame& stack_frame) {
-  if (std::isnan(actual) && std::isnan(expected)) succeed(message, stack_frame);
-  else if (actual == expected) succeed(message, stack_frame);
+  if (actual == expected || (std::isnan(actual) && std::isnan(expected))) succeed(message, stack_frame);
   else fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_equal(double expected, double actual, const string& message, const stack_frame& stack_frame) {
-  if (std::isnan(actual) && std::isnan(expected)) succeed(message, stack_frame);
-  else if (actual == expected) succeed(message, stack_frame);
+  if (actual == expected || (std::isnan(actual) && std::isnan(expected))) succeed(message, stack_frame);
   else fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_equal(long double expected, long double actual, const string& message, const stack_frame& stack_frame) {
-  if (std::isnan(actual) && std::isnan(expected)) succeed(message, stack_frame);
-  else if (actual == expected) succeed(message, stack_frame);
+  if (actual == expected || (std::isnan(actual) && std::isnan(expected))) succeed(message, stack_frame);
   else fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
@@ -106,38 +107,33 @@ void assert::are_not_equal(const wchar_t* expected, const wchar_t* actual, const
 
 void assert::contains(char item, const char* values, const string& message, const stack_frame& stack_frame) {
   auto s = string {values};
-  auto result = std::find(s.begin(), s.end(), item);
-  if (result != s.end()) succeed(message, stack_frame);
+  if (s.contains(item)) succeed(message, stack_frame);
   else fail("collection containing " + to_string(item), join_items(s), message, stack_frame);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 void assert::contains(char8 item, const char8* values, const string& message, const stack_frame& stack_frame) {
-  auto s = std::u8string {values};
-  auto result = std::find(s.begin(), s.end(), item);
-  if (result != s.end()) succeed(message, stack_frame);
+  auto s = u8string {values};
+  if (s.contains(item)) succeed(message, stack_frame);
   else fail("collection containing " + to_string(item), join_items(s), message, stack_frame);
 }
 #endif
 
 void assert::contains(char16 item, const char16* values, const string& message, const stack_frame& stack_frame) {
-  auto s = std::u16string {values};
-  auto result = std::find(s.begin(), s.end(), item);
-  if (result != s.end()) succeed(message, stack_frame);
+  auto s = u16string {values};
+  if (s.contains(item)) succeed(message, stack_frame);
   else fail("collection containing " + to_string(item), join_items(s), message, stack_frame);
 }
 
 void assert::contains(char32 item, const char32* values, const string& message, const stack_frame& stack_frame) {
-  auto s = std::u32string {values};
-  auto result = std::find(s.begin(), s.end(), item);
-  if (result != s.end()) succeed(message, stack_frame);
+  auto s = u32string {values};
+  if (s.contains(item)) succeed(message, stack_frame);
   else fail("collection containing " + to_string(item), join_items(s), message, stack_frame);
 }
 
 void assert::contains(wchar_t item, const wchar_t* values, const string& message, const stack_frame& stack_frame) {
-  auto s = std::wstring {values};
-  auto result = std::find(s.begin(), s.end(), item);
-  if (result != s.end()) succeed(message, stack_frame);
+  auto s = wstring {values};
+  if (s.contains(item)) succeed(message, stack_frame);
   else fail("collection containing " + to_string(item), join_items(s), message, stack_frame);
 }
 

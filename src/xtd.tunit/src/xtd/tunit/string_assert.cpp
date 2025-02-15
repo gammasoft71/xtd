@@ -9,8 +9,7 @@ void string_assert::are_equal_ignoring_case(const xtd::string& expected, const x
 }
 
 void string_assert::are_equal_ignoring_case(const xtd::string& expected, const xtd::string& actual, const xtd::string& message, const stack_frame& stack_frame) {
-  if (actual.to_lower() == expected.to_lower())
-    assert::succeed(message, stack_frame);
+  if (actual.to_lower() == expected.to_lower()) assert::succeed(message, stack_frame);
   else fail(to_string(expected) + ", ignoring case", to_string(actual), message, stack_frame);
 }
 
@@ -19,8 +18,7 @@ void string_assert::are_not_equal_ignoring_case(const xtd::string& expected, con
 }
 
 void string_assert::are_not_equal_ignoring_case(const xtd::string& expected, const xtd::string& actual, const xtd::string& message, const stack_frame& stack_frame) {
-  if (actual.to_lower() != expected.to_lower())
-    assert::succeed(message, stack_frame);
+  if (actual.to_lower() != expected.to_lower()) assert::succeed(message, stack_frame);
   else fail("not " + to_string(expected) + ", ignoring case", to_string(actual), message, stack_frame);
 }
 
@@ -29,8 +27,7 @@ void string_assert::contains(const xtd::string& item, const xtd::string& string,
 }
 
 void string_assert::contains(const xtd::string& item, const xtd::string& string, const xtd::string& message, const stack_frame& stack_frame) {
-  if (string.find(item) != string::npos)
-    assert::succeed(message, stack_frame);
+  if (string.find(item) != string::npos) assert::succeed(message, stack_frame);
   else fail("string containing " + to_string(item), to_string(string), message, stack_frame);
 }
 
@@ -39,8 +36,7 @@ void string_assert::does_not_contain(const xtd::string& item, const xtd::string&
 }
 
 void string_assert::does_not_contain(const xtd::string& item, const xtd::string& string, const xtd::string& message, const stack_frame& stack_frame) {
-  if (string.find(item) == string::npos)
-    assert::succeed(message, stack_frame);
+  if (string.find(item) == string::npos) assert::succeed(message, stack_frame);
   else fail("not string containing " + to_string(item), to_string(string), message, stack_frame);
 }
 
@@ -49,8 +45,7 @@ void string_assert::does_not_end_with(const xtd::string& item, const xtd::string
 }
 
 void string_assert::does_not_end_with(const xtd::string& item, const xtd::string& string, const xtd::string& message, const stack_frame& stack_frame) {
-  if (string.rfind(item) + item.size() != string.size())
-    assert::succeed(message, stack_frame);
+  if (string.rfind(item) + item.size() != string.size()) assert::succeed(message, stack_frame);
   else fail("not string ending with " + to_string(item), to_string(string), message, stack_frame);
 }
 
@@ -59,12 +54,8 @@ void string_assert::does_not_match(const xtd::string& regex_pattern, const xtd::
 }
 
 void string_assert::does_not_match(const xtd::string& regex_pattern, const xtd::string& actual, const xtd::string& message, const stack_frame& stack_frame) {
-  std::string pattern(regex_pattern);
-  std::regex r(pattern);
-  std::smatch m;
-  std::string act(actual);
-  if (std::regex_search(act, m, r) == false)
-    assert::succeed(message, stack_frame);
+  std::smatch match;
+  if (std::regex_search(actual.chars(), match, std::regex {regex_pattern.chars()}) == false) assert::succeed(message, stack_frame);
   else fail("not string matching " + to_string(regex_pattern), to_string(actual), message, stack_frame);
 }
 
@@ -73,8 +64,7 @@ void string_assert::does_not_start_with(const xtd::string& item, const xtd::stri
 }
 
 void string_assert::does_not_start_with(const xtd::string& item, const xtd::string& string, const xtd::string& message, const stack_frame& stack_frame) {
-  if (string.find(item) != 0)
-    assert::succeed(message, stack_frame);
+  if (string.find(item) != 0) assert::succeed(message, stack_frame);
   else fail("not string starting with " + to_string(item), to_string(string), message, stack_frame);
 }
 
@@ -83,8 +73,7 @@ void string_assert::ends_with(const xtd::string& item, const xtd::string& string
 }
 
 void string_assert::ends_with(const xtd::string& item, const xtd::string& string, const xtd::string& message, const stack_frame& stack_frame) {
-  if (string.rfind(item) + item.size() == string.size())
-    assert::succeed(message, stack_frame);
+  if (string.rfind(item) + item.size() == string.size()) assert::succeed(message, stack_frame);
   else fail("string ending with " + to_string(item), to_string(string), message, stack_frame);
 }
 
@@ -93,12 +82,8 @@ void string_assert::matches(const xtd::string& regex_pattern, const xtd::string&
 }
 
 void string_assert::matches(const xtd::string& regex_pattern, const xtd::string& actual, const xtd::string& message, const stack_frame& stack_frame) {
-  std::string pattern(regex_pattern);
-  std::regex r(pattern);
-  std::smatch m;
-  std::string act(actual);
-  if (std::regex_search(act, m, r) == true)
-    assert::succeed(message, stack_frame);
+  std::smatch match;
+  if (std::regex_search(actual.chars(), match, std::regex {regex_pattern.chars()}) == true) assert::succeed(message, stack_frame);
   else fail("string matching " + to_string(regex_pattern), to_string(actual), message, stack_frame);
 }
 
@@ -107,7 +92,6 @@ void string_assert::starts_with(const xtd::string& item, const xtd::string& stri
 }
 
 void string_assert::starts_with(const xtd::string& item, const xtd::string& string, const xtd::string& message, const stack_frame& stack_frame) {
-  if (string.find(item) == 0)
-    assert::succeed(message, stack_frame);
+  if (string.find(item) == 0) assert::succeed(message, stack_frame);
   else fail("string starting with " + to_string(item), to_string(string), message, stack_frame);
 }
