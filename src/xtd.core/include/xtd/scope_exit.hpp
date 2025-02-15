@@ -6,14 +6,14 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization ([RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization)) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd xtd::scope_exit comes into play.
+  /// @brief Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization ([RAII](https://en.cppreference.com/w/cpp/language/raii)) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd xtd::scope_exit comes into play.
   /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @remarks See also #scope_exit_ keyword helper.
-  /// @warning Prefer use [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) then xtd::scope_exit.
+  /// @warning Prefer use [RAII](https://en.cppreference.com/w/cpp/language/raii) then xtd::scope_exit.
   ///
   /// ```cpp
   /// #include <xtd/xtd>
@@ -64,14 +64,14 @@ namespace xtd {
 #define __xtd_scope_exit_id__(name, line) __xtd_scope_exit_cat__(name, line)
 /// @endcond
 
-/// @brief Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization ([RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization)) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd #scope_exit_ comes into play.
+/// @brief Nowadays, every C++ developer is familiar with the Resource Acquisition Is Initialization ([RAII](https://en.cppreference.com/w/cpp/language/raii)) technique. It binds resource acquisition and release to initialization and destruction of a variable that holds the resource. There are times when writing a special class for such a variable is not worth the effort. This is when xtd #scope_exit_ comes into play.
 /// @par Namespace
 /// xtd
 /// @par Library
 /// xtd.core
 /// @ingroup xtd_core keywords
 /// @remarks See also xtd::scope_exit struct.
-/// @warning Prefer use [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) then #scope_exit_.
+/// @warning Prefer use [RAII](https://en.cppreference.com/w/cpp/language/raii) then #scope_exit_.
 ///
 /// ```cpp
 /// #include <xtd/xtd>
