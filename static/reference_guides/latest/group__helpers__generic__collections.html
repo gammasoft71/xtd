@@ -162,8 +162,10 @@ template&lt;class type_t &gt; </div>
 The <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af" title="Represent an allocator alias.">xtd::collections::generic::helpers::allocator</a> is alias on <a href="https://en.cppreference.com/w/cpp/memory/allocator">std::allocator</a>. </dd>
 <dd>
 A simple alias for the moment, which leaves open the possibility of implementing a specific allocator for xtd if necessary in the future. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example show how to use <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af" title="Represent an allocator alias.">xtd::collections::generic::helpers::allocator</a> with <code>xtd::collection::generic::list</code>. <div class="fragment"><div class="line"><span class="keyword">auto</span> values = xtd::collection::generic::list&lt;date_time, xtd::collections::generic::helpers::allocator&lt;date_time&gt;&gt; {};</div>
-<div class="line">values.emplace_back(1971, 1, 5);</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example show how to use <a class="el" href="group__helpers__generic__collections.html#gac7dc24539787a344466014161f2d39af" title="Represent an allocator alias.">xtd::collections::generic::helpers::allocator</a> with <code><a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html" title="Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...">xtd::collections::generic::list</a></code>. <div class="fragment"><div class="line"><span class="keyword">auto</span> values = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list&lt;date_time, xtd::collections::generic::helpers::allocator&lt;date_time&gt;</a>&gt; {};</div>
+<div class="line">values.<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#a735d03795f8a73d0edd6841d641a7751">emplace_back</a>(1971, 1, 5);</div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:80</div></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a735d03795f8a73d0edd6841d641a7751"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a735d03795f8a73d0edd6841d641a7751">xtd::collections::generic::list::emplace_back</a></div><div class="ttdeci">reference emplace_back(args_t &amp;&amp;... args)</div><div class="ttdoc">Appends a new element to the end of the container. The element is constructed through std::allocator_...</div><div class="ttdef"><b>Definition</b> list.hpp:707</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -296,7 +298,7 @@ template&lt;class value_t , class iterator_tag_t  = std::random_access_iterator_
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 10 2025 19:02:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 15 2025 21:41:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

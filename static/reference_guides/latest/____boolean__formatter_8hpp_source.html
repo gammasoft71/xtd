@@ -93,7 +93,7 @@ $(function() {
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="____numeric__formatter_8hpp.html">__numeric_formatter.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="____format__exception_8hpp.html">__format_exception.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;../helpers/throw_helper.hpp&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">char</span>_t&gt;</div>
@@ -111,16 +111,17 @@ $(function() {
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;X&#39;</span>: <span class="keywordflow">return</span> __numeric_formatter(fmt, value ? 1 : 0, loc);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;g&#39;</span>:</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;G&#39;</span>: <span class="keywordflow">return</span> value ? std::basic_string&lt;char_t&gt; {<span class="charliteral">&#39;t&#39;</span>, <span class="charliteral">&#39;r&#39;</span>, <span class="charliteral">&#39;u&#39;</span>, <span class="charliteral">&#39;e&#39;</span>} : std::basic_string&lt;char_t&gt; {<span class="charliteral">&#39;f&#39;</span>, <span class="charliteral">&#39;a&#39;</span>, <span class="charliteral">&#39;l&#39;</span>, <span class="charliteral">&#39;s&#39;</span>, <span class="charliteral">&#39;e&#39;</span>};</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">default</span>: __format_exception(<span class="stringliteral">&quot;Invalid format expression&quot;</span>); <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">default</span>: <a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a4fcf5154d41ae7e68038268ea89492d6">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dca1ddcb92ade31c8fbd370001f9b29a7d9">xtd::helpers::exception_case::format</a>, <span class="stringliteral">&quot;Invalid format expression&quot;</span>);</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  }</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
-<div class="ttc" id="a____format__exception_8hpp_html"><div class="ttname"><a href="____format__exception_8hpp.html">__format_exception.hpp</a></div><div class="ttdoc">Contains throw format exception method.</div></div>
 <div class="ttc" id="a____numeric__formatter_8hpp_html"><div class="ttname"><a href="____numeric__formatter_8hpp.html">__numeric_formatter.hpp</a></div><div class="ttdoc">Contains __numeric_formatter method.</div></div>
+<div class="ttc" id="aclassxtd_1_1helpers_1_1throw__helper_html_a4fcf5154d41ae7e68038268ea89492d6"><div class="ttname"><a href="classxtd_1_1helpers_1_1throw__helper.html#a4fcf5154d41ae7e68038268ea89492d6">xtd::helpers::throw_helper::throws</a></div><div class="ttdeci">static void throws(xtd::helpers::exception_case exception_case, const source_location &amp;location=source_location::current())</div><div class="ttdoc">Throws an exption with specified exception case.</div></div>
+<div class="ttc" id="agroup__helpers_html_gga9449ffb8e13ad8c25c987085078568dca1ddcb92ade31c8fbd370001f9b29a7d9"><div class="ttname"><a href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dca1ddcb92ade31c8fbd370001f9b29a7d9">xtd::helpers::exception_case::format</a></div><div class="ttdeci">@ format</div><div class="ttdoc">The format is not valid.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 10 2025 19:02:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 15 2025 21:41:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

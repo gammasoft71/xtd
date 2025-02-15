@@ -8,7 +8,7 @@
 
 * The [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) library does not manage memory for you.
   
-  Each control manages its own resources on the [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom. And it does not manage your objects.
+  Each control manages its own resources on the [RAII](https://en.cppreference.com/w/cpp/language/raii) programming idiom. And it does not manage your objects.
 
 * A control can be created on the stack or dynamically in the heap.
   
@@ -208,7 +208,7 @@ auto main() -> int {
 }
 ```
 
-In addition, you will respect the [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom.
+In addition, you will respect the [RAII](https://en.cppreference.com/w/cpp/language/raii) programming idiom.
 
 # Close form
 

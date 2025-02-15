@@ -9,7 +9,7 @@ var searchData=
   ['menu_6',['menu',['../classxtd_1_1forms_1_1menu.html',1,'xtd::forms']]],
   ['menu_5fimages_7',['menu_images',['../classxtd_1_1forms_1_1menu__images.html',1,'xtd::forms']]],
   ['menu_5fitem_8',['menu_item',['../classxtd_1_1forms_1_1menu__item.html',1,'xtd::forms']]],
-  ['message_9',['message',['../classxtd_1_1forms_1_1message.html',1,'xtd::forms']]],
+  ['message_9',['message',['../structxtd_1_1forms_1_1message.html',1,'xtd::forms']]],
   ['message_5fbox_10',['message_box',['../classxtd_1_1forms_1_1message__box.html',1,'xtd::forms']]],
   ['message_5fdialog_11',['message_dialog',['../classxtd_1_1forms_1_1message__dialog.html',1,'xtd::forms']]],
   ['message_5fnotifier_12',['message_notifier',['../classxtd_1_1forms_1_1message__notifier.html',1,'xtd::forms']]],

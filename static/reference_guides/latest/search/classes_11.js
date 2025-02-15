@@ -9,7 +9,7 @@ var searchData=
   ['sdata_6',['sdata',['../structxtd_1_1threading_1_1thread__pool_1_1thread__item_1_1sdata.html',1,'xtd::threading::thread_pool::thread_item']]],
   ['secure_5fstring_7',['secure_string',['../classxtd_1_1security_1_1secure__string.html',1,'xtd::security']]],
   ['security_5fexception_8',['security_exception',['../classxtd_1_1security_1_1security__exception.html',1,'xtd::security']]],
-  ['selection_5frange_9',['selection_range',['../classxtd_1_1forms_1_1selection__range.html',1,'xtd::forms']]],
+  ['selection_5frange_9',['selection_range',['../structxtd_1_1forms_1_1selection__range.html',1,'xtd::forms']]],
   ['selector_10',['selector',['../classxtd_1_1web_1_1css_1_1selector.html',1,'xtd::web::css']]],
   ['semaphore_11',['semaphore',['../classxtd_1_1threading_1_1semaphore.html',1,'xtd::threading']]],
   ['semaphore_5ffull_5fexception_12',['semaphore_full_exception',['../classxtd_1_1threading_1_1semaphore__full__exception.html',1,'xtd::threading']]],
