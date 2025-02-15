@@ -36,6 +36,8 @@ namespace xtd {
       argument_null,
       /// @brief The argument is out of range.
       argument_out_of_range,
+      /// @brief The arithmetic operation is not valid.
+      arithmetic,
       /// @brief The post-phase action of a xtd::threading::barrier fails.
       barrier_post_phase,
       /// @brief The directory is not found.
@@ -88,6 +90,12 @@ namespace xtd {
       semaphore_full,
       /// @brief The lock is not valid.
       synchronization_lock,
+      /// @brief The thread is abort.
+      thread_abort,
+      /// @brief The thread is interrupted.
+      thread_interrupted,
+      /// @brief The thread state is not valid.
+      thread_state,
       /// @brief The access is denied.
       unauthorized_access,
     };

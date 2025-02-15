@@ -15,6 +15,7 @@
 
 using namespace xtd;
 using namespace xtd::collections::generic;
+using namespace xtd::helpers;
 using namespace xtd::io;
 
 namespace {
@@ -147,7 +148,7 @@ int32 console::input_code_page() {
 
 void console::input_code_page(int32 code_page) {
   register_cancel_key_press(); // Must be first...
-  if (!native::console::input_code_page(code_page)) throw io::io_exception {};
+  if (!native::console::input_code_page(code_page)) throw_helper::throws(exception_case::io);
 }
 
 bool console::is_error_redirected() {
@@ -192,7 +193,7 @@ int32 console::output_code_page() {
 
 void console::output_code_page(int32 code_page) {
   register_cancel_key_press(); // Must be first...
-  if (!native::console::output_code_page(code_page)) throw io::io_exception {};
+  if (!native::console::output_code_page(code_page)) throw_helper::throws(exception_case::io);
 }
 
 string console::title() {
