@@ -34,6 +34,7 @@ struct __update__macos_path__ {
 } __updmacpath__;
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::io;
 using namespace xtd::threading;
 
@@ -70,7 +71,7 @@ private:
     std::signal(signal, signal_catcher::on_abnormal_termination_occured);
     auto e = signal_cancel_event_args {xtd::signal::abnormal_termination};
     environment::on_cancel_signal(e);
-    if (!e.cancel()) environment::quick_exit(128 + last_signal_.value_or(signal)); //throw thread_abort_exception {};
+    if (!e.cancel()) environment::quick_exit(128 + last_signal_.value_or(signal)); //throw_helper::throws(exception_case::thread_abort);
   }
   
   static void on_floating_point_exception_occured(int32 signal) {
@@ -79,7 +80,7 @@ private:
     environment::on_cancel_signal(e);
     if (!e.cancel()) {
       last_signal_ = signal;
-      throw arithmetic_exception {};
+      throw_helper::throws(exception_case::arithmetic);
     }
   }
   
@@ -89,7 +90,7 @@ private:
     environment::on_cancel_signal(e);
     if (!e.cancel()) {
       last_signal_ = signal;
-      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+      throw_helper::throws(exception_case::invalid_operation);
     }
   }
   
@@ -334,7 +335,7 @@ xtd::string environment::get_environment_variable(const xtd::string& variable) {
 }
 
 string environment::get_environment_variable(const string& variable, environment_variable_target target) {
-  if (!enum_object<>::is_defined<environment_variable_target>(target)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "Invalid environment variable target value"_t);
+  if (!enum_object<>::is_defined<environment_variable_target>(target)) throw_helper::throws(exception_case::argument, "Invalid environment variable target value"_t);
   return native::environment::get_environment_variable(variable, as<int32>(target));
 }
 
@@ -343,7 +344,7 @@ std::map<std::string, std::string>& environment::get_environment_variables() {
 }
 
 std::map<std::string, std::string>& environment::get_environment_variables(environment_variable_target target) {
-  if (!enum_object<>::is_defined<environment_variable_target>(target)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "Invalid environment variable target value"_t);
+  if (!enum_object<>::is_defined<environment_variable_target>(target)) throw_helper::throws(exception_case::argument, "Invalid environment variable target value"_t);
   return native::environment::get_environment_variables(as<int32>(target));
 }
 
@@ -374,9 +375,9 @@ void environment::set_environment_variable(const xtd::string& variable, const xt
 }
 
 void environment::set_environment_variable(const string& variable, const string& value, environment_variable_target target) {
-  if (string::is_empty(variable)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "Environment variable name is empty"_t);
+  if (string::is_empty(variable)) throw_helper::throws(exception_case::argument, "Environment variable name is empty"_t);
   
-  if (!enum_object<>::is_defined<environment_variable_target>(target)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "Invalid environment variable target value"_t);
+  if (!enum_object<>::is_defined<environment_variable_target>(target)) throw_helper::throws(exception_case::argument, "Invalid environment variable target value"_t);
   
   if (string::is_empty(value)) {
     native::environment::get_environment_variables(as<int32>(target)).erase(variable);
