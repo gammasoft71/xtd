@@ -21,6 +21,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 struct label::data {
   bool auto_ellipsis = false;
@@ -138,7 +139,7 @@ int32 label::image_index() const noexcept {
 
 label& label::image_index(int32 value) {
   if (data_->image_index == value) return *this;
-  if (value < -1 || static_cast<size_t>(value) >= data_->image_list.images().size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (value < -1 || static_cast<size_t>(value) >= data_->image_list.images().size()) throw_helper::throws(exception_case::argument_out_of_range);
   data_->image_index = value;
   if (data_->flat_style != xtd::forms::flat_style::system) invalidate();
   if (value != -1) data_->image = xtd::drawing::image::empty;
@@ -348,7 +349,7 @@ forms::create_params label::create_params() const noexcept {
 
 xtd::uptr<xtd::object> label::clone() const {
   auto result = xtd::new_uptr<label>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 

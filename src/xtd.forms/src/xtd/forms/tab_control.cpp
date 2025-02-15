@@ -15,6 +15,7 @@
 
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 tab_control::tab_page_collection::tab_page_collection(const tab_control::tab_page_collection::allocator_type& allocator) : tab_control::tab_page_collection::base(allocator) {
 }
@@ -131,7 +132,7 @@ size_t tab_control::selected_index() const noexcept {
 
 tab_control& tab_control::selected_index(size_t selected_index) {
   if (data_->selected_index == selected_index) return *this;
-  if (selected_index >= tab_pages().size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (selected_index >= tab_pages().size()) throw_helper::throws(exception_case::argument_out_of_range);
   data_->selected_index = selected_index;
   if (is_handle_created()) native::tab_control::selected_index(handle(), data_->selected_index);
   on_selected_index_changed(event_args::empty);
@@ -218,7 +219,7 @@ forms::create_params tab_control::create_params() const noexcept {
 
 xtd::uptr<xtd::object> tab_control::clone() const {
   auto result = xtd::new_uptr<tab_control>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 
@@ -230,7 +231,7 @@ drawing::size tab_control::measure_control() const noexcept {
 }
 
 void tab_control::on_control_added(const control_event_args& e) {
-  if (!is<xtd::forms::tab_page>(e.control())) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, string::format("Cannot add '{}' to tab_control.  Only tab_pages can be directly added to tab_controls.", e.control().get_type().name()).c_str());
+  if (!is<xtd::forms::tab_page>(e.control())) throw_helper::throws(exception_case::argument, string::format("Cannot add '{}' to tab_control.  Only tab_pages can be directly added to tab_controls.", e.control().get_type().name()).c_str());
   control::on_control_added(e);
   if (data_->selected_index == npos) data_->selected_index = 0;
 }

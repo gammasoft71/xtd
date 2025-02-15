@@ -288,7 +288,7 @@ drawing::size seven_segment_display::default_size() const noexcept {
 
 xtd::uptr<xtd::object> seven_segment_display::clone() const {
   auto result = xtd::new_uptr<seven_segment_display>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 

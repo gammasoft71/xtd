@@ -7,6 +7,7 @@
 
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 paint_event_args::paint_event_args(xtd::forms::control& control, const drawing::rectangle& clip_rectangle) : control_(&control), clip_rectangle_(clip_rectangle) {
 }
@@ -19,7 +20,7 @@ const drawing::rectangle& paint_event_args::clip_rectangle() const noexcept {
 }
 
 drawing::graphics& paint_event_args::graphics() {
-  if (!control_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "The control is null"_t);
+  if (!control_) throw_helper::throws(exception_case::argument, "The control is null"_t);
   auto using_double_buffered_graphics = control_->get_state(control::state::double_buffered) && !system_information::is_operating_system_double_buffered();
   if (!graphics_) graphics_.reset(new drawing::graphics(using_double_buffered_graphics ? native::control::create_double_buffered_paint_graphics(control_->handle()) : native::control::create_paint_graphics(control_->handle()), control_->region()));
   return *graphics_;

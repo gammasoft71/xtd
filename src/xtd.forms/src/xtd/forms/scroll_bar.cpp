@@ -7,6 +7,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 struct scroll_bar::data {
   int32 large_change = 10;
@@ -23,7 +24,7 @@ int32 scroll_bar::large_change() const noexcept {
 }
 
 scroll_bar& scroll_bar::large_change(int32 large_change) {
-  if (large_change < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (large_change < 0) throw_helper::throws(exception_case::argument_out_of_range);
   data_->large_change = large_change;
   return *this;
 }
@@ -51,7 +52,7 @@ int32 scroll_bar::small_change() const noexcept {
 }
 
 scroll_bar& scroll_bar::small_change(int32 small_change) {
-  if (small_change < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (small_change < 0) throw_helper::throws(exception_case::argument_out_of_range);
   data_->small_change = small_change;
   return *this;
 }
@@ -61,7 +62,7 @@ int32 scroll_bar::value() const noexcept {
 }
 
 scroll_bar& scroll_bar::value(int32 value) {
-  if (value < data_->minimum || value > data_->maximum) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (value < data_->minimum || value > data_->maximum) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->value == value) return *this;
   data_->value = value;
   if (is_handle_created()) native::scroll_bar::value(handle(), value);

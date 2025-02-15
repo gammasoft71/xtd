@@ -8,6 +8,7 @@
 
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 struct menu_item::data {
   xtd::string text;
@@ -229,7 +230,7 @@ xtd::forms::menu_item_kind menu_item::kind() const noexcept {
 menu_item& menu_item::kind(xtd::forms::menu_item_kind value) {
   if (data_->kind != value) {
     data_->kind = value;
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
+    throw_helper::throws(exception_case::not_implemented);
     //recreate_menu();
   }
   return *this;
@@ -263,7 +264,7 @@ menu_item& menu_item::text(const xtd::string& value) {
 
 xtd::uptr<xtd::object> menu_item::clone() const {
   auto result = xtd::new_uptr<menu_item>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 

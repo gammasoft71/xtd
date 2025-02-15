@@ -7,6 +7,7 @@
 
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 struct progress_bar::data {
   size_t marquee_animation_speed = 100;
@@ -67,7 +68,7 @@ forms::orientation progress_bar::orientation() const noexcept {
 }
 
 progress_bar& progress_bar::orientation(forms::orientation orientation) {
-  if (!enum_object<>::is_defined<forms::orientation>(orientation)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (!enum_object<>::is_defined<forms::orientation>(orientation)) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->orientation == orientation) return *this;
   data_->orientation = orientation;
   post_recreate_handle();
@@ -88,7 +89,7 @@ progress_bar_style progress_bar::style() const noexcept {
 }
 
 progress_bar& progress_bar::style(progress_bar_style style) {
-  if (!enum_object<>::is_defined<progress_bar_style>(style)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (!enum_object<>::is_defined<progress_bar_style>(style)) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->style == style) return *this;
   data_->style = style;
   if (is_handle_created()) native::progress_bar::marquee(handle(), data_->style == progress_bar_style::marquee, data_->marquee_animation_speed);
@@ -410,7 +411,7 @@ drawing::size progress_bar::default_size() const noexcept {
 
 xtd::uptr<xtd::object> progress_bar::clone() const {
   auto result = xtd::new_uptr<progress_bar>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 

@@ -9,6 +9,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 namespace {
   link_label::link link_empty;
@@ -349,7 +350,7 @@ link_label link_label::create(const control& parent, const xtd::string& text, co
 
 xtd::uptr<xtd::object> link_label::clone() const {
   auto result = xtd::new_uptr<link_label>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 

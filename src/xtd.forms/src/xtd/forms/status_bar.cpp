@@ -18,6 +18,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 namespace {
   struct parent_client_size_guard {
@@ -308,7 +309,7 @@ drawing::size status_bar::default_size() const noexcept {
 
 xtd::uptr<xtd::object> status_bar::clone() const {
   auto result = xtd::new_uptr<status_bar>(*this);
-  if (typeof_(*result) != typeof_(*this)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
+  if (typeof_(*result) != typeof_(*this)) throw_helper::throws(exception_case::invalid_cast, xtd::string::format("The {} does not implement clone method.", typeof_(*this).full_name()).c_str());
   return result;
 }
 
