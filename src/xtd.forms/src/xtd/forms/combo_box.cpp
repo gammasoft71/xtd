@@ -12,6 +12,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 struct combo_box::data {
   bool drop_down = false;
@@ -68,7 +69,7 @@ combo_box& combo_box::drop_down_style(combo_box_style drop_down_style) {
 
 list_control& combo_box::selected_index(size_t selected_index) {
   if (this->selected_index() == selected_index) return *this;
-  if (selected_index != npos && selected_index >= data_->items.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t);
+  if (selected_index != npos && selected_index >= data_->items.size()) throw_helper::throws(exception_case::argument_out_of_range, "Selected index greater than items size"_t);
   set_selected_index(selected_index);
   if (is_handle_created()) native::combo_box::selected_index(handle(), this->selected_index());
   

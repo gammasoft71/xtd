@@ -7,6 +7,7 @@
 
 using namespace xtd;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 struct image_list::data {
   intptr handle = 0;
@@ -62,7 +63,7 @@ const drawing::size image_list::image_size() const noexcept {
 }
 
 const image_list& image_list::image_size(const drawing::size& value) {
-  if (value.width < 16 || value.width > 256 || value.height < 16 || value.height > 256) throw argument_out_of_range_exception("The values for width and height must be between 16 and 256."_t);
+  if (value.width < 16 || value.width > 256 || value.height < 16 || value.height > 256) throw_helper::throws(exception_case::argument_out_of_range, "The values for width and height must be between 16 and 256."_t);
   if (data_->image_size == value) return *this;
   data_->image_size = value;
   images().clear();

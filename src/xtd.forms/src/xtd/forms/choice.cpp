@@ -11,6 +11,7 @@
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::forms;
+using namespace xtd::helpers;
 
 struct choice::data {
   object_collection items;
@@ -51,7 +52,7 @@ const choice& choice::items(const object_collection& items) {
 
 list_control& choice::selected_index(size_t selected_index) {
   if (this->selected_index() == selected_index) return *this;
-  if (selected_index != npos && selected_index >= data_->items.size()) throw argument_out_of_range_exception("Selected index greater than items size"_t);
+  if (selected_index != npos && selected_index >= data_->items.size()) throw_helper::throws(exception_case::argument_out_of_range, "Selected index greater than items size"_t);
   set_selected_index(selected_index);
   if (is_handle_created()) native::choice::selected_index(handle(), this->selected_index());
   
