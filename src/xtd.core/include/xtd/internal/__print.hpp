@@ -19,11 +19,8 @@
 inline void __xtd_print_with_file_write__(bool new_line, FILE* file, xtd::string&& s) {
   if (!file) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
   if (new_line) s += xtd::environment::new_line();
-  if (fwrite(s.c_str(), 1, s.length(), file) != s.length()) {
-    auto exception = xtd::io::io_exception {};
-    exception.h_result(errno);
-    throw exception;
-  }
+  if (fwrite(s.c_str(), 1, s.length(), file) != s.length())
+    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
 }
 
 inline void __xtd_print_with_ostream_write__(bool new_line, std::ostream& os, xtd::string&& s) {

@@ -203,7 +203,7 @@ void udp_client::drop_multicast_group(const xtd::net::ip_address& multicast_addr
 }
 
 void udp_client::drop_multicast_group(const xtd::net::ip_address& multicast_address, uint32 if_index) {
-  if (data_->client_socket.address_family() != address_family::inter_network_v6) throw_helper::throws<socket_exception>(socket_error::operation_not_supported);
+  if (data_->client_socket.address_family() != address_family::inter_network_v6) throw_helper::throws(exception_case::socket, socket_error::operation_not_supported);
   data_->client_socket.set_socket_option(socket_option_name::drop_membership, ip_v6_multicast_option(multicast_address, if_index));
 }
 
@@ -238,7 +238,7 @@ void udp_client::join_multicast_group(const xtd::net::ip_address& multicast_addr
 }
 
 void udp_client::join_multicast_group(uint32 if_index, const xtd::net::ip_address& multicast_address) {
-  if (data_->client_socket.address_family() != address_family::inter_network_v6) throw_helper::throws<socket_exception>(socket_error::operation_not_supported);
+  if (data_->client_socket.address_family() != address_family::inter_network_v6) throw_helper::throws(exception_case::socket, socket_error::operation_not_supported);
   data_->client_socket.set_socket_option(socket_option_name::add_membership, ip_v6_multicast_option(multicast_address, if_index));
 }
 
@@ -248,7 +248,7 @@ void udp_client::join_multicast_group(const xtd::net::ip_address& multicast_addr
 }
 
 void udp_client::join_multicast_group(const xtd::net::ip_address& multicast_address, const xtd::net::ip_address& local_address) {
-  if (data_->client_socket.address_family() != address_family::inter_network) throw_helper::throws<socket_exception>(socket_error::operation_not_supported);
+  if (data_->client_socket.address_family() != address_family::inter_network) throw_helper::throws(exception_case::socket, socket_error::operation_not_supported);
   data_->client_socket.set_socket_option(socket_option_name::add_membership, multicast_option(multicast_address, local_address));
 }
 
