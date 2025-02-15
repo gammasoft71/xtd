@@ -6,6 +6,7 @@
 #include <thread>
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
@@ -132,7 +133,7 @@ void tcp_listener::start(size_t backlog) {
       data_->server_socket.listen(backlog);
     } catch (const socket_exception& e) {
       stop();
-      throw socket_exception(e);
+      throw_helper::throws<socket_exception>(e);
     }
   }
   data_->active = true;

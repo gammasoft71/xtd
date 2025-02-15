@@ -8,6 +8,7 @@
 #include "../../../include/xtd/object_closed_exception.hpp"
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::io;
 
 stream::streambuf::streambuf(stream& owner) : owner_{owner} {
@@ -57,8 +58,8 @@ void stream::copy_to(std::ostream& destination) {
 }
 
 void stream::copy_to(std::ostream& destination, xtd::size buffer_size) {
-  if (is_closed()) throw object_closed_exception {};
-  if (!can_read()) throw not_supported_exception {};
+  if (is_closed()) throw_helper::throws(exception_case::object_closed);
+  if (!can_read()) throw_helper::throws(exception_case::not_supported);
   if (buffer_size == 0_z) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
 
   auto copy_count = math::min(buffer_size, length() - position());
@@ -70,8 +71,8 @@ void stream::copy_to(std::ostream& destination, xtd::size buffer_size) {
 }
 
 size stream::read(span<byte>& buffer) {
-  if (is_closed()) throw object_closed_exception {};
-  if (!can_read()) throw not_supported_exception {};
+  if (is_closed()) throw_helper::throws(exception_case::object_closed);
+  if (!can_read()) throw_helper::throws(exception_case::not_supported);
   
   for (auto index = 0_z; index < buffer.length(); ++index) {
     auto value = read_byte();
@@ -83,20 +84,20 @@ size stream::read(span<byte>& buffer) {
 }
 
 size stream::read_at_least(array<byte>& buffer, size minimum_bytes, bool throw_on_end_of_stream) {
-  if (is_closed()) throw object_closed_exception {};
-  if (!can_read()) throw not_supported_exception {};
+  if (is_closed()) throw_helper::throws(exception_case::object_closed);
+  if (!can_read()) throw_helper::throws(exception_case::not_supported);
   
   if (minimum_bytes == 0_z) return 0_z;
   if (buffer.length() < minimum_bytes) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
   
   auto read_count = read(buffer, 0_z, minimum_bytes);
-  if (throw_on_end_of_stream && read_count < minimum_bytes) throw end_of_stream_exception {};
+  if (throw_on_end_of_stream && read_count < minimum_bytes) throw_helper::throws(exception_case::end_of_stream);
   return read_count;
 }
 
 int32 stream::read_byte() {
-  if (is_closed()) throw object_closed_exception {};
-  if (!can_read()) throw not_supported_exception {};
+  if (is_closed()) throw_helper::throws(exception_case::object_closed);
+  if (!can_read()) throw_helper::throws(exception_case::not_supported);
   
   static array<byte> b(1_z);
   if (read(b, 0, 1_z) == 1_z)
@@ -109,8 +110,8 @@ void stream::read_exactly(array<byte>& buffer) {
 }
 
 void stream::read_exactly(array<byte>& buffer, size offset, size count) {
-  if (is_closed()) throw object_closed_exception {};
-  if (!can_read()) throw not_supported_exception {};
+  if (is_closed()) throw_helper::throws(exception_case::object_closed);
+  if (!can_read()) throw_helper::throws(exception_case::not_supported);
 
   if (count == 0_z) return;
   if (offset >= buffer.size() || offset + count > buffer.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
@@ -119,22 +120,22 @@ void stream::read_exactly(array<byte>& buffer, size offset, size count) {
   
   while (total_read_count < count) {
     auto read_count = read(buffer, offset + total_read_count, count - total_read_count);
-    if (read_count == 0_z) throw end_of_stream_exception {};
+    if (read_count == 0_z) throw_helper::throws(exception_case::end_of_stream);
     total_read_count += read_count;
   }
 }
 
 void stream::write(xtd::span<const xtd::byte> buffer) {
-  if (is_closed()) throw object_closed_exception {};
-  if (!can_write()) throw not_supported_exception {};
+  if (is_closed()) throw_helper::throws(exception_case::object_closed);
+  if (!can_write()) throw_helper::throws(exception_case::not_supported);
   
   for (auto item : buffer)
     write_byte(item);
 }
 
 void stream::write_byte(byte value) {
-  if (is_closed()) throw object_closed_exception {};
-  if (!can_write()) throw not_supported_exception {};
+  if (is_closed()) throw_helper::throws(exception_case::object_closed);
+  if (!can_write()) throw_helper::throws(exception_case::not_supported);
   
   array<byte> b = {value};
   write(b, 0, 1_z);
