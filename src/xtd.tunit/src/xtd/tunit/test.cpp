@@ -1,11 +1,13 @@
 #include "../../../include/xtd/tunit/test.hpp"
 #include "../../../include/xtd/tunit/unit_test.hpp"
 #include <xtd/diagnostics//debug_break>
+#include <xtd/runtime/exception_services/exception_dispatch_info>
 #include <xtd/null_pointer_exception>
 #include <exception>
 
 using namespace xtd;
 using namespace xtd::diagnostics;
+using namespace xtd::runtime::exception_services;
 using namespace xtd::tunit;
 
 test* test::current_test_ = nullptr;
@@ -142,16 +144,16 @@ void test::run(const unit_test& unit_test, const test_class& test_class) {
          */
       } catch (const abort_error&) {
         if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_aborted(test_event_args(*this, test_class, unit_test));
-      } catch (const assert_error&) {
+      } catch (const ignore_error&) {
+        if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_ignored(test_event_args(*this, test_class, unit_test));
+      } catch (const assert_error& e) {
         settings::default_settings().exit_status(EXIT_FAILURE);
         if (settings::default_settings().brief()) unit_test.event_listener_->on_test_start(test_event_args(*this, test_class, unit_test));
         unit_test.event_listener_->on_test_failed(test_event_args(*this, test_class, unit_test));
         if (settings::default_settings().break_on_failure())
           debug_break_();
         if (settings::default_settings().throw_on_failure())
-          throw exception {};
-      } catch (const ignore_error&) {
-        if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_ignored(test_event_args(*this, test_class, unit_test));
+          exception_dispatch_info::rethrow(e);
       } catch (const std::exception& e) {
         settings::default_settings().exit_status(EXIT_FAILURE);
         test::current_test().message_ = "Exception <" + typeof_(e).full_name() + "> throws" + " (" + e.what() + ")";
@@ -161,7 +163,7 @@ void test::run(const unit_test& unit_test, const test_class& test_class) {
         if (settings::default_settings().break_on_failure())
           debug_break_();
         if (settings::default_settings().throw_on_failure())
-          throw exception {};
+          throw assert_error {test::current_test().message()};
       } catch (...) {
         settings::default_settings().exit_status(EXIT_FAILURE);
         test::current_test().message_ = "Exception <unknown> throws";
@@ -171,7 +173,7 @@ void test::run(const unit_test& unit_test, const test_class& test_class) {
         if (settings::default_settings().break_on_failure())
           debug_break_();
         if (settings::default_settings().throw_on_failure())
-          throw exception {};
+          throw assert_error {test::current_test().message()};
       }
       
       if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_cleanup_start(test_event_args(*this, test_class, unit_test));
