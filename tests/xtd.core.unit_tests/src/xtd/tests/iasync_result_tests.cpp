@@ -7,6 +7,7 @@
 #include <xtd/tunit/test_method_attribute>
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
@@ -40,7 +41,7 @@ namespace xtd::tests {
       }
       
       iasync_result& start() {
-        if (result_.async_state().has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "Already started");
+        if (result_.async_state().has_value()) throw_helper::throws(exception_case::invalid_operation, "Already started");
         result_.async_state("Started");
         result_.is_completed(false);
         thread_ = threading::thread {[this] {
@@ -54,7 +55,7 @@ namespace xtd::tests {
       }
       
       void wait(iasync_result& result) {
-        if (&result != &result_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation, "iasync_result not valid");
+        if (&result != &result_) throw_helper::throws(exception_case::invalid_operation, "iasync_result not valid");
         result.async_wait_handle().wait_one();
       }
       
