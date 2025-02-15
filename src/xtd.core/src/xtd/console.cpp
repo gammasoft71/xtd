@@ -57,7 +57,7 @@ console_color console::background_color() {
 }
 
 void console::background_color(console_color color) {
-  if (!enum_object<>::is_defined(color)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!enum_object<>::is_defined(color)) throw_helper::throws(exception_case::argument);
   register_cancel_key_press(); // Must be first...
   native::console::background_color(as<int32>(color));
 }
@@ -69,7 +69,7 @@ int32 console::buffer_height() {
 
 void console::buffer_height(int32 height) {
   register_cancel_key_press(); // Must be first...
-  if (height <= 0 || height >= int16_object::max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (height <= 0 || height >= int16_object::max_value) throw_helper::throws(exception_case::argument_out_of_range);
   native::console::buffer_height(height);
 }
 
@@ -80,7 +80,7 @@ int32 console::buffer_width() {
 
 void console::buffer_width(int32 width) {
   register_cancel_key_press(); // Must be first...
-  if (width <= 0 || width >= int16_object::max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (width <= 0 || width >= int16_object::max_value) throw_helper::throws(exception_case::argument_out_of_range);
   native::console::buffer_width(width);
 }
 
@@ -106,7 +106,7 @@ int32 console::cursor_size() {
 
 void console::cursor_size(int32 size) {
   register_cancel_key_press(); // Must be first...
-  if (size < 1 || size > 100) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (size < 1 || size > 100) throw_helper::throws(exception_case::argument_out_of_range);
   native::console::cursor_size(size);
 }
 
@@ -137,7 +137,7 @@ console_color console::foreground_color() {
 
 bool console::foreground_color(console_color color) {
   register_cancel_key_press(); // Must be first...
-  if (!enum_object<>::is_defined(color)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!enum_object<>::is_defined(color)) throw_helper::throws(exception_case::argument);
   return native::console::foreground_color(as<int32>(color));
 }
 
@@ -223,7 +223,7 @@ int32 console::window_height() {
 
 void console::window_height(int32 height) {
   register_cancel_key_press(); // Must be first...
-  if (height <= 0 || height >= int16_object::max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (height <= 0 || height >= int16_object::max_value) throw_helper::throws(exception_case::argument_out_of_range);
   native::console::window_height(height);
 }
 
@@ -234,7 +234,7 @@ int32 console::window_left() {
 
 void console::window_left(int32 left) {
   register_cancel_key_press(); // Must be first...
-  if (left < 0 || left >= buffer_width()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (left < 0 || left >= buffer_width()) throw_helper::throws(exception_case::argument_out_of_range);
   native::console::window_left(left);
 }
 
@@ -245,7 +245,7 @@ int32 console::window_top() {
 
 void console::window_top(int32 top) {
   register_cancel_key_press(); // Must be first...
-  if (top < 0 || top >= buffer_height()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (top < 0 || top >= buffer_height()) throw_helper::throws(exception_case::argument_out_of_range);
   native::console::window_top(top);
 }
 
@@ -256,7 +256,7 @@ int32 console::window_width() {
 
 void console::window_width(int32 width) {
   register_cancel_key_press(); // Must be first...
-  if (width <= 0 || width >= int16_object::max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (width <= 0 || width >= int16_object::max_value) throw_helper::throws(exception_case::argument_out_of_range);
   native::console::window_width(width);
 }
 
@@ -345,8 +345,8 @@ bool console::reset_color() {
 
 void console::set_cursor_position(int32 left, int32 top) {
   register_cancel_key_press(); // Must be first...
-  if (left < 0 || left >= buffer_width()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-  if (top < 0 || top >= buffer_height()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (left < 0 || left >= buffer_width()) throw_helper::throws(exception_case::argument_out_of_range);
+  if (top < 0 || top >= buffer_height()) throw_helper::throws(exception_case::argument_out_of_range);
   native::console::set_cursor_position(left, top);
 }
 
@@ -367,16 +367,16 @@ void console::set_out(const std::ostream& os)  {
 
 void console::set_window_position(int32 left, int32 top) {
   register_cancel_key_press(); // Must be first...
-  if (left < 0 || left + window_width() >= buffer_width()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-  if (top < 0 || top + window_height() >= buffer_height()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (left < 0 || left + window_width() >= buffer_width()) throw_helper::throws(exception_case::argument_out_of_range);
+  if (top < 0 || top + window_height() >= buffer_height()) throw_helper::throws(exception_case::argument_out_of_range);
   window_left(left);
   window_top(top);
 }
 
 void console::set_window_size(int32 width, int32 height) {
   register_cancel_key_press(); // Must be first...
-  if (height <= 0 || height >= int16_object::max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-  if (width <= 0 || width >= int16_object::max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (height <= 0 || height >= int16_object::max_value) throw_helper::throws(exception_case::argument_out_of_range);
+  if (width <= 0 || width >= int16_object::max_value) throw_helper::throws(exception_case::argument_out_of_range);
   window_width(width);
   window_height(height);
 }

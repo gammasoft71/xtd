@@ -4,6 +4,7 @@
 #include "../../include/xtd/random.hpp"
 
 using namespace xtd;
+using namespace xtd::helpers;
 
 random::random() : generator_(static_cast<uint32>(environment::tick_count().count())) {
 }
@@ -27,7 +28,7 @@ int32 random::next(int32 max_value) const {
 }
 
 int32 random::next(int32 min_value, int32 max_value) const {
-  if (min_value > max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (min_value > max_value) throw_helper::throws(exception_case::argument_out_of_range);
   if (min_value == max_value) return min_value;
   return min_value + as<int32>(math::round(sample() * int32_object::max_value)) % ((max_value - 1) - min_value + 1);
 }
@@ -45,19 +46,19 @@ float random::next(float max_value) const {
 }
 
 decimal random::next(decimal min_value, decimal max_value) const {
-  if (min_value > max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (min_value > max_value) throw_helper::throws(exception_case::argument_out_of_range);
   if (min_value == max_value) return min_value;
   return min_value + (sample() * (max_value - min_value));
 }
 
 double random::next(double min_value, double max_value) const {
-  if (min_value > max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (min_value > max_value) throw_helper::throws(exception_case::argument_out_of_range);
   if (min_value == max_value) return min_value;
   return min_value + (sample() * (max_value - min_value));
 }
 
 float random::next(float min_value, float max_value) const {
-  if (min_value > max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (min_value > max_value) throw_helper::throws(exception_case::argument_out_of_range);
   if (min_value == max_value) return min_value;
   return static_cast<float>(min_value + (sample() * (max_value - min_value)));
 }
@@ -67,7 +68,7 @@ void random::next_bytes(std::vector<xtd::byte>& buffer) const {
 }
 
 void random::next_bytes(xtd::byte* buffer, size_t buffer_size) const {
-  if (buffer == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
+  if (buffer == nullptr) throw_helper::throws(exception_case::argument_null);
   for (auto index = 0_z; index < buffer_size; index++)
     buffer[index] = next<xtd::byte>(0, byte_object::max_value);
 }

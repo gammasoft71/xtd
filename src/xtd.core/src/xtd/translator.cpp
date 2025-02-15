@@ -13,6 +13,7 @@
 
 using namespace xtd;
 using namespace xtd::collections::specialized;
+using namespace xtd::helpers;
 using namespace xtd::io;
 
 std::map<string, string_dictionary> translator::language_values_;
@@ -53,7 +54,7 @@ std::locale translator::locale() {
 void translator::locale(const xtd::string& value) {
   auto parts = (value.find_last_of(".") == value.npos ? value : value.remove(value.find_last_of("."))).split('_');
   auto extension = value.find_last_of(".") == value.npos ? ".utf-8" : value.substring(value.find_last_of("."));
-  if (parts.size() != 0 && parts.size() != 2) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (parts.size() != 0 && parts.size() != 2) throw_helper::throws(exception_case::argument);
   auto language = parts.size() == 0 ? "en" : parts[0].to_lower();
   auto country = parts.size() == 0 ? "US" : parts[1].to_upper();
   locale(std::locale {language + "_" + country + extension});
@@ -93,7 +94,7 @@ void translator::parse_file(const xtd::string& file, const xtd::string& language
     if (line.starts_with("#")) continue;
     if (key.empty() && line.starts_with("key ")) key = line.remove(0, 4).trim('"');
     else if (!key.empty() && line.starts_with("value ")) value = line.remove(0, 6).trim('"');
-    else xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, xtd::string::format("file {} has an invalid format at line {}", file, line_count).c_str());
+    else throw_helper::throws(exception_case::format, xtd::string::format("file {} has an invalid format at line {}", file, line_count).c_str());
     if (!key.empty() && !value.empty()) {
       add_value(language, key, value);
       key = value = "";

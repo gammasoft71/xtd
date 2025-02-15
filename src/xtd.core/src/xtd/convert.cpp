@@ -23,7 +23,7 @@ std::any convert::to_any(char value) noexcept {
 #if defined(__xtd__cpp_lib_char8_t)
 std::any convert::to_any(char8 value) {
   //return value;
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  throw_helper::throws(exception_case::invalid_cast);
 }
 #endif
 
@@ -124,12 +124,12 @@ std::any convert::to_any(char* value) noexcept {
 #if defined(__xtd__cpp_lib_char8_t)
 std::any convert::to_any(const char8* value) {
   //return value;
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  throw_helper::throws(exception_case::invalid_cast);
 }
 
 std::any convert::to_any(char8* value) {
   //return value;
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  throw_helper::throws(exception_case::invalid_cast);
 }
 #endif
 
@@ -161,7 +161,7 @@ bool convert::to_boolean(std::any value) {
   try {
     return std::any_cast<bool>(value);
   } catch (...) {
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    throw_helper::throws(exception_case::invalid_cast);
   }
 }
 
@@ -174,25 +174,25 @@ bool convert::to_boolean(xtd::byte value) noexcept {
 }
 
 bool convert::to_boolean(char value) {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  throw_helper::throws(exception_case::invalid_cast);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 bool convert::to_boolean(char8 value) {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  throw_helper::throws(exception_case::invalid_cast);
 }
 #endif
 
 bool convert::to_boolean(char16 value) {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  throw_helper::throws(exception_case::invalid_cast);
 }
 
 bool convert::to_boolean(char32 value) {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  throw_helper::throws(exception_case::invalid_cast);
 }
 
 bool convert::to_boolean(wchar value) {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  throw_helper::throws(exception_case::invalid_cast);
 }
 
 bool convert::to_boolean(decimal value) noexcept {
@@ -315,7 +315,7 @@ xtd::byte convert::to_byte(std::any value) {
   try {
     return std::any_cast<xtd::byte>(value);
   } catch (...) {
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    throw_helper::throws(exception_case::invalid_cast);
   }
 }
 
@@ -422,7 +422,7 @@ xtd::byte convert::to_byte(const string& value, xtd::byte from_base) {
     case 8: return parse<xtd::byte>(value, number_styles::octal_number); break;
     case 10: return parse<xtd::byte>(value, number_styles::integer); break;
     case 16: return parse<xtd::byte>(value, number_styles::hex_number); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -494,12 +494,12 @@ char convert::to_char(std::any value) {
   try {
     return std::any_cast<char>(value);
   } catch (...) {
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    throw_helper::throws(exception_case::invalid_cast);
   }
 }
 
 char convert::to_char(bool value) {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  throw_helper::throws(exception_case::invalid_cast);
 }
 
 char convert::to_char(xtd::byte value) noexcept {
@@ -592,96 +592,96 @@ char convert::to_char(xtd::ulong value) {
 }
 
 char convert::to_char(const string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char convert::to_char(const std::string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 char convert::to_char(const std::u8string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 #endif
 
 char convert::to_char(const std::u16string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char convert::to_char(const std::u32string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char convert::to_char(const std::wstring& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char convert::to_char(const char* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char convert::to_char(char* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 char convert::to_char(const char8* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char convert::to_char(char8* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 #endif
 
 char convert::to_char(const char16* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char convert::to_char(char16* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char convert::to_char(const char32* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char convert::to_char(char32* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char convert::to_char(const wchar* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char convert::to_char(wchar* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 char8 convert::to_char8(std::any value) {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  throw_helper::throws(exception_case::invalid_cast);
 }
 
 char8 convert::to_char8(bool value) {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  throw_helper::throws(exception_case::invalid_cast);
 }
 
 char8 convert::to_char8(xtd::byte value) noexcept {
@@ -772,82 +772,82 @@ char8 convert::to_char8(xtd::ulong value) {
 }
 
 char8 convert::to_char8(const string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char8 convert::to_char8(const std::string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char8 convert::to_char8(const std::u8string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char8 convert::to_char8(const std::u16string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char8 convert::to_char8(const std::u32string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char8 convert::to_char8(const std::wstring& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char8 convert::to_char8(const char* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char8 convert::to_char8(char* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char8 convert::to_char8(const char8* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char8 convert::to_char8(char8* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char8 convert::to_char8(const char16* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char8 convert::to_char8(char16* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char8 convert::to_char8(const char32* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char8 convert::to_char8(char32* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char8 convert::to_char8(const wchar* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char8 convert::to_char8(wchar* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 #endif
@@ -859,13 +859,13 @@ char16 convert::to_char16(std::any value) {
     try {
       return *std::any_cast<char16*>(value);
     } catch (...) {
-      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+      throw_helper::throws(exception_case::invalid_cast);
     }
   }
 }
 
 char16 convert::to_char16(bool value) {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  throw_helper::throws(exception_case::invalid_cast);
 }
 
 char16 convert::to_char16(xtd::byte value) noexcept {
@@ -955,86 +955,86 @@ char16 convert::to_char16(xtd::ulong value) {
 }
 
 char16 convert::to_char16(const string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char16 convert::to_char16(const std::string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 char16 convert::to_char16(const std::u8string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 #endif
 
 char16 convert::to_char16(const std::u16string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char16 convert::to_char16(const std::u32string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char16 convert::to_char16(const std::wstring& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char16 convert::to_char16(const char* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char16 convert::to_char16(char* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 char16 convert::to_char16(const char8* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char16 convert::to_char16(char8* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 #endif
 
 char16 convert::to_char16(const char16* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char16 convert::to_char16(char16* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char16 convert::to_char16(const char32* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char16 convert::to_char16(char32* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char16 convert::to_char16(const wchar* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char16 convert::to_char16(wchar* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
@@ -1045,13 +1045,13 @@ char32 convert::to_char32(std::any value) {
     try {
       return *std::any_cast<char32*>(value);
     } catch (...) {
-      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+      throw_helper::throws(exception_case::invalid_cast);
     }
   }
 }
 
 char32 convert::to_char32(bool value) {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  throw_helper::throws(exception_case::invalid_cast);
 }
 
 char32 convert::to_char32(xtd::byte value) noexcept {
@@ -1139,86 +1139,86 @@ char32 convert::to_char32(xtd::ulong value) {
 }
 
 char32 convert::to_char32(const string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char32 convert::to_char32(const std::string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 char32 convert::to_char32(const std::u8string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 #endif
 
 char32 convert::to_char32(const std::u16string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char32 convert::to_char32(const std::u32string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char32 convert::to_char32(const std::wstring& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char32 convert::to_char32(const char* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char32 convert::to_char32(char* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 char32 convert::to_char32(const char8* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char32 convert::to_char32(char8* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 #endif
 
 char32 convert::to_char32(const char16* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char32 convert::to_char32(char16* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char32 convert::to_char32(const char32* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char32 convert::to_char32(char32* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char32 convert::to_char32(const wchar* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 char32 convert::to_char32(wchar* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
@@ -1229,13 +1229,13 @@ wchar convert::to_wchar(std::any value) {
     try {
       return *std::any_cast<wchar*>(value);
     } catch (...) {
-      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+      throw_helper::throws(exception_case::invalid_cast);
     }
   }
 }
 
 wchar convert::to_wchar(bool value) {
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  throw_helper::throws(exception_case::invalid_cast);
 }
 
 wchar convert::to_wchar(xtd::byte value) noexcept {
@@ -1325,86 +1325,86 @@ wchar convert::to_wchar(xtd::ulong value) {
 }
 
 wchar convert::to_wchar(const string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 wchar convert::to_wchar(const std::string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 wchar convert::to_wchar(const std::u8string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 #endif
 
 wchar convert::to_wchar(const std::u16string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 wchar convert::to_wchar(const std::u32string& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 wchar convert::to_wchar(const std::wstring& value) {
-  if (value.size() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value.size() != 1) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 wchar convert::to_wchar(const char* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 wchar convert::to_wchar(char* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 wchar convert::to_wchar(const char8* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 wchar convert::to_wchar(char8* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 #endif
 
 wchar convert::to_wchar(const char16* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 wchar convert::to_wchar(char16* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 wchar convert::to_wchar(const char32* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 wchar convert::to_wchar(char32* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 wchar convert::to_wchar(const wchar* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
 wchar convert::to_wchar(wchar* value) {
-  if (value[0] == 0 || value[1] != 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (value[0] == 0 || value[1] != 0) throw_helper::throws(exception_case::format);
   return to_char(value[0]);
 }
 
@@ -1412,7 +1412,7 @@ decimal convert::to_decimal(std::any value) {
   try {
     return std::any_cast<decimal>(value);
   } catch (...) {
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    throw_helper::throws(exception_case::invalid_cast);
   }
 }
 
@@ -1566,7 +1566,7 @@ double convert::to_double(std::any value) {
   try {
     return std::any_cast<double>(value);
   } catch (...) {
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    throw_helper::throws(exception_case::invalid_cast);
   }
 }
 
@@ -1720,7 +1720,7 @@ float convert::to_single(std::any value) {
   try {
     return std::any_cast<float>(value);
   } catch (...) {
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    throw_helper::throws(exception_case::invalid_cast);
   }
 }
 
@@ -1874,7 +1874,7 @@ int16 convert::to_int16(std::any value) {
   try {
     return std::any_cast<int16>(value);
   } catch (...) {
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    throw_helper::throws(exception_case::invalid_cast);
   }
 }
 
@@ -1977,7 +1977,7 @@ int16 convert::to_int16(const string& value, xtd::byte from_base) {
     case 8: return parse<int16>(value, number_styles::octal_number); break;
     case 10: return parse<int16>(value, number_styles::integer); break;
     case 16: return parse<int16>(value, number_styles::hex_number); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -2049,7 +2049,7 @@ int32 convert::to_int32(std::any value) {
   try {
     return std::any_cast<int32>(value);
   } catch (...) {
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    throw_helper::throws(exception_case::invalid_cast);
   }
 }
 
@@ -2148,7 +2148,7 @@ int32 convert::to_int32(const string& value, xtd::byte from_base) {
     case 8: return parse<int32>(value, number_styles::octal_number); break;
     case 10: return parse<int32>(value, number_styles::integer); break;
     case 16: return parse<int32>(value, number_styles::hex_number); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -2220,7 +2220,7 @@ int64 convert::to_int64(std::any value) {
   try {
     return std::any_cast<int64>(value);
   } catch (...) {
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    throw_helper::throws(exception_case::invalid_cast);
   }
 }
 
@@ -2314,7 +2314,7 @@ int64 convert::to_int64(const string& value, xtd::byte from_base) {
     case 8: return parse<int64>(value, number_styles::octal_number); break;
     case 10: return parse<int64>(value, number_styles::integer); break;
     case 16: return parse<int64>(value, number_styles::hex_number); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -2386,7 +2386,7 @@ slong convert::to_llong(std::any value) {
   try {
     return std::any_cast<slong>(value);
   } catch (...) {
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    throw_helper::throws(exception_case::invalid_cast);
   }
 }
 
@@ -2480,7 +2480,7 @@ slong convert::to_llong(const string& value, xtd::byte from_base) {
     case 8: return parse<slong>(value, number_styles::octal_number); break;
     case 10: return parse<slong>(value, number_styles::integer); break;
     case 16: return parse<slong>(value, number_styles::hex_number); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -2552,7 +2552,7 @@ sbyte convert::to_sbyte(std::any value) {
   try {
     return std::any_cast<sbyte>(value);
   } catch (...) {
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    throw_helper::throws(exception_case::invalid_cast);
   }
 }
 
@@ -2658,7 +2658,7 @@ sbyte convert::to_sbyte(const string& value, xtd::byte from_base) {
     case 8: return parse<sbyte>(value, number_styles::octal_number); break;
     case 10: return parse<sbyte>(value, number_styles::integer); break;
     case 16: return parse<sbyte>(value, number_styles::hex_number); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -2730,7 +2730,7 @@ uint16 convert::to_uint16(std::any value) {
   try {
     return std::any_cast<uint16>(value);
   } catch (...) {
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    throw_helper::throws(exception_case::invalid_cast);
   }
 }
 
@@ -2834,7 +2834,7 @@ uint16 convert::to_uint16(const string& value, xtd::byte from_base) {
     case 8: return parse<uint16>(value, number_styles::octal_number); break;
     case 10: return parse<uint16>(value, number_styles::integer); break;
     case 16: return parse<uint16>(value, number_styles::hex_number); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -2906,7 +2906,7 @@ uint32 convert::to_uint32(std::any value) {
   try {
     return std::any_cast<uint32>(value);
   } catch (...) {
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    throw_helper::throws(exception_case::invalid_cast);
   }
 }
 
@@ -3008,7 +3008,7 @@ uint32 convert::to_uint32(const string& value, xtd::byte from_base) {
     case 8: return parse<uint32>(value, number_styles::octal_number); break;
     case 10: return parse<uint32>(value, number_styles::integer); break;
     case 16: return parse<uint32>(value, number_styles::hex_number); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -3080,7 +3080,7 @@ uint64 convert::to_uint64(std::any value) {
   try {
     return std::any_cast<uint64>(value);
   } catch (...) {
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    throw_helper::throws(exception_case::invalid_cast);
   }
 }
 
@@ -3184,7 +3184,7 @@ uint64 convert::to_uint64(const string& value, xtd::byte from_base) {
     case 8: return parse<uint64>(value, number_styles::octal_number); break;
     case 10: return parse<uint64>(value, number_styles::integer); break;
     case 16: return parse<uint64>(value, number_styles::hex_number); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -3252,7 +3252,7 @@ xtd::ulong convert::to_ullong(std::any value) {
   try {
     return std::any_cast<xtd::ulong>(value);
   } catch (...) {
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    throw_helper::throws(exception_case::invalid_cast);
   }
 }
 
@@ -3352,7 +3352,7 @@ xtd::ulong convert::to_ullong(const string& value, xtd::byte from_base) {
     case 8: return parse<xtd::ulong>(value, number_styles::octal_number); break;
     case 10: return parse<xtd::ulong>(value, number_styles::integer); break;
     case 16: return parse<xtd::ulong>(value, number_styles::hex_number); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -3438,7 +3438,7 @@ string convert::to_string(xtd::byte value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -3486,7 +3486,7 @@ string convert::to_string(int16 value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -3500,7 +3500,7 @@ string convert::to_string(int32 value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -3514,7 +3514,7 @@ string convert::to_string(int64 value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -3528,7 +3528,7 @@ string convert::to_string(slong value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -3542,7 +3542,7 @@ string convert::to_string(sbyte value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -3556,7 +3556,7 @@ string convert::to_string(uint16 value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -3570,7 +3570,7 @@ string convert::to_string(uint32 value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -3584,7 +3584,7 @@ string convert::to_string(uint64 value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 
@@ -3598,7 +3598,7 @@ string convert::to_string(xtd::ulong value, xtd::byte from_base) {
     case 8: return string::format("{:O}", value); break;
     case 10: return string::format("{:D}", value); break;
     case 16: return string::format("{:X}", value); break;
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    default: throw_helper::throws(exception_case::argument);
   }
 }
 

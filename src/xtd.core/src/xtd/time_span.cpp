@@ -259,7 +259,7 @@ time_span time_span::from_hours(std::chrono::hours value) {
 }
 
 time_span time_span::from_microseconds(double value) {
-  if (double_object::is_NaN(value)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (double_object::is_NaN(value)) throw_helper::throws(exception_case::argument);
   if (double_object::is_infinity(value) || value < as<double>(time_span::min_value.ticks() / ticks_per_microsecond) || value > as<double>(time_span::max_value.ticks() / ticks_per_microsecond)) throw_helper::throws(exception_case::overflow);
   return from_ticks(static_cast<int64>(value * ticks_per_microsecond)); // Do not use as<int64>(...) because it rounds the value because it round the value
 }
@@ -285,7 +285,7 @@ time_span time_span::from_minutes(std::chrono::minutes value) {
 }
 
 time_span time_span::from_nanoseconds(double value) {
-  if (double_object::is_NaN(value)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (double_object::is_NaN(value)) throw_helper::throws(exception_case::argument);
   return from_ticks(static_cast<int64>(value / nanoseconds_per_tick)); // Do not use as<int64>(...) because it rounds the value
 }
 
@@ -325,7 +325,7 @@ time_span time_span::negate() const {
 time_span time_span::parse(const string& value) {
   auto result = time_span {};
   switch (try_parse_internal(value, result)) {
-    case parse_format: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+    case parse_format: throw_helper::throws(exception_case::format);
     case parse_overflow: throw_helper::throws(exception_case::overflow);
   }
   return result;
@@ -370,7 +370,7 @@ string time_span::to_string(const string& format, const std::locale& loc) const 
     case 'S': return string::format("{:d2}", math::abs(seconds()));
     case 't': return string::format("{0:d}", math::abs(ticks() % ticks_per_second));
     case 'T': return string::format("{:d7}", math::abs(ticks() % ticks_per_second));
-    default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format");
+    default: throw_helper::throws(exception_case::format, "Invalid format");
   }
 }
 
@@ -379,7 +379,7 @@ bool time_span::try_parse(const string& value, time_span& result) {
 }
 
 time_span time_span::interval(double value, int scale) {
-  if (double_object::is_NaN(value)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (double_object::is_NaN(value)) throw_helper::throws(exception_case::argument);
   auto tmp = value * scale;
   auto millis = tmp + (value >= 0 ? 0.5 : -0.5);
   if ((millis > int64_object::max_value / ticks_per_millisecond) || (millis < int64_object::min_value / ticks_per_millisecond))  throw_helper::throws(exception_case::overflow);

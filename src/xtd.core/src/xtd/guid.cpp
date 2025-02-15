@@ -7,22 +7,23 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd;
+using namespace xtd::helpers;
 
 const guid guid::empty;
 
 guid::guid(const std::vector<xtd::byte>& data) : data_(data) {
-  if (data.size() != data_.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, string::format("Vector size must be {}", data_.size()).c_str());
+  if (data.size() != data_.size()) throw_helper::throws(exception_case::argument, string::format("Vector size must be {}", data_.size()).c_str());
 }
 
 guid::guid(const std::initializer_list<xtd::byte>& data) : data_(data) {
-  if (data.size() != data_.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, string::format("Vector size must be {}", data_.size()).c_str());
+  if (data.size() != data_.size()) throw_helper::throws(exception_case::argument, string::format("Vector size must be {}", data_.size()).c_str());
 }
 
 guid::guid(int32 a, int16 b, int16 c, const std::vector<xtd::byte>& d) : guid(as<uint32>(a), as<uint16>(b), as<uint16>(c), d) {
 }
 
 guid::guid(uint32 a, uint16 b, uint16 c, const std::vector<xtd::byte>& d) {
-  if (d.size() != data_.size() - 8) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, string::format("Vector size must be {}", data_.size() - 8).c_str());
+  if (d.size() != data_.size() - 8) throw_helper::throws(exception_case::argument, string::format("Vector size must be {}", data_.size() - 8).c_str());
   
   auto index = 0_z;
   data_[index++] = as<xtd::byte>((a & 0xFF000000) >> 24);
@@ -112,7 +113,7 @@ string guid::to_string(const string& format) const {
 string guid::to_string(const string& format, const std::locale& loc) const {
   auto fmt = format.empty() ? "d" : format.to_lower();
   
-  if (fmt.size() != 1 || string("ndbpx").index_of(fmt) == string::npos) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  if (fmt.size() != 1 || string("ndbpx").index_of(fmt) == string::npos) throw_helper::throws(exception_case::format);
     
   auto hyphens = fmt != "n" && fmt != "x";
   auto braces = fmt == "b";

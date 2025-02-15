@@ -7,21 +7,22 @@
 #include <regex>
 
 using namespace xtd;
+using namespace xtd::helpers;
 
 version::version(const string& version) {
   *this = parse(version);
 }
 
 version::version(int32 major, int32 minor) : major_(major), minor_(minor) {
-  if (major < 0 || minor < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (major < 0 || minor < 0) throw_helper::throws(exception_case::argument_out_of_range);
 }
 
 version::version(int32 major, int32 minor, int32 build) : major_(major), minor_(minor), build_(build) {
-  if (major < 0 || minor < 0 || build < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (major < 0 || minor < 0 || build < 0) throw_helper::throws(exception_case::argument_out_of_range);
 }
 
 version::version(int32 major, int32 minor, int32 build, int32 revision) : major_(major), minor_(minor), build_(build), revision_(revision) {
-  if (major < 0 || minor < 0 || build < 0 || revision < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (major < 0 || minor < 0 || build < 0 || revision < 0) throw_helper::throws(exception_case::argument_out_of_range);
 }
 
 int32 version::build() const noexcept {
@@ -84,7 +85,7 @@ version version::parse(const xtd::string& input) {
     case 4: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1]), string::parse<int32>(versions[2]), string::parse<int32>(versions[3])};
   }
   
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+  throw_helper::throws(exception_case::argument);;
 }
 
 bool version::try_parse(const xtd::string& input, version& result) noexcept {
@@ -105,7 +106,7 @@ xtd::string version::to_string() const noexcept {
 }
 
 xtd::string version::to_string(size_t field_count) const {
-  if (field_count > 4 || (field_count >= 3 && build_ == -1) || (field_count == 4 && revision_ == -1)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "Field count invalid"_t);
+  if (field_count > 4 || (field_count >= 3 && build_ == -1) || (field_count == 4 && revision_ == -1)) throw_helper::throws(exception_case::argument, "Field count invalid"_t);
   auto result = string::empty_string;
   if (field_count >= 1) result += string::format("{}", major_);
   if (field_count >= 2) result += string::format(".{}", minor_);

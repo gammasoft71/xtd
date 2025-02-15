@@ -5,10 +5,11 @@
 
 using namespace xtd;
 using namespace xtd::diagnostics;
+using namespace xtd::helpers;
 using namespace xtd::io;
 
 compiler::compiler(xtd::compiler_id compiler_id, const xtd::version& version, xtd::build_type build_type, bool is_64_bit) : compiler_id_(compiler_id), version_(version), build_type_(build_type), is_64_bit_(is_64_bit) {
-  if (!enum_object<>::is_defined(compiler_id)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (!enum_object<>::is_defined(compiler_id)) throw_helper::throws(exception_case::argument);
 }
 
 xtd::string compiler::additional_information() const noexcept {
