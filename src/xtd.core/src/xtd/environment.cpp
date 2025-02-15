@@ -102,7 +102,7 @@ private:
     ce.cancel(console::on_cancel_key_press(static_cast<int32>(console_special_key::control_c)));
     if (!se.cancel() && !ce.cancel()) {
       last_signal_ = signal;
-      throw interrupt_exception {};
+      throw_helper::throws(exception_case::interrupt);
     }
   }
   
@@ -120,7 +120,7 @@ private:
     environment::on_cancel_signal(e);
     if (!e.cancel()) {
       last_signal_ = signal;
-      throw xtd::access_violation_exception {}; //exit(128 + signal);
+      throw_helper::throws(exception_case::access_violation); //exit(128 + signal);
     }
   }
   
@@ -128,7 +128,7 @@ private:
     std::signal(signal, signal_catcher::on_software_termination_occured);
     auto e = signal_cancel_event_args {xtd::signal::software_termination};
     environment::on_cancel_signal(e);
-    if (!e.cancel()) throw xtd::software_termination_exception {};
+    if (!e.cancel()) throw_helper::throws(exception_case::software_termination);
   }
   
   inline static std::optional<int32> last_signal_;

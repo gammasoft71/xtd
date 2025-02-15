@@ -30,6 +30,8 @@ namespace xtd {
     enum class exception_case {
       /// @brief The mutex is abandoned.
       abandoned_mutex,
+      /// @brief An access violation occurs.
+      access_violation,
       /// @brief The argument is not valid.
       argument,
       /// @brief The argument is null.
@@ -42,6 +44,8 @@ namespace xtd {
       barrier_post_phase,
       /// @brief The directory is not found.
       directory_not_found,
+      /// @brief The divisor is equal to 0.
+      divided_by_zero,
       /// @brief The end of stream is reached.
       end_of_stream,
       /// @brief The file is not found.
@@ -62,6 +66,8 @@ namespace xtd {
       invalid_cast,
       /// @brief The operation is not valid.
       invalid_operation,
+      /// @brief An interrupt occurs.
+      interrupt,
       /// @brief I/O erreror occurs.
       io,
       /// @brief The key is not found.
@@ -88,6 +94,8 @@ namespace xtd {
       rank,
       /// @brief The semaphore is full.
       semaphore_full,
+      /// @brief A software termination occurs.
+      software_termination,
       /// @brief The lock is not valid.
       synchronization_lock,
       /// @brief The thread is abort.
@@ -96,8 +104,12 @@ namespace xtd {
       thread_interrupted,
       /// @brief The thread state is not valid.
       thread_state,
+      /// @brief The time zone is not found.
+      time_zone_not_found,
       /// @brief The access is denied.
       unauthorized_access,
+      /// @brief The uri format is not valid.
+      uri_format,
     };
   }
 }

@@ -9,6 +9,7 @@
 #include <list>
 
 using namespace xtd;
+using namespace xtd::helpers;
 
 uint32 time_zone_info::transition_time::day() const noexcept {
   return day_;
@@ -235,7 +236,7 @@ time_zone_info time_zone_info::time_find_system_time_zone_by_id(const string& id
   auto iterator = std::find_if(stzs.begin(), stzs.end(), [&](auto item) {return item.id_ == id;});
   if (iterator != stzs.end()) return *iterator;
   
-  throw time_zone_not_found_exception {};
+  throw_helper::throws(exception_case::time_zone_not_found);
 }
 
 string time_zone_info::to_string() const noexcept {
