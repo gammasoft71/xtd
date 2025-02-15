@@ -11,6 +11,7 @@
 #include "../../include/xtd/net/ip_address.hpp"
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::io;
 using namespace xtd::net;
 
@@ -192,7 +193,7 @@ bool uri::check_scheme_name(const string& scheme) {
 }
 
 string uri::escape_data_string(const string& value) {
-  if (value.size() > 32766_z) throw uri_format_exception {};
+  if (value.size() > 32766_z) throw_helper::throws(exception_case::uri_format);
   
   auto escape_needed = false;
   for (auto index = 0_z; !escape_needed && index < value.size(); ++index)
@@ -211,7 +212,7 @@ string uri::escape_data_string(const string& value) {
 }
 
 string uri::escape_uri_string(const string& value) {
-  if (value.size() > 32766_z) throw uri_format_exception {};
+  if (value.size() > 32766_z) throw_helper::throws(exception_case::uri_format);
   
   auto escape_needed = false;
   for (auto index = 0_z; !escape_needed && index < value.size(); ++index)
@@ -448,7 +449,7 @@ void uri::set_port(string& escape_uri) {
     
     escape_uri = escape_uri.substring(index_start);
   } catch (...) {
-    throw uri_format_exception {};
+    throw_helper::throws(exception_case::uri_format);
   }
 }
 
@@ -495,14 +496,14 @@ void uri::set_uri(const string& uri, uri_kind kind) {
   set_query(original_uri);
   
   if (kind_ == uri_kind::absolute) {
-    if (scheme_.size() == 0) throw uri_format_exception {};
-    if (scheme_ != "news" && host_.size() == 0) throw uri_format_exception {};
-    if (check_scheme_name(scheme_) == false) throw uri_format_exception {};
+    if (scheme_.size() == 0) throw_helper::throws(exception_case::uri_format);
+    if (scheme_ != "news" && host_.size() == 0) throw_helper::throws(exception_case::uri_format);
+    if (check_scheme_name(scheme_) == false) throw_helper::throws(exception_case::uri_format);
   } else if (kind_ == uri_kind::relative) {
-    if (scheme_.size() != 0 && host_.size() != 0) throw uri_format_exception {};
+    if (scheme_.size() != 0 && host_.size() != 0) throw_helper::throws(exception_case::uri_format);
   }
   
-  if (original_uri.size() != 0) throw uri_format_exception {};
+  if (original_uri.size() != 0) throw_helper::throws(exception_case::uri_format);
 }
 
 void uri::set_user_info(string& escape_uri) {

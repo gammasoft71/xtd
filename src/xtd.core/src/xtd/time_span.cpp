@@ -7,6 +7,7 @@
 #include "../../include/xtd/math.hpp"
 
 using namespace xtd;
+using namespace xtd::helpers;
 
 const time_span time_span::max_value {xtd::int64_object::max_value};
 const time_span time_span::min_value {xtd::int64_object::min_value};
@@ -212,12 +213,12 @@ int32 time_span::compare_to(const time_span& value) const noexcept {
 }
 
 double time_span::divide(const time_span& ts) const {
-  if (ts.ticks_ == 0) throw divided_by_zero_exception {};
+  if (ts.ticks_ == 0) throw_helper::throws(exception_case::divided_by_zero);
   return as<double>(ticks_) / ts.ticks_;
 }
 
 time_span time_span::divide(double divisor) const {
-  if (divisor == 0) throw divided_by_zero_exception {};
+  if (divisor == 0) throw_helper::throws(exception_case::divided_by_zero);
   return time_span {static_cast<int64>(ticks_ / divisor)}; // Do not use as<int64>(...) because it rounds the value because it round the value
 }
 
@@ -259,7 +260,7 @@ time_span time_span::from_hours(std::chrono::hours value) {
 
 time_span time_span::from_microseconds(double value) {
   if (double_object::is_NaN(value)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
-  if (double_object::is_infinity(value) || value < as<double>(time_span::min_value.ticks() / ticks_per_microsecond) || value > as<double>(time_span::max_value.ticks() / ticks_per_microsecond)) throw overflow_exception {};
+  if (double_object::is_infinity(value) || value < as<double>(time_span::min_value.ticks() / ticks_per_microsecond) || value > as<double>(time_span::max_value.ticks() / ticks_per_microsecond)) throw_helper::throws(exception_case::overflow);
   return from_ticks(static_cast<int64>(value * ticks_per_microsecond)); // Do not use as<int64>(...) because it rounds the value because it round the value
 }
 
@@ -317,7 +318,7 @@ time_span time_span::multiply(double factor) const noexcept {
 }
 
 time_span time_span::negate() const {
-  if (*this == time_span::min_value) throw overflow_exception {};
+  if (*this == time_span::min_value) throw_helper::throws(exception_case::overflow);
   return time_span {-ticks_};
 }
 
@@ -325,7 +326,7 @@ time_span time_span::parse(const string& value) {
   auto result = time_span {};
   switch (try_parse_internal(value, result)) {
     case parse_format: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
-    case parse_overflow: throw overflow_exception {};
+    case parse_overflow: throw_helper::throws(exception_case::overflow);
   }
   return result;
 }
@@ -345,7 +346,7 @@ string time_span::to_string(const string& format) const {
 string time_span::to_string(const string& format, const std::locale& loc) const {
   auto fmt = format;
   if (fmt.empty()) fmt = "G";
-  if (fmt.size() > 1) throw format_exception("Invalid format"_t);
+  if (fmt.size() > 1) throw_helper::throws(exception_case::format, "Invalid format"_t);
   
   switch (fmt[0]) {
     case 'c': return make_string_from_duration(true);
@@ -381,7 +382,7 @@ time_span time_span::interval(double value, int scale) {
   if (double_object::is_NaN(value)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
   auto tmp = value * scale;
   auto millis = tmp + (value >= 0 ? 0.5 : -0.5);
-  if ((millis > int64_object::max_value / ticks_per_millisecond) || (millis < int64_object::min_value / ticks_per_millisecond))  throw overflow_exception {};
+  if ((millis > int64_object::max_value / ticks_per_millisecond) || (millis < int64_object::min_value / ticks_per_millisecond))  throw_helper::throws(exception_case::overflow);
   return time_span(static_cast<int64>(millis) * ticks_per_millisecond); // Do not use as<int64>(...) because it rounds the value
 }
 
