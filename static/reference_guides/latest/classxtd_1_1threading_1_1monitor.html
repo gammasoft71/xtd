@@ -316,7 +316,7 @@ The following example demonstrates the combined use of the <a class="el" href="c
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// All unsynchronized thread operations have completed.</span></div>
 <div class="line"><span class="comment">//</span></div>
-<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:43</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:44</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1auto__reset__event_html"><div class="ttname"><a href="classxtd_1_1threading_1_1auto__reset__event.html">xtd::threading::auto_reset_event</a></div><div class="ttdoc">Represents a thread synchronization event that, when signaled, resets automatically after releasing a...</div><div class="ttdef"><b>Definition</b> auto_reset_event.hpp:36</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1wait__handle_html_ab53dcefc6844ecf0d6d9967ac489ac87"><div class="ttname"><a href="classxtd_1_1threading_1_1wait__handle.html#ab53dcefc6844ecf0d6d9967ac489ac87">xtd::threading::wait_handle::wait_one</a></div><div class="ttdeci">virtual bool wait_one()</div><div class="ttdoc">Blocks the current thread until the current xtd::threading::wait_handle receives a signal.</div></div>
 <div class="ttc" id="agroup__keywords_html_gacd9906b29d877eb1eb0a8c7bc4ab774a"><div class="ttname"><a href="group__keywords.html#gacd9906b29d877eb1eb0a8c7bc4ab774a">lock_</a></div><div class="ttdeci">#define lock_(object)</div><div class="ttdoc">The lock_ keyword marks a statement block as a critical section by obtaining the mutual-exclusion loc...</div><div class="ttdef"><b>Definition</b> lock.hpp:85</div></div>
@@ -682,7 +682,7 @@ template&lt;class object_t &gt; </div>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::synchronization_lock_exception</a></td><td>The calling thread does not own the lock for the specified object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a method requires the caller to own the lock on a given Monitor,...">xtd::threading::synchronization_lock_exception</a></td><td>The calling thread does not own the lock for the specified object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -733,7 +733,7 @@ template&lt;class object_t &gt; </div>
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::synchronization_lock_exception</a></td><td>The calling thread does not own the lock for the specified object. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a method requires the caller to own the lock on a given Monitor,...">xtd::threading::synchronization_lock_exception</a></td><td>The calling thread does not own the lock for the specified object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1206,7 +1206,7 @@ template&lt;class object_t &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the lock was reacquired before the specified time elapsed; <code>false</code> if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::synchronization_lock_exception</a></td><td><a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> is not invoked from within a synchronized block of code. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a method requires the caller to own the lock on a given Monitor,...">xtd::threading::synchronization_lock_exception</a></td><td><a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> is not invoked from within a synchronized block of code. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1273,7 +1273,7 @@ template&lt;class object_t &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the lock was reacquired before the specified time elapsed; <code>false</code> if the lock was reacquired after the specified time elapsed. The method does not return until the lock is reacquired. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::synchronization_lock_exception</a></td><td><a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> is not invoked from within a synchronized block of code. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a method requires the caller to own the lock on a given Monitor,...">xtd::threading::synchronization_lock_exception</a></td><td><a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> is not invoked from within a synchronized block of code. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1329,7 +1329,7 @@ template&lt;class object_t &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the call returned because the caller reacquired the lock for the specified object. This method does not return if the lock is not reacquired. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">xtd::threading::synchronization_lock_exception</a></td><td><a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> is not invoked from within a synchronized block of code. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1threading_1_1synchronization__lock__exception.html" title="The exception that is thrown when a method requires the caller to own the lock on a given Monitor,...">xtd::threading::synchronization_lock_exception</a></td><td><a class="el" href="classxtd_1_1threading_1_1monitor.html#acd63dcb3bbf83741c9bdfe9f6d074b8d" title="Releases the lock on an object and blocks the current thread until it reacquires the lock....">xtd::threading::monitor::wait</a> is not invoked from within a synchronized block of code. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1356,7 +1356,7 @@ The remarks for the <a class="el" href="classxtd_1_1threading_1_1monitor.html#a0
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 10 2025 19:02:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 15 2025 21:41:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

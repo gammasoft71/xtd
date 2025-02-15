@@ -60,12 +60,13 @@ var searchData=
   ['locale_57',['locale',['../classxtd_1_1system__report.html#ad9aa20286ab053ab3e44c75417bc050bafb216d9e8791e63c8d12bdc420956839',1,'xtd::system_report']]],
   ['localized_5fresources_58',['localized_resources',['../classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057a2ae3e7b0cfe060a2ef1c4982f83d8ab7',1,'xtd::environment']]],
   ['location_59',['location',['../group__xtd__forms.html#gga475781e3c7baa300a81ab16d22b16962ad5189de027922f81005951e6efe0efd5',1,'xtd::forms']]],
-  ['logical_5foperation_5fstack_60',['logical_operation_stack',['../group__diagnostics.html#gga897ca504c8b1ff350135bff87494c0dfa62b13a7d6b5dbcd1e4bf03b3eaf25162',1,'xtd::diagnostics']]],
-  ['long_5fformat_61',['long_format',['../group__xtd__forms.html#gga3aba202fc852006258f3a8da4f7bd0d1a215dd407d628aca36a2e2fa2b2631b53',1,'xtd::forms']]],
-  ['low_62',['low',['../group__xtd__drawing.html#gga597cca8c636b502a1dbf11b65c47b017a53cced8d281a1a0ace3cb6594daaa4f7',1,'xtd::drawing::drawing_2d::low'],['../group__xtd__forms.html#ggabfcbdab8d51145bfcc9d621c1828cc63a53cced8d281a1a0ace3cb6594daaa4f7',1,'xtd::forms::low']]],
-  ['lower_63',['lower',['../group__xtd__forms.html#ggaf4ada098194f7c1c262928001ae7c781a81e073b428b50247daba38531dcf412a',1,'xtd::forms']]],
-  ['lowercase_64',['lowercase',['../group__style__sheets.html#ggae92c9bad16e4e07d834be243b217ba55af82413ecc07fb74bf40ccfe963a5c4b6',1,'xtd::forms::style_sheets']]],
-  ['lowest_65',['lowest',['../group__threading.html#ggaeee08cba07c5c4d4d10ada96a70bf28da21f25aaeda95888270706e909e7c919d',1,'xtd::threading']]],
-  ['lshift_5fkey_66',['lshift_key',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deab875fc40cecd3d41341fe39d17ce9693',1,'xtd::forms']]],
-  ['lwin_67',['lwin',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deaf801ee6854e902f73c6dd945ed2bd452',1,'xtd::forms']]]
+  ['lock_5frecursion_60',['lock_recursion',['../group__helpers.html#gga9449ffb8e13ad8c25c987085078568dca818cde618ad0fefbb3f368c1b33b4a29',1,'xtd::helpers']]],
+  ['logical_5foperation_5fstack_61',['logical_operation_stack',['../group__diagnostics.html#gga897ca504c8b1ff350135bff87494c0dfa62b13a7d6b5dbcd1e4bf03b3eaf25162',1,'xtd::diagnostics']]],
+  ['long_5fformat_62',['long_format',['../group__xtd__forms.html#gga3aba202fc852006258f3a8da4f7bd0d1a215dd407d628aca36a2e2fa2b2631b53',1,'xtd::forms']]],
+  ['low_63',['low',['../group__xtd__drawing.html#gga597cca8c636b502a1dbf11b65c47b017a53cced8d281a1a0ace3cb6594daaa4f7',1,'xtd::drawing::drawing_2d::low'],['../group__xtd__forms.html#ggabfcbdab8d51145bfcc9d621c1828cc63a53cced8d281a1a0ace3cb6594daaa4f7',1,'xtd::forms::low']]],
+  ['lower_64',['lower',['../group__xtd__forms.html#ggaf4ada098194f7c1c262928001ae7c781a81e073b428b50247daba38531dcf412a',1,'xtd::forms']]],
+  ['lowercase_65',['lowercase',['../group__style__sheets.html#ggae92c9bad16e4e07d834be243b217ba55af82413ecc07fb74bf40ccfe963a5c4b6',1,'xtd::forms::style_sheets']]],
+  ['lowest_66',['lowest',['../group__threading.html#ggaeee08cba07c5c4d4d10ada96a70bf28da21f25aaeda95888270706e909e7c919d',1,'xtd::threading']]],
+  ['lshift_5fkey_67',['lshift_key',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deab875fc40cecd3d41341fe39d17ce9693',1,'xtd::forms']]],
+  ['lwin_68',['lwin',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deaf801ee6854e902f73c6dd945ed2bd452',1,'xtd::forms']]]
 ];

@@ -31,7 +31,7 @@ More derived exceptions aren't handled by a `catch` clause that's preceded by a 
 When your code can't recover from an exception, don't catch that exception. Enable methods further up the call stack to recover if possible.
 
 Don't forget to clean up allocated resources when an exception is raised. 
-Use the [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) idiom for automatic cleanup. 
+Use the [RAII](https://en.cppreference.com/w/cpp/language/raii) idiom for automatic cleanup. 
  
 ### Handle common conditions to avoid exceptions
 

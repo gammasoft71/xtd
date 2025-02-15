@@ -70,7 +70,7 @@ You can use [xtdc](https://github.com/gammasoft71/xtd/blob/master/tools/xtdc/REA
 
 [![cpp](/pictures/xtd.cpp.png)](https://en.cppreference.com/w/)
 [modern c++ 17/20](https://en.cppreference.com/w/) : 
-Written in efficient, modern [C++17/20](https://en.cppreference.com/w/) with [RAII](https://en.wikipedia.org/wiki/Resource_acquisition_is_initialization) programming idiom. API close to the .net API with a modern C++ approach and full integration with the std standard and highly portable and available on many different platforms;
+Written in efficient, modern [C++17/20](https://en.cppreference.com/w/) with [RAII](https://en.cppreference.com/w/cpp/language/raii) programming idiom. API close to the .net API with a modern C++ approach and full integration with the std standard and highly portable and available on many different platforms;
 
 ## See also
 

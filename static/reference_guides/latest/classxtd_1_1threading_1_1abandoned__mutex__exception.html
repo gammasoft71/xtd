@@ -100,46 +100,46 @@ Inheritance diagram for xtd::threading::abandoned_mutex_exception:</div>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>The exception that is thrown when a Thread is in an invalid ThreadState for the method call. </p>
+<div class="textblock"><p>The exception that is thrown when one thread acquires a <a class="el" href="classxtd_1_1threading_1_1mutex.html" title="A synchronization primitive that can also be used for interprocess synchronization.">xtd::threading::mutex</a> object that another thread has abandoned by exiting without releasing it. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html">abandoned_mutex_exception</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1system__exception.html">xtd::system_exception</a></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">The exception that is thrown when a method call is invalid for the object's current state.</div><div class="ttdef"><b>Definition</b> system_exception.hpp:18</div></div>
-<div class="ttc" id="aclassxtd_1_1threading_1_1abandoned__mutex__exception_html"><div class="ttname"><a href="classxtd_1_1threading_1_1abandoned__mutex__exception.html">xtd::threading::abandoned_mutex_exception</a></div><div class="ttdoc">The exception that is thrown when a Thread is in an invalid ThreadState for the method call.</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.hpp:28</div></div>
+<div class="ttc" id="aclassxtd_1_1threading_1_1abandoned__mutex__exception_html"><div class="ttname"><a href="classxtd_1_1threading_1_1abandoned__mutex__exception.html">xtd::threading::abandoned_mutex_exception</a></div><div class="ttdoc">The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.hpp:28</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/abandoned_mutex_exception&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to throw and catch an <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following example demonstrates how to throw and catch an <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>. <div class="fragment"></div><!-- fragment --> </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a269d04c603662529133c5dfc21122542"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html#a269d04c603662529133c5dfc21122542">abandoned_mutex_exception</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a269d04c603662529133c5dfc21122542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>.  <br /></td></tr>
+<tr class="memdesc:a269d04c603662529133c5dfc21122542"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>.  <br /></td></tr>
 <tr class="separator:a269d04c603662529133c5dfc21122542"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b90978ee2c6d82b89e5c9bc743a2fa2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html#a3b90978ee2c6d82b89e5c9bc743a2fa2">abandoned_mutex_exception</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a3b90978ee2c6d82b89e5c9bc743a2fa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>.  <br /></td></tr>
+<tr class="memdesc:a3b90978ee2c6d82b89e5c9bc743a2fa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>.  <br /></td></tr>
 <tr class="separator:a3b90978ee2c6d82b89e5c9bc743a2fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cdcde005066f08dbb32ce1f65309464"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html#a1cdcde005066f08dbb32ce1f65309464">abandoned_mutex_exception</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>, const std::error_code &amp;error, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a1cdcde005066f08dbb32ce1f65309464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>.  <br /></td></tr>
+<tr class="memdesc:a1cdcde005066f08dbb32ce1f65309464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>.  <br /></td></tr>
 <tr class="separator:a1cdcde005066f08dbb32ce1f65309464"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa31ad96b50a697497c6253eb3c71821a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html#aa31ad96b50a697497c6253eb3c71821a">abandoned_mutex_exception</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1exception.html#af6397881321f0c343500c6184963bd0c">help_link</a>, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:aa31ad96b50a697497c6253eb3c71821a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>.  <br /></td></tr>
+<tr class="memdesc:aa31ad96b50a697497c6253eb3c71821a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>.  <br /></td></tr>
 <tr class="separator:aa31ad96b50a697497c6253eb3c71821a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba2c932dd739e2458b40c3036e08b479"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html#aba2c932dd739e2458b40c3036e08b479">abandoned_mutex_exception</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>, const std::error_code &amp;error, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1exception.html#af6397881321f0c343500c6184963bd0c">help_link</a>, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:aba2c932dd739e2458b40c3036e08b479"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>.  <br /></td></tr>
+<tr class="memdesc:aba2c932dd739e2458b40c3036e08b479"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>.  <br /></td></tr>
 <tr class="separator:aba2c932dd739e2458b40c3036e08b479"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48cf3fddc0c414e2ab2a5dcc7bd89e2d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html#a48cf3fddc0c414e2ab2a5dcc7bd89e2d">abandoned_mutex_exception</a> (const std::exception &amp;<a class="el" href="classxtd_1_1exception.html#ad05d51d23eeffcdfd0d86d6668514384">inner_exception</a>, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a48cf3fddc0c414e2ab2a5dcc7bd89e2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>.  <br /></td></tr>
+<tr class="memdesc:a48cf3fddc0c414e2ab2a5dcc7bd89e2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>.  <br /></td></tr>
 <tr class="separator:a48cf3fddc0c414e2ab2a5dcc7bd89e2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32f10645eb67d164c3ba41f31da5e85c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html#a32f10645eb67d164c3ba41f31da5e85c">abandoned_mutex_exception</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>, const std::exception &amp;<a class="el" href="classxtd_1_1exception.html#ad05d51d23eeffcdfd0d86d6668514384">inner_exception</a>, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a32f10645eb67d164c3ba41f31da5e85c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>.  <br /></td></tr>
+<tr class="memdesc:a32f10645eb67d164c3ba41f31da5e85c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>.  <br /></td></tr>
 <tr class="separator:a32f10645eb67d164c3ba41f31da5e85c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1007293cc31878b8182097b07c09021"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html#ae1007293cc31878b8182097b07c09021">abandoned_mutex_exception</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>, const std::exception &amp;<a class="el" href="classxtd_1_1exception.html#ad05d51d23eeffcdfd0d86d6668514384">inner_exception</a>, const std::error_code &amp;error, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:ae1007293cc31878b8182097b07c09021"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>.  <br /></td></tr>
+<tr class="memdesc:ae1007293cc31878b8182097b07c09021"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>.  <br /></td></tr>
 <tr class="separator:ae1007293cc31878b8182097b07c09021"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a154639162ec008dca27039eb427bd1c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html#a154639162ec008dca27039eb427bd1c7">abandoned_mutex_exception</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>, const std::exception &amp;<a class="el" href="classxtd_1_1exception.html#ad05d51d23eeffcdfd0d86d6668514384">inner_exception</a>, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1exception.html#af6397881321f0c343500c6184963bd0c">help_link</a>, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:a154639162ec008dca27039eb427bd1c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>.  <br /></td></tr>
+<tr class="memdesc:a154639162ec008dca27039eb427bd1c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>.  <br /></td></tr>
 <tr class="separator:a154639162ec008dca27039eb427bd1c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac30bc7a03f8790a735637faf9d85ce55"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html#ac30bc7a03f8790a735637faf9d85ce55">abandoned_mutex_exception</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1exception.html#a472b56575bd47dbd829931c900a16600">message</a>, const std::exception &amp;<a class="el" href="classxtd_1_1exception.html#ad05d51d23eeffcdfd0d86d6668514384">inner_exception</a>, const std::error_code &amp;error, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;<a class="el" href="classxtd_1_1exception.html#af6397881321f0c343500c6184963bd0c">help_link</a>, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a>())</td></tr>
-<tr class="memdesc:ac30bc7a03f8790a735637faf9d85ce55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>.  <br /></td></tr>
+<tr class="memdesc:ac30bc7a03f8790a735637faf9d85ce55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>.  <br /></td></tr>
 <tr class="separator:ac30bc7a03f8790a735637faf9d85ce55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
@@ -307,7 +307,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>. </p>
+<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">stack_frame</td><td>(optional) Contains current stack frame about member name, file path and line number in the file where the exception is occurred. Typically <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29" title="Crates a new xtd::diagnostics::stack_frame object corresponding to the location of the call site.">xtd::diagnostics::stack_frame::current()</a>. </td></tr>
@@ -352,7 +352,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>. </p>
+<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">message</td><td>Message string associate to the exception. </td></tr>
@@ -403,7 +403,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>. </p>
+<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">message</td><td>Message string associate to the exception. </td></tr>
@@ -455,7 +455,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>. </p>
+<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">message</td><td>Message string associate to the exception. </td></tr>
@@ -513,7 +513,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>. </p>
+<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">message</td><td>Message string associate to the exception. </td></tr>
@@ -559,7 +559,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>. </p>
+<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">inner_exception</td><td>The exception that is the cause of the current exception. </td></tr>
@@ -611,7 +611,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>. </p>
+<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">message</td><td>Message string associate to the exception. </td></tr>
@@ -669,7 +669,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>. </p>
+<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">message</td><td>Message string associate to the exception. </td></tr>
@@ -728,7 +728,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>. </p>
+<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">message</td><td>Message string associate to the exception. </td></tr>
@@ -793,7 +793,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when a Thread is in an invalid ThreadState for the method call.">abandoned_mutex_exception</a>. </p>
+<p>Create a new instance of class <a class="el" href="classxtd_1_1threading_1_1abandoned__mutex__exception.html" title="The exception that is thrown when one thread acquires a xtd::threading::mutex object that another thr...">abandoned_mutex_exception</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">message</td><td>Message string associate to the exception. </td></tr>
@@ -814,7 +814,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Feb 10 2025 19:02:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Feb 15 2025 21:41:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
