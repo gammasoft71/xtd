@@ -150,8 +150,6 @@ void test::run(const unit_test& unit_test, const test_class& test_class) {
         settings::default_settings().exit_status(EXIT_FAILURE);
         if (settings::default_settings().brief()) unit_test.event_listener_->on_test_start(test_event_args(*this, test_class, unit_test));
         unit_test.event_listener_->on_test_failed(test_event_args(*this, test_class, unit_test));
-        if (settings::default_settings().break_on_failure())
-          debug_break_();
         if (settings::default_settings().throw_on_failure())
           exception_dispatch_info::rethrow(e);
       } catch (const std::exception& e) {
@@ -160,8 +158,6 @@ void test::run(const unit_test& unit_test, const test_class& test_class) {
         test::current_test().status_ = test::test_status::failed;
         if (settings::default_settings().brief()) unit_test.event_listener_->on_test_start(test_event_args(*this, test_class, unit_test));
         unit_test.event_listener_->on_test_failed(test_event_args(*this, test_class, unit_test));
-        if (settings::default_settings().break_on_failure())
-          debug_break_();
         if (settings::default_settings().throw_on_failure())
           throw assert_error {test::current_test().message()};
       } catch (...) {
@@ -170,8 +166,6 @@ void test::run(const unit_test& unit_test, const test_class& test_class) {
         test::current_test().status_ = test::test_status::failed;
         if (settings::default_settings().brief()) unit_test.event_listener_->on_test_start(test_event_args(*this, test_class, unit_test));
         unit_test.event_listener_->on_test_failed(test_event_args(*this, test_class, unit_test));
-        if (settings::default_settings().break_on_failure())
-          debug_break_();
         if (settings::default_settings().throw_on_failure())
           throw assert_error {test::current_test().message()};
       }
