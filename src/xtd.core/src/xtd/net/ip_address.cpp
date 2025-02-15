@@ -27,7 +27,7 @@ ip_address::ip_address(uint32 address) {
 }
 
 ip_address::ip_address(const array<byte>& address) {
-  if (address.size() != 4 && address.size() != 16) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (address.size() != 4 && address.size() != 16) throw_helper::throws(exception_case::argument);
   
   if (address.size() == 4) {
     address_family_ = sockets::address_family::inter_network;
@@ -42,7 +42,7 @@ ip_address::ip_address(const array<byte>& address) {
 }
 
 ip_address::ip_address(const array<byte>& address, uint32 scope_id) : address_family_(sockets::address_family::inter_network_v6) {
-  if (address.size() != 16) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (address.size() != 16) throw_helper::throws(exception_case::argument);
   
   address_or_scope_id_ = scope_id;
   for (auto index = 0_z; index < number_of_numbers_; index++)
@@ -261,7 +261,7 @@ ip_address ip_address::parse(const string& str) {
     }
   }
   
-  xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format);
+  throw_helper::throws(exception_case::format);
 }
 
 string ip_address::to_string() const noexcept {

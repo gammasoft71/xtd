@@ -5,6 +5,7 @@
 #include "../../../include/xtd/literals.hpp"
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::linq;
 
 decimal enumerable::average(const ienumerable<decimal>& source) {
@@ -14,7 +15,7 @@ decimal enumerable::average(const ienumerable<decimal>& source) {
     average += item;
     ++count;
   }
-  if (count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  if (count == 0) throw_helper::throws(exception_case::invalid_operation);
   return average / count;
 }
 
@@ -25,7 +26,7 @@ double enumerable::average(const ienumerable<double>& source) {
     average += item;
     ++count;
   }
-  if (count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  if (count == 0) throw_helper::throws(exception_case::invalid_operation);
   return average / count;
 }
 
@@ -36,7 +37,7 @@ float enumerable::average(const ienumerable<float>& source) {
     average += item;
     ++count;
   }
-  if (count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  if (count == 0) throw_helper::throws(exception_case::invalid_operation);
   return average / count;
 }
 
@@ -47,7 +48,7 @@ double enumerable::average(const ienumerable<int32>& source) {
     average += as<double>(item);
     ++count;
   }
-  if (count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  if (count == 0) throw_helper::throws(exception_case::invalid_operation);
   return average / count;
 }
 
@@ -58,7 +59,7 @@ double enumerable::average(const ienumerable<int64>& source) {
     average += as<double>(item);
     ++count;
   }
-  if (count == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  if (count == 0) throw_helper::throws(exception_case::invalid_operation);
   return average / count;
 }
 
@@ -123,7 +124,7 @@ optional<double> enumerable::average(const ienumerable<optional<int64>>& source)
 }
 
 const enumerable::ienumerable<int32>& enumerable::range(int32 start, int32 count) {
-  if (count < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (count < 0) throw_helper::throws(exception_case::argument_out_of_range);
   static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<int32> {};
   result = __opaque_xtd_linq_enumerable_collection__<int32> {};
   for (auto index = start; index < start + count; ++index)

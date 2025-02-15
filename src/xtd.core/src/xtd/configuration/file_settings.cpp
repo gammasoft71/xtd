@@ -4,6 +4,7 @@
 
 using namespace xtd;
 using namespace xtd::configuration;
+using namespace xtd::helpers;
 using namespace xtd::io;
 
 namespace {
@@ -129,7 +130,7 @@ void file_settings::from_string(const xtd::string& text) {
       if (line.starts_with(section_start_delimiter)) {
         auto section_comment = string::empty_string;
         line = separate_comment(line, section_comment);
-        if (!line.ends_with(section_end_delimiter)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, string::format("Section start with '{}' but not end with '{}'", section_start_delimiter, section_end_delimiter).c_str());
+        if (!line.ends_with(section_end_delimiter)) throw_helper::throws(exception_case::format, string::format("Section start with '{}' but not end with '{}'", section_start_delimiter, section_end_delimiter).c_str());
         section = unescaping(line.substring(1, line.size() - 2));
         if (!string::is_empty(section_comment)) section_comment_[section] = section_comment;
         section_key_values_[section] = {};
@@ -165,7 +166,7 @@ void file_settings::load(const xtd::string& file_path) {
 }
 
 void file_settings::load(std::istream& stream) {
-  if (!stream.good()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::io);
+  if (!stream.good()) throw_helper::throws(exception_case::io);
   from_string(stream_reader {stream}.read_to_end());
 }
 

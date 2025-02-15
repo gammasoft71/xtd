@@ -40,7 +40,7 @@ void monitor::enter_ptr(object_ptr obj) {
 
 void monitor::enter_ptr(object_ptr obj, bool& lock_taken) {
   if (!try_enter_ptr(obj, timeout::infinite, lock_taken))
-    xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+    throw_helper::throws(exception_case::invalid_operation);
 }
 
 void monitor::exit_ptr(object_ptr obj) {
@@ -64,7 +64,7 @@ void monitor::exit_ptr(object_ptr obj) {
 }
 
 intptr monitor::get_ustring_ptr(const string& str) {
-  if (str.empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (str.empty()) throw_helper::throws(exception_case::argument);
   get_static_data().monitor_items_critical_section.enter();
   auto ptr = reinterpret_cast<intptr>(&str);
   for (const auto& item : get_static_data().monitor_items)
@@ -88,7 +88,7 @@ void monitor::pulse_ptr(object_ptr obj) {
   if (is_entered_ptr(obj)) monitor_item = &get_static_data().monitor_items[obj.first];
   get_static_data().monitor_items_critical_section.leave();
   
-  if (monitor_item == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  if (monitor_item == nullptr) throw_helper::throws(exception_case::invalid_operation);
   if (monitor_item->thread_id.value() != thread::current_thread().thread_id()) throw_helper::throws(exception_case::synchronization_lock);
 
   monitor_item->condition_variable.pulse();
@@ -100,7 +100,7 @@ void monitor::pulse_all_ptr(object_ptr obj) {
   if (is_entered_ptr(obj)) monitor_item = &get_static_data().monitor_items[obj.first];
   get_static_data().monitor_items_critical_section.leave();
   
-  if (monitor_item == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  if (monitor_item == nullptr) throw_helper::throws(exception_case::invalid_operation);
   if (monitor_item->thread_id.value() != thread::current_thread().thread_id()) throw_helper::throws(exception_case::synchronization_lock);
 
   monitor_item->condition_variable.pulse_all();
@@ -131,7 +131,7 @@ bool monitor::wait_ptr(object_ptr obj, int32 milliseconds_timeout) {
   if (is_entered_ptr(obj)) monitor_item = &get_static_data().monitor_items[obj.first];
   get_static_data().monitor_items_critical_section.leave();
   
-  if (monitor_item == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+  if (monitor_item == nullptr) throw_helper::throws(exception_case::invalid_operation);
   if (monitor_item->thread_id.value() != thread::current_thread().thread_id()) throw_helper::throws(exception_case::synchronization_lock);
 
   return monitor_item->condition_variable.wait(monitor_item->critical_section, milliseconds_timeout);

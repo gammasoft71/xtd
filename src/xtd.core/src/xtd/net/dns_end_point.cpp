@@ -5,6 +5,7 @@
 #include "../../../include/xtd/not_implemented_exception.hpp"
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
 
@@ -12,8 +13,8 @@ dns_end_point::dns_end_point(const xtd::string& host, uint16 port) : dns_end_poi
 }
 
 dns_end_point::dns_end_point(const xtd::string& host, uint16 port, sockets::address_family address_family) {
-  if (string::is_empty(host)) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
-  if (address_family != sockets::address_family::unspecified && address_family != sockets::address_family::inter_network && address_family != sockets::address_family::inter_network_v6) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);;
+  if (string::is_empty(host)) throw_helper::throws(exception_case::argument);;
+  if (address_family != sockets::address_family::unspecified && address_family != sockets::address_family::inter_network && address_family != sockets::address_family::inter_network_v6) throw_helper::throws(exception_case::argument);;
   
   host_ = host;
   port_ = port;

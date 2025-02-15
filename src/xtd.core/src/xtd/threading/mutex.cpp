@@ -72,7 +72,7 @@ void mutex::lock() {
 }
 
 mutex mutex::open_existing(const string& name) {
-  if (name.empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (name.empty()) throw_helper::throws(exception_case::argument);
   if (name.size() > native::named_mutex::max_name_size()) throw_helper::throws(exception_case::path_too_long);
   auto result = mutex{};
   if (!try_open_existing(name, result)) throw_helper::throws(exception_case::io);
@@ -133,7 +133,7 @@ bool mutex::signal() {
 
 bool mutex::wait(int32 milliseconds_timeout) {
   if (!mutex_) throw_helper::throws(exception_case::object_closed);
-  if (milliseconds_timeout < -1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (milliseconds_timeout < -1) throw_helper::throws(exception_case::argument_out_of_range);
   auto result = mutex_->wait(milliseconds_timeout);
   if (result == 0xFFFFFFFF) throw_helper::throws(exception_case::io);
   if (result == 0x00000080) throw_helper::throws(exception_case::abandoned_mutex);

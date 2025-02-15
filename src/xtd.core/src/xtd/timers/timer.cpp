@@ -82,7 +82,7 @@ double timer::interval() const noexcept {
 
 timer& timer::interval(double value) {
   if (data_->closed) throw_helper::throws(exception_case::object_closed);
-  if (math::ceiling(value) < 0 || math::ceiling(value) > int32_object::max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (math::ceiling(value) < 0 || math::ceiling(value) > int32_object::max_value) throw_helper::throws(exception_case::argument);
   data_->interval = time_span::from_milliseconds(value);
   return *this;
 }

@@ -2,6 +2,7 @@
 #include "../../../include/xtd/invalid_operation_exception.hpp"
 
 using namespace xtd;
+using namespace xtd::helpers;
 using namespace xtd::collections;
 
 bool& bit_array::boolean_ref::get_boolean_ref(bool v, size i) noexcept {
@@ -111,7 +112,7 @@ const object& bit_array::sync_root() const noexcept {
 
 const bit_array& bit_array::and_(const bit_array& value) {
   flush(); // Must be call first
-  if (count() != value.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (count() != value.count()) throw_helper::throws(exception_case::argument);
   for (auto index = 0_z; index < length(); ++index)
     set_bit_value(index, get_bit_value(index) && value[index]);
   return *this;
@@ -133,7 +134,7 @@ uptr<object> bit_array::clone() const {
 
 void bit_array::copy_to(array<bool>& array, size index) const {
   flush(); // Must be call first
-  if (index + length() > array.length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (index + length() > array.length()) throw_helper::throws(exception_case::argument);
   for (auto item : *this)
     array[index++] = item;
 }
@@ -167,7 +168,7 @@ generic::enumerator<bool> bit_array::get_enumerator() const {
     
     void reset() override {pos_ = npos;}
     const bool& current() const override {
-      if (pos_ == npos || pos_ >= bit_array_->length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);
+      if (pos_ == npos || pos_ >= bit_array_->length()) throw_helper::throws(exception_case::invalid_operation);
       return (*bit_array_)[pos_];
     }
     
@@ -223,7 +224,7 @@ const bit_array& bit_array::not_() {
 
 const bit_array& bit_array::or_(const bit_array& value) {
   flush(); // Must be call first
-  if (count() != value.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (count() != value.count()) throw_helper::throws(exception_case::argument);
   for (auto index = 0_z; index < length(); ++index)
     set_bit_value(index, get_bit_value(index) || value[index]);
   return *this;
@@ -235,7 +236,7 @@ bit_array& bit_array::right_shift(xtd::size count) noexcept {
 
 void bit_array::set(size index, bool value) {
   flush(); // Must be call first
-  if (index >= length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (index >= length()) throw_helper::throws(exception_case::argument_out_of_range);
   set_bit_value(index, value);
 }
 
@@ -252,7 +253,7 @@ string bit_array::to_string() const noexcept {
 
 const bit_array& bit_array::xor_(const bit_array& value) {
   flush(); // Must be call first
-  if (count() != value.count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (count() != value.count()) throw_helper::throws(exception_case::argument);
   for (auto index = 0_z; index < length(); ++index)
     set_bit_value(index, get_bit_value(index) != value[index]);
   return *this;
@@ -260,13 +261,13 @@ const bit_array& bit_array::xor_(const bit_array& value) {
 
 const bool& bit_array::operator [](size index) const {
   flush(); // Must be call first
-  if (index >= length_) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (index >= length_) throw_helper::throws(exception_case::argument_out_of_range);
   return value_ref_.get_boolean_ref(get_bit_value(index), index);
 }
 
 bool& bit_array::operator [](size index) {
   flush(); // Must be call first
-  if (index >= length()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+  if (index >= length()) throw_helper::throws(exception_case::argument_out_of_range);
   return value_ref_.get_boolean_ref(get_bit_value(index), index);
 }
 
