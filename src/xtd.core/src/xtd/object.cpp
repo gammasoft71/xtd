@@ -1,6 +1,7 @@
 #include "../../include/xtd/as.hpp"
 #include "../../include/xtd/hash_code.hpp"
 #include "../../include/xtd/iformatable.hpp"
+#include "../../include/xtd/istringable.hpp"
 #include "../../include/xtd/invalid_cast_exception.hpp"
 #include "../../include/xtd/object.hpp"
 #include "../../include/xtd/type_object.hpp"
@@ -38,6 +39,10 @@ std::ostream& operator <<(std::ostream& os, const object& obj) noexcept {
   return os << obj.to_string();
 }
 
-std::string __object_to_string__(const xtd::object& obj) {
+std::string __object_to_string__(const xtd::object& obj) noexcept {
   return obj.to_string();
+}
+
+std::string __istringable_to_string__(const xtd::istringable& stringable) noexcept {
+  return stringable.to_string();
 }
