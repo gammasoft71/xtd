@@ -10,10 +10,6 @@ std::string __iformatable_to_string(const iformatable& value) noexcept {
   return value.to_string("", std::locale {});
 }
 
-std::string __object_to_string(const object& value) noexcept {
-  return value.to_string();
-}
-
 #if defined(__xtd__cpp_lib_char8_t)
 std::ostream& operator <<(std::ostream& os, const char8* str) {
   return os << string(str);

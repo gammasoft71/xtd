@@ -324,9 +324,9 @@ std::ostream& operator <<(std::ostream& os, const xtd::char32* str);
 std::ostream& operator <<(std::ostream& os, const xtd::wchar* str);
 
 template<class enum_t>
-std::string __enum_to_string(enum_t value) noexcept;
+std::string __enum_to_string__(enum_t value) noexcept;
 std::string __iformatable_to_string(const xtd::iformatable& value) noexcept;
-std::string __object_to_string(const xtd::object& value) noexcept;
+std::string __object_to_string__(const xtd::object& value) noexcept;
 
 template<class char_t, class type_t, class bool_t>
 struct __enum_ostream__ {};
@@ -334,7 +334,7 @@ struct __enum_ostream__ {};
 template<class char_t, class type_t>
 struct __enum_ostream__<char_t, type_t, std::true_type> {
   std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
-    return os << __enum_to_string(value);
+    return os << __enum_to_string__(value);
   }
 };
 
@@ -353,7 +353,7 @@ template<class char_t, class type_t>
 struct __enum_or_polymorphic_ostream__<char_t, type_t, std::true_type> {
   std::basic_ostream<char_t>& to_stream(std::basic_ostream<char_t>& os, const type_t& value) noexcept {
     if (dynamic_cast<const xtd::iformatable*>(&value)) return os << __iformatable_to_string(dynamic_cast<const xtd::iformatable&>(value));
-    if (dynamic_cast<const xtd::object*>(&value)) return os << __object_to_string(dynamic_cast<const xtd::object&>(value));
+    if (dynamic_cast<const xtd::object*>(&value)) return os << __object_to_string__(dynamic_cast<const xtd::object&>(value));
     return os << value;
   }
 };

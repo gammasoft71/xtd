@@ -5,9 +5,7 @@
 #include "array.hpp"
 #include "optional.hpp"
 #include "string.hpp"
-#define __XTD_CORE_INTERNAL__
 #include "helpers/throw_helper.hpp"
-#undef __XTD_CORE_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

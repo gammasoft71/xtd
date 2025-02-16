@@ -2,12 +2,6 @@
 /// @brief Contains __xtd_debugbreak definition.
 #pragma once
 /// @cond
-#if !defined(__XTD_CORE_INTERNAL__)
-#error "Do not include this file: Internal use only"
-#endif
-/// @endcond
-
-/// @cond
 #define __XTD_STD_INTERNAL__
 #include "__xtd_std_version.hpp"
 #undef __XTD_STD_INTERNAL__

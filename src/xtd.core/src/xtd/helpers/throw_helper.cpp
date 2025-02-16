@@ -1,8 +1,6 @@
-#define __XTD_CORE_INTERNAL__
-#include "../../../include/xtd/helpers/throw_helper.hpp"
-#undef __XTD_CORE_INTERNAL__
 #include "../../../include/xtd/collections/generic/key_not_found_exception.hpp"
 #include "../../../include/xtd/diagnostics/stack_frame.hpp"
+#include "../../../include/xtd/helpers/throw_helper.hpp"
 #include "../../../include/xtd/io/directory_not_found_exception.hpp"
 #include "../../../include/xtd/io/end_of_stream_exception.hpp"
 #include "../../../include/xtd/io/file_not_found_exception.hpp"

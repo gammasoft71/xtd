@@ -7,9 +7,9 @@
 #include "internal/__xtd_std_version.hpp"
 #undef __XTD_STD_INTERNAL__
 #define __XTD_CORE_INTERNAL__
-#include "helpers/throw_helper.hpp"
 #include "internal/__string_definitions.hpp"
 #undef __XTD_CORE_INTERNAL__
+#include "helpers/throw_helper.hpp"
 #include "core_export.hpp"
 #include "iequatable.hpp"
 #include "ptr.hpp"

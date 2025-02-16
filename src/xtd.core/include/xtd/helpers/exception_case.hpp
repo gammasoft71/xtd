@@ -2,11 +2,6 @@
 /// @brief Contains xtd::helpers::exception_case enum class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-/// @cond
-#if !defined(__XTD_CORE_INTERNAL__)
-#error "Do not include this file: Internal use only"
-#endif
-/// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

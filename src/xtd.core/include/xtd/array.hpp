@@ -4,12 +4,12 @@
 #pragma once
 #define __XTD_CORE_INTERNAL__
 #include "internal/__array_definition.hpp"
-#include "helpers/throw_helper.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include "collections/generic/helpers/equator.hpp"
 #include "collections/generic/enumerator.hpp"
 #include "collections/generic/icomparer.hpp"
 #include "collections/generic/ilist.hpp"
+#include "helpers/throw_helper.hpp"
 #include "abstract.hpp"
 #include "core_export.hpp"
 #include "int64.hpp"
