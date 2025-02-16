@@ -3,9 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "ienumerator.hpp"
-#define __XTD_CORE_INTERNAL__
 #include "../../helpers/throw_helper.hpp"
-#undef __XTD_CORE_INTERNAL__
 #include "../../ptr.hpp"
 #include "../../static.hpp"
 

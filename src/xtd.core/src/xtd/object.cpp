@@ -37,3 +37,7 @@ string object::to_string() const noexcept {
 std::ostream& operator <<(std::ostream& os, const object& obj) noexcept {
   return os << obj.to_string();
 }
+
+std::string __object_to_string__(const xtd::object& obj) {
+  return obj.to_string();
+}

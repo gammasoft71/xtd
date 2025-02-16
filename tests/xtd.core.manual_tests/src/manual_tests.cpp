@@ -3,7 +3,7 @@
 class manual_tests static_ {
 public:
   static auto main(const auto& args) {
-    println("Hello, world!");
+    console::write_line("Hello, world!");
   }
 };
 

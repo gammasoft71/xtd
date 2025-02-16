@@ -12,7 +12,7 @@
 
 /// @cond
 template<class enum_t>
-std::string __enum_to_string(enum_t value) noexcept;
+std::string __enum_to_string__(enum_t value) noexcept;
 
 template<class char_t, class value_t>
 inline std::basic_string<char_t> __enum_formatter(const std::basic_string<char_t>& format, value_t value, const std::locale& loc) {
@@ -29,7 +29,7 @@ inline std::basic_string<char_t> __enum_formatter(const std::basic_string<char_t
     case 'x':
     case 'X': return __numeric_formatter(fmt, static_cast<long long int>(value), loc);
     case 'g':
-    case 'G': return __enum_to_string(value);
+    case 'G': return __enum_to_string__(value);
     default: xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Invalid format expression");
   }
 }
