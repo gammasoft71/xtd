@@ -449,6 +449,7 @@
 #include "slong.hpp"
 #include "slong_object.hpp"
 #include "span.hpp"
+#include "sprintf.hpp"
 #include "sptr.hpp"
 #include "startup.hpp"
 #include "static.hpp"
