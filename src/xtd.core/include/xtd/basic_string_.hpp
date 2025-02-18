@@ -8,6 +8,7 @@
 #endif
 
 #include "array.hpp"
+//#include "formatter.hpp"
 
 /// @cond
 template<class char_t, class traits_t, class allocator_t>
@@ -354,10 +355,12 @@ inline const xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t
 
 template<class arg_t>
 void __basic_string_extract_format_arg(std::basic_string<char>& fmt, xtd::size& index, std::vector<__format_information<char>>& formats, arg_t&& arg) {
+//void __basic_string_extract_format_arg(xtd::basic_string<char>& fmt, xtd::size& index, std::vector<__format_information<char>>& formats, arg_t&& arg) {
   auto offset = xtd::size {0};
   for (auto& format : formats) {
     format.location += offset;
     if (format.index == index) {
+      //xtd::basic_string<char> arg_str = xtd::formatter<arg_t> {}(arg, format.format, std::locale());
       xtd::basic_string<char> arg_str = xtd::to_string(arg, format.format);
       
       if (!format.alignment.empty()) {
@@ -381,6 +384,7 @@ template<class ...args_t>
 void __basic_string_extract_format_arg(xtd::basic_string<char>& fmt, std::vector<__format_information<char>>& formats, args_t&&... args) {
   auto index = xtd::size {0};
   (__basic_string_extract_format_arg(const_cast<std::basic_string<char>&>(fmt.chars()), index, formats, args), ...);
+  //(__basic_string_extract_format_arg(fmt, index, formats, args), ...);
   unused_(index); // workaround to mute gcc warning: unused-but-set-variable
 }
 

@@ -221,6 +221,8 @@ add_sources(
   include/xtd/format
   include/xtd/format_exception.hpp
   include/xtd/format_exception
+  #include/xtd/formatter.hpp
+  #include/xtd/formatter
   include/xtd/func.hpp
   include/xtd/func
   include/xtd/generic_event_handler.hpp
@@ -423,6 +425,8 @@ add_sources(
   include/xtd/software_termination_exception
   include/xtd/span.hpp
   include/xtd/span
+  include/xtd/sprintf.hpp
+  include/xtd/sprintf
   include/xtd/sptr.hpp
   include/xtd/sptr
   include/xtd/startup.hpp
@@ -800,6 +804,7 @@ add_sources(
   include/xtd/internal/__floating_point_formatter.hpp
   include/xtd/internal/__format_information.hpp
   include/xtd/internal/__format_stringer.hpp
+  #include/xtd/internal/__formatter.hpp
   include/xtd/internal/__hexfloat_formatter.hpp
   include/xtd/internal/__iformatable_formatter.hpp
   include/xtd/internal/__key_value_pair_definition.hpp
