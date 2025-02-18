@@ -201,12 +201,6 @@ add_sources(
   include/xtd/drawing/drawing_2d/radial_gradient_brush
   include/xtd/drawing/drawing_2d/smoothing_mode.hpp
   include/xtd/drawing/drawing_2d/smoothing_mode
-  include/xtd/drawing/drawing2d/hatch_brush.hpp
-  include/xtd/drawing/drawing2d/hatch_style.hpp
-  include/xtd/drawing/drawing2d/linear_gradient_brush.hpp
-  include/xtd/drawing/drawing2d/linear_gradient_mode.hpp
-  include/xtd/drawing/drawing2d/pen_alignment.hpp
-  include/xtd/drawing/drawing2d/pen_type.hpp
   include/xtd/drawing/imaging/bitmap_data.hpp
   include/xtd/drawing/imaging/bitmap_data
   include/xtd/drawing/imaging/color_palette.hpp
