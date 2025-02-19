@@ -188,12 +188,12 @@ if (XTD_BUILD_TESTS)
   add_projects(tests)
 endif ()
 
-if (XTD_BUILD_TOOLS)
-  add_projects(tools)
+if (XTD_ENABLE_EXTRA_PROJECTS)
+  add_projects(themes)
 endif ()
 
-if (XTD_BUILD_LIBRARIES_XTD_FORMS)
-  add_projects(themes)
+if (XTD_BUILD_TOOLS)
+  add_projects(tools)
 endif ()
 
 ################################################################################
