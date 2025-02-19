@@ -59,8 +59,8 @@ void rectangle_f::add(const drawing::size_f& sz) noexcept {
 }
 
 void rectangle_f::add(float width, float height) noexcept {
-  width += width;
-  height += height;
+  this->width += width;
+  this->height += height;
 }
 
 bool rectangle_f::contains(const point_f& pt) const noexcept {
@@ -94,8 +94,8 @@ void rectangle_f::inflate(const drawing::size_f& sz) noexcept {
 void rectangle_f::inflate(float width, float height) noexcept {
   x -= width;
   y -= height;
-  width += 2 * width;
-  height += 2 * height;
+  this->width += 2 * width;
+  this->height += 2 * height;
 }
 
 bool rectangle_f::intersects_with(const rectangle_f& rect) const noexcept {
@@ -133,9 +133,9 @@ void rectangle_f::offset(const point_f& pos) noexcept {
   offset(pos.x, pos.y);
 }
 
-void rectangle_f::offset(float x, float y) noexcept {
-  x += x;
-  y += y;
+void rectangle_f::offset(float dx, float dy) noexcept {
+  x += dx;
+  y += dy;
 }
 
 xtd::string rectangle_f::to_string() const noexcept {
