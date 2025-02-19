@@ -53,7 +53,7 @@ namespace resources_command::properties {
 
     /// @brief Looks up a localized resource of type xtd::forms::sound.
     static const xtd::object& sound() {
-      throw xtd::not_implemented_exception {};
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);
     }
 
     /// @}
