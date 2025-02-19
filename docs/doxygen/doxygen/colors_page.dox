@@ -98,8 +98,8 @@
 ///
 /// Shows xtd::drawing::crayon_colors fields.
 ///
-/// | Name       | Value                                   | ARGB value (in hexa) | Color                                       |
-/// | ---------- | --------------------------------------- | -------------------- | ------------------------------------------- |
+/// | Name       | Value                                   | ARGB value (in hexa) | Color                                      |
+/// | ---------- | --------------------------------------- | -------------------- | ------------------------------------------ |
 /// | Licorice   | xtd::drawing::crayon_colors::licorice   | 0xFF000000           |  @image html crayon_colors_licorice.png    |
 /// | Lead       | xtd::drawing::crayon_colors::lead       | 0xFF191919           |  @image html crayon_colors_lead.png        |
 /// | Tungsten   | xtd::drawing::crayon_colors::tungsten   | 0xFF333333           |  @image html crayon_colors_tungsten.png    |
