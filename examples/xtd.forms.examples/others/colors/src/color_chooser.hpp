@@ -4,7 +4,7 @@
 #include <xtd/drawing/blue_colors>
 #include <xtd/drawing/brown_colors>
 #include <xtd/drawing/colors>
-#include <xtd/drawing/crayons_colors>
+#include <xtd/drawing/crayon_colors>
 #include <xtd/drawing/cyan_colors>
 #include <xtd/drawing/gray_colors>
 #include <xtd/drawing/green_colors>
@@ -32,7 +32,7 @@ namespace colors_example {
         xtd::forms::user_control::on_paint(e);
         e.graphics().fill_rectangle(xtd::drawing::drawing_2d::hatch_brush(xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)), 6, 4, 94, e.clip_rectangle().height - 8);
         e.graphics().fill_rectangle(xtd::drawing::solid_brush(color_), 6, 4, 94, e.clip_rectangle().height - 8);
-        auto name = color_.name().replace("apple_", "").replace("crayons_", "");
+        auto name = color_.name().replace("apple_", "").replace("crayon_", "");
         e.graphics().draw_string(name, font(), xtd::drawing::solid_brush {fore_color()}, 110, (e.clip_rectangle().height - e.graphics().measure_string(name, font()).height) / 2);
       }
       
@@ -60,7 +60,7 @@ namespace colors_example {
         {"Basic - xtd::drawing::basic_colors", &xtd::drawing::basic_colors::get_colors},
         {"Blue - xtd::drawing::blue_colors", &xtd::drawing::blue_colors::get_colors},
         {"Brown - xtd::drawing::brown_colors", &xtd::drawing::brown_colors::get_colors},
-        {"Crayons - xtd::drawing::crayons_colors", &xtd::drawing::crayons_colors::get_colors},
+        {"Crayons - xtd::drawing::crayon_colors", &xtd::drawing::crayon_colors::get_colors},
         {"Cyan - xtd::drawing::cyan_colors", &xtd::drawing::cyan_colors::get_colors},
         {"Gray - xtd::drawing::gray_colors", &xtd::drawing::gray_colors::get_colors},
         {"Green - xtd::drawing::green_colors", &xtd::drawing::green_colors::get_colors},
