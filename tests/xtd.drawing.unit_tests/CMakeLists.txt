@@ -33,6 +33,7 @@ add_sources(
   src/xtd/drawing/tests/color_tests.cpp
   src/xtd/drawing/tests/color_translator_tests.cpp
   src/xtd/drawing/tests/copy_pixel_operation_tests.cpp
+  src/xtd/drawing/tests/crayon_colors_tests.cpp
   src/xtd/drawing/tests/devices_system_images_tests.cpp
   src/xtd/drawing/tests/emblems_system_images_tests.cpp
   src/xtd/drawing/tests/emotes_system_images_tests.cpp
