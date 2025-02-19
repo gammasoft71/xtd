@@ -26,7 +26,7 @@ namespace xtd {
   /// @par Examples
   /// The following example instantiates a The following example instantiates a xtd::time_span object that represents the difference between two dates. It then displays the xtd::time_span object's properties. object that represents the difference between two dates. It then displays the xtd::time_span object's properties.
   /// @include time_span.cpp
-  class time_span : public xtd::object, xtd::iequatable<time_span>, public icomparable<time_span>, public iformatable {
+  class time_span : public xtd::object, public xtd::iequatable<time_span>, public icomparable<time_span>, public iformatable {
   public:
     /// @name Public Fields
 
