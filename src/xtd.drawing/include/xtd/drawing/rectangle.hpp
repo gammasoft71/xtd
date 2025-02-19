@@ -208,9 +208,9 @@ namespace xtd {
       /// @remarks This method adjusts the location of the upper-left corner horizontally by the x-coordinate of the specified point, and vertically by the y-coordinate of the specified point.
       void offset(const point& pos) noexcept;
       /// @brief Adjusts the location of this rectangle by the specified amount.
-      /// @param x The horizontal offset.
-      /// @param y The vertical offset.
-      void offset(int32 x, int32 y) noexcept;
+      /// @param dx The horizontal offset.
+      /// @param dy The vertical offset.
+      void offset(int32 dx, int32 dy) noexcept;
       
       /// @brief Converts the attributes of this xtd::drawing::rectangle to a human-readable string.
       /// @return A string that contains the position, width, and height of this Rectangle structure ¾ for example, {x=20, y=20, width=100, height=50}.

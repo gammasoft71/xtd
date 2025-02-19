@@ -64,8 +64,8 @@ void rectangle::add(const drawing::size& sz) noexcept {
 }
 
 void rectangle::add(int32 width, int32 height) noexcept {
-  width += width;
-  height += height;
+  this->width += width;
+  this->height += height;
 }
 
 bool rectangle::contains(const point& pt) const noexcept {
@@ -77,7 +77,7 @@ bool rectangle::contains(const rectangle& rect) const noexcept {
 }
 
 bool rectangle::contains(int32 x, int32 y) const noexcept {
-  return this->x <= x && x < this->x + this->width && this->y <= y && y < this->y + this->height;
+  return this->x <= x && x < this->x + width && this->y <= y && y < this->y + height;
 }
 
 bool rectangle::equals(const object& obj) const noexcept {
@@ -99,8 +99,8 @@ void rectangle::inflate(const drawing::size& sz) noexcept {
 void rectangle::inflate(int32 width, int32 height) noexcept {
   x -= width;
   y -= height;
-  width += 2 * width;
-  height += 2 * height;
+  this->width += 2 * width;
+  this->height += 2 * height;
 }
 
 bool rectangle::intersects_with(const rectangle& rect) const noexcept {
@@ -138,9 +138,9 @@ void rectangle::offset(const point& pos) noexcept {
   offset(pos.x, pos.y);
 }
 
-void rectangle::offset(int32 x, int32 y) noexcept {
-  x += x;
-  y += y;
+void rectangle::offset(int32 dx, int32 dy) noexcept {
+  x += dx;
+  y += dy;
 }
 
 xtd::string rectangle::to_string() const noexcept {
