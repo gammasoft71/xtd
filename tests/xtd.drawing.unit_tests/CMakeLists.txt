@@ -27,6 +27,7 @@ add_sources(
   src/xtd/drawing/imaging/tests/pixel_format_tests.cpp
   src/xtd/drawing/tests/actions_system_images_tests.cpp
   src/xtd/drawing/tests/animations_system_images_tests.cpp
+  src/xtd/drawing/tests/apple_colors_tests.cpp
   src/xtd/drawing/tests/applications_system_images_tests.cpp
   src/xtd/drawing/tests/categories_system_images_tests.cpp
   src/xtd/drawing/tests/color_tests.cpp
