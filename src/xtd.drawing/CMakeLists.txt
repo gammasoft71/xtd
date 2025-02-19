@@ -46,8 +46,8 @@ add_sources(
   include/xtd/drawing/colors
   include/xtd/drawing/copy_pixel_operation.hpp
   include/xtd/drawing/copy_pixel_operation
-  include/xtd/drawing/crayons_colors.hpp
-  include/xtd/drawing/crayons_colors
+  include/xtd/drawing/crayon_colors.hpp
+  include/xtd/drawing/crayon_colors
   include/xtd/drawing/cyan_colors.hpp
   include/xtd/drawing/cyan_colors
   include/xtd/drawing/devices_system_images.hpp
@@ -254,7 +254,7 @@ add_sources(
   src/xtd/drawing/color_converter.cpp
   src/xtd/drawing/color_translator.cpp
   src/xtd/drawing/colors.cpp
-  src/xtd/drawing/crayons_colors.cpp
+  src/xtd/drawing/crayon_colors.cpp
   src/xtd/drawing/cyan_colors.cpp
   src/xtd/drawing/font.cpp
   src/xtd/drawing/font_family.cpp

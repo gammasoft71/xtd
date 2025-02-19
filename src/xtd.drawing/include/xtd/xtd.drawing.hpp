@@ -64,7 +64,7 @@
 #include "drawing/color_translator.hpp"
 #include "drawing/colors.hpp"
 #include "drawing/copy_pixel_operation.hpp"
-#include "drawing/crayons_colors.hpp"
+#include "drawing/crayon_colors.hpp"
 #include "drawing/cyan_colors.hpp"
 #include "drawing/devices_system_images.hpp"
 #include "drawing/emblems_system_images.hpp"
