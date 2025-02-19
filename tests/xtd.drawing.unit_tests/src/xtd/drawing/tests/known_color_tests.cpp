@@ -926,286 +926,286 @@ namespace xtd::drawing::tests {
       assert::are_equal(known_color::apple_white, enum_object<>::parse<known_color>("apple_white"));
     }
     
-    void test_method_(crayons_licorice) {
-      assert::are_equal(154, enum_object<>::to_int32(known_color::crayons_licorice));
-      assert::are_equal("crayons_licorice", enum_object<>::to_string(known_color::crayons_licorice));
-      assert::are_equal(known_color::crayons_licorice, enum_object<>::parse<known_color>("crayons_licorice"));
+    void test_method_(crayon_licorice) {
+      assert::are_equal(154, enum_object<>::to_int32(known_color::crayon_licorice));
+      assert::are_equal("crayon_licorice", enum_object<>::to_string(known_color::crayon_licorice));
+      assert::are_equal(known_color::crayon_licorice, enum_object<>::parse<known_color>("crayon_licorice"));
     }
     
-    void test_method_(crayons_lead) {
-      assert::are_equal(155, enum_object<>::to_int32(known_color::crayons_lead));
-      assert::are_equal("crayons_lead", enum_object<>::to_string(known_color::crayons_lead));
-      assert::are_equal(known_color::crayons_lead, enum_object<>::parse<known_color>("crayons_lead"));
+    void test_method_(crayon_lead) {
+      assert::are_equal(155, enum_object<>::to_int32(known_color::crayon_lead));
+      assert::are_equal("crayon_lead", enum_object<>::to_string(known_color::crayon_lead));
+      assert::are_equal(known_color::crayon_lead, enum_object<>::parse<known_color>("crayon_lead"));
     }
     
-    void test_method_(crayons_tungsten) {
-      assert::are_equal(156, enum_object<>::to_int32(known_color::crayons_tungsten));
-      assert::are_equal("crayons_tungsten", enum_object<>::to_string(known_color::crayons_tungsten));
-      assert::are_equal(known_color::crayons_tungsten, enum_object<>::parse<known_color>("crayons_tungsten"));
+    void test_method_(crayon_tungsten) {
+      assert::are_equal(156, enum_object<>::to_int32(known_color::crayon_tungsten));
+      assert::are_equal("crayon_tungsten", enum_object<>::to_string(known_color::crayon_tungsten));
+      assert::are_equal(known_color::crayon_tungsten, enum_object<>::parse<known_color>("crayon_tungsten"));
     }
     
-    void test_method_(crayons_iron) {
-      assert::are_equal(157, enum_object<>::to_int32(known_color::crayons_iron));
-      assert::are_equal("crayons_iron", enum_object<>::to_string(known_color::crayons_iron));
-      assert::are_equal(known_color::crayons_iron, enum_object<>::parse<known_color>("crayons_iron"));
+    void test_method_(crayon_iron) {
+      assert::are_equal(157, enum_object<>::to_int32(known_color::crayon_iron));
+      assert::are_equal("crayon_iron", enum_object<>::to_string(known_color::crayon_iron));
+      assert::are_equal(known_color::crayon_iron, enum_object<>::parse<known_color>("crayon_iron"));
     }
     
-    void test_method_(crayons_steel) {
-      assert::are_equal(158, enum_object<>::to_int32(known_color::crayons_steel));
-      assert::are_equal("crayons_steel", enum_object<>::to_string(known_color::crayons_steel));
-      assert::are_equal(known_color::crayons_steel, enum_object<>::parse<known_color>("crayons_steel"));
+    void test_method_(crayon_steel) {
+      assert::are_equal(158, enum_object<>::to_int32(known_color::crayon_steel));
+      assert::are_equal("crayon_steel", enum_object<>::to_string(known_color::crayon_steel));
+      assert::are_equal(known_color::crayon_steel, enum_object<>::parse<known_color>("crayon_steel"));
     }
     
-    void test_method_(crayons_tin) {
-      assert::are_equal(159, enum_object<>::to_int32(known_color::crayons_tin));
-      assert::are_equal("crayons_tin", enum_object<>::to_string(known_color::crayons_tin));
-      assert::are_equal(known_color::crayons_tin, enum_object<>::parse<known_color>("crayons_tin"));
+    void test_method_(crayon_tin) {
+      assert::are_equal(159, enum_object<>::to_int32(known_color::crayon_tin));
+      assert::are_equal("crayon_tin", enum_object<>::to_string(known_color::crayon_tin));
+      assert::are_equal(known_color::crayon_tin, enum_object<>::parse<known_color>("crayon_tin"));
     }
     
-    void test_method_(crayons_nickel) {
-      assert::are_equal(160, enum_object<>::to_int32(known_color::crayons_nickel));
-      assert::are_equal("crayons_nickel", enum_object<>::to_string(known_color::crayons_nickel));
-      assert::are_equal(known_color::crayons_nickel, enum_object<>::parse<known_color>("crayons_nickel"));
+    void test_method_(crayon_nickel) {
+      assert::are_equal(160, enum_object<>::to_int32(known_color::crayon_nickel));
+      assert::are_equal("crayon_nickel", enum_object<>::to_string(known_color::crayon_nickel));
+      assert::are_equal(known_color::crayon_nickel, enum_object<>::parse<known_color>("crayon_nickel"));
     }
     
-    void test_method_(crayons_aluminium) {
-      assert::are_equal(161, enum_object<>::to_int32(known_color::crayons_aluminium));
-      assert::are_equal("crayons_aluminium", enum_object<>::to_string(known_color::crayons_aluminium));
-      assert::are_equal(known_color::crayons_aluminium, enum_object<>::parse<known_color>("crayons_aluminium"));
+    void test_method_(crayon_aluminium) {
+      assert::are_equal(161, enum_object<>::to_int32(known_color::crayon_aluminium));
+      assert::are_equal("crayon_aluminium", enum_object<>::to_string(known_color::crayon_aluminium));
+      assert::are_equal(known_color::crayon_aluminium, enum_object<>::parse<known_color>("crayon_aluminium"));
     }
     
-    void test_method_(crayons_magnesium) {
-      assert::are_equal(162, enum_object<>::to_int32(known_color::crayons_magnesium));
-      assert::are_equal("crayons_magnesium", enum_object<>::to_string(known_color::crayons_magnesium));
-      assert::are_equal(known_color::crayons_magnesium, enum_object<>::parse<known_color>("crayons_magnesium"));
+    void test_method_(crayon_magnesium) {
+      assert::are_equal(162, enum_object<>::to_int32(known_color::crayon_magnesium));
+      assert::are_equal("crayon_magnesium", enum_object<>::to_string(known_color::crayon_magnesium));
+      assert::are_equal(known_color::crayon_magnesium, enum_object<>::parse<known_color>("crayon_magnesium"));
     }
     
-    void test_method_(crayons_silver) {
-      assert::are_equal(163, enum_object<>::to_int32(known_color::crayons_silver));
-      assert::are_equal("crayons_silver", enum_object<>::to_string(known_color::crayons_silver));
-      assert::are_equal(known_color::crayons_silver, enum_object<>::parse<known_color>("crayons_silver"));
+    void test_method_(crayon_silver) {
+      assert::are_equal(163, enum_object<>::to_int32(known_color::crayon_silver));
+      assert::are_equal("crayon_silver", enum_object<>::to_string(known_color::crayon_silver));
+      assert::are_equal(known_color::crayon_silver, enum_object<>::parse<known_color>("crayon_silver"));
     }
     
-    void test_method_(crayons_mercury) {
-      assert::are_equal(164, enum_object<>::to_int32(known_color::crayons_mercury));
-      assert::are_equal("crayons_mercury", enum_object<>::to_string(known_color::crayons_mercury));
-      assert::are_equal(known_color::crayons_mercury, enum_object<>::parse<known_color>("crayons_mercury"));
+    void test_method_(crayon_mercury) {
+      assert::are_equal(164, enum_object<>::to_int32(known_color::crayon_mercury));
+      assert::are_equal("crayon_mercury", enum_object<>::to_string(known_color::crayon_mercury));
+      assert::are_equal(known_color::crayon_mercury, enum_object<>::parse<known_color>("crayon_mercury"));
     }
     
-    void test_method_(crayons_snow) {
-      assert::are_equal(165, enum_object<>::to_int32(known_color::crayons_snow));
-      assert::are_equal("crayons_snow", enum_object<>::to_string(known_color::crayons_snow));
-      assert::are_equal(known_color::crayons_snow, enum_object<>::parse<known_color>("crayons_snow"));
+    void test_method_(crayon_snow) {
+      assert::are_equal(165, enum_object<>::to_int32(known_color::crayon_snow));
+      assert::are_equal("crayon_snow", enum_object<>::to_string(known_color::crayon_snow));
+      assert::are_equal(known_color::crayon_snow, enum_object<>::parse<known_color>("crayon_snow"));
     }
     
-    void test_method_(crayons_cayenne) {
-      assert::are_equal(166, enum_object<>::to_int32(known_color::crayons_cayenne));
-      assert::are_equal("crayons_cayenne", enum_object<>::to_string(known_color::crayons_cayenne));
-      assert::are_equal(known_color::crayons_cayenne, enum_object<>::parse<known_color>("crayons_cayenne"));
+    void test_method_(crayon_cayenne) {
+      assert::are_equal(166, enum_object<>::to_int32(known_color::crayon_cayenne));
+      assert::are_equal("crayon_cayenne", enum_object<>::to_string(known_color::crayon_cayenne));
+      assert::are_equal(known_color::crayon_cayenne, enum_object<>::parse<known_color>("crayon_cayenne"));
     }
     
-    void test_method_(crayons_mocha) {
-      assert::are_equal(167, enum_object<>::to_int32(known_color::crayons_mocha));
-      assert::are_equal("crayons_mocha", enum_object<>::to_string(known_color::crayons_mocha));
-      assert::are_equal(known_color::crayons_mocha, enum_object<>::parse<known_color>("crayons_mocha"));
+    void test_method_(crayon_mocha) {
+      assert::are_equal(167, enum_object<>::to_int32(known_color::crayon_mocha));
+      assert::are_equal("crayon_mocha", enum_object<>::to_string(known_color::crayon_mocha));
+      assert::are_equal(known_color::crayon_mocha, enum_object<>::parse<known_color>("crayon_mocha"));
     }
     
-    void test_method_(crayons_asparagus) {
-      assert::are_equal(168, enum_object<>::to_int32(known_color::crayons_asparagus));
-      assert::are_equal("crayons_asparagus", enum_object<>::to_string(known_color::crayons_asparagus));
-      assert::are_equal(known_color::crayons_asparagus, enum_object<>::parse<known_color>("crayons_asparagus"));
+    void test_method_(crayon_asparagus) {
+      assert::are_equal(168, enum_object<>::to_int32(known_color::crayon_asparagus));
+      assert::are_equal("crayon_asparagus", enum_object<>::to_string(known_color::crayon_asparagus));
+      assert::are_equal(known_color::crayon_asparagus, enum_object<>::parse<known_color>("crayon_asparagus"));
     }
     
-    void test_method_(crayons_fern) {
-      assert::are_equal(169, enum_object<>::to_int32(known_color::crayons_fern));
-      assert::are_equal("crayons_fern", enum_object<>::to_string(known_color::crayons_fern));
-      assert::are_equal(known_color::crayons_fern, enum_object<>::parse<known_color>("crayons_fern"));
+    void test_method_(crayon_fern) {
+      assert::are_equal(169, enum_object<>::to_int32(known_color::crayon_fern));
+      assert::are_equal("crayon_fern", enum_object<>::to_string(known_color::crayon_fern));
+      assert::are_equal(known_color::crayon_fern, enum_object<>::parse<known_color>("crayon_fern"));
     }
     
-    void test_method_(crayons_clover) {
-      assert::are_equal(170, enum_object<>::to_int32(known_color::crayons_clover));
-      assert::are_equal("crayons_clover", enum_object<>::to_string(known_color::crayons_clover));
-      assert::are_equal(known_color::crayons_clover, enum_object<>::parse<known_color>("crayons_clover"));
+    void test_method_(crayon_clover) {
+      assert::are_equal(170, enum_object<>::to_int32(known_color::crayon_clover));
+      assert::are_equal("crayon_clover", enum_object<>::to_string(known_color::crayon_clover));
+      assert::are_equal(known_color::crayon_clover, enum_object<>::parse<known_color>("crayon_clover"));
     }
     
-    void test_method_(crayons_moss) {
-      assert::are_equal(171, enum_object<>::to_int32(known_color::crayons_moss));
-      assert::are_equal("crayons_moss", enum_object<>::to_string(known_color::crayons_moss));
-      assert::are_equal(known_color::crayons_moss, enum_object<>::parse<known_color>("crayons_moss"));
+    void test_method_(crayon_moss) {
+      assert::are_equal(171, enum_object<>::to_int32(known_color::crayon_moss));
+      assert::are_equal("crayon_moss", enum_object<>::to_string(known_color::crayon_moss));
+      assert::are_equal(known_color::crayon_moss, enum_object<>::parse<known_color>("crayon_moss"));
     }
     
-    void test_method_(crayons_teal) {
-      assert::are_equal(172, enum_object<>::to_int32(known_color::crayons_teal));
-      assert::are_equal("crayons_teal", enum_object<>::to_string(known_color::crayons_teal));
-      assert::are_equal(known_color::crayons_teal, enum_object<>::parse<known_color>("crayons_teal"));
+    void test_method_(crayon_teal) {
+      assert::are_equal(172, enum_object<>::to_int32(known_color::crayon_teal));
+      assert::are_equal("crayon_teal", enum_object<>::to_string(known_color::crayon_teal));
+      assert::are_equal(known_color::crayon_teal, enum_object<>::parse<known_color>("crayon_teal"));
     }
     
-    void test_method_(crayons_ocean) {
-      assert::are_equal(173, enum_object<>::to_int32(known_color::crayons_ocean));
-      assert::are_equal("crayons_ocean", enum_object<>::to_string(known_color::crayons_ocean));
-      assert::are_equal(known_color::crayons_ocean, enum_object<>::parse<known_color>("crayons_ocean"));
+    void test_method_(crayon_ocean) {
+      assert::are_equal(173, enum_object<>::to_int32(known_color::crayon_ocean));
+      assert::are_equal("crayon_ocean", enum_object<>::to_string(known_color::crayon_ocean));
+      assert::are_equal(known_color::crayon_ocean, enum_object<>::parse<known_color>("crayon_ocean"));
     }
     
-    void test_method_(crayons_midnight) {
-      assert::are_equal(174, enum_object<>::to_int32(known_color::crayons_midnight));
-      assert::are_equal("crayons_midnight", enum_object<>::to_string(known_color::crayons_midnight));
-      assert::are_equal(known_color::crayons_midnight, enum_object<>::parse<known_color>("crayons_midnight"));
+    void test_method_(crayon_midnight) {
+      assert::are_equal(174, enum_object<>::to_int32(known_color::crayon_midnight));
+      assert::are_equal("crayon_midnight", enum_object<>::to_string(known_color::crayon_midnight));
+      assert::are_equal(known_color::crayon_midnight, enum_object<>::parse<known_color>("crayon_midnight"));
     }
     
-    void test_method_(crayons_eggplant) {
-      assert::are_equal(175, enum_object<>::to_int32(known_color::crayons_eggplant));
-      assert::are_equal("crayons_eggplant", enum_object<>::to_string(known_color::crayons_eggplant));
-      assert::are_equal(known_color::crayons_eggplant, enum_object<>::parse<known_color>("crayons_eggplant"));
+    void test_method_(crayon_eggplant) {
+      assert::are_equal(175, enum_object<>::to_int32(known_color::crayon_eggplant));
+      assert::are_equal("crayon_eggplant", enum_object<>::to_string(known_color::crayon_eggplant));
+      assert::are_equal(known_color::crayon_eggplant, enum_object<>::parse<known_color>("crayon_eggplant"));
     }
     
-    void test_method_(crayons_plum) {
-      assert::are_equal(176, enum_object<>::to_int32(known_color::crayons_plum));
-      assert::are_equal("crayons_plum", enum_object<>::to_string(known_color::crayons_plum));
-      assert::are_equal(known_color::crayons_plum, enum_object<>::parse<known_color>("crayons_plum"));
+    void test_method_(crayon_plum) {
+      assert::are_equal(176, enum_object<>::to_int32(known_color::crayon_plum));
+      assert::are_equal("crayon_plum", enum_object<>::to_string(known_color::crayon_plum));
+      assert::are_equal(known_color::crayon_plum, enum_object<>::parse<known_color>("crayon_plum"));
     }
     
-    void test_method_(crayons_maroon) {
-      assert::are_equal(177, enum_object<>::to_int32(known_color::crayons_maroon));
-      assert::are_equal("crayons_maroon", enum_object<>::to_string(known_color::crayons_maroon));
-      assert::are_equal(known_color::crayons_maroon, enum_object<>::parse<known_color>("crayons_maroon"));
+    void test_method_(crayon_maroon) {
+      assert::are_equal(177, enum_object<>::to_int32(known_color::crayon_maroon));
+      assert::are_equal("crayon_maroon", enum_object<>::to_string(known_color::crayon_maroon));
+      assert::are_equal(known_color::crayon_maroon, enum_object<>::parse<known_color>("crayon_maroon"));
     }
     
-    void test_method_(crayons_tangerine) {
-      assert::are_equal(179, enum_object<>::to_int32(known_color::crayons_tangerine));
-      assert::are_equal("crayons_tangerine", enum_object<>::to_string(known_color::crayons_tangerine));
-      assert::are_equal(known_color::crayons_tangerine, enum_object<>::parse<known_color>("crayons_tangerine"));
+    void test_method_(crayon_tangerine) {
+      assert::are_equal(179, enum_object<>::to_int32(known_color::crayon_tangerine));
+      assert::are_equal("crayon_tangerine", enum_object<>::to_string(known_color::crayon_tangerine));
+      assert::are_equal(known_color::crayon_tangerine, enum_object<>::parse<known_color>("crayon_tangerine"));
     }
     
-    void test_method_(crayons_lemon) {
-      assert::are_equal(180, enum_object<>::to_int32(known_color::crayons_lemon));
-      assert::are_equal("crayons_lemon", enum_object<>::to_string(known_color::crayons_lemon));
-      assert::are_equal(known_color::crayons_lemon, enum_object<>::parse<known_color>("crayons_lemon"));
+    void test_method_(crayon_lemon) {
+      assert::are_equal(180, enum_object<>::to_int32(known_color::crayon_lemon));
+      assert::are_equal("crayon_lemon", enum_object<>::to_string(known_color::crayon_lemon));
+      assert::are_equal(known_color::crayon_lemon, enum_object<>::parse<known_color>("crayon_lemon"));
     }
     
-    void test_method_(crayons_lime) {
-      assert::are_equal(181, enum_object<>::to_int32(known_color::crayons_lime));
-      assert::are_equal("crayons_lime", enum_object<>::to_string(known_color::crayons_lime));
-      assert::are_equal(known_color::crayons_lime, enum_object<>::parse<known_color>("crayons_lime"));
+    void test_method_(crayon_lime) {
+      assert::are_equal(181, enum_object<>::to_int32(known_color::crayon_lime));
+      assert::are_equal("crayon_lime", enum_object<>::to_string(known_color::crayon_lime));
+      assert::are_equal(known_color::crayon_lime, enum_object<>::parse<known_color>("crayon_lime"));
     }
     
-    void test_method_(crayons_spring) {
-      assert::are_equal(182, enum_object<>::to_int32(known_color::crayons_spring));
-      assert::are_equal("crayons_spring", enum_object<>::to_string(known_color::crayons_spring));
-      assert::are_equal(known_color::crayons_spring, enum_object<>::parse<known_color>("crayons_spring"));
+    void test_method_(crayon_spring) {
+      assert::are_equal(182, enum_object<>::to_int32(known_color::crayon_spring));
+      assert::are_equal("crayon_spring", enum_object<>::to_string(known_color::crayon_spring));
+      assert::are_equal(known_color::crayon_spring, enum_object<>::parse<known_color>("crayon_spring"));
     }
     
-    void test_method_(crayons_sea_foam) {
-      assert::are_equal(183, enum_object<>::to_int32(known_color::crayons_sea_foam));
-      assert::are_equal("crayons_sea_foam", enum_object<>::to_string(known_color::crayons_sea_foam));
-      assert::are_equal(known_color::crayons_sea_foam, enum_object<>::parse<known_color>("crayons_sea_foam"));
+    void test_method_(crayon_sea_foam) {
+      assert::are_equal(183, enum_object<>::to_int32(known_color::crayon_sea_foam));
+      assert::are_equal("crayon_sea_foam", enum_object<>::to_string(known_color::crayon_sea_foam));
+      assert::are_equal(known_color::crayon_sea_foam, enum_object<>::parse<known_color>("crayon_sea_foam"));
     }
     
-    void test_method_(crayons_turquoise) {
-      assert::are_equal(184, enum_object<>::to_int32(known_color::crayons_turquoise));
-      assert::are_equal("crayons_turquoise", enum_object<>::to_string(known_color::crayons_turquoise));
-      assert::are_equal(known_color::crayons_turquoise, enum_object<>::parse<known_color>("crayons_turquoise"));
+    void test_method_(crayon_turquoise) {
+      assert::are_equal(184, enum_object<>::to_int32(known_color::crayon_turquoise));
+      assert::are_equal("crayon_turquoise", enum_object<>::to_string(known_color::crayon_turquoise));
+      assert::are_equal(known_color::crayon_turquoise, enum_object<>::parse<known_color>("crayon_turquoise"));
     }
     
-    void test_method_(crayons_aqua) {
-      assert::are_equal(185, enum_object<>::to_int32(known_color::crayons_aqua));
-      assert::are_equal("crayons_aqua", enum_object<>::to_string(known_color::crayons_aqua));
-      assert::are_equal(known_color::crayons_aqua, enum_object<>::parse<known_color>("crayons_aqua"));
+    void test_method_(crayon_aqua) {
+      assert::are_equal(185, enum_object<>::to_int32(known_color::crayon_aqua));
+      assert::are_equal("crayon_aqua", enum_object<>::to_string(known_color::crayon_aqua));
+      assert::are_equal(known_color::crayon_aqua, enum_object<>::parse<known_color>("crayon_aqua"));
     }
     
-    void test_method_(crayons_blueberry) {
-      assert::are_equal(186, enum_object<>::to_int32(known_color::crayons_blueberry));
-      assert::are_equal("crayons_blueberry", enum_object<>::to_string(known_color::crayons_blueberry));
-      assert::are_equal(known_color::crayons_blueberry, enum_object<>::parse<known_color>("crayons_blueberry"));
+    void test_method_(crayon_blueberry) {
+      assert::are_equal(186, enum_object<>::to_int32(known_color::crayon_blueberry));
+      assert::are_equal("crayon_blueberry", enum_object<>::to_string(known_color::crayon_blueberry));
+      assert::are_equal(known_color::crayon_blueberry, enum_object<>::parse<known_color>("crayon_blueberry"));
     }
     
-    void test_method_(crayons_grape) {
-      assert::are_equal(187, enum_object<>::to_int32(known_color::crayons_grape));
-      assert::are_equal("crayons_grape", enum_object<>::to_string(known_color::crayons_grape));
-      assert::are_equal(known_color::crayons_grape, enum_object<>::parse<known_color>("crayons_grape"));
+    void test_method_(crayon_grape) {
+      assert::are_equal(187, enum_object<>::to_int32(known_color::crayon_grape));
+      assert::are_equal("crayon_grape", enum_object<>::to_string(known_color::crayon_grape));
+      assert::are_equal(known_color::crayon_grape, enum_object<>::parse<known_color>("crayon_grape"));
     }
     
-    void test_method_(crayons_magenta) {
-      assert::are_equal(188, enum_object<>::to_int32(known_color::crayons_magenta));
-      assert::are_equal("crayons_magenta", enum_object<>::to_string(known_color::crayons_magenta));
-      assert::are_equal(known_color::crayons_magenta, enum_object<>::parse<known_color>("crayons_magenta"));
+    void test_method_(crayon_magenta) {
+      assert::are_equal(188, enum_object<>::to_int32(known_color::crayon_magenta));
+      assert::are_equal("crayon_magenta", enum_object<>::to_string(known_color::crayon_magenta));
+      assert::are_equal(known_color::crayon_magenta, enum_object<>::parse<known_color>("crayon_magenta"));
     }
     
-    void test_method_(crayons_strawberry) {
-      assert::are_equal(189, enum_object<>::to_int32(known_color::crayons_strawberry));
-      assert::are_equal("crayons_strawberry", enum_object<>::to_string(known_color::crayons_strawberry));
-      assert::are_equal(known_color::crayons_strawberry, enum_object<>::parse<known_color>("crayons_strawberry"));
+    void test_method_(crayon_strawberry) {
+      assert::are_equal(189, enum_object<>::to_int32(known_color::crayon_strawberry));
+      assert::are_equal("crayon_strawberry", enum_object<>::to_string(known_color::crayon_strawberry));
+      assert::are_equal(known_color::crayon_strawberry, enum_object<>::parse<known_color>("crayon_strawberry"));
     }
     
-    void test_method_(crayons_salmon) {
-      assert::are_equal(190, enum_object<>::to_int32(known_color::crayons_salmon));
-      assert::are_equal("crayons_salmon", enum_object<>::to_string(known_color::crayons_salmon));
-      assert::are_equal(known_color::crayons_salmon, enum_object<>::parse<known_color>("crayons_salmon"));
+    void test_method_(crayon_salmon) {
+      assert::are_equal(190, enum_object<>::to_int32(known_color::crayon_salmon));
+      assert::are_equal("crayon_salmon", enum_object<>::to_string(known_color::crayon_salmon));
+      assert::are_equal(known_color::crayon_salmon, enum_object<>::parse<known_color>("crayon_salmon"));
     }
     
-    void test_method_(crayons_cantaloupe) {
-      assert::are_equal(191, enum_object<>::to_int32(known_color::crayons_cantaloupe));
-      assert::are_equal("crayons_cantaloupe", enum_object<>::to_string(known_color::crayons_cantaloupe));
-      assert::are_equal(known_color::crayons_cantaloupe, enum_object<>::parse<known_color>("crayons_cantaloupe"));
+    void test_method_(crayon_cantaloupe) {
+      assert::are_equal(191, enum_object<>::to_int32(known_color::crayon_cantaloupe));
+      assert::are_equal("crayon_cantaloupe", enum_object<>::to_string(known_color::crayon_cantaloupe));
+      assert::are_equal(known_color::crayon_cantaloupe, enum_object<>::parse<known_color>("crayon_cantaloupe"));
     }
     
-    void test_method_(crayons_banana) {
-      assert::are_equal(192, enum_object<>::to_int32(known_color::crayons_banana));
-      assert::are_equal("crayons_banana", enum_object<>::to_string(known_color::crayons_banana));
-      assert::are_equal(known_color::crayons_banana, enum_object<>::parse<known_color>("crayons_banana"));
+    void test_method_(crayon_banana) {
+      assert::are_equal(192, enum_object<>::to_int32(known_color::crayon_banana));
+      assert::are_equal("crayon_banana", enum_object<>::to_string(known_color::crayon_banana));
+      assert::are_equal(known_color::crayon_banana, enum_object<>::parse<known_color>("crayon_banana"));
     }
     
-    void test_method_(crayons_honeydew) {
-      assert::are_equal(193, enum_object<>::to_int32(known_color::crayons_honeydew));
-      assert::are_equal("crayons_honeydew", enum_object<>::to_string(known_color::crayons_honeydew));
-      assert::are_equal(known_color::crayons_honeydew, enum_object<>::parse<known_color>("crayons_honeydew"));
+    void test_method_(crayon_honeydew) {
+      assert::are_equal(193, enum_object<>::to_int32(known_color::crayon_honeydew));
+      assert::are_equal("crayon_honeydew", enum_object<>::to_string(known_color::crayon_honeydew));
+      assert::are_equal(known_color::crayon_honeydew, enum_object<>::parse<known_color>("crayon_honeydew"));
     }
     
-    void test_method_(crayons_flora) {
-      assert::are_equal(194, enum_object<>::to_int32(known_color::crayons_flora));
-      assert::are_equal("crayons_flora", enum_object<>::to_string(known_color::crayons_flora));
-      assert::are_equal(known_color::crayons_flora, enum_object<>::parse<known_color>("crayons_flora"));
+    void test_method_(crayon_flora) {
+      assert::are_equal(194, enum_object<>::to_int32(known_color::crayon_flora));
+      assert::are_equal("crayon_flora", enum_object<>::to_string(known_color::crayon_flora));
+      assert::are_equal(known_color::crayon_flora, enum_object<>::parse<known_color>("crayon_flora"));
     }
     
-    void test_method_(crayons_spindrift) {
-      assert::are_equal(195, enum_object<>::to_int32(known_color::crayons_spindrift));
-      assert::are_equal("crayons_spindrift", enum_object<>::to_string(known_color::crayons_spindrift));
-      assert::are_equal(known_color::crayons_spindrift, enum_object<>::parse<known_color>("crayons_spindrift"));
+    void test_method_(crayon_spindrift) {
+      assert::are_equal(195, enum_object<>::to_int32(known_color::crayon_spindrift));
+      assert::are_equal("crayon_spindrift", enum_object<>::to_string(known_color::crayon_spindrift));
+      assert::are_equal(known_color::crayon_spindrift, enum_object<>::parse<known_color>("crayon_spindrift"));
     }
     
-    void test_method_(crayons_ice) {
-      assert::are_equal(196, enum_object<>::to_int32(known_color::crayons_ice));
-      assert::are_equal("crayons_ice", enum_object<>::to_string(known_color::crayons_ice));
-      assert::are_equal(known_color::crayons_ice, enum_object<>::parse<known_color>("crayons_ice"));
+    void test_method_(crayon_ice) {
+      assert::are_equal(196, enum_object<>::to_int32(known_color::crayon_ice));
+      assert::are_equal("crayon_ice", enum_object<>::to_string(known_color::crayon_ice));
+      assert::are_equal(known_color::crayon_ice, enum_object<>::parse<known_color>("crayon_ice"));
     }
     
-    void test_method_(crayons_sky) {
-      assert::are_equal(197, enum_object<>::to_int32(known_color::crayons_sky));
-      assert::are_equal("crayons_sky", enum_object<>::to_string(known_color::crayons_sky));
-      assert::are_equal(known_color::crayons_sky, enum_object<>::parse<known_color>("crayons_sky"));
+    void test_method_(crayon_sky) {
+      assert::are_equal(197, enum_object<>::to_int32(known_color::crayon_sky));
+      assert::are_equal("crayon_sky", enum_object<>::to_string(known_color::crayon_sky));
+      assert::are_equal(known_color::crayon_sky, enum_object<>::parse<known_color>("crayon_sky"));
     }
     
-    void test_method_(crayons_orchid) {
-      assert::are_equal(198, enum_object<>::to_int32(known_color::crayons_orchid));
-      assert::are_equal("crayons_orchid", enum_object<>::to_string(known_color::crayons_orchid));
-      assert::are_equal(known_color::crayons_orchid, enum_object<>::parse<known_color>("crayons_orchid"));
+    void test_method_(crayon_orchid) {
+      assert::are_equal(198, enum_object<>::to_int32(known_color::crayon_orchid));
+      assert::are_equal("crayon_orchid", enum_object<>::to_string(known_color::crayon_orchid));
+      assert::are_equal(known_color::crayon_orchid, enum_object<>::parse<known_color>("crayon_orchid"));
     }
     
-    void test_method_(crayons_lavendar) {
-      assert::are_equal(199, enum_object<>::to_int32(known_color::crayons_lavendar));
-      assert::are_equal("crayons_lavendar", enum_object<>::to_string(known_color::crayons_lavendar));
-      assert::are_equal(known_color::crayons_lavendar, enum_object<>::parse<known_color>("crayons_lavendar"));
+    void test_method_(crayon_lavendar) {
+      assert::are_equal(199, enum_object<>::to_int32(known_color::crayon_lavendar));
+      assert::are_equal("crayon_lavendar", enum_object<>::to_string(known_color::crayon_lavendar));
+      assert::are_equal(known_color::crayon_lavendar, enum_object<>::parse<known_color>("crayon_lavendar"));
     }
     
-    void test_method_(crayons_bubblegum) {
-      assert::are_equal(200, enum_object<>::to_int32(known_color::crayons_bubblegum));
-      assert::are_equal("crayons_bubblegum", enum_object<>::to_string(known_color::crayons_bubblegum));
-      assert::are_equal(known_color::crayons_bubblegum, enum_object<>::parse<known_color>("crayons_bubblegum"));
+    void test_method_(crayon_bubblegum) {
+      assert::are_equal(200, enum_object<>::to_int32(known_color::crayon_bubblegum));
+      assert::are_equal("crayon_bubblegum", enum_object<>::to_string(known_color::crayon_bubblegum));
+      assert::are_equal(known_color::crayon_bubblegum, enum_object<>::parse<known_color>("crayon_bubblegum"));
     }
     
-    void test_method_(crayons_carnation) {
-      assert::are_equal(201, enum_object<>::to_int32(known_color::crayons_carnation));
-      assert::are_equal("crayons_carnation", enum_object<>::to_string(known_color::crayons_carnation));
-      assert::are_equal(known_color::crayons_carnation, enum_object<>::parse<known_color>("crayons_carnation"));
+    void test_method_(crayon_carnation) {
+      assert::are_equal(201, enum_object<>::to_int32(known_color::crayon_carnation));
+      assert::are_equal("crayon_carnation", enum_object<>::to_string(known_color::crayon_carnation));
+      assert::are_equal(known_color::crayon_carnation, enum_object<>::parse<known_color>("crayon_carnation"));
     }
     
     void test_method_(accent) {
