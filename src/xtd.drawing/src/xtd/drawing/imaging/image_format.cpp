@@ -4,10 +4,10 @@ using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::imaging;
 
-image_format::image_format(const struct guid& guid) noexcept : guid_(guid) {
+image_format::image_format(const class guid& guid) noexcept : guid_(guid) {
 }
 
-const struct guid image_format::guid() const noexcept {
+const class guid image_format::guid() const noexcept {
   return guid_;
 }
 

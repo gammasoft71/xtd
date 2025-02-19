@@ -7,7 +7,7 @@ using namespace xtd::drawing::imaging;
 frame_dimension::frame_dimension(const xtd::guid& guid) noexcept : guid_(guid) {
 }
 
-const struct guid& frame_dimension::guid() const noexcept {
+const class guid& frame_dimension::guid() const noexcept {
   return guid_;
 }
 
