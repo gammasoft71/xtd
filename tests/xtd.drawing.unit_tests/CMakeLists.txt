@@ -30,6 +30,7 @@ add_sources(
   src/xtd/drawing/tests/apple_colors_tests.cpp
   src/xtd/drawing/tests/applications_system_images_tests.cpp
   src/xtd/drawing/tests/basic_colors_tests.cpp
+  src/xtd/drawing/tests/blue_colors_tests.cpp
   src/xtd/drawing/tests/categories_system_images_tests.cpp
   src/xtd/drawing/tests/color_tests.cpp
   src/xtd/drawing/tests/color_translator_tests.cpp
