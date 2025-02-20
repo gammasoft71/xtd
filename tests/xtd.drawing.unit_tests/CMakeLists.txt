@@ -43,6 +43,7 @@ add_sources(
   src/xtd/drawing/tests/emotes_system_images_tests.cpp
   src/xtd/drawing/tests/font_style_tests.cpp
   src/xtd/drawing/tests/graphics_unit_tests.cpp
+  src/xtd/drawing/tests/gray_colors_tests.cpp
   src/xtd/drawing/tests/international_system_images_tests.cpp
   src/xtd/drawing/tests/known_color_tests.cpp
   src/xtd/drawing/tests/mimetypes_system_images_tests.cpp
