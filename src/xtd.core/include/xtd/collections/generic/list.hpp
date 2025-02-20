@@ -1324,7 +1324,7 @@ namespace xtd {
         /// @include generic_list3.cpp
         /// @remarks The elements are copied using xtd::array::copy, which is an O(n) operation, where n is xtd::collections::generic::list::count.
         /// @remarks This method is an O(n) operation, where n is xtd::collections::generic::list::count.
-        virtual xtd::array<value_type> to_array() const noexcept {return xtd::array<value_type>(data(), size());}
+        virtual xtd::array<value_type> to_array() const noexcept {return size() ? xtd::array<value_type>(data(), size()) : xtd::array<value_type> {};}
         
         /// @brief Returns a xtd::string that represents the current object.
         /// @return A string that represents the current object.
