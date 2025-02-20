@@ -316,7 +316,9 @@ void image::destroy(intptr image) {
 
 size_t image::flags(intptr image) {
   /// @todo see how to get flags dimension with wxWidgets.
-  return IFL_NONE;
+  auto result = IFL_NONE;
+  if (reinterpret_cast<wxImage*>(image)->HasAlpha()) result += IFL_HAS_ALPHA;
+  return result;
 }
 
 intptr image::from_hicon(intptr icon) {
