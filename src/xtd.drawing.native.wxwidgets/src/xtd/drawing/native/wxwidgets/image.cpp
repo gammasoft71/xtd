@@ -269,6 +269,7 @@ intptr image::create(int32 width, int32 height) {
   for (int32 y = 0; y < height; y++)
     for (int32 x = 0; x < width; x++)
       result->SetAlpha(x, y, 0);
+  result->SetType(wxBITMAP_TYPE_BMP_RESOURCE);
   return reinterpret_cast<intptr>(result);
 }
 
@@ -280,6 +281,7 @@ intptr image::create(int32 width, int32 height, float horizontal_resolution, flo
   for (int32 y = 0; y < height; y++)
     for (int32 x = 0; x < width; x++)
       result->SetAlpha(x, y, 0);
+  result->SetType(wxBITMAP_TYPE_BMP_RESOURCE);
   return reinterpret_cast<intptr>(result);
 }
 
@@ -291,6 +293,7 @@ intptr image::create(int32 width, int32 height, int32 format) {
   for (int32 y = 0; y < height; y++)
     for (int32 x = 0; x < width; x++)
       result->SetAlpha(x, y, 0);
+  result->SetType(wxBITMAP_TYPE_BMP_RESOURCE);
   return reinterpret_cast<intptr>(result);
 }
 
@@ -302,6 +305,7 @@ intptr image::create(int32 width, int32 height, int32 stride, int32 format, intp
   for (int32 y = 0; y < height; y++)
     for (int32 x = 0; x < width; x++)
       result->SetAlpha(x, y, 0);
+  result->SetType(wxBITMAP_TYPE_BMP_RESOURCE);
   return reinterpret_cast<intptr>(result);
 }
 
@@ -408,7 +412,9 @@ size_t image::raw_format(intptr image) {
 void image::rescale(intptr image, int32 width, int32 height) {
   toolkit::initialize(); // Must be first
   if (image == 0) return;
+  auto backup_type = reinterpret_cast<wxImage*>(image)->GetType();
   reinterpret_cast<wxImage*>(image)->Rescale(width, height, wxIMAGE_QUALITY_HIGH);
+  reinterpret_cast<wxImage*>(image)->SetType(backup_type);
 }
 
 void image::rotate_flip(intptr image, int32 rotate_flip_type) {
