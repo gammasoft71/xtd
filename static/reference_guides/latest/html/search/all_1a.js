@@ -3,7 +3,7 @@ var searchData=
   ['z_0',['z',['../group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970deafbade9e36a3f36d3d676c1b808451dd7',1,'xtd::forms::z'],['../group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2afbade9e36a3f36d3d676c1b808451dd7',1,'xtd::z']]],
   ['zambia_1',['zambia',['../classxtd_1_1forms_1_1countries.html#a38d577567bcebf1d6205b9444c14db44',1,'xtd::forms::countries']]],
   ['zebra_5fface_2',['zebra_face',['../classxtd_1_1forms_1_1emoticons.html#a2c8e0326de1c4ce3d6a65779175cdcbd',1,'xtd::forms::emoticons']]],
-  ['zero_3',['zero',['../structxtd_1_1time__span.html#ad6bcea103b09628f89d2f4b6735b8114',1,'xtd::time_span']]],
+  ['zero_3',['zero',['../classxtd_1_1time__span.html#ad6bcea103b09628f89d2f4b6735b8114',1,'xtd::time_span']]],
   ['zero_5fwidth_5fjoiner_4',['zero_width_joiner',['../classxtd_1_1forms_1_1emoticons.html#a530d086da6dea43b33923d5255957c61',1,'xtd::forms::emoticons']]],
   ['zig_5fzag_5',['zig_zag',['../group__xtd__drawing.html#ggae7711973ea9941238900716fbd331fcca49adcffb23e3d393872f5e5be09529f0',1,'xtd::drawing::drawing_2d']]],
   ['zimbabwe_6',['zimbabwe',['../classxtd_1_1forms_1_1countries.html#aa3c2e7db2f4fb5a76a23dac16c54daab',1,'xtd::forms::countries']]],

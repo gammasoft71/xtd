@@ -6,5 +6,5 @@ var searchData=
   ['gray_5fcolors_3',['gray_colors',['../classxtd_1_1drawing_1_1gray__colors.html',1,'xtd::drawing']]],
   ['green_5fcolors_4',['green_colors',['../classxtd_1_1drawing_1_1green__colors.html',1,'xtd::drawing']]],
   ['group_5fbox_5',['group_box',['../classxtd_1_1forms_1_1group__box.html',1,'xtd::forms']]],
-  ['guid_6',['guid',['../structxtd_1_1guid.html',1,'xtd']]]
+  ['guid_6',['guid',['../classxtd_1_1guid.html',1,'xtd']]]
 ];

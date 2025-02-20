@@ -122,7 +122,7 @@ Inheritance diagram for xtd::date_time:</div>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value type represents dates and times with values ranging from 00:00:00 (midnight), January 1, 0001 Anno Domini (Common Era) through 11:59:59 P.M., December 31, 9999 A.D. (C.E.) in the Gregorian calendar. </dd>
 <dd>
 Time values are measured in 100-nanosecond units called ticks. A particular date is the number of ticks since 12:00 midnight, January 1, 0001 A.D. (C.E.) in the GregorianCalendar calendar. The number excludes ticks that would be added by leap seconds. For example, a ticks value of 31241376000000000L represents the date Friday, January 01, 0100 12:00:00 midnight. A <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value is always expressed in the context of an explicit or default calendar. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>If you are working with a ticks value that you want to convert to some other time interval, such as minutes or seconds, you should use the <a class="el" href="structxtd_1_1time__span.html#a5f60382ee3e9d245638ee2cdb14eca60" title="Represents the number of ticks in 1 day. This field is constant.">xtd::time_span::ticks_per_day</a>, <a class="el" href="structxtd_1_1time__span.html#a87871472d7a6e0cb621df7dfc7b48f59" title="Represents the number of ticks in 1 hour. This field is constant.">xtd::time_span::ticks_per_hour</a>, <a class="el" href="structxtd_1_1time__span.html#ab31aadb6b90479ea0b1b405e1c34f3dd" title="Represents the number of ticks in 1 minute. This field is constant.">xtd::time_span::ticks_per_minute</a>, <a class="el" href="structxtd_1_1time__span.html#a0cdccee1108abbaf4edc6a4bed5b6072" title="Represents the number of ticks in 1 second.">xtd::time_span::ticks_per_second</a>, or <a class="el" href="structxtd_1_1time__span.html#ad29c8b8563609bdf0d15badbf0ca707a" title="Represents the number of ticks in 1 millisecond. This field is constant.">xtd::time_span::ticks_per_millisecond</a> constant to perform the conversion. For example, to add the number of seconds represented by a specified number of ticks to the <a class="el" href="classxtd_1_1date__time.html#ae084c4d68a46500b8e64f4aec4869a15" title="Gets the seconds component of the date represented by this instance.">xtd::date_time::second</a> component of a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value, you can use the expression date_value.second() + n_ticks/timespan.ticks_per_second. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>If you are working with a ticks value that you want to convert to some other time interval, such as minutes or seconds, you should use the <a class="el" href="classxtd_1_1time__span.html#a5f60382ee3e9d245638ee2cdb14eca60" title="Represents the number of ticks in 1 day. This field is constant.">xtd::time_span::ticks_per_day</a>, <a class="el" href="classxtd_1_1time__span.html#a87871472d7a6e0cb621df7dfc7b48f59" title="Represents the number of ticks in 1 hour. This field is constant.">xtd::time_span::ticks_per_hour</a>, <a class="el" href="classxtd_1_1time__span.html#ab31aadb6b90479ea0b1b405e1c34f3dd" title="Represents the number of ticks in 1 minute. This field is constant.">xtd::time_span::ticks_per_minute</a>, <a class="el" href="classxtd_1_1time__span.html#a0cdccee1108abbaf4edc6a4bed5b6072" title="Represents the number of ticks in 1 second.">xtd::time_span::ticks_per_second</a>, or <a class="el" href="classxtd_1_1time__span.html#ad29c8b8563609bdf0d15badbf0ca707a" title="Represents the number of ticks in 1 millisecond. This field is constant.">xtd::time_span::ticks_per_millisecond</a> constant to perform the conversion. For example, to add the number of seconds represented by a specified number of ticks to the <a class="el" href="classxtd_1_1date__time.html#ae084c4d68a46500b8e64f4aec4869a15" title="Gets the seconds component of the date represented by this instance.">xtd::date_time::second</a> component of a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value, you can use the expression date_value.second() + n_ticks/timespan.ticks_per_second. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>For more information about types, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types">Native types, boxing and unboxing</a>. For example, a ticks value of 31241376000000000LL represents the date, Friday, January 01, 0100 12:00:00 midnight. A <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value is always expressed in the context of an explicit or default calendar. </dd></dl>
 <dl class="section user"><dt>Instantiating a xtd::date_time object</dt><dd>You can create a new xtd::dateTime value in any of the following ways:<ul>
 <li>By calling any of the overloads of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> constructor that allow you to specify specific elements of the date and time value (such as the year, month, and day, or the number of ticks). The following statement illustrates a call to one of the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> constructors to create a date with a specific year, month, day, hour, minute, and second. <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1date__time.html">xtd::date_time</a> date1(2008, 5, 1, 8, 30, 52);</div>
@@ -312,7 +312,7 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <tr class="memitem:a66cc71e8775a6f7a4d43c9ef6f0f1407"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaf6b556b49d28b448fc2c5af1d820f3ea">xtd::ticks</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a66cc71e8775a6f7a4d43c9ef6f0f1407">ticks_duration</a> () const noexcept</td></tr>
 <tr class="memdesc:a66cc71e8775a6f7a4d43c9ef6f0f1407"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of ticks that represent the date and time of this instance.  <br /></td></tr>
 <tr class="separator:a66cc71e8775a6f7a4d43c9ef6f0f1407"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab19867a4850ebd33ba52908050eb3df7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1time__span.html">xtd::time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#ab19867a4850ebd33ba52908050eb3df7">time_of_day</a> () const noexcept</td></tr>
+<tr class="memitem:ab19867a4850ebd33ba52908050eb3df7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#ab19867a4850ebd33ba52908050eb3df7">time_of_day</a> () const noexcept</td></tr>
 <tr class="memdesc:ab19867a4850ebd33ba52908050eb3df7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the time of day for this instance.  <br /></td></tr>
 <tr class="separator:ab19867a4850ebd33ba52908050eb3df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f66207e64a3cdc030e9a3d98fc0c416"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a9f66207e64a3cdc030e9a3d98fc0c416">year</a> () const noexcept</td></tr>
@@ -320,8 +320,8 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <tr class="separator:a9f66207e64a3cdc030e9a3d98fc0c416"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a6f0a5355543e1aed529a2a78bf6c630b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a6f0a5355543e1aed529a2a78bf6c630b">add</a> (const <a class="el" href="structxtd_1_1time__span.html">xtd::time_span</a> &amp;value) const</td></tr>
-<tr class="memdesc:a6f0a5355543e1aed529a2a78bf6c630b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> that adds the value of the specified <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> to the value of this instance.  <br /></td></tr>
+<tr class="memitem:a6f0a5355543e1aed529a2a78bf6c630b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a6f0a5355543e1aed529a2a78bf6c630b">add</a> (const <a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a> &amp;value) const</td></tr>
+<tr class="memdesc:a6f0a5355543e1aed529a2a78bf6c630b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> that adds the value of the specified <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> to the value of this instance.  <br /></td></tr>
 <tr class="separator:a6f0a5355543e1aed529a2a78bf6c630b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7644578aa80da95945aad6a09baeb8ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a7644578aa80da95945aad6a09baeb8ff">add_days</a> (double value) const</td></tr>
 <tr class="memdesc:a7644578aa80da95945aad6a09baeb8ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> that adds the specified number of days to the value of this instance.  <br /></td></tr>
@@ -365,10 +365,10 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <tr class="memitem:a9b7de2ae41f4ce6978a50d5253f0faca"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a9b7de2ae41f4ce6978a50d5253f0faca">is_daylight_saving_time</a> () const noexcept</td></tr>
 <tr class="memdesc:a9b7de2ae41f4ce6978a50d5253f0faca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether this instance of <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> is within the daylight saving time range for the current time zone.  <br /></td></tr>
 <tr class="separator:a9b7de2ae41f4ce6978a50d5253f0faca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf1f38f9b51733e38b5db3b5dfde6bb6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1time__span.html">xtd::time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#aaf1f38f9b51733e38b5db3b5dfde6bb6">subtract</a> (const <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;value) const</td></tr>
-<tr class="memdesc:aaf1f38f9b51733e38b5db3b5dfde6bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> that subtracts the specified date and time from the value of this instance.  <br /></td></tr>
+<tr class="memitem:aaf1f38f9b51733e38b5db3b5dfde6bb6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#aaf1f38f9b51733e38b5db3b5dfde6bb6">subtract</a> (const <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;value) const</td></tr>
+<tr class="memdesc:aaf1f38f9b51733e38b5db3b5dfde6bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> that subtracts the specified date and time from the value of this instance.  <br /></td></tr>
 <tr class="separator:aaf1f38f9b51733e38b5db3b5dfde6bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6eb3392873b888c4bf3bb888daad422f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a6eb3392873b888c4bf3bb888daad422f">subtract</a> (const <a class="el" href="structxtd_1_1time__span.html">xtd::time_span</a> &amp;value) const</td></tr>
+<tr class="memitem:a6eb3392873b888c4bf3bb888daad422f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a6eb3392873b888c4bf3bb888daad422f">subtract</a> (const <a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a> &amp;value) const</td></tr>
 <tr class="memdesc:a6eb3392873b888c4bf3bb888daad422f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> that subtracts the specified duration from the value of this instance.  <br /></td></tr>
 <tr class="separator:a6eb3392873b888c4bf3bb888daad422f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6276ed849123dd222df49d7ad139dac3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a6276ed849123dd222df49d7ad139dac3">to_binary</a> () const</td></tr>
@@ -439,11 +439,11 @@ Time values are measured in 100-nanosecond units called ticks. A particular date
 <tr class="memitem:a875d363bfeabbaa68bd3108b7574a5ee"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a875d363bfeabbaa68bd3108b7574a5ee">from_file_time_utc</a> (<a class="el" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> file_time)</td></tr>
 <tr class="memdesc:a875d363bfeabbaa68bd3108b7574a5ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the specified Windows file time to an equivalent UTC time.  <br /></td></tr>
 <tr class="separator:a875d363bfeabbaa68bd3108b7574a5ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5867aa1ef11f34cb16938c9bed583bbc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a5867aa1ef11f34cb16938c9bed583bbc">from_duration</a> (const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;value)</td></tr>
-<tr class="memdesc:a5867aa1ef11f34cb16938c9bed583bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the specified <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> to an equivalent unspecified time.  <br /></td></tr>
+<tr class="memitem:a5867aa1ef11f34cb16938c9bed583bbc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a5867aa1ef11f34cb16938c9bed583bbc">from_duration</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;value)</td></tr>
+<tr class="memdesc:a5867aa1ef11f34cb16938c9bed583bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the specified <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> to an equivalent unspecified time.  <br /></td></tr>
 <tr class="separator:a5867aa1ef11f34cb16938c9bed583bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1a484104eadfe3430ef50219c504b38"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#ae1a484104eadfe3430ef50219c504b38">from_duration</a> (const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;value, <a class="el" href="group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea">date_time_kind</a> <a class="el" href="classxtd_1_1date__time.html#ac49ab9e61e6b546f483de527819a840f">kind</a>)</td></tr>
-<tr class="memdesc:ae1a484104eadfe3430ef50219c504b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the specified <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> to an equivalent to Coordinated Universal Time (UTC) or local time..  <br /></td></tr>
+<tr class="memitem:ae1a484104eadfe3430ef50219c504b38"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#ae1a484104eadfe3430ef50219c504b38">from_duration</a> (const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;value, <a class="el" href="group__xtd__core.html#ga03b78d9831d31a0a2ea100078219f2ea">date_time_kind</a> <a class="el" href="classxtd_1_1date__time.html#ac49ab9e61e6b546f483de527819a840f">kind</a>)</td></tr>
+<tr class="memdesc:ae1a484104eadfe3430ef50219c504b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the specified <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> to an equivalent to Coordinated Universal Time (UTC) or local time..  <br /></td></tr>
 <tr class="separator:ae1a484104eadfe3430ef50219c504b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89e21c8c8d41be8a10d90d3155fb4902"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1date__time.html">date_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1date__time.html#a89e21c8c8d41be8a10d90d3155fb4902">from_time_t</a> (std::time_t value)</td></tr>
 <tr class="memdesc:a89e21c8c8d41be8a10d90d3155fb4902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the specified <a href="https://en.cppreference.com/w/cpp/chrono/c/time_t">std::time_t</a> to an equivalent unspecified time.  <br /></td></tr>
@@ -1978,7 +1978,7 @@ You can also display the millisecond component together with the other component
 <div class="line">    <span class="keyword">auto</span> current_date = date_time::now();</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> elapsed_ticks = current_date.ticks() - century_begin.ticks();</div>
-<div class="line">    <span class="keyword">auto</span> elapsed_span = <a class="code hl_struct" href="structxtd_1_1time__span.html">time_span</a> {elapsed_ticks};</div>
+<div class="line">    <span class="keyword">auto</span> elapsed_span = <a class="code hl_class" href="classxtd_1_1time__span.html">time_span</a> {elapsed_ticks};</div>
 <div class="line"> </div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Elapsed from the beginning of the century to {:f}:&quot;</span>, current_date);</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;   {:N0} nanoseconds&quot;</span>, elapsed_ticks * 100);</div>
@@ -2000,7 +2000,7 @@ You can also display the millisecond component together with the other component
 <div class="line"><span class="comment">//    713918776.07 seconds</span></div>
 <div class="line"><span class="comment">//    11898646.27 minutes</span></div>
 <div class="line"><span class="comment">//    8262 days, 22 hours, 46 minutes, 16 seconds</span></div>
-<div class="ttc" id="astructxtd_1_1time__span_html"><div class="ttname"><a href="structxtd_1_1time__span.html">xtd::time_span</a></div><div class="ttdoc">Represents a time interval.</div><div class="ttdef"><b>Definition</b> time_span.hpp:29</div></div>
+<div class="ttc" id="aclassxtd_1_1time__span_html"><div class="ttname"><a href="classxtd_1_1time__span.html">xtd::time_span</a></div><div class="ttdoc">Represents a time interval.</div><div class="ttdef"><b>Definition</b> time_span.hpp:29</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="date_time_ticks_8cpp-example.html#a1">date_time_ticks.cpp</a>.</dd>
 </dl>
@@ -2046,7 +2046,7 @@ You can also display the millisecond component together with the other component
 <div class="line">    <span class="keyword">auto</span> current_date = date_time::now();</div>
 <div class="line">    </div>
 <div class="line">    <span class="keyword">auto</span> elapsed_ticks = current_date.ticks() - century_begin.ticks();</div>
-<div class="line">    <span class="keyword">auto</span> elapsed_span = <a class="code hl_struct" href="structxtd_1_1time__span.html">time_span</a> {elapsed_ticks};</div>
+<div class="line">    <span class="keyword">auto</span> elapsed_span = <a class="code hl_class" href="classxtd_1_1time__span.html">time_span</a> {elapsed_ticks};</div>
 <div class="line"> </div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;Elapsed from the beginning of the century to {:f}:&quot;</span>, current_date);</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;   {:N0} nanoseconds&quot;</span>, elapsed_ticks * 100);</div>
@@ -2082,7 +2082,7 @@ You can also display the millisecond component together with the other component
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1time__span.html">xtd::time_span</a> xtd::date_time::time_of_day </td>
+          <td class="memname"><a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a> xtd::date_time::time_of_day </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -2128,7 +2128,7 @@ You can also display the millisecond component together with the other component
 <div class="line"><span class="comment">// 1/12/2022</span></div>
 <div class="line"><span class="comment">// Wed Jan 12 00:00:00 2022</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Unlike the <a class="el" href="classxtd_1_1date__time.html#a2b6f82824acbcb499acc6c6b62959644" title="Gets the date component of this instance.">xtd::date_time::date</a> property. which returns a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value that represents a date without its time component, the <a class="el" href="classxtd_1_1date__time.html#ab19867a4850ebd33ba52908050eb3df7" title="Gets the time of day for this instance.">xtd::date_time::time_of_day</a> property returns a <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> value that represents a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value's time component. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>Unlike the <a class="el" href="classxtd_1_1date__time.html#a2b6f82824acbcb499acc6c6b62959644" title="Gets the date component of this instance.">xtd::date_time::date</a> property. which returns a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value that represents a date without its time component, the <a class="el" href="classxtd_1_1date__time.html#ab19867a4850ebd33ba52908050eb3df7" title="Gets the time of day for this instance.">xtd::date_time::time_of_day</a> property returns a <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> value that represents a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value's time component. </dd>
 <dd>
 If you want to display the time of day or retrieve the string representation of the time of day of a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value, you can instead call an overload of the ToString method that has a format parameter or use the composite formatting feature with the "t" or "T" standard format string. </dd></dl>
 
@@ -2194,14 +2194,14 @@ If you want to display the time of day or retrieve the string representation of 
         <tr>
           <td class="memname"><a class="el" href="classxtd_1_1date__time.html">date_time</a> xtd::date_time::add </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1time__span.html">xtd::time_span</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a> &amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns a new <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> that adds the value of the specified <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> to the value of this instance. </p>
+<p>Returns a new <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> that adds the value of the specified <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> to the value of this instance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>A positive or negative time interval. </td></tr>
@@ -2902,7 +2902,7 @@ If the current <a class="el" href="classxtd_1_1date__time.html" title="Represent
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1time__span.html">xtd::time_span</a> xtd::date_time::subtract </td>
+          <td class="memname"><a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a> xtd::date_time::subtract </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1date__time.html">date_time</a> &amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
@@ -2911,7 +2911,7 @@ If the current <a class="el" href="classxtd_1_1date__time.html" title="Represent
       </table>
 </div><div class="memdoc">
 
-<p>Returns a new <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> that subtracts the specified date and time from the value of this instance. </p>
+<p>Returns a new <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> that subtracts the specified date and time from the value of this instance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>The date and time value to subtract. </td></tr>
@@ -2972,7 +2972,7 @@ If the current <a class="el" href="classxtd_1_1date__time.html" title="Represent
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The xtd::date_time::subtract(const xtd::date_time&amp;) method determines the difference between two dates. To subtract a time interval from the current instance, call the xtd::date_time::subtract(xtd::time_span) method. To subtract a particular time interval from the current instance, call the method that adds that time interval to the current date, and supply a negative value as the method argument. For example, to subtract two months from the current date, call the <a class="el" href="classxtd_1_1date__time.html#af5a016ff11f734c6e9642d0ba39de885" title="Returns a new xtd::date_time that adds the specified number of months to the value of this instance.">xtd::date_time::add_months</a> method with a value of -2. </dd>
 <dd>
-If the date and time of the current instance is earlier than value, the method returns a <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object that represents a negative time span. That is, the value of all of its non-zero properties (such as xtd::date_time::days or <a class="el" href="classxtd_1_1date__time.html#a1aba401d57acd3b150c6ac29609025be" title="Gets the number of ticks that represent the date and time of this instance.">xtd::date_time::ticks</a>) is negative. </dd>
+If the date and time of the current instance is earlier than value, the method returns a <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object that represents a negative time span. That is, the value of all of its non-zero properties (such as xtd::date_time::days or <a class="el" href="classxtd_1_1date__time.html#a1aba401d57acd3b150c6ac29609025be" title="Gets the number of ticks that represent the date and time of this instance.">xtd::date_time::ticks</a>) is negative. </dd>
 <dd>
 The xtd::date_time::subtract(const xtd::date_time&amp;) method does not consider the value of the <a class="el" href="classxtd_1_1date__time.html#ac49ab9e61e6b546f483de527819a840f" title="Gets a value that indicates whether the time represented by this instance is based on local time,...">xtd::date_time::kind</a> property of the two <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> values when performing the subtraction. Before subtracting <a class="el" href="classxtd_1_1date__time.html#a9af33e7a4b6e3f10f19133e026c1bc0e" title="Initializes a new instance of the xtd::date_time structure.">xtd::date_time::date_time</a> objects, ensure that the objects represent times in the same time zone. Otherwise, the result will include the difference between time zones. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The xtd::date_time_offset::subtract(const xtd::date_time_offset&amp;) method does consider the difference between time zones when performing the subtraction. </dd></dl>
@@ -2988,7 +2988,7 @@ The xtd::date_time::subtract(const xtd::date_time&amp;) method does not consider
         <tr>
           <td class="memname"><a class="el" href="classxtd_1_1date__time.html">date_time</a> xtd::date_time::subtract </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1time__span.html">xtd::time_span</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a> &amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -3058,7 +3058,7 @@ The xtd::date_time::subtract(const xtd::date_time&amp;) method does not consider
 <dd>
 This method does not change the value of this <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a>. Instead, it returns a new <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> whose value is the result of this operation. </dd>
 <dd>
-Ordinarily, the xtd::date_time::subtract(xtd::time_span) method subtracts a <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object that represents a positive time span and returns a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value that is earlier than the date and time of the current instance. However, if the <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object represents a negative time span, the xtd::date_time::subtract(xtd::time_span) method returns a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value that is later than the date and time of the current instance. </dd>
+Ordinarily, the xtd::date_time::subtract(xtd::time_span) method subtracts a <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object that represents a positive time span and returns a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value that is earlier than the date and time of the current instance. However, if the <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object represents a negative time span, the xtd::date_time::subtract(xtd::time_span) method returns a <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> value that is later than the date and time of the current instance. </dd>
 <dd>
 The xtd::date_time::subtract(xtd::time_span) method allows you to subtract a time interval that consists of more than one unit of time (such as a given number of hours and a given number of minutes). To subtract a single unit of time (such as years, months, or days) from the <a class="el" href="classxtd_1_1date__time.html" title="Represents an instant in time, typically expressed as a date and time of day.">xtd::date_time</a> instance, you can pass a negative numeric value as a parameter to any of the following methods:<ul>
 <li><a class="el" href="classxtd_1_1date__time.html#a503546326baaf6b2d0a0cb678a949836" title="Returns a new xtd::date_time that adds the specified number of years to the value of this instance.">xtd::date_time::add_years</a>, to subtract a specific number of years from the current date and time instance.</li>
@@ -4777,7 +4777,7 @@ The return value is a <a class="el" href="classxtd_1_1date__time.html" title="Re
         <tr>
           <td class="memname">static <a class="el" href="classxtd_1_1date__time.html">date_time</a> xtd::date_time::from_duration </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
@@ -4789,7 +4789,7 @@ The return value is a <a class="el" href="classxtd_1_1date__time.html" title="Re
 </table>
 </div><div class="memdoc">
 
-<p>Converts the specified <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> to an equivalent unspecified time. </p>
+<p>Converts the specified <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> to an equivalent unspecified time. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>A time interval from the start of the Clock's epoch. </td></tr>
@@ -4818,7 +4818,7 @@ The return value is a <a class="el" href="classxtd_1_1date__time.html" title="Re
         <tr>
           <td class="memname">static <a class="el" href="classxtd_1_1date__time.html">date_time</a> xtd::date_time::from_duration </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structxtd_1_1time__span.html">time_span</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;&#160;</td>
           <td class="paramname"><em>value</em>, </td>
         </tr>
         <tr>
@@ -4840,7 +4840,7 @@ The return value is a <a class="el" href="classxtd_1_1date__time.html" title="Re
 </table>
 </div><div class="memdoc">
 
-<p>Converts the specified <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> to an equivalent to Coordinated Universal Time (UTC) or local time.. </p>
+<p>Converts the specified <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> to an equivalent to Coordinated Universal Time (UTC) or local time.. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>A time interval from the start of the Clock's epoch. </td></tr>
@@ -5797,7 +5797,7 @@ See <a href="https://en.cppreference.com/w/cpp/io/manip/put_time">std::put_time<
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 15 2025 21:41:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Feb 19 2025 21:10:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
