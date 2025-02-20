@@ -418,8 +418,7 @@ namespace xtd {
     /// @brief Copies the contents of this span into a new array.
     /// @return An array containing the data in the current span.
     xtd::array<value_type> to_array() const noexcept {
-      if (data_ == null || length_ == 0) return xtd::array<type_t> {};
-      return xtd::array<value_type> {data_, length_};
+      return data_ && length_ ? xtd::array<value_type>(data_, length_) : xtd::array<value_type> {};
     }
     
     /// @brief Returns the string representation of this xtd::span <type_t> object.
@@ -441,7 +440,7 @@ namespace xtd {
         destination.at(index) = at(index);
       return true;
     }
-    /// @}
+    /// @}000,0,,0,0
     
     /// @name Public Operators
     

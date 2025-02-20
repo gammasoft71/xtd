@@ -82,8 +82,7 @@ void memory_stream::set_length(size value) {
 }
 
 array<byte> memory_stream::to_array() const {
-  if (data_->static_buffer) return *data_->static_buffer;
-  return data_->dynamic_buffer.to_array();
+  return data_->static_buffer? *data_->static_buffer : data_->dynamic_buffer.to_array();
 }
 
 void memory_stream::write(const array<byte>& buffer, size offset, size count) {

@@ -430,7 +430,7 @@ namespace xtd {
         /// @brief Gets an array with the elements of the container.
         /// @return The array that contains elements of the container.
         xtd::array<type_t> to_array() const noexcept {
-          return xtd::array<type_t> {collection_.data(), collection_.size()};
+          return collection_.size() ? xtd::array<type_t>(collection_.data(), collection_.size()) : xtd::array<type_t> {};
         }
         
         /// @brief Gets an array with the elements of the container.
