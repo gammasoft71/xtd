@@ -393,7 +393,10 @@ void image::physical_dimension(intptr image, int32& width, int32& height) {
 size_t image::pixel_format(intptr image) {
   /// @todo see how to get pixel format with wxWidgets.
   size_t result = 0; // pixel_format::dont_care
+  result += 0x00200000; // pixel_format::canonical
+  result += 0x00020000; // pixel_format::gdi
   if (reinterpret_cast<wxImage*>(image)->HasAlpha()) result += 0x00040000; // pixel_format::alpha
+  result += 0x0000200A; // 32 bits per pixel
   return result;
 }
 
