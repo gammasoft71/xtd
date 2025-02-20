@@ -35,6 +35,7 @@ add_sources(
   src/xtd/drawing/tests/categories_system_images_tests.cpp
   src/xtd/drawing/tests/color_tests.cpp
   src/xtd/drawing/tests/color_translator_tests.cpp
+  src/xtd/drawing/tests/colors_tests.cpp
   src/xtd/drawing/tests/copy_pixel_operation_tests.cpp
   src/xtd/drawing/tests/crayon_colors_tests.cpp
   src/xtd/drawing/tests/cyan_colors_tests.cpp
@@ -44,18 +45,25 @@ add_sources(
   src/xtd/drawing/tests/font_style_tests.cpp
   src/xtd/drawing/tests/graphics_unit_tests.cpp
   src/xtd/drawing/tests/gray_colors_tests.cpp
+  src/xtd/drawing/tests/green_colors_tests.cpp
   src/xtd/drawing/tests/international_system_images_tests.cpp
   src/xtd/drawing/tests/known_color_tests.cpp
   src/xtd/drawing/tests/mimetypes_system_images_tests.cpp
+  src/xtd/drawing/tests/orange_colors_tests.cpp
+  src/xtd/drawing/tests/pink_colors_tests.cpp
   src/xtd/drawing/tests/places_system_images_tests.cpp
   src/xtd/drawing/tests/point_tests.cpp
+  src/xtd/drawing/tests/purple_colors_tests.cpp
+  src/xtd/drawing/tests/red_colors_tests.cpp
   src/xtd/drawing/tests/rotate_flip_type_tests.cpp
   src/xtd/drawing/tests/size_tests.cpp
   src/xtd/drawing/tests/status_system_images_tests.cpp
   src/xtd/drawing/tests/string_alignment_tests.cpp
   src/xtd/drawing/tests/string_format_flags_tests.cpp
   src/xtd/drawing/tests/string_trimming_tests.cpp
+  src/xtd/drawing/tests/white_colors_tests.cpp
   src/xtd/drawing/tests/xtd_system_images_tests.cpp
+  src/xtd/drawing/tests/yellow_colors_tests.cpp
   src/xtd/drawing/text/tests/generic_font_families_tests.cpp
   src/xtd/drawing/text/tests/hotkey_prefix_tests.cpp
   src/xtd/drawing/text/tests/text_rendering_hint_tests.cpp
