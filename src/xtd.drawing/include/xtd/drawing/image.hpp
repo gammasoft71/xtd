@@ -129,12 +129,12 @@ namespace xtd {
       /// @brief Gets IDs of the property items stored in this image.
       /// @return An array of the property IDs, one for each property item stored in this image.
       /// @remarks If the image has no property items or if the image format does not support property items, the property_id_list property returns an empty array (that is, an array of length zero).
-      const std::vector<int32>& property_id_list() const noexcept;
+      const xtd::array<int32>& property_id_list() const noexcept;
       
       /// @brief Gets all the property items (pieces of metadata) stored in this image.
       /// @return An array of xtd::drawing::imaging::property_item objects, one for each property item stored in the image.
       /// @remarks IIf the image has no property items or if the image format does not support property items, property_items returns an empty array (that is, an array of length zero).
-      const std::vector<imaging::property_item>& property_items() const noexcept;
+      const xtd::array<imaging::property_item>& property_items() const noexcept;
       
       /// @brief Gets the file format of this image.
       /// @return The image_format that represents the file format of this image.
@@ -212,7 +212,7 @@ namespace xtd {
       /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
       /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
       /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the xtd::drawing::imaging::frame_dimension.
-      size_t get_frame_count(const xtd::drawing::imaging::frame_dimension& dimension) const;
+      xtd::size get_frame_count(const xtd::drawing::imaging::frame_dimension& dimension) const;
 
       /// @brief Serves as a hash function for a particular type.
       /// @return A hash code for the current object.

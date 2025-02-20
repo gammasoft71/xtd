@@ -51,8 +51,8 @@ struct image::data {
   imaging::color_palette palette_;
   imaging::pixel_format pixel_format_ = imaging::pixel_format::undefined;
   size_f physical_dimension_;
-  std::vector<int32> property_id_list_;
-  std::vector<imaging::property_item> property_items_;
+  xtd::array<int32> property_id_list_;
+  xtd::array<imaging::property_item> property_items_;
   imaging::image_format raw_format_;
   drawing::size size_;
   std::any tag_;
@@ -207,11 +207,11 @@ imaging::pixel_format image::pixel_format() const noexcept {
   return data_->pixel_format_;
 }
 
-const std::vector<int32>& image::property_id_list() const noexcept {
+const array<int32>& image::property_id_list() const noexcept {
   return data_->property_id_list_;
 }
 
-const std::vector<imaging::property_item>& image::property_items() const noexcept {
+const array<imaging::property_item>& image::property_items() const noexcept {
   return data_->property_items_;
 }
 
@@ -301,7 +301,7 @@ encoder_parameters image::get_encoder_parameter_list(guid encoder) const noexcep
   return result;
 }
 
-size_t image::get_frame_count(const frame_dimension& dimension) const {
+xtd::size image::get_frame_count(const frame_dimension& dimension) const {
   auto iterator = std::find_if(data_->frame_dimensions.begin(), data_->frame_dimensions.end(), [&](auto frame) {return frame.first == dimension.guid();});
   if (iterator == data_->frame_dimensions.end()) throw_helper::throws(exception_case::argument);
   return iterator->second;
@@ -478,7 +478,7 @@ void image::update_properties() {
     auto item = imaging::property_item {};
     item.id(i.id);
     item.value(i.value);
-    data_->property_items_.push_back(item);
+    data_->property_items_.resize(data_->property_items_.length() + 1, item);
   }
   
   data_->raw_format_ = to_image_format(native::image::raw_format(data_->handle_));
