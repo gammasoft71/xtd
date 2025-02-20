@@ -56,11 +56,12 @@ var searchData=
   ['format_2ehpp_53',['format.hpp',['../format_8hpp.html',1,'']]],
   ['format_5fexception_2ehpp_54',['format_exception.hpp',['../format__exception_8hpp.html',1,'']]],
   ['format_5fpage_2edox_55',['format_page.dox',['../format__page_8dox.html',1,'']]],
-  ['forms_5fappearances_5fpage_2edox_56',['forms_appearances_page.dox',['../forms__appearances__page_8dox.html',1,'']]],
-  ['forms_5fexport_2ehpp_57',['forms_export.hpp',['../forms__export_8hpp.html',1,'']]],
-  ['forms_5fnamespace_5faliases_2ehpp_58',['forms_namespace_aliases.hpp',['../forms__namespace__aliases_8hpp.html',1,'']]],
-  ['fourteen_5fsegment_5fdisplay_2ehpp_59',['fourteen_segment_display.hpp',['../fourteen__segment__display_8hpp.html',1,'']]],
-  ['frame_5fdimension_2ehpp_60',['frame_dimension.hpp',['../frame__dimension_8hpp.html',1,'']]],
-  ['from_2ehpp_61',['from.hpp',['../from_8hpp.html',1,'']]],
-  ['func_2ehpp_62',['func.hpp',['../func_8hpp.html',1,'']]]
+  ['formatter_2ehpp_56',['formatter.hpp',['../formatter_8hpp.html',1,'']]],
+  ['forms_5fappearances_5fpage_2edox_57',['forms_appearances_page.dox',['../forms__appearances__page_8dox.html',1,'']]],
+  ['forms_5fexport_2ehpp_58',['forms_export.hpp',['../forms__export_8hpp.html',1,'']]],
+  ['forms_5fnamespace_5faliases_2ehpp_59',['forms_namespace_aliases.hpp',['../forms__namespace__aliases_8hpp.html',1,'']]],
+  ['fourteen_5fsegment_5fdisplay_2ehpp_60',['fourteen_segment_display.hpp',['../fourteen__segment__display_8hpp.html',1,'']]],
+  ['frame_5fdimension_2ehpp_61',['frame_dimension.hpp',['../frame__dimension_8hpp.html',1,'']]],
+  ['from_2ehpp_62',['from.hpp',['../from_8hpp.html',1,'']]],
+  ['func_2ehpp_63',['func.hpp',['../func_8hpp.html',1,'']]]
 ];

@@ -31,7 +31,7 @@ var searchData=
   ['thread_5fpool_28',['thread_pool',['../classxtd_1_1threading_1_1thread__pool.html',1,'xtd::threading']]],
   ['thread_5fstate_5fexception_29',['thread_state_exception',['../classxtd_1_1threading_1_1thread__state__exception.html',1,'xtd::threading']]],
   ['throw_5fhelper_30',['throw_helper',['../classxtd_1_1helpers_1_1throw__helper.html',1,'xtd::helpers']]],
-  ['time_5fspan_31',['time_span',['../structxtd_1_1time__span.html',1,'xtd']]],
+  ['time_5fspan_31',['time_span',['../classxtd_1_1time__span.html',1,'xtd']]],
   ['time_5fzone_5finfo_32',['time_zone_info',['../classxtd_1_1time__zone__info.html',1,'xtd']]],
   ['time_5fzone_5fnot_5ffound_5fexception_33',['time_zone_not_found_exception',['../classxtd_1_1time__zone__not__found__exception.html',1,'xtd']]],
   ['timeout_34',['timeout',['../classxtd_1_1threading_1_1timeout.html',1,'xtd::threading']]],
