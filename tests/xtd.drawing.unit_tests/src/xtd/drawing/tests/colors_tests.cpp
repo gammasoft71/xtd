@@ -32,7 +32,7 @@ namespace xtd::drawing::tests {
       assert::is_false(c.is_system_color());
       assert::is_true(c.is_named_color());
       
-      assert::are_equal(0x00000000, c.to_argb());
+      assert::are_equal(0x00000000u, c.to_argb());
       assert::are_equal(known_color::transparent, c.to_known_color());
     }
     
