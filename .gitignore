@@ -93,6 +93,7 @@ src/xtd.forms/include/xtd/forms_export.hpp
 src/xtd.forms/properties/assembly_info.cpp
 src/xtd.tunit/include/xtd/tunit_export.hpp
 src/xtd.tunit/properties/assembly_info.cpp
+tests/xtd.drawing.unit_tests/properties/resources.hpp
 tools/guidgen/properties/assembly_info.cpp
 tools/guidgen-gui/properties/assembly_info.cpp
 tools/guidgen-gui/properties/startup.cpp
@@ -107,4 +108,3 @@ tools/xtdc/properties/resources.hpp
 tools/xtdc-gui/properties/assembly_info.cpp
 tools/xtdc-gui/properties/startup.cpp
 tools/xtdc-gui/properties/settings.hpp
-
