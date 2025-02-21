@@ -441,7 +441,9 @@ float image::screen_dpi() {
 }
 
 void image::set_resolution(intptr image, int32 x_dpi, int32 y_dpi) {
-  /// @todo see how to set image resolution with wxWidgets.
+  reinterpret_cast<wxImage*>(image)->SetOption(wxIMAGE_OPTION_RESOLUTIONUNIT, string::format("{}", wxIMAGE_RESOLUTION_INCHES).c_str());
+  reinterpret_cast<wxImage*>(image)->SetOption(wxIMAGE_OPTION_RESOLUTIONX, string::format("{}", x_dpi).c_str());
+  reinterpret_cast<wxImage*>(image)->SetOption(wxIMAGE_OPTION_RESOLUTIONY, string::format("{}", y_dpi).c_str());
 }
 
 void image::size(intptr image, int32& width, int32& height) {
