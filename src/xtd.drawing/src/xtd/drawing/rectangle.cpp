@@ -7,7 +7,7 @@ using namespace xtd::drawing;
 
 const rectangle rectangle::empty;
 
-rectangle::rectangle(int32 x, int32 y, int32 width, int32 height) noexcept : height(height), width(width), x(x), y(y) {
+rectangle::rectangle(int32 x, int32 y, int32 width, int32 height) noexcept : x(x), y(y), width(width), height(height) {
 }
 
 rectangle::rectangle(const point& location, const drawing::size& size) noexcept : rectangle(location.x, location.y, size.width, size.height) {
