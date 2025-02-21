@@ -210,10 +210,6 @@ void image::color_palette(intptr image, std::vector<std::tuple<xtd::byte, xtd::b
   flags = 0;
 }
 
-intptr image::create(const string& filename, std::map<size_t, size_t>& frame_resolutions) {
-  return create(filename, false, frame_resolutions);
-}
-
 intptr image::create(const string& filename, bool use_icm, std::map<size_t, size_t>& frame_resolutions) {
   toolkit::initialize(); // Must be first
   auto extension = xtd::io::path::get_extension(filename).to_lower();
@@ -242,10 +238,6 @@ intptr image::create(const string& filename, bool use_icm, std::map<size_t, size
   // wxWidgets does not have a parameter or a method to set color correction when creating from a filename.
   frame_resolutions[get_frame_resolution(*img)] = img->GetImageCount(wxString {filename.chars()});
   return reinterpret_cast<intptr>(img);
-}
-
-intptr image::create(std::istream& stream, std::map<size_t, size_t>& frame_resolutions) {
-  return create(stream, false, frame_resolutions);
 }
 
 intptr image::create(std::istream& stream, bool use_icm, std::map<size_t, size_t>& frame_resolutions) {
