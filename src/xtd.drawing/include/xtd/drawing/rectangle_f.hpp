@@ -65,6 +65,26 @@ namespace xtd {
       /// @name Public Properties
       
       /// @{
+      /// @brief Gets or sets the x-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure.
+      /// @param x The x-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure. The default is 0.
+      /// @remarks Changing the xtd::drawing::rectangle_f::x property will also cause a change in the xtd::drawing::rectangle_f::right property of the xtd::drawing::rectangle_f.
+      float x = .0f;
+      
+      /// @brief Gets or sets the y-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure.
+      /// @param y The y-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure. The default is 0.
+      /// @remarks Changing the xtd::drawing::rectangle_f::y property will also cause a change in the xtd::drawing::rectangle_f::bottom property of the xtd::drawing::rectangle_f.
+      float y = .0f;
+      
+      /// @brief Gets or sets the width of this xtd::drawing::rectangle_f structure.
+      /// @param width The width of this xtd::drawing::rectangle_f structure. The default is 0.
+      /// @remarks Changing the xtd::drawing::rectangle_f::width property will also cause a change in the xtd::drawing::rectangle_f::bottom property of the xtd::drawing::rectangle_f. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
+      float width = .0f;
+      
+      /// @brief Gets or sets the height of this xtd::drawing::rectangle_f structure.
+      /// @pram height The height of this Rectangle structure. The default is 0.
+      /// @remarks Changing the xtd::drawing::rectangle_f::height property will also cause a change in the xtd::drawing::rectangle_f::bottom property of the xtd::drawing::rectangle_f. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
+      float height = .0f;
+
       /// @brief Gets the y-coordinate that is the sum of the xtd::drawing::rectangle_f::y and xtd::drawing::rectangle_f::height property values of this xtd::drawing::rectangle_f structure.
       /// @return The y-coordinate that is the sum of xtd::drawing::rectangle_f::y and xtd::drawing::rectangle_f::height of this xtd::drawing::rectangle_f.
       /// @remarks The value of the xtd::drawing::rectangle_f::bottom property represents the y-coordinate of the first point at the bottom edge of the xtd::drawing::rectangle_f that is not contained in the xtd::drawing::rectangle_f.
@@ -73,11 +93,6 @@ namespace xtd {
       /// @brief Gets the center property values of this xtd::drawing::rectangle structure.
       /// @return The center of this xtd::drawing::rectangle.
       point_f center() const noexcept;
-
-      /// @brief Gets or sets the height of this xtd::drawing::rectangle_f structure.
-      /// @pram height The height of this Rectangle structure. The default is 0.
-      /// @remarks Changing the xtd::drawing::rectangle_f::height property will also cause a change in the xtd::drawing::rectangle_f::bottom property of the xtd::drawing::rectangle_f. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
-      float height = .0f;
       
       /// @brief Tests whether all numeric properties of this xtd::drawing::rectangle_f have values of zero.
       /// @return This property returns `true` if the xtd::drawing::rectangle_f::width, xtd::drawing::rectangle_f::height, xtd::drawing::rectangle_f::x, and xtd::drawing::rectangle_f::y properties of this xtd::drawing::rectangle_f all have values of zero; otherwise, `false`.
@@ -108,21 +123,6 @@ namespace xtd {
       /// @brief Gets the y-coordinate of the top edge of this xtd::drawing::rectangle_f structure.
       /// @return The y-coordinate of the top edge of this xtd::drawing::rectangle_f structure.
       float top() const noexcept;
-      
-      /// @brief Gets or sets the width of this xtd::drawing::rectangle_f structure.
-      /// @param width The width of this xtd::drawing::rectangle_f structure. The default is 0.
-      /// @remarks Changing the xtd::drawing::rectangle_f::width property will also cause a change in the xtd::drawing::rectangle_f::bottom property of the xtd::drawing::rectangle_f. The units the rectangle is drawn in is determined by the xtd::drawing::graphics::page_unit and xtd::drawing::graphics::page_scale properties of the graphics object used for drawing. The default unit is pixels.
-      float width = .0f;
-      
-      /// @brief Gets or sets the x-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure.
-      /// @param x The x-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure. The default is 0.
-      /// @remarks Changing the xtd::drawing::rectangle_f::x property will also cause a change in the xtd::drawing::rectangle_f::right property of the xtd::drawing::rectangle_f.
-      float x = .0f;
-      
-      /// @brief Gets or sets the y-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure.
-      /// @param y The y-coordinate of the upper-left corner of this xtd::drawing::rectangle_f structure. The default is 0.
-      /// @remarks Changing the xtd::drawing::rectangle_f::y property will also cause a change in the xtd::drawing::rectangle_f::bottom property of the xtd::drawing::rectangle_f.
-      float y = .0f;
       /// @}
       
       /// @name Public Methods
