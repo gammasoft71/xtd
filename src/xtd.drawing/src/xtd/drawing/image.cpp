@@ -7,6 +7,8 @@
 #include <xtd/drawing/native/image_formats>
 #include <xtd/drawing/native/frame_dimension>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/io/file>
+#include <xtd/helpers/throw_helper>
 #include <xtd/as>
 #include <algorithm>
 #include <iostream>
@@ -72,6 +74,7 @@ image::image(const string& filename) : image::image(filename, false) {
 }
 
 image::image(const string& filename, bool use_icm) : data_(xtd::new_sptr<data>()) {
+  if (!xtd::io::file::exists(filename)) throw_helper::throws(exception_case::argument);
   auto frame_resolutions = std::map<size_t, size_t> {};
   data_->handle_ = native::image::create(filename, use_icm, frame_resolutions);
   data_->frame_dimensions.clear();
