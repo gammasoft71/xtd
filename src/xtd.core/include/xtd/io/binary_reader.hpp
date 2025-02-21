@@ -2,6 +2,7 @@
 /// @brief Contains xtd::io::binary_reader class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "../array.hpp"
 #include "../optional.hpp"
 #include "../object.hpp"
 #include "../string.hpp"
@@ -110,7 +111,7 @@ namespace xtd {
       /// @exception xtd::io_io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual size_t read(std::vector<xtd::byte>& buffer, size_t index, size_t count);
+      virtual size_t read(xtd::array<xtd::byte>& buffer, size_t index, size_t count);
       
       /// @brief Reads the specified number of characters from the stream, starting from a specified point in the character array.
       /// @param buffer The buffer to read data into.
@@ -120,7 +121,7 @@ namespace xtd {
       /// @exception xtd::io_io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual size_t read(std::vector<char>& buffer, size_t index, size_t count);
+      virtual size_t read(xtd::array<char>& buffer, size_t index, size_t count);
       
       /// @brief Reads a boolean value from the current stream and advances the current position of the stream by one byte.
       /// @return `true` if the byte is nonzero; otherwise, `false`.
@@ -145,7 +146,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual std::vector<xtd::byte> read_bytes(size_t count);
+      virtual xtd::array<xtd::byte> read_bytes(size_t count);
       
       /// @brief Reads the next character from the current stream and advances the current position of the stream by one byte.
       /// @return A character read from the current stream.
@@ -162,7 +163,7 @@ namespace xtd {
       /// @exception xtd::io::io_exception An I/O error occurred.
       /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual std::vector<char> read_chars(size_t count);
+      virtual xtd::array<char> read_chars(size_t count);
       
       /// @brief Reads an 8-byte floating point value from the current stream and advances the current position of the stream by eight bytes.
       /// @return An 8-byte floating point value read from the current stream.
