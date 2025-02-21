@@ -68,17 +68,7 @@ image::image(intptr hbitmap) : data_(xtd::new_sptr<data>()) {
   update_properties();
 }
 
-image::image(const string& filename) : data_(xtd::new_sptr<data>()) {
-  auto frame_resolutions = std::map<size_t, size_t> {};
-  data_->handle_ = native::image::create(filename, frame_resolutions);
-  data_->frame_dimensions.clear();
-  for (auto frame_resolution : frame_resolutions) {
-    if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
-    else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] = frame_resolution.second;
-    else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] = frame_resolution.second;
-    else throw_helper::throws(exception_case::argument);
-  }
-  update_properties();
+image::image(const string& filename) : image::image(filename, false) {
 }
 
 image::image(const string& filename, bool use_icm) : data_(xtd::new_sptr<data>()) {
@@ -94,22 +84,12 @@ image::image(const string& filename, bool use_icm) : data_(xtd::new_sptr<data>()
   update_properties();
 }
 
-image::image(std::istream& stream) : data_(xtd::new_sptr<data>()) {
-  auto frame_resolutions = std::map<size_t, size_t> {};
-  data_->handle_ = native::image::create(stream, frame_resolutions);
-  data_->frame_dimensions.clear();
-  for (auto frame_resolution : frame_resolutions) {
-    if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
-    else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] = frame_resolution.second;
-    else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] = frame_resolution.second;
-    else throw_helper::throws(exception_case::argument);
-  }
-  update_properties();
+image::image(std::istream& stream) : image::image(stream, false) {
 }
 
 image::image(std::istream& stream, bool use_icm) : data_(xtd::new_sptr<data>()) {
   auto frame_resolutions = std::map<size_t, size_t> {};
-  data_->handle_ = native::image::create(stream, frame_resolutions);
+  data_->handle_ = native::image::create(stream, use_icm, frame_resolutions);
   data_->frame_dimensions.clear();
   for (auto frame_resolution : frame_resolutions) {
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
