@@ -1857,6 +1857,8 @@ macro(write_resources_file_header)
     "\n"
     "#include <xtd/drawing/bitmap>\n"
     "#include <xtd/drawing/icon>\n"
+    "#include <xtd/io/binary_reader>\n"
+    "#include <xtd/io/file_info>\n"
     "#include <xtd/io/path>\n"
     "#include <xtd/environment>\n"
     "#include <xtd/not_implemented_exception>\n"
@@ -1916,10 +1918,10 @@ macro(write_resources_file_header)
       )
     else ()
       file(APPEND ${RESOURCES_FILE_HEADER}
-        "    /// @brief Looks up a localized resource of type xtd::string.\n"
-        "    static const xtd::string& ${NAME}() {\n"
-        "      static auto text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::application_resources), \"${FILENAME}\"));\n"
-        "      return text;\n"
+        "    /// @brief Looks up a localized resource of type xtd::array<xtd::byte>.\n"
+        "    static const xtd::array<xtd::byte>& ${NAME}() {\n"
+        "      static auto bytes = xtd::io::binary_reader(xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::application_resources), \"${FILENAME}\")).read_bytes(xtd::io::file_info(xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::application_resources), \"${FILENAME}\")).length());\n"
+        "      return bytes;\n"
         "    }\n"
         "\n"
       )
