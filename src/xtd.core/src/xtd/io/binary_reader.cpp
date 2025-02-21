@@ -63,7 +63,7 @@ int32 binary_reader::read() {
   return value;
 }
 
-size_t binary_reader::read(std::vector<xtd::byte>& buffer, size_t index, size_t count) {
+size_t binary_reader::read(array<xtd::byte>& buffer, size_t index, size_t count) {
   if (index + count > buffer.size()) throw_helper::throws(exception_case::argument);
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
@@ -73,7 +73,7 @@ size_t binary_reader::read(std::vector<xtd::byte>& buffer, size_t index, size_t 
   return count;
 }
 
-size_t binary_reader::read(std::vector<char>& buffer, size_t index, size_t count) {
+size_t binary_reader::read(array<char>& buffer, size_t index, size_t count) {
   if (index + count > buffer.size()) throw_helper::throws(exception_case::argument);
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
@@ -91,8 +91,8 @@ xtd::byte binary_reader::read_byte() {
   return read_bytes(sizeof(xtd::byte))[0];
 }
 
-std::vector<xtd::byte> binary_reader::read_bytes(size_t count) {
-  auto result = std::vector<xtd::byte>(count);
+array<xtd::byte> binary_reader::read_bytes(size_t count) {
+  auto result = array<xtd::byte>(count);
   if (read(result, 0, count) != count)
     throw_helper::throws(exception_case::end_of_stream);
   return result;
@@ -102,8 +102,8 @@ char binary_reader::read_char() {
   return read_bytes(sizeof(char))[0];
 }
 
-std::vector<char> binary_reader::read_chars(size_t count) {
-  auto result = std::vector<char>(count);
+array<char> binary_reader::read_chars(size_t count) {
+  auto result = array<char>(count);
   if (read(result, 0, count) != count)
     throw_helper::throws(exception_case::end_of_stream);
   return result;
