@@ -58,6 +58,12 @@ namespace xtd::drawing::tests {
       assert::are_equal(2, p.y);
     }
     
+    void test_method_(decomposition) {
+      auto [x, y] = point {1, 2};
+      assert::are_equal(1, x);
+      assert::are_equal(2, y);
+    }
+
     void test_method_(is_empty) {
       assert::is_true(point().is_empty());
       assert::is_false(point(1, 2).is_empty());
