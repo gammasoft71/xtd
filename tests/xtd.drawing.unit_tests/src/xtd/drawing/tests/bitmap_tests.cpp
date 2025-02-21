@@ -309,12 +309,12 @@ namespace xtd::drawing::tests {
       //assert::are_equal(96.0f, bmp.vertical_resolution(), 1.0f);
       assert::are_equal(3, bmp.width());
       
-      assert::are_equal(0xFFF3060C, bmp.get_pixel(0, 0).to_argb());
-      assert::are_equal(0xFF00FB00, bmp.get_pixel(1, 0).to_argb());
-      assert::are_equal(0xFF0800F3, bmp.get_pixel(2, 0).to_argb());
-      assert::are_equal(0xFF00FCF8, bmp.get_pixel(0, 1).to_argb());
-      assert::are_equal(0xFFFF05FF, bmp.get_pixel(1, 1).to_argb());
-      assert::are_equal(0xFFFFFB0C, bmp.get_pixel(2, 1).to_argb());
+      assert::are_equal(color::red, bmp.get_pixel(0, 0));
+      assert::are_equal(color::lime, bmp.get_pixel(1, 0));
+      assert::are_equal(color::blue, bmp.get_pixel(2, 0));
+      assert::are_equal(color::aqua, bmp.get_pixel(0, 1));
+      assert::are_equal(color::fuchsia, bmp.get_pixel(1, 1));
+      assert::are_equal(color::yellow, bmp.get_pixel(2, 1));
     }
 
     void test_method_(create_from_file_png) {
