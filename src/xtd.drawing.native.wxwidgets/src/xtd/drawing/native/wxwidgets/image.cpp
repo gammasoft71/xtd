@@ -24,6 +24,7 @@ using namespace xtd::drawing::native;
 using namespace xtd::helpers;
 
 namespace {
+  static wxBitmapType wxBITMAP_TYPE_EXIF = static_cast<wxBitmapType>(wxBITMAP_TYPE_MAX + 1);
   class StdInputStreamAdapter : public wxInputStream {
   public:
     explicit StdInputStreamAdapter(std::istream& stream): stream_{stream} {}
@@ -151,7 +152,7 @@ namespace {
       case wxBITMAP_TYPE_TGA: return IFM_TGA;
       case wxBITMAP_TYPE_MACCURSOR: return IFM_MACCUR;
       case wxBITMAP_TYPE_MACCURSOR_RESOURCE: return IFM_MEMORY_MACCUR;
-      default: return IFM_UNKNOWN;
+      default: return bitmap_type == wxBITMAP_TYPE_EXIF ? IFM_EXIF : IFM_UNKNOWN;
     }
   }
   
@@ -217,6 +218,7 @@ intptr image::create(const string& filename, bool use_icm, std::map<size_t, size
   if (extension == ".ani") bitmap_type = wxBitmapType::wxBITMAP_TYPE_ANI;
   else if (extension == ".bmp") bitmap_type = wxBitmapType::wxBITMAP_TYPE_BMP;
   else if (extension == ".cur") bitmap_type = wxBitmapType::wxBITMAP_TYPE_CUR;
+  else if (extension == ".exif") bitmap_type = wxBITMAP_TYPE_EXIF;
   else if (extension == ".icns") bitmap_type = wxBitmapType::wxBITMAP_TYPE_ICON;
   else if (extension == ".ico") bitmap_type = wxBitmapType::wxBITMAP_TYPE_ICO;
   else if (extension == ".iff") bitmap_type = wxBitmapType::wxBITMAP_TYPE_IFF;
@@ -234,11 +236,8 @@ intptr image::create(const string& filename, bool use_icm, std::map<size_t, size
   else if (extension == ".tiff") bitmap_type = wxBitmapType::wxBITMAP_TYPE_TIFF;
   else if (extension == ".xbm") bitmap_type = wxBitmapType::wxBITMAP_TYPE_XBM;
   else if (extension == ".xpm") bitmap_type = wxBitmapType::wxBITMAP_TYPE_XPM;
-  auto img = new wxImage(wxString(convert_string::to_wstring(filename)), bitmap_type);
-  if (!img->IsOk()) {
-    img = new wxImage(wxString(convert_string::to_wstring(filename)), wxBitmapType::wxBITMAP_TYPE_ANY);
-    img->SetType(bitmap_type);
-  }
+  auto img = new wxImage(wxString(convert_string::to_wstring(filename)));
+  if (bitmap_type != wxBitmapType::wxBITMAP_TYPE_ANY && img->GetType() != bitmap_type) img->SetType(bitmap_type);
   // wxWidgets does not have a parameter or a method to set color correction when creating from a filename.
   frame_resolutions[get_frame_resolution(*img)] = img->GetImageCount(wxString {filename.chars()});
   return reinterpret_cast<intptr>(img);
