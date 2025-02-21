@@ -59,6 +59,11 @@ namespace xtd {
       /// @name Public Properties
       
       /// @{
+      /// @brief Gets or sets the horizontal component of this xtd::drawing::size class.
+      /// @param width The horizontal component of this xtd::drawing::size class, typically measured in pixels.
+      /// @remarks The unit for the xtd::drawing::size::height and xtd::drawing::size::width of the xtd::drawing::size class depend on the xtd::drawing::graphics:page_unit and xtd::drawing::graphics::page_scale settings for the xtd::drawing::::graphics object that is used to draw.
+      int32 width = 0;
+
       /// @brief Gets or sets he vertical component of this xtd::drawing::size class.
       /// @param height The vertical component of this xtd::drawing::size class, typically measured in pixels.
       /// @remarks The unit for the xtd::drawing::size::height and xtd::drawing::size::width of the xtd::drawing::size class depend on the xtd::drawing::graphics:page_unit and xtd::drawing::graphics::page_scale settings for the xtd::drawing::::graphics object that is used to draw.
@@ -67,11 +72,6 @@ namespace xtd {
       /// @brief Tests whether this xtd::drawing::size class has xtd::drawing::size_fwidth and xtd::drawing::size_fheight of 0.
       /// @return Returns `true`  when this xtd::drawing::size class has both a xtd::drawing::size::width and xtd::drawing::size::height of 0; otherwise, `false`.
       bool is_empty() const noexcept;
-      
-      /// @brief Gets or sets the horizontal component of this xtd::drawing::size class.
-      /// @param width The horizontal component of this xtd::drawing::size class, typically measured in pixels.
-      /// @remarks The unit for the xtd::drawing::size::height and xtd::drawing::size::width of the xtd::drawing::size class depend on the xtd::drawing::graphics:page_unit and xtd::drawing::graphics::page_scale settings for the xtd::drawing::::graphics object that is used to draw.
-      int32 width = 0;
       /// @}
       
       /// @name Public Methods
