@@ -41,6 +41,12 @@ namespace xtd::drawing::tests {
       assert::are_equal(2, s.height);
     }
     
+    void test_method_(decomposition) {
+      auto [w, h] = size {1, 2};
+      assert::are_equal(1, w);
+      assert::are_equal(2, h);
+    }
+
     void test_method_(is_empty) {
       assert::is_true(size().is_empty());
       assert::is_false(size(1, 2).is_empty());
