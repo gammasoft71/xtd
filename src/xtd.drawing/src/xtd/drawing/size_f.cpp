@@ -7,10 +7,10 @@ using namespace xtd::drawing;
 
 const size_f size_f::empty;
 
-size_f::size_f(const point_f& point) noexcept : height(point.y), width(point.x) {
+size_f::size_f(const point_f& point) noexcept : width(point.x), height(point.y) {
 }
 
-size_f::size_f(float width, float height) noexcept : height(height), width(width) {
+size_f::size_f(float width, float height) noexcept : width(width), height(height) {
 }
 
 bool size_f::is_empty() const noexcept {
