@@ -8,6 +8,7 @@
 #include <xtd/drawing/native/frame_dimension>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/io/file>
+#include <xtd/io/path>
 #include <xtd/helpers/throw_helper>
 #include <xtd/as>
 #include <algorithm>
@@ -20,6 +21,7 @@ using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::drawing::imaging;
 using namespace xtd::helpers;
+using namespace xtd::io;
 
 image image::empty;
 
@@ -73,10 +75,29 @@ image::image(intptr hbitmap) : data_(xtd::new_sptr<data>()) {
 image::image(const string& filename) : image::image(filename, false) {
 }
 
+namespace {
+  ptr<char*[]> get_data_from_xpm(const string& filename) {
+    static thread_local std::vector<string> lines;
+    lines = file::read_all_lines(filename);
+    auto data = new char*[lines.size()];
+    for (auto index = 0_z; index < lines.size() - 2; ++index) {
+      lines[index + 1] = lines[index + 1].trim().replace("\"", "").replace(",", "");
+      data[index] = const_cast<char*>(lines[index + 1].c_str());
+      //println("{}", string {data[index]});
+    }
+    return ptr<char *[]> {data};
+  }
+}
+
 image::image(const string& filename, bool use_icm) : data_(xtd::new_sptr<data>()) {
   if (!xtd::io::file::exists(filename)) throw_helper::throws(exception_case::argument);
   auto frame_resolutions = std::map<size_t, size_t> {};
-  data_->handle_ = native::image::create(filename, use_icm, frame_resolutions);
+  if (path::get_extension(filename) != ".xpm")  data_->handle_ = native::image::create(filename, use_icm, frame_resolutions);
+  else {
+    auto xpm_ptr = get_data_from_xpm(filename);
+    data_->handle_ = native::image::create(xpm_ptr.get(), frame_resolutions);
+    data_->raw_format_ = imaging::image_format::xpm();
+  }
   data_->frame_dimensions.clear();
   for (auto frame_resolution : frame_resolutions) {
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
@@ -104,8 +125,15 @@ image::image(std::istream& stream, bool use_icm) : data_(xtd::new_sptr<data>()) 
 }
 
 image::image(const char* const* bits) : data_(xtd::new_sptr<data>()) {
-  data_->handle_ = native::image::create(bits);
+  auto frame_resolutions = std::map<size_t, size_t> {};
+  data_->handle_ = native::image::create(bits, frame_resolutions);
   data_->raw_format_ = imaging::image_format::memory_xpm();
+  for (auto frame_resolution : frame_resolutions) {
+    if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
+    else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] = frame_resolution.second;
+    else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] = frame_resolution.second;
+    else throw_helper::throws(exception_case::argument);
+  }
   update_properties();
 }
 
@@ -464,7 +492,7 @@ void image::update_properties() {
     data_->property_items_.resize(data_->property_items_.length() + 1, item);
   }
   
-  data_->raw_format_ = to_image_format(native::image::raw_format(data_->handle_));
+  if (data_->raw_format_ == image_format {}) data_->raw_format_ = to_image_format(native::image::raw_format(data_->handle_));
   
   auto w = 0, h = 0;
   native::image::size(data_->handle_, w, h);
