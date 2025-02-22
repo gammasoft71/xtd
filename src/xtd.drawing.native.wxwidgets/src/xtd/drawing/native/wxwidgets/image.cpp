@@ -236,7 +236,7 @@ intptr image::create(const string& filename, bool use_icm, std::map<size_t, size
   else if (extension == ".tiff") bitmap_type = wxBitmapType::wxBITMAP_TYPE_TIFF;
   else if (extension == ".xbm") bitmap_type = wxBitmapType::wxBITMAP_TYPE_XBM;
   else if (extension == ".xpm") bitmap_type = wxBitmapType::wxBITMAP_TYPE_XPM;
-  auto img = new wxImage(wxString(convert_string::to_wstring(filename)));
+  auto img = new wxImage(wxString(convert_string::to_wstring(filename)), bitmap_type == wxBitmapType::wxBITMAP_TYPE_XPM ? wxBitmapType::wxBITMAP_TYPE_XPM : wxBitmapType::wxBITMAP_TYPE_ANY);
   if (bitmap_type != wxBitmapType::wxBITMAP_TYPE_ANY && img->GetType() != bitmap_type) img->SetType(bitmap_type);
   // wxWidgets does not have a parameter or a method to set color correction when creating from a filename.
   frame_resolutions[get_frame_resolution(*img)] = img->GetImageCount(wxString {filename.chars()});
@@ -252,9 +252,11 @@ intptr image::create(std::istream& stream, bool use_icm, std::map<size_t, size_t
   return reinterpret_cast<intptr>(img);
 }
 
-intptr image::create(const char* const* bits) {
+intptr image::create(const char* const* bits, std::map<size_t, size_t>& frame_resolutions) {
   toolkit::initialize(); // Must be first
-  return reinterpret_cast<intptr>(new wxImage(bits));
+  auto img = new wxImage(bits);
+  frame_resolutions[get_frame_resolution(*img)] = 1;
+  return reinterpret_cast<intptr>(img);
 }
 
 intptr image::create(int32 width, int32 height) {
