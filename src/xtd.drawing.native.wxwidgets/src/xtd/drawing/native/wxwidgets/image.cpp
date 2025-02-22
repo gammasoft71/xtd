@@ -203,12 +203,13 @@ void image::blur(intptr handle, int32 radius) {
 void image::color_palette(intptr image, std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32& flags) {
   wxPalette palette = reinterpret_cast<wxImage*>(image)->GetPalette();
   entries.clear();
+  if (palette.GetColoursCount() == 0) return;
   for (int32 index = 0; index < palette.GetColoursCount(); index++) {
-    xtd::byte a = 255, r = 0, g = 0, b = 0;
+    xtd::byte r = 0, g = 0, b = 0;
     palette.GetRGB(index, &r, &g, &b);
-    entries.push_back({a, r, g, b});
+    entries.push_back({255, r, g, b});
   }
-  flags = 0;
+  flags = 1;
 }
 
 intptr image::create(const string& filename, bool use_icm, std::map<size_t, size_t>& frame_resolutions) {
@@ -239,7 +240,7 @@ intptr image::create(const string& filename, bool use_icm, std::map<size_t, size
   auto img = new wxImage(wxString(convert_string::to_wstring(filename)), bitmap_type == wxBitmapType::wxBITMAP_TYPE_XPM ? wxBitmapType::wxBITMAP_TYPE_XPM : wxBitmapType::wxBITMAP_TYPE_ANY);
   if (bitmap_type != wxBitmapType::wxBITMAP_TYPE_ANY && img->GetType() != bitmap_type) img->SetType(bitmap_type);
   // wxWidgets does not have a parameter or a method to set color correction when creating from a filename.
-  frame_resolutions[get_frame_resolution(*img)] = img->GetImageCount(wxString {filename.chars()});
+  frame_resolutions[get_frame_resolution(*img)] = wxImage::GetImageCount(wxString {filename.chars()});
   return reinterpret_cast<intptr>(img);
 }
 
@@ -248,7 +249,7 @@ intptr image::create(std::istream& stream, bool use_icm, std::map<size_t, size_t
   StdInputStreamAdapter std_stream(stream);
   auto img = new wxImage(std_stream);
   // wxWidgets does not have a parameter or a method to set color correction when creating from a stream.
-  frame_resolutions[get_frame_resolution(*img)] = img->GetImageCount(std_stream);
+  frame_resolutions[get_frame_resolution(*img)] = wxImage::GetImageCount(std_stream);
   return reinterpret_cast<intptr>(img);
 }
 
