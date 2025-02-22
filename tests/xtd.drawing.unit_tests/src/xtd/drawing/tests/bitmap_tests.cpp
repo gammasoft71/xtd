@@ -39,7 +39,7 @@ namespace xtd::drawing::tests {
       if (w >= 3 && h >= 4) bmp.set_pixel(2, 3, color::olive);
       if (w >= 4 && h >= 4) bmp.set_pixel(3, 3, color::black);
       
-      /*println("bitmap {} x {} : ", w, h);
+      /*println("bitmap {} x {} : ", bmp.width(), bmp.height());
       for (auto y = 0; y < bmp.height(); ++y) {
         for (auto x = 0; x < bmp.width(); ++x)
           print("  0x{:X8}", bmp.get_pixel(x, y).to_argb());
@@ -58,6 +58,7 @@ namespace xtd::drawing::tests {
       assert::is_zero(bmp.height());
       assert::is_zero(bmp.horizontal_resolution());
       collection_assert::is_empty(bmp.palette().entries());
+      assert::is_zero(bmp.palette().flags());
       assert::are_equal(size_f {.0, .0}, bmp.physical_dimension());
       assert::are_equal(imaging::pixel_format::undefined, bmp.pixel_format());
       collection_assert::is_empty(bmp.property_id_list());
@@ -78,6 +79,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(2, bmp.height());
       assert::are_equal(96.0f, bmp.horizontal_resolution(), 1.0f);
       collection_assert::is_empty(bmp.palette().entries());
+      assert::is_zero(bmp.palette().flags());
       assert::are_equal(size_f {3., 2.}, bmp.physical_dimension());
       assert::are_equal(imaging::pixel_format::format_32bpp_argb, bmp.pixel_format());
       collection_assert::is_empty(bmp.property_id_list());
@@ -105,6 +107,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(3, bmp.height());
       assert::are_equal(96.0f, bmp.horizontal_resolution(), 1.0f);
       collection_assert::is_empty(bmp.palette().entries());
+      assert::is_zero(bmp.palette().flags());
       assert::are_equal(size_f {4., 3.}, bmp.physical_dimension());
       assert::are_equal(imaging::pixel_format::format_32bpp_argb, bmp.pixel_format());
       collection_assert::is_empty(bmp.property_id_list());
@@ -138,6 +141,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(1, bmp.height());
       assert::are_equal(96.0f, bmp.horizontal_resolution(), 1.0f);
       collection_assert::is_empty(bmp.palette().entries());
+      assert::is_zero(bmp.palette().flags());
       assert::are_equal(size_f {2., 1.}, bmp.physical_dimension());
       assert::are_equal(imaging::pixel_format::format_32bpp_argb, bmp.pixel_format());
       collection_assert::is_empty(bmp.property_id_list());
@@ -161,6 +165,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(2, bmp.height());
       assert::are_equal(96.0f, bmp.horizontal_resolution(), 1.0f);
       collection_assert::is_empty(bmp.palette().entries());
+      assert::is_zero(bmp.palette().flags());
       assert::are_equal(size_f {3., 2.}, bmp.physical_dimension());
       assert::are_equal(imaging::pixel_format::format_32bpp_argb, bmp.pixel_format());
       collection_assert::is_empty(bmp.property_id_list());
@@ -196,6 +201,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(3, bmp.height());
       assert::are_equal(96.0f, bmp.horizontal_resolution(), 1.0f);
       collection_assert::is_empty(bmp.palette().entries());
+      assert::is_zero(bmp.palette().flags());
       assert::are_equal(size_f {4., 3.}, bmp.physical_dimension());
       assert::are_equal(imaging::pixel_format::format_32bpp_argb, bmp.pixel_format());
       collection_assert::is_empty(bmp.property_id_list());
@@ -229,6 +235,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(1, bmp.height());
       assert::are_equal(96.0f, bmp.horizontal_resolution(), 1.0f);
       collection_assert::is_empty(bmp.palette().entries());
+      assert::is_zero(bmp.palette().flags());
       assert::are_equal(size_f {2., 1.}, bmp.physical_dimension());
       assert::are_equal(imaging::pixel_format::format_32bpp_argb, bmp.pixel_format());
       collection_assert::is_empty(bmp.property_id_list());
@@ -252,6 +259,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(2, bmp.height());
       assert::are_equal(96.0f, bmp.horizontal_resolution(), 1.0f);
       collection_assert::is_empty(bmp.palette().entries());
+      assert::is_zero(bmp.palette().flags());
       assert::are_equal(size_f {3., 2.}, bmp.physical_dimension());
       assert::are_equal(imaging::pixel_format::format_32bpp_argb, bmp.pixel_format());
       collection_assert::is_empty(bmp.property_id_list());
@@ -287,6 +295,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(2, bmp.height());
       //assert::are_equal(96.0f, bmp.horizontal_resolution(), 1.0f);
       collection_assert::is_empty(bmp.palette().entries());
+      assert::is_zero(bmp.palette().flags());
       assert::are_equal(size_f {3., 2.}, bmp.physical_dimension());
       assert::are_equal(imaging::pixel_format::format_32bpp_argb, bmp.pixel_format());
       collection_assert::is_empty(bmp.property_id_list());
@@ -314,6 +323,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(2, bmp.height());
       //assert::are_equal(96.0f, bmp.horizontal_resolution(), 1.0f);
       collection_assert::is_empty(bmp.palette().entries());
+      assert::is_zero(bmp.palette().flags());
       assert::are_equal(size_f {3., 2.}, bmp.physical_dimension());
       assert::are_equal(imaging::pixel_format::format_32bpp_argb, bmp.pixel_format());
       collection_assert::is_empty(bmp.property_id_list());
@@ -341,6 +351,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(2, bmp.height());
       //assert::are_equal(96.0f, bmp.horizontal_resolution(), 1.0f);
       collection_assert::is_empty(bmp.palette().entries());
+      assert::is_zero(bmp.palette().flags());
       assert::are_equal(size_f {3., 2.}, bmp.physical_dimension());
       assert::are_equal(imaging::pixel_format::format_32bpp_argb, bmp.pixel_format());
       collection_assert::is_empty(bmp.property_id_list());
@@ -368,6 +379,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(2, bmp.height());
       //assert::are_equal(96.0f, bmp.horizontal_resolution(), 1.0f);
       collection_assert::is_empty(bmp.palette().entries());
+      assert::is_zero(bmp.palette().flags());
       assert::are_equal(size_f {3., 2.}, bmp.physical_dimension());
       assert::are_equal(imaging::pixel_format::format_32bpp_argb, bmp.pixel_format());
       collection_assert::is_empty(bmp.property_id_list());
@@ -395,6 +407,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(2, bmp.height());
       //assert::are_equal(96.0f, bmp.horizontal_resolution(), 1.0f);
       collection_assert::is_empty(bmp.palette().entries());
+      assert::is_zero(bmp.palette().flags());
       assert::are_equal(size_f {3., 2.}, bmp.physical_dimension());
       assert::are_equal(imaging::pixel_format::format_32bpp_argb, bmp.pixel_format());
       collection_assert::is_empty(bmp.property_id_list());
@@ -422,11 +435,40 @@ namespace xtd::drawing::tests {
       assert::are_equal(2, bmp.height());
       //assert::are_equal(96.0f, bmp.horizontal_resolution(), 1.0f);
       collection_assert::is_empty(bmp.palette().entries());
+      assert::is_zero(bmp.palette().flags());
       assert::are_equal(size_f {3., 2.}, bmp.physical_dimension());
       assert::are_equal(imaging::pixel_format::format_32bpp_argb, bmp.pixel_format());
       collection_assert::is_empty(bmp.property_id_list());
       collection_assert::is_empty(bmp.property_items());
       assert::are_equal(imaging::image_format::tiff(), bmp.raw_format());
+      assert::are_equal(size {3, 2}, bmp.size());
+      assert::is_false(bmp.tag().has_value());
+      //assert::are_equal(96.0f, bmp.vertical_resolution(), 1.0f);
+      assert::are_equal(3, bmp.width());
+      
+      assert::are_equal(color::red, bmp.get_pixel(0, 0));
+      assert::are_equal(color::lime, bmp.get_pixel(1, 0));
+      assert::are_equal(color::blue, bmp.get_pixel(2, 0));
+      assert::are_equal(color::aqua, bmp.get_pixel(0, 1));
+      assert::are_equal(color::fuchsia, bmp.get_pixel(1, 1));
+      assert::are_equal(color::yellow, bmp.get_pixel(2, 1));
+    }
+
+    void test_method_(create_from_file_xpm) {
+      auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_3_2.xpm")};
+      
+      assert::are_equal(2, bmp.flags());
+      collection_assert::are_equal({guid("7462dc86-6180-4c7e-8e3f-ee7333a7a483")}, bmp.frame_dimentions_list());
+      assert::is_not_zero(bmp.handle());
+      assert::are_equal(2, bmp.height());
+      //assert::are_equal(96.0f, bmp.horizontal_resolution(), 1.0f);
+      collection_assert::are_equivalent({color::red, color::lime, color::blue, color::white, color::aqua, color::fuchsia, color::yellow, color::silver, color::maroon, color::green, color::navy, color::gray, color::teal, color::purple, color::olive, color::black}, bmp.palette().entries());
+      assert::are_equal(1, bmp.palette().flags());
+      assert::are_equal(size_f {3., 2.}, bmp.physical_dimension());
+      assert::are_equal(imaging::pixel_format::format_32bpp_argb, bmp.pixel_format());
+      collection_assert::is_empty(bmp.property_id_list());
+      collection_assert::is_empty(bmp.property_items());
+      assert::are_equal(imaging::image_format::xpm(), bmp.raw_format());
       assert::are_equal(size {3, 2}, bmp.size());
       assert::is_false(bmp.tag().has_value());
       //assert::are_equal(96.0f, bmp.vertical_resolution(), 1.0f);
@@ -449,6 +491,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(2, bmp.height());
       assert::are_equal(96.0f, bmp.horizontal_resolution(), 1.0f);
       collection_assert::is_empty(bmp.palette().entries());
+      assert::is_zero(bmp.palette().flags());
       assert::are_equal(size_f {3, 2}, bmp.physical_dimension());
       assert::are_equal(imaging::pixel_format::format_32bpp_argb, bmp.pixel_format());
       collection_assert::is_empty(bmp.property_id_list());
