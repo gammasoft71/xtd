@@ -1,6 +1,6 @@
 #include <xtd/xtd>
 
-namespace manual_tests {
+namespace xtd::tests {
   class form1 : public form {
   public:
     static auto main() {
@@ -18,4 +18,4 @@ namespace manual_tests {
   };
 }
 
-startup_(manual_tests::form1::main);
+startup_(tests::form1::main);

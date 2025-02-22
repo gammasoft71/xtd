@@ -308,4 +308,5 @@ add_sources(
   src/xtd/threading/tests/wait_handle_tests.cpp
   src/xtd/threading/tests/wait_handle_cannot_be_opened_exception_tests.cpp
 )
+target_default_namespace("xtd::tests")
 target_type(TEST_APPLICATION)

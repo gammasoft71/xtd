@@ -531,4 +531,5 @@ add_sources(
   src/xtd/tunit/tests/valid_throws_any_failed_tests.cpp
   src/xtd/tunit/tests/valid_throws_any_succeed_tests.cpp
 )
+target_default_namespace("xtd::tunit::tests")
 target_type(TEST_APPLICATION)
