@@ -129,4 +129,5 @@ add_sources(
   src/xtd/forms/tests/get_double_click_time.mm 
 )
 endif()
+target_default_namespace("xtd::forms::tests")
 target_type(TEST_APPLICATION)

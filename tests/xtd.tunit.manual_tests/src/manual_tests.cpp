@@ -37,7 +37,7 @@ namespace xtd {
 
 using namespace xtd::tunit;
 
-namespace unit_tests {
+namespace xtd::tuint::tests {
   class test_class_(manual_test_tunit) {
   public:
     void test_method_(test_case1) {
