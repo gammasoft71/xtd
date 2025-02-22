@@ -43,6 +43,18 @@ namespace {
     auto it = image_formats.find(image_format);
     return it == image_formats.end() ? IFM_UNKNOWN : it->second;
   }
+
+  ptr<char*[]> get_data_from_xpm(const string& filename) {
+    static thread_local std::vector<string> lines;
+    lines = file::read_all_lines(filename);
+    auto data = new char*[lines.size()];
+    for (auto index = 0_z; index < lines.size() - 2; ++index) {
+      lines[index + 1] = lines[index + 1].trim().replace("\"", "").replace(",", "");
+      data[index] = const_cast<char*>(lines[index + 1].c_str());
+      //println("{}", string {data[index]});
+    }
+    return ptr<char *[]> {data};
+  }
 }
 
 struct image::data {
@@ -73,20 +85,6 @@ image::image(intptr hbitmap) : data_(xtd::new_sptr<data>()) {
 }
 
 image::image(const string& filename) : image::image(filename, false) {
-}
-
-namespace {
-  ptr<char*[]> get_data_from_xpm(const string& filename) {
-    static thread_local std::vector<string> lines;
-    lines = file::read_all_lines(filename);
-    auto data = new char*[lines.size()];
-    for (auto index = 0_z; index < lines.size() - 2; ++index) {
-      lines[index + 1] = lines[index + 1].trim().replace("\"", "").replace(",", "");
-      data[index] = const_cast<char*>(lines[index + 1].c_str());
-      //println("{}", string {data[index]});
-    }
-    return ptr<char *[]> {data};
-  }
 }
 
 image::image(const string& filename, bool use_icm) : data_(xtd::new_sptr<data>()) {
