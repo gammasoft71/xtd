@@ -323,10 +323,11 @@ namespace xtd {
         static intptr create(std::istream& stream, bool use_icm, std::map<size_t, size_t>& frame_resolutions);
         /// @brief Creates an image from bits.
         /// @param bits The bits containing the image.
+        /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
         /// @return A new image handle.
         /// @remarks This method is used for creating an imgae from an XPM (or XBM) image.
         /// @warning Internal use only
-        static intptr create(const char* const* bits);
+        static intptr create(const char* const* bits, std::map<size_t, size_t>& frame_resolutions);
         /// @brief Creates an empty image from size.
         /// @param width The width for the empty image.
         /// @param height The height for the empty image.
