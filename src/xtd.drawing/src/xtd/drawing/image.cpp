@@ -32,14 +32,14 @@ namespace {
     xtd::byte b;
   };
   
-  image_format to_image_format(size_t raw_fomat) {
-    static auto raw_formats = std::map<size_t, image_format> {{IFM_BMP, imaging::image_format::bmp()}, {IFM_EMF, imaging::image_format::emf()}, {IFM_EXIF, imaging::image_format::exif()}, {IFM_GIF, imaging::image_format::gif()}, {IFM_ICO, imaging::image_format::ico()}, {IFM_JPEG, imaging::image_format::jpeg()}, {IFM_MEMORY_BMP, imaging::image_format::memory_bmp()}, {IFM_PNG, imaging::image_format::png()}, {IFM_TIFF, imaging::image_format::tiff()}, {IFM_WMF, imaging::image_format::wmf()}, {IFM_MEMORY_GIF, imaging::image_format::memory_gif()}, {IFM_MEMORY_ICO, imaging::image_format::memory_ico()}, {IFM_MEMORY_JPEG, imaging::image_format::memory_jpeg()}, {IFM_MEMORY_PNG, imaging::image_format::memory_png()}, {IFM_MEMORY_TIFF, imaging::image_format::memory_tiff()}, {IFM_CUR, imaging::image_format::cur()}, {IFM_MEMORY_CUR, imaging::image_format::memory_cur()}, {IFM_XBM, imaging::image_format::xbm()}, {IFM_MEMORY_XBM, imaging::image_format::memory_xbm()}, {IFM_XPM, imaging::image_format::xpm()}, {IFM_MEMORY_XPM, imaging::image_format::memory_xpm()}, {IFM_PNM, imaging::image_format::pnm()}, {IFM_MEMORY_PNM, imaging::image_format::memory_pnm()}, {IFM_PCX, imaging::image_format::pcx()}, {IFM_MEMORY_PCX, imaging::image_format::memory_pcx()}, {IFM_PICT, imaging::image_format::pict()}, {IFM_MEMORY_PICT, imaging::image_format::memory_pict()}, {IFM_ICON, imaging::image_format::icon()}, {IFM_MEMORY_ICON, imaging::image_format::memory_icon()}, {IFM_MACCUR, imaging::image_format::cursor()}, {IFM_MEMORY_MACCUR, imaging::image_format::memory_cursor()}, {IFM_ANI, imaging::image_format::ani()}, {IFM_IIF, imaging::image_format::iif()}, {IFM_TGA, imaging::image_format::tga()}};
+  image_format to_image_format(xtd::size raw_fomat) {
+    static auto raw_formats = std::map<xtd::size, image_format> {{IFM_BMP, imaging::image_format::bmp()}, {IFM_EMF, imaging::image_format::emf()}, {IFM_EXIF, imaging::image_format::exif()}, {IFM_GIF, imaging::image_format::gif()}, {IFM_ICO, imaging::image_format::ico()}, {IFM_JPEG, imaging::image_format::jpeg()}, {IFM_MEMORY_BMP, imaging::image_format::memory_bmp()}, {IFM_PNG, imaging::image_format::png()}, {IFM_TIFF, imaging::image_format::tiff()}, {IFM_WMF, imaging::image_format::wmf()}, {IFM_MEMORY_GIF, imaging::image_format::memory_gif()}, {IFM_MEMORY_ICO, imaging::image_format::memory_ico()}, {IFM_MEMORY_JPEG, imaging::image_format::memory_jpeg()}, {IFM_MEMORY_PNG, imaging::image_format::memory_png()}, {IFM_MEMORY_TIFF, imaging::image_format::memory_tiff()}, {IFM_CUR, imaging::image_format::cur()}, {IFM_MEMORY_CUR, imaging::image_format::memory_cur()}, {IFM_XBM, imaging::image_format::xbm()}, {IFM_MEMORY_XBM, imaging::image_format::memory_xbm()}, {IFM_XPM, imaging::image_format::xpm()}, {IFM_MEMORY_XPM, imaging::image_format::memory_xpm()}, {IFM_PNM, imaging::image_format::pnm()}, {IFM_MEMORY_PNM, imaging::image_format::memory_pnm()}, {IFM_PCX, imaging::image_format::pcx()}, {IFM_MEMORY_PCX, imaging::image_format::memory_pcx()}, {IFM_PICT, imaging::image_format::pict()}, {IFM_MEMORY_PICT, imaging::image_format::memory_pict()}, {IFM_ICON, imaging::image_format::icon()}, {IFM_MEMORY_ICON, imaging::image_format::memory_icon()}, {IFM_MACCUR, imaging::image_format::cursor()}, {IFM_MEMORY_MACCUR, imaging::image_format::memory_cursor()}, {IFM_ANI, imaging::image_format::ani()}, {IFM_IIF, imaging::image_format::iif()}, {IFM_TGA, imaging::image_format::tga()}};
     auto it = raw_formats.find(raw_fomat);
     return it == raw_formats.end() ? image_format() : it->second;
   }
   
-  size_t to_raw_format(const class image_format& image_format) {
-    static auto image_formats = std::map<class image_format, size_t> {{imaging::image_format::bmp(), IFM_BMP}, {imaging::image_format::emf(), IFM_EMF}, {imaging::image_format::exif(), IFM_EXIF}, {imaging::image_format::gif(), IFM_GIF}, {imaging::image_format::ico(), IFM_ICO}, {imaging::image_format::jpeg(), IFM_JPEG}, {imaging::image_format::memory_bmp(), IFM_MEMORY_BMP}, {imaging::image_format::png(), IFM_PNG}, {imaging::image_format::tiff(), IFM_TIFF}, {imaging::image_format::wmf(), IFM_WMF}, {imaging::image_format::memory_gif(), IFM_MEMORY_GIF}, {imaging::image_format::memory_ico(), IFM_MEMORY_ICO}, {imaging::image_format::memory_jpeg(), IFM_MEMORY_JPEG}, {imaging::image_format::memory_png(), IFM_MEMORY_PNG}, {imaging::image_format::memory_tiff(), IFM_MEMORY_TIFF}, {imaging::image_format::cur(), IFM_CUR}, {imaging::image_format::memory_cur(), IFM_MEMORY_CUR}, {imaging::image_format::xbm(), IFM_XBM}, {imaging::image_format::memory_xbm(), IFM_MEMORY_XBM}, {imaging::image_format::xpm(), IFM_XPM}, {imaging::image_format::memory_xpm(), IFM_MEMORY_XPM}, {imaging::image_format::pnm(), IFM_PNM}, {imaging::image_format::memory_pnm(), IFM_MEMORY_PNM}, {imaging::image_format::pcx(), IFM_PCX}, {imaging::image_format::memory_pcx(), IFM_MEMORY_PCX}, {imaging::image_format::pict(), IFM_PICT}, {imaging::image_format::memory_pict(), IFM_MEMORY_PICT}, {imaging::image_format::icon(), IFM_ICON}, {imaging::image_format::memory_icon(), IFM_MEMORY_ICON}, {imaging::image_format::cursor(), IFM_MACCUR}, {imaging::image_format::memory_cursor(), IFM_MEMORY_MACCUR}, {imaging::image_format::ani(), IFM_ANI}, {imaging::image_format::iif(), IFM_IIF}, {imaging::image_format::tga(), IFM_TGA}};
+  xtd::size to_raw_format(const class image_format& image_format) {
+    static auto image_formats = std::map<class image_format, xtd::size> {{imaging::image_format::bmp(), IFM_BMP}, {imaging::image_format::emf(), IFM_EMF}, {imaging::image_format::exif(), IFM_EXIF}, {imaging::image_format::gif(), IFM_GIF}, {imaging::image_format::ico(), IFM_ICO}, {imaging::image_format::jpeg(), IFM_JPEG}, {imaging::image_format::memory_bmp(), IFM_MEMORY_BMP}, {imaging::image_format::png(), IFM_PNG}, {imaging::image_format::tiff(), IFM_TIFF}, {imaging::image_format::wmf(), IFM_WMF}, {imaging::image_format::memory_gif(), IFM_MEMORY_GIF}, {imaging::image_format::memory_ico(), IFM_MEMORY_ICO}, {imaging::image_format::memory_jpeg(), IFM_MEMORY_JPEG}, {imaging::image_format::memory_png(), IFM_MEMORY_PNG}, {imaging::image_format::memory_tiff(), IFM_MEMORY_TIFF}, {imaging::image_format::cur(), IFM_CUR}, {imaging::image_format::memory_cur(), IFM_MEMORY_CUR}, {imaging::image_format::xbm(), IFM_XBM}, {imaging::image_format::memory_xbm(), IFM_MEMORY_XBM}, {imaging::image_format::xpm(), IFM_XPM}, {imaging::image_format::memory_xpm(), IFM_MEMORY_XPM}, {imaging::image_format::pnm(), IFM_PNM}, {imaging::image_format::memory_pnm(), IFM_MEMORY_PNM}, {imaging::image_format::pcx(), IFM_PCX}, {imaging::image_format::memory_pcx(), IFM_MEMORY_PCX}, {imaging::image_format::pict(), IFM_PICT}, {imaging::image_format::memory_pict(), IFM_MEMORY_PICT}, {imaging::image_format::icon(), IFM_ICON}, {imaging::image_format::memory_icon(), IFM_MEMORY_ICON}, {imaging::image_format::cursor(), IFM_MACCUR}, {imaging::image_format::memory_cursor(), IFM_MEMORY_MACCUR}, {imaging::image_format::ani(), IFM_ANI}, {imaging::image_format::iif(), IFM_IIF}, {imaging::image_format::tga(), IFM_TGA}};
     auto it = image_formats.find(image_format);
     return it == image_formats.end() ? IFM_UNKNOWN : it->second;
   }
@@ -59,28 +59,28 @@ namespace {
 struct image::data {
   xtd::byte* alpha = nullptr;
   xtd::byte* rgb = nullptr;
-  imaging::image_flags flags_ = imaging::image_flags::none;
-  std::map<xtd::guid, size_t> frame_dimensions = {{frame_dimension::page().guid(), 1}};
-  intptr handle_ = 0;
-  float horizontal_resolution_ = .0f;
-  imaging::color_palette palette_;
-  imaging::pixel_format pixel_format_ = imaging::pixel_format::undefined;
-  size_f physical_dimension_;
-  xtd::array<int32> property_id_list_;
-  xtd::array<imaging::property_item> property_items_;
-  imaging::image_format raw_format_;
-  drawing::size size_;
-  std::any tag_;
-  float vertical_resolution_ = .0f;
-  encoder_parameters encoder_parameter_list_;
+  imaging::image_flags flags = imaging::image_flags::none;
+  std::map<xtd::guid, xtd::size> frame_dimensions = {{frame_dimension::page().guid(), 1}};
+  intptr handle = 0;
+  float horizontal_resolution = .0f;
+  imaging::color_palette palette;
+  imaging::pixel_format pixel_format = imaging::pixel_format::undefined;
+  size_f physical_dimension;
+  xtd::array<int32> property_id_list;
+  xtd::array<imaging::property_item> property_items;
+  imaging::image_format raw_format;
+  drawing::size size;
+  std::any tag;
+  float vertical_resolution = .0f;
+  encoder_parameters encoder_parameter_list;
 };
 
 image::image() : data_(xtd::new_sptr<data>()) {
 }
 
 image::image(intptr hbitmap) : data_(xtd::new_sptr<data>()) {
-  if (hbitmap) data_->handle_ = hbitmap;
-  if (data_->handle_ == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
+  if (hbitmap) data_->handle = hbitmap;
+  if (data_->handle == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
   update_properties();
 }
 
@@ -89,14 +89,14 @@ image::image(const string& filename) : image::image(filename, false) {
 
 image::image(const string& filename, bool use_icm) : data_(xtd::new_sptr<data>()) {
   if (!xtd::io::file::exists(filename)) throw_helper::throws(exception_case::argument);
-  auto frame_resolutions = std::map<size_t, size_t> {};
-  if (path::get_extension(filename) != ".xpm")  data_->handle_ = native::image::create(filename, use_icm, frame_resolutions);
+  auto frame_resolutions = std::map<xtd::size, xtd::size> {};
+  if (path::get_extension(filename) != ".xpm")  data_->handle = native::image::create(filename, use_icm, frame_resolutions);
   else {
     auto xpm_ptr = get_data_from_xpm(filename);
-    data_->handle_ = native::image::create(xpm_ptr.get(), frame_resolutions);
-    data_->raw_format_ = imaging::image_format::xpm();
+    data_->handle = native::image::create(xpm_ptr.get(), frame_resolutions);
+    data_->raw_format = imaging::image_format::xpm();
   }
-  if (data_->handle_ == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
+  if (data_->handle == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
   data_->frame_dimensions.clear();
   for (auto frame_resolution : frame_resolutions) {
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
@@ -111,9 +111,9 @@ image::image(std::istream& stream) : image::image(stream, false) {
 }
 
 image::image(std::istream& stream, bool use_icm) : data_(xtd::new_sptr<data>()) {
-  auto frame_resolutions = std::map<size_t, size_t> {};
-  data_->handle_ = native::image::create(stream, use_icm, frame_resolutions);
-  if (data_->handle_ == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
+  auto frame_resolutions = std::map<xtd::size, xtd::size> {};
+  data_->handle = native::image::create(stream, use_icm, frame_resolutions);
+  if (data_->handle == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
   data_->frame_dimensions.clear();
   for (auto frame_resolution : frame_resolutions) {
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
@@ -125,10 +125,10 @@ image::image(std::istream& stream, bool use_icm) : data_(xtd::new_sptr<data>()) 
 }
 
 image::image(const char* const* bits) : data_(xtd::new_sptr<data>()) {
-  auto frame_resolutions = std::map<size_t, size_t> {};
-  data_->handle_ = native::image::create(bits, frame_resolutions);
-  if (data_->handle_ == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
-  data_->raw_format_ = imaging::image_format::memory_xpm();
+  auto frame_resolutions = std::map<xtd::size, xtd::size> {};
+  data_->handle = native::image::create(bits, frame_resolutions);
+  if (data_->handle == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
+  data_->raw_format = imaging::image_format::memory_xpm();
   for (auto frame_resolution : frame_resolutions) {
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
     else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] = frame_resolution.second;
@@ -140,28 +140,28 @@ image::image(const char* const* bits) : data_(xtd::new_sptr<data>()) {
 
 image::image(int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
   if (width < 1 || height < 1) throw_helper::throws(exception_case::argument);
-  data_->handle_ = native::image::create(width, height);
-  if (data_->handle_ == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
+  data_->handle = native::image::create(width, height);
+  if (data_->handle == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
   update_properties();
 }
 
 image::image(int32 width, int32 height, float horizontal_resolution, float vertical_resolution) : data_(xtd::new_sptr<data>()) {
   if (width < 1 || height < 1) throw_helper::throws(exception_case::argument);
-  data_->handle_ = native::image::create(width, height, horizontal_resolution, vertical_resolution);
+  data_->handle = native::image::create(width, height, horizontal_resolution, vertical_resolution);
   update_properties();
 }
 
 image::image(int32 width, int32 height, enum pixel_format format) {
   if (width < 1 || height < 1) throw_helper::throws(exception_case::argument);
-  data_->handle_ = native::image::create(width, height, as<int32>(format));
-  if (data_->handle_ == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
+  data_->handle = native::image::create(width, height, as<int32>(format));
+  if (data_->handle == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
   update_properties();
 }
 
 image::image(int32 width, int32 height, int32 stride, enum pixel_format format, intptr scan0) {
   if (width < 1 || height < 1) throw_helper::throws(exception_case::argument);
-  data_->handle_ = native::image::create(width, height, stride, as<int32>(format), scan0);
-  if (data_->handle_ == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
+  data_->handle = native::image::create(width, height, stride, as<int32>(format), scan0);
+  if (data_->handle == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
   update_properties();
 }
 
@@ -180,12 +180,12 @@ image::image(const image& image, const rectangle& rect) : data_(xtd::new_sptr<da
 }
 
 image::~image() {
-  if (data_.use_count() == 1 && data_->handle_)
-    native::image::destroy(data_->handle_);
+  if (data_.use_count() == 1 && data_->handle)
+    native::image::destroy(data_->handle);
 }
 
 int32 image::flags() const noexcept {
-  return static_cast<int32>(data_->flags_);
+  return static_cast<int32>(data_->flags);
 }
 
 std::vector<guid> image::frame_dimentions_list() const noexcept {
@@ -195,63 +195,63 @@ std::vector<guid> image::frame_dimentions_list() const noexcept {
 }
 
 intptr image::handle() const noexcept {
-  return data_->handle_;
+  return data_->handle;
 }
 
 int32 image::height() const noexcept {
-  return data_->size_.height;
+  return data_->size.height;
 }
 
 float image::horizontal_resolution() const noexcept {
-  return data_->horizontal_resolution_;
+  return data_->horizontal_resolution;
 }
 
 imaging::color_palette image::palette() const noexcept {
-  return data_->palette_;
+  return data_->palette;
 }
 
 void image::palette(const imaging::color_palette& palette) noexcept {
-  data_->palette_ = palette;
+  data_->palette = palette;
 }
 
 const size_f& image::physical_dimension() const noexcept {
-  return data_->physical_dimension_;
+  return data_->physical_dimension;
 }
 
 imaging::pixel_format image::pixel_format() const noexcept {
-  return data_->pixel_format_;
+  return data_->pixel_format;
 }
 
 const array<int32>& image::property_id_list() const noexcept {
-  return data_->property_id_list_;
+  return data_->property_id_list;
 }
 
 const array<imaging::property_item>& image::property_items() const noexcept {
-  return data_->property_items_;
+  return data_->property_items;
 }
 
 const imaging::image_format& image::raw_format() const noexcept {
-  return data_->raw_format_;
+  return data_->raw_format;
 }
 
 const drawing::size& image::size() const noexcept {
-  return data_->size_;
+  return data_->size;
 }
 
 const std::any& image::tag() const noexcept {
-  return data_->tag_;
+  return data_->tag;
 }
 
 void image::tag(const std::any& tag) noexcept {
-  data_->tag_ = tag;
+  data_->tag = tag;
 }
 
 float image::vertical_resolution() const noexcept {
-  return data_->vertical_resolution_;
+  return data_->vertical_resolution;
 }
 
 int32 image::width() const noexcept {
-  return data_->size_.width;
+  return data_->size.width;
 }
 
 image image::clone() const {
@@ -303,12 +303,12 @@ xtd::byte* image::get_alpha() {
 }
 
 rectangle_f image::get_bounds(graphics_unit page_unit) const noexcept {
-  return rectangle_f {0.0f, 0.0f, graphics::to_page_unit(as<float>(data_->size_.width), page_unit, 1.0f, native::image::screen_dpi()), graphics::to_page_unit(as<float>(data_->size_.height), page_unit, 1.0f, native::image::screen_dpi())};
+  return rectangle_f {0.0f, 0.0f, graphics::to_page_unit(as<float>(data_->size.width), page_unit, 1.0f, native::image::screen_dpi()), graphics::to_page_unit(as<float>(data_->size.height), page_unit, 1.0f, native::image::screen_dpi())};
 }
 
 encoder_parameters image::get_encoder_parameter_list(guid encoder) const noexcept {
   auto parameters = list<encoder_parameter> {};
-  for (const auto& encoder_parameter : data_->encoder_parameter_list_.params)
+  for (const auto& encoder_parameter : data_->encoder_parameter_list.params)
     if (encoder_parameter.encoder().guid() == encoder)
       parameters.add(encoder_parameter);
   auto result = encoder_parameters {};
@@ -352,7 +352,7 @@ int32 image::get_pixel_format_size(enum pixel_format pixfmt) noexcept {
 }
 
 property_item image::get_property_item(int32 propid) {
-  for (auto property_tiem : data_->property_items_)
+  for (auto property_tiem : data_->property_items)
     if (property_tiem.id() == propid) return property_tiem;
   throw_helper::throws(exception_case::argument);
 }
@@ -386,15 +386,15 @@ void image::rotate_flip(xtd::drawing::rotate_flip_type rotate_flip_type) {
 }
 
 void image::save(const string& filename) const {
-  native::image::save(data_->handle_, filename);
+  native::image::save(data_->handle, filename);
 }
 
 void image::save(const string& filename, const imaging::image_format& format) const {
-  native::image::save(data_->handle_, filename, to_raw_format(format));
+  native::image::save(data_->handle, filename, to_raw_format(format));
 }
 
 void image::save(std::ostream& stream, const imaging::image_format& format) const {
-  native::image::save(data_->handle_, stream, to_raw_format(format));
+  native::image::save(data_->handle, stream, to_raw_format(format));
 }
 
 bitmap image::from_hbitmap(intptr hbitmap) {
@@ -411,8 +411,8 @@ image image::from_data(const char* const* bits) {
 
 image image::from_hicon(intptr hicon) {
   auto result = image {};
-  result.data_->handle_ = native::image::from_hicon(hicon);
-  if (result.data_->handle_ == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
+  result.data_->handle = native::image::from_hicon(hicon);
+  if (result.data_->handle == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
   result.update_properties();
   return result;
 }
@@ -437,7 +437,7 @@ void image::set_pixel(int32 x, int32 y, const drawing::color& color) {
 }
 
 void image::set_pixel_format(imaging::pixel_format value) {
-  data_->pixel_format_ = value;
+  data_->pixel_format = value;
 }
 
 void image::blur(int32 radius) {
@@ -470,38 +470,38 @@ void image::resize(int32 width, int32 height) {
 }
 
 void image::update_properties() {
-  if (!data_->handle_) return;
+  if (!data_->handle) return;
   data_->alpha = native::image::get_alpha(handle());
   data_->rgb = native::image::get_data(handle());
-  data_->flags_ = static_cast<imaging::image_flags>(native::image::flags(data_->handle_));
+  data_->flags = static_cast<imaging::image_flags>(native::image::flags(data_->handle));
   
-  data_->horizontal_resolution_ = native::image::horizontal_resolution(data_->handle_);
+  data_->horizontal_resolution = native::image::horizontal_resolution(data_->handle);
   
   auto palette_entries = std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>> {};
-  native::image::color_palette(data_->handle_, palette_entries, data_->palette_.flags_);
+  native::image::color_palette(data_->handle, palette_entries, data_->palette.flags_);
   for (auto [a, r, g, b] : palette_entries)
-    data_->palette_.entries_.push_back(color::from_argb(a, r, g, b));
+    data_->palette.entries_.push_back(color::from_argb(a, r, g, b));
   
-  data_->pixel_format_ = static_cast<imaging::pixel_format>(native::image::pixel_format(data_->handle_));
+  data_->pixel_format = static_cast<imaging::pixel_format>(native::image::pixel_format(data_->handle));
   
   auto physical_width = 0, physical_height = 0;
-  native::image::physical_dimension(data_->handle_, physical_width, physical_height);
-  data_->physical_dimension_ = drawing::size_f(static_cast<float>(physical_width), static_cast<float>(physical_height));
+  native::image::physical_dimension(data_->handle, physical_width, physical_height);
+  data_->physical_dimension = drawing::size_f(static_cast<float>(physical_width), static_cast<float>(physical_height));
   
-  data_->property_id_list_ = native::image::property_id_list(data_->handle_);
+  data_->property_id_list = native::image::property_id_list(data_->handle);
   
-  for (const native::image::property_item& i : native::image::property_items(data_->handle_)) {
+  for (const native::image::property_item& i : native::image::property_items(data_->handle)) {
     auto item = imaging::property_item {};
     item.id(i.id);
     item.value(i.value);
-    data_->property_items_.resize(data_->property_items_.length() + 1, item);
+    data_->property_items.resize(data_->property_items.length() + 1, item);
   }
   
-  if (data_->raw_format_ == image_format {}) data_->raw_format_ = to_image_format(native::image::raw_format(data_->handle_));
+  if (data_->raw_format == image_format {}) data_->raw_format = to_image_format(native::image::raw_format(data_->handle));
   
   auto w = 0, h = 0;
-  native::image::size(data_->handle_, w, h);
-  data_->size_ = drawing::size(w, h);
+  native::image::size(data_->handle, w, h);
+  data_->size = drawing::size(w, h);
   
-  data_->vertical_resolution_ = native::image::vertical_resolution(data_->handle_);
+  data_->vertical_resolution = native::image::vertical_resolution(data_->handle);
 }
