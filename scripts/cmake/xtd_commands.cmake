@@ -1875,22 +1875,25 @@ macro(write_resources_file_header)
     "    /// @{\n"
   )
   
+  set(AUDIO_EXTENSIONS ".wav")
+  set(ICON_EXTENSIONS ".ico" ".icon" ".icns")
+  set(PICTURE_EXTENSIONS ".ani" ".bmp" ".cur" ".emf" ".exif" ".gif" ".iif" ".jpeg" ".jpg" ".pct" ".pcx" ".pic" ".pict" ".png" ".pnm" ".ppm" ".tga" ".tif" ".tiff" ".wmf" ".xbm" ".xpm")
+  set(TEXT_EXTENSIONS ".txt" ".text")
   foreach(RESOURCE_LINE ${PROJECT_RESOURCES})
     split_resource(${RESOURCE_LINE} NAME FILE)
     get_filename_component(FILENAME ${FILE} NAME)
     get_filename_component(EXTENSION ${FILE} EXT)
 
     string(TOLOWER ${EXTENSION} EXTENSION)
-    if ("${EXTENSION}" STREQUAL ".ani" OR "${EXTENSION}" STREQUAL ".bmp" OR "${EXTENSION}" STREQUAL ".cur" OR "${EXTENSION}" STREQUAL ".emf" OR "${EXTENSION}" STREQUAL ".exif" OR "${EXTENSION}" STREQUAL ".gif" OR "${EXTENSION}" STREQUAL ".iif" OR "${EXTENSION}" STREQUAL ".jpeg" OR "${EXTENSION}" STREQUAL ".jpg" OR "${EXTENSION}" STREQUAL ".pcx" OR "${EXTENSION}" STREQUAL ".pct" OR "${EXTENSION}" STREQUAL ".pic" OR "${EXTENSION}" STREQUAL ".pict" OR "${EXTENSION}" STREQUAL ".png" OR "${EXTENSION}" STREQUAL ".pnm" OR "${EXTENSION}" STREQUAL ".ppm" OR "${EXTENSION}" STREQUAL ".tga" OR "${EXTENSION}" STREQUAL ".tif" OR "${EXTENSION}" STREQUAL ".tiff" OR "${EXTENSION}" STREQUAL ".wmf" OR "${EXTENSION}" STREQUAL ".xbm" OR "${EXTENSION}" STREQUAL ".xpm")
-       file(APPEND ${RESOURCES_FILE_HEADER}
-        "    /// @brief Looks up a localized resource of type xtd::drawing::bitmap.\n"
-        "    static const xtd::drawing::bitmap& ${NAME}() {\n"
-        "      static auto bitmap = xtd::drawing::bitmap {xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::application_resources), \"${FILENAME}\")};\n"
-        "      return bitmap;\n"
+    if (${EXTENSION} IN_LIST AUDIO_EXTENSIONS)
+      file(APPEND ${RESOURCES_FILE_HEADER}
+        "    /// @brief Looks up a localized resource of type xtd::forms::sound.\n"
+        "    static const xtd::object& ${NAME}() {\n"
+        "      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);\n"
         "    }\n"
         "\n"
       )
-    elseif ("${EXTENSION}" STREQUAL ".ico" OR "${EXTENSION}" STREQUAL ".icon" OR "${EXTENSION}" STREQUAL ".icns")
+    elseif (${EXTENSION} IN_LIST ICON_EXTENSIONS)
        file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type xtd::drawing::icon.\n"
         "    static const xtd::drawing::icon& ${NAME}() {\n"
@@ -1899,20 +1902,21 @@ macro(write_resources_file_header)
         "    }\n"
         "\n"
       )
-    elseif ("${EXTENSION}" STREQUAL ".txt")
+    elseif (${EXTENSION} IN_LIST PICTURE_EXTENSIONS)
+       file(APPEND ${RESOURCES_FILE_HEADER}
+        "    /// @brief Looks up a localized resource of type xtd::drawing::bitmap.\n"
+        "    static const xtd::drawing::bitmap& ${NAME}() {\n"
+        "      static auto bitmap = xtd::drawing::bitmap {xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::application_resources), \"${FILENAME}\")};\n"
+        "      return bitmap;\n"
+        "    }\n"
+        "\n"
+      )
+    elseif (${EXTENSION} IN_LIST TEXT_EXTENSIONS)
       file(APPEND ${RESOURCES_FILE_HEADER}
         "    /// @brief Looks up a localized resource of type xtd::string.\n"
         "    static const xtd::string& ${NAME}() {\n"
         "      static auto text = xtd::io::file::read_all_text(xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::application_resources), \"${FILENAME}\"));\n"
         "      return text;\n"
-        "    }\n"
-        "\n"
-      )
-    elseif ("${EXTENSION}" STREQUAL ".wav")
-      file(APPEND ${RESOURCES_FILE_HEADER}
-        "    /// @brief Looks up a localized resource of type xtd::forms::sound.\n"
-        "    static const xtd::object& ${NAME}() {\n"
-        "      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::not_implemented);\n"
         "    }\n"
         "\n"
       )
