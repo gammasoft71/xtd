@@ -1,8 +1,5 @@
 #include <xtd/xtd>
 
-using namespace xtd::drawing;
-using namespace xtd::drawing::drawing_2d;
-
 namespace xtd::drawing::tests {
   class program static_ {
   public:
@@ -31,4 +28,4 @@ namespace xtd::drawing::tests {
   };
 }
 
-startup_(tests::program::main);
+startup_(drawing::tests::program::main);
