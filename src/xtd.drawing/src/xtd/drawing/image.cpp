@@ -80,7 +80,7 @@ image::image() : data_(xtd::new_sptr<data>()) {
 
 image::image(intptr hbitmap) : data_(xtd::new_sptr<data>()) {
   if (hbitmap) data_->handle = hbitmap;
-  if (data_->handle == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
+  if (data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   update_properties();
 }
 
@@ -96,7 +96,7 @@ image::image(const string& filename, bool use_icm) : data_(xtd::new_sptr<data>()
     data_->handle = native::image::create(xpm_ptr.get(), frame_resolutions);
     data_->raw_format = imaging::image_format::xpm();
   }
-  if (data_->handle == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
+  if (data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   data_->frame_dimensions.clear();
   for (auto frame_resolution : frame_resolutions) {
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
@@ -113,7 +113,7 @@ image::image(std::istream& stream) : image::image(stream, false) {
 image::image(std::istream& stream, bool use_icm) : data_(xtd::new_sptr<data>()) {
   auto frame_resolutions = std::map<xtd::size, xtd::size> {};
   data_->handle = native::image::create(stream, use_icm, frame_resolutions);
-  if (data_->handle == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
+  if (data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   data_->frame_dimensions.clear();
   for (auto frame_resolution : frame_resolutions) {
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
@@ -127,7 +127,7 @@ image::image(std::istream& stream, bool use_icm) : data_(xtd::new_sptr<data>()) 
 image::image(const char* const* bits) : data_(xtd::new_sptr<data>()) {
   auto frame_resolutions = std::map<xtd::size, xtd::size> {};
   data_->handle = native::image::create(bits, frame_resolutions);
-  if (data_->handle == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
+  if (data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   data_->raw_format = imaging::image_format::memory_xpm();
   for (auto frame_resolution : frame_resolutions) {
     if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
@@ -141,7 +141,7 @@ image::image(const char* const* bits) : data_(xtd::new_sptr<data>()) {
 image::image(int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
   if (width < 1 || height < 1) throw_helper::throws(exception_case::argument);
   data_->handle = native::image::create(width, height);
-  if (data_->handle == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
+  if (data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   update_properties();
 }
 
@@ -154,14 +154,14 @@ image::image(int32 width, int32 height, float horizontal_resolution, float verti
 image::image(int32 width, int32 height, enum pixel_format format) {
   if (width < 1 || height < 1) throw_helper::throws(exception_case::argument);
   data_->handle = native::image::create(width, height, as<int32>(format));
-  if (data_->handle == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
+  if (data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   update_properties();
 }
 
 image::image(int32 width, int32 height, int32 stride, enum pixel_format format, intptr scan0) {
   if (width < 1 || height < 1) throw_helper::throws(exception_case::argument);
   data_->handle = native::image::create(width, height, stride, as<int32>(format), scan0);
-  if (data_->handle == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
+  if (data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   update_properties();
 }
 
@@ -412,7 +412,7 @@ image image::from_data(const char* const* bits) {
 image image::from_hicon(intptr hicon) {
   auto result = image {};
   result.data_->handle = native::image::from_hicon(hicon);
-  if (result.data_->handle == invalid_handle) throw_helper::throws(xtd::helpers::exception_case::io);
+  if (result.data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   result.update_properties();
   return result;
 }
