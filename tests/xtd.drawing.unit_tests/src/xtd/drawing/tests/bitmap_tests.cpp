@@ -1,3 +1,4 @@
+#include "../../../../properties/resources.hpp"
 #include <xtd/drawing/bitmap>
 #include <xtd/io/path>
 #include <xtd/argument_exception>
@@ -460,7 +461,7 @@ namespace xtd::drawing::tests {
       assert::are_equal(imaging::pixel_format::format_32bpp_argb, bmp.pixel_format());
       collection_assert::is_empty(bmp.property_id_list());
       collection_assert::is_empty(bmp.property_items());
-      assert::are_equal(imaging::image_format::ppm(), bmp.raw_format());
+      assert::are_equal(imaging::image_format::pnm(), bmp.raw_format());
       assert::are_equal(size {3, 2}, bmp.size());
       assert::is_false(bmp.tag().has_value());
       //assert::are_equal(96.0f, bmp.vertical_resolution(), 1.0f);
