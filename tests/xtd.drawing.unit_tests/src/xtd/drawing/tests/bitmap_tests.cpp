@@ -529,6 +529,14 @@ namespace xtd::drawing::tests {
       assert::are_equal(color::fuchsia, bmp.get_pixel(1, 1));
       assert::are_equal(color::yellow, bmp.get_pixel(2, 1));
     }
+    
+    void test_method_(create_from_unsupported_format_file) {
+      assert::throws<argument_exception>([] {auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_3_2.xcf")};});
+    }
+    
+    void test_method_(create_from_non_existent_file) {
+      assert::throws<argument_exception>([] {auto bmp = bitmap {path::combine(environment::get_folder_path(environment::special_folder::application_resources), "bitmap_not_existent_file.any")};});
+    }
 
     void test_method_(create_with_with_and_heght) {
       auto bmp = bitmap {3, 2};
