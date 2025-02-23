@@ -192,6 +192,13 @@ namespace {
       default: return FD_PAGE;
     }
   }
+  
+  void init_alpha(wxImage* img) {
+    if (!img->HasAlpha()) img->InitAlpha();
+    for (auto y = 0; y < img->GetHeight(); y++)
+      for (auto x = 0; x < img->GetWidth(); x++)
+        img->SetAlpha(x, y, 0);
+  }
 }
 
 void image::blur(intptr handle, int32 radius) {
@@ -238,6 +245,10 @@ intptr image::create(const string& filename, bool use_icm, std::map<size_t, size
   else if (extension == ".xbm") bitmap_type = wxBitmapType::wxBITMAP_TYPE_XBM;
   else if (extension == ".xpm") bitmap_type = wxBitmapType::wxBITMAP_TYPE_XPM;
   auto img = new wxImage(wxString(convert_string::to_wstring(filename)), bitmap_type == wxBitmapType::wxBITMAP_TYPE_XPM ? wxBitmapType::wxBITMAP_TYPE_XPM : wxBitmapType::wxBITMAP_TYPE_ANY);
+  if (!img->IsOk()) {
+    delete img;
+    return invalid_handle;
+  }
   if (bitmap_type != wxBitmapType::wxBITMAP_TYPE_ANY && img->GetType() != bitmap_type) img->SetType(bitmap_type);
   // wxWidgets does not have a parameter or a method to set color correction when creating from a filename.
   frame_resolutions[get_frame_resolution(*img)] = wxImage::GetImageCount(wxString {filename.chars()});
@@ -248,6 +259,10 @@ intptr image::create(std::istream& stream, bool use_icm, std::map<size_t, size_t
   toolkit::initialize(); // Must be first
   StdInputStreamAdapter std_stream(stream);
   auto img = new wxImage(std_stream);
+  if (!img->IsOk()) {
+    delete img;
+    return invalid_handle;
+  }
   // wxWidgets does not have a parameter or a method to set color correction when creating from a stream.
   frame_resolutions[get_frame_resolution(*img)] = wxImage::GetImageCount(std_stream);
   return reinterpret_cast<intptr>(img);
@@ -256,55 +271,63 @@ intptr image::create(std::istream& stream, bool use_icm, std::map<size_t, size_t
 intptr image::create(const char* const* bits, std::map<size_t, size_t>& frame_resolutions) {
   toolkit::initialize(); // Must be first
   auto img = new wxImage(bits);
+  if (!img->IsOk()) {
+    delete img;
+    return invalid_handle;
+  }
   frame_resolutions[get_frame_resolution(*img)] = 1;
   return reinterpret_cast<intptr>(img);
 }
 
 intptr image::create(int32 width, int32 height) {
   toolkit::initialize(); // Must be first
-  wxImage* result = new wxImage(width, height);
-  result->InitAlpha();
-  for (int32 y = 0; y < height; y++)
-    for (int32 x = 0; x < width; x++)
-      result->SetAlpha(x, y, 0);
-  result->SetType(wxBITMAP_TYPE_BMP_RESOURCE);
-  return reinterpret_cast<intptr>(result);
+  wxImage* img = new wxImage(width, height);
+  if (!img->IsOk()) {
+    delete img;
+    return invalid_handle;
+  }
+  init_alpha(img);
+  img->SetType(wxBITMAP_TYPE_BMP_RESOURCE);
+  return reinterpret_cast<intptr>(img);
 }
 
 intptr image::create(int32 width, int32 height, float horizontal_resolution, float vertical_resolution) {
   toolkit::initialize(); // Must be first
-  wxImage* result = new wxImage(width, height);
-  /// @todo see how to set horizontal and vertical resolution with wxWidgets.
-  result->InitAlpha();
-  for (int32 y = 0; y < height; y++)
-    for (int32 x = 0; x < width; x++)
-      result->SetAlpha(x, y, 0);
-  result->SetType(wxBITMAP_TYPE_BMP_RESOURCE);
-  return reinterpret_cast<intptr>(result);
+  wxImage* img = new wxImage(width, height);
+  if (!img->IsOk()) {
+    delete img;
+    return invalid_handle;
+  }
+  set_resolution(reinterpret_cast<intptr>(img), horizontal_resolution, vertical_resolution);
+  init_alpha(img);
+  img->SetType(wxBITMAP_TYPE_BMP_RESOURCE);
+  return reinterpret_cast<intptr>(img);
 }
 
 intptr image::create(int32 width, int32 height, int32 format) {
   toolkit::initialize(); // Must be first
-  wxImage* result = new wxImage(width, height);
+  wxImage* img = new wxImage(width, height);
+  if (!img->IsOk()) {
+    delete img;
+    return invalid_handle;
+  }
   /// @todo see how to set pixel format with wxWidgets.
-  result->InitAlpha();
-  for (int32 y = 0; y < height; y++)
-    for (int32 x = 0; x < width; x++)
-      result->SetAlpha(x, y, 0);
-  result->SetType(wxBITMAP_TYPE_BMP_RESOURCE);
-  return reinterpret_cast<intptr>(result);
+  init_alpha(img);
+  img->SetType(wxBITMAP_TYPE_BMP_RESOURCE);
+  return reinterpret_cast<intptr>(img);
 }
 
 intptr image::create(int32 width, int32 height, int32 stride, int32 format, intptr scan0) {
   toolkit::initialize(); // Must be first
-  wxImage* result = new wxImage(width, height);
+  wxImage* img = new wxImage(width, height);
+  if (!img->IsOk()) {
+    delete img;
+    return invalid_handle;
+  }
   /// @todo see how to set pixel format and data with wxWidgets.
-  result->InitAlpha();
-  for (int32 y = 0; y < height; y++)
-    for (int32 x = 0; x < width; x++)
-      result->SetAlpha(x, y, 0);
-  result->SetType(wxBITMAP_TYPE_BMP_RESOURCE);
-  return reinterpret_cast<intptr>(result);
+  init_alpha(img);
+  img->SetType(wxBITMAP_TYPE_BMP_RESOURCE);
+  return reinterpret_cast<intptr>(img);
 }
 
 void image::destroy(intptr image) {
@@ -323,8 +346,12 @@ intptr image::from_hicon(intptr icon) {
   toolkit::initialize(); // Must be first
   wxBitmap bitmap;
   bitmap.CopyFromIcon(*reinterpret_cast<wxIcon*>(icon));
-  wxImage* result = new wxImage(bitmap.ConvertToImage());
-  return reinterpret_cast<intptr>(result);
+  wxImage* img = new wxImage(bitmap.ConvertToImage());
+  if (!img->IsOk()) {
+    delete img;
+    return invalid_handle;
+  }
+  return reinterpret_cast<intptr>(img);
 }
 
 xtd::byte* image::get_alpha(intptr image) {
