@@ -144,14 +144,6 @@ namespace xtd {
         /// @brief Gets the PNM memory.
         /// @return An image_format object that indicates the PNM memory image format.
         static image_format memory_pnm() noexcept;
-        
-        /// @brief Gets the Portable Pixmap (PPM) image format.
-        /// @return An image_format object that indicates the PPM image format.
-        static image_format ppm() noexcept;
-        
-        /// @brief Gets the PPM memory.
-        /// @return An image_format object that indicates the PNM memory image format.
-        static image_format memory_ppm() noexcept;
 
         /// @brief Gets the pcx (PCX) image format.
         /// @return An image_format object that indicates the PCX image format.
