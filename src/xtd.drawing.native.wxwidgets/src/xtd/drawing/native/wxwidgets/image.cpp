@@ -25,6 +25,8 @@ using namespace xtd::helpers;
 
 namespace {
   static wxBitmapType wxBITMAP_TYPE_EXIF = static_cast<wxBitmapType>(wxBITMAP_TYPE_MAX + 1);
+  static wxBitmapType wxBITMAP_TYPE_PPM = static_cast<wxBitmapType>(wxBITMAP_TYPE_MAX + 2);
+  static wxBitmapType wxBITMAP_TYPE_PPM_RESOURCE = static_cast<wxBitmapType>(wxBITMAP_TYPE_MAX + 3);
   class StdInputStreamAdapter : public wxInputStream {
   public:
     explicit StdInputStreamAdapter(std::istream& stream): stream_{stream} {}
@@ -104,6 +106,8 @@ namespace {
       case IFM_MEMORY_JPEG: return wxBitmapType::wxBITMAP_TYPE_JPEG_RESOURCE;
       case IFM_PNM: return wxBitmapType::wxBITMAP_TYPE_PNM;
       case IFM_MEMORY_PNM: return wxBitmapType::wxBITMAP_TYPE_PNM_RESOURCE;
+      case IFM_PPM: return wxBITMAP_TYPE_PPM;
+      case IFM_MEMORY_PPM: return wxBITMAP_TYPE_PPM_RESOURCE;
       case IFM_PCX: return wxBitmapType::wxBITMAP_TYPE_PCX;
       case IFM_MEMORY_PCX: return wxBitmapType::wxBITMAP_TYPE_PCX_RESOURCE;
       case IFM_PICT: return wxBitmapType::wxBITMAP_TYPE_PICT;
@@ -152,7 +156,11 @@ namespace {
       case wxBITMAP_TYPE_TGA: return IFM_TGA;
       case wxBITMAP_TYPE_MACCURSOR: return IFM_MACCUR;
       case wxBITMAP_TYPE_MACCURSOR_RESOURCE: return IFM_MEMORY_MACCUR;
-      default: return bitmap_type == wxBITMAP_TYPE_EXIF ? IFM_EXIF : IFM_UNKNOWN;
+      default:
+        if (bitmap_type == wxBITMAP_TYPE_EXIF) return IFM_EXIF;
+        if (bitmap_type == wxBITMAP_TYPE_PPM) return IFM_PPM;
+        if (bitmap_type == wxBITMAP_TYPE_PPM_RESOURCE) return IFM_MEMORY_PPM;
+        return IFM_UNKNOWN;
     }
   }
   
@@ -239,6 +247,7 @@ intptr image::create(const string& filename, bool use_icm, std::map<size_t, size
   else if (extension == ".pict") bitmap_type = wxBitmapType::wxBITMAP_TYPE_PICT;
   else if (extension == ".png") bitmap_type = wxBitmapType::wxBITMAP_TYPE_PNG;
   else if (extension == ".pnm") bitmap_type = wxBitmapType::wxBITMAP_TYPE_PNM;
+  else if (extension == ".ppm") bitmap_type = wxBITMAP_TYPE_PPM;
   else if (extension == ".tga") bitmap_type = wxBitmapType::wxBITMAP_TYPE_TGA;
   else if (extension == ".tif") bitmap_type = wxBitmapType::wxBITMAP_TYPE_TIFF;
   else if (extension == ".tiff") bitmap_type = wxBitmapType::wxBITMAP_TYPE_TIFF;

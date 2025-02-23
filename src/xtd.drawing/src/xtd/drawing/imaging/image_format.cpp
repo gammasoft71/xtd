@@ -103,48 +103,56 @@ image_format image_format::memory_pnm() noexcept {
   return image_format {xtd::guid {"b96b3cc2-0728-11d3-9d7b-0000f81ef32e"}};
 }
 
-image_format image_format::pcx() noexcept {
+image_format image_format::ppm() noexcept {
   return image_format {xtd::guid {"b96b3cc3-0728-11d3-9d7b-0000f81ef32e"}};
 }
 
-image_format image_format::memory_pcx() noexcept {
+image_format image_format::memory_ppm() noexcept {
   return image_format {xtd::guid {"b96b3cc4-0728-11d3-9d7b-0000f81ef32e"}};
 }
 
-image_format image_format::pict() noexcept {
+image_format image_format::pcx() noexcept {
   return image_format {xtd::guid {"b96b3cc5-0728-11d3-9d7b-0000f81ef32e"}};
 }
 
-image_format image_format::memory_pict() noexcept {
+image_format image_format::memory_pcx() noexcept {
   return image_format {xtd::guid {"b96b3cc6-0728-11d3-9d7b-0000f81ef32e"}};
 }
 
-image_format image_format::icon() noexcept {
+image_format image_format::pict() noexcept {
   return image_format {xtd::guid {"b96b3cc7-0728-11d3-9d7b-0000f81ef32e"}};
 }
 
-image_format image_format::memory_icon() noexcept {
+image_format image_format::memory_pict() noexcept {
   return image_format {xtd::guid {"b96b3cc8-0728-11d3-9d7b-0000f81ef32e"}};
 }
 
-image_format image_format::cursor() noexcept {
+image_format image_format::icon() noexcept {
   return image_format {xtd::guid {"b96b3cc9-0728-11d3-9d7b-0000f81ef32e"}};
 }
 
-image_format image_format::memory_cursor() noexcept {
+image_format image_format::memory_icon() noexcept {
   return image_format {xtd::guid {"b96b3cca-0728-11d3-9d7b-0000f81ef32e"}};
 }
 
-image_format image_format::ani() noexcept {
+image_format image_format::cursor() noexcept {
   return image_format {xtd::guid {"b96b3ccb-0728-11d3-9d7b-0000f81ef32e"}};
 }
 
-image_format image_format::iif() noexcept {
+image_format image_format::memory_cursor() noexcept {
   return image_format {xtd::guid {"b96b3ccc-0728-11d3-9d7b-0000f81ef32e"}};
 }
 
-image_format image_format::tga() noexcept {
+image_format image_format::ani() noexcept {
   return image_format {xtd::guid {"b96b3ccd-0728-11d3-9d7b-0000f81ef32e"}};
+}
+
+image_format image_format::iif() noexcept {
+  return image_format {xtd::guid {"b96b3cce-0728-11d3-9d7b-0000f81ef32e"}};
+}
+
+image_format image_format::tga() noexcept {
+  return image_format {xtd::guid {"b96b3ccf-0728-11d3-9d7b-0000f81ef32e"}};
 }
 
 int32 image_format::compare_to(const image_format& value) const noexcept {

@@ -199,13 +199,29 @@ constexpr size_t IFM_PNM = 22;
 /// @warning Internal use only
 constexpr size_t IFM_MEMORY_PNM = 23;
 
+/// @brief Indicates the PPM image format.
+/// @par Library
+/// xtd.drawing.native
+/// @ingroup xtd_drawing_native ifm
+/// @remarks Added specifically for xtd.
+/// @warning Internal use only
+constexpr size_t IFM_PPM = 24;
+
+/// @brief Indicates the PPM memory image format.
+/// @par Library
+/// xtd.drawing.native
+/// @ingroup xtd_drawing_native ifm
+/// @remarks Added specifically for xtd.
+/// @warning Internal use only
+constexpr size_t IFM_MEMORY_PPM = 25;
+
 /// @brief Indicates the PCX image format.
 /// @par Library
 /// xtd.drawing.native
 /// @ingroup xtd_drawing_native ifm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t IFM_PCX = 24;
+constexpr size_t IFM_PCX = 26;
 
 /// @brief Indicates the PCX memory image format.
 /// @par Library
@@ -213,7 +229,7 @@ constexpr size_t IFM_PCX = 24;
 /// @ingroup xtd_drawing_native ifm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t IFM_MEMORY_PCX = 25;
+constexpr size_t IFM_MEMORY_PCX = 27;
 
 /// @brief Indicates the PICT image format.
 /// @par Library
@@ -221,7 +237,7 @@ constexpr size_t IFM_MEMORY_PCX = 25;
 /// @ingroup xtd_drawing_native ifm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t IFM_PICT = 26;
+constexpr size_t IFM_PICT = 28;
 
 /// @brief Indicates the PICT memory image format.
 /// @par Library
@@ -229,7 +245,7 @@ constexpr size_t IFM_PICT = 26;
 /// @ingroup xtd_drawing_native ifm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t IFM_MEMORY_PICT = 27;
+constexpr size_t IFM_MEMORY_PICT = 29;
 
 /// @brief Indicates the ICON image format.
 /// @par Library
@@ -237,7 +253,7 @@ constexpr size_t IFM_MEMORY_PICT = 27;
 /// @ingroup xtd_drawing_native ifm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t IFM_ICON = 28;
+constexpr size_t IFM_ICON = 30;
 
 /// @brief Indicates the ICOM memory image format.
 /// @par Library
@@ -245,7 +261,7 @@ constexpr size_t IFM_ICON = 28;
 /// @ingroup xtd_drawing_native ifm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t IFM_MEMORY_ICON = 29;
+constexpr size_t IFM_MEMORY_ICON = 31;
 
 /// @brief Indicates the Apple CURSOR format.
 /// @par Library
@@ -253,7 +269,7 @@ constexpr size_t IFM_MEMORY_ICON = 29;
 /// @ingroup xtd_drawing_native ifm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t IFM_MACCUR = 30;
+constexpr size_t IFM_MACCUR = 32;
 
 /// @brief Indicates the CURSOR memory image format.
 /// @par Library
@@ -261,7 +277,7 @@ constexpr size_t IFM_MACCUR = 30;
 /// @ingroup xtd_drawing_native ifm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t IFM_MEMORY_MACCUR = 31;
+constexpr size_t IFM_MEMORY_MACCUR = 33;
 
 /// @brief Indicates the ANI image format.
 /// @par Library
@@ -269,7 +285,7 @@ constexpr size_t IFM_MEMORY_MACCUR = 31;
 /// @ingroup xtd_drawing_native ifm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t IFM_ANI = 32;
+constexpr size_t IFM_ANI = 34;
 
 /// @brief Indicates the IIF image format.
 /// @par Library
@@ -277,7 +293,7 @@ constexpr size_t IFM_ANI = 32;
 /// @ingroup xtd_drawing_native ifm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t IFM_IIF = 33;
+constexpr size_t IFM_IIF = 35;
 
 /// @brief Indicates the TGA image format.
 /// @par Library
@@ -285,4 +301,4 @@ constexpr size_t IFM_IIF = 33;
 /// @ingroup xtd_drawing_native ifm
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr size_t IFM_TGA = 34;
+constexpr size_t IFM_TGA = 36;
