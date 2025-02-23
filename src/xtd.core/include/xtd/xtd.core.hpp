@@ -381,6 +381,7 @@
 #include "intptr.hpp"
 #include "intptr_object.hpp"
 #include "invalid_cast_exception.hpp"
+#include "invalid_handle.hpp"
 #include "invalid_operation_exception.hpp"
 #include "invalid_program_exception.hpp"
 #include "iobservable.hpp"
