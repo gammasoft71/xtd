@@ -275,6 +275,8 @@ add_sources(
   include/xtd/intptr_object
   include/xtd/invalid_cast_exception.hpp
   include/xtd/invalid_cast_exception
+  include/xtd/invalid_handle.hpp
+  include/xtd/invalid_handle
   include/xtd/invalid_operation_exception.hpp
   include/xtd/invalid_operation_exception
   include/xtd/invalid_program_exception.hpp
@@ -1166,6 +1168,7 @@ add_sources(
   src/xtd/h_result.cpp
   src/xtd/h_result_category.cpp
   src/xtd/iformatable.cpp
+  src/xtd/invalid_handle.cpp
   src/xtd/invalid_operation_exception.cpp
   src/xtd/istringable.cpp
   src/xtd/literals.cpp
