@@ -1,4 +1,5 @@
-# bitmap 1 x 1 :
+#_______________________________________________________________________________
+#                                                                   bitmap 1 x 1
 resource(bitmap_1_1_bmp "resources/bitmap_1_1.bmp")
 resource(bitmap_1_1_exif "resources/bitmap_1_1.exif")
 resource(bitmap_1_1_gif "resources/bitmap_1_1.gif")
@@ -7,9 +8,11 @@ resource(bitmap_1_1_png "resources/bitmap_1_1.png")
 resource(bitmap_1_1_pnm "resources/bitmap_1_1.pnm")
 resource(bitmap_1_1_ppm "resources/bitmap_1_1.ppm")
 resource(bitmap_1_1_tiff "resources/bitmap_1_1.tiff")
+resource(bitmap_1_1_xcf "resources/bitmap_1_1.xcf")
 resource(bitmap_1_1_xpm "resources/bitmap_1_1.xpm")
 
-# bitmap 1 x 2 :
+#_______________________________________________________________________________
+#                                                                   bitmap 1 x 2
 resource(bitmap_1_2_bmp "resources/bitmap_1_2.bmp")
 resource(bitmap_1_2_exif "resources/bitmap_1_2.exif")
 resource(bitmap_1_2_gif "resources/bitmap_1_2.gif")
@@ -18,9 +21,11 @@ resource(bitmap_1_2_png "resources/bitmap_1_2.png")
 resource(bitmap_1_2_pnm "resources/bitmap_1_2.pnm")
 resource(bitmap_1_2_ppm "resources/bitmap_1_2.ppm")
 resource(bitmap_1_2_tiff "resources/bitmap_1_2.tiff")
+resource(bitmap_1_2_xcf "resources/bitmap_1_2.xcf")
 resource(bitmap_1_2_xpm "resources/bitmap_1_2.xpm")
 
-# bitmap 1 x 3 :
+#_______________________________________________________________________________
+#                                                                   bitmap 1 x 3
 resource(bitmap_1_3_bmp "resources/bitmap_1_3.bmp")
 resource(bitmap_1_3_exif "resources/bitmap_1_3.exif")
 resource(bitmap_1_3_gif "resources/bitmap_1_3.gif")
@@ -29,9 +34,11 @@ resource(bitmap_1_3_png "resources/bitmap_1_3.png")
 resource(bitmap_1_3_ppn "resources/bitmap_1_3.pnm")
 resource(bitmap_1_3_ppm "resources/bitmap_1_3.ppm")
 resource(bitmap_1_3_tiff "resources/bitmap_1_3.tiff")
+resource(bitmap_1_3_xcf "resources/bitmap_1_3.xcf")
 resource(bitmap_1_3_xpm "resources/bitmap_1_3.xpm")
 
-# bitmap 1 x 4 :
+#_______________________________________________________________________________
+#                                                                   bitmap 1 x 4
 resource(bitmap_1_4_bmp "resources/bitmap_1_4.bmp")
 resource(bitmap_1_4_exif "resources/bitmap_1_4.exif")
 resource(bitmap_1_4_gif "resources/bitmap_1_4.gif")
@@ -40,9 +47,11 @@ resource(bitmap_1_4_png "resources/bitmap_1_4.png")
 resource(bitmap_1_4_pnm "resources/bitmap_1_4.pnm")
 resource(bitmap_1_4_ppm "resources/bitmap_1_4.ppm")
 resource(bitmap_1_4_tiff "resources/bitmap_1_4.tiff")
+resource(bitmap_1_4_xcf "resources/bitmap_1_4.xcf")
 resource(bitmap_1_4_xpm "resources/bitmap_1_4.xpm")
 
-# bitmap 2 x 1 :
+#_______________________________________________________________________________
+#                                                                   bitmap 2 x 1
 resource(bitmap_2_1_bmp "resources/bitmap_2_1.bmp")
 resource(bitmap_2_1_exif "resources/bitmap_2_1.exif")
 resource(bitmap_2_1_gif "resources/bitmap_2_1.gif")
@@ -51,9 +60,11 @@ resource(bitmap_2_1_png "resources/bitmap_2_1.png")
 resource(bitmap_2_1_pnm "resources/bitmap_2_1.pnm")
 resource(bitmap_2_1_ppm "resources/bitmap_2_1.ppm")
 resource(bitmap_2_1_tiff "resources/bitmap_2_1.tiff")
+resource(bitmap_2_1_xcf "resources/bitmap_2_1.xcf")
 resource(bitmap_2_1_xpm "resources/bitmap_2_1.xpm")
 
-# bitmap 2 x 2 :
+#_______________________________________________________________________________
+#                                                                   bitmap 2 x 2
 resource(bitmap_2_2_bmp "resources/bitmap_2_2.bmp")
 resource(bitmap_2_2_exif "resources/bitmap_2_2.exif")
 resource(bitmap_2_2_gif "resources/bitmap_2_2.gif")
@@ -62,9 +73,11 @@ resource(bitmap_2_2_png "resources/bitmap_2_2.png")
 resource(bitmap_2_2_pnm "resources/bitmap_2_2.pnm")
 resource(bitmap_2_2_ppm "resources/bitmap_2_2.ppm")
 resource(bitmap_2_2_tiff "resources/bitmap_2_2.tiff")
+resource(bitmap_2_2_xcf "resources/bitmap_2_2.xcf")
 resource(bitmap_2_2_xpm "resources/bitmap_2_2.xpm")
 
-# bitmap 2 x 3 :
+#_______________________________________________________________________________
+#                                                                   bitmap 2 x 3
 resource(bitmap_2_3_bmp "resources/bitmap_2_3.bmp")
 resource(bitmap_2_3_exif "resources/bitmap_2_3.exif")
 resource(bitmap_2_3_gif "resources/bitmap_2_3.gif")
@@ -73,9 +86,11 @@ resource(bitmap_2_3_png "resources/bitmap_2_3.png")
 resource(bitmap_2_3_pnm "resources/bitmap_2_3.pnm")
 resource(bitmap_2_3_ppm "resources/bitmap_2_3.ppm")
 resource(bitmap_2_3_tiff "resources/bitmap_2_3.tiff")
+resource(bitmap_2_3_xcf "resources/bitmap_2_3.xcf")
 resource(bitmap_2_3_xpm "resources/bitmap_2_3.xpm")
 
-# bitmap 2 x 4 :
+#_______________________________________________________________________________
+#                                                                   bitmap 2 x 4
 resource(bitmap_2_4_bmp "resources/bitmap_2_4.bmp")
 resource(bitmap_2_4_exif "resources/bitmap_2_4.exif")
 resource(bitmap_2_4_gif "resources/bitmap_2_4.gif")
@@ -84,9 +99,11 @@ resource(bitmap_2_4_png "resources/bitmap_2_4.png")
 resource(bitmap_2_4_pnm "resources/bitmap_2_4.pnm")
 resource(bitmap_2_4_ppm "resources/bitmap_2_4.ppm")
 resource(bitmap_2_4_tiff "resources/bitmap_2_4.tiff")
+resource(bitmap_2_4_xcf "resources/bitmap_2_4.xcf")
 resource(bitmap_2_4_xpm "resources/bitmap_2_4.xpm")
 
-# bitmap 3 x 1 :
+#_______________________________________________________________________________
+#                                                                   bitmap 3 x 1
 resource(bitmap_3_1_bmp "resources/bitmap_3_1.bmp")
 resource(bitmap_3_1_exif "resources/bitmap_3_1.exif")
 resource(bitmap_3_1_gif "resources/bitmap_3_1.gif")
@@ -95,9 +112,11 @@ resource(bitmap_3_1_png "resources/bitmap_3_1.png")
 resource(bitmap_3_1_pnm "resources/bitmap_3_1.pnm")
 resource(bitmap_3_1_ppm "resources/bitmap_3_1.ppm")
 resource(bitmap_3_1_tiff "resources/bitmap_3_1.tiff")
+resource(bitmap_3_1_xcf "resources/bitmap_3_1.xcf")
 resource(bitmap_3_1_xpm "resources/bitmap_3_1.xpm")
 
-# bitmap 3 x 2 :
+#_______________________________________________________________________________
+#                                                                   bitmap 3 x 2
 resource(bitmap_3_2_bmp "resources/bitmap_3_2.bmp")
 resource(bitmap_3_2_exif "resources/bitmap_3_2.exif")
 resource(bitmap_3_2_gif "resources/bitmap_3_2.gif")
@@ -106,9 +125,11 @@ resource(bitmap_3_2_png "resources/bitmap_3_2.png")
 resource(bitmap_3_2_pnm "resources/bitmap_3_2.pnm")
 resource(bitmap_3_2_ppm "resources/bitmap_3_2.ppm")
 resource(bitmap_3_2_tiff "resources/bitmap_3_2.tiff")
+resource(bitmap_3_2_xcf "resources/bitmap_3_2.xcf")
 resource(bitmap_3_2_xpm "resources/bitmap_3_2.xpm")
 
-# bitmap 3 x 3 :
+#_______________________________________________________________________________
+#                                                                   bitmap 3 x 3
 resource(bitmap_3_3_bmp "resources/bitmap_3_3.bmp")
 resource(bitmap_3_3_exif "resources/bitmap_3_3.exif")
 resource(bitmap_3_3_gif "resources/bitmap_3_3.gif")
@@ -117,9 +138,11 @@ resource(bitmap_3_3_png "resources/bitmap_3_3.png")
 resource(bitmap_3_3_pnm "resources/bitmap_3_3.pnm")
 resource(bitmap_3_3_ppm "resources/bitmap_3_3.ppm")
 resource(bitmap_3_3_tiff "resources/bitmap_3_3.tiff")
+resource(bitmap_3_3_xcf "resources/bitmap_3_3.xcf")
 resource(bitmap_3_3_xpm "resources/bitmap_3_3.xpm")
 
-# bitmap 3 x 4 :
+#_______________________________________________________________________________
+#                                                                   bitmap 3 x 4
 resource(bitmap_3_4_bmp "resources/bitmap_3_4.bmp")
 resource(bitmap_3_4_exif "resources/bitmap_3_4.exif")
 resource(bitmap_3_4_gif "resources/bitmap_3_4.gif")
@@ -128,9 +151,11 @@ resource(bitmap_3_4_png "resources/bitmap_3_4.png")
 resource(bitmap_3_4_pnm "resources/bitmap_3_4.pnm")
 resource(bitmap_3_4_ppm "resources/bitmap_3_4.ppm")
 resource(bitmap_3_4_tiff "resources/bitmap_3_4.tiff")
+resource(bitmap_3_4_xcf "resources/bitmap_3_4.xcf")
 resource(bitmap_3_4_xpm "resources/bitmap_3_4.xpm")
 
-# bitmap 4 x 1 :
+#_______________________________________________________________________________
+#                                                                   bitmap 4 x 1
 resource(bitmap_4_1_bmp "resources/bitmap_4_1.bmp")
 resource(bitmap_4_1_exif "resources/bitmap_4_1.exif")
 resource(bitmap_4_1_gif "resources/bitmap_4_1.gif")
@@ -139,9 +164,11 @@ resource(bitmap_4_1_png "resources/bitmap_4_1.png")
 resource(bitmap_4_1_pnm "resources/bitmap_4_1.pnm")
 resource(bitmap_4_1_ppm "resources/bitmap_4_1.ppm")
 resource(bitmap_4_1_tiff "resources/bitmap_4_1.tiff")
+resource(bitmap_4_1_xcf "resources/bitmap_4_1.xcf")
 resource(bitmap_4_1_xpm "resources/bitmap_4_1.xpm")
 
-# bitmap 4 x 2 :
+#_______________________________________________________________________________
+#                                                                   bitmap 4 x 2
 resource(bitmap_4_2_bmp "resources/bitmap_4_2.bmp")
 resource(bitmap_4_2_exif "resources/bitmap_4_2.exif")
 resource(bitmap_4_2_gif "resources/bitmap_4_2.gif")
@@ -150,9 +177,11 @@ resource(bitmap_4_2_png "resources/bitmap_4_2.png")
 resource(bitmap_4_2_pnm "resources/bitmap_4_2.pnm")
 resource(bitmap_4_2_ppm "resources/bitmap_4_2.ppm")
 resource(bitmap_4_2_tiff "resources/bitmap_4_2.tiff")
+resource(bitmap_4_2_xcf "resources/bitmap_4_2.xcf")
 resource(bitmap_4_2_xpm "resources/bitmap_4_2.xpm")
 
-# bitmap 4 x 3 :
+#_______________________________________________________________________________
+#                                                                   bitmap 4 x 3
 resource(bitmap_4_3_bmp "resources/bitmap_4_3.bmp")
 resource(bitmap_4_3_exif "resources/bitmap_4_3.exif")
 resource(bitmap_4_3_gif "resources/bitmap_4_3.gif")
@@ -161,9 +190,11 @@ resource(bitmap_4_3_png "resources/bitmap_4_3.png")
 resource(bitmap_4_3_pnm "resources/bitmap_4_3.pnm")
 resource(bitmap_4_3_ppm "resources/bitmap_4_3.ppm")
 resource(bitmap_4_3_tiff "resources/bitmap_4_3.tiff")
+resource(bitmap_4_3_xcf "resources/bitmap_4_3.xcf")
 resource(bitmap_4_3_xpm "resources/bitmap_4_3.xpm")
 
-# bitmap 4 x 4 :
+#_______________________________________________________________________________
+#                                                                   bitmap 4 x 4
 resource(bitmap_4_4_bmp "resources/bitmap_4_4.bmp")
 resource(bitmap_4_4_exif "resources/bitmap_4_4.exif")
 resource(bitmap_4_4_gif "resources/bitmap_4_4.gif")
@@ -172,4 +203,5 @@ resource(bitmap_4_4_png "resources/bitmap_4_4.png")
 resource(bitmap_4_4_pnm "resources/bitmap_4_4.pnm")
 resource(bitmap_4_4_ppm "resources/bitmap_4_4.ppm")
 resource(bitmap_4_4_tiff "resources/bitmap_4_4.tiff")
+resource(bitmap_4_4_xcf "resources/bitmap_4_4.xcf")
 resource(bitmap_4_4_xpm "resources/bitmap_4_4.xpm")
