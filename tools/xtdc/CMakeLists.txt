@@ -2,57 +2,57 @@ cmake_minimum_required(VERSION 3.20)
 
 # Project
 project(xtdc)
-include(../../scripts/cmake/xtd_commands.cmake)
-include(../../scripts/cmake/xtd_version.cmake)
+include("../../scripts/cmake/xtd_commands.cmake")
+include("../../scripts/cmake/xtd_version.cmake")
 add_sources(
-  src/base_project.hpp
-  src/blank_solution_project.hpp
-  src/c_console_project.hpp
-  src/c_shared_library_project.hpp
-  src/c_static_library_project.hpp
-  src/catch2_unit_test_application_project.hpp
-  src/cocoa_gui_project.hpp
-  src/cpp_console_project.hpp
-  src/cpp_shared_library_project.hpp
-  src/cpp_static_library_project.hpp
-  src/csharp_console_project.hpp
-  src/csharp_shared_library_project.hpp
-  src/csharp_static_library_project.hpp
-  src/fltk_gui_project.hpp
-  src/gtest_unit_test_application_project.hpp
-  src/gtk2_gui_project.hpp
-  src/gtk3_gui_project.hpp
-  src/gtk4_gui_project.hpp
-  src/gtkmm_gui_project.hpp
-  src/objectivec_console_project.hpp
-  src/objectivec_shared_library_project.hpp
-  src/objectivec_static_library_project.hpp
-  src/project_language.hpp
-  src/project_management.hpp
-  src/project_sdk.hpp
-  src/project_type.hpp
-  src/qt5_gui_project.hpp
-  src/qt6_gui_project.hpp
-  src/win32_gui_project.hpp
-  src/winforms_gui_project.hpp
-  src/wpf_gui_project.hpp
-  src/wxwidgets_gui_project.hpp
-  src/xtd_gui_project.hpp
-  src/xtd_blank_solution_project.hpp
-  src/xtd_c_blank_solution_project.hpp
-  src/xtd_c_console_project.hpp
-  src/xtd_c_gui_project.hpp
-  src/xtd_c_shared_library_project.hpp
-  src/xtd_c_static_library_project.hpp
-  src/xtd_c_unit_test_application_project.hpp
-  src/xtd_console_project.hpp
-  src/project_base.hpp
-  src/new_project.hpp
-  src/xtd_gui_project.hpp
-  src/xtd_shared_library_project.hpp
-  src/xtd_static_library_project.hpp
-  src/xtd_unit_test_application_project.hpp
-  src/xtdc.cpp
+  "src/base_project.hpp"
+  "src/blank_solution_project.hpp"
+  "src/c_console_project.hpp"
+  "src/c_shared_library_project.hpp"
+  "src/c_static_library_project.hpp"
+  "src/catch2_unit_test_application_project.hpp"
+  "src/cocoa_gui_project.hpp"
+  "src/cpp_console_project.hpp"
+  "src/cpp_shared_library_project.hpp"
+  "src/cpp_static_library_project.hpp"
+  "src/csharp_console_project.hpp"
+  "src/csharp_shared_library_project.hpp"
+  "src/csharp_static_library_project.hpp"
+  "src/fltk_gui_project.hpp"
+  "src/gtest_unit_test_application_project.hpp"
+  "src/gtk2_gui_project.hpp"
+  "src/gtk3_gui_project.hpp"
+  "src/gtk4_gui_project.hpp"
+  "src/gtkmm_gui_project.hpp"
+  "src/objectivec_console_project.hpp"
+  "src/objectivec_shared_library_project.hpp"
+  "src/objectivec_static_library_project.hpp"
+  "src/project_language.hpp"
+  "src/project_management.hpp"
+  "src/project_sdk.hpp"
+  "src/project_type.hpp"
+  "src/qt5_gui_project.hpp"
+  "src/qt6_gui_project.hpp"
+  "src/win32_gui_project.hpp"
+  "src/winforms_gui_project.hpp"
+  "src/wpf_gui_project.hpp"
+  "src/wxwidgets_gui_project.hpp"
+  "src/xtd_gui_project.hpp"
+  "src/xtd_blank_solution_project.hpp"
+  "src/xtd_c_blank_solution_project.hpp"
+  "src/xtd_c_console_project.hpp"
+  "src/xtd_c_gui_project.hpp"
+  "src/xtd_c_shared_library_project.hpp"
+  "src/xtd_c_static_library_project.hpp"
+  "src/xtd_c_unit_test_application_project.hpp"
+  "src/xtd_console_project.hpp"
+  "src/project_base.hpp"
+  "src/new_project.hpp"
+  "src/xtd_gui_project.hpp"
+  "src/xtd_shared_library_project.hpp"
+  "src/xtd_static_library_project.hpp"
+  "src/xtd_unit_test_application_project.hpp"
+  "src/xtdc.cpp"
 )
 target_type(CONSOLE_APPLICATION)
 
