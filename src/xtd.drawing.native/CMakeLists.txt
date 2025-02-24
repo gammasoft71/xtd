@@ -2,83 +2,83 @@ cmake_minimum_required(VERSION 3.20)
 
 # Project
 project(xtd.drawing.native)
-include(../../scripts/cmake/xtd_commands.cmake)
-include(../../scripts/cmake/xtd_version.cmake)
-add_include_directories(include)
+include("../../scripts/cmake/xtd_commands.cmake")
+include("../../scripts/cmake/xtd_version.cmake")
+add_include_directories("include")
 add_sources(
-  include/xtd/xtd.drawing.native
-  include/xtd/xtd.drawing.native.hpp
-  include/xtd/drawing/native/brush.hpp
-  include/xtd/drawing/native/brush
-  include/xtd/drawing/native/compositing_modes.hpp
-  include/xtd/drawing/native/compositing_modes
-  include/xtd/drawing/native/compositing_qualities.hpp
-  include/xtd/drawing/native/compositing_qualities
-  include/xtd/drawing/native/copy_pixel_operations.hpp
-  include/xtd/drawing/native/copy_pixel_operations
-  include/xtd/drawing/native/flush_intentions.hpp
-  include/xtd/drawing/native/flush_intentions
-  include/xtd/drawing/native/font_family.hpp
-  include/xtd/drawing/native/font_family
-  include/xtd/drawing/native/font.hpp
-  include/xtd/drawing/native/font
-  include/xtd/drawing/native/frame_dimension.hpp
-  include/xtd/drawing/native/frame_dimension
-  include/xtd/drawing/native/graphics_path.hpp
-  include/xtd/drawing/native/graphics_path
-  include/xtd/drawing/native/graphics.hpp
-  include/xtd/drawing/native/graphics
-  include/xtd/drawing/native/hot_key_prefixes.hpp
-  include/xtd/drawing/native/hot_key_prefixes
-  include/xtd/drawing/native/icon.hpp
-  include/xtd/drawing/native/icon
-  include/xtd/drawing/native/image_flags.hpp
-  include/xtd/drawing/native/image_flags
-  include/xtd/drawing/native/image_formats.hpp
-  include/xtd/drawing/native/image_formats
-  include/xtd/drawing/native/image.hpp
-  include/xtd/drawing/native/image
-  include/xtd/drawing/native/interpolation_modes.hpp
-  include/xtd/drawing/native/interpolation_modes
-  include/xtd/drawing/native/line_caps.hpp
-  include/xtd/drawing/native/line_caps
-  include/xtd/drawing/native/line_joins.hpp
-  include/xtd/drawing/native/line_joins
-  include/xtd/drawing/native/matrix_orders.hpp
-  include/xtd/drawing/native/matrix_orders
-  include/xtd/drawing/native/matrix.hpp
-  include/xtd/drawing/native/matrix
-  include/xtd/drawing/native/path_fill_modes.hpp
-  include/xtd/drawing/native/path_fill_modes
-  include/xtd/drawing/native/pen.hpp
-  include/xtd/drawing/native/pen
-  include/xtd/drawing/native/pixel_offset_modes.hpp
-  include/xtd/drawing/native/pixel_offset_modes
-  include/xtd/drawing/native/region.hpp
-  include/xtd/drawing/native/region
-  include/xtd/drawing/native/rotate_flip_types.hpp
-  include/xtd/drawing/native/rotate_flip_types
-  include/xtd/drawing/native/smoothing_modes.hpp
-  include/xtd/drawing/native/smoothing_modes
-  include/xtd/drawing/native/string_alignments.hpp
-  include/xtd/drawing/native/string_alignments
-  include/xtd/drawing/native/string_formats.hpp
-  include/xtd/drawing/native/string_formats
-  include/xtd/drawing/native/string_trimmings.hpp
-  include/xtd/drawing/native/string_trimmings
-  include/xtd/drawing/native/system_colors.hpp
-  include/xtd/drawing/native/system_colors
-  include/xtd/drawing/native/system_fonts.hpp
-  include/xtd/drawing/native/system_fonts
-  include/xtd/drawing/native/system_images.hpp
-  include/xtd/drawing/native/system_images
-  include/xtd/drawing/native/text_rendering.hpp
-  include/xtd/drawing/native/text_rendering
-  include/xtd/drawing/native/toolkit.hpp
-  include/xtd/drawing/native/toolkit
+  "include/xtd/xtd.drawing.native"
+  "include/xtd/xtd.drawing.native.hpp"
+  "include/xtd/drawing/native/brush.hpp"
+  "include/xtd/drawing/native/brush"
+  "include/xtd/drawing/native/compositing_modes.hpp"
+  "include/xtd/drawing/native/compositing_modes"
+  "include/xtd/drawing/native/compositing_qualities.hpp"
+  "include/xtd/drawing/native/compositing_qualities"
+  "include/xtd/drawing/native/copy_pixel_operations.hpp"
+  "include/xtd/drawing/native/copy_pixel_operations"
+  "include/xtd/drawing/native/flush_intentions.hpp"
+  "include/xtd/drawing/native/flush_intentions"
+  "include/xtd/drawing/native/font_family.hpp"
+  "include/xtd/drawing/native/font_family"
+  "include/xtd/drawing/native/font.hpp"
+  "include/xtd/drawing/native/font"
+  "include/xtd/drawing/native/frame_dimension.hpp"
+  "include/xtd/drawing/native/frame_dimension"
+  "include/xtd/drawing/native/graphics_path.hpp"
+  "include/xtd/drawing/native/graphics_path"
+  "include/xtd/drawing/native/graphics.hpp"
+  "include/xtd/drawing/native/graphics"
+  "include/xtd/drawing/native/hot_key_prefixes.hpp"
+  "include/xtd/drawing/native/hot_key_prefixes"
+  "include/xtd/drawing/native/icon.hpp"
+  "include/xtd/drawing/native/icon"
+  "include/xtd/drawing/native/image_flags.hpp"
+  "include/xtd/drawing/native/image_flags"
+  "include/xtd/drawing/native/image_formats.hpp"
+  "include/xtd/drawing/native/image_formats"
+  "include/xtd/drawing/native/image.hpp"
+  "include/xtd/drawing/native/image"
+  "include/xtd/drawing/native/interpolation_modes.hpp"
+  "include/xtd/drawing/native/interpolation_modes"
+  "include/xtd/drawing/native/line_caps.hpp"
+  "include/xtd/drawing/native/line_caps"
+  "include/xtd/drawing/native/line_joins.hpp"
+  "include/xtd/drawing/native/line_joins"
+  "include/xtd/drawing/native/matrix_orders.hpp"
+  "include/xtd/drawing/native/matrix_orders"
+  "include/xtd/drawing/native/matrix.hpp"
+  "include/xtd/drawing/native/matrix"
+  "include/xtd/drawing/native/path_fill_modes.hpp"
+  "include/xtd/drawing/native/path_fill_modes"
+  "include/xtd/drawing/native/pen.hpp"
+  "include/xtd/drawing/native/pen"
+  "include/xtd/drawing/native/pixel_offset_modes.hpp"
+  "include/xtd/drawing/native/pixel_offset_modes"
+  "include/xtd/drawing/native/region.hpp"
+  "include/xtd/drawing/native/region"
+  "include/xtd/drawing/native/rotate_flip_types.hpp"
+  "include/xtd/drawing/native/rotate_flip_types"
+  "include/xtd/drawing/native/smoothing_modes.hpp"
+  "include/xtd/drawing/native/smoothing_modes"
+  "include/xtd/drawing/native/string_alignments.hpp"
+  "include/xtd/drawing/native/string_alignments"
+  "include/xtd/drawing/native/string_formats.hpp"
+  "include/xtd/drawing/native/string_formats"
+  "include/xtd/drawing/native/string_trimmings.hpp"
+  "include/xtd/drawing/native/string_trimmings"
+  "include/xtd/drawing/native/system_colors.hpp"
+  "include/xtd/drawing/native/system_colors"
+  "include/xtd/drawing/native/system_fonts.hpp"
+  "include/xtd/drawing/native/system_fonts"
+  "include/xtd/drawing/native/system_images.hpp"
+  "include/xtd/drawing/native/system_images"
+  "include/xtd/drawing/native/text_rendering.hpp"
+  "include/xtd/drawing/native/text_rendering"
+  "include/xtd/drawing/native/toolkit.hpp"
+  "include/xtd/drawing/native/toolkit"
 )
 target_type(INTERFACE_LIBRARY)
 
 # Install
-add_install_include_directories(include/xtd)
+add_install_include_directories("include/xtd")
 install_component()
