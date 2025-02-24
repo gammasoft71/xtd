@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 3.20)
 
 # Project
 project(xtd.core.native.posix)
-include(../../scripts/cmake/xtd_commands.cmake)
-include(../../scripts/cmake/xtd_version.cmake)
-add_include_directories(include)
+include("../../scripts/cmake/xtd_commands.cmake")
+include("../../scripts/cmake/xtd_version.cmake")
+add_include_directories("include")
 
 # add external packages
 if (ANDROID)
@@ -31,48 +31,50 @@ endif ()
 add_references(xtd.core.native)
 
 add_sources(
-  include/xtd/xtd.core.native.posix.hpp
-  include/xtd/xtd.core.native.posix
-  include/xtd/native/posix/mutex.hpp
-  include/xtd/native/posix/mutex
-  include/xtd/native/posix/semaphore.hpp
-  include/xtd/native/posix/semaphore
-  include/xtd/native/posix/strings.hpp
-  include/xtd/native/posix/strings
-  src/xtd/native/posix/condition_variable.cpp
-  src/xtd/native/posix/console.cpp
-  src/xtd/native/posix/critical_section.cpp
-  src/xtd/native/posix/cryptography.cpp
-  src/xtd/native/posix/date_time.cpp
-  src/xtd/native/posix/debugger.cpp
-  src/xtd/native/posix/directory.cpp
-  src/xtd/native/posix/dns.cpp
-  src/xtd/native/posix/drive.cpp
-  src/xtd/native/posix/environment.cpp
-  src/xtd/native/posix/file.cpp
-  src/xtd/native/posix/file_system.cpp
-  src/xtd/native/posix/guid.cpp
-  src/xtd/native/posix/interlocked.cpp
-  src/xtd/native/posix/memory.cpp
-  src/xtd/native/posix/named_event_wait_handle.cpp
-  src/xtd/native/posix/named_mutex.cpp
-  src/xtd/native/posix/named_semaphore.cpp
-  src/xtd/native/posix/path.cpp
-  src/xtd/native/posix/process.cpp
-  src/xtd/native/posix/settings.cpp
-  src/xtd/native/posix/socket.cpp
-  src/xtd/native/posix/speech_synthesizer.cpp
-  src/xtd/native/posix/stack_trace.cpp
-  src/xtd/native/posix/system_sound.cpp
-  src/xtd/native/posix/thread.cpp
-  src/xtd/native/posix/translator.cpp
-  src/xtd/native/posix/types.cpp
-  src/xtd/native/posix/unnamed_event_wait_handle.cpp
-  src/xtd/native/posix/unnamed_mutex.cpp
-  src/xtd/native/posix/unnamed_semaphore.cpp
+  "include/xtd/xtd.core.native.posix.hpp"
+  "include/xtd/xtd.core.native.posix"
+  "include/xtd/native/posix/mutex.hpp"
+  "include/xtd/native/posix/mutex"
+  "include/xtd/native/posix/semaphore.hpp"
+  "include/xtd/native/posix/semaphore"
+  "include/xtd/native/posix/strings.hpp"
+  "include/xtd/native/posix/strings"
+)
+add_sources(
+  "src/xtd/native/posix/condition_variable.cpp"
+  "src/xtd/native/posix/console.cpp"
+  "src/xtd/native/posix/critical_section.cpp"
+  "src/xtd/native/posix/cryptography.cpp"
+  "src/xtd/native/posix/date_time.cpp"
+  "src/xtd/native/posix/debugger.cpp"
+  "src/xtd/native/posix/directory.cpp"
+  "src/xtd/native/posix/dns.cpp"
+  "src/xtd/native/posix/drive.cpp"
+  "src/xtd/native/posix/environment.cpp"
+  "src/xtd/native/posix/file.cpp"
+  "src/xtd/native/posix/file_system.cpp"
+  "src/xtd/native/posix/guid.cpp"
+  "src/xtd/native/posix/interlocked.cpp"
+  "src/xtd/native/posix/memory.cpp"
+  "src/xtd/native/posix/named_event_wait_handle.cpp"
+  "src/xtd/native/posix/named_mutex.cpp"
+  "src/xtd/native/posix/named_semaphore.cpp"
+  "src/xtd/native/posix/path.cpp"
+  "src/xtd/native/posix/process.cpp"
+  "src/xtd/native/posix/settings.cpp"
+  "src/xtd/native/posix/socket.cpp"
+  "src/xtd/native/posix/speech_synthesizer.cpp"
+  "src/xtd/native/posix/stack_trace.cpp"
+  "src/xtd/native/posix/system_sound.cpp"
+  "src/xtd/native/posix/thread.cpp"
+  "src/xtd/native/posix/translator.cpp"
+  "src/xtd/native/posix/types.cpp"
+  "src/xtd/native/posix/unnamed_event_wait_handle.cpp"
+  "src/xtd/native/posix/unnamed_mutex.cpp"
+  "src/xtd/native/posix/unnamed_semaphore.cpp"
 )
 target_type(${XTD_LIBRARY_TYPE})
 
 # Install
-add_install_include_directories(include/xtd)
+add_install_include_directories("include/xtd")
 install_component()
