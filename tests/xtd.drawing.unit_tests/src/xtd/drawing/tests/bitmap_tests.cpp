@@ -1,6 +1,7 @@
 #include "../../../../properties/resources.hpp"
 #include <xtd/drawing/bitmap>
 #include <xtd/io/path>
+#include <xtd/collections/generic/list>
 #include <xtd/argument_exception>
 #include <xtd/environment>
 //#include <xtd/print>
@@ -11,13 +12,14 @@
 #include <xtd/tunit/test_method_attribute>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::io;
 using namespace xtd::tunit;
 
 namespace xtd::drawing::tests {
   class test_class_(bitmap_tests) {
-    static bitmap create_image(const xtd::drawing::size& size) {
+    static bitmap create_image(const drawing::size& size) {
       if (size.height < 0 || size.height > 4) throw argument_exception {};
       if (size.width < 0 || size.width > 4) throw argument_exception {};
       auto [w, h] = size;
@@ -50,24 +52,24 @@ namespace xtd::drawing::tests {
       return bmp;
     }
 
-    void to_ppm(const xtd::string& filename, const xtd::drawing::bitmap& bitmap, const color& transparent_color = color::transparent) {
-      auto lines = std::vector<xtd::string> {};
-      lines.push_back("P3");
-      lines.push_back("# Ppm.ppm");
-      lines.push_back(xtd::string::format("{} {}", bitmap.width(), bitmap.height()));
-      lines.push_back("255");
-      lines.push_back("");
+    void to_ppm(const string& filename, const bitmap& bitmap, const color& transparent_color = color::transparent) {
+      auto lines = list<string> {};
+      lines.add("P3");
+      lines.add("# Ppm.ppm");
+      lines.add(string::format("{} {}", bitmap.width(), bitmap.height()));
+      lines.add("255");
+      lines.add("");
       for (auto y = 0; y < bitmap.height(); y++) {
         for (auto x = 0; x < bitmap.width(); x++)
-          if (bitmap.get_pixel(x, y).a() == 0) lines.push_back(string::format("{, 3} {, 3} {, 3}", transparent_color.r(), transparent_color.g(), transparent_color.b()));
-          else lines.push_back(string::format("{, 3} {, 3} {, 3}", bitmap.get_pixel(x, y).r(), bitmap.get_pixel(x, y).g(), bitmap.get_pixel(x, y).b()));
-        lines.push_back("");
+          if (bitmap.get_pixel(x, y).a() == 0) lines.add(string::format("{, 3} {, 3} {, 3}", transparent_color.r(), transparent_color.g(), transparent_color.b()));
+          else lines.add(string::format("{, 3} {, 3} {, 3}", bitmap.get_pixel(x, y).r(), bitmap.get_pixel(x, y).g(), bitmap.get_pixel(x, y).b()));
+        lines.add("");
       }
-      xtd::io::file::write_all_lines(string(filename), lines);
+      file::write_all_lines(string(filename), lines);
     }
     
-    void to_ppm(const xtd::string& filename, const color& transparent_color = color::transparent) {
-      to_ppm(xtd::io::path::combine(xtd::io::path::get_directory_name(filename), xtd::string::format("{}{}", xtd::io::path::get_file_name_without_extension(filename), ".ppm")), bitmap(filename), transparent_color);
+    void to_ppm(const string& filename, const color& transparent_color = color::transparent) {
+      to_ppm(path::combine(path::get_directory_name(filename), string::format("{}{}", path::get_file_name_without_extension(filename), ".ppm")), bitmap(filename), transparent_color);
     }
     
     void test_method_(empty) {
