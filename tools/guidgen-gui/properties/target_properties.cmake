@@ -1,5 +1,5 @@
 target_categories(Development)
 target_default_namespace("guidgen_gui")
-target_icon(resources/guidgen-gui)
+target_icon("resources/guidgen-gui")
 target_display(ON)
-target_startup("guidgen_gui::main_form::main" src/main_form.hpp)
+target_startup(guidgen_gui::main_form::main "src/main_form.hpp")
