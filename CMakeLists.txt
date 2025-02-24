@@ -30,13 +30,13 @@ option(XTD_USE_SYSTEM_CONTROLS "Use by default system controls instead standard 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/scripts/cmake)
 
 set(ASTYLE_SOURCE_FILES 
-  ${CMAKE_SOURCE_DIR}/src/*.cpp
-  ${CMAKE_SOURCE_DIR}/src/*.hpp
-  ${CMAKE_SOURCE_DIR}/src/*.mm
-  ${CMAKE_SOURCE_DIR}/tests/*.cpp
-  ${CMAKE_SOURCE_DIR}/tests/*.hpp
-  ${CMAKE_SOURCE_DIR}/tools/*.cpp
-  ${CMAKE_SOURCE_DIR}/tools/*.hpp
+  "${CMAKE_SOURCE_DIR}/src/*.cpp"
+  "${CMAKE_SOURCE_DIR}/src/*.hpp"
+  "${CMAKE_SOURCE_DIR}/src/*.mm"
+  "${CMAKE_SOURCE_DIR}/tests/*.cpp"
+  "${CMAKE_SOURCE_DIR}/tests/*.hpp"
+  "${CMAKE_SOURCE_DIR}/tools/*.cpp"
+  "${CMAKE_SOURCE_DIR}/tools/*.hpp"
 )
 
 set(CPPCHECK_SOURCE_ROOTS ${CMAKE_SOURCE_DIR}/src)
@@ -58,11 +58,11 @@ endif ()
 ################################################################################
 # incldue xtd cmake scripts
 
-include(scripts/cmake/xtd_commands.cmake)
-include(scripts/cmake/xtd_version.cmake)
-include(scripts/cmake/update_export.cmake)
-include(scripts/cmake/update_version_number.cmake)
-include(scripts/cmake/package.cmake)
+include("scripts/cmake/xtd_commands.cmake")
+include("scripts/cmake/xtd_version.cmake")
+include("scripts/cmake/update_export.cmake")
+include("scripts/cmake/update_version_number.cmake")
+include("scripts/cmake/package.cmake")
 
 ################################################################################
 # Graphic toolkits definitions
@@ -200,7 +200,7 @@ endif ()
 # Run Developper Reference Guide generator command
 
 if (XTD_ENABLE_RUN_DEVELOPER_REFERENCE_GUIDE)
-  file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/developer_html)
+  file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/developer_html")
   add_custom_target(RUN_DEVELOPER_REFERENCE_GUIDE ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen/doxygen_developer.txt WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen COMMAND ${XTD_RUN_COMMAND} "${CMAKE_CURRENT_BINARY_DIR}/developer_html/index.html" COMMENT "Run Doxygen Developper Reference Guide generation" DEPENDS ${DOXYGEN_PROJECT} VERBATIM)
   set_target_properties(RUN_DEVELOPER_REFERENCE_GUIDE PROPERTIES FOLDER commands)
 endif ()
@@ -218,9 +218,9 @@ string(REPLACE "." "_" XTD_FORMS_NATIVE_LIBRARY_UPPER ${XTD_FORMS_NATIVE_LIBRARY
 string(TOUPPER ${XTD_FORMS_NATIVE_LIBRARY_UPPER} XTD_FORMS_NATIVE_LIBRARY_UPPER)
 xtd_update_export_file(src/${XTD_FORMS_NATIVE_LIBRARY}/include/xtd/forms_native_export.hpp ${XTD_FORMS_NATIVE_LIBRARY_UPPER}_EXPORT forms_native_export_)
 
-xtd_update_export_file(src/xtd.forms/include/xtd/forms_export.hpp XTD_FORMS_EXPORT forms_export_)
-xtd_update_export_file(src/xtd.tunit/include/xtd/tunit_export.hpp XTD_TUNIT_EXPORT tunit_export_)
-xtd_update_export_file(src/xtd/include/xtd/export.hpp XTD_EXPORT export_)
+xtd_update_export_file("src/xtd.forms/include/xtd/forms_export.hpp" XTD_FORMS_EXPORT forms_export_)
+xtd_update_export_file("src/xtd.tunit/include/xtd/tunit_export.hpp" XTD_TUNIT_EXPORT tunit_export_)
+xtd_update_export_file("src/xtd/include/xtd/export.hpp" XTD_EXPORT export_)
 
 ################################################################################
 # Run tests
