@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.20)
 
 # Solution
 project(tools)
-include(../scripts/cmake/xtd_commands.cmake)
-include(../scripts/cmake/xtd_version.cmake)
+include("../scripts/cmake/xtd_commands.cmake")
+include("../scripts/cmake/xtd_version.cmake")
 
 # Add projects
 add_projects(
