@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.20)
 
 # Solution
 project(src)
-include(../scripts/cmake/xtd_commands.cmake)
-include(../scripts/cmake/xtd_version.cmake)
+include("../scripts/cmake/xtd_commands.cmake")
+include("../scripts/cmake/xtd_version.cmake")
 
 set(XTD_HEADER_FILE "xtd/include/xtd/xtd.hpp")
 file(WRITE ${XTD_HEADER_FILE} 
