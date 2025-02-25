@@ -1,0 +1,4 @@
+#define bitmap_4_1_width 4
+#define bitmap_4_1_height 1
+static unsigned char bitmap_4_1_bits[] = {
+   0x05 };

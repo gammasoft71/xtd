@@ -1,0 +1,4 @@
+#define bitmap_1_3_width 1
+#define bitmap_1_3_height 3
+static unsigned char bitmap_1_3_bits[] = {
+   0x01, 0x00, 0x01 };
