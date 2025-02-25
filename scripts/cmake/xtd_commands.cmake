@@ -2241,7 +2241,7 @@ enable_testing()
 # add compile and link flags
 if (XTD_SET_COMPILER_OPTION_WARNINGS_TO_ALL)
   if (MSVC)
-    add_compile_options(/W4 /wd4100 /wd4127 /wd4458 /wd4459 /wd4996 /wd5105)
+    add_compile_options(/W4 /wd4100 /wd4101 /wd4127 /wd4458 /wd4459 /wd4996 /wd5105)
   else()
     add_compile_options(-Wall -Wextra -Wno-unused-parameter -Wno-unknown-pragmas -pedantic)
   endif()
