@@ -44,6 +44,24 @@ namespace {
     return it == image_formats.end() ? IFM_UNKNOWN : it->second;
   }
 
+  std::tuple<array<xtd::byte>, int32, int32> get_data_from_xbm(const string& filename) {
+    auto lines = file::read_all_lines(filename);
+    auto offset = 0_z;
+    lines[offset] = lines[offset].substring(lines[offset].last_index_of("width") + 5);
+    ++offset;
+    lines[offset] = lines[offset].substring(lines[offset].last_index_of("height") + 6);
+    offset += 1 + (lines[offset].contains("x_hot") ? 1 : 0) + (lines[offset].contains("y_hot") ? 1 : 0);
+    lines[offset] = lines[offset].substring(lines[offset].last_index_of("{") + 1);
+    lines[lines.size() - 1] = lines[lines.size() - 1].replace("};", "");
+    auto width = int32_object::parse(lines[0].trim());
+    auto height = int32_object::parse(lines[1].trim());
+    auto bits = list<xtd::byte> {};
+    for (auto index = offset; index < lines.size(); ++index)
+      for (auto b : lines[index].split(","))
+        bits.add(byte_object::parse(b.trim(), xtd::number_styles::hex_number));
+    return std::make_tuple(bits.to_array(), width, height);
+  }
+
   ptr<char*[]> get_data_from_xpm(const string& filename) {
     static thread_local std::vector<string> lines;
     lines = file::read_all_lines(filename);
@@ -90,12 +108,16 @@ image::image(const string& filename) : image::image(filename, false) {
 image::image(const string& filename, bool use_icm) : data_(xtd::new_sptr<data>()) {
   if (!xtd::io::file::exists(filename)) throw_helper::throws(exception_case::argument);
   auto frame_resolutions = std::map<xtd::size, xtd::size> {};
-  if (path::get_extension(filename) != ".xpm")  data_->handle = native::image::create(filename, use_icm, frame_resolutions);
-  else {
-    auto xpm_ptr = get_data_from_xpm(filename);
-    data_->handle = native::image::create(xpm_ptr.get(), frame_resolutions);
+  if (path::get_extension(filename) == ".xbm") {
+    auto [bits, width, height] = get_data_from_xbm(filename);
+    data_->handle = native::image::create(reinterpret_cast<const unsigned char*>(bits.data()), width, height, frame_resolutions);
+    data_->raw_format = imaging::image_format::xbm();
+  } else if (path::get_extension(filename) == ".xpm") {
+    auto bits = get_data_from_xpm(filename);
+    data_->handle = native::image::create(bits.get(), frame_resolutions);
     data_->raw_format = imaging::image_format::xpm();
-  }
+  } else data_->handle = native::image::create(filename, use_icm, frame_resolutions);
+
   if (data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   data_->frame_dimensions.clear();
   for (auto frame_resolution : frame_resolutions) {
