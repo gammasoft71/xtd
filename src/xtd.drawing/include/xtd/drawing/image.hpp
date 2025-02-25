@@ -300,8 +300,8 @@ namespace xtd {
       /// @param data A pointer that contains the data for the xtd::drawing::image.
       /// @return The xtd::drawing::image this method creates.
       /// @remarks This method is used for creating a xtd::drawing::image from an XPM image.
-      /// @deprecated Replaced by xtd::drawing::image::from_xpm - Will be removed in version 0.4.0.
-      [[deprecated("Replaced by xtd::drawing::image::from_xpm - Will be removed in version 0.4.0.")]]
+      /// @deprecated Replaced by xtd::drawing::image::from_xpm_data - Will be removed in version 0.4.0.
+      [[deprecated("Replaced by xtd::drawing::image::from_xpm_data - Will be removed in version 0.4.0.")]]
       static image from_data(const char* const* bits);
       
       /// @brief Creates an xtd::drawing::image from the specified data pointer, width and hieght.
@@ -346,7 +346,7 @@ namespace xtd {
       explicit image(const xtd::string& filename, bool use_icm);
       explicit image(std::istream& stream);
       explicit image(std::istream& stream, bool use_icm);
-      [[deprecated("Replaced by xtd::drawing::image::from_xpm - Will be removed in version 0.4.0.")]]
+      [[deprecated("Replaced by xtd::drawing::image::from_xpm_data - Will be removed in version 0.4.0.")]]
       explicit image(const char* const* bits);
       image(int32 width, int32 height);
       image(int32 width, int32 height, float horizontal_resolution, float vertical_resolution);
