@@ -21,14 +21,14 @@
 * Free and open-source ([MIT License](https://gammasoft71.github.io/xtd/docs/documentation/license));
 * a collection of native C++ classes libraries, to **extend** std;
 * API close to the .net API with a modern C++ approach and full integration with the std standard;
-* xtd is designed to manage GUI controls and dialogs in pure [native mode](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/control_appearance) or with [CSS styles](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
+* xtd is designed to manage GUI controls and dialogs in pure [native mode](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/control_appearance) or with [CSS styles](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
 * written in efficient, modern [C++17/20](https://en.cppreference.com/w/) with [RAII](https://en.cppreference.com/w/cpp/language/raii) programming idiom;
 * and [highly portable](https://gammasoft71.github.io/xtd/docs/documentation/portability) and available on [many different platforms](https://gammasoft71.github.io/xtd/docs/documentation/portability);
 * See [features](https://gammasoft71.github.io/xtd/docs/documentation/features) for more informations.
 
 ## xtd libraries architecture
 
-[![architecture_logo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/block_diagram_onion.png)](https://gammasoft71.github.io/xtd/docs/documentation/Guides/Overview/Libraries/hierarchy)
+[![architecture_logo](https://github.com/gammasoft71/xtd/blob/master/docs/pictures/block_diagram_onion.png)](https://gammasoft71.github.io/xtd/docs/documentation/guides/Overview/Libraries/hierarchy)
 
 xtd is composed of several libraries.
 
@@ -55,7 +55,7 @@ The [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group_
 ## Getting Started
 
 * [Installation](https://gammasoft71.github.io/xtd/docs/downloads) provides download, install and uninstall documentation.
-* [Guides](https://gammasoft71.github.io/xtd/docs/documentation/Guides) provides xtd guides and tutorials.
+* [Guides](https://gammasoft71.github.io/xtd/docs/documentation/guides) provides xtd guides and tutorials.
 * [Examples](https://github.com/gammasoft71/xtd/blob/master/examples/README.md) provides over 800 examples to help you use xtd, grouped by libraries and topics.
 
 ## Development status

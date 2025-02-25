@@ -238,7 +238,7 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the expanded property changes.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       xtd::event<collapsible_panel, xtd::event_handler> expanded_changed;
       /// @}
       

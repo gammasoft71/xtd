@@ -102,7 +102,7 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the user close an assert dialog box with dialog close button or other dialog buttons.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<assert_dialog, dialog_closed_event_handler> dialog_closed;
       /// @}
       

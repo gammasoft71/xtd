@@ -130,12 +130,12 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the user click the find button.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       xtd::event<find_dialog, xtd::forms::find_event_handler> find_next;
       
       /// @brief Occurs when the user close the find dialog box with dialog close button or cancel button.
       /// @remarks The xtd::forms::dialog_closed_event_args::dialog_result is always set to xtd::forms::dialog_result::cancel
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       xtd::event<find_dialog, xtd::forms::dialog_closed_event_handler> dialog_closed;
       /// @}
       
