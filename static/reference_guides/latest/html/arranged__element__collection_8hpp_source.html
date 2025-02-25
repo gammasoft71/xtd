@@ -366,7 +366,7 @@ $(function() {
 <div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>        }</div>
 <div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>        </div>
 <div class="line"><a id="l00432" name="l00432"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a8d7e3cde1a97b03e109a4851b770b19a">  432</a></span>        <a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;type_t&gt;</a> <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a8d7e3cde1a97b03e109a4851b770b19a">to_array</a>() const noexcept {</div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>          <span class="keywordflow">return</span> <a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;type_t&gt;</a> {collection_.data(), collection_.size()};</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>          <span class="keywordflow">return</span> collection_.size() ? <a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;type_t&gt;</a>(collection_.data(), collection_.size()) : <a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;type_t&gt;</a> {};</div>
 <div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>        }</div>
 <div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>        </div>
 <div class="line"><a id="l00438" name="l00438"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aac81158712ee9ae7f98d7b2a4251f39b">  438</a></span>        std::vector&lt;type_t&gt; <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#aac81158712ee9ae7f98d7b2a4251f39b">to_vector</a>() const noexcept {<span class="keywordflow">return</span> <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a8d7e3cde1a97b03e109a4851b770b19a">to_array</a>();}</div>
@@ -498,7 +498,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Feb 19 2025 21:10:24 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Feb 25 2025 11:25:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
