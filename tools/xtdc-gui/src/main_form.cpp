@@ -104,7 +104,7 @@ main_form::main_form() {
   
   startup_open_project_button_.parent(startup_panel_);
   startup_open_project_button_.image(images::from_name("document-open", drawing::size {48, 48}));
-  startup_open_project_button_.image(bitmap(xtd_open_icon));
+  startup_open_project_button_.image(bitmap::from_xpm_data(xtd_open_icon));
   startup_open_project_button_.image_align(content_alignment::middle_left);
   startup_open_project_button_.text("Open a project or solution");
   startup_open_project_button_.location({startup_panel_.size().width - 400, 175});
@@ -115,7 +115,7 @@ main_form::main_form() {
   
   startup_run_project_button_.parent(startup_panel_);
   startup_run_project_button_.image(images::from_name("system-run", drawing::size {48, 48}));
-  startup_run_project_button_.image(bitmap(xtd_run_icon));
+  startup_run_project_button_.image(bitmap::from_xpm_data(xtd_run_icon));
   startup_run_project_button_.image_align(content_alignment::middle_left);
   startup_run_project_button_.text("Run a project");
   startup_run_project_button_.location({startup_panel_.size().width - 400, 285});
@@ -126,7 +126,7 @@ main_form::main_form() {
   
   startup_new_project_button_.parent(startup_panel_);
   startup_new_project_button_.image(images::from_name("document-new", drawing::size {48, 48}));
-  startup_new_project_button_.image(bitmap(xtd_new_icon));
+  startup_new_project_button_.image(bitmap::from_xpm_data(xtd_new_icon));
   startup_new_project_button_.image_align(content_alignment::middle_left);
   startup_new_project_button_.text("Create a new project");
   startup_new_project_button_.location({startup_panel_.size().width - 400, 395});
@@ -137,7 +137,7 @@ main_form::main_form() {
   
   startup_open_xtd_examples_button_.parent(startup_panel_);
   startup_open_xtd_examples_button_.image(images::from_name("xtd", drawing::size {48, 48}));
-  startup_open_xtd_examples_button_.image(bitmap(xtd_open_examples_icon));
+  startup_open_xtd_examples_button_.image(bitmap::from_xpm_data(xtd_open_examples_icon));
   startup_open_xtd_examples_button_.image_align(content_alignment::middle_left);
   startup_open_xtd_examples_button_.text("Open xtd examples");
   startup_open_xtd_examples_button_.location({startup_panel_.size().width - 400, 505});

@@ -125,17 +125,7 @@ image::image(std::istream& stream, bool use_icm) : data_(xtd::new_sptr<data>()) 
 }
 
 image::image(const char* const* bits) : data_(xtd::new_sptr<data>()) {
-  auto frame_resolutions = std::map<xtd::size, xtd::size> {};
-  data_->handle = native::image::create(bits, frame_resolutions);
-  if (data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
-  data_->raw_format = imaging::image_format::memory_xpm();
-  for (auto frame_resolution : frame_resolutions) {
-    if (frame_resolution.first == FD_PAGE) data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
-    else if (frame_resolution.first == FD_RESOLUTION) data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] = frame_resolution.second;
-    else if (frame_resolution.first == FD_TIME) data_->frame_dimensions[imaging::frame_dimension::time().guid()] = frame_resolution.second;
-    else throw_helper::throws(exception_case::argument);
-  }
-  update_properties();
+  *this = from_xpm_data(bits);
 }
 
 image::image(int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
@@ -406,7 +396,7 @@ image image::from_stream(std::istream& stream) { // stream param can't be const 
 }
 
 image image::from_data(const char* const* bits) {
-  return image {bits};
+  return from_xpm_data(bits);
 }
 
 image image::from_hicon(intptr hicon) {
@@ -415,6 +405,38 @@ image image::from_hicon(intptr hicon) {
   if (result.data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
   result.update_properties();
   return result;
+}
+
+bitmap image::from_xbm_data(const unsigned char* bits, int32 width, int32 height) {
+  auto img = image {};
+  auto frame_resolutions = std::map<xtd::size, xtd::size> {};
+  img.data_->handle = native::image::create(bits, width, height, frame_resolutions);
+  if (img.data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
+  img.data_->raw_format = imaging::image_format::memory_xpm();
+  for (auto frame_resolution : frame_resolutions) {
+    if (frame_resolution.first == FD_PAGE) img.data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
+    else if (frame_resolution.first == FD_RESOLUTION) img.data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] = frame_resolution.second;
+    else if (frame_resolution.first == FD_TIME) img.data_->frame_dimensions[imaging::frame_dimension::time().guid()] = frame_resolution.second;
+    else throw_helper::throws(exception_case::argument);
+  }
+  img.update_properties();
+  return bitmap {img};
+}
+
+bitmap image::from_xpm_data(const char* const* bits) {
+  auto img = image {};
+  auto frame_resolutions = std::map<xtd::size, xtd::size> {};
+  img.data_->handle = native::image::create(bits, frame_resolutions);
+  if (img.data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
+  img.data_->raw_format = imaging::image_format::memory_xpm();
+  for (auto frame_resolution : frame_resolutions) {
+    if (frame_resolution.first == FD_PAGE) img.data_->frame_dimensions[imaging::frame_dimension::page().guid()] = frame_resolution.second;
+    else if (frame_resolution.first == FD_RESOLUTION) img.data_->frame_dimensions[imaging::frame_dimension::resolution().guid()] = frame_resolution.second;
+    else if (frame_resolution.first == FD_TIME) img.data_->frame_dimensions[imaging::frame_dimension::time().guid()] = frame_resolution.second;
+    else throw_helper::throws(exception_case::argument);
+  }
+  img.update_properties();
+  return bitmap {img};
 }
 
 drawing::color image::get_pixel(int32 x, int32 y) const {

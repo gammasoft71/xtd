@@ -297,10 +297,26 @@ namespace xtd {
       static image from_stream(std::istream& stream);
       
       /// @brief Creates an xtd::drawing::image from the specified data pointer.
-      /// @param data A pointer that contains the data for this xtd::drawing::image.
+      /// @param data A pointer that contains the data for the xtd::drawing::image.
       /// @return The xtd::drawing::image this method creates.
-      /// @remarks This method is used for creating a xtd::drawing::image from an XPM (or XBM) image.
+      /// @remarks This method is used for creating a xtd::drawing::image from an XPM image.
+      /// @deprecated Replaced by xtd::drawing::image::from_xpm - Will be removed in version 0.4.0.
+      [[deprecated("Replaced by xtd::drawing::image::from_xpm - Will be removed in version 0.4.0.")]]
       static image from_data(const char* const* bits);
+      
+      /// @brief Creates an xtd::drawing::image from the specified data pointer, width and hieght.
+      /// @param data A pointer that contains the data for the xtd::drawing::image.
+      /// @param width The width for the xtd::drawing::image.
+      /// @param height The height for the xtd::drawing::image.
+      /// @return The xtd::drawing::image this method creates.
+      /// @remarks This method is used for creating a xtd::drawing::image from an XBM image.
+      static bitmap from_xbm_data(const unsigned char* bits, int32 width, int32 height);
+      
+      /// @brief Creates an xtd::drawing::image from the specified data pointer.
+      /// @param data A pointer that contains the data for the xtd::drawing::image.
+      /// @return The xtd::drawing::image this method creates.
+      /// @remarks This method is used for creating a xtd::drawing::image from an XPM image.
+      static bitmap from_xpm_data(const char* const* bits);
       
       /// @brief Returns the color depth, in number of bits per pixel, of the specified pixel format.
       /// @param pixfmt The xtd::drawing::imaging::pixel_format member that specifies the format for which to find the size.
@@ -330,6 +346,7 @@ namespace xtd {
       explicit image(const xtd::string& filename, bool use_icm);
       explicit image(std::istream& stream);
       explicit image(std::istream& stream, bool use_icm);
+      [[deprecated("Replaced by xtd::drawing::image::from_xpm - Will be removed in version 0.4.0.")]]
       explicit image(const char* const* bits);
       image(int32 width, int32 height);
       image(int32 width, int32 height, float horizontal_resolution, float vertical_resolution);
