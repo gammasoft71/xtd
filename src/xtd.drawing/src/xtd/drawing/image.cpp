@@ -174,6 +174,14 @@ image::~image() {
     native::image::destroy(data_->handle);
 }
 
+const xtd::byte* image::alpha() const {
+  return data_->alpha;
+}
+
+xtd::byte* image::alpha() {
+  return data_->alpha;
+}
+
 int32 image::flags() const noexcept {
   return static_cast<int32>(data_->flags);
 }
@@ -222,6 +230,14 @@ const array<imaging::property_item>& image::property_items() const noexcept {
 
 const imaging::image_format& image::raw_format() const noexcept {
   return data_->raw_format;
+}
+
+const xtd::byte* image::rgb() const {
+  return data_->rgb;
+}
+
+xtd::byte* image::rgb() {
+  return data_->rgb;
 }
 
 const drawing::size& image::size() const noexcept {
@@ -284,14 +300,6 @@ bool image::equals(const image& other) const noexcept {
   return true;
 }
 
-const xtd::byte* image::get_alpha() const {
-  return data_->alpha;
-}
-
-xtd::byte* image::get_alpha() {
-  return data_->alpha;
-}
-
 rectangle_f image::get_bounds(graphics_unit page_unit) const noexcept {
   return rectangle_f {0.0f, 0.0f, graphics::to_page_unit(as<float>(data_->size.width), page_unit, 1.0f, native::image::screen_dpi()), graphics::to_page_unit(as<float>(data_->size.height), page_unit, 1.0f, native::image::screen_dpi())};
 }
@@ -345,14 +353,6 @@ property_item image::get_property_item(int32 propid) {
   for (auto property_tiem : data_->property_items)
     if (property_tiem.id() == propid) return property_tiem;
   throw_helper::throws(exception_case::argument);
-}
-
-const xtd::byte* image::get_rgb() const {
-  return data_->rgb;
-}
-
-xtd::byte* image::get_rgb() {
-  return data_->rgb;
 }
 
 xtd::drawing::image image::get_thmbnail_image(int32 thumb_width, int32 thunb_height) noexcept {
@@ -442,8 +442,8 @@ bitmap image::from_xpm_data(const char* const* bits) {
 drawing::color image::get_pixel(int32 x, int32 y) const {
   if (x < 0 || x > width() || y < 0 || y > height()) throw_helper::throws(exception_case::argument);
   
-  auto alpha = get_alpha();
-  auto rgb = reinterpret_cast<const ::rgb*>(get_rgb());
+  auto alpha = this->alpha();
+  auto rgb = reinterpret_cast<const ::rgb*>(this->rgb());
   auto pixel = y * width() + x;
   return color::from_argb(alpha[pixel], rgb[pixel].r, rgb[pixel].g, rgb[pixel].b);
 }
@@ -451,8 +451,8 @@ drawing::color image::get_pixel(int32 x, int32 y) const {
 void image::set_pixel(int32 x, int32 y, const drawing::color& color) {
   if (x < 0 || x > width() || y < 0 || y > height()) throw_helper::throws(exception_case::argument);
   
-  auto alpha = get_alpha();
-  auto rgb = reinterpret_cast<::rgb*>(get_rgb());
+  auto alpha = this->alpha();
+  auto rgb = reinterpret_cast<::rgb*>(this->rgb());
   auto pixel = y * width() + x;
   alpha[pixel] = color.a();
   rgb[pixel] = {color.r(), color.g(), color.b()};

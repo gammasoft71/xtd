@@ -82,7 +82,7 @@ namespace {
 
 void image_converter::bitonal(image& image, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) {
   threshold = std::clamp(threshold, 0, 3 * byte_object::max_value);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
+  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
@@ -112,7 +112,7 @@ image image_converter::blur(const image& image, int32 radius) {
 
 void image_converter::brightness(image& image, double percent) {
   percent = std::clamp(percent, 0.0, 2.0);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
+  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
@@ -131,7 +131,7 @@ image image_converter::brightness(const image& image, double percent) {
 
 void image_converter::color(xtd::drawing::image& image, const xtd::drawing::color& color, double percent) {
   percent = std::clamp(percent - 1.0, -1.0, 1.0);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
+  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
@@ -150,7 +150,7 @@ xtd::drawing::image image_converter::color(const xtd::drawing::image& image, con
 
 void image_converter::color_extraction(xtd::drawing::image& image, int32 threshold, const drawing::color& extraction_color, const xtd::drawing::color& other_pixels_color) noexcept {
   threshold = std::clamp(threshold, 0, 3 * byte_object::max_value);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
+  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
@@ -168,7 +168,7 @@ xtd::drawing::image image_converter::color_extraction(const xtd::drawing::image&
 
 void image_converter::color_substitution(xtd::drawing::image& image, int32 threshold, const drawing::color& source_color, const xtd::drawing::color& new_color) noexcept {
   threshold = std::clamp(threshold, 0, 3 * byte_object::max_value);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
+  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
@@ -186,7 +186,7 @@ xtd::drawing::image image_converter::color_substitution(const xtd::drawing::imag
 
 void image_converter::contrast(image& image, double percent) {
   if (percent < 0.0) percent = 0.0;
-  auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
+  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
@@ -222,7 +222,7 @@ image image_converter::disabled(const image& image, const drawing::color& back_c
 }
 
 void image_converter::disabled(image& image, float brightness) {
-  auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
+  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
@@ -274,7 +274,7 @@ void image_converter::gamma_correction(xtd::drawing::image &image, double r, dou
   r = std::clamp(r, .1, 5.0);
   g = std::clamp(g, .1, 5.0);
   b = std::clamp(b, .1, 5.0);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
+  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
@@ -301,7 +301,7 @@ image image_converter::grayscale(const image& image) {
 
 void image_converter::grayscale(image& image, double percent) {
   percent = std::clamp(percent, 0.0, 1.0);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
+  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
@@ -321,7 +321,7 @@ image image_converter::grayscale(const image& image, double percent) {
 
 void image_converter::hue_rotate(image& image, int angle) {
   angle = std::clamp(angle, 0, 360);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
+  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
@@ -349,7 +349,7 @@ image image_converter::invert(const image& image) {
 
 void image_converter::invert(image& image, double percent) {
   percent = std::clamp(percent, 0.0, 1.0);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
+  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
@@ -368,7 +368,7 @@ image image_converter::invert(const image& image, double percent) {
 
 void image_converter::opacity(image& image, double percent) {
   percent = std::clamp(percent, 0.0, 1.0);
-  auto alpha = image.get_alpha();
+  auto alpha = image.alpha();
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
@@ -415,7 +415,7 @@ image image_converter::rotate_flip(const image& image, xtd::drawing::rotate_flip
 
 void image_converter::saturate(image& image, double percent) {
   if (percent < .0) percent = 0;
-  auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
+  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
@@ -446,7 +446,7 @@ image image_converter::sepia(const image& image) {
 
 void image_converter::sepia(image& image, double percent) {
   percent = std::clamp(percent, 0.0, 1.0);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.get_rgb());
+  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
