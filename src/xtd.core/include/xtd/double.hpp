@@ -19,7 +19,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types).
+  /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types).
   using double_ = double;
   /// @}
 }

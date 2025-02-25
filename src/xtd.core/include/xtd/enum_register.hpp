@@ -26,9 +26,9 @@ namespace xtd {
   /// xtd.core
   /// @ingroup xtd_core system
   /// @remarks The overloading of this operator is necessary for enum classes to be recognized by xtd::string::format().
-  /// @remarks For more information about enumeration, see [enum class](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/enum_class) guide.
+  /// @remarks For more information about enumeration, see [enum class](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/enum_class) guide.
   /// @remarks When an enumeration is registered, we can display its name instead of its value, we can format it and parse it.
-  /// @remarks See [Enumeration Format Strings](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Format%20number%20dates%20other%20types/enumeration_format_strings). For more information about formatting in general, see [Formatting Types](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Format%20number%20dates%20other%20types/overview).
+  /// @remarks See [Enumeration Format Strings](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Format%20number%20dates%20other%20types/enumeration_format_strings). For more information about formatting in general, see [Formatting Types](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Format%20number%20dates%20other%20types/overview).
   /// @par Examples
   /// The following code show how to use xtd::enum_register operator for an enum.
   /// @include enum_class_without_helper.cpp

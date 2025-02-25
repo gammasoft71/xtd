@@ -89,7 +89,7 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the message loop of the thread should be terminated, by calling exit_thread().
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<application_context, event_handler> thread_exit;
       /// @}
       

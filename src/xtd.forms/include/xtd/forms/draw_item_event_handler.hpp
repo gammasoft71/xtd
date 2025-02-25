@@ -25,7 +25,7 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms events
     /// @remarks When you create a xtd::forms::draw_item_event_args delegate, you identify the method that will handle the event. To associate the event with your event handler, add an instance of the delegate to the event. The event handler is called whenever the event occurs, unless you remove the delegate.
-    /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+    /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
     using draw_item_event_handler = xtd::delegate<void(object& sender, const draw_item_event_args& e)>;
   }
 }

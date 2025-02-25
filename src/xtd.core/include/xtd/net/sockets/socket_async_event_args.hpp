@@ -127,7 +127,7 @@ namespace xtd {
         /// @remarks The xtd::net::sockets::socket_async_event_args::completed event provides a way for client applications to complete an asynchronous socket operation. An event handler should be attached to the event within a xtd::net::sockets::socket_async_event_args instance when an asynchronous socket operation is initiated, otherwise the application will not be able to determine when the operation completes.
         /// @remarks The completion callback delegates referenced by the xtd::net::sockets::socket_async_event_args::completed event contains program logic to finish processing the asynchronous socket operation for the client.
         /// @remarks When the event is signaled, the application uses the xtd::net::sockets::socket_async_event_args object parameter to obtain the status of the completed asynchronous socket operation.
-        /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+        /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
         xtd::event<socket_async_event_args, xtd::delegate<void(const socket_async_event_args&)>> completed;
         /// @}
         

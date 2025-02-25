@@ -390,7 +390,7 @@ namespace xtd {
       
       /// @{
       /// @brief Occurs when the checked state of an item changes.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<checked_list_box, item_check_event_handler> item_check;
       /// @}
       

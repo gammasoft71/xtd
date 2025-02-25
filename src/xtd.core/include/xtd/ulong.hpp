@@ -23,7 +23,7 @@ namespace xtd {
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core types
-  /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Types%20overview/types).
+  /// @remarks For more information about types, see [Native types, boxing and unboxing](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/types).
   using ulong = __ulong__; // Workaround : On linux 64 bits unfortunately 'uint64_t' is an alias on 'unigned long' and not on 'unsigned long long int' as other platforms. In order to avoid conflicts in operator or method overloads, it is necessary to give the type that is not taken into account.
   /// @}
 }

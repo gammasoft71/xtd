@@ -403,13 +403,13 @@ namespace xtd {
       /// @brief Gets the background color for the control.
       /// @return A xtd::drawing::color that represents the background color of the control. The default is the value of the xtd::forms::control::default_back_color property.
       /// @remarks The xtd::forms::control::back_color property does not support transparent colors unless the xtd::forms::control_styles::supports_transparent_back_color value of xtd::forms::control_styles is set to `true`.
-      /// @remarks The xtd::forms::control::back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same xtd::forms::control::back_color as its parent form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
+      /// @remarks The xtd::forms::control::back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same xtd::forms::control::back_color as its parent form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
       virtual drawing::color back_color() const noexcept;
       /// @brief Sets the background color for the control.
       /// @param color A xtd::drawing::color that represents the background color of the control. The default is the value of the xtd::forms::control::default_back_color property.
       /// @return Current control.
       /// @remarks The xtd::forms::control::back_color property does not support transparent colors unless the xtd::forms::control_styles::supports_transparent_back_color value of xtd::forms::control_styles is set to `true`.
-      /// @remarks The xtd::forms::control::back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same xtd::forms::control::back_color as its parent form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
+      /// @remarks The xtd::forms::control::back_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a button will have the same xtd::forms::control::back_color as its parent form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
       /// @par Notes to Inheritors
       /// When overriding the xtd::forms::control::back_color property in a derived class, use the base class's xtd::forms::control::back_color property to extend the base implementation. Otherwise, you must provide all the implementation. You are not required to override both the get and set accessors of the xtd::forms::control::back_color property; you can override only one if needed.
       virtual control& back_color(const xtd::drawing::color& color);
@@ -545,12 +545,12 @@ namespace xtd {
       
       /// @brief Gets the cursor that is displayed when the mouse pointer is over the control.
       /// @return A xtd::forms::cursor that represents the cursor to display when the mouse pointer is over the control.
-      /// @remarks The xtd::forms::control::cursor property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
+      /// @remarks The xtd::forms::control::cursor property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
       virtual forms::cursor cursor() const noexcept;
       /// @brief Sets the cursor that is displayed when the mouse pointer is over the control.
       /// @param cursor A xtd::forms::cursor that represents the cursor to display when the mouse pointer is over the control.
       /// @return Current control.
-      /// @remarks The xtd::forms::control::cursor property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
+      /// @remarks The xtd::forms::control::cursor property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
       virtual control& cursor(const xtd::forms::cursor& cursor);
       /// @cond
       virtual control& cursor(std::nullptr_t);
@@ -602,12 +602,12 @@ namespace xtd {
       
       /// @brief Gets the font of the text displayed by the control.
       /// @return The font to apply to the text displayed by the control. The default is the value of the default_font property.
-      /// @remarks The xtd::forms::control::font property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
+      /// @remarks The xtd::forms::control::font property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
       virtual drawing::font font() const noexcept;
       /// @brief Sets the font of the text displayed by the control.
       /// @param font The font to apply to the text displayed by the control. The default is the value of the default_font property.
       /// @return Current control.
-      /// @remarks The xtd::forms::control::font property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
+      /// @remarks The xtd::forms::control::font property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
       virtual control& font(const xtd::drawing::font& font);
       /// @cond
       virtual control& font(std::nullptr_t);
@@ -615,12 +615,12 @@ namespace xtd {
       
       /// @brief Gets the foreground color of the control.
       /// @return The foreground color of the control. The default is the value of the default_fore_color property.
-      /// @remarks The xtd::forms::control::fore_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
+      /// @remarks The xtd::forms::control::fore_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
       virtual drawing::color fore_color() const noexcept;
       /// @brief Sets the foreground color of the control.
       /// @param color The foreground color of the control. The default is the value of the default_fore_color property.
       /// @return Current control.
-      /// @remarks The xtd::forms::control::fore_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
+      /// @remarks The xtd::forms::control::fore_color property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
       virtual control& fore_color(const xtd::drawing::color& color);
       /// @cond
       virtual control& fore_color(std::nullptr_t);
@@ -783,7 +783,7 @@ namespace xtd {
       
       /// @brief Gets a value indicating whether control's elements are aligned to support locales using right-to-left fonts.
       /// @return One of the xtd::forms::right_to_left values. The default is xtd::forms::right_to_left::inherit.
-      /// @remarks The xtd::forms::control::right_to_left property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
+      /// @remarks The xtd::forms::control::right_to_left property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
       /// @remarks The xtd::forms::control::right_to_left property is used for international applications where the language is written from right to left, such as Hebrew or Arabic. When this property is set to xtd::forms::right_to_left::yes, control elements that include text are displayed from right to left.
       /// @note If the value of the xtd::forms::control::right_to_left property is changed at run time, only raw text without formatting is preserved.
       /// @remarks The following are a few examples of how control elements are affected by the xtd::forms::control::right_to_left property value of xtd::forms::right_to_left::yes :
@@ -800,7 +800,7 @@ namespace xtd {
       /// @brief Sets a value indicating whether control's elements are aligned to support locales using right-to-left fonts.
       /// @param value One of the xtd::forms::right_to_left values. The default is xtd::forms::right_to_left::inherit.
       /// @return Current control.
-      /// @remarks The xtd::forms::control::right_to_left property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Overview/ambient_properties) guide.
+      /// @remarks The xtd::forms::control::right_to_left property is an ambient property. An ambient property is a control property that, if not set, is retrieved from the parent control. For example, a xtd::forms::button will have the same xtd::forms::control::back_color as its parent xtd::forms::form by default. For more information about ambient properties, see the [ambient_properties](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Overview/ambient_properties) guide.
       /// @remarks The xtd::forms::control::right_to_left property is used for international applications where the language is written from right to left, such as Hebrew or Arabic. When this property is set to xtd::forms::right_to_left::yes, control elements that include text are displayed from right to left.
       /// @note If the value of the xtd::forms::control::right_to_left property is changed at run time, only raw text without formatting is preserved.
       /// @remarks The following are a few examples of how control elements are affected by the xtd::forms::control::right_to_left property value of xtd::forms::right_to_left::yes :
@@ -828,21 +828,21 @@ namespace xtd {
       
       /// @brief Gets the contol style sheet.
       /// @return The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
-      /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
+      /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
       virtual style_sheets::style_sheet style_sheet() const noexcept;
       /// @brief Sets the contol style sheet.
       /// @param value The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
-      /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
+      /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
       virtual control& style_sheet(const style_sheets::style_sheet& value);
       /// @brief Sets the contol style sheet.
       /// @param value The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
       /// @return Current control.
-      /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
+      /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
       virtual control& style_sheet(const xtd::string& value);
       /// @brief Resets the contol style sheet.
       /// @param value The xtd::forms::style_sheets::style-sheet style sheet associate to this current instance of xtd::forms::control.
       /// @return Current control.
-      /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_overview).
+      /// @remarks For more information, see [Style sheets overview](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_overview).
       virtual control& style_sheet(std::nullptr_t);
       
       /// @brief Gets a value indicating whether the user can give the focus to this control using the TAB key.
@@ -1446,27 +1446,27 @@ namespace xtd {
       /// @{
       /// @brief Occurs when the value of the xtd::forms::control::auto_size property changes.
       /// @remarks This event is raised if the xtd::forms::control::auto_size property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> auto_size_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::back_color property changes.
       /// @remarks This event is raised if the xtd::forms::control::back_color property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> back_color_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::background_image property changes.
       /// @remarks This event is raised if the xtd::forms::control::background_image property is changed by either a programmatic modification or user interaction
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> background_image_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::background_image_layout property changes.
       /// @remarks This event is raised if the xtd::forms::control::background_image_layout property is changed by either a programmatic modification or user interaction
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> background_image_layout_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::control_appearance property changes.
       /// @remarks This event is raised if the control_appearance property is changed by either a programmatic modification or user interaction
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> control_appearance_changed;
       
       /// @brief Occurs when the xtd::forms::control is clicked.
@@ -1491,30 +1491,30 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> click;
       
       /// @brief Occurs when the value of the xtd::forms::control::client_size property changes.
       /// @remarks This event is raised if the xtd::forms::control::client_size property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> client_size_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::cursor property changes.
       /// @remarks This event is raised if the xtd::forms::control::cursor property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> cursor_changed;
       
       /// @brief Occurs when a new xtd::forms::control::control is added to the xtd::forms::control::control_collection.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, control_event_handler> control_added;
       
       /// @brief Occurs when a new xtd::forms::control:: is removed to the xtd::forms::control::control_collection.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, control_event_handler> control_removed;
       
       /// @brief Occurs when the value of the xtd::forms::control::dock property changes.
       /// @remarks This event is raised if the xtd::forms::control::dock property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> dock_changed;
       
       /// @brief Occurs when the xtd::forms::control is double-clicked.
@@ -1538,7 +1538,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> double_click;
       
       /// @brief Occurs when the xtd::forms::control receives focus.
@@ -1559,37 +1559,37 @@ namespace xtd {
       /// @remarks If the causes_validation property is set to `false`, the xtd::forms::control::validating and xtd::forms::control::validated events are suppressed.
       /// @remarks Note The xtd::forms::control::got_focus and xtd::forms::control::lost_focus events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the xtd::forms::control::got_focus and xtd::forms::control::lost_focus events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the xtd::forms::form class, which uses the activated and deactivate events.
       /// @warning Do not attempt to set focus from within the xtd::forms::control::enter, xtd::forms::control::got_focus, xtd::forms::control::leave, xtd::forms::control::lost_focus, xtd::forms::control::validating, or xtd::forms::control::validated event handlers. Doing so can cause your application or the operating system to stop responding.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> got_focus;
       
       /// @brief Occurs when a handle is created for the xtd::forms::control.
       /// @remarks A handle is created when the xtd::forms::control is displayed for the first time. For example, if a xtd::forms::control is created that has visible set to `false`, the xtd::forms::control::handle_created event will not be raised until visible is set to `true`.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> handle_created;
       
       /// @brief Occurs when the control's handle is in the process of being destroyed.
       /// @remarks During the xtd::forms::control::handle_destroyed event, the control is still a valid Windows control and the handle can be recreated by calling the recreate_handle method.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> handle_destroyed;
       
       /// @brief Occurs when the value of the xtd::forms::control::enabled property changes.
       /// @remarks This event is raised if the xtd::forms::control::enabled property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> enabled_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::fore_color property changes.
       /// @remarks This event is raised if the xtd::forms::control::fore_color property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> fore_color_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::font property changes.
       /// @remarks This event is raised if the xtd::forms::control::font property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> font_changed;
       
       /// @brief Occurs when the user requests help for a xtd::forms::control.
       /// @remarks The xtd::forms::control::help_requested event is commonly raised when the user presses the F1 key or an associated context-sensitive help button is clicked.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, help_event_handler> help_requested;
       
       /// @brief Occurs when a key is pressed while the xtd::forms::control has focus.
@@ -1601,7 +1601,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control keyboard events.
       /// @include key_events.cpp
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, key_event_handler> key_down;
       
       /// @brief Occurs when a character. space or backspace key is pressed while the xtd::forms::control has focus.
@@ -1615,7 +1615,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control keyboard events.
       /// @include key_events.cpp
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, key_press_event_handler> key_press;
       
       /// @brief Occurs when a key is released while the xtd::forms::control has focus.
@@ -1627,17 +1627,17 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control keyboard events.
       /// @include key_events.cpp
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, key_event_handler> key_up;
       
       /// @brief Occurs when a xtd::forms::control should reposition its child controls.
       /// @remarks The xtd::forms::control::layout event occurs when child controls are added or removed, when the bounds of the control changes, and when other changes occur that can affect the layout of the control. The xtd::forms::control::layout event can be suppressed using the suspend_layout and resume_layout methods. Suspending layout enables you to perform multiple actions on a control without having to perform a layout for each change. For example, if you resize and move a control, each operation would raise a xtd::forms::control::layout event.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> layout;
       
       /// @brief Occurs when the value of the xtd::forms::control::location property changes.
       /// @remarks This event is raised if the xtd::forms::control::location property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> location_changed;
       
       /// @brief Occurs when the xtd::forms::control loses focus.
@@ -1659,7 +1659,7 @@ namespace xtd {
       /// @remarks If the cancel property of the xtd::forms::cancel_event_args is set to `true` in the validating event delegate, all events that would usually occur after the validating event are suppressed.
       /// @remarks Note The xtd::forms::control::got_focus and xtd::forms::control::lost_focus events are low-level focus events that are tied to the WM_KILLFOCUS and WM_SETFOCUS Windows messages. Typically, the xtd::forms::control::got_focus and xtd::forms::control::lost_focus events are only used when updating when writing custom controls. Instead the enter and leave events should be used for all controls except the xtd::forms::form class, which uses the activated and deactivate events.
       /// @warning Do not attempt to set focus from within the xtd::forms::control::enter, xtd::forms::control::got_focus, xtd::forms::control::leave, xtd::forms::control::lost_focus, xtd::forms::control::validating, or xtd::forms::control::validated event handlers. Doing so can cause your application or the operating system to stop responding.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> lost_focus;
       
       /// @brief Occurs when the xtd::forms::control is clicked by the mouse.
@@ -1675,7 +1675,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, mouse_event_handler> mouse_click;
       
       /// @brief Occurs when the xtd::forms::control is double clicked by the mouse.
@@ -1695,7 +1695,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, mouse_event_handler> mouse_double_click;
       
       /// @brief Occurs when the mouse pointer is over the xtd::forms::control and a mouse button is pressed.
@@ -1709,7 +1709,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, mouse_event_handler> mouse_down;
       
       /// @brief Occurs when the mouse pointer enters the xtd::forms::control.
@@ -1723,7 +1723,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> mouse_enter;
       
       /// @brief Occurs when the mouse horizontal wheel moves while the xtd::forms::control has focus.
@@ -1738,7 +1738,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, mouse_event_handler> mouse_horizontal_wheel;
       
       /// @brief Occurs when the mouse pointer leaves the xtd::forms::control.
@@ -1752,7 +1752,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> mouse_leave;
       
       /// @brief Occurs when the mouse pointer is moved over the xtd::forms::control.
@@ -1766,7 +1766,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, mouse_event_handler> mouse_move;
       
       /// @brief Occurs when the mouse pointer is over the xtd::forms::control and a mouse button is released.
@@ -1780,7 +1780,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, mouse_event_handler> mouse_up;
       
       /// @brief Occurs when the mouse wheel moves while the xtd::forms::control has focus.
@@ -1795,11 +1795,11 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control mouse events.
       /// @include mouse_events.cpp
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, mouse_event_handler> mouse_wheel;
       
       /// @brief Occurs when the control is moved.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> move;
       
       /// @brief Occurs when the xtd::forms::control is redrawn.
@@ -1808,17 +1808,17 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control paint events.
       /// @include form_paint.cpp
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, paint_event_handler> paint;
       
       /// @brief Occurs when the value of the xtd::forms::control::parent property changes.
       /// @remarks This event is raised if the xtd::forms::control::parent property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> parent_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::region property changes.
       /// @remarks This event is raised if the xtd::forms::control::region property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> region_changed;
       
       /// @brief Occurs when the xtd::forms::control is resized.
@@ -1827,42 +1827,42 @@ namespace xtd {
       /// @par Examples
       /// The following code example demonstrates the use of control xtd::forms::control::resize event.
       /// @include dot_matrix_display.cpp
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> resize;
       
       /// @brief Occurs when the value of the xtd::forms::control::right_to_left property changes.
       /// @remarks This event is raised if the xtd::forms::control::right_to_left property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> right_to_left_changed;
 
       /// @brief Occurs when the value of the xtd::forms::control::size property changes.
       /// @remarks This event is raised if the xtd::forms::control::size property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> size_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::style_sheet property changes or when xtd::application::style_sheet property changes.
       /// @remarks This event is raised if the xtd::forms::control::style_sheet property is changed or when xtd::application::style_sheet property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> style_sheet_changed;
       
       /// @brief Occurs when the xtd::drwing::system_colors changes.
       /// @remarks This event is raised if the xtd::drawing::system_colors is changed. For example when automatic dark mode switching on macOS.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> system_colors_changed;
 
       /// @brief Occurs when the xtd::forms::control::tab_stop property value changes.
       /// @remarks This event is raised if the xtd::forms::control::tab_stop property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> tab_stop_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::text property changes.
       /// @remarks This event is raised if the xtd::forms::control::text property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> text_changed;
       
       /// @brief Occurs when the value of the xtd::forms::control::visible property changes.
       /// @remarks This event is raised if the xtd::forms::control::visible property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<control, event_handler> visible_changed;
       /// @}
       

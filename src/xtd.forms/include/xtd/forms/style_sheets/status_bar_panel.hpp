@@ -21,7 +21,7 @@ namespace xtd {
       /// xtd.forms
       /// @ingroup xtd_forms style_sheets
       /// @remarks You need to know how the box model works.
-      /// @remarks For more information, see [Box Model](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.forms/Style%20sheets/style_sheets_box_model).
+      /// @remarks For more information, see [Box Model](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.forms/Style%20sheets/style_sheets_box_model).
       using status_bar_panel = xtd::forms::style_sheets::control;
     }
   }

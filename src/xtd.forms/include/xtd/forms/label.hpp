@@ -267,10 +267,10 @@ namespace xtd {
       /// @{
       /// @brief Occurs when the value of the image property changes.
       /// @remarks This event is raised if the image property is changed by either a programmatic modification or user interaction.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<label, event_handler> image_changed;
       /// @brief Occurs when the value of the xtd::forms::label::text_align property has changed.
-      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview).
+      /// @remarks For more information about handling events, see [Handling and Raising Events](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview).
       event<label, event_handler> text_align_changed;
       /// @}
       

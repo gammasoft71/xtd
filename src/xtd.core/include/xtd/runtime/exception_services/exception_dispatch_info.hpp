@@ -28,7 +28,7 @@ namespace xtd {
       /// xtd.core
       /// @ingroup xtd_core system
       /// @remarks An xtd::runtime::exception_services::exception_dispatch_info object stores the stack trace information that an exception contains at the point where it's captured. The exception can then be thrown at another time and possibly on another thread by calling the xtd::runtime::exception_services::exception_dispatch_info.rethrow method. The exception is thrown as if it had flowed from the point where it was captured to the point where the xtd::runtime::exception_services::exception_dispatch_info::rethrow method is called.
-      /// @remarks For an example, see [Capture exceptions to rethrow later](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Exceptions/exceptions_best_practices#capture-and-rethrow-exceptions-properly).
+      /// @remarks For an example, see [Capture exceptions to rethrow later](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Exceptions/exceptions_best_practices#capture-and-rethrow-exceptions-properly).
       class exception_dispatch_info final : public xtd::object {
       public:
         /// @cond

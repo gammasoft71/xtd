@@ -125,7 +125,7 @@ namespace xtd {
     /// * "MyDir\\MySubdir".
     /// * "\\\\MyServer\\MyShare".
     /// @remarks By default, full read/write access to new directories is granted to all users.
-    /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
+    /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
     class core_export_ directory_info final : public xtd::io::file_system_info {
     public:
       /// @brief Represent directory iterator used by xtd::io::directory_info.
@@ -281,7 +281,7 @@ namespace xtd {
       /// startup_(program::main);
       /// ```
       /// @remarks This constructor does not check if a directory exists. This constructor is a placeholder for a string that is used to access the disk in subsequent operations.
-      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
       explicit directory_info(const xtd::string& path);
       /// @}
       
@@ -357,7 +357,7 @@ namespace xtd {
       /// ```
       /// @remarks This xtd::io::directory_info::name property returns only the name of the directory, such as "Bin". To get the full path, such as "c:\public\Bin", use the xtd::io::directory_info::full_name property.
       /// @remarks The xtd::io::directory_info::name property of a xtd::io::directory_info requires no permission (beyond the read permission to the directory necessary to construct the Exists) but can give out the directory name. If it is necessary to hand out a xtd::io::directory_info to a protected directory with a cryptographically secure name, create a dummy directory for the untrusted code's use.
-      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
       xtd::string name() const override;
       
       /// @brief Gets the parent directory of a specified subdirectory.
@@ -398,7 +398,7 @@ namespace xtd {
       /// @remarks To ensure consistent behavior across versions and to make your intent explicit, retrieve the value of one of the following properties on the xtd::io::directory_info instance returned by xtd::io::directory_info::parent.
       /// * xtd::io::directory_info::name, which returns the simple name of the directory (such as bin).
       /// * xtd::io::directory_info::full_name, which returns the absolute path of the directory.
-      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
       xtd::io::directory_info parent() const;
       
       /// @brief Gets the root portion of the directory.
@@ -485,7 +485,7 @@ namespace xtd {
       /// ```
       /// @remarks If the directory already exists, this method does nothing.
       /// @remarks If the directory did not exist before calling this method, then any cached attribute information about the directory will be flushed if the creation is successful.
-      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
       void create();
       
       /// @brief Creates a subdirectory or subdirectories on the specified path. The specified path can be relative to this instance of the xtd::io::directory_info class.
@@ -532,7 +532,7 @@ namespace xtd {
       /// startup_(program::main);
       /// ```
       /// @remarks Any and all directories specified in path are created, unless some part of path is invalid. The path parameter specifies a directory path, not a file path. If the subdirectory already exists, this method does nothing.
-      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
       xtd::io::directory_info create_subdirectory(const xtd::string& path) const;
       
       /// @brief Returns an enumerable collection of directory information in the current directory.
@@ -1275,7 +1275,7 @@ namespace xtd {
       /// ```
       /// @remarks This method throws an IOException if, for example, you try to move c:\mydir to c:\public, and c:\public already exists. You must specify "c:\\public\\mydir" as the destDirName parameter, or specify a new directory name such as "c:\\newdir".
       /// @remarks This method permits moving a directory to a read-only directory. The read/write attribute of neither directory is affected.
-      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
       void move_to(const xtd::string& dest_dir_name);
       
       /// @brief Deletes this xtd::io::directory_info if it is empty.
@@ -1314,7 +1314,7 @@ namespace xtd {
       ///
       /// startup_(program::main);
       /// ```
-      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
       void remove() const override;
       
       /// @brief Deletes this instance of a DirectoryInfo, specifying whether to delete subdirectories and files.
@@ -1359,7 +1359,7 @@ namespace xtd {
       /// startup_(program::main);
       /// ```
       /// @remarks If the xtd::io::directory_info has no files or subdirectories, this method deletes the xtd::io::directory_info even if recursive is `false`. Attempting to delete a xtd::io::directory_info that is not empty when recursive is `false` throws an xtd::io::io_exception.
-      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks).
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
       void remove(bool recursive) const;
       /// @}
       
