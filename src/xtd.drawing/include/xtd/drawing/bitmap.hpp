@@ -72,6 +72,8 @@ namespace xtd {
       explicit bitmap(std::istream& stream, bool use_icm);
       /// @brief Initializes a new instance of the bitmap class from the specified data xpm.
       /// @param bits The data xpm used to load the image.
+      /// @deprecated Replaced by xtd::drawing::image::from_xpm - Will be removed in version 0.4.0.
+      [[deprecated("Replaced by xtd::drawing::image::from_xpm - Will be removed in version 0.4.0.")]]
       explicit bitmap(const char* const* bits);
       /// @brief Initializes a new instance of the xtd::drawing::bitmap class with the specified size.
       /// @param width The width, in pixels, of the new bitmap.

@@ -280,6 +280,17 @@ intptr image::create(const char* const* bits, std::map<size_t, size_t>& frame_re
   return reinterpret_cast<intptr>(img);
 }
 
+intptr image::create(const unsigned char* bits, int32 width, int32 height, std::map<size_t, size_t>& frame_resolutions) {
+  toolkit::initialize(); // Must be first
+  auto img = new wxImage(wxBitmap((char*)bits, width, height).ConvertToImage());
+  if (!img->IsOk()) {
+    delete img;
+    return invalid_handle;
+  }
+  frame_resolutions[get_frame_resolution(*img)] = 1;
+  return reinterpret_cast<intptr>(img);
+}
+
 intptr image::create(int32 width, int32 height) {
   toolkit::initialize(); // Must be first
   wxImage* img = new wxImage(width, height);

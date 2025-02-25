@@ -6,9 +6,9 @@
 /// @endcond
 
 #include <istream>
-#include <map>
 #include <tuple>
 #include <vector>
+#include <xtd/collections/generic/dictionary>
 #include <xtd/static>
 #include <xtd/types>
 #include <xtd/string>
@@ -325,9 +325,18 @@ namespace xtd {
         /// @param bits The bits containing the image.
         /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
         /// @return A new image handle.
-        /// @remarks This method is used for creating an imgae from an XPM (or XBM) image.
+        /// @remarks This method is used for creating an imgae from an XPM image.
         /// @warning Internal use only
         static intptr create(const char* const* bits, std::map<size_t, size_t>& frame_resolutions);
+        /// @brief Creates an image from bits.
+        /// @param bits The bits containing the image.
+        /// @param width The width for the image.
+        /// @param height The height for the image.
+        /// @param frame_resolutions an std::map<size_t, size_t> containing the frame dimention and the image count collection (see frame_dimension.h for more information).
+        /// @return A new image handle.
+        /// @remarks This method is used for creating an imgae from an XBM image.
+        /// @warning Internal use only
+        static intptr create(const unsigned char* bits, int32 width, int32 height, std::map<size_t, size_t>& frame_resolutions);
         /// @brief Creates an empty image from size.
         /// @param width The width for the empty image.
         /// @param height The height for the empty image.
