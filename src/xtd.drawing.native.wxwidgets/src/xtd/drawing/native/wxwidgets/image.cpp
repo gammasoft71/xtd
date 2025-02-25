@@ -282,7 +282,7 @@ intptr image::create(const char* const* bits, std::map<size_t, size_t>& frame_re
 
 intptr image::create(const unsigned char* bits, int32 width, int32 height, std::map<size_t, size_t>& frame_resolutions) {
   toolkit::initialize(); // Must be first
-  auto img = new wxImage(wxBitmap((char*)bits, width, height).ConvertToImage());
+  auto img = new wxImage(wxBitmap(reinterpret_cast<const char*>(bits), width, height).ConvertToImage());
   if (!img->IsOk()) {
     delete img;
     return invalid_handle;
