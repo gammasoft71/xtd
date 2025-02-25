@@ -124,10 +124,6 @@ image::image(std::istream& stream, bool use_icm) : data_(xtd::new_sptr<data>()) 
   update_properties();
 }
 
-image::image(const char* const* bits) : data_(xtd::new_sptr<data>()) {
-  *this = from_xpm_data(bits);
-}
-
 image::image(int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
   if (width < 1 || height < 1) throw_helper::throws(exception_case::argument);
   data_->handle = native::image::create(width, height);
@@ -387,16 +383,16 @@ void image::save(std::ostream& stream, const imaging::image_format& format) cons
   native::image::save(data_->handle, stream, to_raw_format(format));
 }
 
+image image::from_file(const xtd::string& filename) {
+  return image(filename);
+}
+
 bitmap image::from_hbitmap(intptr hbitmap) {
   return bitmap {image {hbitmap}};
 }
 
 image image::from_stream(std::istream& stream) { // stream param can't be const by design.
   return image {stream};
-}
-
-image image::from_data(const char* const* bits) {
-  return from_xpm_data(bits);
 }
 
 image image::from_hicon(intptr hicon) {

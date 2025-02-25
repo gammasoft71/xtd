@@ -35,7 +35,8 @@ bitmap::bitmap(std::istream& stream) : image(stream) {
 bitmap::bitmap(std::istream& stream, bool use_icm) : image(stream, use_icm) {
 }
 
-bitmap::bitmap(const char* const* bits) : image(bits) {
+bitmap::bitmap(const char* const* bits) {
+  *this = from_xpm_data(bits);
 }
 
 bitmap::bitmap(int32 width, int32 height) : image(width, height) {

@@ -281,7 +281,7 @@ namespace xtd {
       /// @brief Creates an image from the specified file.
       /// @param filename A string that contains the name of the file from which to create the image.
       /// @return The xtd::drawing::image this method creates.
-      static image from_file(const xtd::string& filename) {return image(filename);}
+      static image from_file(const xtd::string& filename);
       
       /// @brief Creates a xtd::drawing::bitmap from a handle to a GDI bitmap.
       /// @param hbitmap The GDI bitmap handle from which to create the xtd::drawing::bitmap.
@@ -296,26 +296,20 @@ namespace xtd {
       /// @note The xtd::drawing::image class does not support alpha transparency in bitmaps. To enable alpha transparency, use PNG images with 32 bits per pixel.
       static image from_stream(std::istream& stream);
       
-      /// @brief Creates an xtd::drawing::image from the specified data pointer.
-      /// @param data A pointer that contains the data for the xtd::drawing::image.
-      /// @return The xtd::drawing::image this method creates.
-      /// @remarks This method is used for creating a xtd::drawing::image from an XPM image.
-      /// @deprecated Replaced by xtd::drawing::image::from_xpm_data - Will be removed in version 0.4.0.
-      [[deprecated("Replaced by xtd::drawing::image::from_xpm_data - Will be removed in version 0.4.0.")]]
-      static image from_data(const char* const* bits);
-      
       /// @brief Creates an xtd::drawing::image from the specified data pointer, width and hieght.
       /// @param data A pointer that contains the data for the xtd::drawing::image.
       /// @param width The width for the xtd::drawing::image.
       /// @param height The height for the xtd::drawing::image.
       /// @return The xtd::drawing::image this method creates.
       /// @remarks This method is used for creating a xtd::drawing::image from an XBM image.
+      /// @note Use xtd::drawing::image::from_file instead xtd::drawing::image::from_xbm_data.
       static bitmap from_xbm_data(const unsigned char* bits, int32 width, int32 height);
       
       /// @brief Creates an xtd::drawing::image from the specified data pointer.
       /// @param data A pointer that contains the data for the xtd::drawing::image.
       /// @return The xtd::drawing::image this method creates.
       /// @remarks This method is used for creating a xtd::drawing::image from an XPM image.
+      /// @note Use xtd::drawing::image::from_file instead xtd::drawing::image::from_xpm_data.
       static bitmap from_xpm_data(const char* const* bits);
       
       /// @brief Returns the color depth, in number of bits per pixel, of the specified pixel format.
@@ -346,8 +340,6 @@ namespace xtd {
       explicit image(const xtd::string& filename, bool use_icm);
       explicit image(std::istream& stream);
       explicit image(std::istream& stream, bool use_icm);
-      [[deprecated("Replaced by xtd::drawing::image::from_xpm_data - Will be removed in version 0.4.0.")]]
-      explicit image(const char* const* bits);
       image(int32 width, int32 height);
       image(int32 width, int32 height, float horizontal_resolution, float vertical_resolution);
       image(int32 width, int32 height, xtd::drawing::imaging::pixel_format format);
