@@ -239,9 +239,6 @@ Inheritance diagram for xtd::drawing::image:</div>
 <tr class="memitem:ac07c81bf88df17501acfafe25747182c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1image.html">image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#ac07c81bf88df17501acfafe25747182c">from_stream</a> (std::istream &amp;stream)</td></tr>
 <tr class="memdesc:ac07c81bf88df17501acfafe25747182c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> from the specified data stream.  <br /></td></tr>
 <tr class="separator:ac07c81bf88df17501acfafe25747182c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95b08796a65a639601f4beeaeac6d975"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1image.html">image</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#a95b08796a65a639601f4beeaeac6d975">from_data</a> (const char *const *bits)</td></tr>
-<tr class="memdesc:a95b08796a65a639601f4beeaeac6d975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> from the specified data pointer.  <br /></td></tr>
-<tr class="separator:a95b08796a65a639601f4beeaeac6d975"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a460eb57f18ba2104e7e4153a0b1739"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1drawing_1_1bitmap.html">bitmap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#a2a460eb57f18ba2104e7e4153a0b1739">from_xbm_data</a> (const unsigned char *bits, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1drawing_1_1image.html#aede72dea65624fed9a8676a866a1d2e8">width</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="classxtd_1_1drawing_1_1image.html#a949196d571aaa1e0b8a3bbcf59141074">height</a>)</td></tr>
 <tr class="memdesc:a2a460eb57f18ba2104e7e4153a0b1739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> from the specified data pointer, width and hieght.  <br /></td></tr>
 <tr class="separator:a2a460eb57f18ba2104e7e4153a0b1739"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1419,7 +1416,7 @@ The image must be saved to the stream at an offset of zero. If any additional da
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1505,43 +1502,6 @@ The image must be saved to the stream at an offset of zero. If any additional da
 <dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> this method creates. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>You must keep the stream open for the lifetime of the <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a>. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>The <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> class does not support alpha transparency in bitmaps. To enable alpha transparency, use PNG images with 32 bits per pixel. </dd></dl>
-
-</div>
-</div>
-<a id="a95b08796a65a639601f4beeaeac6d975" name="a95b08796a65a639601f4beeaeac6d975"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a95b08796a65a639601f4beeaeac6d975">&#9670;&#160;</a></span>from_data()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="classxtd_1_1drawing_1_1image.html">image</a> xtd::drawing::image::from_data </td>
-          <td>(</td>
-          <td class="paramtype">const char *const *&#160;</td>
-          <td class="paramname"><em>bits</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates an <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> from the specified data pointer. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">data</td><td>A pointer that contains the data for the <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> this method creates. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This method is used for creating a <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> from an XPM image. </dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000187">Deprecated:</a></b></dt><dd>Replaced by <a class="el" href="classxtd_1_1drawing_1_1image.html#abff93f364bc6640e711d21f423b1a0ad" title="Creates an xtd::drawing::image from the specified data pointer.">xtd::drawing::image::from_xpm_data</a> - Will be removed in version 0.4.0. </dd></dl>
 
 </div>
 </div>
@@ -1811,7 +1771,7 @@ The image must be saved to the stream at an offset of zero. If any additional da
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 25 2025 11:25:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Feb 26 2025 20:48:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
