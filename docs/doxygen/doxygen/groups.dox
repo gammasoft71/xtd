@@ -45,6 +45,10 @@
     |   |     /// @brief Containes coordinates definitions.
     |   |     /// @ingroup drawing
     |   |     /// @defgroup coordinates coordinates
+    |   |- effects
+    |   |     /// @brief Contains image effets definitions.
+    |   |     /// @ingroup drawing
+    |   |     /// @defgroup effects effects
     |   |- fonts
     |   |     /// @brief Defines a particular format for text, including font face, size, and style attributes. This class cannot be inherited.
     |   |     /// @ingroup drawing
