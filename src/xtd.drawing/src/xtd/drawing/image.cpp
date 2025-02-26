@@ -75,8 +75,6 @@ namespace {
 }
 
 struct image::data {
-  xtd::byte* alpha = nullptr;
-  xtd::byte* rgb = nullptr;
   imaging::image_flags flags = imaging::image_flags::none;
   std::map<xtd::guid, xtd::size> frame_dimensions = {{frame_dimension::page().guid(), 1}};
   intptr handle = 0;
@@ -193,11 +191,11 @@ image::~image() {
 }
 
 const xtd::byte* image::alpha() const {
-  return data_->alpha;
+  return native::image::get_alpha(handle());
 }
 
 xtd::byte* image::alpha() {
-  return data_->alpha;
+  return native::image::get_alpha(handle());
 }
 
 int32 image::flags() const noexcept {
@@ -251,11 +249,11 @@ const imaging::image_format& image::raw_format() const noexcept {
 }
 
 const xtd::byte* image::rgb() const {
-  return data_->rgb;
+  return native::image::get_data(handle());
 }
 
 xtd::byte* image::rgb() {
-  return data_->rgb;
+  return native::image::get_data(handle());
 }
 
 const drawing::size& image::size() const noexcept {
@@ -511,8 +509,6 @@ void image::resize(int32 width, int32 height) {
 
 void image::update_properties() {
   if (!data_->handle) return;
-  data_->alpha = native::image::get_alpha(handle());
-  data_->rgb = native::image::get_data(handle());
   data_->flags = static_cast<imaging::image_flags>(native::image::flags(data_->handle));
   
   data_->horizontal_resolution = native::image::horizontal_resolution(data_->handle);
