@@ -18,7 +18,6 @@
 #include "../../../../../include/xtd/drawing/native/wxConicalGradient.hpp"
 #include "../../../../../include/xtd/drawing/native/wxDrawString.hpp"
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
-#include <xtd/argument_exception>
 #include <xtd/as>
 #include <xtd/convert_string>
 #include <xtd/math>
@@ -78,7 +77,7 @@ namespace {
 }
 
 void graphics::copy_from_graphics(intptr handle, intptr handle_source, int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, int32 block_region_width, int32 block_region_height, int32 copy_pixel_operation) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxRasterOperationMode raster_operation_mode = wxRasterOperationMode::wxCOPY;
   switch (copy_pixel_operation) {
     case CPO_BLACKNESS: raster_operation_mode = wxRasterOperationMode::wxCLEAR; break;
@@ -122,17 +121,17 @@ void graphics::clip(intptr handle, intptr region) {
 }
 
 void graphics::compositing_mode(intptr handle, int32 compositing_mode) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   // Not defined in wxWidgets
 }
 
 void graphics::compositing_quality(intptr handle, int32 compositing_quality) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   // Not defined in wxWidgets
 }
 
 void graphics::copy_from_screen(intptr handle, int32 source_x, int32 source_y, int32 destination_x, int32 destination_y, int32 block_region_width, int32 block_region_height, int32 copy_pixel_operation) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxScreenDC screen_dc;
   wxRasterOperationMode raster_operation_mode = wxRasterOperationMode::wxCOPY;
   switch (copy_pixel_operation) {
@@ -160,14 +159,14 @@ void graphics::copy_from_screen(intptr handle, int32 source_x, int32 source_y, i
 }
 
 void graphics::destroy(intptr handle) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   graphics_state.erase(handle);
   xtd::drawing::native::hdc_wrapper* hdc_wrapper = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle);
   delete hdc_wrapper;
 }
 
 void graphics::draw_arc(intptr handle, intptr pen, float x, float y, float width, float height, float start_angle, float sweep_angle) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   graphics_context gc(handle);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
   dc.SetBrush(*wxTRANSPARENT_BRUSH);
@@ -177,7 +176,7 @@ void graphics::draw_arc(intptr handle, intptr pen, float x, float y, float width
 }
 
 void graphics::draw_bezier(intptr handle, intptr pen, float x1, float y1, float x2, float y2, float x3, float y3, float x4, float y4) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   auto path = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->CreatePath();
   path.MoveToPoint(x1, y1);
   path.AddCurveToPoint(x2, y2, x3, y3, x4, y4);
@@ -189,7 +188,7 @@ void graphics::draw_bezier(intptr handle, intptr pen, float x1, float y1, float 
 }
 
 void graphics::draw_beziers(intptr handle, intptr pen, const std::vector<key_value_pair<float, float>>& points) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   auto path = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->CreatePath();
   path.MoveToPoint(points[0].first, points[0].second);
   for (auto index = 1_z; index < points.size(); index += 3) {
@@ -204,7 +203,7 @@ void graphics::draw_beziers(intptr handle, intptr pen, const std::vector<key_val
 }
 
 void graphics::draw_closed_curve(intptr handle, intptr pen, std::vector<key_value_pair<float, float>> points, float tension) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   graphics_context gc(handle);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
   dc.SetBrush(*wxTRANSPARENT_BRUSH);
@@ -218,7 +217,7 @@ void graphics::draw_closed_curve(intptr handle, intptr pen, std::vector<key_valu
 }
 
 void graphics::draw_curve(intptr handle, intptr pen, std::vector<key_value_pair<float, float>> points, float tension) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   graphics_context gc(handle);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
   dc.SetBrush(*wxTRANSPARENT_BRUSH);
@@ -231,7 +230,7 @@ void graphics::draw_curve(intptr handle, intptr pen, std::vector<key_value_pair<
 }
 
 void graphics::draw_ellipse(intptr handle, intptr pen, float x, float y, float width, float height) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.SetBrush(wxNullBrush);
   graphics.SetPen(wx_pen::to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
@@ -240,7 +239,7 @@ void graphics::draw_ellipse(intptr handle, intptr pen, float x, float y, float w
 }
 
 void graphics::draw_image(intptr handle, intptr image, float x, float y, float width, float height) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   wxBitmap bitmap = wxBitmap(*reinterpret_cast<wxImage*>(image));
   graphics.DrawBitmap(bitmap, x, y, width, height);
@@ -248,7 +247,7 @@ void graphics::draw_image(intptr handle, intptr image, float x, float y, float w
 }
 
 void graphics::draw_image(intptr handle, intptr image, float dest_x, float dest_y, float dest_width, float dest_height, float src_x, float src_y, float src_width, float src_height) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   auto new_image = *reinterpret_cast<wxImage*>(image);
   if (src_x + src_width <= new_image.GetWidth()) new_image = new_image.GetSubImage({static_cast<int>(src_x), 0, static_cast<int>(src_width), new_image.GetHeight()});
@@ -260,7 +259,7 @@ void graphics::draw_image(intptr handle, intptr image, float dest_x, float dest_
 }
 
 void graphics::draw_image_disabled(intptr handle, intptr image, float x, float y, float width, float height, float brightness) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   wxBitmap bitmap = wxBitmap(*reinterpret_cast<wxImage*>(image)).ConvertToDisabled(static_cast<xtd::byte>(255 * brightness));
   graphics.DrawBitmap(bitmap, x, y, width, height);
@@ -268,7 +267,7 @@ void graphics::draw_image_disabled(intptr handle, intptr image, float x, float y
 }
 
 void graphics::draw_line(intptr handle, intptr pen, float x1, float y1, float x2, float y2) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.SetBrush(wxNullBrush);
   graphics.SetPen(wx_pen::to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
@@ -277,7 +276,7 @@ void graphics::draw_line(intptr handle, intptr pen, float x1, float y1, float x2
 }
 
 void graphics::draw_lines(intptr handle, intptr pen, const std::vector<key_value_pair<float, float>>& points) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   
   auto start_line = points[0];
   for (auto it = points.begin() + 1; it != points.end(); ++it) {
@@ -297,7 +296,7 @@ void graphics::draw_lines(intptr handle, intptr pen, const std::vector<key_value
 }
 
 void graphics::draw_path(intptr handle, intptr pen, intptr graphics_path) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.SetBrush(wxNullBrush);
   graphics.SetPen(wx_pen::to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
@@ -306,7 +305,7 @@ void graphics::draw_path(intptr handle, intptr pen, intptr graphics_path) {
 }
 
 void graphics::draw_pie(intptr handle, intptr pen, float x, float y, float width, float height, float start_angle, float sweep_angle) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   graphics_context gc(handle);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
   dc.SetBrush(*wxTRANSPARENT_BRUSH);
@@ -316,7 +315,7 @@ void graphics::draw_pie(intptr handle, intptr pen, float x, float y, float width
 }
 
 void graphics::draw_polygon(intptr handle, intptr pen, const std::vector<key_value_pair<float, float>>& points) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   std::vector<wxPoint2DDouble> wx_points;
   for (auto [x, y] : points)
     wx_points.push_back(wxPoint(as<double>(x), as<double>(y)));
@@ -329,7 +328,7 @@ void graphics::draw_polygon(intptr handle, intptr pen, const std::vector<key_val
 }
 
 void graphics::draw_rectangle(intptr handle, intptr pen, float x, float y, float width, float height) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.SetBrush(wxNullBrush);
   graphics.SetPen(wx_pen::to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
@@ -338,7 +337,7 @@ void graphics::draw_rectangle(intptr handle, intptr pen, float x, float y, float
 }
 
 void graphics::draw_rectangles(intptr handle, intptr pen, std::vector<std::tuple<float, float, float, float>>& rects) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.SetBrush(wxNullBrush);
   graphics.SetPen(wx_pen::to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
@@ -353,7 +352,7 @@ void graphics::draw_rotated_string(intptr handle, const xtd::string& text, intpt
 }
 
 void graphics::draw_rounded_rectangle(intptr handle, intptr pen, float x, float y, float width, float height, float radius) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.SetBrush(wxNullBrush);
   graphics.SetPen(wx_pen::to_graphics_pen(graphics, *reinterpret_cast<wx_pen*>(pen)));
@@ -373,7 +372,7 @@ void graphics::draw_string(intptr handle, const xtd::string& text, intptr font, 
 
 void graphics::fill_closed_curve(intptr handle, intptr brush, std::vector<key_value_pair<float, float>> points, uint32 fill_mode, float tension) {
   /// @todo Using graphics_path when done...
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   graphics_context gc(handle);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
   dc.SetBrush(wx_brush::to_brush(*reinterpret_cast<wx_brush*>(brush)));
@@ -386,7 +385,7 @@ void graphics::fill_closed_curve(intptr handle, intptr brush, std::vector<key_va
 }
 
 void graphics::fill_ellipse(intptr handle, intptr brush, float x, float y, float width, float height) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
     wxBitmap conical_gradient_bitmap = wxConicalGradient::CreateBitmap(wxSize(width, height), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point - wxPoint(x, y), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle);
@@ -407,7 +406,7 @@ void graphics::fill_ellipse(intptr handle, intptr brush, float x, float y, float
 }
 
 void graphics::fill_path(intptr handle, intptr brush, intptr graphics_path, int32 mode) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
     double x, y, width, height;
@@ -430,7 +429,7 @@ void graphics::fill_path(intptr handle, intptr brush, intptr graphics_path, int3
 }
 
 void graphics::fill_pie(intptr handle, intptr brush, float x, float y, float width, float height, float start_angle, float sweep_angle) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   graphics_context gc(handle);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
   if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
@@ -452,7 +451,7 @@ void graphics::fill_pie(intptr handle, intptr brush, float x, float y, float wid
 }
 
 void graphics::fill_polygon(intptr handle, intptr brush, const std::vector<key_value_pair<float, float>>& points, int32 fill_mode) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   /// @todo Using graphics_path when done...
   std::vector<wxPoint2DDouble> wx_points;
   for (auto [x, y] : points)
@@ -466,7 +465,7 @@ void graphics::fill_polygon(intptr handle, intptr brush, const std::vector<key_v
 }
 
 void graphics::fill_rectangle(intptr handle, intptr brush, float x, float y, float width, float height) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush())
     graphics.DrawBitmap(wxConicalGradient::CreateBitmap(wxSize(width, height), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point - wxPoint(x, y), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle), x, y, width, height);
@@ -509,13 +508,13 @@ void graphics::fill_rectangle(intptr handle, intptr brush, float x, float y, flo
 }
 
 void graphics::fill_rectangles(intptr handle, intptr brush, std::vector<std::tuple<float, float, float, float>>& rects) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   for (auto [x, y, width, height] : rects)
     fill_rectangle(handle, brush, x, y, width, height);
 }
 
 void graphics::fill_region(intptr handle, intptr brush, intptr region) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   int32 x, y, width, height;
   wxRegion* wx_region = reinterpret_cast<wxRegion*>(region);
   wx_region->GetBox(x, y, width, height);
@@ -533,7 +532,7 @@ void graphics::fill_region(intptr handle, intptr brush, intptr region) {
 }
 
 void graphics::fill_rounded_rectangle(intptr handle, intptr brush, float x, float y, float width, float height, float radius) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   if (reinterpret_cast<wx_brush*>(brush)->is_conical_gradiant_brush()) {
     wxBitmap conical_gradient_bitmap = wxConicalGradient::CreateBitmap(wxSize(width, height), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().colors, reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().center_point - wxPoint(x, y), reinterpret_cast<wx_brush*>(brush)->get_conical_gradiant_brush().angle);
@@ -583,7 +582,7 @@ void graphics::fill_rounded_rectangle(intptr handle, intptr brush, float x, floa
 }
 
 void graphics::flush(intptr handle, int32 intention) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->Flush();
 }
 
@@ -635,7 +634,7 @@ void graphics::get_nearest_color(intptr handle, xtd::byte original_a, xtd::byte 
 }
 
 void graphics::interpolation_mode(intptr handle, int32 interpolation_mode) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   auto graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   switch (interpolation_mode) {
     case IM_INVALID: break;
@@ -652,7 +651,7 @@ void graphics::interpolation_mode(intptr handle, int32 interpolation_mode) {
 
 /*
 void graphics::measure_string(intptr handle, const string& text, intptr font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   width = 0;
   height = 0;
   size_t line_index = 0_z;
@@ -677,7 +676,7 @@ void graphics::measure_string(intptr handle, const string& text, intptr font, fl
 */
 
 void graphics::measure_string(intptr handle, const string& text, intptr font, float& width, float& height, float max_width, float max_height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, size_t characters_fitted, size_t lines_filled, bool measure_trailing_spaces) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   width = 0.0f;
   height = 0.0f;
   size_t line_index = 0_z;
@@ -693,7 +692,7 @@ void graphics::measure_string(intptr handle, const string& text, intptr font, fl
 }
 
 void graphics::pixel_offset_mode(intptr handle, int32 pixel_offset_mode) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   auto graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   switch (pixel_offset_mode) {
     case PO_INVALID: break;
@@ -711,13 +710,13 @@ void graphics::release_hdc(intptr handle, intptr hdc) {
 }
 
 void graphics::reset_transform(intptr handle) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.SetTransform(graphics.CreateMatrix());
 }
 
 void graphics::restore(intptr handle, intptr& gstate) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   if (gstate == 0 || gstate != graphics_state[handle]) throw_helper::throws(exception_case::argument);
   --graphics_state[handle];
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->PopState();
@@ -725,7 +724,7 @@ void graphics::restore(intptr handle, intptr& gstate) {
 }
 
 void graphics::rotate_transform(intptr handle, float angle, int32 order) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.Rotate(math::degrees_to_radians(-angle));
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
@@ -738,14 +737,14 @@ intptr graphics::save(intptr handle) {
 }
 
 void graphics::scale_transform(intptr handle, float sx, float sy, int32 order) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.Scale(sx, sy);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
 void graphics::smoothing_mode(intptr handle, int32 smoothing_mode) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   auto graphics = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   switch (smoothing_mode) {
     case SM_INVALID: break;
@@ -759,12 +758,12 @@ void graphics::smoothing_mode(intptr handle, int32 smoothing_mode) {
 }
 
 void graphics::text_contrast(intptr handle, int32 text_contrast) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   // Not defined in wxWidgets
 }
 
 void graphics::text_rendering_hint(intptr handle, int32 text_rendering_hint) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   // Not defined in wxWidgets
 }
 
@@ -777,7 +776,7 @@ void graphics::transform(intptr handle, intptr matrix) {
 }
 
 void graphics::translate_transform(intptr handle, float dx, float dy, int32 order) {
-  if (!handle) return;
+  if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.Translate(dx, dy);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
