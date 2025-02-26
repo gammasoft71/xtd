@@ -92,7 +92,7 @@ var searchData=
   ['countries_89',['countries',['../classxtd_1_1forms_1_1countries.html',1,'xtd::forms']]],
   ['country_90',['country',['../classxtd_1_1forms_1_1country.html',1,'xtd::forms']]],
   ['cpp_5flanguage_91',['cpp_language',['../classxtd_1_1cpp__language.html',1,'xtd']]],
-  ['crayons_5fcolors_92',['crayons_colors',['../classxtd_1_1drawing_1_1crayons__colors.html',1,'xtd::drawing']]],
+  ['crayon_5fcolors_92',['crayon_colors',['../classxtd_1_1drawing_1_1crayon__colors.html',1,'xtd::drawing']]],
   ['create_5fparams_93',['create_params',['../classxtd_1_1forms_1_1create__params.html',1,'xtd::forms']]],
   ['css_5freader_94',['css_reader',['../classxtd_1_1web_1_1css_1_1css__reader.html',1,'xtd::web::css']]],
   ['css_5fwriter_95',['css_writer',['../classxtd_1_1web_1_1css_1_1css__writer.html',1,'xtd::web::css']]],

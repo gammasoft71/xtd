@@ -2620,7 +2620,7 @@ If value is empty and the environment variable named by variable exists, the env
 <p>Occurs when a signal is sent to the current process. </p>
 <dl class="section remark"><dt>Remarks</dt><dd>This event is used in conjunction with <a class="el" href="group__events.html#gabcbd275ea4718769d31cf61042c0bd77" title="Represents the method that will handle the signal events of a xtd::environment.">xtd::signal_cancel_event_handler</a> and <a class="el" href="classxtd_1_1signal__cancel__event__args.html" title="Provides data for the environment signal event. This class cannot be inherited.">xtd::signal_cancel_event_args</a>. The <a class="el" href="classxtd_1_1environment.html#a5eecf5ff0c77fe58bf24407004e0956a" title="Occurs when a signal is sent to the current process.">xtd::environment::cancel_signal</a> event enables a <a class="el" href="group__xtd__core.html#ga437764d898631d282f7d95b573328c72" title="Specifies signals that can interrupt the current process.">xtd::signal</a> so the event handler can decide whether to continue executing or terminate. </dd>
 <dd>
-For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd></dl>
+For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c72a2414c252176310b2c04547257948c7b7" title="external interrupt, usually initiated by the user. Is equal to SIGINT.">xtd::signal::interrupt</a> and <a class="el" href="group__xtd__core.html#ggaa3d0d07e86f61a82f96e00c5f516622ead90e6591472c47bff157b01a3d9acad3" title="The console_modifiers::control modifier key plus the console_key C console key.">xtd::console_special_key::control_c</a> use the same signal (<a href="https://en.cppreference.com/w/cpp/utility/program/signal">SIGINT</a>). </dd>
 <dd>
 The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c72a2414c252176310b2c04547257948c7b7" title="external interrupt, usually initiated by the user. Is equal to SIGINT.">xtd::signal::interrupt</a> and <a class="el" href="group__xtd__core.html#ggaa3d0d07e86f61a82f96e00c5f516622ead90e6591472c47bff157b01a3d9acad3" title="The console_modifiers::control modifier key plus the console_key C console key.">xtd::console_special_key::control_c</a> can be cancelled with <a class="el" href="classxtd_1_1environment.html#a5eecf5ff0c77fe58bf24407004e0956a" title="Occurs when a signal is sent to the current process.">xtd::environment::cancel_signal</a> event or <a class="el" href="classxtd_1_1console.html#a02258c1b2d77b3ca79f144db690d4c20" title="Occurs when the Control modifier key (Ctrl) and either the ConsoleKey.C console key (C) or the Break ...">xtd::console::cancel_key_press</a> event. Both of these events are called when <a href="https://en.cppreference.com/w/cpp/utility/program/signal">SIGINT</a> is raised. </dd></dl>
@@ -2648,7 +2648,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 </div><div class="memdoc">
 
 <p>Occurs when the terminates normally (via <a class="el" href="classxtd_1_1environment.html#a04a82c5fb0f6ce7c81d92803d2038db1" title="Terminates this process and returns an exit code to the operating system.">xtd::environment::exit</a> or returning from the main function). </p>
-<dl class="section remark"><dt>Remarks</dt><dd>For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For more information about handling events, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Events/overview">Handling and Raising Events</a>. </dd></dl>
 
 </div>
 </div>
@@ -2659,7 +2659,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 15 2025 21:41:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Feb 26 2025 21:20:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
