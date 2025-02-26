@@ -96,7 +96,7 @@ $(function() {
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;../helpers/throw_helper.hpp&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> enum_t&gt;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>std::string __enum_to_string(enum_t value) <span class="keyword">noexcept</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>std::string __enum_to_string__(enum_t value) <span class="keyword">noexcept</span>;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> <span class="keywordtype">char</span>_t, <span class="keyword">class</span> value_t&gt;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">inline</span> std::basic_string&lt;char_t&gt; __enum_formatter(<span class="keyword">const</span> std::basic_string&lt;char_t&gt;&amp; format, value_t value, <span class="keyword">const</span> std::locale&amp; loc) {</div>
@@ -113,7 +113,7 @@ $(function() {
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;x&#39;</span>:</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;X&#39;</span>: <span class="keywordflow">return</span> __numeric_formatter(fmt, <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keywordtype">long</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(value), loc);</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;g&#39;</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;G&#39;</span>: <span class="keywordflow">return</span> __enum_to_string(value);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">case</span> <span class="charliteral">&#39;G&#39;</span>: <span class="keywordflow">return</span> __enum_to_string__(value);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">default</span>: <a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a4fcf5154d41ae7e68038268ea89492d6">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dca1ddcb92ade31c8fbd370001f9b29a7d9">xtd::helpers::exception_case::format</a>, <span class="stringliteral">&quot;Invalid format expression&quot;</span>);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  }</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
@@ -142,7 +142,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 15 2025 21:41:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Feb 26 2025 21:20:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

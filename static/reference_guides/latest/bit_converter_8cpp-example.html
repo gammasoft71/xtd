@@ -90,7 +90,7 @@ $(function() {
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> formatter = <span class="stringliteral">&quot;{0,25}{1,30}&quot;</span>;</div>
+<div class="line">  <span class="keyword">const</span> <span class="keyword">auto</span> <a id="_a0" name="_a0"></a><a class="code hl_struct" href="structxtd_1_1formatter.html">formatter</a> = <span class="stringliteral">&quot;{0,25}{1,30}&quot;</span>;</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">auto</span> a_double = 0.1111111111111111111;</div>
 <div class="line">  <span class="keyword">auto</span> a_single = 0.1111111111111111111f;</div>
@@ -102,17 +102,17 @@ $(function() {
 <div class="line">  </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;This example of methods of the BitConverter class&quot;</span></div>
 <div class="line">    <span class="stringliteral">&quot;\ngenerates the following output.\n&quot;</span>);</div>
-<div class="line">  console::write_line(formatter, <span class="stringliteral">&quot;argument&quot;</span>, <span class="stringliteral">&quot;byte array&quot;</span>);</div>
-<div class="line">  console::write_line(formatter, <span class="stringliteral">&quot;--------&quot;</span>, <span class="stringliteral">&quot;----------&quot;</span>);</div>
+<div class="line">  console::write_line(<a class="code hl_struct" href="structxtd_1_1formatter.html">formatter</a>, <span class="stringliteral">&quot;argument&quot;</span>, <span class="stringliteral">&quot;byte array&quot;</span>);</div>
+<div class="line">  console::write_line(<a class="code hl_struct" href="structxtd_1_1formatter.html">formatter</a>, <span class="stringliteral">&quot;--------&quot;</span>, <span class="stringliteral">&quot;----------&quot;</span>);</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Convert values to Byte arrays and display them.</span></div>
-<div class="line">  console::write_line(formatter, a_double, bit_converter::to_string(bit_converter::get_bytes(a_double)));</div>
-<div class="line">  console::write_line(formatter, a_single, bit_converter::to_string(bit_converter::get_bytes(a_single)));</div>
-<div class="line">  console::write_line(formatter, a_long, bit_converter::to_string(bit_converter::get_bytes(a_long)));</div>
-<div class="line">  console::write_line(formatter, an_int, bit_converter::to_string(bit_converter::get_bytes(an_int)));</div>
-<div class="line">  console::write_line(formatter, a_short, bit_converter::to_string(bit_converter::get_bytes(a_short)));</div>
-<div class="line">  console::write_line(formatter, a_char, bit_converter::to_string(bit_converter::get_bytes(a_char)));</div>
-<div class="line">  console::write_line(formatter, a_bool, bit_converter::to_string(bit_converter::get_bytes(a_bool)));</div>
+<div class="line">  console::write_line(<a class="code hl_struct" href="structxtd_1_1formatter.html">formatter</a>, a_double, bit_converter::to_string(bit_converter::get_bytes(a_double)));</div>
+<div class="line">  console::write_line(<a class="code hl_struct" href="structxtd_1_1formatter.html">formatter</a>, a_single, bit_converter::to_string(bit_converter::get_bytes(a_single)));</div>
+<div class="line">  console::write_line(<a class="code hl_struct" href="structxtd_1_1formatter.html">formatter</a>, a_long, bit_converter::to_string(bit_converter::get_bytes(a_long)));</div>
+<div class="line">  console::write_line(<a class="code hl_struct" href="structxtd_1_1formatter.html">formatter</a>, an_int, bit_converter::to_string(bit_converter::get_bytes(an_int)));</div>
+<div class="line">  console::write_line(<a class="code hl_struct" href="structxtd_1_1formatter.html">formatter</a>, a_short, bit_converter::to_string(bit_converter::get_bytes(a_short)));</div>
+<div class="line">  console::write_line(<a class="code hl_struct" href="structxtd_1_1formatter.html">formatter</a>, a_char, bit_converter::to_string(bit_converter::get_bytes(a_char)));</div>
+<div class="line">  console::write_line(<a class="code hl_struct" href="structxtd_1_1formatter.html">formatter</a>, a_bool, bit_converter::to_string(bit_converter::get_bytes(a_bool)));</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code produces the following output :</span></div>
@@ -130,11 +130,12 @@ $(function() {
 <div class="line"><span class="comment">//                         *                   2A-00-00-00</span></div>
 <div class="line"><span class="comment">//                      True                            01</span></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
+<div class="ttc" id="astructxtd_1_1formatter_html"><div class="ttname"><a href="structxtd_1_1formatter.html">xtd::formatter</a></div><div class="ttdoc">Provides the base class to format any object.</div><div class="ttdef"><b>Definition</b> formatter.hpp:28</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 15 2025 21:41:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Feb 26 2025 21:20:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

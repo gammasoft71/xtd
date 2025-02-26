@@ -121,7 +121,7 @@ Inheritance diagram for xtd::time_zone_info::adjustement_rule:</div>
 <tr class="memitem:a93b7855e6dbaa1e121fd2c5897db1614"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1date__time.html">xtd::date_time</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1time__zone__info_1_1adjustement__rule.html#a93b7855e6dbaa1e121fd2c5897db1614">date_start</a> () const noexcept</td></tr>
 <tr class="memdesc:a93b7855e6dbaa1e121fd2c5897db1614"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the date when the adjustment rule takes effect.  <br /></td></tr>
 <tr class="separator:a93b7855e6dbaa1e121fd2c5897db1614"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c562cdd2dc0ecef50a603ab4e67e3aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1time__span.html">xtd::time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1time__zone__info_1_1adjustement__rule.html#a8c562cdd2dc0ecef50a603ab4e67e3aa">daylight_delta</a> () const noexcept</td></tr>
+<tr class="memitem:a8c562cdd2dc0ecef50a603ab4e67e3aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1time__zone__info_1_1adjustement__rule.html#a8c562cdd2dc0ecef50a603ab4e67e3aa">daylight_delta</a> () const noexcept</td></tr>
 <tr class="memdesc:a8c562cdd2dc0ecef50a603ab4e67e3aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the amount of time that is required to form the time zone's daylight saving time. This amount of time is added to the time zone's offset from Coordinated Universal Time (UTC).  <br /></td></tr>
 <tr class="separator:a8c562cdd2dc0ecef50a603ab4e67e3aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8611e73f6099506fda94dedda53d05f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1time__zone__info_1_1transition__time.html">transition_time</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1time__zone__info_1_1adjustement__rule.html#a8611e73f6099506fda94dedda53d05f0">daylight_transition_end</a> () const noexcept</td></tr>
@@ -247,7 +247,7 @@ You can assign <pre class="fragment">date_time::min_value().date() </pre> to the
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structxtd_1_1time__span.html">xtd::time_span</a> xtd::time_zone_info::adjustement_rule::daylight_delta </td>
+          <td class="memname"><a class="el" href="classxtd_1_1time__span.html">xtd::time_span</a> xtd::time_zone_info::adjustement_rule::daylight_delta </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -261,7 +261,7 @@ You can assign <pre class="fragment">date_time::min_value().date() </pre> to the
 </div><div class="memdoc">
 
 <p>Gets the amount of time that is required to form the time zone's daylight saving time. This amount of time is added to the time zone's offset from Coordinated Universal Time (UTC). </p>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="structxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object that indicates the amount of time to add to the standard time changes as a result of the adjustment rule. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1time__span.html" title="Represents a time interval.">xtd::time_span</a> object that indicates the amount of time to add to the standard time changes as a result of the adjustment rule. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The following formula defines a time zone's daylight saving time: <div class="fragment"><div class="line">time_tone_time = <a class="code hl_function" href="classxtd_1_1time__zone__info.html#af12c8a59502ce357d3e1f1a983c8b718">base_utc_offset</a> + <a class="code hl_function" href="classxtd_1_1time__zone__info_1_1adjustement__rule.html#a8c562cdd2dc0ecef50a603ab4e67e3aa">daylight_delta</a> + utc_time</div>
 <div class="ttc" id="aclassxtd_1_1time__zone__info_1_1adjustement__rule_html_a8c562cdd2dc0ecef50a603ab4e67e3aa"><div class="ttname"><a href="classxtd_1_1time__zone__info_1_1adjustement__rule.html#a8c562cdd2dc0ecef50a603ab4e67e3aa">xtd::time_zone_info::adjustement_rule::daylight_delta</a></div><div class="ttdeci">xtd::time_span daylight_delta() const noexcept</div><div class="ttdoc">Gets the amount of time that is required to form the time zone's daylight saving time....</div></div>
 <div class="ttc" id="aclassxtd_1_1time__zone__info_html_af12c8a59502ce357d3e1f1a983c8b718"><div class="ttname"><a href="classxtd_1_1time__zone__info.html#af12c8a59502ce357d3e1f1a983c8b718">xtd::time_zone_info::base_utc_offset</a></div><div class="ttdeci">ticks base_utc_offset() const noexcept</div><div class="ttdoc">Gets the time difference between the current time zone's standard time and Coordinated Universal Time...</div></div>
@@ -440,7 +440,7 @@ The value of the <a class="el" href="classxtd_1_1time__zone__info_1_1adjustement
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 15 2025 21:41:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Feb 26 2025 21:20:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

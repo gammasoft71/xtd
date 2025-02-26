@@ -82,11 +82,12 @@ var searchData=
   ['love_5fhotel_79',['love_hotel',['../classxtd_1_1forms_1_1emoticons.html#a28e1cb288800dff65eeb865194a23530',1,'xtd::forms::emoticons']]],
   ['love_5fletter_80',['love_letter',['../classxtd_1_1forms_1_1emoticons.html#a0e30a2ceb950968eceb177dabe0f1f7d',1,'xtd::forms::emoticons']]],
   ['low_5fbrightness_5fsymbol_81',['low_brightness_symbol',['../classxtd_1_1forms_1_1emoticons.html#a615d905075e9bd8fea0a34f10e26916e',1,'xtd::forms::emoticons']]],
-  ['lower_5fleft_5fballpoint_5fpen_82',['lower_left_ballpoint_pen',['../classxtd_1_1forms_1_1emoticons.html#aab34fdde8464abf8cc079a4069a2e788',1,'xtd::forms::emoticons']]],
-  ['lower_5fleft_5fcrayon_83',['lower_left_crayon',['../classxtd_1_1forms_1_1emoticons.html#a1779bde9f3d258cf977ba0963d635561',1,'xtd::forms::emoticons']]],
-  ['lower_5fleft_5ffountain_5fpen_84',['lower_left_fountain_pen',['../classxtd_1_1forms_1_1emoticons.html#aef3241ff4b6a73ee6372b4ecb22dcd0f',1,'xtd::forms::emoticons']]],
-  ['lower_5fleft_5fpaintbrush_85',['lower_left_paintbrush',['../classxtd_1_1forms_1_1emoticons.html#a9d826a72b79276e42075e36750237923',1,'xtd::forms::emoticons']]],
-  ['lparam_86',['lparam',['../structxtd_1_1forms_1_1message.html#ab4729a65cd4f64b9119b2d4a6a47a3f2',1,'xtd::forms::message']]],
-  ['luggage_87',['luggage',['../classxtd_1_1forms_1_1emoticons.html#aabc13037d7c186292cb0a10210a9b8d4',1,'xtd::forms::emoticons']]],
-  ['lying_5fface_88',['lying_face',['../classxtd_1_1forms_1_1emoticons.html#a6a7e4de26535b6b9d3c946c97e03c067',1,'xtd::forms::emoticons']]]
+  ['lower_5fcolor_82',['lower_color',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1bitonal__effect.html#a110192c5f49afed39ba29ac362ef1a58',1,'xtd::drawing::imaging::effects::bitonal_effect']]],
+  ['lower_5fleft_5fballpoint_5fpen_83',['lower_left_ballpoint_pen',['../classxtd_1_1forms_1_1emoticons.html#aab34fdde8464abf8cc079a4069a2e788',1,'xtd::forms::emoticons']]],
+  ['lower_5fleft_5fcrayon_84',['lower_left_crayon',['../classxtd_1_1forms_1_1emoticons.html#a1779bde9f3d258cf977ba0963d635561',1,'xtd::forms::emoticons']]],
+  ['lower_5fleft_5ffountain_5fpen_85',['lower_left_fountain_pen',['../classxtd_1_1forms_1_1emoticons.html#aef3241ff4b6a73ee6372b4ecb22dcd0f',1,'xtd::forms::emoticons']]],
+  ['lower_5fleft_5fpaintbrush_86',['lower_left_paintbrush',['../classxtd_1_1forms_1_1emoticons.html#a9d826a72b79276e42075e36750237923',1,'xtd::forms::emoticons']]],
+  ['lparam_87',['lparam',['../structxtd_1_1forms_1_1message.html#ab4729a65cd4f64b9119b2d4a6a47a3f2',1,'xtd::forms::message']]],
+  ['luggage_88',['luggage',['../classxtd_1_1forms_1_1emoticons.html#aabc13037d7c186292cb0a10210a9b8d4',1,'xtd::forms::emoticons']]],
+  ['lying_5fface_89',['lying_face',['../classxtd_1_1forms_1_1emoticons.html#a6a7e4de26535b6b9d3c946c97e03c067',1,'xtd::forms::emoticons']]]
 ];

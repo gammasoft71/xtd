@@ -121,14 +121,14 @@ class xtd::collections::generic::extensions::enumerable_iterators&lt; type_t, en
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1collections_1_1generic_1_1extensions_1_1enumerable__iterators.html" title="Internal enumarable iterators definition.">xtd::collections::generic::extensions::enumerable_iterators</a> &lt;type_t&gt; class is use to hide the complexity of c++ <a href="https://en.cppreference.com/w/cpp/iterator/iterator">std::iterator</a>. </dd>
 <dd>
 The objective is for any collection inheriting from the <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> &lt;type_t&gt; interface to provide the iterator and const_iterator types and <code>begin</code> and <code>end</code> methods needed to be able to iterate the collection as for example : <div class="fragment"><div class="line"><span class="keyword">auto</span> parts = part_collection {};</div>
-<div class="line">parts.add(part {<span class="stringliteral">&quot;item one&quot;</span>, <a class="code hl_function" href="structxtd_1_1guid.html#a07f13762e0fdf7369b7cd2929ca78ca1">guid::new_guid</a>()});</div>
+<div class="line">parts.add(part {<span class="stringliteral">&quot;item one&quot;</span>, <a class="code hl_function" href="classxtd_1_1guid.html#a07f13762e0fdf7369b7cd2929ca78ca1">guid::new_guid</a>()});</div>
 <div class="line"><span class="comment">// ...</span></div>
-<div class="line">parts.add(part {<span class="stringliteral">&quot;item n&quot;</span>, <a class="code hl_function" href="structxtd_1_1guid.html#a07f13762e0fdf7369b7cd2929ca78ca1">guid::new_guid</a>()}});</div>
+<div class="line">parts.add(part {<span class="stringliteral">&quot;item n&quot;</span>, <a class="code hl_function" href="classxtd_1_1guid.html#a07f13762e0fdf7369b7cd2929ca78ca1">guid::new_guid</a>()}});</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> part : parts)</div>
 <div class="line">  <a class="code hl_class" href="classxtd_1_1console.html">console</a>::write_line(part);</div>
 <div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.hpp:36</div></div>
-<div class="ttc" id="astructxtd_1_1guid_html_a07f13762e0fdf7369b7cd2929ca78ca1"><div class="ttname"><a href="structxtd_1_1guid.html#a07f13762e0fdf7369b7cd2929ca78ca1">xtd::guid::new_guid</a></div><div class="ttdeci">static guid new_guid() noexcept</div><div class="ttdoc">Initializes a new instance of the xtd::guid structure.</div></div>
+<div class="ttc" id="aclassxtd_1_1guid_html_a07f13762e0fdf7369b7cd2929ca78ca1"><div class="ttname"><a href="classxtd_1_1guid.html#a07f13762e0fdf7369b7cd2929ca78ca1">xtd::guid::new_guid</a></div><div class="ttdeci">static guid new_guid() noexcept</div><div class="ttdoc">Initializes a new instance of the xtd::guid structure.</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Internal use only for <a class="el" href="classxtd_1_1collections_1_1generic_1_1ienumerable.html" title="Exposes the enumerator, which supports a simple iteration over a collection of a specified type.">xtd::collections::generic::ienumerable</a> interfece. </dd></dl>
 </div><table class="memberdecls">
@@ -655,7 +655,7 @@ template&lt;class source_collection_t , class target_collection_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Feb 15 2025 21:41:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Feb 26 2025 21:20:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

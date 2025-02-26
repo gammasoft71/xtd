@@ -110,7 +110,7 @@ var searchData=
   ['countries_5fappearances_5fpage_2edox_107',['countries_appearances_page.dox',['../countries__appearances__page_8dox.html',1,'']]],
   ['country_2ehpp_108',['country.hpp',['../country_8hpp.html',1,'']]],
   ['cpp_5flanguage_2ehpp_109',['cpp_language.hpp',['../cpp__language_8hpp.html',1,'']]],
-  ['crayons_5fcolors_2ehpp_110',['crayons_colors.hpp',['../crayons__colors_8hpp.html',1,'']]],
+  ['crayon_5fcolors_2ehpp_110',['crayon_colors.hpp',['../crayon__colors_8hpp.html',1,'']]],
   ['create_5fparams_2ehpp_111',['create_params.hpp',['../create__params_8hpp.html',1,'']]],
   ['css_5freader_2ehpp_112',['css_reader.hpp',['../css__reader_8hpp.html',1,'']]],
   ['css_5fwriter_2ehpp_113',['css_writer.hpp',['../css__writer_8hpp.html',1,'']]],
