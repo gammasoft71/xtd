@@ -35,9 +35,9 @@ namespace xtd {
           /// @name Public Constructors
           
           /// @{
-          /// @brief Initialise the new instance of xtd::drawing::imaging::bitanleffect object.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::bitonal_effect object.
           bitonal_effect() = default;
-          /// @brief Initialise the new instance of xtd::drawing::imaging::bitanleffect object with specified threshold, upper color, and lower color.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::bitonal_effect object with specified threshold, upper color, and lower color.
           bitonal_effect(int32 threshold, color upper_color, color lower_color);
           /// @}
 
@@ -46,6 +46,7 @@ namespace xtd {
           /// @{
           /// @brief Gets or sets the threshold value (from 0 to 765).
           /// @param threshold The threshold value (from 0 to 765).
+          /// @remarks The threshold is the sum of the RGB components.
           int32 threshold = 0;
 
           /// @brief Gets or sets the color used when RGB color is upper the threshold value.
