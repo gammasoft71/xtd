@@ -10,7 +10,7 @@
 namespace xtd {
   /// @brief The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functionality is provided in the xtd::drawing::drawing_2d, xtd::drawing::imaging, and xtd::drawing::text namespaces.
   namespace drawing {
-    /// @brief The xtd.drawing.imaging namespace provides advanced GDI+ imaging functionality. Basic graphics functionality is provided by the xtd.drawing namespace.
+    /// @brief The xtd::drawing::imaging namespace provides advanced GDI+ imaging functionality. Basic graphics functionality is provided by the xtd.drawing namespace.
     /// @remarks The metafile class provides methods for recording and saving metafiles. The xtd::drawing::imaging::bitmap_data class enables users to extend GDI+ to support any image format. The xtd::drawing::imaging::property_item class provides methods for storing and retrieving metadata in image files.
     namespace imaging {
       /// @brief Specifies the attributes of a bitmap image. The xtd::drawing::imaging::bitmap_data struct is used by the xtd::drawing::bitmap::lock_bits and xtd::drawing::bitmap::unlock_bits methods of the xtd::drawing::bitmap class. Not inheritable.
