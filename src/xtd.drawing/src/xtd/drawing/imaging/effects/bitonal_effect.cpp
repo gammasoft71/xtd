@@ -2,6 +2,7 @@
 #include "../../../../../include/xtd/drawing/helpers/rgb.hpp"
 #include "../../../../../include/xtd/drawing/imaging/effects/bitonal_effect.hpp"
 #include "../../../../../include/xtd/drawing/bitmap.hpp"
+#include <xtd/math>
 
 using namespace xtd;
 using namespace xtd::drawing;
@@ -12,7 +13,7 @@ bitonal_effect::bitonal_effect(int32 threshold, color upper_color, color lower_c
 }
 
 void bitonal_effect::apply(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& rectangle) const {
-  auto threshold = std::clamp(this->threshold, 0, 3 * byte_object::max_value);
+  auto threshold = math::clamp(this->threshold, 0, 3 * byte_object::max_value);
   auto image = bitmap {rectangle.size()};
   auto img_graphics = image.create_graphics();
   img_graphics.copy_from_graphics(graphics, rectangle.location(), {0, 0}, rectangle.size());
