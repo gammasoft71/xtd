@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::imaging::effects::effect  class.
+/// @brief Contains xtd::drawing::imaging::image_effector  class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include <xtd/static>
