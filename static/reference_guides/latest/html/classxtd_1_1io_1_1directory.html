@@ -185,7 +185,7 @@ By default, full read/write access to new directories is granted to all users. H
 <dd>
 To demand permissions for a directory and all its subdirectories, end the path string with the directory separator character. (For example, "C:\Temp\" grants access to C:\Temp\ and all its subdirectories.) To demand permissions only for a specific directory, end the path string with a period. (For example, "C:\Temp." grants access only to C:\Temp\, not to its subdirectories.)
 @remarks In members that accept a search_pattern parameter, the search string can be any combination of literal characters and two wildcard characters; * and ?. This parameter does not recognize regular expressions. For more information, see the xtd::io::directory::enumerate_directories(string, string) method or any other method that uses the search_pattern parameter.
-@remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks</a>" &gt;Common I/O Tasks&lt;/a&gt;.
+@remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks</a>" &gt;Common I/O Tasks&lt;/a&gt;.
 @remarks xtd::io::directory and xtd::io::directory_info are not supported for use in Windows Store apps. For information about how to access files and folders in Windows Store apps, see &lt;a href="<a href="https://msdn.microsoft.com/library/windows/apps/hh758319.aspx">https://msdn.microsoft.com/library/windows/apps/hh758319.aspx</a>" &gt;Accessing data and files (Windows Store apps). </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
@@ -1079,7 +1079,7 @@ public:
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The current directory is distinct from the original directory, which is the one from which the process was started. </dd>
 <dd>
-For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
+For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
 
 </div>
 </div>
@@ -1174,7 +1174,7 @@ startup_(program::main);
 @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
 @remarks The names returned by this method are prefixed with the directory information provided in path.
 @remarks The path parameter is not case-sensitive.
-@remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks</a>" &gt;Common I/O Tasks. </td></tr>
+@remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks</a>" &gt;Common I/O Tasks. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1278,7 +1278,7 @@ The path parameter can specify relative or absolute path information, and is not
 <dd>
 The <a class="el" href="classxtd_1_1io_1_1directory.html#a8b598e7712edce585ab1593696806113" title="Returns an enumerable collection of directory full names in a specified path.">xtd::io::directory::enumerate_directories</a> and <a class="el" href="classxtd_1_1io_1_1directory.html#a2af402ff2500b5e7523017f98ae4e205" title="Returns the names of subdirectories (including their paths) in the specified directory.">xtd::io::directory::get_directories</a> methods differ as follows: When you use <a class="el" href="classxtd_1_1io_1_1directory.html#a8b598e7712edce585ab1593696806113" title="Returns an enumerable collection of directory full names in a specified path.">xtd::io::directory::enumerate_directories</a>, you can start enumerating the collection of names before the whole collection is returned; when you use <a class="el" href="classxtd_1_1io_1_1directory.html#a2af402ff2500b5e7523017f98ae4e205" title="Returns the names of subdirectories (including their paths) in the specified directory.">xtd::io::directory::get_directories</a>, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, <a class="el" href="classxtd_1_1io_1_1directory.html#a8b598e7712edce585ab1593696806113" title="Returns an enumerable collection of directory full names in a specified path.">xtd::io::directory::enumerate_directories</a> can be more efficient. </dd>
 <dd>
-For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
+For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
 
 </div>
 </div>
@@ -1352,7 +1352,7 @@ startup_(program::main);
 @remarks This method obtains the fully qualified path name of path, as returned by xtd::io::path::get_full_path, and returns root directory information. The specified path is not required to exist.
 @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
 @remarks The path parameter is not case-sensitive.
-@remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks</a>" &gt;Common I/O Tasks. </td></tr>
+@remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks</a>" &gt;Common I/O Tasks. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1451,7 +1451,7 @@ startup_(program::main);
 @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
 @remarks The order of the returned file names is not guaranteed; use the std:::sort method if a specific sort order is required.
 @remarks The path parameter is not case-sensitive.
-@remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks</a>" &gt;Common I/O Tasks. </td></tr>
+@remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks</a>" &gt;Common I/O Tasks. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1555,7 +1555,7 @@ The path parameter can specify relative or absolute path information. Relative p
 <dd>
 The path parameter is not case-sensitive. </dd>
 <dd>
-For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
+For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
 
 </div>
 </div>
@@ -1701,7 +1701,7 @@ startup_(program::main);
 @remarks This method is identical to xtd::io::directory::get_file_system_entries with the asterisk (*) specified as the search pattern.
 @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
 @remarks The path parameter is not case-sensitive.
-@remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks</a>" &gt;Common I/O Tasks. </td></tr>
+@remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks</a>" &gt;Common I/O Tasks. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1885,7 +1885,7 @@ The path parameter can specify relative or absolute path information. Relative p
 <dd>
 The path parameter is not case-sensitive. </dd>
 <dd>
-For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
+For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
 
 </div>
 </div>
@@ -1969,7 +1969,7 @@ startup_(program::main);
 @remarks If the directory described in the path parameter does not exist, this method returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC), adjusted to local time.
 @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
 @remarks The path parameter is not case-sensitive.
-@remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks</a>" &gt;Common I/O Tasks. </td></tr>
+@remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks</a>" &gt;Common I/O Tasks. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2055,7 +2055,7 @@ startup_(program::main);
 @remarks If the directory described in the path parameter does not exist, this method returns 12:00 midnight, January 1, 1601 A.D. (C.E.) Coordinated Universal Time (UTC), adjusted to local time.
 @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
 @remarks The path parameter is not case-sensitive.
-@remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks</a>" &gt;Common I/O Tasks. </td></tr>
+@remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks</a>" &gt;Common I/O Tasks. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2198,7 +2198,7 @@ startup_(program::main);
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd><a class="el" href="classxtd_1_1io_1_1directory.html#a32b4d5ece70ed823e1e446c1fa354b0b" title="Retrieves the names of the logical drives on this computer in the form &quot;&lt;drive letter&gt;:\&quot;.">xtd::io::directory::get_logical_drives</a> returns all of the accessible drives on a particular machine, including the floppy drive and any optical drives. </dd>
 <dd>
-For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
+For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
 
 </div>
 </div>
@@ -2347,7 +2347,7 @@ startup_(program::main);
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The path parameter is not case-sensitive. </dd>
 <dd>
-For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
+For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
 
 </div>
 </div>
@@ -3025,7 +3025,7 @@ If you are setting the directory to a drive with removable media (for example, "
 <dd>
 The path parameter is not case-sensitive. </dd>
 <dd>
-For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
+For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
 
 </div>
 </div>
@@ -3118,7 +3118,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <dd>
 The path parameter is not case-sensitive. </dd>
 <dd>
-For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
+For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">Common I/O Tasks</a>. </dd></dl>
 
 </div>
 </div>
@@ -3172,7 +3172,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
     <tr><td class="paramname"><a class="el" href="classxtd_1_1io_1_1directory__not__found__exception.html" title="The exception that is thrown when part of a file or directory cannot be found.">xtd::io::directory_not_found_exception</a></td><td>The specified path is invalid (for example, it is on an unmapped drive). </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1not__supported__exception.html" title="The exception that is thrown when an invoked method is not supported, or when there is an attempt to ...">xtd::not_supported_exception</a></td><td>path contains a colon character (:) that is not part of a drive label ("C:\").
 @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
-@remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/Guides/xtd.core/Common%20I%3AO%20tasks</a>" &gt;Common I/O Tasks. </td></tr>
+@remarks For a list of common I/O tasks, see &lt;a href="<a href="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks">https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks</a>" &gt;Common I/O Tasks. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3186,7 +3186,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Feb 25 2025 11:25:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Feb 26 2025 20:48:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
