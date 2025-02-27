@@ -1,4 +1,5 @@
 #include "../../../../include/xtd/drawing/imaging/image_effector.hpp"
+#include "../../../../include/xtd/drawing/bitmap.hpp"
 #include <xtd/as>
 
 using namespace xtd;
@@ -8,7 +9,9 @@ using namespace xtd::drawing::imaging::effects;
 using namespace xtd::helpers;
 
 image image_effector::set_effect(const image& image, const effect& effect) {
-  return set_effect(image, rectangle {0, 0, image.width(), image.height()}, effect);
+  auto result = image.clone();
+  set_effect(result, effect);
+  return result;
 }
 
 image image_effector::set_effect(const image& image, int32 x, int32 y, int32 width, int32 height, const effect& effect) {
@@ -36,7 +39,7 @@ image image_effector::set_effect(const image& image, const region& region, const
 }
 
 void image_effector::set_effect(image& image, const effects::effect& effect) {
-  set_effect(image, rectangle {0, 0, image.width(), image.height()}, effect);
+  effect.apply(image);
 }
 
 void image_effector::set_effect(image& image, int32 x, int32 y, int32 width, int32 height, const effect& effect) {
@@ -48,8 +51,11 @@ void image_effector::set_effect(image& image, float x, float y, float width, flo
 }
 
 void image_effector::set_effect(image& image, const rectangle& rectangle, const effect& effect) {
-  auto graphic = image.create_graphics();
-  set_effect(graphic, rectangle, effect);
+  if (rectangle.location() == point {0, 0} && rectangle.size() == image.size()) set_effect(image, effect);
+  else {
+    auto graphic = image.create_graphics();
+    set_effect(graphic, rectangle, effect);
+  }
 }
 
 void image_effector::set_effect(image& image, const rectangle_f& rectangle, const effect& effect) {
@@ -75,7 +81,12 @@ void image_effector::set_effect(graphics& graphics, float x, float y, float widt
 
 void image_effector::set_effect(graphics& graphics, const rectangle& rectangle, const effect& effect) {
   if (!graphics.clip_bounds().contains(rectangle)) throw_helper::throws(xtd::helpers::exception_case::argument);
-  effect.apply(graphics, rectangle);
+  
+  auto image = bitmap {rectangle.size()};
+  auto image_graphics = image.create_graphics();
+  image_graphics.copy_from_graphics(graphics, rectangle.location(), {0, 0}, rectangle.size());
+  set_effect(image, effect);
+  graphics.draw_image(image, rectangle);
 }
 
 void image_effector::set_effect(graphics& graphics, const rectangle_f& rectangle, const effect& effect) {

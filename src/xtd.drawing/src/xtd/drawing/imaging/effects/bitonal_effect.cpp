@@ -12,12 +12,8 @@ using namespace xtd::drawing::imaging::effects;
 bitonal_effect::bitonal_effect(int32 threshold, color upper_color, color lower_color) : threshold {threshold}, upper_color {upper_color}, lower_color {lower_color} {
 }
 
-void bitonal_effect::apply(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& rectangle) const {
+void bitonal_effect::apply(xtd::drawing::image& image) const {
   auto threshold = math::clamp(this->threshold, 0, 3 * byte_object::max_value);
-  auto image = bitmap {rectangle.size()};
-  auto img_graphics = image.create_graphics();
-  img_graphics.copy_from_graphics(graphics, rectangle.location(), {0, 0}, rectangle.size());
-  
   auto alpha = reinterpret_cast<helpers::alpha*>(image.alpha());
   auto rgb = reinterpret_cast<helpers::rgb*>(image.rgb());
   for (auto y = 0; y < image.height(); ++y)
@@ -27,5 +23,4 @@ void bitonal_effect::apply(xtd::drawing::graphics& graphics, const xtd::drawing:
       auto lower = rgb[pixel].r + rgb[pixel].g + rgb[pixel].b <= threshold;
       rgb[pixel] = lower ? helpers::rgb {lower_color.r(), lower_color.g(), lower_color.b()} : helpers::rgb {upper_color.r(), upper_color.g(), upper_color.b()};
     }
-  graphics.draw_image(image, rectangle);
 }

@@ -12,12 +12,8 @@ using namespace xtd::drawing::imaging::effects;
 posterize_effect::posterize_effect(int32 levels) : levels {levels} {
 }
 
-void posterize_effect::apply(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& rectangle) const {
+void posterize_effect::apply(xtd::drawing::image& image) const {
   auto levels = math::clamp(this->levels, 1, 256);
-  auto image = bitmap {rectangle.size()};
-  auto img_graphics = image.create_graphics();
-  img_graphics.copy_from_graphics(graphics, rectangle.location(), {0, 0}, rectangle.size());
-  
   auto alpha = reinterpret_cast<helpers::alpha*>(image.alpha());
   auto rgb = reinterpret_cast<helpers::rgb*>(image.rgb());
   auto step = 256 / levels;
@@ -30,5 +26,4 @@ void posterize_effect::apply(xtd::drawing::graphics& graphics, const xtd::drawin
       rgb[pixel].g = std::round(rgb[pixel].g / step) * step;
       rgb[pixel].b = std::round(rgb[pixel].b / step) * step;
     }
-  graphics.draw_image(image, rectangle);
 }
