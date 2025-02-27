@@ -56,8 +56,8 @@ namespace xtd {
           /// @{
           /// @brief Apply the effect.
           /// @param graphics The graphics to apply effect.
-          /// @param rectangle The rectangle where the effect is applied.
-          void apply(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& rectangle) const override;
+          /// @param image The image where the effect is applied.
+          void apply(xtd::drawing::image& image) const override;
           /// @}
         };
       }

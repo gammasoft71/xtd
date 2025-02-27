@@ -36,8 +36,8 @@ namespace xtd {
           /// @{
           /// @brief Apply the effect.
           /// @param graphics The graphics to apply effect.
-          /// @param rectangle The rectangle where the effect is applied.
-          virtual void apply(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle& rectangle) const = 0;
+          /// @param image The image where the effect is applied.
+          virtual void apply(xtd::drawing::image& image) const = 0;
           /// @}
         };
       }
