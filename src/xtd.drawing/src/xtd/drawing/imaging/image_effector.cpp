@@ -29,6 +29,12 @@ image image_effector::set_effect(const image& image, const rectangle_f& rectangl
   return set_effect(image, rectangle::round(rectangle), effect);
 }
 
+image image_effector::set_effect(const image& image, const region& region, const effect& effect) {
+  auto result = image.clone();
+  set_effect(result, region, effect);
+  return result;
+}
+
 void image_effector::set_effect(image& image, const effects::effect& effect) {
   set_effect(image, rectangle {0, 0, image.width(), image.height()}, effect);
 }
@@ -50,6 +56,11 @@ void image_effector::set_effect(image& image, const rectangle_f& rectangle, cons
   set_effect(image, rectangle::round(rectangle), effect);
 }
 
+void image_effector::set_effect(image& image, const region& region, const effect& effect) {
+  auto graphic = image.create_graphics();
+  set_effect(graphic, region, effect);
+}
+
 void image_effector::set_effect(graphics& graphics, const effect& effect) {
   set_effect(graphics, rectangle::round(graphics.clip_bounds()), effect);
 }
@@ -69,4 +80,11 @@ void image_effector::set_effect(graphics& graphics, const rectangle& rectangle, 
 
 void image_effector::set_effect(graphics& graphics, const rectangle_f& rectangle, const effect& effect) {
   set_effect(graphics, rectangle::round(rectangle), effect);
+}
+
+void image_effector::set_effect(xtd::drawing::graphics& graphics, const xtd::drawing::region& region, const xtd::drawing::imaging::effects::effect& effect) {
+  auto old_clip = graphics.clip();
+  graphics.clip(region);
+  set_effect(graphics, region.get_bounds(), effect);
+  graphics.clip(old_clip);
 }

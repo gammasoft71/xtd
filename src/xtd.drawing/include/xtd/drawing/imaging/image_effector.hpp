@@ -99,6 +99,22 @@ namespace xtd {
         /// result.save("ball_blur.png");
         /// ```
         static xtd::drawing::image set_effect(const xtd::drawing::image& image, const xtd::drawing::rectangle_f& rectangle, const xtd::drawing::imaging::effects::effect& effect);
+        /// @brief Sets the specified effects to the specifid image with rectangle.
+        /// @param image The xtd::drawing::image to which to apply the effect.
+        /// @param region The xtd::drawing::region to with apply effect.
+        /// @param effect The effect to apply.
+        /// @return The resulting image.
+        /// @par Examples
+        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with image, region, and effect.
+        /// ```cpp
+        /// const auto img = image::from_file("ball.png");
+        /// auto path = graphics_path {};
+        /// path.add_ellipse(rectangle {130, 23, 150, 150});
+        /// auto reg = region(drawing::region(path));
+        /// auto result = image_effector::set_effect(img, reg, blur_effect {10});
+        /// result.save("ball_blur.png");
+        /// ```
+        static xtd::drawing::image set_effect(const xtd::drawing::image& image, const xtd::drawing::region& region, const xtd::drawing::imaging::effects::effect& effect);
         /// @brief Sets the specified effects to the specifid image.
         /// @param image The xtd::drawing::image to which to apply the effect.
         /// @param effect The effect to apply.
@@ -166,6 +182,21 @@ namespace xtd {
         /// image.save("ball_blur.png");
         /// ```
         static void set_effect(xtd::drawing::image& image, const xtd::drawing::rectangle_f& rectangle, const xtd::drawing::imaging::effects::effect& effect);
+        /// @brief Sets the specified effects to the specifid image with rectangle.
+        /// @param image The xtd::drawing::image to which to apply the effect.
+        /// @param region The xtd::drawing::region to with apply effect.
+        /// @param effect The effect to apply.
+        /// @par Examples
+        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with image, region, and effect.
+        /// ```cpp
+        /// auto img = image::from_file("ball.png");
+        /// auto path = graphics_path {};
+        /// path.add_ellipse(rectangle {130, 23, 150, 150});
+        /// auto reg = region(drawing::region(path));
+        /// image_effector::set_effect(img, reg, blur_effect {10});
+        /// image.save("ball_blur.png");
+        /// ```
+        static void set_effect(xtd::drawing::image& image, const xtd::drawing::region& region, const xtd::drawing::imaging::effects::effect& effect);
         /// @brief Sets the specified effects to the specifid graphics.
         /// @param image The xtd::drawing::graphics to which to apply the effect.
         /// @param effect The effect to apply.
@@ -236,6 +267,22 @@ namespace xtd {
         /// }
         /// ```
         static void set_effect(xtd::drawing::graphics& graphics, const xtd::drawing::rectangle_f& rectangle, const xtd::drawing::imaging::effects::effect& effect);
+        /// @brief Sets the specified effects to the specifid graphics with rectangle.
+        /// @param image The xtd::drawing::graphics to which to apply the effect.
+        /// @param region The xtd::drawing::rectangle to with apply effect.
+        /// @param effect The effect to apply.
+        /// @par Examples
+        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with graphics, region, and effect.
+        /// ```cpp
+        /// void owner_control::on_paint(xtd::forms::paint_event_args& e) override {
+        ///   // ...
+        ///   auto path = graphics_path {};
+        ///   path.add_ellipse(rectangle {130, 23, 150, 150});
+        ///   auto reg = region(drawing::region(path));
+        ///   image_effector::set_effect(e.graphics(), reg, blur_effect {10});
+        /// }
+        /// ```
+        static void set_effect(xtd::drawing::graphics& graphics, const xtd::drawing::region& region, const xtd::drawing::imaging::effects::effect& effect);
         /// @}
       };
     }
