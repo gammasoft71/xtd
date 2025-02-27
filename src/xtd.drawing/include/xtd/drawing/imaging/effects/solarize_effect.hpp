@@ -21,14 +21,14 @@ namespace xtd {
         /// xtd.drawing
         /// @ingroup xtd_drawing effects
         /// @par Appearance
-        /// | Original             | Converted                      |
-        /// | -------------------- | ------------------------------ |
+        /// | Original             | Converted                     |
+        /// | -------------------- | ----------------------------- |
         /// | @image html ball.png | @image html ball_solarize.png |
         /// @par Examples
         /// The following example code shows hot tu use xtd::drawing::imaging::effects::solarize_effect with image.
         /// ```cpp
         /// auto img = image::from_file("ball.png");
-        /// auto result = image_effector::set_effect(img, solarize_effect {});
+        /// auto result = image_effector::set_effect(img, solarize_effect {128});
         /// result.save_file("ball_posterize.png");
         /// ```
         struct solarize_effect : effect {
