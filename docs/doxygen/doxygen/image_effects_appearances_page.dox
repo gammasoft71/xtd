@@ -1,21 +1,21 @@
 /// @file
-/// @brief Contains image conversions page.
+/// @brief Contains image effects page.
 
-/// @page imageConversionsPage Image conversions
-/// @brief Contains image conversions.
+/// @page imageEffectsPage Image effects
+/// @brief Contains image effects.
 ///
 /// @section OriginalImageSection Original image
 ///
 /// @image html ball.png
 ///
-/// @section ImageConverterSection Image converter
+/// @section ImageEffectorSection Image effector
 ///
-/// Displays conversions made with xtd::drawing::image_converter methods.
+/// Displays conversions made with xtd::drawing::imaging::image_effector::set_effect methods.
 ///
 /// | Image conversion   | Method                                            | Converted image                         |
 /// | ------------------ | ------------------------------------------------- | --------------------------------------- |
-/// | Bitonal            | xtd::drawing::image_converter::bitonal            | @image html ball_bitonal.png            |
-/// | Blur               | xtd::drawing::image_converter::blur               | @image html ball_blur.png               |
+/// | Bitonal            | xtd::drawing::imaging::effects::bitonal_effect    | @image html ball_bitonal.png            |
+/// | Blur               | xtd::drawing::imaging::effects::blur_effect       | @image html ball_blur.png               |
 /// | Brigthness         | xtd::drawing::image_converter::brightness         | @image html ball_brightness.png         |
 /// | Color              | xtd::drawing::image_converter::color              | @image html ball_color.png              |
 /// | Color extraction   | xtd::drawing::image_converter::color_extraction   | @image html ball_color_extraction.png   |
@@ -29,12 +29,13 @@
 /// | Hue rotate         | xtd::drawing::image_converter::hue_rotate         | @image html ball_hue_rotate.png         |
 /// | Invert             | xtd::drawing::image_converter::invert             | @image html ball_invert.png             |
 /// | Opacity            | xtd::drawing::image_converter::opacity            | @image html ball_opacity.png            |
+/// | Posterize          | xtd::drawing::imaging::effects::posterize_effect  | @image html ball_posterize.png          |
 /// | Rescale            | xtd::drawing::image_converter::rescale            | @image html ball_rescale.png            |
 /// | Resize             | xtd::drawing::image_converter::resize             | @image html ball_resize.png             |
 /// | Rotate and flip    | xtd::drawing::image_converter::rotate_flip        | @image html ball_rotate_flip.png        |
 /// | Saturate           | xtd::drawing::image_converter::saturate           | @image html ball_saturate.png           |
 /// | Sepia              | xtd::drawing::image_converter::sepia              | @image html ball_sepia.png              |
+/// | Solarize           | xtd::drawing::imaging::effects::solarize_effect   | @image html ball_solarize.png           |
 /// | Threshold          | xtd::drawing::image_converter::threshold          | @image html ball_threshold.png          |
 ///
-/// @remarks The appearance shown above is just a small sample of what can be done with conversion methods. Simply change one or more parameters to get a different result.
-/// @remarks Run the [image_converter](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/drawing/image_converter/README.md) example to see xtd::drawing::image_converter in action.
+/// @remarks The appearance shown above is just a small sample of what can be done with xtd::drawing::imaging::image_effector::set_effect methods. Simply change one or more parameters to get a different result.
