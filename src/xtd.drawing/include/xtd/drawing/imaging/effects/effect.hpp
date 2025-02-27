@@ -25,6 +25,9 @@ namespace xtd {
         /// @par Library
         /// xtd.drawing
         /// @ingroup xtd_drawing effects
+        /// @par Examples
+        /// The following code shows how to use xtd::drawing::imaging::image_effector, and all effect inherited from xtd::drawing::imaging::effects::effect.
+        /// [image_converter](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/drawing/image_converter/README.md)
         struct effect abstract_ {
           friend class xtd::drawing::imaging::image_effector;
         protected:
