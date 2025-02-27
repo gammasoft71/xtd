@@ -28,6 +28,7 @@
 #include "drawing/drawing_2d/radial_gradient_brush.hpp"
 #include "drawing/drawing_2d/smoothing_mode.hpp"
 #include "drawing/imaging/effects/bitonal_effect.hpp"
+#include "drawing/imaging/effects/blur_effect.hpp"
 #include "drawing/imaging/effects/effect.hpp"
 #include "drawing/imaging/effects/posterize_effect.hpp"
 #include "drawing/imaging/effects/solarize_effect.hpp"
