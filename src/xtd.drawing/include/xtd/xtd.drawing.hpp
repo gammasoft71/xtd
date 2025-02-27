@@ -29,6 +29,7 @@
 #include "drawing/drawing_2d/smoothing_mode.hpp"
 #include "drawing/imaging/effects/bitonal_effect.hpp"
 #include "drawing/imaging/effects/effect.hpp"
+#include "drawing/imaging/effects/posterize_effect.hpp"
 #include "drawing/imaging/bitmap_data.hpp"
 #include "drawing/imaging/color_palette.hpp"
 #include "drawing/imaging/encoder.hpp"
