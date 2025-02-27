@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::imaging::effects::effect  class.
+/// @brief Contains xtd::drawing::imaging::effects::posterize_effect class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "effect.hpp"
@@ -37,7 +37,10 @@ namespace xtd {
           /// @{
           /// @brief Initialise the new instance of xtd::drawing::imaging::posterize_effect object.
           posterize_effect() = default;
-          /// @brief Initialise the new instance of xtd::drawing::imaging::posterize_effect object with specified threshold, upper color, and lower color.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::posterize_effect object with specified levels.
+          /// @param levels The levels value (from 1 to 256).
+          /// @remarks If the level is equal to or greater than 256, the result is identical to the original image.
+          /// @remarks If the level is equal to or less than 1, the image is black.
           explicit posterize_effect(int32 levels);
           /// @}
 
