@@ -1,0 +1,2 @@
+#pragma once
+#include "posterize_effect.hpp"
