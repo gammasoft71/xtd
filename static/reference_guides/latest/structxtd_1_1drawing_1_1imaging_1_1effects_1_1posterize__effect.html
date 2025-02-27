@@ -134,7 +134,7 @@ Inheritance diagram for xtd::drawing::imaging::effects::posterize_effect:</div>
 <tr class="memdesc:a5a62bf386ef602b6b5939ee1519d2338"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the new instance of xtd::drawing::imaging::posterize_effect object.  <br /></td></tr>
 <tr class="separator:a5a62bf386ef602b6b5939ee1519d2338"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a204658462873c36a3bf5e21de5c6d8f4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1posterize__effect.html#a204658462873c36a3bf5e21de5c6d8f4">posterize_effect</a> (<a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1posterize__effect.html#a5a4d1a4b50707810c8a71fb0454a9558">levels</a>)</td></tr>
-<tr class="memdesc:a204658462873c36a3bf5e21de5c6d8f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the new instance of xtd::drawing::imaging::posterize_effect object with specified threshold, upper color, and lower color.  <br /></td></tr>
+<tr class="memdesc:a204658462873c36a3bf5e21de5c6d8f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the new instance of xtd::drawing::imaging::posterize_effect object with specified levels.  <br /></td></tr>
 <tr class="separator:a204658462873c36a3bf5e21de5c6d8f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Methods</h2></td></tr>
@@ -231,7 +231,16 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initialise the new instance of xtd::drawing::imaging::posterize_effect object with specified threshold, upper color, and lower color. </p>
+<p>Initialise the new instance of xtd::drawing::imaging::posterize_effect object with specified levels. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">levels</td><td>The levels value (from 1 to 256). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the level is equal to or greater than 256, the result is identical to the original image. </dd>
+<dd>
+If the level is equal to or less than 1, the image is black. </dd></dl>
 
 </div>
 </div>
@@ -303,7 +312,9 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The level to 256 has no effect. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If the level is equal to or greater than 256, the result is identical to the original image. </dd>
+<dd>
+If the level is equal to or less than 1, the image is black. </dd></dl>
 
 </div>
 </div>
@@ -314,7 +325,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Feb 27 2025 10:35:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Feb 27 2025 11:52:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
