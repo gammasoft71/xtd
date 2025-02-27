@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::imaging::effects::effect  class.
+/// @brief Contains xtd::drawing::imaging::effects::bitonal_effect struct.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "effect.hpp"
@@ -38,6 +38,9 @@ namespace xtd {
           /// @brief Initialise the new instance of xtd::drawing::imaging::bitonal_effect object.
           bitonal_effect() = default;
           /// @brief Initialise the new instance of xtd::drawing::imaging::bitonal_effect object with specified threshold, upper color, and lower color.
+          /// @param threshold The threshold value (from 0 to 765).
+          /// @param upper_color The color used when RGB color is upper the threshold value.
+          /// @param lower_color The color used when RGB color is under or equal the threshold value.
           bitonal_effect(int32 threshold, color upper_color, color lower_color);
           /// @}
 
