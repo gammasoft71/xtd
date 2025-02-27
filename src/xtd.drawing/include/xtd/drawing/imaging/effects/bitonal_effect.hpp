@@ -28,8 +28,8 @@ namespace xtd {
         /// The following example code shows hot tu use xtd::drawing::imaging::effects::bitonal_effect with image.
         /// ```cpp
         /// auto img = image::from_file("ball.png");
-        /// auto result = image_effector::set_effect(img, bitonal_effect(382, color::red, color::white));
-        /// result.save_file("bitonal_ball.png");
+        /// auto result = image_effector::set_effect(img, bitonal_effect {382, color::red, color::white});
+        /// result.save_file("ball_bitonal.png");
         /// ```
         struct bitonal_effect : effect {
           /// @name Public Constructors
