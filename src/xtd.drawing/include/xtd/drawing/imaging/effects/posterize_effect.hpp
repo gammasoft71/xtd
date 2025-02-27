@@ -27,9 +27,9 @@ namespace xtd {
         /// @par Examples
         /// The following example code shows hot tu use xtd::drawing::imaging::effects::posterize_effect with image.
         /// ```cpp
-        /// auto img = image::from_file("ball.png");
+        /// const auto img = image::from_file("ball.png");
         /// auto result = image_effector::set_effect(img, posterize_effect {2});
-        /// result.save_file("ball_posterize.png");
+        /// result.save("ball_posterize.png");
         /// ```
         struct posterize_effect : effect {
           /// @name Public Constructors
