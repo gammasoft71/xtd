@@ -29,7 +29,7 @@ namespace xtd {
         /// ```cpp
         /// const auto img = image::from_file("ball.png");
         /// auto result = image_effector::set_effect(img, brightness_effect {125});
-        /// result.save("ball_blur.png");
+        /// result.save("ball_brightness.png");
         /// ```
         struct brightness_effect : effect {
           /// @name Public Constructors
