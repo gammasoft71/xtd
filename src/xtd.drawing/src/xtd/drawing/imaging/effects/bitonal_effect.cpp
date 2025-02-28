@@ -16,6 +16,7 @@ void bitonal_effect::apply(xtd::drawing::image& image) const {
   auto threshold = math::clamp(this->threshold, 0, 3 * byte_object::max_value);
   auto alpha = reinterpret_cast<helpers::alpha*>(image.alpha());
   auto rgb = reinterpret_cast<helpers::rgb*>(image.rgb());
+
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
