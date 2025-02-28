@@ -14,7 +14,7 @@ namespace xtd {
     namespace imaging {
       /// @brief The xtd::drawing::imaging::effects namespace provides functionality for adding effects to images.
       namespace effects {
-        /// @brief Represents the base class for all effects.
+        /// @brief The xtd::drawing::imaging::effects::solarize_effect converts image into solarized colors.
         /// @par Namespace
         /// xtd::drawing::imaging::effects
         /// @par Library
