@@ -14,7 +14,7 @@ namespace xtd {
     namespace imaging {
       /// @brief The xtd::drawing::imaging::effects namespace provides functionality for adding effects to images.
       namespace effects {
-        /// @brief Represents the base class for all effects.
+        /// @brief The xtd::drawing::imaging::effects::blur_effect converts image into blured image.
         /// @par Namespace
         /// xtd::drawing::imaging::effects
         /// @par Library
@@ -47,6 +47,7 @@ namespace xtd {
           /// @{
           /// @brief Gets or sets the radius value.
           /// @param radius The radius of the blur in pixels.
+          /// @remarks If the `radius` is `0`, there will be no blurring.
           int32 radius = 0;
           /// @}
 
