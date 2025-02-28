@@ -1,0 +1,2 @@
+#pragma once
+#include "brightness_effect.hpp"
