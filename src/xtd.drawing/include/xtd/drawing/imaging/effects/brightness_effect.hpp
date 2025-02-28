@@ -28,7 +28,7 @@ namespace xtd {
         /// The following example code shows hot tu use xtd::drawing::imaging::effects::brightness_effect with image.
         /// ```cpp
         /// const auto img = image::from_file("ball.png");
-        /// auto result = image_effector::set_effect(img, brightness_effect {10});
+        /// auto result = image_effector::set_effect(img, brightness_effect {125});
         /// result.save("ball_blur.png");
         /// ```
         struct brightness_effect : effect {
