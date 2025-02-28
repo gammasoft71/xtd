@@ -52,6 +52,7 @@ examples/xtd.drawing.examples/images/image_xpm/properties/resources.hpp
 examples/xtd.forms.examples/applications/application_with_cmake_assembly_info/properties/assembly_info.cpp
 examples/xtd.forms.examples/common_controls/picture_box/properties/resources.hpp
 examples/xtd.forms.examples/components/settings_example/properties/settings.hpp
+examples/xtd.forms.examples/components/application_settings/properties/settings.hpp
 examples/xtd.forms.examples/controls/picture_box/properties/resources.hpp
 examples/xtd.forms.examples/drawing/image_converter/properties/resources.hpp
 examples/xtd.forms.examples/games/game_of_life/properties/startup.cpp
@@ -61,6 +62,9 @@ examples/xtd.forms.examples/games/minesweeper/properties/resources.hpp
 examples/xtd.forms.examples/others/about_dialog_from_executing_assembly_informations/properties/assembly_info.cpp
 examples/xtd.forms.examples/others/form_background_image2/properties/resources.hpp
 examples/xtd.forms.examples/others/stopwatch_form/properties/resources.hpp
+examples/xtd.cmake.examples/project_commands/resources_command/properties/resources.hpp
+examples/xtd.cmake.examples/project_commands/settings_command/properties/settings.hpp
+
 scripts/install/test_wxwidgets/wxwidgets.lck
 src/xtd/include/xtd/xtd.hpp
 src/xtd/include/xtd/export.hpp
