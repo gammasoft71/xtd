@@ -41,7 +41,7 @@ namespace xtd {
         /// @param back_color The background color.
         /// @param alpha The alpha factor
         /// @return The combined color.
-        /// @remarks The alpha of color1 is conserved.
+        /// @remarks The alpha of `fore_core` is conserved.
         /// @remarks The red, green and blue values are averages using the following formula:
         /// ```cpp
         /// color = fore_core * (1 - weight) + back_color * weight;
@@ -50,10 +50,25 @@ namespace xtd {
         static rgb alpha_blend(const rgb& fore_componant, const rgb& back_componant, double alpha) noexcept {
           alpha = xtd::math::clamp(alpha, 0.0, 1.0);
           return rgb {
-            .r = static_cast<xtd::byte>(fore_componant.r * (1 - alpha) + back_componant.r * alpha),
-            .g = static_cast<xtd::byte>(fore_componant.g * (1 - alpha) + back_componant.g * alpha),
-            .b = static_cast<xtd::byte>(fore_componant.b * (1 - alpha) + back_componant.b * alpha)
+            .r = alpha_blend(fore_componant.r, back_componant.r, alpha),
+            .g = alpha_blend(fore_componant.g, back_componant.g, alpha),
+            .b = alpha_blend(fore_componant.b, back_componant.b, alpha),
           };
+        }
+
+        /// @brief Returns the weighted average color component between the two given color components.
+        /// @param fore_core The foreground color component.
+        /// @param back_color The background color component.
+        /// @param alpha The alpha factor
+        /// @return The combined color component.
+        /// @remarks The alpha of `fore_core` is conserved.
+        /// @remarks The red, green and blue values are averages using the following formula:
+        /// ```cpp
+        /// color = fore_componant * (1 - weight) + back_componant * weight;
+        /// ```
+        /// @remarks Thus, a weight value of `1.0` will return the background color, while a value of `0.0` will return the foreground color.
+        static xtd::byte alpha_blend(xtd::byte fore_componant, xtd::byte back_componant, double alpha) noexcept {
+          return static_cast<xtd::byte>(fore_componant * (1 - alpha) + back_componant * alpha);
         }
         /// @}
       };
