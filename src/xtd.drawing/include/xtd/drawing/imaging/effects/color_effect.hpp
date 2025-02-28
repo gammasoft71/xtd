@@ -21,15 +21,15 @@ namespace xtd {
         /// xtd.drawing
         /// @ingroup xtd_drawing effects
         /// @par Appearance
-        /// | Original             | Converted                 |
-        /// | -------------------- | ------------------------- |
-        /// | @image html ball.png | @image html ball_blur.png |
+        /// | Original             | Converted                  |
+        /// | -------------------- | -------------------------- |
+        /// | @image html ball.png | @image html ball_color.png |
         /// @par Examples
         /// The following example code shows hot tu use xtd::drawing::imaging::effects::color_effect with image.
         /// ```cpp
         /// const auto img = image::from_file("ball.png");
-        /// auto result = image_effector::set_effect(img, color_effect {200});
-        /// result.save("ball_blur.png");
+        /// auto result = image_effector::set_effect(img, color_effect {color::red, 200});
+        /// result.save("ball_color.png");
         /// ```
         struct color_effect : effect {
           /// @name Public Constructors
