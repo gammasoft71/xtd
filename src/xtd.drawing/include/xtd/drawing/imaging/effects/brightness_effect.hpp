@@ -14,7 +14,7 @@ namespace xtd {
     namespace imaging {
       /// @brief The xtd::drawing::imaging::effects namespace provides functionality for adding effects to images.
       namespace effects {
-        /// @brief The xtd::drawing::imaging::effects::brightness_effect converts image into brightness colors.
+        /// @brief The xtd::drawing::imaging::effects::brightness_effect changes the brightness of the image with percent factor.
         /// @par Namespace
         /// xtd::drawing::imaging::effects
         /// @par Library
@@ -37,7 +37,7 @@ namespace xtd {
           /// @{
           /// @brief Initialise the new instance of xtd::drawing::imaging::brightness_effect object.
           brightness_effect() = default;
-          /// @brief Initialise the new instance of xtd::drawing::imaging::brightness_effect object with specified radius, upper color, and lower color.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::brightness_effect object with specified percent.
           /// @param percent The percent factor in %.
           brightness_effect(double percent);
           /// @}
