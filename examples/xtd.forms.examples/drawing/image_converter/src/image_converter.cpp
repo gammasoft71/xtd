@@ -83,12 +83,8 @@ namespace image_effector_example {
         threshold_bitonal_numeric_up_down.value(threshold_bitonal_track_bar.value());
         update_pictures();
       };
-      upper_color_bitonal_color_picker.color_picker_changed += [&] {
-        update_pictures();
-      };
-      lower_color_bitonal_color_picker.color_picker_changed += [&] {
-        update_pictures();
-      };
+      upper_color_bitonal_color_picker.color_picker_changed += [&] {update_pictures();};
+      lower_color_bitonal_color_picker.color_picker_changed += [&] {update_pictures();};
 
       radius_blur_numeric_up_down.value_changed += [&] {radius_blur_track_bar.value(as<int32>(radius_blur_numeric_up_down.value()));};
       radius_blur_track_bar.value_changed += [&] {
@@ -107,21 +103,15 @@ namespace image_effector_example {
         percent_color_numeric_up_down.value(percent_color_track_bar.value());
         update_pictures();
       };
-      color_color_color_picker.color_picker_changed += [&] {
-        update_pictures();
-      };
+      color_color_color_picker.color_picker_changed += [&] {update_pictures();};
 
       threshold_color_extraction_numeric_up_down.value_changed += [&] {threshold_color_extraction_track_bar.value(as<int32>(threshold_color_extraction_numeric_up_down.value()));};
       threshold_color_extraction_track_bar.value_changed += [&] {
         threshold_color_extraction_numeric_up_down.value(threshold_color_extraction_track_bar.value());
         update_pictures();
       };
-      extraction_color_color_extraction_color_picker.color_picker_changed += [&] {
-        update_pictures();
-      };
-      other_pixels_color_color_extraction_color_picker.color_picker_changed += [&] {
-        update_pictures();
-      };
+      extraction_color_color_extraction_color_picker.color_picker_changed += [&] {update_pictures();};
+      other_pixels_color_color_extraction_color_picker.color_picker_changed += [&] {update_pictures();};
       
       levels_posterize_numeric_up_down.value_changed += [&] {levels_posterize_track_bar.value(as<int32>(levels_posterize_numeric_up_down.value()));};
       levels_posterize_track_bar.value_changed += [&] {
@@ -134,12 +124,8 @@ namespace image_effector_example {
         threshold_color_substitution_numeric_up_down.value(threshold_color_substitution_track_bar.value());
         update_pictures();
       };
-      source_color_color_substitution_color_picker.color_picker_changed += [&] {
-        update_pictures();
-      };
-      new_color_color_substitution_color_picker.color_picker_changed += [&] {
-        update_pictures();
-      };
+      source_color_color_substitution_color_picker.color_picker_changed += [&] {update_pictures();};
+      new_color_color_substitution_color_picker.color_picker_changed += [&] {update_pictures();};
       
       percent_contrast_numeric_up_down.value_changed += [&] {percent_contrast_track_bar.value(as<int32>(percent_contrast_numeric_up_down.value()));};
       percent_contrast_track_bar.value_changed += [&] {
@@ -147,9 +133,7 @@ namespace image_effector_example {
         update_pictures();
       };
 
-      disabled_switch_button.checked_changed += [&] {
-        update_pictures();
-      };
+      disabled_switch_button.checked_changed += [&] {update_pictures();};
       
       radius_drop_shadow_numeric_up_down.value_changed += [&] {radius_drop_shadow_track_bar.value(as<int32>(radius_drop_shadow_numeric_up_down.value()));};
       radius_drop_shadow_track_bar.value_changed += [&] {
@@ -166,9 +150,7 @@ namespace image_effector_example {
         vertical_drop_shadow_numeric_up_down.value(vertical_drop_shadow_track_bar.value());
         update_pictures();
       };
-      color_drop_shadow_color_picker.color_picker_changed += [&] {
-        update_pictures();
-      };
+      color_drop_shadow_color_picker.color_picker_changed += [&] {update_pictures();};
 
       red_correction_gamma_correction_numeric_up_down.value_changed += [&] {red_correction_gamma_correction_track_bar.value(as<int32>(red_correction_gamma_correction_numeric_up_down.value() * 10));};
       red_correction_gamma_correction_track_bar.value_changed += [&] {
@@ -240,9 +222,7 @@ namespace image_effector_example {
         update_pictures();
       };
       
-      rotate_flip_choice.selected_index_changed += [&] {
-        update_pictures();
-      };
+      rotate_flip_choice.selected_index_changed += [&] {update_pictures();};
       
       percent_saturate_numeric_up_down.value_changed += [&] {percent_saturate_track_bar.value(as<int32>(percent_saturate_numeric_up_down.value()));};
       percent_saturate_track_bar.value_changed += [&] {
@@ -283,8 +263,11 @@ namespace image_effector_example {
       };
       
       background_choice.selected_value_changed += [&] {
-        original_picture_panel.invalidate();
-        adjusted_picture_panel.invalidate();
+        if (background_choice.selected_item() == "control") adjusted_picture_panel.back_color(system_colors::control());
+        else if (background_choice.selected_item() == "black") adjusted_picture_panel.back_color(colors::black());
+        else if (background_choice.selected_item() == "white") adjusted_picture_panel.back_color(colors::white());
+        else adjusted_picture_panel.back_color(colors::gray());
+        update_pictures();
       };
       
       effect_choice.selected_item("bitonal");
@@ -293,9 +276,7 @@ namespace image_effector_example {
   private:
     void fill_background(xtd::drawing::graphics& g, const xtd::drawing::rectangle& rectangle) {
       if (background_choice.selected_item() == "checker-board") g.fill_rectangle(hatch_brush {xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)}, rectangle);
-      else if (background_choice.selected_item() == "control") g.fill_rectangle(system_brushes::control(), rectangle);
-      else if (background_choice.selected_item() == "black") g.fill_rectangle(brushes::black(), rectangle);
-      else if (background_choice.selected_item() == "white") g.fill_rectangle(brushes::white(), rectangle);
+      else g.fill_rectangle(solid_brush {adjusted_picture_panel.back_color()}, rectangle);
     }
     
     void reset_inputs() {
@@ -351,7 +332,7 @@ namespace image_effector_example {
       else if (effect_choice.selected_item() == "color-extraction") adjusted_image = image_effector::set_effect(original_image(), color_extraction_effect {threshold_color_extraction_track_bar.value(), extraction_color_color_extraction_color_picker.color(), other_pixels_color_color_extraction_color_picker.color()});
       else if (effect_choice.selected_item() == "color-substitution") adjusted_image = image_effector::set_effect(original_image(), color_substitution_effect {threshold_color_substitution_track_bar.value(), source_color_color_substitution_color_picker.color(), new_color_color_substitution_color_picker.color()});
       else if (effect_choice.selected_item() == "contrast") adjusted_image = image_effector::set_effect(original_image(), contrast_effect {percent_contrast_track_bar.value() / 100.0});
-      else if (effect_choice.selected_item() == "disabled") adjusted_image = disabled_switch_button.checked() ? bitmap {image_converter::disabled(original_image(), adjusted_picture_panel.back_color())} : original_image();
+      else if (effect_choice.selected_item() == "disabled") adjusted_image = disabled_switch_button.checked() ? bitmap {image_effector::set_effect(original_image(), disabled_effect {adjusted_picture_panel.back_color()})} : original_image();
       else if (effect_choice.selected_item() == "drop-shadow") adjusted_image = image_converter::drop_shadow(original_image(), horizontal_drop_shadow_track_bar.value(), vertical_drop_shadow_track_bar.value(), radius_drop_shadow_track_bar.value(), color_drop_shadow_color_picker.color());
       else if (effect_choice.selected_item() == "gamma-correction") adjusted_image = image_converter::gamma_correction(original_image(), red_correction_gamma_correction_track_bar.value() / 10.0, green_correction_gamma_correction_track_bar.value() / 10.0, blue_correction_gamma_correction_track_bar.value() / 10.0);
       else if (effect_choice.selected_item() == "grayscale") adjusted_image = image_converter::grayscale(original_image(), percent_grayscale_track_bar.value() / 100.0);
