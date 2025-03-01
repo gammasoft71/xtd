@@ -21,9 +21,10 @@ void color_effect::apply(xtd::drawing::image& image) const {
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
       if (!alpha[pixel].a) continue;
-      auto color_r = helpers::rgb::alpha_blend(rgb[pixel].r, static_cast<byte>(std::clamp(static_cast<int32>(rgb[pixel].r) + color.r(), 0, 255)), percent);
-      auto color_g = helpers::rgb::alpha_blend(rgb[pixel].g, static_cast<byte>(std::clamp(static_cast<int32>(rgb[pixel].g) + color.g(), 0, 255)), percent);
-      auto color_b = helpers::rgb::alpha_blend(rgb[pixel].b, static_cast<byte>(std::clamp(static_cast<int32>(rgb[pixel].b) + color.b(), 0, 255)), percent);
-      rgb[pixel] = {color_r, color_g, color_b};
+      rgb[pixel] = helpers::rgb {
+        .r = helpers::rgb::alpha_blend(rgb[pixel].r, static_cast<byte>(std::clamp(static_cast<int32>(rgb[pixel].r) + color.r(), 0, 255)), percent),
+        .g = helpers::rgb::alpha_blend(rgb[pixel].g, static_cast<byte>(std::clamp(static_cast<int32>(rgb[pixel].g) + color.g(), 0, 255)), percent),
+        .b = helpers::rgb::alpha_blend(rgb[pixel].b, static_cast<byte>(std::clamp(static_cast<int32>(rgb[pixel].b) + color.b(), 0, 255)), percent)
+      };
     }
 }
