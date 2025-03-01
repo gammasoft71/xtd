@@ -28,7 +28,7 @@ namespace xtd {
         /// The following example code shows hot tu use xtd::drawing::imaging::effects::color_substitution_effect with image.
         /// ```cpp
         /// const auto img = image::from_file("ball.png");
-        /// auto result = image_effector::set_effect(img, color_substitution_effect {260, color::green, color::white});
+        /// auto result = image_effector::set_effect(img, color_substitution_effect {260, color::green, color::blue});
         /// result.save("ball_color_extraction.png");
         /// ```
         struct color_substitution_effect : effect {
@@ -37,7 +37,7 @@ namespace xtd {
           /// @{
           /// @brief Initialise the new instance of xtd::drawing::imaging::color_substitution_effect object.
           color_substitution_effect() = default;
-          /// @brief Initialise the new instance of xtd::drawing::imaging::color_substitution_effect object with specified threshold, upper color, and lower color.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::color_substitution_effect object with specified threshold, source color, and new color.
           /// @param threshold The threshold value (from 0 to 765).
           /// @param source_color The color used when RGB color is upper the threshold value.
           /// @param new_color The color used when RGB color is under or equal the threshold value.
