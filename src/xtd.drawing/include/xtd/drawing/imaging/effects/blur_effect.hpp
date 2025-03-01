@@ -37,7 +37,7 @@ namespace xtd {
           /// @{
           /// @brief Initialise the new instance of xtd::drawing::imaging::blur_effect object.
           blur_effect() = default;
-          /// @brief Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified radius, upper color, and lower color.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified radius.
           /// @param radius The radius of the blur in pixels.
           blur_effect(int32 radius);
           /// @}
