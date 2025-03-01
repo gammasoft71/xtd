@@ -21,9 +21,10 @@ void contrast_effect::apply(xtd::drawing::image& image) const {
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
       if (!alpha[pixel].a) continue;
-      auto contrast_r = static_cast<byte>(math::clamp(((((rgb[pixel].r / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0));
-      auto contrast_g = static_cast<byte>(math::clamp(((((rgb[pixel].g / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0));
-      auto contrast_b = static_cast<byte>(math::clamp(((((rgb[pixel].b / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0));
-      rgb[pixel] = {contrast_r, contrast_g, contrast_b};
+      rgb[pixel] = helpers::rgb {
+        .r = static_cast<byte>(math::clamp(((((rgb[pixel].r / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0)),
+        .g = static_cast<byte>(math::clamp(((((rgb[pixel].g / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0)),
+        .b = static_cast<byte>(math::clamp(((((rgb[pixel].b / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0))
+      };
     }
 }
