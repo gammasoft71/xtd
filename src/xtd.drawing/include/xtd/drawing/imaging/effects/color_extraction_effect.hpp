@@ -37,7 +37,7 @@ namespace xtd {
           /// @{
           /// @brief Initialise the new instance of xtd::drawing::imaging::color_extraction_effect object.
           color_extraction_effect() = default;
-          /// @brief Initialise the new instance of xtd::drawing::imaging::color_extraction_effect object with specified threshold, upper color, and lower color.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::color_extraction_effect object with specified threshold, extraction color, and other pixels color.
           /// @param threshold The threshold value (from 0 to 765).
           /// @param extraction_color The color used when RGB color is upper the threshold value.
           /// @param other_pixels_color The color used when RGB color is under or equal the threshold value.
