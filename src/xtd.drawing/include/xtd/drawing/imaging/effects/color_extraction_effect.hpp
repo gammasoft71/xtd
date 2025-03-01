@@ -21,9 +21,9 @@ namespace xtd {
         /// xtd.drawing
         /// @ingroup xtd_drawing effects
         /// @par Appearance
-        /// | Original             | Converted                          |
-        /// | -------------------- | ---------------------------------- |
-        /// | @image html ball.png | @image html ball_color_extract.png |
+        /// | Original             | Converted                             |
+        /// | -------------------- | ------------------------------------- |
+        /// | @image html ball.png | @image html ball_color_extraction.png |
         /// @par Examples
         /// The following example code shows hot tu use xtd::drawing::imaging::effects::color_extraction_effect with image.
         /// ```cpp
