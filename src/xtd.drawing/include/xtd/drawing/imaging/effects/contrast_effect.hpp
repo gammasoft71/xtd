@@ -1,5 +1,5 @@
 /// @file
-/// @brief Contains xtd::drawing::imaging::effects::color_effect struct.
+/// @brief Contains xtd::drawing::imaging::effects::contrast_effect struct.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "effect.hpp"
@@ -14,45 +14,41 @@ namespace xtd {
     namespace imaging {
       /// @brief The xtd::drawing::imaging::effects namespace provides functionality for adding effects to images.
       namespace effects {
-        /// @brief The xtd::drawing::imaging::effects::color_effect converts image into blured image.
+        /// @brief The xtd::drawing::imaging::effects::brightness_effect changes the contrast of the image with percent factor.
         /// @par Namespace
         /// xtd::drawing::imaging::effects
         /// @par Library
         /// xtd.drawing
         /// @ingroup xtd_drawing effects
         /// @par Appearance
-        /// | Original             | Converted                  |
-        /// | -------------------- | -------------------------- |
-        /// | @image html ball.png | @image html ball_color.png |
+        /// | Original             | Converted                     |
+        /// | -------------------- | ----------------------------- |
+        /// | @image html ball.png | @image html ball_contrast.png |
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::effects::color_effect with image.
+        /// The following example code shows hot tu use xtd::drawing::imaging::effects::contrast_effect with image.
         /// ```cpp
         /// const auto img = image::from_file("ball.png");
-        /// auto result = image_effector::set_effect(img, color_effect {color::red, 200});
-        /// result.save("ball_color.png");
+        /// auto result = image_effector::set_effect(img, contrast_effect {200});
+        /// result.save("ball_contrast.png");
         /// ```
-        struct color_effect : effect {
+        struct contrast_effect : effect {
           /// @name Public Constructors
           
           /// @{
-          /// @brief Initialise the new instance of xtd::drawing::imaging::color_effect object.
-          color_effect() = default;
-          /// @brief Initialise the new instance of xtd::drawing::imaging::color_effect object with specified color, and percent.
-          /// @param color The color to add / remove.
-          /// @param percent The percent factor in % (from 0.0 to 2.0).
-          color_effect(const xtd::drawing::color& color, double percent);
+          /// @brief Initialise the new instance of xtd::drawing::imaging::contrast_effect object.
+          contrast_effect() = default;
+          /// @brief Initialise the new instance of xtd::drawing::imaging::contrast_effect object with specified percent.
+          /// @param percent The percent factor in %.
+          contrast_effect(double percent);
           /// @}
 
           /// @name Public Properties
           
           /// @{
-          /// @brief Gets or sets the color to add / remove.
-          /// @param color The color to add / remove.
-          xtd::drawing::color color = color::white;
-
           /// @brief Gets or sets the percent factor in %.
-          /// @param percent The percent factor in % (from 0.0 to 2.0).
-          double percent = 1.0;
+          /// @param percent The percent factor in %.
+          /// @remarks `0.0` will make the image completely black. `1.0` is default and represents the original image. Values over `1.0` will provide brighter results.
+          double percent = 100.0;
           /// @}
 
         protected:
