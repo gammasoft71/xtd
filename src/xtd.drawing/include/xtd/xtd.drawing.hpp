@@ -32,6 +32,7 @@
 #include "drawing/imaging/effects/brightness_effect.hpp"
 #include "drawing/imaging/effects/color_effect.hpp"
 #include "drawing/imaging/effects/color_extraction_effect.hpp"
+#include "drawing/imaging/effects/color_substitution_effect.hpp"
 #include "drawing/imaging/effects/effect.hpp"
 #include "drawing/imaging/effects/posterize_effect.hpp"
 #include "drawing/imaging/effects/solarize_effect.hpp"
