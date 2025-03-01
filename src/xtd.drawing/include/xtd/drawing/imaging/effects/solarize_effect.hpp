@@ -29,7 +29,7 @@ namespace xtd {
         /// ```cpp
         /// const auto img = image::from_file("ball.png");
         /// auto result = image_effector::set_effect(img, solarize_effect {128});
-        /// result.save("ball_posterize.png");
+        /// result.save("ball_solarize.png");
         /// ```
         struct solarize_effect : effect {
           /// @name Public Constructors
