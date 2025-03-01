@@ -1,31 +1,18 @@
 #include "../properties/resources.hpp"
-#include <xtd/drawing/drawing_2d/hatch_brush>
-#include <xtd/drawing/brushes>
-#include <xtd/drawing/system_brushes>
-#include <xtd/drawing/image_converter>
-#include <xtd/forms/application>
-#include <xtd/forms/check_box>
-#include <xtd/forms/choice>
-#include <xtd/forms/color_picker>
-#include <xtd/forms/control_paint>
-#include <xtd/forms/form>
-#include <xtd/forms/label>
-#include <xtd/forms/numeric_up_down>
-#include <xtd/forms/panel>
-#include <xtd/forms/switch_button>
-#include <xtd/forms/track_bar>
-#include <xtd/byte_object>
+#include <xtd/xtd>
 
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
+using namespace xtd::drawing::imaging;
+using namespace xtd::drawing::imaging::effects;
 using namespace xtd::forms;
 
-namespace image_converter_example {
+namespace image_effector_example {
   class form1 : public form {
   public:
     form1() {
-      text("Image conversions example");
+      text("Image effects example");
       form_border_style(forms::form_border_style::fixed_3d);
       maximize_box(false);
       client_size({730, 525});
@@ -47,12 +34,14 @@ namespace image_converter_example {
       percent_hue_rotate_track_bar.tick_style(tick_style::none);
       percent_invert_track_bar.tick_style(tick_style::none);
       percent_opacity_track_bar.tick_style(tick_style::none);
+      levels_posterize_track_bar.tick_style(tick_style::none);
       rescale_width_track_bar.tick_style(tick_style::none);
       rescale_height_track_bar.tick_style(tick_style::none);
       resize_width_track_bar.tick_style(tick_style::none);
       resize_height_track_bar.tick_style(tick_style::none);
       percent_saturate_track_bar.tick_style(tick_style::none);
       percent_sepia_track_bar.tick_style(tick_style::none);
+      threshold_solarize_track_bar.tick_style(tick_style::none);
       threshold_threshold_track_bar.tick_style(tick_style::none);
       
       red_correction_gamma_correction_numeric_up_down.decimal_place(1);
@@ -76,11 +65,13 @@ namespace image_converter_example {
       hue_rotate_panel.dock(xtd::forms::dock_style::fill);
       invert_panel.dock(xtd::forms::dock_style::fill);
       opacity_panel.dock(xtd::forms::dock_style::fill);
+      posterize_panel.dock(xtd::forms::dock_style::fill);
       rescale_panel.dock(xtd::forms::dock_style::fill);
       resize_panel.dock(xtd::forms::dock_style::fill);
       rotate_flip_panel.dock(xtd::forms::dock_style::fill);
       saturate_panel.dock(xtd::forms::dock_style::fill);
       sepia_panel.dock(xtd::forms::dock_style::fill);
+      solarize_panel.dock(xtd::forms::dock_style::fill);
       threshold_panel.dock(xtd::forms::dock_style::fill);
       picures_panel.border_sides(xtd::forms::border_sides::bottom).border_style(xtd::forms::border_style::inset).dock(xtd::forms::dock_style::top);
       
@@ -90,213 +81,191 @@ namespace image_converter_example {
       threshold_bitonal_numeric_up_down.value_changed += [&] {threshold_bitonal_track_bar.value(as<int32>(threshold_bitonal_numeric_up_down.value()));};
       threshold_bitonal_track_bar.value_changed += [&] {
         threshold_bitonal_numeric_up_down.value(threshold_bitonal_track_bar.value());
-        adjusted_image = image_converter::bitonal(original_image(), threshold_bitonal_track_bar.value(), upper_color_bitonal_color_picker.color(), lower_color_bitonal_color_picker.color());
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       upper_color_bitonal_color_picker.color_picker_changed += [&] {
-        adjusted_image = image_converter::bitonal(original_image(), threshold_bitonal_track_bar.value(), upper_color_bitonal_color_picker.color(), lower_color_bitonal_color_picker.color());
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       lower_color_bitonal_color_picker.color_picker_changed += [&] {
-        adjusted_image = image_converter::bitonal(original_image(), threshold_bitonal_track_bar.value(), upper_color_bitonal_color_picker.color(), lower_color_bitonal_color_picker.color());
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
 
       radius_blur_numeric_up_down.value_changed += [&] {radius_blur_track_bar.value(as<int32>(radius_blur_numeric_up_down.value()));};
       radius_blur_track_bar.value_changed += [&] {
         radius_blur_numeric_up_down.value(radius_blur_track_bar.value());
-        adjusted_image = image_converter::blur(original_image(), radius_blur_track_bar.value());
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       
       percent_brightness_numeric_up_down.value_changed += [&] {percent_brightness_track_bar.value(as<int32>(percent_brightness_numeric_up_down.value()));};
       percent_brightness_track_bar.value_changed += [&] {
         percent_brightness_numeric_up_down.value(percent_brightness_track_bar.value());
-        adjusted_image = image_converter::brightness(original_image(), percent_brightness_track_bar.value() / 100.0);
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       
       percent_color_numeric_up_down.value_changed += [&] {percent_color_track_bar.value(as<int32>(percent_color_numeric_up_down.value()));};
       percent_color_track_bar.value_changed += [&] {
         percent_color_numeric_up_down.value(percent_color_track_bar.value());
-        adjusted_image = image_converter::color(original_image(), color_color_color_picker.color(), percent_color_track_bar.value() / 100.0);
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       color_color_color_picker.color_picker_changed += [&] {
-        adjusted_image = image_converter::color(original_image(), color_color_color_picker.color(), percent_color_track_bar.value() / 100.0);
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
 
       threshold_color_extraction_numeric_up_down.value_changed += [&] {threshold_color_extraction_track_bar.value(as<int32>(threshold_color_extraction_numeric_up_down.value()));};
       threshold_color_extraction_track_bar.value_changed += [&] {
         threshold_color_extraction_numeric_up_down.value(threshold_color_extraction_track_bar.value());
-        adjusted_image = image_converter::color_extraction(original_image(), threshold_color_extraction_track_bar.value(), extraction_color_color_extraction_color_picker.color(), other_pixels_color_color_extraction_color_picker.color());
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       extraction_color_color_extraction_color_picker.color_picker_changed += [&] {
-        adjusted_image = image_converter::color_extraction(original_image(), threshold_color_extraction_track_bar.value(), extraction_color_color_extraction_color_picker.color(), other_pixels_color_color_extraction_color_picker.color());
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       other_pixels_color_color_extraction_color_picker.color_picker_changed += [&] {
-        adjusted_image = image_converter::color_extraction(original_image(), threshold_color_extraction_track_bar.value(), extraction_color_color_extraction_color_picker.color(), other_pixels_color_color_extraction_color_picker.color());
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       
+      levels_posterize_numeric_up_down.value_changed += [&] {levels_posterize_track_bar.value(as<int32>(levels_posterize_numeric_up_down.value()));};
+      levels_posterize_track_bar.value_changed += [&] {
+        levels_posterize_numeric_up_down.value(levels_posterize_track_bar.value());
+        update_pictures();
+      };
+
       threshold_color_substitution_numeric_up_down.value_changed += [&] {threshold_color_substitution_track_bar.value(as<int32>(threshold_color_substitution_numeric_up_down.value()));};
       threshold_color_substitution_track_bar.value_changed += [&] {
         threshold_color_substitution_numeric_up_down.value(threshold_color_substitution_track_bar.value());
-        adjusted_image = image_converter::color_substitution(original_image(), threshold_color_substitution_track_bar.value(), source_color_color_substitution_color_picker.color(), new_color_color_substitution_color_picker.color());
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       source_color_color_substitution_color_picker.color_picker_changed += [&] {
-        adjusted_image = image_converter::color_substitution(original_image(), threshold_color_substitution_track_bar.value(), source_color_color_substitution_color_picker.color(), new_color_color_substitution_color_picker.color());
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       new_color_color_substitution_color_picker.color_picker_changed += [&] {
-        adjusted_image = image_converter::color_substitution(original_image(), threshold_color_substitution_track_bar.value(), source_color_color_substitution_color_picker.color(), new_color_color_substitution_color_picker.color());
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       
       percent_contrast_numeric_up_down.value_changed += [&] {percent_contrast_track_bar.value(as<int32>(percent_contrast_numeric_up_down.value()));};
       percent_contrast_track_bar.value_changed += [&] {
         percent_contrast_numeric_up_down.value(percent_contrast_track_bar.value());
-        adjusted_image = image_converter::contrast(original_image(), percent_contrast_track_bar.value() / 100.0);
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
 
       disabled_switch_button.checked_changed += [&] {
-        adjusted_image = disabled_switch_button.checked() ? bitmap {image_converter::disabled(original_image(), adjusted_picture_panel.back_color())} : original_image();
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       
       radius_drop_shadow_numeric_up_down.value_changed += [&] {radius_drop_shadow_track_bar.value(as<int32>(radius_drop_shadow_numeric_up_down.value()));};
       radius_drop_shadow_track_bar.value_changed += [&] {
         radius_drop_shadow_numeric_up_down.value(radius_drop_shadow_track_bar.value());
-        adjusted_image = image_converter::drop_shadow(original_image(), horizontal_drop_shadow_track_bar.value(), vertical_drop_shadow_track_bar.value(), radius_drop_shadow_track_bar.value(), color_drop_shadow_color_picker.color());
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       horizontal_drop_shadow_numeric_up_down.value_changed += [&] {horizontal_drop_shadow_track_bar.value(as<int32>(horizontal_drop_shadow_numeric_up_down.value()));};
       horizontal_drop_shadow_track_bar.value_changed += [&] {
         horizontal_drop_shadow_numeric_up_down.value(horizontal_drop_shadow_track_bar.value());
-        adjusted_image = image_converter::drop_shadow(original_image(), horizontal_drop_shadow_track_bar.value(), vertical_drop_shadow_track_bar.value(), radius_drop_shadow_track_bar.value(), color_drop_shadow_color_picker.color());
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       vertical_drop_shadow_numeric_up_down.value_changed += [&] {vertical_drop_shadow_track_bar.value(as<int32>(vertical_drop_shadow_numeric_up_down.value()));};
       vertical_drop_shadow_track_bar.value_changed += [&] {
         vertical_drop_shadow_numeric_up_down.value(vertical_drop_shadow_track_bar.value());
-        adjusted_image = image_converter::drop_shadow(original_image(), horizontal_drop_shadow_track_bar.value(), vertical_drop_shadow_track_bar.value(), radius_drop_shadow_track_bar.value(), color_drop_shadow_color_picker.color());
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       color_drop_shadow_color_picker.color_picker_changed += [&] {
-        adjusted_image = image_converter::drop_shadow(original_image(), horizontal_drop_shadow_track_bar.value(), vertical_drop_shadow_track_bar.value(), radius_drop_shadow_track_bar.value(), color_drop_shadow_color_picker.color());
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
 
       red_correction_gamma_correction_numeric_up_down.value_changed += [&] {red_correction_gamma_correction_track_bar.value(as<int32>(red_correction_gamma_correction_numeric_up_down.value() * 10));};
       red_correction_gamma_correction_track_bar.value_changed += [&] {
         red_correction_gamma_correction_numeric_up_down.value(red_correction_gamma_correction_track_bar.value() / 10.0);
-        adjusted_image = image_converter::gamma_correction(original_image(), red_correction_gamma_correction_track_bar.value() / 10.0, green_correction_gamma_correction_track_bar.value() / 10.0, blue_correction_gamma_correction_track_bar.value() / 10.0);
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
 
       green_correction_gamma_correction_numeric_up_down.value_changed += [&] {green_correction_gamma_correction_track_bar.value(as<int32>(green_correction_gamma_correction_numeric_up_down.value() * 10));};
       green_correction_gamma_correction_track_bar.value_changed += [&] {
         green_correction_gamma_correction_numeric_up_down.value(green_correction_gamma_correction_track_bar.value() / 10.0);
-        adjusted_image = image_converter::gamma_correction(original_image(), red_correction_gamma_correction_track_bar.value() / 10.0, green_correction_gamma_correction_track_bar.value() / 10.0, blue_correction_gamma_correction_track_bar.value() / 10.0);
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
 
       blue_correction_gamma_correction_numeric_up_down.value_changed += [&] {blue_correction_gamma_correction_track_bar.value(as<int32>(blue_correction_gamma_correction_numeric_up_down.value() * 10));};
       blue_correction_gamma_correction_track_bar.value_changed += [&] {
         blue_correction_gamma_correction_numeric_up_down.value(blue_correction_gamma_correction_track_bar.value() / 10.0);
-        adjusted_image = image_converter::gamma_correction(original_image(), red_correction_gamma_correction_track_bar.value() / 10.0, green_correction_gamma_correction_track_bar.value() / 10.0, blue_correction_gamma_correction_track_bar.value() / 10.0);
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
 
       percent_grayscale_numeric_up_down.value_changed += [&] {percent_grayscale_track_bar.value(as<int32>(percent_grayscale_numeric_up_down.value()));};
       percent_grayscale_track_bar.value_changed += [&] {
         percent_grayscale_numeric_up_down.value(percent_grayscale_track_bar.value());
-        adjusted_image = image_converter::grayscale(original_image(), percent_grayscale_track_bar.value() / 100.0);
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
 
       percent_hue_rotate_numeric_up_down.value_changed += [&] {percent_hue_rotate_track_bar.value(as<int32>(percent_hue_rotate_numeric_up_down.value()));};
       percent_hue_rotate_track_bar.value_changed += [&] {
         percent_hue_rotate_numeric_up_down.value(percent_hue_rotate_track_bar.value());
-        adjusted_image = image_converter::hue_rotate(original_image(), percent_hue_rotate_track_bar.value());
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       
       percent_invert_numeric_up_down.value_changed += [&] {percent_invert_track_bar.value(as<int32>(percent_invert_numeric_up_down.value()));};
       percent_invert_track_bar.value_changed += [&] {
         percent_invert_numeric_up_down.value(percent_invert_track_bar.value());
-        adjusted_image = image_converter::invert(original_image(), percent_invert_track_bar.value() / 100.0);
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       
       percent_opacity_numeric_up_down.value_changed += [&] {percent_opacity_track_bar.value(as<int32>(percent_opacity_numeric_up_down.value()));};
       percent_opacity_track_bar.value_changed += [&] {
         percent_opacity_numeric_up_down.value(percent_opacity_track_bar.value());
-        adjusted_image = image_converter::opacity(original_image(), percent_opacity_track_bar.value() / 100.0);
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       
       rescale_width_numeric_up_down.value_changed += [&] {rescale_width_track_bar.value(as<int32>(rescale_width_numeric_up_down.value()));};
       rescale_width_track_bar.value_changed += [&] {
         rescale_width_numeric_up_down.value(rescale_width_track_bar.value());
         if (rescale_maintain_aspect_ratio_check_box.checked()) rescale_height_numeric_up_down.value(as<int>(rescale_width_track_bar.value() / rescale_aspect_ratio));
-        adjusted_image = image_converter::rescale(original_image(), {rescale_width_track_bar.value(), rescale_height_track_bar.value()});
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       
       rescale_height_numeric_up_down.value_changed += [&] {rescale_height_track_bar.value(as<int32>(rescale_height_numeric_up_down.value()));};
       rescale_height_track_bar.value_changed += [&] {
         rescale_height_numeric_up_down.value(rescale_height_track_bar.value());
         if (rescale_maintain_aspect_ratio_check_box.checked()) rescale_width_numeric_up_down.value(as<int>(rescale_height_track_bar.value() * rescale_aspect_ratio));
-        adjusted_image = image_converter::rescale(original_image(), {rescale_width_track_bar.value(), rescale_height_track_bar.value()});
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
 
       resize_width_numeric_up_down.value_changed += [&] {resize_width_track_bar.value(as<int32>(resize_width_numeric_up_down.value()));};
       resize_width_track_bar.value_changed += [&] {
         resize_width_numeric_up_down.value(resize_width_track_bar.value());
         if (resize_maintain_aspect_ratio_check_box.checked()) resize_height_numeric_up_down.value(as<int>(resize_width_track_bar.value() / resize_aspect_ratio));
-        adjusted_image = image_converter::resize(original_image(), {resize_width_track_bar.value(), resize_height_track_bar.value()});
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       
       resize_height_numeric_up_down.value_changed += [&] {resize_height_track_bar.value(as<int32>(resize_height_numeric_up_down.value()));};
       resize_height_track_bar.value_changed += [&] {
         resize_height_numeric_up_down.value(resize_height_track_bar.value());
         if (resize_maintain_aspect_ratio_check_box.checked()) resize_width_numeric_up_down.value(as<int>(resize_height_track_bar.value() * resize_aspect_ratio));
-        adjusted_image = image_converter::resize(original_image(), {resize_width_track_bar.value(), resize_height_track_bar.value()});
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       
       rotate_flip_choice.selected_index_changed += [&] {
-        adjusted_image = image_converter::rotate_flip(original_image(), as<rotate_flip_type>(rotate_flip_choice.selected_item().tag()));
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       
       percent_saturate_numeric_up_down.value_changed += [&] {percent_saturate_track_bar.value(as<int32>(percent_saturate_numeric_up_down.value()));};
       percent_saturate_track_bar.value_changed += [&] {
         percent_saturate_numeric_up_down.value(percent_saturate_track_bar.value());
-        adjusted_image = image_converter::saturate(original_image(), percent_saturate_track_bar.value() / 100.0);
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       
       percent_sepia_numeric_up_down.value_changed += [&] {percent_sepia_track_bar.value(as<int32>(percent_sepia_numeric_up_down.value()));};
       percent_sepia_track_bar.value_changed += [&] {
         percent_sepia_numeric_up_down.value(percent_sepia_track_bar.value());
-        adjusted_image = image_converter::sepia(original_image(), percent_sepia_track_bar.value() / 100.0);
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       
+      threshold_solarize_numeric_up_down.value_changed += [&] {threshold_solarize_track_bar.value(as<int32>(threshold_solarize_numeric_up_down.value()));};
+      threshold_solarize_track_bar.value_changed += [&] {
+        threshold_solarize_numeric_up_down.value(threshold_solarize_track_bar.value());
+        update_pictures();
+      };
+
       threshold_threshold_numeric_up_down.value_changed += [&] {threshold_threshold_track_bar.value(as<int32>(threshold_threshold_numeric_up_down.value()));};
       threshold_threshold_track_bar.value_changed += [&] {
         threshold_threshold_numeric_up_down.value(threshold_threshold_track_bar.value());
-        adjusted_image = image_converter::threshold(original_image(), threshold_threshold_track_bar.value());
-        adjusted_picture_panel.invalidate();
+        update_pictures();
       };
       
       original_picture_panel.double_buffered(true);
@@ -358,6 +327,7 @@ namespace image_converter_example {
       percent_hue_rotate_track_bar.value(90);
       percent_invert_track_bar.value(100);
       percent_opacity_track_bar.value(50);
+      levels_posterize_track_bar.value(4);
       rescale_aspect_ratio = as<double>(original_image().size().width) / original_image().size().height;
       rescale_maintain_aspect_ratio_check_box.checked(true);
       rescale_width_track_bar.value(original_image().size().width / 5 * 4);
@@ -367,19 +337,20 @@ namespace image_converter_example {
       rotate_flip_choice.selected_index(6);
       percent_saturate_track_bar.value(300);
       percent_sepia_track_bar.value(100);
+      threshold_solarize_track_bar.value(128);
       threshold_threshold_track_bar.value(382);
     }
 
     void update_pictures() {
       original_picture_panel.invalidate();
 
-      if (effect_choice.selected_item() == "bitonal") adjusted_image = image_converter::bitonal(original_image(), threshold_bitonal_track_bar.value(), upper_color_bitonal_color_picker.color(), lower_color_bitonal_color_picker.color());
-      else if (effect_choice.selected_item() == "blur") adjusted_image = image_converter::blur(original_image(), radius_blur_track_bar.value());
-      else if (effect_choice.selected_item() == "brightness") adjusted_image = image_converter::brightness(original_image(), percent_brightness_track_bar.value() / 100.0);
-      else if (effect_choice.selected_item() == "color") adjusted_image = image_converter::color(original_image(), color_color_color_picker.color(), percent_color_track_bar.value() / 100.0);
-      else if (effect_choice.selected_item() == "color-extraction") adjusted_image = image_converter::color_extraction(original_image(), threshold_color_extraction_track_bar.value(), extraction_color_color_extraction_color_picker.color(), other_pixels_color_color_extraction_color_picker.color());
-      else if (effect_choice.selected_item() == "color-substitution") adjusted_image = image_converter::color_substitution(original_image(), threshold_color_substitution_track_bar.value(), source_color_color_substitution_color_picker.color(), new_color_color_substitution_color_picker.color());
-      else if (effect_choice.selected_item() == "contrast") adjusted_image = image_converter::contrast(original_image(), percent_contrast_track_bar.value() / 100.0);
+      if (effect_choice.selected_item() == "bitonal") adjusted_image = image_effector::set_effect(original_image(), bitonal_effect {threshold_bitonal_track_bar.value(), upper_color_bitonal_color_picker.color(), lower_color_bitonal_color_picker.color()});
+      else if (effect_choice.selected_item() == "blur") adjusted_image = image_effector::set_effect(original_image(), blur_effect {radius_blur_track_bar.value()});
+      else if (effect_choice.selected_item() == "brightness") adjusted_image = image_effector::set_effect(original_image(), brightness_effect {percent_brightness_track_bar.value() / 100.0});
+      else if (effect_choice.selected_item() == "color") adjusted_image = image_effector::set_effect(original_image(), color_effect {color_color_color_picker.color(), percent_color_track_bar.value() / 100.0});
+      else if (effect_choice.selected_item() == "color-extraction") adjusted_image = image_effector::set_effect(original_image(), color_extraction_effect {threshold_color_extraction_track_bar.value(), extraction_color_color_extraction_color_picker.color(), other_pixels_color_color_extraction_color_picker.color()});
+      else if (effect_choice.selected_item() == "color-substitution") adjusted_image = image_effector::set_effect(original_image(), color_substitution_effect {threshold_color_substitution_track_bar.value(), source_color_color_substitution_color_picker.color(), new_color_color_substitution_color_picker.color()});
+      else if (effect_choice.selected_item() == "contrast") adjusted_image = image_effector::set_effect(original_image(), contrast_effect {percent_contrast_track_bar.value() / 100.0});
       else if (effect_choice.selected_item() == "disabled") adjusted_image = disabled_switch_button.checked() ? bitmap {image_converter::disabled(original_image(), adjusted_picture_panel.back_color())} : original_image();
       else if (effect_choice.selected_item() == "drop-shadow") adjusted_image = image_converter::drop_shadow(original_image(), horizontal_drop_shadow_track_bar.value(), vertical_drop_shadow_track_bar.value(), radius_drop_shadow_track_bar.value(), color_drop_shadow_color_picker.color());
       else if (effect_choice.selected_item() == "gamma-correction") adjusted_image = image_converter::gamma_correction(original_image(), red_correction_gamma_correction_track_bar.value() / 10.0, green_correction_gamma_correction_track_bar.value() / 10.0, blue_correction_gamma_correction_track_bar.value() / 10.0);
@@ -387,11 +358,13 @@ namespace image_converter_example {
       else if (effect_choice.selected_item() == "hue-rotate")adjusted_image = image_converter::hue_rotate(original_image(), percent_hue_rotate_track_bar.value());
       else if (effect_choice.selected_item() == "invert") adjusted_image = image_converter::invert(original_image(), percent_invert_track_bar.value() / 100.0);
       else if (effect_choice.selected_item() == "opacity") adjusted_image = image_converter::opacity(original_image(), percent_opacity_track_bar.value() / 100.0);
+      else if (effect_choice.selected_item() == "posterize") adjusted_image = image_effector::set_effect(original_image(), posterize_effect {levels_posterize_track_bar.value()});
       else if (effect_choice.selected_item() == "rescale") adjusted_image = image_converter::rescale(original_image(), {resize_width_track_bar.value(), rescale_height_track_bar.value()});
       else if (effect_choice.selected_item() == "resize") adjusted_image = image_converter::resize(original_image(), {resize_width_track_bar.value(), resize_height_track_bar.value()});
       else if (effect_choice.selected_item() == "rotate-flip") adjusted_image = image_converter::rotate_flip(original_image(), as<rotate_flip_type>(rotate_flip_choice.selected_item().tag()));
       else if (effect_choice.selected_item() == "saturate") adjusted_image = image_converter::saturate(original_image(), percent_saturate_track_bar.value() / 100.0);
       else if (effect_choice.selected_item() == "sepia") adjusted_image = image_converter::sepia(original_image(), percent_sepia_track_bar.value() / 100.0);
+      else if (effect_choice.selected_item() == "solarize") adjusted_image = image_effector::set_effect(original_image(), solarize_effect {threshold_solarize_track_bar.value()});
       else if (effect_choice.selected_item() == "threshold") adjusted_image = image_converter::threshold(original_image(), threshold_threshold_track_bar.value());
       else adjusted_image = original_image();
       adjusted_picture_panel.invalidate();
@@ -417,11 +390,13 @@ namespace image_converter_example {
       hue_rotate_panel.visible(effect_choice.selected_item().value() == "hue-rotate");
       invert_panel.visible(effect_choice.selected_item().value() == "invert");
       opacity_panel.visible(effect_choice.selected_item().value() == "opacity");
+      posterize_panel.visible(effect_choice.selected_item() == "posterize");
       rescale_panel.visible(effect_choice.selected_item().value() == "rescale");
       resize_panel.visible(effect_choice.selected_item().value() == "resize");
       rotate_flip_panel.visible(effect_choice.selected_item().value() == "rotate-flip");
       saturate_panel.visible(effect_choice.selected_item().value() == "saturate");
       sepia_panel.visible(effect_choice.selected_item().value() == "sepia");
+      solarize_panel.visible(effect_choice.selected_item() == "solarize");
       threshold_panel.visible(effect_choice.selected_item().value() == "threshold");
 
       reset_inputs();
@@ -531,6 +506,11 @@ namespace image_converter_example {
     track_bar percent_opacity_track_bar = track_bar::create(opacity_panel, 50, 0, 100, {80, 50}, {200, 25});
     numeric_up_down percent_opacity_numeric_up_down = numeric_up_down::create(opacity_panel, 50, 0, 100, {290, 50}, {110, 25});
     
+    panel posterize_panel = panel::create(*this, {0, 0}, {730, 170});
+    label levels_posterize_label = label::create(posterize_panel, "Levels", {10, 54}, {70, 23});
+    track_bar levels_posterize_track_bar = track_bar::create(posterize_panel, 4, 1, 256, {80, 50}, {200, 25});
+    numeric_up_down levels_posterize_numeric_up_down = numeric_up_down::create(posterize_panel, 4, 1, 256, {290, 50}, {110, 25});
+
     panel rescale_panel = panel::create(*this, {0, 0}, {730, 170});
     label rescale_width_label = label::create(rescale_panel, "Width", {10, 34}, {50, 23});
     track_bar rescale_width_track_bar = track_bar::create(rescale_panel, original_image().size().width, 1, original_image().size().width * 2, {60, 30}, {200, 25});
@@ -563,6 +543,11 @@ namespace image_converter_example {
     track_bar percent_sepia_track_bar = track_bar::create(sepia_panel, 100, 0, 100, {80, 50}, {200, 25});
     numeric_up_down percent_sepia_numeric_up_down = numeric_up_down::create(sepia_panel, 100, 0, 100, {290, 50}, {110, 25});
     
+    panel solarize_panel = panel::create(*this, {0, 0}, {730, 170});
+    label threshold_solarize_label = label::create(solarize_panel, "Threshold", {10, 54}, {70, 23});
+    track_bar threshold_solarize_track_bar = track_bar::create(solarize_panel, 128, 0, 255, {80, 50}, {200, 25});
+    numeric_up_down threshold_solarize_numeric_up_down = numeric_up_down::create(solarize_panel, 128, 0, 255, {290, 50}, {110, 25});
+
     panel threshold_panel = panel::create(*this, {0, 0}, {730, 170});
     label threshold_threshold_label = label::create(threshold_panel, "Threshold", {10, 54}, {70, 23});
     track_bar threshold_threshold_track_bar = track_bar::create(threshold_panel, 382, 0, 3 * byte_object::max_value, {80, 50}, {200, 25});
@@ -570,7 +555,7 @@ namespace image_converter_example {
     
     panel picures_panel = panel::create(*this, {0, 0}, {630, 400});
     label effect_label = label::create(picures_panel, "Effect", {10, 14}, {50, 23});
-    choice effect_choice = choice::create(picures_panel, {"bitonal", "blur", "brightness", "color", "color-extraction", "color-substitution", "contrast", "disabled", "drop-shadow", "gamma-correction", "grayscale", "hue-rotate", "invert", "opacity", "rescale", "resize", "rotate-flip", "saturate", "sepia", "threshold"}, {70, 10});
+    choice effect_choice = choice::create(picures_panel, {"bitonal", "blur", "brightness", "color", "color-extraction", "color-substitution", "contrast", "disabled", "drop-shadow", "gamma-correction", "grayscale", "hue-rotate", "invert", "opacity", "posterize", "rescale", "resize", "rotate-flip", "saturate", "sepia", "solarize", "threshold"}, {70, 10});
     label picture_label = label::create(picures_panel, "Picture", {220, 14}, {50, 23});
     choice picture_choice = choice::create(picures_panel, {{"ball", properties::resources::ball()}, {"pineapple", properties::resources::pineapple()}, {"rose", properties::resources::rose()}}, 0, {280, 10});
     label background_label = label::create(picures_panel, "Bacground", {430, 14}, {70, 23});
@@ -580,5 +565,5 @@ namespace image_converter_example {
   };
 }
 auto main() -> int {
-  application::run(image_converter_example::form1 {});
+  application::run(image_effector_example::form1 {});
 }
