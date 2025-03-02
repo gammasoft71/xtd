@@ -31,13 +31,13 @@ namespace image_effector_example {
       drop_shadow_horizontal_track_bar.tick_style(tick_style::none);
       drop_shadow_vertical_track_bar.tick_style(tick_style::none);
       drop_shadow_radius_track_bar.tick_style(tick_style::none);
-      red_correction_gamma_correction_track_bar.tick_style(tick_style::none);
-      green_correction_gamma_correction_track_bar.tick_style(tick_style::none);
-      blue_correction_gamma_correction_track_bar.tick_style(tick_style::none);
-      percent_grayscale_track_bar.tick_style(tick_style::none);
-      percent_hue_rotate_track_bar.tick_style(tick_style::none);
-      percent_invert_track_bar.tick_style(tick_style::none);
-      percent_opacity_track_bar.tick_style(tick_style::none);
+      gamma_correction_red_correction_track_bar.tick_style(tick_style::none);
+      gamma_correction_green_correction_track_bar.tick_style(tick_style::none);
+      gamma_correction_blue_correction_track_bar.tick_style(tick_style::none);
+      grayscale_percent_track_bar.tick_style(tick_style::none);
+      hue_rotate_percent_track_bar.tick_style(tick_style::none);
+      invert_percent_track_bar.tick_style(tick_style::none);
+      opacity_percent_track_bar.tick_style(tick_style::none);
       levels_posterize_track_bar.tick_style(tick_style::none);
       rescale_width_track_bar.tick_style(tick_style::none);
       rescale_height_track_bar.tick_style(tick_style::none);
@@ -50,12 +50,12 @@ namespace image_effector_example {
       threshold_solarize_track_bar.tick_style(tick_style::none);
       threshold_threshold_track_bar.tick_style(tick_style::none);
       
-      red_correction_gamma_correction_numeric_up_down.decimal_place(1);
-      red_correction_gamma_correction_numeric_up_down.increment(.1);
-      green_correction_gamma_correction_numeric_up_down.decimal_place(1);
-      green_correction_gamma_correction_numeric_up_down.increment(.1);
-      blue_correction_gamma_correction_numeric_up_down.decimal_place(1);
-      blue_correction_gamma_correction_numeric_up_down.increment(.1);
+      gamma_correction_red_correction_numeric_up_down.decimal_place(1);
+      gamma_correction_red_correction_numeric_up_down.increment(.1);
+      gamma_correction_green_correction_numeric_up_down.decimal_place(1);
+      gamma_correction_green_correction_numeric_up_down.increment(.1);
+      gamma_correction_blue_correction_numeric_up_down.decimal_place(1);
+      gamma_correction_blue_correction_numeric_up_down.increment(.1);
 
       bitonal_panel.dock(xtd::forms::dock_style::fill);
       blur_panel.dock(xtd::forms::dock_style::fill);
@@ -199,45 +199,45 @@ namespace image_effector_example {
       };
       drop_shadow_color_color_picker.color_picker_changed += [&] {update_pictures();};
 
-      red_correction_gamma_correction_numeric_up_down.value_changed += [&] {red_correction_gamma_correction_track_bar.value(as<int32>(red_correction_gamma_correction_numeric_up_down.value() * 10));};
-      red_correction_gamma_correction_track_bar.value_changed += [&] {
-        red_correction_gamma_correction_numeric_up_down.value(red_correction_gamma_correction_track_bar.value() / 10.0);
+      gamma_correction_red_correction_numeric_up_down.value_changed += [&] {gamma_correction_red_correction_track_bar.value(as<int32>(gamma_correction_red_correction_numeric_up_down.value() * 10));};
+      gamma_correction_red_correction_track_bar.value_changed += [&] {
+        gamma_correction_red_correction_numeric_up_down.value(gamma_correction_red_correction_track_bar.value() / 10.0);
         update_pictures();
       };
 
-      green_correction_gamma_correction_numeric_up_down.value_changed += [&] {green_correction_gamma_correction_track_bar.value(as<int32>(green_correction_gamma_correction_numeric_up_down.value() * 10));};
-      green_correction_gamma_correction_track_bar.value_changed += [&] {
-        green_correction_gamma_correction_numeric_up_down.value(green_correction_gamma_correction_track_bar.value() / 10.0);
+      gamma_correction_green_correction_numeric_up_down.value_changed += [&] {gamma_correction_green_correction_track_bar.value(as<int32>(gamma_correction_green_correction_numeric_up_down.value() * 10));};
+      gamma_correction_green_correction_track_bar.value_changed += [&] {
+        gamma_correction_green_correction_numeric_up_down.value(gamma_correction_green_correction_track_bar.value() / 10.0);
         update_pictures();
       };
 
-      blue_correction_gamma_correction_numeric_up_down.value_changed += [&] {blue_correction_gamma_correction_track_bar.value(as<int32>(blue_correction_gamma_correction_numeric_up_down.value() * 10));};
-      blue_correction_gamma_correction_track_bar.value_changed += [&] {
-        blue_correction_gamma_correction_numeric_up_down.value(blue_correction_gamma_correction_track_bar.value() / 10.0);
+      gamma_correction_blue_correction_numeric_up_down.value_changed += [&] {gamma_correction_blue_correction_track_bar.value(as<int32>(gamma_correction_blue_correction_numeric_up_down.value() * 10));};
+      gamma_correction_blue_correction_track_bar.value_changed += [&] {
+        gamma_correction_blue_correction_numeric_up_down.value(gamma_correction_blue_correction_track_bar.value() / 10.0);
         update_pictures();
       };
 
-      percent_grayscale_numeric_up_down.value_changed += [&] {percent_grayscale_track_bar.value(as<int32>(percent_grayscale_numeric_up_down.value()));};
-      percent_grayscale_track_bar.value_changed += [&] {
-        percent_grayscale_numeric_up_down.value(percent_grayscale_track_bar.value());
+      grayscale_percent_numeric_up_down.value_changed += [&] {grayscale_percent_track_bar.value(as<int32>(grayscale_percent_numeric_up_down.value()));};
+      grayscale_percent_track_bar.value_changed += [&] {
+        grayscale_percent_numeric_up_down.value(grayscale_percent_track_bar.value());
         update_pictures();
       };
 
-      percent_hue_rotate_numeric_up_down.value_changed += [&] {percent_hue_rotate_track_bar.value(as<int32>(percent_hue_rotate_numeric_up_down.value()));};
-      percent_hue_rotate_track_bar.value_changed += [&] {
-        percent_hue_rotate_numeric_up_down.value(percent_hue_rotate_track_bar.value());
+      hue_rotate_percent_numeric_up_down.value_changed += [&] {hue_rotate_percent_track_bar.value(as<int32>(hue_rotate_percent_numeric_up_down.value()));};
+      hue_rotate_percent_track_bar.value_changed += [&] {
+        hue_rotate_percent_numeric_up_down.value(hue_rotate_percent_track_bar.value());
         update_pictures();
       };
       
-      percent_invert_numeric_up_down.value_changed += [&] {percent_invert_track_bar.value(as<int32>(percent_invert_numeric_up_down.value()));};
-      percent_invert_track_bar.value_changed += [&] {
-        percent_invert_numeric_up_down.value(percent_invert_track_bar.value());
+      invert_percent_numeric_up_down.value_changed += [&] {invert_percent_track_bar.value(as<int32>(invert_percent_numeric_up_down.value()));};
+      invert_percent_track_bar.value_changed += [&] {
+        invert_percent_numeric_up_down.value(invert_percent_track_bar.value());
         update_pictures();
       };
       
-      percent_opacity_numeric_up_down.value_changed += [&] {percent_opacity_track_bar.value(as<int32>(percent_opacity_numeric_up_down.value()));};
-      percent_opacity_track_bar.value_changed += [&] {
-        percent_opacity_numeric_up_down.value(percent_opacity_track_bar.value());
+      opacity_percent_numeric_up_down.value_changed += [&] {opacity_percent_track_bar.value(as<int32>(opacity_percent_numeric_up_down.value()));};
+      opacity_percent_track_bar.value_changed += [&] {
+        opacity_percent_numeric_up_down.value(opacity_percent_track_bar.value());
         update_pictures();
       };
       
@@ -371,13 +371,13 @@ namespace image_effector_example {
       drop_shadow_horizontal_track_bar.value(8);
       drop_shadow_vertical_track_bar.value(8);
       drop_shadow_color_color_picker.color(color::black);
-      red_correction_gamma_correction_track_bar.value(20);
-      green_correction_gamma_correction_track_bar.value(16);
-      blue_correction_gamma_correction_track_bar.value(8);
-      percent_grayscale_track_bar.value(100);
-      percent_hue_rotate_track_bar.value(90);
-      percent_invert_track_bar.value(100);
-      percent_opacity_track_bar.value(50);
+      gamma_correction_red_correction_track_bar.value(20);
+      gamma_correction_green_correction_track_bar.value(16);
+      gamma_correction_blue_correction_track_bar.value(8);
+      grayscale_percent_track_bar.value(100);
+      hue_rotate_percent_track_bar.value(90);
+      invert_percent_track_bar.value(100);
+      opacity_percent_track_bar.value(50);
       levels_posterize_track_bar.value(4);
       rescale_maintain_aspect_ratio_check_box.checked(false);
       rescale_aspect_ratio = as<double>(original_image().size().width) / original_image().size().height;
@@ -411,11 +411,11 @@ namespace image_effector_example {
       else if (effect_choice.selected_item() == "crop") adjusted_image = image_converter::crop(original_image(), rectangle {crop_x_track_bar.value(), crop_y_track_bar.value(), crop_width_track_bar.value(), crop_height_track_bar.value()});
       else if (effect_choice.selected_item() == "disabled") adjusted_image = disabled_switch_button.checked() ? bitmap {image_effector::set_effect(original_image(), disabled_effect {adjusted_picture_panel.back_color()})} : original_image();
       else if (effect_choice.selected_item() == "drop-shadow") adjusted_image = image_converter::drop_shadow(original_image(), drop_shadow_horizontal_track_bar.value(), drop_shadow_vertical_track_bar.value(), drop_shadow_radius_track_bar.value(), drop_shadow_color_color_picker.color());
-      else if (effect_choice.selected_item() == "gamma-correction") adjusted_image = image_converter::gamma_correction(original_image(), red_correction_gamma_correction_track_bar.value() / 10.0, green_correction_gamma_correction_track_bar.value() / 10.0, blue_correction_gamma_correction_track_bar.value() / 10.0);
-      else if (effect_choice.selected_item() == "grayscale") adjusted_image = image_converter::grayscale(original_image(), percent_grayscale_track_bar.value() / 100.0);
-      else if (effect_choice.selected_item() == "hue-rotate")adjusted_image = image_converter::hue_rotate(original_image(), percent_hue_rotate_track_bar.value());
-      else if (effect_choice.selected_item() == "invert") adjusted_image = image_converter::invert(original_image(), percent_invert_track_bar.value() / 100.0);
-      else if (effect_choice.selected_item() == "opacity") adjusted_image = image_converter::opacity(original_image(), percent_opacity_track_bar.value() / 100.0);
+      else if (effect_choice.selected_item() == "gamma-correction") adjusted_image = image_converter::gamma_correction(original_image(), gamma_correction_red_correction_track_bar.value() / 10.0, gamma_correction_green_correction_track_bar.value() / 10.0, gamma_correction_blue_correction_track_bar.value() / 10.0);
+      else if (effect_choice.selected_item() == "grayscale") adjusted_image = image_converter::grayscale(original_image(), grayscale_percent_track_bar.value() / 100.0);
+      else if (effect_choice.selected_item() == "hue-rotate")adjusted_image = image_converter::hue_rotate(original_image(), hue_rotate_percent_track_bar.value());
+      else if (effect_choice.selected_item() == "invert") adjusted_image = image_converter::invert(original_image(), invert_percent_track_bar.value() / 100.0);
+      else if (effect_choice.selected_item() == "opacity") adjusted_image = image_converter::opacity(original_image(), opacity_percent_track_bar.value() / 100.0);
       else if (effect_choice.selected_item() == "posterize") adjusted_image = image_effector::set_effect(original_image(), posterize_effect {levels_posterize_track_bar.value()});
       else if (effect_choice.selected_item() == "rescale") adjusted_image = image_converter::rescale(original_image(), {rescale_width_track_bar.value(), rescale_height_track_bar.value()});
       else if (effect_choice.selected_item() == "resize") adjusted_image = image_converter::resize(original_image(), {resize_x_track_bar.value(), resize_y_track_bar.value(), resize_width_track_bar.value(), resize_height_track_bar.value()});
@@ -551,35 +551,35 @@ namespace image_effector_example {
     color_picker drop_shadow_color_color_picker = color_picker::create(drop_shadow_panel, color::black, {70, 90});
 
     panel gamma_correction_panel = panel::create(*this, {0, 0}, {730, 170});
-    label red_correction_gamma_correction_label = label::create(gamma_correction_panel, "Red", {10, 14}, {70, 23});
-    track_bar red_correction_gamma_correction_track_bar = track_bar::create(gamma_correction_panel, 20, 1, 50, {80, 10}, {200, 25});
-    numeric_up_down red_correction_gamma_correction_numeric_up_down = numeric_up_down::create(gamma_correction_panel, 2.0, 0.1, 5.0, {290, 10}, {110, 25});
-    label green_correction_bgamma_correction_label = label::create(gamma_correction_panel, "Green", {10, 54}, {70, 23});
-    track_bar green_correction_gamma_correction_track_bar = track_bar::create(gamma_correction_panel, 16, 1, 50, {80, 50}, {200, 25});
-    numeric_up_down green_correction_gamma_correction_numeric_up_down = numeric_up_down::create(gamma_correction_panel, 1.6, 0.1, 5.0, {290, 50}, {110, 25});
-    label blue_correction_bgamma_correction_label = label::create(gamma_correction_panel, "Blue", {10, 94}, {70, 23});
-    track_bar blue_correction_gamma_correction_track_bar = track_bar::create(gamma_correction_panel, 8, 1, 50, {80, 90}, {200, 25});
-    numeric_up_down blue_correction_gamma_correction_numeric_up_down = numeric_up_down::create(gamma_correction_panel, 0.8, 0.1, 5.0, {290, 90}, {110, 25});
+    label gamma_correction_red_correction_label = label::create(gamma_correction_panel, "Red", {10, 14}, {70, 23});
+    track_bar gamma_correction_red_correction_track_bar = track_bar::create(gamma_correction_panel, 20, 1, 50, {80, 10}, {200, 25});
+    numeric_up_down gamma_correction_red_correction_numeric_up_down = numeric_up_down::create(gamma_correction_panel, 2.0, 0.1, 5.0, {290, 10}, {110, 25});
+    label gamma_correction_green_correction_label = label::create(gamma_correction_panel, "Green", {10, 54}, {70, 23});
+    track_bar gamma_correction_green_correction_track_bar = track_bar::create(gamma_correction_panel, 16, 1, 50, {80, 50}, {200, 25});
+    numeric_up_down gamma_correction_green_correction_numeric_up_down = numeric_up_down::create(gamma_correction_panel, 1.6, 0.1, 5.0, {290, 50}, {110, 25});
+    label gamma_correction_blue_correction_label = label::create(gamma_correction_panel, "Blue", {10, 94}, {70, 23});
+    track_bar gamma_correction_blue_correction_track_bar = track_bar::create(gamma_correction_panel, 8, 1, 50, {80, 90}, {200, 25});
+    numeric_up_down gamma_correction_blue_correction_numeric_up_down = numeric_up_down::create(gamma_correction_panel, 0.8, 0.1, 5.0, {290, 90}, {110, 25});
 
     panel grayscale_panel = panel::create(*this, {0, 0}, {730, 170});
-    label percent_bgrayscale_label = label::create(grayscale_panel, "Percent", {10, 54}, {70, 23});
-    track_bar percent_grayscale_track_bar = track_bar::create(grayscale_panel, 100, 0, 100, {80, 50}, {200, 25});
-    numeric_up_down percent_grayscale_numeric_up_down = numeric_up_down::create(grayscale_panel, 100, 0, 100, {290, 50}, {110, 25});
+    label grayscale_percent_label = label::create(grayscale_panel, "Percent", {10, 54}, {70, 23});
+    track_bar grayscale_percent_track_bar = track_bar::create(grayscale_panel, 100, 0, 100, {80, 50}, {200, 25});
+    numeric_up_down grayscale_percent_numeric_up_down = numeric_up_down::create(grayscale_panel, 100, 0, 100, {290, 50}, {110, 25});
 
     panel hue_rotate_panel = panel::create(*this, {0, 0}, {730, 170});
-    label percent_bhue_rotate_label = label::create(hue_rotate_panel, "Angle", {10, 54}, {70, 23});
-    track_bar percent_hue_rotate_track_bar = track_bar::create(hue_rotate_panel, 90, 0, 360, {80, 50}, {200, 25});
-    numeric_up_down percent_hue_rotate_numeric_up_down = numeric_up_down::create(hue_rotate_panel, 90, 0, 360, {290, 50}, {110, 25});
+    label hue_rotate_percent_label = label::create(hue_rotate_panel, "Angle", {10, 54}, {70, 23});
+    track_bar hue_rotate_percent_track_bar = track_bar::create(hue_rotate_panel, 90, 0, 360, {80, 50}, {200, 25});
+    numeric_up_down hue_rotate_percent_numeric_up_down = numeric_up_down::create(hue_rotate_panel, 90, 0, 360, {290, 50}, {110, 25});
     
     panel invert_panel = panel::create(*this, {0, 0}, {730, 170});
-    label percent_invert_label = label::create(invert_panel, "Percent", {10, 54}, {70, 23});
-    track_bar percent_invert_track_bar = track_bar::create(invert_panel, 100, 0, 100, {80, 50}, {200, 25});
-    numeric_up_down percent_invert_numeric_up_down = numeric_up_down::create(invert_panel, 100, 0, 100, {290, 50}, {110, 25});
+    label invert_percent_label = label::create(invert_panel, "Percent", {10, 54}, {70, 23});
+    track_bar invert_percent_track_bar = track_bar::create(invert_panel, 100, 0, 100, {80, 50}, {200, 25});
+    numeric_up_down invert_percent_numeric_up_down = numeric_up_down::create(invert_panel, 100, 0, 100, {290, 50}, {110, 25});
     
     panel opacity_panel = panel::create(*this, {0, 0}, {730, 170});
-    label percent_opacity_label = label::create(opacity_panel, "Percent", {10, 54}, {70, 34});
-    track_bar percent_opacity_track_bar = track_bar::create(opacity_panel, 50, 0, 100, {80, 50}, {200, 25});
-    numeric_up_down percent_opacity_numeric_up_down = numeric_up_down::create(opacity_panel, 50, 0, 100, {290, 50}, {110, 25});
+    label opacity_percent_label = label::create(opacity_panel, "Percent", {10, 54}, {70, 34});
+    track_bar opacity_percent_track_bar = track_bar::create(opacity_panel, 50, 0, 100, {80, 50}, {200, 25});
+    numeric_up_down opacity_percent_numeric_up_down = numeric_up_down::create(opacity_panel, 50, 0, 100, {290, 50}, {110, 25});
     
     panel posterize_panel = panel::create(*this, {0, 0}, {730, 170});
     label levels_posterize_label = label::create(posterize_panel, "Levels", {10, 54}, {70, 23});
