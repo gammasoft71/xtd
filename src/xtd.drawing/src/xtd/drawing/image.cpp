@@ -487,10 +487,7 @@ void image::blur(int32 radius) {
 void image::crop(int32 x, int32 y, int32 width, int32 height) {
   if (*this == drawing::image::empty) return;
   if (x < 0 || y < 0 || (x + width) > this->width() || (y + height) > this->height()) throw_helper::throws(exception_case::argument);
-  auto result = image {width, height};
-  auto graphics = result.create_graphics();
-  graphics.draw_image(*this, rectangle {0, 0, width, height}, rectangle {x, y, width, height});
-  *this = result;
+  resize(x, y, width, height);
 }
 
 void image::rescale(int32 width, int32 height) {
@@ -499,11 +496,22 @@ void image::rescale(int32 width, int32 height) {
   update_properties();
 }
 
-void image::resize(int32 width, int32 height) {
+void image::resize(int32 x, int32 y, int32 width, int32 height) {
   if (*this == drawing::image::empty) return;
+  if (x < 0 || y < 0 || width < 1 || height < 1) throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (width < this->width() && (x + width) > this->width()) throw_helper::throws(exception_case::argument);
+  if (height < this->height() && (y + height) > this->height()) throw_helper::throws(exception_case::argument);
+  if (width >= this->width() && (x + this->width()) > width) throw_helper::throws(exception_case::argument);
+  if (height >= this->height() && (y + this->height()) > height) throw_helper::throws(exception_case::argument);
+
+  auto offset_image_x = width < this->width() ? x : 0;
+  auto offset_image_y = height < this->height() ? y : 0;
+  auto offset_x = width >= this->width() ? x : 0;
+  auto offset_y = height >= this->height() ? y : 0;
   auto result = image {width, height};
   auto graphics = result.create_graphics();
-  graphics.draw_image(*this, rectangle {0, 0, width, height}, rectangle {0, 0, width, height});
+
+  graphics.draw_image(*this, rectangle {offset_x, offset_y, width, height}, rectangle {offset_image_x, offset_image_y, width, height});
   *this = result;
 }
 
