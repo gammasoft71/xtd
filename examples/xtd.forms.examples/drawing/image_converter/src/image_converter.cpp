@@ -38,16 +38,16 @@ namespace image_effector_example {
       hue_rotate_percent_track_bar.tick_style(tick_style::none);
       invert_percent_track_bar.tick_style(tick_style::none);
       opacity_percent_track_bar.tick_style(tick_style::none);
-      levels_posterize_track_bar.tick_style(tick_style::none);
+      posterize_levels_track_bar.tick_style(tick_style::none);
       rescale_width_track_bar.tick_style(tick_style::none);
       rescale_height_track_bar.tick_style(tick_style::none);
       resize_x_track_bar.tick_style(tick_style::none);
       resize_y_track_bar.tick_style(tick_style::none);
       resize_width_track_bar.tick_style(tick_style::none);
       resize_height_track_bar.tick_style(tick_style::none);
-      percent_saturate_track_bar.tick_style(tick_style::none);
-      percent_sepia_track_bar.tick_style(tick_style::none);
-      threshold_solarize_track_bar.tick_style(tick_style::none);
+      saturate_percent_track_bar.tick_style(tick_style::none);
+      sepia_percent_track_bar.tick_style(tick_style::none);
+      solarize_threshold_track_bar.tick_style(tick_style::none);
       threshold_threshold_track_bar.tick_style(tick_style::none);
       
       gamma_correction_red_correction_numeric_up_down.decimal_place(1);
@@ -120,9 +120,9 @@ namespace image_effector_example {
       color_extraction_extraction_color_color_picker.color_picker_changed += [&] {update_pictures();};
       color_extraction_other_pixels_color_color_picker.color_picker_changed += [&] {update_pictures();};
       
-      levels_posterize_numeric_up_down.value_changed += [&] {levels_posterize_track_bar.value(as<int32>(levels_posterize_numeric_up_down.value()));};
-      levels_posterize_track_bar.value_changed += [&] {
-        levels_posterize_numeric_up_down.value(levels_posterize_track_bar.value());
+      posterize_levels_numeric_up_down.value_changed += [&] {posterize_levels_track_bar.value(as<int32>(posterize_levels_numeric_up_down.value()));};
+      posterize_levels_track_bar.value_changed += [&] {
+        posterize_levels_numeric_up_down.value(posterize_levels_track_bar.value());
         update_pictures();
       };
 
@@ -285,21 +285,21 @@ namespace image_effector_example {
       
       rotate_flip_choice.selected_index_changed += [&] {update_pictures();};
       
-      percent_saturate_numeric_up_down.value_changed += [&] {percent_saturate_track_bar.value(as<int32>(percent_saturate_numeric_up_down.value()));};
-      percent_saturate_track_bar.value_changed += [&] {
-        percent_saturate_numeric_up_down.value(percent_saturate_track_bar.value());
+      saturate_percent_numeric_up_down.value_changed += [&] {saturate_percent_track_bar.value(as<int32>(saturate_percent_numeric_up_down.value()));};
+      saturate_percent_track_bar.value_changed += [&] {
+        saturate_percent_numeric_up_down.value(saturate_percent_track_bar.value());
         update_pictures();
       };
       
-      percent_sepia_numeric_up_down.value_changed += [&] {percent_sepia_track_bar.value(as<int32>(percent_sepia_numeric_up_down.value()));};
-      percent_sepia_track_bar.value_changed += [&] {
-        percent_sepia_numeric_up_down.value(percent_sepia_track_bar.value());
+      sepia_percent_numeric_up_down.value_changed += [&] {sepia_percent_track_bar.value(as<int32>(sepia_percent_numeric_up_down.value()));};
+      sepia_percent_track_bar.value_changed += [&] {
+        sepia_percent_numeric_up_down.value(sepia_percent_track_bar.value());
         update_pictures();
       };
       
-      threshold_solarize_numeric_up_down.value_changed += [&] {threshold_solarize_track_bar.value(as<int32>(threshold_solarize_numeric_up_down.value()));};
-      threshold_solarize_track_bar.value_changed += [&] {
-        threshold_solarize_numeric_up_down.value(threshold_solarize_track_bar.value());
+      solarize_threshold_numeric_up_down.value_changed += [&] {solarize_threshold_track_bar.value(as<int32>(solarize_threshold_numeric_up_down.value()));};
+      solarize_threshold_track_bar.value_changed += [&] {
+        solarize_threshold_numeric_up_down.value(solarize_threshold_track_bar.value());
         update_pictures();
       };
 
@@ -378,7 +378,7 @@ namespace image_effector_example {
       hue_rotate_percent_track_bar.value(90);
       invert_percent_track_bar.value(100);
       opacity_percent_track_bar.value(50);
-      levels_posterize_track_bar.value(4);
+      posterize_levels_track_bar.value(4);
       rescale_maintain_aspect_ratio_check_box.checked(false);
       rescale_aspect_ratio = as<double>(original_image().size().width) / original_image().size().height;
       rescale_width_numeric_up_down.value(original_image_.width());
@@ -392,9 +392,9 @@ namespace image_effector_example {
       resize_maintain_aspect_ratio_check_box.checked(true);
       resize_width_track_bar.value(original_image().size().width / 5 * 4);
       rotate_flip_choice.selected_index(6);
-      percent_saturate_track_bar.value(300);
-      percent_sepia_track_bar.value(100);
-      threshold_solarize_track_bar.value(128);
+      saturate_percent_track_bar.value(300);
+      sepia_percent_track_bar.value(100);
+      solarize_threshold_track_bar.value(128);
       threshold_threshold_track_bar.value(382);
     }
 
@@ -416,13 +416,13 @@ namespace image_effector_example {
       else if (effect_choice.selected_item() == "hue-rotate")adjusted_image = image_converter::hue_rotate(original_image(), hue_rotate_percent_track_bar.value());
       else if (effect_choice.selected_item() == "invert") adjusted_image = image_converter::invert(original_image(), invert_percent_track_bar.value() / 100.0);
       else if (effect_choice.selected_item() == "opacity") adjusted_image = image_converter::opacity(original_image(), opacity_percent_track_bar.value() / 100.0);
-      else if (effect_choice.selected_item() == "posterize") adjusted_image = image_effector::set_effect(original_image(), posterize_effect {levels_posterize_track_bar.value()});
+      else if (effect_choice.selected_item() == "posterize") adjusted_image = image_effector::set_effect(original_image(), posterize_effect {posterize_levels_track_bar.value()});
       else if (effect_choice.selected_item() == "rescale") adjusted_image = image_converter::rescale(original_image(), {rescale_width_track_bar.value(), rescale_height_track_bar.value()});
       else if (effect_choice.selected_item() == "resize") adjusted_image = image_converter::resize(original_image(), {resize_x_track_bar.value(), resize_y_track_bar.value(), resize_width_track_bar.value(), resize_height_track_bar.value()});
       else if (effect_choice.selected_item() == "rotate-flip") adjusted_image = image_converter::rotate_flip(original_image(), as<rotate_flip_type>(rotate_flip_choice.selected_item().tag()));
-      else if (effect_choice.selected_item() == "saturate") adjusted_image = image_converter::saturate(original_image(), percent_saturate_track_bar.value() / 100.0);
-      else if (effect_choice.selected_item() == "sepia") adjusted_image = image_converter::sepia(original_image(), percent_sepia_track_bar.value() / 100.0);
-      else if (effect_choice.selected_item() == "solarize") adjusted_image = image_effector::set_effect(original_image(), solarize_effect {threshold_solarize_track_bar.value()});
+      else if (effect_choice.selected_item() == "saturate") adjusted_image = image_converter::saturate(original_image(), saturate_percent_track_bar.value() / 100.0);
+      else if (effect_choice.selected_item() == "sepia") adjusted_image = image_converter::sepia(original_image(), sepia_percent_track_bar.value() / 100.0);
+      else if (effect_choice.selected_item() == "solarize") adjusted_image = image_effector::set_effect(original_image(), solarize_effect {solarize_threshold_track_bar.value()});
       else if (effect_choice.selected_item() == "threshold") adjusted_image = image_converter::threshold(original_image(), threshold_threshold_track_bar.value());
       else adjusted_image = original_image();
       adjusted_picture_panel.invalidate();
@@ -582,9 +582,9 @@ namespace image_effector_example {
     numeric_up_down opacity_percent_numeric_up_down = numeric_up_down::create(opacity_panel, 50, 0, 100, {290, 50}, {110, 25});
     
     panel posterize_panel = panel::create(*this, {0, 0}, {730, 170});
-    label levels_posterize_label = label::create(posterize_panel, "Levels", {10, 54}, {70, 23});
-    track_bar levels_posterize_track_bar = track_bar::create(posterize_panel, 4, 1, 256, {80, 50}, {200, 25});
-    numeric_up_down levels_posterize_numeric_up_down = numeric_up_down::create(posterize_panel, 4, 1, 256, {290, 50}, {110, 25});
+    label posterize_levels_label = label::create(posterize_panel, "Levels", {10, 54}, {70, 23});
+    track_bar posterize_levels_track_bar = track_bar::create(posterize_panel, 4, 1, 256, {80, 50}, {200, 25});
+    numeric_up_down posterize_levels_numeric_up_down = numeric_up_down::create(posterize_panel, 4, 1, 256, {290, 50}, {110, 25});
 
     panel rescale_panel = panel::create(*this, {0, 0}, {730, 170});
     label rescale_width_label = label::create(rescale_panel, "Width", {10, 34}, {50, 23});
@@ -615,19 +615,19 @@ namespace image_effector_example {
     choice rotate_flip_choice = choice::create(rotate_flip_panel, {{"rotate_none_flip_none", rotate_flip_type::rotate_none_flip_none}, {"rotate_90_flip_none", rotate_flip_type::rotate_90_flip_none}, {"rotate_180_flip_none", rotate_flip_type::rotate_180_flip_none}, {"rotate_270_flip_none", rotate_flip_type::rotate_270_flip_none}, {"rotate_none_flip_x", rotate_flip_type::rotate_none_flip_x}, {"rotate_90_flip_x", rotate_flip_type::rotate_90_flip_x}, {"rotate_180_flip_x", rotate_flip_type::rotate_180_flip_x}, {"rotate_270_flip_x", rotate_flip_type::rotate_270_flip_x}, {"rotate_none_flip_y", rotate_flip_type::rotate_none_flip_y}, {"rotate_90_flip_y", rotate_flip_type::rotate_90_flip_y}, {"rotate_180_flip_y", rotate_flip_type::rotate_180_flip_y}, {"rotate_270_flip_y", rotate_flip_type::rotate_270_flip_y}, {"rotate_none_flip_xy", rotate_flip_type::rotate_none_flip_xy}, {"rotate_90_flip_xy", rotate_flip_type::rotate_90_flip_xy}, {"rotate_180_flip_xy", rotate_flip_type::rotate_180_flip_xy}, {"rotate_270_flip_xy", rotate_flip_type::rotate_270_flip_xy}}, 6, {100, 50}, {180, 25});
     
     panel saturate_panel = panel::create(*this, {0, 0}, {730, 170});
-    label percent_saturate_label = label::create(saturate_panel, "Percent", {10, 54}, {70, 23});
-    track_bar percent_saturate_track_bar = track_bar::create(saturate_panel, 300, 0, 400, {80, 50}, {200, 25});
-    numeric_up_down percent_saturate_numeric_up_down = numeric_up_down::create(saturate_panel, 300, 0, 400, {290, 50}, {110, 25});
+    label saturate_percent_label = label::create(saturate_panel, "Percent", {10, 54}, {70, 23});
+    track_bar saturate_percent_track_bar = track_bar::create(saturate_panel, 300, 0, 400, {80, 50}, {200, 25});
+    numeric_up_down saturate_percent_numeric_up_down = numeric_up_down::create(saturate_panel, 300, 0, 400, {290, 50}, {110, 25});
     
     panel sepia_panel = panel::create(*this, {0, 0}, {730, 170});
-    label percent_sepia_label = label::create(sepia_panel, "Percent", {10, 54}, {70, 23});
-    track_bar percent_sepia_track_bar = track_bar::create(sepia_panel, 100, 0, 100, {80, 50}, {200, 25});
-    numeric_up_down percent_sepia_numeric_up_down = numeric_up_down::create(sepia_panel, 100, 0, 100, {290, 50}, {110, 25});
+    label sepia_percent_label = label::create(sepia_panel, "Percent", {10, 54}, {70, 23});
+    track_bar sepia_percent_track_bar = track_bar::create(sepia_panel, 100, 0, 100, {80, 50}, {200, 25});
+    numeric_up_down sepia_percent_numeric_up_down = numeric_up_down::create(sepia_panel, 100, 0, 100, {290, 50}, {110, 25});
     
     panel solarize_panel = panel::create(*this, {0, 0}, {730, 170});
-    label threshold_solarize_label = label::create(solarize_panel, "Threshold", {10, 54}, {70, 23});
-    track_bar threshold_solarize_track_bar = track_bar::create(solarize_panel, 128, 0, 255, {80, 50}, {200, 25});
-    numeric_up_down threshold_solarize_numeric_up_down = numeric_up_down::create(solarize_panel, 128, 0, 255, {290, 50}, {110, 25});
+    label solarize_threshold_label = label::create(solarize_panel, "Threshold", {10, 54}, {70, 23});
+    track_bar solarize_threshold_track_bar = track_bar::create(solarize_panel, 128, 0, 255, {80, 50}, {200, 25});
+    numeric_up_down solarize_threshold_numeric_up_down = numeric_up_down::create(solarize_panel, 128, 0, 255, {290, 50}, {110, 25});
 
     panel threshold_panel = panel::create(*this, {0, 0}, {730, 170});
     label threshold_threshold_label = label::create(threshold_panel, "Threshold", {10, 54}, {70, 23});
