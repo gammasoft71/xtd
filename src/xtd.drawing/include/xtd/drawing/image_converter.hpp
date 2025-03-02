@@ -404,21 +404,21 @@ namespace xtd {
 
       /// @brief Resize image with of the specified image with specified size.
       /// @param image The image to change the size.
-      /// @param size The new size.
+      /// @param rectangle The new rectangle.
       /// @par Appearance
       /// | Original             | Converted                   |
       /// | -------------------- | --------------------------- |
       /// | @image html ball.png | @image html ball_resize.png |
-      static void resize(xtd::drawing::image& image, const xtd::drawing::size& size);
+      static void resize(xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle);
       /// @brief Creates a new resized image with new size of the specified image with specified size.
       /// @param image The image to change the size.
-      /// @param size The new size.
+      /// @param rectangle The new rectangle.
       /// @return The converted image.
       /// @par Appearance
       /// | Original             | Converted                   |
       /// | -------------------- | --------------------------- |
       /// | @image html ball.png | @image html ball_resize.png |
-      static xtd::drawing::image resize(const xtd::drawing::image& image, const xtd::drawing::size& size);
+      static xtd::drawing::image resize(const xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle);
 
       /// @brief Rotates, flips, or rotates and flips of the specified image with specified rotate flip type.
       /// @param image The image to be rotated, flipped or rotated and flipped.
