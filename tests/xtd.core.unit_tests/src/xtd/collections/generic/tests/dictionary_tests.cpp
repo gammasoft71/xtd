@@ -560,13 +560,13 @@ namespace xtd::collections::generic::tests {
     void test_method_(const_items) {
       const auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}.items();
       assert::is_instance_of<dictionary<int, string>::base_type>(items);
-      collection_assert::are_equivalent(array<std::pair<int, string>> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}, items);
+      collection_assert::are_equivalent(std::vector<std::pair<const int, string>> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}, items);
     }
 
     void test_method_(items) {
       auto items = dictionary<int, string> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}.items();
       assert::is_instance_of<dictionary<int, string>::base_type>(items);
-      collection_assert::are_equivalent(array<std::pair<int, string>> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}, items);
+      collection_assert::are_equivalent(std::vector<std::pair<const int, string>> {{1, "one"}, {2, "two"}, {3, "three"}, {4, "four"}, {5, "five"}}, items);
     }
     
     void test_method_(keys) {
