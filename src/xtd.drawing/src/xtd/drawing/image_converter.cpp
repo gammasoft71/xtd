@@ -372,6 +372,7 @@ void image_converter::opacity(image& image, double percent) {
   for (auto y = 0; y < image.height(); ++y)
     for (auto x = 0; x < image.width(); ++x) {
       auto pixel = y * image.width() + x;
+      if (!alpha[pixel]) continue;
       auto opacity_a = static_cast<xtd::byte>(255 * percent);
       alpha[pixel] = opacity_a;
     }
