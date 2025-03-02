@@ -58,6 +58,7 @@ namespace image_effector_example {
       color_extraction_panel.dock(xtd::forms::dock_style::fill);
       color_substitution_panel.dock(xtd::forms::dock_style::fill);
       contrast_panel.dock(xtd::forms::dock_style::fill);
+      crop_panel.dock(xtd::forms::dock_style::fill);
       disabled_panel.dock(xtd::forms::dock_style::fill);
       drop_shadow_panel.dock(xtd::forms::dock_style::fill);
       gamma_correction_panel.dock(xtd::forms::dock_style::fill);
@@ -130,6 +131,46 @@ namespace image_effector_example {
       percent_contrast_numeric_up_down.value_changed += [&] {percent_contrast_track_bar.value(as<int32>(percent_contrast_numeric_up_down.value()));};
       percent_contrast_track_bar.value_changed += [&] {
         percent_contrast_numeric_up_down.value(percent_contrast_track_bar.value());
+        update_pictures();
+      };
+      
+      x_crop_numeric_up_down.value_changed += [&] {
+        if (x_crop_numeric_up_down.value() > original_image().width() - width_crop_track_bar.value()) x_crop_numeric_up_down.value(original_image().width() - width_crop_track_bar.value());
+        x_crop_track_bar.value(as<int32>(x_crop_numeric_up_down.value()));
+      };
+      x_crop_track_bar.value_changed += [&] {
+        if (x_crop_track_bar.value() > original_image().width() - width_crop_track_bar.value()) x_crop_track_bar.value(original_image().width() - width_crop_track_bar.value());
+        x_crop_numeric_up_down.value(x_crop_track_bar.value());
+        update_pictures();
+      };
+      
+      y_crop_numeric_up_down.value_changed += [&] {
+        if (y_crop_numeric_up_down.value() > original_image().height() - height_crop_track_bar.value()) y_crop_numeric_up_down.value(original_image().height() - height_crop_track_bar.value());
+        y_crop_track_bar.value(as<int32>(y_crop_numeric_up_down.value()));
+      };
+      y_crop_track_bar.value_changed += [&] {
+        if (y_crop_track_bar.value() > original_image().height() - height_crop_track_bar.value()) y_crop_track_bar.value(original_image().height() - height_crop_track_bar.value());
+        y_crop_numeric_up_down.value(y_crop_track_bar.value());
+        update_pictures();
+      };
+      
+      width_crop_numeric_up_down.value_changed += [&] {
+        if (width_crop_numeric_up_down.value() > original_image().width() - x_crop_track_bar.value()) width_crop_numeric_up_down.value(original_image().width() - x_crop_track_bar.value());
+        width_crop_track_bar.value(as<int32>(width_crop_numeric_up_down.value()));
+      };
+      width_crop_track_bar.value_changed += [&] {
+        if (width_crop_track_bar.value() > original_image().width() - x_crop_track_bar.value()) width_crop_track_bar.value(original_image().width() - x_crop_track_bar.value());
+        width_crop_numeric_up_down.value(width_crop_track_bar.value());
+        update_pictures();
+      };
+      
+      height_crop_numeric_up_down.value_changed += [&] {
+        if (height_crop_numeric_up_down.value() > original_image().height() - y_crop_track_bar.value()) height_crop_numeric_up_down.value(original_image().height() - y_crop_track_bar.value());
+        height_crop_track_bar.value(as<int32>(height_crop_numeric_up_down.value()));
+      };
+      height_crop_track_bar.value_changed += [&] {
+        if (height_crop_track_bar.value() > original_image().height() - y_crop_track_bar.value()) height_crop_track_bar.value(original_image().height() - y_crop_track_bar.value());
+        height_crop_numeric_up_down.value(height_crop_track_bar.value());
         update_pictures();
       };
 
@@ -332,6 +373,7 @@ namespace image_effector_example {
       else if (effect_choice.selected_item() == "color-extraction") adjusted_image = image_effector::set_effect(original_image(), color_extraction_effect {threshold_color_extraction_track_bar.value(), extraction_color_color_extraction_color_picker.color(), other_pixels_color_color_extraction_color_picker.color()});
       else if (effect_choice.selected_item() == "color-substitution") adjusted_image = image_effector::set_effect(original_image(), color_substitution_effect {threshold_color_substitution_track_bar.value(), source_color_color_substitution_color_picker.color(), new_color_color_substitution_color_picker.color()});
       else if (effect_choice.selected_item() == "contrast") adjusted_image = image_effector::set_effect(original_image(), contrast_effect {percent_contrast_track_bar.value() / 100.0});
+      else if (effect_choice.selected_item() == "crop") adjusted_image = image_converter::crop(original_image(), rectangle {x_crop_track_bar.value(), y_crop_track_bar.value(), width_crop_track_bar.value(), height_crop_track_bar.value()});
       else if (effect_choice.selected_item() == "disabled") adjusted_image = disabled_switch_button.checked() ? bitmap {image_effector::set_effect(original_image(), disabled_effect {adjusted_picture_panel.back_color()})} : original_image();
       else if (effect_choice.selected_item() == "drop-shadow") adjusted_image = image_converter::drop_shadow(original_image(), horizontal_drop_shadow_track_bar.value(), vertical_drop_shadow_track_bar.value(), radius_drop_shadow_track_bar.value(), color_drop_shadow_color_picker.color());
       else if (effect_choice.selected_item() == "gamma-correction") adjusted_image = image_converter::gamma_correction(original_image(), red_correction_gamma_correction_track_bar.value() / 10.0, green_correction_gamma_correction_track_bar.value() / 10.0, blue_correction_gamma_correction_track_bar.value() / 10.0);
@@ -340,7 +382,7 @@ namespace image_effector_example {
       else if (effect_choice.selected_item() == "invert") adjusted_image = image_converter::invert(original_image(), percent_invert_track_bar.value() / 100.0);
       else if (effect_choice.selected_item() == "opacity") adjusted_image = image_converter::opacity(original_image(), percent_opacity_track_bar.value() / 100.0);
       else if (effect_choice.selected_item() == "posterize") adjusted_image = image_effector::set_effect(original_image(), posterize_effect {levels_posterize_track_bar.value()});
-      else if (effect_choice.selected_item() == "rescale") adjusted_image = image_converter::rescale(original_image(), {resize_width_track_bar.value(), rescale_height_track_bar.value()});
+      else if (effect_choice.selected_item() == "rescale") adjusted_image = image_converter::rescale(original_image(), {rescale_width_track_bar.value(), rescale_height_track_bar.value()});
       else if (effect_choice.selected_item() == "resize") adjusted_image = image_converter::resize(original_image(), {resize_width_track_bar.value(), resize_height_track_bar.value()});
       else if (effect_choice.selected_item() == "rotate-flip") adjusted_image = image_converter::rotate_flip(original_image(), as<rotate_flip_type>(rotate_flip_choice.selected_item().tag()));
       else if (effect_choice.selected_item() == "saturate") adjusted_image = image_converter::saturate(original_image(), percent_saturate_track_bar.value() / 100.0);
@@ -353,6 +395,26 @@ namespace image_effector_example {
     
     void on_picture_choice_selected_value_changed() {
       original_image_ = as<bitmap>(picture_choice.selected_item().tag());
+      
+      width_crop_track_bar.maximum(original_image_.width());
+      width_crop_track_bar.value(original_image_.width() - 50);
+      height_crop_track_bar.maximum(original_image_.height());
+      height_crop_track_bar.value(original_image_.height() - 50);
+      
+      rescale_maintain_aspect_ratio_check_box.checked(false);
+      rescale_aspect_ratio = as<double>(original_image().size().width) / original_image().size().height;
+      rescale_width_numeric_up_down.value(original_image_.width());
+      rescale_width_numeric_up_down.value(original_image_.height());
+      rescale_maintain_aspect_ratio_check_box.checked(true);
+      rescale_width_track_bar.value(original_image().size().width / 5 * 4);
+
+      resize_maintain_aspect_ratio_check_box.checked(false);
+      resize_aspect_ratio = as<double>(original_image().size().width) / original_image().size().height;
+      resize_width_numeric_up_down.value(original_image_.width());
+      resize_width_numeric_up_down.value(original_image_.height());
+      resize_maintain_aspect_ratio_check_box.checked(true);
+      resize_width_track_bar.value(original_image().size().width / 5 * 4);
+
       update_pictures();
     }
     
@@ -364,6 +426,7 @@ namespace image_effector_example {
       color_extraction_panel.visible(effect_choice.selected_item() == "color-extraction");
       color_substitution_panel.visible(effect_choice.selected_item() == "color-substitution");
       contrast_panel.visible(effect_choice.selected_item() == "contrast");
+      crop_panel.visible(effect_choice.selected_item() == "crop");
       disabled_panel.visible(effect_choice.selected_item() == "disabled");
       drop_shadow_panel.visible(effect_choice.selected_item() == "drop-shadow");
       gamma_correction_panel.visible(effect_choice.selected_item() == "gamma-correction");
@@ -438,6 +501,20 @@ namespace image_effector_example {
     label percent_contrast_label = label::create(contrast_panel, "Percent", {10, 54}, {70, 23});
     track_bar percent_contrast_track_bar = track_bar::create(contrast_panel, 200, 0, 400, {80, 50}, {200, 25});
     numeric_up_down percent_contrast_numeric_up_down = numeric_up_down::create(contrast_panel, 200, 0, 400, {290, 50}, {110, 25});
+
+    panel crop_panel = panel::create(*this, {0, 0}, {730, 170});
+    label x_crop_label = label::create(crop_panel, "x", {10, 34}, {70, 23});
+    track_bar x_crop_track_bar = track_bar::create(crop_panel, 25, 0, 300, {80, 30}, {160, 25});
+    numeric_up_down x_crop_numeric_up_down = numeric_up_down::create(crop_panel, 25, -0, 300, {250, 30}, {110, 25});
+    label y_crop_label = label::create(crop_panel, "y", {375, 34}, {70, 23});
+    track_bar y_crop_track_bar = track_bar::create(crop_panel, 25, 0, 300, {440, 30}, {160, 25});
+    numeric_up_down y_crop_numeric_up_down = numeric_up_down::create(crop_panel, 25, 0, 300, {610, 30}, {110, 25});
+    label width_crop_label = label::create(crop_panel, "width", {10, 74}, {70, 23});
+    track_bar width_crop_track_bar = track_bar::create(crop_panel, 250, 1, 300, {80, 70}, {160, 25});
+    numeric_up_down width_crop_numeric_up_down = numeric_up_down::create(crop_panel, 250, 1, 300, {250, 70}, {110, 25});
+    label height_crop_label = label::create(crop_panel, "height", {375, 74}, {70, 23});
+    track_bar height_crop_track_bar = track_bar::create(crop_panel, 250, 1, 300, {440, 70}, {160, 25});
+    numeric_up_down height_crop_numeric_up_down = numeric_up_down::create(crop_panel, 250, 1, 300, {610, 70}, {110, 25});
 
     panel disabled_panel = panel::create(*this, {0, 0}, {730, 170});
     label disabled_label = label::create(disabled_panel, "Disabled", {10, 54}, {60, 23});
@@ -536,7 +613,7 @@ namespace image_effector_example {
     
     panel picures_panel = panel::create(*this, {0, 0}, {630, 400});
     label effect_label = label::create(picures_panel, "Effect", {10, 14}, {50, 23});
-    choice effect_choice = choice::create(picures_panel, {"bitonal", "blur", "brightness", "color", "color-extraction", "color-substitution", "contrast", "disabled", "drop-shadow", "gamma-correction", "grayscale", "hue-rotate", "invert", "opacity", "posterize", "rescale", "resize", "rotate-flip", "saturate", "sepia", "solarize", "threshold"}, {70, 10});
+    choice effect_choice = choice::create(picures_panel, {"bitonal", "blur", "brightness", "color", "color-extraction", "color-substitution", "contrast", "crop", "disabled", "drop-shadow", "gamma-correction", "grayscale", "hue-rotate", "invert", "opacity", "posterize", "rescale", "resize", "rotate-flip", "saturate", "sepia", "solarize", "threshold"}, {70, 10});
     label picture_label = label::create(picures_panel, "Picture", {220, 14}, {50, 23});
     choice picture_choice = choice::create(picures_panel, {{"ball", properties::resources::ball()}, {"pineapple", properties::resources::pineapple()}, {"rose", properties::resources::rose()}}, 0, {280, 10});
     label background_label = label::create(picures_panel, "Bacground", {430, 14}, {70, 23});
