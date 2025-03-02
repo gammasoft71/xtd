@@ -85,7 +85,7 @@ namespace xtd {
     /// @{
     /// @brief Creates an empty xtd::read_only_span whose xtd::read_only_span::data is null and xtd::read_only_span::size is 0.
     template <xtd::size count = 0>
-    constexpr read_only_span() : data_ {xtd::null}, length_ {0} {};
+    constexpr read_only_span() : data_ {xtd::null}, length_ {0} {}
     
     /// @brief 
     /// @brief Creates an xtd::read_only_span with specified iterators.
