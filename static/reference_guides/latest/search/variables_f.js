@@ -36,10 +36,11 @@ var searchData=
   ['orchid_33',['orchid',['../classxtd_1_1drawing_1_1color.html#a94ce76352507ef37c3f45eb461b166ba',1,'xtd::drawing::color']]],
   ['original_5fpath_5f_34',['original_path_',['../classxtd_1_1io_1_1file__system__info.html#aa45066e713be4415a7def84b85516072',1,'xtd::io::file_system_info']]],
   ['orthodox_5fcross_35',['orthodox_cross',['../classxtd_1_1forms_1_1emoticons.html#aa1b018d2b457ba3ea9875e695589d250',1,'xtd::forms::emoticons']]],
-  ['out_36',['out',['../classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888',1,'xtd::console']]],
-  ['outbox_5ftray_37',['outbox_tray',['../classxtd_1_1forms_1_1emoticons.html#ab8132679b7118e34c7782afb30e79302',1,'xtd::forms::emoticons']]],
-  ['output_5fdata_5freceived_38',['output_data_received',['../classxtd_1_1diagnostics_1_1process.html#a1e1cc3459ad0434a30618151a2ca38c9',1,'xtd::diagnostics::process']]],
-  ['overheated_5fface_39',['overheated_face',['../classxtd_1_1forms_1_1emoticons.html#ae9ad653a177e95b2d2a645c2a6d447ea',1,'xtd::forms::emoticons']]],
-  ['owl_40',['owl',['../classxtd_1_1forms_1_1emoticons.html#ad2819269f9a9113c4e444316895da37d',1,'xtd::forms::emoticons']]],
-  ['ox_41',['ox',['../classxtd_1_1forms_1_1emoticons.html#a72e7ba8c9b891aeb25fdfda4e5b755df',1,'xtd::forms::emoticons']]]
+  ['other_5fpixels_5fcolor_36',['other_pixels_color',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1color__extraction__effect.html#a91af56f1bdd464f03114473ec1849583',1,'xtd::drawing::imaging::effects::color_extraction_effect']]],
+  ['out_37',['out',['../classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888',1,'xtd::console']]],
+  ['outbox_5ftray_38',['outbox_tray',['../classxtd_1_1forms_1_1emoticons.html#ab8132679b7118e34c7782afb30e79302',1,'xtd::forms::emoticons']]],
+  ['output_5fdata_5freceived_39',['output_data_received',['../classxtd_1_1diagnostics_1_1process.html#a1e1cc3459ad0434a30618151a2ca38c9',1,'xtd::diagnostics::process']]],
+  ['overheated_5fface_40',['overheated_face',['../classxtd_1_1forms_1_1emoticons.html#ae9ad653a177e95b2d2a645c2a6d447ea',1,'xtd::forms::emoticons']]],
+  ['owl_41',['owl',['../classxtd_1_1forms_1_1emoticons.html#ad2819269f9a9113c4e444316895da37d',1,'xtd::forms::emoticons']]],
+  ['ox_42',['ox',['../classxtd_1_1forms_1_1emoticons.html#a72e7ba8c9b891aeb25fdfda4e5b755df',1,'xtd::forms::emoticons']]]
 ];
