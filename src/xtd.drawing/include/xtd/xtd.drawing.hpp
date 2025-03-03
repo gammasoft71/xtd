@@ -37,6 +37,7 @@
 #include "drawing/imaging/effects/disabled_effect.hpp"
 #include "drawing/imaging/effects/effect.hpp"
 #include "drawing/imaging/effects/posterize_effect.hpp"
+#include "drawing/imaging/effects/resize_effect.hpp"
 #include "drawing/imaging/effects/solarize_effect.hpp"
 #include "drawing/imaging/bitmap_data.hpp"
 #include "drawing/imaging/color_palette.hpp"

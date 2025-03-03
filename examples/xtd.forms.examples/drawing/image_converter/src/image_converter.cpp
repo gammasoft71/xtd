@@ -282,7 +282,12 @@ namespace image_effector_example {
         if (resize_maintain_aspect_ratio_check_box.checked()) resize_width_numeric_up_down.value(as<int>(resize_height_track_bar.value() * resize_aspect_ratio));
         update_pictures();
       };
-      
+      resize_fill_color_color_picker.color_picker_changed += [&] {update_pictures();};
+      resize_auto_determine_fill_color_ratio_check_box.checked_changed += [&] {
+        resize_fill_color_color_picker.enabled(!resize_auto_determine_fill_color_ratio_check_box.checked());
+        update_pictures();
+      };
+
       rotate_flip_choice.selected_index_changed += [&] {update_pictures();};
       
       saturate_percent_numeric_up_down.value_changed += [&] {saturate_percent_track_bar.value(as<int32>(saturate_percent_numeric_up_down.value()));};
@@ -370,6 +375,7 @@ namespace image_effector_example {
       drop_shadow_radius_track_bar.value(10);
       drop_shadow_horizontal_track_bar.value(8);
       drop_shadow_vertical_track_bar.value(8);
+      drop_shadow_color_color_picker.alpha_color(true);
       drop_shadow_color_color_picker.color(color::black);
       gamma_correction_red_correction_track_bar.value(20);
       gamma_correction_green_correction_track_bar.value(16);
@@ -391,6 +397,9 @@ namespace image_effector_example {
       resize_width_numeric_up_down.value(original_image_.height());
       resize_maintain_aspect_ratio_check_box.checked(true);
       resize_width_track_bar.value(original_image().size().width / 5 * 4);
+      resize_fill_color_color_picker.alpha_color(true);
+      resize_auto_determine_fill_color_ratio_check_box.checked(false);
+      resize_fill_color_color_picker.color(color::transparent);
       rotate_flip_choice.selected_index(6);
       saturate_percent_track_bar.value(300);
       sepia_percent_track_bar.value(100);
@@ -418,7 +427,7 @@ namespace image_effector_example {
       else if (effect_choice.selected_item() == "opacity") adjusted_image = image_converter::opacity(original_image(), opacity_percent_track_bar.value() / 100.0);
       else if (effect_choice.selected_item() == "posterize") adjusted_image = image_effector::set_effect(original_image(), posterize_effect {posterize_levels_track_bar.value()});
       else if (effect_choice.selected_item() == "rescale") adjusted_image = image_converter::rescale(original_image(), {rescale_width_track_bar.value(), rescale_height_track_bar.value()});
-      else if (effect_choice.selected_item() == "resize") adjusted_image = image_converter::resize(original_image(), {resize_x_track_bar.value(), resize_y_track_bar.value(), resize_width_track_bar.value(), resize_height_track_bar.value()});
+      else if (effect_choice.selected_item() == "resize") adjusted_image = image_effector::set_effect(original_image(), resize_auto_determine_fill_color_ratio_check_box.checked() ? resize_effect {rectangle {resize_x_track_bar.value(), resize_y_track_bar.value(), resize_width_track_bar.value(), resize_height_track_bar.value()}, resize_auto_determine_fill_color_ratio_check_box.checked()} : resize_effect {rectangle {resize_x_track_bar.value(), resize_y_track_bar.value(), resize_width_track_bar.value(), resize_height_track_bar.value()}, resize_fill_color_color_picker.color()});
       else if (effect_choice.selected_item() == "rotate-flip") adjusted_image = image_converter::rotate_flip(original_image(), as<rotate_flip_type>(rotate_flip_choice.selected_item().tag()));
       else if (effect_choice.selected_item() == "saturate") adjusted_image = image_converter::saturate(original_image(), saturate_percent_track_bar.value() / 100.0);
       else if (effect_choice.selected_item() == "sepia") adjusted_image = image_converter::sepia(original_image(), sepia_percent_track_bar.value() / 100.0);
@@ -608,8 +617,11 @@ namespace image_effector_example {
     label resize_height_label = label::create(resize_panel, "height", {375, 54}, {70, 23});
     track_bar resize_height_track_bar = track_bar::create(resize_panel, original_image().size().height, 1, original_image().size().height * 2, {440, 50}, {160, 25});
     numeric_up_down resize_height_numeric_up_down = numeric_up_down::create(resize_panel, original_image().size().height, 1, original_image().size().height * 2, {610, 50}, {110, 25});
-    check_box resize_maintain_aspect_ratio_check_box = check_box::create(resize_panel, "Maintain aspect ratio", check_state::checked, {10, 94}, {150, 23});
-    
+    check_box resize_maintain_aspect_ratio_check_box = check_box::create(resize_panel, "Maintain aspect ratio", check_state::checked, {10, 90}, {150, 23});
+    label resize_fill_color_label = label::create(resize_panel, "Fill", {220, 94}, {30, 23});
+    color_picker resize_fill_color_color_picker = color_picker::create(resize_panel, color::transparent, {250, 90});
+    check_box resize_auto_determine_fill_color_ratio_check_box = check_box::create(resize_panel, "Auto determine fill color", check_state::unchecked, {375, 90}, {180, 23});
+
     panel rotate_flip_panel = panel::create(*this, {0, 0}, {730, 170});
     label rotate_flip_label = label::create(rotate_flip_panel, "Rotate-flip", {10, 54}, {80, 23});
     choice rotate_flip_choice = choice::create(rotate_flip_panel, {{"rotate_none_flip_none", rotate_flip_type::rotate_none_flip_none}, {"rotate_90_flip_none", rotate_flip_type::rotate_90_flip_none}, {"rotate_180_flip_none", rotate_flip_type::rotate_180_flip_none}, {"rotate_270_flip_none", rotate_flip_type::rotate_270_flip_none}, {"rotate_none_flip_x", rotate_flip_type::rotate_none_flip_x}, {"rotate_90_flip_x", rotate_flip_type::rotate_90_flip_x}, {"rotate_180_flip_x", rotate_flip_type::rotate_180_flip_x}, {"rotate_270_flip_x", rotate_flip_type::rotate_270_flip_x}, {"rotate_none_flip_y", rotate_flip_type::rotate_none_flip_y}, {"rotate_90_flip_y", rotate_flip_type::rotate_90_flip_y}, {"rotate_180_flip_y", rotate_flip_type::rotate_180_flip_y}, {"rotate_270_flip_y", rotate_flip_type::rotate_270_flip_y}, {"rotate_none_flip_xy", rotate_flip_type::rotate_none_flip_xy}, {"rotate_90_flip_xy", rotate_flip_type::rotate_90_flip_xy}, {"rotate_180_flip_xy", rotate_flip_type::rotate_180_flip_xy}, {"rotate_270_flip_xy", rotate_flip_type::rotate_270_flip_xy}}, 6, {100, 50}, {180, 25});
