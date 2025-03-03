@@ -39,7 +39,7 @@ namespace xtd {
           brightness_effect() = default;
           /// @brief Initialise the new instance of xtd::drawing::imaging::brightness_effect object with specified percent.
           /// @param percent The percent factor in %.
-          brightness_effect(double percent);
+          explicit brightness_effect(double percent);
           /// @}
 
           /// @name Public Properties
