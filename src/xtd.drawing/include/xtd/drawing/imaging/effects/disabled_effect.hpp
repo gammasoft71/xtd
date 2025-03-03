@@ -15,7 +15,7 @@ namespace xtd {
     namespace imaging {
       /// @brief The xtd::drawing::imaging::effects namespace provides functionality for adding effects to images.
       namespace effects {
-        /// @brief The xtd::drawing::imaging::effects::brightness_effect changes the contrast of the image with percent factor.
+        /// @brief The xtd::drawing::imaging::effects::disabled_effect disables the image with brightness or background color.
         /// @par Namespace
         /// xtd::drawing::imaging::effects
         /// @par Library
@@ -40,10 +40,10 @@ namespace xtd {
           disabled_effect() = default;
           /// @brief Initialise the new instance of xtd::drawing::imaging::disabled_effect object with specified background color.
           /// @param back_color The background color.
-          disabled_effect(const xtd::drawing::color& back_color);
+          explicit disabled_effect(const xtd::drawing::color& back_color);
           /// @brief Initialise the new instance of xtd::drawing::imaging::disabled_effect object with specified brightness.
           /// @param brightness The brightness.
-          disabled_effect(float brightness);
+          explicit disabled_effect(float brightness);
           /// @}
 
           /// @name Public Properties
