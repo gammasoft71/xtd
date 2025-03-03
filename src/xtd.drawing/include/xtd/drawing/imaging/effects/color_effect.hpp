@@ -14,7 +14,7 @@ namespace xtd {
     namespace imaging {
       /// @brief The xtd::drawing::imaging::effects namespace provides functionality for adding effects to images.
       namespace effects {
-        /// @brief The xtd::drawing::imaging::effects::color_effect converts image into blured image.
+        /// @brief The xtd::drawing::imaging::effects::color_effect adds or removes a color to the image with percent factor.
         /// @par Namespace
         /// xtd::drawing::imaging::effects
         /// @par Library
