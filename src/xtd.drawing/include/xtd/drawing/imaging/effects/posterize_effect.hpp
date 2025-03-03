@@ -14,7 +14,7 @@ namespace xtd {
     namespace imaging {
       /// @brief The xtd::drawing::imaging::effects namespace provides functionality for adding effects to images.
       namespace effects {
-        /// @brief The xtd::drawing::imaging::effects::posterize_effect converts image into posterized colors.
+        /// @brief The xtd::drawing::imaging::effects::posterize_effect posterizes the image with color levels.
         /// @par Namespace
         /// xtd::drawing::imaging::effects
         /// @par Library
