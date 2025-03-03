@@ -25,7 +25,7 @@ namespace xtd {
         /// | -------------------- | ------------------------------------- |
         /// | @image html ball.png | @image html ball_color_extraction.png |
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::effects::color_extraction_effect with image.
+        /// The following example code shows how tu use xtd::drawing::imaging::effects::color_extraction_effect with image.
         /// ```cpp
         /// const auto img = image::from_file("ball.png");
         /// auto result = image_effector::set_effect(img, color_extraction_effect {260, color::green, color::white});
