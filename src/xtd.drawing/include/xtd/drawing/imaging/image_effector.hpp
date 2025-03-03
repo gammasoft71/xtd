@@ -32,7 +32,7 @@ namespace xtd {
         /// @param effect The effect to apply.
         /// @return The resulting image.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with image, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with image, and effect.
         /// ```cpp
         /// const auto img = image::from_file("ball.png");
         /// auto result = image_effector::set_effect(img, blur_effect {10});
@@ -48,7 +48,7 @@ namespace xtd {
         /// @param effect The effect to apply.
         /// @return The resulting image.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with image, x, y width, height, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with image, x, y width, height, and effect.
         /// ```cpp
         /// const auto img = image::from_file("ball.png");
         /// auto result = image_effector::set_effect(img, 50, 50, 200, 200, blur_effect {10});
@@ -64,7 +64,7 @@ namespace xtd {
         /// @param effect The effect to apply.
         /// @return The resulting image.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with image, x, y width, height, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with image, x, y width, height, and effect.
         /// ```cpp
         /// const auto img = image::from_file("ball.png");
         /// auto result = image_effector::set_effect(img, 50.0f, 50.0f, 200.0f, 200.0f, blur_effect {10});
@@ -77,7 +77,7 @@ namespace xtd {
         /// @param effect The effect to apply.
         /// @return The resulting image.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with image, rectangle, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with image, rectangle, and effect.
         /// ```cpp
         /// const auto img = image::from_file("ball.png");
         /// const auto rect = rectangle {50, 50, 200, 200};
@@ -91,7 +91,7 @@ namespace xtd {
         /// @param effect The effect to apply.
         /// @return The resulting image.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with image, rectangle, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with image, rectangle, and effect.
         /// ```cpp
         /// const auto img = image::from_file("ball.png");
         /// const auto rect = rectangle_f {50.0f, 50.0f, 200.0f, 200.0f};
@@ -105,7 +105,7 @@ namespace xtd {
         /// @param effect The effect to apply.
         /// @return The resulting image.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with image, region, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with image, region, and effect.
         /// ```cpp
         /// const auto img = image::from_file("ball.png");
         /// auto path = graphics_path {};
@@ -119,7 +119,7 @@ namespace xtd {
         /// @param image The xtd::drawing::image to which to apply the effect.
         /// @param effect The effect to apply.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with image, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with image, and effect.
         /// ```cpp
         /// auto img = image::from_file("ball.png");
         /// image_effector::set_effect(img, blur_effect {10});
@@ -134,7 +134,7 @@ namespace xtd {
         /// @param height Height of the bounding rectangle to with apply effect.
         /// @param effect The effect to apply.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with image, x, y, width, height, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with image, x, y, width, height, and effect.
         /// ```cpp
         /// auto img = image::from_file("ball.png");
         /// image_effector::set_effect(img, 50, 50, 200, 200, blur_effect {10});
@@ -149,7 +149,7 @@ namespace xtd {
         /// @param height Height of the bounding rectangle to with apply effect.
         /// @param effect The effect to apply.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with image, x, y, width, height, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with image, x, y, width, height, and effect.
         /// ```cpp
         /// auto img = image::from_file("ball.png");
         /// image_effector::set_effect(img, 50.0f, 50.0f, 200.0f, 200.0f, blur_effect {10});
@@ -161,7 +161,7 @@ namespace xtd {
         /// @param rectangle The xtd::drawing::rectangle to with apply effect.
         /// @param effect The effect to apply.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with image, rectangle, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with image, rectangle, and effect.
         /// ```cpp
         /// auto img = image::from_file("ball.png");
         /// const auto rect = rectangle {50, 50, 200, 200};
@@ -174,7 +174,7 @@ namespace xtd {
         /// @param rectangle The xtd::drawing::rectangle to with apply effect.
         /// @param effect The effect to apply.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with image, rectangle, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with image, rectangle, and effect.
         /// ```cpp
         /// auto img = image::from_file("ball.png");
         /// const auto rect = rectangle_f {50.0f, 50.0f, 200.0f, 200.0f};
@@ -187,7 +187,7 @@ namespace xtd {
         /// @param region The xtd::drawing::region to with apply effect.
         /// @param effect The effect to apply.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with image, region, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with image, region, and effect.
         /// ```cpp
         /// auto img = image::from_file("ball.png");
         /// auto path = graphics_path {};
@@ -201,7 +201,7 @@ namespace xtd {
         /// @param image The xtd::drawing::graphics to which to apply the effect.
         /// @param effect The effect to apply.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with graphics, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with graphics, and effect.
         /// ```cpp
         /// void owner_control::set_blur_effect(graphics& g) {
         ///   image_effector::set_effect(g, blur_effect {10});
@@ -216,7 +216,7 @@ namespace xtd {
         /// @param height Height of the bounding rectangle to with apply effect.
         /// @param effect The effect to apply.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with graphics, rectangle, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with graphics, rectangle, and effect.
         /// ```cpp
         /// void owner_control::on_paint(xtd::forms::paint_event_args& e) override {
         ///   // ...
@@ -232,7 +232,7 @@ namespace xtd {
         /// @param height Height of the bounding rectangle to with apply effect.
         /// @param effect The effect to apply.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with graphics, rectangle, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with graphics, rectangle, and effect.
         /// ```cpp
         /// void owner_control::on_paint(xtd::forms::paint_event_args& e) override {
         ///   // ...
@@ -245,7 +245,7 @@ namespace xtd {
         /// @param rectangle The xtd::drawing::rectangle to with apply effect.
         /// @param effect The effect to apply.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with graphics, rectangle, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with graphics, rectangle, and effect.
         /// ```cpp
         /// void owner_control::on_paint(xtd::forms::paint_event_args& e) override {
         ///   // ...
@@ -258,7 +258,7 @@ namespace xtd {
         /// @param rectangle The xtd::drawing::rectangle to with apply effect.
         /// @param effect The effect to apply.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with graphics, rectangle, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with graphics, rectangle, and effect.
         /// ```cpp
         /// void owner_control::on_paint(xtd::forms::paint_event_args& e) override {
         ///   // ...
@@ -272,7 +272,7 @@ namespace xtd {
         /// @param region The xtd::drawing::rectangle to with apply effect.
         /// @param effect The effect to apply.
         /// @par Examples
-        /// The following example code shows hot tu use xtd::drawing::imaging::image_effector::set_effect with graphics, region, and effect.
+        /// The following example code shows how tu use xtd::drawing::imaging::image_effector::set_effect with graphics, region, and effect.
         /// ```cpp
         /// void owner_control::on_paint(xtd::forms::paint_event_args& e) override {
         ///   // ...
