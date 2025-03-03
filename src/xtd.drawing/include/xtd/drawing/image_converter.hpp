@@ -404,6 +404,23 @@ namespace xtd {
 
       /// @brief Resize image with of the specified image with specified size.
       /// @param image The image to change the size.
+      /// @param size The new size.
+      /// @par Appearance
+      /// | Original             | Converted                   |
+      /// | -------------------- | --------------------------- |
+      /// | @image html ball.png | @image html ball_resize.png |
+      static void resize(xtd::drawing::image& image, const xtd::drawing::size& size);
+      /// @brief Creates a new resized image with new size of the specified image with specified size.
+      /// @param image The image to change the size.
+      /// @param size The new size.
+      /// @return The converted image.
+      /// @par Appearance
+      /// | Original             | Converted                   |
+      /// | -------------------- | --------------------------- |
+      /// | @image html ball.png | @image html ball_resize.png |
+      static xtd::drawing::image resize(const xtd::drawing::image& image, const xtd::drawing::size& size);
+      /// @brief Resize image with of the specified image with specified size.
+      /// @param image The image to change the size.
       /// @param rectangle The new rectangle.
       /// @par Appearance
       /// | Original             | Converted                   |
