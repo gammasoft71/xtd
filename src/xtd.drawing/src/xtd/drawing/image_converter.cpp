@@ -394,6 +394,16 @@ xtd::drawing::image image_converter::rescale(const xtd::drawing::image& image, c
   return result;
 }
 
+void image_converter::resize(xtd::drawing::image& image, const xtd::drawing::size& size) {
+  image.resize(0, 0, size.width, size.height);
+}
+
+xtd::drawing::image image_converter::resize(const xtd::drawing::image& image, const xtd::drawing::size& size) {
+  auto result = image.clone();
+  resize(result, size);
+  return result;
+}
+
 void image_converter::resize(xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle) {
   image.resize(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
 }
