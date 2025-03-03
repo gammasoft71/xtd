@@ -415,21 +415,21 @@ namespace xtd {
   read_only_span(iterator_t first, iterator_t last) -> read_only_span<typename iterator_t::value_type>;
   
   template<class type_t, xtd::size len>
-  read_only_span(const type_t (&array)[len]) noexcept -> read_only_span<type_t>;
+  read_only_span(const type_t (&array)[len]) -> read_only_span<type_t>;
 
   template< class type_t, xtd::size len>
-  read_only_span(const std::array<type_t, len>& array) noexcept -> read_only_span<type_t>;
+  read_only_span(const std::array<type_t, len>& array) -> read_only_span<type_t>;
 
 #if defined(__xtd__cpp_lib_ranges)
   template<class range_t>
-  read_only_span(range_t&& items) noexcept -> read_only_span<typename std::remove_reference_t<xtd::ranges::range_reference_t<range_t>>>;
+  read_only_span(range_t&& items) -> read_only_span<typename std::remove_reference_t<xtd::ranges::range_reference_t<range_t>>>;
 #else
   template<class range_t>
-  read_only_span(range_t&& items) noexcept -> read_only_span<typename range_t::value_type>;
+  read_only_span(range_t&& items) -> read_only_span<typename range_t::value_type>;
 #endif
 
   template<class collection_t>
-  read_only_span(const collection_t& items) noexcept -> read_only_span<typename collection_t::value_type>;
+  read_only_span(const collection_t& items) -> read_only_span<typename collection_t::value_type>;
   
   template<class collection_t>
   read_only_span(const collection_t& items, xtd::size) -> read_only_span<typename collection_t::value_type>;
