@@ -14,7 +14,7 @@ namespace xtd {
     namespace imaging {
       /// @brief The xtd::drawing::imaging::effects namespace provides functionality for adding effects to images.
       namespace effects {
-        /// @brief The xtd::drawing::imaging::effects::solarize_effect converts image into solarized colors.
+        /// @brief The xtd::drawing::imaging::effects::solarize_effect solarizes the image with threashold.
         /// @par Namespace
         /// xtd::drawing::imaging::effects
         /// @par Library
@@ -39,7 +39,7 @@ namespace xtd {
           solarize_effect() = default;
           /// @brief Initialise the new instance of xtd::drawing::imaging::solarize_effect object with specified threshold.
           /// @param threshold The threshold value (from 0 to 765).
-          solarize_effect(int32 threshold);
+          explicit solarize_effect(int32 threshold);
           /// @}
 
           /// @name Public Properties
