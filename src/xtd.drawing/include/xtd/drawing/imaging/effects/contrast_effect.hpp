@@ -39,7 +39,7 @@ namespace xtd {
           contrast_effect() = default;
           /// @brief Initialise the new instance of xtd::drawing::imaging::contrast_effect object with specified percent.
           /// @param percent The percent factor in %.
-          contrast_effect(double percent);
+          explicit contrast_effect(double percent);
           /// @}
 
           /// @name Public Properties
