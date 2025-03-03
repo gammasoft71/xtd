@@ -155,6 +155,7 @@ namespace xtd {
         case string_comparison::current_culture_ignore_case:
         case string_comparison::invariant_culture_ignore_case:
         case string_comparison::ordinal_ignore_case: return x.to_lower().compare_to(y.to_lower());
+        default: return x.compare_to(y);
       }
     }
 
@@ -203,6 +204,7 @@ namespace xtd {
         case string_comparison::current_culture_ignore_case:
         case string_comparison::invariant_culture_ignore_case:
         case string_comparison::ordinal_ignore_case: return x.to_lower().equals(y.to_lower());
+        default : return x.equals(y);
       }
     }
         
@@ -233,6 +235,7 @@ namespace xtd {
         case string_comparison::current_culture_ignore_case:
         case string_comparison::invariant_culture_ignore_case:
         case string_comparison::ordinal_ignore_case: return obj.to_lower().get_hash_code();
+        default: return obj.get_hash_code();
       }
     }
     /// @}
