@@ -44,11 +44,12 @@ var searchData=
   ['athletic_5fshoe_41',['athletic_shoe',['../classxtd_1_1forms_1_1emoticons.html#a6a85dd5ddbc311f905c96b1a09d4980f',1,'xtd::forms::emoticons']]],
   ['atom_5fsymbol_42',['atom_symbol',['../classxtd_1_1forms_1_1emoticons.html#ab39352be2d445f5c7779a30a3a4b9d8a',1,'xtd::forms::emoticons']]],
   ['aubergine_43',['aubergine',['../classxtd_1_1forms_1_1emoticons.html#a3a642c78029d626c15a5dc82005f7e7c',1,'xtd::forms::emoticons']]],
-  ['auto_5frickshaw_44',['auto_rickshaw',['../classxtd_1_1forms_1_1emoticons.html#ab1dae616268dce4d5f323d8ae134d973',1,'xtd::forms::emoticons']]],
-  ['auto_5fsize_5fchanged_45',['auto_size_changed',['../classxtd_1_1forms_1_1control.html#a8cdb3a6b3fe7fb4d4fc09a9f9174d8b6',1,'xtd::forms::control']]],
-  ['automated_5fteller_5fmachine_46',['automated_teller_machine',['../classxtd_1_1forms_1_1emoticons.html#ad91cdf83ab76031fc427a38325403a05',1,'xtd::forms::emoticons']]],
-  ['automobile_47',['automobile',['../classxtd_1_1forms_1_1emoticons.html#a9cbcd1aa575bf0640da12d32ee0ad9df',1,'xtd::forms::emoticons']]],
-  ['avocado_48',['avocado',['../classxtd_1_1forms_1_1emoticons.html#a66fc8caeff71ef0e3b1e0be6d297f7cf',1,'xtd::forms::emoticons']]],
-  ['axe_49',['axe',['../classxtd_1_1forms_1_1emoticons.html#a9a195012c2c6e57fb7062561515af7b9',1,'xtd::forms::emoticons']]],
-  ['azure_50',['azure',['../classxtd_1_1drawing_1_1color.html#ac577434ff73788a4a5f2d01b969f1eb5',1,'xtd::drawing::color']]]
+  ['auto_5fdetermine_5ffill_5fcolor_44',['auto_determine_fill_color',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#a165b37e352851067c4565ed8916290d4',1,'xtd::drawing::imaging::effects::resize_effect']]],
+  ['auto_5frickshaw_45',['auto_rickshaw',['../classxtd_1_1forms_1_1emoticons.html#ab1dae616268dce4d5f323d8ae134d973',1,'xtd::forms::emoticons']]],
+  ['auto_5fsize_5fchanged_46',['auto_size_changed',['../classxtd_1_1forms_1_1control.html#a8cdb3a6b3fe7fb4d4fc09a9f9174d8b6',1,'xtd::forms::control']]],
+  ['automated_5fteller_5fmachine_47',['automated_teller_machine',['../classxtd_1_1forms_1_1emoticons.html#ad91cdf83ab76031fc427a38325403a05',1,'xtd::forms::emoticons']]],
+  ['automobile_48',['automobile',['../classxtd_1_1forms_1_1emoticons.html#a9cbcd1aa575bf0640da12d32ee0ad9df',1,'xtd::forms::emoticons']]],
+  ['avocado_49',['avocado',['../classxtd_1_1forms_1_1emoticons.html#a66fc8caeff71ef0e3b1e0be6d297f7cf',1,'xtd::forms::emoticons']]],
+  ['axe_50',['axe',['../classxtd_1_1forms_1_1emoticons.html#a9a195012c2c6e57fb7062561515af7b9',1,'xtd::forms::emoticons']]],
+  ['azure_51',['azure',['../classxtd_1_1drawing_1_1color.html#ac577434ff73788a4a5f2d01b969f1eb5',1,'xtd::drawing::color']]]
 ];

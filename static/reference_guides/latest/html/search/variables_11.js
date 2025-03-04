@@ -25,7 +25,7 @@ var searchData=
   ['rebecca_5fpurple_22',['rebecca_purple',['../classxtd_1_1drawing_1_1color.html#a4e75b99d1dc517da3b96418e663b9169',1,'xtd::drawing::color']]],
   ['receipt_23',['receipt',['../classxtd_1_1forms_1_1emoticons.html#a7efb6a9734a104a026592003f29ef6cc',1,'xtd::forms::emoticons']]],
   ['recreational_5fvehicle_24',['recreational_vehicle',['../classxtd_1_1forms_1_1emoticons.html#a94d6d0495b2620cb671873b29c357495',1,'xtd::forms::emoticons']]],
-  ['rectangle_25',['rectangle',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#a6fd03b6e89bea03a9edcf9271221c5c9',1,'xtd::drawing::imaging::effects::resize_effect']]],
+  ['rectangle_25',['rectangle',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1crop__effect.html#a77b3214c287ed76c5c75c4e5e48cbde9',1,'xtd::drawing::imaging::effects::crop_effect::rectangle'],['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#a6fd03b6e89bea03a9edcf9271221c5c9',1,'xtd::drawing::imaging::effects::resize_effect::rectangle']]],
   ['red_26',['red',['../classxtd_1_1drawing_1_1color.html#a7a0b8f1210fbda4739c37fd61e1a1dab',1,'xtd::drawing::color']]],
   ['red_5fapple_27',['red_apple',['../classxtd_1_1forms_1_1emoticons.html#abf0c87fbe941a61ba2512a653ee52789',1,'xtd::forms::emoticons']]],
   ['red_5fgift_5fenvelope_28',['red_gift_envelope',['../classxtd_1_1forms_1_1emoticons.html#a84ded334613907f19b6d786a2bcd136c',1,'xtd::forms::emoticons']]],

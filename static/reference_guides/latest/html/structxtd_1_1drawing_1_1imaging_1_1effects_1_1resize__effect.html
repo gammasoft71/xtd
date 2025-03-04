@@ -100,7 +100,7 @@ Inheritance diagram for xtd::drawing::imaging::effects::resize_effect:</div>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>The <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1brightness__effect.html" title="The xtd::drawing::imaging::effects::brightness_effect changes the brightness of the image with percen...">xtd::drawing::imaging::effects::brightness_effect</a> changes the contrast of the image with percent factor. </p>
+<div class="textblock"><p>The <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html" title="The xtd::drawing::imaging::effects::resize_effect resizes the image with new rectangle and optionnaly...">xtd::drawing::imaging::effects::resize_effect</a> resizes the image with new rectangle and optionnaly fill color. </p>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1imaging_1_1effects.html" title="The xtd::drawing::imaging::effects namespace provides functionality for adding effects to images.">xtd::drawing::imaging::effects</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing.html" title="The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...">xtd.drawing</a></dd></dl>
 <dl class="section user"><dt>Appearance</dt><dd><table class="markdownTable">
@@ -116,21 +116,28 @@ Inheritance diagram for xtd::drawing::imaging::effects::resize_effect:</div>
   </td></tr>
 </table>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example code shows hot tu use <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html" title="The xtd::drawing::imaging::effects::brightness_effect changes the contrast of the image with percent ...">xtd::drawing::imaging::effects::resize_effect</a> with image. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html" title="The xtd::drawing::imaging::effects::resize_effect resizes the image with new rectangle and optionnaly...">xtd::drawing::imaging::effects::resize_effect</a> with image. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
 <div class="line"><span class="keyword">auto</span> result = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">image_effector::set_effect</a>(img, <a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html">resize_effect</a> {<a class="code hl_struct" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> {240, 240}});</div>
 <div class="line">result.<a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ac5122a1e0ff6c8d0bc80019f9e0a659c">save</a>(<span class="stringliteral">&quot;ball_resize.png&quot;</span>);</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_ac5122a1e0ff6c8d0bc80019f9e0a659c"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#ac5122a1e0ff6c8d0bc80019f9e0a659c">xtd::drawing::image::save</a></div><div class="ttdeci">void save(const xtd::string &amp;filename) const</div><div class="ttdoc">Saves this xtd::drawing::image to the specified file or stream.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_aca0c9ca36c4ee8fc8feaf7deb79cefa4"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">xtd::drawing::image::from_file</a></div><div class="ttdeci">static image from_file(const xtd::string &amp;filename)</div><div class="ttdoc">Creates an image from the specified file.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1imaging_1_1image__effector_html_a9344eb0db0c29f20d46826c184a64e75"><div class="ttname"><a href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">xtd::drawing::imaging::image_effector::set_effect</a></div><div class="ttdeci">static xtd::drawing::image set_effect(const xtd::drawing::image &amp;image, const xtd::drawing::imaging::effects::effect &amp;effect)</div><div class="ttdoc">Sets the specified effects to the specifid image.</div></div>
-<div class="ttc" id="astructxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html">xtd::drawing::imaging::effects::resize_effect</a></div><div class="ttdoc">The xtd::drawing::imaging::effects::brightness_effect changes the contrast of the image with percent ...</div><div class="ttdef"><b>Definition</b> resize_effect.hpp:35</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html">xtd::drawing::imaging::effects::resize_effect</a></div><div class="ttdoc">The xtd::drawing::imaging::effects::resize_effect resizes the image with new rectangle and optionnaly...</div><div class="ttdef"><b>Definition</b> resize_effect.hpp:36</div></div>
 <div class="ttc" id="astructxtd_1_1drawing_1_1size_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a></div><div class="ttdoc">Stores an ordered pair of integers, which specify a height and width.</div><div class="ttdef"><b>Definition</b> size.hpp:31</div></div>
 </div><!-- fragment --> </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_converter_8cpp-example.html#_a25">image_converter.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
+<tr class="memitem:a165b37e352851067c4565ed8916290d4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#a165b37e352851067c4565ed8916290d4">auto_determine_fill_color</a></td></tr>
+<tr class="memdesc:a165b37e352851067c4565ed8916290d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the fill color.  <br /></td></tr>
+<tr class="separator:a165b37e352851067c4565ed8916290d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a603e4d20d7009e810241c9ec592026a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#a603e4d20d7009e810241c9ec592026a8">fill_color</a></td></tr>
+<tr class="memdesc:a603e4d20d7009e810241c9ec592026a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the fill color.  <br /></td></tr>
+<tr class="separator:a603e4d20d7009e810241c9ec592026a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fd03b6e89bea03a9edcf9271221c5c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#a6fd03b6e89bea03a9edcf9271221c5c9">rectangle</a></td></tr>
-<tr class="memdesc:a6fd03b6e89bea03a9edcf9271221c5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the new rectangle.  <br /></td></tr>
+<tr class="memdesc:a6fd03b6e89bea03a9edcf9271221c5c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the new rectangle.  <br /></td></tr>
 <tr class="separator:a6fd03b6e89bea03a9edcf9271221c5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b513924bbbe64f959136622caac9508"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#a2b513924bbbe64f959136622caac9508">size</a> (const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;value)</td></tr>
 <tr class="memdesc:a2b513924bbbe64f959136622caac9508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the new size.  <br /></td></tr>
@@ -141,11 +148,23 @@ Inheritance diagram for xtd::drawing::imaging::effects::resize_effect:</div>
 <tr class="memdesc:a25d420398fc48b200901f2022a938dda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the new instance of xtd::drawing::imaging::resize_effect object.  <br /></td></tr>
 <tr class="separator:a25d420398fc48b200901f2022a938dda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78a34007484da2bdee52d1cac67a4ed0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#a78a34007484da2bdee52d1cac67a4ed0">resize_effect</a> (const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> &amp;<a class="el" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a>)</td></tr>
-<tr class="memdesc:a78a34007484da2bdee52d1cac67a4ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the new instance of xtd::drawing::imaging::resizes the image with rectangle.  <br /></td></tr>
+<tr class="memdesc:a78a34007484da2bdee52d1cac67a4ed0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the new instance of xtd::drawing::imaging::resize with rectangle.  <br /></td></tr>
 <tr class="separator:a78a34007484da2bdee52d1cac67a4ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0df5f6eab8016572eda2132eea484cac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#a0df5f6eab8016572eda2132eea484cac">resize_effect</a> (const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> &amp;<a class="el" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a>, bool <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#a165b37e352851067c4565ed8916290d4">auto_determine_fill_color</a>)</td></tr>
+<tr class="memdesc:a0df5f6eab8016572eda2132eea484cac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the new instance of xtd::drawing::imaging::resize with rectangle and auto determine fill color boolean.  <br /></td></tr>
+<tr class="separator:a0df5f6eab8016572eda2132eea484cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1881cdf542179a2e28f9211162b2d5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#ad1881cdf542179a2e28f9211162b2d5c">resize_effect</a> (const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> &amp;<a class="el" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a>, const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;<a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#a603e4d20d7009e810241c9ec592026a8">fill_color</a>)</td></tr>
+<tr class="memdesc:ad1881cdf542179a2e28f9211162b2d5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the new instance of xtd::drawing::imaging::resize with rectangle and fill color.  <br /></td></tr>
+<tr class="separator:ad1881cdf542179a2e28f9211162b2d5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b0572b106f426dcc1d40ad945410853"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#a9b0572b106f426dcc1d40ad945410853">resize_effect</a> (const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;<a class="el" href="structxtd_1_1drawing_1_1size.html">size</a>)</td></tr>
-<tr class="memdesc:a9b0572b106f426dcc1d40ad945410853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the new instance of xtd::drawing::imaging::resize_effect resizes the image with size.  <br /></td></tr>
+<tr class="memdesc:a9b0572b106f426dcc1d40ad945410853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the new instance of xtd::drawing::imaging::resize_effect with size.  <br /></td></tr>
 <tr class="separator:a9b0572b106f426dcc1d40ad945410853"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a194beb8c5ee16bdeb7e5ff5a0432bfc6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#a194beb8c5ee16bdeb7e5ff5a0432bfc6">resize_effect</a> (const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;<a class="el" href="structxtd_1_1drawing_1_1size.html">size</a>, bool <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#a165b37e352851067c4565ed8916290d4">auto_determine_fill_color</a>)</td></tr>
+<tr class="memdesc:a194beb8c5ee16bdeb7e5ff5a0432bfc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the new instance of xtd::drawing::imaging::resize_effect with size and auto determine fill color boolean.  <br /></td></tr>
+<tr class="separator:a194beb8c5ee16bdeb7e5ff5a0432bfc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a3fc80f54e06dcfe64fc2dc826624b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#a7a3fc80f54e06dcfe64fc2dc826624b6">resize_effect</a> (const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;<a class="el" href="structxtd_1_1drawing_1_1size.html">size</a>, const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;<a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#a603e4d20d7009e810241c9ec592026a8">fill_color</a>)</td></tr>
+<tr class="memdesc:a7a3fc80f54e06dcfe64fc2dc826624b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the new instance of xtd::drawing::imaging::resize_effect resize with size and fill color.  <br /></td></tr>
+<tr class="separator:a7a3fc80f54e06dcfe64fc2dc826624b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Methods</h2></td></tr>
 <tr class="memitem:a091ba31b0f7bb57631dd6acde54e5ae8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html#a091ba31b0f7bb57631dd6acde54e5ae8">apply</a> (<a class="el" href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a> &amp;<a class="el" href="classxtd_1_1drawing_1_1image.html">image</a>) const override</td></tr>
@@ -191,7 +210,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a25d420398fc48b200901f2022a938dda" name="a25d420398fc48b200901f2022a938dda"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25d420398fc48b200901f2022a938dda">&#9670;&#160;</a></span>resize_effect() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a25d420398fc48b200901f2022a938dda">&#9670;&#160;</a></span>resize_effect() <span class="overload">[1/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -218,7 +237,7 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a78a34007484da2bdee52d1cac67a4ed0" name="a78a34007484da2bdee52d1cac67a4ed0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78a34007484da2bdee52d1cac67a4ed0">&#9670;&#160;</a></span>resize_effect() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a78a34007484da2bdee52d1cac67a4ed0">&#9670;&#160;</a></span>resize_effect() <span class="overload">[2/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,7 +260,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initialise the new instance of xtd::drawing::imaging::resizes the image with rectangle. </p>
+<p>Initialise the new instance of xtd::drawing::imaging::resize with rectangle. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">size</td><td>The new rectangle. </td></tr>
@@ -251,8 +270,84 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
+<a id="a0df5f6eab8016572eda2132eea484cac" name="a0df5f6eab8016572eda2132eea484cac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0df5f6eab8016572eda2132eea484cac">&#9670;&#160;</a></span>resize_effect() <span class="overload">[3/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::drawing::imaging::effects::resize_effect::resize_effect </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> &amp;&#160;</td>
+          <td class="paramname"><em>rectangle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>auto_determine_fill_color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise the new instance of xtd::drawing::imaging::resize with rectangle and auto determine fill color boolean. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>The new rectangle. </td></tr>
+    <tr><td class="paramname">auto_determine_fill_color</td><td>The auto fill color. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <code>auto_determine_fill_color</code> boolean is used to determina automatically de best color to fill borders when resizing is greater than the original size. </dd></dl>
+
+</div>
+</div>
+<a id="ad1881cdf542179a2e28f9211162b2d5c" name="ad1881cdf542179a2e28f9211162b2d5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1881cdf542179a2e28f9211162b2d5c">&#9670;&#160;</a></span>resize_effect() <span class="overload">[4/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::drawing::imaging::effects::resize_effect::resize_effect </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a> &amp;&#160;</td>
+          <td class="paramname"><em>rectangle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;&#160;</td>
+          <td class="paramname"><em>fill_color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise the new instance of xtd::drawing::imaging::resize with rectangle and fill color. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>The new rectangle. </td></tr>
+    <tr><td class="paramname">fill_color</td><td>The fill color. The default value is <a class="el" href="classxtd_1_1drawing_1_1color.html#a1caa2df5530c3aa6ee6ec94ecd739c15" title="Gets a system-defined color that has an ARGB value of 0x00000000. This field is constant.">xtd::drawing::color::transparent</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <code>fill_color</code> color is used to fill borders when resizing is greater than the original size. </dd></dl>
+
+</div>
+</div>
 <a id="a9b0572b106f426dcc1d40ad945410853" name="a9b0572b106f426dcc1d40ad945410853"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9b0572b106f426dcc1d40ad945410853">&#9670;&#160;</a></span>resize_effect() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b0572b106f426dcc1d40ad945410853">&#9670;&#160;</a></span>resize_effect() <span class="overload">[5/7]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -275,7 +370,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Initialise the new instance of xtd::drawing::imaging::resize_effect resizes the image with size. </p>
+<p>Initialise the new instance of xtd::drawing::imaging::resize_effect with size. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">size</td><td>The new size. </td></tr>
@@ -283,6 +378,86 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The poition is esual to <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> {0, 0}. </dd></dl>
+
+</div>
+</div>
+<a id="a194beb8c5ee16bdeb7e5ff5a0432bfc6" name="a194beb8c5ee16bdeb7e5ff5a0432bfc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a194beb8c5ee16bdeb7e5ff5a0432bfc6">&#9670;&#160;</a></span>resize_effect() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::drawing::imaging::effects::resize_effect::resize_effect </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>auto_determine_fill_color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise the new instance of xtd::drawing::imaging::resize_effect with size and auto determine fill color boolean. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>The new size. </td></tr>
+    <tr><td class="paramname">auto_determine_fill_color</td><td>The auto fill color. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The poition is esual to <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> {0, 0}. </dd>
+<dd>
+The <code>auto_determine_fill_color</code> boolean is used to determina automatically de best color to fill borders when resizing is greater than the original size. </dd></dl>
+
+</div>
+</div>
+<a id="a7a3fc80f54e06dcfe64fc2dc826624b6" name="a7a3fc80f54e06dcfe64fc2dc826624b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a3fc80f54e06dcfe64fc2dc826624b6">&#9670;&#160;</a></span>resize_effect() <span class="overload">[7/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::drawing::imaging::effects::resize_effect::resize_effect </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structxtd_1_1drawing_1_1size.html">xtd::drawing::size</a> &amp;&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> &amp;&#160;</td>
+          <td class="paramname"><em>fill_color</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise the new instance of xtd::drawing::imaging::resize_effect resize with size and fill color. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">size</td><td>The new size. </td></tr>
+    <tr><td class="paramname">fill_color</td><td>The fill color. The default value is <a class="el" href="classxtd_1_1drawing_1_1color.html#a1caa2df5530c3aa6ee6ec94ecd739c15" title="Gets a system-defined color that has an ARGB value of 0x00000000. This field is constant.">xtd::drawing::color::transparent</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The poition is esual to <a class="el" href="structxtd_1_1drawing_1_1point.html" title="Represents an ordered pair of integer x- and y-coordinates that defines a point in a two-dimensional ...">xtd::drawing::point</a> {0, 0}. </dd>
+<dd>
+The <code>fill_color</code> color is used to fill borders when resizing is greater than the original size. </dd></dl>
 
 </div>
 </div>
@@ -351,6 +526,56 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a165b37e352851067c4565ed8916290d4" name="a165b37e352851067c4565ed8916290d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a165b37e352851067c4565ed8916290d4">&#9670;&#160;</a></span>auto_determine_fill_color</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool xtd::drawing::imaging::effects::resize_effect::auto_determine_fill_color</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets or sets the fill color. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">auto_determine_fill_color</td><td>The auto fill color. The default value is <code>false</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <code>auto_determine_fill_color</code> boolean is used to determina automatically de best color to fill borders when resizing is greater than the original size. </dd>
+<dd>
+The 'fill_color' has no effect if <code>auto_determine_fill_color</code> is set to &lsquo;true&rsquo;. </dd></dl>
+
+</div>
+</div>
+<a id="a603e4d20d7009e810241c9ec592026a8" name="a603e4d20d7009e810241c9ec592026a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a603e4d20d7009e810241c9ec592026a8">&#9670;&#160;</a></span>fill_color</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1drawing_1_1color.html">xtd::drawing::color</a> xtd::drawing::imaging::effects::resize_effect::fill_color</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets or sets the fill color. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fill_color</td><td>The fill color. The default value is <a class="el" href="classxtd_1_1drawing_1_1color.html#a1caa2df5530c3aa6ee6ec94ecd739c15" title="Gets a system-defined color that has an ARGB value of 0x00000000. This field is constant.">xtd::drawing::color::transparent</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The <code>fill_color</code> color is used to fill borders when resizing is greater than the original size. </dd>
+<dd>
+The 'fill_color' has no effect if <code>auto_determine_fill_color</code> is set to &lsquo;true&rsquo;. </dd></dl>
+
+</div>
+</div>
 <a id="a6fd03b6e89bea03a9edcf9271221c5c9" name="a6fd03b6e89bea03a9edcf9271221c5c9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6fd03b6e89bea03a9edcf9271221c5c9">&#9670;&#160;</a></span>rectangle</h2>
 
@@ -363,7 +588,7 @@ Additional Inherited Members</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets the new rectangle. </p>
+<p>Gets or sets the new rectangle. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">size</td><td>The new rectangle. </td></tr>
@@ -380,7 +605,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 3 2025 11:11:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Mar 4 2025 14:59:17 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

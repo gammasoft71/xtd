@@ -98,9 +98,10 @@ var searchData=
   ['cpp_5flanguage_95',['cpp_language',['../classxtd_1_1cpp__language.html',1,'xtd']]],
   ['crayon_5fcolors_96',['crayon_colors',['../classxtd_1_1drawing_1_1crayon__colors.html',1,'xtd::drawing']]],
   ['create_5fparams_97',['create_params',['../classxtd_1_1forms_1_1create__params.html',1,'xtd::forms']]],
-  ['css_5freader_98',['css_reader',['../classxtd_1_1web_1_1css_1_1css__reader.html',1,'xtd::web::css']]],
-  ['css_5fwriter_99',['css_writer',['../classxtd_1_1web_1_1css_1_1css__writer.html',1,'xtd::web::css']]],
-  ['cursor_100',['cursor',['../classxtd_1_1forms_1_1cursor.html',1,'xtd::forms']]],
-  ['cursors_101',['cursors',['../classxtd_1_1forms_1_1cursors.html',1,'xtd::forms']]],
-  ['cyan_5fcolors_102',['cyan_colors',['../classxtd_1_1drawing_1_1cyan__colors.html',1,'xtd::drawing']]]
+  ['crop_5feffect_98',['crop_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1crop__effect.html',1,'xtd::drawing::imaging::effects']]],
+  ['css_5freader_99',['css_reader',['../classxtd_1_1web_1_1css_1_1css__reader.html',1,'xtd::web::css']]],
+  ['css_5fwriter_100',['css_writer',['../classxtd_1_1web_1_1css_1_1css__writer.html',1,'xtd::web::css']]],
+  ['cursor_101',['cursor',['../classxtd_1_1forms_1_1cursor.html',1,'xtd::forms']]],
+  ['cursors_102',['cursors',['../classxtd_1_1forms_1_1cursors.html',1,'xtd::forms']]],
+  ['cyan_5fcolors_103',['cyan_colors',['../classxtd_1_1drawing_1_1cyan__colors.html',1,'xtd::drawing']]]
 ];
