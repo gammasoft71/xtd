@@ -1,2 +1,2 @@
 #pragma once
-#include "resize_effect.hpp"
+#include "crop_effect.hpp"
