@@ -35,6 +35,8 @@ namespace xtd {
         xtd::byte b = 0;
         /// @}
 
+        /// @name Public Static Methods
+        
         /// @{
         /// @brief Returns the weighted average color between the two given colors.
         /// @param fore_core The foreground color.
