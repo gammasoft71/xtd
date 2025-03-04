@@ -6,5 +6,5 @@
 
 # Pictures
 resource(ball "resources/ball.png")
-resource(pineapple "resources/pineapple.jpg")
-resource(rose "resources/rose.jpg")
+resource(pineapple "resources/pineapple.png")
+resource(rose "resources/rose.png")
