@@ -131,7 +131,6 @@ resize_effect::resize_effect(const xtd::drawing::size& size, const xtd::drawing:
 }
 
 void resize_effect::apply(xtd::drawing::image& image) const {
-  if (image == drawing::image::empty) return;
   if (rectangle.x < 0 || rectangle.y < 0 || rectangle.width < 1 || rectangle.height < 1) throw_helper::throws(xtd::helpers::exception_case::argument);
   if (rectangle.width < image.width() && (rectangle.x + rectangle.width) > image.width()) throw_helper::throws(exception_case::argument);
   if (rectangle.height < image.height() && (rectangle.y + rectangle.height) > image.height()) throw_helper::throws(exception_case::argument);

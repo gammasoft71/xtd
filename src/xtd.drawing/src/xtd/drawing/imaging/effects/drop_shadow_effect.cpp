@@ -23,8 +23,6 @@ drop_shadow_effect::drop_shadow_effect(const xtd::drawing::size& shadow, int32 b
 }
 
 void drop_shadow_effect::apply(xtd::drawing::image& image) const {
-  if (image == drawing::image::empty) return;
-  
   auto shadow_image = image.clone();
   image_effector::set_effect(shadow_image, bitonal_effect {0, color, color});
   if (blur) {
