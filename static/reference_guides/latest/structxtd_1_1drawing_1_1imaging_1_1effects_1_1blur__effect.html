@@ -100,7 +100,7 @@ Inheritance diagram for xtd::drawing::imaging::effects::blur_effect:</div>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>The <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect.html" title="The xtd::drawing::imaging::effects::blur_effect converts image into blured image.">xtd::drawing::imaging::effects::blur_effect</a> converts image into blured image. </p>
+<div class="textblock"><p>The <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect.html" title="The xtd::drawing::imaging::effects::blur_effect blurs the image with radius.">xtd::drawing::imaging::effects::blur_effect</a> blurs the image with radius. </p>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1imaging_1_1effects.html" title="The xtd::drawing::imaging::effects namespace provides functionality for adding effects to images.">xtd::drawing::imaging::effects</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing.html" title="The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...">xtd.drawing</a></dd></dl>
 <dl class="section user"><dt>Appearance</dt><dd><table class="markdownTable">
@@ -116,18 +116,21 @@ Inheritance diagram for xtd::drawing::imaging::effects::blur_effect:</div>
   </td></tr>
 </table>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example code shows hot tu use <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect.html" title="The xtd::drawing::imaging::effects::blur_effect converts image into blured image.">xtd::drawing::imaging::effects::blur_effect</a> with image. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect.html" title="The xtd::drawing::imaging::effects::blur_effect blurs the image with radius.">xtd::drawing::imaging::effects::blur_effect</a> with image. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
 <div class="line"><span class="keyword">auto</span> result = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">image_effector::set_effect</a>(img, <a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect.html">blur_effect</a> {10});</div>
 <div class="line">result.<a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ac5122a1e0ff6c8d0bc80019f9e0a659c">save</a>(<span class="stringliteral">&quot;ball_blur.png&quot;</span>);</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_ac5122a1e0ff6c8d0bc80019f9e0a659c"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#ac5122a1e0ff6c8d0bc80019f9e0a659c">xtd::drawing::image::save</a></div><div class="ttdeci">void save(const xtd::string &amp;filename) const</div><div class="ttdoc">Saves this xtd::drawing::image to the specified file or stream.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_aca0c9ca36c4ee8fc8feaf7deb79cefa4"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">xtd::drawing::image::from_file</a></div><div class="ttdeci">static image from_file(const xtd::string &amp;filename)</div><div class="ttdoc">Creates an image from the specified file.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1imaging_1_1image__effector_html_a9344eb0db0c29f20d46826c184a64e75"><div class="ttname"><a href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">xtd::drawing::imaging::image_effector::set_effect</a></div><div class="ttdeci">static xtd::drawing::image set_effect(const xtd::drawing::image &amp;image, const xtd::drawing::imaging::effects::effect &amp;effect)</div><div class="ttdoc">Sets the specified effects to the specifid image.</div></div>
-<div class="ttc" id="astructxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect.html">xtd::drawing::imaging::effects::blur_effect</a></div><div class="ttdoc">The xtd::drawing::imaging::effects::blur_effect converts image into blured image.</div><div class="ttdef"><b>Definition</b> blur_effect.hpp:34</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect.html">xtd::drawing::imaging::effects::blur_effect</a></div><div class="ttdoc">The xtd::drawing::imaging::effects::blur_effect blurs the image with radius.</div><div class="ttdef"><b>Definition</b> blur_effect.hpp:34</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_converter_8cpp-example.html#_a14">image_converter.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_converter_8cpp-example.html#_a19">image_converter.cpp</a>.</dd>
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
+<tr class="memitem:a74d6a6504dd1d54b1dfb257097d3e712"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect.html#a74d6a6504dd1d54b1dfb257097d3e712">expand_edge</a></td></tr>
+<tr class="memdesc:a74d6a6504dd1d54b1dfb257097d3e712"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets a value that indicates whether the bitmap expands by an amount equal to the blur radius.  <br /></td></tr>
+<tr class="separator:a74d6a6504dd1d54b1dfb257097d3e712"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9d51ebf11b9589b37c4bac0595ce787"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect.html#ae9d51ebf11b9589b37c4bac0595ce787">radius</a></td></tr>
 <tr class="memdesc:ae9d51ebf11b9589b37c4bac0595ce787"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the radius value.  <br /></td></tr>
 <tr class="separator:ae9d51ebf11b9589b37c4bac0595ce787"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,6 +142,9 @@ Inheritance diagram for xtd::drawing::imaging::effects::blur_effect:</div>
 <tr class="memitem:a17361b1a8076220368266f75d8f833de"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect.html#a17361b1a8076220368266f75d8f833de">blur_effect</a> (<a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect.html#ae9d51ebf11b9589b37c4bac0595ce787">radius</a>)</td></tr>
 <tr class="memdesc:a17361b1a8076220368266f75d8f833de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified radius.  <br /></td></tr>
 <tr class="separator:a17361b1a8076220368266f75d8f833de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a101ee68399fcebb641c38882f5e71e4a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect.html#a101ee68399fcebb641c38882f5e71e4a">blur_effect</a> (<a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect.html#ae9d51ebf11b9589b37c4bac0595ce787">radius</a>, bool <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect.html#a74d6a6504dd1d54b1dfb257097d3e712">expand_edge</a>)</td></tr>
+<tr class="memdesc:a101ee68399fcebb641c38882f5e71e4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified radius and expand edge boolean.  <br /></td></tr>
+<tr class="separator:a101ee68399fcebb641c38882f5e71e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protected Methods</h2></td></tr>
 <tr class="memitem:ac0425af3784205e9b329f26cd3255897"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect.html#ac0425af3784205e9b329f26cd3255897">apply</a> (<a class="el" href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a> &amp;<a class="el" href="classxtd_1_1drawing_1_1image.html">image</a>) const override</td></tr>
@@ -184,7 +190,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a4ac3e802bab33859967f359be7877494" name="a4ac3e802bab33859967f359be7877494"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ac3e802bab33859967f359be7877494">&#9670;&#160;</a></span>blur_effect() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ac3e802bab33859967f359be7877494">&#9670;&#160;</a></span>blur_effect() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,10 +217,13 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <a id="a17361b1a8076220368266f75d8f833de" name="a17361b1a8076220368266f75d8f833de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17361b1a8076220368266f75d8f833de">&#9670;&#160;</a></span>blur_effect() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a17361b1a8076220368266f75d8f833de">&#9670;&#160;</a></span>blur_effect() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">xtd::drawing::imaging::effects::blur_effect::blur_effect </td>
@@ -224,12 +233,54 @@ Additional Inherited Members</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified radius. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">radius</td><td>The radius of the blur in pixels. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a101ee68399fcebb641c38882f5e71e4a" name="a101ee68399fcebb641c38882f5e71e4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a101ee68399fcebb641c38882f5e71e4a">&#9670;&#160;</a></span>blur_effect() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">xtd::drawing::imaging::effects::blur_effect::blur_effect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a>&#160;</td>
+          <td class="paramname"><em>radius</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>expand_edge</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified radius and expand edge boolean. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">radius</td><td>The radius of the blur in pixels. </td></tr>
+    <tr><td class="paramname">expand_edge</td><td><code>true</code> if the bitmap expands by an amount equal to the radius so that it can have soft edges. <code>false</code> if the bitmap remains the same size and the soft edges are clipped. </td></tr>
   </table>
   </dd>
 </dl>
@@ -275,6 +326,28 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a74d6a6504dd1d54b1dfb257097d3e712" name="a74d6a6504dd1d54b1dfb257097d3e712"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74d6a6504dd1d54b1dfb257097d3e712">&#9670;&#160;</a></span>expand_edge</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool xtd::drawing::imaging::effects::blur_effect::expand_edge</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets or sets a value that indicates whether the bitmap expands by an amount equal to the blur radius. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">expand_edge</td><td><code>true</code> if the bitmap expands by an amount equal to the radius so that it can have soft edges. <code>false</code> if the bitmap remains the same size and the soft edges are clipped. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ae9d51ebf11b9589b37c4bac0595ce787" name="ae9d51ebf11b9589b37c4bac0595ce787"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae9d51ebf11b9589b37c4bac0595ce787">&#9670;&#160;</a></span>radius</h2>
 
@@ -305,7 +378,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 2 2025 22:08:54 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Mar 4 2025 22:01:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

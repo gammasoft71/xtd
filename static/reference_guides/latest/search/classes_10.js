@@ -19,7 +19,8 @@ var searchData=
   ['replace_5fdialog_16',['replace_dialog',['../classxtd_1_1forms_1_1replace__dialog.html',1,'xtd::forms']]],
   ['replace_5fevent_5fargs_17',['replace_event_args',['../classxtd_1_1forms_1_1replace__event__args.html',1,'xtd::forms']]],
   ['reset_5fcolor_18',['reset_color',['../classxtd_1_1reset__color.html',1,'xtd']]],
-  ['resources_19',['resources',['../classxtd_1_1forms_1_1properties_1_1resources.html',1,'xtd::forms::properties']]],
-  ['rgb_20',['rgb',['../structxtd_1_1drawing_1_1helpers_1_1rgb.html',1,'xtd::drawing::helpers']]],
-  ['run_5fworker_5fcompleted_5fevent_5fargs_21',['run_worker_completed_event_args',['../classxtd_1_1forms_1_1run__worker__completed__event__args.html',1,'xtd::forms']]]
+  ['resize_5feffect_19',['resize_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html',1,'xtd::drawing::imaging::effects']]],
+  ['resources_20',['resources',['../classxtd_1_1forms_1_1properties_1_1resources.html',1,'xtd::forms::properties']]],
+  ['rgb_21',['rgb',['../structxtd_1_1drawing_1_1helpers_1_1rgb.html',1,'xtd::drawing::helpers']]],
+  ['run_5fworker_5fcompleted_5fevent_5fargs_22',['run_worker_completed_event_args',['../classxtd_1_1forms_1_1run__worker__completed__event__args.html',1,'xtd::forms']]]
 ];

@@ -69,11 +69,12 @@ var searchData=
   ['evergreen_5ftree_66',['evergreen_tree',['../classxtd_1_1forms_1_1emoticons.html#ac79906d0a027542a7f31d834b84d9b08',1,'xtd::forms::emoticons']]],
   ['exclamation_5fquestion_5fmark_67',['exclamation_question_mark',['../classxtd_1_1forms_1_1emoticons.html#a05fc443dbf273964d9bfeb34a7098080',1,'xtd::forms::emoticons']]],
   ['exited_68',['exited',['../classxtd_1_1diagnostics_1_1process.html#ae2705d1c3fc2c5d87ddbe2c187fd8abd',1,'xtd::diagnostics::process']]],
-  ['expanded_5fchanged_69',['expanded_changed',['../classxtd_1_1forms_1_1collapsible__panel.html#a7cb166234b0c58a89efcd5c137dac24d',1,'xtd::forms::collapsible_panel']]],
-  ['expressionless_5fface_70',['expressionless_face',['../classxtd_1_1forms_1_1emoticons.html#a0058a6a3520483f1b68e08c5ae851a72',1,'xtd::forms::emoticons']]],
-  ['extraction_5fcolor_71',['extraction_color',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1color__extraction__effect.html#a16799f2629e040a3ee30162b291df10d',1,'xtd::drawing::imaging::effects::color_extraction_effect']]],
-  ['extraterrestrial_5falien_72',['extraterrestrial_alien',['../classxtd_1_1forms_1_1emoticons.html#a51980499bbae0c1980b80fedf9b8e3e5',1,'xtd::forms::emoticons']]],
-  ['eye_73',['eye',['../classxtd_1_1forms_1_1emoticons.html#ab34081480516ce5501b5cc040c8fd130',1,'xtd::forms::emoticons']]],
-  ['eyeglasses_74',['eyeglasses',['../classxtd_1_1forms_1_1emoticons.html#a3e0ca2b3cee69a665567a32dae338a8d',1,'xtd::forms::emoticons']]],
-  ['eyes_75',['eyes',['../classxtd_1_1forms_1_1emoticons.html#abd53164d179a08ba47e64e96d212f2be',1,'xtd::forms::emoticons']]]
+  ['expand_5fedge_69',['expand_edge',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1blur__effect.html#a74d6a6504dd1d54b1dfb257097d3e712',1,'xtd::drawing::imaging::effects::blur_effect']]],
+  ['expanded_5fchanged_70',['expanded_changed',['../classxtd_1_1forms_1_1collapsible__panel.html#a7cb166234b0c58a89efcd5c137dac24d',1,'xtd::forms::collapsible_panel']]],
+  ['expressionless_5fface_71',['expressionless_face',['../classxtd_1_1forms_1_1emoticons.html#a0058a6a3520483f1b68e08c5ae851a72',1,'xtd::forms::emoticons']]],
+  ['extraction_5fcolor_72',['extraction_color',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1color__extraction__effect.html#a16799f2629e040a3ee30162b291df10d',1,'xtd::drawing::imaging::effects::color_extraction_effect']]],
+  ['extraterrestrial_5falien_73',['extraterrestrial_alien',['../classxtd_1_1forms_1_1emoticons.html#a51980499bbae0c1980b80fedf9b8e3e5',1,'xtd::forms::emoticons']]],
+  ['eye_74',['eye',['../classxtd_1_1forms_1_1emoticons.html#ab34081480516ce5501b5cc040c8fd130',1,'xtd::forms::emoticons']]],
+  ['eyeglasses_75',['eyeglasses',['../classxtd_1_1forms_1_1emoticons.html#a3e0ca2b3cee69a665567a32dae338a8d',1,'xtd::forms::emoticons']]],
+  ['eyes_76',['eyes',['../classxtd_1_1forms_1_1emoticons.html#abd53164d179a08ba47e64e96d212f2be',1,'xtd::forms::emoticons']]]
 ];

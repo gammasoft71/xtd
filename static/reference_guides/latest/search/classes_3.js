@@ -34,5 +34,6 @@ var searchData=
   ['dot_5fmatrix_5fdisplay_31',['dot_matrix_display',['../classxtd_1_1forms_1_1dot__matrix__display.html',1,'xtd::forms']]],
   ['draw_5fitem_5fevent_5fargs_32',['draw_item_event_args',['../classxtd_1_1forms_1_1draw__item__event__args.html',1,'xtd::forms']]],
   ['drive_5finfo_33',['drive_info',['../classxtd_1_1io_1_1drive__info.html',1,'xtd::io']]],
-  ['drive_5fnot_5ffound_5fexception_34',['drive_not_found_exception',['../classxtd_1_1io_1_1drive__not__found__exception.html',1,'xtd::io']]]
+  ['drive_5fnot_5ffound_5fexception_34',['drive_not_found_exception',['../classxtd_1_1io_1_1drive__not__found__exception.html',1,'xtd::io']]],
+  ['drop_5fshadow_5feffect_35',['drop_shadow_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1drop__shadow__effect.html',1,'xtd::drawing::imaging::effects']]]
 ];

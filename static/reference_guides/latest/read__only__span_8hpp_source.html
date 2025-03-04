@@ -311,21 +311,21 @@ $(function() {
 <div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>  read_only_span(iterator_t first, iterator_t last) -&gt; read_only_span&lt;typename iterator_t::value_type&gt;;</div>
 <div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>  </div>
 <div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, xtd::size len&gt;</div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  read_only_span(<span class="keyword">const</span> type_t (&amp;array)[len]) <span class="keyword">noexcept</span> -&gt; read_only_span&lt;type_t&gt;;</div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  read_only_span(<span class="keyword">const</span> type_t (&amp;array)[len]) -&gt; read_only_span&lt;type_t&gt;;</div>
 <div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span> </div>
 <div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>  <span class="keyword">template</span>&lt; <span class="keyword">class</span> type_t, xtd::size len&gt;</div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>  read_only_span(<span class="keyword">const</span> std::array&lt;type_t, len&gt;&amp; array) <span class="keyword">noexcept</span> -&gt; read_only_span&lt;type_t&gt;;</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>  read_only_span(<span class="keyword">const</span> std::array&lt;type_t, len&gt;&amp; array) -&gt; read_only_span&lt;type_t&gt;;</div>
 <div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span> </div>
 <div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span><span class="preprocessor">#if defined(__xtd__cpp_lib_ranges)</span></div>
 <div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> range_t&gt;</div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>  read_only_span(range_t&amp;&amp; items) <span class="keyword">noexcept</span> -&gt; read_only_span&lt;typename std::remove_reference_t&lt;xtd::ranges::range_reference_t&lt;range_t&gt;&gt;&gt;;</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>  read_only_span(range_t&amp;&amp; items) -&gt; read_only_span&lt;typename std::remove_reference_t&lt;xtd::ranges::range_reference_t&lt;range_t&gt;&gt;&gt;;</div>
 <div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> range_t&gt;</div>
-<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>  read_only_span(range_t&amp;&amp; items) <span class="keyword">noexcept</span> -&gt; read_only_span&lt;typename range_t::value_type&gt;;</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>  read_only_span(range_t&amp;&amp; items) -&gt; read_only_span&lt;typename range_t::value_type&gt;;</div>
 <div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span> </div>
 <div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> collection_t&gt;</div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>  read_only_span(<span class="keyword">const</span> collection_t&amp; items) <span class="keyword">noexcept</span> -&gt; read_only_span&lt;typename collection_t::value_type&gt;;</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>  read_only_span(<span class="keyword">const</span> collection_t&amp; items) -&gt; read_only_span&lt;typename collection_t::value_type&gt;;</div>
 <div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>  </div>
 <div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>  <span class="keyword">template</span>&lt;<span class="keyword">class</span> collection_t&gt;</div>
 <div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>  read_only_span(<span class="keyword">const</span> collection_t&amp; items, <a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>) -&gt; read_only_span&lt;typename collection_t::value_type&gt;;</div>
@@ -432,7 +432,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 2 2025 22:08:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Mar 4 2025 22:01:48 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
