@@ -29,8 +29,7 @@ void drop_shadow_effect::apply(xtd::drawing::image& image) const {
   image_effector::set_effect(shadow_image, bitonal_effect {0, color, color});
   if (blur) {
     image_effector::set_effect(shadow_image, blur_effect {blur, true});
-    auto crop_rect = rectangle {shadow.width < 0 ? 0 : blur * 2, shadow.height < 0 ? 0 : blur * 2, image.width(), image.height()};
-    image_effector::set_effect(shadow_image, crop_effect {crop_rect});
+    image_effector::set_effect(shadow_image, crop_effect {rectangle {shadow.width < 0 ? 0 : blur * 2, shadow.height < 0 ? 0 : blur * 2, image.width(), image.height()}});
   }
   
   auto result_image = bitmap {image.width() + math::abs(shadow.width), image.height() + math::abs(shadow.height)};
