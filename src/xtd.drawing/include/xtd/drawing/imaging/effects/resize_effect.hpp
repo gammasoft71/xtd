@@ -32,7 +32,6 @@ namespace xtd {
         /// auto result = image_effector::set_effect(img, resize_effect {drawing::size {240, 240}});
         /// result.save("ball_resize.png");
         /// ```
-        /// @remarks The
         struct resize_effect : effect {
           /// @name Public Constructors
           
