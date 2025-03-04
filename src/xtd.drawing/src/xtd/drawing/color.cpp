@@ -209,7 +209,7 @@ xtd::string color::name() const noexcept {
 }
 
 xtd::byte color::r() const noexcept {
-  return (xtd::byte)((to_argb() & 0x00FF0000) >> 16);
+  return static_cast<xtd::byte>((to_argb() & 0x00FF0000) >> 16);
 }
 color color::average(const color& color1, const color& color2, double weight) noexcept {
   return color_converter::average(color1, color2, weight);
