@@ -18,6 +18,6 @@ blur_effect::blur_effect(int32 radius, bool expand_edge) : expand_edge {expand_e
 }
 
 void blur_effect::apply(xtd::drawing::image& image) const {
-  if (expand_edge) image_effector::set_effect(image, resize_effect {rectangle {radius / 2, radius / 2, image.width() + radius, image.height() + radius}});
+  if (expand_edge) image_effector::set_effect(image, resize_effect {rectangle {radius, radius, image.width() + radius * 2, image.height() + radius * 2}});
   image.blur(radius);
 }
