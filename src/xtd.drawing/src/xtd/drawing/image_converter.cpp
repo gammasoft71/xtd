@@ -1,3 +1,16 @@
+#include "../../../include/xtd/drawing/imaging/effects/bitonal_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/blur_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/brightness_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/color_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/color_extraction_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/color_substitution_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/contrast_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/crop_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/disabled_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/posterize_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/resize_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/solarize_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/image_effector.hpp"
 #include "../../../include/xtd/drawing/color_converter.hpp"
 #include "../../../include/xtd/drawing/image_converter.hpp"
 #include <xtd/byte_object>
@@ -8,6 +21,9 @@
 // Most of the algorithms come from https://www.programmingalgorithms.com/category/image-processing/
 
 using namespace xtd::drawing;
+using namespace xtd::drawing::imaging;
+using namespace xtd::drawing::imaging::effects;
+
 namespace {
   struct rgb {
     xtd::byte r;
@@ -81,17 +97,7 @@ namespace {
 }
 
 void image_converter::bitonal(image& image, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) {
-  threshold = std::clamp(threshold, 0, 3 * byte_object::max_value);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x) {
-      auto pixel = y * image.width() + x;
-      auto lower = rgb[pixel].r + rgb[pixel].g + rgb[pixel].b <= threshold;
-      auto bitonal_r = lower ? lower_color.r() : upper_color.r();
-      auto bitonal_g = lower ? lower_color.g() : upper_color.g();
-      auto bitonal_b = lower ? lower_color.b() : upper_color.b();
-      rgb[pixel] = {bitonal_r, bitonal_g, bitonal_b};
-    }
+  image_effector::set_effect(image, bitonal_effect {threshold, upper_color, lower_color});
 }
 
 image image_converter::bitonal(const image& image, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) {
@@ -111,16 +117,7 @@ image image_converter::blur(const image& image, int32 radius) {
 }
 
 void image_converter::brightness(image& image, double percent) {
-  percent = std::clamp(percent, 0.0, 2.0);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x) {
-      auto pixel = y * image.width() + x;
-      auto brightness_r = percent < 1.0 ? alpha_blend(rgb[pixel].r, 0, 1.0 - percent) : alpha_blend(rgb[pixel].r, 255, percent - 1.0);
-      auto brightness_g = percent < 1.0 ? alpha_blend(rgb[pixel].g, 0, 1.0 - percent) : alpha_blend(rgb[pixel].g, 255, percent - 1.0);
-      auto brightness_b = percent < 1.0 ? alpha_blend(rgb[pixel].b, 0, 1.0 - percent) : alpha_blend(rgb[pixel].b, 255, percent - 1.0);
-      rgb[pixel] = {brightness_r, brightness_g, brightness_b};
-    }
+  image_effector::set_effect(image, brightness_effect {percent});
 }
 
 image image_converter::brightness(const image& image, double percent) {
@@ -130,16 +127,7 @@ image image_converter::brightness(const image& image, double percent) {
 }
 
 void image_converter::color(xtd::drawing::image& image, const xtd::drawing::color& color, double percent) {
-  percent = std::clamp(percent - 1.0, -1.0, 1.0);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x) {
-      auto pixel = y * image.width() + x;
-      auto color_r = alpha_blend(rgb[pixel].r, static_cast<byte>(std::clamp(static_cast<int32>(rgb[pixel].r) + color.r(), 0, 255)), percent);
-      auto color_g = alpha_blend(rgb[pixel].g, static_cast<byte>(std::clamp(static_cast<int32>(rgb[pixel].g) + color.g(), 0, 255)), percent);
-      auto color_b = alpha_blend(rgb[pixel].b, static_cast<byte>(std::clamp(static_cast<int32>(rgb[pixel].b) + color.b(), 0, 255)), percent);
-      rgb[pixel] = {color_r, color_g, color_b};
-    }
+  image_effector::set_effect(image, color_effect {color, percent});
 }
 
 xtd::drawing::image image_converter::color(const xtd::drawing::image& image, const xtd::drawing::color& color, double percent) {
@@ -149,15 +137,7 @@ xtd::drawing::image image_converter::color(const xtd::drawing::image& image, con
 }
 
 void image_converter::color_extraction(xtd::drawing::image& image, int32 threshold, const drawing::color& extraction_color, const xtd::drawing::color& other_pixels_color) noexcept {
-  threshold = std::clamp(threshold, 0, 3 * byte_object::max_value);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x) {
-      auto pixel = y * image.width() + x;
-      int extraction_total_rgb = extraction_color.r() + extraction_color.g() + extraction_color.b();
-      int total_rgb = rgb[pixel].r + rgb[pixel].g + rgb[pixel].b;
-      if (math::abs(total_rgb - extraction_total_rgb) >= threshold) rgb[pixel] = {other_pixels_color.r(), other_pixels_color.g(), other_pixels_color.b()};
-    }
+  image_effector::set_effect(image, color_extraction_effect {threshold, extraction_color, other_pixels_color});
 }
 
 xtd::drawing::image image_converter::color_extraction(const xtd::drawing::image& image, int32 threshold, const drawing::color& extraction_color, const xtd::drawing::color& other_pixels_color) noexcept {
@@ -167,15 +147,7 @@ xtd::drawing::image image_converter::color_extraction(const xtd::drawing::image&
 }
 
 void image_converter::color_substitution(xtd::drawing::image& image, int32 threshold, const drawing::color& source_color, const xtd::drawing::color& new_color) noexcept {
-  threshold = std::clamp(threshold, 0, 3 * byte_object::max_value);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x) {
-      auto pixel = y * image.width() + x;
-      int source_total_rgb = source_color.r() + source_color.g() + source_color.b();
-      int total_rgb = rgb[pixel].r + rgb[pixel].g + rgb[pixel].b;
-      if (math::abs(total_rgb - source_total_rgb) < threshold) rgb[pixel] = {new_color.r(), new_color.g(), new_color.b()};
-    }
+  image_effector::set_effect(image, color_substitution_effect {threshold, source_color, new_color});
 }
 
 xtd::drawing::image image_converter::color_substitution(const xtd::drawing::image& image, int32 threshold, const drawing::color& source_color, const xtd::drawing::color& new_color) noexcept {
@@ -185,16 +157,7 @@ xtd::drawing::image image_converter::color_substitution(const xtd::drawing::imag
 }
 
 void image_converter::contrast(image& image, double percent) {
-  if (percent < 0.0) percent = 0.0;
-  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x) {
-      auto pixel = y * image.width() + x;
-      auto contrast_r = static_cast<byte>(std::clamp(((((rgb[pixel].r / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0));
-      auto contrast_g = static_cast<byte>(std::clamp(((((rgb[pixel].g / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0));
-      auto contrast_b = static_cast<byte>(std::clamp(((((rgb[pixel].b / 255.0) - 0.5) * percent) + 0.5) * 255.0, .0, 255.0));
-      rgb[pixel] = {contrast_r, contrast_g, contrast_b};
-    }
+  image_effector::set_effect(image, contrast_effect {percent});
 }
 
 image image_converter::contrast(const image& image, double percent) {
@@ -204,7 +167,7 @@ image image_converter::contrast(const image& image, double percent) {
 }
 
 void image_converter::crop(xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle) {
-  image.crop(rectangle.left(), rectangle.top(), rectangle.width, rectangle.height);
+  image_effector::set_effect(image, crop_effect {rectangle});
 }
 
 xtd::drawing::image image_converter::crop(const xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle) {
@@ -222,15 +185,7 @@ image image_converter::disabled(const image& image, const drawing::color& back_c
 }
 
 void image_converter::disabled(image& image, float brightness) {
-  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x) {
-      auto pixel = y * image.width() + x;
-      auto disabled_r = alpha_blend(rgb[pixel].r, static_cast<xtd::byte>(255 * brightness), 0.4);
-      auto disabled_g = alpha_blend(rgb[pixel].g, static_cast<xtd::byte>(255 * brightness), 0.4);
-      auto disabled_b = alpha_blend(rgb[pixel].b, static_cast<xtd::byte>(255 * brightness), 0.4);
-      rgb[pixel] = {disabled_r, disabled_g, disabled_b};
-    }
+  image_effector::set_effect(image, disabled_effect {brightness});
 }
 
 image image_converter::disabled(const image& image, float brightness) {
@@ -395,7 +350,7 @@ xtd::drawing::image image_converter::rescale(const xtd::drawing::image& image, c
 }
 
 void image_converter::resize(xtd::drawing::image& image, const xtd::drawing::size& size) {
-  image.resize(0, 0, size.width, size.height);
+  image_effector::set_effect(image, resize_effect {size});
 }
 
 xtd::drawing::image image_converter::resize(const xtd::drawing::image& image, const xtd::drawing::size& size) {
@@ -405,7 +360,7 @@ xtd::drawing::image image_converter::resize(const xtd::drawing::image& image, co
 }
 
 void image_converter::resize(xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle) {
-  image.resize(rectangle.x, rectangle.y, rectangle.width, rectangle.height);
+  image_effector::set_effect(image, resize_effect {rectangle});
 }
 
 xtd::drawing::image image_converter::resize(const xtd::drawing::image& image, const xtd::drawing::rectangle& rectangle) {
