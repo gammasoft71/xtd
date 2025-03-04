@@ -111,7 +111,7 @@ var searchData=
   ['coconut_108',['coconut',['../classxtd_1_1forms_1_1emoticons.html#abd863bb5255bc89f2af481b50c778bf0',1,'xtd::forms::emoticons']]],
   ['coffin_109',['coffin',['../classxtd_1_1forms_1_1emoticons.html#a144d377395ba2db3e40fb99f8425609e',1,'xtd::forms::emoticons']]],
   ['collision_5fsymbol_110',['collision_symbol',['../classxtd_1_1forms_1_1emoticons.html#a0c61596bd279ddcdf5e034a8c93310f6',1,'xtd::forms::emoticons']]],
-  ['color_111',['color',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1color__effect.html#a4ef2dc3ef6d0bac7699a967644014b98',1,'xtd::drawing::imaging::effects::color_effect']]],
+  ['color_111',['color',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1color__effect.html#a4ef2dc3ef6d0bac7699a967644014b98',1,'xtd::drawing::imaging::effects::color_effect::color'],['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1drop__shadow__effect.html#acbfc63971dd81f968ac4fa8544c6866e',1,'xtd::drawing::imaging::effects::drop_shadow_effect::color']]],
   ['color_5fpicker_5fchanged_112',['color_picker_changed',['../classxtd_1_1forms_1_1color__picker.html#a21a2383c0d5a1ed2d15078025c8a2b46',1,'xtd::forms::color_picker']]],
   ['comet_113',['comet',['../classxtd_1_1forms_1_1emoticons.html#a475e1daeb948bd9302d111f4fe6049ae',1,'xtd::forms::emoticons']]],
   ['compass_114',['compass',['../classxtd_1_1forms_1_1emoticons.html#a14ce2c4468147727195d01f5e7b83b7a',1,'xtd::forms::emoticons']]],
