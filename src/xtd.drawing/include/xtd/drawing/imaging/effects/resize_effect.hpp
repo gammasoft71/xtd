@@ -39,30 +39,30 @@ namespace xtd {
           /// @{
           /// @brief Initialise the new instance of xtd::drawing::imaging::resize_effect object.
           resize_effect() = default;
-          /// @brief Initialise the new instance of xtd::drawing::imaging::resizes the image with rectangle.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::resize with rectangle.
           /// @param size The new rectangle.
           explicit resize_effect(const xtd::drawing::rectangle& rectangle);
-          /// @brief Initialise the new instance of xtd::drawing::imaging::resizes the image with rectangle.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::resize with rectangle and auto determine fill color boolean.
           /// @param size The new rectangle.
           /// @param auto_determine_fill_color The auto fill color.
           /// @remarks The `auto_determine_fill_color` boolean is used to determina automatically de best color to fill borders when resizing is greater than the original size.
           resize_effect(const xtd::drawing::rectangle& rectangle, bool auto_determine_fill_color);
-          /// @brief Initialise the new instance of xtd::drawing::imaging::resizes the image with rectangle.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::resize with rectangle and fill color.
           /// @param size The new rectangle.
           /// @param fill_color The fill color. The default value is xtd::drawing::color::transparent.
           /// @remarks The `fill_color` color is used to fill borders when resizing is greater than the original size.
           resize_effect(const xtd::drawing::rectangle& rectangle, const xtd::drawing::color& fill_color);
-          /// @brief Initialise the new instance of xtd::drawing::imaging::resize_effect resizes the image with size.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::resize_effect with size.
           /// @param size The new size.
           /// @remarks The poition is esual to xtd::drawing::point {0, 0}.
           explicit resize_effect(const xtd::drawing::size& size);
-          /// @brief Initialise the new instance of xtd::drawing::imaging::resize_effect resizes the image with size.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::resize_effect with size and auto determine fill color boolean.
           /// @param size The new size.
           /// @param auto_determine_fill_color The auto fill color.
           /// @remarks The poition is esual to xtd::drawing::point {0, 0}.
           /// @remarks The `auto_determine_fill_color` boolean is used to determina automatically de best color to fill borders when resizing is greater than the original size.
           resize_effect(const xtd::drawing::size& size, bool auto_determine_fill_color);
-          /// @brief Initialise the new instance of xtd::drawing::imaging::resize_effect resizes the image with size.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::resize_effect resize with size and fill color.
           /// @param size The new size.
           /// @param fill_color The fill color. The default value is xtd::drawing::color::transparent.
           /// @remarks The poition is esual to xtd::drawing::point {0, 0}.
