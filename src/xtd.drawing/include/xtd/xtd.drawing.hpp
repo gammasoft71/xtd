@@ -35,6 +35,7 @@
 #include "drawing/imaging/effects/color_substitution_effect.hpp"
 #include "drawing/imaging/effects/contrast_effect.hpp"
 #include "drawing/imaging/effects/crop_effect.hpp"
+#include "drawing/imaging/effects/drop_shadow_effect.hpp"
 #include "drawing/imaging/effects/disabled_effect.hpp"
 #include "drawing/imaging/effects/effect.hpp"
 #include "drawing/imaging/effects/posterize_effect.hpp"
