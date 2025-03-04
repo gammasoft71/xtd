@@ -29,10 +29,9 @@ namespace xtd {
         /// The following example code shows how tu use xtd::drawing::imaging::effects::drop_shadow_effect with image.
         /// ```cpp
         /// const auto img = image::from_file("ball.png");
-        /// auto result = image_effector::set_effect(img, drop_shadow_effect {drawing::size {8, 8}, 10, color::black});
+        /// auto result = image_effector::set_effect(img, drop_shadow_effect {drawing::size {16, 16}, 8, color::black});
         /// result.save("ball_drop_shadow.png");
         /// ```
-        /// @remarks The
         struct drop_shadow_effect : effect {
           /// @name Public Constructors
           
