@@ -15,7 +15,6 @@ crop_effect::crop_effect(const xtd::drawing::size& size) : crop_effect {drawing:
 }
 
 void crop_effect::apply(xtd::drawing::image& image) const {
-  if (image == drawing::image::empty) return;
   if (rectangle.x < 0 || rectangle.y < 0 || (rectangle.x + rectangle.width) > image.width() || (rectangle.y + rectangle.height) > image.height()) throw_helper::throws(exception_case::argument);
   image_effector::set_effect(image, resize_effect {rectangle});
 }

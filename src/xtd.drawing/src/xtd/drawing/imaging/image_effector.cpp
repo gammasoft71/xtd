@@ -39,6 +39,7 @@ image image_effector::set_effect(const image& image, const region& region, const
 }
 
 void image_effector::set_effect(image& image, const effects::effect& effect) {
+  if (image == drawing::image::empty) return;
   effect.apply(image);
 }
 
