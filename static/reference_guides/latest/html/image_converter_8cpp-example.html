@@ -249,41 +249,37 @@ $(function() {
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      crop_x_numeric_up_down.value_changed += [&amp;] {</div>
-<div class="line">        <span class="keywordflow">if</span> (crop_x_numeric_up_down.value() &gt; original_image().width() - crop_width_track_bar.value()) crop_x_numeric_up_down.value(original_image().width() - crop_width_track_bar.value());</div>
 <div class="line">        crop_x_track_bar.value(as&lt;int32&gt;(crop_x_numeric_up_down.value()));</div>
 <div class="line">      };</div>
 <div class="line">      crop_x_track_bar.value_changed += [&amp;] {</div>
-<div class="line">        <span class="keywordflow">if</span> (crop_x_track_bar.value() &gt; original_image().width() - crop_width_track_bar.value()) crop_x_track_bar.value(original_image().width() - crop_width_track_bar.value());</div>
 <div class="line">        crop_x_numeric_up_down.value(crop_x_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      crop_y_numeric_up_down.value_changed += [&amp;] {</div>
-<div class="line">        <span class="keywordflow">if</span> (crop_y_numeric_up_down.value() &gt; original_image().height() - crop_height_track_bar.value()) crop_y_numeric_up_down.value(original_image().height() - crop_height_track_bar.value());</div>
 <div class="line">        crop_y_track_bar.value(as&lt;int32&gt;(crop_y_numeric_up_down.value()));</div>
 <div class="line">      };</div>
 <div class="line">      crop_y_track_bar.value_changed += [&amp;] {</div>
-<div class="line">        <span class="keywordflow">if</span> (crop_y_track_bar.value() &gt; original_image().height() - crop_height_track_bar.value()) crop_y_track_bar.value(original_image().height() - crop_height_track_bar.value());</div>
 <div class="line">        crop_y_numeric_up_down.value(crop_y_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      crop_width_numeric_up_down.value_changed += [&amp;] {</div>
-<div class="line">        <span class="keywordflow">if</span> (crop_width_numeric_up_down.value() &gt; original_image().width() - crop_x_track_bar.value()) crop_width_numeric_up_down.value(original_image().width() - crop_x_track_bar.value());</div>
 <div class="line">        crop_width_track_bar.value(as&lt;int32&gt;(crop_width_numeric_up_down.value()));</div>
 <div class="line">      };</div>
 <div class="line">      crop_width_track_bar.value_changed += [&amp;] {</div>
-<div class="line">        <span class="keywordflow">if</span> (crop_width_track_bar.value() &gt; original_image().width() - crop_x_track_bar.value()) crop_width_track_bar.value(original_image().width() - crop_x_track_bar.value());</div>
+<div class="line">        crop_x_numeric_up_down.set_range(crop_width_track_bar.value() - original_image().width(), 0);</div>
+<div class="line">        crop_x_track_bar.set_range(crop_width_track_bar.value() - original_image().width(), 0);</div>
 <div class="line">        crop_width_numeric_up_down.value(crop_width_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      crop_height_numeric_up_down.value_changed += [&amp;] {</div>
-<div class="line">        <span class="keywordflow">if</span> (crop_height_numeric_up_down.value() &gt; original_image().height() - crop_y_track_bar.value()) crop_height_numeric_up_down.value(original_image().height() - crop_y_track_bar.value());</div>
 <div class="line">        crop_height_track_bar.value(as&lt;int32&gt;(crop_height_numeric_up_down.value()));</div>
 <div class="line">      };</div>
 <div class="line">      crop_height_track_bar.value_changed += [&amp;] {</div>
-<div class="line">        <span class="keywordflow">if</span> (crop_height_track_bar.value() &gt; original_image().height() - crop_y_track_bar.value()) crop_height_track_bar.value(original_image().height() - crop_y_track_bar.value());</div>
+<div class="line">        crop_y_numeric_up_down.set_range(crop_height_track_bar.value() - original_image().height(), 0);</div>
+<div class="line">        crop_y_track_bar.set_range(crop_height_track_bar.value() - original_image().height(), 0);</div>
 <div class="line">        crop_height_numeric_up_down.value(crop_height_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
@@ -371,26 +367,57 @@ $(function() {
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line">      </div>
-<div class="line">      resize_y_numeric_up_down.value_changed += [&amp;] {resize_y_track_bar.value(as&lt;int32&gt;(resize_y_numeric_up_down.value()));};</div>
+<div class="line">      resize_y_numeric_up_down.value_changed += [&amp;] {</div>
+<div class="line">        resize_y_track_bar.value(as&lt;int32&gt;(resize_y_numeric_up_down.value()));</div>
+<div class="line">      };</div>
 <div class="line">      resize_y_track_bar.value_changed += [&amp;] {</div>
 <div class="line">        resize_y_numeric_up_down.value(resize_y_track_bar.value());</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line">      </div>
-<div class="line">      resize_width_numeric_up_down.value_changed += [&amp;] {resize_width_track_bar.value(as&lt;int32&gt;(resize_width_numeric_up_down.value()));};</div>
+<div class="line">      resize_width_numeric_up_down.value_changed += [&amp;] {</div>
+<div class="line">        resize_width_track_bar.value(as&lt;int32&gt;(resize_width_numeric_up_down.value()));</div>
+<div class="line">      };</div>
 <div class="line">      resize_width_track_bar.value_changed += [&amp;] {</div>
+<div class="line">        <span class="keywordflow">if</span> (resize_width_track_bar.value() &lt; original_image().width()) {</div>
+<div class="line">          resize_x_numeric_up_down.set_range(resize_width_track_bar.value() - original_image().width(), 0);</div>
+<div class="line">          resize_x_track_bar.set_range(resize_width_track_bar.value() - original_image().width(), 0);</div>
+<div class="line">        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (resize_width_track_bar.value() == original_image().width()) {</div>
+<div class="line">          resize_x_numeric_up_down.set_range(0, 0);</div>
+<div class="line">          resize_x_track_bar.set_range(0, 0);</div>
+<div class="line">        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (resize_width_track_bar.value() &gt; original_image().width()) {</div>
+<div class="line">          resize_x_numeric_up_down.set_range(0, resize_width_track_bar.value() - original_image().width());</div>
+<div class="line">          resize_x_track_bar.set_range(0, resize_width_track_bar.value() - original_image().width());</div>
+<div class="line">        }</div>
 <div class="line">        resize_width_numeric_up_down.value(resize_width_track_bar.value());</div>
 <div class="line">        <span class="keywordflow">if</span> (resize_maintain_aspect_ratio_check_box.checked()) resize_height_numeric_up_down.value(as&lt;int&gt;(resize_width_track_bar.value() / resize_aspect_ratio));</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
 <div class="line"> </div>
-<div class="line">      resize_height_numeric_up_down.value_changed += [&amp;] {resize_height_track_bar.value(as&lt;int32&gt;(resize_height_numeric_up_down.value()));};</div>
+<div class="line">      resize_height_numeric_up_down.value_changed += [&amp;] {</div>
+<div class="line">        resize_height_track_bar.value(as&lt;int32&gt;(resize_height_numeric_up_down.value()));</div>
+<div class="line">      };</div>
 <div class="line">      resize_height_track_bar.value_changed += [&amp;] {</div>
+<div class="line">        <span class="keywordflow">if</span> (resize_height_track_bar.value() &lt; original_image().height()) {</div>
+<div class="line">          resize_y_numeric_up_down.set_range(resize_height_track_bar.value() - original_image().height(), 0);</div>
+<div class="line">          resize_y_track_bar.set_range(resize_height_track_bar.value() - original_image().height(), 0);</div>
+<div class="line">        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (resize_height_track_bar.value() == original_image().height()) {</div>
+<div class="line">          resize_y_numeric_up_down.set_range(0, 0);</div>
+<div class="line">          resize_y_track_bar.set_range(0, 0);</div>
+<div class="line">        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (resize_height_track_bar.value() &gt; original_image().height()) {</div>
+<div class="line">          resize_y_numeric_up_down.set_range(0, resize_height_track_bar.value() - original_image().height());</div>
+<div class="line">          resize_y_track_bar.set_range(0, resize_height_track_bar.value() - original_image().height());</div>
+<div class="line">        }</div>
 <div class="line">        resize_height_numeric_up_down.value(resize_height_track_bar.value());</div>
 <div class="line">        <span class="keywordflow">if</span> (resize_maintain_aspect_ratio_check_box.checked()) resize_width_numeric_up_down.value(as&lt;int&gt;(resize_height_track_bar.value() * resize_aspect_ratio));</div>
 <div class="line">        update_pictures();</div>
 <div class="line">      };</div>
-<div class="line">      </div>
+<div class="line">      resize_fill_color_color_picker.color_picker_changed += [&amp;] {update_pictures();};</div>
+<div class="line">      resize_auto_determine_fill_color_ratio_check_box.checked_changed += [&amp;] {</div>
+<div class="line">        resize_fill_color_color_picker.enabled(!resize_auto_determine_fill_color_ratio_check_box.checked());</div>
+<div class="line">        update_pictures();</div>
+<div class="line">      };</div>
+<div class="line"> </div>
 <div class="line">      rotate_flip_choice.selected_index_changed += [&amp;] {update_pictures();};</div>
 <div class="line">      </div>
 <div class="line">      saturate_percent_numeric_up_down.value_changed += [&amp;] {saturate_percent_track_bar.value(as&lt;int32&gt;(saturate_percent_numeric_up_down.value()));};</div>
@@ -441,6 +468,8 @@ $(function() {
 <div class="line">      };</div>
 <div class="line">      </div>
 <div class="line">      effect_choice.selected_item(<span class="stringliteral">&quot;bitonal&quot;</span>);</div>
+<div class="line">      picture_choice.selected_item(<span class="stringliteral">&quot;ball&quot;</span>);</div>
+<div class="line">      background_choice.selected_item(<span class="stringliteral">&quot;checker-board&quot;</span>);</div>
 <div class="line">    }</div>
 <div class="line">    </div>
 <div class="line">  <span class="keyword">private</span>:</div>
@@ -457,8 +486,11 @@ $(function() {
 <div class="line">      bitonal_threshold_track_bar.value(382);</div>
 <div class="line">      bitonal_upper_color_color_picker.color(color::red);</div>
 <div class="line">      bitonal_lower_color_color_picker.color(color::white);</div>
+<div class="line"> </div>
 <div class="line">      blur_radius_track_bar.value(10);</div>
+<div class="line"> </div>
 <div class="line">      brightness_percent_track_bar.value(125);</div>
+<div class="line"> </div>
 <div class="line">      color_percent_track_bar.value(200);</div>
 <div class="line">      color_color_color_picker.color(color::red);</div>
 <div class="line">      color_extraction_threshold_track_bar.value(260);</div>
@@ -467,42 +499,69 @@ $(function() {
 <div class="line">      color_substitution_threshold_track_bar.value(260);</div>
 <div class="line">      color_substitution_source_color_color_picker.color(color::green);</div>
 <div class="line">      color_substitution_new_color_color_picker.color(color::blue);</div>
+<div class="line"> </div>
 <div class="line">      contrast_percent_track_bar.value(200);</div>
-<div class="line">      crop_x_track_bar.value(25);</div>
-<div class="line">      crop_y_track_bar.value(25);</div>
+<div class="line"> </div>
+<div class="line">      crop_height_numeric_up_down.set_range(1, original_image().height());</div>
+<div class="line">      crop_width_numeric_up_down.set_range(1, original_image().width());</div>
+<div class="line">      crop_height_track_bar.set_range(1, original_image().height());</div>
+<div class="line">      crop_width_track_bar.set_range(1, original_image().width());</div>
 <div class="line">      crop_width_track_bar.maximum(original_image_.width());</div>
 <div class="line">      crop_width_track_bar.value(original_image_.width() - 50);</div>
 <div class="line">      crop_height_track_bar.maximum(original_image_.height());</div>
 <div class="line">      crop_height_track_bar.value(original_image_.height() - 50);</div>
+<div class="line">      crop_x_track_bar.value(-25);</div>
+<div class="line">      crop_y_track_bar.value(-25);</div>
+<div class="line"> </div>
 <div class="line">      disabled_switch_button.checked(<span class="keyword">true</span>);</div>
+<div class="line"> </div>
 <div class="line">      drop_shadow_radius_track_bar.value(10);</div>
 <div class="line">      drop_shadow_horizontal_track_bar.value(8);</div>
 <div class="line">      drop_shadow_vertical_track_bar.value(8);</div>
+<div class="line">      drop_shadow_color_color_picker.alpha_color(<span class="keyword">true</span>);</div>
 <div class="line">      drop_shadow_color_color_picker.color(color::black);</div>
+<div class="line"> </div>
 <div class="line">      gamma_correction_red_correction_track_bar.value(20);</div>
 <div class="line">      gamma_correction_green_correction_track_bar.value(16);</div>
 <div class="line">      gamma_correction_blue_correction_track_bar.value(8);</div>
+<div class="line"> </div>
 <div class="line">      grayscale_percent_track_bar.value(100);</div>
+<div class="line"> </div>
 <div class="line">      hue_rotate_percent_track_bar.value(90);</div>
+<div class="line"> </div>
 <div class="line">      invert_percent_track_bar.value(100);</div>
+<div class="line"> </div>
 <div class="line">      opacity_percent_track_bar.value(50);</div>
+<div class="line"> </div>
 <div class="line">      posterize_levels_track_bar.value(4);</div>
+<div class="line"> </div>
 <div class="line">      rescale_maintain_aspect_ratio_check_box.checked(<span class="keyword">false</span>);</div>
-<div class="line">      rescale_aspect_ratio = as&lt;double&gt;(original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width) / original_image().size().height;</div>
+<div class="line">      rescale_aspect_ratio = as&lt;double&gt;(original_image().width()) / original_image().height();</div>
 <div class="line">      rescale_width_numeric_up_down.value(original_image_.width());</div>
 <div class="line">      rescale_width_numeric_up_down.value(original_image_.height());</div>
 <div class="line">      rescale_maintain_aspect_ratio_check_box.checked(<span class="keyword">true</span>);</div>
 <div class="line">      rescale_width_track_bar.value(original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width / 5 * 4);</div>
+<div class="line"> </div>
 <div class="line">      resize_maintain_aspect_ratio_check_box.checked(<span class="keyword">false</span>);</div>
-<div class="line">      resize_aspect_ratio = as&lt;double&gt;(original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width) / original_image().size().height;</div>
-<div class="line">      resize_width_numeric_up_down.value(original_image_.width());</div>
-<div class="line">      resize_width_numeric_up_down.value(original_image_.height());</div>
+<div class="line">      resize_height_numeric_up_down.set_range(1, original_image().height() * 2);</div>
+<div class="line">      resize_width_numeric_up_down.set_range(1, original_image().width() * 2);</div>
+<div class="line">      resize_height_track_bar.set_range(1, original_image().height() * 2);</div>
+<div class="line">      resize_width_track_bar.set_range(1, original_image().width() * 2);</div>
+<div class="line">      resize_aspect_ratio = as&lt;double&gt;(original_image().width()) / original_image().height();</div>
 <div class="line">      resize_maintain_aspect_ratio_check_box.checked(<span class="keyword">true</span>);</div>
-<div class="line">      resize_width_track_bar.value(original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width / 5 * 4);</div>
+<div class="line">      resize_width_track_bar.value(original_image().width() * 4 / 5);</div>
+<div class="line">      resize_fill_color_color_picker.alpha_color(<span class="keyword">true</span>);</div>
+<div class="line">      resize_auto_determine_fill_color_ratio_check_box.checked(<span class="keyword">false</span>);</div>
+<div class="line">      resize_fill_color_color_picker.color(color::transparent);</div>
+<div class="line">      </div>
 <div class="line">      rotate_flip_choice.selected_index(6);</div>
+<div class="line"> </div>
 <div class="line">      saturate_percent_track_bar.value(300);</div>
+<div class="line"> </div>
 <div class="line">      sepia_percent_track_bar.value(100);</div>
+<div class="line"> </div>
 <div class="line">      solarize_threshold_track_bar.value(128);</div>
+<div class="line"> </div>
 <div class="line">      threshold_threshold_track_bar.value(382);</div>
 <div class="line">    }</div>
 <div class="line"> </div>
@@ -516,7 +575,7 @@ $(function() {
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;color-extraction&quot;</span>) adjusted_image = image_effector::set_effect(original_image(), <a id="_a18" name="_a18"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1color__extraction__effect.html">color_extraction_effect</a> {color_extraction_threshold_track_bar.value(), color_extraction_extraction_color_color_picker.color(), color_extraction_other_pixels_color_color_picker.color()});</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;color-substitution&quot;</span>) adjusted_image = image_effector::set_effect(original_image(), <a id="_a19" name="_a19"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1color__substitution__effect.html">color_substitution_effect</a> {color_substitution_threshold_track_bar.value(), color_substitution_source_color_color_picker.color(), color_substitution_new_color_color_picker.color()});</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;contrast&quot;</span>) adjusted_image = image_effector::set_effect(original_image(), <a id="_a20" name="_a20"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1contrast__effect.html">contrast_effect</a> {contrast_percent_track_bar.value() / 100.0});</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;crop&quot;</span>) adjusted_image = image_converter::crop(original_image(), <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {crop_x_track_bar.value(), crop_y_track_bar.value(), crop_width_track_bar.value(), crop_height_track_bar.value()});</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;crop&quot;</span>) adjusted_image = image_converter::crop(original_image(), <a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {math::abs(crop_x_track_bar.value()), math::abs(crop_y_track_bar.value()), crop_width_track_bar.value(), crop_height_track_bar.value()});</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;disabled&quot;</span>) adjusted_image = disabled_switch_button.checked() ? <a id="_a21" name="_a21"></a><a class="code hl_class" href="classxtd_1_1drawing_1_1bitmap.html">bitmap</a> {image_effector::set_effect(original_image(), <a id="_a22" name="_a22"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1disabled__effect.html">disabled_effect</a> {adjusted_picture_panel.<a id="a23" name="a23"></a><a class="code hl_function" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1disabled__effect.html#a1f37d68909ce34913ae7f34429f478f3">back_color</a>()})} : original_image();</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;drop-shadow&quot;</span>) adjusted_image = image_converter::drop_shadow(original_image(), drop_shadow_horizontal_track_bar.value(), drop_shadow_vertical_track_bar.value(), drop_shadow_radius_track_bar.value(), drop_shadow_color_color_picker.color());</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;gamma-correction&quot;</span>) adjusted_image = image_converter::gamma_correction(original_image(), gamma_correction_red_correction_track_bar.value() / 10.0, gamma_correction_green_correction_track_bar.value() / 10.0, gamma_correction_blue_correction_track_bar.value() / 10.0);</div>
@@ -526,7 +585,7 @@ $(function() {
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;opacity&quot;</span>) adjusted_image = image_converter::opacity(original_image(), opacity_percent_track_bar.value() / 100.0);</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;posterize&quot;</span>) adjusted_image = image_effector::set_effect(original_image(), <a id="_a24" name="_a24"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1posterize__effect.html">posterize_effect</a> {posterize_levels_track_bar.value()});</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;rescale&quot;</span>) adjusted_image = image_converter::rescale(original_image(), {rescale_width_track_bar.value(), rescale_height_track_bar.value()});</div>
-<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;resize&quot;</span>) adjusted_image = image_effector::set_effect(original_image(), <a id="_a25" name="_a25"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html">resize_effect</a> {<a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {resize_x_track_bar.value(), resize_y_track_bar.value(), resize_width_track_bar.value(), resize_height_track_bar.value()}});</div>
+<div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;resize&quot;</span>) adjusted_image = image_effector::set_effect(original_image(), resize_auto_determine_fill_color_ratio_check_box.checked() ? <a id="_a25" name="_a25"></a><a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html">resize_effect</a> {rectangle {math::abs(resize_x_track_bar.value()), math::abs(resize_y_track_bar.value()), resize_width_track_bar.value(), resize_height_track_bar.value()}, resize_auto_determine_fill_color_ratio_check_box.checked()} : <a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html">resize_effect</a> {<a class="code hl_struct" href="structxtd_1_1drawing_1_1rectangle.html">rectangle</a> {math::abs(resize_x_track_bar.value()), math::abs(resize_y_track_bar.value()), resize_width_track_bar.value(), resize_height_track_bar.value()}, resize_fill_color_color_picker.color()});</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;rotate-flip&quot;</span>) adjusted_image = image_converter::rotate_flip(original_image(), as&lt;rotate_flip_type&gt;(rotate_flip_choice.selected_item().tag()));</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;saturate&quot;</span>) adjusted_image = image_converter::saturate(original_image(), saturate_percent_track_bar.value() / 100.0);</div>
 <div class="line">      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (effect_choice.selected_item() == <span class="stringliteral">&quot;sepia&quot;</span>) adjusted_image = image_converter::sepia(original_image(), sepia_percent_track_bar.value() / 100.0);</div>
@@ -629,17 +688,17 @@ $(function() {
 <div class="line"> </div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1panel.html">panel</a> crop_panel = panel::create(*<span class="keyword">this</span>, {0, 0}, {730, 170});</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> crop_x_label = label::create(crop_panel, <span class="stringliteral">&quot;x&quot;</span>, {10, 34}, {70, 23});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> crop_x_track_bar = track_bar::create(crop_panel, 25, 0, 300, {80, 30}, {160, 25});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> crop_x_numeric_up_down = numeric_up_down::create(crop_panel, 25, 0, 300, {250, 30}, {110, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> crop_x_track_bar = track_bar::create(crop_panel, {80, 30}, {160, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> crop_x_numeric_up_down = numeric_up_down::create(crop_panel, {250, 30}, {110, 25});</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> crop_y_label = label::create(crop_panel, <span class="stringliteral">&quot;y&quot;</span>, {375, 34}, {70, 23});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> crop_y_track_bar = track_bar::create(crop_panel, 25, 0, 300, {440, 30}, {160, 25});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> crop_y_numeric_up_down = numeric_up_down::create(crop_panel, 25, 0, 300, {610, 30}, {110, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> crop_y_track_bar = track_bar::create(crop_panel, {440, 30}, {160, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> crop_y_numeric_up_down = numeric_up_down::create(crop_panel, {610, 30}, {110, 25});</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> crop_width_label = label::create(crop_panel, <span class="stringliteral">&quot;width&quot;</span>, {10, 74}, {70, 23});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> crop_width_track_bar = track_bar::create(crop_panel, 250, 1, 300, {80, 70}, {160, 25});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> crop_width_numeric_up_down = numeric_up_down::create(crop_panel, 250, 1, 300, {250, 70}, {110, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> crop_width_track_bar = track_bar::create(crop_panel, {80, 70}, {160, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> crop_width_numeric_up_down = numeric_up_down::create(crop_panel, {250, 70}, {110, 25});</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> crop_height_label = label::create(crop_panel, <span class="stringliteral">&quot;height&quot;</span>, {375, 74}, {70, 23});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> crop_height_track_bar = track_bar::create(crop_panel, 250, 1, 300, {440, 70}, {160, 25});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> crop_height_numeric_up_down = numeric_up_down::create(crop_panel, 250, 1, 300, {610, 70}, {110, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> crop_height_track_bar = track_bar::create(crop_panel, {440, 70}, {160, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> crop_height_numeric_up_down = numeric_up_down::create(crop_panel, {610, 70}, {110, 25});</div>
 <div class="line"> </div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1panel.html">panel</a> disabled_panel = panel::create(*<span class="keyword">this</span>, {0, 0}, {730, 170});</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> disabled_label = label::create(disabled_panel, <span class="stringliteral">&quot;Disabled&quot;</span>, {10, 54}, {60, 23});</div>
@@ -705,19 +764,22 @@ $(function() {
 <div class="line">    </div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1panel.html">panel</a> resize_panel = panel::create(*<span class="keyword">this</span>, {0, 0}, {730, 170});</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> resize_x_label = label::create(resize_panel, <span class="stringliteral">&quot;offset x&quot;</span>, {10, 14}, {70, 23});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> resize_x_track_bar = track_bar::create(resize_panel, 0, 0, original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width * 2, {80, 10}, {160, 25});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> resize_x_numeric_up_down = numeric_up_down::create(resize_panel, 0, 0, original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width * 2, {250, 10}, {110, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> resize_x_track_bar = track_bar::create(resize_panel, {80, 10}, {160, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> resize_x_numeric_up_down = numeric_up_down::create(resize_panel, {250, 10}, {110, 25});</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> resize_y_label = label::create(resize_panel, <span class="stringliteral">&quot;offset y&quot;</span>, {375, 14}, {70, 23});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> resize_y_track_bar = track_bar::create(resize_panel, 0, 0, original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().height * 2, {440, 10}, {160, 25});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> resize_y_numeric_up_down = numeric_up_down::create(resize_panel, 0, 0, original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().height * 2, {610, 10}, {110, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> resize_y_track_bar = track_bar::create(resize_panel, {440, 10}, {160, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> resize_y_numeric_up_down = numeric_up_down::create(resize_panel, {610, 10}, {110, 25});</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> resize_width_label = label::create(resize_panel, <span class="stringliteral">&quot;width&quot;</span>, {10, 54}, {70, 23});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> resize_width_track_bar = track_bar::create(resize_panel, original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width, 1, original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width * 2, {80, 50}, {160, 25});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> resize_width_numeric_up_down = numeric_up_down::create(resize_panel, original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width, 1, original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().width * 2, {250, 50}, {110, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> resize_width_track_bar = track_bar::create(resize_panel, {80, 50}, {160, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> resize_width_numeric_up_down = numeric_up_down::create(resize_panel, {250, 50}, {110, 25});</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> resize_height_label = label::create(resize_panel, <span class="stringliteral">&quot;height&quot;</span>, {375, 54}, {70, 23});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> resize_height_track_bar = track_bar::create(resize_panel, original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().height, 1, original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().height * 2, {440, 50}, {160, 25});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> resize_height_numeric_up_down = numeric_up_down::create(resize_panel, original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().height, 1, original_image().<a class="code hl_typedef" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">size</a>().height * 2, {610, 50}, {110, 25});</div>
-<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> resize_maintain_aspect_ratio_check_box = check_box::create(resize_panel, <span class="stringliteral">&quot;Maintain aspect ratio&quot;</span>, check_state::checked, {10, 94}, {150, 23});</div>
-<div class="line">    </div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1track__bar.html">track_bar</a> resize_height_track_bar = track_bar::create(resize_panel, {440, 50}, {160, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1numeric__up__down.html">numeric_up_down</a> resize_height_numeric_up_down = numeric_up_down::create(resize_panel, {610, 50}, {110, 25});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> resize_maintain_aspect_ratio_check_box = check_box::create(resize_panel, <span class="stringliteral">&quot;Maintain aspect ratio&quot;</span>, {10, 90}, {150, 23});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> resize_fill_color_label = label::create(resize_panel, <span class="stringliteral">&quot;Fill&quot;</span>, {220, 94}, {30, 23});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1color__picker.html">color_picker</a> resize_fill_color_color_picker = color_picker::create(resize_panel, color::transparent, {250, 90});</div>
+<div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1check__box.html">check_box</a> resize_auto_determine_fill_color_ratio_check_box = check_box::create(resize_panel, <span class="stringliteral">&quot;Auto determine fill color&quot;</span>, {375, 90}, {180, 23});</div>
+<div class="line"> </div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1panel.html">panel</a> rotate_flip_panel = panel::create(*<span class="keyword">this</span>, {0, 0}, {730, 170});</div>
 <div class="line">    <a class="code hl_class" href="classxtd_1_1forms_1_1label.html">label</a> rotate_flip_label = label::create(rotate_flip_panel, <span class="stringliteral">&quot;Rotate-flip&quot;</span>, {10, 54}, {80, 23});</div>
 <div class="line">    <a id="_a35" name="_a35"></a><a class="code hl_class" href="classxtd_1_1forms_1_1choice.html">choice</a> rotate_flip_choice = choice::create(rotate_flip_panel, {{<span class="stringliteral">&quot;rotate_none_flip_none&quot;</span>, rotate_flip_type::rotate_none_flip_none}, {<span class="stringliteral">&quot;rotate_90_flip_none&quot;</span>, rotate_flip_type::rotate_90_flip_none}, {<span class="stringliteral">&quot;rotate_180_flip_none&quot;</span>, rotate_flip_type::rotate_180_flip_none}, {<span class="stringliteral">&quot;rotate_270_flip_none&quot;</span>, rotate_flip_type::rotate_270_flip_none}, {<span class="stringliteral">&quot;rotate_none_flip_x&quot;</span>, rotate_flip_type::rotate_none_flip_x}, {<span class="stringliteral">&quot;rotate_90_flip_x&quot;</span>, rotate_flip_type::rotate_90_flip_x}, {<span class="stringliteral">&quot;rotate_180_flip_x&quot;</span>, rotate_flip_type::rotate_180_flip_x}, {<span class="stringliteral">&quot;rotate_270_flip_x&quot;</span>, rotate_flip_type::rotate_270_flip_x}, {<span class="stringliteral">&quot;rotate_none_flip_y&quot;</span>, rotate_flip_type::rotate_none_flip_y}, {<span class="stringliteral">&quot;rotate_90_flip_y&quot;</span>, rotate_flip_type::rotate_90_flip_y}, {<span class="stringliteral">&quot;rotate_180_flip_y&quot;</span>, rotate_flip_type::rotate_180_flip_y}, {<span class="stringliteral">&quot;rotate_270_flip_y&quot;</span>, rotate_flip_type::rotate_270_flip_y}, {<span class="stringliteral">&quot;rotate_none_flip_xy&quot;</span>, rotate_flip_type::rotate_none_flip_xy}, {<span class="stringliteral">&quot;rotate_90_flip_xy&quot;</span>, rotate_flip_type::rotate_90_flip_xy}, {<span class="stringliteral">&quot;rotate_180_flip_xy&quot;</span>, rotate_flip_type::rotate_180_flip_xy}, {<span class="stringliteral">&quot;rotate_270_flip_xy&quot;</span>, rotate_flip_type::rotate_270_flip_xy}}, 6, {100, 50}, {180, 25});</div>
@@ -796,7 +858,7 @@ $(function() {
 <div class="ttc" id="astructxtd_1_1drawing_1_1imaging_1_1effects_1_1disabled__effect_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1disabled__effect.html">xtd::drawing::imaging::effects::disabled_effect</a></div><div class="ttdoc">The xtd::drawing::imaging::effects::disabled_effect disables the image with brightness or background ...</div><div class="ttdef"><b>Definition</b> disabled_effect.hpp:35</div></div>
 <div class="ttc" id="astructxtd_1_1drawing_1_1imaging_1_1effects_1_1disabled__effect_html_a1f37d68909ce34913ae7f34429f478f3"><div class="ttname"><a href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1disabled__effect.html#a1f37d68909ce34913ae7f34429f478f3">xtd::drawing::imaging::effects::disabled_effect::back_color</a></div><div class="ttdeci">void back_color(const xtd::drawing::color &amp;value)</div><div class="ttdoc">Sets the background color.</div></div>
 <div class="ttc" id="astructxtd_1_1drawing_1_1imaging_1_1effects_1_1posterize__effect_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1posterize__effect.html">xtd::drawing::imaging::effects::posterize_effect</a></div><div class="ttdoc">The xtd::drawing::imaging::effects::posterize_effect posterizes the image with color levels.</div><div class="ttdef"><b>Definition</b> posterize_effect.hpp:34</div></div>
-<div class="ttc" id="astructxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html">xtd::drawing::imaging::effects::resize_effect</a></div><div class="ttdoc">The xtd::drawing::imaging::effects::brightness_effect changes the contrast of the image with percent ...</div><div class="ttdef"><b>Definition</b> resize_effect.hpp:35</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html">xtd::drawing::imaging::effects::resize_effect</a></div><div class="ttdoc">The xtd::drawing::imaging::effects::resize_effect resizes the image with new rectangle and optionnaly...</div><div class="ttdef"><b>Definition</b> resize_effect.hpp:36</div></div>
 <div class="ttc" id="astructxtd_1_1drawing_1_1imaging_1_1effects_1_1solarize__effect_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1solarize__effect.html">xtd::drawing::imaging::effects::solarize_effect</a></div><div class="ttdoc">The xtd::drawing::imaging::effects::solarize_effect solarizes the image with threashold.</div><div class="ttdef"><b>Definition</b> solarize_effect.hpp:34</div></div>
 <div class="ttc" id="astructxtd_1_1drawing_1_1rectangle_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1rectangle.html">xtd::drawing::rectangle</a></div><div class="ttdoc">Stores a set of four integers that represent the location and size of a rectangle.</div><div class="ttdef"><b>Definition</b> rectangle.hpp:44</div></div>
 <div class="ttc" id="astructxtd_1_1drawing_1_1rectangle_html_ad9e308514bbe35c9028cd3bb32d16048"><div class="ttname"><a href="structxtd_1_1drawing_1_1rectangle.html#ad9e308514bbe35c9028cd3bb32d16048">xtd::drawing::rectangle::size</a></div><div class="ttdeci">xtd::drawing::size size() const noexcept</div><div class="ttdoc">Gets the size of this xtd::drawing::rectangle.</div></div>
@@ -804,7 +866,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Mar 3 2025 11:11:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Mar 4 2025 14:59:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

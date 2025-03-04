@@ -88,7 +88,7 @@ var searchData=
   ['content_5falignment_2ehpp_85',['content_alignment.hpp',['../content__alignment_8hpp.html',1,'']]],
   ['context_5fmenu_2ehpp_86',['context_menu.hpp',['../context__menu_8hpp.html',1,'']]],
   ['contrast_5feffect_2ehpp_87',['contrast_effect.hpp',['../contrast__effect_8hpp.html',1,'']]],
-  ['control_2ehpp_88',['control.hpp',['../control_8hpp.html',1,'(Global Namespace)'],['../style__sheets_2control_8hpp.html',1,'(Global Namespace)']]],
+  ['control_2ehpp_88',['control.hpp',['../style__sheets_2control_8hpp.html',1,'(Global Namespace)'],['../control_8hpp.html',1,'(Global Namespace)']]],
   ['control_5fappearance_2ehpp_89',['control_appearance.hpp',['../control__appearance_8hpp.html',1,'']]],
   ['control_5fevent_5fargs_2ehpp_90',['control_event_args.hpp',['../control__event__args_8hpp.html',1,'']]],
   ['control_5fevent_5fhandler_2ehpp_91',['control_event_handler.hpp',['../control__event__handler_8hpp.html',1,'']]],
@@ -116,11 +116,12 @@ var searchData=
   ['cpp_5flanguage_2ehpp_113',['cpp_language.hpp',['../cpp__language_8hpp.html',1,'']]],
   ['crayon_5fcolors_2ehpp_114',['crayon_colors.hpp',['../crayon__colors_8hpp.html',1,'']]],
   ['create_5fparams_2ehpp_115',['create_params.hpp',['../create__params_8hpp.html',1,'']]],
-  ['css_5freader_2ehpp_116',['css_reader.hpp',['../css__reader_8hpp.html',1,'']]],
-  ['css_5fwriter_2ehpp_117',['css_writer.hpp',['../css__writer_8hpp.html',1,'']]],
-  ['ctrace_2ehpp_118',['ctrace.hpp',['../ctrace_8hpp.html',1,'']]],
-  ['cursor_2ehpp_119',['cursor.hpp',['../cursor_8hpp.html',1,'']]],
-  ['cursors_2ehpp_120',['cursors.hpp',['../cursors_8hpp.html',1,'']]],
-  ['cursors_5fappearances_5fpage_2edox_121',['cursors_appearances_page.dox',['../cursors__appearances__page_8dox.html',1,'']]],
-  ['cyan_5fcolors_2ehpp_122',['cyan_colors.hpp',['../cyan__colors_8hpp.html',1,'']]]
+  ['crop_5feffect_2ehpp_116',['crop_effect.hpp',['../crop__effect_8hpp.html',1,'']]],
+  ['css_5freader_2ehpp_117',['css_reader.hpp',['../css__reader_8hpp.html',1,'']]],
+  ['css_5fwriter_2ehpp_118',['css_writer.hpp',['../css__writer_8hpp.html',1,'']]],
+  ['ctrace_2ehpp_119',['ctrace.hpp',['../ctrace_8hpp.html',1,'']]],
+  ['cursor_2ehpp_120',['cursor.hpp',['../cursor_8hpp.html',1,'']]],
+  ['cursors_2ehpp_121',['cursors.hpp',['../cursors_8hpp.html',1,'']]],
+  ['cursors_5fappearances_5fpage_2edox_122',['cursors_appearances_page.dox',['../cursors__appearances__page_8dox.html',1,'']]],
+  ['cyan_5fcolors_2ehpp_123',['cyan_colors.hpp',['../cyan__colors_8hpp.html',1,'']]]
 ];
