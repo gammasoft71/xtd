@@ -98,6 +98,7 @@ namespace image_effector_example {
         blur_radius_numeric_up_down.value(blur_radius_track_bar.value());
         update_pictures();
       };
+      blur_expand_edge_check_box.checked_changed += [&] {update_pictures();};
       
       brightness_percent_numeric_up_down.value_changed += [&] {brightness_percent_track_bar.value(as<int32>(brightness_percent_numeric_up_down.value()));};
       brightness_percent_track_bar.value_changed += [&] {
@@ -461,7 +462,7 @@ namespace image_effector_example {
       original_picture_panel.invalidate();
 
       if (effect_choice.selected_item() == "bitonal") adjusted_image = image_effector::set_effect(original_image(), bitonal_effect {bitonal_threshold_track_bar.value(), bitonal_upper_color_color_picker.color(), bitonal_lower_color_color_picker.color()});
-      else if (effect_choice.selected_item() == "blur") adjusted_image = image_effector::set_effect(original_image(), blur_effect {blur_radius_track_bar.value()});
+      else if (effect_choice.selected_item() == "blur") adjusted_image = image_effector::set_effect(original_image(), blur_effect {blur_radius_track_bar.value(), blur_expand_edge_check_box.checked()});
       else if (effect_choice.selected_item() == "brightness") adjusted_image = image_effector::set_effect(original_image(), brightness_effect {brightness_percent_track_bar.value() / 100.0});
       else if (effect_choice.selected_item() == "color") adjusted_image = image_effector::set_effect(original_image(), color_effect {color_color_color_picker.color(), color_percent_track_bar.value() / 100.0});
       else if (effect_choice.selected_item() == "color-extraction") adjusted_image = image_effector::set_effect(original_image(), color_extraction_effect {color_extraction_threshold_track_bar.value(), color_extraction_extraction_color_color_picker.color(), color_extraction_other_pixels_color_color_picker.color()});
@@ -542,7 +543,8 @@ namespace image_effector_example {
     label blur_radius_label = label::create(blur_panel, "Radius", {10, 54}, {50, 23});
     track_bar blur_radius_track_bar = track_bar::create(blur_panel, 10, 0, 100, {60, 50}, {200, 25});
     numeric_up_down blur_radius_numeric_up_down = numeric_up_down::create(blur_panel, 10, 0, 100, {270, 50}, {130, 25});
-    
+    check_box blur_expand_edge_check_box = check_box::create(blur_panel, "Expand edge", {420, 50}, {150, 23});
+
     panel brightness_panel = panel::create(*this, {0, 0}, {730, 170});
     label brightness_percent_label = label::create(brightness_panel, "Percent", {10, 54}, {70, 23});
     track_bar brightness_percent_track_bar = track_bar::create(brightness_panel, 125, 0, 200, {80, 50}, {200, 25});

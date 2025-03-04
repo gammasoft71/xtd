@@ -40,11 +40,19 @@ namespace xtd {
           /// @brief Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified radius.
           /// @param radius The radius of the blur in pixels.
           explicit blur_effect(int32 radius);
+          /// @brief Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified radius and expand edge boolean.
+          /// @param radius The radius of the blur in pixels.
+          /// @param expand_edge `true` if the bitmap expands by an amount equal to the radius so that it can have soft edges. `false` if the bitmap remains the same size and the soft edges are clipped.
+          blur_effect(int32 radius, bool expand_edge);
           /// @}
 
           /// @name Public Properties
           
           /// @{
+          /// @brief Gets or sets a value that indicates whether the bitmap expands by an amount equal to the blur radius.
+          /// @param expand_edge `true` if the bitmap expands by an amount equal to the radius so that it can have soft edges. `false` if the bitmap remains the same size and the soft edges are clipped.
+          bool expand_edge = false;
+
           /// @brief Gets or sets the radius value.
           /// @param radius The radius of the blur in pixels.
           /// @remarks If the `radius` is `0`, there will be no blurring.
