@@ -2,8 +2,7 @@
 /// @brief Contains xtd::drawing::helpers::argb struct.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include "alpha.hpp"
-#include "rgb.hpp"
+#include <xtd/byte>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -41,7 +40,10 @@ namespace xtd {
         /// @name Public Static Methods
         
         /// @{
-        static argb from_uint32(uint32 value) {
+        /// @brief Creates a xtd::helpers::argb struct from the specified unsigned integer value.
+        /// @param value The unsigned integer value.
+        /// @return an xtd::drawing::helper::argb value that contains decomposed unsigned integer value.
+        static argb from_uint32(uint32 value) noexcept {
           return argb {
             .a = static_cast<xtd::byte>((value & 0xFF000000) >> 24),
             .r = static_cast<xtd::byte>((value & 0x00FF0000) >> 16),
