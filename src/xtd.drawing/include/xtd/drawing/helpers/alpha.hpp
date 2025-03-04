@@ -20,9 +20,13 @@ namespace xtd {
       /// xtd.drawing
       /// @ingroup xtd_drawing
       struct alpha {
+        /// @name Public Properties
+        
+        /// @{
         /// @brief Gets or sets the alpha component value of this xtd::drawing::helpers::alpha struct.
         /// @param a byte The alpha component value of this xtd::drawing::helpers::alpha.
         xtd::byte a = 255;
+        /// @}
       };
     }
   }
