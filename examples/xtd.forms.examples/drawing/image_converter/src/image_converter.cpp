@@ -11,6 +11,10 @@ using namespace xtd::forms;
 namespace image_effector_example {
   class form1 : public form {
   public:
+    static auto main() {
+      application::run(image_effector_example::form1 {});
+    }
+    
     form1() {
       text("Image effects example");
       form_border_style(forms::form_border_style::fixed_3d);
@@ -366,13 +370,60 @@ namespace image_effector_example {
     }
     
   private:
+    static bitmap create_image_from_color(const xtd::drawing::color& color) {
+      auto image = bitmap {300, 300};
+      auto graphics_image = image.create_graphics();
+      graphics_image.clear(color);
+      return image;
+    }
+    
+    void on_picture_choice_selected_value_changed() {
+      original_image_ = as<bitmap>(picture_choice.selected_item().tag());
+      
+      reset_inputs();
+      update_pictures();
+    }
+    
+    void on_effect_choice_selected_value_changed() {
+      bitonal_panel.visible(effect_choice.selected_item() == "bitonal");
+      blur_panel.visible(effect_choice.selected_item() == "blur");
+      brightness_panel.visible(effect_choice.selected_item() == "brightness");
+      color_panel.visible(effect_choice.selected_item() == "color");
+      color_extraction_panel.visible(effect_choice.selected_item() == "color-extraction");
+      color_substitution_panel.visible(effect_choice.selected_item() == "color-substitution");
+      contrast_panel.visible(effect_choice.selected_item() == "contrast");
+      crop_panel.visible(effect_choice.selected_item() == "crop");
+      disabled_panel.visible(effect_choice.selected_item() == "disabled");
+      drop_shadow_panel.visible(effect_choice.selected_item() == "drop-shadow");
+      gamma_correction_panel.visible(effect_choice.selected_item() == "gamma-correction");
+      grayscale_panel.visible(effect_choice.selected_item() == "grayscale");
+      hue_rotate_panel.visible(effect_choice.selected_item().value() == "hue-rotate");
+      invert_panel.visible(effect_choice.selected_item().value() == "invert");
+      opacity_panel.visible(effect_choice.selected_item().value() == "opacity");
+      posterize_panel.visible(effect_choice.selected_item() == "posterize");
+      rescale_panel.visible(effect_choice.selected_item().value() == "rescale");
+      resize_panel.visible(effect_choice.selected_item().value() == "resize");
+      rotate_flip_panel.visible(effect_choice.selected_item().value() == "rotate-flip");
+      saturate_panel.visible(effect_choice.selected_item().value() == "saturate");
+      sepia_panel.visible(effect_choice.selected_item().value() == "sepia");
+      solarize_panel.visible(effect_choice.selected_item() == "solarize");
+      threshold_panel.visible(effect_choice.selected_item().value() == "threshold");
+      
+      reset_inputs();
+      update_pictures();
+    }
+    
     void on_panel_image_paint(object& sender, paint_event_args& e) {
       if (background_choice.selected_item() == "checker-board") e.graphics().fill_rectangle(hatch_brush {xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)}, e.clip_rectangle());
       const auto& img = sender == original_picture_panel ? original_image() : adjusted_image;
       e.graphics().draw_image(img, rectangle {{(as<control>(sender).width() - img.width()) / 2, (as<control>(sender).height() - img.height()) / 2}, img.size()});
       control_paint::draw_border_from_back_color(as<control>(sender), e.graphics(), xtd::forms::border_style::theme, xtd::forms::border_sides::all, as<control>(sender).back_color(), e.clip_rectangle());
     }
-    
+
+    const image& original_image() const {
+      return original_image_;
+    }
+
     void reset_inputs() {
       original_image_ = as<bitmap>(picture_choice.selected_item().tag());
       
@@ -408,9 +459,9 @@ namespace image_effector_example {
 
       disabled_switch_button.checked(true);
 
-      drop_shadow_radius_track_bar.value(10);
-      drop_shadow_horizontal_track_bar.value(8);
-      drop_shadow_vertical_track_bar.value(8);
+      drop_shadow_radius_track_bar.value(8);
+      drop_shadow_horizontal_track_bar.value(16);
+      drop_shadow_vertical_track_bar.value(16);
       drop_shadow_color_color_picker.alpha_color(true);
       drop_shadow_color_color_picker.color(color::black);
 
@@ -470,7 +521,7 @@ namespace image_effector_example {
       else if (effect_choice.selected_item() == "contrast") adjusted_image = image_effector::set_effect(original_image(), contrast_effect {contrast_percent_track_bar.value() / 100.0});
       else if (effect_choice.selected_item() == "crop") adjusted_image = image_effector::set_effect(original_image(), crop_effect {rectangle {math::abs(crop_x_track_bar.value()), math::abs(crop_y_track_bar.value()), crop_width_track_bar.value(), crop_height_track_bar.value()}});
       else if (effect_choice.selected_item() == "disabled") adjusted_image = disabled_switch_button.checked() ? bitmap {image_effector::set_effect(original_image(), disabled_effect {adjusted_picture_panel.back_color()})} : original_image();
-      else if (effect_choice.selected_item() == "drop-shadow") adjusted_image = image_converter::drop_shadow(original_image(), drop_shadow_horizontal_track_bar.value(), drop_shadow_vertical_track_bar.value(), drop_shadow_radius_track_bar.value(), drop_shadow_color_color_picker.color());
+      else if (effect_choice.selected_item() == "drop-shadow") adjusted_image = image_effector::set_effect(original_image(), drop_shadow_effect {drawing::size {drop_shadow_horizontal_track_bar.value(), drop_shadow_vertical_track_bar.value()}, drop_shadow_radius_track_bar.value(), drop_shadow_color_color_picker.color()});
       else if (effect_choice.selected_item() == "gamma-correction") adjusted_image = image_converter::gamma_correction(original_image(), gamma_correction_red_correction_track_bar.value() / 10.0, gamma_correction_green_correction_track_bar.value() / 10.0, gamma_correction_blue_correction_track_bar.value() / 10.0);
       else if (effect_choice.selected_item() == "grayscale") adjusted_image = image_converter::grayscale(original_image(), grayscale_percent_track_bar.value() / 100.0);
       else if (effect_choice.selected_item() == "hue-rotate")adjusted_image = image_converter::hue_rotate(original_image(), hue_rotate_percent_track_bar.value());
@@ -487,44 +538,7 @@ namespace image_effector_example {
       else adjusted_image = original_image();
       adjusted_picture_panel.invalidate();
     }
-    
-    void on_picture_choice_selected_value_changed() {
-      original_image_ = as<bitmap>(picture_choice.selected_item().tag());
-      
-      reset_inputs();
-      update_pictures();
-    }
-    
-    void on_effect_choice_selected_value_changed() {
-      bitonal_panel.visible(effect_choice.selected_item() == "bitonal");
-      blur_panel.visible(effect_choice.selected_item() == "blur");
-      brightness_panel.visible(effect_choice.selected_item() == "brightness");
-      color_panel.visible(effect_choice.selected_item() == "color");
-      color_extraction_panel.visible(effect_choice.selected_item() == "color-extraction");
-      color_substitution_panel.visible(effect_choice.selected_item() == "color-substitution");
-      contrast_panel.visible(effect_choice.selected_item() == "contrast");
-      crop_panel.visible(effect_choice.selected_item() == "crop");
-      disabled_panel.visible(effect_choice.selected_item() == "disabled");
-      drop_shadow_panel.visible(effect_choice.selected_item() == "drop-shadow");
-      gamma_correction_panel.visible(effect_choice.selected_item() == "gamma-correction");
-      grayscale_panel.visible(effect_choice.selected_item() == "grayscale");
-      hue_rotate_panel.visible(effect_choice.selected_item().value() == "hue-rotate");
-      invert_panel.visible(effect_choice.selected_item().value() == "invert");
-      opacity_panel.visible(effect_choice.selected_item().value() == "opacity");
-      posterize_panel.visible(effect_choice.selected_item() == "posterize");
-      rescale_panel.visible(effect_choice.selected_item().value() == "rescale");
-      resize_panel.visible(effect_choice.selected_item().value() == "resize");
-      rotate_flip_panel.visible(effect_choice.selected_item().value() == "rotate-flip");
-      saturate_panel.visible(effect_choice.selected_item().value() == "saturate");
-      sepia_panel.visible(effect_choice.selected_item().value() == "sepia");
-      solarize_panel.visible(effect_choice.selected_item() == "solarize");
-      threshold_panel.visible(effect_choice.selected_item().value() == "threshold");
-
-      reset_inputs();
-      update_pictures();
-    }
-    
-    const image& original_image() const {return original_image_;}
+        
     image original_image_ = properties::resources::pineapple();
     image adjusted_image = properties::resources::pineapple();
     double rescale_aspect_ratio = as<double>(original_image().size().width) / original_image().size().height;
@@ -600,14 +614,14 @@ namespace image_effector_example {
     
     panel drop_shadow_panel = panel::create(*this, {0, 0}, {730, 170});
     label drop_shadow_horizontal_label = label::create(drop_shadow_panel, "Horizontal", {10, 14}, {70, 23});
-    track_bar drop_shadow_horizontal_track_bar = track_bar::create(drop_shadow_panel, 8, -50, 50, {80, 10}, {160, 25});
-    numeric_up_down drop_shadow_horizontal_numeric_up_down = numeric_up_down::create(drop_shadow_panel, 8, -50, 50, {250, 10}, {110, 25});
+    track_bar drop_shadow_horizontal_track_bar = track_bar::create(drop_shadow_panel, 16, -50, 50, {80, 10}, {160, 25});
+    numeric_up_down drop_shadow_horizontal_numeric_up_down = numeric_up_down::create(drop_shadow_panel, 16, -50, 50, {250, 10}, {110, 25});
     label drop_shadow_vertical_label = label::create(drop_shadow_panel, "Vertical", {375, 14}, {70, 23});
-    track_bar drop_shadow_vertical_track_bar = track_bar::create(drop_shadow_panel, 8, -50, 50, {440, 10}, {160, 25});
-    numeric_up_down drop_shadow_vertical_numeric_up_down = numeric_up_down::create(drop_shadow_panel, 8, -50, 50, {610, 10}, {110, 25});
+    track_bar drop_shadow_vertical_track_bar = track_bar::create(drop_shadow_panel, 16, -50, 50, {440, 10}, {160, 25});
+    numeric_up_down drop_shadow_vertical_numeric_up_down = numeric_up_down::create(drop_shadow_panel, 16, -50, 50, {610, 10}, {110, 25});
     label drop_shadow_radius_label = label::create(drop_shadow_panel, "Radius", {10, 54}, {70, 23});
-    track_bar drop_shadow_radius_track_bar = track_bar::create(drop_shadow_panel, 10, 0, 100, {80, 50}, {200, 25});
-    numeric_up_down drop_shadow_radius_numeric_up_down = numeric_up_down::create(drop_shadow_panel, 10, 0, 100, {290, 50}, {110, 25});
+    track_bar drop_shadow_radius_track_bar = track_bar::create(drop_shadow_panel, 8, 0, 100, {80, 50}, {200, 25});
+    numeric_up_down drop_shadow_radius_numeric_up_down = numeric_up_down::create(drop_shadow_panel, 8, 0, 100, {290, 50}, {110, 25});
     label drop_shadow_lcolor_abel = label::create(drop_shadow_panel, "Color", {10, 94}, {50, 23});
     color_picker drop_shadow_color_color_picker = color_picker::create(drop_shadow_panel, color::black, {70, 90});
 
@@ -702,13 +716,12 @@ namespace image_effector_example {
     label effect_label = label::create(picures_panel, "Effect", {10, 14}, {50, 23});
     choice effect_choice = choice::create(picures_panel, {"bitonal", "blur", "brightness", "color", "color-extraction", "color-substitution", "contrast", "crop", "disabled", "drop-shadow", "gamma-correction", "grayscale", "hue-rotate", "invert", "opacity", "posterize", "rescale", "resize", "rotate-flip", "saturate", "sepia", "solarize", "threshold"}, {70, 10});
     label picture_label = label::create(picures_panel, "Picture", {220, 14}, {50, 23});
-    choice picture_choice = choice::create(picures_panel, {{"ball", properties::resources::ball()}, {"pineapple", properties::resources::pineapple()}, {"rose", properties::resources::rose()}}, 0, {280, 10});
+    choice picture_choice = choice::create(picures_panel, {{"ball", properties::resources::ball()}, {"pineapple", properties::resources::pineapple()}, {"rose", properties::resources::rose()}, {"white", create_image_from_color(color::white)}, {"silver", create_image_from_color(color::silver)}, {"gray", create_image_from_color(color::gray)}, {"black", create_image_from_color(color::black)}, {"red", create_image_from_color(color::red)}, {"maroon", create_image_from_color(color::maroon)}, {"yellow", create_image_from_color(color::yellow)}, {"olive", create_image_from_color(color::olive)}, {"lime", create_image_from_color(color::lime)}, {"green", create_image_from_color(color::green)}, {"aqua", create_image_from_color(color::aqua)}, {"teal", create_image_from_color(color::teal)}, {"blue", create_image_from_color(color::blue)}, {"navy", create_image_from_color(color::navy)}, {"fuchsia", create_image_from_color(color::fuchsia)}, {"purple", create_image_from_color(color::purple)}}, 0, {280, 10});
     label background_label = label::create(picures_panel, "Bacground", {430, 14}, {70, 23});
     choice background_choice = choice::create(picures_panel, {"checker-board", "control", "white", "black"}, 0, {510, 10});
     panel original_picture_panel = panel::create(picures_panel, {10, 40}, {350, 350});
     panel adjusted_picture_panel = panel::create(picures_panel, {370, 40}, {350, 350});
   };
 }
-auto main() -> int {
-  application::run(image_effector_example::form1 {});
-}
+
+startup_(image_effector_example::form1::main);
