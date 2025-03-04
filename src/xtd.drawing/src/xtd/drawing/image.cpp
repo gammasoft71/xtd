@@ -1,3 +1,5 @@
+#include "../../../include/xtd/drawing/imaging/effects/crop_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/image_effector.hpp"
 #include "../../../include/xtd/drawing/image.hpp"
 #include "../../../include/xtd/drawing/bitmap.hpp"
 #include "../../../include/xtd/drawing/graphics.hpp"
@@ -181,7 +183,7 @@ image::image(const image& image, int32 width, int32 height) : data_(xtd::new_spt
 image::image(const image& image, const rectangle& rect) : data_(xtd::new_sptr<data>()) {
   if (rect.left() < 0 || rect.top() < 0 || rect.width < 1 || rect.height < 1) throw_helper::throws(exception_case::argument);
   *this = image;
-  crop(rect.left(), rect.top(), rect.width, rect.height);
+  imaging::image_effector::set_effect(*this, imaging::effects::crop_effect {rect});
   update_properties();
 }
 
@@ -484,35 +486,10 @@ void image::blur(int32 radius) {
   update_properties();
 }
 
-void image::crop(int32 x, int32 y, int32 width, int32 height) {
-  if (*this == drawing::image::empty) return;
-  if (x < 0 || y < 0 || (x + width) > this->width() || (y + height) > this->height()) throw_helper::throws(exception_case::argument);
-  resize(x, y, width, height);
-}
-
 void image::rescale(int32 width, int32 height) {
   if (*this == drawing::image::empty) return;
   native::image::rescale(this->handle(), width, height);
   update_properties();
-}
-
-void image::resize(int32 x, int32 y, int32 width, int32 height) {
-  if (*this == drawing::image::empty) return;
-  if (x < 0 || y < 0 || width < 1 || height < 1) throw_helper::throws(xtd::helpers::exception_case::argument);
-  if (width < this->width() && (x + width) > this->width()) throw_helper::throws(exception_case::argument);
-  if (height < this->height() && (y + height) > this->height()) throw_helper::throws(exception_case::argument);
-  if (width >= this->width() && (x + this->width()) > width) throw_helper::throws(exception_case::argument);
-  if (height >= this->height() && (y + this->height()) > height) throw_helper::throws(exception_case::argument);
-
-  auto offset_image_x = width < this->width() ? x : 0;
-  auto offset_image_y = height < this->height() ? y : 0;
-  auto offset_x = width >= this->width() ? x : 0;
-  auto offset_y = height >= this->height() ? y : 0;
-  auto result = image {width, height};
-  auto graphics = result.create_graphics();
-
-  graphics.draw_image(*this, rectangle {offset_x, offset_y, width, height}, rectangle {offset_image_x, offset_image_y, width, height});
-  *this = result;
 }
 
 void image::update_properties() {
