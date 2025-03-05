@@ -107,7 +107,7 @@ image image_converter::bitonal(const image& image, int32 threshold, const drawin
 }
 
 void image_converter::blur(image& image, int32 radius) {
-  image.blur(radius);
+  image.blur(radius, radius);
 }
 
 image image_converter::blur(const image& image, int32 radius) {

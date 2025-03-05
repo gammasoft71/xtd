@@ -201,10 +201,12 @@ namespace {
   }
 }
 
-void image::blur(intptr handle, int32 radius) {
+void image::blur(intptr handle, int32 horizontal_radius, int32 vertical_radius) {
   toolkit::initialize(); // Must be first
   if (handle == 0) return;
-  *reinterpret_cast<wxImage*>(handle) = reinterpret_cast<wxImage*>(handle)->Blur(radius);
+  auto result = reinterpret_cast<wxImage*>(handle)->BlurHorizontal(horizontal_radius);
+  result = result.BlurVertical(vertical_radius);
+  *reinterpret_cast<wxImage*>(handle) = result;
 }
 
 void image::color_palette(intptr image, std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32& flags) {

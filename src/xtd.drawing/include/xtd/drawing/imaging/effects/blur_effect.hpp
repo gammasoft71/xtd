@@ -44,6 +44,15 @@ namespace xtd {
           /// @param radius The radius of the blur in pixels.
           /// @param expand_edge `true` if the bitmap expands by an amount equal to the radius so that it can have soft edges. `false` if the bitmap remains the same size and the soft edges are clipped.
           blur_effect(int32 radius, bool expand_edge);
+          /// @brief Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified radius.
+          /// @param horizontal_radius The horizontal radius of the blur in pixels.
+          /// @param vertical_radius The vertical radius of the blur in pixels.
+          explicit blur_effect(int32 horizontal_radius, int32 vertical_radius);
+          /// @brief Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified radius and expand edge boolean.
+          /// @param horizontal_radius The horizontal radius of the blur in pixels.
+          /// @param vertical_radius The vertical radius of the blur in pixels.
+          /// @param expand_edge `true` if the bitmap expands by an amount equal to the radius so that it can have soft edges. `false` if the bitmap remains the same size and the soft edges are clipped.
+          blur_effect(int32 horizontal_radius, int32 vertical_radius, bool expand_edge);
           /// @}
 
           /// @name Public Properties
@@ -53,10 +62,15 @@ namespace xtd {
           /// @param expand_edge `true` if the bitmap expands by an amount equal to the radius so that it can have soft edges. `false` if the bitmap remains the same size and the soft edges are clipped.
           bool expand_edge = false;
 
-          /// @brief Gets or sets the radius value.
-          /// @param radius The radius of the blur in pixels.
-          /// @remarks If the `radius` is `0`, there will be no blurring.
-          int32 radius = 0;
+          /// @brief Gets or sets the horizontal radius value.
+          /// @param horizontal_radius The horizontal radius of the blur in pixels.
+          /// @remarks If the `horizontal_radius` is `0`, there will be no horizontal blurring.
+          int32 horizontal_radius = 0;
+
+          /// @brief Gets or sets the vertical radius value.
+          /// @param vertical_radius The vertical radius of the blur in pixels.
+          /// @remarks If the `vertical_radius` is `0`, there will be no vertical blurring.
+          int32 vertical_radius = 0;
           /// @}
 
         protected:
