@@ -7,6 +7,7 @@
 #include "../../../include/xtd/drawing/imaging/effects/contrast_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/crop_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/disabled_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/drop_shadow_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/posterize_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/resize_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/solarize_effect.hpp"
@@ -195,28 +196,7 @@ image image_converter::disabled(const image& image, float brightness) {
 }
 
 void image_converter::drop_shadow(xtd::drawing::image& image, int32 horizontal_shadow, int32 vertical_shadow, int32 blur, const xtd::drawing::color& color) {
-  if (!blur) {
-    auto shadow = image.clone();
-    image_converter::bitonal(shadow, 0, color, color);
-    auto result = xtd::drawing::image {image.width() + math::abs(horizontal_shadow), image.height() + math::abs(vertical_shadow)};
-    auto graphics = result.create_graphics();
-    graphics.draw_image(shadow, horizontal_shadow <= 0 ? 0 : horizontal_shadow, vertical_shadow <= 0 ? 0 : vertical_shadow);
-    graphics.draw_image(image, horizontal_shadow >= 0 ? 0 : -horizontal_shadow, vertical_shadow >= 0 ? 0 : -vertical_shadow);
-    image = result;
-    return;
-  }
-
-  auto shadow = xtd::drawing::image {image.width() + math::abs(horizontal_shadow) + 10, image.height() + math::abs(vertical_shadow) + 10};
-  auto bitonal_image = image.clone();
-  image_converter::bitonal(bitonal_image, 382, color, color.is_dark() ? color_converter::light(color, 0.01) : color_converter::dark(color, 0.01));
-  auto graphics = shadow.create_graphics();
-  graphics.draw_image(bitonal_image, horizontal_shadow <= 0 ? 0 : horizontal_shadow, vertical_shadow <= 0 ? 0 : vertical_shadow);
-  image_converter::blur(shadow, blur);
-  auto result = xtd::drawing::image {shadow.width(), shadow.height()};
-  graphics = result.create_graphics();
-  graphics.draw_image(shadow, 0, 0);
-  graphics.draw_image(image, horizontal_shadow >= 0 ? 0 : -horizontal_shadow, vertical_shadow >= 0 ? 0 : -vertical_shadow);
-  image = result;
+  image_effector::set_effect(image, drop_shadow_effect {{horizontal_shadow, vertical_shadow}, blur, color});
 }
 
 xtd::drawing::image image_converter::drop_shadow(const xtd::drawing::image& image, int32 horizontal_shadow, int32 vertical_shadow, int32 blur, const xtd::drawing::color& color) {
