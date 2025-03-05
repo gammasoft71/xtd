@@ -201,14 +201,6 @@ namespace {
   }
 }
 
-void image::blur(intptr handle, int32 horizontal_radius, int32 vertical_radius) {
-  toolkit::initialize(); // Must be first
-  if (handle == 0) return;
-  auto result = reinterpret_cast<wxImage*>(handle)->BlurHorizontal(horizontal_radius);
-  result = result.BlurVertical(vertical_radius);
-  *reinterpret_cast<wxImage*>(handle) = result;
-}
-
 void image::color_palette(intptr image, std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32& flags) {
   wxPalette palette = reinterpret_cast<wxImage*>(image)->GetPalette();
   entries.clear();

@@ -283,14 +283,6 @@ namespace xtd {
         /// @name Protected Static Methods
         
         /// @{
-        /// @brief Blurs the image whith the specified radius.
-        /// @param image The image handle.
-        /// @param horizontal_radius The horizontal radius of the blur, specified as a <length>
-        /// @param vertical_radius The vertical radius of the blur, specified as a <length>
-        /// @note No blur effect, if the horizontal_radius and vertical_radius are 0.
-        /// @warning Internal use only
-        static void blur(intptr handle, int32 horizontal_radius, int32 vertical_radius);
-        
         /// @brief Gets the color palette used for the image.
         /// @param image The image handle.
         /// @param entries A std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>> (alpha, red, green and blue componenents of color) that represents the color palette used for the image.

@@ -358,7 +358,6 @@ namespace xtd {
     private:
       friend class image_converter;
       friend struct imaging::effects::blur_effect;
-      void blur(int32 horizontal_radius, int32 vertical_radius);
       void rescale(int32 width, int32 height);
       void update_properties();
       
