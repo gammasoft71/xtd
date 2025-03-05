@@ -22,7 +22,8 @@ namespace image_effector_example {
       client_size({730, 525});
       
       bitonal_threshold_track_bar.tick_style(tick_style::none);
-      blur_radius_track_bar.tick_style(tick_style::none);
+      blur_horizontal_radius_track_bar.tick_style(tick_style::none);
+      blur_vertical_radius_track_bar.tick_style(tick_style::none);
       brightness_percent_track_bar.tick_style(tick_style::none);
       color_percent_track_bar.tick_style(tick_style::none);
       color_extraction_threshold_track_bar.tick_style(tick_style::none);
@@ -97,9 +98,16 @@ namespace image_effector_example {
       bitonal_upper_color_color_picker.color_picker_changed += [&] {update_pictures();};
       bitonal_lower_color_color_picker.color_picker_changed += [&] {update_pictures();};
 
-      blur_radius_numeric_up_down.value_changed += [&] {blur_radius_track_bar.value(as<int32>(blur_radius_numeric_up_down.value()));};
-      blur_radius_track_bar.value_changed += [&] {
-        blur_radius_numeric_up_down.value(blur_radius_track_bar.value());
+      blur_horizontal_radius_numeric_up_down.value_changed += [&] {blur_horizontal_radius_track_bar.value(as<int32>(blur_horizontal_radius_numeric_up_down.value()));};
+      blur_horizontal_radius_track_bar.value_changed += [&] {
+        blur_horizontal_radius_numeric_up_down.value(blur_horizontal_radius_track_bar.value());
+        if (blur_sync_horizontal_and_vertical_check_box.checked()) blur_vertical_radius_track_bar.value(blur_horizontal_radius_track_bar.value());
+        update_pictures();
+      };
+      blur_vertical_radius_numeric_up_down.value_changed += [&] {blur_vertical_radius_track_bar.value(as<int32>(blur_vertical_radius_numeric_up_down.value()));};
+      blur_vertical_radius_track_bar.value_changed += [&] {
+        blur_vertical_radius_numeric_up_down.value(blur_vertical_radius_track_bar.value());
+        if (blur_sync_horizontal_and_vertical_check_box.checked()) blur_horizontal_radius_track_bar.value(blur_vertical_radius_track_bar.value());
         update_pictures();
       };
       blur_expand_edge_check_box.checked_changed += [&] {update_pictures();};
@@ -431,7 +439,10 @@ namespace image_effector_example {
       bitonal_upper_color_color_picker.color(color::red);
       bitonal_lower_color_color_picker.color(color::white);
 
-      blur_radius_track_bar.value(10);
+      blur_horizontal_radius_track_bar.value(10);
+      blur_vertical_radius_track_bar.value(10);
+      blur_expand_edge_check_box.checked(true);
+      blur_sync_horizontal_and_vertical_check_box.checked(true);
 
       brightness_percent_track_bar.value(125);
 
@@ -513,7 +524,7 @@ namespace image_effector_example {
       original_picture_panel.invalidate();
 
       if (effect_choice.selected_item() == "bitonal") adjusted_image = image_effector::set_effect(original_image(), bitonal_effect {bitonal_threshold_track_bar.value(), bitonal_upper_color_color_picker.color(), bitonal_lower_color_color_picker.color()});
-      else if (effect_choice.selected_item() == "blur") adjusted_image = image_effector::set_effect(original_image(), blur_effect {blur_radius_track_bar.value(), blur_expand_edge_check_box.checked()});
+      else if (effect_choice.selected_item() == "blur") adjusted_image = image_effector::set_effect(original_image(), blur_effect {blur_horizontal_radius_track_bar.value(), blur_vertical_radius_track_bar.value(), blur_expand_edge_check_box.checked()});
       else if (effect_choice.selected_item() == "brightness") adjusted_image = image_effector::set_effect(original_image(), brightness_effect {brightness_percent_track_bar.value() / 100.0});
       else if (effect_choice.selected_item() == "color") adjusted_image = image_effector::set_effect(original_image(), color_effect {color_color_color_picker.color(), color_percent_track_bar.value() / 100.0});
       else if (effect_choice.selected_item() == "color-extraction") adjusted_image = image_effector::set_effect(original_image(), color_extraction_effect {color_extraction_threshold_track_bar.value(), color_extraction_extraction_color_color_picker.color(), color_extraction_other_pixels_color_color_picker.color()});
@@ -554,10 +565,14 @@ namespace image_effector_example {
     color_picker bitonal_lower_color_color_picker = color_picker::create(bitonal_panel, color::white, {260, 70});
 
     panel blur_panel = panel::create(*this, {0, 0}, {730, 170});
-    label blur_radius_label = label::create(blur_panel, "Radius", {10, 54}, {50, 23});
-    track_bar blur_radius_track_bar = track_bar::create(blur_panel, 10, 0, 100, {60, 50}, {200, 25});
-    numeric_up_down blur_radius_numeric_up_down = numeric_up_down::create(blur_panel, 10, 0, 100, {270, 50}, {130, 25});
-    check_box blur_expand_edge_check_box = check_box::create(blur_panel, "Expand edge", {420, 50}, {150, 23});
+    label blur_horizontal_radius_label = label::create(blur_panel, "Horizontal radius", {10, 14}, {120, 23});
+    track_bar blur_horizontal_radius_track_bar = track_bar::create(blur_panel, 10, 0, 100, {140, 10}, {200, 25});
+    numeric_up_down blur_horizontal_radius_numeric_up_down = numeric_up_down::create(blur_panel, 10, 0, 100, {360, 10}, {130, 25});
+    label blur_vertical_radius_label = label::create(blur_panel, "Vertical radius", {10, 54}, {150, 23});
+    track_bar blur_vertical_radius_track_bar = track_bar::create(blur_panel, 10, 0, 100, {140, 50}, {200, 25});
+    numeric_up_down blur_vertical_radius_numeric_up_down = numeric_up_down::create(blur_panel, 10, 0, 100, {360, 50}, {130, 25});
+    check_box blur_expand_edge_check_box = check_box::create(blur_panel, "Expand edge", {10, 90}, {120, 23});
+    check_box blur_sync_horizontal_and_vertical_check_box = check_box::create(blur_panel, "Synchronise horizontal and vertical radius", check_state::checked, {140, 90}, {300, 23});
 
     panel brightness_panel = panel::create(*this, {0, 0}, {730, 170});
     label brightness_percent_label = label::create(brightness_panel, "Percent", {10, 54}, {70, 23});

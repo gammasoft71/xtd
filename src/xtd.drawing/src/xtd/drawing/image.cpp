@@ -480,9 +480,9 @@ void image::set_pixel_format(imaging::pixel_format value) {
   data_->pixel_format = value;
 }
 
-void image::blur(int32 radius) {
+void image::blur(int32 horizontal_radius, int32 vertical_radius) {
   if (*this == drawing::image::empty) return;
-  native::image::blur(this->handle(), radius);
+  native::image::blur(this->handle(), horizontal_radius, vertical_radius);
   update_properties();
 }
 
