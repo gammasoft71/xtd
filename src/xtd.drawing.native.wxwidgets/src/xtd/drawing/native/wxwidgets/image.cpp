@@ -453,11 +453,11 @@ void image::rotate_flip(intptr image, int32 rotate_flip_type) {
     case RFT_ROTATE_NONE_FLIP_NONE: break;
     case RFT_ROTATE_90_FLIP_NONE: *wx_image = wx_image->Rotate90(); break;
     case RFT_ROTATE_180_FLIP_NONE: *wx_image = wx_image->Rotate180(); break;
-    case RFT_ROTATE_270_FLIP_NONE: *wx_image = wx_image->Rotate180(); *wx_image = wx_image->Rotate90(); break;
+    case RFT_ROTATE_270_FLIP_NONE: *wx_image = wx_image->Rotate180().Rotate90(); break;
     case RFT_ROTATE_NONE_FLIP_X: *wx_image = wx_image->Mirror(); break;
-    case RFT_ROTATE_90_FLIP_X: *wx_image = wx_image->Rotate180(); *wx_image = wx_image->Rotate90(); *wx_image = wx_image->Mirror(); break;
-    case RFT_ROTATE_180_FLIP_X: *wx_image = wx_image->Rotate180(); *wx_image = wx_image->Mirror(); break;
-    case RFT_ROTATE_270_FLIP_X: *wx_image = wx_image->Rotate90(); *wx_image = wx_image->Mirror(); break;
+    case RFT_ROTATE_90_FLIP_X: *wx_image = wx_image->Rotate180().Rotate90().Mirror(); break;
+    case RFT_ROTATE_180_FLIP_X: *wx_image = wx_image->Rotate180().Mirror(); break;
+    case RFT_ROTATE_270_FLIP_X: *wx_image = wx_image->Rotate90().Mirror(); break;
     default: break;
   }
 }
