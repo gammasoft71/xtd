@@ -1,0 +1,2 @@
+#pragma once
+#include "opacity_effect.hpp"
