@@ -38,18 +38,18 @@ namespace xtd {
           /// @{
           /// @brief Initialise the new instance of xtd::drawing::imaging::drop_shadow_effect object.
           drop_shadow_effect() = default;
-          /// @brief Initialise the new instance of xtd::drawing::imaging::drop_shadow_effect with vertical and horizontal shadow.
-          /// @param shadow The vertical and horizontal shadow.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::drop_shadow_effect with horizontal and vertical shadow.
+          /// @param shadow The horizontal and vertical shadow.
           explicit drop_shadow_effect(const xtd::drawing::size& shadow);
-          /// @brief Initialise the new instance of xtd::drawing::imaging::drop_shadow_effect with vertical and horizontal shadow, and blur radius.
-          /// @param shadow The vertical and horizontal shadow.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::drop_shadow_effect with horizontal and vertical shadow, and blur radius.
+          /// @param shadow The horizontal and vertical shadow.
           /// @param blur The shadow blur radius.
-          explicit drop_shadow_effect(const xtd::drawing::size& shadow, int32 blur);
-          /// @brief Initialise the new instance of xtd::drawing::imaging::drop_shadow_effect with vertical and horizontal shadow, blur radius, and shadow color.
-          /// @param shadow The vertical and horizontal shadow.
+          drop_shadow_effect(const xtd::drawing::size& shadow, int32 blur);
+          /// @brief Initialise the new instance of xtd::drawing::imaging::drop_shadow_effect with horizontal and vertical shadow, blur radius, and shadow color.
+          /// @param shadow The horizontal and vertical shadow.
           /// @param blur The shadow blur radius.
           /// @param color The shadow color.
-          explicit drop_shadow_effect(const xtd::drawing::size& shadow, int32 blur, const xtd::drawing::color& color);
+          drop_shadow_effect(const xtd::drawing::size& shadow, int32 blur, const xtd::drawing::color& color);
           /// @}
 
           /// @name Public Properties
@@ -61,8 +61,8 @@ namespace xtd {
           /// @brief Gets or sets the shadow color.
           /// @param color The shadow color.
           xtd::drawing::color color = xtd::drawing::color::black;
-          /// @brief Gets or sets the vertical and horizontal shadow.
-          /// @param size The vertical and horizontal shadow.
+          /// @brief Gets or sets the horizontal and vertical shadow.
+          /// @param size The horizontal and vertical shadow.
           xtd::drawing::size shadow;
           /// @}
 
