@@ -3,6 +3,7 @@
 #include <xtd/forms/native/track_bar>
 #include <xtd/forms/native/track_bar_styles>
 #include <xtd/forms/native/window_definitions>
+#include <xtd/math>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <algorithm>
 
@@ -115,7 +116,7 @@ int32 track_bar::value() const noexcept {
 
 track_bar& track_bar::value(int32 value) {
   if (data_->value == value) return *this;
-  data_->value = std::clamp(value, data_->minimum, data_->maximum);
+  data_->value = math::clamp(value, data_->minimum, data_->maximum);
   if (is_handle_created()) native::track_bar::value(handle(), data_->value);
   on_value_changed(event_args::empty);
   return *this;

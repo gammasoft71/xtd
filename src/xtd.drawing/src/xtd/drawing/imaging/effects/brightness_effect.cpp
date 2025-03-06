@@ -13,7 +13,7 @@ brightness_effect::brightness_effect(double percent) : percent {percent} {
 }
 
 void brightness_effect::apply(xtd::drawing::image& image) const {
-  auto percent = std::clamp(this->percent, 0.0, 2.0);
+  auto percent = math::clamp(this->percent, 0.0, 2.0);
   auto alpha = reinterpret_cast<helpers::alpha*>(image.alpha());
   auto rgb = reinterpret_cast<helpers::rgb*>(image.rgb());
   auto blend_target = percent < 1.0 ? helpers::rgb {} : helpers::rgb {.r = 255, .g = 255, .b = 255};
