@@ -37,18 +37,18 @@ namespace xtd {
           /// @{
           /// @brief Initialise the new instance of xtd::drawing::imaging::blur_effect object.
           blur_effect() = default;
-          /// @brief Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified radius.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified horizontal and vertical radius.
           /// @param radius The radius of the blur in pixels.
           explicit blur_effect(int32 radius);
-          /// @brief Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified radius and expand edge boolean.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified horizontal and vertical radius, and expand edge boolean.
           /// @param radius The radius of the blur in pixels.
           /// @param expand_edge `true` if the bitmap expands by an amount equal to the radius so that it can have soft edges. `false` if the bitmap remains the same size and the soft edges are clipped.
           blur_effect(int32 radius, bool expand_edge);
-          /// @brief Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified radius.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified horizontal and vertical radius.
           /// @param horizontal_radius The horizontal radius of the blur in pixels.
           /// @param vertical_radius The vertical radius of the blur in pixels.
-          explicit blur_effect(int32 horizontal_radius, int32 vertical_radius);
-          /// @brief Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified radius and expand edge boolean.
+          blur_effect(int32 horizontal_radius, int32 vertical_radius);
+          /// @brief Initialise the new instance of xtd::drawing::imaging::blur_effect object with specified horizontal and vertical radius, and expand edge boolean.
           /// @param horizontal_radius The horizontal radius of the blur in pixels.
           /// @param vertical_radius The vertical radius of the blur in pixels.
           /// @param expand_edge `true` if the bitmap expands by an amount equal to the radius so that it can have soft edges. `false` if the bitmap remains the same size and the soft edges are clipped.
