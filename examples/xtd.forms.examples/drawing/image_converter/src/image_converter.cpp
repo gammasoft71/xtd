@@ -542,7 +542,7 @@ namespace image_effector_example {
       else if (effect_choice.selected_item() == "rescale") adjusted_image = image_converter::rescale(original_image(), {rescale_width_track_bar.value(), rescale_height_track_bar.value()});
       else if (effect_choice.selected_item() == "resize") adjusted_image = image_effector::set_effect(original_image(), resize_auto_determine_fill_color_ratio_check_box.checked() ? resize_effect {rectangle {math::abs(resize_x_track_bar.value()), math::abs(resize_y_track_bar.value()), resize_width_track_bar.value(), resize_height_track_bar.value()}, resize_auto_determine_fill_color_ratio_check_box.checked()} : resize_effect {rectangle {math::abs(resize_x_track_bar.value()), math::abs(resize_y_track_bar.value()), resize_width_track_bar.value(), resize_height_track_bar.value()}, resize_fill_color_color_picker.color()});
       else if (effect_choice.selected_item() == "rotate-flip") adjusted_image = image_converter::rotate_flip(original_image(), as<rotate_flip_type>(rotate_flip_choice.selected_item().tag()));
-      else if (effect_choice.selected_item() == "saturate") adjusted_image = image_converter::saturate(original_image(), saturate_percent_track_bar.value() / 100.0);
+      else if (effect_choice.selected_item() == "saturate") adjusted_image = image_effector::set_effect(original_image(), saturate_effect {saturate_percent_track_bar.value() / 100.0});
       else if (effect_choice.selected_item() == "sepia") adjusted_image = image_effector::set_effect(original_image(), sepia_effect {sepia_percent_track_bar.value() / 100.0});
       else if (effect_choice.selected_item() == "solarize") adjusted_image = image_effector::set_effect(original_image(), solarize_effect {solarize_threshold_track_bar.value()});
       else if (effect_choice.selected_item() == "threshold") adjusted_image = image_converter::threshold(original_image(), threshold_threshold_track_bar.value());
@@ -709,8 +709,8 @@ namespace image_effector_example {
     
     panel saturate_panel = panel::create(*this, {0, 0}, {730, 170});
     label saturate_percent_label = label::create(saturate_panel, "Percent", {10, 54}, {70, 23});
-    track_bar saturate_percent_track_bar = track_bar::create(saturate_panel, 300, 0, 400, {80, 50}, {200, 25});
-    numeric_up_down saturate_percent_numeric_up_down = numeric_up_down::create(saturate_panel, 300, 0, 400, {290, 50}, {110, 25});
+    track_bar saturate_percent_track_bar = track_bar::create(saturate_panel, 300, 0, 1000, {80, 50}, {200, 25});
+    numeric_up_down saturate_percent_numeric_up_down = numeric_up_down::create(saturate_panel, 300, 0, 1000, {290, 50}, {110, 25});
     
     panel sepia_panel = panel::create(*this, {0, 0}, {730, 170});
     label sepia_percent_label = label::create(sepia_panel, "Percent", {10, 54}, {70, 23});
