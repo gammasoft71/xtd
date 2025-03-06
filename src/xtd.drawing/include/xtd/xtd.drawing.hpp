@@ -44,6 +44,7 @@
 #include "drawing/imaging/effects/gamma_correction_effect.hpp"
 #include "drawing/imaging/effects/grayscale_effect.hpp"
 #include "drawing/imaging/effects/hue_rotate_effect.hpp"
+#include "drawing/imaging/effects/invert_effect.hpp"
 #include "drawing/imaging/effects/posterize_effect.hpp"
 #include "drawing/imaging/effects/resize_effect.hpp"
 #include "drawing/imaging/effects/sepia_effect.hpp"
