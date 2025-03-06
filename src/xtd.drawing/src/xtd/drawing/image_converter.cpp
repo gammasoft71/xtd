@@ -11,6 +11,7 @@
 #include "../../../include/xtd/drawing/imaging/effects/gamma_correction_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/grayscale_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/hue_rotate_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/invert_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/posterize_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/resize_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/sepia_effect.hpp"
@@ -36,10 +37,6 @@ namespace {
     xtd::byte b;
   };
   using rgb_ptr = rgb*;
-  
-  xtd::byte alpha_blend(xtd::byte fore_componant, xtd::byte back_componant, double percent) noexcept {
-    return static_cast<xtd::byte>(fore_componant * (1 - percent) + back_componant * percent);
-  }  
 }
 
 void image_converter::bitonal(image& image, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) {
@@ -197,16 +194,7 @@ image image_converter::invert(const image& image) {
 }
 
 void image_converter::invert(image& image, double percent) {
-  percent = std::clamp(percent, 0.0, 1.0);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x) {
-      auto pixel = y * image.width() + x;
-      auto invert_r = alpha_blend(rgb[pixel].r, 255 - rgb[pixel].r, percent);
-      auto invert_g = alpha_blend(rgb[pixel].g, 255 - rgb[pixel].g, percent);
-      auto invert_b = alpha_blend(rgb[pixel].b, 255 - rgb[pixel].b, percent);
-      rgb[pixel] = {invert_r, invert_g, invert_b};
-    }
+  image_effector::set_effect(image, invert_effect {percent});
 }
 
 image image_converter::invert(const image& image, double percent) {

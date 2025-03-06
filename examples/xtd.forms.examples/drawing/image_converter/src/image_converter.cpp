@@ -536,7 +536,7 @@ namespace image_effector_example {
       else if (effect_choice.selected_item() == "gamma-correction") adjusted_image = image_effector::set_effect(original_image(), gamma_correction_effect {gamma_correction_red_correction_track_bar.value() / 10.0, gamma_correction_green_correction_track_bar.value() / 10.0, gamma_correction_blue_correction_track_bar.value() / 10.0});
       else if (effect_choice.selected_item() == "grayscale") adjusted_image = image_effector::set_effect(original_image(), grayscale_effect {grayscale_percent_track_bar.value() / 100.0});
       else if (effect_choice.selected_item() == "hue-rotate")adjusted_image = image_effector::set_effect(original_image(), hue_rotate_effect {hue_rotate_percent_track_bar.value()});
-      else if (effect_choice.selected_item() == "invert") adjusted_image = image_converter::invert(original_image(), invert_percent_track_bar.value() / 100.0);
+      else if (effect_choice.selected_item() == "invert") adjusted_image = image_effector::set_effect(original_image(), invert_effect {invert_percent_track_bar.value() / 100.0});
       else if (effect_choice.selected_item() == "opacity") adjusted_image = image_converter::opacity(original_image(), opacity_percent_track_bar.value() / 100.0);
       else if (effect_choice.selected_item() == "posterize") adjusted_image = image_effector::set_effect(original_image(), posterize_effect {posterize_levels_track_bar.value()});
       else if (effect_choice.selected_item() == "rescale") adjusted_image = image_converter::rescale(original_image(), {rescale_width_track_bar.value(), rescale_height_track_bar.value()});
