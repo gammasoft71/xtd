@@ -9,6 +9,7 @@
 #include "../../../include/xtd/drawing/imaging/effects/disabled_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/drop_shadow_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/gamma_correction_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/grayscale_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/posterize_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/resize_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/solarize_effect.hpp"
@@ -225,17 +226,7 @@ image image_converter::grayscale(const image& image) {
 }
 
 void image_converter::grayscale(image& image, double percent) {
-  percent = std::clamp(percent, 0.0, 1.0);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x) {
-      auto pixel = y * image.width() + x;
-      auto grayscale = static_cast<xtd::byte>((0.299 * rgb[pixel].r) + (0.587 * rgb[pixel].g) + (0.114 * rgb[pixel].b));
-      auto graysclae_r = alpha_blend(rgb[pixel].r, grayscale, percent);
-      auto grayscale_g = alpha_blend(rgb[pixel].g, grayscale, percent);
-      auto grayscale_b = alpha_blend(rgb[pixel].b, grayscale, percent);
-      rgb[pixel] = {graysclae_r, grayscale_g, grayscale_b};
-    }
+  image_effector::set_effect(image, grayscale_effect {percent});
 }
 
 image image_converter::grayscale(const image& image, double percent) {

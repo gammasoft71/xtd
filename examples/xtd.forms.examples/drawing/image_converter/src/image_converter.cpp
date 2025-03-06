@@ -488,7 +488,7 @@ namespace image_effector_example {
 
       opacity_percent_track_bar.value(50);
 
-      posterize_levels_track_bar.value(4);
+      posterize_levels_track_bar.value(2);
 
       rescale_maintain_aspect_ratio_check_box.checked(false);
       rescale_aspect_ratio = as<double>(original_image().width()) / original_image().height();
@@ -534,7 +534,7 @@ namespace image_effector_example {
       else if (effect_choice.selected_item() == "disabled") adjusted_image = disabled_switch_button.checked() ? bitmap {image_effector::set_effect(original_image(), disabled_effect {adjusted_picture_panel.back_color()})} : original_image();
       else if (effect_choice.selected_item() == "drop-shadow") adjusted_image = image_effector::set_effect(original_image(), drop_shadow_effect {drawing::size {drop_shadow_horizontal_track_bar.value(), drop_shadow_vertical_track_bar.value()}, drop_shadow_radius_track_bar.value(), drop_shadow_color_color_picker.color()});
       else if (effect_choice.selected_item() == "gamma-correction") adjusted_image = image_effector::set_effect(original_image(), gamma_correction_effect {gamma_correction_red_correction_track_bar.value() / 10.0, gamma_correction_green_correction_track_bar.value() / 10.0, gamma_correction_blue_correction_track_bar.value() / 10.0});
-      else if (effect_choice.selected_item() == "grayscale") adjusted_image = image_converter::grayscale(original_image(), grayscale_percent_track_bar.value() / 100.0);
+      else if (effect_choice.selected_item() == "grayscale") adjusted_image = image_effector::set_effect(original_image(), grayscale_effect {grayscale_percent_track_bar.value() / 100.0});
       else if (effect_choice.selected_item() == "hue-rotate")adjusted_image = image_converter::hue_rotate(original_image(), hue_rotate_percent_track_bar.value());
       else if (effect_choice.selected_item() == "invert") adjusted_image = image_converter::invert(original_image(), invert_percent_track_bar.value() / 100.0);
       else if (effect_choice.selected_item() == "opacity") adjusted_image = image_converter::opacity(original_image(), opacity_percent_track_bar.value() / 100.0);
@@ -673,8 +673,8 @@ namespace image_effector_example {
     
     panel posterize_panel = panel::create(*this, {0, 0}, {730, 170});
     label posterize_levels_label = label::create(posterize_panel, "Levels", {10, 54}, {70, 23});
-    track_bar posterize_levels_track_bar = track_bar::create(posterize_panel, 4, 1, 256, {80, 50}, {200, 25});
-    numeric_up_down posterize_levels_numeric_up_down = numeric_up_down::create(posterize_panel, 4, 1, 256, {290, 50}, {110, 25});
+    track_bar posterize_levels_track_bar = track_bar::create(posterize_panel, 2, 2, 256, {80, 50}, {200, 25});
+    numeric_up_down posterize_levels_numeric_up_down = numeric_up_down::create(posterize_panel, 2, 2, 256, {290, 50}, {110, 25});
 
     panel rescale_panel = panel::create(*this, {0, 0}, {730, 170});
     label rescale_width_label = label::create(rescale_panel, "Width", {10, 34}, {50, 23});
