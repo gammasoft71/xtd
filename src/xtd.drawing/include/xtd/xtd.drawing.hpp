@@ -51,6 +51,7 @@
 #include "drawing/imaging/effects/saturate_effect.hpp"
 #include "drawing/imaging/effects/sepia_effect.hpp"
 #include "drawing/imaging/effects/solarize_effect.hpp"
+#include "drawing/imaging/effects/threshold_effect.hpp"
 #include "drawing/imaging/bitmap_data.hpp"
 #include "drawing/imaging/color_palette.hpp"
 #include "drawing/imaging/encoder.hpp"

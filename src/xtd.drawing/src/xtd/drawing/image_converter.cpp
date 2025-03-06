@@ -18,6 +18,7 @@
 #include "../../../include/xtd/drawing/imaging/effects/saturate_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/sepia_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/solarize_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/threshold_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/image_effector.hpp"
 #include "../../../include/xtd/drawing/color_converter.hpp"
 #include "../../../include/xtd/drawing/image_converter.hpp"
@@ -279,7 +280,7 @@ image image_converter::sepia(const image& image, double percent) {
 }
 
 void image_converter::threshold(image& image, int32 threshold) {
-  image_effector::set_effect(image, bitonal_effect {threshold, color::white, color::black});
+  image_effector::set_effect(image, threshold_effect {threshold});
 }
 
 image image_converter::threshold(const image& image, int32 threshold) {
