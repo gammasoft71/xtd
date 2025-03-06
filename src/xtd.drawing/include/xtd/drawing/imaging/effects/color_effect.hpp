@@ -28,7 +28,7 @@ namespace xtd {
         /// The following example code shows how tu use xtd::drawing::imaging::effects::color_effect with image.
         /// ```cpp
         /// const auto img = image::from_file("ball.png");
-        /// auto result = image_effector::set_effect(img, color_effect {color::red, 200});
+        /// auto result = image_effector::set_effect(img, color_effect {color::red, 2.0});
         /// result.save("ball_color.png");
         /// ```
         struct color_effect : effect {
