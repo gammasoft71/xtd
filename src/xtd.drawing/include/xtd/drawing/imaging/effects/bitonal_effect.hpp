@@ -14,7 +14,7 @@ namespace xtd {
     namespace imaging {
       /// @brief The xtd::drawing::imaging::effects namespace provides functionality for adding effects to images.
       namespace effects {
-        /// @brief The xtd::drawing::imaging::effects::bitonal_effect converts image into lower and upper colors.
+        /// @brief The xtd::drawing::imaging::effects::bitonal_effect converts image into lower and upper colors with threshold value.
         /// @par Namespace
         /// xtd::drawing::imaging::effects
         /// @par Library
