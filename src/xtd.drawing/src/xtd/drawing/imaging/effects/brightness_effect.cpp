@@ -12,6 +12,7 @@ using namespace xtd::drawing::imaging::effects;
 brightness_effect::brightness_effect(double percent) : percent {percent} {
 }
 
+// For more information about algorithm see https://www.programmingalgorithms.com/algorithm/brightness
 void brightness_effect::apply(xtd::drawing::image& image) const {
   auto percent = math::clamp(this->percent, 0.0, 2.0);
   auto alpha = reinterpret_cast<helpers::alpha*>(image.alpha());

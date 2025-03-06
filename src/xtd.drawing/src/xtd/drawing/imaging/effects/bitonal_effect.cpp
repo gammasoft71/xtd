@@ -12,6 +12,7 @@ using namespace xtd::drawing::imaging::effects;
 bitonal_effect::bitonal_effect(int32 threshold, color upper_color, color lower_color) : threshold {threshold}, upper_color {upper_color}, lower_color {lower_color} {
 }
 
+// For more information about algorithm see https://www.programmingalgorithms.com/algorithm/bitonal
 void bitonal_effect::apply(xtd::drawing::image& image) const {
   auto threshold = math::clamp(this->threshold, 0, 3 * byte_object::max_value);
   auto alpha = reinterpret_cast<helpers::alpha*>(image.alpha());

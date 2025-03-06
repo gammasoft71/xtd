@@ -12,6 +12,7 @@ using namespace xtd::drawing::imaging::effects;
 color_extraction_effect::color_extraction_effect(int32 threshold, color extraction_color, color other_pixels_color) : threshold {threshold}, extraction_color {extraction_color}, other_pixels_color {other_pixels_color} {
 }
 
+// For more information about algorithm see https://www.programmingalgorithms.com/algorithm/color-extraction
 void color_extraction_effect::apply(xtd::drawing::image& image) const {
   auto threshold = math::clamp(this->threshold, 0, 3 * byte_object::max_value);
   auto alpha = reinterpret_cast<helpers::alpha*>(image.alpha());
