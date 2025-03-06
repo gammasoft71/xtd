@@ -12,6 +12,7 @@ using namespace xtd::drawing::imaging::effects;
 color_effect::color_effect(const xtd::drawing::color& color, double percent) : color {color}, percent {percent} {
 }
 
+// For more information about algorithm see https://www.programmingalgorithms.com/algorithm/color
 void color_effect::apply(xtd::drawing::image& image) const {
   auto percent = math::clamp(this->percent - 1.0, -1.0, 1.0);
   auto alpha = reinterpret_cast<helpers::alpha*>(image.alpha());

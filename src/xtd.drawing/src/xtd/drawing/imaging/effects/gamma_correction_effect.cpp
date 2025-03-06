@@ -12,6 +12,7 @@ using namespace xtd::drawing::imaging::effects;
 gamma_correction_effect::gamma_correction_effect(double r, double g, double b) : r {r}, g {g}, b {b} {
 }
 
+// For more information about algorithm see https://www.programmingalgorithms.com/algorithm/gamma
 void gamma_correction_effect::apply(xtd::drawing::image& image) const {
   auto r = math::clamp(this->r, .1, 5.0);
   auto g = math::clamp(this->g, .1, 5.0);
