@@ -85,18 +85,9 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="structxtd_1_1drawing_1_1helpers_1_1rgb-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">xtd::drawing::helpers::rgb Struct Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__drawing.html">xtd.drawing</a></div></div></div>
+  <div class="headertitle"><div class="title">xtd::drawing::helpers::rgb Struct Reference<div class="ingroups"><a class="el" href="group__libraries.html">﹡ libraries</a> &raquo; <a class="el" href="group__xtd__drawing.html">xtd.drawing</a> &#124; <a class="el" href="group__drawing.html">drawing</a> &raquo; <a class="el" href="group__drawing__helpers.html">helpers</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Inheritance diagram for xtd::drawing::helpers::rgb:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="structxtd_1_1drawing_1_1helpers_1_1rgb.png" usemap="#xtd::drawing::helpers::rgb_map" alt=""/>
-  <map id="xtd::drawing::helpers::rgb_map" name="xtd::drawing::helpers::rgb_map">
-<area href="structxtd_1_1drawing_1_1helpers_1_1argb.html" title="The argb struct." alt="xtd::drawing::helpers::argb" shape="rect" coords="0,56,159,80"/>
-  </map>
-</div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>The rgb struct. </p>
 <div class="fragment"><div class="line"><span class="keyword">struct </span><a class="code hl_struct" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html">rgb</a>;</div>
@@ -114,14 +105,117 @@ Inheritance diagram for xtd::drawing::helpers::rgb:</div>
 <tr class="memitem:a3fd5ae28e4486fb0718476de3ab10d39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html#a3fd5ae28e4486fb0718476de3ab10d39">b</a></td></tr>
 <tr class="memdesc:a3fd5ae28e4486fb0718476de3ab10d39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets or sets the blue component value of this xtd::drawing::helpers::rbg struct.  <br /></td></tr>
 <tr class="separator:a3fd5ae28e4486fb0718476de3ab10d39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
+<tr class="memitem:a40f75555987bc4de0a3d088e0a5c2871"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html#a40f75555987bc4de0a3d088e0a5c2871">get_hue</a> () const noexcept</td></tr>
+<tr class="memdesc:a40f75555987bc4de0a3d088e0a5c2871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the hue-saturation-lightness (HSL) hue value, in degrees, for this <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html" title="The rgb struct.">xtd::drawing::helpers::rgb</a> structure.  <br /></td></tr>
+<tr class="separator:a40f75555987bc4de0a3d088e0a5c2871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b9dc3922c4b0b1763a0596305239d74"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html#a4b9dc3922c4b0b1763a0596305239d74">get_lightness</a> () const noexcept</td></tr>
+<tr class="memdesc:a4b9dc3922c4b0b1763a0596305239d74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the hue-saturation-lightness (HSL) lightness value for this <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html" title="The rgb struct.">xtd::drawing::helpers::rgb</a> structure.  <br /></td></tr>
+<tr class="separator:a4b9dc3922c4b0b1763a0596305239d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0648a3f21df649e82f7deedb7998480f"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html#a0648a3f21df649e82f7deedb7998480f">get_saturation</a> () const noexcept</td></tr>
+<tr class="memdesc:a0648a3f21df649e82f7deedb7998480f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the hue-saturation-lightness (HSL) saturation value for this <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html" title="The rgb struct.">xtd::drawing::helpers::rgb</a> structure.  <br /></td></tr>
+<tr class="separator:a0648a3f21df649e82f7deedb7998480f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5169847a40d692ab151a65d9d2baf93"><td class="memItemLeft" align="right" valign="top"><a id="ae5169847a40d692ab151a65d9d2baf93" name="ae5169847a40d692ab151a65d9d2baf93"></a>
+std::tuple&lt; float, float, float &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>to_hsl</b> () const noexcept</td></tr>
+<tr class="separator:ae5169847a40d692ab151a65d9d2baf93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
 <tr class="memitem:a5bb525a6134a3f2c07417967ed095e33"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html">rgb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html#a5bb525a6134a3f2c07417967ed095e33">alpha_blend</a> (const <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html">rgb</a> &amp;fore_componant, const <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html">rgb</a> &amp;back_componant, double <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1alpha.html">alpha</a>) noexcept</td></tr>
 <tr class="memdesc:a5bb525a6134a3f2c07417967ed095e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the weighted average color between the two given colors.  <br /></td></tr>
 <tr class="separator:a5bb525a6134a3f2c07417967ed095e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a476a0ea63d5e20df25d0729d2c80b259"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html#a476a0ea63d5e20df25d0729d2c80b259">alpha_blend</a> (<a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> fore_componant, <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> back_componant, double <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1alpha.html">alpha</a>) noexcept</td></tr>
 <tr class="memdesc:a476a0ea63d5e20df25d0729d2c80b259"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the weighted average color component between the two given color components.  <br /></td></tr>
 <tr class="separator:a476a0ea63d5e20df25d0729d2c80b259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35ebd739e6478176bc686cdb65b36050"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html">rgb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html#a35ebd739e6478176bc686cdb65b36050">from_hsl</a> (float hue, float saturation, float lightness) noexcept</td></tr>
+<tr class="memdesc:a35ebd739e6478176bc686cdb65b36050"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html" title="The rgb struct.">xtd::drawing::helpers::rgb</a> strucg from the three HSL component (hue, saturation, and lightness) values.  <br /></td></tr>
+<tr class="separator:a35ebd739e6478176bc686cdb65b36050"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a40f75555987bc4de0a3d088e0a5c2871" name="a40f75555987bc4de0a3d088e0a5c2871"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40f75555987bc4de0a3d088e0a5c2871">&#9670;&#160;</a></span>get_hue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float xtd::drawing::helpers::rgb::get_hue </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the hue-saturation-lightness (HSL) hue value, in degrees, for this <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html" title="The rgb struct.">xtd::drawing::helpers::rgb</a> structure. </p>
+<dl class="section return"><dt>Returns</dt><dd>The hue, in degrees, of this <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html" title="The rgb struct.">xtd::drawing::helpers::rgb</a>. The hue is measured in degrees, ranging from 0.0 through 360.0, in HSL color space. </dd></dl>
+
+</div>
+</div>
+<a id="a4b9dc3922c4b0b1763a0596305239d74" name="a4b9dc3922c4b0b1763a0596305239d74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b9dc3922c4b0b1763a0596305239d74">&#9670;&#160;</a></span>get_lightness()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float xtd::drawing::helpers::rgb::get_lightness </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the hue-saturation-lightness (HSL) lightness value for this <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html" title="The rgb struct.">xtd::drawing::helpers::rgb</a> structure. </p>
+<dl class="section return"><dt>Returns</dt><dd>The lightness of this <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html" title="The rgb struct.">xtd::drawing::helpers::rgb</a>. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white. </dd></dl>
+
+</div>
+</div>
+<a id="a0648a3f21df649e82f7deedb7998480f" name="a0648a3f21df649e82f7deedb7998480f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0648a3f21df649e82f7deedb7998480f">&#9670;&#160;</a></span>get_saturation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float xtd::drawing::helpers::rgb::get_saturation </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the hue-saturation-lightness (HSL) saturation value for this <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html" title="The rgb struct.">xtd::drawing::helpers::rgb</a> structure. </p>
+<dl class="section return"><dt>Returns</dt><dd>The saturation of this <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html" title="The rgb struct.">xtd::drawing::helpers::rgb</a>. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated. </dd></dl>
+
+</div>
+</div>
 <a id="a5bb525a6134a3f2c07417967ed095e33" name="a5bb525a6134a3f2c07417967ed095e33"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5bb525a6134a3f2c07417967ed095e33">&#9670;&#160;</a></span>alpha_blend() <span class="overload">[1/2]</span></h2>
 
@@ -241,6 +335,59 @@ Thus, a weight value of <code>1.0</code> will return the background color, while
 
 </div>
 </div>
+<a id="a35ebd739e6478176bc686cdb65b36050" name="a35ebd739e6478176bc686cdb65b36050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35ebd739e6478176bc686cdb65b36050">&#9670;&#160;</a></span>from_hsl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html">rgb</a> xtd::drawing::helpers::rgb::from_hsl </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>hue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>saturation</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>lightness</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html" title="The rgb struct.">xtd::drawing::helpers::rgb</a> strucg from the three HSL component (hue, saturation, and lightness) values. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hue</td><td>The <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html" title="The rgb struct.">xtd::drawing::helpers::rgb</a> saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated. </td></tr>
+    <tr><td class="paramname">saturation</td><td>The <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html" title="The rgb struct.">xtd::drawing::helpers::rgb</a> saturation. The saturation ranges from 0.0 through 1.0, where 0.0 is grayscale and 1.0 is the most saturated. </td></tr>
+    <tr><td class="paramname">lightness</td><td>The <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html" title="The rgb struct.">xtd::drawing::helpers::rgb</a> lightness. The lightness ranges from 0.0 through 1.0, where 0.0 represents black and 1.0 represents white. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="structxtd_1_1drawing_1_1helpers_1_1rgb.html" title="The rgb struct.">xtd::drawing::helpers::rgb</a> structure that this method creates. </dd></dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a4c5fb60b1ea4b64195aeb8a6b7ec04ea" name="a4c5fb60b1ea4b64195aeb8a6b7ec04ea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4c5fb60b1ea4b64195aeb8a6b7ec04ea">&#9670;&#160;</a></span>r</h2>
@@ -315,7 +462,7 @@ Thus, a weight value of <code>1.0</code> will return the background color, while
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 4 2025 22:01:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 6 2025 22:52:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
