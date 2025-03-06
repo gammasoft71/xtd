@@ -28,7 +28,7 @@ namespace xtd {
         /// The following example code shows how tu use xtd::drawing::imaging::effects::grayscale_effect with image.
         /// ```cpp
         /// const auto img = image::from_file("ball.png");
-        /// auto result = image_effector::set_effect(img, grayscale_effect {100});
+        /// auto result = image_effector::set_effect(img, grayscale_effect {1.0});
         /// result.save("ball_grayscale.png");
         /// ```
         struct grayscale_effect : effect {
@@ -47,7 +47,7 @@ namespace xtd {
           /// @{
           /// @brief Gets or sets the percent factor in %.
           /// @param percent The percent factor in %.
-          /// @remarks `0.0` will make the image completely black. `1.0` is default and represents the original image.
+          /// @remarks Thus, `1.0` will make the color completely gray, while `0.0` return the original image.
           double percent = 1.0;
           /// @}
 
