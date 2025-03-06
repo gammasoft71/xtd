@@ -100,7 +100,7 @@ Inheritance diagram for xtd::drawing::imaging::effects::bitonal_effect:</div>
   </map>
 </div></div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
-<div class="textblock"><p>The <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1bitonal__effect.html" title="The xtd::drawing::imaging::effects::bitonal_effect converts image into lower and upper colors.">xtd::drawing::imaging::effects::bitonal_effect</a> converts image into lower and upper colors. </p>
+<div class="textblock"><p>The <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1bitonal__effect.html" title="The xtd::drawing::imaging::effects::bitonal_effect converts image into lower and upper colors with th...">xtd::drawing::imaging::effects::bitonal_effect</a> converts image into lower and upper colors with threshold value. </p>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1drawing_1_1imaging_1_1effects.html" title="The xtd::drawing::imaging::effects namespace provides functionality for adding effects to images.">xtd::drawing::imaging::effects</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1drawing.html" title="The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...">xtd.drawing</a></dd></dl>
 <dl class="section user"><dt>Appearance</dt><dd><table class="markdownTable">
@@ -116,7 +116,7 @@ Inheritance diagram for xtd::drawing::imaging::effects::bitonal_effect:</div>
   </td></tr>
 </table>
 </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1bitonal__effect.html" title="The xtd::drawing::imaging::effects::bitonal_effect converts image into lower and upper colors.">xtd::drawing::imaging::effects::bitonal_effect</a> with image. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
+<dl class="section user"><dt>Examples</dt><dd>The following example code shows how tu use <a class="el" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1bitonal__effect.html" title="The xtd::drawing::imaging::effects::bitonal_effect converts image into lower and upper colors with th...">xtd::drawing::imaging::effects::bitonal_effect</a> with image. <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keyword">auto</span> img = <a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">image::from_file</a>(<span class="stringliteral">&quot;ball.png&quot;</span>);</div>
 <div class="line"><span class="keyword">auto</span> result = <a class="code hl_function" href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">image_effector::set_effect</a>(img, <a class="code hl_struct" href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1bitonal__effect.html">bitonal_effect</a> {382, <a class="code hl_variable" href="classxtd_1_1drawing_1_1color.html#a7a0b8f1210fbda4739c37fd61e1a1dab">color::red</a>, <a class="code hl_variable" href="classxtd_1_1drawing_1_1color.html#a3204045ef270f9856b5018b2b8408d9c">color::white</a>});</div>
 <div class="line">result.<a class="code hl_function" href="classxtd_1_1drawing_1_1image.html#ac5122a1e0ff6c8d0bc80019f9e0a659c">save</a>(<span class="stringliteral">&quot;ball_bitonal.png&quot;</span>);</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1color_html_a3204045ef270f9856b5018b2b8408d9c"><div class="ttname"><a href="classxtd_1_1drawing_1_1color.html#a3204045ef270f9856b5018b2b8408d9c">xtd::drawing::color::white</a></div><div class="ttdeci">static const xtd::drawing::color white</div><div class="ttdoc">Gets a system-defined color that has an ARGB value of 0xFFFFFFFF. This field is constant.</div><div class="ttdef"><b>Definition</b> color.hpp:473</div></div>
@@ -124,7 +124,7 @@ Inheritance diagram for xtd::drawing::imaging::effects::bitonal_effect:</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_ac5122a1e0ff6c8d0bc80019f9e0a659c"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#ac5122a1e0ff6c8d0bc80019f9e0a659c">xtd::drawing::image::save</a></div><div class="ttdeci">void save(const xtd::string &amp;filename) const</div><div class="ttdoc">Saves this xtd::drawing::image to the specified file or stream.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1image_html_aca0c9ca36c4ee8fc8feaf7deb79cefa4"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html#aca0c9ca36c4ee8fc8feaf7deb79cefa4">xtd::drawing::image::from_file</a></div><div class="ttdeci">static image from_file(const xtd::string &amp;filename)</div><div class="ttdoc">Creates an image from the specified file.</div></div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1imaging_1_1image__effector_html_a9344eb0db0c29f20d46826c184a64e75"><div class="ttname"><a href="classxtd_1_1drawing_1_1imaging_1_1image__effector.html#a9344eb0db0c29f20d46826c184a64e75">xtd::drawing::imaging::image_effector::set_effect</a></div><div class="ttdeci">static xtd::drawing::image set_effect(const xtd::drawing::image &amp;image, const xtd::drawing::imaging::effects::effect &amp;effect)</div><div class="ttdoc">Sets the specified effects to the specifid image.</div></div>
-<div class="ttc" id="astructxtd_1_1drawing_1_1imaging_1_1effects_1_1bitonal__effect_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1bitonal__effect.html">xtd::drawing::imaging::effects::bitonal_effect</a></div><div class="ttdoc">The xtd::drawing::imaging::effects::bitonal_effect converts image into lower and upper colors.</div><div class="ttdef"><b>Definition</b> bitonal_effect.hpp:34</div></div>
+<div class="ttc" id="astructxtd_1_1drawing_1_1imaging_1_1effects_1_1bitonal__effect_html"><div class="ttname"><a href="structxtd_1_1drawing_1_1imaging_1_1effects_1_1bitonal__effect.html">xtd::drawing::imaging::effects::bitonal_effect</a></div><div class="ttdoc">The xtd::drawing::imaging::effects::bitonal_effect converts image into lower and upper colors with th...</div><div class="ttdef"><b>Definition</b> bitonal_effect.hpp:34</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="image_converter_8cpp-example.html#_a18">image_converter.cpp</a>.</dd>
 </dl>
@@ -375,7 +375,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 4 2025 22:01:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 6 2025 22:52:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
