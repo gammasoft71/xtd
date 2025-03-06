@@ -39,10 +39,10 @@ namespace xtd {
           /// @{
           /// @brief Initialise the new instance of xtd::drawing::imaging::crop_effect object.
           crop_effect() = default;
-          /// @brief Initialise the new instance of xtd::drawing::imaging::crop_effect with rectangle.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::crop_effect with specified rectangle.
           /// @param size The new rectangle.
           explicit crop_effect(const xtd::drawing::rectangle& rectangle);
-          /// @brief Initialise the new instance of xtd::drawing::imaging::crop_effect with size.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::crop_effect with specified size.
           /// @param size The new size.
           /// @remarks The poition is esual to xtd::drawing::point {0, 0}.
           explicit crop_effect(const xtd::drawing::size& size);
