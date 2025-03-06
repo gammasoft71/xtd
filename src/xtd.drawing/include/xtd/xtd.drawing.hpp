@@ -41,6 +41,7 @@
 #include "drawing/imaging/effects/drop_shadow_effect.hpp"
 #include "drawing/imaging/effects/disabled_effect.hpp"
 #include "drawing/imaging/effects/effect.hpp"
+#include "drawing/imaging/effects/gamma_correction_effect.hpp"
 #include "drawing/imaging/effects/posterize_effect.hpp"
 #include "drawing/imaging/effects/resize_effect.hpp"
 #include "drawing/imaging/effects/solarize_effect.hpp"
