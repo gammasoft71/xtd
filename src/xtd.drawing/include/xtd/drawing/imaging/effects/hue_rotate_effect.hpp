@@ -37,7 +37,7 @@ namespace xtd {
           /// @{
           /// @brief Initialise the new instance of xtd::drawing::imaging::hue_rotate_effect object.
           hue_rotate_effect() = default;
-          /// @brief Initialise the new instance of xtd::drawing::imaging::hue_rotate_effect object with specified percent.
+          /// @brief Initialise the new instance of xtd::drawing::imaging::hue_rotate_effect object with specified angle.
           /// @param angle The angle in degrees (form 0 to 360).
           explicit hue_rotate_effect(int32 angle);
           /// @}
