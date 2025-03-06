@@ -545,7 +545,7 @@ namespace image_effector_example {
       else if (effect_choice.selected_item() == "saturate") adjusted_image = image_effector::set_effect(original_image(), saturate_effect {saturate_percent_track_bar.value() / 100.0});
       else if (effect_choice.selected_item() == "sepia") adjusted_image = image_effector::set_effect(original_image(), sepia_effect {sepia_percent_track_bar.value() / 100.0});
       else if (effect_choice.selected_item() == "solarize") adjusted_image = image_effector::set_effect(original_image(), solarize_effect {solarize_threshold_track_bar.value()});
-      else if (effect_choice.selected_item() == "threshold") adjusted_image = image_converter::threshold(original_image(), threshold_threshold_track_bar.value());
+      else if (effect_choice.selected_item() == "threshold") adjusted_image = image_effector::set_effect(original_image(), threshold_effect {threshold_threshold_track_bar.value()});
       else adjusted_image = original_image();
       adjusted_picture_panel.invalidate();
     }
