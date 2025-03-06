@@ -575,9 +575,9 @@ color color::from_name(const string& name) noexcept {
 }
 
 xtd::drawing::color color::from_yuv(float y, float u, float v) noexcept {
-  y = std::clamp(y, 0.0f, 1.0f);
-  u = std::clamp(u, -0.5f, 0.5f);
-  v = std::clamp(v, -0.5f, 0.5f);
+  y = math::clamp(y, 0.0f, 1.0f);
+  u = math::clamp(u, -0.5f, 0.5f);
+  v = math::clamp(v, -0.5f, 0.5f);
   
   auto r = static_cast<xtd::byte>(y + 1.4075f * (v - 128));
   auto g = static_cast<xtd::byte>(y - 0.3455f * (u - 128) - (0.7169f * (v - 128)));

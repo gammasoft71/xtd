@@ -13,7 +13,7 @@ grayscale_effect::grayscale_effect(double percent) : percent {percent} {
 }
 
 void grayscale_effect::apply(xtd::drawing::image& image) const {
-  auto percent = std::clamp(this->percent, 0.0, 1.0);
+  auto percent = math::clamp(this->percent, 0.0, 1.0);
   auto alpha = reinterpret_cast<helpers::alpha*>(image.alpha());
   auto rgb = reinterpret_cast<helpers::rgb*>(image.rgb());
 
