@@ -19,7 +19,7 @@ namespace xtd {
       /// xtd::drawing::helpers
       /// @par Library
       /// xtd.drawing
-      /// @ingroup xtd_drawing
+      /// @ingroup xtd_drawing drawing_helpers
       struct argb {
         /// @name Public Properties
         
