@@ -10,6 +10,7 @@
 #include "../../../include/xtd/drawing/imaging/effects/drop_shadow_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/gamma_correction_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/grayscale_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/hue_rotate_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/posterize_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/resize_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/sepia_effect.hpp"
@@ -38,66 +39,7 @@ namespace {
   
   xtd::byte alpha_blend(xtd::byte fore_componant, xtd::byte back_componant, double percent) noexcept {
     return static_cast<xtd::byte>(fore_componant * (1 - percent) + back_componant * percent);
-  }
-  
-  float get_hue(xtd::byte r, xtd::byte g, xtd::byte b) noexcept {
-    if (r == g && g == b) return 0.0;
-    
-    auto rc = static_cast<float>(r) / 255.0f;
-    auto gc = static_cast<float>(g) / 255.0f;
-    auto bc = static_cast<float>(b) / 255.0f;
-    
-    auto max = static_cast<float>(xtd::math::max(xtd::math::max(rc, gc), bc));
-    auto min = static_cast<float>(xtd::math::min(xtd::math::min(rc, gc), bc));
-    
-    auto delta = max - min;
-    
-    auto hue = 0.0f;
-    if (rc == max) hue = (gc - bc) / delta;
-    else if (gc == max) hue = 2 + (bc - rc) / delta;
-    else if (bc == max) hue = 4 + (rc - gc) / delta;
-    hue *= 60;
-    
-    if (hue < 0.0) hue += 360.0;
-    return hue;
-  }
-  
-  float get_saturation(xtd::byte r, xtd::byte g, xtd::byte b) noexcept {
-    auto max = static_cast<float>(xtd::math::max(xtd::math::max(r, g), b)) / 255.0f;
-    auto min = static_cast<float>(xtd::math::min(xtd::math::min(r, g), b)) / 255.0f;
-    
-    if (max == min) return 0.0f;
-    
-    return (max + min) <= 1.0f ? (max - min) / (max + min) : (max - min) / (2 - max - min);
-  }
-  
-  float get_lightness(xtd::byte r, xtd::byte g, xtd::byte b) noexcept {
-    return (static_cast<float>(xtd::math::max(xtd::math::max(r, g), b)) + static_cast<float>(xtd::math::min(xtd::math::min(r, g), b))) / 2.0f / 255.0f;
-  }
-  
-  std::tuple<float, float, float> to_hsl(xtd::byte r, xtd::byte g, xtd::byte b) {
-    return {get_hue(r, g, b), get_saturation(r, g, b), get_lightness(r, g, b)};
-  }
-  
-  std::tuple<xtd::byte, xtd::byte, xtd::byte> from_hsl(float hue, float saturation, float lightness) noexcept {
-    // algorithm version (see https://www.programmingalgorithms.com/algorithm/hsl-to-rgb)
-    if (saturation == 0) return {static_cast<xtd::byte>(lightness * 255.0f), static_cast<xtd::byte>(lightness * 255.0f), static_cast<xtd::byte>(lightness * 255.0f)};
-    
-    auto hue_to_rgb = [](float v1, float v2, float vh)->float {
-      if (vh < 0) vh += 1;
-      if (vh > 1) vh -= 1;
-      if ((6 * vh) < 1) return (v1 + (v2 - v1) * 6 * vh);
-      if ((2 * vh) < 1) return v2;
-      if ((3 * vh) < 2) return (v1 + (v2 - v1) * ((2.0f / 3) - vh) * 6);
-      return v1;
-    };
-    
-    hue = hue / 360.0f;
-    auto v2 = (lightness < 0.5f) ? (lightness * (1 + saturation)) : ((lightness + saturation) - (lightness * saturation));
-    auto v1 = 2 * lightness - v2;
-    
-    return {static_cast<xtd::byte>(hue_to_rgb(v1, v2, hue + (1.0f / 3)) * 255.0f), static_cast<xtd::byte>(hue_to_rgb(v1, v2, hue) * 255.0f), static_cast<xtd::byte>(hue_to_rgb(v1, v2, hue - (1.0f / 3)) * 255.0f)};
-  }
+  }  
 }
 
 void image_converter::bitonal(image& image, int32 threshold, const drawing::color& upper_color, const drawing::color& lower_color) {
@@ -237,17 +179,7 @@ image image_converter::grayscale(const image& image, double percent) {
 }
 
 void image_converter::hue_rotate(image& image, int angle) {
-  angle = std::clamp(angle, 0, 360);
-  auto rgb = reinterpret_cast<rgb_ptr>(image.rgb());
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x) {
-      auto pixel = y * image.width() + x;
-      auto [h, s, l] = to_hsl(rgb[pixel].r, rgb[pixel].g, rgb[pixel].b);
-      h = static_cast<float>((static_cast<int>(h) + angle) % 360);
-      if (h < 0) h += 360;
-      auto [hue_rotate_r, hue_rotate_g, hue_rotate_b] = from_hsl(h, s, l);
-      rgb[pixel] = {hue_rotate_r, hue_rotate_g, hue_rotate_b};
-    }
+  image_effector::set_effect(image, hue_rotate_effect {angle});
 }
 
 image image_converter::hue_rotate(const image& image, int angle) {
@@ -333,10 +265,10 @@ xtd::drawing::image image_converter::resize(const xtd::drawing::image& image, co
 
 void image_converter::rotate_flip(image& image, xtd::drawing::rotate_flip_type rotate_flip_type) {
   image.rotate_flip(rotate_flip_type);
-  if (rotate_flip_type == xtd::drawing::rotate_flip_type::rotate_90_flip_none ||
+  if (image.width() != image.height() && (rotate_flip_type == xtd::drawing::rotate_flip_type::rotate_90_flip_none ||
       rotate_flip_type == xtd::drawing::rotate_flip_type::rotate_270_flip_none ||
       rotate_flip_type == xtd::drawing::rotate_flip_type::rotate_90_flip_x ||
-      rotate_flip_type == xtd::drawing::rotate_flip_type::rotate_270_flip_x) rescale(image, {image.height(), image.width()});
+      rotate_flip_type == xtd::drawing::rotate_flip_type::rotate_270_flip_x)) rescale(image, {image.height(), image.width()});
 }
 
 image image_converter::rotate_flip(const image& image, xtd::drawing::rotate_flip_type rotate_flip_type) {
