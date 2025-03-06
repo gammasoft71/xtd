@@ -1,0 +1,2 @@
+#pragma once
+#include "gamma_correction_effect.hpp"
