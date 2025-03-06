@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['b_0',['b',['../structxtd_1_1drawing_1_1helpers_1_1rgb.html#a3fd5ae28e4486fb0718476de3ab10d39',1,'xtd::drawing::helpers::rgb']]],
+  ['b_0',['b',['../structxtd_1_1drawing_1_1helpers_1_1argb.html#a525e1b761d4e8513b9a4989cb7d172b1',1,'xtd::drawing::helpers::argb::b'],['../structxtd_1_1drawing_1_1helpers_1_1rgb.html#a3fd5ae28e4486fb0718476de3ab10d39',1,'xtd::drawing::helpers::rgb::b'],['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1gamma__correction__effect.html#a829a9ebd9c5c08116d7bedb8ed4c8267',1,'xtd::drawing::imaging::effects::gamma_correction_effect::b']]],
   ['baby_1',['baby',['../classxtd_1_1forms_1_1emoticons.html#a17574d7a465d94800c5691e5dbe31b7e',1,'xtd::forms::emoticons']]],
   ['baby_5fangel_2',['baby_angel',['../classxtd_1_1forms_1_1emoticons.html#a1f2ec8ce19759395482961a02caed010',1,'xtd::forms::emoticons']]],
   ['baby_5fbottle_3',['baby_bottle',['../classxtd_1_1forms_1_1emoticons.html#aa82eb0abd38b5961c39daabc5d0f8789',1,'xtd::forms::emoticons']]],

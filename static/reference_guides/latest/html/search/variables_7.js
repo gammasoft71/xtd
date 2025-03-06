@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['g_0',['g',['../structxtd_1_1drawing_1_1helpers_1_1rgb.html#af1e1a0d3b3ff280ec1d7b83d074de79b',1,'xtd::drawing::helpers::rgb']]],
+  ['g_0',['g',['../structxtd_1_1drawing_1_1helpers_1_1argb.html#a08d7b70e7c10f88a837aa5d7db33dfee',1,'xtd::drawing::helpers::argb::g'],['../structxtd_1_1drawing_1_1helpers_1_1rgb.html#af1e1a0d3b3ff280ec1d7b83d074de79b',1,'xtd::drawing::helpers::rgb::g'],['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1gamma__correction__effect.html#a14e8eaef886a56447d8aebf6aeac2710',1,'xtd::drawing::imaging::effects::gamma_correction_effect::g']]],
   ['gainsboro_1',['gainsboro',['../classxtd_1_1drawing_1_1color.html#abd61cc457f906394402a90039354f62c',1,'xtd::drawing::color']]],
   ['game_5fdie_2',['game_die',['../classxtd_1_1forms_1_1emoticons.html#a52073e948f6a6f130b4dc385f91f4cb3',1,'xtd::forms::emoticons']]],
   ['gear_3',['gear',['../classxtd_1_1forms_1_1emoticons.html#ae8c19f00a532e6bcbcdeae4738c6eb15',1,'xtd::forms::emoticons']]],
