@@ -12,6 +12,7 @@
 #include "../../../include/xtd/drawing/imaging/effects/grayscale_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/hue_rotate_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/invert_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/opacity_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/posterize_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/resize_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/sepia_effect.hpp"
@@ -204,15 +205,7 @@ image image_converter::invert(const image& image, double percent) {
 }
 
 void image_converter::opacity(image& image, double percent) {
-  percent = std::clamp(percent, 0.0, 1.0);
-  auto alpha = image.alpha();
-  for (auto y = 0; y < image.height(); ++y)
-    for (auto x = 0; x < image.width(); ++x) {
-      auto pixel = y * image.width() + x;
-      if (!alpha[pixel]) continue;
-      auto opacity_a = static_cast<xtd::byte>(255 * percent);
-      alpha[pixel] = opacity_a;
-    }
+  image_effector::set_effect(image, opacity_effect {percent});
 }
 
 image image_converter::opacity(const image& image, double percent) {
@@ -275,9 +268,9 @@ void image_converter::saturate(image& image, double percent) {
       auto g = rgb[pixel].g / 255.0;
       auto b = rgb[pixel].b / 255.0;
       auto gray = 0.2989 * r + 0.5870 * g + 0.1140 * b;
-      auto saturated_r = static_cast<xtd::byte>(std::clamp(gray + (r - gray) * percent, 0.0, 1.0) * 255);
-      auto saturated_g = static_cast<xtd::byte>(std::clamp(gray + (g - gray) * percent, 0.0, 1.0) * 255);
-      auto saturated_b = static_cast<xtd::byte>(std::clamp(gray + (b - gray) * percent, 0.0, 1.0) * 255);
+      auto saturated_r = static_cast<xtd::byte>(math::clamp(gray + (r - gray) * percent, 0.0, 1.0) * 255);
+      auto saturated_g = static_cast<xtd::byte>(math::clamp(gray + (g - gray) * percent, 0.0, 1.0) * 255);
+      auto saturated_b = static_cast<xtd::byte>(math::clamp(gray + (b - gray) * percent, 0.0, 1.0) * 255);
       rgb[pixel] = {saturated_r, saturated_g, saturated_b};
     }
 }
