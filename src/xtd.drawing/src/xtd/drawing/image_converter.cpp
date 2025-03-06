@@ -341,6 +341,10 @@ xtd::drawing::image image_converter::resize(const xtd::drawing::image& image, co
 
 void image_converter::rotate_flip(image& image, xtd::drawing::rotate_flip_type rotate_flip_type) {
   image.rotate_flip(rotate_flip_type);
+  if (rotate_flip_type == xtd::drawing::rotate_flip_type::rotate_90_flip_none ||
+      rotate_flip_type == xtd::drawing::rotate_flip_type::rotate_270_flip_none ||
+      rotate_flip_type == xtd::drawing::rotate_flip_type::rotate_90_flip_x ||
+      rotate_flip_type == xtd::drawing::rotate_flip_type::rotate_270_flip_x) rescale(image, {image.height(), image.width()});
 }
 
 image image_converter::rotate_flip(const image& image, xtd::drawing::rotate_flip_type rotate_flip_type) {
