@@ -48,7 +48,7 @@ namespace xtd {
           /// @brief Gets or sets the percent factor in %.
           /// @param percent The percent factor in %.
           /// @remarks `0.0` will make the image completely black. `1.0` is default and represents the original image. Values over `1.0` will provide brighter results.
-          double percent = 100.0;
+          double percent = 1.0;
           /// @}
 
         protected:
