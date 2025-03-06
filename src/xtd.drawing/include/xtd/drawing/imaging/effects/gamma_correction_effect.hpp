@@ -42,7 +42,7 @@ namespace xtd {
           /// @param g The green correction between `0.1` and `5.0`.
           /// @param b The blue correction between `0.1` and `5.0`.
           /// @ramrks The `1.0` values are default and represent the original color.
-          explicit gamma_correction_effect(double r, double g, double b);
+          gamma_correction_effect(double r, double g, double b);
           /// @}
 
           /// @name Public Properties
