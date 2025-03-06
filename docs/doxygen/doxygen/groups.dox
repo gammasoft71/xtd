@@ -53,6 +53,10 @@
     |   |     /// @brief Defines a particular format for text, including font face, size, and style attributes. This class cannot be inherited.
     |   |     /// @ingroup drawing
     |   |     /// @defgroup fonts fonts
+    |   |- helpers
+    |   |     /// @brief Contains object helpers.
+    |   |     /// @ingroup drawing
+    |   |     /// @defgroup drawing_helpers helpers
     |   |- images
     |   |     /// @brief Contains images definitions.
     |   |     /// @ingroup drawing

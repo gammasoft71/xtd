@@ -18,7 +18,7 @@ namespace xtd {
       /// xtd::drawing::helpers
       /// @par Library
       /// xtd.drawing
-      /// @ingroup xtd_drawing
+      /// @ingroup xtd_drawing drawing_helpers
       struct alpha {
         /// @name Public Properties
         
