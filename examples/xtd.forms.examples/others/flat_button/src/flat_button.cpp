@@ -30,7 +30,7 @@ public:
     button3.location({40, 120});
     button3.flat_style(xtd::forms::flat_style::flat);
     button3.size({140, 40});
-    button3.image(image::from_data(gammasoft_32x32_xpm));
+    button3.image(image::from_xpm_data(gammasoft_32x32_xpm));
     button3.image_align(content_alignment::middle_left);
     button3.text("Gammasoft");
     
@@ -38,7 +38,7 @@ public:
     button4.flat_appearance(flat_button_appearance().border_size(0));
     button4.flat_style(xtd::forms::flat_style::flat);
     button4.size({70, 70});
-    button4.image(image::from_data(gammasoft_64x64_xpm));
+    button4.image(image::from_xpm_data(gammasoft_64x64_xpm));
   }
   
 private:
