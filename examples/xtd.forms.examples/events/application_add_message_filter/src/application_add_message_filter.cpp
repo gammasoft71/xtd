@@ -25,8 +25,8 @@ namespace application_add_message_filter_example {
   private:
     bool pre_filter_message(const message& message) {
       // Uncomment following line to see all messages.
-      //debug::write_line(string::format("message=[{}], control=[{}]", message.to_string(), from_handle(message.hwnd()).has_value() ? from_handle(message.hwnd()).value().get().to_string() : "(null)"));
-      return skip_button_click_check_box_.checked() && message.msg() == WM_LBUTTONDOWN && message.hwnd() == button_.handle();
+      //debug::write_line(string::format("message=[{}], control=[{}]", message.to_string(), from_handle(message.hwnd).has_value() ? from_handle(message.hwnd).value().get().to_string() : "(null)"));
+      return skip_button_click_check_box_.checked() && message.msg == WM_LBUTTONDOWN && message.hwnd == button_.handle();
     }
     
     debug_form debug_form_;
