@@ -30,10 +30,10 @@
 /// | Invert             | xtd::drawing::imaging::effects::invert_effect             | @image html ball_invert.png             |
 /// | Opacity            | xtd::drawing::imaging::effects::opacity_effect            | @image html ball_opacity.png            |
 /// | Posterize          | xtd::drawing::imaging::effects::posterize_effect          | @image html ball_posterize.png          |
-/// | Rescale            | xtd::drawing::imaging::effects::rescale_effect            | @image html ball_rescale.png            |
 /// | Resize             | xtd::drawing::imaging::effects::resize_effect             | @image html ball_resize.png             |
 /// | Rotate and flip    | xtd::drawing::imaging::effects::rotate_flip_effect        | @image html ball_rotate_flip.png        |
 /// | Saturate           | xtd::drawing::imaging::effects::saturate_effect           | @image html ball_saturate.png           |
+/// | Scale              | xtd::drawing::imaging::effects::scale_effect              | @image html ball_scale.png              |
 /// | Sepia              | xtd::drawing::imaging::effects::sepia_effect              | @image html ball_sepia.png              |
 /// | Solarize           | xtd::drawing::imaging::effects::solarize_effect           | @image html ball_solarize.png           |
 /// | Threshold          | xtd::drawing::imaging::effects::threshold_effect          | @image html ball_threshold.png          |

@@ -47,6 +47,7 @@
 #include "drawing/imaging/effects/invert_effect.hpp"
 #include "drawing/imaging/effects/opacity_effect.hpp"
 #include "drawing/imaging/effects/posterize_effect.hpp"
+#include "drawing/imaging/effects/scale_effect.hpp"
 #include "drawing/imaging/effects/resize_effect.hpp"
 #include "drawing/imaging/effects/rotate_flip_effect.hpp"
 #include "drawing/imaging/effects/saturate_effect.hpp"
