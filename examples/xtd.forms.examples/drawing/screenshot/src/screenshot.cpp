@@ -71,7 +71,7 @@ namespace screenshot_example {
     button screenshot_button = button::create(*this, "New screenshot", {20, 270}, {130, 25});
     button save_screenshot_button = button::create(*this, "Save screenshot", {165, 270}, {130, 25});
     button quit_button = button::create(*this, "Quit", {310, 270}, {50, 25});
-    timer take_screen_shot_timer;
+    forms::timer take_screen_shot_timer;
   };
 }
 
