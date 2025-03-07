@@ -195,7 +195,7 @@ std::ofstream file::open_write(const string& path) {
   return stream;
 }
 
-std::vector<xtd::byte> file::read_all_bytes(const string& path) {
+array<xtd::byte> file::read_all_bytes(const string& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw_helper::throws(exception_case::argument);
   if (path.empty() || path.trim(' ').empty()) throw_helper::throws(exception_case::argument);
   if (native::file_system::is_path_too_long(path)) throw_helper::throws(exception_case::path_too_long);
@@ -203,10 +203,10 @@ std::vector<xtd::byte> file::read_all_bytes(const string& path) {
   
   auto stream = std::ifstream {path, std::ios::binary};
   if (!stream.good()) throw_helper::throws(exception_case::io);
-  return std::vector<xtd::byte> {std::istreambuf_iterator<char>(stream), std::istreambuf_iterator<char>()};
+  return array<xtd::byte> {std::istreambuf_iterator<char>(stream), std::istreambuf_iterator<char>()};
 }
 
-std::vector<string> file::read_all_lines(const string& path) {
+array<string> file::read_all_lines(const string& path) {
   if (path.index_of_any(xtd::io::path::get_invalid_path_chars()) != string::npos) throw_helper::throws(exception_case::argument);
   if (path.empty() || path.trim(' ').empty()) throw_helper::throws(exception_case::argument);
   if (native::file_system::is_path_too_long(path)) throw_helper::throws(exception_case::path_too_long);
