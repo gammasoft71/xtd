@@ -1,3 +1,4 @@
+#include <xtd/collections/generic/list>
 #include <xtd/console>
 #include <xtd/date_time>
 #include <xtd/startup>
