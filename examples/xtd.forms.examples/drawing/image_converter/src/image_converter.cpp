@@ -422,6 +422,7 @@ namespace image_effector_example {
     }
     
     void on_panel_image_paint(object& sender, paint_event_args& e) {
+      e.graphics().clear(as<control>(sender).back_color());
       if (background_choice.selected_item() == "checker-board") e.graphics().fill_rectangle(hatch_brush {xtd::drawing::drawing_2d::hatch_style::wide_checker_board, xtd::drawing::color::from_argb(0x66, 0x66, 0x66), xtd::drawing::color::from_argb(0x99, 0x99, 0x99)}, e.clip_rectangle());
       const auto& img = sender == original_picture_panel ? original_image() : adjusted_image;
       e.graphics().draw_image(img, rectangle {{(as<control>(sender).width() - img.width()) / 2, (as<control>(sender).height() - img.height()) / 2}, img.size()});
