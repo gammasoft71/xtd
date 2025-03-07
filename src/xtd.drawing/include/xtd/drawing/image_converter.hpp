@@ -31,23 +31,6 @@ namespace xtd {
       /// @name Public Static Methods
       
       /// @{
-      /// @brief Rescale image with of the specified image with specified size.
-      /// @param image The image to change the size.
-      /// @param size The new size.
-      /// @par Appearance
-      /// | Original             | Converted                    |
-      /// | -------------------- | ---------------------------- |
-      /// | @image html ball.png | @image html ball_rescale.png |
-      static void rescale(xtd::drawing::image& image, const xtd::drawing::size& size);
-      /// @brief Creates a new resacaling image with new size of the specified image with specified size.
-      /// @param image The image to change the size.
-      /// @param size The new size.
-      /// @return The converted image.
-      /// @par Appearance
-      /// | Original             | Converted                    |
-      /// | -------------------- | ---------------------------- |
-      /// | @image html ball.png | @image html ball_rescale.png |
-      static xtd::drawing::image rescale(const xtd::drawing::image& image, const xtd::drawing::size& size);
       /// @}
     };
   }

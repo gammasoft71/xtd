@@ -44,8 +44,8 @@ namespace image_effector_example {
       invert_percent_track_bar.tick_style(tick_style::none);
       opacity_percent_track_bar.tick_style(tick_style::none);
       posterize_levels_track_bar.tick_style(tick_style::none);
-      rescale_width_track_bar.tick_style(tick_style::none);
-      rescale_height_track_bar.tick_style(tick_style::none);
+      scale_width_track_bar.tick_style(tick_style::none);
+      scale_height_track_bar.tick_style(tick_style::none);
       resize_x_track_bar.tick_style(tick_style::none);
       resize_y_track_bar.tick_style(tick_style::none);
       resize_width_track_bar.tick_style(tick_style::none);
@@ -78,7 +78,7 @@ namespace image_effector_example {
       invert_panel.dock(xtd::forms::dock_style::fill);
       opacity_panel.dock(xtd::forms::dock_style::fill);
       posterize_panel.dock(xtd::forms::dock_style::fill);
-      rescale_panel.dock(xtd::forms::dock_style::fill);
+      scale_panel.dock(xtd::forms::dock_style::fill);
       resize_panel.dock(xtd::forms::dock_style::fill);
       rotate_flip_panel.dock(xtd::forms::dock_style::fill);
       saturate_panel.dock(xtd::forms::dock_style::fill);
@@ -250,17 +250,17 @@ namespace image_effector_example {
         update_pictures();
       };
       
-      rescale_width_numeric_up_down.value_changed += [&] {rescale_width_track_bar.value(as<int32>(rescale_width_numeric_up_down.value()));};
-      rescale_width_track_bar.value_changed += [&] {
-        rescale_width_numeric_up_down.value(rescale_width_track_bar.value());
-        if (rescale_maintain_aspect_ratio_check_box.checked()) rescale_height_numeric_up_down.value(as<int>(rescale_width_track_bar.value() / rescale_aspect_ratio));
+      scale_width_numeric_up_down.value_changed += [&] {scale_width_track_bar.value(as<int32>(scale_width_numeric_up_down.value()));};
+      scale_width_track_bar.value_changed += [&] {
+        scale_width_numeric_up_down.value(scale_width_track_bar.value());
+        if (scale_maintain_aspect_ratio_check_box.checked()) scale_height_numeric_up_down.value(as<int>(scale_width_track_bar.value() / rescale_aspect_ratio));
         update_pictures();
       };
       
-      rescale_height_numeric_up_down.value_changed += [&] {rescale_height_track_bar.value(as<int32>(rescale_height_numeric_up_down.value()));};
-      rescale_height_track_bar.value_changed += [&] {
-        rescale_height_numeric_up_down.value(rescale_height_track_bar.value());
-        if (rescale_maintain_aspect_ratio_check_box.checked()) rescale_width_numeric_up_down.value(as<int>(rescale_height_track_bar.value() * rescale_aspect_ratio));
+      scale_height_numeric_up_down.value_changed += [&] {scale_height_track_bar.value(as<int32>(scale_height_numeric_up_down.value()));};
+      scale_height_track_bar.value_changed += [&] {
+        scale_height_numeric_up_down.value(scale_height_track_bar.value());
+        if (scale_maintain_aspect_ratio_check_box.checked()) scale_width_numeric_up_down.value(as<int>(scale_height_track_bar.value() * rescale_aspect_ratio));
         update_pictures();
       };
 
@@ -409,7 +409,7 @@ namespace image_effector_example {
       invert_panel.visible(effect_choice.selected_item().value() == "invert");
       opacity_panel.visible(effect_choice.selected_item().value() == "opacity");
       posterize_panel.visible(effect_choice.selected_item() == "posterize");
-      rescale_panel.visible(effect_choice.selected_item().value() == "rescale");
+      scale_panel.visible(effect_choice.selected_item().value() == "scale");
       resize_panel.visible(effect_choice.selected_item().value() == "resize");
       rotate_flip_panel.visible(effect_choice.selected_item().value() == "rotate-flip");
       saturate_panel.visible(effect_choice.selected_item().value() == "saturate");
@@ -491,12 +491,12 @@ namespace image_effector_example {
 
       posterize_levels_track_bar.value(2);
 
-      rescale_maintain_aspect_ratio_check_box.checked(false);
+      scale_maintain_aspect_ratio_check_box.checked(false);
       rescale_aspect_ratio = as<double>(original_image().width()) / original_image().height();
-      rescale_width_numeric_up_down.value(original_image_.width());
-      rescale_width_numeric_up_down.value(original_image_.height());
-      rescale_maintain_aspect_ratio_check_box.checked(true);
-      rescale_width_track_bar.value(original_image().size().width / 5 * 4);
+      scale_width_numeric_up_down.value(original_image_.width());
+      scale_width_numeric_up_down.value(original_image_.height());
+      scale_maintain_aspect_ratio_check_box.checked(true);
+      scale_width_track_bar.value(original_image().size().width / 5 * 4);
 
       resize_maintain_aspect_ratio_check_box.checked(false);
       resize_height_numeric_up_down.set_range(1, original_image().height() * 2);
@@ -540,10 +540,10 @@ namespace image_effector_example {
       else if (effect_choice.selected_item() == "invert") adjusted_image = image_effector::set_effect(original_image(), invert_effect {invert_percent_track_bar.value() / 100.0});
       else if (effect_choice.selected_item() == "opacity") adjusted_image = image_effector::set_effect(original_image(), opacity_effect {opacity_percent_track_bar.value() / 100.0});
       else if (effect_choice.selected_item() == "posterize") adjusted_image = image_effector::set_effect(original_image(), posterize_effect {posterize_levels_track_bar.value()});
-      else if (effect_choice.selected_item() == "rescale") adjusted_image = image_converter::rescale(original_image(), {rescale_width_track_bar.value(), rescale_height_track_bar.value()});
       else if (effect_choice.selected_item() == "resize") adjusted_image = image_effector::set_effect(original_image(), resize_auto_determine_fill_color_ratio_check_box.checked() ? resize_effect {rectangle {math::abs(resize_x_track_bar.value()), math::abs(resize_y_track_bar.value()), resize_width_track_bar.value(), resize_height_track_bar.value()}, resize_auto_determine_fill_color_ratio_check_box.checked()} : resize_effect {rectangle {math::abs(resize_x_track_bar.value()), math::abs(resize_y_track_bar.value()), resize_width_track_bar.value(), resize_height_track_bar.value()}, resize_fill_color_color_picker.color()});
       else if (effect_choice.selected_item() == "rotate-flip") adjusted_image = image_effector::set_effect(original_image(), rotate_flip_effect {as<rotate_flip_type>(rotate_flip_choice.selected_item().tag())});
       else if (effect_choice.selected_item() == "saturate") adjusted_image = image_effector::set_effect(original_image(), saturate_effect {saturate_percent_track_bar.value() / 100.0});
+      else if (effect_choice.selected_item() == "scale") adjusted_image = image_effector::set_effect(original_image(), scale_effect {drawing::size {scale_width_track_bar.value(), scale_height_track_bar.value()}});
       else if (effect_choice.selected_item() == "sepia") adjusted_image = image_effector::set_effect(original_image(), sepia_effect {sepia_percent_track_bar.value() / 100.0});
       else if (effect_choice.selected_item() == "solarize") adjusted_image = image_effector::set_effect(original_image(), solarize_effect {solarize_threshold_track_bar.value()});
       else if (effect_choice.selected_item() == "threshold") adjusted_image = image_effector::set_effect(original_image(), threshold_effect {threshold_threshold_track_bar.value()});
@@ -676,15 +676,6 @@ namespace image_effector_example {
     label posterize_levels_label = label::create(posterize_panel, "Levels", {10, 54}, {70, 23});
     track_bar posterize_levels_track_bar = track_bar::create(posterize_panel, 2, 2, 256, {80, 50}, {200, 25});
     numeric_up_down posterize_levels_numeric_up_down = numeric_up_down::create(posterize_panel, 2, 2, 256, {290, 50}, {110, 25});
-
-    panel rescale_panel = panel::create(*this, {0, 0}, {730, 170});
-    label rescale_width_label = label::create(rescale_panel, "Width", {10, 34}, {50, 23});
-    track_bar rescale_width_track_bar = track_bar::create(rescale_panel, original_image().size().width, 1, original_image().size().width * 2, {60, 30}, {200, 25});
-    numeric_up_down rescale_width_numeric_up_down = numeric_up_down::create(rescale_panel, original_image().size().width, 1, original_image().size().width * 2, {270, 30}, {130, 25});
-    label rescale_height_label = label::create(rescale_panel, "Height", {10, 74}, {50, 23});
-    track_bar rescale_height_track_bar = track_bar::create(rescale_panel, original_image().size().height, 1, original_image().size().height * 2, {60, 70}, {200, 25});
-    numeric_up_down rescale_height_numeric_up_down = numeric_up_down::create(rescale_panel, original_image().size().height, 1, original_image().size().height * 2, {270, 70}, {130, 25});
-    check_box rescale_maintain_aspect_ratio_check_box = check_box::create(rescale_panel, "Maintain aspect ratio", check_state::checked, {420, 54}, {150, 23});
     
     panel resize_panel = panel::create(*this, {0, 0}, {730, 170});
     label resize_x_label = label::create(resize_panel, "offset x", {10, 14}, {70, 23});
@@ -712,7 +703,16 @@ namespace image_effector_example {
     label saturate_percent_label = label::create(saturate_panel, "Percent", {10, 54}, {70, 23});
     track_bar saturate_percent_track_bar = track_bar::create(saturate_panel, 300, 0, 1000, {80, 50}, {200, 25});
     numeric_up_down saturate_percent_numeric_up_down = numeric_up_down::create(saturate_panel, 300, 0, 1000, {290, 50}, {110, 25});
-    
+
+    panel scale_panel = panel::create(*this, {0, 0}, {730, 170});
+    label scale_width_label = label::create(scale_panel, "Width", {10, 34}, {50, 23});
+    track_bar scale_width_track_bar = track_bar::create(scale_panel, original_image().size().width, 1, original_image().size().width * 2, {60, 30}, {200, 25});
+    numeric_up_down scale_width_numeric_up_down = numeric_up_down::create(scale_panel, original_image().size().width, 1, original_image().size().width * 2, {270, 30}, {130, 25});
+    label scale_height_label = label::create(scale_panel, "Height", {10, 74}, {50, 23});
+    track_bar scale_height_track_bar = track_bar::create(scale_panel, original_image().size().height, 1, original_image().size().height * 2, {60, 70}, {200, 25});
+    numeric_up_down scale_height_numeric_up_down = numeric_up_down::create(scale_panel, original_image().size().height, 1, original_image().size().height * 2, {270, 70}, {130, 25});
+    check_box scale_maintain_aspect_ratio_check_box = check_box::create(scale_panel, "Maintain aspect ratio", check_state::checked, {420, 54}, {150, 23});
+
     panel sepia_panel = panel::create(*this, {0, 0}, {730, 170});
     label sepia_percent_label = label::create(sepia_panel, "Percent", {10, 54}, {70, 23});
     track_bar sepia_percent_track_bar = track_bar::create(sepia_panel, 100, 0, 100, {80, 50}, {200, 25});
@@ -730,7 +730,7 @@ namespace image_effector_example {
     
     panel picures_panel = panel::create(*this, {0, 0}, {630, 400});
     label effect_label = label::create(picures_panel, "Effect", {10, 14}, {50, 23});
-    choice effect_choice = choice::create(picures_panel, {"bitonal", "blur", "brightness", "color", "color-extraction", "color-substitution", "contrast", "crop", "disabled", "drop-shadow", "gamma-correction", "grayscale", "hue-rotate", "invert", "opacity", "posterize", "rescale", "resize", "rotate-flip", "saturate", "sepia", "solarize", "threshold"}, {70, 10});
+    choice effect_choice = choice::create(picures_panel, {"bitonal", "blur", "brightness", "color", "color-extraction", "color-substitution", "contrast", "crop", "disabled", "drop-shadow", "gamma-correction", "grayscale", "hue-rotate", "invert", "opacity", "posterize", "resize", "rotate-flip", "saturate", "scale", "sepia", "solarize", "threshold"}, {70, 10});
     label picture_label = label::create(picures_panel, "Picture", {220, 14}, {50, 23});
     choice picture_choice = choice::create(picures_panel, {{"ball", properties::resources::ball()}, {"pineapple", properties::resources::pineapple()}, {"rose", properties::resources::rose()}, {"white", create_image_from_color(color::white)}, {"silver", create_image_from_color(color::silver)}, {"gray", create_image_from_color(color::gray)}, {"black", create_image_from_color(color::black)}, {"red", create_image_from_color(color::red)}, {"maroon", create_image_from_color(color::maroon)}, {"yellow", create_image_from_color(color::yellow)}, {"olive", create_image_from_color(color::olive)}, {"lime", create_image_from_color(color::lime)}, {"green", create_image_from_color(color::green)}, {"aqua", create_image_from_color(color::aqua)}, {"teal", create_image_from_color(color::teal)}, {"blue", create_image_from_color(color::blue)}, {"navy", create_image_from_color(color::navy)}, {"fuchsia", create_image_from_color(color::fuchsia)}, {"purple", create_image_from_color(color::purple)}}, 0, {280, 10});
     label background_label = label::create(picures_panel, "Bacground", {430, 14}, {70, 23});
