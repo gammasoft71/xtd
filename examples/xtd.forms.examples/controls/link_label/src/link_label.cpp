@@ -2,12 +2,10 @@
 #include <xtd/forms/application>
 #include <xtd/forms/form>
 #include <xtd/forms/link_label>
-#include <filesystem>
-
-using namespace std::filesystem;
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::forms;
+using namespace xtd::io;
 
 namespace link_label_example {
   class form1 : public form {
@@ -40,9 +38,9 @@ namespace link_label_example {
       link_label3.auto_size(true);
       link_label3.parent(*this);
       link_label3.text("Put your temporary files in the temp directory");
-      link_label3.links().push_back({32, 4, temp_directory_path()});
+      link_label3.links().push_back({32, 4, io::path::get_temp_path()});
       link_label3.link_clicked += [](object & sender, link_label_clicked_event_args & e) {
-        process::start(as<path>(e.link().link_data()).string());
+        process::start(as<string>(e.link().link_data()));
       };
     }
     
