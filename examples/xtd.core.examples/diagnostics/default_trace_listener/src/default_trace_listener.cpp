@@ -11,7 +11,7 @@ class binomial {
 public:
   // args(0) is the number of possibilities for binomial coefficients.
   // args(1) is the file specification for the trace log file.
-  static auto main(const list<string>& args) {
+  static auto main(const argument_collection& args) {
     auto possibilities = .0l;
     auto iter = .0l;
     
