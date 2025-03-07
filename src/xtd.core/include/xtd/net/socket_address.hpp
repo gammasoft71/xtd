@@ -3,11 +3,11 @@
 #pragma once
 #include "sockets/address_family.hpp"
 #include "../core_export.hpp"
+#include "../array.hpp"
 #include "../iequatable.hpp"
 #include "../object.hpp"
 #include "../types.hpp"
 #include "../string.hpp"
-#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -45,7 +45,7 @@ namespace xtd {
       socket_address(sockets::address_family address_family, size_t buffer_size);
       
       /// @brief Creates a new instance of the xtd::net::socket_address class using the specified byte buffer .
-      explicit socket_address(const std::vector<xtd::byte>& buffer);
+      explicit socket_address(const xtd::array<xtd::byte>& buffer);
       /// @}
       
       /// @cond
@@ -110,7 +110,7 @@ namespace xtd {
     private:
       friend class ip_end_point;
       friend class sockets::socket;
-      std::vector<xtd::byte> bytes_;
+      xtd::array<xtd::byte> bytes_;
     };
   }
 }
