@@ -7,6 +7,7 @@
 #include "format_exception.hpp"
 #include "invalid_cast_exception.hpp"
 #include "overflow_exception.hpp"
+#include "read_only_span.hpp"
 #include "static.hpp"
 #include "types.hpp"
 #include "string.hpp"
@@ -32,6 +33,15 @@ namespace xtd {
     /// @name Public Static Methods
     
     /// @{
+    /// @brief Converts the specified string, which encodes binary data as base-64 digits, to an equivalent 8-bit unsigned integer array.
+    /// @param s The string to convert.
+    /// @return An array of 8-bit unsigned integers that is equivalent to `s`.
+    /// @exception xtd::format_exception The length of `s`, is not zero or a multiple of 4.
+    /// @remarks `s` is composed of base-64 digits, white-space characters, and trailing padding characters. The base-64 digits in ascending order from zero are the uppercase characters "A" to "Z", lowercase characters "a" to "z", numerals "0" to "9", and the symbols "+" and "/".
+    /// @remarks The white-space characters, and their Unicode names and hexadecimal code points, are tab (CHARACTER TABULATION, U+0009), newline (LINE FEED, U+000A), carriage return (CARRIAGE RETURN, U+000D), and blank (SPACE, U+0020). An arbitrary number of white-space characters can appear in s because all white-space characters are ignored.
+    /// @remarks The valueless character, "=", is used for trailing padding. The end of s can consist of zero, one, or two padding characters.
+    static xtd::array<xtd::byte> from_base64_string(const xtd::string& s);
+    
     /// @brief Convert std::any to std::any.
     /// @param value object to convert.
     /// @return A new std::any object converted from value.
@@ -265,6 +275,15 @@ namespace xtd {
       }
     }
     
+    /// @brief Converts an array of 8-bit unsigned integers to its equivalent string representation that is encoded with base-64 digits.
+    /// @param in_array An array of 8-bit unsigned integers.
+    /// @return The string representation, in base 64, of the contents of `in_array`.
+    static xtd::string to_base64_string(const xtd::array<xtd::byte>& in_array);
+    /// @brief Converts a read only span of 8-bit unsigned integers to its equivalent string representation that is encoded with base-64 digits.
+    /// @param bytes An read only span of 8-bit unsigned integers.
+    /// @return The string representation, in base 64, of the contents of `in_array`.
+    static xtd::string to_base64_string(const xtd::read_only_span<xtd::byte>& bytes);
+
     /// @brief Convert std::any to bool.
     /// @param value object to convert.
     /// @return A new bool object converted from value.
