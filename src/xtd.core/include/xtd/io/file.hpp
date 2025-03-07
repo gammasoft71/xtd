@@ -6,6 +6,7 @@
 #include "file_permissions.hpp"
 #include "stream_reader.hpp"
 #include "stream_writer.hpp"
+#include "../array.hpp"
 #include "../chrono.hpp"
 #include "../core_export.hpp"
 #include "../date_time.hpp"
@@ -15,7 +16,6 @@
 #include <cstdio>
 #include <fstream>
 #include <tuple>
-#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -219,7 +219,7 @@ namespace xtd {
       /// @exception xtd::io::file_not_found_exception if path does not exists.
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
-      static std::vector<xtd::byte> read_all_bytes(const xtd::string& path);
+      static xtd::array<xtd::byte> read_all_bytes(const xtd::string& path);
       
       /// @brief Opens a binary file, reads the contents of the file into a byte array, and then closes the file.
       /// @param path The file to open for reading.
@@ -228,14 +228,14 @@ namespace xtd {
       /// @exception xtd::argument_exception path contains one or more of the invalid characters<br>-or-<br>The system could not retrieve the absolute path.
       /// @exception xtd::io::io_exception the handle of the specified file cannot be opened.
       template<class char_t>
-      static std::vector<xtd::byte> read_all_bytes(const char_t* path) {return read_all_bytes(xtd::string(path));}
+      static xtd::array<xtd::byte> read_all_bytes(const char_t* path) {return read_all_bytes(xtd::string(path));}
       
       /// @brief Opens a text file, reads all lines of the file, and then closes the file.
       /// @param path The file to open for reading.
       /// @return A String array containing all lines of the file.
       /// @remarks This method also returns an empty array if path is empty or an invalid path.
       /// @remarks If the caller does not have sufficient permissions to read the specified file, no exception is thrown and the method returns an empty array regardless of the existence of path.
-      static std::vector<xtd::string> read_all_lines(const xtd::string& path);
+      static xtd::array<xtd::string> read_all_lines(const xtd::string& path);
       
       /// @brief Opens a text file, reads all text of the file, and then closes the file.
       /// @param path The file to open for reading.
