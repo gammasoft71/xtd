@@ -14,7 +14,7 @@ using namespace xtd::text;
 
 class test_ip_address {
 public:
-  static auto main(const argument_collection<string>& args) {
+  static auto main(const argument_collection& args) {
     auto server = string_builder {};
     
     // Define a regular expression to parse user's input.
