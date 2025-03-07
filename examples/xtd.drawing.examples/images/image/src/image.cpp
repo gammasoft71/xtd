@@ -6,7 +6,7 @@ using namespace xtd;
 using namespace xtd::drawing;
 
 auto main() -> int {
-  auto bmp = bitmap {logo_xpm};
+  auto bmp = image::from_xpm_data(logo_xpm);
   
   console::write_line("handle = 0x{:X}", bmp.handle());
   console::write_line("horizontal resolution = {}", bmp.horizontal_resolution());
