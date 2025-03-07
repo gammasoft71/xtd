@@ -479,12 +479,6 @@ namespace xtd {
         /// @warning Internal use only
         static void rescale(intptr image, int32 width, int32 height);
 
-        /// @brief Rotates, flips, or rotates and flips the image.
-        /// @param image The image handle.
-        /// @param rotate_flip_type A value that specifies the type of rotation and flip to apply to the image (see rotate_flip_types.h for more information).
-        /// @warning Internal use only
-        static void rotate_flip(intptr image, int32 rotate_flip_type);
-        
         /// @brief Sets the resolution for this bitmap.
         /// @param image The image handle.
         /// @param x_dpi The horizontal resolution, in dots per inch, of the xtd::drawing::bitmap.

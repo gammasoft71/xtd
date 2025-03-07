@@ -56,8 +56,6 @@ add_sources(
   "include/xtd/drawing/native/pixel_offset_modes"
   "include/xtd/drawing/native/region.hpp"
   "include/xtd/drawing/native/region"
-  "include/xtd/drawing/native/rotate_flip_types.hpp"
-  "include/xtd/drawing/native/rotate_flip_types"
   "include/xtd/drawing/native/smoothing_modes.hpp"
   "include/xtd/drawing/native/smoothing_modes"
   "include/xtd/drawing/native/string_alignments.hpp"

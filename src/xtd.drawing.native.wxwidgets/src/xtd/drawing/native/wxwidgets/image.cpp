@@ -5,7 +5,6 @@
 #include <xtd/drawing/native/frame_dimension>
 #include <xtd/drawing/native/image_flags>
 #include <xtd/drawing/native/image_formats>
-#include <xtd/drawing/native/rotate_flip_types>
 #include <xtd/drawing/native/toolkit>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/argument_exception>
@@ -445,21 +444,6 @@ void image::rescale(intptr image, int32 width, int32 height) {
   auto backup_type = reinterpret_cast<wxImage*>(image)->GetType();
   reinterpret_cast<wxImage*>(image)->Rescale(width, height, wxIMAGE_QUALITY_HIGH);
   reinterpret_cast<wxImage*>(image)->SetType(backup_type);
-}
-
-void image::rotate_flip(intptr image, int32 rotate_flip_type) {
-  auto wx_image = reinterpret_cast<wxImage*>(image);
-  switch (rotate_flip_type) {
-    case RFT_ROTATE_NONE_FLIP_NONE: break;
-    case RFT_ROTATE_90_FLIP_NONE: *wx_image = wx_image->Rotate90(); break;
-    case RFT_ROTATE_180_FLIP_NONE: *wx_image = wx_image->Rotate180(); break;
-    case RFT_ROTATE_270_FLIP_NONE: *wx_image = wx_image->Rotate180().Rotate90(); break;
-    case RFT_ROTATE_NONE_FLIP_X: *wx_image = wx_image->Mirror(); break;
-    case RFT_ROTATE_90_FLIP_X: *wx_image = wx_image->Rotate180().Rotate90().Mirror(); break;
-    case RFT_ROTATE_180_FLIP_X: *wx_image = wx_image->Rotate180().Mirror(); break;
-    case RFT_ROTATE_270_FLIP_X: *wx_image = wx_image->Rotate90().Mirror(); break;
-    default: break;
-  }
 }
 
 void image::save(intptr image, const string& filename) {
