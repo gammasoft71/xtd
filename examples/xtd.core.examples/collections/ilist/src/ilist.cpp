@@ -5,7 +5,6 @@
 #include <xtd/startup>
 
 using namespace xtd;
-using namespace xtd::collections;
 
 class program {
 public:
@@ -50,7 +49,7 @@ public:
     console::write_line("List contains \"ten\": {}", test.contains("ten"));
   }
   
-  class simple_list : public object, public ilist {
+  class simple_list : public object, public collections::ilist {
   private:
     array<any_object> contents_ = array<any_object>(8);
     size count_;
@@ -146,7 +145,7 @@ public:
     
     // xtd::collections::ienumerable Members
     
-    enumerator get_enumerator() const override {
+    collections::enumerator get_enumerator() const override {
       // Refer to the xtd::collection::ienumerator documentation for an example of
       // implementing an enumerator.
       throw not_implemented_exception {"The method or operation is not implemented."};

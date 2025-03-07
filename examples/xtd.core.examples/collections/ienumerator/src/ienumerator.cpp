@@ -3,7 +3,6 @@
 #include <xtd/startup>
 
 using namespace xtd;
-using namespace xtd::collections;
 
 class program {
 public:
@@ -25,19 +24,19 @@ public:
     string to_string() const noexcept override {return string::format("{} {}", first_name, last_name);}
   };
   
-  class people_enumerator : public ienumerator {
+  class people_enumerator : public collections::ienumerator {
   private:
-    const array_list& people_;
+    const collections::array_list& people_;
     
     // Enumerators are positioned before the first element until the first xtd::collections::ienumerator::move_next() call.
-    size position = array_list::npos;
+    size position = collections::array_list::npos;
     
   public:
-    people_enumerator(const array_list& list) : people_(list) {}
+    people_enumerator(const collections::array_list& list) : people_(list) {}
     
     bool move_next() override {return ++position < people_.count();}
     
-    void reset() override {position = array_list::npos;}
+    void reset() override {position = collections::array_list::npos;}
     
     const any_object& current() const override {
       if (position >= people_.size()) throw invalid_operation_exception {};
@@ -46,7 +45,7 @@ public:
   };
   
   static auto main() -> void {
-    auto people_array = array_list {
+    auto people_array = collections::array_list {
       person {"John", "Smith"},
       person {"Jim", "Johnson"},
       person {"Sue", "Rabon"},

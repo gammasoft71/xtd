@@ -3,7 +3,6 @@
 #include <xtd/startup>
 
 using namespace xtd;
-using namespace xtd::collections;
 
 class program {
 public:
@@ -27,38 +26,38 @@ public:
   };
   
   // Collection of person objects. This class implements xtd::collections::ienumerable so that it can be used with for each syntax.
-  class people : public ienumerable {
+  class people : public collections::ienumerable {
   private:
-    array_list people_;
+    collections::array_list people_;
     
   public:
     people(const array<person>& p_array) {
-      people_ = array_list(p_array.size());
+      people_ = collections::array_list(p_array.size());
       
       for (auto i = 0_z; i < p_array.size(); ++i)
         people_[i] = p_array[i];
     }
     
     // Implementation for the xtd::collections::ienumerable::get_enumerator method.
-    enumerator get_enumerator() const override {
-      return enumerator {new_ptr<people_enumerator>(people_)};
+    collections::enumerator get_enumerator() const override {
+      return collections::enumerator {new_ptr<people_enumerator>(people_)};
     }
   };
   
   // When you implement xtd::collections::ienumerable, you must also implement xtd::collections::ienumerator.
-  class people_enumerator : public ienumerator {
+  class people_enumerator : public collections::ienumerator {
   private:
-    const array_list& people_;
+    const collections::array_list& people_;
 
     // Enumerators are positioned before the first element until the first xtd::collections::ienumerator::move_next() call.
-    size position = array_list::npos;
+    size position = collections::array_list::npos;
     
   public:
-    people_enumerator(const array_list& list) : people_(list) {}
+    people_enumerator(const collections::array_list& list) : people_(list) {}
     
     bool move_next() override {return ++position < people_.count();}
     
-    void reset() override {position = array_list::npos;}
+    void reset() override {position = collections::array_list::npos;}
     
     const any_object& current() const override {
       if (position >= people_.size()) throw invalid_operation_exception {};
