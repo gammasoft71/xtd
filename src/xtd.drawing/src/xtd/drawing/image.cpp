@@ -1,4 +1,5 @@
 #include "../../../include/xtd/drawing/imaging/effects/crop_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/rotate_flip_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/image_effector.hpp"
 #include "../../../include/xtd/drawing/image.hpp"
 #include "../../../include/xtd/drawing/bitmap.hpp"
@@ -22,6 +23,7 @@ using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::drawing::imaging;
+using namespace xtd::drawing::imaging::effects;
 using namespace xtd::helpers;
 using namespace xtd::io;
 
@@ -183,7 +185,7 @@ image::image(const image& image, int32 width, int32 height) : data_(xtd::new_spt
 image::image(const image& image, const rectangle& rect) : data_(xtd::new_sptr<data>()) {
   if (rect.left() < 0 || rect.top() < 0 || rect.width < 1 || rect.height < 1) throw_helper::throws(exception_case::argument);
   *this = image;
-  imaging::image_effector::set_effect(*this, imaging::effects::crop_effect {rect});
+  imaging::image_effector::set_effect(*this, crop_effect {rect});
   update_properties();
 }
 
@@ -390,7 +392,7 @@ bool image::is_extended_pixel_format(enum pixel_format pixfmt) noexcept {
 }
 
 void image::rotate_flip(xtd::drawing::rotate_flip_type rotate_flip_type) {
-  native::image::rotate_flip(handle(), static_cast<int32>(rotate_flip_type));
+  image_effector::set_effect(*this, rotate_flip_effect {rotate_flip_type});
 }
 
 void image::save(const string& filename) const {

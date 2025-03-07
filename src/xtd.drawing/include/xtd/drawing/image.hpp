@@ -32,10 +32,6 @@ namespace xtd {
     /// @cond
     class bitmap;
     class image_converter;
-    namespace imaging::effects {
-      struct blur_effect;
-      struct rotate_flip_effect;
-    }
     /// @endcond
     
     /// @brief An abstract base class that provides functionality for the bitmap and metafile descended classes.
@@ -358,8 +354,6 @@ namespace xtd {
       
     private:
       friend class image_converter;
-      friend struct imaging::effects::blur_effect;
-      friend struct imaging::effects::rotate_flip_effect;
       void rescale(int32 width, int32 height);
       void update_properties();
       
