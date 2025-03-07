@@ -31,11 +31,11 @@ namespace wnd_proc_example {
     
     void wnd_proc(message& m) override {
       // Listen for operating system messages.
-      switch (m.msg()) {
+      switch (m.msg) {
         // The WM_ACTIVATEAPP message occurs when the application becomes the active application or becomes inactive.
         case WM_ACTIVATEAPP:
           // The wparam value identifies what is occurring.
-          app_active = (as<int>(m.wparam()) != 0);
+          app_active = (as<int>(m.wparam) != 0);
           // Invalidate to get new text painted.
           invalidate();
           break;
