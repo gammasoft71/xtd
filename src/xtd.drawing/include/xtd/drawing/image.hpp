@@ -34,6 +34,7 @@ namespace xtd {
     class image_converter;
     namespace imaging::effects {
       struct blur_effect;
+      struct rotate_flip_effect;
     }
     /// @endcond
     
@@ -358,6 +359,7 @@ namespace xtd {
     private:
       friend class image_converter;
       friend struct imaging::effects::blur_effect;
+      friend struct imaging::effects::rotate_flip_effect;
       void rescale(int32 width, int32 height);
       void update_properties();
       
