@@ -1,12 +1,9 @@
 #include "bicubic_scaling.hpp"
 #include "box_average_scaling.hpp"
+#include "nearest_scaling.hpp"
 #include "../../../../../include/xtd/drawing/imaging/effects/scale_effect.hpp"
 
 namespace {
-  xtd::drawing::image nearest_scaling(const xtd::drawing::image& source_image, const xtd::drawing::size& size) {
-    return source_image.clone();
-  }
-  
   xtd::drawing::image bilinear_scaling(const xtd::drawing::image& source_image, const xtd::drawing::size& size) {
     return source_image.clone();
   }

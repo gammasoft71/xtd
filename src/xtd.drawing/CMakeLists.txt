@@ -378,6 +378,7 @@ add_sources(
   "src/xtd/drawing/imaging/effects/grayscale_effect.cpp"
   "src/xtd/drawing/imaging/effects/hue_rotate_effect.cpp"
   "src/xtd/drawing/imaging/effects/invert_effect.cpp"
+  "src/xtd/drawing/imaging/effects/nearest_scaling.hpp"
   "src/xtd/drawing/imaging/effects/opacity_effect.cpp"
   "src/xtd/drawing/imaging/effects/posterize_effect.cpp"
   "src/xtd/drawing/imaging/effects/resize_effect.cpp"
