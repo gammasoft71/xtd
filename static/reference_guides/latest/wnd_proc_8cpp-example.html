@@ -139,11 +139,11 @@ $(function() {
 <div class="line">    </div>
 <div class="line">    <span class="keywordtype">void</span> wnd_proc(<a id="_a4" name="_a4"></a><a class="code hl_struct" href="structxtd_1_1forms_1_1message.html">message</a>&amp; m)<span class="keyword"> override </span>{</div>
 <div class="line">      <span class="comment">// Listen for operating system messages.</span></div>
-<div class="line">      <span class="keywordflow">switch</span> (m.msg()) {</div>
+<div class="line">      <span class="keywordflow">switch</span> (m.msg) {</div>
 <div class="line">        <span class="comment">// The WM_ACTIVATEAPP message occurs when the application becomes the active application or becomes inactive.</span></div>
 <div class="line">        <span class="keywordflow">case</span> WM_ACTIVATEAPP:</div>
 <div class="line">          <span class="comment">// The wparam value identifies what is occurring.</span></div>
-<div class="line">          app_active = (as&lt;int&gt;(m.wparam()) != 0);</div>
+<div class="line">          app_active = (as&lt;int&gt;(m.wparam) != 0);</div>
 <div class="line">          <span class="comment">// Invalidate to get new text painted.</span></div>
 <div class="line">          invalidate();</div>
 <div class="line">          <span class="keywordflow">break</span>;</div>
@@ -171,7 +171,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 6 2025 22:52:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Mar 8 2025 10:40:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

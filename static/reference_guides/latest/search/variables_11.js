@@ -63,12 +63,13 @@ var searchData=
   ['rose_60',['rose',['../classxtd_1_1forms_1_1emoticons.html#a5fc9b4a797755c4aac9f1879497d236e',1,'xtd::forms::emoticons']]],
   ['rosette_61',['rosette',['../classxtd_1_1forms_1_1emoticons.html#a27d71b335efa117d931806148a3b9ee8',1,'xtd::forms::emoticons']]],
   ['rosy_5fbrown_62',['rosy_brown',['../classxtd_1_1drawing_1_1color.html#ad59360b38004ad18749422dd3783877d',1,'xtd::drawing::color']]],
-  ['round_5fpushpin_63',['round_pushpin',['../classxtd_1_1forms_1_1emoticons.html#adff16a6a705e953feb267b1db0f73fee',1,'xtd::forms::emoticons']]],
-  ['rowboat_64',['rowboat',['../classxtd_1_1forms_1_1emoticons.html#a0d509773f6e759be319bbb83c9801eab',1,'xtd::forms::emoticons']]],
-  ['royal_5fblue_65',['royal_blue',['../classxtd_1_1drawing_1_1color.html#a5654fe219f5f7d6381d77781c971e890',1,'xtd::drawing::color']]],
-  ['rpc_5fe_5fchanged_5fmode_66',['RPC_E_CHANGED_MODE',['../classxtd_1_1h__result.html#a066264d7a9039087c7bf9b76b95ebc52',1,'xtd::h_result']]],
-  ['rugby_5ffootball_67',['rugby_football',['../classxtd_1_1forms_1_1emoticons.html#adeae7d736c5ad1a4e8587709a6817ea4',1,'xtd::forms::emoticons']]],
-  ['run_5fworker_5fcompleted_68',['run_worker_completed',['../classxtd_1_1forms_1_1background__worker.html#a08a598bc14af024ea2a9d16b18925f22',1,'xtd::forms::background_worker']]],
-  ['runner_69',['runner',['../classxtd_1_1forms_1_1emoticons.html#a98915c9a22a001966867da6eadf99dd4',1,'xtd::forms::emoticons']]],
-  ['running_5fshirt_5fwith_5fsash_70',['running_shirt_with_sash',['../classxtd_1_1forms_1_1emoticons.html#aa855fa09d5ca2880932538a74c3a30aa',1,'xtd::forms::emoticons']]]
+  ['rotate_5fflip_5ftype_63',['rotate_flip_type',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1rotate__flip__effect.html#a578dd16a262e3cc674a687bd1b0fbad4',1,'xtd::drawing::imaging::effects::rotate_flip_effect']]],
+  ['round_5fpushpin_64',['round_pushpin',['../classxtd_1_1forms_1_1emoticons.html#adff16a6a705e953feb267b1db0f73fee',1,'xtd::forms::emoticons']]],
+  ['rowboat_65',['rowboat',['../classxtd_1_1forms_1_1emoticons.html#a0d509773f6e759be319bbb83c9801eab',1,'xtd::forms::emoticons']]],
+  ['royal_5fblue_66',['royal_blue',['../classxtd_1_1drawing_1_1color.html#a5654fe219f5f7d6381d77781c971e890',1,'xtd::drawing::color']]],
+  ['rpc_5fe_5fchanged_5fmode_67',['RPC_E_CHANGED_MODE',['../classxtd_1_1h__result.html#a066264d7a9039087c7bf9b76b95ebc52',1,'xtd::h_result']]],
+  ['rugby_5ffootball_68',['rugby_football',['../classxtd_1_1forms_1_1emoticons.html#adeae7d736c5ad1a4e8587709a6817ea4',1,'xtd::forms::emoticons']]],
+  ['run_5fworker_5fcompleted_69',['run_worker_completed',['../classxtd_1_1forms_1_1background__worker.html#a08a598bc14af024ea2a9d16b18925f22',1,'xtd::forms::background_worker']]],
+  ['runner_70',['runner',['../classxtd_1_1forms_1_1emoticons.html#a98915c9a22a001966867da6eadf99dd4',1,'xtd::forms::emoticons']]],
+  ['running_5fshirt_5fwith_5fsash_71',['running_shirt_with_sash',['../classxtd_1_1forms_1_1emoticons.html#aa855fa09d5ca2880932538a74c3a30aa',1,'xtd::forms::emoticons']]]
 ];

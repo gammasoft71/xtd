@@ -22,5 +22,6 @@ var searchData=
   ['resize_5feffect_19',['resize_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1resize__effect.html',1,'xtd::drawing::imaging::effects']]],
   ['resources_20',['resources',['../classxtd_1_1forms_1_1properties_1_1resources.html',1,'xtd::forms::properties']]],
   ['rgb_21',['rgb',['../structxtd_1_1drawing_1_1helpers_1_1rgb.html',1,'xtd::drawing::helpers']]],
-  ['run_5fworker_5fcompleted_5fevent_5fargs_22',['run_worker_completed_event_args',['../classxtd_1_1forms_1_1run__worker__completed__event__args.html',1,'xtd::forms']]]
+  ['rotate_5fflip_5feffect_22',['rotate_flip_effect',['../structxtd_1_1drawing_1_1imaging_1_1effects_1_1rotate__flip__effect.html',1,'xtd::drawing::imaging::effects']]],
+  ['run_5fworker_5fcompleted_5fevent_5fargs_23',['run_worker_completed_event_args',['../classxtd_1_1forms_1_1run__worker__completed__event__args.html',1,'xtd::forms']]]
 ];
