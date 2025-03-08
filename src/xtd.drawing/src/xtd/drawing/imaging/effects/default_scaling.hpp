@@ -1,3 +1,4 @@
+#pragma once
 #include "bicubic_scaling.hpp"
 #include "box_average_scaling.hpp"
 
