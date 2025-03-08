@@ -1,5 +1,6 @@
 #include "../../../include/xtd/drawing/imaging/effects/crop_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/rotate_flip_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/scale_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/image_effector.hpp"
 #include "../../../include/xtd/drawing/image.hpp"
 #include "../../../include/xtd/drawing/bitmap.hpp"
@@ -177,14 +178,14 @@ image::image(int32 width, int32 height, int32 stride, enum pixel_format format, 
 
 image::image(const image& image, int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
   if (width < 1 || height < 1) throw_helper::throws(exception_case::argument);
-  *this = image;
-  rescale(width, height);
+  *this = image.clone();
+  image_effector::set_effect(*this, scale_effect({width, height}));
   update_properties();
 }
 
 image::image(const image& image, const rectangle& rect) : data_(xtd::new_sptr<data>()) {
   if (rect.left() < 0 || rect.top() < 0 || rect.width < 1 || rect.height < 1) throw_helper::throws(exception_case::argument);
-  *this = image;
+  *this = image.clone();
   imaging::image_effector::set_effect(*this, crop_effect {rect});
   update_properties();
 }
@@ -480,12 +481,6 @@ void image::set_pixel(int32 x, int32 y, const drawing::color& color) {
 
 void image::set_pixel_format(imaging::pixel_format value) {
   data_->pixel_format = value;
-}
-
-void image::rescale(int32 width, int32 height) {
-  if (*this == drawing::image::empty) return;
-  native::image::rescale(this->handle(), width, height);
-  update_properties();
 }
 
 void image::update_properties() {
