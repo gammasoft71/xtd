@@ -1,3 +1,4 @@
+#pragma once
 #include "../../../../../include/xtd/drawing/helpers/alpha.hpp"
 #include "../../../../../include/xtd/drawing/helpers/rgb.hpp"
 #include "../../../../../include/xtd/drawing/bitmap.hpp"
