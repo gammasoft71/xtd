@@ -365,6 +365,7 @@ add_sources(
   "src/xtd/drawing/imaging/effects/bicubic_scaling.hpp"
   "src/xtd/drawing/imaging/effects/bitonal_effect.cpp"
   "src/xtd/drawing/imaging/effects/blur_effect.cpp"
+  "src/xtd/drawing/imaging/effects/box_average_scaling.hpp"
   "src/xtd/drawing/imaging/effects/brightness_effect.cpp"
   "src/xtd/drawing/imaging/effects/color_effect.cpp"
   "src/xtd/drawing/imaging/effects/color_extraction_effect.cpp"
