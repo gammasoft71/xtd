@@ -68,7 +68,6 @@ namespace {
         
         for (auto k = -1; k <= 2; ++k) {
           const auto y_offset = vertical_precalculate.offset[k + 1];
-          
           for (auto i = -1; i <= 2; ++i) {
             const auto x_offset = horizontal_precalculate.offset[i + 1];
             const auto source_pixel = y_offset * source_width + x_offset;
