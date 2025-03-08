@@ -4,11 +4,11 @@
 #include "../../../../../include/xtd/drawing/bitmap.hpp"
 
 namespace {
-  static inline double spline_cube(double value) {
+  inline constexpr double spline_cube(double value) {
     return value <= 0.0 ? 0.0 : value * value * value;
   }
   
-  double spline_weight(double value) {
+  inline constexpr double spline_weight(double value) {
     return (spline_cube(value + 2) - 4 * spline_cube(value + 1) + 6 * spline_cube(value) - 4 * spline_cube(value - 1)) / 6;
   }
 
@@ -18,10 +18,10 @@ namespace {
   };
   
   void compute_precalculate(bicubic_precalculate& precalculate, double source_pixel, xtd::int32 old_size) {
-    const auto dd = source_pixel - static_cast<xtd::int32>(source_pixel);
+    const auto decimals = source_pixel - static_cast<xtd::int32>(source_pixel);
     for (auto k = -1; k <= 2; ++k) {
       precalculate.offset[k + 1] = source_pixel + k < 0.0 ? 0 : source_pixel + k >= old_size ? old_size - 1 : static_cast<xtd::int32>(source_pixel + k);
-      precalculate.weight[k + 1] = spline_weight(k - dd);
+      precalculate.weight[k + 1] = spline_weight(k - decimals);
     }
   }
 
@@ -80,10 +80,11 @@ namespace {
           }
         }
         
-        result_rgb[result_pixel].r = sum_a == 0 ? 0 : static_cast<xtd::byte>(sum_r / sum_a + 0.5);
-        result_rgb[result_pixel].g = sum_a == 0 ? 0 : static_cast<xtd::byte>(sum_g / sum_a + 0.5);
-        result_rgb[result_pixel].b = sum_a == 0 ? 0 : static_cast<xtd::byte>(sum_b / sum_a + 0.5);
+        if (sum_a == 0) continue;
         result_alpha[result_pixel].a = static_cast<xtd::byte>(sum_a);
+        result_rgb[result_pixel].r = static_cast<xtd::byte>(sum_r / sum_a + 0.5);
+        result_rgb[result_pixel].g = static_cast<xtd::byte>(sum_g / sum_a + 0.5);
+        result_rgb[result_pixel].b = static_cast<xtd::byte>(sum_b / sum_a + 0.5);
       }
     }
     
