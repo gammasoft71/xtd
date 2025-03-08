@@ -363,6 +363,7 @@ add_sources(
   "src/xtd/drawing/drawing_2d/matrix.cpp"
   "src/xtd/drawing/drawing_2d/radial_gradient_brush.cpp"
   "src/xtd/drawing/imaging/effects/bicubic_scaling.hpp"
+  "src/xtd/drawing/imaging/effects/bilinear_scaling.hpp"
   "src/xtd/drawing/imaging/effects/bitonal_effect.cpp"
   "src/xtd/drawing/imaging/effects/blur_effect.cpp"
   "src/xtd/drawing/imaging/effects/box_average_scaling.hpp"
