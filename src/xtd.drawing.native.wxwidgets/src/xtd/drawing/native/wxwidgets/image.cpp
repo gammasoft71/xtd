@@ -194,6 +194,10 @@ namespace {
   
   void init_alpha(wxImage* img) {
     if (!img->HasAlpha()) img->InitAlpha();
+  }
+  
+  void clear_alpha(wxImage* img) {
+    init_alpha(img);
     for (auto y = 0; y < img->GetHeight(); y++)
       for (auto x = 0; x < img->GetWidth(); x++)
         img->SetAlpha(x, y, 0);
@@ -246,6 +250,7 @@ intptr image::create(const string& filename, bool use_icm, std::map<size_t, size
   if (bitmap_type != wxBitmapType::wxBITMAP_TYPE_ANY && img->GetType() != bitmap_type) img->SetType(bitmap_type);
   // wxWidgets does not have a parameter or a method to set color correction when creating from a filename.
   frame_resolutions[get_frame_resolution(*img)] = wxImage::GetImageCount(wxString {filename.chars()});
+  init_alpha(img);
   return reinterpret_cast<intptr>(img);
 }
 
@@ -259,6 +264,7 @@ intptr image::create(std::istream& stream, bool use_icm, std::map<size_t, size_t
   }
   // wxWidgets does not have a parameter or a method to set color correction when creating from a stream.
   frame_resolutions[get_frame_resolution(*img)] = wxImage::GetImageCount(std_stream);
+  init_alpha(img);
   return reinterpret_cast<intptr>(img);
 }
 
@@ -270,6 +276,7 @@ intptr image::create(const char* const* bits, std::map<size_t, size_t>& frame_re
     return invalid_handle;
   }
   frame_resolutions[get_frame_resolution(*img)] = 1;
+  init_alpha(img);
   return reinterpret_cast<intptr>(img);
 }
 
@@ -281,6 +288,7 @@ intptr image::create(const unsigned char* bits, int32 width, int32 height, std::
     return invalid_handle;
   }
   frame_resolutions[get_frame_resolution(*img)] = 1;
+  init_alpha(img);
   return reinterpret_cast<intptr>(img);
 }
 
@@ -291,8 +299,8 @@ intptr image::create(int32 width, int32 height) {
     delete img;
     return invalid_handle;
   }
-  init_alpha(img);
   img->SetType(wxBITMAP_TYPE_BMP_RESOURCE);
+  clear_alpha(img);
   return reinterpret_cast<intptr>(img);
 }
 
@@ -304,8 +312,8 @@ intptr image::create(int32 width, int32 height, float horizontal_resolution, flo
     return invalid_handle;
   }
   set_resolution(reinterpret_cast<intptr>(img), horizontal_resolution, vertical_resolution);
-  init_alpha(img);
   img->SetType(wxBITMAP_TYPE_BMP_RESOURCE);
+  clear_alpha(img);
   return reinterpret_cast<intptr>(img);
 }
 
@@ -317,8 +325,8 @@ intptr image::create(int32 width, int32 height, int32 format) {
     return invalid_handle;
   }
   /// @todo see how to set pixel format with wxWidgets.
-  init_alpha(img);
   img->SetType(wxBITMAP_TYPE_BMP_RESOURCE);
+  clear_alpha(img);
   return reinterpret_cast<intptr>(img);
 }
 
@@ -330,8 +338,8 @@ intptr image::create(int32 width, int32 height, int32 stride, int32 format, intp
     return invalid_handle;
   }
   /// @todo see how to set pixel format and data with wxWidgets.
-  init_alpha(img);
   img->SetType(wxBITMAP_TYPE_BMP_RESOURCE);
+  clear_alpha(img);
   return reinterpret_cast<intptr>(img);
 }
 
@@ -356,6 +364,7 @@ intptr image::from_hicon(intptr icon) {
     delete img;
     return invalid_handle;
   }
+  init_alpha(img);
   return reinterpret_cast<intptr>(img);
 }
 
