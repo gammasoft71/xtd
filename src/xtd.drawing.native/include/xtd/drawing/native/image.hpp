@@ -472,13 +472,6 @@ namespace xtd {
         /// @warning Internal use only
         static size_t raw_format(intptr image);
 
-        /// @brief Rescale the image.
-        /// @param image The image handle.
-        /// @param width The width for the new image.
-        /// @param height The height for the new image.
-        /// @warning Internal use only
-        static void rescale(intptr image, int32 width, int32 height);
-
         /// @brief Sets the resolution for this bitmap.
         /// @param image The image handle.
         /// @param x_dpi The horizontal resolution, in dots per inch, of the xtd::drawing::bitmap.

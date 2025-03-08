@@ -438,14 +438,6 @@ size_t image::raw_format(intptr image) {
   return to_raw_format(reinterpret_cast<wxImage*>(image)->GetType());
 }
 
-void image::rescale(intptr image, int32 width, int32 height) {
-  toolkit::initialize(); // Must be first
-  if (image == 0) return;
-  auto backup_type = reinterpret_cast<wxImage*>(image)->GetType();
-  reinterpret_cast<wxImage*>(image)->Rescale(width, height, wxIMAGE_QUALITY_HIGH);
-  reinterpret_cast<wxImage*>(image)->SetType(backup_type);
-}
-
 void image::save(intptr image, const string& filename) {
   reinterpret_cast<wxImage*>(image)->SaveFile(wxString(convert_string::to_wstring(filename)));
 }
