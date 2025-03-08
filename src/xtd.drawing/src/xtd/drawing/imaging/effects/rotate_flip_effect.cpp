@@ -1,7 +1,5 @@
 #include "../../../../../include/xtd/drawing/helpers/alpha.hpp"
 #include "../../../../../include/xtd/drawing/helpers/rgb.hpp"
-#include "../../../../../include/xtd/drawing/helpers/alpha.hpp"
-#include "../../../../../include/xtd/drawing/helpers/rgb.hpp"
 #include "../../../../../include/xtd/drawing/imaging/effects/rotate_flip_effect.hpp"
 #include "../../../../../include/xtd/drawing/bitmap.hpp"
 #include <xtd/math>
