@@ -4,6 +4,7 @@
 #pragma once
 #include "effect.hpp"
 #include "../../color.hpp"
+#include "../../scale_type.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -38,16 +39,24 @@ namespace xtd {
           /// @brief Initialise the new instance of xtd::drawing::imaging::scale_effect object.
           scale_effect() = default;
           /// @brief Initialise the new instance of xtd::drawing::imaging::scale_effect object with specified percent.
-          /// @@param size The new size.
+          /// @param size The new size.
           explicit scale_effect(const xtd::drawing::size& size);
+          /// @brief Initialise the new instance of xtd::drawing::imaging::scale_effect object with specified percent.
+          /// @param size The new size.
+          /// @param scale_type The scale type.
+          explicit scale_effect(const xtd::drawing::size& size, xtd::drawing::scale_type scale_type);
           /// @}
 
           /// @name Public Properties
           
           /// @{
           /// @brief Gets or sets the new size.
-          /// @param @param size The new size.
+          /// @param size The new size.
           xtd::drawing::size size;
+          
+          /// @brief Gets or sets the scale type.
+          /// @param scale_type The scale type.
+          xtd::drawing::scale_type scale_type = xtd::drawing::scale_type::default_scaling;
           /// @}
 
         protected:
