@@ -198,9 +198,7 @@ namespace {
   
   void clear_alpha(wxImage* img) {
     init_alpha(img);
-    for (auto y = 0; y < img->GetHeight(); y++)
-      for (auto x = 0; x < img->GetWidth(); x++)
-        img->SetAlpha(x, y, 0);
+    memset(img->GetAlpha(), 0, img->GetWidth() * img->GetHeight());
   }
 }
 
