@@ -179,7 +179,7 @@ image::image(int32 width, int32 height, int32 stride, enum pixel_format format, 
 image::image(const image& image, int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
   if (width < 1 || height < 1) throw_helper::throws(exception_case::argument);
   *this = image.clone();
-  image_effector::set_effect(*this, scale_effect({width, height}));
+  scale({width, height});
   update_properties();
 }
 
@@ -406,6 +406,14 @@ void image::save(const string& filename, const imaging::image_format& format) co
 
 void image::save(std::ostream& stream, const imaging::image_format& format) const {
   native::image::save(data_->handle, stream, to_raw_format(format));
+}
+
+void image::scale(const xtd::drawing::size& size) {
+  scale(size, xtd::drawing::scale_type::default_scaling);
+}
+
+void image::scale(const xtd::drawing::size& size, xtd::drawing::scale_type scale_type) {
+  image_effector::set_effect(*this, scale_effect(size, scale_type));
 }
 
 image image::from_file(const xtd::string& filename) {

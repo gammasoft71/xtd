@@ -14,6 +14,7 @@
 #include "graphics_unit.hpp"
 #include "rectangle.hpp"
 #include "rotate_flip_type.hpp"
+#include "scale_type.hpp"
 #include "size.hpp"
 #include "size_f.hpp"
 #include <xtd/any>
@@ -272,6 +273,16 @@ namespace xtd {
       /// @remarks You should avoid saving an image to the same stream that was used to construct it. Doing so might damage the stream.
       /// @remarks The image must be saved to the stream at an offset of zero. If any additional data has been written to the stream before saving the image, the image data in the stream will be corrupted.
       void save(std::ostream& stream, const xtd::drawing::imaging::image_format& format) const;
+      
+      /// @brief Scales this xtd::drawing::image with the specified size.
+      /// @param size The scaling size
+      /// @remarks Scaling with xtd::drawing::scale_type::default_scaling value.
+      void scale(const xtd::drawing::size& size);
+      /// @brief Scales this xtd::drawing::image with the specified size, and specified scale type.
+      /// @param size The scaling size.
+      /// @param scale_type One of xtd::drawing::scale_type values.
+      void scale(const xtd::drawing::size& size, xtd::drawing::scale_type scale_type);
+
       /// @}
       
       /// @name Public Static Methods
