@@ -26,10 +26,10 @@ namespace xtd::drawing::drawing_2d::tests {
       assert::are_equal(interpolation_mode::low, enum_object<>::parse<interpolation_mode>("low"));
     }
     
-    void test_method_(hight) {
-      assert::are_equal(2, enum_object<>::to_int32(interpolation_mode::hight));
-      assert::are_equal("hight", enum_object<>::to_string(interpolation_mode::hight));
-      assert::are_equal(interpolation_mode::hight, enum_object<>::parse<interpolation_mode>("hight"));
+    void test_method_(high) {
+      assert::are_equal(2, enum_object<>::to_int32(interpolation_mode::high));
+      assert::are_equal("high", enum_object<>::to_string(interpolation_mode::high));
+      assert::are_equal(interpolation_mode::high, enum_object<>::parse<interpolation_mode>("high"));
     }
     
     void test_method_(bilinear) {
