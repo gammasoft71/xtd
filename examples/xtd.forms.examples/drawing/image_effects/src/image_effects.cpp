@@ -329,7 +329,7 @@ namespace image_effects_example {
         if (scale_maintain_aspect_ratio_check_box.checked()) scale_width_numeric_up_down.value(as<int>(scale_height_track_bar.value() * rescale_aspect_ratio));
         update_pictures();
       };
-      scale_type_choice.selected_index_changed += [&] {update_pictures();};
+      scale_interpolation_mode_choice.selected_index_changed += [&] {update_pictures();};
 
       sepia_percent_numeric_up_down.value_changed += [&] {sepia_percent_track_bar.value(as<int32>(sepia_percent_numeric_up_down.value()));};
       sepia_percent_track_bar.value_changed += [&] {
@@ -543,7 +543,7 @@ namespace image_effects_example {
       else if (effect_choice.selected_item() == "resize") adjusted_image = image_effector::set_effect(original_image(), resize_auto_determine_fill_color_ratio_check_box.checked() ? resize_effect {rectangle {math::abs(resize_x_track_bar.value()), math::abs(resize_y_track_bar.value()), resize_width_track_bar.value(), resize_height_track_bar.value()}, resize_auto_determine_fill_color_ratio_check_box.checked()} : resize_effect {rectangle {math::abs(resize_x_track_bar.value()), math::abs(resize_y_track_bar.value()), resize_width_track_bar.value(), resize_height_track_bar.value()}, resize_fill_color_color_picker.color()});
       else if (effect_choice.selected_item() == "rotate-flip") adjusted_image = image_effector::set_effect(original_image(), rotate_flip_effect {as<rotate_flip_type>(rotate_flip_choice.selected_item().tag())});
       else if (effect_choice.selected_item() == "saturate") adjusted_image = image_effector::set_effect(original_image(), saturate_effect {saturate_percent_track_bar.value() / 100.0});
-      else if (effect_choice.selected_item() == "scale") adjusted_image = image_effector::set_effect(original_image(), scale_effect {drawing::size {scale_width_track_bar.value(), scale_height_track_bar.value()}, as<scale_type>(scale_type_choice.selected_item().tag())});
+      else if (effect_choice.selected_item() == "scale") adjusted_image = image_effector::set_effect(original_image(), scale_effect {drawing::size {scale_width_track_bar.value(), scale_height_track_bar.value()}, as<interpolation_mode>(scale_interpolation_mode_choice.selected_item().tag())});
       else if (effect_choice.selected_item() == "sepia") adjusted_image = image_effector::set_effect(original_image(), sepia_effect {sepia_percent_track_bar.value() / 100.0});
       else if (effect_choice.selected_item() == "solarize") adjusted_image = image_effector::set_effect(original_image(), solarize_effect {solarize_threshold_track_bar.value()});
       else if (effect_choice.selected_item() == "threshold") adjusted_image = image_effector::set_effect(original_image(), threshold_effect {threshold_threshold_track_bar.value()});
@@ -711,8 +711,8 @@ namespace image_effects_example {
     label scale_height_label = label::create(scale_panel, "Height", {10, 74}, {50, 23});
     track_bar scale_height_track_bar = track_bar::create(scale_panel, original_image().size().height, 1, original_image().size().height * 2, {60, 70}, {200, 25});
     numeric_up_down scale_height_numeric_up_down = numeric_up_down::create(scale_panel, original_image().size().height, 1, original_image().size().height * 2, {270, 70}, {130, 25});
-    label scale_type_label = label::create(scale_panel, "Type", {420, 34}, {40, 23});
-    choice scale_type_choice = choice::create(scale_panel, {{"default", scale_type::default_scaling}, {"nearest", scale_type::nearest}, {"bilinear", scale_type::bilinear}, {"bicubic", scale_type::bicubic}, {"box_average", scale_type::box_average}}, 0, {470, 30}, {180, 25});
+    label scale_interpolation_mode_label = label::create(scale_panel, "Mode", {420, 34}, {40, 23});
+    choice scale_interpolation_mode_choice = choice::create(scale_panel, {{"default", interpolation_mode::default_value}, {"low", interpolation_mode::low}, {"high", interpolation_mode::high}, {"bilinear", interpolation_mode::bilinear}, {"bicubic", interpolation_mode::bicubic}, {"nearest_neighbor", interpolation_mode::nearest_neighbor}, {"high quality bilinear", interpolation_mode::high_quality_bilinear}, {"high quality bicubic", interpolation_mode::high_quality_bicubic}, {"box_average", interpolation_mode::box_average}}, 0, {470, 30}, {180, 25});
     check_box scale_maintain_aspect_ratio_check_box = check_box::create(scale_panel, "Maintain aspect ratio", check_state::checked, {420, 70}, {150, 23});
 
     panel sepia_panel = panel::create(*this, {0, 0}, {730, 170});

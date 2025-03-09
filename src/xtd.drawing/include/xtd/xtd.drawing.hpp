@@ -125,7 +125,6 @@
 #include "drawing/red_colors.hpp"
 #include "drawing/region.hpp"
 #include "drawing/rotate_flip_type.hpp"
-#include "drawing/scale_type.hpp"
 #include "drawing/size.hpp"
 #include "drawing/size_f.hpp"
 #include "drawing/solid_brush.hpp"

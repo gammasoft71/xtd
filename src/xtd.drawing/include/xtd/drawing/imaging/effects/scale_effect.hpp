@@ -4,7 +4,7 @@
 #pragma once
 #include "effect.hpp"
 #include "../../color.hpp"
-#include "../../scale_type.hpp"
+#include "../../drawing_2d/interpolation_mode.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -43,8 +43,8 @@ namespace xtd {
           explicit scale_effect(const xtd::drawing::size& size);
           /// @brief Initialise the new instance of xtd::drawing::imaging::scale_effect object with specified percent.
           /// @param size The new size.
-          /// @param scale_type The scale type.
-          explicit scale_effect(const xtd::drawing::size& size, xtd::drawing::scale_type scale_type);
+          /// @param interpolation_mode One of xtd::drawing::drawing_2d::interpolation_mode values.
+          explicit scale_effect(const xtd::drawing::size& size, xtd::drawing::drawing_2d::interpolation_mode interpolation_mode);
           /// @}
 
           /// @name Public Properties
@@ -54,9 +54,9 @@ namespace xtd {
           /// @param size The new size.
           xtd::drawing::size size;
           
-          /// @brief Gets or sets the scale type.
-          /// @param scale_type The scale type.
-          xtd::drawing::scale_type scale_type = xtd::drawing::scale_type::default_value;
+          /// @brief Gets or sets the interpolation mode.
+          /// @param interpolation_mode One of xtd::drawing::drawing_2d::interpolation_mode values
+          xtd::drawing::drawing_2d::interpolation_mode interpolation_mode = xtd::drawing::drawing_2d::interpolation_mode::default_value;
           /// @}
 
         protected:
