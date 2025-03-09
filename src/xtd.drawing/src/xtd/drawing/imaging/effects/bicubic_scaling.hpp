@@ -25,19 +25,19 @@ namespace {
     }
   }
 
-  void resample_bicubic_precalculate(std::vector<bicubic_precalculate>& weight, xtd::int32 old_size) {
-    const auto new_size = weight.size();
+  void resample_bicubic_precalculates(std::vector<bicubic_precalculate>& precalculates, xtd::int32 old_size) {
+    const auto new_size = static_cast<xtd::int32>(precalculates.size());
     if (old_size < 0 || new_size < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
     
     if (new_size > 1) {
       const auto scale_factor = static_cast<double>(old_size - 1) / (new_size - 1);
-      for (auto distance_d = xtd::size {0}; distance_d < new_size; ++distance_d) {
-        const auto source_pixel = static_cast<double>(distance_d) * scale_factor;
-        compute_precalculate(weight[distance_d], source_pixel, old_size);
+      for (auto distance = 0; distance < new_size; ++distance) {
+        const auto source_pixel = static_cast<double>(distance) * scale_factor;
+        compute_precalculate(precalculates[distance], source_pixel, old_size);
       }
     } else {
       const auto source_pixel = static_cast<double>(old_size - 1) / 2.0;
-      compute_precalculate(weight[0], source_pixel, old_size);
+      compute_precalculate(precalculates[0], source_pixel, old_size);
     }
   }
 
@@ -56,14 +56,14 @@ namespace {
     auto vertical_precalculates = std::vector<bicubic_precalculate>(result_height);
     auto horizontal_precalculates = std::vector<bicubic_precalculate>(result_width);
     
-    resample_bicubic_precalculate(vertical_precalculates, source_height);
-    resample_bicubic_precalculate(horizontal_precalculates, source_width);
+    resample_bicubic_precalculates(vertical_precalculates, source_height);
+    resample_bicubic_precalculates(horizontal_precalculates, source_width);
     
-    for (auto distance_y = 0; distance_y < result_height; ++distance_y) {
-      const auto& vertical_precalculate = vertical_precalculates[distance_y];
-      for (auto distance_x = 0; distance_x < result_width; ++distance_x) {
-        const auto& horizontal_precalculate = horizontal_precalculates[distance_x];
-        const auto result_pixel = distance_y * result_width + distance_x;
+    for (auto y = 0; y < result_height; ++y) {
+      const auto& vertical_precalculate = vertical_precalculates[y];
+      for (auto x = 0; x < result_width; ++x) {
+        const auto& horizontal_precalculate = horizontal_precalculates[x];
+        const auto result_pixel = y * result_width + x;
         auto sum_a = 0.0, sum_r = 0.0, sum_g = 0.0, sum_b = 0.0;
         
         for (auto k = -1; k <= 2; ++k) {
