@@ -23,6 +23,7 @@
 using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::drawing;
+using namespace xtd::drawing::helpers;
 using namespace xtd::drawing::imaging;
 using namespace xtd::drawing::imaging::effects;
 using namespace xtd::helpers;
@@ -31,12 +32,81 @@ using namespace xtd::io;
 image image::empty;
 
 namespace {
-  struct rgb {
-    xtd::byte r;
-    xtd::byte g;
-    xtd::byte b;
-  };
+  image flip_x(const image& source_image) {
+    auto width = source_image.width();
+    auto height = source_image.height();
+    auto source_alpha = reinterpret_cast<const alpha*>(source_image.alpha());
+    auto source_rgb = reinterpret_cast<const rgb*>(source_image.rgb());
+    auto result_image = bitmap {width, height};
+    auto result_alpha = reinterpret_cast<alpha*>(result_image.alpha());
+    auto result_rgb = reinterpret_cast<rgb*>(result_image.rgb());
+    
+    for (auto y = 0; y < height; ++y)
+      for (auto x = 0; x < width; ++x) {
+        auto source_pixel = y * width + x;
+        auto result_pixel = y * width + width - x - 1;
+        result_alpha[result_pixel] = source_alpha[source_pixel];
+        result_rgb[result_pixel] = source_rgb[source_pixel];
+      }
+    return result_image;
+  }
   
+  image rotate_180(const image& source_image) {
+    auto width = source_image.width();
+    auto height = source_image.height();
+    auto source_alpha = reinterpret_cast<const alpha*>(source_image.alpha());
+    auto source_rgb = reinterpret_cast<const rgb*>(source_image.rgb());
+    auto result_image = bitmap {width, height};
+    auto result_alpha = reinterpret_cast<alpha*>(result_image.alpha());
+    auto result_rgb = reinterpret_cast<rgb*>(result_image.rgb());
+    
+    for (auto y = 0; y < height; ++y)
+      for (auto x = 0; x < width; ++x) {
+        auto source_pixel = y * width + x;
+        auto result_pixel = (height - y - 1) * width + width - x - 1;
+        result_alpha[result_pixel] = source_alpha[source_pixel];
+        result_rgb[result_pixel] = source_rgb[source_pixel];
+      }
+    return result_image;
+  }
+  
+  image rotate_270(const image& source_image) {
+    auto width = source_image.width();
+    auto height = source_image.height();
+    auto source_alpha = reinterpret_cast<const alpha*>(source_image.alpha());
+    auto source_rgb = reinterpret_cast<const rgb*>(source_image.rgb());
+    auto result_image = bitmap {height, width};
+    auto result_alpha = reinterpret_cast<alpha*>(result_image.alpha());
+    auto result_rgb = reinterpret_cast<rgb*>(result_image.rgb());
+    
+    for (auto y = 0; y < height; ++y)
+      for (auto x = 0; x < width; ++x) {
+        auto source_pixel = y * width + x;
+        auto result_pixel = (width - x -1) * height + y;
+        result_alpha[result_pixel] = source_alpha[source_pixel];
+        result_rgb[result_pixel] = source_rgb[source_pixel];
+      }
+    return result_image;
+  }
+  
+  image rotate_90(const image& source_image) {
+    auto width = source_image.width();
+    auto height = source_image.height();
+    auto source_alpha = reinterpret_cast<const alpha*>(source_image.alpha());
+    auto source_rgb = reinterpret_cast<const rgb*>(source_image.rgb());
+    auto result_image = bitmap {height, width};
+    auto result_alpha = reinterpret_cast<alpha*>(result_image.alpha());
+    auto result_rgb = reinterpret_cast<rgb*>(result_image.rgb());
+    
+    for (auto y = 0; y < height; ++y)
+      for (auto x = 0; x < width; ++x) {
+        auto source_pixel = y * width + x;
+        auto result_pixel = x * height + height - y - 1;
+        result_alpha[result_pixel] = source_alpha[source_pixel];
+        result_rgb[result_pixel] = source_rgb[source_pixel];
+      }
+    return result_image;
+  }
   image_format to_image_format(xtd::size raw_fomat) {
     static auto raw_formats = std::map<xtd::size, image_format> {{IFM_BMP, imaging::image_format::bmp()}, {IFM_EMF, imaging::image_format::emf()}, {IFM_EXIF, imaging::image_format::exif()}, {IFM_GIF, imaging::image_format::gif()}, {IFM_ICO, imaging::image_format::ico()}, {IFM_JPEG, imaging::image_format::jpeg()}, {IFM_MEMORY_BMP, imaging::image_format::memory_bmp()}, {IFM_PNG, imaging::image_format::png()}, {IFM_TIFF, imaging::image_format::tiff()}, {IFM_WMF, imaging::image_format::wmf()}, {IFM_MEMORY_GIF, imaging::image_format::memory_gif()}, {IFM_MEMORY_ICO, imaging::image_format::memory_ico()}, {IFM_MEMORY_JPEG, imaging::image_format::memory_jpeg()}, {IFM_MEMORY_PNG, imaging::image_format::memory_png()}, {IFM_MEMORY_TIFF, imaging::image_format::memory_tiff()}, {IFM_CUR, imaging::image_format::cur()}, {IFM_MEMORY_CUR, imaging::image_format::memory_cur()}, {IFM_XBM, imaging::image_format::xbm()}, {IFM_MEMORY_XBM, imaging::image_format::memory_xbm()}, {IFM_XPM, imaging::image_format::xpm()}, {IFM_MEMORY_XPM, imaging::image_format::memory_xpm()}, {IFM_PNM, imaging::image_format::pnm()}, {IFM_MEMORY_PNM, imaging::image_format::memory_pnm()}, {IFM_PCX, imaging::image_format::pcx()}, {IFM_MEMORY_PCX, imaging::image_format::memory_pcx()}, {IFM_PICT, imaging::image_format::pict()}, {IFM_MEMORY_PICT, imaging::image_format::memory_pict()}, {IFM_ICON, imaging::image_format::icon()}, {IFM_MEMORY_ICON, imaging::image_format::memory_icon()}, {IFM_MACCUR, imaging::image_format::cursor()}, {IFM_MEMORY_MACCUR, imaging::image_format::memory_cursor()}, {IFM_ANI, imaging::image_format::ani()}, {IFM_IIF, imaging::image_format::iif()}, {IFM_TGA, imaging::image_format::tga()}};
     auto it = raw_formats.find(raw_fomat);
@@ -393,7 +463,17 @@ bool image::is_extended_pixel_format(enum pixel_format pixfmt) noexcept {
 }
 
 void image::rotate_flip(xtd::drawing::rotate_flip_type rotate_flip_type) {
-  image_effector::set_effect(*this, rotate_flip_effect {rotate_flip_type});
+  switch (rotate_flip_type) {
+    case rotate_flip_type::rotate_none_flip_none: break;
+    case rotate_flip_type::rotate_90_flip_none: *this = rotate_90(*this); break;
+    case rotate_flip_type::rotate_180_flip_none: *this = rotate_180(*this); break;
+    case rotate_flip_type::rotate_270_flip_none: *this = rotate_270(*this); break;
+    case rotate_flip_type::rotate_none_flip_x: *this = flip_x(*this); break;
+    case rotate_flip_type::rotate_90_flip_x: *this = flip_x(rotate_90(*this)); break;
+    case rotate_flip_type::rotate_180_flip_x: *this = flip_x(rotate_180(*this)); break;
+    case rotate_flip_type::rotate_270_flip_x: *this = flip_x(rotate_270(*this)); break;
+    default: break;
+  }
 }
 
 void image::save(const string& filename) const {
@@ -464,7 +544,7 @@ drawing::color image::get_pixel(int32 x, int32 y) const {
   if (x < 0 || x > width() || y < 0 || y > height()) throw_helper::throws(exception_case::argument);
   
   auto alpha = this->alpha();
-  auto rgb = reinterpret_cast<const ::rgb*>(this->rgb());
+  auto rgb = reinterpret_cast<const helpers::rgb*>(this->rgb());
   auto pixel = y * width() + x;
   return color::from_argb(alpha[pixel], rgb[pixel].r, rgb[pixel].g, rgb[pixel].b);
 }
@@ -535,7 +615,7 @@ void image::set_pixel(int32 x, int32 y, const drawing::color& color) {
   if (x < 0 || x > width() || y < 0 || y > height()) throw_helper::throws(exception_case::argument);
   
   auto alpha = this->alpha();
-  auto rgb = reinterpret_cast<::rgb*>(this->rgb());
+  auto rgb = reinterpret_cast<helpers::rgb*>(this->rgb());
   auto pixel = y * width() + x;
   alpha[pixel] = color.a();
   rgb[pixel] = {color.r(), color.g(), color.b()};
