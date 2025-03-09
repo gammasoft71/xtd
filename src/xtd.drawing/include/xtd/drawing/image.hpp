@@ -276,7 +276,7 @@ namespace xtd {
       
       /// @brief Scales this xtd::drawing::image with the specified size.
       /// @param size The scaling size
-      /// @remarks Scaling with xtd::drawing::scale_type::default_scaling value.
+      /// @remarks Scaling with xtd::drawing::scale_type::default_value value.
       void scale(const xtd::drawing::size& size);
       /// @brief Scales this xtd::drawing::image with the specified size, and specified scale type.
       /// @param size The scaling size.

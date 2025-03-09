@@ -21,8 +21,8 @@ void scale_effect::apply(image& image) const {
   if (image.size() == size) return;
   
   switch (scale_type) {
-    case xtd::drawing::scale_type::default_scaling: image = default_scaling(image, size); break;
-    case xtd::drawing::scale_type::nearest: image = nearest_scaling(image, size); break;
+    case xtd::drawing::scale_type::default_value: image = default_scaling(image, size); break;
+    case xtd::drawing::scale_type::nearest_neighbor: image = nearest_scaling(image, size); break;
     case xtd::drawing::scale_type::bilinear: image = bilinear_scaling(image, size); break;
     case xtd::drawing::scale_type::bicubic: image = bicubic_scaling(image, size); break;
     case xtd::drawing::scale_type::box_average: image = box_average_scaling(image, size); break;
