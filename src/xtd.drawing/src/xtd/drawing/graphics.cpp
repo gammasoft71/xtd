@@ -1,3 +1,8 @@
+#include "bicubic_interpolation.hpp"
+#include "bilinear_interpolation.hpp"
+#include "box_average_interpolation.hpp"
+#include "default_interpolation.hpp"
+#include "nearest_neighbor_interpolation.hpp"
 #include "../../../include/xtd/drawing/bitmap.hpp"
 #include "../../../include/xtd/drawing/icon.hpp"
 #include "../../../include/xtd/drawing/graphics.hpp"
@@ -391,8 +396,7 @@ void graphics::draw_image(const xtd::drawing::image& image, int32 x, int32 y, in
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, float x, float y, float width, float height) {
-  if (width < 0 || height < 0) throw_helper::throws(exception_case::argument);
-  native::graphics::draw_image(handle(), image.handle(), to_pixels(x), to_pixels(y), to_pixels(width), to_pixels(height));
+  draw_image(image, rectangle_f {x, y, width, height}, 0, 0, image.width(), image.height());
 }
 
 void graphics::draw_image(const image& image, int32 x, int32 y) {
@@ -424,9 +428,34 @@ void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::rectangle_f& dest_rect, float src_x, float src_y, float src_width, float src_height) {
-  if (dest_rect.width <= 0 || dest_rect.height <= 0) throw_helper::throws(exception_case::argument);
+  if (dest_rect.width < 0 || dest_rect.height < 0) throw_helper::throws(exception_case::argument);
   if (src_width < 0 || src_height < 0) throw_helper::throws(exception_case::argument);
-  native::graphics::draw_image(handle(), image.handle(), dest_rect.x, dest_rect.y, dest_rect.width, dest_rect.height, src_x, src_y, src_width, src_height);
+
+  if (src_width == 0 || src_height == 0) return;
+  if (dest_rect.width == 0 || dest_rect.height == 0) return;
+  auto result_image = image;
+  if (src_x != 0 || src_y != 0 || src_width != result_image.width() || src_height != result_image.height()) {
+    result_image = bitmap(to_pixels(src_width), to_pixels(src_height));
+    auto graphics_result_image = result_image.create_graphics();
+    native::graphics::draw_image(graphics_result_image.handle(), image.handle(), 0, 0, src_width, src_height, src_x, src_y, src_width, src_height);
+    graphics_result_image.flush();
+  }
+  if (dest_rect.width != result_image.width() || dest_rect.height != result_image.height()) {
+    switch (data_->interpolation_mode) {
+      case interpolation_mode::low:
+      case interpolation_mode::nearest_neighbor: result_image = nearest_neighbor_interpolation(result_image, size::round({to_pixels(dest_rect.width), to_pixels(dest_rect.height)})); break;
+      case interpolation_mode::default_value: result_image = default_interpolation(result_image, size::round({to_pixels(dest_rect.width), to_pixels(dest_rect.height)})); break;
+      case interpolation_mode::bilinear:
+      case interpolation_mode::high_quality_bilinear: result_image = bilinear_interpolation(result_image, size::round({to_pixels(dest_rect.width), to_pixels(dest_rect.height)})); break;
+      case interpolation_mode::hight:
+      case interpolation_mode::bicubic:
+      case interpolation_mode::high_quality_bicubic: result_image = bicubic_interpolation(result_image, size::round({to_pixels(dest_rect.width), to_pixels(dest_rect.height)})); break;
+      case interpolation_mode::box_average: result_image = box_average_interpolation(result_image, size::round({to_pixels(dest_rect.width), to_pixels(dest_rect.height)})); break;
+      case interpolation_mode::invalid:
+      default: throw_helper::throws(xtd::helpers::exception_case::argument);
+    }
+  }
+  native::graphics::draw_image(handle(), result_image.handle(), to_pixels(dest_rect.x), to_pixels(dest_rect.y), to_pixels(dest_rect.width), to_pixels(dest_rect.height));
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::point& dest_point, int32 src_x, int32 src_y, int32 src_width, int32 src_height) {
