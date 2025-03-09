@@ -17,7 +17,7 @@ namespace {
     xtd::int32 offset[4];
   };
   
-  void compute_precalculate(bicubic_precalculate& precalculate, double source_pixel, xtd::int32 old_size) {
+  inline void compute_bicubic_precalculate(bicubic_precalculate& precalculate, double source_pixel, xtd::int32 old_size) {
     const auto decimals = source_pixel - static_cast<xtd::int32>(source_pixel);
     for (auto k = -1; k <= 2; ++k) {
       precalculate.offset[k + 1] = source_pixel + k < 0.0 ? 0 : source_pixel + k >= old_size ? old_size - 1 : static_cast<xtd::int32>(source_pixel + k);
@@ -25,30 +25,30 @@ namespace {
     }
   }
 
-  void resample_bicubic_precalculates(std::vector<bicubic_precalculate>& precalculates, xtd::int32 old_size) {
+  inline void resample_bicubic_precalculates(std::vector<bicubic_precalculate>& precalculates, xtd::int32 old_size) {
     const auto new_size = static_cast<xtd::int32>(precalculates.size());
-    if (old_size < 0 || new_size < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    if (old_size <= 0 || new_size == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
     
     if (new_size > 1) {
       const auto scale_factor = static_cast<double>(old_size - 1) / (new_size - 1);
       for (auto distance = 0; distance < new_size; ++distance) {
         const auto source_pixel = static_cast<double>(distance) * scale_factor;
-        compute_precalculate(precalculates[distance], source_pixel, old_size);
+        compute_bicubic_precalculate(precalculates[distance], source_pixel, old_size);
       }
     } else {
       const auto source_pixel = static_cast<double>(old_size - 1) / 2.0;
-      compute_precalculate(precalculates[0], source_pixel, old_size);
+      compute_bicubic_precalculate(precalculates[0], source_pixel, old_size);
     }
   }
 
   xtd::drawing::image bicubic_scaling(const xtd::drawing::image& source_image, const xtd::drawing::size& size) {
-    auto source_width = source_image.width();
-    auto source_height = source_image.height();
-    auto source_alpha = reinterpret_cast<const xtd::drawing::helpers::alpha*>(source_image.alpha());
-    auto source_rgb = reinterpret_cast<const xtd::drawing::helpers::rgb*>(source_image.rgb());
+    const auto source_width = source_image.width();
+    const auto source_height = source_image.height();
+    const auto source_alpha = reinterpret_cast<const xtd::drawing::helpers::alpha*>(source_image.alpha());
+    const auto source_rgb = reinterpret_cast<const xtd::drawing::helpers::rgb*>(source_image.rgb());
 
-    auto result_width = size.width;
-    auto result_height = size.height;
+    const auto result_width = size.width;
+    const auto result_height = size.height;
     auto result_image = xtd::drawing::bitmap {result_width, result_height};
     auto result_alpha = reinterpret_cast<xtd::drawing::helpers::alpha*>(result_image.alpha());
     auto result_rgb = reinterpret_cast<xtd::drawing::helpers::rgb*>(result_image.rgb());
