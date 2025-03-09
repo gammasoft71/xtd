@@ -61,5 +61,11 @@ namespace xtd::drawing::drawing_2d::tests {
       assert::are_equal("high_quality_bicubic", enum_object<>::to_string(interpolation_mode::high_quality_bicubic));
       assert::are_equal(interpolation_mode::high_quality_bicubic, enum_object<>::parse<interpolation_mode>("high_quality_bicubic"));
     }
+    
+    void test_method_(box_average) {
+      assert::are_equal(8, enum_object<>::to_int32(interpolation_mode::box_average));
+      assert::are_equal("box_average", enum_object<>::to_string(interpolation_mode::box_average));
+      assert::are_equal(interpolation_mode::box_average, enum_object<>::parse<interpolation_mode>("box_average"));
+    }
   };
 }
