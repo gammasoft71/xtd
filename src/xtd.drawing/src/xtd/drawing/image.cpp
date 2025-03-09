@@ -1,4 +1,5 @@
-#include "../../../include/xtd/drawing/imaging/effects/resize_effect.hpp"
+#include "../../../include/xtd/drawing/helpers/alpha.hpp"
+#include "../../../include/xtd/drawing/helpers/rgb.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/rotate_flip_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/image_effector.hpp"
 #include "../../../include/xtd/drawing/image.hpp"
@@ -178,14 +179,14 @@ image::image(int32 width, int32 height, int32 stride, enum pixel_format format, 
 image::image(const image& image, int32 width, int32 height) : data_(xtd::new_sptr<data>()) {
   if (width < 1 || height < 1) throw_helper::throws(exception_case::argument);
   *this = image.clone();
-  scale({width, height});
+  scale({width, height}, drawing_2d::interpolation_mode::default_value);
   update_properties();
 }
 
 image::image(const image& image, const rectangle& rect) : data_(xtd::new_sptr<data>()) {
   if (rect.left() < 0 || rect.top() < 0 || rect.width < 1 || rect.height < 1) throw_helper::throws(exception_case::argument);
   *this = image.clone();
-  imaging::image_effector::set_effect(*this, resize_effect {rect});
+  resize(rect, color::transparent);
   update_properties();
 }
 
@@ -407,20 +408,6 @@ void image::save(std::ostream& stream, const imaging::image_format& format) cons
   native::image::save(data_->handle, stream, to_raw_format(format));
 }
 
-void image::scale(const xtd::drawing::size& size) {
-  scale(size, xtd::drawing::drawing_2d::interpolation_mode::default_value);
-}
-
-void image::scale(const xtd::drawing::size& size, xtd::drawing::drawing_2d::interpolation_mode interpolation_mode) {
-  if (this->size() == size) return;
-  auto result = bitmap {size};
-  auto graphics = result.create_graphics();
-  graphics.interpolation_mode(interpolation_mode);
-  graphics.draw_image(*this, result.get_bounds(graphics_unit::pixel), 0, 0, width(), height());
-  *this = result;
-  //image_effector::set_effect(*this, scale_effect(size, interpolation_mode));
-}
-
 image image::from_file(const xtd::string& filename) {
   return image(filename);
 }
@@ -480,6 +467,68 @@ drawing::color image::get_pixel(int32 x, int32 y) const {
   auto rgb = reinterpret_cast<const ::rgb*>(this->rgb());
   auto pixel = y * width() + x;
   return color::from_argb(alpha[pixel], rgb[pixel].r, rgb[pixel].g, rgb[pixel].b);
+}
+
+void image::resize(const xtd::drawing::rectangle& rect, const xtd::drawing::color& fill_color) {
+  if (rect.x == 0 && rect.y == 0 && rect.width == width() && rect.height == height()) return;
+  if (rect.x < 0 || rect.y < 0 || rect.width < 1 || rect.height < 1) throw_helper::throws(xtd::helpers::exception_case::argument);
+  if (rect.width < width() && (rect.x + rect.width) > width()) throw_helper::throws(exception_case::argument);
+  if (rect.height < height() && (rect.y + rect.height) > height()) throw_helper::throws(exception_case::argument);
+  if (rect.width >= width() && (rect.x + width()) > rect.width) throw_helper::throws(exception_case::argument);
+  if (rect.height >= height() && (rect.y + height()) > rect.height) throw_helper::throws(exception_case::argument);
+  
+  auto resized_image = image {rect.width, rect.height};
+  auto resized_image_graphics = resized_image.create_graphics();
+  
+  auto offset_image_x = rect.width < width() ? rect.x : 0;
+  auto offset_image_y = rect.height < height() ? rect.y : 0;
+  auto offset_x = rect.width >= width() ? rect.x : 0;
+  auto offset_y = rect.height >= height() ? rect.y : 0;
+  resized_image_graphics.draw_image(*this, drawing::rectangle {offset_x, offset_y, rect.width, rect.height}, drawing::rectangle {offset_image_x, offset_image_y, rect.width, rect.height});
+  
+  if (fill_color != color::transparent) {
+    auto alpha = reinterpret_cast<helpers::alpha*>(resized_image.alpha());
+    auto rgb = reinterpret_cast<helpers::rgb*>(resized_image.rgb());
+    
+    for (auto x = 0; x < rect.width; ++x) {
+      for (auto y = 0; y < offset_y; ++y) {
+        auto pixel = y * rect.width + x;
+        alpha[pixel].a = fill_color.a();
+        rgb[pixel] = {fill_color.r(), fill_color.g(), fill_color.b()};
+      }
+      
+      for (auto y = offset_y + height(); y < rect.height; ++y) {
+        auto pixel = y * rect.width + x;
+        alpha[pixel].a = fill_color.a();
+        rgb[pixel] = {fill_color.r(), fill_color.g(), fill_color.b()};
+      }
+    }
+    
+    for (auto y = offset_y; y < offset_y + height(); ++y) {
+      for (auto x = 0; x < offset_x; ++x) {
+        auto pixel = y * rect.width + x;
+        alpha[pixel].a = fill_color.a();
+        rgb[pixel] = {fill_color.r(), fill_color.g(), fill_color.b()};
+      }
+      
+      for (auto x = offset_x +width(); x < rect.width; ++x) {
+        auto pixel = y * rect.width + x;
+        alpha[pixel].a = fill_color.a();
+        rgb[pixel] = {fill_color.r(), fill_color.g(), fill_color.b()};
+      }
+    }
+  }
+  
+  *this = resized_image;
+}
+
+void image::scale(const xtd::drawing::size& size, xtd::drawing::drawing_2d::interpolation_mode interpolation_mode) {
+  if (this->size() == size) return;
+  auto result = bitmap {size};
+  auto graphics = result.create_graphics();
+  graphics.interpolation_mode(interpolation_mode);
+  graphics.draw_image(*this, result.get_bounds(graphics_unit::pixel), 0, 0, width(), height());
+  *this = result;
 }
 
 void image::set_pixel(int32 x, int32 y, const drawing::color& color) {
