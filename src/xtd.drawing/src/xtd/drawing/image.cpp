@@ -409,7 +409,7 @@ void image::save(std::ostream& stream, const imaging::image_format& format) cons
 }
 
 void image::scale(const xtd::drawing::size& size) {
-  scale(size, xtd::drawing::scale_type::default_scaling);
+  scale(size, xtd::drawing::scale_type::default_value);
 }
 
 void image::scale(const xtd::drawing::size& size, xtd::drawing::scale_type scale_type) {

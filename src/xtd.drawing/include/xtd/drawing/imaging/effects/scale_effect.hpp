@@ -56,7 +56,7 @@ namespace xtd {
           
           /// @brief Gets or sets the scale type.
           /// @param scale_type The scale type.
-          xtd::drawing::scale_type scale_type = xtd::drawing::scale_type::default_scaling;
+          xtd::drawing::scale_type scale_type = xtd::drawing::scale_type::default_value;
           /// @}
 
         protected:

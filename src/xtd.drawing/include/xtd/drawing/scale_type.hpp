@@ -17,9 +17,9 @@ namespace xtd {
     enum class scale_type {
       /// @brief Specifies the default image scaling.
       /// @remarks When the image size is increased, the xtd::drawing::scale_type::bicubic algorithm is used. When the image size is decreased, the algorhme xtd::drawing::scale_type::box_average is used.
-      default_scaling = 0,
+      default_value = 0,
       /// @brief Specifies the simplest and fastest algorithm.
-      nearest = 1,
+      nearest_neighbor = 1,
       /// @brief Specifies the algorithm that is a compromise between xtd::drawing::scale_type::nearest and xtd::drawing::scale_type::bicubic.
       bilinear = 2,
       /// @brief Specifies the algorithm of the highest quality but with the slowest execution time.
@@ -34,6 +34,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::scale_type> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::scale_type> {{xtd::drawing::scale_type::default_scaling, "default_scaling"}, {xtd::drawing::scale_type::nearest, "nearest"}, {xtd::drawing::scale_type::bilinear, "bilinear"}, {xtd::drawing::scale_type::bicubic, "bicubic"}, {xtd::drawing::scale_type::box_average, "box_average"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::scale_type> {{xtd::drawing::scale_type::default_value, "default_value"}, {xtd::drawing::scale_type::nearest_neighbor, "nearest_neighbor"}, {xtd::drawing::scale_type::bilinear, "bilinear"}, {xtd::drawing::scale_type::bicubic, "bicubic"}, {xtd::drawing::scale_type::box_average, "box_average"}};}
 };
 /// @endcond
