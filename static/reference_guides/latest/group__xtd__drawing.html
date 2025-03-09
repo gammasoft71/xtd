@@ -627,7 +627,7 @@ Enumerations</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="group__xtd__drawing.html#gga597cca8c636b502a1dbf11b65c47b017a53cced8d281a1a0ace3cb6594daaa4f7">xtd::drawing::drawing_2d::interpolation_mode::low</a>
 , <br />
-&#160;&#160;<a class="el" href="group__xtd__drawing.html#gga597cca8c636b502a1dbf11b65c47b017af0ab23ff912e00ea0b23b4d6b00c68ff">xtd::drawing::drawing_2d::interpolation_mode::hight</a>
+&#160;&#160;<a class="el" href="group__xtd__drawing.html#gga597cca8c636b502a1dbf11b65c47b017a8d966b2253a917086c8604959e152243">xtd::drawing::drawing_2d::interpolation_mode::high</a>
 , <br />
 &#160;&#160;<a class="el" href="group__xtd__drawing.html#gga597cca8c636b502a1dbf11b65c47b017a2c5c389d0b455c8246a86f5ca90528a3">xtd::drawing::drawing_2d::interpolation_mode::bilinear</a>
 , <br />
@@ -638,6 +638,8 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__xtd__drawing.html#gga597cca8c636b502a1dbf11b65c47b017aff6c66496f1cce2d7637d614b480400f">xtd::drawing::drawing_2d::interpolation_mode::high_quality_bilinear</a>
 , <br />
 &#160;&#160;<a class="el" href="group__xtd__drawing.html#gga597cca8c636b502a1dbf11b65c47b017a977506b023481b07df663ab51896cadf">xtd::drawing::drawing_2d::interpolation_mode::high_quality_bicubic</a>
+, <br />
+&#160;&#160;<a class="el" href="group__xtd__drawing.html#gga597cca8c636b502a1dbf11b65c47b017a0cd218da485f2bf4e2c65794a9a66657">xtd::drawing::drawing_2d::interpolation_mode::box_average</a>
 <br />
  }</td></tr>
 <tr class="memdesc:ga597cca8c636b502a1dbf11b65c47b017"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__xtd__drawing.html#ga597cca8c636b502a1dbf11b65c47b017" title="The xtd::drawing::drawing_2d::interpolation_mode enumeration specifies the algorithm that is used whe...">xtd::drawing::drawing_2d::interpolation_mode</a> enumeration specifies the algorithm that is used when images are scaled or rotated.  <a href="group__xtd__drawing.html#ga597cca8c636b502a1dbf11b65c47b017">More...</a><br /></td></tr>
@@ -1509,10 +1511,11 @@ A figure is considered clockwise or counterclockwise based on the order in which
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga597cca8c636b502a1dbf11b65c47b017afedb2d84cafe20862cb4399751a8a7e3" name="gga597cca8c636b502a1dbf11b65c47b017afedb2d84cafe20862cb4399751a8a7e3"></a>invalid&#160;</td><td class="fielddoc"><p>Equivalent to the xtd::drawing::drawing_2d::quality_mode::invalid element of the xtd::drawing::drawing_2d::quality_mode enumeration. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga597cca8c636b502a1dbf11b65c47b017ad354f24e5d9b72df39f39243c80d9d80" name="gga597cca8c636b502a1dbf11b65c47b017ad354f24e5d9b72df39f39243c80d9d80"></a>default_value&#160;</td><td class="fielddoc"><p>Specifies default mode. </p>
+<dl class="section remark"><dt>Remarks</dt><dd>When image size is increased, <a class="el" href="group__xtd__drawing.html#gga597cca8c636b502a1dbf11b65c47b017aa006c8fe94896ca114dfb1353b233ab8" title="Specifies bicubic interpolation. No prefiltering is done. This mode is not suitable for shrinking an ...">xtd::drawing::drawing_2d::interpolation_mode::bicubic</a> interpolation is used. When image size is reduced, <a class="el" href="group__xtd__drawing.html#gga597cca8c636b502a1dbf11b65c47b017a0cd218da485f2bf4e2c65794a9a66657" title="Specifies box average interpolation. This method is generally used to reduce the size of an image.">xtd::drawing::drawing_2d::interpolation_mode::box_average</a> is used. </dd></dl>
 </td></tr>
 <tr><td class="fieldname"><a id="gga597cca8c636b502a1dbf11b65c47b017a53cced8d281a1a0ace3cb6594daaa4f7" name="gga597cca8c636b502a1dbf11b65c47b017a53cced8d281a1a0ace3cb6594daaa4f7"></a>low&#160;</td><td class="fielddoc"><p>Specifies low quality interpolation. </p>
 </td></tr>
-<tr><td class="fieldname"><a id="gga597cca8c636b502a1dbf11b65c47b017af0ab23ff912e00ea0b23b4d6b00c68ff" name="gga597cca8c636b502a1dbf11b65c47b017af0ab23ff912e00ea0b23b4d6b00c68ff"></a>hight&#160;</td><td class="fielddoc"><p>Specifies high quality interpolation. </p>
+<tr><td class="fieldname"><a id="gga597cca8c636b502a1dbf11b65c47b017a8d966b2253a917086c8604959e152243" name="gga597cca8c636b502a1dbf11b65c47b017a8d966b2253a917086c8604959e152243"></a>high&#160;</td><td class="fielddoc"><p>Specifies high quality interpolation. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga597cca8c636b502a1dbf11b65c47b017a2c5c389d0b455c8246a86f5ca90528a3" name="gga597cca8c636b502a1dbf11b65c47b017a2c5c389d0b455c8246a86f5ca90528a3"></a>bilinear&#160;</td><td class="fielddoc"><p>Specifies bilinear interpolation. No prefiltering is done. This mode is not suitable for shrinking an image below 50 percent of its original size. </p>
 </td></tr>
@@ -1523,6 +1526,8 @@ A figure is considered clockwise or counterclockwise based on the order in which
 <tr><td class="fieldname"><a id="gga597cca8c636b502a1dbf11b65c47b017aff6c66496f1cce2d7637d614b480400f" name="gga597cca8c636b502a1dbf11b65c47b017aff6c66496f1cce2d7637d614b480400f"></a>high_quality_bilinear&#160;</td><td class="fielddoc"><p>Specifies high-quality, bilinear interpolation. Prefiltering is performed to ensure high-quality shrinking. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="gga597cca8c636b502a1dbf11b65c47b017a977506b023481b07df663ab51896cadf" name="gga597cca8c636b502a1dbf11b65c47b017a977506b023481b07df663ab51896cadf"></a>high_quality_bicubic&#160;</td><td class="fielddoc"><p>Specifies high-quality, bicubic interpolation. Prefiltering is performed to ensure high-quality shrinking. This mode produces the highest quality transformed images. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga597cca8c636b502a1dbf11b65c47b017a0cd218da485f2bf4e2c65794a9a66657" name="gga597cca8c636b502a1dbf11b65c47b017a0cd218da485f2bf4e2c65794a9a66657"></a>box_average&#160;</td><td class="fielddoc"><p>Specifies box average interpolation. This method is generally used to reduce the size of an image. </p>
 </td></tr>
 </table>
 
@@ -2193,7 +2198,7 @@ If you wish to draw on an image once it has been rotated, you should always retr
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Mar 8 2025 10:40:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Mar 9 2025 23:56:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
