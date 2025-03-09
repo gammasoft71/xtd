@@ -1,4 +1,4 @@
-#include "../../../include/xtd/drawing/imaging/effects/crop_effect.hpp"
+#include "../../../include/xtd/drawing/imaging/effects/resize_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/rotate_flip_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/scale_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/image_effector.hpp"
@@ -186,7 +186,7 @@ image::image(const image& image, int32 width, int32 height) : data_(xtd::new_spt
 image::image(const image& image, const rectangle& rect) : data_(xtd::new_sptr<data>()) {
   if (rect.left() < 0 || rect.top() < 0 || rect.width < 1 || rect.height < 1) throw_helper::throws(exception_case::argument);
   *this = image.clone();
-  imaging::image_effector::set_effect(*this, crop_effect {rect});
+  imaging::image_effector::set_effect(*this, resize_effect {rect});
   update_properties();
 }
 
