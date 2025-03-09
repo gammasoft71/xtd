@@ -1,6 +1,6 @@
 # image_converter
 
-shows how to use [xtd::drawing::graphics::image_converter](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1image__converter.html) class.
+shows how to use [xtd::drawing::graphics::imaging::image_effector](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1drawing_1_1imaging_1_1image__effector.html) class.
 
 ## Sources
 
@@ -8,7 +8,7 @@ shows how to use [xtd::drawing::graphics::image_converter](https://gammasoft71.g
 * [resources/ball.png](resources/ball.png)
 * [resources/pineapple.png](resources/pineapple.png)
 * [resources/rose.png](resources/rose.png)
-* [src/image_converter.cpp](src/image_converter.cpp)
+* [src/image_effects.cpp](src/image_effects.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
