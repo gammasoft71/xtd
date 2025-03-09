@@ -47,7 +47,7 @@ namespace xtd {
       /// @param width The width, in pixels, of the new xtd::drawing::bitmap.
       /// @param height The height, in pixels, of the new xtd::drawing::bitmap.
       bitmap(const xtd::drawing::image& original, xtd::int32 width, xtd::int32 height);
-      /// @brief Initializes a new instance of the bitmap class from the specified existing image, scaled to the specified rectangle.
+      /// @brief Initializes a new instance of the bitmap class from the specified existing image, resizing or cropping (without scaling) with the specified rectangle.
       /// @param original The xtd::drawing::image from which to create the new bitmap.
       /// @param new_rect The xtd::drawing::rect structure that represent the location and size of the new bitmap.
       bitmap(const xtd::drawing::image& original, const xtd::drawing::rectangle& new_rect);
