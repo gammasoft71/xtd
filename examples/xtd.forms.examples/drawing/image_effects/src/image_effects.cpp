@@ -8,11 +8,11 @@ using namespace xtd::drawing::imaging;
 using namespace xtd::drawing::imaging::effects;
 using namespace xtd::forms;
 
-namespace image_effector_example {
+namespace image_effects_example {
   class form1 : public form {
   public:
     static auto main() {
-      application::run(image_effector_example::form1 {});
+      application::run(image_effects_example::form1 {});
     }
     
     form1() {
@@ -742,4 +742,4 @@ namespace image_effector_example {
   };
 }
 
-startup_(image_effector_example::form1::main);
+startup_(image_effects_example::form1::main);
