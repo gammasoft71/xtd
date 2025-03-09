@@ -32,6 +32,10 @@ namespace xtd {
   namespace drawing {
     /// @cond
     class bitmap;
+    namespace imaging::effects {
+      struct resize_effect;
+      struct scale_effect;
+    }
     /// @endcond
     
     /// @brief An abstract base class that provides functionality for the bitmap and metafile descended classes.
@@ -273,15 +277,6 @@ namespace xtd {
       /// @remarks You should avoid saving an image to the same stream that was used to construct it. Doing so might damage the stream.
       /// @remarks The image must be saved to the stream at an offset of zero. If any additional data has been written to the stream before saving the image, the image data in the stream will be corrupted.
       void save(std::ostream& stream, const xtd::drawing::imaging::image_format& format) const;
-      
-      /// @brief Scales this xtd::drawing::image with the specified size.
-      /// @param size The scaling size
-      /// @remarks Scaling with xtd::drawing::drawing_2d::interpolation_mode::default_value value.
-      void scale(const xtd::drawing::size& size);
-      /// @brief Scales this xtd::drawing::image with the specified size, and specified interpolation mode.
-      /// @param size The scaling size.
-      /// @param interpolation_mode One of xtd::drawing::drawing_2d::interpolation_mode values.
-      void scale(const xtd::drawing::size& size, xtd::drawing::drawing_2d::interpolation_mode interpolation_mode);
       /// @}
       
       /// @name Public Static Methods
@@ -344,6 +339,8 @@ namespace xtd {
 
     protected:
       /// @cond
+      friend xtd::drawing::imaging::effects::resize_effect;
+      friend xtd::drawing::imaging::effects::scale_effect;
       explicit image(intptr hbitmap);
       explicit image(const xtd::string& filename);
       explicit image(const xtd::string& filename, bool use_icm);
@@ -357,6 +354,8 @@ namespace xtd {
       image(const image& image, const rectangle& rect);
       static image from_hicon(intptr hicon);
       drawing::color get_pixel(int32 x, int32 y) const;
+      void resize(const xtd::drawing::rectangle& rect, const xtd::drawing::color& fill_color);
+      void scale(const xtd::drawing::size& size, xtd::drawing::drawing_2d::interpolation_mode interpolation_mode);
       void set_pixel(int32 x, int32 y, const drawing::color& color);
       void set_pixel_format(imaging::pixel_format value);
       /// @endcond
