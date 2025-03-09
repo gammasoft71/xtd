@@ -20,6 +20,7 @@ namespace xtd {
         /// @brief Equivalent to the xtd::drawing::drawing_2d::quality_mode::invalid element of the xtd::drawing::drawing_2d::quality_mode enumeration.
         invalid = -1,
         /// @brief Specifies default mode.
+        /// @remarks When image size is increased, xtd::drawing::drawing_2d::interpolation_mode::bicubic interpolation is used. When image size is reduced, xtd::drawing::drawing_2d::interpolation_mode::box_average is used.
         default_value = 0,
         /// @brief Specifies low quality interpolation.
         low = 1,
@@ -35,7 +36,7 @@ namespace xtd {
         high_quality_bilinear = 6,
         /// @brief Specifies high-quality, bicubic interpolation. Prefiltering is performed to ensure high-quality shrinking. This mode produces the highest quality transformed images.
         high_quality_bicubic = 7,
-        /// @brief Specifies box average interpolation.
+        /// @brief Specifies box average interpolation. This method is generally used to reduce the size of an image.
         box_average = 8,
       };
     }

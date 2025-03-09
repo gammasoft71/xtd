@@ -442,13 +442,13 @@ void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::
   }
   if (dest_rect.width != result_image.width() || dest_rect.height != result_image.height()) {
     switch (data_->interpolation_mode) {
+      case interpolation_mode::default_value: result_image = default_interpolation(result_image, size::round({to_pixels(dest_rect.width), to_pixels(dest_rect.height)})); break;
+      case interpolation_mode::bilinear: result_image = bilinear_interpolation(result_image, size::round({to_pixels(dest_rect.width), to_pixels(dest_rect.height)})); break;
+      case interpolation_mode::bicubic: result_image = bicubic_interpolation(result_image, size::round({to_pixels(dest_rect.width), to_pixels(dest_rect.height)})); break;
       case interpolation_mode::low:
       case interpolation_mode::nearest_neighbor: result_image = nearest_neighbor_interpolation(result_image, size::round({to_pixels(dest_rect.width), to_pixels(dest_rect.height)})); break;
-      case interpolation_mode::default_value: result_image = default_interpolation(result_image, size::round({to_pixels(dest_rect.width), to_pixels(dest_rect.height)})); break;
-      case interpolation_mode::bilinear:
       case interpolation_mode::high_quality_bilinear: result_image = bilinear_interpolation(result_image, size::round({to_pixels(dest_rect.width), to_pixels(dest_rect.height)})); break;
       case interpolation_mode::high:
-      case interpolation_mode::bicubic:
       case interpolation_mode::high_quality_bicubic: result_image = bicubic_interpolation(result_image, size::round({to_pixels(dest_rect.width), to_pixels(dest_rect.height)})); break;
       case interpolation_mode::box_average: result_image = box_average_interpolation(result_image, size::round({to_pixels(dest_rect.width), to_pixels(dest_rect.height)})); break;
       case interpolation_mode::invalid:

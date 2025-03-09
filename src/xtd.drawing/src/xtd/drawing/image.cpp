@@ -1,6 +1,5 @@
 #include "../../../include/xtd/drawing/imaging/effects/resize_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/effects/rotate_flip_effect.hpp"
-#include "../../../include/xtd/drawing/imaging/effects/scale_effect.hpp"
 #include "../../../include/xtd/drawing/imaging/image_effector.hpp"
 #include "../../../include/xtd/drawing/image.hpp"
 #include "../../../include/xtd/drawing/bitmap.hpp"
@@ -409,11 +408,17 @@ void image::save(std::ostream& stream, const imaging::image_format& format) cons
 }
 
 void image::scale(const xtd::drawing::size& size) {
-  scale(size, xtd::drawing::scale_type::default_value);
+  scale(size, xtd::drawing::drawing_2d::interpolation_mode::default_value);
 }
 
-void image::scale(const xtd::drawing::size& size, xtd::drawing::scale_type scale_type) {
-  image_effector::set_effect(*this, scale_effect(size, scale_type));
+void image::scale(const xtd::drawing::size& size, xtd::drawing::drawing_2d::interpolation_mode interpolation_mode) {
+  if (this->size() == size) return;
+  auto result = bitmap {size};
+  auto graphics = result.create_graphics();
+  graphics.interpolation_mode(interpolation_mode);
+  graphics.draw_image(*this, result.get_bounds(graphics_unit::pixel), 0, 0, width(), height());
+  *this = result;
+  //image_effector::set_effect(*this, scale_effect(size, interpolation_mode));
 }
 
 image image::from_file(const xtd::string& filename) {

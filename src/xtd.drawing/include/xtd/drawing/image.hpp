@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../drawing_export.hpp"
+#include "drawing_2d/interpolation_mode.hpp"
 #include "imaging/color_palette.hpp"
 #include "imaging/encoder_parameters.hpp"
 #include "imaging/frame_dimension.hpp"
@@ -14,7 +15,6 @@
 #include "graphics_unit.hpp"
 #include "rectangle.hpp"
 #include "rotate_flip_type.hpp"
-#include "scale_type.hpp"
 #include "size.hpp"
 #include "size_f.hpp"
 #include <xtd/any>
@@ -276,13 +276,12 @@ namespace xtd {
       
       /// @brief Scales this xtd::drawing::image with the specified size.
       /// @param size The scaling size
-      /// @remarks Scaling with xtd::drawing::scale_type::default_value value.
+      /// @remarks Scaling with xtd::drawing::drawing_2d::interpolation_mode::default_value value.
       void scale(const xtd::drawing::size& size);
-      /// @brief Scales this xtd::drawing::image with the specified size, and specified scale type.
+      /// @brief Scales this xtd::drawing::image with the specified size, and specified interpolation mode.
       /// @param size The scaling size.
-      /// @param scale_type One of xtd::drawing::scale_type values.
-      void scale(const xtd::drawing::size& size, xtd::drawing::scale_type scale_type);
-
+      /// @param interpolation_mode One of xtd::drawing::drawing_2d::interpolation_mode values.
+      void scale(const xtd::drawing::size& size, xtd::drawing::drawing_2d::interpolation_mode interpolation_mode);
       /// @}
       
       /// @name Public Static Methods
