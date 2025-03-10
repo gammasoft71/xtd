@@ -185,11 +185,11 @@ double math::log(double value) {
   return std::log(value);
 }
 
-double math::log(double a, double newBase) {
-  if (a < 0 || newBase < 0 || (a != 1 && newBase == 0) || (a != 1 && double_object::is_positive_infinity(newBase)) || double_object::is_NaN(a) || double_object::is_NaN(newBase) || newBase == 1) return double_object::NaN;
-  if ((a == 0 && 0 < newBase && newBase < 1) || (double_object::is_positive_infinity(a) && newBase > 1)) return double_object::positive_infinity;
-  if ((a == 0 && newBase > 1) || (double_object::is_positive_infinity(a) && 0 < newBase && newBase < 1)) return double_object::negative_infinity;
-  return (math::log(a) / math::log(newBase));
+double math::log(double a, double new_base) {
+  if (a < 0 || new_base < 0 || (a != 1 && new_base == 0) || (a != 1 && double_object::is_positive_infinity(new_base)) || double_object::is_NaN(a) || double_object::is_NaN(new_base) || new_base == 1) return double_object::NaN;
+  if ((a == 0 && 0 < new_base && new_base < 1) || (double_object::is_positive_infinity(a) && new_base > 1)) return double_object::positive_infinity;
+  if ((a == 0 && new_base > 1) || (double_object::is_positive_infinity(a) && 0 < new_base && new_base < 1)) return double_object::negative_infinity;
+  return (math::log(a) / math::log(new_base));
 }
 
 double math::log10(double value) {
