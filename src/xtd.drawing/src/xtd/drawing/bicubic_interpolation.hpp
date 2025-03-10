@@ -2,6 +2,7 @@
 #include "../../../include/xtd/drawing/helpers/alpha.hpp"
 #include "../../../include/xtd/drawing/helpers/rgb.hpp"
 #include "../../../include/xtd/drawing/bitmap.hpp"
+#include <xtd/fixed_array>
 
 namespace {
   inline constexpr double spline_cube(double value) {
@@ -13,8 +14,8 @@ namespace {
   }
 
   struct bicubic_precalculate {
-    double weight[4];
-    xtd::int32 offset[4];
+    xtd::fixed_array<double, 4> weight;
+    xtd::fixed_array<xtd::int32, 4> offset;
   };
   
   inline void compute_bicubic_precalculate(bicubic_precalculate& precalculate, double source_pixel, xtd::int32 old_size) {
@@ -84,11 +85,11 @@ namespace {
           }
         }
         
-        if (sum_a == 0) continue;
+        if (sum_a < xtd::double_object::epsilon) continue;
         result_alpha[result_pixel].a = static_cast<xtd::byte>(sum_a);
-        result_rgb[result_pixel].r = static_cast<xtd::byte>(sum_r / sum_a + 0.5);
-        result_rgb[result_pixel].g = static_cast<xtd::byte>(sum_g / sum_a + 0.5);
-        result_rgb[result_pixel].b = static_cast<xtd::byte>(sum_b / sum_a + 0.5);
+        result_rgb[result_pixel].r = static_cast<xtd::byte>(xtd::math::round(sum_r / sum_a));
+        result_rgb[result_pixel].g = static_cast<xtd::byte>(xtd::math::round(sum_g / sum_a));
+        result_rgb[result_pixel].b = static_cast<xtd::byte>(xtd::math::round(sum_b / sum_a));
       }
     }
     
