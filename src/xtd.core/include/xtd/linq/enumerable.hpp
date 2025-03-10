@@ -440,13 +440,19 @@ namespace xtd {
       /// @include enumerable_count2.cpp
       template<class source_t>
       static xtd::size count(const ienumerable<source_t>& source, const std::function<bool(const source_t&)>& predicate) noexcept {
-        auto count = xtd::size {0};
-        auto enumerator = source.get_enumerator();
-        while (enumerator.move_next())
-          if (predicate(enumerator.current())) ++count;
-        return count;
+        return where<source_t>(source,predicate).count();
       }
-      
+
+      /// @brief Returns the number of elements with the specified value.
+      /// @tparam source_t The type of the elements of source.
+      /// @param source A sequence that contains elements to be tested and counted.
+      /// @param value The value to search for.
+      /// @return A number representing the number of elements in the sequence that are equal to the `value`.
+      template<class source_t>
+      static xtd::size count(const ienumerable<source_t>& source, const source_t& value) noexcept {
+        return count<source_t>(source, [value](const source_t& item) -> bool {return item == value;});
+      }
+
       /// @brief Returns the count of elements in the source sequence grouped by key.
       /// @tparam source_t The type of the elements of source.
       /// @tparam key_t The type of the key returned by `key_selector`.

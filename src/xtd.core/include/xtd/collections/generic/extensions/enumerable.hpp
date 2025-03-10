@@ -220,6 +220,13 @@ namespace xtd {
             return xtd::linq::enumerable::count(base(), predicate);
           }
           
+          /// @brief Returns the number of elements with the specified value.
+          /// @param value The value to search for.
+          /// @return A number representing the number of elements in the sequence that are equal to the `value`.
+          xtd::size count(const source_t& value) const noexcept {
+            return xtd::linq::enumerable::count(base(), value);
+          }
+
           /// @brief Returns the count of elements in the current sequence grouped by key.
           /// @tparam key_t The type of the key returned by `key_selector`.
           /// @param key_selector A function to extract the key for each element.
