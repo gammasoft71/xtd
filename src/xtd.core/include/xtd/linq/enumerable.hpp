@@ -603,6 +603,9 @@ namespace xtd {
       static const ienumerable<xtd::int64>& range(xtd::int64 count);
       static const ienumerable<xtd::int64>& range(xtd::int64 start, xtd::int64 count);
       static const ienumerable<xtd::int64>& range(xtd::int64 start, xtd::int64 stop, xtd::int64 step);
+      //static const ienumerable<xtd::slong>& range(xtd::slong count);
+      //static const ienumerable<xtd::slong>& range(xtd::slong start, xtd::slong count);
+      //static const ienumerable<xtd::slong>& range(xtd::slong start, xtd::slong stop, xtd::slong step);
       static const ienumerable<xtd::byte>& range(xtd::byte count);
       static const ienumerable<xtd::byte>& range(xtd::byte start, xtd::byte count);
       static const ienumerable<xtd::byte>& range(xtd::byte start, xtd::byte stop, xtd::byte step);
@@ -615,9 +618,9 @@ namespace xtd {
       static const ienumerable<xtd::uint64>& range(xtd::uint64 count);
       static const ienumerable<xtd::uint64>& range(xtd::uint64 start, xtd::uint64 count);
       static const ienumerable<xtd::uint64>& range(xtd::uint64 start, xtd::uint64 stop, xtd::uint64 step);
-      static const ienumerable<xtd::size>& range(xtd::size count);
-      static const ienumerable<xtd::size>& range(xtd::size start, xtd::size count);
-      static const ienumerable<xtd::size>& range(xtd::size start, xtd::size stop, xtd::size step);
+      static const ienumerable<xtd::ulong>& range(xtd::ulong count);
+      static const ienumerable<xtd::ulong>& range(xtd::ulong start, xtd::ulong count);
+      static const ienumerable<xtd::ulong>& range(xtd::ulong start, xtd::ulong stop, xtd::ulong step);
       /// @endcond
       
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
