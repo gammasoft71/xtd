@@ -559,6 +559,23 @@ namespace xtd {
         return first_or_default(source, source_t {});
       }
       
+      /// @cond
+      static const ienumerable<xtd::sbyte>& range(xtd::sbyte count);
+      static const ienumerable<xtd::sbyte>& range(xtd::sbyte start, xtd::sbyte count);
+      static const ienumerable<xtd::sbyte>& range(xtd::sbyte start, xtd::sbyte stop, xtd::sbyte step);
+      static const ienumerable<xtd::int16>& range(xtd::int16 count);
+      static const ienumerable<xtd::int16>& range(xtd::int16 start, xtd::int16 count);
+      static const ienumerable<xtd::int16>& range(xtd::int16 start, xtd::int16 stop, xtd::int16 step);
+      /// @endcond
+
+      /// @brief Generates a sequence of integral numbers within a specified range.
+      /// @param count The number of sequential integers to generate.
+      /// @return An xtd::collections::generic::ienumerable <xtd::int32> that contains a range of sequential integral numbers.
+      /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
+      /// @par Examples
+      /// The following code example demonstrates how to use xtd::linq::enumerable::range to generate a sequence of values.
+      /// @include enumerable_range.cpp
+      static const ienumerable<xtd::int32>& range(xtd::int32 count);
       /// @brief Generates a sequence of integral numbers within a specified range.
       /// @param start The value of the first integer in the sequence.
       /// @param count The number of sequential integers to generate.
@@ -568,6 +585,34 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::range to generate a sequence of values.
       /// @include enumerable_range.cpp
       static const ienumerable<xtd::int32>& range(xtd::int32 start, xtd::int32 count);
+      /// @brief Generates a sequence of integral numbers within a specified range and step.
+      /// @param start The value of the first integer in the sequence.
+      /// @param stop The value of the last integer int he sequence.
+      /// @param step The integer number specifying the incrementation.
+      /// @return An xtd::collections::generic::ienumerable <xtd::int32> that contains a range of sequential integral numbers.
+      /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
+      static const ienumerable<xtd::int32>& range(xtd::int32 start, xtd::int32 stop, xtd::int32 step);
+
+      /// @cond
+      static const ienumerable<xtd::int64>& range(xtd::int64 count);
+      static const ienumerable<xtd::int64>& range(xtd::int64 start, xtd::int64 count);
+      static const ienumerable<xtd::int64>& range(xtd::int64 start, xtd::int64 stop, xtd::int64 step);
+      static const ienumerable<xtd::byte>& range(xtd::byte count);
+      static const ienumerable<xtd::byte>& range(xtd::byte start, xtd::byte count);
+      static const ienumerable<xtd::byte>& range(xtd::byte start, xtd::byte stop, xtd::byte step);
+      static const ienumerable<xtd::uint16>& range(xtd::uint16 count);
+      static const ienumerable<xtd::uint16>& range(xtd::uint16 start, xtd::uint16 count);
+      static const ienumerable<xtd::uint16>& range(xtd::uint16 start, xtd::uint16 stop, xtd::uint16 step);
+      static const ienumerable<xtd::uint32>& range(xtd::uint32 count);
+      static const ienumerable<xtd::uint32>& range(xtd::uint32 start, xtd::uint32 count);
+      static const ienumerable<xtd::uint32>& range(xtd::uint32 start, xtd::uint32 stop, xtd::uint32 step);
+      static const ienumerable<xtd::uint64>& range(xtd::uint64 count);
+      static const ienumerable<xtd::uint64>& range(xtd::uint64 start, xtd::uint64 count);
+      static const ienumerable<xtd::uint64>& range(xtd::uint64 start, xtd::uint64 stop, xtd::uint64 step);
+      static const ienumerable<xtd::size>& range(xtd::size count);
+      static const ienumerable<xtd::size>& range(xtd::size start, xtd::size count);
+      static const ienumerable<xtd::size>& range(xtd::size start, xtd::size stop, xtd::size step);
+      /// @endcond
       
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
