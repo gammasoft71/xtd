@@ -564,15 +564,6 @@ namespace xtd {
       static source_t first_or_default(const ienumerable<source_t>& source) noexcept {
         return first_or_default(source, source_t {});
       }
-      
-      /// @cond
-      static const ienumerable<xtd::sbyte>& range(xtd::sbyte count);
-      static const ienumerable<xtd::sbyte>& range(xtd::sbyte start, xtd::sbyte count);
-      static const ienumerable<xtd::sbyte>& range(xtd::sbyte start, xtd::sbyte stop, xtd::sbyte step);
-      static const ienumerable<xtd::int16>& range(xtd::int16 count);
-      static const ienumerable<xtd::int16>& range(xtd::int16 start, xtd::int16 count);
-      static const ienumerable<xtd::int16>& range(xtd::int16 start, xtd::int16 stop, xtd::int16 step);
-      /// @endcond
 
       /// @brief Generates a sequence of integral numbers within a specified range.
       /// @param count The number of sequential integers to generate.
@@ -600,29 +591,25 @@ namespace xtd {
       static const ienumerable<xtd::int32>& range(xtd::int32 start, xtd::int32 stop, xtd::int32 step);
 
       /// @cond
-      static const ienumerable<xtd::int64>& range(xtd::int64 count);
-      static const ienumerable<xtd::int64>& range(xtd::int64 start, xtd::int64 count);
-      static const ienumerable<xtd::int64>& range(xtd::int64 start, xtd::int64 stop, xtd::int64 step);
-      //static const ienumerable<xtd::slong>& range(xtd::slong count);
-      //static const ienumerable<xtd::slong>& range(xtd::slong start, xtd::slong count);
-      //static const ienumerable<xtd::slong>& range(xtd::slong start, xtd::slong stop, xtd::slong step);
-      static const ienumerable<xtd::byte>& range(xtd::byte count);
-      static const ienumerable<xtd::byte>& range(xtd::byte start, xtd::byte count);
-      static const ienumerable<xtd::byte>& range(xtd::byte start, xtd::byte stop, xtd::byte step);
-      static const ienumerable<xtd::uint16>& range(xtd::uint16 count);
-      static const ienumerable<xtd::uint16>& range(xtd::uint16 start, xtd::uint16 count);
-      static const ienumerable<xtd::uint16>& range(xtd::uint16 start, xtd::uint16 stop, xtd::uint16 step);
-      static const ienumerable<xtd::uint32>& range(xtd::uint32 count);
-      static const ienumerable<xtd::uint32>& range(xtd::uint32 start, xtd::uint32 count);
-      static const ienumerable<xtd::uint32>& range(xtd::uint32 start, xtd::uint32 stop, xtd::uint32 step);
-      static const ienumerable<xtd::uint64>& range(xtd::uint64 count);
-      static const ienumerable<xtd::uint64>& range(xtd::uint64 start, xtd::uint64 count);
-      static const ienumerable<xtd::uint64>& range(xtd::uint64 start, xtd::uint64 stop, xtd::uint64 step);
-      static const ienumerable<xtd::ulong>& range(xtd::ulong count);
-      static const ienumerable<xtd::ulong>& range(xtd::ulong start, xtd::ulong count);
-      static const ienumerable<xtd::ulong>& range(xtd::ulong start, xtd::ulong stop, xtd::ulong step);
+      template<class type_t>
+      static const ienumerable<type_t>& range(type_t count) {
+        return range(type_t {0}, count, type_t {1});
+      }
+      template<class type_t>
+      static const ienumerable<type_t>& range(type_t start, type_t count) {
+        return range(start, static_cast<type_t>(start + count), type_t {1});
+      }
+      template<class type_t>
+      static const ienumerable<type_t>& range(type_t start, type_t stop, type_t step) {
+        if (stop < 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
+        static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<type_t> {};
+        result = __opaque_xtd_linq_enumerable_collection__<type_t> {};
+        for (auto index = start; index < stop; index += step)
+          result.items.push_back(index);
+        return result;
+      }
       /// @endcond
-      
+
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values.
