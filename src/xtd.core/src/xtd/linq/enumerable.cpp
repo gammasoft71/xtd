@@ -123,11 +123,150 @@ optional<double> enumerable::average(const ienumerable<optional<int64>>& source)
   return average / count;
 }
 
+const enumerable::ienumerable<sbyte>& enumerable::range(sbyte count) {
+  return range(sbyte {0}, count, sbyte {1});
+}
+
+const enumerable::ienumerable<sbyte>& enumerable::range(sbyte start, sbyte count) {
+  return range(start, static_cast<sbyte>(start + count), sbyte {1});
+}
+
+const enumerable::ienumerable<sbyte>& enumerable::range(sbyte start, sbyte stop, sbyte step) {
+  if (stop < 0) throw_helper::throws(exception_case::argument_out_of_range);
+  static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<sbyte> {};
+  result = __opaque_xtd_linq_enumerable_collection__<sbyte> {};
+  for (auto index = start; index < stop; index += step)
+    result.items.push_back(index);
+  return result;
+}
+
+const enumerable::ienumerable<int16>& enumerable::range(int16 count) {
+  return range(int16 {0}, count, int16 {1});
+}
+
+const enumerable::ienumerable<int16>& enumerable::range(int16 start, int16 count) {
+  return range(start, static_cast<int16>(start + count), int16 {1});
+}
+
+const enumerable::ienumerable<int16>& enumerable::range(int16 start, int16 stop, int16 step) {
+  if (stop < 0) throw_helper::throws(exception_case::argument_out_of_range);
+  static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<int16> {};
+  result = __opaque_xtd_linq_enumerable_collection__<int16> {};
+  for (auto index = start; index < stop; index += step)
+    result.items.push_back(index);
+  return result;
+}
+
+const enumerable::ienumerable<int32>& enumerable::range(int32 count) {
+  return range(int32 {0}, count, int32 {1});
+}
+
 const enumerable::ienumerable<int32>& enumerable::range(int32 start, int32 count) {
-  if (count < 0) throw_helper::throws(exception_case::argument_out_of_range);
+  return range(start, static_cast<int32>(start + count), int32 {1});
+}
+
+const enumerable::ienumerable<int32>& enumerable::range(int32 start, int32 stop, int32 step) {
+  if (stop < 0) throw_helper::throws(exception_case::argument_out_of_range);
   static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<int32> {};
   result = __opaque_xtd_linq_enumerable_collection__<int32> {};
-  for (auto index = start; index < start + count; ++index)
+  for (auto index = start; index < stop; index += step)
+    result.items.push_back(index);
+  return result;
+}
+
+const enumerable::ienumerable<int64>& enumerable::range(int64 count) {
+  return range(int64 {0}, count, int64 {1});
+}
+
+const enumerable::ienumerable<int64>& enumerable::range(int64 start, int64 count) {
+  return range(start, static_cast<int64>(start + count), int64 {1});
+}
+
+const enumerable::ienumerable<int64>& enumerable::range(int64 start, int64 stop, int64 step) {
+  if (stop < 0) throw_helper::throws(exception_case::argument_out_of_range);
+  static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<int64> {};
+  result = __opaque_xtd_linq_enumerable_collection__<int64> {};
+  for (auto index = start; index < stop; index += step)
+    result.items.push_back(index);
+  return result;
+}
+
+const enumerable::ienumerable<byte>& enumerable::range(byte count) {
+  return range(byte {0}, count, byte {1});
+}
+
+const enumerable::ienumerable<byte>& enumerable::range(byte start, byte count) {
+  return range(start, static_cast<byte>(start + count), byte {1});
+}
+
+const enumerable::ienumerable<byte>& enumerable::range(byte start, byte stop, byte step) {
+  static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<byte> {};
+  result = __opaque_xtd_linq_enumerable_collection__<byte> {};
+  for (auto index = start; index < stop; index += step)
+    result.items.push_back(index);
+  return result;
+}
+
+const enumerable::ienumerable<uint16>& enumerable::range(uint16 count) {
+  return range(uint16 {0}, count, uint16 {1});
+}
+
+const enumerable::ienumerable<uint16>& enumerable::range(uint16 start, uint16 count) {
+  return range(start, static_cast<uint16>(start + count), uint16 {1});
+}
+
+const enumerable::ienumerable<uint16>& enumerable::range(uint16 start, uint16 stop, uint16 step) {
+  static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<uint16> {};
+  result = __opaque_xtd_linq_enumerable_collection__<uint16> {};
+  for (auto index = start; index < stop; index += step)
+    result.items.push_back(index);
+  return result;
+}
+
+const enumerable::ienumerable<uint32>& enumerable::range(uint32 count) {
+  return range(uint32 {0}, count, uint32 {1});
+}
+
+const enumerable::ienumerable<uint32>& enumerable::range(uint32 start, uint32 count) {
+  return range(start, static_cast<uint32>(start + count), uint32 {1});
+}
+
+const enumerable::ienumerable<uint32>& enumerable::range(uint32 start, uint32 stop, uint32 step) {
+  static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<uint32> {};
+  result = __opaque_xtd_linq_enumerable_collection__<uint32> {};
+  for (auto index = start; index < stop; index += step)
+    result.items.push_back(index);
+  return result;
+}
+
+const enumerable::ienumerable<uint64>& enumerable::range(uint64 count) {
+  return range(uint64 {0}, count, uint64 {1});
+}
+
+const enumerable::ienumerable<uint64>& enumerable::range(uint64 start, uint64 count) {
+  return range(start, static_cast<uint64>(start + count), uint64 {1});
+}
+
+const enumerable::ienumerable<uint64>& enumerable::range(uint64 start, uint64 stop, uint64 step) {
+  static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<uint64> {};
+  result = __opaque_xtd_linq_enumerable_collection__<uint64> {};
+  for (auto index = start; index < stop; index += step)
+    result.items.push_back(index);
+  return result;
+}
+
+const enumerable::ienumerable<size>& enumerable::range(size count) {
+  return range(size {0}, count, size {1});
+}
+
+const enumerable::ienumerable<size>& enumerable::range(size start, size count) {
+  return range(start, static_cast<size>(start + count), size {1});
+}
+
+const enumerable::ienumerable<size>& enumerable::range(size start, size stop, size step) {
+  static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<size> {};
+  result = __opaque_xtd_linq_enumerable_collection__<size> {};
+  for (auto index = start; index < stop; index += step)
     result.items.push_back(index);
   return result;
 }
