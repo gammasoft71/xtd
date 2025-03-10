@@ -323,6 +323,8 @@ add_sources(
   "src/xtd/drawing/graphics.cpp"
   "src/xtd/drawing/gray_colors.cpp"
   "src/xtd/drawing/green_colors.cpp"
+  "src/xtd/drawing/high_quality_bicubic_interpolation.hpp"
+  "src/xtd/drawing/high_quality_bilinear_interpolation.hpp"
   "src/xtd/drawing/icon.cpp"
   "src/xtd/drawing/image.cpp"
   "src/xtd/drawing/image_converter.cpp"

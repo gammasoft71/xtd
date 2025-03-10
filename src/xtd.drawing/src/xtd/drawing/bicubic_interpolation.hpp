@@ -42,6 +42,10 @@ namespace {
   }
 
   xtd::drawing::image bicubic_interpolation(const xtd::drawing::image& source_image, const xtd::drawing::size& size) {
+    if (source_image == xtd::drawing::image::empty) return source_image;
+    if (size.width == source_image.width() && size.height == source_image.height()) return source_image;
+    if (size.width < 1 || size.height < 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    
     const auto source_width = source_image.width();
     const auto source_height = source_image.height();
     const auto source_alpha = reinterpret_cast<const xtd::drawing::helpers::alpha*>(source_image.alpha());
