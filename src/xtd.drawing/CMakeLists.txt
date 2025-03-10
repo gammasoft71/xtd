@@ -343,6 +343,7 @@ add_sources(
   "src/xtd/drawing/rectangle.cpp"
   "src/xtd/drawing/red_colors.cpp"
   "src/xtd/drawing/region.cpp"
+  "src/xtd/drawing/shrink_interpolation.hpp"
   "src/xtd/drawing/size_f.cpp"
   "src/xtd/drawing/size.cpp"
   "src/xtd/drawing/solid_brush.cpp"

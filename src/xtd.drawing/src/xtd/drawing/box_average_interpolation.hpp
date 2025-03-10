@@ -29,7 +29,7 @@ namespace {
     if (size.width < 1 || size.height < 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
     
     if (source_image.width() % size.width == 0 && source_image.width() >= size.width && source_image.height() % size.height == 0 && source_image.height() >= size.height)
-      return shrink_interpolation(source_image, source_image.width() / size.width, source_image.height() / size.height);
+      return shrink_interpolation(source_image, size);
     
     const auto source_width = source_image.width();
     const auto source_height = source_image.height();
