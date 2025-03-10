@@ -142,16 +142,16 @@ namespace xtd::drawing::tests {
       assert::are_equal(4, bmp.width());
       
       assert::are_equal(0xFFB8472A, bmp.get_pixel(0, 0).to_argb());
-      assert::are_equal(0xFE6B8C33, bmp.get_pixel(1, 0).to_argb());
-      assert::are_equal(0xFE338C6B, bmp.get_pixel(2, 0).to_argb());
+      assert::are_equal(0xFE6B8B33, bmp.get_pixel(1, 0).to_argb());
+      assert::are_equal(0xFE338B6B, bmp.get_pixel(2, 0).to_argb());
       assert::are_equal(0xFF2A47B8, bmp.get_pixel(3, 0).to_argb());
-      assert::are_equal(0xFE808080, bmp.get_pixel(0, 1).to_argb());
-      assert::are_equal(0xFE808080, bmp.get_pixel(1, 1).to_argb());
-      assert::are_equal(0xFE808080, bmp.get_pixel(2, 1).to_argb());
-      assert::are_equal(0xFE808080, bmp.get_pixel(3, 1).to_argb());
+      assert::are_equal(0xFE7F7F7F, bmp.get_pixel(0, 1).to_argb());
+      assert::are_equal(0xFE7F7F7F, bmp.get_pixel(1, 1).to_argb());
+      assert::are_equal(0xFE7F7F7F, bmp.get_pixel(2, 1).to_argb());
+      assert::are_equal(0xFE7F7F7F, bmp.get_pixel(3, 1).to_argb());
       assert::are_equal(0xFF47B8D4, bmp.get_pixel(0, 2).to_argb());
-      assert::are_equal(0xFE9473CC, bmp.get_pixel(1, 2).to_argb());
-      assert::are_equal(0xFECC7394, bmp.get_pixel(2, 2).to_argb());
+      assert::are_equal(0xFE9373CB, bmp.get_pixel(1, 2).to_argb());
+      assert::are_equal(0xFECB7393, bmp.get_pixel(2, 2).to_argb());
       assert::are_equal(0xFFD4B847, bmp.get_pixel(3, 2).to_argb());
     }
     
@@ -236,16 +236,16 @@ namespace xtd::drawing::tests {
       assert::are_equal(4, bmp.width());
       
       assert::are_equal(0xFFB8472A, bmp.get_pixel(0, 0).to_argb());
-      assert::are_equal(0xFE6B8C33, bmp.get_pixel(1, 0).to_argb());
-      assert::are_equal(0xFE338C6B, bmp.get_pixel(2, 0).to_argb());
+      assert::are_equal(0xFE6B8B33, bmp.get_pixel(1, 0).to_argb());
+      assert::are_equal(0xFE338B6B, bmp.get_pixel(2, 0).to_argb());
       assert::are_equal(0xFF2A47B8, bmp.get_pixel(3, 0).to_argb());
-      assert::are_equal(0xFE808080, bmp.get_pixel(0, 1).to_argb());
-      assert::are_equal(0xFE808080, bmp.get_pixel(1, 1).to_argb());
-      assert::are_equal(0xFE808080, bmp.get_pixel(2, 1).to_argb());
-      assert::are_equal(0xFE808080, bmp.get_pixel(3, 1).to_argb());
+      assert::are_equal(0xFE7F7F7F, bmp.get_pixel(0, 1).to_argb());
+      assert::are_equal(0xFE7F7F7F, bmp.get_pixel(1, 1).to_argb());
+      assert::are_equal(0xFE7F7F7F, bmp.get_pixel(2, 1).to_argb());
+      assert::are_equal(0xFE7F7F7F, bmp.get_pixel(3, 1).to_argb());
       assert::are_equal(0xFF47B8D4, bmp.get_pixel(0, 2).to_argb());
-      assert::are_equal(0xFE9473CC, bmp.get_pixel(1, 2).to_argb());
-      assert::are_equal(0xFECC7394, bmp.get_pixel(2, 2).to_argb());
+      assert::are_equal(0xFE9373CB, bmp.get_pixel(1, 2).to_argb());
+      assert::are_equal(0xFECB7393, bmp.get_pixel(2, 2).to_argb());
       assert::are_equal(0xFFD4B847, bmp.get_pixel(3, 2).to_argb());
     }
     

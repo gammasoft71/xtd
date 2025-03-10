@@ -67,5 +67,11 @@ namespace xtd::drawing::drawing_2d::tests {
       assert::are_equal("box_average", enum_object<>::to_string(interpolation_mode::box_average));
       assert::are_equal(interpolation_mode::box_average, enum_object<>::parse<interpolation_mode>("box_average"));
     }
+    
+    void test_method_(medium) {
+      assert::are_equal(9, enum_object<>::to_int32(interpolation_mode::medium));
+      assert::are_equal("medium", enum_object<>::to_string(interpolation_mode::medium));
+      assert::are_equal(interpolation_mode::medium, enum_object<>::parse<interpolation_mode>("medium"));
+    }
   };
 }

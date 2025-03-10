@@ -1,4 +1,5 @@
 #pragma once
+#include "shrink_interpolation.hpp"
 #include "../../../include/xtd/drawing/helpers/alpha.hpp"
 #include "../../../include/xtd/drawing/helpers/rgb.hpp"
 #include "../../../include/xtd/drawing/bitmap.hpp"
@@ -23,6 +24,13 @@ namespace {
   }
 
   xtd::drawing::image box_average_interpolation(const xtd::drawing::image& source_image, const xtd::drawing::size& size) {
+    if (source_image == xtd::drawing::image::empty) return source_image;
+    if (size.width == source_image.width() && size.height == source_image.height()) return source_image;
+    if (size.width < 1 || size.height < 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+    
+    if (source_image.width() % size.width == 0 && source_image.width() >= size.width && source_image.height() % size.height == 0 && source_image.height() >= size.height)
+      return shrink_interpolation(source_image, source_image.width() / size.width, source_image.height() / size.height);
+    
     const auto source_width = source_image.width();
     const auto source_height = source_image.height();
     const auto source_alpha = reinterpret_cast<const xtd::drawing::helpers::alpha*>(source_image.alpha());

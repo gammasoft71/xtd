@@ -36,8 +36,10 @@ namespace xtd {
         high_quality_bilinear = 6,
         /// @brief Specifies high-quality, bicubic interpolation. Prefiltering is performed to ensure high-quality shrinking. This mode produces the highest quality transformed images.
         high_quality_bicubic = 7,
-        /// @brief Specifies box average interpolation. This method is generally used to reduce the size of an image.
+        /// @brief Specifies box average interpolation. Prefiltering is performed to ensure high-quality shrinking.
         box_average = 8,
+        /// @brief Specifies medium quality interpolation.
+        medium = 9,
       };
     }
   }
@@ -45,6 +47,6 @@ namespace xtd {
 
 /// @cond
 template<> struct xtd::enum_register<xtd::drawing::drawing_2d::interpolation_mode> {
-  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::drawing_2d::interpolation_mode> {{xtd::drawing::drawing_2d::interpolation_mode::invalid, "invalid"}, {xtd::drawing::drawing_2d::interpolation_mode::default_value, "default_value"}, {xtd::drawing::drawing_2d::interpolation_mode::low, "low"}, {xtd::drawing::drawing_2d::interpolation_mode::high, "high"}, {xtd::drawing::drawing_2d::interpolation_mode::bilinear, "bilinear"}, {xtd::drawing::drawing_2d::interpolation_mode::bicubic, "bicubic"}, {xtd::drawing::drawing_2d::interpolation_mode::nearest_neighbor, "nearest_neighbor"}, {xtd::drawing::drawing_2d::interpolation_mode::high_quality_bilinear, "high_quality_bilinear"}, {xtd::drawing::drawing_2d::interpolation_mode::high_quality_bicubic, "high_quality_bicubic"}, {xtd::drawing::drawing_2d::interpolation_mode::box_average, "box_average"}};}
+  explicit operator auto() const noexcept {return xtd::enum_collection<xtd::drawing::drawing_2d::interpolation_mode> {{xtd::drawing::drawing_2d::interpolation_mode::invalid, "invalid"}, {xtd::drawing::drawing_2d::interpolation_mode::default_value, "default_value"}, {xtd::drawing::drawing_2d::interpolation_mode::low, "low"}, {xtd::drawing::drawing_2d::interpolation_mode::high, "high"}, {xtd::drawing::drawing_2d::interpolation_mode::bilinear, "bilinear"}, {xtd::drawing::drawing_2d::interpolation_mode::bicubic, "bicubic"}, {xtd::drawing::drawing_2d::interpolation_mode::nearest_neighbor, "nearest_neighbor"}, {xtd::drawing::drawing_2d::interpolation_mode::high_quality_bilinear, "high_quality_bilinear"}, {xtd::drawing::drawing_2d::interpolation_mode::high_quality_bicubic, "high_quality_bicubic"}, {xtd::drawing::drawing_2d::interpolation_mode::box_average, "box_average"}, {xtd::drawing::drawing_2d::interpolation_mode::medium, "medium"}};}
 };
 /// @endcond

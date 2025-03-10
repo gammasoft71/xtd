@@ -18,7 +18,7 @@ auto main() -> int {
   auto drawing_bitmap = bitmap {640, 480};
   auto graphics = graphics::from_image(drawing_bitmap);
   graphics.clear(color::cyan);
-  graphics.draw_string("Drawing with graphics", drawing::font {"Arial", 34, font_style::regular}, brushes::dark_cyan(), {20.0f, 20.0f, drawing_bitmap.width() - 180.0f, drawing_bitmap.height() - 40.0f});
+  graphics.draw_string("Drawing with graphics", drawing::font("Arial", 34, font_style::regular), drawing_2d::linear_gradient_brush(rectangle_f {20.0f, 20.0f, drawing_bitmap.width() - 180.0f, drawing_bitmap.height() - 40.0f}, color::navy, color::light_blue), {20.0f, 20.0f, drawing_bitmap.width() - 180.0f, drawing_bitmap.height() - 40.0f});
   graphics.fill_ellipse(radial_gradient_brush(point {drawing_bitmap.width() - 100, 100}, color::white, color::yellow, 75), drawing_bitmap.width() - 150, 50, 100, 100);
   graphics.draw_ellipse(pen {color::yellow_green, 2}, drawing_bitmap.width() - 150, 50, 100, 100);
   graphics.fill_rectangle(brushes::spring_green(), 0, drawing_bitmap.height() - 100, drawing_bitmap.width(), 100);
