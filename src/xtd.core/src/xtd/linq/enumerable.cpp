@@ -191,6 +191,24 @@ const enumerable::ienumerable<int64>& enumerable::range(int64 start, int64 stop,
   return result;
 }
 
+/*
+const enumerable::ienumerable<slong>& enumerable::range(slong count) {
+  return range(slong {0}, count, slong {1});
+}
+
+const enumerable::ienumerable<slong>& enumerable::range(slong start, slong count) {
+  return range(start, static_cast<slong>(start + count), slong {1});
+}
+
+const enumerable::ienumerable<slong>& enumerable::range(slong start, slong stop, slong step) {
+  static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<slong> {};
+  result = __opaque_xtd_linq_enumerable_collection__<slong> {};
+  for (auto index = start; index < stop; index += step)
+    result.items.push_back(index);
+  return result;
+}
+ */
+
 const enumerable::ienumerable<byte>& enumerable::range(byte count) {
   return range(byte {0}, count, byte {1});
 }
@@ -255,17 +273,17 @@ const enumerable::ienumerable<uint64>& enumerable::range(uint64 start, uint64 st
   return result;
 }
 
-const enumerable::ienumerable<size>& enumerable::range(size count) {
-  return range(size {0}, count, size {1});
+const enumerable::ienumerable<ulong>& enumerable::range(ulong count) {
+  return range(ulong {0}, count, ulong {1});
 }
 
-const enumerable::ienumerable<size>& enumerable::range(size start, size count) {
-  return range(start, static_cast<size>(start + count), size {1});
+const enumerable::ienumerable<ulong>& enumerable::range(ulong start, ulong count) {
+  return range(start, static_cast<ulong>(start + count), ulong {1});
 }
 
-const enumerable::ienumerable<size>& enumerable::range(size start, size stop, size step) {
-  static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<size> {};
-  result = __opaque_xtd_linq_enumerable_collection__<size> {};
+const enumerable::ienumerable<ulong>& enumerable::range(ulong start, ulong stop, ulong step) {
+  static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<ulong> {};
+  result = __opaque_xtd_linq_enumerable_collection__<ulong> {};
   for (auto index = start; index < stop; index += step)
     result.items.push_back(index);
   return result;
