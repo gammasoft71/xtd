@@ -12,13 +12,13 @@ namespace {
   };
   
   inline void compute_bilinear_precalculate(bilinear_precalculate& precalculate, double source_pixel, xtd::int32 source_pixel_maximum) {
-    xtd::int32 source_pixel1 = static_cast<xtd::int32>(source_pixel);
-    xtd::int32 source_pixel2 = source_pixel1 == source_pixel_maximum ? source_pixel1 : source_pixel1 + 1;
+    auto source_pixel1 = static_cast<xtd::int32>(source_pixel);
+    auto source_pixel2 = xtd::math::clamp(source_pixel1 + 1, 0, source_pixel_maximum);
     
-    precalculate.decimals = source_pixel - static_cast<xtd::int32>(source_pixel);
+    precalculate.decimals = source_pixel - source_pixel1;
     precalculate.decimals1 = 1.0 - precalculate.decimals;
-    precalculate.offset1 = source_pixel1 < 0.0 ? 0 : source_pixel1 > source_pixel_maximum ? source_pixel_maximum : static_cast<xtd::int32>(source_pixel1);
-    precalculate.offset2 = source_pixel2 < 0.0 ? 0 : source_pixel2 > source_pixel_maximum ? source_pixel_maximum : static_cast<xtd::int32>(source_pixel2);
+    precalculate.offset1 = xtd::math::clamp(source_pixel1, 0, source_pixel_maximum);
+    precalculate.offset2 = source_pixel2;
   }
   
   void resample_bilinear_precalculates(std::vector<bilinear_precalculate>& precalculates, xtd::int32 old_size) {
@@ -90,10 +90,10 @@ namespace {
         const auto g2 = source_rgb[source_pixel_10].g * dx1 + source_rgb[source_pixel_11].g * dx;
         const auto b2 = source_rgb[source_pixel_10].b * dx1 + source_rgb[source_pixel_11].b * dx;
         
-        result_alpha[result_pixel].a = static_cast<xtd::byte>(a1 * dy1 + a2 * dy + 0.5);
-        result_rgb[result_pixel].r = static_cast<xtd::byte>(r1 * dy1 + r2 * dy + 0.5);
-        result_rgb[result_pixel].g = static_cast<xtd::byte>(g1 * dy1 + g2 * dy + 0.5);
-        result_rgb[result_pixel].b = static_cast<xtd::byte>(b1 * dy1 + b2 * dy + 0.5);
+        result_alpha[result_pixel].a = static_cast<xtd::byte>(xtd::math::round(a1 * dy1 + a2 * dy));
+        result_rgb[result_pixel].r = static_cast<xtd::byte>(xtd::math::round(r1 * dy1 + r2 * dy));
+        result_rgb[result_pixel].g = static_cast<xtd::byte>(xtd::math::round(g1 * dy1 + g2 * dy));
+        result_rgb[result_pixel].b = static_cast<xtd::byte>(xtd::math::round(b1 * dy1 + b2 * dy));
       }
     }
 
