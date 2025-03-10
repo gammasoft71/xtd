@@ -66,7 +66,7 @@ namespace {
           }
         }
         
-        if (sum_a < xtd::double_object::epsilon) continue;
+        if (sum_a < 1e-6) continue;
         result_alpha[result_pixel].a = static_cast<xtd::byte>(sum_a / averaged_pixels);
         result_rgb[result_pixel].r = static_cast<xtd::byte>(sum_r / sum_a);
         result_rgb[result_pixel].g = static_cast<xtd::byte>(sum_g / sum_a);
