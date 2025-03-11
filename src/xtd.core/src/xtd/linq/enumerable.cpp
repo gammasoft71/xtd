@@ -123,19 +123,3 @@ optional<double> enumerable::average(const ienumerable<optional<int64>>& source)
   return average / count;
 }
 
-const enumerable::ienumerable<int32>& enumerable::range(int32 count) {
-  return range(int32 {0}, count, int32 {1});
-}
-
-const enumerable::ienumerable<int32>& enumerable::range(int32 start, int32 count) {
-  return range(start, static_cast<int32>(start + count), int32 {1});
-}
-
-const enumerable::ienumerable<int32>& enumerable::range(int32 start, int32 stop, int32 step) {
-  if (stop < 0) throw_helper::throws(exception_case::argument_out_of_range);
-  static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<int32> {};
-  result = __opaque_xtd_linq_enumerable_collection__<int32> {};
-  for (auto index = start; index < stop; index += step)
-    result.items.push_back(index);
-  return result;
-}
