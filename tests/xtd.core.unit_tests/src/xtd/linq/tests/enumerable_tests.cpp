@@ -221,14 +221,30 @@ namespace xtd::linq::tests {
       assert::are_equal(0, enumerable::first_or_default(array<int> {}));
     }
 
+    void test_method_(range_with_count) {
+      collection_assert::are_equal({0, 1, 2, 3, 4}, enumerable::range(5));
+      assert::is_zero(enumerable::range(0).count());
+      assert::throws<argument_out_of_range_exception>([]{enumerable::range(-1);});
+    }
+
     void test_method_(range_with_start_and_count) {
       collection_assert::are_equal({1, 2, 3, 4, 5}, enumerable::range(1, 5));
       collection_assert::are_equal({11, 12, 13, 14, 15}, enumerable::range(11, 5));
       collection_assert::are_equal({-5, -4, -3, -2, -1}, enumerable::range(-5, 5));
       collection_assert::are_equal({-1, 0, 1, 2, 3}, enumerable::range(-1, 5));
+      assert::is_zero(enumerable::range(1, 0).count());
       assert::throws<argument_out_of_range_exception>([]{enumerable::range(1, -1);});
     }
-    
+
+    void test_method_(range_with_start_count_end_step) {
+      collection_assert::are_equal({1, 3, 5, 7, 9}, enumerable::range(1, 5, 2));
+      collection_assert::are_equal({11, 9, 7, 5, 3}, enumerable::range(11, 5, -2));
+      collection_assert::are_equal({-5, -3, -1, 1, 3}, enumerable::range(-5, 5, 2));
+      collection_assert::are_equal({-1, -3, -5, -7, -9}, enumerable::range(-1, 5, -2));
+      assert::throws<argument_exception>([]{enumerable::range(1, 5, 0);});
+      assert::throws<argument_out_of_range_exception>([]{enumerable::range(1, -1, 1);});
+    }
+
     void test_method_(to_list_with_enumerable) {
       assert::is_instance_of<list<int>>(enumerable::to_list(array {1, 2, 3}));
       collection_assert::are_equal({1, 2, 3}, enumerable::to_list(array {1, 2, 3}));
