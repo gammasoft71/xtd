@@ -23,6 +23,8 @@
 /// @cond
 template<class type_t>
 struct __opaque_xtd_linq_enumerable_collection__;
+template<class type_t, class param_t>
+struct __opaque_xtd_linq_lazy_enumerable__;
 /// @endcond
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -573,7 +575,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::range to generate a sequence of values.
       /// @include enumerable_range.cpp
       template<class type_t>
-      static const ienumerable<type_t>& range(type_t count) {
+      static auto range(type_t count) {
         auto step = type_t {};
         return range(type_t {}, count, ++step);
       }
@@ -586,7 +588,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::range to generate a sequence of values.
       /// @include enumerable_range.cpp
       template<class type_t>
-      static const ienumerable<type_t>& range(type_t start, type_t count) {
+      static auto range(type_t start, type_t count) {
         auto step = type_t {};
         return range(start, count, ++step);
       }
@@ -594,18 +596,23 @@ namespace xtd {
       /// @param start The value of the first integer in the sequence.
       /// @param count The number of sequential integers to generate.
       /// @param step The integer number specifying the incrementation.
-      /// @return An xtd::collections::generic::ienumerable <xtd::int32> that contains a range of sequential integral numbers.
+      /// @return An xtd::collections::generic::ienumerable that contains a range of sequential integral numbers.
       /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
       template<class type_t>
-      static const ienumerable<type_t>& range(type_t start, type_t count, type_t step) {
+      static auto range(type_t start, type_t count, type_t step) {
         if (step == type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
         if (count < type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<type_t> {};
-        result = __opaque_xtd_linq_enumerable_collection__<type_t> {};
-        auto value = start;
-        for (auto index = type_t {}; index < count; ++index)
-          result.items.push_back(value + index * step);
-        return result;
+        return __opaque_xtd_linq_lazy_enumerable__<type_t, std::tuple<type_t, type_t, type_t, type_t>> {
+          std::make_tuple(start, count, step, type_t {}),
+          [](std::tuple<type_t, type_t, type_t, type_t>& params) {
+            auto& result = std::get<0>(params);
+            auto& count = std::get<1>(params);
+            auto& step = std::get<2>(params);
+            auto& index = std::get<3>(params);
+            if (index++ >= count) return false;
+            if (index != 1) result += step;
+            return true;
+          }};
       }
 
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
