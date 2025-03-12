@@ -19,10 +19,12 @@ namespace xtd::linq {
 };
 
 template<class type_t>
-struct __opaque_xtd_linq_enumerable_collection__ : xtd::collections::generic::ienumerable<type_t> {
+struct __opaque_xtd_linq_enumerable_collection__ : xtd::collections::generic::ienumerable<type_t>, xtd::istringable {
   xtd::collections::generic::enumerator<type_t> get_enumerator() const override {
     return xtd::collections::generic::enumerator<>::create(items);
   }
+  
+  xtd::string to_string() const override;
 
 private:
   friend class xtd::linq::enumerable;
