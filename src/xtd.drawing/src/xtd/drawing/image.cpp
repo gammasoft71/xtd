@@ -608,7 +608,7 @@ void image::scale(const xtd::drawing::size& size, xtd::drawing::drawing_2d::inte
   auto result = bitmap {size};
   auto graphics = result.create_graphics();
   graphics.interpolation_mode(interpolation_mode);
-  graphics.draw_image(*this, result.get_bounds(graphics_unit::pixel), 0, 0, width(), height());
+  graphics.draw_image(*this, result.get_bounds(graphics_unit::pixel), 0.0f, 0.0f, static_cast<float>(width()), static_cast<float>(height()));
   *this = result;
 }
 
