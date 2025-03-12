@@ -104,7 +104,7 @@ namespace {
       count += 2;
     }
     
-    return color::from_argb(total_a / count, total_r / count, total_g / count, total_b / count);
+    return color::from_argb(static_cast<byte>(total_a / count), static_cast<byte>(total_r / count), static_cast<byte>(total_g / count), static_cast<byte>(total_b / count));
   }
 }
 
