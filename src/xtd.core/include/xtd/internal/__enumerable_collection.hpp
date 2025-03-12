@@ -10,6 +10,7 @@
 
 #include "../collections/generic/enumerator.hpp"
 #include "../collections/generic/ienumerable.hpp"
+#include "../istringable.hpp"
 #include <vector>
 
 /// @cond
@@ -30,11 +31,13 @@ private:
 };
 
 template<class type_t, class param_t>
-struct __opaque_xtd_linq_lazy_enumerable__ : xtd::collections::generic::ienumerable<type_t> {
+struct __opaque_xtd_linq_lazy_enumerable__ : xtd::collections::generic::ienumerable<type_t>, xtd::istringable {
   xtd::collections::generic::enumerator<type_t> get_enumerator() const override {
     auto* self = const_cast<__opaque_xtd_linq_lazy_enumerable__*>(this);
     return {xtd::new_ptr<lazy_enumerator>(self->params, self->runner)};
   }
+  
+  xtd::string to_string() const override;
   
 private:
   friend class xtd::linq::enumerable;
