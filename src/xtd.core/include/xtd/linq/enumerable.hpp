@@ -575,7 +575,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::range to generate a sequence of values.
       /// @include enumerable_range.cpp
       template<class type_t>
-      static auto range(type_t count) {
+      static const ienumerable<type_t>& range(type_t count) {
         auto step = type_t {};
         return range(type_t {}, count, ++step);
       }
@@ -588,7 +588,7 @@ namespace xtd {
       /// The following code example demonstrates how to use xtd::linq::enumerable::range to generate a sequence of values.
       /// @include enumerable_range.cpp
       template<class type_t>
-      static auto range(type_t start, type_t count) {
+      static const ienumerable<type_t>& range(type_t start, type_t count) {
         auto step = type_t {};
         return range(start, count, ++step);
       }
@@ -599,10 +599,11 @@ namespace xtd {
       /// @return An xtd::collections::generic::ienumerable that contains a range of sequential integral numbers.
       /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
       template<class type_t>
-      static auto range(type_t start, type_t count, type_t step) {
+      static const ienumerable<type_t>& range(type_t start, type_t count, type_t step) {
         if (step == type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
         if (count < type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        return __opaque_xtd_linq_lazy_enumerable__<type_t, std::tuple<type_t, type_t, type_t, type_t>> {
+        static thread_local auto result = __opaque_xtd_linq_lazy_enumerable__<type_t, std::tuple<type_t, type_t, type_t, type_t>> {};
+        result = __opaque_xtd_linq_lazy_enumerable__<type_t, std::tuple<type_t, type_t, type_t, type_t>> {
           std::make_tuple(start, count, step, type_t {}),
           [](std::tuple<type_t, type_t, type_t, type_t>& params) {
             auto& result = std::get<0>(params);
@@ -613,6 +614,7 @@ namespace xtd {
             if (index != 1) result += step;
             return true;
           }};
+        return result;
       }
 
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
