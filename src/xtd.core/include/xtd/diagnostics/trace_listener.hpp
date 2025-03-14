@@ -5,6 +5,7 @@
 #include <memory>
 #include <stdexcept>
 #include "../abstract.hpp"
+#include "../array.hpp"
 #include "../string.hpp"
 #include "trace_event_cache.hpp"
 #include "trace_event_type.hpp"
@@ -170,7 +171,7 @@ namespace xtd {
       /// @remarks <b>Important</b> This method is not intended to be called directly by application code but by members of the Debug, Trace, and TraceSource classes to write trace data to output.
       /// @remarks The default implementation writes the event_cache, source, eventType and id parameters in the header and footer of the trace. The data parameter is written as the body of the trace message. The ToString method of the data object is used to convert the object to a String.
       template<class objelassct>
-      void trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::string& source, const xtd::diagnostics::trace_event_type& event_type, int32 id, const std::vector<object>& data) {
+      void trace_data(const xtd::diagnostics::trace_event_cache& event_cache, const xtd::string& source, const xtd::diagnostics::trace_event_type& event_type, int32 id, const xtd::array<object>& data) {
         #if !defined(NDEBUG) || defined(DEBUG) || defined(TRACE)
         write_line(xtd::string::format("{} {}: {} : {}", source, event_type, id, xtd::string::join(", ", data)));
         write_event_cache(event_cache);
