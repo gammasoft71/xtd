@@ -77,7 +77,7 @@ string path::get_full_path(const string& path) {
   return native::file_system::get_full_path(path);
 }
 
-std::vector<char> path::get_invalid_path_chars() noexcept {
+array<char> path::get_invalid_path_chars() noexcept {
   return get_invalid_path_chars<char>();
 }
 

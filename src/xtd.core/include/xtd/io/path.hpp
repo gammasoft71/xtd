@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "file.hpp"
+#include "../array.hpp"
 #include "../core_export.hpp"
 #include "../static.hpp"
 #include "../string.hpp"
@@ -199,12 +200,12 @@ namespace xtd {
       /// @return An array containing the characters that are not allowed in path names.
       /// @remarks The array returned from this method is not guaranteed to contain the complete set of characters that are invalid in file and directory names. The full set of invalid characters can vary by file system. For example, on Windows-based desktop platforms, invalid path characters might include ASCII/Unicode characters 1 through 31, as well as quote ("), less than (<), greater than (>), pipe (|), backspace (\b), null (\0) and tab (\t).
       template<class char_t>
-      static std::vector<char_t> get_invalid_path_chars() noexcept {return {34, 60, 62, 124, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 0};}
+      static xtd::array<char_t> get_invalid_path_chars() noexcept {return {34, 60, 62, 124, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 0};}
       
       /// @brief Gets an array containing the characters that are not allowed in path names.
       /// @return An array containing the characters that are not allowed in path names.
       /// @remarks The array returned from this method is not guaranteed to contain the complete set of characters that are invalid in file and directory names. The full set of invalid characters can vary by file system. For example, on Windows-based desktop platforms, invalid path characters might include ASCII/Unicode characters 1 through 31, as well as quote ("), less than (<), greater than (>), pipe (|), backspace (\b), null (\0) and tab (\t).
-      static std::vector<char> get_invalid_path_chars() noexcept;
+      static xtd::array<char> get_invalid_path_chars() noexcept;
       
       /// @brief Gets the root directory information of the specified path.
       /// @param path The path from which to obtain root directory information.
