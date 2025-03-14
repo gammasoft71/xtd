@@ -223,6 +223,17 @@ namespace xtd {
       /// @include enumerable_append.cpp
       template<class source_t>
       static const ienumerable<source_t>& append(const ienumerable<source_t>& source, const source_t& element) noexcept {
+        static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
+        for (const auto& item : source)
+          result.items.push_back(item);
+        result.items.push_back(element);
+        return result;
+      }
+
+      /*
+      template<class source_t>
+      static const ienumerable<source_t>& append(const ienumerable<source_t>& source, const source_t& element) noexcept {
         using param_type = std::tuple<source_t, enumerator<source_t>, source_t, bool>;
         static thread_local auto result = __opaque_xtd_linq_lazy_enumerable__<source_t, param_type> {};
         
@@ -251,7 +262,7 @@ namespace xtd {
             auto& result = std::get<0>(params);
             auto& source_enumerator = std::get<1>(params);
             auto& appended = std::get<3>(params);
-
+            
             result = source_t {};
             source_enumerator.reset();
             appended = false;
@@ -259,8 +270,8 @@ namespace xtd {
         };
         
         return result;
-      }
-
+      }*/
+      
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
       /// @tparam source_t The type of the elements of source.
       /// @param source A sequence of values.
