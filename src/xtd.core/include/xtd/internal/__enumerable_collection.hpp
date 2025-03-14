@@ -18,25 +18,11 @@ namespace xtd::linq {
   class enumerable;
 };
 
-template<class type_t>
-struct __opaque_xtd_linq_enumerable_collection__ : xtd::collections::generic::ienumerable<type_t>, xtd::istringable {
-  xtd::collections::generic::enumerator<type_t> get_enumerator() const override {
-    return xtd::collections::generic::enumerator<>::create(items);
-  }
-  
-  xtd::string to_string() const override;
-
-private:
-  friend class xtd::linq::enumerable;
-  __opaque_xtd_linq_enumerable_collection__() = default;
-  std::vector<type_t> items;
-};
-
 template<class type_t, class param_t>
 struct __opaque_xtd_linq_lazy_enumerable__ : xtd::collections::generic::ienumerable<type_t>, xtd::istringable {
   xtd::collections::generic::enumerator<type_t> get_enumerator() const override {
     auto* self = const_cast<__opaque_xtd_linq_lazy_enumerable__*>(this);
-    return {xtd::new_ptr<lazy_enumerator>(self->params, self->runner)};
+    return {xtd::new_ptr<lazy_enumerator>(self->data_->params, self->data_->move_next, self->data_->reset)};
   }
   
   xtd::string to_string() const override;
@@ -44,27 +30,58 @@ struct __opaque_xtd_linq_lazy_enumerable__ : xtd::collections::generic::ienumera
 private:
   friend class xtd::linq::enumerable;
   using param_type = param_t;
-  using runner_type = std::function<bool(param_type&)>;
-  
+  using move_next_type = std::function<bool(param_type&)>;
+  using reset_type = std::function<void(param_type&)>;
+
   __opaque_xtd_linq_lazy_enumerable__() = default;
   __opaque_xtd_linq_lazy_enumerable__(__opaque_xtd_linq_lazy_enumerable__&&) = default;
   __opaque_xtd_linq_lazy_enumerable__(const __opaque_xtd_linq_lazy_enumerable__&) = default;
   __opaque_xtd_linq_lazy_enumerable__& operator =(const __opaque_xtd_linq_lazy_enumerable__&) = default;
-  __opaque_xtd_linq_lazy_enumerable__(const param_type& params, runner_type runner) : params {params}, runner {runner} {}
+  __opaque_xtd_linq_lazy_enumerable__(const param_type& params, move_next_type move_next, reset_type reset) {
+    data_->params = params;
+    data_->move_next = move_next;
+    data_->reset = reset;
+  }
   
   struct lazy_enumerator : xtd::collections::generic::ienumerator<type_t> {
-    lazy_enumerator(const param_type& params, runner_type& runner) : original_params {params}, params {params}, runner {runner} {}
-   
-    const type_t& current() const override {return std::get<0>(params);}
-    bool move_next() override {return runner(params);}
-    void reset() override {params = original_params;}
+    lazy_enumerator(param_type& params, move_next_type& move_next, reset_type& reset) : params_ {params}, move_next_ {move_next}, reset_ {reset} {}
     
-    const param_type& original_params;
-    param_type params;
-    runner_type runner;
+    const type_t& current() const override {
+      return std::get<0>(params_);
+    }
+    bool move_next() override {
+      return move_next_(params_);
+    }
+    void reset() override {
+      reset_(params_);
+    }
+
+  private:
+    param_type& params_;
+    move_next_type& move_next_;
+    reset_type& reset_;
   };
   
-  param_type params;
-  runner_type runner;
+  struct data {
+    param_type params;
+    move_next_type move_next;
+    reset_type reset;
+  };
+  
+  xtd::ptr<data> data_ = xtd::new_ptr<data>();
+};
+
+template<class type_t>
+struct __opaque_xtd_linq_enumerable_collection__ : xtd::collections::generic::ienumerable<type_t>, xtd::istringable {
+  xtd::collections::generic::enumerator<type_t> get_enumerator() const override {
+    return xtd::collections::generic::enumerator<>::create(items);
+  }
+  
+  xtd::string to_string() const override;
+  
+private:
+  friend class xtd::linq::enumerable;
+  __opaque_xtd_linq_enumerable_collection__() = default;
+  std::vector<type_t> items;
 };
 /// @endcond
