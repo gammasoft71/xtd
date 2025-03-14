@@ -54,7 +54,7 @@ size_t binary_writer::seek(size_t offset, std::ios::seekdir origin) {
 }
 
 void binary_writer::write(bool value) {
-  write(bit_converter::get_bytes(value));
+  write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
 void binary_writer::write(xtd::byte value) {
@@ -67,22 +67,24 @@ void binary_writer::write(char value) {
   stream_->put(value);
 }
 
-void binary_writer::write(const std::vector<xtd::byte>& buffer) {
-  write(buffer, 0, buffer.size());
+void binary_writer::write(const read_only_span<xtd::byte>& buffer) {
+  for (const auto& b : buffer)
+    write(b);
 }
 
-void binary_writer::write(const std::vector<xtd::byte>& buffer, size_t index, size_t count) {
+void binary_writer::write(const array<xtd::byte>& buffer, size_t index, size_t count) {
   if (!stream_) throw_helper::throws(exception_case::io);
   if (index + count > buffer.size()) throw_helper::throws(exception_case::argument);
   for (auto i = index; i < (index + count); ++i)
     write(buffer[i]);
 }
 
-void binary_writer::write(const std::vector<char>& buffer) {
-  write(buffer, 0, buffer.size());
+void binary_writer::write(const read_only_span<char>& buffer) {
+  for (const auto& b : buffer)
+    write(b);
 }
 
-void binary_writer::write(const std::vector<char>& buffer, size_t index, size_t count) {
+void binary_writer::write(const array<char>& buffer, size_t index, size_t count) {
   if (!stream_) throw_helper::throws(exception_case::io);
   if (index + count > buffer.size()) throw_helper::throws(exception_case::argument);
   for (auto i = index; i < (index + count); ++i)
@@ -90,19 +92,19 @@ void binary_writer::write(const std::vector<char>& buffer, size_t index, size_t 
 }
 
 void binary_writer::write(double value) {
-  write(bit_converter::get_bytes(value));
+  write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
 void binary_writer::write(int16 value) {
-  write(bit_converter::get_bytes(value));
+  write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
 void binary_writer::write(int32 value) {
-  write(bit_converter::get_bytes(value));
+  write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
 void binary_writer::write(int64 value) {
-  write(bit_converter::get_bytes(value));
+  write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
 void binary_writer::write(sbyte value) {
@@ -111,7 +113,7 @@ void binary_writer::write(sbyte value) {
 }
 
 void binary_writer::write(float value) {
-  write(bit_converter::get_bytes(value));
+  write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
 void binary_writer::write(const string& value) {
@@ -165,15 +167,15 @@ void binary_writer::write(const wchar* value) {
 }
 
 void binary_writer::write(uint16 value) {
-  write(bit_converter::get_bytes(value));
+  write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
 void binary_writer::write(uint32 value) {
-  write(bit_converter::get_bytes(value));
+  write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
 void binary_writer::write(uint64 value) {
-  write(bit_converter::get_bytes(value));
+  write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
 // From https://github.com/dotnet/runtime/blob/1d1bf92fcf43aa6981804dc53c5174445069c9e4/src/libraries/System.Private.CoreLib/src/System/IO/BinaryWriter.cs

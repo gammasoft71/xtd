@@ -5,8 +5,10 @@
 #define __XTD_STD_INTERNAL__
 #include "../internal/__xtd_std_version.hpp"
 #undef __XTD_STD_INTERNAL__
-#include "../optional.hpp"
+#include "../array.hpp"
 #include "../object.hpp"
+#include "../optional.hpp"
+#include "../read_only_span"
 #include "../string.hpp"
 #include <fstream>
 #include <array>
@@ -128,7 +130,7 @@ namespace xtd {
       /// @param buffer A byte array containing the data to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(const std::vector<xtd::byte>& buffer);
+      virtual void write(const xtd::read_only_span<xtd::byte>& buffer);
       
       /// @brief Writes a region of a byte array to the current stream.
       /// @param buffer A byte array containing the data to write.
@@ -137,13 +139,13 @@ namespace xtd {
       /// @exception xtd::argument_exception The buffer length minus index is less than count.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(const std::vector<xtd::byte>& buffer, size_t index, size_t count);
+      virtual void write(const xtd::array<xtd::byte>& buffer, size_t index, size_t count);
       
       /// @brief Writes a character array to the underlying stream.
       /// @param buffer A character array containing the data to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(const std::vector<char>& buffer);
+      virtual void write(const xtd::read_only_span<char>& buffer);
       
       /// @brief Writes a region of a character array to the current stream.
       /// @param buffer A character array containing the data to write.
@@ -152,7 +154,7 @@ namespace xtd {
       /// @exception xtd::argument_exception The buffer length minus index is less than count.
       /// @exception xtd::io::io_exception An I/O error occurs.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      virtual void write(const std::vector<char>& buffer, size_t index, size_t count);
+      virtual void write(const xtd::array<char>& buffer, size_t index, size_t count);
       
       /// @brief Writes an eight-byte floating-point value to the current stream and advances the stream position by eight bytes.
       /// @param value The eight-byte floating-point value to write.
@@ -239,8 +241,8 @@ namespace xtd {
       binary_writer& operator <<(const std::array<xtd::byte, size>& value) {write(value); return *this;}
       template<size_t size>
       binary_writer& operator <<(const std::array<char, size>& value) {write(value); return *this;}
-      binary_writer& operator <<(const std::vector<xtd::byte>& value) {write(value); return *this;}
-      binary_writer& operator <<(const std::vector<char>& value) {write(value); return *this;}
+      binary_writer& operator <<(const std::vector<xtd::byte>& value) {write(value, 0, value.size()); return *this;}
+      binary_writer& operator <<(const std::vector<char>& value) {write(value, 0, value.size()); return *this;}
       binary_writer& operator <<(double value) {write(value); return *this;}
       binary_writer& operator <<(int16 value) {write(value); return *this;}
       binary_writer& operator <<(int32 value) {write(value); return *this;}
