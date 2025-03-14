@@ -24,7 +24,16 @@ int32 text_reader::read() {
   return EOF;
 }
 
-size_t text_reader::read(std::vector<char>& buffer, size_t index, size_t count) {
+size_t text_reader::read(span<char>& buffer) {
+  for (auto i = 0_z; i <buffer.size; i++) {
+    auto current = read();
+    if (current == EOF) return i;
+    buffer[i] = static_cast<char>(current);
+  }
+  return buffer.size();
+}
+
+size_t text_reader::read(array<char>& buffer, size_t index, size_t count) {
   if (index + count > buffer.size()) throw_helper::throws(exception_case::argument);
   for (auto i = 0_z; i < count; i++) {
     auto current = read();
@@ -34,7 +43,11 @@ size_t text_reader::read(std::vector<char>& buffer, size_t index, size_t count) 
   return count;
 }
 
-size_t text_reader::read_block(std::vector<char>& buffer, size_t index, size_t count) {
+size_t text_reader::read_block(span<char>& buffer) {
+  return read(buffer);
+}
+
+size_t text_reader::read_block(array<char>& buffer, size_t index, size_t count) {
   return read(buffer, index, count);
 }
 
