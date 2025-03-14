@@ -3,9 +3,6 @@
 using namespace xtd;
 using namespace xtd::diagnostics;
 
-trace_listener_collection::trace_listener_collection(const trace_listener_collection::allocator_type& allocator) : trace_listener_collection::base(allocator) {
-}
-
 trace_listener_collection::trace_listener_collection(const std::initializer_list<value_type>& il) : trace_listener_collection::base(il) {
 }
 
@@ -14,6 +11,10 @@ trace_listener_collection::trace_listener_collection(const trace_listener_collec
 trace_listener_collection& trace_listener_collection::operator =(const trace_listener_collection& collection) {
   base::operator =(collection);
   return *this;
+}
+
+bool trace_listener_collection::equals(const object& value) const noexcept {
+  return is<trace_listener_collection>(value) && equals(static_cast<const trace_listener_collection&>(value));
 }
 
 bool trace_listener_collection::equals(const trace_listener_collection& value) const noexcept {

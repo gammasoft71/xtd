@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include <memory>
-#include <vector>
+#include "../collections/generic/list.hpp"
 #include "../iequatable.hpp"
 #include "trace_listener.hpp"
 
@@ -13,10 +13,10 @@ namespace xtd {
   namespace diagnostics {
     /// @brief Represents a collection of xtd::diagnostics::trace_listener.
     /// ```cpp
-    /// class core_export_ trace_listener_collection : public std::vector<xtd::sptr<xtd::diagnostics::trace_listener>>
+    /// class core_export_ trace_listener_collection : public xtd::collections::generic::list<xtd::sptr<xtd::diagnostics::trace_listener>>
     /// ```
     /// @par Inheritance
-    /// std::vector<xtd::sptr<xtd::diagnostics::trace_listener>> → xtd::diagnostics::trace_listener_collection
+    /// xtd::collections::generic::list<xtd::sptr<xtd::diagnostics::trace_listener>> → xtd::diagnostics::trace_listener_collection
     /// @par Header
     /// ```cpp
     /// #include <xtd/diagnostics/trace_listener_collection>
@@ -26,22 +26,20 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core
-    class core_export_ trace_listener_collection : public std::vector<xtd::sptr<xtd::diagnostics::trace_listener>>, public xtd::iequatable<trace_listener_collection> {
+    class core_export_ trace_listener_collection : public xtd::collections::generic::list<xtd::sptr<xtd::diagnostics::trace_listener>>, public xtd::iequatable<trace_listener_collection> {
     public:
       /// @name Public Aliases
       
       /// @{
       /// @brief Represents the base type of the collection.
-      using base = std::vector<value_type>;
+      using base = xtd::collections::generic::list<value_type>;
       /// @}
       
       /// @name Public Constructors
       
       /// @{
       /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified allocator (optional).
-      /// @param allocator The allocator associate to the collection (optional).
-      /// @remarks If allocator not specified, the std::allocator<value_type> is used.
-      explicit trace_listener_collection(const allocator_type& allocator = allocator_type());
+      explicit trace_listener_collection() = default;
       /// @brief Creates a new object xtd::diagnostics::trace_listener_collection with specified initializer list.
       /// @param il The initializer list that contains xtd::diagnostics::trace_listener items to fill the collection.
       trace_listener_collection(const std::initializer_list<value_type>& il); // Can't be explicit by design.
@@ -54,6 +52,8 @@ namespace xtd {
       /// @endcond
       
       /// @{
+      bool equals(const object& value) const noexcept override;
+      using list::equals;
       bool equals(const trace_listener_collection& value) const noexcept override;
       /// @}
       
