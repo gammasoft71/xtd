@@ -16,7 +16,7 @@ const date_time& trace_event_cache::date_time() const noexcept {
   return date_time_;
 }
 
-std::vector<string> trace_event_cache::logical_operation_stack() const noexcept {
+array<string> trace_event_cache::logical_operation_stack() const noexcept {
   return std::vector<string>();
 }
 
