@@ -20,13 +20,13 @@ namespace xtd::io::tests {
     }
     
     void test_method_(read_buffer_with_empty_string) {
-      std::vector<char> buffer(10);
+      array<char> buffer(10);
       assert::are_equal(0u, string_reader("").text_reader::read(buffer, 0, 10));
       collection_assert::are_equal({'\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0'}, buffer);
     }
     
     void test_method_(read_block_with_empty_string) {
-      std::vector<char> buffer(10);
+      array<char> buffer(10);
       assert::are_equal(0u, string_reader("").text_reader::read_block(buffer, 0, 10));
       collection_assert::are_equal({'\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0'}, buffer);
     }
@@ -48,13 +48,13 @@ namespace xtd::io::tests {
     }
     
     void test_method_(read_buffer_with_one_char_string) {
-      std::vector<char> buffer(10);
+      array<char> buffer(10);
       assert::are_equal(1u, string_reader("a").text_reader::read(buffer, 0, 10));
       collection_assert::are_equal({'a', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0'}, buffer);
     }
     
     void test_method_(read_block_with_one_char_string) {
-      std::vector<char> buffer(10);
+      array<char> buffer(10);
       assert::are_equal(1u, string_reader("a").text_reader::read_block(buffer, 0, 10));
       collection_assert::are_equal({'a', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0', '\0'}, buffer);
     }
@@ -76,13 +76,13 @@ namespace xtd::io::tests {
     }
     
     void test_method_(read_buffer_with_multi_char_string) {
-      std::vector<char> buffer(10);
+      array<char> buffer(10);
       assert::are_equal(10u, string_reader("abcdefghijklmno").text_reader::read(buffer, 0, 10));
       collection_assert::are_equal({'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'}, buffer);
     }
     
     void test_method_(read_block_with_multi_char_string) {
-      std::vector<char> buffer(10);
+      array<char> buffer(10);
       assert::are_equal(10u, string_reader("abcdefghijklmno").text_reader::read_block(buffer, 0, 10));
       collection_assert::are_equal({'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'}, buffer);
     }
@@ -104,13 +104,13 @@ namespace xtd::io::tests {
     }
     
     void test_method_(read_buffer_with_multi_line_string) {
-      std::vector<char> buffer(10);
+      array<char> buffer(10);
       assert::are_equal(10u, string_reader("Line 1\nLine 2\nLine 3").text_reader::read(buffer, 0, 10));
       collection_assert::are_equal({'L', 'i', 'n', 'e', ' ', '1', '\n', 'L', 'i', 'n'}, buffer);
     }
     
     void test_method_(read_block_with_multi_line_string) {
-      std::vector<char> buffer(10);
+      array<char> buffer(10);
       assert::are_equal(10u, string_reader("Line 1\nLine 2\nLine 3").text_reader::read_block(buffer, 0, 10));
       collection_assert::are_equal({'L', 'i', 'n', 'e', ' ', '1', '\n', 'L', 'i', 'n'}, buffer);
     }
