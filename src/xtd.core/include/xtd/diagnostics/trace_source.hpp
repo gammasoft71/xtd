@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include <map>
+#include "../array.hpp"
 #include "../object.hpp"
 #include "default_trace_listener.hpp"
 #include "source_levels.hpp"
@@ -114,7 +115,7 @@ namespace xtd {
       /// @remarks The trace_data method, like the trace_event method, is intended for automated tools, but it also allows the attaching of an additional object, such as an exception instance, to the trace.
       /// @remarks The trace_data method calls the source_switch::should_trace method of the source_switch object returned by the source_switch property. If should_trace returns `true`, trace_data calls the corresponding trace_data method on all listeners. Otherwise, trace_data returns without calling the listeners' methods.
       template<class object_t>
-      void trace_data(const xtd::diagnostics::trace_event_type& event_type, int32 id, const std::vector<object_t>& data) {
+      void trace_data(const xtd::diagnostics::trace_event_type& event_type, int32 id, const xtd::array<object_t>& data) {
         #if defined(TRACE)
         if (source_switch_.should_trace(event_type))
           for (auto listener : listeners_)
