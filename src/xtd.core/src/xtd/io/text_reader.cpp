@@ -25,7 +25,7 @@ int32 text_reader::read() {
 }
 
 size_t text_reader::read(span<char>& buffer) {
-  for (auto i = 0_z; i <buffer.size; i++) {
+  for (auto i = 0_z; i < buffer.size(); i++) {
     auto current = read();
     if (current == EOF) return i;
     buffer[i] = static_cast<char>(current);
