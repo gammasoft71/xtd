@@ -2,7 +2,6 @@
 /// @brief Contains xtd::diagnostics::trace_event_cache class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include <string>
 #include "../array.hpp"
 #include "../date_time.hpp"
 #include "../object.hpp"
