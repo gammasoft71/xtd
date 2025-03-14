@@ -1,5 +1,6 @@
 #include "../../include/xtd/convert.hpp"
 #include "../../include/xtd/math.hpp"
+#include "../../include/xtd/fixed_array.hpp"
 
 using namespace xtd;
 using namespace xtd::helpers;
@@ -17,14 +18,15 @@ array<byte> convert::from_base64_string(const string& s) {
   auto i = 0_z;
   auto j = 0_z;
   auto in_ = 0_z;
-  byte char_array_4[4], char_array_3[3];
+  auto char_array_4 = fixed_array<byte, 4> {};
+  auto char_array_3 = fixed_array<byte, 3> {};
   std::vector<byte> ret;
   
   while (in_len-- && ( s[in_] != '=') && is_base64(s[in_])) {
     char_array_4[i++] = s[in_]; in_++;
     if (i == 4) {
       for (i = 0; i < 4; i++)
-        char_array_4[i] = base64_chars.find(char_array_4[i]);
+        char_array_4[i] = static_cast<byte>(base64_chars.find(char_array_4[i]));
       
       char_array_3[0] = (char_array_4[0] << 2) + ((char_array_4[1] & 0x30) >> 4);
       char_array_3[1] = ((char_array_4[1] & 0xf) << 4) + ((char_array_4[2] & 0x3c) >> 2);
@@ -41,7 +43,7 @@ array<byte> convert::from_base64_string(const string& s) {
       char_array_4[j] = 0;
     
     for (j = 0; j <4; j++)
-      char_array_4[j] = base64_chars.find(char_array_4[j]);
+      char_array_4[j] = static_cast<byte>(base64_chars.find(char_array_4[j]));
     
     char_array_3[0] = (char_array_4[0] << 2) + ((char_array_4[1] & 0x30) >> 4);
     char_array_3[1] = ((char_array_4[1] & 0xf) << 4) + ((char_array_4[2] & 0x3c) >> 2);

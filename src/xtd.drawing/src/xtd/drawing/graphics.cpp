@@ -398,7 +398,7 @@ void graphics::draw_image(const xtd::drawing::image& image, int32 x, int32 y, in
 }
 
 void graphics::draw_image(const xtd::drawing::image& image, float x, float y, float width, float height) {
-  draw_image(image, rectangle_f {x, y, width, height}, 0, 0, image.width(), image.height());
+  draw_image(image, rectangle_f {x, y, width, height}, 0, 0, static_cast<float>(image.width()), static_cast<float>(image.height()));
 }
 
 void graphics::draw_image(const image& image, int32 x, int32 y) {
@@ -437,7 +437,7 @@ void graphics::draw_image(const xtd::drawing::image& image, const xtd::drawing::
   if (dest_rect.width == 0 || dest_rect.height == 0) return;
   auto result_image = image;
   if (src_x != 0 || src_y != 0 || src_width != result_image.width() || src_height != result_image.height()) {
-    result_image = bitmap(to_pixels(src_width), to_pixels(src_height));
+    result_image = bitmap(static_cast<int32>(to_pixels(src_width)), static_cast<int32>(to_pixels(src_height)));
     auto graphics_result_image = result_image.create_graphics();
     native::graphics::draw_image(graphics_result_image.handle(), image.handle(), 0, 0, src_width, src_height, src_x, src_y, src_width, src_height);
     graphics_result_image.flush();
