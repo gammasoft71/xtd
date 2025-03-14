@@ -21,8 +21,7 @@ namespace xtd::linq {
 template<class type_t, class param_t>
 struct __opaque_xtd_linq_lazy_enumerable__ : xtd::collections::generic::ienumerable<type_t>, xtd::istringable {
   xtd::collections::generic::enumerator<type_t> get_enumerator() const override {
-    auto* self = const_cast<__opaque_xtd_linq_lazy_enumerable__*>(this);
-    return {xtd::new_ptr<lazy_enumerator>(self->data_->params, self->data_->move_next, self->data_->reset)};
+    return {xtd::new_ptr<lazy_enumerator>(data_->params, data_->move_next, data_->reset)};
   }
   
   xtd::string to_string() const override;
@@ -68,7 +67,7 @@ private:
     reset_type reset;
   };
   
-  xtd::ptr<data> data_ = xtd::new_ptr<data>();
+  mutable xtd::ptr<data> data_ = xtd::new_ptr<data>();
 };
 
 template<class type_t>
