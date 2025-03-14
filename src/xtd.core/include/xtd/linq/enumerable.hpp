@@ -5,6 +5,7 @@
 #include "../collections/generic/helpers/allocator.hpp"
 //#include "../collections/generic/iequality_comparer.hpp"
 #include "../collections/generic/equality_comparer.hpp"
+#include "../collections/generic/enumerator.hpp"
 #define __XTD_CORE_INTERNAL__
 #include "../internal/__array_definition.hpp"
 #include "../internal/__key_value_pair_definition.hpp"
@@ -59,6 +60,10 @@ namespace xtd {
       /// @name Public Aliases
       
       /// @{
+      /// @brief Represents the enumerator value type.
+      template<class type_t>
+      using enumerator = typename xtd::collections::generic::enumerator<type_t>;
+      
       /// @brief Represents the ienumerable value type.
       template<class type_t>
       using iequality_comparer = typename xtd::collections::generic::iequality_comparer<type_t>;
@@ -218,11 +223,41 @@ namespace xtd {
       /// @include enumerable_append.cpp
       template<class source_t>
       static const ienumerable<source_t>& append(const ienumerable<source_t>& source, const source_t& element) noexcept {
-        static thread_local auto result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        result = __opaque_xtd_linq_enumerable_collection__<source_t> {};
-        for (const auto& item : source)
-          result.items.push_back(item);
-        result.items.push_back(element);
+        using param_type = std::tuple<source_t, enumerator<source_t>, source_t, bool>;
+        static thread_local auto result = __opaque_xtd_linq_lazy_enumerable__<source_t, param_type> {};
+        
+        result = __opaque_xtd_linq_lazy_enumerable__<source_t, param_type> {
+          std::make_tuple(source_t {}, source.get_enumerator(), element, false),
+          [](param_type& params) {
+            auto& result = std::get<0>(params);
+            auto& source_enumerator = std::get<1>(params);
+            const auto& element = std::get<2>(params);
+            auto& appended = std::get<3>(params);
+            
+            if (source_enumerator.move_next()) {
+              result = source_enumerator.current();
+              return true;
+            }
+            
+            if (!appended) {
+              appended = true;
+              result = element;
+              return true;
+            }
+            
+            return false;
+          },
+          [](param_type& params) {
+            auto& result = std::get<0>(params);
+            auto& source_enumerator = std::get<1>(params);
+            auto& appended = std::get<3>(params);
+
+            result = source_t {};
+            source_enumerator.reset();
+            appended = false;
+          }
+        };
+        
         return result;
       }
 
@@ -600,20 +635,26 @@ namespace xtd {
       /// @exception xtd::argument_out_of_range_exception `count` is less than 0.
       template<class type_t>
       static const ienumerable<type_t>& range(type_t start, type_t count, type_t step) {
+        using param_type = std::tuple<type_t, type_t, type_t, type_t>;
+        static thread_local auto result = __opaque_xtd_linq_lazy_enumerable__<type_t, param_type> {};
+
         if (step == type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
         if (count < type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
-        static thread_local auto result = __opaque_xtd_linq_lazy_enumerable__<type_t, std::tuple<type_t, type_t, type_t, type_t>> {};
-        result = __opaque_xtd_linq_lazy_enumerable__<type_t, std::tuple<type_t, type_t, type_t, type_t>> {
+
+        result = __opaque_xtd_linq_lazy_enumerable__<type_t, param_type> {
           std::make_tuple(start, count, step, type_t {}),
-          [](std::tuple<type_t, type_t, type_t, type_t>& params) {
+          [](param_type& params) {
             auto& result = std::get<0>(params);
             auto& count = std::get<1>(params);
             auto& step = std::get<2>(params);
             auto& index = std::get<3>(params);
-            if (index++ >= count) return false;
-            if (index != 1) result += step;
-            return true;
-          }};
+            if (index != 0) result += step;
+            return index++ < count;
+          },
+          [start, count, step](param_type& params) {
+            params = std::make_tuple(start, count, step, type_t {});
+          }
+        };
         return result;
       }
 
