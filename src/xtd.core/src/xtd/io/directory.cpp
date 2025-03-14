@@ -226,11 +226,11 @@ string directory::get_current_directory() {
   return path;
 }
 
-std::vector<string> directory::get_directories(const string& path) {
+xtd::array<string> directory::get_directories(const string& path) {
   return get_directories(path, "*");
 }
 
-std::vector<string> directory::get_directories(const string& path, const string& search_pattern) {
+xtd::array<string> directory::get_directories(const string& path, const string& search_pattern) {
   return {std::begin(enumerate_directories(path, search_pattern)), std::end(enumerate_directories(path, search_pattern))};
 }
 
@@ -238,19 +238,19 @@ string directory::get_directory_root(const string& path) {
   return path::get_path_root(path);
 }
 
-std::vector<string> directory::get_files(const string& path) {
+xtd::array<string> directory::get_files(const string& path) {
   return get_files(path, "*");
 }
 
-std::vector<string> directory::get_files(const string& path, const string& search_pattern) {
+xtd::array<string> directory::get_files(const string& path, const string& search_pattern) {
   return {std::begin(enumerate_files(path, search_pattern)), std::end(enumerate_files(path, search_pattern))};
 }
 
-std::vector<string> directory::get_file_system_entries(const string& path) {
+xtd::array<string> directory::get_file_system_entries(const string& path) {
   return get_file_system_entries(path, "*");
 }
 
-std::vector<string> directory::get_file_system_entries(const string& path, const string& search_pattern) {
+xtd::array<string> directory::get_file_system_entries(const string& path, const string& search_pattern) {
   return {std::begin(enumerate_file_system_entries(path, search_pattern)), std::end(enumerate_file_system_entries(path, search_pattern))};
 }
 
@@ -276,7 +276,7 @@ date_time directory::get_last_write_time(const string& path) {
   return date_time::from_time_t(last_write_time, date_time_kind::local);
 }
 
-std::vector<string> directory::get_logical_drives() {
+xtd::array<string> directory::get_logical_drives() {
   auto logical_drives = std::vector<string> {};
   auto drives = drive_info::get_drives();
   std::for_each(drives.begin(), drives.end(), [&](auto drive) {logical_drives.emplace_back(drive.name());});
