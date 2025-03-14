@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "directory_info.hpp"
+#include "../array.hpp"
 #include "../core_export.hpp"
 #include "../date_time.hpp"
 #include "../iequatable.hpp"
@@ -652,12 +653,12 @@ namespace xtd {
       ///   // that are found, and process the files they contain.
       ///   static void process_directory(const string& target_directory) {
       ///     // Process the list of files found in the directory.
-      ///     std::vector<string> file_entries = directory::get_files(target_directory);
+      ///     xtd::array<string> file_entries = directory::get_files(target_directory);
       ///     for (string file_name : file_entries)
       ///       process_file(file_name);
       ///
       ///     // Recurse into subdirectories of this directory.
-      ///     std::vector<string> subdirectory_entries = directory::get_directories(target_directory);
+      ///     xtd::array<string> subdirectory_entries = directory::get_directories(target_directory);
       ///     for (string subdirectory : subdirectory_entries)
       ///       process_directory(subdirectory);
       ///   }
@@ -676,7 +677,7 @@ namespace xtd {
       /// @remarks The names returned by this method are prefixed with the directory information provided in path.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      static std::vector<xtd::string> get_directories(const xtd::string& path);
+      static xtd::array<xtd::string> get_directories(const xtd::string& path);
       /// @brief Returns the names of subdirectories (including their paths) that match the specified search pattern in the specified directory.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
       /// @param search_pattern The search string to match against the names of subdirectories in path. This parameter can contain a combination of valid literal and wildcard characters, but it doesn't support regular expressions.
@@ -724,7 +725,7 @@ namespace xtd {
       /// @remarks The path parameter can specify relative or absolute path information, and is not case-sensitive. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The xtd::io::directory::enumerate_directories and xtd::io::directory::get_directories methods differ as follows: When you use xtd::io::directory::enumerate_directories, you can start enumerating the collection of names before the whole collection is returned; when you use xtd::io::directory::get_directories, you must wait for the whole array of names to be returned before you can access the array. Therefore, when you are working with many files and directories, xtd::io::directory::enumerate_directories can be more efficient.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      static std::vector<xtd::string> get_directories(const xtd::string& path, const xtd::string& search_pattern);
+      static xtd::array<xtd::string> get_directories(const xtd::string& path, const xtd::string& search_pattern);
       
       /// @brief Returns the volume information, root information, or both for the specified path.
       /// @param path The path of a file or directory.
@@ -805,12 +806,12 @@ namespace xtd {
       ///   // that are found, and process the files they contain.
       ///   static void process_directory(const string& target_directory) {
       ///     // Process the list of files found in the directory.
-      ///     std::vector<string> file_entries = directory::get_files(target_directory);
+      ///     xtd::array<string> file_entries = directory::get_files(target_directory);
       ///     for (string file_name : file_entries)
       ///       process_file(file_name);
       ///
       ///     // Recurse into subdirectories of this directory.
-      ///     std::vector<string> subdirectory_entries = directory::get_directories(target_directory);
+      ///     xtd::array<string> subdirectory_entries = directory::get_directories(target_directory);
       ///     for (string subdirectory : subdirectory_entries)
       ///       process_directory(subdirectory);
       ///   }
@@ -830,7 +831,7 @@ namespace xtd {
       /// @remarks The order of the returned file names is not guaranteed; use the std:::sort method if a specific sort order is required.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      static std::vector<xtd::string> get_files(const xtd::string& path);
+      static xtd::array<xtd::string> get_files(const xtd::string& path);
       /// @brief Returns the names of files (including their paths) that match the specified search pattern in the specified directory.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
       /// @param search_pattern The search string to match against the names of files in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
@@ -884,7 +885,7 @@ namespace xtd {
       /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      static std::vector<xtd::string> get_files(const xtd::string& path, const xtd::string& search_pattern);
+      static xtd::array<xtd::string> get_files(const xtd::string& path, const xtd::string& search_pattern);
       
       /// @brief Returns the names of all files and subdirectories in a specified path.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
@@ -998,7 +999,7 @@ namespace xtd {
       /// @remarks The path parameter is permitted to specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      static std::vector<xtd::string> get_file_system_entries(const xtd::string& path);
+      static xtd::array<xtd::string> get_file_system_entries(const xtd::string& path);
       /// @brief Returns an array of file names and directory names that match a search pattern in a specified path.
       /// @param path The relative or absolute path to the directory to search. This string is not case-sensitive.
       /// @param serach_pattern The search string to match against the names of file and directories in path. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
@@ -1123,7 +1124,7 @@ namespace xtd {
       /// @remarks The path parameter can specify relative or absolute path information. Relative path information is interpreted as relative to the current working directory. To obtain the current working directory, see xtd::io::directory::get_current_directory.
       /// @remarks The path parameter is not case-sensitive.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      static std::vector<xtd::string> get_file_system_entries(const xtd::string& path, const xtd::string& search_pattern);
+      static xtd::array<xtd::string> get_file_system_entries(const xtd::string& path, const xtd::string& search_pattern);
       
       /// @brief Returns the date and time the specified file or directory was last accessed.
       /// @param path The file or directory for which to obtain access date and time information.
@@ -1332,7 +1333,7 @@ namespace xtd {
       /// ```
       /// @remarks xtd::io::directory::get_logical_drives returns all of the accessible drives on a particular machine, including the floppy drive and any optical drives.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      static std::vector<xtd::string> get_logical_drives();
+      static xtd::array<xtd::string> get_logical_drives();
       
       /// @brief Retrieves the parent directory of the specified path, including both absolute and relative paths.
       /// @param path The path for which to retrieve the parent directory.
