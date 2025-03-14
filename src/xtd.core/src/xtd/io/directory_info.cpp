@@ -241,27 +241,27 @@ directory_info::file_system_info_iterator directory_info::enumerate_file_system_
   return file_system_info_iterator {full_path_, pattern};
 }
 
-std::vector<directory_info> directory_info::get_directories() const {
+xtd::array<directory_info> directory_info::get_directories() const {
   return get_directories("*");
 }
 
-std::vector<directory_info> directory_info::get_directories(const string& pattern) const {
+xtd::array<directory_info> directory_info::get_directories(const string& pattern) const {
   return {std::begin(enumerate_directories(pattern)), std::end(enumerate_directories(pattern))};
 }
 
-std::vector<file_info> directory_info::get_files() const {
+xtd::array<file_info> directory_info::get_files() const {
   return get_files("*");
 }
 
-std::vector<file_info> directory_info::get_files(const string& pattern) const {
+xtd::array<file_info> directory_info::get_files(const string& pattern) const {
   return {std::begin(enumerate_files(pattern)), std::end(enumerate_files(pattern))};
 }
 
-std::vector<xtd::sptr<file_system_info>> directory_info::get_file_system_infos() const {
+xtd::array<xtd::sptr<file_system_info>> directory_info::get_file_system_infos() const {
   return get_file_system_infos("*");
 }
 
-std::vector<xtd::sptr<file_system_info>> directory_info::get_file_system_infos(const string& pattern) const {
+xtd::array<xtd::sptr<file_system_info>> directory_info::get_file_system_infos(const string& pattern) const {
   return {std::begin(enumerate_file_system_infos(pattern)), std::end(enumerate_file_system_infos(pattern))};
 }
 

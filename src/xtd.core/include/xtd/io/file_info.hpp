@@ -65,6 +65,10 @@ namespace xtd {
       explicit file_info(const xtd::string& file_name);
       /// @}
       
+      /// @cond
+      file_info() = default;
+      /// @endcond
+      
       /// @name Public Properties
       
       /// @{
@@ -835,9 +839,6 @@ namespace xtd {
       /// @remarks Pass an empty string ("") to the dest_backup_file_name parameter if you do not want to create a backup of the file being replaced.
       file_info replace(const xtd::string& destination_file_name, const xtd::string& destination_backup_file_name);
       /// @}
-      
-    private:
-      file_info() = default;
     };
   }
 }

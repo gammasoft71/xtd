@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "file_system_info.hpp"
+#include "../array.hpp"
 #include "../iequatable.hpp"
 #include <iterator>
 #include <memory>
@@ -284,6 +285,10 @@ namespace xtd {
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
       explicit directory_info(const xtd::string& path);
       /// @}
+      
+      /// @cond      
+      directory_info() = default;
+      /// @endcond
       
       /// @name Properrties
       
@@ -846,7 +851,7 @@ namespace xtd {
       /// * xtd::io::file_system_info::last_access_time
       /// * xtd::io::file_system_info::last_write_time
       /// * xtd::io::file_system_info::size
-      std::vector<xtd::io::directory_info> get_directories() const;
+      xtd::array<xtd::io::directory_info> get_directories() const;
       /// @brief Returns an array of directories in the current DirectoryInfo matching the given search criteria.
       /// @param search_pattern The search string to match against the names of directories. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
       /// @return An array of type xtd::io::directory_info matching search_pattern.
@@ -894,7 +899,7 @@ namespace xtd {
       /// * xtd::io::file_system_info::last_access_time
       /// * xtd::io::file_system_info::last_write_time
       /// * xtd::io::file_system_info::size
-      std::vector<xtd::io::directory_info> get_directories(const xtd::string& search_pattern) const;
+      xtd::array<xtd::io::directory_info> get_directories(const xtd::string& search_pattern) const;
       
       /// @brief Returns a file list from the current directory.
       /// @return An array of type xtd::io::file_info.
@@ -965,7 +970,7 @@ namespace xtd {
       /// * xtd::io::file_system_info::last_access_time
       /// * xtd::io::file_system_info::last_write_time
       /// * xtd::io::file_system_info::size
-      std::vector<xtd::io::file_info> get_files() const;
+      xtd::array<xtd::io::file_info> get_files() const;
       /// @brief Returns a file list from the current directory matching the given search pattern.
       /// @param search_pattern The search string to match against the names of files. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
       /// @return An array of type xtd::io::file_info.
@@ -1042,7 +1047,7 @@ namespace xtd {
       /// * xtd::io::file_system_info::last_access_time
       /// * xtd::io::file_system_info::last_write_time
       /// * xtd::io::file_system_info::size
-      std::vector<xtd::io::file_info> get_files(const xtd::string& search_pattern) const;
+      xtd::array<xtd::io::file_info> get_files(const xtd::string& search_pattern) const;
       
       /// @brief Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and subdirectories in a directory.
       /// @return An array of strongly typed xtd::io::file_system_info entries.
@@ -1072,7 +1077,7 @@ namespace xtd {
       ///       }
       ///
       ///       // Call the GetFileSystemInfos method.
-      ///       std::vector<xtd::sptr<file_system_info>> infos = dir.get_file_system_infos();
+      ///       xtd::array<xtd::sptr<file_system_info>> infos = dir.get_file_system_infos();
       ///
       ///       console::write_line("Working...");
       ///
@@ -1089,7 +1094,7 @@ namespace xtd {
       ///   }
       ///
       /// private:
-      ///   static void list_directories_and_files(std::vector<xtd::sptr<file_system_info>> fs_info) {
+      ///   static void list_directories_and_files(xtd::array<xtd::sptr<file_system_info>> fs_info) {
       ///     // Iterate through each item.
       ///     for (xtd::sptr<file_system_info> i : fs_info) {
       ///       // Check to see if this is a directory_info object.
@@ -1127,7 +1132,7 @@ namespace xtd {
       /// * xtd::io::file_system_info::last_access_time
       /// * xtd::io::file_system_info::last_write_time
       /// * xtd::io::file_system_info::size
-      std::vector<xtd::sptr<xtd::io::file_system_info>> get_file_system_infos() const;
+      xtd::array<xtd::sptr<xtd::io::file_system_info>> get_file_system_infos() const;
       /// @brief Retrieves an array of strongly typed FileSystemInfo objects representing the files and subdirectories that match the specified search criteria.
       /// @param search_pattern The search string to match against the names of directories and files. This parameter can contain a combination of valid literal path and wildcard (* and ?) characters, but it doesn't support regular expressions.
       /// @return An array of strongly typed xtd::io::file_system_info entries.
@@ -1161,7 +1166,7 @@ namespace xtd {
       ///       }
       ///
       ///       // Call the GetFileSystemInfos method.
-      ///       std::vector<xtd::sptr<file_system_info>> infos = dir.get_file_system_infos(search_string);
+      ///       xtd::array<xtd::sptr<file_system_info>> infos = dir.get_file_system_infos(search_string);
       ///
       ///       console::write_line("Working...");
       ///
@@ -1178,7 +1183,7 @@ namespace xtd {
       ///   }
       ///
       /// private:
-      ///   static void list_directories_and_files(std::vector<xtd::sptr<file_system_info>> fs_info, const string& search_string) {
+      ///   static void list_directories_and_files(xtd::array<xtd::sptr<file_system_info>> fs_info, const string& search_string) {
       ///     // Iterate through each item.
       ///     for (xtd::sptr<file_system_info> i : fs_info) {
       ///       // Check to see if this is a directory_info object.
@@ -1222,7 +1227,7 @@ namespace xtd {
       /// * xtd::io::file_system_info::last_access_time
       /// * xtd::io::file_system_info::last_write_time
       /// * xtd::io::file_system_info::size
-      std::vector<xtd::sptr<xtd::io::file_system_info>> get_file_system_infos(const xtd::string& search_pattern) const;
+      xtd::array<xtd::sptr<xtd::io::file_system_info>> get_file_system_infos(const xtd::string& search_pattern) const;
       
       /// @brief Moves a DirectoryInfo instance and its contents to a new path.
       /// @param dest_dir_name The name and path to which to move this directory. The destination cannot be another disk volume or a directory with the identical name. It can be an existing directory to which you want to add this directory as a subdirectory.
@@ -1362,9 +1367,6 @@ namespace xtd {
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
       void remove(bool recursive) const;
       /// @}
-      
-    private:
-      directory_info() = default;
     };
   }
 }
