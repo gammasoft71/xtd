@@ -106,7 +106,7 @@ namespace xtd {
       /// @par Examples
       /// The following code example uses the xtd::io::file_info::exists property ensure a file exists before opening it. You can use this technique to throw a custom exception when the file is not found.
       /// ```cpp
-      /// std::vector<char> open_data_file(const string& file_name) {
+      /// xtd::array<char> open_data_file(const string& file_name) {
       ///   // Check the FileName argument.
       ///   if (file_name.size() == 0)
       ///     throw argument_exception("file_name");
@@ -123,7 +123,7 @@ namespace xtd {
       ///   std::ifstream f_stream(file_name, std::ios::binary);
       ///
       ///   // Create a buffer.
-      ///   std::vector<char> buffer(f_info.size());
+      ///   xtd::array<char> buffer(f_info.size());
       ///
       ///   // Read the file contents to the buffer.
       ///   f_stream.read(&buffer[0], f_info.size());
