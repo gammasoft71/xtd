@@ -122,8 +122,8 @@ namespace xtd {
             
           private:
             void reset() const {
-              enumerator_.reset();
               if (pos_ == std::numeric_limits<xtd::size>::max()) return;
+              enumerator_.reset();
               for (auto index = xtd::size {}; index <= pos_; ++index)
                 if (enumerator_.move_next() == false) {
                   pos_ = std::numeric_limits<xtd::size>::max();
