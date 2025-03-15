@@ -47,8 +47,6 @@ namespace xtd {
 
       struct static_data;
 
-      using thread_collection = std::vector<xtd::sptr<thread>>;
-
     public:
       /// @name Public Fields
       
@@ -328,9 +326,9 @@ namespace xtd {
       /// @remarks If one or more threads are not joinable, they will be skipped.
       template<class collection_t>
       static bool join_all(const collection_t& threads, int32 milliseconds_timeout) {
-        std::vector<thread*> thread_pointers;
+        xtd::array<thread*> thread_pointers;
         for (auto& item : threads)
-          thread_pointers.push_back(const_cast<thread*>(&item));
+          thread_pointers.resize(thread_pointers.size() + 1, const_cast<thread*>(&item));
         return join_all_ptr(thread_pointers, milliseconds_timeout);
       }
       /// @brief Blocks the calling thread until all specified joinable threads collection terminate or the specified time elapses, while continuing.
@@ -371,9 +369,9 @@ namespace xtd {
       static bool join_all(const std::initializer_list<item_t>& threads) {return join_all(threads, timeout::infinite);}
       template<class item_t>
       static bool join_all(const std::initializer_list<item_t>& threads, int32 milliseconds_timeout) {
-        std::vector<thread*> thread_pointers;
+        xtd::array<thread*> thread_pointers;
         for (auto& item : threads)
-          thread_pointers.push_back(const_cast<thread*>(&item));
+          thread_pointers.resize(thread_pointers.size() + 1, const_cast<thread*>(&item));
         return join_all_ptr(thread_pointers, milliseconds_timeout);
       }
       template<class item_t>
@@ -384,12 +382,12 @@ namespace xtd {
       static bool join_all(const std::initializer_list<xtd::uptr<thread>>& threads);
       static bool join_all(const std::initializer_list<xtd::uptr<thread>>& threads, int32 milliseconds_timeout);
       static bool join_all(const std::initializer_list<xtd::uptr<thread>>& threads, const time_span& timeout);
-      static bool join_all(const std::vector<xtd::sptr<thread>>& threads);
-      static bool join_all(const std::vector<xtd::sptr<thread>>& threads, int32 milliseconds_timeout);
-      static bool join_all(const std::vector<xtd::sptr<thread>>& threads, const time_span& timeout);
-      static bool join_all(const std::vector<xtd::uptr<thread>>& threads);
-      static bool join_all(const std::vector<xtd::uptr<thread>>& threads, int32 milliseconds_timeout);
-      static bool join_all(const std::vector<xtd::uptr<thread>>& threads, const time_span& timeout);
+      static bool join_all(const xtd::array<xtd::sptr<thread>>& threads);
+      static bool join_all(const xtd::array<xtd::sptr<thread>>& threads, int32 milliseconds_timeout);
+      static bool join_all(const xtd::array<xtd::sptr<thread>>& threads, const time_span& timeout);
+      static bool join_all(const xtd::array<xtd::uptr<thread>>& threads);
+      static bool join_all(const xtd::array<xtd::uptr<thread>>& threads, int32 milliseconds_timeout);
+      static bool join_all(const xtd::array<xtd::uptr<thread>>& threads, const time_span& timeout);
       template<class start_t>
       static thread start_new(start_t start) {return start_new(thread_start {start});}
       template<class start_t>
@@ -415,7 +413,7 @@ namespace xtd {
       bool is_unmanaged_thread() const noexcept;
       bool is_unstarted() const noexcept;
       bool is_wait_sleep_join() const noexcept;
-      static bool join_all_ptr(const std::vector<thread*>& threads, int32 milliseconds_timeout);
+      static bool join_all_ptr(const xtd::array<thread*>& threads, int32 milliseconds_timeout);
       void thread_proc();
       static thread& unmanaged_thread();
 
