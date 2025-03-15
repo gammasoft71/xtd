@@ -326,7 +326,7 @@ namespace xtd {
       /// @remarks If one or more threads are not joinable, they will be skipped.
       template<class collection_t>
       static bool join_all(const collection_t& threads, int32 milliseconds_timeout) {
-        xtd::array<thread*> thread_pointers;
+        auto thread_pointers = xtd::array<thread*> {};
         for (auto& item : threads)
           thread_pointers.resize(thread_pointers.size() + 1, const_cast<thread*>(&item));
         return join_all_ptr(thread_pointers, milliseconds_timeout);
@@ -414,6 +414,7 @@ namespace xtd {
       bool is_unstarted() const noexcept;
       bool is_wait_sleep_join() const noexcept;
       static bool join_all_ptr(const xtd::array<thread*>& threads, int32 milliseconds_timeout);
+      static bool join_all_ptr(const xtd::collections::generic::list<thread*>& threads, int32 milliseconds_timeout);
       void thread_proc();
       static thread& unmanaged_thread();
 
