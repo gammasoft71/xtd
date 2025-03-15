@@ -521,7 +521,7 @@ bool thread::is_wait_sleep_join() const noexcept {
   return data_ && enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::wait_sleep_join);
 }
 
-bool thread::join_all_ptr(const array<thread*>& threads, int32 milliseconds_timeout) {
+bool thread::join_all_ptr(const std::vector<thread*>& threads, int32 milliseconds_timeout) {
   return join_all_ptr(list<thread*> {threads}, milliseconds_timeout);
 }
 
