@@ -43,25 +43,25 @@ namespace xtd {
       /// @{
       /// @brief Gets List of IP addresses that are associated with a host.
       /// @return An xtd::net::ip_address array of IP addresses that are associated with a host.
-      const std::vector<xtd::net::ip_address>& address_list() const noexcept;
+      const xtd::array<xtd::net::ip_address>& address_list() const noexcept;
       /// @brief Gets List of IP addresses that are associated with a host.
       /// @return An xtd::net::ip_address array of IP addresses that are associated with a host.
-      std::vector<xtd::net::ip_address>& address_list() noexcept;
+      xtd::array<xtd::net::ip_address>& address_list() noexcept;
       /// @brief Sets List of IP addresses that are associated with a host.
       /// @param address_list An xtd::net::ip_address array of IP addresses that are associated with a host.
       /// @return The current instance.
-      ip_host_entry& address_list(const std::vector<xtd::net::ip_address>& address_list) noexcept;
+      ip_host_entry& address_list(const xtd::array<xtd::net::ip_address>& address_list) noexcept;
       
       /// @brief Gets List of aliases that are associated with a host.
       /// @return A string array of aliases that are associated with a host.
-      const std::vector<xtd::string>& aliases() const noexcept;
+      const xtd::array<xtd::string>& aliases() const noexcept;
       /// @brief Gets List of aliases that are associated with a host.
       /// @return A string array of aliases that are associated with a host.
-      std::vector<xtd::string>& aliases() noexcept;
+      xtd::array<xtd::string>& aliases() noexcept;
       /// @brief Sets List of aliases that are associated with a host.
       /// @param aliases A string array of aliases that are associated with a host.
       /// @return The current instance.
-      ip_host_entry& aliases(const std::vector<xtd::string>& aliases) noexcept;
+      ip_host_entry& aliases(const xtd::array<xtd::string>& aliases) noexcept;
       
       /// @brief Gets the DNS name of the host.
       /// @return A string represent the DNS name of the host.
@@ -73,8 +73,8 @@ namespace xtd {
       /// @}
       
     private:
-      std::vector<xtd::net::ip_address> address_list_;
-      std::vector<xtd::string> aliases_;
+      xtd::array<xtd::net::ip_address> address_list_;
+      xtd::array<xtd::string> aliases_;
       xtd::string host_name_;
     };
   }
