@@ -63,7 +63,7 @@ namespace xtd {
       /// @}
       
     private:
-      std::vector<xtd::byte> data_;
+      xtd::array<xtd::byte> data_;
     };
   }
 }
