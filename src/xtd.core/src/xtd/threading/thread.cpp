@@ -6,6 +6,7 @@
 #include "../../../include/xtd/threading/thread.hpp"
 #include "../../../include/xtd/threading/thread_pool.hpp"
 #include "../../../include/xtd/threading/timeout.hpp"
+#include "../../../include/xtd/collections/generic/list.hpp"
 #include "../../../include/xtd/io/io_exception.hpp"
 #include "../../../include/xtd/diagnostics/stopwatch.hpp"
 #include "../../../include/xtd/argument_exception.hpp"
@@ -24,6 +25,7 @@
 #include <thread>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
 using namespace xtd::helpers;
 using namespace xtd::threading;
@@ -49,7 +51,7 @@ struct thread::data {
 
 struct thread::static_data {
   std::recursive_mutex threads_mutex;
-  thread::thread_collection threads;
+  list<sptr<thread>> threads;
 };
 
 const intptr thread::invalid_handle = xtd::invalid_handle;
@@ -270,9 +272,9 @@ bool thread::join_all(int32 milliseconds_timeout) {
   auto sw = stopwatch::start_new();
   if (!thread_pool::join_all(milliseconds_timeout)) return false;
 
-  auto thread_pointers = std::vector<thread*> {};
+  auto thread_pointers = xtd::array<thread*> {};
   for (auto& thread : get_static_data().threads)
-    thread_pointers.push_back(thread.get());
+    thread_pointers.resize(thread_pointers.size() + 1, thread.get());
 
   if (sw.elapsed_milliseconds() > milliseconds_timeout || join_all_ptr(thread_pointers, milliseconds_timeout - as<int32>(sw.elapsed_milliseconds())) == false) return false;
   get_static_data().threads.clear();
@@ -367,9 +369,9 @@ bool thread::join_all(const std::initializer_list<xtd::sptr<thread>>& threads){
 }
 
 bool thread::join_all(const std::initializer_list<xtd::sptr<thread>>& threads, int32 milliseconds_timeout) {
-  auto threads_pointers = std::vector<thread*> {};
+  auto threads_pointers = xtd::array<thread*> {};
   for (auto& thread : threads)
-    threads_pointers.push_back(thread.get());
+    threads_pointers.resize(threads_pointers.size() + 1, thread.get());
   return join_all_ptr(threads_pointers, milliseconds_timeout);
 }
 
@@ -382,9 +384,9 @@ bool thread::join_all(const std::initializer_list<xtd::uptr<thread>>& threads){
 }
 
 bool thread::join_all(const std::initializer_list<xtd::uptr<thread>>& threads, int32 milliseconds_timeout) {
-  auto threads_pointers = std::vector<thread*> {};
+  auto threads_pointers = xtd::array<thread*> {};
   for (auto& thread : threads)
-    threads_pointers.push_back(thread.get());
+    threads_pointers.resize(threads_pointers.size() + 1, thread.get());
   return join_all_ptr(threads_pointers, milliseconds_timeout);
 }
 
@@ -392,33 +394,33 @@ bool thread::join_all(const std::initializer_list<xtd::uptr<thread>>& threads, c
   return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
-bool thread::join_all(const std::vector<xtd::sptr<thread>>& threads) {
+bool thread::join_all(const xtd::array<xtd::sptr<thread>>& threads) {
   return join_all(threads, timeout::infinite);
 }
 
-bool thread::join_all(const std::vector<xtd::sptr<thread>>& threads, int32 milliseconds_timeout) {
-  auto threads_pointers = std::vector<thread*> {};
+bool thread::join_all(const xtd::array<xtd::sptr<thread>>& threads, int32 milliseconds_timeout) {
+  auto threads_pointers = xtd::array<thread*> {};
   for (auto& thread : threads)
-    threads_pointers.push_back(thread.get());
+    threads_pointers.resize(threads_pointers.size() + 1, thread.get());
   return join_all_ptr(threads_pointers, milliseconds_timeout);
 }
 
-bool thread::join_all(const std::vector<xtd::sptr<thread>>& threads, const time_span& timeout) {
+bool thread::join_all(const xtd::array<xtd::sptr<thread>>& threads, const time_span& timeout) {
   return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
-bool thread::join_all(const std::vector<xtd::uptr<thread>>& threads) {
+bool thread::join_all(const xtd::array<xtd::uptr<thread>>& threads) {
   return join_all(threads, timeout::infinite);
 }
 
-bool thread::join_all(const std::vector<xtd::uptr<thread>>& threads, int32 milliseconds_timeout) {
-  auto threads_pointers = std::vector<thread*> {};
+bool thread::join_all(const xtd::array<xtd::uptr<thread>>& threads, int32 milliseconds_timeout) {
+  auto threads_pointers = xtd::array<thread*> {};
   for (auto& thread : threads)
-    threads_pointers.push_back(thread.get());
+    threads_pointers.resize(threads_pointers.size() + 1, thread.get());
   return join_all_ptr(threads_pointers, milliseconds_timeout);
 }
 
-bool thread::join_all(const std::vector<xtd::uptr<thread>>& threads, const time_span& timeout) {
+bool thread::join_all(const xtd::array<xtd::uptr<thread>>& threads, const time_span& timeout) {
   return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
@@ -519,7 +521,7 @@ bool thread::is_wait_sleep_join() const noexcept {
   return data_ && enum_object<xtd::threading::thread_state>(data_->state).has_flag(xtd::threading::thread_state::wait_sleep_join);
 }
 
-bool thread::join_all_ptr(const std::vector<thread*>& threads, int32 milliseconds_timeout) {
+bool thread::join_all_ptr(const xtd::array<thread*>& threads, int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw_helper::throws(exception_case::argument);
   
   thread::yield();
