@@ -120,7 +120,7 @@ xtd::sptr<xtd::iasync_result> tcp_client::begin_connect(const xtd::net::ip_addre
   return data_->client_socket.begin_connect(address, port, callback, state);
 }
 
-xtd::sptr<xtd::iasync_result> tcp_client::begin_connect(const std::vector<xtd::net::ip_address>& addresses, uint16 port, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> tcp_client::begin_connect(const array<xtd::net::ip_address>& addresses, uint16 port, xtd::async_callback callback, const std::any& state) {
   if (active()) throw_helper::throws(exception_case::socket, socket_error::is_connected);
   return data_->client_socket.begin_connect(addresses, port, callback, state);
 }
