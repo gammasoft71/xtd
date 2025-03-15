@@ -260,8 +260,7 @@ namespace xtd {
     }
     
     void copy_to(xtd::array<type_t>& array, size_type index) const override {
-      /// @todo uncomment want array remamed into array.
-      //if (array.rank() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
+      if (array.rank() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
       if (rank() != 1) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::rank);
       if (index + length() > array.size()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       for (auto increment = size_type {0}; increment < length(); ++increment)
