@@ -270,7 +270,7 @@ namespace xtd {
         /// @remarks The asynchronous xtd::net::sockets::tcp_client::client::begin_connect operation must be completed by calling the xtd::net::sockets::tcp_client::end_connect method. Typically, the method is invoked by the asyncCallback delegate.
         /// @remarks This method does not block until the operation completes. To block until the operation completes, use one of the xtd::net::sockets::tcp_client::connect method overloads.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        xtd::sptr<xtd::iasync_result> begin_connect(const std::vector<xtd::net::ip_address>& addresses, uint16 port, xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_connect(const xtd::array<xtd::net::ip_address>& addresses, uint16 port, xtd::async_callback callback, const std::any& state);
         /// @brief Begins an asynchronous request for a remote host connection. The remote host is specified by a host name (xtd::string) and a port number (uint16).
         /// @param host The name of the remote host.
         /// @param port The port number of the remote host.
