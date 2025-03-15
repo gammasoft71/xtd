@@ -29,7 +29,7 @@ namespace xtd {
       /// @brief Returns the Internet Protocol (IP) addresses for the specified host.
       /// @param host_name_or_address The host name or IP address to resolve.
       /// @return An array of type xtd::net::ip_address that holds the IP addresses for the host that is specified by the host_name_or_address parameter..
-      static std::vector<xtd::net::ip_address> get_host_addresses(const xtd::string& host_name_or_address);
+      static xtd::array<xtd::net::ip_address> get_host_addresses(const xtd::string& host_name_or_address);
       
       /// @brief Resolves an IP address to an xtd::net::ip_host_entry instance.
       /// @param address An IP address.
