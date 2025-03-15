@@ -78,7 +78,7 @@ thread::thread(const xtd::threading::thread_start& start, int32 max_stack_size) 
   auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
   auto safe_thread = xtd::new_sptr<thread>(*this);
   data_->safe_thread = safe_thread.get();
-  get_static_data().threads.push_back(safe_thread);
+  get_static_data().threads.add(safe_thread);
 }
 
 thread::thread(const xtd::threading::parameterized_thread_start& start) : thread(start, 0) {
@@ -92,7 +92,7 @@ thread::thread(const xtd::threading::parameterized_thread_start& start, int32 ma
   auto lock = std::lock_guard<std::recursive_mutex> {get_static_data().threads_mutex};
   auto safe_thread = xtd::new_sptr<thread>(*this);
   data_->safe_thread = safe_thread.get();
-  get_static_data().threads.push_back(safe_thread);
+  get_static_data().threads.add(safe_thread);
 }
 
 thread& thread::operator=(const thread& value) {
