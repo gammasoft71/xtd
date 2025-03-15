@@ -369,7 +369,7 @@ namespace xtd {
       static bool join_all(const std::initializer_list<item_t>& threads) {return join_all(threads, timeout::infinite);}
       template<class item_t>
       static bool join_all(const std::initializer_list<item_t>& threads, int32 milliseconds_timeout) {
-        xtd::array<thread*> thread_pointers;
+        std::vector<thread*> thread_pointers;
         for (auto& item : threads)
           thread_pointers.resize(thread_pointers.size() + 1, const_cast<thread*>(&item));
         return join_all_ptr(thread_pointers, milliseconds_timeout);
@@ -382,12 +382,12 @@ namespace xtd {
       static bool join_all(const std::initializer_list<xtd::uptr<thread>>& threads);
       static bool join_all(const std::initializer_list<xtd::uptr<thread>>& threads, int32 milliseconds_timeout);
       static bool join_all(const std::initializer_list<xtd::uptr<thread>>& threads, const time_span& timeout);
-      static bool join_all(const xtd::array<xtd::sptr<thread>>& threads);
-      static bool join_all(const xtd::array<xtd::sptr<thread>>& threads, int32 milliseconds_timeout);
-      static bool join_all(const xtd::array<xtd::sptr<thread>>& threads, const time_span& timeout);
-      static bool join_all(const xtd::array<xtd::uptr<thread>>& threads);
-      static bool join_all(const xtd::array<xtd::uptr<thread>>& threads, int32 milliseconds_timeout);
-      static bool join_all(const xtd::array<xtd::uptr<thread>>& threads, const time_span& timeout);
+      static bool join_all(const std::vector<xtd::sptr<thread>>& threads);
+      static bool join_all(const std::vector<xtd::sptr<thread>>& threads, int32 milliseconds_timeout);
+      static bool join_all(const std::vector<xtd::sptr<thread>>& threads, const time_span& timeout);
+      static bool join_all(const std::vector<xtd::uptr<thread>>& threads);
+      static bool join_all(const std::vector<xtd::uptr<thread>>& threads, int32 milliseconds_timeout);
+      static bool join_all(const std::vector<xtd::uptr<thread>>& threads, const time_span& timeout);
       template<class start_t>
       static thread start_new(start_t start) {return start_new(thread_start {start});}
       template<class start_t>
