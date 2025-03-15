@@ -16,7 +16,7 @@ public:
   ~__using_dns__() {native::dns::cleanup();}
 };
 
-std::vector<ip_address> dns::get_host_addresses(const string& host_name_or_address) {
+array<ip_address> dns::get_host_addresses(const string& host_name_or_address) {
   ip_host_entry host_entry = get_host_entry(host_name_or_address);
   return host_entry.address_list();
 }
