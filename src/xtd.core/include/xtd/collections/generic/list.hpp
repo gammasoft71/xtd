@@ -696,7 +696,7 @@ namespace xtd {
         template<class ...args_t>
         iterator emplace(const_iterator pos, args_t&&... args) {
           ++data_->version;
-          return data_->items.emplace(to_base_type_iterator(pos), std::forward<args_t>(args)...);
+          return to_type_iterator(data_->items.emplace(to_base_type_iterator(pos), std::forward<args_t>(args)...));
         }
         
         /// @brief Appends a new element to the end of the container. The element is constructed through [std::allocator_traits::construct](https://en.cppreference.com/w/cpp/memory/allocator_traits/construct), which typically uses placement-new to construct the element in-place at the location provided by the container. The arguments `args...` are forwarded to the constructor as `std::forward<Args>(args)...`.
