@@ -6,7 +6,11 @@
 #include <mutex>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::threading;
+
+using asynchronous_io_thread_list = list<thread>;
+using thread_list = list<thread>;
 
 size_t thread_pool::max_threads_ = 800;
 size_t thread_pool::max_asynchronous_io_threads_ = 800;
@@ -15,11 +19,11 @@ size_t thread_pool::min_asynchronous_io_threads_ = environment::processor_count(
 
 struct thread_pool::static_data {
   threading::semaphore asynchronous_io_semaphore = threading::semaphore(0, as<int32>(thread_pool::max_asynchronous_io_threads_));
-  asynchronous_io_thread_vector asynchronous_io_threads;
+  asynchronous_io_thread_list asynchronous_io_threads;
   manual_reset_event close_asynchronous_io_threads_manual_reset_event {false};
   manual_reset_event close_threads_manual_reset_event {false};
   threading::semaphore semaphore = threading::semaphore(0, as<int32>(thread_pool::max_threads_));
-  thread_vector threads;
+  thread_list threads;
   thread_pool_item_collection thread_pool_items;
   object thread_pool_items_sync_root;
   thread_pool_asynchronous_io_item_collection thread_pool_asynchronous_io_items;

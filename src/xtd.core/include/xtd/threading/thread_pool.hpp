@@ -12,7 +12,6 @@
 #include "../static.hpp"
 #include "../time_span.hpp"
 #include "../types.hpp"
-#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -52,8 +51,6 @@ namespace xtd {
     /// @warning You can use the xtd::threading::thread_pool::set_min_threads method to increase the minimum number of threads. However, unnecessarily increasing these values can cause performance problems. If too many tasks start at the same time, all of them might appear to be slow. In most cases the thread pool will perform better with its own algorithm for allocating threads.
     class core_export_ thread_pool static_ {
       friend class registered_wait_handle;
-
-      using asynchronous_io_thread_vector = std::vector<thread>;
 
       struct static_data;
 
@@ -97,10 +94,8 @@ namespace xtd {
       
       using thread_pool_item = thread_item<wait_callback>;
       using thread_pool_asynchronous_io_item = thread_item<wait_or_timer_callback>;
-      using thread_pool_item_collection = std::vector<thread_pool_item>;
-      using thread_pool_asynchronous_io_item_collection = std::vector<thread_pool_asynchronous_io_item>;
-
-      using thread_vector = std::vector<thread>;
+      using thread_pool_item_collection = xtd::collections::generic::list<thread_pool_item>;
+      using thread_pool_asynchronous_io_item_collection = xtd::collections::generic::list<thread_pool_asynchronous_io_item>;
 
     public:
       /// @name Public Static Methods
