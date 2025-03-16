@@ -19,17 +19,16 @@ xtdc run
 ## Output
 
 ```
-First Series:
-Five random uint8_t values:
-  150  243   92  141    0
+Five random byte values:
+   56   13  183  186    9
 Five random integer values:
-    4.14343E+08    2.14086E+09    1.73486E+09    1.88133E+09    1.69685E+09
+      393336251     1630901725      159175947     1510060072      592602585
 Five random integers between 0 and 100:
-        35        86        86        68        10
+      26      50      32       9      50
 Five random integers between 50 and 100:
-        76        57        66        97        56
+      84      63      52      69      68
 Five Doubles:
-  0.211096  0.172007  0.507414   0.48576  0.754658
+   0.186   0.070   0.021   0.892   0.313
 Five Doubles between 0 and 5:
-   1.40691    2.7078   3.87732    1.0691  0.478343
+   2.938   0.848   0.060   3.667   0.042
 ```
