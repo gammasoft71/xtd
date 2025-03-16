@@ -27,7 +27,7 @@ Run tests:
   SUCCEED test<int8_t>.test_max_value (0 ms total)
   FAILED  test<uint8_t>.test_max_value (0 ms total)
     expect max value for this type is not defined.
-    Stack Trace: in |---OMITTED---|/generic_test_class.cpp:39
+    Stack Trace: in |---OMITTED---|/generic_test_class.cpp:44
 
 Test results:
   SUCCEED 4 tests.
