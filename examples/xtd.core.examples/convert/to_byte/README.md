@@ -21,37 +21,37 @@ xtdc run
 ```
 Convert int to byte :
 ---------------------
-static_cast<unsigned char>(value) = 42
-as<unsigned char>(value)          = 42
-convert::to_byte(value)           = 42
+static_cast<byte>(value) = 42
+as<byte>(value)          = 42
+convert::to_byte(value)  = 42
 
 Convert float to byte :
 -----------------------
-static_cast<unsigned char>(float_value) = 42
-as<unsigned char>(float_value)          = 43
-convert::to_byte(float_value)           = 43
+static_cast<byte>(float_value) = 42
+as<byte>(float_value)          = 43
+convert::to_byte(float_value)  = 43
 
 Convert any to byte :
 ---------------------
-any_cast<unsigned char>(any_value) = 42
-as<unsigned char>(any_value)       = 42
-convert::to_byte(any_value)        = 42
+any_cast<byte>(any_value)   = 42
+as<byte>(any_value)         = 42
+convert::to_byte(any_value) = 42
 
 Convert string to byte :
 ------------------------
-parse<unsigned char>(string_value))   = 42
-as<unsigned char>(string_value)       = 42
-convert::to_byte(string_value)        = 42
+parse<byte>(string_value))     = 42
+as<byte>(string_value)         = 42
+convert::to_byte(string_value) = 42
 
 Convert hexa string to byte :
 -----------------------------
-parse<unsigned char>(string_hex_value, number_styles::hex_number) = 42
-as<unsigned char>(string_hex_value, 16)                           = 42
-convert::to_byte(string_hex_value, 16))                           = 42
+parse<byte>(string_hex_value, number_styles::hex_number) = 42
+as<byte>(string_hex_value, 16)                           = 42
+convert::to_byte(string_hex_value, 16))                  = 42
 
 Convert int to byte with overflow :
 -----------------------------------
-static_cast<unsigned char>(overflow_value) = 1
+static_cast<byte>(overflow_value) = 1
 (ERROR) as : Overflow exception
 (ERROR) convert::to_byte : Overflow exception
 ```
