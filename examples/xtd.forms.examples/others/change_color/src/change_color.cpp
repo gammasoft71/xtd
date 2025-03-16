@@ -18,8 +18,8 @@ public:
     change_color_button.location({10, 10});
     change_color_button.text("Change color");
     change_color_button.click += [&] {
-      back_color(color::from_argb(rand.next<unsigned char>(), rand.next<unsigned char>(), rand.next<unsigned char>()));
-      fore_color(color::from_argb(rand.next<unsigned char>(), rand.next<unsigned char>(), rand.next<unsigned char>()));
+      back_color(color::from_argb(rand.next<byte>(), rand.next<byte>(), rand.next<byte>()));
+      fore_color(color::from_argb(rand.next<byte>(), rand.next<byte>(), rand.next<byte>()));
       label1.text(string::format("back_color = {}\nfore_color = {}", label1.back_color(), label1.fore_color()));
       label2.text(string::format("back_color = {}\nfore_color = {}", label2.back_color(), label2.fore_color()));
     };
