@@ -77,6 +77,34 @@ namespace xtd {
     /// @name Public Methods
     
     /// @{
+    /// @brief Creates an array populated with items chosen at random from the provided set of choices.
+    /// @param choices Set of choices.
+    /// @param length The length of the populated array.
+    template<class value_t>
+    xtd::array<value_t> get_items(const xtd::read_only_span<value_t>& choices, xtd::size length) {
+      auto result = array<value_t>(length);
+      auto span_result = span<value_t>(result);
+      get_items(choices, span_result);
+      return result;
+    }
+    
+    /// @brief Creates an array populated with items chosen at random from the provided set of choices.
+    /// @param choices Set of choices.
+    /// @param length The length of the populated array.
+    template<class value_t>
+    xtd::array<value_t> get_items(const xtd::array<value_t>& choices, xtd::size length) {
+      return get_items(read_only_span<value_t>(choices), length);
+    }
+    
+    /// @brief Fills the elements of a specified span with items chosen at random from the provided set of choices.
+    /// @param choices Set of choices.
+    /// @param destination The elements to fill.
+    template<class value_t>
+    void get_items(const xtd::read_only_span<value_t>& choices, xtd::span<value_t>& destination) {
+      for (auto& item : destination)
+        item = choices[next(choices.size())];
+    }
+    
     /// @brief Returns a nonnegative random number.
     /// @return A 32-bit signed integer greater than or equal to zero and less than std::numeric_limits<int32>::max())
     virtual int32 next() const;
