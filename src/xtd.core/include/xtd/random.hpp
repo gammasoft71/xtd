@@ -5,12 +5,15 @@
 
 #include "argument_null_exception.hpp"
 #include "argument_out_of_range_exception.hpp"
+#include "array.hpp"
 #include "box_integer.hpp"
 #include "core_export.hpp"
 #include "environment.hpp"
 #include "math.hpp"
 #include "object.hpp"
 #include "optional.hpp"
+#include "span.hpp"
+#include <algorithm>
 #include <limits>
 #include <random>
 
@@ -65,7 +68,10 @@ namespace xtd {
     /// @{
     /// @brief Gets the underlying generator
     /// @return The underlying generator.
-    std::default_random_engine generator() const noexcept;
+    const std::default_random_engine& generator() const noexcept;
+    /// @brief Gets the underlying generator
+    /// @return The underlying generator.
+    std::default_random_engine& generator() noexcept;
     /// @}
     
     /// @name Public Methods
@@ -119,7 +125,7 @@ namespace xtd {
     value_t next(value_t min_value, value_t max_value) const {
       if (min_value > max_value) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
       if (min_value == max_value) return min_value;
-      return min_value + static_cast<value_t>(math::round(sample() * xtd::box_integer<value_t>::max_value)) % ((max_value - 1) - min_value + 1);
+      return min_value + static_cast<value_t>(math::round(sample() * (max_value - 1 - min_value)));
     }
     
     /// @cond
@@ -130,34 +136,23 @@ namespace xtd {
     double next(double min_value, double max_value) const;
     float next(float min_value, float max_value) const;
     /// @endcond
+    
+    /// @brief Fills the elements of a specified array of bytes with random numbers.
+    /// @param buffer An array of bytes to contain random numbers.
+    /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<xtd::byte>::max().
+    virtual void next_bytes(xtd::span<xtd::byte>& buffer) const;
+    
+    /// @brief Fills the elements of a specified array of bytes with random numbers.
+    /// @param buffer An array of bytes to contain random numbers.
+    /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<xtd::byte>::max().
+    virtual void next_bytes(xtd::array<xtd::byte>& buffer) const;
 
-    /// @brief Fills the elements of a specified array of bytes with random numbers.
-    /// @param buffer An array of bytes to contain random numbers.
-    /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<xtd::byte>::max().
-    virtual void next_bytes(std::vector<xtd::byte>& buffer) const;
-    
-    /// @brief Fills the elements of a specified array of bytes with random numbers.
-    /// @param buffer An array of bytes to contain random numbers.
-    /// @exception argument_null_exception buffer is null.
-    /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<xtd::byte>::max().
-    virtual void next_bytes(xtd::byte* buffer, size_t buffer_size) const;
-    
     /// @brief Fills the elements of a specified array of bytes with random numbers.
     /// @param buffer An array of bytes to contain random numbers.
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<value_t>::max().
     template<class value_t>
-    void next_values(std::vector<value_t>& buffer) const {
-      next_values(buffer.data(), buffer.size());
-    }
-    
-    /// @brief Fills the elements of a specified array of bytes with random numbers.
-    /// @param buffer An array of value_t to contain random numbers.
-    /// @exception argument_null_exception buffer is null.
-    /// @remarks Each element of the array of values is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<value_t>::max().
-    template<class value_t>
-    void next_values(value_t* buffer, size_t buffer_size) const {
-      if (buffer == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
-      for (size_t index = 0; index < buffer_size; index++)
+    void next_values(xtd::array<value_t>& buffer) const {
+      for (auto index = 0_z; index < buffer.size(); ++index)
         buffer[index] = next<value_t>(0, xtd::box_integer<value_t>::max_value);
     }
     
@@ -167,6 +162,23 @@ namespace xtd {
     virtual double next_double() const;
     /// @}
     
+    /// @brief Returns a random number between 0.0 and 1.0
+    /// @return A single-precision floating point number greater than or equal to 0.0, and less than 1.0.
+    single next_single() const;
+    
+    template<class value_t>
+    void shuffle(xtd::span<value_t>& values) const {
+      for (auto index = 0_z; index < values.length() - 1; ++index)
+        std::swap(values[index], values[next(index, values.length())]);
+    }
+    
+    template<class collection_t>
+    void shuffle(collection_t& values) const {
+      auto span_values = span<typename collection_t::value_type> {values};
+      shuffle(span_values);
+    }
+    /// @}
+
   protected:
     /// @brief Returns a random number between 0.0 and 1.0
     /// @return A double-precision floating point number greater than or equal to 0.0, and less than 1.0.
