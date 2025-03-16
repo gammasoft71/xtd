@@ -2,12 +2,11 @@
 #include <xtd/random>
 
 using namespace xtd;
-using namespace xtd::collections::generic;
 
 auto main() -> int {
   auto rnd = xtd::random {};
-  auto male_pet_names = list {"Rufus", "Bear", "Dakota", "Fido", "Vanya", "Samuel", "Koani", "Volodya", "Prince", "Yiska"};
-  auto female_pet_names = list {"Maggie", "Penny", "Saya", "Princess", "Abby", "Laila", "Sadie", "Olivia", "Starlight", "Talla"};
+  auto male_pet_names = array {"Rufus", "Bear", "Dakota", "Fido", "Vanya", "Samuel", "Koani", "Volodya", "Prince", "Yiska"};
+  auto female_pet_names = array {"Maggie", "Penny", "Saya", "Princess", "Abby", "Laila", "Sadie", "Olivia", "Starlight", "Talla"};
   
   // Generate random indexes for pet names.
   auto male_index = rnd.next(male_pet_names.size());
