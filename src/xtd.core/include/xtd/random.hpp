@@ -174,6 +174,11 @@ namespace xtd {
     /// @param buffer An array of bytes to contain random numbers.
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<xtd::byte>::max().
     virtual void next_bytes(xtd::array<xtd::byte>& buffer) const;
+    
+    /// @brief Returns a random number between 0.0 and 1.0
+    /// @return A double-precision floating point number greater than or equal to 0.0, and less than 1.0.
+    /// @remarks This method is the public version of the protected method, sample
+    virtual double next_double() const;
 
     /// @brief Fills the elements of a specified array of bytes with random numbers.
     /// @param buffer An array of bytes to contain random numbers.
@@ -183,16 +188,30 @@ namespace xtd {
       for (auto index = 0_z; index < buffer.size(); ++index)
         buffer[index] = next<value_t>(0, xtd::box_integer<value_t>::max_value);
     }
+
+    /// @brief Returns a nonnegative random number.
+    /// @return A 64-bit signed integer greater than or equal to zero and less than std::numeric_limits<int32>::max())
+    virtual int64 next_int64() const;
     
-    /// @brief Returns a random number between 0.0 and 1.0
-    /// @return A double-precision floating point number greater than or equal to 0.0, and less than 1.0.
-    /// @remarks This method is the public version of the protected method, sample
-    virtual double next_double() const;
-    /// @}
+    /// @brief Returns a nonnegative random number less than the specified maximum.
+    /// @param max_value The exclusive upper bound of the random number to be generated. max_value must be greater than or equal to zero.
+    /// @return A 64-bit signed integer greater than or equal to zero and less than max_value
+    /// @exception argument_out_of_range_exception max_value is less than zero.
+    /// @remarks The next(int32) overload returns random integers that range from 0 to max_value – 1. However, if max_value is 0, the method returns 0.
+    virtual int64 next_int64(int64 max_value) const;
     
+    /// @brief Returns a random number within a specified range.
+    /// @param min_value The inclusive lower bound of the random number returned
+    /// @param max_value The exclusive upper bound of the random number returned. max_value must be greater than or equal to min_value.
+    /// @return A 64-bit signed integer greater than or equal to min_value and less than max_value
+    /// @exception argument_out_of_range_exception min_value is greater than max_value.
+    /// @remarks The next(int32, int32) overload returns random integers that range from min_value to max_value – 1. However, if max_value equals min_value, the method returns min_value.
+    /// @remarks Unlike the other overloads of the next method, which return only non-negative values, this method can return a negative random integer.
+    virtual int64 next_int64(int64 min_value, int64 max_value) const;
+
     /// @brief Returns a random number between 0.0 and 1.0
     /// @return A single-precision floating point number greater than or equal to 0.0, and less than 1.0.
-    single next_single() const;
+    virtual single next_single() const;
     
     template<class value_t>
     void shuffle(xtd::span<value_t>& values) const {
