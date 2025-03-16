@@ -81,6 +81,20 @@ double random::next_double() const {
   return sample();
 }
 
+int64 random::next_int64() const {
+  return next_int64(int64_object::max_value);
+}
+
+int64 random::next_int64(int64 max_value) const {
+  return next_int64(0_s64, max_value);
+}
+
+int64 random::next_int64(int64 min_value, int64 max_value) const {
+  if (min_value > max_value) throw_helper::throws(exception_case::argument_out_of_range);
+  if (min_value == max_value) return min_value;
+  return min_value + static_cast<int64>(math::round(sample() * (max_value - 1 - min_value)));
+}
+
 single random::next_single() const {
   return as<single>(sample());
 }
