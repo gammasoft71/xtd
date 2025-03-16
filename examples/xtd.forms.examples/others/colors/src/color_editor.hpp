@@ -28,7 +28,7 @@ namespace colors_example {
       alpha_track_bar_.tick_style(xtd::forms::tick_style::none);
       alpha_track_bar_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::right);
       alpha_track_bar_.value_changed += [&] {
-        if (color_.a() != xtd::as<unsigned char>(alpha_track_bar_.value())) color(xtd::drawing::color::from_argb(xtd::as<unsigned char>(alpha_track_bar_.value()), color_.r(), color_.g(), color_.b()));
+        if (color_.a() != xtd::as<byte>(alpha_track_bar_.value())) color(xtd::drawing::color::from_argb(xtd::as<byte>(alpha_track_bar_.value()), color_.r(), color_.g(), color_.b()));
       };
       
       alpha_numeric_up_down_.parent(*this);
@@ -37,7 +37,7 @@ namespace colors_example {
       alpha_numeric_up_down_.maximum(255);
       alpha_numeric_up_down_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
       alpha_numeric_up_down_.value_changed += [&] {
-        if (color_.a() != xtd::as<unsigned char>(alpha_numeric_up_down_.value())) color(xtd::drawing::color::from_argb(xtd::as<unsigned char>(alpha_numeric_up_down_.value()), color_.r(), color_.g(), color_.b()));
+        if (color_.a() != xtd::as<byte>(alpha_numeric_up_down_.value())) color(xtd::drawing::color::from_argb(xtd::as<byte>(alpha_numeric_up_down_.value()), color_.r(), color_.g(), color_.b()));
       };
       
       red_label_.parent(*this);
@@ -53,7 +53,7 @@ namespace colors_example {
       red_track_bar_.tick_style(xtd::forms::tick_style::none);
       red_track_bar_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::right);
       red_track_bar_.value_changed += [&] {
-        if (color_.r() != xtd::as<unsigned char>(red_track_bar_.value())) color(xtd::drawing::color::from_argb(color_.a(), xtd::as<unsigned char>(red_track_bar_.value()), color_.g(), color_.b()));
+        if (color_.r() != xtd::as<byte>(red_track_bar_.value())) color(xtd::drawing::color::from_argb(color_.a(), xtd::as<byte>(red_track_bar_.value()), color_.g(), color_.b()));
       };
       
       red_numeric_up_down_.parent(*this);
@@ -62,7 +62,7 @@ namespace colors_example {
       red_numeric_up_down_.maximum(255);
       red_numeric_up_down_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
       red_numeric_up_down_.value_changed += [&] {
-        if (color_.r() != xtd::as<unsigned char>(red_numeric_up_down_.value())) color(xtd::drawing::color::from_argb(color_.a(), xtd::as<unsigned char>(red_numeric_up_down_.value()), color_.g(), color_.b()));
+        if (color_.r() != xtd::as<byte>(red_numeric_up_down_.value())) color(xtd::drawing::color::from_argb(color_.a(), xtd::as<byte>(red_numeric_up_down_.value()), color_.g(), color_.b()));
       };
       
       green_label_.parent(*this);
@@ -78,7 +78,7 @@ namespace colors_example {
       green_track_bar_.tick_style(xtd::forms::tick_style::none);
       green_track_bar_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::right);
       green_track_bar_.value_changed += [&] {
-        if (color_.g() != xtd::as<unsigned char>(green_track_bar_.value())) color(xtd::drawing::color::from_argb(color_.a(), color_.r(), xtd::as<unsigned char>(green_track_bar_.value()), color_.b()));
+        if (color_.g() != xtd::as<byte>(green_track_bar_.value())) color(xtd::drawing::color::from_argb(color_.a(), color_.r(), xtd::as<byte>(green_track_bar_.value()), color_.b()));
       };
       
       green_numeric_up_down_.parent(*this);
@@ -87,7 +87,7 @@ namespace colors_example {
       green_numeric_up_down_.maximum(255);
       green_numeric_up_down_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
       green_numeric_up_down_.value_changed += [&] {
-        if (color_.g() != xtd::as<unsigned char>(green_numeric_up_down_.value())) color(xtd::drawing::color::from_argb(color_.a(), color_.r(), xtd::as<unsigned char>(green_numeric_up_down_.value()), color_.b()));
+        if (color_.g() != xtd::as<byte>(green_numeric_up_down_.value())) color(xtd::drawing::color::from_argb(color_.a(), color_.r(), xtd::as<byte>(green_numeric_up_down_.value()), color_.b()));
       };
       
       blue_label_.parent(*this);
@@ -103,7 +103,7 @@ namespace colors_example {
       blue_track_bar_.tick_style(xtd::forms::tick_style::none);
       blue_track_bar_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::left | xtd::forms::anchor_styles::right);
       blue_track_bar_.value_changed += [&] {
-        if (color_.b() != xtd::as<unsigned char>(blue_track_bar_.value())) color(xtd::drawing::color::from_argb(color_.a(), color_.r(), color_.g(), xtd::as<unsigned char>(blue_track_bar_.value())));
+        if (color_.b() != xtd::as<byte>(blue_track_bar_.value())) color(xtd::drawing::color::from_argb(color_.a(), color_.r(), color_.g(), xtd::as<byte>(blue_track_bar_.value())));
       };
       
       blue_numeric_up_down_.parent(*this);
@@ -112,7 +112,7 @@ namespace colors_example {
       blue_numeric_up_down_.maximum(255);
       blue_numeric_up_down_.anchor(xtd::forms::anchor_styles::top | xtd::forms::anchor_styles::right);
       blue_numeric_up_down_.value_changed += [&] {
-        if (color_.b() != xtd::as<unsigned char>(blue_numeric_up_down_.value())) color(xtd::drawing::color::from_argb(color_.a(), color_.r(), color_.g(), xtd::as<unsigned char>(blue_numeric_up_down_.value())));
+        if (color_.b() != xtd::as<byte>(blue_numeric_up_down_.value())) color(xtd::drawing::color::from_argb(color_.a(), color_.r(), color_.g(), xtd::as<byte>(blue_numeric_up_down_.value())));
       };
       
       color_box_panel_.parent(*this);
@@ -279,7 +279,7 @@ namespace colors_example {
   private:
   
     void on_argb_changed() {
-      color(xtd::drawing::color::from_argb(xtd::as<unsigned char>(alpha_track_bar_.value()), xtd::as<unsigned char>(red_track_bar_.value()), xtd::as<unsigned char>(green_track_bar_.value()), xtd::as<unsigned char>(blue_track_bar_.value())));
+      color(xtd::drawing::color::from_argb(xtd::as<byte>(alpha_track_bar_.value()), xtd::as<byte>(red_track_bar_.value()), xtd::as<byte>(green_track_bar_.value()), xtd::as<byte>(blue_track_bar_.value())));
     }
     
     xtd::forms::label alpha_label_;
