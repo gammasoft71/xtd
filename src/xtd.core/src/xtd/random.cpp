@@ -15,7 +15,11 @@ random::random(uint32 seed) : generator_(seed + 1) {
 random::random(std::random_device& random_device) : generator_(random_device()) {
 }
 
-std::default_random_engine random::generator() const noexcept {
+const std::default_random_engine& random::generator() const noexcept {
+  return generator_;
+}
+
+std::default_random_engine& random::generator() noexcept {
   return generator_;
 }
 
@@ -30,7 +34,7 @@ int32 random::next(int32 max_value) const {
 int32 random::next(int32 min_value, int32 max_value) const {
   if (min_value > max_value) throw_helper::throws(exception_case::argument_out_of_range);
   if (min_value == max_value) return min_value;
-  return min_value + as<int32>(math::round(sample() * int32_object::max_value)) % ((max_value - 1) - min_value + 1);
+  return min_value + static_cast<int32>(math::round(sample() * (max_value - 1 - min_value)));
 }
 
 decimal random::next(decimal max_value) const {
@@ -63,21 +67,25 @@ float random::next(float min_value, float max_value) const {
   return static_cast<float>(min_value + (sample() * (max_value - min_value)));
 }
 
-void random::next_bytes(std::vector<xtd::byte>& buffer) const {
-  next_bytes(buffer.data(), buffer.size());
+void random::next_bytes(span<byte>& buffer) const {
+  for (auto index = 0_z; index < buffer.size(); index++)
+    buffer[index] = next<byte>(0, byte_object::max_value);
 }
 
-void random::next_bytes(xtd::byte* buffer, size_t buffer_size) const {
-  if (buffer == nullptr) throw_helper::throws(exception_case::argument_null);
-  for (auto index = 0_z; index < buffer_size; index++)
-    buffer[index] = next<xtd::byte>(0, byte_object::max_value);
+void random::next_bytes(array<byte>& buffer) const {
+  auto span_buffer = span<byte> {buffer};
+  next_bytes(span_buffer);
 }
 
 double random::next_double() const {
   return sample();
 }
 
+single random::next_single() const {
+  return as<single>(sample());
+}
+
 double random::sample() const {
-  static auto distribution_ = std::uniform_real_distribution<> {0, 1};
+  auto distribution_ = std::uniform_real_distribution<> {0, 1};
   return distribution_(generator_);
 }
