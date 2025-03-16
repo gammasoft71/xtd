@@ -100,6 +100,5 @@ single random::next_single() const {
 }
 
 double random::sample() const {
-  auto distribution_ = std::uniform_real_distribution<> {0, 1};
-  return distribution_(generator_);
+  return std::uniform_real_distribution<> {0, 1}(generator_);
 }
