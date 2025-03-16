@@ -241,6 +241,7 @@ add_sources(
   "src/xtd/tests/platform_id_tests.cpp"
   "src/xtd/tests/platform_name.hpp"
   "src/xtd/tests/platform_not_supported_exception_tests.cpp"
+  "src/xtd/tests/random_tests.cpp"
   "src/xtd/tests/rank_exception_tests.cpp"
   "src/xtd/tests/read_only_span_tests.cpp"
   "src/xtd/tests/registered_enum_class_flags_tests.cpp"
