@@ -2,11 +2,10 @@
 #include <xtd/random>
 
 using namespace xtd;
-using namespace xtd::collections::generic;
 
 auto main() -> int {
-  auto bytes1 = list<unsigned char>(100);
-  auto bytes2 = list<unsigned char>(100);
+  auto bytes1 = array<byte>(100);
+  auto bytes2 = array<byte>(100);
   auto rnd1 = xtd::random {};
   auto rnd2 = xtd::random {};
   
