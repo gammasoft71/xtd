@@ -103,7 +103,7 @@ Inheritance diagram for xtd::io::directory_info:</div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Exposes instance methods for creating, moving, and enumerating through directories and subdirectories. This class cannot be inherited. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_class" href="classxtd_1_1io_1_1directory__info.html">directory_info</a> final : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a></div><div class="ttdoc">Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...</div><div class="ttdef"><b>Definition</b> directory_info.hpp:129</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a></div><div class="ttdoc">Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...</div><div class="ttdef"><b>Definition</b> directory_info.hpp:130</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1file__system__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a></div><div class="ttdoc">Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.</div><div class="ttdef"><b>Definition</b> file_system_info.hpp:87</div></div>
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.hpp:13</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> → <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> </dd></dl>
@@ -279,24 +279,24 @@ Classes</h2></td></tr>
 <tr class="memitem:af52bf0568a9c2cc5ecc3935aca0638ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1io_1_1directory__info_1_1file__system__info__iterator.html">xtd::io::directory_info::file_system_info_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1directory__info.html#af52bf0568a9c2cc5ecc3935aca0638ab">enumerate_file_system_infos</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;search_pattern) const</td></tr>
 <tr class="memdesc:af52bf0568a9c2cc5ecc3935aca0638ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an enumerable collection of file system information that matches a specified search pattern.  <br /></td></tr>
 <tr class="separator:af52bf0568a9c2cc5ecc3935aca0638ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a774c45bca3d19a2f3a0c5b37335fc2"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1directory__info.html#a8a774c45bca3d19a2f3a0c5b37335fc2">get_directories</a> () const</td></tr>
-<tr class="memdesc:a8a774c45bca3d19a2f3a0c5b37335fc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the subdirectories of the current directory.  <br /></td></tr>
-<tr class="separator:a8a774c45bca3d19a2f3a0c5b37335fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1659ae35e2d6aa5937bd13386f742d68"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1directory__info.html#a1659ae35e2d6aa5937bd13386f742d68">get_directories</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;search_pattern) const</td></tr>
-<tr class="memdesc:a1659ae35e2d6aa5937bd13386f742d68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an array of directories in the current DirectoryInfo matching the given search criteria.  <br /></td></tr>
-<tr class="separator:a1659ae35e2d6aa5937bd13386f742d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92cac4d965fb822505b57e52f6038139"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classxtd_1_1io_1_1file__info.html">xtd::io::file_info</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1directory__info.html#a92cac4d965fb822505b57e52f6038139">get_files</a> () const</td></tr>
-<tr class="memdesc:a92cac4d965fb822505b57e52f6038139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a file list from the current directory.  <br /></td></tr>
-<tr class="separator:a92cac4d965fb822505b57e52f6038139"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e209665881c54a437b6bd4189160640"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classxtd_1_1io_1_1file__info.html">xtd::io::file_info</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1directory__info.html#a7e209665881c54a437b6bd4189160640">get_files</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;search_pattern) const</td></tr>
-<tr class="memdesc:a7e209665881c54a437b6bd4189160640"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a file list from the current directory matching the given search pattern.  <br /></td></tr>
-<tr class="separator:a7e209665881c54a437b6bd4189160640"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9621fbe41f68823f0f3f4d91d159bed5"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1directory__info.html#a9621fbe41f68823f0f3f4d91d159bed5">get_file_system_infos</a> () const</td></tr>
-<tr class="memdesc:a9621fbe41f68823f0f3f4d91d159bed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an array of strongly typed <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> entries representing all the files and subdirectories in a directory.  <br /></td></tr>
-<tr class="separator:a9621fbe41f68823f0f3f4d91d159bed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaacfe491c55165bdf2da4dc0b093a399"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1directory__info.html#aaacfe491c55165bdf2da4dc0b093a399">get_file_system_infos</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;search_pattern) const</td></tr>
-<tr class="memdesc:aaacfe491c55165bdf2da4dc0b093a399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves an array of strongly typed FileSystemInfo objects representing the files and subdirectories that match the specified search criteria.  <br /></td></tr>
-<tr class="separator:aaacfe491c55165bdf2da4dc0b093a399"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3518dc4a38a54c9b3617b23b9c2a02ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3518dc4a38a54c9b3617b23b9c2a02ce">get_directories</a> () const</td></tr>
+<tr class="memdesc:a3518dc4a38a54c9b3617b23b9c2a02ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the subdirectories of the current directory.  <br /></td></tr>
+<tr class="separator:a3518dc4a38a54c9b3617b23b9c2a02ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a10f3dc6c09160a44563d3c2ffc1236"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1directory__info.html#a9a10f3dc6c09160a44563d3c2ffc1236">get_directories</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;search_pattern) const</td></tr>
+<tr class="memdesc:a9a10f3dc6c09160a44563d3c2ffc1236"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an array of directories in the current DirectoryInfo matching the given search criteria.  <br /></td></tr>
+<tr class="separator:a9a10f3dc6c09160a44563d3c2ffc1236"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3594e1ccd3abc4c0c231aeb624369315"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1io_1_1file__info.html">xtd::io::file_info</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315">get_files</a> () const</td></tr>
+<tr class="memdesc:a3594e1ccd3abc4c0c231aeb624369315"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a file list from the current directory.  <br /></td></tr>
+<tr class="separator:a3594e1ccd3abc4c0c231aeb624369315"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a626c450e912cd224e382252e41a51f2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1io_1_1file__info.html">xtd::io::file_info</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1directory__info.html#a626c450e912cd224e382252e41a51f2e">get_files</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;search_pattern) const</td></tr>
+<tr class="memdesc:a626c450e912cd224e382252e41a51f2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a file list from the current directory matching the given search pattern.  <br /></td></tr>
+<tr class="separator:a626c450e912cd224e382252e41a51f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac593f881990b037254b23148bc94ee4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1directory__info.html#ac593f881990b037254b23148bc94ee4f">get_file_system_infos</a> () const</td></tr>
+<tr class="memdesc:ac593f881990b037254b23148bc94ee4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an array of strongly typed <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> entries representing all the files and subdirectories in a directory.  <br /></td></tr>
+<tr class="separator:ac593f881990b037254b23148bc94ee4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad22fe3cbd6191765ad2052daf5d5fd6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1directory__info.html#ad22fe3cbd6191765ad2052daf5d5fd6b">get_file_system_infos</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;search_pattern) const</td></tr>
+<tr class="memdesc:ad22fe3cbd6191765ad2052daf5d5fd6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves an array of strongly typed FileSystemInfo objects representing the files and subdirectories that match the specified search criteria.  <br /></td></tr>
+<tr class="separator:ad22fe3cbd6191765ad2052daf5d5fd6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacf193547a6f63f00d36aeeefa96a2a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1io_1_1directory__info.html#aacf193547a6f63f00d36aeeefa96a2a6">move_to</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;dest_dir_name)</td></tr>
 <tr class="memdesc:aacf193547a6f63f00d36aeeefa96a2a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves a DirectoryInfo instance and its contents to a new path.  <br /></td></tr>
 <tr class="separator:aacf193547a6f63f00d36aeeefa96a2a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -920,11 +920,11 @@ startup_(program::main);
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#a8a774c45bca3d19a2f3a0c5b37335fc2" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a> methods differ as follows: </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#a3518dc4a38a54c9b3617b23b9c2a02ce" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a> methods differ as follows: </dd>
 <dd>
 * When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a>, you can start enumerating the collection of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects before the whole collection is returned. </dd>
 <dd>
-* When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a8a774c45bca3d19a2f3a0c5b37335fc2" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects to be returned before you can access the array. </dd>
+* When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a3518dc4a38a54c9b3617b23b9c2a02ce" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects to be returned before you can access the array. </dd>
 <dd>
 Therefore, when you are working with many files and directories, <a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a> can be more efficient. </dd>
 <dd>
@@ -981,11 +981,11 @@ This method pre-populates the values of the following <a class="el" href="classx
 <dd>
 Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The searchPattern string "s*" searches for all names in path beginning with the letter "s". </dd>
 <dd>
-The <a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#a8a774c45bca3d19a2f3a0c5b37335fc2" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a> methods differ as follows: </dd>
+The <a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#a3518dc4a38a54c9b3617b23b9c2a02ce" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a> methods differ as follows: </dd>
 <dd>
 * When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a>, you can start enumerating the collection of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects before the whole collection is returned. </dd>
 <dd>
-* When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a8a774c45bca3d19a2f3a0c5b37335fc2" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects to be returned before you can access the array. </dd>
+* When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a3518dc4a38a54c9b3617b23b9c2a02ce" title="Returns the subdirectories of the current directory.">xtd::io::directory_info::get_directories</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects to be returned before you can access the array. </dd>
 <dd>
 Therefore, when you are working with many files and directories, <a class="el" href="classxtd_1_1io_1_1directory__info.html#ad0818557e5fbc58db748458c7e907c4b" title="Returns an enumerable collection of directory information in the current directory.">xtd::io::directory_info::enumerate_directories</a> can be more efficient. </dd>
 <dd>
@@ -1099,9 +1099,9 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line"><span class="comment"> test3.txt</span></div>
 <div class="line"><span class="comment"> *&amp;zwj;/</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#a92cac4d965fb822505b57e52f6038139" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a> methods differ as follows:<ul>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a> methods differ as follows:<ul>
 <li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a>, you can start enumerating the collection of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects before the whole collection is returned.</li>
-<li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a92cac4d965fb822505b57e52f6038139" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects to be returned before you can access the array. </li>
+<li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects to be returned before you can access the array. </li>
 </ul>
 </dd>
 <dd>
@@ -1213,9 +1213,9 @@ This method pre-populates the values of the following <a class="el" href="classx
 <dd>
 Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s". </dd>
 <dd>
-The <a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#a92cac4d965fb822505b57e52f6038139" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a> methods differ as follows:<ul>
+The <a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a> methods differ as follows:<ul>
 <li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a>, you can start enumerating the collection of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects before the whole collection is returned.</li>
-<li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a92cac4d965fb822505b57e52f6038139" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects to be returned before you can access the array. </li>
+<li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects to be returned before you can access the array. </li>
 </ul>
 </dd>
 <dd>
@@ -1256,9 +1256,9 @@ This method pre-populates the values of the following <a class="el" href="classx
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#a9621fbe41f68823f0f3f4d91d159bed5" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a> methods differ as follows:<ul>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#ac593f881990b037254b23148bc94ee4f" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a> methods differ as follows:<ul>
 <li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a>, you can start enumerating the collection of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects before the whole collection is returned.</li>
-<li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a9621fbe41f68823f0f3f4d91d159bed5" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects to be returned before you can access the array. </li>
+<li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#ac593f881990b037254b23148bc94ee4f" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects to be returned before you can access the array. </li>
 </ul>
 </dd>
 <dd>
@@ -1318,9 +1318,9 @@ This method pre-populates the values of the following <a class="el" href="classx
 <dd>
 Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s". </dd>
 <dd>
-The <a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#a9621fbe41f68823f0f3f4d91d159bed5" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a> methods differ as follows:<ul>
+The <a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#ac593f881990b037254b23148bc94ee4f" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a> methods differ as follows:<ul>
 <li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a>, you can start enumerating the collection of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects before the whole collection is returned.</li>
-<li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a9621fbe41f68823f0f3f4d91d159bed5" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects to be returned before you can access the array. </li>
+<li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#ac593f881990b037254b23148bc94ee4f" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects to be returned before you can access the array. </li>
 </ul>
 </dd>
 <dd>
@@ -1337,14 +1337,14 @@ This method pre-populates the values of the following <a class="el" href="classx
 
 </div>
 </div>
-<a id="a8a774c45bca3d19a2f3a0c5b37335fc2" name="a8a774c45bca3d19a2f3a0c5b37335fc2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a774c45bca3d19a2f3a0c5b37335fc2">&#9670;&#160;</a></span>get_directories() <span class="overload">[1/2]</span></h2>
+<a id="a3518dc4a38a54c9b3617b23b9c2a02ce" name="a3518dc4a38a54c9b3617b23b9c2a02ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3518dc4a38a54c9b3617b23b9c2a02ce">&#9670;&#160;</a></span>get_directories() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &gt; xtd::io::directory_info::get_directories </td>
+          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &gt; xtd::io::directory_info::get_directories </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1398,14 +1398,14 @@ This method pre-populates the values of the following <a class="el" href="classx
 
 </div>
 </div>
-<a id="a1659ae35e2d6aa5937bd13386f742d68" name="a1659ae35e2d6aa5937bd13386f742d68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1659ae35e2d6aa5937bd13386f742d68">&#9670;&#160;</a></span>get_directories() <span class="overload">[2/2]</span></h2>
+<a id="a9a10f3dc6c09160a44563d3c2ffc1236" name="a9a10f3dc6c09160a44563d3c2ffc1236"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a10f3dc6c09160a44563d3c2ffc1236">&#9670;&#160;</a></span>get_directories() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &gt; xtd::io::directory_info::get_directories </td>
+          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a> &gt; xtd::io::directory_info::get_directories </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td>
           <td class="paramname"><em>search_pattern</em></td><td>)</td>
@@ -1479,14 +1479,14 @@ This method pre-populates the values of the following <a class="el" href="classx
 
 </div>
 </div>
-<a id="a92cac4d965fb822505b57e52f6038139" name="a92cac4d965fb822505b57e52f6038139"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92cac4d965fb822505b57e52f6038139">&#9670;&#160;</a></span>get_files() <span class="overload">[1/2]</span></h2>
+<a id="a3594e1ccd3abc4c0c231aeb624369315" name="a3594e1ccd3abc4c0c231aeb624369315"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3594e1ccd3abc4c0c231aeb624369315">&#9670;&#160;</a></span>get_files() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="classxtd_1_1io_1_1file__info.html">xtd::io::file_info</a> &gt; xtd::io::directory_info::get_files </td>
+          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1io_1_1file__info.html">xtd::io::file_info</a> &gt; xtd::io::directory_info::get_files </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1555,9 +1555,9 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line"><span class="comment"> test3.txt</span></div>
 <div class="line"><span class="comment"> *&amp;zwj;/</span></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#a92cac4d965fb822505b57e52f6038139" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a> methods differ as follows:<ul>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a> methods differ as follows:<ul>
 <li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a>, you can start enumerating the collection of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects before the whole collection is returned.</li>
-<li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a92cac4d965fb822505b57e52f6038139" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects to be returned before you can access the array. </li>
+<li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects to be returned before you can access the array. </li>
 </ul>
 </dd>
 <dd>
@@ -1574,14 +1574,14 @@ This method pre-populates the values of the following <a class="el" href="classx
 
 </div>
 </div>
-<a id="a7e209665881c54a437b6bd4189160640" name="a7e209665881c54a437b6bd4189160640"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e209665881c54a437b6bd4189160640">&#9670;&#160;</a></span>get_files() <span class="overload">[2/2]</span></h2>
+<a id="a626c450e912cd224e382252e41a51f2e" name="a626c450e912cd224e382252e41a51f2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a626c450e912cd224e382252e41a51f2e">&#9670;&#160;</a></span>get_files() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="classxtd_1_1io_1_1file__info.html">xtd::io::file_info</a> &gt; xtd::io::directory_info::get_files </td>
+          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1io_1_1file__info.html">xtd::io::file_info</a> &gt; xtd::io::directory_info::get_files </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td>
           <td class="paramname"><em>search_pattern</em></td><td>)</td>
@@ -1669,9 +1669,9 @@ This method pre-populates the values of the following <a class="el" href="classx
 <dd>
 Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s". </dd>
 <dd>
-The <a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#a92cac4d965fb822505b57e52f6038139" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a> methods differ as follows:<ul>
+The <a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a> methods differ as follows:<ul>
 <li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#aae6b6e624c5ac50f1f7bb5ec8088114a" title="Returns an enumerable collection of file information in the current directory.">xtd::io::directory_info::enumerate_files</a>, you can start enumerating the collection of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects before the whole collection is returned.</li>
-<li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a92cac4d965fb822505b57e52f6038139" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects to be returned before you can access the array. </li>
+<li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a3594e1ccd3abc4c0c231aeb624369315" title="Returns a file list from the current directory.">xtd::io::directory_info::get_files</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1directory__info.html" title="Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...">xtd::io::directory_info</a> objects to be returned before you can access the array. </li>
 </ul>
 </dd>
 <dd>
@@ -1688,14 +1688,14 @@ This method pre-populates the values of the following <a class="el" href="classx
 
 </div>
 </div>
-<a id="a9621fbe41f68823f0f3f4d91d159bed5" name="a9621fbe41f68823f0f3f4d91d159bed5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9621fbe41f68823f0f3f4d91d159bed5">&#9670;&#160;</a></span>get_file_system_infos() <span class="overload">[1/2]</span></h2>
+<a id="ac593f881990b037254b23148bc94ee4f" name="ac593f881990b037254b23148bc94ee4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac593f881990b037254b23148bc94ee4f">&#9670;&#160;</a></span>get_file_system_infos() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &gt; &gt; xtd::io::directory_info::get_file_system_infos </td>
+          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &gt; &gt; xtd::io::directory_info::get_file_system_infos </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1733,7 +1733,7 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">      }</div>
 <div class="line"> </div>
 <div class="line">      <span class="comment">// Call the GetFileSystemInfos method.</span></div>
-<div class="line">      std::vector&lt;xtd::sptr&lt;file_system_info&gt;&gt; infos = dir.get_file_system_infos();</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;xtd::sptr&lt;file_system_info&gt;</a>&gt; infos = dir.get_file_system_infos();</div>
 <div class="line"> </div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Working...&quot;</span>);</div>
 <div class="line"> </div>
@@ -1750,7 +1750,7 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> list_directories_and_files(std::vector&lt;<a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;file_system_info&gt;</a>&gt; fs_info) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> list_directories_and_files(<a class="code hl_class" href="classxtd_1_1array.html">xtd::array</a>&lt;<a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;file_system_info&gt;</a>&gt; fs_info) {</div>
 <div class="line">    <span class="comment">// Iterate through each item.</span></div>
 <div class="line">    <span class="keywordflow">for</span> (<a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;file_system_info&gt;</a> i : fs_info) {</div>
 <div class="line">      <span class="comment">// Check to see if this is a directory_info object.</span></div>
@@ -1777,13 +1777,14 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">};</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(program::main);</div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:59</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1directory__not__found__exception_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory__not__found__exception.html">xtd::io::directory_not_found_exception</a></div><div class="ttdoc">The exception that is thrown when part of a file or directory cannot be found.</div><div class="ttdef"><b>Definition</b> directory_not_found_exception.hpp:29</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1directory_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory.html">xtd::io::directory</a></div><div class="ttdoc">Exposes static methods for creating, moving, and enumerating through directories and subdirectories....</div><div class="ttdef"><b>Definition</b> directory.hpp:101</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1directory_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory.html">xtd::io::directory</a></div><div class="ttdoc">Exposes static methods for creating, moving, and enumerating through directories and subdirectories....</div><div class="ttdef"><b>Definition</b> directory.hpp:102</div></div>
 <div class="ttc" id="agroup__types_html_gac95736233f2252af878f18687efabb92"><div class="ttname"><a href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a></div><div class="ttdeci">std::shared_ptr&lt; type_t &gt; sptr</div><div class="ttdoc">The xtd::sptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> sptr.hpp:25</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#a9621fbe41f68823f0f3f4d91d159bed5" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a> methods differ as follows:<ul>
+<dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#ac593f881990b037254b23148bc94ee4f" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a> methods differ as follows:<ul>
 <li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a>, you can start enumerating the collection of <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> objects before the whole collection is returned.</li>
-<li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a9621fbe41f68823f0f3f4d91d159bed5" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> objects to be returned before you can access the array. </li>
+<li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#ac593f881990b037254b23148bc94ee4f" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> objects to be returned before you can access the array. </li>
 </ul>
 </dd>
 <dd>
@@ -1800,14 +1801,14 @@ This method pre-populates the values of the following <a class="el" href="classx
 
 </div>
 </div>
-<a id="aaacfe491c55165bdf2da4dc0b093a399" name="aaacfe491c55165bdf2da4dc0b093a399"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaacfe491c55165bdf2da4dc0b093a399">&#9670;&#160;</a></span>get_file_system_infos() <span class="overload">[2/2]</span></h2>
+<a id="ad22fe3cbd6191765ad2052daf5d5fd6b" name="ad22fe3cbd6191765ad2052daf5d5fd6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad22fe3cbd6191765ad2052daf5d5fd6b">&#9670;&#160;</a></span>get_file_system_infos() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &gt; &gt; xtd::io::directory_info::get_file_system_infos </td>
+          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1io_1_1file__system__info.html">xtd::io::file_system_info</a> &gt; &gt; xtd::io::directory_info::get_file_system_infos </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;&#160;</td>
           <td class="paramname"><em>search_pattern</em></td><td>)</td>
@@ -1856,7 +1857,7 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">      }</div>
 <div class="line"> </div>
 <div class="line">      <span class="comment">// Call the GetFileSystemInfos method.</span></div>
-<div class="line">      std::vector&lt;xtd::sptr&lt;file_system_info&gt;&gt; infos = dir.get_file_system_infos(search_string);</div>
+<div class="line">      <a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;xtd::sptr&lt;file_system_info&gt;</a>&gt; infos = dir.get_file_system_infos(search_string);</div>
 <div class="line"> </div>
 <div class="line">      console::write_line(<span class="stringliteral">&quot;Working...&quot;</span>);</div>
 <div class="line"> </div>
@@ -1873,7 +1874,7 @@ This method pre-populates the values of the following <a class="el" href="classx
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> list_directories_and_files(std::vector&lt;<a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;file_system_info&gt;</a>&gt; fs_info, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; search_string) {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keywordtype">void</span> list_directories_and_files(<a class="code hl_class" href="classxtd_1_1array.html">xtd::array</a>&lt;<a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;file_system_info&gt;</a>&gt; fs_info, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; search_string) {</div>
 <div class="line">    <span class="comment">// Iterate through each item.</span></div>
 <div class="line">    <span class="keywordflow">for</span> (<a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;file_system_info&gt;</a> i : fs_info) {</div>
 <div class="line">      <span class="comment">// Check to see if this is a directory_info object.</span></div>
@@ -1913,9 +1914,9 @@ This method pre-populates the values of the following <a class="el" href="classx
 <dd>
 Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s". </dd>
 <dd>
-The <a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#a9621fbe41f68823f0f3f4d91d159bed5" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a> methods differ as follows:<ul>
+The <a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a> and <a class="el" href="classxtd_1_1io_1_1directory__info.html#ac593f881990b037254b23148bc94ee4f" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a> methods differ as follows:<ul>
 <li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a5603178c1e7c506db62092308ce6f66d" title="Returns an enumerable collection of file system information in the current directory.">xtd::io::directory_info::enumerate_file_system_infos</a>, you can start enumerating the collection of <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> objects before the whole collection is returned.</li>
-<li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#a9621fbe41f68823f0f3f4d91d159bed5" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> objects to be returned before you can access the array. </li>
+<li>When you use <a class="el" href="classxtd_1_1io_1_1directory__info.html#ac593f881990b037254b23148bc94ee4f" title="Returns an array of strongly typed xtd::io::file_system_info entries representing all the files and s...">xtd::io::directory_info::get_file_system_infos</a>, you must wait for the whole array of <a class="el" href="classxtd_1_1io_1_1file__system__info.html" title="Provides the base class for both xtd::io::file_info and xtd::io::directory_info objects.">xtd::io::file_system_info</a> objects to be returned before you can access the array. </li>
 </ul>
 </dd>
 <dd>
@@ -2197,7 +2198,7 @@ For a list of common I/O tasks, see <a href="https://gammasoft71.github.io/xtd/d
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 9 2025 23:56:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Mar 16 2025 21:43:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

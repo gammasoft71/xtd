@@ -136,7 +136,7 @@ To activate your code if DEBUG is defined, you must enclose calls to the methods
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1diagnostics.html">xtd::diagnostics</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda">debug::listeners</a>().push_back(new_ptr&lt;ostream_trace_listener&gt;(<a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a>));</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a483a067a6c0bb8f9bf92c18d65adffda">debug::listeners</a>().<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#adf868f38f4e81d03746e453bab03f4c5">push_back</a>(new_ptr&lt;ostream_trace_listener&gt;(<a class="code hl_variable" href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">console::out</a>));</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a60740400c74b23c28654d16583abd892">debug::auto_flush</a>(<span class="keyword">true</span>);</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a1e85e29f94c54388d35a9b24d16a52c1">debug::indent</a>();</div>
 <div class="line">  <a class="code hl_function" href="classxtd_1_1diagnostics_1_1debug.html#a2656cc128804128258ecad60ecf1cbd1">debug::write_line</a>(<span class="stringliteral">&quot;Entering Main&quot;</span>);</div>
@@ -150,6 +150,7 @@ To activate your code if DEBUG is defined, you must enclose calls to the methods
 <div class="line"><span class="comment">//     Entering Main</span></div>
 <div class="line"><span class="comment">// Hello World.</span></div>
 <div class="line"><span class="comment">//     Exiting Main</span></div>
+<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_adf868f38f4e81d03746e453bab03f4c5"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#adf868f38f4e81d03746e453bab03f4c5">xtd::collections::generic::list::push_back</a></div><div class="ttdeci">virtual void push_back(const type_t &amp;value)</div><div class="ttdoc">Appends the given element value to the end of the container.</div><div class="ttdef"><b>Definition</b> list.hpp:1119</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_a923837ac84baf01726703e0474ca4888"><div class="ttname"><a href="classxtd_1_1console.html#a923837ac84baf01726703e0474ca4888">xtd::console::out</a></div><div class="ttdeci">static std::ostream out</div><div class="ttdoc">Gets the standard output stream. A std::basic_ostream&lt;char_t&gt; that represents the standard output str...</div><div class="ttdef"><b>Definition</b> console.hpp:52</div></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1debug_html_a1e85e29f94c54388d35a9b24d16a52c1"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1debug.html#a1e85e29f94c54388d35a9b24d16a52c1">xtd::diagnostics::debug::indent</a></div><div class="ttdeci">static void indent() noexcept</div><div class="ttdoc">Increases the current indent_level by one.</div></div>
@@ -2094,7 +2095,7 @@ This method calls the write method of the trace listener. </dd></dl>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 9 2025 23:56:13 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Mar 16 2025 21:43:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
