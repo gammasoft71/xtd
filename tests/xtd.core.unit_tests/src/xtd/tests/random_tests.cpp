@@ -45,25 +45,6 @@ namespace xtd::tests {
       assert::are_equal(std::default_random_engine {1}, as_const(rnd).generator());
     }
     
-    void test_method_(get_items_boolean_with_choices_array_and_length) {
-      auto items = xtd::random {1}.get_items<boolean>(array<boolean> {false, true}, 16);
-      assert::are_equal(16_z, items.length());
-      if (environment::os_version().is_macos()) collection_assert::are_equal({false, true, false, true, false, false, true, false, true, true, true, false, true, true, true, true}, items);
-    }
-    
-    void test_method_(get_items_boolean_with_choices_read_only_span_and_length) {
-      auto items = xtd::random {1}.get_items<boolean>(read_only_span<boolean> {false, true}, 16);
-      assert::are_equal(16_z, items.length());
-      if (environment::os_version().is_macos()) collection_assert::are_equal({false, true, false, true, false, false, true, false, true, true, true, false, true, true, true, true}, items);
-    }
-    
-    void test_method_(get_items_boolean_with_choices_read_only_span_and_destination) {
-      auto items_list = list<boolean>(16);
-      auto items = span<boolean>(items_list);
-      xtd::random {1}.get_items<boolean>(read_only_span<boolean> {false, true}, items);
-      if (environment::os_version().is_macos()) collection_assert::are_equal({false, true, false, true, false, false, true, false, true, true, true, false, true, true, true, true}, items);
-    }
-    
     void test_method_(get_items_int_with_choices_array_and_length) {
       auto items = xtd::random {1}.get_items<int>(array<int> {0, 1, 2, 3}, 16);
       assert::are_equal(16_z, items.length());
@@ -71,11 +52,37 @@ namespace xtd::tests {
       if (environment::os_version().is_macos()) collection_assert::are_equal({1, 2, 1, 2, 1, 0, 2, 0, 3, 3, 3, 1, 3, 2, 2, 2}, items);
     }
     
+    void test_method_(get_items_boolean_with_choices_array_and_length) {
+      auto items = xtd::random {1}.get_items<boolean>(array<boolean> {false, true}, 16);
+      assert::are_equal(16_z, items.length());
+      if (environment::os_version().is_macos()) collection_assert::are_equal({false, true, false, true, false, false, true, false, true, true, true, false, true, true, true, true}, items);
+    }
+
+    void test_method_(get_items_double_with_choices_array_and_length) {
+      auto items = xtd::random {1}.get_items<double>(array<double> {0.3, 0.5, 0.8}, 16);
+      assert::are_equal(16_z, items.length());
+      collection_assert::does_not_contain({0.1, 0.2, 0.4, 0.6, 0.7, 0.9}, items);
+      if (environment::os_version().is_macos()) collection_assert::are_equal({0.3, 0.8, 0.5, 0.8, 0.5, 0.3, 0.5, 0.3, 0.8, 0.8, 0.8, 0.5, 0.8, 0.5, 0.5, 0.8}, items);
+    }
+    
     void test_method_(get_items_int_with_choices_read_only_span_and_length) {
       auto items = xtd::random {1}.get_items<int>(read_only_span<int> {0, 1, 2, 3}, 16);
       assert::are_equal(16_z, items.length());
       collection_assert::does_not_contain({4, 5, 6, 7, 8, 9}, items);
       if (environment::os_version().is_macos()) collection_assert::are_equal({1, 2, 1, 2, 1, 0, 2, 0, 3, 3, 3, 1, 3, 2, 2, 2}, items);
+    }
+
+    void test_method_(get_items_boolean_with_choices_read_only_span_and_length) {
+      auto items = xtd::random {1}.get_items<boolean>(read_only_span<boolean> {false, true}, 16);
+      assert::are_equal(16_z, items.length());
+      if (environment::os_version().is_macos()) collection_assert::are_equal({false, true, false, true, false, false, true, false, true, true, true, false, true, true, true, true}, items);
+    }
+
+    void test_method_(get_items_double_with_choices_read_only_span_and_length) {
+      auto items = xtd::random {1}.get_items<double>(read_only_span<double> {0.3, 0.5, 0.8}, 16);
+      assert::are_equal(16_z, items.length());
+      collection_assert::does_not_contain({0.1, 0.2, 0.4, 0.6, 0.7, 0.9}, items);
+      if (environment::os_version().is_macos()) collection_assert::are_equal({0.3, 0.8, 0.5, 0.8, 0.5, 0.3, 0.5, 0.3, 0.8, 0.8, 0.8, 0.5, 0.8, 0.5, 0.5, 0.8}, items);
     }
     
     void test_method_(get_items_int_with_choices_read_only_span_and_destination) {
@@ -85,27 +92,59 @@ namespace xtd::tests {
       collection_assert::does_not_contain({4, 5, 6, 7, 8, 9}, items);
       if (environment::os_version().is_macos()) collection_assert::are_equal({1, 2, 1, 2, 1, 0, 2, 0, 3, 3, 3, 1, 3, 2, 2, 2}, items);
     }
-    
-    void test_method_(get_items_double_with_choices_array_and_length) {
-      auto items = xtd::random {1}.get_items<double>(array<double> {0.3, 0.5, 0.8}, 16);
-      assert::are_equal(16_z, items.length());
-      collection_assert::does_not_contain({0.1, 0.2, 0.4, 0.6, 0.7, 0.9}, items);
-      if (environment::os_version().is_macos()) collection_assert::are_equal({0.3, 0.8, 0.5, 0.8, 0.5, 0.3, 0.5, 0.3, 0.8, 0.8, 0.8, 0.5, 0.8, 0.5, 0.5, 0.8}, items);
+
+    void test_method_(get_items_boolean_with_choices_read_only_span_and_destination) {
+      auto items_list = list<boolean>(16);
+      auto items = span<boolean>(items_list);
+      xtd::random {1}.get_items<boolean>(read_only_span<boolean> {false, true}, items);
+      if (environment::os_version().is_macos()) collection_assert::are_equal({false, true, false, true, false, false, true, false, true, true, true, false, true, true, true, true}, items);
     }
-    
-    void test_method_(get_items_double_with_choices_read_only_span_and_length) {
-      auto items = xtd::random {1}.get_items<double>(read_only_span<double> {0.3, 0.5, 0.8}, 16);
-      assert::are_equal(16_z, items.length());
-      collection_assert::does_not_contain({0.1, 0.2, 0.4, 0.6, 0.7, 0.9}, items);
-      if (environment::os_version().is_macos()) collection_assert::are_equal({0.3, 0.8, 0.5, 0.8, 0.5, 0.3, 0.5, 0.3, 0.8, 0.8, 0.8, 0.5, 0.8, 0.5, 0.5, 0.8}, items);
-    }
-    
+
     void test_method_(get_items_double_with_choices_read_only_span_and_destination) {
       auto items_list = list<double>(16);
       auto items = span<double>(items_list);
       xtd::random {1}.get_items<double>(read_only_span<double> {0.3, 0.5, 0.8}, items);
       collection_assert::does_not_contain({0.1, 0.2, 0.4, 0.6, 0.7, 0.9}, items);
       if (environment::os_version().is_macos()) collection_assert::are_equal({0.3, 0.8, 0.5, 0.8, 0.5, 0.3, 0.5, 0.3, 0.8, 0.8, 0.8, 0.5, 0.8, 0.5, 0.5, 0.8}, items);
+    }
+    
+    void test_method_(next) {
+      if (!environment::os_version().is_macos()) return;
+      auto rnd = xtd::random {1};
+      assert::are_equal(365211587, rnd.next());
+      assert::are_equal(1681957626, rnd.next());
+      assert::are_equal(814711366, rnd.next());
+      assert::are_equal(1709433009, rnd.next());
+      assert::are_equal(1045878015, rnd.next());
+    }
+    
+    void test_method_(next_boolean) {
+      if (!environment::os_version().is_macos()) return;
+      auto rnd = xtd::random {1};
+      assert::are_equal(false, rnd.next<boolean>());
+      assert::are_equal(true, rnd.next<boolean>());
+      assert::are_equal(false, rnd.next<boolean>());
+      assert::are_equal(true, rnd.next<boolean>());
+      assert::are_equal(false, rnd.next<boolean>());
+    }
+    
+    void test_method_(next_double) {
+      if (!environment::os_version().is_macos()) return;
+      auto rnd = xtd::random {1};
+      assert::are_equal(3.05724499436841E+307, rnd.next<double>(), 0.00000000000001E+307);
+      assert::are_equal(1.40799380865409E+308, rnd.next<double>(), 0.00000000000001E+308);
+      assert::are_equal(6.82008001395177E+307, rnd.next<double>(), 0.00000000000001E+307);
+      assert::are_equal(1.4309938939764E+308, rnd.next<double>(), 0.0000000000001E+308);
+      assert::are_equal(8.75521324746089E+307, rnd.next<double>(), 0.00000000000001E+307);
+    }
+
+    void test_method_(next_int_with_max_value) {
+      if (!environment::os_version().is_macos()) return;
+      auto rnd = xtd::random {1};
+      assert::are_equal(0, rnd.next(0));
+      assert::are_equal(0, rnd.next(1));
+      assert::are_equal(1, rnd.next(2));
+      assert::are_equal(0, rnd.next(2));
     }
   };
 }
