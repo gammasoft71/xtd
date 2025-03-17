@@ -152,8 +152,8 @@ namespace xtd {
     }
     
     /// @cond
-    template<>
-    xtd::boolean next<xtd::boolean>() const {return static_cast<boolean>(next(0, 2));}
+    template<xtd::boolean>
+    xtd::boolean next() const {return static_cast<xtd::boolean>(next(0, 2));}
     xtd::boolean next(xtd::boolean max_value) const;
     decimal next(decimal max_value) const;
     double next(double max_value) const;
