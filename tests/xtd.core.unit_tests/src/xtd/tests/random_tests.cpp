@@ -85,5 +85,27 @@ namespace xtd::tests {
       collection_assert::does_not_contain({4, 5, 6, 7, 8, 9}, items);
       if (environment::os_version().is_macos()) collection_assert::are_equal({1, 2, 1, 2, 1, 0, 2, 0, 3, 3, 3, 1, 3, 2, 2, 2}, items);
     }
+    
+    void test_method_(get_items_double_with_choices_array_and_length) {
+      auto items = xtd::random {1}.get_items<double>(array<double> {0.3, 0.5, 0.8}, 16);
+      assert::are_equal(16_z, items.length());
+      collection_assert::does_not_contain({0.1, 0.2, 0.4, 0.6, 0.7, 0.9}, items);
+      if (environment::os_version().is_macos()) collection_assert::are_equal({0.3, 0.8, 0.5, 0.8, 0.5, 0.3, 0.5, 0.3, 0.8, 0.8, 0.8, 0.5, 0.8, 0.5, 0.5, 0.8}, items);
+    }
+    
+    void test_method_(get_items_double_with_choices_read_only_span_and_length) {
+      auto items = xtd::random {1}.get_items<double>(read_only_span<double> {0.3, 0.5, 0.8}, 16);
+      assert::are_equal(16_z, items.length());
+      collection_assert::does_not_contain({0.1, 0.2, 0.4, 0.6, 0.7, 0.9}, items);
+      if (environment::os_version().is_macos()) collection_assert::are_equal({0.3, 0.8, 0.5, 0.8, 0.5, 0.3, 0.5, 0.3, 0.8, 0.8, 0.8, 0.5, 0.8, 0.5, 0.5, 0.8}, items);
+    }
+    
+    void test_method_(get_items_double_with_choices_read_only_span_and_destination) {
+      auto items_list = list<double>(16);
+      auto items = span<double>(items_list);
+      xtd::random {1}.get_items<double>(read_only_span<double> {0.3, 0.5, 0.8}, items);
+      collection_assert::does_not_contain({0.1, 0.2, 0.4, 0.6, 0.7, 0.9}, items);
+      if (environment::os_version().is_macos()) collection_assert::are_equal({0.3, 0.8, 0.5, 0.8, 0.5, 0.3, 0.5, 0.3, 0.8, 0.8, 0.8, 0.5, 0.8, 0.5, 0.5, 0.8}, items);
+    }
   };
 }
