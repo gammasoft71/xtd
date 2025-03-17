@@ -37,6 +37,10 @@ int32 random::next(int32 min_value, int32 max_value) const {
   return min_value + static_cast<int32>(math::round(sample() * (max_value - 1 - min_value)));
 }
 
+boolean random::next(boolean max_value) const {
+  return static_cast<boolean>(next(0, static_cast<int32>(max_value) + 1));
+}
+
 decimal random::next(decimal max_value) const {
   return next(decimal {.0}, max_value);
 }
@@ -47,6 +51,10 @@ double random::next(double max_value) const {
 
 float random::next(float max_value) const {
   return next(.0f, max_value);
+}
+
+xtd::boolean random::next(xtd::boolean min_value, xtd::boolean max_value) const {
+  return static_cast<boolean>(next(static_cast<int32>(min_value), static_cast<int32>(max_value) + 1));
 }
 
 decimal random::next(decimal min_value, decimal max_value) const {
