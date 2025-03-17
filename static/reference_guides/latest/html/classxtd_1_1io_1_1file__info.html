@@ -167,7 +167,7 @@ Inheritance diagram for xtd::io::file_info:</div>
 <div class="line"><span class="comment">// Welcome</span></div>
 <div class="line"><span class="comment">// /var/folders/d5/k7mxnq214dxf3jbvvvhpbfqh0000gn/T/tmp99dcece9.tmp was copied to /var/folders/d5/k7mxnq214dxf3jbvvvhpbfqh0000gn/T/tmp235be07d.tmp.</span></div>
 <div class="line"><span class="comment">// /var/folders/d5/k7mxnq214dxf3jbvvvhpbfqh0000gn/T/tmp235be07d.tmp was successfully deleted.</span></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1path_html"><div class="ttname"><a href="classxtd_1_1io_1_1path.html">xtd::io::path</a></div><div class="ttdoc">Performs operations on std::basic_string instances that contain file or directory path information....</div><div class="ttdef"><b>Definition</b> path.hpp:36</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1path_html"><div class="ttname"><a href="classxtd_1_1io_1_1path.html">xtd::io::path</a></div><div class="ttdoc">Performs operations on std::basic_string instances that contain file or directory path information....</div><div class="ttdef"><b>Definition</b> path.hpp:37</div></div>
 <div class="ttc" id="aclassxtd_1_1system__exception_html"><div class="ttname"><a href="classxtd_1_1system__exception.html">xtd::system_exception</a></div><div class="ttdoc">The exception that is thrown when a method call is invalid for the object's current state.</div><div class="ttdef"><b>Definition</b> system_exception.hpp:18</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:175</div></div>
 <div class="ttc" id="agroup__keywords_html_ga9ba81b3bf268ec1eb95752f516f563e9"><div class="ttname"><a href="group__keywords.html#ga9ba81b3bf268ec1eb95752f516f563e9">block_scope_</a></div><div class="ttdeci">#define block_scope_(...)</div><div class="ttdoc">The specified expression is cleared automatically when the scope is ended.</div><div class="ttdef"><b>Definition</b> block_scope.hpp:25</div></div>
@@ -567,7 +567,7 @@ When first called, <a class="el" href="classxtd_1_1io_1_1file__info.html" title=
 
 <p>Gets a value indicating whether a file exists. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if the file exists; <code>false</code> if the file does not exist or if the file is a directory. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example uses the <a class="el" href="classxtd_1_1io_1_1file__info.html#a4f1abebe6cf1b8fb6646b5bd03817440" title="Gets a value indicating whether a file exists.">xtd::io::file_info::exists</a> property ensure a file exists before opening it. You can use this technique to throw a custom exception when the file is not found. <div class="fragment"><div class="line">std::vector&lt;char&gt; open_data_file(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; file_name) {</div>
+<dl class="section user"><dt>Examples</dt><dd>The following code example uses the <a class="el" href="classxtd_1_1io_1_1file__info.html#a4f1abebe6cf1b8fb6646b5bd03817440" title="Gets a value indicating whether a file exists.">xtd::io::file_info::exists</a> property ensure a file exists before opening it. You can use this technique to throw a custom exception when the file is not found. <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;char&gt;</a> open_data_file(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; file_name) {</div>
 <div class="line">  <span class="comment">// Check the FileName argument.</span></div>
 <div class="line">  <span class="keywordflow">if</span> (file_name.<a class="code hl_function" href="classxtd_1_1basic__string.html#aa6e7750375addd424e2684f5f7f88853">size</a>() == 0)</div>
 <div class="line">    <span class="keywordflow">throw</span> <a class="code hl_class" href="classxtd_1_1argument__exception.html">argument_exception</a>(<span class="stringliteral">&quot;file_name&quot;</span>);</div>
@@ -584,7 +584,7 @@ When first called, <a class="el" href="classxtd_1_1io_1_1file__info.html" title=
 <div class="line">  std::ifstream f_stream(file_name, std::ios::binary);</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Create a buffer.</span></div>
-<div class="line">  std::vector&lt;char&gt; buffer(f_info.size());</div>
+<div class="line">  <a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;char&gt;</a> buffer(f_info.size());</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Read the file contents to the buffer.</span></div>
 <div class="line">  f_stream.read(&amp;buffer[0], f_info.size());</div>
@@ -593,6 +593,7 @@ When first called, <a class="el" href="classxtd_1_1io_1_1file__info.html" title=
 <div class="line">  <span class="keywordflow">return</span> buffer;</div>
 <div class="line">}</div>
 <div class="ttc" id="aclassxtd_1_1argument__exception_html"><div class="ttname"><a href="classxtd_1_1argument__exception.html">xtd::argument_exception</a></div><div class="ttdoc">The exception that is thrown when one of the arguments provided to a method is not valid.</div><div class="ttdef"><b>Definition</b> argument_exception.hpp:24</div></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:59</div></div>
 <div class="ttc" id="aclassxtd_1_1basic__string_html_aa6e7750375addd424e2684f5f7f88853"><div class="ttname"><a href="classxtd_1_1basic__string.html#aa6e7750375addd424e2684f5f7f88853">xtd::basic_string::size</a></div><div class="ttdeci">size_type size() const noexcept</div><div class="ttdoc">Returns the number of char_t elements in the string, i.e. std::distance(begin(), end()).</div><div class="ttdef"><b>Definition</b> basic_string.hpp:926</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1file__not__found__exception_html"><div class="ttname"><a href="classxtd_1_1io_1_1file__not__found__exception.html">xtd::io::file_not_found_exception</a></div><div class="ttdoc">The exception that is thrown when an attempt to access a file that does not exist on disk fails.</div><div class="ttdef"><b>Definition</b> file_not_found_exception.hpp:30</div></div>
 </div><!-- fragment --> </dd></dl>
@@ -859,7 +860,7 @@ The xtd::io::file_info::size property is called for a directory. </td></tr>
 <div class="line"><span class="comment">// The size of UpdatePatch.txt is 30 bytes.</span></div>
 <div class="line"><span class="comment">// The size of wt3d.ini is 234 bytes.</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html"><div class="ttname"><a href="classxtd_1_1console.html">xtd::console</a></div><div class="ttdoc">Represents the standard input, output, and error streams for console applications.</div><div class="ttdef"><b>Definition</b> console.hpp:36</div></div>
-<div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a></div><div class="ttdoc">Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...</div><div class="ttdef"><b>Definition</b> directory_info.hpp:129</div></div>
+<div class="ttc" id="aclassxtd_1_1io_1_1directory__info_html"><div class="ttname"><a href="classxtd_1_1io_1_1directory__info.html">xtd::io::directory_info</a></div><div class="ttdoc">Exposes instance methods for creating, moving, and enumerating through directories and subdirectories...</div><div class="ttdef"><b>Definition</b> directory_info.hpp:130</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1file__info_html_a7bbc1abbd603c19f70d687770961d195"><div class="ttname"><a href="classxtd_1_1io_1_1file__info.html#a7bbc1abbd603c19f70d687770961d195">xtd::io::file_info::length</a></div><div class="ttdeci">size_t length() const</div><div class="ttdoc">Gets the size, in bytes, of the current file.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1file__info_html_ab7190f1f212f00ebcb87000595f7ad6f"><div class="ttname"><a href="classxtd_1_1io_1_1file__info.html#ab7190f1f212f00ebcb87000595f7ad6f">xtd::io::file_info::name</a></div><div class="ttdeci">xtd::string name() const override</div><div class="ttdoc">Gets the name of the file.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">xtd::console_key::f</a></div><div class="ttdeci">@ f</div><div class="ttdoc">The F key.</div></div>
@@ -2596,7 +2597,7 @@ Pass an empty string ("") to the dest_backup_file_name parameter if you do not w
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 9 2025 23:56:22 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sun Mar 16 2025 21:43:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
