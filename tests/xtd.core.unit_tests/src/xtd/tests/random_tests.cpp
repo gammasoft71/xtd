@@ -169,13 +169,31 @@ namespace xtd::tests {
       }
     }
 
-    void test_method_(next_int_with_max_value) {
+    void test_method_(next_int_with_max_value_less_or_equal_to_1) {
       if (!environment::os_version().is_macos()) return;
       auto rnd = xtd::random {1};
       assert::are_equal(0, rnd.next(0));
+      assert::are_equal(0, rnd.next(0));
+      assert::are_equal(0, rnd.next(0));
       assert::are_equal(0, rnd.next(1));
-      assert::are_equal(1, rnd.next(2));
-      assert::are_equal(0, rnd.next(2));
+      assert::are_equal(0, rnd.next(1));
+      assert::are_equal(0, rnd.next(1));
+    }
+
+    void test_method_(next_boolean_with_max_value_equal_to_false) {
+      if (!environment::os_version().is_macos()) return;
+      auto rnd = xtd::random {1};
+      assert::are_equal(false, rnd.next<boolean>(false));
+      assert::are_equal(false, rnd.next<boolean>(false));
+      assert::are_equal(false, rnd.next<boolean>(false));
+    }
+
+    void test_method_(next_double_with_max_value_equal_to_0) {
+      if (!environment::os_version().is_macos()) return;
+      auto rnd = xtd::random {1};
+      assert::are_equal(0.0, rnd.next<double>(0.0));
+      assert::are_equal(0.0, rnd.next<double>(0.0));
+      assert::are_equal(0.0, rnd.next<double>(0.0));
     }
   };
 }
