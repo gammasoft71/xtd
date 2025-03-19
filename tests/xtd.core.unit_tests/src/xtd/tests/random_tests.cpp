@@ -372,13 +372,23 @@ namespace xtd::tests {
       }
     }
     
-    void test_method_(next_values_with_array_of_int) {
+    void test_method_(next_values_with_array_of_ints) {
       auto rnd = xtd::random {1};
       auto values = array<int>(16_z);
       rnd.next_values(values);
       if (environment::os_version().is_linux()) collection_assert::are_equal({564950497, 1969887316, 940422543, 768218108, 1866991770, 83392683, 148486084, 127561358, 33063457, 287085224, 802182691, 1848710666, 115658219, 661076908, 864107023, 1126132005}, values);
       else if (environment::os_version().is_macos()) collection_assert::are_equal({365211587, 1681957626, 814711366, 1709433009, 1045878015, 259372766, 1329578650, 50305030, 2126371941, 2004080542, 1829874370, 657124527, 1982269609, 1537543912, 1262832694, 1780884904}, values);
       else if (environment::os_version().is_windows()) collection_assert::are_equal({397460743, 2000468770, 2035235988, 1040990757, 688346755, 331628760, 1500796196, 257591832, 1041907343, 1358793929, 1757128505, 1466787154, 1070651954, 1260136916, 1545660440, 555120403}, values);
+    }
+    
+    void test_method_(next_values_with_span_of_ints) {
+      auto rnd = xtd::random {1};
+      auto values = array<int>(16_z);
+      auto span_values = span<int>(values);
+      rnd.next_values(span_values);
+      if (environment::os_version().is_linux()) collection_assert::are_equal({564950497, 1969887316, 940422543, 768218108, 1866991770, 83392683, 148486084, 127561358, 33063457, 287085224, 802182691, 1848710666, 115658219, 661076908, 864107023, 1126132005}, span_values);
+      else if (environment::os_version().is_macos()) collection_assert::are_equal({365211587, 1681957626, 814711366, 1709433009, 1045878015, 259372766, 1329578650, 50305030, 2126371941, 2004080542, 1829874370, 657124527, 1982269609, 1537543912, 1262832694, 1780884904}, span_values);
+      else if (environment::os_version().is_windows()) collection_assert::are_equal({397460743, 2000468770, 2035235988, 1040990757, 688346755, 331628760, 1500796196, 257591832, 1041907343, 1358793929, 1757128505, 1466787154, 1070651954, 1260136916, 1545660440, 555120403}, span_values);
     }
   };
 }
