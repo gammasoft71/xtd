@@ -178,13 +178,22 @@ namespace xtd {
     /// @remarks This method is the public version of the protected method, sample
     virtual double next_double() const;
 
+    /// @brief Fills the elements of a specified xtd::span of bytes with random numbers.
+    /// @param buffer An xtd::span of bytes to contain random numbers.
+    /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<value_t>::max().
+    template<class value_t>
+    void next_values(xtd::span<value_t>& buffer) const {
+      for (auto index = 0_z; index < buffer.size(); ++index)
+        buffer[index] = next<value_t>();
+    }
+
     /// @brief Fills the elements of a specified array of bytes with random numbers.
     /// @param buffer An array of bytes to contain random numbers.
     /// @remarks Each element of the array of bytes is set to a random number greater than or equal to zero, and less than or equal to std::numeric_limits<value_t>::max().
     template<class value_t>
     void next_values(xtd::array<value_t>& buffer) const {
-      for (auto index = 0_z; index < buffer.size(); ++index)
-        buffer[index] = next<value_t>(0, xtd::box_integer<value_t>::max_value);
+      auto span_buffer = span<value_t> {buffer};
+      next_values(span_buffer);
     }
 
     /// @brief Returns a nonnegative random number.
