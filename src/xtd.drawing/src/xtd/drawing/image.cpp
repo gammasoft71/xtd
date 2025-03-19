@@ -172,8 +172,7 @@ image::image() : data_(xtd::new_sptr<data>()) {
 
 image::image(intptr hbitmap) : data_(xtd::new_sptr<data>()) {
   if (hbitmap) data_->handle = hbitmap;
-  if (data_->handle == invalid_handle) throw_helper::throws(exception_case::argument);
-  update_properties();
+  if (data_->handle != invalid_handle) update_properties();
 }
 
 image::image(const string& filename) : image::image(filename, false) {
