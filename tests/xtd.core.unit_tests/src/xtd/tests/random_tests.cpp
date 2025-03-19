@@ -329,5 +329,24 @@ namespace xtd::tests {
         assert::are_equal(5.28214574551244, rnd.next(4.0, 8.0), 0.00000000000001);
       }
     }
+    
+    void test_method_(next_byte_with_array) {
+      auto rnd = xtd::random {1};
+      auto bytes = array<byte>(16_z);
+      rnd.next_bytes(bytes);
+      if (environment::os_version().is_linux()) collection_assert::are_equal({67, 233, 111, 91, 221, 10, 18, 15, 4, 34, 95, 219, 14, 78, 102, 133}, bytes);
+      else if (environment::os_version().is_macos()) collection_assert::are_equal({43, 199, 96, 202, 124, 31, 157, 6, 252, 237, 216, 78, 234, 182, 149, 211}, bytes);
+      else if (environment::os_version().is_windows()) collection_assert::are_equal({47, 237, 241, 123, 81, 39, 178, 30, 123, 161, 208, 173, 127, 149, 183, 66}, bytes);
+    }
+    
+    void test_method_(next_byte_with_span) {
+      auto rnd = xtd::random {1};
+      auto bytes = list<byte>(16_z);
+      auto span_byes = span<byte> {bytes};
+      rnd.next_bytes(span_byes);
+      if (environment::os_version().is_linux()) collection_assert::are_equal({67, 233, 111, 91, 221, 10, 18, 15, 4, 34, 95, 219, 14, 78, 102, 133}, span_byes);
+      else if (environment::os_version().is_macos()) collection_assert::are_equal({43, 199, 96, 202, 124, 31, 157, 6, 252, 237, 216, 78, 234, 182, 149, 211}, span_byes);
+      else if (environment::os_version().is_windows()) collection_assert::are_equal({47, 237, 241, 123, 81, 39, 178, 30, 123, 161, 208, 173, 127, 149, 183, 66}, span_byes);
+    }
   };
 }
