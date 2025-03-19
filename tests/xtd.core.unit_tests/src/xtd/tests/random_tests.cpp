@@ -330,7 +330,7 @@ namespace xtd::tests {
       }
     }
     
-    void test_method_(next_byte_with_array) {
+    void test_method_(next_bytes_with_array) {
       auto rnd = xtd::random {1};
       auto bytes = array<byte>(16_z);
       rnd.next_bytes(bytes);
@@ -339,7 +339,7 @@ namespace xtd::tests {
       else if (environment::os_version().is_windows()) collection_assert::are_equal({47, 237, 241, 123, 81, 39, 178, 30, 123, 161, 208, 173, 127, 149, 183, 66}, bytes);
     }
     
-    void test_method_(next_byte_with_span) {
+    void test_method_(next_bytes_with_span) {
       auto rnd = xtd::random {1};
       auto bytes = list<byte>(16_z);
       auto span_byes = span<byte> {bytes};
@@ -370,6 +370,15 @@ namespace xtd::tests {
         assert::are_equal(0.484749096314265, rnd.next_double(), 0.000000000000001);
         assert::are_equal(0.32053643637811, rnd.next_double(), 0.00000000000001);
       }
+    }
+    
+    void test_method_(next_values_with_array_of_int) {
+      auto rnd = xtd::random {1};
+      auto values = array<int>(16_z);
+      rnd.next_values(values);
+      if (environment::os_version().is_linux()) collection_assert::are_equal({564950497, 1969887316, 940422543, 768218108, 1866991770, 83392683, 148486084, 127561358, 33063457, 287085224, 802182691, 1848710666, 115658219, 661076908, 864107023, 1126132005}, values);
+      else if (environment::os_version().is_macos()) collection_assert::are_equal({365211587, 1681957626, 814711366, 1709433009, 1045878015, 259372766, 1329578650, 50305030, 2126371941, 2004080542, 1829874370, 657124527, 1982269609, 1537543912, 1262832694, 1780884904}, values);
+      else if (environment::os_version().is_windows()) collection_assert::are_equal({397460743, 2000468770, 2035235988, 1040990757, 688346755, 331628760, 1500796196, 257591832, 1041907343, 1358793929, 1757128505, 1466787154, 1070651954, 1260136916, 1545660440, 555120403}, values);
     }
   };
 }
