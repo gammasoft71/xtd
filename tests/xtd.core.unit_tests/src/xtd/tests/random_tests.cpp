@@ -238,5 +238,27 @@ namespace xtd::tests {
         assert::are_equal(false, rnd.next(true));
       }
     }
+
+    void test_method_(next_int_with_min_and_max_with_same_value_or_same_value_plus_one) {
+      auto rnd = xtd::random {1};
+      assert::are_equal(4, rnd.next(4, 4));
+      assert::are_equal(4, rnd.next(4, 4));
+      assert::are_equal(4, rnd.next(4, 5));
+      assert::are_equal(4, rnd.next(4, 5));
+    }
+    
+    void test_method_(next_boolean_with_min_and_max_with_same_value) {
+      auto rnd = xtd::random {1};
+      assert::are_equal(false, rnd.next<boolean>(false, false));
+      assert::are_equal(false, rnd.next<boolean>(false, false));
+      assert::are_equal(true, rnd.next<boolean>(true, true));
+      assert::are_equal(true, rnd.next<boolean>(true, true));
+    }
+    
+    void test_method_(next_double_with_min_and_max_with_same_valuee) {
+      auto rnd = xtd::random {1};
+      assert::are_equal(4, rnd.next(4.0, 4.0));
+      assert::are_equal(4, rnd.next(4.0, 4.0));
+    }
   };
 }
