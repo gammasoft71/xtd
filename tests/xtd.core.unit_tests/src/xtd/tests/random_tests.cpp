@@ -306,5 +306,28 @@ namespace xtd::tests {
         assert::are_equal(false, rnd.next(true));
       }
     }
+
+    void test_method_(next_double_with_min_and_max_value) {
+      auto rnd = xtd::random {1};
+      if (environment::os_version().is_linux()) {
+        assert::are_equal(5.05230230377273, rnd.next(4.0, 8.0), 0.00000000000001);
+        assert::are_equal(7.66920105618576, rnd.next(4.0, 8.0), 0.00000000000001);
+        assert::are_equal(5.75167348969983, rnd.next(4.0, 8.0), 0.00000000000001);
+        assert::are_equal(5.43091773392548, rnd.next(4.0, 8.0), 0.00000000000001);
+        assert::are_equal(7.47754316795126, rnd.next(4.0, 8.0), 0.00000000000001);
+      } else if (environment::os_version().is_macos()) {
+        assert::are_equal(4.68025959160211, rnd.next(4.0, 8.0), 0.00000000000001);
+        assert::are_equal(7.13289021657622, rnd.next(4.0, 8.0), 0.00000000000001);
+        assert::are_equal(5.51751817519715, rnd.next(4.0, 8.0), 0.00000000000001);
+        assert::are_equal(7.18406710517031, rnd.next(4.0, 8.0), 0.00000000000001);
+        assert::are_equal(5.94809961225812, rnd.next(4.0, 8.0), 0.00000000000001);
+      } else if (environment::os_version().is_windows()) {
+        assert::are_equal(4.74032832629606, rnd.next(4.0, 8.0), 0.00000000000001);
+        assert::are_equal(7.72616345437796, rnd.next(4.0, 8.0), 0.00000000000001);
+        assert::are_equal(7.79092244389435, rnd.next(4.0, 8.0), 0.00000000000001);
+        assert::are_equal(5.93899638525706, rnd.next(4.0, 8.0), 0.00000000000001);
+        assert::are_equal(5.28214574551244, rnd.next(4.0, 8.0), 0.00000000000001);
+      }
+    }
   };
 }
