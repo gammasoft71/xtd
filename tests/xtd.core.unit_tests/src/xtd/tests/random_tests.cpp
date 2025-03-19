@@ -215,5 +215,28 @@ namespace xtd::tests {
         assert::are_equal(1, rnd.next(4));
       }
     }
+    
+    void test_method_(next_boolean_with_max_value) {
+      auto rnd = xtd::random {1};
+      if (environment::os_version().is_linux()) {
+        assert::are_equal(false, rnd.next(true));
+        assert::are_equal(true, rnd.next(true));
+        assert::are_equal(false, rnd.next(true));
+        assert::are_equal(false, rnd.next(true));
+        assert::are_equal(true, rnd.next(true));
+      } else if (environment::os_version().is_macos()) {
+        assert::are_equal(false, rnd.next(true));
+        assert::are_equal(true, rnd.next(true));
+        assert::are_equal(false, rnd.next(true));
+        assert::are_equal(true, rnd.next(true));
+        assert::are_equal(false, rnd.next(true));
+      } else if (environment::os_version().is_windows()) {
+        assert::are_equal(false, rnd.next(true));
+        assert::are_equal(true, rnd.next(true));
+        assert::are_equal(true, rnd.next(true));
+        assert::are_equal(false, rnd.next(true));
+        assert::are_equal(false, rnd.next(true));
+      }
+    }
   };
 }
