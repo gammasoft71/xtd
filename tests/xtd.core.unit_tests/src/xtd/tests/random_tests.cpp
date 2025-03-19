@@ -181,16 +181,16 @@ namespace xtd::tests {
 
     void test_method_(next_boolean_with_max_value_equal_to_false) {
       auto rnd = xtd::random {1};
-      assert::are_equal(false, rnd.next<boolean>(false));
-      assert::are_equal(false, rnd.next<boolean>(false));
-      assert::are_equal(false, rnd.next<boolean>(false));
+      assert::are_equal(false, rnd.next(false));
+      assert::are_equal(false, rnd.next(false));
+      assert::are_equal(false, rnd.next(false));
     }
 
     void test_method_(next_double_with_max_value_equal_to_0) {
       auto rnd = xtd::random {1};
-      assert::are_equal(0.0, rnd.next<double>(0.0));
-      assert::are_equal(0.0, rnd.next<double>(0.0));
-      assert::are_equal(0.0, rnd.next<double>(0.0));
+      assert::are_equal(0.0, rnd.next(0.0));
+      assert::are_equal(0.0, rnd.next(0.0));
+      assert::are_equal(0.0, rnd.next(0.0));
     }
     
     void test_method_(next_int_with_max_value) {
@@ -259,6 +259,52 @@ namespace xtd::tests {
       auto rnd = xtd::random {1};
       assert::are_equal(4, rnd.next(4.0, 4.0));
       assert::are_equal(4, rnd.next(4.0, 4.0));
+    }
+
+    void test_method_(next_int_with_min_and_max_value) {
+      auto rnd = xtd::random {1};
+      if (environment::os_version().is_linux()) {
+        assert::are_equal(5, rnd.next(4, 8));
+        assert::are_equal(7, rnd.next(4, 8));
+        assert::are_equal(5, rnd.next(4, 8));
+        assert::are_equal(5, rnd.next(4, 8));
+        assert::are_equal(7, rnd.next(4, 8));
+      } else if (environment::os_version().is_macos()) {
+        assert::are_equal(5, rnd.next(4, 8));
+        assert::are_equal(6, rnd.next(4, 8));
+        assert::are_equal(5, rnd.next(4, 8));
+        assert::are_equal(6, rnd.next(4, 8));
+        assert::are_equal(5, rnd.next(4, 8));
+      } else if (environment::os_version().is_windows()) {
+        assert::are_equal(5, rnd.next(4, 8));
+        assert::are_equal(7, rnd.next(4, 8));
+        assert::are_equal(7, rnd.next(4, 8));
+        assert::are_equal(5, rnd.next(4, 8));
+        assert::are_equal(5, rnd.next(4, 8));
+      }
+    }
+
+    void test_method_(next_boolean_with_min_and_max_value) {
+      auto rnd = xtd::random {1};
+      if (environment::os_version().is_linux()) {
+        assert::are_equal(false, rnd.next(true));
+        assert::are_equal(true, rnd.next(true));
+        assert::are_equal(false, rnd.next(true));
+        assert::are_equal(false, rnd.next(true));
+        assert::are_equal(true, rnd.next(true));
+      } else if (environment::os_version().is_macos()) {
+        assert::are_equal(false, rnd.next(true));
+        assert::are_equal(true, rnd.next(true));
+        assert::are_equal(false, rnd.next(true));
+        assert::are_equal(true, rnd.next(true));
+        assert::are_equal(false, rnd.next(true));
+      } else if (environment::os_version().is_windows()) {
+        assert::are_equal(false, rnd.next(true));
+        assert::are_equal(true, rnd.next(true));
+        assert::are_equal(true, rnd.next(true));
+        assert::are_equal(false, rnd.next(true));
+        assert::are_equal(false, rnd.next(true));
+      }
     }
   };
 }
