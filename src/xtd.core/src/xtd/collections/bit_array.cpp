@@ -208,7 +208,7 @@ bool bit_array::has_any_set() const noexcept {
   
   if (!extra_bits) return false;
   
-  return (bit_array_[int_count] & (1 << extra_bits) - 1) != 0;
+  return ((bit_array_[int_count] & (1 << extra_bits)) - 1) != 0;
 }
 
 bit_array& bit_array::left_shift(xtd::size count) noexcept {
