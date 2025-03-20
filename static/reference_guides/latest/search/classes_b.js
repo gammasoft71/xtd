@@ -22,10 +22,11 @@ var searchData=
   ['list_3c_20int32_20_3e_19',['list&lt; int32 &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
   ['list_3c_20xtd_3a_3abyte_20_3e_20',['list&lt; xtd::byte &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
   ['list_3c_20xtd_3a_3adrawing_3a_3acolor_20_3e_21',['list&lt; xtd::drawing::color &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
-  ['list_5fbox_22',['list_box',['../classxtd_1_1forms_1_1list__box.html',1,'xtd::forms']]],
-  ['list_5fcontrol_23',['list_control',['../classxtd_1_1forms_1_1list__control.html',1,'xtd::forms']]],
-  ['loading_5findicator_24',['loading_indicator',['../classxtd_1_1forms_1_1loading__indicator.html',1,'xtd::forms']]],
-  ['loading_5findicators_25',['loading_indicators',['../classxtd_1_1forms_1_1loading__indicators.html',1,'xtd::forms']]],
-  ['lock_5fguard_26',['lock_guard',['../classxtd_1_1threading_1_1lock__guard.html',1,'xtd::threading']]],
-  ['lock_5frecursion_5fexception_27',['lock_recursion_exception',['../classxtd_1_1threading_1_1lock__recursion__exception.html',1,'xtd::threading']]]
+  ['list_3c_20xtd_3a_3asptr_3c_20xtd_3a_3adiagnostics_3a_3atrace_5flistener_20_3e_20_3e_22',['list&lt; xtd::sptr&lt; xtd::diagnostics::trace_listener &gt; &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
+  ['list_5fbox_23',['list_box',['../classxtd_1_1forms_1_1list__box.html',1,'xtd::forms']]],
+  ['list_5fcontrol_24',['list_control',['../classxtd_1_1forms_1_1list__control.html',1,'xtd::forms']]],
+  ['loading_5findicator_25',['loading_indicator',['../classxtd_1_1forms_1_1loading__indicator.html',1,'xtd::forms']]],
+  ['loading_5findicators_26',['loading_indicators',['../classxtd_1_1forms_1_1loading__indicators.html',1,'xtd::forms']]],
+  ['lock_5fguard_27',['lock_guard',['../classxtd_1_1threading_1_1lock__guard.html',1,'xtd::threading']]],
+  ['lock_5frecursion_5fexception_28',['lock_recursion_exception',['../classxtd_1_1threading_1_1lock__recursion__exception.html',1,'xtd::threading']]]
 ];

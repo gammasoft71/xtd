@@ -94,54 +94,54 @@ $(function() {
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Convert int to byte :&quot;</span>);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;---------------------&quot;</span>);</div>
 <div class="line">  <span class="keyword">auto</span> value = 42;</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;static_cast&lt;unsigned char&gt;(value) = {}&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;unsigned char&gt;(value)          = {}&quot;</span>, as&lt;unsigned char&gt;(value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_byte(value)           = {}&quot;</span>, convert::to_byte(value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;static_cast&lt;byte&gt;(value) = {}&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">byte</span><span class="keyword">&gt;</span>(value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;byte&gt;(value)          = {}&quot;</span>, as&lt;byte&gt;(value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_byte(value)  = {}&quot;</span>, convert::to_byte(value));</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Convert float to byte :&quot;</span>);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;-----------------------&quot;</span>);</div>
 <div class="line">  <span class="keyword">auto</span> float_value = 42.5f;</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;static_cast&lt;unsigned char&gt;(float_value) = {}&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(float_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;unsigned char&gt;(float_value)          = {}&quot;</span>, as&lt;unsigned char&gt;(float_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_byte(float_value)           = {}&quot;</span>, convert::to_byte(float_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;static_cast&lt;byte&gt;(float_value) = {}&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">byte</span><span class="keyword">&gt;</span>(float_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;byte&gt;(float_value)          = {}&quot;</span>, as&lt;byte&gt;(float_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_byte(float_value)  = {}&quot;</span>, convert::to_byte(float_value));</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Convert any to byte :&quot;</span>);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;---------------------&quot;</span>);</div>
-<div class="line">  <span class="keyword">auto</span> any_value = std::make_any&lt;unsigned char&gt;(42);</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;any_cast&lt;unsigned char&gt;(any_value) = {}&quot;</span>, any_cast&lt;unsigned char&gt;(any_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;unsigned char&gt;(any_value)       = {}&quot;</span>, as&lt;unsigned char&gt;(any_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_byte(any_value)        = {}&quot;</span>, convert::to_byte(any_value));</div>
+<div class="line">  <span class="keyword">auto</span> any_value = std::make_any&lt;byte&gt;(42);</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;any_cast&lt;byte&gt;(any_value)   = {}&quot;</span>, any_cast&lt;byte&gt;(any_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;byte&gt;(any_value)         = {}&quot;</span>, as&lt;byte&gt;(any_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_byte(any_value) = {}&quot;</span>, convert::to_byte(any_value));</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Convert string to byte :&quot;</span>);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;------------------------&quot;</span>);</div>
 <div class="line">  <span class="keyword">auto</span> string_value = <span class="stringliteral">&quot;42&quot;</span>;</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;parse&lt;unsigned char&gt;(string_value))   = {}&quot;</span>, parse&lt;unsigned char&gt;(string_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;unsigned char&gt;(string_value)       = {}&quot;</span>, as&lt;unsigned char&gt;(string_value));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_byte(string_value)        = {}&quot;</span>, convert::to_byte(string_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;parse&lt;byte&gt;(string_value))     = {}&quot;</span>, parse&lt;byte&gt;(string_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;byte&gt;(string_value)         = {}&quot;</span>, as&lt;byte&gt;(string_value));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_byte(string_value) = {}&quot;</span>, convert::to_byte(string_value));</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Convert hexa string to byte :&quot;</span>);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;-----------------------------&quot;</span>);</div>
 <div class="line">  <span class="keyword">auto</span> string_hex_value = <span class="stringliteral">&quot;0x2A&quot;</span>;</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;parse&lt;unsigned char&gt;(string_hex_value, number_styles::hex_number) = {}&quot;</span>, parse&lt;unsigned char&gt;(string_hex_value, number_styles::hex_number));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;unsigned char&gt;(string_hex_value, 16)                           = {}&quot;</span>, as&lt;unsigned char&gt;(string_hex_value, 16));</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_byte(string_hex_value, 16))                           = {}&quot;</span>, convert::to_byte(string_hex_value, 16));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;parse&lt;byte&gt;(string_hex_value, number_styles::hex_number) = {}&quot;</span>, parse&lt;byte&gt;(string_hex_value, number_styles::hex_number));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;as&lt;byte&gt;(string_hex_value, 16)                           = {}&quot;</span>, as&lt;byte&gt;(string_hex_value, 16));</div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;convert::to_byte(string_hex_value, 16))                  = {}&quot;</span>, convert::to_byte(string_hex_value, 16));</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Convert int to byte with overflow :&quot;</span>);</div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;-----------------------------------&quot;</span>);</div>
 <div class="line">  <span class="keyword">auto</span> overflow_value = 257;</div>
-<div class="line">  console::write_line(<span class="stringliteral">&quot;static_cast&lt;unsigned char&gt;(overflow_value) = {}&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span><span class="keyword">&gt;</span>(overflow_value)); <span class="comment">// Overflow not detected</span></div>
+<div class="line">  console::write_line(<span class="stringliteral">&quot;static_cast&lt;byte&gt;(overflow_value) = {}&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">byte</span><span class="keyword">&gt;</span>(overflow_value)); <span class="comment">// Overflow not detected</span></div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;as&lt;unsigned char&gt;(overflow_value)          = {}&quot;</span>, as&lt;unsigned char&gt;(overflow_value));</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;as&lt;byte&gt;(overflow_value)          = {}&quot;</span>, as&lt;byte&gt;(overflow_value));</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1overflow__exception.html">overflow_exception</a>&amp;) {</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;(ERROR) as : Overflow exception&quot;</span>);</div>
 <div class="line">  }</div>
 <div class="line">  <span class="keywordflow">try</span> {</div>
-<div class="line">    console::write_line(<span class="stringliteral">&quot;convert::to_byte(overflow_value)   = {}&quot;</span>, convert::to_byte(overflow_value));</div>
+<div class="line">    console::write_line(<span class="stringliteral">&quot;convert::to_byte(overflow_value)  = {}&quot;</span>, convert::to_byte(overflow_value));</div>
 <div class="line">  } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1overflow__exception.html">overflow_exception</a>&amp;) {</div>
 <div class="line">    console::write_line(<span class="stringliteral">&quot;(ERROR) convert::to_byte : Overflow exception&quot;</span>);</div>
 <div class="line">  }</div>
@@ -151,37 +151,37 @@ $(function() {
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Convert int to byte :</span></div>
 <div class="line"><span class="comment">// ---------------------</span></div>
-<div class="line"><span class="comment">// static_cast&lt;unsigned char&gt;(value) = 42</span></div>
-<div class="line"><span class="comment">// as&lt;unsigned char&gt;(value)          = 42</span></div>
-<div class="line"><span class="comment">// convert::to_byte(value)           = 42</span></div>
+<div class="line"><span class="comment">// static_cast&lt;byte&gt;(value) = 42</span></div>
+<div class="line"><span class="comment">// as&lt;byte&gt;(value)          = 42</span></div>
+<div class="line"><span class="comment">// convert::to_byte(value)  = 42</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Convert float to byte :</span></div>
 <div class="line"><span class="comment">// -----------------------</span></div>
-<div class="line"><span class="comment">// static_cast&lt;unsigned char&gt;(float_value) = 42</span></div>
-<div class="line"><span class="comment">// as&lt;unsigned char&gt;(float_value)          = 43</span></div>
-<div class="line"><span class="comment">// convert::to_byte(float_value)           = 43</span></div>
+<div class="line"><span class="comment">// static_cast&lt;byte&gt;(float_value) = 42</span></div>
+<div class="line"><span class="comment">// as&lt;byte&gt;(float_value)          = 43</span></div>
+<div class="line"><span class="comment">// convert::to_byte(float_value)  = 43</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Convert string to byte :</span></div>
 <div class="line"><span class="comment">// ------------------------</span></div>
-<div class="line"><span class="comment">// parse&lt;unsigned char&gt;(string_value))   = 42</span></div>
-<div class="line"><span class="comment">// as&lt;unsigned char&gt;(string_value)       = 42</span></div>
-<div class="line"><span class="comment">// convert::to_byte(string_value)        = 42</span></div>
+<div class="line"><span class="comment">// parse&lt;byte&gt;(string_value))     = 42</span></div>
+<div class="line"><span class="comment">// as&lt;byte&gt;(string_value)         = 42</span></div>
+<div class="line"><span class="comment">// convert::to_byte(string_value) = 42</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Convert any to byte :</span></div>
 <div class="line"><span class="comment">// ---------------------</span></div>
-<div class="line"><span class="comment">// any_cast&lt;unsigned char&gt;(any_value) = 42</span></div>
-<div class="line"><span class="comment">// as&lt;unsigned char&gt;(any_value)       = 42</span></div>
-<div class="line"><span class="comment">// convert::to_byte(any_value)        = 42</span></div>
+<div class="line"><span class="comment">// any_cast&lt;byte&gt;(any_value)   = 42</span></div>
+<div class="line"><span class="comment">// as&lt;byte&gt;(any_value)         = 42</span></div>
+<div class="line"><span class="comment">// convert::to_byte(any_value) = 42</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Convert hexa string to byte :</span></div>
 <div class="line"><span class="comment">// -----------------------------</span></div>
-<div class="line"><span class="comment">// parse&lt;unsigned char&gt;(string_hex_value, number_styles::hex_number) = 42</span></div>
-<div class="line"><span class="comment">// as&lt;unsigned char&gt;(string_hex_value, 16)                           = 42</span></div>
-<div class="line"><span class="comment">// convert::to_byte(string_hex_value, 16))                           = 42</span></div>
+<div class="line"><span class="comment">// parse&lt;byte&gt;(string_hex_value, number_styles::hex_number) = 42</span></div>
+<div class="line"><span class="comment">// as&lt;byte&gt;(string_hex_value, 16)                           = 42</span></div>
+<div class="line"><span class="comment">// convert::to_byte(string_hex_value, 16))                  = 42</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Convert int to byte with overflow :</span></div>
 <div class="line"><span class="comment">// -----------------------------------</span></div>
-<div class="line"><span class="comment">// static_cast&lt;unsigned char&gt;(overflow_value) = 1</span></div>
+<div class="line"><span class="comment">// static_cast&lt;byte&gt;(overflow_value) = 1</span></div>
 <div class="line"><span class="comment">// (ERROR) as : Overflow exception</span></div>
 <div class="line"><span class="comment">// (ERROR) convert::to_byte : Overflow exception</span></div>
 <div class="ttc" id="aclassxtd_1_1overflow__exception_html"><div class="ttname"><a href="classxtd_1_1overflow__exception.html">xtd::overflow_exception</a></div><div class="ttdoc">The exception that is thrown when an arithmetic, casting, or conversion operation in a checked contex...</div><div class="ttdef"><b>Definition</b> overflow_exception.hpp:19</div></div>
@@ -190,7 +190,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 9 2025 23:56:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 20 2025 20:07:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
