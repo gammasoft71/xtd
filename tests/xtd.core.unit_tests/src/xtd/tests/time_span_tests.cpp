@@ -260,8 +260,8 @@ namespace xtd::tests {
 
     void test_method_(total_days) {
       assert::is_zero(time_span {}.total_days());
-      assert::are_equal(0.0430903, time_span {1, 2, 3}.total_days(), 0.0000001);
-      assert::are_equal(1.08546, time_span {1, 2, 3, 4}.total_days(), 0.00001);
+      assert::are_equal(0.0430903, time_span {1, 2, 3}.total_days());
+      assert::are_equal(1.08546, time_span {1, 2, 3, 4}.total_days());
     }
 
     void test_method_(total_days_duration) {
@@ -272,7 +272,7 @@ namespace xtd::tests {
 
     void test_method_(total_hours) {
       assert::is_zero(time_span {}.total_hours());
-      assert::are_equal(1.03417, time_span {1, 2, 3}.total_hours(), 0.00001);
+      assert::are_equal(1.03417, time_span {1, 2, 3}.total_hours());
     }
 
     void test_method_(total_hours_duration) {
@@ -282,7 +282,7 @@ namespace xtd::tests {
 
     void test_method_(total_microseconds) {
       assert::is_zero(time_span {}.total_microseconds());
-      assert::are_equal(9.3784e+10, time_span {1, 2, 3, 4, 5, 6}.total_microseconds(), 0.0001e+10);
+      assert::are_equal(9.3784e+10, time_span {1, 2, 3, 4, 5, 6}.total_microseconds());
     }
 
     void test_method_(total_microseconds_duration) {
@@ -292,7 +292,7 @@ namespace xtd::tests {
 
     void test_method_(total_milliseconds) {
       assert::is_zero(time_span {}.total_milliseconds());
-      assert::are_equal(9.3784e+07, time_span {1, 2, 3, 4, 5}.total_milliseconds(), 0.0001e+07);
+      assert::are_equal(9.3784e+07, time_span {1, 2, 3, 4, 5}.total_milliseconds());
     }
 
     void test_method_(total_milliseconds_duration) {
@@ -312,7 +312,7 @@ namespace xtd::tests {
 
     void test_method_(total_nanoseconds) {
       assert::is_zero(time_span {}.total_nanoseconds());
-      assert::are_equal(9.3784e+13, time_span {1, 2, 3, 4, 5, 6, 789}.total_nanoseconds(), 0.0001e+13);
+      assert::are_equal(9.3784e+13, time_span {1, 2, 3, 4, 5, 6, 789}.total_nanoseconds());
     }
 
     void test_method_(total_nanoseconds_duration) {
