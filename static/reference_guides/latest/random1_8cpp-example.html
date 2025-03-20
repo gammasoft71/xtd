@@ -82,20 +82,19 @@ $(function() {
   <div class="headertitle"><div class="title">random1.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use <a class="el" href="classxtd_1_1random.html#a21ca6b657e656d19b57f093e270f88e7" title="Fills the elements of a specified array of bytes with random numbers.">xtd::random::next_bytes</a> method.</p>
+<p>Shows how to use <a class="el" href="classxtd_1_1random.html#af8dee61c03a83ef71bf478f603094111" title="Fills the elements of a specified array of bytes with random numbers.">xtd::random::next_bytes</a> method.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/random&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> bytes1 = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;unsigned char&gt;</a>(100);</div>
-<div class="line">  <span class="keyword">auto</span> bytes2 = <a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;unsigned char&gt;</a>(100);</div>
+<div class="line">  <span class="keyword">auto</span> bytes1 = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1array.html">array&lt;byte&gt;</a>(100);</div>
+<div class="line">  <span class="keyword">auto</span> bytes2 = <a class="code hl_class" href="classxtd_1_1array.html">array&lt;byte&gt;</a>(100);</div>
 <div class="line">  <span class="keyword">auto</span> rnd1 = <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1random.html">xtd::random</a> {};</div>
 <div class="line">  <span class="keyword">auto</span> rnd2 = <a class="code hl_class" href="classxtd_1_1random.html">xtd::random</a> {};</div>
 <div class="line">  </div>
-<div class="line">  rnd1.<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1random.html#a21ca6b657e656d19b57f093e270f88e7">next_bytes</a>(bytes1);</div>
+<div class="line">  rnd1.<a id="a2" name="a2"></a><a class="code hl_function" href="classxtd_1_1random.html#af8dee61c03a83ef71bf478f603094111">next_bytes</a>(bytes1);</div>
 <div class="line">  rnd2.next_bytes(bytes2);</div>
 <div class="line">  </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;First Series:&quot;</span>);</div>
@@ -139,16 +138,15 @@ $(function() {
 <div class="line"><span class="comment">//   187  190   68  218   37   16  229  116  150  161</span></div>
 <div class="line"><span class="comment">//   183  130  219   90  192  254   24  232  174  116</span></div>
 <div class="line"><span class="comment">//    46  191  226   53  118  198  148   29   76  106</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:80</div></div>
-<div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.hpp:40</div></div>
-<div class="ttc" id="aclassxtd_1_1random_html_a21ca6b657e656d19b57f093e270f88e7"><div class="ttname"><a href="classxtd_1_1random.html#a21ca6b657e656d19b57f093e270f88e7">xtd::random::next_bytes</a></div><div class="ttdeci">virtual void next_bytes(std::vector&lt; xtd::byte &gt; &amp;buffer) const</div><div class="ttdoc">Fills the elements of a specified array of bytes with random numbers.</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:59</div></div>
+<div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.hpp:43</div></div>
+<div class="ttc" id="aclassxtd_1_1random_html_af8dee61c03a83ef71bf478f603094111"><div class="ttname"><a href="classxtd_1_1random.html#af8dee61c03a83ef71bf478f603094111">xtd::random::next_bytes</a></div><div class="ttdeci">virtual void next_bytes(xtd::span&lt; xtd::byte &gt; &amp;buffer) const</div><div class="ttdoc">Fills the elements of a specified array of bytes with random numbers.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 9 2025 23:56:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 20 2025 20:07:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

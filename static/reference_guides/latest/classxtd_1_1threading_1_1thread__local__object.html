@@ -143,9 +143,9 @@ The differences between the <a class="el" href="classxtd_1_1threading_1_1thread_
 <tr class="memitem:a70a7fe956ab3b13e5dd7d9e308bb5e89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__local__object.html#a70a7fe956ab3b13e5dd7d9e308bb5e89">value</a> (value_t value) noexcept</td></tr>
 <tr class="memdesc:a70a7fe956ab3b13e5dd7d9e308bb5e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value of this instance for the current thread.  <br /></td></tr>
 <tr class="separator:a70a7fe956ab3b13e5dd7d9e308bb5e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec41b9f84bae6707b9ae4516373f7234"><td class="memItemLeft" align="right" valign="top">std::vector&lt; value_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__local__object.html#aec41b9f84bae6707b9ae4516373f7234">values</a> () const</td></tr>
-<tr class="memdesc:aec41b9f84bae6707b9ae4516373f7234"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a list containing the values stored by all threads that have accessed this instance.  <br /></td></tr>
-<tr class="separator:aec41b9f84bae6707b9ae4516373f7234"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20f6edc5b0d9045ff29f657eb7fb753c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__local__object.html#a20f6edc5b0d9045ff29f657eb7fb753c">values</a> () const</td></tr>
+<tr class="memdesc:a20f6edc5b0d9045ff29f657eb7fb753c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a list containing the values stored by all threads that have accessed this instance.  <br /></td></tr>
+<tr class="separator:a20f6edc5b0d9045ff29f657eb7fb753c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:a8d02e061606f1bc36cbb0bdfc4a261e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1thread__local__object.html#a8d02e061606f1bc36cbb0bdfc4a261e2">to_string</a> () const noexcept override</td></tr>
@@ -243,11 +243,11 @@ template&lt;class value_t &gt; </div>
 <p>Initializes the <a class="el" href="classxtd_1_1threading_1_1thread__local__object.html" title="Provides thread-local storage of data.">xtd::threading::thread_local_object</a> instance and specifies whether all values are accessible from any thread. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">track_all_values</td><td><code>true</code> to track all values set on the instance and expose them through the <a class="el" href="classxtd_1_1threading_1_1thread__local__object.html#aec41b9f84bae6707b9ae4516373f7234" title="Gets a list containing the values stored by all threads that have accessed this instance.">xtd::threading::thread_local_object::values</a> property; <code>false</code> otherwise. When set to <code>true</code>, a value stored from a given thread will be available through <a class="el" href="classxtd_1_1threading_1_1thread__local__object.html#aec41b9f84bae6707b9ae4516373f7234" title="Gets a list containing the values stored by all threads that have accessed this instance.">xtd::threading::thread_local_object::values</a> even after that thread has exited. </td></tr>
+    <tr><td class="paramname">track_all_values</td><td><code>true</code> to track all values set on the instance and expose them through the <a class="el" href="classxtd_1_1threading_1_1thread__local__object.html#a20f6edc5b0d9045ff29f657eb7fb753c" title="Gets a list containing the values stored by all threads that have accessed this instance.">xtd::threading::thread_local_object::values</a> property; <code>false</code> otherwise. When set to <code>true</code>, a value stored from a given thread will be available through <a class="el" href="classxtd_1_1threading_1_1thread__local__object.html#a20f6edc5b0d9045ff29f657eb7fb753c" title="Gets a list containing the values stored by all threads that have accessed this instance.">xtd::threading::thread_local_object::values</a> even after that thread has exited. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If track_all_values is <code>false</code>, only the value of this instance for the current thread is accessible. Attempting to use the <a class="el" href="classxtd_1_1threading_1_1thread__local__object.html#aec41b9f84bae6707b9ae4516373f7234" title="Gets a list containing the values stored by all threads that have accessed this instance.">xtd::threading::thread_local_object::values</a> property to retrieve all values throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a> exception. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If track_all_values is <code>false</code>, only the value of this instance for the current thread is accessible. Attempting to use the <a class="el" href="classxtd_1_1threading_1_1thread__local__object.html#a20f6edc5b0d9045ff29f657eb7fb753c" title="Gets a list containing the values stored by all threads that have accessed this instance.">xtd::threading::thread_local_object::values</a> property to retrieve all values throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a> exception. </dd></dl>
 
 </div>
 </div>
@@ -327,11 +327,11 @@ template&lt;class value_t &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value_factory</td><td>The <a class="el" href="group__delegates.html#ga972b9383c3235752ab971d9d6be04c88" title="Represents a delegate that has variables parameters and returns a value of the type specified by the ...">xtd::func</a> invoked to produce a lazily-initialized value when an attempt is made to retrieve Value without it having been previously initialized. </td></tr>
-    <tr><td class="paramname">track_all_values</td><td><code>true</code> to track all values set on the instance and expose them through the <a class="el" href="classxtd_1_1threading_1_1thread__local__object.html#aec41b9f84bae6707b9ae4516373f7234" title="Gets a list containing the values stored by all threads that have accessed this instance.">xtd::threading::thread_local_object::values</a> property; <code>false</code> otherwise. When set to <code>true</code>, a value stored from a given thread will be available through <a class="el" href="classxtd_1_1threading_1_1thread__local__object.html#aec41b9f84bae6707b9ae4516373f7234" title="Gets a list containing the values stored by all threads that have accessed this instance.">xtd::threading::thread_local_object::values</a> even after that thread has exited. </td></tr>
+    <tr><td class="paramname">track_all_values</td><td><code>true</code> to track all values set on the instance and expose them through the <a class="el" href="classxtd_1_1threading_1_1thread__local__object.html#a20f6edc5b0d9045ff29f657eb7fb753c" title="Gets a list containing the values stored by all threads that have accessed this instance.">xtd::threading::thread_local_object::values</a> property; <code>false</code> otherwise. When set to <code>true</code>, a value stored from a given thread will be available through <a class="el" href="classxtd_1_1threading_1_1thread__local__object.html#a20f6edc5b0d9045ff29f657eb7fb753c" title="Gets a list containing the values stored by all threads that have accessed this instance.">xtd::threading::thread_local_object::values</a> even after that thread has exited. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section remark"><dt>Remarks</dt><dd>If track_all_values is <code>false</code>, only the value of this instance for the current thread is accessible. Attempting to use the <a class="el" href="classxtd_1_1threading_1_1thread__local__object.html#aec41b9f84bae6707b9ae4516373f7234" title="Gets a list containing the values stored by all threads that have accessed this instance.">xtd::threading::thread_local_object::values</a> property to retrieve all values throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a> exception. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>If track_all_values is <code>false</code>, only the value of this instance for the current thread is accessible. Attempting to use the <a class="el" href="classxtd_1_1threading_1_1thread__local__object.html#a20f6edc5b0d9045ff29f657eb7fb753c" title="Gets a list containing the values stored by all threads that have accessed this instance.">xtd::threading::thread_local_object::values</a> property to retrieve all values throws an <a class="el" href="classxtd_1_1invalid__operation__exception.html" title="The exception that is thrown when the format of an argument does not meet the parameter specification...">xtd::invalid_operation_exception</a> exception. </dd></dl>
 
 </div>
 </div>
@@ -434,8 +434,8 @@ template&lt;class value_t &gt; </div>
 
 </div>
 </div>
-<a id="aec41b9f84bae6707b9ae4516373f7234" name="aec41b9f84bae6707b9ae4516373f7234"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec41b9f84bae6707b9ae4516373f7234">&#9670;&#160;</a></span>values()</h2>
+<a id="a20f6edc5b0d9045ff29f657eb7fb753c" name="a20f6edc5b0d9045ff29f657eb7fb753c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20f6edc5b0d9045ff29f657eb7fb753c">&#9670;&#160;</a></span>values()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -446,7 +446,7 @@ template&lt;class value_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; value_t &gt; <a class="el" href="classxtd_1_1threading_1_1thread__local__object.html">xtd::threading::thread_local_object</a>&lt; value_t &gt;::values </td>
+          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; value_t &gt; <a class="el" href="classxtd_1_1threading_1_1thread__local__object.html">xtd::threading::thread_local_object</a>&lt; value_t &gt;::values </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -541,7 +541,7 @@ template&lt;class value_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 9 2025 23:56:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 20 2025 20:07:56 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

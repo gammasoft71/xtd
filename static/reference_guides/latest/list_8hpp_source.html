@@ -350,7 +350,7 @@ $(function() {
 <div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>        <span class="keyword">template</span>&lt;<span class="keyword">class </span>...args_t&gt;</div>
 <div class="line"><a id="l00697" name="l00697"></a><span class="lineno"><a class="line" href="classxtd_1_1collections_1_1generic_1_1list.html#aef4911ad349ea1833ee092d78bf4954e">  697</a></span>        <a class="code hl_typedef" href="classxtd_1_1collections_1_1generic_1_1list.html#a274fd98d54c220fc795243e7f94b706a">iterator</a> <a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#aef4911ad349ea1833ee092d78bf4954e">emplace</a>(<a class="code hl_typedef" href="classxtd_1_1collections_1_1generic_1_1list.html#a5939bfb12a7754254b3fe1c97f4a45e1">const_iterator</a> pos, args_t&amp;&amp;... args) {</div>
 <div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>          ++data_-&gt;version;</div>
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>          <span class="keywordflow">return</span> data_-&gt;items.eplace(std::forward&lt;args_t&gt;(args)...);</div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>          <span class="keywordflow">return</span> to_type_iterator(data_-&gt;items.emplace(to_base_type_iterator(pos), std::forward&lt;args_t&gt;(args)...));</div>
 <div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>        }</div>
 <div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>        </div>
 <div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>        <span class="keyword">template</span>&lt;<span class="keyword">class </span>...args_t&gt;</div>
@@ -955,7 +955,7 @@ $(function() {
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae0df5f3dfd2650ae5be9993434e2b2c0">xtd::console_key::insert</a></div><div class="ttdeci">@ insert</div><div class="ttdoc">The INS (INSERT) key.</div></div>
 <div class="ttc" id="ailist_8hpp_html"><div class="ttname"><a href="ilist_8hpp.html">ilist.hpp</a></div><div class="ttdoc">Contains xtd::collections::ilist alias.</div></div>
 <div class="ttc" id="anamespacextd_1_1collections_1_1generic_1_1extensions_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic_1_1extensions.html">xtd::collections::generic::extensions</a></div><div class="ttdoc">The xtd::extensions namespace contains interface extensions.</div><div class="ttdef"><b>Definition</b> collection_operators.hpp:13</div></div>
-<div class="ttc" id="anamespacextd_1_1linq_html"><div class="ttname"><a href="namespacextd_1_1linq.html">xtd::linq</a></div><div class="ttdoc">Provides classes and interfaces that support queries that use Language-Integrated Query (LINQ).</div><div class="ttdef"><b>Definition</b> enumerable.hpp:38</div></div>
+<div class="ttc" id="anamespacextd_1_1linq_html"><div class="ttname"><a href="namespacextd_1_1linq.html">xtd::linq</a></div><div class="ttdoc">Provides classes and interfaces that support queries that use Language-Integrated Query (LINQ).</div><div class="ttdef"><b>Definition</b> enumerable.hpp:41</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
 <div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1enumerator_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1enumerator.html">xtd::collections::generic::enumerator</a></div><div class="ttdoc">Supports a simple iteration over a generic collection.</div><div class="ttdef"><b>Definition</b> enumerator.hpp:38</div></div>
 <div class="ttc" id="astructxtd_1_1collections_1_1generic_1_1helpers_1_1equator_html"><div class="ttname"><a href="structxtd_1_1collections_1_1generic_1_1helpers_1_1equator.html">xtd::collections::generic::helpers::equator</a></div><div class="ttdoc">Implements a function object for performing comparisons. Unless specialised, invokes operator== on ty...</div><div class="ttdef"><b>Definition</b> equator.hpp:38</div></div>
@@ -963,7 +963,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 9 2025 23:56:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 20 2025 20:07:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

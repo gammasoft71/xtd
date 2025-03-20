@@ -87,75 +87,73 @@ $(function() {
 <div class="line"><span class="preprocessor">#include &lt;xtd/random&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">  <span class="comment">// Instantiate random number generator using system-supplied value as seed.</span></div>
 <div class="line">  <span class="keyword">auto</span> rand = <a id="_a0" name="_a0"></a><a class="code hl_class" href="classxtd_1_1random.html">xtd::random</a> {};</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Generate and display 5 random byte (integer) values.</span></div>
-<div class="line">  <span class="keyword">auto</span> bytes = <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1collections_1_1generic_1_1list.html">list&lt;unsigned char&gt;</a>(5);</div>
+<div class="line">  <span class="keyword">auto</span> bytes = <a id="_a1" name="_a1"></a><a class="code hl_class" href="classxtd_1_1array.html">array&lt;byte&gt;</a>(5);</div>
 <div class="line">  rand.next_bytes(bytes);</div>
 <div class="line">  </div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Five random byte values:&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> byte_value : bytes)</div>
-<div class="line">    console::write(<span class="stringliteral">&quot;{, 5}&quot;</span>, byte_value);</div>
+<div class="line">    console::write(<span class="stringliteral">&quot;{,5}&quot;</span>, byte_value);</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Generate and display 5 random integers.</span></div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Five random integer values:&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0; ctr &lt;= 4; ctr++)</div>
-<div class="line">    console::write(<span class="stringliteral">&quot;{, 15}&quot;</span>, rand.next());</div>
+<div class="line">    console::write(<span class="stringliteral">&quot;{,15:N0}&quot;</span>, rand.next());</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Generate and display 5 random integers between 0 and 100.//</span></div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Five random integers between 0 and 100:&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0; ctr &lt;= 4; ctr++)</div>
-<div class="line">    console::write(<span class="stringliteral">&quot;{, 10}&quot;</span>, rand.next(101));</div>
+<div class="line">    console::write(<span class="stringliteral">&quot;{,8:N0}&quot;</span>, rand.next(101));</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Generate and display 5 random integers from 50 to 100.</span></div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Five random integers between 50 and 100:&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0; ctr &lt;= 4; ctr++)</div>
-<div class="line">    console::write(<span class="stringliteral">&quot;{, 10}&quot;</span>, rand.next(50, 101));</div>
+<div class="line">    console::write(<span class="stringliteral">&quot;{,8:N0}&quot;</span>, rand.next(50, 101));</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Generate and display 5 random floating point values from 0 to 1.</span></div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Five Doubles:&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0; ctr &lt;= 4; ctr++)</div>
-<div class="line">    console::write(<span class="stringliteral">&quot;{, 10}&quot;</span>, rand.next_double());</div>
+<div class="line">    console::write(<span class="stringliteral">&quot;{,8:N3}&quot;</span>, rand.next_double());</div>
 <div class="line">  console::write_line();</div>
 <div class="line">  </div>
 <div class="line">  <span class="comment">// Generate and display 5 random floating point values from 0 to 5.</span></div>
 <div class="line">  console::write_line(<span class="stringliteral">&quot;Five Doubles between 0 and 5:&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keyword">auto</span> ctr = 0; ctr &lt;= 4; ctr++)</div>
-<div class="line">    console::write(<span class="stringliteral">&quot;{, 10}&quot;</span>, rand.next_double() * 5);</div>
+<div class="line">    console::write(<span class="stringliteral">&quot;{,8:N3}&quot;</span>, rand.next_double() * 5);</div>
 <div class="line">  console::write_line();</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// This code can produce the following output :</span></div>
 <div class="line"><span class="comment">//</span></div>
 <div class="line"><span class="comment">// Five random byte values:</span></div>
-<div class="line"><span class="comment">//   150  243   92  141    0</span></div>
+<div class="line"><span class="comment">//    56   13  183  186    9</span></div>
 <div class="line"><span class="comment">// Five random integer values:</span></div>
-<div class="line"><span class="comment">//     4.14343E+08    2.14086E+09    1.73486E+09    1.88133E+09    1.69685E+09</span></div>
+<div class="line"><span class="comment">//       393336251     1630901725      159175947     1510060072      592602585</span></div>
 <div class="line"><span class="comment">// Five random integers between 0 and 100:</span></div>
-<div class="line"><span class="comment">//         35        86        86        68        10</span></div>
+<div class="line"><span class="comment">//       26      50      32       9      50</span></div>
 <div class="line"><span class="comment">// Five random integers between 50 and 100:</span></div>
-<div class="line"><span class="comment">//         76        57        66        97        56</span></div>
+<div class="line"><span class="comment">//       84      63      52      69      68</span></div>
 <div class="line"><span class="comment">// Five Doubles:</span></div>
-<div class="line"><span class="comment">//   0.211096  0.172007  0.507414   0.48576  0.754658</span></div>
+<div class="line"><span class="comment">//    0.186   0.070   0.021   0.892   0.313</span></div>
 <div class="line"><span class="comment">// Five Doubles between 0 and 5:</span></div>
-<div class="line"><span class="comment">//    1.40691    2.7078   3.87732    1.0691  0.478343</span></div>
-<div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a></div><div class="ttdoc">Represents a strongly typed list of objects that can be accessed by index. Provides methods to search...</div><div class="ttdef"><b>Definition</b> list.hpp:80</div></div>
-<div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.hpp:40</div></div>
-<div class="ttc" id="anamespacextd_1_1collections_1_1generic_html"><div class="ttname"><a href="namespacextd_1_1collections_1_1generic.html">xtd::collections::generic</a></div><div class="ttdoc">The xtd::collections::generic namespace contains interfaces and classes that define generic collectio...</div><div class="ttdef"><b>Definition</b> comparer.hpp:16</div></div>
+<div class="line"><span class="comment">//    2.938   0.848   0.060   3.667   0.042</span></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:59</div></div>
+<div class="ttc" id="aclassxtd_1_1random_html"><div class="ttname"><a href="classxtd_1_1random.html">xtd::random</a></div><div class="ttdoc">Represents a pseudo-random number generator, a device that produces a sequence of numbers that meet c...</div><div class="ttdef"><b>Definition</b> random.hpp:43</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 9 2025 23:56:03 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Mar 20 2025 20:07:37 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
