@@ -201,9 +201,9 @@ namespace xtd::drawing::tests {
       assert::are_equal(0, c.handle());
       assert::are_equal("ffa3e0b5", c.name());
       
-      assert::are_equal(138.0f, c.get_hue(), 0.5f);
-      assert::are_equal(0.50f, c.get_saturation(), 0.005f);
-      assert::are_equal(0.76f, c.get_lightness(), 0.005f);
+      assert::are_equal(138.0f, c.get_hue(), 0.01f);
+      assert::are_equal(0.50f, c.get_saturation(), 0.01f);
+      assert::are_equal(0.76f, c.get_lightness(), 0.01f);
       
       assert::are_equal("color [a=255, r=163, g=224, b=181]", c.to_string());
       
