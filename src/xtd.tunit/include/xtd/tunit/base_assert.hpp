@@ -173,22 +173,37 @@ namespace xtd {
         return expected == xtd::string {actual};
       }
 
+      static bool equals(long double expected, long double actual) {
+        if (expected == actual) return true;
+        return equals(expected, actual, 0.0001l);
+      }
+
       static bool equals(double expected, double actual) {
+        if (expected == actual) return true;
         return equals(expected, actual, 0.0001);
       }
 
       static bool equals(float expected, float actual) {
+        if (expected == actual) return true;
         return equals(expected, actual, 0.0001f);
       }
 
-      static bool equals(double expected, double actual, double relative_difference_factor) {
+      static bool equals(double expected, double actual, double tolerance) {
+        if (expected == actual) return true;
         const auto greater_magnitude = xtd::math::max(xtd::math::abs(expected), xtd::math::abs(actual));
-        return xtd::math::abs(expected - actual) < (relative_difference_factor * greater_magnitude);
+        return xtd::math::abs(expected - actual) < (tolerance * greater_magnitude);
       }
-      
-      static bool equals(float expected, float actual, float relative_difference_factor) {
+
+      static bool equals(long double expected, long double actual, long double tolerance) {
+        if (expected == actual) return true;
         const auto greater_magnitude = xtd::math::max(xtd::math::abs(expected), xtd::math::abs(actual));
-        return xtd::math::abs(expected - actual) < (relative_difference_factor * greater_magnitude);
+        return xtd::math::abs(expected - actual) < (tolerance * greater_magnitude);
+      }
+
+      static bool equals(float expected, float actual, float tolerance) {
+        if (expected == actual) return true;
+        const auto greater_magnitude = xtd::math::max(xtd::math::abs(expected), xtd::math::abs(actual));
+        return xtd::math::abs(expected - actual) < (tolerance * greater_magnitude);
       }
       
     private:
