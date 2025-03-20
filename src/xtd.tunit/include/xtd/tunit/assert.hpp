@@ -61,7 +61,7 @@ namespace xtd {
       /// ```
       template<class expected_t, class actual_t>
       static void are_equal(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (actual == expected) succeed(message, stack_frame);
+        if (equals(expected, actual)) succeed(message, stack_frame);
         else fail(to_string(expected), to_string(actual), message, stack_frame);
       }
       
@@ -80,82 +80,82 @@ namespace xtd {
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal in percent. For example 0.0001f repsesent 0.01%.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// float f = 0.00007999999999f;
-      /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.0000000000001f,); // test ok.
-      /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.00000000000001f); // test throws an assert_error exception.
+      /// float f = 0.7999999999f;
+      /// xtd::tunit::assert::are_equal(0.79999f, f, 0.0001f); // test ok.
+      /// xtd::tunit::assert::are_equal(0.79999f, f, 0.00001f); // test throws an assert_error exception.
       /// ```
       static void are_equal(float expected, float actual, float tolerance, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal in percent. For example 0.0001f repsesent 0.01%.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// float f = 0.00007999999999f;
-      /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.0000000000001f, "User message..."); // test ok.
-      /// xtd::tunit::assert::are_equal_(0.00008f, f, 0.00000000000001f, "User message..."); // test throws an assert_error exception.
+      /// float f = 0.7999999999f;
+      /// xtd::tunit::assert::are_equal(0.79999f, f, 0.0001f, "User message..."); // test ok.
+      /// xtd::tunit::assert::are_equal(0.79999f, f, 0.00001f, "User message..."); // test throws an assert_error exception.
       /// ```
       static void are_equal(float expected, float actual, float tolerance, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal in percent. For example 0.0001 repsesent 0.01%.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// double d = 0.00007999999999;
-      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.0000000000001); // test ok.
-      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.00000000000001); // test throws an assert_error exception.
+      /// double d = 0.7999999999;
+      /// xtd::tunit::assert::are_equal(0.79999, d, 0.0001); // test ok.
+      /// xtd::tunit::assert::are_equal(0.79999, d, 0.00001); // test throws an assert_error exception.
       /// ```
       static void are_equal(double expected, double actual, double tolerance, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal in percent. For example 0.0001 repsesent 0.01%.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// double d = 0.00007999999999;
-      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.0000000000001, "User message..."); // test ok.
-      /// xtd::tunit::assert::are_equal_(0.00008, d, 0.00000000000001, "User message..."); // test throws an assert_error exception.
+      /// double d = 0.7999999999;
+      /// xtd::tunit::assert::are_equal(0.79999, d, 0.0001, "User message..."); // test ok.
+      /// xtd::tunit::assert::are_equal(0.79999, d, 0.00001, "User message..."); // test throws an assert_error exception.
       /// ```
       static void are_equal(double expected, double actual, double tolerance, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal in percent. For example 0.0001l repsesent 0.01%.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// long double ld = 0.00007999999999;
-      /// xtd::tunit::assert::are_equal_(0.00008l, ld, 0.0000000000001l); // test ok.
-      /// xtd::tunit::assert::are_equal_(0.00008l, ld, 0.00000000000001l); // test throws an assert_error exception.
+      /// long double ld = 0.7999999999l;
+      /// xtd::tunit::assert::are_equal(0.79999l, ld, 0.0001l); // test ok.
+      /// xtd::tunit::assert::are_equal(0.79999l, ld, 0.00001l); // test throws an assert_error exception.
       /// ```
       static void are_equal(long double expected, long double actual, long double tolerance, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       /// @brief Asserts that two type are equal.
       /// @param expected the expected value.
       /// @param actual the actual value.
-      /// @param tolerance Indicates a tolerance within which they will be considered as equal.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal in percent. For example 0.0001l repsesent 0.01%.
       /// @param message A user message to display if the assertion fails. This message can be seen in the unit test results.
       /// @param stack_frame Contains information about current file and current line.
       /// @exception xtd::tunit::assert_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// long double ld = 0.00007999999999;
-      /// xtd::tunit::assert::are_equal_(0.00008l, ld, 0.0000000000001l, "User message..."); // test ok.
-      /// xtd::tunit::assert::are_equal_(0.00008l, ld, 0.00000000000001l, "User message..."); // test throws an assert_error exception.
+      /// long double ld = 0.7999999999l;
+      /// xtd::tunit::assert::are_equal(0.79999l, ld, 0.0001l, "User message..."); // test ok.
+      /// xtd::tunit::assert::are_equal(0.79999l, ld, 0.00001l, "User message..."); // test throws an assert_error exception.
       /// ```
       static void are_equal(long double expected, long double actual, long double tolerance, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current());
       
@@ -184,7 +184,7 @@ namespace xtd {
       /// ```
       template<class expected_t, class actual_t>
       static void are_not_equal(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (actual != expected) succeed(message, stack_frame);
+        if (!equals(expected, actual)) succeed(message, stack_frame);
         else fail("not " + to_string(expected), to_string(actual), message, stack_frame);
       }
       
@@ -229,7 +229,7 @@ namespace xtd {
       /// ```
       template<class expected_t, class actual_t>
       static void are_not_same(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (&actual != &expected) succeed(message, stack_frame);
+        if (!equals(&expected, &actual)) succeed(message, stack_frame);
         else fail("not same as " + to_string(expected), to_string(actual), message, stack_frame);
       }
       
@@ -264,7 +264,7 @@ namespace xtd {
       /// ```
       template<class expected_t, class actual_t>
       static void are_same(const expected_t& expected, const actual_t& actual, const xtd::string& message, const xtd::diagnostics::stack_frame& stack_frame = xtd::diagnostics::stack_frame::current()) {
-        if (&actual == &expected) succeed(message, stack_frame);
+        if (equals(&expected, &actual)) succeed(message, stack_frame);
         else fail("same as " + to_string(expected), to_string(actual), message, stack_frame);
       }
       

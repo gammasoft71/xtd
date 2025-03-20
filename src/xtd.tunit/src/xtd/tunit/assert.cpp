@@ -10,44 +10,44 @@ using namespace xtd::diagnostics;
 using namespace xtd::tunit;
 
 void assert::are_equal(const char* expected, const char* actual, const string& message, const stack_frame& stack_frame) {
-  if (strcmp(actual, expected) == 0) succeed(message, stack_frame);
+  if (equals(string {expected}, string {actual})) succeed(message, stack_frame);
   else fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 void assert::are_equal(const char8* expected, const char8* actual, const string& message, const stack_frame& stack_frame) {
-  if (string {actual} == string {expected}) succeed(message, stack_frame);
+  if (equals(string {expected}, string {actual})) succeed(message, stack_frame);
   else fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 #endif
 
 void assert::are_equal(const char16* expected, const char16* actual, const string& message, const stack_frame& stack_frame) {
-  if (std::u16string {actual} == std::u16string {expected}) succeed(message, stack_frame);
+  if (equals(string {expected}, string {actual})) succeed(message, stack_frame);
   else fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_equal(const char32* expected, const char32* actual, const string& message, const stack_frame& stack_frame) {
-  if (std::u32string {actual} == std::u32string {expected}) succeed(message, stack_frame);
+  if (equals(string {expected}, string {actual})) succeed(message, stack_frame);
   else fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_equal(const wchar_t* expected, const wchar_t* actual, const string& message, const stack_frame& stack_frame) {
-  if (wcscmp(actual, expected) == 0) succeed(message, stack_frame);
+  if (equals(string {expected}, string {actual})) succeed(message, stack_frame);
   else fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_equal(float expected, float actual, const string& message, const stack_frame& stack_frame) {
-  if (actual == expected || (std::isnan(actual) && std::isnan(expected))) succeed(message, stack_frame);
+  if (equals(expected, actual) || (std::isnan(actual) && std::isnan(expected))) succeed(message, stack_frame);
   else fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_equal(double expected, double actual, const string& message, const stack_frame& stack_frame) {
-  if (actual == expected || (std::isnan(actual) && std::isnan(expected))) succeed(message, stack_frame);
+  if (equals(expected, actual) || (std::isnan(actual) && std::isnan(expected))) succeed(message, stack_frame);
   else fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_equal(long double expected, long double actual, const string& message, const stack_frame& stack_frame) {
-  if (actual == expected || (std::isnan(actual) && std::isnan(expected))) succeed(message, stack_frame);
+  if (equals(expected, actual) || (std::isnan(actual) && std::isnan(expected))) succeed(message, stack_frame);
   else fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
@@ -56,7 +56,7 @@ void assert::are_equal(float expected, float actual, float tolerance, const stac
 }
 
 void assert::are_equal(float expected, float actual, float tolerance, const string& message, const stack_frame& stack_frame) {
-  if (fabsf(expected - actual) <= fabsf(tolerance)) succeed(message, stack_frame);
+  if (equals(expected, actual, tolerance)) succeed(message, stack_frame);
   else fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
@@ -65,7 +65,7 @@ void assert::are_equal(double expected, double actual, double tolerance, const s
 }
 
 void assert::are_equal(double expected, double actual, double tolerance, const string& message, const stack_frame& stack_frame) {
-  if (fabs(expected - actual) <= fabs(tolerance)) succeed(message, stack_frame);
+  if (equals(expected, actual, tolerance)) succeed(message, stack_frame);
   else fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
@@ -74,34 +74,34 @@ void assert::are_equal(long double expected, long double actual, long double tol
 }
 
 void assert::are_equal(long double expected, long double actual, long double tolerance, const string& message, const stack_frame& stack_frame) {
-  if (fabsl(expected - actual) <= fabsl(tolerance)) succeed(message, stack_frame);
+  if (equals(expected, actual, tolerance)) succeed(message, stack_frame);
   else fail(to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_not_equal(const char* expected, const char* actual, const string& message, const stack_frame& stack_frame) {
-  if (strcmp(actual, expected) != 0) succeed(message, stack_frame);
+  if (!equals(string {expected}, string {actual})) succeed(message, stack_frame);
   else fail("not " + to_string(expected), to_string(actual), message, stack_frame);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
 void assert::are_not_equal(const char8* expected, const char8* actual, const string& message, const stack_frame& stack_frame) {
-  if (string {actual} != string {expected}) succeed(message, stack_frame);
+  if (!equals(string {expected}, string {actual})) succeed(message, stack_frame);
   else fail("not " + to_string(expected), to_string(actual), message, stack_frame);
 }
 #endif
 
 void assert::are_not_equal(const char16* expected, const char16* actual, const string& message, const stack_frame& stack_frame) {
-  if (std::u16string {actual} != std::u16string {expected}) succeed(message, stack_frame);
+  if (!equals(string {expected}, string {actual})) succeed(message, stack_frame);
   else fail("not " + to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_not_equal(const char32* expected, const char32* actual, const string& message, const stack_frame& stack_frame) {
-  if (std::u32string {actual} != std::u32string {expected}) succeed(message, stack_frame);
+  if (!equals(string {expected}, string {actual})) succeed(message, stack_frame);
   else fail("not " + to_string(expected), to_string(actual), message, stack_frame);
 }
 
 void assert::are_not_equal(const wchar_t* expected, const wchar_t* actual, const string& message, const stack_frame& stack_frame) {
-  if (wcscmp(actual, expected) != 0) succeed(message, stack_frame);
+  if (!equals(string {expected}, string {actual})) succeed(message, stack_frame);
   else fail("not " + to_string(expected), to_string(actual), message, stack_frame);
 }
 
