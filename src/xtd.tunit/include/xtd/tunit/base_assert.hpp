@@ -10,6 +10,7 @@
 #include "abort_error.hpp"
 #include "assert_error.hpp"
 #include "ignore_error.hpp"
+#include <xtd/math>
 #include <xtd/static>
 #include <xtd/types>
 #include <xtd/typeof>
@@ -155,6 +156,40 @@ namespace xtd {
       /// @return The xtd::string that contains the joined string.
       static xtd::string join_items(const xtd::string& str);
       /// @}
+      
+    protected:
+      template<class expected_t, class actual_t>
+      static bool equals(const expected_t& expected, const actual_t& actual) {
+        return expected == actual;
+      }
+      
+      template<class char_t>
+      static bool equals(const char_t* expected, const string& actual) {
+        return xtd::string {expected} == actual;
+      }
+      
+      template<class char_t>
+      static bool equals(const string&  expected, const char_t* actual) {
+        return expected == xtd::string {actual};
+      }
+
+      static bool equals(double expected, double actual) {
+        return equals(expected, actual, 0.0001);
+      }
+
+      static bool equals(float expected, float actual) {
+        return equals(expected, actual, 0.0001f);
+      }
+
+      static bool equals(double expected, double actual, double relative_difference_factor) {
+        const auto greater_magnitude = xtd::math::max(xtd::math::abs(expected), xtd::math::abs(actual));
+        return xtd::math::abs(expected - actual) < (relative_difference_factor * greater_magnitude);
+      }
+      
+      static bool equals(float expected, float actual, float relative_difference_factor) {
+        const auto greater_magnitude = xtd::math::max(xtd::math::abs(expected), xtd::math::abs(actual));
+        return xtd::math::abs(expected - actual) < (relative_difference_factor * greater_magnitude);
+      }
       
     private:
       static bool is_debug() noexcept;
