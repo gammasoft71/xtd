@@ -157,54 +157,88 @@ namespace xtd {
       static xtd::string join_items(const xtd::string& str);
       /// @}
       
-    protected:
-      template<class expected_t, class actual_t>
-      static bool equals(const expected_t& expected, const actual_t& actual) {
-        return expected == actual;
-      }
+      /// @name Protected Static Methods
       
+      /// @{
+      /// @brief Determines if specified values are equal.
+      /// @param value_a The first value.
+      /// @param value_a The second value.
+      /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
+      template<class value_a_t, class value_b_t>
+      static bool equals(const value_a_t& value_a, const value_b_t& value_b) {
+        return value_a == value_b;
+      }
+      /// @brief Determines if specified values are equal.
+      /// @param value_a The first value.
+      /// @param value_a The second value.
+      /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
       template<class char_t>
-      static bool equals(const char_t* expected, const string& actual) {
-        return xtd::string {expected} == actual;
+      static bool equals(const char_t* value_a, const string& value_b) {
+        return xtd::string {value_a} == value_b;
       }
-      
+      /// @brief Determines if specified values are equal.
+      /// @param value_a The first value.
+      /// @param value_a The second value.
+      /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
       template<class char_t>
-      static bool equals(const string&  expected, const char_t* actual) {
-        return expected == xtd::string {actual};
+      static bool equals(const string&  value_a, const char_t* value_b) {
+        return value_a == xtd::string {value_b};
       }
-
-      static bool equals(long double expected, long double actual) {
-        if (expected == actual) return true;
-        return equals(expected, actual, 0.0001l);
+      /// @brief Determines if specified values are equal.
+      /// @param value_a The first value.
+      /// @param value_a The second value.
+      /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
+      static bool equals(long double value_a, long double value_b) {
+        if (value_a == value_b) return true;
+        return equals(value_a, value_b, 0.0001l);
       }
-
-      static bool equals(double expected, double actual) {
-        if (expected == actual) return true;
-        return equals(expected, actual, 0.0001);
+      /// @brief Determines if specified values are equal.
+      /// @param value_a The first value.
+      /// @param value_a The second value.
+      /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
+      static bool equals(double value_a, double value_b) {
+        if (value_a == value_b) return true;
+        return equals(value_a, value_b, 0.0001);
       }
-
-      static bool equals(float expected, float actual) {
-        if (expected == actual) return true;
-        return equals(expected, actual, 0.0001f);
+      /// @brief Determines if specified values are equal.
+      /// @param value_a The first value.
+      /// @param value_a The second value.
+      /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
+      static bool equals(float value_a, float value_b) {
+        if (value_a == value_b) return true;
+        return equals(value_a, value_b, 0.0001f);
       }
-
-      static bool equals(double expected, double actual, double tolerance) {
-        if (expected == actual) return true;
-        const auto greater_magnitude = xtd::math::max(xtd::math::abs(expected), xtd::math::abs(actual));
-        return xtd::math::abs(expected - actual) < (tolerance * greater_magnitude);
+      /// @brief Determines if specified values are equal with tolerance.
+      /// @param value_a The first value.
+      /// @param value_a The second value.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal in percent. For example 0.0001l repsesent 0.01%.
+      /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
+      static bool equals(double value_a, double value_b, double tolerance) {
+        if (value_a == value_b) return true;
+        const auto greater_magnitude = xtd::math::max(xtd::math::abs(value_a), xtd::math::abs(value_b));
+        return xtd::math::abs(value_a - value_b) < (tolerance * greater_magnitude);
       }
-
-      static bool equals(long double expected, long double actual, long double tolerance) {
-        if (expected == actual) return true;
-        const auto greater_magnitude = xtd::math::max(xtd::math::abs(expected), xtd::math::abs(actual));
-        return xtd::math::abs(expected - actual) < (tolerance * greater_magnitude);
+      /// @brief Determines if specified values are equal with tolerance.
+      /// @param value_a The first value.
+      /// @param value_a The second value.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal in percent. For example 0.0001 repsesent 0.01%.
+      /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
+      static bool equals(long double value_a, long double value_b, long double tolerance) {
+        if (value_a == value_b) return true;
+        const auto greater_magnitude = xtd::math::max(xtd::math::abs(value_a), xtd::math::abs(value_b));
+        return xtd::math::abs(value_a - value_b) < (tolerance * greater_magnitude);
       }
-
-      static bool equals(float expected, float actual, float tolerance) {
-        if (expected == actual) return true;
-        const auto greater_magnitude = xtd::math::max(xtd::math::abs(expected), xtd::math::abs(actual));
-        return xtd::math::abs(expected - actual) < (tolerance * greater_magnitude);
+      /// @brief Determines if specified values are equal with tolerance.
+      /// @param value_a The first value.
+      /// @param value_a The second value.
+      /// @param tolerance Indicates a tolerance within which they will be considered as equal in percent. For example 0.0001f repsesent 0.01%.
+      /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
+      static bool equals(float value_a, float value_b, float tolerance) {
+        if (value_a == value_b) return true;
+        const auto greater_magnitude = xtd::math::max(xtd::math::abs(value_a), xtd::math::abs(value_b));
+        return xtd::math::abs(value_a - value_b) < (tolerance * greater_magnitude);
       }
+      /// @}
       
     private:
       static bool is_debug() noexcept;
