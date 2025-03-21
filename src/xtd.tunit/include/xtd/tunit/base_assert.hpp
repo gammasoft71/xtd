@@ -189,7 +189,6 @@ namespace xtd {
       /// @param value_a The second value.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
       static bool equals(long double value_a, long double value_b) {
-        if (value_a == value_b) return true;
         return equals(value_a, value_b, 0.0001l);
       }
       /// @brief Determines if specified values are equal.
@@ -197,7 +196,6 @@ namespace xtd {
       /// @param value_a The second value.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
       static bool equals(double value_a, double value_b) {
-        if (value_a == value_b) return true;
         return equals(value_a, value_b, 0.0001);
       }
       /// @brief Determines if specified values are equal.
@@ -205,7 +203,6 @@ namespace xtd {
       /// @param value_a The second value.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
       static bool equals(float value_a, float value_b) {
-        if (value_a == value_b) return true;
         return equals(value_a, value_b, 0.0001f);
       }
       /// @brief Determines if specified values are equal with tolerance.
@@ -214,9 +211,7 @@ namespace xtd {
       /// @param tolerance Indicates a tolerance within which they will be considered as equal in percent. For example 0.0001l repsesent 0.01%.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
       static bool equals(double value_a, double value_b, double tolerance) {
-        if (value_a == value_b) return true;
-        const auto greater_magnitude = xtd::math::max(xtd::math::abs(value_a), xtd::math::abs(value_b));
-        return xtd::math::abs(value_a - value_b) < (tolerance * greater_magnitude);
+        return value_a == value_b ? true : xtd::math::abs(value_a - value_b) <= (xtd::math::abs(tolerance) * xtd::math::max(xtd::math::abs(value_a), xtd::math::abs(value_b)));
       }
       /// @brief Determines if specified values are equal with tolerance.
       /// @param value_a The first value.
@@ -224,9 +219,7 @@ namespace xtd {
       /// @param tolerance Indicates a tolerance within which they will be considered as equal in percent. For example 0.0001 repsesent 0.01%.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
       static bool equals(long double value_a, long double value_b, long double tolerance) {
-        if (value_a == value_b) return true;
-        const auto greater_magnitude = xtd::math::max(xtd::math::abs(value_a), xtd::math::abs(value_b));
-        return xtd::math::abs(value_a - value_b) < (tolerance * greater_magnitude);
+        return value_a == value_b ? true : xtd::math::abs(value_a - value_b) <= (xtd::math::abs(tolerance) * xtd::math::max(xtd::math::abs(value_a), xtd::math::abs(value_b)));
       }
       /// @brief Determines if specified values are equal with tolerance.
       /// @param value_a The first value.
@@ -234,9 +227,7 @@ namespace xtd {
       /// @param tolerance Indicates a tolerance within which they will be considered as equal in percent. For example 0.0001f repsesent 0.01%.
       /// @return `true` if `value_a` is equal to `value_b`; otherwise `false`.
       static bool equals(float value_a, float value_b, float tolerance) {
-        if (value_a == value_b) return true;
-        const auto greater_magnitude = xtd::math::max(xtd::math::abs(value_a), xtd::math::abs(value_b));
-        return xtd::math::abs(value_a - value_b) < (tolerance * greater_magnitude);
+        return value_a == value_b ? true : xtd::math::abs(value_a - value_b) <= (xtd::math::abs(tolerance) * xtd::math::max(xtd::math::abs(value_a), xtd::math::abs(value_b)));
       }
       /// @}
       
