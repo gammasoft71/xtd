@@ -17,7 +17,7 @@ namespace xtd::tunit::tests {
   void test_(directory_valid_are_equal_filesystem_directory_entry_failed_tests, test_output) {
     auto [output, result] = run_test_("xtd::tunit::tests::directory_valid_are_equal_filesystem_directory_entry_failed_tests.*");
     assert_value_(xtd::string::format("Start 1 test from 1 test case\n"
-                                       "  FAILED  xtd::tunit::tests::directory_valid_are_equal_filesystem_directory_entry_failed_tests.test_case_failed\n"
+                                       "   FAILED xtd::tunit::tests::directory_valid_are_equal_filesystem_directory_entry_failed_tests.test_case_failed\n"
                                        "    Expected: {0}\n"
                                        "    But was:  {1}\n"
                                        "End 1 test from 1 test case ran.\n", xtd::environment::get_folder_path(xtd::environment::special_folder::common_application_data).quoted(), xtd::io::path::combine(xtd::environment::get_folder_path(xtd::environment::special_folder::common_application_data), "subdir").quoted()), output);

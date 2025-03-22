@@ -18,7 +18,7 @@ namespace assert_unit_tests {
     
     void on_test_failed(const xtd::tunit::test_event_args& e) const override {
       event_listener::on_test_failed(e);
-      os_ << "  FAILED  " << e.test_class().name() << "." << e.test().name() << std::endl;
+      os_ << "   FAILED " << e.test_class().name() << "." << e.test().name() << std::endl;
       if (e.test().expect() != "") os_ << "    Expected: " << e.test().expect() << std::endl;
       if (e.test().actual() != "") os_ << "    But was:  " << e.test().actual() << std::endl;
       if (e.test().message() != "") os_ << "    " << e.test().message() << std::endl;

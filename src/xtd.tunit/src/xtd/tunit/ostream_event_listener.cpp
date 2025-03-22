@@ -102,7 +102,7 @@ void ostream_event_listener::on_test_failed(const test_event_args& e) const {
     os_ << e.test_class().name() << "." << e.test().name() << " (" << static_cast<int32>(e.test().elapsed_time().total_milliseconds()) << " ms)" << std::endl;
   } else {
     console::foreground_color(console_color::red);
-    os_ << "  FAILED  ";
+    os_ << "   FAILED ";
     console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
     if (settings::default_settings().show_duration())
@@ -221,7 +221,7 @@ void ostream_event_listener::on_unit_test_end(const tunit_event_args& e) const {
     }
     if (e.unit_test().failed_test_count()) {
       console::foreground_color(console_color::red);
-      os_ << "  FAILED  ";
+      os_ << "   FAILED ";
       console::reset_color();
       os_ << e.unit_test().failed_test_count() << " test" << (e.unit_test().failed_test_count() > 1 ? "s" : "") << "." << std::endl;
     }

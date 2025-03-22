@@ -15,7 +15,7 @@ namespace xtd::tunit::tests {
   void test_(valid_are_equal_const_char32_t_pointer_failed_tests, test_output) {
     auto [output, result] = run_test_("xtd::tunit::tests::valid_are_equal_const_char32_t_pointer_failed_tests.*");
     assert_value_("Start 1 test from 1 test case\n"
-                  "  FAILED  xtd::tunit::tests::valid_are_equal_const_char32_t_pointer_failed_tests.test_case_failed\n"
+                  "   FAILED xtd::tunit::tests::valid_are_equal_const_char32_t_pointer_failed_tests.test_case_failed\n"
                   "    Expected: \"str\"\n"
                   "    But was:  \"string\"\n"
                   "End 1 test from 1 test case ran.\n", output);

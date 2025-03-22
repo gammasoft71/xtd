@@ -15,7 +15,7 @@ namespace xtd::tunit::tests {
   void test_(assert_is_negative_failed_tests, test_output) {
     auto [output, result] = run_test_("xtd::tunit::tests::assert_is_negative_failed_tests.*");
     assert_value_("Start 1 test from 1 test case\n"
-                  "  FAILED  xtd::tunit::tests::assert_is_negative_failed_tests.test_case_failed\n"
+                  "   FAILED xtd::tunit::tests::assert_is_negative_failed_tests.test_case_failed\n"
                   "    Expected: negative\n"
                   "    But was:  1\n"
                   "End 1 test from 1 test case ran.\n", output);
