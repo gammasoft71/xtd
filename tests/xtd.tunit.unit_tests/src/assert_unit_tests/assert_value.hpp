@@ -13,7 +13,7 @@ namespace assert_unit_tests {
     if (actual == expected)
       std::cout << xtd::foreground_color(xtd::console_color::dark_green) << "  SUCCEED " << xtd::reset_color() << name << std::endl;
     else {
-      std::cout << xtd::foreground_color(xtd::console_color::dark_red) << "  FAILED  " << xtd::reset_color() << name << std::endl;
+      std::cout << xtd::foreground_color(xtd::console_color::dark_red) << "   FAILED " << xtd::reset_color() << name << std::endl;
       std::cout << "    Expected:" << std::endl;
       std::stringstream f;
       f << expected;
