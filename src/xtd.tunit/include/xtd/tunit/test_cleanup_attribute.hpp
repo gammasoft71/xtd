@@ -43,8 +43,7 @@ namespace xtd {
 /// @include test_class.cpp
 #define test_cleanup_(method_name) \
   __##method_name##_unused() = delete; \
-  class __test_cleanup_attribute : public xtd::tunit::test_cleanup_attribute { \
-  public:\
+  struct __test_cleanup_attribute : xtd::tunit::test_cleanup_attribute { \
     template<class test_class> __test_cleanup_attribute(test_class& test) : test_cleanup_attribute(#method_name, test, &test_class::method_name) {} \
   } __test_cleanup_attribute {*this}; \
   static void method_name()
