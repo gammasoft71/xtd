@@ -83,11 +83,11 @@ void base_assert::ignore(const stack_frame& stack_frame) {
 }
 
 void base_assert::ignore(const string& message, const stack_frame& stack_frame) {
-  if (!test::has_current_test()) throw ignore_error(!message.empty() ? message : "Test ignored"_s);
+  if (!test::has_current_test()) throw ignore_error(message);
   else {
     if (stack_frame != stack_frame::empty())
       test::current_test().stack_frame_ = stack_frame;
-    test::current_test().message_ = message != ""_s ? message : "Test ignored"_s;
+    test::current_test().message_ = message;
     test::current_test().status_ = test::test_status::ignored;
     throw ignore_error(test::current_test().message_);
   }

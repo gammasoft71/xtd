@@ -19,7 +19,6 @@ namespace xtd::tunit::tests {
                   "  SUCCEED xtd::tunit::tests::one_test_two_test_cases_and_one_ignore_test_case_tests.test_case1\n"
                   "  SUCCEED xtd::tunit::tests::one_test_two_test_cases_and_one_ignore_test_case_tests.test_case2\n"
                   "  IGNORED xtd::tunit::tests::one_test_two_test_cases_and_one_ignore_test_case_tests.test_case3\n"
-                  "    Test ignored\n"
                   "End 3 tests from 1 test case ran.\n", output);
   }
   
