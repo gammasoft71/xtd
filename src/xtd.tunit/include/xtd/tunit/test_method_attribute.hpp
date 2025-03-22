@@ -56,8 +56,7 @@ namespace xtd {
 /// @include test_class.cpp
 #define ignore_test_method_(method_name) \
   __##method_name##_unused() = delete; \
-  class __##method_name##_attribute##_class : public xtd::tunit::test_method_attribute { \
-  public: \
+  struct __##method_name##_attribute##_class : xtd::tunit::test_method_attribute { \
     template<class test_class> __##method_name##_attribute##_class(test_class& test) : test_method_attribute(#method_name, test, &test_class::method_name, xtd::tunit::test_state::ignored) {} \
   } __##method_name##_attribute {*this}; \
   void method_name()
@@ -72,8 +71,7 @@ namespace xtd {
 /// @include test_class.cpp
 #define test_method_(method_name) \
   __##method_name##_unused() = delete; \
-  class __##method_name##_attribute##_class : public xtd::tunit::test_method_attribute { \
-  public: \
+  struct __##method_name##_attribute##_class : xtd::tunit::test_method_attribute { \
     template<class test_class> __##method_name##_attribute##_class(test_class& test) : test_method_attribute(#method_name, test, &test_class::method_name) {} \
   } __##method_name##_attribute {*this}; \
   void method_name()

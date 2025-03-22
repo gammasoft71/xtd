@@ -39,8 +39,7 @@ namespace xtd {
 /// @include test_class.cpp
 #define test_initialize_(method_name) \
   __##method_name##_unused() = delete; \
-  class __test_initialize_attribute : public xtd::tunit::test_initialize_attribute { \
-  public:\
+  struct __test_initialize_attribute : xtd::tunit::test_initialize_attribute { \
     template<class test_class> __test_initialize_attribute(test_class& test) : test_initialize_attribute(#method_name, test, &test_class::method_name) {} \
   } __test_initialize_attribute {*this}; \
   static void method_name()
