@@ -91,7 +91,7 @@ void ostream_event_listener::on_test_failed(const test_event_args& e) const {
     os_ << "[ RUN      ] ";
     console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name() << std::endl;
-    os_ << e.test().stack_frame().get_file_name() << "(" << e.test().stack_frame().get_file_line_number() << "): error: ";
+    os_ << e.test().stack_frame().get_file_name() << "(" << e.test().stack_frame().get_file_line_number() << "): error: " << std::endl;
     if (e.test().actual() != "") os_ << "Value of: " << e.test().actual() << std::endl;
     if (e.test().actual() != "") os_ << "  Actual: " << e.test().actual() << std::endl;
     if (e.test().expect() != "") os_ << "Expected: " << e.test().expect() << std::endl;
