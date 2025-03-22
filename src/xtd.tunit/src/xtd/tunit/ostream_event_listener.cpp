@@ -1,6 +1,7 @@
 #include "../../../include/xtd/tunit/ostream_event_listener.hpp"
 #include "../../../include/xtd/tunit/unit_test.hpp"
 #include <xtd/console>
+#include <xtd/math>
 #include <xtd/string>
 
 using namespace xtd;
@@ -32,6 +33,7 @@ void ostream_event_listener::on_class_start(const class_event_args& e) const {
 
 void ostream_event_listener::on_test_aborted(const test_event_args& e) const {
   event_listener::on_test_aborted(e);
+  auto ms_elapsed_time = static_cast<int32>(math::round(e.test().elapsed_time().total_milliseconds()));
   if (settings::default_settings().gtest_compatibility()) {
     os_ << e.test().stack_frame().get_file_name() << ":" << e.test().stack_frame().get_file_line_number() << ": Failure" << std::endl;
     if (e.test().actual() != "") os_ << "Value of: " << e.test().actual() << std::endl;
@@ -41,14 +43,14 @@ void ostream_event_listener::on_test_aborted(const test_event_args& e) const {
     console::foreground_color(console_color::red);
     os_ << "[  ABORTED ] ";
     console::reset_color();
-    os_ << e.test_class().name() << "." << e.test().name() << " (" << static_cast<int32>(e.test().elapsed_time().total_milliseconds()) << " ms)" << std::endl;
+    os_ << e.test_class().name() << "." << e.test().name() << " (" << ms_elapsed_time << " ms)" << std::endl;
   } else {
     console::foreground_color(console_color::magenta);
     os_ << "  ABORTED ";
     console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
     if (settings::default_settings().show_duration())
-      os_ << " [" << static_cast<int32>(e.test().elapsed_time().total_milliseconds()) << " ms]";
+      os_ << (ms_elapsed_time < 1 ? " [< 1 ms]"_s :  string::format(" [{} ms]", ms_elapsed_time));
     os_ << std::endl;
     if (e.test().message() != "")
       os_ << "    " << e.test().message() << std::endl;
@@ -86,6 +88,7 @@ void ostream_event_listener::on_unit_test_initialize_start(const tunit_event_arg
 
 void ostream_event_listener::on_test_failed(const test_event_args& e) const {
   event_listener::on_test_failed(e);
+  auto ms_elapsed_time = static_cast<int32>(math::round(e.test().elapsed_time().total_milliseconds()));
   if (settings::default_settings().gtest_compatibility()) {
     console::foreground_color(console_color::green);
     os_ << "[ RUN      ] ";
@@ -99,14 +102,14 @@ void ostream_event_listener::on_test_failed(const test_event_args& e) const {
     console::foreground_color(console_color::red);
     os_ << "[  FAILED  ] ";
     console::reset_color();
-    os_ << e.test_class().name() << "." << e.test().name() << " (" << static_cast<int32>(e.test().elapsed_time().total_milliseconds()) << " ms)" << std::endl;
+    os_ << e.test_class().name() << "." << e.test().name() << " (" << ms_elapsed_time << " ms)" << std::endl;
   } else {
     console::foreground_color(console_color::red);
     os_ << "   FAILED ";
     console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
     if (settings::default_settings().show_duration())
-      os_ << " [" << static_cast<int32>(e.test().elapsed_time().total_milliseconds()) << " ms]";
+      os_ << (ms_elapsed_time < 1 ? " [< 1 ms]"_s :  string::format(" [{} ms]", ms_elapsed_time));
     os_ << std::endl;
     console::foreground_color(console_color::red);
     if (e.test().message() != "")
@@ -126,6 +129,7 @@ void ostream_event_listener::on_test_failed(const test_event_args& e) const {
 
 void ostream_event_listener::on_test_ignored(const test_event_args& e) const {
   event_listener::on_test_ignored(e);
+  auto ms_elapsed_time = static_cast<int32>(math::round(e.test().elapsed_time().total_milliseconds()));
   if (settings::default_settings().gtest_compatibility()) {
     console::foreground_color(console_color::yellow);
     os_ << "[ DISABLED ] ";
@@ -137,7 +141,7 @@ void ostream_event_listener::on_test_ignored(const test_event_args& e) const {
     console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
     if (settings::default_settings().show_duration())
-      os_ << " [" << static_cast<int32>(e.test().elapsed_time().total_milliseconds()) << " ms]";
+      os_ << (ms_elapsed_time < 1 ? " [< 1 ms]"_s :  string::format(" [{} ms]", ms_elapsed_time));
     os_ << std::endl;
     if (e.test().message() != "")
       os_ << "    " << e.test().message() << std::endl;
@@ -150,6 +154,7 @@ void ostream_event_listener::on_test_start(const test_event_args& e) const {
 
 void ostream_event_listener::on_test_succeed(const test_event_args& e) const {
   event_listener::on_test_succeed(e);
+  auto ms_elapsed_time = static_cast<int32>(math::round(e.test().elapsed_time().total_milliseconds()));
   if (settings::default_settings().gtest_compatibility()) {
     console::foreground_color(console_color::green);
     os_ << "[ RUN      ] ";
@@ -158,14 +163,14 @@ void ostream_event_listener::on_test_succeed(const test_event_args& e) const {
     console::foreground_color(console_color::green);
     os_ << "[       OK ] ";
     console::reset_color();
-    os_ << e.test_class().name() << "." << e.test().name() << " (" << static_cast<int32>(e.test().elapsed_time().total_milliseconds()) << " ms)" << std::endl;
+    os_ << e.test_class().name() << "." << e.test().name() << " (" << ms_elapsed_time << " ms)" << std::endl;
   } else {
     console::foreground_color(console_color::green);
     os_ << "  SUCCEED ";
     console::reset_color();
     os_ << e.test_class().name() << "." << e.test().name();
     if (settings::default_settings().show_duration())
-      os_ << " [" << static_cast<int32>(e.test().elapsed_time().total_milliseconds()) << " ms]";
+      os_ << (ms_elapsed_time < 1 ? " [< 1 ms]"_s :  string::format(" [{} ms]", ms_elapsed_time));
     os_ << std::endl;
     if (e.test().message() != "")
       os_ << "    " << e.test().message() << std::endl;
@@ -234,7 +239,7 @@ void ostream_event_listener::on_unit_test_end(const tunit_event_args& e) const {
     
     os_ << "End " << e.unit_test().test_count() << " test" << (e.unit_test().test_count() > 1 ? "s" : "") << " from " << e.unit_test().test_cases_count() << " test case" << (e.unit_test().test_cases_count() > 1 ? "s" : "") << " ran.";
     if (settings::default_settings().show_duration())
-      os_ << " [" << static_cast<int32>(e.unit_test().elapsed_time().total_milliseconds()) << " ms total]";
+      os_ << " [" << string::format("{:N4}", e.unit_test().elapsed_time().total_seconds()) << " seconds]";
     os_ << std::endl << std::endl;
   }
 }
