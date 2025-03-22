@@ -98,7 +98,7 @@ void ostream_event_listener::on_test_failed(const test_event_args& e) const {
     if (e.test().actual() != "") os_ << "Value of: " << e.test().actual() << std::endl;
     if (e.test().actual() != "") os_ << "  Actual: " << e.test().actual() << std::endl;
     if (e.test().expect() != "") os_ << "Expected: " << e.test().expect() << std::endl;
-    os_ << e.test().message() << std::endl;
+    if (e.test().message() != "") os_ << e.test().message() << std::endl;
     console::foreground_color(console_color::red);
     os_ << "[  FAILED  ] ";
     console::reset_color();
