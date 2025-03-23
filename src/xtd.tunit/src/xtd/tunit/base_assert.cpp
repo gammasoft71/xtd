@@ -83,6 +83,7 @@ void base_assert::ignore(const stack_frame& stack_frame) {
 }
 
 void base_assert::ignore(const string& message, const stack_frame& stack_frame) {
+  if (settings::default_settings().also_run_ignored_tests()) return;
   if (!test::has_current_test()) throw ignore_error(message);
   else {
     if (stack_frame != stack_frame::empty())
