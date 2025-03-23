@@ -1,6 +1,7 @@
 #include "../../../include/xtd/tunit/test.hpp"
 #include "../../../include/xtd/tunit/unit_test.hpp"
 #include <xtd/diagnostics//debug_break>
+#include <xtd/environment>
 #include <xtd/runtime/exception_services/exception_dispatch_info>
 #include <xtd/null_pointer_exception>
 #include <exception>
@@ -135,40 +136,34 @@ void test::run(const unit_test& unit_test, const test_class& test_class) {
         method()();
         end_time_point_ = date_time::now();
         if (not_started()) status_ = test_status::succeed;
-        if (succeed())
-          if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_succeed(test_event_args(*this, test_class, unit_test));
-        /*
-        else {
-          settings::default_settings().exit_status(EXIT_FAILURE);
-          unit_test.event_listener_->on_test_failed(test_event_args(*this, test_class, unit_test));
-        }
-         */
+        if (succeed() && !settings::default_settings().brief())
+          unit_test.event_listener_->on_test_succeed(test_event_args(*this, test_class, unit_test));
       } catch (const abort_error&) {
         if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_aborted(test_event_args(*this, test_class, unit_test));
       } catch (const ignore_error&) {
         if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_ignored(test_event_args(*this, test_class, unit_test));
       } catch (const assert_error& e) {
-        settings::default_settings().exit_status(EXIT_FAILURE);
         if (settings::default_settings().brief()) unit_test.event_listener_->on_test_start(test_event_args(*this, test_class, unit_test));
         unit_test.event_listener_->on_test_failed(test_event_args(*this, test_class, unit_test));
-        if (settings::default_settings().throw_on_failure())
-          exception_dispatch_info::rethrow(e);
+        if (settings::default_settings().throw_on_failure()) exception_dispatch_info::rethrow(e);
+        if (settings::default_settings().break_on_failure()) xtd::environment::abort();
+        else settings::default_settings().exit_status(EXIT_FAILURE);
       } catch (const std::exception& e) {
-        settings::default_settings().exit_status(EXIT_FAILURE);
         test::current_test().message_ = "Exception <" + typeof_(e).full_name() + "> throws" + " (" + e.what() + ")";
         test::current_test().status_ = test::test_status::failed;
         if (settings::default_settings().brief()) unit_test.event_listener_->on_test_start(test_event_args(*this, test_class, unit_test));
         unit_test.event_listener_->on_test_failed(test_event_args(*this, test_class, unit_test));
-        if (settings::default_settings().throw_on_failure())
-          throw assert_error {test::current_test().message()};
+        if (settings::default_settings().throw_on_failure()) throw assert_error {test::current_test().message()};
+        if (settings::default_settings().break_on_failure()) xtd::environment::abort();
+        else settings::default_settings().exit_status(EXIT_FAILURE);
       } catch (...) {
-        settings::default_settings().exit_status(EXIT_FAILURE);
         test::current_test().message_ = "Exception <unknown> throws";
         test::current_test().status_ = test::test_status::failed;
         if (settings::default_settings().brief()) unit_test.event_listener_->on_test_start(test_event_args(*this, test_class, unit_test));
         unit_test.event_listener_->on_test_failed(test_event_args(*this, test_class, unit_test));
-        if (settings::default_settings().throw_on_failure())
-          throw assert_error {test::current_test().message()};
+        if (settings::default_settings().throw_on_failure()) throw assert_error {test::current_test().message()};
+        if (settings::default_settings().break_on_failure()) xtd::environment::abort();
+        else settings::default_settings().exit_status(EXIT_FAILURE);
       }
       
       if (!settings::default_settings().brief()) unit_test.event_listener_->on_test_cleanup_start(test_event_args(*this, test_class, unit_test));
@@ -180,4 +175,3 @@ void test::run(const unit_test& unit_test, const test_class& test_class) {
     }
   }
 }
-

@@ -73,7 +73,7 @@ void base_assert::fail(const string& expected, const string& actual, const strin
   if (!test::has_current_unit_test() && is_debug()) {
     assert_(false, message != ""_s ? message : "assertion failed!"_s);
   } else {
-    if (settings::default_settings().break_on_failure()) debug_break_();
+    if (settings::default_settings().break_on_failure() && diagnostics::debugger::is_attached()) debug_break_();
     throw assert_error(message != ""_s ? message : "assertion failed!"_s);
   }
 }

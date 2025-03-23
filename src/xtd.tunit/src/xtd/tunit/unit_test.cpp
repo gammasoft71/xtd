@@ -1,4 +1,5 @@
 #include "../../../include/xtd/tunit/unit_test.hpp"
+#include <xtd/environment>
 #include <xtd/random>
 #include <xtd/startup>
 
@@ -181,11 +182,11 @@ int32 unit_test::run() noexcept {
         
         event_listener_->on_unit_test_end(tunit_event_args(*this));
       } catch (const std::exception&) {
-        settings::default_settings().exit_status(EXIT_FAILURE);
-        // do error...
+        if (settings::default_settings().throw_on_failure()) xtd::environment::abort();
+        else settings::default_settings().exit_status(EXIT_FAILURE);
       } catch (...) {
-        settings::default_settings().exit_status(EXIT_FAILURE);
-        // do error...
+        if (settings::default_settings().throw_on_failure()) xtd::environment::abort();
+        else settings::default_settings().exit_status(EXIT_FAILURE);
       }
     }
     
