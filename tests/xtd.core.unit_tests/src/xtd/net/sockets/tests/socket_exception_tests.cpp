@@ -38,14 +38,14 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("The operation completed successfully", e.message());
+      assert::are_equal("The operation completed successfully.", e.message());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
       assert::is_not_empty(e.stack_trace());
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully", e.to_string());
-      assert::are_equal("The operation completed successfully", e.what());
+      string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully.", e.to_string());
+      assert::are_equal("The operation completed successfully.", e.what());
     }
     
     void test_method_(default_constructor_with_stack_frame) {
@@ -57,7 +57,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      assert::are_equal("The operation completed successfully", e.message());
+      assert::are_equal("The operation completed successfully.", e.message());
       assert::are_equal(socket_error::success, e.socket_error());
       assert::are_equal(enum_object {socket_error::success}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -65,8 +65,8 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(stack_frame.get_file_name(), e.get_last_stack_frame().get_file_name());
       assert::are_equal(stack_frame.get_file_line_number(), e.get_last_stack_frame().get_file_line_number());
       assert::are_equal(stack_frame.get_method(), e.get_last_stack_frame().get_method());
-      assert::are_equal("xtd::net::sockets::socket_exception : The operation completed successfully" + environment::new_line() + stack_frame.to_string(), e.to_string());
-      assert::are_equal("The operation completed successfully", e.what());
+      assert::are_equal("xtd::net::sockets::socket_exception : The operation completed successfully." + environment::new_line() + stack_frame.to_string(), e.to_string());
+      assert::are_equal("The operation completed successfully.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_sock_error) {
@@ -97,7 +97,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully.", e.message());
       assert::are_equal(socket_error::success, e.socket_error());
       assert::are_equal(enum_object {socket_error::success}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -105,8 +105,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully", e.to_string());
-      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_aborted) {
@@ -1057,7 +1057,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully.", e.message());
       assert::are_equal(socket_error::success, e.socket_error());
       assert::are_equal(enum_object {socket_error::success}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -1065,8 +1065,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully", e.to_string());
-      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_aborted_as_int) {
@@ -1997,7 +1997,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully.", e.message());
       assert::are_equal(socket_error::success, e.socket_error());
       assert::are_equal(enum_object {socket_error::success}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2005,8 +2005,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully", e.to_string());
-      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_aborted_and_nullopt) {
@@ -2937,7 +2937,7 @@ namespace xtd::net::sockets::tests {
       assert::are_equal(h_result::h_result_category(), e.error_code().category());
       assert::are_equal(e.h_result(), e.error_code().value());
       assert::is_null(e.inner_exception());
-      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully", e.message());
+      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully.", e.message());
       assert::are_equal(socket_error::success, e.socket_error());
       assert::are_equal(enum_object {socket_error::success}.to_int32(), e.socket_error_code());
       assert::are_equal(path::get_file_name(assembly::get_executing_assembly().location()), e.source());
@@ -2945,8 +2945,8 @@ namespace xtd::net::sockets::tests {
       assert::is_not_empty(e.get_last_stack_frame().get_file_name());
       assert::is_not_zero(e.get_last_stack_frame().get_file_line_number());
       assert::is_not_empty(e.get_last_stack_frame().get_method());
-      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully", e.to_string());
-      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully", e.what());
+      if (environment::os_version().is_macos()) string_assert::starts_with("xtd::net::sockets::socket_exception : The operation completed successfully.", e.to_string());
+      if (environment::os_version().is_macos()) assert::are_equal("The operation completed successfully.", e.what());
     }
     
     void test_method_(constructor_with_socket_error_operation_aborted_as_int_and_nullopt) {
