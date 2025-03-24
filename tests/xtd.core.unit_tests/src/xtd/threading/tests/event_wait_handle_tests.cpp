@@ -321,7 +321,7 @@ namespace xtd::tests {
       assert::are_not_equal(wait_handle::invalid_handle, e.handle());
       auto thread_ran = false;
       auto thread = threading::thread {[&] {
-        assert::throws<io::io_exception>([] {auto e2 = event_wait_handle::open_existing("xtd_event_wait_handle_test_é");});
+        assert::throws<io::io_exception>([] {auto e2 = event_wait_handle::open_existing("xtd_event_wait_handle_test_2");});
         thread_ran = true;
       }};
       thread.start();
