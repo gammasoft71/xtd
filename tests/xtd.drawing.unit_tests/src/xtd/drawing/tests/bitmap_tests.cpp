@@ -141,18 +141,46 @@ namespace xtd::drawing::tests {
       assert::are_equal(96.0f, bmp.vertical_resolution(), 1.0f);
       assert::are_equal(4, bmp.width());
       
-      assert::are_equal(0xFFB8472A, bmp.get_pixel(0, 0).to_argb());
-      assert::are_equal(0xFE6B8B33, bmp.get_pixel(1, 0).to_argb());
-      assert::are_equal(0xFE338B6B, bmp.get_pixel(2, 0).to_argb());
-      assert::are_equal(0xFF2A47B8, bmp.get_pixel(3, 0).to_argb());
-      assert::are_equal(0xFE7F7F7F, bmp.get_pixel(0, 1).to_argb());
-      assert::are_equal(0xFE7F7F7F, bmp.get_pixel(1, 1).to_argb());
-      assert::are_equal(0xFE7F7F7F, bmp.get_pixel(2, 1).to_argb());
-      assert::are_equal(0xFE7F7F7F, bmp.get_pixel(3, 1).to_argb());
-      assert::are_equal(0xFF47B8D4, bmp.get_pixel(0, 2).to_argb());
-      assert::are_equal(0xFE9373CB, bmp.get_pixel(1, 2).to_argb());
-      assert::are_equal(0xFECB7393, bmp.get_pixel(2, 2).to_argb());
-      assert::are_equal(0xFFD4B847, bmp.get_pixel(3, 2).to_argb());
+      if (environment::os_version().is_linux()) {
+        assert::are_equal(0xFFB8472A, bmp.get_pixel(0, 0).to_argb());
+        assert::are_equal(0xFE6B8B33, bmp.get_pixel(1, 0).to_argb());
+        assert::are_equal(0xFE338B6B, bmp.get_pixel(2, 0).to_argb());
+        assert::are_equal(0xFF2A47B8, bmp.get_pixel(3, 0).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(0, 1).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(1, 1).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(2, 1).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(3, 1).to_argb());
+        assert::are_equal(0xFF47B8D4, bmp.get_pixel(0, 2).to_argb());
+        assert::are_equal(0xFE9373CB, bmp.get_pixel(1, 2).to_argb());
+        assert::are_equal(0xFECB7393, bmp.get_pixel(2, 2).to_argb());
+        assert::are_equal(0xFFD4B847, bmp.get_pixel(3, 2).to_argb());
+      } else if (environment::os_version().is_macos()) {
+        assert::are_equal(0xFFB8472A, bmp.get_pixel(0, 0).to_argb());
+        assert::are_equal(0xFE6B8B33, bmp.get_pixel(1, 0).to_argb());
+        assert::are_equal(0xFE338B6B, bmp.get_pixel(2, 0).to_argb());
+        assert::are_equal(0xFF2A47B8, bmp.get_pixel(3, 0).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(0, 1).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(1, 1).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(2, 1).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(3, 1).to_argb());
+        assert::are_equal(0xFF47B8D4, bmp.get_pixel(0, 2).to_argb());
+        assert::are_equal(0xFE9373CB, bmp.get_pixel(1, 2).to_argb());
+        assert::are_equal(0xFECB7393, bmp.get_pixel(2, 2).to_argb());
+        assert::are_equal(0xFFD4B847, bmp.get_pixel(3, 2).to_argb());
+      } else if (environment::os_version().is_windows()) {
+        assert::are_equal(0xFFB8472A, bmp.get_pixel(0, 0).to_argb());
+        assert::are_equal(0xFE6B8B33, bmp.get_pixel(1, 0).to_argb());
+        assert::are_equal(0xFE338B6B, bmp.get_pixel(2, 0).to_argb());
+        assert::are_equal(0xFF2A47B8, bmp.get_pixel(3, 0).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(0, 1).to_argb());
+        assert::are_equal(0xFF7F7F7F, bmp.get_pixel(1, 1).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(2, 1).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(3, 1).to_argb());
+        assert::are_equal(0xFF47B8D4, bmp.get_pixel(0, 2).to_argb());
+        assert::are_equal(0xFE9373CB, bmp.get_pixel(1, 2).to_argb());
+        assert::are_equal(0xFECB7393, bmp.get_pixel(2, 2).to_argb());
+        assert::are_equal(0xFFD4B847, bmp.get_pixel(3, 2).to_argb());
+      }
     }
     
     void test_method_(create_from_image_and_size_less_than_image) {
@@ -235,18 +263,46 @@ namespace xtd::drawing::tests {
       assert::are_equal(96.0f, bmp.vertical_resolution(), 1.0f);
       assert::are_equal(4, bmp.width());
       
-      assert::are_equal(0xFFB8472A, bmp.get_pixel(0, 0).to_argb());
-      assert::are_equal(0xFE6B8B33, bmp.get_pixel(1, 0).to_argb());
-      assert::are_equal(0xFE338B6B, bmp.get_pixel(2, 0).to_argb());
-      assert::are_equal(0xFF2A47B8, bmp.get_pixel(3, 0).to_argb());
-      assert::are_equal(0xFE7F7F7F, bmp.get_pixel(0, 1).to_argb());
-      assert::are_equal(0xFE7F7F7F, bmp.get_pixel(1, 1).to_argb());
-      assert::are_equal(0xFE7F7F7F, bmp.get_pixel(2, 1).to_argb());
-      assert::are_equal(0xFE7F7F7F, bmp.get_pixel(3, 1).to_argb());
-      assert::are_equal(0xFF47B8D4, bmp.get_pixel(0, 2).to_argb());
-      assert::are_equal(0xFE9373CB, bmp.get_pixel(1, 2).to_argb());
-      assert::are_equal(0xFECB7393, bmp.get_pixel(2, 2).to_argb());
-      assert::are_equal(0xFFD4B847, bmp.get_pixel(3, 2).to_argb());
+      if (environment::os_version().is_linux()) {
+        assert::are_equal(0xFFB8472A, bmp.get_pixel(0, 0).to_argb());
+        assert::are_equal(0xFE6B8B33, bmp.get_pixel(1, 0).to_argb());
+        assert::are_equal(0xFE338B6B, bmp.get_pixel(2, 0).to_argb());
+        assert::are_equal(0xFF2A47B8, bmp.get_pixel(3, 0).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(0, 1).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(1, 1).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(2, 1).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(3, 1).to_argb());
+        assert::are_equal(0xFF47B8D4, bmp.get_pixel(0, 2).to_argb());
+        assert::are_equal(0xFE9373CB, bmp.get_pixel(1, 2).to_argb());
+        assert::are_equal(0xFECB7393, bmp.get_pixel(2, 2).to_argb());
+        assert::are_equal(0xFFD4B847, bmp.get_pixel(3, 2).to_argb());
+      } else if (environment::os_version().is_macos()) {
+        assert::are_equal(0xFFB8472A, bmp.get_pixel(0, 0).to_argb());
+        assert::are_equal(0xFE6B8B33, bmp.get_pixel(1, 0).to_argb());
+        assert::are_equal(0xFE338B6B, bmp.get_pixel(2, 0).to_argb());
+        assert::are_equal(0xFF2A47B8, bmp.get_pixel(3, 0).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(0, 1).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(1, 1).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(2, 1).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(3, 1).to_argb());
+        assert::are_equal(0xFF47B8D4, bmp.get_pixel(0, 2).to_argb());
+        assert::are_equal(0xFE9373CB, bmp.get_pixel(1, 2).to_argb());
+        assert::are_equal(0xFECB7393, bmp.get_pixel(2, 2).to_argb());
+        assert::are_equal(0xFFD4B847, bmp.get_pixel(3, 2).to_argb());
+      } else if (environment::os_version().is_windows()) {
+        assert::are_equal(0xFFB8472A, bmp.get_pixel(0, 0).to_argb());
+        assert::are_equal(0xFE6B8B33, bmp.get_pixel(1, 0).to_argb());
+        assert::are_equal(0xFE338B6B, bmp.get_pixel(2, 0).to_argb());
+        assert::are_equal(0xFF2A47B8, bmp.get_pixel(3, 0).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(0, 1).to_argb());
+        assert::are_equal(0xFF7F7F7F, bmp.get_pixel(1, 1).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(2, 1).to_argb());
+        assert::are_equal(0xFE7F7F7F, bmp.get_pixel(3, 1).to_argb());
+        assert::are_equal(0xFF47B8D4, bmp.get_pixel(0, 2).to_argb());
+        assert::are_equal(0xFE9373CB, bmp.get_pixel(1, 2).to_argb());
+        assert::are_equal(0xFECB7393, bmp.get_pixel(2, 2).to_argb());
+        assert::are_equal(0xFFD4B847, bmp.get_pixel(3, 2).to_argb());
+      }
     }
     
     void test_method_(create_from_image_width_and_height_less_than_image) {

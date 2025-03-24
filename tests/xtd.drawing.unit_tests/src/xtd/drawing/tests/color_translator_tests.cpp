@@ -1,4 +1,5 @@
 #include <xtd/drawing/color_translator>
+#include <xtd/environment>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
@@ -87,7 +88,9 @@ namespace xtd::drawing::tests {
       assert::are_equal(16748574, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::dodger_blue)));
       assert::are_equal(13882323, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::light_gray)));
       assert::are_equal(4013776, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::active_text)));
-      assert::are_equal(10132122, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption)));
+      if (environment::os_version().is_linux()) assert::are_equal(2894892, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption)));
+      else if (environment::os_version().is_macos()) assert::are_equal(10132122, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption)));
+      else if (environment::os_version().is_windows()) assert::are_equal(2829099, color_translator::to_win32(color::from_known_color(xtd::drawing::known_color::gradient_inactive_caption)));
     }
   };
 }
