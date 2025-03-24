@@ -394,7 +394,7 @@ namespace xtd::tests {
       auto rnd = xtd::random {1};
       auto values = array<double>(16_z);
       rnd.next_values(values);
-      if (environment::os_version().is_linux()) collection_assert::are_equal({0.0}, values);
+      if (environment::os_version().is_linux()) collection_assert::are_equal({4.72929e+307, 1.64902e+308, 7.87243e+307, 6.43088e+307, 1.56289e+308, 6.98094e+306, 1.243e+307, 1.06784e+307, 2.7678e+306, 2.40324e+307, 6.7152e+307, 1.54759e+308, 9.68194e+306, 5.53398e+307, 7.23358e+307, 9.42703e+307}, values);
       else if (environment::os_version().is_macos()) collection_assert::are_equal({3.05724499436841E+307, 1.40799380865409E+308, 6.82008001395177E+307, 1.4309938939764E+308, 8.75521324746089E+307, 2.17125118507379E+307, 1.11301169446026E+308, 4.21111506851151E+306, 1.78002018649878E+308, 1.67764808807204E+308, 1.53181729602797E+308, 5.50089521182878E+307, 1.65938980435499E+308, 1.2871027636892E+308, 1.05713757977953E+308, 1.49080742553487E+308}, values);
       else if (environment::os_version().is_windows()) collection_assert::are_equal({3.32721e+307, 1.67462e+308, 1.70373e+308, 8.7143e+307, 5.76226e+307, 2.77612e+307, 1.25634e+308, 2.15634e+307, 8.72197e+307, 1.13747e+308, 1.47092e+308, 1.22787e+308, 8.9626e+307, 1.05488e+308, 1.2939e+308, 4.647e+307}, values);
     }
