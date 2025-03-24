@@ -116,7 +116,7 @@ int32_t socket::destroy(intmax_t handle) {
 }
 
 std::string socket::socket_error_to_string(int32_t socket_error) {
-  if (socket_error == 0) return "The operation completed successfully";
+  if (socket_error == 0) return "The operation completed successfully.";
   auto error = socket_error_to_native(socket_error);
   return std::string {std::strerror(error != -1 ? error : socket_error)};
 }
