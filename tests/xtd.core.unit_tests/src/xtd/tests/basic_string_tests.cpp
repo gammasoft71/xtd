@@ -1606,6 +1606,7 @@ namespace xtd::tests {
 #if defined(__xtd__cpp_lib_char8_t)
       else if constexpr(std::is_same<char_t, char8>::value) return;
 #endif
+      else if constexpr (std::is_same<char_t, wchar>::value) return;
       else assert::are_equal("A test string to test", basic_string<char_t>::sprintf("%s", "A test string to test"));
     }
 
@@ -1615,6 +1616,7 @@ namespace xtd::tests {
 #if defined(__xtd__cpp_lib_char8_t)
       else if constexpr(std::is_same<char_t, char8>::value) return;
 #endif
+      else if constexpr (std::is_same<char_t, wchar>::value) return;
       else assert::are_equal("A test string to test", basic_string<char_t>::sprintf(u"%s", "A test string to test"));
     }
 
@@ -1624,6 +1626,7 @@ namespace xtd::tests {
 #if defined(__xtd__cpp_lib_char8_t)
       else if constexpr(std::is_same<char_t, char8>::value) return;
 #endif
+      else if constexpr (std::is_same<char_t, wchar>::value) return;
       else assert::are_equal("A test string to test", basic_string<char_t>::sprintf(U"%s", "A test string to test"));
     }
 
@@ -1632,6 +1635,7 @@ namespace xtd::tests {
       if constexpr(std::is_same<char_t, char16>::value) return;
       else if constexpr(std::is_same<char_t, char32>::value) return;
       else if constexpr(std::is_same<char_t, char8>::value) return;
+      else if constexpr (std::is_same<char_t, wchar>::value) return;
       else assert::are_equal("A test string to test", basic_string<char_t>::sprintf(u8"%s", "A test string to test"));
 #endif
     }
@@ -1642,6 +1646,7 @@ namespace xtd::tests {
 #if defined(__xtd__cpp_lib_char8_t)
       else if constexpr(std::is_same<char_t, char8>::value) return;
 #endif
+      else if constexpr (std::is_same<char_t, wchar>::value) return;
       else assert::are_equal("A test string to test", basic_string<char_t>::sprintf(L"%s", "A test string to test"));
     }
 
