@@ -193,7 +193,7 @@ namespace xtd::tests {
       // This test is commented, because the result is time zone dependent.
       // assert::are_equal(U"Coordinated Universal time_t", format(U"{0:Z}", date_time {2019, 1, 2, 3, 4, 5}.to_universal_time()));
       #else
-      assert::are_equal(U"GMT", format(U"{0:Z}", date_time {2019, 1, 2, 3, 4, 5}.to_universal_time()));
+      assert::are_equal(U"UTC", format(U"{0:Z}", date_time {2019, 1, 2, 3, 4, 5}.to_universal_time()));
       #endif
     }
   };
