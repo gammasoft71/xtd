@@ -58,9 +58,9 @@ namespace xtd {
       struct thread_item : public object {
         thread_item() = default;
         thread_item(thread_item&&) = default;
-        thread_item(const thread_item&) = default;
+        thread_item(const thread_item& other) {*data = *other.data;}
         thread_item& operator =(thread_item&&) = default;
-        thread_item& operator =(const thread_item&) = default;
+        thread_item& operator =(const thread_item& other) {*data = *other.data; return *this;}
         thread_item(const callback_t& callback) : data {xtd::new_ptr<sdata>(callback)} {}
         thread_item(const callback_t& callback, std::any state) : data {xtd::new_ptr<sdata>(callback, state)} {}
         thread_item(const callback_t& callback, std::any state, wait_handle& wait_object, int32 milliseconds_timeout_interval, bool execute_only_once) : data {xtd::new_ptr<sdata>(callback, state, &wait_object, milliseconds_timeout_interval, execute_only_once)} {}
