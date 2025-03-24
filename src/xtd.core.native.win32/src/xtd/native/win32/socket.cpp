@@ -91,6 +91,7 @@ int32_t socket::destroy(intmax_t handle) {
 }
 
 std::string socket::socket_error_to_string(int32_t socket_error) {
+  if (socket_error == 0) return "The operation completed successfully.";
   auto message_buffer = LPWSTR {nullptr};
   auto size = FormatMessage(FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS, nullptr, socket_error, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT), reinterpret_cast<LPWSTR>(&message_buffer), 0, nullptr);
   if (message_buffer == nullptr) {
