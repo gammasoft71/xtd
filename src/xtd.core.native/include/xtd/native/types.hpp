@@ -16,6 +16,10 @@
 namespace xtd {
   /// @cond
   class __xtd_demangle;
+  namespace threading {
+    class thread;
+    class wait_handle;
+  }
   struct __xtd__handle__;
   /// @endcond
   
@@ -32,6 +36,8 @@ namespace xtd {
     class core_native_export_ types final {
       types() = delete;
       friend xtd::__xtd_demangle;
+      friend xtd::threading::thread;
+      friend xtd::threading::wait_handle;
       friend __xtd__handle__;
     protected:
       /// @name Protected Static Methods
