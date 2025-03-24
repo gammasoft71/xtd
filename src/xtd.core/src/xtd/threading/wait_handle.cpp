@@ -3,13 +3,16 @@
 #include "../../../include/xtd/diagnostics/stopwatch.hpp"
 #include "../../../include/xtd/argument_exception.hpp"
 #include "../../../include/xtd/invalid_handle.hpp"
+#define __XTD_CORE_NATIVE_LIBRARY__
+#include <xtd/native/types>
+#undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd;
 using namespace xtd::diagnostics;
 using namespace xtd::helpers;
 using namespace xtd::threading;
 
-const intptr wait_handle::invalid_handle = xtd::invalid_handle;
+const intptr wait_handle::invalid_handle = xtd::native::types::invalid_handle();
 
 wait_handle::~wait_handle() {
   close();

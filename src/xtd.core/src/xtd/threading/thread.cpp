@@ -54,9 +54,9 @@ struct thread::static_data {
   list<sptr<thread>> threads;
 };
 
-const intptr thread::invalid_handle = xtd::invalid_handle;
+const intptr thread::invalid_handle = xtd::native::types::invalid_handle();
 
-const intptr thread::invalid_thread_id = xtd::invalid_handle;
+const intptr thread::invalid_thread_id = xtd::native::types::invalid_handle();
 
 intptr thread::main_thread_id_ = thread::get_current_thread_id();
 
@@ -186,7 +186,7 @@ thread& thread::priority(xtd::threading::thread_priority value) {
   
   if (data_->priority == value) return *this;
   data_->priority = value;
-  if (data_->handle != invalid_handle) native::thread::set_priority(data_->handle, as<int32>(value));
+  if (data_->handle != native::types::invalid_handle()) native::thread::set_priority(data_->handle, as<int32>(value));
   return *this;
 }
 
