@@ -74,8 +74,10 @@ namespace xtd {
     /// @name Public Aliases
     
     /// @{
-    /// @brief function_t pointer type
+    /// @brief Represents function type.
     using function_t = std::function <result_t()>;
+    /// @brief Represents the function collection type.
+    using function_collection = std::vector<function_t>;
     /// @}
     
     /// @name Public Constructors
@@ -114,7 +116,7 @@ namespace xtd {
     /// @{
     /// @brief Gets the delegates array
     /// @return The delegates array.
-    const std::vector<function_t>& functions() const {return data_->functions;}
+    const function_collection& functions() const {return data_->functions;}
     
     /// @brief Return if the delegate is empty.
     /// @return bool Return `true` if delegate is empty; otherwise `false`.
@@ -195,7 +197,7 @@ namespace xtd {
     /// @return Delegate A new delegate with an invocation list that concatenates the invocation lists of the delegates in the delegates array. Returns null if delegates is null, if delegates contains zero elements, || if every entry in delegates is null.
     /// @remarks If the delegates array contains entries that are null, those entries are ignored.
     /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
-    static delegate combine(const std::vector<delegate>& delegates) noexcept {
+    static delegate combine(const array<delegate>& delegates) noexcept {
       delegate result;
       for (const delegate& delegate : delegates) {
         for (const function_t& function : delegate.data_->functions)
@@ -239,7 +241,7 @@ namespace xtd {
       delegate result = source;
       for (const function_t& function : value.data_->functions) {
         if (find(result.data_->functions.begin(), result.data_->functions.end(), function) != result.data_->functions.end()) {
-          for (typename std::vector<function_t>::reverse_iterator iterator = result.data_->functions.rbegin(); iterator != result.data_->functions.rend(); ++iterator) {
+          for (typename function_collection::reverse_iterator iterator = result.data_->functions.rbegin(); iterator != result.data_->functions.rend(); ++iterator) {
             if (are_equals(*iterator, function))
               result.data_->functions.erase((iterator + 1).base());
           }
@@ -350,7 +352,7 @@ namespace xtd {
       return fct1.target_type() == fct2.target_type() && (fct1.template target<result_t(*)()>() == fct2.template target<result_t(*)()>() || *fct1.template target<result_t(*)()>() == *fct2.template target<result_t(*)()>());
     }
     
-    static typename std::vector<function_t>::const_iterator find(typename std::vector<function_t>::const_iterator begin, typename std::vector<function_t>::const_iterator end, const function_t& function) noexcept {
+    static typename function_collection::const_iterator find(typename function_collection::const_iterator begin, typename function_collection::const_iterator end, const function_t& function) noexcept {
       auto iterator = std::find_if(begin, end, [&](auto item) {return are_equals(item, function);});
       if (iterator != end) return iterator;
       return end;
@@ -395,10 +397,14 @@ namespace xtd {
     /// @name Public Aliases
     
     /// @{
-    /// @brief no_arguments_function_t pointer type
+    /// @brief Represents no arguments function type.
     using no_arguments_function_t = std::function <result_t()>;
-    /// @brief function_t pointer type
+    /// @brief Represents function type.
     using function_t = std::function <result_t(arguments_t...)>;
+    /// @brief function_t Represents the no arguments function collection type.
+    using no_arguments_function_collection = std::vector<no_arguments_function_t>;
+    /// @brief function_t Represents the function collection type.
+    using function_collection = std::vector<function_t>;
     /// @}
     
     /// @name Public Constructors
@@ -545,11 +551,11 @@ namespace xtd {
     /// @{
     /// @brief Gets the no arguments delegates array
     /// @return The delegates array.
-    const std::vector<no_arguments_function_t>& no_arguments_functions() const {return data_->no_arguments_functions;}
+    const no_arguments_function_collection& no_arguments_functions() const {return data_->no_arguments_functions;}
     
     /// @brief Gets the delegates array
     /// @return The delegates array.
-    const std::vector<function_t>& functions() const {return data_->functions;}
+    const function_collection& functions() const {return data_->functions;}
     
     /// @brief Return if the delegate is empty.
     /// @return bool Return `true` if delegate is empty; otherwise `false`.
@@ -634,7 +640,7 @@ namespace xtd {
     /// @return Delegate A new delegate with an invocation list that concatenates the invocation lists of the delegates in the delegates array. Returns null if delegates is null, if delegates contains zero elements, || if every entry in delegates is null.
     /// @remarks If the delegates array contains entries that are null, those entries are ignored.
     /// @remarks The invocation list can contain duplicate entries; that is, entries that refer to the same method on the same object.
-    static delegate combine(const std::vector<delegate>& delegates) noexcept {
+    static delegate combine(const array<delegate>& delegates) noexcept {
       delegate result;
       for (const delegate& delegate : delegates) {
         for (const no_arguments_function_t& function : delegate.data_->no_arguments_functions)
@@ -687,7 +693,7 @@ namespace xtd {
       delegate result = source;
       for (const no_arguments_function_t& function : value.data_->no_arguments_functions) {
         if (find(result.data_->no_arguments_functions.begin(), result.data_->no_arguments_functions.end(), function) != result.data_->no_arguments_functions.end()) {
-          for (typename std::vector<function_t>::reverse_iterator iterator = result.data_->no_arguments_functions.rbegin(); iterator != result.data_->no_arguments_functions.rend(); ++iterator) {
+          for (typename function_collection::reverse_iterator iterator = result.data_->no_arguments_functions.rbegin(); iterator != result.data_->no_arguments_functions.rend(); ++iterator) {
             if (are_equals(*iterator, function))
               result.data_->no_arguments_functions.erase((iterator + 1).base());
           }
@@ -696,7 +702,7 @@ namespace xtd {
       
       for (const function_t& function : value.data_->functions) {
         if (find(result.data_->functions.begin(), result.data_->functions.end(), function) != result.data_->functions.end()) {
-          for (typename std::vector<function_t>::reverse_iterator iterator = result.data_->functions.rbegin(); iterator != result.data_->functions.rend(); ++iterator) {
+          for (typename function_collection::reverse_iterator iterator = result.data_->functions.rbegin(); iterator != result.data_->functions.rend(); ++iterator) {
             if (are_equals(*iterator, function))
               result.data_->functions.erase((iterator + 1).base());
           }
@@ -861,13 +867,13 @@ namespace xtd {
       return fct1.target_type() == fct2.target_type() && (fct1.template target<result_t(*)()>() == fct2.template target<result_t(*)()>() || *fct1.template target<result_t(*)()>() == *fct2.template target<result_t(*)()>());
     }
     
-    static typename std::vector<no_arguments_function_t>::const_iterator find(typename std::vector<no_arguments_function_t>::const_iterator begin, typename std::vector<no_arguments_function_t>::const_iterator end, const no_arguments_function_t& function) noexcept {
+    static typename no_arguments_function_collection::const_iterator find(typename no_arguments_function_collection::const_iterator begin, typename no_arguments_function_collection::const_iterator end, const no_arguments_function_t& function) noexcept {
       auto iterator = std::find_if(begin, end, [&](auto item) {return are_equals(item, function);});
       if (iterator != end) return iterator;
       return end;
     }
     
-    static typename std::vector<function_t>::const_iterator find(typename std::vector<function_t>::const_iterator begin, typename std::vector<function_t>::const_iterator end, const function_t& function) noexcept {
+    static typename function_collection::const_iterator find(typename function_collection::const_iterator begin, typename function_collection::const_iterator end, const function_t& function) noexcept {
       auto iterator = std::find_if(begin, end, [&](auto item) {return are_equals(item, function);});
       if (iterator != end) return iterator;
       return end;
