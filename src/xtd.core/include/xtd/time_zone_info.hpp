@@ -2,6 +2,7 @@
 /// @brief Contains xtd::time_zone_info class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "collections/generic/list.hpp"
 #include "argument_out_of_range_exception.hpp"
 #include "day_of_week.hpp"
 #include "icomparable.hpp"
@@ -355,7 +356,7 @@ namespace xtd {
     
     /// @brief Retrieves an array of xtd::time_zone_info::adjustment_rule objects that apply to the current xtd::time_zone_info object.
     /// @return An array of objects for this time zone.
-    std::vector<adjustement_rule> get_adjustement_rules() const noexcept;
+    array<adjustement_rule> get_adjustement_rules() const noexcept;
     
     /// @brief Serves as a hash function for a particular type.
     /// @return A hash code for the current object.
@@ -440,6 +441,6 @@ namespace xtd {
     string display_name_;
     string standard_name_;
     bool supports_daylight_saving_time_ = false;
-    std::vector<adjustement_rule> adjustement_rules_;
+    xtd::collections::generic::list<adjustement_rule> adjustement_rules_;
   };
 }
