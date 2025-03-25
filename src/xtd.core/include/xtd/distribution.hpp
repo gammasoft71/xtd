@@ -9,7 +9,6 @@
 #include "string.hpp"
 #include "version.hpp"
 #include <map>
-#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -28,7 +27,7 @@ namespace xtd {
   /// @remarks By design, the distribution class is not a general purpose means of describing an operating system distribution, and you cannot derive a more inclusive type from the distribution class. If you need a type to contain other information about an operating system distribution, create your own type, then include a field of type distribution and any additional fields or methods that you require.
   class distribution final : public object {
   public:
-    using id_collection = std::vector<xtd::string>;
+    using id_collection = xtd::array<xtd::string>;
     /// @name Public Constructors
     
     /// @{
