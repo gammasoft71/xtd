@@ -40,7 +40,7 @@ namespace xtd {
     /// @brief Initializes a new instance of the xtd::guid structure by using the specified array of bytes.
     /// @param bytes A 16-element byte array containing values with which to initialize the GUID.
     /// @exception xtd::argument_exception bytes is not 16 bytes long.
-    explicit guid(const std::vector<xtd::byte>& data);
+    explicit guid(const xtd::array<xtd::byte>& data);
     /// @brief Initializes a new instance of the xtd::guid structure by using the specified array of bytes.
     /// @param bytes A 16-element byte array containing values with which to initialize the GUID.
     /// @exception xtd::argument_exception bytes is not 16 bytes long.
@@ -57,7 +57,7 @@ namespace xtd {
     /// @param c The next 2 bytes of the GUID.
     /// @param d The remaining 8 bytes of the GUID.
     /// @exception xtd::argument_exception bytes is not 8 bytes long.
-    explicit guid(int32 a, int16 b, int16 c, const std::vector<xtd::byte>& d);
+    explicit guid(int32 a, int16 b, int16 c, const xtd::array<xtd::byte>& d);
     /// @brief Initializes a new instance of the xtd::guid structure by using the specified  unsigned integers and byte array.
     /// @param a The first 4 bytes of the GUID.
     /// @param b The next 2 bytes of the GUID.
@@ -70,7 +70,7 @@ namespace xtd {
     /// @param c The next 2 bytes of the GUID.
     /// @param d The remaining 8 bytes of the GUID.
     /// @exception xtd::argument_exception bytes is not 8 bytes long.
-    explicit guid(uint32 a, uint16 b, uint16 c, const std::vector<xtd::byte>& d);
+    explicit guid(uint32 a, uint16 b, uint16 c, const xtd::array<xtd::byte>& d);
     /// @brief Initializes a new instance of the xtd::guid structure by using the specified integers and bytes.
     /// @param a The first 4 bytes of the GUID.
     /// @param b The next 2 bytes of the GUID.
@@ -158,7 +158,7 @@ namespace xtd {
     
     /// @brief Returns a 16-element byte array that contains the value of this instance.
     /// @return A 16-element byte array.
-    const std::vector<xtd::byte>& to_byte_array() const noexcept;
+    const xtd::array<xtd::byte>& to_byte_array() const noexcept;
     
     /// @brief Returns a string representation of the value of this instance in registry format.
     /// @return The value of this xtd::guid, formatted by using the "D" format specifier as follows:
@@ -216,6 +216,6 @@ namespace xtd {
     /// @}
     
   private:
-    std::vector<xtd::byte> data_ = std::vector<xtd::byte>(16);
+    xtd::array<xtd::byte> data_ = xtd::array<xtd::byte>(16);
   };
 }

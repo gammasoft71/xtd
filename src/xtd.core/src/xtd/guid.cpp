@@ -11,47 +11,47 @@ using namespace xtd::helpers;
 
 const guid guid::empty;
 
-guid::guid(const std::vector<xtd::byte>& data) : data_(data) {
+guid::guid(const array<byte>& data) : data_(data) {
   if (data.size() != data_.size()) throw_helper::throws(exception_case::argument, string::format("Vector size must be {}", data_.size()).c_str());
 }
 
-guid::guid(const std::initializer_list<xtd::byte>& data) : data_(data) {
+guid::guid(const std::initializer_list<byte>& data) : data_(data) {
   if (data.size() != data_.size()) throw_helper::throws(exception_case::argument, string::format("Vector size must be {}", data_.size()).c_str());
 }
 
-guid::guid(int32 a, int16 b, int16 c, const std::vector<xtd::byte>& d) : guid(as<uint32>(a), as<uint16>(b), as<uint16>(c), d) {
+guid::guid(int32 a, int16 b, int16 c, const array<byte>& d) : guid(as<uint32>(a), as<uint16>(b), as<uint16>(c), d) {
 }
 
-guid::guid(uint32 a, uint16 b, uint16 c, const std::vector<xtd::byte>& d) {
+guid::guid(uint32 a, uint16 b, uint16 c, const array<byte>& d) {
   if (d.size() != data_.size() - 8) throw_helper::throws(exception_case::argument, string::format("Vector size must be {}", data_.size() - 8).c_str());
   
   auto index = 0_z;
-  data_[index++] = as<xtd::byte>((a & 0xFF000000) >> 24);
-  data_[index++] = as<xtd::byte>((a & 0x00FF0000) >> 16);
-  data_[index++] = as<xtd::byte>((a & 0x0000FF00) >> 8);
-  data_[index++] = as<xtd::byte>((a & 0x000000FF) >> 0);
-  data_[index++] = as<xtd::byte>((b & 0xFF00) >> 8);
-  data_[index++] = as<xtd::byte>((b & 0x00FF) >> 0);
-  data_[index++] = as<xtd::byte>((c & 0xFF00) >> 8);
-  data_[index++] = as<xtd::byte>((c & 0x00FF) >> 0);
+  data_[index++] = as<byte>((a & 0xFF000000) >> 24);
+  data_[index++] = as<byte>((a & 0x00FF0000) >> 16);
+  data_[index++] = as<byte>((a & 0x0000FF00) >> 8);
+  data_[index++] = as<byte>((a & 0x000000FF) >> 0);
+  data_[index++] = as<byte>((b & 0xFF00) >> 8);
+  data_[index++] = as<byte>((b & 0x00FF) >> 0);
+  data_[index++] = as<byte>((c & 0xFF00) >> 8);
+  data_[index++] = as<byte>((c & 0x00FF) >> 0);
   
   for (; index < data_.size(); ++index)
     data_[index] = d[index - 8];
 }
 
-guid::guid(int32 a, int16 b, int16 c, xtd::byte d, xtd::byte e, xtd::byte f, xtd::byte g, xtd::byte h, xtd::byte i, xtd::byte j, xtd::byte k) noexcept : guid(as<uint32>(a), as<uint16>(b), as<uint16>(c), d, e, f, g, h, i, j, k) {
+guid::guid(int32 a, int16 b, int16 c, byte d, byte e, byte f, byte g, byte h, byte i, byte j, byte k) noexcept : guid(as<uint32>(a), as<uint16>(b), as<uint16>(c), d, e, f, g, h, i, j, k) {
 }
 
-guid::guid(uint32 a, uint16 b, uint16 c, xtd::byte d, xtd::byte e, xtd::byte f, xtd::byte g, xtd::byte h, xtd::byte i, xtd::byte j, xtd::byte k) noexcept {
+guid::guid(uint32 a, uint16 b, uint16 c, byte d, byte e, byte f, byte g, byte h, byte i, byte j, byte k) noexcept {
   auto index = 0_z;
-  data_[index++] = as<xtd::byte>((a & 0xFF000000) >> 24);
-  data_[index++] = as<xtd::byte>((a & 0x00FF0000) >> 16);
-  data_[index++] = as<xtd::byte>((a & 0x0000FF00) >> 8);
-  data_[index++] = as<xtd::byte>((a & 0x000000FF) >> 0);
-  data_[index++] = as<xtd::byte>((b & 0xFF00) >> 8);
-  data_[index++] = as<xtd::byte>((b & 0x00FF) >> 0);
-  data_[index++] = as<xtd::byte>((c & 0xFF00) >> 8);
-  data_[index++] = as<xtd::byte>((c & 0x00FF) >> 0);
+  data_[index++] = as<byte>((a & 0xFF000000) >> 24);
+  data_[index++] = as<byte>((a & 0x00FF0000) >> 16);
+  data_[index++] = as<byte>((a & 0x0000FF00) >> 8);
+  data_[index++] = as<byte>((a & 0x000000FF) >> 0);
+  data_[index++] = as<byte>((b & 0xFF00) >> 8);
+  data_[index++] = as<byte>((b & 0x00FF) >> 0);
+  data_[index++] = as<byte>((c & 0xFF00) >> 8);
+  data_[index++] = as<byte>((c & 0x00FF) >> 0);
   data_[index++] = d;
   data_[index++] = e;
   data_[index++] = f;
@@ -65,7 +65,7 @@ guid::guid(uint32 a, uint16 b, uint16 c, xtd::byte d, xtd::byte e, xtd::byte f, 
 guid::guid(const string& guid) {
   auto simple = guid.replace("0x", string::empty_string).replace(",", string::empty_string).replace("-", string::empty_string).replace("(", string::empty_string).replace(")", string::empty_string).replace("{", string::empty_string).replace("}", string::empty_string);
   for (auto index = 0_z; index < data_.size(); ++index) {
-    data_[index] = parse<xtd::byte>(simple.substring(0, 2), number_styles::hex_number);
+    data_[index] = parse<byte>(simple.substring(0, 2), number_styles::hex_number);
     simple = simple.remove(0, 2);
   }
 }
@@ -98,7 +98,7 @@ size guid::get_hash_code() const noexcept {
   return result.to_hash_code();
 }
 
-const std::vector<xtd::byte>& guid::to_byte_array() const noexcept {
+const array<byte>& guid::to_byte_array() const noexcept {
   return data_;
 }
 
