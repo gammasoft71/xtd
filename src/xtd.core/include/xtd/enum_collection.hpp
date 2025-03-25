@@ -2,8 +2,9 @@
 /// @brief Contains xtd::enum_collection.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include "collections/generic/key_value_pair.hpp"
 #include "string.hpp"
+#include <utility>
+#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
