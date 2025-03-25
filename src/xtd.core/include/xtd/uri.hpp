@@ -491,7 +491,7 @@ namespace xtd {
     /// @remarks segments
     /// @remarks     /Chapters/Chapter1/Sections/Section1.htm
     /// @remarks Note that because the absolute path starts with a '/', the first segment contains it and nothing else.
-    std::vector<xtd::string> segments() const;
+    xtd::array<xtd::string> segments() const;
     
     /// @brief Gets the user name, password, or other user-specific information associated with the specified URI.
     /// @return string A string that contains the user information associated with the URI. The returned value does not include the '@' character reserved for delimiting the user information part of the URI.
