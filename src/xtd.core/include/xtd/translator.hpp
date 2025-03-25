@@ -54,7 +54,7 @@ namespace xtd {
 
     /// @brief Gets an array of languages supported by the application.
     /// @return An array of languages supported by the application.
-    static std::vector<xtd::string> languages();
+    static xtd::array<xtd::string> languages();
     
     /// @brief Gets the current system language.
     /// @return The current system language.

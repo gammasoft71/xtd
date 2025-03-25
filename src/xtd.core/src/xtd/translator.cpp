@@ -2,6 +2,7 @@
 #include "../../include/xtd/environment.hpp"
 #include "../../include/xtd/format_exception.hpp"
 #include "../../include/xtd/string.hpp"
+#include "../../include/xtd/collections/generic/list.hpp"
 #include "../../include/xtd/collections/specialized/string_dictionary.hpp"
 #include "../../include/xtd/io/directory.hpp"
 #include "../../include/xtd/io/file.hpp"
@@ -12,6 +13,7 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::collections::specialized;
 using namespace xtd::helpers;
 using namespace xtd::io;
@@ -20,7 +22,7 @@ std::map<string, string_dictionary> translator::language_values_;
 string translator::language_;
 std::set<string> translator::translated_languages_;
 
-xtd::string translator::language() {
+string translator::language() {
   try {
     initialize(); // Must be first
   } catch (...) {
@@ -28,7 +30,7 @@ xtd::string translator::language() {
   return language_;
 }
 
-void translator::language(const xtd::string& language) {
+void translator::language(const string& language) {
   try {
     initialize(); // Must be first
   } catch (...) {
@@ -36,22 +38,22 @@ void translator::language(const xtd::string& language) {
   language_ = language;
 }
 
-std::vector<xtd::string> translator::languages() {
+array<string> translator::languages() {
   try {
     initialize(); // Must be first
   } catch (...) {
   }
-  static auto languages = std::vector<xtd::string> {};
+  static auto languages = list<string> {};
   if (!languages.empty()) return languages;
   std::for_each(language_values_.begin(), language_values_.end(), [&](auto language_value) {languages.push_back(language_value.first);});
-  return languages;
+  return languages.to_array();
 }
 
 std::locale translator::locale() {
   return std::locale {};
 }
 
-void translator::locale(const xtd::string& value) {
+void translator::locale(const string& value) {
   auto parts = (value.find_last_of(".") == value.npos ? value : value.remove(value.find_last_of("."))).split('_');
   auto extension = value.find_last_of(".") == value.npos ? ".utf-8" : value.substring(value.find_last_of("."));
   if (parts.size() != 0 && parts.size() != 2) throw_helper::throws(exception_case::argument);
@@ -64,15 +66,15 @@ void translator::locale(const std::locale& locale) {
   std::locale::global(locale);
 }
 
-xtd::string translator::system_language() {
-  return locale_to_language(xtd::native::translator::get_system_locale());
+string translator::system_language() {
+  return locale_to_language(native::translator::get_system_locale());
 }
 
-void translator::add_value(const xtd::string& language, const xtd::string& key, const xtd::string& value) {
+void translator::add_value(const string& language, const string& key, const string& value) {
   language_values_[language][key] = value;
 }
 
-void translator::parse_locale(const xtd::string& locale_path) {
+void translator::parse_locale(const string& locale_path) {
   if (!directory::exists(locale_path)) return;
   for (auto locale_item : directory::get_directories(locale_path)) {
     // Uncomment the following line if initialization is too slow to read only the current language, and not all languages...
@@ -82,8 +84,8 @@ void translator::parse_locale(const xtd::string& locale_path) {
   }
 }
 
-void translator::parse_file(const xtd::string& file, const xtd::string& language) {
-  auto lines = xtd::io::file::read_all_lines(file);
+void translator::parse_file(const string& file, const string& language) {
+  auto lines = io::file::read_all_lines(file);
   auto key = string::empty_string;
   auto value = string::empty_string;
   auto line_count = 0;
@@ -94,7 +96,7 @@ void translator::parse_file(const xtd::string& file, const xtd::string& language
     if (line.starts_with("#")) continue;
     if (key.empty() && line.starts_with("key ")) key = line.remove(0, 4).trim('"');
     else if (!key.empty() && line.starts_with("value ")) value = line.remove(0, 6).trim('"');
-    else throw_helper::throws(exception_case::format, xtd::string::format("file {} has an invalid format at line {}", file, line_count).c_str());
+    else throw_helper::throws(exception_case::format, string::format("file {} has an invalid format at line {}", file, line_count).c_str());
     if (!key.empty() && !value.empty()) {
       add_value(language, key, value);
       key = value = "";
@@ -102,11 +104,11 @@ void translator::parse_file(const xtd::string& file, const xtd::string& language
   }
 }
 
-xtd::string translator::translate(const xtd::string& value) noexcept {
+string translator::translate(const string& value) noexcept {
   return translate(language(), value);
 }
 
-xtd::string translator::translate(const xtd::string& language, const xtd::string& value) noexcept {
+string translator::translate(const string& language, const string& value) noexcept {
   return translate(language, value.c_str());
 }
 
@@ -114,7 +116,7 @@ const char* translator::translate(const char* value) noexcept {
   return translate(language(), value);
 }
 
-const char* translator::translate(const xtd::string& language, const char* value) noexcept {
+const char* translator::translate(const string& language, const char* value) noexcept {
   initialize(); // Must be first
   auto language_iterator = language_values_.find(language);
   if (language_iterator == language_values_.end()) return value;
@@ -145,7 +147,7 @@ void translator::initialize() {
     parse_locale(xtd_locale_path);
   }
 
-  auto application_locale_path = xtd::environment::os_version().is_macos_platform() ? io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "..", "Resources", "locale") : io::path::combine(xtd::io::path::get_directory_name(xtd::environment::get_command_line_args()[0]), "locale");
+  auto application_locale_path = environment::os_version().is_macos_platform() ? io::path::combine(io::path::get_directory_name(environment::get_command_line_args()[0]), "..", "Resources", "locale") : io::path::combine(io::path::get_directory_name(environment::get_command_line_args()[0]), "locale");
   if (directory::exists(application_locale_path)) {
     for (auto item : directory::get_directories(application_locale_path))
       translated_languages_.insert(item);
