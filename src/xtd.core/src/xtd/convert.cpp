@@ -1,8 +1,10 @@
 #include "../../include/xtd/convert.hpp"
+#include "../../include/xtd/collections/generic/list.hpp"
 #include "../../include/xtd/math.hpp"
 #include "../../include/xtd/fixed_array.hpp"
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::helpers;
 
 namespace {
@@ -20,7 +22,7 @@ array<byte> convert::from_base64_string(const string& s) {
   auto in_ = 0_z;
   auto char_array_4 = fixed_array<byte, 4> {};
   auto char_array_3 = fixed_array<byte, 3> {};
-  std::vector<byte> ret;
+  list<byte> ret;
   
   while (in_len-- && ( s[in_] != '=') && is_base64(s[in_])) {
     char_array_4[i++] = s[in_]; in_++;
@@ -52,7 +54,7 @@ array<byte> convert::from_base64_string(const string& s) {
     for (j = 0; (j < i - 1); j++) ret.push_back(char_array_3[j]);
   }
   
-  return ret;
+  return ret.to_array();
 }
 
 std::any convert::to_any(std::any value) noexcept {
