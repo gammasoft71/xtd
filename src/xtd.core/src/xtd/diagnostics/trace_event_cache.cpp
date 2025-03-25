@@ -17,7 +17,7 @@ const date_time& trace_event_cache::date_time() const noexcept {
 }
 
 array<string> trace_event_cache::logical_operation_stack() const noexcept {
-  return std::vector<string>();
+  return array<string>();
 }
 
 int32 trace_event_cache::process_id() const noexcept {
