@@ -652,7 +652,7 @@ namespace xtd {
 
     /// @brief Converts the value of this instance to all the string representations supported by the standard date and time format specifiers.
     /// @return A string array where each element is the representation of the value of this instance formatted with one of the standard date and time format specifiers.
-    std::vector<string> get_date_time_formats() const noexcept;
+    array<string> get_date_time_formats() const noexcept;
     
     /// @brief Indicates whether this instance of xtd::date_time is within the daylight saving time range for the current time zone.
     /// @return `true` if the value of the xtd::date_time::kind property is xtd::date_time_kind::local or xtd::date_time_kind::unspecified and the value of this instance ofxtd::date_time is within the daylight saving time range for the local time zone; `false` if xtd::date_time::kind is xtd::date_time_kind::utc.
