@@ -7,6 +7,7 @@
 #include "../../../include/xtd/io/io_exception.hpp"
 #include "../../../include/xtd/io/path.hpp"
 #include "../../../include/xtd/io/path_too_long_exception.hpp"
+#include "../../../include/xtd/collections/generic/list.hpp"
 #include "../../../include/xtd/argument_exception.hpp"
 #include "../../../include/xtd/not_supported_exception.hpp"
 #include "../../../include/xtd/unauthorized_access_exception.hpp"
@@ -19,6 +20,7 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::helpers;
 using namespace io;
 
@@ -277,10 +279,10 @@ date_time directory::get_last_write_time(const string& path) {
 }
 
 xtd::array<string> directory::get_logical_drives() {
-  auto logical_drives = std::vector<string> {};
+  auto logical_drives = list<string> {};
   auto drives = drive_info::get_drives();
   std::for_each(drives.begin(), drives.end(), [&](auto drive) {logical_drives.emplace_back(drive.name());});
-  return logical_drives;
+  return logical_drives.to_array();
 }
 
 directory_info directory::get_parent(const string& path) {
