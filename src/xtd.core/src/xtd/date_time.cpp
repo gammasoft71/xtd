@@ -1,3 +1,4 @@
+#include "../include/xtd/collections/generic/list.hpp"
 #include "../include/xtd/argument_out_of_range_exception.hpp"
 #include "../include/xtd/as.hpp"
 #include "../include/xtd/char_object.hpp"
@@ -14,6 +15,7 @@
 #include <tuple>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::helpers;
 
 namespace {
@@ -353,8 +355,8 @@ date_time date_time::from_tm(const tm& value, date_time_kind kind) {
   return date_time(value.tm_year + 1900, value.tm_mon + 1, value.tm_mday, value.tm_hour, value.tm_min, value.tm_sec, kind);
 }
 
-std::vector<string> date_time::get_date_time_formats() const noexcept {
-  auto date_time_formats = std::vector<string> {};
+array<string> date_time::get_date_time_formats() const noexcept {
+  auto date_time_formats = list<string> {};
   //for (auto format : formats)
   for (auto format = 'a'; format <= 'z'; ++format) {
     try {
@@ -366,7 +368,7 @@ std::vector<string> date_time::get_date_time_formats() const noexcept {
     } catch(...) {
     }
   }
-  return date_time_formats;
+  return date_time_formats.to_array();
 }
 
 bool date_time::is_daylight_saving_time() const noexcept {
