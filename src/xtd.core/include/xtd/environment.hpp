@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "collections/specialized/string_collection.hpp"
+#include "collections/generic/list.hpp"
 #include "diagnostics/stack_trace.hpp"
 #include "io/directory.hpp"
 #include "io/path.hpp"
@@ -18,6 +19,8 @@
 #include "event.hpp"
 #include "exit_status.hpp"
 #include "guid.hpp"
+#include "iequatable.hpp"
+#include "is.hpp"
 #include "operating_system.hpp"
 #include "platform_id.hpp"
 #include "processor.hpp"
@@ -288,7 +291,7 @@ namespace xtd {
     };
     
     /// @brief Represents a xtd library that contains name, version and paths.
-    class xtd_library final : public xtd::object {
+    class xtd_library final : public xtd::object, public xtd::iequatable<xtd_library> {
     public:
       /// @cond
       xtd_library() = default;
@@ -323,6 +326,9 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      bool equals(const object& other) const noexcept override {return is<xtd_library>(other) && equals(static_cast<const xtd_library&>(other));}
+      bool equals(const xtd_library& other) const noexcept override {return name_ == other.name_ && version_ == other.version_ && include_path_ == other.include_path_ && library_path_ == other.library_path_ && resources_path_ == other.resources_path_;}
+
       xtd::string to_string() const noexcept override;
       /// @}
       
@@ -337,7 +343,7 @@ namespace xtd {
     };
     
     /// @brief Represents a xtd libraries collection.
-    using xtd_library_collection = std::vector<xtd_library>;
+    using xtd_library_collection = xtd::collections::generic::list<xtd_library>;
     
     /// @name Public Static Properties
     
