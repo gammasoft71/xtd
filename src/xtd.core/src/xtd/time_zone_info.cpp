@@ -215,8 +215,8 @@ bool time_zone_info::equals(const time_zone_info& tzi) const noexcept {
   return id_.equals(tzi.id_);
 }
 
-std::vector<time_zone_info::adjustement_rule> time_zone_info::get_adjustement_rules() const noexcept {
-  return adjustement_rules_;
+array<time_zone_info::adjustement_rule> time_zone_info::get_adjustement_rules() const noexcept {
+  return adjustement_rules_.to_array();
 }
 
 size time_zone_info::get_hash_code() const noexcept {
