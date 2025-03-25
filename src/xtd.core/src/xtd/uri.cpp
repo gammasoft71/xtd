@@ -1,4 +1,5 @@
 #include "../../include/xtd/uri.hpp"
+#include "../../include/xtd/collections/generic/list.hpp"
 #include "../../include/xtd/argument_exception.hpp"
 #include "../../include/xtd/argument_out_of_range_exception.hpp"
 #include "../../include/xtd/as.hpp"
@@ -11,6 +12,7 @@
 #include "../../include/xtd/net/ip_address.hpp"
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::helpers;
 using namespace xtd::io;
 using namespace xtd::net;
@@ -151,11 +153,11 @@ string uri::scheme() const {
   return get_components(uri_components::scheme, uri_format::uri_escaped);
 }
 
-std::vector<string> uri::segments() const {
+array<string> uri::segments() const {
   auto path = this->absolute_path();
   if (path.empty()) return {};
   
-  auto segments = std::vector<string> {};
+  auto segments = list<string> {};
   auto start_index = 0_z;
   auto length = 1_z;
   
