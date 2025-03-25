@@ -157,11 +157,17 @@ class xtd::delegate&lt; result_t(arguments_t...)&gt;</div><p>Represents a delega
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
 <tr class="memitem:a0519c93d63e33630da52254043a7e7ab"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a0519c93d63e33630da52254043a7e7ab">no_arguments_function_t</a> = std::function&lt; result_t()&gt;</td></tr>
-<tr class="memdesc:a0519c93d63e33630da52254043a7e7ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">no_arguments_function_t pointer type  <br /></td></tr>
+<tr class="memdesc:a0519c93d63e33630da52254043a7e7ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents no arguments function type.  <br /></td></tr>
 <tr class="separator:a0519c93d63e33630da52254043a7e7ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6835638fe4ae28e749abc960dd9b962f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a6835638fe4ae28e749abc960dd9b962f">function_t</a> = std::function&lt; result_t(arguments_t...)&gt;</td></tr>
-<tr class="memdesc:a6835638fe4ae28e749abc960dd9b962f"><td class="mdescLeft">&#160;</td><td class="mdescRight">function_t pointer type  <br /></td></tr>
+<tr class="memdesc:a6835638fe4ae28e749abc960dd9b962f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents function type.  <br /></td></tr>
 <tr class="separator:a6835638fe4ae28e749abc960dd9b962f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3e1cb5f7c93b7a72983c21e66ca7cab"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#aa3e1cb5f7c93b7a72983c21e66ca7cab">no_arguments_function_collection</a> = std::vector&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a0519c93d63e33630da52254043a7e7ab">no_arguments_function_t</a> &gt;</td></tr>
+<tr class="memdesc:aa3e1cb5f7c93b7a72983c21e66ca7cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">function_t Represents the no arguments function collection type.  <br /></td></tr>
+<tr class="separator:aa3e1cb5f7c93b7a72983c21e66ca7cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14dbec5f80633a30612411d4773eea39"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a14dbec5f80633a30612411d4773eea39">function_collection</a> = std::vector&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a6835638fe4ae28e749abc960dd9b962f">function_t</a> &gt;</td></tr>
+<tr class="memdesc:a14dbec5f80633a30612411d4773eea39"><td class="mdescLeft">&#160;</td><td class="mdescRight">function_t Represents the function collection type.  <br /></td></tr>
+<tr class="separator:a14dbec5f80633a30612411d4773eea39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a48e7f8820ffa576ecef7111f8b3d83e0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a> ()=default</td></tr>
@@ -180,12 +186,12 @@ class xtd::delegate&lt; result_t(arguments_t...)&gt;</div><p>Represents a delega
 <tr class="separator:a84f3b57113109df1f935825790f0c818"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:a6178fa751a1a4eeb0407a8ce728ea11f"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a0519c93d63e33630da52254043a7e7ab">no_arguments_function_t</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a6178fa751a1a4eeb0407a8ce728ea11f">no_arguments_functions</a> () const</td></tr>
-<tr class="memdesc:a6178fa751a1a4eeb0407a8ce728ea11f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the no arguments delegates array.  <br /></td></tr>
-<tr class="separator:a6178fa751a1a4eeb0407a8ce728ea11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21fc495dd84b76058328eb17d2b67c0d"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a6835638fe4ae28e749abc960dd9b962f">function_t</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a21fc495dd84b76058328eb17d2b67c0d">functions</a> () const</td></tr>
-<tr class="memdesc:a21fc495dd84b76058328eb17d2b67c0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the delegates array.  <br /></td></tr>
-<tr class="separator:a21fc495dd84b76058328eb17d2b67c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af414ebf352911421be2073c56222a51f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#aa3e1cb5f7c93b7a72983c21e66ca7cab">no_arguments_function_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#af414ebf352911421be2073c56222a51f">no_arguments_functions</a> () const</td></tr>
+<tr class="memdesc:af414ebf352911421be2073c56222a51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the no arguments delegates array.  <br /></td></tr>
+<tr class="separator:af414ebf352911421be2073c56222a51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab26e99eb08cc4b1a72ee6a287aa9c38a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a14dbec5f80633a30612411d4773eea39">function_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#ab26e99eb08cc4b1a72ee6a287aa9c38a">functions</a> () const</td></tr>
+<tr class="memdesc:ab26e99eb08cc4b1a72ee6a287aa9c38a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the delegates array.  <br /></td></tr>
+<tr class="separator:ab26e99eb08cc4b1a72ee6a287aa9c38a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5e2d22f04dcca8fee5c14950cf36cd2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#aa5e2d22f04dcca8fee5c14950cf36cd2">is_empty</a> () const noexcept</td></tr>
 <tr class="memdesc:aa5e2d22f04dcca8fee5c14950cf36cd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return if the delegate is empty.  <br /></td></tr>
 <tr class="separator:aa5e2d22f04dcca8fee5c14950cf36cd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -222,9 +228,9 @@ class xtd::delegate&lt; result_t(arguments_t...)&gt;</div><p>Represents a delega
 <tr class="separator:aa48aee5822f192f608e40418aae421dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
-<tr class="memitem:a3bbb743368bac7edb5f23c72fdd6664c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a3bbb743368bac7edb5f23c72fdd6664c">combine</a> (const std::vector&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a> &gt; &amp;delegates) noexcept</td></tr>
-<tr class="memdesc:a3bbb743368bac7edb5f23c72fdd6664c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the invocation lists of an array of delegates.  <br /></td></tr>
-<tr class="separator:a3bbb743368bac7edb5f23c72fdd6664c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9cab0d87e2c2b6b132fc087783c87cf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#ac9cab0d87e2c2b6b132fc087783c87cf">combine</a> (const <a class="el" href="classxtd_1_1array.html">array</a>&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a> &gt; &amp;delegates) noexcept</td></tr>
+<tr class="memdesc:ac9cab0d87e2c2b6b132fc087783c87cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the invocation lists of an array of delegates.  <br /></td></tr>
+<tr class="separator:ac9cab0d87e2c2b6b132fc087783c87cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd46fdc5692b9a4a902d27a2e976eeb5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#acd46fdc5692b9a4a902d27a2e976eeb5">combine</a> (const <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, const <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:acd46fdc5692b9a4a902d27a2e976eeb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the invocation lists of two delegates.  <br /></td></tr>
 <tr class="separator:acd46fdc5692b9a4a902d27a2e976eeb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -283,7 +289,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>no_arguments_function_t pointer type </p>
+<p>Represents no arguments function type. </p>
 
 </div>
 </div>
@@ -301,7 +307,43 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>function_t pointer type </p>
+<p>Represents function type. </p>
+
+</div>
+</div>
+<a id="aa3e1cb5f7c93b7a72983c21e66ca7cab" name="aa3e1cb5f7c93b7a72983c21e66ca7cab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3e1cb5f7c93b7a72983c21e66ca7cab">&#9670;&#160;</a></span>no_arguments_function_collection</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class result_t , class ... arguments_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using xtd::delegate&lt; result_t(arguments_t...)&gt;::no_arguments_function_collection =  std::vector&lt;<a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a0519c93d63e33630da52254043a7e7ab">no_arguments_function_t</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>function_t Represents the no arguments function collection type. </p>
+
+</div>
+</div>
+<a id="a14dbec5f80633a30612411d4773eea39" name="a14dbec5f80633a30612411d4773eea39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14dbec5f80633a30612411d4773eea39">&#9670;&#160;</a></span>function_collection</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class result_t , class ... arguments_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using xtd::delegate&lt; result_t(arguments_t...)&gt;::function_collection =  std::vector&lt;<a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a6835638fe4ae28e749abc960dd9b962f">function_t</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>function_t Represents the function collection type. </p>
 
 </div>
 </div>
@@ -470,8 +512,8 @@ template&lt;class object1_t , class object2_t &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6178fa751a1a4eeb0407a8ce728ea11f" name="a6178fa751a1a4eeb0407a8ce728ea11f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6178fa751a1a4eeb0407a8ce728ea11f">&#9670;&#160;</a></span>no_arguments_functions()</h2>
+<a id="af414ebf352911421be2073c56222a51f" name="af414ebf352911421be2073c56222a51f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af414ebf352911421be2073c56222a51f">&#9670;&#160;</a></span>no_arguments_functions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -482,7 +524,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a0519c93d63e33630da52254043a7e7ab">no_arguments_function_t</a> &gt; &amp; xtd::delegate&lt; result_t(arguments_t...)&gt;::no_arguments_functions </td>
+          <td class="memname">const <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#aa3e1cb5f7c93b7a72983c21e66ca7cab">no_arguments_function_collection</a> &amp; xtd::delegate&lt; result_t(arguments_t...)&gt;::no_arguments_functions </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -500,8 +542,8 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
 
 </div>
 </div>
-<a id="a21fc495dd84b76058328eb17d2b67c0d" name="a21fc495dd84b76058328eb17d2b67c0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21fc495dd84b76058328eb17d2b67c0d">&#9670;&#160;</a></span>functions()</h2>
+<a id="ab26e99eb08cc4b1a72ee6a287aa9c38a" name="ab26e99eb08cc4b1a72ee6a287aa9c38a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab26e99eb08cc4b1a72ee6a287aa9c38a">&#9670;&#160;</a></span>functions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -512,7 +554,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a6835638fe4ae28e749abc960dd9b962f">function_t</a> &gt; &amp; xtd::delegate&lt; result_t(arguments_t...)&gt;::functions </td>
+          <td class="memname">const <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a14dbec5f80633a30612411d4773eea39">function_collection</a> &amp; xtd::delegate&lt; result_t(arguments_t...)&gt;::functions </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -974,8 +1016,8 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
 
 </div>
 </div>
-<a id="a3bbb743368bac7edb5f23c72fdd6664c" name="a3bbb743368bac7edb5f23c72fdd6664c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3bbb743368bac7edb5f23c72fdd6664c">&#9670;&#160;</a></span>combine() <span class="overload">[1/2]</span></h2>
+<a id="ac9cab0d87e2c2b6b132fc087783c87cf" name="ac9cab0d87e2c2b6b132fc087783c87cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9cab0d87e2c2b6b132fc087783c87cf">&#9670;&#160;</a></span>combine() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -988,7 +1030,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
         <tr>
           <td class="memname">static <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a> xtd::delegate&lt; result_t(arguments_t...)&gt;::combine </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&lt; result_t(arguments_t...)&gt; &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">array</a>&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&lt; result_t(arguments_t...)&gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>delegates</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1205,7 +1247,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 20 2025 20:07:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Mar 25 2025 20:05:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

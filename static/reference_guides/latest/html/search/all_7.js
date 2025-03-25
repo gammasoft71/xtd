@@ -63,7 +63,7 @@ var searchData=
   ['get_5fcurrent_5fdirectory_60',['get_current_directory',['../classxtd_1_1io_1_1directory.html#aeb8fa39de0bab437d77a5ce7d336ca29',1,'xtd::io::directory']]],
   ['get_5fcursor_5fposition_61',['get_cursor_position',['../classxtd_1_1console.html#a1cdd9bbda58244a65a4b868d1ed55280',1,'xtd::console']]],
   ['get_5fcursors_62',['get_cursors',['../classxtd_1_1forms_1_1cursors.html#a3293643cd30fcdd287e12fd635384382',1,'xtd::forms::cursors']]],
-  ['get_5fdate_5ftime_5fformats_63',['get_date_time_formats',['../classxtd_1_1date__time.html#a89fbd97b656f9e2131e0582d2a00912b',1,'xtd::date_time']]],
+  ['get_5fdate_5ftime_5fformats_63',['get_date_time_formats',['../classxtd_1_1date__time.html#afe3456cb33c27fdeadc94f6b7947cbf1',1,'xtd::date_time']]],
   ['get_5fdirectories_64',['get_directories',['../classxtd_1_1io_1_1directory.html#a9de89749aa7524172f4d2315d72054a8',1,'xtd::io::directory::get_directories(const xtd::string &amp;path)'],['../classxtd_1_1io_1_1directory.html#aa150ae4fb9849dbbefb2d906faae0325',1,'xtd::io::directory::get_directories(const xtd::string &amp;path, const xtd::string &amp;search_pattern)'],['../classxtd_1_1io_1_1directory__info.html#a3518dc4a38a54c9b3617b23b9c2a02ce',1,'xtd::io::directory_info::get_directories() const'],['../classxtd_1_1io_1_1directory__info.html#a9a10f3dc6c09160a44563d3c2ffc1236',1,'xtd::io::directory_info::get_directories(const xtd::string &amp;search_pattern) const']]],
   ['get_5fdirectory_5fname_65',['get_directory_name',['../classxtd_1_1io_1_1path.html#a62e9eaf034dd27af981240d354d599d7',1,'xtd::io::path']]],
   ['get_5fdirectory_5froot_66',['get_directory_root',['../classxtd_1_1io_1_1directory.html#af605efd518ef94a7d53696a94041ec0d',1,'xtd::io::directory']]],
