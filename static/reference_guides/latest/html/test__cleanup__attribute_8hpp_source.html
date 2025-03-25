@@ -103,11 +103,10 @@ $(function() {
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="group__tunit.html#gac5080d3ecd7735e7661f0bdf8c60cefd">   44</a></span><span class="preprocessor">#define test_cleanup_(method_name) \</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">  __##method_name##_unused() = delete; \</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">  class __test_cleanup_attribute : public xtd::tunit::test_cleanup_attribute { \</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">  public:\</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">    template&lt;class test_class&gt; __test_cleanup_attribute(test_class&amp; test) : test_cleanup_attribute(#method_name, test, &amp;test_class::method_name) {} \</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">  } __test_cleanup_attribute {*this}; \</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">  static void method_name()</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">  struct __test_cleanup_attribute : xtd::tunit::test_cleanup_attribute { \</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">    template&lt;class test_class&gt; __test_cleanup_attribute(test_class&amp; test) : test_cleanup_attribute(#method_name, test, &amp;test_class::method_name) {} \</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">  } __test_cleanup_attribute {*this}; \</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">  static void method_name()</span></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a></div><div class="ttdoc">Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...</div><div class="ttdef"><b>Definition</b> stack_frame.hpp:47</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a70707f29089ae94fa25b21466f7ebd29"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a></div><div class="ttdeci">static stack_frame current(const xtd::diagnostics::source_location &amp;value=xtd::diagnostics::source_location::current()) noexcept</div><div class="ttdoc">Crates a new xtd::diagnostics::stack_frame object corresponding to the location of the call site.</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1test__class_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1test__class.html">xtd::tunit::test_class</a></div><div class="ttdoc">Represents a test class.</div><div class="ttdef"><b>Definition</b> test_class.hpp:39</div></div>
@@ -120,7 +119,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 20 2025 20:07:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Mar 25 2025 20:05:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

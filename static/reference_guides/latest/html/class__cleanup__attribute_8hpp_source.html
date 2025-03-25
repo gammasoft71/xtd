@@ -103,12 +103,11 @@ $(function() {
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="group__tunit.html#ga8bd2dd6a2b1d4aee6954c1e2e28041ac">   46</a></span><span class="preprocessor">#define class_cleanup_(method_name) \</span></div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">  __##method_name##_static() {} \</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">  class __class_cleanup_attribute : public xtd::tunit::class_cleanup_attribute { \</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">  public: \</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">    template&lt;class test_class&gt; __class_cleanup_attribute(test_class&amp; test) : class_cleanup_attribute(#method_name, test, &amp;method_name) {__##method_name##_static();} \</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">  } __class_cleanup_attribute {*this}; \</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">  static void method_name()</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">  struct __class_cleanup_attribute : xtd::tunit::class_cleanup_attribute { \</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">    template&lt;class test_class&gt; __class_cleanup_attribute(test_class&amp; test) : class_cleanup_attribute(#method_name, test, &amp;method_name) {__##method_name##_static();} \</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">  } __class_cleanup_attribute {*this}; \</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">  static void method_name()</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a></div><div class="ttdoc">Provides information about a xtd::diagnostics::stack_frame, which represents a function call on the c...</div><div class="ttdef"><b>Definition</b> stack_frame.hpp:47</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_a70707f29089ae94fa25b21466f7ebd29"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a></div><div class="ttdeci">static stack_frame current(const xtd::diagnostics::source_location &amp;value=xtd::diagnostics::source_location::current()) noexcept</div><div class="ttdoc">Crates a new xtd::diagnostics::stack_frame object corresponding to the location of the call site.</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1class__cleanup__attribute_html"><div class="ttname"><a href="classxtd_1_1tunit_1_1class__cleanup__attribute.html">xtd::tunit::class_cleanup_attribute</a></div><div class="ttdoc">This attribute is use to add cleanup class method to class test attribute.</div><div class="ttdef"><b>Definition</b> class_cleanup_attribute.hpp:21</div></div>
@@ -121,7 +120,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 20 2025 20:07:42 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Mar 25 2025 20:05:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
