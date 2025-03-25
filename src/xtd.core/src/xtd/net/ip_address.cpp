@@ -2,11 +2,13 @@
 #include "../../../include/xtd/bit_converter.hpp"
 #include "../../../include/xtd/format_exception.hpp"
 #include "../../../include/xtd/block_scope.hpp"
+#include "../../../include/xtd/collections/generic/list.hpp"
 #include "../../../include/xtd/net/ip_address.hpp"
 #include "../../../include/xtd/net/sockets/socket_error.hpp"
 #include "../../../include/xtd/net/sockets/socket_exception.hpp"
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::helpers;
 using namespace xtd::net;
 using namespace xtd::net::sockets;
@@ -107,13 +109,13 @@ bool ip_address::equals(const ip_address& other) const noexcept {
 }
 
 array<byte> ip_address::get_address_bytes() const {
-  auto bytes = std::vector<byte> {};
+  auto bytes = list<byte> {};
   if (address_family_ == sockets::address_family::inter_network) {
     bytes.push_back(static_cast<byte>(address_or_scope_id_));
     bytes.push_back(static_cast<byte>(address_or_scope_id_ >> 8));
     bytes.push_back(static_cast<byte>(address_or_scope_id_ >> 16));
     bytes.push_back(static_cast<byte>(address_or_scope_id_ >> 24));
-    return bytes;
+    return bytes.to_array();
   }
   
   for (auto number : numbers_) {
@@ -244,7 +246,7 @@ ip_address ip_address::parse(const string& str) {
     work_ip_string = work_ip_string.remove(work_ip_string.index_of('%'));
   };
   
-  block_scope_(std::vector<string> address_parts = work_ip_string.split(':')) {
+  block_scope_(list<string> address_parts = work_ip_string.split(':')) {
     for (auto it = address_parts.begin(); it != address_parts.end(); ++it) {
       if (it->empty()) {
         *it = "0";
