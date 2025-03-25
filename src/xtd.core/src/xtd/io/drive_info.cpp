@@ -1,11 +1,13 @@
 #include "../../../include/xtd/io/drive_info.hpp"
 #include "../../../include/xtd/io/io_exception.hpp"
+#include "../../../include/xtd/collections/generic/list.hpp"
 #include "../../../include/xtd/argument_exception.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/drive>
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::helpers;
 using namespace io;
 
@@ -66,10 +68,10 @@ string drive_info::volume_label() const {
 }
 
 array<drive_info> drive_info::get_drives() noexcept {
-  auto drives = std::vector<drive_info> {};
+  auto drives = list<drive_info> {};
   auto native_drives = native::drive::get_drives();
   std::for_each(native_drives.begin(), native_drives.end(), [&](auto drive) {drives.emplace_back(drive_info(drive));});
-  return drives;
+  return drives.to_array();
 }
 
 xtd::string drive_info::to_string() const noexcept {
