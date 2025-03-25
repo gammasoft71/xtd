@@ -4,8 +4,10 @@
 #include "../../include/xtd/literals.hpp"
 #include "../../include/xtd/string.hpp"
 #include "../../include/xtd/uint32.hpp"
+#include "../../include/xtd/collections/generic/list.hpp"
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 
 bool h_result::failed(int32 h_result) noexcept {
   return h_result < 0;
@@ -22,7 +24,7 @@ int32 h_result::get_facility(int32 h_result) noexcept {
 const xtd::array<int32>& h_result::get_h_results() noexcept {
   static auto h_results = array<int32> {};
   call_once_ {
-    static auto tmp_h_results = std::vector<int32> {};
+    static auto tmp_h_results = list<int32> {};
     for (auto item : get_names())
       tmp_h_results.push_back(item.first);
     h_results = tmp_h_results;
