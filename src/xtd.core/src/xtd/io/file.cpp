@@ -1,6 +1,7 @@
 #include "../../../include/xtd/argument_exception.hpp"
 #include "../../../include/xtd/diagnostics/stack_frame.hpp"
 #include "../../../include/xtd/unauthorized_access_exception.hpp"
+#include "../../../include/xtd/collections/generic/list.hpp"
 #include "../../../include/xtd/io/directory.hpp"
 #include "../../../include/xtd/io/file.hpp"
 #include "../../../include/xtd/io/file_not_found_exception.hpp"
@@ -12,6 +13,7 @@
 #undef __XTD_CORE_NATIVE_LIBRARY__
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::helpers;
 using namespace io;
 
@@ -212,11 +214,11 @@ array<string> file::read_all_lines(const string& path) {
   if (native::file_system::is_path_too_long(path)) throw_helper::throws(exception_case::path_too_long);
   if (!exists(path)) throw_helper::throws(exception_case::file_not_found);
   
-  auto contents = std::vector<string> {};
+  auto contents = list<string> {};
   stream_reader sr(path);
   while (!sr.end_of_stream())
     contents.push_back(sr.read_line());
-  return contents;
+  return contents.to_array();
 }
 
 string file::read_all_text(const string& path) {
