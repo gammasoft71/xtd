@@ -1,3 +1,4 @@
+#include "stack_frame_get_stack_frames.hpp"
 #include "../../../include/xtd/diagnostics/stack_frame.hpp"
 #include "../../../include/xtd/environment.hpp"
 #include "../../../include/xtd/literals.hpp"
@@ -140,45 +141,4 @@ string stack_frame::to_string() const noexcept {
 
 stack_frame stack_frame::current(const xtd::diagnostics::source_location& value) noexcept {
   return stack_frame {value};
-}
-
-std::vector<stack_frame> stack_frame::get_stack_frames(const string& str, xtd::size skip_frames, bool need_file_info) noexcept {
-  auto call_stack = native::stack_trace::get_frames(skip_frames, need_file_info);
-  auto skip_frames_before_str = 0_z;
-  if (!str.empty()) {
-    skip_frames_before_str = call_stack.size();
-    for (auto index = 0_z; index < call_stack.size(); ++index) {
-      auto [file, line, column, method, offset] = call_stack[index];
-      if (string {method}.starts_with(str)) {
-        skip_frames_before_str = index;
-        break;
-      }
-    }
-  }
-  
-  auto frames_to_skip = {
-    "decltype",
-    "int xtd::startup::internal_safe_run",
-    "int xtd::startup::safe_run",
-    "long std::_",
-    "std::_",
-    "std::invoke",
-    "void std::_",
-    "xtd::delegate<",
-    "xtd::startup::internal_safe_run",
-    "xtd::startup::run",
-    "xtd::startup::safe_run",
-  };
-
-  auto stack_frames = std::vector<stack_frame> {};
-  if (call_stack.size() == 0) return stack_frames;
-  for (auto index = skip_frames_before_str; index < call_stack.size(); ++index) {
-    auto [file, line, column, method, offset] = call_stack[index];
-    auto skip = false;
-    for (auto starting_str : frames_to_skip)
-      if (string {method}.starts_with(starting_str)) skip = true;
-    if (skip) continue;
-    stack_frames.emplace_back(stack_frame(need_file_info ? file : "", need_file_info ? line : 0, method, need_file_info ? column : 0, offset));
-  }
-  return stack_frames;
 }

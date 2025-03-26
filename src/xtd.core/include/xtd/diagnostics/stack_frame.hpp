@@ -258,9 +258,7 @@ namespace xtd {
       
     private:
       friend class stack_trace;
-      // Do not use xtd::collections::generic::list because xtd::diagnostics::stack_frame is use by xtd::exception and
-      // xtd::collections::generic::list use xtd::argument_exception.
-      static std::vector<stack_frame> get_stack_frames(const xtd::string& str, xtd::size skip_frames, bool need_file_info) noexcept;
+      static auto get_stack_frames(const xtd::string& str, xtd::size skip_frames, bool need_file_info) noexcept;
       
       struct data;
       ptr<data> data_;      
