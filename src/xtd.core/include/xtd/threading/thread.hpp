@@ -326,7 +326,7 @@ namespace xtd {
       /// @remarks If one or more threads are not joinable, they will be skipped.
       template<class collection_t>
       static bool join_all(const collection_t& threads, int32 milliseconds_timeout) {
-        auto thread_pointers = std::vector<thread*> {};
+        auto thread_pointers = xtd::array<thread*> {};
         for (auto& item : threads)
           thread_pointers.resize(thread_pointers.size() + 1, const_cast<thread*>(&item));
         return join_all_ptr(thread_pointers, milliseconds_timeout);
@@ -369,7 +369,7 @@ namespace xtd {
       static bool join_all(const std::initializer_list<item_t>& threads) {return join_all(threads, timeout::infinite);}
       template<class item_t>
       static bool join_all(const std::initializer_list<item_t>& threads, int32 milliseconds_timeout) {
-        std::vector<thread*> thread_pointers;
+        auto thread_pointers = xtd::array<thread*> {};
         for (auto& item : threads)
           thread_pointers.resize(thread_pointers.size() + 1, const_cast<thread*>(&item));
         return join_all_ptr(thread_pointers, milliseconds_timeout);
