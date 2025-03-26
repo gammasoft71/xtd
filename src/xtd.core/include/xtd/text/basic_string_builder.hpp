@@ -900,9 +900,9 @@ namespace xtd {
 
       /// @cond
       template<class value_t>
-      basic_string_builder& append_join(const xtd::basic_string<char_t>& separator, const std::initializer_list<value_t>& values) {return append_join(separator, std::vector<value_t>(values));}
+      basic_string_builder& append_join(const xtd::basic_string<char_t>& separator, const std::initializer_list<value_t>& values) {return append_join(separator, xtd::array<value_t>(values));}
       template<class value_t>
-      basic_string_builder& append_join(value_type separator, const std::initializer_list<value_t>& values) {return append_join(separator, std::vector<value_t>(values));}
+      basic_string_builder& append_join(value_type separator, const std::initializer_list<value_t>& values) {return append_join(separator, xtd::array<value_t>(values));}
       /// @endcond
 
       /// @brief Appends the default line terminator to the end of the current xtd::text::basic_string_builder object.
