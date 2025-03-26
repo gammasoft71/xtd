@@ -6,6 +6,7 @@
 #include "../internal/__xtd_std_version.hpp"
 #undef __XTD_STD_INTERNAL__
 #include "../array.hpp"
+#include "../fixed_array.hpp"
 #include "../object.hpp"
 #include "../optional.hpp"
 #include "../read_only_span"
@@ -238,11 +239,11 @@ namespace xtd {
       binary_writer& operator <<(byte value) {write(value); return *this;}
       binary_writer& operator <<(char value) {write(value); return *this;}
       template<size_t size>
-      binary_writer& operator <<(const std::array<xtd::byte, size>& value) {write(value); return *this;}
+      binary_writer& operator <<(const xtd::fixed_array<xtd::byte, size>& value) {write(value); return *this;}
       template<size_t size>
-      binary_writer& operator <<(const std::array<char, size>& value) {write(value); return *this;}
-      binary_writer& operator <<(const std::vector<xtd::byte>& value) {write(value, 0, value.size()); return *this;}
-      binary_writer& operator <<(const std::vector<char>& value) {write(value, 0, value.size()); return *this;}
+      binary_writer& operator <<(const xtd::fixed_array<char, size>& value) {write(value); return *this;}
+      binary_writer& operator <<(const xtd::array<xtd::byte>& value) {write(value, 0, value.size()); return *this;}
+      binary_writer& operator <<(const xtd::array<char>& value) {write(value, 0, value.size()); return *this;}
       binary_writer& operator <<(double value) {write(value); return *this;}
       binary_writer& operator <<(int16 value) {write(value); return *this;}
       binary_writer& operator <<(int32 value) {write(value); return *this;}
@@ -250,13 +251,6 @@ namespace xtd {
       binary_writer& operator <<(sbyte value) {write(value); return *this;}
       binary_writer& operator <<(float value) {write(value); return *this;}
       binary_writer& operator <<(const string& value) {write(value); return *this;}
-      binary_writer& operator <<(const std::string& value) {write(value); return *this;}
-#if defined(__xtd__cpp_lib_char8_t)
-      binary_writer& operator <<(const std::u8string& value) {write(value); return *this;}
-#endif
-      binary_writer& operator <<(const std::u16string& value) {write(value); return *this;}
-      binary_writer& operator <<(const std::u32string& value) {write(value); return *this;}
-      binary_writer& operator <<(const std::wstring& value) {write(value); return *this;}
       binary_writer& operator <<(const char* value) {write(value); return *this;}
 #if defined(__xtd__cpp_lib_char8_t)
       binary_writer& operator <<(const char8* value) {write(value); return *this;}
