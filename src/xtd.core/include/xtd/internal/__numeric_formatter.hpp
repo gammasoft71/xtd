@@ -18,7 +18,7 @@ inline std::basic_string<char_t> __numeric_formatter(const std::basic_string<cha
   auto format = fmt;
   if (format.empty()) format = {'G'};
   
-  std::vector<char_t> possible_formats {'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'n', 'N', 'o', 'O', 'p', 'P', 'x', 'X'};
+  auto possible_formats = {'b', 'B', 'c', 'C', 'd', 'D', 'e', 'E', 'f', 'F', 'g', 'G', 'n', 'N', 'o', 'O', 'p', 'P', 'x', 'X'};
   if (format.size() > 3 || std::find(possible_formats.begin(), possible_formats.end(), format[0]) == possible_formats.end() || (format.size() >= 2 && !std::isdigit(format[1])) || (format.size() == 3 && !std::isdigit(format[2])))
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Custom format not yet implemented");
     
