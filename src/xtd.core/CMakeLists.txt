@@ -1213,6 +1213,7 @@ add_sources(
   "src/xtd/diagnostics/source_location.cpp"
   "src/xtd/diagnostics/source_switch.cpp"
   "src/xtd/diagnostics/stack_frame.cpp"
+  "src/xtd/diagnostics/stack_frame_get_stack_frames.hpp"
   "src/xtd/diagnostics/stack_trace.cpp"
   "src/xtd/diagnostics/stopwatch.cpp"
   "src/xtd/diagnostics/switch_base.cpp"

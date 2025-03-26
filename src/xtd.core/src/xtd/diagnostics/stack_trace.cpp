@@ -1,3 +1,4 @@
+#include "stack_frame_get_stack_frames.hpp"
 #include "../../../include/xtd/array.hpp"
 #include "../../../include/xtd/environment.hpp"
 #include "../../../include/xtd/typeof.hpp"
