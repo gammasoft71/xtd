@@ -2,8 +2,8 @@
 /// @brief Contains xtd::enum_collection.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "collections/generic/key_value_pair.hpp"
 #include "string.hpp"
-#include <utility>
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -13,12 +13,12 @@ namespace xtd {
   /// ```cpp
   /// #include <xtd/enum_collection>
   /// ```
-    /// @par Namespace
+  /// @par Namespace
   /// xtd
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
   /// @remarks For more information about enumeration, see [enum class](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Types%20overview/enum_class) guide.
   template<class enum_t>
-  using enum_collection = std::vector<std::pair<enum_t, xtd::string>>;
+  using enum_collection = std::vector<xtd::collections::generic::key_value_pair<enum_t, xtd::string>>;
 }
