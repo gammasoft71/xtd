@@ -394,33 +394,33 @@ bool thread::join_all(const std::initializer_list<xtd::uptr<thread>>& threads, c
   return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
-bool thread::join_all(const std::vector<xtd::sptr<thread>>& threads) {
+bool thread::join_all(const array<xtd::sptr<thread>>& threads) {
   return join_all(threads, timeout::infinite);
 }
 
-bool thread::join_all(const std::vector<xtd::sptr<thread>>& threads, int32 milliseconds_timeout) {
+bool thread::join_all(const array<xtd::sptr<thread>>& threads, int32 milliseconds_timeout) {
   auto thread_pointers = list<thread*> {};
   for (auto& thread : threads)
     thread_pointers.add(thread.get());
-  return join_all_ptr(thread_pointers, milliseconds_timeout);
+  return join_all_ptr(thread_pointers.to_array(), milliseconds_timeout);
 }
 
-bool thread::join_all(const std::vector<xtd::sptr<thread>>& threads, const time_span& timeout) {
+bool thread::join_all(const array<xtd::sptr<thread>>& threads, const time_span& timeout) {
   return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
-bool thread::join_all(const std::vector<xtd::uptr<thread>>& threads) {
+bool thread::join_all(const array<xtd::uptr<thread>>& threads) {
   return join_all(threads, timeout::infinite);
 }
 
-bool thread::join_all(const std::vector<xtd::uptr<thread>>& threads, int32 milliseconds_timeout) {
+bool thread::join_all(const array<xtd::uptr<thread>>& threads, int32 milliseconds_timeout) {
   auto thread_pointers = list<thread*> {};
   for (auto& thread : threads)
     thread_pointers.add(thread.get());
-  return join_all_ptr(thread_pointers, milliseconds_timeout);
+  return join_all_ptr(thread_pointers.to_array(), milliseconds_timeout);
 }
 
-bool thread::join_all(const std::vector<xtd::uptr<thread>>& threads, const time_span& timeout) {
+bool thread::join_all(const array<xtd::uptr<thread>>& threads, const time_span& timeout) {
   return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
@@ -522,10 +522,6 @@ bool thread::is_wait_sleep_join() const noexcept {
 }
 
 bool thread::join_all_ptr(const array<thread*>& threads, int32 milliseconds_timeout) {
-  return join_all_ptr(list<thread*> {threads}, milliseconds_timeout);
-}
-
-bool thread::join_all_ptr(const list<thread*>& threads, int32 milliseconds_timeout) {
   if (milliseconds_timeout < timeout::infinite) throw_helper::throws(exception_case::argument);
   
   thread::yield();
