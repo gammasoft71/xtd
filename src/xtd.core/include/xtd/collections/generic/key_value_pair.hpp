@@ -60,15 +60,30 @@ namespace xtd {
         /// @param value The definition associated with key
         key_value_pair(const key_t& key, const value_t& value) : first {key}, second {value} {}
         /// @brief Initializes a new instance of the key_value_pair<key_t, value_t> class with the specified key and value.
+        /// @param Key The object defined in each key/value pair
+        /// @param value The definition associated with key
+        template <class key_type_t, class value_type_t>
+        key_value_pair(key_type_t&& key, value_type_t&& value) : first(std::move(key)), second(std::move(value)) {}
+        /// @brief Initializes a new instance of the key_value_pair<key_t, value_t> class with the specified key and value.
         /// @param value The key and value of the key_value_pair<key_t, value_t>.
         key_value_pair(const std::pair<key_t, value_t>& value) : first {value.first}, second {value.second} {} // Can't be explicit by design.
+        /// @brief Initializes a new instance of the key_value_pair<key_t, value_t> class with the specified key and value.
+        /// @param value The key and value of the key_value_pair<key_t, value_t>.
+        key_value_pair(std::pair<key_t, value_t>&& value) : first {std::move(value.first)}, second {std::move(value.second)} {}
         /// @brief Initializes a new instance of the key_value_pair<key_t, value_t> class with the specified first_args and second_args.
         /// @param first_args The tuple of constructor arguments to initialize the first element of this key_value_pair.
         /// @param second_args The tuple of constructor arguments to initialize the second element of this key_value_pair.
         template<class... args1_t, class... args2_t>
         key_value_pair(std::piecewise_construct_t, std::tuple<args1_t...> first_args, std::tuple<args2_t...> second_args) : first {first_args}, second {second_args} {}
         /// @}
-        
+
+        /// @cond
+        key_value_pair(key_value_pair&&) = default;
+        key_value_pair(const key_value_pair&) = default;
+        key_value_pair& operator =(key_value_pair&&) = default;
+        key_value_pair& operator =(const key_value_pair&) = default;
+        /// @endcond
+
         /// @name Public Properties
         
         /// @{
