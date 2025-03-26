@@ -462,8 +462,8 @@ namespace xtd {
     /// @exception xtd::argument_exception The value is ! a value of enumType.
     template<class enum_t>
     static xtd::array<xtd::string> get_names() noexcept {
-      auto names = std::vector<xtd::string> {};
-      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {names.push_back(entry.second);});
+      auto names = xtd::array<xtd::string> {};
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {names.resize(names.size() + 1, entry.second);});
       return names;
     }
     
@@ -472,8 +472,8 @@ namespace xtd {
     /// @exception xtd::argument_exception The value is ! a value of enumType.
     template<class enum_t>
     static xtd::array<enum_t> get_values() noexcept {
-      auto values = std::vector<enum_t> {};
-      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(entry.first);});
+      auto values = xtd::array<enum_t> {};
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.size() + 1, entry.first);});
       return values;
     }
     
@@ -482,8 +482,8 @@ namespace xtd {
     /// @exception xtd::argument_exception The value is ! a value of enumType.
     template<class enum_t>
     static xtd::array<xtd::byte> get_values_as_byte() noexcept {
-      auto values = std::vector<xtd::byte> {};
-      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(enum_object<enum_t>(entry.first).to_byte());});
+      auto values = xtd::array<xtd::byte> {};
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.size() + 1, enum_object<enum_t>(entry.first).to_byte());});
       return values;
     }
     
@@ -492,8 +492,8 @@ namespace xtd {
     /// @exception xtd::argument_exception The value is ! a value of enumType.
     template<class enum_t>
     static xtd::array<int16> get_values_as_int16() noexcept {
-      auto values = std::vector<xtd::int16> {};
-      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(enum_object<enum_t>(entry.first).to_int16());});
+      auto values = xtd::array<xtd::int16> {};
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.size() + 1, enum_object<enum_t>(entry.first).to_int16());});
       return values;
     }
     
@@ -502,8 +502,8 @@ namespace xtd {
     /// @exception xtd::argument_exception The value is ! a value of enumType.
     template<class enum_t>
     static xtd::array<int32> get_values_as_int32() noexcept {
-      auto values = std::vector<xtd::int32> {};
-      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(enum_object<enum_t>(entry.first).to_int32());});
+      auto values = xtd::array<xtd::int32> {};
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.size() + 1, enum_object<enum_t>(entry.first).to_int32());});
       return values;
     }
     
@@ -512,8 +512,8 @@ namespace xtd {
     /// @exception xtd::argument_exception The value is ! a value of enumType.
     template<class enum_t>
     static xtd::array<int64> get_values_as_int64() noexcept {
-      auto values = std::vector<xtd::int64> {};
-      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(enum_object<enum_t>(entry.first).to_int64());});
+      auto values = xtd::array<xtd::int64> {};
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.size() + 1, enum_object<enum_t>(entry.first).to_int64());});
       return values;
     }
     
@@ -522,8 +522,8 @@ namespace xtd {
     /// @exception xtd::argument_exception The value is ! a value of enumType.
     template<class enum_t>
     static xtd::array<sbyte> get_values_as_sbyte() noexcept {
-      auto values = std::vector<xtd::sbyte> {};
-      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(enum_object<enum_t>(entry.first).to_sbyte());});
+      auto values = xtd::array<xtd::sbyte> {};
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.size() + 1, enum_object<enum_t>(entry.first).to_sbyte());});
       return values;
     }
     
@@ -532,8 +532,8 @@ namespace xtd {
     /// @exception xtd::argument_exception The value is ! a value of enumType.
     template<class enum_t>
     static xtd::array<uint16> get_values_as_uint16() noexcept {
-      auto values = std::vector<xtd::uint16> {};
-      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(enum_object<enum_t>(entry.first).to_uint16());});
+      auto values = xtd::array<xtd::uint16> {};
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.size() + 1, enum_object<enum_t>(entry.first).to_uint16());});
       return values;
     }
     
@@ -542,8 +542,8 @@ namespace xtd {
     /// @exception xtd::argument_exception The value is ! a value of enumType.
     template<class enum_t>
     static xtd::array<uint32> get_values_as_uint32() noexcept {
-      auto values = std::vector<xtd::uint32> {};
-      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(enum_object<enum_t>(entry.first).to_uint32());});
+      auto values = xtd::array<xtd::uint32> {};
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.size() + 1, enum_object<enum_t>(entry.first).to_uint32());});
       return values;
     }
     
@@ -552,8 +552,8 @@ namespace xtd {
     /// @exception xtd::argument_exception The value is ! a value of enumType.
     template<class enum_t>
     static xtd::array<uint64> get_values_as_uint64() noexcept {
-      auto values = std::vector<xtd::uint64> {};
-      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.push_back(enum_object<enum_t>(entry.first).to_uint64());});
+      auto values = xtd::array<xtd::uint64> {};
+      std::for_each(enum_object<enum_t>().entries().begin(), enum_object<enum_t>().entries().end(), [&](auto entry) {values.resize(values.size() + 1, enum_object<enum_t>(entry.first).to_uint64());});
       return values;
     }
     
