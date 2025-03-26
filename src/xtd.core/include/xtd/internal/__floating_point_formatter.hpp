@@ -94,7 +94,7 @@ inline std::basic_string<char_t> __floating_point_formatter(const std::basic_str
   auto fmt = format;
   if (fmt.empty()) fmt = {'G'};
   
-  std::vector<char_t> possible_formats {'b', 'B', 'c', 'C', 'e', 'E', 'f', 'F', 'g', 'G', 'n', 'N', 'p', 'P', 'x', 'X'};
+  auto possible_formats = {'b', 'B', 'c', 'C', 'e', 'E', 'f', 'F', 'g', 'G', 'n', 'N', 'p', 'P', 'x', 'X'};
   if (fmt.size() > 3 || std::find(possible_formats.begin(), possible_formats.end(), fmt[0]) == possible_formats.end() || (fmt.size() >= 2 && !std::isdigit(fmt[1])) || (fmt.size() == 3 && !std::isdigit(fmt[2])))
     xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::format, "Custom format not yet implemented");
     
