@@ -130,10 +130,6 @@ namespace xtd {
     static int run(xtd::delegate<void(const xtd::argument_collection&)> main_function);
     static int run(void (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
     static int run(void (*main_function)(const xtd::argument_collection&));
-    static int run(xtd::delegate<void(const std::vector<string>&)> main_function, int argc, char* argv[]);
-    static int run(xtd::delegate<void(const std::vector<string>&)> main_function);
-    static int run(void (*main_function)(const std::vector<string>&), int argc, char* argv[]);
-    static int run(void (*main_function)(const std::vector<string>&));
     static int run(xtd::delegate<int()> main_function, int argc, char* argv[]);
     static int run(xtd::delegate<int()> main_function);
     static int run(int (*main_function)(), int argc, char* argv[]);
@@ -146,10 +142,6 @@ namespace xtd {
     static int run(xtd::delegate<int(const xtd::argument_collection&)> main_function);
     static int run(int (*main_function)(const xtd::argument_collection&), int argc, char* argv[]);
     static int run(int (*main_function)(const xtd::argument_collection&));
-    static int run(xtd::delegate<int(const std::vector<string>&)> main_function, int argc, char* argv[]);
-    static int run(xtd::delegate<int(const std::vector<string>&)> main_function);
-    static int run(int (*main_function)(const std::vector<string>&), int argc, char* argv[]);
-    static int run(int (*main_function)(const std::vector<string>&));
   };
 }
 

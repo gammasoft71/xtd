@@ -163,28 +163,6 @@ int startup::run(void (*main_function)(const argument_collection&)) {
   return environment::exit_code();
 }
 
-int startup::run(xtd::delegate<void (const std::vector<string>&)> main_function, int argc, char* argv[]) {
-  main_function({argv + 1, argv + argc});
-  return environment::exit_code();
-}
-
-int startup::run(xtd::delegate<void (const std::vector<string>&)> main_function) {
-  auto args = environment::get_command_line_args();
-  main_function({args.begin() + 1, args.end()});
-  return environment::exit_code();
-}
-
-int startup::run(void (*main_function)(const std::vector<string>&), int argc, char* argv[]) {
-  main_function({argv + 1, argv + argc});
-  return environment::exit_code();
-}
-
-int startup::run(void (*main_function)(const std::vector<string>&)) {
-  auto args = environment::get_command_line_args();
-  main_function({args.begin() + 1, args.end()});
-  return environment::exit_code();
-}
-
 int startup::run(xtd::delegate<int()> main_function, int argc, char* argv[]) {
   return main_function();
 }
@@ -241,24 +219,6 @@ int startup::run(int (*main_function)(const argument_collection&), int argc, cha
 }
 
 int startup::run(int (*main_function)(const argument_collection&)) {
-  auto args = environment::get_command_line_args();
-  return main_function({args.begin() + 1, args.end()});
-}
-
-int startup::run(xtd::delegate<int(const std::vector<string>&)> main_function, int argc, char* argv[]) {
-  return main_function({argv + 1, argv + argc});
-}
-
-int startup::run(xtd::delegate<int(const std::vector<string>&)> main_function) {
-  auto args = environment::get_command_line_args();
-  return main_function({args.begin() + 1, args.end()});
-}
-
-int startup::run(int (*main_function)(const std::vector<string>&), int argc, char* argv[]) {
-  return main_function({argv + 1, argv + argc});
-}
-
-int startup::run(int (*main_function)(const std::vector<string>&)) {
   auto args = environment::get_command_line_args();
   return main_function({args.begin() + 1, args.end()});
 }
