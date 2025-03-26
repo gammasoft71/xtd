@@ -413,7 +413,7 @@ namespace xtd {
       bool is_unmanaged_thread() const noexcept;
       bool is_unstarted() const noexcept;
       bool is_wait_sleep_join() const noexcept;
-      static bool join_all_ptr(const std::vector<thread*>& threads, int32 milliseconds_timeout);
+      static bool join_all_ptr(const xtd::array<thread*>& threads, int32 milliseconds_timeout);
       static bool join_all_ptr(const xtd::collections::generic::list<thread*>& threads, int32 milliseconds_timeout);
       void thread_proc();
       static thread& unmanaged_thread();
