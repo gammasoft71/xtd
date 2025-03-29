@@ -18,7 +18,6 @@
 #include <cassert>
 #include <format>
 #endif
-#include <string>
 #include <type_traits>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
