@@ -17,6 +17,7 @@
 #include "object.hpp"
 #include "string.hpp"
 #include "types.hpp"
+#include "typeof.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
