@@ -41,6 +41,7 @@
 #include "internal/__as_std_string.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include "any_object.hpp"
+#include "enum_object.hpp"
 #define __XTD_CORE_INTERNAL__
 #include "internal/__as_any_object.hpp"
 #undef __XTD_CORE_INTERNAL__
