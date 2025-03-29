@@ -3,6 +3,7 @@
 #pragma once
 #include "collections/generic/helpers/comparer.hpp"
 #include "boxing.hpp"
+#include "enum_object.hpp"
 #include "icomparable.hpp"
 #include "iequatable.hpp"
 #include "invalid_operation_exception.hpp"
