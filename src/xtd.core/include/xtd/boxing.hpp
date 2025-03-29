@@ -10,6 +10,7 @@
 #include "char8_object.hpp"
 #include "decimal_object.hpp"
 #include "double_object.hpp"
+#include "enum_object.hpp"
 #include "int16_object.hpp"
 #include "int32_object.hpp"
 #include "int64_object.hpp"
