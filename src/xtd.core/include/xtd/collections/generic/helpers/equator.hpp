@@ -14,7 +14,7 @@ namespace xtd {
     namespace generic {
       /// @brief The xtd::collections::generic::helpers namespace contains helpers for generic collections, sush as comparer, equator an hasher structs.
       namespace helpers {
-        /// @brief Implements a function object for performing comparisons. Unless specialised, invokes operator== on type type_t. xtd::equator with the key and the value strongly typed to be std::any.
+        /// @brief Implements a function object for performing comparisons. Unless specialised, invokes operator== on type type_t. xtd::equator with the key and the value strongly typed to be xtd::any_object.
         /// ```cpp
         /// template<class key_t>
         /// struct equator;
