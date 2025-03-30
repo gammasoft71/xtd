@@ -11,7 +11,7 @@
 namespace xtd {
   /// @brief The xtd::collections namespace contains interfaces and classes that define various collections of objects, such as lists, queues, bit arrays, hash tables and dictionaries.
   namespace collections {
-    /// @brief Represents a collection of std::any.
+    /// @brief Represents a collection of xtd::any_object.
     /// ```cpp
     /// using sorted_list = xtd::collections::generic::list<xtd::any_object>
     /// ```
