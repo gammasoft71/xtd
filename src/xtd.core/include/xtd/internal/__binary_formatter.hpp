@@ -8,6 +8,7 @@
 /// @endcond
 
 #include <bitset>
+#include <cmath>
 
 /// @cond
 template<class char_t, class value_t>
