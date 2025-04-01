@@ -45,7 +45,7 @@ namespace xtd {
       /// @param message Message to write.
       /// @param data1 A trace data object.
       /// @param data_array A trace data object.
-      virtual bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::string& source, xtd::diagnostics::trace_event_type event_type, int32 id, const xtd::string& message, std::any data1, const xtd::collections::generic::list<xtd::any_object>& data_array) noexcept = 0;
+      virtual bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::string& source, xtd::diagnostics::trace_event_type event_type, int32 id, const xtd::string& message, xtd::any_object data1, const xtd::collections::generic::list<xtd::any_object>& data_array) noexcept = 0;
       /// @}
       
     protected:
@@ -73,7 +73,7 @@ namespace xtd {
       /// @param id A trace identifier number.
       /// @param message Message to write.
       /// @param data1 A trace data object.
-      bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::string& source, xtd::diagnostics::trace_event_type event_type, int32 id, const xtd::string& message, std::any data1) noexcept;
+      bool should_trace(const xtd::diagnostics::trace_event_cache& cache, const xtd::string& source, xtd::diagnostics::trace_event_type event_type, int32 id, const xtd::string& message, xtd::any_object data1) noexcept;
       /// @}
     };
   }
