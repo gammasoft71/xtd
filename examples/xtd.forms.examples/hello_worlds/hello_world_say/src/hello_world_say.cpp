@@ -13,7 +13,7 @@ public:
     button1.parent(*this);
     button1.text("Say...");
     button1.click += [&] {
-      speech_synthesizer1.speak_async("Hello, world!");
+      speech_synthesizer1.speak_async("A shining star was rising above the calm ocean as the warm breeze whispered through the palm trees.");
     };
   }
   

@@ -55,16 +55,7 @@ namespace xtd {
       struct static_data;
 
       template<class callback_t>
-      struct thread_item : public object {
-        thread_item() = default;
-        thread_item(thread_item&&) = default;
-        thread_item(const thread_item& other) {*data = *other.data;}
-        thread_item& operator =(thread_item&&) = default;
-        thread_item& operator =(const thread_item& other) {*data = *other.data; return *this;}
-        thread_item(const callback_t& callback) : data {xtd::new_ptr<sdata>(callback)} {}
-        thread_item(const callback_t& callback, std::any state) : data {xtd::new_ptr<sdata>(callback, state)} {}
-        thread_item(const callback_t& callback, std::any state, wait_handle& wait_object, int32 milliseconds_timeout_interval, bool execute_only_once) : data {xtd::new_ptr<sdata>(callback, state, &wait_object, milliseconds_timeout_interval, execute_only_once)} {}
-        
+      class thread_item : public object {
         struct sdata {
           sdata() = default;
           sdata(sdata&&) = default;
@@ -83,13 +74,27 @@ namespace xtd {
           bool unregistered = false;
         };
         
-        ptr<sdata> data = xtd::new_ptr<sdata>();
+      public:
+        thread_item() = default;
+        thread_item(thread_item&&) = default;
+        thread_item(const thread_item& other) {*data = *other.data;}
+        thread_item& operator =(thread_item&&) = default;
+        thread_item& operator =(const thread_item& other) {*data = *other.data; return *this;}
+        thread_item(const callback_t& callback) : data {xtd::new_ptr<sdata>(callback)} {}
+        thread_item(const callback_t& callback, std::any state) : data {xtd::new_ptr<sdata>(callback, state)} {}
+        thread_item(const callback_t& callback, std::any state, wait_handle& wait_object, int32 milliseconds_timeout_interval, bool execute_only_once) : data {xtd::new_ptr<sdata>(callback, state, &wait_object, milliseconds_timeout_interval, execute_only_once)} {}
         
-        void run() {
-          do {
-            this->callback(data->state);
-          } while (!data->execute_only_once);
-        }
+        bool execute_only_once() const noexcept {return data->execute_only_once;}
+        int32 milliseconds_timeout_interval() const noexcept {return data->milliseconds_timeout_interval;}
+        bool unregistered() const noexcept {return data->unregistered;}
+        void unregistered(bool value) noexcept {data->unregistered = value;}
+        wait_handle* wait_object() noexcept {return data->wait_object;}
+
+        void run() {data->callback(data->state);}
+        void run(bool timeout) {data->callback(data->state, timeout);}
+
+      private:
+        ptr<sdata> data = xtd::new_ptr<sdata>();
       };
       
       using thread_pool_item = thread_item<wait_callback>;
