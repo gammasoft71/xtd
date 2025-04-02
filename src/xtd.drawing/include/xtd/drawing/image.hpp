@@ -17,7 +17,7 @@
 #include "rotate_flip_type.hpp"
 #include "size.hpp"
 #include "size_f.hpp"
-#include <xtd/any>
+#include <xtd/any_object>
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/string>
@@ -184,10 +184,10 @@ namespace xtd {
       
       /// @brief Gets an object that provides additional data about the image.
       /// @return The object that provides additional data about the image.
-      const std::any& tag() const noexcept;
+      const xtd::any_object& tag() const noexcept;
       /// @brief Sets an object that provides additional data about the image.
       /// @param tag The object that provides additional data about the image.
-      void tag(const std::any& tag) noexcept;
+      void tag(const xtd::any_object& tag) noexcept;
       
       /// @brief Gets the vertical resolution, in pixels per inch, of this image.
       /// @return The vertical resolution, in pixels per inch, of this image.

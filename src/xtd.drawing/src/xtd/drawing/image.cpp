@@ -162,7 +162,7 @@ struct image::data {
   xtd::array<imaging::property_item> property_items;
   imaging::image_format raw_format;
   drawing::size size;
-  std::any tag;
+  any_object tag;
   float vertical_resolution = .0f;
   encoder_parameters encoder_parameter_list;
 };
@@ -335,11 +335,11 @@ const drawing::size& image::size() const noexcept {
   return data_->size;
 }
 
-const std::any& image::tag() const noexcept {
+const any_object& image::tag() const noexcept {
   return data_->tag;
 }
 
-void image::tag(const std::any& tag) noexcept {
+void image::tag(const any_object& tag) noexcept {
   data_->tag = tag;
 }
 
