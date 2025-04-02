@@ -12,7 +12,8 @@
 #include <list>
 #include <vector>
 #include <xtd/threading/manual_reset_event>
-#include <xtd/any>
+#include <xtd/any_object>
+#include <xtd/array>
 #include <xtd/delegate>
 #include <xtd/event_args>
 #include <xtd/static>
@@ -320,7 +321,7 @@ namespace xtd {
         /// @param invoked A mutex for async invoke.
         /// @remarks Signal mutex when invoke is done.
         /// @warning Internal use only
-        static void invoke_in_control_thread(intptr control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, xtd::sptr<xtd::threading::manual_reset_event> invoked, xtd::sptr<bool> completed);
+        static void invoke_in_control_thread(intptr control, delegate<void(xtd::array<xtd::any_object>)> invoker, const xtd::array<xtd::any_object>& args, xtd::sptr<xtd::threading::manual_reset_event> invoked, xtd::sptr<bool> completed);
         
         /// @brief Gets the coordinates of the upper-left corner of the control relative to the upper-left corner of its container.
         /// @param control Control window handle.

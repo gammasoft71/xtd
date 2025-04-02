@@ -59,7 +59,7 @@ xtd::net::sockets::tcp_client tcp_listener::accept_tcp_client() {
   return tcp_client(data_->server_socket.accept());
 }
 
-xtd::sptr<xtd::iasync_result> tcp_listener::begin_accept_socket(xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> tcp_listener::begin_accept_socket(xtd::async_callback callback, const any_object& state) {
   auto ar = xtd::new_sptr<async_result_accept_socket>(state);
   auto operation_thread = std::thread {[](tcp_listener * listener, xtd::sptr<async_result_accept_socket> ar, xtd::async_callback callback) {
     try {
@@ -75,7 +75,7 @@ xtd::sptr<xtd::iasync_result> tcp_listener::begin_accept_socket(xtd::async_callb
   return ar;
 }
 
-xtd::sptr<xtd::iasync_result> tcp_listener::begin_accept_tcp_client(xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> tcp_listener::begin_accept_tcp_client(xtd::async_callback callback, const any_object& state) {
   auto ar = xtd::new_sptr<async_result_accept_tcp_client>(state);
   auto operation_thread = std::thread {[](tcp_listener * listener, xtd::sptr<async_result_accept_tcp_client> ar, xtd::async_callback callback) {
     try {

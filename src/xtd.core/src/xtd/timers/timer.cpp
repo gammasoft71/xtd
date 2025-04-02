@@ -17,7 +17,7 @@ struct timer::data {
   auto_reset_event event {true};
   time_span interval {100};
   auto_reset_event sleep {false};
-  wait_callback timer_proc = wait_callback {[&](std::any arg) {
+  wait_callback timer_proc = wait_callback {[&](const any_object& arg) {
     as<timer*>(arg)->data_->event.reset();
     sleep.wait_one(interval);
     while (enabled) {
@@ -28,7 +28,7 @@ struct timer::data {
     as<timer*>(arg)->data_->event.set();
   }};
   isynchronize_invoke* synchronizing_object = nullptr;
-  std::any state{this};
+  any_object state{this};
 };
 
 timer::timer() : timer(100) {

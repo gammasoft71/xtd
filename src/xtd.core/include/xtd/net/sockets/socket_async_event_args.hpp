@@ -164,7 +164,7 @@ namespace xtd {
         size_t send_packets_send_size_ = 0;
         xtd::net::sockets::socket_error socket_error_ = xtd::net::sockets::socket_error::success;
         xtd::net::sockets::socket_flags socket_flags_ = xtd::net::sockets::socket_flags::none;
-        std::any user_token_;
+        xtd::any_object user_token_;
       };
     }
   }

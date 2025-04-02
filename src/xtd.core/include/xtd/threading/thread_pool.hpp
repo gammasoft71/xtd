@@ -40,7 +40,7 @@ namespace xtd {
     /// * When you create a xtd::threading::task::task or xtd::threading::task::task < result_t > object to perform some task asynchronously, by default the task is scheduled to run on a thread pool thread.
     /// * Asynchronous timers use the thread pool. Thread pool threads execute callbacks from the xtd::threading::timer class and raise events from the xtd::timers::timer class.
     /// * When you use registered wait handles, a system thread monitors the status of the wait handles. When a wait operation completes, a worker thread from the thread pool executes the corresponding callback function.
-    /// * When you call the xtd::threading::thread_pool::queue_user_work_item method to queue a method for execution on a thread pool thread. You do this by passing the method a xtd::threading::wait_callback delegate. The delegate has the signature @verbatom using wait_callback = action<std::any> @endverbatim where state is an object that contains data to be used by the delegate. The actual data can be passed to the delegate by calling the xtd::threading::thread_pool::queue_user_work_item(xtd::threading::wait_callback, std::any) method.
+    /// * When you call the xtd::threading::thread_pool::queue_user_work_item method to queue a method for execution on a thread pool thread. You do this by passing the method a xtd::threading::wait_callback delegate. The delegate has the signature @verbatom using wait_callback = action<const xtd::any_object&> @endverbatim where state is an object that contains data to be used by the delegate. The actual data can be passed to the delegate by calling the xtd::threading::thread_pool::queue_user_work_item(xtd::threading::wait_callback, const xtd::any_object&) method.
     /// @note The threads in the managed thread pool are background threads. That is, their xtd::threading::thread::is_background properties are `true`. This means that a xtd::threading::thread_pool thread will not keep an application running after all foreground threads have exited.
     /// @remarks You can also queue work items that are not related to a wait operation to the thread pool. To request that a work item be handled by a thread in the thread pool, call the xtd::threading::thread_pool::queue_user_work_item method. This method takes as a parameter a reference to the method or delegate that will be called by the thread selected from the thread pool. There is no way to cancel a work item after it has been queued.
     /// @remarks Timer-queue timers and registered wait operations also use the thread pool. Their callback functions are queued to the thread pool.
@@ -63,11 +63,11 @@ namespace xtd {
           sdata& operator =(sdata&&) = default;
           sdata& operator =(const sdata&) = default;
           sdata(const callback_t& callback) : callback {callback} {}
-          sdata(const callback_t& callback, std::any state) : callback {callback}, state {state} {}
-          sdata(const callback_t& callback, std::any state, wait_handle* wait_object, int32 milliseconds_timeout_interval, bool execute_only_once) : callback {callback}, state {state}, wait_object {wait_object}, milliseconds_timeout_interval {milliseconds_timeout_interval}, execute_only_once {execute_only_once} {}
+          sdata(const callback_t& callback, const xtd::any_object& state) : callback {callback}, state {state} {}
+          sdata(const callback_t& callback, const xtd::any_object& state, wait_handle* wait_object, int32 milliseconds_timeout_interval, bool execute_only_once) : callback {callback}, state {state}, wait_object {wait_object}, milliseconds_timeout_interval {milliseconds_timeout_interval}, execute_only_once {execute_only_once} {}
           
           callback_t callback;
-          std::any state;
+          xtd::any_object state;
           wait_handle* wait_object = null;
           int32 milliseconds_timeout_interval;
           bool execute_only_once = true;
@@ -81,8 +81,8 @@ namespace xtd {
         thread_item& operator =(thread_item&&) = default;
         thread_item& operator =(const thread_item& other) {*data = *other.data; return *this;}
         thread_item(const callback_t& callback) : data {xtd::new_ptr<sdata>(callback)} {}
-        thread_item(const callback_t& callback, std::any state) : data {xtd::new_ptr<sdata>(callback, state)} {}
-        thread_item(const callback_t& callback, std::any state, wait_handle& wait_object, int32 milliseconds_timeout_interval, bool execute_only_once) : data {xtd::new_ptr<sdata>(callback, state, &wait_object, milliseconds_timeout_interval, execute_only_once)} {}
+        thread_item(const callback_t& callback, const xtd::any_object& state) : data {xtd::new_ptr<sdata>(callback, state)} {}
+        thread_item(const callback_t& callback, const xtd::any_object& state, wait_handle& wait_object, int32 milliseconds_timeout_interval, bool execute_only_once) : data {xtd::new_ptr<sdata>(callback, state, &wait_object, milliseconds_timeout_interval, execute_only_once)} {}
         
         bool execute_only_once() const noexcept {return data->execute_only_once;}
         int32 milliseconds_timeout_interval() const noexcept {return data->milliseconds_timeout_interval;}
@@ -159,13 +159,13 @@ namespace xtd {
       /// @param callback A pointer function that represents the method to be executed.
       /// @param state An object containing data to be used by the method.
       /// @return `true` if the method is successfully queued; NotSupportedException is thrown if the work item could not be queued
-      static bool queue_user_work_item(const wait_callback& callback, std::any state);
+      static bool queue_user_work_item(const wait_callback& callback, const xtd::any_object& state);
 
       /// @cond
       template<class callback_t>
       static bool queue_user_work_item(callback_t callback) {return queue_user_work_item(wait_callback {callback});}
       template<class callback_t>
-      static bool queue_user_work_item(callback_t callback, std::any state) {return queue_user_work_item(wait_callback {callback}, state);}
+      static bool queue_user_work_item(callback_t callback, const xtd::any_object& state) {return queue_user_work_item(wait_callback {callback}, state);}
       /// @endcond
 
       /// @brief Registers a delegate to wait for a xtd::threading::wait_handle, specifying a 32-bit signed integer for the time-out in milliseconds.
@@ -176,7 +176,7 @@ namespace xtd {
       /// @param execute_only_once `true` to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; `false` to indicate that the timer is reset every time the wait operation completes until the wait is unregistered.
       /// @return registered_wait_handle The xtd::threading::registered_wait_handle that encapsulates the native handle.
       /// @exception xtd::argument_out_of_range_exception The milliseconds_timeout_interval parameter is less than -1.
-      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, std::any state, int32 milliseconds_timeout_interval, bool execute_only_once);
+      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, const xtd::any_object& state, int32 milliseconds_timeout_interval, bool execute_only_once);
       /// @brief Registers a delegate to wait for a xtd::threading::wait_handle, specifying a 32-bit signed integer for the time-out in milliseconds.
       /// @param wait_object The xtd::threading::wait_handle to register. Use a xtd::threading::wait_handle other than Mutex
       /// @param callback A pointer function to call when the wait_object parameter is signaled.
@@ -185,7 +185,7 @@ namespace xtd {
       /// @param execute_only_once `true` to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; `false` to indicate that the timer is reset every time the wait operation completes until the wait is unregistered.
       /// @return registered_wait_handle The xtd::threading::registered_wait_handle that encapsulates the native handle.
       /// @exception xtd::argument_out_of_range_exception The milliseconds_timeout_interval parameter is less than -1.
-      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, std::any state, int64 milliseconds_timeout_interval, bool execute_only_once);
+      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, const xtd::any_object& state, int64 milliseconds_timeout_interval, bool execute_only_once);
       /// @brief Registers a delegate to wait for a xtd::threading::wait_handle, specifying a 32-bit signed integer for the time-out in milliseconds.
       /// @param wait_object The xtd::threading::wait_handle to register. Use a xtd::threading::wait_handle other than Mutex
       /// @param callback A pointer function to call when the wait_object parameter is signaled.
@@ -194,7 +194,7 @@ namespace xtd {
       /// @param execute_only_once `true` to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; `false` to indicate that the timer is reset every time the wait operation completes until the wait is unregistered.
       /// @return registered_wait_handle The xtd::threading::registered_wait_handle that encapsulates the native handle.
       /// @exception xtd::argument_out_of_range_exception The milliseconds_timeout_interval parameter is less than -1.
-      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, std::any state, const time_span& timeout, bool execute_only_once);
+      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, const xtd::any_object& state, const time_span& timeout, bool execute_only_once);
       /// @brief Registers a delegate to wait for a xtd::threading::wait_handle, specifying a 32-bit signed integer for the time-out in milliseconds.
       /// @param wait_object The xtd::threading::wait_handle to register. Use a xtd::threading::wait_handle other than Mutex
       /// @param callback A pointer function to call when the wait_object parameter is signaled.
@@ -203,17 +203,17 @@ namespace xtd {
       /// @param execute_only_once `true` to indicate that the thread will no longer wait on the wait_object parameter after the callback has been called; `false` to indicate that the timer is reset every time the wait operation completes until the wait is unregistered.
       /// @return registered_wait_handle The xtd::threading::registered_wait_handle that encapsulates the native handle.
       /// @exception xtd::argument_out_of_range_exception The milliseconds_timeout_interval parameter is less than -1.
-      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, std::any state, uint32 milliseconds_timeout_interval, bool execute_only_once);
+      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, const wait_or_timer_callback& callback, const xtd::any_object& state, uint32 milliseconds_timeout_interval, bool execute_only_once);
 
       /// @cond
       template<class callback_t>
-      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, std::any state, int32 milliseconds_timeout_interval, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, milliseconds_timeout_interval, execute_only_once);}
+      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, const xtd::any_object& state, int32 milliseconds_timeout_interval, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, milliseconds_timeout_interval, execute_only_once);}
       template<class callback_t>
-      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, std::any state, int64 milliseconds_timeout_interval, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, milliseconds_timeout_interval, execute_only_once);}
+      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, const xtd::any_object& state, int64 milliseconds_timeout_interval, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, milliseconds_timeout_interval, execute_only_once);}
       template<class callback_t>
-      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, std::any state, const time_span& timeout, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, timeout, execute_only_once);}
+      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, const xtd::any_object& state, const time_span& timeout, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, timeout, execute_only_once);}
       template<class callback_t>
-      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, std::any state, uint32 milliseconds_timeout_interval, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, milliseconds_timeout_interval, execute_only_once);}
+      static registered_wait_handle register_wait_for_single_object(wait_handle& wait_object, callback_t callback, const xtd::any_object& state, uint32 milliseconds_timeout_interval, bool execute_only_once) {return register_wait_for_single_object(wait_object, wait_or_timer_callback {callback}, state, milliseconds_timeout_interval, execute_only_once);}
       /// @endcond
       
       /// @brief Sets the number of requests to the thread pool that can be active concurrently. All requests above that number remain queued until thread pool threads become available.

@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../delegate.hpp"
-#include <any>
+#include "../any_object.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -11,11 +11,11 @@ namespace xtd {
   namespace threading {
     /// @brief Represents the method that executes on a xtd::threading::thread.
     /// ```cpp
-    /// using parameterized_thread_start = xtd::delegate<void(std::any obj)>;
+    /// using parameterized_thread_start = xtd::delegate<void(const xtd::any_object& obj)>;
     /// ```
     /// @param obj An object that contains data for the thread procedure.
     /// ```cpp
-    /// using parameterized_thread_start = action<std::any>
+    /// using parameterized_thread_start = action<const xtd::any_object&>
     /// ```
     /// @par Header
     /// ```cpp
@@ -26,6 +26,6 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core threading delegates
-    using parameterized_thread_start = xtd::delegate<void(std::any obj)>;
+    using parameterized_thread_start = xtd::delegate<void(const xtd::any_object& obj)>;
   }
 }

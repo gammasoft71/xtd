@@ -56,11 +56,11 @@ namespace xtd::tests {
     }
     
     void test_method_(constructor_with_parameterized_thread_start_and_negative_max_stack_size) {
-      assert::throws<argument_exception>([]{thread t {parameterized_thread_start {[](std::any) {}}, -1};});
+      assert::throws<argument_exception>([]{thread t {parameterized_thread_start {[](const any_object&) {}}, -1};});
     }
     
     void test_method_(constructor_with_parameterized_thread_start) {
-      auto thread = threading::thread {parameterized_thread_start {[](std::any) {}}};
+      auto thread = threading::thread {parameterized_thread_start {[](const any_object&) {}}};
       assert::are_equal(threading::thread::invalid_handle, thread.handle());
       assert::is_false(thread.is_alive());
       assert::is_false(thread.is_background());

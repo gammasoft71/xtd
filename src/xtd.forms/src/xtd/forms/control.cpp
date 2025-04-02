@@ -61,16 +61,16 @@ namespace {
 }
 
 struct control::async_result_invoke::data {
-  std::any async_state;
+  any_object async_state;
   xtd::sptr<bool> is_completed = xtd::new_sptr<bool>(false);
   xtd::sptr<xtd::threading::manual_reset_event> async_event = xtd::new_sptr<xtd::threading::manual_reset_event>();
 };
 
-control::async_result_invoke::async_result_invoke(std::any async_state) : data_(xtd::new_sptr<data>()) {
+control::async_result_invoke::async_result_invoke(const any_object& async_state) : data_(xtd::new_sptr<data>()) {
   data_->async_state = async_state;
 }
 
-std::any control::async_result_invoke::async_state() const noexcept {
+any_object control::async_result_invoke::async_state() const noexcept {
   return data_->async_state;
 }
 
@@ -880,11 +880,11 @@ control& control::width(int32 width) {
 }
 
 async_result control::begin_invoke(delegate<void()> method) {
-  return begin_invoke(delegate<void(std::vector<std::any>)>(method), {});
+  return begin_invoke(delegate<void(array<any_object>)>(method), {});
 }
 
-async_result control::begin_invoke(delegate<void(std::vector<std::any>)> method, const std::vector<std::any>& args) {
-  xtd::sptr<async_result_invoke> async = xtd::new_sptr<async_result_invoke>(std::reference_wrapper(*this));
+async_result control::begin_invoke(delegate<void(array<any_object>)> method, const array<any_object>& args) {
+  xtd::sptr<async_result_invoke> async = xtd::new_sptr<async_result_invoke>(this);
   if (is_handle_created()) native::control::invoke_in_control_thread(data_->handle, method, args, async->data_->async_event, async->data_->is_completed);
   threading::thread::yield();
   return async;
@@ -1096,15 +1096,15 @@ void control::invalidate(const drawing::region& region, bool invalidate_children
 }
 
 std::optional<object_ref> control::invoke(delegate<void()> method) {
-  return invoke(delegate<void(std::vector<std::any>)>(method), std::vector<std::any> {});
+  return invoke(delegate<void(array<any_object>)>(method), array<any_object> {});
 }
 
-std::optional<object_ref> control::invoke(delegate<void(std::vector<std::any>)> method, const std::vector<std::any>& args) {
+std::optional<object_ref> control::invoke(delegate<void(array<any_object>)> method, const array<any_object>& args) {
   return end_invoke(begin_invoke(method, args));
 }
 
-std::optional<object_ref> control::invoke(delegate<void(std::vector<std::any>)> method, std::any arg) {
-  return end_invoke(begin_invoke(method, std::vector<std::any> {arg}));
+std::optional<object_ref> control::invoke(delegate<void(array<any_object>)> method, const any_object& arg) {
+  return end_invoke(begin_invoke(method, array<any_object> {arg}));
 }
 
 std::optional<object_ref> control::end_invoke(async_result async) {

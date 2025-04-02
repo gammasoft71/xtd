@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "prompt.hpp"
-#include "../../any.hpp"
+#include "../../any_object.hpp"
 #include "../../optional.hpp"
 #include "../../event_args.hpp"
 #include "../../system_exception.hpp"
@@ -60,17 +60,17 @@ namespace xtd {
         
         /// @brief Gets the unique identifier for the asynchronous task.
         /// @return An object reference that uniquely identifies the asynchronous task.
-        std::any user_state() const noexcept {return user_state_;}
+        xtd::any_object user_state() const noexcept {return user_state_;}
         /// @}
         
       private:
-        prompt_event_args(bool cancelled, const xtd::system_exception* error, xtd::speech::synthesis::prompt* prompt, std::any user_state) : cancelled_(cancelled), error_(error), prompt_(prompt), user_state_(user_state) {}
+        prompt_event_args(bool cancelled, const xtd::system_exception* error, xtd::speech::synthesis::prompt* prompt, const xtd::any_object& user_state) : cancelled_(cancelled), error_(error), prompt_(prompt), user_state_(user_state) {}
         prompt_event_args(bool cancelled, const xtd::system_exception* error, xtd::speech::synthesis::prompt* prompt) : cancelled_(cancelled), error_(error), prompt_(prompt) {}
         
         bool cancelled_ = false;
         const xtd::system_exception* error_ = nullptr;
         xtd::speech::synthesis::prompt* prompt_ = nullptr;
-        std::any user_state_;
+        xtd::any_object user_state_;
       };
     }
   }
