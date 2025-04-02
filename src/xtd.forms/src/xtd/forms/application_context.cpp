@@ -5,7 +5,7 @@ using namespace xtd::forms;
 
 struct application_context::data {
   form* main_form = nullptr;
-  std::any tag;
+  any_object tag;
 };
 
 application_context::application_context() : data_(xtd::new_sptr<data>()) {
@@ -38,11 +38,11 @@ void application_context::main_form(std::nullptr_t) {
   data_->main_form = nullptr;
 }
 
-std::any application_context::tag() const noexcept {
+any_object application_context::tag() const noexcept {
   return data_->tag;
 }
 
-void application_context::tag(std::any tag) {
+void application_context::tag(const any_object& tag) {
   data_->tag = tag;
 }
 
