@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "form.hpp"
+#include <xtd/any_object>
 #include <xtd/object>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -65,15 +66,15 @@ namespace xtd {
       void main_form(std::nullptr_t);
       
       /// @brief Gets an object that contains data about the control.
-      /// @return A std::any that contains data about the control. The default is empty.
+      /// @return A xtd::any_object that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
       /// @remarks A common use for the tag property is to store data that is closely associated with the control. For example, if you have a control that displays information about a customer, you might store a data_set that contains the customer's order history in that control's tag property so the data can be accessed quickly.
-      std::any tag() const noexcept;
+      xtd::any_object tag() const noexcept;
       /// @brief Sets an object that contains data about the control.
-      /// @param tag A std::any that contains data about the control. The default is empty.
+      /// @param tag A xtd::any_object that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
       /// @remarks A common use for the tag property is to store data that is closely associated with the control. For example, if you have a control that displays information about a customer, you might store a data_set that contains the customer's order history in that control's tag property so the data can be accessed quickly.
-      void tag(std::any tag);
+      void tag(const xtd::any_object& tag);
       /// @}
       
       /// @name Public Methods
