@@ -180,8 +180,8 @@ struct control::data {
   style_sheets::style_sheet style_sheet;
   bool suppress_key_press = false;
   object sync_root;
-  std::any tag;
-  xtd::string text;
+  any_object tag;
+  string text;
 };
 
 control::control() : data_(xtd::new_sptr<data>()) {
@@ -810,11 +810,11 @@ control& control::tab_stop(bool value) {
   return *this;
 }
 
-std::any control::tag() const noexcept {
+any_object control::tag() const noexcept {
   return data_->tag;
 }
 
-control& control::tag(std::any tag) {
+control& control::tag(const any_object& tag) {
   data_->tag = tag;
   return*this;
 }
