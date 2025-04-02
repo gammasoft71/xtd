@@ -326,7 +326,7 @@ bool socket::accept_async(xtd::net::sockets::socket_async_event_args& e) {
   return false;
 }
 
-xtd::sptr<xtd::iasync_result> socket::begin_accept(xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> socket::begin_accept(xtd::async_callback callback, const any_object& state) {
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (data_->is_bound == false || data_->is_listening == false) throw_helper::throws(exception_case::invalid_operation);
   
@@ -346,11 +346,11 @@ xtd::sptr<xtd::iasync_result> socket::begin_accept(xtd::async_callback callback,
   return ar;
 }
 
-xtd::sptr<xtd::iasync_result> socket::begin_connect(const xtd::net::ip_address& address, uint16 port, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> socket::begin_connect(const xtd::net::ip_address& address, uint16 port, xtd::async_callback callback, const any_object& state) {
   return begin_connect_(xtd::new_uptr<ip_end_point>(ip_end_point(address, port)), callback, state);
 }
 
-xtd::sptr<xtd::iasync_result> socket::begin_connect(const array<xtd::net::ip_address>& addresses, uint16 port, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> socket::begin_connect(const array<xtd::net::ip_address>& addresses, uint16 port, xtd::async_callback callback, const any_object& state) {
   for (auto address : addresses) {
     if (data_->is_connected == false)
       return begin_connect(address, port, callback, state);
@@ -358,11 +358,11 @@ xtd::sptr<xtd::iasync_result> socket::begin_connect(const array<xtd::net::ip_add
   throw_helper::throws(exception_case::argument);
 }
 
-xtd::sptr<xtd::iasync_result> socket::begin_connect(const xtd::string& host, uint16 port, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> socket::begin_connect(const xtd::string& host, uint16 port, xtd::async_callback callback, const any_object& state) {
   return begin_connect(dns::get_host_addresses(host), port, callback, state);
 }
 
-xtd::sptr<xtd::iasync_result> socket::begin_disconnect(bool reuse_socket, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> socket::begin_disconnect(bool reuse_socket, xtd::async_callback callback, const any_object& state) {
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (!data_->is_connected) throw_helper::throws(exception_case::object_closed);
   
@@ -382,7 +382,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_disconnect(bool reuse_socket, xtd::a
   return ar;
 }
 
-xtd::sptr<xtd::iasync_result> socket::begin_receive(array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> socket::begin_receive(array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const any_object& state) {
   if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (!data_->is_connected) throw_helper::throws(exception_case::socket, socket_error::not_connected);
@@ -403,7 +403,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_receive(array<xtd::byte>& buffer, si
   return ar;
 }
 
-xtd::sptr<xtd::iasync_result> socket::begin_receive(array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error_code, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> socket::begin_receive(array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error_code, xtd::async_callback callback, const any_object& state) {
   if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (!data_->is_connected) throw_helper::throws(exception_case::socket, socket_error::not_connected);
@@ -424,7 +424,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_receive(array<xtd::byte>& buffer, si
   return ar;
 }
 
-xtd::sptr<xtd::iasync_result> socket::begin_receive_from(array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> socket::begin_receive_from(array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const any_object& state) {
   if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   
@@ -445,7 +445,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_receive_from(array<xtd::byte>& buffe
   return ar;
 }
 
-xtd::sptr<xtd::iasync_result> socket::begin_receive_message_from(array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> socket::begin_receive_message_from(array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::end_point& remote_end_point, xtd::async_callback callback, const any_object& state) {
   if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   
@@ -467,7 +467,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_receive_message_from(array<xtd::byte
   return ar;
 }
 
-xtd::sptr<xtd::iasync_result> socket::begin_send(const array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> socket::begin_send(const array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::async_callback callback, const any_object& state) {
   if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (!data_->is_connected) throw_helper::throws(exception_case::socket, socket_error::not_connected);
@@ -488,7 +488,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_send(const array<xtd::byte>& buffer,
   return ar;
 }
 
-xtd::sptr<xtd::iasync_result> socket::begin_send(const array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> socket::begin_send(const array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, xtd::net::sockets::socket_error& error, xtd::async_callback callback, const any_object& state) {
   if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   if (!data_->is_connected) throw_helper::throws(exception_case::socket, socket_error::not_connected);
@@ -509,7 +509,7 @@ xtd::sptr<xtd::iasync_result> socket::begin_send(const array<xtd::byte>& buffer,
   return ar;
 }
 
-xtd::sptr<xtd::iasync_result> socket::begin_send_to(const array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> socket::begin_send_to(const array<xtd::byte>& buffer, size_t offset, size_t size, xtd::net::sockets::socket_flags socket_flags, const xtd::net::end_point& remote_end_point, xtd::async_callback callback, const any_object& state) {
   if (offset + size > buffer.size()) throw_helper::throws(exception_case::argument_out_of_range);
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   
@@ -936,7 +936,7 @@ void socket::shutdown(socket_shutdown how) {
   data_->is_disconnected = true;
 }
 
-xtd::sptr<xtd::iasync_result> socket::begin_connect_(xtd::sptr<xtd::net::end_point> remote_end_point, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> socket::begin_connect_(xtd::sptr<xtd::net::end_point> remote_end_point, xtd::async_callback callback, const any_object& state) {
   if (data_->handle == 0) throw_helper::throws(exception_case::object_closed);
   
   auto ar = xtd::new_sptr<async_result_connect>(state);

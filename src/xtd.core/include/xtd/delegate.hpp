@@ -61,8 +61,8 @@ namespace xtd {
     class async_result_invoke : public xtd::iasync_result {
       struct data;
     public:
-      async_result_invoke(xtd::async_callback async_callback, std::any async_state);
-      std::any async_state() const noexcept override;
+      async_result_invoke(xtd::async_callback async_callback, const xtd::any_object& async_state);
+      xtd::any_object async_state() const noexcept override;
       xtd::threading::wait_handle& async_wait_handle() noexcept override;
       bool completed_synchronously() const noexcept override;
       bool is_completed() const noexcept override;
@@ -153,7 +153,7 @@ namespace xtd {
     /// @par Examples
     /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
     /// @include delegate_begin_invoke.cpp
-    async_result begin_invoke(xtd::async_callback async_callback, std::any async_state);
+    async_result begin_invoke(xtd::async_callback async_callback, const xtd::any_object& async_state);
 
     /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
     /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke.
@@ -384,8 +384,8 @@ namespace xtd {
     class async_result_invoke : public xtd::iasync_result {
       struct data;
     public:
-      async_result_invoke(xtd::async_callback async_callback, std::any async_state);
-      std::any async_state() const noexcept override;
+      async_result_invoke(xtd::async_callback async_callback, const xtd::any_object& async_state);
+      xtd::any_object async_state() const noexcept override;
       xtd::threading::wait_handle& async_wait_handle() noexcept override;
       bool completed_synchronously() const noexcept override;
       bool is_completed() const noexcept override;
@@ -592,7 +592,7 @@ namespace xtd {
     /// @par Examples
     /// The following examples shows hot tu use xtd::delegate::begin_invoke, xtd::delegate::end_invoke, xtd::delegate::invoke methods.
     /// @include delegate_begin_invoke.cpp
-    async_result begin_invoke(xtd::async_callback async_callback, std::any async_state, arguments_t... arguments);
+    async_result begin_invoke(xtd::async_callback async_callback, const xtd::any_object& async_state, arguments_t... arguments);
         
     /// @brief Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.
     /// @param async The async_result_invoke that represents a specific invoke asynchronous operation, returned when calling begin_invoke.

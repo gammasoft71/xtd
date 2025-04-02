@@ -40,13 +40,13 @@ namespace xtd {
     class core_export_ stream :  public xtd::abstract_object, public std::iostream {
       class async_result_stream : public xtd::object, public xtd::iasync_result {
       public:
-        explicit async_result_stream(std::any async_state) : async_state_(async_state) {}
-        std::any async_state() const noexcept override {return async_state_;}
+        explicit async_result_stream(const xtd::any_object& async_state) : async_state_(async_state) {}
+        xtd::any_object async_state() const noexcept override {return async_state_;}
         xtd::threading::wait_handle& async_wait_handle() noexcept override {return async_event_;}
         bool completed_synchronously() const noexcept override {return false;}
         bool is_completed() const noexcept override {return is_completed_;};
         
-        std::any async_state_;
+        xtd::any_object async_state_;
         bool is_completed_ = false;
         xtd::threading::manual_reset_event async_event_;
         std::exception_ptr exception_;

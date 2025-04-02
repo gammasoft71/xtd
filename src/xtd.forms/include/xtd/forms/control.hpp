@@ -130,8 +130,8 @@ namespace xtd {
       class async_result_invoke : public xtd::iasync_result {
         struct data;
       public:
-        explicit async_result_invoke(std::any async_state);
-        std::any async_state() const noexcept override;
+        explicit async_result_invoke(const xtd::any_object& async_state);
+        xtd::any_object async_state() const noexcept override;
         xtd::threading::wait_handle& async_wait_handle() noexcept override;
         bool completed_synchronously() const noexcept override;
         bool is_completed() const noexcept override;
@@ -953,7 +953,7 @@ namespace xtd {
       /// @param method A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
       /// @param args An array of objects to pass as arguments to the given method. This can be empty if no arguments are needed.
       /// @return An async_result_invoke that represents the result of the begin_invoke(delegate) operation.
-      xtd::async_result begin_invoke(delegate<void(std::vector<std::any>)> method, const std::vector<std::any>& args) override;
+      xtd::async_result begin_invoke(delegate<void(xtd::array<xtd::any_object>)> method, const xtd::array<xtd::any_object>& args) override;
       
       /// @brief Brings the control to the front of the z-order.
       /// @remarks The control is moved to the front of the z-order. If the control is a child of another control, the child control is moved to the front of the z-order. bring_to_front does not make a control a top-level control, and it does not raise the xtd::forms::control::paint event.
@@ -1071,11 +1071,11 @@ namespace xtd {
       /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments.
       /// @param method A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
       /// @param args An array of objects to pass as arguments to the specified method. This parameter can be null if the method takes no arguments.
-      std::optional<object_ref> invoke(delegate<void(std::vector<std::any>)> method, const std::vector<std::any>& args) override;
+      std::optional<object_ref> invoke(delegate<void(xtd::array<xtd::any_object>)> method, const xtd::array<xtd::any_object>& args) override;
       /// @brief Executes the specified delegate, on the thread that owns the control's underlying window handle, with the specified list of arguments.
       /// @param method A delegate to a method that takes parameters of the same number and type that are contained in the args parameter.
       /// @param args An array of objects to pass as arguments to the specified method. This parameter can be null if the method takes no arguments.
-      std::optional<object_ref> invoke(delegate<void(std::vector<std::any>)> method, std::any arg) override;
+      std::optional<object_ref> invoke(delegate<void(xtd::array<xtd::any_object>)> method, const xtd::any_object& arg) override;
       
       /// @brief Forces the control to apply layout logic to all its child controls.
       /// @remarks If the suspend_layout method was called before calling the perform_layout method, the xtd::forms::control::layout event is suppressed.

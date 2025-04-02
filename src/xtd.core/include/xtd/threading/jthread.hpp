@@ -36,13 +36,13 @@ namespace xtd {
       /// @brief Initializes a new instance of the xtd::threading::jthread class, specifying a delegate that allows an object to be passed to the thread when the thread is started.
       /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
       /// @exception xtd::argument_exception The start parameter is empty.
-      /// @remarks A thread does not begin executing when it is created. To schedule the thread for execution, call the xtd::threading::jthread::start method. To pass a data object to the thread, use the xtd::threading::jthread::start(std::any) method overload.
+      /// @remarks A thread does not begin executing when it is created. To schedule the thread for execution, call the xtd::threading::jthread::start method. To pass a data object to the thread, use the xtd::threading::jthread::start(const xtd::any_object&) method overload.
       explicit jthread(const xtd::threading::parameterized_thread_start& start);
       /// @brief Initializes a new instance of the xtd::threading::jthread class, specifying a delegate that allows an object to be passed to the thread when the thread is started and specifying the maximum stack size for the thread.
       /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
       /// @param max_stack_size The maximum stack size, in bytes, to be used by the thread, or 0 to use the default maximum stack size specified in the header for the executable.<br>Important For partially trusted code, max_stack_size is ignored if it is greater than the default stack size. No exception is thrown.
       /// @exception xtd::argument_exception The start parameter is empty.
-      /// @remarks A thread does not begin executing when it is created. To schedule the thread for execution, call the xtd::threading::jthread::start method. To pass a data object to the thread, use the xtd::threading::jthread::start(std::any) method overload.
+      /// @remarks A thread does not begin executing when it is created. To schedule the thread for execution, call the xtd::threading::jthread::start method. To pass a data object to the thread, use the xtd::threading::jthread::start(const xtd::any_object&) method overload.
       jthread(const xtd::threading::parameterized_thread_start& start, int32 max_stack_size);
       /// @brief Initializes a new instance of the xtd::threading::jthread class.
       /// @param start A xtd::threading::thread_start delegate that represents the methods to be invoked when this thread begins executing.
@@ -69,7 +69,7 @@ namespace xtd {
       /// @param start A delegate that represents the methods to be invoked when this thread begins executing.
       /// @param obj An object that contains data to be used by the method the thread executes.
       /// @exception xtd::argument_exception The start parameter is empty.
-      static jthread start_new(const xtd::threading::parameterized_thread_start& start, std::any obj);
+      static jthread start_new(const xtd::threading::parameterized_thread_start& start, const xtd::any_object& obj);
       /// @}
       
       /// @cond
@@ -85,7 +85,7 @@ namespace xtd {
 
       static jthread start_new(start_t start) {return start_new(thread_start {start});}
       template<class start_t>
-      static jthread start_new(start_t start, std::any obj) {return start_new(parameterized_thread_start {start}, obj);}
+      static jthread start_new(start_t start, const xtd::any_object& obj) {return start_new(parameterized_thread_start {start}, obj);}
       /// @endcond
     
     private:

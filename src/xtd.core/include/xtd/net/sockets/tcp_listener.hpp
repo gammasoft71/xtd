@@ -40,13 +40,13 @@ namespace xtd {
       class core_export_ tcp_listener : public xtd::object, public xtd::iequatable<tcp_listener> {
         class async_result_socket : public xtd::object, public xtd::iasync_result {
         public:
-          explicit async_result_socket(std::any async_state) : async_state_(async_state) {}
-          std::any async_state() const noexcept override {return async_state_;}
+          explicit async_result_socket(const xtd::any_object& async_state) : async_state_(async_state) {}
+          xtd::any_object async_state() const noexcept override {return async_state_;}
           xtd::threading::wait_handle& async_wait_handle() noexcept override {return async_event_;}
           bool completed_synchronously() const noexcept override {return false;}
           bool is_completed() const noexcept override {return is_completed_;};
           
-          std::any async_state_;
+          xtd::any_object async_state_;
           bool is_completed_ = false;
           xtd::threading::manual_reset_event async_event_;
           xtd::net::sockets::socket_error error_code_ = xtd::net::sockets::socket_error::success;
@@ -55,13 +55,13 @@ namespace xtd {
         
         class async_result_accept_socket : public async_result_socket {
         public:
-          explicit async_result_accept_socket(std::any async_state) : async_result_socket(async_state) {}
+          explicit async_result_accept_socket(const xtd::any_object& async_state) : async_result_socket(async_state) {}
           xtd::net::sockets::socket socket_;
         };
         
         class async_result_accept_tcp_client : public async_result_socket {
         public:
-          explicit async_result_accept_tcp_client(std::any async_state) : async_result_socket(async_state) {}
+          explicit async_result_accept_tcp_client(const xtd::any_object& async_state) : async_result_socket(async_state) {}
           xtd::net::sockets::tcp_client tcp_client_;
         };
         
@@ -171,7 +171,7 @@ namespace xtd {
         /// @remarks This method does not block until the operation completes. To block until the operation completes, use the xtd::net::sockets::tcp_listener::accept_socket method.
         /// @note You can call the xtd::net::sockets::socket::remote_end_point property of the returned xtd::net::sockets::socket to identify the remote host's network address and port number.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        xtd::sptr<xtd::iasync_result> begin_accept_socket(xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_accept_socket(xtd::async_callback callback, const xtd::any_object& state);
         
         /// @brief Begins an asynchronous operation to accept an incoming connection attempt.
         /// @param async_result An xtd::async_callback delegate that references the method to invoke when the operation is complete.
@@ -182,10 +182,10 @@ namespace xtd {
         /// @remarks The asynchronous xtd::net::sockets::tcp_listener::begin_accept_tcp_client operation must be completed by calling the xtd::net::sockets::tcp_listener::end_accept_tcp_client method. Typically, the method is invoked by the callback delegate.
         /// @remarks This method does not block until the operation completes. To block until the operation completes, use the xtd::net::sockets::tcp_listener::accept_ccp_client method.
         /// @note If you receive a xtd::net::sockets::socket_exception, use the xtd::net::sockets::socket_exception::error_code property to obtain the specific error code. After you have obtained this code, refer to the Windows Sockets version 2 API error code documentation in the MSDN library for a detailed description of the error.
-        xtd::sptr<xtd::iasync_result> begin_accept_tcp_client(xtd::async_callback callback, const std::any& state);
+        xtd::sptr<xtd::iasync_result> begin_accept_tcp_client(xtd::async_callback callback, const xtd::any_object& state);
         
         /// @brief Asynchronously accepts an incoming connection attempt and creates a new Socket to handle remote host communication.
-        /// @param async_result tAn xtd::iasync_result returned by a call to the xtd::net::sockets::tcp_listener::begin_accept_socket(xtd::async_callback, std::any) method.
+        /// @param async_result tAn xtd::iasync_result returned by a call to the xtd::net::sockets::tcp_listener::begin_accept_socket(xtd::async_callback, xtd::any_object) method.
         /// @return The xtd::net::sockets::socket used to send and receive data.
         /// @exception argument_exception async_result was not returned by a call to the xtd::net::sockets::tcp_listener::begin_accept_socket method.
         /// @exception xtd::net::sockets::socket_exception An error occurred when attempting to access the socket.
@@ -196,7 +196,7 @@ namespace xtd {
         xtd::net::sockets::socket end_accept_socket(xtd::sptr<xtd::iasync_result> async_result);
         
         /// @brief Asynchronously accepts an incoming connection attempt and creates a new xtd::net::sockets::tcp_client to handle remote host communication.
-        /// @param async_result An xtd::iasync_result returned by a call to the xtd::net::sockets::tcp_listener::begin_accept_tcp_client(xtd::async_callback, std::any) method.
+        /// @param async_result An xtd::iasync_result returned by a call to the xtd::net::sockets::tcp_listener::begin_accept_tcp_client(xtd::async_callback, xtd::any_object) method.
         /// @param state A user-defined object containing information about the accept operation. This object is passed to the callback delegate when the operation is complete.
         /// @return An xtd::iasync_result that references the asynchronous creation of the xtd::net::sockets::tcp_client.
         /// @exception argument_exception async_result was not returned by a call to the xtd::net::sockets::tcp_listener::begin_accept_tcp_client method.

@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "threading/wait_handle.hpp"
-#include "any.hpp"
+#include "any_object.hpp"
 #include "interface.hpp"
 #include "object.hpp"
 #include <memory>
@@ -34,7 +34,7 @@ namespace xtd {
     /// Implement this property to allow the caller of an asynchronous operation to obtain an application-defined object specified at the start of the operation.
     /// @par Notes to Callers
     /// This object can be used to pass state information for the asynchronous operation to an AsyncCallback that you provide.
-    virtual std::any async_state() const noexcept = 0;
+    virtual xtd::any_object async_state() const noexcept = 0;
     
     /// @brief Gets a xtd::threading::wait_handle that is used to wait for an asynchronous operation to complete.
     /// @return A xtd::threading::wait_handle that is used to wait for an asynchronous operation to complete.

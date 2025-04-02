@@ -115,17 +115,17 @@ tcp_client& tcp_client::send_timeout(int32 value) {
   return *this;
 }
 
-xtd::sptr<xtd::iasync_result> tcp_client::begin_connect(const xtd::net::ip_address& address, uint16 port, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> tcp_client::begin_connect(const xtd::net::ip_address& address, uint16 port, xtd::async_callback callback, const any_object& state) {
   if (active()) throw_helper::throws(exception_case::socket, socket_error::is_connected);
   return data_->client_socket.begin_connect(address, port, callback, state);
 }
 
-xtd::sptr<xtd::iasync_result> tcp_client::begin_connect(const array<xtd::net::ip_address>& addresses, uint16 port, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> tcp_client::begin_connect(const array<xtd::net::ip_address>& addresses, uint16 port, xtd::async_callback callback, const any_object& state) {
   if (active()) throw_helper::throws(exception_case::socket, socket_error::is_connected);
   return data_->client_socket.begin_connect(addresses, port, callback, state);
 }
 
-xtd::sptr<xtd::iasync_result> tcp_client::begin_connect(const xtd::string& host, uint16 port, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> tcp_client::begin_connect(const xtd::string& host, uint16 port, xtd::async_callback callback, const any_object& state) {
   if (active()) throw_helper::throws(exception_case::socket, socket_error::is_connected);
   return data_->client_socket.begin_connect(host, port, callback, state);
 }

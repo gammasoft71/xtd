@@ -13,33 +13,33 @@
 
 /// @cond
 template<class result_t = void>
-inline result_t __xtd_delegate_any_cast(std::any value) {
-  return value.has_value() ? std::any_cast<result_t>(value) : result_t {};
+inline result_t __xtd_delegate_any_cast(const xtd::any_object& value) {
+  return value.has_value() ? xtd::as<result_t>(value) : result_t {};
 }
 
 template<>
-inline void __xtd_delegate_any_cast<void>(std::any value) {
+inline void __xtd_delegate_any_cast<void>(const xtd::any_object& value) {
   return;
 }
 
-inline std::any __xtd_delegate_invoker(std::function<void()> invoke) {
+inline xtd::any_object __xtd_delegate_invoker(std::function<void()> invoke) {
   invoke();
-  return std::any {};
+  return xtd::any_object {};
 }
 
 template<class ...arguments_t>
-inline std::any __xtd_delegate_invoker(std::function<void(arguments_t...)> invoke, arguments_t... arguments) {
+inline xtd::any_object __xtd_delegate_invoker(std::function<void(arguments_t...)> invoke, arguments_t... arguments) {
   invoke(arguments...);
-  return std::any {};
+  return xtd::any_object {};
 }
 
 template<class result_t>
-inline std::any __xtd_delegate_invoker(std::function<result_t()> invoke) {
+inline xtd::any_object __xtd_delegate_invoker(std::function<result_t()> invoke) {
   return std::make_any<result_t>(invoke());
 }
 
 template<class result_t, class ...arguments_t>
-inline std::any __xtd_delegate_invoker(std::function<result_t(arguments_t...)> invoke, arguments_t... arguments) {
+inline xtd::any_object __xtd_delegate_invoker(std::function<result_t(arguments_t...)> invoke, arguments_t... arguments) {
   return std::make_any<result_t>(invoke(arguments...));
 }
 
@@ -47,19 +47,19 @@ template<class result_t>
 struct xtd::delegate<result_t()>::async_result_invoke::data {
   xtd::async_callback async_callback;
   xtd::threading::manual_reset_event async_event;
-  std::any async_state;
+  xtd::any_object async_state;
   bool is_completed = false;
-  std::any result;
+  xtd::any_object result;
 };
 
 template<class result_t>
-xtd::delegate<result_t()>::async_result_invoke::async_result_invoke(xtd::async_callback async_callback, std::any async_state) : data_(xtd::new_sptr<data>()) {
+xtd::delegate<result_t()>::async_result_invoke::async_result_invoke(xtd::async_callback async_callback, const xtd::any_object& async_state) : data_(xtd::new_sptr<data>()) {
   data_->async_callback = async_callback;
   data_->async_state = async_state;
 }
 
 template<class result_t>
-std::any xtd::delegate<result_t()>::async_result_invoke::async_state() const noexcept {
+xtd::any_object xtd::delegate<result_t()>::async_result_invoke::async_state() const noexcept {
   return data_->async_state;
 }
 
@@ -89,7 +89,7 @@ inline xtd::async_result xtd::delegate<result_t()>::begin_invoke(xtd::async_call
 }
 
 template<class result_t>
-xtd::async_result xtd::delegate<result_t()>::begin_invoke(xtd::async_callback async_callback, std::any async_state) {
+xtd::async_result xtd::delegate<result_t()>::begin_invoke(xtd::async_callback async_callback, const xtd::any_object& async_state) {
   auto async = xtd::new_sptr<async_result_invoke>(async_callback, async_state);
   threading::thread_pool::queue_user_work_item([&, async = async] {
     async->data_->result = __xtd_delegate_invoker(function_t {std::bind(&xtd::delegate<result_t()>::invoke, this)});
@@ -111,19 +111,19 @@ template<class result_t, class ...arguments_t>
 struct xtd::delegate<result_t(arguments_t...)>::async_result_invoke::data {
   xtd::async_callback async_callback;
   xtd::threading::manual_reset_event async_event;
-  std::any async_state;
+  xtd::any_object async_state;
   bool is_completed = false;
-  std::any result;
+  xtd::any_object result;
 };
 
 template<class result_t, class ...arguments_t>
-xtd::delegate<result_t(arguments_t...)>::async_result_invoke::async_result_invoke(xtd::async_callback async_callback, std::any async_state) : data_(xtd::new_sptr<data>()) {
+xtd::delegate<result_t(arguments_t...)>::async_result_invoke::async_result_invoke(xtd::async_callback async_callback, const xtd::any_object& async_state) : data_(xtd::new_sptr<data>()) {
   data_->async_callback = async_callback;
   data_->async_state = async_state;
 }
 
 template<class result_t, class ...arguments_t>
-std::any xtd::delegate<result_t(arguments_t...)>::async_result_invoke::async_state() const noexcept {
+xtd::any_object xtd::delegate<result_t(arguments_t...)>::async_result_invoke::async_state() const noexcept {
   return data_->async_state;
 }
 
@@ -153,7 +153,7 @@ xtd::async_result xtd::delegate<result_t(arguments_t...)>::begin_invoke(xtd::asy
 }
 
 template<class result_t, class ...arguments_t>
-xtd::async_result xtd::delegate<result_t(arguments_t...)>::begin_invoke(xtd::async_callback async_callback, std::any async_state, arguments_t... arguments) {
+xtd::async_result xtd::delegate<result_t(arguments_t...)>::begin_invoke(xtd::async_callback async_callback, const xtd::any_object& async_state, arguments_t... arguments) {
   auto async = xtd::new_sptr<async_result_invoke>(async_callback, async_state);
   threading::thread_pool::queue_user_work_item([&, async = async, ...arguments = arguments] {
     async->data_->result = __xtd_delegate_invoker(function_t {std::bind(&xtd::delegate<result_t(arguments_t...)>::invoke, this, arguments...)}, arguments...);

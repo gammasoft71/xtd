@@ -372,7 +372,7 @@ intptr control::native_handle(intptr control) {
   return reinterpret_cast<intptr>(reinterpret_cast<control_handler*>(control)->control()->GetHandle());
 }
 
-void control::invoke_in_control_thread(intptr control, delegate<void(std::vector<std::any>)> invoker, const std::vector<std::any>& args, xtd::sptr<xtd::threading::manual_reset_event> invoked, xtd::sptr<bool> completed) {
+void control::invoke_in_control_thread(intptr control, delegate<void(array<any_object>)> invoker, const array<any_object>& args, xtd::sptr<xtd::threading::manual_reset_event> invoked, xtd::sptr<bool> completed) {
   if (!control || !wxTheApp || !wxTheApp->IsMainLoopRunning() || !reinterpret_cast<control_handler*>(control)->control()->GetEvtHandlerEnabled()) return;
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());

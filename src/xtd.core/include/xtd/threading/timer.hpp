@@ -35,7 +35,7 @@ namespace xtd {
     /// Determines the maximum number of times the callback method should be invoked.
     /// The application thread creates the timer, which waits one second and then executes the check_status callback method every 250 milliseconds. The application thread then blocks until the xtd::threading::auto_reset_event object is signaled. When the check_status callback method executes max_count times, it calls the auto_reset_event::set method to set the state of the xtd::threading::auto_reset_event object to signaled. The first time this happens, the application thread calls the xtd::threading::timer::change(int32, int32) method so that the callback method now executes every half second. It once again blocks until the xtd::threading::auto_reset_event object is signaled.
     /// @include timer.cpp
-    /// @remarks Use a xtd::threading::timer_callback delegate to specify the method you want the xtd::threading::timer to execute. The signature of the xtd::threading::timer_callback delegate is: @verbatim using timer_callback = action<std::any> @endverbatim.
+    /// @remarks Use a xtd::threading::timer_callback delegate to specify the method you want the xtd::threading::timer to execute. The signature of the xtd::threading::timer_callback delegate is: @verbatim using timer_callback = action<const xtd::any_object&> @endverbatim.
     /// @remarks The timer delegate is specified when the timer is constructed, and cannot be changed. The method does not execute on the thread that created the timer; it executes on axtd::threading::thread-pool thread supplied by the system.
     /// @note xtd includes several timer classes, each of which offers different functionality:
     /// * xtd::timers::timer, which fires an event and executes the code in one or more event sinks at regular intervals. The class is intended for use as a server-based or service component in a multithreaded environment; it has no user interface and is not visible at runtime.
@@ -98,7 +98,7 @@ namespace xtd {
       /// @exception ArgumentNullException The callback is null.
       /// @exception xtd::argument_out_of_range_exception The due_time or period parameter is negative and is not equal to Timeout::Infinite.
       /// @remarks The callback parameter is invoked once after due_time elapses, and thereafter each time the period time interval elapses.
-      timer(const timer_callback& callback, std::any state, int32 due_time, int32 period);
+      timer(const timer_callback& callback, const xtd::any_object& state, int32 due_time, int32 period);
       /// @brief Initializes a new instance of the timer class, using a 64-bit signed integer to specify the time interval.
       /// @param callback the address of a method to be executed
       /// @param state An object containing information to be used by the callback method, or null.
@@ -107,7 +107,7 @@ namespace xtd {
       /// @exception ArgumentNullException The callback is null.
       /// @exception xtd::argument_out_of_range_exception The due_time or period parameter is negative and is not equal to Timeout::Infinite.
       /// @remarks The callback parameter is invoked once after due_time elapses, and thereafter each time the period time interval elapses.
-      timer(const timer_callback& callback, std::any state, int64 due_time, int64 period);
+      timer(const timer_callback& callback, const xtd::any_object& state, int64 due_time, int64 period);
       /// @brief Initializes a new instance of the timer class, using a TimaSpan to specify the time interval.
       /// @param callback the address of a method to be executed
       /// @param state An object containing information to be used by the callback method, or null.
@@ -116,7 +116,7 @@ namespace xtd {
       /// @exception ArgumentNullException The callback or due_time or period param is null.
       /// @exception xtd::argument_out_of_range_exception The due_time or period parameter is negative and is not equal to Timeout::Infinite.
       /// @remarks The callback parameter is invoked once after due_time elapses, and thereafter each time the period time interval elapses.
-      timer(const timer_callback& callback, std::any state, const time_span& due_time, const time_span& period);
+      timer(const timer_callback& callback, const xtd::any_object& state, const time_span& due_time, const time_span& period);
       /// @brief Initializes a new instance of the timer class, using a 32-bit unsigned integer to specify the time interval.
       /// @param callback the address of a method to be executed
       /// @param state An object containing information to be used by the callback method, or null.
@@ -125,7 +125,7 @@ namespace xtd {
       /// @exception ArgumentNullException The callback is null.
       /// @exception xtd::argument_out_of_range_exception The due_time or period parameter is negative and is not equal to Timeout::Infinite.
       /// @remarks The callback parameter is invoked once after due_time elapses, and thereafter each time the period time interval elapses.
-      timer(const timer_callback& callback, std::any state, uint32 due_time, uint32 period);
+      timer(const timer_callback& callback, const xtd::any_object& state, uint32 due_time, uint32 period);
       /// @}
 
       /// @cond
@@ -140,13 +140,13 @@ namespace xtd {
       template<class callback_t>
       timer(callback_t callback, uint32 due_time, uint32 period) : timer(timer_callback {callback}, due_time, period) {}
       template<class callback_t>
-      timer(callback_t callback, std::any state, int32 due_time, int32 period) : timer(timer_callback {callback}, due_time, period) {}
+      timer(callback_t callback, const xtd::any_object& state, int32 due_time, int32 period) : timer(timer_callback {callback}, due_time, period) {}
       template<class callback_t>
-      timer(callback_t callback, std::any state, int64 due_time, int64 period) : timer(timer_callback {callback}, due_time, period) {}
+      timer(callback_t callback, const xtd::any_object& state, int64 due_time, int64 period) : timer(timer_callback {callback}, due_time, period) {}
       template<class callback_t>
-      timer(callback_t callback, std::any state, const time_span& due_time, const time_span& period) : timer(timer_callback {callback}, due_time, period) {}
+      timer(callback_t callback, const xtd::any_object& state, const time_span& due_time, const time_span& period) : timer(timer_callback {callback}, due_time, period) {}
       template<class callback_t>
-      timer(callback_t callback, std::any state, uint32 due_time, uint32 period) : timer(timer_callback {callback}, due_time, period) {}
+      timer(callback_t callback, const xtd::any_object& state, uint32 due_time, uint32 period) : timer(timer_callback {callback}, due_time, period) {}
       timer();
       timer(const timer& timer);
       timer& operator=(const timer& timer);

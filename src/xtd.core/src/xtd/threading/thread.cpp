@@ -41,7 +41,7 @@ struct thread::data {
   int32 managed_thread_id {unmanaged_thread_id};
   int32 max_stack_size {0};
   string name;
-  std::any parameter;
+  any_object parameter;
   threading::parameterized_thread_start parameterized_thread_start;
   thread_priority priority {thread_priority::normal};
   threading::thread_state state {threading::thread_state::unstarted};
@@ -327,7 +327,7 @@ void thread::start() {
   if (data_->handle == invalid_handle) throw_helper::throws(exception_case::io);
 }
 
-void thread::start(std::any param) {
+void thread::start(const xtd::any_object& param) {
   if (!is_unstarted()) throw_helper::throws(exception_case::thread_state);
   if (data_->parameterized_thread_start.is_empty()) throw_helper::throws(exception_case::invalid_operation);
   data_->state &= ~threading::thread_state::unstarted;
@@ -345,7 +345,7 @@ thread thread::start_new(const thread_start& start) {
   return thread;
 }
 
-thread thread::start_new(const parameterized_thread_start& start, std::any obj) {
+thread thread::start_new(const parameterized_thread_start& start, const any_object& obj) {
   auto thread = threading::thread {start};
   thread.start(obj);
   return thread;

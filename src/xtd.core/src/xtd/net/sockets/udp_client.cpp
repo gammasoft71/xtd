@@ -113,7 +113,7 @@ void udp_client::allow_nat_traversal(bool allowed) {
   else data_->client_socket.set_ip_protection_level(xtd::net::sockets::ip_protection_level::edge_restricted);
 }
 
-xtd::sptr<xtd::iasync_result> udp_client::begin_receive(xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> udp_client::begin_receive(xtd::async_callback callback, const any_object& state) {
   auto ar = xtd::new_sptr<async_result_receive>(state);
   auto operation_thread = std::thread {[](udp_client * udp_client, xtd::sptr<async_result_receive> ar, xtd::async_callback callback) {
     try {
@@ -129,7 +129,7 @@ xtd::sptr<xtd::iasync_result> udp_client::begin_receive(xtd::async_callback call
   return ar;
 }
 
-xtd::sptr<xtd::iasync_result> udp_client::begin_send(const array<xtd::byte>& dgram, size_t bytes, const xtd::string& hostname, uint16 port, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> udp_client::begin_send(const array<xtd::byte>& dgram, size_t bytes, const xtd::string& hostname, uint16 port, xtd::async_callback callback, const any_object& state) {
   auto ar = xtd::new_sptr<async_result_send>(state);
   auto operation_thread = std::thread {[](udp_client * udp_client, const array<xtd::byte>& dgram, size_t bytes, const xtd::string & hostname, uint16 port, xtd::sptr<async_result_send> ar, xtd::async_callback callback) {
     try {
@@ -145,7 +145,7 @@ xtd::sptr<xtd::iasync_result> udp_client::begin_send(const array<xtd::byte>& dgr
   return ar;
 }
 
-xtd::sptr<xtd::iasync_result> udp_client::begin_send(const array<xtd::byte>& dgram, size_t bytes, const xtd::net::ip_end_point& end_point, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> udp_client::begin_send(const array<xtd::byte>& dgram, size_t bytes, const xtd::net::ip_end_point& end_point, xtd::async_callback callback, const any_object& state) {
   auto ar = xtd::new_sptr<async_result_send>(state);
   auto operation_thread = std::thread {[](udp_client * udp_client, const array<xtd::byte>& dgram, size_t bytes, const xtd::net::ip_end_point & end_point, xtd::sptr<async_result_send> ar, xtd::async_callback callback) {
     try {
@@ -161,7 +161,7 @@ xtd::sptr<xtd::iasync_result> udp_client::begin_send(const array<xtd::byte>& dgr
   return ar;
 }
 
-xtd::sptr<xtd::iasync_result> udp_client::begin_send(const array<xtd::byte>& dgram, size_t bytes, xtd::async_callback callback, const std::any& state) {
+xtd::sptr<xtd::iasync_result> udp_client::begin_send(const array<xtd::byte>& dgram, size_t bytes, xtd::async_callback callback, const any_object& state) {
   auto ar = xtd::new_sptr<async_result_send>(state);
   auto operation_thread = std::thread {[](udp_client * udp_client, const array<xtd::byte>& dgram, size_t bytes, xtd::sptr<async_result_send> ar, xtd::async_callback callback) {
     try {

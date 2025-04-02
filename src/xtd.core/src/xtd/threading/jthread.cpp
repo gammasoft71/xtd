@@ -29,7 +29,7 @@ jthread jthread::start_new(const xtd::threading::thread_start& start) {
   return thread;
 }
 
-jthread jthread::start_new(const xtd::threading::parameterized_thread_start& start, std::any obj) {
+jthread jthread::start_new(const xtd::threading::parameterized_thread_start& start, const any_object& obj) {
   auto thread = threading::jthread {start};
   thread.start(obj);
   return thread;

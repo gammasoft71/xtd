@@ -16,10 +16,10 @@ namespace xtd::tests {
     class test_async_result : public iasync_result {
     public:
       test_async_result() = default;
-      test_async_result(std::any state) : state_(state) {}
+      test_async_result(const any_object& state) : state_(state) {}
       
-      std::any async_state() const noexcept override {return state_;}
-      void async_state(std::any value) noexcept {state_ = value;}
+      any_object async_state() const noexcept override {return state_;}
+      void async_state(const any_object& value) noexcept {state_ = value;}
       
       xtd::threading::wait_handle& async_wait_handle() noexcept override {return async_wait_handle_;}
       
@@ -30,7 +30,7 @@ namespace xtd::tests {
       
     private:
       xtd::threading::auto_reset_event async_wait_handle_;
-      std::any state_;
+      any_object state_;
       bool completed_ = false;
     };
     

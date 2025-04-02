@@ -15,7 +15,7 @@ struct timer::data {
   auto_reset_event event {true};
   auto_reset_event sleep {false};
   int32 period {-1};
-  std::any state{this};
+  any_object state{this};
   wait_callback timer_proc = wait_callback {[&] {
     if (due_time > 0) sleep.wait_one(due_time);
     while (!closed) {
@@ -41,7 +41,7 @@ timer::timer(const timer_callback& callback, const time_span& due_time, const ti
 timer::timer(const timer_callback& callback, uint32 due_time, uint32 period) : timer(callback, this, as<int32>(due_time), as<int32>(period)) {
 }
 
-timer::timer(const timer_callback& callback, std::any state, int32 due_time, int32 period) : data_(xtd::new_sptr<data>()) {
+timer::timer(const timer_callback& callback, const any_object& state, int32 due_time, int32 period) : data_(xtd::new_sptr<data>()) {
   data_->callback = callback;
   data_->state = state;
   data_->due_time = due_time;
@@ -49,13 +49,13 @@ timer::timer(const timer_callback& callback, std::any state, int32 due_time, int
   change(due_time, period);
 }
 
-timer::timer(const timer_callback& callback, std::any state, int64 due_time, int64 period) : timer(callback, state, as<int32>(due_time), as<int32>(period)) {
+timer::timer(const timer_callback& callback, const any_object& state, int64 due_time, int64 period) : timer(callback, state, as<int32>(due_time), as<int32>(period)) {
 }
 
-timer::timer(const timer_callback& callback, std::any state, const time_span& due_time, const time_span& period) : timer(callback, state, as<int32>(due_time.total_milliseconds_duration().count()), as<int32>(period.total_milliseconds_duration().count())) {
+timer::timer(const timer_callback& callback, const any_object& state, const time_span& due_time, const time_span& period) : timer(callback, state, as<int32>(due_time.total_milliseconds_duration().count()), as<int32>(period.total_milliseconds_duration().count())) {
 }
 
-timer::timer(const timer_callback& callback, std::any state, uint32 due_time, uint32 period) : timer(callback, state, as<int32>(due_time), as<int32>(period)) {
+timer::timer(const timer_callback& callback, const any_object& state, uint32 due_time, uint32 period) : timer(callback, state, as<int32>(due_time), as<int32>(period)) {
 }
 
 timer::timer(const timer& timer) : data_(timer.data_) {
