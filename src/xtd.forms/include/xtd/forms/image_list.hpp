@@ -92,10 +92,10 @@ namespace xtd {
       
       /// @brief Gets an object that contains additional data about the image_list.
       /// @return A object that contains additional data about the image_list.
-      std::any tag() const noexcept;
+      xtd::any_object tag() const noexcept;
       /// @brief Sets an object that contains additional data about the image_list.
       /// @param tag A object that contains additional data about the image_list.
-      image_list& tag(const std::any& tag);
+      image_list& tag(const xtd::any_object& tag);
       /// @}
       
       /// @name Public Methods
