@@ -10,7 +10,9 @@ cmake .. -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PRE
 if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . --target install -- -j $(nproc)
 if [ $? -ne 0 ]; then exit -1; fi
-cd ../../../..
+cd ..
+rm -rf build_cmake
+cd ../../..
 
 # generate and build lib
 git submodule update --init
