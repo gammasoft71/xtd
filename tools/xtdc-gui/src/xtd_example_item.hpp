@@ -12,7 +12,7 @@
 
 namespace xtdc_gui {
   /// @brief Represents the project_type_item class
-  class xtd_example_item {
+  class xtd_example_item : public xtd::object {
   public:
     xtd_example_item() = default;
     xtd_example_item(const xtd::string& name, const xtd::string& description, const xtd::string& path, const xtd::drawing::image& picture, const xtd::string& output) : name_(name), description_(description), path_(path), picture_(picture), output_(output) {}
