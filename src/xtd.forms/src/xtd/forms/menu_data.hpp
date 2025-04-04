@@ -8,5 +8,5 @@ struct xtd::forms::menu::data {
   std::optional<std::reference_wrapper<menu>> main_menu;
   xtd::string name;
   std::optional<std::reference_wrapper<menu>> parent;
-  std::any tag;
+  xtd::any_object tag;
 };

@@ -108,11 +108,11 @@ menu& menu::name(const xtd::string& value) {
   return *this;
 }
 
-std::any menu::tag() const noexcept {
+const any_object& menu::tag() const noexcept {
   return data_->tag;
 }
 
-menu& menu::tag(std::any value) {
+menu& menu::tag(const any_object& value) {
   data_->tag = value;
   return *this;
 }
