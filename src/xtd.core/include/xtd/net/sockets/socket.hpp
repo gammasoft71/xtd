@@ -819,7 +819,7 @@ namespace xtd {
         /// | Less than zero    | This instance is less than obj.    |
         /// | Zero              | This instance is equal to obj.     |
         /// | Greater than zero | This instance is greater than obj. |
-        int32 compare_to(const socket& obj) const noexcept;
+        int32 compare_to(const socket& obj) const noexcept override;
         
         /// @brief Establishes a connection to a remote host.
         /// @param remote_end_point An xtd::net::end_point that represents the remote device.
