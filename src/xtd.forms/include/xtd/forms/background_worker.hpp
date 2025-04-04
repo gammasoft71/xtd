@@ -106,7 +106,7 @@ namespace xtd {
       /// @exception xtd::invalid_operaton_exception xtd::background_worker::is_busy is `true`;
       template<class argument_t>
       void run_worker_async(argument_t argument) {
-        argument_(std::any(argument));
+        argument_(xtd::any_object(argument));
         run_worker_async();
       }
       
@@ -117,7 +117,7 @@ namespace xtd {
       /// @brief Raises the ProgressChanged event.
       /// @param percent_progress The percentage, from 0 to 100, of the background operation that is complete.
       /// @param user_state A unique object indicating the user state. Returned as the user_state property of the progress_changed_even_args.
-      void report_progress(int32 percent_progress, std::any user_state);
+      void report_progress(int32 percent_progress, const xtd::any_object& user_state);
       /// @}
       
       /// @name Public Events
@@ -137,7 +137,7 @@ namespace xtd {
       /// @}
       
     private:
-      void argument_(std::any&& argument);
+      void argument_(xtd::any_object&& argument);
       
       xtd::sptr<data> data_;
     };
