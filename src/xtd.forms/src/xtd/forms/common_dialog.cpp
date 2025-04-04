@@ -6,8 +6,8 @@ using namespace xtd::forms;
 using namespace xtd::threading;
 
 struct common_dialog::data {
-  std::any tag;
-  xtd::forms::dialog_result dialog_result = xtd::forms::dialog_result::none;
+  any_object tag;
+  forms::dialog_result dialog_result = forms::dialog_result::none;
 };
 
 common_dialog::common_dialog() : data_(xtd::new_sptr<data>()) {
@@ -17,11 +17,11 @@ xtd::forms::dialog_result common_dialog::dialog_result() const noexcept {
   return data_->dialog_result;
 }
 
-std::any common_dialog::tag() const noexcept {
+any_object common_dialog::tag() const noexcept {
   return data_->tag;
 }
 
-common_dialog& common_dialog::tag(const std::any& tag) {
+common_dialog& common_dialog::tag(const any_object& tag) {
   data_->tag = tag;
   return*this;
 }
