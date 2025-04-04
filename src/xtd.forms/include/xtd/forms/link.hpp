@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../forms_export.hpp"
-#include <xtd/any>
+#include <xtd/any_object>
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/string>
@@ -47,7 +47,7 @@ namespace xtd {
       /// @param start The zero-based starting location of the link area within the text of the xtd::forms::link_label.
       /// @param length The number of characters, after the starting character, to include in the link area.
       /// @param link_data The data associated with the link.
-      link(size_t start, size_t length, std::any link_data);
+      link(size_t start, size_t length, const xtd::any_object& link_data);
       /// @}
       
       /// @cond
@@ -88,14 +88,14 @@ namespace xtd {
       link& length(size_t value);
       
       /// @brief Gets the data associated with the link.
-      /// @return A std::any object representing the data associated with the link.
+      /// @return A xtd::any_object object representing the data associated with the link.
       /// @remarks You can use this property to supply information related to the link. The information provided by this property can be used within the xtd::forms::link_label::link_clicked event of the xtd::forms::link_label to provide information about the link that can be used to process the link being clicked. For example, you can specify the URL to display in your web browser when the link is clicked as the value of the xtd::forms::link_label::link_data property. You can also use the xtd::forms::link_label::link_data property to identify a dialog to display when the user clicks on the link.
-      std::any link_data() const noexcept;
+      const xtd::any_object& link_data() const noexcept;
       /// @brief Sets the data associated with the link.
-      /// @param value A std::any object representing the data associated with the link.
+      /// @param value A xtd::any_object object representing the data associated with the link.
       /// @return The current instance of xtd::forms::link_label::link.
       /// @remarks You can use this property to supply information related to the link. The information provided by this property can be used within the xtd::forms::link_label::link_clicked event of the xtd::forms::link_label to provide information about the link that can be used to process the link being clicked. For example, you can specify the URL to display in your web browser when the link is clicked as the value of the xtd::forms::link_label::link_data property. You can also use the xtd::forms::link_label::link_data property to identify a dialog to display when the user clicks on the link.
-      link& link_data(std::any value);
+      link& link_data(const xtd::any_object& value);
       
       /// @brief Gets the name of the xtd::forms::link_label::link.
       /// @return A xtd::string representing the name of the xtd::forms::link_label::link. The default value is the empty string ("").
@@ -116,12 +116,12 @@ namespace xtd {
       link& start(size_t value);
       
       /// @brief Gets the object that contains data about the xtd::forms::link_label::link.
-      /// @return An std::any object that contains data about the control. The default has no value.
-      std::any tag() const noexcept;
+      /// @return An xtd::any_object object that contains data about the control. The default has no value.
+      const xtd::any_object& tag() const noexcept;
       /// @brief Sets the object that contains data about the xtd::forms::link_label::link.
-      /// @param value An std::any object that contains data about the control. The default has no value.
+      /// @param value An xtd::any_object object that contains data about the control. The default has no value.
       /// @return The current instance of xtd::forms::link_label::link.
-      link& tag(std::any value);
+      link& tag(const xtd::any_object& value);
       
       /// @brief Gets a value indicating whether the user has visited the link.
       /// @return `true` if the link has been visited; otherwise, `false`.

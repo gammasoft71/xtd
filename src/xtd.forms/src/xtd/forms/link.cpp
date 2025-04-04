@@ -1,130 +1,131 @@
 #include "../../../include/xtd/forms/link.hpp"
 
 using namespace xtd;
+using namespace xtd::forms;
 
-struct xtd::forms::link::data {
-  xtd::string description;
+struct forms::link::data {
+  string description;
   bool enabled = true;
   size_t length = 0;
-  std::any link_data;
-  xtd::string name;
+  any_object link_data;
+  string name;
   size_t start = 0;
-  std::any tag;
+  any_object tag;
   bool visited = false;
   bool active = false;
 };
 
-xtd::forms::link::link() : data_(xtd::new_sptr<data>()) {
+forms::link::link() : data_(xtd::new_sptr<data>()) {
 }
 
-xtd::forms::link::link(size_t start, size_t length) : data_(xtd::new_sptr<data>()) {
+forms::link::link(size_t start, size_t length) : data_(xtd::new_sptr<data>()) {
   data_->length = length;
   data_->start = start;
 }
 
-xtd::forms::link::link(size_t start, size_t length, std::any link_data) : data_(xtd::new_sptr<data>()) {
+forms::link::link(size_t start, size_t length, const any_object& link_data) : data_(xtd::new_sptr<data>()) {
   data_->length = length;
   data_->link_data = link_data;
   data_->start = start;
 }
 
-xtd::forms::link::link(const link& value) : data_(xtd::new_sptr<data>()) {
+forms::link::link(const link& value) : data_(xtd::new_sptr<data>()) {
   *data_ = *value.data_;
 }
 
-xtd::forms::link& xtd::forms::link::operator =(const link& value) {
+forms::link& forms::link::operator =(const link& value) {
   *data_ = *value.data_;
   return *this;
 }
 
-const xtd::string& xtd::forms::link::description() const noexcept {
+const xtd::string& forms::link::description() const noexcept {
   return data_->description;
 }
 
-xtd::forms::link& xtd::forms::link::description(const xtd::string& value) {
+forms::link& forms::link::description(const xtd::string& value) {
   data_->description = value;
   return *this;
 }
 
-bool xtd::forms::link::enabled() const noexcept {
+bool forms::link::enabled() const noexcept {
   return data_->enabled;
 }
 
-xtd::forms::link& xtd::forms::link::enabled(bool value) {
+forms::link& forms::link::enabled(bool value) {
   data_->enabled = value;
   return *this;
 }
 
-size_t xtd::forms::link::length() const noexcept {
+size_t forms::link::length() const noexcept {
   return data_->length;
 }
 
-xtd::forms::link& xtd::forms::link::length(size_t value) {
+forms::link& forms::link::length(size_t value) {
   data_->length = value;
   return *this;
 }
 
-std::any xtd::forms::link::link_data() const noexcept {
+const any_object& forms::link::link_data() const noexcept {
   return data_->link_data;
 }
 
-xtd::forms::link& xtd::forms::link::link_data(std::any value) {
+forms::link& forms::link::link_data(const any_object& value) {
   data_->link_data = value;
   return *this;
 }
 
-const xtd::string& xtd::forms::link::name() const noexcept {
+const xtd::string& forms::link::name() const noexcept {
   return data_->name;
 }
 
-xtd::forms::link& xtd::forms::link::name(const xtd::string& value) {
+forms::link& forms::link::name(const xtd::string& value) {
   data_->name = value;
   return *this;
 }
 
-size_t xtd::forms::link::start() const noexcept {
+size_t forms::link::start() const noexcept {
   return data_->start;
 }
 
-xtd::forms::link& xtd::forms::link::start(size_t value) {
+forms::link& forms::link::start(size_t value) {
   data_->start = value;
   return *this;
 }
 
-std::any xtd::forms::link::tag() const noexcept {
+const any_object& forms::link::tag() const noexcept {
   return data_->tag;
 }
 
-xtd::forms::link& xtd::forms::link::tag(std::any value) {
+forms::link& forms::link::tag(const any_object& value) {
   data_->tag = value;
   return *this;
 }
 
-bool xtd::forms::link::visited() const noexcept {
+bool forms::link::visited() const noexcept {
   return data_->visited;
 }
 
-xtd::forms::link& xtd::forms::link::visited(bool value) {
+forms::link& forms::link::visited(bool value) {
   data_->visited = value;
   return *this;
 }
 
-bool xtd::forms::link::equals(const object& obj) const noexcept {
-  return is<xtd::forms::link>(obj) && equals(static_cast<const xtd::forms::link&>(obj));
+bool forms::link::equals(const object& obj) const noexcept {
+  return is<forms::link>(obj) && equals(static_cast<const forms::link&>(obj));
 }
 
-bool xtd::forms::link::equals(const xtd::forms::link& other) const noexcept {
+bool forms::link::equals(const forms::link& other) const noexcept {
   return data_->description == other.data_->description && data_->enabled == other.data_->enabled && data_->length == other.data_->length && /*data_->link_data == other.data_->link_data &&*/ data_->name == other.data_->name && data_->start == other.data_->start;
 }
 
-xtd::size xtd::forms::link::get_hash_code() const noexcept {
+xtd::size forms::link::get_hash_code() const noexcept {
   return hash_code::combine(data_->description, data_->enabled, data_->length, /*data_->link_data,*/ data_->name, data_->start);
 }
 
-bool xtd::forms::link::active_() const noexcept {
+bool forms::link::active_() const noexcept {
   return data_->active;
 }
 
-void xtd::forms::link::active_(bool active) noexcept {
+void forms::link::active_(bool active) noexcept {
   data_->active = active;
 }
