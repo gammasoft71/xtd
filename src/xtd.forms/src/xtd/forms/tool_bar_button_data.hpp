@@ -11,7 +11,7 @@ struct xtd::forms::tool_bar_button::data {
   bool pushed = false;
   xtd::drawing::rectangle rectangle;
   xtd::forms::tool_bar_button_style style = xtd::forms::tool_bar_button_style::push_button;
-  std::any tag;
+  xtd::any_object tag;
   xtd::string text;
   xtd::string tool_tip_text;
   bool visible = true;

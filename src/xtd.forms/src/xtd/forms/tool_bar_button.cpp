@@ -110,11 +110,11 @@ const xtd::drawing::rectangle& tool_bar_button::rectangle() const noexcept {
   return data_->rectangle;
 }
 
-std::any tool_bar_button::tag() const noexcept {
+const any_object& tool_bar_button::tag() const noexcept {
   return data_->tag;
 }
 
-tool_bar_button& tool_bar_button::tag(std::any value) {
+tool_bar_button& tool_bar_button::tag(const any_object& value) {
   data_->tag = value;
   return *this;
 }
