@@ -106,11 +106,11 @@ status_bar_panel& status_bar_panel::style(xtd::forms::status_bar_panel_style val
   return *this;
 }
 
-std::any status_bar_panel::tag() const noexcept {
+const any_object& status_bar_panel::tag() const noexcept {
   return data_->tag;
 }
 
-status_bar_panel& status_bar_panel::tag(std::any value) {
+status_bar_panel& status_bar_panel::tag(const any_object& value) {
   data_->tag = value;
   return *this;
 }
