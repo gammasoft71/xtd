@@ -105,11 +105,11 @@ namespace xtd {
       
       /// @brief Gets user-defined data associated with the control.
       /// @return An object representing the data.
-      std::any tag() const noexcept;
+      const xtd::any_object& tag() const noexcept;
       /// @brief Sets user-defined data associated with the control.
       /// @param value An object representing the data.
       /// @return Current menu class.
-      menu& tag(std::any value);
+      menu& tag(const xtd::any_object& value);
       /// @}
       
       /// @name Public Methods
