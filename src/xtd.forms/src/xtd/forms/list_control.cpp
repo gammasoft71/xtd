@@ -12,7 +12,7 @@ const list_control::item list_control::item::empty;
 list_control::item::item(const xtd::string& value) : value_(value) {
 }
 
-list_control::item::item(const xtd::string& value, const std::any& tag) : value_(value), tag_(tag) {
+list_control::item::item(const xtd::string& value, const any_object& tag) : value_(value), tag_(tag) {
 }
 
 list_control::item::item(const char* value) : value_(value) {
@@ -22,7 +22,7 @@ const xtd::string& list_control::item::value() const noexcept {
   return value_;
 }
 
-std::any list_control::item::tag() const noexcept {
+const any_object& list_control::item::tag() const noexcept {
   return tag_;
 }
 
