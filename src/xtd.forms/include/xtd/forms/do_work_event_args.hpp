@@ -32,7 +32,7 @@ namespace xtd {
       /// @{
       /// @brief Initializes a new instance of the DoWorkEventArgs class.
       /// @param argument Specifies an argument for an asynchronous operation.
-      explicit do_work_event_args(const std::any& argument) : argument_(argument) {}
+      explicit do_work_event_args(const xtd::any_object& argument) : argument_(argument) {}
       /// @}
       
       /// @name Public Properties
@@ -40,19 +40,19 @@ namespace xtd {
       /// @{
       /// @brief Gets a value that represents the argument of an asynchronous operation.
       /// @return An object representing the argument of an asynchronous operation.
-      std::any argument() const noexcept {return argument_;}
+      xtd::any_object argument() const noexcept {return argument_;}
       
       /// @brief Gets a value that represents the result of an asynchronous operation.
-      /// @return A std::any representing the result of an asynchronous operation.
-      std::any result() const noexcept {return result_;}
+      /// @return A xtd::any_object representing the result of an asynchronous operation.
+      xtd::any_object result() const noexcept {return result_;}
       /// @brief Sets a value that represents the result of an asynchronous operation.
-      /// @param value A std::any representing the result of an asynchronous operation.
-      void result(std::any value) {result_ = value;}
+      /// @param value A xtd::any_object representing the result of an asynchronous operation.
+      void result(const xtd::any_object& value) {result_ = value;}
       /// @}
       
     private:
-      std::any argument_;
-      std::any result_;
+      xtd::any_object argument_;
+      xtd::any_object result_;
     };
   }
 }
