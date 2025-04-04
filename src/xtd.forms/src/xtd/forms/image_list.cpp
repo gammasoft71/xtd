@@ -72,7 +72,7 @@ const image_list& image_list::image_size(const drawing::size& value) {
   return *this;
 }
 
-any_object image_list::tag() const noexcept {
+const any_object& image_list::tag() const noexcept {
   return data_->tag;
 }
 
