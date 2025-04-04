@@ -16,7 +16,7 @@ using namespace xtd::helpers;
 domain_up_down::item::item(const xtd::string& value) : value_(value) {
 }
 
-domain_up_down::item::item(const xtd::string& value, const std::any& tag) : value_(value), tag_(tag) {
+domain_up_down::item::item(const xtd::string& value, const any_object& tag) : value_(value), tag_(tag) {
 }
 
 domain_up_down::item::item(const char* value) : value_(value) {
@@ -26,7 +26,7 @@ const xtd::string& domain_up_down::item::value() const noexcept {
   return value_;
 }
 
-std::any domain_up_down::item::tag() const noexcept {
+const any_object& domain_up_down::item::tag() const noexcept {
   return tag_;
 }
 

@@ -59,17 +59,17 @@ namespace xtd {
         /// @brief Initializes a new instance of the item class with specified value and tag.
         /// @param value a string that represent the item.
         /// @param tag an object that contains data about the item.
-        item(const xtd::string& value, const std::any& tag);
+        item(const xtd::string& value, const xtd::any_object& tag);
         /// @brief Initializes a new instance of the item class with specified value, check state and tag.
         /// @param value a string that represent the item.
         /// @param checked a bool that represent check state.
         /// @param tag an object that contains data about the item.
-        item(const xtd::string& value, bool checked, const std::any& tag);
+        item(const xtd::string& value, bool checked, const xtd::any_object& tag);
         /// @brief Initializes a new instance of the item class with specified value, check state and tag.
         /// @param value a string that represent the item.
         /// @param checked a bool that represent check state.
         /// @param tag an object that contains data about the item.
-        item(const xtd::string& value, forms::check_state check_state, const std::any& tag);
+        item(const xtd::string& value, forms::check_state check_state, const xtd::any_object& tag);
         /// @}
         
         /// @cond

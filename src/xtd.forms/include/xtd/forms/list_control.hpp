@@ -66,7 +66,7 @@ namespace xtd {
         /// @brief Initializes a new instance of the item class with specified value and tag.
         /// @param value a string that represent the item.
         /// @param tag an object that contains data about the item.
-        item(const xtd::string& value, const std::any& tag);
+        item(const xtd::string& value, const xtd::any_object& tag);
         /// @}
         
         /// @cond
@@ -86,8 +86,8 @@ namespace xtd {
         virtual const xtd::string& value() const noexcept;
         
         /// @brief Gets the tag of the item.
-        /// @return A std::any that represent the tag of item.
-        virtual std::any tag() const noexcept;
+        /// @return A xtd::any_object that represent the tag of item.
+        virtual const xtd::any_object& tag() const noexcept;
         /// @}
         
         /// @name Public Methods
@@ -125,7 +125,7 @@ namespace xtd {
         
       private:
         xtd::string value_;
-        std::any tag_;
+        xtd::any_object tag_;
       };
       
       /// @name Public Aliases
