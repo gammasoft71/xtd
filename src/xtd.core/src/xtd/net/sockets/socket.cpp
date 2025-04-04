@@ -125,6 +125,10 @@ socket& socket::blocking(bool value) {
   return *this;
 }
 
+int32 socket::compare_to(const socket& obj) const noexcept {
+  return data_ < obj.data_ ? -1 : data_ > obj.data_ ? 1 : 0;
+}
+
 bool socket::connected() const noexcept {
   return data_->is_connected;
 }
