@@ -16,10 +16,10 @@ namespace {
 struct cursor::data {
   intptr handle = 0;
   bool destroyable = true;
-  xtd::drawing::point hot_spot;
-  xtd::string name;
-  xtd::drawing::size size;
-  std::any tag;
+  point hot_spot;
+  string name;
+  drawing::size size;
+  any_object tag;
 };
 
 cursor cursor::none(0, false, "none");
@@ -81,11 +81,11 @@ drawing::size cursor::size() const noexcept {
   return data_->size;
 }
 
-std::any cursor::tag() const noexcept {
+any_object cursor::tag() const noexcept {
   return data_->tag;
 }
 
-void cursor::tag(std::any tag) {
+void cursor::tag(any_object tag) {
   data_->tag = tag;
 }
 

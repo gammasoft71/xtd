@@ -83,14 +83,14 @@ namespace xtd {
       drawing::size size() const noexcept;
       
       /// @brief Gets the object that contains data about the control.
-      /// @return A std::any that contains data about the control. The default is empty.
+      /// @return A xtd::any_object that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
-      std::any tag() const noexcept;
+      xtd::any_object tag() const noexcept;
       
       /// @brief Sets the object that contains data about the control.
-      /// @param tag A std::any that contains data about the control. The default is empty.
+      /// @param tag A xtd::any_object that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
-      void tag(std::any tag);
+      void tag(xtd::any_object tag);
       /// @}
       
       /// @name Public Static Properties
