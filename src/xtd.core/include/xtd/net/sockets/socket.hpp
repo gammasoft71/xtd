@@ -27,6 +27,7 @@
 #include "../../async_callback.hpp"
 #include "../../array.hpp"
 #include "../../iasync_result.hpp"
+#include "../../icomparable.hpp"
 #include "../../iequatable.hpp"
 #include "../../not_implemented_exception.hpp"
 #include "../../not_supported_exception.hpp"
@@ -73,7 +74,7 @@ namespace xtd {
       /// @remarks When you are finished sending and receiving data, use the xtd::net::sockets::socket::shutdown method to disable the xtd::net::sockets::socket. After calling xtd::net::sockets::socket::shutdown, call the xtd::net::sockets::socket::close method to release all resources associated with the xtd::net::sockets::socket.
       /// @remarks The xtd::net::sockets::socket class allows you to configure your xtd::net::sockets::socket using the xtd::net::sockets::socket::set_socket_option method. Retrieve these settings using the xtd::net::sockets::socket::get_socket_option method.
       /// @note If you are writing a relatively simple application and do not require maximum performance, consider using xtd::net::sockets::tcp_client, xtd::net::sockets::tcp_listener, and xtd::net::sockets::udp_client. These classes provide a simpler and more user-friendly interface to xtd::net::sockets::socket communications.
-      class core_export_ socket : public xtd::object, public xtd::iequatable<socket> {
+      class core_export_ socket : public xtd::object, public xtd::icomparable<socket>, public xtd::iequatable<socket> {
         /// @brief Implement xtd::iasync_result that references the asynchronous Socket result.
         class async_result_socket : public xtd::object, public xtd::iasync_result {
         public:
@@ -807,6 +808,18 @@ namespace xtd {
         /// @remarks If you need to call xtd::net::sockets::socket::close without first calling xtd::net::sockets::socket::shutdown, you can ensure that data queued for outgoing transmission will be sent by setting the xtd::net::sockets::socket::dont_linger xtd::net::sockets::socket option to `false` and specifying a non-zero time-out interval. xtd::net::sockets::socket::close will then block until this data is sent or until the specified time-out expires. If you set xtd::net::sockets::socket::dont_linger to `false` and specify a zero time-out interval, xtd::net::sockets::socket::close releases the connection and automatically discards outgoing queued data.
         /// @note To set the xtd::net::sockets::socket::dont_linger socket option to `false`, create a xtd::net::sockets::linger_option, set the xtd::net::sockets::linger_option::enabled property to `true`, and set the xtd::net::sockets::linger_option::linger_time property to the desired time out period. Use this xtd::net::sockets::linger_option along with the xtd::net::sockets::socket::dont_linger socket option to call the xtd::net::sockets::socket::set_socket_linger_option method.
         void close();
+        
+        /// @brief Compares the current instance with another object of the same type.
+        /// @param obj An object to compare with this instance.
+        /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
+        /// The return value has these meanings:
+        ///
+        /// | Value             | Condition                          |
+        /// | ----------------- | ---------------------------------- |
+        /// | Less than zero    | This instance is less than obj.    |
+        /// | Zero              | This instance is equal to obj.     |
+        /// | Greater than zero | This instance is greater than obj. |
+        int32 compare_to(const socket& obj) const noexcept;
         
         /// @brief Establishes a connection to a remote host.
         /// @param remote_end_point An xtd::net::end_point that represents the remote device.
