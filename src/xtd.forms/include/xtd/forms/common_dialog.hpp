@@ -52,11 +52,11 @@ namespace xtd {
       /// @brief Gets an object that contains data about the control.
       /// @return The object that contains data about the common_dialog.
       /// @remarks Use this property to store arbitrary information about the control.
-      std::any tag() const noexcept;
+      xtd::any_object tag() const noexcept;
       /// @brief Sets an object that contains data about the control.
       /// @param tag The object that contains data about the common_dialog.
       /// @remarks Use this property to store arbitrary information about the control.
-      common_dialog& tag(const std::any& tag);
+      common_dialog& tag(const xtd::any_object& tag);
       /// @}
       
       /// @name Public Methods
