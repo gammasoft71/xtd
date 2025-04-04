@@ -858,12 +858,12 @@ namespace xtd {
       virtual control& tab_stop(bool value);
       
       /// @brief Gets the object that contains data about the control.
-      /// @return A std::any that contains data about the control. The default is empty.
+      /// @return A xtd::any_object that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
       /// @remarks A common use for the tag property is to store data that is closely associated with the control. For example, if you have a control that displays information about a customer, you might store a data_set that contains the customer's order history in that control's tag property so the data can be accessed quickly.
       virtual xtd::any_object tag() const noexcept;
       /// @brief Sets the object that contains data about the control.
-      /// @param tag A std::any that contains data about the control. The default is empty.
+      /// @param tag A xtd::any_object that contains data about the control. The default is empty.
       /// @return Current control.
       /// @remarks Any type of class can be assigned to this property.
       /// @remarks A common use for the tag property is to store data that is closely associated with the control. For example, if you have a control that displays information about a customer, you might store a data_set that contains the customer's order history in that control's tag property so the data can be accessed quickly.
