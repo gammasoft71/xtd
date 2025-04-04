@@ -85,7 +85,7 @@ namespace xtd {
       /// @brief Gets the object that contains data about the control.
       /// @return A xtd::any_object that contains data about the control. The default is empty.
       /// @remarks Any type of class can be assigned to this property.
-      xtd::any_object tag() const noexcept;
+      const xtd::any_object& tag() const noexcept;
       
       /// @brief Sets the object that contains data about the control.
       /// @param tag A xtd::any_object that contains data about the control. The default is empty.

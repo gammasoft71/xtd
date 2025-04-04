@@ -81,7 +81,7 @@ drawing::size cursor::size() const noexcept {
   return data_->size;
 }
 
-any_object cursor::tag() const noexcept {
+const any_object& cursor::tag() const noexcept {
   return data_->tag;
 }
 
