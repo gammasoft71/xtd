@@ -325,7 +325,7 @@ main_form::main_form() {
   open_xtd_example_core_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_core_list_box_.selected_index() != open_xtd_example_core_list_box_.npos) {
       current_open_xtd_example_core_list_box_index_ = open_xtd_example_core_list_box_.selected_index();
-      update_open_xtd_examples(std::any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag()), "xtd-console");
+      update_open_xtd_examples(as<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag()), "xtd-console");
     }
   };
   open_xtd_example_core_list_box_.double_click += [&] {
@@ -341,7 +341,7 @@ main_form::main_form() {
   open_xtd_example_drawing_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_drawing_list_box_.selected_index() != open_xtd_example_drawing_list_box_.npos) {
       current_open_xtd_example_drawing_list_box_index_ = open_xtd_example_drawing_list_box_.selected_index();
-      update_open_xtd_examples(std::any_cast<xtd_example_item>(open_xtd_example_drawing_list_box_.selected_item().tag()), "xtd-drawing");
+      update_open_xtd_examples(as<xtd_example_item>(open_xtd_example_drawing_list_box_.selected_item().tag()), "xtd-drawing");
     }
   };
   open_xtd_example_drawing_list_box_.double_click += [&] {
@@ -357,7 +357,7 @@ main_form::main_form() {
   open_xtd_example_forms_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_forms_list_box_.selected_index() != open_xtd_example_forms_list_box_.npos) {
       current_open_xtd_example_forms_list_box_index_ = open_xtd_example_forms_list_box_.selected_index();
-      update_open_xtd_examples(std::any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()), "xtd-forms");
+      update_open_xtd_examples(as<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag()), "xtd-forms");
     }
   };
   open_xtd_example_forms_list_box_.double_click += [&] {
@@ -373,7 +373,7 @@ main_form::main_form() {
   open_xtd_example_tunit_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_tunit_list_box_.selected_index() != open_xtd_example_tunit_list_box_.npos) {
       current_open_xtd_example_tunit_list_box_index_ = open_xtd_example_tunit_list_box_.selected_index();
-      update_open_xtd_examples(std::any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()), "xtd-tunit");
+      update_open_xtd_examples(as<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag()), "xtd-tunit");
     }
   };
   open_xtd_example_tunit_list_box_.double_click += [&] {
@@ -389,7 +389,7 @@ main_form::main_form() {
   open_xtd_example_cmake_list_box_.selected_value_changed += [&] {
     if (open_xtd_example_cmake_list_box_.selected_index() != open_xtd_example_cmake_list_box_.npos) {
       current_open_xtd_example_cmake_list_box_index_ = open_xtd_example_cmake_list_box_.selected_index();
-      update_open_xtd_examples(std::any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag()), "xtd-cmake");
+      update_open_xtd_examples(as<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag()), "xtd-cmake");
     }
   };
   open_xtd_example_cmake_list_box_.double_click += [&] {
@@ -441,7 +441,7 @@ main_form::main_form() {
   create_language_choice_.items().push_back_range({{"All languages", project_language::all}, {"xtd (c++)", project_language::xtd}, {"xtd_c (c)", project_language::xtd_c}, {"c++", project_language::cpp}, {"c", project_language::c}, {"c#", project_language::csharp}, {"objective-c", project_language::objectivec}});
   create_language_choice_.selected_value_changed += [&] {
     properties::settings::default_settings().language_index(create_language_choice_.selected_index()).save();
-    create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? std::any_cast<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? std::any_cast<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? std::any_cast<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
+    create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? as<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? as<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? as<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
   };
   create_language_choice_.selected_index(properties::settings::default_settings().language_index());
   
@@ -452,7 +452,7 @@ main_form::main_form() {
   create_platform_choice_.items().push_back_range({{"All platforms", project_platform::all}, {"Windows", project_platform::windows}, {"Linux", project_platform::linux}, {"macOS", project_platform::macos}});
   create_platform_choice_.selected_value_changed += [&] {
     properties::settings::default_settings().platform_index(create_platform_choice_.selected_index()).save();
-    create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? std::any_cast<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? std::any_cast<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? std::any_cast<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
+    create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? as<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? as<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? as<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
   };
   create_platform_choice_.selected_index(properties::settings::default_settings().platform_index());
   
@@ -463,7 +463,7 @@ main_form::main_form() {
   create_type_choice_.items().push_back_range({{"All project types", project_type::all}, {"Gui", project_type::gui}, {"Console", project_type::console}, {"Shared library", project_type::shared_library}, {"Static library", project_type::static_library}, {"UnitTest Project", project_type::unit_tests_project}, {"Solution File", project_type::solution_file}});
   create_type_choice_.selected_value_changed += [&] {
     properties::settings::default_settings().type_index(create_type_choice_.selected_index()).save();
-    create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? std::any_cast<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? std::any_cast<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? std::any_cast<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
+    create_project_type_items_control_.filter_items(create_language_choice_.selected_item().tag().has_value() ? as<project_language>(create_language_choice_.selected_item().tag()) : project_language::all, create_platform_choice_.selected_item().tag().has_value() ? as<project_platform>(create_platform_choice_.selected_item().tag()) : project_platform::all, create_type_choice_.selected_item().tag().has_value() ? as<project_type>(create_type_choice_.selected_item().tag()) : project_type::all);
   };
   create_type_choice_.selected_index(properties::settings::default_settings().type_index());
   
@@ -614,19 +614,19 @@ main_form::main_form() {
       auto xtd_example = xtd_example_item();
       string exemple_subproject_path;
       if (open_xtd_example_tab_control_.selected_index() == 0) {
-        xtd_example = std::any_cast<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag());
+        xtd_example = as<xtd_example_item>(open_xtd_example_core_list_box_.selected_item().tag());
         exemple_subproject_path = "xtd.core.examples";
       } else if (open_xtd_example_tab_control_.selected_index() == 1) {
-        xtd_example = std::any_cast<xtd_example_item>(open_xtd_example_drawing_list_box_.selected_item().tag());
+        xtd_example = as<xtd_example_item>(open_xtd_example_drawing_list_box_.selected_item().tag());
         exemple_subproject_path = "xtd.drawing.examples";
       } else if (open_xtd_example_tab_control_.selected_index() == 2) {
-        xtd_example = std::any_cast<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag());
+        xtd_example = as<xtd_example_item>(open_xtd_example_forms_list_box_.selected_item().tag());
         exemple_subproject_path = "xtd.forms.examples";
       } else if (open_xtd_example_tab_control_.selected_index() == 3) {
-        xtd_example = std::any_cast<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag());
+        xtd_example = as<xtd_example_item>(open_xtd_example_tunit_list_box_.selected_item().tag());
         exemple_subproject_path = "xtd.tunit.examples";
       } else if (open_xtd_example_tab_control_.selected_index() == 4) {
-        xtd_example = std::any_cast<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag());
+        xtd_example = as<xtd_example_item>(open_xtd_example_cmake_list_box_.selected_item().tag());
         exemple_subproject_path = "xtd.cmake.examples";
       }
       
@@ -639,12 +639,12 @@ main_form::main_form() {
       background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
         begin_invoke([&] {
           progress_dialog_ = xtd::new_uptr<progress_dialog>();
-          progress_dialog_->text(string::format("Opening {} example", path::get_file_name(std::any_cast<string>(e.argument()))));
+          progress_dialog_->text(string::format("Opening {} example", path::get_file_name(as<string>(e.argument()))));
           progress_dialog_->message("Please wait...");
           progress_dialog_->marquee(true);
           progress_dialog_->show_sheet_dialog(*this);
         });
-        process::start(process_start_info().file_name("xtdc").arguments(string::format("open {}", std::any_cast<string>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+        process::start(process_start_info().file_name("xtdc").arguments(string::format("open {}", as<string>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
       };
       background_worker_->run_worker_completed += [&] {
         begin_invoke([&] {
@@ -779,12 +779,12 @@ void main_form::open_project(const string& project_path) {
   background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
     begin_invoke([&] {
       progress_dialog_ = xtd::new_uptr<progress_dialog>();
-      progress_dialog_->text(string::format("Opening {} project", path::get_file_name(std::any_cast<string>(e.argument()))));
+      progress_dialog_->text(string::format("Opening {} project", path::get_file_name(as<string>(e.argument()))));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);
       progress_dialog_->show_sheet_dialog(*this);
     });
-    process::start(process_start_info().file_name("xtdc").arguments(string::format("open {}", std::any_cast<string>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(string::format("open {}", as<string>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
   };
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {
@@ -823,12 +823,12 @@ void main_form::run_project(const string& project_path) {
   background_worker_->do_work += [&](object & sender, do_work_event_args & e) {
     begin_invoke([&] {
       progress_dialog_ = xtd::new_uptr<progress_dialog>();
-      progress_dialog_->text(string::format("Running {} project", path::get_file_name(std::any_cast<string>(e.argument()))));
+      progress_dialog_->text(string::format("Running {} project", path::get_file_name(as<string>(e.argument()))));
       progress_dialog_->message("Please wait...");
       progress_dialog_->marquee(true);
       progress_dialog_->show_sheet_dialog(*this);
     });
-    process::start(process_start_info().file_name("xtdc").arguments(string::format("run {}", std::any_cast<string>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
+    process::start(process_start_info().file_name("xtdc").arguments(string::format("run {}", as<string>(e.argument()))).use_shell_execute(false).create_no_window(true)).wait_for_exit();
   };
   background_worker_->run_worker_completed += [&] {
     begin_invoke([&] {

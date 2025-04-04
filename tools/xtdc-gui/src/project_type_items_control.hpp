@@ -83,7 +83,7 @@ namespace xtdc_gui {
         item_control->tag(project_type_item_controls_.size());
         project_type_item_controls_.push_back(item_control);
         item_control->click += [&](object & sender, const xtd::event_args & e) {
-          selected_index(project_type_item_controls_.size() - 1 - std::any_cast<size_t>(xtd::as<control>(sender).tag()));
+          selected_index(project_type_item_controls_.size() - 1 - xtd::as<size_t>(xtd::as<control>(sender).tag()));
         };
       }
       
@@ -156,7 +156,7 @@ namespace xtdc_gui {
     void on_selected_project_type_item_changed(const xtd::event_args& e) {
       for (auto item : project_type_item_controls_)
         if (item->project_type_item() == selected_project_type_item_) {
-          selected_index(project_type_item_controls_.size() - 1 - std::any_cast<size_t>(item->tag()));
+          selected_index(project_type_item_controls_.size() - 1 - xtd::as<size_t>(item->tag()));
           break;
         }
       selected_project_type_item_changed(*this, e);
