@@ -13,7 +13,7 @@ struct image_list::data {
   intptr handle = 0;
   drawing::size image_size {16, 16};
   image_collection images;
-  std::any tag;
+  any_object tag;
 };
 
 image_list image_list::empty;
@@ -72,11 +72,11 @@ const image_list& image_list::image_size(const drawing::size& value) {
   return *this;
 }
 
-std::any image_list::tag() const noexcept {
+any_object image_list::tag() const noexcept {
   return data_->tag;
 }
 
-image_list& image_list::tag(const std::any& tag) {
+image_list& image_list::tag(const any_object& tag) {
   data_->tag = tag;
   return *this;
 }
