@@ -28,19 +28,19 @@ inline xtd::any_object __xtd_delegate_invoker(std::function<void()> invoke) {
 }
 
 template<class ...arguments_t>
-inline xtd::any_object __xtd_delegate_invoker(std::function<void(arguments_t...)> invoke, arguments_t... arguments) {
-  invoke(arguments...);
+inline xtd::any_object __xtd_delegate_invoker(std::function<void(arguments_t...)> invoke, arguments_t&&... arguments) {
+  invoke(std::forward<arguments_t>(arguments)...);
   return xtd::any_object {};
 }
 
 template<class result_t>
 inline xtd::any_object __xtd_delegate_invoker(std::function<result_t()> invoke) {
-  return std::make_any<result_t>(invoke());
+  return xtd::any_object(invoke());
 }
 
 template<class result_t, class ...arguments_t>
-inline xtd::any_object __xtd_delegate_invoker(std::function<result_t(arguments_t...)> invoke, arguments_t... arguments) {
-  return std::make_any<result_t>(invoke(arguments...));
+inline xtd::any_object __xtd_delegate_invoker(std::function<result_t(arguments_t...)> invoke, arguments_t&&... arguments) {
+  return xtd::any_object(invoke(std::forward<arguments_t>(arguments)...));
 }
 
 template<class result_t>
@@ -80,12 +80,12 @@ bool xtd::delegate<result_t()>::async_result_invoke::is_completed() const noexce
 
 template<class result_t>
 inline xtd::async_result xtd::delegate<result_t()>::begin_invoke() {
-  return begin_invoke(xtd::async_callback {}, *this);
+  return begin_invoke(xtd::async_callback {}, xtd::any_object(*this));
 }
 
 template<class result_t>
 inline xtd::async_result xtd::delegate<result_t()>::begin_invoke(xtd::async_callback async_callback) {
-  return begin_invoke(async_callback, *this);
+  return begin_invoke(async_callback, xtd::any_object(*this));
 }
 
 template<class result_t>
@@ -143,20 +143,20 @@ bool xtd::delegate<result_t(arguments_t...)>::async_result_invoke::is_completed(
 }
 
 template<class result_t, class ...arguments_t>
-xtd::async_result xtd::delegate<result_t(arguments_t...)>::begin_invoke(arguments_t... arguments) {
-  return begin_invoke(xtd::async_callback {}, *this, arguments...);
+xtd::async_result xtd::delegate<result_t(arguments_t...)>::begin_invoke(arguments_t&&... arguments) {
+  return begin_invoke(xtd::async_callback {}, xtd::any_object(*this), std::forward<arguments_t>(arguments)...);
 }
 
 template<class result_t, class ...arguments_t>
-xtd::async_result xtd::delegate<result_t(arguments_t...)>::begin_invoke(xtd::async_callback async_callback, arguments_t... arguments) {
-  return begin_invoke(async_callback, *this, arguments...);
+xtd::async_result xtd::delegate<result_t(arguments_t...)>::begin_invoke(xtd::async_callback async_callback, arguments_t&&... arguments) {
+  return begin_invoke(async_callback, xtd::any_object(*this), std::forward<arguments_t>(arguments)...);
 }
 
 template<class result_t, class ...arguments_t>
-xtd::async_result xtd::delegate<result_t(arguments_t...)>::begin_invoke(xtd::async_callback async_callback, const xtd::any_object& async_state, arguments_t... arguments) {
+xtd::async_result xtd::delegate<result_t(arguments_t...)>::begin_invoke(xtd::async_callback async_callback, const xtd::any_object& async_state, arguments_t&&... arguments) {
   auto async = xtd::new_sptr<async_result_invoke>(async_callback, async_state);
   threading::thread_pool::queue_user_work_item([&, async = async, ...arguments = arguments] {
-    async->data_->result = __xtd_delegate_invoker(function_t {std::bind(&xtd::delegate<result_t(arguments_t...)>::invoke, this, arguments...)}, arguments...);
+    async->data_->result = __xtd_delegate_invoker(function_t {std::bind(&xtd::delegate<result_t(arguments_t...)>::invoke, this, arguments...)}, std::forward<arguments_t>(arguments)...);
     async->data_->is_completed = true;
     async->data_->async_event.set();
     async->data_->async_callback(async);
