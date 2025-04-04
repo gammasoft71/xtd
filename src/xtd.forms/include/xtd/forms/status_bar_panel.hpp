@@ -169,14 +169,14 @@ namespace xtd {
       status_bar_panel& style(xtd::forms::status_bar_panel_style value);
       
       /// @brief Gets an object that contains data about the xtd::forms::status_bar_panel.
-      /// @return An std::any that contains data about the xtd::forms::status_bar_panel. The default is empty.
-      /// @remarks Retrieves or assigns the data currently associated with the xtd::forms::status_bar_panel. Any std::any type can be assigned to this property.
-      std::any tag() const noexcept;
+      /// @return An xtd::any_object that contains data about the xtd::forms::status_bar_panel. The default is empty.
+      /// @remarks Retrieves or assigns the data currently associated with the xtd::forms::status_bar_panel. Any xtd::any_object type can be assigned to this property.
+      const xtd::any_object& tag() const noexcept;
       /// @brief Sets an object that contains data about the xtd::forms::status_bar_panel.
-      /// @param value An std::any that contains data about the xtd::forms::status_bar_panel. The default is empty.
+      /// @param value An xtd::any_object that contains data about the xtd::forms::status_bar_panel. The default is empty.
       /// @return This current instance.
-      /// @remarks Retrieves or assigns the data currently associated with the xtd::forms::status_bar_panel. Any std::any type can be assigned to this property.
-      status_bar_panel& tag(std::any value);
+      /// @remarks Retrieves or assigns the data currently associated with the xtd::forms::status_bar_panel. Any xtd::any_object type can be assigned to this property.
+      status_bar_panel& tag(const xtd::any_object& value);
       
       /// @brief Gets the text of the status bar panel.
       /// @return The text displayed in the panel. The default is an empty string ("").

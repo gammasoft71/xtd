@@ -12,7 +12,7 @@ struct xtd::forms::status_bar_panel::data {
   xtd::string name;
   xtd::forms::status_bar* parent = nullptr;
   xtd::forms::status_bar_panel_style style = xtd::forms::status_bar_panel_style::text;
-  std::any tag;
+  xtd::any_object tag;
   xtd::string text;
   xtd::string tool_tip_text;
   int32 width = 100;
