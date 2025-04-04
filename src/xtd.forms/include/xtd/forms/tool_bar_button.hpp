@@ -155,14 +155,14 @@ namespace xtd {
       tool_bar_button& style(xtd::forms::tool_bar_button_style value);
       
       /// @brief Gets the object that contains data about the toolbar button.
-      /// @return An std::any that contains data about the toolbar button. The default is empty.
-      /// @remarks Retrieves or assigns the data currently associated with the toolbar button. Any std::any type can be assigned to this property.
-      std::any tag() const noexcept;
+      /// @return An xtd::any_object that contains data about the toolbar button. The default is empty.
+      /// @remarks Retrieves or assigns the data currently associated with the toolbar button. Any xtd::any_object type can be assigned to this property.
+      const xtd::any_object& tag() const noexcept;
       /// @brief Sets the object that contains data about the toolbar button.
-      /// @param value An std::any that contains data about the toolbar button. The default is empty.
+      /// @param value An xtd::any_object that contains data about the toolbar button. The default is empty.
       /// @return This current instance.
-      /// @remarks Retrieves or assigns the data currently associated with the toolbar button. Any std::any type can be assigned to this property.
-      tool_bar_button& tag(std::any value);
+      /// @remarks Retrieves or assigns the data currently associated with the toolbar button. Any xtd::any_object type can be assigned to this property.
+      tool_bar_button& tag(const xtd::any_object& value);
       
       /// @brief Gets the text displayed on the toolbar button.
       /// @return The text displayed on the toolbar button. The default is an empty string ("").
