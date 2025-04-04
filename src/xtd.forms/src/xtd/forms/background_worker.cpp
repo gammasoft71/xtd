@@ -8,12 +8,12 @@ using namespace xtd::forms;
 using namespace xtd::helpers;
 
 struct background_worker::data {
-  std::any argument;
+  any_object argument;
   bool cancellation_pending = false;
   bool is_busy = false;
   bool worker_reports_progress = false;
   bool worker_supports_cancellation = false;
-  progress_changed_event_args event {0, std::any {}};
+  progress_changed_event_args event {0, any_object {}};
   xtd::uptr<form> invoker;
   action<> worker;
   async_result worker_result;
@@ -68,10 +68,10 @@ void background_worker::on_run_worker_completed(const run_worker_completed_event
 }
 
 void background_worker::report_progress(int32 percent_progress) {
-  report_progress(percent_progress, std::any {});
+  report_progress(percent_progress, any_object {});
 }
 
-void background_worker::report_progress(int32 percent_progress, std::any user_state) {
+void background_worker::report_progress(int32 percent_progress, const xtd::any_object& user_state) {
   if (data_->worker_reports_progress) {
     data_->event = {percent_progress, user_state};
     data_->invoker->begin_invoke([&] {
@@ -89,7 +89,7 @@ void background_worker::run_worker_async() {
     auto e = do_work_event_args {data_->argument};
     on_do_work(e);
     data_->invoker->begin_invoke([&] {
-      on_run_worker_completed(run_worker_completed_event_args(std::any {}, std::nullopt, data_->cancellation_pending));
+      on_run_worker_completed(run_worker_completed_event_args(any_object {}, std::nullopt, data_->cancellation_pending));
       data_->invoker = nullptr;
       data_->cancellation_pending = false;
     });
@@ -98,6 +98,6 @@ void background_worker::run_worker_async() {
   data_->worker_result = data_->worker.begin_invoke();
 }
 
-void background_worker::argument_(std::any&& argument) {
+void background_worker::argument_(any_object&& argument) {
   data_->argument = std::move(argument);
 }
