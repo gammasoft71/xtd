@@ -17,7 +17,7 @@ xtd::forms::dialog_result common_dialog::dialog_result() const noexcept {
   return data_->dialog_result;
 }
 
-cont any_object& common_dialog::tag() const noexcept {
+const any_object& common_dialog::tag() const noexcept {
   return data_->tag;
 }
 
