@@ -5,10 +5,9 @@
 #endif
 /// @endcond
 
-#include <cstdint>
-#include <vector>
 #include <utility>
 #include <xtd/collections/generic/key_value_pair>
+#include <xtd/array>
 #include <xtd/static>
 #include <xtd/string>
 #include <xtd/drawing_native_export.hpp>
@@ -77,14 +76,14 @@ namespace xtd {
         /// @param handle The graphics_path handle.
         /// @param points An array of xtd::collections::generic::key_value_pair<float, float> structures that represents the points that define the curves.
         /// @warning Internal use only
-        static void add_beziers(intptr handle, std::vector<xtd::collections::generic::key_value_pair<float, float>> points);
+        static void add_beziers(intptr handle, xtd::array<xtd::collections::generic::key_value_pair<float, float>> points);
         
         /// @brief Adds a closed curve to the path. A cardinal spline curve is used because the curve travels through each of the points in the array.
         /// @param handle The graphics_path handle.
         /// @param points An array of xtd::collections::generic::key_value_pair<float, float> structures that represents the points that define the curve.
         /// @param tension A value between from 0 through 1 that specifies the amount that the curve bends between points, with 0 being the smallest curve (sharpest corner) and 1 being the smoothest curve.
         /// @warning Internal use only
-        static void add_closed_curve(intptr handle, std::vector<xtd::collections::generic::key_value_pair<float, float>> points, float tension);
+        static void add_closed_curve(intptr handle, xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, float tension);
         
         /// @brief Adds a spline curve to the current figure.
         /// @param handle The graphics_path handle.
@@ -93,7 +92,7 @@ namespace xtd {
         /// @param number_of_segments The number of segments used to draw the curve. A segment can be thought of as a line connecting two points.
         /// @param tension A value that specifies the amount that the curve bends between control points. Values greater than 1 produce unpredictable results.
         /// @warning Internal use only
-        static void add_curve(intptr handle, std::vector<xtd::collections::generic::key_value_pair<float, float>> points, size_t offset, size_t number_of_segments, float tension);
+        static void add_curve(intptr handle, xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, size_t offset, size_t number_of_segments, float tension);
         
         /// @brief Adds an ellipse to the current path.
         /// @param handle The graphics_path handle.
