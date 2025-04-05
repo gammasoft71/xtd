@@ -125,7 +125,7 @@ namespace xtd {
         /// @param pen A pen handle that determines the color, width, and style of the curve.
         /// @param points Array of xtd::collections::generic::key_value_pair<float, float> structures that represent the points that determine the curve. The number of points in the array should be a multiple of 3 plus 1, such as 4, 7, or 10.
         /// @warning Internal use only
-        static void draw_beziers(intptr handle, intptr pen, const std::vector<xtd::collections::generic::key_value_pair<float, float>>& points);
+        static void draw_beziers(intptr handle, intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>>& points);
         
         /// @brief Draws a closed cardinal spline defined by an array of xtd::collections::generic::key_value_pair<float, float> structures using a specified tension.
         /// @param handle The graphics handle.
@@ -133,7 +133,7 @@ namespace xtd {
         /// @param points Array of xtd::collections::generic::key_value_pair<float, float> structures that define the spline.
         /// @param tension alue greater than or equal to 0.0F that specifies the tension of the curve.
         /// @warning Internal use only
-        static void draw_closed_curve(intptr handle, intptr pen, std::vector<xtd::collections::generic::key_value_pair<float, float>> points, float tension);
+        static void draw_closed_curve(intptr handle, intptr pen, xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, float tension);
         
         /// @brief Draws a cardinal spline through a specified array of xtd::collections::generic::key_value_pair<float, float> structures using a specified tension. The drawing begins offset from the beginning of the array.
         /// @param handle The graphics handle.
@@ -143,7 +143,7 @@ namespace xtd {
         /// @param number_of_segments Number of segments after the starting point to include in the curve.
         /// @param tension Value greater than or equal to 0.0F that specifies the tension of the curve.
         /// @warning Internal use only
-        static void draw_curve(intptr handle, intptr pen, std::vector<xtd::collections::generic::key_value_pair<float, float>> points, float tension);
+        static void draw_curve(intptr handle, intptr pen, xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, float tension);
         
         /// @brief Draws an ellipse defined by a bounding rectangle specified by coordinates for the upper-left corner of the rectangle, a height, and a width.
         /// @param handle The graphics handle.
@@ -199,7 +199,7 @@ namespace xtd {
         /// @param pen A pen handle that determines the color, width, and style of the line segments.
         /// @param points Array of xtd::collections::generic::key_value_pair<float, float> structures that represent the points to connect.
         /// @warning Internal use only
-        static void draw_lines(intptr handle, intptr pen, const std::vector<xtd::collections::generic::key_value_pair<float, float>>& points);
+        static void draw_lines(intptr handle, intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>>& points);
         
         /// @brief Draws a graphics path.
         /// @param handle The graphics handle.
@@ -225,7 +225,7 @@ namespace xtd {
         /// @param pen A pen handle that determines the color, width, and style of the polygon.
         /// @param points Array of xtd::collections::generic::key_value_pair<float, float> structures that represent the vertices of the polygon.
         /// @warning Internal use only
-        static void draw_polygon(intptr handle, intptr pen, const std::vector<xtd::collections::generic::key_value_pair<float, float>>& points);
+        static void draw_polygon(intptr handle, intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>>& points);
         
         /// @brief Draws a rectangle specified by a coordinate pair, a width, and a height.
         /// @param handle The graphics handle.
@@ -303,7 +303,7 @@ namespace xtd {
         /// @param fill_mode A fill mode value that determines how the curve is filled (see fill_modes.h for more information).
         /// @param tension Value greater than or equal to 0.0F that specifies the tension of the curve.
         /// @warning Internal use only
-        static void fill_closed_curve(intptr handle, intptr brush, std::vector<xtd::collections::generic::key_value_pair<float, float>> points, uint32 fill_mode, float tension);
+        static void fill_closed_curve(intptr handle, intptr brush, xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, uint32 fill_mode, float tension);
         
         /// @brief Fills the interior of an ellipse defined by a bounding rectangle specified by a pair of coordinates, a width, and a height.
         /// @param handle The graphics handle.
@@ -341,7 +341,7 @@ namespace xtd {
         /// @param points Array of xtd::collections::generic::key_value_pair<float, float> structures that represent the vertices of the polygon to fill.
         /// @param fill_mode Member of the fill mode value that determines the style of the fill (see fill_modes.h for more information).
         /// @warning Internal use only
-        static void fill_polygon(intptr handle, intptr pen, const std::vector<xtd::collections::generic::key_value_pair<float, float>>& points, int32 fill_mode);
+        static void fill_polygon(intptr handle, intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>>& points, int32 fill_mode);
         
         /// @brief Fills the interior of a rectangle specified by a pair of coordinates, a width, and a height.
         /// @param handle The graphics handle.
