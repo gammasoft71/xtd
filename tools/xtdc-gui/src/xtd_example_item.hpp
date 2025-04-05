@@ -20,10 +20,10 @@ namespace xtdc_gui {
     xtd_example_item(const xtd::string& name, const xtd::string& description, const xtd::string& path, const xtd::drawing::image& picture, const xtd::string& output) : name_(name), description_(description), path_(path), picture_(picture), output_(output) {}
     
     const xtd::string& name() const noexcept {return name_;};
-    const xtd::string& description() const noexcept {return description_;};
-    const xtd::string& path() const noexcept {return path_;};
-    const xtd::drawing::image& picture() const noexcept {return picture_;};
-    const xtd::string& output() const noexcept {return output_;};
+    const xtd::string& description() const noexcept {return description_;}
+    const xtd::string& path() const noexcept {return path_;}
+    const xtd::drawing::image& picture() const noexcept {return picture_;}
+    const xtd::string& output() const noexcept {return output_;}
 
     int32 compare_to(const xtd_example_item& value) const noexcept override {return name_.compare_to(value.name_);}
 
