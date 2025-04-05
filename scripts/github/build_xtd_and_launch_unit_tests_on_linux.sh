@@ -21,8 +21,8 @@ cmake .. -DCMAKE_BUILD_TYPE=$BUILD_TYPE -DXTD_BUILD_CPP_STANDARD=20 -DXTD_BUILD_
 if [ $? -ne 0 ]; then exit -1; fi
 cmake --build . -- -j $(nproc)
 if [ $? -ne 0 ]; then exit -1; fi
-cmake --build . --target install
-if [ $? -ne 0 ]; then exit -1; fi
+#cmake --build . --target install
+#if [ $? -ne 0 ]; then exit -1; fi
 cd ..
 
 # run registered unit tests
