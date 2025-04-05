@@ -64,4 +64,11 @@ inline const xtd::collections::generic::ienumerable<result_t>& xtd::linq::enumer
     result.items.push_back(xtd::as<result_t>(item));
   return static_cast<const xtd::collections::generic::ienumerable<result_t>&>(result);
 }
+
+namespace std {
+  template<class type_t>
+  type_t any_cast(const xtd::any_object& value) {return xtd::as<type_t>(value);}
+  template<class type_t>
+  type_t any_cast(xtd::any_object& value) {return xtd::as<type_t>(value);}
+}
 /// @endcond
