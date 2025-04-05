@@ -98,7 +98,7 @@ string font_family::generic_monospace_name() {
   #endif
 }
 
-std::vector<string> font_family::installed_font_families() {
+array<string> font_family::installed_font_families() {
   toolkit::initialize(); // Must be first
   std::vector<string> families;
   for (const wxString& name : wxFontEnumerator::GetFacenames())

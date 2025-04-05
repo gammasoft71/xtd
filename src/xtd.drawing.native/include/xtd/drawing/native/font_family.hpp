@@ -5,8 +5,7 @@
 #endif
 /// @endcond
 
-#include <cstdint>
-#include <vector>
+#include <xtd/array>
 #include <xtd/static>
 #include <xtd/string>
 #include <xtd/drawing_native_export.hpp>
@@ -68,7 +67,7 @@ namespace xtd {
         /// @brief Gets the installed font families.
         /// @return The installed font families.
         /// @warning Internal use only
-        static std::vector<xtd::string> installed_font_families();
+        static xtd::array<xtd::string> installed_font_families();
         
         /// @brief Gets the cell ascent.
         /// @param font_family The fontt family handle.
