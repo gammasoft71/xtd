@@ -7,11 +7,11 @@
 #include <xtd/drawing/brush>
 #include <xtd/drawing/color>
 #include <xtd/drawing/rectangle>
+#include <xtd/array>
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/uri>
 #include <xtd/string>
-#include <memory>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -78,20 +78,20 @@ namespace xtd {
         /// | xtd::forms::style_sheets::background_image::image_type | xtd::forms::style_sheets::image_type::linera_gradient |
         /// | xtd::forms::style_sheets::background_image::url        | An empty tring ("")                                   |
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
-        explicit background_image(const std::vector<xtd::drawing::color>& colors);
+        explicit background_image(const xtd::array<xtd::drawing::color>& colors);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::background_image class with specified colors and angle.
         /// @param color The colors that specifies the color for gradient image to display.
         /// @param angle The angle specifies the gradient direction.
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
         /// @exception xtd::argument_exception colors is less than 2.
-        background_image(const std::vector<xtd::drawing::color>& colors, int32 angle);
+        background_image(const xtd::array<xtd::drawing::color>& colors, int32 angle);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::background_image class with specified style and colors.
         /// @param image_type The style specifies what kind of image to display.
         /// @param color The colors that specifies the color for gradient image to display.
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
         /// @exception xtd::argument_exception colors is less than 2.
         /// @exception xtd::not_supported_exception if xtd::forms::style_sheets::background_image::image_type is not of xtd::forms::style_sheets::image_type::url and not xtd::forms::style_sheets::image_type::linear_gradient.
-        background_image(xtd::forms::style_sheets::image_type image_type, const std::vector<xtd::drawing::color>& colors);
+        background_image(xtd::forms::style_sheets::image_type image_type, const xtd::array<xtd::drawing::color>& colors);
         /// @brief Initializes a new instance of the xtd::forms::style_sheets::background_image class with specified style, colors and angle.
         /// @param image_type The style specifies what kind of image to display.
         /// @param color The colors that specifies the color for gradient image to display.
@@ -99,7 +99,7 @@ namespace xtd {
         /// @remarks A value of 0 for angle is equivalent to "to top", a value of 90 for rangle is equivalent to "to right". a value of 180 for angle is equivalent to "to bottom", ...
         /// @exception xtd::argument_exception colors is less than 2.
         /// @exception xtd::not_supported_exception if xtd::forms::style_sheets::background_image::image_type is not of xtd::forms::style_sheets::image_type::url and not xtd::forms::style_sheets::image_type::linear_gradient.
-        background_image(xtd::forms::style_sheets::image_type image_type, const std::vector<xtd::drawing::color>& colors, int32 angle);
+        background_image(xtd::forms::style_sheets::image_type image_type, const xtd::array<xtd::drawing::color>& colors, int32 angle);
         /// @}
         
         /// @cond
@@ -124,12 +124,12 @@ namespace xtd {
         /// @brief Gets the colors specifies what colors to display.
         /// @return The colors specifies what colors to display.
         /// @remarks For xtd::forms::style_sheets::image_type::color, only the first color is used.
-        const std::vector<xtd::drawing::color>& colors() const noexcept;
+        const xtd::array<xtd::drawing::color>& colors() const noexcept;
         /// @brief Sets the colors that specifies what colors to display.
         /// @param value The colors specifies what colors to display.
         /// @remarks For xtd::forms::style_sheets::image_type::color, only the first color is used.
         /// @exception xtd::argument_exception colors is less than 2.
-        void colors(const std::vector<xtd::drawing::color>& value);
+        void colors(const xtd::array<xtd::drawing::color>& value);
         
         /// @brief Gets the url of image to display.
         /// @return The url of image to display.
@@ -179,7 +179,7 @@ namespace xtd {
         friend class style_sheet;
         xtd::forms::style_sheets::image_type image_type_ = style_sheets::image_type::none;
         xtd::uri url_;
-        std::vector<xtd::drawing::color> colors_ = {xtd::drawing::color::black, xtd::drawing::color::black};
+        xtd::array<xtd::drawing::color> colors_ = {xtd::drawing::color::black, xtd::drawing::color::black};
         int32 angle_ = 180;
       };
     }

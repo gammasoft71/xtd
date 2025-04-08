@@ -19,20 +19,20 @@ const background_image background_image::empty;
 background_image::background_image(const string& url) : image_type_(style_sheets::image_type::url), url_(url) {
 }
 
-background_image::background_image(const std::vector<color>& colors) : image_type_(style_sheets::image_type::linear_gradient), colors_(colors) {
+background_image::background_image(const array<color>& colors) : image_type_(style_sheets::image_type::linear_gradient), colors_(colors) {
   if (colors.size() < 2_z) throw_helper::throws(exception_case::argument);
 }
 
-background_image::background_image(const std::vector<color>& colors, int32 angle) : image_type_(style_sheets::image_type::linear_gradient), colors_(colors), angle_((angle % 360) < 0 ? 360 + (angle % 360) : (angle % 360)) {
+background_image::background_image(const array<color>& colors, int32 angle) : image_type_(style_sheets::image_type::linear_gradient), colors_(colors), angle_((angle % 360) < 0 ? 360 + (angle % 360) : (angle % 360)) {
   if (colors.size() < 2_z) throw_helper::throws(exception_case::argument);
 }
 
-background_image::background_image(style_sheets::image_type image_type, const std::vector<color>& colors) : image_type_(image_type), colors_(colors) {
+background_image::background_image(style_sheets::image_type image_type, const array<color>& colors) : image_type_(image_type), colors_(colors) {
   if (colors.size() < 2_z) throw_helper::throws(exception_case::argument);
   if (image_type != style_sheets::image_type::linear_gradient) throw_helper::throws(exception_case::not_supported);
 }
 
-background_image::background_image(style_sheets::image_type image_type, const std::vector<color>& colors, int32 angle) : image_type_(image_type), colors_(colors), angle_((angle % 360) < 0 ? 360 + (angle % 360) : (angle % 360)) {
+background_image::background_image(style_sheets::image_type image_type, const array<color>& colors, int32 angle) : image_type_(image_type), colors_(colors), angle_((angle % 360) < 0 ? 360 + (angle % 360) : (angle % 360)) {
   if (colors.size() < 2_z) throw_helper::throws(exception_case::argument);
   if (image_type != style_sheets::image_type::linear_gradient) throw_helper::throws(exception_case::not_supported);
 }
@@ -49,11 +49,11 @@ void background_image::angle(int32 value) noexcept {
   angle_ = value;
 }
 
-const std::vector<xtd::drawing::color>& background_image::colors() const noexcept {
+const array<xtd::drawing::color>& background_image::colors() const noexcept {
   return colors_;
 }
 
-void background_image::colors(const std::vector<xtd::drawing::color>& value) {
+void background_image::colors(const array<xtd::drawing::color>& value) {
   colors_ = value;
   if (colors_.size() < 2_z) throw_helper::throws(exception_case::argument);
 }
