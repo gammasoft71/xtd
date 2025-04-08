@@ -10,7 +10,7 @@ using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
 
 namespace {
-  using point_collection = std::vector<xtd::drawing::point>;
+  using point_collection = array<xtd::drawing::point>;
   
   image create_empty_texture(const color& fore_color, const color& back_color) {
     auto bitmap = drawing::bitmap(8, 8);
