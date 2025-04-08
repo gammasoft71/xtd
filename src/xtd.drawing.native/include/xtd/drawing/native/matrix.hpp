@@ -6,9 +6,9 @@
 /// @endcond
 
 #include <cstdint>
-#include <vector>
 #include <utility>
 #include <xtd/collections/generic/key_value_pair>
+#include <xtd/array>
 #include <xtd/static>
 #include <xtd/string>
 #include <xtd/drawing_native_export.hpp>
@@ -59,7 +59,7 @@ namespace xtd {
         /// @param handle The matrix handle.
         /// @return An array of floating-point values that represents the elements of the matrix.
         /// @warning Internal use only
-        static std::vector<float> elenents(intptr handle);
+        static xtd::array<float> elenents(intptr handle);
         
         /// @brief Gets a value indicating whether the matrix is the identity matrix.
         /// @param handle The matrix handle.
@@ -151,12 +151,12 @@ namespace xtd {
         /// @param handle The matrix handle.
         /// @param x An array of xtd::collections::generic::key_value_pair<int32, int32>t structures that represents the points to transform.
         /// @warning Internal use only
-        static void transform_vectors(intptr handle, std::vector<xtd::collections::generic::key_value_pair<int32, int32>>& points);
+        static void transform_vectors(intptr handle, const xtd::array<xtd::collections::generic::key_value_pair<int32, int32>>& points);
         /// @brief Applies only the scale and rotate components of the matrix to the specified array of points.
         /// @param handle The matrix handle.
         /// @param x An array of xtd::collections::generic::key_value_pair<int32, int32>t structures that represents the points to transform.
         /// @warning Internal use only
-        static void transform_vectors(intptr handle, std::vector<xtd::collections::generic::key_value_pair<float, float>>& points);
+        static void transform_vectors(intptr handle, const xtd::array<xtd::collections::generic::key_value_pair<float, float>>& points);
         
         /// @brief Applies the specified translation vector (offset_x and offset_y) to the matrix in the specified order.
         /// @param handle The matrix handle.
@@ -170,7 +170,7 @@ namespace xtd {
         /// @param handle The matrix handle.
         /// @param points An array of xtd::collections::generic::key_value_pair<int32, int32> structures that represents the points to transform.
         /// @warning Internal use only
-        static void vector_transform_points(intptr handle, std::vector<xtd::collections::generic::key_value_pair<int32, int32>>& points);
+        static void vector_transform_points(intptr handle, const xtd::array<xtd::collections::generic::key_value_pair<int32, int32>>& points);
         /// @}
       };
     }
