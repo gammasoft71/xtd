@@ -11,7 +11,7 @@ dialog_result color_box::show(drawing::color& color, const iwin32_window& owner,
 
 dialog_result color_box::show(drawing::color& color, const iwin32_window& owner, const string& title, color_box_styles styles) {return show_color_box(color, &owner, title, styles);}
 
-dialog_result color_box::show(drawing::color& color, const iwin32_window& owner, const string& title, color_box_styles styles, const std::vector<drawing::color>& custom_colors) {return show_color_box(color, &owner, title, styles, custom_colors);}
+dialog_result color_box::show(drawing::color& color, const iwin32_window& owner, const string& title, color_box_styles styles, const array<drawing::color>& custom_colors) {return show_color_box(color, &owner, title, styles, custom_colors);}
 
 dialog_result color_box::show(drawing::color& color) {return show_color_box(color, nullptr);}
 
@@ -19,9 +19,9 @@ dialog_result color_box::show(drawing::color& color, const string& title) {retur
 
 dialog_result color_box::show(drawing::color& color, const string& title, color_box_styles styles) {return show_color_box(color, nullptr, title, styles);}
 
-dialog_result color_box::show(drawing::color& color, const string& title, color_box_styles styles, const std::vector<drawing::color>& custom_colors) {return show_color_box(color, nullptr, title, styles, custom_colors);}
+dialog_result color_box::show(drawing::color& color, const string& title, color_box_styles styles, const array<drawing::color>& custom_colors) {return show_color_box(color, nullptr, title, styles, custom_colors);}
 
-dialog_result color_box::show_color_box(drawing::color& color, const iwin32_window* owner, const string& title, color_box_styles styles, const std::optional<std::vector<drawing::color>>& custom_colors) {
+dialog_result color_box::show_color_box(drawing::color& color, const iwin32_window* owner, const string& title, color_box_styles styles, const std::optional<array<drawing::color>>& custom_colors) {
   auto dialog = color_dialog {};
   dialog.color(color);
   dialog.alpha_color((styles & color_box_styles::alpha_color) == color_box_styles::alpha_color);
