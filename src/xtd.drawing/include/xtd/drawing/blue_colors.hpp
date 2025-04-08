@@ -5,7 +5,6 @@
 #include "../drawing_export.hpp"
 #include "color.hpp"
 #include <xtd/static>
-#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -92,10 +91,10 @@ namespace xtd {
       
       /// @{
       /// @brief Gets an array of colors.
-      static const std::vector<xtd::drawing::color>& get_colors() noexcept;
+      static const xtd::array<xtd::drawing::color>& get_colors() noexcept;
       
 
-      static const std::vector<xtd::string>& get_color_names() noexcept;
+      static const xtd::array<xtd::string>& get_color_names() noexcept;
       /// @}
     };
   }
