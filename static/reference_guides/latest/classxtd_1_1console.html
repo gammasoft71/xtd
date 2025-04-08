@@ -2780,7 +2780,7 @@ Use the key_available method in conjunction with only the read_key method, not t
 <div class="ttc" id="aclassxtd_1_1console_html_aab2e161c3a72cb14f808ed40e2b59ef2"><div class="ttname"><a href="classxtd_1_1console.html#aab2e161c3a72cb14f808ed40e2b59ef2">xtd::console::beep</a></div><div class="ttdeci">static void beep()</div><div class="ttdoc">Plays the sound of a beep through the console speaker.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a865c0c0b4ab0e063e5caa3387c1a8741">xtd::console_key::i</a></div><div class="ttdeci">@ i</div><div class="ttdoc">The I key.</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.hpp:11</div></div>
-<div class="ttc" id="astructxtd_1_1box_html_a5e274cc04e1882aca9dc519e8f7235ba"><div class="ttname"><a href="structxtd_1_1box.html#a5e274cc04e1882aca9dc519e8f7235ba">xtd::box::try_parse</a></div><div class="ttdeci">static bool try_parse(const xtd::string &amp;value, reference result) noexcept</div><div class="ttdoc">Converts the string to its value_type equivalent. A return value indicates whether the conversion suc...</div><div class="ttdef"><b>Definition</b> box.hpp:171</div></div>
+<div class="ttc" id="astructxtd_1_1box_html_a5e274cc04e1882aca9dc519e8f7235ba"><div class="ttname"><a href="structxtd_1_1box.html#a5e274cc04e1882aca9dc519e8f7235ba">xtd::box::try_parse</a></div><div class="ttdeci">static bool try_parse(const xtd::string &amp;value, reference result) noexcept</div><div class="ttdoc">Converts the string to its value_type equivalent. A return value indicates whether the conversion suc...</div><div class="ttdef"><b>Definition</b> box.hpp:172</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -3038,11 +3038,11 @@ When the Clear method is called, the cursor automatically scrolls to the top-lef
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_define" href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a>(console_clear_example::program::main);</div>
-<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:59</div></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array&lt; xtd::string &gt;</a></div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a17d9001d0282c327e7cfcffa8ada02a8"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a17d9001d0282c327e7cfcffa8ada02a8">xtd::collections::generic::list::begin</a></div><div class="ttdeci">const_iterator begin() const noexcept override</div><div class="ttdoc">Returns an iterator to the first element of the enumarable.</div><div class="ttdef"><b>Definition</b> list.hpp:254</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_a3854f8170419af3c496d0bdda60bb2c9"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#a3854f8170419af3c496d0bdda60bb2c9">xtd::collections::generic::list::end</a></div><div class="ttdeci">const_iterator end() const noexcept override</div><div class="ttdoc">Returns an iterator to the element following the last element of the enumarable.</div><div class="ttdef"><b>Definition</b> list.hpp:367</div></div>
 <div class="ttc" id="aclassxtd_1_1console__key__info_html"><div class="ttname"><a href="classxtd_1_1console__key__info.html">xtd::console_key_info</a></div><div class="ttdoc">Specifies the standard keys on a console.</div><div class="ttdef"><b>Definition</b> console_key_info.hpp:24</div></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:175</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:167</div></div>
 </div><!-- fragment --> The example relies on a get_key_press method to validate the user's selection of a foreground and background color. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>This example demonstrates the cursor_left and cursor_top properties, and the set_cursor_position and clear methods. The example positions the cursor, which determines where the next write will occur, to draw a 5 character by 5 character rectangle using a combination of "+", "|", and "-" strings. Note that the rectangle could be drawn with fewer steps using a combination of other strings. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
@@ -4198,7 +4198,7 @@ The <a class="el" href="group__xtd__core.html#gga437764d898631d282f7d95b573328c7
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 20 2025 20:07:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Apr 8 2025 21:49:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
