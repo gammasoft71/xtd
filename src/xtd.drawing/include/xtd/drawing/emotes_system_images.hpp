@@ -209,15 +209,15 @@ namespace xtd {
       /// @{
       /// @brief Gets an array of images.
       /// @return The array of images.
-      static const std::vector<xtd::drawing::image>& get_images() noexcept;
+      static const xtd::array<xtd::drawing::image>& get_images() noexcept;
       /// @brief Gets an array of images with specified size.
       /// @param size The images size in pixels.
       /// @return The array of images.
-      static std::vector<xtd::drawing::image> get_images(const xtd::drawing::size& size) noexcept;
+      static xtd::array<xtd::drawing::image> get_images(const xtd::drawing::size& size) noexcept;
 
       /// @brief Gets an array of image names.
       /// @return The array of image names.
-      static const std::vector<xtd::string>& get_image_names() noexcept;
+      static const xtd::array<xtd::string>& get_image_names() noexcept;
       /// @}
     };
   }
