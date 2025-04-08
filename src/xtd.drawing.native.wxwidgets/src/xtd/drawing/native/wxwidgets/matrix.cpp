@@ -104,11 +104,11 @@ void matrix::transform_point(intptr handle, float& x, float& y) {
   y = as<float>(dy);
 }
 
-void matrix::transform_vectors(intptr handle, const array<key_value_pair<int32, int32>>& points) {
+void matrix::transform_vectors(intptr handle, array<key_value_pair<int32, int32>>& points) {
   if (!handle) return;
 }
 
-void matrix::transform_vectors(intptr handle, const array<key_value_pair<float, float>>& points) {
+void matrix::transform_vectors(intptr handle, array<key_value_pair<float, float>>& points) {
   if (!handle) return;
 }
 
@@ -117,6 +117,6 @@ void matrix::translate(intptr handle, float ofset_x, float offset_y, int32 order
   reinterpret_cast<wxGraphicsMatrix*>(handle)->Translate(offset_y, offset_y);
 }
 
-void matrix::vector_transform_points(intptr handle, const array<key_value_pair<int32, int32>>& points) {
+void matrix::vector_transform_points(intptr handle, array<key_value_pair<int32, int32>>& points) {
   if (!handle) return;
 }

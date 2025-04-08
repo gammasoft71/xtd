@@ -22,12 +22,12 @@ matrix::matrix(float m11, float m12, float m21, float m22, float dx, float dy) :
   data_->handle = native::matrix::create(m11, m12, m21, m22, dx, dy);
 }
 
-matrix::matrix(const rectangle& rect, const std::vector<point>& plgpts) : data_(xtd::new_sptr<data>()) {
+matrix::matrix(const rectangle& rect, const array<point>& plgpts) : data_(xtd::new_sptr<data>()) {
   if (plgpts.size() != 3) throw_helper::throws(exception_case::argument);
   init_from_rect_3points(rectangle_f(rect), point_f(plgpts[0]), point_f(plgpts[1]), point_f(plgpts[2]));
 }
 
-matrix::matrix(const rectangle_f& rect, const std::vector<point_f>& plgpts) : data_(xtd::new_sptr<data>()) {
+matrix::matrix(const rectangle_f& rect, const array<point_f>& plgpts) : data_(xtd::new_sptr<data>()) {
   if (plgpts.size() != 3) throw_helper::throws(exception_case::argument);
   init_from_rect_3points(rect, plgpts[0], plgpts[1], plgpts[2]);
 }
@@ -43,7 +43,7 @@ matrix::~matrix() {
   }
 }
 
-std::vector<float> matrix::elements() const {
+array<float> matrix::elements() const {
   return native::matrix::elenents(handle());
 }
 
@@ -127,7 +127,7 @@ void matrix::shear(float scale_x, float scale_y, xtd::drawing::drawing_2d::matri
   native::matrix::shear(handle(), scale_x, scale_y, static_cast<int32>(order));
 }
 
-void matrix::transform_points(std::vector<xtd::drawing::point>& points) {
+void matrix::transform_points(array<xtd::drawing::point>& points) {
   for (auto& point : points) {
     auto tx = point.x, ty = point.y;
     native::matrix::transform_point(handle(), tx, ty);
@@ -136,7 +136,7 @@ void matrix::transform_points(std::vector<xtd::drawing::point>& points) {
   }
 }
 
-void matrix::transform_points(std::vector<xtd::drawing::point_f>& points) {
+void matrix::transform_points(array<xtd::drawing::point_f>& points) {
   for (auto& point : points) {
     auto tx = point.x, ty = point.y;
     native::matrix::transform_point(handle(), tx, ty);
@@ -145,20 +145,24 @@ void matrix::transform_points(std::vector<xtd::drawing::point_f>& points) {
   }
 }
 
-void matrix::transform_vectors(std::vector<xtd::drawing::point>& points) {
-  auto tr_points = std::vector<key_value_pair<int32, int32>> {};
-  std::for_each(points.begin(), points.end(), [&](auto point) {tr_points.emplace_back(point.x, point.y);});
+void matrix::transform_vectors(array<xtd::drawing::point>& points) {
+  auto tr_points = array<key_value_pair<int32, int32>>(points.size());
+  for (auto index = 0_z; index < points.size(); ++index)
+    tr_points[index] = key_value_pair<int32, int32>(points[index].x, points[index].y);
   native::matrix::transform_vectors(handle(), tr_points);
-  points.clear();
-  std::for_each(tr_points.begin(), tr_points.end(), [&](const key_value_pair<int32, int32>& point) {points.push_back(xtd::drawing::point(point.first, point.second));});
+  points = array<xtd::drawing::point>(tr_points.size());
+  for (auto index = 0_z; index < tr_points.size(); ++index)
+    points[index] = xtd::drawing::point(tr_points[index].first, tr_points[index].second);
 }
 
-void matrix::transform_vectors(std::vector<xtd::drawing::point_f>& points) {
-  auto tr_points = std::vector<key_value_pair<float, float>> {};
-  std::for_each(points.begin(), points.end(), [&](auto point) {tr_points.emplace_back(point.x, point.y);});
+void matrix::transform_vectors(array<xtd::drawing::point_f>& points) {
+  auto tr_points = array<key_value_pair<float, float>>(points.size());
+  for (auto index = 0_z; index < points.size(); ++index)
+    tr_points[index] = key_value_pair<float, float>(points[index].x, points[index].y);
   native::matrix::transform_vectors(handle(), tr_points);
-  points.clear();
-  std::for_each(tr_points.begin(), tr_points.end(), [&](const key_value_pair<float, float>&  point) {points.push_back(xtd::drawing::point_f(point.first, point.second));});
+  points = array<xtd::drawing::point_f>(tr_points.size());
+  for (auto index = 0_z; index < tr_points.size(); ++index)
+    points[index] = xtd::drawing::point_f(tr_points[index].first, tr_points[index].second);
 }
 
 void matrix::translate(float offset_x, float offset_y) {
@@ -169,12 +173,14 @@ void matrix::translate(float offset_x, float offset_y, xtd::drawing::drawing_2d:
   native::matrix::translate(handle(), offset_x, offset_y, static_cast<int32>(order));
 }
 
-void matrix::vector_transform_points(std::vector<xtd::drawing::point>& points) {
-  auto tr_points = std::vector<key_value_pair<int32, int32>> {};
-  std::for_each(points.begin(), points.end(), [&](auto point) {tr_points.emplace_back(point.x, point.y);});
+void matrix::vector_transform_points(array<xtd::drawing::point>& points) {
+  auto tr_points = array<key_value_pair<int32, int32>>(points.size());
+  for (auto index = 0_z; index < points.size(); ++index)
+    tr_points[index] = key_value_pair<int32, int32>(points[index].x, points[index].y);
   native::matrix::vector_transform_points(handle(), tr_points);
-  points.clear();
-  std::for_each(tr_points.begin(), tr_points.end(), [&](const key_value_pair<int32, int32>& point) {points.push_back(xtd::drawing::point(point.first, point.second));});
+  points = array<xtd::drawing::point>(tr_points.size());
+  for (auto index = 0_z; index < tr_points.size(); ++index)
+    points[index] = xtd::drawing::point(tr_points[index].first, tr_points[index].second);
 }
 
 xtd::string matrix::to_string() const noexcept {
