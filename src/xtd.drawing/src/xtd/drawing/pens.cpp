@@ -1,5 +1,6 @@
 #include "../../../include/xtd/drawing/pens.hpp"
 
+using namespace xtd;
 using namespace xtd::drawing;
 
 pen pens::transparent() {
