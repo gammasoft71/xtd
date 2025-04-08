@@ -22,7 +22,7 @@ struct pen::data {
   xtd::uptr<xtd::drawing::brush> brush;
   xtd::drawing::color color;
   float dash_offset = 0.0f;
-  std::vector<float> dash_pattern;
+  array<float> dash_pattern;
   xtd::drawing::drawing_2d::dash_style dash_style = xtd::drawing::drawing_2d::dash_style::solid;
   xtd::drawing::drawing_2d::line_cap end_cap = xtd::drawing::drawing_2d::line_cap::flat;
   xtd::drawing::drawing_2d::line_join line_join = xtd::drawing::drawing_2d::line_join::miter;
@@ -87,15 +87,15 @@ pen& pen::color(const drawing::color& value) {
   return *this;
 }
 
-std::vector<float> pen::dash_pattern() const noexcept {
+array<float> pen::dash_pattern() const noexcept {
   return data_->dash_pattern;
 }
 
 xtd::drawing::pen& pen::dash_pattern(const std::initializer_list<float>& value) {
-  return dash_pattern(std::vector<float>(value));
+  return dash_pattern(array<float>(value));
 }
 
-pen& pen::dash_pattern(const std::vector<float>& value) {
+pen& pen::dash_pattern(const array<float>& value) {
   if (data_->dash_pattern != value) {
     data_->dash_pattern = value;
     if (!data_->dash_pattern.empty()) data_->dash_style = drawing::drawing_2d::dash_style::custom;
@@ -220,7 +220,7 @@ void pen::recreate_handle() {
   native::pen::start_cap(data_->handle_, static_cast<int32>(data_->start_cap));
   native::pen::miter_limit(data_->handle_, data_->miter_limit);
   
-  std::vector<float> dashes;
+  array<float> dashes;
   switch (data_->dash_style) {
     case drawing::drawing_2d::dash_style::solid: break;
     case drawing::drawing_2d::dash_style::dash: dashes = {3, 2};  break;
