@@ -111,13 +111,13 @@ namespace xtd {
       using object_collection = layout::arranged_element_collection<item>;
       
       /// @brief Encapsulates the collection of indexes of checked items (including items in an indeterminate state)
-      using checked_index_collection = std::vector<size_t>;
+      using checked_index_collection = xtd::collections::generic::list<size_t>;
       
       /// @brief Encapsulates the collection of checked items, including items in an indeterminate state, in a checked_list_box control.
-      using checked_item_collection = std::vector<item>;
+      using checked_item_collection = xtd::collections::generic::list<item>;
       
       /// @brief Represents the collection of selected items in the list_box.
-      using selected_object_collection = std::vector<item>;
+      using selected_object_collection = xtd::collections::generic::list<item>;
       /// @}
       
       /// @name Public Constructors
@@ -165,7 +165,7 @@ namespace xtd {
       /// @return Current list_control.
       list_control& selected_index(size_t selected_index) override;
       
-      std::vector<size_t> selected_indices() const noexcept override;
+      selected_index_collection selected_indices() const noexcept override;
       
       /// @brief Gets the currently selected item in the checked_list_box.
       /// @return An object that represents the current selection in the control.
