@@ -8,10 +8,6 @@
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/string>
-#include <cstdint>
-#include <memory>
-#include <ostream>
-#include <stdexcept>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
