@@ -2,9 +2,10 @@
 #include "../../../include/xtd/drawing/helpers/alpha.hpp"
 #include "../../../include/xtd/drawing/helpers/rgb.hpp"
 #include "../../../include/xtd/drawing/bitmap.hpp"
+#include <xtd/collections/generic/list>
 
 namespace {
-  struct bilinear_precalculate {
+  struct bilinear_precalculate : xtd::object {
     xtd::int32 offset1;
     xtd::int32 offset2;
     double decimals;
@@ -21,7 +22,7 @@ namespace {
     precalculate.offset2 = source_pixel2;
   }
   
-  void resample_bilinear_precalculates(std::vector<bilinear_precalculate>& precalculates, xtd::int32 old_size) {
+  void resample_bilinear_precalculates(xtd::collections::generic::list<bilinear_precalculate>& precalculates, xtd::int32 old_size) {
     const auto new_size = static_cast<xtd::int32>(precalculates.size());
     if (old_size <= 0 || new_size == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
     const auto source_pixel_maximum = old_size - 1;
@@ -53,8 +54,8 @@ namespace {
     auto result_alpha = reinterpret_cast<xtd::drawing::helpers::alpha*>(result_image.alpha());
     auto result_rgb = reinterpret_cast<xtd::drawing::helpers::rgb*>(result_image.rgb());
     
-    auto vertical_precalculates = std::vector<bilinear_precalculate>(result_height);
-    auto horizontal_precalculates = std::vector<bilinear_precalculate>(result_width);
+    auto vertical_precalculates = xtd::collections::generic::list<bilinear_precalculate>(result_height);
+    auto horizontal_precalculates = xtd::collections::generic::list<bilinear_precalculate>(result_width);
 
     resample_bilinear_precalculates(vertical_precalculates, source_height);
     resample_bilinear_precalculates(horizontal_precalculates, source_width);
