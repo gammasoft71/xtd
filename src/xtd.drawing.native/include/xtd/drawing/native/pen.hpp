@@ -9,7 +9,7 @@
 #include <xtd/static>
 #include <xtd/types>
 #include <xtd/drawing_native_export.hpp>
-#include <vector>
+#include <xtd/array>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -50,7 +50,7 @@ namespace xtd {
         /// @param dash_offset The offset of the dash.
         /// @param dashes A dash array that represent the format of dash. If the array of dashes is empty then the pen is a solid type.
         /// @warning Internal use only
-        static void solid_color(intptr pen, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b, float width, float dash_offset, std::vector<float> dashes);
+        static void solid_color(intptr pen, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b, float width, float dash_offset, const xtd::array<float>& dashes);
         
         /// @brief Sets hatch fill pen with specified hatch fill brush and width.
         /// @param pen the pen handle.
