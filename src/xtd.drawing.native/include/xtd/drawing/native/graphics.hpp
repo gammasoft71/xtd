@@ -133,7 +133,7 @@ namespace xtd {
         /// @param points Array of xtd::collections::generic::key_value_pair<float, float> structures that define the spline.
         /// @param tension alue greater than or equal to 0.0F that specifies the tension of the curve.
         /// @warning Internal use only
-        static void draw_closed_curve(intptr handle, intptr pen, xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, float tension);
+        static void draw_closed_curve(intptr handle, intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, float tension);
         
         /// @brief Draws a cardinal spline through a specified array of xtd::collections::generic::key_value_pair<float, float> structures using a specified tension. The drawing begins offset from the beginning of the array.
         /// @param handle The graphics handle.
@@ -143,7 +143,7 @@ namespace xtd {
         /// @param number_of_segments Number of segments after the starting point to include in the curve.
         /// @param tension Value greater than or equal to 0.0F that specifies the tension of the curve.
         /// @warning Internal use only
-        static void draw_curve(intptr handle, intptr pen, xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, float tension);
+        static void draw_curve(intptr handle, intptr pen, const xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, float tension);
         
         /// @brief Draws an ellipse defined by a bounding rectangle specified by coordinates for the upper-left corner of the rectangle, a height, and a width.
         /// @param handle The graphics handle.
@@ -242,7 +242,7 @@ namespace xtd {
         /// @param pen A pen handle that determines the color, width, and style of the outlines of the rectangles.
         /// @param rects Array of std::tuple<float, float, float, float> structures that represent the rectangles to draw.
         /// @warning Internal use only
-        static void draw_rectangles(intptr handle, intptr pen, std::vector<std::tuple<float, float, float, float>>& rects);
+        static void draw_rectangles(intptr handle, intptr pen, const xtd::array<std::tuple<float, float, float, float>>& rects);
         
         /// @brief Draws the specified text string at the specified location with the specified brush, font and angle.
         /// @param handle The graphics handle.
@@ -303,7 +303,7 @@ namespace xtd {
         /// @param fill_mode A fill mode value that determines how the curve is filled (see fill_modes.h for more information).
         /// @param tension Value greater than or equal to 0.0F that specifies the tension of the curve.
         /// @warning Internal use only
-        static void fill_closed_curve(intptr handle, intptr brush, xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, uint32 fill_mode, float tension);
+        static void fill_closed_curve(intptr handle, intptr brush, const xtd::array<xtd::collections::generic::key_value_pair<float, float>> points, uint32 fill_mode, float tension);
         
         /// @brief Fills the interior of an ellipse defined by a bounding rectangle specified by a pair of coordinates, a width, and a height.
         /// @param handle The graphics handle.
@@ -358,7 +358,7 @@ namespace xtd {
         /// @param brush A brush handle that determines the characteristics of the fill.
         /// @param rects Array of std::tuple<float, float, float, float> structures that represent the rectangles to fill.
         /// @warning Internal use only
-        static void fill_rectangles(intptr handle, intptr brush, std::vector<std::tuple<float, float, float, float>>& rects);
+        static void fill_rectangles(intptr handle, intptr brush, const xtd::array<std::tuple<float, float, float, float>>& rects);
         
         /// @brief Fills the interior of a region.
         /// @param handle The graphics handle.
