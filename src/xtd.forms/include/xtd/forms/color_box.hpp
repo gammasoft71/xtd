@@ -66,7 +66,7 @@ namespace xtd {
       /// @param custom_colors A colors array that contains user custom colors.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks If dialog_result is ok, the color parameter contains the new chosen color.
-      static xtd::forms::dialog_result show(xtd::drawing::color& color, const xtd::forms::iwin32_window& owner, const xtd::string& title, color_box_styles styles, const std::vector<xtd::drawing::color>& custom_colors);
+      static xtd::forms::dialog_result show(xtd::drawing::color& color, const xtd::forms::iwin32_window& owner, const xtd::string& title, color_box_styles styles, const xtd::array<xtd::drawing::color>& custom_colors);
       
       /// @brief Displays a color box. The color box displays a color.
       /// @param color A xtd::drawing::color that specifies the color to display.
@@ -93,11 +93,11 @@ namespace xtd {
       /// @param custom_colors A colors array that contains user custom colors.
       /// @return ok if the user clicks OK in the dialog box; otherwise, cancel.
       /// @remarks If dialog_result is ok, the color parameter contains the new chosen color.
-      static xtd::forms::dialog_result show(xtd::drawing::color& color, const xtd::string& title, color_box_styles styles, const std::vector<xtd::drawing::color>& custom_colors);
+      static xtd::forms::dialog_result show(xtd::drawing::color& color, const xtd::string& title, color_box_styles styles, const xtd::array<xtd::drawing::color>& custom_colors);
       /// @}
       
     private:
-      static xtd::forms::dialog_result show_color_box(xtd::drawing::color& color, const xtd::forms::iwin32_window* owner = nullptr, const xtd::string& title = xtd::string::empty_string, color_box_styles styles = color_box_styles::alpha_color | color_box_styles::allow_full_open, const std::optional<std::vector<xtd::drawing::color>>& custom_colors = std::optional<std::vector<xtd::drawing::color>> {});
+      static xtd::forms::dialog_result show_color_box(xtd::drawing::color& color, const xtd::forms::iwin32_window* owner = nullptr, const xtd::string& title = xtd::string::empty_string, color_box_styles styles = color_box_styles::alpha_color | color_box_styles::allow_full_open, const std::optional<xtd::array<xtd::drawing::color>>& custom_colors = std::optional<xtd::array<xtd::drawing::color>> {});
     };
   }
 }
