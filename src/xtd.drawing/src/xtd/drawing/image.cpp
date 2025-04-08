@@ -631,7 +631,7 @@ void image::update_properties() {
   
   data_->horizontal_resolution = native::image::horizontal_resolution(data_->handle);
   
-  auto palette_entries = std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>> {};
+  auto palette_entries = array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>> {};
   native::image::color_palette(data_->handle, palette_entries, data_->palette.flags_);
   for (auto [a, r, g, b] : palette_entries)
     data_->palette.entries_.push_back(color::from_argb(a, r, g, b));

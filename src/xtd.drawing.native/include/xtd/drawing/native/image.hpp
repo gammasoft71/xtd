@@ -9,6 +9,7 @@
 #include <tuple>
 #include <vector>
 #include <xtd/collections/generic/dictionary>
+#include <xtd/collections/generic/list>
 #include <xtd/static>
 #include <xtd/types>
 #include <xtd/string>
@@ -38,7 +39,7 @@ namespace xtd {
         friend xtd::drawing::image;
       protected:
         /// @brief Encapsulates a metadata property to be included in an image file.
-        struct property_item {
+        struct property_item : public xtd::object {
           /// @brief The ID of the property.
           /// @remarks The following table shows the property tags and their IDs.
           /// | ID     | Property tag                                  |
@@ -277,7 +278,7 @@ namespace xtd {
           /// | 10      | Specifies that Value is an array of pairs of signed long integers. Each pair represents a fraction; the first integer is the numerator and the second integer is the denominator.                                                                           |
           int32 type = 1;
           /// @brief the value of the property item.
-          std::vector<xtd::byte> value;
+          xtd::array<xtd::byte> value;
         };
         
         /// @name Protected Static Methods
@@ -285,14 +286,14 @@ namespace xtd {
         /// @{
         /// @brief Gets the color palette used for the image.
         /// @param image The image handle.
-        /// @param entries A std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>> (alpha, red, green and blue componenents of color) that represents the color palette used for the image.
+        /// @param entries A xtd::array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>> (alpha, red, green and blue componenents of color) that represents the color palette used for the image.
         /// @param flags A value that specifies how to interpret the color information in the array of colors
         /// @remarks The following flag values are valid:
         /// * 0x00000001 The color values in the array contain alpha information.
         /// * 0x00000002 The colors in the array are grayscale values.
         /// * 0x00000004 The colors in the array are halftone values.
         /// @warning Internal use only
-        static void color_palette(intptr image, std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32& flags);
+        static void color_palette(intptr image, xtd::array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32& flags);
         
         /// @brief Creates an image from specified filename and get the frame_solution collection.
         /// @param filename The filename of the image.
@@ -452,13 +453,13 @@ namespace xtd {
         /// @param image The image handle.
         /// @return An array of the property IDs, one for each property item stored in the image.
         /// @warning Internal use only
-        static std::vector<int32> property_id_list(intptr image);
+        static xtd::array<int32> property_id_list(intptr image);
         
         /// @brief Gets all the property items (pieces of metadata) stored in the image.
         /// @param image The image handle.
         /// @return An array of xtd::drawing::native::image::property_item strutures, one for each property item stored in the image.
         /// @warning Internal use only
-        static std::vector<property_item> property_items(intptr image);
+        static xtd::array<property_item> property_items(intptr image);
         
         /// @brief Gets the pixel format for the image.
         /// @param image The image handle.
