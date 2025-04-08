@@ -100,7 +100,7 @@ Inheritance diagram for xtd::threading::timer:</div>
 <a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Provides a mechanism for executing a method on a thread pool thread at specified intervals. This class cannot be inherited. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a> <a class="code hl_class" href="classxtd_1_1threading_1_1timer.html">timer</a> final : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a></div>
-<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:44</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:43</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1timer_html"><div class="ttname"><a href="classxtd_1_1threading_1_1timer.html">xtd::threading::timer</a></div><div class="ttdoc">Provides a mechanism for executing a method on a thread pool thread at specified intervals....</div><div class="ttdef"><b>Definition</b> timer.hpp:49</div></div>
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.hpp:13</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="classxtd_1_1threading_1_1timer.html" title="Provides a mechanism for executing a method on a thread pool thread at specified intervals....">xtd::threading::timer</a> </dd></dl>
@@ -108,7 +108,7 @@ Inheritance diagram for xtd::threading::timer:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1threading.html" title="The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....">xtd::threading</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following example defines a status_checker class that includes a check_status method whose signature is the same as the <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9" title="Represents the method that handles calls from a xtd::threading::timer.">xtd::threading::timer_callback</a> delegate. The state argument of the check_status method is an <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object that is used to synchronize the application thread and the thread pool thread that executes the callback delegate. The status_checker class also includes two state variables: invoke_count Indicates the number of times the callback method has been invoked. max_count Determines the maximum number of times the callback method should be invoked. The application thread creates the timer, which waits one second and then executes the check_status callback method every 250 milliseconds. The application thread then blocks until the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object is signaled. When the check_status callback method executes max_count times, it calls the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html#a3254163aa012cb3dc8f99ff16c0c7d6c" title="Sets the state of the event to signaled, allowing one or more waiting threads to proceed.">auto_reset_event::set</a> method to set the state of the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object to signaled. The first time this happens, the application thread calls the <a class="el" href="classxtd_1_1threading_1_1timer.html#a40a6be3e9255cbd751f859efe127923e" title="changes the start time and the interval between method invocations for a timer, using 32-bit signed i...">xtd::threading::timer::change(int32, int32)</a> method so that the callback method now executes every half second. It once again blocks until the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object is signaled. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/auto_reset_event&gt;</span></div>
+<dl class="section user"><dt>Examples</dt><dd>The following example defines a status_checker class that includes a check_status method whose signature is the same as the <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d" title="Represents the method that handles calls from a xtd::threading::timer.">xtd::threading::timer_callback</a> delegate. The state argument of the check_status method is an <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object that is used to synchronize the application thread and the thread pool thread that executes the callback delegate. The status_checker class also includes two state variables: invoke_count Indicates the number of times the callback method has been invoked. max_count Determines the maximum number of times the callback method should be invoked. The application thread creates the timer, which waits one second and then executes the check_status callback method every 250 milliseconds. The application thread then blocks until the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object is signaled. When the check_status callback method executes max_count times, it calls the <a class="el" href="classxtd_1_1threading_1_1event__wait__handle.html#a3254163aa012cb3dc8f99ff16c0c7d6c" title="Sets the state of the event to signaled, allowing one or more waiting threads to proceed.">auto_reset_event::set</a> method to set the state of the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object to signaled. The first time this happens, the application thread calls the <a class="el" href="classxtd_1_1threading_1_1timer.html#a40a6be3e9255cbd751f859efe127923e" title="changes the start time and the interval between method invocations for a timer, using 32-bit signed i...">xtd::threading::timer::change(int32, int32)</a> method so that the callback method now executes every half second. It once again blocks until the <a class="el" href="classxtd_1_1threading_1_1auto__reset__event.html" title="Represents a thread synchronization event that, when signaled, resets automatically after releasing a...">xtd::threading::auto_reset_event</a> object is signaled. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/threading/auto_reset_event&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/threading/timer&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/date_time&gt;</span></div>
@@ -208,11 +208,11 @@ Inheritance diagram for xtd::threading::timer:</div>
 <div class="line"><span class="comment">// Destroying timer.</span></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1auto__reset__event_html"><div class="ttname"><a href="classxtd_1_1threading_1_1auto__reset__event.html">xtd::threading::auto_reset_event</a></div><div class="ttdoc">Represents a thread synchronization event that, when signaled, resets automatically after releasing a...</div><div class="ttdef"><b>Definition</b> auto_reset_event.hpp:36</div></div>
 <div class="ttc" id="aclassxtd_1_1threading_1_1timer_html_a40a6be3e9255cbd751f859efe127923e"><div class="ttname"><a href="classxtd_1_1threading_1_1timer.html#a40a6be3e9255cbd751f859efe127923e">xtd::threading::timer::change</a></div><div class="ttdeci">void change(int32 due_time, int32 period)</div><div class="ttdoc">changes the start time and the interval between method invocations for a timer, using 32-bit signed i...</div></div>
-<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:175</div></div>
+<div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:167</div></div>
 <div class="ttc" id="anamespacextd_1_1threading_html"><div class="ttname"><a href="namespacextd_1_1threading.html">xtd::threading</a></div><div class="ttdoc">The xtd::threading namespace provides classes and interfaces that enable multithreaded programming....</div><div class="ttdef"><b>Definition</b> abandoned_mutex_exception.hpp:11</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
 </div><!-- fragment --> </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>Use a <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9" title="Represents the method that handles calls from a xtd::threading::timer.">xtd::threading::timer_callback</a> delegate to specify the method you want the <a class="el" href="classxtd_1_1threading_1_1timer.html" title="Provides a mechanism for executing a method on a thread pool thread at specified intervals....">xtd::threading::timer</a> to execute. The signature of the <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9" title="Represents the method that handles calls from a xtd::threading::timer.">xtd::threading::timer_callback</a> delegate is: <pre class="fragment">using timer_callback = action&lt;std::any&gt; </pre>. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>Use a <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d" title="Represents the method that handles calls from a xtd::threading::timer.">xtd::threading::timer_callback</a> delegate to specify the method you want the <a class="el" href="classxtd_1_1threading_1_1timer.html" title="Provides a mechanism for executing a method on a thread pool thread at specified intervals....">xtd::threading::timer</a> to execute. The signature of the <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d" title="Represents the method that handles calls from a xtd::threading::timer.">xtd::threading::timer_callback</a> delegate is: <pre class="fragment">using timer_callback = action&lt;const xtd::any_object&amp;&gt; </pre>. </dd>
 <dd>
 The timer delegate is specified when the timer is constructed, and cannot be changed. The method does not execute on the thread that created the timer; it executes on axtd::threading::thread-pool thread supplied by the system. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>xtd includes several timer classes, each of which offers different functionality:<ul>
@@ -221,7 +221,7 @@ The timer delegate is specified when the timer is constructed, and cannot be cha
 <li><a class="el" href="classxtd_1_1forms_1_1timer.html" title="Implements a timer that raises an event at user-defined intervals. This timer is optimized for use in...">xtd::forms::timer</a>, a Windows Forms component that fires an event and executes the code in one or more event sinks at regular intervals. The component has no user interface and is designed for use in a single-threaded environment; it executes on the UI thread. </li>
 </ul>
 </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>When you create a timer, you can specify an amount of time to wait before the first execution of the method (due time), and an amount of time to wait between subsequent executions (period). The <a class="el" href="classxtd_1_1threading_1_1timer.html" title="Provides a mechanism for executing a method on a thread pool thread at specified intervals....">xtd::threading::timer</a> class has the same resolution as the system clock. This means that if the period is less than the resolution of the system clock, the <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9" title="Represents the method that handles calls from a xtd::threading::timer.">xtd::threading::timer_callback</a> delegate will execute at intervals defined by the resolution of the system clock, which is approximately 15 milliseconds on Windows 7 and Windows 8 systems. You can change the due time and period, or disable the timer, by using the xtd::forms::timer::change method. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>When you create a timer, you can specify an amount of time to wait before the first execution of the method (due time), and an amount of time to wait between subsequent executions (period). The <a class="el" href="classxtd_1_1threading_1_1timer.html" title="Provides a mechanism for executing a method on a thread pool thread at specified intervals....">xtd::threading::timer</a> class has the same resolution as the system clock. This means that if the period is less than the resolution of the system clock, the <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d" title="Represents the method that handles calls from a xtd::threading::timer.">xtd::threading::timer_callback</a> delegate will execute at intervals defined by the resolution of the system clock, which is approximately 15 milliseconds on Windows 7 and Windows 8 systems. You can change the due time and period, or disable the timer, by using the xtd::forms::timer::change method. </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>As long as you are using a <a class="el" href="classxtd_1_1threading_1_1timer.html" title="Provides a mechanism for executing a method on a thread pool thread at specified intervals....">xtd::threading::timer</a>, you must keep a reference to it. As with any managed object, a <a class="el" href="classxtd_1_1threading_1_1timer.html" title="Provides a mechanism for executing a method on a thread pool thread at specified intervals....">xtd::threading::timer</a> is subject to garbage collection when there are no references to it. The fact that a <a class="el" href="classxtd_1_1threading_1_1timer.html" title="Provides a mechanism for executing a method on a thread pool thread at specified intervals....">xtd::threading::timer</a> is still active does not prevent it from being collecte </dd>
 <dd>
 The system clock that is used is the same clock used by GetTickCount, which is not affected by changes made with timeBeginPeriod and timeEndPeriod. </dd></dl>
@@ -231,33 +231,33 @@ The system clock that is used is the same clock used by GetTickCount, which is n
 </dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
-<tr class="memitem:af3af2404bbeb759912c79a62e2903e9b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#af3af2404bbeb759912c79a62e2903e9b">timer</a> (const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;callback)</td></tr>
+<tr class="memitem:af3af2404bbeb759912c79a62e2903e9b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#af3af2404bbeb759912c79a62e2903e9b">timer</a> (const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;callback)</td></tr>
 <tr class="memdesc:af3af2404bbeb759912c79a62e2903e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the timer class with an infinite period and an infinite due time, using the newly created timer object as the state object.  <br /></td></tr>
 <tr class="separator:af3af2404bbeb759912c79a62e2903e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23c9caed8b89f658a83e0b6d659ce374"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#a23c9caed8b89f658a83e0b6d659ce374">timer</a> (const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;callback, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> due_time, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> period)</td></tr>
+<tr class="memitem:a23c9caed8b89f658a83e0b6d659ce374"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#a23c9caed8b89f658a83e0b6d659ce374">timer</a> (const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;callback, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> due_time, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> period)</td></tr>
 <tr class="memdesc:a23c9caed8b89f658a83e0b6d659ce374"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the timer class, using a 32-bit signed integer to specify the time interval.  <br /></td></tr>
 <tr class="separator:a23c9caed8b89f658a83e0b6d659ce374"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39a00e8bb93fb402e26127a7dde6ac2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#a39a00e8bb93fb402e26127a7dde6ac2e">timer</a> (const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;callback, <a class="el" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> due_time, <a class="el" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> period)</td></tr>
+<tr class="memitem:a39a00e8bb93fb402e26127a7dde6ac2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#a39a00e8bb93fb402e26127a7dde6ac2e">timer</a> (const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;callback, <a class="el" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> due_time, <a class="el" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> period)</td></tr>
 <tr class="memdesc:a39a00e8bb93fb402e26127a7dde6ac2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the timer class, using a 64-bit signed integer to specify the time interval.  <br /></td></tr>
 <tr class="separator:a39a00e8bb93fb402e26127a7dde6ac2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9c06be5e3bc61853be72ff7fdb1e077"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#ae9c06be5e3bc61853be72ff7fdb1e077">timer</a> (const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;callback, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;due_time, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;period)</td></tr>
+<tr class="memitem:ae9c06be5e3bc61853be72ff7fdb1e077"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#ae9c06be5e3bc61853be72ff7fdb1e077">timer</a> (const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;callback, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;due_time, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;period)</td></tr>
 <tr class="memdesc:ae9c06be5e3bc61853be72ff7fdb1e077"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the timer class, using a TimaSpan to specify the time interval.  <br /></td></tr>
 <tr class="separator:ae9c06be5e3bc61853be72ff7fdb1e077"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9f5d05e34a6a84dc2790fcec20b114c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#aa9f5d05e34a6a84dc2790fcec20b114c">timer</a> (const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;callback, <a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> due_time, <a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> period)</td></tr>
+<tr class="memitem:aa9f5d05e34a6a84dc2790fcec20b114c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#aa9f5d05e34a6a84dc2790fcec20b114c">timer</a> (const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;callback, <a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> due_time, <a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> period)</td></tr>
 <tr class="memdesc:aa9f5d05e34a6a84dc2790fcec20b114c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the timer class, using a 32-bit unsigned integer to specify the time interval.  <br /></td></tr>
 <tr class="separator:aa9f5d05e34a6a84dc2790fcec20b114c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae99f12ab078602084eb4006f67342ded"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#ae99f12ab078602084eb4006f67342ded">timer</a> (const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;callback, std::any state, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> due_time, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> period)</td></tr>
-<tr class="memdesc:ae99f12ab078602084eb4006f67342ded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the timer class, using a 32-bit signed integer to specify the time interval.  <br /></td></tr>
-<tr class="separator:ae99f12ab078602084eb4006f67342ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77586981a0597cd3c61395bce794042a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#a77586981a0597cd3c61395bce794042a">timer</a> (const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;callback, std::any state, <a class="el" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> due_time, <a class="el" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> period)</td></tr>
-<tr class="memdesc:a77586981a0597cd3c61395bce794042a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the timer class, using a 64-bit signed integer to specify the time interval.  <br /></td></tr>
-<tr class="separator:a77586981a0597cd3c61395bce794042a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94eee7b7fbef86b422fff814e429a1e8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#a94eee7b7fbef86b422fff814e429a1e8">timer</a> (const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;callback, std::any state, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;due_time, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;period)</td></tr>
-<tr class="memdesc:a94eee7b7fbef86b422fff814e429a1e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the timer class, using a TimaSpan to specify the time interval.  <br /></td></tr>
-<tr class="separator:a94eee7b7fbef86b422fff814e429a1e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42f93e31695141e1c6f65d938adbf990"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#a42f93e31695141e1c6f65d938adbf990">timer</a> (const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;callback, std::any state, <a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> due_time, <a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> period)</td></tr>
-<tr class="memdesc:a42f93e31695141e1c6f65d938adbf990"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the timer class, using a 32-bit unsigned integer to specify the time interval.  <br /></td></tr>
-<tr class="separator:a42f93e31695141e1c6f65d938adbf990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95f89a55642573a87bd526722b5aa8a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#a95f89a55642573a87bd526722b5aa8a7">timer</a> (const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> due_time, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> period)</td></tr>
+<tr class="memdesc:a95f89a55642573a87bd526722b5aa8a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the timer class, using a 32-bit signed integer to specify the time interval.  <br /></td></tr>
+<tr class="separator:a95f89a55642573a87bd526722b5aa8a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e212e4ea9cdc5c2c69f5bf911756328"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#a6e212e4ea9cdc5c2c69f5bf911756328">timer</a> (const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state, <a class="el" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> due_time, <a class="el" href="group__types.html#ga2f2888f55e58cac4c07eb490db7868c4">int64</a> period)</td></tr>
+<tr class="memdesc:a6e212e4ea9cdc5c2c69f5bf911756328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the timer class, using a 64-bit signed integer to specify the time interval.  <br /></td></tr>
+<tr class="separator:a6e212e4ea9cdc5c2c69f5bf911756328"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accb36157b1cc81cf8e56e1afa0f9e220"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#accb36157b1cc81cf8e56e1afa0f9e220">timer</a> (const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;due_time, const <a class="el" href="classxtd_1_1time__span.html">time_span</a> &amp;period)</td></tr>
+<tr class="memdesc:accb36157b1cc81cf8e56e1afa0f9e220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the timer class, using a TimaSpan to specify the time interval.  <br /></td></tr>
+<tr class="separator:accb36157b1cc81cf8e56e1afa0f9e220"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e63d8a02c669c2bcceed8594c0335a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#a9e63d8a02c669c2bcceed8594c0335a2">timer</a> (const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state, <a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> due_time, <a class="el" href="group__types.html#ga41c5d8b5d999ac5a2ff06fe57f38d5f5">uint32</a> period)</td></tr>
+<tr class="memdesc:a9e63d8a02c669c2bcceed8594c0335a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the timer class, using a 32-bit unsigned integer to specify the time interval.  <br /></td></tr>
+<tr class="separator:a9e63d8a02c669c2bcceed8594c0335a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
 <tr class="memitem:a40a6be3e9255cbd751f859efe127923e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1threading_1_1timer.html#a40a6be3e9255cbd751f859efe127923e">change</a> (<a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> due_time, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> period)</td></tr>
@@ -321,7 +321,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">xtd::threading::timer::timer </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;&#160;</td>
           <td class="paramname"><em>callback</em></td><td>)</td>
           <td></td>
         </tr>
@@ -361,7 +361,7 @@ This constructor specifies an infinite due time before the first callback and an
         <tr>
           <td class="memname">xtd::threading::timer::timer </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;&#160;</td>
           <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
@@ -413,7 +413,7 @@ This constructor specifies an infinite due time before the first callback and an
         <tr>
           <td class="memname">xtd::threading::timer::timer </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;&#160;</td>
           <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
@@ -465,7 +465,7 @@ This constructor specifies an infinite due time before the first callback and an
         <tr>
           <td class="memname">xtd::threading::timer::timer </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;&#160;</td>
           <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
@@ -517,7 +517,7 @@ This constructor specifies an infinite due time before the first callback and an
         <tr>
           <td class="memname">xtd::threading::timer::timer </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;&#160;</td>
           <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
@@ -560,8 +560,8 @@ This constructor specifies an infinite due time before the first callback and an
 
 </div>
 </div>
-<a id="ae99f12ab078602084eb4006f67342ded" name="ae99f12ab078602084eb4006f67342ded"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae99f12ab078602084eb4006f67342ded">&#9670;&#160;</a></span>timer() <span class="overload">[6/9]</span></h2>
+<a id="a95f89a55642573a87bd526722b5aa8a7" name="a95f89a55642573a87bd526722b5aa8a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95f89a55642573a87bd526722b5aa8a7">&#9670;&#160;</a></span>timer() <span class="overload">[6/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -569,13 +569,13 @@ This constructor specifies an infinite due time before the first callback and an
         <tr>
           <td class="memname">xtd::threading::timer::timer </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;&#160;</td>
           <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::any&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;&#160;</td>
           <td class="paramname"><em>state</em>, </td>
         </tr>
         <tr>
@@ -619,8 +619,8 @@ This constructor specifies an infinite due time before the first callback and an
 
 </div>
 </div>
-<a id="a77586981a0597cd3c61395bce794042a" name="a77586981a0597cd3c61395bce794042a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a77586981a0597cd3c61395bce794042a">&#9670;&#160;</a></span>timer() <span class="overload">[7/9]</span></h2>
+<a id="a6e212e4ea9cdc5c2c69f5bf911756328" name="a6e212e4ea9cdc5c2c69f5bf911756328"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e212e4ea9cdc5c2c69f5bf911756328">&#9670;&#160;</a></span>timer() <span class="overload">[7/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -628,13 +628,13 @@ This constructor specifies an infinite due time before the first callback and an
         <tr>
           <td class="memname">xtd::threading::timer::timer </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;&#160;</td>
           <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::any&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;&#160;</td>
           <td class="paramname"><em>state</em>, </td>
         </tr>
         <tr>
@@ -678,8 +678,8 @@ This constructor specifies an infinite due time before the first callback and an
 
 </div>
 </div>
-<a id="a94eee7b7fbef86b422fff814e429a1e8" name="a94eee7b7fbef86b422fff814e429a1e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94eee7b7fbef86b422fff814e429a1e8">&#9670;&#160;</a></span>timer() <span class="overload">[8/9]</span></h2>
+<a id="accb36157b1cc81cf8e56e1afa0f9e220" name="accb36157b1cc81cf8e56e1afa0f9e220"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accb36157b1cc81cf8e56e1afa0f9e220">&#9670;&#160;</a></span>timer() <span class="overload">[8/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -687,13 +687,13 @@ This constructor specifies an infinite due time before the first callback and an
         <tr>
           <td class="memname">xtd::threading::timer::timer </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;&#160;</td>
           <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::any&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;&#160;</td>
           <td class="paramname"><em>state</em>, </td>
         </tr>
         <tr>
@@ -737,8 +737,8 @@ This constructor specifies an infinite due time before the first callback and an
 
 </div>
 </div>
-<a id="a42f93e31695141e1c6f65d938adbf990" name="a42f93e31695141e1c6f65d938adbf990"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a42f93e31695141e1c6f65d938adbf990">&#9670;&#160;</a></span>timer() <span class="overload">[9/9]</span></h2>
+<a id="a9e63d8a02c669c2bcceed8594c0335a2" name="a9e63d8a02c669c2bcceed8594c0335a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e63d8a02c669c2bcceed8594c0335a2">&#9670;&#160;</a></span>timer() <span class="overload">[9/9]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -746,13 +746,13 @@ This constructor specifies an infinite due time before the first callback and an
         <tr>
           <td class="memname">xtd::threading::timer::timer </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga9c5796114b4b8c6296894196f9898bc9">timer_callback</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__xtd__core.html#ga938e83d584101f65c93ea1dbd274720d">timer_callback</a> &amp;&#160;</td>
           <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::any&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;&#160;</td>
           <td class="paramname"><em>state</em>, </td>
         </tr>
         <tr>
@@ -998,7 +998,7 @@ This constructor specifies an infinite due time before the first callback and an
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 25 2025 20:05:43 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Apr 8 2025 13:25:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
