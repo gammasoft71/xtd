@@ -460,7 +460,7 @@ namespace xtd {
       /// | xtd-io                    | The icon for xtd io logo.          |
       /// | xtd-strings               | The icon for xtd strings logo.     |
       /// @remarks See [Icon Naming Specification](https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html) for more information.
-      static std::map<xtd::string, std::vector<xtd::string>> context_names() noexcept {return drawing::system_images::context_names();}
+      static std::map<xtd::string, xtd::array<xtd::string>> context_names() noexcept {return drawing::system_images::context_names();}
       /// @brief Gets the image names.
       /// @return An xtd::string array that contains the image names.
       /// @par The following table represents Standard Action Icons :
