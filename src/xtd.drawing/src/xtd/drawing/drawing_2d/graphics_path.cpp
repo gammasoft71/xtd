@@ -3,6 +3,7 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/graphics_path>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/collections/generic/list>
 #include <xtd/argument_exception>
 #include <xtd/as>
 #include <xtd/is>
@@ -78,64 +79,64 @@ void graphics_path::add_bezier(float x1, float y1, float x2, float y2, float x3,
   native::graphics_path::add_bezier(handle(), x1, y1, x2, y2, x3, y3, x4, y4);
 }
 
-void graphics_path::add_beziers(const std::vector<xtd::drawing::point>& points) {
-  auto points_f = std::vector<point_f> {};
+void graphics_path::add_beziers(const array<xtd::drawing::point>& points) {
+  auto points_f = list<point_f> {};
   std::for_each(points.begin(), points.end(), [&](auto point) {points_f.push_back(point_f(point));});
-  add_beziers(points_f);
+  add_beziers(points_f.to_array());
 }
 
-void graphics_path::add_beziers(const std::vector<xtd::drawing::point_f>& points) {
-  auto pair_points = std::vector<key_value_pair<float, float>> {};
+void graphics_path::add_beziers(const array<xtd::drawing::point_f>& points) {
+  auto pair_points = list<key_value_pair<float, float>> {};
   std::for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x, point.y);});
-  native::graphics_path::add_beziers(handle(), pair_points);
+  native::graphics_path::add_beziers(handle(), pair_points.to_array());
 }
 
-void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point>& points) {
+void graphics_path::add_closed_curve(const array<xtd::drawing::point>& points) {
   add_closed_curve(points, 0.0f);
 }
 
-void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point_f>& points) {
+void graphics_path::add_closed_curve(const array<xtd::drawing::point_f>& points) {
   add_closed_curve(points, 0.0f);
 }
 
-void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point>& points, float tension) {
-  auto points_f = std::vector<point_f> {};
+void graphics_path::add_closed_curve(const array<xtd::drawing::point>& points, float tension) {
+  auto points_f = list<point_f> {};
   std::for_each(points.begin(), points.end(), [&](auto point) {points_f.push_back(point_f(point));});
-  add_closed_curve(points_f, tension);
+  add_closed_curve(points_f.to_array(), tension);
 }
 
-void graphics_path::add_closed_curve(const std::vector<xtd::drawing::point_f>& points, float tension) {
-  auto pair_points = std::vector<key_value_pair<float, float>> {};
+void graphics_path::add_closed_curve(const array<xtd::drawing::point_f>& points, float tension) {
+  auto pair_points = list<key_value_pair<float, float>> {};
   std::for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x, point.y);});
-  native::graphics_path::add_closed_curve(handle(), pair_points, tension);
+  native::graphics_path::add_closed_curve(handle(), pair_points.to_array(), tension);
 }
 
-void graphics_path::add_curve(const std::vector<xtd::drawing::point>& points) {
+void graphics_path::add_curve(const array<xtd::drawing::point>& points) {
   add_curve(points, 0, points.size(), 0.5f);
 }
 
-void graphics_path::add_curve(const std::vector<xtd::drawing::point_f>& points) {
+void graphics_path::add_curve(const array<xtd::drawing::point_f>& points) {
   add_curve(points, 0, points.size(), 0.5f);
 }
 
-void graphics_path::add_curve(const std::vector<xtd::drawing::point>& points, float tension) {
+void graphics_path::add_curve(const array<xtd::drawing::point>& points, float tension) {
   add_curve(points, 0, points.size(), tension);
 }
 
-void graphics_path::add_curve(const std::vector<xtd::drawing::point_f>& points, float tension) {
+void graphics_path::add_curve(const array<xtd::drawing::point_f>& points, float tension) {
   add_curve(points, 0, points.size(), tension);
 }
 
-void graphics_path::add_curve(const std::vector<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension) {
-  auto points_f = std::vector<point_f> {};
+void graphics_path::add_curve(const array<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension) {
+  auto points_f = list<point_f> {};
   std::for_each(points.begin(), points.end(), [&](auto point) {points_f.push_back(point_f(point));});
-  add_curve(points_f, offset, number_of_segments, tension);
+  add_curve(points_f.to_array(), offset, number_of_segments, tension);
 }
 
-void graphics_path::add_curve(const std::vector<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension) {
-  auto pair_points = std::vector<key_value_pair<float, float>> {};
+void graphics_path::add_curve(const array<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension) {
+  auto pair_points = list<key_value_pair<float, float>> {};
   std::for_each(points.begin(), points.end(), [&](auto point) {pair_points.emplace_back(point.x, point.y);});
-  native::graphics_path::add_curve(handle(), pair_points, offset, number_of_segments, tension);
+  native::graphics_path::add_curve(handle(), pair_points.to_array(), offset, number_of_segments, tension);
 }
 
 void graphics_path::add_ellipse(const xtd::drawing::rectangle& rect) {
@@ -170,13 +171,13 @@ void graphics_path::add_line(float x1, float y1, float x2, float y2) {
   native::graphics_path::add_line(handle(), x1, y1, x2, y2);
 }
 
-void graphics_path::add_lines(const std::vector<xtd::drawing::point>& points) {
+void graphics_path::add_lines(const array<xtd::drawing::point>& points) {
   if (points.size() < 2) throw_helper::throws(exception_case::argument);
   for (auto index = 0_z; index < points.size() - 1; ++index)
     add_line(points[index], points[index + 1]);
 }
 
-void graphics_path::add_lines(const std::vector<xtd::drawing::point_f>& points) {
+void graphics_path::add_lines(const array<xtd::drawing::point_f>& points) {
   if (points.size() < 2) throw_helper::throws(exception_case::argument);
   for (auto index = 0_z; index < points.size() - 1; ++index)
     add_line(points[index], points[index + 1]);
@@ -202,14 +203,14 @@ void graphics_path::add_pie(float x, float y, float width, float height, float s
   native::graphics_path::add_pie(handle(), x, y, width, height, start_angle, sweep_angle);
 }
 
-void graphics_path::add_polygon(const std::vector<xtd::drawing::point>& points) {
+void graphics_path::add_polygon(const array<xtd::drawing::point>& points) {
   if (points.size() < 2) throw_helper::throws(exception_case::argument);
   for (auto index = 0_z; index < points.size() - 1; ++index)
     add_line(points[index], points[index + 1]);
   if (points[points.size() - 1] != points[0]) add_line(points[points.size() - 1], points[0]);
 }
 
-void graphics_path::add_polygon(const std::vector<xtd::drawing::point_f>& points) {
+void graphics_path::add_polygon(const array<xtd::drawing::point_f>& points) {
   if (points.size() < 2) throw_helper::throws(exception_case::argument);
   for (auto index = 0_z; index < points.size() - 1; ++index)
     add_line(points[index], points[index + 1]);
@@ -231,11 +232,11 @@ void graphics_path::add_rectangle(float x, float y, float width, float height) {
   native::graphics_path::add_rectangle(handle(), x, y, width, height);
 }
 
-void graphics_path::add_rectangles(const std::vector<xtd::drawing::rectangle>& rects) {
+void graphics_path::add_rectangles(const array<xtd::drawing::rectangle>& rects) {
   for (auto rect : rects)
     add_rectangle(rect);
 }
-void graphics_path::add_rectangles(const std::vector<xtd::drawing::rectangle_f>& rects) {
+void graphics_path::add_rectangles(const array<xtd::drawing::rectangle_f>& rects) {
   for (auto rect : rects)
     add_rectangle(rect);
 }
