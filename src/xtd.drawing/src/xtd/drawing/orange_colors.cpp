@@ -23,12 +23,12 @@ color orange_colors::orange() noexcept {
   return color::from_known_color(known_color::orange);
 }
 
-const std::vector<color>& orange_colors::get_colors() noexcept {
-  static auto colors = std::vector {orange_colors::orange_red(), orange_colors::tomato(), orange_colors::dark_orange(), orange_colors::coral(), orange_colors::orange()};
+const array<color>& orange_colors::get_colors() noexcept {
+  static auto colors = array {orange_colors::orange_red(), orange_colors::tomato(), orange_colors::dark_orange(), orange_colors::coral(), orange_colors::orange()};
   return colors;
 }
 
-const std::vector<string>& orange_colors::get_color_names() noexcept {
-  static auto color_names = std::vector {orange_colors::orange_red().name(), orange_colors::tomato().name(), orange_colors::dark_orange().name(), orange_colors::coral().name(), orange_colors::orange().name()};
+const array<string>& orange_colors::get_color_names() noexcept {
+  static auto color_names = array {orange_colors::orange_red().name(), orange_colors::tomato().name(), orange_colors::dark_orange().name(), orange_colors::coral().name(), orange_colors::orange().name()};
   return color_names;
 }
