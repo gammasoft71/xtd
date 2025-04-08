@@ -2,11 +2,13 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/brush>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/collections/generic/list>
 #include <xtd/argument_exception>
 #include <xtd/as>
 #include <tuple>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
 using namespace xtd::helpers;
@@ -32,16 +34,16 @@ conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point& center
 conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point_f& center, const xtd::drawing::color& color1, const xtd::drawing::color& color2, float angle) : conical_gradient_brush(center, {color1, color2}, angle) {
 }
 
-conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point& center, const std::vector<xtd::drawing::color>& conical_colors) : conical_gradient_brush(point_f(as<float>(center.x), as<float>(center.y)), conical_colors) {
+conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point& center, const array<xtd::drawing::color>& conical_colors) : conical_gradient_brush(point_f(as<float>(center.x), as<float>(center.y)), conical_colors) {
 }
 
-conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point_f& center, const std::vector<xtd::drawing::color>& conical_colors) : conical_gradient_brush(center, conical_colors, .0f) {
+conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point_f& center, const array<xtd::drawing::color>& conical_colors) : conical_gradient_brush(center, conical_colors, .0f) {
 }
 
-conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point& center, const std::vector<xtd::drawing::color>& conical_colors,  float angle) : conical_gradient_brush(point_f(as<float>(center.x), as<float>(center.y)), conical_colors, angle) {
+conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point& center, const array<xtd::drawing::color>& conical_colors,  float angle) : conical_gradient_brush(point_f(as<float>(center.x), as<float>(center.y)), conical_colors, angle) {
 }
 
-conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point_f& center, const std::vector<xtd::drawing::color>& conical_colors, float angle) : data_(xtd::new_sptr<data>()) {
+conical_gradient_brush::conical_gradient_brush(const xtd::drawing::point_f& center, const array<xtd::drawing::color>& conical_colors, float angle) : data_(xtd::new_sptr<data>()) {
   if (conical_colors.size() < 2) throw_helper::throws(exception_case::argument);
   
   data_->center_point = center;
@@ -103,9 +105,9 @@ conical_gradient_brush& conical_gradient_brush::center_point(const point& value)
 }
 
 void conical_gradient_brush::recreate_handle() {
-  auto colors = std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> {};
+  auto colors = list<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> {};
   std::for_each(data_->conical_colors.begin(), data_->conical_colors.end(), [&](auto color) {colors.emplace_back(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second);});
-  native::brush::conical_gradient(handle(), as<int32>(data_->center_point.x), as<int32>(data_->center_point.y), colors, data_->angle);
+  native::brush::conical_gradient(handle(), as<int32>(data_->center_point.x), as<int32>(data_->center_point.y), colors.to_array(), data_->angle);
 }
 
 conical_gradient_brush::conical_gradient_brush(const conical_gradient_brush& value) : brush(value), data_(value.data_) {
