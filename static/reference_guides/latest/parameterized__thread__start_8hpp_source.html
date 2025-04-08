@@ -89,20 +89,21 @@ $(function() {
 <a href="parameterized__thread__start_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;../delegate.hpp&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;any&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;../any_object.hpp&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>  <span class="keyword">namespace </span>threading {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="group__delegates.html#gaef1d8a5037248cd2d47fffd6beb9b4df">   29</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="group__delegates.html#gaef1d8a5037248cd2d47fffd6beb9b4df">parameterized_thread_start</a> = xtd::delegate&lt;void(std::any obj)&gt;;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="group__delegates.html#ga7091acd8d650cd2bcb8f18c3155bacf3">   29</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="group__delegates.html#ga7091acd8d650cd2bcb8f18c3155bacf3">parameterized_thread_start</a> = xtd::delegate&lt;void(<span class="keyword">const</span> <a class="code hl_class" href="classxtd_1_1any__object.html">xtd::any_object</a>&amp; obj)&gt;;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  }</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
-<div class="ttc" id="agroup__delegates_html_gaef1d8a5037248cd2d47fffd6beb9b4df"><div class="ttname"><a href="group__delegates.html#gaef1d8a5037248cd2d47fffd6beb9b4df">xtd::threading::parameterized_thread_start</a></div><div class="ttdeci">xtd::delegate&lt; void(std::any obj)&gt; parameterized_thread_start</div><div class="ttdoc">Represents the method that executes on a xtd::threading::thread.</div><div class="ttdef"><b>Definition</b> parameterized_thread_start.hpp:29</div></div>
+<div class="ttc" id="aclassxtd_1_1any__object_html"><div class="ttname"><a href="classxtd_1_1any__object.html">xtd::any_object</a></div><div class="ttdoc">Represent a polymorphic wrapper capable of holding any type.</div><div class="ttdef"><b>Definition</b> any_object.hpp:29</div></div>
+<div class="ttc" id="agroup__delegates_html_ga7091acd8d650cd2bcb8f18c3155bacf3"><div class="ttname"><a href="group__delegates.html#ga7091acd8d650cd2bcb8f18c3155bacf3">xtd::threading::parameterized_thread_start</a></div><div class="ttdeci">xtd::delegate&lt; void(const xtd::any_object &amp;obj)&gt; parameterized_thread_start</div><div class="ttdoc">Represents the method that executes on a xtd::threading::thread.</div><div class="ttdef"><b>Definition</b> parameterized_thread_start.hpp:29</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> xtd_about_box.hpp:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 20 2025 20:07:40 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Apr 8 2025 21:49:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

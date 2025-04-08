@@ -105,7 +105,7 @@ Inheritance diagram for xtd::net::sockets::udp_client:</div>
 <div class="textblock"><p>Provides User Datagram Protocol (UDP) network services. </p>
 <div class="fragment"><div class="line"><span class="keyword">class </span>coore_export_ <a class="code hl_class" href="classxtd_1_1net_1_1sockets_1_1udp__client.html">udp_client</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a></div>
 <div class="ttc" id="aclassxtd_1_1net_1_1sockets_1_1udp__client_html"><div class="ttname"><a href="classxtd_1_1net_1_1sockets_1_1udp__client.html">xtd::net::sockets::udp_client</a></div><div class="ttdoc">Provides User Datagram Protocol (UDP) network services.</div><div class="ttdef"><b>Definition</b> udp_client.hpp:45</div></div>
-<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:44</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:43</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/net/sockets/udp_client&gt;</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -315,18 +315,18 @@ You can use any of the send methods provided in the <a class="el" href="classxtd
 <tr class="memitem:af92abc56447d8c97b794e203ea8324da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#af92abc56447d8c97b794e203ea8324da">allow_nat_traversal</a> (bool allowed)</td></tr>
 <tr class="memdesc:af92abc56447d8c97b794e203ea8324da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables Network Address Translation (NAT) traversal on a <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a> instance.  <br /></td></tr>
 <tr class="separator:af92abc56447d8c97b794e203ea8324da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a1bf0fb49a853e1b28b5c7aa1735e56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a1a1bf0fb49a853e1b28b5c7aa1735e56">begin_receive</a> (<a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c">xtd::async_callback</a> callback, const std::any &amp;state)</td></tr>
-<tr class="memdesc:a1a1bf0fb49a853e1b28b5c7aa1735e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::udp_client::receives a datagram from a remote host asynchronously.  <br /></td></tr>
-<tr class="separator:a1a1bf0fb49a853e1b28b5c7aa1735e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a35a3be0513896b4ce70705657f064bde"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a35a3be0513896b4ce70705657f064bde">begin_send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;hostname, <a class="el" href="group__types.html#gad8523b51611f0fac793f78f16b155b21">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>, <a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c">xtd::async_callback</a> callback, const std::any &amp;state)</td></tr>
-<tr class="memdesc:a35a3be0513896b4ce70705657f064bde"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is specified by the host name and port number.  <br /></td></tr>
-<tr class="separator:a35a3be0513896b4ce70705657f064bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa23e4ed8fdf0dd97101556fba217046f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#aa23e4ed8fdf0dd97101556fba217046f">begin_send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes, const <a class="el" href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a> &amp;<a class="el" href="classxtd_1_1net_1_1end__point.html">end_point</a>, <a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c">xtd::async_callback</a> callback, const std::any &amp;state)</td></tr>
-<tr class="memdesc:aa23e4ed8fdf0dd97101556fba217046f"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is specified by a EndPoint.  <br /></td></tr>
-<tr class="separator:aa23e4ed8fdf0dd97101556fba217046f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1a94da35fec83c2a15a00bd766d72d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#ae1a94da35fec83c2a15a00bd766d72d7">begin_send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes, <a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c">xtd::async_callback</a> callback, const std::any &amp;state)</td></tr>
-<tr class="memdesc:ae1a94da35fec83c2a15a00bd766d72d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::udp_client::sends a datagram to a remote host asynchronously. The destination was specified previously by a call to <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a038e83af92c9d492aac9151a9b1c8f1d" title="Establishes a default remote host using the specified network endpoint.">xtd::net::sockets::udp_client::connect</a>.  <br /></td></tr>
-<tr class="separator:ae1a94da35fec83c2a15a00bd766d72d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae517a82acc70422bfcb0371847220a29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#ae517a82acc70422bfcb0371847220a29">begin_receive</a> (<a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state)</td></tr>
+<tr class="memdesc:ae517a82acc70422bfcb0371847220a29"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::udp_client::receives a datagram from a remote host asynchronously.  <br /></td></tr>
+<tr class="separator:ae517a82acc70422bfcb0371847220a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a278745b99e2123a77242e487964deecd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a278745b99e2123a77242e487964deecd">begin_send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;hostname, <a class="el" href="group__types.html#gad8523b51611f0fac793f78f16b155b21">uint16</a> <a class="el" href="group__xtd__core.html#gga20b51d7977f3ffaaca44c6075ad021dba901555fb06e346cb065ceb9808dcfc25">port</a>, <a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state)</td></tr>
+<tr class="memdesc:a278745b99e2123a77242e487964deecd"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is specified by the host name and port number.  <br /></td></tr>
+<tr class="separator:a278745b99e2123a77242e487964deecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af81fb5ea73fb065b8f4e8011225c82fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#af81fb5ea73fb065b8f4e8011225c82fd">begin_send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes, const <a class="el" href="classxtd_1_1net_1_1ip__end__point.html">xtd::net::ip_end_point</a> &amp;<a class="el" href="classxtd_1_1net_1_1end__point.html">end_point</a>, <a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state)</td></tr>
+<tr class="memdesc:af81fb5ea73fb065b8f4e8011225c82fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is specified by a EndPoint.  <br /></td></tr>
+<tr class="separator:af81fb5ea73fb065b8f4e8011225c82fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad61921667144668b7128085509784246"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; <a class="el" href="classxtd_1_1iasync__result.html">xtd::iasync_result</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#ad61921667144668b7128085509784246">begin_send</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;<a class="el" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598afbf7c787e5a1bb8634a7639a596aa786">dgram</a>, size_t bytes, <a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c">xtd::async_callback</a> callback, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;state)</td></tr>
+<tr class="memdesc:ad61921667144668b7128085509784246"><td class="mdescLeft">&#160;</td><td class="mdescRight">xtd::net::sockets::udp_client::sends a datagram to a remote host asynchronously. The destination was specified previously by a call to <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a038e83af92c9d492aac9151a9b1c8f1d" title="Establishes a default remote host using the specified network endpoint.">xtd::net::sockets::udp_client::connect</a>.  <br /></td></tr>
+<tr class="separator:ad61921667144668b7128085509784246"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d4681a3698c643b8105d632666be17f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a8d4681a3698c643b8105d632666be17f">close</a> ()</td></tr>
 <tr class="memdesc:a8d4681a3698c643b8105d632666be17f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the UDP connection.  <br /></td></tr>
 <tr class="separator:a8d4681a3698c643b8105d632666be17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1148,8 +1148,8 @@ A Teredo address is an IPv6 address with the prefix of 2001::/32. Teredo address
 
 </div>
 </div>
-<a id="a1a1bf0fb49a853e1b28b5c7aa1735e56" name="a1a1bf0fb49a853e1b28b5c7aa1735e56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a1bf0fb49a853e1b28b5c7aa1735e56">&#9670;&#160;</a></span>begin_receive()</h2>
+<a id="ae517a82acc70422bfcb0371847220a29" name="ae517a82acc70422bfcb0371847220a29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae517a82acc70422bfcb0371847220a29">&#9670;&#160;</a></span>begin_receive()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1163,7 +1163,7 @@ A Teredo address is an IPv6 address with the prefix of 2001::/32. Teredo address
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::any &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;&#160;</td>
           <td class="paramname"><em>state</em>&#160;</td>
         </tr>
         <tr>
@@ -1183,14 +1183,14 @@ A Teredo address is an IPv6 address with the prefix of 2001::/32. Teredo address
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> object that references the asynchronous receive. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The asynchronous <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a1a1bf0fb49a853e1b28b5c7aa1735e56" title="xtd::net::sockets::udp_client::receives a datagram from a remote host asynchronously.">xtd::net::sockets::udp_client::begin_receive</a> operation must be completed by calling the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a6eaed1d06128dd9b281467a221ef19ac" title="Ends a pending asynchronous receive.">xtd::net::sockets::udp_client::end_receive</a> method. Typically, the method is invoked by the callback delegate. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The asynchronous <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#ae517a82acc70422bfcb0371847220a29" title="xtd::net::sockets::udp_client::receives a datagram from a remote host asynchronously.">xtd::net::sockets::udp_client::begin_receive</a> operation must be completed by calling the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a6eaed1d06128dd9b281467a221ef19ac" title="Ends a pending asynchronous receive.">xtd::net::sockets::udp_client::end_receive</a> method. Typically, the method is invoked by the callback delegate. </dd>
 <dd>
 This method does not block until the operation is complete. To block until the operation is complete, use the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a5118f865f1545c96df0e81fd3801862f" title="Returns a UDP datagram that was sent by a remote host.">xtd::net::sockets::udp_client::receive</a> method. </dd></dl>
 
 </div>
 </div>
-<a id="a35a3be0513896b4ce70705657f064bde" name="a35a3be0513896b4ce70705657f064bde"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a35a3be0513896b4ce70705657f064bde">&#9670;&#160;</a></span>begin_send() <span class="overload">[1/3]</span></h2>
+<a id="a278745b99e2123a77242e487964deecd" name="a278745b99e2123a77242e487964deecd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a278745b99e2123a77242e487964deecd">&#9670;&#160;</a></span>begin_send() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1228,7 +1228,7 @@ This method does not block until the operation is complete. To block until the o
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::any &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;&#160;</td>
           <td class="paramname"><em>state</em>&#160;</td>
         </tr>
         <tr>
@@ -1252,14 +1252,14 @@ This method does not block until the operation is complete. To block until the o
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> object that references the asynchronous send. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The asynchronous <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a35a3be0513896b4ce70705657f064bde" title="xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is s...">xtd::net::sockets::udp_client::begin_send</a> operation must be completed by calling the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#aa939e4c4a6cb15ac3e03b8b2e686fe5d" title="Ends a pending asynchronous send.">xtd::net::sockets::udp_client::end_send</a> method. Typically, the method is invoked by the callback delegate. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The asynchronous <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a278745b99e2123a77242e487964deecd" title="xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is s...">xtd::net::sockets::udp_client::begin_send</a> operation must be completed by calling the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#aa939e4c4a6cb15ac3e03b8b2e686fe5d" title="Ends a pending asynchronous send.">xtd::net::sockets::udp_client::end_send</a> method. Typically, the method is invoked by the callback delegate. </dd>
 <dd>
 This method does not block until the operation is complete. To block until the operation is complete, use one of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a66d13f267d920a8fb3084a8385db1dd2" title="xtd::net::sockets::udp_client::sends a UDP datagram to a specified port on a specified remote host.">xtd::net::sockets::udp_client::send</a> method overloads. </dd></dl>
 
 </div>
 </div>
-<a id="aa23e4ed8fdf0dd97101556fba217046f" name="aa23e4ed8fdf0dd97101556fba217046f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa23e4ed8fdf0dd97101556fba217046f">&#9670;&#160;</a></span>begin_send() <span class="overload">[2/3]</span></h2>
+<a id="af81fb5ea73fb065b8f4e8011225c82fd" name="af81fb5ea73fb065b8f4e8011225c82fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af81fb5ea73fb065b8f4e8011225c82fd">&#9670;&#160;</a></span>begin_send() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1291,7 +1291,7 @@ This method does not block until the operation is complete. To block until the o
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::any &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;&#160;</td>
           <td class="paramname"><em>state</em>&#160;</td>
         </tr>
         <tr>
@@ -1314,14 +1314,14 @@ This method does not block until the operation is complete. To block until the o
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> object that references the asynchronous send. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The asynchronous <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a35a3be0513896b4ce70705657f064bde" title="xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is s...">xtd::net::sockets::udp_client::begin_send</a> operation must be completed by calling the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#aa939e4c4a6cb15ac3e03b8b2e686fe5d" title="Ends a pending asynchronous send.">xtd::net::sockets::udp_client::end_send</a> method. Typically, the method is invoked by the callback delegate. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The asynchronous <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a278745b99e2123a77242e487964deecd" title="xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is s...">xtd::net::sockets::udp_client::begin_send</a> operation must be completed by calling the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#aa939e4c4a6cb15ac3e03b8b2e686fe5d" title="Ends a pending asynchronous send.">xtd::net::sockets::udp_client::end_send</a> method. Typically, the method is invoked by the callback delegate. </dd>
 <dd>
 This method does not block until the operation is complete. To block until the operation is complete, use one of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a66d13f267d920a8fb3084a8385db1dd2" title="xtd::net::sockets::udp_client::sends a UDP datagram to a specified port on a specified remote host.">xtd::net::sockets::udp_client::send</a> method overloads. </dd></dl>
 
 </div>
 </div>
-<a id="ae1a94da35fec83c2a15a00bd766d72d7" name="ae1a94da35fec83c2a15a00bd766d72d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1a94da35fec83c2a15a00bd766d72d7">&#9670;&#160;</a></span>begin_send() <span class="overload">[3/3]</span></h2>
+<a id="ad61921667144668b7128085509784246" name="ad61921667144668b7128085509784246"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad61921667144668b7128085509784246">&#9670;&#160;</a></span>begin_send() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1347,7 +1347,7 @@ This method does not block until the operation is complete. To block until the o
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::any &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;&#160;</td>
           <td class="paramname"><em>state</em>&#160;</td>
         </tr>
         <tr>
@@ -1369,7 +1369,7 @@ This method does not block until the operation is complete. To block until the o
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>An <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> object that references the asynchronous send. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The asynchronous <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a35a3be0513896b4ce70705657f064bde" title="xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is s...">xtd::net::sockets::udp_client::begin_send</a> operation must be completed by calling the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#aa939e4c4a6cb15ac3e03b8b2e686fe5d" title="Ends a pending asynchronous send.">xtd::net::sockets::udp_client::end_send</a> method. Typically, the method is invoked by the callback delegate. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The asynchronous <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a278745b99e2123a77242e487964deecd" title="xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is s...">xtd::net::sockets::udp_client::begin_send</a> operation must be completed by calling the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#aa939e4c4a6cb15ac3e03b8b2e686fe5d" title="Ends a pending asynchronous send.">xtd::net::sockets::udp_client::end_send</a> method. Typically, the method is invoked by the callback delegate. </dd>
 <dd>
 This method does not block until the operation completes. To block until the operation is complete, use one of the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a66d13f267d920a8fb3084a8385db1dd2" title="xtd::net::sockets::udp_client::sends a UDP datagram to a specified port on a specified remote host.">xtd::net::sockets::udp_client::send</a> method overloads. </dd></dl>
 
@@ -1671,7 +1671,7 @@ If you receive a <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__excep
 <dl class="section return"><dt>Returns</dt><dd>If successful, an array of bytes that contains datagram data. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">argument_exception</a></td><td>asyncResult was not returned by a call to the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a1a1bf0fb49a853e1b28b5c7aa1735e56" title="xtd::net::sockets::udp_client::receives a datagram from a remote host asynchronously.">xtd::net::sockets::udp_client::begin_receive</a> method. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">argument_exception</a></td><td>asyncResult was not returned by a call to the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#ae517a82acc70422bfcb0371847220a29" title="xtd::net::sockets::udp_client::receives a datagram from a remote host asynchronously.">xtd::net::sockets::udp_client::begin_receive</a> method. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a></td><td>An error occurred when attempting to access the underlying socket. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> has been closed. </td></tr>
   </table>
@@ -1703,14 +1703,14 @@ To perform this operation synchronously, use the <a class="el" href="classxtd_1_
 <p>Ends a pending asynchronous send. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">async_result</td><td>An <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> object returned by a call to <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a35a3be0513896b4ce70705657f064bde" title="xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is s...">xtd::net::sockets::udp_client::begin_send</a>. </td></tr>
+    <tr><td class="paramname">async_result</td><td>An <a class="el" href="classxtd_1_1iasync__result.html" title="Represents the status of an asynchronous operation.">xtd::iasync_result</a> object returned by a call to <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a278745b99e2123a77242e487964deecd" title="xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is s...">xtd::net::sockets::udp_client::begin_send</a>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>If successful, the number of bytes sent to the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html" title="Provides User Datagram Protocol (UDP) network services.">xtd::net::sockets::udp_client</a>. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">argument_exception</a></td><td>asyncResult was not returned by a call to the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a35a3be0513896b4ce70705657f064bde" title="xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is s...">xtd::net::sockets::udp_client::begin_send</a> method. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">argument_exception</a></td><td>asyncResult was not returned by a call to the <a class="el" href="classxtd_1_1net_1_1sockets_1_1udp__client.html#a278745b99e2123a77242e487964deecd" title="xtd::net::sockets::udp_client::sends a datagram to a destination asynchronously. The destination is s...">xtd::net::sockets::udp_client::begin_send</a> method. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1net_1_1sockets_1_1socket__exception.html" title="The exception that is thrown when a socket error occurs.">xtd::net::sockets::socket_exception</a></td><td>An error occurred when attempting to access the underlying socket. </td></tr>
     <tr><td class="paramname"><a class="el" href="classxtd_1_1object__closed__exception.html" title="The exception that is thrown when one of the arguments provided to a method is not valid.">xtd::object_closed_exception</a></td><td>The underlying <a class="el" href="classxtd_1_1net_1_1sockets_1_1socket.html" title="Implements the Berkeley sockets interface.">xtd::net::sockets::socket</a> has been closed. </td></tr>
   </table>
@@ -2283,7 +2283,7 @@ If you want to send datagrams to a different remote host, you must call the <a c
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 20 2025 20:07:55 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Apr 8 2025 21:49:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

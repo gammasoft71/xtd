@@ -112,7 +112,7 @@ Inheritance diagram for xtd::diagnostics::event_type_filter:</div>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>One of several different types of filters can be assigned to a trace listener through the xtd::diagnostics::trace_listener::filter property to provide a layer of screening beyond that provided by the <a class="el" href="classxtd_1_1diagnostics_1_1trace__switch.html" title="Provides a multilevel switch to control tracing and debug output without recompiling your code.">xtd::diagnostics::trace_switch</a>. The filter can be used to control the event types that are produced by the listener. </dd>
 <dd>
-This class filters events based on the value of the <a class="el" href="classxtd_1_1diagnostics_1_1event__type__filter.html#ae12253c975908009a185257d1c95c8b7" title="Gets the event type of the messages to trace.">xtd::diagnostics::event_type_filter::event_type</a> property. This property can be set by code to specify the event type of messages that should be traced by the listener. The value of the property indicates the threshold at which to begin tracing. Event types at and above the specified level are traced. The <a class="el" href="classxtd_1_1diagnostics_1_1event__type__filter.html#a8664645fec5148cdc5eb8ab8f7f8adc1" title="Determines whether the trace listener should trace the event.">xtd::diagnostics::event_type_filter::should_trace</a> method, called by listeners to determine if an event should be traced, uses the value of the <a class="el" href="classxtd_1_1diagnostics_1_1event__type__filter.html#ae12253c975908009a185257d1c95c8b7" title="Gets the event type of the messages to trace.">xtd::diagnostics::event_type_filter::event_type</a> property. </dd></dl>
+This class filters events based on the value of the <a class="el" href="classxtd_1_1diagnostics_1_1event__type__filter.html#ae12253c975908009a185257d1c95c8b7" title="Gets the event type of the messages to trace.">xtd::diagnostics::event_type_filter::event_type</a> property. This property can be set by code to specify the event type of messages that should be traced by the listener. The value of the property indicates the threshold at which to begin tracing. Event types at and above the specified level are traced. The <a class="el" href="classxtd_1_1diagnostics_1_1event__type__filter.html#a72bf1e3e807f76c7af7467766e401471" title="Determines whether the trace listener should trace the event.">xtd::diagnostics::event_type_filter::should_trace</a> method, called by listeners to determine if an event should be traced, uses the value of the <a class="el" href="classxtd_1_1diagnostics_1_1event__type__filter.html#ae12253c975908009a185257d1c95c8b7" title="Gets the event type of the messages to trace.">xtd::diagnostics::event_type_filter::event_type</a> property. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:af72666f4d50da0df8e440228d6727894"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1event__type__filter.html#af72666f4d50da0df8e440228d6727894">event_type_filter</a> (<a class="el" href="group__xtd__core.html#gaa67a4b789cb787af85a8a1337af56f99">xtd::diagnostics::source_levels</a> level)</td></tr>
@@ -128,9 +128,9 @@ This class filters events based on the value of the <a class="el" href="classxtd
 <tr class="separator:af8c0c3ac3b63167276efb3abf0d27f36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a8664645fec5148cdc5eb8ab8f7f8adc1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1event__type__filter.html#a8664645fec5148cdc5eb8ab8f7f8adc1">should_trace</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1trace__event__cache.html">xtd::diagnostics::trace_event_cache</a> &amp;cache, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;source, <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> <a class="el" href="classxtd_1_1diagnostics_1_1event__type__filter.html#ae12253c975908009a185257d1c95c8b7">event_type</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> id, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;message, std::any data1, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &gt; &amp;data_array) noexcept override</td></tr>
-<tr class="memdesc:a8664645fec5148cdc5eb8ab8f7f8adc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the trace listener should trace the event.  <br /></td></tr>
-<tr class="separator:a8664645fec5148cdc5eb8ab8f7f8adc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72bf1e3e807f76c7af7467766e401471"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1event__type__filter.html#a72bf1e3e807f76c7af7467766e401471">should_trace</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1trace__event__cache.html">xtd::diagnostics::trace_event_cache</a> &amp;cache, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;source, <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> <a class="el" href="classxtd_1_1diagnostics_1_1event__type__filter.html#ae12253c975908009a185257d1c95c8b7">event_type</a>, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> id, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;message, <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> data1, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &gt; &amp;data_array) noexcept override</td></tr>
+<tr class="memdesc:a72bf1e3e807f76c7af7467766e401471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether the trace listener should trace the event.  <br /></td></tr>
+<tr class="separator:a72bf1e3e807f76c7af7467766e401471"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -171,9 +171,9 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:abd082a2294319ad7271e3ed9eaccc319 inherit pro_methods_classxtd_1_1diagnostics_1_1trace__filter"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1trace__filter.html#abd082a2294319ad7271e3ed9eaccc319">should_trace</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1trace__event__cache.html">xtd::diagnostics::trace_event_cache</a> &amp;cache, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;source, <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> event_type, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> id, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;message) noexcept</td></tr>
 <tr class="memdesc:abd082a2294319ad7271e3ed9eaccc319 inherit pro_methods_classxtd_1_1diagnostics_1_1trace__filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">determines whether the trace listener should trace the event.  <br /></td></tr>
 <tr class="separator:abd082a2294319ad7271e3ed9eaccc319 inherit pro_methods_classxtd_1_1diagnostics_1_1trace__filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a074de1fc08d25c5b58027bd5c8a2cb inherit pro_methods_classxtd_1_1diagnostics_1_1trace__filter"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1trace__filter.html#a2a074de1fc08d25c5b58027bd5c8a2cb">should_trace</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1trace__event__cache.html">xtd::diagnostics::trace_event_cache</a> &amp;cache, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;source, <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> event_type, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> id, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;message, std::any data1) noexcept</td></tr>
-<tr class="memdesc:a2a074de1fc08d25c5b58027bd5c8a2cb inherit pro_methods_classxtd_1_1diagnostics_1_1trace__filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">determines whether the trace listener should trace the event.  <br /></td></tr>
-<tr class="separator:a2a074de1fc08d25c5b58027bd5c8a2cb inherit pro_methods_classxtd_1_1diagnostics_1_1trace__filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81eebaffe5cedbc31622452c648354d0 inherit pro_methods_classxtd_1_1diagnostics_1_1trace__filter"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1diagnostics_1_1trace__filter.html#a81eebaffe5cedbc31622452c648354d0">should_trace</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1trace__event__cache.html">xtd::diagnostics::trace_event_cache</a> &amp;cache, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;source, <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> event_type, <a class="el" href="group__types.html#ga205462e259a4eca1545511085c2c350e">int32</a> id, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;message, <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> data1) noexcept</td></tr>
+<tr class="memdesc:a81eebaffe5cedbc31622452c648354d0 inherit pro_methods_classxtd_1_1diagnostics_1_1trace__filter"><td class="mdescLeft">&#160;</td><td class="mdescRight">determines whether the trace listener should trace the event.  <br /></td></tr>
+<tr class="separator:a81eebaffe5cedbc31622452c648354d0 inherit pro_methods_classxtd_1_1diagnostics_1_1trace__filter"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classxtd_1_1abstract__object"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classxtd_1_1abstract__object')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classxtd_1_1abstract__object.html">xtd::abstract_object</a></td></tr>
 <tr class="memitem:ad7a701628e47b725c0bc15400085d714 inherit pro_methods_classxtd_1_1abstract__object"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1abstract__object.html#ad7a701628e47b725c0bc15400085d714">abstract_object</a> ()=default</td></tr>
 <tr class="memdesc:ad7a701628e47b725c0bc15400085d714 inherit pro_methods_classxtd_1_1abstract__object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1abstract__object.html" title="Represent an abstract class.">xtd::abstract_object</a> class.  <br /></td></tr>
@@ -279,8 +279,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a8664645fec5148cdc5eb8ab8f7f8adc1" name="a8664645fec5148cdc5eb8ab8f7f8adc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8664645fec5148cdc5eb8ab8f7f8adc1">&#9670;&#160;</a></span>should_trace()</h2>
+<a id="a72bf1e3e807f76c7af7467766e401471" name="a72bf1e3e807f76c7af7467766e401471"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72bf1e3e807f76c7af7467766e401471">&#9670;&#160;</a></span>should_trace()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -321,7 +321,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::any&#160;</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a>&#160;</td>
           <td class="paramname"><em>data1</em>, </td>
         </tr>
         <tr>
@@ -358,7 +358,7 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>If the value of the event_type parameter is greater than or equal to the value of the <a class="el" href="classxtd_1_1diagnostics_1_1event__type__filter.html#ae12253c975908009a185257d1c95c8b7" title="Gets the event type of the messages to trace.">xtd::diagnostics::event_type_filter::event_type</a> property, the method returns <code>true</code>. </dd></dl>
 
-<p>Implements <a class="el" href="classxtd_1_1diagnostics_1_1trace__filter.html#aa24ea3e1767a01f97d9fc1113b3b46d1">xtd::diagnostics::trace_filter</a>.</p>
+<p>Implements <a class="el" href="classxtd_1_1diagnostics_1_1trace__filter.html#a6e622a612b02a8c6cf00eb5e093c0eb5">xtd::diagnostics::trace_filter</a>.</p>
 
 </div>
 </div>
@@ -369,7 +369,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 20 2025 20:07:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Apr 8 2025 21:49:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

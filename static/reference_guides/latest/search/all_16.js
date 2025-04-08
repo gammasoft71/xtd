@@ -28,7 +28,7 @@ var searchData=
   ['variation_5fselector_5f16_25',['variation_selector_16',['../classxtd_1_1forms_1_1emoticons.html#a4976e0a193d07d8ac922a6d2e3ff09c8',1,'xtd::forms::emoticons']]],
   ['vector_5flist_26',['vector_list',['../group__collections.html#ga3c07efce71e0899524aa31dfd0431817',1,'xtd::collections']]],
   ['vector_5flist_2ehpp_27',['vector_list.hpp',['../vector__list_8hpp.html',1,'']]],
-  ['vector_5ftransform_5fpoints_28',['vector_transform_points',['../classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html#a3342d39649ac088f584d1a7eb5f9bf2b',1,'xtd::drawing::drawing_2d::matrix']]],
+  ['vector_5ftransform_5fpoints_28',['vector_transform_points',['../classxtd_1_1drawing_1_1drawing__2d_1_1matrix.html#a27bd09d3c9f1482cf3a2bec4aa9e7076',1,'xtd::drawing::drawing_2d::matrix']]],
   ['venezuela_29',['venezuela',['../classxtd_1_1forms_1_1countries.html#a997221d45a59fc6e4a89bf3450a1c6de',1,'xtd::forms::countries']]],
   ['verb_30',['verb',['../classxtd_1_1diagnostics_1_1process__start__info.html#af67ca7d1abde98d1805454b69d48cb7b',1,'xtd::diagnostics::process_start_info::verb() const noexcept'],['../classxtd_1_1diagnostics_1_1process__start__info.html#acfc55854fa19919530f0b5468777783a',1,'xtd::diagnostics::process_start_info::verb(const xtd::string &amp;value) noexcept']]],
   ['verbose_31',['verbose',['../group__xtd__core.html#ggaa67a4b789cb787af85a8a1337af56f99a2c7aea4237e25b4f8ee3b0bf77d6fed0',1,'xtd::diagnostics::verbose'],['../group__xtd__core.html#ggaa4259447827076a90f74415bf11af9b9a2c7aea4237e25b4f8ee3b0bf77d6fed0',1,'xtd::diagnostics::verbose'],['../group__xtd__core.html#ggaa64ce56a2107bb87f1af598dcc14155ca2c7aea4237e25b4f8ee3b0bf77d6fed0',1,'xtd::diagnostics::verbose']]],

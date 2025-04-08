@@ -148,7 +148,7 @@ class xtd::delegate&lt; result_t(arguments_t...)&gt;</div><p>Represents a delega
 <div class="line"><span class="comment">// Goodbye, World</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
 <div class="ttc" id="aclassxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4_html_a48e7f8820ffa576ecef7111f8b3d83e0"><div class="ttname"><a href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">xtd::delegate&lt; result_t(arguments_t...)&gt;::delegate</a></div><div class="ttdeci">delegate()=default</div><div class="ttdoc">Initializes an empty delegate.</div></div>
-<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:44</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:43</div></div>
 <div class="ttc" id="aclassxtd_1_1object_html_ad2cab851376bb6ca085b567bf5da0f5f"><div class="ttname"><a href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">xtd::object::object</a></div><div class="ttdeci">object()=default</div><div class="ttdoc">Create a new instance of the ultimate base class object.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">xtd::console_key::s</a></div><div class="ttdeci">@ s</div><div class="ttdoc">The S key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a8fa14cdd754f91cc6554c9e71929cce7">xtd::console_key::f</a></div><div class="ttdeci">@ f</div><div class="ttdoc">The F key.</div></div>
@@ -157,11 +157,17 @@ class xtd::delegate&lt; result_t(arguments_t...)&gt;</div><p>Represents a delega
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Aliases</h2></td></tr>
 <tr class="memitem:a0519c93d63e33630da52254043a7e7ab"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a0519c93d63e33630da52254043a7e7ab">no_arguments_function_t</a> = std::function&lt; result_t()&gt;</td></tr>
-<tr class="memdesc:a0519c93d63e33630da52254043a7e7ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">no_arguments_function_t pointer type  <br /></td></tr>
+<tr class="memdesc:a0519c93d63e33630da52254043a7e7ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents no arguments function type.  <br /></td></tr>
 <tr class="separator:a0519c93d63e33630da52254043a7e7ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6835638fe4ae28e749abc960dd9b962f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a6835638fe4ae28e749abc960dd9b962f">function_t</a> = std::function&lt; result_t(arguments_t...)&gt;</td></tr>
-<tr class="memdesc:a6835638fe4ae28e749abc960dd9b962f"><td class="mdescLeft">&#160;</td><td class="mdescRight">function_t pointer type  <br /></td></tr>
+<tr class="memdesc:a6835638fe4ae28e749abc960dd9b962f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents function type.  <br /></td></tr>
 <tr class="separator:a6835638fe4ae28e749abc960dd9b962f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3e1cb5f7c93b7a72983c21e66ca7cab"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#aa3e1cb5f7c93b7a72983c21e66ca7cab">no_arguments_function_collection</a> = std::vector&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a0519c93d63e33630da52254043a7e7ab">no_arguments_function_t</a> &gt;</td></tr>
+<tr class="memdesc:aa3e1cb5f7c93b7a72983c21e66ca7cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">function_t Represents the no arguments function collection type.  <br /></td></tr>
+<tr class="separator:aa3e1cb5f7c93b7a72983c21e66ca7cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14dbec5f80633a30612411d4773eea39"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a14dbec5f80633a30612411d4773eea39">function_collection</a> = std::vector&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a6835638fe4ae28e749abc960dd9b962f">function_t</a> &gt;</td></tr>
+<tr class="memdesc:a14dbec5f80633a30612411d4773eea39"><td class="mdescLeft">&#160;</td><td class="mdescRight">function_t Represents the function collection type.  <br /></td></tr>
+<tr class="separator:a14dbec5f80633a30612411d4773eea39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a48e7f8820ffa576ecef7111f8b3d83e0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a> ()=default</td></tr>
@@ -180,12 +186,12 @@ class xtd::delegate&lt; result_t(arguments_t...)&gt;</div><p>Represents a delega
 <tr class="separator:a84f3b57113109df1f935825790f0c818"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:a6178fa751a1a4eeb0407a8ce728ea11f"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a0519c93d63e33630da52254043a7e7ab">no_arguments_function_t</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a6178fa751a1a4eeb0407a8ce728ea11f">no_arguments_functions</a> () const</td></tr>
-<tr class="memdesc:a6178fa751a1a4eeb0407a8ce728ea11f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the no arguments delegates array.  <br /></td></tr>
-<tr class="separator:a6178fa751a1a4eeb0407a8ce728ea11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21fc495dd84b76058328eb17d2b67c0d"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a6835638fe4ae28e749abc960dd9b962f">function_t</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a21fc495dd84b76058328eb17d2b67c0d">functions</a> () const</td></tr>
-<tr class="memdesc:a21fc495dd84b76058328eb17d2b67c0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the delegates array.  <br /></td></tr>
-<tr class="separator:a21fc495dd84b76058328eb17d2b67c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af414ebf352911421be2073c56222a51f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#aa3e1cb5f7c93b7a72983c21e66ca7cab">no_arguments_function_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#af414ebf352911421be2073c56222a51f">no_arguments_functions</a> () const</td></tr>
+<tr class="memdesc:af414ebf352911421be2073c56222a51f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the no arguments delegates array.  <br /></td></tr>
+<tr class="separator:af414ebf352911421be2073c56222a51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab26e99eb08cc4b1a72ee6a287aa9c38a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a14dbec5f80633a30612411d4773eea39">function_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#ab26e99eb08cc4b1a72ee6a287aa9c38a">functions</a> () const</td></tr>
+<tr class="memdesc:ab26e99eb08cc4b1a72ee6a287aa9c38a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the delegates array.  <br /></td></tr>
+<tr class="separator:ab26e99eb08cc4b1a72ee6a287aa9c38a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5e2d22f04dcca8fee5c14950cf36cd2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#aa5e2d22f04dcca8fee5c14950cf36cd2">is_empty</a> () const noexcept</td></tr>
 <tr class="memdesc:aa5e2d22f04dcca8fee5c14950cf36cd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return if the delegate is empty.  <br /></td></tr>
 <tr class="separator:aa5e2d22f04dcca8fee5c14950cf36cd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,21 +200,21 @@ class xtd::delegate&lt; result_t(arguments_t...)&gt;</div><p>Represents a delega
 <tr class="separator:aa3824d2eef562a51fb0ef59fc9f7dbdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a34a138490117bd2e0be35f2dd6d2dd68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__core.html#ga1bc34012935a93e10b5dba765c8d0d5a">async_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a34a138490117bd2e0be35f2dd6d2dd68">begin_invoke</a> (arguments_t... arguments)</td></tr>
-<tr class="memdesc:a34a138490117bd2e0be35f2dd6d2dd68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.  <br /></td></tr>
-<tr class="separator:a34a138490117bd2e0be35f2dd6d2dd68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae432301fc362cfc152f6926eb52e3eab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__core.html#ga1bc34012935a93e10b5dba765c8d0d5a">async_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#ae432301fc362cfc152f6926eb52e3eab">begin_invoke</a> (<a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c">xtd::async_callback</a> <a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c">async_callback</a>, arguments_t... arguments)</td></tr>
-<tr class="memdesc:ae432301fc362cfc152f6926eb52e3eab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.  <br /></td></tr>
-<tr class="separator:ae432301fc362cfc152f6926eb52e3eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32a24f759740da46a04e01cca7f4e04c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__core.html#ga1bc34012935a93e10b5dba765c8d0d5a">async_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a32a24f759740da46a04e01cca7f4e04c">begin_invoke</a> (<a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c">xtd::async_callback</a> <a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c">async_callback</a>, std::any async_state, arguments_t... arguments)</td></tr>
-<tr class="memdesc:a32a24f759740da46a04e01cca7f4e04c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.  <br /></td></tr>
-<tr class="separator:a32a24f759740da46a04e01cca7f4e04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5178272e87c9fe8b62f9c02db0fce500"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__core.html#ga1bc34012935a93e10b5dba765c8d0d5a">async_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a5178272e87c9fe8b62f9c02db0fce500">begin_invoke</a> (arguments_t &amp;&amp;... arguments)</td></tr>
+<tr class="memdesc:a5178272e87c9fe8b62f9c02db0fce500"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.  <br /></td></tr>
+<tr class="separator:a5178272e87c9fe8b62f9c02db0fce500"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac165304f83cd6191bd7b274700f29e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__core.html#ga1bc34012935a93e10b5dba765c8d0d5a">async_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#aac165304f83cd6191bd7b274700f29e2">begin_invoke</a> (<a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c">xtd::async_callback</a> <a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c">async_callback</a>, arguments_t &amp;&amp;... arguments)</td></tr>
+<tr class="memdesc:aac165304f83cd6191bd7b274700f29e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.  <br /></td></tr>
+<tr class="separator:aac165304f83cd6191bd7b274700f29e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b2be9da517e8bd8350bb66c606926a2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__xtd__core.html#ga1bc34012935a93e10b5dba765c8d0d5a">async_result</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a2b2be9da517e8bd8350bb66c606926a2">begin_invoke</a> (<a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c">xtd::async_callback</a> <a class="el" href="group__delegates.html#ga9e35fea98d243e9dfeed6a8dd0aa2a6c">async_callback</a>, const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;async_state, arguments_t &amp;&amp;... arguments)</td></tr>
+<tr class="memdesc:a2b2be9da517e8bd8350bb66c606926a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the method represented by the current delegate asynchronously on the thread that the control's underlying handle was created on.  <br /></td></tr>
+<tr class="separator:a2b2be9da517e8bd8350bb66c606926a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a3567395acb85e56450ad762573babd"><td class="memItemLeft" align="right" valign="top">result_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a3a3567395acb85e56450ad762573babd">end_invoke</a> (<a class="el" href="group__xtd__core.html#ga1bc34012935a93e10b5dba765c8d0d5a">async_result</a> async)</td></tr>
 <tr class="memdesc:a3a3567395acb85e56450ad762573babd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the return value of the asynchronous operation represented by the async_result_invoke passed.  <br /></td></tr>
 <tr class="separator:a3a3567395acb85e56450ad762573babd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39bfec9ec7906ba41149be12fe24f36e"><td class="memItemLeft" align="right" valign="top">result_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a39bfec9ec7906ba41149be12fe24f36e">invoke</a> (arguments_t... arguments) const</td></tr>
-<tr class="memdesc:a39bfec9ec7906ba41149be12fe24f36e"><td class="mdescLeft">&#160;</td><td class="mdescRight">invokes the method represented by the current delegate.  <br /></td></tr>
-<tr class="separator:a39bfec9ec7906ba41149be12fe24f36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2de032f8a3e28e5ef395a8a2ca2042a"><td class="memItemLeft" align="right" valign="top">result_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#ab2de032f8a3e28e5ef395a8a2ca2042a">invoke</a> (arguments_t &amp;&amp;... arguments) const</td></tr>
+<tr class="memdesc:ab2de032f8a3e28e5ef395a8a2ca2042a"><td class="mdescLeft">&#160;</td><td class="mdescRight">invokes the method represented by the current delegate.  <br /></td></tr>
+<tr class="separator:ab2de032f8a3e28e5ef395a8a2ca2042a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af266cb56c51ab0006ff8a5d500b41117"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#af266cb56c51ab0006ff8a5d500b41117">equals</a> (const <a class="el" href="classxtd_1_1object.html">object</a> &amp;obj) const noexcept override</td></tr>
 <tr class="memdesc:af266cb56c51ab0006ff8a5d500b41117"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether this instance and another specified delegateType object have the same value.  <br /></td></tr>
 <tr class="separator:af266cb56c51ab0006ff8a5d500b41117"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -222,9 +228,9 @@ class xtd::delegate&lt; result_t(arguments_t...)&gt;</div><p>Represents a delega
 <tr class="separator:aa48aee5822f192f608e40418aae421dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
-<tr class="memitem:a3bbb743368bac7edb5f23c72fdd6664c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a3bbb743368bac7edb5f23c72fdd6664c">combine</a> (const std::vector&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a> &gt; &amp;delegates) noexcept</td></tr>
-<tr class="memdesc:a3bbb743368bac7edb5f23c72fdd6664c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the invocation lists of an array of delegates.  <br /></td></tr>
-<tr class="separator:a3bbb743368bac7edb5f23c72fdd6664c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9cab0d87e2c2b6b132fc087783c87cf"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#ac9cab0d87e2c2b6b132fc087783c87cf">combine</a> (const <a class="el" href="classxtd_1_1array.html">array</a>&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a> &gt; &amp;delegates) noexcept</td></tr>
+<tr class="memdesc:ac9cab0d87e2c2b6b132fc087783c87cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the invocation lists of an array of delegates.  <br /></td></tr>
+<tr class="separator:ac9cab0d87e2c2b6b132fc087783c87cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd46fdc5692b9a4a902d27a2e976eeb5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#acd46fdc5692b9a4a902d27a2e976eeb5">combine</a> (const <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a0cc175b9c0f1b6a831c399e269772661">a</a>, const <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a> &amp;<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a92eb5ffee6ae2fec3ad71c777531578f">b</a>) noexcept</td></tr>
 <tr class="memdesc:acd46fdc5692b9a4a902d27a2e976eeb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatenates the invocation lists of two delegates.  <br /></td></tr>
 <tr class="separator:acd46fdc5692b9a4a902d27a2e976eeb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -283,7 +289,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>no_arguments_function_t pointer type </p>
+<p>Represents no arguments function type. </p>
 
 </div>
 </div>
@@ -301,7 +307,43 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>function_t pointer type </p>
+<p>Represents function type. </p>
+
+</div>
+</div>
+<a id="aa3e1cb5f7c93b7a72983c21e66ca7cab" name="aa3e1cb5f7c93b7a72983c21e66ca7cab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3e1cb5f7c93b7a72983c21e66ca7cab">&#9670;&#160;</a></span>no_arguments_function_collection</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class result_t , class ... arguments_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using xtd::delegate&lt; result_t(arguments_t...)&gt;::no_arguments_function_collection =  std::vector&lt;<a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a0519c93d63e33630da52254043a7e7ab">no_arguments_function_t</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>function_t Represents the no arguments function collection type. </p>
+
+</div>
+</div>
+<a id="a14dbec5f80633a30612411d4773eea39" name="a14dbec5f80633a30612411d4773eea39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14dbec5f80633a30612411d4773eea39">&#9670;&#160;</a></span>function_collection</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class result_t , class ... arguments_t&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using xtd::delegate&lt; result_t(arguments_t...)&gt;::function_collection =  std::vector&lt;<a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a6835638fe4ae28e749abc960dd9b962f">function_t</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>function_t Represents the function collection type. </p>
 
 </div>
 </div>
@@ -470,8 +512,8 @@ template&lt;class object1_t , class object2_t &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6178fa751a1a4eeb0407a8ce728ea11f" name="a6178fa751a1a4eeb0407a8ce728ea11f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6178fa751a1a4eeb0407a8ce728ea11f">&#9670;&#160;</a></span>no_arguments_functions()</h2>
+<a id="af414ebf352911421be2073c56222a51f" name="af414ebf352911421be2073c56222a51f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af414ebf352911421be2073c56222a51f">&#9670;&#160;</a></span>no_arguments_functions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -482,7 +524,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a0519c93d63e33630da52254043a7e7ab">no_arguments_function_t</a> &gt; &amp; xtd::delegate&lt; result_t(arguments_t...)&gt;::no_arguments_functions </td>
+          <td class="memname">const <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#aa3e1cb5f7c93b7a72983c21e66ca7cab">no_arguments_function_collection</a> &amp; xtd::delegate&lt; result_t(arguments_t...)&gt;::no_arguments_functions </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -500,8 +542,8 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
 
 </div>
 </div>
-<a id="a21fc495dd84b76058328eb17d2b67c0d" name="a21fc495dd84b76058328eb17d2b67c0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21fc495dd84b76058328eb17d2b67c0d">&#9670;&#160;</a></span>functions()</h2>
+<a id="ab26e99eb08cc4b1a72ee6a287aa9c38a" name="ab26e99eb08cc4b1a72ee6a287aa9c38a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab26e99eb08cc4b1a72ee6a287aa9c38a">&#9670;&#160;</a></span>functions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -512,7 +554,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a6835638fe4ae28e749abc960dd9b962f">function_t</a> &gt; &amp; xtd::delegate&lt; result_t(arguments_t...)&gt;::functions </td>
+          <td class="memname">const <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a14dbec5f80633a30612411d4773eea39">function_collection</a> &amp; xtd::delegate&lt; result_t(arguments_t...)&gt;::functions </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -590,8 +632,8 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
 
 </div>
 </div>
-<a id="a34a138490117bd2e0be35f2dd6d2dd68" name="a34a138490117bd2e0be35f2dd6d2dd68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34a138490117bd2e0be35f2dd6d2dd68">&#9670;&#160;</a></span>begin_invoke() <span class="overload">[1/3]</span></h2>
+<a id="a5178272e87c9fe8b62f9c02db0fce500" name="a5178272e87c9fe8b62f9c02db0fce500"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5178272e87c9fe8b62f9c02db0fce500">&#9670;&#160;</a></span>begin_invoke() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -601,7 +643,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="group__xtd__core.html#ga1bc34012935a93e10b5dba765c8d0d5a">async_result</a> xtd::delegate&lt; result_t(arguments_t...)&gt;::begin_invoke </td>
           <td>(</td>
-          <td class="paramtype">arguments_t...&#160;</td>
+          <td class="paramtype">arguments_t &amp;&amp;...&#160;</td>
           <td class="paramname"><em>arguments</em></td><td>)</td>
           <td></td>
         </tr>
@@ -626,7 +668,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&lt;int(<span class="keywordtype">string</span>)&gt; {[](<span class="keywordtype">string</span> name) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&lt;int(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp;)&gt; {[](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;(Thread {}) Hello {}!&quot;</span>, thread::current_thread().managed_thread_id(), name);</div>
 <div class="line">    <span class="keywordflow">return</span> name == <span class="stringliteral">&quot;xtd&quot;</span> ? 42 : 24;</div>
 <div class="line">  }};</div>
@@ -648,8 +690,8 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
 
 </div>
 </div>
-<a id="ae432301fc362cfc152f6926eb52e3eab" name="ae432301fc362cfc152f6926eb52e3eab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae432301fc362cfc152f6926eb52e3eab">&#9670;&#160;</a></span>begin_invoke() <span class="overload">[2/3]</span></h2>
+<a id="aac165304f83cd6191bd7b274700f29e2" name="aac165304f83cd6191bd7b274700f29e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac165304f83cd6191bd7b274700f29e2">&#9670;&#160;</a></span>begin_invoke() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -665,7 +707,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">arguments_t...&#160;</td>
+          <td class="paramtype">arguments_t &amp;&amp;...&#160;</td>
           <td class="paramname"><em>arguments</em>&#160;</td>
         </tr>
         <tr>
@@ -693,7 +735,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&lt;int(<span class="keywordtype">string</span>)&gt; {[](<span class="keywordtype">string</span> name) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&lt;int(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp;)&gt; {[](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;(Thread {}) Hello {}!&quot;</span>, thread::current_thread().managed_thread_id(), name);</div>
 <div class="line">    <span class="keywordflow">return</span> name == <span class="stringliteral">&quot;xtd&quot;</span> ? 42 : 24;</div>
 <div class="line">  }};</div>
@@ -713,8 +755,8 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
 
 </div>
 </div>
-<a id="a32a24f759740da46a04e01cca7f4e04c" name="a32a24f759740da46a04e01cca7f4e04c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32a24f759740da46a04e01cca7f4e04c">&#9670;&#160;</a></span>begin_invoke() <span class="overload">[3/3]</span></h2>
+<a id="a2b2be9da517e8bd8350bb66c606926a2" name="a2b2be9da517e8bd8350bb66c606926a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b2be9da517e8bd8350bb66c606926a2">&#9670;&#160;</a></span>begin_invoke() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -730,13 +772,13 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::any&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;&#160;</td>
           <td class="paramname"><em>async_state</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">arguments_t...&#160;</td>
+          <td class="paramtype">arguments_t &amp;&amp;...&#160;</td>
           <td class="paramname"><em>arguments</em>&#160;</td>
         </tr>
         <tr>
@@ -763,7 +805,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&lt;int(<span class="keywordtype">string</span>)&gt; {[](<span class="keywordtype">string</span> name) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&lt;int(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp;)&gt; {[](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;(Thread {}) Hello {}!&quot;</span>, thread::current_thread().managed_thread_id(), name);</div>
 <div class="line">    <span class="keywordflow">return</span> name == <span class="stringliteral">&quot;xtd&quot;</span> ? 42 : 24;</div>
 <div class="line">  }};</div>
@@ -816,7 +858,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&lt;int(<span class="keywordtype">string</span>)&gt; {[](<span class="keywordtype">string</span> name) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&lt;int(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp;)&gt; {[](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;(Thread {}) Hello {}!&quot;</span>, thread::current_thread().managed_thread_id(), name);</div>
 <div class="line">    <span class="keywordflow">return</span> name == <span class="stringliteral">&quot;xtd&quot;</span> ? 42 : 24;</div>
 <div class="line">  }};</div>
@@ -836,8 +878,8 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
 
 </div>
 </div>
-<a id="a39bfec9ec7906ba41149be12fe24f36e" name="a39bfec9ec7906ba41149be12fe24f36e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a39bfec9ec7906ba41149be12fe24f36e">&#9670;&#160;</a></span>invoke()</h2>
+<a id="ab2de032f8a3e28e5ef395a8a2ca2042a" name="ab2de032f8a3e28e5ef395a8a2ca2042a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2de032f8a3e28e5ef395a8a2ca2042a">&#9670;&#160;</a></span>invoke()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -850,7 +892,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
         <tr>
           <td class="memname">result_t xtd::delegate&lt; result_t(arguments_t...)&gt;::invoke </td>
           <td>(</td>
-          <td class="paramtype">arguments_t...&#160;</td>
+          <td class="paramtype">arguments_t &amp;&amp;...&#160;</td>
           <td class="paramname"><em>arguments</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -878,7 +920,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd_1_1threading.html">xtd::threading</a>;</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&lt;int(<span class="keywordtype">string</span>)&gt; {[](<span class="keywordtype">string</span> name) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <span class="keyword">auto</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a9948c645c094247794f4c7acdbeb2bb6">d1</a> = <a class="code hl_function" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&lt;int(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp;)&gt; {[](<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; name) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line">    <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;(Thread {}) Hello {}!&quot;</span>, thread::current_thread().managed_thread_id(), name);</div>
 <div class="line">    <span class="keywordflow">return</span> name == <span class="stringliteral">&quot;xtd&quot;</span> ? 42 : 24;</div>
 <div class="line">  }};</div>
@@ -974,8 +1016,8 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
 
 </div>
 </div>
-<a id="a3bbb743368bac7edb5f23c72fdd6664c" name="a3bbb743368bac7edb5f23c72fdd6664c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3bbb743368bac7edb5f23c72fdd6664c">&#9670;&#160;</a></span>combine() <span class="overload">[1/2]</span></h2>
+<a id="ac9cab0d87e2c2b6b132fc087783c87cf" name="ac9cab0d87e2c2b6b132fc087783c87cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9cab0d87e2c2b6b132fc087783c87cf">&#9670;&#160;</a></span>combine() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -988,7 +1030,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
         <tr>
           <td class="memname">static <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a> xtd::delegate&lt; result_t(arguments_t...)&gt;::combine </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&lt; result_t(arguments_t...)&gt; &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">array</a>&lt; <a class="el" href="classxtd_1_1delegate_3_01result__t_07arguments__t_8_8_8_08_4.html#a48e7f8820ffa576ecef7111f8b3d83e0">delegate</a>&lt; result_t(arguments_t...)&gt; &gt; &amp;&#160;</td>
           <td class="paramname"><em>delegates</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1205,7 +1247,7 @@ template&lt;class result_t , class ... arguments_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Mar 20 2025 20:07:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Apr 8 2025 21:49:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
