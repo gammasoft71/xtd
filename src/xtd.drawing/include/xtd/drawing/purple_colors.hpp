@@ -5,7 +5,6 @@
 #include "../drawing_export.hpp"
 #include "color.hpp"
 #include <xtd/static>
-#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
