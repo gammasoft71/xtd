@@ -202,7 +202,7 @@ void graphics::draw_beziers(intptr handle, intptr pen, const array<key_value_pai
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_closed_curve(intptr handle, intptr pen, array<key_value_pair<float, float>> points, float tension) {
+void graphics::draw_closed_curve(intptr handle, intptr pen, const array<key_value_pair<float, float>> points, float tension) {
   if (!handle) throw_helper::throws(exception_case::argument);
   graphics_context gc(handle);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
@@ -216,7 +216,7 @@ void graphics::draw_closed_curve(intptr handle, intptr pen, array<key_value_pair
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_curve(intptr handle, intptr pen, array<key_value_pair<float, float>> points, float tension) {
+void graphics::draw_curve(intptr handle, intptr pen, const array<key_value_pair<float, float>> points, float tension) {
   if (!handle) throw_helper::throws(exception_case::argument);
   graphics_context gc(handle);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
@@ -336,7 +336,7 @@ void graphics::draw_rectangle(intptr handle, intptr pen, float x, float y, float
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_rectangles(intptr handle, intptr pen, std::vector<std::tuple<float, float, float, float>>& rects) {
+void graphics::draw_rectangles(intptr handle, intptr pen, const array<std::tuple<float, float, float, float>>& rects) {
   if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.SetBrush(wxNullBrush);
@@ -370,7 +370,7 @@ void graphics::draw_string(intptr handle, const xtd::string& text, intptr font, 
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::fill_closed_curve(intptr handle, intptr brush, array<key_value_pair<float, float>> points, uint32 fill_mode, float tension) {
+void graphics::fill_closed_curve(intptr handle, intptr brush, const array<key_value_pair<float, float>> points, uint32 fill_mode, float tension) {
   /// @todo Using graphics_path when done...
   if (!handle) throw_helper::throws(exception_case::argument);
   graphics_context gc(handle);
@@ -507,7 +507,7 @@ void graphics::fill_rectangle(intptr handle, intptr brush, float x, float y, flo
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::fill_rectangles(intptr handle, intptr brush, std::vector<std::tuple<float, float, float, float>>& rects) {
+void graphics::fill_rectangles(intptr handle, intptr brush, const array<std::tuple<float, float, float, float>>& rects) {
   if (!handle) throw_helper::throws(exception_case::argument);
   for (auto [x, y, width, height] : rects)
     fill_rectangle(handle, brush, x, y, width, height);
