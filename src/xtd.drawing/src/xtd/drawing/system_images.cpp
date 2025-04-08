@@ -23,23 +23,23 @@ image system_images::image_missing(const xtd::drawing::size& size) noexcept {
   return from_name("image-missing", size);
 }
 
-std::vector<string> system_images::contexts() noexcept {
+array<string> system_images::contexts() noexcept {
   return system_images_base::contexts();
 }
 
-std::map<string, std::vector<string>> system_images::context_names() noexcept {
+std::map<string, array<string>> system_images::context_names() noexcept {
   return system_images_base::context_names();
 }
 
-std::vector<string> system_images::names() noexcept {
+array<string> system_images::names() noexcept {
   return system_images_base::names();
 }
 
-std::vector<xtd::string> system_images::names(const xtd::string& context) noexcept {
+array<xtd::string> system_images::names(const xtd::string& context) noexcept {
   return context_names()[context];
 }
 
-std::vector<xtd::drawing::size> system_images::sizes() noexcept {
+array<xtd::drawing::size> system_images::sizes() noexcept {
   return {{16, 16}, {24, 24}, {32, 32}, {48, 48}, {64, 64}, {96, 96}, {128, 128}, {256, 256}, {512, 512}, {1024, 1024}};
 }
 
