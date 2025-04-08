@@ -36,6 +36,8 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
+      /// @brief Initializes a new instance of the xtd::drawing::pen class with xtd::drawing::color::black and width of 1 pixel.
+      pen();
       /// @brief Initializes a new instance of the xtd::drawing::pen class with the specified xtd::drawing::brush.
       /// @param brush A xtd::drawing::brush that determines the fill properties of this xtd::drawing::pen.
       /// @remarks The brush property determines how the xtd::drawing::pen draws lines. Lines are drawn as if they are filled rectangles, with the characteristics of the specified brush.
@@ -219,7 +221,6 @@ namespace xtd {
       /// @}
       
     private:
-      pen();
       void brush_(xtd::uptr<xtd::drawing::brush>&& brush);
       void color_(const xtd::drawing::color& color);
       void create_data();
