@@ -641,7 +641,7 @@ namespace xtd {
       ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
       ///
       ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
-      ///   std::vector<xtd::drawing::known_color> color_matches(15);
+      ///   xtd::array<xtd::drawing::known_color> color_matches(15);
       ///
       ///   // Number of matches found.
       ///   int count = 0;
@@ -696,7 +696,7 @@ namespace xtd {
       ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
       ///
       ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
-      ///   std::vector<xtd::drawing::known_color> color_matches(15);
+      ///   xtd::array<xtd::drawing::known_color> color_matches(15);
       ///
       ///   // Number of matches found.
       ///   int count = 0;
@@ -751,7 +751,7 @@ namespace xtd {
       ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
       ///
       ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
-      ///   std::vector<xtd::drawing::known_color> color_matches(15);
+      ///   xtd::array<xtd::drawing::known_color> color_matches(15);
       ///
       ///   // Number of matches found.
       ///   int count = 0;
@@ -814,7 +814,7 @@ namespace xtd {
       ///   color some_color = color::from_argb(0);
       ///   ///
       ///   // Vector to store known_color values that match the criteria.
-      ///   std::vector<known_color> color_matches;
+      ///   xtd::array<known_color> color_matches;
       ///   ///
       ///   // Iterate through the KnownColor enums to find all corresponding colors
       ///   // that have a nonzero green component and zero-value red component and
@@ -876,7 +876,7 @@ namespace xtd {
       ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
       ///
       ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
-      ///   std::vector<xtd::drawing::known_color> color_matches(15);
+      ///   xtd::array<xtd::drawing::known_color> color_matches(15);
       ///
       ///   // Number of matches found.
       ///   int count = 0;
@@ -1199,7 +1199,7 @@ namespace xtd {
       ///   xtd::drawing::color red_shade = xtd::drawing::color::from_argb(255, 200, 0, 100);
       ///
       ///   // Array to store xtd::drawing::known_color values that match the hue of the redShade color.
-      ///   std::vector<xtd::drawing::known_color> color_matches(15);
+      ///   xtd::array<xtd::drawing::known_color> color_matches(15);
       ///
       ///   // Number of matches found.
       ///   int count = 0;
