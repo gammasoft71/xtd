@@ -189,12 +189,12 @@ All controls that derive from the Control class have a Cursor property. To chang
 <tr class="memitem:af6bdfafe249a3e572ed5c2ba7a771e50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#af6bdfafe249a3e572ed5c2ba7a771e50">size</a> () const noexcept</td></tr>
 <tr class="memdesc:af6bdfafe249a3e572ed5c2ba7a771e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the size of the cursor object.  <br /></td></tr>
 <tr class="separator:af6bdfafe249a3e572ed5c2ba7a771e50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c88b50432be3a65650417fd568ca29c"><td class="memItemLeft" align="right" valign="top">std::any&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#a6c88b50432be3a65650417fd568ca29c">tag</a> () const noexcept</td></tr>
-<tr class="memdesc:a6c88b50432be3a65650417fd568ca29c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the object that contains data about the control.  <br /></td></tr>
-<tr class="separator:a6c88b50432be3a65650417fd568ca29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aefc67192b05c5a3030dde8fdb0f8770b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#aefc67192b05c5a3030dde8fdb0f8770b">tag</a> (std::any tag)</td></tr>
-<tr class="memdesc:aefc67192b05c5a3030dde8fdb0f8770b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the object that contains data about the control.  <br /></td></tr>
-<tr class="separator:aefc67192b05c5a3030dde8fdb0f8770b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd3c699ddf85faa14fbb073a4981bc66"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#acd3c699ddf85faa14fbb073a4981bc66">tag</a> () const noexcept</td></tr>
+<tr class="memdesc:acd3c699ddf85faa14fbb073a4981bc66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the object that contains data about the control.  <br /></td></tr>
+<tr class="separator:acd3c699ddf85faa14fbb073a4981bc66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59f5589874bcb416f27a06898d203f22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#a59f5589874bcb416f27a06898d203f22">tag</a> (<a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> tag)</td></tr>
+<tr class="memdesc:a59f5589874bcb416f27a06898d203f22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the object that contains data about the control.  <br /></td></tr>
+<tr class="separator:a59f5589874bcb416f27a06898d203f22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Methodds</h2></td></tr>
 <tr class="memitem:a9dd42ec26af4fc3f14d563f48498584a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gaa7283e1dd31c385d954467f7ea324451">intptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1cursor.html#a9dd42ec26af4fc3f14d563f48498584a">copy_handle</a> () const</td></tr>
@@ -410,8 +410,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a6c88b50432be3a65650417fd568ca29c" name="a6c88b50432be3a65650417fd568ca29c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c88b50432be3a65650417fd568ca29c">&#9670;&#160;</a></span>tag() <span class="overload">[1/2]</span></h2>
+<a id="acd3c699ddf85faa14fbb073a4981bc66" name="acd3c699ddf85faa14fbb073a4981bc66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd3c699ddf85faa14fbb073a4981bc66">&#9670;&#160;</a></span>tag() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -420,7 +420,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::any xtd::forms::cursor::tag </td>
+          <td class="memname">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp; xtd::forms::cursor::tag </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -434,13 +434,13 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Gets the object that contains data about the control. </p>
-<dl class="section return"><dt>Returns</dt><dd>A std::any that contains data about the control. The default is empty. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> that contains data about the control. The default is empty. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>Any type of class can be assigned to this property. </dd></dl>
 
 </div>
 </div>
-<a id="aefc67192b05c5a3030dde8fdb0f8770b" name="aefc67192b05c5a3030dde8fdb0f8770b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aefc67192b05c5a3030dde8fdb0f8770b">&#9670;&#160;</a></span>tag() <span class="overload">[2/2]</span></h2>
+<a id="a59f5589874bcb416f27a06898d203f22" name="a59f5589874bcb416f27a06898d203f22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59f5589874bcb416f27a06898d203f22">&#9670;&#160;</a></span>tag() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -448,7 +448,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">void xtd::forms::cursor::tag </td>
           <td>(</td>
-          <td class="paramtype">std::any&#160;</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a>&#160;</td>
           <td class="paramname"><em>tag</em></td><td>)</td>
           <td></td>
         </tr>
@@ -458,7 +458,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Sets the object that contains data about the control. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">tag</td><td>A std::any that contains data about the control. The default is empty. </td></tr>
+    <tr><td class="paramname">tag</td><td>A <a class="el" href="classxtd_1_1any__object.html" title="Represent a polymorphic wrapper capable of holding any type.">xtd::any_object</a> that contains data about the control. The default is empty. </td></tr>
   </table>
   </dd>
 </dl>
@@ -917,7 +917,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 25 2025 20:05:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Apr 8 2025 13:25:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

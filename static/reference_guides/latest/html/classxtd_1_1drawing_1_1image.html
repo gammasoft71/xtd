@@ -106,7 +106,7 @@ Inheritance diagram for xtd::drawing::image:</div>
 <div class="fragment"><div class="line"><span class="keyword">class </span><a class="code hl_define" href="group__keywords.html#ga0e59557a60ff5461db679dd209b6d3cd">drawing_export_</a> <a class="code hl_class" href="classxtd_1_1drawing_1_1image.html">image</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1object.html">xtd::object</a>, <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1iequatable.html">xtd::iequatable</a>&lt;image&gt;</div>
 <div class="ttc" id="aclassxtd_1_1drawing_1_1image_html"><div class="ttname"><a href="classxtd_1_1drawing_1_1image.html">xtd::drawing::image</a></div><div class="ttdoc">An abstract base class that provides functionality for the bitmap and metafile descended classes.</div><div class="ttdef"><b>Definition</b> image.hpp:53</div></div>
 <div class="ttc" id="aclassxtd_1_1iequatable_html"><div class="ttname"><a href="classxtd_1_1iequatable.html">xtd::iequatable</a></div><div class="ttdoc">Defines a generalized method that a value type or class implements to create a type-specific method f...</div><div class="ttdef"><b>Definition</b> iequatable.hpp:22</div></div>
-<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:44</div></div>
+<div class="ttc" id="aclassxtd_1_1object_html"><div class="ttname"><a href="classxtd_1_1object.html">xtd::object</a></div><div class="ttdoc">Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....</div><div class="ttdef"><b>Definition</b> object.hpp:43</div></div>
 <div class="ttc" id="agroup__keywords_html_ga0e59557a60ff5461db679dd209b6d3cd"><div class="ttname"><a href="group__keywords.html#ga0e59557a60ff5461db679dd209b6d3cd">drawing_export_</a></div><div class="ttdeci">#define drawing_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> drawing_export.hpp:13</div></div>
 </div><!-- fragment --> <dl class="section user"><dt>Inheritance</dt><dd><a class="el" href="classxtd_1_1object.html" title="Supports all classes in the xtd class hierarchy and provides low-level services to derived classes....">xtd::object</a> → <a class="el" href="classxtd_1_1drawing_1_1image.html" title="An abstract base class that provides functionality for the bitmap and metafile descended classes.">xtd::drawing::image</a> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1drawing.html" title="The xtd::drawing namespace provides access to GDI+ basic graphics functionality. More advanced functi...">xtd::drawing</a> </dd></dl>
@@ -172,12 +172,12 @@ Inheritance diagram for xtd::drawing::image:</div>
 <tr class="memitem:af3dfbcc629a79d01814da6519011ed85"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structxtd_1_1drawing_1_1size.html">drawing::size</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#af3dfbcc629a79d01814da6519011ed85">size</a> () const noexcept</td></tr>
 <tr class="memdesc:af3dfbcc629a79d01814da6519011ed85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the width and height, in pixels, of this image.  <br /></td></tr>
 <tr class="separator:af3dfbcc629a79d01814da6519011ed85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0c5010866064158c4e8f9863fefc6e4"><td class="memItemLeft" align="right" valign="top">const std::any &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#ab0c5010866064158c4e8f9863fefc6e4">tag</a> () const noexcept</td></tr>
-<tr class="memdesc:ab0c5010866064158c4e8f9863fefc6e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an object that provides additional data about the image.  <br /></td></tr>
-<tr class="separator:ab0c5010866064158c4e8f9863fefc6e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f3b246646fbb6e0e1059576f16c2c13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#a7f3b246646fbb6e0e1059576f16c2c13">tag</a> (const std::any &amp;tag) noexcept</td></tr>
-<tr class="memdesc:a7f3b246646fbb6e0e1059576f16c2c13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an object that provides additional data about the image.  <br /></td></tr>
-<tr class="separator:a7f3b246646fbb6e0e1059576f16c2c13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace6b753d1407731a1ff1e663b9413e0b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#ace6b753d1407731a1ff1e663b9413e0b">tag</a> () const noexcept</td></tr>
+<tr class="memdesc:ace6b753d1407731a1ff1e663b9413e0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an object that provides additional data about the image.  <br /></td></tr>
+<tr class="separator:ace6b753d1407731a1ff1e663b9413e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a407f4417deaaf0ca4e40146a04bade2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#a407f4417deaaf0ca4e40146a04bade2e">tag</a> (const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;tag) noexcept</td></tr>
+<tr class="memdesc:a407f4417deaaf0ca4e40146a04bade2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an object that provides additional data about the image.  <br /></td></tr>
+<tr class="separator:a407f4417deaaf0ca4e40146a04bade2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaac26e888be7ba422e4a4af198e7bda4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1drawing_1_1image.html#aaac26e888be7ba422e4a4af198e7bda4">vertical_resolution</a> () const noexcept</td></tr>
 <tr class="memdesc:aaac26e888be7ba422e4a4af198e7bda4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the vertical resolution, in pixels per inch, of this image.  <br /></td></tr>
 <tr class="separator:aaac26e888be7ba422e4a4af198e7bda4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -811,8 +811,8 @@ If the image has no handle, such as an empty image, this method returns nullptr.
 
 </div>
 </div>
-<a id="ab0c5010866064158c4e8f9863fefc6e4" name="ab0c5010866064158c4e8f9863fefc6e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab0c5010866064158c4e8f9863fefc6e4">&#9670;&#160;</a></span>tag() <span class="overload">[1/2]</span></h2>
+<a id="ace6b753d1407731a1ff1e663b9413e0b" name="ace6b753d1407731a1ff1e663b9413e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace6b753d1407731a1ff1e663b9413e0b">&#9670;&#160;</a></span>tag() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -821,7 +821,7 @@ If the image has no handle, such as an empty image, this method returns nullptr.
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::any &amp; xtd::drawing::image::tag </td>
+          <td class="memname">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp; xtd::drawing::image::tag </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -839,8 +839,8 @@ If the image has no handle, such as an empty image, this method returns nullptr.
 
 </div>
 </div>
-<a id="a7f3b246646fbb6e0e1059576f16c2c13" name="a7f3b246646fbb6e0e1059576f16c2c13"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f3b246646fbb6e0e1059576f16c2c13">&#9670;&#160;</a></span>tag() <span class="overload">[2/2]</span></h2>
+<a id="a407f4417deaaf0ca4e40146a04bade2e" name="a407f4417deaaf0ca4e40146a04bade2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a407f4417deaaf0ca4e40146a04bade2e">&#9670;&#160;</a></span>tag() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -851,7 +851,7 @@ If the image has no handle, such as an empty image, this method returns nullptr.
         <tr>
           <td class="memname">void xtd::drawing::image::tag </td>
           <td>(</td>
-          <td class="paramtype">const std::any &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &amp;&#160;</td>
           <td class="paramname"><em>tag</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1769,7 +1769,7 @@ The image must be saved to the stream at an offset of zero. If any additional da
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 25 2025 20:05:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Apr 8 2025 13:25:44 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
