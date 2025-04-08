@@ -120,8 +120,8 @@ list_control& checked_list_box::selected_index(size_t selected_index) {
   return *this;
 }
 
-std::vector<size_t> checked_list_box::selected_indices() const noexcept {
-  return is_handle_created() ? native::checked_list_box::selected_indices(handle()) : std::vector<size_t> {};
+checked_list_box::selected_index_collection checked_list_box::selected_indices() const noexcept {
+  return is_handle_created() ? native::checked_list_box::selected_indices(handle()) : selected_index_collection {};
 }
 
 const checked_list_box::item& checked_list_box::selected_item() const noexcept {
@@ -142,8 +142,8 @@ checked_list_box& checked_list_box::selected_item(const item& selected_item) {
   return *this;
 }
 
-std::vector<checked_list_box::item> checked_list_box::selected_items() const noexcept {
-  auto itms = std::vector<item> {};
+checked_list_box::selected_object_collection checked_list_box::selected_items() const noexcept {
+  auto itms = selected_object_collection {};
   auto indices = selected_indices();
   std::for_each(indices.begin(), indices.end(), [&](size_t index) {itms.push_back(data_->items[index]);});
   return itms;
