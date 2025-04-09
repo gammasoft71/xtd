@@ -3,6 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../forms_export.hpp"
+#include <xtd/collections/generic/list>
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/static>
@@ -48,7 +49,7 @@ namespace xtd {
       /// @brief Initialize a new instance of emoticon class with specified name and codepoints.
       /// @param name A string that represent the name of emoticon
       /// @param codepoints An array of char32 that represent the emoticon.
-      emoticon(const xtd::string& name, const std::vector<char32>& codepoints);
+      emoticon(const xtd::string& name, const xtd::array<char32>& codepoints);
       
       /// @brief Initialize a new instance of emoticon class with specified name and codepoint.
       /// @param name A string that represent the name of emoticon
@@ -61,7 +62,7 @@ namespace xtd {
       
       /// @brief Initialize a new instance of emoticon class with specified codepoints.
       /// @param codepoints An array of char32 that represent the emoticon.
-      explicit emoticon(const std::vector<char32>& codepoints);
+      explicit emoticon(const xtd::array<char32>& codepoints);
       
       /// @brief Initialize a new instance of emoticon class with specified codepoint.
       /// @param codepoints A char32 that represent the emoticon.
@@ -78,7 +79,7 @@ namespace xtd {
       }
       
       template<class type_t>
-      emoticon(const xtd::string& name, const std::vector<type_t>& codepoints) {
+      emoticon(const xtd::string& name, const xtd::array<type_t>& codepoints) {
         create_data();
         name_(name);
         for (auto codepoint : codepoints)
@@ -100,7 +101,7 @@ namespace xtd {
       }
       
       template<class type_t>
-      explicit emoticon(const std::vector<type_t>& codepoints) {
+      explicit emoticon(const xtd::array<type_t>& codepoints) {
         create_data();
         for (auto codepoint : codepoints)
           codepoints_().push_back(static_cast<char32>(codepoint));
@@ -126,7 +127,7 @@ namespace xtd {
       
       /// @brief Gets codepoints of emoticon.
       /// @return An array of char32 that represent the emoticon.
-      const std::vector<char32>& codepoints() const noexcept;
+      const xtd::array<char32>& codepoints() const noexcept;
       /// @}
       
       /// @name Public Methods
@@ -153,8 +154,8 @@ namespace xtd {
     private:
       void create_data();
       void name_(const string& name);
-      std::vector<char32>& codepoints_();
-      void codepoints_(std::vector<char32>&& codepoints);
+      xtd::collections::generic::list<char32>& codepoints_();
+      void codepoints_(xtd::array<char32>&& codepoints);
       
       xtd::sptr<data> data_;
     };
