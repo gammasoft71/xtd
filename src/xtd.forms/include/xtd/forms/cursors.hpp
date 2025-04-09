@@ -351,7 +351,7 @@ namespace xtd {
       
       /// @brief Gets all cursors.
       /// @return cursor array.
-      static const std::vector<cursor>& get_cursors();
+      static const xtd::array<cursor>& get_cursors();
       /// @}
     };
   }
