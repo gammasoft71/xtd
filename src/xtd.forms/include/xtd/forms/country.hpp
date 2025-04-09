@@ -124,7 +124,7 @@ namespace xtd {
       
     private:
       friend class countries;
-      static const std::vector<xtd::string> enclosed_letters;
+      static const xtd::array<xtd::string> enclosed_letters;
       country(const xtd::string& name, const xtd::string& alpha_2_code, const xtd::string& alpha_3_code, int32 numeric_code);
       
       xtd::sptr<data> data_;
