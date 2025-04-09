@@ -60,6 +60,10 @@ const array<char32>& emoticon::codepoints() const noexcept {
   return data_->codepoints;
 }
 
+int32 emoticon::compare_to(const emoticon &obj) const noexcept {
+  return data_->name.compare_to(obj.data_->name);
+}
+
 bool emoticon::equals(const object& obj) const noexcept {
   return is<emoticon>(obj) && equals(static_cast<const emoticon&>(obj));
 }
