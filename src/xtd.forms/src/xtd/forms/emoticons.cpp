@@ -1321,8 +1321,8 @@ const xtd::forms::emoticon xtd::forms::emoticons::axe = {"axe", 0x0001FA93};
 const xtd::forms::emoticon xtd::forms::emoticons::diya_lamp = {"diya lamp", 0x0001FA94};
 const xtd::forms::emoticon xtd::forms::emoticons::banjo = {"banjo", 0x0001FA95};
 
-const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() {
-  static auto emoticons = std::vector {
+const xtd::array<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() {
+  static auto emoticons = xtd::array {
     copyright_sign, registered_sign,
     double_exclamation_mark, exclamation_question_mark,
     trade_mark_sign, information_source,
@@ -1348,7 +1348,7 @@ const std::vector<xtd::forms::emoticon>& xtd::forms::emoticons::get_emoticons() 
     ballet_shoes, one_piece_swinsuit, briefs, shorts, drop_of_blood, adhesive_bandage, stethoscope, yo_yo, kite, parachute, ringed_planet, chair, razor, axe, diya_lamp, banjo,
   };
   call_once_ {
-    std::sort(emoticons.begin(), emoticons.end(), [](auto a, auto b)->bool {return a.name() < b.name();});
+    std::sort(emoticons.items().begin(), emoticons.items().end(), [](auto a, auto b)->bool {return a.name() < b.name();});
   };
   return emoticons;
 }
