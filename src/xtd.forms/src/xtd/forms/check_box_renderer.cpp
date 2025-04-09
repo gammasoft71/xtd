@@ -1,5 +1,6 @@
 #include "../../../include/xtd/forms/check_box_renderer.hpp"
 #include "../../../include/xtd/forms/control_paint.hpp"
+#include <xtd/collections/generic/list>
 #include <xtd/drawing/pen>
 #include <xtd/drawing/solid_brush>
 #include <xtd/drawing/system_colors>
@@ -8,12 +9,13 @@
 #include <map>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::forms::visual_styles;
 
 namespace {
-  xtd::string get_hotkey_prefix_locations(const xtd::string& str, std::vector<size_t>& locations) {
+  xtd::string get_hotkey_prefix_locations(const xtd::string& str, list<size_t>& locations) {
     auto offset = 0_z;
     for (auto index = 0_z; index < str.size(); index++) {
       if (str[index] == '&' && str[index + 1] != '&')
@@ -30,7 +32,7 @@ namespace {
   }
   
   void draw_string(graphics g, const string& text, const font& font, const color& text_color, const rectangle_f& button_rect, text_format_flags flags) {
-    auto hotkey_prefix_locations = std::vector<size_t> {};
+    auto hotkey_prefix_locations = list<size_t> {};
     auto text_without_hotkey_prefix = get_hotkey_prefix_locations(text, hotkey_prefix_locations);
     if ((flags & text_format_flags::prefix_only) == text_format_flags::prefix_only && hotkey_prefix_locations.size()) g.draw_string(text_without_hotkey_prefix.substring(hotkey_prefix_locations[0], 1), xtd::drawing::font(font, font_style::underline), solid_brush(text_color), button_rect, control_paint::string_format(flags));
     else g.draw_string(text, font, solid_brush(text_color), button_rect, control_paint::string_format(flags));
