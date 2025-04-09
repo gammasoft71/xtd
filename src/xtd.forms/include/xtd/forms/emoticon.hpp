@@ -4,6 +4,7 @@
 #pragma once
 #include "../forms_export.hpp"
 #include <xtd/collections/generic/list>
+#include <xtd/icomparable>
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/static>
@@ -28,7 +29,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of emoticon class.
     /// @include emoticons.cpp
-    class forms_export_ emoticon : public object, public xtd::iequatable<emoticon> {
+    class forms_export_ emoticon : public object, public xtd::iequatable<emoticon>, public icomparable<emoticon> {
       struct data;
     public:
       /// @name Public Fields
@@ -133,6 +134,18 @@ namespace xtd {
       /// @name Public Methods
       
       /// @{
+      /// @brief Compares the current instance with another object of the same type.
+      /// @param obj An object to compare with this instance.
+      /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
+      /// The return value has these meanings:
+      ///
+      /// | Value             | Condition                          |
+      /// | ----------------- | ---------------------------------- |
+      /// | Less than zero    | This instance is less than obj.    |
+      /// | Zero              | This instance is equal to obj.     |
+      /// | Greater than zero | This instance is greater than obj. |
+      int32 compare_to(const emoticon &obj) const noexcept override;
+      
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
