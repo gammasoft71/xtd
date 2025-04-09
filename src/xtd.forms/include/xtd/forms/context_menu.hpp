@@ -35,6 +35,13 @@ namespace xtd {
     /// @include context_menu.cpp
     class forms_export_ context_menu : public menu, public iclonable {
     public:
+      /// @name Public Aliases
+      
+      /// @{
+      /// @brief Represents menu items collection.
+      using menu_item_collection = std::vector<menu_item_ref>;
+      /// @}
+      
       /// @name Public Constructors
       
       /// @{
@@ -42,7 +49,7 @@ namespace xtd {
       context_menu();
       /// @brief Initialize a new instance of context_menu class.
       /// @param menu_items An array of menu_item objects that will be added to the main_menu.
-      explicit context_menu(const std::vector<menu_item_ref>& menu_items);
+      explicit context_menu(const menu_item_collection& menu_items);
       /// @}
       
       /// @cond
