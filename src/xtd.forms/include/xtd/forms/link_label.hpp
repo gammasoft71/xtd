@@ -414,7 +414,7 @@ namespace xtd {
       
     private:
       xtd::drawing::point get_text_location(size_t line) const noexcept;
-      std::vector<std::tuple<xtd::drawing::rectangle, bool>> generate_text_rects() const noexcept;
+      xtd::array<std::tuple<xtd::drawing::rectangle, bool>> generate_text_rects() const noexcept;
       xtd::drawing::font link_font() const noexcept;
       void on_links_link_added(size_t pos, const link& link);
       void on_links_link_removed(size_t pos, const link& link);
