@@ -38,10 +38,10 @@ namespace xtd {
       
       /// @{
       /// @brief Represents the collection containing the indexes to the selected items in a list_box.
-      using selected_index_collection = std::vector<size_t>;
+      using selected_index_collection = xtd::array<xtd::size>;
       
       /// @brief Represents the collection of selected items in the list_box.
-      using selected_object_collection = std::vector<item>;
+      using selected_object_collection = xtd::array<item>;
       /// @}
       
       /// @name Public Constructors

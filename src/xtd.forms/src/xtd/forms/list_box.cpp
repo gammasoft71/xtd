@@ -13,6 +13,7 @@
 #include <xtd/literals>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::helpers;
@@ -104,8 +105,8 @@ list_control& list_box::selected_index(size_t selected_index) {
   return *this;
 }
 
-std::vector<size_t> list_box::selected_indices() const noexcept {
-  return is_handle_created() ? native::list_box::selected_indices(handle()) : std::vector<size_t> {};
+array<xtd::size> list_box::selected_indices() const noexcept {
+  return is_handle_created() ? native::list_box::selected_indices(handle()) : xtd::array<xtd::size> {};
 }
 
 list_box& list_box::selected_item(const item& selected_item) {
@@ -130,11 +131,11 @@ const list_box::item& list_box::selected_item() const noexcept {
   return data_->selected_item;
 }
 
-std::vector<list_box::item> list_box::selected_items() const noexcept {
-  auto itms = std::vector<item> {};
+array<list_box::item> list_box::selected_items() const noexcept {
+  auto itms = list<item> {};
   auto indices = selected_indices();
   std::for_each(indices.begin(), indices.end(), [&](size_t index) {itms.push_back(data_->items[index]);});
-  return itms;
+  return itms.to_array();
 }
 
 forms::selection_mode list_box::selection_mode() const noexcept {
