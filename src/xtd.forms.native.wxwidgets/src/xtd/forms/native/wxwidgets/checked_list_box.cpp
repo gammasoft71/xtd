@@ -95,13 +95,13 @@ void checked_list_box::selected_index(intptr control, size_t index) {
   return static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->SetSelection(static_cast<int32>(index));
 }
 
-std::vector<size_t> checked_list_box::selected_indices(intptr control) {
+array<xtd::size> checked_list_box::selected_indices(intptr control) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return {};
   }
-  std::vector<size_t> indices;
+  std::vector<xtd::size> indices;
   wxArrayInt wx_indices;
   static_cast<wxCheckListBox*>(reinterpret_cast<control_handler*>(control)->control())->GetSelections(wx_indices);
   std::for_each(wx_indices.begin(), wx_indices.end(), [&](int32 index) {indices.push_back(index);});
