@@ -7,6 +7,7 @@
 #include <xtd/as>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::helpers;
@@ -512,8 +513,8 @@ xtd::drawing::point link_label::get_text_location(size_t line_number) const noex
   return {0, 0};
 }
 
-std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text_rects() const noexcept {
-  auto text_rects = std::vector<std::tuple<xtd::drawing::rectangle, bool>> {};
+array<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text_rects() const noexcept {
+  auto text_rects = list<std::tuple<xtd::drawing::rectangle, bool>> {};
   auto line_number = 0_z;
   auto index = 0_z;
   for (auto line : text().split('\n')) {
@@ -549,7 +550,7 @@ std::vector<std::tuple<xtd::drawing::rectangle, bool>> link_label::generate_text
     ++line_number;
   }
   
-  return text_rects;
+  return text_rects.to_array();
 }
 
 xtd::drawing::font link_label::link_font() const noexcept {
