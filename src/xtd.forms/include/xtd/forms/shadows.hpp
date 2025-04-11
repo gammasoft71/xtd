@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "shadow.hpp"
-#include <vector>
+#include <xtd/array>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -19,7 +19,7 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    using shadows = std::vector<xtd::forms::shadow>;
+    using shadows = xtd::array<xtd::forms::shadow>;
   }
 }
 
