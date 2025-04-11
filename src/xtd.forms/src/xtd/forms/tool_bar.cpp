@@ -15,6 +15,7 @@
 #include <xtd/is>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::helpers;
@@ -49,9 +50,9 @@ struct tool_bar::data {
   bool show_icon = true;
   bool show_text = false;
   bool show_tool_tips = false;
-  std::vector<xtd::sptr<xtd::forms::tool_bar::tool_bar_button_control>> stretchable_separators;
-  std::vector<xtd::sptr<xtd::forms::tool_bar::tool_bar_button_control>> tool_bar_buttons;
-  std::vector<intptr> system_tool_bar_button_handles;
+  list<xtd::sptr<xtd::forms::tool_bar::tool_bar_button_control>> stretchable_separators;
+  list<xtd::sptr<xtd::forms::tool_bar::tool_bar_button_control>> tool_bar_buttons;
+  list<intptr> system_tool_bar_button_handles;
   xtd::forms::tool_bar_text_align text_align = xtd::forms::tool_bar_text_align::underneath;
   bool wrappable = false;
 };
