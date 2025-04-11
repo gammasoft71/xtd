@@ -16,6 +16,7 @@
 #include <xtd/is>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::helpers;
@@ -45,9 +46,9 @@ struct status_bar::data {
   bool sizing_grip = true;
   panel main_panel;
   xtd::sptr<class sizing_grip_control> sizing_grip_control;
-  std::vector<xtd::sptr<xtd::forms::status_bar::status_bar_panel_control>> spring_panels;
-  std::vector<xtd::sptr<xtd::forms::status_bar::status_bar_panel_control>> status_bar_panels;
-  std::vector<intptr> system_status_bar_panel_handles;
+  list<sptr<status_bar::status_bar_panel_control>> spring_panels;
+  list<sptr<status_bar::status_bar_panel_control>> status_bar_panels;
+  list<intptr> system_status_bar_panel_handles;
 };
 
 status_bar::status_bar() : data_(xtd::new_sptr<data>()) {
