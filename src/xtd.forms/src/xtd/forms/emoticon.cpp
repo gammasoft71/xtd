@@ -56,8 +56,8 @@ const xtd::string& emoticon::name() const noexcept {
   return data_->name;
 }
 
-const array<char32>& emoticon::codepoints() const noexcept {
-  return data_->codepoints;
+array<char32> emoticon::codepoints() const noexcept {
+  return data_->codepoints.to_array();
 }
 
 int32 emoticon::compare_to(const emoticon &obj) const noexcept {
