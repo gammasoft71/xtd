@@ -101,7 +101,7 @@ bool progress_dialog::cancelled(intptr dialog) {
   return reinterpret_cast<wx_progress_dialog*>(dialog)->WasCancelled();
 }
 
-intptr progress_dialog::create(intptr hwnd, const string& text, const string& message, const std::vector<string>& informations, size_t animation_speed, int32 minimum, int32 maximum, int32 value, size_t options) {
+intptr progress_dialog::create(intptr hwnd, const string& text, const string& message, const array<string>& informations, size_t animation_speed, int32 minimum, int32 maximum, int32 value, size_t options) {
   #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
   #endif
@@ -118,7 +118,7 @@ void progress_dialog::destroy(intptr dialog) {
   delete reinterpret_cast<wx_progress_dialog*>(dialog);
 }
 
-void progress_dialog::informations(intptr dialog, const std::vector<string>& informations) {
+void progress_dialog::informations(intptr dialog, const array<string>& informations) {
   // doesn't exists on wxWidgets
 }
 
