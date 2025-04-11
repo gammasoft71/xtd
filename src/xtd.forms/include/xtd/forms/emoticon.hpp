@@ -128,7 +128,7 @@ namespace xtd {
       
       /// @brief Gets codepoints of emoticon.
       /// @return An array of char32 that represent the emoticon.
-      const xtd::array<char32>& codepoints() const noexcept;
+      xtd::array<char32> codepoints() const noexcept;
       /// @}
       
       /// @name Public Methods
