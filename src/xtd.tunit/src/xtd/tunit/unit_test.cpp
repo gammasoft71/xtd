@@ -203,11 +203,11 @@ int32 unit_test::count_tests(int32 count) {
   return settings::default_settings().exit_status();
 }
 
-int32 unit_test::list_tests(const std::vector<string>& tests) {
+int32 unit_test::list_tests(const array<string>& tests) {
   return settings::default_settings().exit_status();
 }
 
-bool unit_test::parse_arguments(const std::vector<string>& args) {
+bool unit_test::parse_arguments(const array<string>& args) {
   auto gtest_compatibility = settings::default_settings().gtest_compatibility();
   for (auto arg : args) {
     if (arg == "--gtest_compatibility" || arg.find("--gtest") == 0) gtest_compatibility = true;
