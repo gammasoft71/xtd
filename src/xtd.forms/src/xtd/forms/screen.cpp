@@ -5,6 +5,7 @@
 #include <limits>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 
@@ -40,12 +41,12 @@ const drawing::rectangle& screen::working_area() const noexcept {
   return working_area_;
 }
 
-std::vector<screen> screen::all_screens() {
-  auto screens = std::vector<screen> {};
+array<screen> screen::all_screens() {
+  auto screens = list<screen> {};
   auto count = native::screen::count();
   for (auto index = 0_z; index < count; index++)
     screens.push_back({native::screen::bits_per_pixel(index), native::screen::bounds(index), native::screen::device_name(index), native::screen::pixels_per_inch(index), native::screen::primary(index), native::screen::scale_factor(index), native::screen::working_area(index)});
-  return screens;
+  return screens.to_array();
 }
 
 screen screen::primary_screen() {
