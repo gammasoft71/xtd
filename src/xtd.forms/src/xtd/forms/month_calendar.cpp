@@ -10,18 +10,19 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::forms;
 using namespace xtd::helpers;
 
 struct month_calendar::data {
-  std::vector<xtd::date_time> annually_bolded_dates;
-  std::vector<xtd::date_time> bolded_dates;
+  list<xtd::date_time> annually_bolded_dates;
+  list<xtd::date_time> bolded_dates;
   xtd::drawing::size calendar_dimensions = {1, 1};
   xtd::forms::day first_day_of_week = xtd::forms::day::default_day;
   xtd::date_time min_date = date_time::min_value;
   date_time max_date = date_time::max_value;
   uint32 max_selection_count = 7;
-  std::vector<xtd::date_time> monthly_bolded_dates;
+  list<xtd::date_time> monthly_bolded_dates;
   xtd::date_time selection_start = date_time::now();
   xtd::date_time selection_end = date_time::now();
   mutable xtd::drawing::size single_month_size = {225, 143};
@@ -62,23 +63,23 @@ month_calendar::month_calendar() : data_(xtd::new_sptr<data>()) {
   set_style(control_styles::standard_click, false);
 }
 
-std::vector<xtd::date_time> month_calendar::annually_bolded_dates() const noexcept {
+array<xtd::date_time> month_calendar::annually_bolded_dates() const noexcept {
   return data_->annually_bolded_dates;
 }
 
-month_calendar& month_calendar::annually_bolded_dates(const std::vector<xtd::date_time>& value) {
-  if (data_->annually_bolded_dates == value) return *this;
+month_calendar& month_calendar::annually_bolded_dates(const array<xtd::date_time>& value) {
+  if (data_->annually_bolded_dates.items() == value.items()) return *this;
   data_->annually_bolded_dates = value;
   native::month_calendar::annually_bolded_dates(handle(), data_->annually_bolded_dates);
   return *this;
 }
 
-std::vector<xtd::date_time> month_calendar::bolded_dates() const noexcept {
+array<xtd::date_time> month_calendar::bolded_dates() const noexcept {
   return data_->bolded_dates;
 }
 
-month_calendar& month_calendar::bolded_dates(const std::vector<xtd::date_time>& value) {
-  if (data_->bolded_dates == value) return *this;
+month_calendar& month_calendar::bolded_dates(const array<xtd::date_time>& value) {
+  if (data_->bolded_dates.items() == value.items()) return *this;
   data_->bolded_dates = value;
   native::month_calendar::bolded_dates(handle(), data_->bolded_dates);
   return *this;
@@ -144,12 +145,12 @@ month_calendar& month_calendar::month_calendar::min_date(date_time value) {
   return *this;
 }
 
-std::vector<xtd::date_time> month_calendar::monthly_bolded_dates() const noexcept {
+array<xtd::date_time> month_calendar::monthly_bolded_dates() const noexcept {
   return data_->monthly_bolded_dates;
 }
 
-month_calendar& month_calendar::monthly_bolded_dates(const std::vector<xtd::date_time>& value) {
-  if (data_->monthly_bolded_dates == value) return *this;
+month_calendar& month_calendar::monthly_bolded_dates(const array<xtd::date_time>& value) {
+  if (data_->monthly_bolded_dates.items() == value.items()) return *this;
   data_->monthly_bolded_dates = value;
   native::month_calendar::monthly_bolded_dates(handle(), data_->monthly_bolded_dates);
   return *this;
@@ -584,17 +585,17 @@ void month_calendar::remove_all_monthly_bolded_dates() {
 }
 
 void month_calendar::remove_annually_bolded_dates(const xtd::date_time& date) {
-  auto it = find(data_->annually_bolded_dates.begin(), data_->annually_bolded_dates.end(), date);
+  auto it = std::find(data_->annually_bolded_dates.begin(), data_->annually_bolded_dates.end(), date);
   if (it != data_->annually_bolded_dates.end()) data_->annually_bolded_dates.erase(it);
 }
 
 void month_calendar::remove_bolded_dates(const xtd::date_time& date) {
-  auto it = find(data_->bolded_dates.begin(), data_->bolded_dates.end(), date);
+  auto it = std::find(data_->bolded_dates.begin(), data_->bolded_dates.end(), date);
   if (it != data_->bolded_dates.end()) data_->bolded_dates.erase(it);
 }
 
 void month_calendar::remove_monthly_bolded_dates(const xtd::date_time& date) {
-  auto it = find(data_->monthly_bolded_dates.begin(), data_->monthly_bolded_dates.end(), date);
+  auto it = std::find(data_->monthly_bolded_dates.begin(), data_->monthly_bolded_dates.end(), date);
   if (it != data_->monthly_bolded_dates.end()) data_->monthly_bolded_dates.erase(it);
 }
 
