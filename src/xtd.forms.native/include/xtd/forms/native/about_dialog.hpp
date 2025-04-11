@@ -55,7 +55,7 @@ namespace xtd {
         /// @param designers A designers_collection that specifies the designers collection.
         /// @param license A string that specifies the license text to display.
         /// @warning Internal use only
-        static void show(intptr hwnd, const xtd::drawing::icon& icon, const xtd::string& name, const xtd::string& description, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const std::vector<xtd::string>& creators, const std::vector<xtd::string>& designers, const std::vector<xtd::string>& doc_writers, const std::vector<xtd::string>& translators, const xtd::string& license);
+        static void show(intptr hwnd, const xtd::drawing::icon& icon, const xtd::string& name, const xtd::string& description, const xtd::string& version, const xtd::string& long_version, const xtd::string& copyright, const xtd::string& website, const xtd::string& website_label, const xtd::array<xtd::string>& creators, const xtd::array<xtd::string>& designers, const xtd::array<xtd::string>& doc_writers, const xtd::array<xtd::string>& translators, const xtd::string& license);
         /// @}
       };
     }
