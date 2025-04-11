@@ -265,7 +265,7 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {0, 1, 2, 3};
+      /// xtd::array<int> v1 = {0, 1, 2, 3};
       /// xtd::tunit::valid::contains(2, v1); // test ok.
       /// xtd::tunit::valid::contains(4, v1); // test fails.
       /// ```
@@ -278,7 +278,7 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {0, 1, 2, 3};
+      /// xtd::array<int> v1 = {0, 1, 2, 3};
       /// xtd::tunit::valid::contains(2, v1, "User message..."); // test ok.
       /// xtd::tunit::valid::contains(4, v1, "User message..."); // test fails.
       /// ```
@@ -317,7 +317,7 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::array<int> v1 = {1, 2, 3, 4};
       /// xtd::tunit::valid::does_not_throw([&] {v1.at(2);}); // test ok.
       /// xtd::tunit::valid::does_not_throw([&] {v1.at(5);}); // test fails.
       /// ```
@@ -328,7 +328,7 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::array<int> v1 = {1, 2, 3, 4};
       /// xtd::tunit::valid::does_not_throw([&] {v1.at(2);}, "User message..."); // test ok.
       /// xtd::tunit::valid::does_not_throw([&] {v1.at(5);}, "User message..."); // test fails.
       /// ```
@@ -339,8 +339,8 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1;
-      /// std::vector<int> v2 = {0, 1, 2, 3};
+      /// xtd::array<int> v1;
+      /// xtd::array<int> v2 = {0, 1, 2, 3};
       /// xtd::tunit::valid::is_empty(v1); // test ok.
       /// xtd::tunit::valid::is_empty(v2); // test fails.
       /// ```
@@ -352,8 +352,8 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1;
-      /// std::vector<int> v2 = {0, 1, 2, 3};
+      /// xtd::array<int> v1;
+      /// xtd::array<int> v2 = {0, 1, 2, 3};
       /// xtd::tunit::valid::is_empty(v1, "User message..."); // test ok.
       /// xtd::tunit::valid::is_empty(v2, "User message..."); // test fails.
       /// ```
@@ -712,8 +712,8 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {0, 1, 2, 3};
-      /// std::vector<int> v2;
+      /// xtd::array<int> v1 = {0, 1, 2, 3};
+      /// xtd::array<int> v2;
       /// xtd::tunit::valid::is_not_empty(v1); // test ok.
       /// xtd::tunit::valid::is_not_empty(v2); // test fails.
       /// ```
@@ -725,8 +725,8 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {0, 1, 2, 3};
-      /// std::vector<int> v2;
+      /// xtd::array<int> v1 = {0, 1, 2, 3};
+      /// xtd::array<int> v2;
       /// xtd::tunit::valid::is_not_empty(v1, "User message..."); // test ok.
       /// xtd::tunit::valid::is_not_empty(v2, "User message..."); // test fails.
       /// ```
@@ -1272,7 +1272,7 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::array<int> v1 = {1, 2, 3, 4};
       /// xtd::tunit::valid::throws<std::out_of_range>([&] {v1.at(5);}); // test ok.
       /// xtd::tunit::valid::throws<std::out_of_range>([&] {v1.at(2);}); // test fails.
       /// ```
@@ -1285,7 +1285,7 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::array<int> v1 = {1, 2, 3, 4};
       /// xtd::tunit::valid::throws<std::out_of_range>([&] {v1.at(5);}, "User message..."); // test ok.
       /// xtd::tunit::valid::throws<std::out_of_range>([&] {v1.at(2);}, "User message..."); // test fails.
       /// ```
@@ -1303,7 +1303,7 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::array<int> v1 = {1, 2, 3, 4};
       /// xtd::tunit::valid::throws_any([&] {v1.at(5);}); // test ok.
       /// xtd::tunit::valid::throws_any([&] {v1.at(2);}); // test fails.
       /// ```
@@ -1314,7 +1314,7 @@ namespace xtd {
       /// @param stack_frame Contains information about current file and current line.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::array<int> v1 = {1, 2, 3, 4};
       /// xtd::tunit::valid::throws_any([&] {v1.at(5);}, "User message..."); // test ok.
       /// xtd::tunit::valid::throws_any([&] {v1.at(2);}, "User message..."); // test fails.
       /// ```
