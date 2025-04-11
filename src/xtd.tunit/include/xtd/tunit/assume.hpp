@@ -280,7 +280,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {0, 1, 2, 3};
+      /// xtd::array<int> v1 = {0, 1, 2, 3};
       /// xtd::tunit::assume::contains(2, v1); // test ok.
       /// xtd::tunit::assume::contains(4, v1); // test throws an abort_error exception.
       /// ```
@@ -294,7 +294,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {0, 1, 2, 3};
+      /// xtd::array<int> v1 = {0, 1, 2, 3};
       /// xtd::tunit::assume::contains(2, v1, "User message..."); // test ok.
       /// xtd::tunit::assume::contains(4, v1, "User message..."); // test throws an abort_error exception.
       /// ```
@@ -333,7 +333,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::array<int> v1 = {1, 2, 3, 4};
       /// xtd::tunit::assume::does_not_throw([&] {v1.at(2);}); // test ok.
       /// xtd::tunit::assume::does_not_throw([&] {v1.at(5);}); // test throws an abort_error exception.
       /// ```
@@ -345,7 +345,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::array<int> v1 = {1, 2, 3, 4};
       /// xtd::tunit::assume::does_not_throw([&] {v1.at(2);}, "User message..."); // test ok.
       /// xtd::tunit::assume::does_not_throw([&] {v1.at(5);}, "User message..."); // test throws an abort_error exception.
       /// ```
@@ -357,8 +357,8 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1;
-      /// std::vector<int> v2 = {0, 1, 2, 3};
+      /// xtd::array<int> v1;
+      /// xtd::array<int> v2 = {0, 1, 2, 3};
       /// xtd::tunit::assume::is_empty(v1); // test ok.
       /// xtd::tunit::assume::is_empty(v2); // test throws an abort_error exception.
       /// ```
@@ -371,8 +371,8 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1;
-      /// std::vector<int> v2 = {0, 1, 2, 3};
+      /// xtd::array<int> v1;
+      /// xtd::array<int> v2 = {0, 1, 2, 3};
       /// xtd::tunit::assume::is_empty(v1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_empty(v2, "User message..."); // test throws an abort_error exception.
       /// ```
@@ -751,8 +751,8 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {0, 1, 2, 3};
-      /// std::vector<int> v2;
+      /// xtd::array<int> v1 = {0, 1, 2, 3};
+      /// xtd::array<int> v2;
       /// xtd::tunit::assume::is_not_empty(v1); // test ok.
       /// xtd::tunit::assume::is_not_empty(v2); // test throws an abort_error exception.
       /// ```
@@ -765,8 +765,8 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {0, 1, 2, 3};
-      /// std::vector<int> v2;
+      /// xtd::array<int> v1 = {0, 1, 2, 3};
+      /// xtd::array<int> v2;
       /// xtd::tunit::assume::is_not_empty(v1, "User message..."); // test ok.
       /// xtd::tunit::assume::is_not_empty(v2, "User message..."); // test throws an abort_error exception.
       /// ```
@@ -1350,7 +1350,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::array<int> v1 = {1, 2, 3, 4};
       /// xtd::tunit::assume::throws<std::out_of_range>([&] {v1.at(5);}); // test ok.
       /// xtd::tunit::assume::throws<std::out_of_range>([&] {v1.at(2);}); // test throws an abort_error exception.
       /// ```
@@ -1364,7 +1364,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::array<int> v1 = {1, 2, 3, 4};
       /// xtd::tunit::assume::throws<std::out_of_range>([&] {v1.at(5);}, "User message..."); // test ok.
       /// xtd::tunit::assume::throws<std::out_of_range>([&] {v1.at(2);}, "User message..."); // test throws an abort_error exception.
       /// ```
@@ -1383,7 +1383,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::array<int> v1 = {1, 2, 3, 4};
       /// xtd::tunit::assume::throws_any([&] {v1.at(5);}); // test ok.
       /// xtd::tunit::assume::throws_any([&] {v1.at(2);}); // test throws an abort_error exception.
       /// ```
@@ -1395,7 +1395,7 @@ namespace xtd {
       /// @exception xtd::tunit::abort_error If bad assertion.
       /// @par Examples
       /// ```cpp
-      /// std::vector<int> v1 = {1, 2, 3, 4};
+      /// xtd::array<int> v1 = {1, 2, 3, 4};
       /// xtd::tunit::assume::throws_any([&] {v1.at(5);}, "User message..."); // test ok.
       /// xtd::tunit::assume::throws_any([&] {v1.at(2);}, "User message..."); // test throws an abort_error exception.
       /// ```
