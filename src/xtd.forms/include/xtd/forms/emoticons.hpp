@@ -2596,7 +2596,7 @@ namespace xtd {
       /// @{
       /// @brief Gets emoticons collection.
       /// @return Emoticons collection.
-      static const xtd::array<xtd::forms::emoticon>& get_emoticons();
+      static const xtd::array<xtd::forms::emoticon>& get_emoticons() noexcept;
       /// @}
     };
   }
