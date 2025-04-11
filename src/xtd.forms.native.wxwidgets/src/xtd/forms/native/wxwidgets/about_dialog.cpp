@@ -26,7 +26,7 @@ namespace {
 }
 #endif
 
-void about_dialog::show(intptr hwnd, const xtd::drawing::icon& icon, const string& name, const string& description, const string& version, const string& long_version, const string& copyright, const string& website, const string& website_label, const std::vector<string>& creators, const std::vector<string>& designers, const std::vector<string>& doc_writers, const std::vector<string>& translators, const string& license) {
+void about_dialog::show(intptr hwnd, const xtd::drawing::icon& icon, const string& name, const string& description, const string& version, const string& long_version, const string& copyright, const string& website, const string& website_label, const array<string>& creators, const array<string>& designers, const array<string>& doc_writers, const array<string>& translators, const string& license) {
   wxAboutDialogInfo about_info;
   about_info.SetName(convert_string::to_wstring(name));
   about_info.SetDescription(convert_string::to_wstring(description));
