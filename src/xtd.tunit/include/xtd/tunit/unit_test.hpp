@@ -134,13 +134,13 @@ namespace xtd {
       /// @return The xtd::tunit::settings::exit_status value.
       /// @remarks This method does nothing by default. The inheritor must overload this method to act as it wants when the unit_lest is asked for the test list.
       /// @remarks This method is typically used to display the list of tests in a stream, or whatever. It depends on the implementation chosen by the inheritor.
-      virtual int32 list_tests(const std::vector<xtd::string>& tests);
+      virtual int32 list_tests(const xtd::array<xtd::string>& tests);
       
       /// @brief Parses the specified arguments.
       /// @param The arguments to parse.
       /// @return `true` the execution process stops immediately after the analysis of the arguments; otherwise `false` the execution process continues its execution.
       /// @remarks This method can be overloaded by the heirs. It is typically in this method that the heirs can react to their own arguments. Like for example display a helper when the @p -help argument is passed.
-      virtual bool parse_arguments(const std::vector<string>& args);
+      virtual bool parse_arguments(const xtd::array<string>& args);
       /// @}
       
     private:
