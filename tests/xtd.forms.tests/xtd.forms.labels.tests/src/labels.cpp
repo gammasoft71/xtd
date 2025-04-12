@@ -11,8 +11,8 @@ using namespace xtd::drawing::drawing_2d;
 
 namespace xtd::forms::tests {
   class labels_form : public form {
-    using label_ptr_t = xtd::sptr<label>;
-    using labels_t = std::vector<label_ptr_t>;
+    using label_ptr_t = sptr<label>;
+    using labels_t = list<label_ptr_t>;
     
   public:
     static auto main() {
