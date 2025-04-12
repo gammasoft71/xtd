@@ -10,7 +10,7 @@
   class test_class_(collection_valid_all_items_are_instances_of_vector_failed_tests) {
   public:
     void test_method_(test_case_failed) {
-      std::vector<std::ios_base*> a = {&std::cout, &std::cerr, &std::cin};
+      auto a = xtd::array<std::ios_base*> {&std::cout, &std::cerr, &std::cin};
       xtd::tunit::collection_valid::all_items_are_instances_of<std::basic_ostream<char>*>(a);
     }
   };
