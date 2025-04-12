@@ -83,7 +83,7 @@ inline const type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd
 }
 
 template<class type_t, class allocator_t>
-inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type, 1>& lengths) : basic_array {lengths, value_type {}} {
+inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type, 1>& lengths) : basic_array(lengths, value_type {}) {
 }
 
 template<class type_t, class allocator_t>
