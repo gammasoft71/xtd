@@ -18,7 +18,7 @@ namespace xtd::tunit::tests {
     assert_value_("Start 1 test from 1 test case\n"
                   "   FAILED xtd::tunit::tests::valid_does_not_throw_failed_tests.test_case_failed\n"
                   "    Expected: No Exception to be thrown\n"
-                  "    But was:  <std::out_of_range>\n"
+                  "    But was:  <xtd::index_out_of_range_exception>\n"
                   "End 1 test from 1 test case ran.\n", output);
   }
   
