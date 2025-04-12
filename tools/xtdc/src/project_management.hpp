@@ -65,7 +65,7 @@ namespace xtdc_command {
   public:
     explicit project_management(const xtd::string& output) : path_(output.c_str()) {}
     
-    static std::vector<project_sdk> get_valid_sdks(project_type type) {
+    static xtd::array<project_sdk> get_valid_sdks(project_type type) {
       switch (type) {
         case project_type::unknown: return {project_sdk::none};
         case project_type::blank_solution: return {project_sdk::xtd, project_sdk::xtd_c};
@@ -78,7 +78,7 @@ namespace xtdc_command {
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument, "type is not project_type valid value");
     }
     
-    static std::vector<project_language> get_valid_languages(project_sdk sdk) {
+    static xtd::array<project_language> get_valid_languages(project_sdk sdk) {
       switch (sdk) {
         case project_sdk::none: return {project_language::cpp, project_language::c, project_language::objectivec, project_language::csharp};
         case project_sdk::catch2: return {project_language::c, project_language::cpp};
@@ -259,13 +259,13 @@ namespace xtdc_command {
       return "";
     }
     
-    std::vector<xtd::string>& targets() const {
-      static std::vector<xtd::string> targets;
+    const xtd::array<xtd::string>& targets() const {
+      static xtd::collections::generic::list<xtd::string> targets;
       if (targets.size() == 0)
         for (const auto& line : get_system_information())
           if (line.index_of("_BINARY_DIR:STATIC=") != xtd::string::npos)
             targets.push_back(line.substring(0, line.index_of("_BINARY_DIR:STATIC=")));
-      return targets;
+      return targets.to_array();
     }
     
     xtd::string test(bool release) const {
@@ -371,8 +371,8 @@ namespace xtdc_command {
       return is_linux_gui_app(path);
     }
     
-    std::vector<xtd::string>& get_system_information() const {
-      static std::vector<xtd::string> system_information;
+    const xtd::array<xtd::string>& get_system_information() const {
+      static xtd::collections::generic::list<xtd::string> system_information;
       static bool exception_throwed = false;
       if (!exception_throwed && system_information.size() == 0) {
         if (!xtd::io::file::exists(xtd::io::path::combine(build_path(), "xtd_si.txt"))) {
@@ -386,7 +386,7 @@ namespace xtdc_command {
         if (xtd::io::file::exists(xtd::io::path::combine(build_path(), "xtd_si.txt")))
           system_information = xtd::io::file::read_all_lines(xtd::io::path::combine(build_path(), "xtd_si.txt"));
       }
-      return system_information;
+      return system_information.to_array();
     }
     
     xtd::string build_path() const {return xtd::io::path::combine(path_, "build");}
@@ -472,7 +472,7 @@ namespace xtdc_command {
     }
     
     void create_readme_md(const xtd::string& name) const {
-      std::vector<xtd::string> lines {
+      xtd::array<xtd::string> lines {
         xtd::string::format("# {}", name),
       };
       xtd::io::file::write_all_lines(xtd::io::path::combine(path_, "README.md"), lines);
