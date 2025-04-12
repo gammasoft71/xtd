@@ -19,7 +19,7 @@ namespace xtdc_command {
     
   private:
     void create_solution_cmakelists_txt(const xtd::string& name) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Solution",
@@ -31,7 +31,7 @@ namespace xtdc_command {
     }
     
     void create_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Project",
@@ -58,7 +58,7 @@ namespace xtdc_command {
     }
     
     void create_source(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "#include <gtest/gtest.h>",
         "",
         xtd::string::format("namespace {} {{", name),
@@ -72,7 +72,7 @@ namespace xtdc_command {
     }
     
     void create_main(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "#include <gtest/gtest.h>",
         "",
         "auto main(int argc, char* argv[]) -> int {",
@@ -85,7 +85,7 @@ namespace xtdc_command {
     }
     
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines;
+      auto lines = xtd::collections::generic::list<xtd::string> {};
       lines.push_back("cmake_minimum_required(VERSION 3.20)");
       lines.push_back("");
       lines.push_back("# Project");
