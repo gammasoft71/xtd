@@ -11,7 +11,7 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
-  class test_class_(ustring_tests) {
+  class test_class_(string_tests) {
     void test_method_(default_constructor) {
       string s;
       assert::is_zero(s.length());
