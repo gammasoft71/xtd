@@ -10,10 +10,10 @@
 
 namespace xtd::forms::tests {
   class tool_bars_form : public form {
-    using tool_bar_ptr_t = xtd::sptr<forms::tool_bar>;
-    using tool_bars_t = std::vector<tool_bar_ptr_t>;
-    using tool_bar_button_ptr_t = xtd::sptr<tool_bar_button>;
-    using tool_bar_items_t = std::vector<tool_bar_button_ptr_t>;
+    using tool_bar_ptr_t = sptr<forms::tool_bar>;
+    using tool_bars_t = list<tool_bar_ptr_t>;
+    using tool_bar_button_ptr_t = sptr<tool_bar_button>;
+    using tool_bar_items_t = list<tool_bar_button_ptr_t>;
     
   public:
     static auto main() {
