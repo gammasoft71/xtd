@@ -16,7 +16,7 @@ namespace xtdc_command {
     
   private:
     void create_solution_cmakelists_txt(const xtd::string& name) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Solution",
