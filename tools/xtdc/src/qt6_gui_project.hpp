@@ -142,7 +142,7 @@ namespace xtdc_command {
     }
     
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
-      auto lines = xtd::array<xtd::string>;
+      auto lines = xtd::collections::generic::list<xtd::string> {};
       lines.push_back("cmake_minimum_required(VERSION 3.20)");
       lines.push_back("");
       lines.push_back("# Project");
