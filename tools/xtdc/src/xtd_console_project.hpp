@@ -23,7 +23,7 @@ namespace xtdc_command {
     
   private:
     void create_cmakelists_txt(const xtd::string& name) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Solution",
@@ -40,7 +40,7 @@ namespace xtdc_command {
     }
     
     void create_xtd_console_application_properties(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines{
+      auto lines = xtd::array<xtd::string>{
         xtd::string::format("target_default_namespace(\"{}\")", name),
         xtd::string::format("target_name(\"{}\")", name),
         xtd::string::format("target_startup(\"{}::program::main\" src/program.hpp)", name),
@@ -50,7 +50,7 @@ namespace xtdc_command {
     }
     
     void create_assembly_info(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines{
+      auto lines = xtd::array<xtd::string>{
         xtd::string::format("assembly_title(\"{}\")", name),
         "assembly_description(\"\")",
         "assembly_company(\"\")",
@@ -64,7 +64,7 @@ namespace xtdc_command {
     }
 
     void create_xtd_console_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Project",
@@ -84,7 +84,7 @@ namespace xtdc_command {
     }
     
     void create_xtd_console_include(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "/// @file",
         xtd::string::format("/// @brief Contains {}::program class.", name),
         xtd::string::format("/// @copyright Copyright (c) {} YourCompanyName. All rights reserved.", xtd::date_time::now().year()),
@@ -108,7 +108,7 @@ namespace xtdc_command {
     }
     
     void create_xtd_console_source(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "#include \"program.hpp\"",
         "#include <xtd/println>",
         "",
@@ -123,7 +123,7 @@ namespace xtdc_command {
     }
     
     void generate_xtd_console_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines;
+      auto lines = xtd::collections::generic::list<xtd::string> {};
       lines.push_back("cmake_minimum_required(VERSION 3.20)");
       lines.push_back("");
       lines.push_back("# Project");
