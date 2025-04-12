@@ -1079,7 +1079,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_array_start_index_out_of_range) {
-      collection_assert::are_equal(std::vector<char> {}, string("0123456").to_array(10));
+      collection_assert::are_equal(array<char> {}, string("0123456").to_array(10));
     }
     
     void test_method_(to_array_start_index_length_out_of_range) {
