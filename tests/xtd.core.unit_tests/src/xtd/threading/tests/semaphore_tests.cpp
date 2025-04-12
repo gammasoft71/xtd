@@ -1,5 +1,6 @@
 #include <xtd/threading/semaphore>
 #include <xtd/threading/thread>
+#include <xtd/collections/generic/list>
 #include <xtd/environment>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
@@ -7,6 +8,7 @@
 #include <xtd/io/io_exception>
 #include <utility>
 
+using namespace xtd::collections::generic;
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
@@ -240,7 +242,7 @@ namespace xtd::tests {
       assert::are_equal(4, s.release());
       assert::throws<semaphore_full_exception>([&]{s.release();});
       auto thread_ran = 0;
-      auto threads = std::vector<thread> {};
+      auto threads = list<thread> {};
       for (auto index = 0; index < 5; ++index) {
         threads.emplace_back([&] {
           assert::is_true(s.wait_one(0));
