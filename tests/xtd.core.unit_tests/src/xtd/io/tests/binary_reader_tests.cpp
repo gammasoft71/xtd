@@ -30,8 +30,8 @@ namespace xtd::io::tests {
       memory_stream() : std::stringstream {std::ios_base::in | std::ios_base::out | std::ios_base::binary} {}
       
       using std::stringstream::write;
-      void write(const std::vector<byte>& bytes) {write(bytes, 0_z, bytes.size());}
-      void write(const std::vector<byte>& bytes, size offset, size count) {write(reinterpret_cast<const char*>(bytes.data() + offset), count);}
+      void write(const array<byte>& bytes) {write(bytes, 0_z, bytes.size());}
+      void write(const array<byte>& bytes, size offset, size count) {write(reinterpret_cast<const char*>(bytes.data() + offset), count);}
     };*/
     
     void test_method_(read_boolean) {
