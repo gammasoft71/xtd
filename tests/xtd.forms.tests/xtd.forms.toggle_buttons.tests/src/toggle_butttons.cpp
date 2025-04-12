@@ -11,8 +11,8 @@ using namespace xtd::drawing::drawing_2d;
 
 namespace xtd::forms::tests {
   class toggle_buttons_form : public form {
-    using toggle_button_ptr_t = xtd::sptr<toggle_button>;
-    using buttons_t = std::vector<toggle_button_ptr_t>;
+    using toggle_button_ptr_t = sptr<toggle_button>;
+    using buttons_t = list<toggle_button_ptr_t>;
     
   public:
     static auto main() {
