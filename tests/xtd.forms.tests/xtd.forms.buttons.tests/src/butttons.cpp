@@ -9,8 +9,8 @@
 
 namespace xtd::forms::tests {
   class buttons_form : public form {
-    using button_ptr_t = xtd::sptr<button>;
-    using buttons_t = std::vector<button_ptr_t>;
+    using button_ptr_t = sptr<button>;
+    using buttons_t = list<button_ptr_t>;
     
   public:
     static auto main() {
