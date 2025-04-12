@@ -19,6 +19,7 @@
 #include <xtd/io/path>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
 using namespace xtd::drawing;
 using namespace xtd::forms;
@@ -39,7 +40,7 @@ namespace {
     }
     
     if (recursive) {
-      std::vector<directory_info> dirs = dir.get_directories();
+      auto dirs = dir.get_directories();
       for (const directory_info& sub_dir : dirs) {
         string new_destination_dir = path::combine(destination_dir, sub_dir.name());
         copy_directory(sub_dir.full_name(), new_destination_dir, true);
@@ -664,14 +665,14 @@ main_form::main_form() {
 }
 
 void main_form::delete_from_create_recent_projects(size_t create_project_items_index) {
-  auto create_recent_projects = std::vector<string> {properties::settings::default_settings().create_recent_propjects().split(';')};
+  auto create_recent_projects = list<string> {properties::settings::default_settings().create_recent_propjects().split(';')};
   create_recent_projects.erase(find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
   properties::settings::default_settings().create_recent_propjects(string::join(";", create_recent_projects)).save();
   init_create_create_recent_projects_list_box();
 }
 
 void main_form::delete_from_open_recent_projects(const string& project_path) {
-  auto open_recent_projects = std::vector<string> {properties::settings::default_settings().open_recent_propjects().split(';')};
+  auto open_recent_projects = list<string> {properties::settings::default_settings().open_recent_propjects().split(';')};
   open_recent_projects.erase(find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
   properties::settings::default_settings().open_recent_propjects(string::join(";", open_recent_projects)).save();
   init_startup_open_recent_projects_list_box();
@@ -705,7 +706,7 @@ void main_form::add_to_create_recent_projects(size_t create_project_items_index)
     create_recent_projects.erase(find(create_recent_projects.begin(), create_recent_projects.end(), std::to_string(create_project_items_index)));
     
   create_recent_projects.push_front(std::to_string(create_project_items_index));
-  properties::settings::default_settings().create_recent_propjects(string::join(";", std::vector<string> {create_recent_projects.begin(), create_recent_projects.end()})).save();
+  properties::settings::default_settings().create_recent_propjects(string::join(";", array<string> {create_recent_projects.begin(), create_recent_projects.end()})).save();
   
   init_create_create_recent_projects_list_box();
 }
@@ -717,7 +718,7 @@ void main_form::add_to_open_recent_projects(const string& project_path) {
     open_recent_projects.erase(find(open_recent_projects.begin(), open_recent_projects.end(), project_path));
     
   open_recent_projects.push_front(project_path);
-  properties::settings::default_settings().open_recent_propjects(string::join(";", std::vector<string> {open_recent_projects.begin(), open_recent_projects.end()})).open_propject_folder(project_path).save();
+  properties::settings::default_settings().open_recent_propjects(string::join(";", array<string> {open_recent_projects.begin(), open_recent_projects.end()})).open_propject_folder(project_path).save();
   
   init_startup_open_recent_projects_list_box();
 }
