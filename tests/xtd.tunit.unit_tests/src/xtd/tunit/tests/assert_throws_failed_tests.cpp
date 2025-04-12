@@ -8,7 +8,7 @@ namespace xtd::tunit::tests {
   class test_class_(assert_throws_failed_tests) {
   public:
     void test_method_(test_case_failed) {
-      std::vector v = {1, 2, 3, 4};
+      auto v = array {1, 2, 3, 4};
       xtd::tunit::assert::throws<std::out_of_range>([&] {v.at(2);});
     }
   };
