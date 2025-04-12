@@ -2,12 +2,12 @@
 /// @brief Contains xtd::system_report class
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include <vector>
 #include <xtd/environment>
 #include <xtd/static>
 #include <xtd/string>
 #include <xtd/version>
 #include <xtd/collections/generic/key_value_pair>
+#include <xtd/collections/generic/list>
 #include <xtd/drawing/color>
 #include <xtd/drawing/font>
 #include <xtd/forms/screen>
@@ -62,17 +62,17 @@ namespace xtd {
     
     /// @{
     /// @brief Represents an environment variables collection.
-    using environment_variable_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::string, xtd::string>>;
+    using environment_variable_collection = xtd::collections::generic::list<xtd::collections::generic::key_value_pair<xtd::string, xtd::string>>;
     /// @brief Represents a folders collection.
-    using special_folder_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::string, xtd::string>>;
+    using special_folder_collection = xtd::collections::generic::list<xtd::collections::generic::key_value_pair<xtd::string, xtd::string>>;
     /// @brief Represents a colors collection.
-    using system_color_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::string, xtd::drawing::color>>;
+    using system_color_collection = xtd::collections::generic::list<xtd::collections::generic::key_value_pair<xtd::string, xtd::drawing::color>>;
     /// @brief Represents a fonts collection.
-    using system_font_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::string, xtd::drawing::font>>;
+    using system_font_collection = xtd::collections::generic::list<xtd::collections::generic::key_value_pair<xtd::string, xtd::drawing::font>>;
     /// @brief Represents a font families collection.
-    using system_font_family_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::string, xtd::drawing::font_family>>;
+    using system_font_family_collection = xtd::collections::generic::list<xtd::collections::generic::key_value_pair<xtd::string, xtd::drawing::font_family>>;
     /// @brief Represents a system informations collection.
-    using system_information_collection = std::vector<xtd::collections::generic::key_value_pair<xtd::string, xtd::string>>;
+    using system_information_collection = xtd::collections::generic::list<xtd::collections::generic::key_value_pair<xtd::string, xtd::string>>;
     /// @}
     
     /// @name Public Static Properties
@@ -109,7 +109,7 @@ namespace xtd {
     
     /// @brief Gets an array of all displays on the system.
     /// @return An array of type screen, containing all displays on the system.
-    static std::vector<xtd::forms::screen> screens() noexcept;
+    static xtd::array<xtd::forms::screen> screens() noexcept;
     
     /// @brief Gets directory paths to system special folders.
     /// @return A special_folder_collection collection containing directory paths to system special folders.
