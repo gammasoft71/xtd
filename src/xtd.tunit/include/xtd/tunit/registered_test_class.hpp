@@ -17,11 +17,14 @@ namespace xtd {
     /// @par Library
     /// xtd.tunit
     /// @ingroup xtd_tunit tunit
-    class tunit_export_ registered_test_class final {
+    class tunit_export_ registered_test_class final : public xtd::object {
     public:
       /// @name Public Constructors
       
       /// @{
+      /// @brief Creates a new registered_test_class instance.
+      registered_test_class() = default;
+      
       /// @brief Creates a new registered_test_class instance.
       /// @param name The name associate to the test_class.
       /// @remarks The name is the name of the test class displayed when running the tests.

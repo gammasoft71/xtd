@@ -6,6 +6,7 @@
 #include "event_listener.hpp"
 #include "registered_test_class.hpp"
 #include "settings.hpp"
+#include <xtd/collections/generic/list>
 #include <xtd/date_time>
 #include <xtd/string>
 
@@ -77,7 +78,7 @@ namespace xtd {
       
       /// @brief Gets the array of aborted test names.
       /// @return The array of aborted test names.
-      std::vector<xtd::string> aborted_test_names() const noexcept;
+      xtd::array<xtd::string> aborted_test_names() const noexcept;
       
       /// @brief Gets the elapsed time for the execution of all tests in the unit test.
       /// @return The elapsed time for the execution of all tests in the unit test.
@@ -89,7 +90,7 @@ namespace xtd {
       
       /// @brief Gets the array of ignored test names.
       /// @return The array of ignored test names.
-      std::vector<xtd::string> ignored_test_names() const noexcept;
+      xtd::array<xtd::string> ignored_test_names() const noexcept;
       
       /// @brief Gets the failed test count.
       /// @return The failed test count.
@@ -97,7 +98,7 @@ namespace xtd {
       
       /// @brief Gets the array of failed test names.
       /// @return The array of failed test names.
-      std::vector<xtd::string> failed_test_names() const noexcept;
+      xtd::array<xtd::string> failed_test_names() const noexcept;
       
       /// @brief Gets the succeed test count.
       /// @return The succeed test count.
@@ -105,7 +106,7 @@ namespace xtd {
       
       /// @brief Gets the array of succeed test names.
       /// @return The array of succeed test names.
-      std::vector<xtd::string> succeed_test_names() const noexcept;
+      xtd::array<xtd::string> succeed_test_names() const noexcept;
       /// @}
       
       
@@ -151,7 +152,7 @@ namespace xtd {
       friend class xtd::tunit::base_assert;
       
       static void add(const xtd::tunit::registered_test_class& test_class);
-      static std::vector<xtd::tunit::registered_test_class>& test_classes();
+      static xtd::collections::generic::list<xtd::tunit::registered_test_class>& test_classes();
       xtd::string get_filename(const xtd::string& path);
       xtd::string cdata_message_to_xml_string(const xtd::tunit::test& test);
       xtd::string escape_path_to_json_string(const xtd::string& path);
@@ -169,7 +170,7 @@ namespace xtd {
       void write_tests_json();
       void write_tests_xml();
       
-      std::vector<string> arguments;
+      xtd::array<string> arguments;
       xtd::string name_ = "AllTests";
       xtd::uptr<xtd::tunit::event_listener> event_listener_;
       xtd::date_time end_time_point_;
