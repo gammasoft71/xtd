@@ -234,7 +234,7 @@ namespace xtd::io::tests {
       std::array<unsigned char, 4> b = {0x42, 0x24, 0x12, 0x84};
       existing_file.write(reinterpret_cast<char*>(b.data()), b.size());
       existing_file.close();
-      std::vector<unsigned char> bytes = file::read_all_bytes(test_file_name);
+      auto bytes = file::read_all_bytes(test_file_name);
       
       assert::are_equal(4_z, bytes.size());
       assert::are_equal(0x42, bytes[0]);
@@ -251,7 +251,7 @@ namespace xtd::io::tests {
       std::ofstream existing_file(test_file_name);
       existing_file << "Line 1\nLine 2\nLine 3\n";
       existing_file.close();
-      std::vector<string> lines = file::read_all_lines(test_file_name);
+      auto lines = file::read_all_lines(test_file_name);
       assert::are_equal(3_z, lines.size());
       assert::are_equal("Line 1", lines[0]);
       assert::are_equal("Line 2", lines[1]);
