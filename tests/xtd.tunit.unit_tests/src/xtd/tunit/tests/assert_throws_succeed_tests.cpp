@@ -9,7 +9,7 @@ namespace xtd::tunit::tests {
   public:
     void test_method_(test_case_succeed) {
       auto v = array {1, 2, 3, 4};
-      xtd::tunit::assert::throws<std::out_of_range>([&] {v.at(5);});
+      xtd::tunit::assert::throws<xtd::index_out_of_range_exception>([&] {v.at(5);});
     }
   };
   
