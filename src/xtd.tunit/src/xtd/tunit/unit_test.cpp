@@ -21,6 +21,7 @@ namespace {
 #endif
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
 
@@ -68,8 +69,8 @@ size_t unit_test::aborted_test_count() const noexcept {
   return count;
 }
 
-std::vector<string> unit_test::aborted_test_names() const noexcept {
-  auto names = std::vector<string> {};
+array<string> unit_test::aborted_test_names() const noexcept {
+  auto names = list<string> {};
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.aborted()) names.push_back(test_class.test()->name() + "." + test.name());
@@ -89,8 +90,8 @@ size_t unit_test::ignored_test_count() const noexcept {
   return count;
 }
 
-std::vector<string> unit_test::ignored_test_names() const noexcept {
-  auto names = std::vector<string> {};
+array<string> unit_test::ignored_test_names() const noexcept {
+  auto names = list<string> {};
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.ignored()) names.push_back(test_class.test()->name() + "." + test.name());
@@ -105,8 +106,8 @@ size_t unit_test::failed_test_count() const noexcept {
   return count;
 }
 
-std::vector<string> unit_test::failed_test_names() const noexcept {
-  auto names = std::vector<string> {};
+array<string> unit_test::failed_test_names() const noexcept {
+  auto names = list<string> {};
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.failed()) names.push_back(test_class.test()->name() + "." + test.name());
@@ -121,8 +122,8 @@ size_t unit_test::succeed_test_count() const noexcept {
   return count;
 }
 
-std::vector<string> unit_test::succeed_test_names() const noexcept {
-  auto names = std::vector<string> {};
+array<string> unit_test::succeed_test_names() const noexcept {
+  auto names = list<string> {};
   for (auto& test_class : test_classes())
     for (auto& test : test_class.test()->tests())
       if (settings::default_settings().is_match_test_name(test_class.test()->name(), test.name()) && test.succeed()) names.push_back(test_class.test()->name() + "." + test.name());
@@ -144,7 +145,7 @@ int32 unit_test::run() noexcept {
     }
     
     if (settings::default_settings().list_tests()) {
-      auto tests = std::vector<string> {};
+      auto tests = list<string> {};
       for (auto test_class : test_classes())
         for (auto test : test_class.test()->tests())
           tests.push_back(test_class.test()->name() + '.' + test.name());
@@ -152,7 +153,7 @@ int32 unit_test::run() noexcept {
       if (settings::default_settings().output_json()) write_list_tests_json();
       if (settings::default_settings().output_xml()) write_list_tests_xml();
       
-      return list_tests(tests);
+      return list_tests(tests.to_array());
     }
     
     exception::enable_stack_trace(settings::default_settings().enable_stack_trace());
@@ -268,8 +269,8 @@ void unit_test::add(const registered_test_class& test_class) {
   test_classes().push_back(test_class);
 }
 
-std::vector<registered_test_class>& unit_test::test_classes() {
-  static auto test_classes = std::vector<registered_test_class> {};
+list<registered_test_class>& unit_test::test_classes() {
+  static auto test_classes = list<registered_test_class> {};
   return test_classes;
 }
 
