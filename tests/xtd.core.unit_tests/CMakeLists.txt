@@ -279,7 +279,7 @@ add_sources(
   "src/xtd/tests/uri_partial_tests.cpp"
   "src/xtd/tests/uri_template_match_exception_tests.cpp"
   "src/xtd/tests/uri_tests.cpp"
-  "src/xtd/tests/ustring_tests.cpp"
+  "src/xtd/tests/string_tests.cpp"
   "src/xtd/tests/version_tests.cpp"
   "src/xtd/tests/xml_syntax_exception_tests.cpp"
   "src/xtd/text/tests/basic_string_builder_tests.cpp"
