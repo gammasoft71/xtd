@@ -680,6 +680,17 @@ namespace xtd {
     /// ```
     static xtd::u16string to_u16string(wchar* str) noexcept;
     
+    /// @brief Converts xtd::string to xtd::u32string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    /// @remarks This method is used to convert string container to another.
+    /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
+    /// @par Examples
+    /// ```cpp
+    /// string s1 = "Gammasoft";
+    /// u32string s2 = string_converter::to_u32string(s1);
+    /// ```
+    static xtd::u32string to_u32string(const xtd::string& str) noexcept;
     /// @brief Converts std::string to xtd::u32string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -711,17 +722,6 @@ namespace xtd {
     /// u32string s1 = string_converter::to_u32string(c1);
     /// ```
     static xtd::u32string to_u32string(char* str) noexcept;
-    /// @brief Converts xtd::string to xtd::u32string.
-    /// @param str string to convert.
-    /// @return The converted string.
-    /// @remarks This method is used to convert string container to another.
-    /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
-    /// @par Examples
-    /// ```cpp
-    /// string s1 = "Gammasoft";
-    /// u32string s2 = string_converter::to_u32string(s1);
-    /// ```
-    static xtd::u32string to_u32string(const xtd::string& str) noexcept;
 #if defined(__xtd__cpp_lib_char8_t)
     /// @brief Converts std::u8string to xtd::u32string.
     /// @param str string to convert.
@@ -731,6 +731,17 @@ namespace xtd {
     /// @par Examples
     /// ```cpp
     /// u8string s1 = u8"Gammasoft";
+    /// u32string s2 = string_converter::to_u32string(s1);
+    /// ```
+    static xtd::u32string to_u32string(const xtd::u8string& str) noexcept;
+    /// @brief Converts std::u8string to xtd::u32string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    /// @remarks This method is used to convert string container to another.
+    /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
+    /// @par Examples
+    /// ```cpp
+    /// std::u8string s1 = u8"Gammasoft";
     /// u32string s2 = string_converter::to_u32string(s1);
     /// ```
     static xtd::u32string to_u32string(const std::u8string& str) noexcept;
@@ -763,6 +774,17 @@ namespace xtd {
     /// @par Examples
     /// ```cpp
     /// u16string s1 = u"Gammasoft";
+    /// u32string s2 = string_converter::to_u32string(s1);
+    /// ```
+    static xtd::u32string to_u32string(const xtd::u16string& str) noexcept;
+    /// @brief Converts std::u16string to xtd::u32string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    /// @remarks This method is used to convert string container to another.
+    /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
+    /// @par Examples
+    /// ```cpp
+    /// std::u16string s1 = u"Gammasoft";
     /// u32string s2 = string_converter::to_u32string(s1);
     /// ```
     static xtd::u32string to_u32string(const std::u16string& str) noexcept;
@@ -836,6 +858,17 @@ namespace xtd {
     /// @par Examples
     /// ```cpp
     /// wstring s1 = L"Gammasoft";
+    /// u32string s2 = string_converter::to_u32string(s1);
+    /// ```
+    static xtd::u32string to_u32string(const xtd::wstring& str) noexcept;
+    /// @brief Converts std::wstring to xtd::u32string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    /// @remarks This method is used to convert string container to another.
+    /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
+    /// @par Examples
+    /// ```cpp
+    /// std::wstring s1 = L"Gammasoft";
     /// u32string s2 = string_converter::to_u32string(s1);
     /// ```
     static xtd::u32string to_u32string(const std::wstring& str) noexcept;

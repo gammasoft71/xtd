@@ -235,7 +235,7 @@ namespace xtd::tests {
     void test_method_(std_string_to_u32string) {
       collection_assert::are_equal({U'a', U'e', U'i', U'o', U'u', U'à', U'ç', U'é', U'è', U'ê', U'ë', U'ï', U'î', U'\x1F428'}, convert_string::to_u32string(std::string("aeiouàçéèêëïî\U0001F428")));
     }
-    
+
 #if defined(__xtd__cpp_lib_char8_t)
     void test_method_(u8string_to_u32string) {
       collection_assert::are_equal({U'a', U'e', U'i', U'o', U'u', U'à', U'ç', U'é', U'è', U'ê', U'ë', U'ï', U'î', U'\x1F428'}, convert_string::to_u32string(std::u8string(u8"aeiouàçéèêëïî\U0001F428")));
@@ -243,6 +243,10 @@ namespace xtd::tests {
 #endif
     
     void test_method_(u16string_to_u32string) {
+      collection_assert::are_equal({U'a', U'e', U'i', U'o', U'u', U'à', U'ç', U'é', U'è', U'ê', U'ë', U'ï', U'î', U'\x1F428'}, convert_string::to_u32string(u16string(u"aeiouàçéèêëïî\U0001F428")));
+    }
+    
+    void test_method_(std_u16string_to_u32string) {
       collection_assert::are_equal({U'a', U'e', U'i', U'o', U'u', U'à', U'ç', U'é', U'è', U'ê', U'ë', U'ï', U'î', U'\x1F428'}, convert_string::to_u32string(std::u16string(u"aeiouàçéèêëïî\U0001F428")));
     }
     
@@ -255,9 +259,13 @@ namespace xtd::tests {
     }
 
     void test_method_(wstring_to_u32string) {
+      collection_assert::are_equal({U'a', U'e', U'i', U'o', U'u', U'à', U'ç', U'é', U'è', U'ê', U'ë', U'ï', U'î', U'\x1F428'}, convert_string::to_u32string(wstring(L"aeiouàçéèêëïî\U0001F428")));
+    }
+
+    void test_method_(std_wstring_to_u32string) {
       collection_assert::are_equal({U'a', U'e', U'i', U'o', U'u', U'à', U'ç', U'é', U'è', U'ê', U'ë', U'ï', U'î', U'\x1F428'}, convert_string::to_u32string(std::wstring(L"aeiouàçéèêëïî\U0001F428")));
     }
-    
+
     void test_method_(literal_to_wstring) {
       if (sizeof(wchar) > 2) {
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0x1F428)}, convert_string::to_wstring("aeiouàçéèêëïî\U0001F428"));
