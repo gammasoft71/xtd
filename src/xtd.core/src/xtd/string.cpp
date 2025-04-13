@@ -16,38 +16,38 @@
 using namespace xtd;
 using namespace xtd::collections::generic;
 
-string xtd::to_ustring(int val) {
+string xtd::to_string(int val) {
   return string::format("{}", val);
 }
 
-string xtd::to_ustring(unsigned val) {
+string xtd::to_string(unsigned val) {
   return string::format("{}", val);
 }
 
-string xtd::to_ustring(long val) {
+string xtd::to_string(long val) {
   return string::format("{}", val);
 }
 
-string xtd::to_ustring(unsigned long val) {
+string xtd::to_string(unsigned long val) {
   return string::format("{}", val);
 }
 
-string xtd::to_ustring(long long val) {
+string xtd::to_string(long long val) {
   return string::format("{}", val);
 }
 
-string xtd::to_ustring(unsigned long long val) {
+string xtd::to_string(unsigned long long val) {
   return string::format("{}", val);
 }
 
-string xtd::to_ustring(float val) {
+string xtd::to_string(float val) {
   return string::format("{}", val);
 }
 
-string xtd::to_ustring(double val) {
+string xtd::to_string(double val) {
   return string::format("{}", val);
 }
 
-string xtd::to_ustring(long double val) {
+string xtd::to_string(long double val) {
   return string::format("{}", val);
 }

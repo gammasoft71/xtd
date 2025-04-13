@@ -145,7 +145,7 @@ namespace set_path {
       }
       current_directory[size] = 0;
       #endif
-      return convert_string::to_ustring(current_directory);
+      return convert_string::to_string(current_directory);
     }
     
     static int win32_write_system_path(bool system_path, const string& path) {
