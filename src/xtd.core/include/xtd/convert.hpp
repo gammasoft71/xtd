@@ -5245,12 +5245,6 @@ namespace xtd {
     
     /// @brief Convert type_t to string.
     /// @param value object to convert.
-    /// @return A new string object converted from value.
-    /// @deprecated Replaced by xtd::convert::to_string - Will be removed in version 0.4.0.
-    template<class type_t>
-    [[deprecated("Replaced by xtd::convert::to_string - Will be removed in version 0.4.0.")]] static string to_ustring(type_t value) {return to_string(value);}
-    /// @brief Convert type_t to string.
-    /// @param value object to convert.
     /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
     /// @return A new string object converted from value.
     /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
