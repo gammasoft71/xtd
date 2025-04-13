@@ -34,7 +34,7 @@ void about_dialog::show(intptr hwnd, const xtd::drawing::icon& icon, const strin
   about_info.SetCopyright(convert_string::to_wstring(string(copyright).replace(u8"\u00A9"_s, u8"(c)"_s)).c_str());
   #if defined(__WXGTK__)
   about_info.SetIcon(reinterpret_cast<wxIconBundle*>(icon.handle())->GetIcon());
-  about_info.SetWebSite(convert_string::to_wstring(website), convert_string::to_wstring(website_label).c_str());
+  about_info.SetWebSite(convert_string::to_wstring(website).c_str(), convert_string::to_wstring(website_label).c_str());
   for (auto creator : creators)
     about_info.AddDeveloper(convert_string::to_wstring(creator).c_str());
   for (auto doc_writer : doc_writers)
