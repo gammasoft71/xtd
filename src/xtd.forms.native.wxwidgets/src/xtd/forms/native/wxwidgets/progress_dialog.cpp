@@ -30,7 +30,7 @@ namespace {
   
   class wx_progress_dialog : public wxProgressDialog {
   public:
-    wx_progress_dialog(const string& title, const string& message, int32 maximum = 100, wxWindow* parent = nullptr, int32 style = wxPD_APP_MODAL | wxPD_AUTO_HIDE) : wxProgressDialog(convert_string::to_wstring(title), convert_string::to_wstring(message), maximum, parent, style) {
+    wx_progress_dialog(const string& title, const string& message, int32 maximum = 100, wxWindow* parent = nullptr, int32 style = wxPD_APP_MODAL | wxPD_AUTO_HIDE) : wxProgressDialog(convert_string::to_wstring(title).c_str(), convert_string::to_wstring(message).c_str(), maximum, parent, style) {
       if (environment::os_version().is_macos()) SetBackgroundColour(wxColour(system_colors::control().r(), system_colors::control().g(), system_colors::control().b(), system_colors::control().a()));
       timer_marquee.Bind(wxEVT_TIMER, [&](wxTimerEvent & event) {
         if (event.GetTimer().GetId() == timer_marquee.GetId())
@@ -60,10 +60,10 @@ namespace {
     }
     
     void message(const string& message) {
-      if (!timer_marquee.IsRunning()) Update(value_, convert_string::to_wstring(message));
+      if (!timer_marquee.IsRunning()) Update(value_, convert_string::to_wstring(message).c_str());
       else {
         timer_marquee.Stop();
-        Pulse(convert_string::to_wstring(message));
+        Pulse(convert_string::to_wstring(message).c_str());
         timer_marquee.Start(as<int32>(animation_speed_));
       }
     }

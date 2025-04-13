@@ -45,5 +45,5 @@ void command_link_button::texts(intptr control, const std::tuple<string, string>
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
     return;
   }
-  static_cast<wxCommandLinkButton*>(reinterpret_cast<control_handler*>(control)->control())->SetMainLabelAndNote(convert_string::to_wstring(std::get<0>(texts)), convert_string::to_wstring(std::get<1>(texts)));
+  static_cast<wxCommandLinkButton*>(reinterpret_cast<control_handler*>(control)->control())->SetMainLabelAndNote(convert_string::to_wstring(std::get<0>(texts)).c_str(), convert_string::to_wstring(std::get<1>(texts)).c_str());
 }
