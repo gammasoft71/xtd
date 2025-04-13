@@ -30,7 +30,7 @@ void menu::insert_item(intptr menu, size_t pos, intptr menu_item) {
 void menu::insert_menu(intptr menu, size_t pos, intptr menu_item, const string& text) {
   if (menu == 0) throw_helper::throws(exception_case::argument);
   if (menu_item == 0) throw_helper::throws(exception_case::argument);
-  reinterpret_cast<wxMenu*>(menu)->Insert(pos, wxID_ANY, convert_string::to_wstring(text), reinterpret_cast<wxMenu*>(menu_item));
+  reinterpret_cast<wxMenu*>(menu)->Insert(pos, wxID_ANY, convert_string::to_wstring(text).c_str(), reinterpret_cast<wxMenu*>(menu_item));
 }
 
 intptr menu::native_handle(intptr menu) {
