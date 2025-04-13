@@ -473,7 +473,7 @@ namespace xtd {
     /// string s1 = "Gammasoft";
     /// u16string s2 = string_converter::to_u16string(s1);
     /// ```
-    static std::u16string to_u16string(const std::string& str) noexcept;
+    static xtd::u16string to_u16string(const std::string& str) noexcept;
     /// @brief Converts const char* to std::u16string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -483,7 +483,7 @@ namespace xtd {
     /// const char* c1 = "Gammasoft";
     /// u16string s1 = string_converter::to_u16string(c1);
     /// ```
-    static std::u16string to_u16string(const char* str) noexcept;
+    static xtd::u16string to_u16string(const char* str) noexcept;
     /// @brief Converts char* to std::u16string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -493,7 +493,7 @@ namespace xtd {
     /// char* c1 = "Gammasoft";
     /// u16string s1 = string_converter::to_u16string(c1);
     /// ```
-    static std::u16string to_u16string(char* str) noexcept;
+    static xtd::u16string to_u16string(char* str) noexcept;
     /// @brief Converts xtd::string to std::u16string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -504,7 +504,7 @@ namespace xtd {
     /// string s1 = "Gammasoft";
     /// u16string s2 = string_converter::to_u16string(s1);
     /// ```
-    static std::u16string to_u16string(const xtd::string& str) noexcept;
+    static xtd::u16string to_u16string(const xtd::string& str) noexcept;
 #if defined(__xtd__cpp_lib_char8_t)
     /// @brief Converts std::u8string to std::u16string.
     /// @param str string to convert.
@@ -518,7 +518,7 @@ namespace xtd {
     /// u8string s1 = u8"Gammasoft";
     /// u16string s2 = string_converter::to_u16string(s1);
     /// ```
-    static std::u16string to_u16string(const std::u8string& str) noexcept;
+    static xtd::u16string to_u16string(const std::u8string& str) noexcept;
     /// @brief Converts const char8* to std::u16string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -528,7 +528,7 @@ namespace xtd {
     /// const char8* c1 = u8"Gammasoft";
     /// u16string s1 = string_converter::to_u16string(c1);
     /// ```
-    static std::u16string to_u16string(const char8* str) noexcept;
+    static xtd::u16string to_u16string(const char8* str) noexcept;
     /// @brief Converts char8* to std::u16string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -538,7 +538,7 @@ namespace xtd {
     /// char8* c1 = u8"Gammasoft";
     /// u16string s1 = string_converter::to_u16string(c1);
     /// ```
-    static std::u16string to_u16string(char8* str) noexcept;
+    static xtd::u16string to_u16string(char8* str) noexcept;
 #endif
     /// @brief Converts std::u16string to std::u16string.
     /// @param str string to convert.
@@ -550,7 +550,18 @@ namespace xtd {
     /// u16string s1 = u"Gammasoft";
     /// u16string s2 = string_converter::to_u16string(s1);
     /// ```
-    static const std::u16string& to_u16string(const std::u16string& str) noexcept;
+    static const xtd::u16string& to_u16string(const xtd::u16string& str) noexcept;
+    /// @brief Converts std::u16string to std::u16string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    /// @remarks This method is used to convert string container to another.
+    /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
+    /// @par Examples
+    /// ```cpp
+    /// std::u16string s1 = u"Gammasoft";
+    /// u16string s2 = string_converter::to_u16string(s1);
+    /// ```
+    static xtd::u16string to_u16string(const std::u16string& str) noexcept;
     /// @brief Converts const char16* to std::u16string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -560,7 +571,7 @@ namespace xtd {
     /// const char16* c1 = u"Gammasoft";
     /// u16string s1 = string_converter::to_u16string(c1);
     /// ```
-    static std::u16string to_u16string(const char16* str) noexcept;
+    static xtd::u16string to_u16string(const char16* str) noexcept;
     /// @brief Converts char16* to std::u16string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -570,7 +581,7 @@ namespace xtd {
     /// char16* c1 = u"Gammasoft";
     /// u16string s1 = string_converter::to_u16string(c1);
     /// ```
-    static std::u16string to_u16string(char16* str) noexcept;
+    static xtd::u16string to_u16string(char16* str) noexcept;
     /// @brief Converts std::u32string to std::u16string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -581,7 +592,7 @@ namespace xtd {
     /// u32string s1 = U"Gammasoft";
     /// u16string s2 = string_converter::to_u16string(s1);
     /// ```
-    static std::u16string to_u16string(const std::u32string& str) noexcept;
+    static xtd::u16string to_u16string(const std::u32string& str) noexcept;
     /// @brief Converts const char32* to std::u16string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -591,7 +602,7 @@ namespace xtd {
     /// const char32* c1 = U"Gammasoft";
     /// u16string s1 = string_converter::to_u16string(c1);
     /// ```
-    static std::u16string to_u16string(const char32* str) noexcept;
+    static xtd::u16string to_u16string(const char32* str) noexcept;
     /// @brief Converts char32* to std::u16string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -601,7 +612,7 @@ namespace xtd {
     /// char32* c1 = "Gammasoft";
     /// u16string s1 = string_converter::to_u16string(c1);
     /// ```
-    static std::u16string to_u16string(char32* str) noexcept;
+    static xtd::u16string to_u16string(char32* str) noexcept;
     /// @brief Converts std::wstring to std::u16string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -612,7 +623,7 @@ namespace xtd {
     /// wstring s1 = L"Gammasoft";
     /// u16string s2 = string_converter::to_u16string(s1);
     /// ```
-    static std::u16string to_u16string(const std::wstring& str) noexcept;
+    static xtd::u16string to_u16string(const std::wstring& str) noexcept;
     /// @brief Converts const wchar* to std::u16string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -622,7 +633,7 @@ namespace xtd {
     /// const wchar* c1 = L"Gammasoft";
     /// u16string s1 = string_converter::to_u16string(c1);
     /// ```
-    static std::u16string to_u16string(const wchar* str) noexcept;
+    static xtd::u16string to_u16string(const wchar* str) noexcept;
     /// @brief Converts wchar* to std::u16string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -632,7 +643,7 @@ namespace xtd {
     /// wchar* c1 = L"Gammasoft";
     /// u16string s1 = string_converter::to_u16string(c1);
     /// ```
-    static std::u16string to_u16string(wchar* str) noexcept;
+    static xtd::u16string to_u16string(wchar* str) noexcept;
     
     /// @brief Converts std::string to std::u32string.
     /// @param str string to convert.

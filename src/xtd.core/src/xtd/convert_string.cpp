@@ -196,11 +196,11 @@ u8string convert_string::to_u8string(wchar* str) noexcept {
 }
 #endif
 
-std::u16string convert_string::to_u16string(const std::string& str) noexcept {
+u16string convert_string::to_u16string(const std::string& str) noexcept {
   return to_u16string(str.c_str());
 }
 
-std::u16string convert_string::to_u16string(const char* str) noexcept {
+u16string convert_string::to_u16string(const char* str) noexcept {
   auto out = std::u16string {};
   auto codepoint = 0u;
   while (*str != 0) {
@@ -222,61 +222,65 @@ std::u16string convert_string::to_u16string(const char* str) noexcept {
   return out;
 }
 
-std::u16string convert_string::to_u16string(char* str) noexcept {
+u16string convert_string::to_u16string(char* str) noexcept {
   return to_u16string(reinterpret_cast<const char*>(str));
 }
 
-std::u16string convert_string::to_u16string(const string& str) noexcept {
+u16string convert_string::to_u16string(const string& str) noexcept {
   return to_u16string(reinterpret_cast<const char*>(str.c_str()));
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-std::u16string convert_string::to_u16string(const std::u8string& str) noexcept {
+u16string convert_string::to_u16string(const std::u8string& str) noexcept {
   return to_u16string(reinterpret_cast<const char*>(str.c_str()));
 }
 
-std::u16string convert_string::to_u16string(const char8* str) noexcept {
+u16string convert_string::to_u16string(const char8* str) noexcept {
   return to_u16string(reinterpret_cast<const char*>(str));
 }
 
-std::u16string convert_string::to_u16string(char8* str) noexcept {
+u16string convert_string::to_u16string(char8* str) noexcept {
   return to_u16string(reinterpret_cast<const char*>(str));
 }
 #endif
 
-const std::u16string& convert_string::to_u16string(const std::u16string& str) noexcept {
+const u16string& convert_string::to_u16string(const u16string& str) noexcept {
   return str;
 }
 
-std::u16string convert_string::to_u16string(const char16* str) noexcept {
+const u16string& convert_string::to_u16string(const std::u16string& str) noexcept {
   return str;
 }
 
-std::u16string convert_string::to_u16string(char16* str) noexcept {
+u16string convert_string::to_u16string(const char16* str) noexcept {
   return str;
 }
 
-std::u16string convert_string::to_u16string(const std::u32string& str) noexcept {
+u16string convert_string::to_u16string(char16* str) noexcept {
+  return str;
+}
+
+u16string convert_string::to_u16string(const std::u32string& str) noexcept {
   return to_u16string(to_string(str));
 }
 
-std::u16string convert_string::to_u16string(const char32* str) noexcept {
+u16string convert_string::to_u16string(const char32* str) noexcept {
   return to_u16string(to_string(str));
 }
 
-std::u16string convert_string::to_u16string(char32* str) noexcept {
+u16string convert_string::to_u16string(char32* str) noexcept {
   return to_u16string(to_string(str));
 }
 
-std::u16string convert_string::to_u16string(const std::wstring& str) noexcept {
+u16string convert_string::to_u16string(const std::wstring& str) noexcept {
   return to_u16string(to_string(str));
 }
 
-std::u16string convert_string::to_u16string(const wchar* str) noexcept {
+u16string convert_string::to_u16string(const wchar* str) noexcept {
   return to_u16string(to_string(str));
 }
 
-std::u16string convert_string::to_u16string(wchar* str) noexcept {
+u16string convert_string::to_u16string(wchar* str) noexcept {
   return to_u16string(to_string(str));
 }
 
