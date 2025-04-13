@@ -284,11 +284,11 @@ u16string convert_string::to_u16string(wchar* str) noexcept {
   return to_u16string(to_string(str));
 }
 
-std::u32string convert_string::to_u32string(const std::string& str) noexcept {
+u32string convert_string::to_u32string(const std::string& str) noexcept {
   return to_u32string(str.c_str());
 }
 
-std::u32string convert_string::to_u32string(const char* str) noexcept {
+u32string convert_string::to_u32string(const char* str) noexcept {
   auto out = std::u32string {};
   auto codepoint = 0u;
   while (*str != 0) {
@@ -305,61 +305,65 @@ std::u32string convert_string::to_u32string(const char* str) noexcept {
   return out;
 }
 
-std::u32string convert_string::to_u32string(char* str) noexcept {
+u32string convert_string::to_u32string(char* str) noexcept {
   return to_u32string(reinterpret_cast<const char*>(str));
 }
 
-std::u32string convert_string::to_u32string(const string& str) noexcept {
+u32string convert_string::to_u32string(const string& str) noexcept {
   return to_u32string(reinterpret_cast<const char*>(str.c_str()));
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
-std::u32string convert_string::to_u32string(const std::u8string& str) noexcept {
+u32string convert_string::to_u32string(const std::u8string& str) noexcept {
   return to_u32string(reinterpret_cast<const char*>(str.c_str()));
 }
 
-std::u32string convert_string::to_u32string(const char8* str) noexcept {
+u32string convert_string::to_u32string(const char8* str) noexcept {
   return to_u32string(reinterpret_cast<const char*>(str));
 }
 
-std::u32string convert_string::to_u32string(char8* str) noexcept {
+u32string convert_string::to_u32string(char8* str) noexcept {
   return to_u32string(reinterpret_cast<const char*>(str));
 }
 #endif
 
-std::u32string convert_string::to_u32string(const std::u16string& str) noexcept {
+u32string convert_string::to_u32string(const std::u16string& str) noexcept {
   return to_u32string(to_string(str));
 }
 
-std::u32string convert_string::to_u32string(const char16* str) noexcept {
+u32string convert_string::to_u32string(const char16* str) noexcept {
   return to_u32string(to_string(str));
 }
 
-std::u32string convert_string::to_u32string(char16* str) noexcept {
+u32string convert_string::to_u32string(char16* str) noexcept {
   return to_u32string(to_string(str));
 }
 
-const std::u32string& convert_string::to_u32string(const std::u32string& str) noexcept {
+const u32string& convert_string::to_u32string(const u32string& str) noexcept {
   return str;
 }
 
-std::u32string convert_string::to_u32string(const char32* str) noexcept {
+u32string convert_string::to_u32string(const std::u32string& str) noexcept {
   return str;
 }
 
-std::u32string convert_string::to_u32string(char32* str) noexcept {
+u32string convert_string::to_u32string(const char32* str) noexcept {
   return str;
 }
 
-std::u32string convert_string::to_u32string(const std::wstring& str) noexcept {
+u32string convert_string::to_u32string(char32* str) noexcept {
+  return str;
+}
+
+u32string convert_string::to_u32string(const std::wstring& str) noexcept {
   return to_u32string(to_string(str));
 }
 
-std::u32string convert_string::to_u32string(const wchar* str) noexcept {
+u32string convert_string::to_u32string(const wchar* str) noexcept {
   return to_u32string(to_string(str));
 }
 
-std::u32string convert_string::to_u32string(wchar* str) noexcept {
+u32string convert_string::to_u32string(wchar* str) noexcept {
   return to_u32string(to_string(str));
 }
 
