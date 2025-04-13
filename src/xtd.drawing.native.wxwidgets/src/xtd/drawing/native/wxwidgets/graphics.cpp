@@ -347,7 +347,7 @@ void graphics::draw_rectangles(intptr handle, intptr pen, const array<std::tuple
 }
 
 void graphics::draw_rotated_string(intptr handle, const xtd::string& text, intptr font, intptr brush, float x, float y, float angle) {
-  wxDrawString::DrawString(handle, convert_string::to_wstring(text), *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, angle, wxAlignment::wxALIGN_NOT, HKP_NONE, ST_NONE);
+  wxDrawString::DrawString(handle, convert_string::to_wstring(text).c_str(), *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, angle, wxAlignment::wxALIGN_NOT, HKP_NONE, ST_NONE);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
@@ -361,12 +361,12 @@ void graphics::draw_rounded_rectangle(intptr handle, intptr pen, float x, float 
 }
 
 void graphics::draw_string(intptr handle, const xtd::string& text, intptr font, intptr brush, float x, float y, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming) {
-  wxDrawString::DrawString(handle, convert_string::to_wstring(text), *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix, trimming);
+  wxDrawString::DrawString(handle, convert_string::to_wstring(text).c_str(), *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix, trimming);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
 void graphics::draw_string(intptr handle, const xtd::string& text, intptr font, intptr brush, float x, float y, float width, float height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, int32 string_formats) {
-  wxDrawString::DrawString(handle, convert_string::to_wstring(text), *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, width, height, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix, trimming, string_formats);
+  wxDrawString::DrawString(handle, convert_string::to_wstring(text).c_str(), *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, width, height, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix, trimming, string_formats);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
@@ -683,7 +683,7 @@ void graphics::measure_string(intptr handle, const string& text, intptr font, fl
   auto strings = text.split('\n');
   wxString formated_text;
   for (auto string : strings) {
-    wxString line_string = wxDrawString::FormatString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(string), max_width, hot_key_prefix, trimming);
+    wxString line_string = wxDrawString::FormatString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(string).c_str(), max_width, hot_key_prefix, trimming);
     if (++line_index > lines_filled) break;
     formated_text += line_string + wxString("\n");
   }
@@ -783,7 +783,7 @@ void graphics::translate_transform(intptr handle, float dx, float dy, int32 orde
 }
 
 xtd::string graphics::trim_string(intptr handle, const xtd::string& text, intptr font, float width, int32 trimming) {
-  return convert_string::to_string(wxDrawString::TrimString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(text), *reinterpret_cast<wxFont*>(font), width, trimming).c_str().AsWChar());
+  return convert_string::to_string(wxDrawString::TrimString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(text).c_str(), *reinterpret_cast<wxFont*>(font), width, trimming).c_str().AsWChar());
 }
 
 void graphics::visible_clip_bounds(intptr handle, float& x, float& y, float& width, float& height) {
