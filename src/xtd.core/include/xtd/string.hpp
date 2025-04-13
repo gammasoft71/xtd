@@ -24,44 +24,44 @@ namespace xtd {
   /// @brief Converts a signed integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(int val);
+  string to_string(int val);
   /// @brief Converts an unsigned integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(unsigned val);
+  string to_string(unsigned val);
   /// @brief Converts a signed integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(long val);
+  string to_string(long val);
   /// @brief Converts an unsigned integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(unsigned long val);
+  string to_string(unsigned long val);
   /// @brief Converts a signed integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(long long val);
+  string to_string(long long val);
   /// @brief Converts an unsigned integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(unsigned long long val);
+  string to_string(unsigned long long val);
   /// @brief Converts a floating point to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(float val);
+  string to_string(float val);
   /// @brief Converts a floating point integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(double val);
+  string to_string(double val);
   /// @brief Converts a floating point to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(long double val);
+  string to_string(long double val);
   /// @brief Converts a type_t to xtd::string.
   /// @param val A type_t value to convert.
   /// @return A string holding the converted value.
   template<class type_t>
-  string to_ustring(type_t val) {
+  string to_string(type_t val) {
     return string::format("{}", val);
   }
 }

@@ -82,7 +82,7 @@ namespace xtd::tests {
       assert::are_equal("0.42", string::format("{}", a));
     }
     
-    void test_method_(format_string) {
+    void test_method_(format_std_string) {
       std::any a = std::string {"string"};
       assert::are_equal("string", string::format("{}", a));
     }
@@ -119,7 +119,7 @@ namespace xtd::tests {
       assert::are_equal("42", string::format("{}", a));
     }
     
-    void test_method_(format_ustring) {
+    void test_method_(format_string) {
       std::any a1 = "string"_s;
       assert::are_equal("string", string::format("{}", a1));
       std::any a2 = u8"string"_s;

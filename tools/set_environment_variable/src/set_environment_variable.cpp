@@ -145,7 +145,7 @@ namespace set_path {
       }
       if (status == ERROR_SUCCESS) value[size] = 0;
       #endif
-      return convert_string::to_ustring(value);
+      return convert_string::to_string(value);
     }
     
     static int win32_write_environment_variable_system(bool environment_variable_system, const string& key, const string& value) {
