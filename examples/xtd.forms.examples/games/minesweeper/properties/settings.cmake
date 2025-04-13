@@ -4,7 +4,7 @@
 # Remarks
 # This file generates the "properties/settings.hpp" file, which is used to access the settings.
 
-# if "true", minesweeper use original color otherwise; otherwise minesweeper use system color.
+# if "true", minesweeper use original color; otherwise minesweeper use system color.
 setting(original_color bool USER "false")
 
 # if "true", minesweeper shows ? marks; otherwise none.
