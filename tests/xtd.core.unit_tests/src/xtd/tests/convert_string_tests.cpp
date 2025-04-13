@@ -335,6 +335,13 @@ namespace xtd::tests {
 #if defined(__xtd__cpp_lib_char8_t)
     void test_method_(u8string_to_wstring) {
       if (sizeof(wchar) > 2)
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0x1F428)}, convert_string::to_wstring(u8string(u8"aeiouàçéèêëïî\U0001F428")));
+      else
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0xD83D), static_cast<wchar>(0xDC28)}, convert_string::to_wstring(u8string(u8"aeiouàçéèêëïî\U0001F428")));
+    }
+    
+    void test_method_(std_u8string_to_wstring) {
+      if (sizeof(wchar) > 2)
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0x1F428)}, convert_string::to_wstring(std::u8string(u8"aeiouàçéèêëïî\U0001F428")));
       else
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0xD83D), static_cast<wchar>(0xDC28)}, convert_string::to_wstring(std::u8string(u8"aeiouàçéèêëïî\U0001F428")));
@@ -343,23 +350,37 @@ namespace xtd::tests {
     
     void test_method_(u16string_to_wstring) {
       if (sizeof(wchar) > 2)
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0x1F428)}, convert_string::to_wstring(u16string(u"aeiouàçéèêëïî\U0001F428")));
+      else
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0xD83D), static_cast<wchar>(0xDC28)}, convert_string::to_wstring(u16string(u"aeiouàçéèêëïî\U0001F428")));
+    }
+    
+    void test_method_(std_u16string_to_wstring) {
+      if (sizeof(wchar) > 2)
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0x1F428)}, convert_string::to_wstring(std::u16string(u"aeiouàçéèêëïî\U0001F428")));
       else
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0xD83D), static_cast<wchar>(0xDC28)}, convert_string::to_wstring(std::u16string(u"aeiouàçéèêëïî\U0001F428")));
     }
-    
+
     void test_method_(u32string_to_wstring) {
+      if (sizeof(wchar) > 2)
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0x1F428)}, convert_string::to_wstring(u32string(U"aeiouàçéèêëïî\U0001F428")));
+      else
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0xD83D), static_cast<wchar>(0xDC28)}, convert_string::to_wstring(u32string(U"aeiouàçéèêëïî\U0001F428")));
+    }
+
+    void test_method_(std_u32string_to_wstring) {
       if (sizeof(wchar) > 2)
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0x1F428)}, convert_string::to_wstring(std::u32string(U"aeiouàçéèêëïî\U0001F428")));
       else
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0xD83D), static_cast<wchar>(0xDC28)}, convert_string::to_wstring(std::u32string(U"aeiouàçéèêëïî\U0001F428")));
     }
-    
+
     void test_method_(wstring_to_wstring) {
       if (sizeof(wchar) > 2)
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0x1F428)}, convert_string::to_wstring(wstring(L"aeiouàçéèêëïî\U0001F428")));
       else
-        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0xD83D), static_cast<wchar>(0xDC28)}, convert_string::to_wstring(std::wstring(L"aeiouàçéèêëïî\U0001F428")));
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0xD83D), static_cast<wchar>(0xDC28)}, convert_string::to_wstring(wstring(L"aeiouàçéèêëïî\U0001F428")));
     }
     
     void test_method_(std_wstring_to_wstring) {

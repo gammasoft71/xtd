@@ -391,6 +391,10 @@ u32string convert_string::to_u32string(wchar* str) noexcept {
   return to_u32string(to_string(str));
 }
 
+wstring convert_string::to_wstring(const string& str) noexcept {
+  return to_wstring(reinterpret_cast<const char*>(str.c_str()));
+}
+
 wstring convert_string::to_wstring(const std::string& str) noexcept {
   return to_wstring(str.c_str());
 }
@@ -423,11 +427,11 @@ wstring convert_string::to_wstring(char* str) noexcept {
   return to_wstring(reinterpret_cast<const char*>(str));
 }
 
-wstring convert_string::to_wstring(const string& str) noexcept {
+#if defined(__xtd__cpp_lib_char8_t)
+wstring convert_string::to_wstring(const u8string& str) noexcept {
   return to_wstring(reinterpret_cast<const char*>(str.c_str()));
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 wstring convert_string::to_wstring(const std::u8string& str) noexcept {
   return to_wstring(reinterpret_cast<const char*>(str.c_str()));
 }
@@ -441,6 +445,10 @@ wstring convert_string::to_wstring(char8* str) noexcept {
 }
 #endif
 
+wstring convert_string::to_wstring(const u16string& str) noexcept {
+  return to_wstring(to_string(str));
+}
+
 wstring convert_string::to_wstring(const std::u16string& str) noexcept {
   return to_wstring(to_string(str));
 }
@@ -450,6 +458,10 @@ wstring convert_string::to_wstring(const char16* str) noexcept {
 }
 
 wstring convert_string::to_wstring(char16* str) noexcept {
+  return to_wstring(to_string(str));
+}
+
+wstring convert_string::to_wstring(const u32string& str) noexcept {
   return to_wstring(to_string(str));
 }
 
