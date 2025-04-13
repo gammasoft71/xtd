@@ -29,39 +29,6 @@ namespace xtd {
     /// @name Public Static Methods
     
     /// @{
-    /// @brief Converts std::string to std::string.
-    /// @param str string to convert.
-    /// @return The converted string.
-    /// @remarks This method is used to convert string container to another.
-    /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
-    /// @par Examples
-    /// ```cpp
-    /// string s1 = "Gammasoft";
-    /// string s2 = string_converter::to_string(s1);
-    /// ```
-    static const std::string& to_string(const std::string& str) noexcept;
-    /// @brief Converts const char* to std::string.
-    /// @param str string to convert.
-    /// @return The converted string.
-    /// @remarks This method is used to convert string container to another.
-    /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
-    /// @par Examples
-    /// ```cpp
-    /// const char* c1 = "Gammasoft";
-    /// string s1 = string_converter::to_string(c1);
-    /// ```
-    static std::string to_string(const char* str) noexcept;
-    /// @brief Converts char* to std::string.
-    /// @param str string to convert.
-    /// @return The converted string.
-    /// @remarks This method is used to convert string container to another.
-    /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
-    /// @par Examples
-    /// ```cpp
-    /// char* c1 = "Gammasoft";
-    /// string s1 = string_converter::to_string(c1);
-    /// ```
-    static std::string to_string(char* str) noexcept;
     /// @brief Converts xtd::string to std::string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -72,9 +39,42 @@ namespace xtd {
     /// string s1 = "Gammasoft";
     /// string s2 = string_converter::to_string(s1);
     /// ```
-    static std::string to_string(const xtd::string& str) noexcept;
+    static const xtd::string& to_string(const xtd::string& str) noexcept;
+    /// @brief Converts std::string to std::string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    /// @remarks This method is used to convert string container to another.
+    /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
+    /// @par Examples
+    /// ```cpp
+    /// string s1 = "Gammasoft";
+    /// string s2 = string_converter::to_string(s1);
+    /// ```
+    static xtd::string to_string(const std::string& str) noexcept;
+    /// @brief Converts const char* to std::string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    /// @remarks This method is used to convert string container to another.
+    /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
+    /// @par Examples
+    /// ```cpp
+    /// const char* c1 = "Gammasoft";
+    /// string s1 = string_converter::to_string(c1);
+    /// ```
+    static xtd::string to_string(const char* str) noexcept;
+    /// @brief Converts char* to std::string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    /// @remarks This method is used to convert string container to another.
+    /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
+    /// @par Examples
+    /// ```cpp
+    /// char* c1 = "Gammasoft";
+    /// string s1 = string_converter::to_string(c1);
+    /// ```
+    static xtd::string to_string(char* str) noexcept;
 #if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Converts std::u8string to std::string.
+    /// @brief Converts xtd::u8string to std::string.
     /// @param str string to convert.
     /// @return The converted string.
     /// @remarks This method is used to convert string container to another.
@@ -84,7 +84,18 @@ namespace xtd {
     /// u8string s1 = u8"Gammasoft";
     /// string s2 = string_converter::to_string(s1);
     /// ```
-    static std::string to_string(const std::u8string& str) noexcept;
+    static xtd::string to_string(const xtd::u8string& str) noexcept;
+    /// @brief Converts std::u8string to std::string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    /// @remarks This method is used to convert string container to another.
+    /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
+    /// @par Examples
+    /// ```cpp
+    /// std::u8string s1 = u8"Gammasoft";
+    /// string s2 = string_converter::to_string(s1);
+    /// ```
+    static xtd::string to_string(const std::u8string& str) noexcept;
     /// @brief Converts const char8* to std::string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -95,7 +106,7 @@ namespace xtd {
     /// const char8* c1 = u8"Gammasoft";
     /// string s1 = string_converter::to_string(c1);
     /// ```
-    static std::string to_string(const char8* str) noexcept;
+    static xtd::string to_string(const char8* str) noexcept;
     /// @brief Converts char8* to std::string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -106,9 +117,9 @@ namespace xtd {
     /// char8* c1 = u8"Gammasoft";
     /// string s1 = string_converter::to_string(c1);
     /// ```
-    static std::string to_string(char8* str) noexcept;
+    static xtd::string to_string(char8* str) noexcept;
 #endif
-    /// @brief Converts std::u16string to std::string.
+    /// @brief Converts xtd::u16string to std::string.
     /// @param str string to convert.
     /// @return The converted string.
     /// @remarks This method is used to convert string container to another.
@@ -118,7 +129,18 @@ namespace xtd {
     /// u16string s1 = u"Gammasoft";
     /// string s2 = string_converter::to_string(s1);
     /// ```
-    static std::string to_string(const std::u16string& str) noexcept;
+    static xtd::string to_string(const xtd::u16string& str) noexcept;
+    /// @brief Converts std::u16string to std::string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    /// @remarks This method is used to convert string container to another.
+    /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
+    /// @par Examples
+    /// ```cpp
+    /// std::u16string s1 = u"Gammasoft";
+    /// string s2 = string_converter::to_string(s1);
+    /// ```
+    static xtd::string to_string(const std::u16string& str) noexcept;
     /// @brief Converts const char16* to std::string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -129,7 +151,7 @@ namespace xtd {
     /// const char16* c1 = u"Gammasoft";
     /// string s1 = string_converter::to_string(c1);
     /// ```
-    static std::string to_string(const char16* str) noexcept;
+    static xtd::string to_string(const char16* str) noexcept;
     /// @brief Converts char16* to std::string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -140,8 +162,8 @@ namespace xtd {
     /// char16* c1 = u"Gammasoft";
     /// string s1 = string_converter::to_string(c1);
     /// ```
-    static std::string to_string(char16* str) noexcept;
-    /// @brief Converts std::u32string to std::string.
+    static xtd::string to_string(char16* str) noexcept;
+    /// @brief Converts xtd::u32string to std::string.
     /// @param str string to convert.
     /// @return The converted string.
     /// @remarks This method is used to convert string container to another.
@@ -151,7 +173,18 @@ namespace xtd {
     /// u32string s1 = U"Gammasoft";
     /// string s2 = string_converter::to_string(s1);
     /// ```
-    static std::string to_string(const std::u32string& str) noexcept;
+    static xtd::string to_string(const xtd::u32string& str) noexcept;
+    /// @brief Converts std::u32string to std::string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    /// @remarks This method is used to convert string container to another.
+    /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
+    /// @par Examples
+    /// ```cpp
+    /// std::u32string s1 = U"Gammasoft";
+    /// string s2 = string_converter::to_string(s1);
+    /// ```
+    static xtd::string to_string(const std::u32string& str) noexcept;
     /// @brief Converts const char32* to std::string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -162,7 +195,7 @@ namespace xtd {
     /// const char32* c1 = U"Gammasoft";
     /// string s1 = string_converter::to_string(c1);
     /// ```
-    static std::string to_string(const char32* str) noexcept;
+    static xtd::string to_string(const char32* str) noexcept;
     /// @brief Converts char32* to std::string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -173,8 +206,8 @@ namespace xtd {
     /// char32* c1 = U"Gammasoft";
     /// string s1 = string_converter::to_string(c1);
     /// ```
-    static std::string to_string(char32* str) noexcept;
-    /// @brief Converts std::wstring to std::string.
+    static xtd::string to_string(char32* str) noexcept;
+    /// @brief Converts xtd::wstring to std::string.
     /// @param str string to convert.
     /// @return The converted string.
     /// @remarks This method is used to convert string container to another.
@@ -184,7 +217,18 @@ namespace xtd {
     /// wstring s1 = L"Gammasoft";
     /// string s2 = string_converter::to_string(s1);
     /// ```
-    static std::string to_string(const std::wstring& str) noexcept;
+    static xtd::string to_string(const xtd::wstring& str) noexcept;
+    /// @brief Converts std::wstring to std::string.
+    /// @param str string to convert.
+    /// @return The converted string.
+    /// @remarks This method is used to convert string container to another.
+    /// @warning The content of the string must be encoded in UTF-8 (65001) format. Make sure it is, otherwise the result will be uncertain.
+    /// @par Examples
+    /// ```cpp
+    /// std::wstring s1 = L"Gammasoft";
+    /// string s2 = string_converter::to_string(s1);
+    /// ```
+    static xtd::string to_string(const std::wstring& str) noexcept;
     /// @brief Converts const wchar* to std::string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -195,7 +239,7 @@ namespace xtd {
     /// const wchar* c1 = L"Gammasoft";
     /// string s1 = string_converter::to_string(c1);
     /// ```
-    static std::string to_string(const wchar* str) noexcept;
+    static xtd::string to_string(const wchar* str) noexcept;
     /// @brief Converts wchar* to std::string.
     /// @param str string to convert.
     /// @return The converted string.
@@ -206,7 +250,7 @@ namespace xtd {
     /// wchar* c1 = L"Gammasoft";
     /// string s1 = string_converter::to_string(c1);
     /// ```
-    static std::string to_string(wchar* str) noexcept;
+    static xtd::string to_string(wchar* str) noexcept;
     
     /// @brief Converts std::string to xtd::string.
     /// @param str string to convert.
