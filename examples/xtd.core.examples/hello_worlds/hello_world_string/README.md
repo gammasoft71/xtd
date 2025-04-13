@@ -1,10 +1,10 @@
-# hello_world_ustring
+# hello_world_string
 
-The classic first application "Hello, World!" with [xtd::string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1ustring.html) class.
+The classic first application "Hello, World!" with [xtd::string](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1string.html) class.
 
 ## Sources
 
-[src/hello_world_ustring.cpp](src/hello_world_ustring.cpp)
+[src/hello_world_string.cpp](src/hello_world_string.cpp)
 
 [CMakeLists.txt](CMakeLists.txt)
 
