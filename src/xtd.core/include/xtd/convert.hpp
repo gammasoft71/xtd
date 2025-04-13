@@ -5242,6 +5242,33 @@ namespace xtd {
     static string to_string(type_t value) noexcept {
       return string::format("{}", value);
     }
+    
+    /// @brief Convert type_t to string.
+    /// @param value object to convert.
+    /// @return A new string object converted from value.
+    /// @deprecated Replaced by xtd::convert::to_string - Will be removed in version 0.4.0.
+    template<class type_t>
+    [[deprecated("Replaced by xtd::convert::to_string - Will be removed in version 0.4.0.")]] static string to_ustring(type_t value) {return to_string(value);}
+    /// @brief Convert type_t to string.
+    /// @param value object to convert.
+    /// @param from_base The base of the number in value, which must be 2, 8, 10, or 16.
+    /// @return A new string object converted from value.
+    /// @exception xtd::atgument_exception from_base is not 2 or 8 or 10 orr 16.
+    /// @deprecated Replaced by xtd::convert::to_string - Will be removed in version 0.4.0.
+    template<class type_t>
+    [[deprecated("Replaced by xtd::convert::to_string - Will be removed in version 0.4.0.")]] static string to_ustring(type_t value, xtd::byte from_base) {return to_string(value, from_base);}
+    /// @brief Convert string_t to string.
+    /// @param value object to convert.
+    /// @return A new string object converted from value.
+    /// @deprecated Replaced by xtd::convert::to_string - Will be removed in version 0.4.0.
+    template<class string_t>
+    [[deprecated("Replaced by xtd::convert::to_string - Will be removed in version 0.4.0.")]] static string to_ustring(const string_t& value) {return to_string(value);}
+    /// @cond
+    template<class char_t>
+    [[deprecated("Replaced by xtd::convert::to_string - Will be removed in version 0.4.0.")]] static string to_ustring(const char_t* value) {return to_string(value);}
+    template<class char_t>
+    [[deprecated("Replaced by xtd::convert::to_string - Will be removed in version 0.4.0.")]] static string to_ustring(char_t* value) {return to_string(value);}
+    /// @endcond
     /// @}
   };
 }
