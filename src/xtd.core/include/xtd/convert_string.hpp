@@ -385,7 +385,7 @@ namespace xtd {
     /// @par Examples
     /// ```cpp
     /// u32string s1 = U"Gammasoft";
-    /// u8string s2 = string_converter::to_8ustring(s1);
+    /// u8string s2 = string_converter::to_u8string(s1);
     /// ```
     static xtd::u8string to_u8string(const xtd::u32string& str) noexcept;
     /// @brief Converts std::u32string to std::u8string.
@@ -396,7 +396,7 @@ namespace xtd {
     /// @par Examples
     /// ```cpp
     /// std::u32string s1 = U"Gammasoft";
-    /// u8string s2 = string_converter::to_8ustring(s1);
+    /// u8string s2 = string_converter::to_u8string(s1);
     /// ```
     static xtd::u8string to_u8string(const std::u32string& str) noexcept;
     /// @brief Converts const char32* to std::u8string.
