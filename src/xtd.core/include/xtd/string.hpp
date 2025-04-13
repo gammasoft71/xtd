@@ -64,6 +64,15 @@ namespace xtd {
   string to_string(type_t val) {
     return string::format("{}", val);
   }
+  
+  /// @brief Converts a type_t to xtd::string.
+  /// @param val A type_t value to convert.
+  /// @return A string holding the converted value.
+  /// @deprecated Replaced by xtd::to_string - Will be removed in version 0.4.0.
+  template<class type_t>
+  [[deprecated("Replaced by xtd::to_string - Will be removed in version 0.4.0.")]] string to_ustring(type_t val) {
+    return to_string(val);
+  }
 }
 
 /*
