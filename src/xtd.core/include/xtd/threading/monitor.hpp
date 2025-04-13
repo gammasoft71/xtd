@@ -431,7 +431,7 @@ namespace xtd {
       static object_ptr get_ptr(const object_t& obj) noexcept {
         bool is_string = is<string>(obj);
         // The newly created string will be deleted when the exit method is called, or if the lock has already been entered.
-        return std::make_pair(is_string ? get_ustring_ptr(*(new string(as<string>(obj)))) : reinterpret_cast<intptr>(&obj), is_string);
+        return std::make_pair(is_string ? get_string_ptr(*(new string(as<string>(obj)))) : reinterpret_cast<intptr>(&obj), is_string);
       }
       
       template<class type_t>
@@ -440,7 +440,7 @@ namespace xtd {
       static void enter_ptr(object_ptr obj);
       static void enter_ptr(object_ptr obj, bool& lock_taken);
       static void exit_ptr(object_ptr obj);
-      static intptr get_ustring_ptr(const string& str);
+      static intptr get_string_ptr(const string& str);
       static bool is_entered_ptr(object_ptr obj) noexcept;
       static void pulse_ptr(object_ptr obj);
       static void pulse_all_ptr(object_ptr obj);
