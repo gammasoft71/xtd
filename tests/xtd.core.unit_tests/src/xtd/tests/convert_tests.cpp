@@ -118,12 +118,12 @@ namespace xtd::tests {
       assert::are_equal(42llu, std::any_cast<xtd::ulong>(convert::to_any(value)));
     }
     
-    void test_method_(to_any_from_ustring) {
+    void test_method_(to_any_from_string) {
       string value = "42";
       assert::are_equal("42", std::any_cast<string>(convert::to_any(value)));
     }
     
-    void test_method_(to_any_from_string) {
+    void test_method_(to_any_from_std_string) {
       std::string value = "42";
       assert::are_equal("42", std::any_cast<std::string>(convert::to_any(value)));
     }
@@ -319,7 +319,7 @@ namespace xtd::tests {
       assert::is_false(convert::to_boolean(value));
     }
     
-    void test_method_(to_boolean_from_ustring) {
+    void test_method_(to_boolean_from_string) {
       string value = "true";
       assert::is_true(convert::to_boolean(value));
       value = "false";
@@ -328,7 +328,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_boolean(value);});
     }
     
-    void test_method_(to_boolean_from_string) {
+    void test_method_(to_boolean_from_std_string) {
       std::string value = "true";
       assert::is_true(convert::to_boolean(value));
       value = "false";
@@ -632,7 +632,7 @@ namespace xtd::tests {
       assert::throws<overflow_exception>([&] {convert::to_byte(value);});
     }
     
-    void test_method_(to_byte_from_ustring) {
+    void test_method_(to_byte_from_string) {
       string value = "42";
       assert::are_equal(42u, convert::to_byte(value));
       value = "0";
@@ -641,7 +641,7 @@ namespace xtd::tests {
       assert::throws<format_exception>([&] {convert::to_byte(value);});
     }
     
-    void test_method_(to_byte_from_ustring_with_base) {
+    void test_method_(to_byte_from_string_with_base) {
       assert::are_equal(42u, convert::to_byte("0b101010", 2));
       assert::are_equal(42u, convert::to_byte(u8"052", 8));
       assert::are_equal(42u, convert::to_byte(u"42", 10));
@@ -649,7 +649,7 @@ namespace xtd::tests {
       assert::throws<argument_exception>([&] {convert::to_byte(L"42", 4);});
     }
     
-    void test_method_(to_byte_from_string) {
+    void test_method_(to_byte_from_std_string) {
       std::string value = "42";
       assert::are_equal(42u, convert::to_byte(value));
       value = "0";
