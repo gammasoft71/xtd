@@ -259,7 +259,7 @@ namespace xtdc_command {
       return "";
     }
     
-    const xtd::array<xtd::string>& targets() const {
+    xtd::array<xtd::string> targets() const {
       static xtd::collections::generic::list<xtd::string> targets;
       if (targets.size() == 0)
         for (const auto& line : get_system_information())
@@ -371,7 +371,7 @@ namespace xtdc_command {
       return is_linux_gui_app(path);
     }
     
-    const xtd::array<xtd::string>& get_system_information() const {
+    xtd::array<xtd::string> get_system_information() const {
       static xtd::collections::generic::list<xtd::string> system_information;
       static bool exception_throwed = false;
       if (!exception_throwed && system_information.size() == 0) {
