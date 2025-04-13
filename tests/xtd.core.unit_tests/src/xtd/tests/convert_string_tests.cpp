@@ -337,6 +337,13 @@ namespace xtd::tests {
     
     void test_method_(wstring_to_wstring) {
       if (sizeof(wchar) > 2)
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0x1F428)}, convert_string::to_wstring(wstring(L"aeiouàçéèêëïî\U0001F428")));
+      else
+        collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0xD83D), static_cast<wchar>(0xDC28)}, convert_string::to_wstring(std::wstring(L"aeiouàçéèêëïî\U0001F428")));
+    }
+    
+    void test_method_(std_wstring_to_wstring) {
+      if (sizeof(wchar) > 2)
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0x1F428)}, convert_string::to_wstring(std::wstring(L"aeiouàçéèêëïî\U0001F428")));
       else
         collection_assert::are_equal({L'a', L'e', L'i', L'o', L'u', L'à', L'ç', L'é', L'è', L'ê', L'ë', L'ï', L'î', static_cast<wchar>(0xD83D), static_cast<wchar>(0xDC28)}, convert_string::to_wstring(std::wstring(L"aeiouàçéèêëïî\U0001F428")));
