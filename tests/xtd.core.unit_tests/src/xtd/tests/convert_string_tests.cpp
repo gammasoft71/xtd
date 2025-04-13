@@ -174,9 +174,13 @@ namespace xtd::tests {
 #endif
     
     void test_method_(u16string_to_u16string) {
-      collection_assert::are_equal({u'a', u'e', u'i', u'o', u'u', u'à', u'ç', u'é', u'è', u'ê', u'ë', u'ï', u'î', u'\xD83D', u'\xDC28'}, convert_string::to_u16string(std::u16string(u"aeiouàçéèêëïî\U0001F428")));
+      collection_assert::are_equal({u'a', u'e', u'i', u'o', u'u', u'à', u'ç', u'é', u'è', u'ê', u'ë', u'ï', u'î', u'\xD83D', u'\xDC28'}, convert_string::to_u16string(u16string(u"aeiouàçéèêëïî\U0001F428")));
     }
     
+    void test_method_(std_u16string_to_u16string) {
+      collection_assert::are_equal({u'a', u'e', u'i', u'o', u'u', u'à', u'ç', u'é', u'è', u'ê', u'ë', u'ï', u'î', u'\xD83D', u'\xDC28'}, convert_string::to_u16string(std::u16string(u"aeiouàçéèêëïî\U0001F428")));
+    }
+
     void test_method_(u32string_to_u16string) {
       collection_assert::are_equal({u'a', u'e', u'i', u'o', u'u', u'à', u'ç', u'é', u'è', u'ê', u'ë', u'ï', u'î', u'\xD83D', u'\xDC28'}, convert_string::to_u16string(std::u32string(U"aeiouàçéèêëïî\U0001F428")));
     }
