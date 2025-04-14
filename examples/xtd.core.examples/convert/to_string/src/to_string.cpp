@@ -27,13 +27,22 @@ auto main() -> int {
   
   console::write_line("Convert any to string :");
   console::write_line("-----------------------");
-  auto any_value = std::make_any<int>(42);
+  auto any_value = std::any(42);
   console::write_line("to_string(any_value)            = {}", to_string(any_value));
   console::write_line("as<string>(any_value)           = {}", as<string>(any_value));
   console::write_line("convert::to_string(any_value)   = {}", convert::to_string(any_value));
   console::write_line("string::format(\"{{}}\", any_value) = {}", string::format("{}", any_value));
   console::write_line();
   
+  console::write_line("Convert any_object to string :");
+  console::write_line("------------------------------");
+  auto any_object_value = any_object(42);
+  console::write_line("to_string(any_object_value)            = {}", to_string(any_object_value));
+  console::write_line("as<string>(any_object_value)           = {}", as<string>(any_object_value));
+  console::write_line("convert::to_string(any_object_value)   = {}", convert::to_string(any_object_value));
+  console::write_line("string::format(\"{{}}\", any_object_value) = {}", string::format("{}", any_object_value));
+  console::write_line();
+
   console::write_line("Convert const char16 to string :");
   console::write_line("--------------------------------");
   auto const_char16_value = u"A string value";
@@ -76,6 +85,13 @@ auto main() -> int {
 // as<string>(any_value)           = 42
 // convert::to_string(any_value)   = 42
 // string::format("{}", any_value) = 42
+//
+// Convert any_object to string :
+// ------------------------------
+// to_string(any_object_value)            = 42
+// as<string>(any_object_value)           = 42
+// convert::to_string(any_object_value)   = 42
+// string::format("{}", any_object_value) = 42
 //
 // Convert const char16 to string :
 // --------------------------------
