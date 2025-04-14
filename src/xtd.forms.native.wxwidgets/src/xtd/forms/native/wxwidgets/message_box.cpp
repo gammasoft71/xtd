@@ -80,7 +80,7 @@ namespace {
 
 int32 message_box::show(intptr control, const string& text, const string& caption, uint32 style, bool display_help_button) {
   native::application::initialize(); // Must be first
-  wxMessageDialog dialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), convert_string::to_wstring(text), xtd::convert_string::to_wstring(caption), convert_to_buttons(style) + convert_to_icon(style) + convert_to_option(style) + (display_help_button ? wxHELP : 0));
+  wxMessageDialog dialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), convert_string::to_wstring(text).c_str(), xtd::convert_string::to_wstring(caption).c_str(), convert_to_buttons(style) + convert_to_icon(style) + convert_to_option(style) + (display_help_button ? wxHELP : 0));
   set_button_labels(dialog, style);
   return convert_to_dialog_result(dialog.ShowModal(), style);
 }
