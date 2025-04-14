@@ -56,14 +56,78 @@ namespace xtd {
   /// bool result = as<bool>(value);
   /// ```
   template<class type_t>
-  type_t as(any_object& o) {
+  inline type_t as(any_object& o) {
     if (is<box<type_t>>(o.value())) return as<box<type_t>>(o.value()).value;
     return __polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
   }
   
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new bool object converted from value.
+  /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// ```cpp
+  /// #include <xtd/as>
+  /// ```
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// ```cpp
+  /// std::any value = true;
+  /// bool result = as<bool>(value);
+  /// ```
   template<class type_t>
-  type_t as(const any_object& o) {
+  inline type_t as(const any_object& o) {
     if (is<box<type_t>>(o.value())) return as<box<type_t>>(o.value()).value;
     return __polymorphic_any_object__<type_t, typename std::is_polymorphic<type_t>::type> {}(o);
+  }
+ 
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new xtd::ulong object converted from value.
+  /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// ```cpp
+  /// #include <xtd/as>
+  /// ```
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// ```cpp
+  /// xtd::any_object value = true;
+  /// xtd::string result = as<string>(value);
+  /// ```
+  template<>
+  inline string as<string>(xtd::any_object& value) {
+    return xtd::convert::to_string(value);
+  }
+
+  /// @brief Casts a type into another type.
+  /// @param value object to convert.
+  /// @return A new xtd::ulong object converted from value.
+  /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+  /// @par Header
+  /// ```cpp
+  /// #include <xtd/as>
+  /// ```
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// ```cpp
+  /// xtd::any_object value = true;
+  /// xtd::string result = as<string>(value);
+  /// ```
+  template<>
+  inline string as<string>(const xtd::any_object& value) {
+    return xtd::convert::to_string(value);
   }
 }
