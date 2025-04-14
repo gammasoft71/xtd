@@ -40,6 +40,13 @@ as<string>(any_value)           = 42
 convert::to_string(any_value)   = 42
 string::format("{}", any_value) = 42
 
+Convert any_object to string :
+------------------------------
+to_string(any_object_value)            = 42
+as<string>(any_object_value)           = 42
+convert::to_string(any_object_value)   = 42
+string::format("{}", any_object_value) = 42
+
 Convert const char16 to string :
 --------------------------------
 to_string(wstring_value)                      = A string value
