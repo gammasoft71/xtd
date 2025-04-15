@@ -5,6 +5,7 @@
 #include "../forms_export.hpp"
 #include "../forms_namespace_aliases.hpp"
 #include <xtd/object>
+#include <xtd/sptr>
 #include <cstdint>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
