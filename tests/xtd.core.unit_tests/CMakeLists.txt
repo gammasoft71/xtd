@@ -250,6 +250,7 @@ add_sources(
   "src/xtd/tests/registered_enum_struct_flags_tests.cpp"
   "src/xtd/tests/registered_enum_struct_tests.cpp"
   "src/xtd/tests/registered_enum_tests.cpp"
+  "src/xtd/tests/shared_ptr_object_tests.cpp"
   "src/xtd/tests/single_object_tests.cpp"
   "src/xtd/tests/signal_tests.cpp"
   "src/xtd/tests/software_termination_exception_tests.cpp"
