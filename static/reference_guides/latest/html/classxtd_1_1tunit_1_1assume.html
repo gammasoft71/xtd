@@ -1498,9 +1498,10 @@ template&lt;class item_t , class collection_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::vector&lt;int&gt; v1 = {0, 1, 2, 3};</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {0, 1, 2, 3};</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a293bba797d421e541dba84a948229856">xtd::tunit::assume::contains</a>(2, v1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a293bba797d421e541dba84a948229856">xtd::tunit::assume::contains</a>(4, v1); <span class="comment">// test throws an abort_error exception.</span></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:59</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a293bba797d421e541dba84a948229856"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a293bba797d421e541dba84a948229856">xtd::tunit::assume::contains</a></div><div class="ttdeci">static void contains(const item_t &amp;item, const collection_t &amp;collection, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that collection contains an item.</div><div class="ttdef"><b>Definition</b> assume.hpp:288</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1570,7 +1571,7 @@ template&lt;class item_t , class collection_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::vector&lt;int&gt; v1 = {0, 1, 2, 3};</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {0, 1, 2, 3};</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a293bba797d421e541dba84a948229856">xtd::tunit::assume::contains</a>(2, v1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a293bba797d421e541dba84a948229856">xtd::tunit::assume::contains</a>(4, v1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an abort_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -1625,9 +1626,10 @@ template&lt;class item_t , class collection_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::vector&lt;int&gt; v1 = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a907211a508e6cad7366d786f3208af85">xtd::tunit::assume::does_not_throw</a>([&amp;] {v1.at(2);}); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a907211a508e6cad7366d786f3208af85">xtd::tunit::assume::does_not_throw</a>([&amp;] {v1.at(5);}); <span class="comment">// test throws an abort_error exception.</span></div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a907211a508e6cad7366d786f3208af85">xtd::tunit::assume::does_not_throw</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a907211a508e6cad7366d786f3208af85">xtd::tunit::assume::does_not_throw</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}); <span class="comment">// test throws an abort_error exception.</span></div>
+<div class="ttc" id="aclassxtd_1_1basic__array_html_a34472044617550faf939f05c223b6227"><div class="ttname"><a href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">xtd::basic_array::at</a></div><div class="ttdeci">virtual reference at(size_type index)</div><div class="ttdoc">Returns a reference to the element at specified location pos, with bounds checking.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:241</div></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a907211a508e6cad7366d786f3208af85"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a907211a508e6cad7366d786f3208af85">xtd::tunit::assume::does_not_throw</a></div><div class="ttdeci">static void does_not_throw(const std::function&lt; void()&gt; &amp;statement, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that the staement does not throw an exception.</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1688,9 +1690,9 @@ template&lt;class item_t , class collection_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::vector&lt;int&gt; v1 = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a907211a508e6cad7366d786f3208af85">xtd::tunit::assume::does_not_throw</a>([&amp;] {v1.at(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a907211a508e6cad7366d786f3208af85">xtd::tunit::assume::does_not_throw</a>([&amp;] {v1.at(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an abort_error exception.</span></div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a907211a508e6cad7366d786f3208af85">xtd::tunit::assume::does_not_throw</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a907211a508e6cad7366d786f3208af85">xtd::tunit::assume::does_not_throw</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an abort_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1745,8 +1747,8 @@ template&lt;class value_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::vector&lt;int&gt; v1;</div>
-<div class="line">std::vector&lt;int&gt; v2 = {0, 1, 2, 3};</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1;</div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v2 = {0, 1, 2, 3};</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#aa0ca29b871a810f95cc1752b6ceac040">xtd::tunit::assume::is_empty</a>(v1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#aa0ca29b871a810f95cc1752b6ceac040">xtd::tunit::assume::is_empty</a>(v2); <span class="comment">// test throws an abort_error exception.</span></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_aa0ca29b871a810f95cc1752b6ceac040"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#aa0ca29b871a810f95cc1752b6ceac040">xtd::tunit::assume::is_empty</a></div><div class="ttdeci">static void is_empty(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that collection contains an item.</div><div class="ttdef"><b>Definition</b> assume.hpp:366</div></div>
@@ -1811,8 +1813,8 @@ template&lt;class value_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::vector&lt;int&gt; v1;</div>
-<div class="line">std::vector&lt;int&gt; v2 = {0, 1, 2, 3};</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1;</div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v2 = {0, 1, 2, 3};</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#aa0ca29b871a810f95cc1752b6ceac040">xtd::tunit::assume::is_empty</a>(v1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#aa0ca29b871a810f95cc1752b6ceac040">xtd::tunit::assume::is_empty</a>(v2, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an abort_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -3132,8 +3134,8 @@ template&lt;class value_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::vector&lt;int&gt; v1 = {0, 1, 2, 3};</div>
-<div class="line">std::vector&lt;int&gt; v2;</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {0, 1, 2, 3};</div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v2;</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a1fb6df3bf91ca15ee23839b95d97547a">xtd::tunit::assume::is_not_empty</a>(v1); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a1fb6df3bf91ca15ee23839b95d97547a">xtd::tunit::assume::is_not_empty</a>(v2); <span class="comment">// test throws an abort_error exception.</span></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_a1fb6df3bf91ca15ee23839b95d97547a"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#a1fb6df3bf91ca15ee23839b95d97547a">xtd::tunit::assume::is_not_empty</a></div><div class="ttdeci">static void is_not_empty(const value_t &amp;value, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that collection does not contain any item.</div><div class="ttdef"><b>Definition</b> assume.hpp:760</div></div>
@@ -3198,8 +3200,8 @@ template&lt;class value_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::vector&lt;int&gt; v1 = {0, 1, 2, 3};</div>
-<div class="line">std::vector&lt;int&gt; v2;</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {0, 1, 2, 3};</div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v2;</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a1fb6df3bf91ca15ee23839b95d97547a">xtd::tunit::assume::is_not_empty</a>(v1, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#a1fb6df3bf91ca15ee23839b95d97547a">xtd::tunit::assume::is_not_empty</a>(v2, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an abort_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
@@ -5352,9 +5354,9 @@ template&lt;class exception_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::vector&lt;int&gt; v1 = {1, 2, 3, 4};</div>
-<div class="line">xtd::tunit::assume::throws&lt;std::out_of_range&gt;([&amp;] {v1.at(5);}); <span class="comment">// test ok.</span></div>
-<div class="line">xtd::tunit::assume::throws&lt;std::out_of_range&gt;([&amp;] {v1.at(2);}); <span class="comment">// test throws an abort_error exception.</span></div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
+<div class="line">xtd::tunit::assume::throws&lt;std::out_of_range&gt;([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}); <span class="comment">// test ok.</span></div>
+<div class="line">xtd::tunit::assume::throws&lt;std::out_of_range&gt;([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}); <span class="comment">// test throws an abort_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -5422,9 +5424,9 @@ template&lt;class exception_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::vector&lt;int&gt; v1 = {1, 2, 3, 4};</div>
-<div class="line">xtd::tunit::assume::throws&lt;std::out_of_range&gt;([&amp;] {v1.at(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line">xtd::tunit::assume::throws&lt;std::out_of_range&gt;([&amp;] {v1.at(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an abort_error exception.</span></div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
+<div class="line">xtd::tunit::assume::throws&lt;std::out_of_range&gt;([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line">xtd::tunit::assume::throws&lt;std::out_of_range&gt;([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an abort_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -5477,9 +5479,9 @@ template&lt;class exception_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::vector&lt;int&gt; v1 = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ac60a08daa40ec79592528ad97b988595">xtd::tunit::assume::throws_any</a>([&amp;] {v1.at(5);}); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ac60a08daa40ec79592528ad97b988595">xtd::tunit::assume::throws_any</a>([&amp;] {v1.at(2);}); <span class="comment">// test throws an abort_error exception.</span></div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ac60a08daa40ec79592528ad97b988595">xtd::tunit::assume::throws_any</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ac60a08daa40ec79592528ad97b988595">xtd::tunit::assume::throws_any</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}); <span class="comment">// test throws an abort_error exception.</span></div>
 <div class="ttc" id="aclassxtd_1_1tunit_1_1assume_html_ac60a08daa40ec79592528ad97b988595"><div class="ttname"><a href="classxtd_1_1tunit_1_1assume.html#ac60a08daa40ec79592528ad97b988595">xtd::tunit::assume::throws_any</a></div><div class="ttdeci">static void throws_any(const std::function&lt; void()&gt; &amp;statement, const xtd::diagnostics::stack_frame &amp;stack_frame=xtd::diagnostics::stack_frame::current())</div><div class="ttdoc">Assumes that the staement does not throw an exception.</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -5540,9 +5542,9 @@ template&lt;class exception_t &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line">std::vector&lt;int&gt; v1 = {1, 2, 3, 4};</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ac60a08daa40ec79592528ad97b988595">xtd::tunit::assume::throws_any</a>([&amp;] {v1.at(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ac60a08daa40ec79592528ad97b988595">xtd::tunit::assume::throws_any</a>([&amp;] {v1.at(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an abort_error exception.</span></div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1array.html">xtd::array&lt;int&gt;</a> v1 = {1, 2, 3, 4};</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ac60a08daa40ec79592528ad97b988595">xtd::tunit::assume::throws_any</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(5);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test ok.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1tunit_1_1assume.html#ac60a08daa40ec79592528ad97b988595">xtd::tunit::assume::throws_any</a>([&amp;] {v1.<a class="code hl_function" href="classxtd_1_1basic__array.html#a34472044617550faf939f05c223b6227">at</a>(2);}, <span class="stringliteral">&quot;User message...&quot;</span>); <span class="comment">// test throws an abort_error exception.</span></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -5554,7 +5556,7 @@ template&lt;class exception_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 8 2025 21:49:30 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Apr 15 2025 16:09:39 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
