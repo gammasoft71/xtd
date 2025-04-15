@@ -7,7 +7,7 @@
 #endif
 /// @endcond
 
-#include "../types.hpp"
+#include "../char32.hpp"
 #include <locale>
 
 /// @cond
