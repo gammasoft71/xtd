@@ -200,8 +200,16 @@ namespace xtd::tests {
     void test_method_(get) {
       auto s1 = shared_ptr_object<string> {new string {"value"}};
       auto s2 = shared_ptr_object<string> {new string {"value"}};
+      auto s3 = s1;
+      auto s4 = s2;
 
       assert::is_null(shared_ptr_object<int>::empty.get());
+      assert::is_not_null(s1.get());
+      assert::is_not_null(s2.get());
+      assert::are_equal(s3.get(), s1.get());
+      assert::are_not_equal(s2.get(), s1.get());
+      assert::are_not_equal(s3.get(), s2.get());
+      assert::are_equal(s4.get(), s2.get());
     }
   };
 }
