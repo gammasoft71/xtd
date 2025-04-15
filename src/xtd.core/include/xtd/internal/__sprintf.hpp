@@ -7,7 +7,7 @@
 #endif
 /// @endcond
 
-#include "../types.hpp"
+#include "../wchar.hpp"
 #include <cstdarg>
 #include <string>
 

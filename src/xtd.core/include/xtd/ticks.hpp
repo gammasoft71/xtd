@@ -4,7 +4,7 @@
 #pragma once
 #include "chrono.hpp"
 #include "tick.hpp"
-#include "types.hpp"
+#include "int64.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
