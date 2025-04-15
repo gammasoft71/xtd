@@ -7,7 +7,7 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
-  /// @brief xtd::news_sptr operator creates a xtd::sptr object.
+  /// @brief xtd::new_sptr operator creates a xtd::sptr object.
   /// @par Library
   /// xtd.core
   /// @ingroup xtd_core
