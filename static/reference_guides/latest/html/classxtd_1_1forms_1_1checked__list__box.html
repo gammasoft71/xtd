@@ -120,7 +120,7 @@ Inheritance diagram for xtd::forms::checked_list_box:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd::forms</a> </dd></dl>
 <dl class="section user"><dt>Library</dt><dd><a class="el" href="namespacextd_1_1forms.html" title="The xtd::forms namespace contains classes for creating Windows-based applications that take full adva...">xtd.forms</a></dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>This control presents a list of items that the user can navigate by using the keyboard or the scrollbar on the right side of the control. The user can place a check mark by one or more items and the checked items can be navigated with the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a59d018289a01e9c7700a5f2c6e83a738" title="Encapsulates the collection of checked items, including items in an indeterminate state,...">checked_list_box::checked_item_collection</a> and <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a0d84cb6d70c8771a90b1e067bd471f91" title="Encapsulates the collection of indexes of checked items (including items in an indeterminate state)">checked_list_box::checked_index_collection</a>. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>This control presents a list of items that the user can navigate by using the keyboard or the scrollbar on the right side of the control. The user can place a check mark by one or more items and the checked items can be navigated with the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#add6966906c86868d2e8316be46cf799a" title="Encapsulates the collection of checked items, including items in an indeterminate state,...">checked_list_box::checked_item_collection</a> and <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#afd02212e5edffcda559e21df8ddbe2d1" title="Encapsulates the collection of indexes of checked items (including items in an indeterminate state)">checked_list_box::checked_index_collection</a>. </dd>
 <dd>
 To add objects to the list at run time, assign an array of object with the push_range method. The list then displays the default string value for each object. You can add individual items to the list with the push method. </dd>
 <dd>
@@ -220,15 +220,15 @@ Classes</h2></td></tr>
 <tr class="memitem:a6972a37eda44f4f7f14832f9b07d3f85"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> = <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">layout::arranged_element_collection</a>&lt; <a class="el" href="classxtd_1_1forms_1_1checked__list__box_1_1item.html">item</a> &gt;</td></tr>
 <tr class="memdesc:a6972a37eda44f4f7f14832f9b07d3f85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the collection of items in a <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>.  <br /></td></tr>
 <tr class="separator:a6972a37eda44f4f7f14832f9b07d3f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d84cb6d70c8771a90b1e067bd471f91"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a0d84cb6d70c8771a90b1e067bd471f91">checked_index_collection</a> = std::vector&lt; size_t &gt;</td></tr>
-<tr class="memdesc:a0d84cb6d70c8771a90b1e067bd471f91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates the collection of indexes of checked items (including items in an indeterminate state)  <br /></td></tr>
-<tr class="separator:a0d84cb6d70c8771a90b1e067bd471f91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a59d018289a01e9c7700a5f2c6e83a738"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a59d018289a01e9c7700a5f2c6e83a738">checked_item_collection</a> = std::vector&lt; <a class="el" href="classxtd_1_1forms_1_1checked__list__box_1_1item.html">item</a> &gt;</td></tr>
-<tr class="memdesc:a59d018289a01e9c7700a5f2c6e83a738"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates the collection of checked items, including items in an indeterminate state, in a <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a> control.  <br /></td></tr>
-<tr class="separator:a59d018289a01e9c7700a5f2c6e83a738"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb462aa24a2b62f24bb3e1fd6cb73bc0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#adb462aa24a2b62f24bb3e1fd6cb73bc0">selected_object_collection</a> = std::vector&lt; <a class="el" href="classxtd_1_1forms_1_1checked__list__box_1_1item.html">item</a> &gt;</td></tr>
-<tr class="memdesc:adb462aa24a2b62f24bb3e1fd6cb73bc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the collection of selected items in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>.  <br /></td></tr>
-<tr class="separator:adb462aa24a2b62f24bb3e1fd6cb73bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd02212e5edffcda559e21df8ddbe2d1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#afd02212e5edffcda559e21df8ddbe2d1">checked_index_collection</a> = <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; size_t &gt;</td></tr>
+<tr class="memdesc:afd02212e5edffcda559e21df8ddbe2d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates the collection of indexes of checked items (including items in an indeterminate state)  <br /></td></tr>
+<tr class="separator:afd02212e5edffcda559e21df8ddbe2d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add6966906c86868d2e8316be46cf799a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#add6966906c86868d2e8316be46cf799a">checked_item_collection</a> = <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; <a class="el" href="classxtd_1_1forms_1_1checked__list__box_1_1item.html">item</a> &gt;</td></tr>
+<tr class="memdesc:add6966906c86868d2e8316be46cf799a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulates the collection of checked items, including items in an indeterminate state, in a <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a> control.  <br /></td></tr>
+<tr class="separator:add6966906c86868d2e8316be46cf799a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b778c0d856fb645421295976986d0aa"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a1b778c0d856fb645421295976986d0aa">selected_object_collection</a> = <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; <a class="el" href="classxtd_1_1forms_1_1checked__list__box_1_1item.html">item</a> &gt;</td></tr>
+<tr class="memdesc:a1b778c0d856fb645421295976986d0aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the collection of selected items in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>.  <br /></td></tr>
+<tr class="separator:a1b778c0d856fb645421295976986d0aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Events</h2></td></tr>
 <tr class="memitem:a20d2c75ef01e7ab4ca2ba55f69c1481c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1event.html">event</a>&lt; <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a>, <a class="el" href="group__events.html#ga5b346ea66233217704b778c62b69845f">item_check_event_handler</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a20d2c75ef01e7ab4ca2ba55f69c1481c">item_check</a></td></tr>
@@ -241,10 +241,10 @@ Classes</h2></td></tr>
 <tr class="separator:a40decaf5bfa51c89f9a287e68f22ecc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
-<tr class="memitem:aa43ad9123a5f3a59a49acb8480ca6b1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a0d84cb6d70c8771a90b1e067bd471f91">checked_index_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#aa43ad9123a5f3a59a49acb8480ca6b1f">checked_indices</a> () const noexcept</td></tr>
+<tr class="memitem:aa43ad9123a5f3a59a49acb8480ca6b1f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#afd02212e5edffcda559e21df8ddbe2d1">checked_index_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#aa43ad9123a5f3a59a49acb8480ca6b1f">checked_indices</a> () const noexcept</td></tr>
 <tr class="memdesc:aa43ad9123a5f3a59a49acb8480ca6b1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of checked indexes in this <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>.  <br /></td></tr>
 <tr class="separator:aa43ad9123a5f3a59a49acb8480ca6b1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba266432b7a058dc6da8a52a9d92b1ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a59d018289a01e9c7700a5f2c6e83a738">checked_item_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#aba266432b7a058dc6da8a52a9d92b1ee">checked_items</a> () const noexcept</td></tr>
+<tr class="memitem:aba266432b7a058dc6da8a52a9d92b1ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#add6966906c86868d2e8316be46cf799a">checked_item_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#aba266432b7a058dc6da8a52a9d92b1ee">checked_items</a> () const noexcept</td></tr>
 <tr class="memdesc:aba266432b7a058dc6da8a52a9d92b1ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collection of checked items in this <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>.  <br /></td></tr>
 <tr class="separator:aba266432b7a058dc6da8a52a9d92b1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70a4ae2133638148b920fee2861fcf54"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a6972a37eda44f4f7f14832f9b07d3f85">object_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a70a4ae2133638148b920fee2861fcf54">items</a> () noexcept</td></tr>
@@ -259,16 +259,16 @@ Classes</h2></td></tr>
 <tr class="memitem:a47ad9dc9386ec77b8e136ec539973b7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1list__control.html">list_control</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a47ad9dc9386ec77b8e136ec539973b7d">selected_index</a> (size_t selected_index) override</td></tr>
 <tr class="memdesc:a47ad9dc9386ec77b8e136ec539973b7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, Sets the zero-based index of the currently selected item.  <br /></td></tr>
 <tr class="separator:a47ad9dc9386ec77b8e136ec539973b7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00b8e8659e6aac0692602dc35a9f9dd9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a00b8e8659e6aac0692602dc35a9f9dd9">selected_indices</a> () const noexcept override</td></tr>
-<tr class="memdesc:a00b8e8659e6aac0692602dc35a9f9dd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a collection that contains the zero-based indexes of all currently selected items in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>.  <br /></td></tr>
-<tr class="separator:a00b8e8659e6aac0692602dc35a9f9dd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a359e987295447ee07d3ed25a2dfdbd82"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a097afab39d51b4796b92d5e018a76a0b">selected_index_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a359e987295447ee07d3ed25a2dfdbd82">selected_indices</a> () const noexcept override</td></tr>
+<tr class="memdesc:a359e987295447ee07d3ed25a2dfdbd82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a collection that contains the zero-based indexes of all currently selected items in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>.  <br /></td></tr>
+<tr class="separator:a359e987295447ee07d3ed25a2dfdbd82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ddd14502a202d663c668771e26c1490"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classxtd_1_1forms_1_1checked__list__box_1_1item.html">item</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a9ddd14502a202d663c668771e26c1490">selected_item</a> () const noexcept</td></tr>
 <tr class="memdesc:a9ddd14502a202d663c668771e26c1490"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the currently selected item in the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>.  <br /></td></tr>
 <tr class="separator:a9ddd14502a202d663c668771e26c1490"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5fb6bd38d03e6b5d033db088ea898606"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html">checked_list_box</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a5fb6bd38d03e6b5d033db088ea898606">selected_item</a> (const <a class="el" href="classxtd_1_1forms_1_1checked__list__box_1_1item.html">item</a> &amp;selected_item)</td></tr>
 <tr class="memdesc:a5fb6bd38d03e6b5d033db088ea898606"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the currently selected item in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>.  <br /></td></tr>
 <tr class="separator:a5fb6bd38d03e6b5d033db088ea898606"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d997ef93ce3e01a0fd44cad06fafd9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#adb462aa24a2b62f24bb3e1fd6cb73bc0">selected_object_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a2d997ef93ce3e01a0fd44cad06fafd9e">selected_items</a> () const noexcept</td></tr>
+<tr class="memitem:a2d997ef93ce3e01a0fd44cad06fafd9e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a1b778c0d856fb645421295976986d0aa">selected_object_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a2d997ef93ce3e01a0fd44cad06fafd9e">selected_items</a> () const noexcept</td></tr>
 <tr class="memdesc:a2d997ef93ce3e01a0fd44cad06fafd9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a collection containing the currently selected items in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>.  <br /></td></tr>
 <tr class="separator:a2d997ef93ce3e01a0fd44cad06fafd9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9033f43b12af9423ec2d5b3073ca01e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1control.html">control</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#ab9033f43b12af9423ec2d5b3073ca01e">text</a> (const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;text) override</td></tr>
@@ -409,12 +409,12 @@ Classes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_types_classxtd_1_1forms_1_1list__box"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classxtd_1_1forms_1_1list__box')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classxtd_1_1forms_1_1list__box.html">xtd::forms::list_box</a></td></tr>
-<tr class="memitem:add82c0c2ec2007878ae2d558b0e5cee8 inherit pub_types_classxtd_1_1forms_1_1list__box"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__box.html#add82c0c2ec2007878ae2d558b0e5cee8">selected_index_collection</a> = std::vector&lt; size_t &gt;</td></tr>
-<tr class="memdesc:add82c0c2ec2007878ae2d558b0e5cee8 inherit pub_types_classxtd_1_1forms_1_1list__box"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the collection containing the indexes to the selected items in a <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>.  <br /></td></tr>
-<tr class="separator:add82c0c2ec2007878ae2d558b0e5cee8 inherit pub_types_classxtd_1_1forms_1_1list__box"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7336fa5b882e8397ed99c4e8e40c4d73 inherit pub_types_classxtd_1_1forms_1_1list__box"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a7336fa5b882e8397ed99c4e8e40c4d73">selected_object_collection</a> = std::vector&lt; <a class="el" href="classxtd_1_1forms_1_1list__control_1_1item.html">item</a> &gt;</td></tr>
-<tr class="memdesc:a7336fa5b882e8397ed99c4e8e40c4d73 inherit pub_types_classxtd_1_1forms_1_1list__box"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the collection of selected items in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>.  <br /></td></tr>
-<tr class="separator:a7336fa5b882e8397ed99c4e8e40c4d73 inherit pub_types_classxtd_1_1forms_1_1list__box"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a097afab39d51b4796b92d5e018a76a0b inherit pub_types_classxtd_1_1forms_1_1list__box"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a097afab39d51b4796b92d5e018a76a0b">selected_index_collection</a> = <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> &gt;</td></tr>
+<tr class="memdesc:a097afab39d51b4796b92d5e018a76a0b inherit pub_types_classxtd_1_1forms_1_1list__box"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the collection containing the indexes to the selected items in a <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>.  <br /></td></tr>
+<tr class="separator:a097afab39d51b4796b92d5e018a76a0b inherit pub_types_classxtd_1_1forms_1_1list__box"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8620f2db8fcb1db585b56e0b12b59a44 inherit pub_types_classxtd_1_1forms_1_1list__box"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a8620f2db8fcb1db585b56e0b12b59a44">selected_object_collection</a> = <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="classxtd_1_1forms_1_1list__control_1_1item.html">item</a> &gt;</td></tr>
+<tr class="memdesc:a8620f2db8fcb1db585b56e0b12b59a44 inherit pub_types_classxtd_1_1forms_1_1list__box"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the collection of selected items in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>.  <br /></td></tr>
+<tr class="separator:a8620f2db8fcb1db585b56e0b12b59a44 inherit pub_types_classxtd_1_1forms_1_1list__box"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classxtd_1_1forms_1_1list__control"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classxtd_1_1forms_1_1list__control')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classxtd_1_1forms_1_1list__control.html">xtd::forms::list_control</a></td></tr>
 <tr class="memitem:ad228d35319c1b3e817259f1de0e7fa47 inherit pub_types_classxtd_1_1forms_1_1list__control"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__control.html#ad228d35319c1b3e817259f1de0e7fa47">object_collection</a> = <a class="el" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html">layout::arranged_element_collection</a>&lt; <a class="el" href="classxtd_1_1forms_1_1list__control_1_1item.html">item</a>, <a class="el" href="classxtd_1_1forms_1_1list__control_1_1item_1_1sorter.html">item::sorter</a> &gt;</td></tr>
 <tr class="memdesc:ad228d35319c1b3e817259f1de0e7fa47 inherit pub_types_classxtd_1_1forms_1_1list__control"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the collection of items in a <a class="el" href="classxtd_1_1forms_1_1list__control.html" title="Provides a common implementation of members for the list_box, choice and combo_box classes.">list_control</a>.  <br /></td></tr>
@@ -610,7 +610,7 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a834389bc56ec3dffae37cc2f6851a215 inherit pub_methods_classxtd_1_1forms_1_1list__box"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1list__box.html">list_box</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a834389bc56ec3dffae37cc2f6851a215">selected_item</a> (const <a class="el" href="classxtd_1_1forms_1_1list__control_1_1item.html">item</a> &amp;selected_item)</td></tr>
 <tr class="memdesc:a834389bc56ec3dffae37cc2f6851a215 inherit pub_methods_classxtd_1_1forms_1_1list__box"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the currently selected item in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>.  <br /></td></tr>
 <tr class="separator:a834389bc56ec3dffae37cc2f6851a215 inherit pub_methods_classxtd_1_1forms_1_1list__box"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a965bcde19d6edee8ecd171af1fd2af21 inherit pub_methods_classxtd_1_1forms_1_1list__box"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a7336fa5b882e8397ed99c4e8e40c4d73">selected_object_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a965bcde19d6edee8ecd171af1fd2af21">selected_items</a> () const noexcept</td></tr>
+<tr class="memitem:a965bcde19d6edee8ecd171af1fd2af21 inherit pub_methods_classxtd_1_1forms_1_1list__box"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a8620f2db8fcb1db585b56e0b12b59a44">selected_object_collection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a965bcde19d6edee8ecd171af1fd2af21">selected_items</a> () const noexcept</td></tr>
 <tr class="memdesc:a965bcde19d6edee8ecd171af1fd2af21 inherit pub_methods_classxtd_1_1forms_1_1list__box"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a collection containing the currently selected items in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>.  <br /></td></tr>
 <tr class="separator:a965bcde19d6edee8ecd171af1fd2af21 inherit pub_methods_classxtd_1_1forms_1_1list__box"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d53369f2a5fbc196e27685f0105aef2 inherit pub_methods_classxtd_1_1forms_1_1list__box"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__xtd__forms.html#ga27123f941053e697b96f463f5b93fe57">forms::selection_mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a9d53369f2a5fbc196e27685f0105aef2">selection_mode</a> () const noexcept</td></tr>
@@ -1587,14 +1587,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 
 </div>
 </div>
-<a id="a0d84cb6d70c8771a90b1e067bd471f91" name="a0d84cb6d70c8771a90b1e067bd471f91"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d84cb6d70c8771a90b1e067bd471f91">&#9670;&#160;</a></span>checked_index_collection</h2>
+<a id="afd02212e5edffcda559e21df8ddbe2d1" name="afd02212e5edffcda559e21df8ddbe2d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd02212e5edffcda559e21df8ddbe2d1">&#9670;&#160;</a></span>checked_index_collection</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a0d84cb6d70c8771a90b1e067bd471f91">xtd::forms::checked_list_box::checked_index_collection</a> =  std::vector&lt;size_t&gt;</td>
+          <td class="memname">using <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#afd02212e5edffcda559e21df8ddbe2d1">xtd::forms::checked_list_box::checked_index_collection</a> =  <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt;size_t&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1603,14 +1603,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 
 </div>
 </div>
-<a id="a59d018289a01e9c7700a5f2c6e83a738" name="a59d018289a01e9c7700a5f2c6e83a738"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a59d018289a01e9c7700a5f2c6e83a738">&#9670;&#160;</a></span>checked_item_collection</h2>
+<a id="add6966906c86868d2e8316be46cf799a" name="add6966906c86868d2e8316be46cf799a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add6966906c86868d2e8316be46cf799a">&#9670;&#160;</a></span>checked_item_collection</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a59d018289a01e9c7700a5f2c6e83a738">xtd::forms::checked_list_box::checked_item_collection</a> =  std::vector&lt;<a class="el" href="classxtd_1_1forms_1_1checked__list__box_1_1item.html">item</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#add6966906c86868d2e8316be46cf799a">xtd::forms::checked_list_box::checked_item_collection</a> =  <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt;<a class="el" href="classxtd_1_1forms_1_1checked__list__box_1_1item.html">item</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1619,14 +1619,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 
 </div>
 </div>
-<a id="adb462aa24a2b62f24bb3e1fd6cb73bc0" name="adb462aa24a2b62f24bb3e1fd6cb73bc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb462aa24a2b62f24bb3e1fd6cb73bc0">&#9670;&#160;</a></span>selected_object_collection</h2>
+<a id="a1b778c0d856fb645421295976986d0aa" name="a1b778c0d856fb645421295976986d0aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b778c0d856fb645421295976986d0aa">&#9670;&#160;</a></span>selected_object_collection</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#adb462aa24a2b62f24bb3e1fd6cb73bc0">xtd::forms::checked_list_box::selected_object_collection</a> =  std::vector&lt;<a class="el" href="classxtd_1_1forms_1_1checked__list__box_1_1item.html">item</a>&gt;</td>
+          <td class="memname">using <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a1b778c0d856fb645421295976986d0aa">xtd::forms::checked_list_box::selected_object_collection</a> =  <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt;<a class="el" href="classxtd_1_1forms_1_1checked__list__box_1_1item.html">item</a>&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1667,7 +1667,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a0d84cb6d70c8771a90b1e067bd471f91">checked_index_collection</a> xtd::forms::checked_list_box::checked_indices </td>
+          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#afd02212e5edffcda559e21df8ddbe2d1">checked_index_collection</a> xtd::forms::checked_list_box::checked_indices </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1681,7 +1681,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div><div class="memdoc">
 
 <p>Collection of checked indexes in this <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a0d84cb6d70c8771a90b1e067bd471f91" title="Encapsulates the collection of indexes of checked items (including items in an indeterminate state)">checked_list_box::checked_index_collection</a> collection for the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#afd02212e5edffcda559e21df8ddbe2d1" title="Encapsulates the collection of indexes of checked items (including items in an indeterminate state)">checked_list_box::checked_index_collection</a> collection for the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The collection of checked indexes is a subset of the indexes into the collection of all items in the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a> control. These indexes specify items in a checked or indeterminate state. </dd></dl>
 
 </div>
@@ -1696,7 +1696,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a59d018289a01e9c7700a5f2c6e83a738">checked_item_collection</a> xtd::forms::checked_list_box::checked_items </td>
+          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#add6966906c86868d2e8316be46cf799a">checked_item_collection</a> xtd::forms::checked_list_box::checked_items </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1710,7 +1710,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div><div class="memdoc">
 
 <p>Collection of checked items in this <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a59d018289a01e9c7700a5f2c6e83a738" title="Encapsulates the collection of checked items, including items in an indeterminate state,...">checked_list_box::checked_item_collection</a> collection for the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#add6966906c86868d2e8316be46cf799a" title="Encapsulates the collection of checked items, including items in an indeterminate state,...">checked_list_box::checked_item_collection</a> collection for the <a class="el" href="classxtd_1_1forms_1_1checked__list__box.html" title="Displays a xtd::forms::list_box in which a check box is displayed to the left of each item.">checked_list_box</a>. </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The collection is a subset of the objects in the items collection, representing only those items whose <a class="el" href="group__xtd__forms.html#ga5ada8078f6297710207025403d7e7866" title="Specifies the state of a control, such as a check box, that can be checked, unchecked,...">xtd::forms::check_state</a> is checked or indeterminate. The indexes in this collection are in ascending order. </dd></dl>
 
 </div>
@@ -1840,8 +1840,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 
 </div>
 </div>
-<a id="a00b8e8659e6aac0692602dc35a9f9dd9" name="a00b8e8659e6aac0692602dc35a9f9dd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00b8e8659e6aac0692602dc35a9f9dd9">&#9670;&#160;</a></span>selected_indices()</h2>
+<a id="a359e987295447ee07d3ed25a2dfdbd82" name="a359e987295447ee07d3ed25a2dfdbd82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a359e987295447ee07d3ed25a2dfdbd82">&#9670;&#160;</a></span>selected_indices()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1850,7 +1850,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; size_t &gt; xtd::forms::checked_list_box::selected_indices </td>
+          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1list__box.html#a097afab39d51b4796b92d5e018a76a0b">selected_index_collection</a> xtd::forms::checked_list_box::selected_indices </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1864,7 +1864,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 </div><div class="memdoc">
 
 <p>Gets a collection that contains the zero-based indexes of all currently selected items in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>. </p>
-<p>A <a class="el" href="classxtd_1_1forms_1_1list__box.html#add82c0c2ec2007878ae2d558b0e5cee8" title="Represents the collection containing the indexes to the selected items in a list_box.">list_box.selected_index_collection</a> containing the indexes of the currently selected items in the control. If no items are currently selected, an empty ListBox.SelectedIndexCollection is returned. </p><dl class="section remark"><dt>Remarks</dt><dd>For a multiple-selection <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>, this property returns a collection containing the indexes to all items that are selected in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>. For a single-selection ListBox, this property returns a collection containing a single element containing the index of the only selected item in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>. For more information about how to manipulate the items of the collection, see <a class="el" href="classxtd_1_1forms_1_1list__box.html#add82c0c2ec2007878ae2d558b0e5cee8" title="Represents the collection containing the indexes to the selected items in a list_box.">list_box::selected_index_collection</a>. </dd>
+<p>A <a class="el" href="classxtd_1_1forms_1_1list__box.html#a097afab39d51b4796b92d5e018a76a0b" title="Represents the collection containing the indexes to the selected items in a list_box.">list_box.selected_index_collection</a> containing the indexes of the currently selected items in the control. If no items are currently selected, an empty ListBox.SelectedIndexCollection is returned. </p><dl class="section remark"><dt>Remarks</dt><dd>For a multiple-selection <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>, this property returns a collection containing the indexes to all items that are selected in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>. For a single-selection ListBox, this property returns a collection containing a single element containing the index of the only selected item in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>. For more information about how to manipulate the items of the collection, see <a class="el" href="classxtd_1_1forms_1_1list__box.html#a097afab39d51b4796b92d5e018a76a0b" title="Represents the collection containing the indexes to the selected items in a list_box.">list_box::selected_index_collection</a>. </dd>
 <dd>
 The <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a> class provides a number of ways to reference selected items. Instead of using the selected_indices property to obtain the index position of the currently selected item in a single-selection <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>, you can use the selected_index property. If you want to obtain the item that is currently selected in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>, instead of the index position of the item, use the selected_item property. In addition, you can use the selected_items property if you want to obtain all the selected items in a multiple-selection <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>. </dd></dl>
 
@@ -1942,7 +1942,7 @@ To retrieve a collection containing all selected items in a multiple-selection <
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#adb462aa24a2b62f24bb3e1fd6cb73bc0">selected_object_collection</a> xtd::forms::checked_list_box::selected_items </td>
+          <td class="memname"><a class="el" href="classxtd_1_1forms_1_1checked__list__box.html#a1b778c0d856fb645421295976986d0aa">selected_object_collection</a> xtd::forms::checked_list_box::selected_items </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1956,8 +1956,8 @@ To retrieve a collection containing all selected items in a multiple-selection <
 </div><div class="memdoc">
 
 <p>Gets a collection containing the currently selected items in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1forms_1_1list__box.html#a7336fa5b882e8397ed99c4e8e40c4d73" title="Represents the collection of selected items in the list_box.">list_box::selected_object_collection</a> containing the currently selected items in the control. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>For a multiple-selection <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>, this property returns a collection containing all items that are selected in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>. For a single-selection <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>, this property returns a collection containing a single element containing the only selected item in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>. For more information about how to manipulate the items of the collection, see <a class="el" href="classxtd_1_1forms_1_1list__box.html#a7336fa5b882e8397ed99c4e8e40c4d73" title="Represents the collection of selected items in the list_box.">list_box::selected_object_collection</a>. </dd>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="classxtd_1_1forms_1_1list__box.html#a8620f2db8fcb1db585b56e0b12b59a44" title="Represents the collection of selected items in the list_box.">list_box::selected_object_collection</a> containing the currently selected items in the control. </dd></dl>
+<dl class="section remark"><dt>Remarks</dt><dd>For a multiple-selection <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>, this property returns a collection containing all items that are selected in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>. For a single-selection <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>, this property returns a collection containing a single element containing the only selected item in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>. For more information about how to manipulate the items of the collection, see <a class="el" href="classxtd_1_1forms_1_1list__box.html#a8620f2db8fcb1db585b56e0b12b59a44" title="Represents the collection of selected items in the list_box.">list_box::selected_object_collection</a>. </dd>
 <dd>
 The <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a> class provides a number of ways to reference selected items. Instead of using the selected_items property to obtain the currently selected item in a single-selection <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>, you can use the selected_item property. If you want to obtain the index position of an item that is currently selected in the <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>, instead of the item itself, use the selected_index property. In addition, you can use the selected_indices property if you want to obtain the index positions of all selected items in a multiple-selection <a class="el" href="classxtd_1_1forms_1_1list__box.html" title="Represents a standard Windows list box.">list_box</a>. </dd></dl>
 
@@ -3822,7 +3822,7 @@ Items whose check_state is set to indeterminate appear with a check mark in the 
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 8 2025 21:49:23 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue Apr 15 2025 16:09:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
