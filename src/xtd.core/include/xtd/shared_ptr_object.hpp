@@ -158,7 +158,7 @@ namespace xtd {
 
     /// @brief Swaps this current instance with specified shared pointer object.
     /// @param ptr The shared pointer object to swap with this current instance.
-    void swap(shared_ptr_object& ptr) noexcept {ptr_.swap(ptr);}
+    void swap(shared_ptr_object& ptr) noexcept {ptr_.swap(ptr.ptr_);}
 
     /// @brief Gets the stored object.
     /// @return The stored object.
