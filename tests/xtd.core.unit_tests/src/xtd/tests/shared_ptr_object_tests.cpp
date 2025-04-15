@@ -198,14 +198,16 @@ namespace xtd::tests {
     }
     
     void test_method_(get) {
-      auto s1 = shared_ptr_object<string> {new string {"value"}};
-      auto s2 = shared_ptr_object<string> {new string {"value"}};
+      auto p1 = new string {"value"};
+      auto p2 = new string {"value"};
+      auto s1 = shared_ptr_object<string> {p1};
+      auto s2 = shared_ptr_object<string> {p2};
       auto s3 = s1;
       auto s4 = s2;
 
       assert::is_null(shared_ptr_object<int>::empty.get());
-      assert::is_not_null(s1.get());
-      assert::is_not_null(s2.get());
+      assert::are_equal(p1, s1.get());
+      assert::are_equal(p2, s2.get());
       assert::are_equal(s3.get(), s1.get());
       assert::are_not_equal(s2.get(), s1.get());
       assert::are_not_equal(s3.get(), s2.get());
@@ -222,6 +224,35 @@ namespace xtd::tests {
       assert::are_not_equal(s3.get_hash_code(), s1.get_hash_code());
       assert::are_not_equal(s4.get_hash_code(), s1.get_hash_code());
       assert::are_equal(s3.get_hash_code(), s4.get_hash_code());
+    }
+    
+    void test_method_(reset) {
+      auto p1 = new string {"value"};
+      auto s1 = shared_ptr_object<string> {p1};
+      assert::are_equal(p1, s1.get());
+      s1.reset();
+      assert::is_null(s1.get());
+    }
+    
+    void test_method_(reset_with_pointer) {
+      auto p1 = new string {"value"};
+      auto p2 = new string {"value"};
+      auto s1 = shared_ptr_object<string> {p1};
+      assert::are_equal(p1, s1.get());
+      s1.reset(p2);
+      assert::are_equal(p2, s1.get());
+    }
+    
+    void test_method_(swap) {
+      auto p1 = new string {"value"};
+      auto p2 = new string {"value"};
+      auto s1 = shared_ptr_object<string> {p1};
+      auto s2 = shared_ptr_object<string> {p2};
+      assert::are_equal(p1, s1.get());
+      assert::are_equal(p2, s2.get());
+      s1.swap(s2);
+      assert::are_equal(p2, s1.get());
+      assert::are_equal(p1, s2.get());
     }
   };
 }
