@@ -2,12 +2,13 @@
 /// @brief Contains xtd::shared_ptr_object class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "hash_code.hpp"
 #include "icomparable.hpp"
 #include "iequatable.hpp"
-#include "is.hpp"
 #include "null_ptr.hpp"
 #include "object.hpp"
-#include "string.hpp"
+//#include "string.hpp"
+#include <memory>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -133,7 +134,7 @@ namespace xtd {
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
-    bool equals(const xtd::object& value) const noexcept override {return xtd::is<shared_ptr_object>(value) && equals(static_cast<const shared_ptr_object&>(value));}
+    bool equals(const xtd::object& value) const noexcept override {return dynamic_cast<const shared_ptr_object*>(&value) && equals(static_cast<const shared_ptr_object&>(value));}
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
@@ -145,7 +146,7 @@ namespace xtd {
 
     /// @brief Serves as a hash function for a particular type.
     /// @return size_t A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override {return (ptr_ ? hash_code::combine(*ptr_) : 0);}
+    xtd::size get_hash_code() const noexcept override {return (ptr_ ? xtd::hash_code::combine(*ptr_) : 0);}
 
     /// @brief Reset the current object. Set the current object to null.
     /// @remarks xtd::shared_ptr_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
@@ -168,28 +169,21 @@ namespace xtd {
     /// @return The stored object.
     /// @exception xtd::cast_exception If the current object can't be casted in target_t.
     template<typename target_t>
-    target_t& to_object() const {
-      return *to_pointer<target_t>();
-    }
+    target_t& to_object() const {return *to_pointer<target_t>();}
     
     /// @brief Gets the stored pointer.
     /// @return The stored pointer.
-    type_t* to_pointer() const noexcept {return operator ->();}
+    type_t* to_pointer() const noexcept {return get();}
 
     /// @brief Gets the stored pointer with specified `target_t` type.
     /// @return The stored pointer.
     /// @exception xtd::cast_exception If the current object can't be casted in target_t.
     template<typename target_t>
-    target_t* to_pointer() const {
-      if (to_pointer() == null) return null;
-      auto target = dynamic_cast<target_t*>(ptr_);
-      if (target == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
-      return target;
-    }
+    target_t* to_pointer() const;
 
-      /// @brief Returns a xtd::string that represents the current object.
-      /// @return A string that represents the current object.
-    xtd::string to_string() const noexcept override {return xtd::string::format("{} [pointer={}]", xtd::object::to_string(), ptr_ == xtd::null ? "null"  : string::format("0x{:X16}, use_count={}", get(), use_count()));}
+    /// @brief Returns a xtd::string that represents the current object.
+    /// @return A string that represents the current object.
+    //xtd::string to_string() const noexcept override {return xtd::string::format("{} [pointer={}]", xtd::object::to_string(), ptr_ == xtd::null ? "null"  : string::format("0x{:X16}, use_count={}", get(), use_count()));}
     /// @}
 
     /// @name Public Operators

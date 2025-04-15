@@ -12,8 +12,8 @@
 #include "helpers/throw_helper.hpp"
 #include "core_export.hpp"
 #include "iequatable.hpp"
-#include "ptr.hpp"
-#include "types.hpp"
+#include "new_uptr.hpp"
+#include "size.hpp"
 #if defined(__xtd__cpp_lib_format)
 #include <cassert>
 #include <format>
