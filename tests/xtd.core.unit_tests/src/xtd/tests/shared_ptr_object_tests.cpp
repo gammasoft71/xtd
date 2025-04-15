@@ -211,5 +211,17 @@ namespace xtd::tests {
       assert::are_not_equal(s3.get(), s2.get());
       assert::are_equal(s4.get(), s2.get());
     }
+    
+    void test_method_(get_hash_code) {
+      assert::is_zero(shared_ptr_object<int>::empty.get_hash_code());
+      auto s1 = shared_ptr_object<string> {new string {"value"}};
+      auto s2 = shared_ptr_object<string> {new string {"value"}};
+      auto s3 = shared_ptr_object<string> {new string {"other"}};
+      auto s4 = shared_ptr_object<string> {new string {"other"}};
+      assert::are_equal(s2.get_hash_code(), s1.get_hash_code());
+      assert::are_not_equal(s3.get_hash_code(), s1.get_hash_code());
+      assert::are_not_equal(s4.get_hash_code(), s1.get_hash_code());
+      assert::are_equal(s3.get_hash_code(), s4.get_hash_code());
+    }
   };
 }
