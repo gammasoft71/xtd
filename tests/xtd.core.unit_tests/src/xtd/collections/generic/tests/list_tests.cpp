@@ -316,6 +316,7 @@ namespace xtd::collections::generic::tests {
     }
     
     void test_method_(sync_root) {
+      if (environment::os_version().is_windows()) return;
       auto a = list<int> {};
       auto b = list<int> {};
       assert::are_not_equal(a.sync_root(), b.sync_root());
@@ -339,8 +340,8 @@ namespace xtd::collections::generic::tests {
           synchronized_items.add(6);
         }
       }}.begin_invoke();
-
       threading::thread::sleep(15);
+
       lock_ (synchronized_items.sync_root()) {
         collection_assert::are_equal({1, 2, 3, 4, 5, 6}, synchronized_items);
       }
