@@ -17,6 +17,7 @@ using namespace xtd::drawing::native;
 #if defined(__WXMSW__)
 #define NOMINMAX
 #include <Windows.h>
+#undef interface
 drawing_native_export_ int32 __xtd_win32_enable_dark_mode__ = -1;
 #endif
 

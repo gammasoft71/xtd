@@ -12,6 +12,7 @@
 #include <Windows.h>
 #include <Windowsx.h>
 #include <Commctrl.h>
+#undef interface
 #endif
 #include <wx/calctrl.h>
 #include <wx/checkbox.h>

@@ -10,6 +10,7 @@
 #if defined(_WIN32)
 #define NOMINMAX
 #include <Windows.h>
+#undef interface
 #elif defined(__linux__) || defined(__APPLE__)
 #include <semaphore.h>
 #endif
