@@ -647,12 +647,12 @@ namespace xtd {
       template<class type_t>
       static const ienumerable<type_t>& range(type_t start, type_t count, type_t step) {
         using param_type = std::tuple<type_t, type_t, type_t, type_t>;
-        static thread_local auto result = __opaque_xtd_linq_lazy_enumerable__<type_t, param_type> {};
+        static thread_local auto numbers = __opaque_xtd_linq_lazy_enumerable__<type_t, param_type> {};
 
         if (step == type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
         if (count < type_t {}) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);
 
-        result = __opaque_xtd_linq_lazy_enumerable__<type_t, param_type> {
+        numbers = __opaque_xtd_linq_lazy_enumerable__<type_t, param_type> {
           std::make_tuple(start, count, step, type_t {}),
           [](param_type& params) {
             auto& result = std::get<0>(params);
@@ -666,7 +666,7 @@ namespace xtd {
             params = std::make_tuple(start, count, step, type_t {});
           }
         };
-        return result;
+        return numbers;
       }
 
       /// @brief Returns the input typed as xtd::collections::generic::ienumerable <type_t>.
