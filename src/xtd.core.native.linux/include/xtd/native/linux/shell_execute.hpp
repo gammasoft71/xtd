@@ -22,8 +22,8 @@ namespace xtd::native::linux {
       auto result = std::string {};
       while (!feof(file_stream)) {
         auto buffer = std::string(buffer_size, '\0');
-        fread(buffer.data(), 1, buffer.size(), file_stream);
-        result += buffer;
+        if (fread(buffer.data(), 1, buffer.size(), file_stream) == 0) break;
+          result += buffer;
       }
 
       pclose(file_stream);
