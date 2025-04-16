@@ -338,9 +338,16 @@ namespace xtd::tests {
       assert::are_equal(42, *shared_ptr_object<int> {new int {42}});
     }
     
-    void test_method_(pointer_operator) {
-      assert::are_equal("VALUE", shared_ptr_object<string> {new string {"value"}}->to_upper());
-      assert::are_equal("42", shared_ptr_object<int32_object> {new int32_object {42}}->to_string());
+    void test_method_(bool_operator) {
+      assert::is_false(!shared_ptr_object<string> {new string {"value"}});
+      assert::is_true(!shared_ptr_object<string> {});
+    }
+    
+    void test_method_(base_type_operator) {
+      auto s = std::shared_ptr<int> {};
+      s = shared_ptr_object<int> {new int {42}};
+      assert::is_not_null(s.operator ->());
+      assert::are_equal(1, s.use_count());
     }
   };
 }
