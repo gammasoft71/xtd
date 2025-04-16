@@ -206,7 +206,7 @@ namespace xtd {
     /// @param value The value to assign.
     template<class value_t>
     shared_ptr_object& operator =(shared_ptr_object<value_t>&& value) noexcept {
-      ptr_ = std::move(value);
+      ptr_ = std::move(value.ptr_);
       return *this;
     }
     
@@ -214,7 +214,7 @@ namespace xtd {
     /// @param value The value to assign.
     template<class value_t>
     shared_ptr_object& operator =(const shared_ptr_object<value_t>& value) noexcept {
-      ptr_ = value;
+      ptr_ = value.ptr_;
       return *this;
     }
     
