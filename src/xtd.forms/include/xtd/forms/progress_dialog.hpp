@@ -60,11 +60,11 @@ namespace xtd {
       
       /// @brief Gets the information texts.
       /// @return The information texts.
-      const std::vector<xtd::string>& informations() const noexcept;
+      const xtd::array<xtd::string>& informations() const noexcept;
       /// @brief Sets the information texts.
       /// @param informations The information texts.
       /// @return Current progress_dialog instance.
-      progress_dialog& informations(const std::vector<xtd::string>& informations);
+      progress_dialog& informations(const xtd::array<xtd::string>& informations);
       
       /// @brief Gets a value that Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
       /// @return tree is marquee; otherwise `false`. The default is `false`.

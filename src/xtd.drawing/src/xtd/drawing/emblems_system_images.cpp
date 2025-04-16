@@ -135,16 +135,16 @@ image emblems_system_images::emblem_unreadable(const xtd::drawing::size& size) n
   return system_images_base::from_name("emblem-unreadable", size);
 }
 
-const std::vector<image>& emblems_system_images::get_images() noexcept {
+const array<image>& emblems_system_images::get_images() noexcept {
   static auto images = get_images(default_size());
   return images;
 }
 
-std::vector<image> emblems_system_images::get_images(const xtd::drawing::size& size) noexcept {
-  return std::vector {emblem_default(size), emblem_documents(size), emblem_downloads(size), emblem_favorite(size), emblem_important(size), emblem_locked(size), emblem_mail(size), emblem_new(size), emblem_photos(size), emblem_readonly(size), emblem_shared(size), emblem_symbolic_link(size), emblem_synchronizing(size), emblem_system(size), emblem_unlocked(size), emblem_unreadable(size), };
+array<image> emblems_system_images::get_images(const xtd::drawing::size& size) noexcept {
+  return array {emblem_default(size), emblem_documents(size), emblem_downloads(size), emblem_favorite(size), emblem_important(size), emblem_locked(size), emblem_mail(size), emblem_new(size), emblem_photos(size), emblem_readonly(size), emblem_shared(size), emblem_symbolic_link(size), emblem_synchronizing(size), emblem_system(size), emblem_unlocked(size), emblem_unreadable(size), };
 }
 
-const std::vector<string>& emblems_system_images::get_image_names() noexcept {
-  static auto names = std::vector {"emblem-default"_s, "emblem-documents"_s, "emblem-downloads"_s, "emblem-favorite"_s, "emblem-important"_s, "emblem-locked"_s, "emblem-mail"_s, "emblem-new"_s, "emblem-photos"_s, "emblem-readonly"_s, "emblem-shared"_s, "emblem-symbolic-link"_s, "emblem-synchronizing"_s, "emblem-system"_s, "emblem-unlocked"_s, "emblem-unreadable"_s, };
+const array<string>& emblems_system_images::get_image_names() noexcept {
+  static auto names = array {"emblem-default"_s, "emblem-documents"_s, "emblem-downloads"_s, "emblem-favorite"_s, "emblem-important"_s, "emblem-locked"_s, "emblem-mail"_s, "emblem-new"_s, "emblem-photos"_s, "emblem-readonly"_s, "emblem-shared"_s, "emblem-symbolic-link"_s, "emblem-synchronizing"_s, "emblem-system"_s, "emblem-unlocked"_s, "emblem-unreadable"_s, };
   return names;
 }

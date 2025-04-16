@@ -13,9 +13,6 @@
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/string>
-#include <cstdint>
-#include <memory>
-#include <ostream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -39,6 +36,8 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
+      /// @brief Initializes a new instance of the xtd::drawing::pen class with xtd::drawing::color::black and width of 1 pixel.
+      pen();
       /// @brief Initializes a new instance of the xtd::drawing::pen class with the specified xtd::drawing::brush.
       /// @param brush A xtd::drawing::brush that determines the fill properties of this xtd::drawing::pen.
       /// @remarks The brush property determines how the xtd::drawing::pen draws lines. Lines are drawn as if they are filled rectangles, with the characteristics of the specified brush.
@@ -120,13 +119,13 @@ namespace xtd {
       /// @remarks Assigning a value other than empty to this property will set the xtd::drawing::pen::dash_style property for this xtd::drawing::pen to xtd::drawing:drawing_2d::dash_style::custom.
       /// @remarks The elements in the dash_pattern array set the length of each dash and space in the dash pattern. The first element sets the length of a dash, the second element sets the length of a space, the third element sets the length of a dash, and so on. Consequently, each element should be a non-zero positive number.
       /// @remarks The length of each dash and space in the dash pattern is the product of the element value in the array and the width of the xtd::drawing::pen.
-      std::vector<float> dash_pattern() const noexcept;
+      xtd::array<float> dash_pattern() const noexcept;
       /// @brief Sets an array of custom dashes and spaces.
       /// @param value An array of real numbers that specifies the lengths of alternating dashes and spaces in dashed lines.
       /// @remarks Assigning a value other than empty to this property will set the xtd::drawing::pen::dash_style property for this xtd::drawing::pen to xtd::drawing:drawing_2d::dash_style::custom.
       /// @remarks The elements in the dash_pattern array set the length of each dash and space in the dash pattern. The first element sets the length of a dash, the second element sets the length of a space, the third element sets the length of a dash, and so on. Consequently, each element should be a non-zero positive number.
       /// @remarks The length of each dash and space in the dash pattern is the product of the element value in the array and the width of the xtd::drawing::pen.
-      xtd::drawing::pen& dash_pattern(const std::vector<float>& value);
+      xtd::drawing::pen& dash_pattern(const xtd::array<float>& value);
       
       /// @brief Gets the style used for dashed lines drawn with this xtd::drawing::pen.
       /// @return A xtd::drawing::drawing_2d::dash_style that represents the style used for dashed lines drawn with this xtd::drawing::pen.
@@ -222,7 +221,6 @@ namespace xtd {
       /// @}
       
     private:
-      pen();
       void brush_(xtd::uptr<xtd::drawing::brush>&& brush);
       void color_(const xtd::drawing::color& color);
       void create_data();

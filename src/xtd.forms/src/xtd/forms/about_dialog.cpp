@@ -137,7 +137,7 @@ namespace {
     }
     
     using form::show;
-    void show(const iwin32_window* owner, const image& icon, const string& name, const string& description, const string& version, const string& long_version, const string& copyright, const string& website, const string& website_label, const std::vector<string>& authors, const std::vector<string>& artists, const std::vector<string>& documenters, const std::vector<string>& translators, const string& license, const about_dialog::user_tab_page_collection& user_pages) {
+    void show(const iwin32_window* owner, const image& icon, const string& name, const string& description, const string& version, const string& long_version, const string& copyright, const string& website, const string& website_label, const array<string>& authors, const array<string>& artists, const array<string>& documenters, const array<string>& translators, const string& license, const about_dialog::user_tab_page_collection& user_pages) {
       if (visible()) {
         activate();
         return;

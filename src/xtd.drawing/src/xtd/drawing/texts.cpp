@@ -1,6 +1,7 @@
 #include "../../../include/xtd/drawing/texts.hpp"
 #include <xtd/literals>
 
+using namespace xtd;
 using namespace xtd::drawing;
 
 xtd::string texts::abort() {
@@ -351,7 +352,7 @@ xtd::string texts::zoom_to_fit() {
   return "Zoom to &Fit"_t;
 }
 
-const std::vector<xtd::string>& texts::get_texts() noexcept {
-  static auto texts = std::vector<xtd::string> {abort(), about(), actual_size(), add(), alignment(), align_left(), align_right(), apply(), ascending(), back(), bold(), bottom(), cancel(), cdrom(), centered(), clear(), close(), color(), contents(), convert(), copy(), customize(), cut(), del(), descending(), down(), edit(), execute(), exit(), file(), find(), first(), floppy(), font(), forward(), harddisk(), help(), home(), ignore(), indent(), index(), info(), italic(), justified(), jump_to(), last(), network(), new_(), next(), no(), ok(), open(), options(), paste(), preferences(), previous(), print(), print_preview(), properties(), quit(), redo(), refresh(), remove(), replace(), retry(), revert_to_saved(), save(), save_as(), search(), select_all(), settings(), spell_check(), stop(), strikeout(), tools(), top(), undelete(), underline(), undo(), unindent(), up(), view(), window(), yes(), zoom_in(), zoom_out(), zoom_to_fit()};
+const array<xtd::string>& texts::get_texts() noexcept {
+  static auto texts = array<xtd::string> {abort(), about(), actual_size(), add(), alignment(), align_left(), align_right(), apply(), ascending(), back(), bold(), bottom(), cancel(), cdrom(), centered(), clear(), close(), color(), contents(), convert(), copy(), customize(), cut(), del(), descending(), down(), edit(), execute(), exit(), file(), find(), first(), floppy(), font(), forward(), harddisk(), help(), home(), ignore(), indent(), index(), info(), italic(), justified(), jump_to(), last(), network(), new_(), next(), no(), ok(), open(), options(), paste(), preferences(), previous(), print(), print_preview(), properties(), quit(), redo(), refresh(), remove(), replace(), retry(), revert_to_saved(), save(), save_as(), search(), select_all(), settings(), spell_check(), stop(), strikeout(), tools(), top(), undelete(), underline(), undo(), unindent(), up(), view(), window(), yes(), zoom_in(), zoom_out(), zoom_to_fit()};
   return texts;
 }

@@ -41,7 +41,7 @@ namespace set_path {
         if (environment::os_version().is_windows()) current_path = win32_read_system_path(system_path);
         else if (environment::os_version().is_macos()) current_path = macos_read_system_path(system_path);
         else if (environment::os_version().is_linux()) current_path = linux_read_system_path(system_path);
-        auto paths = std::vector<xtd::string> {current_path.split(io::path::path_separator())};
+        auto paths = list<string> {current_path.split(io::path::path_separator())};
         auto it_folder = paths.end();
         for (auto it = paths.begin(); it != paths.end(); ++it) {
           if (*it == folder) {
@@ -145,7 +145,7 @@ namespace set_path {
       }
       current_directory[size] = 0;
       #endif
-      return convert_string::to_ustring(current_directory);
+      return convert_string::to_string(current_directory);
     }
     
     static int win32_write_system_path(bool system_path, const string& path) {

@@ -27,7 +27,7 @@ void context_menu::insert_item(intptr context_menu, size_t pos, intptr menu_item
 void context_menu::insert_menu(intptr context_menu, size_t pos, intptr menu_item, const string& text) {
   if (context_menu == 0) throw_helper::throws(exception_case::argument);
   if (menu_item == 0) throw_helper::throws(exception_case::argument);
-  reinterpret_cast<wxMenu*>(context_menu)->Insert(pos, wxID_ANY, convert_string::to_wstring(text), reinterpret_cast<wxMenu*>(menu_item));
+  reinterpret_cast<wxMenu*>(context_menu)->Insert(pos, wxID_ANY, convert_string::to_wstring(text).c_str(), reinterpret_cast<wxMenu*>(menu_item));
 }
 
 intptr context_menu::native_handle(intptr context_menu) {

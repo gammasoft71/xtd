@@ -187,7 +187,7 @@ void graphics::draw_bezier(intptr handle, intptr pen, float x1, float y1, float 
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_beziers(intptr handle, intptr pen, const std::vector<key_value_pair<float, float>>& points) {
+void graphics::draw_beziers(intptr handle, intptr pen, const array<key_value_pair<float, float>>& points) {
   if (!handle) throw_helper::throws(exception_case::argument);
   auto path = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics()->CreatePath();
   path.MoveToPoint(points[0].first, points[0].second);
@@ -202,7 +202,7 @@ void graphics::draw_beziers(intptr handle, intptr pen, const std::vector<key_val
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_closed_curve(intptr handle, intptr pen, std::vector<key_value_pair<float, float>> points, float tension) {
+void graphics::draw_closed_curve(intptr handle, intptr pen, const array<key_value_pair<float, float>> points, float tension) {
   if (!handle) throw_helper::throws(exception_case::argument);
   graphics_context gc(handle);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
@@ -216,7 +216,7 @@ void graphics::draw_closed_curve(intptr handle, intptr pen, std::vector<key_valu
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_curve(intptr handle, intptr pen, std::vector<key_value_pair<float, float>> points, float tension) {
+void graphics::draw_curve(intptr handle, intptr pen, const array<key_value_pair<float, float>> points, float tension) {
   if (!handle) throw_helper::throws(exception_case::argument);
   graphics_context gc(handle);
   wxDC& dc = reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc();
@@ -275,7 +275,7 @@ void graphics::draw_line(intptr handle, intptr pen, float x1, float y1, float x2
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_lines(intptr handle, intptr pen, const std::vector<key_value_pair<float, float>>& points) {
+void graphics::draw_lines(intptr handle, intptr pen, const array<key_value_pair<float, float>>& points) {
   if (!handle) throw_helper::throws(exception_case::argument);
   
   auto start_line = points[0];
@@ -314,7 +314,7 @@ void graphics::draw_pie(intptr handle, intptr pen, float x, float y, float width
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_polygon(intptr handle, intptr pen, const std::vector<key_value_pair<float, float>>& points) {
+void graphics::draw_polygon(intptr handle, intptr pen, const array<key_value_pair<float, float>>& points) {
   if (!handle) throw_helper::throws(exception_case::argument);
   std::vector<wxPoint2DDouble> wx_points;
   for (auto [x, y] : points)
@@ -336,7 +336,7 @@ void graphics::draw_rectangle(intptr handle, intptr pen, float x, float y, float
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::draw_rectangles(intptr handle, intptr pen, std::vector<std::tuple<float, float, float, float>>& rects) {
+void graphics::draw_rectangles(intptr handle, intptr pen, const array<std::tuple<float, float, float, float>>& rects) {
   if (!handle) throw_helper::throws(exception_case::argument);
   wxGraphicsContext& graphics = *reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->graphics();
   graphics.SetBrush(wxNullBrush);
@@ -347,7 +347,7 @@ void graphics::draw_rectangles(intptr handle, intptr pen, std::vector<std::tuple
 }
 
 void graphics::draw_rotated_string(intptr handle, const xtd::string& text, intptr font, intptr brush, float x, float y, float angle) {
-  wxDrawString::DrawString(handle, convert_string::to_wstring(text), *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, angle, wxAlignment::wxALIGN_NOT, HKP_NONE, ST_NONE);
+  wxDrawString::DrawString(handle, convert_string::to_wstring(text).c_str(), *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, angle, wxAlignment::wxALIGN_NOT, HKP_NONE, ST_NONE);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
@@ -361,16 +361,16 @@ void graphics::draw_rounded_rectangle(intptr handle, intptr pen, float x, float 
 }
 
 void graphics::draw_string(intptr handle, const xtd::string& text, intptr font, intptr brush, float x, float y, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming) {
-  wxDrawString::DrawString(handle, convert_string::to_wstring(text), *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix, trimming);
+  wxDrawString::DrawString(handle, convert_string::to_wstring(text).c_str(), *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix, trimming);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
 void graphics::draw_string(intptr handle, const xtd::string& text, intptr font, intptr brush, float x, float y, float width, float height, int32 alignment, int32 line_alignment, int32 hot_key_prefix, int32 trimming, int32 string_formats) {
-  wxDrawString::DrawString(handle, convert_string::to_wstring(text), *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, width, height, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix, trimming, string_formats);
+  wxDrawString::DrawString(handle, convert_string::to_wstring(text).c_str(), *reinterpret_cast<wxFont*>(font), *reinterpret_cast<wx_brush*>(brush), x, y, width, height, 0.0f, to_wx_align(alignment, line_alignment), hot_key_prefix, trimming, string_formats);
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::fill_closed_curve(intptr handle, intptr brush, std::vector<key_value_pair<float, float>> points, uint32 fill_mode, float tension) {
+void graphics::fill_closed_curve(intptr handle, intptr brush, const array<key_value_pair<float, float>> points, uint32 fill_mode, float tension) {
   /// @todo Using graphics_path when done...
   if (!handle) throw_helper::throws(exception_case::argument);
   graphics_context gc(handle);
@@ -450,7 +450,7 @@ void graphics::fill_pie(intptr handle, intptr brush, float x, float y, float wid
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::fill_polygon(intptr handle, intptr brush, const std::vector<key_value_pair<float, float>>& points, int32 fill_mode) {
+void graphics::fill_polygon(intptr handle, intptr brush, const array<key_value_pair<float, float>>& points, int32 fill_mode) {
   if (!handle) throw_helper::throws(exception_case::argument);
   /// @todo Using graphics_path when done...
   std::vector<wxPoint2DDouble> wx_points;
@@ -507,7 +507,7 @@ void graphics::fill_rectangle(intptr handle, intptr brush, float x, float y, flo
   reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->apply_update();
 }
 
-void graphics::fill_rectangles(intptr handle, intptr brush, std::vector<std::tuple<float, float, float, float>>& rects) {
+void graphics::fill_rectangles(intptr handle, intptr brush, const array<std::tuple<float, float, float, float>>& rects) {
   if (!handle) throw_helper::throws(exception_case::argument);
   for (auto [x, y, width, height] : rects)
     fill_rectangle(handle, brush, x, y, width, height);
@@ -683,7 +683,7 @@ void graphics::measure_string(intptr handle, const string& text, intptr font, fl
   auto strings = text.split('\n');
   wxString formated_text;
   for (auto string : strings) {
-    wxString line_string = wxDrawString::FormatString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(string), max_width, hot_key_prefix, trimming);
+    wxString line_string = wxDrawString::FormatString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(string).c_str(), max_width, hot_key_prefix, trimming);
     if (++line_index > lines_filled) break;
     formated_text += line_string + wxString("\n");
   }
@@ -783,7 +783,7 @@ void graphics::translate_transform(intptr handle, float dx, float dy, int32 orde
 }
 
 xtd::string graphics::trim_string(intptr handle, const xtd::string& text, intptr font, float width, int32 trimming) {
-  return convert_string::to_string(wxDrawString::TrimString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(text), *reinterpret_cast<wxFont*>(font), width, trimming).c_str().AsWChar());
+  return convert_string::to_string(wxDrawString::TrimString(reinterpret_cast<xtd::drawing::native::hdc_wrapper*>(handle)->hdc(), convert_string::to_wstring(text).c_str(), *reinterpret_cast<wxFont*>(font), width, trimming).c_str().AsWChar());
 }
 
 void graphics::visible_clip_bounds(intptr handle, float& x, float& y, float& width, float& height) {

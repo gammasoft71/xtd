@@ -3,14 +3,15 @@
 #include "../../../include/xtd/drawing/helpers/alpha.hpp"
 #include "../../../include/xtd/drawing/helpers/rgb.hpp"
 #include "../../../include/xtd/drawing/bitmap.hpp"
+#include <xtd/collections/generic/list>
 
 namespace {
-  struct box_precalculate {
+  struct box_precalculate : xtd::object {
     xtd::int32 box_start;
     xtd::int32 box_end;
   };
   
-  inline void resample_box_precalculates(std::vector<box_precalculate>& precalculates, xtd::int32 old_size) {
+  inline void resample_box_precalculates(xtd::collections::generic::list<box_precalculate>& precalculates, xtd::int32 old_size) {
     const auto new_size = static_cast<xtd::int32>(precalculates.size());
     if (old_size <= 0 || new_size == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
     
@@ -42,8 +43,8 @@ namespace {
     auto result_alpha = reinterpret_cast<xtd::drawing::helpers::alpha*>(result_image.alpha());
     auto result_rgb = reinterpret_cast<xtd::drawing::helpers::rgb*>(result_image.rgb());
     
-    auto vertical_precalculates = std::vector<box_precalculate>(result_height);
-    auto horizontal_precalculates = std::vector<box_precalculate>(result_width);
+    auto vertical_precalculates = xtd::collections::generic::list<box_precalculate>(result_height);
+    auto horizontal_precalculates = xtd::collections::generic::list<box_precalculate>(result_width);
     
     resample_box_precalculates(vertical_precalculates, source_height);
     resample_box_precalculates(horizontal_precalculates, source_width);

@@ -4,6 +4,7 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/system_images>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/collections/generic/list>
 #include <xtd/io/directory>
 #include <xtd/io/file>
 #include <xtd/io/path>
@@ -29,6 +30,7 @@
 // *   dark folder item gradient : fg(78, 139, 182), bg(94, 153, 185)
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::io;
 
@@ -38,7 +40,7 @@ namespace {
   }
   
   drawing::size get_closed_size(const drawing::size& size) {
-    static auto default_sizes = std::vector<drawing::size> {{16, 16}, {24, 24}, {32, 32}, {48, 48}, {64, 64}, {96, 96}, {128, 128}, {256, 256}, {512, 512}, {1024, 1024}};
+    static auto default_sizes = array<drawing::size> {{16, 16}, {24, 24}, {32, 32}, {48, 48}, {64, 64}, {96, 96}, {128, 128}, {256, 256}, {512, 512}, {1024, 1024}};
     for (auto default_size : default_sizes)
       if (default_size.width >= size.width && default_size.height >= size.height) return default_size;
     return {1024, 1024};
@@ -49,15 +51,15 @@ xtd::drawing::size system_images_base::default_size() noexcept {
   return {32, 32};
 }
 
-std::vector<string> system_images_base::contexts() noexcept {
-  auto result = std::vector<string> {};
+array<string> system_images_base::contexts() noexcept {
+  auto result = list<string> {};
   for (const auto& context_name : context_names())
     result.push_back(context_name.first);
-  return result;
+  return result.to_array();
 }
 
-std::map<string, std::vector<string>> system_images_base::context_names() noexcept {
-  static std::map<string, std::vector<string>> context_names {
+std::map<string, array<string>> system_images_base::context_names() noexcept {
+  static std::map<string, array<string>> context_names {
     {"Actions", {"address-book-new", "application-exit", "appointment-new", "call-start", "call-stop", "contact-new", "dialog-cancel", "dialog-ok", "dialog-ok-apply", "document-edit", "document-new", "document-open", "document-open-recent", "document-page-setup", "document-print", "document-print-preview", "document-properties", "document-revert", "document-save", "document-save-as", "document-send", "edit-clear", "edit-copy", "edit-cut", "edit-delete", "edit-find", "edit-find-replace", "edit-paste", "edit-redo", "edit-rename", "edit-select-all", "edit-undo", "folder-new", "format-indent-less", "format-indent-more", "format-justify-center", "format-justify-fill", "format-justify-left", "format-justify-right", "format-text-direction-ltr", "format-text-direction-rtl", "format-text-bold", "format-text-italic", "format-text-underline", "format-text-strikethrough", "go-bottom", "go-down", "go-first", "go-home", "go-jump", "go-last", "go-next", "go-previous", "go-top", "go-up", "help-about", "help-contents", "help-faq", "insert-image", "insert-link", "insert-object", "insert-table", "insert-text", "list-add", "list-remove", "mail-forward", "mail-mark-important", "mail-mark-junk", "mail-mark-notjunk", "mail-mark-read", "mail-mark-unread", "mail-message-new", "mail-reply-all", "mail-reply-sender", "mail-send", "mail-send-receive", "media-eject", "media-optical-burn", "media-playback-pause", "media-playback-start", "media-playback-stop", "media-record", "media-seek-backward", "media-seek-forward", "media-skip-backward", "media-skip-forward", "object-flip-horizontal", "object-flip-vertical", "object-rotate-left", "object-rotate-right", "process-stop", "system-lock-screen", "system-log-out", "system-run", "system-search", "system-reboot", "system-shutdown", "tools-check-spelling", "view-fullscreen", "view-media-equalizer", "view-media-lyrics", "view-refresh", "view-restore", "view-sort-ascending", "view-sort-descending", "window-close", "window-close-hovered", "window-fullscreen", "window-fullscreen-hovered", "window-maximize", "window-maximize-hovered", "window-minimize", "window-minimize-hovered", "window-new", "window-restore", "window-restore-hovered", "zoom-fit-best", "zoom-in", "zoom-original", "zoom-out"}},
     {"Animations", {"process-working"}},
     {"Applications", {"accessories-calculator", "accessories-character-map", "accessories-dictionary", "accessories-text-editor", "help-browser", "help", "multimedia-volume-control", "preferences-desktop-accessibility", "preferences-desktop-font", "preferences-desktop-keyboard", "preferences-desktop-locale", "preferences-desktop-screensaver", "preferences-desktop-theme", "preferences-desktop-wallpaper", "system-file-manager", "system-software-install", "system-software-update", "utilities-system-monitor", "utilities-terminal"}},
@@ -74,19 +76,19 @@ std::map<string, std::vector<string>> system_images_base::context_names() noexce
   return context_names;
 }
 
-std::vector<string> system_images_base::names() noexcept {
-  auto result = std::vector<string> {};
+array<string> system_images_base::names() noexcept {
+  auto result = list<string> {};
   for (const auto& context_name : context_names())
     for (const auto& name : context_name.second)
       result.push_back(name);
-  return result;
+  return result.to_array();
 }
 
-std::vector<xtd::string> system_images_base::names(const xtd::string& context) noexcept {
+array<xtd::string> system_images_base::names(const xtd::string& context) noexcept {
   return context_names()[context];
 }
 
-std::vector<xtd::drawing::size> system_images_base::sizes() noexcept {
+array<xtd::drawing::size> system_images_base::sizes() noexcept {
   return {{16, 16}, {24, 24}, {32, 32}, {48, 48}, {64, 64}, {96, 96}, {128, 128}, {256, 256}, {512, 512}, {1024, 1024}};
 }
 
@@ -103,13 +105,13 @@ image system_images_base::from_name(const xtd::string& theme, const xtd::string&
 }
 
 image system_images_base::from_name(const string& theme, const string& name, const size& size) {
-  static auto default_sizes = std::vector<drawing::size> {{1024, 1024}, {512, 512}, {256, 256}, {128, 128}, {96, 96}, {64, 64}, {48, 48}, {32, 32}, {24, 24}, {16, 16}};
-  static auto default_size_names = std::vector<string> {"1024x1024", "512x512", "256x256", "128x128", "96x96", "64x64", "48x48", "32x32", "24x24", "16x16"};
+  static auto default_sizes = array<drawing::size> {{1024, 1024}, {512, 512}, {256, 256}, {128, 128}, {96, 96}, {64, 64}, {48, 48}, {32, 32}, {24, 24}, {16, 16}};
+  static auto default_size_names = array<string> {"1024x1024", "512x512", "256x256", "128x128", "96x96", "64x64", "48x48", "32x32", "24x24", "16x16"};
   auto dark_mode = (system_colors::window().get_lightness() < 0.5 && !theme.ends_with(" (light)")) || theme.ends_with(" (dark)");
   auto theme_name = theme.replace(" (dark)", string::empty_string).replace(" (light)", string::empty_string);
   
   auto theme_path = directory::exists(path::combine(system_images_base_resource_path(), theme_name)) ? path::combine(system_images_base_resource_path(), theme_name) : path::combine(system_images_base_resource_path(), default_theme());
-  auto it_sizes = find(default_sizes.begin(), default_sizes.end(), get_closed_size(size));
+  auto it_sizes = std::find(default_sizes.begin(), default_sizes.end(), get_closed_size(size));
   
   if (theme == default_theme()) {
     auto hbitmap = native_system_images_from_name_enabled() ? native::system_images::from_name(name, size.width, size.height) : intptr {0};
@@ -148,6 +150,6 @@ string system_images_base::fallback_theme() noexcept {
   return "symbolic";
 }
 
-std::vector<string> system_images_base::themes() noexcept {
+array<string> system_images_base::themes() noexcept {
   return {"gnome", "gnome (dark)", "gnome (light)", "kde", "kde (dark)", "kde (light)", "macos", "macos (dark)", "macos (light)", "symbolic", "symbolic (dark)", "symbolic (light)", "windows", "windows (dark)", "windows (light)", "xtd", "xtd (dark)", "xtd (light)"};
 }

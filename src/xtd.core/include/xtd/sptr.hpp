@@ -2,7 +2,7 @@
 /// @brief Contains xtd::sptr type.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include <memory>
+#include "shared_ptr_object.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

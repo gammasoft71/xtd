@@ -65,11 +65,11 @@ text_box_base& text_box_base::border_style(std::nullptr_t) {
   return *this;
 }
 
-std::vector<xtd::string> text_box_base::lines() const noexcept {
+array<xtd::string> text_box_base::lines() const noexcept {
   return text().split('\n');
 }
 
-text_box_base& text_box_base::lines(const std::vector<xtd::string>& lines) {
+text_box_base& text_box_base::lines(const array<xtd::string>& lines) {
   text(xtd::string::join("\n", lines));
   return *this;
 }

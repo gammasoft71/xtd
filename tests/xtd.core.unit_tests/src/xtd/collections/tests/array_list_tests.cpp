@@ -79,8 +79,8 @@ namespace xtd::collections::tests {
     }
 
     void test_method_(constructor_with_iterators) {
-      std::vector v = {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
-      auto items = array_list(v.begin(), v.end());
+      array a = {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
+      auto items = array_list(a.begin(), a.end());
       assert::are_equal(3_z, items.count());
       collection_assert::are_equal({"Tyrannosaurus", "Compsognathus", "Amargasaurus"}, items);
     }
@@ -352,7 +352,7 @@ namespace xtd::collections::tests {
     
     void test_method_(copy_to) {
       auto items = array_list {"Tyrannosaurus", "Compsognathus", "Amargasaurus"};
-      auto dest = array<any_object>(3);
+      auto dest = array<any_object>(3_z);
       items.copy_to(dest, 0);
       collection_assert::are_equal({"Tyrannosaurus", "Compsognathus", "Amargasaurus"}, dest);
       

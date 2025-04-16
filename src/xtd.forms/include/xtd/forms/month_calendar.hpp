@@ -121,22 +121,22 @@ namespace xtd {
       /// @brief Gets the array of xtd::date_time objects that determines which annual days are displayed in bold.
       /// @return An array of xtd::date_time objects.
       /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
-      std::vector<xtd::date_time> annually_bolded_dates() const noexcept;
+      xtd::array<xtd::date_time> annually_bolded_dates() const noexcept;
       /// @brief Sets the array of xtd::date_time objects that determines which annual days are displayed in bold.
       /// @param value An array of xtd::date_time objects.
       /// @return Current month_calendar.
       /// @remarks Using this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
-      month_calendar& annually_bolded_dates(const std::vector<xtd::date_time>& value);
+      month_calendar& annually_bolded_dates(const xtd::array<xtd::date_time>& value);
       
       /// @brief Gets the array of xtd::date_time bjects that determines which nonrecurring dates are displayed in bold.
       /// @return An array of xtd::date_time objects.
       /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
-      std::vector<xtd::date_time> bolded_dates() const noexcept;
+      xtd::array<xtd::date_time> bolded_dates() const noexcept;
       /// @brief Sets the array of xtd::date_time bjects that determines which nonrecurring dates are displayed in bold.
       /// @param value An array of xtd::date_time objects.
       /// @return Current month_calendar.
       /// @remarks Using this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
-      month_calendar& bolded_dates(const std::vector<xtd::date_time>& value);
+      month_calendar& bolded_dates(const xtd::array<xtd::date_time>& value);
       
       /// @brief Gets the number of columns and rows of months displayed.
       /// @return A xtd::drawing::size with the number of columns and rows to use to display the calendar.
@@ -189,12 +189,12 @@ namespace xtd {
       /// @brief Gets the array of xtd::date_time objects that determine which monthly days to bold.
       /// @return An array of xtd::date_time objects.
       /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
-      std::vector<xtd::date_time> monthly_bolded_dates() const noexcept;
+      xtd::array<xtd::date_time> monthly_bolded_dates() const noexcept;
       /// @brief Sets the array of xtd::date_time objects that determine which monthly days to bold.
       /// @param value An array of xtd::date_time objects.
       /// @return Current month_calendar.
       /// @remarks Using this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
-      month_calendar& monthly_bolded_dates(const std::vector<xtd::date_time>& value);
+      month_calendar& monthly_bolded_dates(const xtd::array<xtd::date_time>& value);
       
       /// @brief Gets the end date of the selected range of dates.
       /// @return A xtd::date_time indicating the last date in the selection range.

@@ -11,6 +11,7 @@
 #include <xtd/drawing/native/image_formats>
 #include <xtd/drawing/native/frame_dimension>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/collections/generic/list>
 #include <xtd/io/file>
 #include <xtd/io/path>
 #include <xtd/helpers/throw_helper>
@@ -139,7 +140,7 @@ namespace {
   }
 
   ptr<char*[]> get_data_from_xpm(const string& filename) {
-    static thread_local std::vector<string> lines;
+    static thread_local list<string> lines;
     lines = file::read_all_lines(filename);
     auto data = new char*[lines.size()];
     for (auto index = 0_z; index < lines.size() - 2; ++index) {
@@ -277,10 +278,10 @@ int32 image::flags() const noexcept {
   return static_cast<int32>(data_->flags);
 }
 
-std::vector<guid> image::frame_dimentions_list() const noexcept {
-  auto result = std::vector<guid> {};
+array<guid> image::frame_dimentions_list() const noexcept {
+  auto result = list<guid> {};
   std::for_each(data_->frame_dimensions.begin(), data_->frame_dimensions.end(), [&](auto frame) {result.push_back(frame.first);});
-  return result;
+  return result.to_array();
 }
 
 intptr image::handle() const noexcept {
@@ -631,7 +632,7 @@ void image::update_properties() {
   
   data_->horizontal_resolution = native::image::horizontal_resolution(data_->handle);
   
-  auto palette_entries = std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>> {};
+  auto palette_entries = array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>> {};
   native::image::color_palette(data_->handle, palette_entries, data_->palette.flags_);
   for (auto [a, r, g, b] : palette_entries)
     data_->palette.entries_.push_back(color::from_argb(a, r, g, b));

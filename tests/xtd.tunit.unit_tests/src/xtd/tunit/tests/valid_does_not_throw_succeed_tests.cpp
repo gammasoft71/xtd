@@ -8,7 +8,7 @@ namespace xtd::tunit::tests {
   class test_class_(valid_does_not_throw_succeed_tests) {
   public:
     void test_method_(test_case_succeed) {
-      std::vector v = {1, 2, 3, 4};
+      auto v = array {1, 2, 3, 4};
       xtd::tunit::valid::does_not_throw([&] {v.at(2);});
     }
   };

@@ -8,11 +8,6 @@
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/string>
-#include <cstdint>
-#include <memory>
-#include <ostream>
-#include <stdexcept>
-#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -78,7 +73,7 @@ namespace xtd {
       /// @{
       /// @brief Returns an array that contains all the font_family objects associated with the current graphics context.
       /// @return An array of font_family objects associated with the current graphics context.
-      static std::vector<font_family> families() noexcept;
+      static xtd::array<font_family> families() noexcept;
       
       /// @brief Gets a generic monospace font_family.
       /// @return A font_family that represents a generic monospace font.

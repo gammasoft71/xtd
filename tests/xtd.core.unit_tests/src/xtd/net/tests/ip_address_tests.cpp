@@ -65,12 +65,12 @@ namespace xtd::net::tests {
     }
     
     void test_method_(constructors_wtith_bytes_array_ip_v4) {
-      assert::are_equal("172.16.10.30", ip_address(std::vector<xtd::byte> {172, 16, 10, 30}).to_string());
+      assert::are_equal("172.16.10.30", ip_address(xtd::array<xtd::byte> {172, 16, 10, 30}).to_string());
     }
     
     void test_method_(constructors_wtih_bytes_array_ip_v6) {
       assert::are_equal("2001:0:5ef5:73b8:2c2c:3028:2a4e:b283", ip_address({0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}).to_string());
-      assert::are_equal("2001:0:5ef5:73b8:2c2c:3028:2a4e:b283%15", ip_address(std::vector<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}, 15).to_string());
+      assert::are_equal("2001:0:5ef5:73b8:2c2c:3028:2a4e:b283%15", ip_address(xtd::array<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}, 15).to_string());
     }
     
     void test_method_(constructors_with_invalid_bytes_array) {
@@ -86,14 +86,14 @@ namespace xtd::net::tests {
     }
     
     void test_method_(address_family) {
-      assert::are_equal(address_family::inter_network, ip_address(std::vector<xtd::byte> {172, 16, 10, 30}).address_family());
-      assert::are_equal(address_family::inter_network_v6, ip_address(std::vector<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}).address_family());
+      assert::are_equal(address_family::inter_network, ip_address(xtd::array<xtd::byte> {172, 16, 10, 30}).address_family());
+      assert::are_equal(address_family::inter_network_v6, ip_address(xtd::array<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}).address_family());
     }
     
     void test_method_(get_scope_id) {
-      assert::throws<socket_exception>([] {ip_address(std::vector<xtd::byte> {172, 16, 10, 30}).scope_id();});
-      assert::are_equal(0u, ip_address(std::vector<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}).scope_id());
-      assert::are_equal(15u, ip_address(std::vector<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}, 15).scope_id());
+      assert::throws<socket_exception>([] {ip_address(xtd::array<xtd::byte> {172, 16, 10, 30}).scope_id();});
+      assert::are_equal(0u, ip_address(xtd::array<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}).scope_id());
+      assert::are_equal(15u, ip_address(xtd::array<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}, 15).scope_id());
     }
     
     void test_method_(is_ip_v4_mapped_to_ip_v6) {
@@ -136,7 +136,7 @@ namespace xtd::net::tests {
       collection_assert::are_equal({172, 16, 12, 24}, ip_address(static_cast<uint32>(bit_converter::to_int32(array<byte> {172, 16, 12, 24}, 0))).get_address_bytes());
       collection_assert::are_equal({145, 32, 7, 18}, ip_address(145, 32, 7, 18).get_address_bytes());
       
-      collection_assert::are_equal({32, 1, 0, 0, 94, 245, 115, 184, 44, 44, 48, 40, 42, 78, 178, 131}, ip_address(std::vector<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}).get_address_bytes());
+      collection_assert::are_equal({32, 1, 0, 0, 94, 245, 115, 184, 44, 44, 48, 40, 42, 78, 178, 131}, ip_address(xtd::array<xtd::byte> {0x20, 0x01, 0x00, 0x00, 0x5e, 0xf5, 0x73, 0xb8, 0x2c, 0x2c, 0x30, 0x28, 0x2a, 0x4e, 0xb2, 0x83}).get_address_bytes());
     }
     
     void test_method_(host_to_network_order) {

@@ -54,8 +54,8 @@ intptr replace_dialog::create(intptr hwnd, const std::optional<xtd::drawing::poi
   if (match_case) find_replace_flags |= wxFindReplaceFlags::wxFR_MATCHCASE;
   wxFindReplaceData* find_replace_data = new wxFindReplaceData();
   find_replace_data->SetFlags(find_replace_flags);
-  find_replace_data->SetFindString(convert_string::to_wstring(find_string));
-  find_replace_data->SetReplaceString(convert_string::to_wstring(replace_string));
+  find_replace_data->SetFindString(convert_string::to_wstring(find_string).c_str());
+  find_replace_data->SetReplaceString(convert_string::to_wstring(replace_string).c_str());
   
   #if defined(__WXMSW__)
   handle_hook = SetWindowsHookExW(WH_CBT, &callbackProc, 0, GetCurrentThreadId());
@@ -64,7 +64,7 @@ intptr replace_dialog::create(intptr hwnd, const std::optional<xtd::drawing::poi
   int32 style = wxFR_REPLACEDIALOG | wxFR_NOUPDOWN;
   if (!show_whole_word) style |= wxFR_NOWHOLEWORD;
   if (!show_match_case) style |= wxFR_NOMATCHCASE;
-  wxReplaceDialog* replace_dialog = new wxReplaceDialog(hwnd, find_replace_data, convert_string::to_wstring(title), style, find_next, replace, dialog_closed);
+  wxReplaceDialog* replace_dialog = new wxReplaceDialog(hwnd, find_replace_data, convert_string::to_wstring(title).c_str(), style, find_next, replace, dialog_closed);
   #if !defined(__WXMSW__)
   replace_dialog->SetMinSize(replace_dialog->GetSize());
   replace_dialog->SetMaxSize(replace_dialog->GetSize());
@@ -72,8 +72,8 @@ intptr replace_dialog::create(intptr hwnd, const std::optional<xtd::drawing::poi
   
   replace_dialog->whole_word = whole_word;
   replace_dialog->match_case = match_case;
-  replace_dialog->find_string = convert_string::to_wstring(find_string);
-  replace_dialog->replace_string = convert_string::to_wstring(replace_string);
+  replace_dialog->find_string = convert_string::to_wstring(find_string).c_str();
+  replace_dialog->replace_string = convert_string::to_wstring(replace_string).c_str();
   
   replace_dialog->Bind(wxEVT_FIND_CLOSE, [replace_dialog, dialog_closed](wxFindDialogEvent & event) {
     replace_dialog->Hide();

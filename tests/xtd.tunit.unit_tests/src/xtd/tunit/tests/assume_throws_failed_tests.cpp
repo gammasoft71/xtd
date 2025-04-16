@@ -8,8 +8,8 @@ namespace xtd::tunit::tests {
   class test_class_(assume_throws_failed_tests) {
   public:
     void test_method_(test_case_failed) {
-      std::vector v = {1, 2, 3, 4};
-      xtd::tunit::assume::throws<std::out_of_range>([&] {v.at(2);});
+      auto v = array {1, 2, 3, 4};
+      xtd::tunit::assume::throws<xtd::index_out_of_range_exception>([&] {v.at(2);});
     }
   };
   

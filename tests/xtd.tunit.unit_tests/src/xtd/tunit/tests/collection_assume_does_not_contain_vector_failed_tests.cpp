@@ -7,7 +7,7 @@ namespace xtd::tunit::tests {
   class test_class_(collection_assume_does_not_contain_vector_failed_tests) {
   public:
     void test_method_(test_case_failed) {
-      std::vector<int> a = {1, 2, 3, 4};
+      auto a = array<int> {1, 2, 3, 4};
       xtd::tunit::collection_assume::does_not_contain({1, 2}, a);
     }
   };

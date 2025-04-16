@@ -11,10 +11,12 @@
 #include "collections/generic/ilist.hpp"
 #include "helpers/throw_helper.hpp"
 #include "abstract.hpp"
+#include "byte.hpp"
 #include "core_export.hpp"
 #include "int64.hpp"
 #include "iequatable.hpp"
 #include "new_ptr.hpp"
+#include "null.hpp"
 #include "object.hpp"
 #include "static.hpp"
 #include <algorithm>

@@ -34,7 +34,7 @@ namespace xtdc_gui {
   public:
     /// @brief Initializes a new instance of the project_type_item_control class.
     project_type_items_control() {
-      std::vector<project_type_item> project_type_items {
+      auto project_type_items = xtd::array<project_type_item> {
         {xtd::drawing::bitmap::from_xpm_data(solution_icon), "Solution File", "A project for creating an empty solution file.", project_language::all & ~project_language::xtd & ~project_language::xtd_c, project_sdk::none, project_platform::all, project_type::solution_file},
         {xtd::drawing::bitmap::from_xpm_data(xtd_solution_icon), "xtd Solution File", "A project for creating an empty xtd solution file.", project_language::xtd, project_sdk::none, project_platform::all, project_type::solution_file},
         {xtd::drawing::bitmap::from_xpm_data(xtd_solution_icon), "xtd_c Solution File", "A project for creating an empty xtd_c solution file.", project_language::xtd_c, project_sdk::none, project_platform::all, project_type::solution_file},
@@ -83,7 +83,7 @@ namespace xtdc_gui {
         item_control->tag(project_type_item_controls_.size());
         project_type_item_controls_.push_back(item_control);
         item_control->click += [&](object & sender, const xtd::event_args & e) {
-          selected_index(project_type_item_controls_.size() - 1 - std::any_cast<size_t>(xtd::as<control>(sender).tag()));
+          selected_index(project_type_item_controls_.size() - 1 - xtd::as<size_t>(xtd::as<control>(sender).tag()));
         };
       }
       
@@ -121,11 +121,11 @@ namespace xtdc_gui {
     
     void perform_double_click() {on_double_click(xtd::event_args::empty);}
     
-    std::vector<project_type_item> project_type_items() const {
-      std::vector<project_type_item> items;
+    xtd::array<project_type_item> project_type_items() const {
+      xtd::collections::generic::list<project_type_item> items;
       for (auto it = project_type_item_controls_.rbegin(); it != project_type_item_controls_.rend(); ++it)
         items.push_back((*it)->project_type_item());
-      return items;
+      return items.to_array();
     }
     
     /// @brief This is a special value equal to the maximum value representable by the type size_t.
@@ -156,13 +156,13 @@ namespace xtdc_gui {
     void on_selected_project_type_item_changed(const xtd::event_args& e) {
       for (auto item : project_type_item_controls_)
         if (item->project_type_item() == selected_project_type_item_) {
-          selected_index(project_type_item_controls_.size() - 1 - std::any_cast<size_t>(item->tag()));
+          selected_index(project_type_item_controls_.size() - 1 - xtd::as<size_t>(item->tag()));
           break;
         }
       selected_project_type_item_changed(*this, e);
     }
     
-    std::vector<xtd::sptr<project_type_item_control>> project_type_item_controls_;
+    xtd::collections::generic::list<xtd::sptr<project_type_item_control>> project_type_item_controls_;
     size_t previous_selected_index_ = npos;
     size_t selected_index_ = npos;
     project_type_item selected_project_type_item_;

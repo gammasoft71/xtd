@@ -9,11 +9,9 @@
 #include "../rectangle_f.hpp"
 #include "../string_format.hpp"
 #include "fill_mode.hpp"
+#include <xtd/array>
 #include <xtd/object>
 #include <xtd/string>
-#include <cstdint>
-#include <memory>
-#include <ostream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -151,51 +149,51 @@ namespace xtd {
         /// @param points An array of xtd::drawing::point structures that represents the points that define the curves.
         /// @remarks The points parameter specifies an array of endpoints and control points of the connected curves. The first curve is constructed from the first point to the fourth point in the points array by using the second and third points as control points. In addition to the endpoint of the previous curve, each subsequent curve in the sequence needs exactly three more points: the next two points in the sequence are control points, and the third is the endpoint for the added curve.
         /// @remarks If there are previous lines or curves in the figure, a line is added to connect the endpoint of the previous segment to the starting point of the first cubic curve in the sequence.
-        void add_beziers(const std::vector<xtd::drawing::point>& points);
+        void add_beziers(const xtd::array<xtd::drawing::point>& points);
         /// @brief Adds a sequence of connected cubic Bézier curves to the current figure.
         /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curves.
         /// @remarks The points parameter specifies an array of endpoints and control points of the connected curves. The first curve is constructed from the first point to the fourth point in the points array by using the second and third points as control points. In addition to the endpoint of the previous curve, each subsequent curve in the sequence needs exactly three more points: the next two points in the sequence are control points, and the third is the endpoint for the added curve.
         /// @remarks If there are previous lines or curves in the figure, a line is added to connect the endpoint of the previous segment to the starting point of the first cubic curve in the sequence.
-        void add_beziers(const std::vector<xtd::drawing::point_f>& points);
+        void add_beziers(const xtd::array<xtd::drawing::point_f>& points);
         
         /// @brief Adds a closed curve to this path. A cardinal spline curve is used because the curve travels through each of the points in the array.
         /// @param points An array of xtd::drawing::point structures that represents the points that define the curve.
         /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points. If the first point and the last point in the points array are not the same point, the curve is closed by connecting these two points.The tension value cannot be set for this method, and defaults to a value equivalent to 0.0.
-        void add_closed_curve(const std::vector<xtd::drawing::point>& points);
+        void add_closed_curve(const xtd::array<xtd::drawing::point>& points);
         /// @brief Adds a closed curve to this path. A cardinal spline curve is used because the curve travels through each of the points in the array.
         /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curve.
         /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points. If the first point and the last point in the points array are not the same point, the curve is closed by connecting these two points.The tension value cannot be set for this method, and defaults to a value equivalent to 0.0.
-        void add_closed_curve(const std::vector<xtd::drawing::point_f>& points);
+        void add_closed_curve(const xtd::array<xtd::drawing::point_f>& points);
         /// @brief Adds a closed curve to this path. A cardinal spline curve is used because the curve travels through each of the points in the array.
         /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curve.
         /// @param tension A value between from 0 through 1 that specifies the amount that the curve bends between points, with 0 being the smallest curve (sharpest corner) and 1 being the smoothest curve.
         /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points. If the first point and the last point in the points array are not the same point, the curve is closed by connecting these two points.
-        void add_closed_curve(const std::vector<xtd::drawing::point>& points, float tension);
+        void add_closed_curve(const xtd::array<xtd::drawing::point>& points, float tension);
         /// @brief Adds a closed curve to this path. A cardinal spline curve is used because the curve travels through each of the points in the array.
         /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curve.
         /// @param tension A value between from 0 through 1 that specifies the amount that the curve bends between points, with 0 being the smallest curve (sharpest corner) and 1 being the smoothest curve.
         /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points. If the first point and the last point in the points array are not the same point, the curve is closed by connecting these two points.
-        void add_closed_curve(const std::vector<xtd::drawing::point_f>& points, float tension);
+        void add_closed_curve(const xtd::array<xtd::drawing::point_f>& points, float tension);
         
         /// @brief Adds a spline curve to the current figure.
         /// @brief Adds a spline curve to the current figure.
         /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curve.
         /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points.
-        void add_curve(const std::vector<xtd::drawing::point>& points);
+        void add_curve(const xtd::array<xtd::drawing::point>& points);
         /// @brief Adds a spline curve to the current figure.
         /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curve.
         /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points.
-        void add_curve(const std::vector<xtd::drawing::point_f>& points);
-        /// @brief Adds a spline curve to the current figure.
-        /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curve.
-        /// @param tension A value that specifies the amount that the curve bends between control points. Values greater than 1 produce unpredictable results.
-        /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points.
-        void add_curve(const std::vector<xtd::drawing::point>& points, float tension);
+        void add_curve(const xtd::array<xtd::drawing::point_f>& points);
         /// @brief Adds a spline curve to the current figure.
         /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curve.
         /// @param tension A value that specifies the amount that the curve bends between control points. Values greater than 1 produce unpredictable results.
         /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points.
-        void add_curve(const std::vector<xtd::drawing::point_f>& points, float tension);
+        void add_curve(const xtd::array<xtd::drawing::point>& points, float tension);
+        /// @brief Adds a spline curve to the current figure.
+        /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curve.
+        /// @param tension A value that specifies the amount that the curve bends between control points. Values greater than 1 produce unpredictable results.
+        /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points.
+        void add_curve(const xtd::array<xtd::drawing::point_f>& points, float tension);
         /// @brief Adds a spline curve to the current figure.
         /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curve.
         /// @param offset he index of the element in the points array that is used as the first point in the curve.
@@ -203,7 +201,7 @@ namespace xtd {
         /// @param tension A value that specifies the amount that the curve bends between control points. Values greater than 1 produce unpredictable results.
         /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points.
         /// @remarks The curve begins at the point in the array specified by offset, and includes the number of points (segments) specified by number_of_segments.
-        void add_curve(const std::vector<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension);
+        void add_curve(const xtd::array<xtd::drawing::point>& points, size_t offset, size_t number_of_segments, float tension);
         /// @brief Adds a spline curve to the current figure.
         /// @param points An array of xtd::drawing::point_f structures that represents the points that define the curve.
         /// @param offset he index of the element in the points array that is used as the first point in the curve.
@@ -211,7 +209,7 @@ namespace xtd {
         /// @param tension A value that specifies the amount that the curve bends between control points. Values greater than 1 produce unpredictable results.
         /// @remarks The user must keep the original points if they are needed. The original points are converted to cubic Bézier control points internally, therefore there is no mechanism for returning the original points.
         /// @remarks The curve begins at the point in the array specified by offset, and includes the number of points (segments) specified by number_of_segments.
-        void add_curve(const std::vector<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension);
+        void add_curve(const xtd::array<xtd::drawing::point_f>& points, size_t offset, size_t number_of_segments, float tension);
         
         /// @brief Adds an ellipse to the current path.
         /// @param rect A xtd::drawing::rectangle that represents the bounding rectangle that defines the ellipse.
@@ -260,11 +258,11 @@ namespace xtd {
         /// @brief Appends a series of connected line segments to the end of this xtd::drawing::drawing_2d::graphics_path.
         /// @param points An array of xtd::drawing::point structures that represents the points that define the line segments to add.
         /// @remarks If there are previous lines or curves in the figure, a line is added to connect the endpoint of the previous segment the starting point of the line. The points parameter specifies an array of endpoints. The first two specify the first line. Each additional point specifies the endpoint of a line segment whose starting point is the endpoint of the previous line.
-        void add_lines(const std::vector<xtd::drawing::point>& points);
+        void add_lines(const xtd::array<xtd::drawing::point>& points);
         /// @brief Appends a series of connected line segments to the end of this xtd::drawing::drawing_2d::graphics_path.
         /// @param points An array of xtd::drawing::point_f structures that represents the points that define the line segments to add.
         /// @remarks If there are previous lines or curves in the figure, a line is added to connect the endpoint of the previous segment the starting point of the line. The points parameter specifies an array of endpoints. The first two specify the first line. Each additional point specifies the endpoint of a line segment whose starting point is the endpoint of the previous line.
-        void add_lines(const std::vector<xtd::drawing::point_f>& points);
+        void add_lines(const xtd::array<xtd::drawing::point_f>& points);
         
         /// @brief Appends the specified xtd::drawing::drawing_2d::graphics_path to this path.
         /// @param adding_path The xtd::drawing::drawing_2d::graphics_path to add.
@@ -305,11 +303,11 @@ namespace xtd {
         /// @brief Adds a polygon to this path.
         /// @param points An array of xtd::drawing::point structures that defines the polygon to add.
         /// @remarks The points in the points array specify the vertices of a polygon. If the first point in the array is not the same as the last point, those two points are connected to close the polygon.
-        void add_polygon(const std::vector<xtd::drawing::point>& points);
+        void add_polygon(const xtd::array<xtd::drawing::point>& points);
         /// @brief Adds a polygon to this path.
         /// @param points An array of xtd::drawing::point_f structures that defines the polygon to add.
         /// @remarks The points in the points array specify the vertices of a polygon. If the first point in the array is not the same as the last point, those two points are connected to close the polygon.
-        void add_polygon(const std::vector<xtd::drawing::point_f>& points);
+        void add_polygon(const xtd::array<xtd::drawing::point_f>& points);
         
         /// @brief Adds a rectangle to this path.
         /// @param rect A xtd::drawing::rectangle that represents the rectangle to add.
@@ -332,10 +330,10 @@ namespace xtd {
         
         /// @brief Adds a series of rectangles to this path.
         /// @param rects An array of xtd::drawing::rectangle structures that represents the rectangles to add.
-        void add_rectangles(const std::vector<xtd::drawing::rectangle>& rects);
+        void add_rectangles(const xtd::array<xtd::drawing::rectangle>& rects);
         /// @brief Adds a series of rectangles to this path.
         /// @param rects An array of xtd::drawing::rectangle_f structures that represents the rectangles to add.
-        void add_rectangles(const std::vector<xtd::drawing::rectangle_f>& rects);
+        void add_rectangles(const xtd::array<xtd::drawing::rectangle_f>& rects);
         
         /// @brief Adds a rounded rectangle to this path.
         /// @param rect A xtd::drawing::rectangle that represents the rounded rectangle to add.

@@ -53,12 +53,12 @@ void settings::exit_status(int32 exit_status) noexcept {
   exit_status_ = exit_status;
 }
 
-const std::vector<string>& settings::filter_tests() const noexcept {
+const array<string>& settings::filter_tests() const noexcept {
   return filter_tests_;
 }
 
-void settings::filter_tests(const std::vector<string>& filter_tests) noexcept {
-  filter_tests_ = filter_tests.empty() ? std::vector<string> {"*.*"} : filter_tests;
+void settings::filter_tests(const array<string>& filter_tests) noexcept {
+  filter_tests_ = filter_tests.empty() ? array<string> {"*.*"} : filter_tests;
 }
 
 bool settings::gtest_compatibility() const noexcept {

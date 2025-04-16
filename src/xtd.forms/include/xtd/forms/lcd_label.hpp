@@ -132,9 +132,9 @@ namespace xtd {
       control& text(const xtd::string& value) override;
       
       /// @brief Gets valid characters.
-      /// @return A std::vector<char32> that represent valid characters.
+      /// @return A xtd::array<char32> that represent valid characters.
       /// @remarks The valid characters are different according to lcd_style.
-      std::vector<char32> valid_characters();
+      xtd::array<char32> valid_characters();
       /// @}
       
       /// @name Public Static Methods

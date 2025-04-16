@@ -210,10 +210,10 @@ namespace xtd {
       
       /// @{
       /// @brief Gets an array of system colors.
-      static const std::vector<xtd::drawing::color>& get_colors() noexcept;
+      static const xtd::array<xtd::drawing::color>& get_colors() noexcept;
       
       /// @brief Gets an array of system color names.
-      static const std::vector<xtd::string>& get_color_names() noexcept;
+      static const xtd::array<xtd::string>& get_color_names() noexcept;
       /// @}
     };
   }

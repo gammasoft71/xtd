@@ -5,10 +5,12 @@
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
+#include <xtd/collections/generic/list>
 #include <xtd/argument_out_of_range_exception>
 #include <xtd/as>
 #include <xtd/object_closed_exception>
 
+using namespace xtd::collections::generic;
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
@@ -157,11 +159,11 @@ namespace xtd::tests {
     }
     
     void test_method_(wait_five_threads) {
-      auto threads = std::vector<thread> {};
+      auto threads = list<thread> {};
       auto ce = countdown_event {5};
       auto thread_action = [&] {ce.signal();};
       for (auto i = 0; i < 5; ++i)
-        threads.push_back(thread::start_new(thread_action));
+        threads.add(thread::start_new(thread_action));
       assert::is_true(ce.wait(300));
       thread::join_all(threads);
     }

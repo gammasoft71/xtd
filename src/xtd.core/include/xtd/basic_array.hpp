@@ -535,7 +535,8 @@ namespace xtd {
     
     basic_array() = default;
     basic_array(const array<size_type, 1>& lengths);
-    
+    basic_array(const array<size_type, 1>& lengths, const value_type& value);
+
     basic_array(const_pointer array, size_type length) {
       if (array == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_null);
       data_->items = base_type {array, array + length};

@@ -83,8 +83,12 @@ inline const type_t& xtd::basic_array<type_t, allocator_t>::operator()(const xtd
 }
 
 template<class type_t, class allocator_t>
-inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type, 1>& lengths) {
-  data_->items = base_type(std::accumulate(lengths.begin(), lengths.end(), size_type {0}));
+inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type, 1>& lengths) : basic_array(lengths, value_type {}) {
+}
+
+template<class type_t, class allocator_t>
+inline xtd::basic_array<type_t, allocator_t>::basic_array(const array<size_type, 1>& lengths, const value_type& value) {
+  data_->items = base_type(std::accumulate(lengths.begin(), lengths.end(), size_type {0}), value);
   data_->lower_bound.clear();
   data_->upper_bound.clear();
   for (auto length : lengths) {

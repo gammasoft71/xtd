@@ -197,7 +197,7 @@ xtd::processor system_report::processor() noexcept {
   return xtd::environment::processor_information();
 }
 
-std::vector<xtd::forms::screen> system_report::screens() noexcept {
+array<xtd::forms::screen> system_report::screens() noexcept {
   return xtd::forms::screen::all_screens();
 }
 

@@ -1,11 +1,12 @@
 #include "../../../include/xtd/forms/emoticon.hpp"
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::forms;
 
 struct emoticon::data {
   xtd::string name;
-  std::vector<char32> codepoints;
+  list<char32> codepoints;
 };
 
 const emoticon emoticon::empty() {
@@ -20,7 +21,7 @@ emoticon::emoticon(const xtd::string& name, std::initializer_list<char32> codepo
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(const xtd::string& name, const std::vector<char32>& codepoints) : data_(xtd::new_sptr<data>()) {
+emoticon::emoticon(const xtd::string& name, const array<char32>& codepoints) : data_(xtd::new_sptr<data>()) {
   data_->name = name;
   data_->codepoints = codepoints;
 }
@@ -34,7 +35,7 @@ emoticon::emoticon(std::initializer_list<char32> codepoints) : data_(xtd::new_sp
   data_->codepoints = codepoints;
 }
 
-emoticon::emoticon(const std::vector<char32>& codepoints) : data_(xtd::new_sptr<data>()) {
+emoticon::emoticon(const array<char32>& codepoints) : data_(xtd::new_sptr<data>()) {
   data_->codepoints = codepoints;
 }
 
@@ -55,8 +56,12 @@ const xtd::string& emoticon::name() const noexcept {
   return data_->name;
 }
 
-const std::vector<char32>& emoticon::codepoints() const noexcept {
-  return data_->codepoints;
+array<char32> emoticon::codepoints() const noexcept {
+  return data_->codepoints.to_array();
+}
+
+int32 emoticon::compare_to(const emoticon &obj) const noexcept {
+  return data_->name.compare_to(obj.data_->name);
 }
 
 bool emoticon::equals(const object& obj) const noexcept {
@@ -106,10 +111,10 @@ void emoticon::name_(const string& name) {
   data_->name = name;
 }
 
-std::vector<char32>& emoticon::codepoints_() {
+list<char32>& emoticon::codepoints_() {
   return data_->codepoints;
 }
 
-void emoticon::codepoints_(std::vector<char32>&& codepoints) {
+void emoticon::codepoints_(array<char32>&& codepoints) {
   data_->codepoints = std::move(codepoints);
 }

@@ -8,6 +8,7 @@
 #include "source_location.hpp"
 #include "../core_export.hpp"
 #include "../iequatable.hpp"
+#include "../null_ptr.hpp"
 #include "../object.hpp"
 #include "../ptr.hpp"
 #include "../size.hpp"

@@ -25,7 +25,7 @@ namespace xtdc_command {
     
   private:
     void create_solution_cmakelists_txt(const xtd::string& name) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Solution",
@@ -42,7 +42,7 @@ namespace xtdc_command {
     }
     
     void create_application_properties(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines{
+      auto lines = xtd::array<xtd::string>{
         xtd::string::format("target_default_namespace(\"{}\")", name),
         xtd::string::format("target_name(\"{}\")", name),
       };
@@ -51,7 +51,7 @@ namespace xtdc_command {
     }
     
     void create_assembly_info(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines{
+      auto lines = xtd::array<xtd::string>{
         xtd::string::format("assembly_title(\"{}\")", name),
         "assembly_description(\"\")",
         "assembly_company(\"\")",
@@ -65,7 +65,7 @@ namespace xtdc_command {
     }
 
     void create_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Project",
@@ -88,7 +88,7 @@ namespace xtdc_command {
     }
     
     void create_include(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "/// @file",
         "/// @brief Contains class1 class.",
         "#pragma once",
@@ -109,7 +109,7 @@ namespace xtdc_command {
     }
     
     void create_export(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "/// @file",
         "/// @brief Contains export.",
         "#pragma once",
@@ -135,7 +135,7 @@ namespace xtdc_command {
     }
     
     void create_source(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "#include \"../include/class1.hpp\"",
         "",
         xtd::string::format("using namespace {};", name),
@@ -148,7 +148,7 @@ namespace xtdc_command {
     }
     
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines;
+      auto lines = xtd::collections::generic::list<xtd::string> {};
       lines.push_back("cmake_minimum_required(VERSION 3.20)");
       lines.push_back("");
       lines.push_back("# Project");

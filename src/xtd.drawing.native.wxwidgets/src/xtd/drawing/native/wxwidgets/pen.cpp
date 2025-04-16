@@ -18,7 +18,7 @@ intptr pen::create() {
   return reinterpret_cast<intptr>(new wx_pen());
 }
 
-void pen::solid_color(intptr pen, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b, float width, float dash_offset, std::vector<float> dashes) {
+void pen::solid_color(intptr pen, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte b, float width, float dash_offset, const array<float>& dashes) {
   auto wx_dashes = std::vector<xtd::sbyte> {};
   for (auto dash : dashes)
     wx_dashes.push_back(static_cast<xtd::sbyte>(dash));

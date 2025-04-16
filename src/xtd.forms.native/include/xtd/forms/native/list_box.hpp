@@ -71,7 +71,7 @@ namespace xtd {
         /// @param control List box window handle.
         /// @return A size_t array of selected indices.
         /// @warning Internal use only
-        static std::vector<size_t> selected_indices(intptr control);
+        static xtd::array<xtd::size> selected_indices(intptr control);
         /// @brief Updates a specified item index with specified value.
         /// @param control List box window handle.
         /// @param index The item index to update.

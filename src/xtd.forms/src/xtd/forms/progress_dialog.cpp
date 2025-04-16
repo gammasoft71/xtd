@@ -12,7 +12,7 @@ using namespace xtd::forms;
 struct progress_dialog::data {
   xtd::forms::dialog_appearance dialog_appearance = xtd::forms::dialog_appearance::system;
   intptr handle = 0;
-  std::vector<xtd::string> informations;
+  array<xtd::string> informations;
   size_t marquee_animation_speed = 100;
   int32 maximum = 100;
   xtd::string message;
@@ -49,11 +49,11 @@ progress_dialog& progress_dialog::dialog_appearance(xtd::forms::dialog_appearanc
   return *this;
 }
 
-const std::vector<xtd::string>& progress_dialog::informations() const noexcept {
+const array<xtd::string>& progress_dialog::informations() const noexcept {
   return data_->informations;
 }
 
-progress_dialog& progress_dialog::informations(const std::vector<xtd::string>& informations) {
+progress_dialog& progress_dialog::informations(const array<xtd::string>& informations) {
   if (data_->informations == informations) return *this;
   data_->informations = informations;
   if (data_->handle) native::progress_dialog::informations(data_->handle, data_->informations);
@@ -234,7 +234,7 @@ void progress_dialog::perform_step() {
 
 void progress_dialog::reset() noexcept {
   data_->dialog_appearance = application::system_controls() ? forms::dialog_appearance::system : forms::dialog_appearance::standard;
-  data_->informations.clear();
+  data_->informations = array<xtd::string> {};
   data_->marquee_animation_speed = 100;
   data_->maximum = 100;
   data_->message = "";

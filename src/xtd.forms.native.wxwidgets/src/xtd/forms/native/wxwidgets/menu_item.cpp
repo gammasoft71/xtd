@@ -151,7 +151,7 @@ void menu_item::checked(intptr menu_item, bool checked) {
 
 intptr menu_item::create(intptr menu, const string& text, const xtd::drawing::image& image, int32 kind, size_t shortcut) {
   static auto kinds = std::map<int32, wxItemKind> {{MI_NORMAL, wxITEM_NORMAL}, {MI_CHECK, wxITEM_CHECK}, {MI_RADIO, wxITEM_RADIO}, {MI_DROPDOWN, wxITEM_DROPDOWN}, {MI_SEPARATOR, wxITEM_SEPARATOR}};
-  auto wx_menu_item = new wxMenuItem(menu == 0 ? nullptr : reinterpret_cast<wxMenu*>(menu), make_window_id(text, shortcut), convert_string::to_wstring(make_item_text(text, shortcut)), wxEmptyString, kinds[kind]);
+  auto wx_menu_item = new wxMenuItem(menu == 0 ? nullptr : reinterpret_cast<wxMenu*>(menu), make_window_id(text, shortcut), convert_string::to_wstring(make_item_text(text, shortcut)).c_str(), wxEmptyString, kinds[kind]);
   if (image.handle() != 0) wx_menu_item->SetBitmap(wxBitmap(*reinterpret_cast<wxImage*>(image.handle())));
   return reinterpret_cast<intptr>(wx_menu_item);
 }
@@ -173,5 +173,5 @@ intptr menu_item::menu_id(intptr menu_item) {
 
 void menu_item::text(intptr menu_item, const xtd::string& text, size_t shortcut) {
   if (menu_item == 0) throw_helper::throws(exception_case::argument);
-  reinterpret_cast<wxMenuItem*>(menu_item)->SetItemLabel(convert_string::to_wstring(make_item_text(text, shortcut)));
+  reinterpret_cast<wxMenuItem*>(menu_item)->SetItemLabel(convert_string::to_wstring(make_item_text(text, shortcut)).c_str());
 }
