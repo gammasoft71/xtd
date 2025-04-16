@@ -7,7 +7,6 @@
 #include "iequatable.hpp"
 #include "null_ptr.hpp"
 #include "object.hpp"
-//#include "string.hpp"
 #include <memory>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -169,7 +168,7 @@ namespace xtd {
     /// @return The stored object.
     /// @exception xtd::cast_exception If the current object can't be casted in target_t.
     template<typename target_t>
-    target_t& to_object() const {return *to_pointer<target_t>();}
+    target_t to_object() const;
     
     /// @brief Gets the stored pointer.
     /// @return The stored pointer.
@@ -183,7 +182,7 @@ namespace xtd {
 
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
-    //xtd::string to_string() const noexcept override {return xtd::string::format("{} [pointer={}]", xtd::object::to_string(), ptr_ == xtd::null ? "null"  : string::format("0x{:X16}, use_count={}", get(), use_count()));}
+    xtd::string to_string() const noexcept override;
     /// @}
 
     /// @name Public Operators
