@@ -332,5 +332,15 @@ namespace xtd::tests {
       assert::is_not_null(s.to_pointer());
       assert::are_equal(1_z, s.use_count());
     }
+    
+    void test_method_(object_operator) {
+      assert::are_equal("value", *shared_ptr_object<string> {new string {"value"}});
+      assert::are_equal(42, *shared_ptr_object<int> {new int {42}});
+    }
+    
+    void test_method_(pointer_operator) {
+      assert::are_equal("VALUE", shared_ptr_object<string> {new string {"value"}}->to_upper());
+      assert::are_equal("42", shared_ptr_object<int32_object> {new int32_object {42}}->to_string());
+    }
   };
 }
