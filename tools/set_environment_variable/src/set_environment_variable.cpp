@@ -9,6 +9,7 @@
 #define UNICODE
 #define NOMINMAX
 #include <Windows.h>
+#undef interface
 #endif
 
 using namespace xtd;

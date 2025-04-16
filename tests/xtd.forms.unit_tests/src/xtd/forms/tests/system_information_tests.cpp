@@ -1,6 +1,7 @@
 #if defined(_WIN32)
 #define NOMINMAX
 #include <Windows.h>
+#undef interface
 #elif defined(__APPLE__)
 #include "get_double_click_time.hpp"
 #endif

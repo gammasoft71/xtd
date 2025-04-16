@@ -7,6 +7,7 @@
 #define NOMINMAX
 #include <shlobj.h>
 #include <Windows.h>
+#undef interface
 #include <xtd/convert_string>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>

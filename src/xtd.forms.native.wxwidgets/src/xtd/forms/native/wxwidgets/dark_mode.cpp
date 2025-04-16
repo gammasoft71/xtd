@@ -5,6 +5,7 @@
 #define NOMINMAX
 #include <Windows.h>
 #include <Uxtheme.h>
+#undef interface
 #endif
 
 #define TRACE

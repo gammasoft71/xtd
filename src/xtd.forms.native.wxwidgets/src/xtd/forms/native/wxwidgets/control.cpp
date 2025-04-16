@@ -9,6 +9,7 @@
 #include <Windows.h>
 #include <windowsx.h>
 #include <Commctrl.h>
+#undef interface
 #endif
 #include <xtd/forms/native/application>
 #include <xtd/forms/native/control>
