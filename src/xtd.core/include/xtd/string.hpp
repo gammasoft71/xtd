@@ -24,45 +24,54 @@ namespace xtd {
   /// @brief Converts a signed integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(int val);
+  string to_string(int val);
   /// @brief Converts an unsigned integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(unsigned val);
+  string to_string(unsigned val);
   /// @brief Converts a signed integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(long val);
+  string to_string(long val);
   /// @brief Converts an unsigned integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(unsigned long val);
+  string to_string(unsigned long val);
   /// @brief Converts a signed integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(long long val);
+  string to_string(long long val);
   /// @brief Converts an unsigned integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(unsigned long long val);
+  string to_string(unsigned long long val);
   /// @brief Converts a floating point to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(float val);
+  string to_string(float val);
   /// @brief Converts a floating point integer to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(double val);
+  string to_string(double val);
   /// @brief Converts a floating point to xtd::string.
   /// @param val A numeric value to convert.
   /// @return A string holding the converted value.
-  string to_ustring(long double val);
+  string to_string(long double val);
   /// @brief Converts a type_t to xtd::string.
   /// @param val A type_t value to convert.
   /// @return A string holding the converted value.
   template<class type_t>
-  string to_ustring(type_t val) {
+  string to_string(type_t val) {
     return string::format("{}", val);
+  }
+  
+  /// @brief Converts a type_t to xtd::string.
+  /// @param val A type_t value to convert.
+  /// @return A string holding the converted value.
+  /// @deprecated Replaced by xtd::to_string - Will be removed in version 0.4.0.
+  template<class type_t>
+  [[deprecated("Replaced by xtd::to_string - Will be removed in version 0.4.0.")]] string to_ustring(type_t val) {
+    return to_string(val);
   }
 }
 
@@ -92,4 +101,8 @@ xtd::string __opaque_xtd_linq_enumerable_collection__<type_t>::to_string() const
 
 template<class type_t, class param_t>
 xtd::string __opaque_xtd_linq_lazy_enumerable__<type_t, param_t>::to_string() const {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}
+
+
+template<class type_t>
+xtd::string xtd::shared_ptr_object<type_t>::to_string() const noexcept {return xtd::string::format("{} [pointer={}]", xtd::object::to_string(), ptr_ == xtd::null ? "null"  : string::format("0x{:X16}, use_count={}", get(), use_count()));}
 /// @endcond

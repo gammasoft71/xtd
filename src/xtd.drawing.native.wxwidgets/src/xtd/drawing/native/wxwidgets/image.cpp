@@ -202,14 +202,14 @@ namespace {
   }
 }
 
-void image::color_palette(intptr image, std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32& flags) {
+void image::color_palette(intptr image, array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>& entries, int32& flags) {
   wxPalette palette = reinterpret_cast<wxImage*>(image)->GetPalette();
-  entries.clear();
+  entries = array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte>>(as<xtd::size>(palette.GetColoursCount()));
   if (palette.GetColoursCount() == 0) return;
   for (int32 index = 0; index < palette.GetColoursCount(); index++) {
     xtd::byte r = 0, g = 0, b = 0;
     palette.GetRGB(index, &r, &g, &b);
-    entries.push_back({255, r, g, b});
+    entries[index] = std::make_tuple(255_u8, r, g, b);
   }
   flags = 1;
 }
@@ -431,12 +431,12 @@ size_t image::pixel_format(intptr image) {
   return result;
 }
 
-std::vector<int32> image::property_id_list(intptr image) {
+array<int32> image::property_id_list(intptr image) {
   /// @todo see how to get property id list with wxWidgets.
   return {};
 }
 
-std::vector<image::property_item> image::property_items(intptr image) {
+array<image::property_item> image::property_items(intptr image) {
   /// @todo see how to get property items with wxWidgets.
   return {};
 }

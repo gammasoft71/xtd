@@ -49,23 +49,25 @@ namespace xtd {
       /// @name Public Constructors
       
       /// @{
-      /// @brief IInitializes a new Font that uses the specified existing xtd::drawing::font and size.
+      /// @brief Initializes a new xtd::drawing::font.
+      font();
+      /// @brief Initializes a new xtd::drawing::font that uses the specified existing xtd::drawing::font and size.
       /// @param prototype The existing xtd::drawing::font from which to create the new xtd::drawing::font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
       font(const font& prototype, float em_size);
       
-      /// @brief IInitializes a new Font that uses the specified existing xtd::drawing::font, size and  font_style enumeration.
+      /// @brief Initializes a new xtd::drawing::font that uses the specified existing xtd::drawing::font, size and  font_style enumeration.
       /// @param prototype The existing xtd::drawing::font from which to create the new xtd::drawing::font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
       /// @param style The font_style to apply to the new xtd::drawing::font. Multiple values of the font_style enumeration can be combined with the OR operator.
       font(const font& prototype, float em_size, font_style style);
       
-      /// @brief IInitializes a new Font that uses the specified existing xtd::drawing::font and font_style enumeration.
+      /// @brief Initializes a new xtd::drawing::font that uses the specified existing xtd::drawing::font and font_style enumeration.
       /// @param prototype The existing xtd::drawing::font from which to create the new xtd::drawing::font.
       /// @param style The font_style to apply to the new xtd::drawing::font. Multiple values of the font_style enumeration can be combined with the OR operator.
       font(const font& prototype, font_style style);
       
-      /// @brief IInitializes a new xtd::drawing::font using the specified size, style, unit, and character set.
+      /// @brief Initializes a new xtd::drawing::font using the specified size, style, unit, and character set.
       /// @param family_name A string representation of the font_family for the new xtd::drawing::font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
       /// @param style The font_style of the new xtd::drawing::font.
@@ -77,7 +79,7 @@ namespace xtd {
       font(xtd::string family_name, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set, bool gdi_vertical_font);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size, style, unit, and character set.
-      /// @param font_family The font_family of the new Font.
+      /// @param font_family The font_family of the new xtd::drawing::font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
       /// @param style The font_style of the new xtd::drawing::font.
       /// @param unit The graphics_unit of the new xtd::drawing::font.
@@ -98,7 +100,7 @@ namespace xtd {
       font(xtd::string family_name, float em_size, font_style style, graphics_unit unit, xtd::byte gdi_char_set);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size, style, unit, and character set.
-      /// @param font_family The font_family of the new Font.
+      /// @param font_family The font_family of the new xtd::drawing::font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
       /// @param style The font_style of the new xtd::drawing::font.
       /// @param unit The graphics_unit of the new xtd::drawing::font.
@@ -116,7 +118,7 @@ namespace xtd {
       font(xtd::string family_name, float em_size, font_style style, graphics_unit unit);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size, style and unit.
-      /// @param font_family The font_family of the new Font.
+      /// @param font_family The font_family of the new xtd::drawing::font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
       /// @param style The font_style of the new xtd::drawing::font.
       /// @param unit The graphics_unit of the new xtd::drawing::font.
@@ -131,7 +133,7 @@ namespace xtd {
       font(xtd::string family_name, float em_size, font_style style);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size and style.
-      /// @param font_family The font_family of the new Font.
+      /// @param font_family The font_family of the new xtd::drawing::font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
       /// @param style The font_style of the new xtd::drawing::font.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
@@ -145,7 +147,7 @@ namespace xtd {
       font(xtd::string family_name, float em_size, graphics_unit unit);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size and unit.
-      /// @param font_family The font_family of the new Font.
+      /// @param font_family The font_family of the new xtd::drawing::font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
       /// @param unit The graphics_unit of the new xtd::drawing::font.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
@@ -158,7 +160,7 @@ namespace xtd {
       font(xtd::string family_name, float em_size);
       
       /// @brief Initializes a new xtd::drawing::font using the specified size.
-      /// @param font_family The font_family of the new Font.
+      /// @param font_family The font_family of the new xtd::drawing::font.
       /// @param em_size The em-size of the new font in the units specified by the unit parameter.
       /// @exception std::invalid_param emSize is less than or equal to 0, evaluates to infinity, or is not a valid number.
       font(const drawing::font_family& font_family, float em_size);
@@ -332,7 +334,6 @@ namespace xtd {
       friend class graphics;
       friend class system_fonts;
       friend class xtd::forms::native::font_dialog;
-      font();
       explicit font(intptr hfont);
       
       xtd::sptr<data> data_;

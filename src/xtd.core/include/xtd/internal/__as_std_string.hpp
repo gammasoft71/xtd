@@ -59,7 +59,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(const std::string& value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
   /// @brief Casts a type into another type.
@@ -79,7 +79,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(std::string& value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
 #if defined(__xtd__cpp_lib_char8_t)
@@ -281,7 +281,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(const char* value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
 #if defined(__xtd__cpp_lib_char8_t)
@@ -403,7 +403,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(char* value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
 #if defined(__xtd__cpp_lib_char8_t)
@@ -545,7 +545,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(const xtd::string& value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
   /// @brief Casts a type into another type.
@@ -565,7 +565,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(xtd::string& value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
 #if defined(__xtd__cpp_lib_char8_t)
@@ -788,7 +788,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(const std::u8string& value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
   /// @brief Casts a type into another type.
@@ -808,7 +808,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(std::u8string& value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
   /// @brief Casts a type into another type.
@@ -1010,7 +1010,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(const char8* value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
   /// @brief Casts a type into another type.
@@ -1130,7 +1130,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(char8* value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
   /// @brief Casts a type into another type.
@@ -1271,7 +1271,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(const std::u16string& value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
   /// @brief Casts a type into another type.
@@ -1291,7 +1291,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(std::u16string& value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
 #if defined(__xtd__cpp_lib_char8_t)
@@ -1493,7 +1493,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(const char16* value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
 #if defined(__xtd__cpp_lib_char8_t)
@@ -1615,7 +1615,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(char16* value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
 #if defined(__xtd__cpp_lib_char8_t)
@@ -1757,7 +1757,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(const std::u32string& value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
   /// @brief Casts a type into another type.
@@ -1777,7 +1777,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(std::u32string& value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
 #if defined(__xtd__cpp_lib_char8_t)
@@ -1979,7 +1979,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(const char32* value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
 #if defined(__xtd__cpp_lib_char8_t)
@@ -2101,7 +2101,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(char32* value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
 #if defined(__xtd__cpp_lib_char8_t)
@@ -2243,7 +2243,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(const std::wstring& value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
   /// @brief Casts a type into another type.
@@ -2263,7 +2263,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(std::wstring& value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
 #if defined(__xtd__cpp_lib_char8_t)
@@ -2465,7 +2465,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(const wchar* value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
 #if defined(__xtd__cpp_lib_char8_t)
@@ -2587,7 +2587,7 @@ namespace xtd {
   /// ```
   template<>
   inline xtd::string as<xtd::string>(wchar* value) {
-    return xtd::convert_string::to_ustring(value);
+    return xtd::convert_string::to_string(value);
   }
   
 #if defined(__xtd__cpp_lib_char8_t)

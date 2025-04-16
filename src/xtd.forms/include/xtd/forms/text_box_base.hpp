@@ -61,12 +61,12 @@ namespace xtd {
       /// @brief Gets the lines of text in a text box control.
       /// @return An array of strings that contains the text in a text box control.
       /// @remarks Each element in the array becomes a line of text in the text box control. If the multiline property of the text box control is set to `true` and a newline character appears in the text, the text following the newline character is added to a new element in the array and displayed on a separate line.
-      std::vector<xtd::string> lines() const noexcept;
+      xtd::array<xtd::string> lines() const noexcept;
       /// @brief Sets the lines of text in a text box control.
       /// @param lines An array of strings that contains the text in a text box control.
       /// @return Current text_box_base instance.
       /// @remarks Each element in the array becomes a line of text in the text box control. If the multiline property of the text box control is set to `true` and a newline character appears in the text, the text following the newline character is added to a new element in the array and displayed on a separate line.
-      text_box_base& lines(const std::vector<xtd::string>& lines);
+      text_box_base& lines(const xtd::array<xtd::string>& lines);
       
       /// @brief Gets a value indicating whether this is a multiline text box control.
       /// @return `true` if the control is a multiline text box control; otherwise, `false`. The default is `false`.

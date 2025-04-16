@@ -12,9 +12,9 @@
 #include "test_initialize_attribute.hpp"
 #include "test_cleanup_attribute.hpp"
 #include "test_method_attribute.hpp"
+#include <xtd/collections/generic/list>
 #include <xtd/date_time>
 #include <xtd/string>
-#include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -38,6 +38,12 @@ namespace xtd {
     /// @include test_class_without_helpers.cpp
     class tunit_export_ test_class {
     public:
+      /// @name Public Aliases
+      
+      /// @{
+      /// @brief Represents a test collection.
+      using test_collection = xtd::collections::generic::list<xtd::tunit::test>;
+      
       /// @name Public Constructors
       
       /// @{
@@ -92,7 +98,7 @@ namespace xtd {
       
       /// @brief Gets the tests array of this test class.
       /// @return The tests array.
-      const std::vector<xtd::tunit::test>& tests() const noexcept;
+      const test_collection& tests() const noexcept;
       /// @}
       
     protected:
@@ -134,7 +140,7 @@ namespace xtd {
       const xtd::tunit::test& class_initialize() const noexcept;
       const xtd::tunit::test& test_cleanup() const noexcept;
       const xtd::tunit::test& test_initialize() const noexcept;
-      const std::vector<xtd::tunit::test>& test_methods() const noexcept;
+      const test_collection& test_methods() const noexcept;
       
       void run(const xtd::tunit::unit_test& unit_test);
       
@@ -145,7 +151,7 @@ namespace xtd {
       xtd::date_time start_time_;
       xtd::tunit::test test_cleanup_;
       xtd::tunit::test test_initialize_;
-      std::vector<xtd::tunit::test> tests_;
+      test_collection tests_;
     };
   }
 }

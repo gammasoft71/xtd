@@ -62,7 +62,7 @@ void main_menu::insert_item(intptr main_menu, size_t pos, intptr menu_item, cons
   }
   #endif
   
-  wx_main_menu->Insert(pos, reinterpret_cast<wxMenu*>(menu_item), convert_string::to_wstring(text));
+  wx_main_menu->Insert(pos, reinterpret_cast<wxMenu*>(menu_item), convert_string::to_wstring(text).c_str());
 }
 
 void main_menu::remove_item(intptr main_menu, size_t pos) {

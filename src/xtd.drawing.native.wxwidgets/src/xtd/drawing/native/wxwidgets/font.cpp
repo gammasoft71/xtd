@@ -42,7 +42,7 @@ namespace {
 
 intptr font::create(const string& name, float em_size, bool bold, bool italic, bool underline, bool strikeout, xtd::byte gdi_char_set, bool gdi_vertical_font) {
   toolkit::initialize(); // Must be first
-  wxFont* font = new wxFont(points_to_native_font_size_correction(em_size), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, name == ".AppleSystemUIFont" ? L"" : convert_string::to_wstring(name));
+  wxFont* font = new wxFont(points_to_native_font_size_correction(em_size), wxFontFamily::wxFONTFAMILY_DEFAULT, italic ? wxFontStyle::wxFONTSTYLE_ITALIC : wxFontStyle::wxFONTSTYLE_NORMAL, bold ? wxFontWeight::wxFONTWEIGHT_BOLD : wxFontWeight::wxFONTWEIGHT_NORMAL, underline, name == ".AppleSystemUIFont" ? L"" : convert_string::to_wstring(name).c_str());
   font->SetPointSize(points_to_native_font_size_correction(em_size));
   font->SetStrikethrough(strikeout);
   return reinterpret_cast<intptr>(font);

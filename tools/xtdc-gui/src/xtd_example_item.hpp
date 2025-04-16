@@ -8,54 +8,64 @@
 #include <xtd/io/directory>
 #include <xtd/io/file>
 #include <xtd/io/path>
+#include <xtd/icomparable>
+#include <xtd/iequatable>
 //#include "../resources/noimage.xpm"
 
 namespace xtdc_gui {
   /// @brief Represents the project_type_item class
-  class xtd_example_item : public xtd::object {
+  class xtd_example_item : public xtd::object, public xtd::icomparable<xtd_example_item>, public xtd::iequatable<xtd_example_item> {
   public:
     xtd_example_item() = default;
     xtd_example_item(const xtd::string& name, const xtd::string& description, const xtd::string& path, const xtd::drawing::image& picture, const xtd::string& output) : name_(name), description_(description), path_(path), picture_(picture), output_(output) {}
     
     const xtd::string& name() const noexcept {return name_;};
-    const xtd::string& description() const noexcept {return description_;};
-    const xtd::string& path() const noexcept {return path_;};
-    const xtd::drawing::image& picture() const noexcept {return picture_;};
-    const xtd::string& output() const noexcept {return output_;};
-    
-    static const std::vector<xtd_example_item>& get_cmake_examples() {
-      static std::vector<xtd_example_item> examples;
+    const xtd::string& description() const noexcept {return description_;}
+    const xtd::string& path() const noexcept {return path_;}
+    const xtd::drawing::image& picture() const noexcept {return picture_;}
+    const xtd::string& output() const noexcept {return output_;}
+
+    int32 compare_to(const xtd_example_item& value) const noexcept override {return name_.compare_to(value.name_);}
+
+    bool equals(const object& obj) const noexcept override {return is<xtd_example_item>(obj) && equals(static_cast<const xtd_example_item&>(obj));}
+
+    bool equals(const xtd_example_item& value) const noexcept override {return name_.equals(value.name_);}
+
+    static const xtd::array<xtd_example_item>& get_cmake_examples() {
+      static auto examples = xtd::array<xtd_example_item> {};
       if (examples.empty()) examples = xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.cmake.examples"));
       return examples;
     }
     
-    static const std::vector<xtd_example_item>& get_core_examples() {
-      static std::vector<xtd_example_item> examples;
+    static const xtd::array<xtd_example_item>& get_core_examples() {
+      static auto examples = xtd::array<xtd_example_item> {};
       if (examples.empty()) examples = xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.core.examples"));
       return examples;
     }
     
-    static const std::vector<xtd_example_item>& get_drawing_examples() {
-      static std::vector<xtd_example_item> examples;
+    static const xtd::array<xtd_example_item>& get_drawing_examples() {
+      static auto examples = xtd::array<xtd_example_item> {};
       if (examples.empty()) examples = xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.drawing.examples"));
       return examples;
     }
     
-    static const std::vector<xtd_example_item>& get_forms_examples() {
-      static std::vector<xtd_example_item> examples;
+    static const xtd::array<xtd_example_item>& get_forms_examples() {
+      static auto examples = xtd::array<xtd_example_item> {};
       if (examples.empty()) examples = xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.forms.examples"));
       return examples;
     }
     
-    static const std::vector<xtd_example_item>& get_tunit_examples() {
-      static std::vector<xtd_example_item> examples;
+    xtd::size get_hash_code() const noexcept override {return name_.get_hash_code();}
+
+    static const xtd::array<xtd_example_item>& get_tunit_examples() {
+      static auto examples = xtd::array<xtd_example_item> {};
       if (examples.empty()) examples = xtd_example_item::get_examples(xtd::io::path::combine(xtd_share_path_, "examples", "xtd.tunit.examples"));
       return examples;
     }
-    
+
   private:
-    static std::vector<xtd_example_item> get_examples(const xtd::string& examples_path) {
-      std::vector<xtd_example_item> examples;
+    static xtd::array<xtd_example_item> get_examples(const xtd::string& examples_path) {
+      auto examples = xtd::collections::generic::list<xtd_example_item> {};
       for (auto group_item : xtd::io::directory::enumerate_directories(examples_path)) {
         for (auto item : xtd::io::directory::enumerate_directories(group_item)) {
           if (xtd::io::path::get_file_name(item) != "src") {
@@ -63,8 +73,8 @@ namespace xtdc_gui {
           }
         }
       }
-      std::sort(examples.begin(), examples.end(), [](auto a, auto b)->bool {return a.name() < b.name();});
-      return examples;
+      std::sort(examples.items().begin(), examples.items().end(), [](auto a, auto b)->bool {return a.name() < b.name();});
+      return examples.to_array();
     }
     
     static xtd::string get_description(const xtd::string& readme_md) {

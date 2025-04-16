@@ -458,7 +458,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets an array of brushes.
-      static const std::vector<xtd::drawing::solid_brush>& get_brushes();
+      static const xtd::array<xtd::drawing::solid_brush>& get_brushes();
       /// @}
     };
   }

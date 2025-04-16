@@ -780,7 +780,7 @@ namespace xtd {
       /// @{
       /// @brief Gets countries collection.
       /// @return Countries collection.
-      static const std::vector<country>& get_countries();
+      static const xtd::array<country>& get_countries();
       /// @}
     };
   }

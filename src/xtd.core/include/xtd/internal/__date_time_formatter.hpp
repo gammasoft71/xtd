@@ -8,7 +8,7 @@
 /// @endcond
 
 #include "../helpers/throw_helper.hpp"
-#include "../types.hpp"
+#include "../uint32.hpp"
 #include "__sprintf.hpp"
 
 /// @cond

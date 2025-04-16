@@ -19,13 +19,13 @@
 #include "toggle_button.hpp"
 #include "tool_bar.hpp"
 #include "tool_bar_button.hpp"
+#include <xtd/collections/generic/list>
 #include <xtd/web/css/css_reader>
 #include <xtd/event_handler>
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/uri>
 #include <map>
-#include <vector>
 
 /// @cond
 class __test_style_sheet__; // Necessary for the test unit to access the private member functions
@@ -83,7 +83,7 @@ namespace xtd {
         /// @brief Represents a style_sheets collection.
         using style_sheets_t = std::map<xtd::string, style_sheet>;
         /// @brief Represents a style_sheet names collection.
-        using style_sheet_names_t = std::vector<xtd::string>;
+        using style_sheet_names_t = xtd::collections::generic::list<xtd::string>;
         /// @brief Represents a style sheet tool_bars collection.
         using status_bars_t = std::map<xtd::forms::style_sheets::pseudo_state, xtd::forms::style_sheets::status_bar>;
         /// @brief Represents a style sheet buttons collection.
@@ -471,7 +471,7 @@ namespace xtd {
         
         static void on_style_sheet_changed(const xtd::event_args& e);
         static void on_system_colors_changed(const event_args& e);
-        std::vector<xtd::string> split_values_from_text(const xtd::string& text) const noexcept;
+        xtd::array<xtd::string> split_values_from_text(const xtd::string& text) const noexcept;
         
         void button_reader(xtd::web::css::css_reader& reader) noexcept;
         void control_reader(xtd::web::css::css_reader& reader) noexcept;

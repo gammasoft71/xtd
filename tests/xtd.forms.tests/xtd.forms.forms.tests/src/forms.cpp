@@ -250,7 +250,7 @@ namespace xtd::forms::tests {
     button show_modal_button;
     button show_sheet_button;
     button show_sheet_modal_button;
-    std::vector<xtd::sptr<form>> dialogs;
+    list<sptr<form>> dialogs;
   };
 }
 

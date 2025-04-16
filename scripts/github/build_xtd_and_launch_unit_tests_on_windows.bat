@@ -10,7 +10,9 @@ mkdir build_cmake
 cd build_cmake
 cmake .. -G "Visual Studio 17 2022" -A %BUILD_OPTION% -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
 cmake --build . --config %BUILD_TYPE% --target install
-cd ../../../..
+cd ..
+rmdir /s /q build_cmake
+cd ../../..
 
 :: generate and build lib
 git submodule update --init

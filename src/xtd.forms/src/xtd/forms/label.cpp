@@ -168,7 +168,7 @@ bool label::shadow() const noexcept {
 
 label& label::shadow(bool value) {
   if (shadow() == value) return *this;
-  if (!value) data_->shadows.clear();
+  if (!value) data_->shadows = xtd::forms::shadows {};
   else data_->shadows = {xtd::forms::shadow()};
   if (control_appearance() == forms::control_appearance::standard) invalidate();
   return *this;

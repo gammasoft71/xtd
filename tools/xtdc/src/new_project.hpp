@@ -9,7 +9,7 @@
 namespace xtdc_command {
   class new_project final :public project_base {
   public:
-    static int execute(const std::vector<xtd::string>& args) {
+    static int execute(const xtd::array<xtd::string>& args) {
       auto show_help = false;
       xtd::string invalid_option;
       xtd::string type;
@@ -53,7 +53,7 @@ namespace xtdc_command {
     }
     
   private:
-    static std::vector<xtd::string> get_help() noexcept {
+    static xtd::array<xtd::string> get_help() noexcept {
       return {
         "Initialize project.",
         "Usage: new [template-short-name] [path] [<options>]",
@@ -88,7 +88,7 @@ namespace xtdc_command {
       };
     }
     
-    static bool process_arguments(const std::vector<xtd::string>& args, bool& show_help, xtd::string& type, xtd::string& name, xtd::string& path, xtd::string& sdk, xtd::string& invalid_option) {
+    static bool process_arguments(const xtd::array<xtd::string>& args, bool& show_help, xtd::string& type, xtd::string& name, xtd::string& path, xtd::string& sdk, xtd::string& invalid_option) {
       for (size_t i = 1; i < args.size(); i += 1) {
         if (args[i] == "-h" || args[i] == "--help")
           show_help = true;

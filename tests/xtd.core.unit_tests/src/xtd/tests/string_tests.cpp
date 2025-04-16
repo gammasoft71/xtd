@@ -11,14 +11,14 @@ using namespace xtd;
 using namespace xtd::tunit;
 
 namespace xtd::tests {
-  class test_class_(ustring_tests) {
+  class test_class_(string_tests) {
     void test_method_(default_constructor) {
       string s;
       assert::is_zero(s.length());
       assert::is_true(string::is_empty(s));
     }
     
-    void test_method_(constructor_with_ustring) {
+    void test_method_(constructor_with_string) {
       string s1 = "test";
       string s2 = s1;
       assert::are_equal(4_z, s2.length());
@@ -31,7 +31,7 @@ namespace xtd::tests {
       assert::are_equal("test", s);
     }
     
-    void test_method_(constructor_with_string) {
+    void test_method_(constructor_with_std_string) {
       std::string s1 = "test";
       string s2 = s1;
       assert::are_equal(4_z, s2.length());
@@ -178,7 +178,7 @@ namespace xtd::tests {
       assert::are_equal("test", s2);
     }
     
-    void test_method_(operator_equal_with_ustring1) {
+    void test_method_(operator_equal_with_string1) {
       auto s1 = string {"test"};
       string s2;
       s2 = s1;
@@ -338,7 +338,7 @@ namespace xtd::tests {
       assert::throws<null_pointer_exception>([&]{s = ptr;});
     }
     
-    void test_method_(operator_plus_equal_with_string) {
+    void test_method_(operator_plus_equal_with_std_string) {
       auto s1 = std::string {"s1"};
       string s2 = "s2";
       s2 += s1;
@@ -372,7 +372,7 @@ namespace xtd::tests {
       assert::are_equal("s2s1", s2);
     }
     
-    void test_method_(operator_plus_equal_with_ustring) {
+    void test_method_(operator_plus_equal_with_string) {
       auto s1 = string {"s1"};
       string s2 = "s2";
       s2 += s1;
@@ -532,7 +532,7 @@ namespace xtd::tests {
       assert::throws<null_pointer_exception>([&] {s2 += s1;});
     }
 
-    void test_method_(operator_plus_with_string) {
+    void test_method_(operator_plus_with_std_string) {
       auto s1 = std::string {"s1"};
       string s2 = "s2";
       string s3 = s2 + s1;
@@ -566,7 +566,7 @@ namespace xtd::tests {
       assert::are_equal("s2s1", s3);
     }
     
-    void test_method_(operator_plus_with_ustring) {
+    void test_method_(operator_plus_with_string) {
       auto s1 = string {"s1"};
       string s2 = "s2";
       string s3 = s2 + s1;
@@ -1079,7 +1079,7 @@ namespace xtd::tests {
     }
     
     void test_method_(to_array_start_index_out_of_range) {
-      collection_assert::are_equal(std::vector<char> {}, string("0123456").to_array(10));
+      collection_assert::are_equal(array<char> {}, string("0123456").to_array(10));
     }
     
     void test_method_(to_array_start_index_length_out_of_range) {

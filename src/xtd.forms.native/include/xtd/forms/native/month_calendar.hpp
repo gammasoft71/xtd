@@ -43,14 +43,14 @@ namespace xtd {
         /// @param dates An array of xtd::date_time objects.
         /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
         /// @warning Internal use only
-        static void annually_bolded_dates(intptr control, const std::vector<xtd::date_time>& dates);
+        static void annually_bolded_dates(intptr control, const xtd::array<xtd::date_time>& dates);
         
         /// @brief Sets the array of xtd::date_time bjects that determines which nonrecurring dates are displayed in bold.
         /// @param control month calendar handle.
         /// @param dates An array of xtd::date_time objects.
         /// @remarks Using this property, you can assign an array of bold dates. When you assign an array of dates, the existing dates are first cleared.
         /// @warning Internal use only
-        static void bolded_dates(intptr control, const std::vector<xtd::date_time>& dates);
+        static void bolded_dates(intptr control, const xtd::array<xtd::date_time>& dates);
         
         /// @brief Sets the number of columns and rows of months displayed.
         /// @param control month calendar handle.
@@ -111,7 +111,7 @@ namespace xtd {
         /// @param dates An array of xtd::date_time objects.
         /// @remarks Using this property, you can assign an array of annual bold dates. When you assign an array of dates, the existing dates are first cleared.
         /// @warning Internal use only
-        static void monthly_bolded_dates(intptr control, const std::vector<xtd::date_time>& dates);
+        static void monthly_bolded_dates(intptr control, const xtd::array<xtd::date_time>& dates);
         
         /// @brief Sets selection range to the calendar.
         /// @param control month_calendar handle.

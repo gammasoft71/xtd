@@ -1,4 +1,5 @@
 #include "../../../include/xtd/forms/component.hpp"
+#include <xtd/new_sptr>
 
 using namespace xtd;
 using namespace xtd::forms;

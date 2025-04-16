@@ -24,7 +24,7 @@ context_menu::context_menu(const std::initializer_list<const_menu_item_ref>& men
     data_->menu_items.push_back(menu_item_ref(const_cast<menu_item&>(item.get())));
 }
 
-context_menu::context_menu(const std::vector<menu_item_ref>& menu_items) {
+context_menu::context_menu(const menu_item_collection& menu_items) {
   create_menu();
   data_->menu_items.push_back_range(menu_items);
 }

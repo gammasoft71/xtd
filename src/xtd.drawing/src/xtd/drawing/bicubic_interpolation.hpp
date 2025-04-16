@@ -2,6 +2,7 @@
 #include "../../../include/xtd/drawing/helpers/alpha.hpp"
 #include "../../../include/xtd/drawing/helpers/rgb.hpp"
 #include "../../../include/xtd/drawing/bitmap.hpp"
+#include <xtd/collections/generic/list>
 #include <xtd/fixed_array>
 
 namespace {
@@ -13,7 +14,7 @@ namespace {
     return (spline_cube(value + 2) - 4 * spline_cube(value + 1) + 6 * spline_cube(value) - 4 * spline_cube(value - 1)) / 6;
   }
 
-  struct bicubic_precalculate {
+  struct bicubic_precalculate : xtd::object {
     xtd::fixed_array<double, 4> weight;
     xtd::fixed_array<xtd::int32, 4> offset;
   };
@@ -26,7 +27,7 @@ namespace {
     }
   }
 
-  inline void resample_bicubic_precalculates(std::vector<bicubic_precalculate>& precalculates, xtd::int32 old_size) {
+  inline void resample_bicubic_precalculates(xtd::collections::generic::list<bicubic_precalculate>& precalculates, xtd::int32 old_size) {
     const auto new_size = static_cast<xtd::int32>(precalculates.size());
     if (old_size <= 0 || new_size == 0) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument);
     
@@ -58,8 +59,8 @@ namespace {
     auto result_alpha = reinterpret_cast<xtd::drawing::helpers::alpha*>(result_image.alpha());
     auto result_rgb = reinterpret_cast<xtd::drawing::helpers::rgb*>(result_image.rgb());
     
-    auto vertical_precalculates = std::vector<bicubic_precalculate>(result_height);
-    auto horizontal_precalculates = std::vector<bicubic_precalculate>(result_width);
+    auto vertical_precalculates = xtd::collections::generic::list<bicubic_precalculate>(result_height);
+    auto horizontal_precalculates = xtd::collections::generic::list<bicubic_precalculate>(result_width);
     
     resample_bicubic_precalculates(vertical_precalculates, source_height);
     resample_bicubic_precalculates(horizontal_precalculates, source_width);

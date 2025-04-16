@@ -21,7 +21,7 @@ namespace xtdc_command {
     
   private:
     void create_solution_cmakelists_txt(const xtd::string& name) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Solution",
@@ -32,7 +32,7 @@ namespace xtdc_command {
     }
     
     void create_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "cmake_minimum_required(VERSION 3.20)",
         "",
         "# Project",
@@ -62,7 +62,7 @@ namespace xtdc_command {
     }
     
     void create_include(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "/// @file",
         "/// @brief Contains Window1 class.",
         "#include <gtkmm.h>",
@@ -81,7 +81,7 @@ namespace xtdc_command {
     }
     
     void create_source(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "#include \"Window1.hpp\"",
         "",
         "using namespace Gtk;",
@@ -98,7 +98,7 @@ namespace xtdc_command {
     }
     
     void create_main(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines {
+      auto lines = xtd::array<xtd::string> {
         "#include \"Window1.hpp\"",
         "",
         "using namespace Gtk;",
@@ -107,7 +107,7 @@ namespace xtdc_command {
         "// The main entry point for the application.",
         "auto main(int argc, char* argv[]) -> int {",
         "  auto application = Application::create(argc, argv);",
-        xtd::string::format("  {}::Window1 window1;", name),
+        xtd::string::format("  auto window1 = {}::Window1 {{}};", name),
         "  window1.show_all();",
         "  return application->run(window1);",
         "}",
@@ -117,7 +117,7 @@ namespace xtdc_command {
     }
     
     void generate_cmakelists_txt(const xtd::string& name, const xtd::string& path) const {
-      std::vector<xtd::string> lines;
+      auto lines = xtd::collections::generic::list<xtd::string> {};
       lines.push_back("cmake_minimum_required(VERSION 3.20)");
       lines.push_back("");
       lines.push_back("# Project");

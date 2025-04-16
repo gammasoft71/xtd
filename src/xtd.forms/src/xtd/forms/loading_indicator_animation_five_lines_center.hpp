@@ -16,11 +16,11 @@ namespace xtd::forms {
       auto x5 = x4 + line_width + gap;
       auto y = clip_rectangle.top() + 2;
       auto opacity = enabled ? 255 : 64;
-      auto wave1 = enabled ? std::vector {8, 4, 2, 4, 8, 16, 0, 16} : std::vector {0, 0, 0, 0, 0, 0, 0, 0};
-      auto wave2 = enabled ? std::vector {16, 8, 4, 2, 4, 8, 16, 0} : std::vector {0, 0, 0, 0, 0, 0, 0, 0};
-      auto wave3 = enabled ? std::vector {0, 16, 8, 4, 2, 4, 8, 16} : std::vector {0, 0, 0, 0, 0, 0, 0, 0};
-      auto wave4 = enabled ? std::vector {16, 8, 4, 2, 4, 8, 16, 0} : std::vector {0, 0, 0, 0, 0, 0, 0, 0};
-      auto wave5 = enabled ? std::vector {8, 4, 2, 4, 8, 16, 0, 16} : std::vector {0, 0, 0, 0, 0, 0, 0, 0};
+      auto wave1 = enabled ? xtd::array {8, 4, 2, 4, 8, 16, 0, 16} : xtd::array {0, 0, 0, 0, 0, 0, 0, 0};
+      auto wave2 = enabled ? xtd::array {16, 8, 4, 2, 4, 8, 16, 0} : xtd::array {0, 0, 0, 0, 0, 0, 0, 0};
+      auto wave3 = enabled ? xtd::array {0, 16, 8, 4, 2, 4, 8, 16} : xtd::array {0, 0, 0, 0, 0, 0, 0, 0};
+      auto wave4 = enabled ? xtd::array {16, 8, 4, 2, 4, 8, 16, 0} : xtd::array {0, 0, 0, 0, 0, 0, 0, 0};
+      auto wave5 = enabled ? xtd::array {8, 4, 2, 4, 8, 16, 0, 16} : xtd::array {0, 0, 0, 0, 0, 0, 0, 0};
 
       graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x1, y + (wave1[frame_] ? line_height / wave1[frame_] / 2 : 0), line_width, (wave1[frame_] ? line_height - line_height / wave1[frame_] : line_height), line_width / 2);
       graphics.fill_rounded_rectangle(xtd::drawing::solid_brush {xtd::drawing::color::from_argb(static_cast<xtd::byte>(opacity), color)}, x2, y + (wave2[frame_] ? line_height / wave2[frame_] / 2 : 0), line_width, (wave2[frame_] ? line_height - line_height / wave2[frame_] : line_height), line_width / 2);

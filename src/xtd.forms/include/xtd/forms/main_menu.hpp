@@ -4,6 +4,7 @@
 #pragma once
 #include "menu_item.hpp"
 #include "message.hpp"
+#include <xtd/collections/generic/list>
 #include <xtd/drawing/size>
 #include <xtd/iclonable>
 #include <memory>
@@ -292,7 +293,7 @@ namespace xtd {
     private:
       friend class form;
       void wm_click(message& message);
-      std::vector<xtd::sptr<menu_item>> standard_menu_items_;
+      xtd::collections::generic::list<xtd::sptr<menu_item>> standard_menu_items_;
     };
   }
 }

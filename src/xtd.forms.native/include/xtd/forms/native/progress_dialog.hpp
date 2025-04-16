@@ -58,7 +58,7 @@ namespace xtd {
         /// @param options A bitwise progress dialog flags value.
         /// @return The created progress dialog window handle.
         /// @warning Internal use only
-        static intptr create(intptr hwnd, const xtd::string& text, const xtd::string& message, const std::vector<xtd::string>& informations, size_t marquee_animation_speed, int32 minimum, int32 maximum, int32 value, size_t options);
+        static intptr create(intptr hwnd, const xtd::string& text, const xtd::string& message, const xtd::array<xtd::string>& informations, size_t marquee_animation_speed, int32 minimum, int32 maximum, int32 value, size_t options);
         /// @brief Destroys progress dialog.
         /// @param dialog Progress dialog window handle to destroy.
         /// @warning Internal use only
@@ -67,7 +67,7 @@ namespace xtd {
         /// @param dialog Progress dialog window handle.
         /// @param informations The information texts.
         /// @warning Internal use only
-        static void informations(intptr dialog, const std::vector<xtd::string>& informations);
+        static void informations(intptr dialog, const xtd::array<xtd::string>& informations);
         /// @brief Gets a value that Indicates progress by continuously scrolling a block across a progress_bar in a marquee fashion.
         /// @param dialog Progress dialog window handle.
         /// @param marquee tree is marquee; otherwise `false`. The default is `false`.

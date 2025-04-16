@@ -6,7 +6,7 @@
 /// @endcond
 
 #include "../typeof.hpp"
-#include "../types.hpp"
+#include "../intptr.hpp"
 #include "../string.hpp"
 
 /// @cond

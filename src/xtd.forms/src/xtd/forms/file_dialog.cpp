@@ -71,8 +71,8 @@ file_dialog& file_dialog::file_name(const xtd::string& value) {
   return *this;
 }
 
-const std::vector<xtd::string> file_dialog::file_names() const noexcept {
-  return data_->file_names;
+array<xtd::string> file_dialog::file_names() const noexcept {
+  return data_->file_names.to_array();
 }
 
 const xtd::string& file_dialog::filter() const noexcept {

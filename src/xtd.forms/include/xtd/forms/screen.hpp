@@ -32,6 +32,7 @@ namespace xtd {
     class forms_export_ screen : public object, public iequatable<screen> {
     public:
       /// @cond
+      screen() = default;
       screen(const screen&) = default;
       screen& operator =(const screen&) = default;
       /// @endcond
@@ -85,7 +86,7 @@ namespace xtd {
       /// @{
       /// @brief Gets an array of all displays on the system.
       /// @return An array of type screen, containing all displays on the system.
-      static std::vector<screen> all_screens();
+      static xtd::array<screen> all_screens();
       
       /// @brief Gets the primary display.
       /// @return The primary display.
@@ -190,7 +191,6 @@ namespace xtd {
       /// @}
       
     private:
-      screen() = default;
       screen(int32 bits_per_pixel, const drawing::rectangle& bounds, const xtd::string& device_name, int32 pixels_per_inch, bool primary, double scale_factor, const drawing::rectangle& working_area);
       
       int32 bits_per_pixel_ = 0;

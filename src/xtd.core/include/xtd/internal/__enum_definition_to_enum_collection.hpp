@@ -8,7 +8,7 @@
 /// @endcond
 #pragma once
 #include "../format_exception.hpp"
-#include "../types.hpp"
+#include "../int64.hpp"
 #include "../string.hpp"
 #include "../enum_collection.hpp"
 

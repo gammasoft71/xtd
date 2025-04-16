@@ -34,7 +34,7 @@ namespace {
     int32 style = wxTextEntryDialogStyle;
     if (multiline) style |= wxTE_MULTILINE;
     if (use_system_password_char) style |= wxTE_PASSWORD;
-    wxTextEntryDialog* text_entry_dialog = new wxTextEntryDialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), message == "" ? L" " : convert_string::to_wstring(message), convert_string::to_wstring(text), convert_string::to_wstring(value), style);
+    wxTextEntryDialog* text_entry_dialog = new wxTextEntryDialog(control == 0 ? nullptr : reinterpret_cast<control_handler*>(control)->control(), message == "" ? L" " : convert_string::to_wstring(message).c_str(), convert_string::to_wstring(text).c_str(), convert_string::to_wstring(value).c_str(), style);
     if (character_casing == 1) text_entry_dialog->ForceUpper();
     
     #if defined(__WXMSW__)

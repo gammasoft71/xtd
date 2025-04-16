@@ -8,7 +8,7 @@ namespace xtd::tunit::tests {
   class test_class_(assume_is_not_empty_collection_succeed_testst) {
   public:
     void test_method_(test_case_succeed) {
-      std::vector v = {0, 1, 2, 3};
+      auto v = array {0, 1, 2, 3};
       xtd::tunit::assume::is_not_empty(v);
     }
   };

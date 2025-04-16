@@ -2,11 +2,13 @@
 #define __XTD_DRAWING_NATIVE_LIBRARY__
 #include <xtd/drawing/native/brush>
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/collections/generic/list>
 #include <xtd/argument_exception>
 #include <xtd/as>
 #include <tuple>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
 using namespace xtd::helpers;
@@ -44,22 +46,22 @@ linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect
 linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const xtd::drawing::color& color1, const xtd::drawing::color& color2)  : linear_gradient_brush(rect, {color1, color2}, .0) {
 }
 
-linear_gradient_brush::linear_gradient_brush(const xtd::drawing::point& point1, const xtd::drawing::point& point2, const std::vector<xtd::drawing::color>& linear_colors) : linear_gradient_brush(point_f(as<float>(point1.x), as<float>(point1.y)), point_f(as<float>(point2.x), as<float>(point2.y)), linear_colors) {
+linear_gradient_brush::linear_gradient_brush(const xtd::drawing::point& point1, const xtd::drawing::point& point2, const array<xtd::drawing::color>& linear_colors) : linear_gradient_brush(point_f(as<float>(point1.x), as<float>(point1.y)), point_f(as<float>(point2.x), as<float>(point2.y)), linear_colors) {
 }
 
-linear_gradient_brush::linear_gradient_brush(const xtd::drawing::point_f& point1, const xtd::drawing::point_f& point2, const std::vector<xtd::drawing::color>& linear_colors) : linear_gradient_brush(rectangle_f::from_ltrb(point1.x, point1.y, point2.x, point2.y), linear_colors, .0) {
+linear_gradient_brush::linear_gradient_brush(const xtd::drawing::point_f& point1, const xtd::drawing::point_f& point2, const array<xtd::drawing::color>& linear_colors) : linear_gradient_brush(rectangle_f::from_ltrb(point1.x, point1.y, point2.x, point2.y), linear_colors, .0) {
 }
 
-linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect, const std::vector<xtd::drawing::color>& linear_colors, xtd::drawing::drawing_2d::linear_gradient_mode linear_gradient_mode) : linear_gradient_brush(rectangle_f(rect), linear_colors, linear_gradient_mode_to_angle(linear_gradient_mode)) {
+linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect, const array<xtd::drawing::color>& linear_colors, xtd::drawing::drawing_2d::linear_gradient_mode linear_gradient_mode) : linear_gradient_brush(rectangle_f(rect), linear_colors, linear_gradient_mode_to_angle(linear_gradient_mode)) {
 }
 
-linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect, const std::vector<xtd::drawing::color>& linear_colors, float angle): linear_gradient_brush(rectangle_f(rect), linear_colors, angle) {
+linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect, const array<xtd::drawing::color>& linear_colors, float angle): linear_gradient_brush(rectangle_f(rect), linear_colors, angle) {
 }
 
-linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& linear_colors, xtd::drawing::drawing_2d::linear_gradient_mode linear_gradient_mode) : linear_gradient_brush(rect, linear_colors, linear_gradient_mode_to_angle(linear_gradient_mode)) {
+linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const array<xtd::drawing::color>& linear_colors, xtd::drawing::drawing_2d::linear_gradient_mode linear_gradient_mode) : linear_gradient_brush(rect, linear_colors, linear_gradient_mode_to_angle(linear_gradient_mode)) {
 }
 
-linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& linear_colors, float angle) : data_(xtd::new_sptr<data>()) {
+linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const array<xtd::drawing::color>& linear_colors, float angle) : data_(xtd::new_sptr<data>()) {
   if (linear_colors.size() < 2) throw_helper::throws(exception_case::argument);
   while (angle < 0)
     angle = 360 - angle;
@@ -78,10 +80,10 @@ linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& re
   recreate_handle();
 }
 
-linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect, const std::vector<xtd::drawing::color>& linear_colors) : linear_gradient_brush(rect, linear_colors, .0) {
+linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle& rect, const array<xtd::drawing::color>& linear_colors) : linear_gradient_brush(rect, linear_colors, .0) {
 }
 
-linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const std::vector<xtd::drawing::color>& linear_colors)  : linear_gradient_brush(rect, linear_colors, .0) {
+linear_gradient_brush::linear_gradient_brush(const xtd::drawing::rectangle_f& rect, const array<xtd::drawing::color>& linear_colors)  : linear_gradient_brush(rect, linear_colors, .0) {
 }
 
 linear_gradient_brush& linear_gradient_brush::operator =(const linear_gradient_brush& value) {
@@ -138,9 +140,9 @@ float linear_gradient_brush::linear_gradient_mode_to_angle(xtd::drawing::drawing
 }
 
 void linear_gradient_brush::recreate_handle() {
-  auto colors = std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> {};
+  auto colors = list<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>> {};
   std::for_each(data_->linear_colors.begin(), data_->linear_colors.end(), [&](auto color) {colors.emplace_back(color.first.r(), color.first.g(), color.first.b(), color.first.a(), color.second);});
-  native::brush::linear_gradient(handle(), as<int32>(data_->rect.left()), as<int32>(data_->rect.top()), as<int32>(data_->rect.right()), as<int32>(data_->rect.bottom()), colors, data_->angle);
+  native::brush::linear_gradient(handle(), as<int32>(data_->rect.left()), as<int32>(data_->rect.top()), as<int32>(data_->rect.right()), as<int32>(data_->rect.bottom()), colors.to_array(), data_->angle);
 }
 
 linear_gradient_brush::linear_gradient_brush(const linear_gradient_brush& value) : brush(value), data_(value.data_) {

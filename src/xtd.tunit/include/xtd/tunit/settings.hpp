@@ -125,11 +125,11 @@ namespace xtd {
       
       /// @brief Gets filter tests.
       /// @return filter tests. The value by default is `{"*.*"}`.
-      const std::vector<string>& filter_tests() const noexcept;
+      const xtd::array<string>& filter_tests() const noexcept;
       
       /// @brief Sets filter tests.
       /// @param filter_tests filter tests. The value by default is `{"*.*"}`.
-      void filter_tests(const std::vector<string>& filter_tests) noexcept;
+      void filter_tests(const xtd::array<string>& filter_tests) noexcept;
       
       /// @brief Gets google test comaptibility.
       /// @return `true` if google test comaptibility; otherwise `false`. The default value is `false`.
@@ -283,7 +283,7 @@ namespace xtd {
       xtd::date_time end_time_;
       int32 exit_status_ = EXIT_SUCCESS;
       xtd::string file_name_ = xtd::io::path::get_full_path(xtd::reflection::assembly::get_executing_assembly().location());
-      std::vector<string> filter_tests_ = {"*.*"};
+      xtd::array<string> filter_tests_ = {"*.*"};
       bool gtest_compatibility_ = false;
       bool list_tests_ = false;
       bool output_color_ = true;

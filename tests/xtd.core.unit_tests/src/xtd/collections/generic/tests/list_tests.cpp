@@ -93,7 +93,7 @@ namespace xtd::collections::generic::tests {
     }
 
     void test_method_(constructor_with_iterators) {
-      std::vector v = {84, 42, 21};
+      auto v = array {84, 42, 21};
       auto items = list<int>(v.begin(), v.end());
       assert::are_equal(3_z, items.count());
       collection_assert::are_equal({84, 42, 21}, items);

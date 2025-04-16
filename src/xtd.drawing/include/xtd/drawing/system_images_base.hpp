@@ -57,7 +57,7 @@ namespace xtd {
       /// | Status        | Icons for presenting status to the user. This context contains icons for warning and error dialogs, as well as for the current weather, appointment alarms, and battery status.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
       /// | xtd           | Icons for representinf xtd libraries and products.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
       /// @remarks See (Icon Naming Specification)[https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html) for more information.
-      static std::vector<xtd::string> contexts() noexcept;
+      static xtd::array<xtd::string> contexts() noexcept;
       /// @brief Gets the image context names.
       /// @return An xtd::string, xtd::string hash table that contains the image context names.
       /// @remarks The system images are grouped by contaxt.
@@ -451,7 +451,7 @@ namespace xtd {
       /// | xtd-io                    | The icon for xtd io logo.          |
       /// | xtd-strings               | The icon for xtd strings logo.     |
       /// @remarks See [Icon Naming Specification](https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html) for more information.
-      static std::map<xtd::string, std::vector<xtd::string>> context_names() noexcept;
+      static std::map<xtd::string, xtd::array<xtd::string>> context_names() noexcept;
       /// @brief Gets the image names.
       /// @return An xtd::string array that contains the image names.
       /// @par The following table represents Standard Action Icons :
@@ -844,7 +844,7 @@ namespace xtd {
       /// | xtd-io                    | The icon for xtd io logo.          |
       /// | xtd-strings               | The icon for xtd strings logo.     |
       /// @remarks See [Icon Naming Specification](https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html) for more information.
-      static std::vector<xtd::string> names() noexcept;
+      static xtd::array<xtd::string> names() noexcept;
       /// @brief Gets the image names for the specified context.
       /// @param context The context to retrieve the image names.
       /// @return An xtd::string, xtd::string hash table that contains the image names for the specified context.
@@ -1239,11 +1239,11 @@ namespace xtd {
       /// | xtd-io                    | The icon for xtd io logo.          |
       /// | xtd-strings               | The icon for xtd strings logo.     |
       /// @remarks See [Icon Naming Specification](https://specifications.freedesktop.org/icon-naming-spec/icon-naming-spec-latest.html) for more information.
-      static std::vector<xtd::string> names(const xtd::string& context) noexcept;
+      static xtd::array<xtd::string> names(const xtd::string& context) noexcept;
       /// @brief Gets standard sizes for image.
       /// @return An xtd::drawing::size array that contains the default sizes for image.
       /// @remarks This method allows you to obtain the standard sizes for an image. If you choose another size, the image will be scaled.
-      static std::vector<xtd::drawing::size> sizes() noexcept;
+      static xtd::array<xtd::drawing::size> sizes() noexcept;
       /// @}
       
       /// @name Public Static Methods
@@ -1281,7 +1281,7 @@ namespace xtd {
       friend class system_icons;
       static xtd::string default_theme() noexcept;
       static xtd::string fallback_theme() noexcept;
-      static std::vector<xtd::string> themes() noexcept;
+      static xtd::array<xtd::string> themes() noexcept;
     };
   }
 }

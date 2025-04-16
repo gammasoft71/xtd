@@ -21,7 +21,7 @@ void brush::solid(intptr brush, xtd::byte a, xtd::byte r, xtd::byte g, xtd::byte
   reinterpret_cast<wx_brush*>(brush)->create_solid_brush({r, g, b, a});
 }
 
-void brush::conical_gradient(intptr brush, int32 center_x, int32 center_y, const std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float angle) {
+void brush::conical_gradient(intptr brush, int32 center_x, int32 center_y, const array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float angle) {
   if (colors.size() < 2) throw_helper::throws(exception_case::argument);
   
   auto center_point = wxPoint(center_x, center_y);
@@ -36,7 +36,7 @@ void brush::conical_gradient(intptr brush, int32 center_x, int32 center_y, const
   reinterpret_cast<wx_brush*>(brush)->create_conical_gradiant_brush(center_point, colours, angle);
 }
 
-void brush::linear_gradient(intptr brush, int32 x1, int32 y1, int32 x2, int32 y2, const std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float angle) {
+void brush::linear_gradient(intptr brush, int32 x1, int32 y1, int32 x2, int32 y2, const array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float angle) {
   if (colors.size() < 2) throw_helper::throws(exception_case::argument);
   
   if (angle <= 22) angle = 0;
@@ -67,7 +67,7 @@ void brush::linear_gradient(intptr brush, int32 x1, int32 y1, int32 x2, int32 y2
   reinterpret_cast<wx_brush*>(brush)->create_linear_gradiant_brush(p1, p2, colours);
 }
 
-void brush::radial_gradient(intptr brush, int32 center_x, int32 center_y, int32 focal_x, int32 focal_y, const std::vector<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float radius) {
+void brush::radial_gradient(intptr brush, int32 center_x, int32 center_y, int32 focal_x, int32 focal_y, const array<std::tuple<xtd::byte, xtd::byte, xtd::byte, xtd::byte, float>>& colors, float radius) {
   if (colors.size() < 2) throw_helper::throws(exception_case::argument);
   
   auto center_point = wxPoint(center_x, center_y);

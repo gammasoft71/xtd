@@ -458,7 +458,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets an array of pens.
-      static const std::vector<xtd::drawing::pen>& get_pens();
+      static const xtd::array<xtd::drawing::pen>& get_pens();
       /// @}
     };
   }

@@ -3,6 +3,7 @@
 #include <xtd/threading/thread_state_exception>
 #include <xtd/threading/interlocked>
 #include <xtd/diagnostics/stopwatch>
+#include <xtd/collections/generic/list>
 #include <xtd/environment>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/string_assert>
@@ -10,6 +11,7 @@
 #include <xtd/diagnostics/debugger>
 #include <thread>
 
+using namespace xtd::collections::generic;
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
@@ -558,7 +560,7 @@ namespace xtd::tests {
     }
     
     void test_method_(join_all_with_vector) {
-      std::vector<thread> threads;
+      list<thread> threads;
       threads.emplace_back(thread_start {[&] {thread::sleep(10);}});
       threads.back().start();
       threads.emplace_back(thread_start {[&] {thread::sleep(10);}});
@@ -567,7 +569,7 @@ namespace xtd::tests {
     }
     
     void test_method_(join_all_with_vector_and_milliseconds_timeout) {
-      std::vector<thread> threads;
+      list<thread> threads;
       threads.emplace_back(thread_start {[&] {thread::sleep(20);}});
       threads.back().start();
       threads.emplace_back(thread_start {[&] {thread::sleep(20);}});
@@ -577,7 +579,7 @@ namespace xtd::tests {
     }
     
     void test_method_(join_all_with_vector_and_timeout) {
-      std::vector<thread> threads;
+      list<thread> threads;
       threads.emplace_back(thread_start {[&] {thread::sleep(10);}});
       threads.back().start();
       threads.emplace_back(thread_start {[&] {thread::sleep(10);}});
@@ -621,7 +623,7 @@ namespace xtd::tests {
       }};
       
       constexpr auto max_count_thread = 1000ul;
-      auto threads = std::vector<thread> {};
+      auto threads = list<thread> {};
       
       for (auto index = 0_z; index < max_count_thread; ++index)
         threads.emplace_back(thread_proc);
@@ -641,7 +643,7 @@ namespace xtd::tests {
       }};
       
       constexpr auto max_count_thread = 1000ul;
-      auto threads = std::vector<thread> {};
+      auto threads = list<thread> {};
       
       for (auto index = 0_z; index < max_count_thread; ++index)
         threads.push_back(thread::start_new(thread_proc));

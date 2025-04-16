@@ -7,7 +7,7 @@ using namespace xtd::helpers;
 
 struct dot_matrix_display::data {
   drawing::size matrix_size = {7, 7};
-  dots_collection dots = dots_collection(matrix_size.width, std::vector<bool>(matrix_size.height, false));
+  dots_collection dots = dots_collection(matrix_size.width, array<bool>(matrix_size.height, false));
   bool show_back_dot = true;
   std::optional<drawing::color> back_dot_color;
   double back_dot_opacity = 0.95;
@@ -94,7 +94,7 @@ const drawing::size& dot_matrix_display::matrix_size() const noexcept {
 dot_matrix_display& dot_matrix_display::matrix_size(const drawing::size& value) {
   if (data_->matrix_size == value) return *this;
   data_->matrix_size = value;
-  data_->dots = dots_collection(data_->matrix_size.height, std::vector<bool>(data_->matrix_size.width, false));
+  data_->dots = dots_collection(data_->matrix_size.height, array<bool>(data_->matrix_size.width, false));
   invalidate();
   return *this;
 }

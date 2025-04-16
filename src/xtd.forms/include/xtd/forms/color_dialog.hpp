@@ -36,7 +36,7 @@ namespace xtd {
       
     public:
       /// @brief Represents an xtd::drawing::color array.
-      using colors = std::vector<xtd::drawing::color>;
+      using colors = xtd::array<xtd::drawing::color>;
       
       /// @name Public Constructors
       

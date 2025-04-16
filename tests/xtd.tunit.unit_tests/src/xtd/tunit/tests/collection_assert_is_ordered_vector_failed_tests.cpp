@@ -7,7 +7,7 @@ namespace xtd::tunit::tests {
   class test_class_(collection_assert_is_ordered_vector_failed_tests) {
   public:
     void test_method_(test_case_failed) {
-      std::vector<int> a = {1, 4, 8, 6};
+      auto a = array<int> {1, 4, 8, 6};
       xtd::tunit::collection_assert::is_ordered(a);
     }
   };

@@ -4,7 +4,7 @@
 #pragma once
 #include "ienumerator.hpp"
 #include "../../helpers/throw_helper.hpp"
-#include "../../ptr.hpp"
+#include "../../new_ptr.hpp"
 #include "../../static.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

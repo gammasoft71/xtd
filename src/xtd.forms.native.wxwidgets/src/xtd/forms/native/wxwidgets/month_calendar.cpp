@@ -12,7 +12,7 @@ using namespace xtd::drawing;
 using namespace xtd::forms::native;
 using namespace xtd::helpers;
 
-void month_calendar::annually_bolded_dates(intptr control, const std::vector<xtd::date_time>& dates) {
+void month_calendar::annually_bolded_dates(intptr control, const array<xtd::date_time>& dates) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
@@ -23,7 +23,7 @@ void month_calendar::annually_bolded_dates(intptr control, const std::vector<xtd
   reinterpret_cast<wx_month_calendar*>(control)->change_attribute_dates(reinterpret_cast<wx_month_calendar*>(control));
 }
 
-void month_calendar::bolded_dates(intptr control, const std::vector<xtd::date_time>& dates) {
+void month_calendar::bolded_dates(intptr control, const array<xtd::date_time>& dates) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());
@@ -117,7 +117,7 @@ void month_calendar::max_selection_count(intptr control, uint32 value) {
   // Does not exists in wxWidgets...
 }
 
-void month_calendar::monthly_bolded_dates(intptr control, const std::vector<xtd::date_time>& dates) {
+void month_calendar::monthly_bolded_dates(intptr control, const array<xtd::date_time>& dates) {
   if (!control || !wxTheApp) throw_helper::throws(exception_case::argument);
   if (!reinterpret_cast<control_handler*>(control)->control()) {
     wxASSERT_MSG_AT(reinterpret_cast<control_handler*>(control)->control() == 0, "Control is null", stack_frame().current().get_file_name().c_str(), stack_frame().current().get_file_line_number(), stack_frame().current().get_method().c_str());

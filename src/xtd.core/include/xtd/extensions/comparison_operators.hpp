@@ -5,6 +5,7 @@
 #define __XTD_STD_INTERNAL__
 #include "../internal/__xtd_std_version.hpp"
 #undef __XTD_STD_INTERNAL__
+#include <compare>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {

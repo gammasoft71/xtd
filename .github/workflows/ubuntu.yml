@@ -21,6 +21,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+    
+    - name: Perform clean-up to free up disk space
+      run: |
+        sudo apt-get clean
+        sudo rm -rf /var/lib/apt/lists/*
+        docker system prune -af
         
     #- name: Setup openGL
     #  uses: openrndr/setup-opengl@v1.1

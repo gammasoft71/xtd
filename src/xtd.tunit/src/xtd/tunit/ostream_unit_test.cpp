@@ -1,8 +1,10 @@
 #include "../../../include/xtd/tunit/ostream_unit_test.hpp"
 #include "../../../include/xtd/tunit/unit_test.hpp"
+#include <xtd/collections/generic/list>
 #include <xtd/console>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::tunit;
 
 ostream_unit_test::ostream_unit_test(std::ostream& os) noexcept : unit_test(xtd::new_uptr<ostream_event_listener>(os)), os_(os) {
@@ -20,12 +22,12 @@ int ostream_unit_test::count_tests(int32 count) {
   return unit_test::count_tests(count);
 }
 
-int ostream_unit_test::list_tests(const std::vector<string>& tests) {
+int ostream_unit_test::list_tests(const array<string>& tests) {
   if (!settings::default_settings().gtest_compatibility()) {
     for (auto name : tests)
       os_ << name << std::endl;
   } else {
-    std::map<std::string, std::vector<string>> lists;
+    std::map<std::string, list<string>> lists;
     for (auto name : tests) {
       auto key_value = string(name).split('.');
       if (key_value.size() == 2) {
@@ -42,7 +44,7 @@ int ostream_unit_test::list_tests(const std::vector<string>& tests) {
   return unit_test::list_tests(tests);
 }
 
-bool ostream_unit_test::parse_arguments(const std::vector<string>& args) {
+bool ostream_unit_test::parse_arguments(const array<string>& args) {
   for (auto arg : args)
     if (arg == "--help" || arg == "--gtest_help") {
       write_help();

@@ -21,10 +21,6 @@
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/string>
-#include <cstdint>
-#include <map>
-#include <memory>
-#include <iostream>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -115,7 +111,7 @@ namespace xtd {
       /// @remarks This method returns information about multiple-frame images, which come in two styles: multiple page and multiple resolution.
       /// @remarks A multiple-page image is an image that contains more than one image. Each page contains a single image (or frame). These pages (or images, or frames) are typically displayed in succession to produce an animated sequence, such as an animated .gif file.
       /// @remarks A multiple-resolution image is an image that contains more than one copy of an image at different resolutions. This is commonly used by MIP mapping where the displayed image size determines the resolution of the image used for drawing. GDI+ can support an arbitrary number of pages (or images, or frames), as well as an arbitrary number of resolutions. The defined dimensions are properties of the frame_dimension.
-      std::vector<guid> frame_dimentions_list() const noexcept;
+      xtd::array<guid> frame_dimentions_list() const noexcept;
       
       /// @brief Gets the handle of this image.
       /// @return The handle of this image.

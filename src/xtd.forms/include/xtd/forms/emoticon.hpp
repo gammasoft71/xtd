@@ -3,6 +3,8 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "../forms_export.hpp"
+#include <xtd/collections/generic/list>
+#include <xtd/icomparable>
 #include <xtd/iequatable>
 #include <xtd/object>
 #include <xtd/static>
@@ -27,7 +29,7 @@ namespace xtd {
     /// @par Examples
     /// The following code example demonstrates the use of emoticon class.
     /// @include emoticons.cpp
-    class forms_export_ emoticon : public object, public xtd::iequatable<emoticon> {
+    class forms_export_ emoticon : public object, public xtd::iequatable<emoticon>, public icomparable<emoticon> {
       struct data;
     public:
       /// @name Public Fields
@@ -48,7 +50,7 @@ namespace xtd {
       /// @brief Initialize a new instance of emoticon class with specified name and codepoints.
       /// @param name A string that represent the name of emoticon
       /// @param codepoints An array of char32 that represent the emoticon.
-      emoticon(const xtd::string& name, const std::vector<char32>& codepoints);
+      emoticon(const xtd::string& name, const xtd::array<char32>& codepoints);
       
       /// @brief Initialize a new instance of emoticon class with specified name and codepoint.
       /// @param name A string that represent the name of emoticon
@@ -61,7 +63,7 @@ namespace xtd {
       
       /// @brief Initialize a new instance of emoticon class with specified codepoints.
       /// @param codepoints An array of char32 that represent the emoticon.
-      explicit emoticon(const std::vector<char32>& codepoints);
+      explicit emoticon(const xtd::array<char32>& codepoints);
       
       /// @brief Initialize a new instance of emoticon class with specified codepoint.
       /// @param codepoints A char32 that represent the emoticon.
@@ -78,7 +80,7 @@ namespace xtd {
       }
       
       template<class type_t>
-      emoticon(const xtd::string& name, const std::vector<type_t>& codepoints) {
+      emoticon(const xtd::string& name, const xtd::array<type_t>& codepoints) {
         create_data();
         name_(name);
         for (auto codepoint : codepoints)
@@ -100,7 +102,7 @@ namespace xtd {
       }
       
       template<class type_t>
-      explicit emoticon(const std::vector<type_t>& codepoints) {
+      explicit emoticon(const xtd::array<type_t>& codepoints) {
         create_data();
         for (auto codepoint : codepoints)
           codepoints_().push_back(static_cast<char32>(codepoint));
@@ -126,12 +128,24 @@ namespace xtd {
       
       /// @brief Gets codepoints of emoticon.
       /// @return An array of char32 that represent the emoticon.
-      const std::vector<char32>& codepoints() const noexcept;
+      xtd::array<char32> codepoints() const noexcept;
       /// @}
       
       /// @name Public Methods
       
       /// @{
+      /// @brief Compares the current instance with another object of the same type.
+      /// @param obj An object to compare with this instance.
+      /// @return A 32-bit signed integer that indicates the relative order of the objects being compared.
+      /// The return value has these meanings:
+      ///
+      /// | Value             | Condition                          |
+      /// | ----------------- | ---------------------------------- |
+      /// | Less than zero    | This instance is less than obj.    |
+      /// | Zero              | This instance is equal to obj.     |
+      /// | Greater than zero | This instance is greater than obj. |
+      int32 compare_to(const emoticon &obj) const noexcept override;
+      
       /// @brief Determines whether the specified object is equal to the current object.
       /// @param obj The object to compare with the current object.
       /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
@@ -153,8 +167,8 @@ namespace xtd {
     private:
       void create_data();
       void name_(const string& name);
-      std::vector<char32>& codepoints_();
-      void codepoints_(std::vector<char32>&& codepoints);
+      xtd::collections::generic::list<char32>& codepoints_();
+      void codepoints_(xtd::array<char32>&& codepoints);
       
       xtd::sptr<data> data_;
     };

@@ -38,13 +38,13 @@ namespace xtd::forms::tests {
       
       assert::are_equal(4_z, list_box.items().size());
       assert::are_equal("d", list_box.items()[0]);
-      assert::are_equal(4, std::any_cast<int>(list_box.items()[0].tag()));
+      assert::are_equal(4, as<int>(list_box.items()[0].tag()));
       assert::are_equal("a", list_box.items()[1]);
-      assert::are_equal(1, std::any_cast<int>(list_box.items()[1].tag()));
+      assert::are_equal(1, as<int>(list_box.items()[1].tag()));
       assert::are_equal("c", list_box.items()[2]);
-      assert::are_equal(3, std::any_cast<int>(list_box.items()[2].tag()));
+      assert::are_equal(3, as<int>(list_box.items()[2].tag()));
       assert::are_equal("b", list_box.items()[3]);
-      assert::are_equal(2, std::any_cast<int>(list_box.items()[3].tag()));
+      assert::are_equal(2, as<int>(list_box.items()[3].tag()));
     }
     
     void test_method_(sorted_add_items) {

@@ -208,7 +208,7 @@ namespace xtd {
       
       /// @{
       /// @brief Gets an array of texts.
-      static const std::vector<xtd::string>& get_texts() noexcept;
+      static const xtd::array<xtd::string>& get_texts() noexcept;
       /// @}
     };
   }

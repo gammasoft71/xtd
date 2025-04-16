@@ -55,7 +55,7 @@ font_family::~font_family() {
   if (data_.use_count() == 1 && data_->handle != 0) native::font_family::destroy(data_->handle);
 }
 
-std::vector<font_family> font_family::families() noexcept {
+array<font_family> font_family::families() noexcept {
   return text::installed_font_collection().families();
 }
 

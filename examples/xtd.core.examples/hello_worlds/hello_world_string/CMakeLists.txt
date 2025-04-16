@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-project(to_ustring)
+project(hello_world_string)
 find_package(xtd REQUIRED)
-add_sources(README.md src/to_ustring.cpp)
+add_sources(README.md src/hello_world_string.cpp)
 target_type(CONSOLE_APPLICATION)

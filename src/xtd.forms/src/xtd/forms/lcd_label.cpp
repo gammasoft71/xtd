@@ -1,6 +1,8 @@
 #include "../../../include/xtd/forms/lcd_label.hpp"
+#include <xtd/collections/generic/list>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::helpers;
@@ -28,7 +30,7 @@ struct lcd_label::data {
   forms::lcd_style lcd_style = forms::lcd_style::seven_segment_display;
   forms::segment_style segment_style = forms::segment_style::standard;
   forms::dot_matrix_style dot_matrix_style = forms::dot_matrix_style::standard;
-  std::vector<xtd::sptr<idigit>> digits;
+  list<xtd::sptr<idigit>> digits;
   std::optional<int32> thickness;
 };
 
@@ -871,7 +873,7 @@ control& lcd_label::text(const xtd::string& value) {
   return *this;
 }
 
-std::vector<char32> lcd_label::valid_characters() {
+array<char32> lcd_label::valid_characters() {
   xtd::sptr<idigit> digit;
   switch (data_->lcd_style) {
     case lcd_style::seven_segment_display: digit = xtd::new_sptr<seven_segment_display_digit>(); break;
