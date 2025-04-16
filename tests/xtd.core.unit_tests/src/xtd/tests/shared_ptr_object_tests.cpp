@@ -293,14 +293,14 @@ namespace xtd::tests {
       auto s2 = shared_ptr_object<int> {};
       s2 = s1;
       assert::are_equal(s1.to_pointer(), s2.to_pointer());
-      assert::are_equal(2, s2.use_count());
+      assert::are_equal(2_z, s2.use_count());
     }
     
     void test_method_(assignment_operator_with_moved_shared_ptr_object) {
       auto s = shared_ptr_object<int> {};
       s = shared_ptr_object<int> {new int {42}};
       assert::is_not_null(s.to_pointer());
-      assert::are_equal(1, s.use_count());
+      assert::are_equal(1_z, s.use_count());
     }
     
     void test_method_(assignment_operator_with_shared_ptr_object_and_different_type) {
@@ -308,14 +308,14 @@ namespace xtd::tests {
       auto s2 = shared_ptr_object<object> {};
       s2 = s1;
       assert::are_equal(s1.to_pointer(), s2.to_pointer());
-      assert::are_equal(2, s2.use_count());
+      assert::are_equal(2_z, s2.use_count());
     }
     
     void test_method_(assignment_operator_with_moved_shared_ptr_object_and_different_type) {
       auto s = shared_ptr_object<object> {};
       s = shared_ptr_object<string> {new string {"value"}};
       assert::is_not_null(s.to_pointer());
-      assert::are_equal(1, s.use_count());
+      assert::are_equal(1_z, s.use_count());
     }
     
     void test_method_(assignment_operator_with_std_shared_ptr) {
@@ -323,14 +323,14 @@ namespace xtd::tests {
       auto s2 = shared_ptr_object<int> {};
       s2 = s1;
       assert::are_equal(s1.operator ->(), s2.to_pointer());
-      assert::are_equal(2, s2.use_count());
+      assert::are_equal(2_z, s2.use_count());
     }
     
     void test_method_(assignment_operator_with_moved_std_shared_ptr) {
       auto s = shared_ptr_object<int> {};
       s = std::shared_ptr<int> {new int {42}};
       assert::is_not_null(s.to_pointer());
-      assert::are_equal(1, s.use_count());
+      assert::are_equal(1_z, s.use_count());
     }
   };
 }
