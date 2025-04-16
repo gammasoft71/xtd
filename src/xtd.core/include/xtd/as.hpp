@@ -3,6 +3,7 @@
 #pragma once
 #include "any.hpp"
 #include "invalid_cast_exception.hpp"
+#include "shared_ptr_object.hpp"
 #include "types.hpp"
 #include <memory>
 #define __XTD_CORE_INTERNAL__
@@ -63,6 +64,20 @@ inline const xtd::collections::generic::ienumerable<result_t>& xtd::linq::enumer
   for (const auto& item : source)
     result.items.push_back(xtd::as<result_t>(item));
   return static_cast<const xtd::collections::generic::ienumerable<result_t>&>(result);
+}
+
+template<class type_t>
+template<typename target_t>
+target_t xtd::shared_ptr_object<type_t>::to_object() const {
+  if (to_pointer() == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
+  return xtd::as<target_t>(to_object());
+}
+
+template<class type_t>
+template<typename target_t>
+target_t* xtd::shared_ptr_object<type_t>::to_pointer() const {
+  if (to_pointer() == null) return null;
+  return xtd::as<target_t>(to_pointer());
 }
 
 namespace std {
