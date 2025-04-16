@@ -1,5 +1,7 @@
 #include <xtd/shared_ptr_object>
+#include <xtd/null_pointer_exception>
 #include <xtd/tunit/assert>
+#include <xtd/tunit/string_assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
@@ -253,6 +255,37 @@ namespace xtd::tests {
       s1.swap(s2);
       assert::are_equal(p2, s1.get());
       assert::are_equal(p1, s2.get());
+    }
+    
+    void test_method_(to_object) {
+      assert::are_equal("value", shared_ptr_object<string> {new string {"value"}}.to_object());
+      assert::are_equal(42, shared_ptr_object<int> {new int {42}}.to_object());
+    }
+    
+    void test_method_(to_object_with_specified_type) {
+      assert::are_equal("value", shared_ptr_object<object> {new string {"value"}}.to_object<string>());
+      assert::are_equal(42, shared_ptr_object<int> {new int {42}}.to_object<byte>());
+      assert::throws<null_pointer_exception>([]{shared_ptr_object<object> {}.to_object<string>();});
+    }
+    
+    void test_method_(to_pointer) {
+      assert::are_equal("value", *shared_ptr_object<string> {new string {"value"}}.to_pointer());
+      assert::are_equal(42, *shared_ptr_object<int> {new int {42}}.to_pointer());
+    }
+    
+    void test_method_(to_pointer_with_specified_type) {
+      assert::are_equal("value", *shared_ptr_object<object> {new string {"value"}}.to_pointer<string>());
+      //assert::are_equal(42, *shared_ptr_object<int> {new int {42}}.to_pointer<byte>());
+      assert::is_null(shared_ptr_object<object> {}.to_pointer<string>());
+    }
+    
+    void test_method_(to_string) {
+      assert::are_equal("xtd::shared_ptr_object<xtd::object> [pointer=null]", shared_ptr_object<object> {}.to_string());
+      string_assert::starts_with("xtd::shared_ptr_object<int> [pointer=0x", shared_ptr_object<int> {new int {42}}.to_string());
+      string_assert::ends_with(", use_count=1]", shared_ptr_object<int> {new int {42}}.to_string());
+      auto s1 = shared_ptr_object<int> {new int {42}};
+      auto s2 = s1, s3 = s1, s4 = s1;
+      string_assert::ends_with(", use_count=4]", s1.to_string());
     }
   };
 }
