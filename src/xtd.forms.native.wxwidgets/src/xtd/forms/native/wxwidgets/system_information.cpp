@@ -7,6 +7,7 @@
 #if defined(__WXMSW__)
 #define NOMINMAX
 #include <Windows.h>
+#undef interface
 #endif
 
 using namespace xtd;

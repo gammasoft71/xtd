@@ -1,5 +1,6 @@
 #if defined(__WXGTK__)
 #include <xtd/types>
+#undef interface_
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wparentheses"
 #include <gtk/gtk.h>
