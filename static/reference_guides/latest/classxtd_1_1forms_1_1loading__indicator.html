@@ -174,7 +174,7 @@ Inheritance diagram for xtd::forms::loading_indicator:</div>
 <div class="line">      list_box1.anchor(anchor_styles::top | anchor_styles::left | anchor_styles::bottom);</div>
 <div class="line">      list_box1.items().push_back_range({{<span class="stringliteral">&quot;Standard&quot;</span>, loading_indicator_style::standard}, {<span class="stringliteral">&quot;System&quot;</span>, loading_indicator_style::system}, {<span class="stringliteral">&quot;Bar&quot;</span>, loading_indicator_style::bar}, {<span class="stringliteral">&quot;Circle bars&quot;</span>, loading_indicator_style::circle_bars}, {<span class="stringliteral">&quot;Circle blinks&quot;</span>, loading_indicator_style::circle_blinks}, {<span class="stringliteral">&quot;Five lines&quot;</span>, loading_indicator_style::five_lines}, {<span class="stringliteral">&quot;Five lines center&quot;</span>, loading_indicator_style::five_lines_center}, {<span class="stringliteral">&quot;Five lines chronological&quot;</span>, loading_indicator_style::five_lines_chronological}, {<span class="stringliteral">&quot;Five lines pulse&quot;</span>, loading_indicator_style::five_lines_pulse}, {<span class="stringliteral">&quot;Five lines wave&quot;</span>, loading_indicator_style::five_lines_wave}, {<span class="stringliteral">&quot;Pulse&quot;</span>, loading_indicator_style::pulse}, {<span class="stringliteral">&quot;Pulse outline&quot;</span>, loading_indicator_style::pulse_outline}, {<span class="stringliteral">&quot;Three balls&quot;</span>, loading_indicator_style::three_balls}, {<span class="stringliteral">&quot;Three balls bouncing&quot;</span>, loading_indicator_style::three_balls_bouncing}, {<span class="stringliteral">&quot;Three balls rotation&quot;</span>, loading_indicator_style::three_balls_rotation}});</div>
 <div class="line">      list_box1.selected_index_changed += [&amp;] {</div>
-<div class="line">        loading_indicator1.loading_indicator_style(any_cast&lt;forms::loading_indicator_style&gt;(list_box1.selected_item().tag()));</div>
+<div class="line">        loading_indicator1.loading_indicator_style(as&lt;forms::loading_indicator_style&gt;(list_box1.selected_item().tag()));</div>
 <div class="line">      };</div>
 <div class="line">      list_box1.selected_item(<span class="stringliteral">&quot;Standard&quot;</span>);</div>
 <div class="line">      </div>
@@ -2089,7 +2089,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>post_recreate_handle<
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 8 2025 21:49:26 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Apr 17 2025 11:16:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -22,12 +22,15 @@ var searchData=
   ['list_3c_20int32_20_3e_19',['list&lt; int32 &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
   ['list_3c_20xtd_3a_3abyte_20_3e_20',['list&lt; xtd::byte &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
   ['list_3c_20xtd_3a_3adrawing_3a_3acolor_20_3e_21',['list&lt; xtd::drawing::color &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
-  ['list_3c_20xtd_3a_3asptr_3c_20xtd_3a_3adiagnostics_3a_3atrace_5flistener_20_3e_20_3e_22',['list&lt; xtd::sptr&lt; xtd::diagnostics::trace_listener &gt; &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
-  ['list_3c_20xtd_3a_3atime_5fzone_5finfo_3a_3aadjustement_5frule_20_3e_23',['list&lt; xtd::time_zone_info::adjustement_rule &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
-  ['list_5fbox_24',['list_box',['../classxtd_1_1forms_1_1list__box.html',1,'xtd::forms']]],
-  ['list_5fcontrol_25',['list_control',['../classxtd_1_1forms_1_1list__control.html',1,'xtd::forms']]],
-  ['loading_5findicator_26',['loading_indicator',['../classxtd_1_1forms_1_1loading__indicator.html',1,'xtd::forms']]],
-  ['loading_5findicators_27',['loading_indicators',['../classxtd_1_1forms_1_1loading__indicators.html',1,'xtd::forms']]],
-  ['lock_5fguard_28',['lock_guard',['../classxtd_1_1threading_1_1lock__guard.html',1,'xtd::threading']]],
-  ['lock_5frecursion_5fexception_29',['lock_recursion_exception',['../classxtd_1_1threading_1_1lock__recursion__exception.html',1,'xtd::threading']]]
+  ['list_3c_20xtd_3a_3aforms_3a_3astyle_5fsheets_3a_3ashadow_20_3e_22',['list&lt; xtd::forms::style_sheets::shadow &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
+  ['list_3c_20xtd_3a_3ashared_5fptr_5fobject_3c_20xtd_3a_3aforms_3a_3amenu_5fitem_20_3e_20_3e_23',['list&lt; xtd::shared_ptr_object&lt; xtd::forms::menu_item &gt; &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
+  ['list_3c_20xtd_3a_3asptr_3c_20xtd_3a_3adiagnostics_3a_3atrace_5flistener_20_3e_20_3e_24',['list&lt; xtd::sptr&lt; xtd::diagnostics::trace_listener &gt; &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
+  ['list_3c_20xtd_3a_3atime_5fzone_5finfo_3a_3aadjustement_5frule_20_3e_25',['list&lt; xtd::time_zone_info::adjustement_rule &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
+  ['list_3c_20xtd_3a_3atunit_3a_3atest_20_3e_26',['list&lt; xtd::tunit::test &gt;',['../classxtd_1_1collections_1_1generic_1_1list.html',1,'xtd::collections::generic']]],
+  ['list_5fbox_27',['list_box',['../classxtd_1_1forms_1_1list__box.html',1,'xtd::forms']]],
+  ['list_5fcontrol_28',['list_control',['../classxtd_1_1forms_1_1list__control.html',1,'xtd::forms']]],
+  ['loading_5findicator_29',['loading_indicator',['../classxtd_1_1forms_1_1loading__indicator.html',1,'xtd::forms']]],
+  ['loading_5findicators_30',['loading_indicators',['../classxtd_1_1forms_1_1loading__indicators.html',1,'xtd::forms']]],
+  ['lock_5fguard_31',['lock_guard',['../classxtd_1_1threading_1_1lock__guard.html',1,'xtd::threading']]],
+  ['lock_5frecursion_5fexception_32',['lock_recursion_exception',['../classxtd_1_1threading_1_1lock__recursion__exception.html',1,'xtd::threading']]]
 ];

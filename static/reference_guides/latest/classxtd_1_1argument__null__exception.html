@@ -150,7 +150,7 @@ Inheritance diagram for xtd::argument_null_exception:</div>
 <tr class="memdesc:a80a8f64a1d54b8d1e028673009ef87f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throws an <a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">xtd::argument_null_exception</a> if argument is null.  <br /></td></tr>
 <tr class="separator:a80a8f64a1d54b8d1e028673009ef87f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76a0e7feb1594a2e2687622903507ac7"><td class="memTemplParams" colspan="2">template&lt;class object_t &gt; </td></tr>
-<tr class="memitem:a76a0e7feb1594a2e2687622903507ac7"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1argument__null__exception.html#a76a0e7feb1594a2e2687622903507ac7">throw_if_null</a> (const <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; object_t &gt; &amp;argument, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;param_name=<a class="el" href="classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e">xtd::string::empty_string</a>, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a>())</td></tr>
+<tr class="memitem:a76a0e7feb1594a2e2687622903507ac7"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1argument__null__exception.html#a76a0e7feb1594a2e2687622903507ac7">throw_if_null</a> (const <a class="el" href="group__types.html#ga169eb3d5ba9d4941bb0854c9bd5f954c">xtd::sptr</a>&lt; object_t &gt; &amp;argument, const <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> &amp;param_name=<a class="el" href="classxtd_1_1basic__string.html#a0ae9e9b0cbe9df3f4fc03f7e4682ef2e">xtd::string::empty_string</a>, const <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html">xtd::diagnostics::stack_frame</a> &amp;stack_frame=<a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29">xtd::diagnostics::stack_frame::current</a>())</td></tr>
 <tr class="memdesc:a76a0e7feb1594a2e2687622903507ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throws an <a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">xtd::argument_null_exception</a> if argument is null.  <br /></td></tr>
 <tr class="separator:a76a0e7feb1594a2e2687622903507ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0064eaceb7d0f222982fb80ff0c5eb5"><td class="memTemplParams" colspan="2">template&lt;class object_t &gt; </td></tr>
@@ -996,7 +996,7 @@ template&lt;class object_t &gt; </div>
         <tr>
           <td class="memname">static void xtd::argument_null_exception::throw_if_null </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a>&lt; object_t &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__types.html#ga169eb3d5ba9d4941bb0854c9bd5f954c">xtd::sptr</a>&lt; object_t &gt; &amp;&#160;</td>
           <td class="paramname"><em>argument</em>, </td>
         </tr>
         <tr>
@@ -1027,7 +1027,7 @@ template&lt;class object_t &gt; </div>
 <p>Throws an <a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">xtd::argument_null_exception</a> if argument is null. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">argument</td><td>The <a class="el" href="group__types.html#gac95736233f2252af878f18687efabb92" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> type argument to validate as non-null. </td></tr>
+    <tr><td class="paramname">argument</td><td>The <a class="el" href="group__types.html#ga169eb3d5ba9d4941bb0854c9bd5f954c" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> type argument to validate as non-null. </td></tr>
     <tr><td class="paramname">param_name</td><td>(optional) The name of the parameter with which <code>argument</code> corresponds. If you omit this parameter, the name of <code>argument</code> is used. </td></tr>
     <tr><td class="paramname">stack_frame</td><td>(optional) Contains current stack frame about member name, file path and line number in the file where the exception is occurred. Typically <a class="el" href="classxtd_1_1diagnostics_1_1stack__frame.html#a70707f29089ae94fa25b21466f7ebd29" title="Crates a new xtd::diagnostics::stack_frame object corresponding to the location of the call site.">xtd::diagnostics::stack_frame::current()</a>. </td></tr>
   </table>
@@ -1109,7 +1109,7 @@ template&lt;class object_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 8 2025 21:49:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Apr 17 2025 11:16:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

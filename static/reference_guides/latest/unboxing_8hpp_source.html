@@ -146,13 +146,13 @@ $(function() {
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keyword">template</span>&lt;&gt;</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a>* unboxing&lt;char8&gt;(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; value) {</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">thread_local</span> <span class="keyword">static</span> std::u8string result;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    result = <a class="code hl_function" href="classxtd_1_1convert__string.html#a14a500b8395de6f4afe0a8f9e2688206">convert_string::to_u8string</a>(value);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    result = <a class="code hl_function" href="classxtd_1_1convert__string.html#a4807752ff30583c579e2097a52f99adf">convert_string::to_u8string</a>(value);</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">return</span> result.c_str();</div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  }</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keyword">template</span>&lt;&gt;</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#ga1259090c8918e75847a8cb2a64b8912a">char8</a>* unboxing&lt;char8&gt;(<span class="keywordtype">string</span>&amp; value) {</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">thread_local</span> <span class="keyword">static</span> std::u8string result;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    result = <a class="code hl_function" href="classxtd_1_1convert__string.html#a14a500b8395de6f4afe0a8f9e2688206">convert_string::to_u8string</a>(value);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    result = <a class="code hl_function" href="classxtd_1_1convert__string.html#a4807752ff30583c579e2097a52f99adf">convert_string::to_u8string</a>(value);</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">return</span> result.c_str();</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  }</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#endif</span></div>
@@ -160,39 +160,39 @@ $(function() {
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="keyword">template</span>&lt;&gt;</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">char16</a>* unboxing&lt;char16&gt;(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; value) {</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keyword">thread_local</span> <span class="keyword">static</span> std::u16string result;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    result = <a class="code hl_function" href="classxtd_1_1convert__string.html#ae350e50cb07c51de6c2e76a06a05e582">convert_string::to_u16string</a>(value);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    result = <a class="code hl_function" href="classxtd_1_1convert__string.html#a25ccea0ebba1d42f2b96d5b95a07ac71">convert_string::to_u16string</a>(value);</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">return</span> result.c_str();</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  }</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="keyword">template</span>&lt;&gt;</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#ga39d5c4947c807e5f78b8a9abe3692570">char16</a>* unboxing&lt;char16&gt;(<span class="keywordtype">string</span>&amp; value) {</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keyword">thread_local</span> <span class="keyword">static</span> std::u16string result;</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    result = <a class="code hl_function" href="classxtd_1_1convert__string.html#ae350e50cb07c51de6c2e76a06a05e582">convert_string::to_u16string</a>(value);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    result = <a class="code hl_function" href="classxtd_1_1convert__string.html#a25ccea0ebba1d42f2b96d5b95a07ac71">convert_string::to_u16string</a>(value);</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">return</span> result.c_str();</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  }</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  </div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keyword">template</span>&lt;&gt;</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">char32</a>* unboxing&lt;char32&gt;(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; value) {</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keyword">thread_local</span> <span class="keyword">static</span> std::u32string result;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    result = <a class="code hl_function" href="classxtd_1_1convert__string.html#a0f06101ea0fbb189437ceb3397a0c0f6">convert_string::to_u32string</a>(value);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    result = <a class="code hl_function" href="classxtd_1_1convert__string.html#abf8ee4cd628515c01de501acfca5489b">convert_string::to_u32string</a>(value);</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">return</span> result.c_str();</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  }</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keyword">template</span>&lt;&gt;</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">char32</a>* unboxing&lt;char32&gt;(<span class="keywordtype">string</span>&amp; value) {</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keyword">thread_local</span> <span class="keyword">static</span> std::u32string result;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    result = <a class="code hl_function" href="classxtd_1_1convert__string.html#a0f06101ea0fbb189437ceb3397a0c0f6">convert_string::to_u32string</a>(value);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    result = <a class="code hl_function" href="classxtd_1_1convert__string.html#abf8ee4cd628515c01de501acfca5489b">convert_string::to_u32string</a>(value);</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">return</span> result.c_str();</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  }</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  </div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keyword">template</span>&lt;&gt;</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#ga155357d92cf162b71b396e46accee518">wchar</a>* unboxing&lt;wchar&gt;(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; value) {</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keyword">thread_local</span> <span class="keyword">static</span> std::wstring result;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    result = <a class="code hl_function" href="classxtd_1_1convert__string.html#af89e7f545d98c65ae2837f8768846986">convert_string::to_wstring</a>(value);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    result = <a class="code hl_function" href="classxtd_1_1convert__string.html#ade8cf1340ff0ce5b233ef0794b51a5b5">convert_string::to_wstring</a>(value);</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">return</span> result.c_str();</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  }</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keyword">template</span>&lt;&gt;</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_typedef" href="group__types.html#ga155357d92cf162b71b396e46accee518">wchar</a>* unboxing&lt;wchar&gt;(<span class="keywordtype">string</span>&amp; value) {</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keyword">thread_local</span> <span class="keyword">static</span> std::wstring result;</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    result = <a class="code hl_function" href="classxtd_1_1convert__string.html#af89e7f545d98c65ae2837f8768846986">convert_string::to_wstring</a>(value);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    result = <a class="code hl_function" href="classxtd_1_1convert__string.html#ade8cf1340ff0ce5b233ef0794b51a5b5">convert_string::to_wstring</a>(value);</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="keywordflow">return</span> result.c_str();</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  }</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>  </div>
@@ -269,10 +269,10 @@ $(function() {
 <div class="ttc" id="achar32_8hpp_html"><div class="ttname"><a href="char32_8hpp.html">char32.hpp</a></div><div class="ttdoc">Contains xtd::char32 type.</div></div>
 <div class="ttc" id="achar8_8hpp_html"><div class="ttname"><a href="char8_8hpp.html">char8.hpp</a></div><div class="ttdoc">Contains xtd::char8 type.</div></div>
 <div class="ttc" id="achar_8hpp_html"><div class="ttname"><a href="char_8hpp.html">char.hpp</a></div><div class="ttdoc">Contains xtd::char_ type.</div></div>
-<div class="ttc" id="aclassxtd_1_1convert__string_html_a0f06101ea0fbb189437ceb3397a0c0f6"><div class="ttname"><a href="classxtd_1_1convert__string.html#a0f06101ea0fbb189437ceb3397a0c0f6">xtd::convert_string::to_u32string</a></div><div class="ttdeci">static std::u32string to_u32string(const std::string &amp;str) noexcept</div><div class="ttdoc">Converts std::string to std::u32string.</div></div>
-<div class="ttc" id="aclassxtd_1_1convert__string_html_a14a500b8395de6f4afe0a8f9e2688206"><div class="ttname"><a href="classxtd_1_1convert__string.html#a14a500b8395de6f4afe0a8f9e2688206">xtd::convert_string::to_u8string</a></div><div class="ttdeci">static std::u8string to_u8string(const std::string &amp;str) noexcept</div><div class="ttdoc">Converts std::string to std::u8string.</div></div>
-<div class="ttc" id="aclassxtd_1_1convert__string_html_ae350e50cb07c51de6c2e76a06a05e582"><div class="ttname"><a href="classxtd_1_1convert__string.html#ae350e50cb07c51de6c2e76a06a05e582">xtd::convert_string::to_u16string</a></div><div class="ttdeci">static std::u16string to_u16string(const std::string &amp;str) noexcept</div><div class="ttdoc">Converts std::string to std::u16string.</div></div>
-<div class="ttc" id="aclassxtd_1_1convert__string_html_af89e7f545d98c65ae2837f8768846986"><div class="ttname"><a href="classxtd_1_1convert__string.html#af89e7f545d98c65ae2837f8768846986">xtd::convert_string::to_wstring</a></div><div class="ttdeci">static std::wstring to_wstring(const std::string &amp;str) noexcept</div><div class="ttdoc">Converts std::string to std::wstring.</div></div>
+<div class="ttc" id="aclassxtd_1_1convert__string_html_a25ccea0ebba1d42f2b96d5b95a07ac71"><div class="ttname"><a href="classxtd_1_1convert__string.html#a25ccea0ebba1d42f2b96d5b95a07ac71">xtd::convert_string::to_u16string</a></div><div class="ttdeci">static xtd::u16string to_u16string(const xtd::string &amp;str) noexcept</div><div class="ttdoc">Converts xtd::string to xtd::u16string.</div></div>
+<div class="ttc" id="aclassxtd_1_1convert__string_html_a4807752ff30583c579e2097a52f99adf"><div class="ttname"><a href="classxtd_1_1convert__string.html#a4807752ff30583c579e2097a52f99adf">xtd::convert_string::to_u8string</a></div><div class="ttdeci">static xtd::u8string to_u8string(const xtd::string &amp;str) noexcept</div><div class="ttdoc">Converts xtd::string to xtd::u8string.</div></div>
+<div class="ttc" id="aclassxtd_1_1convert__string_html_abf8ee4cd628515c01de501acfca5489b"><div class="ttname"><a href="classxtd_1_1convert__string.html#abf8ee4cd628515c01de501acfca5489b">xtd::convert_string::to_u32string</a></div><div class="ttdeci">static xtd::u32string to_u32string(const xtd::string &amp;str) noexcept</div><div class="ttdoc">Converts xtd::string to xtd::u32string.</div></div>
+<div class="ttc" id="aclassxtd_1_1convert__string_html_ade8cf1340ff0ce5b233ef0794b51a5b5"><div class="ttname"><a href="classxtd_1_1convert__string.html#ade8cf1340ff0ce5b233ef0794b51a5b5">xtd::convert_string::to_wstring</a></div><div class="ttdeci">static xtd::wstring to_wstring(const xtd::string &amp;str) noexcept</div><div class="ttdoc">Converts xtd::string to xtd::wstring.</div></div>
 <div class="ttc" id="aclassxtd_1_1helpers_1_1throw__helper_html_a4fcf5154d41ae7e68038268ea89492d6"><div class="ttname"><a href="classxtd_1_1helpers_1_1throw__helper.html#a4fcf5154d41ae7e68038268ea89492d6">xtd::helpers::throw_helper::throws</a></div><div class="ttdeci">static void throws(xtd::helpers::exception_case exception_case, const source_location &amp;location=source_location::current())</div><div class="ttdoc">Throws an exption with specified exception case.</div></div>
 <div class="ttc" id="adecimal_8hpp_html"><div class="ttname"><a href="decimal_8hpp.html">decimal.hpp</a></div><div class="ttdoc">Contains xtd::decimal type.</div></div>
 <div class="ttc" id="adouble_8hpp_html"><div class="ttname"><a href="double_8hpp.html">double.hpp</a></div><div class="ttdoc">Contains xtd::double_ type.</div></div>
@@ -312,7 +312,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 8 2025 21:49:15 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Apr 17 2025 11:16:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
