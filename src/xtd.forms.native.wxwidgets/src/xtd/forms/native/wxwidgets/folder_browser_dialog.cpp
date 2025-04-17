@@ -5,6 +5,7 @@
 #include <Windowsx.h>
 #include <Commctrl.h>
 #include <shlobj.h>
+#undef interface
 #endif
 
 #define __XTD_FORMS_NATIVE_LIBRARY__

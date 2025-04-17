@@ -8,6 +8,7 @@
 #define NOMINMAX
 #include <Windows.h>
 #include <Windowsx.h>
+#undef interface
 #endif
 
 using namespace xtd;

@@ -44,7 +44,7 @@ namespace xtd {
     
     /// @{
     /// @brief Represents the empty xtd::shared_ptr_object. This field is constant.
-    inline static const shared_ptr_object empty;
+    static const shared_ptr_object empty;
     /// @}
 
     /// @name Public Constructors
@@ -261,5 +261,8 @@ namespace xtd {
     friend class shared_ptr_object;
     mutable base_type ptr_;
   };
+
+  template<class type_t>
+  inline const shared_ptr_object<type_t>  shared_ptr_object<type_t>::empty;
   /// @}
 }
