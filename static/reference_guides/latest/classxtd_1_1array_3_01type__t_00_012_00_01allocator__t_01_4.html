@@ -115,7 +115,7 @@ Inheritance diagram for xtd::array&lt; type_t, 2, allocator_t &gt;:</div>
 class xtd::array&lt; type_t, 2, allocator_t &gt;</div><p>Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the base class for all arrays. </p>
 <dl class="section user"><dt>Definition</dt><dd><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t, xtd::size rank_, <span class="keyword">class</span> allocator_t&gt;</div>
 <div class="line"><span class="keyword">class </span><a class="code hl_class" href="classxtd_1_1array.html">array</a> : <span class="keyword">public</span> <a class="code hl_class" href="classxtd_1_1basic__array.html">xtd::basic_array</a>&lt;type_t, allocator_t&gt;;</div>
-<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:59</div></div>
+<div class="ttc" id="aclassxtd_1_1array_html"><div class="ttname"><a href="classxtd_1_1array.html">xtd::array</a></div><div class="ttdoc">Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...</div><div class="ttdef"><b>Definition</b> array.hpp:61</div></div>
 <div class="ttc" id="aclassxtd_1_1basic__array_html"><div class="ttname"><a href="classxtd_1_1basic__array.html">xtd::basic_array</a></div><div class="ttdoc">Base object that represent array.</div><div class="ttdef"><b>Definition</b> basic_array.hpp:44</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Header</dt><dd><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/array&gt;</span></div>
@@ -198,6 +198,9 @@ The <a class="el" href="classxtd_1_1array.html" title="Provides methods for crea
 <tr class="memitem:a5d014f9d50ef65e9ab7042391b5cba73"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1array_3_01type__t_00_012_00_01allocator__t_01_4.html#a5d014f9d50ef65e9ab7042391b5cba73">array</a> (<a class="el" href="classxtd_1_1array_3_01type__t_00_012_00_01allocator__t_01_4.html#a4731ac857fc328924a4135892eed414d">size_type</a> length1, <a class="el" href="classxtd_1_1array_3_01type__t_00_012_00_01allocator__t_01_4.html#a4731ac857fc328924a4135892eed414d">size_type</a> length2)</td></tr>
 <tr class="memdesc:a5d014f9d50ef65e9ab7042391b5cba73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the array class with lengths for each rank specified.  <br /></td></tr>
 <tr class="separator:a5d014f9d50ef65e9ab7042391b5cba73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7906f186e47a3605ebeb896a3aa3c7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1array_3_01type__t_00_012_00_01allocator__t_01_4.html#ad7906f186e47a3605ebeb896a3aa3c7c">array</a> (<a class="el" href="classxtd_1_1array_3_01type__t_00_012_00_01allocator__t_01_4.html#a4731ac857fc328924a4135892eed414d">size_type</a> length1, <a class="el" href="classxtd_1_1array_3_01type__t_00_012_00_01allocator__t_01_4.html#a4731ac857fc328924a4135892eed414d">size_type</a> length2, const <a class="el" href="classxtd_1_1array_3_01type__t_00_012_00_01allocator__t_01_4.html#abf22a43ee1463d998175ca57f7313afd">value_type</a> &amp;value)</td></tr>
+<tr class="memdesc:ad7906f186e47a3605ebeb896a3aa3c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the array class with lengths for each rank specified and default value.  <br /></td></tr>
+<tr class="separator:ad7906f186e47a3605ebeb896a3aa3c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a956492be47f181fa4a24b1e4557fe224"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1array_3_01type__t_00_012_00_01allocator__t_01_4.html#a956492be47f181fa4a24b1e4557fe224">array</a> (std::initializer_list&lt; std::initializer_list&lt; type_t &gt; &gt; <a class="el" href="classxtd_1_1basic__array.html#ab5d7c124db651f72d7f2b4971c5862f5">items</a>)</td></tr>
 <tr class="memdesc:a956492be47f181fa4a24b1e4557fe224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs the container with the contents of the specified initializer list.  <br /></td></tr>
 <tr class="separator:a956492be47f181fa4a24b1e4557fe224"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -890,7 +893,7 @@ template&lt;class type_t , class allocator_t &gt; </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad1b6476ed19e4f2392f5e0727e40ecd4" name="ad1b6476ed19e4f2392f5e0727e40ecd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1b6476ed19e4f2392f5e0727e40ecd4">&#9670;&#160;</a></span>array() <span class="overload">[1/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1b6476ed19e4f2392f5e0727e40ecd4">&#9670;&#160;</a></span>array() <span class="overload">[1/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -921,7 +924,7 @@ template&lt;class type_t , class allocator_t &gt; </div>
 </div>
 </div>
 <a id="af6f3d205f68246a0f76284903054cf02" name="af6f3d205f68246a0f76284903054cf02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6f3d205f68246a0f76284903054cf02">&#9670;&#160;</a></span>array() <span class="overload">[2/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af6f3d205f68246a0f76284903054cf02">&#9670;&#160;</a></span>array() <span class="overload">[2/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -957,7 +960,7 @@ template&lt;class type_t , class allocator_t &gt; </div>
 </div>
 </div>
 <a id="a86a04cda1d25b2e94216357ee5a68e5e" name="a86a04cda1d25b2e94216357ee5a68e5e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a86a04cda1d25b2e94216357ee5a68e5e">&#9670;&#160;</a></span>array() <span class="overload">[3/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a86a04cda1d25b2e94216357ee5a68e5e">&#9670;&#160;</a></span>array() <span class="overload">[3/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -993,7 +996,7 @@ template&lt;class type_t , class allocator_t &gt; </div>
 </div>
 </div>
 <a id="a2cda2b20e3cd14933389339e1b70a58e" name="a2cda2b20e3cd14933389339e1b70a58e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2cda2b20e3cd14933389339e1b70a58e">&#9670;&#160;</a></span>array() <span class="overload">[4/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cda2b20e3cd14933389339e1b70a58e">&#9670;&#160;</a></span>array() <span class="overload">[4/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1029,7 +1032,7 @@ template&lt;class type_t , class allocator_t &gt; </div>
 </div>
 </div>
 <a id="a18c8c6ffc7741e5b8806d8a1faf9881a" name="a18c8c6ffc7741e5b8806d8a1faf9881a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a18c8c6ffc7741e5b8806d8a1faf9881a">&#9670;&#160;</a></span>array() <span class="overload">[5/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a18c8c6ffc7741e5b8806d8a1faf9881a">&#9670;&#160;</a></span>array() <span class="overload">[5/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1065,7 +1068,7 @@ template&lt;class type_t , class allocator_t &gt; </div>
 </div>
 </div>
 <a id="a5d014f9d50ef65e9ab7042391b5cba73" name="a5d014f9d50ef65e9ab7042391b5cba73"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d014f9d50ef65e9ab7042391b5cba73">&#9670;&#160;</a></span>array() <span class="overload">[6/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d014f9d50ef65e9ab7042391b5cba73">&#9670;&#160;</a></span>array() <span class="overload">[6/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1113,8 +1116,64 @@ template&lt;class type_t , class allocator_t &gt; </div>
 
 </div>
 </div>
+<a id="ad7906f186e47a3605ebeb896a3aa3c7c" name="ad7906f186e47a3605ebeb896a3aa3c7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7906f186e47a3605ebeb896a3aa3c7c">&#9670;&#160;</a></span>array() <span class="overload">[7/8]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t , class allocator_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; type_t, 2, allocator_t &gt;::array </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1array_3_01type__t_00_012_00_01allocator__t_01_4.html#a4731ac857fc328924a4135892eed414d">size_type</a>&#160;</td>
+          <td class="paramname"><em>length1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classxtd_1_1array_3_01type__t_00_012_00_01allocator__t_01_4.html#a4731ac857fc328924a4135892eed414d">size_type</a>&#160;</td>
+          <td class="paramname"><em>length2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classxtd_1_1array_3_01type__t_00_012_00_01allocator__t_01_4.html#abf22a43ee1463d998175ca57f7313afd">value_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the array class with lengths for each rank specified and default value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length1</td><td>the length for the first rank. </td></tr>
+    <tr><td class="paramname">length2</td><td>the length for the second rank. </td></tr>
+    <tr><td class="paramname">value</td><td>The default value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section remark"><dt>Remarks</dt><dd>The array class is not thread safe. </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates different methods to create an array. <div class="fragment"></div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="a956492be47f181fa4a24b1e4557fe224" name="a956492be47f181fa4a24b1e4557fe224"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a956492be47f181fa4a24b1e4557fe224">&#9670;&#160;</a></span>array() <span class="overload">[7/7]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a956492be47f181fa4a24b1e4557fe224">&#9670;&#160;</a></span>array() <span class="overload">[8/8]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1190,7 +1249,7 @@ template&lt;class type_t , class allocator_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 8 2025 21:49:19 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Apr 17 2025 11:16:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

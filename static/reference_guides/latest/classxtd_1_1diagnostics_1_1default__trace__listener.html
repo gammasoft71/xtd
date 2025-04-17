@@ -422,7 +422,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="line"><a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#a8e4635956642fba7833b8bbdff59a0c9">trace::listeners</a>().<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#aeb4b6f7a623628cf789d151f7f0a17bd">erase</a>(<a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#a8e4635956642fba7833b8bbdff59a0c9">trace::listeners</a>().begin());</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Create and add a new default trace listener.</span></div>
-<div class="line"><a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;default_trace_listener&gt;</a> default_listener = xtd::new_sptr&lt;default_trace_listener&gt;();</div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1shared__ptr__object.html">xtd::sptr&lt;default_trace_listener&gt;</a> default_listener = xtd::new_sptr&lt;default_trace_listener&gt;();</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#a8e4635956642fba7833b8bbdff59a0c9">trace::listeners</a>().<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#adf868f38f4e81d03746e453bab03f4c5">push_back</a>(default_listener);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Assign the log file specification from the command line, if entered.</span></div>
@@ -431,7 +431,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_adf868f38f4e81d03746e453bab03f4c5"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#adf868f38f4e81d03746e453bab03f4c5">xtd::collections::generic::list::push_back</a></div><div class="ttdeci">virtual void push_back(const type_t &amp;value)</div><div class="ttdoc">Appends the given element value to the end of the container.</div><div class="ttdef"><b>Definition</b> list.hpp:1119</div></div>
 <div class="ttc" id="aclassxtd_1_1collections_1_1generic_1_1list_html_aeb4b6f7a623628cf789d151f7f0a17bd"><div class="ttname"><a href="classxtd_1_1collections_1_1generic_1_1list.html#aeb4b6f7a623628cf789d151f7f0a17bd">xtd::collections::generic::list::erase</a></div><div class="ttdeci">virtual iterator erase(const_iterator pos)</div><div class="ttdoc">Erases the specified elements from the container.</div><div class="ttdef"><b>Definition</b> list.hpp:735</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1trace_html_a8e4635956642fba7833b8bbdff59a0c9"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1trace.html#a8e4635956642fba7833b8bbdff59a0c9">xtd::diagnostics::trace::listeners</a></div><div class="ttdeci">static listener_collection &amp; listeners() noexcept</div><div class="ttdoc">Gets the collection of listeners that is monitoring the trace output.</div></div>
-<div class="ttc" id="agroup__types_html_gac95736233f2252af878f18687efabb92"><div class="ttname"><a href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr</a></div><div class="ttdeci">std::shared_ptr&lt; type_t &gt; sptr</div><div class="ttdoc">The xtd::sptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> sptr.hpp:25</div></div>
+<div class="ttc" id="aclassxtd_1_1shared__ptr__object_html"><div class="ttname"><a href="classxtd_1_1shared__ptr__object.html">xtd::shared_ptr_object</a></div><div class="ttdoc">The xtd::shared_ptr_object is a shared pointer as std::shared_ptr.</div><div class="ttdef"><b>Definition</b> shared_ptr_object.hpp:30</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -548,7 +548,7 @@ Additional Inherited Members</h2></td></tr>
 <p>Gets the name of a log file to write trace or debug messages to. </p>
 <dl class="section return"><dt>Returns</dt><dd>The name of a log file to write trace or debug messages to. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example creates a new <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">xtd::diagnostics::default_trace_listener</a>, adds it to the <a class="el" href="classxtd_1_1diagnostics_1_1trace.html#a8e4635956642fba7833b8bbdff59a0c9" title="Gets the collection of listeners that is monitoring the trace output.">xtd::diagnostics::trace::listeners</a> collection, and sets the <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html#ae2c8042b6b4ba4894bb9b9c02110fce7" title="Gets the name of a log file to write trace or debug messages to.">xtd::diagnostics::default_trace_listener::log_file_name</a> property to the log file specified in the command-line arguments. <div class="fragment"><div class="line"><span class="comment">// Create and add a new default trace listener.</span></div>
-<div class="line"><a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;default_trace_listener&gt;</a> default_listener = xtd::new_sptr&lt;default_trace_listener&gt;();</div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1shared__ptr__object.html">xtd::sptr&lt;default_trace_listener&gt;</a> default_listener = xtd::new_sptr&lt;default_trace_listener&gt;();</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#a8e4635956642fba7833b8bbdff59a0c9">trace::listeners</a>().<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#adf868f38f4e81d03746e453bab03f4c5">push_back</a>(default_listener);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Assign the log file specification from the command line, if entered.</span></div>
@@ -590,7 +590,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example creates a new <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html" title="Provides the default output methods and behavior for tracing.">xtd::diagnostics::default_trace_listener</a>, adds it to the <a class="el" href="classxtd_1_1diagnostics_1_1trace.html#a8e4635956642fba7833b8bbdff59a0c9" title="Gets the collection of listeners that is monitoring the trace output.">xtd::diagnostics::trace::listeners</a> collection, and sets the <a class="el" href="classxtd_1_1diagnostics_1_1default__trace__listener.html#ae2c8042b6b4ba4894bb9b9c02110fce7" title="Gets the name of a log file to write trace or debug messages to.">xtd::diagnostics::default_trace_listener::log_file_name</a> property to the log file specified in the command-line arguments. <div class="fragment"><div class="line"><span class="comment">// Create and add a new default trace listener.</span></div>
-<div class="line"><a class="code hl_typedef" href="group__types.html#gac95736233f2252af878f18687efabb92">xtd::sptr&lt;default_trace_listener&gt;</a> default_listener = xtd::new_sptr&lt;default_trace_listener&gt;();</div>
+<div class="line"><a class="code hl_class" href="classxtd_1_1shared__ptr__object.html">xtd::sptr&lt;default_trace_listener&gt;</a> default_listener = xtd::new_sptr&lt;default_trace_listener&gt;();</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1diagnostics_1_1trace.html#a8e4635956642fba7833b8bbdff59a0c9">trace::listeners</a>().<a class="code hl_function" href="classxtd_1_1collections_1_1generic_1_1list.html#adf868f38f4e81d03746e453bab03f4c5">push_back</a>(default_listener);</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Assign the log file specification from the command line, if entered.</span></div>
@@ -738,7 +738,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 8 2025 21:49:21 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Apr 17 2025 11:16:35 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
