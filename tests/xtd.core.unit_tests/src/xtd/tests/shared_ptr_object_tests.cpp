@@ -223,10 +223,11 @@ namespace xtd::tests {
       auto s2 = shared_ptr_object<string> {new string {"value"}};
       auto s3 = shared_ptr_object<string> {new string {"other"}};
       auto s4 = shared_ptr_object<string> {new string {"other"}};
-      assert::are_equal(s2.get_hash_code(), s1.get_hash_code());
+      assert::are_equal(hash_code::combine(s1.to_pointer()), s1.get_hash_code());
+      assert::are_not_equal(s2.get_hash_code(), s1.get_hash_code());
       assert::are_not_equal(s3.get_hash_code(), s1.get_hash_code());
       assert::are_not_equal(s4.get_hash_code(), s1.get_hash_code());
-      assert::are_equal(s3.get_hash_code(), s4.get_hash_code());
+      assert::are_not_equal(s4.get_hash_code(), s3.get_hash_code());
     }
     
     void test_method_(reset) {

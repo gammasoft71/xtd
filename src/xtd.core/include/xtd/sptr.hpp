@@ -22,6 +22,6 @@ namespace xtd {
   /// delete_ptr(version); // Not mandatory.
   /// @endcode
   template<class type_t>
-  using sptr = std::shared_ptr<type_t>;
+  using sptr = xtd::shared_ptr_object<type_t>;
   /// @}
 }

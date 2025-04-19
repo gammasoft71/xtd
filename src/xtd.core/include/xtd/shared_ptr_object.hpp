@@ -64,23 +64,31 @@ namespace xtd {
     /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified pointer.
     /// @param value The pointer.
     template<class pointer_t>
-    shared_ptr_object(pointer_t* ptr) noexcept : ptr_ {ptr} {}
+    explicit shared_ptr_object(pointer_t* ptr) noexcept : ptr_ {ptr} {}
     /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified shared pointer object.
     /// @param value The shared pointer object.
     template<class value_t>
-    explicit shared_ptr_object(shared_ptr_object<value_t>&& value) noexcept : ptr_ {std::move(value.ptr_)} {}
+    shared_ptr_object(shared_ptr_object<value_t>&& value) noexcept : ptr_ {std::move(value.ptr_)} {}
     /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified shared pointer object.
     /// @param value The shared pointer object.
     template<class value_t>
-    explicit shared_ptr_object(const shared_ptr_object<value_t>& value) noexcept : ptr_ {value.ptr_} {}
+    shared_ptr_object(const shared_ptr_object<value_t>& value) noexcept : ptr_ {value.ptr_} {}
     /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified shared pointer object.
     /// @param value The shared pointer object.
     template<class value_t>
-    explicit shared_ptr_object(base_type&& value) noexcept : ptr_ {std::move(value)} {}
+    shared_ptr_object(base_type&& value) noexcept : ptr_ {std::move(value)} {}
     /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified shared pointer object.
     /// @param value The shared pointer object.
     template<class value_t>
-    explicit shared_ptr_object(const std::shared_ptr<value_t>& value) noexcept : ptr_ {value} {}
+    shared_ptr_object(const std::shared_ptr<value_t>& value) noexcept : ptr_ {value} {}
+    /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified weak pointer object.
+    /// @param value The weak pointer object.
+    template<class value_t>
+    explicit shared_ptr_object(const std::weak_ptr<value_t>& value) noexcept : ptr_ {value} {}
+    /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified unique pointer object.
+    /// @param value The unique pointer object.
+    template<class value_t, class deleter_t>
+    shared_ptr_object(std::unique_ptr<value_t, deleter_t>&& value) : ptr_ {std::move(value)} {}
     /// @}
 
     /// @name Public Properties
@@ -145,7 +153,7 @@ namespace xtd {
 
     /// @brief Serves as a hash function for a particular type.
     /// @return size_t A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override {return (ptr_ ? xtd::hash_code::combine(*ptr_) : 0);}
+    xtd::size get_hash_code() const noexcept override {return (ptr_ ? xtd::hash_code::combine(to_pointer()) : 0);}
 
     /// @brief Reset the current object. Set the current object to null.
     /// @remarks xtd::shared_ptr_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
@@ -172,7 +180,7 @@ namespace xtd {
     
     /// @brief Gets the stored pointer.
     /// @return The stored pointer.
-    type_t* to_pointer() const noexcept {return get();}
+    element_type* to_pointer() const noexcept {return get();}
 
     /// @brief Gets the stored pointer with specified `target_t` type.
     /// @return The stored pointer.
@@ -254,6 +262,10 @@ namespace xtd {
     /// @brief Returns the underlying base type pointer.
     /// @return The underlying base type pointer.
     operator base_type() const noexcept {return ptr_;}
+
+    /// @brief Returns a weak type pointer.
+    /// @return A weak type pointer.
+    operator weak_type() const noexcept {return weak_type {ptr_};}
     /// @}
 
   private:
