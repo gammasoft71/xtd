@@ -132,9 +132,9 @@ class xtd::shared_ptr_object&lt; type_t &gt;</div><p>The <a class="el" href="cla
 <tr class="separator:a8ea2fefd0faf4804129df6d52cdc0a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Fields</h2></td></tr>
-<tr class="memitem:a6be0ba4fb8e446d3085d3973519dfc12"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1shared__ptr__object.html">shared_ptr_object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1shared__ptr__object.html#a6be0ba4fb8e446d3085d3973519dfc12">empty</a></td></tr>
-<tr class="memdesc:a6be0ba4fb8e446d3085d3973519dfc12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the empty <a class="el" href="classxtd_1_1shared__ptr__object.html" title="The xtd::shared_ptr_object is a shared pointer as std::shared_ptr.">xtd::shared_ptr_object</a>. This field is constant.  <br /></td></tr>
-<tr class="separator:a6be0ba4fb8e446d3085d3973519dfc12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac286b18d5d7932e2cd10e89ef47be949"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="classxtd_1_1shared__ptr__object.html">shared_ptr_object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1shared__ptr__object.html#ac286b18d5d7932e2cd10e89ef47be949">empty</a></td></tr>
+<tr class="memdesc:ac286b18d5d7932e2cd10e89ef47be949"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the empty <a class="el" href="classxtd_1_1shared__ptr__object.html" title="The xtd::shared_ptr_object is a shared pointer as std::shared_ptr.">xtd::shared_ptr_object</a>. This field is constant.  <br /></td></tr>
+<tr class="separator:ac286b18d5d7932e2cd10e89ef47be949"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Constructors</h2></td></tr>
 <tr class="memitem:a2d185b13b9f42a01a2dbd7f33cdab40f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1shared__ptr__object.html#a2d185b13b9f42a01a2dbd7f33cdab40f">shared_ptr_object</a> () noexcept=default</td></tr>
@@ -169,6 +169,14 @@ class xtd::shared_ptr_object&lt; type_t &gt;</div><p>The <a class="el" href="cla
 <tr class="memitem:aa1ae8ac07cde4298ea2a179dae80c46b"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1shared__ptr__object.html#aa1ae8ac07cde4298ea2a179dae80c46b">shared_ptr_object</a> (const std::shared_ptr&lt; value_t &gt; &amp;value) noexcept</td></tr>
 <tr class="memdesc:aa1ae8ac07cde4298ea2a179dae80c46b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1shared__ptr__object.html" title="The xtd::shared_ptr_object is a shared pointer as std::shared_ptr.">xtd::shared_ptr_object</a> class with specified shared pointer object.  <br /></td></tr>
 <tr class="separator:aa1ae8ac07cde4298ea2a179dae80c46b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cda47cee2058ac342a492de3f358674"><td class="memTemplParams" colspan="2">template&lt;class value_t &gt; </td></tr>
+<tr class="memitem:a5cda47cee2058ac342a492de3f358674"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1shared__ptr__object.html#a5cda47cee2058ac342a492de3f358674">shared_ptr_object</a> (const std::weak_ptr&lt; value_t &gt; &amp;value) noexcept</td></tr>
+<tr class="memdesc:a5cda47cee2058ac342a492de3f358674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1shared__ptr__object.html" title="The xtd::shared_ptr_object is a shared pointer as std::shared_ptr.">xtd::shared_ptr_object</a> class with specified weak pointer object.  <br /></td></tr>
+<tr class="separator:a5cda47cee2058ac342a492de3f358674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a6ddc8aeb6f57ba45fd9f267bfd171b"><td class="memTemplParams" colspan="2">template&lt;class value_t , class deleter_t &gt; </td></tr>
+<tr class="memitem:a2a6ddc8aeb6f57ba45fd9f267bfd171b"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1shared__ptr__object.html#a2a6ddc8aeb6f57ba45fd9f267bfd171b">shared_ptr_object</a> (std::unique_ptr&lt; value_t, deleter_t &gt; &amp;&amp;value)</td></tr>
+<tr class="memdesc:a2a6ddc8aeb6f57ba45fd9f267bfd171b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="classxtd_1_1shared__ptr__object.html" title="The xtd::shared_ptr_object is a shared pointer as std::shared_ptr.">xtd::shared_ptr_object</a> class with specified unique pointer object.  <br /></td></tr>
+<tr class="separator:a2a6ddc8aeb6f57ba45fd9f267bfd171b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Properties</h2></td></tr>
 <tr class="memitem:a3837a73976e04f1a7081007314e43e85"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1shared__ptr__object.html#a3837a73976e04f1a7081007314e43e85">is_unique</a> () const noexcept</td></tr>
@@ -226,9 +234,9 @@ class xtd::shared_ptr_object&lt; type_t &gt;</div><p>The <a class="el" href="cla
 <tr class="memitem:ae7e7f1a95447549769a356d68e74a47f"><td class="memTemplItemLeft" align="right" valign="top">target_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1shared__ptr__object.html#ae7e7f1a95447549769a356d68e74a47f">to_object</a> () const</td></tr>
 <tr class="memdesc:ae7e7f1a95447549769a356d68e74a47f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored object with specified <code>target_t</code> type.  <br /></td></tr>
 <tr class="separator:ae7e7f1a95447549769a356d68e74a47f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add70701d0d10fa7e0a1bb06ea80e5621"><td class="memItemLeft" align="right" valign="top">type_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1shared__ptr__object.html#add70701d0d10fa7e0a1bb06ea80e5621">to_pointer</a> () const noexcept</td></tr>
-<tr class="memdesc:add70701d0d10fa7e0a1bb06ea80e5621"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored pointer.  <br /></td></tr>
-<tr class="separator:add70701d0d10fa7e0a1bb06ea80e5621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cedc56d39d4da526d845e983efb8171"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classxtd_1_1shared__ptr__object.html#aef8c995f421ebb21a1a15e237052a5c7">element_type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1shared__ptr__object.html#a7cedc56d39d4da526d845e983efb8171">to_pointer</a> () const noexcept</td></tr>
+<tr class="memdesc:a7cedc56d39d4da526d845e983efb8171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored pointer.  <br /></td></tr>
+<tr class="separator:a7cedc56d39d4da526d845e983efb8171"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecf92cd4817d3bd63d3963eeb92873f2"><td class="memTemplParams" colspan="2">template&lt;typename target_t &gt; </td></tr>
 <tr class="memitem:aecf92cd4817d3bd63d3963eeb92873f2"><td class="memTemplItemLeft" align="right" valign="top">target_t *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1shared__ptr__object.html#aecf92cd4817d3bd63d3963eeb92873f2">to_pointer</a> () const</td></tr>
 <tr class="memdesc:aecf92cd4817d3bd63d3963eeb92873f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the stored pointer with specified <code>target_t</code> type.  <br /></td></tr>
@@ -275,6 +283,9 @@ class xtd::shared_ptr_object&lt; type_t &gt;</div><p>The <a class="el" href="cla
 <tr class="memitem:a58c2c11a7a46e940b0bc8025774cb618"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1shared__ptr__object.html#a58c2c11a7a46e940b0bc8025774cb618">operator base_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a58c2c11a7a46e940b0bc8025774cb618"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the underlying base type pointer.  <br /></td></tr>
 <tr class="separator:a58c2c11a7a46e940b0bc8025774cb618"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae10299c45e35ee63b75efa8930f8400f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1shared__ptr__object.html#ae10299c45e35ee63b75efa8930f8400f">operator weak_type</a> () const noexcept</td></tr>
+<tr class="memdesc:ae10299c45e35ee63b75efa8930f8400f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a weak type pointer.  <br /></td></tr>
+<tr class="separator:ae10299c45e35ee63b75efa8930f8400f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -358,7 +369,7 @@ template&lt;class type_t &gt; </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a2d185b13b9f42a01a2dbd7f33cdab40f" name="a2d185b13b9f42a01a2dbd7f33cdab40f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d185b13b9f42a01a2dbd7f33cdab40f">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[1/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d185b13b9f42a01a2dbd7f33cdab40f">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[1/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -387,7 +398,7 @@ template&lt;class type_t &gt; </div>
 </div>
 </div>
 <a id="ac881dccdda4410342d2820daba72d44d" name="ac881dccdda4410342d2820daba72d44d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac881dccdda4410342d2820daba72d44d">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[2/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac881dccdda4410342d2820daba72d44d">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[2/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -423,7 +434,7 @@ template&lt;class type_t &gt; </div>
 </div>
 </div>
 <a id="a6e98f90e232ceaa8966512e567ce4917" name="a6e98f90e232ceaa8966512e567ce4917"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e98f90e232ceaa8966512e567ce4917">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[3/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e98f90e232ceaa8966512e567ce4917">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[3/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -459,7 +470,7 @@ template&lt;class type_t &gt; </div>
 </div>
 </div>
 <a id="a55c5aaa5555d2cd09a606b238ecf9c82" name="a55c5aaa5555d2cd09a606b238ecf9c82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55c5aaa5555d2cd09a606b238ecf9c82">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[4/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a55c5aaa5555d2cd09a606b238ecf9c82">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[4/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -495,7 +506,7 @@ template&lt;class type_t &gt; </div>
 </div>
 </div>
 <a id="a578f19a5ecbd5dc35dceff6ee2089a7d" name="a578f19a5ecbd5dc35dceff6ee2089a7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a578f19a5ecbd5dc35dceff6ee2089a7d">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[5/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a578f19a5ecbd5dc35dceff6ee2089a7d">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[5/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -517,7 +528,7 @@ template&lt;class pointer_t &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -533,7 +544,7 @@ template&lt;class pointer_t &gt; </div>
 </div>
 </div>
 <a id="a370fd2e35ce9811f7bff54b5257e74ec" name="a370fd2e35ce9811f7bff54b5257e74ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a370fd2e35ce9811f7bff54b5257e74ec">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[6/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a370fd2e35ce9811f7bff54b5257e74ec">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[6/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -555,7 +566,7 @@ template&lt;class value_t &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -571,7 +582,7 @@ template&lt;class value_t &gt; </div>
 </div>
 </div>
 <a id="aae9dcd6e1758459543b1f0aadbe8fd27" name="aae9dcd6e1758459543b1f0aadbe8fd27"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae9dcd6e1758459543b1f0aadbe8fd27">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[7/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aae9dcd6e1758459543b1f0aadbe8fd27">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[7/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -593,7 +604,7 @@ template&lt;class value_t &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -609,7 +620,7 @@ template&lt;class value_t &gt; </div>
 </div>
 </div>
 <a id="aa93725a5538bcbb84720efef2242aec0" name="aa93725a5538bcbb84720efef2242aec0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa93725a5538bcbb84720efef2242aec0">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[8/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa93725a5538bcbb84720efef2242aec0">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[8/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -631,7 +642,7 @@ template&lt;class value_t &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -647,7 +658,7 @@ template&lt;class value_t &gt; </div>
 </div>
 </div>
 <a id="aa1ae8ac07cde4298ea2a179dae80c46b" name="aa1ae8ac07cde4298ea2a179dae80c46b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1ae8ac07cde4298ea2a179dae80c46b">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[9/9]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1ae8ac07cde4298ea2a179dae80c46b">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[9/11]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -669,7 +680,7 @@ template&lt;class value_t &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -678,6 +689,82 @@ template&lt;class value_t &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>The shared pointer object. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5cda47cee2058ac342a492de3f358674" name="a5cda47cee2058ac342a492de3f358674"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cda47cee2058ac342a492de3f358674">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[10/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+<div class="memtemplate">
+template&lt;class value_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1shared__ptr__object.html">xtd::shared_ptr_object</a>&lt; type_t &gt;::shared_ptr_object </td>
+          <td>(</td>
+          <td class="paramtype">const std::weak_ptr&lt; value_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1shared__ptr__object.html" title="The xtd::shared_ptr_object is a shared pointer as std::shared_ptr.">xtd::shared_ptr_object</a> class with specified weak pointer object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The weak pointer object. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2a6ddc8aeb6f57ba45fd9f267bfd171b" name="a2a6ddc8aeb6f57ba45fd9f267bfd171b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a6ddc8aeb6f57ba45fd9f267bfd171b">&#9670;&#160;</a></span>shared_ptr_object() <span class="overload">[11/11]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+<div class="memtemplate">
+template&lt;class value_t , class deleter_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classxtd_1_1shared__ptr__object.html">xtd::shared_ptr_object</a>&lt; type_t &gt;::shared_ptr_object </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; value_t, deleter_t &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="classxtd_1_1shared__ptr__object.html" title="The xtd::shared_ptr_object is a shared pointer as std::shared_ptr.">xtd::shared_ptr_object</a> class with specified unique pointer object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The unique pointer object. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1246,8 +1333,8 @@ template&lt;typename target_t &gt; </div>
 
 </div>
 </div>
-<a id="add70701d0d10fa7e0a1bb06ea80e5621" name="add70701d0d10fa7e0a1bb06ea80e5621"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add70701d0d10fa7e0a1bb06ea80e5621">&#9670;&#160;</a></span>to_pointer() <span class="overload">[1/2]</span></h2>
+<a id="a7cedc56d39d4da526d845e983efb8171" name="a7cedc56d39d4da526d845e983efb8171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cedc56d39d4da526d845e983efb8171">&#9670;&#160;</a></span>to_pointer() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1258,7 +1345,7 @@ template&lt;class type_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">type_t * <a class="el" href="classxtd_1_1shared__ptr__object.html">xtd::shared_ptr_object</a>&lt; type_t &gt;::to_pointer </td>
+          <td class="memname"><a class="el" href="classxtd_1_1shared__ptr__object.html#aef8c995f421ebb21a1a15e237052a5c7">element_type</a> * <a class="el" href="classxtd_1_1shared__ptr__object.html">xtd::shared_ptr_object</a>&lt; type_t &gt;::to_pointer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1721,9 +1808,8 @@ template&lt;class type_t &gt; </div>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a6be0ba4fb8e446d3085d3973519dfc12" name="a6be0ba4fb8e446d3085d3973519dfc12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6be0ba4fb8e446d3085d3973519dfc12">&#9670;&#160;</a></span>empty</h2>
+<a id="ae10299c45e35ee63b75efa8930f8400f" name="ae10299c45e35ee63b75efa8930f8400f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae10299c45e35ee63b75efa8930f8400f">&#9670;&#160;</a></span>operator weak_type()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1734,7 +1820,38 @@ template&lt;class type_t &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classxtd_1_1shared__ptr__object.html">shared_ptr_object</a> <a class="el" href="classxtd_1_1shared__ptr__object.html">xtd::shared_ptr_object</a>&lt; type_t &gt;::empty</td>
+          <td class="memname"><a class="el" href="classxtd_1_1shared__ptr__object.html">xtd::shared_ptr_object</a>&lt; type_t &gt;::operator <a class="el" href="classxtd_1_1shared__ptr__object.html#a8ea2fefd0faf4804129df6d52cdc0a34">weak_type</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a weak type pointer. </p>
+<dl class="section return"><dt>Returns</dt><dd>A weak type pointer. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ac286b18d5d7932e2cd10e89ef47be949" name="ac286b18d5d7932e2cd10e89ef47be949"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac286b18d5d7932e2cd10e89ef47be949">&#9670;&#160;</a></span>empty</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classxtd_1_1shared__ptr__object.html">shared_ptr_object</a>&lt; type_t &gt; <a class="el" href="classxtd_1_1shared__ptr__object.html">xtd::shared_ptr_object</a>&lt; type_t &gt;::empty</td>
         </tr>
       </table>
   </td>
@@ -1755,7 +1872,7 @@ template&lt;class type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 17 2025 11:16:34 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Apr 19 2025 10:56:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

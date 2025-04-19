@@ -417,12 +417,12 @@ $(function() {
 <div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> type_t&gt;</div>
 <div class="line"><a id="l00648" name="l00648"></a><span class="lineno"><a class="line" href="classxtd_1_1linq_1_1enumerable.html#ac415c072500b8f5e0f89f7f40ee67400">  648</a></span>      <span class="keyword">static</span> <span class="keyword">const</span> <a class="code hl_typedef" href="classxtd_1_1linq_1_1enumerable.html#a2bd1889dc1967c50ef692411dc2c4b92">ienumerable&lt;type_t&gt;</a>&amp; <a class="code hl_function" href="classxtd_1_1linq_1_1enumerable.html#ac415c072500b8f5e0f89f7f40ee67400">range</a>(type_t start, type_t <a class="code hl_function" href="classxtd_1_1linq_1_1enumerable.html#ae8deab4a1605619cb40cd56504a5b54c">count</a>, type_t step) {</div>
 <div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>        <span class="keyword">using </span>param_type = std::tuple&lt;type_t, type_t, type_t, type_t&gt;;</div>
-<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>        <span class="keyword">static</span> <span class="keyword">thread_local</span> <span class="keyword">auto</span> result = __opaque_xtd_linq_lazy_enumerable__&lt;type_t, param_type&gt; {};</div>
+<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>        <span class="keyword">static</span> <span class="keyword">thread_local</span> <span class="keyword">auto</span> numbers = __opaque_xtd_linq_lazy_enumerable__&lt;type_t, param_type&gt; {};</div>
 <div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span> </div>
 <div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>        <span class="keywordflow">if</span> (step == type_t {}) <a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a4fcf5154d41ae7e68038268ea89492d6">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dca03cde060e90acdd58ff9f0a4d785d43b">xtd::helpers::exception_case::argument</a>);</div>
 <div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="classxtd_1_1linq_1_1enumerable.html#ae8deab4a1605619cb40cd56504a5b54c">count</a> &lt; type_t {}) <a class="code hl_function" href="classxtd_1_1helpers_1_1throw__helper.html#a4fcf5154d41ae7e68038268ea89492d6">xtd::helpers::throw_helper::throws</a>(<a class="code hl_enumvalue" href="group__helpers.html#gga9449ffb8e13ad8c25c987085078568dcae5f5e66ade5891a696d6a4bf6e812173">xtd::helpers::exception_case::argument_out_of_range</a>);</div>
 <div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span> </div>
-<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>        result = __opaque_xtd_linq_lazy_enumerable__&lt;type_t, param_type&gt; {</div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>        numbers = __opaque_xtd_linq_lazy_enumerable__&lt;type_t, param_type&gt; {</div>
 <div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>          std::make_tuple(start, <a class="code hl_function" href="classxtd_1_1linq_1_1enumerable.html#ae8deab4a1605619cb40cd56504a5b54c">count</a>, step, type_t {}),</div>
 <div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>          [](param_type&amp; params) {</div>
 <div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>            <span class="keyword">auto</span>&amp; result = std::get&lt;0&gt;(params);</div>
@@ -436,7 +436,7 @@ $(function() {
 <div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>            params = std::make_tuple(start, <a class="code hl_function" href="classxtd_1_1linq_1_1enumerable.html#ae8deab4a1605619cb40cd56504a5b54c">count</a>, step, type_t {});</div>
 <div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>          }</div>
 <div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>        };</div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>        <span class="keywordflow">return</span> numbers;</div>
 <div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>      }</div>
 <div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span> </div>
 <div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>      <span class="keyword">template</span>&lt;<span class="keyword">class</span> source_t&gt;</div>
@@ -618,7 +618,7 @@ $(function() {
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 17 2025 11:16:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Apr 19 2025 10:56:25 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
