@@ -253,7 +253,7 @@ namespace xtd {
       } catch (const std::exception& e) {
         xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }
-      return std::dynamic_pointer_cast<new_type_t>(value);
+      return std::dynamic_pointer_cast<new_type_t>(value.pointer());
     }
     
     /// @brief Casts a type into another type.
@@ -274,7 +274,7 @@ namespace xtd {
       } catch (const std::exception& e) {
         xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }
-      return std::dynamic_pointer_cast<new_type_t>(value);
+      return std::dynamic_pointer_cast<new_type_t>(value.pointer());
     }
     
     /// @brief Casts a type into another type.
@@ -297,7 +297,7 @@ namespace xtd {
         xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
       }
       //return std::move(value);
-      return std::dynamic_pointer_cast<new_type_t>(std::move(value));
+      return std::dynamic_pointer_cast<new_type_t>(std::move(value.pointer()));
     }
     /// @}
   };

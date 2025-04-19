@@ -261,7 +261,7 @@ namespace xtd::tests {
     void test_method_(to_shared_ptr) {
       xtd::sptr<guid> g = xtd::new_sptr<guid>();
       xtd::sptr<object> o = convert_pointer::to_shared_ptr<object>(g);
-      assert::are_equal(g, o);
+      assert::are_equal(g.to_pointer(), o.to_pointer());
     }
     
     void test_method_(to_shared_ptr_invalid) {
@@ -272,7 +272,7 @@ namespace xtd::tests {
     void test_method_(const_to_shared_ptr) {
       const xtd::sptr<guid> g = xtd::new_sptr<guid>();
       xtd::sptr<object> o = convert_pointer::to_shared_ptr<object>(g);
-      assert::are_equal(g, o);
+      assert::are_equal(g.to_pointer(), o.to_pointer());
     }
     
     void test_method_(const_to_shared_ptr_invalid) {
