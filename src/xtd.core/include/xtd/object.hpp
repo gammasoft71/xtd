@@ -4,6 +4,7 @@
 #pragma once
 
 #define __XTD_STD_INTERNAL__
+#include "internal/__unique_ptr_object_definition.hpp"
 #include "internal/__xtd_std_version.hpp"
 #undef __XTD_STD_INTERNAL__
 #define __XTD_CORE_INTERNAL__
@@ -97,11 +98,7 @@ namespace xtd {
     /// * Serialize the object to be deep copied, and then restore the serialized data to a different object variable.
     /// * Use reflection with recursion to perform the deep copy operation.
     template<class object_t>
-    std::unique_ptr<object_t> memberwise_clone() const {
-      auto object_ptr = dynamic_cast<const object_t*>(this);
-      if (object_ptr == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
-      return std::make_unique<object_t>(*object_ptr);
-    }
+    xtd::unique_ptr_object<object_t> memberwise_clone() const;
     
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.

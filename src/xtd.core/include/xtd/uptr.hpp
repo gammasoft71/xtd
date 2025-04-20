@@ -22,6 +22,7 @@ namespace xtd {
   /// delete_ptr(version); // Not mandatory.
   /// @endcode
   template<class type_t>
-  using uptr = std::unique_ptr<type_t>;
+  using uptr = xtd::unique_ptr_object<type_t>;
+  //using uptr = std::unique_ptr<type_t>;
   /// @}
 }

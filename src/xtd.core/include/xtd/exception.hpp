@@ -9,6 +9,7 @@
 #include "nullopt.hpp"
 #include "optional.hpp"
 #include "ptr.hpp"
+#include "uptr.hpp"
 #include "string.hpp"
 #include <exception>
 #include <system_error>
