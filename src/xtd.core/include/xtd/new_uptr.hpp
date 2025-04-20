@@ -17,7 +17,7 @@ namespace xtd {
   /// uptr<xtd::version> version = new_uptr<xtd::version>(1, 2, 3);
   ///
   /// console::write_line("version = {}", version->to_string());
-  /// delete_(version); // Not mandatory.
+  /// delete_uptr(version); // Not mandatory.
   /// @endcode
   /// @remarks The xtd::new_uptr is equivalent to [std::make_unique](https://en.cppreference.com/w/cpp/memory/xtd::uptr/make_unique).
   template<class type_t, class ...args_t>
