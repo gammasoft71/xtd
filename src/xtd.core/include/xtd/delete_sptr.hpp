@@ -14,10 +14,10 @@ namespace xtd {
   /// @par Examples
   /// this is example shows to use xtd::delete_ptr with xtd::version class
   /// @code
-  /// ptr<xtd::version> version = new_ptr<xtd::version>(1, 2, 3);
+  /// sptr<xtd::version> version = new_sptr<xtd::version>(1, 2, 3);
   ///
   /// console::write_line("version = {}", version->to_string());
-  /// delete_ptr(version); // Not mandatory.
+  /// delete_sptr(version); // Not mandatory.
   /// @endcode
   /// @remarks This operator does not have to be called because when an xtd::sptr object leaves the scope, its value is automatically reset.
   /// @remarks Use it when you want to reset the xtd::sptr object at a specific time.
