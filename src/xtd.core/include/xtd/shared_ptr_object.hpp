@@ -75,7 +75,9 @@ namespace xtd {
     shared_ptr_object(const shared_ptr_object<value_t>& value) noexcept : ptr_ {value.ptr_} {}
     /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified shared pointer object.
     /// @param value The shared pointer object.
-    template<class value_t>
+    shared_ptr_object(const base_type& value) noexcept : ptr_ {value} {}
+    /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified shared pointer object.
+    /// @param value The shared pointer object.
     shared_ptr_object(base_type&& value) noexcept : ptr_ {std::move(value)} {}
     /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified shared pointer object.
     /// @param value The shared pointer object.
@@ -155,14 +157,17 @@ namespace xtd {
     /// @return size_t A hash code for the current object.
     xtd::size get_hash_code() const noexcept override {return (ptr_ ? xtd::hash_code::combine(to_pointer()) : 0);}
 
-    /// @brief Reset the current object. Set the current object to null.
+    /// @brief Resets the current object. Set the current object to null.
     /// @remarks xtd::shared_ptr_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
     void reset() noexcept {ptr_.reset();}
-    /// @brief Reset the current object. Set the current object with specified pointer.
+    /// @brief Resets the current object. Set the current object with specified pointer.
     /// @param ptr The pointer to assign the current object. It can be null.
     /// @remarks xtd::shared_ptr_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
     template<class pointer_t>
     void reset(pointer_t* ptr) noexcept {ptr_.reset(ptr);}
+    /// @brief Resets the current object. Set the current object with specified pointer.
+    /// @param null The null pointer.
+    void reset(xtd::null_ptr null) noexcept {ptr_.reset();}
 
     /// @brief Swaps this current instance with specified shared pointer object.
     /// @param ptr The shared pointer object to swap with this current instance.
