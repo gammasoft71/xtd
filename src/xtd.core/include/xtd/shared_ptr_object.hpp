@@ -7,7 +7,7 @@
 #include "iequatable.hpp"
 #include "null_ptr.hpp"
 #include "object.hpp"
-#include <memory>
+#include "unique_ptr_object.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -87,6 +87,10 @@ namespace xtd {
     /// @param value The weak pointer object.
     template<class value_t>
     explicit shared_ptr_object(const std::weak_ptr<value_t>& value) noexcept : ptr_ {value} {}
+    /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified unique pointer object.
+    /// @param value The unique pointer object.
+    template<class value_t, class deleter_t>
+    shared_ptr_object(xtd::unique_ptr_object<value_t, deleter_t>&& value) : ptr_ {std::move(value.pointer())} {}
     /// @brief Initializes a new instance of the xtd::shared_ptr_object class with specified unique pointer object.
     /// @param value The unique pointer object.
     template<class value_t, class deleter_t>

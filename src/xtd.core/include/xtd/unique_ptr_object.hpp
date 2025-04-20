@@ -2,6 +2,7 @@
 /// @brief Contains xtd::unique_ptr_object class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "internal/__unique_ptr_object_definition.hpp"
 #include "hash_code.hpp"
 #include "icomparable.hpp"
 #include "iequatable.hpp"
@@ -26,7 +27,7 @@ namespace xtd {
   /// console::write_line("version = {}", version->to_string());
   /// delete_unique_ptr_object(version); // Not mandatory.
   /// @endcode
-  template<class type_t, class deleter_t = std::default_delete<type_t>>
+  template<class type_t, class deleter_t>
   class unique_ptr_object : public xtd::object, public xtd::icomparable<unique_ptr_object<type_t, deleter_t>>, public xtd::iequatable<unique_ptr_object<type_t, deleter_t>> {
   public:
     /// @name Public Aliases
@@ -256,4 +257,11 @@ namespace xtd {
   template<class type_t, class deleter_t>
   inline const unique_ptr_object<type_t, deleter_t>  unique_ptr_object<type_t, deleter_t>::empty;
   /// @}
+}
+
+template<class object_t>
+xtd::unique_ptr_object<object_t> xtd::object::memberwise_clone() const {
+  auto object_ptr = dynamic_cast<const object_t*>(this);
+  if (object_ptr == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  return xtd::unique_ptr_object<object_t>(new object_t(*object_ptr));
 }
