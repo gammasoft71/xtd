@@ -267,6 +267,7 @@ add_sources(
   "src/xtd/tests/time_span_tests.cpp"
   "src/xtd/tests/unauthorized_access_exception_tests.cpp"
   "src/xtd/tests/underflow_exception_tests.cpp"
+  "src/xtd/tests/unique_ptr_object_tests.cpp"
   "src/xtd/tests/unregistered_enum_class_flags_tests.cpp"
   "src/xtd/tests/unregistered_enum_class_tests.cpp"
   "src/xtd/tests/unregistered_enum_flags_tests.cpp"
