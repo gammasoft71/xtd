@@ -231,11 +231,11 @@ namespace xtd::tests {
     }
     
     void test_method_(reset) {
-      auto p1 = new string {"value"};
-      auto s1 = shared_ptr_object<string> {p1};
-      assert::are_equal(p1, s1.get());
-      s1.reset();
-      assert::is_null(s1.get());
+      auto p = new string {"value"};
+      auto s = shared_ptr_object<string> {p};
+      assert::are_equal(p, s.get());
+      s.reset();
+      assert::is_null(s.get());
     }
     
     void test_method_(reset_with_pointer) {
@@ -247,6 +247,14 @@ namespace xtd::tests {
       assert::are_equal(p2, s1.get());
     }
     
+    void test_method_(reset_with_null) {
+      auto p = new string {"value"};
+      auto s = shared_ptr_object<string> {p};
+      assert::are_equal(p, s.get());
+      s.reset(null);
+      assert::is_null(s.get());
+    }
+
     void test_method_(swap) {
       auto p1 = new string {"value"};
       auto p2 = new string {"value"};
