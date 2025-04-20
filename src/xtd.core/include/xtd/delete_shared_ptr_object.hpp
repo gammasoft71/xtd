@@ -14,10 +14,10 @@ namespace xtd {
   /// @par Examples
   /// this is example shows to use xtd::delete_ptr with xtd::version class
   /// @code
-  /// ptr<xtd::version> version = new_ptr<xtd::version>(1, 2, 3);
+  /// shared_ptr_object<xtd::version> version = new_shared_ptr_object<xtd::version>(1, 2, 3);
   ///
   /// console::write_line("version = {}", version->to_string());
-  /// delete_ptr(version); // Not mandatory.
+  /// delete_shared_ptr_object(version); // Not mandatory.
   /// @endcode
   /// @remarks This operator does not have to be called because when an xtd::shared_ptr_object object leaves the scope, its value is automatically reset.
   /// @remarks Use it when you want to reset the xtd::shared_ptr_object object at a specific time.
