@@ -102,7 +102,9 @@ xtd::string __opaque_xtd_linq_enumerable_collection__<type_t>::to_string() const
 template<class type_t, class param_t>
 xtd::string __opaque_xtd_linq_lazy_enumerable__<type_t, param_t>::to_string() const {return xtd::string::format("[{}]", xtd::string::join(", ", *this));}
 
-
 template<class type_t>
 xtd::string xtd::shared_ptr_object<type_t>::to_string() const noexcept {return xtd::string::format("{} [pointer={}]", xtd::object::to_string(), ptr_ == xtd::null ? "null"  : string::format("0x{:X16}, use_count={}", get(), use_count()));}
+
+template<class type_t, class deleter_t>
+xtd::string xtd::unique_ptr_object<type_t, deleter_t>::to_string() const noexcept {return xtd::string::format("{} [pointer={}]", xtd::object::to_string(), ptr_ == xtd::null ? "null"  : string::format("0x{:X16}", get()));}
 /// @endcond

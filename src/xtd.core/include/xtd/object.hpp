@@ -12,11 +12,11 @@
 #include "helpers/throw_helper.hpp"
 #include "core_export.hpp"
 #include "iequatable.hpp"
-#include "new_uptr.hpp"
 #include "size.hpp"
 #if defined(__xtd__cpp_lib_format)
 #include <cassert>
 #include <format>
+#include <memory>
 #endif
 #include <type_traits>
 
@@ -97,10 +97,10 @@ namespace xtd {
     /// * Serialize the object to be deep copied, and then restore the serialized data to a different object variable.
     /// * Use reflection with recursion to perform the deep copy operation.
     template<class object_t>
-    xtd::uptr<object_t> memberwise_clone() const {
+    std::unique_ptr<object_t> memberwise_clone() const {
       auto object_ptr = dynamic_cast<const object_t*>(this);
       if (object_ptr == nullptr) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
-      return xtd::new_uptr<object_t>(*object_ptr);
+      return std::make_unique<object_t>(*object_ptr);
     }
     
     /// @brief Returns a xtd::string that represents the current object.
