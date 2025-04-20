@@ -118,7 +118,11 @@ namespace xtd {
 
     /// @brief Returns the underlying base type pointer.
     /// @return The underlying base type pointer.
-    base_type pointer() const noexcept {return ptr_;}
+    const base_type& pointer() const noexcept {return ptr_;}
+    
+    /// @brief Returns the underlying base type pointer.
+    /// @return The underlying base type pointer.
+    base_type& pointer() noexcept {return ptr_;}
     
     /// @brief Gets the number of xtd::shared_ptr_object objects referring to the same managed object.
     /// @return The number of xtd::shared_ptr_object objects referring to the same managed object.
