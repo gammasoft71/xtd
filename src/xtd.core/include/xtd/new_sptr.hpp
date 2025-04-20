@@ -17,7 +17,7 @@ namespace xtd {
   /// sptr<xtd::version> version = new_sptr<xtd::version>(1, 2, 3);
   ///
   /// console::write_line("version = {}", version->to_string());
-  /// delete_ptr(version); // Not mandatory.
+  /// delete_sptr(version); // Not mandatory.
   /// @endcode
   /// @remarks The xtd::new_sptr is equivalent to [std::make_shared](https://en.cppreference.com/w/cpp/memory/shared_ptr/make_shared).
   template<class type_t, class ...args_t>
