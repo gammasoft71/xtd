@@ -17,7 +17,7 @@ namespace xtd {
   /// uptr<xtd::version> version = new_uptr<xtd::version>(1, 2, 3);
   ///
   /// console::write_line("version = {}", version->to_string());
-  /// delete_ptr(version); // Not mandatory.
+  /// delete_uptr(version); // Not mandatory.
   /// @endcode
   /// @remarks This operator does not have to be called because when an xtd::uptr object leaves the scope, its value is automatically reset.
   /// @remarks Use it when you want to reset the xtd::ptr object at a specific time.
