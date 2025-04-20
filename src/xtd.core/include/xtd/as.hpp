@@ -80,6 +80,20 @@ target_t* xtd::shared_ptr_object<type_t>::to_pointer() const {
   return xtd::as<target_t>(to_pointer());
 }
 
+template<class type_t, class deleter_t>
+template<typename target_t>
+target_t xtd::unique_ptr_object<type_t, deleter_t>::to_object() const {
+  if (to_pointer() == null) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
+  return xtd::as<target_t>(to_object());
+}
+
+template<class type_t, class deleter_t>
+template<typename target_t>
+target_t* xtd::unique_ptr_object<type_t, deleter_t>::to_pointer() const {
+  if (to_pointer() == null) return null;
+  return xtd::as<target_t>(to_pointer());
+}
+
 namespace std {
   template<class type_t>
   type_t any_cast(const xtd::any_object& value) {return xtd::as<type_t>(value);}
