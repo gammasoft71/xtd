@@ -409,18 +409,18 @@ bool thread::join_all(const array<sptr<thread>>& threads, const time_span& timeo
   return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
-bool thread::join_all(const std::vector<uptr<thread>>& threads) {
+bool thread::join_all(const array<uptr<thread>>& threads) {
   return join_all(threads, timeout::infinite);
 }
 
-bool thread::join_all(const std::vector<uptr<thread>>& threads, int32 milliseconds_timeout) {
+bool thread::join_all(const array<uptr<thread>>& threads, int32 milliseconds_timeout) {
   auto thread_pointers = list<thread*> {};
   for (auto& thread : threads)
     thread_pointers.add(thread.get());
   return join_all_ptr(thread_pointers.to_array(), milliseconds_timeout);
 }
 
-bool thread::join_all(const std::vector<uptr<thread>>& threads, const time_span& timeout) {
+bool thread::join_all(const array<uptr<thread>>& threads, const time_span& timeout) {
   return join_all(threads, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
