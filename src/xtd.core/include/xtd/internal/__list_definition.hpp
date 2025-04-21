@@ -24,7 +24,7 @@ namespace xtd {
       using type_to_list_t = typename std::conditional<std::is_same<bool, type_t>::value, char, type_t>::type;
       
       /// @cond
-      template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<type_to_list_t<type_t>>>
+      template<class type_t, class allocator_t = xtd::collections::generic::helpers::allocator<xtd::collections::generic::type_to_list_t<type_t>>>
       class list;
       /// @endcond
     }
