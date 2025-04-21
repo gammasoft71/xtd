@@ -284,7 +284,10 @@ namespace xtd {
     
     /// @brief Assigns the value to all elements in the container.
     /// @param value The value to assign to the elements.
-    virtual void fill(const value_type& value) noexcept {std::fill(begin(), end(), value);}
+    virtual void fill(const value_type& value) noexcept {
+      for (auto& item : data_->items)
+        item = value;
+    }
     
     xtd::collections::generic::enumerator<value_type> get_enumerator() const noexcept override {
       struct basic_array_enumerator : public xtd::collections::generic::ienumerator<value_type> {
