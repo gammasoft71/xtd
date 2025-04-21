@@ -78,18 +78,18 @@ bool wait_handle::wait_all(const array<sptr<wait_handle>>& wait_handles, const t
   return wait_all(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
-bool wait_handle::wait_all(const std::vector<uptr<wait_handle>>& wait_handles) {
+bool wait_handle::wait_all(const array<uptr<wait_handle>>& wait_handles) {
   return wait_all(wait_handles, timeout::infinite);
 }
 
-bool wait_handle::wait_all(const std::vector<uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
+bool wait_handle::wait_all(const array<uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   auto wait_handle_pointers = array<wait_handle*> {};
   for (auto& wait_handle : wait_handles)
     wait_handle_pointers.resize(wait_handle_pointers.size() + 1, wait_handle.get());
   return wait_all(wait_handle_pointers, milliseconds_timeout);
 }
 
-bool wait_handle::wait_all(const std::vector<uptr<wait_handle>>& wait_handles, const time_span& timeout) {
+bool wait_handle::wait_all(const array<uptr<wait_handle>>& wait_handles, const time_span& timeout) {
   return wait_all(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
@@ -137,18 +137,18 @@ size_t wait_handle::wait_any(const array<sptr<wait_handle>>& wait_handles, const
   return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
-size_t wait_handle::wait_any(const std::vector<uptr<wait_handle>>& wait_handles) {
+size_t wait_handle::wait_any(const array<uptr<wait_handle>>& wait_handles) {
   return wait_any(wait_handles, timeout::infinite);
 }
 
-size_t wait_handle::wait_any(const std::vector<uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
+size_t wait_handle::wait_any(const array<uptr<wait_handle>>& wait_handles, int32 milliseconds_timeout) {
   auto wait_handle_pointers = array<wait_handle*> {};
   for (auto& wait_handle : wait_handles)
     wait_handle_pointers.resize(wait_handle_pointers.size() + 1, wait_handle.get());
   return wait_any(wait_handle_pointers, milliseconds_timeout);
 }
 
-size_t wait_handle::wait_any(const std::vector<uptr<wait_handle>>& wait_handles, const time_span& timeout) {
+size_t wait_handle::wait_any(const array<uptr<wait_handle>>& wait_handles, const time_span& timeout) {
   return wait_any(wait_handles, as<int32>(timeout.total_milliseconds_duration().count()));
 }
 
