@@ -2,7 +2,12 @@
 /// @brief Contains xtd::unique_ptr_object class.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
+#include "helpers/throw_helper.hpp"
+#define __XTD_CORE_INTERNAL__
+#include "internal/__array_definition.hpp"
+#include "internal/__list_definition.hpp"
 #include "internal/__unique_ptr_object_definition.hpp"
+#undef __XTD_CORE_INTERNAL__
 #include "hash_code.hpp"
 #include "icomparable.hpp"
 #include "iequatable.hpp"
@@ -12,6 +17,12 @@
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
+  /// @cond
+  namespace linq {
+    class enumerable;
+  }
+  /// @endcond
+  
   /// @name Native types
   
   /// @{
@@ -212,10 +223,6 @@ namespace xtd {
     
     /// @brief Assignment operator with specified xtd::unique_ptr_object value.
     /// @param value The value to assign.
-    unique_ptr_object& operator =(const unique_ptr_object& value) noexcept = delete;
-    
-    /// @brief Assignment operator with specified xtd::unique_ptr_object value.
-    /// @param value The value to assign.
     template<class value_t>
     unique_ptr_object& operator =(unique_ptr_object<value_t>&& value) noexcept {
       ptr_ = std::move(value.ptr_);
@@ -249,8 +256,19 @@ namespace xtd {
     /// @}
 
   private:
-    template<class other_t, class other_deleter_t>
-    friend class unique_ptr_object;
+    template<class value_t, class other_deleter_t>
+    friend class xtd::unique_ptr_object;
+
+    template<class value_t, class allocator_t>
+    friend class xtd::basic_array;
+    
+    template<class value_t, class allocator_t>
+    friend class xtd::collections::generic::list;
+
+    friend class xtd::linq::enumerable;
+    
+    unique_ptr_object& operator =(const unique_ptr_object& value) noexcept {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);}
+    
     mutable base_type ptr_;
   };
 
