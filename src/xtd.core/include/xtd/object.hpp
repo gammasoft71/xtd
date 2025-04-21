@@ -4,10 +4,10 @@
 #pragma once
 
 #define __XTD_STD_INTERNAL__
-#include "internal/__unique_ptr_object_definition.hpp"
 #include "internal/__xtd_std_version.hpp"
 #undef __XTD_STD_INTERNAL__
 #define __XTD_CORE_INTERNAL__
+#include "internal/__unique_ptr_object_definition.hpp"
 #include "internal/__string_definitions.hpp"
 #undef __XTD_CORE_INTERNAL__
 #include "helpers/throw_helper.hpp"
