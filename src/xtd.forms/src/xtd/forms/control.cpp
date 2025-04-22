@@ -35,6 +35,7 @@
 #include <set>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::drawing;
 using namespace xtd::forms;
 using namespace xtd::helpers;
@@ -92,7 +93,7 @@ forms::mouse_buttons control::mouse_buttons_ = forms::mouse_buttons::none;
 std::map<intptr, control*> control::handles_;
 control::control_collection control::top_level_controls_;
 
-std::vector<xtd::uptr<xtd::forms::control>> control::control_collection::controls_;
+list<xtd::sptr<xtd::forms::control>> control::control_collection::controls_;
 
 control::control_collection::control_collection(const control::control_collection::allocator_type& allocator) : control::control_collection::base(allocator) {
 }
