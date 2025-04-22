@@ -478,7 +478,21 @@ namespace xtd {
         /// @remarks If xtd::collections::generic::list::count already equals xtd::collections::generic::list::capacity, the capacity of the xtd::collections::generic::list <type_t> is increased by automatically reallocating the internal array, and the existing elements are copied to the new array before the new element is added.
         /// @remarks If xtd::collections::generic::list::count is less than xtd::collections::generic::list::capacity, this method is an O(1) operation. If the capacity needs to be increased to accommodate the new element, this method becomes an O(n) operation, where n is xtd::collections::generic::list::count.
         void add(const type_t& item) override {push_back(item);}
-        
+        /// @brief Adds an object to the end of the xtd::collections::generic::list <type_t>.
+        /// @param item The object to be added to the end of the xtd::collections::generic::list <type_t>.
+        /// @)ar Examples
+        /// The following example demonstrates how to add, remove, and insert a simple business object in a xtd::collections::generic::list <type_t>.
+        /// @include generic_list4.cpp
+        /// The following example demonstrates several properties and methods of the xtd::collections::generic::list <type_t> generic class, including the xtd::collections::generic::list::add method.
+        /// The parameterless constructor is used to create a list of strings with a capacity of 0. The xtd::collections::generic::list::capacity property is displayed, and then the xtd::collections::generic::list::add method is used to add several items. The items are listed, and the xtd::collections::generic::list::capacity property is displayed again, along with the xtd::collections::generic::list::count property, to show that the capacity has been increased as needed.
+        ///
+        /// Other properties and methods are used to search for, insert, and remove elements from the list, and finally to clear the list.
+        /// @include generic_list2.cpp
+        /// @remarks xtd::collections::generic::list <type_t>  allows duplicate elements.
+        /// @remarks If xtd::collections::generic::list::count already equals xtd::collections::generic::list::capacity, the capacity of the xtd::collections::generic::list <type_t> is increased by automatically reallocating the internal array, and the existing elements are copied to the new array before the new element is added.
+        /// @remarks If xtd::collections::generic::list::count is less than xtd::collections::generic::list::capacity, this method is an O(1) operation. If the capacity needs to be increased to accommodate the new element, this method becomes an O(n) operation, where n is xtd::collections::generic::list::count.
+        void add(type_t&& item) {push_back(std::move(item));}
+
         /// @brief Adds copy of elements from the specified collection to the end of the xtd::collections::generic::list <type_t>.
         /// @param collection The collection whose elements should be added to the end of the xtd::collections::generic::list <type_t>.
         /// @par Examples
@@ -531,9 +545,8 @@ namespace xtd {
         /// @brief Replaces the contents with the elements from the initializer list items.
         /// @param items the initializer list to copy the values from.
         virtual void assign(std::initializer_list<type_t> items) {
-          clear();
-          for (auto item : items)
-            push_back(item);
+          ++data_->version;
+          data_->items.assign(items.begin(), items.end());
         }
         
         /// @brief Returns a reference to the element at specified location pos, with bounds checking.
@@ -974,7 +987,7 @@ namespace xtd {
         /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
         virtual iterator insert(const_iterator pos, const type_t&& value) {
           ++data_->version;
-          return to_type_iterator(data_->items.insert(to_base_type_iterator(pos), value));
+          return to_type_iterator(data_->items.insert(to_base_type_iterator(pos), std::move(value)));
         }
         /// @brief Inserts elements at the specified location in the container.
         /// @param pos the iterator before which the content will be inserted (pos may be the end() iterator).
@@ -986,6 +999,17 @@ namespace xtd {
         virtual iterator insert(const_iterator pos, size_type count, const type_t& value) {
           ++data_->version;
           return to_type_iterator(data_->items.insert(to_base_type_iterator(pos), count, value));
+        }
+        /// @brief Inserts elements at the specified location in the container.
+        /// @param pos the iterator before which the content will be inserted (pos may be the end() iterator).
+        /// @param count The number of elements to insert.
+        /// @param value The element value to insert.
+        /// @return The iterator pointing to the first element inserted, or `pos` if `count == 0`.
+        /// @remarks Iterator pointing to the first element inserted, or `pos` if `count == 0`.
+        /// @remarks If after the operation the new xtd::collections::generic::list::size() is greater than old xtd::collections::generic::list::capacity() a reallocation takes place, in which case all iterators (including the xtd::collections::generic::list::end() iterator) and all references to the elements are invalidated. Otherwise, only the iterators and references before the insertion point remain valid.
+        virtual iterator insert(const_iterator pos, size_type count, type_t&& value) {
+          ++data_->version;
+          return to_type_iterator(data_->items.insert(to_base_type_iterator(pos), count, std::move(value)));
         }
         /// @brief Inserts elements at the specified location in the container.
         /// @param first The first range of elements to insert, cannot be iterators into container for which insert is called
@@ -1019,7 +1043,16 @@ namespace xtd {
           if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
           insert(begin() + index, value);
         }
-        
+        /// @brief Inserts an element into the xtd::collections::generic::list <type_t> at the specified index.
+        /// @param index The zero-based index at which the new element should be inserted.
+        /// @param value The element should be inserted into the xtd::collections::generic::list <type_t>.
+        /// @exception xtd::argument_out_of_range_exception index is is greater than xtd::collections::generic::list::count.
+        /// @remarks xtd::collections::generic::list <type_t> allows duplicate elements.
+        void insert(size_type index, type_t&& value) {
+          if (index > count()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::argument_out_of_range);;
+          insert(begin() + index, std::move(value));
+        }
+
         /// @brief Inserts copy of elements from a collection into the xtd::collections::generic::list <type_t> at the specified index.
         /// @param index The zero-based index at which the new elements should be inserted.
         /// @param collection The collection whose elements should be inserted into the xtd::collections::generic::list <type_t>.
@@ -1126,7 +1159,7 @@ namespace xtd {
         /// @remarks `value` is moved into the new element.
         virtual void push_back(type_t&& value) {
           ++data_->version;
-          data_->items.push_back(value);
+          data_->items.push_back(std::move(value));
         }
         
         /// @brief Removes the first occurrence of a specific object from the xtd::collections::generic::list <type_t>.
