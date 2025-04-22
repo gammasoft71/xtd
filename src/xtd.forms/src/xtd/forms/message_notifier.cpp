@@ -164,7 +164,7 @@ namespace {
     vertical_layout_panel v_layout_icon_;
     vertical_layout_panel v_layout_title_message_;
     vertical_layout_panel v_layout_buttons_;
-    std::vector<xtd::uptr<button>> buttons_;
+    xtd::collections::generic::list<xtd::sptr<button>> buttons_;
     timer timer_;
     
     // TODO: spawn notifications bellow or above each other
