@@ -126,7 +126,10 @@ namespace xtd {
     /// @{
     /// @brief Returns the underlying base type pointer.
     /// @return The underlying base type pointer.
-    base_type& pointer() const noexcept {return ptr_;}
+    const base_type& pointer() const noexcept {return ptr_;}
+    /// @brief Returns the underlying base type pointer.
+    /// @return The underlying base type pointer.
+    base_type& pointer() noexcept {return ptr_;}
     /// @}
 
     /// @name Public Methods
@@ -269,7 +272,7 @@ namespace xtd {
     
     unique_ptr_object& operator =(const unique_ptr_object& value) noexcept {xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_operation);}
     
-    mutable base_type ptr_;
+    base_type ptr_;
   };
 
   template<class type_t, class deleter_t>
