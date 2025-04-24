@@ -9,6 +9,8 @@
 #include "char32.hpp"
 #include "char8.hpp"
 #include "core_namespace_aliases.hpp"
+#include "create_cref.hpp"
+#include "create_ref.hpp"
 #include "decimal.hpp"
 #include "delete_ptr.hpp"
 #include "delete_sptr.hpp"
