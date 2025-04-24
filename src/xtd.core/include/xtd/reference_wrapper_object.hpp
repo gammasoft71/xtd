@@ -8,6 +8,7 @@
 #include "iequatable.hpp"
 #include "null_ptr.hpp"
 #include "object.hpp"
+#include <optional>
 #include <functional>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
