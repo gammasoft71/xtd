@@ -284,7 +284,7 @@ namespace xtd {
   private:
     template<class other_t>
     friend class shared_ptr_object;
-    mutable base_type ptr_;
+    base_type ptr_;
   };
   
   template<class type_t>
