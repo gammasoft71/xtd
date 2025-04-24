@@ -157,7 +157,7 @@ Inheritance diagram for xtd::format_exception:</div>
 <div class="line"><span class="comment">//    at xtd::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt;&gt; xtd::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt;&gt;::format&lt;character&amp;&gt;(xtd::basic_string&lt;char, std::char_traits&lt;char&gt;, std::allocator&lt;char&gt;&gt; const&amp;, character&amp;) in basic_string_.hpp:line 328</span></div>
 <div class="line"><span class="comment">//    at void xtd::println&lt;character&amp;&gt;(char const*, character&amp;) in println.hpp:line 34</span></div>
 <div class="line"><span class="comment">//    at main in format_exception.cpp:line 34</span></div>
-<div class="ttc" id="aclassxtd_1_1exception_html"><div class="ttname"><a href="classxtd_1_1exception.html">xtd::exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> exception.hpp:28</div></div>
+<div class="ttc" id="aclassxtd_1_1exception_html"><div class="ttname"><a href="classxtd_1_1exception.html">xtd::exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> exception.hpp:29</div></div>
 <div class="ttc" id="aclassxtd_1_1format__exception_html"><div class="ttname"><a href="classxtd_1_1format__exception.html">xtd::format_exception</a></div><div class="ttdoc">The exception that is thrown when the format of an argument does not meet the parameter specification...</div><div class="ttdef"><b>Definition</b> format_exception.hpp:19</div></div>
 <div class="ttc" id="aclassxtd_1_1iformatable_html"><div class="ttname"><a href="classxtd_1_1iformatable.html">xtd::iformatable</a></div><div class="ttdoc">Provides functionality to format the value of an object into a string representation.</div><div class="ttdef"><b>Definition</b> iformatable.hpp:35</div></div>
 <div class="ttc" id="agroup__format__parse_html_ga73705cb16c7db5a2b7567456ff4e7e14"><div class="ttname"><a href="group__format__parse.html#ga73705cb16c7db5a2b7567456ff4e7e14">xtd::format</a></div><div class="ttdeci">xtd::string format(const xtd::string &amp;fmt, args_t &amp;&amp;... args)</div><div class="ttdoc">Writes the text representation of the specified arguments list, to string using the specified format ...</div><div class="ttdef"><b>Definition</b> format.hpp:20</div></div>
@@ -325,10 +325,10 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classxtd_1_1type__object.html">type_object</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a322144840e8ad539c039538997b0fe40">get_type</a> () const noexcept</td></tr>
 <tr class="memdesc:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of the current instance.  <br /></td></tr>
 <tr class="separator:a322144840e8ad539c039538997b0fe40 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb9700deaba669584080178e391d97c4 inherit pub_methods_classxtd_1_1object"><td class="memTemplParams" colspan="2">template&lt;class object_t &gt; </td></tr>
-<tr class="memitem:abb9700deaba669584080178e391d97c4 inherit pub_methods_classxtd_1_1object"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a>&lt; object_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#abb9700deaba669584080178e391d97c4">memberwise_clone</a> () const</td></tr>
-<tr class="memdesc:abb9700deaba669584080178e391d97c4 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
-<tr class="separator:abb9700deaba669584080178e391d97c4 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35 inherit pub_methods_classxtd_1_1object"><td class="memTemplParams" colspan="2">template&lt;class object_t &gt; </td></tr>
+<tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35 inherit pub_methods_classxtd_1_1object"><td class="memTemplItemLeft" align="right" valign="top">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
+<tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35 inherit pub_methods_classxtd_1_1object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
+<tr class="separator:ac24dbacb9a6e23a1ebd63ad403141a35 inherit pub_methods_classxtd_1_1object"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_static_methods_classxtd_1_1exception"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classxtd_1_1exception')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classxtd_1_1exception.html">xtd::exception</a></td></tr>
 <tr class="memitem:afeb92288589a14efa6ea4c0d64cbd7f9 inherit pub_static_methods_classxtd_1_1exception"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1exception.html#afeb92288589a14efa6ea4c0d64cbd7f9">enable_stack_trace</a> () noexcept</td></tr>
 <tr class="memdesc:afeb92288589a14efa6ea4c0d64cbd7f9 inherit pub_static_methods_classxtd_1_1exception"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets if the generation of the stack trace is enabled.  <br /></td></tr>
@@ -877,7 +877,7 @@ template&lt;class exception_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 19 2025 10:56:33 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Apr 24 2025 19:26:28 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

@@ -103,8 +103,8 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structxtd_1_1formatter.html">xtd::formatter&lt; type_t &gt;</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides the base class to format any object.  <a href="structxtd_1_1formatter.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1shared__ptr__object.html">xtd::shared_ptr_object&lt; type_t &gt;</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classxtd_1_1shared__ptr__object.html" title="The xtd::shared_ptr_object is a shared pointer as std::shared_ptr.">xtd::shared_ptr_object</a> is a shared pointer as <a href="https://en.cppreference.com/w/cpp/memory/shared_ptr">std::shared_ptr</a>.  <a href="classxtd_1_1shared__ptr__object.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object&lt; type_t &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classxtd_1_1reference__wrapper__object.html" title="The xtd::reference_wrapper_object is a reference wrapper as std::reference_wrapper.">xtd::reference_wrapper_object</a> is a reference wrapper as <a href="https://en.cppreference.com/w/cpp/utility/functional/reference_wrapper">std::reference_wrapper</a>.  <a href="classxtd_1_1reference__wrapper__object.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1type__object.html">xtd::type_object</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents type declarations: class types, interface types, array types, value types, enumeration types, type parameters, generic type definitions, and open or closed constructed generic types.  <a href="classxtd_1_1type__object.html#details">More...</a><br /></td></tr>
@@ -179,6 +179,10 @@ Variables</h2></td></tr>
 <tr class="memitem:gac047942a62f03ba75e1b4f0bde7401ca"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#gac047942a62f03ba75e1b4f0bde7401ca">xtd::ptrdiff</a> = std::ptrdiff_t</td></tr>
 <tr class="memdesc:gac047942a62f03ba75e1b4f0bde7401ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represent the signed integer type of the result of subtracting two pointers.  <br /></td></tr>
 <tr class="separator:gac047942a62f03ba75e1b4f0bde7401ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga91cb5f6df35cd6471fb893bc755f6b2d"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
+<tr class="memitem:ga91cb5f6df35cd6471fb893bc755f6b2d"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#ga91cb5f6df35cd6471fb893bc755f6b2d">xtd::ref</a> = <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt; type_t &gt;</td></tr>
+<tr class="memdesc:ga91cb5f6df35cd6471fb893bc755f6b2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__types.html#ga91cb5f6df35cd6471fb893bc755f6b2d" title="The xtd::ref object is a reference wrapper.">xtd::ref</a> object is a reference wrapper.  <br /></td></tr>
+<tr class="separator:ga91cb5f6df35cd6471fb893bc755f6b2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga37e983ceedf5a7f73bc4568eaeae0aa2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#ga37e983ceedf5a7f73bc4568eaeae0aa2">xtd::sbyte</a> = int8_t</td></tr>
 <tr class="memdesc:ga37e983ceedf5a7f73bc4568eaeae0aa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a 8-bit signed integer.  <br /></td></tr>
 <tr class="separator:ga37e983ceedf5a7f73bc4568eaeae0aa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,7 +196,7 @@ Variables</h2></td></tr>
 <tr class="memdesc:gaf4ae7b4402a8b6bb42003cc42fa6d17b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a 32-bit or 64-bit signed integer.  <br /></td></tr>
 <tr class="separator:gaf4ae7b4402a8b6bb42003cc42fa6d17b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga169eb3d5ba9d4941bb0854c9bd5f954c"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
-<tr class="memitem:ga169eb3d5ba9d4941bb0854c9bd5f954c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#ga169eb3d5ba9d4941bb0854c9bd5f954c">xtd::sptr</a> = <a class="el" href="classxtd_1_1shared__ptr__object.html">xtd::shared_ptr_object</a>&lt; type_t &gt;</td></tr>
+<tr class="memitem:ga169eb3d5ba9d4941bb0854c9bd5f954c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#ga169eb3d5ba9d4941bb0854c9bd5f954c">xtd::sptr</a> = xtd::shared_ptr_object&lt; type_t &gt;</td></tr>
 <tr class="memdesc:ga169eb3d5ba9d4941bb0854c9bd5f954c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__types.html#ga169eb3d5ba9d4941bb0854c9bd5f954c" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> object is a shared pointer.  <br /></td></tr>
 <tr class="separator:ga169eb3d5ba9d4941bb0854c9bd5f954c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafa42bcceb7fb5768ea8cc4588e67dc15"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#gafa42bcceb7fb5768ea8cc4588e67dc15">xtd::type</a> = std::type_info</td></tr>
@@ -213,16 +217,16 @@ Variables</h2></td></tr>
 <tr class="memitem:ga313036ce703450f07d94c71ed78f2b21"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#ga313036ce703450f07d94c71ed78f2b21">xtd::ulong</a> = __ulong__</td></tr>
 <tr class="memdesc:ga313036ce703450f07d94c71ed78f2b21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a 32-bit or 64-bit unsigned integer.  <br /></td></tr>
 <tr class="separator:ga313036ce703450f07d94c71ed78f2b21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4ac188feb2d52b21e188417441519bb2"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
-<tr class="memitem:ga4ac188feb2d52b21e188417441519bb2"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a> = std::unique_ptr&lt; type_t &gt;</td></tr>
-<tr class="memdesc:ga4ac188feb2d52b21e188417441519bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object is a unique pointer.  <br /></td></tr>
-<tr class="separator:ga4ac188feb2d52b21e188417441519bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48fac90121ee2c88ac5cb68551759bfd"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
+<tr class="memitem:ga48fac90121ee2c88ac5cb68551759bfd"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#ga48fac90121ee2c88ac5cb68551759bfd">xtd::uptr</a> = xtd::unique_ptr_object&lt; type_t &gt;</td></tr>
+<tr class="memdesc:ga48fac90121ee2c88ac5cb68551759bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__types.html#ga48fac90121ee2c88ac5cb68551759bfd" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object is a unique pointer.  <br /></td></tr>
+<tr class="separator:ga48fac90121ee2c88ac5cb68551759bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga155357d92cf162b71b396e46accee518"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#ga155357d92cf162b71b396e46accee518">xtd::wchar</a> = wchar_t</td></tr>
 <tr class="memdesc:ga155357d92cf162b71b396e46accee518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a wide character.  <br /></td></tr>
 <tr class="separator:ga155357d92cf162b71b396e46accee518"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga541ef37a59d2e67f6fd2ad9832ab220c"><td class="memTemplParams" colspan="2">template&lt;class type_t &gt; </td></tr>
 <tr class="memitem:ga541ef37a59d2e67f6fd2ad9832ab220c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#ga541ef37a59d2e67f6fd2ad9832ab220c">xtd::wptr</a> = std::weak_ptr&lt; type_t &gt;</td></tr>
-<tr class="memdesc:ga541ef37a59d2e67f6fd2ad9832ab220c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object is a weak pointer.  <br /></td></tr>
+<tr class="memdesc:ga541ef37a59d2e67f6fd2ad9832ab220c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="group__types.html#ga48fac90121ee2c88ac5cb68551759bfd" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object is a weak pointer.  <br /></td></tr>
 <tr class="separator:ga541ef37a59d2e67f6fd2ad9832ab220c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Boxed types</h2></td></tr>
@@ -994,13 +998,13 @@ template&lt;class type_t &gt; </div>
 
 <p>The <a class="el" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec" title="The xtd::ptr object is a shared pointer.">xtd::ptr</a> object is a shared pointer. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>this is example shows to use xtd::new_ with <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1shared__ptr__object.html">ptr&lt;xtd::version&gt;</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a> = new_ptr&lt;xtd::version&gt;(1, 2, 3);</div>
+<dl class="section user"><dt>Examples</dt><dd>this is example shows to use xtd::new_ with <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">ptr&lt;xtd::version&gt;</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a> = new_ptr&lt;xtd::version&gt;(1, 2, 3);</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;version = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1version.html">version</a>-&gt;<a class="code hl_function" href="classxtd_1_1version.html#adb97d4a2c23991ee27bacacf55cad226">to_string</a>());</div>
 <div class="line"><a class="code hl_function" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">delete_ptr</a>(<a class="code hl_class" href="classxtd_1_1version.html">version</a>); <span class="comment">// Not mandatory.</span></div>
-<div class="ttc" id="aclassxtd_1_1shared__ptr__object_html"><div class="ttname"><a href="classxtd_1_1shared__ptr__object.html">xtd::shared_ptr_object</a></div><div class="ttdoc">The xtd::shared_ptr_object is a shared pointer as std::shared_ptr.</div><div class="ttdef"><b>Definition</b> shared_ptr_object.hpp:30</div></div>
 <div class="ttc" id="aclassxtd_1_1version_html"><div class="ttname"><a href="classxtd_1_1version.html">xtd::version</a></div><div class="ttdoc">Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...</div><div class="ttdef"><b>Definition</b> version.hpp:114</div></div>
 <div class="ttc" id="aclassxtd_1_1version_html_adb97d4a2c23991ee27bacacf55cad226"><div class="ttname"><a href="classxtd_1_1version.html#adb97d4a2c23991ee27bacacf55cad226">xtd::version::to_string</a></div><div class="ttdeci">xtd::string to_string() const noexcept override</div><div class="ttdoc">Converts the value of the current xtd::version object to its equivalent xtd::string representation.</div></div>
+<div class="ttc" id="agroup__types_html_ga14f390dd1d27bfab4cc2f26c1502c8ec"><div class="ttname"><a href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">xtd::ptr</a></div><div class="ttdeci">xtd::sptr&lt; type_t &gt; ptr</div><div class="ttdoc">The xtd::ptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> ptr.hpp:27</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ga4a8d88c02f04ecf312a36f95ab137d15"><div class="ttname"><a href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">xtd::delete_ptr</a></div><div class="ttdeci">void delete_ptr(sptr&lt; type_t &gt; &amp;ptr)</div><div class="ttdoc">xtd::delete_ptr operator delete a xtd::sptr or xtd::ptr object.</div><div class="ttdef"><b>Definition</b> delete_ptr.hpp:27</div></div>
 </div><!-- fragment --> </dd></dl>
 
@@ -1052,6 +1056,33 @@ template&lt;class type_t &gt; </div>
 <div class="line"><a class="code hl_typedef" href="group__types.html#ga80e43cf0f75b3bd8374de9e634c036fe">intptr_object</a> boxed_object = unboxed_object;</div>
 <div class="line"><span class="keyword">auto</span> result = stringer(boxed_object);</div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;result = {}&quot;</span>, result); <span class="comment">// Display: result = 42;</span></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
+<a id="ga91cb5f6df35cd6471fb893bc755f6b2d" name="ga91cb5f6df35cd6471fb893bc755f6b2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga91cb5f6df35cd6471fb893bc755f6b2d">&#9670;&#160;</a></span>ref</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class type_t &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__types.html#ga91cb5f6df35cd6471fb893bc755f6b2d">xtd::ref</a> = typedef <a class="el" href="classxtd_1_1reference__wrapper__object.html">xtd::reference_wrapper_object</a>&lt;type_t&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>#include &lt;<a class="el" href="ref_8hpp.html">xtd.core/include/xtd/ref.hpp</a>&gt;</code></p>
+
+<p>The <a class="el" href="group__types.html#ga91cb5f6df35cd6471fb893bc755f6b2d" title="The xtd::ref object is a reference wrapper.">xtd::ref</a> object is a reference wrapper. </p>
+<dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>This example shows to use <a class="el" href="group__types.html#ga91cb5f6df35cd6471fb893bc755f6b2d" title="The xtd::ref object is a reference wrapper.">xtd::ref</a> with <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1version.html">version</a> ver = <a class="code hl_class" href="classxtd_1_1version.html">version</a> {1, 2, 3};</div>
+<div class="line">ref&lt;version&gt; ver_ref = <a class="code hl_function" href="group__xtd__core.html#ga828284b7bf6beaa685939846072d9b80">create_ref</a>(ver);</div>
+<div class="line"> </div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;version = {}&quot;</span>, ver_ref.to_string());</div>
+<div class="ttc" id="agroup__xtd__core_html_ga828284b7bf6beaa685939846072d9b80"><div class="ttname"><a href="group__xtd__core.html#ga828284b7bf6beaa685939846072d9b80">xtd::create_ref</a></div><div class="ttdeci">ref&lt; const type_t &gt; create_ref(ref&lt; type_t &gt; arg) noexcept</div><div class="ttdoc">xtd::new_uptr operator. This operator creates a xtd::ref object.</div><div class="ttdef"><b>Definition</b> create_cref.hpp:38</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1243,7 +1274,7 @@ template&lt;class type_t &gt; </div>
 template&lt;class type_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group__types.html#ga169eb3d5ba9d4941bb0854c9bd5f954c">xtd::sptr</a> = typedef <a class="el" href="classxtd_1_1shared__ptr__object.html">xtd::shared_ptr_object</a>&lt;type_t&gt;</td>
+          <td class="memname">using <a class="el" href="group__types.html#ga169eb3d5ba9d4941bb0854c9bd5f954c">xtd::sptr</a> = typedef xtd::shared_ptr_object&lt;type_t&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1252,10 +1283,11 @@ template&lt;class type_t &gt; </div>
 
 <p>The <a class="el" href="group__types.html#ga169eb3d5ba9d4941bb0854c9bd5f954c" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> object is a shared pointer. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>This example shows to use <a class="el" href="group__types.html#ga169eb3d5ba9d4941bb0854c9bd5f954c" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> with <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class <div class="fragment"><div class="line"><a class="code hl_class" href="classxtd_1_1shared__ptr__object.html">sptr&lt;xtd::version&gt;</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a> = new_sptr&lt;xtd::version&gt;(1, 2, 3);</div>
+<dl class="section user"><dt>Examples</dt><dd>This example shows to use <a class="el" href="group__types.html#ga169eb3d5ba9d4941bb0854c9bd5f954c" title="The xtd::sptr object is a shared pointer.">xtd::sptr</a> with <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga169eb3d5ba9d4941bb0854c9bd5f954c">sptr&lt;xtd::version&gt;</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a> = new_sptr&lt;xtd::version&gt;(1, 2, 3);</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;version = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1version.html">version</a>-&gt;<a class="code hl_function" href="classxtd_1_1version.html#adb97d4a2c23991ee27bacacf55cad226">to_string</a>());</div>
 <div class="line"><a class="code hl_function" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">delete_ptr</a>(<a class="code hl_class" href="classxtd_1_1version.html">version</a>); <span class="comment">// Not mandatory.</span></div>
+<div class="ttc" id="agroup__types_html_ga169eb3d5ba9d4941bb0854c9bd5f954c"><div class="ttname"><a href="group__types.html#ga169eb3d5ba9d4941bb0854c9bd5f954c">xtd::sptr</a></div><div class="ttdeci">xtd::shared_ptr_object&lt; type_t &gt; sptr</div><div class="ttdoc">The xtd::sptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> sptr.hpp:25</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1585,8 +1617,8 @@ template&lt;class type_t &gt; </div>
 
 </div>
 </div>
-<a id="ga4ac188feb2d52b21e188417441519bb2" name="ga4ac188feb2d52b21e188417441519bb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4ac188feb2d52b21e188417441519bb2">&#9670;&#160;</a></span>uptr</h2>
+<a id="ga48fac90121ee2c88ac5cb68551759bfd" name="ga48fac90121ee2c88ac5cb68551759bfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga48fac90121ee2c88ac5cb68551759bfd">&#9670;&#160;</a></span>uptr</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1594,20 +1626,20 @@ template&lt;class type_t &gt; </div>
 template&lt;class type_t &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a> = typedef std::unique_ptr&lt;type_t&gt;</td>
+          <td class="memname">using <a class="el" href="group__types.html#ga48fac90121ee2c88ac5cb68551759bfd">xtd::uptr</a> = typedef xtd::unique_ptr_object&lt;type_t&gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p><code>#include &lt;<a class="el" href="uptr_8hpp.html">xtd.core/include/xtd/uptr.hpp</a>&gt;</code></p>
 
-<p>The <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object is a unique pointer. </p>
+<p>The <a class="el" href="group__types.html#ga48fac90121ee2c88ac5cb68551759bfd" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object is a unique pointer. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>This example shows to use <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> with <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">uptr&lt;xtd::version&gt;</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a> = newu_uptr&lt;xtd::version&gt;(1, 2, 3);</div>
+<dl class="section user"><dt>Examples</dt><dd>This example shows to use <a class="el" href="group__types.html#ga48fac90121ee2c88ac5cb68551759bfd" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> with <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> class <div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga48fac90121ee2c88ac5cb68551759bfd">uptr&lt;xtd::version&gt;</a> <a class="code hl_class" href="classxtd_1_1version.html">version</a> = newu_uptr&lt;xtd::version&gt;(1, 2, 3);</div>
 <div class="line"> </div>
 <div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">console::write_line</a>(<span class="stringliteral">&quot;version = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1version.html">version</a>-&gt;<a class="code hl_function" href="classxtd_1_1version.html#adb97d4a2c23991ee27bacacf55cad226">to_string</a>());</div>
 <div class="line"><a class="code hl_function" href="group__xtd__core.html#ga4a8d88c02f04ecf312a36f95ab137d15">delete_ptr</a>(<a class="code hl_class" href="classxtd_1_1version.html">version</a>); <span class="comment">// Not mandatory.</span></div>
-<div class="ttc" id="agroup__types_html_ga4ac188feb2d52b21e188417441519bb2"><div class="ttname"><a href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr</a></div><div class="ttdeci">std::unique_ptr&lt; type_t &gt; uptr</div><div class="ttdoc">The xtd::uptr object is a unique pointer.</div><div class="ttdef"><b>Definition</b> uptr.hpp:25</div></div>
+<div class="ttc" id="agroup__types_html_ga48fac90121ee2c88ac5cb68551759bfd"><div class="ttname"><a href="group__types.html#ga48fac90121ee2c88ac5cb68551759bfd">xtd::uptr</a></div><div class="ttdeci">xtd::unique_ptr_object&lt; type_t &gt; uptr</div><div class="ttdoc">The xtd::uptr object is a unique pointer.</div><div class="ttdef"><b>Definition</b> uptr.hpp:25</div></div>
 </div><!-- fragment --> </dd></dl>
 
 </div>
@@ -1684,7 +1716,7 @@ template&lt;class type_t &gt; </div>
 
 <p><code>#include &lt;<a class="el" href="wptr_8hpp.html">xtd.core/include/xtd/wptr.hpp</a>&gt;</code></p>
 
-<p>The <a class="el" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object is a weak pointer. </p>
+<p>The <a class="el" href="group__types.html#ga48fac90121ee2c88ac5cb68551759bfd" title="The xtd::uptr object is a unique pointer.">xtd::uptr</a> object is a weak pointer. </p>
 <dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
 
 </div>
@@ -1747,7 +1779,7 @@ template&lt;class type_t &gt; </div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga4ac188feb2d52b21e188417441519bb2">xtd::uptr&lt;foo_class&gt;</a> foo = xtd::new_uptr&lt;foo_class&gt;();</div>
+<dl class="section user"><dt>Examples</dt><dd><div class="fragment"><div class="line"><a class="code hl_typedef" href="group__types.html#ga48fac90121ee2c88ac5cb68551759bfd">xtd::uptr&lt;foo_class&gt;</a> foo = xtd::new_uptr&lt;foo_class&gt;();</div>
 <div class="line">...</div>
 <div class="line">foo = <a class="code hl_variable" href="group__types.html#ga3076865c8390f78bfa45c7fbd8df1b65">null</a>; <span class="comment">// release the unique pointer.</span></div>
 <div class="ttc" id="agroup__types_html_ga3076865c8390f78bfa45c7fbd8df1b65"><div class="ttname"><a href="group__types.html#ga3076865c8390f78bfa45c7fbd8df1b65">xtd::null</a></div><div class="ttdeci">null_ptr null</div><div class="ttdoc">Represents a null pointer value.</div></div>
@@ -1794,7 +1826,7 @@ template&lt;class type_t &gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 19 2025 10:56:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu Apr 24 2025 19:26:27 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
