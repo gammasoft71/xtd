@@ -275,6 +275,19 @@ namespace xtd {
   template<class type_t, class deleter_t>
   inline const unique_ptr_object<type_t, deleter_t>  unique_ptr_object<type_t, deleter_t>::empty;
   /// @}
+  
+  /// @cond
+  // C++17 deduction guides for xtd::reference_wrapper_object
+  // {
+  template<class type_t>
+  unique_ptr_object(type_t*) -> unique_ptr_object<type_t, std::default_delete<type_t>>;
+  template<class type_t, class deleter_t>
+  unique_ptr_object(type_t*, const deleter_t&) -> unique_ptr_object<type_t, deleter_t>;
+  template<class type_t, class deleter_t>
+  unique_ptr_object(xtd::unique_ptr_object<type_t, deleter_t>()) -> unique_ptr_object<type_t, deleter_t>;
+  template<class type_t, class deleter_t>
+  unique_ptr_object(std::unique_ptr<type_t, deleter_t>()) -> unique_ptr_object<type_t, deleter_t>;
+  // }
 }
 
 template<class object_t>
