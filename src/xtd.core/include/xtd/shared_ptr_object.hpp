@@ -39,14 +39,14 @@ namespace xtd {
     /// @brief Represent the weak type.
     using weak_type = typename base_type::weak_type;
     /// @}
-
+    
     /// @name Public Static Fields
     
     /// @{
     /// @brief Represents the empty xtd::shared_ptr_object. This field is constant.
     static const shared_ptr_object empty;
     /// @}
-
+    
     /// @name Public Constructors
     
     /// @{
@@ -96,7 +96,7 @@ namespace xtd {
     template<class value_t, class deleter_t>
     shared_ptr_object(std::unique_ptr<value_t, deleter_t>&& value) : ptr_ {std::move(value)} {}
     /// @}
-
+    
     /// @name Public Properties
     
     /// @{
@@ -119,7 +119,7 @@ namespace xtd {
     /// @return `true` if thid current instance precedes `other`; otherwise `false`.
     template<class value_t>
     bool owner_before( const std::weak_ptr<value_t>& other) const noexcept {return ptr_owner_before(other);}
-
+    
     /// @brief Returns the underlying base type pointer.
     /// @return The underlying base type pointer.
     const base_type& pointer() const noexcept {return ptr_;}
@@ -132,7 +132,7 @@ namespace xtd {
     /// @return The number of xtd::shared_ptr_object objects referring to the same managed object.
     xtd::size use_count() const noexcept {return static_cast<xtd::size>(ptr_.use_count());}
     /// @}
-
+    
     /// @name Public Methods
     
     /// @{
@@ -147,7 +147,7 @@ namespace xtd {
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
     int32 compare_to(const shared_ptr_object& obj) const noexcept override {return to_pointer() < obj.to_pointer() ? -1 : to_pointer() > obj.to_pointer() ? 1 : 0;}
-
+    
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
     /// @return `true` if the specified object is equal to the current object. otherwise, `false`.
@@ -156,15 +156,15 @@ namespace xtd {
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
     bool equals(const shared_ptr_object& value) const noexcept override {return ptr_ == value.ptr_;}
-
+    
     /// @brief Gets the stored pointer.
     /// @return The stored pointer.
     element_type* get() const noexcept {return ptr_.get();}
-
+    
     /// @brief Serves as a hash function for a particular type.
     /// @return size_t A hash code for the current object.
     xtd::size get_hash_code() const noexcept override {return (ptr_ ? xtd::hash_code::combine(to_pointer()) : 0);}
-
+    
     /// @brief Resets the current object. Set the current object to null.
     /// @remarks xtd::shared_ptr_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
     void reset() noexcept {ptr_.reset();}
@@ -176,11 +176,11 @@ namespace xtd {
     /// @brief Resets the current object. Set the current object with specified pointer.
     /// @param null The null pointer.
     void reset(xtd::null_ptr null) noexcept {ptr_.reset();}
-
+    
     /// @brief Swaps this current instance with specified shared pointer object.
     /// @param ptr The shared pointer object to swap with this current instance.
     void swap(shared_ptr_object& ptr) noexcept {ptr_.swap(ptr.ptr_);}
-
+    
     /// @brief Gets the stored object.
     /// @return The stored object.
     type_t& to_object() const noexcept {return *to_pointer();}
@@ -194,18 +194,18 @@ namespace xtd {
     /// @brief Gets the stored pointer.
     /// @return The stored pointer.
     element_type* to_pointer() const noexcept {return get();}
-
+    
     /// @brief Gets the stored pointer with specified `target_t` type.
     /// @return The stored pointer.
     /// @exception xtd::cast_exception If the current object can't be casted in target_t.
     template<typename target_t>
     target_t* to_pointer() const;
-
+    
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
     xtd::string to_string() const noexcept override;
     /// @}
-
+    
     /// @name Public Operators
     
     /// @{
@@ -254,11 +254,11 @@ namespace xtd {
       ptr_ = value;
       return *this;
     }
-
+    
     /// @brief Gets the stored object.
     /// @return The stored object.
     type_t& operator *() const noexcept {return ptr_.operator *();}
-
+    
     /// @brief Gets the stored pointer.
     /// @return The stored pointer.
     type_t* operator ->() const noexcept {return ptr_.operator ->();}
@@ -267,27 +267,40 @@ namespace xtd {
     /// @param index The array index.
     /// @return A reference to the index-th element of the array, i.e., `get()[index]`.
     element_type& operator[](std::ptrdiff_t index) const {return ptr_.operator [](index);}
-
+    
     /// @brief Checks if the stored pointer is not null.
     /// @return `true`if stored pointer is non null; otherwise `false`.
     explicit operator bool() const noexcept {return ptr_.operator bool();}
-
+    
     /// @brief Returns the underlying base type pointer.
     /// @return The underlying base type pointer.
     operator base_type() const noexcept {return ptr_;}
-
+    
     /// @brief Returns a weak type pointer.
     /// @return A weak type pointer.
     operator weak_type() const noexcept {return weak_type {ptr_};}
     /// @}
-
+    
   private:
     template<class other_t>
     friend class shared_ptr_object;
     mutable base_type ptr_;
   };
-
+  
   template<class type_t>
   inline const shared_ptr_object<type_t>  shared_ptr_object<type_t>::empty;
   /// @}
+  
+  /// @cond
+  // C++17 deduction guides for xtd::reference_wrapper_object
+  // {
+  template<class type_t>
+  shared_ptr_object(type_t*) -> shared_ptr_object<type_t>;
+  template<class type_t>
+  shared_ptr_object(std::weak_ptr<type_t>()) -> shared_ptr_object<type_t>;
+  template<class type_t, class deleter_t>
+  shared_ptr_object(xtd::unique_ptr_object<type_t, deleter_t>()) -> shared_ptr_object<type_t>;
+  template<class type_t, class deleter_t>
+  shared_ptr_object(std::unique_ptr<type_t, deleter_t>()) -> shared_ptr_object<type_t>;
+  // }
 }
