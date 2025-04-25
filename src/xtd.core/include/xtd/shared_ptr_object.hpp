@@ -118,7 +118,7 @@ namespace xtd {
     /// @param other The std::weak_ptr to be compared.
     /// @return `true` if thid current instance precedes `other`; otherwise `false`.
     template<class value_t>
-    bool owner_before( const std::weak_ptr<value_t>& other) const noexcept {return ptr_owner_before(other);}
+    bool owner_before( const std::weak_ptr<value_t>& other) const noexcept {return ptr_.owner_before(other);}
     
     /// @brief Returns the underlying base type pointer.
     /// @return The underlying base type pointer.
