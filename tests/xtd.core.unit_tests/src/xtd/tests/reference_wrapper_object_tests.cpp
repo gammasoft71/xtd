@@ -157,23 +157,26 @@ namespace xtd::tests {
       assert::is_negative(r2.compare_to(r1));
     }
     
-    /*
     void test_method_(equals) {
-      auto r1 = reference_wrapper_object<string> {new string {"value"}};
-      auto r2 = reference_wrapper_object<string> {new string {"value"}};
+      auto s1 = string {"value"};
+      auto s2 = string {"value"};
+      auto r1 = reference_wrapper_object<string> {s1};
+      auto r2 = reference_wrapper_object<string> {s2};
       auto r3 = reference_wrapper_object<string> {r1};
       auto r4 = reference_wrapper_object<string> {r2};
       
       assert::is_true(r1.equals(r1));
       assert::is_false(r1.equals(r2));
-      assert::is_true(r1.equals(r3));
+      assert::is_false(r1.equals(r3));
       assert::is_false(r1.equals(r4));
-      assert::is_true(r2.equals(r4));
+      assert::is_false(r2.equals(r4));
     }
-
+    
     void test_method_(equals_with_object) {
-      auto r1 = reference_wrapper_object<string> {new string {"value"}};
-      auto r2 = reference_wrapper_object<string> {new string {"value"}};
+      auto s1 = string {"value"};
+      auto s2 = string {"value"};
+      auto r1 = reference_wrapper_object<string> {s1};
+      auto r2 = reference_wrapper_object<string> {s2};
       auto r3 = reference_wrapper_object<string> {r1};
       auto r4 = reference_wrapper_object<string> {r2};
       
@@ -184,22 +187,22 @@ namespace xtd::tests {
       
       assert::is_true(r1.equals(o1));
       assert::is_false(r1.equals(o2));
-      assert::is_true(r1.equals(o3));
+      assert::is_false(r1.equals(o3));
       assert::is_false(r1.equals(o4));
-      assert::is_true(r2.equals(o4));
+      assert::is_false(r2.equals(o4));
     }
     
     void test_method_(get) {
-      auto p1 = new string {"value"};
-      auto p2 = new string {"value"};
-      auto r1 = reference_wrapper_object<string> {p1};
-      auto r2 = reference_wrapper_object<string> {p2};
+      auto s1 = string {"value"};
+      auto s2 = string {"other"};
+      auto r1 = reference_wrapper_object<string> {s1};
+      auto r2 = reference_wrapper_object<string> {s2};
       auto r3 = r1;
       auto r4 = r2;
-
-      assert::is_null(reference_wrapper_object<int>::empty.get());
-      assert::are_equal(p1, r1.get());
-      assert::are_equal(p2, r2.get());
+      
+      assert::throws<null_pointer_exception>([] {reference_wrapper_object<int>::empty.get();});
+      assert::are_equal(s1, r1.get());
+      assert::are_equal(s2, r2.get());
       assert::are_equal(r3.get(), r1.get());
       assert::are_not_equal(r2.get(), r1.get());
       assert::are_not_equal(r3.get(), r2.get());
@@ -208,11 +211,13 @@ namespace xtd::tests {
     
     void test_method_(get_hash_code) {
       assert::is_zero(reference_wrapper_object<int>::empty.get_hash_code());
-      auto r1 = reference_wrapper_object<string> {new string {"value"}};
-      auto r2 = reference_wrapper_object<string> {new string {"value"}};
-      auto r3 = reference_wrapper_object<string> {new string {"other"}};
-      auto r4 = reference_wrapper_object<string> {new string {"other"}};
-      assert::are_equal(hash_code::combine(r1.to_pointer()), r1.get_hash_code());
+      auto s1 = string {"value"};
+      auto s2 = string {"other"};
+      auto r1 = reference_wrapper_object<string> {s1};
+      auto r2 = reference_wrapper_object<string> {s1};
+      auto r3 = reference_wrapper_object<string> {s2};
+      auto r4 = reference_wrapper_object<string> {s2};
+      assert::are_equal(hash_code::combine(&r1.reference()), r1.get_hash_code());
       assert::are_not_equal(r2.get_hash_code(), r1.get_hash_code());
       assert::are_not_equal(r3.get_hash_code(), r1.get_hash_code());
       assert::are_not_equal(r4.get_hash_code(), r1.get_hash_code());
@@ -220,42 +225,43 @@ namespace xtd::tests {
     }
     
     void test_method_(reset) {
-      auto p = new string {"value"};
-      auto r = reference_wrapper_object<string> {p};
-      assert::are_equal(p, r.get());
+      auto s = string {"value"};
+      auto r = reference_wrapper_object<string> {s};
+      assert::are_equal(s, r.get());
       r.reset();
-      assert::is_null(r.get());
+      assert::is_true(r.is_empty());
     }
     
-    void test_method_(reset_with_pointer) {
-      auto p1 = new string {"value"};
-      auto p2 = new string {"value"};
-      auto r1 = reference_wrapper_object<string> {p1};
-      assert::are_equal(p1, r1.get());
-      r1.reset(p2);
-      assert::are_equal(p2, r1.get());
+    void test_method_(reset_with_reference) {
+      auto s1 = string {"value"};
+      auto s2 = string {"other"};
+      auto r1 = reference_wrapper_object<string> {s1};
+      assert::are_equal(s1, r1.get());
+      r1.reset(s2);
+      assert::are_equal(s2, r1.get());
     }
     
     void test_method_(reset_with_null) {
-      auto p = new string {"value"};
-      auto r = reference_wrapper_object<string> {p};
-      assert::are_equal(p, r.get());
+      auto s = string {"value"};
+      auto r = reference_wrapper_object<string> {s};
+      assert::are_equal(s, r.get());
       r.reset(null);
-      assert::is_null(r.get());
-    }
-
-    void test_method_(swap) {
-      auto p1 = new string {"value"};
-      auto p2 = new string {"value"};
-      auto r1 = reference_wrapper_object<string> {p1};
-      auto r2 = reference_wrapper_object<string> {p2};
-      assert::are_equal(p1, r1.get());
-      assert::are_equal(p2, r2.get());
-      r1.swap(r2);
-      assert::are_equal(p2, r1.get());
-      assert::are_equal(p1, r2.get());
+      assert::is_true(r.is_empty());
     }
     
+    void test_method_(swap) {
+      auto s1 = string {"value"};
+      auto s2 = string {"other"};
+      auto r1 = reference_wrapper_object<string> {s1};
+      auto r2 = reference_wrapper_object<string> {s2};
+      assert::are_equal(s1, r1.get());
+      assert::are_equal(s2, r2.get());
+      r1.swap(r2);
+      assert::are_equal(s2, r1.get());
+      assert::are_equal(s1, r2.get());
+    }
+    
+    /*
     void test_method_(to_object) {
       assert::are_equal("value", reference_wrapper_object<string> {new string {"value"}}.to_object());
       assert::are_equal(42, reference_wrapper_object<int> {new int {42}}.to_object());
