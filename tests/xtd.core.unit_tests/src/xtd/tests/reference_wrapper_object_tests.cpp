@@ -141,23 +141,23 @@ namespace xtd::tests {
       assert::throws<null_pointer_exception>([] {reference_wrapper_object<int>::empty.reference();});
     }
     
-    /*
     void test_method_(compare_to) {
       assert::is_zero(reference_wrapper_object<string>::empty.compare_to(reference_wrapper_object<string>::empty));
-      assert::is_negative(reference_wrapper_object<string>::empty.compare_to(reference_wrapper_object<string> {new string {"value"}}));
-      assert::is_positive(reference_wrapper_object<string> {new string {"value"}}.compare_to(reference_wrapper_object<string>::empty));
-
-      auto r1 = reference_wrapper_object<string> {new string {"value"}};
-      auto r2 = reference_wrapper_object<string> {new string {"value"}};
-
+      auto s1 = string {"value"};
+      auto s2 = string {"value"};
+      assert::is_negative(reference_wrapper_object<string>::empty.compare_to(reference_wrapper_object<string> {s1}));
+      assert::is_positive(reference_wrapper_object<string> {s2}.compare_to(reference_wrapper_object<string>::empty));
+      
+      auto r1 = reference_wrapper_object<string> {s1};
+      auto r2 = reference_wrapper_object<string> {s2};
+      
       assert::is_zero(r1.compare_to(r1));
       assert::is_zero(r2.compare_to(r2));
-      // -> Not sure to keep the next two tests because the memory allocation order is not predictive...
-      //assert::is_positive(r1.compare_to(r2));
-      //assert::is_negative(r2.compare_to(r1));
-      // <-
+      assert::is_positive(r1.compare_to(r2));
+      assert::is_negative(r2.compare_to(r1));
     }
     
+    /*
     void test_method_(equals) {
       auto r1 = reference_wrapper_object<string> {new string {"value"}};
       auto r2 = reference_wrapper_object<string> {new string {"value"}};
