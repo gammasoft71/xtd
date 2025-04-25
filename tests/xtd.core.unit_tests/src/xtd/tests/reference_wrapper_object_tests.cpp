@@ -49,33 +49,20 @@ namespace xtd::tests {
     void test_method_(create_with_empty_reference_wrapper_object) {
       auto r1 = reference_wrapper_object<int> {};
       auto r2 = reference_wrapper_object<int> {r1};
-      assert::is_true(r1.is_empty());
-      assert::throws<null_pointer_exception>([&] {r1.get();});
+      assert::is_true(r2.is_empty());
+      assert::throws<null_pointer_exception>([&] {r2.get();});
+    }
+    
+    void test_method_(create_with_reference_wrapper_object) {
+      auto i = 42;
+      auto r1 = reference_wrapper_object<int> {i};
+      auto r2 = reference_wrapper_object<int> {r1};
+      assert::is_false(r1.is_empty());
+      assert::is_false(r2.is_empty());
+      assert::are_equal(42, r2.get());
     }
     
     /*
-    void test_method_(create_with_empty_reference_wrapper_object) {
-      auto r1 = reference_wrapper_object<int> {};
-      auto r2 = reference_wrapper_object<int> {r1};
-      assert::is_zero(r2.use_count());
-      assert::is_null(r2.get());
-    }
-
-    void test_method_(create_with_empty_std_reference_wrapper) {
-      auto r1 = std::reference_wrapper<int> {};
-      auto r2 = reference_wrapper_object<int> {r1};
-      assert::is_zero(r2.use_count());
-      assert::is_null(r2.get());
-    }
-
-    void test_method_(create_with_reference_wrapper_object) {
-      auto r1 = reference_wrapper_object<int> {new int {42}};
-      auto r2 = reference_wrapper_object<int> {r1};
-      assert::are_equal(2_z, r1.use_count());
-      assert::are_equal(2_z, r2.use_count());
-      assert::is_not_null(r2.get());
-    }
-
     void test_method_(create_with_std_reference_wrapper) {
       auto r1 = std::reference_wrapper<int> {new int {42}};
       auto r2 = reference_wrapper_object<int> {r1};
