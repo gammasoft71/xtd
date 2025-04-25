@@ -135,7 +135,7 @@ namespace xtd {
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
-    int32 compare_to(const reference_wrapper_object& obj) const noexcept override {return get() < obj.get() ? -1 : get() > obj.get() ? 1 : 0;}
+    int32 compare_to(const reference_wrapper_object& obj) const noexcept override {return &ref_ < &obj.ref_ ? -1 : &ref_ > &obj.ref_ ? 1 : 0;}
 
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
@@ -144,7 +144,7 @@ namespace xtd {
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-    bool equals(const reference_wrapper_object& value) const noexcept override {return ref_ == value.ref_;}
+    bool equals(const reference_wrapper_object& value) const noexcept override {return &ref_ == &value.ref_;}
 
     /// @brief Gets the stored reference.
     /// @return The stored reference.
