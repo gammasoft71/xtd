@@ -171,7 +171,7 @@ namespace xtd {
 
     /// @brief Serves as a hash function for a particular type.
     /// @return size_t A hash code for the current object.
-    xtd::size get_hash_code() const noexcept override {return (ref_.has_value() ? xtd::hash_code::combine(get()) : 0);}
+    xtd::size get_hash_code() const noexcept override {return (ref_.has_value() ? xtd::hash_code::combine(&reference()) : 0);}
 
     /// @brief Checks if the stored reference is empty.
     /// @return `true`if stored reference is empty; otherwise `false`.
@@ -192,7 +192,8 @@ namespace xtd {
     /// @brief Resets the current object. Set the current object with specified reference.
     /// @param value The reference to assign the current object. It can be null.
     /// @remarks xtd::reference_wrapper_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
-    void reset(reference_type&& value) noexcept {ref_ = value;}
+    template<class value_t>
+    void reset(value_t&& value) noexcept {ref_ = value;}
     /// @brief Resets the current object. Set the current object with specified null value.
     /// @param null The null value.
     void reset(xtd::null_ptr null) noexcept {ref_.reset();}
