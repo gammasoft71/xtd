@@ -131,43 +131,17 @@ namespace xtd::tests {
       assert::is_false(r4.is_empty());
     }
     
-    /*
-    void test_method_(is_unique) {
-      auto r1 = reference_wrapper_object<string> {new string {"value"}};
-      auto r2 = reference_wrapper_object<object> {r1};
-      auto r3 = reference_wrapper_object<object> {new string {"value"}};
-      assert::is_false(r1.is_unique());
-      assert::is_false(r2.is_unique());
-      assert::is_true(r3.is_unique());
-    }
-
-    void test_method_(owner_before) {
-      auto r1 = reference_wrapper_object<string> {new string {"value"}};
-      auto r2 = reference_wrapper_object<object> {r1};
-      assert::is_false(r1.owner_before(r2));
-      assert::is_false(r2.owner_before(r1));
-    }
-    
-    void test_method_(pointer) {
-      auto r1 = reference_wrapper_object<string> {new string {"value"}};
-      auto r2 = r1.pointer();
+    void test_method_(reference) {
+      auto s = string {"value"};
+      auto r1 = reference_wrapper_object<string> {s};
+      auto r2 = r1.reference();
       assert::are_equal(typeof_<std::reference_wrapper<string>>(), typeof_(r2));
-      assert::are_equal(2, r2.use_count());
-      assert::is_not_null(r2.get());
-
-      assert::is_null(reference_wrapper_object<string>::empty.pointer().get());
+      assert::are_equal("value", r2.get());
+      
+      assert::throws<null_pointer_exception>([] {reference_wrapper_object<int>::empty.reference();});
     }
     
-    void test_method_(use_count) {
-      auto r1 = reference_wrapper_object<string> {new string {"value"}};
-      auto r2 = reference_wrapper_object<object> {r1};
-      assert::are_equal(2_z, r1.use_count());
-      assert::are_equal(2_z, r2.use_count());
-      r2 = null;
-      assert::are_equal(1_z, r1.use_count());
-      assert::is_zero(r2.use_count());
-    }
-    
+    /*
     void test_method_(compare_to) {
       assert::is_zero(reference_wrapper_object<string>::empty.compare_to(reference_wrapper_object<string>::empty));
       assert::is_negative(reference_wrapper_object<string>::empty.compare_to(reference_wrapper_object<string> {new string {"value"}}));
