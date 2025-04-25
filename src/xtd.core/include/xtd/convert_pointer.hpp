@@ -186,54 +186,7 @@ namespace xtd {
       }
       xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
     }
-    
-    /// @brief Casts a type into another type.
-    /// @par Namespace
-    /// xtd
-    /// @par Library
-    /// xtd.core
-    /// @ingroup xtd_core
-    /// @par Examples
-    /// ```cpp
-    /// xtd::uptr<button> value = xtd::new_uptr<xtd::forms::button>();
-    /// xtd::uptr<control> result = as<xtd::forms::control>(value);
-    /// ```
-    /// @exception xtd::invalid_cast_exception the parameters is bad cast.
-    template<class new_type_t, class current_type_t>
-    static xtd::uptr<new_type_t> to_unique_ptr(xtd::uptr<current_type_t>& value) {
-      auto ptr = value.release();
-      try {
-        return xtd::uptr<new_type_t>(__convert_value__<new_type_t>(ptr));
-      } catch (const std::exception& e) {
-        value = xtd::uptr<current_type_t>(ptr);
-        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
-      }
-      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
-    }
-    
-    /// @brief Casts a type into another type.
-    /// @par Namespace
-    /// xtd
-    /// @par Library
-    /// xtd.core
-    /// @ingroup xtd_core
-    /// @par Examples
-    /// ```cpp
-    /// xtd::uptr<control> result = as<xtd::forms::control>(xtd::new_uptr<xtd::forms::button>());
-    /// ```
-    /// @exception xtd::invalid_cast_exception the parameters is bad cast.
-    template<class new_type_t, class current_type_t>
-    static xtd::uptr<new_type_t> to_unique_ptr(xtd::uptr<current_type_t>&& value) {
-      auto ptr = value.release();
-      try {
-        return xtd::uptr<new_type_t>(__convert_value__<new_type_t>(ptr));
-      } catch (const std::exception& e) {
-        value = xtd::uptr<current_type_t>(ptr);
-        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
-      }
-      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
-    }
-    
+
     /// @brief Casts a type into another type.
     /// @par Namespace
     /// xtd
@@ -298,6 +251,136 @@ namespace xtd {
       }
       //return std::move(value);
       return std::dynamic_pointer_cast<new_type_t>(std::move(value.pointer()));
+    }
+    
+    /// @brief Casts a type into another type.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
+    /// @par Examples
+    /// ```cpp
+    /// const xtd::sptr<button> value = xtd::new_sptr<xtd::forms::button>();
+    /// const xtd::sptr<control> result = as<xtd::forms::control>(value);
+    /// ```
+    /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+    template<class new_type_t, class current_type_t>
+    static xtd::sptr<new_type_t> to_sptr(const xtd::sptr<current_type_t>& value) {
+      return to_shared_ptr<new_type_t>(value);
+    }
+    
+    /// @brief Casts a type into another type.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
+    /// @par Examples
+    /// ```cpp
+    /// xtd::sptr<control> result = as<xtd::forms::control>(xtd::new_sptr<xtd::forms::button>());
+    /// ```
+    /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+    template<class new_type_t, class current_type_t>
+    static xtd::sptr<new_type_t> to_sptr(xtd::sptr<current_type_t>& value) {
+      return to_shared_ptr<new_type_t>(value);
+    }
+    
+    /// @brief Casts a type into another type.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
+    /// @par Examples
+    /// ```cpp
+    /// const xtd::sptr<button> value = xtd::new_sptr<xtd::forms::button>();
+    /// const xtd::sptr<control> result = as<xtd::forms::control>(value);
+    /// ```
+    /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+    template<class new_type_t, class current_type_t>
+    static xtd::sptr<new_type_t> to_sptr(xtd::sptr<current_type_t>&& value) {
+      return to_shared_ptr<new_type_t>(std::move(value));
+    }
+    
+    /// @brief Casts a type into another type.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
+    /// @par Examples
+    /// ```cpp
+    /// xtd::uptr<button> value = xtd::new_uptr<xtd::forms::button>();
+    /// xtd::uptr<control> result = as<xtd::forms::control>(value);
+    /// ```
+    /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+    template<class new_type_t, class current_type_t>
+    static xtd::uptr<new_type_t> to_unique_ptr(xtd::uptr<current_type_t>& value) {
+      auto ptr = value.release();
+      try {
+        return xtd::uptr<new_type_t>(__convert_value__<new_type_t>(ptr));
+      } catch (const std::exception& e) {
+        value = xtd::uptr<current_type_t>(ptr);
+        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+      }
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    }
+    
+    /// @brief Casts a type into another type.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
+    /// @par Examples
+    /// ```cpp
+    /// xtd::uptr<control> result = as<xtd::forms::control>(xtd::new_uptr<xtd::forms::button>());
+    /// ```
+    /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+    template<class new_type_t, class current_type_t>
+    static xtd::uptr<new_type_t> to_unique_ptr(xtd::uptr<current_type_t>&& value) {
+      auto ptr = value.release();
+      try {
+        return xtd::uptr<new_type_t>(__convert_value__<new_type_t>(ptr));
+      } catch (const std::exception& e) {
+        value = xtd::uptr<current_type_t>(ptr);
+        xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+      }
+      xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+    }
+    
+    /// @brief Casts a type into another type.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
+    /// @par Examples
+    /// ```cpp
+    /// xtd::uptr<button> value = xtd::new_uptr<xtd::forms::button>();
+    /// xtd::uptr<control> result = as<xtd::forms::control>(value);
+    /// ```
+    /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+    template<class new_type_t, class current_type_t>
+    static xtd::uptr<new_type_t> to_uptr(xtd::uptr<current_type_t>& value) {
+      return to_unique_ptr<new_type_t>(value);
+    }
+    
+    /// @brief Casts a type into another type.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
+    /// @par Examples
+    /// ```cpp
+    /// xtd::uptr<control> result = as<xtd::forms::control>(xtd::new_uptr<xtd::forms::button>());
+    /// ```
+    /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+    template<class new_type_t, class current_type_t>
+    static xtd::uptr<new_type_t> to_uptr(xtd::uptr<current_type_t>&& value) {
+      return to_unique_ptr<new_type_t>(std::move(value));
     }
     /// @}
   };
