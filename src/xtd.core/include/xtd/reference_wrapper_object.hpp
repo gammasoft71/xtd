@@ -60,13 +60,22 @@ namespace xtd {
     /// @{
     /// @brief Initializes a new instance of the xtd::reference_wrapper_object class.
     reference_wrapper_object() noexcept = default;
+    /// @brief Initializes a new instance of the xtd::reference_wrapper_object class with specified null pointer.
+    /// @param null The null pointer.
+    reference_wrapper_object(xtd::null_ptr null) noexcept {} // Can't be explicit by design.
     /// @brief Initializes a new instance of the xtd::reference_wrapper_object class with specified reference.
     /// @param value The reference.
     template<class value_t>
     explicit reference_wrapper_object(value_t&& value) noexcept : ref_ {value} {}
     /// @brief Initializes a new instance of the xtd::reference_wrapper_object class with specified reference object.
     /// @param value The reference object.
+    reference_wrapper_object(reference_wrapper_object& value) noexcept : ref_ {value.ref_} {}
+    /// @brief Initializes a new instance of the xtd::reference_wrapper_object class with specified reference object.
+    /// @param value The reference object.
     reference_wrapper_object(const reference_wrapper_object& value) noexcept : ref_ {value.ref_} {}
+    /// @brief Initializes a new instance of the xtd::reference_wrapper_object class with specified reference object.
+    /// @param value The reference object.
+    reference_wrapper_object(reference_wrapper_object&& value) noexcept : ref_ {value.ref_} {}
     /// @brief Initializes a new instance of the xtd::reference_wrapper_object::base_type class with specified reference object.
     /// @param value The reference object.
     reference_wrapper_object(const base_type& value) noexcept : ref_ {value} {}
