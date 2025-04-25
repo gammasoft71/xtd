@@ -76,6 +76,18 @@ namespace xtd {
     /// @brief Initializes a new instance of the xtd::reference_wrapper_object class with specified reference object.
     /// @param value The reference object.
     reference_wrapper_object(reference_wrapper_object&& value) noexcept : ref_ {std::move(value.ref_)} {}
+    /// @brief Initializes a new instance of the xtd::reference_wrapper_object class with specified reference object.
+    /// @param value The reference object.
+    template<class value_t>
+    reference_wrapper_object(reference_wrapper_object<value_t>& value) noexcept : ref_ {value.ref_} {}
+    /// @brief Initializes a new instance of the xtd::reference_wrapper_object class with specified reference object.
+    /// @param value The reference object.
+    template<class value_t>
+    reference_wrapper_object(const reference_wrapper_object<value_t>& value) noexcept : ref_ {value.ref_} {}
+    /// @brief Initializes a new instance of the xtd::reference_wrapper_object class with specified reference object.
+    /// @param value The reference object.
+    template<class value_t>
+    reference_wrapper_object(reference_wrapper_object<value_t>&& value) noexcept : ref_ {std::move(value.ref_)} {}
     /// @brief Initializes a new instance of the xtd::reference_wrapper_object::base_type class with specified reference object.
     /// @param value The reference object.
     reference_wrapper_object(base_type& value) noexcept : ref_ {value} {}
@@ -85,6 +97,18 @@ namespace xtd {
     /// @brief Initializes a new instance of the xtd::reference_wrapper_object::base_type class with specified reference object.
     /// @param value The reference object.
     reference_wrapper_object(base_type&& value) noexcept : ref_ {std::move(value)} {}
+    /// @brief Initializes a new instance of the xtd::reference_wrapper_object::base_type class with specified reference object.
+    /// @param value The reference object.
+    template<class value_t>
+    reference_wrapper_object(std::reference_wrapper<value_t>& value) noexcept : ref_ {value} {}
+    /// @brief Initializes a new instance of the xtd::reference_wrapper_object::base_type class with specified reference object.
+    /// @param value The reference object.
+    template<class value_t>
+    reference_wrapper_object(const std::reference_wrapper<value_t>& value) noexcept : ref_ {value} {}
+    /// @brief Initializes a new instance of the xtd::reference_wrapper_object::base_type class with specified reference object.
+    /// @param value The reference object.
+    template<class value_t>
+    reference_wrapper_object(std::reference_wrapper<value_t>&& value) noexcept : ref_ {std::move(value)} {}
     /// @}
 
     /// @name Public Properties
