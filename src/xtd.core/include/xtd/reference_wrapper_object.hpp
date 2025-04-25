@@ -116,10 +116,16 @@ namespace xtd {
     /// @{
     /// @brief Returns the underlying base type reference.
     /// @return The underlying base type reference.
-    const base_type& reference() const {return ref_.value();}
+    const base_type& reference() const {
+      if (!ref_.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
+      return ref_.value();
+    }
     /// @brief Returns the underlying base type reference.
     /// @return The underlying base type reference.
-    base_type& reference() {return ref_.value();}
+    base_type& reference() {
+      if (!ref_.has_value()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
+      return ref_.value();
+    }
     /// @}
 
     /// @name Public Methods
