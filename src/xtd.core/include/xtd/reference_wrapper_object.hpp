@@ -78,7 +78,13 @@ namespace xtd {
     reference_wrapper_object(reference_wrapper_object&& value) noexcept : ref_ {value.ref_} {}
     /// @brief Initializes a new instance of the xtd::reference_wrapper_object::base_type class with specified reference object.
     /// @param value The reference object.
+    reference_wrapper_object(base_type& value) noexcept : ref_ {value} {}
+    /// @brief Initializes a new instance of the xtd::reference_wrapper_object::base_type class with specified reference object.
+    /// @param value The reference object.
     reference_wrapper_object(const base_type& value) noexcept : ref_ {value} {}
+    /// @brief Initializes a new instance of the xtd::reference_wrapper_object::base_type class with specified reference object.
+    /// @param value The reference object.
+    reference_wrapper_object(base_type&& value) noexcept : ref_ {value} {}
     /// @}
 
     /// @name Public Properties
