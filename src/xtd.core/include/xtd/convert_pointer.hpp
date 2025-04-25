@@ -96,7 +96,57 @@ namespace xtd {
     static new_type_t* to_ptr(current_type_t& value) {
       return &to_ref<new_type_t>(value);
     }
-        
+    
+    /// @brief Casts a type into another type.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
+    /// @par Examples
+    /// ```cpp
+    /// const xtd::sptr<button> value = xtd::new_sptr<xtd::forms::button>();
+    /// const xtd::sptr<control> result = as<xtd::forms::control>(value);
+    /// ```
+    /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+    template<class new_type_t, class current_type_t>
+    static xtd::ptr<new_type_t> to_ptr(const xtd::ptr<current_type_t>& value) {
+      return to_shared_ptr<new_type_t>(value);
+    }
+    
+    /// @brief Casts a type into another type.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
+    /// @par Examples
+    /// ```cpp
+    /// xtd::sptr<control> result = as<xtd::forms::control>(xtd::new_sptr<xtd::forms::button>());
+    /// ```
+    /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+    template<class new_type_t, class current_type_t>
+    static xtd::ptr<new_type_t> to_ptr(xtd::ptr<current_type_t>& value) {
+      return to_shared_ptr<new_type_t>(value);
+    }
+    
+    /// @brief Casts a type into another type.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core
+    /// @par Examples
+    /// ```cpp
+    /// const xtd::sptr<button> value = xtd::new_sptr<xtd::forms::button>();
+    /// const xtd::sptr<control> result = as<xtd::forms::control>(value);
+    /// ```
+    /// @exception xtd::invalid_cast_exception the parameters is bad cast.
+    template<class new_type_t, class current_type_t>
+    static xtd::ptr<new_type_t> to_ptr(xtd::ptr<current_type_t>&& value) {
+      return to_shared_ptr<new_type_t>(std::move(value));
+    }
+
     /// @brief Casts a type into another type.
     /// @par Namespace
     /// xtd
