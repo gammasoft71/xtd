@@ -273,6 +273,8 @@ namespace xtd {
     /// @}
 
   private:
+    template<class other_t>
+    friend class reference_wrapper_object;
     std::optional<base_type> ref_;
   };
 
