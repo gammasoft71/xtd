@@ -62,55 +62,76 @@ namespace xtd::tests {
       assert::are_equal(42, r2.get());
     }
     
-    /*
     void test_method_(create_with_std_reference_wrapper) {
-      auto r1 = std::reference_wrapper<int> {new int {42}};
+      auto i = 42;
+      auto r1 = std::reference_wrapper<int> {i};
       auto r2 = reference_wrapper_object<int> {r1};
-      assert::are_equal(2, r1.use_count());
-      assert::are_equal(2_z, r2.use_count());
-      assert::is_not_null(r2.get());
+      assert::are_equal(42, r1.get());
+      assert::is_false(r2.is_empty());
+      assert::are_equal(42, r2.get());
     }
-
+    
     void test_method_(create_with_different_type_of_reference_wrapper_object) {
-      auto r1 = reference_wrapper_object<string> {new string {"value"}};
+      auto s = string {"value"};
+      auto r1 = reference_wrapper_object<string> {s};
       auto r2 = reference_wrapper_object<object> {r1};
-      assert::are_equal(2_z, r1.use_count());
-      assert::are_equal(2_z, r2.use_count());
-      assert::is_not_null(r2.get());
+      assert::is_false(r1.is_empty());
+      assert::is_false(r2.is_empty());
+      assert::are_equal("value", r2.get().to_string());
     }
-
+    
     void test_method_(create_with_different_type_of_std_reference_wrapper) {
-      auto r1 = std::reference_wrapper<string> {new string {"value"}};
+      auto s = string {"value"};
+      auto r1 = std::reference_wrapper<string> {s};
       auto r2 = reference_wrapper_object<object> {r1};
-      assert::are_equal(2, r1.use_count());
-      assert::are_equal(2_z, r2.use_count());
-      assert::is_not_null(r2.get());
+      assert::are_equal("value", r1.get());
+      assert::is_false(r2.is_empty());
+      assert::are_equal("value", r2.get().to_string());
     }
-
+    
     void test_method_(create_with_moved_reference_wrapper_object) {
-      auto r = reference_wrapper_object<int> {reference_wrapper_object<int> {new int {42}}};
-      assert::are_equal(1_z, r.use_count());
-      assert::is_not_null(r.get());
+      auto i = 42;
+      auto r = reference_wrapper_object<int> {reference_wrapper_object<int> {i}};
+      assert::is_false(r.is_empty());
+      assert::are_equal(42, r.get());
     }
     
     void test_method_(create_with_moved_std_reference_wrapper) {
-      auto r = reference_wrapper_object<int> {std::reference_wrapper<int> {new int {42}}};
-      assert::are_equal(1_z, r.use_count());
-      assert::is_not_null(r.get());
+      auto i = 42;
+      auto r = reference_wrapper_object<int> {std::reference_wrapper<int> {i}};
+      assert::is_false(r.is_empty());
+      assert::are_equal(42, r.get());
     }
-
+    
     void test_method_(create_with_moved_different_type_of_reference_wrapper_object) {
-      auto r = reference_wrapper_object<object> {reference_wrapper_object<string> {new string {"value"}}};
-      assert::are_equal(1_z, r.use_count());
-      assert::is_not_null(r.get());
+      auto s = string {"value"};
+      auto r = reference_wrapper_object<object> {reference_wrapper_object<string> {s}};
+      assert::is_false(r.is_empty());
+      assert::are_equal("value", r.get().to_string());
     }
     
     void test_method_(create_with_moved_different_type_of_std_reference_wrapper) {
-      auto r = reference_wrapper_object<object> {std::reference_wrapper<string> {new string {"value"}}};
-      assert::are_equal(1_z, r.use_count());
-      assert::is_not_null(r.get());
+      auto s = string {"value"};
+      auto r = reference_wrapper_object<object> {std::reference_wrapper<string> {s}};
+      assert::is_false(r.is_empty());
+      assert::are_equal("value", r.get().to_string());
     }
     
+    void test_method_(is_empty) {
+      auto s = string {"value"};
+      auto r1 = reference_wrapper_object<string> {};
+      auto r2 = reference_wrapper_object<object> {s};
+      auto r3 = reference_wrapper_object<object> {r1};
+      auto r4 = reference_wrapper_object<object> {r2};
+
+      assert::is_true(reference_wrapper_object<object>::empty.is_empty());
+      assert::is_true(r1.is_empty());
+      assert::is_false(r2.is_empty());
+      assert::is_true(r3.is_empty());
+      assert::is_false(r4.is_empty());
+    }
+    
+    /*
     void test_method_(is_unique) {
       auto r1 = reference_wrapper_object<string> {new string {"value"}};
       auto r2 = reference_wrapper_object<object> {r1};
