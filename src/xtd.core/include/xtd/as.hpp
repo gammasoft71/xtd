@@ -76,7 +76,7 @@ target_t xtd::reference_wrapper_object<type_t>::to_object() const {
 
 template<class type_t>
 template<typename target_t>
-target_t& xtd::reference_wrapper_object<type_t>::to_reference() const {
+target_t xtd::reference_wrapper_object<type_t>::to_reference() const {
   if (is_empty()) xtd::helpers::throw_helper::throws(xtd::helpers::exception_case::null_pointer);
   return xtd::as<target_t>(to_reference());
 }

@@ -231,7 +231,7 @@ namespace xtd {
     /// @return The stored reference.
     /// @exception xtd::cast_exception If the current object can't be casted in target_t.
     template<typename target_t>
-    target_t& to_reference() const;
+    target_t to_reference() const;
 
     /// @brief Returns a xtd::string that represents the current object.
     /// @return A string that represents the current object.
