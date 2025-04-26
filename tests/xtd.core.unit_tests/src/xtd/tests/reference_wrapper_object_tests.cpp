@@ -261,29 +261,39 @@ namespace xtd::tests {
       assert::are_equal(s1, r2.get());
     }
     
-    /*
     void test_method_(to_object) {
-      assert::are_equal("value", reference_wrapper_object<string> {new string {"value"}}.to_object());
-      assert::are_equal(42, reference_wrapper_object<int> {new int {42}}.to_object());
+      auto i = 42;
+      auto s = string {"value"};
+      assert::are_equal("value", reference_wrapper_object<string> {s}.to_object());
+      assert::are_equal(42, reference_wrapper_object<int> {i}.to_object());
+      assert::throws<null_pointer_exception>([]{reference_wrapper_object<object> {}.to_object();});
     }
     
     void test_method_(to_object_with_specified_type) {
-      assert::are_equal("value", reference_wrapper_object<object> {new string {"value"}}.to_object<string>());
-      assert::are_equal(42, reference_wrapper_object<int> {new int {42}}.to_object<byte>());
+      auto i = 42;
+      auto s = string {"value"};
+      assert::are_equal("value", reference_wrapper_object<object> {s}.to_object<string>());
+      assert::are_equal(42, reference_wrapper_object<int> {i}.to_object<byte>());
       assert::throws<null_pointer_exception>([]{reference_wrapper_object<object> {}.to_object<string>();});
     }
     
-    void test_method_(to_pointer) {
-      assert::are_equal("value", *reference_wrapper_object<string> {new string {"value"}}.to_pointer());
-      assert::are_equal(42, *reference_wrapper_object<int> {new int {42}}.to_pointer());
+    void test_method_(to_reference) {
+      auto i = 42;
+      auto s = string {"value"};
+      assert::are_equal("value", reference_wrapper_object<string> {s}.to_reference());
+      assert::are_equal(42, reference_wrapper_object<int> {i}.to_reference());
+      assert::throws<null_pointer_exception>([]{reference_wrapper_object<object> {}.to_reference();});
     }
     
-    void test_method_(to_pointer_with_specified_type) {
-      assert::are_equal("value", *reference_wrapper_object<object> {new string {"value"}}.to_pointer<string>());
-      //assert::are_equal(42, *reference_wrapper_object<int> {new int {42}}.to_pointer<byte>());
-      assert::is_null(reference_wrapper_object<object> {}.to_pointer<string>());
+    void test_method_(to_reference_with_specified_type) {
+      auto i = 42;
+      auto s = string {"value"};
+      assert::are_equal("value", reference_wrapper_object<object> {s}.to_reference<string>());
+      assert::are_equal(42, reference_wrapper_object<int> {i}.to_reference<byte>());
+      assert::throws<null_pointer_exception>([]{reference_wrapper_object<object> {}.to_reference<string>();});
     }
-    
+
+    /*
     void test_method_(to_string) {
       assert::are_equal("xtd::reference_wrapper_object<xtd::object> [pointer=null]", reference_wrapper_object<object> {}.to_string());
       string_assert::starts_with("xtd::reference_wrapper_object<int> [pointer=0x", reference_wrapper_object<int> {new int {42}}.to_string());
