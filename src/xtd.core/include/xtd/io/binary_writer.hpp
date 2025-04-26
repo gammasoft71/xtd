@@ -68,7 +68,7 @@ namespace xtd {
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      std::optional<std::reference_wrapper<std::ostream>> base_stream() const;
+      std::optional<xtd::ref<std::ostream>> base_stream() const;
       /// @}
       
       /// @name Public Methods
