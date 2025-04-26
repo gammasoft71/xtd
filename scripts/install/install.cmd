@@ -24,7 +24,7 @@ git submodule update --init
 cd..
 mkdir wxwidgets\build_cmake
 cd wxwidgets\build_cmake
-cmake .. -DwxBUILD_SHARED=OFF
+cmake .. -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DwxBUILD_SHARED=OFF
 cmake --build . --target install --config Debug
 cmake --build . --target install --config Release
 cd ..\..\..\..
