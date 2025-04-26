@@ -2,7 +2,7 @@
 /// @brief Contains xtd::forms::form_ref alias.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include <functional>
+#include <xtd/ref>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -22,6 +22,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    using const_form_ref = std::reference_wrapper<const form>;
+    using const_form_ref = ref<const form>;
   }
 }
