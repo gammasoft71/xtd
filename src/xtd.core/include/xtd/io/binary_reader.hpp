@@ -69,7 +69,7 @@ namespace xtd {
       /// @return The underlying stream.
       /// @warning Using the underlying stream while reading or while using the xtd::io::binary_reader can cause data loss and corruption. For example, the same bytes might be read more than once, bytes might be skipped, or character reading might become unpredictable.
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
-      std::optional<std::reference_wrapper<std::istream>> base_stream() const;
+      std::optional<xtd::ref<std::istream>> base_stream() const;
       
       /// @brief Gets a value that indicates whether the current stream position is at the end of the stream.
       /// @return `true` if the current stream position is at the end of the stream; otherwise `false`.

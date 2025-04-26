@@ -25,8 +25,8 @@ binary_reader::~binary_reader() {
   }
 }
 
-std::optional<std::reference_wrapper<std::istream>> binary_reader::base_stream() const {
-  return stream_ ? std::optional<std::reference_wrapper<std::istream>>(*stream_) : std::nullopt;
+std::optional<ref<std::istream>> binary_reader::base_stream() const {
+  return stream_ ? std::optional<ref<std::istream>>(*stream_) : std::nullopt;
 }
 
 bool binary_reader::end_of_stream() const {
