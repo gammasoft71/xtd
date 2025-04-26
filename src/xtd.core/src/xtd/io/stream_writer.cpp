@@ -48,8 +48,8 @@ void stream_writer::auto_flush(bool auto_flush) {
   if (auto_flush_) flush();
 }
 
-std::optional<std::reference_wrapper<std::ostream>> stream_writer::base_stream() const {
-  return stream_ ? std::optional<std::reference_wrapper<std::ostream>>(*stream_) : std::optional<std::reference_wrapper<std::ostream>>();
+std::optional<ref<std::ostream>> stream_writer::base_stream() const {
+  return stream_ ? std::optional<ref<std::ostream>>(*stream_) : std::optional<ref<std::ostream>>();
 }
 
 void stream_writer::close() {
