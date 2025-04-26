@@ -31,7 +31,7 @@ namespace xtd::tests {
     }
     
     void test_method_(exception_ref) {
-      assert::are_equal(typeof_<optional<std::reference_wrapper<const exception>>>(), typeof_<exception::exception_ref>());
+      assert::are_equal(typeof_<optional<ref<const exception>>>(), typeof_<exception::exception_ref>());
     }
     
     void test_method_(default_constructor) {
