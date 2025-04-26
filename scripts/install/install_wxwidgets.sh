@@ -44,12 +44,12 @@ mkdir -p wxwidgets/build_cmake
 pushd wxwidgets/build_cmake
 mkdir Debug && mkdir Release
 pushd Release
-cmake ../.. -DCMAKE_BUILD_TYPE=Release -DwxBUILD_SHARED=OFF "$@"
+cmake ../.. -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DCMAKE_BUILD_TYPE=Release -DwxBUILD_SHARED=OFF "$@"
 cmake --build . -- -j$build_cores
 sudo cmake --build . --target install
 popd
 pushd Debug
-cmake ../.. -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF "$@"
+cmake ../.. -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF "$@"
 cmake --build . -- -j$build_cores
 sudo cmake --build . --target install
 popd

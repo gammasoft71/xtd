@@ -37,7 +37,7 @@ if not exist "wxwidgets" mkdir wxwidgets
 cd wxwidgets
 if not exist "build_cmake" mkdir build_cmake
 cd build_cmake
-cmake .. -DwxBUILD_SHARED=OFF %*
+cmake .. -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DwxBUILD_SHARED=OFF %*
 cmake --build . --target install --config Debug
 cmake --build . --target install --config Release
 cd ..\..\..\..
