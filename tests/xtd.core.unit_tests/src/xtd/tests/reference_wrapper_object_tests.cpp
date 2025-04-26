@@ -293,46 +293,45 @@ namespace xtd::tests {
       assert::throws<null_pointer_exception>([]{reference_wrapper_object<object> {}.to_reference<string>();});
     }
 
-    /*
     void test_method_(to_string) {
-      assert::are_equal("xtd::reference_wrapper_object<xtd::object> [pointer=null]", reference_wrapper_object<object> {}.to_string());
-      string_assert::starts_with("xtd::reference_wrapper_object<int> [pointer=0x", reference_wrapper_object<int> {new int {42}}.to_string());
-      string_assert::ends_with(", use_count=1]", reference_wrapper_object<int> {new int {42}}.to_string());
-      auto r1 = reference_wrapper_object<int> {new int {42}};
-      auto r2 = r1, r3 = r1, r4 = r1;
-      string_assert::ends_with(", use_count=4]", r1.to_string());
+      auto i = 42;
+      string_assert::starts_with("xtd::reference_wrapper_object<int> [value=42]", reference_wrapper_object<int> {i}.to_string());
+      assert::are_equal("xtd::reference_wrapper_object<xtd::object> [value=(null)]", reference_wrapper_object<object> {}.to_string());
     }
     
     void test_method_(assignment_operator_with_reference_wrapper_object) {
-      auto r1 = reference_wrapper_object<int> {new int {42}};
+      auto i = 42;
+      auto r1 = reference_wrapper_object<int> {i};
       auto r2 = reference_wrapper_object<int> {};
       r2 = r1;
-      assert::are_equal(r1.to_pointer(), r2.to_pointer());
-      assert::are_equal(2_z, r2.use_count());
+      assert::are_equal(42, r1.to_object());
+      assert::are_equal(42, r2.to_object());
     }
     
     void test_method_(assignment_operator_with_moved_reference_wrapper_object) {
+      auto i = 42;
       auto r = reference_wrapper_object<int> {};
-      s = reference_wrapper_object<int> {new int {42}};
-      assert::is_not_null(r.to_pointer());
-      assert::are_equal(1_z, r.use_count());
+      r = reference_wrapper_object<int> {i};
+      assert::are_equal(42, r.to_object());
     }
     
     void test_method_(assignment_operator_with_reference_wrapper_object_and_different_type) {
-      auto r1 = reference_wrapper_object<string> {new string {"value"}};
+      auto s = string {"value"};
+      auto r1 = reference_wrapper_object<string> {s};
       auto r2 = reference_wrapper_object<object> {};
       r2 = r1;
-      assert::are_equal(r1.to_pointer(), r2.to_pointer());
-      assert::are_equal(2_z, r2.use_count());
+      assert::are_equal("value", r1.to_object());
+      assert::are_equal("value", r2.to_object().to_string());
     }
     
     void test_method_(assignment_operator_with_moved_reference_wrapper_object_and_different_type) {
+      auto s = string {"value"};
       auto r = reference_wrapper_object<object> {};
-      s = reference_wrapper_object<string> {new string {"value"}};
-      assert::is_not_null(r.to_pointer());
-      assert::are_equal(1_z, r.use_count());
+      r = reference_wrapper_object<string> {s};
+      assert::are_equal("value", r.to_object().to_string());
     }
     
+    /*
     void test_method_(assignment_operator_with_std_reference_wrapper) {
       auto r1 = std::reference_wrapper<int> {new int {42}};
       auto r2 = reference_wrapper_object<int> {};
