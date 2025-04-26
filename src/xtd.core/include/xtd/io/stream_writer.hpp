@@ -74,7 +74,7 @@ namespace xtd {
       
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
-      std::optional<std::reference_wrapper<std::ostream>> base_stream() const;
+      std::optional<xtd::ref<std::ostream>> base_stream() const;
       /// @}
       
       /// @name Public Methods
