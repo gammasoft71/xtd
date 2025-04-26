@@ -87,9 +87,9 @@ timer& timer::interval(double value) {
   return *this;
 }
 
-std::optional<std::reference_wrapper<isynchronize_invoke>> timer::synchronizing_object() const noexcept {
+std::optional<ref<isynchronize_invoke>> timer::synchronizing_object() const noexcept {
   if (!data_->synchronizing_object) return {};
-  return std::optional<std::reference_wrapper<isynchronize_invoke>> {*data_->synchronizing_object};
+  return std::optional<ref<isynchronize_invoke>> {*data_->synchronizing_object};
 }
 
 timer& timer::synchronizing_object(isynchronize_invoke& value) {
