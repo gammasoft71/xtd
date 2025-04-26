@@ -347,10 +347,10 @@ namespace xtd::tests {
     
     void test_method_(type_operator) {
       auto s1 = string {"value"};
-      auto s2 = reference_wrapper_object<string> {s1};
+      string s2 = reference_wrapper_object<string> {s1};
       assert::are_equal("value", s2);
       auto i1 = 42;
-      auto i2 = reference_wrapper_object<int> {i1};
+      int i2 = reference_wrapper_object<int> {i1};
       assert::are_equal(42, i2);
     }
     
