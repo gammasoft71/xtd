@@ -17,5 +17,5 @@ namespace xtd {
   /// @par Library
   /// xtd.forms
   /// @ingroup xtd_core
-  using const_object_ref = std::reference_wrapper<const object>;
+  using const_object_ref = xtd::ref<const xtd::object>;
 }
