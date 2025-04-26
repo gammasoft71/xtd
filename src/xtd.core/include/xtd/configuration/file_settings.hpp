@@ -184,7 +184,7 @@ namespace xtd {
       /// @brief Gets the stream of the current instance.
       /// @return The stream of the current instance.
       /// @warning Don't manipulate the stream yourself, otherwise the expected result may be undefined.
-      std::optional<std::reference_wrapper<std::iostream>> stream() const noexcept;
+      std::optional<xtd::ref<std::iostream>> stream() const noexcept;
 
       /// @brief Gets top file comment text.
       /// @return Top file comment textr.
