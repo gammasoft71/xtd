@@ -52,7 +52,7 @@ namespace xtd {
         
         /// @brief Gets a value indicating which error occurred during an asynchronous operation.
         /// @return An xtd::system_exception instance, if an error occurred during an asynchronous operation; otherwise std::nullopt.
-        std::optional<std::reference_wrapper<const xtd::system_exception>> error() const noexcept {return error_ ? std::optional<std::reference_wrapper<const xtd::system_exception>>(*error_) : std::nullopt; }
+        std::optional<xtd::ref<const xtd::system_exception>> error() const noexcept {return error_ ? std::optional<xtd::ref<const xtd::system_exception>>(*error_) : std::nullopt; }
         
         /// @brief Gets the prompt associated with the event.
         /// @return The Prompt object associated with the event.
