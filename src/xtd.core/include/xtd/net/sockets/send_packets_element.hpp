@@ -45,7 +45,7 @@ namespace xtd {
         
         /// @{
         /// @brief Represent ta std::ifstream reference.
-        using ifstream_ref = std::reference_wrapper<std::ifstream>;
+        using ifstream_ref = xtd::ref<std::ifstream>;
         /// @}
         
         /// @name Public Constructors
