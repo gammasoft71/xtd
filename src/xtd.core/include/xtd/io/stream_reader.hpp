@@ -49,7 +49,7 @@ namespace xtd {
       /// @{
       /// @brief Returns the underlying stream.
       /// @return The underlying stream.
-      std::optional<std::reference_wrapper<std::istream>> base_stream() const;
+      std::optional<xtd::ref<std::istream>> base_stream() const;
       
       /// @brief Gets a value that indicates whether the current stream position is at the end of the stream.
       /// @return `true` if the current stream position is at the end of the stream; otherwise `false`.
