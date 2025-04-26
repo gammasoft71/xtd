@@ -138,7 +138,7 @@ namespace xtd {
       /// @par Examples
       /// The following example is a Windows Forms app that serves as a very simple text file editor. When the text in the text box has not been saved, the app asks the user at one-minute intervals whether they want to save the contents of the text box. To do this, the xtd::timers::timer::interval property is set to one minute (60,000 milliseconds), and the xtd::timers::timer::synchronizing_object property is set to the xtd::forms::form object.
       /// @include timers_timer_synchronizing_object.cpp
-      std::optional<std::reference_wrapper<isynchronize_invoke>> synchronizing_object() const noexcept;
+      std::optional<xtd::ref<isynchronize_invoke>> synchronizing_object() const noexcept;
       /// @brief Sets the object used to marshal event-handler calls that are issued when an interval has elapsed.
       /// @param value The xtd::isynchronize_invoke representing the object used to marshal the event-handler calls that are issued when an interval has elapsed. The default is std::nullopt.
       /// @remarks When xtd::timers::timer::synchronizing_object is std::nullopt, the method that handles the xtd::timers::timer::elapsed event is called on a thread from the system-thread pool. For more information on system-thread pools, see xtd::threading::thread_pool.
