@@ -331,38 +331,42 @@ namespace xtd::tests {
       assert::are_equal("value", r.to_object().to_string());
     }
     
-    /*
     void test_method_(assignment_operator_with_std_reference_wrapper) {
-      auto r1 = std::reference_wrapper<int> {new int {42}};
+      auto i = 42;
+      auto r1 = std::reference_wrapper<int> {i};
       auto r2 = reference_wrapper_object<int> {};
       r2 = r1;
-      assert::are_equal(r1.operator ->(), r2.to_pointer());
-      assert::are_equal(2_z, r2.use_count());
+      assert::are_equal(42, r2.to_object());
     }
     
     void test_method_(assignment_operator_with_moved_std_reference_wrapper) {
+      auto i = 42;
       auto r = reference_wrapper_object<int> {};
-      s = std::reference_wrapper<int> {new int {42}};
-      assert::is_not_null(r.to_pointer());
-      assert::are_equal(1_z, r.use_count());
+      r = std::reference_wrapper<int> {i};
+      assert::are_equal(42, r.to_object());
     }
     
-    void test_method_(object_operator) {
-      assert::are_equal("value", *reference_wrapper_object<string> {new string {"value"}});
-      assert::are_equal(42, *reference_wrapper_object<int> {new int {42}});
+    void test_method_(type_operator) {
+      auto s1 = string {"value"};
+      auto s2 = reference_wrapper_object<string> {s1};
+      assert::are_equal("value", s2);
+      auto i1 = 42;
+      auto i2 = reference_wrapper_object<int> {i1};
+      assert::are_equal(42, i2);
     }
     
     void test_method_(bool_operator) {
-      assert::is_false(!reference_wrapper_object<string> {new string {"value"}});
+      auto s = string {"value"};
+      assert::is_false(!reference_wrapper_object<string> {s});
       assert::is_true(!reference_wrapper_object<string> {});
     }
     
     void test_method_(base_type_operator) {
-      auto r = std::reference_wrapper<int> {};
-      s = reference_wrapper_object<int> {new int {42}};
-      assert::is_not_null(r.operator ->());
-      assert::are_equal(1, r.use_count());
+      auto i1 = 24;
+      auto i2 = 42;
+      auto r = std::reference_wrapper<int> {i1};
+      r = reference_wrapper_object<int> {i2};
+      assert::are_equal(42, r.get());
     }
-     */
   };
 }
