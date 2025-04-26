@@ -79,8 +79,8 @@ file_settings::string_collection file_settings::sections() const noexcept {
   return sections;
 }
 
-std::optional<std::reference_wrapper<std::iostream>> file_settings::stream() const noexcept {
-  return stream_ ? std::optional<std::reference_wrapper<std::iostream>> {*stream_} : std::nullopt;
+std::optional<ref<std::iostream>> file_settings::stream() const noexcept {
+  return stream_ ? std::optional<ref<std::iostream>> {*stream_} : std::nullopt;
 }
 
 xtd::string file_settings::top_file_comment() const noexcept {
