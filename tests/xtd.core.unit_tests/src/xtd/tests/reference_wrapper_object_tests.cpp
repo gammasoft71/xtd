@@ -1,7 +1,6 @@
 #include <xtd/reference_wrapper_object>
 #include <xtd/null_pointer_exception>
 #include <xtd/tunit/assert>
-#include <xtd/tunit/string_assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 
@@ -295,7 +294,7 @@ namespace xtd::tests {
 
     void test_method_(to_string) {
       auto i = 42;
-      string_assert::starts_with("xtd::reference_wrapper_object<int> [value=42]", reference_wrapper_object<int> {i}.to_string());
+      assert::are_equal("xtd::reference_wrapper_object<int> [value=42]", reference_wrapper_object<int> {i}.to_string());
       assert::are_equal("xtd::reference_wrapper_object<xtd::object> [value=(null)]", reference_wrapper_object<object> {}.to_string());
     }
     
