@@ -32,7 +32,7 @@ namespace xtd {
     
     /// @{
     /// @brief Optional reference wrapper on std::exception
-    using exception_ref = xtd::optional<std::reference_wrapper<const xtd::exception>>;
+    using exception_ref = xtd::optional<xtd::ref<const xtd::exception>>;
     /// @}
     
     /// @name Public Constructors
