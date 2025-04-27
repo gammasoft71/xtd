@@ -59,7 +59,7 @@ struct __init_toolkit__ {
 __init_toolkit__ __init_toolkit_value__;
 
 namespace {
-  using message_filter_ref = std::reference_wrapper<imessage_filter>;
+  using message_filter_ref = ref<imessage_filter>;
   using message_filter_collection = std::vector<message_filter_ref>;
 
   static message_filter_collection message_filters;
