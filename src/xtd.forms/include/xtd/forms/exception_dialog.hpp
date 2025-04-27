@@ -63,7 +63,7 @@ namespace xtd {
       
       /// @brief Gets exception reference.
       /// @return A exception reference.
-      std::reference_wrapper<const std::exception> exception() const noexcept;
+      xtd::ref<const std::exception> exception() const noexcept;
       /// @brief Sets exception.
       /// @param exception The exception.
       /// @return Current exception_dialog instance.
