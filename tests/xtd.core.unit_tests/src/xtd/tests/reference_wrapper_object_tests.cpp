@@ -166,9 +166,9 @@ namespace xtd::tests {
       
       assert::is_true(r1.equals(r1));
       assert::is_false(r1.equals(r2));
-      assert::is_false(r1.equals(r3));
+      assert::is_true(r1.equals(r3));
       assert::is_false(r1.equals(r4));
-      assert::is_false(r2.equals(r4));
+      assert::is_true(r2.equals(r4));
     }
     
     void test_method_(equals_with_object) {
@@ -186,9 +186,9 @@ namespace xtd::tests {
       
       assert::is_true(r1.equals(o1));
       assert::is_false(r1.equals(o2));
-      assert::is_false(r1.equals(o3));
+      assert::is_true(r1.equals(o3));
       assert::is_false(r1.equals(o4));
-      assert::is_false(r2.equals(o4));
+      assert::is_true(r2.equals(o4));
     }
     
     void test_method_(get) {
@@ -366,6 +366,18 @@ namespace xtd::tests {
       auto r = std::reference_wrapper<int> {i1};
       r = reference_wrapper_object<int> {i2};
       assert::are_equal(42, r.get());
+    }
+    
+    void test_method_(equality_operator_with_null) {
+      auto i = 42;
+      assert::is_false(reference_wrapper_object<int> {i} == null);
+      assert::is_true(reference_wrapper_object<int> {} == null);
+    }
+    
+    void test_method_(equality_operator_with_nullptr) {
+      auto i = 42;
+      assert::is_false(reference_wrapper_object<int> {i} == nullptr);
+      assert::is_true(reference_wrapper_object<int> {} == nullptr);
     }
   };
 }

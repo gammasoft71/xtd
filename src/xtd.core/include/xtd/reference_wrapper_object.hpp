@@ -114,6 +114,19 @@ namespace xtd {
     /// @name Public Properties
     
     /// @{
+    /// @brief Checks if the stored reference is empty.
+    /// @return `true`if stored reference is empty; otherwise `false`.
+    /// @par Examples
+    /// The following code shows how to use xtd::reference_wrapper_object::get and xtd::reference_wrapper_object::is_empty
+    /// @code
+    /// template<class value_t>
+    /// void print_value(const reference_wrapper_object<value_t>& value) {
+    ///   if (value.is_empty()) println("value is empty");
+    ///   else println("value = {}", value.get());
+    /// }
+    /// @endcode
+    bool is_empty() const noexcept {return !ref_.has_value();}
+    
     /// @brief Returns the underlying base type reference.
     /// @return The underlying base type reference.
     const base_type& reference() const {
@@ -141,7 +154,12 @@ namespace xtd {
     /// | Less than zero    | This instance is less than obj.    |
     /// | Zero              | This instance is equal to obj.     |
     /// | Greater than zero | This instance is greater than obj. |
-    int32 compare_to(const reference_wrapper_object& obj) const noexcept override {return &ref_ < &obj.ref_ ? -1 : &ref_ > &obj.ref_ ? 1 : 0;}
+    int32 compare_to(const reference_wrapper_object& obj) const noexcept override {
+      if (!ref_.has_value() && !obj.ref_.has_value()) return 0;
+      if (ref_.has_value() && !obj.ref_.has_value()) return 1;
+      if (!ref_.has_value() && obj.ref_.has_value()) return -1;
+      return &ref_.value().get() < &obj.ref_.value().get() ? -1 : &ref_.value().get() > &obj.ref_.value().get() ? 1 : 0;
+    }
 
     /// @brief Determines whether the specified object is equal to the current object.
     /// @param obj The object to compare with the current object.
@@ -150,7 +168,12 @@ namespace xtd {
     /// @brief Indicates whether the current object is equal to another object of the same type.
     /// @param obj An object to compare with this object.
     /// @return `true` if the current object is equal to the other parameter; otherwise, `false`.
-    bool equals(const reference_wrapper_object& value) const noexcept override {return &ref_ == &value.ref_;}
+    bool equals(const reference_wrapper_object& value) const noexcept override {
+      if (!ref_.has_value() && !value.ref_.has_value()) return true;
+      if (ref_.has_value() && !value.ref_.has_value()) return false;
+      if (!ref_.has_value() && value.ref_.has_value()) return false;
+      return &ref_.value().get() == &value.ref_.value().get();
+    }
 
     /// @brief Gets the stored reference.
     /// @return The stored reference.
@@ -172,19 +195,6 @@ namespace xtd {
     /// @brief Serves as a hash function for a particular type.
     /// @return size_t A hash code for the current object.
     xtd::size get_hash_code() const noexcept override {return (ref_.has_value() ? xtd::hash_code::combine(&reference()) : 0);}
-
-    /// @brief Checks if the stored reference is empty.
-    /// @return `true`if stored reference is empty; otherwise `false`.
-    /// @par Examples
-    /// The following code shows how to use xtd::reference_wrapper_object::get and xtd::reference_wrapper_object::is_empty
-    /// @code
-    /// template<class value_t>
-    /// void print_value(const reference_wrapper_object<value_t>& value) {
-    ///   if (value.is_empty()) println("value is empty");
-    ///   else println("value = {}", value.get());
-    /// }
-    /// @endcode
-    bool is_empty() const noexcept {return !ref_.has_value();}
 
     /// @brief Resets the current object. Set the current object to null.
     /// @remarks xtd::reference_wrapper_object::usecount property is decremented. If alias count equal 0 the object T is deleted.
