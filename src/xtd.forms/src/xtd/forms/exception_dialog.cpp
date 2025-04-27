@@ -214,8 +214,8 @@ exception_dialog& exception_dialog::dialog_appearance(forms::dialog_appearance d
   return *this;
 }
 
-std::reference_wrapper<const std::exception> exception_dialog::exception() const noexcept {
-  return std::reference_wrapper<const std::exception>(*data_->exception);
+ref<const std::exception> exception_dialog::exception() const noexcept {
+  return ref<const std::exception> {*data_->exception};
 }
 
 exception_dialog& exception_dialog::exception(const std::exception& exception) {
