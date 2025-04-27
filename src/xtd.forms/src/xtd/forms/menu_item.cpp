@@ -273,7 +273,7 @@ intptr menu_item::create_menu_handle() {
   
   if (data_->text == "-") data_->kind = xtd::forms::menu_item_kind::separator;
   auto handle = native::menu_item::create(menu::data_->parent.value().get().handle(), data_->text, data_->image, static_cast<int32>(data_->kind), static_cast<size_t>(data_->shortcut));
-  handles_.insert({native::menu_item::menu_id(handle), std::reference_wrapper<menu>(*this)});
+  handles_.insert({native::menu_item::menu_id(handle), ref<menu>(*this)});
   return handle;
 }
 
