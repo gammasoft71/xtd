@@ -42,8 +42,8 @@ status_bar_panel& status_bar_panel::border_style(xtd::forms::status_bar_panel_bo
   return *this;
 }
 
-std::optional<std::reference_wrapper<forms::control>> status_bar_panel::control() const noexcept {
-  return data_->control ? std::optional<std::reference_wrapper<forms::control>>(*data_->control) : std::nullopt;
+std::optional<control_ref> status_bar_panel::control() const noexcept {
+  return data_->control ? std::optional<control_ref>(*data_->control) : std::nullopt;
 }
 
 status_bar_panel& status_bar_panel::control(const xtd::forms::control& value) {
@@ -91,8 +91,8 @@ status_bar_panel& status_bar_panel::name(const xtd::string& value) {
   return *this;
 }
 
-std::optional<std::reference_wrapper<status_bar>> status_bar_panel::parent() const noexcept {
-  return data_->parent ? std::optional<std::reference_wrapper<status_bar>>(*data_->parent) : std::nullopt;
+std::optional<ref<status_bar>> status_bar_panel::parent() const noexcept {
+  return data_->parent ? std::optional<ref<status_bar>>(*data_->parent) : std::nullopt;
 }
 
 xtd::forms::status_bar_panel_style status_bar_panel::style() const noexcept {
