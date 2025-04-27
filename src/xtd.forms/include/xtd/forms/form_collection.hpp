@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "form.hpp"
-#include <functional>
+#include <xtd/ref>
 #include <vector>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -21,6 +21,6 @@ namespace xtd {
     /// xtd.forms
     /// @ingroup xtd_forms
     /// @remarks form_collection is used by the application object to list the currently open forms in an application through the open_forms property.
-    using form_collection = std::vector<std::reference_wrapper<form>>;
+    using form_collection = std::vector<xtd::ref<form>>;
   }
 }
