@@ -2,6 +2,7 @@
 #include <xtd/argument_exception>
 
 using namespace xtd;
+using namespace xtd::collections::generic;
 using namespace xtd::forms;
 using namespace xtd::helpers;
 
@@ -10,13 +11,13 @@ const vertical_control_layout_style_collection& vertical_layout_panel::control_l
 }
 
 const vertical_control_layout_style& vertical_layout_panel::control_layout_style(const control_ref& control) const {
-  auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](const control_ref& item) {return item.first == control;});
+  auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](const key_value_pair<control_ref, vertical_control_layout_style>& item) {return item.first == control;});
   if (it == control_layout_styles_.end()) throw_helper::throws(exception_case::argument);
   return it->second;
 }
 
 vertical_layout_panel& vertical_layout_panel::control_layout_style(const control_ref& control, const vertical_control_layout_style& value) {
-  auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](const control_ref& item) {return item.first == control;});
+  auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](const key_value_pair<control_ref, vertical_control_layout_style>& item) {return item.first == control;});
   if (it == control_layout_styles_.end()) throw_helper::throws(exception_case::argument);
   if (it->second != value) {
     it->second = value;
