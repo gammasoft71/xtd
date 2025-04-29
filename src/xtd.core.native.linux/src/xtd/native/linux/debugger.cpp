@@ -60,7 +60,7 @@ int32_t debugger::show_assert_dialog(const std::string& text, const std::string&
   return return_code == GTK_RESPONSE_YES ? ADR_ABORT : (return_code == GTK_RESPONSE_NO ? ADR_RETRY : ADR_IGNORE);
 #else
   return ADR_ABORT;
-#enfif
+#endif
 }
 
 void debugger::log(int32_t level, const std::string& category, const std::string& message) {
