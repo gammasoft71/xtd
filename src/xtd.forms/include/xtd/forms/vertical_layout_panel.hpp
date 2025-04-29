@@ -4,6 +4,7 @@
 #pragma once
 #include "panel.hpp"
 #include "vertical_control_layout_style_collection.hpp"
+#include "tab_page.hpp"
 #include <map>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

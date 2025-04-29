@@ -6,6 +6,7 @@
 #include "component.hpp"
 #include "dialog_appearance.hpp"
 #include "iwin32_window.hpp"
+#include "tab_page.hpp"
 #include "tab_control.hpp"
 #include <xtd/drawing/icon>
 #include <xtd/reflection/assembly>

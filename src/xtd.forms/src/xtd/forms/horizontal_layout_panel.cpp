@@ -10,13 +10,13 @@ const horizontal_control_layout_style_collection& horizontal_layout_panel::contr
 }
 
 const horizontal_control_layout_style& horizontal_layout_panel::control_layout_style(const control_ref& control) const {
-  auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](auto item) {return item.first.get() == control;});
+  auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](const auto& item) {return item.first == control;});
   if (it == control_layout_styles_.end()) throw_helper::throws(exception_case::argument);
   return it->second;
 }
 
 horizontal_layout_panel& horizontal_layout_panel::control_layout_style(const control_ref& control, const horizontal_control_layout_style& value) {
-  auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](auto item) {return item.first.get() == control;});
+  auto it = std::find_if(control_layout_styles_.begin(), control_layout_styles_.end(), [&](const auto& item) {return item.first == control;});
   if (it == control_layout_styles_.end()) throw_helper::throws(exception_case::argument);
   if (it->second != value) {
     it->second = value;
