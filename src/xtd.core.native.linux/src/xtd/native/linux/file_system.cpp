@@ -10,7 +10,9 @@
 #include <unistd.h>
 #include <sys/stat.h>
 #include <utime.h>
+#if !defined(__HAIKU__)
 #include <linux/limits.h>
+#endif
 
 using namespace std;
 using namespace xtd::native;

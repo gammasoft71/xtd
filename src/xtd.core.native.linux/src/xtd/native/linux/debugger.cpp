@@ -9,7 +9,9 @@
 #include <sstream>
 #include <syslog.h>
 #include <unistd.h>
+#if defined(__XTD_USE_GTK__)
 #include <gtk/gtk.h>
+#endif
 
 using namespace xtd::native;
 
@@ -46,6 +48,7 @@ bool debugger::launch() {
 }
 
 int32_t debugger::show_assert_dialog(const std::string& text, const std::string& caption) {
+#if defined(__XTD_USE_GTK__)
   gtk_init_check(0, nullptr);
   auto dialog = gtk_message_dialog_new(nullptr, GtkDialogFlags::GTK_DIALOG_MODAL, GtkMessageType::GTK_MESSAGE_ERROR, GtkButtonsType::GTK_BUTTONS_NONE, "%s", text.c_str());
   gtk_window_set_title(GTK_WINDOW(dialog), caption.c_str());
@@ -55,6 +58,9 @@ int32_t debugger::show_assert_dialog(const std::string& text, const std::string&
   auto return_code = gtk_dialog_run(GTK_DIALOG(dialog));
   gtk_widget_hide(dialog);
   return return_code == GTK_RESPONSE_YES ? ADR_ABORT : (return_code == GTK_RESPONSE_NO ? ADR_RETRY : ADR_IGNORE);
+#else
+  return ADR_ABORT;
+#enfif
 }
 
 void debugger::log(int32_t level, const std::string& category, const std::string& message) {

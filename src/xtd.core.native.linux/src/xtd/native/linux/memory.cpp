@@ -5,7 +5,9 @@
 #include <unistd.h>
 #include <sys/types.h>
 #include <sys/resource.h>
+#if !defined(__HAIKU__)
 #include <sys/sysinfo.h>
+#endif
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
