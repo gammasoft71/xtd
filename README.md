@@ -99,7 +99,8 @@ But you can follow the evolution of the development. We keep the status up to da
 
 ## Issues status
 
-As xtd is managed by a [Kanban project](https://github.com/users/gammasoft71/projects/3), the number of open issues can be quite large. The table below gives a clearer view on the number of open bugs/questions and enhancements.
+<details>
+<summary>As xtd is managed by a [Kanban project](https://github.com/users/gammasoft71/projects/3), the number of open issues can be quite large. The table below gives a clearer view on the number of open bugs/questions and enhancements.</summary>
 
 | Issues                                          | Open                                                                                                                                                                                                                                                                                                       | Closed                                                                                                                                                                                                                                                                                                                                |
 | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -112,6 +113,8 @@ As xtd is managed by a [Kanban project](https://github.com/users/gammasoft71/pro
 | xtd 1.0.0 - Enhancements / Developments         | [![GitHub issue custom search in repo](https://img.shields.io/github/issues-search/gammasoft71/xtd?color=004080&label=query&query=is%3Aopen%20is%3Aissue%20label%3Aenhancement+milestone%3A1.0.0)](https://github.com/gammasoft71/xtd/issues?q=is%3Aissue+label%3Aenhancement+is%3Aopen+milestone%3A1.0.0) | [![GitHub issue custom search in repo](https://img.shields.io/github/issues-search/gammasoft71/xtd?color=lighgreen&label=query&query=is%3Aclosed%20is%3Aissue%20label%3Aenhancement+milestone%3A1.0.0)](https://github.com/gammasoft71/xtd/issues?q=is%3Aclosed+is%3Aissue+label%3Aenhancement+milestone%3A1.0.0) |
 
 _(*) There is only one enhancement for xtd 0.1.0, as project management was not yet available._
+
+</details>
 
 ## Examples
 
