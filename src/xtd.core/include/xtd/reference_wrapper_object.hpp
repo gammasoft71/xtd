@@ -277,10 +277,17 @@ namespace xtd {
       ref_ = value;
       return *this;
     }
-    /// @brief Assignment operator with specified xtd::null_ptr value.
-    /// @param value The null value to assign.
-    reference_wrapper_object& operator =(xtd::null_ptr null) noexcept {
-      ref_.reset();
+    /// @brief Assignment operator with specified xtd::reference_wrapper_object::base_type value.
+    /// @param value The value to assign.
+    reference_wrapper_object& operator =(base_type& value) noexcept {
+      ref_ = value;
+      return *this;
+    }
+    /// @brief Assignment operator with specified xtd::reference_wrapper_object::base_type value.
+    /// @param value The value to assign.
+    template<class value_t>
+    reference_wrapper_object& operator =(value_t&& value) noexcept {
+      ref_ = value;
       return *this;
     }
 
