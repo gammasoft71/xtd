@@ -8,11 +8,16 @@ include("../scripts/cmake/xtd_version.cmake")
 # Add projects
 add_projects(
   guidgen
-  guidgen-gui
-  keycodes
   sleepfor
   set_environment_variable
   set_path
   xtdc
-  xtdc-gui
 )
+
+if (NOT (${XTD_OPERATING_SYSTEM_NAME} STREQUAL "Android" OR ${XTD_OPERATING_SYSTEM_NAME} STREQUAL "Haiku" OR ${XTD_OPERATING_SYSTEM_NAME} STREQUAL "iOS"))
+  add_projects(
+    guidgen-gui
+    keycodes
+    xtdc-gui
+  )
+endif ()
