@@ -76,7 +76,8 @@ But you can follow the evolution of the development. We keep the status up to da
 
 ## Continuous Integration build status
 
-At each commit, a build and unit tests are performed for the following configurations :
+<details>
+<summary>At each commit, a build and unit tests are performed for the following configurations</summary>
 
 | Operating system | Debug                                                                                                                                                                                                               | Release                                                                                                                                                                                                                               |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -93,6 +94,8 @@ At each commit, a build and unit tests are performed for the following configura
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Deployment of the website                | [![Ubuntu Debug](https://img.shields.io/github/actions/workflow/status/gammasoft71/xtd/deploy.yml?branch=docs&logo=gitHub)](https://github.com/gammasoft71/xtd/actions/workflows/deploy.yml)                     |
 | Deployment of the latest reference guide | [![Ubuntu Debug](https://img.shields.io/github/actions/workflow/status/gammasoft71/xtd/reference_guide.yml?branch=master&logo=gitHub)](https://github.com/gammasoft71/xtd/actions/workflows/reference_guide.yml) |
+
+</details>
 
 ## Issues status
 
