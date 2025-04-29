@@ -21,6 +21,19 @@
 #include <sys/socket.h>
 #include <sys/ioctl.h>
 
+#if define(__HAIKU__)
+#define ESOCKTNOSUPPORT 0
+#define IPPROTO_IPIP 0
+#define IPPROTO_PUP 0
+#define IPPROTO_IDP 0
+#define IP_NODEFRAG 0
+#define IP_PKTINFO 0
+#define SOCK_CLOEXEC 0
+#define SOCK_RDM 0
+#define AF_SNA 0
+#define AF_DECnet 0
+#endif
+
 using namespace std;
 using namespace xtd::native;
 

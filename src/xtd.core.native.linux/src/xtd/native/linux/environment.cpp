@@ -8,7 +8,9 @@
 #include <map>
 #include <numeric>
 #include <thread>
+#if !defined(__HAIKU__)
 #include <sys/sysinfo.h>
+#endif
 #include <sys/param.h>
 #include <unistd.h>
 
@@ -41,10 +43,21 @@ namespace {
 
     return distribution_key_values;
   }
+
+#if defined(__HAIKU__)
+  /// Workaround std::quick_exit and std::at_quick_exit are not implemented on Haiku !
+  void (*__on_quick_exit__)(void) = nullptr;
+#endif
 }
 
 int32_t environment::at_quick_exit(void (*on_quick_exit)(void)) {
+#if defined(__HAIKU__)
+  /// Workaround std::quick_exit and std::at_quick_exit are not implemented on Haiku !
+  __on_quick_exit__ = on_quick_exit;
+  return 0;
+#else
   return std::at_quick_exit(on_quick_exit);
+#endif
 }
 
 vector<string> environment::get_command_line_args() {
@@ -213,11 +226,15 @@ size_t environment::get_system_page_size() {
 }
 
 uint32_t environment::get_tick_count() {
+#if defined(__HAIKU__)
+  return 0;
+#else
   // https://stackoverflow.com/questions/1540627/what-api-do-i-call-to-get-the-system-uptime
   using struct_sysinfo = struct sysinfo;
   auto info = struct_sysinfo {};
   sysinfo(&info);
   return info.uptime * 1000;
+#endif
 }
 
 bool environment::get_user_administrator() {
@@ -254,7 +271,13 @@ string environment::new_line() {
 }
 
 void environment::quick_exit(int32_t exit_code) noexcept {
+#if defined(__HAIKU__)
+  /// Workaround std::quick_exit and std::at_quick_exit are not implemented on Haiku !
+  if (__on_quick_exit__) __on_quick_exit__();
+  std::_Exit(exit_code);
+#else
   std::quick_exit(exit_code);
+#endif
 }
 
 void environment::set_environment_variable(const string& name, const string& value, int32_t target) {

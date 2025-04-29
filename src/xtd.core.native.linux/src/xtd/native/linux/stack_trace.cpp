@@ -3,6 +3,15 @@
 #include "../../../../include/xtd/native/linux/shell_execute.hpp"
 #include "../../../../include/xtd/native/linux/strings.hpp"
 #undef __XTD_CORE_NATIVE_LIBRARY__
+
+using namespace std;
+using namespace xtd::native;
+
+#if defined(__ANDROID__) || defined(__CYGWIN__) || defined(__HAIKU__) || defined(__MINGW32__)
+stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
+  return {};
+}
+#else
 #include <execinfo.h>
 #include <dlfcn.h>
 #include <link.h>
@@ -13,9 +22,6 @@
 #include <unordered_map>
 
 #include <iostream>
-
-using namespace std;
-using namespace xtd::native;
 
 string __xtd_abi_demangle(const string& name);
 
@@ -93,11 +99,6 @@ size_t stack_trace::get_native_offset() {
   return 3;
 }
 
-#if __ANDROID__ | __CYGWIN__ | __MINGW32__
-stack_trace::frames stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
-  return {};
-}
-#else
 stack_trace::frame_collection stack_trace::get_frames(size_t skip_frames, bool need_file_info) {
   auto addresses = address_collection {size_t {1024}};
   addresses.resize(static_cast<size_t>(backtrace(addresses.data(), static_cast<int>(addresses.size()))));
