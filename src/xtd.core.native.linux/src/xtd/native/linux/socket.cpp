@@ -21,7 +21,7 @@
 #include <sys/socket.h>
 #include <sys/ioctl.h>
 
-#if define(__HAIKU__)
+#if defined(__HAIKU__)
 #define ESOCKTNOSUPPORT 0
 #define IPPROTO_IPIP 0
 #define IPPROTO_PUP 0
