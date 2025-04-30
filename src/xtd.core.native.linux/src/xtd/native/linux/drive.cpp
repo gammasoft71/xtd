@@ -9,7 +9,7 @@
 #include <sys/statvfs.h>
 #if defined(__HAIKU__)
 int statfs(const char* path, struct statvfs* buf) {
-  return ::statvfs(peth, buf);
+  return ::statvfs(path, buf);
 }
 #else
 #include <sys/statfs.h>
