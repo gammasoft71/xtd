@@ -7,8 +7,10 @@ include("../../scripts/cmake/xtd_version.cmake")
 add_include_directories("include")
 add_references(${XTD_FORMS_NATIVE_LIBRARY})
 add_sources(
-  "include/xtd/xtd.forms.hpp"
+  "include/xtd/xtd"
+  "include/xtd/xtd.hpp"
   "include/xtd/xtd.forms"
+  "include/xtd/xtd.forms.hpp"
   "include/xtd/forms/about_box.hpp"
   "include/xtd/forms/about_box"
   "include/xtd/forms/about_dialog.hpp"
