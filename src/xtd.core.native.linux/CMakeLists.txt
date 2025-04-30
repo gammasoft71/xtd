@@ -8,7 +8,7 @@ add_include_directories("include")
 
 # add external packages
 if (${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "Android" OR ${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "Haiku")
-  add_references()
+  add_references(net)
 elseif (UNIX)
   find_package(PkgConfig REQUIRED)
 
