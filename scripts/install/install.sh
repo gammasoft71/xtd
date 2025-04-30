@@ -31,6 +31,8 @@ elif [[ "$OSTYPE" == "FreeBSD" ]]; then
   echo "  Operating System is FreeBSD"; 
 elif [[ "$OSTYPE" == "Linux" ]]; then
   echo "  Operating System is Linux"; 
+elif [[ "$OSTYPE" == "Haiku" ]]; then
+  echo "  Operating System is Haiku"; 
 else
   echo "  Operating System is Unknown"
 fi
@@ -95,27 +97,29 @@ echo "cmake_install_prefix=\"$cmake_install_prefix\""
 
 #_______________________________________________________________________________
 #                                                    Check and install wxWidgets
-echo "Checks wxWidgets..."
-if [ -d "build" ]; then rm -rf "build"; fi
-mkdir build
-pushd build
-mkdir test_wxwidgets
-pushd test_wxwidgets
-cmake ../../scripts/install/test_wxwidgets "$@"
-popd
-popd
-if [ ! -f "build/test_wxwidgets/wxwidgets.lck" ]; then
-  echo ""
-  echo "---------------------------------------------------------------"
-  echo ""
-  echo "WARNING : wxWidgets is not already installed!"
-  echo ""
-  echo "If you continue wxWidgets will be downloaded, built and installed automatically."
-  echo ""
-  echo "---------------------------------------------------------------"
-  echo ""
-  read -p "Press ENTER to continue or CTRL-C to stop and install wxWidgets manually..."
-  scripts/install/install_wxwidgets.sh "$@"
+if [[ "$OSTYPE" != "Haiku" ]]; then
+  echo "Checks wxWidgets..."
+  if [ -d "build" ]; then rm -rf "build"; fi
+  mkdir build
+  pushd build
+  mkdir test_wxwidgets
+  pushd test_wxwidgets
+  cmake ../../scripts/install/test_wxwidgets "$@"
+  popd
+  popd
+  if [ ! -f "build/test_wxwidgets/wxwidgets.lck" ]; then
+    echo ""
+    echo "---------------------------------------------------------------"
+    echo ""
+    echo "WARNING : wxWidgets is not already installed!"
+    echo ""
+    echo "If you continue wxWidgets will be downloaded, built and installed automatically."
+    echo ""
+    echo "---------------------------------------------------------------"
+    echo ""
+    read -p "Press ENTER to continue or CTRL-C to stop and install wxWidgets manually..."
+    scripts/install/install_wxwidgets.sh "$@"
+  fi
 fi
 
 #_______________________________________________________________________________
