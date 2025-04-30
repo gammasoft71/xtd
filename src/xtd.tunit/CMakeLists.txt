@@ -92,10 +92,10 @@ add_sources(
   "include/xtd/tunit/valid"
   "include/xtd/gtest.hpp"
   "include/xtd/gtest"
-  "include/xtd/xtd.tunit"
+  "include/xtd/xtd"
+  "include/xtd/xtd.hpp"
   "include/xtd/xtd.tunit"
   "include/xtd/xtd.tunit.hpp"
-  "include/xtd/xtd.tunit"
 )
 add_sources(
   "src/xtd/tunit/assert.cpp"
