@@ -139,14 +139,31 @@ namespace xtd {
     /// @return `true` if the operating system is 64-bit; otherwise, `false`.
     bool is_64_bit() const noexcept;
     
+    /// @brief Determines whether the current platform is AIX.
+    /// @return `true` if the current platform is AIX; otherwise, `false`.
+    bool is_aix() const noexcept;
+
     /// @brief Determines whether the current platform is Android.
     /// @return `true` if the current platform is Android; otherwise, `false`.
     bool is_android() const noexcept;
     
-    /// @brief Determines whether the current platform is FreeBSD.
-    /// @return `true` if the current platform is Android; otherwise, `false`.
-    bool is_free_bsd() const noexcept;
+    /// @brief Determines whether the current platform belongs to the Apple ecosystem (macOS, iOS, tvOS, or watchOS).
+    /// @return `true` if the current platform is macOS, iOS, tvOS, or watchOS; otherwise, `false`.
+    /// @remarks This includes all Apple Darwin-based systems. Use this method when you need to target Apple-specific APIs or behaviors across multiple Apple platforms.
+    bool is_apple_platform() const noexcept;
     
+    /// @brief Determines whether the current platform is BSD.
+    /// @return `true` if the current platform is BSD; otherwise, `false`.
+    bool is_bsd_platform() const noexcept;
+
+    /// @brief Determines whether the current platform is FreeBSD.
+    /// @return `true` if the current platform is FreeBSD; otherwise, `false`.
+    bool is_free_bsd() const noexcept;
+
+    /// @brief Determines whether the current platform is Haiku.
+    /// @return `true` if the current platform is Haiku; otherwise, `false`.
+    bool is_haiku() const noexcept;
+
     /// @brief Determines whether the current platform is iOS.
     /// @return `true` if the current platform is iOS; otherwise, `false`.
     bool is_ios() const noexcept;
@@ -159,10 +176,11 @@ namespace xtd {
     /// @return `true` if the current platform is macOS; otherwise, `false`.
     bool is_macos() const noexcept;
     
-    /// @brief Determines whether the current platform is macOS family.
-    /// @return `true` if the current platform is macOS family; otherwise, `false`.
+    /// @brief Determines whether the current platform is part of the macOS family (including macOS, iOS, tvOS, or watchOS).
+    /// @return `true` if the current platform is macOS, iOS, tvOS, or watchOS; otherwise, `false`.
+    /// @remarks This is an alias of `is_apple_platform()` and exists for naming consistency. Prefer `is_apple_platform()` for semantic clarity.
     bool is_macos_platform() const noexcept;
-    
+   
     /// @brief Determines whether the current platform is MINGW.
     /// @return `true` if the current platform is MINGW; otherwise, `false`.
     bool is_mingw() const noexcept;
@@ -177,10 +195,18 @@ namespace xtd {
     
     /// @brief Determines whether the current platform is Posix family.
     /// @return `true` if the current platform is Posix family; otherwise, `false`.
+    /// @remarks Returns true if the current platform is Posix.
+    /// This includes Linux, Android, macOS, iOS, tvOS, watchOS, BSD variants, Haiku, Solaris, and AIX.
+    /// It excludes platforms like Windows, and other non-posix environments.
+    /// @note In this implementation, Unix and POSIX platforms overlap significantly but are semantically distinguished.
     bool is_posix_platform() const noexcept;
 
     /// @brief Determines whether the current platform is Unix family.
     /// @return `true` if the current platform is Unix family; otherwise, `false`.
+    /// @remarks Returns true if the current platform is a Unix or Unix-like operating system.
+    /// This includes Linux, macOS, iOS, tvOS, watchOS, BSD variants, Haiku, Solaris, and AIX.
+    /// It excludes platforms like Windows, Android, and other non-Unix environments.
+    /// @note In this implementation, Unix and POSIX platforms overlap significantly but are semantically distinguished.
     bool is_unix_platform() const noexcept;
     
     /// @brief Determines whether the current platform is tvOS family.

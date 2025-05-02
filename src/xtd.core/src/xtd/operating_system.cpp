@@ -33,9 +33,10 @@ distribution operating_system::distribution() const noexcept {
 }
 
 string operating_system::name() const noexcept {
-  static auto operating_system_names = std::map<platform_id, string> {{platform_id::win32s, "Microsoft Win32S"}, {platform_id::win32_windows, "Microsoft Windows 95"}, {platform_id::win32_nt, "Microsoft Windows"}, {platform_id::win_ce, "Microsoft Windows CE"}, {platform_id::unix, "Unix"}, {platform_id::xbox, "Xbox"}, {platform_id::macos, "macOS"}, {platform_id::ios, "iOS"}, {platform_id::android, "Android"}, {platform_id::linux, "Linux"}, {platform_id::tvos, "tvOS"}, {platform_id::watchos, "watchOS"}, {platform_id::free_bsd, "FreeBSD"}, {platform_id::mingw, "MINGW"}, {platform_id::msys, "MSYS"}, {platform_id::other, "Other"}, {platform_id::unknown, "<Unknown>"}};
+  static auto operating_system_names = std::map<platform_id, string> {{platform_id::win32s, "Microsoft Win32S"}, {platform_id::win32_windows, "Microsoft Windows 95"}, {platform_id::win32_nt, "Microsoft Windows"}, {platform_id::win_ce, "Microsoft Windows CE"}, {platform_id::unix, "Unix"}, {platform_id::xbox, "Xbox"}, {platform_id::macos, "macOS"}, {platform_id::ios, "iOS"}, {platform_id::android, "Android"}, {platform_id::linux, "Linux"}, {platform_id::tvos, "tvOS"}, {platform_id::watchos, "watchOS"}, {platform_id::free_bsd, "FreeBSD"}, {platform_id::haiku, "Haiku"}, {platform_id::mingw, "MINGW"}, {platform_id::msys, "MSYS"}, {platform_id::other, "Other"}, {platform_id::unknown, "<Unknown>"}};
   if (platform_ == xtd::platform_id::win32_windows && (version_.major() > 4 || (version_.major() == 4 && version_.minor() > 0))) return "Microsoft Windows 98";
-  return operating_system_names[platform_];
+  auto it = operating_system_names.find(platform_);
+  return it != operating_system_names.end() ? it->second : "<Unknown>";
 }
 
 platform_id operating_system::platform() const noexcept {
@@ -61,12 +62,28 @@ bool operating_system::is_64_bit() const noexcept {
   return is_64_bit_;
 }
 
+bool operating_system::is_aix() const noexcept {
+  return platform_ == xtd::platform_id::aix;
+}
+
 bool operating_system::is_android() const noexcept {
   return platform_ == xtd::platform_id::android;
 }
 
+bool operating_system::is_apple_platform() const noexcept {
+  return is_macos() || is_ios() || is_tvos() || is_watchos();
+}
+
+bool operating_system::is_bsd_platform() const noexcept {
+  return is_free_bsd();
+}
+
 bool operating_system::is_free_bsd() const noexcept {
   return platform_ == xtd::platform_id::free_bsd;
+}
+
+bool operating_system::is_haiku() const noexcept {
+  return platform_ == xtd::platform_id::haiku;
 }
 
 bool operating_system::is_ios() const noexcept {
@@ -82,7 +99,7 @@ bool operating_system::is_macos() const noexcept {
 }
 
 bool operating_system::is_macos_platform() const noexcept {
-  return platform_ == xtd::platform_id::macos || platform_ == xtd::platform_id::ios || platform_ == xtd::platform_id::tvos || platform_ == xtd::platform_id::watchos;
+  return is_apple_platform();
 }
 
 bool operating_system::is_mingw() const noexcept {
@@ -98,11 +115,11 @@ bool operating_system::is_posix() const noexcept {
 }
 
 bool operating_system::is_posix_platform() const noexcept {
-  return is_macos_platform() || is_unix_platform();
+  return is_android() || is_unix_platform();
 }
 
 bool operating_system::is_unix_platform() const noexcept {
-  return platform_ == xtd::platform_id::unix || platform_ == xtd::platform_id::linux || platform_ == xtd::platform_id::android || platform_ == xtd::platform_id::free_bsd;
+  return platform_ == xtd::platform_id::unix || is_aix() || is_free_bsd() || is_haiku() || is_linux() || is_macos_platform();
 }
 
 bool operating_system::is_tvos() const noexcept {
@@ -122,7 +139,7 @@ bool operating_system::is_windows_ce() const noexcept {
 }
 
 bool operating_system::is_windows_platform() const noexcept {
-  return platform_ == xtd::platform_id::win32_nt || platform_ == xtd::platform_id::win32s || platform_ == xtd::platform_id::win32_windows || platform_ == xtd::platform_id::win_ce || platform_ == xtd::platform_id::xbox;
+  return is_windows() || is_windows_ce() || is_xbox();
 }
 
 bool operating_system::is_xbox() const noexcept {
