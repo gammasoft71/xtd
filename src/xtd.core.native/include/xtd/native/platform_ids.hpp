@@ -109,27 +109,41 @@ constexpr int32_t PLATFORM_WATCHOS = 11;
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
 constexpr int32_t PLATFORM_FREEBSD = 12;
+/// @brief The operating system is FreeBSD.
+/// @par Library
+/// xtd.core.native
+/// @ingroup xtd_core_native platform_id
+/// @remarks Added specifically for xtd.
+/// @warning Internal use only
+constexpr int32_t PLATFORM_HAIKU = 13;
+/// @brief The operating system is AIX.
+/// @par Library
+/// xtd.core.native
+/// @ingroup xtd_core_native platform_id
+/// @remarks Added specifically for xtd.
+/// @warning Internal use only
+constexpr int32_t PLATFORM_AIX = 14;
 /// @brief The operating system is MINGW.
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native platform_id
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t PLATFORM_MINGW = 13;
+constexpr int32_t PLATFORM_MINGW = 15;
 /// @brief The operating system is MSYS.
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native platform_id
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t PLATFORM_MSYS = 14;
+constexpr int32_t PLATFORM_MSYS = 16;
 /// @brief The operating system is Posix.
 /// @par Library
 /// xtd.core.native
 /// @ingroup xtd_core_native platform_id
 /// @remarks Added specifically for xtd.
 /// @warning Internal use only
-constexpr int32_t PLATFORM_POSIX = 15;
+constexpr int32_t PLATFORM_POSIX = 17;
 /// @brief The operating system is other.
 /// @par Library
 /// xtd.core.native

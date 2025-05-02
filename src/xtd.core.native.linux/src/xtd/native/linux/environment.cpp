@@ -191,8 +191,10 @@ string environment::get_machine_name() {
 }
 
 int32_t environment::get_os_platform_id() {
-  #if defined(__ANDROID__)
+#if defined(__ANDROID__)
   return PLATFORM_ANDROID;
+#elif defined(__HAIKU__)
+  return PLATFORM_HAIKU;
   #else
   if (linux::shell_execute::run("uname", "-a").find("Linux") != string::npos) return PLATFORM_LINUX;
   return PLATFORM_UNIX;
