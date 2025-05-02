@@ -44,6 +44,10 @@
 #  endif
 #elif defined(__ANDROID__)
 #  define __platform_name__ "Android"
+#elif defined(__HAIKU__)
+#  define __platform_name__ "Haiku"
+#elif defined(_AIX)
+#  define __platform_name__ "AIX"
 #elif defined(__linux__)
 #  define __platform_name__ "Linux"
 #elif defined(__unix__)
