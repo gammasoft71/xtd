@@ -7,8 +7,10 @@ include("../../scripts/cmake/xtd_version.cmake")
 add_include_directories("include")
 
 # add external packages
-if (${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "Android" OR ${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "Haiku")
-  add_references(net)
+if (${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "Android")
+  add_references()
+elseif (${XTD_NATIVE_OPERATING_SYSTEM} STREQUAL "Haiku")
+  add_references(network)
 elseif (UNIX)
   find_package(PkgConfig REQUIRED)
 
