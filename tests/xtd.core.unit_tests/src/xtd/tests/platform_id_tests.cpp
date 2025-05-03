@@ -92,20 +92,32 @@ namespace xtd::tests {
       assert::are_equal(platform_id::free_bsd, enum_object<>::parse<platform_id>("free_bsd"));
     }
     
+    void test_method_(haiku) {
+      assert::are_equal(13, enum_object<>::to_int32(platform_id::haiku));
+      assert::are_equal("haiku", enum_object<>::to_string(platform_id::haiku));
+      assert::are_equal(platform_id::haiku, enum_object<>::parse<platform_id>("haiku"));
+    }
+    
+    void test_method_(aix) {
+      assert::are_equal(14, enum_object<>::to_int32(platform_id::aix));
+      assert::are_equal("aix", enum_object<>::to_string(platform_id::aix));
+      assert::are_equal(platform_id::aix, enum_object<>::parse<platform_id>("aix"));
+    }
+
     void test_method_(mingw) {
-      assert::are_equal(13, enum_object<>::to_int32(platform_id::mingw));
+      assert::are_equal(15, enum_object<>::to_int32(platform_id::mingw));
       assert::are_equal("mingw", enum_object<>::to_string(platform_id::mingw));
       assert::are_equal(platform_id::mingw, enum_object<>::parse<platform_id>("mingw"));
     }
     
     void test_method_(msys) {
-      assert::are_equal(14, enum_object<>::to_int32(platform_id::msys));
+      assert::are_equal(16, enum_object<>::to_int32(platform_id::msys));
       assert::are_equal("msys", enum_object<>::to_string(platform_id::msys));
       assert::are_equal(platform_id::msys, enum_object<>::parse<platform_id>("msys"));
     }
     
     void test_method_(posix) {
-      assert::are_equal(15, enum_object<>::to_int32(platform_id::posix));
+      assert::are_equal(17, enum_object<>::to_int32(platform_id::posix));
       assert::are_equal("posix", enum_object<>::to_string(platform_id::posix));
       assert::are_equal(platform_id::posix, enum_object<>::parse<platform_id>("posix"));
     }
