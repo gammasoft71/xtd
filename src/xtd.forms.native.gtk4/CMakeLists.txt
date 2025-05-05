@@ -6,10 +6,13 @@ include("../../scripts/cmake/xtd_commands.cmake")
 include("../../scripts/cmake/xtd_version.cmake")
 find_package(PkgConfig)
 pkg_check_modules(GTK gtk+-4.0)
-include_directories(${GTK_INCLUDE_DIRS})
-link_directories(${GTK_LIBRARY_DIRS})
+add_include_directories(${GTK_INCLUDE_DIRS})
+add_reference_directories(${GTK_LIBRARY_DIRS})
+add_references(${GTK_LIBRARIES})
+
 add_include_directories("include")
-add_references(xtd.drawing xtd.drawing.native ${GTK_LIBRARIES})
+add_references(xtd.drawing xtd.drawing.native)
+
 add_sources(
   "include/xtd/xtd.forms.native.gtk4.h"
   "include/xtd/xtd.forms.native.gtk4"
