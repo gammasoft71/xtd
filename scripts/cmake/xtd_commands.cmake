@@ -526,6 +526,7 @@ macro(target_type TYPE)
     message(FATAL_ERROR "the TYPE must be on of theses value : CONSOLE_APPLICATION, GUI_APPLICATION, TEST_APPLICATION, MODULE_LIBRARY, SHARED_LIBRARY, STATIC_LIBRARY or CUSTOM_TARGET.")
   endif ()
 
+  target_include_directories(${TARGET_NAME} PRIVATE ${PROJECT_REFERENCE_DIRECTORIES})
   if ("${TYPE}" STREQUAL "INTERFACE_LIBRARY")
     target_link_libraries(${TARGET_NAME} INTERFACE ${PROJECT_REFERENCES})
   else ()
@@ -875,6 +876,7 @@ macro(print_project_informations)
   message(STATUS "  Resource Strings [${PROJECT_RESOURCE_STRINGS}]")
   message(STATUS "  Sources [${PROJECT_SOURCES}]")
   message(STATUS "  User Settings [${PROJECT_USER_SETTINGS}]")
+  message(STATUS "  Reference directories [${PROJECT_REFERENCE_DIRECTORIES}]")
   message(STATUS "")
   message(STATUS "System informations:")
   message(STATUS "  CMake version [${CMAKE_VERSION}]")
@@ -1051,7 +1053,7 @@ endmacro()
 ################################################################################
 # Project commands
 
-## @brief Adds include directory to current project.
+## @brief Adds include directories to current project.
 ## @param ARGN directories to add.
 ## @remarks This method can be call more than once in the same project.
 ## @remarks This method must be call before target_type().
@@ -1062,7 +1064,7 @@ endmacro()
 ##
 ##  project(my_project)
 ##  find_package(xtd REQUIRED)
-##  add_include_directory(include)
+##  add_include_directories(include)
 ##  add_sources(my_project.cpp include/my_project/my_project.hpp)
 ##
 ##  target_type(STATIC_LIBRARY)
@@ -1150,6 +1152,30 @@ endmacro()
 macro(add_references)
   message(VERBOSE "Add references [${ARGN}]...")
   set(PROJECT_REFERENCES "${PROJECT_REFERENCES};${ARGN}")
+endmacro()
+
+## @brief Adds reference directories (library include directories) to current project.
+## @param ARGN reference directories to add.
+## @remarks This method can be call more than once in the same project.
+## @remarks This method must be call before target_type().
+## @remarks This method is optional.
+## @par Examples
+## ```cpp
+##  cmake_minimum_required(VERSION 3.20)
+##
+##  project(my_project)
+##  find_package(xtd REQUIRED)
+##  add_sources(my_project.cpp)
+##  add_references(xtd.core xtd.console)
+##  add_reference_directories(xtd_LIBRARY_DIRS)
+##  add_references(xtd.emoticons)
+##
+##  target_type(CONSOLE_APPLICATION)
+##
+## ```
+macro(add_reference_directories)
+  message(VERBOSE "Add reference directories [${ARGN}]...")
+  set(PROJECT_REFERENCE_DIRECTORIES "${PROJECT_REFERENCE_DIRECTORIES};${ARGN}")
 endmacro()
 
 ## @brief Adds resource to current project.
