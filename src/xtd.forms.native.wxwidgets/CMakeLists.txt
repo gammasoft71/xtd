@@ -11,14 +11,20 @@ elseif (APPLE)
 elseif (UNIX)
   find_package(PkgConfig)
   pkg_check_modules(GTK gtk+-3.0)
-  include_directories(${GTK_INCLUDE_DIRS})
-  link_directories(${GTK_LIBRARY_DIRS})
-  set(XTD_EXTRA_LIBS ${GTK_LIBRARIES})
+  add_include_directories(${GTK_INCLUDE_DIRS})
+  add_reference_directories(${GTK_LIBRARY_DIRS})
+  add_references(${GTK_LIBRARIES})
 endif()
+
 find_package(wxWidgets REQUIRED)
 include(${wxWidgets_USE_FILE})
+#add_include_directories(${wxWidgets_INCLUDE_DIRS})
+#add_reference_directories(${wxWidgets_LIBRARY_DIRS})
+#add_references(${wxWidgets_LIBRARIES})
+
 add_include_directories("include")
-add_references(xtd.forms.native xtd.drawing ${XTD_EXTRA_LIBS})
+add_references(xtd.forms.native xtd.drawing)
+
 add_sources(
   "include/xtd/xtd.forms.native.wxwidgets.hpp"
   "include/xtd/xtd.forms.native.wxwidgets"
