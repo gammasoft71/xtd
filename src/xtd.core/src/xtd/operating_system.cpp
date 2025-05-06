@@ -33,7 +33,7 @@ distribution operating_system::distribution() const noexcept {
 }
 
 string operating_system::name() const noexcept {
-  static auto operating_system_names = std::map<platform_id, string> {{platform_id::win32s, "Microsoft Win32S"}, {platform_id::win32_windows, "Microsoft Windows 95"}, {platform_id::win32_nt, "Microsoft Windows"}, {platform_id::win_ce, "Microsoft Windows CE"}, {platform_id::unix, "Unix"}, {platform_id::xbox, "Xbox"}, {platform_id::macos, "macOS"}, {platform_id::ios, "iOS"}, {platform_id::android, "Android"}, {platform_id::linux, "Linux"}, {platform_id::tvos, "tvOS"}, {platform_id::watchos, "watchOS"}, {platform_id::free_bsd, "FreeBSD"}, {platform_id::haiku, "Haiku"}, {platform_id::mingw, "MINGW"}, {platform_id::msys, "MSYS"}, {platform_id::other, "Other"}, {platform_id::unknown, "<Unknown>"}};
+  static auto operating_system_names = std::map<platform_id, string> {{platform_id::win32s, "Microsoft Win32S"}, {platform_id::win32_windows, "Microsoft Windows 95"}, {platform_id::win32_nt, "Microsoft Windows"}, {platform_id::win_ce, "Microsoft Windows CE"}, {platform_id::unix, "Unix"}, {platform_id::xbox, "Xbox"}, {platform_id::macos, "macOS"}, {platform_id::ios, "iOS"}, {platform_id::android, "Android"}, {platform_id::linux, "Linux"}, {platform_id::tvos, "tvOS"}, {platform_id::watchos, "watchOS"}, {platform_id::free_bsd, "FreeBSD"}, {platform_id::haiku, "Haiku"}, {platform_id::aix, "AIX"}, {platform_id::mingw, "MINGW"}, {platform_id::msys, "MSYS"}, {platform_id::other, "Other"}, {platform_id::unknown, "<Unknown>"}};
   if (platform_ == xtd::platform_id::win32_windows && (version_.major() > 4 || (version_.major() == 4 && version_.minor() > 0))) return "Microsoft Windows 98";
   auto it = operating_system_names.find(platform_);
   return it != operating_system_names.end() ? it->second : "<Unknown>";
@@ -53,7 +53,7 @@ const xtd::version& operating_system::version() const noexcept {
 
 string operating_system::version_string() const noexcept {
   if (!version_string_.empty()) return version_string_;
-  version_string_ = string::format("{} {}", name(), version_.to_string(3));
+  version_string_ = string::format("{} {}", name(), version_.to_string(version_.build() >= 0 ? 3 : 2));
   if (!service_pack_.empty()) version_string_ += string::format(" {}", service_pack());
   return version_string_;
 }
