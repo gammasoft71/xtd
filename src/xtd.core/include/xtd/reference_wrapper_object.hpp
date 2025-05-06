@@ -265,6 +265,12 @@ namespace xtd {
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object value.
     /// @param value The value to assign.
+    reference_wrapper_object& operator =(reference_wrapper_object&& value) noexcept {
+      ref_ = std::move(value.ref_);
+      return *this;
+    }
+    /// @brief Assignment operator with specified xtd::reference_wrapper_object value.
+    /// @param value The value to assign.
     template<class value_t>
     reference_wrapper_object& operator =(const reference_wrapper_object<value_t>& value) noexcept {
       ref_ = value.ref_;
@@ -275,6 +281,13 @@ namespace xtd {
     template<class value_t>
     reference_wrapper_object& operator =(reference_wrapper_object<value_t>& value) noexcept {
       ref_ = value.ref_;
+      return *this;
+    }
+    /// @brief Assignment operator with specified xtd::reference_wrapper_object value.
+    /// @param value The value to assign.
+    template<class value_t>
+    reference_wrapper_object& operator =(reference_wrapper_object<value_t>&& value) noexcept {
+      ref_ = std::move(value.ref_);
       return *this;
     }
     /// @brief Assignment operator with specified xtd::reference_wrapper_object::base_type value.
