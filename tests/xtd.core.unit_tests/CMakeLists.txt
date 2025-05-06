@@ -235,6 +235,7 @@ add_sources(
   "src/xtd/tests/object_tests.cpp"
   "src/xtd/tests/object_closed_exception_tests.cpp"
   "src/xtd/tests/operation_canceled_exception_tests.cpp"
+  "src/xtd/tests/operating_system_tests.cpp"
   "src/xtd/tests/out_of_memory_exception_tests.cpp"
   "src/xtd/tests/overflow_exception_tests.cpp"
   "src/xtd/tests/parse_tests.cpp"
