@@ -48,8 +48,14 @@
 #  define __platform_name__ "Haiku"
 #elif defined(_AIX)
 #  define __platform_name__ "AIX"
+#elif defined(__FreeBSD__)
+#  define __platform_name__ "FreeBSD"
 #elif defined(__linux__)
 #  define __platform_name__ "Linux"
+#elif defined(__NetBSD__)
+#  define __platform_name__ "NetBSD"
+#elif defined(__OpenBSD__)
+#  define __platform_name__ "OpenBSD"
 #elif defined(__unix__)
 #  define __platform_name__ "Unix"
 #elif defined(_POSIX_VERSION)
