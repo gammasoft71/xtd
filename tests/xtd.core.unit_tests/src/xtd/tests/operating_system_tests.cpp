@@ -135,11 +135,30 @@ namespace xtd::tests {
       assert::are_equal("macOS", operating_system {platform_id::macos, xtd::version {}}.name());
       assert::are_equal("AIX", operating_system {platform_id::aix, xtd::version {}}.name());
     }
-
+    
     void test_method_(platform) {
       assert::are_equal(platform_id::unknown, operating_system {platform_id::unknown, xtd::version {}}.platform());
       assert::are_equal(platform_id::macos, operating_system {platform_id::macos, xtd::version {}}.platform());
       assert::are_equal(platform_id::aix, operating_system {platform_id::aix, xtd::version {}}.platform());
+    }
+    
+    void test_method_(service_pack) {
+      assert::are_equal("Service Pack 1", operating_system {platform_id::unknown, xtd::version {}, "Service Pack 1"}.service_pack());
+      assert::are_equal("SP 2", operating_system {platform_id::macos, xtd::version {}, "SP 2"}.service_pack());
+      assert::is_empty(operating_system {platform_id::aix, xtd::version {}, ""}.service_pack());
+    }
+    
+    void test_method_(version) {
+      assert::are_equal(xtd::version {}, operating_system {platform_id::unknown, xtd::version {}}.version());
+      assert::are_equal(xtd::version {1, 2}, operating_system {platform_id::macos, xtd::version {1, 2}}.version());
+      assert::are_equal(xtd::version {1, 2, 3}, operating_system {platform_id::aix, xtd::version {1, 2, 3}}.version());
+    }
+    
+    void test_method_(version_string) {
+      assert::are_equal("<Unknown> 0.0", operating_system {platform_id::unknown, xtd::version {}}.version_string());
+      assert::are_equal("macOS 1.2", operating_system {platform_id::macos, xtd::version {1, 2}}.version_string());
+      assert::are_equal("AIX 1.2.3", operating_system {platform_id::aix, xtd::version {1, 2, 3}}.version_string());
+      assert::are_equal("Microsoft Windows 1.2.3", operating_system {platform_id::win32_nt, xtd::version {1, 2, 3, 4}}.version_string());
     }
   };
 }
