@@ -71,11 +71,15 @@ bool operating_system::is_android() const noexcept {
 }
 
 bool operating_system::is_apple_platform() const noexcept {
-  return is_macos() || is_ios() || is_tvos() || is_watchos();
+  return is_darwin();
 }
 
 bool operating_system::is_bsd_platform() const noexcept {
-  return is_free_bsd();
+  return is_free_bsd() || is_darwin();
+}
+
+bool operating_system::is_darwin() const noexcept {
+  return is_macos() || is_ios() || is_tvos() || is_watchos();
 }
 
 bool operating_system::is_free_bsd() const noexcept {
@@ -115,11 +119,11 @@ bool operating_system::is_posix() const noexcept {
 }
 
 bool operating_system::is_posix_platform() const noexcept {
-  return is_android() || is_unix_platform();
+  return platform_ == xtd::platform_id::posix || is_unix_platform();
 }
 
 bool operating_system::is_unix_platform() const noexcept {
-  return platform_ == xtd::platform_id::unix || is_aix() || is_free_bsd() || is_haiku() || is_linux() || is_macos_platform();
+  return platform_ == xtd::platform_id::unix || is_aix() || is_android() || is_free_bsd() || is_haiku() || is_linux() || is_darwin();
 }
 
 bool operating_system::is_tvos() const noexcept {
@@ -139,7 +143,7 @@ bool operating_system::is_windows_ce() const noexcept {
 }
 
 bool operating_system::is_windows_platform() const noexcept {
-  return is_windows() || is_windows_ce() || is_xbox();
+  return is_windows() || is_windows_ce() || is_mingw() || is_msys() || is_xbox();
 }
 
 bool operating_system::is_xbox() const noexcept {

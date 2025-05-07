@@ -152,9 +152,13 @@ namespace xtd {
     /// @remarks This includes all Apple Darwin-based systems. Use this method when you need to target Apple-specific APIs or behaviors across multiple Apple platforms.
     bool is_apple_platform() const noexcept;
     
-    /// @brief Determines whether the current platform is BSD.
+    /// @brief Determines whether the current platform is BSD (FreeBSD, or Darwin).
     /// @return `true` if the current platform is BSD; otherwise, `false`.
     bool is_bsd_platform() const noexcept;
+    
+    /// @brief Determines whether the current platform is Darwin (macOS, iOS, tvOS, or watchOS).
+    /// @return `true` if the current platform is Darwin; otherwise, `false`.
+    bool is_darwin() const noexcept;
 
     /// @brief Determines whether the current platform is FreeBSD.
     /// @return `true` if the current platform is FreeBSD; otherwise, `false`.
