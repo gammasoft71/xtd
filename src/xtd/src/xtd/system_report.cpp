@@ -23,7 +23,7 @@ namespace {
     string report = string::format("{}Stack trace{}", indent_string(indent), environment::new_line());
     auto stack_trace = system_report::stack_trace();
     for (auto frame : stack_trace.get_frames())
-      report += string::format("{}{}{}", indent_string(indent + 1), frame, environment::new_line());
+      report += string::format("{}{}", indent_string(indent + 1), frame);
     return report + environment::new_line();
   }
   
