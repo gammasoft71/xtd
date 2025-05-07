@@ -8,19 +8,7 @@ add_include_directories("include")
 include("references.cmake")
 
 add_sources(
-  "include/xtd/system_report.hpp"
-  "include/xtd/system_report"
-  "include/xtd/xtd"
-  "include/xtd/xtd.hpp"
-  "include/xtd/forms/xtd_about_box.hpp"
-)
-add_sources(
-  "include/xtd/forms/xtd_about_box"
-  "include/xtd/forms/xtd_about_dialog.hpp"
-  "include/xtd/forms/xtd_about_dialog"
-  "src/xtd/system_report.cpp"
-  "src/xtd/forms/xtd_about_box.cpp"
-  "src/xtd/forms/xtd_about_dialog.cpp"
+  "src/xtd/xtd.cpp"
 )
 target_name(xtd)
 target_type(${XTD_LIBRARY_TYPE})

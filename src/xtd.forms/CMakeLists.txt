@@ -7,6 +7,8 @@ include("../../scripts/cmake/xtd_version.cmake")
 add_include_directories("include")
 add_references(${XTD_FORMS_NATIVE_LIBRARY})
 add_sources(
+  "include/xtd/system_report.hpp"
+  "include/xtd/system_report"
   "include/xtd/xtd"
   "include/xtd/xtd.hpp"
   "include/xtd/xtd.forms"
@@ -645,6 +647,10 @@ add_sources(
   "include/xtd/forms/vertical_layout_panel"
   "include/xtd/forms/v_scroll_bar.hpp"
   "include/xtd/forms/v_scroll_bar"
+  "include/xtd/forms/xtd_about_box.hpp"
+  "include/xtd/forms/xtd_about_box"
+  "include/xtd/forms/xtd_about_dialog.hpp"
+  "include/xtd/forms/xtd_about_dialog"
   "include/xtd/forms/layout/arranged_element_collection.hpp"
   "include/xtd/forms/layout/arranged_element_collection"
   "include/xtd/forms/layout/sorter_none.hpp"
@@ -753,6 +759,7 @@ add_sources(
   "include/xtd/forms/visual_styles/user_control_state"
 )
 add_sources(
+  "src/xtd/system_report.cpp"
   "src/xtd/forms/about_box.cpp"
   "src/xtd/forms/about_dialog.cpp"
   "src/xtd/forms/animation.cpp"
@@ -942,6 +949,8 @@ add_sources(
   "src/xtd/forms/vertical_control_layout_style.cpp"
   "src/xtd/forms/vertical_layout_panel.cpp"
   "src/xtd/forms/v_scroll_bar.cpp"
+  "src/xtd/forms/xtd_about_box.cpp"
+  "src/xtd/forms/xtd_about_dialog.cpp"
   "src/xtd/forms/xtd_forms_common_dialog_closed_caller.hpp"
   "src/xtd/forms/xtd_forms_message_dialog_closed_caller.hpp"
   "src/xtd/forms/properties/resources.cpp"

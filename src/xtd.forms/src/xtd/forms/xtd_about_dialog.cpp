@@ -1,9 +1,9 @@
 #include "../../../include/xtd/system_report.hpp"
 #include "../../../include/xtd/forms/xtd_about_dialog.hpp"
-#include <xtd/forms/properties/resources>
-#include <xtd/forms/about_dialog>
-#include <xtd/forms/tab_page>
-#include <xtd/forms/text_box>
+#include "../../../include/xtd/forms/properties/resources.hpp"
+#include "../../../include/xtd/forms/about_dialog.hpp"
+#include "../../../include/xtd/forms/tab_page.hpp"
+#include "../../../include/xtd/forms/text_box.hpp"
 #include <xtd/environment>
 
 using namespace xtd;
