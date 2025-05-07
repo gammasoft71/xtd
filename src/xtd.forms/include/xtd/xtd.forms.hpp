@@ -4,6 +4,7 @@
 #pragma once
 #include <xtd/xtd.drawing>
 #include <xtd/forms/window_messages>
+#include "xtd/system_report"
 #include "xtd/forms/layout/arranged_element_collection.hpp"
 #include "xtd/forms/layout/sorter_none.hpp"
 #include "xtd/forms/properties/resources.hpp"
@@ -373,3 +374,5 @@
 #include "forms/vertical_control_layout_style.hpp"
 #include "forms/vertical_control_layout_style_collection.hpp"
 #include "forms/vertical_layout_panel.hpp"
+#include "forms/xtd_about_box.hpp"
+#include "forms/xtd_about_dialog.hpp"
