@@ -24,7 +24,7 @@ namespace xtd::tests {
     void test_method_(create_with_platform_id_and_version) {
       auto os = operating_system {platform_id::free_bsd, xtd::version {14, 2}};
       assert::is_empty(os.desktop_environment());
-      assert::is_empty(os.desktop_theme());
+      assert::is_empty(os.desktop_theme());2
       assert::is_empty(os.distribution().name());
       assert::are_equal("FreeBSD", os.name());
       assert::are_equal(platform_id::free_bsd, os.platform());
@@ -648,6 +648,36 @@ namespace xtd::tests {
       assert::is_true(operating_system {platform_id::msys, xtd::version {}}.is_windows_platform());
       assert::is_false(operating_system {platform_id::posix, xtd::version {}}.is_windows_platform());
       assert::is_false(operating_system {platform_id::other, xtd::version {}}.is_windows_platform());
+    }
+    
+    void test_method_(is_xbox) {
+      assert::is_false(operating_system {platform_id::unknown, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::win32s, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::win32_windows, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::win32_nt, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::win_ce, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::unix, xtd::version {}}.is_xbox());
+      assert::is_true(operating_system {platform_id::xbox, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::macos, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::ios, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::android, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::linux, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::tvos, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::watchos, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::free_bsd, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::haiku, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::aix, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::mingw, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::msys, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::posix, xtd::version {}}.is_xbox());
+      assert::is_false(operating_system {platform_id::other, xtd::version {}}.is_xbox());
+    }
+    
+    void test_method_(to_string) {
+      assert::are_equal("<Unknown> 0.0", operating_system {platform_id::unknown, xtd::version {}}.to_string());
+      assert::are_equal("macOS 1.2", operating_system {platform_id::macos, xtd::version {1, 2}}.to_string());
+      assert::are_equal("AIX 1.2.3", operating_system {platform_id::aix, xtd::version {1, 2, 3}}.to_string());
+      assert::are_equal("Microsoft Windows 1.2.3", operating_system {platform_id::win32_nt, xtd::version {1, 2, 3, 4}}.to_string());
     }
   };
 }
