@@ -24,7 +24,7 @@ namespace xtd::tests {
     void test_method_(create_with_platform_id_and_version) {
       auto os = operating_system {platform_id::free_bsd, xtd::version {14, 2}};
       assert::is_empty(os.desktop_environment());
-      assert::is_empty(os.desktop_theme());2
+      assert::is_empty(os.desktop_theme());
       assert::is_empty(os.distribution().name());
       assert::are_equal("FreeBSD", os.name());
       assert::are_equal(platform_id::free_bsd, os.platform());
