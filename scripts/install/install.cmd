@@ -155,3 +155,5 @@ echo Shortcuts added in Start Menu.
 echo For more information, see :
 echo    https://gammasoft71.github.io/xtd/
 echo ---------------------------------------------------------------
+
+endlocal
