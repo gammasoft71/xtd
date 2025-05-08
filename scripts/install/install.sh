@@ -239,6 +239,12 @@ else
   $cmake_install_prefix/bin/xtdc-gui &>/dev/null &
 fi
 
-echo "xtd has been successfully installed."
-echo "For further information, see :"
+#_______________________________________________________________________________
+#                                                                  Final message
+echo ""
+echo "---------------------------------------------------------------"
+echo "xtd version $xtd_version installed successfully."
+echo "Root path      : $cmake_install_prefix"
+echo "For more information, see :"
 echo "   https://gammasoft71.github.io/xtd/"
+echo "---------------------------------------------------------------"
