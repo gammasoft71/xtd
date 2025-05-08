@@ -8,10 +8,11 @@ add_include_directories("include")
 include("references.cmake")
 
 add_sources(
-  "src/xtd/xtd.cpp"
+  "include/xtd/xtd"
+  "include/xtd/xtd.hpp"
 )
 target_name(xtd)
-target_type(${XTD_LIBRARY_TYPE})
+target_type(INTERFACE_LIBRARY)
 
 # Install
 add_install_include_directories("include/xtd")
