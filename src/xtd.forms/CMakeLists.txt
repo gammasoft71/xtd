@@ -9,8 +9,6 @@ add_references(${XTD_FORMS_NATIVE_LIBRARY})
 add_sources(
   "include/xtd/system_report.hpp"
   "include/xtd/system_report"
-  "include/xtd/xtd"
-  "include/xtd/xtd.hpp"
   "include/xtd/xtd.forms"
   "include/xtd/xtd.forms.hpp"
   "include/xtd/forms/about_box.hpp"

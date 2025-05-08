@@ -7,8 +7,6 @@ include("../../scripts/cmake/xtd_version.cmake")
 add_include_directories("include")
 add_references(${XTD_DRAWING_NATIVE_LIBRARY})
 add_sources(
-  "include/xtd/xtd"
-  "include/xtd/xtd.hpp"
   "include/xtd/xtd.drawing"
   "include/xtd/xtd.drawing.hpp"
   "include/xtd/drawing/actions_system_images.hpp"

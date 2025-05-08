@@ -4,7 +4,6 @@ cmake_minimum_required(VERSION 3.20)
 project(xtd.forms.unit_tests)
 include("../../scripts/cmake/xtd_commands.cmake")
 include("../../scripts/cmake/xtd_version.cmake")
-add_references(xtd.forms)
 add_sources(
   "src/main.cpp"
   "src/xtd/forms/tests/anchor_styles_tests.cpp"
@@ -53,6 +52,7 @@ add_sources(
   "src/xtd/forms/tests/lcd_style_tests.cpp"
   "src/xtd/forms/tests/left_right_alignment_tests.cpp"
   "src/xtd/forms/tests/link_behavior_tests.cpp"
+  "src/xtd/forms/tests/link_label_tests.cpp"
   "src/xtd/forms/tests/list_box_tests.cpp"
   "src/xtd/forms/tests/loading_indicator_style_tests.cpp"
   "src/xtd/forms/tests/main_menu_tests.cpp"
@@ -129,6 +129,5 @@ add_sources(
   "src/xtd/forms/tests/get_double_click_time.mm"
 )
 endif()
-add_references(xtd.forms)
 target_default_namespace("xtd::forms::tests")
 target_type(TEST_APPLICATION)

@@ -581,8 +581,6 @@ add_sources(
   "include/xtd/wstring_comparer"
   "include/xtd/xml_syntax_exception.hpp"
   "include/xtd/xml_syntax_exception"
-  "include/xtd/xtd"
-  "include/xtd/xtd.hpp"
   "include/xtd/xtd.core"
   "include/xtd/xtd.core.hpp"
   "include/xtd/xtd.core"
