@@ -11,6 +11,16 @@ if [ -z ${xtd_version+x} ]; then
   exit 1
 fi
 
+if [[ "$(id -u)" -ne 0 && -z "$(command -v sudo)" ]]; then
+  echo "---------------------------------------------------------------"
+  echo ""
+  echo "ERROR : Impossible to install: no root or 'sudo' available."
+  echo ""
+  echo "---------------------------------------------------------------"
+  echo ""
+  exit 1
+fi
+
 echo "Install xtd libraries version $xtd_version, copyright © 2025 Gammasoft"
 echo ""
 
@@ -118,7 +128,7 @@ if [[ "$OSTYPE" != "Haiku" ]]; then
     echo "---------------------------------------------------------------"
     echo ""
     read -p "Press ENTER to continue or CTRL-C to stop and install wxWidgets manually..."
-    scripts/install/install_wxwidgets.sh "$@"
+    scripts/install/install_wxwidgets.sh "$@" || exit 1
   fi
 fi
 
@@ -129,21 +139,21 @@ mkdir build
 pushd build
 mkdir Release && mkdir Debug
 pushd Release
-cmake ../.. -DCMAKE_BUILD_TYPE=Release "$@"
-cmake --build . -- -j$build_cores
+cmake ../.. -DCMAKE_BUILD_TYPE=Release "$@" || exit 1
+cmake --build . -- -j$build_cores || exit 1
 if [[ "$OSTYPE" == *"CLANGARM64"* ]] || [[ "$OSTYPE" == *"CLANG32"* ]] || [[ "$OSTYPE" == *"CLANG64"* ]] || [[ "$OSTYPE" == *"MINGW32"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]] || [[ "$OSTYPE" == *"UCRT64"* ]]; then
-  cmake --build . --target install
+  cmake --build . --target install || exit 1
 else
-  sudo cmake --build . --target install
+  sudo cmake --build . --target install || exit 1
 fi
 popd
 pushd Debug
-cmake ../.. -DCMAKE_BUILD_TYPE=Debug "$@"
-cmake --build . -- -j$build_cores
+cmake ../.. -DCMAKE_BUILD_TYPE=Debug "$@" || exit 1
+cmake --build . -- -j$build_cores || exit 1
 if [[ "$OSTYPE" == *"CLANGARM64"* ]] || [[ "$OSTYPE" == *"CLANG32"* ]] || [[ "$OSTYPE" == *"CLANG64"* ]] || [[ "$OSTYPE" == *"MINGW32"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]] || [[ "$OSTYPE" == *"UCRT64"* ]]; then
-  cmake --build . --target install
+  cmake --build . --target install || exit 1
 else
-  sudo cmake --build . --target install
+  sudo cmake --build . --target install || exit 1
 fi
 popd
 popd
@@ -228,3 +238,7 @@ elif [[ "$OSTYPE" == *"Darwin"* ]]; then
 else
   $cmake_install_prefix/bin/xtdc-gui &>/dev/null &
 fi
+
+echo "xtd has been successfully installed."
+echo "For further information, see :"
+echo "   https://gammasoft71.github.io/xtd/"

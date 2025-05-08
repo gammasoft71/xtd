@@ -36,22 +36,22 @@ echo  "Using up to ${build_cores} build cores"
 echo "Downloading and installing wxwidgets..."
 mkdir -p build/3rdparty/
 pushd build/3rdparty
-git clone https://github.com/wxwidgets/wxwidgets.git -b $wxwidgets_version --depth 1
+git clone https://github.com/wxwidgets/wxwidgets.git -b $wxwidgets_version --depth 1 || exit 1
 pushd wxwidgets
-git submodule update --init
+git submodule update --init || exit 1
 popd
 mkdir -p wxwidgets/build_cmake
 pushd wxwidgets/build_cmake
 mkdir Debug && mkdir Release
 pushd Release
-cmake ../.. -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DCMAKE_BUILD_TYPE=Release -DwxBUILD_SHARED=OFF "$@"
-cmake --build . -- -j$build_cores
-sudo cmake --build . --target install
+cmake ../.. -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DCMAKE_BUILD_TYPE=Release -DwxBUILD_SHARED=OFF "$@" || exit 1
+cmake --build . -- -j$build_cores || exit 1
+sudo cmake --build . --target install || exit 1
 popd
 pushd Debug
-cmake ../.. -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF "$@"
-cmake --build . -- -j$build_cores
-sudo cmake --build . --target install
+cmake ../.. -DCMAKE_POLICY_VERSION_MINIMUM=3.5 -DCMAKE_BUILD_TYPE=Debug -DwxBUILD_SHARED=OFF "$@" || exit 1
+cmake --build . -- -j$build_cores || exit 1
+sudo cmake --build . --target install || exit 1
 popd
 popd
 popd
