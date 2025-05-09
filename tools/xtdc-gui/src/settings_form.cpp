@@ -20,7 +20,7 @@ settings_form::settings_form() {
   form_closed += [&] {properties::settings::default_settings().settings_form_location(location()).save();};
   
   auto_close_label_.location({0, 41});
-  auto_close_label_.text("After open/create:");
+  auto_close_label_.text("After open/create :");
   auto_close_label_.text_align(xtd::forms::content_alignment::middle_right);
   auto_close_label_.width(200);
   
