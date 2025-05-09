@@ -20,6 +20,7 @@
 #include <wx/collpane.h>
 #include <wx/clrpicker.h>
 #include <wx/dateevt.h>
+#include <wx/debug.h>
 #include <wx/event.h>
 #include <wx/fontpicker.h>
 #include <wx/stattext.h>
@@ -51,6 +52,10 @@
 #include <functional>
 #include <memory>
 #include <set>
+
+#if not defined(wxASSERT_MSG_AT)
+#  define wxASSERT_MSG_AT(cond, msg, file, line, func)
+#endif
 
 /// @todo implement in wx_evt_event_size..
 // Add wxEVT_ENTER_SIZEMOVE event for send a WM_ENTERSIZEMOVE event to wxControl...
