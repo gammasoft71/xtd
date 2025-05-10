@@ -117,9 +117,9 @@ namespace xtd::diagnostics::tests {
     void test_method_(current) {
 #if defined(__xtd__cpp_lib_source_location)
       assert::are_equal("stack_frame_tests.cpp", path::get_file_name(stack_frame::current().get_file_name()));
-      assert::are_equal(119_z, stack_frame::current().get_file_line_number());
-      if (environment::compiler_version().compiler_id() == compiler_id::clang || environment::compiler_version().compiler_id() == compiler_id::apple_clang || environment::compiler_version().compiler_id() == compiler_id::gcc) assert::are_equal("void xtd::tests::stack_frame_tests::current()", stack_frame::current().get_method());
-      else assert::are_equal("void __cdecl xtd::tests::stack_frame_tests::current(void)", stack_frame::current().get_method());
+      assert::are_equal(120_z, stack_frame::current().get_file_line_number());
+      if (environment::compiler_version().compiler_id() == compiler_id::clang || environment::compiler_version().compiler_id() == compiler_id::apple_clang || environment::compiler_version().compiler_id() == compiler_id::gcc) assert::are_equal("void xtd::diagnostics::tests::stack_frame_tests::current()", stack_frame::current().get_method());
+      else assert::are_equal("void __cdecl xtd::diagnostics::tests::stack_frame_tests::current(void)", stack_frame::current().get_method());
 #endif
     }
   };
