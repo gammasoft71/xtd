@@ -20,7 +20,7 @@ using namespace xtd::text;
 using namespace xtd::collections::generic;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::text::tests {
   template<class value_t>
   class basic_string_builder_tests;
 
