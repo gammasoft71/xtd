@@ -6,7 +6,7 @@
 using namespace xtd::io;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::io::tests {
   class test_class_(file_attributes_tests) {
     void test_method_(read_only) {
       assert::are_equal(1, enum_object<>::to_int32(file_attributes::read_only));

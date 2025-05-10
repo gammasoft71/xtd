@@ -7,7 +7,7 @@
 using namespace xtd::io;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::io::tests {
   class test_class_(seek_origin_tests) {
     void test_method_(begin) {
       assert::are_equal(0, enum_object<>::to_int32(seek_origin::begin));
