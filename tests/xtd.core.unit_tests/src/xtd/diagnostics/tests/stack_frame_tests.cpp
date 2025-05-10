@@ -10,7 +10,7 @@ using namespace xtd::diagnostics;
 using namespace xtd::io;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::diagnostics::tests {
   class test_class_(stack_frame_tests) {
     void test_method_(OFFSET_UNKNOWN) {
       assert::are_equal(size_object::max_value, stack_frame::OFFSET_UNKNOWN);
@@ -115,10 +115,12 @@ namespace xtd::tests {
     }
     
     void test_method_(current) {
+#if defined(__xtd__cpp_lib_source_location)
       assert::are_equal("stack_frame_tests.cpp", path::get_file_name(stack_frame::current().get_file_name()));
       assert::are_equal(119_z, stack_frame::current().get_file_line_number());
       if (environment::compiler_version().compiler_id() == compiler_id::clang || environment::compiler_version().compiler_id() == compiler_id::apple_clang || environment::compiler_version().compiler_id() == compiler_id::gcc) assert::are_equal("void xtd::tests::stack_frame_tests::current()", stack_frame::current().get_method());
       else assert::are_equal("void __cdecl xtd::tests::stack_frame_tests::current(void)", stack_frame::current().get_method());
+#endif
     }
   };
 }
