@@ -6,7 +6,7 @@
 using namespace xtd::net::sockets;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::net::sockets::tests {
   class test_class_(ip_protection_level_tests) {
     void test_method_(unspecified) {
       assert::are_equal(-1, enum_object<>::to_int32(ip_protection_level::unspecified));

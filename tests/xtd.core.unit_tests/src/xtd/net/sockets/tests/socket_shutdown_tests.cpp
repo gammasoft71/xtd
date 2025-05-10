@@ -6,7 +6,7 @@
 using namespace xtd::net::sockets;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::net::sockets::tests {
   class test_class_(socket_shutdown_tests) {
     void test_method_(receive) {
       assert::are_equal(0, enum_object<>::to_int32(socket_shutdown::receive));
