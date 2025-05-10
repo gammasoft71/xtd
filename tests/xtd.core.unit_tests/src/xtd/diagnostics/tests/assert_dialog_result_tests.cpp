@@ -6,7 +6,7 @@
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::diagnostics::tests {
   class test_class_(assert_dialog_result_tests) {
     void test_method_(abort) {
       assert::are_equal(3, enum_object<>::to_int32(assert_dialog_result::abort));

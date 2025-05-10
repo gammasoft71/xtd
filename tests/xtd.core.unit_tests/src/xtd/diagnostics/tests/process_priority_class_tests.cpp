@@ -6,7 +6,7 @@
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::diagnostics::tests {
   class test_class_(process_priority_class_tests) {
     void test_method_(normal) {
       assert::are_equal(32, enum_object<>::to_int32(process_priority_class::normal));
