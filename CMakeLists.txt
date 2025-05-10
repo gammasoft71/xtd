@@ -9,7 +9,10 @@ project(xtd)
 # Options
 
 option(XTD_BUILD_SHARED_LIBRARIES "Build shared libraries" OFF)
-option(XTD_BUILD_TESTS "Build tests" OFF)
+option(XTD_BUILD_TESTS_XTD_CORE "Build xtd.core tests" OFF)
+option(XTD_BUILD_TESTS_XTD_DRAWING "Build xtd.drawing tests" OFF)
+option(XTD_BUILD_TESTS_XTD_FORMS "Build xtd.forms tests" OFF)
+option(XTD_BUILD_TESTS_XTD_TUNIT "Build xtd.tunit tests" OFF)
 option(XTD_BUILD_TOOLS "Build tools" ON)
 option(XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM "Build with the continuous integration (CI) system. This flag should always be set to OFF. It is only needed for continuous integration." OFF)
 option(XTD_DOWNLOAD_ASTYLE "Download and build astyle from Github" OFF)
@@ -186,11 +189,7 @@ if (XTD_ENABLE_EXTRA_PROJECTS)
   add_projects(docs locale scripts)
 endif ()
 
-add_projects(src)
-
-if (XTD_BUILD_TESTS)
-  add_projects(tests)
-endif ()
+add_projects(src tests)
 
 if (XTD_ENABLE_EXTRA_PROJECTS)
   add_projects(themes)
