@@ -9,7 +9,7 @@ using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::linq::tests {
   class test_class_(foreach_tests) {
     void test_method_(ienumerable_defined_before_foreach) {
       auto items = list {1, 2, 3, 4, 5};
