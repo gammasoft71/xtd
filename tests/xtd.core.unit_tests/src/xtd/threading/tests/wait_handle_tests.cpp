@@ -19,7 +19,7 @@ using namespace xtd::helpers;
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::threading::tests {
   class test_class_(wait_handle_tests) {
     class unnamed_mutex : public wait_handle {
     public:

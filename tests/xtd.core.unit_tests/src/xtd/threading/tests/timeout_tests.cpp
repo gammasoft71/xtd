@@ -6,7 +6,7 @@
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::threading::tests {
   class test_class_(timeout_tests) {
     void test_method_(infinite) {
       assert::are_equal(-1, timeout::infinite);

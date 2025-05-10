@@ -6,7 +6,7 @@
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::threading::tests {
   class test_class_(event_reset_mode_tests) {
     void test_method_(auto_reset) {
       assert::are_equal(0, enum_object<>::to_int32(event_reset_mode::auto_reset));

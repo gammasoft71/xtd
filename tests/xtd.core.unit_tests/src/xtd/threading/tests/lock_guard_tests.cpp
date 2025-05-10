@@ -8,7 +8,7 @@
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::threading::tests {
   class test_class_(lock_guard_tests) {
     void test_method_(lock_object) {
       object lock_object;
