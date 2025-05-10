@@ -6,7 +6,7 @@
 using namespace xtd::io;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::io::tests {
   class test_class_(search_option_tests) {
     void test_method_(top_directory_only) {
       assert::are_equal(0, enum_object<>::to_int32(search_option::top_directory_only));
