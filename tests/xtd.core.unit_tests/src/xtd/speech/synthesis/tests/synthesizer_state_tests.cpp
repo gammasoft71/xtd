@@ -6,7 +6,7 @@
 using namespace xtd::speech::synthesis;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::speech::synthesis::tests {
   class test_class_(synthesizer_state_tests) {
     void test_method_(ready) {
       assert::are_equal(0, enum_object<>::to_int32(synthesizer_state::ready));
