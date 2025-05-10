@@ -7,7 +7,7 @@
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::threading::tests {
   class test_class_(barrier_tests) {
     void test_method_(ctr_default) {
       barrier b;

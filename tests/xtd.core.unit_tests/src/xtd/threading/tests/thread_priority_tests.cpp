@@ -6,7 +6,7 @@
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::threading::tests {
   class test_class_(thread_priority_tests) {
     void test_method_(lowest) {
       assert::are_equal(0, enum_object<>::to_int32(thread_priority::lowest));

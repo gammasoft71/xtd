@@ -14,7 +14,7 @@ using namespace xtd::collections::generic;
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::threading::tests {
   class test_class_(countdown_event_tests) {
     void test_method_(constructor_default) {
       auto ce = countdown_event {};

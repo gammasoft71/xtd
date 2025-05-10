@@ -12,7 +12,7 @@ using namespace xtd::collections::generic;
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::threading::tests {
   class test_class_(semaphore_tests) {
     // unnamed
     

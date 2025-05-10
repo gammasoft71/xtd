@@ -9,7 +9,7 @@
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::threading::tests {
   class test_class_(thread_pool_tests) {
     void test_method_(get_max_threads) {
       size_t max_worker_threads = 0;

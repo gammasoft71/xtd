@@ -10,7 +10,7 @@
 using namespace xtd::threading;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::threading::tests {
   class test_class_(event_wait_handle_tests) {
     void test_method_(constructor) {
       auto e1 = event_wait_handle {};
