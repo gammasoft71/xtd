@@ -26,7 +26,7 @@ public:
   
   static __xtd_source_location__ current(const char* file = __XTD_FILE__, uint32_t line = __XTD_LINE__, const char* func = __XTD_FUNC__, uint32_t column = __XTD_COLUMN__) noexcept {
     auto csl = __xtd_source_location__ {};
-    csl.data_ = {file, line, func, column};
+    csl.data_ = {file, line, func[0] == 0 ? "<unknown>" : func, column};
     return csl;
   }
   
