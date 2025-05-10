@@ -6,7 +6,7 @@
 using namespace xtd::net::sockets;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::net::sockets::tests {
   class test_class_(socket_option_level_tests) {
     void test_method_(socket) {
       assert::are_equal(65535, enum_object<>::to_int32(socket_option_level::socket));

@@ -6,7 +6,7 @@
 using namespace xtd::net::sockets;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::net::sockets::tests {
   class test_class_(socket_flags_tests) {
     void test_method_(none) {
       assert::are_equal(0, enum_object<>::to_int32(socket_flags::none));

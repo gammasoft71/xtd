@@ -6,7 +6,7 @@
 using namespace xtd::net::sockets;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::net::sockets::tests {
   class test_class_(transmit_file_options_tests) {
     void test_method_(use_default_worker_thread) {
       assert::are_equal(0, enum_object<>::to_int32(transmit_file_options::use_default_worker_thread));

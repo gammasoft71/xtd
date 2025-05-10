@@ -6,7 +6,7 @@
 using namespace xtd::net::sockets;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::net::sockets::tests {
   class test_class_(io_control_code_tests) {
     void test_method_(enable_circular_queuing) {
       assert::are_equal(671088642ul, enum_object<>::to_uint64(io_control_code::enable_circular_queuing));
