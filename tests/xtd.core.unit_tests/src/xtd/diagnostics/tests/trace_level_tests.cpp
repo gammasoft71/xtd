@@ -6,7 +6,7 @@
 using namespace xtd::diagnostics;
 using namespace xtd::tunit;
 
-namespace xtd::tests {
+namespace xtd::diagnostics::tests {
   class test_class_(trace_level_tests) {
     void test_method_(off) {
       assert::are_equal(0, enum_object<>::to_int32(trace_level::off));
