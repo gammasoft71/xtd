@@ -37,12 +37,20 @@ namespace xtd {
 
 using namespace xtd::tunit;
 
-namespace xtd::tuint::tests {
+namespace xtd::tunit::tests {
   class test_class_(manual_test_tunit) {
   public:
-    void test_method_(test_case1) {
-      //assert::are_equal(42, 0x2A);
-      assert::abort();
+    void test_method_(test_method1) {
+      assert::is_true(true);
+    }
+
+    void test_method_(test_method2) {
+      assert::is_true(false);
+    }
+
+    void test_method_(test_method3) {
+      assert::ignore();
+      assert::is_true(false);
     }
   };
 }
