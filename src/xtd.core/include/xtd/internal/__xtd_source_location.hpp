@@ -12,10 +12,10 @@ using __xtd_source_location__ = std::source_location;
 #else
 #include <cstdint>
 
-#define __XTD_FILE__ __builtin_FILE()
-#define __XTD_LINE__ __builtin_LINE()
-#define __XTD_FUNC__ __builtin_FUNCTION()
-#define __XTD_COLUMN__ __builtin_COLUMN()
+#define __XTD_FILE__ __FILE__
+#define __XTD_LINE__ __LINE__
+#define __XTD_FUNC__ "<unknown>" // __func__
+#define __XTD_COLUMN__ 0
 
 class __xtd_source_location__ {
 public:
@@ -26,7 +26,7 @@ public:
   
   static __xtd_source_location__ current(const char* file = __XTD_FILE__, uint32_t line = __XTD_LINE__, const char* func = __XTD_FUNC__, uint32_t column = __XTD_COLUMN__) noexcept {
     auto csl = __xtd_source_location__ {};
-    csl.data_ = {file, line, func[0] == 0 ? "<unknown>" : func, column};
+    csl.data_ = {file, line, func, column};
     return csl;
   }
   
