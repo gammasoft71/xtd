@@ -30,7 +30,7 @@ namespace {
 
   using distribution_dictionary = map<string, string>;
   
-#id defined(__HAIKU__)
+#if defined(__HAIKU__)
   const distribution_dictionary& get_distribution_key_values() {
     static auto distribution_key_values = distribution_dictionary {};
     if (!distribution_key_values.empty()) return distribution_key_values;
