@@ -15,3 +15,7 @@ cd build
 ctest -j 8 --output-on-failure --build-config $BUILD_TYPE
 if [ $? -ne 0 ]; then exit -1; fi
 cd ..
+
+cd build/tests/xtd.core.manual_tests/$BUILD_TYPE
+./xtd.core.manual_tests
+cd ../../../..
