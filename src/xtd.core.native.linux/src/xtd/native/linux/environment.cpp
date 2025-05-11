@@ -29,7 +29,27 @@ namespace {
   }
 
   using distribution_dictionary = map<string, string>;
-
+  
+#id defined(__HAIKU__)
+  const distribution_dictionary& get_distribution_key_values() {
+    static auto distribution_key_values = distribution_dictionary {};
+    if (!distribution_key_values.empty()) return distribution_key_values;
+    auto name = string {"Haiku"};
+    auto codename = string {""};
+    auto version = string {"R1/beta5"};
+    distribution_key_values.insert({"BUG_REPORT_URL", "https://www.haiku-os.org/contact"});
+    distribution_key_values.insert({"HOME_URL", "https://www.haiku-os.org"});
+    distribution_key_values.insert({"ID", xtd::native::linux::strings::replace(xtd::native::macos::strings::to_lower(name), " ", "")});
+    distribution_key_values.insert({"ID_LIKE", "haiku"});
+    distribution_key_values.insert({"NAME", name});
+    distribution_key_values.insert({"PRETTY_NAME", name + " " + version});
+    distribution_key_values.insert({"VERSION", version});
+    distribution_key_values.insert({"VERSION_ID", version});
+    distribution_key_values.insert({"VERSION_CODENAME", codename});
+    
+    return distribution_key_values;
+  }
+#else
   const distribution_dictionary& get_distribution_key_values() {
     static auto distribution_key_values = distribution_dictionary {};
     if (!distribution_key_values.empty()) return distribution_key_values;
@@ -43,6 +63,7 @@ namespace {
 
     return distribution_key_values;
   }
+#endif
 
 #if defined(__HAIKU__)
   /// Workaround std::quick_exit and std::at_quick_exit are not implemented on Haiku !
