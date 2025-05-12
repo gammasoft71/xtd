@@ -35,14 +35,14 @@ namespace {
     static auto distribution_key_values = distribution_dictionary {};
     if (!distribution_key_values.empty()) return distribution_key_values;
     auto name = string {"Haiku"};
-    auto codename = string {""};
-    auto version = string {"R1/beta5"};
+    auto codename = string {"R1/beta5"};
+    auto version = string {"0.1.5"};
     distribution_key_values.insert({"BUG_REPORT_URL", "https://www.haiku-os.org/contact"});
     distribution_key_values.insert({"HOME_URL", "https://www.haiku-os.org"});
     distribution_key_values.insert({"ID", xtd::native::linux::strings::replace(xtd::native::linux::strings::to_lower(name), " ", "")});
     distribution_key_values.insert({"ID_LIKE", "haiku"});
     distribution_key_values.insert({"NAME", name});
-    distribution_key_values.insert({"PRETTY_NAME", name + " " + version});
+    distribution_key_values.insert({"PRETTY_NAME", name + " " + version + " (" + codename + ")"});
     distribution_key_values.insert({"VERSION", version});
     distribution_key_values.insert({"VERSION_ID", version});
     distribution_key_values.insert({"VERSION_CODENAME", codename});
