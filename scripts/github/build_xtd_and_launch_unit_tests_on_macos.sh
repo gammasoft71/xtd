@@ -16,6 +16,6 @@ cd ..
 #if [ $? -ne 0 ]; then exit -1; fi
 #cd ..
 
-cd build/tests/xtd.core.manual_tests/$BUILD_TYPE
+cd build/tests/xtd.core.manual_tests
 ./xtd.core.manual_tests
 cd ../../../..
