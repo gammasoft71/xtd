@@ -1,4 +1,4 @@
-name: Deploy Doxygen Reference Guide to Docs Branch
+name: Deploy Doxygen Reference Guide to Docs Branch + Build Website
 
 on:
   push:
@@ -11,19 +11,47 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout source code
+    - name: Checkout xtd source code (branch master)
       uses: actions/checkout@v2
       with:
-        fetch-depth: 0 # necessary to be able to change branch
+        fetch-depth: 0
+
+    - name: Install Graphviz (for Doxygen diagrams)
+      run: sudo apt-get install graphviz
 
     - name: Generate Doxygen documentation
       uses: mattnotmitt/doxygen-action@v1.1.0
 
-    - name: Deploy to 'docs' branch (in static/reference_guides/latest)
+    - name: Checkout website sources (branch docs)
+      uses: actions/checkout@v2
+      with:
+        ref: docs
+        path: site-docs
+
+    - name: Copy reference guide into website static folder
+      run: |
+        rm -rf site-docs/static/reference_guides/latest
+        mkdir -p site-docs/static/reference_guides/latest
+        cp -r reference_guide/html/* site-docs/static/reference_guides/latest/
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18
+        cache: npm
+
+    - name: Install website dependencies
+      working-directory: site-docs
+      run: npm ci
+
+    - name: Build website with Docusaurus
+      working-directory: site-docs
+      run: npm run build
+
+    - name: Deploy full site to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         branch: docs
-        folder: reference_guide/html
-        target-folder: static/reference_guides/latest
+        folder: site-docs/build
         clean: true
