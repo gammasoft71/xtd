@@ -57,5 +57,5 @@ xtd::string source_location::to_string() const noexcept {
 }
 
 source_location source_location::current(const __xtd_source_location__& value) noexcept {
-  return source_location {value.file_name(), static_cast<xtd::size>(value.line()), value.function_name(), static_cast<xtd::size>(value.column())};
+  return source_location {value.file_name(), static_cast<xtd::size>(value.line()), value.function_name() == xtd::string {} ? "<unknown>" : value.function_name(), static_cast<xtd::size>(value.column())};
 }
