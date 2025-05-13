@@ -1,13 +1,12 @@
 var searchData=
 [
-  ['wait_5fcallback_0',['wait_callback',['../group__delegates.html#ga5aaf7af76672d797916950fa8771cc61',1,'xtd::threading']]],
-  ['wait_5for_5ftimer_5fcallback_1',['wait_or_timer_callback',['../group__delegates.html#ga5e1a435d8b9d43dd2dfa32c0bc77cc6f',1,'xtd::threading']]],
-  ['wchar_2',['wchar',['../group__types.html#ga155357d92cf162b71b396e46accee518',1,'xtd']]],
-  ['wchar_5fobject_3',['wchar_object',['../group__types.html#gaa5ac5641de5f9362829662a60349ecde',1,'xtd']]],
-  ['weak_5ftype_4',['weak_type',['../classxtd_1_1shared__ptr__object.html#a8ea2fefd0faf4804129df6d52cdc0a34',1,'xtd::shared_ptr_object']]],
-  ['wptr_5',['wptr',['../group__types.html#ga541ef37a59d2e67f6fd2ad9832ab220c',1,'xtd']]],
-  ['wrap_5fpointer_5freverse_5fiterator_6',['wrap_pointer_reverse_iterator',['../group__helpers__generic__collections.html#ga3c154f390eaa273d273d437a32f8604f',1,'xtd::collections::generic::helpers']]],
-  ['wstring_7',['wstring',['../group__strings.html#ga0852e1ddc5f45ee30560e3f95d6915b0',1,'xtd']]],
-  ['wstring_5fbuilder_8',['wstring_builder',['../group__strings.html#ga516498bf5a31bcaeee8b68db8b27166d',1,'xtd::text']]],
-  ['wstring_5fcomparer_9',['wstring_comparer',['../group__system.html#ga63d8779d2ee883a535bb5855002ec189',1,'xtd']]]
+  ['wait_5fcallback_0',['wait_callback',['../group__delegates.html#ga61f291caf7f77d8408f612e4d311d16b',1,'xtd::threading']]],
+  ['wait_5for_5ftimer_5fcallback_1',['wait_or_timer_callback',['../group__delegates.html#ga3c1bd95f129c003bebdfbab3164d32d4',1,'xtd::threading']]],
+  ['wchar_2',['wchar',['../group__types.html#ga438e2b3e86176afb074a70ed50f6c302',1,'xtd']]],
+  ['wchar_5fobject_3',['wchar_object',['../group__types.html#ga6b10a3fa1b6d15189ea69d22c1527719',1,'xtd']]],
+  ['wptr_4',['wptr',['../group__types.html#ga3235581010412bba1c1f741f3c3abfb5',1,'xtd']]],
+  ['wrap_5fpointer_5freverse_5fiterator_5',['wrap_pointer_reverse_iterator',['../group__helpers__generic__collections.html#ga1ba603293b75c857a41909f7496d25c9',1,'xtd::collections::generic::helpers']]],
+  ['wstring_6',['wstring',['../group__strings.html#gaef465eea9979bb0b1332b8bc46abe0ff',1,'xtd']]],
+  ['wstring_5fbuilder_7',['wstring_builder',['../group__strings.html#ga5619413acf6894bdc5403fd52b64a72e',1,'xtd::text']]],
+  ['wstring_5fcomparer_8',['wstring_comparer',['../group__system.html#ga71a60542f95931afbe0c807bd5cca415',1,'xtd']]]
 ];

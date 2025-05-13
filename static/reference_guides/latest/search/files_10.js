@@ -3,7 +3,7 @@ var searchData=
   ['padding_2ehpp_0',['padding.hpp',['../padding_8hpp.html',1,'(Global Namespace)'],['../style__sheets_2padding_8hpp.html',1,'(Global Namespace)']]],
   ['paint_5fevent_5fargs_2ehpp_1',['paint_event_args.hpp',['../paint__event__args_8hpp.html',1,'']]],
   ['paint_5fevent_5fhandler_2ehpp_2',['paint_event_handler.hpp',['../paint__event__handler_8hpp.html',1,'']]],
-  ['panel_2ehpp_3',['panel.hpp',['../style__sheets_2panel_8hpp.html',1,'(Global Namespace)'],['../panel_8hpp.html',1,'(Global Namespace)']]],
+  ['panel_2ehpp_3',['panel.hpp',['../panel_8hpp.html',1,'(Global Namespace)'],['../style__sheets_2panel_8hpp.html',1,'(Global Namespace)']]],
   ['panel_5frenderer_2ehpp_4',['panel_renderer.hpp',['../panel__renderer_8hpp.html',1,'']]],
   ['panel_5fstate_2ehpp_5',['panel_state.hpp',['../panel__state_8hpp.html',1,'']]],
   ['parameterized_5fthread_5fstart_2ehpp_6',['parameterized_thread_start.hpp',['../parameterized__thread__start_8hpp.html',1,'']]],

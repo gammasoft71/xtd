@@ -6,5 +6,6 @@ var searchData=
   ['configuration_3',['configuration',['../group__configuration.html',1,'']]],
   ['containers_4',['containers',['../group__containers.html',1,'']]],
   ['controls_5',['controls',['../group__controls.html',1,'']]],
-  ['coordinates_6',['coordinates',['../group__coordinates.html',1,'']]]
+  ['coordinates_6',['coordinates',['../group__coordinates.html',1,'']]],
+  ['core_7',['xtd.core',['../group__xtd__core.html',1,'']]]
 ];

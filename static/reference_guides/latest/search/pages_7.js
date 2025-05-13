@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['system_20colors_0',['System colors',['../_system_colors_page.html',1,'']]]
+  ['image_20effects_0',['Image effects',['../image_effects_page.html',1,'']]],
+  ['images_20appearances_1',['Images appearances',['../_images_appearances_page.html',1,'']]]
 ];
