@@ -1,4 +1,4 @@
-name: Deploy Doxygen Reference Guide to Docs Branch
+name: Deploy Doxygen Reference Guide to Docs Branch 
 
 on:
   push:
