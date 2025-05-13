@@ -40,9 +40,9 @@ jobs:
         node-version: 18
         cache: npm
 
-    - name: Install website dependencies
+    - name: Install website dependencies (fallback without lock file)
       working-directory: site-docs
-      run: npm ci
+      run: npm install
 
     - name: Build website with Docusaurus
       working-directory: site-docs
