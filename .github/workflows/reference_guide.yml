@@ -1,4 +1,4 @@
-name: Doxygen GitHub Pages Deploy Action
+name: Deploy Doxygen Reference Guide to Docs Branch
 
 on:
   push:
@@ -11,16 +11,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout source code
+      uses: actions/checkout@v2
       with:
-        persist-credentials: false
-    
-    - name: Doxygen Action
+        fetch-depth: 0 # necessary to be able to change branch
+
+    - name: Generate Doxygen documentation
       uses: mattnotmitt/doxygen-action@v1.1.0
-    
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@3.5.2
+
+    - name: Deploy to 'docs' branch (in static/reference_guides/latest)
+      uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: static/reference_guides/latest
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: docs
+        folder: reference_guide/html
+        target-folder: static/reference_guides/latest
+        clean: true
