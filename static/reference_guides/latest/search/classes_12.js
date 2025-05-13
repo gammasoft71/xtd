@@ -21,7 +21,7 @@ var searchData=
   ['text_5freader_18',['text_reader',['../classxtd_1_1io_1_1text__reader.html',1,'xtd::io']]],
   ['text_5frenderer_19',['text_renderer',['../classxtd_1_1forms_1_1text__renderer.html',1,'xtd::forms']]],
   ['text_5fwriter_20',['text_writer',['../classxtd_1_1io_1_1text__writer.html',1,'xtd::io']]],
-  ['texts_21',['texts',['../classxtd_1_1drawing_1_1texts.html',1,'xtd::drawing']]],
+  ['texts_21',['texts',['../classxtd_1_1drawing_1_1texts.html',1,'xtd::drawing::texts'],['../classxtd_1_1forms_1_1texts.html',1,'xtd::forms::texts']]],
   ['texture_5fbrush_22',['texture_brush',['../classxtd_1_1drawing_1_1texture__brush.html',1,'xtd::drawing']]],
   ['theme_23',['theme',['../classxtd_1_1forms_1_1style__sheets_1_1theme.html',1,'xtd::forms::style_sheets']]],
   ['thread_24',['thread',['../classxtd_1_1threading_1_1thread.html',1,'xtd::threading']]],

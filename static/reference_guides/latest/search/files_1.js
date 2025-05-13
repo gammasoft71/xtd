@@ -61,7 +61,7 @@ var searchData=
   ['assembly_5ftitle_5fattribute_2ehpp_58',['assembly_title_attribute.hpp',['../assembly__title__attribute_8hpp.html',1,'']]],
   ['assembly_5ftrademark_5fattribute_2ehpp_59',['assembly_trademark_attribute.hpp',['../assembly__trademark__attribute_8hpp.html',1,'']]],
   ['assembly_5fversion_5fattribute_2ehpp_60',['assembly_version_attribute.hpp',['../assembly__version__attribute_8hpp.html',1,'']]],
-  ['assert_2ehpp_61',['assert.hpp',['../xtd_8tunit_2include_2xtd_2tunit_2assert_8hpp.html',1,'(Global Namespace)'],['../xtd_8core_2include_2xtd_2diagnostics_2assert_8hpp.html',1,'(Global Namespace)']]],
+  ['assert_2ehpp_61',['assert.hpp',['../xtd_8core_2include_2xtd_2diagnostics_2assert_8hpp.html',1,'(Global Namespace)'],['../xtd_8tunit_2include_2xtd_2tunit_2assert_8hpp.html',1,'(Global Namespace)']]],
   ['assert_5fbox_2ehpp_62',['assert_box.hpp',['../assert__box_8hpp.html',1,'']]],
   ['assert_5fdialog_2ehpp_63',['assert_dialog.hpp',['../assert__dialog_8hpp.html',1,'']]],
   ['assert_5fdialog_5fresult_2ehpp_64',['assert_dialog_result.hpp',['../assert__dialog__result_8hpp.html',1,'']]],

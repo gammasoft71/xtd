@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['label_2ehpp_0',['label.hpp',['../style__sheets_2label_8hpp.html',1,'(Global Namespace)'],['../label_8hpp.html',1,'(Global Namespace)']]],
+  ['label_2ehpp_0',['label.hpp',['../label_8hpp.html',1,'(Global Namespace)'],['../style__sheets_2label_8hpp.html',1,'(Global Namespace)']]],
   ['label_5frenderer_2ehpp_1',['label_renderer.hpp',['../label__renderer_8hpp.html',1,'']]],
   ['label_5fstate_2ehpp_2',['label_state.hpp',['../label__state_8hpp.html',1,'']]],
   ['labels_2ehpp_3',['labels.hpp',['../labels_8hpp.html',1,'']]],

@@ -51,7 +51,7 @@ var searchData=
   ['time_5fzone_5fnot_5ffound_5fexception_2ehpp_48',['time_zone_not_found_exception.hpp',['../time__zone__not__found__exception_8hpp.html',1,'']]],
   ['timeout_2ehpp_49',['timeout.hpp',['../timeout_8hpp.html',1,'']]],
   ['timeout_5fexception_2ehpp_50',['timeout_exception.hpp',['../timeout__exception_8hpp.html',1,'']]],
-  ['timer_2ehpp_51',['timer.hpp',['../xtd_8core_2include_2xtd_2timers_2timer_8hpp.html',1,'(Global Namespace)'],['../xtd_8forms_2include_2xtd_2forms_2timer_8hpp.html',1,'(Global Namespace)'],['../xtd_8core_2include_2xtd_2threading_2timer_8hpp.html',1,'(Global Namespace)']]],
+  ['timer_2ehpp_51',['timer.hpp',['../xtd_8core_2include_2xtd_2threading_2timer_8hpp.html',1,'(Global Namespace)'],['../xtd_8core_2include_2xtd_2timers_2timer_8hpp.html',1,'(Global Namespace)'],['../xtd_8forms_2include_2xtd_2forms_2timer_8hpp.html',1,'(Global Namespace)']]],
   ['timer_5fcallback_2ehpp_52',['timer_callback.hpp',['../timer__callback_8hpp.html',1,'']]],
   ['to_5fstring_2ehpp_53',['to_string.hpp',['../to__string_8hpp.html',1,'']]],
   ['toggle_5fbutton_2ehpp_54',['toggle_button.hpp',['../style__sheets_2toggle__button_8hpp.html',1,'(Global Namespace)'],['../toggle__button_8hpp.html',1,'(Global Namespace)']]],

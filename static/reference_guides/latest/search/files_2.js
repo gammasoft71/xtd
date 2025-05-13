@@ -32,7 +32,7 @@ var searchData=
   ['border_5fcolor_2ehpp_29',['border_color.hpp',['../border__color_8hpp.html',1,'']]],
   ['border_5fradius_2ehpp_30',['border_radius.hpp',['../border__radius_8hpp.html',1,'']]],
   ['border_5fsides_2ehpp_31',['border_sides.hpp',['../border__sides_8hpp.html',1,'']]],
-  ['border_5fstyle_2ehpp_32',['border_style.hpp',['../style__sheets_2border__style_8hpp.html',1,'(Global Namespace)'],['../border__style_8hpp.html',1,'(Global Namespace)']]],
+  ['border_5fstyle_2ehpp_32',['border_style.hpp',['../border__style_8hpp.html',1,'(Global Namespace)'],['../style__sheets_2border__style_8hpp.html',1,'(Global Namespace)']]],
   ['border_5ftype_2ehpp_33',['border_type.hpp',['../border__type_8hpp.html',1,'']]],
   ['border_5fwidth_2ehpp_34',['border_width.hpp',['../border__width_8hpp.html',1,'']]],
   ['bounds_5fspecified_2ehpp_35',['bounds_specified.hpp',['../bounds__specified_8hpp.html',1,'']]],

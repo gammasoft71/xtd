@@ -24,7 +24,6 @@
 */
 var menudata={children:[
 {text:"Home",url:"index.html"},
-{text:"Categories",url:"modules.html"},
 {text:"Documentation",url:"pages.html"},
 {text:"Namespaces",url:"namespaces.html"},
 {text:"Classes",url:"annotated.html",children:[
@@ -133,10 +132,8 @@ var menudata={children:[
 {text:"t",url:"functions_type_t.html#index_t"},
 {text:"u",url:"functions_type_u.html#index_u"},
 {text:"v",url:"functions_type_v.html#index_v"},
-{text:"w",url:"functions_type_w.html#index_w"},
 {text:"x",url:"functions_type_x.html#index_x"}]},
 {text:"Enumerations",url:"functions_enum.html"},
-{text:"Related Symbols",url:"functions_rela.html",children:[
-{text:"o",url:"functions_rela.html#index_o"}]}]}]},
+{text:"Related Symbols",url:"functions_rela.html"}]}]},
 {text:"Files",url:"files.html"},
 {text:"Examples",url:"examples.html"}]}
