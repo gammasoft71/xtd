@@ -29,7 +29,7 @@ INPUT                 = ./docs/doxygen/doxygen \
                         ./src/xtd.forms/include \
                         ./src/xtd.tunit/include
 LAYOUT_FILE           = ./docs/doxygen/xtd_doxygen_layout.xml
-OUTPUT_DIRECTORY      = reference_guide/html
+OUTPUT_DIRECTORY      = reference_guide
 PROJECT_LOGO          = ./docs/pictures/xtd_doxygen.png
 STRIP_FROM_PATH       = ./src
 WARN_LOGFILE          = ./doxygen_warnings.txt
