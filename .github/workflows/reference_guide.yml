@@ -24,6 +24,6 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         branch: docs
-        folder: docs/html
+        folder: reference_guide/html
         target-folder: static/reference_guides/latest
         clean: true
