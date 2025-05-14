@@ -50,5 +50,5 @@ jobs:
 #    - name: Upload test results
 #      uses: actions/upload-artifact@v3.1.4
 #      with:
-#        name: macos-debug-test-results
+#        name: ubuntu-debug-test-results
 #        path: build/Testing
