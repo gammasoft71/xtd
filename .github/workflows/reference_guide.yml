@@ -64,11 +64,3 @@ jobs:
     - name: Build website with Docusaurus
       working-directory: site-docs
       run: npm run build
-
-    - name: Deploy full site to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@4.1.5
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        branch: docs
-        folder: site-docs/build
-        clean: true
