@@ -37,6 +37,19 @@ jobs:
         mkdir -p site-docs/static/reference_guides/latest
         cp -r reference_guide/html/* site-docs/static/reference_guides/latest/
 
+    - name: Commit updated reference guide into docs branch
+      working-directory: site-docs
+      run: |
+        git config user.name "xtd-ci-bot"
+        git config user.email "ci@xtd.dev"
+        git add static/reference_guides/latest
+        if git diff --cached --quiet; then
+          echo "No changes to commit."
+        else
+          git commit -m "Update reference guide [CI auto-commit]"
+          git push origin docs
+        fi
+
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
