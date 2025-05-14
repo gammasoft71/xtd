@@ -1,4 +1,4 @@
-name: macOS Debug
+name: macOS Release
 
 on:
   push:
@@ -37,14 +37,10 @@ jobs:
           -DXTD_BUILD_TESTS_XTD_TUNIT=OFF
 
     - name: Building xtd
-      run: |
-        cd build
-        cmake --build . -- -j8
+      run: cmake --build build -- -j8
 
     - name: Installing xtd
-      run: |
-        cd build
-        cmake --build . --target install
+      run: cmake --build build --target install
           
     - name: Running xtd unit tests
       run: |
