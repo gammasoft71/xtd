@@ -25,9 +25,3 @@ jobs:
 
     - name: Build
       run: scripts/github/build_xtd_and_launch_unit_tests_on_macos.sh
-          
-    - name: Upload test results
-      uses: actions/upload-artifact@v3
-      with:
-        name: test-results
-        path: build/Testing
