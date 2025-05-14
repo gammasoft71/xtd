@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: Build on macOS (${{ matrix.build_type }})
     runs-on: macos-latest
     strategy:
       matrix:
