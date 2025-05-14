@@ -1,4 +1,4 @@
-name: macOS Debug
+name: macOS Build (Debug + Release)
 
 on:
   push:
@@ -6,15 +6,16 @@ on:
   pull_request:
     branches: [ master ]
 
-env:
-  BUILD_TYPE: Debug
-
 jobs:
   build:
     runs-on: macos-latest
+    strategy:
+      matrix:
+        build_type: [Debug, Release]
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
 
     - name: Show CMake version
       run: cmake --version
@@ -22,11 +23,11 @@ jobs:
     - name: Installing packages
       run: brew list wxwidgets || brew install wxwidgets
 
-    - name: Configuring CMake
+    - name: Configuring CMake (${{ matrix.build_type }})
       run: |
         mkdir -p build && cd build
         cmake .. \
-          -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
+          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
           -DCMAKE_INSTALL_PREFIX=~/local \
           -DXTD_BUILD_CPP_STANDARD=23 \
           -DXTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM=ON \
@@ -35,19 +36,19 @@ jobs:
           -DXTD_BUILD_TESTS_XTD_FORMS=OFF \
           -DXTD_BUILD_TESTS_XTD_TUNIT=OFF
 
-    - name: Building xtd
-      run: cmake --build build -- -j8
+    - name: Building xtd (${{ matrix.build_type }})
+      run: cmake --build build -- -j 8
 
-    - name: Installing xtd
+    - name: Installing xtd (${{ matrix.build_type }})
       run: cmake --build build --target install
           
-    - name: Running xtd unit tests
+    - name: Running xtd unit tests (${{ matrix.build_type }})
       run: |
         cd build
-        ctest -j8 --output-on-failure --build-config $BUILD_TYPE
-        
+        ctest -j8 --output-on-failure --build-config ${{ matrix.build_type }}
+
 #    - name: Upload test results
 #      uses: actions/upload-artifact@v3.1.4
 #      with:
-#        name: macos-debug-test-results
+#        name: macos-${{ matrix.build_type }}-test-results
 #        path: build/Testing
