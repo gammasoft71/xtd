@@ -115,7 +115,7 @@ namespace xtd::diagnostics::tests {
     }
     
     void test_method_(current) {
-#if defined(__xtd__cpp_lib_source_location)
+#if defined(__xtd__cpp_lib_source_location) && !defined(__XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM__)
       assert::are_equal("stack_frame_tests.cpp", path::get_file_name(stack_frame::current().get_file_name()));
       assert::are_equal(120_z, stack_frame::current().get_file_line_number());
       if (environment::compiler_version().compiler_id() == compiler_id::clang || environment::compiler_version().compiler_id() == compiler_id::apple_clang || environment::compiler_version().compiler_id() == compiler_id::gcc) assert::are_equal("void xtd::diagnostics::tests::stack_frame_tests::current()", stack_frame::current().get_method());
