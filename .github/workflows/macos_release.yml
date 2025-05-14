@@ -14,7 +14,8 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
 
     - name: Show CMake version
       run: cmake --version
@@ -36,7 +37,7 @@ jobs:
           -DXTD_BUILD_TESTS_XTD_TUNIT=OFF
 
     - name: Building xtd
-      run: cmake --build build -- -j8
+      run: cmake --build build -- -j 8
 
     - name: Installing xtd
       run: cmake --build build --target install
