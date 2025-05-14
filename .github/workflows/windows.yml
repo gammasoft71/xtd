@@ -1,4 +1,4 @@
-name: Windows (x64) Debug
+name: Windows
 
 on:
   push:
@@ -6,23 +6,62 @@ on:
   pull_request:
     branches: [ master ]
 
-env:
-  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
-  BUILD_TYPE: Debug
-  BUILD_OPTION: "x64"
-
 jobs:
   build:
-    # The CMake configure and build commands are platform agnostic and should work equally
-    # well on Windows or Mac.  You can convert this to a matrix build if you need
-    # cross-platform coverage.
-    # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
+    name: Build on Windows (${{ matrix.arch }}) ${{ matrix.build_type }}
     runs-on: windows-latest
+    strategy:
+      matrix:
+        arch: [Win32, x64]
+        build_type: [Debug, Release]
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
 
-    - name: Build
-      # Build your program with the given configuration
-      run: scripts/github/build_xtd_and_launch_unit_tests_on_windows.bat
-      
+    - name: Show CMake version
+      run: cmake --version
+    
+    #- name: Installing packages
+    #  run: vcpkg list wxwidgets || vcpkg install wxwidgets
+
+    # Todo : Replace by vcpkg..
+    - name: Generate wxWidgets (${{ matrix.arch }}) ${{ matrix.build_type }}
+      run: |
+        mkdir thirdparty
+        cd thirdparty
+        git clone https://github.com/wxwidgets/wxwidgets.git -b v3.2.2.1 --depth 1
+        cd wxwidgets
+        git submodule update --init
+        mkdir build_cmake 
+        cd build_cmake
+        cmake .. -G "Visual Studio 17 2022" -A ${{ matrix.arch }} -DwxBUILD_SHARED=OFF -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
+        cmake --build . --config ${{ matrix.build_type }} --target install
+        cd ..
+        Remove-Item -Recurse -Force build_cmake
+
+    - name: Configuring CMake (${{ matrix.arch }}) ${{ matrix.build_type }}
+      run: |
+        mkdir build-${{ matrix.arch }}-${{ matrix.build_type }}
+        cd build-${{ matrix.arch }}-${{ matrix.build_type }}
+        cmake .. \
+        -G "Visual Studio 17 2022" \
+        -A ${{ matrix.arch }} \
+        -DXTD_BUILD_CPP_STANDARD=23 \
+        -DXTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM=ON \
+        -DXTD_BUILD_TESTS_XTD_CORE=OFF \
+        -DXTD_BUILD_TESTS_XTD_DRAWING=OFF \
+        -DXTD_BUILD_TESTS_XTD_FORMS=OFF \
+        -DXTD_BUILD_TESTS_XTD_TUNIT=OFF \
+        -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local
+
+    - name: Building xtd (${{ matrix.arch }}) ${{ matrix.build_type }}
+      run: cmake --build build-${{ matrix.arch }}-${{ matrix.build_type }} --config ${{ matrix.build_type }}
+
+    - name: Installing xtd (${{ matrix.arch }}) ${{ matrix.build_type }}
+      run: cmake --build build-${{ matrix.arch }}-${{ matrix.build_type }} --config ${{ matrix.build_type }} --target install
+          
+    - name: Running xtd unit tests (${{ matrix.arch }}) ${{ matrix.build_type }}
+      run: |
+        cd build-${{ matrix.arch }}-${{ matrix.build_type }}
+        ctest --output-on-failure --build-config ${{ matrix.build_type }}
