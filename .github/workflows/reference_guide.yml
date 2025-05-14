@@ -28,9 +28,6 @@ jobs:
         ref: docs
         path: site-docs
 
-    - name: Debug - Check website contents
-      run: ls -al site-docs
-
     - name: Copy reference guide into website static folder
       run: |
         rm -rf site-docs/static/reference_guides/latest
