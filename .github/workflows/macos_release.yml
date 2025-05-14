@@ -51,8 +51,8 @@ jobs:
         cd build
         ctest -j8 --output-on-failure --build-config $BUILD_TYPE
         
-    - name: Upload test results
-      uses: actions/upload-artifact@6db6dbdeac93818c6d4d7fd36b11317d27546c3f
-      with:
-        name: macos-debug-test-results
-        path: build/Testing
+#    - name: Upload test results
+#      uses: actions/upload-artifact@v3.1.4
+#      with:
+#        name: macos-debug-test-results
+#        path: build/Testing
