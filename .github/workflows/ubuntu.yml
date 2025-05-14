@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    name: Build on Ubuntu (${{ matrix.build_type }})
+    name: Build on Ubuntu ${{ matrix.build_type }}
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -24,7 +24,7 @@ jobs:
     - name: Installing packages
       run: sudo apt-get update && sudo apt-get install -y libasound2-dev libgsound-dev libgtk-3-dev libwxgtk3.2-dev doxygen
 
-    - name: Configuring CMake (${{ matrix.build_type }})
+    - name: Configuring CMake ${{ matrix.build_type }}
       run: |
         mkdir -p build && cd build
         cmake .. \
@@ -37,13 +37,13 @@ jobs:
           -DXTD_BUILD_TESTS_XTD_FORMS=OFF \
           -DXTD_BUILD_TESTS_XTD_TUNIT=OFF
 
-    - name: Building xtd (${{ matrix.build_type }})
+    - name: Building xtd ${{ matrix.build_type }}
       run: cmake --build build -- -j $(nproc)
 
-    - name: Installing xtd (${{ matrix.build_type }})
+    - name: Installing xtd ${{ matrix.build_type }}
       run: cmake --build build --target install
           
-    - name: Running xtd unit tests (${{ matrix.build_type }})
+    - name: Running xtd unit tests ${{ matrix.build_type }}
       run: |
         cd build
         ctest -j $(nproc) --output-on-failure
