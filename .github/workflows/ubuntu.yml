@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: Build on Ubuntu (${{ matrix.build_type }})
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -45,7 +46,7 @@ jobs:
     - name: Running xtd unit tests (${{ matrix.build_type }})
       run: |
         cd build
-        ctest -j8 --output-on-failure --build-config ${{ matrix.build_type }}
+        ctest -j $(nproc) --output-on-failure
 
 #    - name: Upload test results
 #      uses: actions/upload-artifact@v3.1.4
