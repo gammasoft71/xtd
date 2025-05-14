@@ -3,7 +3,7 @@
 
 /// @mainpage xtd - Reference Guide
 ///
-/// <b>xtd (pronounced "extend") is a modern C++17/20 framework to create console (CLI), forms (GUI) and unit test applications on Windows, macOS, Linux, iOS, Android, FreeBSD, Haiku.</b>
+/// <b>xtd (pronounced "extend") is a modern C++17/20 framework to create console (CLI), forms (GUI) and unit test (xUnit) applications on Windows, macOS, Linux, iOS, Android, FreeBSD, and Haiku.</b>
 ///
 /// [![](logo.png)](https://gammasoft71.github.io/xtd)
 ///
