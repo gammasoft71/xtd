@@ -1,4 +1,4 @@
-name: macOS Release
+name: macOS Debug
 
 on:
   push:
@@ -23,6 +23,36 @@ jobs:
     - name: Installing packages
       run: brew list wxwidgets || brew install wxwidgets
 
-    - name: Build
-      run: scripts/github/build_xtd_and_launch_unit_tests_on_macos.sh
-      
+    - name: Configuring CMake
+      run: |
+        mkdir -p build && cd build
+        cmake .. \
+          -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
+          -DCMAKE_INSTALL_PREFIX=~/local \
+          -DXTD_BUILD_CPP_STANDARD=23 \
+          -DXTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM=ON \
+          -DXTD_BUILD_TESTS_XTD_CORE=ON \
+          -DXTD_BUILD_TESTS_XTD_DRAWING=OFF \
+          -DXTD_BUILD_TESTS_XTD_FORMS=OFF \
+          -DXTD_BUILD_TESTS_XTD_TUNIT=OFF
+
+    - name: Building xtd
+      run: |
+        cd build
+        cmake --build . -- -j8
+
+    - name: Installing xtd
+      run: |
+        cd build
+        cmake --build . --target install
+          
+    - name: Running xtd unit tests
+      run: |
+        cd build
+        ctest -j8 --output-on-failure --build-config $BUILD_TYPE
+        
+    - name: Upload test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: macos-debug-test-results
+        path: build/Testing
