@@ -110,8 +110,9 @@ namespace xtd::net::sockets::tests {
     }
     
     void test_method_(constructor_with_address_family_internet_network_socket_type_stream_and_protocol_type_tcp) {
-      /// Workaround : This test does not work on Github Action for macOS.
-      if (environment::get_environment_variable("BUILD_GITHUB_CI") == "true") return;
+      #if defined(__XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM__)
+      return;
+      #endif
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::stream, protocol_type::tcp);
       assert::are_equal(address_family::inter_network, s.address_family());
@@ -142,8 +143,9 @@ namespace xtd::net::sockets::tests {
     }
     
     void test_method_(constructor_with_address_family_internet_network_socket_type_dgram_and_protocol_type_udp) {
-      /// Workaround : This test does not work on Github Action for macOS.
-      if (environment::get_environment_variable("BUILD_GITHUB_CI") == "true") return;
+#if defined(__XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM__)
+      return;
+#endif
       assume::is_true(socket::os_supports_ip_v4());
       socket s(address_family::inter_network, socket_type::dgram, protocol_type::udp);
       assert::are_equal(address_family::inter_network, s.address_family());
