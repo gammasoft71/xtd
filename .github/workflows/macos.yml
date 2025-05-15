@@ -24,7 +24,7 @@ jobs:
     - name: Installing packages
       run: brew list wxwidgets || brew install wxwidgets
 
-    - name: Configuring CMake ${{ matrix.build_type }}
+    - name: Configuring CMake
       run: |
         mkdir -p build && cd build
         cmake .. \
@@ -37,13 +37,13 @@ jobs:
           -DXTD_BUILD_TESTS_XTD_FORMS=OFF \
           -DXTD_BUILD_TESTS_XTD_TUNIT=OFF
 
-    - name: Building xtd ${{ matrix.build_type }}
+    - name: Building xtd
       run: cmake --build build -- -j 8
 
-    - name: Installing xtd ${{ matrix.build_type }}
+    - name: Installing xtd
       run: cmake --build build --target install
           
-    - name: Running xtd unit tests ${{ matrix.build_type }}
+    - name: Running xtd unit tests
       run: |
         cd build
         ctest -j8 --output-on-failure --build-config ${{ matrix.build_type }}

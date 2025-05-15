@@ -41,7 +41,7 @@ jobs:
       run: |
         .\vcpkg\vcpkg.exe install wxwidgets:${{ steps.set-triplet.outputs.triplet }}
 
-    - name: Configuring CMake (${{ matrix.arch }}) ${{ matrix.build_type }}
+    - name: Configuring CMake
       run: |
         mkdir build-${{ matrix.arch }}-${{ matrix.build_type }}
         cd build-${{ matrix.arch }}-${{ matrix.build_type }}
@@ -57,13 +57,13 @@ jobs:
           -DXTD_BUILD_TESTS_XTD_FORMS=OFF `
           -DXTD_BUILD_TESTS_XTD_TUNIT=OFF
 
-    - name: Building xtd (${{ matrix.arch }}) ${{ matrix.build_type }}
+    - name: Building xtd
       run: cmake --build build-${{ matrix.arch }}-${{ matrix.build_type }} --config ${{ matrix.build_type }}
 
-    - name: Installing xtd (${{ matrix.arch }}) ${{ matrix.build_type }}
+    - name: Installing xtd
       run: cmake --build build-${{ matrix.arch }}-${{ matrix.build_type }} --config ${{ matrix.build_type }} --target install
           
-    - name: Running xtd unit tests (${{ matrix.arch }}) ${{ matrix.build_type }}
+    - name: Running xtd unit tests
       run: |
         cd build-${{ matrix.arch }}-${{ matrix.build_type }}
         ctest --output-on-failure --build-config ${{ matrix.build_type }}
