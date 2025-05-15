@@ -86,8 +86,8 @@ But you can follow the evolution of the development. We keep the status up to da
 | Ubuntu           | x86 / x64               | Gcc / Clang   | Debug / Release | [![Ubuntu](https://img.shields.io/github/actions/workflow/status/gammasoft71/xtd/ubuntu.yml?branch=master&logo=gitHub)](https://github.com/gammasoft71/xtd/actions/workflows/ubuntu.yml)    |
 | iOS (**)         | arm64 / x86_64 sim      | Apple Clang   | Release         | [![Coming soon](https://img.shields.io/badge/build-coming%20soon...-808080?branch=master&logo=gitHub&.svg)]()                                                                               |
 | Android (**)     | arm64-v8a / armeabi-v7a | Clang (NDK)   | Release         | [![Coming soon](https://img.shields.io/badge/build-coming%20soon...-808080?branch=master&logo=gitHub&.svg)]()                                                                               |
-| FreeBSD          | x64                     | Gcc / Clang   | Debug / Release | [![Manually](https://img.shields.io/badge/Manually-0000FF?branch=master&logo=gitHub&.svg)]()                                                                                                |
-| Haiku            | x86                     | Gcc           | Debug           | [![Manually](https://img.shields.io/badge/Manually-0000FF?branch=master&logo=gitHub&.svg)]()                                                                                                |
+| FreeBSD          | x64                     | Gcc / Clang   | Debug / Release | [![Manually](https://img.shields.io/badge/build-manually-004080?branch=master&logo=gitHub&.svg)]()                                                                                                |
+| Haiku            | x86                     | Gcc           | Debug           | [![Manually](https://img.shields.io/badge/build-manually-004080?branch=master&logo=gitHub&.svg)]()                                                                                                |
 
  (**) [xtd.core and xtd.tunit only](https://gammasoft71.github.io/xtd/docs/documentation/portability).
 
