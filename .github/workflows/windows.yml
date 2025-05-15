@@ -48,6 +48,7 @@ jobs:
         -G "Visual Studio 17 2022" `
         -A ${{ matrix.arch }} `
         -DCMAKE_INSTALL_PREFIX=%HOMEPATH%/local `
+        -DCMAKE_PREFIX_PATH=%HOMEPATH%/local `
         -DXTD_BUILD_CPP_STANDARD=23 `
         -DXTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM=ON `
         -DXTD_BUILD_TESTS_XTD_CORE=OFF  `
