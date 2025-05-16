@@ -246,7 +246,9 @@ namespace xtd::tests {
       if (environment::os_version().is_windows()) assert::are_equal("xtd::unique_ptr_object<xtd::object, std::default_delete<xtd::object>> [pointer=null]", unique_ptr_object<object> {}.to_string());
       else if (environment::os_version().is_macos()) assert::are_equal("xtd::unique_ptr_object<xtd::object, std::default_delete<xtd::object>> [pointer=null]", unique_ptr_object<object> {}.to_string());
       else if (environment::os_version().is_linux()) assert::are_equal("xtd::unique_ptr_object<xtd::object, std::default_delete<xtd::object> > [pointer=null]", unique_ptr_object<object> {}.to_string());
-      string_assert::starts_with("xtd::unique_ptr_object<int, std::default_delete<int>> [pointer=0x", unique_ptr_object<int> {new int {42}}.to_string());
+      if (environment::os_version().is_windows())  string_assert::starts_with("xtd::unique_ptr_object<int, std::default_delete<int>> [pointer=0x", unique_ptr_object<int> {new int {42}}.to_string());
+      else if (environment::os_version().is_macos())  string_assert::starts_with("xtd::unique_ptr_object<int, std::default_delete<int>> [pointer=0x", unique_ptr_object<int> {new int {42}}.to_string());
+      else if (environment::os_version().is_linux())  string_assert::starts_with("xtd::unique_ptr_object<int, std::default_delete<int> > [pointer=0x", unique_ptr_object<int> {new int {42}}.to_string());
       string_assert::ends_with("]", unique_ptr_object<int> {new int {42}}.to_string());
     }
     
