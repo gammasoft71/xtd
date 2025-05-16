@@ -1,6 +1,7 @@
 #include <xtd/unique_ptr_object>
 #include <xtd/null_pointer_exception>
 #include <xtd/console>
+#include <xtd/environment>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/string_assert>
 #include <xtd/tunit/test_class_attribute>
@@ -242,7 +243,9 @@ namespace xtd::tests {
     }
     
     void test_method_(to_string) {
-      assert::are_equal("xtd::unique_ptr_object<xtd::object, std::default_delete<xtd::object>> [pointer=null]", unique_ptr_object<object> {}.to_string());
+      if (environment::os_version().is_windows()) assert::are_equal("xtd::unique_ptr_object<xtd::object, std::default_delete<xtd::object>> [pointer=null]", unique_ptr_object<object> {}.to_string());
+      else if (environment::os_version().is_macos()) assert::are_equal("xtd::unique_ptr_object<xtd::object, std::default_delete<xtd::object>> [pointer=null]", unique_ptr_object<object> {}.to_string());
+      else if (environment::os_version().is_linux()) assert::are_equal("xtd::unique_ptr_object<xtd::object, std::default_delete<xtd::object> > [pointer=null]", unique_ptr_object<object> {}.to_string());
       string_assert::starts_with("xtd::unique_ptr_object<int, std::default_delete<int>> [pointer=0x", unique_ptr_object<int> {new int {42}}.to_string());
       string_assert::ends_with("]", unique_ptr_object<int> {new int {42}}.to_string());
     }

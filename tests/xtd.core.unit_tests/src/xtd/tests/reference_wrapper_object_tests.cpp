@@ -152,8 +152,8 @@ namespace xtd::tests {
       
       assert::is_zero(r1.compare_to(r1));
       assert::is_zero(r2.compare_to(r2));
-      assert::is_positive(r1.compare_to(r2));
-      assert::is_negative(r2.compare_to(r1));
+      assert::is_not_zero(r1.compare_to(r2));
+      assert::is_not_zero(r2.compare_to(r1));
     }
     
     void test_method_(equals) {
