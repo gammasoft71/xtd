@@ -48,3 +48,4 @@ jobs:
         files: build/coverage.xml
         fail_ci_if_error: false
         verbose: true
+        slug: gammasoft71/xtd
