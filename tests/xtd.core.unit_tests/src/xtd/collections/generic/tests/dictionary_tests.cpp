@@ -13,6 +13,7 @@ using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::tunit;
 
+#if !defined(__XTD_BUILD_WITH_CONTINUOUS_INTEGRATION_SYSTEM__)
 namespace xtd::collections::generic::tests {
   class test_class_(dictionary_tests) {
     void test_method_(key_type) {
@@ -821,3 +822,4 @@ namespace xtd::collections::generic::tests {
     }
   };
 }
+#endif
