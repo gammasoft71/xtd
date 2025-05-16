@@ -24,7 +24,7 @@ jobs:
           -DXTD_BUILD_TESTS_XTD_CORE=ON \
           -DXTD_BUILD_TESTS_XTD_DRAWING=OFF \
           -DXTD_BUILD_TESTS_XTD_FORMS=OFF \
-          -DXTD_BUILD_TESTS_XTD_TUNIT=OFF \
+          -DXTD_BUILD_TESTS_XTD_TUNIT=ON \
           -DCMAKE_CXX_FLAGS="--coverage" \
           -DCMAKE_C_FLAGS="--coverage"
 
@@ -39,7 +39,19 @@ jobs:
     - name: Generate coverage report with gcovr
       run: |
         cd build
-        gcovr --root .. --exclude-unreachable-branches --exclude-throw-branches --xml-pretty -o coverage.xml
+        gcovr --root .. \
+        --exclude-unreachable-branches \
+        --exclude '.*xtd.core.native' \
+        --exclude '.*xtd.core.native.*' \
+        --exclude '.*xtd.drawing' \
+        --exclude '.*xtd.drawing.native' \
+        --exclude '.*xtd.drawing.native.*' \
+        --exclude '.*xtd.forms' \
+        --exclude '.*xtd.forms.native' \
+        --exclude '.*xtd.forms.native.*' \
+        --exclude-throw-branches \
+        --xml-pretty \
+        -o coverage.xml
 
     - name: Upload to Codecov
       uses: codecov/codecov-action@v3
