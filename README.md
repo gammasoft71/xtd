@@ -6,7 +6,7 @@
 
 **Write Once, Run Everywhere!**
 
-[![License](https://img.shields.io/github/license/gammasoft71/xtd)](https://gammasoft71.github.io/xtd/docs/documentation/license) [![Language](https://img.shields.io/badge/language-C++17/20-004080.svg)](https://gammasoft71.github.io/xtd/docs/documentation/portability) [![web](https://img.shields.io/badge/website-xtd-004080.svg)](https://gammasoft71.github.io/xtd) [![Reference Guide](https://img.shields.io/badge/code-reference%20guide-004080.svg)](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html) [![wiki](https://img.shields.io/badge/wiki-xtd-004080.svg)](https://github.com/gammasoft71/xtd/wiki) [![discord](https://img.shields.io/badge/discord-gammasoft-7289DA.svg)](https://discordapp.com/users/gammasoft#9288) [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
+[![License](https://img.shields.io/github/license/gammasoft71/xtd)](https://gammasoft71.github.io/xtd/docs/documentation/license) [![Language](https://img.shields.io/badge/language-C++17/20-004080.svg)](https://gammasoft71.github.io/xtd/docs/documentation/portability) [![web](https://img.shields.io/badge/website-xtd-004080.svg)](https://gammasoft71.github.io/xtd) [![Reference Guide](https://img.shields.io/badge/code-reference%20guide-004080.svg)](https://gammasoft71.github.io/xtd/reference_guides/latest/index.html) [![wiki](https://img.shields.io/badge/wiki-xtd-004080.svg)](https://github.com/gammasoft71/xtd/wiki) [![discord](https://img.shields.io/badge/discord-gammasoft-7289DA.svg)](https://discordapp.com/users/gammasoft#9288) [![codecov](https://codecov.io/gh/gammasoft71/xtd/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd) [![Download xtd](https://img.shields.io/sourceforge/dt/xtdpro.svg)](https://sourceforge.net/projects/xtdpro/files/latest/download)
  
 # Latest news
 
@@ -95,8 +95,6 @@ At each commit, a build and unit tests are performed for the following configura
 | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Deployment of the website                | [![Ubuntu Debug](https://img.shields.io/github/actions/workflow/status/gammasoft71/xtd/deploy.yml?branch=docs&logo=gitHub)](https://github.com/gammasoft71/xtd/actions/workflows/deploy.yml)                     |
 | Deployment of the latest reference guide | [![Ubuntu Debug](https://img.shields.io/github/actions/workflow/status/gammasoft71/xtd/reference_guide.yml?branch=master&logo=gitHub)](https://github.com/gammasoft71/xtd/actions/workflows/reference_guide.yml) |
-
-[![codecov](https://codecov.io/gh/gammasoft71/xtd/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd)
 
 ## Issues status
 
