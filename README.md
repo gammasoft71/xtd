@@ -96,6 +96,8 @@ At each commit, a build and unit tests are performed for the following configura
 | Deployment of the website                | [![Ubuntu Debug](https://img.shields.io/github/actions/workflow/status/gammasoft71/xtd/deploy.yml?branch=docs&logo=gitHub)](https://github.com/gammasoft71/xtd/actions/workflows/deploy.yml)                     |
 | Deployment of the latest reference guide | [![Ubuntu Debug](https://img.shields.io/github/actions/workflow/status/gammasoft71/xtd/reference_guide.yml?branch=master&logo=gitHub)](https://github.com/gammasoft71/xtd/actions/workflows/reference_guide.yml) |
 
+[![codecov](https://codecov.io/gh/gammasoft71/xtd/branch/master/graph/badge.svg)](https://codecov.io/gh/gammasoft71/xtd)
+
 ## Issues status
 
 As xtd is managed by a [Kanban project](https://github.com/users/gammasoft71/projects/3), the number of open issues can be quite large. The table below gives a clearer view on the number of open bugs/questions and enhancements.
