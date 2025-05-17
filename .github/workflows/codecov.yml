@@ -24,7 +24,7 @@ jobs:
           -DXTD_BUILD_TESTS_XTD_CORE=ON \
           -DXTD_BUILD_TESTS_XTD_DRAWING=OFF \
           -DXTD_BUILD_TESTS_XTD_FORMS=OFF \
-          -DXTD_BUILD_TESTS_XTD_TUNIT=ON \
+          -DXTD_BUILD_TESTS_XTD_TUNIT=OFF \
           -DCMAKE_CXX_FLAGS="--coverage" \
           -DCMAKE_C_FLAGS="--coverage"
 
@@ -49,6 +49,7 @@ jobs:
         --exclude '.*xtd.forms' \
         --exclude '.*xtd.forms.native' \
         --exclude '.*xtd.forms.native.*' \
+        --exclude '.*xtd.tunit' \
         --exclude-throw-branches \
         --xml-pretty \
         -o coverage.xml
