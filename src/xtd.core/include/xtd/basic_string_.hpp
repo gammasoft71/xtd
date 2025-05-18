@@ -133,22 +133,29 @@ inline xtd::array<typename xtd::basic_string<char_t, traits_t, allocator_t>> xtd
   if (count == 0) return {};
   if (count == 1) return {*this};
   
-  auto list = std::vector<basic_string> {};
-  auto sub_string = basic_string::empty_string;
+  auto result = std::vector<basic_string> {};
+  auto sub_string = basic_string {};
   auto split_char_separators = separators.size() == 0 ? default_split_separators : separators;
   for (auto it = begin(); it != end(); ++it) {
     auto is_separator = std::find(split_char_separators.begin(), split_char_separators.end(), *it) != split_char_separators.end();
     if (!is_separator) sub_string.chars_.append(basic_string(1, *it));
-    if ((static_cast<xtd::size>(it - begin()) == length() - 1 || is_separator) && (sub_string.length() > 0 || (sub_string.length() == 0 && options != xtd::string_split_options::remove_empty_entries))) {
-      if (list.size() == count - 1) {
-        list.push_back(sub_string + basic_string(c_str(), it - begin() + (is_separator ? 0 : 1), length() - (it - begin()) + (is_separator ? 0 : 1)));
-        return list;
+    auto is_last = (it + 1 == end());
+    auto should_add = is_last || is_separator;
+    auto keep_empty = sub_string.length() > 0 || (options != xtd::string_split_options::remove_empty_entries);
+    
+    if (should_add && keep_empty) {
+      if (result.size() == count - 1) {
+        result.push_back(sub_string + basic_string(c_str(), it - begin() + (is_separator ? 0 : 1), length() - (it - begin()) + (is_separator ? 0 : 1)));
+        return result;
       }
-      list.push_back(sub_string);
+      result.push_back(sub_string);
       sub_string.chars_.clear();
     }
   }
-  return list;
+
+  if (size() > 0 && std::find(split_char_separators.begin(), split_char_separators.end(), at(size() - 1)) != split_char_separators.end() && options != xtd::string_split_options::remove_empty_entries) result.push_back(basic_string {});
+
+  return result;
 }
 
 template<class char_t, class traits_t, class allocator_t>

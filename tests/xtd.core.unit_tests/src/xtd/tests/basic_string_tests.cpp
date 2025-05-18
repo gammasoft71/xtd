@@ -958,6 +958,7 @@ namespace xtd::tests {
       assert::are_equal(array<basic_string<char_t>> {"100+42=142"}, basic_string<char_t> {"100+42=142"}.split({}));
       assert::are_equal((array<basic_string<char_t>> {"a", "b", "c"}), basic_string<char_t> {"a,b,c"}.split(','));
       assert::are_equal((array<basic_string<char_t>> {"a", "", "", "b", "", "c"}), basic_string<char_t> {"a,,,b,,c"}.split(','));
+      assert::are_equal((array<basic_string<char_t>> {"a", "", "", "b", "", "c", "", ""}), basic_string<char_t> {"a,,,b,,c,,"}.split(','));
     }
     
     void test_method_(split_count) {
@@ -969,10 +970,12 @@ namespace xtd::tests {
     
     void test_method_(split_with_string_split_option_remove_empty_entries) {
       assert::are_equal(array<basic_string<char_t>> {"a", "b", "c"}, basic_string<char_t> {"a,,,b,,c"}.split(',', string_split_options::remove_empty_entries));
+      assert::are_equal(array<basic_string<char_t>> {"a", "b", "c"}, basic_string<char_t> {"a,,,b,,c,,"}.split(',', string_split_options::remove_empty_entries));
     }
     
-    void test_method_(split_with_string_split_optio_none) {
+    void test_method_(split_with_string_split_option_none) {
       assert::are_equal(array<basic_string<char_t>> {"a", "", "", "b", "", "c"}, basic_string<char_t> {"a,,,b,,c"}.split(',', string_split_options::none));
+      assert::are_equal((array<basic_string<char_t>> {"a", "", "", "b", "", "c", "", ""}), basic_string<char_t> {"a,,,b,,c,,"}.split(',', string_split_options::none));
     }
 
     void test_method_(starts_with_value_type) {
