@@ -4,7 +4,7 @@
 
 The Bridge design pattern decouples an abstraction from its implementation so that the two can vary independently.
 
-Usage     ![Usage](pictures/usage2.png)     Medium-low
+Usage     ![Usage](pictures/usage2.png)     Medium-low
 
 ## UML class diagram
 

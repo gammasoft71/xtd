@@ -23,8 +23,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                               | macOS                                 | Gnome                                 |
     /// | ----- | ------------------------------------- | ------------------------------------- | ------------------------------------- |
-    /// | Light |  @image html control_text_box_w.png   |  @image html control_text_box_m.png   |  @image html control_text_box_g.png   |
-    /// | Dark  |  @image html control_text_box_wd.png  |  @image html control_text_box_md.png  |  @image html control_text_box_gd.png  |
+    /// | Light |  @image html control_text_box_w.png   |  @image html control_text_box_m.png   |  @image html control_text_box_g.png   |
+    /// | Dark  |  @image html control_text_box_wd.png  |  @image html control_text_box_md.png  |  @image html control_text_box_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of text box control.
     /// @include text_box.cpp

@@ -24,16 +24,16 @@ namespace xtd {
     /// * Call the IsKeyLocked method of the Control class.
     /// * For finer control, use the Win32 API functions GetKeyState, GetAsyncKeyState, or GetKeyboardState defined in user32.dll, to do this. For more information about calling native functions, see Consuming Unmanaged DLL Functions.
     /// @remarks The following table shows the key code values represented by two enumerated values, representing both the general original equipment manufacturer (OEM) keys and the more specific U.S.-keyboard associations.
-    /// | Hexadecimal value | U.S. keyboard      | General OEM |
+    /// | Hexadecimal value | U.S. keyboard      | General OEM |
     /// | ----------------- | ------------------ | ----------- |
     /// | BA                | oem_semicolon      | oem1        |
-    /// | BF                | oem_question       | oem2        |
+    /// | BF                | oem_question       | oem2        |
     /// | C0                | oem_tilde          | oem3        |
-    /// | DB                | oem_open_brackets  | oem4        |
-    /// | DC                | oem_pipe           | oem5        |
-    /// | DD                | oem_close_brackets | oem6        |
-    /// | DE                | oem_quotes         | oem7        |
-    /// | E2                | oem_backslash      | oem102      |
+    /// | DB                | oem_open_brackets  | oem4        |
+    /// | DC                | oem_pipe           | oem5        |
+    /// | DD                | oem_close_brackets | oem6        |
+    /// | DE                | oem_quotes         | oem7        |
+    /// | E2                | oem_backslash      | oem102      |
     /// @remarks On Apple platforms, references to xtd::forms::keys::control_key and xtd::forms::keys::control correspond to the `command` keys on the Macintosh keyboard, and references to xtd::forms::keys::lwin, xtd::forms::keys::rwin and xtd::forms::keys::meta correspond to the `control` keys. In effect, developers can use the same shortcut descriptions across all platforms, and their applications will automatically work as expected on Apple platforms.
     /// @par Examples
     /// The following code example uses the KeyDown event to determine the type of character entered into the control.

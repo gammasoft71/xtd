@@ -1078,20 +1078,20 @@ namespace xtd {
     /// | \%A    | writes full weekday name, e.g. Friday (locale dependent).                                                                   |
     /// | \%b    | writes abbreviated month name, e.g. Oct (locale dependent)                                                                  |
     /// | \%B    | writes full month name, e.g. October (locale dependent).                                                                    |
-    /// | \%c    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
+    /// | \%c    | writes standard date and time string, e.g. Sun Oct 17 04:41:13 2010 (locale dependent).                                     |
     /// | \%C    | writes first 2 digits of year as a decimal number (range [00,99]).                                                          |
     /// | \%d    | writes day of the month as a decimal number (range [01,31]).                                                                |
     /// | \%D    | equivalent to "%m/%d/%y".                                                                                                   |
-    /// | \%e    | writes day of the month as a decimal number (range [1,31]).                                                                 |
+    /// | \%e    | writes day of the month as a decimal number (range [1,31]).                                                                 |
     /// | \%Ec   | writes alternative date and time string, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.  |
     /// | \%EC   | Writes name of the base year (period) in the locale's alternative representation, e.g. 平成 (Heisei era) in ja_JP            |
-    /// | \%Ex   | writes alternative date representation, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.   |
+    /// | \%Ex   | writes alternative date representation, e.g. using 平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.   |
     /// | \%EX   | writes alternative time representation (locale dependent).                                                                  |
     /// | \%Ey   | writes year as offset from locale's alternative calendar period %EC.                                                        |
     /// | \%EY   | writes year in the alternative representation, e.g.平成23年 (year Heisei 23) instead of 2011年 (year 2011) in ja_JP locale.   |
     /// | \%F    | equivalent to "%Y-%m-%d" (the ISO 8601 date format).                                                                        |
-    /// | \%g    | writes last 2 digits of ISO 8601 week-based year, i.e. the year that contains the specified week (range [00,99]).           |
-    /// | \%G    | writes ISO 8601 week-based year, i.e. the year that contains the specified week.                                            |
+    /// | \%g    | writes last 2 digits of ISO 8601 week-based year, i.e. the year that contains the specified week (range [00,99]).           |
+    /// | \%G    | writes ISO 8601 week-based year, i.e. the year that contains the specified week.                                            |
     /// | \%h    | synonym of b.                                                                                                               |
     /// | \%H    | writes hour as a decimal number, 24 hour clock (range [00-23]).                                                             |
     /// | \%I    | writes hour as a decimal number, 12 hour clock (range [01,12]).                                                             |
@@ -1104,21 +1104,21 @@ namespace xtd {
     /// | \%OI   | writes hour from 12-hour clock using the alternative numeric system, e.g. 六 instead of 06 in ja_JP locale.                 |
     /// | \%Om   | writes month using the alternative numeric system, e.g. 十二 instead of 12 in ja_JP locale.                                  |
     /// | \%OM   | writes minute using the alternative numeric system, e.g. 二十五 instead of 25 in ja_JP locale.                               |
-    /// | \%OS   | writes second using the alternative numeric system, e.g. 二十四 instead of 24 in ja_JP locale.                               |
+    /// | \%OS   | writes second using the alternative numeric system, e.g. 二十四 instead of 24 in ja_JP locale.                               |
     /// | \%Ou   | writes weekday, where Monday is 1, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.              |
     /// | \%OU   | writes week of the year, as by %U, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.           |
-    /// | \%OV   | writes week of the year, as by %V, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.           |
+    /// | \%OV   | writes week of the year, as by %V, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.           |
     /// | \%Ow   | writes weekday, where Sunday is 0, using the alternative numeric system, e.g. 二 instead of 2 in ja_JP locale.               |
     /// | \%OW   | writes week of the year, as by %W, using the alternative numeric system, e.g. 五十二 instead of 52 in ja_JP locale.           |
     /// | \%Oy   | writes last 2 digits of year using the alternative numeric system, e.g. 十一 instead of 11 in ja_JP locale.                  |
     /// | \%p    | writes localized a.m. or p.m. (locale dependent).                                                                           |
-    /// | \%r    | writes localized 12-hour clock time (locale dependent).                                                                     |
-    /// | \%R    | equivalent to "%H:%M".                                                                                                      |
+    /// | \%r    | writes localized 12-hour clock time (locale dependent).                                                                     |
+    /// | \%R    | equivalent to "%H:%M".                                                                                                      |
     /// | \%S    | writes second as a decimal number (range [00,60]).                                                                          |
-    /// | \%T    | equivalent to "%H:%M:%S" (the ISO 8601 time format)                                                                         |
+    /// | \%T    | equivalent to "%H:%M:%S" (the ISO 8601 time format)                                                                         |
     /// | \%u    | writes weekday as a decimal number, where Monday is 1 (ISO 8601 format) (range [1-7]).                                      |
     /// | \%U    | writes week of the year as a decimal number (Sunday is the first day of the week) (range [00,53]).                          |
-    /// | \%V    | writes ISO 8601 week of the year (range [01,53]).                                                                           |
+    /// | \%V    | writes ISO 8601 week of the year (range [01,53]).                                                                           |
     /// | \%w    | writes weekday as a decimal number, where Sunday is 0 (range [0-6]).                                                        |
     /// | \%W    | writes week of the year as a decimal number (Monday is the first day of the week) (range [00,53]).                          |
     /// | \%x    | writes localized date representation (locale dependent).                                                                    |

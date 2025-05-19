@@ -21,18 +21,18 @@ The [C++](c++.md) programming language is one of the most widely used programmin
 
 There are currently several widely used programming languages. The following list is based on the [TIOBE](https://www.tiobe.com/tiobe-index) Programming Community Index. The numbers are from October 2022. As we can see, [C++](c++.md) still belongs to the most popular programming languages in the world.
 
-| Position | Language          | Ratings |
+| Position | Language          | Ratings |
 | -------- | ----------------- | ------- |
-| 1        | Python            | 17.08%  |
-| 2        | C                 | 15.21%  |
-| 3        | Java              | 12.84%  |
-| 4        | [C++](c++.md)     |  9.92%  |
-| 5        | C#                |  4.42%  |
-| 6        | Visual Basic      |  3.95%  |
-| 7        | JavaScript        |  2.74%  |
-| 8        | Assembly language |  2.39%  |
-| 9        | PHP               |  2.04%  |
-| 10       | SQL               |  1.78%  |
+| 1        | Python            | 17.08%  |
+| 2        | C                 | 15.21%  |
+| 3        | Java              | 12.84%  |
+| 4        | [C++](c++.md)     |  9.92%  |
+| 5        | C#                |  4.42%  |
+| 6        | Visual Basic      |  3.95%  |
+| 7        | JavaScript        |  2.74%  |
+| 8        | Assembly language |  2.39%  |
+| 9        | PHP               |  2.04%  |
+| 10       | SQL               |  1.78%  |
 
 C is the most widely used programming language. Every fourth application is programmed in C/[C++](c++.md). They are standard for creating operating systems and various desktop applications. C/[C++](c++.md) are the most widely used system programming languages.
 

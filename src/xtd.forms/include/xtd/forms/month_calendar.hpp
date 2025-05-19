@@ -32,8 +32,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                     | macOS                                       | Gnome                                       |
     /// | ----- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
-    /// | Light |  @image html control_month_calendar_w.png   |  @image html control_month_calendar_m.png   |  @image html control_month_calendar_g.png   |
-    /// | Dark  |  @image html control_month_calendar_wd.png  |  @image html control_month_calendar_md.png  |  @image html control_month_calendar_gd.png  |
+    /// | Light |  @image html control_month_calendar_w.png   |  @image html control_month_calendar_m.png   |  @image html control_month_calendar_g.png   |
+    /// | Dark  |  @image html control_month_calendar_wd.png  |  @image html control_month_calendar_md.png  |  @image html control_month_calendar_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of month_calendar control.
     /// @include month_calendar.cpp

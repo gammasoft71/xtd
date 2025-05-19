@@ -7,97 +7,97 @@
 /// @par About dialog appearance
 /// | xtd::forms::about_dialog | Windows                                  | macOS                                    | Gnome                                    |
 /// | ------------------------ | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-/// | Light                    |  @image html dialog_about_dialog_w.png   |  @image html dialog_about_dialog_m.png   |  @image html dialog_about_dialog_g.png   |
-/// | Dark                     |  @image html dialog_about_dialog_wd.png  |  @image html dialog_about_dialog_md.png  |  @image html dialog_about_dialog_gd.png  |
+/// | Light                    |  @image html dialog_about_dialog_w.png   |  @image html dialog_about_dialog_m.png   |  @image html dialog_about_dialog_g.png   |
+/// | Dark                     |  @image html dialog_about_dialog_wd.png  |  @image html dialog_about_dialog_md.png  |  @image html dialog_about_dialog_gd.png  |
 ///
 /// @par assert dialog appearance
 /// | xtd::forms::assert_dialog | Windows                                   | macOS                                     | Gnome                                     |
 /// | ------------------------- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
-/// | Light                     |  @image html dialog_assert_dialog_w.png   |  @image html dialog_assert_dialog_m.png   |  @image html dialog_assert_dialog_g.png   |
-/// | Dark                      |  @image html dialog_assert_dialog_wd.png  |  @image html dialog_assert_dialog_md.png  |  @image html dialog_assert_dialog_gd.png  |
+/// | Light                     |  @image html dialog_assert_dialog_w.png   |  @image html dialog_assert_dialog_m.png   |  @image html dialog_assert_dialog_g.png   |
+/// | Dark                      |  @image html dialog_assert_dialog_wd.png  |  @image html dialog_assert_dialog_md.png  |  @image html dialog_assert_dialog_gd.png  |
 ///
 /// @par Busy dialog appearance
 /// | xtd::forms::busy_dialog | Windows                                 | macOS                                   | Gnome                                   |
 /// | ----------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
-/// | Light                   |  @image html dialog_busy_dialog_w.png   |  @image html dialog_busy_dialog_m.png   |  @image html dialog_busy_dialog_g.png   |
-/// | Dark                    |  @image html dialog_busy_dialog_wd.png  |  @image html dialog_busy_dialog_md.png  |  @image html dialog_busy_dialog_gd.png  |
+/// | Light                   |  @image html dialog_busy_dialog_w.png   |  @image html dialog_busy_dialog_m.png   |  @image html dialog_busy_dialog_g.png   |
+/// | Dark                    |  @image html dialog_busy_dialog_wd.png  |  @image html dialog_busy_dialog_md.png  |  @image html dialog_busy_dialog_gd.png  |
 ///
 /// @par Color dialog appearance
 /// | xtd::forms::color_dialog | Windows                                  | macOS                                    | Gnome                                    |
 /// | ------------------------ | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-/// | Light                    |  @image html dialog_color_dialog_w.png   |  @image html dialog_color_dialog_m.png   |  @image html dialog_color_dialog_g.png   |
-/// | Dark                     |  @image html dialog_color_dialog_wd.png  |  @image html dialog_color_dialog_md.png  |  @image html dialog_color_dialog_gd.png  |
+/// | Light                    |  @image html dialog_color_dialog_w.png   |  @image html dialog_color_dialog_m.png   |  @image html dialog_color_dialog_g.png   |
+/// | Dark                     |  @image html dialog_color_dialog_wd.png  |  @image html dialog_color_dialog_md.png  |  @image html dialog_color_dialog_gd.png  |
 ///
 /// @par Debug message box appearance
 /// | xtd::forms::debug_message_box | Windows                                       | macOS                                         | Gnome                                         |
 /// | ----------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-/// | Light                         |  @image html dialog_debug_message_box_w.png   |  @image html dialog_debug_message_box_m.png   |  @image html dialog_debug_message_box_g.png   |
-/// | Dark                          |  @image html dialog_debug_message_box_wd.png  |  @image html dialog_debug_message_box_md.png  |  @image html dialog_debug_message_box_gd.png  |
+/// | Light                         |  @image html dialog_debug_message_box_w.png   |  @image html dialog_debug_message_box_m.png   |  @image html dialog_debug_message_box_g.png   |
+/// | Dark                          |  @image html dialog_debug_message_box_wd.png  |  @image html dialog_debug_message_box_md.png  |  @image html dialog_debug_message_box_gd.png  |
 ///
 /// @par Exception dialog appearance
 /// | xtd::forms::exception_dialog | Windows                                      | macOS                                        | Gnome                                        |
 /// | ---------------------------- | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
-/// | Light                        |  @image html dialog_exception_dialog_w.png   |  @image html dialog_exception_dialog_m.png   |  @image html dialog_exception_dialog_g.png   |
-/// | Dark                         |  @image html dialog_exception_dialog_wd.png  |  @image html dialog_exception_dialog_md.png  |  @image html dialog_exception_dialog_gd.png  |
+/// | Light                        |  @image html dialog_exception_dialog_w.png   |  @image html dialog_exception_dialog_m.png   |  @image html dialog_exception_dialog_g.png   |
+/// | Dark                         |  @image html dialog_exception_dialog_wd.png  |  @image html dialog_exception_dialog_md.png  |  @image html dialog_exception_dialog_gd.png  |
 ///
 /// @par Find dialog appearance
 /// | xtd::forms::find_dialog | Windows                                 | macOS                                   | Gnome                                   |
 /// | ----------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
-/// | Light                   |  @image html dialog_find_dialog_w.png   |  @image html dialog_find_dialog_m.png   |  @image html dialog_find_dialog_g.png   |
-/// | Dark                    |  @image html dialog_find_dialog_wd.png  |  @image html dialog_find_dialog_md.png  |  @image html dialog_find_dialog_gd.png  |
+/// | Light                   |  @image html dialog_find_dialog_w.png   |  @image html dialog_find_dialog_m.png   |  @image html dialog_find_dialog_g.png   |
+/// | Dark                    |  @image html dialog_find_dialog_wd.png  |  @image html dialog_find_dialog_md.png  |  @image html dialog_find_dialog_gd.png  |
 ///
 /// @par Folder browser dialog appearance
 /// | xtd::forms::folder_browser_dialog | Windows                                           | macOS                                             | Gnome                                             |
 /// | --------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-/// | Light                             |  @image html dialog_folder_browser_dialog_w.png   |  @image html dialog_folder_browser_dialog_m.png   |  @image html dialog_folder_browser_dialog_g.png   |
-/// | Dark                              |  @image html dialog_folder_browser_dialog_wd.png  |  @image html dialog_folder_browser_dialog_md.png  |  @image html dialog_folder_browser_dialog_gd.png  |
+/// | Light                             |  @image html dialog_folder_browser_dialog_w.png   |  @image html dialog_folder_browser_dialog_m.png   |  @image html dialog_folder_browser_dialog_g.png   |
+/// | Dark                              |  @image html dialog_folder_browser_dialog_wd.png  |  @image html dialog_folder_browser_dialog_md.png  |  @image html dialog_folder_browser_dialog_gd.png  |
 ///
 /// @par Font dialog appearance
 /// | xtd::forms::font_dialog | Windows                                 | macOS                                   | Gnome                                   |
 /// | ----------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
-/// | Light                   |  @image html dialog_font_dialog_w.png   |  @image html dialog_font_dialog_m.png   |  @image html dialog_font_dialog_g.png   |
-/// | Dark                    |  @image html dialog_font_dialog_wd.png  |  @image html dialog_font_dialog_md.png  |  @image html dialog_font_dialog_gd.png  |
+/// | Light                   |  @image html dialog_font_dialog_w.png   |  @image html dialog_font_dialog_m.png   |  @image html dialog_font_dialog_g.png   |
+/// | Dark                    |  @image html dialog_font_dialog_wd.png  |  @image html dialog_font_dialog_md.png  |  @image html dialog_font_dialog_gd.png  |
 ///
 /// @par Input dialog appearance
 /// | xtd::forms::input_dialog | Windows                                  | macOS                                    | Gnome                                    |
 /// | ------------------------ | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-/// | Light                    |  @image html dialog_input_dialog_w.png   |  @image html dialog_input_dialog_m.png   |  @image html dialog_input_dialog_g.png   |
-/// | Dark                     |  @image html dialog_input_dialog_wd.png  |  @image html dialog_input_dialog_md.png  |  @image html dialog_input_dialog_gd.png  |
+/// | Light                    |  @image html dialog_input_dialog_w.png   |  @image html dialog_input_dialog_m.png   |  @image html dialog_input_dialog_g.png   |
+/// | Dark                     |  @image html dialog_input_dialog_wd.png  |  @image html dialog_input_dialog_md.png  |  @image html dialog_input_dialog_gd.png  |
 ///
 /// @par Message box appearance
 /// | xtd::forms::message_box | Windows                                 | macOS                                   | Gnome                                   |
 /// | ----------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
-/// | Light                   |  @image html dialog_message_box_w.png   |  @image html dialog_message_box_m.png   |  @image html dialog_message_box_g.png   |
-/// | Dark                    |  @image html dialog_message_box_wd.png  |  @image html dialog_message_box_md.png  |  @image html dialog_message_box_gd.png  |
+/// | Light                   |  @image html dialog_message_box_w.png   |  @image html dialog_message_box_m.png   |  @image html dialog_message_box_g.png   |
+/// | Dark                    |  @image html dialog_message_box_wd.png  |  @image html dialog_message_box_md.png  |  @image html dialog_message_box_gd.png  |
 ///
 /// @par Open file dialog appearance
 /// | xtd::forms::open_file_dialog | Windows                                      | macOS                                        | Gnome                                        |
 /// | ---------------------------- | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
-/// | Light                        |  @image html dialog_open_file_dialog_w.png   |  @image html dialog_open_file_dialog_m.png   |  @image html dialog_open_file_dialog_g.png   |
-/// | Dark                         |  @image html dialog_open_file_dialog_wd.png  |  @image html dialog_open_file_dialog_md.png  |  @image html dialog_open_file_dialog_gd.png  |
+/// | Light                        |  @image html dialog_open_file_dialog_w.png   |  @image html dialog_open_file_dialog_m.png   |  @image html dialog_open_file_dialog_g.png   |
+/// | Dark                         |  @image html dialog_open_file_dialog_wd.png  |  @image html dialog_open_file_dialog_md.png  |  @image html dialog_open_file_dialog_gd.png  |
 ///
 /// @par Progress dialog appearance
 /// | xtd::forms::progress_dialog | Windows                                     | macOS                                       | Gnome                                       |
 /// | --------------------------- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
-/// | Light                       |  @image html dialog_progress_dialog_w.png   |  @image html dialog_progress_dialog_m.png   |  @image html dialog_progress_dialog_g.png   |
-/// | Dark                        |  @image html dialog_progress_dialog_wd.png  |  @image html dialog_progress_dialog_md.png  |  @image html dialog_progress_dialog_gd.png  |
+/// | Light                       |  @image html dialog_progress_dialog_w.png   |  @image html dialog_progress_dialog_m.png   |  @image html dialog_progress_dialog_g.png   |
+/// | Dark                        |  @image html dialog_progress_dialog_wd.png  |  @image html dialog_progress_dialog_md.png  |  @image html dialog_progress_dialog_gd.png  |
 ///
 /// @par Replace dialog appearance
 /// | xtd::forms::replace_dialog | Windows                                    | macOS                                      | Gnome                                      |
 /// | -------------------------- | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-/// | Light                      |  @image html dialog_replace_dialog_w.png   |  @image html dialog_replace_dialog_m.png   |  @image html dialog_replace_dialog_g.png   |
-/// | Dark                       |  @image html dialog_replace_dialog_wd.png  |  @image html dialog_replace_dialog_md.png  |  @image html dialog_replace_dialog_gd.png  |
+/// | Light                      |  @image html dialog_replace_dialog_w.png   |  @image html dialog_replace_dialog_m.png   |  @image html dialog_replace_dialog_g.png   |
+/// | Dark                       |  @image html dialog_replace_dialog_wd.png  |  @image html dialog_replace_dialog_md.png  |  @image html dialog_replace_dialog_gd.png  |
 ///
 /// @par Save file dialog appearance
 /// | xtd::forms::save_file_dialog | Windows                                      | macOS                                        | Gnome                                        |
 /// | ---------------------------- | -------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
-/// | Light                        |  @image html dialog_save_file_dialog_w.png   |  @image html dialog_save_file_dialog_m.png   |  @image html dialog_save_file_dialog_g.png   |
-/// | Dark                         |  @image html dialog_save_file_dialog_wd.png  |  @image html dialog_save_file_dialog_md.png  |  @image html dialog_save_file_dialog_gd.png  |
+/// | Light                        |  @image html dialog_save_file_dialog_w.png   |  @image html dialog_save_file_dialog_m.png   |  @image html dialog_save_file_dialog_g.png   |
+/// | Dark                         |  @image html dialog_save_file_dialog_wd.png  |  @image html dialog_save_file_dialog_md.png  |  @image html dialog_save_file_dialog_gd.png  |
 ///
 /// @par Trace message box appearance
 /// | xtd::forms::trace_message_box | Windows                                       | macOS                                         | Gnome                                         |
 /// | ----------------------------- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-/// | Light                         |  @image html dialog_trace_message_box_w.png   |  @image html dialog_trace_message_box_m.png   |  @image html dialog_trace_message_box_g.png   |
-/// | Dark                          |  @image html dialog_trace_message_box_wd.png  |  @image html dialog_trace_message_box_md.png  |  @image html dialog_trace_message_box_gd.png  |
+/// | Light                         |  @image html dialog_trace_message_box_w.png   |  @image html dialog_trace_message_box_m.png   |  @image html dialog_trace_message_box_g.png   |
+/// | Dark                          |  @image html dialog_trace_message_box_wd.png  |  @image html dialog_trace_message_box_md.png  |  @image html dialog_trace_message_box_gd.png  |
 ///
 /// @remarks Run the [dialogs](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/dialogs/README.md) examples to see xtd::forms dialogs in action.

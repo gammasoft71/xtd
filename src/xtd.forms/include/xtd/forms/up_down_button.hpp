@@ -27,8 +27,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                     | macOS                                       | Gnome                                       |
     /// | ----- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
-    /// | Light |  @image html control_up_down_button_w.png   |  @image html control_up_down_button_m.png   |  @image html control_up_down_button_g.png   |
-    /// | Dark  |  @image html control_up_down_button_wd.png  |  @image html control_up_down_button_md.png  |  @image html control_up_down_button_gd.png  |
+    /// | Light |  @image html control_up_down_button_w.png   |  @image html control_up_down_button_m.png   |  @image html control_up_down_button_g.png   |
+    /// | Dark  |  @image html control_up_down_button_wd.png  |  @image html control_up_down_button_md.png  |  @image html control_up_down_button_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of up down button control.
     /// @include up_down_button.cpp

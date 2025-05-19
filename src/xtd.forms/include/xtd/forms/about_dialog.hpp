@@ -30,8 +30,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                  | macOS                                    | Gnome                                    |
     /// | ----- | ---------------------------------------- | ---------------------------------------- | ---------------------------------------- |
-    /// | Light |  @image html dialog_about_dialog_w.png   |  @image html dialog_about_dialog_m.png   |  @image html dialog_about_dialog_g.png   |
-    /// | Dark  |  @image html dialog_about_dialog_wd.png  |  @image html dialog_about_dialog_md.png  |  @image html dialog_about_dialog_gd.png  |
+    /// | Light |  @image html dialog_about_dialog_w.png   |  @image html dialog_about_dialog_m.png   |  @image html dialog_about_dialog_g.png   |
+    /// | Dark  |  @image html dialog_about_dialog_wd.png  |  @image html dialog_about_dialog_md.png  |  @image html dialog_about_dialog_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of about_dialog dialog.
     /// @include about_dialog.cpp

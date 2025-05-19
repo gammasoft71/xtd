@@ -24,8 +24,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                 | macOS                                   | Gnome                                   |
     /// | ----- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
-    /// | Light |  @image html dialog_busy_dialog_w.png   |  @image html dialog_busy_dialog_m.png   |  @image html dialog_busy_dialog_g.png   |
-    /// | Dark  |  @image html dialog_busy_dialog_wd.png  |  @image html dialog_busy_dialog_md.png  |  @image html dialog_busy_dialog_gd.png  |
+    /// | Light |  @image html dialog_busy_dialog_w.png   |  @image html dialog_busy_dialog_m.png   |  @image html dialog_busy_dialog_g.png   |
+    /// | Dark  |  @image html dialog_busy_dialog_wd.png  |  @image html dialog_busy_dialog_md.png  |  @image html dialog_busy_dialog_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of busy_box dialog.
     /// @include busy_box.cpp

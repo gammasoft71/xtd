@@ -21,8 +21,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                   | macOS                                     | Gnome                                     |
     /// | ----- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
-    /// | Light |  @image html control_h_scroll_bar_w.png   |  @image html control_h_scroll_bar_m.png   |  @image html control_h_scroll_bar_g.png   |
-    /// | Dark  |  @image html control_h_scroll_bar_wd.png  |  @image html control_h_scroll_bar_md.png  |  @image html control_h_scroll_bar_gd.png  |
+    /// | Light |  @image html control_h_scroll_bar_w.png   |  @image html control_h_scroll_bar_m.png   |  @image html control_h_scroll_bar_g.png   |
+    /// | Dark  |  @image html control_h_scroll_bar_wd.png  |  @image html control_h_scroll_bar_md.png  |  @image html control_h_scroll_bar_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of h_scroll_bar control.
     /// @include h_scroll_bar.cpp

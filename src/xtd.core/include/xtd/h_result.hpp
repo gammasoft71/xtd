@@ -515,8 +515,8 @@ namespace xtd {
     /// @par Possible values
     /// | SEVERIFY         | Decimal | Hex |
     /// | ---------------- | ------- | --- |
-    /// | SEVERITY_SUCCESS | 0       | 0x0 |
-    /// | SEVERITY_ERROR   | 1       | 0x1 |
+    /// | SEVERITY_SUCCESS | 0       | 0x0 |
+    /// | SEVERITY_ERROR   | 1       | 0x1 |
     static int32 get_severity(int32 h_result) noexcept;
 
     /// @brief Obtains a reference to the static error category object for HRESULT errors. The object is required to override the virtual function error_category::name() to return a pointer to the string "h_result_category". It is used to identify error conditions that correspond to the HRESULT error codes.

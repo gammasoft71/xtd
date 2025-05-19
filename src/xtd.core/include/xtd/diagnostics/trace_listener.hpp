@@ -44,7 +44,7 @@ namespace xtd {
       /// @remarks The following table shows initial property values for an instance of trace_listener.
       /// | Property     | Default Value          |
       /// | ------------ | ---------------------- |
-      /// | name         | The empty string (""). |
+      /// | name         | The empty string (""). |
       /// | indent_level | Zero.                  |
       /// | indent_size  | Four spaces.           |
       trace_listener() = default;

@@ -32,8 +32,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                   | macOS                                     | Gnome                                     |
     /// | ----- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
-    /// | Light |  @image html control_progress_bar_w.png   |  @image html control_progress_bar_m.png   |  @image html control_progress_bar_g.png   |
-    /// | Dark  |  @image html control_progress_bar_wd.png  |  @image html control_progress_bar_md.png  |  @image html control_progress_bar_gd.png  |
+    /// | Light |  @image html control_progress_bar_w.png   |  @image html control_progress_bar_m.png   |  @image html control_progress_bar_g.png   |
+    /// | Dark  |  @image html control_progress_bar_wd.png  |  @image html control_progress_bar_md.png  |  @image html control_progress_bar_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of progress_bar control.
     /// @include progress_bar.cpp

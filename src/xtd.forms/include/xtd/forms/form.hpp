@@ -46,8 +46,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                        | macOS                          | Gnome                          |
     /// | ----- | ------------------------------ | ------------------------------ | ------------------------------ |
-    /// | Light |  @image html form_form_w.png   |  @image html form_form_m.png   |  @image html form_form_g.png   |
-    /// | Dark  |  @image html form_form_wd.png  |  @image html form_form_md.png  |  @image html form_form_gd.png  |
+    /// | Light |  @image html form_form_w.png   |  @image html form_form_m.png   |  @image html form_form_g.png   |
+    /// | Dark  |  @image html form_form_wd.png  |  @image html form_form_md.png  |  @image html form_form_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of form control.
     /// @include form.cpp

@@ -54,7 +54,7 @@ namespace xtd {
       /// | Enum class value | Css potfix | Description                  |
       /// | ---------------- | ---------- | ---------------------------- |
       /// | centimeters      | cm         | centimeters                  |
-      /// | millimeters      | mm         | millimeters                  |
+      /// | millimeters      | mm         | millimeters                  |
       /// | inches           | in         | inches (1in = 96px = 2.54cm) |
       /// | pixels           | px         | pixels (1px = 1/96th of 1in) |
       /// | points           | pt         | points (1pt = 1/72 of 1in)   |

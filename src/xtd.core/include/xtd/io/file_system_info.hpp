@@ -257,13 +257,13 @@ namespace xtd {
       /// @remarks The following table lists examples of other typical or related I/O tasks.
       /// | To do this...                                 | See the example in this topic...                                                                                                               |
       /// | --------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-      /// | Create a text file.                           | <a ref="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks/How-tos/write_text_to_a_file">How to: Write Text to a File</a> |
-      /// | Write to a text file.                         | <a ref="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks/How-tos/write_text_to_a_file">How to: Write Text to a File</a> |
-      /// | Read from a text file.                        | <a ref="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks/How-tos/read_text_from_a_file">How to: Read Text to a File</a> |
+      /// | Create a text file.                           | <a ref="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks/How-tos/write_text_to_a_file">How to: Write Text to a File</a> |
+      /// | Write to a text file.                         | <a ref="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks/How-tos/write_text_to_a_file">How to: Write Text to a File</a> |
+      /// | Read from a text file.                        | <a ref="https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks/How-tos/read_text_from_a_file">How to: Read Text to a File</a> |
       /// | Retrieve the fully qualified path of a file.  | xtd::io::path::get_full_path                                                                                                                   |
       /// | Retrieve only the file name a path.           | xtd::io::path::get_file_name_without_extension                                                                                                 |
       /// | Retrieve only the directory name from a path. | xtd::io::path::get_directory_name                                                                                                              |
-      /// | Change the extension of a file.               | xtd::io::path::change_extrnsion                                                                                                                |
+      /// | Change the extension of a file.               | xtd::io::path::change_extrnsion                                                                                                                |
       virtual xtd::string extension() const;
       
       /// @brief Gets the full path of the directory or file.

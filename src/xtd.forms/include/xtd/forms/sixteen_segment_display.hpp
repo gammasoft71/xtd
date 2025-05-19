@@ -19,8 +19,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                              | macOS                                                | Gnome                                                |
     /// | ----- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-    /// | Light |  @image html control_sixteen_segment_display_w.png   |  @image html control_sixteen_segment_display_m.png   |  @image html control_sixteen_segment_display_g.png   |
-    /// | Dark  |  @image html control_sixteen_segment_display_wd.png  |  @image html control_sixteen_segment_display_md.png  |  @image html control_sixteen_segment_display_gd.png  |
+    /// | Light |  @image html control_sixteen_segment_display_w.png   |  @image html control_sixteen_segment_display_m.png   |  @image html control_sixteen_segment_display_g.png   |
+    /// | Dark  |  @image html control_sixteen_segment_display_wd.png  |  @image html control_sixteen_segment_display_md.png  |  @image html control_sixteen_segment_display_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of sixteen segment display control.
     /// @include sixteen_segment_display.cpp

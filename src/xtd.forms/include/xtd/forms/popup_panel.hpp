@@ -22,8 +22,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                     | macOS                                       | Gnome                                       |
     /// | ----- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
-    /// | Light |  @image html containers_popup_panel_w.png   |  @image html containers_popup_panel_m.png   |  @image html containers_popup_panel_g.png   |
-    /// | Dark  |  @image html containers_popup_panel_wd.png  |  @image html containers_popup_panel_md.png  |  @image html containers_popup_panel_gd.png  |
+    /// | Light |  @image html containers_popup_panel_w.png   |  @image html containers_popup_panel_m.png   |  @image html containers_popup_panel_g.png   |
+    /// | Dark  |  @image html containers_popup_panel_wd.png  |  @image html containers_popup_panel_md.png  |  @image html containers_popup_panel_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of popup_panel container.
     /// @include popup_panel.cpp

@@ -52,7 +52,7 @@ namespace xtd {
       /// @{
       /// @brief Initialises a new instance of xtd::forms::status_bar_panel class.
       /// @remarks When you create an instance of StatusBarPanel, the following read/write properties are set to initial values.
-      /// | Property                                    | Initial value                                     |
+      /// | Property                                    | Initial value                                     |
       /// | ------------------------------------------- | ------------------------------------------------- |
       /// | xtd::forms::status_bar_panel::alignment     | xtd::forms::horizontal_alignment::left            |
       /// | xtd::forms::status_bar_panel::auto_size     | xtd::forms::status_bar_panel_auto_size::none      |

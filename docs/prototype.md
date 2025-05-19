@@ -4,7 +4,7 @@
 
 The Prototype design pattern specifies the kind of objects to create using a prototypical instance, and create new objects by copying this prototype.
 
-Usage     ![Usage](pictures/usage3.png)     Medium
+Usage     ![Usage](pictures/usage3.png)     Medium
 
 ## UML class diagram
 

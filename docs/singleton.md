@@ -4,7 +4,7 @@
 
 The Singleton design pattern ensures a class has only one instance and provide a global point of access to it.
 
-Usage     ![Usage](pictures/usage4.png)     Medium-high
+Usage     ![Usage](pictures/usage4.png)     Medium-high
 
 ## UML class diagram
 

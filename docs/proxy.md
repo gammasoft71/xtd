@@ -4,7 +4,7 @@
 
 The Proxy design pattern provides a surrogate or placeholder for another object to control access to it.
 
-Usage     ![Usage](pictures/usage4.png)     Medium-high
+Usage     ![Usage](pictures/usage4.png)     Medium-high
 
 ## UML class diagram
 

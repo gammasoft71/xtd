@@ -24,8 +24,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                   | macOS                                     | Gnome                                     |
     /// | ----- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
-    /// | Light |  @image html control_color_picker_w.png   |  @image html control_color_picker_m.png   |  @image html control_color_picker_g.png   |
-    /// | Dark  |  @image html control_color_picker_wd.png  |  @image html control_color_picker_md.png  |  @image html control_color_picker_gd.png  |
+    /// | Light |  @image html control_color_picker_w.png   |  @image html control_color_picker_m.png   |  @image html control_color_picker_g.png   |
+    /// | Dark  |  @image html control_color_picker_wd.png  |  @image html control_color_picker_md.png  |  @image html control_color_picker_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of color_picker picker.
     /// @include color_picker.cpp

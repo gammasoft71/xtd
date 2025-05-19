@@ -24,8 +24,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                               | macOS                                                 | Gnome                                                 |
     /// | ----- | ----------------------------------------------------- | ----------------------------------------------------- | ----------------------------------------------------- |
-    /// | Light |  @image html containers_vertical_layout_panel_w.png   |  @image html containers_vertical_layout_panel_m.png   |  @image html containers_vertical_layout_panel_g.png   |
-    /// | Dark  |  @image html containers_vertical_layout_panel_wd.png  |  @image html containers_vertical_layout_panel_md.png  |  @image html containers_vertical_layout_panel_gd.png  |
+    /// | Light |  @image html containers_vertical_layout_panel_w.png   |  @image html containers_vertical_layout_panel_m.png   |  @image html containers_vertical_layout_panel_g.png   |
+    /// | Dark  |  @image html containers_vertical_layout_panel_wd.png  |  @image html containers_vertical_layout_panel_md.png  |  @image html containers_vertical_layout_panel_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of vertical_layout_panel container.
     /// @include vertical_layout_panel.cpp

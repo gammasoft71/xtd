@@ -80,28 +80,28 @@ namespace xtd {
         /// @param strikeout True is the font is strikeout; otherwise `false`.
         /// @param gdi_char_set The GDI character set.
         /// @param gdi_vertical_font True is the font is GDI vertical font; otherwise `false`.
-        /// | Character set | Value |
+        /// | Character set | Value |
         /// | ------------- | ----- |
         /// | ANSI          | 0     |
         /// | DEFAULT       | 1     |
-        /// | SYMBOL        | 2     |
+        /// | SYMBOL        | 2     |
         /// | SHIFTJIS      | 128   |
         /// | HANGEUL       | 129   |
         /// | HANGUL        | 129   |
         /// | GB2312        | 134   |
         /// | CHINESEBIG5   | 136   |
-        /// | OEM           | 255   |
-        /// | JOHAB         | 130   |
+        /// | OEM           | 255   |
+        /// | JOHAB         | 130   |
         /// | HEBREW        | 177   |
-        /// | ARABIC        | 178   |
-        /// | GREEK         | 161   |
+        /// | ARABIC        | 178   |
+        /// | GREEK         | 161   |
         /// | TURKISH       | 162   |
         /// | VIETNAMESE    | 163   |
-        /// | THAI          | 222   |
-        /// | EASTEUROPE    | 238   |
-        /// | RUSSIAN       | 204   |
+        /// | THAI          | 222   |
+        /// | EASTEUROPE    | 238   |
+        /// | RUSSIAN       | 204   |
         /// | MAC           | 77    |
-        /// | BALTIC        | 186   |
+        /// | BALTIC        | 186   |
         /// @warning Internal use only
         static void get_information(intptr font, xtd::string& name, float& em_size, bool& bold, bool& italic, bool& underline, bool& strikeout, xtd::byte& gdi_char_set, bool& gdi_vertical_font);
         

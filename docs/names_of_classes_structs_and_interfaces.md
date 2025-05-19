@@ -71,7 +71,7 @@ For example, a parameter constrained to isession might be called session_t.
 | xtd::event_args                              | **✔️ DO** add the suffix "_event_args".                                                             |
 | xtd::event_handler                           | **✔️ DO** add the suffix "_event_handler".                                                          |
 | enum class                                   | **❌ DO NOT** add the suffix "_enum" or "_flag".                                                    |
-| xtd::exception                               | **✔️ DO** add the suffix "_exception".                                                              |
+| xtd::exception                               | **✔️ DO** add the suffix "_exception".                                                              |
 | xtd::array                                   | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
 | xtd::collections::generic::list              | **✔️ DO** add the suffix "_collection" for sequence container.                                     |
 | xtd::collections::generic::linked_list       | **✔️ DO** add the suffix "_collection" for sequence container.                                     |

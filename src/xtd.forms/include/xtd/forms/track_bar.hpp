@@ -26,8 +26,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                | macOS                                  | Gnome                                  |
     /// | ----- | -------------------------------------- | -------------------------------------- | -------------------------------------- |
-    /// | Light |  @image html control_track_bar_w.png   |  @image html control_track_bar_m.png   |  @image html control_track_bar_g.png   |
-    /// | Dark  |  @image html control_track_bar_wd.png  |  @image html control_track_bar_md.png  |  @image html control_track_bar_gd.png  |
+    /// | Light |  @image html control_track_bar_w.png   |  @image html control_track_bar_m.png   |  @image html control_track_bar_g.png   |
+    /// | Dark  |  @image html control_track_bar_wd.png  |  @image html control_track_bar_md.png  |  @image html control_track_bar_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of track_bar control.
     /// @include track_bar.cpp
