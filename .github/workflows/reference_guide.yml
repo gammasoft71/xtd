@@ -39,9 +39,6 @@ jobs:
         mkdir -p site-docs/static/reference_guides/latest
         cp -r reference_guide/html/* site-docs/static/reference_guides/latest/
 
-    - name: List reference_guides/latest images
-        ls site-docs/static/reference_guides/latest/*.png
-
     - name: Commit updated reference guide into docs branch
       working-directory: site-docs
       run: |
