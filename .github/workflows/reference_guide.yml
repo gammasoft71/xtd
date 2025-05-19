@@ -21,9 +21,6 @@ jobs:
     - name: Install Graphviz (for Doxygen diagrams)
       run: sudo apt-get install graphviz
 
-    - name: Get doxygen version
-      run: doxygen --version
-
     - name: Generate Doxygen documentation
       uses: mattnotmitt/doxygen-action@v1.1.0
 
