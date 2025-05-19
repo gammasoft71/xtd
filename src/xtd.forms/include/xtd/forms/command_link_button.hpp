@@ -31,8 +31,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                          | macOS                                            | Gnome                                            |
     /// | ----- | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
-    /// | Light |  @image html control_command_link_button_w.png   |  @image html control_command_link_button_m.png   |  @image html control_command_link_button_g.png   |
-    /// | Dark  |  @image html control_command_link_button_wd.png  |  @image html control_command_link_button_md.png  |  @image html control_command_link_button_gd.png  |
+    /// | Light |  @image html control_command_link_button_w.png   |  @image html control_command_link_button_m.png   |  @image html control_command_link_button_g.png   |
+    /// | Dark  |  @image html control_command_link_button_wd.png  |  @image html control_command_link_button_md.png  |  @image html control_command_link_button_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of command link button control.
     /// @include command_link_button.cpp

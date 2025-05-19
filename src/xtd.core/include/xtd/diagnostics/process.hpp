@@ -273,12 +273,12 @@ namespace xtd {
       /// @remarks The xtd::diagnostics::process::base_priority property lets you view the starting priority assigned to a process. However, because it is read-only, you cannot use the xtd::diagnostics::process::base_priority to set the priority of the process. To change the priority, use the xtd::diagnostics::process::priority_class property. The xtd::diagnostics::process::base_priority is viewable using the System Monitor, while the xtd::diagnostics::process::priority_class is not. Both the xtd::diagnostics::process::base_priority and the xtd::diagnostics::process::priority_class can be viewed programmatically. The following table shows the relationship between xtd::diagnostics::process::base_priority values and xtd::diagnostics::process::priority_class values.
       /// | Windows base_priority | macOS base_priority                        | linux base_priority                        | priority_class                                         |
       /// | --------------------- | ------------------------------------------ | ------------------------------------------ | ------------------------------------------------------ |
-      /// | 4                     | PRIO_MIN                             (-20) | PRIO_MIN                             (-20) | xtd::diagnostics::process_priority_class::idle         |
-      /// | 6                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | xtd::diagnostics::process_priority_class::below_normal |
-      /// | 8                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | xtd::diagnostics::process_priority_class::normal       |
-      /// | 10                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | xtd::diagnostics::process_priority_class::above_normal |
-      /// | 13                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | xtd::diagnostics::process_priority_class::high         |
-      /// | 24                    | PRIO_MAX                              (20) | PRIO_MAX                              (20) | xtd::diagnostics::process_priority_class::real_time    |
+      /// | 4                     | PRIO_MIN                             (-20) | PRIO_MIN                             (-20) | xtd::diagnostics::process_priority_class::idle         |
+      /// | 6                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | xtd::diagnostics::process_priority_class::below_normal |
+      /// | 8                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | xtd::diagnostics::process_priority_class::normal       |
+      /// | 10                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | xtd::diagnostics::process_priority_class::above_normal |
+      /// | 13                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | xtd::diagnostics::process_priority_class::high         |
+      /// | 24                    | PRIO_MAX                              (20) | PRIO_MAX                              (20) | xtd::diagnostics::process_priority_class::real_time    |
       int32 base_priority() const;
       
       /// @brief Gets whether the xtd::diagnostics::process::exited event should be raised when the process terminates.
@@ -360,12 +360,12 @@ namespace xtd {
       /// @remarks The priority class cannot be viewed using System Monitor. The following table shows the relationship between the xtd::diagnostics::process::base_priority and xtd::diagnostics::process::priority_class values.
       /// | Windows base_priority | macOS base_priority                        | linux base_priority                        | priority_class                                         |
       /// | --------------------- | ------------------------------------------ | ------------------------------------------ | ------------------------------------------------------ |
-      /// | 4                     | PRIO_MIN                             (-20) | PRIO_MIN                             (-20) | xtd::diagnostics::process_priority_class::idle         |
-      /// | 6                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | xtd::diagnostics::process_priority_class::below_normal |
-      /// | 8                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | xtd::diagnostics::process_priority_class::normal       |
-      /// | 10                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | xtd::diagnostics::process_priority_class::above_normal |
-      /// | 13                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | xtd::diagnostics::process_priority_class::high         |
-      /// | 24                    | PRIO_MAX                              (20) | PRIO_MAX                              (20) | xtd::diagnostics::process_priority_class::real_time    |
+      /// | 4                     | PRIO_MIN                             (-20) | PRIO_MIN                             (-20) | xtd::diagnostics::process_priority_class::idle         |
+      /// | 6                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | xtd::diagnostics::process_priority_class::below_normal |
+      /// | 8                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | xtd::diagnostics::process_priority_class::normal       |
+      /// | 10                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | xtd::diagnostics::process_priority_class::above_normal |
+      /// | 13                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | xtd::diagnostics::process_priority_class::high         |
+      /// | 24                    | PRIO_MAX                              (20) | PRIO_MAX                              (20) | xtd::diagnostics::process_priority_class::real_time    |
       xtd::diagnostics::process_priority_class priority_class() const;
       /// @brief Sets the overall priority category for the associated process.
       /// @param value The priority category for the associated process, from which the xtd::diagnostics::process::base_priority of the process is calculated.
@@ -376,12 +376,12 @@ namespace xtd {
       /// @remarks The priority class cannot be viewed using System Monitor. The following table shows the relationship between the xtd::diagnostics::process::base_priority and xtd::diagnostics::process::priority_class values.
       /// | Windows base_priority | macOS base_priority                        | linux base_priority                        | priority_class                                         |
       /// | --------------------- | ------------------------------------------ | ------------------------------------------ | ------------------------------------------------------ |
-      /// | 4                     | PRIO_MIN                             (-20) | PRIO_MIN                             (-20) | xtd::diagnostics::process_priority_class::idle         |
-      /// | 6                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | xtd::diagnostics::process_priority_class::below_normal |
-      /// | 8                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | xtd::diagnostics::process_priority_class::normal       |
-      /// | 10                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | xtd::diagnostics::process_priority_class::above_normal |
-      /// | 13                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | xtd::diagnostics::process_priority_class::high         |
-      /// | 24                    | PRIO_MAX                              (20) | PRIO_MAX                              (20) | xtd::diagnostics::process_priority_class::real_time    |
+      /// | 4                     | PRIO_MIN                             (-20) | PRIO_MIN                             (-20) | xtd::diagnostics::process_priority_class::idle         |
+      /// | 6                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | xtd::diagnostics::process_priority_class::below_normal |
+      /// | 8                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | xtd::diagnostics::process_priority_class::normal       |
+      /// | 10                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | xtd::diagnostics::process_priority_class::above_normal |
+      /// | 13                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | xtd::diagnostics::process_priority_class::high         |
+      /// | 24                    | PRIO_MAX                              (20) | PRIO_MAX                              (20) | xtd::diagnostics::process_priority_class::real_time    |
       process& priority_class(xtd::diagnostics::process_priority_class value);
       
       /// @brief Gets the name of the process.

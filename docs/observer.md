@@ -4,7 +4,7 @@
 
 The Observer design pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
 
-Usage     ![Usage](pictures/usage5.png)     High
+Usage     ![Usage](pictures/usage5.png)     High
 
 ## UML class diagram
 

@@ -119,13 +119,13 @@ namespace xtd {
       /// @return The week of the month in which the time change occurs.
       /// @remarks The value of the xtd::time_zone_info::transition_time::week property is used only for time changes with floating-date rules. Valid values can range from 1 to 5.
       /// @remarks The xtd::time_zone_info::transition_time::month property defines the month in which the time change occurs. The xtd::time_zone_info::transition_time::week property determines the week on which the transition occurs. The xtd::time_zone_info::transition_time::day_of_week property defines the day of the week on which the transition occurs. The value of the xtd::time_zone_info::transition_time::week property is determined as shown in the following table.
-      /// | If the Week property value is | The transition occurs on                                                                                                             |
+      /// | If the Week property value is | The transition occurs on                                                                                                             |
       /// | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-      /// | 1                             | The first occurrence of the xtd::time_zone_info::transition_time::day_of_week value in xtd::time_zone_info::transition_time::month.  |
-      /// | 2                             | The second occurrence of the xtd::time_zone_info::transition_time::day_of_week value in xtd::time_zone_info::transition_time::month. |
-      /// | 3                             | The third occurrence of the xtd::time_zone_info::transition_time::day_of_week value in xtd::time_zone_info::transition_time::month.  |
-      /// | 4                             | The fourth occurrence of the xtd::time_zone_info::transition_time::day_of_week value in xtd::time_zone_info::transition_time::month. |
-      /// | 5                             | The last occurrence of the xtd::time_zone_info::transition_time::day_of_week value in xtd::time_zone_info::transition_time::month.   |
+      /// | 1                             | The first occurrence of the xtd::time_zone_info::transition_time::day_of_week value in xtd::time_zone_info::transition_time::month.  |
+      /// | 2                             | The second occurrence of the xtd::time_zone_info::transition_time::day_of_week value in xtd::time_zone_info::transition_time::month. |
+      /// | 3                             | The third occurrence of the xtd::time_zone_info::transition_time::day_of_week value in xtd::time_zone_info::transition_time::month.  |
+      /// | 4                             | The fourth occurrence of the xtd::time_zone_info::transition_time::day_of_week value in xtd::time_zone_info::transition_time::month. |
+      /// | 5                             | The last occurrence of the xtd::time_zone_info::transition_time::day_of_week value in xtd::time_zone_info::transition_time::month.   |
       /// @remarks For example, if a transition occurs on the first Sunday of March, the value of the xtd::time_zone_info::transition_time::week property is 1. If it occurs on the last Sunday of March, the value of the xtd::time_zone_info::transition_time::week property is 5.
       uint32 week() const noexcept;
       /// @}

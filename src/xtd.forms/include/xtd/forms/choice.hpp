@@ -26,8 +26,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                             | macOS                               | Gnome                               |
     /// | ----- | ----------------------------------- | ----------------------------------- | ----------------------------------- |
-    /// | Light |  @image html control_choice_w.png   |  @image html control_choice_m.png   |  @image html control_choice_g.png   |
-    /// | Dark  |  @image html control_choice_wd.png  |  @image html control_choice_md.png  |  @image html control_choice_gd.png  |
+    /// | Light |  @image html control_choice_w.png   |  @image html control_choice_m.png   |  @image html control_choice_g.png   |
+    /// | Dark  |  @image html control_choice_wd.png  |  @image html control_choice_md.png  |  @image html control_choice_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of checked_list_box control.
     /// @include checked_list_box.cpp

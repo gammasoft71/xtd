@@ -24,8 +24,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                               | macOS                                 | Gnome                                 |
     /// | ----- | ------------------------------------- | ------------------------------------- | ------------------------------------- |
-    /// | Light |  @image html containers_panel_w.png   |  @image html containers_panel_m.png   |  @image html containers_panel_g.png   |
-    /// | Dark  |  @image html containers_panel_wd.png  |  @image html containers_panel_md.png  |  @image html containers_panel_gd.png  |
+    /// | Light |  @image html containers_panel_w.png   |  @image html containers_panel_m.png   |  @image html containers_panel_g.png   |
+    /// | Dark  |  @image html containers_panel_wd.png  |  @image html containers_panel_md.png  |  @image html containers_panel_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of panel container.
     /// @include panel.cpp

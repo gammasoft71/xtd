@@ -762,7 +762,7 @@ namespace xtd {
       /// | Wildcard specifier | Matches                                   |
       /// | ------------------ | ----------------------------------------- |
       /// | * (asterisk)       | Zero or more characters in that position. |
-      /// | ? (question mark)  | Zero or one character in that position.   |
+      /// | ? (question mark)  | Zero or one character in that position.   |
       /// @remarks Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
       /// @remarks The xtd::io::directory_info::enumerate_files and xtd::io::directory_info::get_files methods differ as follows:
       /// * When you use xtd::io::directory_info::enumerate_files, you can start enumerating the collection of xtd::io::directory_info objects before the whole collection is returned.
@@ -800,7 +800,7 @@ namespace xtd {
       /// | Wildcard specifier | Matches                                   |
       /// | ------------------ | ----------------------------------------- |
       /// | * (asterisk)       | Zero or more characters in that position. |
-      /// | ? (question mark)  | Zero or one character in that position.   |
+      /// | ? (question mark)  | Zero or one character in that position.   |
       /// @remarks Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
       /// @remarks The xtd::io::directory_info::enumerate_file_system_infos and xtd::io::directory_info::get_file_system_infos methods differ as follows:
       /// * When you use xtd::io::directory_info::enumerate_file_system_infos, you can start enumerating the collection of xtd::io::directory_info objects before the whole collection is returned.
@@ -891,7 +891,7 @@ namespace xtd {
       /// | Wildcard specifier | Matches                                   |
       /// | ------------------ | ----------------------------------------- |
       /// | * (asterisk)       | Zero or more characters in that position. |
-      /// | ? (question mark)  | Zero or one character in that position.   |
+      /// | ? (question mark)  | Zero or one character in that position.   |
       /// @remarks Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
       /// @remarks This method pre-populates the values of the following xtd::io::directory_info properties:
       /// * xtd::io::file_system_info::attributes
@@ -1035,7 +1035,7 @@ namespace xtd {
       /// | Wildcard specifier | Matches                                   |
       /// | ------------------ | ----------------------------------------- |
       /// | * (asterisk)       | Zero or more characters in that position. |
-      /// | ? (question mark)  | Zero or one character in that position.   |
+      /// | ? (question mark)  | Zero or one character in that position.   |
       /// @remarks Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
       /// @remarks The xtd::io::directory_info::enumerate_files and xtd::io::directory_info::get_files methods differ as follows:
       /// * When you use xtd::io::directory_info::enumerate_files, you can start enumerating the collection of xtd::io::directory_info objects before the whole collection is returned.
@@ -1215,7 +1215,7 @@ namespace xtd {
       /// | Wildcard specifier | Matches                                   |
       /// | ------------------ | ----------------------------------------- |
       /// | * (asterisk)       | Zero or more characters in that position. |
-      /// | ? (question mark)  | Zero or one character in that position.   |
+      /// | ? (question mark)  | Zero or one character in that position.   |
       /// @remarks Characters other than the wildcard are literal characters. For example, the string "*t" searches for all names in ending with the letter "t". ". The search_pattern string "s*" searches for all names in path beginning with the letter "s".
       /// @remarks The xtd::io::directory_info::enumerate_file_system_infos and xtd::io::directory_info::get_file_system_infos methods differ as follows:
       /// * When you use xtd::io::directory_info::enumerate_file_system_infos, you can start enumerating the collection of xtd::io::file_system_info objects before the whole collection is returned.

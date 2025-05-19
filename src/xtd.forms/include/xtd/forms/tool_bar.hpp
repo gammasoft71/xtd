@@ -40,8 +40,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                          | macOS                                            | Gnome                                            |
     /// | ----- | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
-    /// | Light |  @image html menus_and_toolbars_tool_bar_w.png   |  @image html menus_and_toolbars_tool_bar_m.png   |  @image html menus_and_toolbars_tool_bar_g.png   |
-    /// | Dark  |  @image html menus_and_toolbars_tool_bar_wd.png  |  @image html menus_and_toolbars_tool_bar_md.png  |  @image html menus_and_toolbars_tool_bar_gd.png  |
+    /// | Light |  @image html menus_and_toolbars_tool_bar_w.png   |  @image html menus_and_toolbars_tool_bar_m.png   |  @image html menus_and_toolbars_tool_bar_g.png   |
+    /// | Dark  |  @image html menus_and_toolbars_tool_bar_wd.png  |  @image html menus_and_toolbars_tool_bar_md.png  |  @image html menus_and_toolbars_tool_bar_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of xtd::forms::tool_bar control.
     /// @include tool_bar.cpp

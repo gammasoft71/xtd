@@ -28,8 +28,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                 | macOS                                   | Gnome                                   |
     /// | ----- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
-    /// | Light |  @image html dialog_font_dialog_w.png   |  @image html dialog_font_dialog_m.png   |  @image html dialog_font_dialog_g.png   |
-    /// | Dark  |  @image html dialog_font_dialog_wd.png  |  @image html dialog_font_dialog_md.png  |  @image html dialog_font_dialog_gd.png  |
+    /// | Light |  @image html dialog_font_dialog_w.png   |  @image html dialog_font_dialog_m.png   |  @image html dialog_font_dialog_g.png   |
+    /// | Dark  |  @image html dialog_font_dialog_wd.png  |  @image html dialog_font_dialog_md.png  |  @image html dialog_font_dialog_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of font_dialog dialog.
     /// @include font_dialog.cpp
@@ -46,10 +46,10 @@ namespace xtd {
       /// | -------------------- | ------------- |
       /// | allow_simulations    | `true`        |
       /// | allow_vector_fonts   | `true`        |
-      /// | allow_vertical_fonts | `true`        |
+      /// | allow_vertical_fonts | `true`        |
       /// | allow_script_change  | `true`        |
       /// | color                | color::black  |
-      /// | fixed_pitch_only     | `false`       |
+      /// | fixed_pitch_only     | `false`       |
       /// | max_size             | 0             |
       /// | min_size             | 0             |
       /// | scripts_only         | `false`       |

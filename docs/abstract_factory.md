@@ -4,7 +4,7 @@
 
 The Abstract Factory design pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes.
 
-Usage     ![Usage](pictures/usage5.png)     High
+Usage     ![Usage](pictures/usage5.png)     High
 
 ## UML class diagram
 

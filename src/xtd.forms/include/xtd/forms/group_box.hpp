@@ -23,8 +23,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                   | macOS                                     | Gnome                                     |
     /// | ----- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
-    /// | Light |  @image html containers_group_box_w.png   |  @image html containers_group_box_m.png   |  @image html containers_group_box_g.png   |
-    /// | Dark  |  @image html containers_group_box_wd.png  |  @image html containers_group_box_md.png  |  @image html containers_group_box_gd.png  |
+    /// | Light |  @image html containers_group_box_w.png   |  @image html containers_group_box_m.png   |  @image html containers_group_box_g.png   |
+    /// | Dark  |  @image html containers_group_box_wd.png  |  @image html containers_group_box_md.png  |  @image html containers_group_box_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of group_box container.
     /// @include group_box.cpp

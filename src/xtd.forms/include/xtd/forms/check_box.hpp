@@ -37,8 +37,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                | macOS                                  | Gnome                                  |
     /// | ----- | -------------------------------------- | -------------------------------------- | -------------------------------------- |
-    /// | Light |  @image html control_check_box_w.png   |  @image html control_check_box_m.png   |  @image html control_check_box_g.png   |
-    /// | Dark  |  @image html control_check_box_wd.png  |  @image html control_check_box_md.png  |  @image html control_check_box_gd.png  |
+    /// | Light |  @image html control_check_box_w.png   |  @image html control_check_box_m.png   |  @image html control_check_box_g.png   |
+    /// | Dark  |  @image html control_check_box_wd.png  |  @image html control_check_box_md.png  |  @image html control_check_box_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of check_box control.
     /// @include check_box.cpp

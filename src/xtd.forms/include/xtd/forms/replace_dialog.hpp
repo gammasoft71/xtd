@@ -30,8 +30,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                    | macOS                                      | Gnome                                      |
     /// | ----- | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-    /// | Light |  @image html dialog_replace_dialog_w.png   |  @image html dialog_replace_dialog_m.png   |  @image html dialog_replace_dialog_g.png   |
-    /// | Dark  |  @image html dialog_replace_dialog_wd.png  |  @image html dialog_replace_dialog_md.png  |  @image html dialog_replace_dialog_gd.png  |
+    /// | Light |  @image html dialog_replace_dialog_w.png   |  @image html dialog_replace_dialog_m.png   |  @image html dialog_replace_dialog_g.png   |
+    /// | Dark  |  @image html dialog_replace_dialog_wd.png  |  @image html dialog_replace_dialog_md.png  |  @image html dialog_replace_dialog_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of replace_dialog dialog.
     /// @include replace_dialog.cpp

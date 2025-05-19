@@ -28,8 +28,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                | macOS                                  | Gnome                                  |
     /// | ----- | -------------------------------------- | -------------------------------------- | -------------------------------------- |
-    /// | Light |  @image html control_combo_box_w.png   |  @image html control_combo_box_m.png   |  @image html control_combo_box_g.png   |
-    /// | Dark  |  @image html control_combo_box_wd.png  |  @image html control_combo_box_md.png  |  @image html control_combo_box_gd.png  |
+    /// | Light |  @image html control_combo_box_w.png   |  @image html control_combo_box_m.png   |  @image html control_combo_box_g.png   |
+    /// | Dark  |  @image html control_combo_box_wd.png  |  @image html control_combo_box_md.png  |  @image html control_combo_box_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of combo box control.
     /// @include combo_box.cpp

@@ -35,8 +35,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                            | macOS                                              | Gnome                                              |
     /// | ----- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
-    /// | Light |  @image html menus_and_toolbars_status_bar_w.png   |  @image html menus_and_toolbars_status_bar_m.png   |  @image html menus_and_toolbars_status_bar_g.png   |
-    /// | Dark  |  @image html menus_and_toolbars_status_bar_wd.png  |  @image html menus_and_toolbars_status_bar_md.png  |  @image html menus_and_toolbars_status_bar_gd.png  |
+    /// | Light |  @image html menus_and_toolbars_status_bar_w.png   |  @image html menus_and_toolbars_status_bar_m.png   |  @image html menus_and_toolbars_status_bar_g.png   |
+    /// | Dark  |  @image html menus_and_toolbars_status_bar_wd.png  |  @image html menus_and_toolbars_status_bar_md.png  |  @image html menus_and_toolbars_status_bar_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of xtd::forms::status_bar control.
     /// @include status_bar.cpp

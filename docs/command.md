@@ -4,7 +4,7 @@
 
 The Command design pattern encapsulates a request as an object, thereby letting you parameterize clients with different requests, queue or log requests, and support undoable operations.
 
-Usage     ![Usage](pictures/usage2.png)     Medium-low
+Usage     ![Usage](pictures/usage2.png)     Medium-low
 
 ## UML class diagram
 

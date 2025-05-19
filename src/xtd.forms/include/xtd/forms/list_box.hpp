@@ -25,8 +25,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                               | macOS                                 | Gnome                                 |
     /// | ----- | ------------------------------------- | ------------------------------------- | ------------------------------------- |
-    /// | Light |  @image html control_list_box_w.png   |  @image html control_list_box_m.png   |  @image html control_list_box_g.png   |
-    /// | Dark  |  @image html control_list_box_wd.png  |  @image html control_list_box_md.png  |  @image html control_list_box_gd.png  |
+    /// | Light |  @image html control_list_box_w.png   |  @image html control_list_box_m.png   |  @image html control_list_box_g.png   |
+    /// | Dark  |  @image html control_list_box_wd.png  |  @image html control_list_box_md.png  |  @image html control_list_box_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of list_box control.
     /// @include list_box.cpp

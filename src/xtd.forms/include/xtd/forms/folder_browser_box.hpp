@@ -24,8 +24,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                           | macOS                                             | Gnome                                             |
     /// | ----- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
-    /// | Light |  @image html dialog_folder_browser_dialog_w.png   |  @image html dialog_folder_browser_dialog_m.png   |  @image html dialog_folder_browser_dialog_g.png   |
-    /// | Dark  |  @image html dialog_folder_browser_dialog_wd.png  |  @image html dialog_folder_browser_dialog_md.png  |  @image html dialog_folder_browser_dialog_gd.png  |
+    /// | Light |  @image html dialog_folder_browser_dialog_w.png   |  @image html dialog_folder_browser_dialog_m.png   |  @image html dialog_folder_browser_dialog_g.png   |
+    /// | Dark  |  @image html dialog_folder_browser_dialog_wd.png  |  @image html dialog_folder_browser_dialog_md.png  |  @image html dialog_folder_browser_dialog_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of xtd::forms::folder_browser_box dialog.
     /// @include folder_browser_box.cpp

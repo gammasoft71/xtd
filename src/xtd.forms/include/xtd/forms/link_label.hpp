@@ -35,8 +35,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                 | macOS                                   | Gnome                                   |
     /// | ----- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
-    /// | Light |  @image html control_link_label_w.png   |  @image html control_link_label_m.png   |  @image html control_link_label_g.png   |
-    /// | Dark  |  @image html control_link_label_wd.png  |  @image html control_link_label_md.png  |  @image html control_link_label_gd.png  |
+    /// | Light |  @image html control_link_label_w.png   |  @image html control_link_label_m.png   |  @image html control_link_label_g.png   |
+    /// | Dark  |  @image html control_link_label_wd.png  |  @image html control_link_label_md.png  |  @image html control_link_label_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of link_label control.
     /// @include link_label.cpp

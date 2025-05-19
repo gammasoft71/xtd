@@ -25,8 +25,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                     | macOS                                       | Gnome                                       |
     /// | ----- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
-    /// | Light |  @image html control_domain_up_down_w.png   |  @image html control_domain_up_down_m.png   |  @image html control_domain_up_down_g.png   |
-    /// | Dark  |  @image html control_domain_up_down_wd.png  |  @image html control_domain_up_down_md.png  |  @image html control_domain_up_down_gd.png  |
+    /// | Light |  @image html control_domain_up_down_w.png   |  @image html control_domain_up_down_m.png   |  @image html control_domain_up_down_g.png   |
+    /// | Dark  |  @image html control_domain_up_down_wd.png  |  @image html control_domain_up_down_md.png  |  @image html control_domain_up_down_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of domain up down control.
     /// @include domain_up_down.cpp

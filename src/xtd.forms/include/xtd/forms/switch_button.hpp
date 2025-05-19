@@ -24,8 +24,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                    | macOS                                      | Gnome                                      |
     /// | ----- | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-    /// | Light |  @image html control_switch_button_w.png   |  @image html control_switch_button_m.png   |  @image html control_switch_button_g.png   |
-    /// | Dark  |  @image html control_switch_button_wd.png  |  @image html control_switch_button_md.png  |  @image html control_switch_button_gd.png  |
+    /// | Light |  @image html control_switch_button_w.png   |  @image html control_switch_button_m.png   |  @image html control_switch_button_g.png   |
+    /// | Dark  |  @image html control_switch_button_wd.png  |  @image html control_switch_button_md.png  |  @image html control_switch_button_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of switch button control.
     /// @include switch_button.cpp

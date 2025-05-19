@@ -62,12 +62,12 @@ namespace xtd {
       /// @remarks The following table shows the relationship between the base priority and process priority class values.
       /// | Windows base_priority | macOS base_priority                        | linux base_priority                        | priority_class              |
       /// | --------------------- | ------------------------------------------ | ------------------------------------------ | --------------------------- |
-      /// | 4                     | PRIO_MIN                             (-20) | PRIO_MIN                             (-20) | IDLE_PRIORITY_CLASS         |
-      /// | 6                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | BELOW_NORMAL_PRIORITY_CLASS |
-      /// | 8                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | NORMAL_PRIORITY_CLASS       |
-      /// | 10                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | ABOVE_NORMAL_PRIORITY_CLASS |
-      /// | 13                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | HIGH_PRIORITY_CLASS         |
-      /// | 24                    | PRIO_MAX                              (20) | PRIO_MAX                              (20) | REALTIME_PRIORITY_CLASS     |
+      /// | 4                     | PRIO_MIN                             (-20) | PRIO_MIN                             (-20) | IDLE_PRIORITY_CLASS         |
+      /// | 6                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | PRIO_MIN + (PRIO_MAX - PRIO_MIN) / 4 (-10) | BELOW_NORMAL_PRIORITY_CLASS |
+      /// | 8                     | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | PRIO_MIN + (PRIO_MAX - PRIO_MIN)/2     (0) | NORMAL_PRIORITY_CLASS       |
+      /// | 10                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 4  (10) | ABOVE_NORMAL_PRIORITY_CLASS |
+      /// | 13                    | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | PRIO_MAX - (PRIO_MAX - PRIO_MIN) / 8  (15) | HIGH_PRIORITY_CLASS         |
+      /// | 24                    | PRIO_MAX                              (20) | PRIO_MAX                              (20) | REALTIME_PRIORITY_CLASS     |
       static int32_t base_priority(int32_t priority);
       /// @brief Kill process.
       /// @param process The process handle to kill.

@@ -140,7 +140,7 @@ These are compound words written as a single word, such as endpoint. For the pur
 | do_not        | don't        |
 | email         | e-mail       |
 | endpoint      | end-point    |
-| file_name     | filename     |
+| file_name     | filename     |
 | gridline      | grid_line    |
 | hashtable     | hash_table   |
 | id            | ID           |
@@ -158,7 +158,7 @@ These are compound words written as a single word, such as endpoint. For the pur
 | sign_out      | sign_off     |
 | user_name     | username     |
 | white_space   | whitespace   |
-| writable      | writeable    |
+| writable      | writeable    |
 
 # Case Sensitivity
 ​

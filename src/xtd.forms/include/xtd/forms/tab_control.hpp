@@ -31,8 +31,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                     | macOS                                       | Gnome                                       |
     /// | ----- | ------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
-    /// | Light |  @image html containers_tab_control_w.png   |  @image html containers_tab_control_m.png   |  @image html containers_tab_control_g.png   |
-    /// | Dark  |  @image html containers_tab_control_wd.png  |  @image html containers_tab_control_md.png  |  @image html containers_tab_control_gd.png  |
+    /// | Light |  @image html containers_tab_control_w.png   |  @image html containers_tab_control_m.png   |  @image html containers_tab_control_g.png   |
+    /// | Dark  |  @image html containers_tab_control_wd.png  |  @image html containers_tab_control_md.png  |  @image html containers_tab_control_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of tab_control container.
     /// @include tab_control.cpp

@@ -21,8 +21,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                       | macOS                                         | Gnome                                         |
     /// | ----- | --------------------------------------------- | --------------------------------------------- | --------------------------------------------- |
-    /// | Light |  @image html dialog_trace_message_box_w.png   |  @image html dialog_trace_message_box_m.png   |  @image html dialog_trace_message_box_g.png   |
-    /// | Dark  |  @image html dialog_trace_message_box_wd.png  |  @image html dialog_trace_message_box_md.png  |  @image html dialog_trace_message_box_gd.png  |
+    /// | Light |  @image html dialog_trace_message_box_w.png   |  @image html dialog_trace_message_box_m.png   |  @image html dialog_trace_message_box_g.png   |
+    /// | Dark  |  @image html dialog_trace_message_box_wd.png  |  @image html dialog_trace_message_box_md.png  |  @image html dialog_trace_message_box_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of trace_message_dialog dialog.
     /// @include trace_message_dialog.cpp

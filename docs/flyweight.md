@@ -4,7 +4,7 @@
 
 The Flyweight design pattern uses sharing to support large numbers of fine-grained objects efficiently.
 
-Usage     ![Usage](pictures/usage1.png)     Low
+Usage     ![Usage](pictures/usage1.png)     Low
 
 ## UML class diagram
 

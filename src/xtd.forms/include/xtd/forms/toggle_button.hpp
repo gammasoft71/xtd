@@ -36,8 +36,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                    | macOS                                      | Gnome                                      |
     /// | ----- | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-    /// | Light |  @image html control_toggle_button_w.png   |  @image html control_toggle_button_m.png   |  @image html control_toggle_button_g.png   |
-    /// | Dark  |  @image html control_toggle_button_wd.png  |  @image html control_toggle_button_md.png  |  @image html control_toggle_button_gd.png  |
+    /// | Light |  @image html control_toggle_button_w.png   |  @image html control_toggle_button_m.png   |  @image html control_toggle_button_g.png   |
+    /// | Dark  |  @image html control_toggle_button_wd.png  |  @image html control_toggle_button_md.png  |  @image html control_toggle_button_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of toggle_button control.
     /// @include toggle_button.cpp

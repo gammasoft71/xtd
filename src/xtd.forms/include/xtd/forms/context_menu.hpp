@@ -28,8 +28,8 @@ namespace xtd {
     /// @par Appearance
     /// |       | Windows                                              | macOS                                                | Gnome                                                |
     /// | ----- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-    /// | Light |  @image html menus_and_toolbars_context_menu_w.png   |  @image html menus_and_toolbars_context_menu_m.png   |  @image html menus_and_toolbars_context_menu_g.png   |
-    /// | Dark  |  @image html menus_and_toolbars_context_menu_wd.png  |  @image html menus_and_toolbars_context_menu_md.png  |  @image html menus_and_toolbars_context_menu_gd.png  |
+    /// | Light |  @image html menus_and_toolbars_context_menu_w.png   |  @image html menus_and_toolbars_context_menu_m.png   |  @image html menus_and_toolbars_context_menu_g.png   |
+    /// | Dark  |  @image html menus_and_toolbars_context_menu_wd.png  |  @image html menus_and_toolbars_context_menu_md.png  |  @image html menus_and_toolbars_context_menu_gd.png  |
     /// @par Examples
     /// The following code example demonstrates the use of context menu componant.
     /// @include context_menu.cpp

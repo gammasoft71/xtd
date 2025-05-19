@@ -4,7 +4,7 @@
 
 Given a language, the Interpreter design pattern defines a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.
 
-Usage     ![Usage](pictures/usage1.png)     Low
+Usage     ![Usage](pictures/usage1.png)     Low
 
 ## UML class diagram
 
