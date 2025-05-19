@@ -253,7 +253,7 @@ namespace xtd {
     
     /// @brief Determines whether an element is in the array.
     /// @param value The object to be added to the end of the array.
-    constexpr bool contains(const type_t& value) const noexcept override {
+    bool contains(const type_t& value) const noexcept override {
       for (const auto& item : data_->items)
         if (xtd::collections::generic::helpers::equator<type_t> {}(reinterpret_cast<const type_t&>(item), value)) return true;
       return false;
