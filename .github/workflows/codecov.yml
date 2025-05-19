@@ -1,9 +1,9 @@
 name: Code coverage (xtd.core)
 
 on:
-  workflow_dispatch:
-    branches: [ master ]
   push:
+    branches: [ master ]
+  workflow_dispatch:
     branches: [ master ]
 
 jobs:

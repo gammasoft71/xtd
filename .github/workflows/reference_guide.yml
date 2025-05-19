@@ -1,9 +1,11 @@
 name: Deploy Doxygen Reference Guide to Docs Branch + Build Website
 
 on:
+  pull_request:
+    branches: [ master ]
   push:
     branches: [ master ]
-  pull_request:
+  workflow_dispatch:
     branches: [ master ]
 
 jobs:
