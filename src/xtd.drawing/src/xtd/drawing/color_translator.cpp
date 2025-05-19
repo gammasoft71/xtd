@@ -120,7 +120,7 @@ string color_translator::to_rgba(const color& value) noexcept {
 }
 
 int32 color_translator::to_win32(const xtd::drawing::color& value) noexcept {
-  return (value.r() << win32_red_shift) + (value.g() << win32_green_shift) + (value.b() << win32_blue_shift);
+  return (as<int32>(value.r()) << win32_red_shift) + (as<int32>(value.g()) << win32_green_shift) + (as<int32>(value.b()) << win32_blue_shift);
 }
 
 string color_translator::from_name(const color& value) {
