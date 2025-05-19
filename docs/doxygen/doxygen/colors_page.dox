@@ -12,16 +12,16 @@
 ///
 /// | Name    | Value                               | ARGB value (in hexa) | Color                                  |
 /// | ------- | ----------------------------------- | -------------------- | -------------------------------------- |
-/// | Black   | xtd::drawing::apple_colors::black   | 0xFF000000           |  @image html apple_colors_black.png    |
-/// | Blue    | xtd::drawing::apple_colors::blue    | 0xFF0000FF           |  @image html apple_colors_blue.png     |
-/// | Cyan    | xtd::drawing::apple_colors::cyan    | 0xFF21FFFF           |  @image html apple_colors_cyan.png     |
-/// | Green   | xtd::drawing::apple_colors::green   | 0xFF21FF06           |  @image html apple_colors_green.png    |
-/// | Magenta | xtd::drawing::apple_colors::magenta | 0xFFFB02FF           |  @image html apple_colors_magenta.png  |
-/// | Orange  | xtd::drawing::apple_colors::orange  | 0xFFFD8008           |  @image html apple_colors_orange.png   |
-/// | Purple  | xtd::drawing::apple_colors::purple  | 0xFF800080           |  @image html apple_colors_purple.png   |
-/// | Red     | xtd::drawing::apple_colors::red     | 0xFFFB0207           |  @image html apple_colors_red.png      |
-/// | Yellow  | xtd::drawing::apple_colors::yellow  | 0xFFFFFF0A           |  @image html apple_colors_yellow.png   |
-/// | White   | xtd::drawing::apple_colors::white   | 0xFFFFFFFF           |  @image html apple_colors_white.png    |
+/// | Black   | xtd::drawing::apple_colors::black   | 0xFF000000           |  @image html apple_colors_black.png    |
+/// | Blue    | xtd::drawing::apple_colors::blue    | 0xFF0000FF           |  @image html apple_colors_blue.png     |
+/// | Cyan    | xtd::drawing::apple_colors::cyan    | 0xFF21FFFF           |  @image html apple_colors_cyan.png     |
+/// | Green   | xtd::drawing::apple_colors::green   | 0xFF21FF06           |  @image html apple_colors_green.png    |
+/// | Magenta | xtd::drawing::apple_colors::magenta | 0xFFFB02FF           |  @image html apple_colors_magenta.png  |
+/// | Orange  | xtd::drawing::apple_colors::orange  | 0xFFFD8008           |  @image html apple_colors_orange.png   |
+/// | Purple  | xtd::drawing::apple_colors::purple  | 0xFF800080           |  @image html apple_colors_purple.png   |
+/// | Red     | xtd::drawing::apple_colors::red     | 0xFFFB0207           |  @image html apple_colors_red.png      |
+/// | Yellow  | xtd::drawing::apple_colors::yellow  | 0xFFFFFF0A           |  @image html apple_colors_yellow.png   |
+/// | White   | xtd::drawing::apple_colors::white   | 0xFFFFFFFF           |  @image html apple_colors_white.png    |
 ///
 /// @subsection SubBsicColors Basic colors
 ///
@@ -29,22 +29,22 @@
 ///
 /// | Name    | Value                               | ARGB value (in hexa) | Color                            |
 /// | ------- | ----------------------------------- | -------------------- | -------------------------------- |
-/// | White   | xtd::drawing::basic_colors::white   | 0xFFFFFFFF           |  @image html colors_white.png    |
-/// | Silver  | xtd::drawing::basic_colors::silver  | 0xFFC0C0C0           |  @image html colors_silver.png   |
-/// | Gray    | xtd::drawing::basic_colors::gray    | 0xFF808080           |  @image html colors_gray.png     |
-/// | Black   | xtd::drawing::basic_colors::black   | 0xFF000000           |  @image html colors_black.png    |
-/// | Red     | xtd::drawing::basic_colors::red     | 0xFFFF0000           |  @image html colors_red.png      |
-/// | Maroon  | xtd::drawing::basic_colors::maroon  | 0xFF800000           |  @image html colors_maroon.png   |
-/// | Yellow  | xtd::drawing::basic_colors::yellow  | 0xFFFFFF00           |  @image html colors_yellow.png   |
-/// | Olive   | xtd::drawing::basic_colors::olive   | 0xFF808000           |  @image html colors_olive.png    |
-/// | Lime    | xtd::drawing::basic_colors::lime    | 0xFF00FF00           |  @image html colors_lime.png     |
-/// | Green   | xtd::drawing::basic_colors::green   | 0xFF008000           |  @image html colors_green.png    |
-/// | Aqua    | xtd::drawing::basic_colors::aqua    | 0xFF00FFFF           |  @image html colors_aqua.png     |
-/// | Teal    | xtd::drawing::basic_colors::teal    | 0xFF008080           |  @image html colors_teal.png     |
-/// | Blue    | xtd::drawing::basic_colors::blue    | 0xFF0000FF           |  @image html colors_blue.png     |
-/// | Navy    | xtd::drawing::basic_colors::navy    | 0xFF000080           |  @image html colors_navy.png     |
-/// | Fuchsia | xtd::drawing::basic_colors::fuchsia | 0xFFFF00FF           |  @image html colors_fuchsia.png  |
-/// | Purple  | xtd::drawing::basic_colors::purple  | 0xFF800080           |  @image html colors_purple.png   |
+/// | White   | xtd::drawing::basic_colors::white   | 0xFFFFFFFF           |  @image html colors_white.png    |
+/// | Silver  | xtd::drawing::basic_colors::silver  | 0xFFC0C0C0           |  @image html colors_silver.png   |
+/// | Gray    | xtd::drawing::basic_colors::gray    | 0xFF808080           |  @image html colors_gray.png     |
+/// | Black   | xtd::drawing::basic_colors::black   | 0xFF000000           |  @image html colors_black.png    |
+/// | Red     | xtd::drawing::basic_colors::red     | 0xFFFF0000           |  @image html colors_red.png      |
+/// | Maroon  | xtd::drawing::basic_colors::maroon  | 0xFF800000           |  @image html colors_maroon.png   |
+/// | Yellow  | xtd::drawing::basic_colors::yellow  | 0xFFFFFF00           |  @image html colors_yellow.png   |
+/// | Olive   | xtd::drawing::basic_colors::olive   | 0xFF808000           |  @image html colors_olive.png    |
+/// | Lime    | xtd::drawing::basic_colors::lime    | 0xFF00FF00           |  @image html colors_lime.png     |
+/// | Green   | xtd::drawing::basic_colors::green   | 0xFF008000           |  @image html colors_green.png    |
+/// | Aqua    | xtd::drawing::basic_colors::aqua    | 0xFF00FFFF           |  @image html colors_aqua.png     |
+/// | Teal    | xtd::drawing::basic_colors::teal    | 0xFF008080           |  @image html colors_teal.png     |
+/// | Blue    | xtd::drawing::basic_colors::blue    | 0xFF0000FF           |  @image html colors_blue.png     |
+/// | Navy    | xtd::drawing::basic_colors::navy    | 0xFF000080           |  @image html colors_navy.png     |
+/// | Fuchsia | xtd::drawing::basic_colors::fuchsia | 0xFFFF00FF           |  @image html colors_fuchsia.png  |
+/// | Purple  | xtd::drawing::basic_colors::purple  | 0xFF800080           |  @image html colors_purple.png   |
 ///
 /// @section ExtendedColors Extended colors
 ///
@@ -54,21 +54,21 @@
 ///
 /// | Name             | Value                                       | ARGB value (in hexa) | Color                                     |
 /// | ---------------- | ------------------------------------------- | -------------------- | ----------------------------------------- |
-/// | Midnight Blue    | xtd::drawing::blue_colors::midnight_blue    | 0xFF191970           |  @image html colors_midnight_blue.png     |
-/// | Navy             | xtd::drawing::blue_colors::navy             | 0xFF000080           |  @image html colors_navy.png              |
-/// | Dark Blue        | xtd::drawing::blue_colors::dark_blue        | 0xFF00008B           |  @image html colors_dark_blue.png         |
-/// | Medium Blue      | xtd::drawing::blue_colors::medium_blue      | 0xFF0000CD           |  @image html colors_medium_blue.png       |
-/// | Blue             | xtd::drawing::blue_colors::blue             | 0xFF0000FF           |  @image html colors_blue.png              |
-/// | Royal Blue       | xtd::drawing::blue_colors::royal_blue       | 0xFF4169E1           |  @image html colors_royal_blue.png        |
-/// | Steel Blue       | xtd::drawing::blue_colors::steel_blue       | 0xFF4682B4           |  @image html colors_steel_blue.png        |
-/// | Dodger Blue      | xtd::drawing::blue_colors::dodger_blue      | 0xFF1E90FF           |  @image html colors_dodger_blue.png       |
-/// | Deep Sky Blue    | xtd::drawing::blue_colors::deep_sky_blue    | 0xFF00BFFF           |  @image html colors_deep_sky_blue.png     |
-/// | Cornflower Blue  | xtd::drawing::blue_colors::cornflower_blue  | 0xFF6495ED           |  @image html colors_cornflower_blue.png   |
-/// | Sky Blue         | xtd::drawing::blue_colors::sky_blue         | 0xFF87CEEB           |  @image html colors_sky_blue.png          |
-/// | Light Sky Blue   | xtd::drawing::blue_colors::light_sky_blue   | 0xFF87CEFA           |  @image html colors_light_sky_blue.png    |
-/// | Light Steel Blue | xtd::drawing::blue_colors::light_steel_blue | 0xFFB0C4DE           |  @image html colors_light_steel_blue.png  |
-/// | Light Blue       | xtd::drawing::blue_colors::light_blue       | 0xFFADD8E6           |  @image html colors_light_blue.png        |
-/// | Powder Blue      | xtd::drawing::blue_colors::powder_blue      | 0xFFB0E0E6           |  @image html colors_powder_blue.png       |
+/// | Midnight Blue    | xtd::drawing::blue_colors::midnight_blue    | 0xFF191970           |  @image html colors_midnight_blue.png     |
+/// | Navy             | xtd::drawing::blue_colors::navy             | 0xFF000080           |  @image html colors_navy.png              |
+/// | Dark Blue        | xtd::drawing::blue_colors::dark_blue        | 0xFF00008B           |  @image html colors_dark_blue.png         |
+/// | Medium Blue      | xtd::drawing::blue_colors::medium_blue      | 0xFF0000CD           |  @image html colors_medium_blue.png       |
+/// | Blue             | xtd::drawing::blue_colors::blue             | 0xFF0000FF           |  @image html colors_blue.png              |
+/// | Royal Blue       | xtd::drawing::blue_colors::royal_blue       | 0xFF4169E1           |  @image html colors_royal_blue.png        |
+/// | Steel Blue       | xtd::drawing::blue_colors::steel_blue       | 0xFF4682B4           |  @image html colors_steel_blue.png        |
+/// | Dodger Blue      | xtd::drawing::blue_colors::dodger_blue      | 0xFF1E90FF           |  @image html colors_dodger_blue.png       |
+/// | Deep Sky Blue    | xtd::drawing::blue_colors::deep_sky_blue    | 0xFF00BFFF           |  @image html colors_deep_sky_blue.png     |
+/// | Cornflower Blue  | xtd::drawing::blue_colors::cornflower_blue  | 0xFF6495ED           |  @image html colors_cornflower_blue.png   |
+/// | Sky Blue         | xtd::drawing::blue_colors::sky_blue         | 0xFF87CEEB           |  @image html colors_sky_blue.png          |
+/// | Light Sky Blue   | xtd::drawing::blue_colors::light_sky_blue   | 0xFF87CEFA           |  @image html colors_light_sky_blue.png    |
+/// | Light Steel Blue | xtd::drawing::blue_colors::light_steel_blue | 0xFFB0C4DE           |  @image html colors_light_steel_blue.png  |
+/// | Light Blue       | xtd::drawing::blue_colors::light_blue       | 0xFFADD8E6           |  @image html colors_light_blue.png        |
+/// | Powder Blue      | xtd::drawing::blue_colors::powder_blue      | 0xFFB0E0E6           |  @image html colors_powder_blue.png       |
 ///
 /// @subsection BrownColors Brown colors
 ///
@@ -76,23 +76,23 @@
 ///
 /// | Name            | Value                                       | ARGB value (in hexa) | Color                                    |
 /// | --------------- | ------------------------------------------- | -------------------- | ---------------------------------------- |
-/// | Maroon          | xtd::drawing::brown_colors::maroon          | 0xFF800000           |  @image html colors_maroon.png           |
-/// | Brown           | xtd::drawing::brown_colors::brown           | 0xFFA52A2A           |  @image html colors_brown.png            |
-/// | Saddle Brown    | xtd::drawing::brown_colors::saddle_brown    | 0xFF8B4513           |  @image html colors_saddle_brown.png     |
-/// | Sienna          | xtd::drawing::brown_colors::sienna          | 0xFFA0522D           |  @image html colors_sienna.png           |
-/// | Chocolate       | xtd::drawing::brown_colors::chocolate       | 0xFFD2691E           |  @image html colors_chocolate.png        |
-/// | Dark Goldenrod  | xtd::drawing::brown_colors::dark_goldenrod  | 0xFFB8860B           |  @image html colors_dark_goldenrod.png   |
-/// | Peru            | xtd::drawing::brown_colors::peru            | 0xFFCD853F           |  @image html colors_peru.png             |
-/// | Rosy Brown      | xtd::drawing::brown_colors::rosy_brown      | 0xFFBC8F8F           |  @image html colors_rosy_brown.png       |
-/// | Goldenrod       | xtd::drawing::brown_colors::goldenrod       | 0xFFDAA520           |  @image html colors_goldenrod.png        |
-/// | Sandy Brown     | xtd::drawing::brown_colors::sandy_brown     | 0xFFF4A460           |  @image html colors_sandy_brown.png      |
-/// | Tan             | xtd::drawing::brown_colors::tan             | 0xFFD2B48C           |  @image html colors_tan.png              |
-/// | Burly Wood      | xtd::drawing::brown_colors::burly_wood      | 0xFFDEB887           |  @image html colors_burly_wood.png       |
-/// | Wheat           | xtd::drawing::brown_colors::wheat           | 0xFFF5DEB3           |  @image html colors_wheat.png            |
-/// | Navajo White    | xtd::drawing::brown_colors::navajo_white    | 0xFFFFDEAD           |  @image html colors_navajo_white.png     |
-/// | Bisque          | xtd::drawing::brown_colors::bisque          | 0xFFFFE4C4           |  @image html colors_bisque.png           |
-/// | Blanched Almond | xtd::drawing::brown_colors::blanched_almond | 0xFFFFEBCD           |  @image html colors_blanched_almond.png  |
-/// | Cornsilk        | xtd::drawing::brown_colors::cornsilk        | 0xFFFFF8DC           |  @image html colors_cornsilk.png         |
+/// | Maroon          | xtd::drawing::brown_colors::maroon          | 0xFF800000           |  @image html colors_maroon.png           |
+/// | Brown           | xtd::drawing::brown_colors::brown           | 0xFFA52A2A           |  @image html colors_brown.png            |
+/// | Saddle Brown    | xtd::drawing::brown_colors::saddle_brown    | 0xFF8B4513           |  @image html colors_saddle_brown.png     |
+/// | Sienna          | xtd::drawing::brown_colors::sienna          | 0xFFA0522D           |  @image html colors_sienna.png           |
+/// | Chocolate       | xtd::drawing::brown_colors::chocolate       | 0xFFD2691E           |  @image html colors_chocolate.png        |
+/// | Dark Goldenrod  | xtd::drawing::brown_colors::dark_goldenrod  | 0xFFB8860B           |  @image html colors_dark_goldenrod.png   |
+/// | Peru            | xtd::drawing::brown_colors::peru            | 0xFFCD853F           |  @image html colors_peru.png             |
+/// | Rosy Brown      | xtd::drawing::brown_colors::rosy_brown      | 0xFFBC8F8F           |  @image html colors_rosy_brown.png       |
+/// | Goldenrod       | xtd::drawing::brown_colors::goldenrod       | 0xFFDAA520           |  @image html colors_goldenrod.png        |
+/// | Sandy Brown     | xtd::drawing::brown_colors::sandy_brown     | 0xFFF4A460           |  @image html colors_sandy_brown.png      |
+/// | Tan             | xtd::drawing::brown_colors::tan             | 0xFFD2B48C           |  @image html colors_tan.png              |
+/// | Burly Wood      | xtd::drawing::brown_colors::burly_wood      | 0xFFDEB887           |  @image html colors_burly_wood.png       |
+/// | Wheat           | xtd::drawing::brown_colors::wheat           | 0xFFF5DEB3           |  @image html colors_wheat.png            |
+/// | Navajo White    | xtd::drawing::brown_colors::navajo_white    | 0xFFFFDEAD           |  @image html colors_navajo_white.png     |
+/// | Bisque          | xtd::drawing::brown_colors::bisque          | 0xFFFFE4C4           |  @image html colors_bisque.png           |
+/// | Blanched Almond | xtd::drawing::brown_colors::blanched_almond | 0xFFFFEBCD           |  @image html colors_blanched_almond.png  |
+/// | Cornsilk        | xtd::drawing::brown_colors::cornsilk        | 0xFFFFF8DC           |  @image html colors_cornsilk.png         |
 ///
 /// @subsection CrayonsColors Crayons colors
 ///
@@ -100,54 +100,54 @@
 ///
 /// | Name       | Value                                   | ARGB value (in hexa) | Color                                      |
 /// | ---------- | --------------------------------------- | -------------------- | ------------------------------------------ |
-/// | Licorice   | xtd::drawing::crayon_colors::licorice   | 0xFF000000           |  @image html crayon_colors_licorice.png    |
-/// | Lead       | xtd::drawing::crayon_colors::lead       | 0xFF191919           |  @image html crayon_colors_lead.png        |
-/// | Tungsten   | xtd::drawing::crayon_colors::tungsten   | 0xFF333333           |  @image html crayon_colors_tungsten.png    |
-/// | Iron       | xtd::drawing::crayon_colors::iron       | 0xFF4C4C4C           |  @image html crayon_colors_iron.png        |
-/// | Steel      | xtd::drawing::crayon_colors::steel      | 0xFF666666           |  @image html crayon_colors_steel.png       |
-/// | Tin        | xtd::drawing::crayon_colors::tin        | 0xFF7F7F7F           |  @image html crayon_colors_tin.png         |
-/// | Nickel     | xtd::drawing::crayon_colors::nickel     | 0xFF808080           |  @image html crayon_colors_nickel.png      |
+/// | Licorice   | xtd::drawing::crayon_colors::licorice   | 0xFF000000           |  @image html crayon_colors_licorice.png    |
+/// | Lead       | xtd::drawing::crayon_colors::lead       | 0xFF191919           |  @image html crayon_colors_lead.png        |
+/// | Tungsten   | xtd::drawing::crayon_colors::tungsten   | 0xFF333333           |  @image html crayon_colors_tungsten.png    |
+/// | Iron       | xtd::drawing::crayon_colors::iron       | 0xFF4C4C4C           |  @image html crayon_colors_iron.png        |
+/// | Steel      | xtd::drawing::crayon_colors::steel      | 0xFF666666           |  @image html crayon_colors_steel.png       |
+/// | Tin        | xtd::drawing::crayon_colors::tin        | 0xFF7F7F7F           |  @image html crayon_colors_tin.png         |
+/// | Nickel     | xtd::drawing::crayon_colors::nickel     | 0xFF808080           |  @image html crayon_colors_nickel.png      |
 /// | Aluminium  | xtd::drawing::crayon_colors::aluminium  | 0xFF999999           |  @image html crayon_colors_aluminium.png   |
-/// | Magnesium  | xtd::drawing::crayon_colors::magnesium  | 0xFFB3B3B3           |  @image html crayon_colors_magnesium.png   |
-/// | Silver     | xtd::drawing::crayon_colors::silver     | 0xFFCCCCCC           |  @image html crayon_colors_silver.png      |
-/// | Mercury    | xtd::drawing::crayon_colors::mercury    | 0xFFE6E6E6           |  @image html crayon_colors_mercury.png     |
-/// | Snow       | xtd::drawing::crayon_colors::snow       | 0xFFFFFFFF           |  @image html crayon_colors_snow.png        |
-/// | Cayenne    | xtd::drawing::crayon_colors::cayenne    | 0xFF800002           |  @image html crayon_colors_cayenne.png     |
-/// | Mocha      | xtd::drawing::crayon_colors::mocha      | 0xFF804003           |  @image html crayon_colors_mocha.png       |
-/// | Asparagus  | xtd::drawing::crayon_colors::asparagus  | 0xFF808004           |  @image html crayon_colors_asparagus.png   |
-/// | Fern       | xtd::drawing::crayon_colors::fern       | 0xFF408002           |  @image html crayon_colors_fern.png        |
-/// | Clover     | xtd::drawing::crayon_colors::clover     | 0xFF118002           |  @image html crayon_colors_clover.png      |
-/// | Moss       | xtd::drawing::crayon_colors::moss       | 0xFF118040           |  @image html crayon_colors_moss.png        |
-/// | Teal       | xtd::drawing::crayon_colors::teal       | 0xFF108080           |  @image html crayon_colors_teal.png        |
-/// | Ocean      | xtd::drawing::crayon_colors::ocean      | 0xFF074080           |  @image html crayon_colors_ocean.png       |
-/// | Midnight   | xtd::drawing::crayon_colors::midnight   | 0xFF000080           |  @image html crayon_colors_midnight.png    |
-/// | Eggplant   | xtd::drawing::crayon_colors::eggplant   | 0xFF400080           |  @image html crayon_colors_eggplant.png    |
-/// | Plum       | xtd::drawing::crayon_colors::plum       | 0xFF800080           |  @image html crayon_colors_plum.png        |
-/// | Maroon     | xtd::drawing::crayon_colors::maroon     | 0xFF800040           |  @image html crayon_colors_maroon.png      |
-/// | Maraschino | xtd::drawing::crayon_colors::maraschino | 0xFFFB0207           |  @image html crayon_colors_maraschino.png  |
-/// | Tangerine  | xtd::drawing::crayon_colors::tangerine  | 0xFFFD8008           |  @image html crayon_colors_tangerine.png   |
-/// | Lemon      | xtd::drawing::crayon_colors::lemon      | 0xFFFFFF0A           |  @image html crayon_colors_lemon.png       |
-/// | Lime       | xtd::drawing::crayon_colors::lime       | 0xFF80FF08           |  @image html crayon_colors_lime.png        |
-/// | Spring     | xtd::drawing::crayon_colors::spring     | 0xFF21FF06           |  @image html crayon_colors_spring.png      |
-/// | Sea foam   | xtd::drawing::crayon_colors::sea_foam   | 0xFF21FF80           |  @image html crayon_colors_sea_foam.png    |
-/// | Turquoise  | xtd::drawing::crayon_colors::turquoise  | 0xFF21FFFF           |  @image html crayon_colors_turquoise.png   |
-/// | Aqua       | xtd::drawing::crayon_colors::aqua       | 0xFF0F80FF           |  @image html crayon_colors_aqua.png        |
-/// | Blueberry  | xtd::drawing::crayon_colors::blueberry  | 0xFF0000FF           |  @image html crayon_colors_blueberry.png   |
-/// | Grape      | xtd::drawing::crayon_colors::grape      | 0xFF8000FF           |  @image html crayon_colors_grape.png       |
-/// | Magenta    | xtd::drawing::crayon_colors::magenta    | 0xFFFB02FF           |  @image html crayon_colors_magenta.png     |
-/// | Strawberry | xtd::drawing::crayon_colors::strawberry | 0xFFFB0280           |  @image html crayon_colors_strawberry.png  |
-/// | Salmon     | xtd::drawing::crayon_colors::salmon     | 0xFFFC6666           |  @image html crayon_colors_salmon.png      |
-/// | Cantaloupe | xtd::drawing::crayon_colors::cantaloupe | 0xFFFECC66           |  @image html crayon_colors_cantaloupe.png  |
-/// | Banana     | xtd::drawing::crayon_colors::banana     | 0xFFFFFF66           |  @image html crayon_colors_banana.png      |
-/// | Honeydew   | xtd::drawing::crayon_colors::honeydew   | 0xFFCCFF66           |  @image html crayon_colors_honeydew.png    |
-/// | Flora      | xtd::drawing::crayon_colors::flora      | 0xFF66FF66           |  @image html crayon_colors_flora.png       |
-/// | Spindrift  | xtd::drawing::crayon_colors::spindrift  | 0xFF66FFCC           |  @image html crayon_colors_spindrift.png   |
-/// | Ice        | xtd::drawing::crayon_colors::ice        | 0xFF66FFFF           |  @image html crayon_colors_ice.png         |
-/// | Sky        | xtd::drawing::crayon_colors::sky        | 0xFF66CCFF           |  @image html crayon_colors_sky.png         |
-/// | Orchid     | xtd::drawing::crayon_colors::orchid     | 0xFF6666FF           |  @image html crayon_colors_orchid.png      |
-/// | Lavendar   | xtd::drawing::crayon_colors::lavendar   | 0xFFCC66FF           |  @image html crayon_colors_lavendar.png    |
-/// | Bubblegum  | xtd::drawing::crayon_colors::bubblegum  | 0xFFFC66FF           |  @image html crayon_colors_bubblegum.png   |
-/// | Carnation  | xtd::drawing::crayon_colors::carnation  | 0xFFFC6FCF           |  @image html crayon_colors_carnation.png   |
+/// | Magnesium  | xtd::drawing::crayon_colors::magnesium  | 0xFFB3B3B3           |  @image html crayon_colors_magnesium.png   |
+/// | Silver     | xtd::drawing::crayon_colors::silver     | 0xFFCCCCCC           |  @image html crayon_colors_silver.png      |
+/// | Mercury    | xtd::drawing::crayon_colors::mercury    | 0xFFE6E6E6           |  @image html crayon_colors_mercury.png     |
+/// | Snow       | xtd::drawing::crayon_colors::snow       | 0xFFFFFFFF           |  @image html crayon_colors_snow.png        |
+/// | Cayenne    | xtd::drawing::crayon_colors::cayenne    | 0xFF800002           |  @image html crayon_colors_cayenne.png     |
+/// | Mocha      | xtd::drawing::crayon_colors::mocha      | 0xFF804003           |  @image html crayon_colors_mocha.png       |
+/// | Asparagus  | xtd::drawing::crayon_colors::asparagus  | 0xFF808004           |  @image html crayon_colors_asparagus.png   |
+/// | Fern       | xtd::drawing::crayon_colors::fern       | 0xFF408002           |  @image html crayon_colors_fern.png        |
+/// | Clover     | xtd::drawing::crayon_colors::clover     | 0xFF118002           |  @image html crayon_colors_clover.png      |
+/// | Moss       | xtd::drawing::crayon_colors::moss       | 0xFF118040           |  @image html crayon_colors_moss.png        |
+/// | Teal       | xtd::drawing::crayon_colors::teal       | 0xFF108080           |  @image html crayon_colors_teal.png        |
+/// | Ocean      | xtd::drawing::crayon_colors::ocean      | 0xFF074080           |  @image html crayon_colors_ocean.png       |
+/// | Midnight   | xtd::drawing::crayon_colors::midnight   | 0xFF000080           |  @image html crayon_colors_midnight.png    |
+/// | Eggplant   | xtd::drawing::crayon_colors::eggplant   | 0xFF400080           |  @image html crayon_colors_eggplant.png    |
+/// | Plum       | xtd::drawing::crayon_colors::plum       | 0xFF800080           |  @image html crayon_colors_plum.png        |
+/// | Maroon     | xtd::drawing::crayon_colors::maroon     | 0xFF800040           |  @image html crayon_colors_maroon.png      |
+/// | Maraschino | xtd::drawing::crayon_colors::maraschino | 0xFFFB0207           |  @image html crayon_colors_maraschino.png  |
+/// | Tangerine  | xtd::drawing::crayon_colors::tangerine  | 0xFFFD8008           |  @image html crayon_colors_tangerine.png   |
+/// | Lemon      | xtd::drawing::crayon_colors::lemon      | 0xFFFFFF0A           |  @image html crayon_colors_lemon.png       |
+/// | Lime       | xtd::drawing::crayon_colors::lime       | 0xFF80FF08           |  @image html crayon_colors_lime.png        |
+/// | Spring     | xtd::drawing::crayon_colors::spring     | 0xFF21FF06           |  @image html crayon_colors_spring.png      |
+/// | Sea foam   | xtd::drawing::crayon_colors::sea_foam   | 0xFF21FF80           |  @image html crayon_colors_sea_foam.png    |
+/// | Turquoise  | xtd::drawing::crayon_colors::turquoise  | 0xFF21FFFF           |  @image html crayon_colors_turquoise.png   |
+/// | Aqua       | xtd::drawing::crayon_colors::aqua       | 0xFF0F80FF           |  @image html crayon_colors_aqua.png        |
+/// | Blueberry  | xtd::drawing::crayon_colors::blueberry  | 0xFF0000FF           |  @image html crayon_colors_blueberry.png   |
+/// | Grape      | xtd::drawing::crayon_colors::grape      | 0xFF8000FF           |  @image html crayon_colors_grape.png       |
+/// | Magenta    | xtd::drawing::crayon_colors::magenta    | 0xFFFB02FF           |  @image html crayon_colors_magenta.png     |
+/// | Strawberry | xtd::drawing::crayon_colors::strawberry | 0xFFFB0280           |  @image html crayon_colors_strawberry.png  |
+/// | Salmon     | xtd::drawing::crayon_colors::salmon     | 0xFFFC6666           |  @image html crayon_colors_salmon.png      |
+/// | Cantaloupe | xtd::drawing::crayon_colors::cantaloupe | 0xFFFECC66           |  @image html crayon_colors_cantaloupe.png  |
+/// | Banana     | xtd::drawing::crayon_colors::banana     | 0xFFFFFF66           |  @image html crayon_colors_banana.png      |
+/// | Honeydew   | xtd::drawing::crayon_colors::honeydew   | 0xFFCCFF66           |  @image html crayon_colors_honeydew.png    |
+/// | Flora      | xtd::drawing::crayon_colors::flora      | 0xFF66FF66           |  @image html crayon_colors_flora.png       |
+/// | Spindrift  | xtd::drawing::crayon_colors::spindrift  | 0xFF66FFCC           |  @image html crayon_colors_spindrift.png   |
+/// | Ice        | xtd::drawing::crayon_colors::ice        | 0xFF66FFFF           |  @image html crayon_colors_ice.png         |
+/// | Sky        | xtd::drawing::crayon_colors::sky        | 0xFF66CCFF           |  @image html crayon_colors_sky.png         |
+/// | Orchid     | xtd::drawing::crayon_colors::orchid     | 0xFF6666FF           |  @image html crayon_colors_orchid.png      |
+/// | Lavendar   | xtd::drawing::crayon_colors::lavendar   | 0xFFCC66FF           |  @image html crayon_colors_lavendar.png    |
+/// | Bubblegum  | xtd::drawing::crayon_colors::bubblegum  | 0xFFFC66FF           |  @image html crayon_colors_bubblegum.png   |
+/// | Carnation  | xtd::drawing::crayon_colors::carnation  | 0xFFFC6FCF           |  @image html crayon_colors_carnation.png   |
 ///
 /// @subsection CyanColors Cyan colors
 ///
@@ -155,18 +155,18 @@
 ///
 /// | Name             | Value                                       | ARGB value (in hexa) | Color                                     |
 /// | ---------------- | ------------------------------------------- | -------------------- | ----------------------------------------- |
-/// | Teal             | xtd::drawing::cyan_colors::teal             | 0xFF008080           |  @image html colors_teal.png              |
-/// | Dark Cyan        | xtd::drawing::cyan_colors::dark_cyan        | 0xFF008B8B           |  @image html colors_dark_cyan.png         |
-/// | Light Sea Green  | xtd::drawing::cyan_colors::light_sea_green  | 0xFF20B2AA           |  @image html colors_light_sea_green.png   |
-/// | Cadet Blue       | xtd::drawing::cyan_colors::cadet_blue       | 0xFF5F9EA0           |  @image html colors_cadet_blue.png        |
-/// | Dark Turquoise   | xtd::drawing::cyan_colors::dark_turquoise   | 0xFF00CED1           |  @image html colors_dark_turquoise.png    |
-/// | Medium Turquoise | xtd::drawing::cyan_colors::medium_turquoise | 0xFF48D1CC           |  @image html colors_medium_turquoise.png  |
-/// | Turquoise        | xtd::drawing::cyan_colors::turquoise        | 0xFF40E0D0           |  @image html colors_turquoise.png         |
-/// | Aqua             | xtd::drawing::cyan_colors::aqua             | 0xFF00FFFF           |  @image html colors_aqua.png              |
-/// | Cyan             | xtd::drawing::cyan_colors::cyan             | 0xFF00FFFF           |  @image html colors_cyan.png              |
-/// | Aquamarine       | xtd::drawing::cyan_colors::aquamarine       | 0xFF7FFFD4           |  @image html colors_aquamarine.png        |
-/// | Pale Turquoise   | xtd::drawing::cyan_colors::pale_turquoise   | 0xFFAFEEEE           |  @image html colors_pale_turquoise.png    |
-/// | Light Cyan       | xtd::drawing::cyan_colors::light_cyan       | 0xFFE0FFFF           |  @image html colors_light_cyan.png        |
+/// | Teal             | xtd::drawing::cyan_colors::teal             | 0xFF008080           |  @image html colors_teal.png              |
+/// | Dark Cyan        | xtd::drawing::cyan_colors::dark_cyan        | 0xFF008B8B           |  @image html colors_dark_cyan.png         |
+/// | Light Sea Green  | xtd::drawing::cyan_colors::light_sea_green  | 0xFF20B2AA           |  @image html colors_light_sea_green.png   |
+/// | Cadet Blue       | xtd::drawing::cyan_colors::cadet_blue       | 0xFF5F9EA0           |  @image html colors_cadet_blue.png        |
+/// | Dark Turquoise   | xtd::drawing::cyan_colors::dark_turquoise   | 0xFF00CED1           |  @image html colors_dark_turquoise.png    |
+/// | Medium Turquoise | xtd::drawing::cyan_colors::medium_turquoise | 0xFF48D1CC           |  @image html colors_medium_turquoise.png  |
+/// | Turquoise        | xtd::drawing::cyan_colors::turquoise        | 0xFF40E0D0           |  @image html colors_turquoise.png         |
+/// | Aqua             | xtd::drawing::cyan_colors::aqua             | 0xFF00FFFF           |  @image html colors_aqua.png              |
+/// | Cyan             | xtd::drawing::cyan_colors::cyan             | 0xFF00FFFF           |  @image html colors_cyan.png              |
+/// | Aquamarine       | xtd::drawing::cyan_colors::aquamarine       | 0xFF7FFFD4           |  @image html colors_aquamarine.png        |
+/// | Pale Turquoise   | xtd::drawing::cyan_colors::pale_turquoise   | 0xFFAFEEEE           |  @image html colors_pale_turquoise.png    |
+/// | Light Cyan       | xtd::drawing::cyan_colors::light_cyan       | 0xFFE0FFFF           |  @image html colors_light_cyan.png        |
 ///
 /// @subsection GrayColors Gray colors
 ///
@@ -174,16 +174,16 @@
 ///
 /// | Name             | Value                                       | ARGB value (in hexa) | Color                                     |
 /// | ---------------- | ------------------------------------------- | -------------------- | ----------------------------------------- |
-/// | Black            | xtd::drawing::gray_colors::black            | 0xFF000000           |  @image html colors_black.png             |
-/// | Dark Slate Gray  | xtd::drawing::gray_colors::dark_slate_gray  | 0xFF2F4F4F           |  @image html colors_dark_slate_gray.png   |
-/// | Dim Gray         | xtd::drawing::gray_colors::dim_gray         | 0xFF696969           |  @image html colors_dim_gray.png          |
-/// | Slate Gray       | xtd::drawing::gray_colors::slate_gray       | 0xFF708090           |  @image html colors_slate_gray.png        |
-/// | Gray             | xtd::drawing::gray_colors::gray             | 0xFF808080           |  @image html colors_gray.png              |
-/// | Light Slate Gray | xtd::drawing::gray_colors::light_slate_gray | 0xFF778899           |  @image html colors_light_slate_gray.png  |
-/// | Dark Gray        | xtd::drawing::gray_colors::dark_gray        | 0xFFA9A9A9           |  @image html colors_dark_gray.png         |
-/// | Silver           | xtd::drawing::gray_colors::silver           | 0xFFC0C0C0           |  @image html colors_silver.png            |
-/// | Light Gray       | xtd::drawing::gray_colors::light_gray       | 0xFFD3D3D3           |  @image html colors_light_gray.png        |
-/// | Gainsboro        | xtd::drawing::gray_colors::gainsboro        | 0xFFDCDCDC           |  @image html colors_gainsboro.png         |
+/// | Black            | xtd::drawing::gray_colors::black            | 0xFF000000           |  @image html colors_black.png             |
+/// | Dark Slate Gray  | xtd::drawing::gray_colors::dark_slate_gray  | 0xFF2F4F4F           |  @image html colors_dark_slate_gray.png   |
+/// | Dim Gray         | xtd::drawing::gray_colors::dim_gray         | 0xFF696969           |  @image html colors_dim_gray.png          |
+/// | Slate Gray       | xtd::drawing::gray_colors::slate_gray       | 0xFF708090           |  @image html colors_slate_gray.png        |
+/// | Gray             | xtd::drawing::gray_colors::gray             | 0xFF808080           |  @image html colors_gray.png              |
+/// | Light Slate Gray | xtd::drawing::gray_colors::light_slate_gray | 0xFF778899           |  @image html colors_light_slate_gray.png  |
+/// | Dark Gray        | xtd::drawing::gray_colors::dark_gray        | 0xFFA9A9A9           |  @image html colors_dark_gray.png         |
+/// | Silver           | xtd::drawing::gray_colors::silver           | 0xFFC0C0C0           |  @image html colors_silver.png            |
+/// | Light Gray       | xtd::drawing::gray_colors::light_gray       | 0xFFD3D3D3           |  @image html colors_light_gray.png        |
+/// | Gainsboro        | xtd::drawing::gray_colors::gainsboro        | 0xFFDCDCDC           |  @image html colors_gainsboro.png         |
 ///
 /// @subsection GreenColors Green colors
 ///
@@ -191,26 +191,26 @@
 ///
 /// | Name                | Value                                           | ARGB value (in hexa) | Color                                        |
 /// | ------------------- | ----------------------------------------------- | -------------------- | -------------------------------------------- |
-/// | Dark Green          | xtd::drawing::green_colors::dark_green          | 0xFF006400           |  @image html colors_dark_green.png           |
-/// | Green               | xtd::drawing::green_colors::green               | 0xFF008000           |  @image html colors_green.png                |
-/// | Dark Olive Green    | xtd::drawing::green_colors::dark_olive_green    | 0xFF556B2F           |  @image html colors_dark_olive_green.png     |
-/// | Forest Green        | xtd::drawing::green_colors::forest_green        | 0xFF228B22           |  @image html colors_forest_green.png         |
-/// | Sea Green           | xtd::drawing::green_colors::sea_green           | 0xFF2E8B57           |  @image html colors_sea_green.png            |
-/// | Olive               | xtd::drawing::green_colors::olive               | 0xFF808000           |  @image html colors_olive.png                |
-/// | Olive Drab          | xtd::drawing::green_colors::olive_drab          | 0xFF6B8E23           |  @image html colors_olive_drab.png           |
-/// | Medium Sea Green    | xtd::drawing::green_colors::medium_sea_green    | 0xFF3CB371           |  @image html colors_medium_sea_green.png     |
-/// | Lime Green          | xtd::drawing::green_colors::lime_green          | 0xFF32CD32           |  @image html colors_lime_green.png           |
-/// | Lime                | xtd::drawing::green_colors::lime                | 0xFF00FF00           |  @image html colors_lime.png                 |
-/// | Spring Green        | xtd::drawing::green_colors::spring_green        | 0xFF00FF7F           |  @image html colors_spring_green.png         |
-/// | Medium Spring Green | xtd::drawing::green_colors::medium_spring_green | 0xFF00FA9A           |  @image html colors_medium_spring_green.png  |
-/// | Dark Sea Green      | xtd::drawing::green_colors::dark_sea_green      | 0xFF8FBC8B           |  @image html colors_dark_sea_green.png       |
-/// | Medium Aquamarine   | xtd::drawing::green_colors::medium_aquamarine   | 0xFF66CDAA           |  @image html colors_medium_aquamarine.png    |
-/// | Yellow Green        | xtd::drawing::green_colors::yellow_green        | 0xFF9ACD32           |  @image html colors_yellow_green.png         |
-/// | Lawn Green          | xtd::drawing::green_colors::lawn_green          | 0xFF7CFC00           |  @image html colors_lawn_green.png           |
-/// | Chartreuse          | xtd::drawing::green_colors::chartreuse          | 0xFF7FFF00           |  @image html colors_chartreuse.png           |
-/// | Light Green         | xtd::drawing::green_colors::light_green         | 0xFF90EE90           |  @image html colors_light_green.png          |
-/// | Green Yellow        | xtd::drawing::green_colors::green_yellow        | 0xFFADFF2F           |  @image html colors_green_yellow.png         |
-/// | Pale Green          | xtd::drawing::green_colors::pale_green          | 0xFF98FB98           |  @image html colors_pale_green.png           |
+/// | Dark Green          | xtd::drawing::green_colors::dark_green          | 0xFF006400           |  @image html colors_dark_green.png           |
+/// | Green               | xtd::drawing::green_colors::green               | 0xFF008000           |  @image html colors_green.png                |
+/// | Dark Olive Green    | xtd::drawing::green_colors::dark_olive_green    | 0xFF556B2F           |  @image html colors_dark_olive_green.png     |
+/// | Forest Green        | xtd::drawing::green_colors::forest_green        | 0xFF228B22           |  @image html colors_forest_green.png         |
+/// | Sea Green           | xtd::drawing::green_colors::sea_green           | 0xFF2E8B57           |  @image html colors_sea_green.png            |
+/// | Olive               | xtd::drawing::green_colors::olive               | 0xFF808000           |  @image html colors_olive.png                |
+/// | Olive Drab          | xtd::drawing::green_colors::olive_drab          | 0xFF6B8E23           |  @image html colors_olive_drab.png           |
+/// | Medium Sea Green    | xtd::drawing::green_colors::medium_sea_green    | 0xFF3CB371           |  @image html colors_medium_sea_green.png     |
+/// | Lime Green          | xtd::drawing::green_colors::lime_green          | 0xFF32CD32           |  @image html colors_lime_green.png           |
+/// | Lime                | xtd::drawing::green_colors::lime                | 0xFF00FF00           |  @image html colors_lime.png                 |
+/// | Spring Green        | xtd::drawing::green_colors::spring_green        | 0xFF00FF7F           |  @image html colors_spring_green.png         |
+/// | Medium Spring Green | xtd::drawing::green_colors::medium_spring_green | 0xFF00FA9A           |  @image html colors_medium_spring_green.png  |
+/// | Dark Sea Green      | xtd::drawing::green_colors::dark_sea_green      | 0xFF8FBC8B           |  @image html colors_dark_sea_green.png       |
+/// | Medium Aquamarine   | xtd::drawing::green_colors::medium_aquamarine   | 0xFF66CDAA           |  @image html colors_medium_aquamarine.png    |
+/// | Yellow Green        | xtd::drawing::green_colors::yellow_green        | 0xFF9ACD32           |  @image html colors_yellow_green.png         |
+/// | Lawn Green          | xtd::drawing::green_colors::lawn_green          | 0xFF7CFC00           |  @image html colors_lawn_green.png           |
+/// | Chartreuse          | xtd::drawing::green_colors::chartreuse          | 0xFF7FFF00           |  @image html colors_chartreuse.png           |
+/// | Light Green         | xtd::drawing::green_colors::light_green         | 0xFF90EE90           |  @image html colors_light_green.png          |
+/// | Green Yellow        | xtd::drawing::green_colors::green_yellow        | 0xFFADFF2F           |  @image html colors_green_yellow.png         |
+/// | Pale Green          | xtd::drawing::green_colors::pale_green          | 0xFF98FB98           |  @image html colors_pale_green.png           |
 ///
 /// @subsection OrangeColors Orange colors
 ///
@@ -218,11 +218,11 @@
 ///
 /// | Name        | Value                                    | ARGB value (in hexa) | Color                                |
 /// | ----------- | ---------------------------------------- | -------------------- | ------------------------------------ |
-/// | Orange Red  | xtd::drawing::orange_colors::orange_red  | 0xFFFF4500           |  @image html colors_orange_red.png   |
-/// | Tomato      | xtd::drawing::orange_colors::tomato      | 0xFFFF6347           |  @image html colors_tomato.png       |
-/// | Dark Orange | xtd::drawing::orange_colors::dark_orange | 0xFFFF8C00           |  @image html colors_dark_orange.png  |
-/// | Coral       | xtd::drawing::orange_colors::coral       | 0xFFFF7F50           |  @image html colors_coral.png        |
-/// | Orange      | xtd::drawing::orange_colors::orange      | 0xFFFFA500           |  @image html colors_orange.png       |
+/// | Orange Red  | xtd::drawing::orange_colors::orange_red  | 0xFFFF4500           |  @image html colors_orange_red.png   |
+/// | Tomato      | xtd::drawing::orange_colors::tomato      | 0xFFFF6347           |  @image html colors_tomato.png       |
+/// | Dark Orange | xtd::drawing::orange_colors::dark_orange | 0xFFFF8C00           |  @image html colors_dark_orange.png  |
+/// | Coral       | xtd::drawing::orange_colors::coral       | 0xFFFF7F50           |  @image html colors_coral.png        |
+/// | Orange      | xtd::drawing::orange_colors::orange      | 0xFFFFA500           |  @image html colors_orange.png       |
 ///
 /// @subsection PinkColors Pink colors
 ///
@@ -230,12 +230,12 @@
 ///
 /// | Name              | Value                                        | ARGB value (in hexa) | Color                                      |
 /// | ----------------- | -------------------------------------------- | -------------------- | ------------------------------------------ |
-/// | Medium Violet Red | xtd::drawing::pink_colors::medium_violet_red | 0xFFC71585           |  @image html colors_medium_violet_red.png  |
-/// | Deep Pink         | xtd::drawing::pink_colors::deep_pink         | 0xFFFF1493           |  @image html colors_deep_pink.png          |
-/// | Pale Violet Red   | xtd::drawing::pink_colors::pale_violet_red   | 0xFFDB7093           |  @image html colors_pale_violet_red.png    |
-/// | Hot Pink          | xtd::drawing::pink_colors::hot_pink          | 0xFFFF69B4           |  @image html colors_hot_pink.png           |
-/// | Light Pink        | xtd::drawing::pink_colors::light_pink        | 0xFFFFB6C1           |  @image html colors_light_pink.png         |
-/// | Pink              | xtd::drawing::pink_colors::pink              | 0xFFFFC0CB           |  @image html colors_pink.png               |
+/// | Medium Violet Red | xtd::drawing::pink_colors::medium_violet_red | 0xFFC71585           |  @image html colors_medium_violet_red.png  |
+/// | Deep Pink         | xtd::drawing::pink_colors::deep_pink         | 0xFFFF1493           |  @image html colors_deep_pink.png          |
+/// | Pale Violet Red   | xtd::drawing::pink_colors::pale_violet_red   | 0xFFDB7093           |  @image html colors_pale_violet_red.png    |
+/// | Hot Pink          | xtd::drawing::pink_colors::hot_pink          | 0xFFFF69B4           |  @image html colors_hot_pink.png           |
+/// | Light Pink        | xtd::drawing::pink_colors::light_pink        | 0xFFFFB6C1           |  @image html colors_light_pink.png         |
+/// | Pink              | xtd::drawing::pink_colors::pink              | 0xFFFFC0CB           |  @image html colors_pink.png               |
 ///
 /// @subsection PurpleColors Purple colors
 ///
@@ -243,25 +243,25 @@
 ///
 /// | Name              | Value                                        | ARGB value (in hexa) | Color                                      |
 /// | ----------------- | -------------------------------------------- | -------------------- | ------------------------------------------ |
-/// | Indigo            | xtd::drawing::purple_colors::indigo            | 0xFF4B0082           |  @image html colors_indigo.png             |
-/// | Rebecca Purple    | xtd::drawing::purple_colors::rebecca_purple    | 0xFF663399           |  @image html colors_rebecca_purple.png     |
-/// | Purple            | xtd::drawing::purple_colors::purple            | 0xFF800080           |  @image html colors_purple.png             |
-/// | Dark Magenta      | xtd::drawing::purple_colors::dark_magenta      | 0xFF8B008B           |  @image html colors_dark_magenta.png       |
-/// | Dark Violet       | xtd::drawing::purple_colors::dark_violet       | 0xFF9400D3           |  @image html colors_dark_violet.png        |
-/// | Dark Slate Blue   | xtd::drawing::purple_colors::dark_slate_blue   | 0xFF483D8B           |  @image html colors_dark_slate_blue.png    |
-/// | Blue Violet       | xtd::drawing::purple_colors::blue_violet       | 0xFF8A2BE2           |  @image html colors_blue_violet.png        |
-/// | Dark Orchid       | xtd::drawing::purple_colors::dark_orchid       | 0xFF9932CC           |  @image html colors_dark_orchid.png        |
-/// | Fuchsia           | xtd::drawing::purple_colors::fuchsia           | 0xFFFF00FF           |  @image html colors_fuchsia.png            |
-/// | Magenta           | xtd::drawing::purple_colors::magenta           | 0xFFFF00FF           |  @image html colors_magenta.png            |
-/// | Slate Blue        | xtd::drawing::purple_colors::slate_blue        | 0xFF6A5ACD           |  @image html colors_slate_blue.png         |
-/// | Medium Slate Blue | xtd::drawing::purple_colors::medium_slate_blue | 0xFF7B68EE           |  @image html colors_medium_slate_blue.png  |
-/// | Medium Orchid     | xtd::drawing::purple_colors::medium_orchid     | 0xFFBA55D3           |  @image html colors_medium_orchid.png      |
-/// | Medium Purple     | xtd::drawing::purple_colors::medium_purple     | 0xFF9370DB           |  @image html colors_medium_purple.png      |
-/// | Orchid            | xtd::drawing::purple_colors::orchid            | 0xFFDA70D6           |  @image html colors_orchid.png             |
-/// | Violet            | xtd::drawing::purple_colors::violet            | 0xFFEE82EE           |  @image html colors_violet.png             |
-/// | Plum              | xtd::drawing::purple_colors::plum              | 0xFFDDA0DD           |  @image html colors_plum.png               |
-/// | Thistle           | xtd::drawing::purple_colors::thistle           | 0xFFD8BFD8           |  @image html colors_thistle.png            |
-/// | Lavender          | xtd::drawing::purple_colors::lavender          | 0xFFE6E6FA           |  @image html colors_lavender.png           |
+/// | Indigo            | xtd::drawing::purple_colors::indigo            | 0xFF4B0082           |  @image html colors_indigo.png             |
+/// | Rebecca Purple    | xtd::drawing::purple_colors::rebecca_purple    | 0xFF663399           |  @image html colors_rebecca_purple.png     |
+/// | Purple            | xtd::drawing::purple_colors::purple            | 0xFF800080           |  @image html colors_purple.png             |
+/// | Dark Magenta      | xtd::drawing::purple_colors::dark_magenta      | 0xFF8B008B           |  @image html colors_dark_magenta.png       |
+/// | Dark Violet       | xtd::drawing::purple_colors::dark_violet       | 0xFF9400D3           |  @image html colors_dark_violet.png        |
+/// | Dark Slate Blue   | xtd::drawing::purple_colors::dark_slate_blue   | 0xFF483D8B           |  @image html colors_dark_slate_blue.png    |
+/// | Blue Violet       | xtd::drawing::purple_colors::blue_violet       | 0xFF8A2BE2           |  @image html colors_blue_violet.png        |
+/// | Dark Orchid       | xtd::drawing::purple_colors::dark_orchid       | 0xFF9932CC           |  @image html colors_dark_orchid.png        |
+/// | Fuchsia           | xtd::drawing::purple_colors::fuchsia           | 0xFFFF00FF           |  @image html colors_fuchsia.png            |
+/// | Magenta           | xtd::drawing::purple_colors::magenta           | 0xFFFF00FF           |  @image html colors_magenta.png            |
+/// | Slate Blue        | xtd::drawing::purple_colors::slate_blue        | 0xFF6A5ACD           |  @image html colors_slate_blue.png         |
+/// | Medium Slate Blue | xtd::drawing::purple_colors::medium_slate_blue | 0xFF7B68EE           |  @image html colors_medium_slate_blue.png  |
+/// | Medium Orchid     | xtd::drawing::purple_colors::medium_orchid     | 0xFFBA55D3           |  @image html colors_medium_orchid.png      |
+/// | Medium Purple     | xtd::drawing::purple_colors::medium_purple     | 0xFF9370DB           |  @image html colors_medium_purple.png      |
+/// | Orchid            | xtd::drawing::purple_colors::orchid            | 0xFFDA70D6           |  @image html colors_orchid.png             |
+/// | Violet            | xtd::drawing::purple_colors::violet            | 0xFFEE82EE           |  @image html colors_violet.png             |
+/// | Plum              | xtd::drawing::purple_colors::plum              | 0xFFDDA0DD           |  @image html colors_plum.png               |
+/// | Thistle           | xtd::drawing::purple_colors::thistle           | 0xFFD8BFD8           |  @image html colors_thistle.png            |
+/// | Lavender          | xtd::drawing::purple_colors::lavender          | 0xFFE6E6FA           |  @image html colors_lavender.png           |
 ///
 /// @subsection RedColors Red colors
 ///
@@ -269,15 +269,15 @@
 ///
 /// | Name         | Value                                  | ARGB value (in hexa) | Color                                 |
 /// | ------------ | -------------------------------------- | -------------------- | ------------------------------------- |
-/// | Dark Red     | xtd::drawing::red_colors::dark_red     | 0xFF8B0000           |  @image html colors_dark_red.png      |
-/// | Red          | xtd::drawing::red_colors::red          | 0xFFFF0000           |  @image html colors_red.png           |
-/// | Firebrick    | xtd::drawing::red_colors::firebrick    | 0xFFB22222           |  @image html colors_firebrick.png     |
-/// | Crimson      | xtd::drawing::red_colors::crimson      | 0xFFDC143C           |  @image html colors_crimson.png       |
-/// | Indian Red   | xtd::drawing::red_colors::indian_red   | 0xFFCD5C5C           |  @image html colors_indian_red.png    |
-/// | Light Coral  | xtd::drawing::red_colors::light_coral  | 0xFFF08080           |  @image html colors_light_coral.png   |
-/// | Salmon       | xtd::drawing::red_colors::salmon       | 0xFFFA8072           |  @image html colors_salmon.png        |
-/// | Dark Salmon  | xtd::drawing::red_colors::dark_salmon  | 0xFFE9967A           |  @image html colors_dark_salmon.png   |
-/// | Light Salmon | xtd::drawing::red_colors::light_salmon | 0xFFFFA07A           |  @image html colors_light_salmon.png  |
+/// | Dark Red     | xtd::drawing::red_colors::dark_red     | 0xFF8B0000           |  @image html colors_dark_red.png      |
+/// | Red          | xtd::drawing::red_colors::red          | 0xFFFF0000           |  @image html colors_red.png           |
+/// | Firebrick    | xtd::drawing::red_colors::firebrick    | 0xFFB22222           |  @image html colors_firebrick.png     |
+/// | Crimson      | xtd::drawing::red_colors::crimson      | 0xFFDC143C           |  @image html colors_crimson.png       |
+/// | Indian Red   | xtd::drawing::red_colors::indian_red   | 0xFFCD5C5C           |  @image html colors_indian_red.png    |
+/// | Light Coral  | xtd::drawing::red_colors::light_coral  | 0xFFF08080           |  @image html colors_light_coral.png   |
+/// | Salmon       | xtd::drawing::red_colors::salmon       | 0xFFFA8072           |  @image html colors_salmon.png        |
+/// | Dark Salmon  | xtd::drawing::red_colors::dark_salmon  | 0xFFE9967A           |  @image html colors_dark_salmon.png   |
+/// | Light Salmon | xtd::drawing::red_colors::light_salmon | 0xFFFFA07A           |  @image html colors_light_salmon.png  |
 ///
 /// @subsection whiteColors White colors
 ///
@@ -285,23 +285,23 @@
 ///
 /// | Name           | Value                                      | ARGB value (in hexa) | Color                                   |
 /// | -------------- | ------------------------------------------ | -------------------- | --------------------------------------- |
-/// | Misty Rose     | xtd::drawing::white_colors::misty_rose     | 0xFFFFE4E1           |  @image html colors_misty_rose.png      |
-/// | Antique White  | xtd::drawing::white_colors::antique_white  | 0xFFFAEBD7           |  @image html colors_antique_white.png   |
-/// | Linen          | xtd::drawing::white_colors::linen          | 0xFFFAF0E6           |  @image html colors_linen.png           |
-/// | Beige          | xtd::drawing::white_colors::beige          | 0xFFF5F5DC           |  @image html colors_beige.png           |
-/// | White Smoke    | xtd::drawing::white_colors::white_smoke    | 0xFFF5F5F5           |  @image html colors_white_smoke.png     |
-/// | Lavender Blush | xtd::drawing::white_colors::lavender_blush | 0xFFFFF0F5           |  @image html colors_lavender_blush.png  |
-/// | Old Lace       | xtd::drawing::white_colors::old_lace       | 0xFFFDF5E6           |  @image html colors_old_lace.png        |
-/// | Alice Blue     | xtd::drawing::white_colors::alice_blue     | 0xFFF0F8FF           |  @image html colors_alice_blue.png      |
-/// | Sea Shell      | xtd::drawing::white_colors::sea_shell      | 0xFFFFF5EE           |  @image html colors_sea_shell.png       |
-/// | Ghost White    | xtd::drawing::white_colors::ghost_white    | 0xFFF8F8FF           |  @image html colors_ghost_white.png     |
-/// | Honeydew       | xtd::drawing::white_colors::honeydew       | 0xFFF0FFF0           |  @image html colors_honeydew.png        |
-/// | Floral White   | xtd::drawing::white_colors::floral_white   | 0xFFFFFAF0           |  @image html colors_floral_white.png    |
-/// | Azure          | xtd::drawing::white_colors::azure          | 0xFFF0FFFF           |  @image html colors_azure.png           |
-/// | Mint Cream     | xtd::drawing::white_colors::mint_cream     | 0xFFF5FFFA           |  @image html colors_mint_cream.png      |
-/// | Snow           | xtd::drawing::white_colors::snow           | 0xFFFFFAFA           |  @image html colors_snow.png            |
-/// | Ivory          | xtd::drawing::white_colors::ivory          | 0xFFFFFFF0           |  @image html colors_ivory.png           |
-/// | White          | xtd::drawing::white_colors::white          | 0xFFFFFFFF           |  @image html colors_white.png           |
+/// | Misty Rose     | xtd::drawing::white_colors::misty_rose     | 0xFFFFE4E1           |  @image html colors_misty_rose.png      |
+/// | Antique White  | xtd::drawing::white_colors::antique_white  | 0xFFFAEBD7           |  @image html colors_antique_white.png   |
+/// | Linen          | xtd::drawing::white_colors::linen          | 0xFFFAF0E6           |  @image html colors_linen.png           |
+/// | Beige          | xtd::drawing::white_colors::beige          | 0xFFF5F5DC           |  @image html colors_beige.png           |
+/// | White Smoke    | xtd::drawing::white_colors::white_smoke    | 0xFFF5F5F5           |  @image html colors_white_smoke.png     |
+/// | Lavender Blush | xtd::drawing::white_colors::lavender_blush | 0xFFFFF0F5           |  @image html colors_lavender_blush.png  |
+/// | Old Lace       | xtd::drawing::white_colors::old_lace       | 0xFFFDF5E6           |  @image html colors_old_lace.png        |
+/// | Alice Blue     | xtd::drawing::white_colors::alice_blue     | 0xFFF0F8FF           |  @image html colors_alice_blue.png      |
+/// | Sea Shell      | xtd::drawing::white_colors::sea_shell      | 0xFFFFF5EE           |  @image html colors_sea_shell.png       |
+/// | Ghost White    | xtd::drawing::white_colors::ghost_white    | 0xFFF8F8FF           |  @image html colors_ghost_white.png     |
+/// | Honeydew       | xtd::drawing::white_colors::honeydew       | 0xFFF0FFF0           |  @image html colors_honeydew.png        |
+/// | Floral White   | xtd::drawing::white_colors::floral_white   | 0xFFFFFAF0           |  @image html colors_floral_white.png    |
+/// | Azure          | xtd::drawing::white_colors::azure          | 0xFFF0FFFF           |  @image html colors_azure.png           |
+/// | Mint Cream     | xtd::drawing::white_colors::mint_cream     | 0xFFF5FFFA           |  @image html colors_mint_cream.png      |
+/// | Snow           | xtd::drawing::white_colors::snow           | 0xFFFFFAFA           |  @image html colors_snow.png            |
+/// | Ivory          | xtd::drawing::white_colors::ivory          | 0xFFFFFFF0           |  @image html colors_ivory.png           |
+/// | White          | xtd::drawing::white_colors::white          | 0xFFFFFFFF           |  @image html colors_white.png           |
 ///
 /// @subsection YellowColors Yellow colors
 ///
@@ -309,17 +309,17 @@
 ///
 /// | Name                   | Value                                               | ARGB value (in hexa) | Color                                           |
 /// | ---------------------- | --------------------------------------------------- | -------------------- | ----------------------------------------------- |
-/// | Dark Khaki             | xtd::drawing::yellow_colors::dark_khaki             | 0xFFBDB76B           |  @image html colors_dark_khaki.png              |
-/// | Gold                   | xtd::drawing::yellow_colors::gold                   | 0xFFFFD700           |  @image html colors_gold.png                    |
-/// | Khaki                  | xtd::drawing::yellow_colors::khaki                  | 0xFFF0E68C           |  @image html colors_khaki.png                   |
-/// | Peach Puff             | xtd::drawing::yellow_colors::peach_puff             | 0xFFFFDAB9           |  @image html colors_peach_puff.png              |
-/// | Yellow                 | xtd::drawing::yellow_colors::yellow                 | 0xFFFFFF00           |  @image html colors_yellow.png                  |
-/// | Pale Goldenrod         | xtd::drawing::yellow_colors::pale_goldenrod         | 0xFFEEE8AA           |  @image html colors_pale_goldenrod.png          |
-/// | Moccasin               | xtd::drawing::yellow_colors::moccasin               | 0xFFFFE4B5           |  @image html colors_moccasin.png                |
-/// | Papaya Whip            | xtd::drawing::yellow_colors::papaya_whip            | 0xFFFFEFD5           |  @image html colors_papaya_whip.png             |
-/// | Light Goldenrod Yellow | xtd::drawing::yellow_colors::light_goldenrod_yellow | 0xFFFAFAD2           |  @image html colors_light_goldenrod_yellow.png  |
-/// | Lemon Chiffon          | xtd::drawing::yellow_colors::lemon_chiffon          | 0xFFFFFACD           |  @image html colors_lemon_chiffon.png           |
-/// | Light Yellow           | xtd::drawing::yellow_colors::light_yellow           | 0xFFFFFFE0           |  @image html colors_light_yellow.png            |
+/// | Dark Khaki             | xtd::drawing::yellow_colors::dark_khaki             | 0xFFBDB76B           |  @image html colors_dark_khaki.png              |
+/// | Gold                   | xtd::drawing::yellow_colors::gold                   | 0xFFFFD700           |  @image html colors_gold.png                    |
+/// | Khaki                  | xtd::drawing::yellow_colors::khaki                  | 0xFFF0E68C           |  @image html colors_khaki.png                   |
+/// | Peach Puff             | xtd::drawing::yellow_colors::peach_puff             | 0xFFFFDAB9           |  @image html colors_peach_puff.png              |
+/// | Yellow                 | xtd::drawing::yellow_colors::yellow                 | 0xFFFFFF00           |  @image html colors_yellow.png                  |
+/// | Pale Goldenrod         | xtd::drawing::yellow_colors::pale_goldenrod         | 0xFFEEE8AA           |  @image html colors_pale_goldenrod.png          |
+/// | Moccasin               | xtd::drawing::yellow_colors::moccasin               | 0xFFFFE4B5           |  @image html colors_moccasin.png                |
+/// | Papaya Whip            | xtd::drawing::yellow_colors::papaya_whip            | 0xFFFFEFD5           |  @image html colors_papaya_whip.png             |
+/// | Light Goldenrod Yellow | xtd::drawing::yellow_colors::light_goldenrod_yellow | 0xFFFAFAD2           |  @image html colors_light_goldenrod_yellow.png  |
+/// | Lemon Chiffon          | xtd::drawing::yellow_colors::lemon_chiffon          | 0xFFFFFACD           |  @image html colors_lemon_chiffon.png           |
+/// | Light Yellow           | xtd::drawing::yellow_colors::light_yellow           | 0xFFFFFFE0           |  @image html colors_light_yellow.png            |
 ///
 /// @subsection WebColors Web colors
 ///
@@ -327,147 +327,147 @@
 ///
 /// | Name                   | Value                                        | ARGB value (in hexa) | Color                                           |
 /// | ---------------------- | -------------------------------------------- | -------------------- | ----------------------------------------------- |
-/// | Transparent            | xtd::drawing::colors::transparent            | 0x00000000           |  @image html colors_transparent.png             |
-/// | Alice Blue             | xtd::drawing::colors::alice_blue             | 0xFFF0F8FF           |  @image html colors_alice_blue.png              |
-/// | Antique White          | xtd::drawing::colors::antique_white          | 0xFFFAEBD7           |  @image html colors_antique_white.png           |
-/// | Aqua                   | xtd::drawing::colors::aqua                   | 0xFF00FFFF           |  @image html colors_aqua.png                    |
-/// | Aquamarine             | xtd::drawing::colors::aquamarine             | 0xFF7FFFD4           |  @image html colors_aquamarine.png              |
-/// | Azure                  | xtd::drawing::colors::azure                  | 0xFFF0FFFF           |  @image html colors_azure.png                   |
-/// | Beige                  | xtd::drawing::colors::beige                  | 0xFFF5F5DC           |  @image html colors_beige.png                   |
-/// | Bisque                 | xtd::drawing::colors::bisque                 | 0xFFFFE4C4           |  @image html colors_bisque.png                  |
-/// | Black                  | xtd::drawing::colors::black                  | 0xFF000000           |  @image html colors_black.png                   |
-/// | Blanched Almond        | xtd::drawing::colors::blanched_almond        | 0xFFFFEBCD           |  @image html colors_blanched_almond.png         |
-/// | Blue                   | xtd::drawing::colors::blue                   | 0xFF0000FF           |  @image html colors_blue.png                    |
-/// | Blue Violet            | xtd::drawing::colors::blue_violet            | 0xFF8A2BE2           |  @image html colors_blue_violet.png             |
-/// | Brown                  | xtd::drawing::colors::brown                  | 0xFFA52A2A           |  @image html colors_brown.png                   |
-/// | Burly Wood             | xtd::drawing::colors::burly_wood             | 0xFFDEB887           |  @image html colors_burly_wood.png              |
-/// | Cadet Blue             | xtd::drawing::colors::cadet_blue             | 0xFF5F9EA0           |  @image html colors_cadet_blue.png              |
-/// | Chartreuse             | xtd::drawing::colors::chartreuse             | 0xFF7FFF00           |  @image html colors_chartreuse.png              |
-/// | Chocolate              | xtd::drawing::colors::chocolate              | 0xFFD2691E           |  @image html colors_chocolate.png               |
-/// | Coral                  | xtd::drawing::colors::coral                  | 0xFFFF7F50           |  @image html colors_coral.png                   |
-/// | Cornflower Blue        | xtd::drawing::colors::cornflower_blue        | 0xFF6495ED           |  @image html colors_cornflower_blue.png         |
-/// | Cornsilk               | xtd::drawing::colors::cornsilk               | 0xFFFFF8DC           |  @image html colors_cornsilk.png                |
-/// | Crimson                | xtd::drawing::colors::crimson                | 0xFFDC143C           |  @image html colors_crimson.png                 |
-/// | Cyan                   | xtd::drawing::colors::cyan                   | 0xFF00FFFF           |  @image html colors_cyan.png                    |
-/// | Dark Blue              | xtd::drawing::colors::dark_blue              | 0xFF00008B           |  @image html colors_dark_blue.png               |
-/// | Dark Cyan              | xtd::drawing::colors::dark_cyan              | 0xFF008B8B           |  @image html colors_dark_cyan.png               |
-/// | Dark Goldenrod         | xtd::drawing::colors::dark_goldenrod         | 0xFFB8860B           |  @image html colors_dark_goldenrod.png          |
-/// | Dark Gray              | xtd::drawing::colors::dark_gray              | 0xFFA9A9A9           |  @image html colors_dark_gray.png               |
-/// | Dark Green             | xtd::drawing::colors::dark_green             | 0xFF006400           |  @image html colors_dark_green.png              |
-/// | Dark Khaki             | xtd::drawing::colors::dark_khaki             | 0xFFBDB76B           |  @image html colors_dark_khaki.png              |
-/// | Dark Magenta           | xtd::drawing::colors::dark_magenta           | 0xFF8B008B           |  @image html colors_dark_magenta.png            |
-/// | Dark Olive Green       | xtd::drawing::colors::dark_olive_green       | 0xFF556B2F           |  @image html colors_dark_olive_green.png        |
-/// | Dark Orange            | xtd::drawing::colors::dark_orange            | 0xFFFF8C00           |  @image html colors_dark_orange.png             |
-/// | Dark Orchid            | xtd::drawing::colors::dark_orchid            | 0xFF9932CC           |  @image html colors_dark_orchid.png             |
-/// | Dark Red               | xtd::drawing::colors::dark_red               | 0xFF8B0000           |  @image html colors_dark_red.png                |
-/// | Dark Salmon            | xtd::drawing::colors::dark_salmon            | 0xFFE9967A           |  @image html colors_dark_salmon.png             |
-/// | Dark Sea Green         | xtd::drawing::colors::dark_sea_green         | 0xFF8FBC8B           |  @image html colors_dark_sea_green.png          |
-/// | Dark Slate Blue        | xtd::drawing::colors::dark_slate_blue        | 0xFF483D8B           |  @image html colors_dark_slate_blue.png         |
-/// | Dark Slate Gray        | xtd::drawing::colors::dark_slate_gray        | 0xFF2F4F4F           |  @image html colors_dark_slate_gray.png         |
-/// | Dark Turquoise         | xtd::drawing::colors::dark_turquoise         | 0xFF00CED1           |  @image html colors_dark_turquoise.png          |
-/// | Dark Violet            | xtd::drawing::colors::dark_violet            | 0xFF9400D3           |  @image html colors_dark_violet.png             |
-/// | Deep Pink              | xtd::drawing::colors::deep_pink              | 0xFFFF1493           |  @image html colors_deep_pink.png               |
-/// | Deep Sky Blue          | xtd::drawing::colors::deep_sky_blue          | 0xFF00BFFF           |  @image html colors_deep_sky_blue.png           |
-/// | Dim Gray               | xtd::drawing::colors::dim_gray               | 0xFF696969           |  @image html colors_dim_gray.png                |
-/// | Dodger Blue            | xtd::drawing::colors::dodger_blue            | 0xFF1E90FF           |  @image html colors_dodger_blue.png             |
-/// | Firebrick              | xtd::drawing::colors::firebrick              | 0xFFB22222           |  @image html colors_firebrick.png               |
-/// | Floral White           | xtd::drawing::colors::floral_white           | 0xFFFFFAF0           |  @image html colors_floral_white.png            |
-/// | Forest Green           | xtd::drawing::colors::forest_green           | 0xFF228B22           |  @image html colors_forest_green.png            |
-/// | Fuchsia                | xtd::drawing::colors::fuchsia                | 0xFFFF00FF           |  @image html colors_fuchsia.png                 |
-/// | Gainsboro              | xtd::drawing::colors::gainsboro              | 0xFFDCDCDC           |  @image html colors_gainsboro.png               |
-/// | Ghost White            | xtd::drawing::colors::ghost_white            | 0xFFF8F8FF           |  @image html colors_ghost_white.png             |
-/// | Gold                   | xtd::drawing::colors::gold                   | 0xFFFFD700           |  @image html colors_gold.png                    |
-/// | Goldenrod              | xtd::drawing::colors::goldenrod              | 0xFFDAA520           |  @image html colors_goldenrod.png               |
-/// | Gray                   | xtd::drawing::colors::gray                   | 0xFF808080           |  @image html colors_gray.png                    |
-/// | Green                  | xtd::drawing::colors::green                  | 0xFF008000           |  @image html colors_green.png                   |
-/// | Green Yellow           | xtd::drawing::colors::green_yellow           | 0xFFADFF2F           |  @image html colors_green_yellow.png            |
-/// | Honeydew               | xtd::drawing::colors::honeydew               | 0xFFF0FFF0           |  @image html colors_honeydew.png                |
-/// | Hot Pink               | xtd::drawing::colors::hot_pink               | 0xFFFF69B4           |  @image html colors_hot_pink.png                |
-/// | Indian Red             | xtd::drawing::colors::indian_red             | 0xFFCD5C5C           |  @image html colors_indian_red.png              |
-/// | Indigo                 | xtd::drawing::colors::indigo                 | 0xFF4B0082           |  @image html colors_indigo.png                  |
-/// | Ivory                  | xtd::drawing::colors::ivory                  | 0xFFFFFFF0           |  @image html colors_ivory.png                   |
-/// | Khaki                  | xtd::drawing::colors::khaki                  | 0xFFF0E68C           |  @image html colors_khaki.png                   |
-/// | Lavender               | xtd::drawing::colors::lavender               | 0xFFE6E6FA           |  @image html colors_lavender.png                |
-/// | Lavender Blush         | xtd::drawing::colors::lavender_blush         | 0xFFFFF0F5           |  @image html colors_lavender_blush.png          |
-/// | Lawn Green             | xtd::drawing::colors::lawn_green             | 0xFF7CFC00           |  @image html colors_lawn_green.png              |
-/// | Lemon Chiffon          | xtd::drawing::colors::lemon_chiffon          | 0xFFFFFACD           |  @image html colors_lemon_chiffon.png           |
-/// | Light Blue             | xtd::drawing::colors::light_blue             | 0xFFADD8E6           |  @image html colors_light_blue.png              |
-/// | Light Coral            | xtd::drawing::colors::light_coral            | 0xFFF08080           |  @image html colors_light_coral.png             |
-/// | Light Cyan             | xtd::drawing::colors::light_cyan             | 0xFFE0FFFF           |  @image html colors_light_cyan.png              |
-/// | Light Goldenrod Yellow | xtd::drawing::colors::light_goldenrod_yellow | 0xFFFAFAD2           |  @image html colors_light_goldenrod_yellow.png  |
-/// | Light Gray             | xtd::drawing::colors::light_gray             | 0xFFD3D3D3           |  @image html colors_light_gray.png              |
-/// | Light Green            | xtd::drawing::colors::light_green            | 0xFF90EE90           |  @image html colors_light_green.png             |
-/// | Light Pink             | xtd::drawing::colors::light_pink             | 0xFFFFB6C1           |  @image html colors_light_pink.png              |
-/// | Light Salmon           | xtd::drawing::colors::light_salmon           | 0xFFFFA07A           |  @image html colors_light_salmon.png            |
-/// | Light Sea Green        | xtd::drawing::colors::light_sea_green        | 0xFF20B2AA           |  @image html colors_light_sea_green.png         |
-/// | Light Sky Blue         | xtd::drawing::colors::light_sky_blue         | 0xFF87CEFA           |  @image html colors_light_sky_blue.png          |
-/// | Light Slate Gray       | xtd::drawing::colors::light_slate_gray       | 0xFF778899           |  @image html colors_light_slate_gray.png        |
-/// | Light Steel Blue       | xtd::drawing::colors::light_steel_blue       | 0xFFB0C4DE           |  @image html colors_light_steel_blue.png        |
-/// | Light Yellow           | xtd::drawing::colors::light_yellow           | 0xFFFFFFE0           |  @image html colors_light_yellow.png            |
-/// | Lime                   | xtd::drawing::colors::lime                   | 0xFF00FF00           |  @image html colors_lime.png                    |
-/// | Lime Green             | xtd::drawing::colors::lime_green             | 0xFF32CD32           |  @image html colors_lime_green.png              |
-/// | Linen                  | xtd::drawing::colors::linen                  | 0xFFFAF0E6           |  @image html colors_linen.png                   |
-/// | Magenta                | xtd::drawing::colors::magenta                | 0xFFFF00FF           |  @image html colors_magenta.png                 |
-/// | Maroon                 | xtd::drawing::colors::maroon                 | 0xFF800000           |  @image html colors_maroon.png                  |
-/// | Medium Aquamarine      | xtd::drawing::colors::medium_aquamarine      | 0xFF66CDAA           |  @image html colors_medium_aquamarine.png       |
-/// | Medium Blue            | xtd::drawing::colors::medium_blue            | 0xFF0000CD           |  @image html colors_medium_blue.png             |
-/// | Medium Orchid          | xtd::drawing::colors::medium_orchid          | 0xFFBA55D3           |  @image html colors_medium_orchid.png           |
-/// | Medium Purple          | xtd::drawing::colors::medium_purple          | 0xFF9370DB           |  @image html colors_medium_purple.png           |
-/// | Medium Sea Green       | xtd::drawing::colors::medium_sea_green       | 0xFF3CB371           |  @image html colors_medium_sea_green.png        |
-/// | Medium Slate Blue      | xtd::drawing::colors::medium_slate_blue      | 0xFF7B68EE           |  @image html colors_medium_slate_blue.png       |
-/// | Medium Spring Green    | xtd::drawing::colors::medium_spring_green    | 0xFF00FA9A           |  @image html colors_medium_spring_green.png     |
-/// | Medium Turquoise       | xtd::drawing::colors::medium_turquoise       | 0xFF48D1CC           |  @image html colors_medium_turquoise.png        |
-/// | Medium Violet Red      | xtd::drawing::colors::medium_violet_red      | 0xFFC71585           |  @image html colors_medium_violet_red.png       |
-/// | Midnight Blue          | xtd::drawing::colors::midnight_blue          | 0xFF191970           |  @image html colors_midnight_blue.png           |
-/// | Mint Cream             | xtd::drawing::colors::mint_cream             | 0xFFF5FFFA           |  @image html colors_mint_cream.png              |
-/// | Misty Rose             | xtd::drawing::colors::misty_rose             | 0xFFFFE4E1           |  @image html colors_misty_rose.png              |
-/// | Moccasin               | xtd::drawing::colors::moccasin               | 0xFFFFE4B5           |  @image html colors_moccasin.png                |
-/// | Navajo White           | xtd::drawing::colors::navajo_white           | 0xFFFFDEAD           |  @image html colors_navajo_white.png            |
-/// | Navy                   | xtd::drawing::colors::navy                   | 0xFF000080           |  @image html colors_navy.png                    |
-/// | Old Lace               | xtd::drawing::colors::old_lace               | 0xFFFDF5E6           |  @image html colors_old_lace.png                |
-/// | Olive                  | xtd::drawing::colors::olive                  | 0xFF808000           |  @image html colors_olive.png                   |
-/// | Olive Drab             | xtd::drawing::colors::olive_drab             | 0xFF6B8E23           |  @image html colors_olive_drab.png              |
-/// | Orange                 | xtd::drawing::colors::orange                 | 0xFFFFA500           |  @image html colors_orange.png                  |
-/// | Orange Red             | xtd::drawing::colors::orange_red             | 0xFFFF4500           |  @image html colors_orange_red.png              |
-/// | Orchid                 | xtd::drawing::colors::orchid                 | 0xFFDA70D6           |  @image html colors_orchid.png                  |
-/// | Pale Goldenrod         | xtd::drawing::colors::pale_goldenrod         | 0xFFEEE8AA           |  @image html colors_pale_goldenrod.png          |
-/// | Pale Green             | xtd::drawing::colors::pale_green             | 0xFF98FB98           |  @image html colors_pale_green.png              |
-/// | Pale Turquoise         | xtd::drawing::colors::pale_turquoise         | 0xFFAFEEEE           |  @image html colors_pale_turquoise.png          |
-/// | Pale Violet Red        | xtd::drawing::colors::pale_violet_red        | 0xFFDB7093           |  @image html colors_pale_violet_red.png         |
-/// | Papaya Whip            | xtd::drawing::colors::papaya_whip            | 0xFFFFEFD5           |  @image html colors_papaya_whip.png             |
-/// | Peach Puff             | xtd::drawing::colors::peach_puff             | 0xFFFFDAB9           |  @image html colors_peach_puff.png              |
-/// | Peru                   | xtd::drawing::colors::peru                   | 0xFFCD853F           |  @image html colors_peru.png                    |
-/// | Pink                   | xtd::drawing::colors::pink                   | 0xFFFFC0CB           |  @image html colors_pink.png                    |
-/// | Plum                   | xtd::drawing::colors::plum                   | 0xFFDDA0DD           |  @image html colors_plum.png                    |
-/// | Powder Blue            | xtd::drawing::colors::powder_blue            | 0xFFB0E0E6           |  @image html colors_powder_blue.png             |
-/// | Purple                 | xtd::drawing::colors::purple                 | 0xFF800080           |  @image html colors_purple.png                  |
-/// | Rebecca Purple         | xtd::drawing::colors::rebecca_purple         | 0xFF663399           |  @image html colors_rebecca_purple.png          |
-/// | Red                    | xtd::drawing::colors::red                    | 0xFFFF0000           |  @image html colors_red.png                     |
-/// | Rosy Brown             | xtd::drawing::colors::rosy_brown             | 0xFFBC8F8F           |  @image html colors_rosy_brown.png              |
-/// | Royal Blue             | xtd::drawing::colors::royal_blue             | 0xFF4169E1           |  @image html colors_royal_blue.png              |
-/// | Saddle Brown           | xtd::drawing::colors::saddle_brown           | 0xFF8B4513           |  @image html colors_saddle_brown.png            |
-/// | Salmon                 | xtd::drawing::colors::salmon                 | 0xFFFA8072           |  @image html colors_salmon.png                  |
-/// | Sandy Brown            | xtd::drawing::colors::sandy_brown            | 0xFFF4A460           |  @image html colors_sandy_brown.png             |
-/// | Sea Green              | xtd::drawing::colors::sea_green              | 0xFF2E8B57           |  @image html colors_sea_green.png               |
-/// | Sea Shell              | xtd::drawing::colors::sea_shell              | 0xFFFFF5EE           |  @image html colors_sea_shell.png               |
-/// | Sienna                 | xtd::drawing::colors::sienna                 | 0xFFA0522D           |  @image html colors_sienna.png                  |
-/// | Silver                 | xtd::drawing::colors::silver                 | 0xFFC0C0C0           |  @image html colors_silver.png                  |
-/// | Sky Blue               | xtd::drawing::colors::sky_blue               | 0xFF87CEEB           |  @image html colors_sky_blue.png                |
-/// | Slate Blue             | xtd::drawing::colors::slate_blue             | 0xFF6A5ACD           |  @image html colors_slate_blue.png              |
-/// | Slate Gray             | xtd::drawing::colors::slate_gray             | 0xFF708090           |  @image html colors_slate_gray.png              |
-/// | Snow                   | xtd::drawing::colors::snow                   | 0xFFFFFAFA           |  @image html colors_snow.png                    |
-/// | Spring Green           | xtd::drawing::colors::spring_green           | 0xFF00FF7F           |  @image html colors_spring_green.png            |
-/// | Steel Blue             | xtd::drawing::colors::steel_blue             | 0xFF4682B4           |  @image html colors_steel_blue.png              |
-/// | Tan                    | xtd::drawing::colors::tan                    | 0xFFD2B48C           |  @image html colors_tan.png                     |
-/// | Teal                   | xtd::drawing::colors::teal                   | 0xFF008080           |  @image html colors_teal.png                    |
-/// | Thistle                | xtd::drawing::colors::thistle                | 0xFFD8BFD8           |  @image html colors_thistle.png                 |
-/// | Tomato                 | xtd::drawing::colors::tomato                 | 0xFFFF6347           |  @image html colors_tomato.png                  |
-/// | Turquoise              | xtd::drawing::colors::turquoise              | 0xFF40E0D0           |  @image html colors_turquoise.png               |
-/// | Violet                 | xtd::drawing::colors::violet                 | 0xFFEE82EE           |  @image html colors_violet.png                  |
-/// | Wheat                  | xtd::drawing::colors::wheat                  | 0xFFF5DEB3           |  @image html colors_wheat.png                   |
-/// | White                  | xtd::drawing::colors::white                  | 0xFFFFFFFF           |  @image html colors_white.png                   |
-/// | White Smoke            | xtd::drawing::colors::white_smoke            | 0xFFF5F5F5           |  @image html colors_white_smoke.png             |
-/// | Yellow                 | xtd::drawing::colors::yellow                 | 0xFFFFFF00           |  @image html colors_yellow.png                  |
-/// | Yellow Green           | xtd::drawing::colors::yellow_green           | 0xFF9ACD32           |  @image html colors_yellow_green.png            |
+/// | Transparent            | xtd::drawing::colors::transparent            | 0x00000000           |  @image html colors_transparent.png             |
+/// | Alice Blue             | xtd::drawing::colors::alice_blue             | 0xFFF0F8FF           |  @image html colors_alice_blue.png              |
+/// | Antique White          | xtd::drawing::colors::antique_white          | 0xFFFAEBD7           |  @image html colors_antique_white.png           |
+/// | Aqua                   | xtd::drawing::colors::aqua                   | 0xFF00FFFF           |  @image html colors_aqua.png                    |
+/// | Aquamarine             | xtd::drawing::colors::aquamarine             | 0xFF7FFFD4           |  @image html colors_aquamarine.png              |
+/// | Azure                  | xtd::drawing::colors::azure                  | 0xFFF0FFFF           |  @image html colors_azure.png                   |
+/// | Beige                  | xtd::drawing::colors::beige                  | 0xFFF5F5DC           |  @image html colors_beige.png                   |
+/// | Bisque                 | xtd::drawing::colors::bisque                 | 0xFFFFE4C4           |  @image html colors_bisque.png                  |
+/// | Black                  | xtd::drawing::colors::black                  | 0xFF000000           |  @image html colors_black.png                   |
+/// | Blanched Almond        | xtd::drawing::colors::blanched_almond        | 0xFFFFEBCD           |  @image html colors_blanched_almond.png         |
+/// | Blue                   | xtd::drawing::colors::blue                   | 0xFF0000FF           |  @image html colors_blue.png                    |
+/// | Blue Violet            | xtd::drawing::colors::blue_violet            | 0xFF8A2BE2           |  @image html colors_blue_violet.png             |
+/// | Brown                  | xtd::drawing::colors::brown                  | 0xFFA52A2A           |  @image html colors_brown.png                   |
+/// | Burly Wood             | xtd::drawing::colors::burly_wood             | 0xFFDEB887           |  @image html colors_burly_wood.png              |
+/// | Cadet Blue             | xtd::drawing::colors::cadet_blue             | 0xFF5F9EA0           |  @image html colors_cadet_blue.png              |
+/// | Chartreuse             | xtd::drawing::colors::chartreuse             | 0xFF7FFF00           |  @image html colors_chartreuse.png              |
+/// | Chocolate              | xtd::drawing::colors::chocolate              | 0xFFD2691E           |  @image html colors_chocolate.png               |
+/// | Coral                  | xtd::drawing::colors::coral                  | 0xFFFF7F50           |  @image html colors_coral.png                   |
+/// | Cornflower Blue        | xtd::drawing::colors::cornflower_blue        | 0xFF6495ED           |  @image html colors_cornflower_blue.png         |
+/// | Cornsilk               | xtd::drawing::colors::cornsilk               | 0xFFFFF8DC           |  @image html colors_cornsilk.png                |
+/// | Crimson                | xtd::drawing::colors::crimson                | 0xFFDC143C           |  @image html colors_crimson.png                 |
+/// | Cyan                   | xtd::drawing::colors::cyan                   | 0xFF00FFFF           |  @image html colors_cyan.png                    |
+/// | Dark Blue              | xtd::drawing::colors::dark_blue              | 0xFF00008B           |  @image html colors_dark_blue.png               |
+/// | Dark Cyan              | xtd::drawing::colors::dark_cyan              | 0xFF008B8B           |  @image html colors_dark_cyan.png               |
+/// | Dark Goldenrod         | xtd::drawing::colors::dark_goldenrod         | 0xFFB8860B           |  @image html colors_dark_goldenrod.png          |
+/// | Dark Gray              | xtd::drawing::colors::dark_gray              | 0xFFA9A9A9           |  @image html colors_dark_gray.png               |
+/// | Dark Green             | xtd::drawing::colors::dark_green             | 0xFF006400           |  @image html colors_dark_green.png              |
+/// | Dark Khaki             | xtd::drawing::colors::dark_khaki             | 0xFFBDB76B           |  @image html colors_dark_khaki.png              |
+/// | Dark Magenta           | xtd::drawing::colors::dark_magenta           | 0xFF8B008B           |  @image html colors_dark_magenta.png            |
+/// | Dark Olive Green       | xtd::drawing::colors::dark_olive_green       | 0xFF556B2F           |  @image html colors_dark_olive_green.png        |
+/// | Dark Orange            | xtd::drawing::colors::dark_orange            | 0xFFFF8C00           |  @image html colors_dark_orange.png             |
+/// | Dark Orchid            | xtd::drawing::colors::dark_orchid            | 0xFF9932CC           |  @image html colors_dark_orchid.png             |
+/// | Dark Red               | xtd::drawing::colors::dark_red               | 0xFF8B0000           |  @image html colors_dark_red.png                |
+/// | Dark Salmon            | xtd::drawing::colors::dark_salmon            | 0xFFE9967A           |  @image html colors_dark_salmon.png             |
+/// | Dark Sea Green         | xtd::drawing::colors::dark_sea_green         | 0xFF8FBC8B           |  @image html colors_dark_sea_green.png          |
+/// | Dark Slate Blue        | xtd::drawing::colors::dark_slate_blue        | 0xFF483D8B           |  @image html colors_dark_slate_blue.png         |
+/// | Dark Slate Gray        | xtd::drawing::colors::dark_slate_gray        | 0xFF2F4F4F           |  @image html colors_dark_slate_gray.png         |
+/// | Dark Turquoise         | xtd::drawing::colors::dark_turquoise         | 0xFF00CED1           |  @image html colors_dark_turquoise.png          |
+/// | Dark Violet            | xtd::drawing::colors::dark_violet            | 0xFF9400D3           |  @image html colors_dark_violet.png             |
+/// | Deep Pink              | xtd::drawing::colors::deep_pink              | 0xFFFF1493           |  @image html colors_deep_pink.png               |
+/// | Deep Sky Blue          | xtd::drawing::colors::deep_sky_blue          | 0xFF00BFFF           |  @image html colors_deep_sky_blue.png           |
+/// | Dim Gray               | xtd::drawing::colors::dim_gray               | 0xFF696969           |  @image html colors_dim_gray.png                |
+/// | Dodger Blue            | xtd::drawing::colors::dodger_blue            | 0xFF1E90FF           |  @image html colors_dodger_blue.png             |
+/// | Firebrick              | xtd::drawing::colors::firebrick              | 0xFFB22222           |  @image html colors_firebrick.png               |
+/// | Floral White           | xtd::drawing::colors::floral_white           | 0xFFFFFAF0           |  @image html colors_floral_white.png            |
+/// | Forest Green           | xtd::drawing::colors::forest_green           | 0xFF228B22           |  @image html colors_forest_green.png            |
+/// | Fuchsia                | xtd::drawing::colors::fuchsia                | 0xFFFF00FF           |  @image html colors_fuchsia.png                 |
+/// | Gainsboro              | xtd::drawing::colors::gainsboro              | 0xFFDCDCDC           |  @image html colors_gainsboro.png               |
+/// | Ghost White            | xtd::drawing::colors::ghost_white            | 0xFFF8F8FF           |  @image html colors_ghost_white.png             |
+/// | Gold                   | xtd::drawing::colors::gold                   | 0xFFFFD700           |  @image html colors_gold.png                    |
+/// | Goldenrod              | xtd::drawing::colors::goldenrod              | 0xFFDAA520           |  @image html colors_goldenrod.png               |
+/// | Gray                   | xtd::drawing::colors::gray                   | 0xFF808080           |  @image html colors_gray.png                    |
+/// | Green                  | xtd::drawing::colors::green                  | 0xFF008000           |  @image html colors_green.png                   |
+/// | Green Yellow           | xtd::drawing::colors::green_yellow           | 0xFFADFF2F           |  @image html colors_green_yellow.png            |
+/// | Honeydew               | xtd::drawing::colors::honeydew               | 0xFFF0FFF0           |  @image html colors_honeydew.png                |
+/// | Hot Pink               | xtd::drawing::colors::hot_pink               | 0xFFFF69B4           |  @image html colors_hot_pink.png                |
+/// | Indian Red             | xtd::drawing::colors::indian_red             | 0xFFCD5C5C           |  @image html colors_indian_red.png              |
+/// | Indigo                 | xtd::drawing::colors::indigo                 | 0xFF4B0082           |  @image html colors_indigo.png                  |
+/// | Ivory                  | xtd::drawing::colors::ivory                  | 0xFFFFFFF0           |  @image html colors_ivory.png                   |
+/// | Khaki                  | xtd::drawing::colors::khaki                  | 0xFFF0E68C           |  @image html colors_khaki.png                   |
+/// | Lavender               | xtd::drawing::colors::lavender               | 0xFFE6E6FA           |  @image html colors_lavender.png                |
+/// | Lavender Blush         | xtd::drawing::colors::lavender_blush         | 0xFFFFF0F5           |  @image html colors_lavender_blush.png          |
+/// | Lawn Green             | xtd::drawing::colors::lawn_green             | 0xFF7CFC00           |  @image html colors_lawn_green.png              |
+/// | Lemon Chiffon          | xtd::drawing::colors::lemon_chiffon          | 0xFFFFFACD           |  @image html colors_lemon_chiffon.png           |
+/// | Light Blue             | xtd::drawing::colors::light_blue             | 0xFFADD8E6           |  @image html colors_light_blue.png              |
+/// | Light Coral            | xtd::drawing::colors::light_coral            | 0xFFF08080           |  @image html colors_light_coral.png             |
+/// | Light Cyan             | xtd::drawing::colors::light_cyan             | 0xFFE0FFFF           |  @image html colors_light_cyan.png              |
+/// | Light Goldenrod Yellow | xtd::drawing::colors::light_goldenrod_yellow | 0xFFFAFAD2           |  @image html colors_light_goldenrod_yellow.png  |
+/// | Light Gray             | xtd::drawing::colors::light_gray             | 0xFFD3D3D3           |  @image html colors_light_gray.png              |
+/// | Light Green            | xtd::drawing::colors::light_green            | 0xFF90EE90           |  @image html colors_light_green.png             |
+/// | Light Pink             | xtd::drawing::colors::light_pink             | 0xFFFFB6C1           |  @image html colors_light_pink.png              |
+/// | Light Salmon           | xtd::drawing::colors::light_salmon           | 0xFFFFA07A           |  @image html colors_light_salmon.png            |
+/// | Light Sea Green        | xtd::drawing::colors::light_sea_green        | 0xFF20B2AA           |  @image html colors_light_sea_green.png         |
+/// | Light Sky Blue         | xtd::drawing::colors::light_sky_blue         | 0xFF87CEFA           |  @image html colors_light_sky_blue.png          |
+/// | Light Slate Gray       | xtd::drawing::colors::light_slate_gray       | 0xFF778899           |  @image html colors_light_slate_gray.png        |
+/// | Light Steel Blue       | xtd::drawing::colors::light_steel_blue       | 0xFFB0C4DE           |  @image html colors_light_steel_blue.png        |
+/// | Light Yellow           | xtd::drawing::colors::light_yellow           | 0xFFFFFFE0           |  @image html colors_light_yellow.png            |
+/// | Lime                   | xtd::drawing::colors::lime                   | 0xFF00FF00           |  @image html colors_lime.png                    |
+/// | Lime Green             | xtd::drawing::colors::lime_green             | 0xFF32CD32           |  @image html colors_lime_green.png              |
+/// | Linen                  | xtd::drawing::colors::linen                  | 0xFFFAF0E6           |  @image html colors_linen.png                   |
+/// | Magenta                | xtd::drawing::colors::magenta                | 0xFFFF00FF           |  @image html colors_magenta.png                 |
+/// | Maroon                 | xtd::drawing::colors::maroon                 | 0xFF800000           |  @image html colors_maroon.png                  |
+/// | Medium Aquamarine      | xtd::drawing::colors::medium_aquamarine      | 0xFF66CDAA           |  @image html colors_medium_aquamarine.png       |
+/// | Medium Blue            | xtd::drawing::colors::medium_blue            | 0xFF0000CD           |  @image html colors_medium_blue.png             |
+/// | Medium Orchid          | xtd::drawing::colors::medium_orchid          | 0xFFBA55D3           |  @image html colors_medium_orchid.png           |
+/// | Medium Purple          | xtd::drawing::colors::medium_purple          | 0xFF9370DB           |  @image html colors_medium_purple.png           |
+/// | Medium Sea Green       | xtd::drawing::colors::medium_sea_green       | 0xFF3CB371           |  @image html colors_medium_sea_green.png        |
+/// | Medium Slate Blue      | xtd::drawing::colors::medium_slate_blue      | 0xFF7B68EE           |  @image html colors_medium_slate_blue.png       |
+/// | Medium Spring Green    | xtd::drawing::colors::medium_spring_green    | 0xFF00FA9A           |  @image html colors_medium_spring_green.png     |
+/// | Medium Turquoise       | xtd::drawing::colors::medium_turquoise       | 0xFF48D1CC           |  @image html colors_medium_turquoise.png        |
+/// | Medium Violet Red      | xtd::drawing::colors::medium_violet_red      | 0xFFC71585           |  @image html colors_medium_violet_red.png       |
+/// | Midnight Blue          | xtd::drawing::colors::midnight_blue          | 0xFF191970           |  @image html colors_midnight_blue.png           |
+/// | Mint Cream             | xtd::drawing::colors::mint_cream             | 0xFFF5FFFA           |  @image html colors_mint_cream.png              |
+/// | Misty Rose             | xtd::drawing::colors::misty_rose             | 0xFFFFE4E1           |  @image html colors_misty_rose.png              |
+/// | Moccasin               | xtd::drawing::colors::moccasin               | 0xFFFFE4B5           |  @image html colors_moccasin.png                |
+/// | Navajo White           | xtd::drawing::colors::navajo_white           | 0xFFFFDEAD           |  @image html colors_navajo_white.png            |
+/// | Navy                   | xtd::drawing::colors::navy                   | 0xFF000080           |  @image html colors_navy.png                    |
+/// | Old Lace               | xtd::drawing::colors::old_lace               | 0xFFFDF5E6           |  @image html colors_old_lace.png                |
+/// | Olive                  | xtd::drawing::colors::olive                  | 0xFF808000           |  @image html colors_olive.png                   |
+/// | Olive Drab             | xtd::drawing::colors::olive_drab             | 0xFF6B8E23           |  @image html colors_olive_drab.png              |
+/// | Orange                 | xtd::drawing::colors::orange                 | 0xFFFFA500           |  @image html colors_orange.png                  |
+/// | Orange Red             | xtd::drawing::colors::orange_red             | 0xFFFF4500           |  @image html colors_orange_red.png              |
+/// | Orchid                 | xtd::drawing::colors::orchid                 | 0xFFDA70D6           |  @image html colors_orchid.png                  |
+/// | Pale Goldenrod         | xtd::drawing::colors::pale_goldenrod         | 0xFFEEE8AA           |  @image html colors_pale_goldenrod.png          |
+/// | Pale Green             | xtd::drawing::colors::pale_green             | 0xFF98FB98           |  @image html colors_pale_green.png              |
+/// | Pale Turquoise         | xtd::drawing::colors::pale_turquoise         | 0xFFAFEEEE           |  @image html colors_pale_turquoise.png          |
+/// | Pale Violet Red        | xtd::drawing::colors::pale_violet_red        | 0xFFDB7093           |  @image html colors_pale_violet_red.png         |
+/// | Papaya Whip            | xtd::drawing::colors::papaya_whip            | 0xFFFFEFD5           |  @image html colors_papaya_whip.png             |
+/// | Peach Puff             | xtd::drawing::colors::peach_puff             | 0xFFFFDAB9           |  @image html colors_peach_puff.png              |
+/// | Peru                   | xtd::drawing::colors::peru                   | 0xFFCD853F           |  @image html colors_peru.png                    |
+/// | Pink                   | xtd::drawing::colors::pink                   | 0xFFFFC0CB           |  @image html colors_pink.png                    |
+/// | Plum                   | xtd::drawing::colors::plum                   | 0xFFDDA0DD           |  @image html colors_plum.png                    |
+/// | Powder Blue            | xtd::drawing::colors::powder_blue            | 0xFFB0E0E6           |  @image html colors_powder_blue.png             |
+/// | Purple                 | xtd::drawing::colors::purple                 | 0xFF800080           |  @image html colors_purple.png                  |
+/// | Rebecca Purple         | xtd::drawing::colors::rebecca_purple         | 0xFF663399           |  @image html colors_rebecca_purple.png          |
+/// | Red                    | xtd::drawing::colors::red                    | 0xFFFF0000           |  @image html colors_red.png                     |
+/// | Rosy Brown             | xtd::drawing::colors::rosy_brown             | 0xFFBC8F8F           |  @image html colors_rosy_brown.png              |
+/// | Royal Blue             | xtd::drawing::colors::royal_blue             | 0xFF4169E1           |  @image html colors_royal_blue.png              |
+/// | Saddle Brown           | xtd::drawing::colors::saddle_brown           | 0xFF8B4513           |  @image html colors_saddle_brown.png            |
+/// | Salmon                 | xtd::drawing::colors::salmon                 | 0xFFFA8072           |  @image html colors_salmon.png                  |
+/// | Sandy Brown            | xtd::drawing::colors::sandy_brown            | 0xFFF4A460           |  @image html colors_sandy_brown.png             |
+/// | Sea Green              | xtd::drawing::colors::sea_green              | 0xFF2E8B57           |  @image html colors_sea_green.png               |
+/// | Sea Shell              | xtd::drawing::colors::sea_shell              | 0xFFFFF5EE           |  @image html colors_sea_shell.png               |
+/// | Sienna                 | xtd::drawing::colors::sienna                 | 0xFFA0522D           |  @image html colors_sienna.png                  |
+/// | Silver                 | xtd::drawing::colors::silver                 | 0xFFC0C0C0           |  @image html colors_silver.png                  |
+/// | Sky Blue               | xtd::drawing::colors::sky_blue               | 0xFF87CEEB           |  @image html colors_sky_blue.png                |
+/// | Slate Blue             | xtd::drawing::colors::slate_blue             | 0xFF6A5ACD           |  @image html colors_slate_blue.png              |
+/// | Slate Gray             | xtd::drawing::colors::slate_gray             | 0xFF708090           |  @image html colors_slate_gray.png              |
+/// | Snow                   | xtd::drawing::colors::snow                   | 0xFFFFFAFA           |  @image html colors_snow.png                    |
+/// | Spring Green           | xtd::drawing::colors::spring_green           | 0xFF00FF7F           |  @image html colors_spring_green.png            |
+/// | Steel Blue             | xtd::drawing::colors::steel_blue             | 0xFF4682B4           |  @image html colors_steel_blue.png              |
+/// | Tan                    | xtd::drawing::colors::tan                    | 0xFFD2B48C           |  @image html colors_tan.png                     |
+/// | Teal                   | xtd::drawing::colors::teal                   | 0xFF008080           |  @image html colors_teal.png                    |
+/// | Thistle                | xtd::drawing::colors::thistle                | 0xFFD8BFD8           |  @image html colors_thistle.png                 |
+/// | Tomato                 | xtd::drawing::colors::tomato                 | 0xFFFF6347           |  @image html colors_tomato.png                  |
+/// | Turquoise              | xtd::drawing::colors::turquoise              | 0xFF40E0D0           |  @image html colors_turquoise.png               |
+/// | Violet                 | xtd::drawing::colors::violet                 | 0xFFEE82EE           |  @image html colors_violet.png                  |
+/// | Wheat                  | xtd::drawing::colors::wheat                  | 0xFFF5DEB3           |  @image html colors_wheat.png                   |
+/// | White                  | xtd::drawing::colors::white                  | 0xFFFFFFFF           |  @image html colors_white.png                   |
+/// | White Smoke            | xtd::drawing::colors::white_smoke            | 0xFFF5F5F5           |  @image html colors_white_smoke.png             |
+/// | Yellow                 | xtd::drawing::colors::yellow                 | 0xFFFFFF00           |  @image html colors_yellow.png                  |
+/// | Yellow Green           | xtd::drawing::colors::yellow_green           | 0xFF9ACD32           |  @image html colors_yellow_green.png            |
 ///
 /// @remarks Run the [colors](https://github.com/gammasoft71/xtd/blob/master/examples/xtd.forms.examples/others/colors/README.md) example to see xtd::drawing::apple_colors, xtd::drawing::basic_colors, xtd::drawing::blue_colors, xtd::drawing::brown_colors, xtd::drawing::crayon_colors, xtd::drawing::cyan_colors, xtd::drawing::gray_colors, xtd::drawing::green_colors, xtd::drawing::orange_colors, xtd::drawing::pink_colors, xtd::drawing::purple_colors, xtd::drawing::red_colors, xtd::drawing::white_colors, xtd::drawing::yellow_colors, xtd::drawing::colors, and xtd::drawing::system_colors in action.
