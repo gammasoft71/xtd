@@ -204,8 +204,8 @@ endif ()
 
 if (XTD_ENABLE_RUN_DEVELOPER_REFERENCE_GUIDE)
   file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/developer_html")
-  add_custom_target(RUN_DEVELOPER_REFERENCE_GUIDE ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen/doxygen_developer.txt WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen COMMAND ${XTD_RUN_COMMAND} "${CMAKE_CURRENT_BINARY_DIR}/developer_html/index.html" COMMENT "Run Doxygen Developper Reference Guide generation" DEPENDS ${DOXYGEN_PROJECT} VERBATIM)
-  set_target_properties(RUN_DEVELOPER_REFERENCE_GUIDE PROPERTIES FOLDER commands)
+  add_custom_target(run_developer_reference_guide ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen/doxygen_developer.txt WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/docs/doxygen COMMAND ${XTD_RUN_COMMAND} "${CMAKE_CURRENT_BINARY_DIR}/developer_html/index.html" COMMENT "Run Doxygen Developper Reference Guide generation" DEPENDS ${DOXYGEN_PROJECT} VERBATIM)
+  set_target_properties(run_developer_reference_guide PROPERTIES FOLDER commands)
 endif ()
 
 # Updates export file
