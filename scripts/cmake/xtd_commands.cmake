@@ -2400,8 +2400,8 @@ if (XTD_ENABLE_RUN_ASTYLE AND NOT RUN_ASTYLE_ONLY_ONCE)
   endif()
 
   # RUN_ASTYLE  
-  add_custom_target(RUN_ASTYLE COMMAND ${ASTYLE_EXECUTABLE} ${ASTYLE_ARGS} COMMENT "running astyle" DEPENDS ${ASTYLE_PROJECT})
-  set_target_properties(RUN_ASTYLE PROPERTIES FOLDER commands)
+  add_custom_target(run_astyle COMMAND ${ASTYLE_EXECUTABLE} ${ASTYLE_ARGS} COMMENT "running astyle" DEPENDS ${ASTYLE_PROJECT})
+  set_target_properties(run_astyle PROPERTIES FOLDER commands)
 endif ()
 
 ################################################################################
@@ -2439,8 +2439,8 @@ if (XTD_ENABLE_RUN_CPPCHECK AND NOT RUN_CPPCHECK_ONLY_ONCE)
   endif ()
   list(APPEND CPPCHECK_ARGS_ALL ${CPPCHECK_ARGS} ${CPPCHECK_SOURCE_ROOTS})
   configure_file(${CMAKE_SOURCE_DIR}/.cppcheck ${CMAKE_BINARY_DIR}/cppcheck_false_positive @ONLY)
-  add_custom_target(RUN_CPPCHECK COMMAND ${CPPCHECK_EXECUTABLE} ${CPPCHECK_ARGS_ALL} COMMENT "running cppcheck" DEPENDS ${CPPCHECK_PROJECT})
-  set_target_properties(RUN_CPPCHECK PROPERTIES FOLDER commands)
+  add_custom_target(run_cppcheck COMMAND ${CPPCHECK_EXECUTABLE} ${CPPCHECK_ARGS_ALL} COMMENT "running cppcheck" DEPENDS ${CPPCHECK_PROJECT})
+  set_target_properties(run_cppcheck PROPERTIES FOLDER commands)
 endif ()
 
 ################################################################################
@@ -2481,10 +2481,10 @@ if (XTD_ENABLE_RUN_REFERENCE_GUIDE AND NOT RUN_REFERENCE_GUIDE_ONLY_ONCE)
     
     if (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/.doxygen.txt)
       configure_file(${CMAKE_CURRENT_SOURCE_DIR}/.doxygen.txt ${CMAKE_CURRENT_BINARY_DIR}/doxygen.txt @ONLY)
-      add_custom_target(RUN_REFERENCE_GUIDE ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/doxygen.txt WORKING_DIRECTORY ${PROJECT_DOCUMENTATION_PATH} COMMAND ${XTD_RUN_COMMAND} "${PROJECT_DOCUMENTATION_PATH}/html/index.html" COMMENT "Run Doxygen Reference Guide generation" DEPENDS ${DOXYGEN_PROJECT} VERBATIM)
+      add_custom_target(run_reference_guide ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/doxygen.txt WORKING_DIRECTORY ${PROJECT_DOCUMENTATION_PATH} COMMAND ${XTD_RUN_COMMAND} "${PROJECT_DOCUMENTATION_PATH}/html/index.html" COMMENT "Run Doxygen Reference Guide generation" DEPENDS ${DOXYGEN_PROJECT} VERBATIM)
     else ()
-      add_custom_target(RUN_REFERENCE_GUIDE WORKING_DIRECTORY ${PROJECTS_DOCUMENTATIONS}/${PROJECT_NAME} COMMENT "Doxygen Reference Guide generation" DEPENDS ${DOXYGEN_PROJECT} VERBATIM)
+      add_custom_target(run_reference_guide WORKING_DIRECTORY ${PROJECTS_DOCUMENTATIONS}/${PROJECT_NAME} COMMENT "Doxygen Reference Guide generation" DEPENDS ${DOXYGEN_PROJECT} VERBATIM)
     endif ()
-    set_target_properties(RUN_REFERENCE_GUIDE PROPERTIES FOLDER commands)
+    set_target_properties(run_reference_guide PROPERTIES FOLDER commands)
   endif ()
 endif ()
