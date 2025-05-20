@@ -48,7 +48,7 @@
 /// | xtd::drawing::drawing_2d::hatch_style::large_confetti           | 35    |  @image html hatch_brush_large_confetti.png            |
 /// | xtd::drawing::drawing_2d::hatch_style::zig_zag                  | 36    |  @image html hatch_brush_zig_zag.png                   |
 /// | xtd::drawing::drawing_2d::hatch_style::wave                     | 37    |  @image html hatch_brush_wave.png                      |
-/// | xtd::drawing::drawing_2d::hatch_style::diagonal_brick           | 38    |  @image html hatch_brush_diagonal_brickpng             |
+/// | xtd::drawing::drawing_2d::hatch_style::diagonal_brick           | 38    |  @image html hatch_brush_diagonal_brick.png            |
 /// | xtd::drawing::drawing_2d::hatch_style::horizontal_brick         | 39    |  @image html hatch_brush_horizontal_brick.png          |
 /// | xtd::drawing::drawing_2d::hatch_style::weave                    | 40    |  @image html hatch_brush_weave.png                     |
 /// | xtd::drawing::drawing_2d::hatch_style::plaid                    | 41    |  @image html hatch_brush_plaid.png                     |
