@@ -57,7 +57,7 @@ jobs:
           -DXTD_BUILD_TESTS_XTD_CORE=ON `
           -DXTD_BUILD_TESTS_XTD_DRAWING=ON `
           -DXTD_BUILD_TESTS_XTD_FORMS=OFF `
-          -DXTD_BUILD_TESTS_XTD_TUNIT=OFF
+          -DXTD_BUILD_TESTS_XTD_TUNIT=ON
 
     - name: Building xtd
       run: cmake --build build-${{ matrix.arch }}-${{ matrix.build_type }} --config ${{ matrix.build_type }}
