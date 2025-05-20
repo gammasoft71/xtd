@@ -180,7 +180,7 @@ image::image(const string& filename) : image::image(filename, false) {
 }
 
 image::image(const string& filename, bool use_icm) : data_(xtd::new_sptr<data>()) {
-  if (!xtd::io::file::exists(filename)) throw_helper::throws(exception_case::argument);
+  if (!xtd::io::file::exists(filename)) throw_helper::throws(exception_case::argument, string::format("`{}` file not found", filename).c_str());
   auto frame_resolutions = std::map<xtd::size, xtd::size> {};
   if (path::get_extension(filename) == ".xbm") {
     auto [bits, width, height] = get_data_from_xbm(filename);
