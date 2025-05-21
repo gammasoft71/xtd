@@ -1469,6 +1469,8 @@ macro(write_resources)
     set(RESOURCES_DIRECTORY_ROOT ${CMAKE_CURRENT_BINARY_DIR})
   endif ()
  
+  message("{${PROJECT_NAME}} \${RESOURCES_DIRECTORY_ROOT} = ${RESOURCES_DIRECTORY_ROOT}")
+ 
   foreach (RESOURCE_LINE ${PROJECT_RESOURCES})
     split_resource(${RESOURCE_LINE} NAME FILE)
     get_filename_component(FILENAME ${FILE} NAME)
