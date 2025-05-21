@@ -45,8 +45,8 @@ jobs:
 
     - name: Configuring CMake
       run: |
-        mkdir build-${{ matrix.arch }}-${{ matrix.build_type }}
-        cd build-${{ matrix.arch }}-${{ matrix.build_type }}
+        mkdir build
+        cd build
         cmake .. `
           -G "Visual Studio 17 2022" `
           -A ${{ matrix.arch }} `
@@ -60,22 +60,22 @@ jobs:
           -DXTD_BUILD_TESTS_XTD_TUNIT=ON
 
     - name: Building xtd
-      run: cmake --build build-${{ matrix.arch }}-${{ matrix.build_type }} --config ${{ matrix.build_type }}
+      run: cmake --build build --config ${{ matrix.build_type }}
 
     - name: Installing xtd
-      run: cmake --build build-${{ matrix.arch }}-${{ matrix.build_type }} --config ${{ matrix.build_type }} --target install
+      run: cmake --build build --config ${{ matrix.build_type }} --target install
           
-    - name: List build-${{ matrix.arch }}-${{ matrix.build_type }}\tests\xtd.drawing.unit_tests\${{ matrix.build_type }} files
+    - name: List build\tests\xtd.drawing.unit_tests\${{ matrix.build_type }} files
       run: |
-        cd build-${{ matrix.arch }}-${{ matrix.build_type }}\tests\xtd.drawing.unit_tests\${{ matrix.build_type }}\
+        cd build\tests\xtd.drawing.unit_tests\${{ matrix.build_type }}\
         dir
           
-    - name: List build-${{ matrix.arch }}-${{ matrix.build_type }}\tests\xtd.drawing.unit_tests\${{ matrix.build_type }}\Resources files
+    - name: List build\tests\xtd.drawing.unit_tests\${{ matrix.build_type }}\resources files
       run: |
-        cd build-${{ matrix.arch }}-${{ matrix.build_type }}\tests\xtd.drawing.unit_tests\${{ matrix.build_type }}\Resources\
+        cd build\tests\xtd.drawing.unit_tests\${{ matrix.build_type }}\resources\
         dir
           
     - name: Running xtd unit tests
       run: |
-        cd build-${{ matrix.arch }}-${{ matrix.build_type }}
+        cd build
         ctest --output-on-failure --build-config ${{ matrix.build_type }}
