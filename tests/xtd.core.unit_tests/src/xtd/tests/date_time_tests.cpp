@@ -21,7 +21,7 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_default_constructor) {
-      date_time d;
+      auto d = date_time {};
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::is_zero(d.ticks());
       assert::are_equal(1u, d.year());
@@ -35,7 +35,7 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_ticks) {
-      date_time d(std::chrono::duration_cast<ticks>(std::chrono::seconds(42)));
+      auto d = date_time {std::chrono::duration_cast<ticks>(std::chrono::seconds(42))};
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(std::chrono::duration_cast<ticks>(std::chrono::seconds(42)).count(), d.ticks());
       assert::are_equal(1u, d.year());
@@ -49,7 +49,7 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_ticks_and_date_time_kind_unspecified) {
-      date_time d(std::chrono::duration_cast<ticks>(std::chrono::minutes(24)), date_time_kind::unspecified);
+      auto d = date_time {std::chrono::duration_cast<ticks>(std::chrono::minutes(24)), date_time_kind::unspecified};
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(std::chrono::duration_cast<ticks>(std::chrono::minutes(24)).count(), d.ticks());
       assert::are_equal(1u, d.year());
@@ -63,7 +63,7 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_ticks_and_date_time_kind_loacal) {
-      date_time d(std::chrono::duration_cast<ticks>(std::chrono::minutes(24)), date_time_kind::local);
+      auto d = date_time {std::chrono::duration_cast<ticks>(std::chrono::minutes(24)), date_time_kind::local};
       assert::are_equal(date_time_kind::local, d.kind());
       assert::are_equal(std::chrono::duration_cast<ticks>(std::chrono::minutes(24)).count(), d.ticks());
       assert::are_equal(1u, d.year());
@@ -77,7 +77,7 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_ticks_and_date_time_kind_utc) {
-      date_time d(std::chrono::duration_cast<ticks>(std::chrono::hours(12)), date_time_kind::utc);
+      auto d = date_time {std::chrono::duration_cast<ticks>(std::chrono::hours(12)), date_time_kind::utc};
       assert::are_equal(date_time_kind::utc, d.kind());
       assert::are_equal(std::chrono::duration_cast<ticks>(std::chrono::hours(12)).count(), d.ticks());
       assert::are_equal(1u, d.year());
@@ -91,7 +91,7 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_year_month_day) {
-      date_time d(1971, 1, 5);
+      auto d = date_time {1971, 1, 5};
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(1971u, d.year());
       assert::are_equal(1u, d.month());
@@ -104,7 +104,7 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_year_month_day_hour_minute_second) {
-      date_time d(1971, 1, 5, 21, 10, 30);
+      auto d = date_time {1971, 1, 5, 21, 10, 30};
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(1971u, d.year());
       assert::are_equal(1u, d.month());
@@ -117,7 +117,7 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_year_month_day_hour_minute_second_and_date_time_kind_unspecified) {
-      date_time d(1971, 1, 5, 21, 10, 30, date_time_kind::unspecified);
+      auto d = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::unspecified};
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(1971u, d.year());
       assert::are_equal(1u, d.month());
@@ -130,7 +130,7 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_year_month_day_hour_minute_second_and_date_time_kind_local) {
-      date_time d(1971, 1, 5, 21, 10, 30, date_time_kind::local);
+      auto d = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
       assert::are_equal(date_time_kind::local, d.kind());
       assert::are_equal(1971u, d.year());
       assert::are_equal(1u, d.month());
@@ -142,7 +142,7 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_year_month_day_hour_minute_second_and_date_time_kind_utc) {
-      date_time d(1971, 1, 5, 21, 10, 30, date_time_kind::utc);
+      auto d = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::utc};
       assert::are_equal(date_time_kind::utc, d.kind());
       assert::are_equal(1971u, d.year());
       assert::are_equal(1u, d.month());
@@ -155,7 +155,7 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_year_month_day_hour_minute_second_millisecond) {
-      date_time d(1971, 1, 5, 21, 10, 30, 242);
+      auto d = date_time {1971, 1, 5, 21, 10, 30, 242};
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(1971u, d.year());
       assert::are_equal(1u, d.month());
@@ -168,7 +168,7 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_year_month_day_hour_minute_second_millisecond_and_date_time_kind_unspecified) {
-      date_time d(1971, 1, 5, 21, 10, 30, 242, date_time_kind::unspecified);
+      auto d = date_time {1971, 1, 5, 21, 10, 30, 242, date_time_kind::unspecified};
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(1971u, d.year());
       assert::are_equal(1u, d.month());
@@ -181,7 +181,7 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_year_month_day_hour_minute_second_millisecond_and_date_time_kind_local) {
-      date_time d(1971, 1, 5, 21, 10, 30, 242, date_time_kind::local);
+      auto d = date_time {1971, 1, 5, 21, 10, 30, 242, date_time_kind::local};
       assert::are_equal(date_time_kind::local, d.kind());
       assert::are_equal(1971u, d.year());
       assert::are_equal(1u, d.month());
@@ -194,7 +194,7 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_with_year_month_day_hour_minute_second_millisecond_and_date_time_kind_utc) {
-      date_time d(1971, 1, 5, 21, 10, 30, 242, date_time_kind::utc);
+      auto d = date_time {1971, 1, 5, 21, 10, 30, 242, date_time_kind::utc};
       assert::are_equal(date_time_kind::utc, d.kind());
       assert::are_equal(1971u, d.year());
       assert::are_equal(1u, d.month());
@@ -207,7 +207,7 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_max_value) {
-      date_time d = date_time::max_value;
+      auto d = date_time::max_value;
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(3155378975999999999ll, d.ticks());
       assert::are_equal(9999u, d.year());
@@ -221,7 +221,7 @@ namespace xtd::tests {
     }
     
     void test_method_(create_date_min_value) {
-      date_time d = date_time::min_value;
+      auto d = date_time::min_value;
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::is_zero(d.ticks());
       assert::are_equal(1u, d.year());
@@ -247,7 +247,7 @@ namespace xtd::tests {
     }
     
     void test_method_(from_duration) {
-      date_time d = date_time::from_duration(std::chrono::hours(12));
+      auto d = date_time::from_duration(std::chrono::hours(12));
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(std::chrono::duration_cast<ticks>(std::chrono::hours(12)).count(), d.ticks());
       assert::are_equal(1u, d.year());
@@ -261,7 +261,7 @@ namespace xtd::tests {
     }
     
     void test_method_(from_duration_local) {
-      date_time d = date_time::from_duration(std::chrono::hours(12), date_time_kind::local);
+      auto d = date_time::from_duration(std::chrono::hours(12), date_time_kind::local);
       assert::are_equal(date_time_kind::local, d.kind());
       assert::are_equal(std::chrono::duration_cast<ticks>(std::chrono::hours(12)).count(), d.ticks());
       assert::are_equal(1u, d.year());
@@ -275,7 +275,7 @@ namespace xtd::tests {
     }
     
     void test_method_(from_duration_utc) {
-      date_time d = date_time::from_duration(std::chrono::hours(12), date_time_kind::utc);
+      auto d = date_time::from_duration(std::chrono::hours(12), date_time_kind::utc);
       assert::are_equal(date_time_kind::utc, d.kind());
       assert::are_equal(std::chrono::duration_cast<ticks>(std::chrono::hours(12)).count(), d.ticks());
       assert::are_equal(1u, d.year());
@@ -289,28 +289,28 @@ namespace xtd::tests {
     }
     
     void test_method_(from_time_t) {
-      struct tm tms = make_tm(1971, 1, 5, 21, 10, 30);
-      date_time d = date_time::from_time_t(std::mktime(&tms));
+      auto tms = make_tm(1971, 1, 5, 21, 10, 30);
+      auto d = date_time::from_time_t(std::mktime(&tms));
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(std::mktime(&tms), d.to_local_time().to_time_t());
     }
     
     void test_method_(from_time_t_local) {
-      struct tm tms = make_tm(1971, 1, 5, 21, 10, 30);
-      date_time d = date_time::from_time_t(std::mktime(&tms), date_time_kind::local);
+      auto tms = make_tm(1971, 1, 5, 21, 10, 30);
+      auto d = date_time::from_time_t(std::mktime(&tms), date_time_kind::local);
       assert::are_equal(date_time_kind::local, d.kind());
       assert::are_equal(std::mktime(&tms), d.to_time_t());
     }
     
     void test_method_(from_time_t_utc) {
-      struct tm tms = make_tm(1971, 1, 5, 21, 10, 30);
-      date_time d = date_time::from_time_t(std::mktime(&tms), date_time_kind::utc);
+      auto tms = make_tm(1971, 1, 5, 21, 10, 30);
+      auto d = date_time::from_time_t(std::mktime(&tms), date_time_kind::utc);
       assert::are_equal(date_time_kind::utc, d.kind());
       assert::are_equal(std::mktime(&tms), d.to_local_time().to_time_t());
     }
     
     void test_method_(from_tm) {
-      date_time d = date_time::from_tm(make_tm(1971, 1, 5, 21, 10, 30));
+      auto d = date_time::from_tm(make_tm(1971, 1, 5, 21, 10, 30));
       assert::are_equal(date_time_kind::unspecified, d.kind());
       assert::are_equal(1971u, d.year());
       assert::are_equal(1u, d.month());
@@ -323,7 +323,7 @@ namespace xtd::tests {
     }
     
     void test_method_(from_tm_local) {
-      date_time d = date_time::from_tm(make_tm(1971, 1, 5, 21, 10, 30), date_time_kind::local);
+      auto d = date_time::from_tm(make_tm(1971, 1, 5, 21, 10, 30), date_time_kind::local);
       assert::are_equal(date_time_kind::local, d.kind());
       assert::are_equal(1971u, d.year());
       assert::are_equal(1u, d.month());
@@ -336,7 +336,7 @@ namespace xtd::tests {
     }
     
     void test_method_(from_tm_utc) {
-      date_time d = date_time::from_tm(make_tm(1971, 1, 5, 21, 10, 30), date_time_kind::utc);
+      auto d = date_time::from_tm(make_tm(1971, 1, 5, 21, 10, 30), date_time_kind::utc);
       assert::are_equal(date_time_kind::utc, d.kind());
       assert::are_equal(1971u, d.year());
       assert::are_equal(1u, d.month());
@@ -349,8 +349,8 @@ namespace xtd::tests {
     }
     
     void test_method_(add_duration) {
-      date_time d1(std::chrono::seconds(20), date_time_kind::local);
-      date_time d2 = d1.add(std::chrono::seconds(22));
+      auto d1 = date_time {std::chrono::seconds(20), date_time_kind::local};
+      auto d2 = d1.add(std::chrono::seconds(22));
       assert::are_equal(std::chrono::duration_cast<ticks>(std::chrono::seconds(42)).count(), d2.ticks());
       assert::are_equal(date_time_kind::local, d2.kind());
       assert::are_equal(1u, d2.year());
@@ -363,8 +363,8 @@ namespace xtd::tests {
     }
     
     void test_method_(add_time_span) {
-      date_time d1(ticks(20), date_time_kind::local);
-      date_time d2 = d1.add(time_span(22));
+      auto d1 = date_time {ticks(20), date_time_kind::local};
+      auto d2 = d1.add(time_span(22));
       assert::are_equal(date_time_kind::local, d2.kind());
       assert::are_equal(ticks(42).count(), d2.ticks());
       assert::are_equal(1u, d2.year());
@@ -377,8 +377,8 @@ namespace xtd::tests {
     }
     
     void test_method_(add_days) {
-      date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
-      date_time d2 = d1.add_days(6.5);
+      auto d1 = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
+      auto d2 = d1.add_days(6.5);
       assert::are_equal(date_time_kind::local, d2.kind());
       assert::are_equal(1971u, d2.year());
       assert::are_equal(1u, d2.month());
@@ -391,8 +391,8 @@ namespace xtd::tests {
     }
     
     void test_method_(add_hours) {
-      date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
-      date_time d2 = d1.add_hours(6.5);
+      auto d1 = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
+      auto d2 = d1.add_hours(6.5);
       assert::are_equal(date_time_kind::local, d2.kind());
       assert::are_equal(1971u, d2.year());
       assert::are_equal(1u, d2.month());
@@ -405,8 +405,8 @@ namespace xtd::tests {
     }
     
     void test_method_(add_milliseconds) {
-      date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
-      date_time d2 = d1.add_milliseconds(6.5);
+      auto d1 = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
+      auto d2 = d1.add_milliseconds(6.5);
       assert::are_equal(date_time_kind::local, d2.kind());
       assert::are_equal(1971u, d2.year());
       assert::are_equal(1u, d2.month());
@@ -419,8 +419,8 @@ namespace xtd::tests {
     }
     
     void test_method_(add_minutes) {
-      date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
-      date_time d2 = d1.add_minutes(6.5);
+      auto d1 = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
+      auto d2 = d1.add_minutes(6.5);
       assert::are_equal(date_time_kind::local, d2.kind());
       assert::are_equal(1971u, d2.year());
       assert::are_equal(1u, d2.month());
@@ -433,8 +433,8 @@ namespace xtd::tests {
     }
     
     void test_method_(add_months) {
-      date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
-      date_time d2 = d1.add_months(6);
+      auto d1 = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
+      auto d2 = d1.add_months(6);
       assert::are_equal(date_time_kind::local, d2.kind());
       assert::are_equal(1971u, d2.year());
       assert::are_equal(7u, d2.month());
@@ -447,8 +447,8 @@ namespace xtd::tests {
     }
     
     void test_method_(add_seconds) {
-      date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
-      date_time d2 = d1.add_seconds(6.5);
+      auto d1 = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
+      auto d2 = d1.add_seconds(6.5);
       assert::are_equal(date_time_kind::local, d2.kind());
       assert::are_equal(1971u, d2.year());
       assert::are_equal(1u, d2.month());
@@ -461,8 +461,8 @@ namespace xtd::tests {
     }
     
     void test_method_(add_ticks) {
-      date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
-      date_time d2 = d1.add_ticks(65000000);
+      auto d1 = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
+      auto d2 = d1.add_ticks(65000000);
       assert::are_equal(date_time_kind::local, d2.kind());
       assert::are_equal(1971u, d2.year());
       assert::are_equal(1u, d2.month());
@@ -475,8 +475,8 @@ namespace xtd::tests {
     }
     
     void test_method_(add_years) {
-      date_time d1(1971, 1, 5, 21, 10, 30, date_time_kind::local);
-      date_time d2 = d1.add_years(6);
+      auto d1 = date_time {1971, 1, 5, 21, 10, 30, date_time_kind::local};
+      auto d2 = d1.add_years(6);
       assert::are_equal(date_time_kind::local, d2.kind());
       assert::are_equal(1977u, d2.year());
       assert::are_equal(1u, d2.month());
