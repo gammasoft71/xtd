@@ -70,10 +70,10 @@ jobs:
         cd build\tests\xtd.drawing.unit_tests\${{ matrix.build_type }}\
         dir
           
-    - name: List build\tests\xtd.drawing.unit_tests\${{ matrix.build_type }}\resources files
-      run: |
-        cd build\tests\xtd.drawing.unit_tests\${{ matrix.build_type }}\resources\
-        dir
+    #- name: List build\tests\xtd.drawing.unit_tests\${{ matrix.build_type }}\resources files
+    #  run: |
+    #    cd build\tests\xtd.drawing.unit_tests\${{ matrix.build_type }}\resources\
+    #    dir
           
     - name: Running xtd unit tests
       run: |
