@@ -88,7 +88,7 @@ namespace xtd::tests {
     void test_method_(_d_operator_on_long_double) {
       auto v = 42.0_d;
       assert::is_true(is<double>(v));
-      assert::are_equal(42.0_b, v);
+      assert::are_equal(42.0_d, v);
     }
     
     void test_method_(_d_operator_on_unsigned_long_long) {
@@ -96,7 +96,51 @@ namespace xtd::tests {
       assert::is_true(is<double>(v));
       assert::are_equal(42.0_d, v);
     }
+
+    void test_method_(_f_operator_on_char_ptr) {
+      auto v = "42.0"_f;
+      assert::is_true(is<float>(v));
+      assert::are_equal(42.0_f, v);
+    }
     
+#if defined(__xtd__cpp_lib_char8_t)
+    void test_method_(_f_operator_on_char8_ptr) {
+      auto v = u8"42.0"_f;
+      assert::is_true(is<float>(v));
+      assert::are_equal(42.0_f, v);
+    }
+#endif
+    
+    void test_method_(_f_operator_on_char16_ptr) {
+      auto v = u"42.0"_f;
+      assert::is_true(is<float>(v));
+      assert::are_equal(42.0_f, v);
+    }
+    
+    void test_method_(_f_operator_on_char32_ptr) {
+      auto v = U"42.0"_f;
+      assert::is_true(is<float>(v));
+      assert::are_equal(42.0_f, v);
+    }
+    
+    void test_method_(_f_operator_on_wchar_ptr) {
+      auto v = L"42.0"_f;
+      assert::is_true(is<float>(v));
+      assert::are_equal(42.0_f, v);
+    }
+    
+    void test_method_(_f_operator_on_long_double) {
+      auto v = 42.0_f;
+      assert::is_true(is<float>(v));
+      assert::are_equal(42.0_f, v);
+    }
+    
+    void test_method_(_f_operator_on_unsigned_long_long) {
+      auto v = 42_f;
+      assert::is_true(is<float>(v));
+      assert::are_equal(42.0_f, v);
+    }
+
     void test_method_(_s_operator_on_char_ptr) {
       auto v = "string"_s;
       assert::is_instance_of<string>(v);
