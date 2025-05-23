@@ -452,11 +452,11 @@ namespace xtd::tests {
       assert::throws<index_out_of_range_exception>([] {bit_converter::to_int16(array<byte> {0x00, 0x00}, 2);});
       assert::throws<index_out_of_range_exception>([] {bit_converter::to_int16(array<byte> {0x00, 0x00}, 1);});
       
-      assert::are_equal(0, bit_converter::to_int16(array<byte> {0x00, 0x00}, 0));
-      assert::are_equal(15, bit_converter::to_int16(array<byte> {0x0F, 0x00}, 0));
-      assert::are_equal(-15, bit_converter::to_int16(array<byte> {0xF1, 0xFF}, 0));
-      assert::are_equal(10000, bit_converter::to_int16(array<byte> {0x10, 0x27}, 0));
-      assert::are_equal(-10000, bit_converter::to_int16(array<byte> {0xF0, 0xD8}, 0));
+      assert::are_equal(0_s16, bit_converter::to_int16(array<byte> {0x00, 0x00}, 0));
+      assert::are_equal(15_s16, bit_converter::to_int16(array<byte> {0x0F, 0x00}, 0));
+      assert::are_equal(-15_s16, bit_converter::to_int16(array<byte> {0xF1, 0xFF}, 0));
+      assert::are_equal(10000_s16, bit_converter::to_int16(array<byte> {0x10, 0x27}, 0));
+      assert::are_equal(-10000_s16, bit_converter::to_int16(array<byte> {0xF0, 0xD8}, 0));
       assert::are_equal(std::numeric_limits<int16>::lowest(), bit_converter::to_int16(array<byte> {0x00, 0x80}, 0));
       assert::are_equal(std::numeric_limits<int16>::max(), bit_converter::to_int16(array<byte> {0xFF, 0x7F}, 0));
     }
@@ -465,13 +465,13 @@ namespace xtd::tests {
       assert::throws<index_out_of_range_exception>([] {bit_converter::to_int32(array<byte> {0x00, 0x00, 0x00, 0x00}, 4);});
       assert::throws<index_out_of_range_exception>([] {bit_converter::to_int32(array<byte> {0x00, 0x00, 0x00, 0x00}, 1);});
       
-      assert::are_equal(0, bit_converter::to_int32(array<byte> {0x00, 0x00, 0x00, 0x00}, 0));
-      assert::are_equal(15, bit_converter::to_int32(array<byte> {0x0F, 0x00, 0x00, 0x00}, 0));
-      assert::are_equal(-15, bit_converter::to_int32(array<byte> {0xF1, 0xFF, 0xFF, 0xFF}, 0));
-      assert::are_equal(1048576, bit_converter::to_int32(array<byte> {0x00, 0x00, 0x10, 0x00}, 0));
-      assert::are_equal(-1048576, bit_converter::to_int32(array<byte> {0x00, 0x00, 0xF0, 0xFF}, 0));
-      assert::are_equal(1000000000, bit_converter::to_int32(array<byte> {0x00, 0xCA, 0x9A, 0x3B}, 0));
-      assert::are_equal(-1000000000, bit_converter::to_int32(array<byte> {0x00, 0x36, 0x65, 0xC4}, 0));
+      assert::are_equal(0_s32, bit_converter::to_int32(array<byte> {0x00, 0x00, 0x00, 0x00}, 0));
+      assert::are_equal(15_s32, bit_converter::to_int32(array<byte> {0x0F, 0x00, 0x00, 0x00}, 0));
+      assert::are_equal(-15_s32, bit_converter::to_int32(array<byte> {0xF1, 0xFF, 0xFF, 0xFF}, 0));
+      assert::are_equal(1048576_s32, bit_converter::to_int32(array<byte> {0x00, 0x00, 0x10, 0x00}, 0));
+      assert::are_equal(-1048576_s32, bit_converter::to_int32(array<byte> {0x00, 0x00, 0xF0, 0xFF}, 0));
+      assert::are_equal(1000000000_s32, bit_converter::to_int32(array<byte> {0x00, 0xCA, 0x9A, 0x3B}, 0));
+      assert::are_equal(-1000000000_s32, bit_converter::to_int32(array<byte> {0x00, 0x36, 0x65, 0xC4}, 0));
       assert::are_equal(std::numeric_limits<int32>::lowest(), bit_converter::to_int32(array<byte> {0x00, 0x00, 0x00, 0x80}, 0));
       assert::are_equal(std::numeric_limits<int32>::max(), bit_converter::to_int32(array<byte> {0xFF, 0xFF, 0xFF, 0x7F}, 0));
     }
@@ -480,16 +480,16 @@ namespace xtd::tests {
       assert::throws<index_out_of_range_exception>([] {bit_converter::to_int64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 8);});
       assert::throws<index_out_of_range_exception>([] {bit_converter::to_int64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 1);});
       
-      assert::are_equal(0ll, bit_converter::to_int64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
-      assert::are_equal(0xFFFFFFll, bit_converter::to_int64(array<byte> {0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
-      assert::are_equal(1000000000ll, bit_converter::to_int64(array<byte> {0x00, 0xCA, 0x9A, 0x3B, 0x00, 0x00, 0x00, 0x00}, 0));
-      assert::are_equal(-1000000000ll, bit_converter::to_int64(array<byte> {0x00, 0x36, 0x65, 0xC4, 0xFF, 0xFF, 0xFF, 0xFF}, 0));
-      assert::are_equal(0x100000000ll, bit_converter::to_int64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00}, 0));
-      assert::are_equal(-0x100000000ll, bit_converter::to_int64(array<byte> {0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF}, 0));
-      assert::are_equal(0xAAAAAAAAAAAAll, bit_converter::to_int64(array<byte> {0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0x00, 0x00}, 0));
-      assert::are_equal(-0xAAAAAAAAAAAAll, bit_converter::to_int64(array<byte> {0x56, 0x55, 0x55, 0x55, 0x55, 0x55, 0xFF, 0xFF}, 0));
-      assert::are_equal(1000000000000000000ll, bit_converter::to_int64(array<byte> {0x00, 0x00, 0x64, 0xA7, 0xB3, 0xB6, 0xE0, 0x0D}, 0));
-      assert::are_equal(-1000000000000000000ll, bit_converter::to_int64(array<byte> {0x00, 0x00, 0x9C, 0x58, 0x4C, 0x49, 0x1F, 0xF2}, 0));
+      assert::are_equal(0_s64, bit_converter::to_int64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
+      assert::are_equal(0xFFFFFF_s64, bit_converter::to_int64(array<byte> {0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
+      assert::are_equal(1000000000_s64, bit_converter::to_int64(array<byte> {0x00, 0xCA, 0x9A, 0x3B, 0x00, 0x00, 0x00, 0x00}, 0));
+      assert::are_equal(-1000000000_s64, bit_converter::to_int64(array<byte> {0x00, 0x36, 0x65, 0xC4, 0xFF, 0xFF, 0xFF, 0xFF}, 0));
+      assert::are_equal(0x100000000_s64, bit_converter::to_int64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00}, 0));
+      assert::are_equal(-0x100000000_s64, bit_converter::to_int64(array<byte> {0x00, 0x00, 0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF}, 0));
+      assert::are_equal(0xAAAAAAAAAAAA_s64, bit_converter::to_int64(array<byte> {0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0x00, 0x00}, 0));
+      assert::are_equal(-0xAAAAAAAAAAAA_s64, bit_converter::to_int64(array<byte> {0x56, 0x55, 0x55, 0x55, 0x55, 0x55, 0xFF, 0xFF}, 0));
+      assert::are_equal(1000000000000000000_s64, bit_converter::to_int64(array<byte> {0x00, 0x00, 0x64, 0xA7, 0xB3, 0xB6, 0xE0, 0x0D}, 0));
+      assert::are_equal(-1000000000000000000_s64, bit_converter::to_int64(array<byte> {0x00, 0x00, 0x9C, 0x58, 0x4C, 0x49, 0x1F, 0xF2}, 0));
       assert::are_equal(std::numeric_limits<int64>::lowest(), bit_converter::to_int64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80}, 0));
       assert::are_equal(std::numeric_limits<int64>::max(), bit_converter::to_int64(array<byte> {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7F}, 0));
     }
@@ -574,10 +574,10 @@ namespace xtd::tests {
       assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint16(array<byte> {0x00, 0x00}, 2);});
       assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint16(array<byte> {0x00, 0x00}, 1);});
       
-      assert::are_equal(15, bit_converter::to_uint16(array<byte> {0x0F, 0x00}, 0));
-      assert::are_equal(1023, bit_converter::to_uint16(array<byte> {0xFF, 0x03}, 0));
-      assert::are_equal(10000, bit_converter::to_uint16(array<byte> {0x10, 0x27}, 0));
-      assert::are_equal(0, bit_converter::to_uint16(array<byte> {0x00, 0x00}, 0));
+      assert::are_equal(15_u16, bit_converter::to_uint16(array<byte> {0x0F, 0x00}, 0));
+      assert::are_equal(1023_u16, bit_converter::to_uint16(array<byte> {0xFF, 0x03}, 0));
+      assert::are_equal(10000_u16, bit_converter::to_uint16(array<byte> {0x10, 0x27}, 0));
+      assert::are_equal(0_u16, bit_converter::to_uint16(array<byte> {0x00, 0x00}, 0));
       assert::are_equal(std::numeric_limits<uint16>::lowest(), bit_converter::to_uint16(array<byte> {0x00, 0x00}, 0));
       assert::are_equal(std::numeric_limits<uint16>::max(), bit_converter::to_uint16(array<byte> {0xFF, 0xFF}, 0));
     }
@@ -586,10 +586,10 @@ namespace xtd::tests {
       assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint32(array<byte> {0x00, 0x00, 0x00, 0x00}, 4);});
       assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint32(array<byte> {0x00, 0x00, 0x00, 0x00}, 1);});
       
-      assert::are_equal(15u, bit_converter::to_uint32(array<byte> {0x0F, 0x00, 0x00, 0x00}, 0));
-      assert::are_equal(1023u, bit_converter::to_uint32(array<byte> {0xFF, 0x03, 0x00, 0x00}, 0));
-      assert::are_equal(0x100000u, bit_converter::to_uint32(array<byte> {0x00, 0x00, 0x10, 0x00}, 0));
-      assert::are_equal(1000000000u, bit_converter::to_uint32(array<byte> {0x00, 0xCA, 0x9A, 0x3B}, 0));
+      assert::are_equal(15_u32, bit_converter::to_uint32(array<byte> {0x0F, 0x00, 0x00, 0x00}, 0));
+      assert::are_equal(1023_u32, bit_converter::to_uint32(array<byte> {0xFF, 0x03, 0x00, 0x00}, 0));
+      assert::are_equal(0x100000_u32, bit_converter::to_uint32(array<byte> {0x00, 0x00, 0x10, 0x00}, 0));
+      assert::are_equal(1000000000_u32, bit_converter::to_uint32(array<byte> {0x00, 0xCA, 0x9A, 0x3B}, 0));
       assert::are_equal(std::numeric_limits<uint32>::lowest(), bit_converter::to_uint32(array<byte> {0x00, 0x00, 0x00, 0x00}, 0));
       assert::are_equal(std::numeric_limits<uint32>::max(), bit_converter::to_uint32(array<byte> {0xFF, 0xFF, 0xFF, 0xFF}, 0));
     }
@@ -598,12 +598,12 @@ namespace xtd::tests {
       assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 8);});
       assert::throws<index_out_of_range_exception>([] {bit_converter::to_uint64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 1);});
       
-      assert::are_equal(0xFFFFFFull, bit_converter::to_uint64(array<byte> {0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
-      assert::are_equal(1000000000ull, bit_converter::to_uint64(array<byte> {0x00, 0xCA, 0x9A, 0x3B, 0x00, 0x00, 0x00, 0x00}, 0));
-      assert::are_equal(0x100000000ull, bit_converter::to_uint64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00}, 0));
-      assert::are_equal(0xAAAAAAAAAAAAull, bit_converter::to_uint64(array<byte> {0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0x00, 0x00}, 0));
-      assert::are_equal(1000000000000000000ull, bit_converter::to_uint64(array<byte> {0x00, 0x00, 0x64, 0xA7, 0xB3, 0xB6, 0xE0, 0x0D}, 0));
-      assert::are_equal(10000000000000000000ull, bit_converter::to_uint64(array<byte> {0x00, 0x00, 0xE8, 0x89, 0x04, 0x23, 0xC7, 0x8A}, 0));
+      assert::are_equal(0xFFFFFF_u64, bit_converter::to_uint64(array<byte> {0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
+      assert::are_equal(1000000000_u64, bit_converter::to_uint64(array<byte> {0x00, 0xCA, 0x9A, 0x3B, 0x00, 0x00, 0x00, 0x00}, 0));
+      assert::are_equal(0x100000000_u64, bit_converter::to_uint64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00}, 0));
+      assert::are_equal(0xAAAAAAAAAAAA_u64, bit_converter::to_uint64(array<byte> {0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0x00, 0x00}, 0));
+      assert::are_equal(1000000000000000000_u64, bit_converter::to_uint64(array<byte> {0x00, 0x00, 0x64, 0xA7, 0xB3, 0xB6, 0xE0, 0x0D}, 0));
+      assert::are_equal(10000000000000000000_u64, bit_converter::to_uint64(array<byte> {0x00, 0x00, 0xE8, 0x89, 0x04, 0x23, 0xC7, 0x8A}, 0));
       assert::are_equal(std::numeric_limits<uint64>::lowest(), bit_converter::to_uint64(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
       assert::are_equal(std::numeric_limits<uint64>::max(), bit_converter::to_uint64(array<byte> {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}, 0));
     }
@@ -612,12 +612,12 @@ namespace xtd::tests {
       assert::throws<index_out_of_range_exception>([] {bit_converter::to_size(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 8);});
       assert::throws<index_out_of_range_exception>([] {bit_converter::to_size(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 1);});
       
-      assert::are_equal(0xFFFFFFull, bit_converter::to_size(array<byte> {0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
-      assert::are_equal(1000000000ull, bit_converter::to_size(array<byte> {0x00, 0xCA, 0x9A, 0x3B, 0x00, 0x00, 0x00, 0x00}, 0));
-      assert::are_equal(0x100000000ull, bit_converter::to_size(array<byte> {0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00}, 0));
-      assert::are_equal(0xAAAAAAAAAAAAull, bit_converter::to_size(array<byte> {0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0x00, 0x00}, 0));
-      assert::are_equal(1000000000000000000ull, bit_converter::to_size(array<byte> {0x00, 0x00, 0x64, 0xA7, 0xB3, 0xB6, 0xE0, 0x0D}, 0));
-      assert::are_equal(10000000000000000000ull, bit_converter::to_size(array<byte> {0x00, 0x00, 0xE8, 0x89, 0x04, 0x23, 0xC7, 0x8A}, 0));
+      assert::are_equal(0xFFFFFF_z, bit_converter::to_size(array<byte> {0xFF, 0xFF, 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
+      assert::are_equal(1000000000_z, bit_converter::to_size(array<byte> {0x00, 0xCA, 0x9A, 0x3B, 0x00, 0x00, 0x00, 0x00}, 0));
+      assert::are_equal(0x100000000_z, bit_converter::to_size(array<byte> {0x00, 0x00, 0x00, 0x00, 0x01, 0x00, 0x00, 0x00}, 0));
+      assert::are_equal(0xAAAAAAAAAAAA_z, bit_converter::to_size(array<byte> {0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0xAA, 0x00, 0x00}, 0));
+      assert::are_equal(1000000000000000000_z, bit_converter::to_size(array<byte> {0x00, 0x00, 0x64, 0xA7, 0xB3, 0xB6, 0xE0, 0x0D}, 0));
+      assert::are_equal(10000000000000000000_z, bit_converter::to_size(array<byte> {0x00, 0x00, 0xE8, 0x89, 0x04, 0x23, 0xC7, 0x8A}, 0));
       assert::are_equal(std::numeric_limits<uint64>::lowest(), bit_converter::to_size(array<byte> {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}, 0));
       assert::are_equal(std::numeric_limits<uint64>::max(), bit_converter::to_size(array<byte> {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF}, 0));
     }
