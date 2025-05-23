@@ -156,6 +156,14 @@ float bit_converter::to_single(const read_only_span<byte>& value, size start_ind
   return int32_bits_to_single(to_int32(value, start_index));
 }
 
+size bit_converter::to_size(const array<byte>& value, size start_index) {
+  return to_size(read_only_span<byte>(value), start_index);
+}
+
+size bit_converter::to_size(const read_only_span<byte>& value, size start_index) {
+  return static_cast<size>(to_uint64(value, start_index));
+}
+
 uint16 bit_converter::to_uint16(const array<byte>& value, size start_index) {
   return to_uint16(read_only_span<byte>(value), start_index);
 }
