@@ -16,6 +16,18 @@ namespace xtd {
   template<class value_t>
   inline bool is(bool value) {return false;}
   template<class value_t>
+  inline bool is(char value) {return false;}
+  template<class value_t>
+  inline bool is(char16 value) {return false;}
+  template<class value_t>
+  inline bool is(char32 value) {return false;}
+#if defined(__xtd__cpp_lib_char8_t)
+  template<class value_t>
+  inline bool is(char8 value) {return false;}
+#endif
+  template<class value_t>
+  inline bool is(wchar value) {return false;}
+  template<class value_t>
   inline bool is(decimal value) {return false;}
   template<class value_t>
   inline bool is(double value) {return false;}
@@ -65,6 +77,118 @@ namespace xtd {
     return true;
   }
   
+  /// @brief Checks if the result of an expression is compatible with a given type.
+  /// @par Header
+  /// ```cpp
+  /// #include <xtd/is>
+  /// ```
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// ```cpp
+  /// auto main() -> int {
+  ///   char c = 'a';
+  ///   std::cout << "c " << is<char>(c) ? "is" : "isn't" << " char" << endl;
+  /// }
+  /// ```
+  template<>
+  inline bool is<char>(char value) {
+    return true;
+  }
+  
+  /// @brief Checks if the result of an expression is compatible with a given type.
+  /// @par Header
+  /// ```cpp
+  /// #include <xtd/is>
+  /// ```
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// ```cpp
+  /// auto main() -> int {
+  ///   char16 c = u'a';
+  ///   std::cout << "c " << is<char16>(c) ? "is" : "isn't" << " char16" << endl;
+  /// }
+  /// ```
+  template<>
+  inline bool is<char16>(char16 value) {
+    return true;
+  }
+  
+  /// @brief Checks if the result of an expression is compatible with a given type.
+  /// @par Header
+  /// ```cpp
+  /// #include <xtd/is>
+  /// ```
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// ```cpp
+  /// auto main() -> int {
+  ///   char32 c = U'a';
+  ///   std::cout << "c " << is<char32>(c) ? "is" : "isn't" << " char32" << endl;
+  /// }
+  /// ```
+  template<>
+  inline bool is<char32>(char32 value) {
+    return true;
+  }
+  
+#if defined(__xtd__cpp_lib_char8_t)
+  /// @brief Checks if the result of an expression is compatible with a given type.
+  /// @par Header
+  /// ```cpp
+  /// #include <xtd/is>
+  /// ```
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// ```cpp
+  /// auto main() -> int {
+  ///   char8 c = u8'a';
+  ///   std::cout << "c " << is<char8>(c) ? "is" : "isn't" << " char8" << endl;
+  /// }
+  /// ```
+  template<>
+  inline bool is<char8>(char8 value) {
+    return true;
+  }
+#endif
+
+  /// @brief Checks if the result of an expression is compatible with a given type.
+  /// @par Header
+  /// ```cpp
+  /// #include <xtd/is>
+  /// ```
+  /// @par Namespace
+  /// xtd
+  /// @par Library
+  /// xtd.core
+  /// @ingroup xtd_core
+  /// @par Examples
+  /// ```cpp
+  /// auto main() -> int {
+  ///   wchar c = L'a';
+  ///   std::cout << "c " << is<wchar>(c) ? "is" : "isn't" << " wchar" << endl;
+  /// }
+  /// ```
+  template<>
+  inline bool is<wchar>(wchar value) {
+    return true;
+  }
+
   /// @brief Checks if the result of an expression is compatible with a given type.
   /// @par Header
   /// ```cpp
