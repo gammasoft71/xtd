@@ -37,7 +37,7 @@ void speech_synthesizer::speak(const string& text_to_speak) {
 void speech_synthesizer::speak(xtd::speech::synthesis::prompt& prompt) {
   data_->used_prompt = &prompt;
   on_speak_started();
-  native::speech_synthesizer::speak(data_->handle, data_->used_prompt->text_to_speak());
+  if (!data_->used_prompt->text_to_speak().empty()) native::speech_synthesizer::speak(data_->handle, data_->used_prompt->text_to_speak());
   data_->used_prompt->synthesizer(this);
   on_speak_completed();
 }
@@ -52,7 +52,8 @@ xtd::speech::synthesis::prompt& speech_synthesizer::speak_async(const string& te
 void speech_synthesizer::speak_async(xtd::speech::synthesis::prompt& prompt) {
   data_->used_prompt = &prompt;
   on_speak_started();
-  native::speech_synthesizer::speak_async(data_->handle, data_->used_prompt->text_to_speak(), std::bind(&speech_synthesizer::on_speak_completed, this));
+  if (!data_->used_prompt->text_to_speak().empty()) native::speech_synthesizer::speak_async(data_->handle, data_->used_prompt->text_to_speak(), std::bind(&speech_synthesizer::on_speak_completed, this));
+  else on_speak_completed();
   data_->used_prompt->synthesizer(this);
 }
 
