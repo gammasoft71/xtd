@@ -37,6 +37,58 @@ namespace xtd::tests {
       assert::is_false(is<bool>(v));
     }
     
+    void test_method_(is_char_with_char) {
+      char v = 'a';
+      assert::is_true(is<char>(v));
+    }
+    
+    void test_method_(is_char_without_char) {
+      int v = 42;
+      assert::is_false(is<char>(v));
+    }
+    
+    void test_method_(is_char16_with_char) {
+      char16 v = u'a';
+      assert::is_true(is<char16>(v));
+    }
+    
+    void test_method_(is_char16_without_char) {
+      int v = 42;
+      assert::is_false(is<char16>(v));
+    }
+    
+    void test_method_(is_char32_with_char) {
+      char32 v = U'a';
+      assert::is_true(is<char32>(v));
+    }
+    
+    void test_method_(is_char32_without_char) {
+      int v = 42;
+      assert::is_false(is<char32>(v));
+    }
+    
+#if defined(__xtd__cpp_lib_char8_t)
+    void test_method_(is_char8_with_char) {
+      char8 v = u8'a';
+      assert::is_true(is<char8>(v));
+    }
+    
+    void test_method_(is_char8_without_char) {
+      int v = 42;
+      assert::is_false(is<char8>(v));
+    }
+#endif
+    
+    void test_method_(is_wchar_with_char) {
+      wchar v = L'a';
+      assert::is_true(is<wchar>(v));
+    }
+    
+    void test_method_(is_wchar_without_char) {
+      int v = 42;
+      assert::is_false(is<wchar>(v));
+    }
+
     void test_method_(is_decimal_with_decimal) {
       decimal v = 4.2;
       assert::is_true(is<decimal>(v));
