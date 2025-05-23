@@ -213,6 +213,14 @@ namespace xtd {
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
       virtual float read_single();
       
+      /// @brief Reads a xtd::size from the current stream and advances the current position of the stream by eight bytes.
+      /// @return A xtd::size read from the current stream.
+      /// @exception xtd::io::end_of_stream_exception The end of the stream is reached.
+      /// @exception xtd::io::io_exception An I/O error occurred.
+      /// @remarks xtd::io::binary_reader does not restore the file position after an unsuccessful read operation.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
+      virtual xtd::size read_size();
+
       /// @brief Reads a string from the current stream. The string is prefixed with the length.
       /// @return The string being read.
       /// @exception xtd::io::end_of_stream_exception The end of the stream is reached.

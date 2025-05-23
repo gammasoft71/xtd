@@ -133,6 +133,10 @@ float binary_reader::read_single() {
   return bit_converter::to_single(read_bytes(sizeof(float)), 0);
 }
 
+size binary_reader::read_size() {
+  return bit_converter::to_size(read_bytes(sizeof(size)), 0);
+}
+
 string binary_reader::read_string() {
   auto length = read_7bit_encoded_int();
   return string(read_chars(length).data(), static_cast<size_t>(length));
