@@ -82,6 +82,7 @@ add_sources(
   "src/xtd/reflection/tests/assembly_tests.cpp"
   "src/xtd/runtime/exception_services/tests/exception_dispatch_info_tests.cpp"
   "src/xtd/security/tests/secure_string_tests.cpp"
+  "src/xtd/speech/synthesis/tests/speech_synthesizer_tests.cpp"
   "src/xtd/speech/synthesis/tests/synthesizer_state_tests.cpp"
   "src/xtd/tests/access_violation_exception_tests.cpp"
   "src/xtd/tests/any_tests.cpp"
