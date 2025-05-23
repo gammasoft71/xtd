@@ -107,6 +107,10 @@ void binary_writer::write(int64 value) {
   write(read_only_span<byte> {bit_converter::get_bytes(value)});
 }
 
+void binary_writer::write(size value) {
+  write(read_only_span<byte> {bit_converter::get_bytes(value)});
+}
+
 void binary_writer::write(sbyte value) {
   if (!stream_) throw_helper::throws(exception_case::io);
   stream_->put(static_cast<char>(value));
