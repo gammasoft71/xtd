@@ -181,6 +181,12 @@ namespace xtd {
       /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
       virtual void write(int64 value);
       
+      /// @brief Writes an xtd::size to the current stream and advances the stream position by eight bytes.
+      /// @param value The xtd::size to write.
+      /// @exception xtd::io::io_exception An I/O error occurs.
+      /// @remarks For a list of common I/O tasks, see [Common I/O Tasks](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/Common%20I%3AO%20tasks).
+      virtual void write(xtd::size value);
+
       /// @brief Writes an signed byte to the current stream and advances the stream position by one byte.
       /// @param value The signed byte to write.
       /// @exception xtd::io::io_exception An I/O error occurs.
