@@ -24,6 +24,18 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
+    /// std::cout << 49_c << std::endl;
+    /// ```
+    char32 operator""_c(unsigned long long c);
+
+    /// @brief Used to convert specified value into char32.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
     /// std::cout << 'a'_c << std::endl;
     /// ```
     char32 operator""_c(char c);
@@ -77,18 +89,6 @@ namespace xtd {
     /// std::cout << L'a'_c << std::endl;
     /// ```
     char32 operator""_c(wchar c);
-    
-    /// @brief Used to convert specified value into char32.
-    /// @par Namespace
-    /// xtd
-    /// @par Library
-    /// xtd.core
-    /// @ingroup xtd_core literals
-    /// @par Examples
-    /// ```cpp
-    /// std::cout << 49_c << std::endl;
-    /// ```
-    char32 operator""_c(unsigned long long c);
     /// @}
     
     /// @name Numeric suffixes
