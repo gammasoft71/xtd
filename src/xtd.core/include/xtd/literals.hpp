@@ -2001,6 +2001,11 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core translate literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = "Belgium"_t;
+    /// std::cout << s << std::endl;
+    /// ```
     const char* operator""_t(const char* s, xtd::size n) noexcept;
     
 #if defined(__xtd__cpp_lib_char8_t)
@@ -2010,6 +2015,11 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core translate literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = u8"Belgium"_t;
+    /// std::cout << s << std::endl;
+    /// ```
     xtd::string operator""_t(const char8* s, xtd::size n) noexcept;
 #endif
     
@@ -2019,6 +2029,11 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core translate literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = u"Belgium"_t;
+    /// std::cout << s << std::endl;
+    /// ```
     xtd::string operator""_t(const char16* s, xtd::size n) noexcept;
     
     /// @brief Used to translate specified string into locale.
@@ -2027,6 +2042,11 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core translate literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = U"Belgium"_t;
+    /// std::cout << s << std::endl;
+    /// ```
     xtd::string operator""_t(const char32* s, xtd::size n) noexcept;
     
     /// @brief Used to translate specified string into locale.
@@ -2035,6 +2055,11 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core translate literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = L"Belgium"_t;
+    /// std::cout << s << std::endl;
+    /// ```
     xtd::string operator""_t(const wchar* s, xtd::size n) noexcept;
     /// @}
 
@@ -2075,7 +2100,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::time_span ts = 25_m;
+    /// xtd::time_span ts = 25_min;
     /// std::cout << ts << std::endl;
     /// ```
     xtd::time_span operator""_min(unsigned long long s);
@@ -2088,7 +2113,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::time_span ts = 25_m;
+    /// xtd::time_span ts = 25_ms;
     /// std::cout << ts << std::endl;
     /// ```
     xtd::time_span operator""_ms(unsigned long long s);
@@ -2101,7 +2126,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::time_span ts = 25_m;
+    /// xtd::time_span ts = 25_ns;
     /// std::cout << ts << std::endl;
     /// ```
     xtd::time_span operator""_ns(unsigned long long s);
@@ -2127,7 +2152,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::time_span ts = 42_s;
+    /// xtd::time_span ts = 42_t;
     /// std::cout << ts << std::endl;
     /// ```
     xtd::time_span operator""_t(unsigned long long s);
@@ -2140,7 +2165,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::time_span ts = 42_s;
+    /// xtd::time_span ts = 42_us;
     /// std::cout << ts << std::endl;
     /// ```
     xtd::time_span operator""_us(unsigned long long s);
