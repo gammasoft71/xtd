@@ -44,15 +44,20 @@ jobs:
         cd build
         gcovr --root .. \
         --exclude-unreachable-branches \
-        --exclude '.*xtd.core.native' \
-        --exclude '.*xtd.core.native.*' \
-        --exclude '.*xtd.drawing' \
-        --exclude '.*xtd.drawing.native' \
-        --exclude '.*xtd.drawing.native.*' \
-        --exclude '.*xtd.forms' \
-        --exclude '.*xtd.forms.native' \
-        --exclude '.*xtd.forms.native.*' \
-        --exclude '.*xtd.tunit' \
+        --exclude 'docs' \
+        --exclude 'examples' \
+        --exclude 'src/xtd' \
+        --exclude 'src/xtd.3rdparty.*' \
+        --exclude 'src/xtd.core.native' \
+        --exclude 'src/xtd.core.native.*' \
+        --exclude 'src/xtd.drawing' \
+        --exclude 'src/xtd.drawing.native' \
+        --exclude 'src/xtd.drawing.native.*' \
+        --exclude 'src/xtd.forms' \
+        --exclude 'src/xtd.forms.native' \
+        --exclude 'src/xtd.forms.native.*' \
+        --exclude 'src/xtd.tunit' \
+        --exclude 'tools' \
         --exclude-throw-branches \
         --gcov-ignore-parse-errors=negative_hits.warn_once_per_file \
         --xml-pretty \
