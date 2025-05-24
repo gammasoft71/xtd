@@ -37,8 +37,8 @@ void speech_synthesizer::speak(const string& text_to_speak) {
 void speech_synthesizer::speak(xtd::speech::synthesis::prompt& prompt) {
   data_->used_prompt = &prompt;
   on_speak_started();
-  if (!data_->used_prompt->text_to_speak().empty()) native::speech_synthesizer::speak(data_->handle, data_->used_prompt->text_to_speak());
   data_->used_prompt->synthesizer(this);
+  if (!data_->used_prompt->text_to_speak().empty()) native::speech_synthesizer::speak(data_->handle, data_->used_prompt->text_to_speak());
   on_speak_completed();
 }
 
