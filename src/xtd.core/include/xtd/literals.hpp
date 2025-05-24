@@ -24,7 +24,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// std::cout << 49_c << std::endl;
+    /// std::cout << 42_c << std::endl;
     /// ```
     char32 operator""_c(unsigned long long c);
 
@@ -1635,11 +1635,24 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 49_sb;
+    /// xtd::string s = 42.0_sb;
+    /// std::cout << s << std::endl;
+    /// ```
+    xtd::string operator""_sb(long double s);
+
+    /// @brief Used to convert the specified value to xtd::string with a binary format.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = 42_sb;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sb(unsigned long long s);
-    
+
     /// @brief Used to convert the specified value to xtd::string with a binary format with two digits.
     /// @par Namespace
     /// xtd
@@ -1648,11 +1661,24 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 49_sb2;
+    /// xtd::string s = 42.0_sb2;
+    /// std::cout << s << std::endl;
+    /// ```
+    xtd::string operator""_sb2( long double s);
+
+    /// @brief Used to convert the specified value to xtd::string with a binary format with two digits.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = 42_sb2;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sb2(unsigned long long s);
-    
+
     /// @brief Used to convert the specified value to xtd::string with a binary format with four digits.
     /// @par Namespace
     /// xtd
@@ -1661,11 +1687,24 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 49_sb4;
+    /// xtd::string s = 42.0_sb4;
+    /// std::cout << s << std::endl;
+    /// ```
+    xtd::string operator""_sb4(long double s);
+
+    /// @brief Used to convert the specified value to xtd::string with a binary format with four digits.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = 42_sb4;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sb4(unsigned long long s);
-    
+
     /// @brief Used to convert the specified value to xtd::string with a binary format with eight digits.
     /// @par Namespace
     /// xtd
@@ -1674,11 +1713,24 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 49_sb8;
+    /// xtd::string s = 42.0_sb8;
+    /// std::cout << s << std::endl;
+    /// ```
+    xtd::string operator""_sb8(long double s);
+
+    /// @brief Used to convert the specified value to xtd::string with a binary format with eight digits.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = 42_sb8;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sb8(unsigned long long s);
-    
+
     /// @brief Used to convert the specified value to xtd::string with a binary format with sixteen digits.
     /// @par Namespace
     /// xtd
@@ -1687,11 +1739,24 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 49_sb16;
+    /// xtd::string s = 42.0_sb16;
+    /// std::cout << s << std::endl;
+    /// ```
+    xtd::string operator""_sb16(long double s);
+
+    /// @brief Used to convert the specified value to xtd::string with a binary format with sixteen digits.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = 42_sb16;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sb16(unsigned long long s);
-    
+
     /// @brief Used to convert the specified value to xtd::string with a binary format with thirty two digits.
     /// @par Namespace
     /// xtd
@@ -1700,11 +1765,24 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 49_sb32;
+    /// xtd::string s = 42.0_sb32;
+    /// std::cout << s << std::endl;
+    /// ```
+    xtd::string operator""_sb32(long double s);
+
+    /// @brief Used to convert the specified value to xtd::string with a binary format with thirty two digits.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = 42_sb32;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sb32(unsigned long long s);
-    
+
     /// @brief Used to convert the specified value to xtd::string with a binary format with sixty four digits.
     /// @par Namespace
     /// xtd
@@ -1713,11 +1791,24 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 49_sb64;
+    /// xtd::string s = 42.0_sb64;
+    /// std::cout << s << std::endl;
+    /// ```
+    xtd::string operator""_sb64(long double s);
+
+    /// @brief Used to convert the specified value to xtd::string with a binary format with sixty four digits.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = 42_sb64;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sb64(unsigned long long s);
-    
+
     /// @brief Used to convert the specified value to xtd::string with a decimal format.
     /// @par Namespace
     /// xtd
@@ -1739,7 +1830,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 49_sd;
+    /// xtd::string s = 42_sd;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sd(unsigned long long s);
@@ -1752,7 +1843,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 49_sx;
+    /// xtd::string s = 42_sx;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sx(unsigned long long s);
@@ -1765,7 +1856,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 49_sx2;
+    /// xtd::string s = 42_sx2;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sx2(unsigned long long s);
@@ -1778,7 +1869,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 49_sx4;
+    /// xtd::string s = 42_sx4;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sx4(unsigned long long s);
@@ -1791,7 +1882,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 49_s;
+    /// xtd::string s = 42_s;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sx8(unsigned long long s);
@@ -1804,7 +1895,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 49_sx;
+    /// xtd::string s = 42_sx;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sX(unsigned long long s);
@@ -1817,7 +1908,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 49_sx2;
+    /// xtd::string s = 42_sx2;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sX2(unsigned long long s);
@@ -1830,7 +1921,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 49_sx4;
+    /// xtd::string s = 42_sx4;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sX4(unsigned long long s);
@@ -1843,7 +1934,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 49_s;
+    /// xtd::string s = 42_s;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sX8(unsigned long long s);
@@ -1971,7 +2062,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::time_span ts = 49_s;
+    /// xtd::time_span ts = 42_s;
     /// std::cout << ts << std::endl;
     /// ```
     xtd::time_span operator""_s(unsigned long long s);
@@ -1984,7 +2075,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::time_span ts = 49_s;
+    /// xtd::time_span ts = 42_s;
     /// std::cout << ts << std::endl;
     /// ```
     xtd::time_span operator""_t(unsigned long long s);
@@ -1997,7 +2088,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::time_span ts = 49_s;
+    /// xtd::time_span ts = 42_s;
     /// std::cout << ts << std::endl;
     /// ```
     xtd::time_span operator""_us(unsigned long long s);
