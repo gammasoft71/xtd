@@ -818,7 +818,71 @@ namespace xtd::tests {
     void test_method_(_u8_operator_on_invalid_wchar_ptr) {
       assert::throws<xtd::format_exception>([] {L"42str"_u8;});
     }
+ 
+    void test_method_(_u16_operator_on_long_double) {
+      auto v = 42.0_u16;
+      assert::is_true(is<uint16>(v));
+      assert::are_equal(42_u16, v);
+    }
     
+    void test_method_(_u16_operator_on_unsigned_long_long) {
+      auto v = 42_u16;
+      assert::is_true(is<uint16>(v));
+      assert::are_equal(42_u16, v);
+    }
+    
+    void test_method_(_u16_operator_on_char_ptr) {
+      auto v = "42"_u16;
+      assert::is_true(is<uint16>(v));
+      assert::are_equal(42_u16, v);
+    }
+    
+    void test_method_(_u16_operator_on_invalid_char_ptr) {
+      assert::throws<xtd::format_exception>([] {"42str"_u16;});
+    }
+    
+#if defined(__xtd__cpp_lib_char8_t)
+    void test_method_(_u16_operator_on_char8_ptr) {
+      auto v = u8"42"_u16;
+      assert::is_true(is<uint16>(v));
+      assert::are_equal(42_u16, v);
+    }
+    
+    void test_method_(_u16_operator_on_invalid_char8_ptr) {
+      assert::throws<xtd::format_exception>([] {u8"42str"_u16;});
+    }
+#endif
+    
+    void test_method_(_u16_operator_on_char16_ptr) {
+      auto v = u"42"_u16;
+      assert::is_true(is<uint16>(v));
+      assert::are_equal(42_u16, v);
+    }
+    
+    void test_method_(_u16_operator_on_invalid_char16_ptr) {
+      assert::throws<xtd::format_exception>([] {u"42str"_u16;});
+    }
+    
+    void test_method_(_u16_operator_on_char32_ptr) {
+      auto v = U"42"_u16;
+      assert::is_true(is<uint16>(v));
+      assert::are_equal(42_u16, v);
+    }
+    
+    void test_method_(_u16_operator_on_invalid_char32_ptr) {
+      assert::throws<xtd::format_exception>([] {U"42str"_u16;});
+    }
+    
+    void test_method_(_u16_operator_on_wchar_ptr) {
+      auto v = L"42"_u16;
+      assert::is_true(is<uint16>(v));
+      assert::are_equal(42_u16, v);
+    }
+    
+    void test_method_(_u16_operator_on_invalid_wchar_ptr) {
+      assert::throws<xtd::format_exception>([] {L"42str"_u16;});
+    }
+
     //_________________________________________________________________________
     //                                                          String suffixes
     void test_method_(_s_operator_on_char_ptr) {
