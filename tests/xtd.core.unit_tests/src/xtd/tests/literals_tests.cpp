@@ -1167,18 +1167,102 @@ namespace xtd::tests {
       assert::are_equal("string", v);
     }
 
+    void test_method_(_sb_operator_on_long_double) {
+      auto v = 42.0_sb;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
+    }
+    
+    void test_method_(_sb_operator_on_unsigned_long_long) {
+      auto v = 42_sb;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("101010", v);
+    }
+
+    void test_method_(_sb2_operator_on_long_double) {
+      auto v = 42.0_sb2;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
+    }
+    
+    void test_method_(_sb2_operator_on_unsigned_long_long) {
+      auto v = 42_sb2;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("101010", v);
+    }
+
+    void test_method_(_sb4_operator_on_long_double) {
+      auto v = 42.0_sb4;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
+    }
+
+    void test_method_(_sb4_operator_on_unsigned_long_long) {
+      auto v = 42_sb4;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("101010", v);
+    }
+
+    void test_method_(_sb8_operator_on_long_double) {
+      auto v = 42.0_sb8;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
+    }
+    
+    void test_method_(_sb8_operator_on_unsigned_long_long) {
+      auto v = 42_sb8;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("00101010", v);
+    }
+
+    void test_method_(_sb16_operator_on_long_double) {
+      auto v = 42.0_sb16;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
+    }
+    
+    void test_method_(_sb16_operator_on_unsigned_long_long) {
+      auto v = 42_sb16;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("0000000000101010", v);
+    }
+
+    void test_method_(_sb32_operator_on_long_double) {
+      auto v = 42.0_sb32;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
+    }
+    
+    void test_method_(_sb32_operator_on_unsigned_long_long) {
+      auto v = 42_sb32;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("00000000000000000000000000101010", v);
+    }
+
+    void test_method_(_sb64_operator_on_long_double) {
+      auto v = 42.0_sb64;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("0100000001000101000000000000000000000000000000000000000000000000", v);
+    }
+    
+    void test_method_(_sb64_operator_on_unsigned_long_long) {
+      auto v = 42_sb64;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("0000000000000000000000000000000000000000000000000000000000101010", v);
+    }
+
     void test_method_(_sd_operator_on_long_double) {
       auto v = 42.0_sd;
       assert::is_instance_of<string>(v);
       assert::are_equal("42", v);
     }
-
+    
     void test_method_(_sd_operator_on_unsigned_long_long) {
       auto v = 42_sd;
       assert::is_instance_of<string>(v);
       assert::are_equal("42", v);
     }
-    
+
     //_________________________________________________________________________
     //                                         String with translation suffixes
 
