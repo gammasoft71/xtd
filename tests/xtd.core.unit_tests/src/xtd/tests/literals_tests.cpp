@@ -11,10 +11,10 @@ namespace xtd::tests {
   class test_class_(lietarls_tests) {
     //_________________________________________________________________________
     //                                                       Character suffixes
-    void test_method_(_f_operator_on_unsigned_long_long) {
-      auto v = 42_f;
-      assert::is_true(is<float>(v));
-      assert::are_equal(42.0_f, v);
+    void test_method_(_c_operator_on_unsigned_long_long) {
+      auto v = 97_c;
+      assert::is_true(is<char32>(v));
+      assert::are_equal(L'a'_c, v);
     }
     
     void test_method_(_c_operator_on_char) {
@@ -49,14 +49,20 @@ namespace xtd::tests {
       assert::are_equal(L'a'_c, v);
     }
     
-    void test_method_(_c_operator_on_unsigned_long_long) {
-      auto v = 97_c;
-      assert::is_true(is<char32>(v));
-      assert::are_equal(L'a'_c, v);
-    }
-    
     //_________________________________________________________________________
     //                                                         Numeric suffixes
+    void test_method_(_b_operator_on_long_double) {
+      auto v = 42.0_b;
+      assert::is_true(is<byte>(v));
+      assert::are_equal(42_b, v);
+    }
+    
+    void test_method_(_b_operator_on_unsigned_long_long) {
+      auto v = 42_b;
+      assert::is_true(is<byte>(v));
+      assert::are_equal(42_b, v);
+    }
+    
     void test_method_(_b_operator_on_char_ptr) {
       auto v = "42"_b;
       assert::is_true(is<byte>(v));
@@ -89,18 +95,18 @@ namespace xtd::tests {
       assert::are_equal(42_b, v);
     }
 
-    void test_method_(_b_operator_on_long_double) {
-      auto v = 42.0_b;
-      assert::is_true(is<byte>(v));
-      assert::are_equal(42_b, v);
+    void test_method_(_d_operator_on_long_double) {
+      auto v = 42.0_d;
+      assert::is_true(is<double>(v));
+      assert::are_equal(42.0_d, v);
     }
-
-    void test_method_(_b_operator_on_unsigned_long_long) {
-      auto v = 42_b;
-      assert::is_true(is<byte>(v));
-      assert::are_equal(42_b, v);
+    
+    void test_method_(_d_operator_on_unsigned_long_long) {
+      auto v = 42_d;
+      assert::is_true(is<double>(v));
+      assert::are_equal(42.0_d, v);
     }
-
+    
     void test_method_(_d_operator_on_char_ptr) {
       auto v = "42.0"_d;
       assert::is_true(is<double>(v));
@@ -133,18 +139,18 @@ namespace xtd::tests {
       assert::are_equal(42.0_d, v);
     }
     
-    void test_method_(_d_operator_on_long_double) {
-      auto v = 42.0_d;
-      assert::is_true(is<double>(v));
-      assert::are_equal(42.0_d, v);
+    void test_method_(_f_operator_on_long_double) {
+      auto v = 42.0_f;
+      assert::is_true(is<float>(v));
+      assert::are_equal(42.0_f, v);
     }
     
-    void test_method_(_d_operator_on_unsigned_long_long) {
-      auto v = 42_d;
-      assert::is_true(is<double>(v));
-      assert::are_equal(42.0_d, v);
+    void test_method_(_f_operator_on_unsigned_long_long) {
+      auto v = 42_f;
+      assert::is_true(is<float>(v));
+      assert::are_equal(42.0_f, v);
     }
-
+    
     void test_method_(_f_operator_on_char_ptr) {
       auto v = "42.0"_f;
       assert::is_true(is<float>(v));
@@ -177,10 +183,48 @@ namespace xtd::tests {
       assert::are_equal(42.0_f, v);
     }
     
-    void test_method_(_f_operator_on_long_double) {
-      auto v = 42.0_f;
-      assert::is_true(is<float>(v));
-      assert::are_equal(42.0_f, v);
+    void test_method_(_i8_operator_on_long_double) {
+      auto v = 42.0_i8;
+      assert::is_true(is<sbyte>(v));
+      assert::are_equal(42_i8, v);
+    }
+    
+    void test_method_(_i8_operator_on_unsigned_long_long) {
+      auto v = 42_i8;
+      assert::is_true(is<sbyte>(v));
+      assert::are_equal(42_i8, v);
+    }
+    
+    void test_method_(_i8_operator_on_char_ptr) {
+      auto v = "42"_i8;
+      assert::is_true(is<sbyte>(v));
+      assert::are_equal(42_i8, v);
+    }
+    
+#if defined(__xtd__cpp_lib_char8_t)
+    void test_method_(_i8_operator_on_char8_ptr) {
+      auto v = u8"42"_i8;
+      assert::is_true(is<sbyte>(v));
+      assert::are_equal(42_i8, v);
+    }
+#endif
+    
+    void test_method_(_i8_operator_on_char16_ptr) {
+      auto v = u"42"_i8;
+      assert::is_true(is<sbyte>(v));
+      assert::are_equal(42_i8, v);
+    }
+    
+    void test_method_(_i8_operator_on_char32_ptr) {
+      auto v = U"42"_i8;
+      assert::is_true(is<sbyte>(v));
+      assert::are_equal(42_i8, v);
+    }
+    
+    void test_method_(_i8_operator_on_wchar_ptr) {
+      auto v = L"42"_i8;
+      assert::is_true(is<sbyte>(v));
+      assert::are_equal(42_i8, v);
     }
     
     //_________________________________________________________________________
