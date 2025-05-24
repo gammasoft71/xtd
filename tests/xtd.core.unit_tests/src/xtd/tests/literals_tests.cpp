@@ -1263,6 +1263,78 @@ namespace xtd::tests {
       assert::are_equal("42", v);
     }
 
+    void test_method_(_sx_operator_on_long_double) {
+      auto v = 42.0_sx;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("0x1.5p+5", v);
+    }
+    
+    void test_method_(_sx_operator_on_unsigned_long_long) {
+      auto v = 42_sx;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("2a", v);
+    }
+    
+    void test_method_(_sx2_operator_on_unsigned_long_long) {
+      auto v = 42_sx2;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("2a", v);
+    }
+    
+    void test_method_(_sx4_operator_on_unsigned_long_long) {
+      auto v = 42_sx4;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("002a", v);
+    }
+    
+    void test_method_(_sx8_operator_on_unsigned_long_long) {
+      auto v = 42_sx8;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("0000002a", v);
+    }
+    
+    void test_method_(_sx16_operator_on_unsigned_long_long) {
+      auto v = 42_sx16;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("000000000000002a", v);
+    }
+
+    void test_method_(_sX_operator_on_long_double) {
+      auto v = 42.0_sX;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("0x1.5p+5", v);
+    }
+    
+    void test_method_(_sX_operator_on_unsigned_long_long) {
+      auto v = 42_sX;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("2A", v);
+    }
+    
+    void test_method_(_sX2_operator_on_unsigned_long_long) {
+      auto v = 42_sX2;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("2A", v);
+    }
+    
+    void test_method_(_sX4_operator_on_unsigned_long_long) {
+      auto v = 42_sX4;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("002A", v);
+    }
+    
+    void test_method_(_sX8_operator_on_unsigned_long_long) {
+      auto v = 42_sX8;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("0000002A", v);
+    }
+    
+    void test_method_(_sX16_operator_on_unsigned_long_long) {
+      auto v = 42_sX16;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("000000000000002A", v);
+    }
+
     //_________________________________________________________________________
     //                                         String with translation suffixes
 
