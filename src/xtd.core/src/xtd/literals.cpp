@@ -625,6 +625,10 @@ string xtd::operator""_sd(unsigned long long s) {
   return string::format("{}", s);
 }
 
+string xtd::operator""_sx(long double s) {
+  return string::format("{:x}", s);
+}
+
 string xtd::operator""_sx(unsigned long long s) {
   return string::format("{:x}", s);
 }
@@ -641,6 +645,14 @@ string xtd::operator""_sx8(unsigned long long s) {
   return string::format("{:x8}", s);
 }
 
+string xtd::operator""_sx16(unsigned long long s) {
+  return string::format("{:x16}", s);
+}
+
+string xtd::operator""_sX(long double s) {
+  return string::format("{:X}", s);
+}
+
 string xtd::operator""_sX(unsigned long long s) {
   return string::format("{:X}", s);
 }
@@ -655,6 +667,10 @@ string xtd::operator""_sX4(unsigned long long s) {
 
 string xtd::operator""_sX8(unsigned long long s) {
   return string::format("{:X8}", s);
+}
+
+string xtd::operator""_sX16(unsigned long long s) {
+  return string::format("{:X16}", s);
 }
 
 const char* xtd::operator""_t(const char* s, xtd::size n) noexcept {

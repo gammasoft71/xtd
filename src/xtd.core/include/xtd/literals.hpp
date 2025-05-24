@@ -1846,8 +1846,21 @@ namespace xtd {
     /// xtd::string s = 42_sx;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::string operator""_sx(unsigned long long s);
+    xtd::string operator""_sx(long double s);
     
+    /// @brief Used to convert specified value into xtd::string.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = 42_sx;
+    /// std::cout << s << std::endl;
+    /// ```
+    xtd::string operator""_sx(unsigned long long s);
+
     /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
     /// xtd
@@ -1882,7 +1895,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 42_s;
+    /// xtd::string s = 42_sx8;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sx8(unsigned long long s);
@@ -1895,11 +1908,11 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 42_sx;
+    /// xtd::string s = 42_sx16;
     /// std::cout << s << std::endl;
     /// ```
-    xtd::string operator""_sX(unsigned long long s);
-    
+    xtd::string operator""_sx16(unsigned long long s);
+
     /// @brief Used to convert specified value into xtd::string.
     /// @par Namespace
     /// xtd
@@ -1908,7 +1921,33 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 42_sx2;
+    /// xtd::string s = 42.0_sX;
+    /// std::cout << s << std::endl;
+    /// ```
+    xtd::string operator""_sX(long double s);
+
+    /// @brief Used to convert specified value into xtd::string.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = 42_sX;
+    /// std::cout << s << std::endl;
+    /// ```
+    xtd::string operator""_sX(unsigned long long s);
+
+    /// @brief Used to convert specified value into xtd::string.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = 42_sX2;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sX2(unsigned long long s);
@@ -1921,7 +1960,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 42_sx4;
+    /// xtd::string s = 42_sX4;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sX4(unsigned long long s);
@@ -1934,10 +1973,23 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::string s = 42_s;
+    /// xtd::string s = 42_sX8;
     /// std::cout << s << std::endl;
     /// ```
     xtd::string operator""_sX8(unsigned long long s);
+    
+    /// @brief Used to convert specified value into xtd::string.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::string s = 42_sX16;
+    /// std::cout << s << std::endl;
+    /// ```
+    xtd::string operator""_sX16(unsigned long long s);
     /// @}
     
     /// @name String with translation suffixes
