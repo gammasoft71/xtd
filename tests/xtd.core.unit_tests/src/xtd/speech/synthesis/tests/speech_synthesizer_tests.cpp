@@ -21,9 +21,10 @@ namespace xtd::speech::synthesis::tests {
     }
 
     void test_method_(speak_with_prompt) {
+      auto s = speech_synthesizer {};
       auto p = prompt("");
       assert::is_false(p.is_completed());
-      speech_synthesizer {}.speak(p);
+      s.speak(p);
       assert::is_true(p.is_completed());
     }
     
@@ -32,21 +33,23 @@ namespace xtd::speech::synthesis::tests {
     }
 
     void test_method_(speak_async_with_prompt) {
+      auto s = speech_synthesizer {};
       auto p = prompt("");
-      speech_synthesizer {}.speak_async(p);
+      s.speak_async(p);
       assert::is_true(p.is_completed());
     }
     
     void test_method_(speak_async_with_string) {
-      auto p = speech_synthesizer {}.speak_async("");
+      auto s = speech_synthesizer {};
+      auto p = s.speak_async("");
       assert::is_true(p.is_completed());
     }
 
     void test_method_(speak_completed) {
       auto has_completed_event = false;
-      auto p = prompt("");
       auto s = speech_synthesizer {};
-      
+      auto p = prompt("");
+
       s.speak_completed += [&](object& sender, const speak_completed_event_args& e) {
         assert::is_false(e.cancelled());
         assert::is_false(e.error().has_value());
@@ -62,8 +65,8 @@ namespace xtd::speech::synthesis::tests {
 
     void test_method_(speak_started) {
       auto has_started_event = false;
-      auto p = prompt("");
       auto s = speech_synthesizer {};
+      auto p = prompt("");
       
       s.speak_started += [&](object& sender, const speak_started_event_args& e) {
         assert::is_false(e.cancelled());
@@ -79,8 +82,8 @@ namespace xtd::speech::synthesis::tests {
 
     void test_method_(state_changed) {
       auto state_changed_event_value = 0;
-      auto p = prompt("");
       auto s = speech_synthesizer {};
+      auto p = prompt("");
       
       s.state_changed += [&](object& sender, const state_changed_event_args& e) {
         if (state_changed_event_value == 0) {
