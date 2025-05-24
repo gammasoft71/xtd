@@ -3,6 +3,10 @@
 
 using namespace xtd;
 
+char32 xtd::operator""_c(unsigned long long c) {
+  return as<char32>(c);
+}
+
 char32 xtd::operator""_c(char c) {
   return as<char32>(c);
 }
@@ -22,10 +26,6 @@ char32 xtd::operator""_c(char32 c) {
 }
 
 char32 xtd::operator""_c(wchar c) {
-  return as<char32>(c);
-}
-
-char32 xtd::operator""_c(unsigned long long c) {
   return as<char32>(c);
 }
 
