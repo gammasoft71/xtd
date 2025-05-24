@@ -133,11 +133,19 @@ namespace xtd::tests {
       assert::are_equal(42.0_d, v);
     }
     
+    void test_method_(_d_operator_on_invalid_char_ptr) {
+      assert::throws<xtd::format_exception>([] {"str"_d;});
+    }
+
 #if defined(__xtd__cpp_lib_char8_t)
     void test_method_(_d_operator_on_char8_ptr) {
       auto v = u8"42.0"_d;
       assert::is_true(is<double>(v));
       assert::are_equal(42.0_d, v);
+    }
+    
+    void test_method_(_d_operator_on_invalid_char8_ptr) {
+      assert::throws<xtd::format_exception>([] {u8"str"_d;});
     }
 #endif
     
@@ -147,18 +155,30 @@ namespace xtd::tests {
       assert::are_equal(42.0_d, v);
     }
     
+    void test_method_(_d_operator_on_invalid_char16_ptr) {
+      assert::throws<xtd::format_exception>([] {u"str"_d;});
+    }
+
     void test_method_(_d_operator_on_char32_ptr) {
       auto v = U"42.0"_d;
       assert::is_true(is<double>(v));
       assert::are_equal(42.0_d, v);
     }
     
+    void test_method_(_d_operator_on_invalid_char32_ptr) {
+      assert::throws<xtd::format_exception>([] {U"str"_d;});
+    }
+
     void test_method_(_d_operator_on_wchar_ptr) {
       auto v = L"42.0"_d;
       assert::is_true(is<double>(v));
       assert::are_equal(42.0_d, v);
     }
     
+    void test_method_(_d_operator_on_invalid_wchar_ptr) {
+      assert::throws<xtd::format_exception>([] {L"str"_d;});
+    }
+
     void test_method_(_f_operator_on_long_double) {
       auto v = 42.0_f;
       assert::is_true(is<float>(v));
