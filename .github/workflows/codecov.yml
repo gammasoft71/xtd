@@ -46,7 +46,6 @@ jobs:
         --exclude-unreachable-branches \
         --exclude '../docs' \
         --exclude '../examples' \
-        --exclude '../src/xtd' \
         --exclude '../src/xtd.3rdparty.*' \
         --exclude '../src/xtd.core.native' \
         --exclude '../src/xtd.core.native.*' \
