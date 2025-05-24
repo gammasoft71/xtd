@@ -1,4 +1,5 @@
 #include <xtd/literals>
+#include <xtd/environment>
 #include <xtd/is>
 #include <xtd/translator>
 #include <xtd/tunit/assert>
@@ -62,6 +63,10 @@ namespace xtd::tests {
       auto v = 42_b;
       assert::is_true(is<byte>(v));
       assert::are_equal(42_b, v);
+    }
+    
+    void test_method_(_b_operator_on_unsigned_long_long_with_overflow) {
+      assert::throws<xtd::overflow_exception>([] {256_b;});
     }
     
     void test_method_(_b_operator_on_char_ptr) {
@@ -256,6 +261,10 @@ namespace xtd::tests {
       assert::are_equal(42_i8, v);
     }
     
+    void test_method_(_i8_operator_on_unsigned_long_long_with_overflow) {
+      assert::throws<xtd::overflow_exception>([] {128_i8;});
+    }
+
     void test_method_(_i8_operator_on_char_ptr) {
       auto v = "42"_i8;
       assert::is_true(is<sbyte>(v));
@@ -320,6 +329,10 @@ namespace xtd::tests {
       assert::are_equal(42_i16, v);
     }
     
+    void test_method_(_i16_operator_on_unsigned_long_long_with_overflow) {
+      assert::throws<xtd::overflow_exception>([] {32768_i8;});
+    }
+
     void test_method_(_i16_operator_on_char_ptr) {
       auto v = "42"_i16;
       assert::is_true(is<int16>(v));
@@ -384,6 +397,10 @@ namespace xtd::tests {
       assert::are_equal(42_i32, v);
     }
     
+    void test_method_(_i32_operator_on_unsigned_long_long_with_overflow) {
+      assert::throws<xtd::overflow_exception>([] {2147483648_i32;});
+    }
+
     void test_method_(_i32_operator_on_char_ptr) {
       auto v = "42"_i32;
       assert::is_true(is<int32>(v));
@@ -512,6 +529,10 @@ namespace xtd::tests {
       assert::are_equal(42_s8, v);
     }
     
+    void test_method_(_s8_operator_on_unsigned_long_long_with_overflow) {
+      assert::throws<xtd::overflow_exception>([] {128_s8;});
+    }
+
     void test_method_(_s8_operator_on_char_ptr) {
       auto v = "42"_s8;
       assert::is_true(is<sbyte>(v));
@@ -576,6 +597,10 @@ namespace xtd::tests {
       assert::are_equal(42_s16, v);
     }
     
+    void test_method_(_s16_operator_on_unsigned_long_long_with_overflow) {
+      assert::throws<xtd::overflow_exception>([] {32768_s16;});
+    }
+
     void test_method_(_s16_operator_on_char_ptr) {
       auto v = "42"_s16;
       assert::is_true(is<int16>(v));
@@ -640,6 +665,10 @@ namespace xtd::tests {
       assert::are_equal(42_s32, v);
     }
     
+    void test_method_(_s32_operator_on_unsigned_long_long_with_overflow) {
+      assert::throws<xtd::overflow_exception>([] {2147483648_s32;});
+    }
+
     void test_method_(_s32_operator_on_char_ptr) {
       auto v = "42"_s32;
       assert::is_true(is<int32>(v));
@@ -768,6 +797,10 @@ namespace xtd::tests {
       assert::are_equal(42_u8, v);
     }
     
+    void test_method_(_u8_operator_on_unsigned_long_long_with_overflow) {
+      assert::throws<xtd::overflow_exception>([] {256_u8;});
+    }
+
     void test_method_(_u8_operator_on_char_ptr) {
       auto v = "42"_u8;
       assert::is_true(is<byte>(v));
@@ -832,6 +865,10 @@ namespace xtd::tests {
       assert::are_equal(42_u16, v);
     }
     
+    void test_method_(_u16_operator_on_unsigned_long_long_with_overflow) {
+      assert::throws<xtd::overflow_exception>([] {65536_u16;});
+    }
+
     void test_method_(_u16_operator_on_char_ptr) {
       auto v = "42"_u16;
       assert::is_true(is<uint16>(v));
@@ -896,6 +933,10 @@ namespace xtd::tests {
       assert::are_equal(42_u32, v);
     }
     
+    void test_method_(_u32_operator_on_unsigned_long_long_with_overflow) {
+      assert::throws<xtd::overflow_exception>([] {4294967296_u32;});
+    }
+
     void test_method_(_u32_operator_on_char_ptr) {
       auto v = "42"_u32;
       assert::is_true(is<uint32>(v));
@@ -1171,7 +1212,7 @@ namespace xtd::tests {
     void test_method_(_sb_operator_on_long_double) {
       auto v = 42.0_sb;
       assert::is_instance_of<string>(v);
-      assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
+      if (environment::os_version().is_macos()) assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
     }
     
     void test_method_(_sb_operator_on_unsigned_long_long) {
@@ -1183,7 +1224,7 @@ namespace xtd::tests {
     void test_method_(_sb2_operator_on_long_double) {
       auto v = 42.0_sb2;
       assert::is_instance_of<string>(v);
-      assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
+      if (environment::os_version().is_macos()) assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
     }
     
     void test_method_(_sb2_operator_on_unsigned_long_long) {
@@ -1195,7 +1236,7 @@ namespace xtd::tests {
     void test_method_(_sb4_operator_on_long_double) {
       auto v = 42.0_sb4;
       assert::is_instance_of<string>(v);
-      assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
+      if (environment::os_version().is_macos()) assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
     }
 
     void test_method_(_sb4_operator_on_unsigned_long_long) {
@@ -1207,7 +1248,7 @@ namespace xtd::tests {
     void test_method_(_sb8_operator_on_long_double) {
       auto v = 42.0_sb8;
       assert::is_instance_of<string>(v);
-      assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
+      if (environment::os_version().is_macos()) assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
     }
     
     void test_method_(_sb8_operator_on_unsigned_long_long) {
@@ -1219,7 +1260,7 @@ namespace xtd::tests {
     void test_method_(_sb16_operator_on_long_double) {
       auto v = 42.0_sb16;
       assert::is_instance_of<string>(v);
-      assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
+      if (environment::os_version().is_macos()) assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
     }
     
     void test_method_(_sb16_operator_on_unsigned_long_long) {
@@ -1231,7 +1272,7 @@ namespace xtd::tests {
     void test_method_(_sb32_operator_on_long_double) {
       auto v = 42.0_sb32;
       assert::is_instance_of<string>(v);
-      assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
+      if (environment::os_version().is_macos()) assert::are_equal("100000001000101000000000000000000000000000000000000000000000000", v);
     }
     
     void test_method_(_sb32_operator_on_unsigned_long_long) {
@@ -1243,13 +1284,13 @@ namespace xtd::tests {
     void test_method_(_sb64_operator_on_long_double) {
       auto v = 42.0_sb64;
       assert::is_instance_of<string>(v);
-      assert::are_equal("0100000001000101000000000000000000000000000000000000000000000000", v);
+      if (environment::os_version().is_macos()) assert::are_equal("0100000001000101000000000000000000000000000000000000000000000000", v);
     }
     
     void test_method_(_sb64_operator_on_unsigned_long_long) {
       auto v = 42_sb64;
       assert::is_instance_of<string>(v);
-      assert::are_equal("0000000000000000000000000000000000000000000000000000000000101010", v);
+      if (environment::os_version().is_macos()) assert::are_equal("0000000000000000000000000000000000000000000000000000000000101010", v);
     }
 
     void test_method_(_sd_operator_on_long_double) {
@@ -1267,7 +1308,7 @@ namespace xtd::tests {
     void test_method_(_sx_operator_on_long_double) {
       auto v = 42.0_sx;
       assert::is_instance_of<string>(v);
-      assert::are_equal("0x1.5p+5", v);
+      if (environment::os_version().is_macos()) assert::are_equal("0x1.5p+5", v);
     }
     
     void test_method_(_sx_operator_on_unsigned_long_long) {
@@ -1303,7 +1344,7 @@ namespace xtd::tests {
     void test_method_(_sX_operator_on_long_double) {
       auto v = 42.0_sX;
       assert::is_instance_of<string>(v);
-      assert::are_equal("0x1.5p+5", v);
+      if (environment::os_version().is_macos()) assert::are_equal("0x1.5p+5", v);
     }
     
     void test_method_(_sX_operator_on_unsigned_long_long) {
@@ -1405,6 +1446,10 @@ namespace xtd::tests {
     void test_method_(_us_operator_on_on_unsigned_long_long) {
       auto v = 42_us;
       assert::are_equal(time_span {0, 0, 0, 0, 0, 42}, v);
+    }
+    
+    void test_method_(many_time_span_suffixes) {
+      assert::are_equal(xtd::time_span {0, 12, 24, 1, 500}, 12_h + 24_m +  1_s + 500_ms);
     }
   };
 }
