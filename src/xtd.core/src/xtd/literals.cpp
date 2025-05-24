@@ -359,10 +359,6 @@ int64 xtd::operator""_s64(const wchar* s, xtd::size n) {
   return as<int64>(std::wstring(s, s + n));
 }
 
-const char* xtd::operator""_t(const char* s, xtd::size n) noexcept {
-  return translator::translate(s);
-}
-
 xtd::byte xtd::operator""_u8(long double n) {
   return as<xtd::byte>(n);
 }
@@ -565,28 +561,56 @@ string xtd::operator""_s(const wchar* s, xtd::size n) {
   return string(std::wstring(s, s + n));
 }
 
+string xtd::operator""_sb(long double s) {
+  return string::format("{:b}", s);
+}
+
 string xtd::operator""_sb(unsigned long long s) {
   return string::format("{:b}", s);
+}
+
+string xtd::operator""_sb2(long double s) {
+  return string::format("{:b2}", s);
 }
 
 string xtd::operator""_sb2(unsigned long long s) {
   return string::format("{:b2}", s);
 }
 
+string xtd::operator""_sb4(long double s) {
+  return string::format("{:b4}", s);
+}
+
 string xtd::operator""_sb4(unsigned long long s) {
   return string::format("{:b4}", s);
+}
+
+string xtd::operator""_sb8(long double s) {
+  return string::format("{:b8}", s);
 }
 
 string xtd::operator""_sb8(unsigned long long s) {
   return string::format("{:b8}", s);
 }
 
+string xtd::operator""_sb16(long double s) {
+  return string::format("{:b16}", s);
+}
+
 string xtd::operator""_sb16(unsigned long long s) {
   return string::format("{:b16}", s);
 }
 
+string xtd::operator""_sb32(long double s) {
+  return string::format("{:b32}", s);
+}
+
 string xtd::operator""_sb32(unsigned long long s) {
   return string::format("{:b32}", s);
+}
+
+string xtd::operator""_sb64(long double s) {
+  return string::format("{:b64}", s);
 }
 
 string xtd::operator""_sb64(unsigned long long s) {
@@ -631,6 +655,10 @@ string xtd::operator""_sX4(unsigned long long s) {
 
 string xtd::operator""_sX8(unsigned long long s) {
   return string::format("{:X8}", s);
+}
+
+const char* xtd::operator""_t(const char* s, xtd::size n) noexcept {
+  return translator::translate(s);
 }
 
 #if defined(__xtd__cpp_lib_char8_t)
