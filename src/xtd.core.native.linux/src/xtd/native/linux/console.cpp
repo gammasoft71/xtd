@@ -7,6 +7,7 @@
 #include <iostream>
 #include <list>
 #include <map>
+#include <mutex>
 #include <sstream>
 #include <vector>
 #include <fcntl.h>
@@ -606,23 +607,9 @@ bool console::background_color(int32_t color) {
 namespace {
   class audio {
   public:
-    audio() noexcept {
-#if defined(__XTD_USE_ASOUND__)
-      if (snd_pcm_open(&pcm_handle, "default", SND_PCM_STREAM_PLAYBACK, 0)) return;
-      if (snd_pcm_set_params(pcm_handle, SND_PCM_FORMAT_U8, SND_PCM_ACCESS_RW_INTERLEAVED, 1, sample_rate, 1, 20000) < 0) {
-        snd_pcm_close(pcm_handle);
-        pcm_handle = nullptr;
-      }
-#endif
-    }
-    
-    ~audio() noexcept {
-#if defined(__XTD_USE_ASOUND__)
-      if (pcm_handle) snd_pcm_close(pcm_handle);
-#endif
-    }
-    
     static bool beep(uint32_t frequency, uint32_t duration) {
+      auto& a = get_instance();
+      std::lock_guard<std::mutex> lock {a.mutex_};
 #if defined(__XTD_USE_ASOUND__)
       if (!pcm_handle || frequency < 37 || frequency > 32767) return false;
       
@@ -647,11 +634,33 @@ namespace {
     }
     
   private:
+    audio() noexcept {
+#if defined(__XTD_USE_ASOUND__)
+      if (snd_pcm_open(&pcm_handle, "default", SND_PCM_STREAM_PLAYBACK, 0)) return;
+      if (snd_pcm_set_params(pcm_handle, SND_PCM_FORMAT_U8, SND_PCM_ACCESS_RW_INTERLEAVED, 1, sample_rate, 1, 20000) < 0) {
+        snd_pcm_close(pcm_handle);
+        pcm_handle = nullptr;
+      }
+#endif
+    }
+    
+    ~audio() noexcept {
+#if defined(__XTD_USE_ASOUND__)
+      if (pcm_handle) snd_pcm_close(pcm_handle);
+#endif
+    }
+    
+    static audio& get_instance() {
+      static audio instance;
+      return instance;
+    }
+    
+    std::mutex mutex_;
     inline static constexpr auto sample_rate = 8000u;
 #if defined(__XTD_USE_ASOUND__)
     inline static snd_pcm_t* pcm_handle = nullptr;
 #endif
-  } __audio__;
+  };
 }
 
 bool console::beep(uint32_t frequency, uint32_t duration) {
