@@ -389,11 +389,19 @@ namespace xtd::tests {
       assert::are_equal(42_i32, v);
     }
     
+    void test_method_(_i32_operator_on_invalid_char_ptr) {
+      assert::throws<xtd::format_exception>([] {"42str"_i32;});
+    }
+
 #if defined(__xtd__cpp_lib_char8_t)
     void test_method_(_i32_operator_on_char8_ptr) {
       auto v = u8"42"_i32;
       assert::is_true(is<int32>(v));
       assert::are_equal(42_i32, v);
+    }
+    
+    void test_method_(_i32_operator_on_invalid_char8_ptr) {
+      assert::throws<xtd::format_exception>([] {u8"42str"_i32;});
     }
 #endif
     
@@ -403,16 +411,28 @@ namespace xtd::tests {
       assert::are_equal(42_i32, v);
     }
     
+    void test_method_(_i32_operator_on_invalid_char16_ptr) {
+      assert::throws<xtd::format_exception>([] {u"42str"_i32;});
+    }
+
     void test_method_(_i32_operator_on_char32_ptr) {
       auto v = U"42"_i32;
       assert::is_true(is<int32>(v));
       assert::are_equal(42_i32, v);
     }
     
+    void test_method_(_i32_operator_on_invalid_char32_ptr) {
+      assert::throws<xtd::format_exception>([] {U"42str"_i32;});
+    }
+
     void test_method_(_i32_operator_on_wchar_ptr) {
       auto v = L"42"_i32;
       assert::is_true(is<int32>(v));
       assert::are_equal(42_i32, v);
+    }
+    
+    void test_method_(_i32_operator_on_invalid_wchar_ptr) {
+      assert::throws<xtd::format_exception>([] {L"42str"_i32;});
     }
 
     //_________________________________________________________________________
