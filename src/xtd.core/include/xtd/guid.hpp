@@ -260,7 +260,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::guid g = U"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
+    /// xtd::guid g = u"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
     /// xtd::console::out << g << xtd::environment::new_line;
     /// ```
     xtd::guid operator""_guid(const char16* s, xtd::size n);
@@ -273,7 +273,7 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::guid g = u"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
+    /// xtd::guid g = U"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
     /// xtd::console::out << g << xtd::environment::new_line;
     /// ```
     xtd::guid operator""_guid(const char32* s, xtd::size n);

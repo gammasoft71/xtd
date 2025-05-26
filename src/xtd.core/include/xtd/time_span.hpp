@@ -675,8 +675,8 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::guid g = "1dae5efa-d701-42b9-8d61-09d3b38f802a"_ts;
-    /// xtd::console::out << g << xtd::environment::new_line;
+    /// xtd::time_span ts = "6::12::24"_ts;
+    /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
     xtd::time_span operator""_ts(const char* s, xtd::size n);
     
@@ -689,8 +689,8 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::guid g = u8"1dae5efa-d701-42b9-8d61-09d3b38f802a"_ts;
-    /// xtd::console::out << g << xtd::environment::new_line;
+    /// xtd::time_span ts = u8"6::12::24"_ts;
+    /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
     xtd::time_span operator""_ts(const char8* s, xtd::size n);
 #endif
@@ -703,8 +703,8 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::guid g = U"1dae5efa-d701-42b9-8d61-09d3b38f802a"_ts;
-    /// xtd::console::out << g << xtd::environment::new_line;
+    /// xtd::time_span ts = u"6::12::24"_ts;
+    /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
     xtd::time_span operator""_ts(const char16* s, xtd::size n);
     
@@ -716,8 +716,8 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::guid g = u"1dae5efa-d701-42b9-8d61-09d3b38f802a"_ts;
-    /// xtd::console::out << g << xtd::environment::new_line;
+    /// xtd::time_span ts = U"6::12::24"_ts;
+    /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
     xtd::time_span operator""_ts(const char32* s, xtd::size n);
     
@@ -729,8 +729,8 @@ namespace xtd {
     /// @ingroup xtd_core literals
     /// @par Examples
     /// ```cpp
-    /// xtd::guid g = L"1dae5efa-d701-42b9-8d61-09d3b38f802a"_ts;
-    /// xtd::console::out << g << xtd::environment::new_line;
+    /// xtd::time_span ts = L"6::12::24"_ts;
+    /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
     xtd::time_span operator""_ts(const wchar* s, xtd::size n);
     /// @}
