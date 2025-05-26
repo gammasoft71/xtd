@@ -23,7 +23,7 @@ namespace xtd {
     /// @name Public Static Methods
     
     /// @{
-    /// @brief Gets the the free physical memory in bytes.
+    /// @brief Gets the free physical memory in bytes.
     /// @return The free physical memory value.
     /// @par Examples
     /// The following example shows how to retrieve some information about the memory.
@@ -31,7 +31,7 @@ namespace xtd {
     /// @remarks The free physical memory is equal to xtd::memory_information::get_total_physical_memory minus xtd::memory_information::get_used_physical_memory.
     static xtd::size get_free_physical_memory() noexcept;
     
-    /// @brief Gets the the free process memory in bytes.
+    /// @brief Gets the free process memory in bytes.
     /// @return The free process memory value.
     /// @par Examples
     /// The following example shows how to retrieve some information about the memory.
@@ -39,7 +39,7 @@ namespace xtd {
     /// @remarks The free process memory is equal to xtd::memory_information::get_total_process_memory minus xtd::memory_information::get_used_process_memory.
     static xtd::size get_free_process_memory() noexcept;
 
-    /// @brief Gets the the free virtual memory in bytes.
+    /// @brief Gets the free virtual memory in bytes.
     /// @return The free virtual memory value.
     /// @par Examples
     /// The following example shows how to retrieve some information about the memory.
@@ -47,7 +47,7 @@ namespace xtd {
     /// @remarks The free virtual memory is equal to xtd::memory_information::get_total_virtual_memory minus xtd::memory_information::get_used_virtual_memory.
     static xtd::size get_free_virtual_memory() noexcept;
 
-    /// @brief Gets the the total physical memory in bytes.
+    /// @brief Gets the total physical memory in bytes.
     /// @return The total physical memory value.
     /// @par Examples
     /// The following example shows how to retrieve some information about the memory.
@@ -55,7 +55,7 @@ namespace xtd {
     /// @remarks The total physical memory corresponds to the amount of RAM on the computer or the amount of RAM allocated to the virtual machine in the case of virtualisation.
     static xtd::size get_total_physical_memory() noexcept;
     
-    /// @brief Gets the the total physical memory in bytes.
+    /// @brief Gets the total physical memory in bytes.
     /// @return The total process memory value.
     /// @par Examples
     /// The following example shows how to retrieve some information about the memory.
@@ -65,7 +65,7 @@ namespace xtd {
     /// @remarks If the user has specified a limit, then the total memory will be equal to this limit; otherwise it will be equal to xtd::memory_information::get_free_virtual_memory.
     static xtd::size get_total_process_memory() noexcept;
     
-    /// @brief Gets the the total virtual memory in bytes.
+    /// @brief Gets the total virtual memory in bytes.
     /// @return The total virtual memory value.
     /// @par Examples
     /// The following example shows how to retrieve some information about the memory.
@@ -74,21 +74,21 @@ namespace xtd {
     /// @remarks It is possible that the OS has no virtual memory, in which case the method will return 0.
     static xtd::size get_total_virtual_memory() noexcept;
 
-    /// @brief Gets the the used physical memory information in bytes.
+    /// @brief Gets the used physical memory information in bytes.
     /// @return The used physical memory value.
     /// @par Examples
     /// The following example shows how to retrieve some information about the memory.
     /// @include memory_information.cpp
     static xtd::size get_used_physical_memory() noexcept;
     
-    /// @brief Gets the the used physical memory in bytes.
+    /// @brief Gets the used physical memory in bytes.
     /// @return The used process memory value.
     /// @par Examples
     /// The following example shows how to retrieve some information about the memory.
     /// @include memory_information.cpp
     static xtd::size get_used_process_memory() noexcept;
     
-    /// @brief Gets the the used virtual memory in bytes.
+    /// @brief Gets the used virtual memory in bytes.
     /// @return The used virtual memory value.
     /// @par Examples
     /// The following example shows how to retrieve some information about the memory.
