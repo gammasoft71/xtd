@@ -50,7 +50,41 @@ namespace xtd::tests {
       assert::is_true(is<char32>(v));
       assert::are_equal(L'a'_c, v);
     }
+
+    //_________________________________________________________________________
+    //                                                            Guid suffixes
+    void test_method_(_guid_operator_on_char_ptr) {
+      auto v = "1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
+      assert::is_instance_of<guid>(v);
+      assert::are_equal("1dae5efa-d701-42b9-8d61-09d3b38f802a", v.to_string());
+    }
     
+#if defined(__xtd__cpp_lib_char8_t)
+    void test_method_(_guid_operator_on_char8_ptr) {
+      auto v = u8"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
+      assert::is_instance_of<guid>(v);
+      assert::are_equal("1dae5efa-d701-42b9-8d61-09d3b38f802a", v.to_string());
+    }
+#endif
+    
+    void test_method_(_guid_operator_on_char16_ptr) {
+      auto v = u"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
+      assert::is_instance_of<guid>(v);
+      assert::are_equal("1dae5efa-d701-42b9-8d61-09d3b38f802a", v.to_string());
+    }
+    
+    void test_method_(_guid_operator_on_char32_ptr) {
+      auto v = U"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
+      assert::is_instance_of<guid>(v);
+      assert::are_equal("1dae5efa-d701-42b9-8d61-09d3b38f802a", v.to_string());
+    }
+    
+    void test_method_(_guid_operator_on_wchar_ptr) {
+      auto v = L"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
+      assert::is_instance_of<guid>(v);
+      assert::are_equal("1dae5efa-d701-42b9-8d61-09d3b38f802a", v.to_string());
+    }
+
     //_________________________________________________________________________
     //                                                         Numeric suffixes
     void test_method_(_b_operator_on_long_double) {
@@ -1205,6 +1239,12 @@ namespace xtd::tests {
     
     void test_method_(_s_operator_on_char32_ptr) {
       auto v = U"string"_s;
+      assert::is_instance_of<string>(v);
+      assert::are_equal("string", v);
+    }
+    
+    void test_method_(_s_operator_on_wchar_ptr) {
+      auto v = L"string"_s;
       assert::is_instance_of<string>(v);
       assert::are_equal("string", v);
     }
