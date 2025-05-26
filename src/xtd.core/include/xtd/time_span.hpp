@@ -574,7 +574,7 @@ namespace xtd {
     /// xtd::time_span ts = 10_h;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_h(unsigned long long s);
+    xtd::time_span operator""_h(unsigned long long h);
     
     /// @brief Used to convert the specified value as minutes to xtd::time_span.
     /// @par Namespace
@@ -587,7 +587,7 @@ namespace xtd {
     /// xtd::time_span ts = 25_m;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_m(unsigned long long s);
+    xtd::time_span operator""_m(unsigned long long m);
     
     /// @brief Used to convert the specified value as minutes to xtd::time_span.
     /// @par Namespace
@@ -600,7 +600,7 @@ namespace xtd {
     /// xtd::time_span ts = 25_min;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_min(unsigned long long s);
+    xtd::time_span operator""_min(unsigned long long min);
     
     /// @brief Used to convert the specified value as millisconds to xtd::time_span.
     /// @par Namespace
@@ -613,7 +613,7 @@ namespace xtd {
     /// xtd::time_span ts = 25_ms;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_ms(unsigned long long s);
+    xtd::time_span operator""_ms(unsigned long long ms);
     
     /// @brief Used to convert the specified value as nanoseconds to xtd::time_span.
     /// @par Namespace
@@ -626,7 +626,7 @@ namespace xtd {
     /// xtd::time_span ts = 25_ns;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_ns(unsigned long long s);
+    xtd::time_span operator""_ns(unsigned long long ns);
     
     /// @brief Used to convert the specified value as seconds to xtd::time_span.
     /// @par Namespace
@@ -652,7 +652,7 @@ namespace xtd {
     /// xtd::time_span ts = 42_t;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_t(unsigned long long s);
+    xtd::time_span operator""_t(unsigned long long t);
     
     /// @brief Used to convert the specified value as microseconds to xtd::time_span.
     /// @par Namespace
@@ -665,9 +665,76 @@ namespace xtd {
     /// xtd::time_span ts = 42_us;
     /// xtd::console::out << ts << xtd::environment::new_line;
     /// ```
-    xtd::time_span operator""_us(unsigned long long s);
+    xtd::time_span operator""_us(unsigned long long us);
+
+    /// @brief Used to convert specified value into xtd::time_span.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::guid g = "1dae5efa-d701-42b9-8d61-09d3b38f802a"_ts;
+    /// xtd::console::out << g << xtd::environment::new_line;
+    /// ```
+    xtd::time_span operator""_ts(const char* s, xtd::size n);
+    
+#if defined(__xtd__cpp_lib_char8_t)
+    /// @brief Used to convert specified value into xtd::time_span.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::guid g = u8"1dae5efa-d701-42b9-8d61-09d3b38f802a"_ts;
+    /// xtd::console::out << g << xtd::environment::new_line;
+    /// ```
+    xtd::time_span operator""_ts(const char8* s, xtd::size n);
+#endif
+    
+    /// @brief Used to convert specified value into xtd::time_span.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::guid g = U"1dae5efa-d701-42b9-8d61-09d3b38f802a"_ts;
+    /// xtd::console::out << g << xtd::environment::new_line;
+    /// ```
+    xtd::time_span operator""_ts(const char16* s, xtd::size n);
+    
+    /// @brief Used to convert specified value into xtd::time_span.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::guid g = u"1dae5efa-d701-42b9-8d61-09d3b38f802a"_ts;
+    /// xtd::console::out << g << xtd::environment::new_line;
+    /// ```
+    xtd::time_span operator""_ts(const char32* s, xtd::size n);
+    
+    /// @brief Used to convert specified value into xtd::time_span.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::guid g = L"1dae5efa-d701-42b9-8d61-09d3b38f802a"_ts;
+    /// xtd::console::out << g << xtd::environment::new_line;
+    /// ```
+    xtd::time_span operator""_ts(const wchar* s, xtd::size n);
     /// @}
-}
+  }
 
   /// @brief Converts the string representation of a time interval to its xtd::time_span equivalent.
   /// @par Namespace
