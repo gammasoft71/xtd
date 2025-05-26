@@ -1293,7 +1293,7 @@ namespace xtd {
   
   /// @brief The xtd::literals namespace contains all xtd's litterals operators.
   inline namespace literals {
-    /// @name Guid suffixes
+    /// @name Color suffixes
     
     /// @{
     /// @brief Used to convert specified value into xtd::string.
