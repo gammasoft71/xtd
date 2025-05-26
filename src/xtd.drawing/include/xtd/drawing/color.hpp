@@ -1296,7 +1296,7 @@ namespace xtd {
     /// @name Color suffixes
     
     /// @{
-    /// @brief Used to convert specified value into xtd::string.
+    /// @brief Used to convert specified value into xtd::drawing::color.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1314,7 +1314,7 @@ namespace xtd {
     xtd::drawing::color operator""_color(const char* s, xtd::size n);
     
 #if defined(__xtd__cpp_lib_char8_t)
-    /// @brief Used to convert specified value into xtd::string.
+    /// @brief Used to convert specified value into xtd::drawing::color.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1332,7 +1332,7 @@ namespace xtd {
     xtd::drawing::color operator""_color(const char8* s, xtd::size n);
 #endif
     
-    /// @brief Used to convert specified value into xtd::string.
+    /// @brief Used to convert specified value into xtd::drawing::color.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1349,7 +1349,7 @@ namespace xtd {
     /// ```
     xtd::drawing::color operator""_color(const char16* s, xtd::size n);
     
-    /// @brief Used to convert specified value into xtd::string.
+    /// @brief Used to convert specified value into xtd::drawing::color.
     /// @par Namespace
     /// xtd
     /// @par Library
@@ -1366,7 +1366,7 @@ namespace xtd {
     /// ```
     xtd::drawing::color operator""_color(const char32* s, xtd::size n);
     
-    /// @brief Used to convert specified value into xtd::string.
+    /// @brief Used to convert specified value into xtd::drawing::color.
     /// @par Namespace
     /// xtd
     /// @par Library
