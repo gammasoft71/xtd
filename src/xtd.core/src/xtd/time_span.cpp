@@ -452,3 +452,35 @@ int32 time_span::try_parse_internal(const string& value, time_span& result) {
   if (value[0] == '-') result = result.negate();
   return parse_succeed;
 }
+
+time_span xtd::literals::operator""_h(unsigned long long s) {
+  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::hours(s))};
+}
+
+time_span xtd::literals::operator""_m(unsigned long long s) {
+  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::minutes(s))};
+}
+
+time_span xtd::literals::operator""_min(unsigned long long s) {
+  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::minutes(s))};
+}
+
+time_span xtd::literals::operator""_ms(unsigned long long s) {
+  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::milliseconds(s))};
+}
+
+time_span xtd::literals::operator""_ns(unsigned long long s) {
+  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::nanoseconds(s))};
+}
+
+time_span xtd::literals::operator""_s(unsigned long long s) {
+  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::seconds(s))};
+}
+
+time_span xtd::literals::operator""_t(unsigned long long s) {
+  return xtd::time_span {xtd::ticks(s)};
+}
+
+time_span xtd::literals::operator""_us(unsigned long long s) {
+  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::microseconds(s))};
+}
