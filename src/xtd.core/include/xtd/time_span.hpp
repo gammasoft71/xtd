@@ -558,6 +558,117 @@ namespace xtd {
   };
   /// @}
 
+  /// @brief The xtd::literals namespace contains all xtd's litterals operators.
+  inline namespace literals {
+    /// @name Time span suffixes
+    
+    /// @{
+    /// @brief Used to convert the specified value as hours to xtd::time_span.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::time_span ts = 10_h;
+    /// xtd::console::out << ts << xtd::environment::new_line;
+    /// ```
+    xtd::time_span operator""_h(unsigned long long s);
+    
+    /// @brief Used to convert the specified value as minutes to xtd::time_span.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::time_span ts = 25_m;
+    /// xtd::console::out << ts << xtd::environment::new_line;
+    /// ```
+    xtd::time_span operator""_m(unsigned long long s);
+    
+    /// @brief Used to convert the specified value as minutes to xtd::time_span.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::time_span ts = 25_min;
+    /// xtd::console::out << ts << xtd::environment::new_line;
+    /// ```
+    xtd::time_span operator""_min(unsigned long long s);
+    
+    /// @brief Used to convert the specified value as millisconds to xtd::time_span.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::time_span ts = 25_ms;
+    /// xtd::console::out << ts << xtd::environment::new_line;
+    /// ```
+    xtd::time_span operator""_ms(unsigned long long s);
+    
+    /// @brief Used to convert the specified value as nanoseconds to xtd::time_span.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::time_span ts = 25_ns;
+    /// xtd::console::out << ts << xtd::environment::new_line;
+    /// ```
+    xtd::time_span operator""_ns(unsigned long long s);
+    
+    /// @brief Used to convert the specified value as seconds to xtd::time_span.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::time_span ts = 42_s;
+    /// xtd::console::out << ts << xtd::environment::new_line;
+    /// ```
+    xtd::time_span operator""_s(unsigned long long s);
+    
+    /// @brief Used to convert the specified value as tiks to xtd::time_span.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::time_span ts = 42_t;
+    /// xtd::console::out << ts << xtd::environment::new_line;
+    /// ```
+    xtd::time_span operator""_t(unsigned long long s);
+    
+    /// @brief Used to convert the specified value as microseconds to xtd::time_span.
+    /// @par Namespace
+    /// xtd
+    /// @par Library
+    /// xtd.core
+    /// @ingroup xtd_core literals
+    /// @par Examples
+    /// ```cpp
+    /// xtd::time_span ts = 42_us;
+    /// xtd::console::out << ts << xtd::environment::new_line;
+    /// ```
+    xtd::time_span operator""_us(unsigned long long s);
+    /// @}
+}
+
   /// @brief Converts the string representation of a time interval to its xtd::time_span equivalent.
   /// @par Namespace
   /// xtd

@@ -1,7 +1,6 @@
 #include "../../include/xtd/literals.hpp"
 #include "../../include/xtd/as.hpp"
 #include "../../include/xtd/translator.hpp"
-#include "../../include/xtd/net/ip_address.hpp"
 
 using namespace xtd;
 using namespace xtd::net;
@@ -30,50 +29,6 @@ char32 xtd::literals::operator""_c(char32 c) {
 
 char32 xtd::literals::operator""_c(wchar c) {
   return as<char32>(c);
-}
-
-guid xtd::literals::operator""_guid(const char* s, xtd::size n) {
-  return guid(string {s});
-}
-
-#if defined(__xtd__cpp_lib_char8_t)
-guid xtd::literals::operator""_guid(const char8* s, xtd::size n) {
-  return guid(string {s});
-}
-#endif
-
-guid xtd::literals::operator""_guid(const char16* s, xtd::size n) {
-  return guid(string {s});
-}
-
-guid xtd::literals::operator""_guid(const char32* s, xtd::size n) {
-  return guid(string {s});
-}
-
-guid xtd::literals::operator""_guid(const wchar* s, xtd::size n) {
-  return guid(string {s});
-}
-
-ip_address xtd::literals::operator""_ip(const char* s, xtd::size n) {
-  return ip_address::parse(string {s});
-}
-
-#if defined(__xtd__cpp_lib_char8_t)
-ip_address xtd::literals::operator""_ip(const char8* s, xtd::size n) {
-  return ip_address::parse(string {s});
-}
-#endif
-
-ip_address xtd::literals::operator""_ip(const char16* s, xtd::size n) {
-  return ip_address::parse(string {s});
-}
-
-ip_address xtd::literals::operator""_ip(const char32* s, xtd::size n) {
-  return ip_address::parse(string {s});
-}
-
-ip_address xtd::literals::operator""_ip(const wchar* s, xtd::size n) {
-  return ip_address::parse(string {s});
 }
 
 xtd::byte xtd::literals::operator""_b(long double n) {
@@ -740,36 +695,4 @@ string xtd::literals::operator""_t(const char32* s, xtd::size n) noexcept {
 
 string xtd::literals::operator""_t(const wchar* s, xtd::size n) noexcept {
   return translator::translate(std::wstring(s, s + n));
-}
-
-time_span xtd::literals::operator""_h(unsigned long long s) {
-  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::hours(s))};
-}
-
-time_span xtd::literals::operator""_m(unsigned long long s) {
-  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::minutes(s))};
-}
-
-time_span xtd::literals::operator""_min(unsigned long long s) {
-  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::minutes(s))};
-}
-
-time_span xtd::literals::operator""_ms(unsigned long long s) {
-  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::milliseconds(s))};
-}
-
-time_span xtd::literals::operator""_ns(unsigned long long s) {
-  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::nanoseconds(s))};
-}
-
-time_span xtd::literals::operator""_s(unsigned long long s) {
-  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::seconds(s))};
-}
-
-time_span xtd::literals::operator""_t(unsigned long long s) {
-  return xtd::time_span {xtd::ticks(s)};
-}
-
-time_span xtd::literals::operator""_us(unsigned long long s) {
-  return xtd::time_span {std::chrono::duration_cast<xtd::ticks>(std::chrono::microseconds(s))};
 }

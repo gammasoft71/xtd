@@ -1,7 +1,6 @@
 #include <xtd/literals>
 #include <xtd/environment>
 #include <xtd/is>
-#include <xtd/net/ip_address>
 #include <xtd/translator>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
@@ -51,74 +50,6 @@ namespace xtd::tests {
       auto v = L'a'_c;
       assert::is_true(is<char32>(v));
       assert::are_equal(L'a'_c, v);
-    }
-
-    //_________________________________________________________________________
-    //                                                            Guid suffixes
-    void test_method_(_guid_operator_on_char_ptr) {
-      auto v = "1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
-      assert::is_instance_of<guid>(v);
-      assert::are_equal("1dae5efa-d701-42b9-8d61-09d3b38f802a", v.to_string());
-    }
-    
-#if defined(__xtd__cpp_lib_char8_t)
-    void test_method_(_guid_operator_on_char8_ptr) {
-      auto v = u8"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
-      assert::is_instance_of<guid>(v);
-      assert::are_equal("1dae5efa-d701-42b9-8d61-09d3b38f802a", v.to_string());
-    }
-#endif
-    
-    void test_method_(_guid_operator_on_char16_ptr) {
-      auto v = u"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
-      assert::is_instance_of<guid>(v);
-      assert::are_equal("1dae5efa-d701-42b9-8d61-09d3b38f802a", v.to_string());
-    }
-    
-    void test_method_(_guid_operator_on_char32_ptr) {
-      auto v = U"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
-      assert::is_instance_of<guid>(v);
-      assert::are_equal("1dae5efa-d701-42b9-8d61-09d3b38f802a", v.to_string());
-    }
-    
-    void test_method_(_guid_operator_on_wchar_ptr) {
-      auto v = L"1dae5efa-d701-42b9-8d61-09d3b38f802a"_guid;
-      assert::is_instance_of<guid>(v);
-      assert::are_equal("1dae5efa-d701-42b9-8d61-09d3b38f802a", v.to_string());
-    }
-
-    //_________________________________________________________________________
-    //                                                      IP address suffixes
-    void test_method_(_ip_operator_on_char_ptr) {
-      auto v = "192.168.0.1"_ip;
-      assert::is_instance_of<ip_address>(v);
-      assert::are_equal("192.168.0.1", v.to_string());
-    }
-    
-#if defined(__xtd__cpp_lib_char8_t)
-    void test_method_(_ip_operator_on_char8_ptr) {
-      auto v = u8"192.168.0.1"_ip;
-      assert::is_instance_of<ip_address>(v);
-      assert::are_equal("192.168.0.1", v.to_string());
-    }
-#endif
-    
-    void test_method_(_ip_operator_on_char16_ptr) {
-      auto v = u"192.168.0.1"_ip;
-      assert::is_instance_of<ip_address>(v);
-      assert::are_equal("192.168.0.1", v.to_string());
-    }
-    
-    void test_method_(_ip_operator_on_char32_ptr) {
-      auto v = U"192.168.0.1"_ip;
-      assert::is_instance_of<ip_address>(v);
-      assert::are_equal("192.168.0.1", v.to_string());
-    }
-    
-    void test_method_(_ip_operator_on_wchar_ptr) {
-      auto v = L"192.168.0.1"_ip;
-      assert::is_instance_of<ip_address>(v);
-      assert::are_equal("192.168.0.1", v.to_string());
     }
 
     //_________________________________________________________________________
@@ -1480,52 +1411,6 @@ namespace xtd::tests {
     void test_method_(_t_operator_on_wchar_ptr) {
       auto v = L"Belgium"_t;
       assert::are_equal("Belgium"_t, string {v});
-    }
-
-    //_________________________________________________________________________
-    //                                                       Time span suffixes
-    void test_method_(_h_operator_on_on_unsigned_long_long) {
-      auto v = 42_h;
-      assert::are_equal(time_span {1, 18, 0, 0}, v);
-    }
-    
-    void test_method_(_m_operator_on_on_unsigned_long_long) {
-      auto v = 42_m;
-      assert::are_equal(time_span {0, 42, 0}, v);
-    }
-    
-    void test_method_(_min_operator_on_on_unsigned_long_long) {
-      auto v = 42_min;
-      assert::are_equal(time_span {0, 42, 0}, v);
-    }
-    
-    void test_method_(_ms_operator_on_on_unsigned_long_long) {
-      auto v = 42_ms;
-      assert::are_equal(time_span {0, 0, 0, 0, 42}, v);
-    }
-    
-    void test_method_(_ns_operator_on_on_unsigned_long_long) {
-      auto v = 42_ns;
-      assert::are_equal(time_span {0, 0, 0, 0, 0, 0, 42}, v);
-    }
-    
-    void test_method_(_s_operator_on_on_unsigned_long_long) {
-      auto v = 42_s;
-      assert::are_equal(time_span {0, 0, 42}, v);
-    }
-    
-    void test_method_(_t_operator_on_on_unsigned_long_long) {
-      auto v = 42_t;
-      assert::are_equal(time_span {42}, v);
-    }
-    
-    void test_method_(_us_operator_on_on_unsigned_long_long) {
-      auto v = 42_us;
-      assert::are_equal(time_span {0, 0, 0, 0, 0, 42}, v);
-    }
-    
-    void test_method_(many_time_span_suffixes) {
-      assert::are_equal(xtd::time_span {0, 12, 24, 1, 500}, 12_h + 24_m +  1_s + 500_ms);
     }
   };
 }
