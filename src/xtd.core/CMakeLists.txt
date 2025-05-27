@@ -941,6 +941,8 @@ add_sources(
   "include/xtd/literals/size"
   "include/xtd/literals/uint16.hpp"
   "include/xtd/literals/uint16"
+  "include/xtd/literals/uint32.hpp"
+  "include/xtd/literals/uint32"
   "include/xtd/media/system_sound.hpp"
   "include/xtd/media/system_sound"
   "include/xtd/media/system_sounds.hpp"
