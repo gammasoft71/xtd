@@ -2,7 +2,6 @@
 #include "../../../include/xtd/argument_out_of_range_exception.hpp"
 #include "../../../include/xtd/as.hpp"
 #include "../../../include/xtd/invalid_operation_exception.hpp"
-#include "../../../include/xtd/literals.hpp"
 
 using namespace xtd;
 using namespace xtd::helpers;

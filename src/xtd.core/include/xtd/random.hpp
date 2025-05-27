@@ -10,6 +10,7 @@
 #include "core_export.hpp"
 #include "environment.hpp"
 #include "math.hpp"
+#include "numeric_literals.hpp"
 #include "object.hpp"
 #include "optional.hpp"
 #include "span.hpp"

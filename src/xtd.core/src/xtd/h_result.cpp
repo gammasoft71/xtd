@@ -1,7 +1,6 @@
 #include "../../include/xtd/array.hpp"
 #include "../../include/xtd/call_once.hpp"
 #include "../../include/xtd/h_result.hpp"
-#include "../../include/xtd/literals.hpp"
 #include "../../include/xtd/string.hpp"
 #include "../../include/xtd/uint32.hpp"
 #include "../../include/xtd/collections/generic/list.hpp"

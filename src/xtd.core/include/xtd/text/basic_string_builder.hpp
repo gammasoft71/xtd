@@ -8,6 +8,7 @@
 #include "../environment.hpp"
 #include "../index_out_of_range_exception.hpp"
 #include "../null_pointer_exception.hpp"
+#include "../numeric_literals.hpp"
 #include <iterator>
 ///
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

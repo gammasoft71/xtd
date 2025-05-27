@@ -3,7 +3,6 @@
 #include <xtd/forms/form>
 #include <xtd/forms/label>
 #include <xtd/collections/generic/key_value_pair>
-#include <xtd/literals>
 
 using namespace xtd;
 using namespace xtd::collections::generic;

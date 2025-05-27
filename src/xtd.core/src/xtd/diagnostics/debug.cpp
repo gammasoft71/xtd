@@ -2,7 +2,6 @@
 #include "../../../include/xtd/diagnostics/debug_break.hpp"
 #include "../../../include/xtd/diagnostics/default_trace_listener.hpp"
 #include "../../../include/xtd/reflection/assembly.hpp"
-#include "../../../include/xtd/literals.hpp"
 #include "../../../include/xtd/lock.hpp"
 #include <mutex>
 #define __XTD_CORE_NATIVE_LIBRARY__

@@ -2,7 +2,6 @@
 /// @brief Contains xtd::threading::tasks::task_canceled_exception exception.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include "../../literals.hpp"
 #include "../../operation_canceled_exception.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

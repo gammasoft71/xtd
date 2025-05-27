@@ -3,7 +3,6 @@
 #include <xtd/console>
 #include <xtd/environment>
 #include <xtd/int32_object>
-#include <xtd/literals>
 
 using namespace xtd;
 

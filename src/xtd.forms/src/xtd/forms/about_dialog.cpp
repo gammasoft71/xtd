@@ -15,7 +15,7 @@
 #include <xtd/forms/native/about_dialog>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/chrono>
-#include <xtd/literals>
+#include <xtd/translator_literals>
 #include <memory>
 
 using namespace xtd;

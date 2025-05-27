@@ -5,7 +5,7 @@
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>
 #include <xtd/environment>
-#include <xtd/literals>
+#include <xtd/translator_literals>
 #include <xtd/size_object>
 #include <xtd/string_comparer>
 

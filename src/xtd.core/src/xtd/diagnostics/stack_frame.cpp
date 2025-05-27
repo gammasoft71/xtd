@@ -1,7 +1,6 @@
 #include "stack_frame_get_stack_frames.hpp"
 #include "../../../include/xtd/diagnostics/stack_frame.hpp"
 #include "../../../include/xtd/environment.hpp"
-#include "../../../include/xtd/literals.hpp"
 #include "../../../include/xtd/string.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/stack_trace>

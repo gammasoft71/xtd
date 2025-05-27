@@ -1,5 +1,4 @@
 #include <xtd/bit_converter>
-#include <xtd/literals>
 #include <xtd/console>
 
 using namespace xtd;

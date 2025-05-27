@@ -4,7 +4,7 @@
 #pragma once
 #include "busy_dialog.hpp"
 #include <xtd/forms/application>
-#include <xtd/literals>
+#include <xtd/translator_literals>
 #include <xtd/static>
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

@@ -20,7 +20,6 @@
 #include "../../invalid_operation_exception.hpp"
 #include "../../intptr.hpp"
 #include "../../is.hpp"
-#include "../../literals.hpp"
 #include "../../object.hpp"
 #include "../../new_ptr.hpp"
 #include "../../predicate.hpp"

@@ -1,4 +1,4 @@
-#include <xtd/literals>
+#include <xtd/translator_literals>
 #include <xtd/environment>
 #include <xtd/is>
 #include <xtd/translator>

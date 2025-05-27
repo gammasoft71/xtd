@@ -4,7 +4,6 @@
 #include <xtd/forms/message_box>
 #include <xtd/forms/save_file_box>
 #include <xtd/environment>
-#include <xtd/literals>
 
 using namespace xtd;
 using namespace xtd::forms;
