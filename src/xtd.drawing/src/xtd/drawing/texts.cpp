@@ -1,5 +1,5 @@
 #include "../../../include/xtd/drawing/texts.hpp"
-#include <xtd/literals>
+#include <xtd/translator_literals>
 
 using namespace xtd;
 using namespace xtd::drawing;

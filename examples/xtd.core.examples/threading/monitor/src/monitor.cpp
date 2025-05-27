@@ -3,7 +3,6 @@
 #include <xtd/threading/monitor>
 #include <xtd/threading/thread>
 #include <xtd/console>
-#include <xtd/literals>
 #include <xtd/random>
 #include <xtd/startup>
 

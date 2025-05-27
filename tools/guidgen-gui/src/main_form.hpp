@@ -1,4 +1,4 @@
-#include <xtd/literals>
+#include <xtd/translator_literals>
 #include <xtd/startup>
 #include <xtd/forms/application>
 #include <xtd/forms/button>

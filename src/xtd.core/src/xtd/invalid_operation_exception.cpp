@@ -1,5 +1,4 @@
 #include "../../include/xtd/invalid_operation_exception.hpp"
-#include "../../include/xtd/literals.hpp"
 
 using namespace xtd;
 using namespace xtd::diagnostics;

@@ -392,7 +392,6 @@
 #include "keywords.hpp"
 #include "language_id.hpp"
 #include "length_exception.hpp"
-#include "literals.hpp"
 #include "lock.hpp"
 #include "make_any_object.hpp"
 #include "make_error_code.hpp"

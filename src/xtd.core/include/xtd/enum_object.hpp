@@ -11,7 +11,6 @@
 #include "icomparable.hpp"
 #include "iequatable.hpp"
 #include "iformatable.hpp"
-#include "literals.hpp"
 #include "number_styles.hpp"
 #include "optional.hpp"
 #include "static.hpp"

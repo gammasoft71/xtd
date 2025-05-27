@@ -1,7 +1,6 @@
 #include "../../../include/xtd/security/secure_string.hpp"
 #include "../../../include/xtd/collections/generic/list.hpp"
 #include "../../../include/xtd/guid.hpp"
-#include "../../../include/xtd/literals.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/cryptography>
 #undef __XTD_CORE_NATIVE_LIBRARY__

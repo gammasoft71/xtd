@@ -2,7 +2,6 @@
 /// @brief Contains xtd::threading::wait_handle_cannot_be_opened_exception exception.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include "../literals.hpp"
 #include "../system_exception.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.

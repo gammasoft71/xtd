@@ -1,5 +1,4 @@
 #include "../../../include/xtd/security/security_exception.hpp"
-#include "../../../include/xtd/literals.hpp"
 
 using namespace xtd;
 using namespace xtd::security;

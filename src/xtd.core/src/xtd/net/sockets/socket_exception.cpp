@@ -1,5 +1,4 @@
 #include "../../../../include/xtd/net/sockets/socket_exception.hpp"
-#include "../../../../include/xtd/literals.hpp"
 #define __XTD_CORE_NATIVE_LIBRARY__
 #include <xtd/native/socket>
 #undef __XTD_CORE_NATIVE_LIBRARY__
