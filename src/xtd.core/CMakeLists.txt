@@ -927,6 +927,8 @@ add_sources(
   "include/xtd/literals/char32"
   "include/xtd/literals/double.hpp"
   "include/xtd/literals/double"
+  "include/xtd/literals/guid.hpp"
+  "include/xtd/literals/guid"
   "include/xtd/literals/int16.hpp"
   "include/xtd/literals/int16"
   "include/xtd/literals/int32.hpp"
