@@ -933,6 +933,8 @@ add_sources(
   "include/xtd/literals/int32"
   "include/xtd/literals/int64.hpp"
   "include/xtd/literals/int64"
+  "include/xtd/literals/single.hpp"
+  "include/xtd/literals/single"
   "include/xtd/media/system_sound.hpp"
   "include/xtd/media/system_sound"
   "include/xtd/media/system_sounds.hpp"
