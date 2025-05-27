@@ -19,5 +19,6 @@ var searchData=
   ['null_5fptr_2ehpp_16',['null_ptr.hpp',['../null__ptr_8hpp.html',1,'']]],
   ['nullopt_2ehpp_17',['nullopt.hpp',['../nullopt_8hpp.html',1,'']]],
   ['number_5fstyles_2ehpp_18',['number_styles.hpp',['../number__styles_8hpp.html',1,'']]],
-  ['numeric_5fup_5fdown_2ehpp_19',['numeric_up_down.hpp',['../numeric__up__down_8hpp.html',1,'']]]
+  ['numeric_5fliterals_2ehpp_19',['numeric_literals.hpp',['../numeric__literals_8hpp.html',1,'']]],
+  ['numeric_5fup_5fdown_2ehpp_20',['numeric_up_down.hpp',['../numeric__up__down_8hpp.html',1,'']]]
 ];
