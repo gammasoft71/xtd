@@ -84,11 +84,14 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">uint64.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<div class="textblock"><code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &quot;<a class="el" href="____xtd__std__version_8hpp_source.html">internal/__xtd_std_version.hpp</a>&quot;</code><br />
 </div><a name="details" id="details"></a><h2 class="groupheader">Definition</h2>
 <div class="textblock"><p>Contains <a class="el" href="group__types.html#gab5833228ed21371660af349c9b1fe797" title="Represents a 64-bit unsigned integer.">xtd::uint64</a> type. </p>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2025 Gammasoft. All rights reserved. </dd></dl>
@@ -100,17 +103,43 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacextd"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacextd.html">xtd</a></td></tr>
 <tr class="memdesc:namespacextd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacextd_1_1literals"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacextd_1_1literals.html">xtd::literals</a></td></tr>
+<tr class="memdesc:namespacextd_1_1literals"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="namespacextd_1_1literals.html" title="The xtd::literals namespace contains all xtd&#39;s litterals operators.">xtd::literals</a> namespace contains all xtd's litterals operators. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Native types</h2></td></tr>
 <tr class="memitem:gab5833228ed21371660af349c9b1fe797"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#gab5833228ed21371660af349c9b1fe797">xtd::uint64</a> = uint64_t</td></tr>
 <tr class="memdesc:gab5833228ed21371660af349c9b1fe797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a 64-bit unsigned integer.  <br /></td></tr>
 <tr class="separator:gab5833228ed21371660af349c9b1fe797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">UInt64 suffixes</h2></td></tr>
+<tr class="memitem:ga3ae0f49cbbce4538ed014d2a4520d32d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab5833228ed21371660af349c9b1fe797">uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__literals.html#ga3ae0f49cbbce4538ed014d2a4520d32d">xtd::literals::operator&quot;&quot;_u64</a> (long double <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>)</td></tr>
+<tr class="memdesc:ga3ae0f49cbbce4538ed014d2a4520d32d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to convert specified value into uint64.  <br /></td></tr>
+<tr class="separator:ga3ae0f49cbbce4538ed014d2a4520d32d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6e5e599957ee6202e29179476cc80c50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab5833228ed21371660af349c9b1fe797">uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__literals.html#ga6e5e599957ee6202e29179476cc80c50">xtd::literals::operator&quot;&quot;_u64</a> (unsigned long long <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>)</td></tr>
+<tr class="memdesc:ga6e5e599957ee6202e29179476cc80c50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to convert specified value into uint64.  <br /></td></tr>
+<tr class="separator:ga6e5e599957ee6202e29179476cc80c50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7ea1243b9f03b0c0461aa72e4090afa1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab5833228ed21371660af349c9b1fe797">uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__literals.html#ga7ea1243b9f03b0c0461aa72e4090afa1">xtd::literals::operator&quot;&quot;_u64</a> (const char *<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>, std::size_t <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>)</td></tr>
+<tr class="memdesc:ga7ea1243b9f03b0c0461aa72e4090afa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to convert specified value into uint64.  <br /></td></tr>
+<tr class="separator:ga7ea1243b9f03b0c0461aa72e4090afa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50b26d4ea69d2951a9a1ad31a94fbf6a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab5833228ed21371660af349c9b1fe797">uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__literals.html#ga50b26d4ea69d2951a9a1ad31a94fbf6a">xtd::literals::operator&quot;&quot;_u64</a> (const char8_t *<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>, std::size_t <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>)</td></tr>
+<tr class="memdesc:ga50b26d4ea69d2951a9a1ad31a94fbf6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to convert specified value into uint64.  <br /></td></tr>
+<tr class="separator:ga50b26d4ea69d2951a9a1ad31a94fbf6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6e0dd45b6d8fb3b7df62fc6194c46741"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab5833228ed21371660af349c9b1fe797">uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__literals.html#ga6e0dd45b6d8fb3b7df62fc6194c46741">xtd::literals::operator&quot;&quot;_u64</a> (const char16_t *<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>, std::size_t <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>)</td></tr>
+<tr class="memdesc:ga6e0dd45b6d8fb3b7df62fc6194c46741"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to convert specified value into uint64.  <br /></td></tr>
+<tr class="separator:ga6e0dd45b6d8fb3b7df62fc6194c46741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4b4a14daeff63e1db9b65a87a1861ef3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab5833228ed21371660af349c9b1fe797">uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__literals.html#ga4b4a14daeff63e1db9b65a87a1861ef3">xtd::literals::operator&quot;&quot;_u64</a> (const char32_t *<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>, std::size_t <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>)</td></tr>
+<tr class="memdesc:ga4b4a14daeff63e1db9b65a87a1861ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to convert specified value into uint64.  <br /></td></tr>
+<tr class="separator:ga4b4a14daeff63e1db9b65a87a1861ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4c92103457001ba58f3a7ecbd3223a65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gab5833228ed21371660af349c9b1fe797">uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__literals.html#ga4c92103457001ba58f3a7ecbd3223a65">xtd::literals::operator&quot;&quot;_u64</a> (const wchar_t *<a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a03c7c0ace395d80182db07ae2c30f034">s</a>, std::size_t <a class="el" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a7b8b965ad4bca0e41ab51de7b31363a1">n</a>)</td></tr>
+<tr class="memdesc:ga4c92103457001ba58f3a7ecbd3223a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to convert specified value into uint64.  <br /></td></tr>
+<tr class="separator:ga4c92103457001ba58f3a7ecbd3223a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 26 2025 20:41:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue May 27 2025 20:37:50 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

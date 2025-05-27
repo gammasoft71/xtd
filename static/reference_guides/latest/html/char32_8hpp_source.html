@@ -88,23 +88,45 @@ $(function() {
 <div class="contents">
 <a href="char32_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#define __XTD_STD_INTERNAL__</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="____xtd__std__version_8hpp.html">internal/__xtd_std_version.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#undef __XTD_STD_INTERNAL__</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">   26</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">char32</a> = char32_t;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define __XTD_STD_INTERNAL__</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="____xtd__std__version_8hpp.html">internal/__xtd_std_version.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#undef __XTD_STD_INTERNAL__</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define __XTD_STD_INTERNAL__</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="____xtd__std__version_8hpp.html">internal/__xtd_std_version.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#undef __XTD_STD_INTERNAL__</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>  </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">   30</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">char32</a> = char32_t;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">inline</span> <span class="keyword">namespace </span>literals {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="group__literals.html#ga6e301414cc8a8943c65006f17b42f82c">   48</a></span>    <a class="code hl_typedef" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">char32</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_c(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="group__literals.html#ga2301ac12b10303bfea226d28fccfb984">   60</a></span>    <a class="code hl_typedef" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">char32</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_c(<span class="keywordtype">char</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#if defined(__xtd__cpp_lib_char8_t)</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="group__literals.html#ga5a293ce1ac1f2db56f70d7683fec198c">   73</a></span>    <a class="code hl_typedef" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">char32</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_c(<span class="keywordtype">char8_t</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a>);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="group__literals.html#gade38ae541d1fac8efb3939694f4dd412">   86</a></span>    <a class="code hl_typedef" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">char32</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_c(<span class="keywordtype">char16_t</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="group__literals.html#ga064e87d39b7da0d9f207dccd91aa3be6">   98</a></span>    <a class="code hl_typedef" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">char32</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_c(<a class="code hl_typedef" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">char32</a> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a>);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="group__literals.html#ga087f4294f9efef289f485a04bbc2ef41">  110</a></span>    <a class="code hl_typedef" href="group__types.html#ga989a1148b6ff15567dca430966b17c92">char32</a> <span class="keyword">operator</span><span class="stringliteral">&quot;&quot;</span>_c(<span class="keywordtype">wchar_t</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">c</a>);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}</div>
 <div class="ttc" id="a____xtd__std__version_8hpp_html"><div class="ttname"><a href="____xtd__std__version_8hpp.html">__xtd_std_version.hpp</a></div><div class="ttdoc">Contains __xtd_std_version definitions.</div></div>
-<div class="ttc" id="agroup__types_html_ga989a1148b6ff15567dca430966b17c92"><div class="ttname"><a href="group__types.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a></div><div class="ttdeci">char32_t char32</div><div class="ttdoc">Represents a 32-bit unicode character.</div><div class="ttdef"><b>Definition</b> char32.hpp:26</div></div>
+<div class="ttc" id="agroup__types_html_ga989a1148b6ff15567dca430966b17c92"><div class="ttname"><a href="group__types.html#ga989a1148b6ff15567dca430966b17c92">xtd::char32</a></div><div class="ttdeci">char32_t char32</div><div class="ttdoc">Represents a 32-bit unicode character.</div><div class="ttdef"><b>Definition</b> char32.hpp:30</div></div>
+<div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2a4a8a08f09d37b73795649038408b5f33">xtd::console_key::c</a></div><div class="ttdeci">@ c</div><div class="ttdoc">The C key.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 26 2025 20:41:32 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Tue May 27 2025 20:37:46 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
