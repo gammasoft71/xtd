@@ -808,7 +808,7 @@ var searchData=
   ['countries_2ehpp_805',['countries.hpp',['../countries_8hpp.html',1,'']]],
   ['countries_5fappearances_5fpage_2edox_806',['countries_appearances_page.dox',['../countries__appearances__page_8dox.html',1,'']]],
   ['country_807',['country',['../classxtd_1_1forms_1_1country.html',1,'xtd::forms']]],
-  ['country_2ehpp_808',['country.hpp',['../country_8hpp.html',1,'']]],
+  ['country_2ehpp_808',['country.hpp',['../forms_2country_8hpp.html',1,'(Global Namespace)'],['../literals_2country_8hpp.html',1,'(Global Namespace)']]],
   ['couple_5fwith_5fheart_809',['couple_with_heart',['../classxtd_1_1forms_1_1emoticons.html#aac42d5233eead07f9ca7c6db42d668ed',1,'xtd::forms::emoticons']]],
   ['cow_810',['cow',['../classxtd_1_1forms_1_1emoticons.html#a524010faf920a86ccc6885c2727eb056',1,'xtd::forms::emoticons']]],
   ['cow_5fface_811',['cow_face',['../classxtd_1_1forms_1_1emoticons.html#ad1fcc11c33f85ec2cbe3a41000d05d8c',1,'xtd::forms::emoticons']]],
