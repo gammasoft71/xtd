@@ -755,6 +755,8 @@ add_sources(
   "include/xtd/forms/visual_styles/toggle_button_state"
   "include/xtd/forms/visual_styles/user_control_state.hpp"
   "include/xtd/forms/visual_styles/user_control_state"
+  "include/xtd/literals/country.hpp"
+  "include/xtd/literals/country"
 )
 add_sources(
   "src/xtd/system_report.cpp"
@@ -973,6 +975,7 @@ add_sources(
   "src/xtd/forms/style_sheets/system_style_sheet_windows_dark.cpp"
   "src/xtd/forms/style_sheets/system_style_sheet_windows_light.cpp"
   "src/xtd/forms/style_sheets/theme.cpp"
+  "src/xtd/literals/country.cpp"
 )
 target_type(${XTD_LIBRARY_TYPE})
 
