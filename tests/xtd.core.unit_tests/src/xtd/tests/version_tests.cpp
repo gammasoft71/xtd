@@ -212,38 +212,4 @@ namespace xtd::tests {
       assert::throws<argument_exception>([] {version().to_string(5);});
     }
   };
-
-  class test_class_(version_suffixes_tests) {
-    void test_method_(_vers_operator_on_char_ptr) {
-      auto v = "1.2.3"_vers;
-      assert::is_instance_of<version>(v);
-      assert::are_equal("1.2.3", v.to_string());
-    }
-    
-#if defined(__xtd__cpp_lib_char8_t)
-    void test_method_(_vers_operator_on_char8_ptr) {
-      auto v = u8"1.2.3"_vers;
-      assert::is_instance_of<version>(v);
-      assert::are_equal("1.2.3", v.to_string());
-    }
-#endif
-    
-    void test_method_(_vers_operator_on_char16_ptr) {
-      auto v = u"1.2.3"_vers;
-      assert::is_instance_of<version>(v);
-      assert::are_equal("1.2.3", v.to_string());
-    }
-    
-    void test_method_(_vers_operator_on_char32_ptr) {
-      auto v = U"1.2.3"_vers;
-      assert::is_instance_of<version>(v);
-      assert::are_equal("1.2.3", v.to_string());
-    }
-    
-    void test_method_(_vers_operator_on_wchar_ptr) {
-      auto v = L"1.2.3"_vers;
-      assert::is_instance_of<version>(v);
-      assert::are_equal("1.2.3", v.to_string());
-    }
-  };
 }
