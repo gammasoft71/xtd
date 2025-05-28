@@ -1,10 +1,11 @@
 /// @file
-/// @brief Contains xtd numeric literals.
+/// @brief Contains xtd::translator suffixes.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include "types.hpp"
+#include <cstddef>
+#include "../string.hpp"
 #define __XTD_STD_INTERNAL__
-#include "internal/__xtd_std_version.hpp"
+#include "../internal/__xtd_std_version.hpp"
 #undef __XTD_STD_INTERNAL__
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
@@ -25,7 +26,7 @@ namespace xtd {
     /// xtd::string s = "Belgium"_t;
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
-    const char* operator""_t(const char* s, xtd::size n) noexcept;
+    const char* operator""_t(const char* s, std::size_t n) noexcept;
     
 #if defined(__xtd__cpp_lib_char8_t)
     /// @brief Used to translate specified string into locale.
@@ -39,7 +40,7 @@ namespace xtd {
     /// xtd::string s = u8"Belgium"_t;
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
-    xtd::string operator""_t(const char8* s, xtd::size n) noexcept;
+    xtd::string operator""_t(const char8_t* s, std::size_t n) noexcept;
 #endif
     
     /// @brief Used to translate specified string into locale.
@@ -53,7 +54,7 @@ namespace xtd {
     /// xtd::string s = u"Belgium"_t;
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
-    xtd::string operator""_t(const char16* s, xtd::size n) noexcept;
+    xtd::string operator""_t(const char16_t* s, std::size_t n) noexcept;
     
     /// @brief Used to translate specified string into locale.
     /// @par Namespace
@@ -66,7 +67,7 @@ namespace xtd {
     /// xtd::string s = U"Belgium"_t;
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
-    xtd::string operator""_t(const char32* s, xtd::size n) noexcept;
+    xtd::string operator""_t(const char32_t* s, std::size_t n) noexcept;
     
     /// @brief Used to translate specified string into locale.
     /// @par Namespace
@@ -79,7 +80,7 @@ namespace xtd {
     /// xtd::string s = L"Belgium"_t;
     /// xtd::console::out << s << xtd::environment::new_line;
     /// ```
-    xtd::string operator""_t(const wchar* s, xtd::size n) noexcept;
+    xtd::string operator""_t(const wchar_t* s, std::size_t n) noexcept;
     /// @}
   }
 }

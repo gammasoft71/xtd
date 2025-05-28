@@ -5,7 +5,7 @@
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/drawing/system_colors>
 #include <xtd/convert_string>
-#include <xtd/translator_literals>
+#include <xtd/literals/translator>
 #include <wx/fdrepdlg.h>
 #include <wx/radiobox.h>
 
