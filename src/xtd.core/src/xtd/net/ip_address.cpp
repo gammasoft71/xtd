@@ -294,25 +294,3 @@ bool ip_address::try_parse(const string& str, ip_address& address) noexcept {
   
   return true;
 }
-
-ip_address xtd::literals::operator""_ip(const char* s, xtd::size n) {
-  return ip_address::parse(string {s});
-}
-
-#if defined(__xtd__cpp_lib_char8_t)
-ip_address xtd::literals::operator""_ip(const char8* s, xtd::size n) {
-  return ip_address::parse(string {s});
-}
-#endif
-
-ip_address xtd::literals::operator""_ip(const char16* s, xtd::size n) {
-  return ip_address::parse(string {s});
-}
-
-ip_address xtd::literals::operator""_ip(const char32* s, xtd::size n) {
-  return ip_address::parse(string {s});
-}
-
-ip_address xtd::literals::operator""_ip(const wchar* s, xtd::size n) {
-  return ip_address::parse(string {s});
-}
