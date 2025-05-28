@@ -1,5 +1,5 @@
 #include <xtd/is>
-#include <xtd/translator_literals>
+#include <xtd/literals/translator>
 #include <xtd/tunit/assert>
 #include <xtd/tunit/test_class_attribute>
 #include <xtd/tunit/test_method_attribute>

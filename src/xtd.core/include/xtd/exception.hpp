@@ -11,7 +11,7 @@
 #include "ptr.hpp"
 #include "uptr.hpp"
 #include "string.hpp"
-#include "translator_literals.hpp"
+#include "literals/translator.hpp"
 #include <exception>
 #include <system_error>
 

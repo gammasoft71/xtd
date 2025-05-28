@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include "about_dialog.hpp"
-#include <xtd/translator_literals>
+#include <xtd/literals/translator>
 #include <xtd/static>
 #include <xtd/string>
 

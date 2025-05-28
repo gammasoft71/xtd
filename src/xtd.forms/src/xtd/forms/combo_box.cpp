@@ -7,7 +7,7 @@
 #include <xtd/forms/native/combo_box_styles>
 #undef __XTD_FORMS_NATIVE_LIBRARY__
 #include <xtd/argument_out_of_range_exception>
-#include <xtd/translator_literals>
+#include <xtd/literals/translator>
 
 using namespace xtd;
 using namespace xtd::drawing;
