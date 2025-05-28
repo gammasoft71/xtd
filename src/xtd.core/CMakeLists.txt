@@ -935,6 +935,8 @@ add_sources(
   "include/xtd/literals/int32"
   "include/xtd/literals/int64.hpp"
   "include/xtd/literals/int64"
+  "include/xtd/literals/ip_address.hpp"
+  "include/xtd/literals/ip_address"
   "include/xtd/literals/sbyte.hpp"
   "include/xtd/literals/sbyte"
   "include/xtd/literals/single.hpp"
