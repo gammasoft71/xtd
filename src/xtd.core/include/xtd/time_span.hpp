@@ -572,4 +572,4 @@ namespace xtd {
   inline xtd::time_span parse<time_span>(const std::string& str) {return time_span::parse(str);}
 }
 
-#include "literals/time_Span.hpp"
+#include "literals/time_span.hpp"
