@@ -58,6 +58,6 @@ var searchData=
   ['button_5frenderer_2ehpp_55',['button_renderer.hpp',['../button__renderer_8hpp.html',1,'']]],
   ['button_5fstate_2ehpp_56',['button_state.hpp',['../button__state_8hpp.html',1,'']]],
   ['buttons_2ehpp_57',['buttons.hpp',['../buttons_8hpp.html',1,'']]],
-  ['byte_2ehpp_58',['byte.hpp',['../byte_8hpp.html',1,'']]],
+  ['byte_2ehpp_58',['byte.hpp',['../literals_2byte_8hpp.html',1,'(Global Namespace)'],['../byte_8hpp.html',1,'(Global Namespace)']]],
   ['byte_5fobject_2ehpp_59',['byte_object.hpp',['../byte__object_8hpp.html',1,'']]]
 ];

@@ -175,7 +175,6 @@ Because the return value of some methods depends on system architecture, be care
 </ul>
 </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example illustrates the use of several <a class="el" href="classxtd_1_1bit__converter.html" title="Converts base data types to an xtd::array of bytes, and an xtd::array of bytes to base data types.">bit_converter</a> class methods. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/bit_converter&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;xtd/literals&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacextd.html">xtd</a>;</div>
@@ -372,23 +371,23 @@ Public Types</h2></td></tr>
 <tr class="memitem:ad4e572772b175191d161cab80dec2734"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#ad4e572772b175191d161cab80dec2734">to_size</a> (const <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;value, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> start_index)</td></tr>
 <tr class="memdesc:ad4e572772b175191d161cab80dec2734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a sxtd::ize converted from two bytes at a specified position in a <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> <a class="el" href="classxtd_1_1read__only__span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::read_only_span</a>.  <br /></td></tr>
 <tr class="separator:ad4e572772b175191d161cab80dec2734"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ed2140122769ea67c2616c0aeb496d4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#a4ed2140122769ea67c2616c0aeb496d4">to_string</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;value)</td></tr>
-<tr class="memdesc:a4ed2140122769ea67c2616c0aeb496d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the numeric value of each element of a specified <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation.  <br /></td></tr>
+<tr class="memitem:a4ed2140122769ea67c2616c0aeb496d4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#a4ed2140122769ea67c2616c0aeb496d4">to_string</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;value)</td></tr>
+<tr class="memdesc:a4ed2140122769ea67c2616c0aeb496d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the numeric value of each element of a specified <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation.  <br /></td></tr>
 <tr class="separator:a4ed2140122769ea67c2616c0aeb496d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a408d75c4b8a912ec036ebb4ac0d48edd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#a408d75c4b8a912ec036ebb4ac0d48edd">to_string</a> (const <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;value)</td></tr>
-<tr class="memdesc:a408d75c4b8a912ec036ebb4ac0d48edd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the numeric value of each element of a specified <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation.  <br /></td></tr>
+<tr class="memitem:a408d75c4b8a912ec036ebb4ac0d48edd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#a408d75c4b8a912ec036ebb4ac0d48edd">to_string</a> (const <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;value)</td></tr>
+<tr class="memdesc:a408d75c4b8a912ec036ebb4ac0d48edd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the numeric value of each element of a specified <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation.  <br /></td></tr>
 <tr class="separator:a408d75c4b8a912ec036ebb4ac0d48edd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad20012e1681ee9935978b61e6744d3de"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#ad20012e1681ee9935978b61e6744d3de">to_string</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;value, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> start_index)</td></tr>
-<tr class="memdesc:ad20012e1681ee9935978b61e6744d3de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the numeric value of each element of a specified sub <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation.  <br /></td></tr>
+<tr class="memitem:ad20012e1681ee9935978b61e6744d3de"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#ad20012e1681ee9935978b61e6744d3de">to_string</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;value, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> start_index)</td></tr>
+<tr class="memdesc:ad20012e1681ee9935978b61e6744d3de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the numeric value of each element of a specified sub <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation.  <br /></td></tr>
 <tr class="separator:ad20012e1681ee9935978b61e6744d3de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fa02742d33992f5399a385871ba683d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#a3fa02742d33992f5399a385871ba683d">to_string</a> (const <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;value, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> start_index)</td></tr>
-<tr class="memdesc:a3fa02742d33992f5399a385871ba683d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the numeric value of each element of a specified sub <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation.  <br /></td></tr>
+<tr class="memitem:a3fa02742d33992f5399a385871ba683d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#a3fa02742d33992f5399a385871ba683d">to_string</a> (const <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;value, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> start_index)</td></tr>
+<tr class="memdesc:a3fa02742d33992f5399a385871ba683d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the numeric value of each element of a specified sub <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation.  <br /></td></tr>
 <tr class="separator:a3fa02742d33992f5399a385871ba683d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98aa9366ce846a6cfd3bdb439605ccd3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#a98aa9366ce846a6cfd3bdb439605ccd3">to_string</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;value, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> start_index, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> length)</td></tr>
-<tr class="memdesc:a98aa9366ce846a6cfd3bdb439605ccd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the numeric value of each element of a specified sub <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation.  <br /></td></tr>
+<tr class="memitem:a98aa9366ce846a6cfd3bdb439605ccd3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#a98aa9366ce846a6cfd3bdb439605ccd3">to_string</a> (const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;value, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> start_index, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> length)</td></tr>
+<tr class="memdesc:a98aa9366ce846a6cfd3bdb439605ccd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the numeric value of each element of a specified sub <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation.  <br /></td></tr>
 <tr class="separator:a98aa9366ce846a6cfd3bdb439605ccd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9f9408fa73b644638d0c4cb689af983"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#aa9f9408fa73b644638d0c4cb689af983">to_string</a> (const <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;value, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> start_index, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> length)</td></tr>
-<tr class="memdesc:aa9f9408fa73b644638d0c4cb689af983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the numeric value of each element of a specified sub <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation.  <br /></td></tr>
+<tr class="memitem:aa9f9408fa73b644638d0c4cb689af983"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1bit__converter.html#aa9f9408fa73b644638d0c4cb689af983">to_string</a> (const <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;value, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> start_index, <a class="el" href="group__types.html#ga92c4f59ae39104d31ce9c0c20810001d">xtd::size</a> length)</td></tr>
+<tr class="memdesc:aa9f9408fa73b644638d0c4cb689af983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the numeric value of each element of a specified sub <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation.  <br /></td></tr>
 <tr class="separator:aa9f9408fa73b644638d0c4cb689af983"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Enumeration Documentation</h2>
@@ -2325,7 +2324,7 @@ Public Types</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> xtd::bit_converter::to_string </td>
+          <td class="memname">static <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a> xtd::bit_converter::to_string </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
@@ -2339,14 +2338,14 @@ Public Types</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Converts the numeric value of each element of a specified <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation. </p>
+<p>Converts the numeric value of each element of a specified <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>An <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> A <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00". </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> A <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00". </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">argument_null_exception</a></td><td>value is null. </td></tr>
@@ -2354,7 +2353,7 @@ Public Types</h2></td></tr>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>All the elements of value are converted. The order of hexadecimal strings returned by the to_string method depends on whether the computer architecture is little-endian or big-endian. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example converts <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays to <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> objects with the to_string method. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example converts <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays to <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> objects with the to_string method. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -2368,7 +2367,7 @@ Public Types</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> xtd::bit_converter::to_string </td>
+          <td class="memname">static <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a> xtd::bit_converter::to_string </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
@@ -2382,14 +2381,14 @@ Public Types</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Converts the numeric value of each element of a specified <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation. </p>
+<p>Converts the numeric value of each element of a specified <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>An <a class="el" href="classxtd_1_1read__only__span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::read_only_span</a> of bytes. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> A <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00". </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> A <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00". </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">argument_null_exception</a></td><td>value is null. </td></tr>
@@ -2397,7 +2396,7 @@ Public Types</h2></td></tr>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>All the elements of value are converted. The order of hexadecimal strings returned by the to_string method depends on whether the computer architecture is little-endian or big-endian. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example converts <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays to <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> objects with the to_string method. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example converts <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays to <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> objects with the to_string method. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -2411,7 +2410,7 @@ Public Types</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> xtd::bit_converter::to_string </td>
+          <td class="memname">static <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a> xtd::bit_converter::to_string </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>value</em>, </td>
@@ -2435,7 +2434,7 @@ Public Types</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Converts the numeric value of each element of a specified sub <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation. </p>
+<p>Converts the numeric value of each element of a specified sub <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>An <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes. </td></tr>
@@ -2443,7 +2442,7 @@ Public Types</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> A <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00". </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> A <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00". </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">argument_null_exception</a></td><td>value is null. </td></tr>
@@ -2452,7 +2451,7 @@ Public Types</h2></td></tr>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The elements from <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> position start_index to the end of the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> are converted. The order of hexadecimal strings returned by the to_string method depends on whether the computer architecture is little-endian or big-endian. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example converts <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays to <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> objects with the to_string method. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example converts <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays to <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> objects with the to_string method. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -2466,7 +2465,7 @@ Public Types</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> xtd::bit_converter::to_string </td>
+          <td class="memname">static <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a> xtd::bit_converter::to_string </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>value</em>, </td>
@@ -2490,7 +2489,7 @@ Public Types</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Converts the numeric value of each element of a specified sub <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation. </p>
+<p>Converts the numeric value of each element of a specified sub <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>An <a class="el" href="classxtd_1_1read__only__span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::read_only_span</a> of bytes. </td></tr>
@@ -2498,7 +2497,7 @@ Public Types</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> A <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00". </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> A <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00". </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">argument_null_exception</a></td><td>value is null. </td></tr>
@@ -2507,7 +2506,7 @@ Public Types</h2></td></tr>
   </dd>
 </dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The elements from <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> position start_index to the end of the <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> are converted. The order of hexadecimal strings returned by the to_string method depends on whether the computer architecture is little-endian or big-endian. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example converts <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays to <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> objects with the to_string method. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example converts <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays to <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> objects with the to_string method. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -2521,7 +2520,7 @@ Public Types</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> xtd::bit_converter::to_string </td>
+          <td class="memname">static <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a> xtd::bit_converter::to_string </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1array.html">xtd::array</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>value</em>, </td>
@@ -2551,7 +2550,7 @@ Public Types</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Converts the numeric value of each element of a specified sub <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation. </p>
+<p>Converts the numeric value of each element of a specified sub <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>An <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes. </td></tr>
@@ -2560,7 +2559,7 @@ Public Types</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> A <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00". </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> A <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00". </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">argument_null_exception</a></td><td>value is null. </td></tr>
@@ -2574,7 +2573,7 @@ start_index is greater than zero and is greater than or equal to the length of v
 <dl class="section remark"><dt>Remarks</dt><dd>AThe length elements from <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> position start_index are converted. If length equals zero, the method returns xtd::string.Empty. </dd>
 <dd>
 The order of hexadecimal strings returned by the to_string method depends on whether the computer architecture is little-endian or big-endian. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example converts <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays to <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> objects with the to_string method. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example converts <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays to <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> objects with the to_string method. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -2588,7 +2587,7 @@ The order of hexadecimal strings returned by the to_string method depends on whe
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1">xtd::string</a> xtd::bit_converter::to_string </td>
+          <td class="memname">static <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91">xtd::string</a> xtd::bit_converter::to_string </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classxtd_1_1read__only__span.html">read_only_span</a>&lt; <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1">xtd::byte</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>value</em>, </td>
@@ -2618,7 +2617,7 @@ The order of hexadecimal strings returned by the to_string method depends on whe
 </table>
 </div><div class="memdoc">
 
-<p>Converts the numeric value of each element of a specified sub <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation. </p>
+<p>Converts the numeric value of each element of a specified sub <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> of bytes to its equivalent hexadecimal <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">value</td><td>An <a class="el" href="classxtd_1_1read__only__span.html" title="Represents a non-owning view over a contiguous sequence of objects.">xtd::read_only_span</a> of bytes. </td></tr>
@@ -2627,7 +2626,7 @@ The order of hexadecimal strings returned by the to_string method depends on whe
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> A <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00". </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> A <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> of hexadecimal pairs separated by hyphens, where each pair represents the corresponding element in value; for example, "7F-2C-4A-00". </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="classxtd_1_1argument__null__exception.html" title="The exception that is thrown when one of the arguments provided to a method is null.">argument_null_exception</a></td><td>value is null. </td></tr>
@@ -2641,7 +2640,7 @@ start_index is greater than zero and is greater than or equal to the length of v
 <dl class="section remark"><dt>Remarks</dt><dd>AThe length elements from <a class="el" href="classxtd_1_1array.html" title="Provides methods for creating, manipulating, searching, and sorting arrays, thereby serving as the ba...">xtd::array</a> position start_index are converted. If length equals zero, the method returns xtd::string.Empty. </dd>
 <dd>
 The order of hexadecimal strings returned by the to_string method depends on whether the computer architecture is little-endian or big-endian. </dd></dl>
-<dl class="section user"><dt>Examples</dt><dd>The following code example converts <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays to <a class="el" href="group__strings.html#ga9fe47a4b2c6dc7d7eeaf5d2fb218d4d1" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> objects with the to_string method. <div class="fragment"></div><!-- fragment --> </dd></dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code example converts <a class="el" href="group__types.html#gabb9d3031d62e3725b4265c7e5d2a98e1" title="Represents a 8-bit unsigned integer.">xtd::byte</a> xtd::arrays to <a class="el" href="group__strings.html#gacd1daef0757a14b1f957e10b32644f91" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> objects with the to_string method. <div class="fragment"></div><!-- fragment --> </dd></dl>
 
 </div>
 </div>
@@ -2821,7 +2820,7 @@ The order of hexadecimal strings returned by the to_string method depends on whe
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 27 2025 20:37:53 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed May 28 2025 20:44:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
