@@ -17,7 +17,7 @@
 #include <xtd/as>
 #include <xtd/invalid_operation_exception>
 #include <xtd/is>
-#include <xtd/literals>
+#include <xtd/literals/translator>
 #include <xtd/random>
 
 using namespace xtd;
