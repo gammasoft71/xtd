@@ -290,6 +290,8 @@ add_sources(
   "include/xtd/drawing/text/private_font_collection"
   "include/xtd/drawing/text/text_rendering_hint.hpp"
   "include/xtd/drawing/text/text_rendering_hint"
+  "include/xtd/literals/color.hpp"
+  "include/xtd/literals/color"
 )
 add_sources(
   "src/xtd/drawing/actions_system_images.cpp"
