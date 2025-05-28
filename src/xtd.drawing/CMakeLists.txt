@@ -402,6 +402,7 @@ add_sources(
   "src/xtd/drawing/imaging/property_item.cpp"
   "src/xtd/drawing/text/installed_font_collection.cpp"
   "src/xtd/drawing/text/private_font_collection.cpp"
+  "src/xtd/literals/color.cpp"
 )
 target_type(${XTD_LIBRARY_TYPE})
 
