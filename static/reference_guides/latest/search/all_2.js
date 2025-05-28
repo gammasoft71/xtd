@@ -441,7 +441,7 @@ var searchData=
   ['buttons_2ehpp_438',['buttons.hpp',['../buttons_8hpp.html',1,'']]],
   ['buttons_5ft_439',['buttons_t',['../classxtd_1_1forms_1_1style__sheets_1_1style__sheet.html#a67c95b5a9abd7b1f00614353edb36544',1,'xtd::forms::style_sheets::style_sheet']]],
   ['byte_440',['byte',['../group__types.html#ga8eaeca343fe44fd32900e07de728ebd9',1,'xtd']]],
-  ['byte_2ehpp_441',['byte.hpp',['../byte_8hpp.html',1,'']]],
+  ['byte_2ehpp_441',['byte.hpp',['../byte_8hpp.html',1,'(Global Namespace)'],['../literals_2byte_8hpp.html',1,'(Global Namespace)']]],
   ['byte_5fobject_442',['byte_object',['../group__types.html#ga1a36d2fea3e36e23ba5eae43f8946991',1,'xtd']]],
   ['byte_5fobject_2ehpp_443',['byte_object.hpp',['../byte__object_8hpp.html',1,'']]]
 ];

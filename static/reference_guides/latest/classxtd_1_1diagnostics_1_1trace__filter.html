@@ -129,7 +129,7 @@ Inheritance diagram for xtd::diagnostics::trace_filter:</div>
 Filters that inherit from the <a class="el" href="classxtd_1_1diagnostics_1_1trace__filter.html" title="Provides the base class for trace filter implementations.">trace_filter</a> class can be used by trace listeners that inherit from the <a class="el" href="classxtd_1_1diagnostics_1_1trace__listener.html" title="Provides the abstract base class for the listeners who monitor trace and debug output.">trace_listener</a> class to perform filtering of events being traced. <a class="el" href="classxtd_1_1diagnostics_1_1trace__filter.html" title="Provides the base class for trace filter implementations.">trace_filter</a> contains a single method, should_trace, which takes event data and returns a flag indicating whether the event should be traced. </dd></dl>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Methods</h2></td></tr>
-<tr class="memitem:a6e622a612b02a8c6cf00eb5e093c0eb5" id="r_a6e622a612b02a8c6cf00eb5e093c0eb5"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e622a612b02a8c6cf00eb5e093c0eb5">should_trace</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1trace__event__cache.html">xtd::diagnostics::trace_event_cache</a> &amp;cache, const <a class="el" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a> &amp;source, <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> event_type, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> id, const <a class="el" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a> &amp;message, <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> data1, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &gt; &amp;data_array) noexcept=0</td></tr>
+<tr class="memitem:a6e622a612b02a8c6cf00eb5e093c0eb5" id="r_a6e622a612b02a8c6cf00eb5e093c0eb5"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e622a612b02a8c6cf00eb5e093c0eb5">should_trace</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1trace__event__cache.html">xtd::diagnostics::trace_event_cache</a> &amp;cache, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;source, <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> event_type, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> id, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message, <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> data1, const <a class="el" href="classxtd_1_1collections_1_1generic_1_1list.html">xtd::collections::generic::list</a>&lt; <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> &gt; &amp;data_array) noexcept=0</td></tr>
 <tr class="memdesc:a6e622a612b02a8c6cf00eb5e093c0eb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">When overridden in a derived class, determines whether the trace listener should trace the event.  <br /></td></tr>
 <tr class="separator:a6e622a612b02a8c6cf00eb5e093c0eb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -139,10 +139,10 @@ Filters that inherit from the <a class="el" href="classxtd_1_1diagnostics_1_1tra
 <tr class="separator:a8616ee0f4a2070b88a52f22d651ebced"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Protectted methods</h2></td></tr>
-<tr class="memitem:abd082a2294319ad7271e3ed9eaccc319" id="r_abd082a2294319ad7271e3ed9eaccc319"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd082a2294319ad7271e3ed9eaccc319">should_trace</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1trace__event__cache.html">xtd::diagnostics::trace_event_cache</a> &amp;cache, const <a class="el" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a> &amp;source, <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> event_type, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> id, const <a class="el" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a> &amp;message) noexcept</td></tr>
+<tr class="memitem:abd082a2294319ad7271e3ed9eaccc319" id="r_abd082a2294319ad7271e3ed9eaccc319"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd082a2294319ad7271e3ed9eaccc319">should_trace</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1trace__event__cache.html">xtd::diagnostics::trace_event_cache</a> &amp;cache, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;source, <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> event_type, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> id, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message) noexcept</td></tr>
 <tr class="memdesc:abd082a2294319ad7271e3ed9eaccc319"><td class="mdescLeft">&#160;</td><td class="mdescRight">determines whether the trace listener should trace the event.  <br /></td></tr>
 <tr class="separator:abd082a2294319ad7271e3ed9eaccc319"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81eebaffe5cedbc31622452c648354d0" id="r_a81eebaffe5cedbc31622452c648354d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81eebaffe5cedbc31622452c648354d0">should_trace</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1trace__event__cache.html">xtd::diagnostics::trace_event_cache</a> &amp;cache, const <a class="el" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a> &amp;source, <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> event_type, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> id, const <a class="el" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a> &amp;message, <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> data1) noexcept</td></tr>
+<tr class="memitem:a81eebaffe5cedbc31622452c648354d0" id="r_a81eebaffe5cedbc31622452c648354d0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a81eebaffe5cedbc31622452c648354d0">should_trace</a> (const <a class="el" href="classxtd_1_1diagnostics_1_1trace__event__cache.html">xtd::diagnostics::trace_event_cache</a> &amp;cache, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;source, <a class="el" href="group__xtd__core.html#gaa4259447827076a90f74415bf11af9b9">xtd::diagnostics::trace_event_type</a> event_type, <a class="el" href="group__types.html#ga60803bd100102370b937ec089f136260">int32</a> id, const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;message, <a class="el" href="classxtd_1_1any__object.html">xtd::any_object</a> data1) noexcept</td></tr>
 <tr class="memdesc:a81eebaffe5cedbc31622452c648354d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">determines whether the trace listener should trace the event.  <br /></td></tr>
 <tr class="separator:a81eebaffe5cedbc31622452c648354d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -164,8 +164,8 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memTemplItemLeft" align="right" valign="top">xtd::unique_ptr_object&lt; object_t &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#ac24dbacb9a6e23a1ebd63ad403141a35">memberwise_clone</a> () const</td></tr>
 <tr class="memdesc:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a shallow copy of the current object.  <br /></td></tr>
 <tr class="separator:ac24dbacb9a6e23a1ebd63ad403141a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2d19ef177db62351b58a42f22138dbe" id="r_af2d19ef177db62351b58a42f22138dbe"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe">to_string</a> () const noexcept</td></tr>
-<tr class="memdesc:af2d19ef177db62351b58a42f22138dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
+<tr class="memitem:af2d19ef177db62351b58a42f22138dbe" id="r_af2d19ef177db62351b58a42f22138dbe"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#af2d19ef177db62351b58a42f22138dbe">to_string</a> () const noexcept</td></tr>
+<tr class="memdesc:af2d19ef177db62351b58a42f22138dbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> that represents the current object.  <br /></td></tr>
 <tr class="separator:af2d19ef177db62351b58a42f22138dbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6" id="r_a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplParams" colspan="2">template&lt;class object_a_t, class object_b_t&gt; </td></tr>
 <tr class="memitem:a7fa6fd860800fb1dd1caac338e2355e6"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classxtd_1_1object.html#a7fa6fd860800fb1dd1caac338e2355e6">equals</a> (const object_a_t &amp;object_a, const object_b_t &amp;object_b) noexcept</td></tr>
@@ -225,7 +225,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -240,7 +240,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -295,7 +295,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -310,7 +310,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>&#160;)</td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -351,7 +351,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>source</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -366,7 +366,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -403,7 +403,7 @@ Additional Inherited Members</h2></td></tr>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 27 2025 13:57:20 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed May 28 2025 03:15:11 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
