@@ -941,6 +941,8 @@ add_sources(
   "include/xtd/literals/sbyte"
   "include/xtd/literals/single.hpp"
   "include/xtd/literals/single"
+  "include/xtd/literals/string.hpp"
+  "include/xtd/literals/string"
   "include/xtd/literals/size.hpp"
   "include/xtd/literals/size"
   "include/xtd/literals/uint16.hpp"
