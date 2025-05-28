@@ -8,7 +8,7 @@
 namespace xtd {
   /// @brief The xtd::literals namespace contains all xtd's litterals operators.
   inline namespace literals {
-    /// @name Color suffixes
+    /// @name Country suffixes
     
     /// @{
     /// @brief Used to convert specified value into xtd::forms::country.
