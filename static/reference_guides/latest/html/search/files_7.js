@@ -18,5 +18,5 @@ var searchData=
   ['green_5fcolors_2ehpp_15',['green_colors.hpp',['../green__colors_8hpp.html',1,'']]],
   ['group_5fbox_2ehpp_16',['group_box.hpp',['../group__box_8hpp.html',1,'']]],
   ['groups_2edox_17',['groups.dox',['../groups_8dox.html',1,'']]],
-  ['guid_2ehpp_18',['guid.hpp',['../guid_8hpp.html',1,'']]]
+  ['guid_2ehpp_18',['guid.hpp',['../guid_8hpp.html',1,'(Global Namespace)'],['../literals_2guid_8hpp.html',1,'(Global Namespace)']]]
 ];

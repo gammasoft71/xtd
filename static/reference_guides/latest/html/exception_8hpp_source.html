@@ -97,7 +97,7 @@ $(function() {
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="ptr_8hpp.html">ptr.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="uptr_8hpp.html">uptr.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="string_8hpp.html">string.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="translator__literals_8hpp.html">translator_literals.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="literals_2translator_8hpp.html">literals/translator.hpp</a>&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;exception&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;system_error&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
@@ -175,9 +175,10 @@ $(function() {
 <div class="ttc" id="agroup__keywords_html_gabc8f9c2aa36f6cee610a37f0e8227fd1"><div class="ttname"><a href="group__keywords.html#gabc8f9c2aa36f6cee610a37f0e8227fd1">core_export_</a></div><div class="ttdeci">#define core_export_</div><div class="ttdoc">Define shared library export.</div><div class="ttdef"><b>Definition</b> core_export.hpp:13</div></div>
 <div class="ttc" id="agroup__types_html_ga14f390dd1d27bfab4cc2f26c1502c8ec"><div class="ttname"><a href="group__types.html#ga14f390dd1d27bfab4cc2f26c1502c8ec">xtd::ptr</a></div><div class="ttdeci">xtd::sptr&lt; type_t &gt; ptr</div><div class="ttdoc">The xtd::ptr object is a shared pointer.</div><div class="ttdef"><b>Definition</b> ptr.hpp:27</div></div>
 <div class="ttc" id="agroup__types_html_ga17559da5e7e089b9cfa775bf7bb40263"><div class="ttname"><a href="group__types.html#ga17559da5e7e089b9cfa775bf7bb40263">xtd::optional</a></div><div class="ttdeci">std::optional&lt; type_t &gt; optional</div><div class="ttdoc">Represents the null_opt alias on std::nullopt_t.</div><div class="ttdef"><b>Definition</b> optional.hpp:175</div></div>
-<div class="ttc" id="agroup__types_html_ga205462e259a4eca1545511085c2c350e"><div class="ttname"><a href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a></div><div class="ttdeci">int32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> int32.hpp:27</div></div>
+<div class="ttc" id="agroup__types_html_ga205462e259a4eca1545511085c2c350e"><div class="ttname"><a href="group__types.html#ga205462e259a4eca1545511085c2c350e">xtd::int32</a></div><div class="ttdeci">int32_t int32</div><div class="ttdoc">Represents a 32-bit signed integer.</div><div class="ttdef"><b>Definition</b> int32.hpp:23</div></div>
 <div class="ttc" id="agroup__types_html_ga48fac90121ee2c88ac5cb68551759bfd"><div class="ttname"><a href="group__types.html#ga48fac90121ee2c88ac5cb68551759bfd">xtd::uptr</a></div><div class="ttdeci">xtd::unique_ptr_object&lt; type_t &gt; uptr</div><div class="ttdoc">The xtd::uptr object is a unique pointer.</div><div class="ttdef"><b>Definition</b> uptr.hpp:25</div></div>
 <div class="ttc" id="ah__result_8hpp_html"><div class="ttname"><a href="h__result_8hpp.html">h_result.hpp</a></div><div class="ttdoc">Contains xtd::h_result class.</div></div>
+<div class="ttc" id="aliterals_2translator_8hpp_html"><div class="ttname"><a href="literals_2translator_8hpp.html">translator.hpp</a></div><div class="ttdoc">Contains xtd::translator suffixes.</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
 <div class="ttc" id="anullopt_8hpp_html"><div class="ttname"><a href="nullopt_8hpp.html">nullopt.hpp</a></div><div class="ttdoc">Contains xtd::nullopt valiue.</div></div>
 <div class="ttc" id="aobject_8hpp_html"><div class="ttname"><a href="object_8hpp.html">object.hpp</a></div><div class="ttdoc">Contains xtd::object class.</div></div>
@@ -185,13 +186,12 @@ $(function() {
 <div class="ttc" id="aptr_8hpp_html"><div class="ttname"><a href="ptr_8hpp.html">ptr.hpp</a></div><div class="ttdoc">Contains xtd::ptr type.</div></div>
 <div class="ttc" id="astack__frame_8hpp_html"><div class="ttname"><a href="stack__frame_8hpp.html">stack_frame.hpp</a></div><div class="ttdoc">Contains xtd::diagnostics::stack_frame class.</div></div>
 <div class="ttc" id="astring_8hpp_html"><div class="ttname"><a href="string_8hpp.html">string.hpp</a></div><div class="ttdoc">Contains xtd::string alias.</div></div>
-<div class="ttc" id="atranslator__literals_8hpp_html"><div class="ttname"><a href="translator__literals_8hpp.html">translator_literals.hpp</a></div><div class="ttdoc">Contains xtd numeric literals.</div></div>
 <div class="ttc" id="auptr_8hpp_html"><div class="ttname"><a href="uptr_8hpp.html">uptr.hpp</a></div><div class="ttdoc">Contains xtd::uptr type.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue May 27 2025 20:37:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed May 28 2025 20:44:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
