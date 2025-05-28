@@ -114,25 +114,3 @@ xtd::string version::to_string(size_t field_count) const {
   if (field_count == 4) result += string::format(".{}", revision_);
   return result;
 }
-
-version xtd::literals::operator""_vers(const char* s, xtd::size n) {
-  return version::parse(string {s});
-}
-
-#if defined(__xtd__cpp_lib_char8_t)
-version xtd::literals::operator""_vers(const char8* s, xtd::size n) {
-  return version::parse(string {s});
-}
-#endif
-
-version xtd::literals::operator""_vers(const char16* s, xtd::size n) {
-  return version::parse(string {s});
-}
-
-version xtd::literals::operator""_vers(const char32* s, xtd::size n) {
-  return version::parse(string {s});
-}
-
-version xtd::literals::operator""_vers(const wchar* s, xtd::size n) {
-  return version::parse(string {s});
-}

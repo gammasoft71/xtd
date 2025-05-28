@@ -1,8 +1,7 @@
-#include "../../include/xtd/character_literals.hpp"
-#include "../../include/xtd/as.hpp"
+#include "../../../include/xtd/literals/char32.hpp"
+#include "../../../include/xtd/as.hpp"
 
 using namespace xtd;
-using namespace xtd::net;
 
 char32 xtd::literals::operator""_c(unsigned long long c) {
   return as<char32>(c);
