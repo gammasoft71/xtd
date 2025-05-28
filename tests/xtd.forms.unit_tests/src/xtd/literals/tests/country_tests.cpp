@@ -10,7 +10,7 @@ using namespace xtd::tunit;
 namespace xtd {
   inline namespace literals {
     namespace tests {
-      class test_class_(country_suffixes_tests) {
+      class test_class_(country_tests) {
         void test_method_(_country_operator_on_char_ptr) {
           auto v = "Belgium"_country;
           assert::is_instance_of<country>(v);
