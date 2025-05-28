@@ -32,11 +32,10 @@ var searchData=
   ['list_2ehpp_29',['list.hpp',['../list_8hpp.html',1,'']]],
   ['list_5fbox_2ehpp_30',['list_box.hpp',['../list__box_8hpp.html',1,'']]],
   ['list_5fcontrol_2ehpp_31',['list_control.hpp',['../list__control_8hpp.html',1,'']]],
-  ['literals_2ehpp_32',['literals.hpp',['../literals_8hpp.html',1,'']]],
-  ['loading_5findicator_2ehpp_33',['loading_indicator.hpp',['../loading__indicator_8hpp.html',1,'']]],
-  ['loading_5findicator_5fstyle_2ehpp_34',['loading_indicator_style.hpp',['../loading__indicator__style_8hpp.html',1,'']]],
-  ['loading_5findicators_2ehpp_35',['loading_indicators.hpp',['../loading__indicators_8hpp.html',1,'']]],
-  ['lock_2ehpp_36',['lock.hpp',['../lock_8hpp.html',1,'']]],
-  ['lock_5fguard_2ehpp_37',['lock_guard.hpp',['../lock__guard_8hpp.html',1,'']]],
-  ['lock_5frecursion_5fexception_2ehpp_38',['lock_recursion_exception.hpp',['../lock__recursion__exception_8hpp.html',1,'']]]
+  ['loading_5findicator_2ehpp_32',['loading_indicator.hpp',['../loading__indicator_8hpp.html',1,'']]],
+  ['loading_5findicator_5fstyle_2ehpp_33',['loading_indicator_style.hpp',['../loading__indicator__style_8hpp.html',1,'']]],
+  ['loading_5findicators_2ehpp_34',['loading_indicators.hpp',['../loading__indicators_8hpp.html',1,'']]],
+  ['lock_2ehpp_35',['lock.hpp',['../lock_8hpp.html',1,'']]],
+  ['lock_5fguard_2ehpp_36',['lock_guard.hpp',['../lock__guard_8hpp.html',1,'']]],
+  ['lock_5frecursion_5fexception_2ehpp_37',['lock_recursion_exception.hpp',['../lock__recursion__exception_8hpp.html',1,'']]]
 ];
