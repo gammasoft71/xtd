@@ -69,6 +69,7 @@ add_sources(
   "src/xtd/drawing/text/tests/hotkey_prefix_tests.cpp"
   "src/xtd/drawing/text/tests/text_rendering_hint_tests.cpp"
   "src/xtd/literals/tests/color_tests.cpp"
+  "src/xtd/literals/tests/system_images_tests.cpp"
 )
 target_default_namespace("xtd::drawing::tests")
 target_type(TEST_APPLICATION)
