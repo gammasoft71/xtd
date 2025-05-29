@@ -1272,7 +1272,7 @@ namespace xtd {
       static color light(const color& color, double percent) noexcept;
       
       /// @brief Creates a xtd::drawing::color class from the specified name.
-      /// @param name A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma representing respectively a, r, g, b, values.
+      /// @param color A string that is the name of a predefined color. Valid names are the same as the names of the elements of the xtd::drawing::known_color enumeration or hexadecimal value that represents argb value, or four decimal values separated by a comma representing respectively a, r, g, b, values.
       /// @return xtd::drawing::color The xtd::drawing::color structure that this method creates.
       static xtd::drawing::color parse(const xtd::string& color) noexcept;
       /// @}
