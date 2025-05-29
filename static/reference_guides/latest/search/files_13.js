@@ -142,7 +142,7 @@ var searchData=
   ['system_5fexception_2ehpp_139',['system_exception.hpp',['../system__exception_8hpp.html',1,'']]],
   ['system_5ffonts_2ehpp_140',['system_fonts.hpp',['../system__fonts_8hpp.html',1,'']]],
   ['system_5ficons_2ehpp_141',['system_icons.hpp',['../system__icons_8hpp.html',1,'']]],
-  ['system_5fimages_2ehpp_142',['system_images.hpp',['../system__images_8hpp.html',1,'']]],
+  ['system_5fimages_2ehpp_142',['system_images.hpp',['../drawing_2system__images_8hpp.html',1,'(Global Namespace)'],['../literals_2system__images_8hpp.html',1,'(Global Namespace)']]],
   ['system_5fimages_5fbase_2ehpp_143',['system_images_base.hpp',['../system__images__base_8hpp.html',1,'']]],
   ['system_5finformation_2ehpp_144',['system_information.hpp',['../system__information_8hpp.html',1,'']]],
   ['system_5fpens_2ehpp_145',['system_pens.hpp',['../system__pens_8hpp.html',1,'']]],

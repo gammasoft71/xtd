@@ -895,7 +895,7 @@ var searchData=
   ['system_5ficons_892',['system_icons',['../classxtd_1_1drawing_1_1system__icons.html',1,'xtd::drawing']]],
   ['system_5ficons_2ehpp_893',['system_icons.hpp',['../system__icons_8hpp.html',1,'']]],
   ['system_5fimages_894',['system_images',['../classxtd_1_1drawing_1_1system__images.html',1,'xtd::drawing']]],
-  ['system_5fimages_2ehpp_895',['system_images.hpp',['../system__images_8hpp.html',1,'']]],
+  ['system_5fimages_2ehpp_895',['system_images.hpp',['../drawing_2system__images_8hpp.html',1,'(Global Namespace)'],['../literals_2system__images_8hpp.html',1,'(Global Namespace)']]],
   ['system_5fimages_5fbase_896',['system_images_base',['../classxtd_1_1drawing_1_1system__images__base.html',1,'xtd::drawing']]],
   ['system_5fimages_5fbase_2ehpp_897',['system_images_base.hpp',['../system__images__base_8hpp.html',1,'']]],
   ['system_5finformation_898',['system_information',['../classxtd_1_1forms_1_1system__information.html',1,'xtd::forms']]],
