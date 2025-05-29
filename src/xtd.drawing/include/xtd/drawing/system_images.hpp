@@ -1287,3 +1287,4 @@ namespace xtd {
   }
 }
 
+#include "../literals/system_images.hpp"

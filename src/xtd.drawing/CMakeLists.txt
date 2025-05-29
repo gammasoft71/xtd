@@ -292,6 +292,8 @@ add_sources(
   "include/xtd/drawing/text/text_rendering_hint"
   "include/xtd/literals/color.hpp"
   "include/xtd/literals/color"
+  "include/xtd/literals/system_images.hpp"
+  "include/xtd/literals/system_images"
 )
 add_sources(
   "src/xtd/drawing/actions_system_images.cpp"
@@ -403,6 +405,7 @@ add_sources(
   "src/xtd/drawing/text/installed_font_collection.cpp"
   "src/xtd/drawing/text/private_font_collection.cpp"
   "src/xtd/literals/color.cpp"
+  "src/xtd/literals/system_images.cpp"
 )
 target_type(${XTD_LIBRARY_TYPE})
 
