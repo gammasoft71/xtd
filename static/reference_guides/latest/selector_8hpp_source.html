@@ -112,22 +112,22 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classxtd_1_1web_1_1css_1_1selector.html">   12</a></span>      <span class="keyword">class </span>selector : <span class="keyword">public</span> <a class="code hl_function" href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">object</a> {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>      <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keyword">explicit</span> selector(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a>&amp; name) : name_(name) {}</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <span class="keyword">explicit</span> selector(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; name) : name_(name) {}</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        </div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        selector() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        selector(<span class="keyword">const</span> selector&amp;) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        selector&amp; operator =(<span class="keyword">const</span> selector&amp;) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a>&amp; name() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> name_;}</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">void</span> name(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a>&amp; name) <span class="keyword">noexcept</span> {name_ = name;}</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; name() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> name_;}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">void</span> name(<span class="keyword">const</span> <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&amp; name) <span class="keyword">noexcept</span> {name_ = name;}</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        </div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="property__map_8hpp.html#a2c6d7d6a2ffedaaaf6c3f92c8b6c3ff2">xtd::web::css::property_map</a>&amp; properties() <span class="keyword">const</span> <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> properties_;}</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">void</span> properties(<span class="keyword">const</span> <a class="code hl_typedef" href="property__map_8hpp.html#a2c6d7d6a2ffedaaaf6c3f92c8b6c3ff2">xtd::web::css::property_map</a>&amp; properties) <span class="keyword">noexcept</span> {properties_ = properties;}</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_typedef" href="property__map_8hpp.html#a2c6d7d6a2ffedaaaf6c3f92c8b6c3ff2">xtd::web::css::property_map</a>&amp; properties() <span class="keyword">noexcept</span> {<span class="keywordflow">return</span> properties_;}</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <a class="code hl_typedef" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a> name_;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> name_;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <a class="code hl_typedef" href="property__map_8hpp.html#a2c6d7d6a2ffedaaaf6c3f92c8b6c3ff2">xtd::web::css::property_map</a> properties_;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      };</div>
 </div>
@@ -135,7 +135,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  }</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
 <div class="ttc" id="aclassxtd_1_1object_html_ad2cab851376bb6ca085b567bf5da0f5f"><div class="ttname"><a href="classxtd_1_1object.html#ad2cab851376bb6ca085b567bf5da0f5f">xtd::object::object</a></div><div class="ttdeci">object()=default</div><div class="ttdoc">Create a new instance of the ultimate base class object.</div></div>
-<div class="ttc" id="agroup__strings_html_ga2bd6ab53224f55d280a88872353123eb"><div class="ttname"><a href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a></div><div class="ttdeci">xtd::basic_string&lt; char &gt; string</div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> __string_definitions.hpp:43</div></div>
+<div class="ttc" id="agroup__strings_html_ga60154d7201cef3f8d0d5e241ef54b25e"><div class="ttname"><a href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></div><div class="ttdeci">xtd::basic_string&lt; char &gt; string</div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> __string_definitions.hpp:43</div></div>
 <div class="ttc" id="anamespacextd_1_1web_html"><div class="ttname"><a href="namespacextd_1_1web.html">xtd::web</a></div><div class="ttdoc">Contains classes and interfaces that enable browser-server communication. This namespace includes the...</div><div class="ttdef"><b>Definition</b> css_reader.hpp:14</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract_object.hpp:8</div></div>
 <div class="ttc" id="aobject_8hpp_html"><div class="ttname"><a href="object_8hpp.html">object.hpp</a></div><div class="ttdoc">Contains xtd::object class.</div></div>
@@ -145,7 +145,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 19 2025 19:26:29 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu May 29 2025 10:45:47 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

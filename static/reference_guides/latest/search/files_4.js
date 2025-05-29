@@ -54,7 +54,7 @@ var searchData=
   ['domain_5fup_5fdown_2ehpp_51',['domain_up_down.hpp',['../domain__up__down_8hpp.html',1,'']]],
   ['dot_5fmatrix_5fdisplay_2ehpp_52',['dot_matrix_display.hpp',['../dot__matrix__display_8hpp.html',1,'']]],
   ['dot_5fmatrix_5fstyle_2ehpp_53',['dot_matrix_style.hpp',['../dot__matrix__style_8hpp.html',1,'']]],
-  ['double_2ehpp_54',['double.hpp',['../double_8hpp.html',1,'']]],
+  ['double_2ehpp_54',['double.hpp',['../double_8hpp.html',1,'(Global Namespace)'],['../literals_2double_8hpp.html',1,'(Global Namespace)']]],
   ['double_5fobject_2ehpp_55',['double_object.hpp',['../double__object_8hpp.html',1,'']]],
   ['draw_5fitem_5fevent_5fargs_2ehpp_56',['draw_item_event_args.hpp',['../draw__item__event__args_8hpp.html',1,'']]],
   ['draw_5fitem_5fevent_5fhandler_2ehpp_57',['draw_item_event_handler.hpp',['../draw__item__event__handler_8hpp.html',1,'']]],

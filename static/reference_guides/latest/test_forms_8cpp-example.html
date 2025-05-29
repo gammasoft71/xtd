@@ -158,7 +158,7 @@ $(function(){ initResizable(false); });
 <div class="line">  }</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code hl_typedef" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a> get_command()<span class="keyword"> const </span>{</div>
+<div class="line">  <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> get_command()<span class="keyword"> const </span>{</div>
 <div class="line">    <span class="keyword">auto</span> pos = <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#ad3bdcdfa8e1762b656e1a46eedacf6c5">text</a>().<a id="a18" name="a18"></a><a class="code hl_function" href="classxtd_1_1basic__string.html#acc799a8cc31af232470d65cd88a1ca6a">last_index_of</a>(prompt);</div>
 <div class="line">    <span class="keywordflow">if</span> (pos != xtd::string::npos) {</div>
 <div class="line">      pos += prompt.size();</div>
@@ -224,7 +224,7 @@ $(function(){ initResizable(false); });
 <div class="line">    <a class="code hl_function" href="classxtd_1_1forms_1_1text__box.html#a9e1e2a9b733778bc8563c364530c72f2">append_text</a>(prompt);</div>
 <div class="line">    e.handled(<span class="keyword">true</span>);</div>
 <div class="line">  }</div>
-<div class="line">  <a class="code hl_typedef" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a> prompt = xtd::string::format(<span class="stringliteral">&quot;[{}] $ &quot;</span>,  <a class="code hl_function" href="classxtd_1_1environment.html#ae25575bcef6ad4fe46723839788ff9bd">xtd::environment::current_directory</a>());</div>
+<div class="line">  <a class="code hl_typedef" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> prompt = xtd::string::format(<span class="stringliteral">&quot;[{}] $ &quot;</span>,  <a class="code hl_function" href="classxtd_1_1environment.html#ae25575bcef6ad4fe46723839788ff9bd">xtd::environment::current_directory</a>());</div>
 <div class="line">  <a class="code hl_typedef" href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">xtd::argument_collection</a> commands;</div>
 <div class="line">};</div>
 <div class="line"> </div>
@@ -286,7 +286,7 @@ $(function(){ initResizable(false); });
 <div class="ttc" id="aclassxtd_1_1io_1_1stream__reader_html_af86ae00e44bfc363b2bf51986a9e58d0"><div class="ttname"><a href="classxtd_1_1io_1_1stream__reader.html#af86ae00e44bfc363b2bf51986a9e58d0">xtd::io::stream_reader::end_of_stream</a></div><div class="ttdeci">bool end_of_stream() const</div><div class="ttdoc">Gets a value that indicates whether the current stream position is at the end of the stream.</div></div>
 <div class="ttc" id="aclassxtd_1_1io_1_1text__reader_html_a9cf821e2697031031471e69c91cce0ca"><div class="ttname"><a href="classxtd_1_1io_1_1text__reader.html#a9cf821e2697031031471e69c91cce0ca">xtd::io::text_reader::read_line</a></div><div class="ttdeci">virtual xtd::string read_line()</div><div class="ttdoc">Reads a line of characters from the current stream and returns the data as a string.</div></div>
 <div class="ttc" id="agroup__keywords_html_ga44bd440a34d147923e428eacd1c8eedd"><div class="ttname"><a href="group__keywords.html#ga44bd440a34d147923e428eacd1c8eedd">startup_</a></div><div class="ttdeci">#define startup_(main_method)</div><div class="ttdoc">Defines the entry point to be called when the application loads. Generally this is set either to the ...</div><div class="ttdef"><b>Definition</b> startup.hpp:167</div></div>
-<div class="ttc" id="agroup__strings_html_ga2bd6ab53224f55d280a88872353123eb"><div class="ttname"><a href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a></div><div class="ttdeci">xtd::basic_string&lt; char &gt; string</div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> __string_definitions.hpp:43</div></div>
+<div class="ttc" id="agroup__strings_html_ga60154d7201cef3f8d0d5e241ef54b25e"><div class="ttname"><a href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a></div><div class="ttdeci">xtd::basic_string&lt; char &gt; string</div><div class="ttdoc">Represents text as a sequence of UTF-8 code units.</div><div class="ttdef"><b>Definition</b> __string_definitions.hpp:43</div></div>
 <div class="ttc" id="agroup__xtd__core_html_gabf5d378737c3b0846431d6b51496ebfa"><div class="ttname"><a href="group__xtd__core.html#gabf5d378737c3b0846431d6b51496ebfa">xtd::argument_collection</a></div><div class="ttdeci">xtd::array&lt; xtd::string &gt; argument_collection</div><div class="ttdoc">Represents the collection of arguments passed to the main entry point method.</div><div class="ttdef"><b>Definition</b> argument_collection.hpp:19</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga2f00c1ad108efaddc951106e768970dea46c48bec0d282018b9d167eef7711b2c"><div class="ttname"><a href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea46c48bec0d282018b9d167eef7711b2c">xtd::forms::keys::up</a></div><div class="ttdeci">@ up</div><div class="ttdoc">The UP key.</div><div class="ttdef"><b>Definition</b> keys.hpp:157</div></div>
 <div class="ttc" id="agroup__xtd__forms_html_gga2f00c1ad108efaddc951106e768970dea74e8333ad11685ff3bdae589c8f6e34d"><div class="ttname"><a href="group__xtd__forms.html#gga2f00c1ad108efaddc951106e768970dea74e8333ad11685ff3bdae589c8f6e34d">xtd::forms::keys::down</a></div><div class="ttdeci">@ down</div><div class="ttdoc">The DOWN key.</div><div class="ttdef"><b>Definition</b> keys.hpp:161</div></div>
@@ -300,7 +300,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 19 2025 19:26:26 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu May 29 2025 10:45:45 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

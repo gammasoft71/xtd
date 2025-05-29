@@ -266,7 +266,7 @@ Inheritance diagram for xtd::diagnostics::stack_trace:</div>
 <tr class="memitem:a0dc0078046589430dca4ad039bcebeaa" id="r_a0dc0078046589430dca4ad039bcebeaa"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="#a28424a12796167ec42678c35821a2c6b">stack_frame_collection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0dc0078046589430dca4ad039bcebeaa">get_frames</a> () const noexcept</td></tr>
 <tr class="memdesc:a0dc0078046589430dca4ad039bcebeaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a copy of all stack frames in the current stack trace.  <br /></td></tr>
 <tr class="separator:a0dc0078046589430dca4ad039bcebeaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a235e78773f4e91ad1cce80add64f1e8f" id="r_a235e78773f4e91ad1cce80add64f1e8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a235e78773f4e91ad1cce80add64f1e8f">to_string</a> () const noexcept override</td></tr>
+<tr class="memitem:a235e78773f4e91ad1cce80add64f1e8f" id="r_a235e78773f4e91ad1cce80add64f1e8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a235e78773f4e91ad1cce80add64f1e8f">to_string</a> () const noexcept override</td></tr>
 <tr class="memdesc:a235e78773f4e91ad1cce80add64f1e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds a readable representation of the stack trace.  <br /></td></tr>
 <tr class="separator:a235e78773f4e91ad1cce80add64f1e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -364,7 +364,7 @@ Additional Inherited Members</h2></td></tr>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__frame_html_ab249fbb59dc173c7fa651f7a9c895224"><div class="ttname"><a href="classxtd_1_1diagnostics_1_1stack__frame.html#ab249fbb59dc173c7fa651f7a9c895224">xtd::diagnostics::stack_frame::get_method</a></div><div class="ttdeci">virtual const xtd::string &amp; get_method() const noexcept</div><div class="ttdoc">Gets the method in which the frame is executing.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__trace_html_a424374815e3f722a156fedeb6a77e30e"><div class="ttname"><a href="#a424374815e3f722a156fedeb6a77e30e">xtd::diagnostics::stack_trace::frame_count</a></div><div class="ttdeci">size_t frame_count() const noexcept</div><div class="ttdoc">Gets the number of frames in the stack trace.</div></div>
 <div class="ttc" id="aclassxtd_1_1diagnostics_1_1stack__trace_html_afca6ea9bd4c06cb0d38fac6d699c1a61"><div class="ttname"><a href="#afca6ea9bd4c06cb0d38fac6d699c1a61">xtd::diagnostics::stack_trace::get_frame</a></div><div class="ttdeci">const xtd::diagnostics::stack_frame &amp; get_frame(size_t index) noexcept</div><div class="ttdoc">Gets the specified stack frame.</div></div>
-<div class="ttc" id="aclassxtd_1_1exception_html"><div class="ttname"><a href="classxtd_1_1exception.html">xtd::exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> exception.hpp:29</div></div>
+<div class="ttc" id="aclassxtd_1_1exception_html"><div class="ttname"><a href="classxtd_1_1exception.html">xtd::exception</a></div><div class="ttdoc">Defines the base class for predefined exceptions in the xtd namespace.</div><div class="ttdef"><b>Definition</b> exception.hpp:30</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div><div class="ttdef"><b>Definition</b> console_key.hpp:96</div></div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section remark"><dt>Remarks</dt><dd>The <a class="el" href="classxtd_1_1diagnostics_1_1stack__trace.html" title="Represents a stack trace, which is an ordered collection of one or more stack frames.">xtd::diagnostics::stack_trace</a> is created with the caller's current thread, and does not contain file name, line number, or column information. </dd>
@@ -889,7 +889,7 @@ Use the <a class="el" href="#a0dc0078046589430dca4ad039bcebeaa" title="Returns a
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__strings.html#ga2bd6ab53224f55d280a88872353123eb">xtd::string</a> xtd::diagnostics::stack_trace::to_string </td>
+          <td class="memname"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> xtd::diagnostics::stack_trace::to_string </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -946,7 +946,7 @@ Use the <a class="el" href="#a0dc0078046589430dca4ad039bcebeaa" title="Returns a
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon May 19 2025 19:26:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Thu May 29 2025 10:45:57 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
