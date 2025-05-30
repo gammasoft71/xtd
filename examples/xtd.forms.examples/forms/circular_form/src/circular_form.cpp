@@ -36,7 +36,7 @@ namespace circular_form {
       paint += [&](object& sender, paint_event_args& e) {
         auto gradient_color1 = color::from_argb(0xBC, 0, 0);
         auto gradient_color2 = color::from_argb(0xFF, 0xAA, 0x7E);
-        e.graphics().fill_rectangle(radial_gradient_brush {point {80, 70}, {gradient_color2, gradient_color1}, 110}, e.clip_rectangle());
+        e.graphics().fill_rectangle(radial_gradient_brush {point {e.clip_rectangle().width * 2 / 5, e.clip_rectangle().height * 35 /100}, {gradient_color2, gradient_color1}, e.clip_rectangle().width * 55_f / 100}, e.clip_rectangle());
       };
       
       // Mouse tracking
