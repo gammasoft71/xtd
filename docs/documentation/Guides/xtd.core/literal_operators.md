@@ -2,18 +2,13 @@
 
 
 **Namespace**: `xtd::literals`  
-**Header**: `<xtd/literals>`  
 **Library**: `xtd.core` (with extensions from other modules)
-
----
 
 ## Overview
 
 The `xtd::literals` namespace provides user-defined literal operators that simplify the creation of commonly used `xtd` types.
 
 These literals improve readability and consistency in code, allowing developers to express values in a concise and natural way.
-
----
 
 ## Design Principle
 
@@ -26,8 +21,6 @@ using namespace xtd::literals;
 ```
 
 Without the need to import module-specific namespaces like `xtd::net::literals` or `xtd::drawing::literals`.
-
----
 
 ## Organization
 
@@ -54,8 +47,6 @@ xtd.net
 ```
 
 Each header only includes what it needs and keeps responsibility localized.
-
----
 
 ## Available Literal Operators
 
@@ -107,8 +98,6 @@ auto main() -> int {
 }
 ```
 
----
-
 ## Notes
 
 - All literals are optional. If you don’t include the `xtd::literals` namespace, you can still construct the values manually.
@@ -117,8 +106,6 @@ auto main() -> int {
   #include <xtd/literals/version.hpp>
   #include <xtd/literals/color.hpp>
   ```
-
----
 
 # See also
 ​​​
