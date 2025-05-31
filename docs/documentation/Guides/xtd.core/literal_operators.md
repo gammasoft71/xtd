@@ -63,8 +63,6 @@ Each header only includes what it needs and keeps responsibility localized.
 
 The following [literal operators page](https://gammasoft71.github.io/xtd/reference_guides/latest/group__literals.html) shows all xtd literal operators.
 
----
-
 ## Safety and Error Handling
 
 All string-based literal operators use their respective `parse` methods internally:
@@ -75,8 +73,6 @@ All string-based literal operators use their respective `parse` methods internal
 ```
 
 Exceptions such as `xtd::format_exception` or `xtd::argument_exception` will be thrown if parsing fails.
-
----
 
 ## Example
 
