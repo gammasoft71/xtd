@@ -77,6 +77,7 @@
 * [Printing](xtd.forms.examples/datas/README.md) contains printing examples.
 * [Events](xtd.forms.examples/events/README.md) contains events examples.
 * [Themes](xtd.forms.examples/themes/README.md) contains themes examples.
+* [User forms](xtd.forms.examples/user_forms/README.md) contains custom forms examples.
 * [User dialogs](xtd.forms.examples/user_dialogs/README.md) contains custom dialogs examples.
 * [User Controls](xtd.forms.examples/user_controls/README.md) contains custom controls examples.
 * [Drawing](xtd.forms.examples/drawing/README.md) contains drawing examples.
