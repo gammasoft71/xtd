@@ -6,7 +6,7 @@ demonstrates the use of [xtd::forms::control::region](https://gammasoft71.github
 
 * [properties/resources.cmake](properties/resources.cmake)
 * [properties/settings.cmake](properties/settings.cmake)
-* [properties/settings.cmake](properties/target_properties.cmake)
+* [properties/target_properties.cmake](properties/target_properties.cmake)
 * [resources/ball.icns](resources/ball.icns)
 * [resources/ball.ico](resources/ball.ico)
 * [resources/ball.png](resources/ball.png)
