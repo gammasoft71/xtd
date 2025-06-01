@@ -16,6 +16,7 @@ add_projects(
   printing
   events
   themes
+  user_forms
   user_dialogs
   user_controls
   drawing
