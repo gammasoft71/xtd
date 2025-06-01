@@ -4,14 +4,12 @@ demonstrates the use of [xtd::forms::control::region](https://gammasoft71.github
 
 ## Sources
 
-* [properties/resources.cmake](resources/settings.cmake)
+* [properties/resources.cmake](properties/resources.cmake)
 * [properties/settings.cmake](properties/settings.cmake)
 * [resources/ball.icns](resources/ball.icns)
 * [resources/ball.ico](resources/ball.ico)
 * [resources/ball.png](resources/ball.png)
-* [properties/settings.cmake](properties/settings.hpp)
 * [src/ball_form.hpp](src/ball_form.hpp)
-* [src/ball.cpp](src/ball.cpp)
 * [src/ball.cpp](src/ball.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
