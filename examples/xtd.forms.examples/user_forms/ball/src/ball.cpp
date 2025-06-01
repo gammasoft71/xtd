@@ -1,43 +1,31 @@
-#include <xtd/drawing/drawing_2d/radial_gradient_brush>
+#include "ball_form.hpp"
+#include "../properties/resources.hpp"
+#include "../properties/settings.hpp"
 #include <xtd/forms/application>
 #include <xtd/forms/button>
-#include <xtd/forms/form>
 #include <xtd/math>
 #include <xtd/startup>
-#include "../properties/resources.hpp"
 
 using namespace xtd;
 using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
 using namespace xtd::forms;
 
-namespace circular_form {
-  class form_main : public form {
+namespace ball {
+  class main_form : public ball_form {
   public:
     static auto main() {
-      application::run(form_main());
+      application::run(main_form());
     }
     
-    form_main() {
+    main_form() {
       icon(properties::resources::ball_ico());
-      form_border_style(forms::form_border_style::none);
+      gradient_color1(properties::settings::default_settings().gradient_color1());
+      gradient_color2(properties::settings::default_settings().gradient_color2());
+      size(properties::settings::default_settings().ball_size());
       start_position(form_start_position::manual);
-      client_size({200, 200});
-      double_buffered(true);
       location({screen::from_control(*this).working_area().left() + screen::from_control(*this).working_area().width / 2 - client_size().width / 2, screen::from_control(*this).working_area().bottom() - client_size().height});
       top_most(true);
-      
-      // Create a circular region
-      graphics_path path;
-      path.add_ellipse(client_rectangle());
-      region(drawing::region(path));
-      
-      // Radial gradient
-      paint += [&](object& sender, paint_event_args& e) {
-        auto gradient_color1 = color::from_argb(0xBC, 0, 0);
-        auto gradient_color2 = color::from_argb(0xFF, 0xAA, 0x7E);
-        e.graphics().fill_rectangle(radial_gradient_brush {point {e.clip_rectangle().width * 2 / 5, e.clip_rectangle().height * 35 /100}, {gradient_color2, gradient_color1}, e.clip_rectangle().width * 55_f / 100}, e.clip_rectangle());
-      };
       
       // Mouse tracking
       mouse_down += [&](object& sender, const mouse_event_args& e) {
@@ -119,4 +107,4 @@ namespace circular_form {
     const float bounce = 0.6f;
   };
 }
-startup_(circular_form::form_main::main);
+startup_(ball::main_form::main);

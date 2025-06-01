@@ -56,6 +56,7 @@ examples/xtd.forms.examples/components/application_settings/properties/settings.
 examples/xtd.forms.examples/controls/picture_box/properties/resources.hpp
 examples/xtd.forms.examples/drawing/image_converter/properties/resources.hpp
 examples/xtd.forms.examples/forms/circular_form/properties/resources.hpp
+examples/xtd.forms.examples/forms/circular_form/properties/settings.hpp
 examples/xtd.forms.examples/games/game_of_life/properties/startup.cpp
 examples/xtd.forms.examples/games/minesweeper/properties/startup.cpp
 examples/xtd.forms.examples/games/minesweeper/properties/settings.hpp
