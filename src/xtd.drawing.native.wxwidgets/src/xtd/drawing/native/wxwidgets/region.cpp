@@ -3,6 +3,7 @@
 #include <xtd/drawing/native/toolkit>
 #include "../../../../../include/xtd/drawing/native/hdc_wrapper.hpp"
 #undef __XTD_DRAWING_NATIVE_LIBRARY__
+#include <xtd/diagnostics/debug>
 #include <xtd/as>
 #include <xtd/int32_object>
 #include <xtd/single_object>
@@ -15,6 +16,17 @@ using namespace xtd;
 using namespace xtd::drawing::native;
 
 namespace {
+  //const auto max_value = as<int32>(single_object::max_value);
+  //const auto min_value = as<int32>(single_object::min_value);
+  // Workaround for infinite region on linux
+#if defined(__WXGTK__)
+  const auto max_value = 0xFFFFF / 2;
+  const auto min_value = -(0xFFFFF / 2);
+#else
+  const auto max_value = int32_object::max_value / 2;
+  const auto min_value = -(int32_object::max_value / 2);
+#endif
+
   static const wxColour mask_color = wxColour(255, 0, 255);
   static wxBitmap create_graphics_path_bitmap(wxGraphicsPath& path) noexcept {
     double x = .0f, y = .0f, width = .0f, height = .0f;
@@ -32,13 +44,7 @@ namespace {
 
 intptr region::create() {
   toolkit::initialize(); // Must be first
-  // Workaround for infinite region on linux
-  #if defined(__WXGTK__)
-  const auto max_value = 0xFFFFF;
-  #else
-  const auto max_value = int32_object::max_value;
-  #endif
-  return reinterpret_cast<intptr>(new wxRegion(-max_value / 2, -max_value / 2, max_value, max_value));
+  return reinterpret_cast<intptr>(new wxRegion(min_value, min_value, max_value, max_value));
 }
 
 intptr region::create_from_rect(float x, float y, float width, float height) {
@@ -111,12 +117,14 @@ bool region::is_empty(intptr handle, intptr grpahics) {
 
 bool region::is_infinite(intptr handle) {
   auto bounds = reinterpret_cast<wxRegion*>(handle)->GetBox();
-  return bounds.x == as<int32>(single_object::min_value) && bounds.y == as<int32>(single_object::min_value) && bounds.width == as<int32>(single_object::max_value) && bounds.height == as<int32>(single_object::max_value);
+  //return bounds.x == as<int32>(single_object::min_value) && bounds.y == as<int32>(single_object::min_value) && bounds.width == as<int32>(single_object::max_value) && bounds.height == as<int32>(single_object::max_value);
+  return bounds.x == min_value && bounds.y == min_value && bounds.width == max_value && bounds.height == max_value;
 }
 
 bool region::is_infinite(intptr handle, intptr grpahics) {
   auto bounds = reinterpret_cast<wxRegion*>(handle)->GetBox();
-  return bounds.x == as<int32>(single_object::min_value) && bounds.y == as<int32>(single_object::min_value) && bounds.width == as<int32>(single_object::max_value) && bounds.height == as<int32>(single_object::max_value);
+  //return bounds.x == as<int32>(single_object::min_value) && bounds.y == as<int32>(single_object::min_value) && bounds.width == as<int32>(single_object::max_value) && bounds.height == as<int32>(single_object::max_value);
+  return bounds.x == min_value && bounds.y == min_value && bounds.width == max_value && bounds.height == max_value;
 }
 
 bool region::is_visible(intptr handle, float x, float y) {
