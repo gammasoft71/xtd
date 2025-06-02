@@ -15,8 +15,9 @@ namespace ball {
     /// @{
     ball_form() {
       form_border_style(forms::form_border_style::none);
-      double_buffered(true);
-      
+      double_buffered(true);      
+      size({300, 300});
+
       // Radial gradient
       paint += [&](xtd::object& sender, xtd::forms::paint_event_args& e) {
         e.graphics().fill_rectangle(xtd::drawing::drawing_2d::radial_gradient_brush {xtd::drawing::point {e.clip_rectangle().width * 2 / 5, e.clip_rectangle().height * 35 /100}, {light_point_color_, color_}, e.clip_rectangle().width * 55_f / 100}, e.clip_rectangle());
@@ -51,14 +52,13 @@ namespace ball {
     
     /// @brief Gets the height and width of the ball.
     /// @return The size that represents the height and width of the ball in pixels.
-    xtd::drawing::size size() const noexcept override {return form::size();}
+    xtd::drawing::size size() const noexcept override {return client_size();}
     /// @brief Gets the height and width of the ball.
     /// @param value The size that represents the height and width of the ball in pixels.
     /// @return This current instance.
     control& size(const xtd::drawing::size& value) override {
-      if (size() == value) return *this;
-      form::size(value);
-      recreate_handle();
+      if (client_size() == value) return *this;
+      client_size(value);
       
       // Create a circular region
       xtd::drawing::drawing_2d::graphics_path path;

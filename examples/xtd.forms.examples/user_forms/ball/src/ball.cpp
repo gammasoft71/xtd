@@ -2,6 +2,7 @@
 #include "../properties/resources.hpp"
 #include "../properties/settings.hpp"
 #include <xtd/drawing/color_converter>
+#include <xtd/drawing/texts>
 #include <xtd/forms/application>
 #include <xtd/forms/button>
 #include <xtd/math>
@@ -23,13 +24,18 @@ namespace ball {
       icon(properties::resources::ball_ico());
       color(properties::settings::default_settings().color());
       light_point_color(properties::settings::default_settings().light_point_color());
+      color(color::indigo);
+      light_point_color(color_converter::light(color(), 0.66));
       size(properties::settings::default_settings().size());
       start_position(form_start_position::manual);
       location({screen::from_control(*this).working_area().left() + screen::from_control(*this).working_area().width / 2 - client_size().width / 2, screen::from_control(*this).working_area().bottom() - client_size().height});
       top_most(true);
-      
+      panel_.context_menu(context_menu1);
+      panel_.parent(*this);
+      panel_.dock(xtd::forms::dock_style::fill);
+
       // Mouse tracking
-      mouse_down += [&](object& sender, const mouse_event_args& e) {
+      panel_.mouse_down += [&](object& sender, const mouse_event_args& e) {
         if (is_dragging || e.button() == mouse_buttons::right) return;
         is_dragging = true;
         velocity = {0, 0}; // stop animation
@@ -38,7 +44,7 @@ namespace ball {
         animation_timer.enabled(false);
       };
       
-      mouse_up += [&](object& sender, const mouse_event_args& e) {
+      panel_.mouse_up += [&](object& sender, const mouse_event_args& e) {
         if (!is_dragging || e.button() == mouse_buttons::right) return;
         is_dragging = false;
         cursor(cursors::default_cursor());
@@ -48,7 +54,7 @@ namespace ball {
         animation_timer.enabled(true);
       };
       
-      mouse_move += [&](object& sender, const mouse_event_args& e) {
+      panel_.mouse_move += [&](object& sender, const mouse_event_args& e) {
         if (!is_dragging) return;
         auto new_location = bounds().location() + (e.location() - mouse_location);
         auto working_area = screen::from_control(*this).working_area();
@@ -96,11 +102,15 @@ namespace ball {
     }
     
   private:
+    panel panel_;
+    menu_item context_exit_menu_item {texts::exit(), {*this, &main_form::close}};
+    forms::context_menu context_menu1 {context_exit_menu_item};
+    forms::timer animation_timer;
+
     point mouse_location = point::empty;
     point last_mouse_move_location = point::empty;
     drawing::point_f velocity = {0, 0};
     
-    forms::timer animation_timer;
     bool is_dragging = false;
     
     const float gravity = 0.5f;
