@@ -34,33 +34,33 @@ namespace ball::properties {
     /// @name Public Properties
 
     /// @{
-    /// @brief Gets the ball_size user setting property.
+    /// @brief Gets the size user setting property.
     /// @return A xtd::drawing::size value.
-    xtd::drawing::size ball_size() const noexcept {return ball_size_;}
-    /// @brief Sets the ball_size user setting property.
+    xtd::drawing::size size() const noexcept {return size_;}
+    /// @brief Sets the size user setting property.
     /// @param value A xtd::drawing::size value.
-    settings& ball_size(xtd::drawing::size value) noexcept {
-      ball_size_ = value;
+    settings& size(xtd::drawing::size value) noexcept {
+      size_ = value;
       return *this;
     }
 
-    /// @brief Gets the gradient_color1 user setting property.
+    /// @brief Gets the color user setting property.
     /// @return A xtd::drawing::color value.
-    xtd::drawing::color gradient_color1() const noexcept {return gradient_color1_;}
-    /// @brief Sets the gradient_color1 user setting property.
+    xtd::drawing::color color() const noexcept {return color_;}
+    /// @brief Sets the color user setting property.
     /// @param value A xtd::drawing::color value.
-    settings& gradient_color1(xtd::drawing::color value) noexcept {
-      gradient_color1_ = value;
+    settings& color(xtd::drawing::color value) noexcept {
+      color_ = value;
       return *this;
     }
 
-    /// @brief Gets the gradient_color2 user setting property.
+    /// @brief Gets the light_point_color user setting property.
     /// @return A xtd::drawing::color value.
-    xtd::drawing::color gradient_color2() const noexcept {return gradient_color2_;}
-    /// @brief Sets the gradient_color2 user setting property.
+    xtd::drawing::color light_point_color() const noexcept {return light_point_color_;}
+    /// @brief Sets the light_point_color user setting property.
     /// @param value A xtd::drawing::color value.
-    settings& gradient_color2(xtd::drawing::color value) noexcept {
-      gradient_color2_ = value;
+    settings& light_point_color(xtd::drawing::color value) noexcept {
+      light_point_color_ = value;
       return *this;
     }
 
@@ -72,9 +72,9 @@ namespace ball::properties {
     /// @brief Reload all properties with the last saved values.
     /// @remarks See [Settings](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/settings) for more informations.
     void reload() noexcept {
-      ball_size_ = settings_.read("ball_size", ball_size_);
-      gradient_color1_ = settings_.read("gradient_color1", gradient_color1_);
-      gradient_color2_ = settings_.read("gradient_color2", gradient_color2_);
+      size_ = settings_.read("size", size_);
+      color_ = settings_.read("color", color_);
+      light_point_color_ = settings_.read("light_point_color", light_point_color_);
     }
 
     /// @brief Reset all properties to their default values.
@@ -87,9 +87,9 @@ namespace ball::properties {
     /// @brief Save all properties.
     /// @remarks See [Settings](https://gammasoft71.github.io/xtd/docs/documentation/guides/xtd.core/settings) for more informations.
     void save() noexcept {
-      settings_.write("ball_size", ball_size_);
-      settings_.write("gradient_color1", gradient_color1_);
-      settings_.write("gradient_color2", gradient_color2_);
+      settings_.write("size", size_);
+      settings_.write("color", color_);
+      settings_.write("light_point_color", light_point_color_);
       settings_.save();
     }
     /// @}
@@ -108,9 +108,9 @@ namespace ball::properties {
 
   private:
     xtd::configuration::settings settings_;
-    xtd::drawing::size ball_size_ {200, 200};
-    xtd::drawing::color gradient_color1_ {xtd::drawing::color::from_argb(0xBC, 0, 0)};
-    xtd::drawing::color gradient_color2_ {xtd::drawing::color::from_argb(0xFF, 0xAA, 0x7E)};
+    xtd::drawing::size size_ {200, 200};
+    xtd::drawing::color color_ {xtd::drawing::color::from_argb(0xBC, 0, 0)};
+    xtd::drawing::color light_point_color_ {xtd::drawing::color::from_argb(0xFF, 0xAA, 0x7E)};
   };
 }
 

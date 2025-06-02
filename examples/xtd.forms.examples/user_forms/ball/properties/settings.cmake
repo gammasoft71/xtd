@@ -5,8 +5,10 @@
 # This file generates the "properties/settings.hpp" file, which is used to access the settings.
 
 # Represents the ball size in pixels.
-setting(ball_size xtd::drawing::size USER "200, 200")
+setting(size xtd::drawing::size USER "200, 200")
 
-# Represents radial gradient brush colors.
-setting(gradient_color1 xtd::drawing::color USER "xtd::drawing::color::from_argb(0xBC, 0, 0)")
-setting(gradient_color2 xtd::drawing::color USER "xtd::drawing::color::from_argb(0xFF, 0xAA, 0x7E)")
+# Represents the color of ball.
+setting(color xtd::drawing::color USER "xtd::drawing::color::from_argb(0xBC, 0, 0)")
+
+# Represents the color of the ball's light poin.
+setting(light_point_color xtd::drawing::color USER "xtd::drawing::color::from_argb(0xFF, 0xAA, 0x7E)")

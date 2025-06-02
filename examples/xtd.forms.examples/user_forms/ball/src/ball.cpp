@@ -1,6 +1,7 @@
 #include "ball_form.hpp"
 #include "../properties/resources.hpp"
 #include "../properties/settings.hpp"
+#include <xtd/drawing/color_converter>
 #include <xtd/forms/application>
 #include <xtd/forms/button>
 #include <xtd/math>
@@ -20,9 +21,9 @@ namespace ball {
     
     main_form() {
       icon(properties::resources::ball_ico());
-      gradient_color1(properties::settings::default_settings().gradient_color1());
-      gradient_color2(properties::settings::default_settings().gradient_color2());
-      size(properties::settings::default_settings().ball_size());
+      color(properties::settings::default_settings().color());
+      light_point_color(properties::settings::default_settings().light_point_color());
+      size(properties::settings::default_settings().size());
       start_position(form_start_position::manual);
       location({screen::from_control(*this).working_area().left() + screen::from_control(*this).working_area().width / 2 - client_size().width / 2, screen::from_control(*this).working_area().bottom() - client_size().height});
       top_most(true);
