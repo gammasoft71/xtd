@@ -59,16 +59,16 @@ namespace xtd {
       
       /// @{
       /// @brief Represent an xtd::forms::ibutton_control reference.
-      using ibutton_control_ref = xtd::ref<xtd::forms::ibutton_control>;
+      using ibutton_control_ref = std::reference_wrapper<xtd::forms::ibutton_control>;
       
       /// @brief Represent an xtd::forms::main_menu reference.
-      using main_menu_ref = xtd::ref<xtd::forms::main_menu>;
+      using main_menu_ref = std::reference_wrapper<xtd::forms::main_menu>;
       
       /// @brief Represent an xtd::forms::status_bar reference.
-      using status_bar_ref = xtd::ref<xtd::forms::status_bar>;
+      using status_bar_ref = std::reference_wrapper<xtd::forms::status_bar>;
       
       /// @brief Represent an xtd::forms::tool_bar reference.
-      using tool_bar_ref = xtd::ref<xtd::forms::tool_bar>;
+      using tool_bar_ref = std::reference_wrapper<xtd::forms::tool_bar>;
       /// @}
       
       /// @name Public Constructors

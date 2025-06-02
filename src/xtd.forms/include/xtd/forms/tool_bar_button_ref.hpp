@@ -22,6 +22,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    using tool_bar_button_ref = xtd::ref<tool_bar_button>;
+    using tool_bar_button_ref = std::reference_wrapper<tool_bar_button>;
   }
 }

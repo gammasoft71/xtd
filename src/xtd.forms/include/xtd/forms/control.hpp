@@ -145,7 +145,7 @@ namespace xtd {
       
       /// @{
       /// @brief Represent an xtd::forms::context_menu reference.
-      using context_menu_ref = xtd::ref<xtd::forms::context_menu>;
+      using context_menu_ref = std::reference_wrapper<xtd::forms::context_menu>;
       /// @}
       
       /// @brief Represents a collection of controls.

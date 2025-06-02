@@ -20,6 +20,6 @@ namespace xtd {
     /// @par Library
     /// xtd.forms
     /// @ingroup xtd_forms
-    using menu_item_ref = xtd::ref<menu_item>;
+    using menu_item_ref = std::reference_wrapper<menu_item>;
   }
 }
