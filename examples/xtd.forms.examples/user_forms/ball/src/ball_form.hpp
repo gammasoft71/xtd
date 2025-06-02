@@ -4,33 +4,59 @@
 #include <xtd/math>
 
 namespace ball {
+  /// @brief Represents the ball forms.
+  /// @remarks The ball has two colors:
+  ///  * ball::ball_form::color which represents the color of the ball.
+  ///  * ball::ball_form::gradient_color2 which represents the color of the ball's light point to create a 3D effect.
   class ball_form : public xtd::forms::form {
   public:
-    //explicit ball_form(const xtd::drawing::size& size) {
+    /// @name Public Constructors
+    
+    /// @{
     ball_form() {
       form_border_style(forms::form_border_style::none);
       double_buffered(true);
       
       // Radial gradient
       paint += [&](xtd::object& sender, xtd::forms::paint_event_args& e) {
-        e.graphics().fill_rectangle(xtd::drawing::drawing_2d::radial_gradient_brush {xtd::drawing::point {e.clip_rectangle().width * 2 / 5, e.clip_rectangle().height * 35 /100}, {gradient_color2_, gradient_color1_}, e.clip_rectangle().width * 55_f / 100}, e.clip_rectangle());
+        e.graphics().fill_rectangle(xtd::drawing::drawing_2d::radial_gradient_brush {xtd::drawing::point {e.clip_rectangle().width * 2 / 5, e.clip_rectangle().height * 35 /100}, {light_point_color_, color_}, e.clip_rectangle().width * 55_f / 100}, e.clip_rectangle());
       };
     }
+    /// @)
     
-    const xtd::drawing::color& gradient_color1() const noexcept {return gradient_color1_;}
-    ball_form& gradient_color1(const xtd::drawing::color& value) noexcept {
-      gradient_color1_ = value;
+    /// @name Public Properties
+    
+    /// @{
+    /// @brief Gets the color of the ball.
+    /// @return The color ball.
+    const xtd::drawing::color& color() const noexcept {return color_;}
+    /// @brief Sets the color of the ball.
+    /// @param value The color of the ball.
+    /// @return This current instance.
+    ball_form& color(const xtd::drawing::color& value) noexcept {
+      color_ = value;
       return *this;
     }
 
-    const xtd::drawing::color& gradient_color2() const noexcept {return gradient_color2_;}
-    ball_form& gradient_color2(const xtd::drawing::color& value) noexcept {
-      gradient_color2_ = value;
+    /// @brief Gets the color of the ball's light point to create a 3D effect.
+    /// @return The the color of the ball's light point.
+    const xtd::drawing::color& light_point_color() const noexcept {return light_point_color_;}
+    /// @brief Sets the color of the ball's light point to create a 3D effect
+    /// @param value Thethe color of the ball's light point.
+    /// @return This current instance.
+    ball_form& light_point_color(const xtd::drawing::color& value) noexcept {
+      light_point_color_ = value;
       return *this;
     }
     
-    using xtd::forms::form::size;
+    /// @brief Gets the height and width of the ball.
+    /// @return The size that represents the height and width of the ball in pixels.
+    xtd::drawing::size size() const noexcept override {return form::size();}
+    /// @brief Gets the height and width of the ball.
+    /// @param value The size that represents the height and width of the ball in pixels.
+    /// @return This current instance.
     control& size(const xtd::drawing::size& value) override {
+      if (size() == value) return *this;
       form::size(value);
       recreate_handle();
       
@@ -40,9 +66,10 @@ namespace ball {
       region(xtd::drawing::region(path));
       return *this;
     }
+    /// @)
 
   private:
-    xtd::drawing::color gradient_color1_;
-    xtd::drawing::color gradient_color2_;
+    xtd::drawing::color color_;
+    xtd::drawing::color light_point_color_;
   };
 }
