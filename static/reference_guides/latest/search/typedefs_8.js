@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ibutton_5fcontrol_5fref_0',['ibutton_control_ref',['../classxtd_1_1forms_1_1form.html#a890ad5c45fa99ae95ef37b6c2e855c28',1,'xtd::forms::form']]],
+  ['ibutton_5fcontrol_5fref_0',['ibutton_control_ref',['../classxtd_1_1forms_1_1form.html#a99e318f64e65c5fc5278a7eafff46f6d',1,'xtd::forms::form']]],
   ['icollection_1',['icollection',['../group__collections.html#ga1b47db13b305f030158b2fa55445a9ec',1,'xtd::collections']]],
   ['icomparer_2',['icomparer',['../group__collections.html#ga87d426dace50d6c3d9b3354ec59fb562',1,'xtd::collections']]],
   ['idictionary_3',['idictionary',['../group__collections.html#gaffc4ba94991a84815813e1dc12913640',1,'xtd::collections']]],
