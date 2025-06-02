@@ -43,7 +43,7 @@ namespace xtd {
       xtd::string text_;
     };
     
-    using message_notifier_button_ref = xtd::ref<message_notifier_button>;
+    using message_notifier_button_ref = std::reference_wrapper<message_notifier_button>;
   }
 }
 

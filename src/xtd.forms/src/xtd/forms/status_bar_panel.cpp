@@ -91,8 +91,8 @@ status_bar_panel& status_bar_panel::name(const xtd::string& value) {
   return *this;
 }
 
-std::optional<ref<status_bar>> status_bar_panel::parent() const noexcept {
-  return data_->parent ? std::optional<ref<status_bar>>(*data_->parent) : std::nullopt;
+std::optional<std::reference_wrapper<status_bar>> status_bar_panel::parent() const noexcept {
+  return data_->parent ? std::optional<std::reference_wrapper<status_bar>>(*data_->parent) : std::nullopt;
 }
 
 xtd::forms::status_bar_panel_style status_bar_panel::style() const noexcept {

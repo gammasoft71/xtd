@@ -15,7 +15,7 @@ using namespace xtd;
 using namespace xtd::forms;
 using namespace xtd::helpers;
 
-std::map<intptr, ref<menu>> menu::handles_;
+std::map<intptr, std::reference_wrapper<menu>> menu::handles_;
 
 menu::menu() : data_(xtd::new_sptr<data>()) {
   //data_->mdi_list_item = xtd::new_uptr<menu_item>();
@@ -85,14 +85,14 @@ menu& menu::menu_items(const menu_item_collection& value) {
   return *this;
 }
 
-menu& menu::menu_items(const std::initializer_list<ref<menu_item>>& value) {
+menu& menu::menu_items(const std::initializer_list<menu_item_ref>& value) {
   data_->menu_items.clear();
   for (const auto& item : value)
     data_->menu_items.push_back(item);
   return *this;
 }
 
-menu& menu::menu_items(const std::vector<ref<menu_item>>& value) {
+menu& menu::menu_items(const std::vector<menu_item_ref>& value) {
   data_->menu_items.clear();
   for (const auto& item : value)
     data_->menu_items.push_back(item);
@@ -129,7 +129,7 @@ xtd::size menu::get_hash_code() const noexcept {
   return hash_code::combine(data_);
 }
 
-std::optional<ref<context_menu>> menu::get_context_menu() const noexcept {
+std::optional<std::reference_wrapper<context_menu>> menu::get_context_menu() const noexcept {
   auto item = const_cast<menu*>(this);
   while (item) {
     if (dynamic_cast<context_menu*>(item)) return static_cast<context_menu&>(*item);
@@ -139,7 +139,7 @@ std::optional<ref<context_menu>> menu::get_context_menu() const noexcept {
   return std::nullopt;
 }
 
-std::optional<ref<main_menu>> menu::get_main_menu() const noexcept {
+std::optional<std::reference_wrapper<main_menu>> menu::get_main_menu() const noexcept {
   auto item = const_cast<menu*>(this);
   while (item) {
     if (dynamic_cast<main_menu*>(item)) return static_cast<main_menu&>(*item);
