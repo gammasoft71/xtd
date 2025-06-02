@@ -9,7 +9,7 @@ var searchData=
   ['ibox_5fmodel_2ehpp_6',['ibox_model.hpp',['../ibox__model_8hpp.html',1,'']]],
   ['ibutton_5fcontrol_7',['ibutton_control',['../classxtd_1_1forms_1_1ibutton__control.html',1,'xtd::forms']]],
   ['ibutton_5fcontrol_2ehpp_8',['ibutton_control.hpp',['../ibutton__control_8hpp.html',1,'']]],
-  ['ibutton_5fcontrol_5fref_9',['ibutton_control_ref',['../classxtd_1_1forms_1_1form.html#a890ad5c45fa99ae95ef37b6c2e855c28',1,'xtd::forms::form']]],
+  ['ibutton_5fcontrol_5fref_9',['ibutton_control_ref',['../classxtd_1_1forms_1_1form.html#a99e318f64e65c5fc5278a7eafff46f6d',1,'xtd::forms::form']]],
   ['ice_10',['ice',['../classxtd_1_1drawing_1_1crayon__colors.html#a973c1b9b12de74d62b5c0a36881efa90',1,'xtd::drawing::crayon_colors']]],
   ['ice_5fcream_11',['ice_cream',['../classxtd_1_1forms_1_1emoticons.html#a6a78e54fae74951a6a9419cd84434f7a',1,'xtd::forms::emoticons']]],
   ['ice_5fhockey_5fstick_5fand_5fpuck_12',['ice_hockey_stick_and_puck',['../classxtd_1_1forms_1_1emoticons.html#ad60b8bb048342edb109c15410193b8ae',1,'xtd::forms::emoticons']]],
