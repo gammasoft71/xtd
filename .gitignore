@@ -55,8 +55,6 @@ examples/xtd.forms.examples/components/settings_example/properties/settings.hpp
 examples/xtd.forms.examples/components/application_settings/properties/settings.hpp
 examples/xtd.forms.examples/controls/picture_box/properties/resources.hpp
 examples/xtd.forms.examples/drawing/image_converter/properties/resources.hpp
-examples/xtd.forms.examples/forms/circular_form/properties/resources.hpp
-examples/xtd.forms.examples/forms/circular_form/properties/settings.hpp
 examples/xtd.forms.examples/games/game_of_life/properties/startup.cpp
 examples/xtd.forms.examples/games/minesweeper/properties/startup.cpp
 examples/xtd.forms.examples/games/minesweeper/properties/settings.hpp
@@ -64,6 +62,8 @@ examples/xtd.forms.examples/games/minesweeper/properties/resources.hpp
 examples/xtd.forms.examples/others/about_dialog_from_executing_assembly_informations/properties/assembly_info.cpp
 examples/xtd.forms.examples/others/form_background_image2/properties/resources.hpp
 examples/xtd.forms.examples/others/stopwatch_form/properties/resources.hpp
+examples/xtd.forms.examples/user_forms/ball/properties/resources.hpp
+examples/xtd.forms.examples/user_forms/ball/properties/settings.hpp
 examples/xtd.cmake.examples/project_commands/resources_command/properties/resources.hpp
 examples/xtd.cmake.examples/project_commands/settings_command/properties/settings.hpp
 
