@@ -284,6 +284,10 @@ xtd::string texts::select_all() {
   return "Select &All"_t;
 }
 
+xtd::string texts::separator() {
+  return "-";
+}
+
 xtd::string texts::settings() {
   return "&Settings..."_t;
 }
