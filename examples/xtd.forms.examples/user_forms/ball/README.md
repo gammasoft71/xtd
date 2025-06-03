@@ -10,8 +10,12 @@ demonstrates the use of [xtd::forms::control::region](https://gammasoft71.github
 * [resources/ball.icns](resources/ball.icns)
 * [resources/ball.ico](resources/ball.ico)
 * [resources/ball.png](resources/ball.png)
-* [src/ball_form.hpp](src/ball_form.hpp)
+* [src/ball.hpp](src/ball.hpp)
 * [src/ball.cpp](src/ball.cpp)
+* [src/ball_form.hpp](src/ball_form.hpp)
+* [src/ball_form.cpp](src/ball_form.cpp)
+* [src/settings_form.hpp](src/settings_form.hpp)
+* [src/settings_form.cpp](src/settings_form.cpp)
 * [CMakeLists.txt](CMakeLists.txt)
 
 ## Build and run
