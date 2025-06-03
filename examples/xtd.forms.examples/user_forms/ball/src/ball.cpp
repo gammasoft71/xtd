@@ -1,12 +1,9 @@
 #include "ball.hpp"
 #include "../properties/resources.hpp"
 #include "../properties/settings.hpp"
-#include <xtd/drawing/color_converter>
 #include <xtd/drawing/texts>
 #include <xtd/forms/application>
-#include <xtd/forms/button>
 #include <xtd/math>
-#include <xtd/startup>
 
 using namespace ball;
 using namespace xtd;
@@ -19,11 +16,8 @@ void main_form::main() {
 }
 
 main_form::main_form() {
-  color(properties::settings::default_settings().color());
-  light_point_color(properties::settings::default_settings().light_point_color());
-  color(color::indigo);
-  light_point_color(color_converter::light(color(), 0.66));
-  size(properties::settings::default_settings().size());
+  settings_form_.settings_changed += {*this, &main_form::on_settings_changed};
+  on_settings_changed(settings_form_, event_args::empty);
 
   //context_menu(context_menu_);
   icon(properties::resources::ball_ico());
@@ -120,6 +114,13 @@ void main_form::on_animation_timer_tick(object& sender, const event_args& e) {
  
 void main_form::on_exit_menu_item_click(xtd::object& sender, const xtd::event_args& e) {
   main_form::close();
+}
+
+void main_form::on_settings_changed(xtd::object& sender, const xtd::event_args& e) {
+  color(properties::settings::default_settings().color());
+  light_point_color(properties::settings::default_settings().light_point_color());
+  size(properties::settings::default_settings().size());
+  location({left(), screen::from_control(*this).working_area().bottom() - size().height});
 }
 
 void main_form::on_settings_menu_item_click(xtd::object& sender, const xtd::event_args& e) {

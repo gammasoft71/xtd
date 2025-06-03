@@ -42,6 +42,7 @@ namespace ball {
   private:
     void on_animation_timer_tick(xtd::object& sender, const xtd::event_args& e);
     void on_exit_menu_item_click(xtd::object& sender, const xtd::event_args& e);
+    void on_settings_changed(xtd::object& sender, const xtd::event_args& e);
     void on_settings_menu_item_click(xtd::object& sender, const xtd::event_args& e);
 
     settings_form settings_form_;

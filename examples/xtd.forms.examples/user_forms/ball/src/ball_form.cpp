@@ -19,6 +19,7 @@ const class color& ball_form::color() const noexcept {
 ball_form& ball_form::color(const class color& value) noexcept {
   if (color_ == value) return *this;
   color_ = value;
+  invalidate();
   return *this;
 }
 
@@ -29,6 +30,7 @@ const drawing::color& ball_form::light_point_color() const noexcept {
 ball_form& ball_form::light_point_color(const drawing::color& value) noexcept {
   if (light_point_color_ == value) return *this;
   light_point_color_ = value;
+  invalidate();
   return *this;
 }
 
