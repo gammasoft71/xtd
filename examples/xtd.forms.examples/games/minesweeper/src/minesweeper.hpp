@@ -36,7 +36,7 @@ namespace minesweeper {
     minesweeper_form();
     /// @}
 
-    /// @name Public Methods
+    /// @name Public Static Methods
     
     /// @{
     /// @brief The main entry point for the game.
