@@ -9,3 +9,6 @@ target_icon("resources/ball")
 
 # The target name is used to name the built application.
 target_name("ball")
+
+# The target startuo is the entry point definiton and generates the "property/startup.cpp" file wich contains the main method.
+target_startup("ball::main_form::main" "src/ball.hpp")

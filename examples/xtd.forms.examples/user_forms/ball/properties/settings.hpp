@@ -4,6 +4,9 @@
 // Changes to this file may cause incorrect behavior and will be lost if the code is regenerated.
 
 #pragma once
+#include <xtd/drawing/color>
+#include <xtd/drawing/point>
+#include <xtd/drawing/size>
 #include <xtd/configuration/settings>
 
 namespace ball::properties {
@@ -64,6 +67,16 @@ namespace ball::properties {
       return *this;
     }
 
+    /// @brief Gets the settings_form_location user setting property.
+    /// @return A xtd::drawing::point value.
+    xtd::drawing::point settings_form_location() const noexcept {return settings_form_location_;}
+    /// @brief Sets the settings_form_location user setting property.
+    /// @param value A xtd::drawing::point value.
+    settings& settings_form_location(xtd::drawing::point value) noexcept {
+      settings_form_location_ = value;
+      return *this;
+    }
+
     /// @}
 
     /// @name Public Methods
@@ -75,6 +88,7 @@ namespace ball::properties {
       size_ = settings_.read("size", size_);
       color_ = settings_.read("color", color_);
       light_point_color_ = settings_.read("light_point_color", light_point_color_);
+      settings_form_location_ = settings_.read("settings_form_location", settings_form_location_);
     }
 
     /// @brief Reset all properties to their default values.
@@ -90,6 +104,7 @@ namespace ball::properties {
       settings_.write("size", size_);
       settings_.write("color", color_);
       settings_.write("light_point_color", light_point_color_);
+      settings_.write("settings_form_location", settings_form_location_);
       settings_.save();
     }
     /// @}
@@ -111,6 +126,7 @@ namespace ball::properties {
     xtd::drawing::size size_ {200, 200};
     xtd::drawing::color color_ {xtd::drawing::color::from_argb(0xBC, 0, 0)};
     xtd::drawing::color light_point_color_ {xtd::drawing::color::from_argb(0xFF, 0xAA, 0x7E)};
+    xtd::drawing::point settings_form_location_ {200, 100};
   };
 }
 
