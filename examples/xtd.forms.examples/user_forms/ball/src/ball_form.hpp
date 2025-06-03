@@ -44,6 +44,15 @@ namespace ball {
     control& size(const xtd::drawing::size& value) override;
     /// @)
 
+  protected:
+    /// @name Portected Methods
+    
+    /// @{
+    /// @brief Raises the xtd::forms::control::paint event.
+    /// @param e An xtd::event_args that contains the event data.
+    void on_paint(paint_event_args& e) override;
+    /// @)
+
   private:
     xtd::drawing::color color_;
     xtd::drawing::color light_point_color_;

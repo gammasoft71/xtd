@@ -16,7 +16,14 @@ namespace ball {
     /// @name Public Properties
     
     /// @{
-    /// @)
+    /// @}
+
+  protected:
+    /// @name Protected Methods
+    
+    /// @{
+    void on_form_closed(const xtd::forms::form_closed_event_args& e) override;
+    /// @}
 
   private:
   };
