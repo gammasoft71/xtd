@@ -1,5 +1,4 @@
 #include "settings_form.hpp"
-#include "../properties/settings.hpp"
 #include <xtd/drawing/colors>
 #include <xtd/drawing/color_converter>
 #include <xtd/drawing/system_colors>
@@ -75,7 +74,19 @@ settings_form::settings_form() {
     color_color_picker_.color(default_settings.color());
     light_point_color_color_picker_.color(default_settings.light_point_color());
     size_numeric_up_down_.value(default_settings.size().width);
+    settings(default_settings);
   };
+}
+
+const ball::properties::settings& settings_form::settings() const noexcept {
+  return properties::settings::default_settings();
+}
+
+settings_form& settings_form::settings(const ball::properties::settings& value) noexcept {
+  if (properties::settings::default_settings() == value) return *this;
+  properties::settings::default_settings() = value;
+  on_settings_changed(xtd::event_args::empty);
+  return *this;
 }
 
 void settings_form::on_form_closed(const xtd::forms::form_closed_event_args& e) {
