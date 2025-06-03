@@ -64,6 +64,7 @@ examples/xtd.forms.examples/others/form_background_image2/properties/resources.h
 examples/xtd.forms.examples/others/stopwatch_form/properties/resources.hpp
 examples/xtd.forms.examples/user_forms/ball/properties/resources.hpp
 examples/xtd.forms.examples/user_forms/ball/properties/settings.hpp
+examples/xtd.forms.examples/user_forms/ball/properties/startup.cpp
 examples/xtd.cmake.examples/project_commands/resources_command/properties/resources.hpp
 examples/xtd.cmake.examples/project_commands/settings_command/properties/settings.hpp
 
