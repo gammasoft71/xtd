@@ -1,4 +1,5 @@
 #pragma once
+#include "../properties/settings.hpp"
 #include <xtd/forms/button>
 #include <xtd/forms/color_picker>
 #include <xtd/forms/form>
@@ -17,22 +18,37 @@ namespace ball {
     settings_form();
     /// @)
     
-    /// @name Public Events
-    
-    /// @{
-    xtd::event<settings_form, xtd::event_handler> settings_changed;
-    /// @}
-
     /// @name Public Properties
     
     /// @{
+    /// @brief Gets the settings.
+    /// @return The settings.
+    /// @remarks This property is same as ball::properties::settings::default_settings.
+    const ball::properties::settings& settings() const noexcept;
+    /// @brief Sets the settings.
+    /// @param value The settings to set.
+    /// @return This current instance.
+    /// @remarks This property is same as ball::properties::settings::default_settings.
+    settings_form& settings(const ball::properties::settings& value) noexcept;
+    /// @)
+    
+    /// @name Public Events
+    
+    /// @{
+    /// @brief Occurs when the ball::settings_form::settings property has been changed in some way.
+    xtd::event<settings_form, xtd::event_handler> settings_changed;
     /// @}
 
   protected:
     /// @name Protected Methods
     
     /// @{
+    /// @brief Raises the xtd::forms::form_closed event.
+    /// @param e A xtd::forms::form_closed_event_args that contains the event data.
     void on_form_closed(const xtd::forms::form_closed_event_args& e) override;
+
+    /// @brief Raises the ball::settings_form::settings_changed event.
+    /// @param e An xtd::event_args that contains the event data.
     void on_settings_changed(const xtd::event_args& e);
     /// @}
 

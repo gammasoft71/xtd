@@ -1,6 +1,5 @@
 #include "ball.hpp"
 #include "../properties/resources.hpp"
-#include "../properties/settings.hpp"
 #include <xtd/drawing/texts>
 #include <xtd/forms/application>
 #include <xtd/math>
@@ -117,9 +116,9 @@ void main_form::on_exit_menu_item_click(xtd::object& sender, const xtd::event_ar
 }
 
 void main_form::on_settings_changed(xtd::object& sender, const xtd::event_args& e) {
-  color(properties::settings::default_settings().color());
-  light_point_color(properties::settings::default_settings().light_point_color());
-  size(properties::settings::default_settings().size());
+  color(settings_form_.settings().color());
+  light_point_color(settings_form_.settings().light_point_color());
+  size(settings_form_.settings().size());
   location({left(), screen::from_control(*this).working_area().bottom() - size().height});
 }
 
