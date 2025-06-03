@@ -70,5 +70,5 @@ settings_form::settings_form() {
 
 void settings_form::on_form_closed(const form_closed_event_args& e) {
   form::on_form_closed(e);
-  properties::settings::default_settings().auto_close(auto_close_check_box_.checked()).save();
+  properties::settings::default_settings().save();
 }

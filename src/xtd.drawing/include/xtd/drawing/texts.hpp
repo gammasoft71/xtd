@@ -168,6 +168,8 @@ namespace xtd {
       static xtd::string search();
       /// @brief Gets a system-defined text that has a string value of "Select &All". This field is constant.
       static xtd::string select_all();
+      /// @brief Gets a system-defined text that has a string value of "-". This field is constant.
+      static xtd::string separator();
       /// @brief Gets a system-defined text that has a string value of "&Settings...". This field is constant.
       static xtd::string settings();
       /// @brief Gets a system-defined text that has a string value of "&Spell Check". This field is constant.
