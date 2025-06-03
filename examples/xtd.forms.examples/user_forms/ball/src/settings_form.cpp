@@ -16,3 +16,7 @@ settings_form::settings_form() {
   start_position(form_start_position::manual);
   location(properties::settings::default_settings().settings_form_location());
 }
+
+void settings_form::on_form_closed(const xtd::forms::form_closed_event_args& e) {
+  
+}
