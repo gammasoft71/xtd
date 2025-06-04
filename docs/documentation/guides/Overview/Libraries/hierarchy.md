@@ -28,6 +28,19 @@ The [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group_
 [![tunit](/pictures/xtd.tunit.png)](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html)
 The [xtd.tunit](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__tunit.html) library is a unit-testing framework for modern C++17/20, inspired by [Microsoft.VisualStudio.TestTools.Cpp](https://docs.microsoft.com/en-us/visualstudio/test/microsoft-visualstudio-testtools-cppunittestframework-api-reference).
 
+# Note on the current native backend
+
+To enable fast, stable, and cross-platform development, the `xtd.drawing` and `xtd.forms` libraries currently use wxWidgets as their single native backend, via `xtd.drawing.native.wxwidgets` and `xtd.forms.native.wxwidgets`.
+This decision allows xtd’s public API to evolve rapidly, without being slowed down by the overhead of maintaining multiple native backends simultaneously (Win32, Cocoa, Gtk4, etc.).
+
+This is a transitional design: in future versions, each platform will have its own native backend to leverage its specific features and performance, while preserving a unified API for end users.
+
+* [xtd 2.0.0](/docs/documentation/roadmap#release-200-release): Implementation of the Win32 backend.
+* [xtd 3.0.0](/docs/documentation/roadmap#release-300-release): Implementation of the Gtk4 backend.
+* [xtd 4.0.0](/docs/documentation/roadmap#release-400-release): Implementation of the Cocoa backend.
+
+See the full [xtd roadmap](/docs/documentation/roadmap) for more details.
+
 ## See also
 
 * [xtd libraries architecture](/docs/documentation/Guides/Overview/Libraries/architecture)
