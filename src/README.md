@@ -50,13 +50,13 @@ Contains xtd sources.
 
 ## Note on the current native backend
 
-To enable fast, stable, and cross-platform development, the `xtd.drawing` and `xtd.forms` libraries currently use wxWidgets as their single native backend, via `xtd.drawing.native.wxwidgets` and `xtd.forms.native.wxwidgets`.
+To enable fast, stable, and cross-platform development, the [xtd.drawing](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__drawing.html) and [xtd.forms](https://gammasoft71.github.io/xtd/reference_guides/latest/group__xtd__forms.html) libraries currently use wxWidgets as their single native backend, via [xtd.drawing.native.wxwidgets](https://github.com/gammasoft71/xtd/tree/master/src/xtd.drawing.native.wxwidgets) and [xtd.forms.native.wxwidgets](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.wxwidgets).
 This decision allows xtd’s public API to evolve rapidly, without being slowed down by the overhead of maintaining multiple native backends simultaneously (Win32, Cocoa, Gtk4, etc.).
 
 This is a transitional design: in future versions, each platform will have its own native backend to leverage its specific features and performance, while preserving a unified API for end users.
 
-* [xtd 2.0.0](https://gammasoft71.github.io/xtd/docs/documentation/roadmap#release-200-release): Implementation of the Win32 backend.
-* [xtd 3.0.0](https://gammasoft71.github.io/xtd/docs/documentation/roadmap#release-300-release): Implementation of the Gtk4 backend.
-* [xtd 4.0.0](https://gammasoft71.github.io/xtd/docs/documentation/roadmap#release-400-release): Implementation of the Cocoa backend.
+* [xtd 2.0.0](https://gammasoft71.github.io/xtd/docs/documentation/roadmap#release-200-release): Implementation of the Win32 backend via [xtd.drawing.native.win32](https://github.com/gammasoft71/xtd/tree/master/src/xtd.drawing.native.win32) and [xtd.forms.native.win32](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.win32).
+* [xtd 3.0.0](https://gammasoft71.github.io/xtd/docs/documentation/roadmap#release-300-release): Implementation of the Gtk4 backend via [xtd.drawing.native.gtk4](https://github.com/gammasoft71/xtd/tree/master/src/xtd.drawing.native.gtk4) and [xtd.forms.native.gtk4](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.gtk4).
+* [xtd 4.0.0](https://gammasoft71.github.io/xtd/docs/documentation/roadmap#release-400-release): Implementation of the Cocoa backend via [xtd.drawing.native.cocoa](https://github.com/gammasoft71/xtd/tree/master/src/xtd.drawing.native.cocoa) and [xtd.forms.native.cocoa](https://github.com/gammasoft71/xtd/tree/master/src/xtd.forms.native.cocoa).
 
 See the full [xtd roadmap](https://gammasoft71.github.io/xtd/docs/documentation/roadmap) for more details.
