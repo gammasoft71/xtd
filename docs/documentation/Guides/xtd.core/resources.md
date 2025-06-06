@@ -133,6 +133,7 @@ All that's left is to exploit your resources in a way that's simple and transpar
 Just include the inlcude file `propertes/resources.hpp` and use its properties.
 
 ### your_project.cpp
+
 ```cpp
 #include "../properties/resources.hpp"
 #include <xtd/xtd>
