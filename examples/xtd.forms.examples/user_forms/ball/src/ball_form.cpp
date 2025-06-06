@@ -7,8 +7,8 @@ using namespace xtd::drawing;
 using namespace xtd::drawing::drawing_2d;
 
 ball_form::ball_form() {
+  back_color(color::transparent);
   form_border_style(forms::form_border_style::none);
-  double_buffered(true);
   size({300, 300});
 }
 
