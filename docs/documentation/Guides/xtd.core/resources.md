@@ -40,14 +40,18 @@ resource(readme "resources/readme.md")
 resource(sound "resources/sound.wav")
 ```
 
-## Format Commande CMake
+## Resources CMake Commands
 
-`resource(NAME FILE)`
-* **Description** Add resources to current project.
-* **NAME param** resource name to add. I t will be the name of the property resource in the generated static class static resources class `your_project::properties::resources`.
-* **FILE param** The resource file path.
-* **See** [resource command](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#AddResourcesSubSection)
-* **See** [CMake commands](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html)
+* `resource(NAME FILE)`
+  * **Description** Add resources to current project.
+  * **NAME param** The resource name to add. I t will be the name of the property resource in the generated static class static resources class `your_project::properties::resources`.
+  * **FILE param** The resource file path.
+  * **remarks**
+    * This method can be call more than once in the same project.
+    * This method must be call before target_type().
+    * This method is optional.
+  * **See** [resource command](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#AddResourcesSubSection)
+  * **See** [CMake commands](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html)
 
 ## Resources generation
 
@@ -128,6 +132,7 @@ namespace your_project::properties {
 
 All that's left is to exploit your resources in a way that's simple and transparent to your environment and OS.
 Just include the inlcude file `propertes/resources.hpp` and use its properties.
+By the way, a resource is always read-only.
 
 ### your_project.cpp
 
