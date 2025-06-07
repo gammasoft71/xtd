@@ -9,7 +9,7 @@ Thanks to an automatically generated static class, you can access your settings 
 
 Using the `CMake` commands specific to `xtd`, simply describe the settings to be added to your application.
 
-Although you can add the `settings` and `settings_include` commands (which are the only two commands for adding settings) to your `CMakeLists.txt` file, the best thing to do is to create a `properties` folder next to the `src` folder and describe your resources in the `settings.cmake` file.
+Although you can add the [setting](#setting) and [setting_include](#setting-include) commands (which are the only two commands for adding settings) to your `CMakeLists.txt` file, the best thing to do is to create a `properties` folder next to the `src` folder and describe your resources in the `settings.cmake` file.
 When CMake generates your xtd project, the `properties/settings.cmake` file will be detected automatically.
 
 Here's an example of the `properties/settings.cmake` file with some specific CMake commands to describe your settings.
