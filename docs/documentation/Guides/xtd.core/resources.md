@@ -40,22 +40,19 @@ resource(readme "resources/readme.md")
 resource(sound "resources/sound.wav")
 ```
 
-## Resources generation
-
-Generating your `xtd` project with `CMake` will automatically generate a stati class `your_project::properties::resources` containing the static properties for accessing resources.
-The `resources` class will be generated in the `propertes/resources.hpp` file. And this file will be automatically added to your project as a source.
-
-# Format Commande CMake
+## Format Commande CMake
 
 `resource(NAME FILE)`
 * **Description** Add resources to current project.
-* Params
-  * **NAME** resource name to add. I t will be the name of the property resource in the generated static class static resources class `your_project::properties::resources`.
-  * **FILE** The resource file path.
+* **NAME param** resource name to add. I t will be the name of the property resource in the generated static class static resources class `your_project::properties::resources`.
+* **FILE param** The resource file path.
+* **See** [resource command](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#AddResourcesSubSection)
+* **See** [CMake commands](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html)
 
-See [resource command](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#AddResourcesSubSection)
+## Resources generation
 
-See [CMake commands](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html)
+Generating your `xtd` project with `CMake` will automatically generate a static class `your_project::properties::resources` containing the static properties for accessing resources.
+The `resources` class will be generated in the `propertes/resources.hpp` file. And this file will be automatically added to your project as a source.
 
 ### properties/resources.hpp
 
