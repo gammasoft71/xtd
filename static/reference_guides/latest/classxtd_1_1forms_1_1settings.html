@@ -117,7 +117,7 @@ Inheritance diagram for xtd::forms::settings:</div>
 </div><!-- fragment --> </dd></dl>
 <dl class="section user"><dt>Namespace</dt><dd>xtd </dd></dl>
 <dl class="section user"><dt>Library</dt><dd>xtd.core</dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The basic settings path can be obtained with the command : <code>xtd::environment::get_know_folder_path(xtd::environment::special_folder::application_data);</code>. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The basic settings path can be obtained with the command <a class="el" href="classxtd_1_1environment.html#a465e71972e122d4bbdaa943ae02d4cd8" title="Gets the path to the system special folder that is identified by the specified enumeration.">xtd::environment::get_folder_path</a> (<a class="el" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057acd1b523034d55d13f9cfa616413be65d" title="The directory that serves as a common repository for application-specific data for the current roamin...">xtd::environment::special_folder::application_data</a>). </dd>
 <dd>
 On Windows settings are stored in <code>/Users/($USER)/AppData/Roaming/company_name/product_name.ini</code> file. </dd>
 <dd>
@@ -125,7 +125,7 @@ On macos settings are stored in <code>~/Library/Preferences/company_name/product
 <dd>
 On linux settings are stored in <code>~/.config/company_name/product_name.conf</code> file. </dd>
 <dd>
-The <code>product_name</code> is equal to the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#acc64f16d31b1632a25ff055c119097de" title="Gets product information.">xtd::reflection::assembly::product()</a> property of the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#a5446b68522b77fb9bd7bdc4d64a96bf7" title="Gets the assembly that contains the code that is currently executing.">xtd::reflection::assembly::get_executing_assembly()</a> assembly if not empty; otherwise is equal to the filename of the first arguemnt of main. </dd>
+The <code>product_name</code> is equal to the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#acc64f16d31b1632a25ff055c119097de" title="Gets product information.">xtd::reflection::assembly::product()</a> property of the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#a5446b68522b77fb9bd7bdc4d64a96bf7" title="Gets the assembly that contains the code that is currently executing.">xtd::reflection::assembly::get_executing_assembly()</a> assembly if not empty; otherwise is equal to the filename of the first argument of main. </dd>
 <dd>
 The <code>company_name</code> is equal to the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#a8f01c13a829529cbe2487da5f89479d9" title="Gets company name information.">xtd::reflection::assembly::company()</a> property of the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#a5446b68522b77fb9bd7bdc4d64a96bf7" title="Gets the assembly that contains the code that is currently executing.">xtd::reflection::assembly::get_executing_assembly()</a> assembly if not empty; otherwise is equal to <code>product_name</code>. </dd></dl>
 <dl class="section user"><dt>Examples</dt><dd>The following code example demonstrates the use of <a class="el" href="classxtd_1_1configuration_1_1settings.html" title="Represent settings associate to the application.">xtd::configuration::settings</a> class with <a href="https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#AddSettingSubSection">CMake setting commands</a>.</dd></dl>
@@ -476,15 +476,15 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Gets the file path of the application settings. </p>
 <dl class="section return"><dt>Returns</dt><dd>The file path of the application settings. </dd></dl>
-<dl class="section remark"><dt>Remarks</dt><dd>The basic settings path can be obtained with the command : <code>xtd::environment::get_know_folder_path(xtd::environment::special_folder::application_data);</code>. </dd>
+<dl class="section remark"><dt>Remarks</dt><dd>The basic settings path can be obtained with the command <a class="el" href="classxtd_1_1environment.html#a465e71972e122d4bbdaa943ae02d4cd8" title="Gets the path to the system special folder that is identified by the specified enumeration.">xtd::environment::get_folder_path</a> (<a class="el" href="classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057acd1b523034d55d13f9cfa616413be65d" title="The directory that serves as a common repository for application-specific data for the current roamin...">xtd::environment::special_folder::application_data</a>). </dd>
 <dd>
 On Windows settings are stored in <code>/Users/($USER)/AppData/Roaming/company_name/product_name.ini</code> file. </dd>
 <dd>
 On macos settings are stored in <code>~/Library/Preferences/company_name/product_name Preferences</code> file. </dd>
 <dd>
-On linux settings are stored in <code>~/.consig/company_name/product_name.conf</code> file. </dd>
+On linux settings are stored in <code>~/.config/company_name/product_name.conf</code> file. </dd>
 <dd>
-The <code>product_name</code> is equal to the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#acc64f16d31b1632a25ff055c119097de" title="Gets product information.">xtd::reflection::assembly::product()</a> property of the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#a5446b68522b77fb9bd7bdc4d64a96bf7" title="Gets the assembly that contains the code that is currently executing.">xtd::reflection::assembly::get_executing_assembly()</a> assembly if not empty; otherwise is equal to the filename of the first arguemnt of main. </dd>
+The <code>product_name</code> is equal to the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#acc64f16d31b1632a25ff055c119097de" title="Gets product information.">xtd::reflection::assembly::product()</a> property of the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#a5446b68522b77fb9bd7bdc4d64a96bf7" title="Gets the assembly that contains the code that is currently executing.">xtd::reflection::assembly::get_executing_assembly()</a> assembly if not empty; otherwise is equal to the filename of the first argument of main. </dd>
 <dd>
 The <code>company_name</code> is equal to the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#a8f01c13a829529cbe2487da5f89479d9" title="Gets company name information.">xtd::reflection::assembly::company()</a> property of the <a class="el" href="classxtd_1_1reflection_1_1assembly.html#a5446b68522b77fb9bd7bdc4d64a96bf7" title="Gets the assembly that contains the code that is currently executing.">xtd::reflection::assembly::get_executing_assembly()</a> assembly if not empty; otherwise is equal to <code>product_name</code>. </dd></dl>
 <dl class="section warning"><dt>Warning</dt><dd>Don't manipulate the file yourself, otherwise the expected result may be undefined. </dd></dl>
@@ -696,7 +696,7 @@ template&lt;class type_t&gt; </div>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 7 2025 09:41:31 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jun 7 2025 12:00:38 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
