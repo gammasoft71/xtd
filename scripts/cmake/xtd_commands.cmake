@@ -100,7 +100,7 @@ endmacro ()
 ## @remarks Only effect on linux.
 ## @remarks If you don't specify the target_categories, the application has no category.
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 ## @remarks For more inforamtion see [Desktop Entry Specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html).
 ## @par Examples
@@ -123,7 +123,7 @@ endmacro()
 ## @param DEFAULT_NAMESPACE the namespace to set.
 ## @remarks If you don't specify the target_default_namespace, it will be the same of the project name.
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
 ## ```cpp
@@ -146,7 +146,7 @@ endmacro()
 ## @remarks Only effect on linux.
 ## @remarks By default the application is registered but not visible in the general menu.
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
 ## ```cpp
@@ -186,7 +186,7 @@ endmacro()
 ##   * Icon256.png (256 x 256 pixels)
 ##   * Icon512.png (512 x 512 pixels)
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional.
 ## @par Examples
 ## ```cpp
@@ -235,7 +235,7 @@ endmacro()
 ## @param NAME the name to set.
 ## @remarks If you don't specify the target_name, it will be the same of the project name.
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
 ## ```cpp
@@ -257,7 +257,7 @@ endmacro()
 ## @remarks Only effect on linux.
 ## @remarks By default the application is registered but not visible in GNOME or KDE menu.
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
 ## ```cpp
@@ -283,7 +283,7 @@ endmacro()
 ## @param ARGV1 the object definition file. (optional if you use tunit_main_ entry point for xtd unit test applications)
 ## @remarks Do not use this method of startup_(...) is present in your files or if you use standard c++ main() method.
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
 ## ```cpp
@@ -330,7 +330,7 @@ endmacro()
 ## @param TOP_LEVEL_FILE the file that contains the content of the main entry point.
 ## @remarks Do not use this method of startup_(...) is present in your files or if you use standard c++ main() method.
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
 ## ```cpp
@@ -572,7 +572,7 @@ endmacro()
 ## @brief Specifies a company name for the assembly manifest. Corresponds to AssemblyCompanyAttribute.
 ## @param COMPANY The company name to set.
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
 ## ```cpp
@@ -594,7 +594,7 @@ endmacro()
 ## @brief Specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
 ## @param CONFIGURATION The configuration to set.
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
 ## ```cpp
@@ -616,7 +616,7 @@ endmacro()
 ## @brief Specifies a copyright notice for the assembly manifest. Corresponds to assembly_copyright_attribute.
 ## @param COPYRIGHT The copyright to set.
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
 ## ```cpp
@@ -638,7 +638,7 @@ endmacro()
 ## @brief Specifies the culture for the assembly manifest. Corresponds to assembly_configuration_attribute.
 ## @param CULTURE The culture to set.
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 macro(assembly_culture CULTURE)
   message(VERBOSE "Add assembly culture [${CULTURE}]...")
@@ -648,7 +648,7 @@ endmacro()
 ## @brief Specifies an optional description for the assembly manifest. Corresponds to assembly_description_attribute.
 ## @param DESCRIPTION The description to set.
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
 ## ```cpp
@@ -671,7 +671,7 @@ endmacro()
 ## @brief Specifies a version number that instructs the compiler to use a specific version for the Win32 file version resource. Corresponds to assembly_file_version_attribute.
 ## @param FILE_VERSION The file version to set (Major, Minor and build).
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
 ## ```cpp
@@ -693,7 +693,7 @@ endmacro()
 ## @brief Specifies an unique GUID that identifies the assembly. When you create a project, Visual Studio generates a GUID for the assembly. Corresponds to Guid.
 ## @param GUID The guid to set.
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
 ## ```cpp
@@ -715,7 +715,7 @@ endmacro()
 ## @brief Specifies a name for the assembly manifest. Corresponds to assembly_name_attribute.
 ## @param NAME The name to set.
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
 ## ```cpp
@@ -738,7 +738,7 @@ endmacro()
 ## @brief Specifies a product name for the assembly manifest. Corresponds to assembly_product_attribute.
 ## @param PRODUCT The product name to set.
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
 ## ```cpp
@@ -760,7 +760,7 @@ endmacro()
 ## @brief Specifies a title for the assembly manifest. Corresponds to assembly_title_attribute.
 ## @param TITLE The title to set.
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
 ## ```cpp
@@ -782,7 +782,7 @@ endmacro()
 ## @brief Specifies a trademark for the assembly manifest. Corresponds to assembly_trademark_attribute.
 ## @param TRADEMARK The trademark to set.
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 macro(assembly_trademark TRADEMARK)
   message(VERBOSE "Add assembly trademark [${TRADEMARK}]...")
@@ -792,7 +792,7 @@ endmacro()
 ## @brief Specifies the version of the assembly. Corresponds to assembly_version_attribute.
 ## @param ASSEMBLY_VERSION The version to set (Major, Minor and build).
 ## @remarks Call only once by project.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional. 
 ## @par Examples
 ## ```cpp
@@ -893,7 +893,7 @@ endmacro()
 ## @brief Installs include directories.
 ## @param ARGN Include directories to install.
 ## @remarks This method is required for install package.
-## @remarks This method can be call more than once in the same project.
+## @remarks is_dragging_ in the same project.
 ## @par Examples
 ## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
@@ -918,7 +918,7 @@ endmacro()
 ## @brief Installs include files.
 ## @param ARGN Include files to install.
 ## @remarks This method is required for install package.
-## @remarks This method can be call more than once in the same project.
+## @remarks is_dragging_ in the same project.
 ## @par Examples
 ## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
@@ -1055,8 +1055,8 @@ endmacro()
 
 ## @brief Adds include directories to current project.
 ## @param ARGN directories to add.
-## @remarks This method can be call more than once in the same project.
-## @remarks This method must be call before target_type().
+## @remarks is_dragging_ in the same project.
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional.
 ## @par Examples
 ## ```cpp
@@ -1079,8 +1079,8 @@ endmacro()
 
 ## @brief Adds, finds and loads settings from external required projects to current project.
 ## @param ARGN packages to add.
-## @remarks This method can be call more than once in the same project.
-## @remarks This method must be call before target_type().
+## @remarks is_dragging_ in the same project.
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional.
 ## @par Examples
 ## ```cpp
@@ -1106,9 +1106,9 @@ endmacro()
 ## @brief Adds child projects to parent project.
 ## @param ARGN projects to add.
 ## @remarks  The path can be relative from CMAKE_CURRENT_SOURCE_DIR or absolute.
-## @remarks This method can be call more than once in the same project.
+## @remarks is_dragging_ in the same project.
 ## @remarks This method is optional except container project like Solution.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @par Examples
 ## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
@@ -1133,8 +1133,8 @@ endmacro()
 
 ## @brief Adds references (libraries) to current project.
 ## @param ARGN references to add.
-## @remarks This method can be call more than once in the same project.
-## @remarks This method must be call before target_type().
+## @remarks is_dragging_ in the same project.
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional.
 ## @par Examples
 ## ```cpp
@@ -1156,8 +1156,8 @@ endmacro()
 
 ## @brief Adds reference directories (library include directories) to current project.
 ## @param ARGN reference directories to add.
-## @remarks This method can be call more than once in the same project.
-## @remarks This method must be call before target_type().
+## @remarks is_dragging_ in the same project.
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional.
 ## @par Examples
 ## ```cpp
@@ -1182,8 +1182,8 @@ endmacro()
 ## @param NAME resource name to add.
 ## @param FILE resource file to add.
 ## @remarks The path can be relative from CMAKE_CURRENT_SOURCE_DIR or absolute.
-## @remarks This method can be call more than once in the same project.
-## @remarks This method must be call before target_type().
+## @remarks is_dragging_ in the same project.
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional.
 ## @par Examples
 ## ```cpp
@@ -1220,8 +1220,8 @@ endmacro()
 ## @param NAME Name of string to add.
 ## @param VALUE Value of string to add.
 ## @param COMMENT Comment of string to add.
-## @remarks This method can be call more than once in the same project.
-## @remarks This method must be call before target_type().
+## @remarks is_dragging_ in the same project.
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional.
 ## @par Examples
 ## ```cpp
@@ -1254,8 +1254,8 @@ endmacro()
 ## @param VALUE The value of setting to add.
 ## @remarks Application-scope settings are read only at run time.
 ## @remarks User-scope settings are read/write at run time, and their values can be changed and saved in code.
-## @remarks This method can be call more than once in the same project.
-## @remarks This method must be call before target_type().
+## @remarks is_dragging_ in the same project.
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional.
 ## @par Examples
 ## ```cpp
@@ -1290,8 +1290,8 @@ endmacro()
 
 ## @brief Adds a setting include file to current project.
 ## @param SETTIING_INCLUDE_FILE The include file to add.
-## @remarks This method can be call more than once in the same project.
-## @remarks This method must be call before target_type().
+## @remarks is_dragging_ in the same project.
+## @remarks This method must be called before target_type().
 ## @remarks This method is optional.
 ## @par Examples
 ## ```cpp
@@ -1321,9 +1321,9 @@ endmacro()
 ## @brief Adds source and header files to current project.
 ## @param ARGN Files list to add.
 ## @remarks  The path can be relative from CMAKE_CURRENT_SOURCE_DIR or absolute.
-## @remarks This method can be call more than once in the same project.
+## @remarks is_dragging_ in the same project.
 ## @remarks This method is required except container project like Solution.
-## @remarks This method must be call before target_type().
+## @remarks This method must be called before target_type().
 ## @par Examples
 ## ```cpp
 ##  cmake_minimum_required(VERSION 3.20)
