@@ -65,16 +65,6 @@ jobs:
     - name: Installing xtd
       run: cmake --build build --config ${{ matrix.build_type }} --target install
           
-    - name: List build\tests\xtd.drawing.unit_tests\${{ matrix.build_type }} files
-      run: |
-        cd build\tests\xtd.drawing.unit_tests\${{ matrix.build_type }}\
-        dir
-          
-    #- name: List build\tests\xtd.drawing.unit_tests\${{ matrix.build_type }}\resources files
-    #  run: |
-    #    cd build\tests\xtd.drawing.unit_tests\${{ matrix.build_type }}\resources\
-    #    dir
-          
     - name: Running xtd unit tests
       run: |
         cd build
