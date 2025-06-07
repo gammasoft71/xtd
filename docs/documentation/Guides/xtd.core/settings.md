@@ -39,6 +39,8 @@ setting(text xtd::string APPLICATION "\"Settings example\"")
 
 ## Settings CMake Commands
 
+### setting command
+
 * `setting(NAME TYPE SCOPE VALUE)`
   * **Description** Add setting to current project.
   * **NAME param** The name of the setting to add.This will be the name of the property in the generated static settings class `your_project::properties::settings`.
@@ -53,6 +55,8 @@ setting(text xtd::string APPLICATION "\"Settings example\"")
     * This method is optional.
   * **See** [setting command](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#AddSettingSubSection)
   * **See** [CMake commands](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html)
+
+### setting_include command
 
 * `setting_include(SETTIING_INCLUDE_FILE)`
   * **Description** Adds a setting include file to current project.
@@ -267,6 +271,22 @@ xtd settings can handle different types of parameters:
 
 * If you don't add a `setting` and `setting_include` commands to your `CMakeLists.txt` and don't add a `properties/settings.cmake` file, then xtd won't generate anything.
 * The simplified use of xtd settings is totally optional. You can use your own method.
+
+## Settings path
+
+The basic settings path can be obtained with the command [xtd::environment::get_folder_path](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a465e71972e122d4bbdaa943ae02d4cd8)([xtd::environment::special_folder::application_data](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1environment.html#a2fb2b59eded52f8745b88b44ae9e7057acd1b523034d55d13f9cfa616413be65d)).
+
+Depending on the platform, settings are stored in the following locations:
+
+| Platform | Path                                                        |
+| -------- | ----------------------------------------------------------- |
+| Windows  | %APPDATA%\company_name\product_name.ini                     |
+| macOS    | ~/Library/Preferences/company_name/product_name Preferences |
+| Linux    | ~/.config/company_name/product_name.conf                    |
+
+The `product_name`` is defined by the [xtd::reflection::assembly::product()](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1reflection_1_1assembly.html#acc64f16d31b1632a25ff055c119097de) property of the [xtd::reflection::assembly::get_executing_assembly()](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1reflection_1_1assembly.html#a5446b68522b77fb9bd7bdc4d64a96bf7) assembly if it’s not empty; otherwise, it defaults to the filename of the first argument passed to main.
+
+The `company_name` is defined by the [xtd::reflection::assembly::company()](https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1reflection_1_1assembly.html#a8f01c13a829529cbe2487da5f89479d9) property of the same assembly if not empty; otherwise, it defaults to the same value as `product_name`.
 
 ## Examples
 
