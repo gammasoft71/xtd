@@ -269,7 +269,7 @@ xtd settings can handle different types of parameters:
 
 ## Remarks
 
-* If you don't add a [rsetting](#setting) and [setting_include](#setting-include) commands to your `CMakeLists.txt` and don't add a `properties/settings.cmake` file, then xtd won't generate anything.
+* If you don't add a [setting](#setting) and [setting_include](#setting-include) commands to your `CMakeLists.txt` and don't add a `properties/settings.cmake` file, then xtd won't generate anything.
 * The simplified use of xtd settings is totally optional. You can use your own method.
 
 ## Settings path
