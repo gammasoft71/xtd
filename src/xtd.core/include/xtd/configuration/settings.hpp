@@ -194,7 +194,7 @@ namespace xtd {
       /// @remarks The basic settings path can be obtained with the command xtd::environment::get_folder_path (xtd::environment::special_folder::application_data).
       /// @remarks Depending on the platform, settings are stored in the following locations:
       /// @remarks
-      /// | Platform | Path                                                        |
+      /// | Platform | Path                                                         |
       /// | -------- | ----------------------------------------------------------- |
       /// | Windows  | %APPDATA%\company_name\product_name.ini                     |
       /// | macOS    | ~/Library/Preferences/company_name/product_name Preferences |
