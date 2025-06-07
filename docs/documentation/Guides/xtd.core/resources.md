@@ -44,11 +44,11 @@ resource(sound "resources/sound.wav")
 
 * `resource(NAME FILE)`
   * **Description** Add resources to current project.
-  * **NAME param** The resource name to add. I t will be the name of the property resource in the generated static class static resources class `your_project::properties::resources`.
+  * **NAME param** The resource name to add. This will be the name of the property in the generated static resources class `your_project::properties::resources`.
   * **FILE param** The resource file path.
   * **remarks**
-    * This method can be call more than once in the same project.
-    * This method must be call before target_type().
+    * This method can be called multiple times in the same project.
+    * This method must be called before target_type().
     * This method is optional.
   * **See** [resource command](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#AddResourcesSubSection)
   * **See** [CMake commands](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html)
