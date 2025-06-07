@@ -11,7 +11,7 @@ Through an automatically-generated static class, you can access your resources w
 In general, the best way to add resources is to create a `resources` folder next to the `src` folder. Copy your resources files into this folder.
 Then, using `CMake` commands specific to `xtd`, simply describe the resources to be added to your application.
 
-Although you can add the `resource` command (which is the only command for adding a resource) in your `CMakeLists.txt` file, the best thing to do is to create a `properties` folder next to the `src` folder and describe your resources in the `resources.cmake` file.
+Although you can add the [resource](#resource) command (which is the only command for adding a resource) in your `CMakeLists.txt` file, the best thing to do is to create a `properties` folder next to the `src` folder and describe your resources in the `resources.cmake` file.
 When CMake generates your xtd project, the `properties/resources.cmake` file will be detected automatically.
 
 Below is an example of the `properties/resources.cmake` file with some specific CMake commands to describe your resources.
@@ -42,7 +42,9 @@ resource(sound "resources/sound.wav")
 
 ## Resources CMake Commands
 
-* `resource(NAME FILE)`
+### resource
+
+`resource(NAME FILE)`
   * **Description** Add resources to current project.
   * **NAME param** The resource name to add. This will be the name of the property in the generated static resources class `your_project::properties::resources`.
   * **FILE param** The resource file path.
@@ -251,7 +253,7 @@ xtd resources can handle different types of resources: audio, icons, images and 
 
 * If you add a resource whose extension is not known, the resource will automatically be converted to an array of bytes `xtd::array<xtd::byte>`.
 * If you pass an invalid filename or a checmin that is erroneous or not present, project generation will fail on the problematic line.
-* If you don't add a `resource` command to your `CMakeLists.txt` and don't add a `properties/resources.cmake` file, then xtd won't generate anything.
+* If you don't add a [resource](#resource) command to your `CMakeLists.txt` and don't add a `properties/resources.cmake` file, then xtd won't generate anything.
 * The simplified use of xtd resources is totally optional. You can use your own method.
 
 ## Examples
