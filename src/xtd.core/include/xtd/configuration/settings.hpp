@@ -21,11 +21,11 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core configuration
-    /// @remarks The basic settings path can be obtained with the command : `xtd::environment::get_know_folder_path(xtd::environment::special_folder::application_data);`.
+    /// @remarks The basic settings path can be obtained with the command xtd::environment::get_folder_path (xtd::environment::special_folder::application_data).
     /// @remarks On Windows settings are stored in `/Users/($USER)/AppData/Roaming/company_name/product_name.ini` file.
     /// @remarks On macos settings are stored in `~/Library/Preferences/company_name/product_name Preferences` file.
     /// @remarks On linux settings are stored in `~/.config/company_name/product_name.conf` file.
-    /// @remarks The `product_name` is equal to the xtd::reflection::assembly::product() property of the xtd::reflection::assembly::get_executing_assembly() assembly if not empty; otherwise is equal to the filename of the first arguemnt of main.
+    /// @remarks The `product_name` is equal to the xtd::reflection::assembly::product() property of the xtd::reflection::assembly::get_executing_assembly() assembly if not empty; otherwise is equal to the filename of the first argument of main.
     /// @remarks The `company_name` is equal to the xtd::reflection::assembly::company() property of the xtd::reflection::assembly::get_executing_assembly() assembly if not empty; otherwise is equal to `product_name`.
     /// @par Examples
     /// The following code example demonstrates the use of xtd::configuration::settings class with [CMake setting commands](https://gammasoft71.github.io/xtd/reference_guides/latest/_c_make_commands.html#AddSettingSubSection).
@@ -187,11 +187,11 @@ namespace xtd {
       /// @{
       /// @brief Gets the file path of the application settings.
       /// @return The file path of the application settings.
-      /// @remarks The basic settings path can be obtained with the command : `xtd::environment::get_know_folder_path(xtd::environment::special_folder::application_data);`.
+      /// @remarks The basic settings path can be obtained with the command xtd::environment::get_folder_path (xtd::environment::special_folder::application_data).
       /// @remarks On Windows settings are stored in `/Users/($USER)/AppData/Roaming/company_name/product_name.ini` file.
       /// @remarks On macos settings are stored in `~/Library/Preferences/company_name/product_name Preferences` file.
-      /// @remarks On linux settings are stored in `~/.consig/company_name/product_name.conf` file.
-      /// @remarks The `product_name` is equal to the xtd::reflection::assembly::product() property of the xtd::reflection::assembly::get_executing_assembly() assembly if not empty; otherwise is equal to the filename of the first arguemnt of main.
+      /// @remarks On linux settings are stored in `~/.config/company_name/product_name.conf` file.
+      /// @remarks The `product_name` is equal to the xtd::reflection::assembly::product() property of the xtd::reflection::assembly::get_executing_assembly() assembly if not empty; otherwise is equal to the filename of the first argument of main.
       /// @remarks The `company_name` is equal to the xtd::reflection::assembly::company() property of the xtd::reflection::assembly::get_executing_assembly() assembly if not empty; otherwise is equal to `product_name`.
       /// @warning Don't manipulate the file yourself, otherwise the expected result may be undefined.
       const xtd::string& file_path() const noexcept;
