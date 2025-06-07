@@ -41,7 +41,10 @@ setting(text xtd::string APPLICATION "\"Settings example\"")
 
 ### setting
 
-`setting(NAME TYPE SCOPE VALUE)`
+```cmake
+setting(NAME TYPE SCOPE VALUE)
+```
+
   * **Description** Add setting to current project.
   * **NAME param** The name of the setting to add.This will be the name of the property in the generated static settings class `your_project::properties::settings`.
   * **TYPE param** The type of setting to add.
@@ -58,7 +61,10 @@ setting(text xtd::string APPLICATION "\"Settings example\"")
 
 ### setting_include
 
-`setting_include(SETTIING_INCLUDE_FILE)`
+```cmake
+setting_include(SETTIING_INCLUDE_FILE)
+```
+
   * **Description** Adds a setting include file to current project.
   * **SETTIING_INCLUDE_FILE param** The include file to add.
   * **remarks**

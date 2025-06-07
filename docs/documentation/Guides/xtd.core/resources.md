@@ -44,7 +44,10 @@ resource(sound "resources/sound.wav")
 
 ### resource
 
-`resource(NAME FILE)`
+```cmake
+resource(NAME FILE)
+```
+
   * **Description** Add resources to current project.
   * **NAME param** The resource name to add. This will be the name of the property in the generated static resources class `your_project::properties::resources`.
   * **FILE param** The resource file path.
