@@ -107,7 +107,7 @@
 /// @param MESSAGE Description message for the choice options.
 /// @param DEFAULT_OPTION The default option.
 /// @param ... Other options.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional. 
 /// @par Examples
 /// ```cpp
@@ -129,7 +129,7 @@
 /// @remarks Only effect on linux.
 /// @remarks If you don't specify the target_categories, the application has no category.
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @remarks For more inforamtion see [Desktop Entry Specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html).
 /// @par Examples
@@ -149,7 +149,7 @@
 /// @param TARGET_DEFAULT_NAMESPACE the namespace to set.
 /// @remarks If you don't specify the target_default_namespace, it will be the same of the project name.
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -169,7 +169,7 @@
 /// @remarks Only effect on linux.
 /// @remarks By default the application is registered but not visible in the general menu.
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @remarks For more inforamtion see [Desktop Entry Specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html).
 /// @par Examples
@@ -207,7 +207,7 @@
 ///   * icon256.png (256 x 256 pixels)
 ///   * icon512.png (512 x 512 pixels)
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -226,7 +226,7 @@
 /// @param TARGET_NAME the name to set.
 /// @remarks If you don't specify the target_name, it will be the same of the project name.
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -245,7 +245,7 @@
 /// @remarks Only effect on linux.
 /// @remarks By default the application is registered but not visible in GNOME or KDE menu.
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -265,7 +265,7 @@
 /// @param ARGV1 the object definition file. (optional if you use #tunit_main_ entry point for xtd unit test applications)
 /// @remarks Do not use this method of startup_(...) is present in your files or if you use standard c++ main() method.
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -312,7 +312,7 @@
 /// @brief Specifies a company name for the assembly manifest. Corresponds to AssemblyCompanyAttribute.
 /// @param ASSEMBLY_COMPANY The company name to set.
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -331,7 +331,7 @@
 /// @brief Specifies a configuration for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
 /// @param ASSEMBLY_CONFIGURATION The configuration to set.
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -350,7 +350,7 @@
 /// @brief Specifies a copyright notice for the assembly manifest. Corresponds to AssemblyCopyrightAttribute.
 /// @param ASSEMBLY_COPYRIGHT The copyright to set.
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -369,14 +369,14 @@
 /// @brief Specifies the culture for the assembly manifest. Corresponds to AssemblyConfigurationAttribute.
 /// @param ASSEMBLY_CONFIGURATION The culture to set.
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 ///
 /// @subsection AssemblyDescriptionSubSection assembly_description
 /// @brief Specifies an optional description for the assembly manifest. Corresponds to AssemblyDescriptionAttribute.
 /// @param ASSEMBLY_DESCRIPTION The description to set.
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -395,7 +395,7 @@
 /// @brief Specifies a version number that instructs the compiler to use a specific version for the Win32 file version resource. Corresponds to AssemblyFileVersionAttribute.
 /// @param ASSEMBLY_FILE_VERSION The file version to set (Major, Minor and build).
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -414,7 +414,7 @@
 /// @brief Specifies an unique GUID that identifies the assembly. When you create a project, Visual Studio generates a GUID for the assembly. Corresponds to Guid.
 /// @param ASSEMBLY_GUID The guid to set.
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -433,7 +433,7 @@
 /// @brief Specifies a product name for the assembly manifest. Corresponds to AssemblyProductAttribute.
 /// @param ASSEMBLY_PRODUCT The product name to set.
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -452,7 +452,7 @@
 /// @brief Specifies a title for the assembly manifest. Corresponds to AssemblyTitleAttribute.
 /// @param ASSEMBLY_TITLE The title to set.
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -471,14 +471,14 @@
 /// @brief Specifies a trademark for the assembly manifest. Corresponds to AssemblyTrademarkAttribute.
 /// @param ASSEMBLY_TRADEMARK The trademark to set.
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 ///
 /// @subsection AssemblyVersionSubSection assembly_version
 /// @brief Specifies the version of the assembly. Corresponds to AssemblyVersionAttribute.
 /// @param ASSEMBLY_FILE_VERSION The version to set (Major, Minor and build).
 /// @remarks Call only once by project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -518,7 +518,7 @@
 /// @brief Installs include directories.
 /// @param ARGN Include directories to install.
 /// @remarks This method is required for install package.
-/// @remarks This method can be call more than once in the same project.
+/// @remarks is_dragging_ in the same project.
 /// @par Examples
 /// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
@@ -538,7 +538,7 @@
 /// @brief Installs include files.
 /// @param ARGN Include files to install.
 /// @remarks This method is required for install package.
-/// @remarks This method can be call more than once in the same project.
+/// @remarks is_dragging_ in the same project.
 /// @par Examples
 /// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
@@ -624,8 +624,8 @@
 /// @subsection AddIncludeDirectoriesSubSection add_include_directories
 /// @brief Add include directory to current project.
 /// @param ARGN directories to add.
-/// @remarks This method can be call more than once in the same project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ in the same project.
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -642,8 +642,8 @@
 /// @subsection AddPackagesSubSection add_packages
 /// @brief Adds, finds and loads settings from external required projects to current project.
 /// @param ARGN packages to add.
-/// @remarks This method can be call more than once in the same project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ in the same project.
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -662,9 +662,9 @@
 /// @brief Add child projects to parent project.
 /// @param ARGN projects to add.
 /// @remarks  The path can be relative from CMAKE_CURRENT_SOURCE_DIR or absolute.
-/// @remarks This method can be call more than once in the same project.
+/// @remarks is_dragging_ in the same project.
 /// @remarks This method is optional except container project like Solution.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @par Examples
 /// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
@@ -678,7 +678,7 @@
 /// @subsection AddReferencesSubSection add_references
 /// @brief Add references (libraries) to current project.
 /// @param ARGN references to add.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -699,8 +699,8 @@
 /// @param NAME resource name to add.
 /// @param FILE resource file to add.
 /// @remarks  The path can be relative from CMAKE_CURRENT_SOURCE_DIR or absolute.
-/// @remarks This method can be call more than once in the same project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ in the same project.
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -721,8 +721,8 @@
 /// @param NAME Name of string to add.
 /// @param VALUE Value of string to add.
 /// @param COMMENT Comment of string to add.
-/// @remarks This method can be call more than once in the same project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ in the same project.
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -745,8 +745,8 @@
 /// @param VALUE The value of setting to add.
 /// @remarks Application-scope settings are read only at run time.
 /// @remarks User-scope settings are read/write at run time, and their values can be changed and saved in code.
-/// @remarks This method can be call more than once in the same project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ in the same project.
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -764,8 +764,8 @@
 /// @subsection AddSettingIncludeSubSection setting_include
 /// @brief Adds a setting include file to current project.
 /// @param SETTIING_INCLUDE_FILE The include file to add.
-/// @remarks This method can be call more than once in the same project.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ in the same project.
+/// @remarks is_dragging_ target_type().
 /// @remarks This method is optional.
 /// @par Examples
 /// ```cpp
@@ -787,9 +787,9 @@
 /// @brief Add source and header files to current project.
 /// @param ARGN Files list to add.
 /// @remarks  The path can be relative from CMAKE_CURRENT_SOURCE_DIR or absolute.
-/// @remarks This method can be call more than once in the same project.
+/// @remarks is_dragging_ in the same project.
 /// @remarks This method is required except container project like Solution.
-/// @remarks This method must be call before target_type().
+/// @remarks is_dragging_ target_type().
 /// @par Examples
 /// ```cpp
 ///  cmake_minimum_required(VERSION 3.20)
