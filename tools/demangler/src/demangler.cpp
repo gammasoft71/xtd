@@ -1,0 +1,78 @@
+#include <xtd/io/stream_reader>
+#include <xtd/io/stream_writer>
+#include <xtd/console>
+#include <xtd/environment>
+#include <xtd/guid>
+#include <xtd/startup>
+
+using namespace xtd;
+
+namespace demangler {
+  class program final static_ {
+  public:
+    static auto main(const argument_collection& args) {
+      auto input_file = string::empty_string;
+      auto output_file = string::empty_string;
+      auto show_help = false;
+      auto show_version = false;
+      if (!process_arguments(args, input_file, output_file, show_version, show_help)) {
+        console::write_line(get_error());
+        return as<int>(exit_status::failure);
+      }
+      
+      if (show_version) {
+        console::write_line(get_version());
+        return as<int>(exit_status::success);
+      }
+      
+      if (show_help) {
+        console::write_line("{0}{1}{1}{2}", get_version(), environment::new_line(), get_usage());
+        return as<int>(exit_status::success);
+      }
+      
+      auto sr = io::stream_reader(input_file);
+      auto sw = ptr<io::stream_writer> {};
+      if (!output_file.empty()) sw = new_ptr<io::stream_writer>(output_file);
+      while (!sr.end_of_stream()) {
+        auto str = string::demangle(sr.read_line());
+        if (sw) sw->write_line(str);
+        console::write_line(str);
+      }
+      return as<int>(exit_status::success);
+    }
+    
+  private:
+    static auto get_error() noexcept -> string {
+      return "demangler : invalid params\n"
+        "Try 'demangler --help' for more information.";
+    }
+    
+    static auto get_usage() noexcept -> string {
+      return "Usage\n"
+        "  demangler stack_trace_file\n"
+        "\n"
+        "-v, --version : Shows version information.\n"
+        "-h, --help    : Shows this help page.";
+    }
+    
+    static auto get_version() noexcept -> string {
+      return string::format("demangler version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
+    }
+    
+    static auto process_arguments(const array<string>& args, string& input_file, string& output_file, bool& show_version, bool& show_help) noexcept -> bool {
+      try {
+        for (auto index = 0_z; index < args.size(); index += 1)
+          if (args[index] == "-v" || args[index] == "--version") show_version = true;
+          else if (args[index] == "-h" || args[index] == "--help") show_help = true;
+          else if ((args[index] == "-o" || args[index] == "--output") && index < args.size()) output_file = args[++index];
+          else input_file = args[index];
+        
+        return show_help || show_version || !input_file.empty();
+      } catch(...) {
+        return false;
+      }
+    }
+  };
+}
+
+startup_(demangler::program::main);

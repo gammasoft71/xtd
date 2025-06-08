@@ -7,6 +7,7 @@ include("../scripts/cmake/xtd_version.cmake")
 
 # Add projects
 add_projects(
+  demangler
   guidgen
   sleepfor
   set_environment_variable
