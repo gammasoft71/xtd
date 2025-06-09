@@ -1,8 +1,8 @@
 /// @file
-/// @brief Contains xtd::text::string_builder alias.
+/// @brief Contains xtd::text::ustring_builder alias.
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
-#include "basic_string_builder.hpp"
+#include "string_builder.hpp"
 
 /// @brief The xtd namespace contains all fundamental classes to access Hardware, Os, System, and more.
 namespace xtd {
@@ -14,8 +14,9 @@ namespace xtd {
     /// @par Library
     /// xtd.core
     /// @ingroup xtd_core system text strings
+    /// @remarks xtd::text::ustring_builder is an alias on xtd::text::string_builder.
     /// @remarks xtd::text::string_builder class represents a string-like object whose value is a mutable sequence of characters.
     /// @remarks xtd::text::string_builder implements [std::string](https://en.cppreference.com/w/cpp/string/basic_string) and therefore offers the full API of [std::string](https://en.cppreference.com/w/cpp/string/basic_string).
-    using string_builder = xtd::text::basic_string_builder<char>;
+    using ustring_builder = xtd::text::string_builder;
   }
 }
