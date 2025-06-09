@@ -22,4 +22,4 @@ Displays information about the keys entered.
 
 ______________________________________________________________________________________________
 
-© 2024 Gammasoft.
+© 2025 Gammasoft.
