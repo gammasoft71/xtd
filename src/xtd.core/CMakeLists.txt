@@ -569,6 +569,8 @@ add_sources(
   "include/xtd/uri_template_match_exception"
   "include/xtd/using.hpp"
   "include/xtd/using"
+  "include/xtd/ustring.hpp"
+  "include/xtd/ustring"
   "include/xtd/version.hpp"
   "include/xtd/version"
   "include/xtd/wchar.hpp"
