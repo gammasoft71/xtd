@@ -325,7 +325,6 @@ namespace xtd::collections::generic::tests {
       
       delegate<void()> {[&] {
         lock_ (synchronized_items.sync_root()) {
-          threading::thread::sleep(10);
           synchronized_items.add(1);
           synchronized_items.add(2);
           synchronized_items.add(3);
