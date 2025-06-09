@@ -211,6 +211,7 @@
 #include "text/u16string_builder.hpp"
 #include "text/u32string_builder.hpp"
 #include "text/u8string_builder.hpp"
+#include "text/ustring_builder.hpp"
 #include "text/wstring_builder.hpp"
 #include "threading/tasks/task_canceled_exception.hpp"
 #include "threading/abandoned_mutex_exception.hpp"

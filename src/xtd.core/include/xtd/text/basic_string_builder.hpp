@@ -22,7 +22,7 @@ namespace xtd {
     /// xtd.core
     /// @ingroup xtd_core system text strings
     /// @remarks xtd::text::basic_string_builder class represents a string-like object whose value is a mutable sequence of characters.
-    /// @remarks xtd::text::basic_string_builder implements [std::basic_string<char>](https://en.cppreference.com/w/cpp/basic_string_builder/basic_string_builder) and therefore offers the full API of std::basic_string.
+    /// @remarks xtd::text::basic_string_builder implements [std::basic_string<char>](https://en.cppreference.com/w/cpp/basic_string_builder/basic_string_builder) and therefore offers the full API of [std::basic_string<char>](https://en.cppreference.com/w/cpp/basic_string_builder/basic_string_builder).
     /// @remarks Several aliases for common character types are provided:
     /// @remarks
     /// | Type                         | Definition                                    |
