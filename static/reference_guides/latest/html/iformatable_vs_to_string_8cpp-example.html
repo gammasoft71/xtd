@@ -82,7 +82,7 @@ $(function() {
   <div class="headertitle"><div class="title">iformatable_vs_to_string.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<p>Shows how to use <a class="el" href="classxtd_1_1iformatable.html" title="Provides functionality to format the value of an object into a string representation.">xtd::iformatable</a> interface and <a class="el" href="namespacextd.html#ad814a51b0883527224a14758b27884f2" title="Converts a signed integer to xtd::string.">xtd::to_string</a> method.</p>
+<p>Shows how to use <a class="el" href="classxtd_1_1iformatable.html" title="Provides functionality to format the value of an object into a string representation.">xtd::iformatable</a> interface and <a class="el" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776" title="Converts a signed integer to xtd::string.">xtd::to_string</a> method.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/console&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/environment&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;xtd/foreground_color&gt;</span></div>
@@ -110,8 +110,8 @@ $(function() {
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">explicit</span> foo2(<span class="keywordtype">int</span> value) : value_ {value} {}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#ad814a51b0883527224a14758b27884f2">to_string</a>() const noexcept {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{}&quot;</span>, value_);}</div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#ad814a51b0883527224a14758b27884f2">to_string</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; format, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const </span>{<span class="keywordflow">return</span> string::format(string::format(<span class="stringliteral">&quot;{{:{}}}&quot;</span>, format), value_);}</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">to_string</a>() const noexcept {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{}&quot;</span>, value_);}</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">to_string</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; format, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const </span>{<span class="keywordflow">return</span> string::format(string::format(<span class="stringliteral">&quot;{{:{}}}&quot;</span>, format), value_);}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">int</span> value_ = 0;</div>
@@ -119,7 +119,7 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="comment">// xtd::to_string specialisation for foo2 class.</span></div>
 <div class="line"><span class="keyword">template</span>&lt;&gt;</div>
-<div class="line">std::string <a id="a0" name="a0"></a><a class="code hl_function" href="namespacextd.html#ad814a51b0883527224a14758b27884f2">xtd::to_string</a>(<span class="keyword">const</span> foo2&amp; value, <span class="keyword">const</span> std::string&amp; format, <span class="keyword">const</span> std::locale&amp; loc) {<span class="keywordflow">return</span> value.to_string(format, loc);}</div>
+<div class="line">std::string <a id="a0" name="a0"></a><a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">xtd::to_string</a>(<span class="keyword">const</span> foo2&amp; value, <span class="keyword">const</span> std::string&amp; format, <span class="keyword">const</span> std::locale&amp; loc) {<span class="keywordflow">return</span> value.to_string(format, loc);}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The following class which inherits from `xtd::iformatable` works correctly with the `xtd::console::write_line` method,</span></div>
 <div class="line"><span class="comment">// and generates the invalid result &quot;(unregistered)&quot; with output stream.</span></div>
@@ -128,8 +128,8 @@ $(function() {
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">explicit</span> foo3(<span class="keywordtype">int</span> value) : value_ {value} {}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#ad814a51b0883527224a14758b27884f2">to_string</a>() const noexcept {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{}&quot;</span>, value_);}</div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#ad814a51b0883527224a14758b27884f2">to_string</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; format, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const override </span>{<span class="keywordflow">return</span> string::format(string::format(<span class="stringliteral">&quot;{{:{}}}&quot;</span>, format), value_);}</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">to_string</a>() const noexcept {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{}&quot;</span>, value_);}</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">to_string</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; format, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const override </span>{<span class="keywordflow">return</span> string::format(string::format(<span class="stringliteral">&quot;{{:{}}}&quot;</span>, format), value_);}</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">int</span> value_ = 0;</div>
@@ -141,8 +141,8 @@ $(function() {
 <div class="line"><span class="keyword">class </span>foo4 : <span class="keyword">public</span> <a id="_a2" name="_a2"></a><a class="code hl_class" href="classxtd_1_1object.html">object</a> {</div>
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">explicit</span> foo4(<span class="keywordtype">int</span> value) : value_ {value} {}</div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#ad814a51b0883527224a14758b27884f2">to_string</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{}&quot;</span>, value_);}</div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#ad814a51b0883527224a14758b27884f2">to_string</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; format, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const </span>{<span class="keywordflow">return</span> string::format(string::format(<span class="stringliteral">&quot;{{:{}}}&quot;</span>, format), value_);}</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">to_string</a>() const noexcept<span class="keyword"> override </span>{<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{}&quot;</span>, value_);}</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">to_string</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; format, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const </span>{<span class="keywordflow">return</span> string::format(string::format(<span class="stringliteral">&quot;{{:{}}}&quot;</span>, format), value_);}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">int</span> value_ = 0;</div>
@@ -155,8 +155,8 @@ $(function() {
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">explicit</span> foo5(<span class="keywordtype">int</span> value) : value_ {value} {}</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#ad814a51b0883527224a14758b27884f2">to_string</a>() const noexcept {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{}&quot;</span>, value_);}</div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#ad814a51b0883527224a14758b27884f2">to_string</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; format, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const override </span>{<span class="keywordflow">return</span> string::format(string::format(<span class="stringliteral">&quot;{{:{}}}&quot;</span>, format), value_);}</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">to_string</a>() const noexcept {<span class="keywordflow">return</span> string::format(<span class="stringliteral">&quot;{}&quot;</span>, value_);}</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">to_string</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; format, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const override </span>{<span class="keywordflow">return</span> string::format(string::format(<span class="stringliteral">&quot;{{:{}}}&quot;</span>, format), value_);}</div>
 <div class="line"> </div>
 <div class="line">  <span class="keyword">friend</span> std::ostream&amp; operator &lt;&lt;(std::ostream&amp; stream, <span class="keyword">const</span> foo5&amp; value) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">stream</a> &lt;&lt; value.to_string(<span class="stringliteral">&quot;&quot;</span>, std::locale {});}</div>
 <div class="line">  </div>
@@ -171,8 +171,8 @@ $(function() {
 <div class="line"><span class="keyword">public</span>:</div>
 <div class="line">  <span class="keyword">explicit</span> foo6(<span class="keywordtype">int</span> value) : value_ {value} {}</div>
 <div class="line">  </div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#ad814a51b0883527224a14758b27884f2">to_string</a>() const noexcept {<span class="keywordflow">return</span> <a class="code hl_function" href="namespacextd.html#ad814a51b0883527224a14758b27884f2">to_string</a>(<span class="stringliteral">&quot;&quot;</span>, std::locale {});}</div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#ad814a51b0883527224a14758b27884f2">to_string</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; format, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const </span>{<span class="keywordflow">return</span> string::format(string::format(<span class="stringliteral">&quot;{{:{}}}&quot;</span>, format), value_);}</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">to_string</a>() const noexcept {<span class="keywordflow">return</span> <a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">to_string</a>(<span class="stringliteral">&quot;&quot;</span>, std::locale {});}</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">to_string</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; format, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const </span>{<span class="keywordflow">return</span> string::format(string::format(<span class="stringliteral">&quot;{{:{}}}&quot;</span>, format), value_);}</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">friend</span> std::ostream&amp; operator &lt;&lt;(std::ostream&amp; stream, <span class="keyword">const</span> foo6&amp; value) {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">stream</a> &lt;&lt; value.to_string();}</div>
 <div class="line">  </div>
@@ -182,7 +182,7 @@ $(function() {
 <div class="line"> </div>
 <div class="line"><span class="comment">// xtd::to_string specialisation for foo6 class.</span></div>
 <div class="line"><span class="keyword">template</span>&lt;&gt;</div>
-<div class="line">std::string <a class="code hl_function" href="namespacextd.html#ad814a51b0883527224a14758b27884f2">xtd::to_string</a>(<span class="keyword">const</span> foo6&amp; value, <span class="keyword">const</span> std::string&amp; format, <span class="keyword">const</span> std::locale&amp; loc) {<span class="keywordflow">return</span> value.to_string(format, loc);}</div>
+<div class="line">std::string <a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">xtd::to_string</a>(<span class="keyword">const</span> foo6&amp; value, <span class="keyword">const</span> std::string&amp; format, <span class="keyword">const</span> std::locale&amp; loc) {<span class="keywordflow">return</span> value.to_string(format, loc);}</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The following class which inherits from `xtd::object` and `xtd::iformatable` works correctly with the `xtd::console::write_line` method</span></div>
 <div class="line"><span class="comment">// and with output stream.</span></div>
@@ -192,7 +192,7 @@ $(function() {
 <div class="line">  <span class="keyword">explicit</span> foo7(<span class="keywordtype">int</span> value) : value_ {value} {}</div>
 <div class="line">  </div>
 <div class="line">  <span class="keyword">using </span>object::to_string;</div>
-<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#ad814a51b0883527224a14758b27884f2">to_string</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; format, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const override </span>{<span class="keywordflow">return</span> string::format(string::format(<span class="stringliteral">&quot;{{:{}}}&quot;</span>, format), value_);}</div>
+<div class="line">  <span class="keywordtype">string</span> <a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">to_string</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; format, <span class="keyword">const</span> std::locale&amp; loc)<span class="keyword"> const override </span>{<span class="keywordflow">return</span> string::format(string::format(<span class="stringliteral">&quot;{{:{}}}&quot;</span>, format), value_);}</div>
 <div class="line">  </div>
 <div class="line"><span class="keyword">private</span>:</div>
 <div class="line">  <span class="keywordtype">int</span> value_ = 0;</div>
@@ -466,12 +466,12 @@ $(function() {
 <div class="ttc" id="agroup__xtd__core_html_ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32"><div class="ttname"><a href="group__xtd__core.html#ggad94b2f43c7550180321e0ac4b02a4ff2ae1671797c52e15f763380b45e841ec32">xtd::console_key::e</a></div><div class="ttdeci">@ e</div><div class="ttdoc">The E key.</div></div>
 <div class="ttc" id="agroup__xtd__core_html_ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b"><div class="ttname"><a href="group__xtd__core.html#ggaf6de7ef4df1f6e61afe1a90c441b6598af7b44cfafd5c52223d5498196c8a2e7b">xtd::net::sockets::socket_type::stream</a></div><div class="ttdeci">@ stream</div><div class="ttdoc">Supports reliable, two-way, connection-based byte streams without the duplication of data and without...</div></div>
 <div class="ttc" id="anamespacextd_html"><div class="ttname"><a href="namespacextd.html">xtd</a></div><div class="ttdoc">The xtd namespace contains all fundamental classes to access Hardware, Os, System,...</div><div class="ttdef"><b>Definition</b> abstract.hpp:8</div></div>
-<div class="ttc" id="anamespacextd_html_ad814a51b0883527224a14758b27884f2"><div class="ttname"><a href="namespacextd.html#ad814a51b0883527224a14758b27884f2">xtd::to_string</a></div><div class="ttdeci">string to_string(int val)</div><div class="ttdoc">Converts a signed integer to xtd::string.</div></div>
+<div class="ttc" id="anamespacextd_html_a513380c9aac7fdd5eefd7697e2cd3776"><div class="ttname"><a href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">xtd::to_string</a></div><div class="ttdeci">xtd::string to_string(int val)</div><div class="ttdoc">Converts a signed integer to xtd::string.</div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 7 2025 13:58:36 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jun 9 2025 12:15:58 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>

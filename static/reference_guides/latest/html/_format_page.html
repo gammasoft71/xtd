@@ -122,15 +122,15 @@ Formatting</h2>
 <li>Defining format specifiers that enable the string representation of an object’s value to take multiple forms. For example, the "X" format specifier in the following statement converts an integer to the string representation of a hexadecimal value.</li>
 </ul>
 <div class="fragment"><div class="line"><span class="keywordtype">int</span> integer_value = 60312;</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<a class="code hl_function" href="namespacextd.html#ad814a51b0883527224a14758b27884f2">xtd::to_string</a>(integer_value, <span class="stringliteral">&quot;X&quot;</span>));   <span class="comment">// Displays EB98.</span></div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">xtd::to_string</a>(integer_value, <span class="stringliteral">&quot;X&quot;</span>));   <span class="comment">// Displays EB98.</span></div>
 <div class="ttc" id="aclassxtd_1_1console_html_ae0ccd7fef284ccda33a88576c8a35a37"><div class="ttname"><a href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a></div><div class="ttdeci">static void write_line()</div><div class="ttdoc">Writes the current line terminator to the standard output stream using the specified format informati...</div></div>
-<div class="ttc" id="anamespacextd_html_ad814a51b0883527224a14758b27884f2"><div class="ttname"><a href="namespacextd.html#ad814a51b0883527224a14758b27884f2">xtd::to_string</a></div><div class="ttdeci">string to_string(int val)</div><div class="ttdoc">Converts a signed integer to xtd::string.</div></div>
+<div class="ttc" id="anamespacextd_html_a513380c9aac7fdd5eefd7697e2cd3776"><div class="ttname"><a href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">xtd::to_string</a></div><div class="ttdeci">xtd::string to_string(int val)</div><div class="ttdoc">Converts a signed integer to xtd::string.</div></div>
 </div><!-- fragment --><p>For more information about format specifiers, see the ToStringMethodAndFormatStringsSection section.</p>
 <ul>
 <li>Using format providers to take advantage of the formatting conventions of a specific culture. For example, the following statement displays a currency value by using the formatting conventions of the en-US culture.</li>
 </ul>
 <div class="fragment"><div class="line"><span class="keywordtype">double</span> cost = 1632.54;</div>
-<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<a class="code hl_function" href="namespacextd.html#ad814a51b0883527224a14758b27884f2">xtd::to_string</a>(cost, <span class="stringliteral">&quot;C&quot;</span>, std::locale(<span class="stringliteral">&quot;en_US.UTF-8&quot;</span>)));</div>
+<div class="line"><a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<a class="code hl_function" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776">xtd::to_string</a>(cost, <span class="stringliteral">&quot;C&quot;</span>, std::locale(<span class="stringliteral">&quot;en_US.UTF-8&quot;</span>)));</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">// The example displays the following output:</span></div>
 <div class="line"><span class="comment">//</span></div>
@@ -253,7 +253,7 @@ Escaping Braces</h3>
 <div class="line"><span class="comment">// {6324}</span></div>
 </div><!-- fragment --><h2><a class="anchor" id="CodeExamplesSection"></a>
 Code Examples</h2>
-<p>The following example shows one string created using composite formatting and another created using <a class="el" href="namespacextd.html#ad814a51b0883527224a14758b27884f2" title="Converts a signed integer to xtd::string.">xtd::to_string</a> method. Both types of formatting produce equivalent results.</p>
+<p>The following example shows one string created using composite formatting and another created using <a class="el" href="namespacextd.html#a513380c9aac7fdd5eefd7697e2cd3776" title="Converts a signed integer to xtd::string.">xtd::to_string</a> method. Both types of formatting produce equivalent results.</p>
 <div class="fragment"><div class="line">std::string format_string1 = <a class="code hl_function" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455">xtd::string::format</a>(<span class="stringliteral">&quot;0:X4&quot;</span>, std::numeric_limits&lt;short&gt;::max());</div>
 <div class="line">std::string format_string2 = xtd::to_ustring::format(std::numeric_limits&lt;short&gt;::max(), <span class="stringliteral">&quot;X4&quot;</span>);</div>
 </div><!-- fragment --><p><a class="el" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37" title="Writes the current line terminator to the standard output stream using the specified format informati...">xtd::console::write_line</a> exposes the same functionality as <a class="el" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455" title="Writes the text representation of the specified arguments list, to string using the specified format ...">xtd::string::format</a>. The only difference between the two methods is that <a class="el" href="group__format__parse.html#ga591487f7c52877614fd80f43a332d455" title="Writes the text representation of the specified arguments list, to string using the specified format ...">xtd::string::format</a> returns its result as a string, while <a class="el" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37" title="Writes the current line terminator to the standard output stream using the specified format informati...">xtd::console::write_line</a> writes the result to the output stream (std::cout) associated with the console object. The following example uses the <a class="el" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37" title="Writes the current line terminator to the standard output stream using the specified format informati...">xtd::console::write_line</a> method to format the value of my_int to a currency value.</p>
@@ -308,7 +308,7 @@ Numeric format</h1>
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Jun 7 2025 13:58:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Mon Jun 9 2025 12:16:05 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
