@@ -505,6 +505,7 @@
 #include "uri_partial.hpp"
 #include "uri_template_match_exception.hpp"
 #include "using.hpp"
+#include "ustring.hpp"
 #include "version.hpp"
 #include "wchar.hpp"
 #include "wchar_object.hpp"
