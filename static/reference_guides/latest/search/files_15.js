@@ -43,5 +43,6 @@ var searchData=
   ['user_5fcontrol_5frenderer_2ehpp_40',['user_control_renderer.hpp',['../user__control__renderer_8hpp.html',1,'']]],
   ['user_5fcontrol_5fstate_2ehpp_41',['user_control_state.hpp',['../user__control__state_8hpp.html',1,'']]],
   ['using_2ehpp_42',['using.hpp',['../using_8hpp.html',1,'']]],
-  ['ustring_2ehpp_43',['ustring.hpp',['../ustring_8hpp.html',1,'']]]
+  ['ustring_2ehpp_43',['ustring.hpp',['../ustring_8hpp.html',1,'']]],
+  ['ustring_5fbuilder_2ehpp_44',['ustring_builder.hpp',['../ustring__builder_8hpp.html',1,'']]]
 ];
