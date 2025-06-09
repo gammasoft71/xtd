@@ -13,9 +13,10 @@ namespace demangler {
     static auto main(const argument_collection& args) {
       auto input_file = string::empty_string;
       auto output_file = string::empty_string;
+      auto quiet = false;
       auto show_help = false;
       auto show_version = false;
-      if (!process_arguments(args, input_file, output_file, show_version, show_help)) {
+      if (!process_arguments(args, input_file, output_file, quiet, show_version, show_help)) {
         console::write_line(get_error());
         return as<int>(exit_status::failure);
       }
@@ -34,9 +35,12 @@ namespace demangler {
       auto sw = ptr<io::stream_writer> {};
       if (!output_file.empty()) sw = new_ptr<io::stream_writer>(output_file);
       while (!sr.end_of_stream()) {
-        auto str = string::demangle(sr.read_line());
+        auto words = sr.read_line().split(' ');
+        for (auto& word : words)
+          word = string::demangle(word);
+        auto str = string::join(" ", words);
         if (sw) sw->write_line(str);
-        console::write_line(str);
+        if (!quiet) console::write_line(str);
       }
       return as<int>(exit_status::success);
     }
@@ -49,8 +53,10 @@ namespace demangler {
     
     static auto get_usage() noexcept -> string {
       return "Usage\n"
-        "  demangler stack_trace_file\n"
+        "  demangler stack_trace_file [–o output_demangled_file]\n"
         "\n"
+        "-o, --output  : Write result in output_demangled_file.\n"
+        "-q, --quiet   : Do not write result on stdout.\n"
         "-v, --version : Shows version information.\n"
         "-h, --help    : Shows this help page.";
     }
@@ -59,12 +65,13 @@ namespace demangler {
       return string::format("demangler version {}, (c) {:L} by Gammasoft", environment::version(), date_time::now());
     }
     
-    static auto process_arguments(const array<string>& args, string& input_file, string& output_file, bool& show_version, bool& show_help) noexcept -> bool {
+    static auto process_arguments(const array<string>& args, string& input_file, string& output_file, bool& quiet, bool& show_version, bool& show_help) noexcept -> bool {
       try {
         for (auto index = 0_z; index < args.size(); index += 1)
           if (args[index] == "-v" || args[index] == "--version") show_version = true;
           else if (args[index] == "-h" || args[index] == "--help") show_help = true;
           else if ((args[index] == "-o" || args[index] == "--output") && index < args.size()) output_file = args[++index];
+          else if ((args[index] == "-q" || args[index] == "--quiet")) quiet = true;
           else input_file = args[index];
         
         return show_help || show_version || !input_file.empty();
