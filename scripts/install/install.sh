@@ -37,6 +37,8 @@ if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
   echo "  Operating System is" $OSTYPE;
 elif [[ "$OSTYPE" == "Darwin" ]]; then
   echo "  Operating System is macOS";
+elif [[ "$OSTYPE" == "Fedora Linux" ]]; then
+  echo "  Operating System is Fedora Linux"; 
 elif [[ "$OSTYPE" == "FreeBSD" ]]; then
   echo "  Operating System is FreeBSD"; 
 elif [[ "$OSTYPE" == "Linux" ]]; then
