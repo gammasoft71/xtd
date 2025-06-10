@@ -27,23 +27,21 @@ echo ""
 #_______________________________________________________________________________
 #                                                   Detecting linux distribution
 echo "Detecting operating system..."
-OSTYPE=`uname`
-if [[ "$OSTYPE" == "Linux" ]]; then
-  OSTYPE=`cat /etc/*-release | grep -w 'NAME='`;
+OS_NAME=`uname`
+if [[ "$OS_NAME" == "Linux" ]]; then
+  OS_NAME=`cat /etc/*-release | grep -w 'NAME='`;
 fi
 
-if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then
-  OSTYPE="$MSYSTEM"
-  echo "  Operating System is" $OSTYPE;
-elif [[ "$OSTYPE" == "Darwin" ]]; then
+if [[ "$OS_NAME" == *"MSYS"* ]] || [[ "$OS_NAME" == *"MINGW64"* ]]; then
+  OS_NAME="$MSYSTEM"
+  echo "  Operating System is" $OS_NAME;
+elif [[ "$OS_NAME" == *"Darwin"* ]]; then
   echo "  Operating System is macOS";
-elif [[ "$OSTYPE" == "Fedora Linux" ]]; then
-  echo "  Operating System is Fedora Linux"; 
-elif [[ "$OSTYPE" == "FreeBSD" ]]; then
+elif [[ "$OS_NAME" == *"FreeBSD"* ]]; then
   echo "  Operating System is FreeBSD"; 
-elif [[ "$OSTYPE" == "Linux" ]]; then
+elif [[ "$OS_NAME" == *"Linux"* ]]; then
   echo "  Operating System is Linux"; 
-elif [[ "$OSTYPE" == "Haiku" ]]; then
+elif [[ "$OS_NAME" == *"Haiku"* ]]; then
   echo "  Operating System is Haiku"; 
 else
   echo "  Operating System is Unknown"
@@ -51,7 +49,7 @@ fi
 
 #_______________________________________________________________________________
 #                                                      Check the number of cores
-if [[ "$OSTYPE" == *"Darwin"* ]]; then
+if [[ "$OS_NAME" == *"Darwin"* ]]; then
   build_cores=$(sysctl -n hw.ncpu); else
   build_cores=$(nproc)
 fi
@@ -66,7 +64,7 @@ echo  "Using up to ${build_cores} build cores"
 # Add wxWdigets 3.2 or above in MINGW64 and MSYS (see https://packages.msys2.org/package/mingw-w64-x86_64-wxwidgets3.2-gtk3-libs?repo=mingw64 for more info).
 
 echo "Installing needed packages and libraries..."
-case "$OSTYPE" in
+case "$OS_NAME" in
   *"CentOS"* | *"Fedora"* | *"RedHat"*) sudo yum update; sudo yum install alsa-lib-devel cmake gtk3-devel gsound-devel gtk3-devel libuuid-devel -y;;
   "CLANGARM64") pacman -S -yy --noconfirm base-devel git mingw-w64-clang-aarch64-cmake mingw-w64-clang-aarch64-doxygen mingw-w64-clang-aarch64-gcc-compat mingw-w64-clang-aarch64-gtk3 mingw-w64-clang-aarch64-make mingw-w64-clang-aarch64-wxwidgets3.2-msw;;
   "CLANG32") pacman -S -yy --noconfirm base-devel git mingw-w64-clang-i686-cmake mingw-w64-clang-i686-doxygen mingw-w64-clang-i686-gcc-compat mingw-w64-clang-i686-gtk3 mingw-w64-clang-i686-make mingw-w64-clang-i686-wxwidgets3.2-msw;;
@@ -82,7 +80,7 @@ case "$OSTYPE" in
   "UCRT64") pacman -S -yy --noconfirm base-devel git mingw-w64-ucrt-x86_64-cmake mingw-w64-ucrt-x86_64-doxygen mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gtk3 mingw-w64-ucrt-x86_64-make mingw-w64-ucrt-x86_64-wxwidgets3.2-msw;;
 esac
 
-if [[ "$OSTYPE" == *"MSYS"* ]]; then
+if [[ "$OS_NAME" == *"MSYS"* ]]; then
   echo ""
   echo "---------------------------------------------------------------"
   echo ""
@@ -109,7 +107,7 @@ echo "cmake_install_prefix=\"$cmake_install_prefix\""
 
 #_______________________________________________________________________________
 #                                                    Check and install wxWidgets
-if [[ "$OSTYPE" != "Haiku" ]]; then
+if [[ "$OS_NAME" != "Haiku" ]]; then
   echo "Checks wxWidgets..."
   if [ -d "build" ]; then rm -rf "build"; fi
   mkdir build
@@ -143,7 +141,7 @@ mkdir Release && mkdir Debug
 pushd Release
 cmake ../.. -DCMAKE_BUILD_TYPE=Release "$@" || exit 1
 cmake --build . -- -j$build_cores || exit 1
-if [[ "$OSTYPE" == *"CLANGARM64"* ]] || [[ "$OSTYPE" == *"CLANG32"* ]] || [[ "$OSTYPE" == *"CLANG64"* ]] || [[ "$OSTYPE" == *"MINGW32"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]] || [[ "$OSTYPE" == *"UCRT64"* ]]; then
+if [[ "$OS_NAME" == *"CLANGARM64"* ]] || [[ "$OS_NAME" == *"CLANG32"* ]] || [[ "$OS_NAME" == *"CLANG64"* ]] || [[ "$OS_NAME" == *"MINGW32"* ]] || [[ "$OS_NAME" == *"MINGW64"* ]] || [[ "$OS_NAME" == *"UCRT64"* ]]; then
   cmake --build . --target install || exit 1
 else
   sudo cmake --build . --target install || exit 1
@@ -152,7 +150,7 @@ popd
 pushd Debug
 cmake ../.. -DCMAKE_BUILD_TYPE=Debug "$@" || exit 1
 cmake --build . -- -j$build_cores || exit 1
-if [[ "$OSTYPE" == *"CLANGARM64"* ]] || [[ "$OSTYPE" == *"CLANG32"* ]] || [[ "$OSTYPE" == *"CLANG64"* ]] || [[ "$OSTYPE" == *"MINGW32"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]] || [[ "$OSTYPE" == *"UCRT64"* ]]; then
+if [[ "$OS_NAME" == *"CLANGARM64"* ]] || [[ "$OS_NAME" == *"CLANG32"* ]] || [[ "$OS_NAME" == *"CLANG64"* ]] || [[ "$OS_NAME" == *"MINGW32"* ]] || [[ "$OS_NAME" == *"MINGW64"* ]] || [[ "$OS_NAME" == *"UCRT64"* ]]; then
   cmake --build . --target install || exit 1
 else
   sudo cmake --build . --target install || exit 1
@@ -162,13 +160,13 @@ popd
 
 #_______________________________________________________________________________
 #                     Create gui tools shortcut in system operating applications
-if [[ "$OSTYPE" == *"MSYS"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]]; then 
+if [[ "$OS_NAME" == *"MSYS"* ]] || [[ "$OS_NAME" == *"MINGW64"* ]]; then 
   xtd_program_path="$USERPROFILE/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/xtd"
   if [ ! -d "$xtd_program_path" ]; then mkdir -p "$xtd_program_path"; fi
   scripts/install/shortcut.sh "$USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd\keycode.lnk" "$cmake_install_prefix\xtd\bin\keycode.exe"
   scripts/install/shortcut.sh "$USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd\xtdc-gui.lnk" "$cmake_install_prefix\xtd\bin\xtdc-gui.exe"
   scripts/install/shortcut.sh "$USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\xtd\xguidgen-gui.lnk" "$cmake_install_prefix\xtd\bin\guidgen-gui.exe"
-elif [[ "$OSTYPE" == *"Darwin"* ]]; then
+elif [[ "$OS_NAME" == *"Darwin"* ]]; then
   if [ -d "/Applications/keycode" ]; then rm "/Applications/keycode"; fi
   ln -s "$cmake_install_prefix/bin/keycode.app" "/Applications/keycode"
   if [ -d "/Applications/xtdc-gui" ]; then rm "/Applications/xtdc-gui"; fi
@@ -180,20 +178,20 @@ fi
 #_______________________________________________________________________________
 #                                      Create xtd root path environment variable
 
-if [[ "$OSTYPE" == *"Darwin"* ]]; then
+if [[ "$OS_NAME" == *"Darwin"* ]]; then
   echo "export XTD_ROOT_PATH=\"$cmake_install_prefix\"" >> ~/.bash_profile
   echo "export XTD_ROOT_PATH=\"$cmake_install_prefix\"" >> ~/.zprofile
-elif [[ "$OSTYPE" == *"FreeBSD"* ]]; then
+elif [[ "$OS_NAME" == *"FreeBSD"* ]]; then
   echo "export XTD_ROOT_PATH=\"$cmake_install_prefix\"" >> ~/.cshrc
 else
   echo "export XTD_ROOT_PATH=\"$cmake_install_prefix\"" >> ~/.bashrc
 fi
 export XTD_ROOT_PATH=\"$cmake_install_prefix\"
 
-if [[ "$OSTYPE" == *"Darwin"* ]]; then
+if [[ "$OS_NAME" == *"Darwin"* ]]; then
   echo "export XTD_TOOLKIT_PATH=\"$cmake_install_prefix\"" >> ~/.bash_profile
   echo "export XTD_TOOLKIT_PATH=\"$cmake_install_prefix\"" >> ~/.zprofile
-elif [[ "$OSTYPE" == *"FreeBSD"* ]]; then
+elif [[ "$OS_NAME" == *"FreeBSD"* ]]; then
   echo "export XTD_TOOLKIT_PATH=\"$cmake_install_prefix\"" >> ~/.cshrc
 else
   echo "export XTD_TOOLKIT_PATH=\"$cmake_install_prefix\"" >> ~/.bashrc
@@ -202,7 +200,7 @@ export XTD_TOOLKIT_PATH=\"$cmake_install_prefix\"
 
 #_______________________________________________________________________________
 #                             Copy install manifest files to xtd share directory
-if [[ "$OSTYPE" == *"CLANGARM64"* ]] || [[ "$OSTYPE" == *"CLANG32"* ]] || [[ "$OSTYPE" == *"CLANG64"* ]] || [[ "$OSTYPE" == *"MINGW32"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]] || [[ "$OSTYPE" == *"UCRT64"* ]]; then
+if [[ "$OS_NAME" == *"CLANGARM64"* ]] || [[ "$OS_NAME" == *"CLANG32"* ]] || [[ "$OS_NAME" == *"CLANG64"* ]] || [[ "$OS_NAME" == *"MINGW32"* ]] || [[ "$OS_NAME" == *"MINGW64"* ]] || [[ "$OS_NAME" == *"UCRT64"* ]]; then
   if test -f build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt; then
     cp build/3rdparty/wxwidgets/build_cmake/Release/install_manifest.txt "$cmake_install_prefix/share/xtd/wxwidgets_release_install_manifest.txt"
   fi
@@ -233,9 +231,9 @@ fi
 #_______________________________________________________________________________
 #                                                                 Launch xtd-gui
 echo "Launching xtdc-gui..."
-if [[ "$OSTYPE" == *"CLANGARM64"* ]] || [[ "$OSTYPE" == *"CLANG32"* ]] || [[ "$OSTYPE" == *"CLANG64"* ]] || [[ "$OSTYPE" == *"MINGW32"* ]] || [[ "$OSTYPE" == *"MINGW64"* ]] || [[ "$OSTYPE" == *"UCRT64"* ]]; then
+if [[ "$OS_NAME" == *"CLANGARM64"* ]] || [[ "$OS_NAME" == *"CLANG32"* ]] || [[ "$OS_NAME" == *"CLANG64"* ]] || [[ "$OS_NAME" == *"MINGW32"* ]] || [[ "$OS_NAME" == *"MINGW64"* ]] || [[ "$OS_NAME" == *"UCRT64"* ]]; then
   "$cmake_install_prefix/xtd/bin/xtdc-gui.exe"
-elif [[ "$OSTYPE" == *"Darwin"* ]]; then
+elif [[ "$OS_NAME" == *"Darwin"* ]]; then
   open $cmake_install_prefix/bin/xtdc-gui.app; 
 else
   $cmake_install_prefix/bin/xtdc-gui &>/dev/null &
