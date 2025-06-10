@@ -13,7 +13,8 @@ string xtd::forms::native::toolkit::name() {
 }
 
 string xtd::forms::native::toolkit::description() {
-  return string::format("The underlying graphical toolkit is {} {}. See https://www.wxwidgets.org for more information.", xtd::drawing::native::toolkit::name(), xtd::drawing::native::toolkit::version());
+  //return string::format("The underlying graphical toolkit is {} {}. See https://www.wxwidgets.org for more information.", name(), version());
+  return "The underlying graphical toolkit is wxWidgets. See https://www.wxwidgets.org for more information.";
 }
 
 xtd::version xtd::forms::native::toolkit::version() {
