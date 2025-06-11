@@ -6,10 +6,12 @@
 /// @cond
 // Availability versions
 
-// Major 0 to infinite
-// Minor 0 to 99
-// Build 0 to 99
-// Revision 0 to 99
+// xtd version definition : major.minor[.build[.revision]]
+// * major    : 0 to infinite
+// * minor    : 0 to 99
+// * build    : 0 to 99
+// * revision : 0 to 99
+
 // For example xtd 1.2.3 (major = 1, minor = 2, build = 3 and revision = -1) :
 // #define __XTD_1_2_3__ 1020300
 
