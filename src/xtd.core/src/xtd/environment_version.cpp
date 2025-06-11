@@ -4,7 +4,7 @@
 
 #include "../include/xtd/environment.hpp"
 
-// This check verifies that the current version is defined in the availability_versions.h include file.
+// This check verifies that the current version is defined in the availability_versions.hpp include file.
 #if !defined(__XTD_0_2_0__)
 #  error "__XTD_0_2_0__ not defined"
 #endif
