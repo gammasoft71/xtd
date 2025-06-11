@@ -3,7 +3,16 @@ cmake_minimum_required(VERSION 3.20)
 ################################################################################
 # Solution
 
-project(xtd VERSION 0.2.0)
+# VERSION : major.minor[.build[.revision]]
+# * major    : 0 to infinite
+# * minor    : 0 to 99
+# * build    : 0 to 99
+# * revision : 0 to 99
+#
+# For example xtd 1.2.3 (major = 1, minor = 2, build = 3 and revision = -1)
+# project(xtd VERSION 1.2.3)
+
+project(xtd VERSION 0.2)
 
 ################################################################################
 # Options
@@ -57,6 +66,69 @@ if (XTD_USE_SYSTEM_CONTROLS)
   message(WARNING "The XTD_USE_SYSTEM_CONTROLS option can only be used for debugging.\nUse xtd::application::enable_system_controls() instead.\nSee https://gammasoft71.github.io/xtd/reference_guides/latest/classxtd_1_1forms_1_1application.html#a28ad4db693e3bf228e5f0902fdf5882a for more information")
   add_definitions(-D__XTD_USE_SYSTEM_CONTROLS__)
 endif ()
+
+################################################################################
+# PROJECT_XTD_VERSION and PROJECT_XTD_NUMRIC_VERSION definitions
+
+if (NOT PROJECT_VERSION_MAJOR AND NOT PROJECT_VERSION_MINOR)
+  message(FATAL_ERROR "PROJECT_VERSION_MAJOR is not defined. Please call project(... VERSION ...).")
+endif ()
+
+if (PROJECT_VERSION_MAJOR)
+  math(EXPR XTD_MAJOR_HI "${PROJECT_VERSION_MAJOR} / 10")
+  math(EXPR XTD_MAJOR_LO "${PROJECT_VERSION_MAJOR} % 10")
+  set(PROJECT_XTD_VERSION "${PROJECT_VERSION_MAJOR}")
+  set(PROJECT_XTD_VERSION_MAJOR ${PROJECT_VERSION_MAJOR})
+else ()
+  set (XTD_MAJOR_HI 0)
+  set (XTD_MAJOR_LO 0)
+  set(PROJECT_XTD_VERSION 0)
+  set(PROJECT_XTD_VERSION_MAJOR 0)
+endif ()
+
+if (PROJECT_VERSION_MINOR)
+  math(EXPR XTD_MINOR_HI "${PROJECT_VERSION_MINOR} / 10")
+  math(EXPR XTD_MINOR_LO "${PROJECT_VERSION_MINOR} % 10")
+  string(APPEND PROJECT_XTD_VERSION ".${PROJECT_VERSION_MINOR}")
+  set(PROJECT_XTD_VERSION_MINOR ${PROJECT_VERSION_MINOR})
+else ()
+  set (XTD_MINOR_HI 0)
+  set (XTD_MINOR_LO 0)
+  string(APPEND PROJECT_XTD_VERSION ".0")
+  set(PROJECT_XTD_VERSION_MINOR 0)
+endif ()
+  
+if (PROJECT_VERSION_PATCH)
+  math(EXPR XTD_PATCH_HI "${PROJECT_VERSION_PATCH} / 10")
+  math(EXPR XTD_PATCH_LO "${PROJECT_VERSION_PATCH} % 10")
+  string(APPEND PROJECT_XTD_VERSION ".${PROJECT_VERSION_PATCH}")
+  set(PROJECT_XTD_VERSION_BUILD ${PROJECT_VERSION_PATCH})
+else ()
+  set (XTD_PATCH_HI 0)
+  set (XTD_PATCH_LO 0)
+  string(APPEND PROJECT_XTD_VERSION ".0")
+  set(PROJECT_XTD_VERSION_BUILD 0)
+endif ()
+  
+if (PROJECT_VERSION_TWEAK)
+  math(EXPR XTD_TWEAK_HI "${PROJECT_VERSION_TWEAK} / 10")
+  math(EXPR XTD_TWEAK_LO "${PROJECT_VERSION_TWEAK} % 10")
+  string(APPEND PROJECT_XTD_VERSION ".${PROJECT_VERSION_TWEAK}")
+  set(PROJECT_XTD_VERSION_REVISION ${PROJECT_VERSION_TWEAK})
+else ()
+  set (XTD_TWEAK_HI 0)
+  set (XTD_TWEAK_LO 0)
+  set(PROJECT_XTD_VERSION_REVISION 0)
+endif ()
+
+math(EXPR PROJECT_XTD_NUMERIC_VERSION "${XTD_MAJOR_HI} * 10000000 + ${XTD_MAJOR_LO} * 1000000 + ${XTD_MINOR_HI} * 100000 + ${XTD_MINOR_LO} * 10000 + ${XTD_PATCH_HI} * 1000 + ${XTD_PATCH_LO} * 100 + ${XTD_TWEAK_HI} * 10 + ${XTD_TWEAK_LO}")
+
+set(PROJECT_XTD_VERSION ${PROJECT_XTD_VERSION} CACHE INTERNAL "Full xtd version string")
+set(PROJECT_XTD_VERSION_MAJOR ${PROJECT_XTD_VERSION_MAJOR} CACHE INTERNAL "xtd version major")
+set(PROJECT_XTD_VERSION_MINOR ${PROJECT_XTD_VERSION_MINOR} CACHE INTERNAL "xtd version minor")
+set(PROJECT_XTD_VERSION_BUILD ${PROJECT_XTD_VERSION_BUILD} CACHE INTERNAL "xtd version build")
+set(PROJECT_XTD_VERSION_REVISION ${PROJECT_XTD_VERSION_REVISION} CACHE INTERNAL "xtd version revision")
+set(PROJECT_XTD_NUMERIC_VERSION ${PROJECT_XTD_NUMERIC_VERSION} CACHE INTERNAL "Numeric xtd version")
 
 ################################################################################
 # incldue xtd cmake scripts
