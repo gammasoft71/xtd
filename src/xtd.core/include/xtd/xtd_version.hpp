@@ -9,7 +9,7 @@
 // xtd version
 
 // xtd version definition : major.minor[.build[.revision]]
-// * major    : 0 to infinite
+// * major    : 0 to 2147483647
 // * minor    : 0 to 99
 // * build    : 0 to 99
 // * revision : 0 to 99
