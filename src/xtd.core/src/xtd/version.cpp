@@ -114,3 +114,16 @@ xtd::string version::to_string(size_t field_count) const {
   if (field_count == 4) result += string::format(".{}", revision_);
   return result;
 }
+
+xtd::uint64 version::to_uint64() const {
+  if (minor_ / 100 != 0) throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  if (build_ != -1 && build_ / 100 != 0) throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+  if (revision_ != -1 && revision_ / 100 != 0) throw_helper::throws(xtd::helpers::exception_case::invalid_cast);
+
+  auto result = 0_u64;
+  result += major_ * 1000000_u64;
+  result += minor_ * 10000_u64;
+  if (build_ != -1) result += build_ * 100_u64;
+  if (revision_ != -1) result += revision_;
+  return result;
+}
