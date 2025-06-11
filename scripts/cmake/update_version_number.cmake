@@ -47,7 +47,7 @@ if (${STRING_FOUND} EQUAL -1)
     "// xtd version\n"
     "\n"
     "// xtd version definition : major.minor[.build[.revision]]\n"
-    "// * major    : 0 to infinite\n"
+    "// * major    : 0 to 2147483647\n"
     "// * minor    : 0 to 99\n"
     "// * build    : 0 to 99\n"
     "// * revision : 0 to 99\n"
