@@ -283,6 +283,9 @@ Subsequent versions of an assembly that differ only by build or revision numbers
 <tr class="memitem:af0448bffdc9f6894780d9aef120325cf" id="r_af0448bffdc9f6894780d9aef120325cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af0448bffdc9f6894780d9aef120325cf">to_string</a> (size_t field_count) const</td></tr>
 <tr class="memdesc:af0448bffdc9f6894780d9aef120325cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts the value of the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object to its equivalent <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e" title="Represents text as a sequence of UTF-8 code units.">xtd::string</a> representation. A specified count indicates the number of components to return.  <br /></td></tr>
 <tr class="separator:af0448bffdc9f6894780d9aef120325cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24da2c3d110ed497ea1a56420f739221" id="r_a24da2c3d110ed497ea1a56420f739221"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">xtd::uint64</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24da2c3d110ed497ea1a56420f739221">to_uint64</a> () const</td></tr>
+<tr class="memdesc:a24da2c3d110ed497ea1a56420f739221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the value of the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object to its equivalent <a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325" title="Represents a 64-bit unsigned integer.">xtd::uint64</a> representation.  <br /></td></tr>
+<tr class="separator:a24da2c3d110ed497ea1a56420f739221"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Public Static Methods</h2></td></tr>
 <tr class="memitem:acaec012f6d5090bbeb56fb0be343c0e4" id="r_acaec012f6d5090bbeb56fb0be343c0e4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classxtd_1_1version.html">version</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acaec012f6d5090bbeb56fb0be343c0e4">parse</a> (const <a class="el" href="group__strings.html#ga60154d7201cef3f8d0d5e241ef54b25e">xtd::string</a> &amp;input)</td></tr>
@@ -1011,6 +1014,43 @@ field_count is more than the number of components defined in the current <a clas
 
 </div>
 </div>
+<a id="a24da2c3d110ed497ea1a56420f739221" name="a24da2c3d110ed497ea1a56420f739221"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24da2c3d110ed497ea1a56420f739221">&#9670;&#160;</a></span>to_uint64()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325">xtd::uint64</a> xtd::version::to_uint64 </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert the value of the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object to its equivalent <a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325" title="Represents a 64-bit unsigned integer.">xtd::uint64</a> representation. </p>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="group__types.html#gac098a266f9daf0e7c5ced1dad47db325" title="Represents a 64-bit unsigned integer.">xtd::uint64</a> representation of the values of the major, minor, build, and revision components of the current <a class="el" href="classxtd_1_1version.html" title="Represents the version number of an assembly, operating system, or the xtd. This class cannot be inhe...">xtd::version</a> object. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">xtd::invalid_cast</td><td>if <a class="el" href="#a2eff6909a11bd61e1d6e38bda95418a9" title="Gets the value of the minor component of the version number for the current xtd::version object.">xtd::version::minor</a> or <a class="el" href="#aa7a3bfb1c5089058407f302c39dfd189" title="Gets the value of the build component of the version number for the current xtd::version object.">xtd::version::build</a> or <a class="el" href="#ae9c70a097280c1c51ecb33d13ab45dbb" title="Gets the value of the revision component of the version number for the current xtd::version object.">xtd::version::revision</a> are greater than 99. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section user"><dt>Examples</dt><dd>The following code shows how to use <a class="el" href="#a24da2c3d110ed497ea1a56420f739221" title="Convert the value of the current xtd::version object to its equivalent xtd::uint64 representation.">xtd::version::to_uint64</a> method. <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;xtd/xtd&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> main() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line">  <a class="code hl_function" href="classxtd_1_1console.html#ae0ccd7fef284ccda33a88576c8a35a37">xtd::console::write_line</a>(<span class="stringliteral">&quot;long_version = {}&quot;</span>, <a class="code hl_class" href="classxtd_1_1version.html">xtd::version</a> {1, 2, 3}.<a class="code hl_function" href="#a24da2c3d110ed497ea1a56420f739221">to_uint64</a>());</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// This code produces the following output :</span></div>
+<div class="line"><span class="comment">//</span></div>
+<div class="line"><span class="comment">// long_version = 1020300</span></div>
+<div class="ttc" id="aclassxtd_1_1version_html_a24da2c3d110ed497ea1a56420f739221"><div class="ttname"><a href="#a24da2c3d110ed497ea1a56420f739221">xtd::version::to_uint64</a></div><div class="ttdeci">xtd::uint64 to_uint64() const</div><div class="ttdoc">Convert the value of the current xtd::version object to its equivalent xtd::uint64 representation.</div></div>
+</div><!-- fragment --> </dd></dl>
+
+</div>
+</div>
 <a id="acaec012f6d5090bbeb56fb0be343c0e4" name="acaec012f6d5090bbeb56fb0be343c0e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acaec012f6d5090bbeb56fb0be343c0e4">&#9670;&#160;</a></span>parse()</h2>
 
@@ -1105,7 +1145,7 @@ where major, minor, build, and revision are the string representations of the ve
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Jun 11 2025 10:37:51 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Wed Jun 11 2025 21:34:41 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
