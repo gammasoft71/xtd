@@ -7,13 +7,15 @@
 # xtd Version
 
 file(READ src/xtd.core/src/xtd/environment_version.cpp ENVIRONMENT_VERSION_API)
-string(FIND "${ENVIRONMENT_VERSION_API}" "${XTD_VERSION}" STRING_FOUND)
+string(FIND "${ENVIRONMENT_VERSION_API}" "return xtd::version::parse(\"${XTD_VERSION}\")" STRING_FOUND)
 if (${STRING_FOUND} EQUAL -1)
   string(REPLACE "." "_" XTD_VERSION_WITH_UNDERSCORE ${XTD_VERSION})
   message(NOTICE "")
   message(NOTICE "--------------------------------")
   message(NOTICE "--- Version number changed ! ---")
   message(NOTICE "--------------------------------")
+  message(NOTICE "")
+  message(NOTICE "The new version of xtd is : ${XTD_VERSION}")
   message(NOTICE "")
   
   file(WRITE src/xtd.core/src/xtd/environment_version.cpp
@@ -57,6 +59,11 @@ if (${STRING_FOUND} EQUAL -1)
     "// #define __XTD_VERSION_BUILD__ 3\n"
     "// #define __XTD_VERSION_REVISION__ 0\n"
     "// #define __XTD_VERSION_STRING__ \"1.2.3\"\n"
+    "// #define __XTD_VERSION_FULL_STRING__ \"xtd 1.2.3\"\n"
+    "\n"
+    "// Warning\n"
+    "// These macros are defined to match other libraries and/or frameworks.\n"
+    "// But instead of using these old practices, it's better to use the xtd::environment::version property.\n"
     "\n"
     "#define __XTD_VERSION__ ${XTD_NUMERIC_VERSION}\n"
     "#define __XTD_VERSION_MAJOR__ ${XTD_VERSION_MAJOR}\n"
@@ -64,6 +71,7 @@ if (${STRING_FOUND} EQUAL -1)
     "#define __XTD_VERSION_BUILD__ ${XTD_VERSION_BUILD}\n"
     "#define __XTD_VERSION_REVISION__ ${XTD_VERSION_REVISION}\n"
     "#define __XTD_VERSION_STRING__ \"${XTD_VERSION}\"\n"
+    "#define __XTD_VERSION_FULL_STRING__ \"xtd ${XTD_VERSION}\"\n"
     "/// @endcond\n"
   )
 
