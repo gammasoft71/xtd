@@ -11,6 +11,7 @@
 #include "arithmetic_exception.h"
 #include "as.h"
 #include "async_callback.h"
+#include "availability_versions.h"
 #include "background_color.h"
 #include "beep.h"
 #include "bit_converter.h"
