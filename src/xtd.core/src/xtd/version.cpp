@@ -73,30 +73,6 @@ size version::get_hash_code() const noexcept {
   return hash_code::combine(major_, minor_, build_, revision_);
 }
 
-version version::parse(const xtd::string& input) {
-  auto rgx = std::regex {"\\."};
-  auto versions = xtd::collections::specialized::string_collection {};
-  for (auto it = std::sregex_token_iterator {input.chars().begin(), input.chars().end(), rgx, -1}, end = std::sregex_token_iterator {}; it != end; ++it)
-    versions.push_back(it->str());
-    
-  switch (versions.size()) {
-    case 2: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1])};
-    case 3: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1]), string::parse<int32>(versions[2])};
-    case 4: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1]), string::parse<int32>(versions[2]), string::parse<int32>(versions[3])};
-  }
-  
-  throw_helper::throws(exception_case::argument);;
-}
-
-bool version::try_parse(const xtd::string& input, version& result) noexcept {
-  try {
-    result = parse(input);
-    return true;
-  } catch (...) {
-    return false;
-  }
-}
-
 xtd::string version::to_string() const noexcept {
   try {
     return to_string(2 + (build_ != -1 ? 1 : 0) + (revision_ != -1 ? 1 : 0));
@@ -126,4 +102,39 @@ xtd::uint64 version::to_uint64() const {
   if (build_ != -1) result += build_ * 100_u64;
   if (revision_ != -1) result += revision_;
   return result;
+}
+
+version version::from_uint64(xtd::uint64 value) noexcept {
+  auto major = as<int32>((value / 1000000) % 1000000);
+  auto minor = as<int32>((value / 10000) % 100);
+  auto build = as<int32>((value / 100) % 100);
+  auto revision = as<int32>(value % 100);
+  
+  if (build == 0 && revision == 0) return version(major, minor);
+  if (revision == 0) return version(major, minor, build);
+  return version(major, minor, build, revision);
+}
+
+version version::parse(const xtd::string& input) {
+  auto rgx = std::regex {"\\."};
+  auto versions = xtd::collections::specialized::string_collection {};
+  for (auto it = std::sregex_token_iterator {input.chars().begin(), input.chars().end(), rgx, -1}, end = std::sregex_token_iterator {}; it != end; ++it)
+    versions.push_back(it->str());
+  
+  switch (versions.size()) {
+    case 2: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1])};
+    case 3: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1]), string::parse<int32>(versions[2])};
+    case 4: return version {string::parse<int32>(versions[0]), string::parse<int32>(versions[1]), string::parse<int32>(versions[2]), string::parse<int32>(versions[3])};
+  }
+  
+  throw_helper::throws(exception_case::argument);;
+}
+
+bool version::try_parse(const xtd::string& input, version& result) noexcept {
+  try {
+    result = parse(input);
+    return true;
+  } catch (...) {
+    return false;
+  }
 }

@@ -270,6 +270,7 @@ namespace xtd {
     /// For example, if you create xtd::version object using the constructor xtd::version(1,3,5), xtd::version::to_string(2) returns "1.3" and xtd::version::to_string(4) throws an exception.
     /// @exception xtd::argument_exception field_count is more than 4<br>-or-<br>field_count is more than the number of components defined in the current xtd::version object.
     xtd::string to_string(size_t field_count) const;
+
     /// @brief Convert the value of the current xtd::version object to its equivalent xtd::uint64 representation.
     /// @return The xtd::uint64 representation of the values of the major, minor, build, and revision components of the current xtd::version object.
     /// @exception xtd::invalid_cast if xtd::version::minor or xtd::version::build or xtd::version::revision are greater than 99.
@@ -292,6 +293,26 @@ namespace xtd {
     /// @name Public Static Methods
     
     /// @{
+    /// @brief Creates a new xtd::version object from its 64-bit integer representation.
+    /// @param value The 64-bit integer that encodes the major, minor, build, and revision components.
+    /// @return A new xtd::version instance corresponding to the specified value.
+    /// @remarks The 64-bit integer representation must follow the format: `major * 1'000'000 + minor * 10'000 + build * 100 + revision`.
+    /// @remarks Components beyond build and revision may be omitted (e.g., 1020000 is equivalent to version 1.2).
+    /// @par Examples
+    /// The following code shows how to use the from_uint64 method.
+    /// @code
+    /// #include <xtd/xtd>
+    ///
+    /// auto main() -> int {
+    ///   auto ver = xtd::version::from_uint64(1020300);
+    ///   xtd::console::write_line("version = {}", ver);
+    /// }
+    ///
+    /// // This code produces the following output :
+    /// // version = 1.2.3
+    /// @endcode
+    static version from_uint64(xtd::uint64 value) noexcept;
+
     /// @brief Converts the string representation of a version number to an equivalent Version object.
     /// @param input A string that contains a version number to convert.
     /// @return An object that is equivalent to the version number specified in the input parameter.
