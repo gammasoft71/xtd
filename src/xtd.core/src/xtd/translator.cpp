@@ -18,7 +18,7 @@ using namespace xtd::collections::specialized;
 using namespace xtd::helpers;
 using namespace xtd::io;
 
-std::map<string, string_dictionary> translator::language_values_;
+std::map<string, std::map<string, string>> translator::language_values_;
 string translator::language_;
 std::set<string> translator::translated_languages_;
 
