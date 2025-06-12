@@ -3,7 +3,7 @@
 /// @copyright Copyright (c) 2025 Gammasoft. All rights reserved.
 #pragma once
 #include <cstdint>
-#include "../collections/generic/dictionary.hpp"
+#include "../collections/generic/sorted_dictionary.hpp"
 #include "../array.hpp"
 #include "../iequatable.hpp"
 #include "../object.hpp"
@@ -40,18 +40,25 @@ namespace xtd {
       switch_base& operator =(const switch_base& value) = default;
       /// @endcond
       
+      /// @name Public Alias
+      
+      /// @{
+      /// @brief Represents the attributes collection.
+      using attribute_collection = std::map<xtd::string, xtd::string>;
+      
+      /// @}
       /// @name Public Properties
       
       /// @{
       /// @brief Gets the custom switch attributes
       /// @return nA StringDictionary containing the case-insensitive custom attributes for the trace switch.
-      const xtd::collections::generic::dictionary<xtd::string, xtd::string>& attributes() const noexcept;
+      const attribute_collection& attributes() const noexcept;
       /// @brief Gets the custom switch attributes
       /// @return A StringDictionary containing the case-insensitive custom attributes for the trace switch.
-      xtd::collections::generic::dictionary<xtd::string, xtd::string>& attributes() noexcept;
+      attribute_collection& attributes() noexcept;
       /// @brief Sets the custom switch attributes
       /// @param attributes A StringDictionary containing the case-insensitive custom attributes for the trace switch.
-      void attributes(const xtd::collections::generic::dictionary<xtd::string, xtd::string>& attributes) noexcept;
+      void attributes(const attribute_collection& attributes) noexcept;
       
       /// @brief Gets a description of the switch
       /// @return The description of the switch. The default value is an empty string ("").
@@ -143,7 +150,7 @@ namespace xtd {
     private:
       xtd::string display_name_;
       xtd::string description_;
-      xtd::collections::generic::dictionary<xtd::string, xtd::string> attributes_;
+      attribute_collection attributes_;
       int32 switch_setting_ = 0;
       xtd::string value_;
     };
