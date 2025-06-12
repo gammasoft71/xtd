@@ -37,7 +37,7 @@
 /// * macOS : cocoa wxwidgets qt5 fltk
 /// * linux : gtk4 gtk3 wxwidgets qt5 fltk
 ///
-/// @remarks xtd use only wxwigets underlying toolkits for all platform. But in the future xtd will use specific toolkit by platform :
+/// @remarks Currently, xtd uses only wxWidgets (and its native backends) for all platforms. This simplifies cross-platform behavior and ensures consistency across toolkits. In the future, other toolkits may be supported depending on the platform :
 /// * Windows : msw
 /// * macOS : cocoa
 /// * linux : gtk4
