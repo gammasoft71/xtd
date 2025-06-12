@@ -16,7 +16,7 @@ elseif (UNIX)
   add_references(${GTK_LIBRARIES})
 endif()
 
-find_package(wxWidgets REQUIRED)
+find_package(wxWidgets 3.2 REQUIRED)
 include(${wxWidgets_USE_FILE})
 #add_include_directories(${wxWidgets_INCLUDE_DIRS})
 #add_reference_directories(${wxWidgets_LIBRARY_DIRS})
