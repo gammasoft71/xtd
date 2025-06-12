@@ -4,15 +4,15 @@ using namespace xtd;
 using namespace xtd::collections::generic;
 using namespace xtd::diagnostics;
 
-const dictionary<string, string>& switch_base::attributes() const noexcept {
+const switch_base::attribute_collection& switch_base::attributes() const noexcept {
   return attributes_;
 }
 
-dictionary<string, string>& switch_base::attributes() noexcept {
+switch_base::attribute_collection& switch_base::attributes() noexcept {
   return attributes_;
 }
 
-void switch_base::attributes(const dictionary<string, string>& attributes) noexcept {
+void switch_base::attributes(const attribute_collection& attributes) noexcept {
   attributes_ = attributes;
 }
 
