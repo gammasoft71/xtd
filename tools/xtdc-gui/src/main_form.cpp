@@ -212,9 +212,9 @@ main_form::main_form() {
   open_xtd_examples_information_link_label_.anchor(anchor_styles::top | anchor_styles::bottom | anchor_styles::right);
   open_xtd_examples_information_link_label_.text_align(content_alignment::top_left);
   open_xtd_examples_information_link_label_.padding(xtd::forms::padding(5));
-  open_xtd_examples_information_link_label_.link_clicked += [](object & sender, link_label_clicked_event_args & e) {
-    process::start(as<string>(e.link().link_data()));
-  };
+  //open_xtd_examples_information_link_label_.link_clicked += [](object & sender, link_label_clicked_event_args & e) {
+  //  process::start(as<string>(e.link().link_data()));
+  //};
   
   open_xtd_examples_information_picture_label_.parent(open_xtd_examples_panel_);
   open_xtd_examples_information_picture_label_.location({550, open_xtd_examples_panel_.size().height - 270});
@@ -885,7 +885,7 @@ void main_form::update_open_xtd_examples(const xtd_example_item& item, const xtd
 
 void main_form::update_open_xtd_examples_description(const xtd::string& description) {
   open_xtd_examples_information_link_label_.text("");
-  open_xtd_examples_information_link_label_.links().clear();
+  //open_xtd_examples_information_link_label_.links().clear();
   if (description.empty()) return;
   static const std::regex rgx_md_link(R"(\[(.*?)\]\((.*?)\))", std::regex::optimize);
   xtd::string text = description;
@@ -901,12 +901,12 @@ void main_form::update_open_xtd_examples_description(const xtd::string& descript
         link = xtd::string::format("https://www.google.com/search?q={}+site:https://gammasoft71.github.io/xtd/reference_guides/latest", title);
       // Replace all markdown links [title](url) with title
       text = text.replace(whole, title);
-      open_xtd_examples_information_link_label_.links().push_back(xtd::forms::link(it->position(), title.length(), link));
+      //open_xtd_examples_information_link_label_.links().push_back(xtd::forms::link(it->position(), title.length(), link));
     }
   }
   
   open_xtd_examples_information_link_label_.text(text);
-  if (iterator == end) open_xtd_examples_information_link_label_.links().clear();
+  //if (iterator == end) open_xtd_examples_information_link_label_.links().clear();
 }
 
 void main_form::update_open_xtd_examples_picture(const xtd::drawing::image& picture) {
