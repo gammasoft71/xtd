@@ -21,8 +21,10 @@
 // #include <xtd/xtd>
 //
 // auto main() -> int {
-// #if defined(__XTD_0_2_0__)
-//  auto s = xtd::string("Hello, World!");
+// #if defined(__XTD_42_42_42__)
+//   auto s = xtd::xstring("Hello, World!");
+// #elif defined(__XTD_0_2_0__)
+//   auto s = xtd::string("Hello, World!");
 // #else
 //   auto s = xtd::ustring("Hello, World!");
 // #endif
