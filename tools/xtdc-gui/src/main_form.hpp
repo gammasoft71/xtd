@@ -103,7 +103,8 @@ namespace xtdc_gui {
     xtd::forms::list_box open_xtd_example_forms_list_box_;
     xtd::forms::list_box open_xtd_example_tunit_list_box_;
     xtd::forms::label open_xtd_examples_information_label_;
-    xtd::forms::link_label open_xtd_examples_information_link_label_;
+    //xtd::forms::link_label open_xtd_examples_information_link_label_;
+    xtd::forms::label open_xtd_examples_information_link_label_;
     xtd::forms::label open_xtd_examples_information_picture_label_;
     xtd::forms::text_box open_xtd_examples_information_output_text_box_;
     xtd::forms::picture_box open_xtd_examples_information_picture_box_;
