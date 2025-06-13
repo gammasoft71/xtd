@@ -4,27 +4,27 @@
 using namespace xtd;
 
 time_span xtd::literals::operator""_h(unsigned long long h) {
-  return xtd::time_span::from_hours(h);
+  return xtd::time_span::from_hours(static_cast<double>(h));
 }
 
 time_span xtd::literals::operator""_m(unsigned long long m) {
-  return xtd::time_span::from_minutes(m);
+  return xtd::time_span::from_minutes(static_cast<double>(m));
 }
 
 time_span xtd::literals::operator""_min(unsigned long long min) {
-  return xtd::time_span::from_minutes(min);
+  return xtd::time_span::from_minutes(static_cast<double>(min));
 }
 
 time_span xtd::literals::operator""_ms(unsigned long long ms) {
-  return xtd::time_span::from_milliseconds(ms);
+  return xtd::time_span::from_milliseconds(static_cast<double>(ms));
 }
 
 time_span xtd::literals::operator""_ns(unsigned long long ns) {
-  return xtd::time_span::from_nanoseconds(ns);
+  return xtd::time_span::from_nanoseconds(static_cast<double>(ns));
 }
 
 time_span xtd::literals::operator""_s(unsigned long long s) {
-  return xtd::time_span::from_seconds(s);
+  return xtd::time_span::from_seconds(static_cast<double>(s));
 }
 
 time_span xtd::literals::operator""_t(unsigned long long t) {
@@ -32,7 +32,7 @@ time_span xtd::literals::operator""_t(unsigned long long t) {
 }
 
 time_span xtd::literals::operator""_us(unsigned long long us) {
-  return xtd::time_span::from_microseconds(us);
+  return xtd::time_span::from_microseconds(static_cast<double>(us));
 }
 
 time_span xtd::literals::operator""_ts(const char* s, xtd::size n) {
