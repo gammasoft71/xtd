@@ -1,3 +1,4 @@
+#include "../../../include/xtd/as_const.hpp"
 #include "../../../include/xtd/collections/bit_array.hpp"
 #include "../../../include/xtd/invalid_operation_exception.hpp"
 
@@ -281,7 +282,7 @@ bit_array bit_array::operator >>(xtd::size pos) const noexcept {
 }
 
 bit_array& bit_array::operator >>=(xtd::size pos) noexcept {
-  *this = *this >> pos;
+  *this = as_const(*this) >> pos;
   return *this;
 }
 
@@ -295,7 +296,7 @@ bit_array bit_array::operator <<(xtd::size pos) const noexcept {
 }
 
 bit_array& bit_array::operator <<=(xtd::size pos) noexcept {
-  *this = *this << pos;
+  *this = as_const(*this) << pos;
   return *this;
 }
 
