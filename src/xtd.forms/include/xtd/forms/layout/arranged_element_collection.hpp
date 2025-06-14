@@ -329,7 +329,7 @@ namespace xtd {
         /// @brief Erases element at specified position.
         /// @param pos The iterator which the content will be erased.
         virtual iterator erase(const_iterator pos) {
-          on_item_removed(pos - begin(), *reinterpret_cast<iterator&>(pos));
+          on_item_removed(pos - begin(), const_cast<value_type&>(*pos));
           erasing_ = true;
           iterator result = collection_.erase(pos);
           erasing_ = false;
