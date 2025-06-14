@@ -334,7 +334,7 @@ $(function(){ initResizable(false); });
 <div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span></div>
 <div class="foldopen" id="foldopen00331" data-start="{" data-end="}">
 <div class="line"><a id="l00331" name="l00331"></a><span class="lineno"><a class="line" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a5d2abfd75b5a0d6ada2ed764551fd1b3">  331</a></span>        <span class="keyword">virtual</span> <a class="code hl_typedef" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a54a7c85a5ebca902f6d7d390089c4894">iterator</a> <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a5d2abfd75b5a0d6ada2ed764551fd1b3">erase</a>(<a class="code hl_typedef" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a9c5c1afad003c5dea3a03dc7ff425cc4">const_iterator</a> pos) {</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>          <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a37879505395a2e0bf0a6ae56c83cb47d">on_item_removed</a>(pos - <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a0d2436f425b5b04106bc6e06239e37c1">begin</a>(), *<span class="keyword">reinterpret_cast&lt;</span><a class="code hl_typedef" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a54a7c85a5ebca902f6d7d390089c4894">iterator</a>&amp;<span class="keyword">&gt;</span>(pos));</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>          <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a37879505395a2e0bf0a6ae56c83cb47d">on_item_removed</a>(pos - <a class="code hl_function" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a0d2436f425b5b04106bc6e06239e37c1">begin</a>(), <span class="keyword">const_cast&lt;</span>value_type&amp;<span class="keyword">&gt;</span>(*pos));</div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>          erasing_ = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>          <a class="code hl_typedef" href="classxtd_1_1forms_1_1layout_1_1arranged__element__collection.html#a54a7c85a5ebca902f6d7d390089c4894">iterator</a> result = collection_.erase(pos);</div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>          erasing_ = <span class="keyword">false</span>;</div>
@@ -594,7 +594,7 @@ $(function(){ initResizable(false); });
 <!-- HTML footer for doxygen 1.9.1-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jun 13 2025 20:32:06 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
+Generated on Sat Jun 14 2025 00:31:10 for xtd by <a href="https://gammasoft71.wixsite.com/gammasoft">Gammasoft</a>. All rights reserved.
 </small></address>
 </body>
 </html>
