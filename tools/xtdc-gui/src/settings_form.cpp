@@ -38,6 +38,7 @@ settings_form::settings_form() {
   use_default_ide_check_box_.location({205, 70});
   use_default_ide_check_box_.text("Use default IDE");
   use_default_ide_check_box_.checked(properties::settings::default_settings().use_defaul_ide());
+  use_default_ide_check_box_.enabled(false);
   use_default_ide_check_box_.width(295);
   use_default_ide_check_box_.checked_changed += [&] {
     properties::settings::default_settings().use_defaul_ide(use_default_ide_check_box_.checked()).save();
