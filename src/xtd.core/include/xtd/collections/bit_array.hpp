@@ -382,7 +382,8 @@ namespace xtd {
       /// @return The element at the specified index.
       /// @exception xtd::argument_out_of_range_exception index is less than 0 or index is equal to or greater than count.
       bool& operator [](xtd::size index);
-      
+
+      using xtd::collections::generic::icollection<bool>::operator >>;
       /// @brief The right shift operator shifts all the bit values of the current xtd::collections::bit_array to the right on count bits.
       /// @param count The number of shifts to make for each bit.
       /// @return The new shifted xtd::collections::bit_array.
@@ -395,6 +396,7 @@ namespace xtd {
       /// @remarks The current xtd::collections::bit_array is updated and returned.
       bit_array& operator >>=(xtd::size count) noexcept;
 
+      using xtd::collections::generic::icollection<bool>::operator <<;
       /// @brief The left shift operator shifts all the bit values of the current xtd::collections::bit_array to the left on count bits.
       /// @param count The number of shifts to make for each bit.
       /// @return The new shifted xtd::collections::bit_array.
