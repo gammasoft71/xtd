@@ -12,7 +12,6 @@ void assume::are_equal(const char* expected, const char* actual, const string& m
   }
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 void assume::are_equal(const char8* expected, const char8* actual, const string& message, const stack_frame& stack_frame) {
   try {
     assert::are_equal(expected, actual, message, stack_frame);
@@ -20,7 +19,6 @@ void assume::are_equal(const char8* expected, const char8* actual, const string&
     assert::abort();
   }
 }
-#endif
 
 void assume::are_equal(const char16* expected, const char16* actual, const string& message, const stack_frame& stack_frame) {
   try {
@@ -114,7 +112,6 @@ void assume::are_not_equal(const char* expected, const char* actual, const strin
   }
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 void assume::are_not_equal(const char8* expected, const char8* actual, const string& message, const stack_frame& stack_frame) {
   try {
     assert::are_not_equal(expected, actual, message, stack_frame);
@@ -122,7 +119,6 @@ void assume::are_not_equal(const char8* expected, const char8* actual, const str
     assert::abort();
   }
 }
-#endif
 
 void assume::are_not_equal(const char16* expected, const char16* actual, const string& message, const stack_frame& stack_frame) {
   try {
@@ -156,7 +152,6 @@ void assume::contains(char item, const char* values, const string& message, cons
   }
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 void assume::contains(char8 item, const char8* values, const string& message, const stack_frame& stack_frame) {
   try {
     assert::contains(item, values, message, stack_frame);
@@ -164,7 +159,6 @@ void assume::contains(char8 item, const char8* values, const string& message, co
     assert::abort();
   }
 }
-#endif
 
 void assume::contains(char16 item, const char16* values, const string& message, const stack_frame& stack_frame) {
   try {
@@ -210,7 +204,6 @@ void assume::is_empty(const char* value, const string& message, const stack_fram
   }
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 void assume::is_empty(const char8* value, const string& message, const stack_frame& stack_frame) {
   try {
     assert::is_empty(value, message, stack_frame);
@@ -218,7 +211,6 @@ void assume::is_empty(const char8* value, const string& message, const stack_fra
     assert::abort();
   }
 }
-#endif
 
 void assume::is_empty(const char16* value, const string& message, const stack_frame& stack_frame) {
   try {
@@ -264,7 +256,6 @@ void assume::is_greater(const char* val1, const char* val2, const string& messag
   }
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 void assume::is_greater(const char8* val1, const char8* val2, const string& message, const stack_frame& stack_frame) {
   try {
     assert::is_greater(val1, val2, message, stack_frame);
@@ -272,7 +263,6 @@ void assume::is_greater(const char8* val1, const char8* val2, const string& mess
     assert::abort();
   }
 }
-#endif
 
 void assume::is_greater(const char16* val1, const char16* val2, const string& message, const stack_frame& stack_frame) {
   try {
@@ -306,7 +296,6 @@ void assume::is_greater_or_equal(const char* val1, const char* val2, const strin
   }
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 void assume::is_greater_or_equal(const char8* val1, const char8* val2, const string& message, const stack_frame& stack_frame) {
   try {
     assert::is_greater_or_equal(val1, val2, message, stack_frame);
@@ -314,7 +303,6 @@ void assume::is_greater_or_equal(const char8* val1, const char8* val2, const str
     assert::abort();
   }
 }
-#endif
 
 void assume::is_greater_or_equal(const char16* val1, const char16* val2, const string& message, const stack_frame& stack_frame) {
   try {
@@ -348,7 +336,6 @@ void assume::is_less(const char* val1, const char* val2, const string& message, 
   }
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 void assume::is_less(const char8* val1, const char8* val2, const string& message, const stack_frame& stack_frame) {
   try {
     assert::is_less(val1, val2, message, stack_frame);
@@ -356,7 +343,6 @@ void assume::is_less(const char8* val1, const char8* val2, const string& message
     assert::abort();
   }
 }
-#endif
 
 void assume::is_less(const char16* val1, const char16* val2, const string& message, const stack_frame& stack_frame) {
   try {
@@ -390,7 +376,6 @@ void assume::is_less_or_equal(const char* val1, const char* val2, const string& 
   }
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 void assume::is_less_or_equal(const char8* val1, const char8* val2, const string& message, const stack_frame& stack_frame) {
   try {
     assert::is_less_or_equal(val1, val2, message, stack_frame);
@@ -398,7 +383,6 @@ void assume::is_less_or_equal(const char8* val1, const char8* val2, const string
     assert::abort();
   }
 }
-#endif
 
 void assume::is_less_or_equal(const char16* val1, const char16* val2, const string& message, const stack_frame& stack_frame) {
   try {
@@ -468,7 +452,6 @@ void assume::is_not_empty(const char* value, const string& message, const stack_
   }
 }
 
-#if defined(__xtd__cpp_lib_char8_t)
 void assume::is_not_empty(const char8* value, const string& message, const stack_frame& stack_frame) {
   try {
     assert::is_not_empty(value, message, stack_frame);
@@ -476,7 +459,6 @@ void assume::is_not_empty(const char8* value, const string& message, const stack
     assert::abort();
   }
 }
-#endif
 
 void assume::is_not_empty(const char16* value, const string& message, const stack_frame& stack_frame) {
   try {
